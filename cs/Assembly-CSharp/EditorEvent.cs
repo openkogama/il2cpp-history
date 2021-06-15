@@ -1,0 +1,45 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
+// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+public enum EditorEvent
+{
+	EditCubes = 0,
+	SelectCubes = 3,
+	Rotating = 5,
+	ObjectSelected = 12,
+	UndefinedState = 18,
+	ESWaitForSelect = 19,
+	ESSettingsMenu = 20,
+	ESWaitForGroup = 27,
+	ESWaitForUngroup = 28,
+	ESTranslate = 34,
+	ESWaitForClone = 35,
+	ESAddLink = 39,
+	ESWalkMode = 41,
+	ESInsert = 42,
+	ESAddObjectLink = 43,
+	ESBlueprintCreator = 44,
+	CERoam = 45,
+	CEEditBody = 46,
+	ESTerrainEdit = 47,
+	ESBodyCreator = 48,
+	ESAddToMarketPlaceState = 49,
+	CEAvatarAccessory = 50,
+	PMAvatarAccessory = 51,
+	CERoamUUI = 52,
+	CEEditBodyUUI = 53,
+	CEAvatarAccessoryUUI = 54,
+	ESEnterCubeTutorial = 55,
+	ESEditCubeTutorial = 56,
+	ESLeaveCubeTutorial = 57,
+	ESWaitForPlayModeAvatar = 58,
+	ESWaitForBuildModeAvatar = 59
+}
+

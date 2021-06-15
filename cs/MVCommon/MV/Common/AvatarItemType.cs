@@ -1,0 +1,88 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
+namespace MV.Common
+{
+	public enum AvatarItemType
+	{
+		LaserPointer = 0,
+		CenterGun = 1,
+		ImpulseGun = 2,
+		Health = 3,
+		Bazooka = 4,
+		Hand = 5,
+		RailGun = 6,
+		Mutant = 7,
+		Sword = 8,
+		Shotgun = 9,
+		Flamethrower = 10,
+		CubeGun = 11,
+		SixShooter = 12,
+		DoubleSixShooter = 13,
+		NinjaRun = 14,
+		Jakob1 = 15,
+		Jakob2 = 16,
+		Jakob3 = 17,
+		Jakob4 = 18,
+		Jakob5 = 19,
+		Jakob6 = 20,
+		Jakob7 = 21,
+		Jakob8 = 22,
+		Jakob9 = 23,
+		Jakob10 = 24,
+		Jakob11 = 25,
+		Jakob12 = 26,
+		Jakob13 = 27,
+		Jakob14 = 28,
+		Jakob15 = 29,
+		Christian1 = 30,
+		Christian2 = 31,
+		Christian3 = 32,
+		Christian4 = 33,
+		Christian5 = 34,
+		Christian6 = 35,
+		Christian7 = 36,
+		Christian8 = 37,
+		Christian9 = 38,
+		Christian10 = 39,
+		Christian11 = 40,
+		Christian12 = 41,
+		Christian13 = 42,
+		Christian14 = 43,
+		Christian15 = 44,
+		ThrowingStar = 45,
+		MultiThrowingStar = 46,
+		Carl4 = 48,
+		Carl5 = 49,
+		Carl6 = 50,
+		Carl7 = 51,
+		Carl8 = 52,
+		Carl9 = 53,
+		Carl10 = 54,
+		Carl11 = 55,
+		Carl12 = 56,
+		Carl13 = 57,
+		Carl14 = 58,
+		Carl15 = 59,
+		MouseGun = 60,
+		CollectTheItemCollectable = 61,
+		GrowthGun = 62,
+		MousePack = 63,
+		GrowthPack = 64,
+		SlapGun = 65,
+		Thomas8 = 66,
+		Thomas9 = 67,
+		Thomas10 = 68,
+		Thomas11 = 69,
+		HealRay = 70
+	}
+}

@@ -1,0 +1,21 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
+// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+namespace Assets.Scripts.AdIntegration
+{
+	public enum RewardedAdResult
+	{
+		ErrorClient = 0,
+		ErrorInternal = 1,
+		ErrorTimeout = 2,
+		RewardUnlocked = 3,
+		RewardNotUnlocked = 4
+	}
+}

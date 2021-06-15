@@ -1,0 +1,58 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+[ExecuteInEditMode]
+public class Water : MonoBehaviour
+{
+	// Fields
+	public WaterMode m_WaterMode;
+	public bool m_DisablePixelLights;
+	public int m_TextureSize;
+	public float m_ClipPlaneOffset;
+	public LayerMask m_ReflectLayers;
+	private Dictionary<object, object> m_ReflectionCameras;
+	private RenderTexture m_ReflectionTexture;
+	private WaterMode m_HardwareWaterSupport;
+	private int m_OldReflectionTextureSize;
+	private static bool s_InsideWater;
+	[SerializeField]
+	private Renderer meshRenderer;
+
+	// Properties
+	public Renderer Renderer { get; }
+
+	// Nested types
+	public enum WaterMode
+	{
+		Simple = 0,
+		Reflective = 1
+	}
+
+	// Constructors
+	public Water();
+	static Water();
+
+	// Methods
+	public void OnWillRenderObject();
+	private bool IsNanCheck(Vector3 v);
+	private void OnDisable();
+	private void Update();
+	private void UpdateCameraModes(Camera src, Camera dest);
+	private void CreateWaterObjects(Camera currentCamera, out Camera reflectionCamera, out Camera refractionCamera);
+	private WaterMode GetWaterMode();
+	private WaterMode FindHardwareWaterSupport();
+	private static float sgn(float a);
+	private Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign);
+	private static void CalculateObliqueMatrix(ref Matrix4x4 projection, Vector4 clipPlane);
+	private static void CalculateReflectionMatrix(ref Matrix4x4 reflectionMat, Vector4 plane);
+}
+
