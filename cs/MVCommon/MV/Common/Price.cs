@@ -1,0 +1,36 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[assembly: AssemblyCompany]
+[assembly: AssemblyConfiguration]
+[assembly: AssemblyCopyright]
+[assembly: AssemblyDescription]
+[assembly: AssemblyFileVersion]
+[assembly: AssemblyProduct]
+[assembly: AssemblyTitle]
+[assembly: AssemblyTrademark]
+[assembly: CompilationRelaxations]
+[assembly: ComVisible]
+[assembly: Debuggable]
+[assembly: Guid]
+[assembly: RuntimeCompatibility]
+
+namespace MV.Common
+{
+	public struct Price
+	{
+		// Fields
+		public int gold;
+	
+		// Constructors
+		public Price(int[] price);
+	}
+}

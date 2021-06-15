@@ -1,0 +1,107 @@
+
+/* Void OnDisable() */
+
+void Assembly-CSharp.dll::InsertCursor::InsertCursor_OnDisable
+               (InsertCursor *this,MethodInfo *method)
+
+{
+  uVar1 = 0;
+  pMVar2 = (this->fields).renderers;
+  if (pMVar2 != (MeshRenderer__Array *)0x0) {
+    ppMVar3 = pMVar2->vector;
+    while( true ) {
+      if ((int)pMVar2->max_length <= (int)uVar1) {
+        return;
+      }
+      if (pMVar2->max_length <= uVar1) break;
+      if (*ppMVar3 == (MeshRenderer *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
+                ((Renderer *)*ppMVar3,0,(MethodInfo *)0x0);
+      uVar1 = uVar1 + 1;
+      ppMVar3 = ppMVar3 + 1;
+    }
+    uVar4 = func_?(0,0);
+    func_?(uVar4);
+  }
+code_?:
+  func_?(0);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void OnEnable() */
+
+void Assembly-CSharp.dll::InsertCursor::InsertCursor_OnEnable(InsertCursor *this,MethodInfo *method)
+
+{
+  uVar1 = 0;
+  pMVar2 = (this->fields).renderers;
+  if (pMVar2 != (MeshRenderer__Array *)0x0) {
+    ppMVar3 = pMVar2->vector;
+    while( true ) {
+      if ((int)pMVar2->max_length <= (int)uVar1) {
+        return;
+      }
+      if (pMVar2->max_length <= uVar1) break;
+      if (*ppMVar3 == (MeshRenderer *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
+                ((Renderer *)*ppMVar3,1,(MethodInfo *)0x0);
+      uVar1 = uVar1 + 1;
+      ppMVar3 = ppMVar3 + 1;
+    }
+    uVar4 = func_?(0,0);
+    func_?(uVar4);
+  }
+code_?:
+  func_?(0);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void Start() */
+
+void Assembly-CSharp.dll::InsertCursor::InsertCursor_Start(InsertCursor *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(_UNK_?);
+    cRam_? = '\x01';
+  }
+  pUVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+           GameObject_GetComponentsInChildren_29
+                     ((GameObject *)this,
+                      UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                     );
+  (this->fields).renderers = (MeshRenderer__Array *)pUVar1;
+  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+            ((Behaviour *)this,0,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* InsertCursor() */
+
+void Assembly-CSharp.dll::InsertCursor::InsertCursor__ctor(InsertCursor *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(_UNK_?);
+    cRam_? = '\x01';
+  }
+  pMVar1 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
+  (this->fields).renderers = pMVar1;
+  if (cRam_? == '\0') {
+    func_?(_UNK_?,unaff_EBP);
+    cRam_? = '\x01';
+  }
+  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
+     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  return;
+}
+

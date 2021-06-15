@@ -1,0 +1,25 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+public class MVComponent : MonoBehaviour
+{
+	// Fields
+	public bool findWorldObjectParent;
+	protected MVWorldObjectClient worldObjectParent;
+
+	// Constructors
+	public MVComponent();
+
+	// Methods
+	protected virtual void Awake();
+	public void FindWorldObjectParent();
+}
+

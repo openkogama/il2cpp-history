@@ -1,0 +1,72 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
+// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+public enum ColorStyle
+{
+	DarkNavyBlue = 1,
+	Black = 6,
+	TeamNone = 7,
+	TeamBlue = 8,
+	TeamRed = 9,
+	TeamYellow = 10,
+	TeamGreen = 11,
+	White = 13,
+	Dark = 14,
+	TransparentDark = 15,
+	TransparentBlue = 16,
+	LightBlue = 17,
+	LightGray = 18,
+	TransparentLight = 20,
+	NeonGreen = 21,
+	TransparentHeavyDark = 22,
+	AlmostWhite = 23,
+	Golden = 24,
+	BackgroundBlue = 25,
+	OffWhite = 26,
+	OffWhiteTransparent = 27,
+	Gray = 28,
+	FriendGreen = 29,
+	Healthbar = 30,
+	HealthbarBackground = 31,
+	XPBar = 32,
+	XPBarBackground = 33,
+	HealthbarProgressBarSeparator = 34,
+	XPProgressBarSeparator = 35,
+	ShieldBar = 36,
+	HealthLost = 37,
+	LocalPlayerBackground = 38,
+	FriendListBackground = 39,
+	TeamRedDark = 40,
+	TeamBlueDark = 41,
+	TeamYellowDark = 42,
+	TeamGreenDark = 43,
+	ConfirmationColor = 44,
+	CancelColor = 45,
+	TeamNoneDark = 46,
+	GrayTransparent = 47,
+	SelectedTab = 48,
+	ButtonSuccess = 49,
+	ButtonRed = 50,
+	ButtonBlue = 51,
+	ButtonYellow = 52,
+	ButtonGreen = 53,
+	Success = 54,
+	Error = 55,
+	DisabledButton = 56,
+	OffGray = 57,
+	BackgroundBlocker = 58,
+	HeaderGray = 59,
+	ButtonBlack = 60,
+	EliteYellow = 61,
+	PositiveGreen = 62,
+	NegativeRed = 63,
+	EarningsYellow = 64
+}
+

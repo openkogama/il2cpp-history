@@ -1,0 +1,83 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using MV.Common;
+using UnityEngine;
+
+// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+public abstract class PickupItem : MonoBehaviour
+{
+	// Fields
+	protected bool firedThisFrame;
+	public MVPickupOwner owner;
+	[SerializeField]
+	protected Transform muzzlePoint;
+	[SerializeField]
+	protected Transform holsterTransformOffset;
+	[SerializeField]
+	protected Transform firstPersonTransform;
+	private Transform originalParent;
+	private Vector3 originalPos;
+	private Quaternion originalRot;
+	private Vector3 originalScale;
+	[CompilerGenerated]
+	[DebuggerBrowsable]
+	private bool _IsHolstered_k__BackingField;
+	[SerializeField]
+	protected Transform center;
+	[SerializeField]
+	protected MeshRenderer[] meshRenderers;
+	[CompilerGenerated]
+	[DebuggerBrowsable]
+	private int _VariantID_k__BackingField;
+
+	// Properties
+	public bool IsHolstered { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	protected virtual bool IsAmmoDepleted { get; }
+	public Vector3 Origin { get; }
+	public virtual int Quantity { get; }
+	public virtual Color CrossHairColor { get; }
+	public virtual float ChargeState { get; }
+	public virtual bool ActivateGunModeOnEquip { get; }
+	public virtual bool CanHolster { get; }
+	public virtual bool HasUnlimitedAmmo { get; }
+	public bool FirstPersonCapable { get; }
+	public bool IsInFirstPersonMode { get; }
+	public bool IsAmmoEmpty { get; }
+	public virtual bool CanUnequip { get; }
+	public abstract AvatarItemType Type { get; }
+	public int VariantID { [CompilerGenerated] get; [CompilerGenerated] set; }
+
+	// Constructors
+	protected PickupItem();
+
+	// Methods
+	public static GameObject InstantiateAvatarItemType(AvatarItemType type);
+	public void HolsterPickup(Transform targetHolsterTransform);
+	public void UnholsterPickup();
+	public void EnterFirstPersonView(MVCameraBase camera);
+	public void LeaveFirstPersonView();
+	private void RevertToOriginalTransform();
+	private void AlignThisTo(Transform targetHolsterTransform, Transform offset);
+	public virtual bool CanFire();
+	public virtual void TriggerBegin(int instigatorActorNr);
+	public virtual void TriggerEnd();
+	public virtual void OnStateChanged(Dictionary<object, object> newState);
+	public virtual void OnEquip();
+	public virtual void OnUnequip();
+	public virtual void ResetAmmo();
+	public virtual void OnLeaveVehicleWithWeapon();
+	public virtual void OnEnterVehicleWithWeapon();
+	protected virtual void OnHolstered();
+	protected virtual void OnUnholstered();
+	protected virtual int GetAmmoMultiplier(int defaultAmmo);
+	public virtual void UpdateWithDirection(Vector3 dir);
+	public bool GetAndResetFiredThisFrame();
+}
+
