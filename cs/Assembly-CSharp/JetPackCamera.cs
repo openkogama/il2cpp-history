@@ -1,0 +1,66 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+public class JetPackCamera : MVCameraBase
+{
+	// Fields
+	public float sensitivityX;
+	public float sensitivityY;
+	public float aroundXInertia;
+	public float aroundYInertiaMouseControlled;
+	public float aroundYInertiaAvatarControlled;
+	public float minimumY;
+	public float maximumY;
+	public float scrollSpeed;
+	public int xMinLimit;
+	public int xMaxLimit;
+	private Transform lookAtTransform;
+	protected Vector3 lookAtOffset;
+	protected float xAxisTarget;
+	protected float yAxisTarget;
+	protected float xAxis;
+	protected float yAxis;
+	protected float yAxisVelocity;
+	protected float xAxisVelocity;
+	private float rotationSmoothTime;
+	private Camera mainCamera;
+	private const float rotationSmoothTimeMouseControlled = 0.1f;
+	protected MVBuildModeAvatarLocal avatarLocal;
+	private const string mouseX = "Mouse X";
+	private const string mouseY = "Mouse Y";
+	[CompilerGenerated]
+	private static Func<MVWorldObjectClient, bool> __f__am_cache0;
+
+	// Properties
+	public override CameraType CameraType { get; }
+
+	// Constructors
+	public JetPackCamera();
+
+	// Methods
+	public virtual void Initialize(MVBuildModeAvatarLocal avatarLocal);
+	public override void Enter(MVCameraController camController);
+	public override void Reset();
+	private void ResetRotationToTargetTransform();
+	public void HandleInput(MVCameraController cameraController);
+	public override void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform);
+	protected static float NormalizeAngle(float angle);
+	public override void FocusOnObject(MVWorldObjectClient wo, float transitionTime = 2f, Vector3 avatarOffset = default, Vector3 cameraOffset = default);
+	public void FocusOnPointFromAvatarPosition(Vector3 focusPoint, Vector3 avatarPosition);
+	public void ResetDistanceAndDirectionToAvatar(Vector3 lookAtPosition);
+	public void FocusOnPosition(Vector3 lookAtPosition, float transitionTime = 2f);
+	private void SetToPosition(Vector3 position);
+	private Vector3 GetLookAtAvatarPosition(Vector3 position);
+	private void LookAt(Vector3 position);
+	[CompilerGenerated]
+	private static bool _ResetDistanceAndDirectionToAvatar_m__0(MVWorldObjectClient wo);
+}
+
