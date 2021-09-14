@@ -31,6 +31,9 @@ code_?:
     bVar2 = (*(code *)(this->klass->vtable).HasModifierEffect.method)
                       (this,0xb,(this->klass->vtable).HandleModifierEffect.methodPtr);
     mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_01,4,bVar2,(MethodInfo *)0x0);
+    bVar2 = (*(code *)(this->klass->vtable).HasModifierEffect.method)
+                      (this,0xb,(this->klass->vtable).HandleModifierEffect.methodPtr);
+    mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_01,6,bVar2,(MethodInfo *)0x0);
     bVar2 = mscorlib.dll::System::Collections::BitArray::BitArray_Get
                       (this_01,type,(MethodInfo *)0x0);
     if (bVar2 == 0) {

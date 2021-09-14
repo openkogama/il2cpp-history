@@ -394,8 +394,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
             fVar21 = (pAVar1->fields).displayPos.y;
             uVar7._0_4_ = (pAVar1->fields).displayPos.z;
             pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1
-                                ((Vector3 *)&stack0xffffffe8,3.116331e-29,(pAVar1->fields).distance
-                                 ,(MethodInfo *)0x0);
+                                ((Vector3 *)&stack0xffffffe8,3.1163454e-29,
+                                 (pAVar1->fields).distance,(MethodInfo *)0x0);
             pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
                                 ((Vector3 *)&stack0xffffffe8,*pVVar13,(pAVar1->fields).time,
                                  (MethodInfo *)0x0);
@@ -408,8 +408,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
             this = (AvatarSelectionAnimator *)pVVar13->z;
             puVar14 = &UNK_?;
             pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1
-                                ((Vector3 *)&stack0xffffffe8,3.116331e-29,(pAVar1->fields).distance
-                                 ,(MethodInfo *)0x0);
+                                ((Vector3 *)&stack0xffffffe8,3.1163454e-29,
+                                 (pAVar1->fields).distance,(MethodInfo *)0x0);
             fVar15 = (float)puVar14;
             piVar22 = (int *)&UNK_?;
             fVar23 = fVar9;

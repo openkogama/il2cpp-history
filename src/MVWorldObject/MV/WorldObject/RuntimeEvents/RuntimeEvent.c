@@ -29,15 +29,14 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(_UNK_?);
     cRam_? = '\x01';
   }
-  uVar1 = (undefined1)runtimeEventType;
   switch(runtimeEventType & 0xff) {
   case RuntimeEventType__Enum_FineGrainedSingleCubeAdd:
   case RuntimeEventType__Enum_FineGrainedSingleCubeRemove:
   case RuntimeEventType__Enum_FineGrainedSingleCubeRemovedAddedFineGrainedCube:
-    iVar2 = 0;
+    iVar1 = 0;
     break;
   case RuntimeEventType__Enum_Bazooka:
   case RuntimeEventType__Enum_AvatarImpact25:
@@ -48,71 +47,57 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   case RuntimeEventType__Enum_VehicleImpact75:
   case RuntimeEventType__Enum_SwordTerrainDestroy:
   case RuntimeEventType__Enum_ImpulseGunImpact:
-    iVar2 = 1;
+    iVar1 = 1;
     break;
   default:
-    iVar2 = -1;
+    iVar1 = -1;
   }
-  if (iVar2 == 0) {
+  if (iVar1 == 0) {
     method_01 = TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
-    pSVar3 = (ScaleAnimationBase *)func_?();
-    puStackY_30 = &UNK_?;
-    runtimeEventType = (RuntimeEventType__Enum)pSVar3;
-    Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play(pSVar3,0.0,in_stack_4);
-    this = bytePacker;
-    *(undefined1 *)((int)&(pSVar3->fields).state + 2) = uVar1;
-    pBVar5 = this;
-    if (uVar1 == RuntimeEventType__Enum_FineGrainedSingleCubeAdd) {
+    this = (ScaleAnimationBase *)func_?();
+    Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,in_stack_2);
+    *(undefined1 *)((int)&(this->fields).state + 2) = (undefined1)runtimeEventType;
+    if ((undefined1)runtimeEventType == RuntimeEventType__Enum_FineGrainedSingleCubeAdd) {
       if (bytePacker == (BytePacker *)0x0) goto code_?;
-      uVar6 = BytePacker::BytePacker_ReadByte(bytePacker,(MethodInfo *)method_01);
-      *(uint8_t *)&(pSVar3->fields).originalScale.x = uVar6;
+      uVar3 = BytePacker::BytePacker_ReadByte(bytePacker,(MethodInfo *)method_01);
+      *(uint8_t *)&(this->fields).originalScale.x = uVar3;
     }
   }
   else {
-    if (iVar2 != 1) {
+    if (iVar1 != 1) {
       return (RuntimeEvent *)0x0;
     }
     method_00 = TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent;
-    pSVar3 = (ScaleAnimationBase *)func_?();
-    runtimeEventType = (RuntimeEventType__Enum)pSVar3;
+    this = (ScaleAnimationBase *)func_?();
     Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-              (pSVar3,0.0,(MethodInfo *)method_00);
-    *(undefined1 *)((int)&(pSVar3->fields).state + 2) = uVar1;
-    this = bytePacker;
-    pBVar5 = (BytePacker *)0x0;
+              (this,0.0,(MethodInfo *)method_00);
+    *(undefined1 *)((int)&(this->fields).state + 2) = (undefined1)runtimeEventType;
   }
-  if (this != (BytePacker *)0x0) {
-    BytePacker::BytePacker_ReadInt16(this,(MethodInfo *)0x0);
-    BytePacker::BytePacker_ReadInt16(this,(MethodInfo *)0x0);
-    BytePacker::BytePacker_ReadInt16(this,(MethodInfo *)0x0);
-    func_?();
-    *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = 0;
-    *(undefined2 *)
-     (runtimeEventType +
-     (RuntimeEventType__Enum_AvatarImpact75|RuntimeEventType__Enum_AvatarImpact25)) = 0;
-    return (RuntimeEvent *)runtimeEventType;
+  if (bytePacker != (BytePacker *)0x0) {
+    iVar4 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+    iVar5 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+    iVar6 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+    MStack_7._._._.m_CachedPtr = (Behaviour__Fields)(Component_1__Fields)0x0;
+    uStack_8 = 0;
+    func_?(&MStack_7,iVar4,iVar5,iVar6,0);
+    (this->fields)._._._._.m_CachedPtr = (void *)MStack_7._._._.m_CachedPtr;
+    *(undefined2 *)&(this->fields).state = uStack_8;
+    return (RuntimeEvent *)this;
   }
 code_?:
-  uVar7 = func_?();
-  piVar8 = (int *)((ulonglong)uVar7 >> 0x20);
-  piVar9 = (int *)uVar7;
-  bVar10 = CARRY4((uint)&stack0xfffffffc,extraout_ECX[-0x15bf2abc]);
-  uVar11 = extraout_ECX[-0x15bf2abc];
-  pbVar12 = (undefined1 *)((int)&pBVar5[-6].fields._buffer + 1) + (int)piVar9;
-  bVar13 = *pbVar12;
-  bVar14 = *pbVar12 + (byte)pBVar5;
-  *pbVar12 = bVar14 + bVar10;
-  *(char *)piVar9 =
-       (char)*piVar9 + (char)uVar7 + (CARRY1(bVar13,(byte)pBVar5) || CARRY1(bVar14,bVar10));
-  *(char *)extraout_ECX = (char)*extraout_ECX + (char)uVar7;
-  *piVar9 = (int)(*piVar9 + (int)piVar9);
-  *extraout_ECX = (int)(*extraout_ECX + (int)piVar9);
-  *extraout_ECX = (int)(*extraout_ECX + (int)piVar9);
-  *piVar8 = (int)(*piVar8 + (int)piVar9);
-  piVar9 = (int *)((int)aiStackY_79 + uVar11);
-  *piVar9 = *piVar9 + (int)piVar8;
-  in((short)((ulonglong)uVar7 >> 0x20));
-  switch(*(undefined1 *)((int)&runtimeEventType + uVar11)) {
+  uVar9 = func_?(0);
+  pcVar10 = (char *)((ulonglong)uVar9 >> 0x20);
+  iVar1 = (int)uVar9;
+  *(uint *)(unaff_EDI + -0x58) = *(uint *)(unaff_EDI + -0x58) | 0xa84f8510;
+  pcVar11 = (char *)(unaff_EDI + 0x10a8 + (int)extraout_ECX * 2);
+  *pcVar11 = *pcVar11 + (char)extraout_ECX;
+  *extraout_ECX = *extraout_ECX + iVar1;
+  *(char *)extraout_ECX = (char)*extraout_ECX + (char)uVar9;
+  *extraout_ECX = *extraout_ECX + iVar1;
+  *extraout_ECX = *extraout_ECX + iVar1;
+  *extraout_ECX =
+       *extraout_ECX + CONCAT31((int3)((ulonglong)uVar9 >> 8),(char)uVar9 + *pcVar10 + *pcVar10);
+  switch(unaff_EBX & 0xff) {
   case 1:
   case 2:
   case 5:

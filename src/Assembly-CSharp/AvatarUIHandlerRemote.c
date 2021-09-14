@@ -834,81 +834,85 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
           fVar8 = pCVar5->b;
           fVar9 = pCVar5->a;
           this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((this_02 != (MVNetworkGame *)0x0) &&
-             (this_03 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                                  ((DayNightCycle *)this_02,(MethodInfo *)0x0),
-             this_03 != (SkyParam *)0x0)) {
-            iVar4 = MVTeamManager::MVTeamManager_TeamCount
-                              ((MVTeamManager *)this_03,(MethodInfo *)0x0);
-            fVar10 = fStack_6;
-            puVar11 = puStack_7;
-            if (1 < iVar4) {
-              pIVar12 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                       KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                                 ((KogamaSettingNumericBase_1_System_Single_ *)this_01,
-                                  (MethodInfo *)0x0);
-              fVar10 = fStack_6;
-              puVar11 = puStack_7;
-              switch(pIVar12) {
-              case (IKogamaSetting *)0x0:
-                pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_blue
-                                   ((Color *)&fStack_6,(MethodInfo *)0x0);
-                fVar8 = pCVar5->b;
-                fVar9 = pCVar5->a;
-                fVar10 = pCVar5->r;
-                puVar11 = (undefined *)pCVar5->g;
-                break;
-              case (IKogamaSetting *)0x1:
-                pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_red
-                                   ((Color *)&fStack_6,(MethodInfo *)0x0);
-                fVar8 = pCVar5->b;
-                fVar9 = pCVar5->a;
-                fVar10 = pCVar5->r;
-                puVar11 = (undefined *)pCVar5->g;
-                break;
-              case (IKogamaSetting *)0x2:
-                pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_green
-                                   ((Color *)&fStack_6,(MethodInfo *)0x0);
-                fVar8 = pCVar5->b;
-                fVar9 = pCVar5->a;
-                fVar10 = pCVar5->r;
-                puVar11 = (undefined *)pCVar5->g;
-                break;
-              case (IKogamaSetting *)0x3:
-                pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_yellow
-                                   ((Color *)&fStack_6,(MethodInfo *)0x0);
-                fVar8 = pCVar5->b;
-                fVar9 = pCVar5->a;
-                fVar10 = pCVar5->r;
-                puVar11 = (undefined *)pCVar5->g;
+          if (this_02 != (MVNetworkGame *)0x0) {
+            in_stack_10 = &UNK_?;
+            this_03 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
+                                ((DayNightCycle *)this_02,(MethodInfo *)0x0);
+            if (this_03 != (SkyParam *)0x0) {
+              iVar4 = MVTeamManager::MVTeamManager_TeamCount
+                                ((MVTeamManager *)this_03,(MethodInfo *)0x0);
+              fVar11 = fStack_6;
+              puVar12 = puStack_7;
+              if (1 < iVar4) {
+                pIVar13 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
+                         KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
+                         KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
+                                   ((KogamaSettingNumericBase_1_System_Single_ *)this_01,
+                                    (MethodInfo *)0x0);
+                fVar11 = fStack_6;
+                puVar12 = puStack_7;
+                switch(pIVar13) {
+                case (IKogamaSetting *)0x0:
+                  pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_blue
+                                     ((Color *)&fStack_6,(MethodInfo *)0x0);
+                  fVar8 = pCVar5->b;
+                  fVar9 = pCVar5->a;
+                  fVar11 = pCVar5->r;
+                  puVar12 = (undefined *)pCVar5->g;
+                  break;
+                case (IKogamaSetting *)0x1:
+                  pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_red
+                                     ((Color *)&fStack_6,(MethodInfo *)0x0);
+                  fVar8 = pCVar5->b;
+                  fVar9 = pCVar5->a;
+                  fVar11 = pCVar5->r;
+                  puVar12 = (undefined *)pCVar5->g;
+                  break;
+                case (IKogamaSetting *)0x2:
+                  pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_green
+                                     ((Color *)&fStack_6,(MethodInfo *)0x0);
+                  fVar8 = pCVar5->b;
+                  fVar9 = pCVar5->a;
+                  fVar11 = pCVar5->r;
+                  puVar12 = (undefined *)pCVar5->g;
+                  break;
+                case (IKogamaSetting *)0x3:
+                  pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_yellow
+                                     ((Color *)&fStack_6,(MethodInfo *)0x0);
+                  fVar8 = pCVar5->b;
+                  fVar9 = pCVar5->a;
+                  fVar11 = pCVar5->r;
+                  puVar12 = (undefined *)pCVar5->g;
+                }
               }
-            }
-            this_00 = (this->fields).avatarNameMaterial;
-            if (this_00 != (Material *)0x0) {
-              value.g = (float)puVar11;
-              value.r = fVar10;
-              value.b._0_2_ = SUB42(fVar8,0);
-              value.b._2_2_ = (short)((uint)fVar8 >> 0x10);
-              value.a._0_2_ = SUB42(fVar9,0);
-              value.a._2_2_ = (short)((uint)fVar9 >> 0x10);
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                        (this_00,value,(MethodInfo *)0x0);
-              return;
+              this_00 = (this->fields).avatarNameMaterial;
+              if (this_00 != (Material *)0x0) {
+                value.g = (float)puVar12;
+                value.r = fVar11;
+                value.b._0_2_ = SUB42(fVar8,0);
+                value.b._2_2_ = (short)((uint)fVar8 >> 0x10);
+                value.a._0_2_ = SUB42(fVar9,0);
+                value.a._2_2_ = (short)((uint)fVar9 >> 0x10);
+                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                          (this_00,value,(MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }
       }
     }
   }
-  bVar13 = 0;
   func_?();
-  *extraout_ECX =
-       *extraout_ECX + (char)((uint)unaff_EBX >> 8) +
-       (CARRY4((uint)unaff_ESI,uRam_?) ||
-       CARRY4((int)&unaff_ESI->klass + uRam_?,(uint)bVar13));
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pbVar14 = (byte *)(extraout_ECX + 0x35);
+  bVar15 = *pbVar14;
+  bVar16 = (byte)((uint)extraout_ECX >> 8);
+  *pbVar14 = *pbVar14 + bVar16;
+  (&stack0x0000001a)[(int)unaff_ESI] =
+       (&stack0x0000001a)[(int)unaff_ESI] + (char)((uint)((int)&unaff_EBX->klass + 1) >> 8) +
+       CARRY1(bVar15,bVar16);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

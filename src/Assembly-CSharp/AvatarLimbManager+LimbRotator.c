@@ -15,51 +15,52 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
   pMStack_1 = (MVBody__Class *)0x0;
   switch(partIndex) {
   case BodyData_PartIndex__Enum_Head:
-    this_01 = (LimbController *)func_?(TypeInfo__LimbController);
-    LimbController::LimbController__ctor(this_01,(MethodInfo *)0x0);
-    this_00 = (List_1_UnityEngine_Vector4_ *)
+    this_02 = (LimbController *)func_?(TypeInfo__LimbController);
+    LimbController::LimbController__ctor(this_02,(MethodInfo *)0x0);
+    this_01 = (List_1_UnityEngine_Vector4_ *)
               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              (this_00,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    pLVar2 = (List_1_UnityEngine_Vector4_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+              (this_01,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    this_00 = (LimbController *)
+              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              (pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    if (pLVar2 != (List_1_UnityEngine_Vector4_ *)0x0) {
+              ((List_1_UnityEngine_Vector4_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    if (this_00 != (LimbController *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)pLVar2,(UIPushOption__Enum)StringLiteral_Dead,
+                ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)StringLiteral_Dead,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
       if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
          ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
         func_?();
       }
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                          (&QStack_4,(MethodInfo *)0x0);
-      QStack_4.x = pQVar3->x;
-      QStack_4.y = pQVar3->y;
-      QStack_4.z = pQVar3->z;
-      QStack_4.w = pQVar3->w;
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
+      pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
+                          (&QStack_3,(MethodInfo *)0x0);
+      QStack_3.x = pQVar2->x;
+      QStack_3.y = pQVar2->y;
+      QStack_3.z = pQVar2->z;
+      QStack_3.w = pQVar2->w;
+      pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
                           ((Quaternion *)&stack0xffffffec,(MethodInfo *)0x0);
-      if (this_01 != (LimbController *)0x0) {
-        modelRotationOffset.y = QStack_4.y;
-        modelRotationOffset.x = QStack_4.x;
-        modelRotationOffset.z = QStack_4.z;
-        modelRotationOffset.w = QStack_4.w;
+      if (this_02 != (LimbController *)0x0) {
+        modelRotationOffset.y = QStack_3.y;
+        modelRotationOffset.x = QStack_3.x;
+        modelRotationOffset.z = QStack_3.z;
+        modelRotationOffset.w = QStack_3.w;
         LimbController::LimbController_Initialize
-                  (this_01,limbManager,avatarWO,body,BodyData_PartIndex__Enum_Head,
-                   modelRotationOffset,*pQVar3,(List_1_System_String_ *)this_00,
-                   (List_1_System_String_ *)pLVar2,89.0,45.0,(MethodInfo *)0x0);
-        pDVar5 = (this->fields).limbControllers;
-        if (pDVar5 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
-          QStack_4.w = (float)&UNK_?;
+                  (this_02,limbManager,avatarWO,body,BodyData_PartIndex__Enum_Head,
+                   modelRotationOffset,*pQVar2,(List_1_System_String_ *)this_01,
+                   (List_1_System_String_ *)this_00,89.0,45.0,(MethodInfo *)0x0);
+        pDVar4 = (this->fields).limbControllers;
+        if (pDVar4 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
+          QStack_3.w = (float)&UNK_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[BodyData+PartIndex,System::
           Object]::Dictionary_2_BodyData_PartIndex_System_Object__Add
-                    ((Dictionary_2_BodyData_PartIndex_System_Object_ *)pDVar5,
-                     BodyData_PartIndex__Enum_Head,(Object *)this_01,
+                    ((Dictionary_2_BodyData_PartIndex_System_Object_ *)pDVar4,
+                     BodyData_PartIndex__Enum_Head,(Object *)this_02,
                      MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__Add_BodyData__PartIndex__LimbController_
                     );
           return;
@@ -68,51 +69,52 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
     }
     break;
   case BodyData_PartIndex__Enum_Torso:
-    this_01 = (LimbController *)func_?(TypeInfo__LimbController);
-    LimbController::LimbController__ctor(this_01,(MethodInfo *)0x0);
-    this_00 = (List_1_UnityEngine_Vector4_ *)
+    this_02 = (LimbController *)func_?(TypeInfo__LimbController);
+    LimbController::LimbController__ctor(this_02,(MethodInfo *)0x0);
+    this_01 = (List_1_UnityEngine_Vector4_ *)
               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              (this_00,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    pLVar2 = (List_1_UnityEngine_Vector4_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+              (this_01,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    this_00 = (LimbController *)
+              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              (pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    if (pLVar2 != (List_1_UnityEngine_Vector4_ *)0x0) {
+              ((List_1_UnityEngine_Vector4_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    if (this_00 != (LimbController *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)pLVar2,(UIPushOption__Enum)StringLiteral_Dead,
+                ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)StringLiteral_Dead,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
       if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
          ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
         func_?();
       }
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                          (&QStack_4,(MethodInfo *)0x0);
-      QStack_4.x = pQVar3->x;
-      QStack_4.y = pQVar3->y;
-      QStack_4.z = pQVar3->z;
-      QStack_4.w = pQVar3->w;
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
+      pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
+                          (&QStack_3,(MethodInfo *)0x0);
+      QStack_3.x = pQVar2->x;
+      QStack_3.y = pQVar2->y;
+      QStack_3.z = pQVar2->z;
+      QStack_3.w = pQVar2->w;
+      pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
                           ((Quaternion *)&stack0xffffffec,(MethodInfo *)0x0);
-      if (this_01 != (LimbController *)0x0) {
-        modelRotationOffset_00.y = QStack_4.y;
-        modelRotationOffset_00.x = QStack_4.x;
-        modelRotationOffset_00.z = QStack_4.z;
-        modelRotationOffset_00.w = QStack_4.w;
+      if (this_02 != (LimbController *)0x0) {
+        modelRotationOffset_00.y = QStack_3.y;
+        modelRotationOffset_00.x = QStack_3.x;
+        modelRotationOffset_00.z = QStack_3.z;
+        modelRotationOffset_00.w = QStack_3.w;
         LimbController::LimbController_Initialize
-                  (this_01,limbManager,avatarWO,body,BodyData_PartIndex__Enum_Torso,
-                   modelRotationOffset_00,*pQVar3,(List_1_System_String_ *)this_00,
-                   (List_1_System_String_ *)pLVar2,90.0,20.0,(MethodInfo *)0x0);
-        pDVar5 = (this->fields).limbControllers;
-        if (pDVar5 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
-          QStack_4.w = (float)&UNK_?;
+                  (this_02,limbManager,avatarWO,body,BodyData_PartIndex__Enum_Torso,
+                   modelRotationOffset_00,*pQVar2,(List_1_System_String_ *)this_01,
+                   (List_1_System_String_ *)this_00,90.0,20.0,(MethodInfo *)0x0);
+        pDVar4 = (this->fields).limbControllers;
+        if (pDVar4 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
+          QStack_3.w = (float)&UNK_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[BodyData+PartIndex,System::
           Object]::Dictionary_2_BodyData_PartIndex_System_Object__Add
-                    ((Dictionary_2_BodyData_PartIndex_System_Object_ *)pDVar5,
-                     BodyData_PartIndex__Enum_Torso,(Object *)this_01,
+                    ((Dictionary_2_BodyData_PartIndex_System_Object_ *)pDVar4,
+                     BodyData_PartIndex__Enum_Torso,(Object *)this_02,
                      MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__Add_BodyData__PartIndex__LimbController_
                     );
           return;
@@ -121,65 +123,65 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
     }
     break;
   case BodyData_PartIndex__Enum_RArm:
-    pLVar6 = (LimbController *)func_?(TypeInfo__LimbController);
-    LimbController::LimbController__ctor(pLVar6,(MethodInfo *)0x0);
-    this_00 = (List_1_UnityEngine_Vector4_ *)
+    this_00 = (LimbController *)func_?(TypeInfo__LimbController);
+    LimbController::LimbController__ctor(this_00,(MethodInfo *)0x0);
+    this_01 = (List_1_UnityEngine_Vector4_ *)
               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              (this_00,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    this_01 = (LimbController *)
+              (this_01,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    this_02 = (LimbController *)
               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              ((List_1_UnityEngine_Vector4_ *)this_01,
+              ((List_1_UnityEngine_Vector4_ *)this_02,
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    if (this_01 != (LimbController *)0x0) {
+    if (this_02 != (LimbController *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)StringLiteral_Dead,
+                ((List_1_UIPushOption_ *)this_02,(UIPushOption__Enum)StringLiteral_Dead,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
       mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)StringLiteral_Jump,
+                ((List_1_UIPushOption_ *)this_02,(UIPushOption__Enum)StringLiteral_Jump,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
       if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
          ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
         func_?();
       }
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
+      pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
                           ((Quaternion *)&stack0xffffff8c,(MethodInfo *)0x0);
-      QVar7 = *pQVar3;
+      QVar5 = *pQVar2;
       func_?();
       func_?();
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
+      pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
                           ((Quaternion *)&stack0xffffff8c,(MethodInfo *)0x0);
-      pMStack_1 = (MVBody__Class *)pQVar3->x;
-      pMVar8 = (MonitorData *)pQVar3->y;
-      fVar9 = pQVar3->z;
-      fVar10 = pQVar3->w;
-      QStack_4.w = 0.0;
-      QStack_4.y = 0.0;
-      QStack_4.z = 0.0;
+      pMStack_1 = (MVBody__Class *)pQVar2->x;
+      pMVar6 = (MonitorData *)pQVar2->y;
+      fVar7 = pQVar2->z;
+      fVar8 = pQVar2->w;
+      QStack_3.w = 0.0;
+      QStack_3.y = 0.0;
+      QStack_3.z = 0.0;
       func_?();
-      uVar11 = QStack_4._4_8_;
+      uVar9 = QStack_3._4_8_;
       func_?();
-      if (pLVar6 != (LimbController *)0x0) {
-        limbManager = (AvatarLimbManager *)uVar11;
-        originalRotation.y = (float)pMVar8;
+      if (this_00 != (LimbController *)0x0) {
+        limbManager = (AvatarLimbManager *)uVar9;
+        originalRotation.y = (float)pMVar6;
         originalRotation.x = (float)pMStack_1;
-        originalRotation.z = fVar9;
-        originalRotation.w = fVar10;
+        originalRotation.z = fVar7;
+        originalRotation.w = fVar8;
         LimbController::LimbController_Initialize
-                  (pLVar6,limbManager,(MVWorldObjectClient *)&UNK_?,(MVBody *)&pMStack_1,
-                   BodyData_PartIndex__Enum_RArm,QVar7,originalRotation,
-                   (List_1_System_String_ *)this_00,(List_1_System_String_ *)this_01,90.0,45.0,
+                  (this_00,limbManager,(MVWorldObjectClient *)&UNK_?,(MVBody *)&pMStack_1,
+                   BodyData_PartIndex__Enum_RArm,QVar5,originalRotation,
+                   (List_1_System_String_ *)this_01,(List_1_System_String_ *)this_02,90.0,45.0,
                    (MethodInfo *)0x0);
         if (pDRam00000008 != (Dictionary_2_BodyData_PartIndex_System_Object_ *)0x0) {
-          QStack_4.w = (float)&UNK_?;
+          QStack_3.w = (float)&UNK_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[BodyData+PartIndex,System::
           Object]::Dictionary_2_BodyData_PartIndex_System_Object__Add
-                    (pDRam00000008,BodyData_PartIndex__Enum_RArm,(Object *)pLVar6,
+                    (pDRam00000008,BodyData_PartIndex__Enum_RArm,(Object *)this_00,
                      MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__Add_BodyData__PartIndex__LimbController_
                     );
           return;
@@ -188,26 +190,26 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
     }
     break;
   case BodyData_PartIndex__Enum_LArm:
-    pLVar6 = (LimbController *)func_?(TypeInfo__LimbController);
-    LimbController::LimbController__ctor(pLVar6,(MethodInfo *)0x0);
-    this_00 = (List_1_UnityEngine_Vector4_ *)
+    this_00 = (LimbController *)func_?(TypeInfo__LimbController);
+    LimbController::LimbController__ctor(this_00,(MethodInfo *)0x0);
+    this_01 = (List_1_UnityEngine_Vector4_ *)
               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              (this_00,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    this_01 = (LimbController *)
+              (this_01,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    this_02 = (LimbController *)
               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
     List_1_UnityEngine_Vector4___ctor
-              ((List_1_UnityEngine_Vector4_ *)this_01,
+              ((List_1_UnityEngine_Vector4_ *)this_02,
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    if (this_01 != (LimbController *)0x0) {
+    if (this_02 != (LimbController *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)StringLiteral_Dead,
+                ((List_1_UIPushOption_ *)this_02,(UIPushOption__Enum)StringLiteral_Dead,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
       mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)StringLiteral_Jump,
+                ((List_1_UIPushOption_ *)this_02,(UIPushOption__Enum)StringLiteral_Jump,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
       if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
@@ -216,34 +218,34 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
       }
       UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
                 ((Quaternion *)&stack0xffffff8c,(MethodInfo *)0x0);
-      QStack_4.w = 0.0;
-      QStack_4.y = 0.0;
-      QStack_4.z = 0.0;
+      QStack_3.w = 0.0;
+      QStack_3.y = 0.0;
+      QStack_3.z = 0.0;
       func_?();
       func_?();
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
+      pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
                           ((Quaternion *)&stack0xffffff8c,(MethodInfo *)0x0);
-      pMVar12 = (MVBody__Class *)pQVar3->x;
-      pMVar8 = (MonitorData *)pQVar3->y;
-      fVar9 = pQVar3->z;
-      fVar10 = pQVar3->w;
+      pMVar10 = (MVBody__Class *)pQVar2->x;
+      pMVar6 = (MonitorData *)pQVar2->y;
+      fVar7 = pQVar2->z;
+      fVar8 = pQVar2->w;
       limbManager_00 = (AvatarLimbManager *)0x0;
       func_?();
       func_?();
-      if ((pLVar6 != (LimbController *)0x0) &&
-         (QVar7.y = (float)this_00, QVar7.x = fVar10, QVar7.z = (float)this_01, QVar7.w = 90.0,
-         originalRotation_00.y = (float)pMVar8, originalRotation_00.x = (float)pMVar12,
-         originalRotation_00.z = fVar9, originalRotation_00.w = fVar10,
+      if ((this_00 != (LimbController *)0x0) &&
+         (QVar5.y = (float)this_01, QVar5.x = fVar8, QVar5.z = (float)this_02, QVar5.w = 90.0,
+         originalRotation_00.y = (float)pMVar6, originalRotation_00.x = (float)pMVar10,
+         originalRotation_00.z = fVar7, originalRotation_00.w = fVar8,
          LimbController::LimbController_Initialize
-                   (pLVar6,limbManager_00,(MVWorldObjectClient *)&UNK_?,
-                    (MVBody *)&stack0xffffffac,BodyData_PartIndex__Enum_LArm,QVar7,
-                    originalRotation_00,(List_1_System_String_ *)this_00,
-                    (List_1_System_String_ *)this_01,90.0,45.0,(MethodInfo *)0x0),
+                   (this_00,limbManager_00,(MVWorldObjectClient *)&UNK_?,
+                    (MVBody *)&stack0xffffffac,BodyData_PartIndex__Enum_LArm,QVar5,
+                    originalRotation_00,(List_1_System_String_ *)this_01,
+                    (List_1_System_String_ *)this_02,90.0,45.0,(MethodInfo *)0x0),
          pDRam00000008 != (Dictionary_2_BodyData_PartIndex_System_Object_ *)0x0)) {
-        QStack_4.w = (float)&UNK_?;
+        QStack_3.w = (float)&UNK_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[BodyData+PartIndex,System::Object]
         ::Dictionary_2_BodyData_PartIndex_System_Object__Add
-                  (pDRam00000008,BodyData_PartIndex__Enum_LArm,(Object *)pLVar6,
+                  (pDRam00000008,BodyData_PartIndex__Enum_LArm,(Object *)this_00,
                    MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__Add_BodyData__PartIndex__LimbController_
                   );
         return;
@@ -253,18 +255,23 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
   default:
     return;
   }
-  bVar13 = 0;
+  bVar11 = 0;
   func_?();
-  pbVar14 = (byte *)((int)&this_00[-0x38bfdae].monitor + 2);
-  bVar15 = *pbVar14;
-  bVar16 = *pbVar14;
-  *pbVar14 = bVar16 + extraout_AH + bVar13;
-  out(this_01->klass,extraout_DX);
-  *(char *)(extraout_ECX + -0x33efd18f) =
-       *(char *)(extraout_ECX + -0x33efd18f) + (char)this_00 +
-       (CARRY1(bVar15,extraout_AH) || CARRY1(bVar16 + extraout_AH,bVar13));
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pLVar12 = this_02->klass;
+  pLVar13 = (List_1_UnityEngine_Vector4___Class *)in(extraout_DX);
+  this_00->klass = (LimbController__Class *)pLVar13;
+  bVar14 = (byte)pLVar12;
+  bVar15 = (byte)this_01 + bVar14;
+  bVar16 = CARRY1((byte)this_01,bVar14) || CARRY1(bVar15,bVar11);
+  bVar15 = bVar15 + bVar11;
+  out(*(undefined1 *)&this_02->monitor,extraout_DX);
+  bVar14 = (byte)extraout_ECX + bVar15;
+  out(*(undefined4 *)((int)&this_02->monitor + 1),extraout_DX);
+  pcVar17 = (char *)(CONCAT31((int3)((uint)extraout_ECX >> 8),bVar14 + bVar16) + -0x33efd18f);
+  *pcVar17 = *pcVar17 + (char)((uint)this_01 >> 8) +
+            (CARRY1((byte)extraout_ECX,bVar15) || CARRY1(bVar14,bVar16));
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

@@ -831,9 +831,10 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
     method = unaff_EDI;
   }
   else {
-    puVar23 = (uint *)(uVar2 + 0x5c604c4);
-    *puVar23 = *puVar23 + 1;
-    if ((POPCOUNT(*puVar23 & 0xff) & 1U) == 0) {
+    piVar22 = (int *)(uVar2 + 0x5c604c4);
+    iVar23 = *piVar22;
+    *piVar22 = *piVar22 + 1;
+    if (*piVar22 == 0 || SCARRY4(iVar23,1) != *piVar22 < 0) {
       (*(code *)&unaff_EDI[1].parameters_count)();
       return 1;
     }

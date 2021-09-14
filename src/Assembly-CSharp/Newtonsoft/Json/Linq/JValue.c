@@ -1395,7 +1395,8 @@ code_?:
       if (bVar15) {
         *(int *)(unaff_EBX + 0x5c604c4) = *(int *)(unaff_EBX + 0x5c604c4) + 1;
         puVar25 = (undefined1 *)0xf0110e4;
-        cRam_? = cRam_? + (char)in_stack_14 + '\x01';
+        cRam_? = cRam_? + (char)in_stack_14 +
+                       (((uint)in_stack_14 & 0x100) != 0);
         goto code_?;
       }
     }

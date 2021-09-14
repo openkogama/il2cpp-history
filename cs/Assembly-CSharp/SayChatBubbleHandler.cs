@@ -15,7 +15,7 @@ public class SayChatBubbleHandler : MonoBehaviour
 	// Fields
 	[SerializeField]
 	private MeshRenderer sayChatBubble;
-	private const float sayHearingDistance = 15f;
+	private const float sayHearingDistance = 50f;
 	private bool isActive;
 	private bool isIndicatorActive;
 	private int ownerActorNr;

@@ -1363,7 +1363,7 @@ code_?:
     if (pMVar9->max_length < 0x40) goto code_?;
     pMVar9[1].vector[0x1b] = pMVar5;
     pSVar2 = TM::TM__(StringLiteral_Kill,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_Stay_clear_of_this_block,(MethodInfo *)0x0);
+    pSVar3 = TM::TM__(StringLiteral_Stay_clear_of_this_block_,(MethodInfo *)0x0);
     pMVar4 = (MaterialDescription_MaterialSpecialProperty__Enum__Array *)func_?();
     if (pMVar4 == (MaterialDescription_MaterialSpecialProperty__Enum__Array *)0x0)
     goto code_?;
@@ -1380,7 +1380,7 @@ code_?:
     if (pMVar9->max_length < 0x41) goto code_?;
     pMVar9[1].vector[0x1c] = pMVar5;
     pSVar2 = TM::TM__(StringLiteral_Heal,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_Get_your_health_back_up,(MethodInfo *)0x0);
+    pSVar3 = TM::TM__(StringLiteral_Get_your_health_back_up_,(MethodInfo *)0x0);
     pMVar4 = (MaterialDescription_MaterialSpecialProperty__Enum__Array *)func_?();
     if (pMVar4 == (MaterialDescription_MaterialSpecialProperty__Enum__Array *)0x0)
     goto code_?;

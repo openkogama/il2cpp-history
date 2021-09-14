@@ -71,7 +71,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
     fVar7 = (float10)func_?();
     inputDirection.z = (float)fVar7;
     __return_storage_ptr__ = (Vector3 *)uVar8;
-    if ((3.1087025e-29 < inputDirection.z) &&
+    if ((3.108717e-29 < inputDirection.z) &&
        (pfVar12 = &(this->fields).speed, *pfVar12 <= inputDirection.z && inputDirection.z != *pfVar12))
     {
       fVar3 = velocity.x;
@@ -89,7 +89,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
       a_00.x = (float)(int)uVar13;
       a_00.y = (float)(int)((ulonglong)uVar13 >> 0x20);
       pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                         (&inputDirection,a_00,3.1087025e-29,(MethodInfo *)0x0);
+                         (&inputDirection,a_00,3.108717e-29,(MethodInfo *)0x0);
       uVar14 = pVVar4->x;
       velocity.z = pVVar4->z;
       velocity.x = (float)uVar14;

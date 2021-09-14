@@ -47,7 +47,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(_UNK_?);
     cRam_? = '\x01';
   }
   switch((this->fields).counterType) {
@@ -176,13 +176,12 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar4;
     }
   }
-  uVar5 = func_?();
-  *(char *)uVar5 = *(char *)uVar5 + (char)((uint6)uVar5 >> 0x20);
-  *extraout_ECX = *extraout_ECX + (char)extraout_ECX;
-  *extraout_ECX = *extraout_ECX + (char)extraout_ECX;
-  in((short)((uint6)uVar5 >> 0x20));
+  cVar5 = '\0';
+  func_?();
+  iVar6 = func_?();
+  *(char *)(iVar6 + -0x61) = *(char *)(iVar6 + -0x61) + (char)iVar6 + cVar5;
   WinningCondition::WinningCondition__ctor
-            ((WinningCondition *)0x0,(WinningCondition *)method,in_stack_6,in_stack_7,
+            ((WinningCondition *)0x0,(WinningCondition *)method,in_stack_7,in_stack_8,
              0,1,GameStatCounterType__Enum_Time_1,WinningConditionPresentStyle__Enum_MultipleWinners
              ,(MethodInfo *)0x0);
   return extraout_EAX;
@@ -212,7 +211,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
 {
   method = (MethodInfo *)0x0;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(_UNK_?);
     cRam_? = '\x01';
   }
   switch((this->fields).counterType) {
@@ -341,13 +340,12 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar4;
     }
   }
-  uVar5 = func_?();
-  *(char *)uVar5 = *(char *)uVar5 + (char)((uint6)uVar5 >> 0x20);
-  *extraout_ECX = *extraout_ECX + (char)extraout_ECX;
-  *extraout_ECX = *extraout_ECX + (char)extraout_ECX;
-  in((short)((uint6)uVar5 >> 0x20));
+  cVar5 = '\0';
+  func_?();
+  iVar6 = func_?();
+  *(char *)(iVar6 + -0x61) = *(char *)(iVar6 + -0x61) + (char)iVar6 + cVar5;
   WinningCondition::WinningCondition__ctor
-            ((WinningCondition *)0x0,(WinningCondition *)method,in_stack_6,in_stack_7,
+            ((WinningCondition *)0x0,(WinningCondition *)method,in_stack_7,in_stack_8,
              0,1,GameStatCounterType__Enum_Time_1,WinningConditionPresentStyle__Enum_MultipleWinners
              ,(MethodInfo *)0x0);
   return extraout_EAX;

@@ -935,11 +935,23 @@ String * MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_ToStri
     func_?(_UNK_?);
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,7);
+  args = (Object__Array *)func_?(TypeInfo__System__Object,9);
   iStack_1 = (this->fields).type;
   pOVar2 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectType,&iStack_1);
   if (args == (Object__Array *)0x0) {
     func_?(0);
+code_?:
+    uVar3 = func_?(0,0);
+    func_?(uVar3);
+code_?:
+    uVar3 = func_?(0,0);
+    func_?(uVar3);
+code_?:
+    uVar3 = func_?(0,0);
+    func_?(uVar3);
+code_?:
+    uVar3 = func_?(0,0);
+    func_?(uVar3);
 code_?:
     uVar3 = func_?(0,0);
     func_?(uVar3);
@@ -1014,16 +1026,28 @@ code_?:
     args->vector[5] = (Object *)StringLiteral__itemId__;
     iStack_7 = (this->fields).itemId;
     pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_7);
+    if ((pOVar2 != (Object *)0x0) &&
+       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 == 0))
+    goto code_?;
+    if (args->max_length < 7) goto code_?;
+    args->vector[6] = pOVar2;
+    if ((StringLiteral__owner_ != (String *)0x0) &&
+       (iVar4 = func_?(StringLiteral__owner_,(args->klass->_0).element_class), iVar4 == 0))
+    goto code_?;
+    if (args->max_length < 8) goto code_?;
+    args->vector[7] = (Object *)StringLiteral__owner_;
+    iStack_8 = (this->fields).ownerActorNr;
+    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
     if ((pOVar2 == (Object *)0x0) ||
        (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 != 0)) {
-      if (6 < args->max_length) {
-        args->vector[6] = pOVar2;
+      if (8 < args->max_length) {
+        args->vector[8] = pOVar2;
         if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
            ((TypeInfo__System__String->_1).cctor_started == 0)) {
           func_?(TypeInfo__System__String);
         }
-        pSVar8 = mscorlib.dll::System::String::String_Concat_5(args,(MethodInfo *)0x0);
-        return pSVar8;
+        pSVar9 = mscorlib.dll::System::String::String_Concat_5(args,(MethodInfo *)0x0);
+        return pSVar9;
       }
       goto code_?;
     }
@@ -1033,9 +1057,9 @@ code_?:
 code_?:
   uVar3 = func_?(0,0);
   func_?(uVar3);
-  pcVar9 = (code *)swi(3);
-  pSVar8 = (String *)(*pcVar9)();
-  return pSVar8;
+  pcVar10 = (code *)swi(3);
+  pSVar9 = (String *)(*pcVar10)();
+  return pSVar9;
 }
 
 
