@@ -413,18 +413,18 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
           _UNK_? = this_01;
                     /* WARNING: Read-only address (ram,0xADDR) is written */
           EditorWorldObjectCreation::EditorWorldObjectCreation_Initialize((EditorWorldObjectCreation *)0x44768b10,this_01,(MethodInfo *)0x0);
-          pCVar6 = (CubeModelingStateMachine *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366dc35,(MethodInfo *)0x0);
+          pCVar6 = (CubeModelingStateMachine *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366e035,(MethodInfo *)0x0);
           MaterialsController::MaterialsController_Initialize((MaterialsController *)0x8b001c38,pCVar6,(MethodInfo *)0x0);
           this_02 = (Component_1 *)(**(code **)(iRam_? + 0xf8))();
           if (this_02 != (Component_1 *)0x0) {
             pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject(this_02,(MethodInfo *)0x0);
             UIStack::UIStack_Push((UIStack *)0xf552c1e8,pGVar5,UIPushOption__Enum_None,(UnityAction *)0x0,UIGroupFlags__Enum_MainUI,(MethodInfo *)0x0);
-            pCVar6 = (CubeModelingStateMachine *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366dc35,(MethodInfo *)0x0);
+            pCVar6 = (CubeModelingStateMachine *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366e035,(MethodInfo *)0x0);
             if (pCVar6 != (CubeModelingStateMachine *)0x0) {
               CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId(pCVar6,0x15,(MethodInfo *)0x0);
               ChatControllerUGUI::ChatControllerUGUI_Initialize((ChatControllerUGUI *)0x89505357,(MethodInfo *)0x0);
-              ContextMenuController::ContextMenuController_Initialize((ContextMenuController *)0xc483085d,(EditorStateMachine *)0xe366dc35,(MethodInfo *)0x0);
-              MaterialDescription::MaterialDescription_set_SpecialProperties((MaterialDescription *)0xfc458b30,(BitArray *)0xe366dc35,(MethodInfo *)0x0);
+              ContextMenuController::ContextMenuController_Initialize((ContextMenuController *)0xc483085d,(EditorStateMachine *)0xe366e035,(MethodInfo *)0x0);
+              MaterialDescription::MaterialDescription_set_SpecialProperties((MaterialDescription *)0xfc458b30,(BitArray *)0xe366e035,(MethodInfo *)0x0);
               this_03 = (DesktopPlayMode *)func_?();
               DesktopPlayMode::DesktopPlayMode__ctor(this_03,(MethodInfo *)0x0);
               if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
@@ -432,7 +432,7 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
               }
               MVInputWrapper::MVInputWrapper_SetInputMap((IKogamaInputMap *)this_03,(MethodInfo *)0x0);
               value = (Object *)func_?();
-              FSMEntity::FSMEntity_set_Event((FSMEntity *)0xe366dc35,value,(MethodInfo *)0x0);
+              FSMEntity::FSMEntity_set_Event((FSMEntity *)0xe366e035,value,(MethodInfo *)0x0);
               EditModeClientShopController::EditModeClientShopController_Initialize((EditModeClientShopController *)0xc9852443,(EditModeRepositoryController *)0x89284b8b,(MethodInfo *)0x0);
               PlayerInventoryController::PlayerInventoryController_Initialize((PlayerInventoryController *)0x32f840f,(MethodInfo *)0x0);
               (**(code **)(iRam_? + 0xe8))();
@@ -447,9 +447,9 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
                   pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform((GameObject *)0x56006aff,(MethodInfo *)0x0);
                   if (pTVar3 != (Transform *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1(pTVar3,pTVar4,0,(MethodInfo *)0x0);
-                    pCVar6 = (CubeModelingStateMachine *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366dc35,(MethodInfo *)0x0);
+                    pCVar6 = (CubeModelingStateMachine *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366e035,(MethodInfo *)0x0);
                     FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerrainEditTutorial_Initialize((FirstTimeSetupTerrainEditTutorial *)0xc4832443,pCVar6,(MaterialsController *)0x8b001c38,(MethodInfo *)0x0);
-                    value_00 = (Action_1_Boolean_ *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366dc35,(MethodInfo *)0x0);
+                    value_00 = (Action_1_Boolean_ *)PlayerListsLayout+<CreatePlayerLists>c__Iterator0::PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)0xe366e035,(MethodInfo *)0x0);
                     LockCursorManager3DMode::LockCursorManager3DMode_set_OnCursorLockChanged((LockCursorManager3DMode *)0x3c738b0c,value_00,(MethodInfo *)0x0);
                     if ((((uint)(TypeInfo__ChatCommandManager->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__ChatCommandManager->_1).cctor_started == 0)) {
                       func_?();

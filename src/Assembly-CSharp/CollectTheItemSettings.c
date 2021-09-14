@@ -59,13 +59,13 @@ code_?:
         System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object___ctor_1(this_04,(int32_t)capacity,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_);
         _UNK_? = this_04;
                     /* WARNING: Read-only address (ram,0xADDR) is written */
-        SettingsBase::SettingsBase_Initialize((SettingsBase *)0xe413e435,0,(GameObject *)0x0,MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
-        unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)0x9835ff10;
+        SettingsBase::SettingsBase_Initialize((SettingsBase *)0xe413e835,0,(GameObject *)0x0,MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
+        unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)0xa435ff10;
         pPVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::Dictionary_2_System_Type_Pool__get_Item(this_05,(Type *)StringLiteral_hasIndicator,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         if (pPVar6 == (Pool *)0x0) goto code_?;
         if ((pPVar6->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
           pbVar7 = (bool *)func_?();
-          SettingsToggle::SettingsToggle_Initialize((SettingsToggle *)0x9835ff10,StringLiteral_hasIndicator,*pbVar7,(MethodInfo *)0x0);
+          SettingsToggle::SettingsToggle_Initialize((SettingsToggle *)0xa435ff10,StringLiteral_hasIndicator,*pbVar7,(MethodInfo *)0x0);
           return;
         }
         goto code_?;

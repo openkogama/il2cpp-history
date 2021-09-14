@@ -286,7 +286,7 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Purchase(BoostP
     (pMVar2->fields).PurchaseProductResponseHandler = pAVar3;
     this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PurchaseGameBooster(this_00,(String *)0x57fb69,(MethodInfo *)0x0);
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PurchaseGameBooster(this_00,(String *)0x57fb59,(MethodInfo *)0x0);
       return;
     }
   }

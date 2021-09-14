@@ -251,7 +251,7 @@ void MVWorldObject.dll::TeamCounter::TeamCounter__ctor_1(TeamCounter *this,ByteP
       this_01 = (ActorCounter *)func_?();
       ActorCounter::ActorCounter__ctor_1(this_01,bp,(MethodInfo *)0x0);
       pMVar4 = MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__Add_int__ActorCounter_;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)0x8bffb0d3,iVar2,(Object *)this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__Add_int__ActorCounter_);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)0x8bffb187,iVar2,(Object *)this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__Add_int__ActorCounter_);
       iVar3 = iVar3 + 1;
     } while (iVar3 < (int)pMVar4);
   }

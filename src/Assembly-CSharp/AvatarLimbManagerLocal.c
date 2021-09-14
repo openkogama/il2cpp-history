@@ -121,9 +121,9 @@ code_?:
   _UNK_? = pDVar16;
                     /* WARNING: Read-only address (ram,0xADDR) is written */
   pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor(pUVar14,(Object *)0x38bd47,MethodInfo__AvatarLimbManagerLocal__AvatarPointingHandlerLocal__ResetNetworkMessageDelay_float_,MethodInfo__System__Action<float>__Action_System__Object__void__);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor(pUVar14,(Object *)0x38bd17,MethodInfo__AvatarLimbManagerLocal__AvatarPointingHandlerLocal__ResetNetworkMessageDelay_float_,MethodInfo__System__Action<float>__Action_System__Object__void__);
   pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)0x1475ff00,(Delegate *)pUVar14,(MethodInfo *)0x0);
-  pDVar16 = pDRame0a75b00;
+  pDVar16 = pDRame0a72b00;
   pDVar15 = (Delegate *)0x0;
   if (pDVar17 != (Delegate *)0x0) {
     if ((Action_1_Single___Class *)pDVar17->klass == TypeInfo__System__Action<float>) {
@@ -144,11 +144,11 @@ code_?:
     }
     if (pDVar16 == (Delegate *)0x0) goto code_?;
   }
-  pDRame0a75b00 = pDVar16;
+  pDRame0a72b00 = pDVar16;
   pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor(pUVar14,(Object *)&UNK_?,MethodInfo__AvatarLimbManagerLocal__SynchronizeHeadRotation_UnityEngine__Quaternion_,MethodInfo__System__Action<UnityEngine::Quaternion>__Action_System__Object__void__);
   pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a_00,(Delegate *)pUVar14,(MethodInfo *)0x0);
-  pDVar16 = pDRam0038bda3;
+  pDVar16 = pDRam0038bd73;
   pDVar15 = (Delegate *)0x0;
   if (pDVar17 != (Delegate *)0x0) {
     if ((Action_1_UnityEngine_Quaternion___Class *)pDVar17->klass == TypeInfo__System__Action<UnityEngine::Quaternion>) {
@@ -160,7 +160,7 @@ code_?:
   pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor(pUVar14,(Object *)&UNK_?,MethodInfo__AvatarLimbManagerLocal__SynchronizePointing_UnityEngine__Quaternion_,MethodInfo__System__Action<UnityEngine::Quaternion>__Action_System__Object__void__);
   pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar16,(Delegate *)pUVar14,(MethodInfo *)0x0);
-  pDVar16 = pDRame0a75b04;
+  pDVar16 = pDRame0a72b04;
   pDVar15 = (Delegate *)0x0;
   if (pDVar17 != (Delegate *)0x0) {
     if ((Action_1_UnityEngine_Quaternion___Class *)pDVar17->klass == TypeInfo__System__Action<UnityEngine::Quaternion>) {
@@ -168,7 +168,7 @@ code_?:
     }
     if (pDVar15 == (Delegate *)0x0) goto code_?;
   }
-  pDRam0038bda3 = pDVar15;
+  pDRam0038bd73 = pDVar15;
   pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor(pUVar14,(Object *)&UNK_?,MethodInfo__AvatarLimbManagerLocal__SynchronizeEmote_int_,MethodInfo__System__Action<int>__Action_System__Object__void__);
   pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar16,(Delegate *)pUVar14,(MethodInfo *)0x0);
@@ -179,7 +179,7 @@ code_?:
     }
     if (pDVar16 == (Delegate *)0x0) goto code_?;
   }
-  pDRame0a75b04 = pDVar16;
+  pDRame0a72b04 = pDVar16;
   if ((((uint)(TypeInfo__ChatCommandManager->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__ChatCommandManager->_1).cctor_started == 0)) {
     func_?();
   }

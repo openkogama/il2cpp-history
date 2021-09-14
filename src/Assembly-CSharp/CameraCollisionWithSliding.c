@@ -335,11 +335,11 @@ float Assembly-CSharp.dll::CameraCollisionWithSliding::CameraCollisionWithSlidin
   }
   dVar9 = (double)(targetPosition.z * 0.017453292);
   func_?();
-  dVar10 = (double)((float)fVar8 / (3.4647757e-29 / (float)dVar9));
+  dVar10 = (double)((float)fVar8 / (3.4647853e-29 / (float)dVar9));
   func_?();
   dVar10 = (double)((180.0 - ((float)dVar10 * 57.29578 + targetPosition.z)) * 0.017453292);
   func_?();
-  d = (float)dVar10 * (3.4647757e-29 / (float)dVar9);
+  d = (float)dVar10 * (3.4647853e-29 / (float)dVar9);
   a.y = slideVector.y;
   a.x = slideVector.x;
   a.z = fVar4;

@@ -573,7 +573,7 @@ code_?:
       (*pcVar3)();
       return;
     }
-    this_01 = (PrefabPool *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,0x496c0d8b,(MethodInfo *)0x0);
+    this_01 = (PrefabPool *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,0x49680d8b,(MethodInfo *)0x0);
     if (this_01 != (PrefabPool *)0x0) {
       t = PrefabPool::PrefabPool_get_MVPointLightPrefab(this_01,(MethodInfo *)0x0);
       if ((((uint)(TypeInfo__SharedCubeFunctions->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__SharedCubeFunctions->_1).cctor_started == 0)) {

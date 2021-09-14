@@ -491,7 +491,7 @@ void Assembly-CSharp.dll::PlayerSocialPopup::PlayerSocialPopup_OnOpenAdminContro
     this_05 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251((XpBoostParticlePreviewer *)0x7079830f,OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_);
     if (this_02 != (ScaleAnimationBase *)0x0) {
       (this_02->fields)._._._._.m_CachedPtr = this_05;
-      pSVar4 = (String *)(**(code **)(iRam_? + 0x300))(0xb93035ff,*(undefined4 *)(iRam_? + 0x304));
+      pSVar4 = (String *)(**(code **)(iRam_? + 0x300))(0xb92c35ff,*(undefined4 *)(iRam_? + 0x304));
       if (this_05 != (XpBoostParticlePreviewer *)0x0) {
         OwnerToolController::OwnerToolController_Initialize((OwnerToolController *)this_05,pSVar4,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)&UNK_?,(MethodInfo *)0x0);

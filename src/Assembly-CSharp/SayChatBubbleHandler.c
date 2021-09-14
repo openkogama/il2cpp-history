@@ -113,7 +113,7 @@ bool Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_IsPlayerInH
           b.y = (float)(int)((ulonglong)uVar6 >> 0x20);
           UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction((Vector3 *)&stack0xffffffd0,a,b,(MethodInfo *)0x0);
           fVar8 = (float10)func_?();
-          return (float)fVar8 < 15.0;
+          return (float)fVar8 < 50.0;
         }
       }
     }
