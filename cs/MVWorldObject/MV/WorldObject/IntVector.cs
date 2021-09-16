@@ -10,6 +10,19 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 
 // Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[assembly: AssemblyCompany]
+[assembly: AssemblyConfiguration]
+[assembly: AssemblyCopyright]
+[assembly: AssemblyDescription]
+[assembly: AssemblyFileVersion]
+[assembly: AssemblyProduct]
+[assembly: AssemblyTitle]
+[assembly: AssemblyTrademark]
+[assembly: CompilationRelaxations]
+[assembly: ComVisible]
+[assembly: Debuggable]
+[assembly: Guid]
+[assembly: RuntimeCompatibility]
 
 namespace MV.WorldObject
 {

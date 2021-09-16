@@ -7,6 +7,8 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 // Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+[assembly: Debuggable]
+[assembly: RuntimeCompatibility]
 
 namespace CodeStage.AntiCheat.Common
 {
