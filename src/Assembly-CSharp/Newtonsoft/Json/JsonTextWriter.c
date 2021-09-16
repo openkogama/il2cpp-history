@@ -731,12 +731,15 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonTextWriter::JsonTextWriter_Write
   pSStack4 = JsonConvert::JsonConvert_ToString_16(value_00,(MethodInfo *)0x0);
   pTVar5 = (pJVar1->fields)._writer;
   if (pTVar5 != (TextWriter *)0x0) {
-    (*(code *)(pTVar5->klass->vtable).Write_4.method)();
+    pTVar6 = pTVar5->klass;
+    pIStack7 = (pTVar6->vtable).Write_5.methodPtr;
+    (*(code *)(pTVar6->vtable).Write_4.method)();
     return;
   }
+  pIStack7 = (Il2CppMethodPointer)0x0;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
