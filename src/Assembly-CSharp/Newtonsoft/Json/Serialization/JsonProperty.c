@@ -26,33 +26,6 @@ Nullable_1_Newtonsoft_Json_NullValueHandling_ Assembly-CSharp.dll::Newtonsoft::J
 }
 
 
-/* Nullable`1[Newtonsoft.Json.ObjectCreationHandling] get_ObjectCreationHandling() */
-
-Nullable_1_Newtonsoft_Json_ObjectCreationHandling_ Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_get_ObjectCreationHandling(JsonProperty *this,MethodInfo *method)
-
-{
-  return (this->fields)._ObjectCreationHandling_k__BackingField;
-}
-
-
-/* Boolean get_Readable() */
-
-bool Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_get_Readable(JsonProperty *this,MethodInfo *method)
-
-{
-  return (this->fields)._Readable_k__BackingField;
-}
-
-
-/* Nullable`1[Newtonsoft.Json.ReferenceLoopHandling] get_ReferenceLoopHandling() */
-
-Nullable_1_Newtonsoft_Json_ReferenceLoopHandling_ Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_get_ReferenceLoopHandling(JsonProperty *this,MethodInfo *method)
-
-{
-  return (this->fields)._ReferenceLoopHandling_k__BackingField;
-}
-
-
 /* Nullable`1[Newtonsoft.Json.TypeNameHandling] get_TypeNameHandling() */
 
 Nullable_1_Newtonsoft_Json_TypeNameHandling_ Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_get_TypeNameHandling(JsonProperty *this,MethodInfo *method)
@@ -76,9 +49,9 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonPro
 void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_set_DefaultValueHandling(JsonProperty *this,Nullable_1_Newtonsoft_Json_DefaultValueHandling_ value,MethodInfo *method)
 
 {
+  (this->fields)._DefaultValueHandling_k__BackingField.hasValue = value.hasValue;
+  *(undefined3 *)&(this->fields)._DefaultValueHandling_k__BackingField.field_0x1 = value._1_3_;
   (this->fields)._DefaultValueHandling_k__BackingField.value = value.value;
-  (this->fields)._DefaultValueHandling_k__BackingField.has_value = value.has_value;
-  *(undefined3 *)&(this->fields)._DefaultValueHandling_k__BackingField.field_0x5 = value._5_3_;
   return;
 }
 
@@ -93,14 +66,26 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonPro
 }
 
 
+/* Void set_NullValueHandling(Nullable`1[Newtonsoft.Json.NullValueHandling]) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_set_NullValueHandling(JsonProperty *this,Nullable_1_Newtonsoft_Json_NullValueHandling_ value,MethodInfo *method)
+
+{
+  (this->fields)._NullValueHandling_k__BackingField.hasValue = value.hasValue;
+  *(undefined3 *)&(this->fields)._NullValueHandling_k__BackingField.field_0x1 = value._1_3_;
+  (this->fields)._NullValueHandling_k__BackingField.value = value.value;
+  return;
+}
+
+
 /* Void set_ObjectCreationHandling(Nullable`1[Newtonsoft.Json.ObjectCreationHandling]) */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_set_ObjectCreationHandling(JsonProperty *this,Nullable_1_Newtonsoft_Json_ObjectCreationHandling_ value,MethodInfo *method)
 
 {
+  (this->fields)._ObjectCreationHandling_k__BackingField.hasValue = value.hasValue;
+  *(undefined3 *)&(this->fields)._ObjectCreationHandling_k__BackingField.field_0x1 = value._1_3_;
   (this->fields)._ObjectCreationHandling_k__BackingField.value = value.value;
-  (this->fields)._ObjectCreationHandling_k__BackingField.has_value = value.has_value;
-  *(undefined3 *)&(this->fields)._ObjectCreationHandling_k__BackingField.field_0x5 = value._5_3_;
   return;
 }
 
@@ -120,21 +105,9 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonPro
 void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_set_ReferenceLoopHandling(JsonProperty *this,Nullable_1_Newtonsoft_Json_ReferenceLoopHandling_ value,MethodInfo *method)
 
 {
+  (this->fields)._ReferenceLoopHandling_k__BackingField.hasValue = value.hasValue;
+  *(undefined3 *)&(this->fields)._ReferenceLoopHandling_k__BackingField.field_0x1 = value._1_3_;
   (this->fields)._ReferenceLoopHandling_k__BackingField.value = value.value;
-  (this->fields)._ReferenceLoopHandling_k__BackingField.has_value = value.has_value;
-  *(undefined3 *)&(this->fields)._ReferenceLoopHandling_k__BackingField.field_0x5 = value._5_3_;
-  return;
-}
-
-
-/* Void set_TypeNameHandling(Nullable`1[Newtonsoft.Json.TypeNameHandling]) */
-
-void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonProperty::JsonProperty_set_TypeNameHandling(JsonProperty *this,Nullable_1_Newtonsoft_Json_TypeNameHandling_ value,MethodInfo *method)
-
-{
-  (this->fields)._TypeNameHandling_k__BackingField.value = value.value;
-  (this->fields)._TypeNameHandling_k__BackingField.has_value = value.has_value;
-  *(undefined3 *)&(this->fields)._TypeNameHandling_k__BackingField.field_0x5 = value._5_3_;
   return;
 }
 

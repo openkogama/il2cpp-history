@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class JetPackVisualization : VehicleVisualizationBase
 {
@@ -48,6 +48,6 @@ public class JetPackVisualization : VehicleVisualizationBase
 	private void JetPackPitch();
 	private void JetPackRoll();
 	[CompilerGenerated]
-	private void _Init_m__0(object jetModeVal);
+	private void _Init_b__16_0(object jetModeVal);
 }
 

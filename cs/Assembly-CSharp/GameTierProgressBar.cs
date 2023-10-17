@@ -14,7 +14,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 {
@@ -35,17 +35,17 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	protected List<GameMeterVisualEffect> gameMeterVisualEffects;
 	[SerializeField]
 	private List<TierProgressData> tierProgressDataList;
-	private bool isInitialized;
-	private float interpolateTowardsProgressValue;
-	private float previousProgressValue;
-	private float interpolationStartTime;
-	private bool shouldInterpolate;
 	private const float interpolationDuration = 2f;
-	private AvatarPreviewer headPreviewer;
 	private const int avatarHeadImageWidth = 128;
 	private const int avatarHeadImageHeight = 128;
 	private static bool haveShownTips;
+	private bool isInitialized;
+	private bool shouldInterpolate;
 	private bool hasShownRankTip;
+	private float interpolateTowardsProgressValue;
+	private float previousProgressValue;
+	private float interpolationStartTime;
+	private AvatarPreviewer headPreviewer;
 	private Transform previewHeadRoot;
 
 	// Nested types
@@ -74,49 +74,47 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnActiveProgressBarClicked_c__AnonStorey1
+	private sealed class __c__DisplayClass23_0
 	{
 		// Fields
-		internal GameObject informationPopup;
+		public GameObject informationPopup;
 
 		// Constructors
-		public _OnActiveProgressBarClicked_c__AnonStorey1();
+		public __c__DisplayClass23_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnActiveProgressBarClicked_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ScaleAndFadeLockForTier_c__Iterator0 : IEnumerator<object>
+	private sealed class _ScaleAndFadeLockForTier_d__43 : IEnumerator<object>
 	{
 		// Fields
-		internal float _progress___0;
-		internal float _alpha___0;
-		internal int tier;
-		internal GameTierProgressBar _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public GameTierProgressBar __4__this;
+		public int tier;
+		private float _progress_5__2;
+		private float _alpha_5__3;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _ScaleAndFadeLockForTier_c__Iterator0();
+		public _ScaleAndFadeLockForTier_d__43(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
 	public GameTierProgressBar();
-	static GameTierProgressBar();
 
 	// Methods
 	public void OnHeadClick();
@@ -141,7 +139,7 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	private void HandleUnlockedTiersProgressBars();
 	private void UpdateEditModeDisabledProgressBars();
 	private void UpdateProgressBar(GamePassTier progressBarToUpdate, int playerGamePoints);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_ScaleAndFadeLockForTier_d__43))]
 	private IEnumerator ScaleAndFadeLockForTier(int tier);
 	private void SetLockedStateForTier(int tier, bool tierUnlocked);
 	private void ActivateBar(int barIndex);

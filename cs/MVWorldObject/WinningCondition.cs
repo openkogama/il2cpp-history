@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class WinningCondition : IWinningCondition
 {
@@ -31,10 +31,12 @@ public abstract class WinningCondition : IWinningCondition
 	public IWinningCondition Parent { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public int Limit { get; }
 	public bool Forfilled { get; }
+	public OnCounterTypeChangedArgs InstigatorCounterTypeChangedEvent { get; }
 	public virtual bool IsBriefingNode { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public virtual bool IsTeamMode { get; }
 	public virtual HighScores HighScores { get; }
 	public GameStatCounterType GameStatCounterType { get; }
+	public WinningConditionPresentStyle WinningConditionPresentStyle { get; }
 	public abstract bool IsSingleton { get; }
 
 	// Events

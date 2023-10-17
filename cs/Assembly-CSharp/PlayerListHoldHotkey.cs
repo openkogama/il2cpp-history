@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerListHoldHotkey : MonoBehaviour
 {
@@ -17,29 +17,43 @@ public class PlayerListHoldHotkey : MonoBehaviour
 	private PlayerListsLayout playerListsPrefab;
 	private bool isActive;
 	private bool registeredHotkeys;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __f__am_cache4;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CreatePlayerList_c__AnonStorey0
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal PlayerListsLayout newPlayerLists;
+		public PlayerListsLayout newPlayerLists;
 
 		// Constructors
-		public _CreatePlayerList_c__AnonStorey0();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreatePlayerList_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__4_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__5_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__6_0;
+		public static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __9__6_1;
+		public static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __9__6_2;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _CreatePlayerList_b__4_0(IUIStack x, BaseEventData y);
+		internal void _DestroyPlayerList_b__5_0(IUIStack x, BaseEventData y);
+		internal void _OnDestroy_b__6_0(IUIStack x, BaseEventData y);
+		internal void _OnDestroy_b__6_1(IShortcutKeyUnRegister x, BaseEventData y);
+		internal void _OnDestroy_b__6_2(IShortcutKeyUnRegister x, BaseEventData y);
 	}
 
 	// Constructors
@@ -52,18 +66,8 @@ public class PlayerListHoldHotkey : MonoBehaviour
 	private void OnDestroy();
 	private void OnDisable();
 	[CompilerGenerated]
-	private void _Start_m__0(IShortcutKeyRegister x, BaseEventData y);
+	private void _Start_b__3_0(IShortcutKeyRegister x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Start_m__1(IShortcutKeyRegister x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _CreatePlayerList_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _DestroyPlayerList_m__3(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnDestroy_m__4(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnDestroy_m__5(IShortcutKeyUnRegister x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnDestroy_m__6(IShortcutKeyUnRegister x, BaseEventData y);
+	private void _Start_b__3_1(IShortcutKeyRegister x, BaseEventData y);
 }
 

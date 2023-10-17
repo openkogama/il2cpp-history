@@ -8,29 +8,26 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerInventoryRepository
 {
 	// Fields
 	private readonly Dictionary<int, List<InventoryItem>> repository;
 	public readonly Dictionary<InventoryCategoryType, string> categories;
-	public Action OnInventoryChanged;
-	public Action<int, int> OnInventoryItemAdded;
-	public Action OnFailedToAddItem;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CountItemsWithOriginalID_c__AnonStorey0
+	private sealed class __c__DisplayClass5_0
 	{
 		// Fields
-		internal InventoryItem item;
+		public InventoryItem item;
 
 		// Constructors
-		public _CountItemsWithOriginalID_c__AnonStorey0();
+		public __c__DisplayClass5_0();
 
 		// Methods
-		internal bool __m__0(InventoryItem p);
+		internal bool _CountItemsWithOriginalID_b__0(InventoryItem p);
 	}
 
 	// Constructors
@@ -38,7 +35,6 @@ public class PlayerInventoryRepository
 
 	// Methods
 	public void AddItem(InventoryItem item);
-	public void FailedToAddItem();
 	public void RemoveItem(InventoryItem item);
 	public int CountItemsWithOriginalID(InventoryItem item);
 	public void RemoveItem(int itemID);
@@ -49,6 +45,8 @@ public class PlayerInventoryRepository
 	public bool GetItemByWorldObjectTypeInCategory(InventoryCategoryType inventoryCategory, WorldObjectType wo, out InventoryItem item);
 	public int CategoryItemCount(int category);
 	public int HighestSlotIndex(InventoryCategoryType category);
-	public void AddPurchasedItem(ShopItem purchasedItem);
+	public InventoryItem AddPurchasedItem(ShopItem purchasedItem);
+	public void UpdateItemData(int itemID, int itemCategoryID, byte[] data);
+	private InventoryItem GetInventoryItem(int itemID, int itemCategoryID);
 }
 

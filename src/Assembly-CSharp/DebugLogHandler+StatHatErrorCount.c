@@ -9,31 +9,28 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::DebugLogHandler_Sta
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(0x61d7);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_An_errorDetected_and_onGoingErro);
     cRam_? = '\x01';
   }
-  func_?();
   uStack_1 = 0;
   if (errorDetected == onGoingErrorDetected) {
-    bStack4 = errorDetected;
-    arg1 = (Object *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    message = mscorlib.dll::System::String::String_Concat((Object *)StringLiteral_An_errorDetected_and_onGoingErro,arg1,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    pSVar4 = mscorlib.dll::System::Boolean::Boolean_ToString_1((Boolean *)&errorDetected,(IFormatProvider *)0x0,unaff_EDI);
+    pSVar4 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_An_errorDetected_and_onGoingErro,pSVar4,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)message,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)pSVar4,(MethodInfo *)0x0);
   }
   else {
     if (onGoingErrorDetected != 0) {
       if (cRam_? == '\0') {
-        func_?(0x61d5);
+        func_?(&TypeInfo__StatHatWrapper);
+        func_?(&StringLiteral_errorcountongoing);
         cRam_? = '\x01';
       }
       if ((this->fields).reportedOngoingError == 0) {
-        if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+        if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__StatHatWrapper);
         }
         StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcountongoing,1,(MethodInfo *)0x0);
@@ -42,11 +39,12 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::DebugLogHandler_Sta
     }
     if (errorDetected != 0) {
       if (cRam_? == '\0') {
-        func_?(0x61d6);
+        func_?(&TypeInfo__StatHatWrapper);
+        func_?(&StringLiteral_errorcount);
         cRam_? = '\x01';
       }
       if ((this->fields).reportedError == 0) {
-        if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+        if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__StatHatWrapper);
         }
         StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcount,1,(MethodInfo *)0x0);
@@ -67,11 +65,12 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::DebugLogHandler_Sta
 
 {
   if (cRam_? == '\0') {
-    func_?(0x61d6);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&StringLiteral_errorcount);
     cRam_? = '\x01';
   }
   if ((this->fields).reportedError == 0) {
-    if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__StatHatWrapper);
     }
     StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcount,1,(MethodInfo *)0x0);
@@ -87,11 +86,12 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::DebugLogHandler_Sta
 
 {
   if (cRam_? == '\0') {
-    func_?(0x61d5);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&StringLiteral_errorcountongoing);
     cRam_? = '\x01';
   }
   if ((this->fields).reportedOngoingError == 0) {
-    if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__StatHatWrapper);
     }
     StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcountongoing,1,(MethodInfo *)0x0);

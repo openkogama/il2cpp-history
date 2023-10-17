@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -23,7 +23,7 @@ namespace Newtonsoft.Json.Utilities
 		// Methods
 		public static void ArgumentNotNullOrEmpty(string value, string parameterName);
 		public static void ArgumentNotNullOrEmptyOrWhitespace(string value, string parameterName);
-		public static void ArgumentTypeIsEnum(Type enumType, string parameterName);
+		public static void ArgumentTypeIsEnum(System.Type enumType, string parameterName);
 		public static void ArgumentNotNullOrEmpty<T>(ICollection<T> collection, string parameterName);
 		public static void ArgumentNotNullOrEmpty<T>(ICollection<T> collection, string parameterName, string message);
 		public static void ArgumentNotNullOrEmpty(ICollection collection, string parameterName);
@@ -36,7 +36,7 @@ namespace Newtonsoft.Json.Utilities
 		public static void ArgumentIsPositive<T>(T value, string parameterName)
 			where T : struct, IComparable<T>;
 		public static void ArgumentIsPositive(int value, string parameterName, string message);
-		public static void ObjectNotDisposed(bool disposed, Type objectType);
+		public static void ObjectNotDisposed(bool disposed, System.Type objectType);
 		public static void ArgumentConditionTrue(bool condition, string parameterName, string message);
 	}
 }

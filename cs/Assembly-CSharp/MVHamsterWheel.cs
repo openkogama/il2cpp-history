@@ -7,8 +7,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.VehicleEnergy;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVHamsterWheel : MVSimpleOneSeatVehicle
 {
@@ -42,6 +43,7 @@ public class MVHamsterWheel : MVSimpleOneSeatVehicle
 	public MVHamsterWheel(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);
 
 	// Methods
+	protected override VehicleEnergyContainerConfig SetupVehicleEnergyContainerConfig();
 	public override void Initialize();
 	public override void InitializeInventory();
 	public override void Destroy();

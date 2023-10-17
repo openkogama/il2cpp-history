@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MaterialsControllerEditMode : MaterialsController, IHandleCubeModelEdit
 {
@@ -22,14 +22,28 @@ public class MaterialsControllerEditMode : MaterialsController, IHandleCubeModel
 	private DesktopCubeModelingController desktopCubeModelingControllerEditMode;
 	private UnityAction closeCallback;
 	private byte prevMaterial;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __f__am_cache1;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__8_1;
+		public static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __9__12_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Open_b__8_1(IUIStack handler, BaseEventData data);
+		internal void _OnPop_b__12_0(IShortcutKeyUnRegister x, BaseEventData y);
+	}
 
 	// Constructors
 	public MaterialsControllerEditMode();
-	static MaterialsControllerEditMode();
 
 	// Methods
 	private void OnEnable();
@@ -40,12 +54,8 @@ public class MaterialsControllerEditMode : MaterialsController, IHandleCubeModel
 	private void PlayModeToggleOverwrite();
 	private new void OnPop();
 	[CompilerGenerated]
-	private void _Open_m__0(IShortcutKeyRegister x, BaseEventData y);
+	private void _Open_b__8_0(IShortcutKeyRegister x, BaseEventData y);
 	[CompilerGenerated]
-	private static void _Open_m__1(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private void _Open_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPop_m__3(IShortcutKeyUnRegister x, BaseEventData y);
+	private void _Open_b__8_2(IUIStack x, BaseEventData y);
 }
 

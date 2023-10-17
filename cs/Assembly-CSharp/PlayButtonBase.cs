@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayButtonBase : MonoBehaviour
 {
@@ -18,8 +18,23 @@ public class PlayButtonBase : MonoBehaviour
 	private Image countdownFill;
 	[SerializeField]
 	protected bool shouldPop;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__3_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _StartPlaying_b__3_0(IUIStack handler, BaseEventData data);
+	}
 
 	// Constructors
 	public PlayButtonBase();
@@ -28,7 +43,5 @@ public class PlayButtonBase : MonoBehaviour
 	protected void UpdateButton();
 	protected virtual void StartPlaying();
 	protected virtual void OnCountDownEnd();
-	[CompilerGenerated]
-	private static void _StartPlaying_m__0(IUIStack handler, BaseEventData data);
 }
 

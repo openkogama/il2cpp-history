@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Fac
 {
   this_00 = (this->fields).previewCam;
   if (this_00 != (Camera *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this_00,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
     if (go != (GameObject *)0x0) {
       target = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(go,(MethodInfo *)0x0);
       if (this_01 != (Transform *)0x0) {
@@ -15,7 +15,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Fac
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -28,47 +28,48 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Ini
 
 {
   if (cRam_? == '\0') {
-    func_?(0x717e);
+    func_?(&StringLiteral_Preview);
+    func_?(&StringLiteral_Preview__0__RenderCam);
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).xpBoostParticles;
   if (pPVar1 != (ParticleSystem *)0x0) {
     UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2(pPVar1,(MethodInfo *)0x0);
     (this->fields).layersToRender = layersToRender | LayerFlags__Enum_Hidden;
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)this,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name((Object_1 *)this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      VStack_4.z = (float)TypeInfo__System__String;
-      VStack_4.y = (float)&UNK_?;
-      func_?();
-    }
     pSVar3 = mscorlib.dll::System::String::String_Format(StringLiteral_Preview__0__RenderCam,(Object *)pSVar3,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name((Object_1 *)pGVar2,pSVar3,(MethodInfo *)0x0);
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)this,(MethodInfo *)0x0);
-      value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+      value_00 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
       if (pGVar2 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer(pGVar2,value,(MethodInfo *)0x0);
-        value_00 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1(textureWidth,textureHeight,0x10,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,2,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer(pGVar2,value_00,(MethodInfo *)0x0);
+        pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1(0,textureHeight,0x10,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,2,(MethodInfo *)0x0);
+        (this->fields).previewTexture = pRVar4;
+        func_?();
         pCVar5 = (this->fields).previewCam;
-        (this->fields).previewTexture = value_00;
         if (pCVar5 != (Camera *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture(pCVar5,value_00,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture(pCVar5,(this->fields).previewTexture,(MethodInfo *)0x0);
           pPVar1 = (this->fields).xpBoostParticles;
           if (pPVar1 != (ParticleSystem *)0x0) {
-            pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)pPVar1,(MethodInfo *)0x0);
+            pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar1,(MethodInfo *)0x0);
             (this->fields)._PreviewGameObject_k__BackingField = pGVar2;
-            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
+            func_?(&(this->fields)._PreviewGameObject_k__BackingField,pGVar2);
+            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
             if (pTVar6 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar6,previewPosition,(MethodInfo *)0x0);
+              value.y = previewPosition.y;
+              value.x = (float)pRVar4;
+              value.z = previewPosition.z;
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar6,value,(MethodInfo *)0x0);
               pCVar5 = (this->fields).previewCam;
               if (pCVar5 != (Camera *)0x0) {
-                pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)pCVar5,(MethodInfo *)0x0);
+                pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar5,(MethodInfo *)0x0);
                 pPVar1 = (this->fields).xpBoostParticles;
                 if (pPVar1 != (ParticleSystem *)0x0) {
-                  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)pPVar1,(MethodInfo *)0x0);
+                  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pPVar1,(MethodInfo *)0x0);
                   if (this_00 != (Transform *)0x0) {
-                    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_4,this_00,(MethodInfo *)0x0);
+                    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_8,this_00,(MethodInfo *)0x0);
                     if (pTVar6 != (Transform *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2(pTVar6,*pVVar7,(MethodInfo *)0x0);
                       return;
@@ -82,9 +83,9 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Ini
       }
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -95,11 +96,11 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnD
 
 {
   if (cRam_? == '\0') {
-    func_?(0x717f);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).previewCam;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -114,16 +115,17 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnD
     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture(pCVar1,(RenderTexture *)0x0,(MethodInfo *)0x0);
   }
   x = (this->fields).previewTexture;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary((this->fields).previewTexture,(MethodInfo *)0x0);
     (this->fields).previewTexture = (RenderTexture *)0x0;
+    func_?();
   }
-  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
@@ -137,7 +139,8 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
 
 {
   if (cRam_? == '\0') {
-    func_?(0x7180);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._PreviewGameObject_k__BackingField;
@@ -146,9 +149,10 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
     LayerUtil::LayerUtil_SetLayerRecursively_3(transfrom,StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -159,13 +163,13 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
 
 {
   if (cRam_? == '\0') {
-    func_?(0x7181);
+    func_?(&StringLiteral_Preview);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._PreviewGameObject_k__BackingField;
   if (this_00 != (GameObject *)0x0) {
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
-    layersToChange.m_Mask = (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot((Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)(this->fields).layersToRender,(MethodInfo *)0x0);
+    layersToChange.m_Mask = (int32_t)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
     layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer,(MethodInfo *)0x0);
     return;
@@ -182,24 +186,20 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
 void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OverrideCameraForPreviewer(XpBoostParticlePreviewer *this,Vector3 cameraAngle,Vector3 cameraOffset,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x7182);
-    cRam_? = '\x01';
-  }
   this_00 = (this->fields).previewCam;
   if (this_00 != (Camera *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Euler_1((Quaternion *)&stack0xffffffec,cameraAngle,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+    euler.y = cameraAngle.y * 0.017453292;
+    euler.x = cameraAngle.x * 0.017453292;
+    euler.z = cameraAngle.z * 0.017453292;
+    pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_01,*pQVar1,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_01,cameraOffset,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -213,25 +213,25 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Sta
 {
   this_00 = (this->fields).xpBoostParticles;
   (this->fields).isParticlesPlaying = 1;
-  if (((this_00 != (ParticleSystem *)0x0) && (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)this_00,(MethodInfo *)0x0), this_01 != (GameObject *)0x0)) && (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,1,(MethodInfo *)0x0), (this->fields).xpBoostParticles != (ParticleSystem *)0x0)) {
-    pcVar1 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)func_?(), pcVar1 == (code *)0x0)) {
-      func_?();
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    pcRam_? = pcVar1;
-    uStack2 = 1;
+  if (this_00 != (ParticleSystem *)0x0) {
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,1,(MethodInfo *)0x0);
+      if ((this->fields).xpBoostParticles != (ParticleSystem *)0x0) {
+        if (pcRam_? == (code *)0x0) {
+          pcRam_? = (code *)func_?();
+        }
+        uStack1 = 1;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (*pcRam_?)();
-    return;
+        (*pcRam_?)();
+        return;
+      }
+    }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -247,7 +247,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Sto
     UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2(pPVar1,(MethodInfo *)0x0);
     pPVar1 = (this->fields).xpBoostParticles;
     if (pPVar1 != (ParticleSystem *)0x0) {
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)pPVar1,(MethodInfo *)0x0);
+      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar1,(MethodInfo *)0x0);
       if (this_00 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_00,0,(MethodInfo *)0x0);
         return;
@@ -257,16 +257,6 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Sto
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
-  return;
-}
-
-
-/* Void set_PreviewGameObject(GameObject) */
-
-void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_set_PreviewGameObject(XpBoostParticlePreviewer *this,GameObject *value,MethodInfo *method)
-
-{
-  (this->fields)._PreviewGameObject_k__BackingField = value;
   return;
 }
 

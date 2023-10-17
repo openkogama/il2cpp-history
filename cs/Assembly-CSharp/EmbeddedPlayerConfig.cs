@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [Serializable]
 [CreateAssetMenu]
@@ -44,5 +44,7 @@ public class EmbeddedPlayerConfig : ScriptableObject
 	private static bool IsValidHost(string host, string[] hosts);
 	private static bool DoesHostMatch(string allowedHost, string[] applicationHost);
 	public EmbeddedSiteConfigData GetCurrentSiteData();
+	public void ForceEmbedSite(string url);
+	public bool IsSite(EmbeddedSite embeddedSite);
 }
 

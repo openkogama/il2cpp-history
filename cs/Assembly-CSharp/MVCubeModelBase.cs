@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollider
 {
@@ -17,14 +17,12 @@ public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollid
 	protected RuntimePrototypeCubeModel prototypeCubeModel;
 	protected ChunkInstances chunkInstances;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Func<IModelingConstraint> _ModelingConstraintBuilder_k__BackingField;
 	private bool beingEdited;
 	private Queue<CubeModelChangedEventArgs> changedEventArgsQueue;
 	public Action<CubeModelChangedEventArgs> Changed;
 	public Action<HashSet<IntVector>> ChunksChanged;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<EditStateEventArgs> BeingEditedChanged;
 
 	// Properties
@@ -57,6 +55,7 @@ public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollid
 	public Cube GetCube(IntVector pos);
 	public bool ContainsCube(IntVector pos);
 	private void MakeUnique();
+	private bool HasInstances();
 	public void RemoveCube(IntVector pos);
 	public void AddCube(IntVector pos, CubeBase cube);
 	public void SetMaterial(IntVector iVector, Face face, byte material);
@@ -75,7 +74,8 @@ public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollid
 	public void ObjectLinkChanged(bool visible);
 	protected virtual void DirtyChunksRegeneratedHandler(HashSet<IntVector> chunksChanged);
 	public override void Destroy();
+	public void UpdatePrototypeScale(float scale);
 	[CompilerGenerated]
-	private IModelingConstraint _MVCubeModelBase_m__0();
+	private IModelingConstraint _.ctor_b__27_0();
 }
 

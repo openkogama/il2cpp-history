@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
@@ -62,7 +62,7 @@ namespace Newtonsoft.Json
 		public static string ToString(string value, char delimter);
 		public static string ToString(object value);
 		private static bool IsJsonPrimitiveTypeCode(TypeCode typeCode);
-		internal static bool IsJsonPrimitiveType(Type type);
+		internal static bool IsJsonPrimitiveType(System.Type type);
 		internal static bool IsJsonPrimitive(object value);
 		public static string SerializeObject(object value);
 		public static string SerializeObject(object value, Formatting formatting);
@@ -71,13 +71,13 @@ namespace Newtonsoft.Json
 		public static string SerializeObject(object value, Formatting formatting, JsonSerializerSettings settings);
 		public static object DeserializeObject(string value);
 		public static object DeserializeObject(string value, JsonSerializerSettings settings);
-		public static object DeserializeObject(string value, Type type);
+		public static object DeserializeObject(string value, System.Type type);
 		public static T DeserializeObject<T>(string value);
 		public static T DeserializeAnonymousType<T>(string value, T anonymousTypeObject);
 		public static T DeserializeObject<T>(string value, params JsonConverter[] converters);
 		public static T DeserializeObject<T>(string value, JsonSerializerSettings settings);
-		public static object DeserializeObject(string value, Type type, params JsonConverter[] converters);
-		public static object DeserializeObject(string value, Type type, JsonSerializerSettings settings);
+		public static object DeserializeObject(string value, System.Type type, params JsonConverter[] converters);
+		public static object DeserializeObject(string value, System.Type type, JsonSerializerSettings settings);
 		public static void PopulateObject(string value, object target);
 		public static void PopulateObject(string value, object target, JsonSerializerSettings settings);
 	}

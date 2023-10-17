@@ -5,7 +5,7 @@ void Assembly-CSharp-firstpass.dll::TimedObjectDestructor::TimedObjectDestructor
 
 {
   if (cRam_? == '\0') {
-    func_?(0x662a);
+    func_?(&StringLiteral_DestroyNow);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_Invoke((MonoBehaviour *)this,StringLiteral_DestroyNow,(this->fields).timeOut,(MethodInfo *)0x0);
@@ -19,11 +19,11 @@ void Assembly-CSharp-firstpass.dll::TimedObjectDestructor::TimedObjectDestructor
 
 {
   if (cRam_? == '\0') {
-    func_?(0x662b);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   if ((this->fields).detachChildren != 0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
     if (this_00 == (Transform *)0x0) {
       func_?();
       pcVar1 = (code *)swi(3);
@@ -32,11 +32,28 @@ void Assembly-CSharp-firstpass.dll::TimedObjectDestructor::TimedObjectDestructor
     }
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_DetachChildren(this_00,(MethodInfo *)0x0);
   }
-  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* TimedObjectDestructor() */
+
+void Assembly-CSharp-firstpass.dll::TimedObjectDestructor::TimedObjectDestructor__ctor(TimedObjectDestructor *this,MethodInfo *method)
+
+{
+  (this->fields).timeOut = 1.0;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
 }
 

@@ -10,7 +10,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using Newtonsoft.Json.Serialization;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
@@ -28,49 +28,34 @@ namespace Newtonsoft.Json
 		internal const FormatterAssemblyStyle DefaultTypeNameAssemblyFormat = FormatterAssemblyStyle.Simple;
 		internal static readonly StreamingContext DefaultContext;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private ReferenceLoopHandling _ReferenceLoopHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private MissingMemberHandling _MissingMemberHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private ObjectCreationHandling _ObjectCreationHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private NullValueHandling _NullValueHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private DefaultValueHandling _DefaultValueHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IList<JsonConverter> _Converters_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private PreserveReferencesHandling _PreserveReferencesHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private TypeNameHandling _TypeNameHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private FormatterAssemblyStyle _TypeNameAssemblyFormat_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private ConstructorHandling _ConstructorHandling_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IContractResolver _ContractResolver_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IReferenceResolver _ReferenceResolver_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private SerializationBinder _Binder_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private EventHandler<ErrorEventArgs> _Error_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private StreamingContext _Context_k__BackingField;
 	
 		// Properties

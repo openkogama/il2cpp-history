@@ -5,32 +5,25 @@ void Assembly-CSharp.dll::VersionTextSetter::VersionTextSetter_SetText(VersionTe
 
 {
   if (cRam_? == '\0') {
-    func_?(0x6eed);
+    func_?(&StringLiteral_u000Av__);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).textObject;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
   if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
     str0 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_ReleaseName(pKVar2,(MethodInfo *)0x0);
     pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
     if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
       str2 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionStringNoBuild(pKVar2,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pSStack3 = mscorlib.dll::System::String::String_Concat_3(str0,StringLiteral_u000Av__,str2,(MethodInfo *)0x0);
+      pSStack3 = mscorlib.dll::System::String::String_Concat_4(str0,StringLiteral_u000Av__,str2,(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        pIStack4 = (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        pMStack4 = (pTVar1->klass->vtable).set_text.method;
         pTStack5 = pTVar1;
-        (*(code *)(pTVar1->klass->vtable).set_text.method)();
+        (*(pTVar1->klass->vtable).set_text.methodPtr)();
         return;
       }
     }
   }
-  pIStack4 = (Il2CppMethodPointer)0x0;
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();

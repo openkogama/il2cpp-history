@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopLobbyStateController : LobbyFlowMenu
 {
@@ -37,6 +37,8 @@ public class DesktopLobbyStateController : LobbyFlowMenu
 	[SerializeField]
 	private EmbeddedPlayerConfig embeddedPlayerConfig;
 	[SerializeField]
+	private GameObject adminObserveButton;
+	[SerializeField]
 	private Image lobbyStateBlockingOverlay;
 	private GamePassesUI gamePassesUI;
 
@@ -45,29 +47,29 @@ public class DesktopLobbyStateController : LobbyFlowMenu
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowBoostMenu_c__AnonStorey0
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
-		internal BoostMenuController boostMenu;
+		public BoostMenuController boostMenu;
 
 		// Constructors
-		public _ShowBoostMenu_c__AnonStorey0();
+		public __c__DisplayClass18_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowBoostMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreateStartGoldRewardPopup_c__AnonStorey1
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
-		internal GameObject startGoldRewardPopup;
+		public GameObject startGoldRewardPopup;
 
 		// Constructors
-		public _CreateStartGoldRewardPopup_c__AnonStorey1();
+		public __c__DisplayClass19_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreateStartGoldRewardPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopCubeModelingControllerCubeTutorial : MonoBehaviour
 {
@@ -40,28 +40,27 @@ public class DesktopCubeModelingControllerCubeTutorial : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OverRideIfDefaultMaterial_c__Iterator0 : IEnumerator<object>
+	private sealed class _OverRideIfDefaultMaterial_d__20 : IEnumerator<object>
 	{
 		// Fields
-		internal DesktopCubeModelingControllerCubeTutorial _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public DesktopCubeModelingControllerCubeTutorial __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _OverRideIfDefaultMaterial_c__Iterator0();
+		public _OverRideIfDefaultMaterial_d__20(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -76,10 +75,10 @@ public class DesktopCubeModelingControllerCubeTutorial : MonoBehaviour
 	public void SetMaterial(byte materialId);
 	private void DoSetMaterial(byte materialId);
 	public void MaterialsPop();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_OverRideIfDefaultMaterial_d__20))]
 	private IEnumerator OverRideIfDefaultMaterial();
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _OnFirstTimeState_m__0(IUIStack x, BaseEventData y);
+	private void _OnFirstTimeState_b__12_0(IUIStack x, BaseEventData y);
 }
 

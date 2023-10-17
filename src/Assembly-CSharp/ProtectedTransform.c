@@ -118,13 +118,16 @@ Quaternion * Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_get_rot
 void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localPosition(ProtectedTransform *this,Vector3 value,MethodInfo *method)
 
 {
+  uVar1 = CONCAT44(unaff_EBP,unaff_ESI);
   if (cRam_? == '\0') {
-    func_?(0x5385);
+    ppDVar2 = &TypeInfo__UnityEngine__Debug;
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_localPosition_invalid,ppDVar2,uVar1);
     cRam_? = '\x01';
   }
-  bVar1 = MathFunctions::MathFunctions_IsVectorFloatsValid(value,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  bVar3 = MathFunctions::MathFunctions_IsVectorFloatsValid(value,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_localPosition_invalid,(MethodInfo *)0x0);
@@ -136,8 +139,8 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localPositi
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -147,14 +150,14 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localPositi
 void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localRotation(ProtectedTransform *this,Quaternion value,MethodInfo *method)
 
 {
-  fVar1 = value.x;
   if (cRam_? == '\0') {
-    func_?(0x5386);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_localRotation_invalid);
     cRam_? = '\x01';
   }
-  bVar2 = MathFunctions::MathFunctions_IsQuaternionFloatsValid(value,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  bVar1 = MathFunctions::MathFunctions_IsQuaternionFloatsValid(value,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_localRotation_invalid,(MethodInfo *)0x0);
@@ -162,19 +165,13 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localRotati
   }
   this_00 = (this->fields).transform;
   if (this_00 != (Transform *)0x0) {
-    auVar3._8_4_ = 0;
-    auVar3._0_8_ = value._8_8_;
-    auVar3 = auVar3 << 0x20;
-    fVar4 = (float)auVar3._0_4_;
-    this = (ProtectedTransform *)auVar3._4_4_;
-    value.x = (float)auVar3._8_4_;
-    value_00.x = fVar1;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(this_00,value_00,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(this_00,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -184,13 +181,16 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localRotati
 void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localScale(ProtectedTransform *this,Vector3 value,MethodInfo *method)
 
 {
+  uVar1 = CONCAT44(unaff_EBP,unaff_ESI);
   if (cRam_? == '\0') {
-    func_?(0x5387);
+    ppDVar2 = &TypeInfo__UnityEngine__Debug;
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_localScale_invalid,ppDVar2,uVar1);
     cRam_? = '\x01';
   }
-  bVar1 = MathFunctions::MathFunctions_IsVectorFloatsValid(value,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  bVar3 = MathFunctions::MathFunctions_IsVectorFloatsValid(value,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_localScale_invalid,(MethodInfo *)0x0);
@@ -202,8 +202,8 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localScale(
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -213,13 +213,16 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localScale(
 void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_position(ProtectedTransform *this,Vector3 value,MethodInfo *method)
 
 {
+  uVar1 = CONCAT44(unaff_EBP,unaff_ESI);
   if (cRam_? == '\0') {
-    func_?(0x5388);
+    ppDVar2 = &TypeInfo__UnityEngine__Debug;
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_position_invalid,ppDVar2,uVar1);
     cRam_? = '\x01';
   }
-  bVar1 = MathFunctions::MathFunctions_IsVectorFloatsValid(value,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  bVar3 = MathFunctions::MathFunctions_IsVectorFloatsValid(value,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_position_invalid,(MethodInfo *)0x0);
@@ -231,8 +234,8 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_position(Pr
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -242,14 +245,14 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_position(Pr
 void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_rotation(ProtectedTransform *this,Quaternion value,MethodInfo *method)
 
 {
-  fVar1 = value.x;
   if (cRam_? == '\0') {
-    func_?(0x5389);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_rotation_invalid);
     cRam_? = '\x01';
   }
-  bVar2 = MathFunctions::MathFunctions_IsQuaternionFloatsValid(value,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  bVar1 = MathFunctions::MathFunctions_IsQuaternionFloatsValid(value,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_rotation_invalid,(MethodInfo *)0x0);
@@ -257,19 +260,13 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_rotation(Pr
   }
   this_00 = (this->fields).transform;
   if (this_00 != (Transform *)0x0) {
-    auVar3._8_4_ = 0;
-    auVar3._0_8_ = value._8_8_;
-    auVar3 = auVar3 << 0x20;
-    fVar4 = (float)auVar3._0_4_;
-    this = (ProtectedTransform *)auVar3._4_4_;
-    value.x = (float)auVar3._8_4_;
-    value_00.x = fVar1;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_00,value_00,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_00,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

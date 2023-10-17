@@ -11,7 +11,7 @@ using MV.WorldObject.MetaData;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CEEditCubeTutorial : ESStateBase
 {
@@ -64,16 +64,16 @@ public class CEEditCubeTutorial : ESStateBase
 	}
 
 	[CompilerGenerated]
-	private sealed class _Exit_c__AnonStorey0
+	private sealed class __c__DisplayClass28_0
 	{
 		// Fields
-		internal string err;
+		public string err;
 
 		// Constructors
-		public _Exit_c__AnonStorey0();
+		public __c__DisplayClass28_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator handler, BaseEventData data);
+		internal void _Exit_b__0(IModalPopupCreator handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -94,6 +94,6 @@ public class CEEditCubeTutorial : ESStateBase
 	private void SetFirstTimeEventsHappened(FirstTimeState firstTimeState, FirstTimeEvent firstTimeEvent);
 	private bool DoReset();
 	[CompilerGenerated]
-	private void _Enter_m__0(IHandleCubeEditTutorial handler, BaseEventData data);
+	private void _Enter_b__23_0(IHandleCubeEditTutorial handler, BaseEventData data);
 }
 

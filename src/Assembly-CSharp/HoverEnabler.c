@@ -5,11 +5,11 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnDisable(HoverEnabler *thi
 
 {
   if (cRam_? == '\0') {
-    func_?(0x32e6);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).objectToEnable;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnDisable(HoverEnabler *thi
     }
   }
   pGVar1 = (this->fields).objectToDisable;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -54,11 +54,11 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnPointerEnter(HoverEnabler
 
 {
   if (cRam_? == '\0') {
-    func_?(0x32e7);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).objectToEnable;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -73,7 +73,7 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnPointerEnter(HoverEnabler
     }
   }
   pGVar1 = (this->fields).objectToDisable;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -87,26 +87,14 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnPointerEnter(HoverEnabler
       return;
     }
     if ((this->fields).objectToDisable != (GameObject *)0x0) {
-      pcVar3 = pcRam_?;
       if (pcRam_? == (code *)0x0) {
-        pcVar3 = (code *)func_?();
-        if (pcVar3 == (code *)0x0) {
-          puStack4 = (undefined *)0x0;
-          puStack5 = (undefined *)0x0;
-          puStack6 = (undefined *)func_?();
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
-          return;
-        }
+        pcRam_? = (code *)func_?();
       }
-      pcRam_? = pcVar3;
       (*pcRam_?)();
       return;
     }
   }
 code_?:
-  puStack6 = (undefined *)0x0;
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -120,11 +108,11 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnPointerExit(HoverEnabler 
 
 {
   if (cRam_? == '\0') {
-    func_?(0x32e8);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).objectToEnable;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -139,7 +127,7 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnPointerExit(HoverEnabler 
     }
   }
   pGVar1 = (this->fields).objectToDisable;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -153,26 +141,14 @@ void Assembly-CSharp.dll::HoverEnabler::HoverEnabler_OnPointerExit(HoverEnabler 
       return;
     }
     if ((this->fields).objectToDisable != (GameObject *)0x0) {
-      pcVar3 = pcRam_?;
       if (pcRam_? == (code *)0x0) {
-        pcVar3 = (code *)func_?();
-        if (pcVar3 == (code *)0x0) {
-          puStack4 = (undefined *)0x0;
-          puStack5 = (undefined *)0x0;
-          puStack6 = (undefined *)func_?();
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
-          return;
-        }
+        pcRam_? = (code *)func_?();
       }
-      pcRam_? = pcVar3;
       (*pcRam_?)();
       return;
     }
   }
 code_?:
-  puStack6 = (undefined *)0x0;
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();

@@ -8,67 +8,83 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Utilities
 {
 	internal static class CollectionUtils
 	{
 		// Nested types
+		[Serializable]
 		[CompilerGenerated]
-		private sealed class _TryGetSingleItem_c__AnonStorey0<T>
+		private sealed class __c__0<T>
 		{
 			// Fields
-			internal IList<T> list;
-			internal bool returnDefaultIfEmpty;
+			public static readonly __c__0<T> __9;
+			public static Func<object, bool> __9__0_0;
 	
 			// Constructors
-			public _TryGetSingleItem_c__AnonStorey0();
+			static __c__0();
+			public __c__0();
 	
 			// Methods
-			internal T __m__0();
+			internal bool _CastValid_b__0_0(object o);
 		}
 	
 		[CompilerGenerated]
-		private sealed class _CreateCollectionWrapper_c__AnonStorey1
+		private sealed class __c__DisplayClass16_0<T>
 		{
 			// Fields
-			internal Type collectionDefinition;
-			internal object list;
+			public IList<T> list;
+			public bool returnDefaultIfEmpty;
 	
 			// Constructors
-			public _CreateCollectionWrapper_c__AnonStorey1();
+			public __c__DisplayClass16_0();
 	
 			// Methods
-			internal object __m__0(Type t, IList<object> a);
+			internal T _TryGetSingleItem_b__0();
 		}
 	
 		[CompilerGenerated]
-		private sealed class _CreateListWrapper_c__AnonStorey2
+		private sealed class __c__DisplayClass25_0
 		{
 			// Fields
-			internal Type listDefinition;
-			internal object list;
+			public System.Type collectionDefinition;
+			public object list;
 	
 			// Constructors
-			public _CreateListWrapper_c__AnonStorey2();
+			public __c__DisplayClass25_0();
 	
 			// Methods
-			internal object __m__0(Type t, IList<object> a);
+			internal object _CreateCollectionWrapper_b__0(System.Type t, IList<object> a);
 		}
 	
 		[CompilerGenerated]
-		private sealed class _CreateDictionaryWrapper_c__AnonStorey3
+		private sealed class __c__DisplayClass26_0
 		{
 			// Fields
-			internal Type dictionaryDefinition;
-			internal object dictionary;
+			public System.Type listDefinition;
+			public object list;
 	
 			// Constructors
-			public _CreateDictionaryWrapper_c__AnonStorey3();
+			public __c__DisplayClass26_0();
 	
 			// Methods
-			internal object __m__0(Type t, IList<object> a);
+			internal object _CreateListWrapper_b__0(System.Type t, IList<object> a);
+		}
+	
+		[CompilerGenerated]
+		private sealed class __c__DisplayClass27_0
+		{
+			// Fields
+			public System.Type dictionaryDefinition;
+			public object dictionary;
+	
+			// Constructors
+			public __c__DisplayClass27_0();
+	
+			// Methods
+			internal object _CreateDictionaryWrapper_b__0(System.Type t, IList<object> a);
 		}
 	
 		// Methods
@@ -89,22 +105,20 @@ namespace Newtonsoft.Json.Utilities
 		public static T GetSingleItem<T>(IList<T> list);
 		public static T GetSingleItem<T>(IList<T> list, bool returnDefaultIfEmpty);
 		public static IList<T> Minus<T>(IList<T> list, IList<T> minus);
-		public static IList CreateGenericList(Type listType);
-		public static IDictionary CreateGenericDictionary(Type keyType, Type valueType);
-		public static bool IsListType(Type type);
-		public static bool IsCollectionType(Type type);
-		public static bool IsDictionaryType(Type type);
+		public static IList CreateGenericList(System.Type listType);
+		public static IDictionary CreateGenericDictionary(System.Type keyType, System.Type valueType);
+		public static bool IsListType(System.Type type);
+		public static bool IsCollectionType(System.Type type);
+		public static bool IsDictionaryType(System.Type type);
 		public static IWrappedCollection CreateCollectionWrapper(object list);
 		public static IWrappedList CreateListWrapper(object list);
 		public static IWrappedDictionary CreateDictionaryWrapper(object dictionary);
-		public static object CreateAndPopulateList(Type listType, Action<IList, bool> populateList);
-		public static Array ToArray(Array initial, Type type);
+		public static object CreateAndPopulateList(System.Type listType, Action<IList, bool> populateList);
+		public static Array ToArray(Array initial, System.Type type);
 		private static IList<int> GetDimensions(IList values);
-		public static Array ToMultidimensionalArray(IList values, Type type, int rank);
+		public static Array ToMultidimensionalArray(IList values, System.Type type, int rank);
 		private static object JaggedArrayGetValue(IList values, int[] indices);
 		private static void CopyFromJaggedToMultidimensionalArray(IList values, Array multidimensionalArray, int[] indices);
-		[CompilerGenerated]
-		private static bool _CastValid_1_m__0<T>(object o);
 	
 		// Extension methods
 		public static IEnumerable<T> CastValid<T>(this IEnumerable enumerable);

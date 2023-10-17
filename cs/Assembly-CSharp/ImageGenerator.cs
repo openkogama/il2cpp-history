@@ -9,50 +9,42 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class ImageGenerator
 {
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CreateTextureFromData_c__Iterator0 : IEnumerator<object>
+	private sealed class _CreateTextureFromData_d__0 : IEnumerator<object>
 	{
 		// Fields
-		internal int _textureSize___0;
-		internal Texture2D _previewTexture___0;
-		internal GameObject _previewRoot___0;
-		internal MVWorldObjectClient wo;
-		internal MVComponent[] _mvComponents___0;
-		internal MVComponent[] _locvar0;
-		internal int _locvar1;
-		internal GameObject _itemCopy___0;
-		internal MVComponent[] _locvar2;
-		internal int _locvar3;
-		internal ObjectPreviewer _objectPreviewer___0;
-		internal byte[] _bytes___0;
-		internal Action<byte[]> callback;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public MVWorldObjectClient wo;
+		public Action<byte[]> callback;
+		private Texture2D _previewTexture_5__2;
+		private GameObject _previewRoot_5__3;
+		private GameObject _itemCopy_5__4;
+		private ObjectPreviewer _objectPreviewer_5__5;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _CreateTextureFromData_c__Iterator0();
+		public _CreateTextureFromData_d__0(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Methods
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_CreateTextureFromData_d__0))]
 	public static IEnumerator CreateTextureFromData(MVWorldObjectClient wo, Action<byte[]> callback);
 }
 

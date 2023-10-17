@@ -7,20 +7,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal class ESWalkMode : ESStateBase
 {
-	// Fields
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditModeController> __f__am_cache0;
-
 	// Nested types
 	private enum EnterPlayFromEditState
 	{
 		EnterPlayMode = 0,
 		SelectTeamOrSpawnRole = 1,
 		WaitForRoundToStart = 2
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IEditModeController> __9__0_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Enter_b__0_0(IEditModeController x, BaseEventData y);
 	}
 
 	// Constructors
@@ -41,7 +53,5 @@ internal class ESWalkMode : ESStateBase
 	private void SetToHiddenMode();
 	private bool WasPlayingAsDefaultAvatar();
 	private void OnNewSpawnRoleSelected(int newSpawnRoleId);
-	[CompilerGenerated]
-	private static void _Enter_m__0(IEditModeController x, BaseEventData y);
 }
 

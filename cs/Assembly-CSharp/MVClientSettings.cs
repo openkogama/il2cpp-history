@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class MVClientSettings
 {
@@ -15,10 +15,8 @@ public static class MVClientSettings
 	private static ClientSettingFlags flags;
 	private static bool flagsSet;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static int _PostGameInterstitialIntervalInSeconds_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static int _ReviveFlags_k__BackingField;
 
 	// Properties
@@ -35,6 +33,7 @@ public static class MVClientSettings
 	public static bool WebAdSDKsEnabled { get; }
 	public static bool GameDistributionAdsEnabled { get; }
 	public static bool PokiAdsEnabled { get; }
+	public static bool CrazyAdsEnabled { get; }
 	public static bool PlayButtonAdsRegisteredUsers { get; }
 	public static bool FirstPreviewTierFreeEnabled { get; }
 	public static bool ReviveEnabled { get; }
@@ -43,13 +42,10 @@ public static class MVClientSettings
 	public static bool InterstitialsAdsEnabled { get; }
 	public static bool RewardedAdsEnabled { get; }
 	public static bool EnableStathat { get; }
-
-	// Constructors
-	static MVClientSettings();
+	public static bool IsSubscriber { get; }
 
 	// Methods
 	public static bool IsFlagSet(ClientSettingFlags flag);
 	private static bool IsReviveFlagEnabledForSessionType();
-	public static bool IsSubscriber();
 }
 

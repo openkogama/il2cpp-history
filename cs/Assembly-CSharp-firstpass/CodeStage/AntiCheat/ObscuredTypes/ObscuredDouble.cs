@@ -9,7 +9,7 @@ using CodeStage.AntiCheat.Common;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.ObscuredTypes
 {
@@ -22,7 +22,7 @@ namespace CodeStage.AntiCheat.ObscuredTypes
 		private long currentCryptoKey;
 		[SerializeField]
 		private ACTkByte8 hiddenValue;
-		[FormerlySerializedAs]
+		[FormerlySerializedAs("hiddenValue")]
 		[SerializeField]
 		private byte[] hiddenValueOld;
 		[SerializeField]

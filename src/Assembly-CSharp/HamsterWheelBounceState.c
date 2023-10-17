@@ -4,42 +4,38 @@
 Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_ApplyBounceVelocityMaterials(Vector3 *__return_storage_ptr__,HamsterWheelBounceState *this,Vector3 velocity,MethodInfo *method)
 
 {
+  uVar1 = (this->fields).bounceVelocity.x;
+  uVar2 = (this->fields).bounceVelocity.y;
+  fVar3 = (this->fields).bounceVelocity.z;
   if (cRam_? == '\0') {
-    func_?(0x31e3);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  uStack_1._0_4_ = (this->fields).bounceVelocity.x;
-  uStack_1._4_4_ = (this->fields).bounceVelocity.y;
-  fVar2 = (this->fields).bounceVelocity.z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero(&VStack_4,(MethodInfo *)0x0);
-  lhs.z = fVar2;
-  lhs.x = (float)(undefined4)uStack_1;
-  lhs.y = (float)uStack_1._4_4_;
-  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Inequality(lhs,*pVVar3,(MethodInfo *)0x0);
-  if (bVar5 == 0) {
-    uVar6 = velocity._0_8_;
+  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar5 = (pVVar4->zeroVector).x;
+  uVar6 = (pVVar4->zeroVector).y;
+  fVar3 = fVar3 - (pVVar4->zeroVector).z;
+  if (((float)uVar2 - (float)uVar6) * ((float)uVar2 - (float)uVar6) + ((float)uVar1 - (float)uVar5) * ((float)uVar1 - (float)uVar5) + fVar3 * fVar3 < 9.9999994e-11) {
+    uVar7 = velocity._0_8_;
   }
   else {
-    uVar6._0_4_ = (this->fields).bounceVelocity.x;
-    uVar6._4_4_ = (this->fields).bounceVelocity.y;
+    uVar7._0_4_ = (this->fields).bounceVelocity.x;
+    uVar7._4_4_ = (this->fields).bounceVelocity.y;
     velocity.z = (this->fields).bounceVelocity.z;
   }
   (this->fields).bounced = 0;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero(&VStack_4,(MethodInfo *)0x0);
-  fVar7 = pVVar3->y;
-  fVar2 = pVVar3->z;
-  (this->fields).bounceVelocity.x = pVVar3->x;
-  (this->fields).bounceVelocity.y = fVar7;
-  (this->fields).bounceVelocity.z = fVar2;
-  __return_storage_ptr__->x = (float)(int)uVar6;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar6 >> 0x20);
+  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar8 = (pVVar4->zeroVector).y;
+  fVar3 = (pVVar4->zeroVector).z;
+  (this->fields).bounceVelocity.x = (pVVar4->zeroVector).x;
+  (this->fields).bounceVelocity.y = fVar8;
+  (this->fields).bounceVelocity.z = fVar3;
+  __return_storage_ptr__->x = (float)(int)uVar7;
+  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar7 >> 0x20);
   __return_storage_ptr__->z = velocity.z;
   return __return_storage_ptr__;
 }
@@ -50,67 +46,43 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_
 Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_GetOutVectorFromInVector(Vector3 *__return_storage_ptr__,Vector3 normal,Vector3 inVector,MethodInfo *method)
 
 {
+  fVar1 = -inVector.x;
+  fVar2 = -inVector.y;
+  fVar3 = -inVector.z;
+  uVar4 = inVector._0_8_ ^ 0x8000000080000000;
+  inVector.x = (float)uVar4;
+  inVector.y = (float)(uVar4 >> 0x20);
+  inVector.z = fVar3;
+  fVar5 = (float10)func_?(&inVector,0);
+  fVar6 = (float)fVar5;
+  fVar7 = normal.x * fVar6;
+  fVar8 = normal.y * fVar6;
+  inVector.z = normal.z * fVar6;
   if (cRam_? == '\0') {
-    func_?(0x31e4);
+    func_?(&TypeInfo__UnityEngine__Mathf);
     cRam_? = '\x01';
   }
-  fVar1 = inVector.z;
-  fVar2 = inVector.x;
-  fVar3 = inVector.y;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  fVar6 = fVar8 * fVar8 + fVar7 * fVar7 + inVector.z * inVector.z;
+  if (fVar6 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3);
+      cRam_? = '\x01';
+    }
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar10._0_4_ = (pVVar9->zeroVector).x;
+    uVar10._4_4_ = (pVVar9->zeroVector).y;
+    fVar11 = (pVVar9->zeroVector).z;
   }
-  a_00.y = fVar3;
-  a_00.x = fVar2;
-  a_00.z = fVar1;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation((Vector3 *)&stack0xfffffff0,a_00,(MethodInfo *)0x0);
-  uVar5 = pVVar4->x;
-  uVar6 = pVVar4->y;
-  inVector.z = pVVar4->z;
-  fVar2 = pVVar4->z;
-  inVector.x = (float)uVar5;
-  inVector.y = (float)uVar6;
-  fVar7 = (float10)func_?(&inVector,0);
-  fVar1 = (float)fVar7;
-  a_01.y = normal.y;
-  a_01.x = normal.x;
-  a_01.z = normal.z;
-  fVar3 = normal.z;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply(&normal,a_01,fVar1,(MethodInfo *)0x0);
-  uVar8 = pVVar4->x;
-  uVar9 = pVVar4->y;
-  __return_storage_ptr__ = (Vector3 *)pVVar4->z;
-  normal.x = 0.0;
-  fVar10 = (float)uVar9;
-  vector.y = fVar1;
-  vector.x = fVar3;
-  vector.z = fVar2;
-  VVar11.x = (float)uVar8;
-  VVar11 = (Vector3)CONCAT84(uVar12,VVar11.x);
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Project((Vector3 *)&stack0xffffffe4,vector,VVar11,(MethodInfo *)0x0);
-  fStack13 = inVector.z;
-  fVar1 = pVVar4->z;
-  inVector.z = inVector.x;
-  uVar14 = pVVar4->x;
-  uVar15 = pVVar4->y;
-  normal.y = (float)&stack0xffffffe4;
-  normal.x = (float)&UNK_?;
-  VVar11.y = inVector.y;
-  VVar11.x = inVector.x;
-  VVar11.z = fStack13;
-  normal.z = (float)uVar14;
-  inVector.x = (float)uVar15;
-  inVector.y = fVar1;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction((Vector3 *)normal.y,*pVVar4,VVar11,(MethodInfo *)0x0);
-  a.y = normal.z;
-  a.x = normal.y;
-  a.z = fVar1;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition(&normal,a,*pVVar4,(MethodInfo *)0x0);
-  fVar2 = pVVar4->y;
-  fVar1 = pVVar4->z;
-  __return_storage_ptr__->x = pVVar4->x;
-  __return_storage_ptr__->y = fVar2;
-  __return_storage_ptr__->z = fVar1;
+  else {
+    fVar12 = fVar8 * fVar2 + fVar7 * fVar1 + inVector.z * fVar3;
+    fVar11 = (inVector.z * fVar12) / fVar6;
+    uVar10 = CONCAT44((fVar8 * fVar12) / fVar6,(fVar12 * fVar7) / fVar6);
+  }
+  inVector.x = (float)uVar10;
+  inVector.y = (float)((ulonglong)uVar10 >> 0x20);
+  __return_storage_ptr__->x = inVector.x + (inVector.x - fVar1);
+  __return_storage_ptr__->y = inVector.y + (inVector.y - fVar2);
+  __return_storage_ptr__->z = fVar11 + (fVar11 - fVar3);
   return __return_storage_ptr__;
 }
 
@@ -187,147 +159,84 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_Handl
 void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_UpdateBounceStateMaterial(HamsterWheelBounceState *this,MVControllerColliderHit mvControllerColliderHit,MethodInfo *method)
 
 {
-  pHVar1 = this;
   if (cRam_? == '\0') {
-    func_?(0x31e5);
+    func_?(&TypeInfo__MVPhysics);
     cRam_? = '\x01';
   }
-  fStack_2 = 0.0;
-  uStack_3 = 0;
-  func_?(&stack0xffffff04,0,0x90);
-  pMVar4 = (this->fields).interactable;
+  pMVar1 = (this->fields).interactable;
   (this->fields).bounced = 0;
-  if (mvControllerColliderHit.hit.interactionFlags._4_4_ != (MVMaterial *)0x0) {
-    pPVar5 = MVMaterial::MVMaterial_get_PhysicalProperties((PhysicalProperties *)&stack0xffffffa0,mvControllerColliderHit.hit.interactionFlags._4_4_,(MethodInfo *)0x0);
-    if (pMVar4 != (MVInteractableBase *)0x0) {
-      fVar6 = (float10)(*(code *)(pMVar4->klass->vtable).__unknown_5.method)(pMVar4,0xd,pPVar5->bouncyness + 0.6,(pMVar4->klass->vtable).__unknown_6.methodPtr);
-      fVar7 = (float)fVar6;
-      if (0.0 < fVar7) {
-        fStack_2 = mvControllerColliderHit.impactVelocity.y;
-        uStack_3._0_4_ = mvControllerColliderHit.slopeNormal.z;
-        uStack_3._4_4_ = mvControllerColliderHit.impactVelocity.x;
-        func_?(&uStack_3,0);
-        fVar8 = fStack_2;
-        uVar9 = uStack_3;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Vector3);
-        }
-        a.z = fVar8;
-        a.x = (float)uVar9;
-        a.y = SUB84(uVar9,4);
-        pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation(&VStack_11,a,(MethodInfo *)0x0);
-        uStack_3._0_4_ = pVVar10->x;
-        uStack_3._4_4_ = pVVar10->y;
-        fStack_2 = pVVar10->z;
-        rhs.z = mvControllerColliderHit.slopeNormal.y;
-        rhs.x = mvControllerColliderHit.elipsoidNormal.z;
-        rhs.y = mvControllerColliderHit.slopeNormal.x;
-        pHStack_12 = (HamsterWheelBounceState *)UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Dot(*pVVar10,rhs,(MethodInfo *)0x0);
-        if (0.0 < (float)pHStack_12) {
-          fVar6 = (float10)func_?();
-          pHStack_12 = (HamsterWheelBounceState *)(float)(fVar6 * (float10)(float)pHStack_12 * (float10)fVar7);
-          if (4.5 < (float)pHStack_12) {
+  if (mvControllerColliderHit.hit.interactionFlags._4_4_ != 0) {
+    uStack_2 = *(undefined4 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x1c);
+    fStack_3 = *(float *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x20);
+    VStack_4._0_8_ = *(undefined8 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x24);
+    VStack_4.z = *(float *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x2c);
+    if (pMVar1 != (MVInteractableBase *)0x0) {
+      pIStack_5 = (pMVar1->klass->vtable).__unknown_6.methodPtr;
+      fVar6 = (float10)(*pIStack_5)(pMVar1,0xd,fStack_3 + 0.6,(pMVar1->klass->vtable).__unknown_6.method);
+      pIStack_5 = (Il2CppMethodPointer)(float)fVar6;
+      if (0.0 < (float)pIStack_5) {
+        VStack_4.z = mvControllerColliderHit.impactVelocity.y;
+        VStack_4.x = mvControllerColliderHit.slopeNormal.z;
+        VStack_4.y = mvControllerColliderHit.impactVelocity.x;
+        UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&VStack_4,(MethodInfo *)0x0);
+        fStack_7 = mvControllerColliderHit.elipsoidNormal.z * -VStack_4.x + mvControllerColliderHit.slopeNormal.x * -VStack_4.y + mvControllerColliderHit.slopeNormal.y * -VStack_4.z;
+        if (0.0 < fStack_7) {
+          fVar6 = (float10)func_?(&mvControllerColliderHit.slopeNormal.z,0);
+          fStack_7 = (float)(fVar6 * (float10)fStack_7 * (float10)(float)pIStack_5);
+          if (4.5 < fStack_7) {
+            puVar8 = (undefined4 *)&stack0x00000008;
+            puVar9 = (undefined4 *)&stack0xffffff50;
+            for (iVar10 = 0x24; iVar10 != 0; iVar10 = iVar10 + -1) {
+              *puVar9 = *puVar8;
+              puVar8 = puVar8 + 1;
+              puVar9 = puVar9 + 1;
+            }
             (this->fields).bounced = 1;
-            puVar13 = (undefined4 *)&stack0x00000008;
-            puVar14 = (undefined4 *)&stack0xffffff04;
-            for (iVar15 = 0x24; iVar15 != 0; iVar15 = iVar15 + -1) {
-              *puVar14 = *puVar13;
-              puVar13 = puVar13 + 1;
-              puVar14 = puVar14 + 1;
+            fVar6 = (float10)func_?(auStack_11,0);
+            if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__MVPhysics);
             }
-            fVar6 = (float10)func_?();
-            pHStack_12 = (HamsterWheelBounceState *)(float)fVar6;
-            if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
-              func_?();
+            fStack_7 = (float)pIStack_5 * 10.0;
+            fVar12 = MVPhysics::MVPhysics_CalculateJumpForceFromVerticalVelocity((float)fVar6,(MethodInfo *)0x0);
+            fVar12 = fVar12 * (float)pIStack_5;
+            if (fVar12 < 0.0) {
+              fVar12 = 0.0;
             }
-            pHStack_12 = (HamsterWheelBounceState *)MVPhysics::MVPhysics_CalculateJumpForceFromVerticalVelocity((float)pHStack_12,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-              func_?();
+            else if (fStack_7 < fVar12) {
+              fVar12 = fStack_7;
             }
-            fVar8 = fVar7 * 10.0;
-            fVar16 = 0.0;
-            fVar7 = (float)pHStack_12 * fVar7;
-            fVar17 = 0.0;
-            targetJumpHeight = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp(fVar7,0.0,fVar8,(MethodInfo *)0x0);
-            pHStack_12 = (HamsterWheelBounceState *)MVPhysics::MVPhysics_CalculateJumpVerticalSpeed(targetJumpHeight,(MethodInfo *)0x0);
-            VStack_11.y = fVar16;
-            VStack_11.x = fVar8;
-            uVar9._4_4_ = fVar7;
-            uVar9._0_4_ = (float)&UNK_?;
-            VStack_11.z = fStack_18;
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
+            fVar13 = MVPhysics::MVPhysics_CalculateJumpVerticalSpeed(fVar12,(MethodInfo *)0x0);
+            normal.y = mvControllerColliderHit.slopeNormal.x;
+            normal.x = mvControllerColliderHit.elipsoidNormal.z;
+            normal.z = mvControllerColliderHit.slopeNormal.y;
+            inVector.z = mvControllerColliderHit.impactVelocity.y;
+            inVector.x = mvControllerColliderHit.slopeNormal.z;
+            inVector.y = mvControllerColliderHit.impactVelocity.x;
+            pVVar14 = HamsterWheelBounceState_GetOutVectorFromInVector((Vector3 *)&mvControllerColliderHit.hit.interactionFlags,normal,inVector,(MethodInfo *)0x0);
+            fVar15 = pVVar14->y;
+            fVar12 = pVVar14->z;
+            (this->fields).bounceVelocity.x = pVVar14->x;
+            (this->fields).bounceVelocity.y = fVar15;
+            (this->fields).bounceVelocity.z = fVar12;
+            UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&(this->fields).bounceVelocity,(MethodInfo *)0x0);
+            if (fVar13 < 10.0) {
+              fVar13 = fVar13 * (fVar13 / 10.0);
             }
-            uVar19 = VStack_11._0_8_;
-            if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-              func_?();
-            }
-            a_00.z = VStack_11.z;
-            a_00.x = (float)uVar19;
-            a_00.y = SUB84(uVar19,4);
-            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation((Vector3 *)&stack0xffffff94,a_00,(MethodInfo *)0x0);
-            VStack_11.x = pVVar10->x;
-            VStack_11.y = pVVar10->y;
-            VStack_11.z = pVVar10->z;
-            uVar19._0_4_ = pVVar10->x;
-            uVar19._4_4_ = pVVar10->y;
-            fVar7 = pVVar10->z;
-            fVar6 = (float10)func_?();
-            a_01.z = fVar17;
-            a_01.x = (float)uVar9;
-            a_01.y = SUB84(uVar9,4);
-            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply((Vector3 *)&stack0xffffffa8,a_01,(float)fVar6,(MethodInfo *)0x0);
-            vector.z = fVar7;
-            vector.x = (float)uVar19;
-            vector.y = SUB84(uVar19,4);
-            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Project((Vector3 *)&stack0xffffffd4,vector,*pVVar10,(MethodInfo *)0x0);
-            uVar20._0_4_ = pVVar10->x;
-            uVar20._4_4_ = pVVar10->y;
-            fVar7 = pVVar10->z;
-            b.z = VStack_11.z;
-            b.x = VStack_11.x;
-            b.y = VStack_11.y;
-            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction((Vector3 *)&stack0xffffffbc,*pVVar10,b,(MethodInfo *)0x0);
-            a_02.z = fVar7;
-            a_02.x = (float)uVar20;
-            a_02.y = SUB84(uVar20,4);
-            pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition((Vector3 *)&stack0xffffffc8,a_02,*pVVar10,(MethodInfo *)0x0);
-            pVVar10 = &(this->fields).bounceVelocity;
-            fVar8 = pVVar21->y;
-            fVar7 = pVVar21->z;
-            pVVar10->x = pVVar21->x;
-            pVVar10->y = fVar8;
-            (this->fields).bounceVelocity.z = fVar7;
-            func_?();
-            this = pHStack_12;
-            if ((float)pHStack_12 < 10.0) {
-              this = (HamsterWheelBounceState *)(((float)pHStack_12 / 10.0) * (float)pHStack_12);
-            }
-            uVar22._0_4_ = pVVar10->x;
-            uVar22._4_4_ = pVVar10->y;
-            fVar7 = (pHVar1->fields).bounceVelocity.z;
-            if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-              func_?();
-            }
-            a_03.z = fVar7;
-            a_03.x = (float)uVar22;
-            a_03.y = SUB84(uVar22,4);
-            pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply((Vector3 *)&stack0xffffffbc,a_03,(float)this,(MethodInfo *)0x0);
-            fVar8 = pVVar21->y;
-            fVar7 = pVVar21->z;
-            pVVar10->x = pVVar21->x;
-            pVVar10->y = fVar8;
-            (pHVar1->fields).bounceVelocity.z = fVar7;
+            uVar16 = (this->fields).bounceVelocity.x;
+            uVar17 = (this->fields).bounceVelocity.y;
+            fVar12 = (this->fields).bounceVelocity.z;
+            (this->fields).bounceVelocity.x = (float)uVar16 * fVar13;
+            (this->fields).bounceVelocity.y = (float)uVar17 * fVar13;
+            (this->fields).bounceVelocity.z = fVar12 * fVar13;
           }
         }
       }
       return;
     }
   }
-  func_?(0);
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  func_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -338,20 +247,18 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(0x31e6);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero(&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).bounceVelocity.x = pVVar1->x;
-  (this->fields).bounceVelocity.y = fVar3;
-  (this->fields).bounceVelocity.z = fVar4;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).bounceVelocity.x = (pVVar1->zeroVector).x;
+  (this->fields).bounceVelocity.y = fVar2;
+  (this->fields).bounceVelocity.z = fVar3;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).interactable = interactable;
+  func_?(&this->fields,interactable);
   return;
 }
 

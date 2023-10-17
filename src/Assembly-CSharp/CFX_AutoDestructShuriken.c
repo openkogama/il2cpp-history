@@ -5,17 +5,18 @@ IEnumerator * Assembly-CSharp.dll::CFX_AutoDestructShuriken::CFX_AutoDestructShu
 
 {
   if (cRam_? == '\0') {
-    func_?(0x13dd);
+    func_?(&TypeInfo__CFX_AutoDestructShuriken___CheckIfAlive_d__2);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__CFX_AutoDestructShuriken___CheckIfAlive_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__CFX_AutoDestructShuriken___CheckIfAlive_d__2);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -28,7 +29,7 @@ void Assembly-CSharp.dll::CFX_AutoDestructShuriken::CFX_AutoDestructShuriken_OnE
 
 {
   if (cRam_? == '\0') {
-    func_?(0x13de);
+    func_?(&StringLiteral_CheckIfAlive);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine((MonoBehaviour *)this,StringLiteral_CheckIfAlive,(MethodInfo *)0x0);

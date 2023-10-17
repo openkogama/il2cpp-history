@@ -5,7 +5,9 @@ String * Assembly-CSharp.dll::TimeReward+RequestRewardData+RewardData::TimeRewar
 
 {
   if (cRam_? == '\0') {
-    func_?(0x5b33);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_rewardEnabled__0___timeInSeconds);
     cRam_? = '\x01';
   }
   pTVar1 = this;
@@ -15,9 +17,6 @@ String * Assembly-CSharp.dll::TimeReward+RequestRewardData+RewardData::TimeRewar
   arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
   iStack_3 = (pTVar1->fields).gold;
   arg2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar4 = mscorlib.dll::System::String::String_Format_2(StringLiteral_rewardEnabled__0___timeInSeconds,arg0,arg1,arg2,(MethodInfo *)0x0);
   return pSVar4;
 }

@@ -5,7 +5,7 @@ IAsyncResult * Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles
 
 {
   if (cRam_? == '\0') {
-    func_?(0x6350);
+    func_?(&TypeInfo__UnityEngine__Quaternion);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

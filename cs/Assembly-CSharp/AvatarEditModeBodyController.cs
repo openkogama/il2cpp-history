@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarEditModeBodyController : MonoBehaviour, IAvatarEditAnimationState
 {
@@ -38,98 +38,111 @@ public class AvatarEditModeBodyController : MonoBehaviour, IAvatarEditAnimationS
 	public Action<int, Texture2D> Picture2DTakenCallback;
 	private GameObject publishAvatarBtn;
 	public static CloudyThemeBase Theme;
-	[CompilerGenerated]
-	private static Func<MVWorldObjectClient, bool> __f__am_cache0;
-	[CompilerGenerated]
-	private static Func<MVWorldObjectClient, bool> __f__am_cache1;
-	[CompilerGenerated]
-	private static Func<MVWorldObjectClient, int> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditStateCommands> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache5;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache6;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache7;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache8;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache9;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheA;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cacheB;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IPurchaseSoundManager> __f__am_cacheC;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheD;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditStateCommands> __f__am_cacheE;
 
 	// Properties
 	public MVBody CurrentBody { get; }
 	public Vector3 DisplayPos { get; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _ResetCurrentBody_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal ResetAvatarHandler resetHandler;
+		public static readonly __c __9;
+		public static Func<MVWorldObjectClient, bool> __9__23_0;
+		public static Func<MVWorldObjectClient, bool> __9__23_1;
+		public static Func<MVWorldObjectClient, int> __9__23_2;
+		public static ExecuteEvents.EventFunction<IEditStateCommands> __9__27_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__27_2;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__27_3;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__34_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__36_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__38_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__39_1;
+		public static ExecuteEvents.EventFunction<IPurchaseSoundManager> __9__43_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__43_1;
+		public static ExecuteEvents.EventFunction<IEditStateCommands> __9__43_3;
 
 		// Constructors
-		public _ResetCurrentBody_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal bool _Initialize_b__23_0(MVWorldObjectClient wo);
+		internal bool _Initialize_b__23_1(MVWorldObjectClient wo);
+		internal int _Initialize_b__23_2(MVWorldObjectClient s);
+		internal void _ResetCallback_b__27_1(IEditStateCommands x, BaseEventData y);
+		internal void _ResetCallback_b__27_2(IUIStack x, BaseEventData y);
+		internal void _ResetCallback_b__27_3(IUIStack x, BaseEventData y);
+		internal void _TakeScreenshot_b__34_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPurchaseAvatarConfirmation_b__36_0(IUIStack x, BaseEventData y);
+		internal void _OnProductPurchaseAvatarResponse_b__37_0(IUIStack x, BaseEventData y);
+		internal void _InitializedPurchasedAvatar_b__38_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnActiveAvatarSetAfterPurchase_b__39_0(IUIStack x, BaseEventData y);
+		internal void _OnActiveAvatarSetAfterPurchase_b__39_1(IModalPopupCreator x, BaseEventData y);
+		internal void _MVNetworGame_ScreenshotUploadedHandler_b__43_0(IPurchaseSoundManager x, BaseEventData y);
+		internal void _MVNetworGame_ScreenshotUploadedHandler_b__43_1(IUIStack x, BaseEventData y);
+		internal void _MVNetworGame_ScreenshotUploadedHandler_b__43_3(IEditStateCommands x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPurchaseAvatarConfirmation_c__AnonStorey1
+	private sealed class __c__DisplayClass25_0
 	{
 		// Fields
-		internal PleaseWaitPopup popup;
+		public ResetAvatarHandler resetHandler;
 
 		// Constructors
-		public _OnPurchaseAvatarConfirmation_c__AnonStorey1();
+		public __c__DisplayClass25_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ResetCurrentBody_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnProductPurchaseAvatarResponse_c__AnonStorey2
+	private sealed class __c__DisplayClass36_0
 	{
 		// Fields
-		internal int returnCode;
-		internal AvatarEditModeBodyController _this;
+		public PleaseWaitPopup popup;
 
 		// Constructors
-		public _OnProductPurchaseAvatarResponse_c__AnonStorey2();
+		public __c__DisplayClass36_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPurchaseAvatarConfirmation_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _MVNetworGame_ScreenshotUploadedHandler_c__AnonStorey3
+	private sealed class __c__DisplayClass37_0
 	{
 		// Fields
-		internal NotificationPopup popup;
+		public int returnCode;
+		public AvatarEditModeBodyController __4__this;
 
 		// Constructors
-		public _MVNetworGame_ScreenshotUploadedHandler_c__AnonStorey3();
+		public __c__DisplayClass37_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnProductPurchaseAvatarResponse_b__1(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass43_0
+	{
+		// Fields
+		public NotificationPopup popup;
+
+		// Constructors
+		public __c__DisplayClass43_0();
+
+		// Methods
+		internal void _MVNetworGame_ScreenshotUploadedHandler_b__2(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
 	public AvatarEditModeBodyController();
-	static AvatarEditModeBodyController();
 
 	// Methods
 	public void Initialize();
@@ -156,40 +169,10 @@ public class AvatarEditModeBodyController : MonoBehaviour, IAvatarEditAnimationS
 	public void SetToNextAnimation();
 	public void Set(string animation);
 	[CompilerGenerated]
-	private static bool _Initialize_m__0(MVWorldObjectClient wo);
+	private void _ResetCallback_b__27_0(IAvatarSetBodyGroup x, BaseEventData y);
 	[CompilerGenerated]
-	private static bool _Initialize_m__1(MVWorldObjectClient wo);
+	private void _PurchaseAvatar_b__35_0(IModalPopupCreator x, BaseEventData y);
 	[CompilerGenerated]
-	private static int _Initialize_m__2(MVWorldObjectClient s);
-	[CompilerGenerated]
-	private void _ResetCallback_m__3(IAvatarSetBodyGroup x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ResetCallback_m__4(IEditStateCommands x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ResetCallback_m__5(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ResetCallback_m__6(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _TakeScreenshot_m__7(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _PurchaseAvatar_m__8(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPurchaseAvatarConfirmation_m__9(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnProductPurchaseAvatarResponse_m__A(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _InitializedPurchasedAvatar_m__B(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _InitializedPurchasedAvatar_m__C(IAvatarSetBodyGroup x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnActiveAvatarSetAfterPurchase_m__D(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnActiveAvatarSetAfterPurchase_m__E(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _MVNetworGame_ScreenshotUploadedHandler_m__F(IPurchaseSoundManager x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _MVNetworGame_ScreenshotUploadedHandler_m__10(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _MVNetworGame_ScreenshotUploadedHandler_m__11(IEditStateCommands x, BaseEventData y);
+	private void _InitializedPurchasedAvatar_b__38_1(IAvatarSetBodyGroup x, BaseEventData y);
 }
 

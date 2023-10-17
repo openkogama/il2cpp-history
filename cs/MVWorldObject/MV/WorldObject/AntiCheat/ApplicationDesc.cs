@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.AntiCheat
 {
@@ -34,11 +34,12 @@ namespace MV.WorldObject.AntiCheat
 			private bool strictComparison;
 	
 			// Properties
-			public string Name { get; }
+			public string Name { get; set; }
 			public bool StrictComparison { get; }
 	
 			// Constructors
 			public RegistryKey();
+			public RegistryKey(string keyName, bool strictComparison);
 		}
 	
 		// Constructors

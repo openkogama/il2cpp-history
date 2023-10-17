@@ -9,14 +9,14 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LineDrawManager : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
 	private Material lineMaterial;
-	private MV.WorldObject.Link tempLink;
+	private Link tempLink;
 	private ObjectLink tempObjectLink;
 	private LinkObjectScript tempLinkObject;
 	private Queue<LinkLine> linkLines;
@@ -38,7 +38,7 @@ public class LineDrawManager : MonoBehaviour
 
 	// Methods
 	protected void OnPostRender();
-	public void SetTempLink(MV.WorldObject.Link link);
+	public void SetTempLink(Link link);
 	public void SetTempObjectLink(ObjectLink link);
 	public void DrawLineDirect(Vector3 from, Vector3 to, Color color);
 	private void DrawLine(Vector3 from, Vector3 to, Color color);

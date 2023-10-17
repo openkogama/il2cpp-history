@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CreateNewCubeModel : MonoBehaviour
 {
@@ -16,21 +16,35 @@ public class CreateNewCubeModel : MonoBehaviour
 	[SerializeField]
 	private CubeModelPopup cubeModelPopupPrefab;
 	private byte currentByteMaterial;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnAddCubeModelPressed_c__AnonStorey0
+	private sealed class __c__DisplayClass3_0
 	{
 		// Fields
-		internal CubeModelPopup popup;
+		public CubeModelPopup popup;
 
 		// Constructors
-		public _OnAddCubeModelPressed_c__AnonStorey0();
+		public __c__DisplayClass3_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnAddCubeModelPressed_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__3_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnAddCubeModelPressed_b__3_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -39,7 +53,5 @@ public class CreateNewCubeModel : MonoBehaviour
 	// Methods
 	public void UpdateButtonTextures(byte materialId);
 	public void OnAddCubeModelPressed();
-	[CompilerGenerated]
-	private static void _OnAddCubeModelPressed_m__0(IUIStack handler, BaseEventData data);
 }
 

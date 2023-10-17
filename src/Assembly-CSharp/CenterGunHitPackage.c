@@ -11,7 +11,7 @@ InteractionData * Assembly-CSharp.dll::CenterGunHitPackage::CenterGunHitPackage_
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,9,impulse._0_8_,impulse.z,1,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_6(__return_storage_ptr__,InteractionPackageType__Enum_CenterGun,impulse,PlayerKilledByType__Enum_CenterGun,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -21,10 +21,7 @@ InteractionData * Assembly-CSharp.dll::CenterGunHitPackage::CenterGunHitPackage_
 void Assembly-CSharp.dll::CenterGunHitPackage::CenterGunHitPackage_ParseAndHandlePackage(CenterGunHitPackage *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?();
-  fStack_2 = (float)fVar1;
-  pVVar3 = (Vector3 *)func_?(auStack_4);
-  InteractionPackage::InteractionPackage_HandlePackage_1((InteractionPackage *)this,worldObjectClient,shooter,fStack_2,PlayerKilledByType__Enum_CenterGun,*pVVar3,(MethodInfo *)0x0);
+  InteractionPackage::InteractionPackage_HandlePackage_1((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,PlayerKilledByType__Enum_CenterGun,interactionStruct.impulse,(MethodInfo *)0x0);
   return;
 }
 

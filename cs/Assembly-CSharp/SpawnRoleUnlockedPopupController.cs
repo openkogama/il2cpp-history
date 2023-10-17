@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleUnlockedPopupController : MonoBehaviour
 {
@@ -48,21 +48,35 @@ public class SpawnRoleUnlockedPopupController : MonoBehaviour
 	private MVTeam team;
 	private float bounceEffectStartTime;
 	private bool awaitingSpawn;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _SeeTierReward_c__AnonStorey0
+	private sealed class __c__DisplayClass22_0
 	{
 		// Fields
-		internal TierUnlockedPopupController tierUnlockedPopupController;
+		public TierUnlockedPopupController tierUnlockedPopupController;
 
 		// Constructors
-		public _SeeTierReward_c__AnonStorey0();
+		public __c__DisplayClass22_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _SeeTierReward_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__28_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Close_b__28_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -82,7 +96,5 @@ public class SpawnRoleUnlockedPopupController : MonoBehaviour
 	private void StartPlaying();
 	private void Update();
 	private void OnDestroy();
-	[CompilerGenerated]
-	private static void _Close_m__0(IUIStack handler, BaseEventData data);
 }
 

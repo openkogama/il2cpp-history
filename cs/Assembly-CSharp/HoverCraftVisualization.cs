@@ -7,8 +7,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.HoverCraft.Shared;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class HoverCraftVisualization : VehicleVisualizationBase
 {
@@ -17,7 +18,15 @@ public class HoverCraftVisualization : VehicleVisualizationBase
 	public ParticleSystem damageSmokeEmitter;
 	public ParticleSystem fire;
 	public VehicleBlinker vehicleBlinker;
-	public List<ParticleSystem> thrusters;
+	private const bool DefaultUseThrusters = true;
+	private bool useThrusters;
+	public List<HoverCraftThruster> hoverCraftThrusters;
+	public const float DefaultThrusterSize = 0.872f;
+	public const float MinThrusterSize = 0.2f;
+	public const float MaxThrusterSize = 0.95f;
+	private float thrustersSize;
+	public static readonly ThrustersColor DefaultThrustersColor;
+	private Gradient thrustersColor;
 	public AudioSource moving;
 	public float HoverPeriod;
 	public float HoverAmplitude;
@@ -28,19 +37,19 @@ public class HoverCraftVisualization : VehicleVisualizationBase
 	public float pitchSpeedTime;
 	public float pitchFactor;
 	public float damageParticleFactor;
-	private Vector3 HoverOffset;
+	private readonly Vector3 hoverOffset;
 	private float angleDiff;
 	private Quaternion prevWorldRot;
 	private float maxHealth;
 	private float prevHealth;
 	private bool vehicleIsUnoccupied;
 	private float unoccupiedTime;
-	private float vehicleAboutToBeRemovedTime;
+	private const float VehicleAboutToBeRemovedTime = 3f;
 	private Vector3 prevWorldPosition;
-	private float minVolume;
+	private const float MinVolume = 0.03f;
 	private float smoothMoveSpeed;
 	private float smoothPitchFactor;
-	private float smoothMoveSpeedTime;
+	private const float SmoothMoveSpeedTime = 5f;
 	private Vector3 smoothVelocity;
 	private float moveSpeed;
 	private float smoothAcceleration;
@@ -48,13 +57,24 @@ public class HoverCraftVisualization : VehicleVisualizationBase
 	private VehicleSeatManager vehicleSeatManager;
 	private Vector3 localHoverCraftHullRootBasePosition;
 
+	// Nested types
+	public struct HoverCraftVisualizationSettings
+	{
+		// Fields
+		public bool useThruster;
+		public float thrustersSize;
+		public ThrustersColor thrustersColor;
+	}
+
 	// Constructors
 	public HoverCraftVisualization();
+	static HoverCraftVisualization();
 
 	// Methods
 	private void Awake();
-	public void Init(Transform hoverCraftHull, VehicleSeatManager vehicleSeatManager, float maxHealth, MVRuntimeDataVariableClampedFloat health, bool isInSpawner);
+	public void Init(Transform hoverCraftHull, VehicleSeatManager vsm, float maxHealthVal, MVRuntimeDataVariableClampedFloat health, bool inSpawner, HoverCraftVisualizationSettings hoverCraftVisualizationSettings);
 	private void OnEnable();
+	private void ActivateThrusters();
 	private void OnDisable();
 	private void OnHealthChange(float newHealth);
 	private void Update();
@@ -64,7 +84,9 @@ public class HoverCraftVisualization : VehicleVisualizationBase
 	private void CalculateMovementValues();
 	private void AnimateHullSpeed();
 	private void HandleSound();
+	public void UpdateSettings(HoverCraftVisualizationSettings hoverCraftVisualizationSettings);
+	private static Gradient CreateGradient(ThrustersColor thrustersColor);
 	[CompilerGenerated]
-	private void _Init_m__0(object healthVal);
+	private void _Init_b__44_0(object healthVal);
 }
 

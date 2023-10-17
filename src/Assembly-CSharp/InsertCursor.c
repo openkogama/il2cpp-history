@@ -18,13 +18,12 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor_OnDisable(InsertCursor *thi
       uVar1 = uVar1 + 1;
       ppMVar3 = ppMVar3 + 1;
     }
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
+    func_?();
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -48,13 +47,12 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor_OnEnable(InsertCursor *this
       uVar1 = uVar1 + 1;
       ppMVar3 = ppMVar3 + 1;
     }
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
+    func_?();
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -65,11 +63,12 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor_Start(InsertCursor *this,Me
 
 {
   if (cRam_? == '\0') {
-    func_?(0x3404);
+    func_?(&UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
     cRam_? = '\x01';
   }
-  pUVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_29((GameObject *)this,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
-  (this->fields).renderers = (MeshRenderer__Array *)pUVar1;
+  pMVar1 = (MeshRenderer__Array *)Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
+  (this->fields).renderers = pMVar1;
+  func_?(&(this->fields).renderers,pMVar1);
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,0,(MethodInfo *)0x0);
   return;
 }
@@ -81,18 +80,13 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor__ctor(InsertCursor *this,Me
 
 {
   if (cRam_? == '\0') {
-    func_?(0x3405);
+    func_?(&TypeInfo__UnityEngine__MeshRenderer);
     cRam_? = '\x01';
   }
   pMVar1 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
   (this->fields).renderers = pMVar1;
-  if (cRam_? == '\0') {
-    func_?(0x19bd,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  func_?(&(this->fields).renderers,pMVar1);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

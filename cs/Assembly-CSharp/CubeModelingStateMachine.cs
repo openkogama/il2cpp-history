@@ -10,7 +10,7 @@ using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CubeModelingStateMachine : FSMEntity
 {
@@ -23,10 +23,8 @@ public class CubeModelingStateMachine : FSMEntity
 	private GameObject gameObject;
 	private Camera mainCamera;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private CubePickingInfo _SelectedCube_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVCubeModelBase _TargetCubeModel_k__BackingField;
 
 	// Properties
@@ -62,10 +60,12 @@ public class CubeModelingStateMachine : FSMEntity
 	public void RemoveCursors();
 	public void HandleAudio(IntVector pos, AudioActions action);
 	public EditCubeChange AddCube();
-	public bool CanAddCubeAt(IntVector requestedCubePos);
-	public bool CanRemoveCubeAt(IntVector requestedCubePos);
+	public CanPerformCubeActionResult CanAddCubeAt(IntVector requestedCubePos, CubePickingInfo requestedCube);
+	public CanPerformCubeActionResult CanAddCubeAt(IntVector requestedCubePos);
+	public CanPerformCubeActionResult CanRemoveCubeAt(CubePickingInfo requestedCube);
 	public bool CanEditCubeAt(IntVector requestedCubePos);
+	public CanPerformCubeActionResult CanReplaceCube(CubePickingInfo requestedCube, byte materialId);
 	[CompilerGenerated]
-	private void _set_CurrentMaterialId_m__0(IHandleMaterial x, BaseEventData y);
+	private void _set_CurrentMaterialId_b__14_0(IHandleMaterial x, BaseEventData y);
 }
 

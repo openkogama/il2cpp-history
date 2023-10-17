@@ -9,35 +9,34 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal class CoroutineWorker : MonoBehaviour
 {
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Run_c__Iterator0 : IEnumerator<object>
+	private sealed class _Run_d__1 : IEnumerator<object>
 	{
 		// Fields
-		internal IEnumerator coroutine;
-		internal CoroutineWorker _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public CoroutineWorker __4__this;
+		public IEnumerator coroutine;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _Run_c__Iterator0();
+		public _Run_d__1(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -45,7 +44,7 @@ internal class CoroutineWorker : MonoBehaviour
 
 	// Methods
 	public void RunCoroutineAndDestroy(IEnumerator coroutine);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_Run_d__1))]
 	public IEnumerator Run(IEnumerator coroutine);
 }
 

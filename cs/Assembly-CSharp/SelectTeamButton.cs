@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SelectTeamButton : MonoBehaviour
 {
@@ -20,16 +20,16 @@ public class SelectTeamButton : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowTeamMenu_c__AnonStorey0
+	private sealed class __c__DisplayClass3_0
 	{
 		// Fields
-		internal TeamMenu newTeamMenu;
+		public TeamMenu newTeamMenu;
 
 		// Constructors
-		public _ShowTeamMenu_c__AnonStorey0();
+		public __c__DisplayClass3_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTeamMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::FirstTimeEventMessage::FirstTimeEventMessage_FadeIn(Fi
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::FirstTimeEventMessage::FirstTimeEventMessage_FadeOut(F
 
 {
   this_00 = (this->fields).fader;
-  targetGameObject = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject((Component_1 *)this,(MethodInfo *)0x0);
+  targetGameObject = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (FirstTimeFadeHandler *)0x0) {
     FirstTimeFadeHandler::FirstTimeFadeHandler_StartFadeOut(this_00,onFinished,targetGameObject,(MethodInfo *)0x0);
     return;

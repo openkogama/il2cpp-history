@@ -11,7 +11,7 @@ InteractionData * Assembly-CSharp.dll::RailgunHitPackage::RailgunHitPackage_Crea
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,4,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor(__return_storage_ptr__,InteractionPackageType__Enum_RailGunHit,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -21,8 +21,7 @@ InteractionData * Assembly-CSharp.dll::RailgunHitPackage::RailgunHitPackage_Crea
 void Assembly-CSharp.dll::RailgunHitPackage::RailgunHitPackage_ParseAndHandlePackage(RailgunHitPackage *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?(&interactionStruct,0);
-  InteractionPackage::InteractionPackage_HandlePackage_2((InteractionPackage *)this,worldObjectClient,shooter,(float)fVar1,PlayerKilledByType__Enum_RailGun,(MethodInfo *)0x0);
+  InteractionPackage::InteractionPackage_HandlePackage_2((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,PlayerKilledByType__Enum_RailGun,(MethodInfo *)0x0);
   return;
 }
 

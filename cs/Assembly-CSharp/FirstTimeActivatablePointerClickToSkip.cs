@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePointerClickToSkip : FirstTimeActivatableElementBase
 {
@@ -38,8 +38,8 @@ public class FirstTimeActivatablePointerClickToSkip : FirstTimeActivatableElemen
 	private void Clear();
 	private void OnShown();
 	[CompilerGenerated]
-	private void _OnShow_m__0(TextBubbleController x, BaseEventData y);
+	private void _OnShow_b__9_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Clear_m__1(TextBubbleController x, BaseEventData y);
+	private void _Clear_b__11_0(TextBubbleController x, BaseEventData y);
 }
 

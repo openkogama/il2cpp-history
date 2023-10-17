@@ -9,51 +9,42 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ReviveScreenshotGenerator : MonoBehaviour
 {
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _GenerateTexture_c__Iterator0 : IEnumerator<object>
+	private sealed class _GenerateTexture_d__1 : IEnumerator<object>
 	{
 		// Fields
-		internal LayerFlags _targetLayers___0;
-		internal int _oldLayers___0;
-		internal Camera _mainCam___0;
-		internal GameObject _screenshotCamObject___0;
-		internal SkyboxManager _skyboxManager___0;
-		internal Color _color___0;
-		internal int width;
-		internal int height;
-		internal RenderTexture _screenshotRenderTexture___0;
-		internal Camera _screenshotCam___0;
-		internal Vector3 cameraPos;
-		internal Quaternion cameraRot;
-		internal Skybox _skybox___0;
-		internal Camera _cullingCam___0;
-		internal Texture2D _screenshotTexture___0;
-		internal byte[] _bytes___0;
-		internal Action<byte[]> textureDataCallback;
-		internal ReviveScreenshotGenerator _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public int width;
+		public int height;
+		public Vector3 cameraPos;
+		public Quaternion cameraRot;
+		public Action<byte[]> textureDataCallback;
+		public ReviveScreenshotGenerator __4__this;
+		private GameObject _screenshotCamObject_5__2;
+		private Camera _screenshotCam_5__3;
+		private RenderTexture _screenshotRenderTexture_5__4;
+		private Camera _cullingCam_5__5;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _GenerateTexture_c__Iterator0();
+		public _GenerateTexture_d__1(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -61,7 +52,7 @@ public class ReviveScreenshotGenerator : MonoBehaviour
 
 	// Methods
 	public void GenerateTextureDataCameraViewAtTransform(Action<byte[]> callback, Vector3 cameraPos, Quaternion cameraRot, int width, int height);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_GenerateTexture_d__1))]
 	private IEnumerator GenerateTexture(Action<byte[]> textureDataCallback, Vector3 cameraPos, Quaternion cameraRot, int width, int height);
 }
 

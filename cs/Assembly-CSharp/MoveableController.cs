@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MoveableController : IUpdatecontrollerSubscriberFixedUpdate
 {
@@ -17,8 +17,23 @@ public class MoveableController : IUpdatecontrollerSubscriberFixedUpdate
 	public Dictionary<int, MVMovable> MoveControllers;
 	public Dictionary<int, MVMovable> CubeModelMovableMap;
 	public float time;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Func<KeyValuePair<int, MVMovable>, bool> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<KeyValuePair<int, MVMovable>, bool> __9__11_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _UpdateMoveables_b__11_0(KeyValuePair<int, MVMovable> x);
+	}
 
 	// Constructors
 	public MoveableController();
@@ -35,7 +50,5 @@ public class MoveableController : IUpdatecontrollerSubscriberFixedUpdate
 	public void UpdateMoveable(int movableGameObjectID, float directionFactor, int breakid);
 	public Quaternion GetRotationQuat(int movableGameObjectID);
 	public Vector3 GetVel(int movableGameObjectID, Vector3 position);
-	[CompilerGenerated]
-	private static bool _UpdateMoveables_m__0(KeyValuePair<int, MVMovable> x);
 }
 

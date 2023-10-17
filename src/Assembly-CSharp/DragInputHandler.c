@@ -5,17 +5,18 @@ void Assembly-CSharp.dll::DragInputHandler::DragInputHandler_AddInputReciever(Dr
 
 {
   if (cRam_? == '\0') {
-    func_?(0x26fb);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).dragInputRecievers;
-  if (this_00 != (List_1_IDragInputReciever_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)newInputReciever,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__Add_IDragInputReciever_);
+  this_00 = (List_1_System_Object_ *)(this->fields).dragInputRecievers;
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(this_00,(Object *)newInputReciever,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__Add_IDragInputReciever_);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -26,41 +27,39 @@ void Assembly-CSharp.dll::DragInputHandler::DragInputHandler_OnBeginDrag(DragInp
 
 {
   if (cRam_? == '\0') {
-    func_?(0x26fc);
+    func_?(&TypeInfo__IDragInputReciever);
+    func_?(&MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_);
     cRam_? = '\x01';
   }
   iStack_1 = 0;
-  this_00 = (this->fields).dragInputRecievers;
-  while (this_00 != (List_1_IDragInputReciever_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Count__);
-    if ((int)pOVar2 <= iStack_1) {
+  pLVar2 = (this->fields).dragInputRecievers;
+  while (pLVar2 != (List_1_IDragInputReciever_ *)0x0) {
+    if ((pLVar2->fields)._size <= iStack_1) {
       return;
     }
-    this_01 = (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)(this->fields).dragInputRecievers;
-    if ((this_01 == (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) || (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item(this_01,iStack_1,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_), pIVar3 == (IEventSystemHandler *)0x0)) break;
-    pIVar4 = pIVar3->klass;
-    uVar5 = 0;
-    uVar6._0_1_ = (pIVar4->_1).rank;
-    uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-    if (uVar6 != 0) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dragInputRecievers;
+    if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,iStack_1,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+    uVar4 = 0;
+    uVar5 = *(ushort *)(*(int *)RVar3 + 0xb2);
+    if (uVar5 != 0) {
       do {
-        if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__IDragInputReciever) {
-          ppvVar7 = &pIVar3->klass[1]._0.gc_desc + pIVar4->interfaceOffsets[uVar5].offset * 2;
+        if (*(IDragInputReciever__Class **)(*(int *)(*(int *)RVar3 + 0x58) + (uint)uVar4 * 8) == TypeInfo__IDragInputReciever) {
+          puVar6 = (undefined4 *)(*(int *)(*(int *)(*(int *)RVar3 + 0x58) + 4 + (uint)uVar4 * 8) * 8 + 0xbc + *(int *)RVar3);
           goto code_?;
         }
-        uVar5 = uVar5 + 1;
-      } while (uVar5 < uVar6);
+        uVar4 = uVar4 + 1;
+      } while (uVar4 < uVar5);
     }
-    iStack_1 = 0;
-    ppvVar7 = (void **)func_?(pIVar3,TypeInfo__IDragInputReciever);
+    puVar6 = (undefined4 *)func_?(RVar3,TypeInfo__IDragInputReciever,0,0);
 code_?:
-    (**ppvVar7)(pIVar3,ppvVar7[1]);
+    (*(code *)*puVar6)(RVar3,puVar6[1]);
     iStack_1 = iStack_1 + 1;
-    this_00 = (this->fields).dragInputRecievers;
+    pLVar2 = (this->fields).dragInputRecievers;
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -71,41 +70,39 @@ void Assembly-CSharp.dll::DragInputHandler::DragInputHandler_OnDrag(DragInputHan
 
 {
   if (cRam_? == '\0') {
-    func_?(0x26fd);
+    func_?(&TypeInfo__IDragInputReciever);
+    func_?(&MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_);
     cRam_? = '\x01';
   }
   iStack_1 = 0;
-  this_00 = (this->fields).dragInputRecievers;
-  while (this_00 != (List_1_IDragInputReciever_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Count__);
-    if ((int)pOVar2 <= iStack_1) {
+  pLVar2 = (this->fields).dragInputRecievers;
+  while (pLVar2 != (List_1_IDragInputReciever_ *)0x0) {
+    if ((pLVar2->fields)._size <= iStack_1) {
       return;
     }
-    this_01 = (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)(this->fields).dragInputRecievers;
-    if ((this_01 == (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) || (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item(this_01,iStack_1,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_), pIVar3 == (IEventSystemHandler *)0x0)) break;
-    pIVar4 = pIVar3->klass;
-    uVar5 = 0;
-    uVar6._0_1_ = (pIVar4->_1).rank;
-    uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-    if (uVar6 != 0) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dragInputRecievers;
+    if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,iStack_1,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+    uVar4 = 0;
+    uVar5 = *(ushort *)(*(int *)RVar3 + 0xb2);
+    if (uVar5 != 0) {
       do {
-        if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__IDragInputReciever) {
-          puVar7 = &(&pIVar3->klass[1]._0.byval_arg)[pIVar4->interfaceOffsets[uVar5].offset].attrs;
+        if (*(IDragInputReciever__Class **)(*(int *)(*(int *)RVar3 + 0x58) + (uint)uVar4 * 8) == TypeInfo__IDragInputReciever) {
+          puVar6 = (undefined4 *)(*(int *)(*(int *)(*(int *)RVar3 + 0x58) + 4 + (uint)uVar4 * 8) * 8 + 0xcc + *(int *)RVar3);
           goto code_?;
         }
-        uVar5 = uVar5 + 1;
-      } while (uVar5 < uVar6);
+        uVar4 = uVar4 + 1;
+      } while (uVar4 < uVar5);
     }
-    iStack_1 = 2;
-    puVar7 = (ushort *)func_?(pIVar3,TypeInfo__IDragInputReciever);
+    puVar6 = (undefined4 *)func_?(RVar3,TypeInfo__IDragInputReciever,2,0);
 code_?:
-    (**(code **)puVar7)(pIVar3,*(undefined4 *)(puVar7 + 2));
+    (*(code *)*puVar6)(RVar3,puVar6[1]);
     iStack_1 = iStack_1 + 1;
-    this_00 = (this->fields).dragInputRecievers;
+    pLVar2 = (this->fields).dragInputRecievers;
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -116,41 +113,39 @@ void Assembly-CSharp.dll::DragInputHandler::DragInputHandler_OnEndDrag(DragInput
 
 {
   if (cRam_? == '\0') {
-    func_?(0x26fe);
+    func_?(&TypeInfo__IDragInputReciever);
+    func_?(&MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_);
     cRam_? = '\x01';
   }
   iStack_1 = 0;
-  this_00 = (this->fields).dragInputRecievers;
-  while (this_00 != (List_1_IDragInputReciever_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Count__);
-    if ((int)pOVar2 <= iStack_1) {
+  pLVar2 = (this->fields).dragInputRecievers;
+  while (pLVar2 != (List_1_IDragInputReciever_ *)0x0) {
+    if ((pLVar2->fields)._size <= iStack_1) {
       return;
     }
-    this_01 = (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)(this->fields).dragInputRecievers;
-    if ((this_01 == (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) || (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item(this_01,iStack_1,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_), pIVar3 == (IEventSystemHandler *)0x0)) break;
-    pIVar4 = pIVar3->klass;
-    uVar5 = 0;
-    uVar6._0_1_ = (pIVar4->_1).rank;
-    uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-    if (uVar6 != 0) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dragInputRecievers;
+    if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,iStack_1,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+    uVar4 = 0;
+    uVar5 = *(ushort *)(*(int *)RVar3 + 0xb2);
+    if (uVar5 != 0) {
       do {
-        if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__IDragInputReciever) {
-          ppcVar7 = &pIVar3->klass[1]._0.namespaze + pIVar4->interfaceOffsets[uVar5].offset * 2;
+        if (*(IDragInputReciever__Class **)(*(int *)(*(int *)RVar3 + 0x58) + (uint)uVar4 * 8) == TypeInfo__IDragInputReciever) {
+          puVar6 = (undefined4 *)(*(int *)(*(int *)(*(int *)RVar3 + 0x58) + 4 + (uint)uVar4 * 8) * 8 + 0xc4 + *(int *)RVar3);
           goto code_?;
         }
-        uVar5 = uVar5 + 1;
-      } while (uVar5 < uVar6);
+        uVar4 = uVar4 + 1;
+      } while (uVar4 < uVar5);
     }
-    iStack_1 = 1;
-    ppcVar7 = (char **)func_?(pIVar3,TypeInfo__IDragInputReciever);
+    puVar6 = (undefined4 *)func_?(RVar3,TypeInfo__IDragInputReciever,1,0);
 code_?:
-    (*(code *)*ppcVar7)(pIVar3,(((Il2CppType *)(ppcVar7 + 1))->data).dummy);
+    (*(code *)*puVar6)(RVar3,puVar6[1]);
     iStack_1 = iStack_1 + 1;
-    this_00 = (this->fields).dragInputRecievers;
+    pLVar2 = (this->fields).dragInputRecievers;
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -161,19 +156,18 @@ void Assembly-CSharp.dll::DragInputHandler::DragInputHandler_RemoveInputReciever
 
 {
   if (cRam_? == '\0') {
-    func_?(0x26ff);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).dragInputRecievers;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    item._4_4_ = MethodInfo__System__Collections__Generic__List<IDragInputReciever>__Remove_IDragInputReciever_;
-    item.rgba = (int32_t)inputReciever;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::List_1_UnityEngine_Color32__Remove(this_00,item,unaff_EBP);
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dragInputRecievers;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove(this_00,(RegexCharClass_SingleRange)inputReciever,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__Remove_IDragInputReciever_);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -184,20 +178,21 @@ void Assembly-CSharp.dll::DragInputHandler::DragInputHandler__ctor(DragInputHand
 
 {
   if (cRam_? == '\0') {
-    func_?(0x2700);
+    func_?(&MethodInfo__System__Collections__Generic__List<IDragInputReciever>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<IDragInputReciever>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)func_?(TypeInfo__System__Collections__Generic__List<IDragInputReciever>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(this_00,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__List__);
-  (this->fields).dragInputRecievers = (List_1_IDragInputReciever_ *)this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  this_00 = (List_1_IDragInputReciever_ *)func_?(TypeInfo__System__Collections__Generic__List<IDragInputReciever>);
+  if (this_00 != (List_1_IDragInputReciever_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<IDragInputReciever>__List__);
+    (this->fields).dragInputRecievers = this_00;
+    func_?(&(this->fields).dragInputRecievers,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

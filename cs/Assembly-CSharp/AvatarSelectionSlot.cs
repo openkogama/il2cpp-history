@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarSelectionSlot : MonoBehaviour
 {
@@ -19,7 +19,6 @@ public class AvatarSelectionSlot : MonoBehaviour
 	[SerializeField]
 	private RectTransform selectionOutline;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _BodyIndex_k__BackingField;
 
 	// Properties
@@ -34,6 +33,6 @@ public class AvatarSelectionSlot : MonoBehaviour
 	public void SlotClicked();
 	public void ToggleActive(bool active);
 	[CompilerGenerated]
-	private void _SlotClicked_m__0(IAvatarSlotClicked x, BaseEventData y);
+	private void _SlotClicked_b__8_0(IAvatarSlotClicked x, BaseEventData y);
 }
 

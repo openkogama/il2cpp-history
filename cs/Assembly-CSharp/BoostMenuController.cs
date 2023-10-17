@@ -11,7 +11,7 @@ using Assets.Scripts.AdIntegration;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class BoostMenuController : MonoBehaviour, IBoostAdController
 {
@@ -24,33 +24,46 @@ public class BoostMenuController : MonoBehaviour, IBoostAdController
 	private RectTransform boostItemsContent;
 	private BoostType adRewardType;
 	private Action<bool> boostUnlockedCallback;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _FixContentPivot_c__Iterator0 : IEnumerator<object>
+	private sealed class __c
 	{
 		// Fields
-		internal BoostMenuController _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__8_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnAdFinished_b__8_0(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class _FixContentPivot_d__9 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public BoostMenuController __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _FixContentPivot_c__Iterator0();
+		public _FixContentPivot_d__9(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -61,10 +74,8 @@ public class BoostMenuController : MonoBehaviour, IBoostAdController
 	public void TryShowAd(BoostType type, Action<bool> OnUnlockedCallback);
 	private void RewardedAdCallback(RewardedAdResult obj);
 	private void OnAdFinished(bool adWasSuccessful);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_FixContentPivot_d__9))]
 	private IEnumerator FixContentPivot();
 	private List<Boost> GetSortedBoosts(Dictionary<BoostType, Boost> boosts, BoostController boostController);
-	[CompilerGenerated]
-	private static void _OnAdFinished_m__0(IModalPopupCreator x, BaseEventData y);
 }
 

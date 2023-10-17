@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using CodeStage.AntiCheat.ObscuredTypes;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CollectTheItemDropOff : MVBlueprintBase, ILogicWorldObject
 {
@@ -25,7 +25,6 @@ public class CollectTheItemDropOff : MVBlueprintBase, ILogicWorldObject
 	private ObscuredInt minCubes;
 	private OutputSignalTransmitter outputSignalTransmitter;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 	public Action<bool> OnPickupCollected;
 	private bool sendSignal;

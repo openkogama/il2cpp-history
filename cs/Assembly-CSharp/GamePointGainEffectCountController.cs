@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePointGainEffectCountController : MonoBehaviour
 {
@@ -49,7 +49,7 @@ public class GamePointGainEffectCountController : MonoBehaviour
 	public GamePointGainEffectCountController();
 
 	// Methods
-	public void SetupAmountCatchingUp(int endValue, int gainEffectTotalAmount);
+	public void SetupAmountCatchingUp(int endValueParam, int gainEffectTotalAmountParam);
 	public void OnGamePointGainEffectStarted();
 	public void OnGamePointGainEffectReached();
 	public void UpdateGamePointAmountTextToValue(int updateToValue);

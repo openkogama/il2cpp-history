@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AnimatedSpriteSheetTexture : MonoBehaviour
 {
@@ -49,33 +49,31 @@ public class AnimatedSpriteSheetTexture : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _UpdateTiling_c__Iterator0 : IEnumerator<object>
+	private sealed class _UpdateTiling_d__20 : IEnumerator<object>
 	{
 		// Fields
-		internal float _x___0;
-		internal float _y___0;
-		internal Vector2 _offset___0;
-		internal int _i___1;
-		internal int _j___2;
-		internal AnimatedSpriteSheetTexture _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public AnimatedSpriteSheetTexture __4__this;
+		private float _y_5__2;
+		private Vector2 _offset_5__3;
+		private int _i_5__4;
+		private int _j_5__5;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _UpdateTiling_c__Iterator0();
+		public _UpdateTiling_d__20(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -84,7 +82,7 @@ public class AnimatedSpriteSheetTexture : MonoBehaviour
 	// Methods
 	private void Start();
 	private void OnEnable();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_UpdateTiling_d__20))]
 	private IEnumerator UpdateTiling();
 }
 

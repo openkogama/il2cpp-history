@@ -5,11 +5,12 @@ void Assembly-CSharp.dll::TextFieldInputSuppress::TextFieldInputSuppress_Reset(T
 
 {
   if (cRam_? == '\0') {
-    func_?(0x6473);
+    func_?(&UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__);
     cRam_? = '\x01';
   }
-  pIVar1 = (InputField *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58((Component_1 *)this,UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__);
+  pIVar1 = (InputField *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__);
   (this->fields).inputField = pIVar1;
+  func_?(&(this->fields).inputField,pIVar1);
   return;
 }
 
@@ -20,23 +21,23 @@ void Assembly-CSharp.dll::TextFieldInputSuppress::TextFieldInputSuppress_Update(
 
 {
   if (cRam_? == '\0') {
-    func_?(0x6474);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).inputField;
-  if (this_00 != (InputField *)0x0) {
-    bVar1 = UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_get_isFocused(this_00,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  pIVar1 = (this->fields).inputField;
+  if (pIVar1 != (InputField *)0x0) {
+    if ((pIVar1->fields).m_AllowInput != 0) {
+      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       MVInputWrapper::MVInputWrapper_SuppressAllInput((MethodInfo *)0x0);
     }
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -4,25 +4,35 @@
 Quaternion * Assembly-CSharp.dll::GhostEye+SneakySideToSide::GhostEye_SneakySideToSide_GetSneakySideToSideRotation(Quaternion *__return_storage_ptr__,GhostEye_SneakySideToSide *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar1 = (this->fields)._.direction * fVar1 * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
-  (this->fields)._.wrappedTime = fVar1;
-  while (6.2831855 <= fVar1) {
-    fVar1 = (this->fields)._.wrappedTime - 6.2831855;
-    (this->fields)._.wrappedTime = fVar1;
+  fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar2 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
+  (this->fields)._.wrappedTime = fVar2;
+  while (6.2831855 <= fVar2) {
+    fVar2 = (this->fields)._.wrappedTime - 6.2831855;
+    (this->fields)._.wrappedTime = fVar2;
   }
-  while (fVar1 < -6.2831855) {
-    fVar1 = (this->fields)._.wrappedTime + 6.2831855;
-    (this->fields)._.wrappedTime = fVar1;
+  pfVar3 = &(this->fields)._.wrappedTime;
+  if (*pfVar3 <= -6.2831855 && *pfVar3 != -6.2831855) {
+    do {
+      fVar2 = (this->fields)._.wrappedTime + 6.2831855;
+      (this->fields)._.wrappedTime = fVar2;
+    } while (fVar2 < -6.2831855);
   }
-  pQVar2 = GhostEye+IdleBase::GhostEye_IdleBase_GetYawRotation((Quaternion *)&stack0xffffffe8,(GhostEye_IdleBase *)this,(MethodInfo *)0x0);
-  fVar1 = pQVar2->y;
-  fVar3 = pQVar2->z;
-  fVar4 = pQVar2->w;
-  __return_storage_ptr__->x = pQVar2->x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar3;
-  __return_storage_ptr__->w = fVar4;
+  dVar4 = (double)(this->fields)._.wrappedTime;
+  func_?();
+  fVar2 = (this->fields)._.radiusYaw;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis(&QStack_6,(float)dVar4 * fVar2,TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+  fVar2 = pQVar5->y;
+  fVar7 = pQVar5->z;
+  fVar8 = pQVar5->w;
+  __return_storage_ptr__->x = pQVar5->x;
+  __return_storage_ptr__->y = fVar2;
+  __return_storage_ptr__->z = fVar7;
+  __return_storage_ptr__->w = fVar8;
   return __return_storage_ptr__;
 }
 

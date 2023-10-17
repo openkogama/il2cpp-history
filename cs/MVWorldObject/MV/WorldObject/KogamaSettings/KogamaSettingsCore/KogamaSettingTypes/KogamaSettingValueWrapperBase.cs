@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject.KogamaSettings.KogamaSettingsCore;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.KogamaSettings.KogamaSettingsCore.KogamaSettingTypes
 {
@@ -20,6 +20,12 @@ namespace MV.WorldObject.KogamaSettings.KogamaSettingsCore.KogamaSettingTypes
 	
 		// Properties
 		public abstract IKogamaSetting KogamaSetting { get; }
+	
+		// Events
+		public event Action<KogamaSettingValueWrapperBase> OnValueChange {
+			add;
+			remove;
+		}
 	
 		// Constructors
 		protected KogamaSettingValueWrapperBase(string key, KogamaSettingsCollectionBase parent);

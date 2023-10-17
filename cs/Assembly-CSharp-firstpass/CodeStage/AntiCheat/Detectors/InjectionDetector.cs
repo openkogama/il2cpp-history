@@ -10,11 +10,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.Detectors
 {
-	[AddComponentMenu]
+	[AddComponentMenu("Code Stage/Anti-Cheat Toolkit/Injection Detector")]
 	public class InjectionDetector : ActDetectorBase
 	{
 		// Fields
@@ -26,7 +26,6 @@ namespace CodeStage.AntiCheat.Detectors
 		private AllowedAssembly[] allowedAssemblies;
 		private string[] hexTable;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private static InjectionDetector _Instance_k__BackingField;
 	
 		// Properties

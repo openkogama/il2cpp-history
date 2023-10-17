@@ -5,26 +5,30 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x162c);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      func_?(4,TypeInfo__System__Collections__IList,pIVar2,item);
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      func_?(2,TypeInfo__System__Collections__IList,pIVar1,item);
       return;
     }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
   }
-  iVar4 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
+  else {
+    pIVar2 = (this->fields)._genericCollection;
+    if (pIVar2 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar3 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
+      }
+      func_?(2,pvVar3,pIVar2,item);
+      return;
+    }
   }
-  func_?(2,iVar4,pIVar1,item);
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -35,26 +39,30 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x162e);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      func_?(5,TypeInfo__System__Collections__IList,pIVar2);
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      func_?(4,TypeInfo__System__Collections__IList,pIVar1);
       return;
     }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
   }
-  iVar4 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
+  else {
+    pIVar2 = (this->fields)._genericCollection;
+    if (pIVar2 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar3 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
+      }
+      func_?(3,pvVar3,pIVar2);
+      return;
+    }
   }
-  func_?(3,iVar4,pIVar1);
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -65,27 +73,31 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x162f);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      bVar3 = func_?(6,TypeInfo__System__Collections__IList,pIVar2,item);
-      return bVar3;
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      bVar2 = func_?(3,TypeInfo__System__Collections__IList,pIVar1,item);
+      return bVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    bVar3 = (*pcVar4)();
-    return bVar3;
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericCollection;
+    if (pIVar3 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar2 = func_?(4,pvVar4,pIVar3,item);
+      return bVar2;
+    }
   }
-  bVar3 = func_?(4,iVar5,pIVar1,item);
-  return bVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
+  return bVar2;
 }
 
 
@@ -95,27 +107,65 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1632);
+    func_?(&TypeInfo__System__Collections__ICollection);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      func_?(3,TypeInfo__System__Collections__ICollection,pIVar2,array,arrayIndex);
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      func_?(0,TypeInfo__System__Collections__ICollection,pIVar1,array,arrayIndex);
       return;
     }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
   }
-  iVar4 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
+  else {
+    pIVar2 = (this->fields)._genericCollection;
+    if (pIVar2 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar3 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
+      }
+      func_?(5,pvVar3,pIVar2,array,arrayIndex);
+      return;
+    }
   }
-  func_?(5,iVar4,pIVar1,array,arrayIndex);
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
+}
+
+
+/* IEnumerator`1[System.Object] GetEnumerator() */
+
+IEnumerator_1_System_Object_ * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object__GetEnumerator(CollectionWrapper_1_System_Object_ *this,MethodInfo *method)
+
+{
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    iVar1 = (*(method->klass->rgctx_data[0xb].method)->virtualMethodPointer)((this->fields)._list,method->klass->rgctx_data[0xb].rgctxDataDummy);
+    if (iVar1 != 0) {
+      pvVar2 = method->klass->rgctx_data[9].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+        pvVar2 = (void *)func_?(pvVar2);
+      }
+      pIVar3 = (IEnumerator_1_System_Object_ *)func_?(0,pvVar2,iVar1);
+      return pIVar3;
+    }
+  }
+  else {
+    pIVar4 = (this->fields)._genericCollection;
+    if (pIVar4 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar2 = method->klass->rgctx_data[9].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+        pvVar2 = (void *)func_?(pvVar2);
+      }
+      pIVar3 = (IEnumerator_1_System_Object_ *)func_?(0,pvVar2,pIVar4);
+      return pIVar3;
+    }
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pIVar3 = (IEnumerator_1_System_Object_ *)(*pcVar5)();
+  return pIVar3;
 }
 
 
@@ -125,55 +175,62 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1633);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  pcVar1 = method->name;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
+  pIVar1 = method->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  iVar2 = *(int *)(*(int *)(pcVar1 + 0x60) + 4);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pvVar2 = pIVar1->rgctx_data[2].rgctxDataDummy;
+  if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+    pvVar2 = (void *)func_?(pvVar2);
   }
-  iVar2 = func_?(value,iVar2);
-  if (iVar2 == 0) {
+  iVar3 = func_?(value,pvVar2);
+  if (iVar3 == 0) {
     if (value != (Object *)0x0) {
       return 0;
     }
-    pcVar1 = method->name;
-    if ((pcVar1[0xbe] & 1U) == 0) {
-      func_?(pcVar1);
+    pIVar1 = method->klass;
+    if (pIVar1->initialized_and_no_error == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
     }
-    RVar3.value = *(void **)(*(int *)(pcVar1 + 0x60) + 0x34);
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+    IVar4 = pIVar1->rgctx_data[0x16];
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
     }
-    pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar3,(MethodInfo *)0x0);
-    if (pTVar4 == (Type *)0x0) {
+    pTVar5 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)IVar4,(MethodInfo *)0x0);
+    if (pTVar5 == (Type *)0x0) {
       func_?();
-      pcVar5 = (code *)swi(3);
-      bVar6 = (*pcVar5)();
-      return bVar6;
+      pcVar6 = (code *)swi(3);
+      bVar7 = (*pcVar6)();
+      return bVar7;
     }
-    bVar6 = mscorlib.dll::System::Type::Type_get_IsValueType(pTVar4,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      pcVar1 = method->name;
-      if ((pcVar1[0xbe] & 1U) == 0) {
+    bVar7 = mscorlib.dll::System::Type::Type_get_IsValueType(pTVar5,(MethodInfo *)0x0);
+    if (bVar7 != 0) {
+      pIVar1 = method->klass;
+      if (pIVar1->initialized_and_no_error == 0) {
+        pIVar1 = (Il2CppClass *)func_?();
+      }
+      IVar4 = pIVar1->rgctx_data[0x16];
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      RVar3.value = *(void **)(*(int *)(pcVar1 + 0x60) + 0x34);
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar3,(MethodInfo *)0x0);
-      bVar6 = ReflectionUtils::ReflectionUtils_IsNullableType(pTVar4,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        return 0;
-      }
+      pTVar5 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)IVar4,(MethodInfo *)0x0);
+      bVar7 = ReflectionUtils::ReflectionUtils_IsNullableType(pTVar5,(MethodInfo *)0x0);
+      return bVar7 != 0;
     }
   }
   return 1;
+}
+
+
+/* Boolean IsGenericCollection() */
+
+bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object__IsGenericCollection(CollectionWrapper_1_System_Object_ *this,MethodInfo *method)
+
+{
+  return (this->fields)._genericCollection != (ICollection_1_System_Object_ *)0x0;
 }
 
 
@@ -183,33 +240,64 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1636);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 != (ICollection_1_System_Object_ *)0x0) {
-    iVar2 = **(int **)(method->name + 0x60);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      bVar2 = func_?(3,TypeInfo__System__Collections__IList,pIVar1,item);
+      if (bVar2 == 0) {
+        return 0;
+      }
+      pIVar1 = (this->fields)._list;
+      if (pIVar1 != (IList *)0x0) {
+        func_?(9,TypeInfo__System__Collections__IList,pIVar1,item);
+        return bVar2;
+      }
     }
-    bVar3 = func_?(6,iVar2,pIVar1,item);
-    return bVar3;
   }
-  pIVar4 = (this->fields)._list;
-  if (pIVar4 != (IList *)0x0) {
-    bVar3 = func_?(6,TypeInfo__System__Collections__IList,pIVar4,item);
-    if (bVar3 != 0) {
-      pIVar4 = (this->fields)._list;
-      if (pIVar4 == (IList *)0x0) goto code_?;
-      func_?(9,TypeInfo__System__Collections__IList,pIVar4,item);
+  else {
+    pIVar3 = (this->fields)._genericCollection;
+    if (pIVar3 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar2 = func_?(6,pvVar4,pIVar3,item);
+      return bVar2;
     }
-    return bVar3;
   }
-code_?:
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
-  bVar3 = (*pcVar5)();
-  return bVar3;
+  bVar2 = (*pcVar5)();
+  return bVar2;
+}
+
+
+/* Void System.Collections.ICollection.CopyTo(Array, Int32) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object__System_Collections_ICollection_CopyTo(CollectionWrapper_1_System_Object_ *this,Array *array,int32_t arrayIndex,MethodInfo *method)
+
+{
+  pvVar1 = method->klass->rgctx_data[0x14].rgctxDataDummy;
+  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+    pvVar1 = (void *)func_?(pvVar1);
+  }
+  if (array == (Array *)0x0) {
+    iVar2 = 0;
+  }
+  else {
+    iVar2 = func_?(array,pvVar1);
+    if (iVar2 == 0) {
+      func_?(array,pvVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+  }
+  (*(this->klass->vtable).CopyTo_1.methodPtr)(this,iVar2,arrayIndex,(this->klass->vtable).CopyTo_1.method);
+  return;
 }
 
 
@@ -219,19 +307,21 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[S
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1638);
+    func_?(&TypeInfo__System__Object);
     cRam_? = '\x01';
   }
-  location1 = &(this->fields)._syncRoot;
-  pOVar1 = *location1;
-  if (pOVar1 == (Object *)0x0) {
-    method_00 = TypeInfo__System__Object;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    mscorlib.dll::System::Threading::Interlocked::Interlocked_CompareExchange_1(location1,(Object *)this_00,(Object *)0x0,(MethodInfo *)0x0);
-    pOVar1 = *location1;
+  if ((this->fields)._syncRoot == (Object *)0x0) {
+    pOVar1 = (Object *)func_?(TypeInfo__System__Object);
+    if (pOVar1 == (Object *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      pOVar1 = (Object *)(*pcVar2)();
+      return pOVar1;
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
+    mscorlib.dll::System::Threading::Interlocked::Interlocked_CompareExchange_3(&(this->fields)._syncRoot,pOVar1,(Object *)0x0,(MethodInfo *)0x0);
   }
-  return pOVar1;
+  return (this->fields)._syncRoot;
 }
 
 
@@ -241,27 +331,31 @@ IEnumerator * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrappe
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1639);
+    func_?(&TypeInfo__System__Collections__IEnumerable);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      pIVar3 = (IEnumerator *)func_?(0,TypeInfo__System__Collections__IEnumerable,pIVar2);
-      return pIVar3;
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      pIVar2 = (IEnumerator *)func_?(0,TypeInfo__System__Collections__IEnumerable,pIVar1);
+      return pIVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    pIVar3 = (IEnumerator *)(*pcVar4)();
-    return pIVar3;
   }
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericCollection;
+    if (pIVar3 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data[9].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      pIVar2 = (IEnumerator *)func_?(0,pvVar4,pIVar3);
+      return pIVar2;
+    }
   }
-  pIVar3 = (IEnumerator *)func_?(0,iVar5,pIVar1);
-  return pIVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar5)();
+  return pIVar2;
 }
 
 
@@ -270,30 +364,26 @@ IEnumerator * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrappe
 int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object__System_Collections_IList_Add(CollectionWrapper_1_System_Object_ *this,Object *value,MethodInfo *method)
 
 {
-  puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x10);
-  (*(code *)*puVar1)(value,puVar1);
-  if (this != (CollectionWrapper_1_System_Object_ *)0x0) {
-    method = *(MethodInfo **)(*(int *)(method->name + 0x60) + 4);
-    if ((method[3].parameters_count & 1) == 0) {
-      func_?(method);
-    }
-    if (value == (Object *)0x0) {
-      iVar2 = 0;
-    }
-    else {
-      iVar2 = func_?(value,method);
-      if (iVar2 == 0) goto code_?;
-    }
-    (*(code *)(this->klass->vtable).Add_1.method)(this,iVar2,(this->klass->vtable).Clear_2.methodPtr);
-    iVar2 = (*(code *)(this->klass->vtable).get_Count_2.method)(this,(this->klass->vtable).get_IsReadOnly_2.methodPtr);
-    return iVar2 + -1;
+  (*(method->klass->rgctx_data[0xc].method)->virtualMethodPointer)(value,method->klass->rgctx_data[0xc].rgctxDataDummy);
+  pvVar1 = method->klass->rgctx_data[2].rgctxDataDummy;
+  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+    pvVar1 = (void *)func_?(pvVar1);
   }
-  func_?(0);
-code_?:
-  func_?(value,method);
-  pcVar3 = (code *)swi(3);
-  iVar4 = (*pcVar3)();
-  return iVar4;
+  if (value == (Object *)0x0) {
+    iVar2 = 0;
+  }
+  else {
+    iVar2 = func_?(value,pvVar1);
+    if (iVar2 == 0) {
+      func_?(value,pvVar1);
+      pcVar3 = (code *)swi(3);
+      iVar4 = (*pcVar3)();
+      return iVar4;
+    }
+  }
+  (*(this->klass->vtable).Add_1.methodPtr)(this,iVar2,(this->klass->vtable).Add_1.method);
+  iVar2 = (*(this->klass->vtable).get_Count_2.methodPtr)(this,(this->klass->vtable).get_Count_2.method);
+  return iVar2 + -1;
 }
 
 
@@ -302,32 +392,28 @@ code_?:
 bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object__System_Collections_IList_Contains(CollectionWrapper_1_System_Object_ *this,Object *value,MethodInfo *method)
 
 {
-  puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x20);
-  cVar2 = (*(code *)*puVar1)(value,puVar1);
-  if (cVar2 == '\0') {
+  cVar1 = (*(method->klass->rgctx_data[0x11].method)->virtualMethodPointer)(value,method->klass->rgctx_data[0x11].rgctxDataDummy);
+  if (cVar1 == '\0') {
     return 0;
   }
-  if (this != (CollectionWrapper_1_System_Object_ *)0x0) {
-    method = *(MethodInfo **)(*(int *)(method->name + 0x60) + 4);
-    if ((method[3].parameters_count & 1) == 0) {
-      func_?(method);
-    }
-    if (value == (Object *)0x0) {
-      iVar3 = 0;
-    }
-    else {
-      iVar3 = func_?(value,method);
-      if (iVar3 == 0) goto code_?;
-    }
-    bVar4 = (*(code *)(this->klass->vtable).Contains_1.method)(this,iVar3,(this->klass->vtable).CopyTo_1.methodPtr);
-    return bVar4;
+  pvVar2 = method->klass->rgctx_data[2].rgctxDataDummy;
+  if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+    pvVar2 = (void *)func_?(pvVar2);
   }
-  func_?(0);
-code_?:
-  func_?(value,method);
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  if (value == (Object *)0x0) {
+    iVar3 = 0;
+  }
+  else {
+    iVar3 = func_?(value,pvVar2);
+    if (iVar3 == 0) {
+      func_?(value,pvVar2);
+      pcVar4 = (code *)swi(3);
+      bVar5 = (*pcVar4)();
+      return bVar5;
+    }
+  }
+  bVar5 = (*(this->klass->vtable).Contains_1.methodPtr)(this,iVar3,(this->klass->vtable).Contains_1.method);
+  return bVar5;
 }
 
 
@@ -337,42 +423,46 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Sy
 
 {
   if (cRam_? == '\0') {
-    func_?(0x163c);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
   if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
-    puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x20);
-    cVar2 = (*(code *)*puVar1)(value,puVar1);
-    if (cVar2 == '\0') {
+    cVar1 = (*(method->klass->rgctx_data[0x11].method)->virtualMethodPointer)(value,method->klass->rgctx_data[0x11].rgctxDataDummy);
+    if (cVar1 == '\0') {
       return -1;
     }
-    pIVar3 = (this->fields)._list;
-    if (pIVar3 == (IList *)0x0) goto code_?;
-    this_00 = *(IsolatedStorageException **)(*(int *)(method->name + 0x60) + 4);
-    if (((uint)this_00[3].fields._._remoteStackTraceString & 0x10000) == 0) {
-      func_?(this_00);
+    pIVar2 = (this->fields)._list;
+    if (pIVar2 == (IList *)0x0) goto code_?;
+    this_00 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((this_00[2].fields._remoteStackIndex & 0x10000) == 0) {
+      this_00 = (Exception *)func_?(this_00);
     }
     if (value == (Object *)0x0) {
-      iVar4 = 0;
+      iVar3 = 0;
 code_?:
-      iVar5 = func_?(7,TypeInfo__System__Collections__IList,pIVar3,iVar4);
-      return iVar5;
+      iVar4 = func_?(7,TypeInfo__System__Collections__IList,pIVar2,iVar3);
+      return iVar4;
     }
-    iVar4 = func_?(value,this_00);
-    if (iVar4 != 0) goto code_?;
+    iVar3 = func_?(value,this_00);
+    if (iVar3 != 0) goto code_?;
   }
   else {
-    this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this_00,StringLiteral_Wrapped_ICollection_T__does_not_,(MethodInfo *)0x0);
-    func_?(this_00,0,MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_IndexOf_System__Object_);
+    uVar5 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar5);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Wrapped_ICollection_T__does_not_);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+    uVar5 = func_?(&MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_IndexOf_System__Object_);
+    func_?(this_00,uVar5);
     value = unaff_EDI;
   }
   func_?(value,this_00);
 code_?:
-  func_?(0);
+  func_?();
   pcVar6 = (code *)swi(3);
-  iVar5 = (*pcVar6)();
-  return iVar5;
+  iVar4 = (*pcVar6)();
+  return iVar4;
 }
 
 
@@ -382,36 +472,40 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x163d);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
   if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
-    puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x10);
-    (*(code *)*puVar1)(value,puVar1);
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 == (IList *)0x0) goto code_?;
-    this_00 = *(IsolatedStorageException **)(*(int *)(method->name + 0x60) + 4);
-    if (((uint)this_00[3].fields._._remoteStackTraceString & 0x10000) == 0) {
-      func_?(this_00);
+    (*(method->klass->rgctx_data[0xc].method)->virtualMethodPointer)(value,method->klass->rgctx_data[0xc].rgctxDataDummy);
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 == (IList *)0x0) goto code_?;
+    this_00 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((this_00[2].fields._remoteStackIndex & 0x10000) == 0) {
+      this_00 = (Exception *)func_?(this_00);
     }
     if (value == (Object *)0x0) {
-      iVar3 = 0;
+      iVar2 = 0;
 code_?:
-      func_?(8,TypeInfo__System__Collections__IList,pIVar2,index,iVar3);
+      func_?(8,TypeInfo__System__Collections__IList,pIVar1,index,iVar2);
       return;
     }
-    iVar3 = func_?(value,this_00);
-    if (iVar3 != 0) goto code_?;
+    iVar2 = func_?(value,this_00);
+    if (iVar2 != 0) goto code_?;
   }
   else {
-    this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this_00,StringLiteral_Wrapped_ICollection_T__does_not_,(MethodInfo *)0x0);
-    func_?(this_00,0,MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_Insert_int__System__Object_);
+    uVar3 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar3);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Wrapped_ICollection_T__does_not_);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+    uVar3 = func_?(&MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_Insert_int__System__Object_);
+    func_?(this_00,uVar3);
     value = unaff_EDI;
   }
   func_?(value,this_00);
 code_?:
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -423,29 +517,25 @@ code_?:
 void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object__System_Collections_IList_Remove(CollectionWrapper_1_System_Object_ *this,Object *value,MethodInfo *method)
 
 {
-  puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x20);
-  cVar2 = (*(code *)*puVar1)(value,puVar1);
-  if (cVar2 != '\0') {
-    if (this == (CollectionWrapper_1_System_Object_ *)0x0) {
-      func_?(0);
-code_?:
-      func_?(value,method);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    method = *(MethodInfo **)(*(int *)(method->name + 0x60) + 4);
-    if ((method[3].parameters_count & 1) == 0) {
-      func_?(method);
+  cVar1 = (*(method->klass->rgctx_data[0x11].method)->virtualMethodPointer)(value,method->klass->rgctx_data[0x11].rgctxDataDummy);
+  if (cVar1 != '\0') {
+    pvVar2 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
     }
     if (value == (Object *)0x0) {
-      iVar4 = 0;
+      iVar3 = 0;
     }
     else {
-      iVar4 = func_?(value,method);
-      if (iVar4 == 0) goto code_?;
+      iVar3 = func_?(value,pvVar2);
+      if (iVar3 == 0) {
+        func_?(value,pvVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
     }
-    (*(code *)(this->klass->vtable).Remove_1.method)(this,iVar4,(this->klass->vtable).GetEnumerator_1.methodPtr);
+    (*(this->klass->vtable).Remove_1.methodPtr)(this,iVar3,(this->klass->vtable).Remove_1.method);
   }
   return;
 }
@@ -457,7 +547,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x163f);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
   if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
@@ -468,13 +558,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
     }
   }
   else {
-    this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this_00,StringLiteral_Wrapped_ICollection_T__does_not_,(MethodInfo *)0x0);
-    func_?(this_00,0);
+    uVar2 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar2);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Wrapped_ICollection_T__does_not_);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+    func_?(&MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_RemoveAt_int_);
+    func_?(this_00);
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -485,27 +580,31 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1642);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      bVar3 = func_?(0,TypeInfo__System__Collections__IList,pIVar2);
-      return bVar3;
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      bVar2 = func_?(6,TypeInfo__System__Collections__IList,pIVar1);
+      return bVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    bVar3 = (*pcVar4)();
-    return bVar3;
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericCollection;
+    if (pIVar3 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar2 = func_?(1,pvVar4,pIVar3);
+      return bVar2;
+    }
   }
-  bVar3 = func_?(1,iVar5,pIVar1);
-  return bVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
+  return bVar2;
 }
 
 
@@ -515,24 +614,29 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[S
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1643);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
   if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
     pIVar1 = (this->fields)._list;
     if (pIVar1 != (IList *)0x0) {
-      pOVar2 = (Object *)func_?(2,TypeInfo__System__Collections__IList,pIVar1,index);
+      pOVar2 = (Object *)func_?(0,TypeInfo__System__Collections__IList,pIVar1,index);
       return pOVar2;
     }
   }
   else {
-    this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this_00,StringLiteral_Wrapped_ICollection_T__does_not_,(MethodInfo *)0x0);
-    func_?(this_00,0);
+    uVar3 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar3);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Wrapped_ICollection_T__does_not_);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+    func_?(&MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_get_Item_int_);
+    func_?(this_00);
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  pOVar2 = (Object *)(*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pOVar2 = (Object *)(*pcVar4)();
   return pOVar2;
 }
 
@@ -543,36 +647,40 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1646);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
   if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
-    puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x10);
-    (*(code *)*puVar1)(value,puVar1);
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 == (IList *)0x0) goto code_?;
-    this_00 = *(IsolatedStorageException **)(*(int *)(method->name + 0x60) + 4);
-    if (((uint)this_00[3].fields._._remoteStackTraceString & 0x10000) == 0) {
-      func_?(this_00);
+    (*(method->klass->rgctx_data[0xc].method)->virtualMethodPointer)(value,method->klass->rgctx_data[0xc].rgctxDataDummy);
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 == (IList *)0x0) goto code_?;
+    this_00 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((this_00[2].fields._remoteStackIndex & 0x10000) == 0) {
+      this_00 = (Exception *)func_?(this_00);
     }
     if (value == (Object *)0x0) {
-      iVar3 = 0;
+      iVar2 = 0;
 code_?:
-      func_?(3,TypeInfo__System__Collections__IList,pIVar2,index,iVar3);
+      func_?(1,TypeInfo__System__Collections__IList,pIVar1,index,iVar2);
       return;
     }
-    iVar3 = func_?(value,this_00);
-    if (iVar3 != 0) goto code_?;
+    iVar2 = func_?(value,this_00);
+    if (iVar2 != 0) goto code_?;
   }
   else {
-    this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this_00,StringLiteral_Wrapped_ICollection_T__does_not_,(MethodInfo *)0x0);
-    func_?(this_00,0,MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_set_Item_int__System__Object_);
+    uVar3 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar3);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Wrapped_ICollection_T__does_not_);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+    uVar3 = func_?(&MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__System_Collections_IList_set_Item_int__System__Object_);
+    func_?(this_00,uVar3);
     value = unaff_EDI;
   }
   func_?(value,this_00);
 code_?:
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -584,126 +692,116 @@ code_?:
 void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object__VerifyValueType(Object *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1648);
-    cRam_? = '\x01';
+  pIVar1 = method->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pcVar1 = method->name;
-  pcVar2 = pcVar1;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
-    pcVar2 = method->name;
+  pIVar2 = (pIVar1->rgctx_data[0x11].method)->virtualMethodPointer;
+  pIVar1 = method->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  if ((pcVar2[0xbe] & 1U) == 0) {
-    func_?(pcVar2);
-  }
-  cVar3 = (*(code *)**(undefined4 **)(*(int *)(pcVar2 + 0x60) + 0x20))(value,*(undefined4 *)(*(int *)(pcVar1 + 0x60) + 0x20));
+  cVar3 = (*pIVar2)(value,pIVar1->rgctx_data[0x11].rgctxDataDummy);
   if (cVar3 != '\0') {
     return;
   }
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
+  uVar4 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+  func_?(uVar4);
   provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-  args = (Object__Array *)func_?(TypeInfo__System__Object,2);
-  if (args == (Object__Array *)0x0) goto code_?;
-  if ((value == (Object *)0x0) || (iVar4 = func_?(value,(args->klass->_0).element_class), iVar4 != 0)) {
-    if (args->max_length == 0) goto code_?;
-  }
-  else {
-    uVar5 = func_?(0,0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0,0);
-    func_?(uVar5);
-  }
-  args->vector[0] = value;
-  pcVar1 = method->name;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
-  }
-  handle.value = *(void **)(*(int *)(pcVar1 + 0x60) + 0x34);
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Type);
-  }
+  uVar4 = func_?(&TypeInfo__System__Object,2);
+  args = (Object__Array *)func_?(uVar4);
+  func_?(args);
+  func_?(args,value);
+  func_?(0,value);
+  iVar5 = func_?(method->klass,0x16);
+  handle.value = (void *)func_?(*(undefined4 *)(iVar5 + 0x60));
+  uVar4 = func_?(&TypeInfo__System__Type);
+  func_?(uVar4);
   pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
-  func_?(args,0);
+  func_?(args);
   func_?(args,pTVar6);
   func_?(1,pTVar6);
-  message = StringUtils::StringUtils_FormatWith(StringLiteral_The_value___0___is_not_of_type__,(IFormatProvider *)provider,args,(MethodInfo *)0x0);
-  this = (ArgumentException *)func_?(TypeInfo__System__ArgumentException);
-  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_3(this,message,StringLiteral_value,(MethodInfo *)0x0);
+  pMVar7 = (MethodInfo *)0x0;
+  pSVar8 = (String *)func_?(&StringLiteral_The_value___0___is_not_of_type__);
+  pSVar8 = StringUtils::StringUtils_FormatWith(pSVar8,(IFormatProvider *)provider,args,pMVar7);
+  uVar4 = func_?(&TypeInfo__System__ArgumentException);
+  this = (ArgumentException *)func_?(uVar4);
+  func_?(this);
+  pMVar7 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
+  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_4(this,pSVar8,paramName,pMVar7);
+  func_?(&MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__VerifyValueType_System__Object_);
   func_?();
-code_?:
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
-}
-
-
-/* CollectionWrapper`1[System.Object](IList) */
-
-void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object___ctor(CollectionWrapper_1_System_Object_ *this,IList *list,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(0x164b);
-    cRam_? = '\x01';
-  }
-  if (this == (CollectionWrapper_1_System_Object_ *)0x0) {
-    func_?();
-    list = unaff_ESI;
-  }
-  else {
-    ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-    ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
-    if ((*(byte *)(**(int **)(method->name + 0x60) + 0xbe) & 1) == 0) {
-      func_?();
-    }
-    iVar1 = func_?(list);
-    if (iVar1 == 0) {
-      (this->fields)._list = list;
-      return;
-    }
-    if ((*(byte *)(**(int **)(method->name + 0x60) + 0xbe) & 1) == 0) {
-      func_?();
-    }
-    if (list == (IList *)0x0) {
-      (this->fields)._genericCollection = (ICollection_1_System_Object_ *)0x0;
-      return;
-    }
-    pIVar2 = (ICollection_1_System_Object_ *)func_?(list);
-    if (pIVar2 != (ICollection_1_System_Object_ *)0x0) {
-      (this->fields)._genericCollection = pIVar2;
-      return;
-    }
-  }
-  func_?(list);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
 
 /* CollectionWrapper`1[System.Object](ICollection`1[System.Object]) */
 
-void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object___ctor_1(CollectionWrapper_1_System_Object_ *this,ICollection_1_System_Object_ *list,MethodInfo *method)
+void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object___ctor(CollectionWrapper_1_System_Object_ *this,ICollection_1_System_Object_ *list,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(0x164a);
+    func_?(&StringLiteral_list);
     cRam_? = '\x01';
   }
-  if (this != (CollectionWrapper_1_System_Object_ *)0x0) {
-    ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-    ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
-    (this->fields)._genericCollection = list;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
+  (this->fields)._genericCollection = list;
+  func_?(&(this->fields)._genericCollection,list);
+  return;
+}
+
+
+/* CollectionWrapper`1[System.Object](IList) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object___ctor_1(CollectionWrapper_1_System_Object_ *this,IList *list,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_list);
+    cRam_? = '\x01';
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
+  if ((*(byte *)((int)method->klass->rgctx_data->rgctxDataDummy + 0xba) & 1) == 0) {
+    func_?();
+  }
+  iVar1 = func_?(list);
+  if (iVar1 == 0) {
+    (this->fields)._list = list;
+    func_?(&this->fields);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if ((*(byte *)((int)method->klass->rgctx_data->rgctxDataDummy + 0xba) & 1) == 0) {
+    func_?();
+  }
+  if (list == (IList *)0x0) {
+    pIVar2 = (ICollection_1_System_Object_ *)0x0;
+  }
+  else {
+    pIVar2 = (ICollection_1_System_Object_ *)func_?(list);
+    if (pIVar2 == (ICollection_1_System_Object_ *)0x0) goto code_?;
+  }
+  (this->fields)._genericCollection = pIVar2;
+  if ((*(byte *)((int)method->klass->rgctx_data->rgctxDataDummy + 0xba) & 1) == 0) {
+    func_?();
+  }
+  if (list == (IList *)0x0) {
+    func_?(&(this->fields)._genericCollection);
+    return;
+  }
+  iVar1 = func_?(list);
+  if (iVar1 != 0) {
+    func_?(&(this->fields)._genericCollection);
+    return;
+  }
+code_?:
+  func_?(list);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -714,27 +812,31 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Sy
 
 {
   if (cRam_? == '\0') {
-    func_?(0x164e);
+    func_?(&TypeInfo__System__Collections__ICollection);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      iVar3 = func_?(0,TypeInfo__System__Collections__ICollection,pIVar2);
-      return iVar3;
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      iVar2 = func_?(1,TypeInfo__System__Collections__ICollection,pIVar1);
+      return iVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    iVar3 = (*pcVar4)();
-    return iVar3;
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericCollection;
+    if (pIVar3 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      iVar2 = func_?(0,pvVar4,pIVar3);
+      return iVar2;
+    }
   }
-  iVar3 = func_?(0,iVar5,pIVar1);
-  return iVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  iVar2 = (*pcVar5)();
+  return iVar2;
 }
 
 
@@ -744,26 +846,30 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::CollectionWrapper`1[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(0x164f);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericCollection;
-  if (pIVar1 == (ICollection_1_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._list;
-    if (pIVar2 != (IList *)0x0) {
-      bVar3 = func_?(1,TypeInfo__System__Collections__IList,pIVar2);
-      return bVar3;
+  if ((this->fields)._genericCollection == (ICollection_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._list;
+    if (pIVar1 != (IList *)0x0) {
+      bVar2 = func_?(5,TypeInfo__System__Collections__IList,pIVar1);
+      return bVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    bVar3 = (*pcVar4)();
-    return bVar3;
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericCollection;
+    if (pIVar3 != (ICollection_1_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar2 = func_?(1,pvVar4,pIVar3);
+      return bVar2;
+    }
   }
-  bVar3 = func_?(1,iVar5,pIVar1);
-  return bVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
+  return bVar2;
 }
 

@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
@@ -22,25 +22,20 @@ namespace Newtonsoft.Json
 		private JsonSchemaModel _model;
 		private SchemaScope _currentScope;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private ValidationEventHandler ValidationEventHandler;
-		[CompilerGenerated]
-		private static Func<KeyValuePair<string, bool>, bool> __f__am_cache0;
-		[CompilerGenerated]
-		private static Func<KeyValuePair<string, bool>, string> __f__am_cache1;
 	
 		// Properties
-		int IJsonLineInfo.LineNumber { get; }
-		int IJsonLineInfo.LinePosition { get; }
 		public override object Value { get; }
 		public override int Depth { get; }
 		public override char QuoteChar { get; protected internal set; }
 		public override JsonToken TokenType { get; }
-		public override Type ValueType { get; }
+		public override System.Type ValueType { get; }
 		private IEnumerable<JsonSchemaModel> CurrentSchemas { get; }
 		private IEnumerable<JsonSchemaModel> CurrentMemberSchemas { get; }
 		public JsonSchema Schema { get; set; }
 		public JsonReader Reader { get; }
+		int IJsonLineInfo.LineNumber { get; }
+		int IJsonLineInfo.LinePosition { get; }
 	
 		// Events
 		public event ValidationEventHandler ValidationEventHandler {
@@ -56,19 +51,9 @@ namespace Newtonsoft.Json
 			private readonly IList<JsonSchemaModel> _schemas;
 			private readonly Dictionary<string, bool> _requiredProperties;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private string _CurrentPropertyName_k__BackingField;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private int _ArrayItemCount_k__BackingField;
-			[CompilerGenerated]
-			private static Func<string, string> __f__am_cache0;
-			[CompilerGenerated]
-			private static Func<string, bool> __f__am_cache1;
-			[CompilerGenerated]
-			private static Func<KeyValuePair<string, JsonSchemaModel>, bool> __f__am_cache2;
-			[CompilerGenerated]
-			private static Func<KeyValuePair<string, JsonSchemaModel>, string> __f__am_cache3;
 	
 			// Properties
 			public string CurrentPropertyName { [CompilerGenerated] get; [CompilerGenerated] set; }
@@ -77,19 +62,52 @@ namespace Newtonsoft.Json
 			public Dictionary<string, bool> RequiredProperties { get; }
 			public JTokenType TokenType { get; }
 	
+			// Nested types
+			[Serializable]
+			[CompilerGenerated]
+			private sealed class __c
+			{
+				// Fields
+				public static readonly __c __9;
+				public static Func<string, string> __9__17_0;
+				public static Func<string, bool> __9__17_1;
+				public static Func<KeyValuePair<string, JsonSchemaModel>, bool> __9__18_0;
+				public static Func<KeyValuePair<string, JsonSchemaModel>, string> __9__18_1;
+	
+				// Constructors
+				static __c();
+				public __c();
+	
+				// Methods
+				internal string _.ctor_b__17_0(string p);
+				internal bool _.ctor_b__17_1(string p);
+				internal bool _GetRequiredProperties_b__18_0(KeyValuePair<string, JsonSchemaModel> p);
+				internal string _GetRequiredProperties_b__18_1(KeyValuePair<string, JsonSchemaModel> p);
+			}
+	
 			// Constructors
 			public SchemaScope(JTokenType tokenType, IList<JsonSchemaModel> schemas);
 	
 			// Methods
 			private IEnumerable<string> GetRequiredProperties(JsonSchemaModel schema);
-			[CompilerGenerated]
-			private static string _SchemaScope_m__0(string p);
-			[CompilerGenerated]
-			private static bool _SchemaScope_m__1(string p);
-			[CompilerGenerated]
-			private static bool _GetRequiredProperties_m__2(KeyValuePair<string, JsonSchemaModel> p);
-			[CompilerGenerated]
-			private static string _GetRequiredProperties_m__3(KeyValuePair<string, JsonSchemaModel> p);
+		}
+	
+		[Serializable]
+		[CompilerGenerated]
+		private sealed class __c
+		{
+			// Fields
+			public static readonly __c __9;
+			public static Func<KeyValuePair<string, bool>, bool> __9__41_0;
+			public static Func<KeyValuePair<string, bool>, string> __9__41_1;
+	
+			// Constructors
+			static __c();
+			public __c();
+	
+			// Methods
+			internal bool _ValidateEndObject_b__41_0(KeyValuePair<string, bool> kv);
+			internal string _ValidateEndObject_b__41_1(KeyValuePair<string, bool> kv);
 		}
 	
 		// Constructors
@@ -122,9 +140,5 @@ namespace Newtonsoft.Json
 		private bool ValidateObject(JsonSchemaModel schema);
 		private bool TestType(JsonSchemaModel currentSchema, JsonSchemaType currentType);
 		bool IJsonLineInfo.HasLineInfo();
-		[CompilerGenerated]
-		private static bool _ValidateEndObject_m__0(KeyValuePair<string, bool> kv);
-		[CompilerGenerated]
-		private static string _ValidateEndObject_m__1(KeyValuePair<string, bool> kv);
 	}
 }

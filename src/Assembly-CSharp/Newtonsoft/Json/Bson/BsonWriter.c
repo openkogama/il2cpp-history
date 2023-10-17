@@ -6,6 +6,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_AddPare
 {
   BsonWriter_AddToken(this,container,(MethodInfo *)0x0);
   (this->fields)._parent = container;
+  func_?(&(this->fields)._parent,container);
   return;
 }
 
@@ -15,115 +16,129 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_AddPare
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_AddToken(BsonWriter *this,BsonToken *token,MethodInfo *method)
 
 {
+  message = this;
   if (cRam_? == '\0') {
-    func_?(0x1300);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonArray);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonObject);
     cRam_? = '\x01';
   }
   pBVar1 = token;
-  pBVar2 = this;
-  this_00 = (ScaleAnimationBase *)(this->fields)._parent;
-  if (this_00 == (ScaleAnimationBase *)0x0) {
-    this_00 = (ScaleAnimationBase *)token;
-    if (token != (BsonToken *)0x0) {
-      cVar3 = (*(code *)(token->klass->vtable).__unknown.method)(token,token->klass[1]._0.image);
-      if (cVar3 == '\x03') {
+  if ((message->fields)._parent == (BsonToken *)0x0) {
+    if (token == (BsonToken *)0x0) goto code_?;
+    cVar2 = (*(token->klass->vtable).__unknown.methodPtr)(token,(token->klass->vtable).__unknown.method);
+    if (cVar2 == '\x03') {
 code_?:
-        (pBVar2->fields)._parent = pBVar1;
-        (pBVar2->fields)._root = pBVar1;
-        return;
-      }
-      cVar3 = (*(code *)(pBVar1->klass->vtable).__unknown.method)(pBVar1,pBVar1->klass[1]._0.image);
-      this_00 = (ScaleAnimationBase *)pBVar1;
-      if (cVar3 == '\x04') goto code_?;
-      goto code_?;
+      (message->fields)._parent = pBVar1;
+      func_?(&(message->fields)._parent,pBVar1);
+      (message->fields)._root = pBVar1;
+      func_?(&(message->fields)._root,pBVar1);
+      return;
     }
+    cVar2 = (*(pBVar1->klass->vtable).__unknown.methodPtr)(pBVar1,(pBVar1->klass->vtable).__unknown.method);
+    if (cVar2 == '\x04') goto code_?;
+code_?:
+    uVar3 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(uVar3);
+    pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+    uVar3 = func_?(&TypeInfo__System__Object,1);
+    args = (Object__Array *)func_?(uVar3);
+    pBVar1 = token;
+    func_?(token);
+    uVar5 = func_?(4,pBVar1);
+    this = (BsonWriter *)CONCAT13(uVar5,this._0_3_);
+    uVar3 = func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonType,(int)&this + 3);
+    uVar3 = func_?(uVar3);
+    func_?(args);
+    func_?(args,uVar3);
+    func_?(0,uVar3);
+    method_00 = (MethodInfo *)0x0;
+    provider = pCVar4;
+    format = (String *)func_?(&StringLiteral_Error_writing__0__value__BSON_mu);
+    message = (BsonWriter *)Json::Utilities::StringUtils::StringUtils_FormatWith(format,(IFormatProvider *)provider,args,method_00);
+    uVar3 = func_?(&TypeInfo__Newtonsoft__Json__JsonWriterException);
+    this_00 = (JsonWriterException *)func_?(uVar3);
+    func_?(this_00);
+    JsonWriterException::JsonWriterException__ctor_1(this_00,(String *)message,(MethodInfo *)0x0);
+    uVar3 = func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__AddToken_Newtonsoft__Json__Bson__BsonToken_);
+    func_?(this_00,uVar3);
+    pBVar6 = extraout_EDX;
   }
   else {
-    bVar4 = (TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).naturalAligment;
-    if (((this_00->klass->_1).naturalAligment < bVar4) || ((this_00->klass->_1).typeHierarchy[bVar4 - 1] != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonObject)) {
-      bVar5 = false;
+    pBVar1 = (message->fields)._parent;
+    if (pBVar1 == (BsonToken *)0x0) {
+code_?:
+      func_?();
+      goto code_?;
     }
-    else {
-      bVar5 = true;
-    }
-    pSVar6 = (ScaleAnimationBase *)0x0;
-    if (bVar5) {
-      pSVar6 = this_00;
-    }
-    if (pSVar6 == (ScaleAnimationBase *)0x0) {
-      iVar7 = func_?(this_00,TypeInfo__Newtonsoft__Json__Bson__BsonArray);
-      if (iVar7 != 0) {
-        pBVar1 = (BsonToken *)func_?(this_00,TypeInfo__Newtonsoft__Json__Bson__BsonArray);
-        if (cRam_? == '\0') {
-          func_?(0x12e0);
-          cRam_? = '\x01';
-        }
-        pBVar8 = token;
-        if (pBVar1[1].klass != (BsonToken__Class *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)pBVar1[1].klass,(UIPushOption__Enum)token,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>__Add_Newtonsoft__Json__Bson__BsonToken_);
-          this_00 = (ScaleAnimationBase *)0x0;
-          if (pBVar8 != (BsonToken *)0x0) {
-            (pBVar8->fields)._Parent_k__BackingField = pBVar1;
-            return;
-          }
+    pBVar7 = pBVar1->klass;
+    if (((pBVar7->_1).typeHierarchyDepth < (TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth) || ((pBVar7->_1).typeHierarchy[(TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonObject)) {
+      message = (BsonWriter *)(message->fields)._parent;
+      pBVar8 = TypeInfo__Newtonsoft__Json__Bson__BsonArray;
+      if (((message->klass->_1).typeHierarchyDepth < (TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth) || ((ppIVar9 = (message->klass->_1).typeHierarchy, ppIVar9[(TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonArray || (ppIVar9[(TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonArray)))) goto code_?;
+      if (cRam_? == '\0') {
+        func_?(&MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>__Add_Newtonsoft__Json__Bson__BsonToken_);
+        cRam_? = '\x01';
+      }
+      pBVar1 = token;
+      pLVar10 = (List_1_System_Object_ *)(message->fields)._._currentState;
+      if (pLVar10 != (List_1_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(pLVar10,(Object *)token,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>__Add_Newtonsoft__Json__Bson__BsonToken_);
+        if (pBVar1 != (BsonToken *)0x0) {
+          (pBVar1->fields)._Parent_k__BackingField = (BsonToken *)message;
+          func_?(&pBVar1->fields,message);
+          return;
         }
       }
+      goto code_?;
     }
-    else {
-      this = (BsonWriter *)(this->fields)._propertyName;
-      iVar7 = func_?(this_00,TypeInfo__Newtonsoft__Json__Bson__BsonObject);
-      if (iVar7 != 0) {
-        pBVar8 = (BsonToken *)func_?(this_00,TypeInfo__Newtonsoft__Json__Bson__BsonObject);
-        pBVar1 = pBVar8;
-        if (cRam_? == '\0') {
-          func_?(0x12ec);
-          cRam_? = '\x01';
-        }
-        this_02 = pBVar8[1].klass;
-        method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonProperty;
-        this_00 = (ScaleAnimationBase *)func_?();
-        ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-        pSVar6 = (ScaleAnimationBase *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
-        ScaleAnimationBase::ScaleAnimationBase_Play(pSVar6,0.0,in_stack_9);
-        pBVar8 = token;
-        (pSVar6->fields).originalScale.x = (float)this;
-        *(undefined1 *)((int)&(pSVar6->fields).originalScale + 4) = 2;
-        *(undefined1 *)&(pSVar6->fields).target = 0;
-        if (this_00 != (ScaleAnimationBase *)0x0) {
-          (this_00->fields)._._._._.m_CachedPtr = pSVar6;
-          (this_00->fields).state = (int32_t)token;
-          if (this_02 != (BsonToken__Class *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_02,(UIPushOption__Enum)this_00,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__Add_Newtonsoft__Json__Bson__BsonProperty_);
-            if (pBVar8 != (BsonToken *)0x0) {
-              (pBVar8->fields)._Parent_k__BackingField = pBVar1;
-              (pBVar2->fields)._propertyName = (String *)0x0;
+    pCVar4 = (CultureInfo *)(message->fields)._parent;
+    this = (BsonWriter *)(message->fields)._propertyName;
+    if (pCVar4 == (CultureInfo *)0x0) goto code_?;
+    pBVar6 = TypeInfo__Newtonsoft__Json__Bson__BsonObject;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth <= (pCVar4->klass->_1).typeHierarchyDepth) && ((pCVar4->klass->_1).typeHierarchy[(TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonObject)) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonProperty);
+        func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
+        func_?(&MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__Add_Newtonsoft__Json__Bson__BsonProperty_);
+        cRam_? = '\x01';
+      }
+      pLVar10 = (List_1_System_Object_ *)(pCVar4->fields).parent_lcid;
+      value = (Object *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonProperty);
+      if (value != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
+        value_00 = (Object__Class *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+        if (value_00 != (Object__Class *)0x0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EDI);
+          (value_00->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this;
+          func_?(&(value_00->_0).byval_arg,this);
+          *(undefined1 *)&(value_00->_0).byval_arg.attrs = 2;
+          *(undefined1 *)&(value_00->_0).this_arg.attrs = 0;
+          value[1].klass = value_00;
+          func_?(value + 1,value_00);
+          pBVar1 = token;
+          value[1].monitor = (MonitorData *)token;
+          func_?(&value[1].monitor,token);
+          if (pLVar10 != (List_1_System_Object_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(pLVar10,value,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__Add_Newtonsoft__Json__Bson__BsonProperty_);
+            if (pBVar1 != (BsonToken *)0x0) {
+              (pBVar1->fields)._Parent_k__BackingField = (BsonToken *)pCVar4;
+              func_?(&pBVar1->fields,pCVar4);
+              (message->fields)._propertyName = (String *)0x0;
+              func_?(&(message->fields)._propertyName,0);
               return;
             }
           }
         }
       }
+      goto code_?;
     }
   }
-  func_?(0);
+  func_?(pCVar4,pBVar6);
+  pBVar8 = extraout_EDX_00;
 code_?:
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
-  provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-  args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-  func_?(this_00,0);
-  uVar10 = func_?(4,this_00);
-  this = (BsonWriter *)CONCAT13(uVar10,this._0_3_);
-  uVar11 = func_?(TypeInfo__Newtonsoft__Json__Bson__BsonType,(int)&this + 3);
-  func_?(args,0);
-  func_?(args,uVar11);
-  func_?(0,uVar11);
-  message = Json::Utilities::StringUtils::StringUtils_FormatWith(StringLiteral_Error_writing__0__value__BSON_mu,(IFormatProvider *)provider,args,(MethodInfo *)0x0);
-  this_01 = (JsonSchemaException *)func_?(TypeInfo__Newtonsoft__Json__JsonWriterException);
-  Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(this_01,message,(MethodInfo *)0x0);
-  func_?(this_01,0,MethodInfo__Newtonsoft__Json__Bson__BsonWriter__AddToken_Newtonsoft__Json__Bson__BsonToken_);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?(message,pBVar8);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -134,15 +149,21 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_AddValu
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1301);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonValue);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = (float)value;
-  *(undefined1 *)&(this_00->fields).originalScale.y = (undefined1)type;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonValue);
+  if (token != (BsonToken *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)token,ExceptionArgument__Enum_obj,unaff_ESI);
+    token[1].klass = (BsonToken__Class *)value;
+    func_?(token + 1,value);
+    *(undefined1 *)&token[1].monitor = (undefined1)type;
+    BsonWriter_AddToken(this,token,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -152,17 +173,16 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_AddValu
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_Close(BsonWriter *this,MethodInfo *method)
 
 {
-  Json::Linq::JTokenWriter::JTokenWriter_Close((JTokenWriter *)this,(MethodInfo *)0x0);
-  uVar1 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::Byte]::Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte__System_Collections_Generic_IEnumerator_TResult__get_Current((Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_ *)this,(MethodInfo *)0x0);
-  if ((uVar1 != 0) && (pBVar2 = (this->fields)._writer, pBVar2 != (BsonBinaryWriter *)0x0)) {
-    pBVar3 = (pBVar2->fields)._writer;
-    if (pBVar3 == (BinaryWriter *)0x0) {
+  JsonWriter::JsonWriter_AutoCompleteAll((JsonWriter *)this,(MethodInfo *)0x0);
+  if (((this->fields)._._CloseOutput_k__BackingField != 0) && ((this->fields)._writer != (BsonBinaryWriter *)0x0)) {
+    pBVar1 = (((this->fields)._writer)->fields)._writer;
+    if (pBVar1 == (BinaryWriter *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    (*(code *)(pBVar3->klass->vtable).Close.method)();
+    (*(pBVar1->klass->vtable).Close.methodPtr)(pBVar1,(pBVar1->klass->vtable).Close.method);
   }
   return;
 }
@@ -173,14 +193,17 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_Close(B
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_Flush(BsonWriter *this,MethodInfo *method)
 
 {
-  pBVar1 = (this->fields)._writer;
-  if ((pBVar1 != (BsonBinaryWriter *)0x0) && (pBVar2 = (pBVar1->fields)._writer, pBVar2 != (BinaryWriter *)0x0)) {
-    (*(code *)(pBVar2->klass->vtable).Flush.method)(pBVar2,(pBVar2->klass->vtable).Write.methodPtr);
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pBVar2 = (this->fields)._writer;
+  if ((pBVar2 != (BsonBinaryWriter *)0x0) && (pBStack_3 = (pBVar2->fields)._writer, pBStack_3 != (BinaryWriter *)0x0)) {
+    pMStack_1 = (pBStack_3->klass->vtable).Flush.method;
+    (*(pBStack_3->klass->vtable).Flush.methodPtr)();
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -190,14 +213,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_Flush(B
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_RemoveParent(BsonWriter *this,MethodInfo *method)
 
 {
-  pBVar1 = (this->fields)._parent;
-  if (pBVar1 != (BsonToken *)0x0) {
-    (this->fields)._parent = (pBVar1->fields)._Parent_k__BackingField;
+  ppBStack_1 = (BsonToken **)&stack0xfffffffc;
+  pBVar2 = (this->fields)._parent;
+  if (pBVar2 != (BsonToken *)0x0) {
+    (this->fields)._parent = (pBVar2->fields)._Parent_k__BackingField;
+    ppBStack_1 = &(this->fields)._parent;
+    func_?();
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -207,15 +234,16 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_RemoveP
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteComment(BsonWriter *this,String *text,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1302);
-    cRam_? = '\x01';
-  }
-  this_00 = (JsonSchemaException *)func_?(TypeInfo__Newtonsoft__Json__JsonWriterException);
-  Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(this_00,StringLiteral_Cannot_write_JSON_comment_as_BSO,(MethodInfo *)0x0);
+  uVar1 = func_?(&TypeInfo__Newtonsoft__Json__JsonWriterException);
+  this_00 = (JsonWriterException *)func_?(uVar1);
   func_?(this_00);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Cannot_write_JSON_comment_as_BSO);
+  JsonWriterException::JsonWriterException__ctor_1(this_00,message,method_00);
+  func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteComment_System__String_);
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -225,12 +253,13 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteCo
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteEnd(BsonWriter *this,JsonToken__Enum token,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,(float)token,(MethodInfo *)0x0);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,token,(MethodInfo *)0x0);
   pBVar1 = (this->fields)._parent;
   if (pBVar1 != (BsonToken *)0x0) {
-    (this->fields)._parent = (pBVar1->fields)._Parent_k__BackingField;
-    pIVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-    if (pIVar2 == (IList_1_VoxelHit_ *)0x0) {
+    pBVar1 = (pBVar1->fields)._Parent_k__BackingField;
+    (this->fields)._parent = pBVar1;
+    func_?(&(this->fields)._parent,pBVar1);
+    if ((this->fields)._._top == 0) {
       this_00 = (this->fields)._writer;
       pBVar1 = (this->fields)._root;
       if (this_00 == (BsonBinaryWriter *)0x0) goto code_?;
@@ -240,9 +269,9 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteEn
     return;
   }
 code_?:
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -253,16 +282,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteNu
 
 {
   JsonWriter::JsonWriter_WriteNull((JsonWriter *)this,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = 0.0;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 10;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  BsonWriter_AddValue(this,(Object *)0x0,BsonType__Enum_Null,(MethodInfo *)0x0);
   return;
 }
 
@@ -273,32 +293,28 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteOb
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1303);
+    func_?(&StringLiteral_value);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)value,StringLiteral_value,(MethodInfo *)0x0);
   if (value == (Byte__Array *)0x0) {
-    func_?(0);
+    func_?();
   }
   else if (value->max_length == 0xc) {
     JsonWriter::JsonWriter_AutoComplete((JsonWriter *)this,JsonToken__Enum_Undefined,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)value;
-    *(undefined1 *)&(this_00->fields).originalScale.y = 7;
-    BsonWriter_AddToken((BsonWriter *)0x0,(BsonToken *)this_00,(MethodInfo *)0x0);
+    BsonWriter_AddValue(this,(Object *)value,BsonType__Enum_Oid,(MethodInfo *)0x0);
     return;
   }
-  this_01 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this_01,StringLiteral_An_object_id_must_be_12_bytes,(MethodInfo *)0x0);
+  uVar1 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_An_object_id_must_be_12_bytes);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+  func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteObjectId_System__Byte____);
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -310,6 +326,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WritePr
 {
   JsonWriter::JsonWriter_WritePropertyName((JsonWriter *)this,name,(MethodInfo *)0x0);
   (this->fields)._propertyName = name;
+  func_?(&(this->fields)._propertyName,name);
   return;
 }
 
@@ -319,15 +336,16 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WritePr
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteRaw(BsonWriter *this,String *json,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1305);
-    cRam_? = '\x01';
-  }
-  this_00 = (JsonSchemaException *)func_?(TypeInfo__Newtonsoft__Json__JsonWriterException);
-  Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(this_00,StringLiteral_Cannot_write_raw_JSON_as_BSON_,(MethodInfo *)0x0);
+  uVar1 = func_?(&TypeInfo__Newtonsoft__Json__JsonWriterException);
+  this_00 = (JsonWriterException *)func_?(uVar1);
   func_?(this_00);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Cannot_write_raw_JSON_as_BSON_);
+  JsonWriterException::JsonWriterException__ctor_1(this_00,message,method_00);
+  func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteRaw_System__String_);
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -337,15 +355,16 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteRa
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteRawValue(BsonWriter *this,String *json,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1304);
-    cRam_? = '\x01';
-  }
-  this_00 = (JsonSchemaException *)func_?(TypeInfo__Newtonsoft__Json__JsonWriterException);
-  Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(this_00,StringLiteral_Cannot_write_raw_JSON_as_BSON_,(MethodInfo *)0x0);
+  uVar1 = func_?(&TypeInfo__Newtonsoft__Json__JsonWriterException);
+  this_00 = (JsonWriterException *)func_?(uVar1);
   func_?(this_00);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Cannot_write_raw_JSON_as_BSON_);
+  JsonWriterException::JsonWriterException__ctor_1(this_00,message,method_00);
+  func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteRawValue_System__String_);
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -356,32 +375,45 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteRe
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1306);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonRegex);
+    func_?(&StringLiteral_pattern);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)pattern,StringLiteral_pattern,(MethodInfo *)0x0);
   JsonWriter::JsonWriter_AutoComplete((JsonWriter *)this,JsonToken__Enum_Undefined,(MethodInfo *)0x0);
-  this_00 = (ScaleAnimationBase *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonRegex);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonRegex);
+  if (token != (BsonToken *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)token,ExceptionArgument__Enum_obj,(MethodInfo *)pattern);
+    value = (BsonToken__Class *)func_?();
+    if (value != (BsonToken__Class *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)pattern);
+      (value->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)pattern;
+      func_?();
+      *(undefined1 *)&(value->_0).byval_arg.attrs = 2;
+      *(undefined1 *)&(value->_0).this_arg.attrs = 0;
+      token[1].klass = value;
+      func_?(token + 1,value);
+      value_00 = (Object *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+      if (value_00 != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value_00,ExceptionArgument__Enum_obj,(MethodInfo *)pattern);
+        value_00[2].klass = (Object__Class *)options;
+        func_?();
+        *(undefined1 *)&value_00[2].monitor = 2;
+        *(undefined1 *)&value_00[3].monitor = 0;
+        token[1].monitor = (MonitorData *)value_00;
+        func_?(&token[1].monitor,value_00);
+        BsonWriter_AddToken((BsonWriter *)options,token,(MethodInfo *)0x0);
+        return;
+      }
+    }
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)pattern);
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  pSVar1 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar1,0.0,(MethodInfo *)method_00);
-  (pSVar1->fields).originalScale.x = (float)pattern;
-  *(undefined1 *)&(pSVar1->fields).originalScale.y = 2;
-  *(undefined1 *)&(pSVar1->fields).target = 0;
-  (this_00->fields).originalScale.x = (float)pSVar1;
-  method_01 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  pSVar1 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar1,0.0,(MethodInfo *)method_01);
-  (pSVar1->fields).originalScale.x = (float)options;
-  *(undefined1 *)&(pSVar1->fields).originalScale.y = 2;
-  *(undefined1 *)&(pSVar1->fields).target = 0;
-  (this_00->fields).originalScale.y = (float)pSVar1;
-  BsonWriter_AddToken((BsonWriter *)method_00,(BsonToken *)this_00,(MethodInfo *)0x0);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -392,22 +424,33 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteSt
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1307);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonArray);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteStartArray((JsonWriter *)this,(MethodInfo *)0x0);
-  this_00 = (ScaleAnimationBase *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonArray);
-  if (cRam_? == '\0') {
-    func_?(0x12e2);
-    cRam_? = '\x01';
+  token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonArray);
+  if (token != (BsonToken *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>__List__);
+      func_?(&TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>);
+      cRam_? = '\x01';
+    }
+    this_00 = (BsonToken__Class *)func_?(TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>);
+    if (this_00 != (BsonToken__Class *)0x0) {
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>__List__);
+      method_00 = (MethodInfo *)(token + 1);
+      token[1].klass = this_00;
+      func_?(method_00,this_00);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)token,ExceptionArgument__Enum_obj,method_00);
+      BsonWriter_AddToken(this,token,(MethodInfo *)0x0);
+      (this->fields)._parent = token;
+      func_?(&(this->fields)._parent,token);
+      return;
+    }
   }
-  method_00 = TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>;
-  this_01 = (List_1_UnityEngine_Vector4_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(this_01,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonToken>__List__);
-  (this_00->fields).originalScale.x = (float)this_01;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
-  (this->fields)._parent = (BsonToken *)this_00;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -417,15 +460,16 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteSt
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteStartConstructor(BsonWriter *this,String *name,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1308);
-    cRam_? = '\x01';
-  }
-  this_00 = (JsonSchemaException *)func_?(TypeInfo__Newtonsoft__Json__JsonWriterException);
-  Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(this_00,StringLiteral_Cannot_write_JSON_constructor_as,(MethodInfo *)0x0);
+  uVar1 = func_?(&TypeInfo__Newtonsoft__Json__JsonWriterException);
+  this_00 = (JsonWriterException *)func_?(uVar1);
   func_?(this_00);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Cannot_write_JSON_constructor_as);
+  JsonWriterException::JsonWriterException__ctor_1(this_00,message,method_00);
+  func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteStartConstructor_System__String_);
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -436,22 +480,33 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteSt
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1309);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonObject);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteStartObject((JsonWriter *)this,(MethodInfo *)0x0);
-  this_00 = (ScaleAnimationBase *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonObject);
-  if (cRam_? == '\0') {
-    func_?(0x12ee);
-    cRam_? = '\x01';
+  token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonObject);
+  if (token != (BsonToken *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__List__);
+      func_?(&TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>);
+      cRam_? = '\x01';
+    }
+    this_00 = (BsonToken__Class *)func_?(TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>);
+    if (this_00 != (BsonToken__Class *)0x0) {
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__List__);
+      method_00 = (MethodInfo *)(token + 1);
+      token[1].klass = this_00;
+      func_?(method_00,this_00);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)token,ExceptionArgument__Enum_obj,method_00);
+      BsonWriter_AddToken(this,token,(MethodInfo *)0x0);
+      (this->fields)._parent = token;
+      func_?(&(this->fields)._parent,token);
+      return;
+    }
   }
-  method_00 = TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>;
-  this_01 = (List_1_UnityEngine_Vector4_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(this_01,MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__List__);
-  (this_00->fields).originalScale.x = (float)this_01;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
-  (this->fields)._parent = (BsonToken *)this_00;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -462,16 +517,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteUn
 
 {
   JsonWriter::JsonWriter_WriteUndefined((JsonWriter *)this,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = 0.0;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 6;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  BsonWriter_AddValue(this,(Object *)0x0,BsonType__Enum_Undefined,(MethodInfo *)0x0);
   return;
 }
 
@@ -482,30 +528,27 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1318);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_10((JsonWriter *)this,(uint16_t)value,(MethodInfo *)0x0);
-  if (value == (String *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(0x1301);
-      cRam_? = '\x01';
+  if (value != (String *)0x0) {
+    token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+    if (token != (BsonToken *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)token,ExceptionArgument__Enum_obj,unaff_ESI);
+      token[1].klass = (BsonToken__Class *)value;
+      func_?(token + 1,value);
+      *(undefined1 *)&token[1].monitor = 2;
+      *(undefined1 *)&token[1].fields._CalculatedSize_k__BackingField = 1;
+      BsonWriter_AddToken(this,token,(MethodInfo *)0x0);
+      return;
     }
-    method_01 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_01);
-    (this_00->fields).originalScale.x = 0.0;
-    *(undefined1 *)&(this_00->fields).originalScale.y = 10;
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  else {
-    method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)value;
-    *(undefined1 *)&(this_00->fields).originalScale.y = 2;
-    *(undefined1 *)&(this_00->fields).target = 1;
-  }
-  BsonWriter_AddToken((BsonWriter *)0x0,(BsonToken *)this_00,(MethodInfo *)0x0);
+  BsonWriter_AddValue(this,(Object *)0x0,BsonType__Enum_Null,(MethodInfo *)0x0);
   return;
 }
 
@@ -516,23 +559,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1310);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   iVar1 = value;
   JsonWriter::JsonWriter_WriteValue_12((JsonWriter *)this,(int8_t)value,(MethodInfo *)0x0);
   value = iVar1;
-  fVar2 = (float)func_?(TypeInfo__System__Int32,&value);
-  if (cRam_? == '\0') {
-    func_?(0x1301);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar2;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 0x10;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__Int32,&value);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Integer,(MethodInfo *)0x0);
   return;
 }
 
@@ -543,18 +577,24 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1319);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_10((JsonWriter *)this,(uint16_t)_value,(MethodInfo *)0x0);
-  fVar1 = (float)func_?(&value,0);
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 2;
-  *(undefined1 *)&(this_00->fields).target = 1;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  this_00 = (BsonToken__Class *)mscorlib.dll::System::Char::Char_ToString((Char *)&value,(MethodInfo *)0x0);
+  token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+  if (token != (BsonToken *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)token,ExceptionArgument__Enum_obj,_value);
+    token[1].klass = this_00;
+    func_?();
+    *(undefined1 *)&token[1].monitor = 2;
+    *(undefined1 *)&token[1].fields._CalculatedSize_k__BackingField = 1;
+    BsonWriter_AddToken((BsonWriter *)this_00,token,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -565,21 +605,12 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x130b);
+    func_?(&TypeInfo__System__Byte);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_12((JsonWriter *)this,value,(MethodInfo *)0x0);
-  fVar1 = (float)func_?(TypeInfo__System__Byte,&stack0x0000000b);
-  if (cRam_? == '\0') {
-    func_?(0x1301);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 0x10;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__Byte,&stack0x0000000b);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Integer,(MethodInfo *)0x0);
   return;
 }
 
@@ -590,21 +621,12 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1317);
+    func_?(&TypeInfo__System__SByte);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_12((JsonWriter *)this,value,(MethodInfo *)0x0);
-  fVar1 = (float)func_?(TypeInfo__System__SByte,&stack0x0000000b);
-  if (cRam_? == '\0') {
-    func_?(0x1301);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 0x10;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__SByte,&stack0x0000000b);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Integer,(MethodInfo *)0x0);
   return;
 }
 
@@ -615,21 +637,19 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1316);
+    func_?(&TypeInfo__System__Decimal);
     cRam_? = '\x01';
   }
-  JsonWriter::JsonWriter_WriteValue_13((JsonWriter *)this,value,(MethodInfo *)0x0);
-  fVar1 = (float)func_?(TypeInfo__System__Decimal,&stack0xffffffec);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 1;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  auVar1 = value._0_12_;
+  value_00.mid = 0;
+  value_00.flags = auVar1._0_4_;
+  value_00.hi = auVar1._4_4_;
+  value_00.lo = auVar1._8_4_;
+  value_00.ulomidLE._0_4_ = in_stack_2;
+  value_00.ulomidLE._4_4_ = in_stack_3;
+  JsonWriter::JsonWriter_WriteValue_13((JsonWriter *)this,value_00,in_stack_4);
+  value_01 = (Object *)func_?(TypeInfo__System__Decimal,&stack0xffffffec);
+  BsonWriter_AddValue(this,value_01,BsonType__Enum_Number,(MethodInfo *)0x0);
   return;
 }
 
@@ -640,26 +660,17 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1313);
+    func_?(&TypeInfo__System__DateTime);
     cRam_? = '\x01';
   }
-  value_00.dt._12_4_ = 0;
-  value_00.dt.ticks._ticks = SUB128(value._0_12_,0);
-  value_00.dt.kind = SUB124(value._0_12_,8);
-  value_00.utc_offset._ticks._0_4_ = unaff_ESI;
-  value_00.utc_offset._ticks._4_4_ = unaff_EBX;
-  JsonWriter::JsonWriter_WriteValue_15((JsonWriter *)this,value_00,in_stack_1);
-  fVar2 = (float)func_?(TypeInfo__System__DateTime,&stack0xffffffec);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar2;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 9;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  uVar1 = (undefined4)value._dateData;
+  value_00._8_4_ = unaff_EDI;
+  value_00._dateTime._dateData = value._dateData & 0xffffffff;
+  value_00._12_4_ = unaff_ESI;
+  JsonWriter::JsonWriter_WriteValue_15((JsonWriter *)this,value_00,unaff_EBP);
+  value._dateData._0_4_ = uVar1;
+  value_01 = (Object *)func_?(TypeInfo__System__DateTime,&stack0x00000008);
+  BsonWriter_AddValue(this,value_01,BsonType__Enum_Date,(MethodInfo *)0x0);
   return;
 }
 
@@ -670,24 +681,17 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1312);
+    func_?(&TypeInfo__System__DateTimeOffset);
     cRam_? = '\x01';
   }
-  value_00.utc_offset._ticks._4_4_ = 0;
-  value_00._0_20_ = value._0_20_;
-  JsonWriter::JsonWriter_WriteValue_15((JsonWriter *)this,value_00,unaff_ESI);
-  puStack_1 = in_stack_2;
-  fVar3 = (float)func_?(TypeInfo__System__DateTimeOffset,&puStack_1);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar3;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 9;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  auVar1 = value._0_12_;
+  value_00._12_4_ = 0;
+  value_00._dateTime._dateData = auVar1._0_8_;
+  value_00._offsetMinutes = auVar1._8_2_;
+  value_00._10_2_ = auVar1._10_2_;
+  JsonWriter::JsonWriter_WriteValue_15((JsonWriter *)this,value_00,in_stack_2);
+  value_01 = (Object *)func_?(TypeInfo__System__DateTimeOffset,&stack0xffffffec);
+  BsonWriter_AddValue(this,value_01,BsonType__Enum_Date,(MethodInfo *)0x0);
   return;
 }
 
@@ -698,16 +702,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   JsonWriter::JsonWriter_WriteValue_35((JsonWriter *)this,value,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?(0x1301);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = (float)value;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 5;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  BsonWriter_AddValue(this,(Object *)value,BsonType__Enum_Binary,(MethodInfo *)0x0);
   return;
 }
 
@@ -718,7 +713,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x131a);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
     cRam_? = '\x01';
   }
   value_00._ticks._4_1_ = value._d;
@@ -728,14 +723,31 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
   value_00._ticks._0_2_ = value._b;
   value_00._ticks._2_2_ = value._c;
   JsonWriter::JsonWriter_WriteValue_17((JsonWriter *)this,value_00,(MethodInfo *)value._12_4_);
-  fVar1 = (float)func_?(&value,0);
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 2;
-  *(undefined1 *)&(this_00->fields).target = 1;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::Guid::Guid_ToString(&value,(MethodInfo *)0x0);
+  this_00 = (BsonWriter *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+  if (this_00 != (BsonWriter *)0x0) {
+    value._d = 0;
+    value._e = 0;
+    value._f = 0;
+    value._g = 0;
+    value._a = (int32_t)&UNK_?;
+    value._4_4_ = this_00;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)value._12_4_);
+    value._4_4_ = &(this_00->fields)._._currentState;
+    (this_00->fields)._._currentState = (int32_t)pSVar1;
+    value._a = (int32_t)&UNK_?;
+    value._8_4_ = pSVar1;
+    func_?();
+    value._a = 0;
+    *(undefined1 *)&(this_00->fields)._._formatting = 2;
+    *(undefined1 *)&(this_00->fields)._writer = 1;
+    BsonWriter_AddToken(this_00,(BsonToken *)this_00,(MethodInfo *)0x0);
+    return;
+  }
+  value._8_4_ = &UNK_?;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -746,18 +758,24 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x130d);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_17((JsonWriter *)this,(TimeSpan)(value._ticks & 0xffffffff),unaff_EDI);
-  fVar1 = (float)func_?(&stack0x00000008,0);
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 2;
-  *(undefined1 *)&(this_00->fields).target = 1;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_ToString((TimeSpan *)&stack0x00000008,(MethodInfo *)0x0);
+  this_00 = (BsonWriter *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+  if (this_00 != (BsonWriter *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,method);
+    (this_00->fields)._._currentState = (int32_t)pSVar1;
+    func_?();
+    *(undefined1 *)&(this_00->fields)._._formatting = 2;
+    *(undefined1 *)&(this_00->fields)._writer = 1;
+    BsonWriter_AddToken(this_00,(BsonToken *)this_00,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -768,22 +786,24 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1314);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_36((JsonWriter *)this,value,(MethodInfo *)0x0);
   if (value != (Uri *)0x0) {
-    fVar1 = (float)(*(code *)(value->klass->vtable).ToString.method)(value,(value->klass->vtable).System_Runtime_Serialization_ISerializable_GetObjectData.methodPtr);
-    method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = fVar1;
-    *(undefined1 *)&(this_00->fields).originalScale.y = 2;
-    *(undefined1 *)&(this_00->fields).target = 1;
-    BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
-    return;
+    pBVar1 = (BsonToken__Class *)(*(value->klass->vtable).ToString.methodPtr)(value,(value->klass->vtable).ToString.method);
+    token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+    if (token != (BsonToken *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)token,ExceptionArgument__Enum_obj,unaff_retaddr);
+      token[1].klass = pBVar1;
+      func_?(token + 1,pBVar1);
+      *(undefined1 *)&token[1].monitor = 2;
+      *(undefined1 *)&token[1].fields._CalculatedSize_k__BackingField = 1;
+      BsonWriter_AddToken(this,token,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -796,29 +816,25 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x130a);
+    func_?(&TypeInfo__System__UInt32);
     cRam_? = '\x01';
   }
   uVar1 = value;
   if (value < 0x80000000) {
     JsonWriter::JsonWriter_WriteValue_12((JsonWriter *)this,(int8_t)value,(MethodInfo *)0x0);
     value = uVar1;
-    fVar2 = (float)func_?(TypeInfo__System__UInt32,&value);
-    if (cRam_? == '\0') {
-      func_?(0x1301);
-      cRam_? = '\x01';
-    }
-    method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = fVar2;
-    *(undefined1 *)&(this_00->fields).originalScale.y = 0x10;
-    BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+    value_00 = (Object *)func_?(TypeInfo__System__UInt32,&value);
+    BsonWriter_AddValue(this,value_00,BsonType__Enum_Integer,(MethodInfo *)0x0);
     return;
   }
-  this_01 = (JsonSchemaException *)func_?(TypeInfo__Newtonsoft__Json__JsonWriterException);
-  Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(this_01,StringLiteral_Value_is_too_large_to_fit_in_a_s,(MethodInfo *)0x0);
-  func_?(this_01,0,MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteValue_unsigned_int_);
+  uVar2 = func_?(&TypeInfo__Newtonsoft__Json__JsonWriterException);
+  this_00 = (JsonWriterException *)func_?(uVar2);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Value_is_too_large_to_fit_in_a_s);
+  JsonWriterException::JsonWriterException__ctor_1(this_00,message,method_00);
+  uVar2 = func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteValue_unsigned_int_);
+  func_?(this_00,uVar2);
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -831,23 +847,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x130e);
+    func_?(&TypeInfo__System__Int64);
     cRam_? = '\x01';
   }
   uVar1 = (undefined4)value;
   JsonWriter::JsonWriter_WriteValue_4((JsonWriter *)this,value & 0xffffffff,unaff_EDI);
   value._0_4_ = uVar1;
-  fVar2 = (float)func_?(TypeInfo__System__Int64,&stack0x00000008);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar2;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 0x12;
-  BsonWriter_AddToken((BsonWriter *)method_00,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__Int64,&stack0x00000008);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Long,(MethodInfo *)0x0);
   return;
 }
 
@@ -858,31 +865,27 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x130c);
+    func_?(&TypeInfo__System__UInt64);
     cRam_? = '\x01';
   }
   uVar1 = (uint)value;
   if (0x7fffffff < (uint)value) {
-    this_01 = (JsonSchemaException *)func_?(TypeInfo__Newtonsoft__Json__JsonWriterException);
-    Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(this_01,StringLiteral_Value_is_too_large_to_fit_in_a_s,(MethodInfo *)0x0);
-    func_?(this_01,0,MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteValue_unsigned_long_);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    uVar2 = func_?(&TypeInfo__Newtonsoft__Json__JsonWriterException);
+    this_00 = (JsonWriterException *)func_?(uVar2);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Value_is_too_large_to_fit_in_a_s);
+    JsonWriterException::JsonWriterException__ctor_1(this_00,message,method_00);
+    uVar2 = func_?(&MethodInfo__Newtonsoft__Json__Bson__BsonWriter__WriteValue_unsigned_long_);
+    func_?(this_00,uVar2);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
   JsonWriter::JsonWriter_WriteValue_4((JsonWriter *)this,value & 0xffffffff,unaff_EDI);
   value._0_4_ = uVar1;
-  fVar3 = (float)func_?(TypeInfo__System__UInt64,&stack0x00000008);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar3;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 0x12;
-  BsonWriter_AddToken((BsonWriter *)method_00,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__UInt64,&stack0x00000008);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Long,(MethodInfo *)0x0);
   return;
 }
 
@@ -893,21 +896,13 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x131c);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_5((JsonWriter *)this,value,(MethodInfo *)0x0);
-  fVar1 = (float)func_?(TypeInfo__System__Single,&stack0xfffffff8);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 1;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  fStack_1 = value;
+  value_00 = (Object *)func_?(TypeInfo__System__Single,&fStack_1);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Number,(MethodInfo *)0x0);
   return;
 }
 
@@ -918,25 +913,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x131b);
+    func_?(&TypeInfo__System__Double);
     cRam_? = '\x01';
   }
-  value_00.hi = value._0_4_;
-  value_00.flags = in_stack_1;
-  value_00.lo = 0;
-  value_00.mid = unaff_ESI;
-  JsonWriter::JsonWriter_WriteValue_13((JsonWriter *)this,value_00,unaff_EBX);
-  fVar2 = (float)func_?(TypeInfo__System__Double,&stack0xfffffff4);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar2;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 1;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_01.lo = in_stack_1;
+  value_01.flags = (int)((ulonglong)value & 0xffffffff);
+  value_01.hi = (int)(((ulonglong)value & 0xffffffff) >> 0x20);
+  value_01.mid = in_stack_2;
+  value_01.ulomidLE._0_4_ = unaff_EBP;
+  value_01.ulomidLE._4_4_ = unaff_retaddr;
+  JsonWriter::JsonWriter_WriteValue_13((JsonWriter *)this,value_01,(MethodInfo *)this);
+  value_00 = (Object *)func_?(TypeInfo__System__Double);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Number,(MethodInfo *)0x0);
   return;
 }
 
@@ -947,21 +935,12 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x130f);
+    func_?(&TypeInfo__System__Boolean);
     cRam_? = '\x01';
   }
   JsonWriter::JsonWriter_WriteValue_7((JsonWriter *)this,value,(MethodInfo *)0x0);
-  fVar1 = (float)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
-  if (cRam_? == '\0') {
-    func_?(0x1301);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar1;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 8;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Boolean,(MethodInfo *)0x0);
   return;
 }
 
@@ -972,23 +951,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1315);
+    func_?(&TypeInfo__System__Int16);
     cRam_? = '\x01';
   }
   uVar1 = _value;
   JsonWriter::JsonWriter_WriteValue_12((JsonWriter *)this,(int8_t)_value,(MethodInfo *)0x0);
   _value = uVar1 & 0xffff;
-  fVar2 = (float)func_?(TypeInfo__System__Int16,&value);
-  if (cRam_? == '\0') {
-    func_?(0x1301);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar2;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 0x10;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__Int16,&value);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Integer,(MethodInfo *)0x0);
   return;
 }
 
@@ -999,23 +969,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_WriteVa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1311);
+    func_?(&TypeInfo__System__UInt16);
     cRam_? = '\x01';
   }
   uVar1 = _value;
   JsonWriter::JsonWriter_WriteValue_12((JsonWriter *)this,(int8_t)_value,(MethodInfo *)0x0);
   _value = uVar1 & 0xffff;
-  fVar2 = (float)func_?(TypeInfo__System__UInt16,&value);
-  if (cRam_? == '\0') {
-    func_?(0x1301);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields).originalScale.x = fVar2;
-  *(undefined1 *)&(this_00->fields).originalScale.y = 0x10;
-  BsonWriter_AddToken(this,(BsonToken *)this_00,(MethodInfo *)0x0);
+  value_00 = (Object *)func_?(TypeInfo__System__UInt16,&value);
+  BsonWriter_AddValue(this,value_00,BsonType__Enum_Integer,(MethodInfo *)0x0);
   return;
 }
 
@@ -1026,25 +987,37 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter__ctor(B
 
 {
   if (cRam_? == '\0') {
-    func_?(0x131d);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonWriter);
+    func_?(&StringLiteral_stream);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__JsonWriter->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__Newtonsoft__Json__JsonWriter->_1).cctor_started == 0)) {
+  if ((TypeInfo__Newtonsoft__Json__JsonWriter->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__JsonWriter);
   }
   JsonWriter::JsonWriter__ctor((JsonWriter *)this,(MethodInfo *)0x0);
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)stream,StringLiteral_stream,(MethodInfo *)0x0);
-  this_00 = (ScaleAnimationBase *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  value = (BsonBinaryWriter *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter);
+  if (value != (BsonBinaryWriter *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)this);
+    (value->fields)._DateTimeKindHandling_k__BackingField = 1;
+    this_00 = (BinaryWriter *)func_?();
+    if (this_00 != (BinaryWriter *)0x0) {
+      mscorlib.dll::System::IO::BinaryWriter::BinaryWriter__ctor_1(this_00,stream,(MethodInfo *)0x0);
+      (value->fields)._writer = this_00;
+      func_?(&value->fields);
+      (this->fields)._writer = value;
+      func_?(&(this->fields)._writer,value);
+      return;
+    }
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)this);
-  (this_00->fields).originalScale.y = 1.4013e-45;
-  this_01 = (BinaryWriter *)func_?();
-  mscorlib.dll::System::IO::BinaryWriter::BinaryWriter__ctor_1(this_01,stream,(MethodInfo *)0x0);
-  (this_00->fields)._._._._.m_CachedPtr = this_01;
-  (this->fields)._writer = (BsonBinaryWriter *)this_00;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1054,14 +1027,16 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter__ctor(B
 DateTimeKind__Enum Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_get_DateTimeKindHandling(BsonWriter *this,MethodInfo *method)
 
 {
-  pBVar1 = (this->fields)._writer;
-  if (pBVar1 != (BsonBinaryWriter *)0x0) {
-    return (pBVar1->fields)._DateTimeKindHandling_k__BackingField;
+  puStack_1 = &stack0xfffffffc;
+  pBVar2 = (this->fields)._writer;
+  if (pBVar2 != (BsonBinaryWriter *)0x0) {
+    return (pBVar2->fields)._DateTimeKindHandling_k__BackingField;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  DVar3 = (*pcVar2)();
-  return DVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  DVar6 = (*pcVar5)();
+  return DVar6;
 }
 
 
@@ -1070,14 +1045,16 @@ DateTimeKind__Enum Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::Bson
 void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonWriter::BsonWriter_set_DateTimeKindHandling(BsonWriter *this,DateTimeKind__Enum value,MethodInfo *method)
 
 {
-  pBVar1 = (this->fields)._writer;
-  if (pBVar1 != (BsonBinaryWriter *)0x0) {
-    (pBVar1->fields)._DateTimeKindHandling_k__BackingField = value;
+  puStack_1 = &stack0xfffffffc;
+  pBVar2 = (this->fields)._writer;
+  if (pBVar2 != (BsonBinaryWriter *)0x0) {
+    (pBVar2->fields)._DateTimeKindHandling_k__BackingField = value;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

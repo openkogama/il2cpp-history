@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVMaterialRepository
 {
@@ -28,7 +28,6 @@ public class MVMaterialRepository
 
 	// Constructors
 	public MVMaterialRepository();
-	static MVMaterialRepository();
 
 	// Methods
 	public void Reset();
@@ -38,5 +37,7 @@ public class MVMaterialRepository
 	public void AddMaterial(string name, string description, string path, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, int priceGold, bool isUnlocked, float[] physicalProperties, MaterialButtonTextureGenerator materialButtonTextureGenerator);
 	public MVMaterial GetMaterial(byte materialId);
 	public PhysicalProperties GetMaterialPhysicalProperties(byte materialId);
+	public bool IsMaterialUnlocked(byte[] mats);
+	public bool IsMaterialUnlocked(byte mat);
 }
 

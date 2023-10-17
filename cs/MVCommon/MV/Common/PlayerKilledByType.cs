@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -21,7 +21,7 @@ namespace MV.Common
 		Suicide = 4,
 		Impact = 5,
 		Environmental = 6,
-		Sword = 7,
+		MeleeWeapon = 7,
 		Explosive = 8,
 		Fire = 9,
 		FallOffWorld = 10,
@@ -35,6 +35,7 @@ namespace MV.Common
 		DoubleSixShooter = 18,
 		ThrowingStar = 19,
 		MultiThrowingStar = 20,
-		SlapGun = 21
+		SlapGun = 21,
+		RayHealGun = 22
 	}
 }

@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -80,8 +80,8 @@ namespace MV.WorldObject
 		KillLimit = 63,
 		OculusKillLimit = 64,
 		CountingCube = 65,
-		Jakob4 = 118,
-		Jakob5 = 119,
+		VehicleEnergy = 118,
+		WorldObjectSpawnerVehicleEnergy = 119,
 		Jakob6 = 120,
 		Jakob7 = 121,
 		Jakob8 = 122,
@@ -112,12 +112,12 @@ namespace MV.WorldObject
 		GameCoin = 148,
 		GameCoinChest = 149,
 		Theme = 150,
-		Caspar7 = 151,
-		Caspar8 = 152,
-		Caspar9 = 153,
-		Caspar10 = 154,
-		Caspar11 = 155,
-		Caspar12 = 156,
+		Door = 151,
+		DoorBlueprint = 152,
+		PickupMeleeWeapon = 153,
+		PickupMeleeWeaponBlueprint = 154,
+		PickupCostume = 155,
+		PickupCostumeBlueprint = 156,
 		Caspar13 = 157,
 		Caspar14 = 158,
 		Caspar15 = 159,

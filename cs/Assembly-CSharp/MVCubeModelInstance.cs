@@ -6,11 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using IngameController.MVEditor;
 using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVCubeModelInstance : MVCubeModelBase
 {
@@ -18,6 +19,7 @@ public class MVCubeModelInstance : MVCubeModelBase
 	protected CullingSubscriberBase cullingSubscriberBase;
 	private bool isVisible;
 	private Vector3 positionOffset;
+	private TransformGizmo transformGizmo;
 
 	// Properties
 	public bool IsVisibleSet { get; private set; }
@@ -44,9 +46,11 @@ public class MVCubeModelInstance : MVCubeModelBase
 	public override void Select(Color color);
 	public override void AddSelectionBox();
 	public override void AddPreviewBox();
-	private Vector3[] GetCorners(Bounds bounds);
+	public Vector3[] GetCorners(Bounds bounds);
 	public override void DeSelect();
+	public override void OnContextMenu();
 	public ChunkInstances.ChunkInstanceVariables GetChunkInstance(IntVector chunkPos);
 	public override bool OnEnterObject(EditorStateMachine e);
+	public override void DrawTransformGizmo();
 }
 

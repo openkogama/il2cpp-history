@@ -9,9 +9,9 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent]
+[RequireComponent(typeof(ParticleSystem))]
 public class CFX_AutoDestructShuriken : MonoBehaviour
 {
 	// Fields
@@ -19,28 +19,27 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CheckIfAlive_c__Iterator0 : IEnumerator<object>
+	private sealed class _CheckIfAlive_d__2 : IEnumerator<object>
 	{
 		// Fields
-		internal CFX_AutoDestructShuriken _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public CFX_AutoDestructShuriken __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _CheckIfAlive_c__Iterator0();
+		public _CheckIfAlive_d__2(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -48,7 +47,7 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 
 	// Methods
 	private void OnEnable();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_CheckIfAlive_d__2))]
 	private IEnumerator CheckIfAlive();
 }
 

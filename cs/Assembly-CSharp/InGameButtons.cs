@@ -7,9 +7,9 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class InGameButtons : MonoBehaviour
+public class InGameButtons : TouchButtonsBase
 {
 	// Fields
 	private PickupGUIFlags showingEquipableUI;
@@ -36,8 +36,8 @@ public class InGameButtons : MonoBehaviour
 	// Methods
 	private void Update();
 	private void HandleFireVisibility();
-	public void ShowEUseIcon(ShowUseOption option);
-	public void HideEUseIcon();
+	public override void ShowEUseIcon(ShowUseOption option);
+	public override void HideEUseIcon();
 	private void HandleInPlayMode();
 	private void HandleNotInPlayMode();
 }

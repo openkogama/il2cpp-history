@@ -10,7 +10,7 @@ using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class LobbyFlowMenu : MonoBehaviour
 {
@@ -26,10 +26,6 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 	private bool haveSetSelectedTeam;
 	protected MVTeam selectedTeam;
 	private List<LobbyFlowMenuType> menuOrder;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Properties
 	protected abstract LobbyFlowMenuType MenuType { get; }
@@ -46,42 +42,60 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _GoToMenu_c__AnonStorey0
+	private sealed class __c__DisplayClass23_0
 	{
 		// Fields
-		internal TeamMenu newTeamMenu;
+		public TeamMenu newTeamMenu;
 
 		// Constructors
-		public _GoToMenu_c__AnonStorey0();
+		public __c__DisplayClass23_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _GoToMenu_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _GoToMenu_c__AnonStorey1
+	private sealed class __c__DisplayClass23_1
 	{
 		// Fields
-		internal WinningConditionBriefing winConMenu;
+		public WinningConditionBriefing winConMenu;
 
 		// Constructors
-		public _GoToMenu_c__AnonStorey1();
+		public __c__DisplayClass23_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _GoToMenu_b__2(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _GoToMenu_c__AnonStorey2
+	private sealed class __c__DisplayClass23_2
 	{
 		// Fields
-		internal SpawnRoleMenu spawnRoleMenu;
+		public SpawnRoleMenu spawnRoleMenu;
 
 		// Constructors
-		public _GoToMenu_c__AnonStorey2();
+		public __c__DisplayClass23_2();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _GoToMenu_b__3(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__23_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _GoToMenu_b__23_0(IUIStack x, BaseEventData y);
+		internal void _StartPlaying_b__24_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -101,9 +115,5 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 	protected LobbyFlowMenuType GetPreviousMenuType();
 	protected void GoToMenu(LobbyFlowMenuType newMenuType);
 	protected virtual void StartPlaying();
-	[CompilerGenerated]
-	private static void _GoToMenu_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _StartPlaying_m__1(IUIStack x, BaseEventData y);
 }
 

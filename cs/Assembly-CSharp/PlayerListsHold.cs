@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerListsHold : MonoBehaviour
 {
@@ -28,10 +28,6 @@ public class PlayerListsHold : MonoBehaviour
 	[SerializeField]
 	private Vector2 cellSize4Teams;
 	private GameStatCounterType typeToDisplay;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
 	private class ScoreSorter : IComparer<MVPlayer>
@@ -45,16 +41,34 @@ public class PlayerListsHold : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _ReCreate_c__AnonStorey0
+	private sealed class __c__DisplayClass10_0
 	{
 		// Fields
-		internal PlayerListsHold newPlayerLists;
+		public PlayerListsHold newPlayerLists;
 
 		// Constructors
-		public _ReCreate_c__AnonStorey0();
+		public __c__DisplayClass10_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ReCreate_b__2(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _ReCreate_b__10_0(IUIStack x, BaseEventData y);
+		internal void _ReCreate_b__10_1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -69,9 +83,5 @@ public class PlayerListsHold : MonoBehaviour
 	private PlayerListHold CreatePlayerList(MVTeam team, int score);
 	private void SortPlayerListsAfterScore(Dictionary<MVTeam, PlayerListHold> playerLists, List<MVTeam> teams, GameStatCounterType typeToDisplay);
 	private Dictionary<MVTeam, List<MVPlayer>> GetSortedTeamLists(IEnumerable<MVPlayer> players, List<MVTeam> teams);
-	[CompilerGenerated]
-	private static void _ReCreate_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ReCreate_m__1(IUIStack x, BaseEventData y);
 }
 

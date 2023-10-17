@@ -4,75 +4,50 @@
 Quaternion * Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll_GetEyeRollRotation(Quaternion *__return_storage_ptr__,GhostEye_RandomEyeRoll *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x5494);
-    cRam_? = '\x01';
+  fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar2 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
+  (this->fields)._.wrappedTime = fVar2;
+  while (6.2831855 <= fVar2) {
+    fVar2 = (this->fields)._.wrappedTime - 6.2831855;
+    (this->fields)._.wrappedTime = fVar2;
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar1 = (this->fields)._.direction * fVar1 * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
-  (this->fields)._.wrappedTime = fVar1;
-  while (6.2831855 <= fVar1) {
-    fVar1 = (this->fields)._.wrappedTime - 6.2831855;
-    (this->fields)._.wrappedTime = fVar1;
+  pfVar3 = &(this->fields)._.wrappedTime;
+  if (*pfVar3 <= -6.2831855 && *pfVar3 != -6.2831855) {
+    do {
+      fVar2 = (this->fields)._.wrappedTime + 6.2831855;
+      (this->fields)._.wrappedTime = fVar2;
+    } while (fVar2 < -6.2831855);
   }
-  while (fVar1 < -6.2831855) {
-    fVar1 = (this->fields)._.wrappedTime + 6.2831855;
-    (this->fields)._.wrappedTime = fVar1;
-  }
-  if (cRam_? == '\0') {
-    func_?(0x5495);
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?(0x5496);
-    cRam_? = '\x01';
-  }
-  fVar1 = (this->fields)._.radiusPitch;
-  uVar2._0_4_ = (this->fields)._.wrappedTime;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
-  }
-  dVar3 = (double)(float)uVar2;
+  dVar4 = (double)(this->fields)._.wrappedTime;
   func_?();
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_right((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
-  uVar2._0_4_ = pVVar4->x;
-  uVar2._4_4_ = pVVar4->y;
-  fVar5 = pVVar4->z;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
+  fStack_1 = (float)dVar4 * (this->fields)._.radiusPitch;
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  axis.z = fVar5;
-  axis.x = (float)(int)uVar2;
-  axis.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffec,(float)dVar3 * fVar1,axis,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)pQVar6->x;
-  fVar1 = pQVar6->y;
-  uVar2._0_4_ = pQVar6->z;
-  uVar2._4_4_ = pQVar6->w;
-  pQVar6 = GhostEye+IdleBase::GhostEye_IdleBase_GetYawRotation((Quaternion *)&stack0xffffffec,(GhostEye_IdleBase *)this,method_00);
-  fVar5 = pQVar6->x;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
+  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis(&QStack_6,fStack_1,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
+  fStack_7 = pQVar5->x;
+  fStack_8 = pQVar5->y;
+  fStack_9 = pQVar5->z;
+  fStack_10 = pQVar5->w;
+  dVar4 = (double)(this->fields)._.wrappedTime;
+  func_?();
+  fStack_1 = (float)dVar4 * (this->fields)._.radiusYaw;
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  lhs.y = (float)method_00;
-  lhs.x = fVar5;
-  lhs.z = fVar1;
-  lhs.w = (float)uVar2;
-  rhs.y = fVar1;
-  rhs.x = (float)method_00;
-  rhs.z = (float)uVar2;
-  rhs.w = uVar2._4_4_;
-  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply((Quaternion *)&stack0xffffffdc,lhs,rhs,(MethodInfo *)0x0);
-  fVar1 = pQVar6->y;
-  uVar2._0_4_ = pQVar6->z;
-  uVar2._4_4_ = pQVar6->w;
-  __return_storage_ptr__->x = pQVar6->x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = (float)uVar2;
-  __return_storage_ptr__->w = uVar2._4_4_;
+  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffb0,fStack_1,TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+  fVar11 = pQVar5->y;
+  fVar12 = pQVar5->z;
+  fVar13 = pQVar5->w;
+  fVar2 = pQVar5->x;
+  fVar14 = pQVar5->x;
+  fVar15 = pQVar5->x;
+  __return_storage_ptr__->x = (fVar13 * fStack_7 + fStack_10 * pQVar5->x + fStack_9 * fVar11) - fVar12 * fStack_8;
+  __return_storage_ptr__->y = (fVar13 * fStack_8 + fStack_10 * fVar11 + fVar12 * fStack_7) - fStack_9 * fVar2;
+  __return_storage_ptr__->z = (fVar13 * fStack_9 + fStack_10 * fVar12 + fStack_8 * fVar14) - fVar11 * fStack_7;
+  __return_storage_ptr__->w = ((fStack_10 * fVar13 - fStack_7 * fVar15) - fStack_8 * fVar11) - fStack_9 * fVar12;
   return __return_storage_ptr__;
 }
 
@@ -82,18 +57,9 @@ Quaternion * Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll
 float Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll_GetPitch(GhostEye_RandomEyeRoll *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x5496);
-    cRam_? = '\x01';
-  }
-  fVar1 = (this->fields)._.radiusPitch;
-  fVar2 = (this->fields)._.wrappedTime;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
-  }
-  dVar3 = (double)fVar2;
+  dVar1 = (double)(this->fields)._.wrappedTime;
   func_?();
-  return (float)dVar3 * fVar1;
+  return (float)dVar1 * (this->fields)._.radiusPitch;
 }
 
 
@@ -102,43 +68,21 @@ float Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll_GetPit
 Quaternion * Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll_GetPitchRotation(Quaternion *__return_storage_ptr__,GhostEye_RandomEyeRoll *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x5495);
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?(0x5496);
-    cRam_? = '\x01';
-  }
-  uStack_1._4_4_ = (this->fields)._.radiusPitch;
-  fVar2 = (this->fields)._.wrappedTime;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
-  }
-  dVar3 = (double)fVar2;
+  dVar1 = (double)(this->fields)._.wrappedTime;
   func_?();
-  fVar2 = (float)dVar3 * uStack_1._4_4_;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_right(&VStack_5,(MethodInfo *)0x0);
-  uStack_1._0_4_ = pVVar4->x;
-  uStack_1._4_4_ = pVVar4->y;
-  fVar6 = pVVar4->z;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
+  fVar2 = (this->fields)._.radiusPitch;
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  axis.z = fVar6;
-  axis.x = (float)(undefined4)uStack_1;
-  axis.y = uStack_1._4_4_;
-  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffe4,fVar2,axis,(MethodInfo *)0x0);
-  fVar2 = pQVar7->y;
-  fVar6 = pQVar7->z;
-  fVar8 = pQVar7->w;
-  __return_storage_ptr__->x = pQVar7->x;
+  pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis(&QStack_4,(float)dVar1 * fVar2,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
+  fVar2 = pQVar3->y;
+  fVar5 = pQVar3->z;
+  fVar6 = pQVar3->w;
+  __return_storage_ptr__->x = pQVar3->x;
   __return_storage_ptr__->y = fVar2;
-  __return_storage_ptr__->z = fVar6;
-  __return_storage_ptr__->w = fVar8;
+  __return_storage_ptr__->z = fVar5;
+  __return_storage_ptr__->w = fVar6;
   return __return_storage_ptr__;
 }
 

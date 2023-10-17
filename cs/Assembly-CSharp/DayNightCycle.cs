@@ -9,43 +9,43 @@ using Borodar.FarlandSkies.CloudyCrownPro.DotParams;
 using ThemeTimers;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DayNightCycle : MonoBehaviour
 {
 	// Fields
-	[Header]
-	[Range]
+	[Header("Configuration")]
+	[Range(0f, 100f)]
 	[SerializeField]
 	private float _sunrise;
-	[Range]
+	[Range(0f, 100f)]
 	[SerializeField]
 	private float _sunset;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Max angle between the horizon and the center of sun\u2019s disk")]
 	private float _sunAltitude;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Angle between z-axis and the center of sun\u2019s disk at sunrise")]
 	private float _sunLongitude;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("A pair of angles that limit visible orbit of the sun")]
 	private Vector2 _sunOrbit;
-	[Range]
+	[Range(0f, 100f)]
 	[SerializeField]
 	private float _moonrise;
-	[Range]
+	[Range(0f, 100f)]
 	[SerializeField]
 	private float _moonset;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Max angle between the horizon and the center of moon\u2019s disk")]
 	private float _moonAltitude;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Angle between z-axis and the center of moon\u2019s disk at moonrise")]
 	private float _moonLongitude;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("A pair of angles that limit visible orbit of the moon")]
 	private Vector2 _moonOrbit;
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	private ThemeSkybox skybox;
 	[SerializeField]
@@ -62,16 +62,12 @@ public class DayNightCycle : MonoBehaviour
 	private bool isPaused;
 	private DayNightCycleColorPresets.Preset activeColorPreset;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private SkyParam _CurrentSkyParam_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private StarsParam _CurrentStarsParam_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private CelestialParam _CurrentSunParam_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private CelestialParam _CurrentMoonParam_k__BackingField;
 
 	// Properties

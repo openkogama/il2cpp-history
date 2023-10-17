@@ -5,22 +5,21 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_AddAutoCommen
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1460);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_);
     cRam_? = '\x01';
   }
   if (ifNotExists != 0) {
-    this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).autocomments;
-    if (this_00 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-    item._4_4_ = MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_;
-    item.rgba = (int32_t)comment;
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::List_1_UnityEngine_Color32__Contains(this_00,item,unaff_ESI);
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).autocomments;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
+    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(this_00,(RegexCharClass_SingleRange)comment,MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_);
     if (bVar1 != 0) {
       return;
     }
   }
   this_01 = (this->fields).autocomments;
   if (this_01 != (List_1_System_String_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)comment,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_01,(Object *)comment,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     return;
   }
 code_?:
@@ -37,17 +36,19 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_AddAutoCommen
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1460);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).autocomments;
   if (this_00 != (List_1_System_String_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)comment,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)comment,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -58,18 +59,17 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_AddReference(
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1461);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).references;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    item._4_4_ = MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_;
-    item.rgba = (int32_t)reference;
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::List_1_UnityEngine_Color32__Contains(this_00,item,unaff_ESI);
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).references;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(this_00,(RegexCharClass_SingleRange)reference,MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_);
     if (bVar1 == 0) {
       this_01 = (this->fields).references;
       if (this_01 == (List_1_System_String_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)reference,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_01,(Object *)reference,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     }
     return;
   }
@@ -87,17 +87,24 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_ClearAutoComm
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1462);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).autocomments;
-  if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__Clear(this_00,MethodInfo__System__Collections__Generic__List<System::String>__Clear__);
+  pLVar1 = (this->fields).autocomments;
+  if (pLVar1 != (List_1_System_String_ *)0x0) {
+    length = (pLVar1->fields)._size;
+    piVar2 = &(pLVar1->fields)._version;
+    *piVar2 = *piVar2 + 1;
+    (pLVar1->fields)._size = 0;
+    if (0 < length) {
+      mscorlib.dll::System::Array::Array_Clear((Array *)(pLVar1->fields)._items,0,length,(MethodInfo *)0x0);
+    }
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -108,17 +115,24 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_ClearReferenc
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1463);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).references;
-  if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__Clear(this_00,MethodInfo__System__Collections__Generic__List<System::String>__Clear__);
+  pLVar1 = (this->fields).references;
+  if (pLVar1 != (List_1_System_String_ *)0x0) {
+    length = (pLVar1->fields)._size;
+    piVar2 = &(pLVar1->fields)._version;
+    *piVar2 = *piVar2 + 1;
+    (pLVar1->fields)._size = 0;
+    if (0 < length) {
+      mscorlib.dll::System::Array::Array_Clear((Array *)(pLVar1->fields)._items,0,length,(MethodInfo *)0x0);
+    }
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -129,28 +143,24 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_GetTransl
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1464);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   if (-1 < index) {
-    pLVar1 = (this->fields).translations;
-    if (pLVar1 != (List_1_System_String_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-      if ((int)pOVar2 <= index) goto code_?;
-      pLVar1 = (this->fields).translations;
-      if (pLVar1 != (List_1_System_String_ *)0x0) {
-        pSVar3 = (String *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-        return pSVar3;
-      }
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).translations;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      uVar1 = func_?(&stack0xfffffff0);
+      func_?(uVar1);
+      pcVar2 = (code *)swi(3);
+      pSVar3 = (String *)(*pcVar2)();
+      return pSVar3;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    pSVar3 = (String *)(*pcVar4)();
-    return pSVar3;
-  }
-code_?:
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
+    if (index < (this_00->fields)._size) {
+      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+      return (String *)RVar4;
+    }
   }
   return TypeInfo__System__String->static_fields->Empty;
 }
@@ -162,57 +172,45 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_IsInFormat(Ca
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1465);
+    func_?(&StringLiteral__0__format);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).moreFlags;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields).moreFlags,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
     return 0;
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  mscorlib.dll::System::String::String_Format(StringLiteral__0__format,(Object *)format,(MethodInfo *)0x0);
-  pSVar1 = (this->fields).moreFlags;
-  separator = (Char__Array *)func_?(TypeInfo__System__Char,1);
-  if (separator == (Char__Array *)0x0) goto code_?;
-  if (separator->max_length != 0) {
-    separator->vector[0] = 0x2c;
-    if (pSVar1 == (String *)0x0) goto code_?;
-    pSVar3 = mscorlib.dll::System::String::String_Split(pSVar1,separator,(MethodInfo *)0x0);
-    uVar4 = 0;
-    if (pSVar3 == (String__Array *)0x0) goto code_?;
-    ppSVar5 = pSVar3->vector;
-    while( true ) {
-      if ((int)pSVar3->max_length <= (int)uVar4) {
-        return 0;
+  pCVar2 = (CatalogEntry *)mscorlib.dll::System::String::String_Format(StringLiteral__0__format,(Object *)format,(MethodInfo *)0x0);
+  pSVar3 = (this->fields).moreFlags;
+  if (pSVar3 != (String *)0x0) {
+    pSVar4 = mscorlib.dll::System::String::String_Split(pSVar3,0x2c,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+    uVar5 = 0;
+    if (pSVar4 != (String__Array *)0x0) {
+      ppSVar6 = pSVar4->vector;
+      this = pCVar2;
+      while( true ) {
+        pCVar2 = this;
+        if ((int)pSVar4->max_length <= (int)uVar5) {
+          return 0;
+        }
+        if (pSVar4->max_length <= uVar5) break;
+        if (*ppSVar6 == (String *)0x0) goto code_?;
+        pSVar3 = mscorlib.dll::System::String::String_Trim(*ppSVar6,(MethodInfo *)0x0);
+        this = (CatalogEntry *)&UNK_?;
+        bVar1 = mscorlib.dll::System::String::String_op_Equality(pSVar3,(String *)pCVar2,(MethodInfo *)0x0);
+        if (bVar1 != 0) {
+          return 1;
+        }
+        uVar5 = uVar5 + 1;
+        ppSVar6 = ppSVar6 + 1;
       }
-      if (pSVar3->max_length <= uVar4) break;
-      pSVar1 = *ppSVar5;
-      if (pSVar1 == (String *)0x0) goto code_?;
-      a = mscorlib.dll::System::String::String_Trim(pSVar1,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar2 = mscorlib.dll::System::String::String_op_Equality(a,pSVar1,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        return 1;
-      }
-      uVar4 = uVar4 + 1;
-      ppSVar5 = ppSVar5 + 1;
+      func_?();
     }
   }
-  func_?();
-  func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar2 = (*pcVar6)();
-  return bVar2;
+  pcVar7 = (code *)swi(3);
+  bVar1 = (*pcVar7)();
+  return bVar1;
 }
 
 
@@ -222,47 +220,39 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_MakeKey(S
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1466);
+    func_?(&TypeInfo__System__String);
+    func_?(&StringLiteral__0__1_);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
   }
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(msgid,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
     bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(context,(MethodInfo *)0x0);
     pSVar2 = StringLiteral__0__1_;
-    if (bVar1 == 0) {
-      if (context == (String *)0x0) goto code_?;
+    if (bVar1 != 0) {
+      pSVar2 = mscorlib.dll::System::String::String_Format_1(StringLiteral__0__1_,(Object *)TypeInfo__System__String->static_fields->Empty,(Object *)msgid,(MethodInfo *)0x0);
+      return pSVar2;
+    }
+    if (context != (String *)0x0) {
       pSVar3 = mscorlib.dll::System::String::String_Trim(context,(MethodInfo *)0x0);
-      arg1 = (Object *)func_?(TypeInfo__System__Char);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar3 = mscorlib.dll::System::String::String_Concat((Object *)pSVar3,arg1,(MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::String::String_Concat_3(pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Format_1(pSVar2,(Object *)pSVar3,(Object *)msgid,(MethodInfo *)0x0);
+      return pSVar2;
     }
-    else {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pSVar3 = TypeInfo__System__String->static_fields->Empty;
-    }
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Format_1(pSVar2,(Object *)pSVar3,(Object *)msgid,(MethodInfo *)0x0);
-    return pSVar2;
   }
-  this = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this,StringLiteral_Msgid_cannot_be_empty,(MethodInfo *)0x0);
-  func_?(this);
-code_?:
+  else {
+    uVar4 = func_?(&TypeInfo__System__Exception);
+    this = (Exception *)func_?(uVar4);
+    func_?(this);
+    method_00 = (MethodInfo *)0x0;
+    pSVar2 = (String *)func_?(&StringLiteral_Msgid_cannot_be_empty);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar2,method_00);
+    func_?(&MethodInfo__GNU__Gettext__CatalogEntry__MakeKey_System__String__System__String_);
+    func_?();
+  }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar5)();
   return pSVar2;
 }
 
@@ -272,9 +262,8 @@ code_?:
 void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_MarkOwnerDirty(CatalogEntry *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).owner;
-  if (this_00 != (Catalog *)0x0) {
-    Catalog::Catalog_set_IsDirty(this_00,1,(MethodInfo *)0x0);
+  if ((this->fields).owner != (Catalog *)0x0) {
+    Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
   }
   return;
 }
@@ -286,20 +275,17 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_RemoveReferen
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1468);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Remove_System__String_);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).references;
-  if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-    item._4_4_ = MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_;
-    item.rgba = (int32_t)reference;
-    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::List_1_UnityEngine_Color32__Contains(pLVar1,item,unaff_ESI);
+  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).references;
+  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(pLVar1,(RegexCharClass_SingleRange)reference,MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_);
     if (bVar2 != 0) {
-      pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).references;
-      if (pLVar1 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-      item_00._4_4_ = MethodInfo__System__Collections__Generic__List<System::String>__Remove_System__String_;
-      item_00.rgba = (int32_t)reference;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::List_1_UnityEngine_Color32__Remove(pLVar1,item_00,(MethodInfo *)this);
+      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).references;
+      if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove(pLVar1,(RegexCharClass_SingleRange)reference,MethodInfo__System__Collections__Generic__List<System::String>__Remove_System__String_);
     }
     return;
   }
@@ -317,37 +303,35 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_RemoveReferen
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1467);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__RemoveAt_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
     cRam_? = '\x01';
   }
-  pSVar1 = (String *)0x0;
+  bVar1 = 0;
   index = 0;
   pLVar2 = (this->fields).references;
   while (pLVar2 != (List_1_System_String_ *)0x0) {
-    bVar3 = (bool)((uint)pSVar1 >> 0x18);
-    pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-    if ((int)pOVar4 <= index) {
-      return bVar3;
+    if ((pLVar2->fields)._size <= index) {
+      return bVar1;
     }
-    pLVar2 = (this->fields).references;
-    if ((pLVar2 == (List_1_System_String_ *)0x0) || (this_01 = (String *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar2,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_), this_01 == (String *)0x0)) break;
-    pSVar1 = fileNamePrefix;
-    bVar3 = mscorlib.dll::System::String::String_StartsWith(this_01,fileNamePrefix,(MethodInfo *)0x0);
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).references;
+    if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_), this_01 == (RegexCharClass_SingleRange)0x0)) break;
+    bVar3 = mscorlib.dll::System::String::String_StartsWith((String *)this_01,fileNamePrefix,(MethodInfo *)0x0);
     if (bVar3 != 0) {
-      this_00 = (List_1_MVPlayer_ *)(this->fields).references;
-      if (this_00 == (List_1_MVPlayer_ *)0x0) break;
-      fileNamePrefix = (String *)MethodInfo__System__Collections__Generic__List<System::String>__RemoveAt_int_;
-      mscorlib.dll::System::Collections::Generic::List`1[MVPlayer]::List_1_MVPlayer__RemoveAt(this_00,index,MethodInfo__System__Collections__Generic__List<System::String>__RemoveAt_int_);
-      pSVar1 = (String *)0x1000000;
+      pLVar2 = (this->fields).references;
+      if (pLVar2 == (List_1_System_String_ *)0x0) break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)pLVar2,index,MethodInfo__System__Collections__Generic__List<System::String>__RemoveAt_int_);
+      bVar1 = 1;
       index = index + -1;
     }
     index = index + 1;
     pLVar2 = (this->fields).references;
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  bVar3 = (*pcVar5)();
-  return bVar3;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
+  return bVar1;
 }
 
 
@@ -356,14 +340,8 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_RemoveReferen
 void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_SetPluralString(CatalogEntry *this,String *plural,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1469);
-    cRam_? = '\x01';
-  }
   (this->fields).plural = plural;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
+  func_?(&(this->fields).plural,plural);
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
   (this->fields).hasPlural = bVar1 == 0;
   return;
@@ -376,6 +354,7 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_SetString(Cat
 
 {
   (this->fields).str = str;
+  func_?(&this->fields,str);
   (this->fields).validity = 0;
   return;
 }
@@ -387,44 +366,40 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_SetTranslatio
 
 {
   if (cRam_? == '\0') {
-    func_?(0x146a);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__set_Item_int__System__String_);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).translations;
   do {
     if (pLVar1 == (List_1_System_String_ *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-    pLVar1 = (this->fields).translations;
-    if (index < (int)pOVar3) {
-      if (pLVar1 == (List_1_System_String_ *)0x0) goto code_?;
-      a = (String *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar4 = mscorlib.dll::System::String::String_op_Inequality(a,translation,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        this_00 = (List_1_WinningConditionBriefingLayoutFitter_LayoutGroupAspectFitterDef_ *)(this->fields).translations;
-        if (this_00 == (List_1_WinningConditionBriefingLayoutFitter_LayoutGroupAspectFitterDef_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[WinningConditionBriefingLayoutFitter+LayoutGroupAspectFitterDef]::List_1_WinningConditionBriefingLayoutFitter_LayoutGroupAspectFitterDef__set_Item(this_00,index,(WinningConditionBriefingLayoutFitter_LayoutGroupAspectFitterDef *)translation,MethodInfo__System__Collections__Generic__List<System::String>__set_Item_int__System__String_);
-        this_01 = (this->fields).owner;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).translations;
+    if (index < (pLVar1->fields)._size) {
+      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
+      a = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+      bVar3 = mscorlib.dll::System::String::String_op_Inequality((String *)a,translation,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        pLVar1 = (this->fields).translations;
+        if (pLVar1 == (List_1_System_String_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__set_Item((List_1_System_Object_ *)pLVar1,index,(Object *)MethodInfo__System__Collections__Generic__List<System::String>__set_Item_int__System__String_,MethodInfo__System__Collections__Generic__List<System::String>__set_Item_int__System__String_);
         (this->fields).validity = 0;
-        if (this_01 != (Catalog *)0x0) {
-          Catalog::Catalog_set_IsDirty(this_01,1,(MethodInfo *)0x0);
+        if ((this->fields).owner != (Catalog *)0x0) {
+          Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
         }
       }
       return;
     }
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    if (pLVar1 == (List_1_System_String_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)pLVar1,(UIPushOption__Enum)TypeInfo__System__String->static_fields->Empty,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)TypeInfo__System__String->static_fields->Empty,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     pLVar1 = (this->fields).translations;
   } while( true );
 }
@@ -436,25 +411,24 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_SetTranslatio
 
 {
   if (cRam_? == '\0') {
-    func_?(0x146b);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1(this_00,(IEnumerable_1_VoxelHit_ *)translations,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
-  (this->fields).translations = (List_1_System_String_ *)this_00;
-  (this->fields).validity = 0;
-  if ((this->fields).owner != (Catalog *)0x0) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1(this_00,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)translations,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
+    (this->fields).translations = (List_1_System_String_ *)this_00;
+    func_?(&(this->fields).translations,this_00);
+    (this->fields).validity = 0;
+    if ((this->fields).owner != (Catalog *)0x0) {
+      Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
     }
-    *(undefined1 *)((int)in_stack_1 + 0x15) = in_stack_2;
-    if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
-      func_?();
-    }
-    (**(code **)(*in_stack_1 + 0xf0))(in_stack_1,TypeInfo__System__EventArgs->static_fields->Empty);
     return;
   }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -465,32 +439,50 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry__ctor(Catalog
 
 {
   if (cRam_? == '\0') {
-    func_?(0x146d);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).context = TypeInfo__System__String->static_fields->Empty;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  pSVar1 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).context = pSVar1;
+  method_00 = (MethodInfo *)&(this->fields).context;
+  func_?(method_00,pSVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).owner = owner;
+  func_?(&(this->fields).owner,owner);
   (this->fields).str = str;
+  func_?(&this->fields,str);
   (this->fields).plural = plural;
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
-  (this->fields).hasPlural = bVar1 == 0;
-  pLVar2 = (List_1_UnityEngine_Vector4_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  (this->fields).references = (List_1_System_String_ *)pLVar2;
-  pLVar2 = (List_1_UnityEngine_Vector4_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  (this->fields).autocomments = (List_1_System_String_ *)pLVar2;
-  pLVar2 = (List_1_UnityEngine_Vector4_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  (this->fields).translations = (List_1_System_String_ *)pLVar2;
-  (this->fields).isFuzzy = 0;
-  (this->fields).isModified = 0;
-  (this->fields).isAutomatic = 0;
-  (this->fields).validity = 0;
+  func_?(&(this->fields).plural,plural);
+  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
+  (this->fields).hasPlural = bVar2 == 0;
+  pLVar3 = (List_1_System_String_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+  if (pLVar3 != (List_1_System_String_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar3,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    (this->fields).references = pLVar3;
+    func_?(&(this->fields).references);
+    pLVar3 = (List_1_System_String_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+    if (pLVar3 != (List_1_System_String_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar3,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+      (this->fields).autocomments = pLVar3;
+      func_?(&(this->fields).autocomments);
+      pLVar3 = (List_1_System_String_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+      if (pLVar3 != (List_1_System_String_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar3,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+        (this->fields).translations = pLVar3;
+        func_?(&(this->fields).translations);
+        (this->fields).isFuzzy = 0;
+        (this->fields).isModified = 0;
+        (this->fields).isAutomatic = 0;
+        (this->fields).validity = 0;
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -501,45 +493,69 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry__ctor_1(Catal
 
 {
   if (cRam_? == '\0') {
-    func_?(0x146c);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).context = TypeInfo__System__String->static_fields->Empty;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  pSVar1 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).context = pSVar1;
+  method_00 = (MethodInfo *)&(this->fields).context;
+  func_?(method_00,pSVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).owner = owner;
+  func_?(&(this->fields).owner,owner);
   if (dt != (CatalogEntry *)0x0) {
-    (this->fields).str = (dt->fields).str;
-    (this->fields).plural = (dt->fields).plural;
+    pSVar1 = (dt->fields).str;
+    (this->fields).str = pSVar1;
+    func_?(&this->fields,pSVar1);
+    pSVar1 = (dt->fields).plural;
+    (this->fields).plural = pSVar1;
+    func_?(&(this->fields).plural,pSVar1);
     (this->fields).hasPlural = (dt->fields).hasPlural;
-    pLVar1 = (dt->fields).translations;
-    pLVar2 = (List_1_VoxelHit_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1(pLVar2,(IEnumerable_1_VoxelHit_ *)pLVar1,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
-    (this->fields).translations = (List_1_System_String_ *)pLVar2;
-    pLVar1 = (dt->fields).references;
-    pLVar2 = (List_1_VoxelHit_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1(pLVar2,(IEnumerable_1_VoxelHit_ *)pLVar1,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
-    (this->fields).references = (List_1_System_String_ *)pLVar2;
-    pLVar1 = (dt->fields).autocomments;
-    pLVar2 = (List_1_VoxelHit_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1(pLVar2,(IEnumerable_1_VoxelHit_ *)pLVar1,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
-    (this->fields).autocomments = (List_1_System_String_ *)pLVar2;
-    (this->fields).isFuzzy = (dt->fields).isFuzzy;
-    (this->fields).isModified = (dt->fields).isModified;
-    (this->fields).isAutomatic = (dt->fields).isAutomatic;
-    (this->fields).hasBadTokens = (dt->fields).hasBadTokens;
-    (this->fields).moreFlags = (dt->fields).moreFlags;
-    (this->fields).comment = (dt->fields).comment;
-    (this->fields).validity = (dt->fields).validity;
-    (this->fields).errorString = (dt->fields).errorString;
-    (this->fields).context = (dt->fields).context;
-    return;
+    pLVar2 = (dt->fields).translations;
+    pLVar3 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+    if (pLVar3 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1(pLVar3,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
+      (this->fields).translations = (List_1_System_String_ *)pLVar3;
+      func_?(&(this->fields).translations,pLVar3);
+      pLVar2 = (dt->fields).references;
+      pLVar3 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+      if (pLVar3 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1(pLVar3,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
+        (this->fields).references = (List_1_System_String_ *)pLVar3;
+        func_?(&(this->fields).references,pLVar3);
+        pLVar2 = (dt->fields).autocomments;
+        pLVar3 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+        if (pLVar3 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1(pLVar3,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_);
+          (this->fields).autocomments = (List_1_System_String_ *)pLVar3;
+          func_?(&(this->fields).autocomments,pLVar3);
+          (this->fields).isFuzzy = (dt->fields).isFuzzy;
+          (this->fields).isModified = (dt->fields).isModified;
+          (this->fields).isAutomatic = (dt->fields).isAutomatic;
+          (this->fields).hasBadTokens = (dt->fields).hasBadTokens;
+          pSVar1 = (dt->fields).moreFlags;
+          (this->fields).moreFlags = pSVar1;
+          func_?(&(this->fields).moreFlags,pSVar1);
+          pSVar1 = (dt->fields).comment;
+          (this->fields).comment = pSVar1;
+          func_?(&(this->fields).comment,pSVar1);
+          (this->fields).validity = (dt->fields).validity;
+          pSVar1 = (dt->fields).errorString;
+          (this->fields).errorString = pSVar1;
+          func_?(&(this->fields).errorString,pSVar1);
+          pSVar1 = (dt->fields).context;
+          (this->fields).context = pSVar1;
+          func_?(&(this->fields).context,pSVar1);
+          return;
+        }
+      }
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -550,18 +566,19 @@ String__Array * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_ge
 
 {
   if (cRam_? == '\0') {
-    func_?(0x146e);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)(this->fields).autocomments;
-  if (this_00 != (List_1_VoxelHit_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray(this_00,MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    return (String__Array *)pVVar1;
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)(this->fields).autocomments;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pUVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray(this_00,MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
+    return (String__Array *)pUVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pSVar3 = (String__Array *)(*pcVar2)();
-  return pSVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String__Array *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -571,32 +588,21 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_Flags
 
 {
   if (cRam_? == '\0') {
-    func_?(0x146f);
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral___fuzzy);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
   }
   pSVar1 = TypeInfo__System__String->static_fields->Empty;
   if ((this->fields).isFuzzy != 0) {
     pSVar1 = StringLiteral___fuzzy;
   }
-  str1 = (this->fields).moreFlags;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar1 = mscorlib.dll::System::String::String_Concat_2(pSVar1,str1,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,(this->fields).moreFlags,(MethodInfo *)0x0);
   bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
   if (bVar2 != 0) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
     return TypeInfo__System__String->static_fields->Empty;
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pSVar1 = mscorlib.dll::System::String::String_Concat_2(::StringLiteral__,pSVar1,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3(::StringLiteral__,pSVar1,(MethodInfo *)0x0);
   return pSVar1;
 }
 
@@ -606,15 +612,7 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_Flags
 bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_HasComment(CatalogEntry *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1470);
-    cRam_? = '\x01';
-  }
-  value = (this->fields).comment;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields).comment,(MethodInfo *)0x0);
   return bVar1 == 0;
 }
 
@@ -624,25 +622,8 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_HasCommen
 bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_HasContext(CatalogEntry *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1471);
-    cRam_? = '\x01';
-  }
-  value = (this->fields).context;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields).context,(MethodInfo *)0x0);
   return bVar1 == 0;
-}
-
-
-/* Boolean get_IsAutomatic() */
-
-bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_IsAutomatic(CatalogEntry *this,MethodInfo *method)
-
-{
-  return (this->fields).isAutomatic;
 }
 
 
@@ -660,58 +641,50 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_IsModifie
 bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_IsTranslated(CatalogEntry *this,MethodInfo *method)
 
 {
-  pCVar1 = this;
   if (cRam_? == '\0') {
-    func_?(0x1472);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
     cRam_? = '\x01';
   }
-  pLVar2 = (this->fields).translations;
-  if (pLVar2 != (List_1_System_String_ *)0x0) {
-    pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-    pCVar4 = (this->fields).owner;
-    if (pCVar4 != (Catalog *)0x0) {
-      iVar5 = Catalog::Catalog_get_PluralFormsCount(pCVar4,(MethodInfo *)0x0);
-      if ((int)pOVar3 < iVar5) {
+  pLVar1 = (this->fields).translations;
+  if (pLVar1 != (List_1_System_String_ *)0x0) {
+    iVar2 = (pLVar1->fields)._size;
+    pCVar3 = (this->fields).owner;
+    if (pCVar3 != (Catalog *)0x0) {
+      iVar4 = Catalog::Catalog_get_PluralFormsCount(pCVar3,(MethodInfo *)0x0);
+      if (iVar2 < iVar4) {
         if ((this->fields).hasPlural == 0) {
-          pLVar2 = (this->fields).translations;
-          if (pLVar2 == (List_1_System_String_ *)0x0) goto code_?;
-          pSVar6 = (String *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar2,0,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?();
-          }
-          bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar6,(MethodInfo *)0x0);
-          pSVar6 = (String *)(uint)(bVar7 == 0);
+          pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).translations;
+          if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
+          RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar5,0,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+          bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty((String *)RVar6,(MethodInfo *)0x0);
+          pCVar3 = (Catalog *)(uint)(bVar7 == 0);
         }
         else {
-          pSVar6 = (String *)0x0;
+          pCVar3 = (Catalog *)0x0;
         }
       }
       else {
-        pSVar6 = (String *)0x1;
+        pCVar3 = (Catalog *)0x1;
       }
-      if (((bool)pSVar6 == 0) || ((this->fields).hasPlural == 0)) {
-        return (bool)pSVar6;
+      if (((char)pCVar3 == '\0') || ((this->fields).hasPlural == 0)) {
+code_?:
+        return (bool)pCVar3;
       }
-      index = 0;
-      pCVar4 = (this->fields).owner;
-      while (pCVar4 != (Catalog *)0x0) {
-        this._0_1_ = (bool)pSVar6;
-        iVar5 = Catalog::Catalog_get_PluralFormsCount(pCVar4,(MethodInfo *)0x0);
-        if (iVar5 <= index) {
-          return (bool)this;
-        }
-        pLVar2 = (pCVar1->fields).translations;
-        if (pLVar2 == (List_1_System_String_ *)0x0) break;
-        pSVar6 = (String *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar2,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar6,(MethodInfo *)0x0);
+      iVar2 = 0;
+      pCVar3 = (this->fields).owner;
+      while (pCVar3 != (Catalog *)0x0) {
+        iVar4 = Catalog::Catalog_get_PluralFormsCount(pCVar3,(MethodInfo *)0x0);
+        if (iVar4 <= iVar2) goto code_?;
+        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).translations;
+        if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+        RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar5,iVar2,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+        bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty((String *)RVar6,(MethodInfo *)0x0);
         if (bVar7 != 0) {
           return 0;
         }
-        index = index + 1;
-        pCVar4 = (pCVar1->fields).owner;
+        iVar2 = iVar2 + 1;
+        pCVar3 = (this->fields).owner;
       }
     }
   }
@@ -731,48 +704,39 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_Key(C
   pSVar1 = (this->fields).str;
   pSVar2 = (this->fields).context;
   if (cRam_? == '\0') {
-    func_?(0x1466);
+    func_?(&TypeInfo__System__String);
+    func_?(&StringLiteral__0__1_);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
   }
   bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
   if (bVar3 == 0) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
     bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar2,(MethodInfo *)0x0);
     format = StringLiteral__0__1_;
-    if (bVar3 == 0) {
-      if (pSVar2 == (String *)0x0) goto code_?;
+    if (bVar3 != 0) {
+      pSVar1 = mscorlib.dll::System::String::String_Format_1(StringLiteral__0__1_,(Object *)TypeInfo__System__String->static_fields->Empty,(Object *)pSVar1,(MethodInfo *)0x0);
+      return pSVar1;
+    }
+    if (pSVar2 != (String *)0x0) {
       pSVar2 = mscorlib.dll::System::String::String_Trim(pSVar2,(MethodInfo *)0x0);
-      this = (CatalogEntry *)0x7c;
-      arg1 = (Object *)func_?(TypeInfo__System__Char,&this);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar2 = mscorlib.dll::System::String::String_Concat((Object *)pSVar2,arg1,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,::StringLiteral__,(MethodInfo *)0x0);
+      pSVar1 = mscorlib.dll::System::String::String_Format_1(format,(Object *)pSVar2,(Object *)pSVar1,(MethodInfo *)0x0);
+      return pSVar1;
     }
-    else {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar2 = TypeInfo__System__String->static_fields->Empty;
-    }
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar1 = mscorlib.dll::System::String::String_Format_1(format,(Object *)pSVar2,(Object *)pSVar1,(MethodInfo *)0x0);
-    return pSVar1;
   }
-  this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::IsolatedStorageException__ctor_1(this_00,StringLiteral_Msgid_cannot_be_empty,(MethodInfo *)0x0);
-  func_?(this_00,0,MethodInfo__GNU__Gettext__CatalogEntry__MakeKey_System__String__System__String_);
-code_?:
+  else {
+    uVar4 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar4);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    pSVar1 = (String *)func_?(&StringLiteral_Msgid_cannot_be_empty);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar1,method_00);
+    func_?(&MethodInfo__GNU__Gettext__CatalogEntry__MakeKey_System__String__System__String_);
+    func_?(this_00);
+  }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar5)();
   return pSVar1;
 }
 
@@ -783,116 +747,85 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_Local
 
 {
   pCVar1 = (this->fields).owner;
-  if (pCVar1 == (Catalog *)0x0) {
-    func_?(0);
-    pcVar2 = (code *)swi(3);
-    pSVar3 = (String *)(*pcVar2)();
-    return pSVar3;
-  }
-  method = (MethodInfo *)0x0;
-  this = (CatalogEntry *)pCVar1;
-  if (cRam_? == '\0') {
-    func_?(0x14a3);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pCVar4 = this;
-  value = (MethodInfo *)TypeInfo__System__String->static_fields->Empty;
-  bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty(this[1].fields.str,(MethodInfo *)0x0);
-  if (bVar5 == 0) {
-    pSVar3 = pCVar4[1].fields.str;
-    if ((((uint)(TypeInfo__GNU__Gettext__IsoCodes->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_started == 0)) {
-      func_?(TypeInfo__GNU__Gettext__IsoCodes);
-    }
-    this_00 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)IsoCodes::IsoCodes_LookupLanguageCode(pSVar3,(MethodInfo *)0x0);
-    if (this_00 == (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0) goto code_?;
-    value = (MethodInfo *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot(this_00,(MethodInfo *)0x0);
-    pSVar3 = pCVar4[1].fields.plural;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      this = (CatalogEntry *)TypeInfo__System__String;
+  if (pCVar1 != (Catalog *)0x0) {
+    if (cRam_? == '\0') {
       func_?();
+      func_?();
+      func_?();
+      func_?(&::StringLiteral__);
+      cRam_? = '\x01';
     }
-    bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar3,(MethodInfo *)0x0);
-    if (bVar5 == 0) {
-      this = (CatalogEntry *)0x5f;
-      arg1 = (Object *)func_?(TypeInfo__System__Char,&this);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      arg0 = mscorlib.dll::System::String::String_Concat((Object *)value,arg1,(MethodInfo *)0x0);
-      pSVar3 = pCVar4[1].fields.plural;
-      if ((((uint)(TypeInfo__GNU__Gettext__IsoCodes->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_started == 0)) {
+    pSVar2 = TypeInfo__System__String->static_fields->Empty;
+    bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty((pCVar1->fields).Language,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      pSVar2 = (pCVar1->fields).Language;
+      if ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__GNU__Gettext__IsoCodes);
       }
-      arg1_00 = IsoCodes::IsoCodes_LookupCountryCode(pSVar3,(MethodInfo *)0x0);
-      value = (MethodInfo *)mscorlib.dll::System::String::String_Concat((Object *)arg0,(Object *)arg1_00,(MethodInfo *)0x0);
+      pIVar4 = IsoCodes::IsoCodes_LookupLanguageCode(pSVar2,(MethodInfo *)0x0);
+      if (pIVar4 == (IsoCodes_IsoCode *)0x0) goto code_?;
+      pSVar2 = (pIVar4->fields).name;
+      bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty((pCVar1->fields).Country,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
+        pSVar5 = mscorlib.dll::System::String::String_Concat_3(pSVar2,::StringLiteral__,(MethodInfo *)0x0);
+        pSVar2 = (pCVar1->fields).Country;
+        if ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__GNU__Gettext__IsoCodes);
+        }
+        pIVar4 = IsoCodes::IsoCodes_LookupCountryCode(pSVar2,(MethodInfo *)0x0);
+        if (pIVar4 == (IsoCodes_IsoCode *)0x0) {
+          pSVar2 = (String *)0x0;
+        }
+        else {
+          pSVar2 = (String *)(*(pIVar4->klass->vtable).ToString.methodPtr)(pIVar4,(pIVar4->klass->vtable).ToString.method);
+        }
+        pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar2,(MethodInfo *)0x0);
+      }
     }
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty((String *)value,(MethodInfo *)0x0);
-  if (bVar5 != 0) {
-    pLVar6 = (pCVar4->fields).references;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty((String *)pLVar6,(MethodInfo *)0x0);
-    if (bVar5 == 0) {
-      pLVar6 = (pCVar4->fields).references;
-      if ((((uint)(TypeInfo__System__IO__Path->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__IO__Path->_1).cctor_started == 0)) {
-        this = (CatalogEntry *)TypeInfo__System__IO__Path;
+    bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar2,(MethodInfo *)0x0);
+    if ((bVar3 != 0) && (bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty((pCVar1->fields).fileName,(MethodInfo *)0x0), bVar3 == 0)) {
+      pSVar5 = (pCVar1->fields).fileName;
+      if ((TypeInfo__System__IO__Path->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      this = (CatalogEntry *)0x0;
-      this_01 = (MethodInfo *)mscorlib.dll::System::IO::Path::Path_GetFileNameWithoutExtension((String *)pLVar6,(MethodInfo *)0x0);
-      if (this_01 == (MethodInfo *)0x0) {
-code_?:
-        method = (MethodInfo *)&UNK_?;
-        func_?();
-        pcVar2 = (code *)swi(3);
-        pSVar3 = (String *)(*pcVar2)();
-        return pSVar3;
-      }
-      this = (CatalogEntry *)&UNK_?;
-      method = this_01;
-      pIVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0);
-      if (pIVar7 == (IList_1_VoxelHit_ *)0x2) {
-        if ((((uint)(TypeInfo__GNU__Gettext__IsoCodes->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_started == 0)) {
+      pSVar5 = mscorlib.dll::System::IO::Path::Path_GetFileNameWithoutExtension(pSVar5,(MethodInfo *)0x0);
+      if (pSVar5 == (String *)0x0) goto code_?;
+      if ((pSVar5->fields)._stringLength == 2) {
+        if ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        bVar5 = IsoCodes::IsoCodes_IsKnownLanguageCode((String *)this_01,(MethodInfo *)0x0);
-        if (bVar5 != 0) {
-          value = this_01;
+        bVar3 = IsoCodes::IsoCodes_IsKnownLanguageCode(pSVar5,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          pSVar2 = pSVar5;
         }
-        return (String *)value;
+        return pSVar2;
       }
-      pIVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0);
-      if (pIVar7 == (IList_1_VoxelHit_ *)0x5) {
-        uVar8 = mscorlib.dll::System::String::String_get_Chars((String *)this_01,2,(MethodInfo *)0x0);
-        if (uVar8 == 0x5f) {
-          pSVar3 = mscorlib.dll::System::String::String_Substring_1((String *)this_01,0,2,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__GNU__Gettext__IsoCodes->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_started == 0)) {
+      if (((pSVar5->fields)._stringLength == 5) && (uVar6 = mscorlib.dll::System::String::String_get_Chars(pSVar5,2,(MethodInfo *)0x0), uVar6 == 0x5f)) {
+        pSVar7 = mscorlib.dll::System::String::String_Substring_1(pSVar5,0,2,(MethodInfo *)0x0);
+        if ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        bVar3 = IsoCodes::IsoCodes_IsKnownLanguageCode(pSVar7,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          pSVar7 = mscorlib.dll::System::String::String_Substring_1(pSVar5,3,2,(MethodInfo *)0x0);
+          if ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar5 = IsoCodes::IsoCodes_IsKnownLanguageCode(pSVar3,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            pSVar3 = mscorlib.dll::System::String::String_Substring_1((String *)this_01,3,2,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__GNU__Gettext__IsoCodes->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_started == 0)) {
-              func_?();
-            }
-            bVar5 = IsoCodes::IsoCodes_IsKnownCountryCode(pSVar3,(MethodInfo *)0x0);
-            if (bVar5 != 0) {
-              value = this_01;
-            }
+          bVar3 = IsoCodes::IsoCodes_IsKnownCountryCode(pSVar7,(MethodInfo *)0x0);
+          if (bVar3 != 0) {
+            pSVar2 = pSVar5;
           }
         }
       }
     }
+    return pSVar2;
   }
-  return (String *)value;
+code_?:
+  uVar8 = func_?(&stack0xfffffff0);
+  func_?(uVar8);
+  pcVar9 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar9)();
+  return pSVar2;
 }
 
 
@@ -902,18 +835,20 @@ int32_t Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_Number
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1473);
+    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<System::String>__get_Count__;
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).translations;
-  if (this_00 != (List_1_System_String_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-    return (int32_t)pOVar1;
+  pLVar2 = (this->fields).translations;
+  if (pLVar2 != (List_1_System_String_ *)0x0) {
+    return (pLVar2->fields)._size;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
+  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
@@ -923,18 +858,19 @@ String__Array * Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_ge
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1474);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)(this->fields).references;
-  if (this_00 != (List_1_VoxelHit_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray(this_00,MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    return (String__Array *)pVVar1;
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)(this->fields).references;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pUVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray(this_00,MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
+    return (String__Array *)pUVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pSVar3 = (String__Array *)(*pcVar2)();
-  return pSVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String__Array *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -944,18 +880,20 @@ int32_t Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_Transl
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1475);
+    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<System::String>__get_Count__;
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).translations;
-  if (this_00 != (List_1_System_String_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-    return (int32_t)pOVar1;
+  pLVar2 = (this->fields).translations;
+  if (pLVar2 != (List_1_System_String_ *)0x0) {
+    return (pLVar2->fields)._size;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
+  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
@@ -964,28 +902,12 @@ int32_t Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_Transl
 void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_Comment(CatalogEntry *this,String *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1476);
-    cRam_? = '\x01';
-  }
-  a = (this->fields).comment;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar1 = mscorlib.dll::System::String::String_op_Inequality(a,value,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_op_Inequality((this->fields).comment,value,(MethodInfo *)0x0);
   if (bVar1 != 0) {
     (this->fields).comment = value;
+    func_?(&(this->fields).comment,value);
     if ((this->fields).owner != (Catalog *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      *(undefined1 *)((int)in_stack_2 + 0x15) = in_stack_3;
-      if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
-        func_?();
-      }
-      (**(code **)(*in_stack_2 + 0xf0))(in_stack_2,TypeInfo__System__EventArgs->static_fields->Empty);
-      return;
+      Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
     }
   }
   return;
@@ -1000,11 +922,13 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_Context(C
   if (value != (String *)0x0) {
     pSVar1 = mscorlib.dll::System::String::String_Trim(value,(MethodInfo *)0x0);
     (this->fields).context = pSVar1;
+    func_?();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1015,83 +939,59 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_Flags(Cat
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1477);
+    func_?(&TypeInfo__System__Char);
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral___);
+    func_?(&StringLiteral_fuzzy);
     cRam_? = '\x01';
   }
   (this->fields).isFuzzy = 0;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).moreFlags = TypeInfo__System__String->static_fields->Empty;
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
+  pSVar1 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).moreFlags = pSVar1;
+  func_?(&(this->fields).moreFlags,pSVar1);
+  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
     return;
   }
-  pCVar2 = (Char__Array *)func_?(TypeInfo__System__Char,2);
-  if (pCVar2 == (Char__Array *)0x0) goto code_?;
-  if (pCVar2->max_length == 0) {
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-  }
-  else {
-    pCVar2->vector[0] = 0x23;
-    if (pCVar2->max_length < 2) goto code_?;
-    pCVar2->vector[1] = 0x2c;
-    if (value == (String *)0x0) goto code_?;
-    pSVar4 = mscorlib.dll::System::String::String_TrimStart(value,pCVar2,(MethodInfo *)0x0);
-    pCVar2 = (Char__Array *)func_?(TypeInfo__System__Char,1);
-    if (pCVar2 == (Char__Array *)0x0) goto code_?;
-    if (pCVar2->max_length != 0) {
-      pCVar2->vector[0] = 0x2c;
-      if (pSVar4 == (String *)0x0) goto code_?;
-      pSVar5 = mscorlib.dll::System::String::String_Split(pSVar4,pCVar2,(MethodInfo *)0x0);
-      uVar6 = 0;
-      if (pSVar5 == (String__Array *)0x0) goto code_?;
-      ppSVar7 = pSVar5->vector;
-      while( true ) {
-        if ((int)pSVar5->max_length <= (int)uVar6) {
-          return;
-        }
-        if (pSVar5->max_length <= uVar6) break;
-        pSVar4 = *ppSVar7;
-        if (pSVar4 == (String *)0x0) goto code_?;
-        pSVar8 = mscorlib.dll::System::String::String_Trim(pSVar4,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        pSVar5 = (String__Array *)0x0;
-        bVar1 = mscorlib.dll::System::String::String_op_Equality(pSVar8,StringLiteral_fuzzy,(MethodInfo *)0x0);
-        if (bVar1 == 0) {
-          pSVar4 = mscorlib.dll::System::String::String_Trim(pSVar4,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pSVar8 = ::StringLiteral___;
-          this = (CatalogEntry *)::StringLiteral___;
-          pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,::StringLiteral___,pSVar4,(MethodInfo *)0x0);
-          uVar6 = uVar6 + 1;
-          ppSVar7 = ppSVar7 + 1;
-          pSVar8[2].monitor = (MonitorData *)pSVar4;
-        }
-        else {
-          (this->fields).isFuzzy = 1;
-          uVar6 = uVar6 + 1;
-          ppSVar7 = ppSVar7 + 1;
-        }
+  trimChars = (Char__Array *)func_?(TypeInfo__System__Char,2);
+  if (trimChars == (Char__Array *)0x0) goto code_?;
+  if ((trimChars->max_length != 0) && (trimChars->vector[0] = 0x23, 1 < trimChars->max_length)) {
+    trimChars->vector[1] = 0x2c;
+    if ((value == (String *)0x0) || (pSVar1 = mscorlib.dll::System::String::String_TrimStart_1(value,trimChars,(MethodInfo *)0x0), pSVar1 == (String *)0x0)) goto code_?;
+    pSVar3 = mscorlib.dll::System::String::String_Split(pSVar1,0x2c,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+    uVar4 = 0;
+    if (pSVar3 == (String__Array *)0x0) goto code_?;
+    ppSVar5 = pSVar3->vector;
+    while( true ) {
+      if ((int)pSVar3->max_length <= (int)uVar4) {
+        return;
       }
-      goto code_?;
+      if (pSVar3->max_length <= uVar4) break;
+      pSVar1 = *ppSVar5;
+      if (pSVar1 == (String *)0x0) goto code_?;
+      a = mscorlib.dll::System::String::String_Trim(pSVar1,(MethodInfo *)0x0);
+      pSVar6 = StringLiteral_fuzzy;
+      bVar2 = mscorlib.dll::System::String::String_op_Equality(a,StringLiteral_fuzzy,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        pSVar1 = mscorlib.dll::System::String::String_Trim(pSVar1,(MethodInfo *)0x0);
+        pSRam00000000 = mscorlib.dll::System::String::String_Concat_4(pSRam00000000,::StringLiteral___,pSVar1,(MethodInfo *)0x0);
+        func_?();
+        uVar4 = uVar4 + 1;
+        ppSVar5 = ppSVar5 + 1;
+        this = (CatalogEntry *)pSVar6;
+      }
+      else {
+        (this->fields).isFuzzy = 1;
+        uVar4 = uVar4 + 1;
+        ppSVar5 = ppSVar5 + 1;
+      }
     }
   }
-  uVar3 = func_?(0,0);
-  func_?(uVar3);
+  func_?();
 code_?:
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1112,18 +1012,8 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_IsFuzzy(C
 
 {
   (this->fields).isFuzzy = value;
-  pCVar1 = (this->fields).owner;
-  if (pCVar1 != (Catalog *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(0x14a7);
-      cRam_? = '\x01';
-    }
-    (pCVar1->fields).isDirty = 1;
-    if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__EventArgs);
-    }
-    (*(code *)(pCVar1->klass->vtable).OnDirtyChanged.method)(pCVar1,TypeInfo__System__EventArgs->static_fields->Empty,pCVar1->klass[1]._0.image);
-    return;
+  if ((this->fields).owner != (Catalog *)0x0) {
+    Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
   }
   return;
 }

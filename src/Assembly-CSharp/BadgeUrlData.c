@@ -5,7 +5,8 @@ String * Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData_ToString(BadgeUrlData *
 
 {
   if (cRam_? == '\0') {
-    func_?(0x110f);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_Level__0___Url__1___FriendsLimit);
     cRam_? = '\x01';
   }
   pBVar1 = this;
@@ -14,9 +15,6 @@ String * Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData_ToString(BadgeUrlData *
   iStack_2 = (pBVar1->fields).friendsLimit;
   pSVar3 = (pBVar1->fields).url;
   arg2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar3 = mscorlib.dll::System::String::String_Format_2(StringLiteral_Level__0___Url__1___FriendsLimit,arg0,(Object *)pSVar3,arg2,(MethodInfo *)0x0);
   return pSVar3;
 }
@@ -28,16 +26,15 @@ void Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData__ctor(BadgeUrlData *this,Me
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1111);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   (this->fields).level = -1;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).url = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).url = ::StringLiteral__;
+  method_00 = (MethodInfo *)&(this->fields).url;
+  func_?(method_00,::StringLiteral__);
   (this->fields).friendsLimit = 200;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -48,18 +45,18 @@ void Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData__ctor_1(BadgeUrlData *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1110);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   (this->fields).level = -1;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).url = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).url = ::StringLiteral__;
+  method_00 = (MethodInfo *)&(this->fields).url;
+  func_?(method_00,::StringLiteral__);
   (this->fields).friendsLimit = 200;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).level = level;
   (this->fields).url = url;
+  func_?(&(this->fields).url,url);
   return;
 }
 

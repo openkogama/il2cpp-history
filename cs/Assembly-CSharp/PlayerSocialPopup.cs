@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerSocialPopup : MonoBehaviour
 {
@@ -43,42 +43,42 @@ public class PlayerSocialPopup : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnOpenAdminController_c__AnonStorey0
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
-		internal AdminToolController adminTools;
+		public AdminToolController adminTools;
 
 		// Constructors
-		public _OnOpenAdminController_c__AnonStorey0();
+		public __c__DisplayClass19_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnOpenAdminController_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnOpenAdminController_c__AnonStorey1
+	private sealed class __c__DisplayClass19_1
 	{
 		// Fields
-		internal OwnerToolController ownerTools;
+		public OwnerToolController ownerTools;
 
 		// Constructors
-		public _OnOpenAdminController_c__AnonStorey1();
+		public __c__DisplayClass19_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnOpenAdminController_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _PostErrorPopup_c__AnonStorey2
+	private sealed class __c__DisplayClass24_0
 	{
 		// Fields
-		internal string error;
+		public string error;
 
 		// Constructors
-		public _PostErrorPopup_c__AnonStorey2();
+		public __c__DisplayClass24_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _PostErrorPopup_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors

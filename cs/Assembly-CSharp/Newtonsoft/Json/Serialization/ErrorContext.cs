@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -14,16 +14,12 @@ namespace Newtonsoft.Json.Serialization
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Exception _Error_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private object _OriginalObject_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private object _Member_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _Handled_k__BackingField;
 	
 		// Properties

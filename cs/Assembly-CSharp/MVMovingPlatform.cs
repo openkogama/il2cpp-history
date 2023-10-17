@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVMovingPlatform : MVMovable
 {
@@ -24,18 +24,18 @@ public class MVMovingPlatform : MVMovable
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass7_0
 	{
 		// Fields
-		internal IntVector min;
-		internal IntVector max;
-		internal MVMovingPlatform _this;
+		public MVMovingPlatform __4__this;
+		public IntVector min;
+		public IntVector max;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass7_0();
 
 		// Methods
-		internal IModelingConstraint __m__0();
+		internal IModelingConstraint _Initialize_b__0();
 	}
 
 	// Constructors

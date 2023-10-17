@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using Localize;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class LocalizedEnums
 {
@@ -18,8 +18,6 @@ public static class LocalizedEnums
 	{
 		// Fields
 		private static EnumLocalizeBookkeeping enumLocalizeBookkeeping;
-		[CompilerGenerated]
-		private static Action<Dictionary<int, string>> __f__mg_cache0;
 
 		// Constructors
 		static MVConnStateLS();
@@ -33,8 +31,6 @@ public static class LocalizedEnums
 	{
 		// Fields
 		private static EnumLocalizeBookkeeping enumLocalizeBookkeeping;
-		[CompilerGenerated]
-		private static Action<Dictionary<int, string>> __f__mg_cache0;
 
 		// Constructors
 		static MVJoinStateLS();
@@ -48,8 +44,6 @@ public static class LocalizedEnums
 	{
 		// Fields
 		private static EnumLocalizeBookkeeping enumLocalizeBookkeeping;
-		[CompilerGenerated]
-		private static Action<Dictionary<int, string>> __f__mg_cache0;
 
 		// Constructors
 		static XPRewardTypeLS();
@@ -63,8 +57,6 @@ public static class LocalizedEnums
 	{
 		// Fields
 		private static EnumLocalizeBookkeeping enumLocalizeBookkeeping;
-		[CompilerGenerated]
-		private static Action<Dictionary<int, string>> __f__mg_cache0;
 
 		// Constructors
 		static AccessoryCategoryLS();

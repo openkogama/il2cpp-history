@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -116,6 +116,11 @@ namespace MV.Common
 		ClaimRewardedAdXP = 117,
 		IncrementStatRequest = 118,
 		Undefined = 119,
+		VehicleEnergyUse = 120,
+		SetMaterial = 121,
+		GetInventoryItemData = 122,
+		AdAction = 123,
+		Handshake = 248,
 		Ping = 249,
 		GetProperties = 251,
 		SetProperties = 252,

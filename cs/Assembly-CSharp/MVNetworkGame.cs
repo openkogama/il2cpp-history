@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Assets.Scripts.AdIntegration;
 using CodeStage.AntiCheat.ObscuredTypes;
 using ExitGames.Client.Photon;
 using MV.Common;
@@ -15,19 +16,16 @@ using MV.WorldObject.RuntimeEvents;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVNetworkGame : IPhotonPeerListener
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<ReceivedItemFromQueryEventArgs> ReceivedItemFromQuery;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<ReceivedItemFromQueryEventArgs> ReceivedAvatarBodiesFromQuery;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Action<string> ReceivedAccessoryData;
 	private MVConnState connState;
 	private const string appName = "MVGameServer";
@@ -37,50 +35,35 @@ public class MVNetworkGame : IPhotonPeerListener
 	private TransformNetworkManager transformNetworkManager;
 	public readonly GameEventManager GameEventManager;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private LogicObjectManagerClient _LogicObjectManager_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVGameType _GameType_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Region _Region_k__BackingField;
 	private readonly Dictionary<Region, float> timeZoneMap;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVGameCoinManager _GameCoinManager_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private ItemCategories _ItemCategories_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVNetworkGameStateListener _NetworkGameStateListener_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private PhotonPeer _Peer_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private ObscuredString _XpKey_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _MarketPlaceLevel_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _PublishLevel_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private string _AdConsentEndpointURL_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private string _KogamaMainpageURL_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private CreySettings _CreySettings_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private CustomTouristPromotionSettings _CustomTouristPromotionSettings_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private ElitePromotionSettings _EliteSettings_k__BackingField;
 	private int lastFrameServerTimeUpdate;
 	private int lastFrameLocalTimeUpdate;
@@ -90,34 +73,24 @@ public class MVNetworkGame : IPhotonPeerListener
 	private GameStatCounterManager gameStatCounterManager;
 	private LevelRewardsManager levelRewardsManager;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVMaterialRepository _MaterialRepository_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private PlayerRepository _PlayerRepository_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private ShopRepository _ShopRepository_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private GameTierShopRepository _GameTierShopRepository_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private AvatarRepository _AvatarShopRepository_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MvAvatarMetaDataWoMap _AvatarMetaDataWoMap_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVGameModeChangeNotifier _GameStateController_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private FriendList _Friends_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVLocalObjectController _PlayerController_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private WinningConditionManager _WinningConditionManager_k__BackingField;
 	private WorldNetwork worldNetwork;
 	public Action<int, Dictionary<object, object>> PurchaseProductResponseHandler;
@@ -130,7 +103,6 @@ public class MVNetworkGame : IPhotonPeerListener
 	public OnReceivedChatMessageDelegate OnReceivedChatMessage;
 	public OnMarketPlaceActionCompleteDelegate OnMarketPlaceActionComplete;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<ScreenshotUploadedEventArgs> ScreenshotUploaded;
 	public Action OnActiveAvatarSet;
 	public Action OnAccessoryUnequipped;
@@ -219,11 +191,9 @@ public class MVNetworkGame : IPhotonPeerListener
 		// Fields
 		private DynamicEventCallbackManager dynamicEventCallbackManager;
 		private bool cacheEvents;
-		private Queue<EventData> cachedEvents;
+		private Queue<ExitGames.Client.Photon.EventData> cachedEvents;
 		private MVNetworkGame networkGame;
 		private const float maxJoinTimeValue = 250000f;
-		[CompilerGenerated]
-		private static MVWorldObjectClient.CallBackDelegate __f__am_cache0;
 
 		// Properties
 		public bool CacheEvents { set; }
@@ -240,11 +210,10 @@ public class MVNetworkGame : IPhotonPeerListener
 			{
 				// Fields
 				[CompilerGenerated]
-				[DebuggerBrowsable]
-				private Action<EventData> OnEventData;
+				private Action<ExitGames.Client.Photon.EventData> OnEventData;
 
 				// Events
-				public event Action<EventData> OnEventData {
+				public event Action<ExitGames.Client.Photon.EventData> OnEventData {
 					add;
 					remove;
 				}
@@ -253,9 +222,9 @@ public class MVNetworkGame : IPhotonPeerListener
 				public EventCallback();
 
 				// Methods
-				public void Notify(EventData eventData);
-				public void Subscribe(Action<EventData> callback);
-				public bool UnSubscribe(Action<EventData> callback);
+				public void Notify(ExitGames.Client.Photon.EventData eventData);
+				public void Subscribe(Action<ExitGames.Client.Photon.EventData> callback);
+				public bool UnSubscribe(Action<ExitGames.Client.Photon.EventData> callback);
 			}
 
 			// Constructors
@@ -263,9 +232,25 @@ public class MVNetworkGame : IPhotonPeerListener
 
 			// Methods
 			public bool IsDynamicEvent(MVEventCodes eventCode);
-			public void Notify(MVEventCodes eventCode, EventData eventData);
-			public void SubscribeToEvent(MVEventCodes eventCode, Action<EventData> callback);
-			public void UnSubscribeToEvent(MVEventCodes eventCode, Action<EventData> callback);
+			public void Notify(MVEventCodes eventCode, ExitGames.Client.Photon.EventData eventData);
+			public void SubscribeToEvent(MVEventCodes eventCode, Action<ExitGames.Client.Photon.EventData> callback);
+			public void UnSubscribeToEvent(MVEventCodes eventCode, Action<ExitGames.Client.Photon.EventData> callback);
+		}
+
+		[Serializable]
+		[CompilerGenerated]
+		private sealed class __c
+		{
+			// Fields
+			public static readonly __c __9;
+			public static MVWorldObjectClient.CallBackDelegate __9__10_0;
+
+			// Constructors
+			static __c();
+			public __c();
+
+			// Methods
+			internal void _HandleEvent_b__10_0(MVWorldObjectClient wo);
 		}
 
 		// Constructors
@@ -273,13 +258,11 @@ public class MVNetworkGame : IPhotonPeerListener
 
 		// Methods
 		public void UncacheEventsFromJoin();
-		public void OnEvent(EventData photonEvent);
-		private void HandleEvent(MVEventCodes eventCode, EventData photonEvent);
-		public void SubscribeToEvent(MVEventCodes eventCode, Action<EventData> callback);
-		public void UnSubscribeToEvent(MVEventCodes eventCode, Action<EventData> callback);
+		public void OnEvent(ExitGames.Client.Photon.EventData photonEvent);
+		private void HandleEvent(MVEventCodes eventCode, ExitGames.Client.Photon.EventData photonEvent);
+		public void SubscribeToEvent(MVEventCodes eventCode, Action<ExitGames.Client.Photon.EventData> callback);
+		public void UnSubscribeToEvent(MVEventCodes eventCode, Action<ExitGames.Client.Photon.EventData> callback);
 		private void HandleActorReadyMetric();
-		[CompilerGenerated]
-		private static void _HandleEvent_m__0(MVWorldObjectClient wo);
 	}
 
 	private class GameDataQueryManager
@@ -294,7 +277,6 @@ public class MVNetworkGame : IPhotonPeerListener
 			private BytePacker bp;
 			private int instigatorActorNumber;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private QueryType _QueryType_k__BackingField;
 
 			// Properties
@@ -323,7 +305,7 @@ public class MVNetworkGame : IPhotonPeerListener
 	private class LogicEventQueue
 	{
 		// Fields
-		private readonly Dictionary<int, Queue<EventData>> logicEvents;
+		private readonly Dictionary<int, Queue<ExitGames.Client.Photon.EventData>> logicEvents;
 
 		// Properties
 		public int Count { get; }
@@ -332,9 +314,9 @@ public class MVNetworkGame : IPhotonPeerListener
 		public LogicEventQueue();
 
 		// Methods
-		public void Enqueue(EventData eventData);
+		public void Enqueue(ExitGames.Client.Photon.EventData eventData);
 		public void Dequeue(int timestamp);
-		private void HandleEvent(EventData photonEvent);
+		private void HandleEvent(ExitGames.Client.Photon.EventData photonEvent);
 	}
 
 	private class LogicObjectManagerClientWrapper
@@ -352,7 +334,7 @@ public class MVNetworkGame : IPhotonPeerListener
 		public LogicObjectManagerClientWrapper(MVNetworkGame networkGame, int stepTimestamp);
 
 		// Methods
-		public void EnqueueLogicEvent(EventData eventData);
+		public void EnqueueLogicEvent(ExitGames.Client.Photon.EventData eventData);
 		public void Step();
 		public void FastForward(int timestamp);
 		public void FastForwardImmediately(int timestamp);
@@ -389,8 +371,6 @@ public class MVNetworkGame : IPhotonPeerListener
 		private PhotonPeer peer;
 		public string dummyData;
 		private bool gamepointWelcomeClaimed;
-		[CompilerGenerated]
-		private static Action<string> __f__mg_cache0;
 
 		// Constructors
 		public OperationRequests(MVNetworkGame networkGame);
@@ -412,9 +392,8 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void CreateSpawnRole(int avatarSpawnerWoId);
 		public void ClaimGamePointWelcomeReward();
 		public void AddObjectLink(ObjectLink link);
-		public bool PublishPlanet(ref string errorText);
-		private void HandlePublishAndScreenShotData(byte[] screenshot);
-		private bool PublishPlanet(bool newImagePending);
+		public void PublishPlanet(Action<string> errorHandler);
+		private bool PublishPlanet(bool newImagePending, Action<string> errorHandler);
 		public void UploadGameScreenShot();
 		private void HandleUploadScreenShotData(byte[] screenshot);
 		public bool IsOperationPending(MVOperationCodes operationCode);
@@ -423,8 +402,9 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void RequestRejectFriendShip(int friendID);
 		public void StartSessionTime();
 		public void RequestWoUniquePrototype(int woId);
-		public void JoinGame();
-		public bool AddLink(MV.WorldObject.Link link);
+		public void Handshake();
+		public void JoinGame(string encrypt);
+		public bool AddLink(Link link);
 		public void UpdateWorldObject(int id, Vector3 position, byte[] rotation, TransformPackageType packageType);
 		public void UpdateLineOfFire(int worldObjectIDPickupOwner, Vector3 camDir, Vector3 camOrigin);
 		public void TransferWorldObjectsToGroup(int groupId, int[] worldObjects);
@@ -474,6 +454,7 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void AddAvatarToAvatarShopInventory(int worldObjectId, string name);
 		public void DeleteAvatarFromShopInventory(int worldObjectId);
 		public void SpawnVehicleWithDriver(int worldObjectSpawnerVehicleID, int worldObjectID, VehicleSeatBase seatBase);
+		public void VehicleEnergyUse(int worldObjectSpawnerVehicleEnergyID, int worldObjectID);
 		public void DetachWorldObjectFromVehicle(int worldObjectID);
 		public void SetAvatarAccessorySlot(int avatarBodyWoID, int streamingAssetId, float offset, float scale);
 		public void UnEquipAccessory(int avatarBodyWoID, AccessorySlotType accessorySlotType);
@@ -505,6 +486,9 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void GetResetAvatar(int avatarWoID);
 		public void RevokeEditRights(MVPlayer target);
 		public void Kick(MVPlayer target, string reason);
+		public void Observe(bool observe = true);
+		private void AdminOperation(byte adminOperationType, int amount, int profileId, string msg);
+		public void ShutdownSession();
 		public void Ban(int hours, MVPlayer target, string reason);
 		public void Expel(MVPlayer target, string reason);
 		public void SetSayChatBubbleVisible(bool shouldShow);
@@ -515,10 +499,11 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void SetActiveSpawnRole(int woID);
 		public void RequestUpdateGoldResponse();
 		private void PurchaseProduct(MVProductType productTypeID, Dictionary<object, object> productData);
+		public void ChangeMaterial(ObscuredByte currentMaterialId);
+		public void GetInventoryItemData(int itemID);
+		public void AdAction(AdType adType, AdActionType actionType, AdContext adContext = AdContext.None);
 		[CompilerGenerated]
-		private void _HandlePublishAndScreenShotData_m__0();
-		[CompilerGenerated]
-		private void _HandleUploadScreenShotData_m__1();
+		private void _HandleUploadScreenShotData_b__25_0();
 	}
 
 	private class OperationResponseHandling
@@ -557,8 +542,23 @@ public class MVNetworkGame : IPhotonPeerListener
 		private ReconnectWithAlternatePortHandler reconnectWithAlternatePortHandler;
 		private bool registeredFatalStatusCodeInStatHat;
 		private MVNetworkGame networkGame;
+
+		// Nested types
+		[Serializable]
 		[CompilerGenerated]
-		private static UnityAction __f__am_cache0;
+		private sealed class __c
+		{
+			// Fields
+			public static readonly __c __9;
+			public static UnityAction __9__5_0;
+
+			// Constructors
+			static __c();
+			public __c();
+
+			// Methods
+			internal void _OnStatusChanged_b__5_0();
+		}
 
 		// Constructors
 		public StatusChangedHandling(MVNetworkGame networkGame);
@@ -566,29 +566,27 @@ public class MVNetworkGame : IPhotonPeerListener
 		// Methods
 		private void HandleDisconnectMetric(StatusCode returnCode);
 		public void OnStatusChanged(StatusCode returnCode);
-		[CompilerGenerated]
-		private static void _OnStatusChanged_m__0();
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnAddItemToInventory_c__AnonStorey0
+	private sealed class __c__DisplayClass253_0
 	{
 		// Fields
-		internal Dictionary<byte, object> returnValues;
+		public Dictionary<byte, object> returnValues;
 
 		// Constructors
-		public _OnAddItemToInventory_c__AnonStorey0();
+		public __c__DisplayClass253_0();
 
 		// Methods
-		internal void __m__0(MVWorldObjectClient wo);
+		internal void _OnAddItemToInventory_b__0(MVWorldObjectClient wo);
 	}
 
 	// Constructors
 	public MVNetworkGame(PhotonLoggingConfig photonLoggingConfig, EmbeddedSiteConfigData embeddedSiteConfigData);
 
 	// Methods
-	public void SubscribeToEvent(MVEventCodes eventCode, Action<EventData> callback);
-	public void UnSubscribeToEvent(MVEventCodes eventCode, Action<EventData> callback);
+	public void SubscribeToEvent(MVEventCodes eventCode, Action<ExitGames.Client.Photon.EventData> callback);
+	public void UnSubscribeToEvent(MVEventCodes eventCode, Action<ExitGames.Client.Photon.EventData> callback);
 	private void CreatePrivateClasses();
 	private void networkGameStateListener_OnGameStateChanged(object sender, GameStateChangeEventArgs e);
 	public void Update();
@@ -601,9 +599,9 @@ public class MVNetworkGame : IPhotonPeerListener
 	public void OnResetLogicChunkEvent(int worldObjectID);
 	public void OnPickupItemStateChangeEvent(PickupItemState state, int worldObjectID, int instigatorActorNr);
 	public void OnUpdateLineOfFire(int worldObjectID, Vector3 camOrigin, Vector3 camDir);
-	public void AllModesSetup(EventData photonEvent);
-	public void PlayModeSetup(EventData photonEvent);
-	public void BuildModeSetup(EventData photonEvent);
+	public void AllModesSetup(ExitGames.Client.Photon.EventData photonEvent);
+	public void PlayModeSetup(ExitGames.Client.Photon.EventData photonEvent);
+	public void BuildModeSetup(ExitGames.Client.Photon.EventData photonEvent);
 	private void SetupLogicManager(int stepTimestamp);
 	public void OnNotificationEventReceived(NotificationType type, Dictionary<object, object> data);
 	private void OnRequestFriendshipResponse(int returnCode);
@@ -621,11 +619,11 @@ public class MVNetworkGame : IPhotonPeerListener
 	private void OnTransferOwnershipResponse(Dictionary<byte, object> returnValues, int returnCode);
 	private void OnLockHierarchyResponse(Dictionary<byte, object> returnValues, int returnCode);
 	private void OnRequestWoUniquePrototypeFailed(Dictionary<byte, object> returnValues);
-	private void OnLockHierarchyEvent(EventData eventData);
+	private void OnLockHierarchyEvent(ExitGames.Client.Photon.EventData eventData);
 	private void OnUnregisterWorldObjectEvent(int worldObjectID);
-	private void OnUpdateWorldObjectEvent(EventData photonEvent);
-	private void OnWorldObjectRPCEvent(EventData photonEvent);
-	private void OnTransferOwnershipEvent(EventData photonEvent);
+	private void OnUpdateWorldObjectEvent(ExitGames.Client.Photon.EventData photonEvent);
+	private void OnWorldObjectRPCEvent(ExitGames.Client.Photon.EventData photonEvent);
+	private void OnTransferOwnershipEvent(ExitGames.Client.Photon.EventData photonEvent);
 	private void OnUnregisterPrototypeEvent(int worldInventoryID);
 	private void OnFriendRequestEvent(int friendID, int profileID, int friendProfileID);
 	private void OnFriendUpdateEvent(int friendID, int profileID, FriendStatus status);
@@ -641,14 +639,14 @@ public class MVNetworkGame : IPhotonPeerListener
 	private void OnWoUniquePrototypeEvent(int woId, int worldInventoryId);
 	public void ResetPlayer();
 	public void OnSetWorldObjectsToPurchasedEvent(int purchaseProfileId, int itemId);
-	public void OnTransferWorldObjectsToGroup(EventData eventData);
-	public MVWorldObjectClient OnCloneWorldObjectTree(EventData eventData);
-	public MVWorldObjectClient OnCloneWorldObjectTreePosition(EventData eventData);
-	public void OnCloneTempWorldObjectWithOriginalReferenceEvent(EventData eventData);
-	public void OnGetGameBatch(EventData eventData);
-	private void OnGameQueryReady(EventData eventData);
+	public void OnTransferWorldObjectsToGroup(ExitGames.Client.Photon.EventData eventData);
+	public MVWorldObjectClient OnCloneWorldObjectTree(ExitGames.Client.Photon.EventData eventData);
+	public MVWorldObjectClient OnCloneWorldObjectTreePosition(ExitGames.Client.Photon.EventData eventData);
+	public void OnCloneTempWorldObjectWithOriginalReferenceEvent(ExitGames.Client.Photon.EventData eventData);
+	public void OnGetGameBatch(ExitGames.Client.Photon.EventData eventData);
+	private void OnGameQueryReady(ExitGames.Client.Photon.EventData eventData);
 	private void OnPostWinnerReportEvent();
-	private void OnCollectiblePickedUp(EventData photonEvent);
+	private void OnCollectiblePickedUp(ExitGames.Client.Photon.EventData photonEvent);
 	private void OnGetActiveAvatarResponse(int woid);
 	public void OnSetTeamEvent(int actorNr, MVTeam team);
 	public void OnGetItemCategories(Dictionary<object, object> outData);
@@ -660,7 +658,7 @@ public class MVNetworkGame : IPhotonPeerListener
 	public void OnAddWorldObjectToInventoryResponseDev(int returnCode, int worldObjectID, int itemID);
 	public void OnOperationResponse(OperationResponse operationResponse);
 	public void OnStatusChanged(StatusCode statusCode);
-	public void OnEvent(EventData eventData);
+	public void OnEvent(ExitGames.Client.Photon.EventData eventData);
 	private void HandleGameSnapshotData(BytePacker bytePacker, QueryType queryType, bool dataLeft);
 	private void CreateGame();
 	private void OnGameCreated(object sender, InitializedGameQueryDataEventArgs initializedGameQueryDataEventArgs);

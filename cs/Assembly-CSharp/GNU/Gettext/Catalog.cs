@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GNU.Gettext
 {
@@ -25,8 +25,7 @@ namespace GNU.Gettext
 		private string fileName;
 		public const string PluralFormsHeader = "Plural-Forms";
 		[CompilerGenerated]
-		[DebuggerBrowsable]
-		private EventHandler DirtyChanged;
+		private System.EventHandler DirtyChanged;
 		private Dictionary<string, string> headerEntries;
 		public string Project;
 		public string CreationDate;
@@ -52,7 +51,7 @@ namespace GNU.Gettext
 		public string CommentForGui { get; set; }
 	
 		// Events
-		public event EventHandler DirtyChanged {
+		public event System.EventHandler DirtyChanged {
 			add;
 			remove;
 		}

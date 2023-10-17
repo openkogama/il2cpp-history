@@ -9,16 +9,15 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventorySlots : MonoBehaviour, IGameObjectDroppedInSlot
 {
 	// Fields
-	private Dictionary<int, InventorySlot> inventorySlots;
+	private readonly Dictionary<int, InventorySlot> inventorySlots;
 	[SerializeField]
 	private InventorySlot inventorySlotPrefab;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _SlotCountPerPage_k__BackingField;
 
 	// Properties
@@ -26,17 +25,17 @@ public class InventorySlots : MonoBehaviour, IGameObjectDroppedInSlot
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _SlotChanged_c__AnonStorey0
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal int fromSlotIndex;
-		internal int toSlotIndex;
+		public int fromSlotIndex;
+		public int toSlotIndex;
 
 		// Constructors
-		public _SlotChanged_c__AnonStorey0();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0(ISlotChanged x, BaseEventData y);
+		internal void _SlotChanged_b__0(ISlotChanged x, BaseEventData y);
 	}
 
 	// Constructors

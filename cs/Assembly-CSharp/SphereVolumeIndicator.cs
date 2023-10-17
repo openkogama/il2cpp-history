@@ -7,19 +7,19 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SphereVolumeIndicator : MonoBehaviour
 {
 	// Fields
-	[Header]
+	[Header("Configuration")]
 	[SerializeField]
 	private float lineDotDensity;
 	[SerializeField]
 	private int circleSergmentCount;
 	[SerializeField]
 	private float lineWidth;
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	private LineRenderer rangeIndicatorXY;
 	[SerializeField]

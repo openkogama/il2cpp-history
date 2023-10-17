@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatableMessagePopup : FirstTimeActivatableElementBase
 {
@@ -32,16 +32,16 @@ public class FirstTimeActivatableMessagePopup : FirstTimeActivatableElementBase
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnFinished_c__AnonStorey0
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal GameObject firstTimeEventMessage;
+		public GameObject firstTimeEventMessage;
 
 		// Constructors
-		public _OnFinished_c__AnonStorey0();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnFinished_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -55,6 +55,6 @@ public class FirstTimeActivatableMessagePopup : FirstTimeActivatableElementBase
 	public void FadeOut();
 	private void Update();
 	[CompilerGenerated]
-	private void _PushToStack_m__0(IUIStack x, BaseEventData y);
+	private void _PushToStack_b__11_0(IUIStack x, BaseEventData y);
 }
 

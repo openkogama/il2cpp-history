@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FpsCounter : MonoBehaviour
 {
@@ -18,7 +18,6 @@ public class FpsCounter : MonoBehaviour
 	private FPSMetricCollector metricsCollector;
 	private float fps;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _StartedPlaying_k__BackingField;
 
 	// Properties

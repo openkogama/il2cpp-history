@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePointerWaitForCubeTool : FirstTimeActivatableElementBase
 {
@@ -35,16 +35,16 @@ public class FirstTimeActivatablePointerWaitForCubeTool : FirstTimeActivatableEl
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnPopupRemoved_c__AnonStorey0
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
-		internal GameObject popupGameObject;
+		public GameObject popupGameObject;
 
 		// Constructors
-		public _OnPopupRemoved_c__AnonStorey0();
+		public __c__DisplayClass18_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPopupRemoved_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -59,6 +59,6 @@ public class FirstTimeActivatablePointerWaitForCubeTool : FirstTimeActivatableEl
 	protected void OnShown();
 	private void OnPopupRemoved(GameObject popupGameObject);
 	[CompilerGenerated]
-	private void _OnShow_m__0(IUIStack x, BaseEventData y);
+	private void _OnShow_b__13_0(IUIStack x, BaseEventData y);
 }
 

@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVWorldObjectClientManager : IWorldObjectManager
 {
@@ -18,10 +18,9 @@ public abstract class MVWorldObjectClientManager : IWorldObjectManager
 	protected readonly Queue<int> pendingUngroupQueue;
 	protected readonly WorldObjectMapping worldObjectMapping;
 	protected Dictionary<int, Action<object, WorldObjectDestroyedEventArgs>> woDestroyedEventSubscribers;
-	protected Dictionary<Type, Action<object, WorldObjectCreatedEventArgs>> woCreatedEventSubscribers;
+	protected Dictionary<System.Type, Action<object, WorldObjectCreatedEventArgs>> woCreatedEventSubscribers;
 	private int rootGroupId;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MoveableController _MoveableController_k__BackingField;
 	private Bounds worldBounds;
 	public EventHandler<OnTransferOwnershipResponseEventArgs> OnWorldObjectTransferOwnershipResponse;
@@ -42,7 +41,7 @@ public abstract class MVWorldObjectClientManager : IWorldObjectManager
 		// Fields
 		private readonly Dictionary<WorldObjectType, HashSet<int>> worldObjectTypeSets;
 		private readonly Dictionary<int, int> gameObjectIdToWorldObjectIdMap;
-		private readonly Dictionary<Type, WorldObjectType> typeWorldObjectTypeMap;
+		private readonly Dictionary<System.Type, WorldObjectType> typeWorldObjectTypeMap;
 
 		// Constructors
 		public WorldObjectMapping();
@@ -51,11 +50,11 @@ public abstract class MVWorldObjectClientManager : IWorldObjectManager
 		public void AddWorldObjectToTypeSet(MVWorldObjectClient wo);
 		public HashSet<int> GetWorldObjectTypeSet(WorldObjectType worldObjectType);
 		public void RemoveWorldObjectFromTypeSet(MVWorldObjectClient wo);
-		public bool TryGetWorldObjectTypeFromObjectType(Type type, ref WorldObjectType worldObjectType);
+		public bool TryGetWorldObjectTypeFromObjectType(System.Type type, ref WorldObjectType worldObjectType);
 		public bool TryGetWorldObjectIDFromGameObjectID(int goId, out int woID);
 		private void AddToGameObjectIDMap(MVWorldObjectClient wo);
-		private void AddWorldObjectToTypeWorldObjectTypeMap(Type type, WorldObjectType worldObjectType);
-		private void RemoveWorldObjectFromTypeWorldObjectTypeMap(Type type);
+		private void AddWorldObjectToTypeWorldObjectTypeMap(System.Type type, WorldObjectType worldObjectType);
+		private void RemoveWorldObjectFromTypeWorldObjectTypeMap(System.Type type);
 	}
 
 	private class WOCMWorldObjectClientRef<T> : WorldObjectClientRef<T>
@@ -90,7 +89,7 @@ public abstract class MVWorldObjectClientManager : IWorldObjectManager
 	public static T GetEnabledMonoBehaviourHighestInHierarchy<T>(GameObject gameObject)
 		where T : MonoBehaviour;
 	public int GetWoIDWithLocalOwnerHighestInHierarchy(int woID);
-	public List<MVWorldObjectClient> GetBlueprintWorldObjectsByType(Type type);
+	public List<MVWorldObjectClient> GetBlueprintWorldObjectsByType(System.Type type);
 	public bool GetUnmodifiedWorldObject(KoGaMaPackageClient koGaMaPackageClient, ref int worldObjectId);
 	public MVWorldObjectClient GetWorldObjectClient(int id);
 	public T GetWorldObjectClient<T>(int id)
@@ -107,12 +106,12 @@ public abstract class MVWorldObjectClientManager : IWorldObjectManager
 	public IEnumerable<MVWorldObjectClient> GetWorldObjectClientsWhere(Func<MVWorldObjectClient, bool> predicate);
 	public MVWorldObjectClient GetWorldObjectByGoId(int goId);
 	public static MVWorldObjectClient GetMVObject(Transform t);
-	public MVWorldObjectClient GetValidSpawnPoint();
+	public static MVWorldObjectClient GetValidSpawnPoint();
 	private WorldObjectType GetSpawnPointTypeForNoneTeam();
 	public void SubscribeWODestroyedEvent(int woID, Action<object, WorldObjectDestroyedEventArgs> woDestroyedEventHandler);
 	public void UnsubscribeWODestroyedEvent(int woID, Action<object, WorldObjectDestroyedEventArgs> woDestroyedEventHandler);
-	public void SubscribeWOCreatedEvent(Type type, Action<object, WorldObjectCreatedEventArgs> woCreatedEventHandler);
-	public void UnsubscribeWOCreatedEvent(Type type, Action<object, WorldObjectCreatedEventArgs> woCreatedEventHandler);
+	public void SubscribeWOCreatedEvent(System.Type type, Action<object, WorldObjectCreatedEventArgs> woCreatedEventHandler);
+	public void UnsubscribeWOCreatedEvent(System.Type type, Action<object, WorldObjectCreatedEventArgs> woCreatedEventHandler);
 	public bool UnregisterWorldObject(int worldObjectId);
 	public void CloneWorldObjectTree(MVWorldObjectClient root, bool localOwner, bool setAsPreviewItem, bool cloneToRootGroup);
 }

@@ -6,10 +6,16 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
+using UGUI.Desktop.Scripts.EditMode.SettingsBoxes;
+using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Camera;
+using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Costume;
+using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Doors;
+using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.MeleeWeapons;
+using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Vehicles;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SettingsFactory : MonoBehaviour
 {
@@ -61,6 +67,18 @@ public class SettingsFactory : MonoBehaviour
 	[SerializeField]
 	private MovablesSettings movablesSettingsPrefab;
 	[SerializeField]
+	private HoverCraftSettings hoverCraftSettingsPrefab;
+	[SerializeField]
+	private JetpackSettings jetpackSettingsPrefab;
+	[SerializeField]
+	private HamsterWheelSettings hamsterWheelSettingsPrefab;
+	[SerializeField]
+	private VehicleEnergySettings vehicleEnergySettingsPrefab;
+	[SerializeField]
+	private DoorSettings doorSettingsPrefab;
+	[SerializeField]
+	private MeleeWeaponSettings meleeSettingsPrefab;
+	[SerializeField]
 	private SoundEmitterSettings soundEmitterSettingsPrefab;
 	[SerializeField]
 	private GlobalSoundEmitterSettings globalSoundEmitterSettingsPrefab;
@@ -93,6 +111,8 @@ public class SettingsFactory : MonoBehaviour
 	[SerializeField]
 	private RespawnSettings respawnSettingsPrefab;
 	[SerializeField]
+	private SpawnPointSettings spawnPointSettingsPrefab;
+	[SerializeField]
 	private LevelRequirementSettings levelRequirementSettingsPrefab;
 	[SerializeField]
 	private GameCoinRequirementSettings gameCoinRequirementSettingsPrefab;
@@ -102,19 +122,38 @@ public class SettingsFactory : MonoBehaviour
 	private TeamRequirementSettings teamRequirementSettingsPrefab;
 	[SerializeField]
 	private GameRankRequirementSettings gameRankRequirementSettingsPrefab;
+	[SerializeField]
+	private RewardedAdRequirementSettings rewardedAdRequirementSettingsPrefab;
+	[SerializeField]
+	private CostumeSettings costumeSettingsPrefab;
+	[SerializeField]
+	private CubeModelPopup changeScaleSettingsPrefab;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CreateSettingsDialog_c__AnonStorey0
+	private sealed class __c__DisplayClass56_0
 	{
 		// Fields
-		internal SpawnRoleEditorMenu spawnRoleEditor;
+		public SpawnRoleEditorMenu spawnRoleEditor;
 
 		// Constructors
-		public _CreateSettingsDialog_c__AnonStorey0();
+		public __c__DisplayClass56_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreateSettingsDialog_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass62_0
+	{
+		// Fields
+		public CubeModelPopup cubeModelPopup;
+
+		// Constructors
+		public __c__DisplayClass62_0();
+
+		// Methods
+		internal void _CreateChangeScaleSettings_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -129,9 +168,11 @@ public class SettingsFactory : MonoBehaviour
 	public void CreateGamePointsSettings(int woID);
 	public void CreateGamePointsMinorRewardSettings(int woID);
 	public void CreateRespawnSetting(int woID);
+	public void CreateChangeScaleSettings(int woID);
 	private void CreateBlueprintSettings(int woID);
 	private void CreateRotatorSettings(int woID);
 	private void CreateMovablesSettings(int woID);
+	private void CreateEditablePickupItemsSettings(int woID);
 	private void OnValidate();
 }
 

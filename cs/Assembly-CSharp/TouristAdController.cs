@@ -5,19 +5,22 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using AdIntegration.InHouse;
 using Assets.Scripts.AdIntegration;
 using MV.Common;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TouristAdController : MonoBehaviour, ITouristAdController, IPromotionController
 {
 	// Fields
 	[SerializeField]
-	private TouristPromotion touristPromotionPrefab;
+	private GeneralPromotionAd generalPromotionPrefab;
+	[SerializeField]
+	private AdIntegration.InHouse.PromotionLooksData touristLooksData;
 	[SerializeField]
 	private EmbeddedPlayerConfig embeddedPlayerConfig;
 	[SerializeField]
@@ -26,10 +29,8 @@ public class TouristAdController : MonoBehaviour, ITouristAdController, IPromoti
 	private float timeBeforeAdShown;
 	private float timer;
 	private UnityAction<bool, bool> onPromotionWasPopped;
-	private bool eligableForPromotion;
+	private bool eligibleForPromotion;
 	private bool withAd;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	public bool ReadyForAd { get; }
@@ -37,17 +38,47 @@ public class TouristAdController : MonoBehaviour, ITouristAdController, IPromoti
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowPromotion_c__AnonStorey0
+	private sealed class __c__DisplayClass16_0
 	{
 		// Fields
-		internal TouristPromotion createdPromotion;
-		internal TouristAdController _this;
+		public TouristPromotion createdPromotion;
+		public TouristAdController __4__this;
 
 		// Constructors
-		public _ShowPromotion_c__AnonStorey0();
+		public __c__DisplayClass16_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowPromotion_b__0(IUIStack x, BaseEventData _);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass16_1
+	{
+		// Fields
+		public GeneralPromotionAd createdPromotion;
+		public TouristAdController __4__this;
+
+		// Constructors
+		public __c__DisplayClass16_1();
+
+		// Methods
+		internal void _ShowPromotion_b__1(IUIStack x, BaseEventData _);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _InterstitialAdResult_b__20_0(IUIStack x, BaseEventData _);
 	}
 
 	// Constructors
@@ -58,12 +89,10 @@ public class TouristAdController : MonoBehaviour, ITouristAdController, IPromoti
 	private void OnChangeMode(SpawnRoleModeType type);
 	private void OnPromotionPopped();
 	public void ShowPromotion(UnityAction<bool, bool> onPop);
-	public void ShowAdWithoutPromotion(InterstitialAdResult obj);
-	private bool TouristPromotionAllowed();
+	private void ShowAdWithoutPromotion(InterstitialAdResult obj);
+	private static bool TouristPromotionAllowed();
 	public void ShowAd();
-	public void InterstitialAdResult(InterstitialAdResult obj);
+	private void InterstitialAdResult(InterstitialAdResult obj);
 	private void Update();
-	[CompilerGenerated]
-	private static void _InterstitialAdResult_m__0(IUIStack x, BaseEventData y);
 }
 

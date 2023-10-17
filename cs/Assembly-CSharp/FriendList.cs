@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FriendList
 {
@@ -35,19 +35,19 @@ public class FriendList
 	public delegate void OnFriendRequestUpdated(Friend friend);
 
 	[CompilerGenerated]
-	private sealed class _GetFriendByProfileID_c__AnonStorey0
+	private sealed class __c__DisplayClass22_0
 	{
 		// Fields
-		internal int profileID;
+		public int profileID;
 
 		// Constructors
-		public _GetFriendByProfileID_c__AnonStorey0();
+		public __c__DisplayClass22_0();
 
 		// Methods
-		internal bool __m__0(KeyValuePair<int, Friend> f);
-		internal bool __m__1(KeyValuePair<int, Friend> f);
-		internal bool __m__2(KeyValuePair<int, Friend> f);
-		internal bool __m__3(KeyValuePair<int, Friend> f);
+		internal bool _GetFriendByProfileID_b__0(KeyValuePair<int, Friend> f);
+		internal bool _GetFriendByProfileID_b__1(KeyValuePair<int, Friend> f);
+		internal bool _GetFriendByProfileID_b__2(KeyValuePair<int, Friend> f);
+		internal bool _GetFriendByProfileID_b__3(KeyValuePair<int, Friend> f);
 	}
 
 	// Constructors

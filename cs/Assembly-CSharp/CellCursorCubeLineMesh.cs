@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CellCursorCubeLineMesh
 {
@@ -18,6 +18,10 @@ public class CellCursorCubeLineMesh
 	private float baseAlpha;
 	private float prevCursorSetTime;
 	private GameObject gameObject;
+	private static readonly int ColorID;
+	private Material flashingMaterial;
+	private float flashingTimer;
+	private readonly MeshRenderer meshRenderer;
 
 	// Properties
 	public float PrevCursorSetTime { get; }
@@ -26,10 +30,12 @@ public class CellCursorCubeLineMesh
 
 	// Constructors
 	public CellCursorCubeLineMesh(float diagonalWidth, Material material, float fadeOutTime, Vector3[] cubeCorners);
+	static CellCursorCubeLineMesh();
 
 	// Methods
 	public void SetCursorCube(IntVector position, GameObject cubeGameObject);
 	public void Update();
 	public void Destroy();
+	public void ChangeMaterial(Material material);
 }
 

@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class GamePointGainEffectManager
 {
@@ -18,9 +18,6 @@ public static class GamePointGainEffectManager
 
 	// Properties
 	public static int GamePointAmountShown { get; }
-
-	// Constructors
-	static GamePointGainEffectManager();
 
 	// Methods
 	public static void HaveShownGamePointGainEffect(int gamePointAmountShown);

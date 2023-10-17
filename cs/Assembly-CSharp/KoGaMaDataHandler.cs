@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class KoGaMaDataHandler
 {
@@ -18,16 +18,6 @@ public static class KoGaMaDataHandler
 	private static readonly int serializeVersion;
 	private const int maxDeserializeTimeBeforeService = 1000;
 	private static int timeSinceService;
-	[CompilerGenerated]
-	private static UnityAction __f__mg_cache0;
-	[CompilerGenerated]
-	private static UnityAction __f__mg_cache1;
-	[CompilerGenerated]
-	private static UnityAction __f__mg_cache2;
-	[CompilerGenerated]
-	private static UnityAction __f__mg_cache3;
-	[CompilerGenerated]
-	private static UnityAction __f__mg_cache4;
 
 	// Properties
 	public static bool SlowWorldCreation { set; }

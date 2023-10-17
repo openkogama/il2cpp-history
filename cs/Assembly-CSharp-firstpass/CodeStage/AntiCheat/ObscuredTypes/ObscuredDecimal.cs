@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using CodeStage.AntiCheat.Common;
 using UnityEngine.Serialization;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.ObscuredTypes
 {
@@ -18,7 +18,7 @@ namespace CodeStage.AntiCheat.ObscuredTypes
 		// Fields
 		private static long cryptoKey;
 		private long currentCryptoKey;
-		[FormerlySerializedAs]
+		[FormerlySerializedAs("hiddenValue")]
 		private byte[] hiddenValueOld;
 		private ACTkByte16 hiddenValue;
 		private decimal fakeValue;

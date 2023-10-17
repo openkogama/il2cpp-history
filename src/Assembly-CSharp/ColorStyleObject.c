@@ -5,12 +5,12 @@ void Assembly-CSharp.dll::ColorStyleObject::ColorStyleObject_Awake(ColorStyleObj
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1897);
+    func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
   }
   graphic = (this->fields).graphic;
   colorStyle = (this->fields).imageStyle;
-  if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__Styles->_1).cctor_started == 0)) {
+  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Styles);
   }
   Styles::Styles_SetStyle_2(graphic,colorStyle,(MethodInfo *)0x0);
@@ -24,14 +24,14 @@ void Assembly-CSharp.dll::ColorStyleObject::ColorStyleObject_OnValidate(ColorSty
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1898);
+    func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_isPlaying((MethodInfo *)0x0);
   if (bVar1 == 0) {
     graphic = (this->fields).graphic;
     colorStyle = (this->fields).imageStyle;
-    if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__Styles->_1).cctor_started == 0)) {
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
     Styles::Styles_SetStyle_2(graphic,colorStyle,(MethodInfo *)0x0);
@@ -46,13 +46,34 @@ void Assembly-CSharp.dll::ColorStyleObject::ColorStyleObject_Reset(ColorStyleObj
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1899);
+    func_?(&UnityEngine__UI__Graphic_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Graphic>__);
+    func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
   }
-  graphic = (Graphic *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58((Component_1 *)this,UnityEngine__UI__Graphic_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Graphic>__);
-  (this->fields).graphic = graphic;
+  pGVar1 = (Graphic *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__UI__Graphic_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Graphic>__);
+  (this->fields).graphic = pGVar1;
+  func_?(&(this->fields).graphic,pGVar1);
+  pGVar1 = (this->fields).graphic;
   colorStyle = (this->fields).imageStyle;
-  if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__Styles->_1).cctor_started == 0)) {
+  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Styles);
+  }
+  Styles::Styles_SetStyle_2(pGVar1,colorStyle,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* Void UpdateColorStyle(ColorStyle) */
+
+void Assembly-CSharp.dll::ColorStyleObject::ColorStyleObject_UpdateColorStyle(ColorStyleObject *this,ColorStyle__Enum colorStyle,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__Styles);
+    cRam_? = '\x01';
+  }
+  graphic = (this->fields).graphic;
+  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Styles);
   }
   Styles::Styles_SetStyle_2(graphic,colorStyle,(MethodInfo *)0x0);
@@ -67,10 +88,10 @@ void Assembly-CSharp.dll::ColorStyleObject::ColorStyleObject__ctor(ColorStyleObj
 {
   (this->fields).imageStyle = 0xd;
   if (cRam_? == '\0') {
-    func_?(0x19bd);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

@@ -10,57 +10,71 @@ using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesViewCrystalsInInventory : MonoBehaviour
 {
 	// Fields
 	private List<ShopItem> buyingItems;
 	private int pending;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _OpenInventoryAtPosition_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal int categoryId;
-		internal int itemSlot;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__3_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__9_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
 
 		// Constructors
-		public _OpenInventoryAtPosition_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IPlayerInventory x, BaseEventData y);
+		internal void _HighlightObject_b__3_0(IUIStack x, BaseEventData y);
+		internal void _PurchaseClientShopItem_b__9_0(IModalPopupCreator x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__10_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey1
+	private sealed class __c__DisplayClass8_0
 	{
 		// Fields
-		internal int returnCode;
+		public int categoryId;
+		public int itemSlot;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey1();
+		public __c__DisplayClass8_0();
+
+		// Methods
+		internal void _OpenInventoryAtPosition_b__0(IPlayerInventory x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey2
+	private sealed class __c__DisplayClass10_0
 	{
 		// Fields
-		internal ShopItem currentlyBuyingItem;
-		internal _ProductPurchaseResponseHandler_c__AnonStorey1 __f__ref_1;
+		public int returnCode;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey2();
+		public __c__DisplayClass10_0();
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass10_1
+	{
+		// Fields
+		public ShopItem currentlyBuyingItem;
+		public __c__DisplayClass10_0 CS___8__locals1;
+
+		// Constructors
+		public __c__DisplayClass10_1();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -76,11 +90,5 @@ public class GamePassesViewCrystalsInInventory : MonoBehaviour
 	private void OpenInventoryAtPosition(int categoryId, int itemSlot);
 	private void PurchaseClientShopItem(ShopItem item);
 	private void ProductPurchaseResponseHandler(int returnCode, Dictionary<object, object> data);
-	[CompilerGenerated]
-	private static void _HighlightObject_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PurchaseClientShopItem_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ProductPurchaseResponseHandler_m__2(IUIStack x, BaseEventData y);
 }
 

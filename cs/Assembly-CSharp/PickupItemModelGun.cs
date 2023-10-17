@@ -11,7 +11,7 @@ using MV.Common;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PickupItemModelGun : PickupItemWithDelay
 {
@@ -46,30 +46,27 @@ public class PickupItemModelGun : PickupItemWithDelay
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoAutoFire_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoAutoFire_d__39 : IEnumerator<object>
 	{
 		// Fields
-		internal float _timeFiring___1;
-		internal bool _prevFireSecondary___1;
-		internal PickupItemModelGun _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public PickupItemModelGun __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoAutoFire_c__Iterator0();
+		public _DoAutoFire_d__39(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -87,7 +84,7 @@ public class PickupItemModelGun : PickupItemWithDelay
 	protected void OnFireSecondary(bool isLocal);
 	public override void TriggerBegin(int instigatorActorNr);
 	private bool ShowCursors();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoAutoFire_d__39))]
 	private IEnumerator DoAutoFire();
 	private bool GetCubePosFromFineGrainedTerrain(VoxelHit voxelHit, float maxDistanceToEdge, ref IntVector pos);
 	private void HandleCubeHitLocal(VoxelHit voxelHit, Ray lineOfFire);

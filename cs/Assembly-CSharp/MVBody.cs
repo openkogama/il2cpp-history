@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVBody : MVBlueprintBase, IWorldObjectWithModelingConstraint
 {
@@ -19,6 +19,7 @@ public class MVBody : MVBlueprintBase, IWorldObjectWithModelingConstraint
 	private bool collidersEnabled;
 	private bool shadowVisible;
 	private bool visible;
+	private bool forceHidden;
 	private MVBodyObject bodyObject;
 	private Dictionary<int, IModelingConstraint> constraints;
 	private List<Renderer> renderers;
@@ -28,11 +29,8 @@ public class MVBody : MVBlueprintBase, IWorldObjectWithModelingConstraint
 	private bool hasAvatarBeenAttached;
 	private Vector3 modelScale;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private string _LayerToSetTo_k__BackingField;
 	private BodyClone bodyClone;
-	[CompilerGenerated]
-	private static Dictionary<string, int> __f__switch_map1;
 
 	// Properties
 	public string LayerToSetTo { [CompilerGenerated] private get; [CompilerGenerated] set; }
@@ -42,6 +40,7 @@ public class MVBody : MVBlueprintBase, IWorldObjectWithModelingConstraint
 	public List<MVCubeModelInstance> AttachedParts { get; }
 	public AvatarBlobShadowController BlobShadow { get; }
 	public new bool Visible { get; set; }
+	public bool ForceHidden { get; set; }
 	public bool ShadowVisible { get; set; }
 	private bool CollidersEnabled { get; set; }
 	public bool AccessoryMoveOverride { get; set; }
@@ -56,7 +55,7 @@ public class MVBody : MVBlueprintBase, IWorldObjectWithModelingConstraint
 	public float GetAccessoryScale(AccessorySlotType slot);
 	public void ApplyAccessorySize(float size, AccessorySlotType slot);
 	public bool IsAccessoryEquipped(int streamingAssetId);
-	public GameObject CreateClone();
+	public GameObject CreateClone(bool enableAllRenderers = false, bool hideEquippedItem = false);
 	public void DestroyClone();
 	public void PreviewAccessory(AccessoryDataClient viewItem);
 	public void EndPreviewAccessory();

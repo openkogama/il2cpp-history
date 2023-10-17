@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class WorldObjectDataValidator
 {
@@ -19,5 +19,6 @@ public static class WorldObjectDataValidator
 
 	// Methods
 	public static void Validate(MVWorldObjectClient wo, string key, object value);
+	private static bool ValidateForGivenData(Dictionary<object, object> data, string key, object value, string dataName = "");
 }
 

@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LevelRewardAnimation : MonoBehaviour
 {
@@ -59,96 +59,99 @@ public class LevelRewardAnimation : MonoBehaviour
 	private KeyValuePair<int, int> currentReward;
 	private Texture2D previousBadgeTextureAsset;
 	private Texture2D currentBadgeTextureAsset;
-	[CompilerGenerated]
-	private static Func<KeyValuePair<int, int>, int> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _DisplayAndFadePrevBadge_c__Iterator0 : IEnumerator<object>
+	private sealed class __c
 	{
 		// Fields
-		internal float _currentTime___0;
-		internal float _scale___0;
-		internal float _rotation___1;
-		internal LevelRewardAnimation _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
-
-		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
-		object IEnumerator.Current { [DebuggerHidden] get; }
+		public static readonly __c __9;
+		public static Func<KeyValuePair<int, int>, int> __9__23_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
 
 		// Constructors
-		[DebuggerHidden]
-		public _DisplayAndFadePrevBadge_c__Iterator0();
+		static __c();
+		public __c();
 
 		// Methods
-		public bool MoveNext();
-		[DebuggerHidden]
-		public void Dispose();
-		[DebuggerHidden]
-		public void Reset();
+		internal int _Initialize_b__23_0(KeyValuePair<int, int> o);
+		internal void _OnShow_b__24_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplayAndFadeNextBadge_c__Iterator1 : IEnumerator<object>
+	private sealed class _DisplayAndFadePrevBadge_d__28 : IEnumerator<object>
 	{
 		// Fields
-		internal float _scale___0;
-		internal float _currentTime___0;
-		internal float _rotation___1;
-		internal float _backgroundRayScale___2;
-		internal float _rotation___3;
-		internal LevelRewardAnimation _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public LevelRewardAnimation __4__this;
+		private float _currentTime_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DisplayAndFadeNextBadge_c__Iterator1();
+		public _DisplayAndFadePrevBadge_d__28(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplayAndFadeGoldIcon_c__Iterator2 : IEnumerator<object>
+	private sealed class _DisplayAndFadeNextBadge_d__29 : IEnumerator<object>
 	{
 		// Fields
-		internal float _scale___0;
-		internal float _currentTime___0;
-		internal float _rotation___1;
-		internal LevelRewardAnimation _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public LevelRewardAnimation __4__this;
+		private float _currentTime_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DisplayAndFadeGoldIcon_c__Iterator2();
+		public _DisplayAndFadeNextBadge_d__29(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
+	}
+
+	[CompilerGenerated]
+	private sealed class _DisplayAndFadeGoldIcon_d__30 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public LevelRewardAnimation __4__this;
+		private float _currentTime_5__2;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _DisplayAndFadeGoldIcon_d__30(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -160,15 +163,11 @@ public class LevelRewardAnimation : MonoBehaviour
 	private void OnDestroy();
 	private void OnPrevBadgeLoaded(UnityWebRequest www);
 	private void OnNextBadgeLoaded(UnityWebRequest www);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DisplayAndFadePrevBadge_d__28))]
 	private IEnumerator DisplayAndFadePrevBadge();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DisplayAndFadeNextBadge_d__29))]
 	private IEnumerator DisplayAndFadeNextBadge();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DisplayAndFadeGoldIcon_d__30))]
 	private IEnumerator DisplayAndFadeGoldIcon();
-	[CompilerGenerated]
-	private static int _Initialize_m__0(KeyValuePair<int, int> o);
-	[CompilerGenerated]
-	private static void _OnShow_m__1(IUIStack x, BaseEventData y);
 }
 

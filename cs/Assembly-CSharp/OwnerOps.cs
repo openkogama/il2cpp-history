@@ -8,18 +8,29 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class OwnerOps
 {
-	// Fields
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__1_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _RevokeEditRightsAndKick_b__1_0(IUIStack x, BaseEventData y);
+	}
 
 	// Methods
 	public static void RevokeEditRightsAndKick(MonoBehaviour caller, MVPlayer player);
 	public static void RevokeEditRightsAndKick(GameObject caller, MVPlayer player);
-	[CompilerGenerated]
-	private static void _RevokeEditRightsAndKick_m__0(IUIStack x, BaseEventData y);
 }
 

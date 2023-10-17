@@ -8,32 +8,32 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [ExecuteInEditMode]
-[RequireComponent]
+[RequireComponent(typeof(RectTransform))]
 public class ChatBubble : MonoBehaviour
 {
 	// Fields
-	[Tooltip]
+	[Tooltip("Text component in the tree used to display the bubble\'s message.")]
 	public UnityEngine.UI.Text MessageComponent;
 	[Multiline]
 	public string MessageValue;
-	[Tooltip]
+	[Tooltip("True if the bubble should be autosized according to the message content.")]
 	public bool AutoSize;
-	[Tooltip]
+	[Tooltip("Minimum size required.")]
 	public Vector2 MessageMinimumSize;
-	[Tooltip]
+	[Tooltip("Maximum width before wrapping.")]
 	public float MessageWrapWidth;
-	[Tooltip]
+	[Tooltip("The image should be aligned to the top without any empty pixel rows/columns around it.")]
 	public Image ExtenderComponent;
-	[Tooltip]
+	[Tooltip("Configurable borders that define where the extender can travel.")]
 	public ExtenderBorderInfo[] ExtenderBorderInfo;
-	[Tooltip]
+	[Tooltip("Border to dock the extender to.")]
 	public ExtenderBorderEnum ExtenderDock;
-	[Tooltip]
+	[Tooltip("Canvas group")]
 	public CanvasGroup CanvasGroup;
-	[Tooltip]
+	[Tooltip("Sound which plays on PopUp")]
 	public AudioSource PopUpSound;
 	private bool isActive;
 	private RectTransform _rectTransform;

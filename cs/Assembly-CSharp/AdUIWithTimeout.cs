@@ -9,14 +9,14 @@ using Assets.Scripts.AdIntegration;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AdUIWithTimeout : MonoBehaviour, IAdUIManager
 {
 	// Fields
 	[SerializeField]
 	private ShowingAdsPopup showingAdPopup;
-	private static readonly float timeout;
+	private const float Timeout = 10f;
 	private bool popupShowing;
 	private bool wantsToPop;
 	private GameObject overlayPushedToStack;
@@ -24,81 +24,94 @@ public class AdUIWithTimeout : MonoBehaviour, IAdUIManager
 	private RewardedAdResult rewardedAdResultLatePop;
 	private Action<InterstitialAdResult> interstitialCallback;
 	private Action<RewardedAdResult> rewardedCallback;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Update_c__AnonStorey0
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal bool stackBlocked;
-		internal AdUIWithTimeout _this;
+		public AdUIWithTimeout __4__this;
+		public bool stackBlocked;
 
 		// Constructors
-		public _Update_c__AnonStorey0();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _PopInterstitial_c__AnonStorey1
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal bool stackBlocked;
-		internal AdUIWithTimeout _this;
+		public bool stackBlocked;
+		public AdUIWithTimeout __4__this;
 
 		// Constructors
-		public _PopInterstitial_c__AnonStorey1();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _PopInterstitial_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _PopRewardedVideo_c__AnonStorey2
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		internal bool stackBlocked;
-		internal AdUIWithTimeout _this;
+		public bool stackBlocked;
+		public AdUIWithTimeout __4__this;
 
 		// Constructors
-		public _PopRewardedVideo_c__AnonStorey2();
+		public __c__DisplayClass15_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _PopRewardedVideo_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _TryPopOverlay_b__16_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreatePopup_c__AnonStorey3
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
-		internal bool stackReady;
+		public bool stackReady;
 
 		// Constructors
-		public _CreatePopup_c__AnonStorey3();
+		public __c__DisplayClass17_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreatePopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreatePopup_c__AnonStorey4
+	private sealed class __c__DisplayClass17_1
 	{
 		// Fields
-		internal ShowingAdsPopup popup;
+		public ShowingAdsPopup popup;
 
 		// Constructors
-		public _CreatePopup_c__AnonStorey4();
+		public __c__DisplayClass17_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreatePopup_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
 	public AdUIWithTimeout();
-	static AdUIWithTimeout();
 
 	// Methods
 	public bool AdShowing();
@@ -111,7 +124,5 @@ public class AdUIWithTimeout : MonoBehaviour, IAdUIManager
 	private void TryPopOverlay();
 	private void CreatePopup();
 	private void OnSkipClicked();
-	[CompilerGenerated]
-	private static void _TryPopOverlay_m__0(IUIStack x, BaseEventData y);
 }
 

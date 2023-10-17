@@ -8,19 +8,17 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeRepository : ScriptableObject
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static ThemeRepository _Instance_k__BackingField;
 	[SerializeField]
 	private List<Theme> themePrefabs;
 	private Dictionary<string, Theme> IdentifierToTheme;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _ThemesEnabled_k__BackingField;
 
 	// Properties

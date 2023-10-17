@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public enum KogamaControls
 {
@@ -37,7 +37,7 @@ public enum KogamaControls
 	ToggleGripdSnapSize = 24,
 	ActivateEditCubeTool = 25,
 	ActivateDeleteCubeTool = 26,
-	ActivetaPaintCubeTool = 27,
+	ActivatePaintCubeTool = 27,
 	ChangeMaterial = 28,
 	OpenInventory = 29,
 	CreateNewModel = 30,
@@ -62,6 +62,7 @@ public enum KogamaControls
 	EditMoveBackwards = 49,
 	EditMoveFast = 50,
 	NotificationAcceptFriendshipRequest = 51,
-	Size = 52
+	ToggleCameraEffects = 52,
+	Size = 53
 }
 

@@ -9,7 +9,7 @@ using ThemeAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeFogTypeSelector : IntAttribute.Setter
 {
@@ -27,10 +27,8 @@ public class ThemeFogTypeSelector : IntAttribute.Setter
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private FogMode _Mode_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private string _Name_k__BackingField;
 
 		// Properties

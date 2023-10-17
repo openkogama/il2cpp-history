@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ScreenShotGenerator : MonoBehaviour
 {
@@ -31,30 +31,28 @@ public class ScreenShotGenerator : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _GenerateCoroutine_c__Iterator0 : IEnumerator<object>
+	private sealed class _GenerateCoroutine_d__19 : IEnumerator<object>
 	{
 		// Fields
-		internal GameObject obj;
-		internal Bounds? _bounds___0;
-		internal ScreenShotGenerator _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public GameObject obj;
+		public ScreenShotGenerator __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _GenerateCoroutine_c__Iterator0();
+		public _GenerateCoroutine_d__19(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -67,7 +65,7 @@ public class ScreenShotGenerator : MonoBehaviour
 	public static void Generate(GameObject obj, Vector3 cameraOffset, Vector3 lookAtOffset, Action<Texture2D> generatedScreenShotTexCallback, bool cloneObject = false);
 	private void StartGenerate(GameObject obj, Vector3 cameraOffset, Vector3 lookAtOffset, Action<byte[]> generatedScreenShotPNGCallback, bool clonedObject);
 	private void StartGenerate(GameObject obj, Vector3 cameraOffset, Vector3 lookAtOffset, Action<Texture2D> generatedScreenShotTexCallback, bool clonedObject);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_GenerateCoroutine_d__19))]
 	private IEnumerator GenerateCoroutine(GameObject obj);
 	private void GenerateTexture();
 	private void InitCamera(int width, int height);

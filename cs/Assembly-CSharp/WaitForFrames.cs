@@ -9,39 +9,38 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class WaitForFrames
 {
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Frames_c__Iterator0 : IEnumerator<object>
+	private sealed class _Frames_d__0 : IEnumerator<object>
 	{
 		// Fields
-		internal int frameCount;
-		internal UnityAction callback;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public int frameCount;
+		public UnityAction callback;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _Frames_c__Iterator0();
+		public _Frames_d__0(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Methods
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_Frames_d__0))]
 	public static IEnumerator Frames(int frameCount, UnityAction callback);
 }
 

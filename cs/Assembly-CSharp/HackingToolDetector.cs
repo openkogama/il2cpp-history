@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject.AntiCheat;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class HackingToolDetector : MonoBehaviour
 {
@@ -68,55 +68,53 @@ public class HackingToolDetector : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _Scan_Coroutine_c__Iterator0 : IEnumerator<object>
+	private sealed class _Scan_Coroutine_d__28 : IEnumerator<object>
 	{
 		// Fields
-		internal float _waitDuration___0;
-		internal HackingToolDetector _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public HackingToolDetector __4__this;
+		private float _waitDuration_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _Scan_Coroutine_c__Iterator0();
+		public _Scan_Coroutine_d__28(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class _HandleReports_c__Iterator1 : IEnumerator<object>
+	private sealed class _HandleReports_d__30 : IEnumerator<object>
 	{
 		// Fields
-		internal float _waitDuration___0;
-		internal HackingToolDetector _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public HackingToolDetector __4__this;
+		private float _waitDuration_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _HandleReports_c__Iterator1();
+		public _HandleReports_d__30(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -131,10 +129,10 @@ public class HackingToolDetector : MonoBehaviour
 	public static void Initialize(ApplicationDesc[] banList);
 	private void InitiateDetection();
 	protected void OnDestroy();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_Scan_Coroutine_d__28))]
 	private IEnumerator Scan_Coroutine();
 	private static void ScanForForbiddenProcesses();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_HandleReports_d__30))]
 	private IEnumerator HandleReports();
 	public static void Report(HackingToolReport report);
 }

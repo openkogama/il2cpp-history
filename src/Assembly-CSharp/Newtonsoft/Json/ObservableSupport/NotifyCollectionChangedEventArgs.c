@@ -5,15 +5,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionC
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4c1d);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::Object>);
     cRam_? = '\x01';
   }
   NotifyCollectionChangedEventArgs__ctor_2(this,action,newItem,(MethodInfo *)0x0);
-  this_00 = (List_1_UnityEngine_Vector4_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
-  if (this_00 != (List_1_UnityEngine_Vector4_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)oldItem,MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+  this_00 = (List_1_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(this_00,oldItem,MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
     (this->fields)._OldItems_k__BackingField = (IList *)this_00;
+    func_?(&(this->fields)._OldItems_k__BackingField);
     (this->fields)._NewStartingIndex_k__BackingField = index;
     return;
   }
@@ -30,16 +33,19 @@ void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionC
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4c1e);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::Object>);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._Action_k__BackingField = action;
-  this_00 = (List_1_UnityEngine_Vector4_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
-  if (this_00 != (List_1_UnityEngine_Vector4_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)changedItem,MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+  this_00 = (List_1_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(this_00,changedItem,MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
     (this->fields)._NewItems_k__BackingField = (IList *)this_00;
+    func_?(&(this->fields)._NewItems_k__BackingField,this_00);
     return;
   }
   func_?();
@@ -54,10 +60,12 @@ void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionC
 void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionChangedEventArgs::NotifyCollectionChangedEventArgs__ctor_3(NotifyCollectionChangedEventArgs *this,NotifyCollectionChangedAction__Enum action,IList *newItems,IList *oldItems,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._Action_k__BackingField = action;
   (this->fields)._NewItems_k__BackingField = newItems;
+  func_?(&(this->fields)._NewItems_k__BackingField,newItems);
   (this->fields)._OldItems_k__BackingField = oldItems;
+  func_?(&(this->fields)._OldItems_k__BackingField,oldItems);
   return;
 }
 
@@ -79,15 +87,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionC
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4c1d);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::Object>);
     cRam_? = '\x01';
   }
   NotifyCollectionChangedEventArgs__ctor_2(this,action,newItem,(MethodInfo *)0x0);
-  this_00 = (List_1_UnityEngine_Vector4_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::List_1_UnityEngine_Vector4___ctor(this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
-  if (this_00 != (List_1_UnityEngine_Vector4_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)oldItem,MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+  this_00 = (List_1_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(this_00,oldItem,MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
     (this->fields)._OldItems_k__BackingField = (IList *)this_00;
+    func_?(&(this->fields)._OldItems_k__BackingField);
     return;
   }
   func_?();
@@ -102,10 +113,12 @@ void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionC
 void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionChangedEventArgs::NotifyCollectionChangedEventArgs__ctor_7(NotifyCollectionChangedEventArgs *this,NotifyCollectionChangedAction__Enum action,IList *newItems,IList *oldItems,int32_t startingIndex,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._Action_k__BackingField = action;
   (this->fields)._NewItems_k__BackingField = newItems;
+  func_?(&(this->fields)._NewItems_k__BackingField,newItems);
   (this->fields)._OldItems_k__BackingField = oldItems;
+  func_?(&(this->fields)._OldItems_k__BackingField,oldItems);
   (this->fields)._NewStartingIndex_k__BackingField = startingIndex;
   return;
 }
@@ -116,9 +129,10 @@ void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionC
 void Assembly-CSharp.dll::Newtonsoft::Json::ObservableSupport::NotifyCollectionChangedEventArgs::NotifyCollectionChangedEventArgs__ctor_8(NotifyCollectionChangedEventArgs *this,NotifyCollectionChangedAction__Enum action,IList *changedItems,int32_t index,int32_t oldIndex,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._Action_k__BackingField = action;
   (this->fields)._NewItems_k__BackingField = changedItems;
+  func_?(&(this->fields)._NewItems_k__BackingField,changedItems);
   (this->fields)._NewStartingIndex_k__BackingField = index;
   (this->fields)._OldStartingIndex_k__BackingField = oldIndex;
   return;

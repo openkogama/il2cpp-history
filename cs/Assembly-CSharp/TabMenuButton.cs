@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TabMenuButton : TabMenuButtonBase
 {
@@ -21,18 +21,19 @@ public class TabMenuButton : TabMenuButtonBase
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass2_0
 	{
 		// Fields
-		internal int tabId;
-		internal TabMenuButton _this;
+		public TabMenuButton __4__this;
+		public int tabId;
+		public ExecuteEvents.EventFunction<ITabSelected> __9__1;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass2_0();
 
 		// Methods
-		internal void __m__0();
-		internal void __m__1(ITabSelected x, BaseEventData y);
+		internal void _Initialize_b__0();
+		internal void _Initialize_b__1(ITabSelected x, BaseEventData y);
 	}
 
 	// Constructors

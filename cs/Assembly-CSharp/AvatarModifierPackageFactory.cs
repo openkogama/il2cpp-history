@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class AvatarModifierPackageFactory
 {
@@ -16,16 +16,16 @@ public static class AvatarModifierPackageFactory
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Const_c__AnonStorey0
+	private sealed class __c__DisplayClass0_0
 	{
 		// Fields
-		internal float c;
+		public float c;
 
 		// Constructors
-		public _Const_c__AnonStorey0();
+		public __c__DisplayClass0_0();
 
 		// Methods
-		internal float __m__0();
+		internal float _Const_b__0();
 	}
 
 	// Constructors

@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::RotateLocal::RotateLocal_Update(RotateLocal *this,MethodInfo *method)
 
 {
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
   axis = (this->fields).aroundVector;
   fVar1 = (this->fields).rotationSpeed;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
@@ -24,14 +24,11 @@ void Assembly-CSharp.dll::RotateLocal::RotateLocal_Update(RotateLocal *this,Meth
 void Assembly-CSharp.dll::RotateLocal::RotateLocal__ctor(RotateLocal *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
+  (this->fields).aroundVector.x = 0.0;
+  (this->fields).aroundVector.y = 1.0;
   (this->fields).rotationSpeed = 360.0;
-  uStack_2 = 0;
-  func_?(&uStack_2,0,0x3f800000,0,0);
-  (this->fields).aroundVector.x = (float)(undefined4)uStack_2;
-  (this->fields).aroundVector.y = (float)uStack_2._4_4_;
-  (this->fields).aroundVector.z = fStack_1;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  (this->fields).aroundVector.z = 0.0;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

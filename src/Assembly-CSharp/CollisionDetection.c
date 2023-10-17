@@ -5,10 +5,10 @@ List_1_MVOverlapResult_ * Assembly-CSharp.dll::CollisionDetection::CollisionDete
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1882);
+    func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVElipsoidOverlapCheck->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
   pLVar1 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckSector(radius,position,rotation,layerMask,ignoreWoIds,(MethodInfo *)0x0);
@@ -22,24 +22,19 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVElipsoidCast(
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1885);
+    func_?(&TypeInfo__MVSweptElipsoidCheck);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Quaternion);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity((Quaternion *)&stack0xffffffec,(MethodInfo *)0x0);
-  fVar2 = pQVar1->z;
-  fVar3 = pQVar1->w;
-  if ((((uint)(TypeInfo__MVSweptElipsoidCheck->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_started == 0)) {
-    func_?();
+  rotation = TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
+  if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  rotation.y = 0.0;
-  rotation.x = (float)layerMask;
-  rotation.z = fVar2;
-  rotation.w = fVar3;
-  bVar4 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast_1(ray,radius,rotation,distance,voxelHit,ignoreWoIds,layerMask,(MethodInfo *)0x0);
-  return bVar4;
+  bVar1 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast_1(ray,radius,rotation,distance,voxelHit,ignoreWoIds,layerMask,(MethodInfo *)0x0);
+  return bVar1;
 }
 
 
@@ -49,24 +44,19 @@ List_1_VoxelHit_ * Assembly-CSharp.dll::CollisionDetection::CollisionDetection_M
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1884);
+    func_?(&TypeInfo__MVSweptElipsoidCheck);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Quaternion);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity((Quaternion *)&stack0xffffffec,(MethodInfo *)0x0);
-  fVar2 = pQVar1->z;
-  fVar3 = pQVar1->w;
-  if ((((uint)(TypeInfo__MVSweptElipsoidCheck->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_started == 0)) {
-    func_?();
+  rotation = TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
+  if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  rotation.y = 0.0;
-  rotation.x = (float)layerMask;
-  rotation.z = fVar2;
-  rotation.w = fVar3;
-  pLVar4 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCastAll_1(ray,radius,rotation,distance,ignoreWoIds,layerMask,(MethodInfo *)0x0);
-  return pLVar4;
+  pLVar1 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCastAll_1(ray,radius,rotation,distance,ignoreWoIds,layerMask,(MethodInfo *)0x0);
+  return pLVar1;
 }
 
 
@@ -76,10 +66,10 @@ List_1_VoxelHit_ * Assembly-CSharp.dll::CollisionDetection::CollisionDetection_M
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1883);
+    func_?(&TypeInfo__MVSweptElipsoidCheck);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVSweptElipsoidCheck->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVSweptElipsoidCheck);
   }
   pLVar1 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCastAll(ray,transform,localBounds,distance,ignoreWoIds,layerMask,(MethodInfo *)0x0);
@@ -93,10 +83,10 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVElipsoidCast_
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1886);
+    func_?(&TypeInfo__MVSweptElipsoidCheck);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVSweptElipsoidCheck->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVSweptElipsoidCheck);
   }
   bVar1 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast(ray,transform,localBounds,distance,voxelHit,ignoreWoIds,layerMask,(MethodInfo *)0x0);
@@ -110,10 +100,10 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVHit(Ray ray,M
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1888);
+    func_?(&TypeInfo__MVRaycast);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVRaycast->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVRaycast->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVRaycast);
   }
   bVar1 = MVRaycast::MVRaycast_MVHit(ray,wo,voxelHit,distance,(MethodInfo *)0x0);
@@ -127,10 +117,10 @@ List_1_VoxelHit_ * Assembly-CSharp.dll::CollisionDetection::CollisionDetection_M
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1887);
+    func_?(&TypeInfo__MVRaycast);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVRaycast->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVRaycast->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVRaycast);
   }
   pLVar1 = MVRaycast::MVRaycast_MVHitAll(ray,distance,layerMask,ignoreWoIds,(MethodInfo *)0x0);
@@ -144,10 +134,10 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVHit_1(Ray ray
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1889);
+    func_?(&TypeInfo__MVRaycast);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVRaycast->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVRaycast->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVRaycast);
   }
   bVar1 = MVRaycast::MVRaycast_MVHit_1(ray,voxelHit,distance,layerMask,ignoreWoIds,(MethodInfo *)0x0);
@@ -161,35 +151,30 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVSphereCast(Ra
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVSweptElipsoidCheck);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_one((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1((Vector3 *)&stack0xffffffe4,radius,*pVVar1,(MethodInfo *)0x0);
-  fVar2 = pVVar1->z;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?();
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar2 = (pVVar1->oneVector).x;
+  uVar3 = (pVVar1->oneVector).y;
+  fVar4 = (pVVar1->oneVector).z;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity((Quaternion *)&stack0xffffffe0,(MethodInfo *)0x0);
-  fVar4 = pQVar3->x;
-  fVar5 = pQVar3->y;
-  fVar6 = pQVar3->z;
-  fVar7 = pQVar3->w;
-  if ((((uint)(TypeInfo__MVSweptElipsoidCheck->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_started == 0)) {
-    func_?();
+  rotation = TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
+  if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  radius_00.y = (float)ignoreWoIds;
-  radius_00.x = (float)voxelHit;
-  radius_00.z = fVar2;
-  rotation.y = fVar5;
-  rotation.x = fVar4;
-  rotation.z = fVar6;
-  rotation.w = fVar7;
-  bVar8 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast_1(ray,radius_00,rotation,distance,voxelHit,ignoreWoIds,layerMask,(MethodInfo *)0x0);
-  return bVar8;
+  radius_00.y = (float)uVar3 * radius;
+  radius_00.x = (float)uVar2 * radius;
+  radius_00.z = fVar4 * radius;
+  bVar5 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast_1(ray,radius_00,rotation,distance,voxelHit,ignoreWoIds,layerMask,(MethodInfo *)0x0);
+  return bVar5;
 }
 
 
@@ -199,34 +184,29 @@ List_1_VoxelHit_ * Assembly-CSharp.dll::CollisionDetection::CollisionDetection_M
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVSweptElipsoidCheck);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_one((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1((Vector3 *)&stack0xffffffe4,radius,*pVVar1,(MethodInfo *)0x0);
-  fVar2 = pVVar1->z;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?();
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar2 = (pVVar1->oneVector).x;
+  uVar3 = (pVVar1->oneVector).y;
+  fVar4 = (pVVar1->oneVector).z;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity((Quaternion *)&stack0xffffffe0,(MethodInfo *)0x0);
-  fVar4 = pQVar3->x;
-  fVar5 = pQVar3->y;
-  fVar6 = pQVar3->z;
-  fVar7 = pQVar3->w;
-  if ((((uint)(TypeInfo__MVSweptElipsoidCheck->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_started == 0)) {
-    func_?();
+  rotation = TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
+  if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  radius_00.y = (float)ignoreWoIds;
-  radius_00.x = distance;
-  radius_00.z = fVar2;
-  rotation.y = fVar5;
-  rotation.x = fVar4;
-  rotation.z = fVar6;
-  rotation.w = fVar7;
-  pLVar8 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCastAll_1(ray,radius_00,rotation,distance,ignoreWoIds,layerMask,(MethodInfo *)0x0);
-  return pLVar8;
+  radius_00.y = (float)uVar3 * radius;
+  radius_00.x = (float)uVar2 * radius;
+  radius_00.z = fVar4 * radius;
+  pLVar5 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCastAll_1(ray,radius_00,rotation,distance,ignoreWoIds,layerMask,(MethodInfo *)0x0);
+  return pLVar5;
 }
 

@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Linq;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
@@ -21,7 +21,6 @@ namespace Newtonsoft.Json
 		private State _currentState;
 		private Formatting _formatting;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _CloseOutput_k__BackingField;
 	
 		// Properties

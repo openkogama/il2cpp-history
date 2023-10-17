@@ -4,6 +4,6 @@
 int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::GameCoinBooster::GameCoinBooster_GetBoostedGameCoins(GameCoinBooster *this,int32_t gameCoins,MethodInfo *method)
 
 {
-  return (1 - (int)((float)(this->fields)._GameCoinBoost_k__BackingField / -100.0)) * gameCoins;
+  return ((int)((float)(this->fields)._GameCoinBoost_k__BackingField / 100.0) + 1) * gameCoins;
 }
 

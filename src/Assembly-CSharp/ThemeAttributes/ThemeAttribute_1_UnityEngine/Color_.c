@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[UnityEngine::Color]::ThemeAttribute_1_UnityEngine_Color__ApplyValue(ThemeAttribute_1_UnityEngine_Color_ *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).__unknown_2.method)(this,(this->fields).value.r,(this->fields).value.g,(this->fields).value.b,(this->fields).value.a,this->klass[1]._0.image);
+  (*(this->klass->vtable).__unknown_2.methodPtr)(this,(this->fields).value.r,(this->fields).value.g,(this->fields).value.b,(this->fields).value.a,(this->klass->vtable).__unknown_2.method);
   return;
 }
 
@@ -17,24 +17,10 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[UnityEngine::Color]:
   if (this != (ThemeAttribute_1_UnityEngine_Color_ *)0x0) {
     ThemeAttribute::ThemeAttribute_Initialize((ThemeAttribute *)this,settings,key,groups,(MethodInfo *)0x0);
     (this->fields).themeCallback = onChange;
+    func_?(&(this->fields).themeCallback,onChange);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* ThemeAttribute`1[UnityEngine.Color]() */
-
-void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[UnityEngine::Color]::ThemeAttribute_1_UnityEngine_Color___ctor(ThemeAttribute_1_UnityEngine_Color_ *this,MethodInfo *method)
-
-{
-  if (this != (ThemeAttribute_1_UnityEngine_Color_ *)0x0) {
-    return;
-  }
-  func_?(0);
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;

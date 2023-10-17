@@ -5,22 +5,23 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_LockC
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4354);
+    func_?(&StringLiteral_Really_trying_to_lock_cursor);
     cRam_? = '\x01';
   }
   CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
   if (CVar1 != CursorLockMode__Enum_Locked) {
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_Locked,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(0,(MethodInfo *)0x0);
-    this_00 = (Action_1_UIPushOption_ *)(this->fields)._OnCursorLockChanged_k__BackingField;
-    CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
-    if (this_00 == (Action_1_UIPushOption_ *)0x0) {
+    pAVar2 = (this->fields)._OnCursorLockChanged_k__BackingField;
+    UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
+    if (pAVar2 == (Action_1_Boolean_ *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke(this_00,(uint)(CVar1 == CursorLockMode__Enum_Locked),MethodInfo__System__Action<bool>__Invoke_bool_);
+    puStack4 = (pAVar2->fields)._._.method;
+    (*(pAVar2->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -31,6 +32,10 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_LockC
 void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_LockCursorWithoutCallback(LockCursorManager3DMode *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_Really_trying_to_lock_cursor2);
+    cRam_? = '\x01';
+  }
   CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
   if (CVar1 != CursorLockMode__Enum_Locked) {
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_Locked,(MethodInfo *)0x0);
@@ -58,22 +63,23 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_Unloc
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4355);
+    func_?(&StringLiteral_Really_trying_to_unlock_cursor);
     cRam_? = '\x01';
   }
   CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
   if (CVar1 == CursorLockMode__Enum_Locked) {
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_None,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(1,(MethodInfo *)0x0);
-    this_00 = (Action_1_UIPushOption_ *)(this->fields)._OnCursorLockChanged_k__BackingField;
-    CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
-    if (this_00 == (Action_1_UIPushOption_ *)0x0) {
+    pAVar2 = (this->fields)._OnCursorLockChanged_k__BackingField;
+    UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
+    if (pAVar2 == (Action_1_Boolean_ *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke(this_00,(uint)(CVar1 == CursorLockMode__Enum_Locked),MethodInfo__System__Action<bool>__Invoke_bool_);
+    puStack4 = (pAVar2->fields)._._.method;
+    (*(pAVar2->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -84,26 +90,14 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_Unloc
 void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_UnlockCursorWithoutCallback(LockCursorManager3DMode *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_Really_trying_to_unlock_cursor2);
+    cRam_? = '\x01';
+  }
   CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
   if (CVar1 == CursorLockMode__Enum_Locked) {
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_None,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(1,(MethodInfo *)0x0);
-  }
-  return;
-}
-
-
-/* LockCursorManager3DMode() */
-
-void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode__ctor(LockCursorManager3DMode *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(0x19bd);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
   }
   return;
 }
@@ -125,39 +119,40 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_C
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4356);
+    func_?(&StringLiteral_Cursor_locked__);
     cRam_? = '\x01';
   }
-  arg1 = (Object *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  message = mscorlib.dll::System::String::String_Concat((Object *)StringLiteral_Cursor_locked__,arg1,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Debug);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
+  str1 = mscorlib.dll::System::Boolean::Boolean_ToString_1((Boolean *)&value,(IFormatProvider *)0x0,unaff_EBP);
+  mscorlib.dll::System::String::String_Concat_3(StringLiteral_Cursor_locked__,str1,(MethodInfo *)0x0);
   if (value == 0) {
-    LockCursorManager3DMode_UnlockCursor((LockCursorManager3DMode *)0x0,(MethodInfo *)0x0);
+    method = (MethodInfo *)0x0;
+    _value = this;
+    LockCursorManager3DMode_UnlockCursor(this,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
+      method = (MethodInfo *)&StringLiteral_Really_trying_to_lock_cursor;
+      _value = (LockCursorManager3DMode *)&UNK_?;
       func_?();
       cRam_? = '\x01';
     }
+    method = (MethodInfo *)0x0;
+    _value = (LockCursorManager3DMode *)&UNK_?;
     CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
     if (CVar1 != CursorLockMode__Enum_Locked) {
+      method = (MethodInfo *)0x0;
+      _value = (LockCursorManager3DMode *)0x1;
       UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_Locked,(MethodInfo *)0x0);
+      method = (MethodInfo *)0x0;
+      _value = (LockCursorManager3DMode *)0x0;
       UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(0,(MethodInfo *)0x0);
-      this_00 = pARam0000000c;
+      method = (MethodInfo *)0x0;
+      _value = (LockCursorManager3DMode *)&UNK_?;
       CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
-      if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-        mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke(this_00,(uint)(CVar1 == CursorLockMode__Enum_Locked),MethodInfo__System__Action<bool>__Invoke_bool_);
-        return;
-      }
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      uStack2 = uRam_?;
+      uStack3 = (uint)(CVar1 == CursorLockMode__Enum_Locked);
+      uStack4 = uRam_?;
+      (*pcRam_?)();
       return;
     }
   }
@@ -170,28 +165,29 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_C
 void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_CursorLockWithoutCallback(LockCursorManager3DMode *this,bool value,MethodInfo *method)
 
 {
-  CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
   if (value == 0) {
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_Really_trying_to_unlock_cursor2);
+      cRam_? = '\x01';
+    }
+    CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
     if (CVar1 == CursorLockMode__Enum_Locked) {
       UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_None,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(1,(MethodInfo *)0x0);
       return;
     }
   }
-  else if (CVar1 != CursorLockMode__Enum_Locked) {
-    UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_Locked,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(0,(MethodInfo *)0x0);
+  else {
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_Really_trying_to_lock_cursor2);
+      cRam_? = '\x01';
+    }
+    CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_get_lockState((MethodInfo *)0x0);
+    if (CVar1 != CursorLockMode__Enum_Locked) {
+      UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_lockState(CursorLockMode__Enum_Locked,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(0,(MethodInfo *)0x0);
+    }
   }
-  return;
-}
-
-
-/* Void set_OnCursorLockChanged(Action`1[Boolean]) */
-
-void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_OnCursorLockChanged(LockCursorManager3DMode *this,Action_1_Boolean_ *value,MethodInfo *method)
-
-{
-  (this->fields)._OnCursorLockChanged_k__BackingField = value;
   return;
 }
 

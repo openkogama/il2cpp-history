@@ -5,11 +5,12 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+ResetState::AdvancedGhostBeha
 
 {
   if (cRam_? == '\0') {
-    func_?(0x5abb);
+    func_?(&TypeRef__AdvancedGhostBehaviour__Idle);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   handle = TypeRef__AdvancedGhostBehaviour__Idle;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
   pTVar1 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle,(MethodInfo *)0x0);

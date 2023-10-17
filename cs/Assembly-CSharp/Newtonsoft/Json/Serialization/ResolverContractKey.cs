@@ -6,18 +6,18 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
 	internal struct ResolverContractKey : IEquatable<Newtonsoft.Json.Serialization.ResolverContractKey>
 	{
 		// Fields
-		private readonly Type _resolverType;
-		private readonly Type _contractType;
+		private readonly System.Type _resolverType;
+		private readonly System.Type _contractType;
 	
 		// Constructors
-		public ResolverContractKey(Type resolverType, Type contractType);
+		public ResolverContractKey(System.Type resolverType, System.Type contractType);
 	
 		// Methods
 		public override int GetHashCode();

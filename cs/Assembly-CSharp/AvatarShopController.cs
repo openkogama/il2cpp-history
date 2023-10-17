@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarShopController : MonoBehaviour, IPurchaseAvatar
 {
@@ -24,22 +24,36 @@ public class AvatarShopController : MonoBehaviour, IPurchaseAvatar
 	private Transform previewRootTransform;
 	private AvatarEditModeBodyController avatarEditModeBodyController;
 	private AvatarRepository avatarRepository;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Activate_c__AnonStorey0
+	private sealed class __c__DisplayClass10_0
 	{
 		// Fields
-		internal UIPushOption pushOption;
-		internal AvatarShopController _this;
+		public AvatarShopController __4__this;
+		public UIPushOption pushOption;
 
 		// Constructors
-		public _Activate_c__AnonStorey0();
+		public __c__DisplayClass10_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Activate_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Activate_b__10_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -54,7 +68,5 @@ public class AvatarShopController : MonoBehaviour, IPurchaseAvatar
 	private void OnPop();
 	public void PageTurned(int dir);
 	public void PurchaseAvatar(AvatarRepositoryItem item);
-	[CompilerGenerated]
-	private static void _Activate_m__0(IUIStack handler, BaseEventData data);
 }
 

@@ -14,7 +14,8 @@ String * Assembly-CSharp.dll::MVGameControllerBase+VersionData::MVGameController
 
 {
   if (cRam_? == '\0') {
-    func_?(0x6eec);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_version__0___minVersion__1__);
     cRam_? = '\x01';
   }
   pMVar1 = this;
@@ -22,9 +23,6 @@ String * Assembly-CSharp.dll::MVGameControllerBase+VersionData::MVGameController
   arg0 = (Object *)func_?(TypeInfo__System__Int32,&this);
   iStack_2 = (pMVar1->fields)._minVersion_k__BackingField;
   arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar3 = mscorlib.dll::System::String::String_Format_1(StringLiteral_version__0___minVersion__1__,arg0,arg1,(MethodInfo *)0x0);
   return pSVar3;
 }

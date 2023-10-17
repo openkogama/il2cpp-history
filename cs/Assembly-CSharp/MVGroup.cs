@@ -8,17 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVGroup : MVWorldObjectClient
 {
 	// Fields
 	protected Dictionary<int, MVWorldObjectClient> children;
-	[CompilerGenerated]
-	private static Comparison<MVWorldObjectClient> __f__am_cache0;
 
 	// Properties
 	public List<MVWorldObjectClient> Children { get; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Comparison<MVWorldObjectClient> __9__15_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal int _Clone_b__15_0(MVWorldObjectClient w1, MVWorldObjectClient w2);
+	}
 
 	// Constructors
 	public MVGroup(Dictionary<object, object> data, GameObject prefabObject, Dictionary<int, MVWorldObjectClient> worldObjects);
@@ -51,7 +66,5 @@ public class MVGroup : MVWorldObjectClient
 	public static int GetParentBelow(int parentId, int childId);
 	public static int GetParentBelow(MVWorldObjectClient parent, MVWorldObjectClient child);
 	public override bool OnEnterObject(EditorStateMachine e);
-	[CompilerGenerated]
-	private static int _Clone_m__0(MVWorldObjectClient w1, MVWorldObjectClient w2);
 }
 

@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePopupPressKeyToSkip : FirstTimeActivatableElementBase
 {
@@ -22,24 +22,38 @@ public class FirstTimeActivatablePopupPressKeyToSkip : FirstTimeActivatableEleme
 	private List<KogamaControls> keysToDetect;
 	private float currentlifeTime;
 	private bool visible;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	public override bool CanShow { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnShow_c__AnonStorey0
+	private sealed class __c__DisplayClass8_0
 	{
 		// Fields
-		internal GameObject instantiatedPopup;
+		public GameObject instantiatedPopup;
 
 		// Constructors
-		public _OnShow_c__AnonStorey0();
+		public __c__DisplayClass8_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnShow_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Clear_b__10_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -51,7 +65,5 @@ public class FirstTimeActivatablePopupPressKeyToSkip : FirstTimeActivatableEleme
 	protected override void OnDisable();
 	private void Clear();
 	private void OnShown();
-	[CompilerGenerated]
-	private static void _Clear_m__0(IUIStack x, BaseEventData y);
 }
 

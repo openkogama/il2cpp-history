@@ -5,7 +5,7 @@ IAsyncResult * Assembly-CSharp.dll::AvatarModifierPackages+OnModifierExpiredDele
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4f01);
+    func_?(&TypeInfo__AvatarModifierPackage);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

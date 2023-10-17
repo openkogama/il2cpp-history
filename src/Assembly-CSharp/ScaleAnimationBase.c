@@ -1,13 +1,4 @@
 
-/* Void Play(Single) */
-
-void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play(ScaleAnimationBase *this,float offsetTime,MethodInfo *method)
-
-{
-  return;
-}
-
-
 /* Void ResetScaleAnimation() */
 
 void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_ResetScaleAnimation(ScaleAnimationBase *this,MethodInfo *method)
@@ -32,22 +23,25 @@ void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_SetTarget(Scale
 
 {
   if (cRam_? == '\0') {
-    func_?(0x5c28);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Target_already_set);
     cRam_? = '\x01';
   }
   x = (this->fields).target;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_Target_already_set,(MethodInfo *)0x0);
     return;
   }
   (this->fields).target = target;
+  func_?(&(this->fields).target);
   if (target != (Transform *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale((Vector3 *)&stack0xfffffff0,target,(MethodInfo *)0x0);
     fVar3 = pVVar2->y;
@@ -60,29 +54,6 @@ void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_SetTarget(Scale
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
-  return;
-}
-
-
-/* ScaleAnimationBase() */
-
-void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase__ctor(ScaleAnimationBase *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(0x5c29);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_one(&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).originalScale.x = pVVar1->x;
-  (this->fields).originalScale.y = fVar3;
-  (this->fields).originalScale.z = fVar4;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
   return;
 }
 

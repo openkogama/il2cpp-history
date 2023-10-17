@@ -11,7 +11,7 @@ using Sentry;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SentrySdk : MonoBehaviour
 {
@@ -29,21 +29,16 @@ public class SentrySdk : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _GetStackTraces_c__Iterator0 : IEnumerable<StackTraceSpec>, IEnumerator<StackTraceSpec>
+	private sealed class _GetStackTraces_d__20 : IEnumerable<StackTraceSpec>, IEnumerator<StackTraceSpec>
 	{
 		// Fields
-		internal string stackTrace;
-		internal string[] _stackList___0;
-		internal int _i___1;
-		internal string _item___2;
-		internal int _closingParen___2;
-		internal string _functionName___3;
-		internal string _filename___4;
-		internal int _lineNo___4;
-		internal bool _inApp___5;
-		internal StackTraceSpec _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private StackTraceSpec __2__current;
+		private int __l__initialThreadId;
+		private string stackTrace;
+		public string __3__stackTrace;
+		private string[] _stackList_5__2;
+		private int _i_5__3;
 
 		// Properties
 		StackTraceSpec IEnumerator<Sentry.StackTraceSpec>.Current { [DebuggerHidden] get; }
@@ -51,36 +46,30 @@ public class SentrySdk : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _GetStackTraces_c__Iterator0();
+		public _GetStackTraces_d__20(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
-		[DebuggerHidden]
-		IEnumerator IEnumerable.GetEnumerator();
+		void IEnumerator.Reset();
 		[DebuggerHidden]
 		IEnumerator<StackTraceSpec> IEnumerable<StackTraceSpec>.GetEnumerator();
+		[DebuggerHidden]
+		IEnumerator IEnumerable.GetEnumerator();
 	}
 
 	[CompilerGenerated]
-	private sealed class _ContinueSendingEvent_c__Iterator1<T> : IEnumerator<UnityWebRequestAsyncOperation>
+	private sealed class _ContinueSendingEvent_d__23<T> : IEnumerator<UnityWebRequestAsyncOperation>
 		where T : SentryEvent
 	{
 		// Fields
-		internal T @event;
-		internal string _s___0;
-		internal string _sentryKey___0;
-		internal string _sentrySecret___0;
-		internal string _timestamp___0;
-		internal string _authString___0;
-		internal UnityWebRequest _www___0;
-		internal SentrySdk _this;
-		internal UnityWebRequestAsyncOperation _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private UnityWebRequestAsyncOperation __2__current;
+		public SentrySdk __4__this;
+		public T @event;
+		private UnityWebRequest _www_5__2;
 
 		// Properties
 		UnityWebRequestAsyncOperation IEnumerator<UnityEngine.Networking.UnityWebRequestAsyncOperation>.Current { [DebuggerHidden] get; }
@@ -88,19 +77,18 @@ public class SentrySdk : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _ContinueSendingEvent_c__Iterator1();
+		public _ContinueSendingEvent_d__23(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
 	public SentrySdk();
-	static SentrySdk();
 
 	// Methods
 	public void Initialize(SentryConfig sentryConfig);
@@ -113,11 +101,11 @@ public class SentrySdk : MonoBehaviour
 	private List<Breadcrumb> GetBreadcrumbs();
 	public void ScheduleError(string condition, string stackTrace, Dictionary<string, object> extraSentryData, Dictionary<string, string> tags);
 	public void ScheduleException(string condition, string stackTrace, Dictionary<string, object> extraSentryData, Dictionary<string, string> tags);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_GetStackTraces_d__20))]
 	private static IEnumerable<StackTraceSpec> GetStackTraces(string stackTrace);
 	public void OnLogMessageReceived(string condition, string stackTrace, LogType type, Dictionary<string, object> extraSentryData, Dictionary<string, string> tags);
 	private void PrepareEvent(SentryEvent @event);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_ContinueSendingEvent_d__23<T>))]
 	private IEnumerator<UnityWebRequestAsyncOperation> ContinueSendingEvent<T>(T @event)
 		where T : SentryEvent;
 }

@@ -8,7 +8,7 @@ void MVWorldObject.dll::MV::WorldObject::ObjectLink::ObjectLink__ctor(ObjectLink
   (this->fields).objectConnectorWOID = -1;
   (this->fields).objectWOID = -1;
   (this->fields).isSet = 1;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).id = id;
   (this->fields).objectConnectorWOID = objectConnectorWOID;
   (this->fields).objectWOID = objectWOID;

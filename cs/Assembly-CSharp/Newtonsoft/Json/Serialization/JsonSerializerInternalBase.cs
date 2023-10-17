@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Utilities;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -19,7 +19,6 @@ namespace Newtonsoft.Json.Serialization
 		private ErrorContext _currentErrorContext;
 		private BidirectionalDictionary<string, object> _mappings;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonSerializer _Serializer_k__BackingField;
 	
 		// Properties

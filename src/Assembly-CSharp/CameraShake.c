@@ -4,24 +4,13 @@
 Vector3 * Assembly-CSharp.dll::CameraShake::CameraShake_Shake(Vector3 *__return_storage_ptr__,CameraShake *this,Vector3 position,float speed,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1410);
-    cRam_? = '\x01';
-  }
-  pVVar1 = CameraShake_Shake_1((Vector3 *)&stack0xffffffe8,this,speed,(MethodInfo *)0x0);
-  b = *pVVar1;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  a.z = position.z;
-  a.x = position.x;
-  a.y = position.y;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition(&position,a,b,(MethodInfo *)0x0);
-  fVar2 = pVVar1->y;
-  fVar3 = pVVar1->z;
-  __return_storage_ptr__->x = pVVar1->x;
-  __return_storage_ptr__->y = fVar2;
-  __return_storage_ptr__->z = fVar3;
+  pVVar1 = CameraShake_Shake_1(&VStack_2,this,speed,(MethodInfo *)0x0);
+  uVar3 = pVVar1->x;
+  uVar4 = pVVar1->y;
+  fVar5 = pVVar1->z;
+  __return_storage_ptr__->x = position.x + (float)uVar3;
+  __return_storage_ptr__->y = position.y + (float)uVar4;
+  __return_storage_ptr__->z = position.z + fVar5;
   return __return_storage_ptr__;
 }
 
@@ -32,154 +21,118 @@ Vector3 * Assembly-CSharp.dll::CameraShake::CameraShake_Shake_1(Vector3 *__retur
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MathFunctions__PerlinSimplexNoise);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).shakeFactorSpeedCurve;
   if (this_00 == (AnimationCurve *)0x0) goto code_?;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate(this_00,speed,(MethodInfo *)0x0);
-  fVar1 = (this->fields).shakeMaxFactor * fVar1;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+  fVar2 = (this->fields).shakeMaxFactor;
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero((Vector3 *)&stack0xffffffdc,(MethodInfo *)0x0);
-  fVar3 = pVVar2->y;
-  fVar4 = pVVar2->z;
-  (this->fields).shakeOffset.x = pVVar2->x;
-  (this->fields).shakeOffset.y = fVar3;
-  (this->fields).shakeOffset.z = fVar4;
-  if (0.0 < fVar1) {
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar4 = (this->fields).shakeTimeFactor;
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar5 == (Transform *)0x0) goto code_?;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&fStack_6,pTVar5,(MethodInfo *)0x0);
-    fVar7 = pVVar2->x;
-    if ((((uint)(TypeInfo__MathFunctions__PerlinSimplexNoise->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
+  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar4 = (pVVar3->zeroVector).y;
+  fVar5 = (pVVar3->zeroVector).z;
+  (this->fields).shakeOffset.x = (pVVar3->zeroVector).x;
+  (this->fields).shakeOffset.y = fVar4;
+  (this->fields).shakeOffset.z = fVar5;
+  if (0.0 < fVar1 * fVar2) {
+    UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar2 = (this->fields).shakeTimeFactor;
+    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    if (pTVar6 == (Transform *)0x0) goto code_?;
+    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
+    fVar1 = pVVar7->x;
+    if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    fVar3 = MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1(fVar4 * fVar3,fVar7,(MethodInfo *)0x0);
-    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar4 = (this->fields).shakeTimeFactor;
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar5 == (Transform *)0x0) goto code_?;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-    yin_00 = pVVar2->y;
-    fVar7 = MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1(fVar4 * fVar7,(float)yin_00,(MethodInfo *)0x0);
-    uVar8 = (this->fields).shakeOffset.x;
-    uVar9 = (this->fields).shakeOffset.y;
-    fVar4 = (this->fields).shakeOffset.z;
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar5 == (Transform *)0x0) goto code_?;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-    uVar10._0_4_ = pVVar2->x;
-    uVar10._4_4_ = pVVar2->y;
-    fVar11 = pVVar2->z;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    a_00.z = fVar11;
-    a_00.x = (float)(int)uVar10;
-    a_00.y = (float)(int)((ulonglong)uVar10 >> 0x20);
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1((Vector3 *)&stack0xffffffd0,fVar3 * 2.0 - 1.0,a_00,(MethodInfo *)0x0);
-    fVar3 = pVVar2->x;
-    fVar11 = pVVar2->y;
-    uVar10._0_4_ = pVVar2->z;
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar5 == (Transform *)0x0) goto code_?;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1((Vector3 *)&stack0xffffffd0,fVar7 * 2.0 - 1.0,*pVVar2,(MethodInfo *)0x0);
-    a_01.y = fVar11;
-    a_01.x = fVar3;
-    a_01.z = (float)uVar10;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition((Vector3 *)&stack0xffffffd0,a_01,*pVVar2,(MethodInfo *)0x0);
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply((Vector3 *)&stack0xffffffd0,*pVVar2,fVar1,(MethodInfo *)0x0);
-    a_02.y = (float)uVar9;
-    a_02.x = (float)uVar8;
-    a_02.z = fVar4;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition((Vector3 *)&stack0xffffffd0,a_02,*pVVar2,(MethodInfo *)0x0);
-    fVar4 = pVVar2->y;
-    fVar1 = pVVar2->z;
-    (this->fields).shakeOffset.x = pVVar2->x;
-    (this->fields).shakeOffset.y = fVar4;
-    (this->fields).shakeOffset.z = fVar1;
+    fVar2 = MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1(fVar2 * 0.0,fVar1,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,method_00);
+    if (pTVar6 == (Transform *)0x0) goto code_?;
+    __return_storage_ptr__ = (Vector3 *)&stack0xffffffd8;
+    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(__return_storage_ptr__,pTVar6,(MethodInfo *)0x0);
+    fVar5 = MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1((float)method_00 * 0.0,pVVar7->y,(MethodInfo *)0x0);
+    uVar8._0_4_ = (this->fields).shakeOffset.x;
+    uVar8._4_4_ = (this->fields).shakeOffset.y;
+    fVar1 = (this->fields).shakeOffset.z;
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    if (pTVar9 == (Transform *)0x0) goto code_?;
+    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right((Vector3 *)&stack0xffffffcc,pTVar9,(MethodInfo *)0x0);
+    uVar10 = pVVar7->x;
+    uVar11 = pVVar7->y;
+    fVar2 = fVar2 * 2.0 - 1.0;
+    fVar4 = (float)uVar10 * fVar2;
+    fVar12 = pVVar7->z * fVar2;
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    if (pTVar9 == (Transform *)0x0) goto code_?;
+    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffcc,pTVar9,(MethodInfo *)0x0);
+    uVar13 = pVVar7->x;
+    uVar14 = pVVar7->y;
+    fVar15 = pVVar7->z;
+    fVar5 = fVar5 * 2.0 - 1.0;
+    (this->fields).shakeOffset.x = (float)uVar8 + ((float)uVar13 * fVar5 + fVar4) * (float)pTVar6;
+    (this->fields).shakeOffset.y = SUB84(uVar8,4) + ((float)uVar14 * fVar5 + (float)uVar11 * fVar2) * (float)pTVar6;
+    (this->fields).shakeOffset.z = fVar1 + (fVar15 * fVar5 + fVar12) * (float)pTVar6;
   }
-  fVar1 = (this->fields).shakeStrength;
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar4 = (this->fields).shakeStrengthFadeSpeed;
-  uVar10._0_4_ = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?();
+  fVar2 = (this->fields).shakeStrength;
+  fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar1 = (this->fields).shakeStrengthFadeSpeed;
+  fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar1 = fVar12 * fVar1 + fVar4 * fVar5;
+  if (fVar1 < 0.0) {
+    fVar1 = 0.0;
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Lerp(fVar1,0.0,(float)uVar10 * fVar4 + fVar7 * fVar3,(MethodInfo *)0x0);
-  (this->fields).shakeStrength = fVar1;
+  else if (1.0 < fVar1) {
+    fVar1 = 1.0;
+  }
+  (this->fields).shakeStrength = (0.0 - fVar2) * fVar1 + fVar2;
   if (0.0 < (this->fields).shakeDuration) {
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar1 = (this->fields).shakeTimeFactor;
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar5 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-      yin = pVVar2->x;
-      if ((((uint)(TypeInfo__MathFunctions__PerlinSimplexNoise->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_started == 0)) {
+    UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar2 = (this->fields).shakeTimeFactor;
+    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    if (pTVar6 != (Transform *)0x0) {
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffcc,pTVar6,(MethodInfo *)0x0);
+      fVar1 = pVVar7->x;
+      if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      fVar4 = MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1(fVar1 * fVar4,yin,(MethodInfo *)0x0);
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      fVar1 = (this->fields).shakeTimeFactor;
-      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-      if (pTVar5 != (Transform *)0x0) {
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-        uVar12 = pVVar2->x;
-        yin_01 = pVVar2->y;
-        fStack_6 = (float)uVar12;
-        puStack_13 = (undefined *)yin_01;
-        fVar3 = MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1(fVar1 * fVar3,(float)yin_01,(MethodInfo *)0x0);
-        fVar1 = (this->fields).shakeOffset.z;
-        pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-        if (pTVar5 != (Transform *)0x0) {
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-          uVar14._0_4_ = pVVar2->x;
-          uVar14._4_4_ = pVVar2->y;
-          fVar7 = pVVar2->z;
-          puStack_13 = (undefined *)(undefined4)uVar14;
-          if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-            func_?();
-            uVar14 = CONCAT44(uVar14._4_4_,puStack_13);
-          }
-          a_03.z = fVar7;
-          a_03.x = (float)(int)uVar14;
-          a_03.y = (float)(int)((ulonglong)uVar14 >> 0x20);
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1((Vector3 *)&stack0xffffffd0,fVar4 * 2.0 - 1.0,a_03,(MethodInfo *)0x0);
-          fVar4 = pVVar2->x;
-          fVar7 = pVVar2->z;
-          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
-          if (pTVar5 != (Transform *)0x0) {
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1((Vector3 *)&stack0xffffffd0,fVar3 * 2.0 - 1.0,*pVVar2,(MethodInfo *)0x0);
-            a_04.y = 0.0;
-            a_04.x = fVar4;
-            a_04.z = fVar7;
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition((Vector3 *)&stack0xffffffd0,a_04,*pVVar2,(MethodInfo *)0x0);
-            uVar15 = pVVar2->x;
-            uVar16 = pVVar2->y;
-            __return_storage_ptr__ = (Vector3 *)uVar15;
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply((Vector3 *)&stack0xffffffd0,*pVVar2,(this->fields).shakeStrength,(MethodInfo *)0x0);
-            uVar17 = pVVar2->y;
-            puStack18 = (undefined *)pVVar2->z;
-            a.y = (float)uVar16;
-            a.x = (float)__return_storage_ptr__;
-            a.z = fVar1;
-            uStack19 = uVar17;
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition((Vector3 *)&stack0xffffffd0,a,*pVVar2,(MethodInfo *)0x0);
-            fVar1 = pVVar2->y;
-            fVar4 = pVVar2->z;
-            (this->fields).shakeOffset.x = pVVar2->x;
-            (this->fields).shakeOffset.y = fVar1;
-            fVar1 = (this->fields).shakeDuration;
-            (this->fields).shakeOffset.z = fVar4;
-            fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-            (this->fields).shakeDuration = fVar1 - fVar4;
+      MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1(fVar2 * fVar1,fVar1,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pCVar16 = this;
+      pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+      if (pTVar6 != (Transform *)0x0) {
+        __return_storage_ptr__ = (Vector3 *)&stack0xffffffcc;
+        pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(__return_storage_ptr__,pTVar6,(MethodInfo *)0x0);
+        fVar1 = MathFunctions+PerlinSimplexNoise::MathFunctions_PerlinSimplexNoise_noise_1((float)pTVar6 * 0.0,pVVar7->y,(MethodInfo *)0x0);
+        uVar17._0_4_ = (this->fields).shakeOffset.x;
+        uVar17._4_4_ = (this->fields).shakeOffset.y;
+        fVar2 = (this->fields).shakeOffset.z;
+        pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+        if (pTVar6 != (Transform *)0x0) {
+          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right((Vector3 *)&stack0xffffffcc,pTVar6,(MethodInfo *)0x0);
+          uVar18 = pVVar7->x;
+          uVar19 = pVVar7->y;
+          fVar5 = (float)pCVar16 * 2.0 - 1.0;
+          fVar4 = (float)uVar19 * fVar5;
+          fVar12 = pVVar7->z * fVar5;
+          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+          if (pTVar6 != (Transform *)0x0) {
+            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffcc,pTVar6,(MethodInfo *)0x0);
+            uVar20 = pVVar7->x;
+            uVar21 = pVVar7->y;
+            fVar22 = pVVar7->z;
+            fVar23 = fVar1 * 2.0 - 1.0;
+            fVar1 = (this->fields).shakeStrength;
+            fVar15 = (this->fields).shakeDuration;
+            (this->fields).shakeOffset.x = (float)uVar17 + ((float)uVar20 * fVar23 + (float)uVar18 * fVar5) * fVar1;
+            (this->fields).shakeOffset.y = (float)((ulonglong)uVar17 >> 0x20) + ((float)uVar21 * fVar23 + fVar4) * fVar1;
+            (this->fields).shakeOffset.z = fVar2 + (fVar22 * fVar23 + fVar12) * fVar1;
+            fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+            (this->fields).shakeDuration = fVar15 - fVar2;
             goto code_?;
           }
         }
@@ -187,16 +140,16 @@ Vector3 * Assembly-CSharp.dll::CameraShake::CameraShake_Shake_1(Vector3 *__retur
     }
 code_?:
     func_?();
-    pcVar20 = (code *)swi(3);
-    pVVar2 = (Vector3 *)(*pcVar20)();
-    return pVVar2;
+    pcVar24 = (code *)swi(3);
+    pVVar7 = (Vector3 *)(*pcVar24)();
+    return pVVar7;
   }
 code_?:
-  fVar4 = (this->fields).shakeOffset.y;
-  fVar1 = (this->fields).shakeOffset.z;
+  fVar1 = (this->fields).shakeOffset.y;
+  fVar2 = (this->fields).shakeOffset.z;
   __return_storage_ptr__->x = (this->fields).shakeOffset.x;
-  __return_storage_ptr__->y = fVar4;
-  __return_storage_ptr__->z = fVar1;
+  __return_storage_ptr__->y = fVar1;
+  __return_storage_ptr__->z = fVar2;
   return __return_storage_ptr__;
 }
 
@@ -207,22 +160,25 @@ void Assembly-CSharp.dll::CameraShake::CameraShake__ctor(CameraShake *this,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(0x1411);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero(&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).shakeOffset.x = pVVar1->x;
-  (this->fields).shakeOffset.y = fVar3;
-  (this->fields).shakeOffset.z = fVar4;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).shakeOffset.x = (pVVar1->zeroVector).x;
+  (this->fields).shakeOffset.y = fVar2;
+  (this->fields).shakeOffset.z = fVar3;
   (this->fields).shakeMaxFactor = 1.0;
   (this->fields).shakeTimeFactor = 6.3;
   (this->fields).shakeStrengthFadeSpeed = 1.0;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object,unaff_EBP);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
 }
 

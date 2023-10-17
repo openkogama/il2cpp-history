@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleTierSettings : MonoBehaviour
 {
@@ -24,8 +24,23 @@ public class SpawnRoleTierSettings : MonoBehaviour
 	private GameObject tierZeroGray;
 	private bool canSelectTier0;
 	private UnityAction<GamePassTier> OnChangeTierCallback;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _SelectTier_b__10_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public SpawnRoleTierSettings();
@@ -37,7 +52,5 @@ public class SpawnRoleTierSettings : MonoBehaviour
 	public void OnSelectTier2();
 	public void OnSelectTier3();
 	private void SelectTier(GamePassTier newTier);
-	[CompilerGenerated]
-	private static void _SelectTier_m__0(IUIStack x, BaseEventData y);
 }
 

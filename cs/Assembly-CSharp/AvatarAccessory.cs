@@ -7,19 +7,16 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class AvatarAccessory : MonoBehaviour
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private string _AssetPath_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private float _Offset_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private float _Scale_k__BackingField;
 	private Transform _transform;
 	private Collider[] _colliders;

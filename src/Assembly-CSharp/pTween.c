@@ -5,20 +5,21 @@ IEnumerator * Assembly-CSharp.dll::pTween::pTween_RealtimeTo(float duration,floa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x71a4);
+    func_?(&TypeInfo__pTween___RealtimeTo_d__1);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__pTween___RealtimeTo_c__Iterator1;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  if (this != (ScaleAnimationBase *)0x0) {
-    (this->fields).state = (int32_t)duration;
-    (this->fields).OnScaleAnimationStopped = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)startValue;
-    (this->fields).testState = (int32_t)callback;
-    this[1].klass = (ScaleAnimationBase__Class *)endValue;
-    return (IEnumerator *)this;
+  value = (Object *)func_?(TypeInfo__pTween___RealtimeTo_d__1);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[2].klass = (Object__Class *)duration;
+    value[2].monitor = (MonitorData *)callback;
+    value[3].klass = (Object__Class *)startValue;
+    value[1].klass = (Object__Class *)0x0;
+    value[3].monitor = (MonitorData *)endValue;
+    func_?(&value[2].monitor,callback);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -31,20 +32,21 @@ IEnumerator * Assembly-CSharp.dll::pTween::pTween_To(float duration,float startV
 
 {
   if (cRam_? == '\0') {
-    func_?(0x71a5);
+    func_?(&TypeInfo__pTween___To_d__0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__pTween___To_c__Iterator0;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  if (this != (ScaleAnimationBase *)0x0) {
-    (this->fields).state = (int32_t)duration;
-    (this->fields).OnScaleAnimationStopped = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)startValue;
-    (this->fields).testState = (int32_t)callback;
-    this[1].klass = (ScaleAnimationBase__Class *)endValue;
-    return (IEnumerator *)this;
+  value = (Object *)func_?(TypeInfo__pTween___To_d__0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[2].klass = (Object__Class *)duration;
+    value[2].monitor = (MonitorData *)callback;
+    value[3].klass = (Object__Class *)startValue;
+    value[1].klass = (Object__Class *)0x0;
+    value[3].monitor = (MonitorData *)endValue;
+    func_?(&value[2].monitor,callback);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -56,24 +58,8 @@ IEnumerator * Assembly-CSharp.dll::pTween::pTween_To(float duration,float startV
 IEnumerator * Assembly-CSharp.dll::pTween::pTween_To_1(float duration,Action_1_Single_ *callback,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x71a5);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__pTween___To_c__Iterator0;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  if (this != (ScaleAnimationBase *)0x0) {
-    (this->fields).testState = (int32_t)callback;
-    (this->fields).state = (int32_t)duration;
-    (this->fields).OnScaleAnimationStopped = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
-    this[1].klass = (ScaleAnimationBase__Class *)0x3f800000;
-    return (IEnumerator *)this;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  pIVar1 = pTween_To(duration,0.0,1.0,callback,(MethodInfo *)0x0);
+  return pIVar1;
 }
 
 
@@ -83,16 +69,33 @@ void Assembly-CSharp.dll::pTween::pTween_WorkerTo(float duration,float startValu
 
 {
   if (cRam_? == '\0') {
-    func_?(0x71a6);
+    func_?(&Worker_MethodInfo__UnityEngine__GameObject__AddComponent<Worker>__);
+    func_?(&TypeInfo__UnityEngine__GameObject);
     cRam_? = '\x01';
   }
   this = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this,(MethodInfo *)0x0);
   if (this != (GameObject *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_85(this,Worker_MethodInfo__UnityEngine__GameObject__AddComponent<Worker>__);
-    if (this_00 != (Worker *)0x0) {
-      Worker::Worker_To(this_00,(float)callback,0.0,endValue,callback,(MethodInfo *)0x0);
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this,(MethodInfo *)0x0);
+    this_00 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this,Worker_MethodInfo__UnityEngine__GameObject__AddComponent<Worker>__);
+    if (this_00 != (Object__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      value = (Object *)func_?();
+      if (value != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,(MethodInfo *)duration);
+        value[1].klass = (Object__Class *)0x0;
+        value[2].klass = this_00;
+        func_?(value + 2);
+        value[2].monitor = (MonitorData *)duration;
+        value[4].klass = (Object__Class *)callback;
+        value[3].klass = (Object__Class *)startValue;
+        value[3].monitor = (MonitorData *)endValue;
+        func_?(value + 4,callback);
+        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
   func_?();
@@ -108,16 +111,33 @@ void Assembly-CSharp.dll::pTween::pTween_WorkerTo_1(float duration,Action_1_Sing
 
 {
   if (cRam_? == '\0') {
-    func_?(0x71a6);
+    func_?(&Worker_MethodInfo__UnityEngine__GameObject__AddComponent<Worker>__);
+    func_?(&TypeInfo__UnityEngine__GameObject);
     cRam_? = '\x01';
   }
   this = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this,(MethodInfo *)0x0);
   if (this != (GameObject *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_85(this,Worker_MethodInfo__UnityEngine__GameObject__AddComponent<Worker>__);
-    if (this_00 != (Worker *)0x0) {
-      Worker::Worker_To(this_00,duration,0.0,1.0,(Action_1_Single_ *)0x0,(MethodInfo *)0x0);
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this,(MethodInfo *)0x0);
+    this_00 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this,Worker_MethodInfo__UnityEngine__GameObject__AddComponent<Worker>__);
+    if (this_00 != (Object__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      value = (Object *)func_?();
+      if (value != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,(MethodInfo *)duration);
+        value[1].klass = (Object__Class *)0x0;
+        value[2].klass = this_00;
+        func_?(value + 2);
+        value[4].klass = (Object__Class *)callback;
+        value[2].monitor = (MonitorData *)duration;
+        value[3].klass = (Object__Class *)0x0;
+        value[3].monitor = (MonitorData *)0x3f800000;
+        func_?(value + 4,callback);
+        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
   func_?();

@@ -5,10 +5,11 @@ void Assembly-CSharp.dll::CEEditCubeTutorial+ResettingBookkeeping::CEEditCubeTut
 
 {
   if (cRam_? == '\0') {
-    func_?(0x5abc);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_InitializeResetting);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_InitializeResetting,(MethodInfo *)0x0);

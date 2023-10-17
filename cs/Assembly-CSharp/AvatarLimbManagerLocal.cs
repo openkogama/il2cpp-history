@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarLimbManagerLocal : AvatarLimbManager
 {
@@ -82,7 +82,8 @@ public class AvatarLimbManagerLocal : AvatarLimbManager
 		// Fields
 		private const float maxYaw = 90f;
 		private const float maxPitch = 45f;
-		private const float cameraPitchOffset = 25f;
+		private const float cameraPitchOffset = 40f;
+		private const float maxCameraPitch = 80f;
 		private const float yawDeadzone = 135f;
 		private bool shouldLean;
 

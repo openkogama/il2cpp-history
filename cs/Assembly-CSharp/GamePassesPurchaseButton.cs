@@ -11,7 +11,7 @@ using MV.WorldObject.GamePassSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesPurchaseButton : MonoBehaviour
 {
@@ -35,6 +35,9 @@ public class GamePassesPurchaseButton : MonoBehaviour
 	[SerializeField]
 	private GamePassesTextBubble informationTextBubble;
 	private GamePassTier tierDisplayed;
+
+	// Properties
+	public bool IsPurchaseDisabled { get; }
 
 	// Constructors
 	public GamePassesPurchaseButton();

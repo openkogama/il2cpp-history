@@ -4,18 +4,12 @@
 Object * Assembly-CSharp.dll::Newtonsoft::Json::Serialization::ReflectionValueProvider::ReflectionValueProvider_GetValue(ReflectionValueProvider *this,Object *target,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  if (cRam_? == '\0') {
-    func_?(0x59e9);
-    cRam_? = '\x01';
-  }
-  func_?();
-  uStack_1 = 0;
+  puStack_1 = &DAT_?;
+  uStack_2 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_2;
+  uStack_3 = 0;
   pOVar4 = Json::Utilities::ReflectionUtils::ReflectionUtils_GetMemberValue((this->fields)._memberInfo,target,(MethodInfo *)0x0);
-  *unaff_FS_OFFSET = uStack_3;
+  *unaff_FS_OFFSET = uStack_2;
   return pOVar4;
 }
 
@@ -25,18 +19,12 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Serialization::ReflectionValuePr
 void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::ReflectionValueProvider::ReflectionValueProvider_SetValue(ReflectionValueProvider *this,Object *target,Object *value,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  if (cRam_? == '\0') {
-    func_?(0x59ea);
-    cRam_? = '\x01';
-  }
-  func_?();
-  uStack_1 = 0;
+  puStack_1 = &DAT_?;
+  uStack_2 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_2;
+  uStack_3 = 0;
   Json::Utilities::ReflectionUtils::ReflectionUtils_SetMemberValue((this->fields)._memberInfo,target,value,(MethodInfo *)0x0);
-  *unaff_FS_OFFSET = uStack_3;
+  *unaff_FS_OFFSET = uStack_2;
   return;
 }
 
@@ -47,24 +35,13 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::ReflectionValueProvid
 
 {
   if (cRam_? == '\0') {
-    func_?(0x59eb);
+    func_?(&StringLiteral_memberInfo);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  paramName = StringLiteral_memberInfo;
-  if (cRam_? == '\0') {
-    func_?(0x6ce4);
-    cRam_? = '\x01';
-  }
-  if (memberInfo != (MemberInfo_1 *)0x0) {
-    (this->fields)._memberInfo = memberInfo;
-    return;
-  }
-  this_00 = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
-  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1(this_00,paramName,(MethodInfo *)0x0);
-  func_?(this_00);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)memberInfo,StringLiteral_memberInfo,(MethodInfo *)0x0);
+  (this->fields)._memberInfo = memberInfo;
+  func_?(&this->fields,memberInfo);
   return;
 }
 

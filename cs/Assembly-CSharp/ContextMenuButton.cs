@@ -10,7 +10,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ContextMenuButton : MonoBehaviour, IPointerDownHandler
 {
@@ -19,16 +19,30 @@ public class ContextMenuButton : MonoBehaviour, IPointerDownHandler
 	private Button button;
 	[SerializeField]
 	private UnityEngine.UI.Text text;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IHandlePointerDownOnContextMenuButton> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IHandlePointerDownOnContextMenuButton> __9__4_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPointerDown_b__4_0(IHandlePointerDownOnContextMenuButton x, BaseEventData y);
+	}
 
 	// Constructors
 	public ContextMenuButton();
 
 	// Methods
 	public void Initialize(string buttonText, UnityAction onClickCallback);
+	public void Initialize(string buttonText);
 	public void OnPointerDown(PointerEventData eventData);
-	[CompilerGenerated]
-	private static void _OnPointerDown_m__0(IHandlePointerDownOnContextMenuButton x, BaseEventData y);
 }
 

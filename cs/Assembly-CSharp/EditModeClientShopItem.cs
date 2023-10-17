@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class EditModeClientShopItem : MonoBehaviour
 {
@@ -28,39 +28,53 @@ public class EditModeClientShopItem : MonoBehaviour
 	private InventoryItemPreviewer objectPreviewer;
 	private bool initialized;
 	private MVWorldObjectDocumentationType documentationType;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Properties
 	public MVWorldObjectDocumentationType DocumentationType { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _SlotPressed_c__AnonStorey0
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal InventoryItem inventoryItem;
+		public InventoryItem inventoryItem;
 
 		// Constructors
-		public _SlotPressed_c__AnonStorey0();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0(IAddItemFromInventory x, BaseEventData y);
+		internal void _SlotPressed_b__1(IAddItemFromInventory x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__12_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__13_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _SlotPressed_b__12_0(IUIStack handler, BaseEventData data);
+		internal void _ShowPurchasePopUp_b__13_0(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowPurchasePopUp_c__AnonStorey1
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal ItemPurchasePopup purchasePopup;
+		public ItemPurchasePopup purchasePopup;
 
 		// Constructors
-		public _ShowPurchasePopUp_c__AnonStorey1();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowPurchasePopUp_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -72,9 +86,5 @@ public class EditModeClientShopItem : MonoBehaviour
 	public void ShowPurchasePopUp();
 	public void Update();
 	public InventoryItem GetItem();
-	[CompilerGenerated]
-	private static void _SlotPressed_m__0(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowPurchasePopUp_m__1(IUIStack handler, BaseEventData data);
 }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MaterialViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -32,38 +32,52 @@ public class MaterialViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExi
 	private ToolTip toolTip;
 	[SerializeField]
 	private GameObject mouseHoverDescriptionFrame;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnClick_c__AnonStorey0
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal MaterialPurchasePopup materialPurchasePopup;
+		public MaterialPurchasePopup materialPurchasePopup;
 
 		// Constructors
-		public _OnClick_c__AnonStorey0();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnClick_b__3(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__11_2;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__11_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__13_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnClick_b__11_2(IUIStack handler, BaseEventData data);
+		internal void _OnClick_b__11_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnInfoClick_b__13_0(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnInfoClick_c__AnonStorey1
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal MaterialPurchasePopup materialPurchasePopup;
+		public MaterialPurchasePopup materialPurchasePopup;
 
 		// Constructors
-		public _OnInfoClick_c__AnonStorey1();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnInfoClick_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -77,12 +91,6 @@ public class MaterialViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExi
 	public void OnPointerEnter(PointerEventData eventData);
 	public void OnPointerExit(PointerEventData eventData);
 	[CompilerGenerated]
-	private static void _OnClick_m__0(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _OnClick_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _OnClick_m__2(IMaterialClicked x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnInfoClick_m__3(IUIStack handler, BaseEventData data);
+	private void _OnClick_b__11_1(IMaterialClicked x, BaseEventData y);
 }
 

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TouristSignupClickable : MonoBehaviour
 {
@@ -22,16 +22,16 @@ public class TouristSignupClickable : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnClick_c__AnonStorey0
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal GameObject popup;
+		public GameObject popup;
 
 		// Constructors
-		public _OnClick_c__AnonStorey0();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnClick_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

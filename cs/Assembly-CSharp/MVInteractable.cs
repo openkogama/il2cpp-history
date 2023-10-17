@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVInteractable : MVInteractableBase
 {
@@ -40,6 +40,6 @@ public abstract class MVInteractable : MVInteractableBase
 	public override bool HasModifierEffect(AvatarModifierEffect avatarModifierEffect);
 	public override float HandleModifierEffect(AvatarModifierEffect avatarModifierEffect, float baseValue);
 	[CompilerGenerated]
-	private void _Init_m__0(AvatarModifierPackage modifier);
+	private void _Init_b__10_0(AvatarModifierPackage modifier);
 }
 

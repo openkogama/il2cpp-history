@@ -5,16 +5,18 @@ void Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_Awake(MVCount
 
 {
   if (cRam_? == '\0') {
-    func_?(0x44a8);
+    func_?(&TypeInfo__UnityEngine__Material);
     cRam_? = '\x01';
   }
   this_00 = MVCountingCubeDigit_get_MeshRenderer(this,(MethodInfo *)0x0);
   source = (this->fields).CountingCubeDigitMaterial;
   this_01 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-  UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1(this_01,source,(MethodInfo *)0x0);
-  if (this_00 != (MeshRenderer *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial((Renderer *)this_00,this_01,(MethodInfo *)0x0);
-    return;
+  if (this_01 != (Material *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1(this_01,source,(MethodInfo *)0x0);
+    if (this_00 != (MeshRenderer *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial((Renderer *)this_00,this_01,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -60,17 +62,19 @@ MeshRenderer * Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_get
 
 {
   if (cRam_? == '\0') {
-    func_?(0x44a9);
+    func_?(&UnityEngine__MeshRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::MeshRenderer>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  x = (this->fields).meshRenderer;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pMVar1 = (this->fields).meshRenderer;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58((Component_1 *)this,UnityEngine__MeshRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::MeshRenderer>__);
-    (this->fields).meshRenderer = (MeshRenderer *)pMVar2;
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pMVar1 = (MeshRenderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__MeshRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::MeshRenderer>__);
+    (this->fields).meshRenderer = pMVar1;
+    func_?(&(this->fields).meshRenderer,pMVar1);
   }
   return (this->fields).meshRenderer;
 }
@@ -99,7 +103,7 @@ void Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_set_Number(MV
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;

@@ -10,7 +10,7 @@ using CodeStage.AntiCheat.ObscuredTypes;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PickUpItemHealRay : PickupItem
 {
@@ -30,6 +30,7 @@ public class PickUpItemHealRay : PickupItem
 	private AudioSource audioSource;
 	private float rayStartTime;
 	private GameObject stuckObject;
+	private bool damageRay;
 	private bool isLockedOn;
 	private bool isShooting;
 	private ObscuredFloat currentAmmoLeft;
@@ -37,7 +38,7 @@ public class PickUpItemHealRay : PickupItem
 	private float elapsedUpdateWaitTime;
 	private Vector3 hitOffset;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("How many seconds the healrays ammo lasts.")]
 	private ObscuredFloat maxAmmoTime;
 	private LayerMask layers;
 	private const float hitGroundStartPositionMidifier = 0.6f;
@@ -52,6 +53,8 @@ public class PickUpItemHealRay : PickupItem
 	private Material normalRayMaterial;
 	private ParticleSystemRenderer particleRenderer;
 	private const string stuckObjectIDString = "S";
+	private static readonly Color lockOnColorHealing;
+	private static readonly Color lockOnColorDamaging;
 
 	// Properties
 	public override AvatarItemType Type { get; }
@@ -76,6 +79,7 @@ public class PickUpItemHealRay : PickupItem
 
 	// Constructors
 	public PickUpItemHealRay();
+	static PickUpItemHealRay();
 
 	// Methods
 	private void Awake();
@@ -119,6 +123,7 @@ public class PickUpItemHealRay : PickupItem
 	private void UpdateItemState(int stuckObjectId);
 	private Vector3 CalculateStuckPosition();
 	public override void OnStateChanged(Dictionary<object, object> newState);
+	private static bool IsDamageRay(MVPickupOwner shooter, MVWorldObjectClient stuckWorldObject);
 	private void SyncState(Dictionary<object, object> newState);
 	private void ChangeValueInState(Dictionary<object, object> newState, string key, int value);
 	private void ChangeValueInState(Dictionary<object, object> newState, string key, float value);

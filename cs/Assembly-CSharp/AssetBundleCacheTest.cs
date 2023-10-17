@@ -7,31 +7,27 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal static class AssetBundleCacheTest
 {
 	// Fields
 	private const string assetUrl = "Test/bignoise.unity3d";
-	[CompilerGenerated]
-	private static Action<UnityWebRequest, float, int> __f__mg_cache0;
-	[CompilerGenerated]
-	private static Action<UnityWebRequest, float, int> __f__mg_cache1;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DownloadTestAsset_c__AnonStorey0
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal Action<UnityWebRequest, float, int> onDownloadFinished;
-		internal float startTime;
-		internal int currentStreamingAssetVersion;
+		public Action<UnityWebRequest, float, int> onDownloadFinished;
+		public float startTime;
+		public int currentStreamingAssetVersion;
 
 		// Constructors
-		public _DownloadTestAsset_c__AnonStorey0();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal void __m__0(UnityWebRequest www);
+		internal void _DownloadTestAsset_b__0(UnityWebRequest www);
 	}
 
 	// Methods

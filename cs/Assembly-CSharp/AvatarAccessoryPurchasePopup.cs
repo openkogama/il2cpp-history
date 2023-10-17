@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarAccessoryPurchasePopup : MonoBehaviour
 {
@@ -46,55 +46,69 @@ public class AvatarAccessoryPurchasePopup : MonoBehaviour
 	private GameObject emptyFrame;
 	private int price;
 	private string previewImageUrl;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal int returnCode;
-		internal AvatarAccessoryPurchasePopup _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__18_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__19_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _Purchase_b__18_0(IModalPopupCreator x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__19_0(IUIStack x, BaseEventData y);
+		internal void _OnGoldPurchaseDialogResult_b__21_0(IUIStack x, BaseEventData y);
+		internal void _Pop_b__24_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _HandleInsufficientResources_c__AnonStorey1
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
-		internal AvatarAccessoryErrorPopup confirmationPopup;
+		public int returnCode;
+		public AvatarAccessoryPurchasePopup __4__this;
 
 		// Constructors
-		public _HandleInsufficientResources_c__AnonStorey1();
+		public __c__DisplayClass19_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _SuccessfulPopupCallBack_c__AnonStorey2
+	private sealed class __c__DisplayClass20_0
 	{
 		// Fields
-		internal PurchasedAccessoryPreviewer popup;
-		internal AvatarAccessoryPurchasePopup _this;
+		public AvatarAccessoryErrorPopup confirmationPopup;
 
 		// Constructors
-		public _SuccessfulPopupCallBack_c__AnonStorey2();
+		public __c__DisplayClass20_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _HandleInsufficientResources_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass23_0
+	{
+		// Fields
+		public PurchasedAccessoryPreviewer popup;
+		public AvatarAccessoryPurchasePopup __4__this;
+
+		// Constructors
+		public __c__DisplayClass23_0();
+
+		// Methods
+		internal void _SuccessfulPopupCallBack_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -112,13 +126,5 @@ public class AvatarAccessoryPurchasePopup : MonoBehaviour
 	private void HandlePrices(AccessoryDataClient streamingAssetInfo);
 	private void HandleNotOwnedUI();
 	private void OnPreviewImageDownLoaded();
-	[CompilerGenerated]
-	private static void _Purchase_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ProductPurchaseResponseHandler_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnGoldPurchaseDialogResult_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Pop_m__3(IUIStack x, BaseEventData y);
 }
 

@@ -10,7 +10,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PickController : MonoBehaviour
 {
@@ -26,21 +26,35 @@ public class PickController : MonoBehaviour
 	private UnityAction<int> pickCallback;
 	private bool shouldSetText;
 	private int pickedWoId;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass7_0
 	{
 		// Fields
-		internal PickHelper picker;
+		public PickHelper picker;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass7_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Initialize_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__8_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _SelectionChanged_b__8_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -51,7 +65,5 @@ public class PickController : MonoBehaviour
 	public void SelectionChanged(MVWorldObjectClient wo, MVWorldObjectClient parent);
 	public void Refresh();
 	private int FindParentID(Transform t);
-	[CompilerGenerated]
-	private static void _SelectionChanged_m__0(IUIStack x, BaseEventData y);
 }
 

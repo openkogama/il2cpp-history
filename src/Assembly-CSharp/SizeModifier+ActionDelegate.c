@@ -5,7 +5,7 @@ IAsyncResult * Assembly-CSharp.dll::SizeModifier+ActionDelegate::SizeModifier_Ac
 
 {
   if (cRam_? == '\0') {
-    func_?(0xe8);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

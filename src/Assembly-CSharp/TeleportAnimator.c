@@ -8,6 +8,7 @@ void Assembly-CSharp.dll::TeleportAnimator::TeleportAnimator_Awake(TeleportAnima
   if (this_00 != (Renderer *)0x0) {
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material(this_00,(MethodInfo *)0x0);
     (this->fields)._material = pMVar1;
+    func_?(&(this->fields)._material,pMVar1);
     return;
   }
   func_?();
@@ -23,21 +24,20 @@ void Assembly-CSharp.dll::TeleportAnimator::TeleportAnimator_Update(TeleportAnim
 
 {
   if (cRam_? == '\0') {
-    func_?(0x6435);
+    func_?(&StringLiteral__MainTex);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._material;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  VStack_2.x = 0.0;
-  VStack_2.y = 0.0;
-  func_?(&VStack_2,fVar1 * 0.1,0,0);
   if (this_00 != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureOffset(this_00,StringLiteral__MainTex,VStack_2,(MethodInfo *)0x0);
+    value.y = 0.0;
+    value.x = fVar1 * 0.1;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureOffset(this_00,StringLiteral__MainTex,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

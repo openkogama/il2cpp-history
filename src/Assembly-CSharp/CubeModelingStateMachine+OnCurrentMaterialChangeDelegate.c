@@ -5,13 +5,12 @@ IAsyncResult * Assembly-CSharp.dll::CubeModelingStateMachine+OnCurrentMaterialCh
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4ef9);
+    func_?(&TypeInfo__System__Byte);
     cRam_? = '\x01';
   }
   uStack_1 = 0;
-  uStack_2 = 0;
-  uVar3 = func_?(TypeInfo__System__Byte,&currentMaterialId);
-  uStack_2 = CONCAT44(currentMaterial,uVar3);
+  uStack_2 = func_?(TypeInfo__System__Byte,&currentMaterialId);
+  pMStack_3 = currentMaterial;
   pIVar4 = (IAsyncResult *)func_?(this,&uStack_2,callback,object);
   return pIVar4;
 }

@@ -5,7 +5,7 @@ IAsyncResult * Assembly-CSharp.dll::MoveAnimationBase+OnMoveAnimationStoppedDele
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4f02);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

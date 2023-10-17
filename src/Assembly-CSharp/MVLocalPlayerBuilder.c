@@ -5,22 +5,19 @@ void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToBuildM
 
 {
   if (cRam_? == '\0') {
-    func_?(0x464d);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   pSVar1 = (this->fields)._._.spawnRolesMetaData;
-  if ((pSVar1 != (SpawnRolesMetaData *)0x0) && (this_00 = (pSVar1->fields).spawnRolesDefaultTypeWoIDMap, this_00 != (Dictionary_2_MV_WorldObject_SpawnRoles_DefaultSpawnRoleType_System_Int32_ *)0x0)) {
-    existingAvatarWoId = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,System::Int32]::Dictionary_2_MV_WorldObject_SpawnRoles_DefaultSpawnRoleType_System_Int32__get_Item(this_00,DefaultSpawnRoleType__Enum_BuildModeSpawnRole,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
+  if ((pSVar1 != (SpawnRolesMetaData *)0x0) && (this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).spawnRolesDefaultTypeWoIDMap, this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)) {
+    existingAvatarWoId = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item(this_00,1,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
     if (this_01 != (MVLocalPlayer *)0x0) {
-      MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole(this_01,existingAvatarWoId,(MethodInfo *)0x0);
+      MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole(this_01,(int32_t)existingAvatarWoId,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -33,22 +30,19 @@ void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToDefaul
 
 {
   if (cRam_? == '\0') {
-    func_?(0x464e);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   pSVar1 = (this->fields)._._.spawnRolesMetaData;
-  if ((pSVar1 != (SpawnRolesMetaData *)0x0) && (this_00 = (pSVar1->fields).spawnRolesDefaultTypeWoIDMap, this_00 != (Dictionary_2_MV_WorldObject_SpawnRoles_DefaultSpawnRoleType_System_Int32_ *)0x0)) {
-    existingAvatarWoId = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,System::Int32]::Dictionary_2_MV_WorldObject_SpawnRoles_DefaultSpawnRoleType_System_Int32__get_Item(this_00,DefaultSpawnRoleType__Enum_DefaultPlayModeSpawnRole,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
+  if ((pSVar1 != (SpawnRolesMetaData *)0x0) && (this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).spawnRolesDefaultTypeWoIDMap, this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)) {
+    existingAvatarWoId = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item(this_00,0,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
     if (this_01 != (MVLocalPlayer *)0x0) {
-      MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole(this_01,existingAvatarWoId,(MethodInfo *)0x0);
+      MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole(this_01,(int32_t)existingAvatarWoId,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -60,9 +54,6 @@ void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToDefaul
 void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder__ctor(MVLocalPlayerBuilder *this,int32_t actorNumber,int32_t profileID,String *regionCode,int32_t planetOwnershipTypeID,UserProfileData *userProfileData,MethodInfo *method)
 
 {
-  (this->fields).enterPlayStateData.selectedTeam = 0;
-  (this->fields).enterPlayStateData.selectedSpawnRoleCreator = 0;
-  (this->fields).enterPlayStateData.previousSpawnRoleId = 0;
   MVLocalPlayer::MVLocalPlayer__ctor((MVLocalPlayer *)this,actorNumber,profileID,regionCode,planetOwnershipTypeID,userProfileData,(MethodInfo *)0x0);
   (this->fields).enterPlayStateData.selectedTeam = 5;
   (this->fields).enterPlayStateData.selectedSpawnRoleCreator = -1;
@@ -77,18 +68,19 @@ int32_t Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_get_Buil
 
 {
   if (cRam_? == '\0') {
-    func_?(17999);
+    func_?();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields)._._.spawnRolesMetaData;
-  if ((pSVar1 != (SpawnRolesMetaData *)0x0) && (this_00 = (pSVar1->fields).spawnRolesDefaultTypeWoIDMap, this_00 != (Dictionary_2_MV_WorldObject_SpawnRoles_DefaultSpawnRoleType_System_Int32_ *)0x0)) {
-    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,System::Int32]::Dictionary_2_MV_WorldObject_SpawnRoles_DefaultSpawnRoleType_System_Int32__get_Item(this_00,DefaultSpawnRoleType__Enum_BuildModeSpawnRole,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
-    return iVar2;
+  if ((pSVar1 != (SpawnRolesMetaData *)0x0) && (this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).spawnRolesDefaultTypeWoIDMap, this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item(this_00,1,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__get_Item_MV__WorldObject__SpawnRoles__DefaultSpawnRoleType_);
+    return (int32_t)pOVar2;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  iVar2 = (*pcVar3)();
-  return iVar2;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  iVar5 = (*pcVar4)();
+  return iVar5;
 }
 
 

@@ -9,13 +9,13 @@ using System.Runtime.CompilerServices;
 using ThemeAttributes;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class CloudyThemeBase : Theme
 {
 	// Fields
-	[Header]
-	[Header]
+	[Header("Attributes", order = 1)]
+	[Header("Day/night-cycle", order = 2)]
 	[SerializeField]
 	private BoolAttribute useDayNightCycle;
 	[SerializeField]
@@ -34,19 +34,19 @@ public abstract class CloudyThemeBase : Theme
 	private FloatAttribute moonAltitude;
 	[SerializeField]
 	private FloatAttribute moonLongitude;
-	[Header]
+	[Header("Sky")]
 	[SerializeField]
 	private ColorAttribute topColor;
 	[SerializeField]
 	private ColorAttribute bottomColor;
-	[Header]
+	[Header("Stars")]
 	[SerializeField]
 	private ColorAttribute starsTint;
 	[SerializeField]
 	private FloatAttribute starsExtinction;
 	[SerializeField]
 	private FloatAttribute starsTwinkilingSpeed;
-	[Header]
+	[Header("Sun")]
 	[SerializeField]
 	private ColorAttribute sunTint;
 	[SerializeField]
@@ -61,7 +61,7 @@ public abstract class CloudyThemeBase : Theme
 	private FloatAttribute sunLightIntensity;
 	[SerializeField]
 	private FloatAttribute sunFlareBrightness;
-	[Header]
+	[Header("Moon")]
 	[SerializeField]
 	private ColorAttribute moonTint;
 	[SerializeField]
@@ -76,22 +76,22 @@ public abstract class CloudyThemeBase : Theme
 	private FloatAttribute moonLightIntensity;
 	[SerializeField]
 	private FloatAttribute moonFlareBrightness;
-	[Header]
+	[Header("Clouds")]
 	[SerializeField]
 	private FloatAttribute cloudsHeight;
 	[SerializeField]
 	private FloatAttribute cloudsOffset;
 	[SerializeField]
 	private FloatAttribute cloudsRotationSpeed;
-	[Header]
+	[Header("Fog")]
 	[SerializeField]
 	private BoolAttribute useFog;
 	[SerializeField]
 	private FloatAttribute fogDensity;
-	[Header]
+	[Header("Misc")]
 	[SerializeField]
 	private FloatAttribute exposure;
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	private ThemeSkybox skybox;
 	[SerializeField]
@@ -127,66 +127,66 @@ public abstract class CloudyThemeBase : Theme
 	private void ToggleDayNightCycleUseServerTime(bool b);
 	private void ToggleFog(bool b);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__0(int i);
+	private void _InitializeAttributes_b__44_0(int i);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__1(float f);
+	private void _InitializeAttributes_b__44_1(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__2(float f);
+	private void _InitializeAttributes_b__44_2(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__3(Color c);
+	private void _InitializeAttributes_b__44_3(Color c);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__4(Color c);
+	private void _InitializeAttributes_b__44_4(Color c);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__5(Color c);
+	private void _InitializeAttributes_b__44_5(Color c);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__6(float f);
+	private void _InitializeAttributes_b__44_6(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__7(float f);
+	private void _InitializeAttributes_b__44_7(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__8(Color c);
+	private void _InitializeAttributes_b__44_8(Color c);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__9(float f);
+	private void _InitializeAttributes_b__44_9(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__A(float f);
+	private void _InitializeAttributes_b__44_10(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__B(float f);
+	private void _InitializeAttributes_b__44_11(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__C(float f);
+	private void _InitializeAttributes_b__44_12(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__D(float f);
+	private void _InitializeAttributes_b__44_13(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__E(float f);
+	private void _InitializeAttributes_b__44_14(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__F(float f);
+	private void _InitializeAttributes_b__44_15(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__10(float f);
+	private void _InitializeAttributes_b__44_16(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__11(Color c);
+	private void _InitializeAttributes_b__44_17(Color c);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__12(float f);
+	private void _InitializeAttributes_b__44_18(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__13(float f);
+	private void _InitializeAttributes_b__44_19(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__14(float f);
+	private void _InitializeAttributes_b__44_20(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__15(float f);
+	private void _InitializeAttributes_b__44_21(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__16(float f);
+	private void _InitializeAttributes_b__44_22(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__17(float f);
+	private void _InitializeAttributes_b__44_23(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__18(float f);
+	private void _InitializeAttributes_b__44_24(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__19(float f);
+	private void _InitializeAttributes_b__44_25(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__1A(float f);
+	private void _InitializeAttributes_b__44_26(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__1B(float f);
+	private void _InitializeAttributes_b__44_27(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__1C(float f);
+	private void _InitializeAttributes_b__44_28(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__1D(float f);
+	private void _InitializeAttributes_b__44_29(float f);
 	[CompilerGenerated]
-	private void _InitializeAttributes_m__1E(float f);
+	private void _InitializeAttributes_b__44_30(float f);
 }
 

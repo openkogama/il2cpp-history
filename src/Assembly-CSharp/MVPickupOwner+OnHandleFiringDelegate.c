@@ -5,7 +5,7 @@ IAsyncResult * Assembly-CSharp.dll::MVPickupOwner+OnHandleFiringDelegate::MVPick
 
 {
   if (cRam_? == '\0') {
-    func_?(0x4efb);
+    func_?(&TypeInfo__System__Boolean);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

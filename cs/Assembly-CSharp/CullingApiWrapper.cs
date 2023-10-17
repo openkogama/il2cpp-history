@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class CullingApiWrapper
 {
@@ -23,10 +23,7 @@ public static class CullingApiWrapper
 	private static Dictionary<int, ICullingSubscriber> cullingSubscribers;
 	private static readonly float[] sizes;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static int _NumBoundSpheres_k__BackingField;
-	[CompilerGenerated]
-	private static CullingGroup.StateChanged __f__mg_cache0;
 
 	// Properties
 	public static int NumBoundSpheres { [CompilerGenerated] get; [CompilerGenerated] private set; }

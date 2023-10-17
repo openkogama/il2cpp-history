@@ -10,15 +10,22 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
 	public static class TransformHelper
 	{
 		// Methods
+		public static Vector3 GetPosition(IPosition position);
+		public static Quaternion GetRotation(IRotation rotation);
+		public static Vector3 GetScale(IScale scale);
 		public static Vector3 GetPosition(Dictionary<byte, object> positionData);
 		public static Quaternion GetRotation(Dictionary<byte, object> rotationData);
+		public static Vector3 GetScale(Dictionary<byte, object> scaleData);
+		public static void SetPosition(Vector3 position, IPosition positionObject);
+		public static void SetRotation(Quaternion rotation, IRotation rotationObject);
+		public static void SetScale(Vector3 scale, IScale scaleObject);
 		public static void SetPosition(Vector3 position, Dictionary<byte, object> data);
 		public static void SetRotation(Quaternion rotation, Dictionary<byte, object> data);
 		public static void SetScale(Vector3 scale, Dictionary<byte, object> data);

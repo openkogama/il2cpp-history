@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
@@ -25,9 +25,6 @@ namespace Newtonsoft.Json.Linq
 		private int? _linePosition;
 	
 		// Properties
-		IJEnumerable<JToken> Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>.this[object key] { get => default; }
-		int IJsonLineInfo.LineNumber { get; }
-		int IJsonLineInfo.LinePosition { get; }
 		public static JTokenEqualityComparer EqualityComparer { get; }
 		public JContainer Parent { [DebuggerStepThrough] get; internal set; }
 		public JToken Root { get; }
@@ -38,17 +35,20 @@ namespace Newtonsoft.Json.Linq
 		public virtual JToken this[object key] { get => default; set {} }
 		public virtual JToken First { get; }
 		public virtual JToken Last { get; }
+		IJEnumerable<JToken> Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>.this[object key] { get => default; }
+		int IJsonLineInfo.LineNumber { get; }
+		int IJsonLineInfo.LinePosition { get; }
 	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _Ancestors_c__Iterator0 : IEnumerable<JToken>, IEnumerator<JToken>
+		private sealed class _Ancestors_d__29 : IEnumerable<JToken>, IEnumerator<JToken>
 		{
 			// Fields
-			internal JToken _parent___1;
-			internal JToken _this;
-			internal JToken _current;
-			internal bool _disposing;
-			internal int _PC;
+			private int __1__state;
+			private JToken __2__current;
+			private int __l__initialThreadId;
+			public JToken __4__this;
+			private JToken _parent_5__2;
 	
 			// Properties
 			JToken IEnumerator<Newtonsoft.Json.Linq.JToken>.Current { [DebuggerHidden] get; }
@@ -56,29 +56,29 @@ namespace Newtonsoft.Json.Linq
 	
 			// Constructors
 			[DebuggerHidden]
-			public _Ancestors_c__Iterator0();
+			public _Ancestors_d__29(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
 			[DebuggerHidden]
-			public void Reset();
-			[DebuggerHidden]
-			IEnumerator IEnumerable.GetEnumerator();
+			void IEnumerator.Reset();
 			[DebuggerHidden]
 			IEnumerator<JToken> IEnumerable<JToken>.GetEnumerator();
+			[DebuggerHidden]
+			IEnumerator IEnumerable.GetEnumerator();
 		}
 	
 		[CompilerGenerated]
-		private sealed class _AfterSelf_c__Iterator1 : IEnumerable<JToken>, IEnumerator<JToken>
+		private sealed class _AfterSelf_d__30 : IEnumerable<JToken>, IEnumerator<JToken>
 		{
 			// Fields
-			internal JToken _o___1;
-			internal JToken _this;
-			internal JToken _current;
-			internal bool _disposing;
-			internal int _PC;
+			private int __1__state;
+			private JToken __2__current;
+			private int __l__initialThreadId;
+			public JToken __4__this;
+			private JToken _o_5__2;
 	
 			// Properties
 			JToken IEnumerator<Newtonsoft.Json.Linq.JToken>.Current { [DebuggerHidden] get; }
@@ -86,29 +86,29 @@ namespace Newtonsoft.Json.Linq
 	
 			// Constructors
 			[DebuggerHidden]
-			public _AfterSelf_c__Iterator1();
+			public _AfterSelf_d__30(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
 			[DebuggerHidden]
-			public void Reset();
-			[DebuggerHidden]
-			IEnumerator IEnumerable.GetEnumerator();
+			void IEnumerator.Reset();
 			[DebuggerHidden]
 			IEnumerator<JToken> IEnumerable<JToken>.GetEnumerator();
+			[DebuggerHidden]
+			IEnumerator IEnumerable.GetEnumerator();
 		}
 	
 		[CompilerGenerated]
-		private sealed class _BeforeSelf_c__Iterator2 : IEnumerable<JToken>, IEnumerator<JToken>
+		private sealed class _BeforeSelf_d__31 : IEnumerable<JToken>, IEnumerator<JToken>
 		{
 			// Fields
-			internal JToken _o___1;
-			internal JToken _this;
-			internal JToken _current;
-			internal bool _disposing;
-			internal int _PC;
+			private int __1__state;
+			private JToken __2__current;
+			private int __l__initialThreadId;
+			public JToken __4__this;
+			private JToken _o_5__2;
 	
 			// Properties
 			JToken IEnumerator<Newtonsoft.Json.Linq.JToken>.Current { [DebuggerHidden] get; }
@@ -116,18 +116,18 @@ namespace Newtonsoft.Json.Linq
 	
 			// Constructors
 			[DebuggerHidden]
-			public _BeforeSelf_c__Iterator2();
+			public _BeforeSelf_d__31(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
 			[DebuggerHidden]
-			public void Reset();
-			[DebuggerHidden]
-			IEnumerator IEnumerable.GetEnumerator();
+			void IEnumerator.Reset();
 			[DebuggerHidden]
 			IEnumerator<JToken> IEnumerable<JToken>.GetEnumerator();
+			[DebuggerHidden]
+			IEnumerator IEnumerable.GetEnumerator();
 		}
 	
 		// Constructors
@@ -139,11 +139,11 @@ namespace Newtonsoft.Json.Linq
 		public static bool DeepEquals(JToken t1, JToken t2);
 		public void AddAfterSelf(object content);
 		public void AddBeforeSelf(object content);
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_Ancestors_d__29))]
 		public IEnumerable<JToken> Ancestors();
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_AfterSelf_d__30))]
 		public IEnumerable<JToken> AfterSelf();
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_BeforeSelf_d__31))]
 		public IEnumerable<JToken> BeforeSelf();
 		public virtual T Value<T>(object key);
 		public virtual JEnumerable<JToken> Children();

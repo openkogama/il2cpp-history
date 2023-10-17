@@ -15,7 +15,8 @@ void Assembly-CSharp.dll::PostRequest::PostRequest__ctor(PostRequest *this,Strin
 
 {
   if (cRam_? == '\0') {
-    func_?(0x52aa);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&StringLiteral_binary);
     cRam_? = '\x01';
   }
   AsyncWebRequest::AsyncWebRequest__ctor((AsyncWebRequest *)this,path,callback,requestPriority,(MethodInfo *)0x0);
@@ -23,6 +24,7 @@ void Assembly-CSharp.dll::PostRequest::PostRequest__ctor(PostRequest *this,Strin
   if (form != (WWWForm *)0x0) {
     UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddBinaryData(form,StringLiteral_binary,contents,(MethodInfo *)0x0);
     (this->fields).form = form;
+    func_?();
     return;
   }
   func_?();

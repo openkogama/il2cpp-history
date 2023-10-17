@@ -13,20 +13,20 @@ using MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.AttributeSettings;
 using MV.WorldObject.SpawnRoles;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVAvatarSpawnRoleCreator : MVBlueprintBase, ISpawnRolePreviewObject
 {
 	// Fields
 	private MVAvatarSpawnRoleCreatorObject spawnRoleCreatorObject;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _AvatarRuntimePrototypeRoot_k__BackingField;
 	private bool isInWorld;
 	private UseInteractor useInteractor;
 	private readonly SettingsReporter settingsReporter;
 	private CullingSubscriberDynamic cullingSubscriberDynamic;
 	public Action OnBodyUpdate;
+	public Action OnRedoObjectLinks;
 	public const string teamKey = "team";
 	public const string tierKey = "RequiredRank";
 
@@ -44,7 +44,7 @@ public class MVAvatarSpawnRoleCreator : MVBlueprintBase, ISpawnRolePreviewObject
 	// Methods
 	public override void Initialize();
 	public override void InitializeInventory();
-	public void UpdateAvatarBody(SpawnRoleBodySwitchData spawnRoleBodySwitchData);
+	public void UpdateAvatarBody(SpawnRoleBodySwitchData spawnRoleBodySwitchData, bool removedObjectLinks);
 	public GameObject GetSpawnRolePreviewObject();
 	public MVTeam GetTeamRequirement();
 	public GamePassTier GetTierRequirement();

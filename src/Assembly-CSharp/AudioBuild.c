@@ -5,18 +5,21 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Awake(AudioBuild *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(0xefc);
+    func_?(&UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::AudioSource>__);
+    func_?(&TypeInfo__UnityEngine__GameObject);
     cRam_? = '\x01';
   }
   this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this_00,(MethodInfo *)0x0);
   if (this_00 != (GameObject *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this_00,(MethodInfo *)0x0);
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
-    value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
+    value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(this_01,value,(MethodInfo *)0x0);
-      pAVar1 = (AudioSource *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_85(this_00,UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::AudioSource>__);
+      pAVar1 = (AudioSource *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_00,UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::AudioSource>__);
       (this->fields).buildSource = pAVar1;
+      func_?();
+      pAVar1 = (this->fields).buildSource;
       if (pAVar1 != (AudioSource *)0x0) {
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_playOnAwake(pAVar1,0,(MethodInfo *)0x0);
         pAVar1 = (this->fields).buildSource;
@@ -108,7 +111,7 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_PlayClip(AudioBuild *this,Vecto
       return;
     }
     pAVar1 = (this->fields).buildSource;
-    if ((pAVar1 != (AudioSource *)0x0) && (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)pAVar1,(MethodInfo *)0x0), this_00 != (Transform *)0x0)) {
+    if ((pAVar1 != (AudioSource *)0x0) && (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pAVar1,(MethodInfo *)0x0), this_00 != (Transform *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_00,worldPos,(MethodInfo *)0x0);
       pAVar1 = (this->fields).buildSource;
       if (pAVar1 != (AudioSource *)0x0) {
@@ -123,7 +126,7 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_PlayClip(AudioBuild *this,Vecto
             UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume(pAVar1,fVar2,(MethodInfo *)0x0);
             pAVar1 = (this->fields).buildSource;
             if (pAVar1 != (AudioSource *)0x0) {
-              UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(pAVar1,(MethodInfo *)0x0);
+              UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play(pAVar1,(MethodInfo *)0x0);
               return;
             }
           }
@@ -144,7 +147,7 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Translate(AudioBuild *this,floa
 
 {
   if (cRam_? == '\0') {
-    func_?(0xefd);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).buildSource;
@@ -158,7 +161,7 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Translate(AudioBuild *this,floa
       return;
     }
     pAVar1 = (this->fields).buildSource;
-    if ((pAVar1 == (AudioSource *)0x0) || (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)pAVar1,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) goto code_?;
+    if ((pAVar1 == (AudioSource *)0x0) || (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pAVar1,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,worldPos,(MethodInfo *)0x0);
     moveValue = (float)(this->fields).buildSource;
     if ((AudioSource *)moveValue == (AudioSource *)0x0) goto code_?;
@@ -176,7 +179,7 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Translate(AudioBuild *this,floa
       if (pAVar1 == (AudioSource *)0x0) goto code_?;
       x = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip(pAVar1,(MethodInfo *)0x0);
       y = (this->fields).translateNotGrid;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       in_stack_5 = (MethodInfo *)&UNK_?;
@@ -186,7 +189,7 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Translate(AudioBuild *this,floa
       }
     }
     pAVar1 = (this->fields).buildSource;
-    if ((pAVar1 == (AudioSource *)0x0) || (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform((Component_1 *)pAVar1,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) goto code_?;
+    if ((pAVar1 == (AudioSource *)0x0) || (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pAVar1,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,worldPos,(MethodInfo *)0x0);
     pAVar1 = (this->fields).buildSource;
     if (pAVar1 == (AudioSource *)0x0) goto code_?;
@@ -204,13 +207,13 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Translate(AudioBuild *this,floa
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume(pAVar1,fVar4,(MethodInfo *)0x0);
     pAVar1 = (this->fields).buildSource;
     if (pAVar1 != (AudioSource *)0x0) {
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(pAVar1,(MethodInfo *)0x0);
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play(pAVar1,(MethodInfo *)0x0);
       (this->fields).currentTranslateMoveValue = moveValue;
       return;
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;
@@ -233,20 +236,20 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild__ctor(AudioBuild *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(0xefe);
+    func_?(&TypeInfo__UnityEngine__AudioSource);
     cRam_? = '\x01';
   }
   this_00 = (AudioSource *)func_?(TypeInfo__UnityEngine__AudioSource);
-  UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields).buildSource = this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (AudioSource *)0x0) {
+    Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this_00,(MethodInfo *)0x0);
+    (this->fields).buildSource = this_00;
+    func_?(&(this->fields).buildSource,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleLooksEditorMenu : MonoBehaviour
 {
@@ -30,17 +30,33 @@ public class SpawnRoleLooksEditorMenu : MonoBehaviour
 	private int renewPreviewerFrameDelay;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _OnAvatarChangeButtonPressed_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal SpawnRoleAvatarSelectionMenu avatarSelectionMenu;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__10_0;
 
 		// Constructors
-		public _OnAvatarChangeButtonPressed_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnSpawnRoleRedoObjectLinks_b__10_0(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass11_0
+	{
+		// Fields
+		public SpawnRoleAvatarSelectionMenu avatarSelectionMenu;
+
+		// Constructors
+		public __c__DisplayClass11_0();
+
+		// Methods
+		internal void _OnAvatarChangeButtonPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -48,6 +64,7 @@ public class SpawnRoleLooksEditorMenu : MonoBehaviour
 
 	// Methods
 	public void Initialize(int spawnRoleId, MVAvatarSpawnRoleCreator spawnRole);
+	private void OnSpawnRoleRedoObjectLinks();
 	public void OnAvatarChangeButtonPressed();
 	private void Update();
 	private void SetupPreviewImage(GameObject spawnRolePreviewObject);

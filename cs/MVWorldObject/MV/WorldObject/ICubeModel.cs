@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -19,7 +19,10 @@ namespace MV.WorldObject
 		Vector3 Scale { get; }
 	
 		// Methods
+		bool ContainsCube(IntVector localPos);
 		CubeBase GetCubeBase(IntVector localPos);
+		void AddCube(IntVector pos, CubeBase cube);
+		void RemoveCube(IntVector pos);
 		void AddCubeNetworkUpdate(IntVector pos, CubeBase cube);
 		void RemoveCubeNetworkUpdate(IntVector pos);
 	}

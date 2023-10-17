@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AdvancedGhostMotor : MVRigidBody
 {
@@ -20,7 +20,6 @@ public class AdvancedGhostMotor : MVRigidBody
 	private Vector3 velocity;
 	private float speedSmoothing;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _MoveDirection_k__BackingField;
 	private MVInteractableBase interactable;
 	private SmoothPhysicsMovement smoothPhysicsMovement;

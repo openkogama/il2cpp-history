@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ChatControllerUGUI : MonoBehaviour
 {
@@ -99,6 +99,6 @@ public class ChatControllerUGUI : MonoBehaviour
 	private void OnEnable();
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _Start_m__0(IShortcutKeyRegister x, BaseEventData y);
+	private void _Start_b__35_0(IShortcutKeyRegister x, BaseEventData y);
 }
 

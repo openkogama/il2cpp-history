@@ -4,89 +4,64 @@
 void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::AvatarLimbManager_AvatarNodEmote_HandleRotation(AvatarLimbManager_AvatarNodEmote *this,MethodInfo *method)
 
 {
+  unique0x1000008d = (double)(((((this->fields)._.duration / (this->fields)._.lifeTime) * 5.0) / 10.0) * 10.0);
+  fVar1 = (float10)func_?(unique0x1000008d);
   if (cRam_? == '\0') {
-    func_?(0x1085);
+    func_?(&TypeInfo__UnityEngine__Quaternion);
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields)._.duration;
-  fVar2 = (this->fields)._.lifeTime;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
-  }
-  uStack_3 = (double)((((fVar1 / fVar2) * 5.0) / 10.0) * 10.0);
-  fVar4 = (float10)func_?(SUB84(uStack_3,0),(int)((ulonglong)uStack_3 >> 0x20));
-  uStack_3 = (double)fVar4;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Quaternion);
-  }
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity((Quaternion *)&stack0xffffffcc,(MethodInfo *)0x0);
-  fStack_6 = pQVar5->x;
-  fStack_7 = pQVar5->y;
-  fStack_8 = pQVar5->z;
-  fStack_9 = pQVar5->w;
-  uStack_3 = (double)((float)fVar4 + 1.0);
-  fVar4 = (float10)func_?();
-  fStack_10 = 0.0;
-  uStack_3._0_4_ = 0.0;
-  uStack_3._4_4_ = 0.0;
-  if ((float)fVar4 == 0.0) {
-    uVar11 = 0x41700000;
+  unique0x10000095 = (double)((float)fVar1 + 1.0);
+  fVar1 = (float10)func_?();
+  stack0xfffffff4 = (double)((ulonglong)(double)fVar1 & 0xffffffff);
+  if ((float)fVar1 == 0.0) {
+    uVar2 = 0x3e860a92;
   }
   else {
-    uVar11 = 0x43ac8000;
+    uVar2 = 0x40c0af31;
   }
-  func_?(&fStack_10,uVar11,0,0);
-  func_?(&fStack_6,fStack_10,(float)uStack_3,uStack_3._4_4_);
-  fStack_12 = fStack_6;
-  fStack_10 = fStack_7;
-  uStack_3._0_4_ = fStack_8;
-  uStack_3._4_4_ = fStack_9;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pLVar13 = (this->fields).headController;
-  if (pLVar13 != (LimbController *)0x0) {
-    pQVar5 = LimbController::LimbController_get_InterpolateTowardsPitchRotation((Quaternion *)&stack0xffffffcc,pLVar13,(MethodInfo *)0x0);
-    fVar1 = pQVar5->x;
-    fVar2 = pQVar5->y;
-    puVar14 = (undefined *)pQVar5->z;
-    pQVar15 = (Quaternion__Class *)pQVar5->w;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      puVar14 = &UNK_?;
-      pQVar15 = TypeInfo__UnityEngine__Quaternion;
-      func_?();
-    }
-    lhs.y = fVar2;
-    lhs.x = fVar1;
-    lhs.z = (float)puVar14;
-    lhs.w = (float)pQVar15;
-    rhs.y = fStack_10;
-    rhs.x = fStack_12;
-    rhs.z = (float)uStack_3;
-    rhs.w = uStack_3._4_4_;
-    bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Inequality(lhs,rhs,(MethodInfo *)0x0);
-    if (bVar16 == 0) {
+  euler.y = 0.0;
+  euler.z = 0.0;
+  euler.x = (float)uVar2;
+  pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)auStack_4,euler,(MethodInfo *)0x0);
+  fVar5 = pQVar3->x;
+  fVar6 = pQVar3->y;
+  fVar7 = pQVar3->z;
+  fVar8 = pQVar3->w;
+  pLVar9 = (this->fields).headController;
+  if (pLVar9 != (LimbController *)0x0) {
+    if (0.999999 < fVar6 * (pLVar9->fields).interpolateTowardsPitchRotation.y + fVar5 * (pLVar9->fields).interpolateTowardsPitchRotation.x + fVar7 * (pLVar9->fields).interpolateTowardsPitchRotation.z + fVar8 * (pLVar9->fields).interpolateTowardsPitchRotation.w) {
       return;
     }
-    pLVar13 = (this->fields).headController;
-    if (pLVar13 != (LimbController *)0x0) {
-      LimbController::LimbController_ResetInterpolation(pLVar13,(MethodInfo *)0x0);
-      pLVar13 = (this->fields).headController;
-      if (pLVar13 != (LimbController *)0x0) {
-        pQVar5 = LimbController::LimbController_get_InterpolateTowardsYawRotation((Quaternion *)&stack0xffffffcc,pLVar13,(MethodInfo *)0x0);
-        PitchRotation.y = fStack_10;
-        PitchRotation.x = fStack_12;
-        PitchRotation.z = (float)uStack_3;
-        PitchRotation.w = uStack_3._4_4_;
-        LimbController::LimbController_SetNewRotation(pLVar13,*pQVar5,PitchRotation,(MethodInfo *)0x0);
+    if (pLVar9 != (LimbController *)0x0) {
+      (pLVar9->fields).elapsedInterpolationTime = 0.0;
+      (pLVar9->fields).elapsedInterpolateAnimationTime = 0.0;
+      (pLVar9->fields).shouldRotate = 1;
+      (pLVar9->fields).rotationDuration = 0.0;
+      pLVar9 = (this->fields).headController;
+      if (pLVar9 != (LimbController *)0x0) {
+        fVar10 = (pLVar9->fields).interpolateTowardsYawRotation.x;
+        fVar11 = (pLVar9->fields).interpolateTowardsYawRotation.y;
+        fVar12 = (pLVar9->fields).interpolateTowardsYawRotation.z;
+        fVar13 = (pLVar9->fields).interpolateTowardsYawRotation.w;
+        (pLVar9->fields).elapsedInterpolationTime = 0.0;
+        (pLVar9->fields).elapsedInterpolateAnimationTime = 0.0;
+        (pLVar9->fields).shouldRotate = 1;
+        (pLVar9->fields).rotationDuration = 0.0;
+        (pLVar9->fields).interpolateTowardsYawRotation.x = fVar10;
+        (pLVar9->fields).interpolateTowardsYawRotation.y = fVar11;
+        (pLVar9->fields).interpolateTowardsYawRotation.z = fVar12;
+        (pLVar9->fields).interpolateTowardsYawRotation.w = fVar13;
+        (pLVar9->fields).interpolateTowardsPitchRotation.x = fVar5;
+        (pLVar9->fields).interpolateTowardsPitchRotation.y = fVar6;
+        (pLVar9->fields).interpolateTowardsPitchRotation.z = fVar7;
+        (pLVar9->fields).interpolateTowardsPitchRotation.w = fVar8;
         return;
       }
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -97,20 +72,35 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::AvatarLimbManager_Av
 
 {
   (this->fields)._.limbRotator = limbRotator;
+  func_?(&(this->fields)._.limbRotator,limbRotator);
   (this->fields)._.lifeTime = lifeTime;
   if (limbRotator != (AvatarLimbManager_LimbRotator *)0x0) {
-    this_00 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_GetLimbController(limbRotator,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
-    (this->fields).headController = this_00;
-    if (this_00 != (LimbController *)0x0) {
-      fVar1 = LimbController::LimbController_get_InterpolationSpeed(this_00,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_);
+      cRam_? = '\x01';
+    }
+    bVar1 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_HasLimbController(limbRotator,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      pLVar2 = (LimbController *)0x0;
+    }
+    else {
+      this_00 = (limbRotator->fields).limbControllers;
+      if (this_00 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) goto code_?;
+      pLVar2 = (LimbController *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_);
+    }
+    (this->fields).headController = pLVar2;
+    func_?(&(this->fields).headController,pLVar2);
+    pLVar2 = (this->fields).headController;
+    if (pLVar2 != (LimbController *)0x0) {
+      (this->fields).originalInterpolationSpeed = (pLVar2->fields).interpolationSpeed;
       (this->fields)._.emote = 2;
-      (this->fields).originalInterpolationSpeed = fVar1;
       return;
     }
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -120,44 +110,43 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::AvatarLimbManager_Av
 void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::AvatarLimbManager_AvatarNodEmote_RotateHead(AvatarLimbManager_AvatarNodEmote *this,Quaternion pitchRotation,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(0x1086);
-    cRam_? = '\x01';
-  }
-  pLVar1 = (this->fields).headController;
-  if (pLVar1 != (LimbController *)0x0) {
-    pQVar2 = LimbController::LimbController_get_InterpolateTowardsPitchRotation((Quaternion *)&stack0xffffffec,pLVar1,(MethodInfo *)0x0);
-    puVar3 = (undefined *)pQVar2->x;
-    pQVar4 = (Quaternion__Class *)pQVar2->y;
-    fVar5 = pQVar2->z;
-    fVar6 = pQVar2->w;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      puVar3 = &UNK_?;
-      pQVar4 = TypeInfo__UnityEngine__Quaternion;
-      func_?();
-    }
-    lhs.y = (float)pQVar4;
-    lhs.x = (float)puVar3;
-    lhs.z = fVar5;
-    lhs.w = fVar6;
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Inequality(lhs,pitchRotation,(MethodInfo *)0x0);
-    if (bVar7 == 0) {
+  puStack_1 = &stack0xfffffffc;
+  pLVar2 = (this->fields).headController;
+  if (pLVar2 != (LimbController *)0x0) {
+    if (0.999999 < (pLVar2->fields).interpolateTowardsPitchRotation.y * pitchRotation.y + (pLVar2->fields).interpolateTowardsPitchRotation.x * pitchRotation.x + (pLVar2->fields).interpolateTowardsPitchRotation.z * pitchRotation.z + (pLVar2->fields).interpolateTowardsPitchRotation.w * pitchRotation.w) {
       return;
     }
-    pLVar1 = (this->fields).headController;
-    if (pLVar1 != (LimbController *)0x0) {
-      LimbController::LimbController_ResetInterpolation(pLVar1,(MethodInfo *)0x0);
-      pLVar1 = (this->fields).headController;
-      if (pLVar1 != (LimbController *)0x0) {
-        pQVar2 = LimbController::LimbController_get_InterpolateTowardsYawRotation((Quaternion *)&stack0xffffffec,pLVar1,(MethodInfo *)0x0);
-        LimbController::LimbController_SetNewRotation(pLVar1,*pQVar2,pitchRotation,(MethodInfo *)0x0);
+    if (pLVar2 != (LimbController *)0x0) {
+      (pLVar2->fields).elapsedInterpolationTime = 0.0;
+      (pLVar2->fields).elapsedInterpolateAnimationTime = 0.0;
+      (pLVar2->fields).shouldRotate = 1;
+      (pLVar2->fields).rotationDuration = 0.0;
+      pLVar2 = (this->fields).headController;
+      if (pLVar2 != (LimbController *)0x0) {
+        fVar3 = (pLVar2->fields).interpolateTowardsYawRotation.x;
+        fVar4 = (pLVar2->fields).interpolateTowardsYawRotation.y;
+        fVar5 = (pLVar2->fields).interpolateTowardsYawRotation.z;
+        fVar6 = (pLVar2->fields).interpolateTowardsYawRotation.w;
+        (pLVar2->fields).elapsedInterpolationTime = 0.0;
+        (pLVar2->fields).elapsedInterpolateAnimationTime = 0.0;
+        (pLVar2->fields).interpolateTowardsYawRotation.x = fVar3;
+        (pLVar2->fields).interpolateTowardsYawRotation.y = fVar4;
+        (pLVar2->fields).interpolateTowardsYawRotation.z = fVar5;
+        (pLVar2->fields).interpolateTowardsYawRotation.w = fVar6;
+        (pLVar2->fields).shouldRotate = 1;
+        (pLVar2->fields).rotationDuration = 0.0;
+        (pLVar2->fields).interpolateTowardsPitchRotation.x = pitchRotation.x;
+        (pLVar2->fields).interpolateTowardsPitchRotation.y = pitchRotation.y;
+        (pLVar2->fields).interpolateTowardsPitchRotation.z = pitchRotation.z;
+        (pLVar2->fields).interpolateTowardsPitchRotation.w = pitchRotation.w;
         return;
       }
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar7 = func_?(auStack_8);
+  func_?(uVar7);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -173,7 +162,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::AvatarLimbManager_Av
     fVar1 = fVar1 - fVar2;
     (this->fields)._.duration = fVar1;
     if (fVar1 < 0.0) {
-      (*(code *)(this->klass->vtable).StopEmote.method)(this,this->klass[1]._0.image);
+      (*(this->klass->vtable).StopEmote.methodPtr)(this,(this->klass->vtable).StopEmote.method);
     }
     AvatarLimbManager_AvatarNodEmote_HandleRotation(this,(MethodInfo *)0x0);
   }

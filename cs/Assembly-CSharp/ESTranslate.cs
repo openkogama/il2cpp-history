@@ -8,11 +8,13 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal class ESTranslate : ESStateBase
 {
 	// Fields
+	public const string TranslateModeType = "translateMode";
+	public const string MoveWithAvatar = "moveWithAvatar";
 	private float gridSize;
 	private float stickyModifier;
 	private float completelyStuckLimit;
