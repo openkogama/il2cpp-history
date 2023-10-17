@@ -9,11 +9,18 @@ using System.Runtime.CompilerServices;
 using ExitGames.Client.Photon;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GameSessionData
 {
 	// Fields
+	public const string DataServerIP = "serverIP";
+	public const string DataProfileID = "profileID";
+	public const string DataPlanetID = "planetID";
+	public const string DataGameMode = "gameMode";
+	public const string DataLanguage = "language";
+	public const string DataToken = "token";
+	public const string DataSessionToken = "sessionToken";
 	public string serverIP;
 	public int profileID;
 	public int planetID;
@@ -21,7 +28,7 @@ public class GameSessionData
 	public string language;
 	public bool embedded;
 	public string token;
-	public string newToken;
+	public string sessionToken;
 	public string newPlanetName;
 	public string pingURL;
 	public string disconnectURL;
@@ -40,6 +47,10 @@ public class GameSessionData
 	public string gameRewardDataURL;
 	public string referrer;
 	public bool detailedStats;
+	public bool playButtonAdsEnabledDefault;
+	public bool boostersEnabledDefault;
+	public bool interstitialsAdsEnabledDefault;
+	public bool rewardedAdsEnabledDefault;
 
 	// Properties
 	public ConnectionProtocol ConnectionProtocol { get; }

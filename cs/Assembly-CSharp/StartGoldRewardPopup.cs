@@ -9,15 +9,30 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class StartGoldRewardPopup : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
 	private UnityEngine.UI.Text goldRewardAmountText;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _StartGoldRewardCountdown_b__2_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public StartGoldRewardPopup();
@@ -25,7 +40,5 @@ public class StartGoldRewardPopup : MonoBehaviour
 	// Methods
 	private void Start();
 	public void StartGoldRewardCountdown();
-	[CompilerGenerated]
-	private static void _StartGoldRewardCountdown_m__0(IUIStack x, BaseEventData y);
 }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class BundleView : MonoBehaviour
 {
@@ -46,107 +46,121 @@ public class BundleView : MonoBehaviour
 	private AccessoryBundleClient bundleData;
 	private int price;
 	private int originalPrice;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IBundleController> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnBundlePurchaseClicked_c__AnonStorey0
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
-		internal LevelErrorPopup errorPopup;
+		public LevelErrorPopup errorPopup;
 
 		// Constructors
-		public _OnBundlePurchaseClicked_c__AnonStorey0();
+		public __c__DisplayClass18_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnBundlePurchaseClicked_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnBundlePurchaseClicked_c__AnonStorey1
+	private sealed class __c__DisplayClass18_1
 	{
 		// Fields
-		internal BundleErrorPopUp errorPopup;
+		public BundleErrorPopUp errorPopup;
 
 		// Constructors
-		public _OnBundlePurchaseClicked_c__AnonStorey1();
+		public __c__DisplayClass18_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnBundlePurchaseClicked_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnBundlePurchaseClicked_c__AnonStorey2
+	private sealed class __c__DisplayClass18_2
 	{
 		// Fields
-		internal BundlePurchasePopUp popup;
+		public BundlePurchasePopUp popup;
 
 		// Constructors
-		public _OnBundlePurchaseClicked_c__AnonStorey2();
+		public __c__DisplayClass18_2();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnBundlePurchaseClicked_b__2(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__19_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IBundleController> __9__21_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPurchaseBundleConfirmation_b__19_0(IUIStack x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__20_0(IUIStack x, BaseEventData y);
+		internal void _OnPop_b__21_0(IBundleController x, BaseEventData y);
+		internal void _OnInsufficientResourceCallback_b__22_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey6
+	private sealed class __c__DisplayClass20_0
 	{
 		// Fields
-		internal int returnCode;
-		internal BundleView _this;
+		public BundleView __4__this;
+		public int returnCode;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey6();
+		public __c__DisplayClass20_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey3
+	private sealed class __c__DisplayClass20_1
 	{
 		// Fields
-		internal PurchasedAccessoryPreviewer popup;
-		internal _ProductPurchaseResponseHandler_c__AnonStorey6 __f__ref_6;
+		public PurchasedAccessoryPreviewer popup;
+		public __c__DisplayClass20_0 CS___8__locals1;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey3();
+		public __c__DisplayClass20_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__2(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey4
+	private sealed class __c__DisplayClass20_2
 	{
 		// Fields
-		internal LevelErrorPopup errorPopup;
+		public LevelErrorPopup errorPopup;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey4();
+		public __c__DisplayClass20_2();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__3(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey5
+	private sealed class __c__DisplayClass20_3
 	{
 		// Fields
-		internal BundleErrorPopUp errorPopup;
+		public BundleErrorPopUp errorPopup;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey5();
+		public __c__DisplayClass20_3();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__4(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -162,13 +176,5 @@ public class BundleView : MonoBehaviour
 	private void OnInsufficientLevelCallback();
 	private void HandlePrices(AccessoryBundleClient accessoryData);
 	private void HandleLevel(AccessoryBundleClient accessoryData);
-	[CompilerGenerated]
-	private static void _OnPurchaseBundleConfirmation_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ProductPurchaseResponseHandler_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPop_m__2(IBundleController x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnInsufficientResourceCallback_m__3(IUIStack x, BaseEventData y);
 }
 

@@ -7,23 +7,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarModifierPackages
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<EventArgs> OnUnequipItemEvent;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<EventArgs> OnDisableVehiclesEvent;
+	[CompilerGenerated]
+	private bool _InPause_k__BackingField;
 	public OnModifierExpiredDelegate OnModifierExpired;
-	private List<AvatarModifierPackage> packages;
-	[CompilerGenerated]
-	private static Comparison<AvatarModifierPackage.AvatarModifier> __f__am_cache0;
-	[CompilerGenerated]
-	private static Comparison<AvatarModifierPackage.AvatarModifier> __f__am_cache1;
+	private readonly List<AvatarModifierPackage> packages;
+
+	// Properties
+	private bool InPause { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Events
 	public event EventHandler<EventArgs> OnUnequipItemEvent {
@@ -39,48 +38,68 @@ public class AvatarModifierPackages
 	public delegate void OnModifierExpiredDelegate(AvatarModifierPackage modifier);
 
 	[CompilerGenerated]
-	private sealed class _HasModifier_c__AnonStorey0
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
-		internal AvatarModifierPackageType type;
+		public AvatarModifierPackageType type;
 
 		// Constructors
-		public _HasModifier_c__AnonStorey0();
+		public __c__DisplayClass19_0();
 
 		// Methods
-		internal bool __m__0(AvatarModifierPackage p);
+		internal bool _HasModifier_b__0(AvatarModifierPackage p);
 	}
 
 	[CompilerGenerated]
-	private sealed class _AddModifierPackage_c__AnonStorey1
+	private sealed class __c__DisplayClass20_0
 	{
 		// Fields
-		internal AvatarModifierPackage modifierPackage;
+		public AvatarModifierPackage modifierPackage;
 
 		// Constructors
-		public _AddModifierPackage_c__AnonStorey1();
+		public __c__DisplayClass20_0();
 
 		// Methods
-		internal bool __m__0(AvatarModifierPackage x);
+		internal bool _AddModifierPackage_b__0(AvatarModifierPackage x);
 	}
 
 	[CompilerGenerated]
-	private sealed class _RemoveModifierPackage_c__AnonStorey2
+	private sealed class __c__DisplayClass25_0
 	{
 		// Fields
-		internal AvatarModifierPackage modifierPackage;
+		public AvatarModifierPackage modifierPackage;
 
 		// Constructors
-		public _RemoveModifierPackage_c__AnonStorey2();
+		public __c__DisplayClass25_0();
 
 		// Methods
-		internal bool __m__0(AvatarModifierPackage x);
+		internal bool _RemoveModifierPackage_b__0(AvatarModifierPackage x);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Comparison<AvatarModifierPackage.AvatarModifier> __9__27_0;
+		public static Comparison<AvatarModifierPackage.AvatarModifier> __9__29_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal int _HandleModifierEffect_b__27_0(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
+		internal int _ComputeModifierEffectGroupedById_b__29_0(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
 	}
 
 	// Constructors
 	public AvatarModifierPackages();
 
 	// Methods
+	private void OnResume();
+	private void OnPause();
 	public void Update();
 	public void ClearModifiers();
 	public void ClearNonPersistantModifiers();
@@ -95,9 +114,5 @@ public class AvatarModifierPackages
 	public float HandleModifierEffect(AvatarModifierEffect modifierEffect, float baseValue);
 	public bool HasModifierEffect(AvatarModifierEffect modifierEffect);
 	public Dictionary<int, float> ComputeModifierEffectGroupedById(AvatarModifierEffect modifierEffect, float baseValue);
-	[CompilerGenerated]
-	private static int _HandleModifierEffect_m__0(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
-	[CompilerGenerated]
-	private static int _ComputeModifierEffectGroupedById_m__1(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
 }
 

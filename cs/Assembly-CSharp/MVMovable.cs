@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVMovable : MVBlueprintBase
 {
@@ -21,7 +21,6 @@ public class MVMovable : MVBlueprintBase
 	private float fraction;
 	private MovableVisualization movableVisualization;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVCubeModelInstance _CubeModel_k__BackingField;
 	private float distance;
 	private Quaternion orgRotation;
@@ -32,8 +31,6 @@ public class MVMovable : MVBlueprintBase
 	private bool pausedMovement;
 	private bool isVisible;
 	private MVMovable parentMover;
-	[CompilerGenerated]
-	private static Dictionary<string, int> __f__switch_map2;
 
 	// Properties
 	public MVCubeModelInstance CubeModel { [CompilerGenerated] get; [CompilerGenerated] private set; }
@@ -54,29 +51,29 @@ public class MVMovable : MVBlueprintBase
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _SetParentMoverID_c__AnonStorey0
+	private sealed class __c__DisplayClass62_0
 	{
 		// Fields
-		internal int parentMoverID;
+		public int parentMoverID;
 
 		// Constructors
-		public _SetParentMoverID_c__AnonStorey0();
+		public __c__DisplayClass62_0();
 
 		// Methods
-		internal bool __m__0(KeyValuePair<int, MVMovable> x);
+		internal bool _SetParentMoverID_b__0(KeyValuePair<int, MVMovable> x);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ReadWOData_c__AnonStorey1
+	private sealed class __c__DisplayClass64_0
 	{
 		// Fields
-		internal int newParentMoverID;
+		public int newParentMoverID;
 
 		// Constructors
-		public _ReadWOData_c__AnonStorey1();
+		public __c__DisplayClass64_0();
 
 		// Methods
-		internal bool __m__0(KeyValuePair<int, MVMovable> x);
+		internal bool _ReadWOData_b__0(KeyValuePair<int, MVMovable> x);
 	}
 
 	// Constructors

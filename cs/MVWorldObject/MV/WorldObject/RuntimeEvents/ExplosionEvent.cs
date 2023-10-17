@@ -12,7 +12,7 @@ using MV.Common;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.RuntimeEvents
 {
@@ -43,6 +43,7 @@ namespace MV.WorldObject.RuntimeEvents
 		}
 	
 		// Constructors
+		public ExplosionEvent(RuntimeEventType runtimeEventType, byte[] data);
 		public ExplosionEvent(RuntimeEventType runtimeEventType, BytePacker bytePacker);
 		public ExplosionEvent(RuntimeEventType runtimeEventType, Vector3 worldPosition, Vector3 normal);
 		public ExplosionEvent(RuntimeEventType runtimeEventType, Vector3 worldPosition);

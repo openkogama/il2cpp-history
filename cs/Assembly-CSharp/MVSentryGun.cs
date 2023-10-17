@@ -10,16 +10,14 @@ using MV.Common;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVSentryGun : MVLogicObject, ILogicWorldObject
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private HashSet<int> _RaycastIgnoreWorldObjectIds_k__BackingField;
 	private float laserRange;
 	private float pushBackStrength;
@@ -66,5 +64,6 @@ public class MVSentryGun : MVLogicObject, ILogicWorldObject
 	private void ApplyDamage(MVWorldObjectClient wo, InteractionDataHandlerBase interactionDataHandlerBase);
 	private static InteractionData BeamTypeToInteractionPackageType(SentryGunBeamType btype, Vector3 impulse);
 	public override bool CompareWithKoGaMaPackage(MVWorldObjectClient wo, KoGaMaPackageClient koGaMaPackageClient, ref int insertedBy);
+	public override bool OnClickHandler(EditorStateMachine esm, Collider collider);
 }
 

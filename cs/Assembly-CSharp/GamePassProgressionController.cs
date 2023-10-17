@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using MV.WorldObject.AntiCheat;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class GamePassProgressionController
 {
@@ -19,9 +19,6 @@ public static class GamePassProgressionController
 
 	// Properties
 	public static bool IsProgressionEnabled { get; }
-
-	// Constructors
-	static GamePassProgressionController();
 
 	// Methods
 	public static void Initialize();

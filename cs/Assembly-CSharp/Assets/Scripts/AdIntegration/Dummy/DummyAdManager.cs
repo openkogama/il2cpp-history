@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Assets.Scripts.AdIntegration;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Assets.Scripts.AdIntegration.Dummy
 {
@@ -16,7 +16,7 @@ namespace Assets.Scripts.AdIntegration.Dummy
 		// Fields
 		private IAdUIManager adUIHandler;
 		private float startTime;
-		private float delay;
+		private readonly float delay;
 		private bool rewarded;
 		private bool timeoutAsEnabled;
 		private int timeoutSuccessDelay;
@@ -34,6 +34,7 @@ namespace Assets.Scripts.AdIntegration.Dummy
 	
 		// Methods
 		public void InitializeAdConfigSettings(AdConfigSettings config);
+		public bool HideFullscreen();
 		public void InitializeCallbackManager(IAdUIManager handler);
 		public void RequestRewardedAd(Action<RewardedAdResult> rewardedAdCallback, AdContext context);
 		public void RequestInterstitial(Action<InterstitialAdResult> interstitialCallback, AdContext context);

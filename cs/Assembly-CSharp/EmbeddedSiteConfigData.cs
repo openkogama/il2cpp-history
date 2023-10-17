@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [Serializable]
 public struct EmbeddedSiteConfigData
@@ -32,5 +32,11 @@ public struct EmbeddedSiteConfigData
 	public bool allowsFallbackAds;
 	[SerializeField]
 	public bool showPlayButtonAd;
+	[SerializeField]
+	public bool hideGoldShop;
+	[SerializeField]
+	public bool allowInHouseAds;
+	[SerializeField]
+	public bool removeFullscreenButton;
 }
 

@@ -8,9 +8,9 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent]
+[RequireComponent(typeof(Graphic))]
 public class ColorStyleObject : MonoBehaviour
 {
 	// Fields
@@ -25,6 +25,7 @@ public class ColorStyleObject : MonoBehaviour
 	// Methods
 	private void Awake();
 	private void Reset();
+	public void UpdateColorStyle(ColorStyle colorStyle);
 	private void OnValidate();
 }
 

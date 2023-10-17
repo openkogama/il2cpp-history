@@ -8,12 +8,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class FirstPersonCamera : MVCameraBase
 {
 	// Fields
-	[Header]
+	[Header("Configuration")]
 	[SerializeField]
 	private float cameraHeight;
 	[SerializeField]
@@ -29,7 +29,7 @@ public abstract class FirstPersonCamera : MVCameraBase
 	protected float yawSensitivity;
 	[SerializeField]
 	private FirstPersonWeaponBob weaponBob;
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	private DamageIndicator damageIndicator;
 	[SerializeField]

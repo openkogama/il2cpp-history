@@ -10,11 +10,12 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class InputSignalReceiverBase : IInputSignalReceiver
 {
 	// Fields
+	protected const string runtimeDataIsHotKey = "iH";
 	protected readonly LogicEvaluateSignalComponentBase logicEvaluateSignalComponentBase;
 	protected LogicObjectManager logicObjectManager;
 	private int woID;
@@ -35,7 +36,7 @@ public abstract class InputSignalReceiverBase : IInputSignalReceiver
 	public void Reset();
 	private void HandleSignalToEvaluateChange(int newNumberOfSignals);
 	public void UpdateSignal(bool isHot);
-	public void HandleInputLinkChanged(List<MV.WorldObject.Link> inputLinkRefs);
+	public void HandleInputLinkChanged(List<Link> inputLinkRefs);
 	private void SendSignal(bool isHot);
 }
 

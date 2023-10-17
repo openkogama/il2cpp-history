@@ -8,13 +8,13 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class StarRequirement : UseRequirement
 {
 	// Fields
 	private int starAmount;
-	private UseRequirementType requirementType;
+	private const UseRequirementType requirementType = UseRequirementType.Star;
 	private Vector3 displayObjectOffset;
 	private GameObject displayGO;
 	private StarDisplayObject displayObject;

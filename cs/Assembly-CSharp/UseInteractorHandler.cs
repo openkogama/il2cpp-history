@@ -6,39 +6,43 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Assets.Scripts.Tools;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class UseInteractorHandler : MVComponent
 {
 	// Fields
-	private Dictionary<int, UseInteractor> useInteractors;
-	private List<int> removeList;
-	private Collider triggingCollider;
+	private const UseGUIResult UseGui = UseGUIResult.NoUseButton | UseGUIResult.NoCost | UseGUIResult.CanAfford | UseGUIResult.CannotAfford;
+	private readonly Dictionary<int, UseInteractor> useInteractors;
+	private readonly List<int> removeList;
+	private ColliderCollection triggingColliders;
 	private MVInteractableBase interactionBase;
 	private int ownerWoId;
-	private const UseGUIResult useGui = UseGUIResult.NoUseButton | UseGUIResult.NoCost | UseGUIResult.CanAfford | UseGUIResult.CannotAfford;
+
+	// Properties
+	public ColliderCollection TriggingColliders { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _SortByDistance_c__AnonStorey0
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal Vector3 triggingColliderPosition;
+		public Vector3 triggingColliderPosition;
 
 		// Constructors
-		public _SortByDistance_c__AnonStorey0();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal float __m__0(UseInteractor a);
+		internal float _SortByDistance_b__0(UseInteractor a);
 	}
 
 	// Constructors
 	public UseInteractorHandler();
 
 	// Methods
-	public void Init(int ownerWoId, Collider triggingCollider);
+	public void Init(int ownerWoId, Collider baseCollider);
 	public void AddUseInteractor(UseInteractor useInteractor);
 	public void RemoveUseInteractor(UseInteractor useInteractor);
 	private void UpdateInteractorsWOID();

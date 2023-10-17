@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class SizeModifier : AvatarModifier
 {
@@ -35,31 +35,30 @@ public abstract class SizeModifier : AvatarModifier
 	protected delegate void ActionDelegate(float time);
 
 	[CompilerGenerated]
-	private sealed class _DoForSeconds_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoForSeconds_d__17 : IEnumerator<object>
 	{
 		// Fields
-		internal ActionDelegate body;
-		internal float _t___0;
-		internal float duration;
-		internal SizeModifier _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public SizeModifier __4__this;
+		public ActionDelegate body;
+		public float duration;
+		private float _t_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoForSeconds_c__Iterator0();
+		public _DoForSeconds_d__17(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -72,7 +71,7 @@ public abstract class SizeModifier : AvatarModifier
 	protected virtual void UnScale();
 	protected virtual void Scale();
 	protected float BlockStep(float t, float steps, float clampMin, float clampMax);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoForSeconds_d__17))]
 	protected IEnumerator DoForSeconds(float duration, ActionDelegate body);
 	protected void Unstablize();
 }

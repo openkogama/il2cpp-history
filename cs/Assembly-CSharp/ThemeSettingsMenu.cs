@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeSettingsMenu : ThemeSettingsMenuBase
 {
@@ -18,16 +18,16 @@ public class ThemeSettingsMenu : ThemeSettingsMenuBase
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass2_0
 	{
 		// Fields
-		internal ThemeMenuController menuController;
+		public ThemeMenuController menuController;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass2_0();
 
 		// Methods
-		internal void __m__0();
+		internal void _Initialize_b__0();
 	}
 
 	// Constructors

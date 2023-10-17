@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public enum AvatarModifierEffect
 {
@@ -37,6 +37,7 @@ public enum AvatarModifierEffect
 	SlowMat = 24,
 	SpeedMat = 25,
 	CrumbleMat = 26,
-	Size = 27
+	Size = 27,
+	RayHealEnemyDamagePrSec = 28
 }
 

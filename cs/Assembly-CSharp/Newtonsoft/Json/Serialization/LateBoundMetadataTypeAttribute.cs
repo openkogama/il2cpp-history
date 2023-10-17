@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -18,7 +18,7 @@ namespace Newtonsoft.Json.Serialization
 		private readonly object _attribute;
 	
 		// Properties
-		public Type MetadataClassType { get; }
+		public System.Type MetadataClassType { get; }
 	
 		// Constructors
 		public LateBoundMetadataTypeAttribute(object attribute);

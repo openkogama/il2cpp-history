@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using ThemeAttributes;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace ThemeSettings
 {
@@ -41,6 +41,6 @@ namespace ThemeSettings
 		public void SubscribeToSettingsUI(IMenu menu);
 		public void UnsubscribeToSettingsUI();
 		[CompilerGenerated]
-		private bool _get_SettingsUI_m__0(ThemeAttribute attrib);
+		private bool _get_SettingsUI_b__9_0(ThemeAttribute attrib);
 	}
 }

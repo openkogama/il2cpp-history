@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryMenuButton : MonoBehaviour
 {
@@ -23,35 +23,49 @@ public class AccessoryMenuButton : MonoBehaviour
 	[SerializeField]
 	private AccessoryPreviewPopup accessoryPreviewPopup;
 	private bool playerReady;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IActivateUIElement> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CalculateShouldShowAccessoryPopup_c__AnonStorey0
+	private sealed class __c__DisplayClass10_0
 	{
 		// Fields
-		internal bool uiBlocked;
-		internal AccessoryMenuButton _this;
+		public bool uiBlocked;
+		public AccessoryMenuButton __4__this;
 
 		// Constructors
-		public _CalculateShouldShowAccessoryPopup_c__AnonStorey0();
+		public __c__DisplayClass10_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CalculateShouldShowAccessoryPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CalculateShouldShowAccessoryPopup_c__AnonStorey1
+	private sealed class __c__DisplayClass10_1
 	{
 		// Fields
-		internal AccessoryPreviewPopup popup;
+		public AccessoryPreviewPopup popup;
 
 		// Constructors
-		public _CalculateShouldShowAccessoryPopup_c__AnonStorey1();
+		public __c__DisplayClass10_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CalculateShouldShowAccessoryPopup_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IActivateUIElement> __9__12_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _CalculateShouldShowBundleAd_b__12_0(IActivateUIElement x, BaseEventData y);
 	}
 
 	// Constructors
@@ -66,7 +80,5 @@ public class AccessoryMenuButton : MonoBehaviour
 	private void CalculateShouldShowAccessoryPopup();
 	private void CalculateShouldShowHighlightIcon();
 	private void CalculateShouldShowBundleAd();
-	[CompilerGenerated]
-	private static void _CalculateShouldShowBundleAd_m__0(IActivateUIElement x, BaseEventData y);
 }
 

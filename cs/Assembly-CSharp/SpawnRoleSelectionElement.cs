@@ -13,7 +13,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleSelectionElement : DefaultSpawnRoleSelectionElement
 {
@@ -51,57 +51,72 @@ public class SpawnRoleSelectionElement : DefaultSpawnRoleSelectionElement
 	[SerializeField]
 	private GameObject backgroundTier3;
 	[SerializeField]
-	private Image buttonAdImage;
+	private Image tryFreeButtonIcon;
 	private GamePassTier tierRequirement;
 	private MVTeam teamRequirement;
 	private bool awaitingSpawn;
 	private bool isWaitingForFreeTryTier;
 	private bool haveShownFreeTryUnlock;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache5;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache6;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache7;
+	private bool isSubscriber;
 
 	// Properties
 	public override GamePassTier Tier { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnShowSkillMenu_c__AnonStorey0
+	private sealed class __c__DisplayClass28_0
 	{
 		// Fields
-		internal SpawnRoleSelectionSkillMenu skillMenu;
+		public SpawnRoleSelectionSkillMenu skillMenu;
 
 		// Constructors
-		public _OnShowSkillMenu_c__AnonStorey0();
+		public __c__DisplayClass28_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnShowSkillMenu_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__41_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__42_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__42_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__43_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__43_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__44_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__44_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Close_b__39_0(IUIStack handler, BaseEventData data);
+		internal void _ShowAd_b__41_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__42_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__42_1(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__43_0(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__43_1(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__44_0(IUIStack x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__44_1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPlayerPlanetDataUpdated_c__AnonStorey1
+	private sealed class __c__DisplayClass44_0
 	{
 		// Fields
-		internal SpawnRoleUnlockedPopupController spawnRoleUnlockPopup;
+		public SpawnRoleUnlockedPopupController spawnRoleUnlockPopup;
 
 		// Constructors
-		public _OnPlayerPlanetDataUpdated_c__AnonStorey1();
+		public __c__DisplayClass44_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__2(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -114,7 +129,8 @@ public class SpawnRoleSelectionElement : DefaultSpawnRoleSelectionElement
 	public void OnShowSkillMenu();
 	public override void UpdateButtonUI();
 	public void OnPressPlay();
-	public void OnPressFreePlay();
+	public void OnPressFreePlayAd();
+	public void OnPressFreePlaySubscriber();
 	public void OnPressLockedPlay();
 	private int CalculateTotalSpawnRoleCost(int spawnRoleId);
 	private void HandlePlayButtonVisibility();
@@ -131,21 +147,5 @@ public class SpawnRoleSelectionElement : DefaultSpawnRoleSelectionElement
 	public override void OnSelctionHighlight();
 	public override void OnSelected();
 	public override void OnUnSelected();
-	[CompilerGenerated]
-	private static void _Close_m__0(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowAd_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__3(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__4(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__5(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPlayerPlanetDataUpdated_m__6(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPlayerPlanetDataUpdated_m__7(IUIStack x, BaseEventData y);
 }
 

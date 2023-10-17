@@ -5,45 +5,56 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UGUI.Desktop.Scripts.EditMode.Gizmo;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GizmoController : MonoBehaviour, IGizmoHandler
 {
 	// Fields
-	private int woID;
 	private EditorStateMachine editorStateMachine;
 	[SerializeField]
 	private GizmoMenu gizmoMenuPrefab;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	[SerializeField]
+	private GizmoMenuNg gizmoMenuNgPrefab;
+	private GizmoMenu gizmoMenuInstance;
+	private GizmoMenuNg gizmoMenuNgInstance;
+	private RotationHelper rotationHelper;
+	private bool ignoreSelectionOnce;
+
+	// Properties
+	public bool IgnoreSelectionOnce { get; set; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _Show_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal GizmoMenu gizmoMenu;
-		internal GizmoController _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__11_0;
 
 		// Constructors
-		public _Show_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Show_b__11_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
 	public GizmoController();
 
 	// Methods
-	public void Initialize(EditorStateMachine editorStateMachine);
-	public void Show(int woID, Vector3 worldPosition, EditorStateMachine e);
+	public void Initialize(EditorStateMachine esm);
+	public void Show(int id, Vector3 worldPosition, EditorStateMachine e);
 	private void OnGizmoMenuPop();
 	public void Handle(GizmoAction action);
+	void IGizmoHandler.IgnoreSelectionOnce();
+	public void Hide();
 	[CompilerGenerated]
-	private static void _Show_m__0(IUIStack handler, BaseEventData data);
+	private void _Show_b__11_1(IUIStack x, BaseEventData y);
 }
 

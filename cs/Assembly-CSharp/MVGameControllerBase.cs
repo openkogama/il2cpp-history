@@ -9,15 +9,18 @@ using System.Runtime.CompilerServices;
 using AntiHack;
 using Assets.Scripts.AdIntegration;
 using Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator;
+using Assets.Scripts.Subscription;
 using MV.Common;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSubscriberUpdate
 {
 	// Fields
+	public const bool LevelingTestMode = false;
+	public const bool ClientShopInsideInventory = true;
 	[SerializeField]
 	protected RegionConfigManager regionConfigManager;
 	[SerializeField]
@@ -40,18 +43,13 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	private StreamingAssetManager streamingAssetManager;
 	[SerializeField]
 	protected EmbeddedPlayerConfig embeddedPlayerConfig;
-	public const bool LevelingTestMode = false;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _IsInitialized_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _DisconnectIsOk_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static IPlayModeUI _PlayModeUI_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static IEditModeUI _EditModeUI_k__BackingField;
 	public static OnReceivedGameMsgDelegate OnReceivedGameMsg;
 	public static OnReceivedNotificationEventDelegate OnReceivedNotification;
@@ -64,6 +62,7 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	private SkinnedMeshOptimizeManager skinnedMeshOptimizeManager;
 	private FlagDebriefingControl flagDebriefingControl;
 	private GoldRewardManager goldRewardManager;
+	protected JoystickControllerStack joystickControllerStack;
 	private bool quitHasBeenCalled;
 	private TimeReward timeReward;
 	private OverrideMaterials overrideMaterials;
@@ -71,12 +70,15 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	private MVJoinState _joinState;
 	private FirstFrameUpdateActorReady firstFrameUpdateActorReady;
 	private int reAuthTestTries;
+	protected ModeControllerBase modeController;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
+	private static bool _WebPlayAsTouch_k__BackingField;
+	[CompilerGenerated]
+	private static bool _WebPlayAsTouchInitialized_k__BackingField;
+	[CompilerGenerated]
 	private static GameSessionData _GameSessionData_k__BackingField;
 	private Action<MVJoinState> onJoinStateChanged;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _SeekAdConsent_k__BackingField;
 	[SerializeField]
 	private AudioBuild audioBuild;
@@ -85,9 +87,12 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	private WaterPlaneManager waterPlaneManager;
 	[SerializeField]
 	private SkyboxManager skyboxManager;
+	[SerializeField]
+	private SubscriberCooldownsManager subscriberCooldownsManager;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _Quitting_k__BackingField;
+	[CompilerGenerated]
+	private static bool _LeavingEditPlayMode_k__BackingField;
 
 	// Properties
 	public static SpawnRoleDataMediator SpawnRoleDataMediatorLocal { get; }
@@ -109,6 +114,9 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	public static StreamingAssetManager StreamingAssetManager { get; }
 	protected EmbeddedPlayerConfig EmbeddedPlayerConfig { get; }
 	protected RegionConfig RegionConfig { get; }
+	public static StaticAssetsConfig StaticAssetsConfig { get; }
+	public static bool WebPlayAsTouch { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public static bool WebPlayAsTouchInitialized { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public static GameSessionData GameSessionData { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public static BuildTarget BuildTarget { get; }
 	public static Action OnFirstFrameUpdateActorReady { get; set; }
@@ -133,7 +141,9 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	public static MainCameraManager MainCameraManager { get; }
 	public static WaterPlaneManager WaterPlaneManager { get; }
 	public static SkyboxManager SkyboxManager { get; }
+	public static SubscriberCooldownsManager SubscriberCooldownsManager { get; }
 	public static bool Quitting { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public static bool LeavingEditPlayMode { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Nested types
 	public delegate void OnReceivedGameMsgDelegate(MVGameMsgType type, Dictionary<object, object> gameMsgData);
@@ -146,10 +156,8 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _minVersion_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _version_k__BackingField;
 
 		// Properties
@@ -165,33 +173,39 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	}
 
 	[CompilerGenerated]
-	private sealed class _ApplicationQuit_c__AnonStorey0
+	private sealed class __c__DisplayClass174_0
 	{
 		// Fields
-		internal QuitBaseCallback applicationQuitObject;
+		public QuitBaseCallback applicationQuitObject;
 
 		// Constructors
-		public _ApplicationQuit_c__AnonStorey0();
+		public __c__DisplayClass174_0();
 
 		// Methods
-		internal void __m__0();
+		internal void _ApplicationQuit_b__0();
 	}
 
 	// Constructors
 	protected MVGameControllerBase();
-	static MVGameControllerBase();
 
 	// Methods
+	public static bool IsInCorrectInventory(bool insidePlayerInventory);
 	protected virtual void Awake();
+	protected virtual void Start();
 	protected virtual void OnDestroy();
+	public static void UnregisterPlayModeController();
 	protected void Update();
 	protected void FixedUpdate();
 	protected virtual void LateUpdate();
 	protected void OnDrawGizmos();
+	public static void RegisterPlayModeController(ModeControllerBase playModeController);
 	public static void PostGameMsg(MVGameMsgType gameMsgType, Dictionary<object, object> gameMsgData);
 	public static void PostGameMsg(MVGameMsgType gameMsgType, string message);
 	public static void PostDestroyCleanup();
 	public void UpdateControllerUpdate();
+	public static void RegisterJoystickControllerStack(JoystickControllerStack joystickControllerStack);
+	public static void PushJoystick(ControlType joystickType);
+	public static void PopJoystick();
 	public static void SetGameSessionData(GameSessionData gameSessionData);
 	public static bool TryReauth();
 	public static void ApplicationQuit(QuitBaseCallback applicationQuitObject);
@@ -218,5 +232,6 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	private void UpdateGame();
 	protected static void DeleteScreenPlayerPrefs();
 	public void UpdateControllerLateUpdate();
+	public static void ForceEmbedSite(string url);
 }
 

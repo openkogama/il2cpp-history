@@ -7,9 +7,8 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 using MV.WorldObject.MetaData;
-using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class FirstTimeEventManager
 {
@@ -18,22 +17,13 @@ public static class FirstTimeEventManager
 	private static FirstTimeState firstTimeState;
 	public static Action XPRewarded;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _FirstTimeSystemInitialized_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _GetProfileMetaDataOk_k__BackingField;
-	[CompilerGenerated]
-	private static UnityAction __f__mg_cache0;
-	[CompilerGenerated]
-	private static UnityAction __f__mg_cache1;
 
 	// Properties
 	public static bool FirstTimeSystemInitialized { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public static bool GetProfileMetaDataOk { [CompilerGenerated] get; [CompilerGenerated] set; }
-
-	// Constructors
-	static FirstTimeEventManager();
 
 	// Methods
 	public static void Initialize(FirstTimeState firstTimeState);

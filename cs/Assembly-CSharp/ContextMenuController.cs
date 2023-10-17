@@ -6,9 +6,10 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextMenuButton
 {
@@ -16,114 +17,140 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	private int woID;
 	private EditorStateMachine editorStateMachine;
 	private bool rightClickGizmoSelect;
+	private MVWorldObjectClient selectedWorldObject;
+	private ContextMenu currentContextMenu;
 	[SerializeField]
 	private ContextMenu contextMenuPrefab;
 	[SerializeField]
 	private SettingsFactory settingsFactory;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache5;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache6;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache7;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache8;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache9;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheA;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheB;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheC;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheD;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheE;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cacheF;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache10;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache11;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditModeController> __f__am_cache12;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache13;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache14;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache15;
 
 	// Properties
 	public bool MouseDown { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowContextMenu_c__AnonStorey0
+	private sealed class __c__DisplayClass10_0
 	{
 		// Fields
-		internal ContextMenu contextMenu;
-		internal ContextMenuController _this;
+		public bool isPreview;
+		public bool isPendingPrototype;
+		public ContextMenuController __4__this;
 
 		// Constructors
-		public _ShowContextMenu_c__AnonStorey0();
+		public __c__DisplayClass10_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal bool _ShowContextMenu_b__0();
+		internal bool _ShowContextMenu_b__1();
+		internal bool _ShowContextMenu_b__2();
+		internal void _ShowContextMenu_b__3(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<bool> __9__13_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__17_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__18_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__19_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__23_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__25_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__26_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__27_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__28_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__29_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__31_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__32_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__33_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__34_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__35_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__35_1;
+		public static ExecuteEvents.EventFunction<IEditModeController> __9__36_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__40_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _AddMenuButtonForFlag_b__13_0();
+		internal void _PopGizmos_b__16_0(IUIStack handler, BaseEventData data);
+		internal void _DeleteLink_b__17_0(IUIStack handler, BaseEventData data);
+		internal void _ShowStarsDialog_b__18_0(IUIStack handler, BaseEventData data);
+		internal void _ShowGameRankDialog_b__19_0(IUIStack handler, BaseEventData data);
+		internal void _ShowGamePointsDialog_b__20_0(IUIStack handler, BaseEventData data);
+		internal void _ShowMinorGamePointsDialog_b__21_0(IUIStack handler, BaseEventData data);
+		internal void _ShowRespawnDialog_b__22_0(IUIStack handler, BaseEventData data);
+		internal void _ShowTeamDialog_b__23_0(IUIStack handler, BaseEventData data);
+		internal void _ShowGameCoinsDialog_b__24_0(IUIStack handler, BaseEventData data);
+		internal void _ShowLevelsDialog_b__25_0(IUIStack handler, BaseEventData data);
+		internal void _ShowRewardedAdDialog_b__26_0(IUIStack handler, BaseEventData data);
+		internal void _ShowSettingsDialog_b__27_0(IUIStack handler, BaseEventData data);
+		internal void _ShowSoundsDialog_b__28_0(IUIStack handler, BaseEventData data);
+		internal void _ShowGlobalSoundsDialog_b__29_0(IUIStack handler, BaseEventData data);
+		internal void _ShowChangeScaleDialog_b__31_0(IUIStack handler, BaseEventData data);
+		internal void _ResetLogic_b__32_0(IUIStack handler, BaseEventData data);
+		internal void _Clone_b__33_0(IUIStack handler, BaseEventData data);
+		internal void _CloneRoot_b__34_0(IUIStack handler, BaseEventData data);
+		internal void _AddToInventory_b__35_0(IModalPopupCreator x, BaseEventData y);
+		internal void _AddToInventory_b__35_1(IUIStack x, BaseEventData y);
+		internal void _EnterPlay_b__36_0(IEditModeController x, BaseEventData y);
+		internal void _OnClosedStandaloneError_b__37_0(IUIStack x, BaseEventData y);
+		internal void _OnFailedToAddItem_b__39_0(IUIStack handler, BaseEventData data);
+		internal void _Delete_b__40_1(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowContextMenuLink_c__AnonStorey1
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		internal int linkID;
-		internal bool isObjectLink;
-		internal ContextMenu contextMenu;
-		internal ContextMenuController _this;
+		public ContextMenuController __4__this;
+		public int linkID;
+		public bool isObjectLink;
+		public ContextMenu contextMenu;
 
 		// Constructors
-		public _ShowContextMenuLink_c__AnonStorey1();
+		public __c__DisplayClass15_0();
 
 		// Methods
-		internal void __m__0();
-		internal void __m__1(IUIStack x, BaseEventData y);
+		internal void _ShowContextMenuLink_b__0();
+		internal void _ShowContextMenuLink_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CloneRoot_c__AnonStorey2
+	private sealed class __c__DisplayClass34_0
 	{
 		// Fields
-		internal MVWorldObjectClient root;
+		public MVWorldObjectClient root;
 
 		// Constructors
-		public _CloneRoot_c__AnonStorey2();
+		public __c__DisplayClass34_0();
 
 		// Methods
-		internal void __m__0(ICloneHandler handler, BaseEventData data);
+		internal void _CloneRoot_b__1(ICloneHandler handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Delete_c__AnonStorey3
+	private sealed class __c__DisplayClass40_0
 	{
 		// Fields
-		internal string errorText;
+		public string errorText;
 
 		// Constructors
-		public _Delete_c__AnonStorey3();
+		public __c__DisplayClass40_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _Delete_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -132,6 +159,10 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	// Methods
 	public void Initialize(EditorStateMachine editorStateMachine);
 	public void ShowContextMenu(int woID, Vector3 worldPos);
+	private void ShowInfoDialog();
+	private bool IsPendingPrototypeSelected();
+	private void AddMenuButtonForFlag(InteractionFlags flag, string buttonText, UnityAction onClickCallback);
+	private void AddMenuButtonForFlag(InteractionFlags flag, string buttonText, UnityAction onClickCallback, Func<bool> canHaveButtonCheck);
 	public void ShowContextMenuLink(int linkID, bool isObjectLink, Vector3 worldPos);
 	public void PopGizmos();
 	private void DeleteLink(int linkID, bool isObjectLink);
@@ -143,10 +174,12 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	private void ShowTeamDialog();
 	private void ShowGameCoinsDialog();
 	private void ShowLevelsDialog();
+	private void ShowRewardedAdDialog();
 	private void ShowSettingsDialog();
 	private void ShowSoundsDialog();
 	private void ShowGlobalSoundsDialog();
 	private void EnterCubeEdit();
+	private void ShowChangeScaleDialog();
 	private void ResetLogic();
 	private void Clone();
 	private void CloneRoot();
@@ -161,52 +194,8 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	public void PointerIsDown();
 	private void OnContextMenuPop();
 	[CompilerGenerated]
-	private static void _PopGizmos_m__0(IUIStack handler, BaseEventData data);
+	private void _Clone_b__33_1(ICloneHandler handler, BaseEventData data);
 	[CompilerGenerated]
-	private static void _DeleteLink_m__1(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowStarsDialog_m__2(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowGameRankDialog_m__3(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowGamePointsDialog_m__4(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowMinorGamePointsDialog_m__5(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowRespawnDialog_m__6(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowTeamDialog_m__7(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowGameCoinsDialog_m__8(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowLevelsDialog_m__9(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowSettingsDialog_m__A(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowSoundsDialog_m__B(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ShowGlobalSoundsDialog_m__C(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _ResetLogic_m__D(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _Clone_m__E(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private void _Clone_m__F(ICloneHandler handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _CloneRoot_m__10(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _AddToInventory_m__11(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _AddToInventory_m__12(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private void _AddToInventory_m__13(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _EnterPlay_m__14(IEditModeController x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnClosedStandaloneError_m__15(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnFailedToAddItem_m__16(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _Delete_m__17(IUIStack handler, BaseEventData data);
+	private void _AddToInventory_b__35_2(IModalPopupCreator x, BaseEventData y);
 }
 

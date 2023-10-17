@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TrailArc : MonoBehaviour
 {
@@ -50,6 +50,8 @@ public class TrailArc : MonoBehaviour
 	private float averageCreationTime;
 	private float averageInsertionTime;
 	private float elapsedInsertionTime;
+	private float creationTime;
+	public float maxLifeTime;
 	private bool initialized;
 
 	// Properties
@@ -63,6 +65,7 @@ public class TrailArc : MonoBehaviour
 	private void printPoints();
 	private void printAllPoints();
 	private void findCoordinates(int index);
+	public void SetTrailColor(Color baseColor);
 	private void Update();
 }
 

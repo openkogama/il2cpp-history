@@ -7,13 +7,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LockCursorManager3DMode : MonoBehaviour, ILockCursorManager
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Action<bool> _OnCursorLockChanged_k__BackingField;
 
 	// Properties
@@ -25,6 +24,7 @@ public class LockCursorManager3DMode : MonoBehaviour, ILockCursorManager
 	public LockCursorManager3DMode();
 
 	// Methods
+	private static void CursorLog(string s);
 	protected void OnApplicationFocus(bool focus);
 	protected void LockCursor();
 	protected void LockCursorWithoutCallback();

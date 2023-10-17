@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class OculusSettings : MonoBehaviour, IHandleSettingChanged
 {
@@ -24,7 +24,6 @@ public class OculusSettings : MonoBehaviour, IHandleSettingChanged
 	[SerializeField]
 	private SettingsInputFieldSlider numOfLivesInputSlider;
 	private const int maxLives = 100;
-	private const string infinity = "\uFFFD";
 	private MVWorldObjectClient target;
 
 	// Nested types

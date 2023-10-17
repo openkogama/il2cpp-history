@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Schema
 {
@@ -17,7 +17,6 @@ namespace Newtonsoft.Json.Schema
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private UndefinedSchemaIdHandling _UndefinedSchemaIdHandling_k__BackingField;
 		private IContractResolver _contractResolver;
 		private JsonSchemaResolver _resolver;
@@ -34,31 +33,29 @@ namespace Newtonsoft.Json.Schema
 		{
 			// Fields
 			[CompilerGenerated]
-			[DebuggerBrowsable]
-			private Type _Type_k__BackingField;
+			private System.Type _Type_k__BackingField;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private JsonSchema _Schema_k__BackingField;
 	
 			// Properties
-			public Type Type { [CompilerGenerated] get; [CompilerGenerated] private set; }
+			public System.Type Type { [CompilerGenerated] get; [CompilerGenerated] private set; }
 			public JsonSchema Schema { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	
 			// Constructors
-			public TypeSchema(Type type, JsonSchema schema);
+			public TypeSchema(System.Type type, JsonSchema schema);
 		}
 	
 		[CompilerGenerated]
-		private sealed class _GenerateInternal_c__AnonStorey0
+		private sealed class __c__DisplayClass23_0
 		{
 			// Fields
-			internal Type type;
+			public System.Type type;
 	
 			// Constructors
-			public _GenerateInternal_c__AnonStorey0();
+			public __c__DisplayClass23_0();
 	
 			// Methods
-			internal bool __m__0(TypeSchema tc);
+			internal bool _GenerateInternal_b__0(TypeSchema tc);
 		}
 	
 		// Constructors
@@ -67,19 +64,19 @@ namespace Newtonsoft.Json.Schema
 		// Methods
 		private void Push(TypeSchema typeSchema);
 		private TypeSchema Pop();
-		public JsonSchema Generate(Type type);
-		public JsonSchema Generate(Type type, JsonSchemaResolver resolver);
-		public JsonSchema Generate(Type type, bool rootSchemaNullable);
-		public JsonSchema Generate(Type type, JsonSchemaResolver resolver, bool rootSchemaNullable);
-		private string GetTitle(Type type);
-		private string GetDescription(Type type);
-		private string GetTypeId(Type type, bool explicitOnly);
-		private JsonSchema GenerateInternal(Type type, Required valueRequired, bool required);
+		public JsonSchema Generate(System.Type type);
+		public JsonSchema Generate(System.Type type, JsonSchemaResolver resolver);
+		public JsonSchema Generate(System.Type type, bool rootSchemaNullable);
+		public JsonSchema Generate(System.Type type, JsonSchemaResolver resolver, bool rootSchemaNullable);
+		private string GetTitle(System.Type type);
+		private string GetDescription(System.Type type);
+		private string GetTypeId(System.Type type, bool explicitOnly);
+		private JsonSchema GenerateInternal(System.Type type, Required valueRequired, bool required);
 		private JsonSchemaType AddNullType(JsonSchemaType type, Required valueRequired);
 		private bool HasFlag(DefaultValueHandling value, DefaultValueHandling flag);
-		private void GenerateObjectSchema(Type type, JsonObjectContract contract);
-		private void GenerateISerializableContract(Type type, JsonISerializableContract contract);
+		private void GenerateObjectSchema(System.Type type, JsonObjectContract contract);
+		private void GenerateISerializableContract(System.Type type, JsonISerializableContract contract);
 		internal static bool HasFlag(JsonSchemaType? value, JsonSchemaType flag);
-		private JsonSchemaType GetJsonSchemaType(Type type, Required valueRequired);
+		private JsonSchemaType GetJsonSchemaType(System.Type type, Required valueRequired);
 	}
 }

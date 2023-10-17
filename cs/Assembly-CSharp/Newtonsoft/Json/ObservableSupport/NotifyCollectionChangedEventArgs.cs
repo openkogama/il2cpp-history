@@ -7,7 +7,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.ObservableSupport
 {
@@ -15,19 +15,14 @@ namespace Newtonsoft.Json.ObservableSupport
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private NotifyCollectionChangedAction _Action_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IList _NewItems_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _NewStartingIndex_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IList _OldItems_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _OldStartingIndex_k__BackingField;
 	
 		// Properties

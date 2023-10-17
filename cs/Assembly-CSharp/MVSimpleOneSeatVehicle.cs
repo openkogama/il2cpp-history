@@ -7,8 +7,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.VehicleEnergy;
+using WorldObjectTypes.VehiclesBase.Shared;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVSimpleOneSeatVehicle : MVVehicleBase, ICurrentItemOwner
 {
@@ -19,6 +21,8 @@ public abstract class MVSimpleOneSeatVehicle : MVVehicleBase, ICurrentItemOwner
 	public MVRuntimeDataVariable IsFiring;
 	private MVRuntimeDataVariableClampedFloat shield;
 	protected EditableCubeModelWrapper editableCubeModelWrapper;
+	protected float maxHealth;
+	protected float previousHealth;
 
 	// Properties
 	public MVRuntimeDataVariableClampedFloat Shield { get; set; }
@@ -45,6 +49,9 @@ public abstract class MVSimpleOneSeatVehicle : MVVehicleBase, ICurrentItemOwner
 		public override void Leave();
 		public override void Enter();
 		public override IInputToPlayerMovement FixedUpdate(IInputToPlayerMovement movementMap);
+		public override void RefillEnergy(VehicleEnergyRefill vehicleEnergyRefill);
+		public override bool UsesEnergy();
+		public override void RollbackVehicleRefillEnergyPrediction(int spawnerId);
 		public override InputToInGameAction Update(InputToInGameAction interactionInput);
 	}
 

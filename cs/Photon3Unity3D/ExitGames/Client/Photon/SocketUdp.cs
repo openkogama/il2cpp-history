@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -28,6 +28,7 @@ namespace ExitGames.Client.Photon
 		public override bool Connect();
 		public override bool Disconnect();
 		public override PhotonSocketError Send(byte[] data, int length);
+		public override PhotonSocketError Receive(out byte[] data);
 		internal void DnsAndConnect();
 		public void ReceiveLoop();
 	}

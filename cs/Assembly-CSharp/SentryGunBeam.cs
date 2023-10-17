@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SentryGunBeam : MonoBehaviour
 {
@@ -16,13 +16,10 @@ public class SentryGunBeam : MonoBehaviour
 	private const float timeout = 1f;
 	private float deleteTimer;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _Active_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _StartPosition_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _EndPosition_k__BackingField;
 
 	// Properties

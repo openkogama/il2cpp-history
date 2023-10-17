@@ -10,40 +10,51 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LeavePlayModeButton : MonoBehaviour
 {
-	// Fields
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<ILeaveEditPlayModeHandler> __f__am_cache0;
-
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _ExecuteLeaveEditDelayed_c__Iterator0 : IEnumerator<object>
+	private sealed class __c
 	{
 		// Fields
-		internal LeavePlayModeButton _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
-		private static ExecuteEvents.EventFunction<ILeaveEditPlayModeHandler> __f__am_cache0;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<ILeaveEditPlayModeHandler> __9__1_0;
+		public static ExecuteEvents.EventFunction<ILeaveEditPlayModeHandler> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Execute_b__1_0(ILeaveEditPlayModeHandler x, BaseEventData y);
+		internal void _ExecuteLeaveEditDelayed_b__2_0(ILeaveEditPlayModeHandler x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class _ExecuteLeaveEditDelayed_d__2 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public LeavePlayModeButton __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _ExecuteLeaveEditDelayed_c__Iterator0();
+		public _ExecuteLeaveEditDelayed_d__2(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
-		private static void __m__0(ILeaveEditPlayModeHandler x, BaseEventData y);
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -52,9 +63,7 @@ public class LeavePlayModeButton : MonoBehaviour
 	// Methods
 	private void Awake();
 	public void Execute();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_ExecuteLeaveEditDelayed_d__2))]
 	private IEnumerator ExecuteLeaveEditDelayed();
-	[CompilerGenerated]
-	private static void _Execute_m__0(ILeaveEditPlayModeHandler x, BaseEventData y);
 }
 

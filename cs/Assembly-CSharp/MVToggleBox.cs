@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVToggleBox : MVLogicObject, ILogicWorldObject
 {
@@ -16,7 +16,6 @@ public class MVToggleBox : MVLogicObject, ILogicWorldObject
 	private const string onceValueKey = "once";
 	private OutputSignalTransmitter outputSignalTransmitter;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 
 	// Properties

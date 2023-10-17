@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeEventPopup : MonoBehaviour
 {
@@ -21,16 +21,16 @@ public class FirstTimeEventPopup : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _PopSelf_c__AnonStorey0
+	private sealed class __c__DisplayClass5_0
 	{
 		// Fields
-		internal GameObject popupGameObject;
+		public GameObject popupGameObject;
 
 		// Constructors
-		public _PopSelf_c__AnonStorey0();
+		public __c__DisplayClass5_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _PopSelf_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

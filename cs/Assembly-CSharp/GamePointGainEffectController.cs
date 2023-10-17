@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePointGainEffectController : MonoBehaviour
 {
@@ -21,15 +21,17 @@ public class GamePointGainEffectController : MonoBehaviour
 	private GamePointGainEffectCountController countController;
 	[SerializeField]
 	private GamePointGainEffect gamePointGainEffectPrefab;
+	[SerializeField]
+	private bool disableSpawnOffset;
 	private int currentGamePoints;
 	private int gamePointsToInstantiate;
 	private float createGamePointTime;
 	private const float createGamePointDelayMax = 0.2f;
 	private const float createGamePointDelayMin = 0.1f;
 	private const int maxAmountOfQueuedGainEffects = 10;
-	private Vector3 gainEffectSpawnOffset;
-	private List<GamePointGainEffect> gamePointGainEffectPool;
-	private List<GamePointGainEffect> gamePointGainEffectCurrentlyUsed;
+	private readonly Vector3 gainEffectSpawnOffset;
+	private readonly List<GamePointGainEffect> gamePointGainEffectPool;
+	private readonly List<GamePointGainEffect> gamePointGainEffectCurrentlyUsed;
 
 	// Constructors
 	public GamePointGainEffectController();
@@ -42,7 +44,7 @@ public class GamePointGainEffectController : MonoBehaviour
 	private void OnPlayerPlanetDataUpdated();
 	private void OnFakeGainEffect(int newGamePoints);
 	private void OnHaveShownGainEffect(int gamePointAmountShown);
-	private void OnIngameGainEffectShown(int gamePointAmountShown);
+	private void OnInGameGainEffectShown(int gamePointAmountShown);
 	private void HandleNewGamePointAmount(int newGamePointsAmount);
 	private void HandleAddedGamePoints(int newAddedGamePoints);
 	private void StartGamePointGainEffect();

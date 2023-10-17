@@ -8,15 +8,21 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace Photon.SocketServer.Security
 {
 	internal interface ICryptoProvider : IDisposable
 	{
+		// Properties
+		bool IsInitialized { get; }
+		byte[] PublicKey { get; }
+	
 		// Methods
 		void DeriveSharedKey(byte[] otherPartyPublicKey);
+		byte[] Encrypt(byte[] data);
 		byte[] Encrypt(byte[] data, int offset, int count);
+		byte[] Decrypt(byte[] data);
 		byte[] Decrypt(byte[] data, int offset, int count);
 	}
 }

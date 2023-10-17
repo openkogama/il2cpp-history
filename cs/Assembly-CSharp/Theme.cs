@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using ThemeSettings;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class Theme : MonoBehaviour
 {
@@ -20,7 +20,6 @@ public abstract class Theme : MonoBehaviour
 	private RectTransform themeButtonImagePrefab;
 	private List<ThemeComponent> components;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private SettingsWrapper _Settings_k__BackingField;
 
 	// Properties

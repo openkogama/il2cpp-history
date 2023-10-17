@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MouseModifier : SizeModifier
 {
@@ -23,8 +23,8 @@ public class MouseModifier : SizeModifier
 	private void Destroy();
 	private void Update();
 	[CompilerGenerated]
-	private void _Scale_m__0(float t);
+	private void _Scale_b__2_0(float t);
 	[CompilerGenerated]
-	private void _UnScale_m__1(float t);
+	private void _UnScale_b__3_0(float t);
 }
 

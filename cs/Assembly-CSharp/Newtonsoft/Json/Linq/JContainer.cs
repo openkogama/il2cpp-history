@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
@@ -20,18 +20,18 @@ namespace Newtonsoft.Json.Linq
 		private bool _busy;
 	
 		// Properties
+		protected abstract IList<JToken> ChildrenTokens { get; }
+		public override bool HasValues { get; }
+		public override JToken First { get; }
+		public override JToken Last { get; }
 		JToken IList<Newtonsoft.Json.Linq.JToken>.this[int index] { get => default; set {} }
 		bool ICollection<Newtonsoft.Json.Linq.JToken>.IsReadOnly { get; }
 		bool IList.IsFixedSize { get; }
 		bool IList.IsReadOnly { get; }
 		object IList.this[int index] { get => default; set {} }
+		public int Count { get; }
 		bool ICollection.IsSynchronized { get; }
 		object ICollection.SyncRoot { get; }
-		protected abstract IList<JToken> ChildrenTokens { get; }
-		public override bool HasValues { get; }
-		public override JToken First { get; }
-		public override JToken Last { get; }
-		public int Count { get; }
 	
 		// Nested types
 		private class JTokenReferenceEqualityComparer : IEqualityComparer<JToken>
@@ -49,18 +49,16 @@ namespace Newtonsoft.Json.Linq
 		}
 	
 		[CompilerGenerated]
-		private sealed class _Descendants_c__Iterator0 : IEnumerable<JToken>, IEnumerator<JToken>
+		private sealed class _Descendants_d__16 : IEnumerable<JToken>, IEnumerator<JToken>
 		{
 			// Fields
-			internal IEnumerator<JToken> _locvar0;
-			internal JToken _o___1;
-			internal JContainer _c___2;
-			internal IEnumerator<JToken> _locvar1;
-			internal JToken _d___3;
-			internal JContainer _this;
-			internal JToken _current;
-			internal bool _disposing;
-			internal int _PC;
+			private int __1__state;
+			private JToken __2__current;
+			private int __l__initialThreadId;
+			public JContainer __4__this;
+			private IEnumerator<JToken> __7__wrap1;
+			private JToken _o_5__3;
+			private IEnumerator<JToken> __7__wrap3;
 	
 			// Properties
 			JToken IEnumerator<Newtonsoft.Json.Linq.JToken>.Current { [DebuggerHidden] get; }
@@ -68,18 +66,20 @@ namespace Newtonsoft.Json.Linq
 	
 			// Constructors
 			[DebuggerHidden]
-			public _Descendants_c__Iterator0();
+			public _Descendants_d__16(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
+			private void __m__Finally1();
+			private void __m__Finally2();
 			[DebuggerHidden]
-			public void Reset();
-			[DebuggerHidden]
-			IEnumerator IEnumerable.GetEnumerator();
+			void IEnumerator.Reset();
 			[DebuggerHidden]
 			IEnumerator<JToken> IEnumerable<JToken>.GetEnumerator();
+			[DebuggerHidden]
+			IEnumerator IEnumerable.GetEnumerator();
 		}
 	
 		// Constructors
@@ -91,7 +91,7 @@ namespace Newtonsoft.Json.Linq
 		internal bool ContentsEqual(JContainer container);
 		public override JEnumerable<JToken> Children();
 		public override IEnumerable<T> Values<T>();
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_Descendants_d__16))]
 		public IEnumerable<JToken> Descendants();
 		internal bool IsMultiContent(object content);
 		internal JToken EnsureParentToken(JToken item);

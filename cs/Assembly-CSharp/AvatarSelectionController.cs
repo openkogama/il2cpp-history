@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarSelectionController : MonoBehaviour, IAvatarSlotClicked
 {
@@ -26,15 +26,30 @@ public class AvatarSelectionController : MonoBehaviour, IAvatarSlotClicked
 	private readonly Dictionary<int, AvatarSelectionSlot> avatarSlots;
 	private static AvatarSelectionController instance;
 	private AvatarEditModeBodyController avatarBodyController;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditStateCommands> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IActivateUIElement> __f__am_cache2;
 
 	// Properties
 	public static int CurrentlySelectedSlotIndex { get; set; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IEditStateCommands> __9__15_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__17_0;
+		public static ExecuteEvents.EventFunction<IActivateUIElement> __9__20_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _SetStateToRoam_b__15_1(IEditStateCommands x, BaseEventData y);
+		internal void _SellCurrentAvatar_b__17_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OpenAvatarShop_b__20_0(IActivateUIElement x, BaseEventData y);
+	}
 
 	// Constructors
 	public AvatarSelectionController();
@@ -52,12 +67,6 @@ public class AvatarSelectionController : MonoBehaviour, IAvatarSlotClicked
 	public void OpenAvatarShop();
 	private void OnPictureTakenCallback(int index, Texture2D image);
 	[CompilerGenerated]
-	private void _SetStateToRoam_m__0(IAvatarSetBodyGroup x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _SetStateToRoam_m__1(IEditStateCommands x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _SellCurrentAvatar_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OpenAvatarShop_m__3(IActivateUIElement x, BaseEventData y);
+	private void _SetStateToRoam_b__15_0(IAvatarSetBodyGroup x, BaseEventData y);
 }
 

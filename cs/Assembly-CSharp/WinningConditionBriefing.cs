@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class WinningConditionBriefing : LobbyFlowMenu
 {
@@ -49,18 +49,16 @@ public class WinningConditionBriefing : LobbyFlowMenu
 	[SerializeField]
 	private PlayButton DesktopPlayButtonPrefab;
 	[SerializeField]
-	private PlayButtonMobile AndroidPlayButtonPrefab;
+	private PlayButtonTouch AndroidPlayButtonPrefab;
 	private WinningConditionType winConType;
 	private bool isInitialized;
 	private Action initializeCallback;
 	private Image winConImage;
 	private GameObject playButton;
 	private PlayButton desktopPlayButton;
-	private PlayButtonMobile androidPlayButton;
+	private PlayButtonTouch androidPlayButton;
 	private readonly Dictionary<WinningConditionType, string> headerMap;
 	private Vector2 screensize;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	protected override LobbyFlowMenuType MenuType { get; }
@@ -79,41 +77,56 @@ public class WinningConditionBriefing : LobbyFlowMenu
 	}
 
 	[CompilerGenerated]
-	private sealed class _FixAspectRatioDelay_c__Iterator0 : IEnumerator<object>
+	private sealed class _FixAspectRatioDelay_d__34 : IEnumerator<object>
 	{
 		// Fields
-		internal WinningConditionBriefing _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public WinningConditionBriefing __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _FixAspectRatioDelay_c__Iterator0();
+		public _FixAspectRatioDelay_d__34(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPlayPressed_c__AnonStorey1
+	private sealed class __c__DisplayClass37_0
 	{
 		// Fields
-		internal SpawnRoleMenu spawnRoleMenu;
+		public SpawnRoleMenu spawnRoleMenu;
 
 		// Constructors
-		public _OnPlayPressed_c__AnonStorey1();
+		public __c__DisplayClass37_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPlayPressed_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPlayPressed_b__37_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -125,12 +138,10 @@ public class WinningConditionBriefing : LobbyFlowMenu
 	private void SetupBriefing();
 	private void Update();
 	protected override void OnDestroy();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_FixAspectRatioDelay_d__34))]
 	private IEnumerator FixAspectRatioDelay();
 	private int GetHighScore(WinningConditionType winningConditionType);
 	private void CreatePlayButton();
 	private void OnPlayPressed();
-	[CompilerGenerated]
-	private static void _OnPlayPressed_m__0(IUIStack x, BaseEventData y);
 }
 

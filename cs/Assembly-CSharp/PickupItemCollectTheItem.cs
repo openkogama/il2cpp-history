@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PickupItemCollectTheItem : PickupItem
 {
@@ -34,6 +34,7 @@ public class PickupItemCollectTheItem : PickupItem
 	public PickupItemCollectTheItem();
 
 	// Methods
+	private void Awake();
 	public override void UpdateWithDirection(Vector3 dir);
 	public override void OnLeaveVehicleWithWeapon();
 	public override void OnEnterVehicleWithWeapon();
@@ -48,6 +49,5 @@ public class PickupItemCollectTheItem : PickupItem
 	private void OnWorldObjectSpawnerDestroyed();
 	private void ForceUnequipPickup();
 	private void OnDestroy();
-	private static GameObject CreateMeshClone(MVCubeModelInstance cmb);
 }
 

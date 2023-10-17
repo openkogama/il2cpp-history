@@ -13,7 +13,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryInventoryViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -66,37 +66,75 @@ public class AccessoryInventoryViewItem : MonoBehaviour, IPointerEnterHandler, I
 	private bool bundleView;
 	private bool wasDestroyed;
 	private float effectDuration;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IInventoryChanged> __f__am_cache0;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _OnHoverEvent_c__Iterator0 : IEnumerator<object>
+	private sealed class __c
 	{
 		// Fields
-		internal float _startTime___0;
-		internal Vector2 _startSize___0;
-		internal float sizeOffset;
-		internal Vector2 _targetSize___0;
-		internal AccessoryInventoryViewItem _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IInventoryChanged> __9__33_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPurchasePopupPop_b__33_0(IInventoryChanged x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class _OnAndroidEndHoverEvent_d__41 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public AccessoryInventoryViewItem __4__this;
+		private float _androidStartTime_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _OnHoverEvent_c__Iterator0();
+		public _OnAndroidEndHoverEvent_d__41(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
+	}
+
+	[CompilerGenerated]
+	private sealed class _OnHoverEvent_d__43 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public AccessoryInventoryViewItem __4__this;
+		public float sizeOffset;
+		private float _startTime_5__2;
+		private Vector2 _startSize_5__3;
+		private Vector2 _targetSize_5__4;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _OnHoverEvent_d__43(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -116,15 +154,15 @@ public class AccessoryInventoryViewItem : MonoBehaviour, IPointerEnterHandler, I
 	public void OnPointerEnter(PointerEventData eventData);
 	public void OnPointerExit(PointerEventData eventData);
 	public void OnPointerClick(PointerEventData eventData);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_OnAndroidEndHoverEvent_d__41))]
+	private IEnumerator OnAndroidEndHoverEvent();
+	[IteratorStateMachine(typeof(_OnHoverEvent_d__43))]
 	private IEnumerator OnHoverEvent(float sizeOffset);
 	[CompilerGenerated]
-	private void _OnClicked_m__0(IAccessoryClicked x, BaseEventData y);
+	private void _OnClicked_b__30_0(IAccessoryClicked x, BaseEventData y);
 	[CompilerGenerated]
-	private void _OnClicked_m__1(IAccessoryClicked x, BaseEventData y);
+	private void _OnClicked_b__30_1(IAccessoryClicked x, BaseEventData y);
 	[CompilerGenerated]
-	private void _OnEquip_m__2(IAttachToBody x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPurchasePopupPop_m__3(IInventoryChanged x, BaseEventData y);
+	private void _OnEquip_b__31_0(IAttachToBody x, BaseEventData y);
 }
 

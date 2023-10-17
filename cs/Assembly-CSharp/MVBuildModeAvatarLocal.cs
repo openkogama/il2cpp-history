@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRoleLocal
 {
@@ -52,6 +52,11 @@ public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRol
 	{
 		// Fields
 		private AvatarBuildModes _avatarBuildModeRuntimeState;
+		private const float pitchSensitivity = 0.167f;
+		private const float yawSensitivity = 0.208f;
+		private const float basePitch = 20f;
+		private const float minimumY = -60f;
+		private const float maximumY = 60f;
 		private readonly float maxSpeed;
 		private readonly float speedModifier;
 		private Vector3 jetPackTargetDeltaPos;
@@ -63,10 +68,8 @@ public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRol
 		private float moveConstraintRadius;
 		private const float moveSlowDownPoint = 0.75f;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private float _YMovementSpeedScale_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private float _XZMovementSpeedScale_k__BackingField;
 		private DoubleTapMovementChecker doubleTap;
 		private Camera mainCamera;
@@ -131,12 +134,14 @@ public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRol
 		public override void FrameUpdate(InputToInGameAction interactionMap);
 		public override void FixedUpdate(IInputToPlayerMovement movementMap);
 		public void SetMoveConstraint(Vector3 center, float radius);
+		private void TouchRotationToCamera();
 		private void UpdateRotationToCamera();
 		protected void SetToEditMode();
 		private void MoveCharacter(Vector3 moveDelta);
 		protected Vector3 GetElevationVelocity();
 		private void Move(Vector3 velocity);
 		private Vector3 GetDirection(bool freeFlight);
+		private static Vector3 GetTouchInputDirection();
 		private static Vector3 GetInputDirection();
 		private Vector3 GetMovementVelocity();
 		private void AvatarCommandsBuildModeOnEnterBuildStateEvent(EditorEvent editorEvent, object data);

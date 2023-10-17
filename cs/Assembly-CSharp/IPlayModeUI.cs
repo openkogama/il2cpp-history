@@ -6,12 +6,13 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public interface IPlayModeUI
 {
 	// Properties
 	bool InLobbyState { get; set; }
+	bool IsDying { get; set; }
 
 	// Methods
 	void ShowEUseIcon(ShowUseOption option, int woId = 0);

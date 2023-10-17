@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryView : MonoBehaviour
 {
@@ -86,83 +86,97 @@ public class AccessoryView : MonoBehaviour
 	private bool isPreviewing;
 	private MVBody avatarBody;
 	private string previewImageUrl;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryClicked> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryInventoryControl> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryClicked> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryInventoryControl> __f__am_cache4;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnDisable_c__AnonStorey0
+	private sealed class __c__DisplayClass42_0
 	{
 		// Fields
-		internal AvatarAccessoryEquipPopup popup;
+		public AvatarAccessoryEquipPopup popup;
 
 		// Constructors
-		public _OnDisable_c__AnonStorey0();
+		public __c__DisplayClass42_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnDisable_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__46_0;
+		public static ExecuteEvents.EventFunction<IAccessoryClicked> __9__50_0;
+		public static ExecuteEvents.EventFunction<IAccessoryInventoryControl> __9__50_1;
+		public static ExecuteEvents.EventFunction<IAccessoryClicked> __9__52_0;
+		public static ExecuteEvents.EventFunction<IAccessoryInventoryControl> __9__52_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Pop_b__46_0(IUIStack x, BaseEventData y);
+		internal void _BackToShop_b__50_0(IAccessoryClicked x, BaseEventData y);
+		internal void _BackToShop_b__50_1(IAccessoryInventoryControl x, BaseEventData y);
+		internal void _EquipPopupResultCallback_b__52_0(IAccessoryClicked x, BaseEventData y);
+		internal void _EquipPopupResultCallback_b__52_1(IAccessoryInventoryControl x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPurchaseButtonPressed_c__AnonStorey1
+	private sealed class __c__DisplayClass47_0
 	{
 		// Fields
-		internal AvatarAccessoryErrorPopup errorPopup;
+		public AvatarAccessoryErrorPopup errorPopup;
 
 		// Constructors
-		public _OnPurchaseButtonPressed_c__AnonStorey1();
+		public __c__DisplayClass47_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPurchaseButtonPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPurchaseButtonPressed_c__AnonStorey2
+	private sealed class __c__DisplayClass47_1
 	{
 		// Fields
-		internal LevelErrorPopup errorPopup;
+		public LevelErrorPopup errorPopup;
 
 		// Constructors
-		public _OnPurchaseButtonPressed_c__AnonStorey2();
+		public __c__DisplayClass47_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPurchaseButtonPressed_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Purchase_c__AnonStorey3
+	private sealed class __c__DisplayClass48_0
 	{
 		// Fields
-		internal AvatarAccessoryPurchasePopup popUp;
-		internal AccessoryView _this;
+		public AvatarAccessoryPurchasePopup popUp;
+		public AccessoryView __4__this;
 
 		// Constructors
-		public _Purchase_c__AnonStorey3();
+		public __c__DisplayClass48_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Purchase_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Purchase_c__AnonStorey4
+	private sealed class __c__DisplayClass48_1
 	{
 		// Fields
-		internal AvatarAccessoryErrorPopup popUp;
-		internal AccessoryView _this;
+		public AvatarAccessoryErrorPopup popUp;
+		public AccessoryView __4__this;
 
 		// Constructors
-		public _Purchase_c__AnonStorey4();
+		public __c__DisplayClass48_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Purchase_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -193,16 +207,6 @@ public class AccessoryView : MonoBehaviour
 	private void SetShowNotOwnedUI(bool shouldShow);
 	private void OnTouristSignupClicked(bool confirmed);
 	[CompilerGenerated]
-	private void _Initialize_m__0(IGetCurrentBody x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Pop_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _BackToShop_m__2(IAccessoryClicked x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _BackToShop_m__3(IAccessoryInventoryControl x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _EquipPopupResultCallback_m__4(IAccessoryClicked x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _EquipPopupResultCallback_m__5(IAccessoryInventoryControl x, BaseEventData y);
+	private void _Initialize_b__39_0(IGetCurrentBody x, BaseEventData y);
 }
 

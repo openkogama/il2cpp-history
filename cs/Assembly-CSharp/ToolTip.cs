@@ -8,9 +8,9 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent]
+[RequireComponent(typeof(RectTransform))]
 public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 	// Fields
@@ -36,6 +36,6 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public void OnPointerEnter(PointerEventData eventData);
 	public void OnPointerExit(PointerEventData eventData);
 	[CompilerGenerated]
-	private void _Update_m__0(IHandleToolTip x, BaseEventData y);
+	private void _Update_b__11_0(IHandleToolTip x, BaseEventData y);
 }
 

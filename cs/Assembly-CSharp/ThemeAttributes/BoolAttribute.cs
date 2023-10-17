@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using ThemeSettings;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace ThemeAttributes
 {
@@ -16,7 +16,7 @@ namespace ThemeAttributes
 	public class BoolAttribute : NamedThemeAttribute<bool>
 	{
 		// Fields
-		[Header]
+		[Header("Dependencies")]
 		[SerializeField]
 		private Setter togglePrefab;
 	

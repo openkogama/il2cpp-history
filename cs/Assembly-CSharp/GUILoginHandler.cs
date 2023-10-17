@@ -10,7 +10,7 @@ using MV.Common;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GUILoginHandler : MonoBehaviour
 {
@@ -28,6 +28,8 @@ public class GUILoginHandler : MonoBehaviour
 	[SerializeField]
 	private Toggle disableCacheToggle;
 	[SerializeField]
+	private Toggle touchToggle;
+	[SerializeField]
 	private Dropdown planetDropdown;
 	[SerializeField]
 	private Dropdown profileDropdown;
@@ -38,16 +40,16 @@ public class GUILoginHandler : MonoBehaviour
 	private string _profileId;
 	private string _serverip;
 	private string _planetId;
-	private Dictionary<string, PlanetData> defaultPlanetData;
-	private Dictionary<string, object> gameSessionData;
+	private readonly Dictionary<string, PlanetData> defaultPlanetData;
+	private readonly Dictionary<string, object> gameSessionData;
 	private string playerPrefKey;
 
 	// Nested types
 	private struct PlanetData
 	{
 		// Fields
-		public int planetID;
-		public int profileID;
+		public readonly int planetID;
+		public readonly int profileID;
 
 		// Constructors
 		public PlanetData(int planet, int profile);
@@ -80,14 +82,15 @@ public class GUILoginHandler : MonoBehaviour
 	public void EnterCharacterEditOnClick();
 	public void Embedded(bool isEmbedded);
 	public void Caching();
+	public void TouchMode();
 	private void StartGame(MVGameMode gameMode);
 	private void SetValuesToPrefOrDefault();
 	private void UpdatePrefValuesIfChanged();
 	private string GetPrefOrDefault(string prefName, string target);
 	private string UpdateIfChanged(string prefName, string current, string target);
 	[CompilerGenerated]
-	private void _SetupPlanetID_m__0(string value);
+	private void _SetupPlanetID_b__25_0(string value);
 	[CompilerGenerated]
-	private void _SetupProfileID_m__1(string value);
+	private void _SetupProfileID_b__26_0(string value);
 }
 

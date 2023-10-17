@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -93,9 +93,9 @@ namespace ExitGames.Client.Photon
 		public override object Deserialize(StreamBuffer din, byte type);
 		public override short DeserializeShort(StreamBuffer din);
 		public override byte DeserializeByte(StreamBuffer din);
-		private static Type GetAllowedDictionaryKeyTypes(GpType gpType);
-		private static Type GetClrArrayType(GpType gpType);
-		private GpType GetCodeOfType(Type type);
+		private static System.Type GetAllowedDictionaryKeyTypes(GpType gpType);
+		private static System.Type GetClrArrayType(GpType gpType);
+		private GpType GetCodeOfType(System.Type type);
 		private GpType GetCodeOfTypeCode(TypeCode type);
 		private object Read(StreamBuffer stream);
 		private object Read(StreamBuffer stream, byte gpType);
@@ -103,6 +103,8 @@ namespace ExitGames.Client.Photon
 		internal byte ReadByte(StreamBuffer stream);
 		internal short ReadInt16(StreamBuffer stream);
 		internal ushort ReadUShort(StreamBuffer stream);
+		internal int ReadInt32(StreamBuffer stream);
+		internal long ReadInt64(StreamBuffer stream);
 		internal float ReadSingle(StreamBuffer stream);
 		internal double ReadDouble(StreamBuffer stream);
 		internal byte[] ReadByteArray(StreamBuffer stream);
@@ -110,13 +112,14 @@ namespace ExitGames.Client.Photon
 		public override EventData DeserializeEventData(StreamBuffer din, EventData target = null);
 		private Dictionary<byte, object> ReadParameterTable(StreamBuffer stream, Dictionary<byte, object> target = null);
 		public Hashtable ReadHashtable(StreamBuffer stream);
+		public int[] ReadIntArray(StreamBuffer stream);
 		public override OperationRequest DeserializeOperationRequest(StreamBuffer din);
 		public override OperationResponse DeserializeOperationResponse(StreamBuffer stream);
 		internal string ReadString(StreamBuffer stream);
 		private object ReadCustomTypeArray(StreamBuffer stream);
-		private Type ReadDictionaryType(StreamBuffer stream, out GpType keyReadType, out GpType valueReadType);
-		private Type ReadDictionaryType(StreamBuffer stream);
-		private Type GetDictArrayType(StreamBuffer stream);
+		private System.Type ReadDictionaryType(StreamBuffer stream, out GpType keyReadType, out GpType valueReadType);
+		private System.Type ReadDictionaryType(StreamBuffer stream);
+		private System.Type GetDictArrayType(StreamBuffer stream);
 		private IDictionary ReadDictionary(StreamBuffer stream);
 		private bool ReadDictionaryElements(StreamBuffer stream, GpType keyReadType, GpType valueReadType, IDictionary dictionary);
 		private object[] ReadObjectArray(StreamBuffer stream);
@@ -162,19 +165,21 @@ namespace ExitGames.Client.Photon
 		internal void WriteSingleArray(StreamBuffer stream, float[] values, bool setType);
 		internal void WriteDoubleArray(StreamBuffer stream, double[] values, bool setType);
 		internal void WriteStringArray(StreamBuffer stream, object value0, bool writeType);
+		private void WriteObjectArray(StreamBuffer stream, object array, bool writeType);
 		private void WriteObjectArray(StreamBuffer stream, IList array, bool writeType);
 		private void WriteArrayInArray(StreamBuffer stream, object value, bool writeType);
 		private void WriteCustomTypeBody(CustomType customType, StreamBuffer stream, object value);
 		private void WriteCustomType(StreamBuffer stream, object value, bool writeType);
 		private void WriteCustomTypeArray(StreamBuffer stream, object value, bool writeType);
-		private bool WriteArrayHeader(StreamBuffer stream, Type type);
+		private bool WriteArrayHeader(StreamBuffer stream, System.Type type);
 		private void WriteDictionaryElements(StreamBuffer stream, IDictionary dictionary, GpType keyWriteType, GpType valueWriteType);
 		private void WriteDictionary(StreamBuffer stream, object dict, bool setType);
-		private void WriteDictionaryHeader(StreamBuffer stream, Type type, out GpType keyWriteType, out GpType valueWriteType);
-		private bool WriteArrayType(StreamBuffer stream, Type type, out GpType writeType);
+		private void WriteDictionaryHeader(StreamBuffer stream, System.Type type, out GpType keyWriteType, out GpType valueWriteType);
+		private bool WriteArrayType(StreamBuffer stream, System.Type type, out GpType writeType);
 		private void WriteHashtableArray(StreamBuffer stream, object value, bool writeType);
 		private void WriteDictionaryArray(StreamBuffer stream, IDictionary[] dictArray, bool writeType);
 		private void WriteIntLength(StreamBuffer stream, int value);
+		private void WriteVarInt32(StreamBuffer stream, int value, bool writeType);
 		private void WriteCompressedInt32(StreamBuffer stream, int value, bool writeType);
 		private void WriteCompressedInt64(StreamBuffer stream, long value, bool writeType);
 		private void WriteCompressedUInt32(StreamBuffer stream, uint value);

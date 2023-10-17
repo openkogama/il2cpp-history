@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal class CubeModelTool : IState
 {
@@ -16,7 +16,6 @@ internal class CubeModelTool : IState
 	private static int cubeCount;
 	public static Action<int, EditCubeChange> OnEditCubeChange;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private CubeModelingEvent _StateType_k__BackingField;
 
 	// Properties
@@ -25,7 +24,6 @@ internal class CubeModelTool : IState
 
 	// Constructors
 	public CubeModelTool();
-	static CubeModelTool();
 
 	// Methods
 	protected static void SendCubeEvent(int cubeCount, EditCubeChange cubeChange);

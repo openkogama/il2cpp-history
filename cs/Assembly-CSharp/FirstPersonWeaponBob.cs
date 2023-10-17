@@ -7,24 +7,24 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [Serializable]
 public class FirstPersonWeaponBob
 {
 	// Fields
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Bobs per second.")]
 	private float bobFrequency;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Units by time")]
 	private AnimationCurve bob;
 	[SerializeField]
 	private Vector3 bobAxis;
 	[SerializeField]
 	private float bobMultiplier;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Degrees by time")]
 	private AnimationCurve rotation;
 	[SerializeField]
 	private Vector3 rotationAxis;

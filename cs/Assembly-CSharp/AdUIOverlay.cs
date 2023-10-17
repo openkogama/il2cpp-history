@@ -9,7 +9,7 @@ using Assets.Scripts.AdIntegration;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AdUIOverlay : MonoBehaviour, IAdUIManager
 {
@@ -17,23 +17,37 @@ public class AdUIOverlay : MonoBehaviour, IAdUIManager
 	[SerializeField]
 	private GameObject adBackground;
 	private bool popupShowing;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CreatePopup_c__AnonStorey0
+	private sealed class __c__DisplayClass8_0
 	{
 		// Fields
-		internal bool stackReady;
-		internal AdUIOverlay _this;
+		public bool stackReady;
+		public AdUIOverlay __4__this;
 
 		// Constructors
-		public _CreatePopup_c__AnonStorey0();
+		public __c__DisplayClass8_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
-		internal void __m__1(IUIStack x, BaseEventData y);
+		internal void _CreatePopup_b__0(IUIStack x, BaseEventData y);
+		internal void _CreatePopup_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Pop_b__9_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -48,7 +62,5 @@ public class AdUIOverlay : MonoBehaviour, IAdUIManager
 	public void PopRewardedVideo(RewardedAdResult adResult);
 	private void CreatePopup();
 	private void Pop();
-	[CompilerGenerated]
-	private static void _Pop_m__0(IUIStack x, BaseEventData y);
 }
 

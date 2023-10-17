@@ -10,7 +10,7 @@ using MV.WorldObject.ThemesData;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemePreviewSettingsMenu : ThemeSettingsMenuBase
 {
@@ -26,87 +26,100 @@ public class ThemePreviewSettingsMenu : ThemeSettingsMenuBase
 	private ConfirmationPopup openPopup;
 	private ThemeSettingsSideBar sideBar;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private ThemeData _ThemeData_k__BackingField;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache3;
 
 	// Properties
 	private ThemeData ThemeData { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal ThemeData data;
-		internal ThemePreviewSettingsMenu _this;
+		public ThemePreviewSettingsMenu __4__this;
+		public ThemeData data;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0();
+		internal void _Initialize_b__0();
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplayInsufficientLevelNotification_c__AnonStorey1
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal string msg;
+		public string msg;
 
 		// Constructors
-		public _DisplayInsufficientLevelNotification_c__AnonStorey1();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _DisplayInsufficientLevelNotification_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplayInsufficientGoldNotification_c__AnonStorey2
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		internal string msg;
+		public string msg;
 
 		// Constructors
-		public _DisplayInsufficientGoldNotification_c__AnonStorey2();
+		public __c__DisplayClass15_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _DisplayInsufficientGoldNotification_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplaySkyboxWarning_c__AnonStorey3
+	private sealed class __c__DisplayClass16_0
 	{
 		// Fields
-		internal string msg;
-		internal ThemePreviewSettingsMenu _this;
+		public string msg;
+		public ThemePreviewSettingsMenu __4__this;
 
 		// Constructors
-		public _DisplaySkyboxWarning_c__AnonStorey3();
+		public __c__DisplayClass16_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _DisplaySkyboxWarning_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplayThemeSwitchWarning_c__AnonStorey4
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
-		internal string msg;
-		internal ThemePreviewSettingsMenu _this;
+		public string msg;
+		public ThemePreviewSettingsMenu __4__this;
 
 		// Constructors
-		public _DisplayThemeSwitchWarning_c__AnonStorey4();
+		public __c__DisplayClass18_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _DisplayThemeSwitchWarning_b__0(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_3;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_4;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPurchaseResponse_b__20_0(IUIStack x, BaseEventData y);
+		internal void _OnPurchaseResponse_b__20_1(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPurchaseResponse_b__20_3(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPurchaseResponse_b__20_4(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -123,14 +136,6 @@ public class ThemePreviewSettingsMenu : ThemeSettingsMenuBase
 	private void OnThemeSwitchWarningResolved(bool b, ConfirmationPopup popup);
 	private void OnPurchaseResponse(int returnCode, Dictionary<object, object> purchaseResponseData);
 	[CompilerGenerated]
-	private static void _OnPurchaseResponse_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPurchaseResponse_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _OnPurchaseResponse_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPurchaseResponse_m__3(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPurchaseResponse_m__4(IModalPopupCreator x, BaseEventData y);
+	private void _OnPurchaseResponse_b__20_2(IModalPopupCreator x, BaseEventData y);
 }
 

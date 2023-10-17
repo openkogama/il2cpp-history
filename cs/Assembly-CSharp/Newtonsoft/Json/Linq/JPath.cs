@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
@@ -16,7 +16,6 @@ namespace Newtonsoft.Json.Linq
 		// Fields
 		private readonly string _expression;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private List<object> _Parts_k__BackingField;
 		private int _currentIndex;
 	

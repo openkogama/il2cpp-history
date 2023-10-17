@@ -8,41 +8,41 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [Serializable]
 public class SplashController : StreamedAudioClip.IReceiver
 {
 	// Fields
-	[Header]
+	[Header("Rings")]
 	[SerializeField]
 	private ParticleSystem waterRingParticles;
 	[SerializeField]
 	private float timeBeforeNewRingIsEmitted;
 	[SerializeField]
 	private float distanceBeforeNewRingIsEmitted;
-	[Header]
+	[Header("Splash")]
 	[SerializeField]
 	private ParticleSystem waterSplashParticles;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Actual number is based off avatar speed.")]
 	private float baseNumberOfSplashParticles;
-	[Range]
+	[Range(0f, 4f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Actual number is based off avatar speed.")]
 	private float baseSplashParticlesSpeed;
 	[SerializeField]
 	private Color splashTint;
-	[Header]
+	[Header("Pillar")]
 	[SerializeField]
 	private ParticleSystem waterPillarParticles;
-	[Range]
+	[Range(0f, 10f)]
 	[SerializeField]
 	private float waterPillarDensity;
 	[SerializeField]
 	private Color pillarTint;
-	[Header]
-	[Range]
+	[Header("Sound")]
+	[Range(0f, 1f)]
 	[SerializeField]
 	private float splashSoundVolume;
 	[SerializeField]
@@ -59,16 +59,12 @@ public class SplashController : StreamedAudioClip.IReceiver
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private float _TimeSinceLastRingEmission_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Vector3 _LastRingPosition_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _LastFrameInWater_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _IsInWater_k__BackingField;
 
 		// Properties

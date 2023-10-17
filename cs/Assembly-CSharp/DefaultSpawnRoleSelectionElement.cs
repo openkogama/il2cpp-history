@@ -12,7 +12,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DefaultSpawnRoleSelectionElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -45,6 +45,7 @@ public class DefaultSpawnRoleSelectionElement : MonoBehaviour, IPointerDownHandl
 	// Methods
 	public virtual void Initialize(int spawnRoleIndex, int woId, GamePassTier tierRequirement, MVTeam team, UnityAction<int> onSelectedCallback, UnityAction<int> onActivatedCallback);
 	public void SetupPreviewImage(GameObject spawnRoleObject);
+	private void ResetAvatarRenderers(GameObject avatarObject);
 	public virtual void Select();
 	public virtual void OnSelctionHighlight();
 	public virtual void OnSelected();

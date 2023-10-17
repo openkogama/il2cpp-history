@@ -9,7 +9,7 @@ using MV.Common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleMenuButton : MonoBehaviour
 {
@@ -18,21 +18,35 @@ public class SpawnRoleMenuButton : MonoBehaviour
 	private SpawnRoleMenu spawnRoleMenuPrefab;
 	[SerializeField]
 	private GameObject buttonObject;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowSpawnRoleMenu_c__AnonStorey0
+	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
-		internal SpawnRoleMenu newSpawnRoleMenu;
+		public SpawnRoleMenu newSpawnRoleMenu;
 
 		// Constructors
-		public _ShowSpawnRoleMenu_c__AnonStorey0();
+		public __c__DisplayClass6_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowSpawnRoleMenu_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__6_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _ShowSpawnRoleMenu_b__6_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -44,7 +58,5 @@ public class SpawnRoleMenuButton : MonoBehaviour
 	private void AvatarStateChanged(SpawnRoleModeType state);
 	private void SetButtonIsActive();
 	public void ShowSpawnRoleMenu();
-	[CompilerGenerated]
-	private static void _ShowSpawnRoleMenu_m__0(IUIStack handler, BaseEventData data);
 }
 

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVSentryGunBlueprint : MVBlueprintBase
 {
@@ -30,6 +30,6 @@ public class MVSentryGunBlueprint : MVBlueprintBase
 	public override bool OnEnterObject(EditorStateMachine e);
 	public override bool OnExitObject(EditorStateMachine e);
 	[CompilerGenerated]
-	private IModelingConstraint _InitializeCommon_m__0();
+	private IModelingConstraint _InitializeCommon_b__9_0();
 }
 

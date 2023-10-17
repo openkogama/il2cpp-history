@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 {
@@ -20,6 +20,8 @@ public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 	private RectTransform elementContainer;
 	[SerializeField]
 	private Scrollbar scrollbar;
+	[SerializeField]
+	private ScrollRect scrollRect;
 	[SerializeField]
 	private DragInputHandler dragInputReciever;
 	[SerializeField]
@@ -53,50 +55,64 @@ public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 	private bool awaitingSpawn;
 	private MVTeam shownTeam;
 	public static Action<int> OnNewSpawnRoleSelected;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	protected override LobbyFlowMenuType MenuType { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowTierPurchase_c__AnonStorey0
+	private sealed class __c__DisplayClass56_0
 	{
 		// Fields
-		internal TierUnlockDetailsPopup tierPurchasePopup;
+		public TierUnlockDetailsPopup tierPurchasePopup;
 
 		// Constructors
-		public _ShowTierPurchase_c__AnonStorey0();
+		public __c__DisplayClass56_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTierPurchase_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowLockedTierPurchase_c__AnonStorey1
+	private sealed class __c__DisplayClass57_0
 	{
 		// Fields
-		internal TierLockedDetailsPopup tierLockedPopup;
+		public TierLockedDetailsPopup tierLockedPopup;
 
 		// Constructors
-		public _ShowLockedTierPurchase_c__AnonStorey1();
+		public __c__DisplayClass57_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowLockedTierPurchase_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowTestTier_c__AnonStorey2
+	private sealed class __c__DisplayClass58_0
 	{
 		// Fields
-		internal TierTestDetailsPopup tierTestPopup;
+		public TierTestDetailsPopup tierTestPopup;
 
 		// Constructors
-		public _ShowTestTier_c__AnonStorey2();
+		public __c__DisplayClass58_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTestTier_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__62_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Close_b__62_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -110,7 +126,7 @@ public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 	private void UpdateShownElements();
 	private bool IsIndexWithinBounds(int index);
 	private void ShowElements(int startElementIndex);
-	private void HideElements(int previousStartElement, int amoutOfElements, int newStartElement);
+	private void HideElements(int previousStartElement, int amountOfElements, int newStartElement);
 	public void OnSelectButtonPressed();
 	public void OpenTierShopButtonPressed();
 	public void LockedButtonPressed();
@@ -119,6 +135,7 @@ public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 	public void Initialize(MVTeam team);
 	protected override void OnDestroy();
 	private void Update();
+	private void LateUpdate();
 	private void CreateSpawnRoleSelectionElement(int startIndex, int index, List<ISpawnRolePreviewObject> sortedSpawnRoles, List<MVWorldObjectClient> sortedWorldObjects);
 	private void CreateDefaultAvatarElement();
 	private void OnSpawnRoleSelected(int newSelectedSpawnRole);
@@ -138,7 +155,5 @@ public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 	private void OnPlayerPlanetDataUpdated();
 	private void AwaitSpawnThenClose();
 	private void Close(int spawnRoleID = 0);
-	[CompilerGenerated]
-	private static void _Close_m__0(IUIStack handler, BaseEventData data);
 }
 

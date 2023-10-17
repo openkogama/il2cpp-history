@@ -6,12 +6,14 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator;
+using CodeStage.AntiCheat.ObscuredTypes;
 using MV.Common;
 using MV.WorldObject.GamePassSystem;
 using MV.WorldObject.MetaData;
 using MV.WorldObject.SpawnRoles;
+using WorldObjectTypes.Avatar.Local;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVLocalPlayer : MVPlayer
 {
@@ -20,8 +22,12 @@ public abstract class MVLocalPlayer : MVPlayer
 	private PlayerPlanetData playerPlanetData;
 	private BoostController boostController;
 	private int defaultBodyWoId;
+	private const int NrOfTimesDiedOffset = -3729;
+	private ObscuredInt numberOfTimesDiedInRound;
 	public Action OnInitializeLeveling;
 	private readonly SpawnRoleDataMediator spawnRoleDataMediator;
+	[CompilerGenerated]
+	private WorldObjectUseRequirementTracker _WorldObjectUseRequirementTracker_k__BackingField;
 	protected XPProgress xpProgress;
 	private int planetOwnershipTypeID;
 	public XPProgress.OnXPProgressDataDelegate OnXPProgressData;
@@ -37,6 +43,7 @@ public abstract class MVLocalPlayer : MVPlayer
 	public SpawnRoleDataMediator SpawnRoleDataMediator { get; }
 	public PlayerPlanetData PlayerPlanetData { get; set; }
 	public BoostController BoostController { get; private set; }
+	public WorldObjectUseRequirementTracker WorldObjectUseRequirementTracker { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public int DefaultBodyWoId { get; }
 	public int PlanetOwnershipTypeID { get; private set; }
 	public PlanetOwnershipType PlanetOwnership { get; }
@@ -46,6 +53,8 @@ public abstract class MVLocalPlayer : MVPlayer
 	public float RespawnDuration { get; }
 	public float RespawnTime { get; set; }
 	public float ReviveTimeout { get; }
+	private MVAvatarLocal AvatarLocal { get; }
+	public bool IsAdmin { get; }
 
 	// Nested types
 	public enum PlanetOwnershipType
@@ -72,5 +81,9 @@ public abstract class MVLocalPlayer : MVPlayer
 	protected void SendXpProgressEvent(XPProgressData xpProgressData);
 	protected void OnLevelChangedLocal(int level);
 	public virtual void Destroy();
+	public bool IsPlaying();
+	public void DiedInRound();
+	public bool HasDiedInRound();
+	public void RoundEnded();
 }
 

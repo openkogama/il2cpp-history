@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerListButton : MonoBehaviour
 {
@@ -23,16 +23,35 @@ public class PlayerListButton : MonoBehaviour
 	private UnityEngine.UI.Text playersCount;
 	[SerializeField]
 	private Image notification;
+	[SerializeField]
+	private ColorStyleObject colorStyleObject;
 	private GameObject currPlayerLists;
 	private Dictionary<int, MVPlayer> prevPlayerListState;
+	private bool useColorStyle;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__13_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _CreatePlayerList_b__13_0(IUIStack handler, BaseEventData data);
+	}
 
 	// Constructors
 	public PlayerListButton();
 
 	// Methods
 	private void Awake();
+	private void OnDestroy();
 	private void OnPlayerListReady();
 	private void PendingCountChanged(int pending);
 	private void ViewNotification();
@@ -41,8 +60,6 @@ public class PlayerListButton : MonoBehaviour
 	private void UpdatePlayersCount();
 	private void UpdateTeamColor();
 	[CompilerGenerated]
-	private static void _CreatePlayerList_m__0(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private void _CreatePlayerList_m__1(IUIStack x, BaseEventData y);
+	private void _CreatePlayerList_b__13_1(IUIStack x, BaseEventData y);
 }
 

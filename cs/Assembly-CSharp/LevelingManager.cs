@@ -9,20 +9,15 @@ using System.Runtime.CompilerServices;
 using UnityEngine.Events;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class LevelingManager
 {
 	// Fields
 	public static UnityAction OnLevelingInitialized;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _IsInitialized_k__BackingField;
 	public static readonly Dictionary<int, XPLevelLimits> TestLevelToLimits;
-	[CompilerGenerated]
-	private static Action<UnityWebRequest> __f__mg_cache0;
-	[CompilerGenerated]
-	private static Action<UnityWebRequest> __f__mg_cache1;
 
 	// Properties
 	public static bool IsInitialized { [CompilerGenerated] get; [CompilerGenerated] private set; }

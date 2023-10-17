@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
@@ -20,11 +20,11 @@ namespace Newtonsoft.Json.Linq
 		private IList<JToken> _values;
 	
 		// Properties
-		new bool System.Collections.Generic.ICollection<Newtonsoft.Json.Linq.JToken>.IsReadOnly { get; }
 		protected override IList<JToken> ChildrenTokens { get; }
 		public override JTokenType Type { get; }
 		public override JToken this[object key] { get => default; set {} }
 		public JToken this[int index] { get => default; set {} }
+		new bool System.Collections.Generic.ICollection<Newtonsoft.Json.Linq.JToken>.IsReadOnly { get; }
 	
 		// Constructors
 		public JArray();
@@ -39,7 +39,7 @@ namespace Newtonsoft.Json.Linq
 		public static new JArray Parse(string json);
 		public static new JArray FromObject(object o);
 		public static new JArray FromObject(object o, JsonSerializer jsonSerializer);
-		public override void WriteTo(JsonWriter writer, JsonConverter[] converters);
+		public override void WriteTo(JsonWriter writer, params JsonConverter[] converters);
 		public int IndexOf(JToken item);
 		public void Insert(int index, JToken item);
 		public void RemoveAt(int index);

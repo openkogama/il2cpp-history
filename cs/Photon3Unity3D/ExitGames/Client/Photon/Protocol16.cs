@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -68,8 +68,8 @@ namespace ExitGames.Client.Photon
 		// Methods
 		private bool SerializeCustom(StreamBuffer dout, object serObject);
 		private object DeserializeCustom(StreamBuffer din, byte customTypeCode);
-		private Type GetTypeOfCode(byte typeCode);
-		private GpType GetCodeOfType(Type type);
+		private System.Type GetTypeOfCode(byte typeCode);
+		private GpType GetCodeOfType(System.Type type);
 		private Array CreateArrayByType(byte arrayType, short length);
 		private void SerializeOperationRequest(StreamBuffer stream, OperationRequest serObject, bool setType);
 		public override void SerializeOperationRequest(StreamBuffer stream, byte operationCode, Dictionary<byte, object> parameters, bool setType);
@@ -93,10 +93,11 @@ namespace ExitGames.Client.Photon
 		private void SerializeByteArray(StreamBuffer dout, byte[] serObject, bool setType);
 		private void SerializeByteArraySegment(StreamBuffer dout, byte[] serObject, int offset, int count, bool setType);
 		private void SerializeIntArrayOptimized(StreamBuffer inWriter, int[] serObject, bool setType);
+		private void SerializeStringArray(StreamBuffer dout, string[] serObject, bool setType);
 		private void SerializeObjectArray(StreamBuffer dout, IList objects, bool setType);
 		private void SerializeHashTable(StreamBuffer dout, Hashtable serObject, bool setType);
 		private void SerializeDictionary(StreamBuffer dout, IDictionary serObject, bool setType);
-		private void SerializeDictionaryHeader(StreamBuffer writer, Type dictType);
+		private void SerializeDictionaryHeader(StreamBuffer writer, System.Type dictType);
 		private void SerializeDictionaryHeader(StreamBuffer writer, object dict, out bool setKeyType, out bool setValueType);
 		private void SerializeDictionaryElements(StreamBuffer writer, object dict, bool setKeyType, bool setValueType);
 		public override object Deserialize(StreamBuffer din, byte type);
@@ -116,6 +117,6 @@ namespace ExitGames.Client.Photon
 		private Hashtable DeserializeHashTable(StreamBuffer din);
 		private IDictionary DeserializeDictionary(StreamBuffer din);
 		private bool DeserializeDictionaryArray(StreamBuffer din, short size, out Array arrayResult);
-		private Type DeserializeDictionaryType(StreamBuffer reader, out byte keyTypeCode, out byte valTypeCode);
+		private System.Type DeserializeDictionaryType(StreamBuffer reader, out byte keyTypeCode, out byte valTypeCode);
 	}
 }

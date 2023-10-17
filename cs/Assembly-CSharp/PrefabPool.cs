@@ -6,10 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using IngameController.MVEditor;
 using MV.Common;
 using UnityEngine;
+using WorldObjectInteractionSystem.UseSystem;
+using WorldObjectTypes.VehiclesBase.Shared;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PrefabPool : MonoBehaviour
 {
@@ -17,7 +20,7 @@ public class PrefabPool : MonoBehaviour
 	[SerializeField]
 	private EnumPoolManager enumPoolManager;
 	private static PrefabPool instance;
-	[Header]
+	[Header("World Objects")]
 	[SerializeField]
 	private ObjectPrefab mvFirePrefab;
 	[SerializeField]
@@ -156,9 +159,13 @@ public class PrefabPool : MonoBehaviour
 	private ObjectPrefab teamEditorPrefab;
 	[SerializeField]
 	private ObjectPrefab gamePointChestPrefab;
-	[Header]
 	[SerializeField]
-	[Space]
+	private ObjectPrefab vehicleEnergyPrefab;
+	[SerializeField]
+	private ObjectPrefab doorPrefab;
+	[Header("Game")]
+	[SerializeField]
+	[Space(20f)]
 	private Material ghostMarkerMaterial;
 	[SerializeField]
 	private Material objectHiddenMaterial;
@@ -169,6 +176,8 @@ public class PrefabPool : MonoBehaviour
 	[SerializeField]
 	private StarDisplayObject starDisplayPrefab;
 	[SerializeField]
+	private RewardedAdDisplayObject rewardedAdDisplayPrefab;
+	[SerializeField]
 	private LevelDisplayCube levelDisplayPrefab;
 	[SerializeField]
 	private GameRankDisplayObject gameRankDisplayPrefab;
@@ -178,9 +187,9 @@ public class PrefabPool : MonoBehaviour
 	private CubeModelChunkPrefab cubeModelChunkPrefab;
 	[SerializeField]
 	private Material blinkerDefaultMaterial;
-	[Header]
+	[Header("Pick up")]
 	[SerializeField]
-	[Space]
+	[Space(20f)]
 	private MVPickupItemBaseObject avatarCenterGunPrefab;
 	[SerializeField]
 	private MVPickupItemBaseObject avatarImpulseGunPrefab;
@@ -194,6 +203,8 @@ public class PrefabPool : MonoBehaviour
 	private MVPickupItemBaseObject avatarMutantPrefab;
 	[SerializeField]
 	private MVPickupItemBaseObject avatarSwordPrefab;
+	[SerializeField]
+	private MVPickupItemBaseObject avatarMeleeWeaponPrefab;
 	[SerializeField]
 	private MVPickupItemBaseObject avatarShotgunPrefab;
 	[SerializeField]
@@ -220,9 +231,11 @@ public class PrefabPool : MonoBehaviour
 	private MVPickupItemBaseObject avatarGrowthPackPrefab;
 	[SerializeField]
 	private MVPickupItemBaseObject avatarHealRayPrefab;
-	[Header]
 	[SerializeField]
-	[Space]
+	private MVPickupItemBaseObject avatarCostumePrefab;
+	[Header("Avatar item pick up")]
+	[SerializeField]
+	[Space(20f)]
 	private GameObject avatarItemCenterGun;
 	[SerializeField]
 	private GameObject avatarItemImpulseGun;
@@ -236,6 +249,8 @@ public class PrefabPool : MonoBehaviour
 	private GameObject avatarItemRailGun;
 	[SerializeField]
 	private GameObject avatarItemSword;
+	[SerializeField]
+	private GameObject avatarItemMeleeWeapon;
 	[SerializeField]
 	private GameObject avatarItemShotgun;
 	[SerializeField]
@@ -260,13 +275,15 @@ public class PrefabPool : MonoBehaviour
 	private GameObject avatarItemCollectTheItem;
 	[SerializeField]
 	private GameObject avatarItemHealRay;
-	[Header]
 	[SerializeField]
-	[Space]
+	private GameObject avatarItemCostume;
+	[Header("Avatar modifier")]
+	[SerializeField]
+	[Space(20f)]
 	private AvatarModifier shieldModifier;
-	[Header]
+	[Header("Particles")]
 	[SerializeField]
-	[Space]
+	[Space(20f)]
 	private GameObject particleCFX_GroundAura;
 	[SerializeField]
 	private ParticleSystem particleCubeDust;
@@ -284,9 +301,9 @@ public class PrefabPool : MonoBehaviour
 	private ParticleSystem collectTheItemParticles;
 	[SerializeField]
 	private ParticleSystem healingParticles;
-	[Header]
+	[Header("Logic object prefabs")]
 	[SerializeField]
-	[Space]
+	[Space(20f)]
 	private GameObject logicInputConnectorPrefab;
 	[SerializeField]
 	private GameObject logicOutputConnectorPrefab;
@@ -304,17 +321,17 @@ public class PrefabPool : MonoBehaviour
 	private Material logicCubeConnectorBlueMaterial;
 	[SerializeField]
 	private Material logicCubeConnectorBlueSelectedMaterial;
-	[Header]
+	[Header("GUI")]
 	[SerializeField]
-	[Space]
+	[Space(20f)]
 	private Texture2D avatarAccessoryMoveIcon;
 	[SerializeField]
 	private GameObject drawPlaneObject;
 	[SerializeField]
 	private Material modelConstraintsMaterial;
-	[Header]
+	[Header("UGUI")]
 	[SerializeField]
-	[Space]
+	[Space(20f)]
 	private AvatarInputControllerAndroidSettings avatarInputControllerAndroidSettings;
 	[SerializeField]
 	private Texture2D crosshairCursor;
@@ -324,18 +341,18 @@ public class PrefabPool : MonoBehaviour
 	private InsertCursor insertCursor;
 	[SerializeField]
 	private ChatBubble chatBubble;
-	[Header]
+	[Header("TextBubbleContent")]
 	[SerializeField]
 	private RectTransform editCornerHelpText;
 	[SerializeField]
 	private RectTransform editEdgeHelpText;
 	[SerializeField]
 	private RectTransform editFaceHelpText;
-	[Header]
-	[Header]
+	[Header("Editor")]
+	[Header("Cameras")]
 	[SerializeField]
-	[Space]
-	[Space]
+	[Space(20f)]
+	[Space(20f)]
 	private Material cellCursorErrorMaterial;
 	[SerializeField]
 	private Material cellCursorMaterial;
@@ -365,8 +382,15 @@ public class PrefabPool : MonoBehaviour
 	private AdvancedGhostIcon ghostEditorIconObject;
 	[SerializeField]
 	private Material indentMaterial;
+	[SerializeField]
+	private TransformGizmo transformGizmo;
+	[Header("Touch")]
+	[SerializeField]
+	[Space(20f)]
+	public GameObject touchDetectionHandlerPrefab;
 	private Dictionary<AvatarItemType, EquipableData> pickupPrefabLUT;
 	private Dictionary<MVJetPack.JetPackType, VehicleBaseObject> jetPackPrefabLUT;
+	private Dictionary<bool, EquipableData> meleeWeaponPrefabLUT;
 
 	// Properties
 	public EnumPoolManager EnumPoolManager { get; }
@@ -439,12 +463,15 @@ public class PrefabPool : MonoBehaviour
 	public ObjectPrefab TimeAttackFlagPrefab { get; }
 	public MVGamePointObject GamePointPrefab { get; }
 	public ObjectPrefab GamePointChestPrefab { get; }
+	public ObjectPrefab VehicleEnergyPrefab { get; }
+	public ObjectPrefab DoorPrefab { get; }
 	public TriggerCubePrefab TriggerCubePrefab { get; }
 	public Material GhostMarkerMaterial { get; }
 	public Material ObjectHiddenMaterial { get; }
 	public SentryGunBeam IceBeamObject { get; }
 	public SentryGunBeam FireBeamObject { get; }
 	public StarDisplayObject StarDisplayPrefab { get; }
+	public RewardedAdDisplayObject RewardedAdDisplayPrefab { get; }
 	public LevelDisplayCube LevelDisplayPrefab { get; }
 	public GameRankDisplayObject GameRankDisplayPrefab { get; }
 	public GameCoinDisplayObject GameCoinDisplayPrefab { get; }
@@ -458,6 +485,7 @@ public class PrefabPool : MonoBehaviour
 	public MVPickupItemBaseObject AvatarMutantPrefab { get; }
 	public MVPickupItemBaseObject AvatarShotgunPrefab { get; }
 	public MVPickupItemBaseObject AvatarSwordPrefab { get; }
+	public MVPickupItemBaseObject AvatarMeleeWeaponPrefab { get; }
 	public MVPickupItemBaseObject AvatarFlamethrowerPrefab { get; }
 	public MVPickupItemBaseObject AvatarCubeGunPrefab { get; }
 	public MVPickupItemBaseObject AvatarNinjaRunPrefab { get; }
@@ -470,6 +498,7 @@ public class PrefabPool : MonoBehaviour
 	public MVPickupItemBaseObject AvatarMousePackPrefab { get; }
 	public MVPickupItemBaseObject AvatarGrowthPackPrefab { get; }
 	public MVPickupItemBaseObject AvatarHealRayPrefab { get; }
+	public MVPickupItemBaseObject AvatarCostumePrefab { get; }
 	public GameObject AvatarItemCenterGun { get; }
 	public GameObject AvatarItemImpulseGun { get; }
 	public GameObject AvatarItemLaserPointer { get; }
@@ -477,6 +506,7 @@ public class PrefabPool : MonoBehaviour
 	public GameObject AvatarItemHand { get; }
 	public GameObject AvatarItemRailGun { get; }
 	public GameObject AvatarItemSword { get; }
+	public GameObject AvatarItemMeleeWeapon { get; }
 	public GameObject AvatarItemShotgun { get; }
 	public GameObject AvatarItemFlamethrower { get; }
 	public GameObject AvatarItemCubeGun { get; }
@@ -489,6 +519,7 @@ public class PrefabPool : MonoBehaviour
 	public GameObject AvatarItemSlapGun { get; }
 	public GameObject AvatarItemCollectTheItem { get; }
 	public GameObject AvatarItemHealRay { get; }
+	public GameObject AvatarItemCostume { get; }
 	public AvatarModifier ShieldModifier { get; }
 	public GameObject ParticleCFX_GroundAura { get; }
 	public ParticleSystem ParticleCubeDust { get; }
@@ -531,17 +562,18 @@ public class PrefabPool : MonoBehaviour
 	public LineRangeIndicator LineRangeIndicator { get; }
 	public AdvancedGhostIcon GhostEditorIconObject { get; }
 	public Material IndentMaterial { get; }
+	public TransformGizmo TransformGizmo { get; }
 	public static Dictionary<AvatarItemType, EquipableData> PickupPrefabLUT { get; }
 	public static Dictionary<MVJetPack.JetPackType, VehicleBaseObject> JetPackPrefabLUT { get; }
 
 	// Constructors
 	public PrefabPool();
-	static PrefabPool();
 
 	// Methods
 	protected void Awake();
 	protected void OnDestroy();
 	public RectTransform CubeEditHelpTextBubble(CubeModelingStateMachine.HoverType t);
+	public static EquipableData GetPickupPrefab(AvatarItemType avatarItemType, int itemId);
 	private void BuildLookupTables();
 }
 

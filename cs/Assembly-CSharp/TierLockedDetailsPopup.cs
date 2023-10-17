@@ -13,7 +13,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TierLockedDetailsPopup : MonoBehaviour
 {
@@ -36,47 +36,61 @@ public class TierLockedDetailsPopup : MonoBehaviour
 	private TierUnlockDetailsPopup tierUnlockDetailsPrefab;
 	private GamePassTier tierToPurchase;
 	private UnityAction onPurchaseSuccessful;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowTier_c__AnonStorey0
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal GamePassesShop gamePassesShop;
+		public GamePassesShop gamePassesShop;
 
 		// Constructors
-		public _ShowTier_c__AnonStorey0();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTier_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowLockedTier_c__AnonStorey1
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal GamePassesShop gamePassesShop;
+		public GamePassesShop gamePassesShop;
 
 		// Constructors
-		public _ShowLockedTier_c__AnonStorey1();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowLockedTier_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnEnable_b__20_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowPurchasePopup_c__AnonStorey2
+	private sealed class __c__DisplayClass21_0
 	{
 		// Fields
-		internal TierUnlockDetailsPopup tierPurchasePopup;
+		public TierUnlockDetailsPopup tierPurchasePopup;
 
 		// Constructors
-		public _ShowPurchasePopup_c__AnonStorey2();
+		public __c__DisplayClass21_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowPurchasePopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -95,7 +109,5 @@ public class TierLockedDetailsPopup : MonoBehaviour
 	private int ReduceGamePointsWithPreviousTierRequirements(GamePassTier gamePassTierToDisplay, int gamePoints, Dictionary<GamePassTier, PlayerTierState> gameTierShopStatus);
 	private void OnEnable();
 	private void ShowPurchasePopup();
-	[CompilerGenerated]
-	private static void _OnEnable_m__0(IUIStack x, BaseEventData y);
 }
 

@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -25,45 +25,45 @@ namespace Newtonsoft.Json.Utilities
 		private delegate void ActionLine(TextWriter textWriter, string line);
 	
 		[CompilerGenerated]
-		private sealed class _Indent_c__AnonStorey0
+		private sealed class __c__DisplayClass13_0
 		{
 			// Fields
-			internal char indentChar;
-			internal int indentation;
+			public char indentChar;
+			public int indentation;
 	
 			// Constructors
-			public _Indent_c__AnonStorey0();
+			public __c__DisplayClass13_0();
 	
 			// Methods
-			internal void __m__0(TextWriter tw, string line);
+			internal void _Indent_b__0(TextWriter tw, string line);
 		}
 	
 		[CompilerGenerated]
-		private sealed class _NumberLines_c__AnonStorey1
+		private sealed class __c__DisplayClass16_0
 		{
 			// Fields
-			internal int lineNumber;
+			public int lineNumber;
 	
 			// Constructors
-			public _NumberLines_c__AnonStorey1();
+			public __c__DisplayClass16_0();
 	
 			// Methods
-			internal void __m__0(TextWriter tw, string line);
+			internal void _NumberLines_b__0(TextWriter tw, string line);
 		}
 	
 		[CompilerGenerated]
-		private sealed class _ForgivingCaseSensitiveFind_c__AnonStorey2<TSource>
+		private sealed class __c__DisplayClass25_0<TSource>
 		{
 			// Fields
-			internal Func<TSource, string> valueSelector;
-			internal string testValue;
+			public Func<TSource, string> valueSelector;
+			public string testValue;
 	
 			// Constructors
-			public _ForgivingCaseSensitiveFind_c__AnonStorey2();
+			public __c__DisplayClass25_0();
 	
 			// Methods
-			internal bool __m__0(TSource s);
-			internal bool __m__1(TSource s);
+			internal bool _ForgivingCaseSensitiveFind_b__0(TSource s);
+			internal bool _ForgivingCaseSensitiveFind_b__1(TSource s);
 		}
 	
 		// Methods

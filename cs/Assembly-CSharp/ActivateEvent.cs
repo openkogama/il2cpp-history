@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ActivateEvent : MonoBehaviour
 {
@@ -22,6 +22,6 @@ public class ActivateEvent : MonoBehaviour
 	// Methods
 	public void Activate();
 	[CompilerGenerated]
-	private void _Activate_m__0(IActivateUIElement x, BaseEventData y);
+	private void _Activate_b__1_0(IActivateUIElement x, BaseEventData y);
 }
 

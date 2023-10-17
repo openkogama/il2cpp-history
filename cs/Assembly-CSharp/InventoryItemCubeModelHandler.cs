@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventoryItemCubeModelHandler : InventoryItemPreview
 {
@@ -17,23 +17,37 @@ public class InventoryItemCubeModelHandler : InventoryItemPreview
 	[SerializeField]
 	private InventoryItemPreviewSell inventoryItemPreviewSellPrefab;
 	private InventoryItem previewedItem;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _OnDeleteConfirmation_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal string text;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__3_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__7_0;
 
 		// Constructors
-		public _OnDeleteConfirmation_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnSellClicked_b__3_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnDeleteConfirmation_b__7_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass7_0
+	{
+		// Fields
+		public string text;
+
+		// Constructors
+		public __c__DisplayClass7_0();
+
+		// Methods
+		internal void _OnDeleteConfirmation_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -47,10 +61,6 @@ public class InventoryItemCubeModelHandler : InventoryItemPreview
 	private void Update();
 	public void OnDeleteConfirmation(bool affirmative, ConfirmationPopup popup);
 	[CompilerGenerated]
-	private static void _OnSellClicked_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _OnDeleteClicked_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnDeleteConfirmation_m__2(IUIStack x, BaseEventData y);
+	private void _OnDeleteClicked_b__5_0(IModalPopupCreator x, BaseEventData y);
 }
 

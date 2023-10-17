@@ -7,14 +7,18 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent]
+[RequireComponent(typeof(Projector))]
 public class AvatarBlobShadowController : MonoBehaviour
 {
 	// Fields
+	private const float baseScale = 1f;
 	public Projector blobProjector;
-	private float baseScale;
+	private bool forceHidden;
+
+	// Properties
+	public bool ForceHidden { get; set; }
 
 	// Constructors
 	public AvatarBlobShadowController();

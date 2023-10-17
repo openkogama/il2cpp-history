@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using Assets.Scripts.AdIntegration;
 using GoogleMobileAds.Api;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Assets.Scripts.AdIntegration.Mobile
 {
@@ -30,6 +30,7 @@ namespace Assets.Scripts.AdIntegration.Mobile
 	
 		// Properties
 		public string RewardedAdNotAvailableText { get; }
+		public bool IsAdRunning { get; }
 		public TimeSpan TimeSinceLastAd { get; }
 		public TimeSpan TimeSinceLastInterstitial { get; }
 		public TimeSpan TimeSinceLastRewarded { get; }
@@ -60,7 +61,7 @@ namespace Assets.Scripts.AdIntegration.Mobile
 		{
 			// Fields
 			private DateTime prevInterstitialTime;
-			private AdLoadState adLoadState;
+			private readonly AdLoadState adLoadState;
 			private InterstitialAdResult interstitialAdResult;
 			private InterstitialAd interstitial;
 			private bool isHandlingRequest;
@@ -85,18 +86,20 @@ namespace Assets.Scripts.AdIntegration.Mobile
 			private void HandleError();
 			private void FinishRequest();
 			public override string ToString();
-			public void HandleInterstitialLoaded(object sender, EventArgs args);
-			public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args);
-			public void HandleInterstitialOpened(object sender, EventArgs args);
-			public void HandleInterstitialClosed(object sender, EventArgs args);
-			public void HandleInterstitialLeftApplication(object sender, EventArgs args);
+			private void ADLoadCallback(InterstitialAd ad, LoadAdError error);
+			private void InterstitialOnOnAdFullScreenContentOpened();
+			private void InterstitialOnOnAdFullScreenContentClosed();
+			private void InterstitialOnOnAdClicked();
+			private void InterstitialOnOnAdFullScreenContentFailed(AdError error);
+			private void InterstitialOnOnAdImpressionRecorded();
+			private void InterstitialOnOnAdPaid(AdValue adValue);
 		}
 	
 		private class InternalStateRewardedAd
 		{
 			// Fields
 			private DateTime prevInterstitialTime;
-			private AdLoadState adLoadState;
+			private readonly AdLoadState adLoadState;
 			private RewardedAdResult rewardAdResult;
 			private Action<RewardedAdResult> rewardedAdCallback;
 			private RewardedAd rewardedAd;
@@ -111,22 +114,24 @@ namespace Assets.Scripts.AdIntegration.Mobile
 			public InternalStateRewardedAd();
 	
 			// Methods
-			public void CreateAndLoadRewardedAd();
 			public void RequestRewardedAd(Action<RewardedAdResult> rewardedAdCallback);
-			private void SetupCallbacks();
+			public void CreateAndLoadRewardedAd();
 			private void LoadRewardedAd();
-			private void HandleRewardedAdOpening(object sender, EventArgs args);
-			private void HandleRewardedAdLoaded(object sender, EventArgs args);
-			private void HandleRewardedAdFailedToLoad(object sender, AdErrorEventArgs args);
-			private void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args);
-			private void HandleError();
-			private void HandleRewardedAdClosed(object sender, EventArgs args);
-			private void HandleUserEarnedReward(object sender, Reward args);
-			private void FinishRequest();
-			public void Destroy();
-			private void DestroyRewardedAd();
-			public override string ToString();
+			private void SetupCallbacks();
 			private void RemoveCallbacks();
+			private void DestroyRewardedAd();
+			public void Destroy();
+			private void HandleRewardedAdLoaded(RewardedAd ad, LoadAdError error);
+			private void UserRewardEarnedCallback(Reward reward);
+			private void RewardedAdOnOnAdFullScreenContentOpened();
+			private void RewardedAdOnOnAdFullScreenContentClosed();
+			private void RewardedAdOnOnAdFullScreenContentFailed(AdError obj);
+			private void RewardedAdOnOnAdImpressionRecorded();
+			private void RewardedAdOnOnAdPaid(AdValue adValue);
+			private void RewardedAdOnOnAdClicked();
+			private void HandleError();
+			private void FinishRequest();
+			public override string ToString();
 		}
 	
 		private class InterstitialAdResultHandler
@@ -135,8 +140,8 @@ namespace Assets.Scripts.AdIntegration.Mobile
 			public bool IsDone;
 			private readonly Action<InterstitialAdResult> interstitialCallback;
 			private InterstitialAdResult interstitialAdResult;
-			private IAdUIManager adUIManager;
-			private AdContext context;
+			private readonly IAdUIManager adUIManager;
+			private readonly AdContext context;
 	
 			// Constructors
 			public InterstitialAdResultHandler(Action<InterstitialAdResult> interstitialCallback, IAdUIManager adUIManager, AdContext context);
@@ -152,8 +157,8 @@ namespace Assets.Scripts.AdIntegration.Mobile
 			public bool IsDone;
 			private readonly Action<RewardedAdResult> rewardedAdCallback;
 			private RewardedAdResult rewardedAdResult;
-			private IAdUIManager adUIManager;
-			private AdContext context;
+			private readonly IAdUIManager adUIManager;
+			private readonly AdContext context;
 	
 			// Constructors
 			public RewardedAdResultHandler(Action<RewardedAdResult> rewardedAdCallback, IAdUIManager adUIManager, AdContext context);
@@ -211,10 +216,10 @@ namespace Assets.Scripts.AdIntegration.Mobile
 	
 		// Constructors
 		public MobileAdManager(bool testing);
-		static MobileAdManager();
 	
 		// Methods
 		public void InitializeAdConfigSettings(AdConfigSettings config);
+		public bool HideFullscreen();
 		public void Initialize();
 		public void InitializeCallbackManager(IAdUIManager adUIManager);
 		private void SetupConsentAndCompliance(ConsentData consentData);
@@ -227,11 +232,13 @@ namespace Assets.Scripts.AdIntegration.Mobile
 		public void Destroy();
 		public override string ToString();
 		public void UpdateControllerUpdate();
-		private void SetConsent(bool hasConsented, bool isGDPRConsentRequired);
-		private static AdRequest CreateAdRequest();
+		private void SetConsent(ConsentAndCompliance cac);
+		private void SetConsentVungle(ConsentAndCompliance cac);
+		private void SetConsentAdColony(ConsentAndCompliance cac);
+		private void SetConsentAppLovin(ConsentAndCompliance cac);
 		private void SetConsentUnityAds(bool hasConsented);
 		private void SetConsentIronSource(bool hasConsented);
-		private static string BoolToString(bool b);
+		private static AdRequest CreateAdRequest();
 		private static void SendStat(string stat);
 		private void InitCompleteAction(InitializationStatus initializationStatus);
 	}

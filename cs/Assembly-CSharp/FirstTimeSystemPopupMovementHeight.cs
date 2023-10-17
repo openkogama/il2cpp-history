@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeSystemPopupMovementHeight : MonoBehaviour
 {
@@ -24,8 +24,6 @@ public class FirstTimeSystemPopupMovementHeight : MonoBehaviour
 	[SerializeField]
 	private Color deactivated;
 	private float currentFade;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	private bool IsFinished { get; set; }
@@ -40,13 +38,27 @@ public class FirstTimeSystemPopupMovementHeight : MonoBehaviour
 		public GameObject checkMark;
 	}
 
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Update_b__9_0(IUIStack x, BaseEventData y);
+	}
+
 	// Constructors
 	public FirstTimeSystemPopupMovementHeight();
 
 	// Methods
 	private void Update();
 	private void SetControl(KogamaControls control);
-	[CompilerGenerated]
-	private static void _Update_m__0(IUIStack x, BaseEventData y);
 }
 

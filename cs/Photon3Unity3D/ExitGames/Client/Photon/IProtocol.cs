@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -36,6 +36,9 @@ namespace ExitGames.Client.Photon
 		public abstract OperationRequest DeserializeOperationRequest(StreamBuffer din);
 		public abstract OperationResponse DeserializeOperationResponse(StreamBuffer stream);
 		public byte[] Serialize(object obj);
+		public object Deserialize(StreamBuffer stream);
+		public object Deserialize(byte[] serializedData);
 		public object DeserializeMessage(StreamBuffer stream);
+		internal void SerializeMessage(StreamBuffer ms, object msg);
 	}
 }

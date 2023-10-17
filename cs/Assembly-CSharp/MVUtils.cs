@@ -7,20 +7,19 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVUtils : MonoBehaviour
 {
 	// Fields
-	private float CheckProInterval;
-	private float Last;
+	private const float CheckProInterval = 2f;
+	private float last;
 
 	// Constructors
 	public MVUtils();
 
 	// Methods
-	private void Awake();
 	private void Update();
-	private bool CheckPro();
+	private static bool CheckPro();
 }
 

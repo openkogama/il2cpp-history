@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class OpenInventoryNotification : Notification
 {
@@ -30,6 +30,6 @@ public class OpenInventoryNotification : Notification
 	public override void Initialize(Dictionary<object, object> data);
 	public void NotificationClicked();
 	[CompilerGenerated]
-	private void _NotificationClicked_m__0(IPlayerInventory x, BaseEventData y);
+	private void _NotificationClicked_b__7_0(IPlayerInventory x, BaseEventData y);
 }
 

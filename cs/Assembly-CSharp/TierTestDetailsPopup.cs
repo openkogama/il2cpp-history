@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TierTestDetailsPopup : MonoBehaviour
 {
@@ -22,23 +22,37 @@ public class TierTestDetailsPopup : MonoBehaviour
 	[SerializeField]
 	private GamePassesShop gamePassesShopPrefab;
 	private GamePassTier tierToPurchase;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowTier_c__AnonStorey0
+	private sealed class __c__DisplayClass5_0
 	{
 		// Fields
-		internal GamePassesShop gamePassesShop;
+		public GamePassesShop gamePassesShop;
 
 		// Constructors
-		public _ShowTier_c__AnonStorey0();
+		public __c__DisplayClass5_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTier_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__6_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__7_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Test_b__6_0(IUIStack x, BaseEventData y);
+		internal void _OnEnable_b__7_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -49,9 +63,5 @@ public class TierTestDetailsPopup : MonoBehaviour
 	public void ShowTier();
 	public void Test();
 	private void OnEnable();
-	[CompilerGenerated]
-	private static void _Test_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnEnable_m__1(IUIStack x, BaseEventData y);
 }
 

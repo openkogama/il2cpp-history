@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TeamMenuQuadrant : MonoBehaviour
 {
@@ -25,8 +25,23 @@ public class TeamMenuQuadrant : MonoBehaviour
 	private Image buttonImage;
 	[SerializeField]
 	private Image teamImage;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__7_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _TeamSelected_b__7_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public TeamMenuQuadrant();
@@ -34,7 +49,5 @@ public class TeamMenuQuadrant : MonoBehaviour
 	// Methods
 	public void Initialize(TeamData teamData);
 	public void TeamSelected();
-	[CompilerGenerated]
-	private static void _TeamSelected_m__0(IUIStack x, BaseEventData y);
 }
 

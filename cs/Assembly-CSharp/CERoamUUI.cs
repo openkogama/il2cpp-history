@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CERoamUUI : ESStateBase
 {
@@ -17,12 +17,27 @@ public class CERoamUUI : ESStateBase
 	private bool enterEditNextFrame;
 	private Vector3 centerPos;
 	private bool didExit;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAvatarEditUIState> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAvatarEditAnimationState> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAvatarEditAnimationState> __f__am_cache2;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IAvatarEditUIState> __9__4_0;
+		public static ExecuteEvents.EventFunction<IAvatarEditAnimationState> __9__4_1;
+		public static ExecuteEvents.EventFunction<IAvatarEditAnimationState> __9__9_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Enter_b__4_0(IAvatarEditUIState x, BaseEventData y);
+		internal void _Enter_b__4_1(IAvatarEditAnimationState x, BaseEventData y);
+		internal void _EnterObject_b__9_0(IAvatarEditAnimationState x, BaseEventData y);
+	}
 
 	// Constructors
 	public CERoamUUI(Vector3 centerPos);
@@ -33,11 +48,5 @@ public class CERoamUUI : ESStateBase
 	public override void Exit(EditorStateMachine esm);
 	private bool HandleSelect(EditorStateMachine esm);
 	private bool EnterObject(EditorStateMachine esm);
-	[CompilerGenerated]
-	private static void _Enter_m__0(IAvatarEditUIState x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Enter_m__1(IAvatarEditAnimationState x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _EnterObject_m__2(IAvatarEditAnimationState x, BaseEventData y);
 }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ClaimGoldRewardPopup : MonoBehaviour
 {
@@ -19,39 +19,53 @@ public class ClaimGoldRewardPopup : MonoBehaviour
 	private UnityEngine.UI.Text goldRewardText;
 	[SerializeField]
 	private GameObject goldRewardUnlockedPopupPrefab;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Update_c__AnonStorey0
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal bool isBlocked;
-		internal ClaimGoldRewardPopup _this;
+		public bool isBlocked;
+		public ClaimGoldRewardPopup __4__this;
 
 		// Constructors
-		public _Update_c__AnonStorey0();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__4_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__9_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Update_b__4_1(IUIStack x, BaseEventData y);
+		internal void _CreateErrorMessage_b__9_0(IModalPopupCreator x, BaseEventData y);
+		internal void _ClaimGold_b__10_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ClaimGold_c__AnonStorey1
+	private sealed class __c__DisplayClass10_0
 	{
 		// Fields
-		internal GameObject goldRewardUnlockedPopup;
+		public GameObject goldRewardUnlockedPopup;
 
 		// Constructors
-		public _ClaimGold_c__AnonStorey1();
+		public __c__DisplayClass10_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ClaimGold_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -61,16 +75,11 @@ public class ClaimGoldRewardPopup : MonoBehaviour
 	private void Start();
 	private void OnDestroy();
 	private void Update();
-	public void TryClaimGold();
+	public void OnClickClaimGoldAd();
+	public void OnClickClaimGoldSubscriber();
 	private void RewardedAdCallback(RewardedAdResult obj);
 	private void OnAdFinished(bool adWasSuccessful);
 	private void CreateErrorMessage();
 	private void ClaimGold();
-	[CompilerGenerated]
-	private static void _Update_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _CreateErrorMessage_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ClaimGold_m__2(IUIStack x, BaseEventData y);
 }
 

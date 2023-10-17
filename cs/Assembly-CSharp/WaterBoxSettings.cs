@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class WaterBoxSettings : MonoBehaviour, IHandleSettingChanged
 {
@@ -22,6 +22,8 @@ public class WaterBoxSettings : MonoBehaviour, IHandleSettingChanged
 	private SettingsSlider colorG;
 	[SerializeField]
 	private SettingsSlider colorB;
+	[SerializeField]
+	private SettingsToggle toggle;
 	[SerializeField]
 	private Image preview;
 	private float[] color;

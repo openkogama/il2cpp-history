@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SetButtonStyleToTeamColor : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class SetButtonStyleToTeamColor : MonoBehaviour
 
 	// Methods
 	private void Start();
+	private void OnDestroy();
 	private void UpdateColor();
 	private void ResetAlpha(float alpha);
 }

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GameMeterVisuals
 {
@@ -26,30 +26,28 @@ namespace GameMeterVisuals
 	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _AnimateScale_c__Iterator0 : IEnumerator<object>
+		private sealed class _AnimateScale_d__6 : IEnumerator<object>
 		{
 			// Fields
-			internal float _i___1;
-			internal float _i___2;
-			internal GameMeterUpdatedEffect _this;
-			internal object _current;
-			internal bool _disposing;
-			internal int _PC;
+			private int __1__state;
+			private object __2__current;
+			public GameMeterUpdatedEffect __4__this;
+			private float _i_5__2;
 	
 			// Properties
-			object IEnumerator<object>.Current { [DebuggerHidden] get; }
+			object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 			object IEnumerator.Current { [DebuggerHidden] get; }
 	
 			// Constructors
 			[DebuggerHidden]
-			public _AnimateScale_c__Iterator0();
+			public _AnimateScale_d__6(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
 			[DebuggerHidden]
-			public void Reset();
+			void IEnumerator.Reset();
 		}
 	
 		// Constructors
@@ -58,7 +56,7 @@ namespace GameMeterVisuals
 		// Methods
 		private void OnEnable();
 		public override void ExecuteEffect();
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_AnimateScale_d__6))]
 		private IEnumerator AnimateScale();
 		private void OnDisable();
 	}

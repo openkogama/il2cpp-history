@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVPickupOwner : MVComponent
 {
@@ -25,7 +25,6 @@ public abstract class MVPickupOwner : MVComponent
 	public OnHandleFiringDelegate onHandleFiring;
 	public Action<bool> OnHolsteredChanged;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsLocal_k__BackingField;
 
 	// Properties
@@ -66,8 +65,8 @@ public abstract class MVPickupOwner : MVComponent
 	protected void SetAvatarItemAsCurrent(PickupItem avatarItem);
 	protected PickupItem CreateAvatarItem(AvatarItemType type, int variantId);
 	[CompilerGenerated]
-	private void _Init_m__0(object item);
+	private void _Init_b__39_0(object item);
 	[CompilerGenerated]
-	private void _Init_m__1(object value);
+	private void _Init_b__39_1(object value);
 }
 

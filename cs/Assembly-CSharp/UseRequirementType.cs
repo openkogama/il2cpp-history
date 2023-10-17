@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public enum UseRequirementType
 {
@@ -14,6 +14,7 @@ public enum UseRequirementType
 	GameCoin = 1,
 	Star = 2,
 	Team = 3,
-	GameRank = 4
+	GameRank = 4,
+	RewardedAd = 5
 }
 

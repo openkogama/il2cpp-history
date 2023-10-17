@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ShieldedModifier : AvatarModifier
 {
@@ -31,34 +31,32 @@ public class ShieldedModifier : AvatarModifier
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _MakeVisible_c__Iterator0 : IEnumerator<object>
+	private sealed class _MakeVisible_d__14 : IEnumerator<object>
 	{
 		// Fields
-		internal float _currRim___0;
-		internal Color _currColor___0;
-		internal float _i___1;
-		internal float fadeInTime;
-		internal float _i___2;
-		internal float fadeOutTime;
-		internal ShieldedModifier _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public ShieldedModifier __4__this;
+		public float fadeInTime;
+		public float fadeOutTime;
+		private float _currRim_5__2;
+		private Color _currColor_5__3;
+		private float _i_5__4;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _MakeVisible_c__Iterator0();
+		public _MakeVisible_d__14(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -70,7 +68,7 @@ public class ShieldedModifier : AvatarModifier
 	protected override void OnDeactivated(Avatar target);
 	private void AvatarStateChangedHandler(object state);
 	private void OnHealthChange(object floatHealth);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_MakeVisible_d__14))]
 	private IEnumerator MakeVisible(float fadeInTime, float fadeOutTime);
 }
 

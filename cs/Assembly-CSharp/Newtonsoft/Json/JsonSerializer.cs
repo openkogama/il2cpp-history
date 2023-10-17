@@ -11,7 +11,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using Newtonsoft.Json.Serialization;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
@@ -33,7 +33,6 @@ namespace Newtonsoft.Json
 		private SerializationBinder _binder;
 		private StreamingContext _context;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private EventHandler<ErrorEventArgs> Error;
 	
 		// Properties
@@ -67,15 +66,15 @@ namespace Newtonsoft.Json
 		public void Populate(JsonReader reader, object target);
 		internal virtual void PopulateInternal(JsonReader reader, object target);
 		public object Deserialize(JsonReader reader);
-		public object Deserialize(TextReader reader, Type objectType);
+		public object Deserialize(TextReader reader, System.Type objectType);
 		public T Deserialize<T>(JsonReader reader);
-		public object Deserialize(JsonReader reader, Type objectType);
-		internal virtual object DeserializeInternal(JsonReader reader, Type objectType);
+		public object Deserialize(JsonReader reader, System.Type objectType);
+		internal virtual object DeserializeInternal(JsonReader reader, System.Type objectType);
 		public void Serialize(TextWriter textWriter, object value);
 		public void Serialize(JsonWriter jsonWriter, object value);
 		internal virtual void SerializeInternal(JsonWriter jsonWriter, object value);
-		internal JsonConverter GetMatchingConverter(Type type);
-		internal static JsonConverter GetMatchingConverter(IList<JsonConverter> converters, Type objectType);
+		internal JsonConverter GetMatchingConverter(System.Type type);
+		internal static JsonConverter GetMatchingConverter(IList<JsonConverter> converters, System.Type objectType);
 		internal void OnError(ErrorEventArgs e);
 	}
 }

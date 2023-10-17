@@ -8,18 +8,18 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVLocalObjectController : IUpdatecontrollerSubscriberUpdate, IUpdatecontrollerSubscriberFixedUpdate
 {
 	// Fields
-	private const int maxLoclControlledObjects = 4;
+	private const int MaxLocalControlledObjects = 4;
 	private readonly IInputToPlayerMovement movementMap;
 	private InputToInGameAction interactionInput;
 	private IAttachInterface attachState;
-	private List<ILocalObject> localControlledStack;
-	private Dictionary<int, DismountedPlayerControlledObject> dismountedLocalControlledObjects;
-	private MVWorldObjectClientManagerNetwork worldObjectClientManagerNetwork;
+	private readonly List<ILocalObject> localControlledStack;
+	private readonly Dictionary<int, DismountedPlayerControlledObject> dismountedLocalControlledObjects;
+	private readonly MVWorldObjectClientManagerNetwork worldObjectClientManagerNetwork;
 	public const float TimeBeforeUnregister = 30f;
 
 	// Properties
@@ -32,7 +32,6 @@ public class MVLocalObjectController : IUpdatecontrollerSubscriberUpdate, IUpdat
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _Id_k__BackingField;
 
 		// Properties
@@ -102,6 +101,10 @@ public class MVLocalObjectController : IUpdatecontrollerSubscriberUpdate, IUpdat
 	public void OnAttachWorldObjectToSeat(int instigatorActorNr, int seatOwnerWoID, int worldObjectID, int seatID);
 	public bool AttachWorldObjectToSeat(int seatOwnerWoID, int worldObjectID, VehicleSeatBase seatBase);
 	public bool SpawnVehicleWithDriver(int worldObjectSpawnerVehicleID, int worldObjectID, VehicleSeatBase seatBase);
+	public bool VehicleEnergyUseRequest(int worldObjectSpawnerVehicleEnergyID, int worldObjectID);
+	public bool IsInsideVehicle(MVWorldObjectClient worldObjectClient = null);
+	public bool IsInsideVehicleUsingEnergy(MVWorldObjectClient worldObjectClient = null);
+	public void VehicleEnergyUseResponse(bool success, Dictionary<byte, object> returnValues);
 	public void HandleDetachWorldObjectFromVehicle(bool success);
 	public void HandleAttachWorldObjectToSeat(bool success);
 	private void UpdateLocalControlledObjects();

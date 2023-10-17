@@ -5,11 +5,12 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using IngameController.CubeModeling;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopCubeModelingController : MonoBehaviour
 {
@@ -19,30 +20,46 @@ public class DesktopCubeModelingController : MonoBehaviour
 	[SerializeField]
 	private DesktopCubeModelingToolsController desktopCubeModelingController;
 	[SerializeField]
+	private DesktopCubeModelingTogglesController togglesController;
+	[SerializeField]
 	private Sprite errorSprite;
 	[SerializeField]
 	private UploadGameScreenshotHandler screenshotHandler;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache3;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _PublishCallback_c__AnonStorey0
+	private sealed class __c__DisplayClass8_0
 	{
 		// Fields
-		internal string errorText;
+		public string errorText;
 
 		// Constructors
-		public _PublishCallback_c__AnonStorey0();
+		public __c__DisplayClass8_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _PublishCallback_b__3(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__8_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__8_2;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _PublishCallback_b__8_0(IModalPopupCreator x, BaseEventData y);
+		internal void _PublishCallback_b__8_2(IUIStack x, BaseEventData y);
+		internal void _OnPublishPlanetFinished_b__9_0(IUIStack x, BaseEventData y);
+		internal void _TakeScreenshot_b__10_0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -56,14 +73,8 @@ public class DesktopCubeModelingController : MonoBehaviour
 	private void OnPublishPlanetFinished(string completionMessage);
 	public void TakeScreenshot();
 	[CompilerGenerated]
-	private void _PublishGame_m__0(IModalPopupCreator x, BaseEventData y);
+	private void _PublishGame_b__7_0(IModalPopupCreator x, BaseEventData y);
 	[CompilerGenerated]
-	private static void _PublishCallback_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PublishCallback_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPublishPlanetFinished_m__3(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _TakeScreenshot_m__4(IModalPopupCreator x, BaseEventData y);
+	private void _PublishCallback_b__8_1(string errorText);
 }
 

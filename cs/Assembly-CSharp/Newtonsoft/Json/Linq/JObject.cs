@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
@@ -21,19 +21,16 @@ namespace Newtonsoft.Json.Linq
 		// Fields
 		private JPropertKeyedCollection _properties;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private PropertyChangedEventHandler PropertyChanged;
-		[CompilerGenerated]
-		private static Func<JProperty, JToken> __f__am_cache0;
 	
 		// Properties
-		ICollection<string> System.Collections.Generic.IDictionary<string,Newtonsoft.Json.Linq.JToken>.Keys { get; }
-		ICollection<JToken> System.Collections.Generic.IDictionary<string,Newtonsoft.Json.Linq.JToken>.Values { get; }
-		bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.IsReadOnly { get; }
 		protected override IList<JToken> ChildrenTokens { get; }
 		public override JTokenType Type { get; }
 		public override JToken this[object key] { get => default; set {} }
 		public JToken this[string propertyName] { get => default; set {} }
+		ICollection<string> System.Collections.Generic.IDictionary<System.String,Newtonsoft.Json.Linq.JToken>.Keys { get; }
+		ICollection<JToken> System.Collections.Generic.IDictionary<System.String,Newtonsoft.Json.Linq.JToken>.Values { get; }
+		bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,Newtonsoft.Json.Linq.JToken>>.IsReadOnly { get; }
 	
 		// Events
 		public event PropertyChangedEventHandler PropertyChanged {
@@ -55,31 +52,46 @@ namespace Newtonsoft.Json.Linq
 			protected override void InsertItem(int index, JToken item);
 		}
 	
+		[Serializable]
 		[CompilerGenerated]
-		private sealed class _GetEnumerator_c__Iterator0 : IEnumerator<KeyValuePair<string, JToken>>
+		private sealed class __c
 		{
 			// Fields
-			internal IEnumerator<JToken> _locvar0;
-			internal JProperty _property___1;
-			internal JObject _this;
-			internal KeyValuePair<string, JToken> _current;
-			internal bool _disposing;
-			internal int _PC;
+			public static readonly __c __9;
+			public static Func<JProperty, JToken> __9__21_0;
+	
+			// Constructors
+			static __c();
+			public __c();
+	
+			// Methods
+			internal JToken _PropertyValues_b__21_0(JProperty p);
+		}
+	
+		[CompilerGenerated]
+		private sealed class _GetEnumerator_d__49 : IEnumerator<KeyValuePair<string, JToken>>
+		{
+			// Fields
+			private int __1__state;
+			private KeyValuePair<string, JToken> __2__current;
+			public JObject __4__this;
+			private IEnumerator<JToken> __7__wrap1;
 	
 			// Properties
-			KeyValuePair<string, JToken> IEnumerator<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Current { [DebuggerHidden] get; }
+			KeyValuePair<string, JToken> IEnumerator<System.Collections.Generic.KeyValuePair<System.String,Newtonsoft.Json.Linq.JToken>>.Current { [DebuggerHidden] get; }
 			object IEnumerator.Current { [DebuggerHidden] get; }
 	
 			// Constructors
 			[DebuggerHidden]
-			public _GetEnumerator_c__Iterator0();
+			public _GetEnumerator_d__49(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
+			private void __m__Finally1();
 			[DebuggerHidden]
-			public void Reset();
+			void IEnumerator.Reset();
 		}
 	
 		// Constructors
@@ -102,22 +114,22 @@ namespace Newtonsoft.Json.Linq
 		public static new JObject Parse(string json);
 		public static new JObject FromObject(object o);
 		public static new JObject FromObject(object o, JsonSerializer jsonSerializer);
-		public override void WriteTo(JsonWriter writer, JsonConverter[] converters);
+		public override void WriteTo(JsonWriter writer, params JsonConverter[] converters);
 		public void Add(string propertyName, JToken value);
-		bool System.Collections.Generic.IDictionary<string,Newtonsoft.Json.Linq.JToken>.ContainsKey(string key);
+		bool IDictionary<string, JToken>.ContainsKey(string key);
 		public bool Remove(string propertyName);
 		public bool TryGetValue(string propertyName, out JToken value);
-		void System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Add(KeyValuePair<string, JToken> item);
-		void System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Clear();
-		bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Contains(KeyValuePair<string, JToken> item);
-		void System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.CopyTo(KeyValuePair<string, JToken>[] array, int arrayIndex);
-		bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Remove(KeyValuePair<string, JToken> item);
+		void ICollection<KeyValuePair<string, JToken>>.Add(KeyValuePair<string, JToken> item);
+		void ICollection<KeyValuePair<string, JToken>>.Clear();
+		bool ICollection<KeyValuePair<string, JToken>>.Contains(KeyValuePair<string, JToken> item);
+		void ICollection<KeyValuePair<string, JToken>>.CopyTo(KeyValuePair<string, JToken>[] array, int arrayIndex);
+		bool ICollection<KeyValuePair<string, JToken>>.Remove(KeyValuePair<string, JToken> item);
 		internal override int GetDeepHashCode();
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_GetEnumerator_d__49))]
 		public IEnumerator<KeyValuePair<string, JToken>> GetEnumerator();
 		protected virtual void OnPropertyChanged(string propertyName);
 		PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties();
-		private static Type GetTokenPropertyType(JToken token);
+		private static System.Type GetTokenPropertyType(JToken token);
 		PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties(Attribute[] attributes);
 		AttributeCollection ICustomTypeDescriptor.GetAttributes();
 		string ICustomTypeDescriptor.GetClassName();
@@ -125,11 +137,9 @@ namespace Newtonsoft.Json.Linq
 		TypeConverter ICustomTypeDescriptor.GetConverter();
 		EventDescriptor ICustomTypeDescriptor.GetDefaultEvent();
 		PropertyDescriptor ICustomTypeDescriptor.GetDefaultProperty();
-		object ICustomTypeDescriptor.GetEditor(Type editorBaseType);
+		object ICustomTypeDescriptor.GetEditor(System.Type editorBaseType);
 		EventDescriptorCollection ICustomTypeDescriptor.GetEvents(Attribute[] attributes);
 		EventDescriptorCollection ICustomTypeDescriptor.GetEvents();
 		object ICustomTypeDescriptor.GetPropertyOwner(PropertyDescriptor pd);
-		[CompilerGenerated]
-		private static JToken _PropertyValues_m__0(JProperty p);
 	}
 }

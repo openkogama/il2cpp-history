@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SetupCubeModelTutorialUI : MonoBehaviour, IHandleCubeEditTutorial
 {
@@ -19,22 +19,36 @@ public class SetupCubeModelTutorialUI : MonoBehaviour, IHandleCubeEditTutorial
 	private DesktopCubeModelingControllerCubeTutorial desktopCubeModelTutorialControllerPrefab;
 	[SerializeField]
 	private MaterialsController materialsController;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _PushCubeEditCubeTutorialTools_c__AnonStorey0
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal DesktopCubeModelingControllerCubeTutorial cubeModelTutorialController;
-		internal UnityAction closeAction;
+		public DesktopCubeModelingControllerCubeTutorial cubeModelTutorialController;
+		public UnityAction closeAction;
 
 		// Constructors
-		public _PushCubeEditCubeTutorialTools_c__AnonStorey0();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _PushCubeEditCubeTutorialTools_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__4_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _PushCubeEditCubeTutorialTools_b__4_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -43,7 +57,5 @@ public class SetupCubeModelTutorialUI : MonoBehaviour, IHandleCubeEditTutorial
 	// Methods
 	public void Initialize(CubeModelingStateMachine cubeModelingStateMachine);
 	public void PushCubeEditCubeTutorialTools(UnityAction closeAction);
-	[CompilerGenerated]
-	private static void _PushCubeEditCubeTutorialTools_m__0(IUIStack x, BaseEventData y);
 }
 

@@ -14,7 +14,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesShop : MonoBehaviour
 {
@@ -82,7 +82,7 @@ public class GamePassesShop : MonoBehaviour
 	[SerializeField]
 	private GameObject gamePassesShopInformationPrefab;
 	[SerializeField]
-	private Image buttonAdImage;
+	private Image buttonIcon;
 	[SerializeField]
 	private Image lockedTierIcon;
 	[SerializeField]
@@ -95,91 +95,105 @@ public class GamePassesShop : MonoBehaviour
 	private bool isWaitingForFreeTryTier;
 	private bool haveShownFreeTryUnlock;
 	private bool delayedInit;
+	private bool isSubscribed;
 	private static bool haveInitializedHighestTierRewardShown;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache5;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache6;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowTierUnlockedPopup_c__AnonStorey0
+	private sealed class __c__DisplayClass73_0
 	{
 		// Fields
-		internal TierUnlockedPopupController tierUnlockedPopupController;
+		public TierUnlockedPopupController tierUnlockedPopupController;
 
 		// Constructors
-		public _ShowTierUnlockedPopup_c__AnonStorey0();
+		public __c__DisplayClass73_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTierUnlockedPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowTouristInformationPopup_c__AnonStorey1
+	private sealed class __c__DisplayClass74_0
 	{
 		// Fields
-		internal GamePassesTouristInformationPopup touristInformationPopup;
+		public GamePassesTouristInformationPopup touristInformationPopup;
 
 		// Constructors
-		public _ShowTouristInformationPopup_c__AnonStorey1();
+		public __c__DisplayClass74_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTouristInformationPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowPurchaseConfirmPopup_c__AnonStorey2
+	private sealed class __c__DisplayClass75_0
 	{
 		// Fields
-		internal TierPurchasePopup tierPurchasePopup;
+		public TierPurchasePopup tierPurchasePopup;
 
 		// Constructors
-		public _ShowPurchaseConfirmPopup_c__AnonStorey2();
+		public __c__DisplayClass75_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowPurchaseConfirmPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowPurchaseGoldErrorPopup_c__AnonStorey3
+	private sealed class __c__DisplayClass76_0
 	{
 		// Fields
-		internal TierPurchaseNotEnoughGoldErrorPopup tierErrorPopup;
+		public TierPurchaseNotEnoughGoldErrorPopup tierErrorPopup;
 
 		// Constructors
-		public _ShowPurchaseGoldErrorPopup_c__AnonStorey3();
+		public __c__DisplayClass76_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowPurchaseGoldErrorPopup_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__83_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__84_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__84_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__85_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__85_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__86_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__87_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _ShowAd_b__83_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__84_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__84_1(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__85_0(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__85_1(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__86_0(IUIStack x, BaseEventData y);
+		internal void _Exit_b__87_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowGamePassShopInformationPopup_c__AnonStorey4
+	private sealed class __c__DisplayClass92_0
 	{
 		// Fields
-		internal GameObject gamePassesShopInformation;
+		public GameObject gamePassesShopInformation;
 
 		// Constructors
-		public _ShowGamePassShopInformationPopup_c__AnonStorey4();
+		public __c__DisplayClass92_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowGamePassShopInformationPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
 	public GamePassesShop();
-	static GamePassesShop();
 
 	// Methods
 	public static void UpdateHighestTierRewardShown(GamePassTier newHighestTierRewardShown);
@@ -228,21 +242,8 @@ public class GamePassesShop : MonoBehaviour
 	public void Exit();
 	public void OnButtonPress();
 	public void OnTestTierPress();
-	public void OnFreeTryPressed();
+	public void OnClickFreeTryAd();
+	public void OnClickFreeTrySubcribed();
 	public void ShowGamePassShopInformationPopup();
-	[CompilerGenerated]
-	private static void _ShowAd_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__3(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__4(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPlayerPlanetDataUpdated_m__5(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Exit_m__6(IUIStack x, BaseEventData y);
 }
 

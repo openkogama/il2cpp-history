@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class BoostEditMenuItem : MonoBehaviour
 {
@@ -49,42 +49,42 @@ public class BoostEditMenuItem : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowEditPopup_c__AnonStorey0
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal BoostEditIntPopup boostEditIntPopup;
+		public BoostEditIntPopup boostEditIntPopup;
 
 		// Constructors
-		public _ShowEditPopup_c__AnonStorey0();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowEditPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowEditPopup_c__AnonStorey1
+	private sealed class __c__DisplayClass14_1
 	{
 		// Fields
-		internal BoostEditFloatPopup boostEditFloatPopup;
+		public BoostEditFloatPopup boostEditFloatPopup;
 
 		// Constructors
-		public _ShowEditPopup_c__AnonStorey1();
+		public __c__DisplayClass14_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowEditPopup_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowEditPopup_c__AnonStorey2
+	private sealed class __c__DisplayClass14_2
 	{
 		// Fields
-		internal BoostEditPopup boostEditPopup;
+		public BoostEditPopup boostEditPopup;
 
 		// Constructors
-		public _ShowEditPopup_c__AnonStorey2();
+		public __c__DisplayClass14_2();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowEditPopup_b__2(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

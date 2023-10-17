@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [Flags]
 public enum InteractionFlags : long
@@ -44,6 +44,13 @@ public enum InteractionFlags : long
 	CanEarnGamePoints = 536870912,
 	CanEarnGamePointsMinor = 1073741824,
 	CanEnterPlay = 2147483648,
-	CanRespawn = 4294967296
+	CanRespawn = 4294967296,
+	CanUseRewardedAd = 8589934592,
+	UnlockRotateX = 17179869184,
+	UnlockRotateZ = 34359738368,
+	LockRotateY = 68719476736,
+	RemoveResetRotation = 137438953472,
+	CanChangeScale = 274877906944,
+	Info = 549755813888
 }
 

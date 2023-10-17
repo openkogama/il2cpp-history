@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class WaterPlaneManager : MonoBehaviour
 {
@@ -22,17 +22,17 @@ public class WaterPlaneManager : MonoBehaviour
 	private Renderer underwaterCameraPlaneRenderer;
 	private AudioLowPassFilter lowPassFilter;
 	private AudioReverbFilter reverbFilter;
-	private bool audioHD;
 	private MVWaterPlane waterPlaneLogicCube;
 	private SkyboxManager skyboxManager;
 	private Camera mainCamera;
+	private bool audioHD;
 
 	// Properties
 	public SplashController Splash { get; }
 	public bool IsActive { get; }
 	public float WaterLevel { get; }
 	public Color WaterColor { get; set; }
-	private Color HorizonColor { get; set; }
+	public bool IsLethal { get; set; }
 
 	// Constructors
 	public WaterPlaneManager();

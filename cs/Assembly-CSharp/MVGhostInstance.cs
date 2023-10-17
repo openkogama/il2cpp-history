@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVGhostInstance : MVWorldObjectClient, IUpdatecontrollerSubscriberUpdate, IUpdatecontrollerSubscriberFixedUpdate, IGameStateControllerSubscriber
 {
@@ -83,6 +83,6 @@ public class MVGhostInstance : MVWorldObjectClient, IUpdatecontrollerSubscriberU
 	private Vector3 GetTacticalPos();
 	private float GetSpeed(bool patrolling);
 	[CompilerGenerated]
-	private float _UpdateControllerFixedUpdate_m__0(MVWorldObjectClient a);
+	private float _UpdateControllerFixedUpdate_b__49_0(MVWorldObjectClient a);
 }
 

@@ -6,23 +6,23 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
-	[AttributeUsage]
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Interface | AttributeTargets.Parameter, AllowMultiple = false)]
 	public sealed class JsonConverterAttribute : Attribute
 	{
 		// Fields
-		private readonly Type _converterType;
+		private readonly System.Type _converterType;
 	
 		// Properties
-		public Type ConverterType { get; }
+		public System.Type ConverterType { get; }
 	
 		// Constructors
-		public JsonConverterAttribute(Type converterType);
+		public JsonConverterAttribute(System.Type converterType);
 	
 		// Methods
-		internal static JsonConverter CreateJsonConverterInstance(Type converterType);
+		internal static JsonConverter CreateJsonConverterInstance(System.Type converterType);
 	}
 }

@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesHighlightArrowManager : MonoBehaviour
 {
@@ -25,7 +25,6 @@ public class GamePassesHighlightArrowManager : MonoBehaviour
 
 	// Constructors
 	public GamePassesHighlightArrowManager();
-	static GamePassesHighlightArrowManager();
 
 	// Methods
 	public void OnTierBeingShown(GamePassTier tierBeingShown);

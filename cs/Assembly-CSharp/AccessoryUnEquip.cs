@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryUnEquip : MonoBehaviour
 {
@@ -18,10 +18,25 @@ public class AccessoryUnEquip : MonoBehaviour
 	private AccessorySlotType avatarAccessorySlot;
 	public UnityAction OnUnequipFinished;
 	private MVBody AvatarBody;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__4_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__5_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _UnEquip_b__4_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnUnequipPop_b__5_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public AccessoryUnEquip();
@@ -32,9 +47,5 @@ public class AccessoryUnEquip : MonoBehaviour
 	private void OnUnequipPop(bool setSlotSuccess);
 	private void OnDestroy();
 	private void Game_OnSetAvatarAccessorySlotResponseUnequipHandler(bool setSlotSuccess);
-	[CompilerGenerated]
-	private static void _UnEquip_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnUnequipPop_m__1(IUIStack x, BaseEventData y);
 }
 

@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVPlayerContainer : IEnumerator, IEnumerable<KeyValuePair<int, MVPlayer>>
 {
@@ -28,8 +28,28 @@ public class MVPlayerContainer : IEnumerator, IEnumerable<KeyValuePair<int, MVPl
 	public int Count { get; }
 	public int PendingPlayersCount { get; }
 	public Dictionary<int, MVPlayer> Values { get; }
+	public Dictionary<int, MVPlayer> ActivePlayers { get; }
 	public MVPlayer this[int actorNumber] { get => default; }
 	public object Current { get; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<MVPlayer, bool> __9__28_0;
+		public static Func<MVPlayer, int> __9__28_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _get_ActivePlayers_b__28_0(MVPlayer mvPlayer);
+		internal int _get_ActivePlayers_b__28_1(MVPlayer mvPlayer);
+	}
 
 	// Constructors
 	public MVPlayerContainer();
@@ -43,13 +63,14 @@ public class MVPlayerContainer : IEnumerator, IEnumerable<KeyValuePair<int, MVPl
 	public void UpdateTeam(int actorNr, MVTeam team);
 	public void UpdateTeamForPlayersOnRemovedTeam(MVTeam removedTeam, MVTeam defaultTeam);
 	public MVPlayer GetPlayerUnsafe(int actorNr);
-	public void SetPlayerReady(int actorNr);
+	public void SetPlayerReady(int actorNr, bool observer);
+	public bool TryGetForStateChange(int actorNr, out MVPlayer player);
 	public bool TryGetValue(int actorNr, out MVPlayer player);
 	public bool ContainsKey(int actorNr);
 	public IEnumerator<KeyValuePair<int, MVPlayer>> GetEnumerator();
 	IEnumerator IEnumerable.GetEnumerator();
 	public bool MoveNext();
 	public void Reset();
-	private void SendPlayerListEvents();
+	public void SendPlayerListEvents();
 }
 

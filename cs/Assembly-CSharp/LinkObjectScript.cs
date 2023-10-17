@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LinkObjectScript : LinkObjectBase
 {
@@ -25,6 +25,7 @@ public class LinkObjectScript : LinkObjectBase
 	private void Awake();
 	public void Initialize(Link link);
 	private bool UpdatePositions(Link link);
+	private Vector3 CalculateUnconnectedLinkPos(Vector3 connectedPos);
 	public void UpdateLinkVisual(Link link);
 }
 

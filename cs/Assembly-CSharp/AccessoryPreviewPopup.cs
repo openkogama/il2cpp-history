@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryPreviewPopup : MonoBehaviour, IAccessoryClicked
 {
@@ -24,16 +24,16 @@ public class AccessoryPreviewPopup : MonoBehaviour, IAccessoryClicked
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OpenAccessoryManagementScreen_c__AnonStorey0
+	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
-		internal AccessoryDataClient accessoryData;
+		public AccessoryDataClient accessoryData;
 
 		// Constructors
-		public _OpenAccessoryManagementScreen_c__AnonStorey0();
+		public __c__DisplayClass6_0();
 
 		// Methods
-		internal void __m__0(IAccessoryPopupHandler x, BaseEventData y);
+		internal void _OpenAccessoryManagementScreen_b__0(IAccessoryPopupHandler x, BaseEventData y);
 	}
 
 	// Constructors
@@ -48,6 +48,6 @@ public class AccessoryPreviewPopup : MonoBehaviour, IAccessoryClicked
 	public void UpdateHighlightedTab(AccessoryCategoryClient category);
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _Initialize_m__0(IGetCurrentBody x, BaseEventData y);
+	private void _Initialize_b__4_0(IGetCurrentBody x, BaseEventData y);
 }
 

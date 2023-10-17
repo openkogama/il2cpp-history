@@ -7,14 +7,13 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DeleteCursor
 {
 	// Fields
-	private CellCursor deleteCursor;
-	private float deleteCubeTime;
-	private float deleteCubeLaserOnTime;
+	private readonly CellCursor deleteCursor;
+	private const float DeleteCubeLaserOnTime = 0.2f;
 
 	// Constructors
 	public DeleteCursor(Vector3[] cubeCorners);
@@ -22,5 +21,6 @@ public class DeleteCursor
 	// Methods
 	public void UpdateCursor(CubePickingInfo selectedCube, MVCubeModelBase targetCubeModel, bool deletedCube);
 	public void Remove();
+	public void UnlockMaterialToRemove();
 }
 

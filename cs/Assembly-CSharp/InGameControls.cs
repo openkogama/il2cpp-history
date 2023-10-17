@@ -7,16 +7,17 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InGameControls : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private InGameButtons inGameButtonsPrefab;
+	private TouchButtonsBase inGameButtonsPrefab;
 	[SerializeField]
 	private GameObject avatarJoystickPrefab;
-	public InGameButtons InGameButtons;
+	[HideInInspector]
+	public TouchButtonsBase InGameButtons;
 
 	// Constructors
 	public InGameControls();

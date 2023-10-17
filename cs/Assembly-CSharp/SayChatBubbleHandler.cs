@@ -8,14 +8,14 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SayChatBubbleHandler : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
 	private MeshRenderer sayChatBubble;
-	private const float sayHearingDistance = 50f;
+	private const float SayHearingDistance = 50f;
 	private bool isActive;
 	private bool isIndicatorActive;
 	private int ownerActorNr;
@@ -31,9 +31,9 @@ public class SayChatBubbleHandler : MonoBehaviour
 	public void Initialize(int actorNr, ChatAnchor chatAnchor);
 	public void Activate();
 	public void Deactivate();
-	public void OnSayChatMessageRecieved(int actorNr, Dictionary<object, object> data);
-	public void SetSayBubbleIndicatorVisibility(int actorNr, bool shouldBeVisible);
-	public bool IsPlayerInHearingDistance();
+	private void OnSayChatMessageReceived(int actorNr, Dictionary<object, object> data);
+	private void SetSayBubbleIndicatorVisibility(int actorNr, bool shouldBeVisible);
+	private bool IsPlayerInHearingDistance();
 	private void Update();
 	private void OnDestroy();
 }

@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Linq;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
@@ -17,14 +17,13 @@ namespace Newtonsoft.Json
 		// Fields
 		private JsonToken _token;
 		private object _value;
-		private Type _valueType;
+		private System.Type _valueType;
 		private char _quoteChar;
 		private State _currentState;
 		private JTokenType _currentTypeContext;
 		private int _top;
 		private readonly List<JTokenType> _stack;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _CloseInput_k__BackingField;
 	
 		// Properties
@@ -33,7 +32,7 @@ namespace Newtonsoft.Json
 		public virtual char QuoteChar { get; protected internal set; }
 		public virtual JsonToken TokenType { get; }
 		public virtual object Value { get; }
-		public virtual Type ValueType { get; }
+		public virtual System.Type ValueType { get; }
 		public virtual int Depth { get; }
 	
 		// Nested types

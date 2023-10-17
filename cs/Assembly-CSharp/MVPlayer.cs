@@ -13,7 +13,7 @@ using MV.WorldObject.SpawnRoles;
 using MV.WorldObject.Subscription;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVPlayer
 {
@@ -21,31 +21,27 @@ public class MVPlayer
 	private int checkpointWOID;
 	protected PlayerPlanetDataRemote playerPlanetDataRemote;
 	protected int level;
-	private MVTeam team;
 	public Action OnGoldAmountChange;
 	public UnityAction<int> OnLevelChanged;
 	public UnityAction OnCheckpointReached;
+	public UnityAction OnPause;
+	public UnityAction OnResume;
+	public UnityAction OnObserve;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _ProfileID_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _ActorNr_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private string _RegionCode_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private BuildTarget _BuildTarget_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private UserProfileData _UserProfileData_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private SubscriptionRulesWrapper _SubscriptionRules_k__BackingField;
+	private PlayerGameState playerState;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
-	private bool _IsReady_k__BackingField;
+	private MVTeam _Team_k__BackingField;
 	protected SpawnRolesManager spawnRolesManager;
 
 	// Properties
@@ -58,18 +54,22 @@ public class MVPlayer
 	public PlayerPlanetDataRemote PlayerPlanetDataRemote { get; set; }
 	public UserProfileData UserProfileData { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public SubscriptionRulesWrapper SubscriptionRules { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	public bool IsReady { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public bool IsSubscriber { get; }
+	public PlayerGameState PlayerState { get; set; }
+	public bool IsReady { get; }
+	public bool IsPlayerStateInWorld { get; }
 	public int Level { get; set; }
-	public MVTeam Team { get; set; }
+	public MVTeam Team { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public SpawnRolesManager SpawnRolesManager { get; }
 
 	// Constructors
-	public MVPlayer(int actorNumber, int profileID, string regionCode, BuildTarget buildTarget, UserProfileData userProfileData, bool isReady);
-	public MVPlayer(int actorNumber, int profileID, int level, string regionCode, BuildTarget buildTarget, UserProfileData userProfileData, bool isReady, PlayerPlanetDataRemote playerPlanetDataRemote);
+	public MVPlayer(int actorNumber, int profileID, string regionCode, BuildTarget buildTarget, UserProfileData userProfileData, bool isReady, bool observer);
+	public MVPlayer(int actorNumber, int profileID, int level, string regionCode, BuildTarget buildTarget, UserProfileData userProfileData, bool isReady, bool observer, PlayerPlanetDataRemote playerPlanetDataRemote);
 
 	// Methods
 	public void NotifyAvatarCreated(int id);
 	public bool IsOnSameTeam(MVPlayer other);
+	public bool IsOnTeam(MVTeam otherTeam);
 	public bool IsOnSameTeam(MVWorldObjectClient wo);
 	public void SetCheckpoint(int woid);
 	public MVCheckpoint GetCheckpoint();

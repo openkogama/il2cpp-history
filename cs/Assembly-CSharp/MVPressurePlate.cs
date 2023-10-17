@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVPressurePlate : MVLogicObject, IIsLogicObjectFiringEventHandler, ILogicWorldObject
 {
@@ -22,7 +22,6 @@ public class MVPressurePlate : MVLogicObject, IIsLogicObjectFiringEventHandler, 
 	private UseInteractor useInteractor;
 	private OutputSignalTransmitter outputSignalTransmitter;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 
 	// Properties

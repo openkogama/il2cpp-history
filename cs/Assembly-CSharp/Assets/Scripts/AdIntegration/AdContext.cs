@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Assets.Scripts.AdIntegration
 {
@@ -25,6 +25,7 @@ namespace Assets.Scripts.AdIntegration
 		RegisteredElitePromotion = 10,
 		GoldReward = 11,
 		Revive = 12,
-		TouristInterstitialWithoutPromotion = 13
+		TouristInterstitialWithoutPromotion = 13,
+		UseRequirement = 14
 	}
 }

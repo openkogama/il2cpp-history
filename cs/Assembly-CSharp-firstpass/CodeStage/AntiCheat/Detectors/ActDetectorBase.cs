@@ -8,11 +8,11 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.Detectors
 {
-	[AddComponentMenu]
+	[AddComponentMenu("")]
 	public abstract class ActDetectorBase : MonoBehaviour
 	{
 		// Fields
@@ -20,11 +20,11 @@ namespace CodeStage.AntiCheat.Detectors
 		protected const string MENU_PATH = "Code Stage/Anti-Cheat Toolkit/";
 		protected const string GAME_OBJECT_MENU_PATH = "GameObject/Create Other/Code Stage/Anti-Cheat Toolkit/";
 		protected static GameObject detectorsContainer;
-		[Tooltip]
+		[Tooltip("Automatically start detector. Detection Event will be called on detection.")]
 		public bool autoStart;
-		[Tooltip]
+		[Tooltip("Detector will survive new level (scene) load if checked.")]
 		public bool keepAlive;
-		[Tooltip]
+		[Tooltip("Automatically dispose Detector after firing callback.")]
 		public bool autoDispose;
 		[SerializeField]
 		protected UnityEvent detectionEvent;

@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryShopToggleInventory : MonoBehaviour
 {
@@ -36,6 +36,6 @@ public class AccessoryShopToggleInventory : MonoBehaviour
 	public void SetBackpackIconIsEnabled(bool enable);
 	public void OnValueChanged();
 	[CompilerGenerated]
-	private void _OnValueChanged_m__0(IAccessoryInventoryControl x, BaseEventData y);
+	private void _OnValueChanged_b__8_0(IAccessoryInventoryControl x, BaseEventData y);
 }
 

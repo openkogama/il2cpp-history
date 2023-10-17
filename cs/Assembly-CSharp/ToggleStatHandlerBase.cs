@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class ToggleStatHandlerBase : MonoBehaviour
 {
@@ -23,8 +23,14 @@ public abstract class ToggleStatHandlerBase : MonoBehaviour
 	protected UnityAction<bool> toggleCallback;
 	[SerializeField]
 	protected ToggleHandler toggleHandler;
+	[SerializeField]
+	protected bool usingImageComponent;
+	[SerializeField]
+	protected Image imageComponent;
+	public ToggleStateHandlerOnStartSetValue OnStartSetValue;
 
 	// Properties
+	protected Image CurrentImage { get; }
 	public bool ToggleState { get; set; }
 
 	// Constructors
@@ -35,7 +41,8 @@ public abstract class ToggleStatHandlerBase : MonoBehaviour
 	private void Start();
 	private void Reset();
 	private void OnValidate();
+	public virtual bool CurrentToggleState();
 	public void Toggle();
-	private void ToggleCallback(bool toggleState);
+	private void ToggleCallback(bool newState);
 }
 

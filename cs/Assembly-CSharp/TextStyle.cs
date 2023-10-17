@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public enum TextStyle
 {
@@ -18,6 +18,7 @@ public enum TextStyle
 	PurchaseText = 5,
 	TabText = 6,
 	BoldButtonText = 7,
-	BoldHeaderText = 8
+	BoldHeaderText = 8,
+	HudText = 9
 }
 

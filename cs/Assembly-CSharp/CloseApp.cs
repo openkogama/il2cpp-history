@@ -9,28 +9,42 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CloseApp : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
 	private ConfirmationPopup closeAppPopupPrefab;
-	[CompilerGenerated]
-	private static UnityAction<bool, ConfirmationPopup> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Close_c__AnonStorey0
+	private sealed class __c__DisplayClass1_0
 	{
 		// Fields
-		internal UnityAction<bool, ConfirmationPopup> quit;
+		public UnityAction<bool, ConfirmationPopup> quit;
 
 		// Constructors
-		public _Close_c__AnonStorey0();
+		public __c__DisplayClass1_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _Close_b__1(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static UnityAction<bool, ConfirmationPopup> __9__1_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Close_b__1_0(bool confirmation, ConfirmationPopup popup);
 	}
 
 	// Constructors
@@ -38,7 +52,5 @@ public class CloseApp : MonoBehaviour
 
 	// Methods
 	public void Close();
-	[CompilerGenerated]
-	private static void _Close_m__0(bool confirmation, ConfirmationPopup popup);
 }
 

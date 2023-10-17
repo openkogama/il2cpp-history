@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeMenuController : MonoBehaviour, ThemeMenuButton.IClickHandler
 {
@@ -24,64 +24,79 @@ public class ThemeMenuController : MonoBehaviour, ThemeMenuButton.IClickHandler
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OpenThemesMenu_c__AnonStorey0
+	private sealed class __c__DisplayClass3_0
 	{
 		// Fields
-		internal ThemeSelection menu;
-		private static UnityAction __f__am_cache0;
+		public ThemeSelection menu;
 
 		// Constructors
-		public _OpenThemesMenu_c__AnonStorey0();
+		public __c__DisplayClass3_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
-		private static void __m__1();
+		internal void _OpenThemesMenu_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static UnityAction __9__3_1;
+		public static UnityAction __9__4_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OpenThemesMenu_b__3_1();
+		internal void _OpenSelection_b__4_1();
 	}
 
 	[CompilerGenerated]
-	private sealed class _OpenSelection_c__AnonStorey1
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal ThemeSelection menu;
-		private static UnityAction __f__am_cache0;
+		public ThemeSelection menu;
 
 		// Constructors
-		public _OpenSelection_c__AnonStorey1();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
-		private static void __m__1();
+		internal void _OpenSelection_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OpenSettings_c__AnonStorey2
+	private sealed class __c__DisplayClass5_0
 	{
 		// Fields
-		internal Theme theme;
-		internal ThemeSettingsMenu settings;
-		internal UnityAction commitChanges;
+		public Theme theme;
+		public ThemeSettingsMenu settings;
+		public UnityAction commitChanges;
 
 		// Constructors
-		public _OpenSettings_c__AnonStorey2();
+		public __c__DisplayClass5_0();
 
 		// Methods
-		internal void __m__0();
-		internal void __m__1(IUIStack x, BaseEventData y);
+		internal void _OpenSettings_b__0();
+		internal void _OpenSettings_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OpenSettingsForPreview_c__AnonStorey3
+	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
-		internal ThemePreviewSettingsMenu settings;
-		internal Theme theme;
+		public ThemePreviewSettingsMenu settings;
+		public Theme theme;
+		public UnityAction __9__1;
 
 		// Constructors
-		public _OpenSettingsForPreview_c__AnonStorey3();
+		public __c__DisplayClass6_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
-		internal void __m__1();
+		internal void _OpenSettingsForPreview_b__0(IUIStack x, BaseEventData y);
+		internal void _OpenSettingsForPreview_b__1();
 	}
 
 	// Constructors

@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
@@ -40,7 +40,7 @@ namespace Newtonsoft.Json.Linq
 		internal override void ClearItems();
 		internal override bool DeepEquals(JToken node);
 		internal override JToken CloneToken();
-		public override void WriteTo(JsonWriter writer, JsonConverter[] converters);
+		public override void WriteTo(JsonWriter writer, params JsonConverter[] converters);
 		internal override int GetDeepHashCode();
 		public static new JProperty Load(JsonReader reader);
 	}

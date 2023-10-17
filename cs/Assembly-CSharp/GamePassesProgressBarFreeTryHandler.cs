@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesProgressBarFreeTryHandler : MonoBehaviour
 {
@@ -27,44 +27,58 @@ public class GamePassesProgressBarFreeTryHandler : MonoBehaviour
 	private List<Image> buttonAdImages;
 	private GamePassTier tierToTry;
 	private bool isWaitingForFreeTryTier;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache5;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnFreeTryTier_c__AnonStorey0
+	private sealed class __c__DisplayClass7_0
 	{
 		// Fields
-		internal GamePassesShop gamePassesShop;
+		public GamePassesShop gamePassesShop;
 
 		// Constructors
-		public _OnFreeTryTier_c__AnonStorey0();
+		public __c__DisplayClass7_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnFreeTryTier_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowTierUnlock_c__AnonStorey1
+	private sealed class __c__DisplayClass8_0
 	{
 		// Fields
-		internal TierUnlockedPopupController tierUnlockedPopupController;
+		public TierUnlockedPopupController tierUnlockedPopupController;
 
 		// Constructors
-		public _ShowTierUnlock_c__AnonStorey1();
+		public __c__DisplayClass8_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTierUnlock_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__9_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__10_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__10_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__11_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__11_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__12_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _ShowAd_b__9_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__10_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__10_1(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__11_0(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__11_1(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__12_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -78,17 +92,5 @@ public class GamePassesProgressBarFreeTryHandler : MonoBehaviour
 	private void RewardedAdCallback(RewardedAdResult result);
 	private void PreviewTier();
 	private void OnPlayerPlanetDataUpdated();
-	[CompilerGenerated]
-	private static void _ShowAd_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__3(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__4(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPlayerPlanetDataUpdated_m__5(IUIStack x, BaseEventData y);
 }
 
