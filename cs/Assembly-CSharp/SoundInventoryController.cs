@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SoundInventoryController : MonoBehaviour, IHandleSettingChanged
 {
@@ -35,16 +35,16 @@ public class SoundInventoryController : MonoBehaviour, IHandleSettingChanged
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal string soundName;
+		public string soundName;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal bool __m__0(SoundTabInfo soundTabInfo);
+		internal bool _Initialize_b__0(SoundTabInfo soundTabInfo);
 	}
 
 	// Constructors
@@ -52,6 +52,7 @@ public class SoundInventoryController : MonoBehaviour, IHandleSettingChanged
 
 	// Methods
 	public void Initialize(int woID, GameObject root);
+	private static void DebugPrintSound(Dictionary<object, object> data);
 	public void UpdateContent();
 	private void SetNewOriginalUrl(string url);
 	private void PageTurned(int dir);

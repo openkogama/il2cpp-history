@@ -6,30 +6,34 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::
                (FirstTimeActivatableMessageStayForSeconds *this,MethodInfo *method)
 
 {
-  if (((this->fields).isDone == 0) && ((this->fields).isShown != 0)) {
-    this_00 = (this->fields)._.firstTimeEventMessage;
-    if (this_00 == (FirstTimeEventMessage *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-              ((Component_1 *)this_00,(MethodInfo *)0x0);
+  if (((this->fields).isDone != 0) || ((this->fields).isShown == 0)) {
+    return;
+  }
+  pFVar1 = (this->fields)._.firstTimeEventMessage;
+  if (pFVar1 != (FirstTimeEventMessage *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)pFVar1,(MethodInfo *)0x0);
+    FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+              ((this->fields)._._._.firstTimeEvent,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?();
       cRam_? = '\x01';
     }
-    firstTimeEvent = (this->fields)._._._.firstTimeEvent;
-    if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__FirstTimeEventManager);
+    pFVar1 = (this->fields)._.firstTimeEventMessage;
+    if (pFVar1 != (FirstTimeEventMessage *)0x0) {
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)pFVar1,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)obj,(MethodInfo *)0x0);
+      return;
     }
-    FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent(firstTimeEvent,(MethodInfo *)0x0)
-    ;
-    FirstTimeActivatableMessage::FirstTimeActivatableMessage_DestroyMessage
-              ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -42,56 +46,61 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    FirstTimeEventMessage_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventMessage>_FirstTimeEventMessage_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_firstTimeMessageParentTransform_);
     cRam_? = '\x01';
   }
-  pXVar1 = (XpBoostParticlePreviewer *)(this->fields)._.firstTimeEventMessagePrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pFVar1 = (this->fields)._.firstTimeEventMessagePrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar1,
+  pFVar1 = (FirstTimeEventMessage *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)pFVar1,
                       FirstTimeEventMessage_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventMessage>_FirstTimeEventMessage_
                      );
-  pTVar2 = (this->fields)._.firstTimeMessageParentTransform;
-  (this->fields)._.firstTimeEventMessage = (FirstTimeEventMessage *)pXVar1;
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  (this->fields)._.firstTimeEventMessage = pFVar1;
+  func_?(&(this->fields)._.firstTimeEventMessage,pFVar1);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)(this->fields)._.firstTimeMessageParentTransform,(Object_1 *)0x0,
+                     (MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
               ((Object *)StringLiteral_firstTimeMessageParentTransform_,(MethodInfo *)0x0);
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    (this->fields)._.firstTimeMessageParentTransform = pTVar2;
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    (this->fields)._.firstTimeMessageParentTransform = pTVar3;
+    func_?();
   }
-  pFVar4 = (this->fields)._.firstTimeEventMessage;
-  if (pFVar4 != (FirstTimeEventMessage *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pFVar4,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
+  pFVar1 = (this->fields)._.firstTimeEventMessage;
+  if (pFVar1 != (FirstTimeEventMessage *)0x0) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pFVar1,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (pTVar2,(this->fields)._.firstTimeMessageParentTransform,0,(MethodInfo *)0x0);
-      pFVar4 = (this->fields)._.firstTimeEventMessage;
-      if ((pFVar4 != (FirstTimeEventMessage *)0x0) &&
-         (pFVar5 = (pFVar4->fields).fader, pFVar5 != (FirstTimeFadeHandler *)0x0)) {
-        this_00 = (pFVar5->fields).canvasGroup;
-        (pFVar5->fields).fadingIn = 1;
+                (pTVar3,(this->fields)._.firstTimeMessageParentTransform,0,(MethodInfo *)0x0);
+      pFVar1 = (this->fields)._.firstTimeEventMessage;
+      if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
+         (pFVar4 = (pFVar1->fields).fader, pFVar4 != (FirstTimeFadeHandler *)0x0)) {
+        this_00 = (pFVar4->fields).canvasGroup;
+        (pFVar4->fields).fadingIn = 1;
         if (this_00 != (CanvasGroup *)0x0) {
           UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                     (this_00,0.0,(MethodInfo *)0x0);
-          (pFVar5->fields).currentFadeInTime = 0.0;
-          pFVar4 = (this->fields)._.firstTimeEventMessage;
-          pSStack6 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
-          if ((pFVar4 != (FirstTimeEventMessage *)0x0) &&
-             (pTStack7 = (pFVar4->fields).message, pTStack7 != (Text *)0x0)) {
-            pIStack8 =
-                 (pTStack7->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-            (*(code *)(pTStack7->klass->vtable).set_text.method)();
+          (pFVar4->fields).currentFadeInTime = 0.0;
+          pFVar1 = (this->fields)._.firstTimeEventMessage;
+          pSStack5 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
+          if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
+             (pTStack6 = (pFVar1->fields).message, pTStack6 != (Text *)0x0)) {
+            pMStack7 = (pTStack6->klass->vtable).set_text.method;
+            (*(pTStack6->klass->vtable).set_text.methodPtr)();
             (this->fields).isShown = 1;
             return;
           }
@@ -100,8 +109,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -118,30 +127,31 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::
     pfVar2 = &(this->fields).stayTimeInSeconds;
     if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&TypeInfo__System__Action<UnityEngine::GameObject>);
+        func_?(&
+                        MethodInfo__FirstTimeActivatableMessage__OnFinished_UnityEngine__GameObject_
+                       );
         cRam_? = '\x01';
       }
       this_00 = (this->fields)._.firstTimeEventMessage;
-      this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_02,(Object *)this,
-                 MethodInfo__FirstTimeActivatableMessage__OnFinished_UnityEngine__GameObject_,
-                 MethodInfo__System__Action<UnityEngine::GameObject>__Action_System__Object__void__)
-      ;
-      if (this_00 == (FirstTimeEventMessage *)0x0) {
+      this_02 = (Action_1_Object_ *)
+                func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+      if (this_02 == (Action_1_Object_ *)0x0) {
 code_?:
-        func_?(0);
+        func_?();
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
         return;
       }
+      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                (this_02,(Object *)this,
+                 MethodInfo__FirstTimeActivatableMessage__OnFinished_UnityEngine__GameObject_,
+                 (MethodInfo *)0x0);
+      if (this_00 == (FirstTimeEventMessage *)0x0) goto code_?;
       this_01 = (this_00->fields).fader;
       targetGameObject =
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this_00,(MethodInfo *)0x0);
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this_00,(MethodInfo *)0x0);
       if (this_01 == (FirstTimeFadeHandler *)0x0) goto code_?;
       FirstTimeFadeHandler::FirstTimeFadeHandler_StartFadeOut
                 (this_01,(Action_1_UnityEngine_GameObject_ *)this_02,targetGameObject,
@@ -175,11 +185,10 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::
   (this->fields)._._.prerequisiteEvent = -1;
   (this->fields)._._.checkForStackBlocking = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

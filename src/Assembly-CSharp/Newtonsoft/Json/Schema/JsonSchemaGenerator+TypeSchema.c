@@ -8,16 +8,20 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaGenerator+TypeSche
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_schema);
+    func_?(&StringLiteral_type);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)type,StringLiteral_type,(MethodInfo *)0x0);
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)schema,StringLiteral_schema,(MethodInfo *)0x0);
   (this->fields)._Type_k__BackingField = type;
+  func_?(&this->fields,type);
   (this->fields)._Schema_k__BackingField = schema;
+  func_?(&(this->fields)._Schema_k__BackingField,schema);
   return;
 }
 

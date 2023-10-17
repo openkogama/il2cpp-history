@@ -6,17 +6,19 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Converters::RegexConverter::RegexCon
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__System__Text__RegularExpressions__Regex);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   handle = TypeRef__System__Text__RegularExpressions__Regex;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  pTVar1 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                     ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  return objectType == pTVar1;
+  right = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                    ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)objectType,(Object **)right,(MethodInfo *)0x0);
+  return bVar1;
 }
 
 
@@ -27,64 +29,68 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Converters::RegexConverter::Rege
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   if (reader != (BsonReader *)0x0) {
     pSVar1 = (String *)
-             (*(code *)(reader->klass->vtable).get_Value.method)
-                       (reader,(reader->klass->vtable).get_ValueType.methodPtr);
+             (*(reader->klass->vtable).get_Value.methodPtr)
+                       (reader,(reader->klass->vtable).get_Value.method);
     if (pSVar1 != (String *)0x0) {
-      this_02 = (String *)0x0;
+      pSVar2 = (String *)0x0;
       if (pSVar1->klass == TypeInfo__System__String) {
-        this_02 = pSVar1;
+        pSVar2 = pSVar1;
       }
-      pSVar2 = TypeInfo__System__String;
-      if (this_02 == (String *)0x0) goto code_?;
-      iVar3 = mscorlib.dll::System::String::String_LastIndexOf_3
-                        (this_02,::StringLiteral__,(MethodInfo *)0x0);
-      mscorlib.dll::System::String::String_Substring_1(this_02,1,iVar3 + -1,(MethodInfo *)0x0);
+      pSVar3 = TypeInfo__System__String;
+      if (pSVar2 == (String *)0x0) goto code_?;
+      iVar4 = mscorlib.dll::System::String::String_LastIndexOf_3
+                        (pSVar2,::StringLiteral__,(MethodInfo *)0x0);
+      pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                         (pSVar2,1,iVar4 + -1,(MethodInfo *)0x0);
       options = RegexOptions__Enum_None;
-      this_00 = (Collection_1_VoxelHit_ *)
-                mscorlib.dll::System::String::String_Substring(this_02,iVar3 + 1,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Substring(pSVar2,iVar4 + 1,(MethodInfo *)0x0);
       index = 0;
-      if (this_00 != (Collection_1_VoxelHit_ *)0x0) {
-        while( true ) {
-          pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items(this_00,(MethodInfo *)0x0);
-          if ((int)pIVar4 <= index) break;
-          uVar5 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)this_00,index,(MethodInfo *)0x0);
-          if (uVar5 == 0x69) {
+      if (pSVar2 != (String *)0x0) {
+        while (index < (pSVar2->fields)._stringLength) {
+          uVar5 = mscorlib.dll::System::String::String_get_Chars(pSVar2,index,(MethodInfo *)0x0);
+          if (uVar5 < 0x6e) {
+            if (uVar5 != 0x69) {
+              if (uVar5 == 0x6d) {
+                options = options | RegexOptions__Enum_Multiline;
+              }
+              goto code_?;
+            }
             options = options | RegexOptions__Enum_IgnoreCase;
-            index = index + 1;
-          }
-          else if (uVar5 == 0x6d) {
-            options = options | RegexOptions__Enum_Multiline;
             index = index + 1;
           }
           else if (uVar5 == 0x73) {
             options = options | RegexOptions__Enum_Singleline;
             index = index + 1;
           }
+          else if (uVar5 == 0x78) {
+            options = options | RegexOptions__Enum_ExplicitCapture;
+            index = index + 1;
+          }
           else {
-            if (uVar5 == 0x78) {
-              options = options | RegexOptions__Enum_ExplicitCapture;
-            }
+code_?:
             index = index + 1;
           }
         }
-        this_01 = (Regex *)func_?(TypeInfo__System__Text__RegularExpressions__Regex);
-        System.dll::System::Text::RegularExpressions::Regex::Regex__ctor_2
-                  (this_01,(String *)0x0,options,(MethodInfo *)0x0);
-        return (Object *)this_01;
+        this_00 = (Regex *)func_?(TypeInfo__System__Text__RegularExpressions__Regex);
+        if (this_00 != (Regex *)0x0) {
+          System.dll::System::Text::RegularExpressions::Regex::Regex__ctor_1
+                    (this_00,pSVar1,options,(MethodInfo *)0x0);
+          return (Object *)this_00;
+        }
       }
     }
   }
-  pSVar1 = (String *)func_?(0);
-  pSVar2 = extraout_ECX;
+  pSVar1 = (String *)func_?();
+  pSVar3 = extraout_ECX;
 code_?:
-  func_?(pSVar1,pSVar2);
+  func_?(pSVar1,pSVar3);
   pcVar6 = (code *)swi(3);
   pOVar7 = (Object *)(*pcVar6)();
   return pOVar7;
@@ -99,96 +105,87 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Converters::RegexConverter::Rege
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonReader);
     cRam_? = '\x01';
   }
   if (reader != (JsonReader *)0x0) {
-    bVar1 = (TypeInfo__Newtonsoft__Json__Bson__BsonReader->_1).naturalAligment;
-    if (((reader->klass->_1).naturalAligment < bVar1) ||
-       ((reader->klass->_1).typeHierarchy[bVar1 - 1] !=
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonReader->_1).typeHierarchyDepth <=
+         (reader->klass->_1).typeHierarchyDepth) &&
+       ((reader->klass->_1).typeHierarchy
+        [(TypeInfo__Newtonsoft__Json__Bson__BsonReader->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonReader)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    pJVar3 = (JsonReader *)0x0;
-    if (bVar2) {
-      pJVar3 = reader;
-    }
-    if (pJVar3 != (JsonReader *)0x0) {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
+        func_?(&TypeInfo__System__String);
+        func_?(&::StringLiteral__);
         cRam_? = '\x01';
       }
-      pSVar4 = (String *)
-               (*(code *)(pJVar3->klass->vtable).get_Value.method)
-                         (pJVar3,(pJVar3->klass->vtable).get_ValueType.methodPtr);
-      if (pSVar4 != (String *)0x0) {
+      pSVar1 = (String *)
+               (*(reader->klass->vtable).get_Value.methodPtr)
+                         (reader,(reader->klass->vtable).get_Value.method);
+      if (pSVar1 != (String *)0x0) {
         this_00 = (String *)0x0;
-        if (pSVar4->klass == TypeInfo__System__String) {
-          this_00 = pSVar4;
+        if (pSVar1->klass == TypeInfo__System__String) {
+          this_00 = pSVar1;
         }
         if (this_00 == (String *)0x0) {
-          func_?(pSVar4,TypeInfo__System__String);
+          func_?(pSVar1,TypeInfo__System__String);
         }
         else {
-          iVar5 = mscorlib.dll::System::String::String_LastIndexOf_3
+          iVar2 = mscorlib.dll::System::String::String_LastIndexOf_3
                             (this_00,::StringLiteral__,(MethodInfo *)0x0);
-          pSVar4 = mscorlib.dll::System::String::String_Substring_1
-                             (this_00,1,iVar5 + -1,(MethodInfo *)0x0);
+          reader = (JsonReader *)
+                   mscorlib.dll::System::String::String_Substring_1
+                             (this_00,1,iVar2 + -1,(MethodInfo *)0x0);
           options = RegexOptions__Enum_None;
-          pJVar3 = (JsonReader *)
-                   mscorlib.dll::System::String::String_Substring
-                             (this_00,iVar5 + 1,(MethodInfo *)0x0);
+          pSVar1 = mscorlib.dll::System::String::String_Substring
+                             (this_00,iVar2 + 1,(MethodInfo *)0x0);
           index = 0;
-          if (pJVar3 != (JsonReader *)0x0) {
-            while( true ) {
+          if (pSVar1 != (String *)0x0) {
+            while (index < (pSVar1->fields)._stringLength) {
               reader = (JsonReader *)&UNK_?;
-              pIVar6 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)pJVar3,(MethodInfo *)0x0);
-              if ((int)pIVar6 <= index) break;
-              uVar7 = mscorlib.dll::System::String::String_get_Chars
-                                ((String *)&UNK_?,index,(MethodInfo *)0x0);
-              if (uVar7 == 0x69) {
+              uVar3 = mscorlib.dll::System::String::String_get_Chars(pSVar1,index,(MethodInfo *)0x0)
+              ;
+              if (uVar3 < 0x6e) {
+                if (uVar3 != 0x69) {
+                  if (uVar3 == 0x6d) {
+                    options = options | RegexOptions__Enum_Multiline;
+                  }
+                  goto code_?;
+                }
                 options = options | RegexOptions__Enum_IgnoreCase;
                 index = index + 1;
-                pJVar3 = reader;
               }
-              else if (uVar7 == 0x6d) {
-                pJVar3 = (JsonReader *)&UNK_?;
-                options = options | RegexOptions__Enum_Multiline;
-                index = index + 1;
-              }
-              else if (uVar7 == 0x73) {
-                pJVar3 = (JsonReader *)&UNK_?;
+              else if (uVar3 == 0x73) {
                 options = options | RegexOptions__Enum_Singleline;
                 index = index + 1;
               }
+              else if (uVar3 == 0x78) {
+                options = options | RegexOptions__Enum_ExplicitCapture;
+                index = index + 1;
+              }
               else {
-                if (uVar7 == 0x78) {
-                  options = options | RegexOptions__Enum_ExplicitCapture;
-                }
-                pJVar3 = (JsonReader *)&UNK_?;
+code_?:
                 index = index + 1;
               }
             }
-            pRVar8 = (Regex *)func_?();
-            System.dll::System::Text::RegularExpressions::Regex::Regex__ctor_2
-                      (pRVar8,pSVar4,options,(MethodInfo *)0x0);
-            return (Object *)pRVar8;
+            pRVar4 = (Regex *)func_?();
+            if (pRVar4 != (Regex *)0x0) {
+              System.dll::System::Text::RegularExpressions::Regex::Regex__ctor_1
+                        (pRVar4,(String *)reader,options,(MethodInfo *)0x0);
+              return (Object *)pRVar4;
+            }
           }
         }
       }
       func_?();
-      pcVar9 = (code *)swi(3);
-      pOVar10 = (Object *)(*pcVar9)();
-      return pOVar10;
+      pcVar5 = (code *)swi(3);
+      pOVar6 = (Object *)(*pcVar5)();
+      return pOVar6;
     }
   }
-  pRVar8 = RegexConverter_ReadJson_1(this,reader,(MethodInfo *)0x0);
-  return (Object *)pRVar8;
+  pRVar4 = RegexConverter_ReadJson_1(this,reader,(MethodInfo *)0x0);
+  return (Object *)pRVar4;
 }
 
 
@@ -199,58 +196,57 @@ Regex * Assembly-CSharp.dll::Newtonsoft::Json::Converters::RegexConverter::Regex
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
   if (reader != (JsonReader *)0x0) {
-    (*(code *)(reader->klass->vtable).__unknown.method)
-              (reader,(reader->klass->vtable).__unknown_1.methodPtr);
-    (*(code *)(reader->klass->vtable).__unknown.method)
-              (reader,(reader->klass->vtable).__unknown_1.methodPtr);
-    pSVar1 = (String *)
-             (*(code *)(reader->klass->vtable).get_Value.method)
-                       (reader,(reader->klass->vtable).get_ValueType.methodPtr);
-    pattern = (String *)0x0;
-    if (pSVar1 != (String *)0x0) {
-      if (pSVar1->klass == TypeInfo__System__String) {
-        pattern = pSVar1;
-      }
-      pSVar2 = TypeInfo__System__String;
-      if (pattern == (String *)0x0) goto code_?;
-    }
-    (*(code *)(reader->klass->vtable).__unknown.method)
-              (reader,(reader->klass->vtable).__unknown_1.methodPtr);
-    (*(code *)(reader->klass->vtable).__unknown.method)
-              (reader,(reader->klass->vtable).__unknown_1.methodPtr);
+    (*(reader->klass->vtable).__unknown.methodPtr)(reader,(reader->klass->vtable).__unknown.method);
+    (*(reader->klass->vtable).__unknown.methodPtr)(reader,(reader->klass->vtable).__unknown.method);
+    unaff_EDI = (String *)
+                (*(reader->klass->vtable).get_Value.methodPtr)
+                          (reader,(reader->klass->vtable).get_Value.method);
+    (*(reader->klass->vtable).__unknown.methodPtr)(reader,(reader->klass->vtable).__unknown.method);
+    (*(reader->klass->vtable).__unknown.methodPtr)(reader,(reader->klass->vtable).__unknown.method);
     value = (Object *)
-            (*(code *)(reader->klass->vtable).get_Value.method)
-                      (reader,(reader->klass->vtable).get_ValueType.methodPtr);
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+            (*(reader->klass->vtable).get_Value.methodPtr)
+                      (reader,(reader->klass->vtable).get_Value.method);
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Globalization__CultureInfo);
     }
     provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                          ((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Convert);
     }
-    options = mscorlib.dll::System::Convert::Convert_ToInt32_17
+    options = mscorlib.dll::System::Convert::Convert_ToInt32_1
                         (value,(IFormatProvider *)provider,(MethodInfo *)0x0);
-    (*(code *)(reader->klass->vtable).__unknown.method)
-              (reader,(reader->klass->vtable).__unknown_1.methodPtr);
-    pRVar3 = (Regex *)func_?(TypeInfo__System__Text__RegularExpressions__Regex);
-    System.dll::System::Text::RegularExpressions::Regex::Regex__ctor_2
-              (pRVar3,pattern,options,(MethodInfo *)0x0);
-    return pRVar3;
-  }
-  pSVar1 = (String *)func_?(0);
-  pSVar2 = extraout_ECX;
+    (*(reader->klass->vtable).__unknown.methodPtr)(reader,(reader->klass->vtable).__unknown.method);
+    pRVar1 = (Regex *)func_?(TypeInfo__System__Text__RegularExpressions__Regex);
+    if (pRVar1 != (Regex *)0x0) {
+      pattern = (String *)0x0;
+      if (unaff_EDI == (String *)0x0) {
 code_?:
-  func_?(pSVar1,pSVar2);
-  pcVar4 = (code *)swi(3);
-  pRVar3 = (Regex *)(*pcVar4)();
-  return pRVar3;
+        System.dll::System::Text::RegularExpressions::Regex::Regex__ctor_1
+                  (pRVar1,pattern,options,(MethodInfo *)0x0);
+        return pRVar1;
+      }
+      if (unaff_EDI->klass == TypeInfo__System__String) {
+        pattern = unaff_EDI;
+      }
+      pSVar2 = TypeInfo__System__String;
+      if (pattern != (String *)0x0) goto code_?;
+      goto code_?;
+    }
+  }
+  pSVar2 = (String__Class *)func_?();
+code_?:
+  func_?(unaff_EDI,pSVar2);
+  pcVar3 = (code *)swi(3);
+  pRVar1 = (Regex *)(*pcVar3)();
+  return pRVar1;
 }
 
 
@@ -261,98 +257,86 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Converters::RegexConverter::RegexCon
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_x);
+    func_?(&StringLiteral_i);
+    func_?(&StringLiteral_m);
+    func_?(&StringLiteral_u);
+    func_?(&StringLiteral_s);
     cRam_? = '\x01';
   }
-  pSVar1 = (String *)0x0;
+  method_00 = (MethodInfo *)0x0;
   if (regex != (Regex *)0x0) {
-    pSVar2 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-             NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                       ((NamedThemeAttribute_1_UnityEngine_Color_ *)regex,(MethodInfo *)0x0);
-    if (((uint)pSVar2 & 1) != 0) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_2
-                         ((String *)0x0,StringLiteral_i,(MethodInfo *)0x0);
+    if (((regex->fields).roptions & 1) != 0) {
+      method_00 = (MethodInfo *)
+                  mscorlib.dll::System::String::String_Concat_3
+                            ((String *)0x0,StringLiteral_i,(MethodInfo *)0x0);
     }
-    pSVar2 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-             NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                       ((NamedThemeAttribute_1_UnityEngine_Color_ *)regex,(MethodInfo *)0x0);
-    if (((uint)pSVar2 >> 1 & 1) != 0) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_2
-                         (pSVar1,StringLiteral_m,(MethodInfo *)0x0);
+    if (((uint)(regex->fields).roptions >> 1 & 1) != 0) {
+      method_00 = (MethodInfo *)
+                  mscorlib.dll::System::String::String_Concat_3
+                            ((String *)method_00,StringLiteral_m,(MethodInfo *)0x0);
     }
-    pSVar2 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-             NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                       ((NamedThemeAttribute_1_UnityEngine_Color_ *)regex,(MethodInfo *)0x0);
-    if (((uint)pSVar2 >> 4 & 1) != 0) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_2
-                         (pSVar1,StringLiteral_s,(MethodInfo *)0x0);
+    if (((uint)(regex->fields).roptions >> 4 & 1) != 0) {
+      method_00 = (MethodInfo *)
+                  mscorlib.dll::System::String::String_Concat_3
+                            ((String *)method_00,StringLiteral_s,(MethodInfo *)0x0);
     }
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
+    str0 = (Object__Class *)
+           mscorlib.dll::System::String::String_Concat_3
+                     ((String *)method_00,StringLiteral_u,(MethodInfo *)0x0);
+    if (((uint)(regex->fields).roptions >> 2 & 1) != 0) {
+      str0 = (Object__Class *)
+             mscorlib.dll::System::String::String_Concat_3
+                       ((String *)str0,StringLiteral_x,(MethodInfo *)0x0);
     }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_2(pSVar1,StringLiteral_u,(MethodInfo *)0x0)
-    ;
-    pSVar2 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-             NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                       ((NamedThemeAttribute_1_UnityEngine_Color_ *)regex,(MethodInfo *)0x0);
-    if (((uint)pSVar2 >> 2 & 1) != 0) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_2
-                         (pSVar1,StringLiteral_x,(MethodInfo *)0x0);
+    pOVar1 = (Object *)(*(regex->klass->vtable).ToString.methodPtr)();
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonRegex);
+      func_?(&StringLiteral_pattern);
+      cRam_? = '\x01';
     }
-    value = (Object *)(*(code *)(regex->klass->vtable).ToString.method)();
-    if (writer != (BsonWriter *)0x0) {
+    Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
+              (pOVar1,StringLiteral_pattern,(MethodInfo *)0x0);
+    JsonWriter::JsonWriter_AutoComplete
+              ((JsonWriter *)&UNK_?,JsonToken__Enum_Undefined,(MethodInfo *)0x0);
+    token = (BsonToken *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonRegex);
+    if (token != (BsonToken *)0x0) {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
         cRam_? = '\x01';
       }
-      Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
-                (value,StringLiteral_pattern,(MethodInfo *)0x0);
-      JsonWriter::JsonWriter_AutoComplete
-                ((JsonWriter *)writer,JsonToken__Enum_Undefined,(MethodInfo *)0x0);
-      this_00 = (ScaleAnimationBase *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonRegex);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)token,ExceptionArgument__Enum_obj,method_00);
+      value = (BsonToken__Class *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+      if (value != (BsonToken__Class *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+        (value->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)pOVar1;
+        func_?(&(value->_0).byval_arg,pOVar1);
+        *(undefined1 *)&(value->_0).byval_arg.attrs = 2;
+        *(undefined1 *)&(value->_0).this_arg.attrs = 0;
+        token[1].klass = value;
+        func_?(token + 1,value);
+        pOVar1 = (Object *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+        if (pOVar1 != (Object *)0x0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    (pOVar1,ExceptionArgument__Enum_obj,method_00);
+          pOVar1[2].klass = str0;
+          func_?(pOVar1 + 2,str0);
+          *(undefined1 *)&pOVar1[2].monitor = 2;
+          *(undefined1 *)&pOVar1[3].monitor = 0;
+          token[1].monitor = (MonitorData *)pOVar1;
+          func_?(&token[1].monitor,pOVar1);
+          Bson::BsonWriter::BsonWriter_AddToken((BsonWriter *)&UNK_?,token,(MethodInfo *)0x0)
+          ;
+          return;
+        }
       }
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)writer);
-      pBVar3 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-      pSVar4 = (ScaleAnimationBase *)func_?();
-      ScaleAnimationBase::ScaleAnimationBase_Play(pSVar4,0.0,(MethodInfo *)pBVar3);
-      (pSVar4->fields).originalScale.x = (float)value;
-      *(undefined1 *)&(pSVar4->fields).originalScale.y = 2;
-      *(undefined1 *)&(pSVar4->fields).target = 0;
-      (this_00->fields).originalScale.x = (float)pSVar4;
-      pBVar3 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-      pSVar4 = (ScaleAnimationBase *)func_?();
-      ScaleAnimationBase::ScaleAnimationBase_Play(pSVar4,0.0,(MethodInfo *)pBVar3);
-      (pSVar4->fields).originalScale.x = (float)pSVar1;
-      *(undefined1 *)&(pSVar4->fields).originalScale.y = 2;
-      *(undefined1 *)&(pSVar4->fields).target = 0;
-      (this_00->fields).originalScale.y = (float)pSVar4;
-      Bson::BsonWriter::BsonWriter_AddToken(writer,(BsonToken *)this_00,(MethodInfo *)0x0);
-      return;
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -364,82 +348,138 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Converters::RegexConverter::RegexCon
                MethodInfo *method)
 
 {
+  pOVar1 = value;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonWriter);
+    func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
     cRam_? = '\x01';
   }
-  if (value == (Object *)0x0) {
-    regex = (Regex *)0x0;
+  if ((pOVar1 == (Object *)0x0) ||
+     (((TypeInfo__System__Text__RegularExpressions__Regex->_1).typeHierarchyDepth <=
+       (pOVar1->klass->_1).typeHierarchyDepth &&
+      ((pOVar1->klass->_1).typeHierarchy
+       [(TypeInfo__System__Text__RegularExpressions__Regex->_1).typeHierarchyDepth - 1] ==
+       (Il2CppClass *)TypeInfo__System__Text__RegularExpressions__Regex)))) {
+    if (writer != (JsonWriter *)0x0) {
+      if (((TypeInfo__Newtonsoft__Json__Bson__BsonWriter->_1).typeHierarchyDepth <=
+           (writer->klass->_1).typeHierarchyDepth) &&
+         ((BsonWriter__Class *)
+          (writer->klass->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Bson__BsonWriter->_1).typeHierarchyDepth - 1] ==
+          TypeInfo__Newtonsoft__Json__Bson__BsonWriter)) {
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_x);
+          func_?(&StringLiteral_i);
+          func_?(&StringLiteral_m);
+          func_?(&StringLiteral_u);
+          func_?(&StringLiteral_s);
+          cRam_? = '\x01';
+        }
+        str0 = (String *)0x0;
+        if (pOVar1 != (Object *)0x0) {
+          if (((uint)pOVar1[2].monitor & 1) != 0) {
+            str0 = mscorlib.dll::System::String::String_Concat_3
+                             ((String *)0x0,StringLiteral_i,(MethodInfo *)0x0);
+          }
+          if (((uint)pOVar1[2].monitor >> 1 & 1) != 0) {
+            str0 = mscorlib.dll::System::String::String_Concat_3
+                             (str0,StringLiteral_m,(MethodInfo *)0x0);
+          }
+          if (((uint)pOVar1[2].monitor >> 4 & 1) != 0) {
+            str0 = mscorlib.dll::System::String::String_Concat_3
+                             (str0,StringLiteral_s,(MethodInfo *)0x0);
+          }
+          value = (Object *)
+                  mscorlib.dll::System::String::String_Concat_3
+                            (str0,StringLiteral_u,(MethodInfo *)0x0);
+          if (((uint)pOVar1[2].monitor >> 2 & 1) != 0) {
+            unaff_EDI = (MethodInfo *)value;
+            value = (Object *)
+                    mscorlib.dll::System::String::String_Concat_3
+                              ((String *)value,StringLiteral_x,(MethodInfo *)0x0);
+          }
+          pOVar1 = (Object *)(*(pOVar1->klass->vtable).ToString.methodPtr)(pOVar1);
+          if (cRam_? == '\0') {
+            func_?();
+            func_?(&StringLiteral_pattern);
+            cRam_? = '\x01';
+          }
+          Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
+                    (pOVar1,StringLiteral_pattern,(MethodInfo *)0x0);
+          pJVar2 = writer;
+          JsonWriter::JsonWriter_AutoComplete(writer,JsonToken__Enum_Undefined,(MethodInfo *)0x0);
+          token = (BsonToken *)func_?();
+          if (token != (BsonToken *)0x0) {
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
+              cRam_? = '\x01';
+            }
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)token,ExceptionArgument__Enum_obj,unaff_EDI);
+            value_00 = (BsonToken__Class *)
+                       func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+            if (value_00 != (BsonToken__Class *)0x0) {
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EDI);
+              (value_00->_0).byval_arg.data.dummy = pJVar2;
+              func_?(&(value_00->_0).byval_arg,pJVar2);
+              *(undefined1 *)&(value_00->_0).byval_arg.attrs = 2;
+              *(undefined1 *)&(value_00->_0).this_arg.attrs = 0;
+              token[1].klass = value_00;
+              func_?(token + 1,value_00);
+              pOVar1 = (Object *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+              if (pOVar1 != (Object *)0x0) {
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                          (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
+                pOVar1[2].klass = (Object__Class *)value;
+                func_?(pOVar1 + 2,value);
+                *(undefined1 *)&pOVar1[2].monitor = 2;
+                *(undefined1 *)&pOVar1[3].monitor = 0;
+                token[1].monitor = (MonitorData *)pOVar1;
+                func_?(&token[1].monitor,pOVar1);
+                Bson::BsonWriter::BsonWriter_AddToken((BsonWriter *)writer,token,(MethodInfo *)0x0);
+                return;
+              }
+            }
+          }
+        }
+        goto code_?;
+      }
+    }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Text__RegularExpressions__RegexOptions);
+      func_?(&StringLiteral_Pattern);
+      func_?(&StringLiteral_Options);
+      cRam_? = '\x01';
+    }
+    if (writer != (JsonWriter *)0x0) {
+      (*(writer->klass->vtable).WriteStartObject.methodPtr)
+                (writer,(writer->klass->vtable).WriteStartObject.method);
+      (*(writer->klass->vtable).WritePropertyName.methodPtr)
+                (writer,StringLiteral_Pattern,(writer->klass->vtable).WritePropertyName.method);
+      if (pOVar1 != (Object *)0x0) {
+        uVar3 = (*(pOVar1->klass->vtable).ToString.methodPtr)
+                          (pOVar1,(pOVar1->klass->vtable).ToString.method);
+        (*(writer->klass->vtable).WriteValue.methodPtr)
+                  (writer,uVar3,(writer->klass->vtable).WriteValue.method);
+        (*(writer->klass->vtable).WritePropertyName.methodPtr)
+                  (writer,StringLiteral_Options,(writer->klass->vtable).WritePropertyName.method);
+        value = (Object *)pOVar1[2].monitor;
+        uVar3 = func_?(TypeInfo__System__Text__RegularExpressions__RegexOptions,&value);
+        (*(writer->klass->vtable).WriteValue_37.methodPtr)
+                  (writer,uVar3,(writer->klass->vtable).WriteValue_37.method);
+        (*(writer->klass->vtable).WriteEndObject.methodPtr)
+                  (writer,(writer->klass->vtable).WriteEndObject.method);
+        return;
+      }
+    }
   }
   else {
-    bVar1 = (TypeInfo__System__Text__RegularExpressions__Regex->_1).naturalAligment;
-    if (((value->klass->_1).naturalAligment < bVar1) ||
-       ((value->klass->_1).typeHierarchy[bVar1 - 1] !=
-        (Il2CppClass *)TypeInfo__System__Text__RegularExpressions__Regex)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    regex = (Regex *)0x0;
-    if (bVar2) {
-      regex = (Regex *)value;
-    }
-    if (regex == (Regex *)0x0) {
-      func_?(value,TypeInfo__System__Text__RegularExpressions__Regex);
-      goto code_?;
-    }
-  }
-  if (writer != (JsonWriter *)0x0) {
-    bVar1 = (TypeInfo__Newtonsoft__Json__Bson__BsonWriter->_1).naturalAligment;
-    if (((writer->klass->_1).naturalAligment < bVar1) ||
-       ((BsonWriter__Class *)(writer->klass->_1).typeHierarchy[bVar1 - 1] !=
-        TypeInfo__Newtonsoft__Json__Bson__BsonWriter)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    writer_00 = (BsonWriter *)0x0;
-    if (bVar2) {
-      writer_00 = (BsonWriter *)writer;
-    }
-    if (writer_00 != (BsonWriter *)0x0) {
-      RegexConverter_WriteBson(this,writer_00,regex,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (writer != (JsonWriter *)0x0) {
-    (*(code *)(writer->klass->vtable).WriteStartObject.method)
-              (writer,(writer->klass->vtable).WriteEndObject.methodPtr);
-    (*(code *)(writer->klass->vtable).WritePropertyName.method)
-              (writer,StringLiteral_Pattern,(writer->klass->vtable).WriteEnd.methodPtr);
-    if (regex != (Regex *)0x0) {
-      uVar3 = (*(code *)(regex->klass->vtable).ToString.method)
-                        (regex,(regex->klass->vtable).
-                               System_Runtime_Serialization_ISerializable_GetObjectData.methodPtr);
-      (*(code *)(writer->klass->vtable).WriteValue.method)
-                (writer,uVar3,(writer->klass->vtable).WriteValue_1.methodPtr);
-      (*(code *)(writer->klass->vtable).WritePropertyName.method)
-                (writer,StringLiteral_Options,(writer->klass->vtable).WriteEnd.methodPtr);
-      value = (Object *)
-              ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-              NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                        ((NamedThemeAttribute_1_UnityEngine_Color_ *)regex,(MethodInfo *)0x0);
-      uVar3 = func_?(TypeInfo__System__Text__RegularExpressions__RegexOptions,&value);
-      (*(code *)(writer->klass->vtable).WriteValue_37.method)
-                (writer,uVar3,(writer->klass->vtable).WriteComment.methodPtr);
-      (*(code *)(writer->klass->vtable).WriteEndObject.method)
-                (writer,(writer->klass->vtable).WriteStartArray.methodPtr);
-      return;
-    }
+    func_?(pOVar1,TypeInfo__System__Text__RegularExpressions__Regex);
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -453,39 +493,37 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Converters::RegexConverter::RegexCon
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Text__RegularExpressions__RegexOptions);
+    func_?(&StringLiteral_Pattern);
+    func_?(&StringLiteral_Options);
     cRam_? = '\x01';
   }
   pJVar1 = writer;
   if (writer != (JsonWriter *)0x0) {
-    (*(code *)(writer->klass->vtable).WriteStartObject.method)
-              (writer,(writer->klass->vtable).WriteEndObject.methodPtr);
-    (*(code *)(pJVar1->klass->vtable).WritePropertyName.method)
-              (pJVar1,StringLiteral_Pattern,(pJVar1->klass->vtable).WriteEnd.methodPtr);
-    this_00 = regex;
+    (*(writer->klass->vtable).WriteStartObject.methodPtr)
+              (writer,(writer->klass->vtable).WriteStartObject.method);
+    (*(pJVar1->klass->vtable).WritePropertyName.methodPtr)
+              (pJVar1,StringLiteral_Pattern,(pJVar1->klass->vtable).WritePropertyName.method);
+    pRVar2 = regex;
     if (regex != (Regex *)0x0) {
-      uVar2 = (*(code *)(regex->klass->vtable).ToString.method)
-                        (regex,(regex->klass->vtable).
-                               System_Runtime_Serialization_ISerializable_GetObjectData.methodPtr);
-      (*(code *)(pJVar1->klass->vtable).WriteValue.method)
-                (pJVar1,uVar2,(pJVar1->klass->vtable).WriteValue_1.methodPtr);
-      (*(code *)(pJVar1->klass->vtable).WritePropertyName.method)
-                (pJVar1,StringLiteral_Options,(pJVar1->klass->vtable).WriteEnd.methodPtr);
-      writer = (JsonWriter *)
-               ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-               NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                         ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_00,(MethodInfo *)0x0);
-      uVar2 = func_?(TypeInfo__System__Text__RegularExpressions__RegexOptions,&writer);
-      (*(code *)(pJVar1->klass->vtable).WriteValue_37.method)
-                (pJVar1,uVar2,(pJVar1->klass->vtable).WriteComment.methodPtr);
-      (*(code *)(pJVar1->klass->vtable).WriteEndObject.method)
-                (pJVar1,(pJVar1->klass->vtable).WriteStartArray.methodPtr);
+      uVar3 = (*(regex->klass->vtable).ToString.methodPtr)
+                        (regex,(regex->klass->vtable).ToString.method);
+      (*(pJVar1->klass->vtable).WriteValue.methodPtr)
+                (pJVar1,uVar3,(pJVar1->klass->vtable).WriteValue.method);
+      (*(pJVar1->klass->vtable).WritePropertyName.methodPtr)
+                (pJVar1,StringLiteral_Options,(pJVar1->klass->vtable).WritePropertyName.method);
+      writer = (JsonWriter *)(pRVar2->fields).roptions;
+      uVar3 = func_?(TypeInfo__System__Text__RegularExpressions__RegexOptions,&writer);
+      (*(pJVar1->klass->vtable).WriteValue_37.methodPtr)
+                (pJVar1,uVar3,(pJVar1->klass->vtable).WriteValue_37.method);
+      (*(pJVar1->klass->vtable).WriteEndObject.methodPtr)
+                (pJVar1,(pJVar1->klass->vtable).WriteEndObject.method);
       return;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

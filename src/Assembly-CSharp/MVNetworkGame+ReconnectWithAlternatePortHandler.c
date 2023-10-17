@@ -7,7 +7,8 @@ int32_t Assembly-CSharp.dll::MVNetworkGame+ReconnectWithAlternatePortHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_wss___);
+    func_?(&StringLiteral_ws___);
     cRam_? = '\x01';
   }
   if (serverIP != (String *)0x0) {
@@ -40,110 +41,108 @@ bool Assembly-CSharp.dll::MVNetworkGame+ReconnectWithAlternatePortHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__ExitGames__Client__Photon__StatusCode);
+    func_?(&StringLiteral_Ignored_status_code__);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral_Retrying_to_connect_with_alterna);
     cRam_? = '\x01';
   }
-  SVar1 = statusCode;
   if (statusCode == StatusCode__Enum_Connect) {
     return 0;
   }
   if (statusCode != StatusCode__Enum_Disconnect) {
-    pMVar2 = (this->fields).networkGame;
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    pIVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pMVar2,(MethodInfo *)0x0);
-    if ((pIVar3 == (IKogamaSetting *)0x2) && ((this->fields).triedAlternatePort == 0)) {
-      statusCode = SVar1;
-      pOVar4 = (Object *)
-               func_?(TypeInfo__ExitGames__Client__Photon__StatusCode,&statusCode);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar5 = mscorlib.dll::System::String::String_Concat
-                         ((Object *)StringLiteral_Ignored_status_code__,pOVar4,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    pMVar1 = (this->fields).networkGame;
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    if (((pMVar1->fields).connState == 2) && ((this->fields).triedAlternatePort == 0)) {
+      pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffec,(MethodInfo *)0x0)
+      ;
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Ignored_status_code__,pSVar2,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
-                ((Object *)pSVar5,(MethodInfo *)0x0);
+                ((Object *)pSVar2,(MethodInfo *)0x0);
       return 1;
     }
   }
-  pMVar2 = (this->fields).networkGame;
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    pIVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pMVar2,(MethodInfo *)0x0);
-    if (pIVar3 != (IKogamaSetting *)0x2) {
+  pMVar1 = (this->fields).networkGame;
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    if ((pMVar1->fields).connState != 2) {
       return 0;
     }
     if ((this->fields).triedAlternatePort != 0) {
       return 0;
     }
     (this->fields).triedAlternatePort = 1;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
     }
-    pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
-    if (pGVar6 != (GameSessionData *)0x0) {
-      pSVar5 = (pGVar6->fields).serverIP;
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar5 = mscorlib.dll::System::String::String_Concat_2
-                         (StringLiteral_Retrying_to_connect_with_alterna,pSVar5,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Debug);
+    pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar3 != (GameSessionData *)0x0) {
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Retrying_to_connect_with_alterna,(pGVar3->fields).serverIP,
+                          (MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)pSVar5,(MethodInfo *)0x0);
-      pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
-      if ((pGVar6 != (GameSessionData *)0x0) &&
-         (pSVar5 = (pGVar6->fields).serverIP, pSVar5 != (String *)0x0)) {
-        startIndex = mscorlib.dll::System::String::String_LastIndexOf(pSVar5,0x3a,(MethodInfo *)0x0)
+                ((Object *)pSVar2,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if ((pGVar3 != (GameSessionData *)0x0) &&
+         (pSVar2 = (pGVar3->fields).serverIP, pSVar2 != (String *)0x0)) {
+        startIndex = mscorlib.dll::System::String::String_LastIndexOf(pSVar2,0x3a,(MethodInfo *)0x0)
         ;
-        pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
-        if ((pGVar6 != (GameSessionData *)0x0) &&
-           (pSVar5 = (pGVar6->fields).serverIP, pSVar5 != (String *)0x0)) {
-          pSVar5 = mscorlib.dll::System::String::String_Remove(pSVar5,startIndex,(MethodInfo *)0x0);
-          pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0)
-          ;
-          if (pGVar6 != (GameSessionData *)0x0) {
-            this_00 = (pGVar6->fields).serverIP;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if ((pGVar3 != (GameSessionData *)0x0) &&
+           (pSVar2 = (pGVar3->fields).serverIP, pSVar2 != (String *)0x0)) {
+          pSVar2 = mscorlib.dll::System::String::String_Remove_1
+                             (pSVar2,startIndex,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar3 != (GameSessionData *)0x0) {
+            pSVar4 = (pGVar3->fields).serverIP;
             if (cRam_? == '\0') {
-              func_?(_UNK_?);
+              func_?(&StringLiteral_wss___);
+              func_?(&StringLiteral_ws___);
               cRam_? = '\x01';
             }
-            if (this_00 != (String *)0x0) {
-              bVar7 = mscorlib.dll::System::String::String_Contains
-                                (this_00,StringLiteral_wss___,(MethodInfo *)0x0);
-              if (bVar7 == 0) {
+            if (pSVar4 != (String *)0x0) {
+              bVar5 = mscorlib.dll::System::String::String_Contains
+                                (pSVar4,StringLiteral_wss___,(MethodInfo *)0x0);
+              if (bVar5 == 0) {
                 mscorlib.dll::System::String::String_Contains
-                          (this_00,StringLiteral_ws___,(MethodInfo *)0x0);
-                pSVar5 = this_00;
+                          (pSVar4,StringLiteral_ws___,(MethodInfo *)0x0);
               }
-              statusCode = 0;
-              method = unaff_EBX;
-              pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData
-                                 ((MethodInfo *)0x0);
-              statusCode = (StatusCode__Enum)&statusCode;
-              pOVar4 = (Object *)func_?();
-              pSVar5 = mscorlib.dll::System::String::String_Concat_1
-                                 ((Object *)pSVar5,(Object *)::StringLiteral__,pOVar4,
-                                  (MethodInfo *)0x0);
-              if (pGVar6 != (GameSessionData *)0x0) {
-                (pGVar6->fields).serverIP = pSVar5;
-                pMVar2 = (this->fields).networkGame;
-                if (pMVar2 != (MVNetworkGame *)0x0) {
-                  MVNetworkGame::MVNetworkGame_Join(pMVar2,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                func_?(&TypeInfo__MVGameControllerBase);
+                cRam_? = '\x01';
+              }
+              pGVar3 = TypeInfo__MVGameControllerBase->static_fields->
+                       _GameSessionData_k__BackingField;
+              pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
+                                 ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+              pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                                 (pSVar2,::StringLiteral__,pSVar4,(MethodInfo *)0x0);
+              if (pGVar3 != (GameSessionData *)0x0) {
+                (pGVar3->fields).serverIP = pSVar2;
+                func_?(&pGVar3->fields,pSVar2);
+                pMVar1 = (this->fields).networkGame;
+                if (pMVar1 != (MVNetworkGame *)0x0) {
+                  MVNetworkGame::MVNetworkGame_Join(pMVar1,(MethodInfo *)0x0);
                   return 1;
                 }
               }
@@ -154,9 +153,9 @@ bool Assembly-CSharp.dll::MVNetworkGame+ReconnectWithAlternatePortHandler::
     }
   }
 code_?:
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  bVar7 = (*pcVar8)();
-  return bVar7;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  bVar5 = (*pcVar6)();
+  return bVar5;
 }
 

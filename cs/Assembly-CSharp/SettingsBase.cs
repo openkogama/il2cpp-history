@@ -10,21 +10,37 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SettingsBase : MonoBehaviour
 {
 	// Fields
+	public const string InfinitySign = "\u221E";
 	[SerializeField]
 	private UnityEngine.UI.Text headerText;
 	private int woID;
 	private Dictionary<object, object> result;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__4_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__5_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Initialize_b__4_0(IUIStack handler, BaseEventData data);
+		internal void _Initialize_b__5_0(IUIStack handler, BaseEventData data);
+		internal void _Update_b__9_0(IUIStack handler, BaseEventData data);
+	}
 
 	// Constructors
 	public SettingsBase();
@@ -37,14 +53,8 @@ public class SettingsBase : MonoBehaviour
 	public void OnSettingChanged(string key, object value);
 	private void Update();
 	[CompilerGenerated]
-	private static void _Initialize_m__0(IUIStack handler, BaseEventData data);
+	private void _Initialize_b__4_1(IUIStack handler, BaseEventData data);
 	[CompilerGenerated]
-	private void _Initialize_m__1(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _Initialize_m__2(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private void _Initialize_m__3(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _Update_m__4(IUIStack handler, BaseEventData data);
+	private void _Initialize_b__5_1(IUIStack handler, BaseEventData data);
 }
 

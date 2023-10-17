@@ -6,30 +6,30 @@ void MVWorldObject.dll::CaptureTheFlag::CaptureTheFlag_GameCountersQuery_OnCount
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  if (e != (OnCounterTypeChangedArgs *)0x0) {
-    pOVar1 = (Object *)(e->fields).count;
-    pOVar2 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)this,(MethodInfo *)0x0);
-    if (pOVar1 == pOVar2) {
-      this_00 = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)
-                func_?(TypeInfo__System__EventArgs);
-      Assembly-CSharp.dll::WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-      WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor(this_00,(MethodInfo *)0x0);
-      WinningCondition::WinningCondition_SendWinningConditionChangedEvent
-                ((WinningCondition *)this,(EventArgs *)this_00,e,(MethodInfo *)0x0);
-    }
+  if (e == (OnCounterTypeChangedArgs *)0x0) {
+code_?:
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if ((e->fields).count == (this->fields)._.limit) {
+    this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
+    if (this_00 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
+    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
+    (this->fields)._.forfilled = 1;
+    (this->fields)._.instigatorCounterTypeChangedEvent = e;
+    func_?(&(this->fields)._.instigatorCounterTypeChangedEvent,e);
+    if ((this->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+      pEVar2 = (this->fields)._.OnWinningConditionChanged;
+      (*(pEVar2->fields)._._.invoke_impl)
+                ((pEVar2->fields)._._.method_code,this,this_00,(pEVar2->fields)._._.method);
+    }
+  }
   return;
 }
 

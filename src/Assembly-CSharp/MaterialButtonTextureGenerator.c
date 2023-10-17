@@ -5,15 +5,7 @@ void Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureG
                (MaterialButtonTextureGenerator *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   this_00 = (this->fields).meshRenderer;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
   if ((pMVar1 != (MaterialLoader *)0x0) && (this_00 != (MeshRenderer *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
@@ -21,7 +13,7 @@ void Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureG
                (MethodInfo *)0x0);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -35,15 +27,14 @@ void Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureG
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).pictureCamera;
   if (pCVar1 == (Camera *)0x0) goto code_?;
   pRVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_targetTexture
                      (pCVar1,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -83,7 +74,8 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__RenderTexture);
+    func_?(&TypeInfo__UnityEngine__Texture2D);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).meshFilter;
@@ -100,9 +92,9 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
                   ((Behaviour *)pCVar1,1,(MethodInfo *)0x0);
         iVar2 = (this->fields).previewResolution;
         this_01 = (RenderTexture *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_6
-                  (this_01,iVar2,iVar2,0x10,(MethodInfo *)0x0);
         if (this_01 != (RenderTexture *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
+                    (this_01,iVar2,iVar2,0x10,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
                     ((Texture *)this_01,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
@@ -123,23 +115,24 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
                           ((Behaviour *)pCVar1,0,(MethodInfo *)0x0);
                 iVar2 = (this->fields).previewResolution;
                 pTVar3 = (Texture2D *)func_?(TypeInfo__UnityEngine__Texture2D);
-                UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_1
-                          (pTVar3,iVar2,iVar2,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_active
-                          (this_01,(MethodInfo *)0x0);
-                (*(code *)(this_01->klass->vtable).get_width.method)
-                          (this_01,(this_01->klass->vtable).set_width.methodPtr);
-                iVar4 = (*(code *)(this_01->klass->vtable).get_height.method)
-                                  (this_01,(this_01->klass->vtable).set_height.methodPtr);
-                uVar5 = 0;
-                puVar6 = &stack0xffffffec;
-                pTVar3 = (Texture2D *)(float)iVar4;
-                puVar7 = &UNK_?;
-                func_?();
                 if (pTVar3 != (Texture2D *)0x0) {
-                  source.m_YMin = (float)puVar7;
-                  source.m_XMin = (float)uVar5;
-                  source.m_Width = (float)puVar6;
+                  UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_2
+                            (pTVar3,iVar2,iVar2,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_active
+                            (this_01,(MethodInfo *)0x0);
+                  iVar4 = (*(this_01->klass->vtable).get_width.methodPtr)
+                                    (this_01,(this_01->klass->vtable).get_width.method);
+                  iVar5 = (*(this_01->klass->vtable).get_height.methodPtr)
+                                    (this_01,(this_01->klass->vtable).get_height.method);
+                  fVar6 = 0.0;
+                  fVar7 = 0.0;
+                  fVar8 = 0.0;
+                  UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4__ctor
+                            ((Vector4 *)&stack0xffffffec,0.0,0.0,(float)iVar4,(float)iVar5,
+                             (MethodInfo *)0x0);
+                  source.m_YMin = fVar7;
+                  source.m_XMin = fVar6;
+                  source.m_Width = fVar8;
                   source.m_Height = 0.0;
                   UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_ReadPixels_1
                             (pTVar3,source,0,0,(MethodInfo *)0x0);
@@ -150,11 +143,12 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
                   UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_Release
                             (this_01,(MethodInfo *)0x0);
                   this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_1_get_transform((Component_1 *)this,(MethodInfo *)0x0);
+                            Component_get_transform((Component *)this,(MethodInfo *)0x0);
                   if (this_02 != (Transform *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                               (this_02,(Transform *)0x0,(MethodInfo *)0x0);
                     (this->fields).testTexture2D = pTVar3;
+                    func_?(&(this->fields).testTexture2D,pTVar3);
                     return pTVar3;
                   }
                 }
@@ -165,9 +159,9 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
       }
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  pTVar3 = (Texture2D *)(*pcVar8)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pTVar3 = (Texture2D *)(*pcVar9)();
   return pTVar3;
 }
 
@@ -180,11 +174,10 @@ void Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureG
 {
   (this->fields).previewResolution = 0x80;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

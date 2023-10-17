@@ -6,39 +6,33 @@ void Assembly-CSharp.dll::BouncyAnimator::BouncyAnimator_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&StringLiteral__BouncyTex);
     cRam_? = '\x01';
   }
-  pMVar1 = (Material *)
-           mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-           Serialization::JsonProperty]::
-           Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                     ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this,
-                      (MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Vector2->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector2->_1).cctor_started == 0)) {
-    func_?();
+  pMVar1 = (this->fields)._.targetMaterial;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector2);
+    cRam_? = '\x01';
   }
-  VVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_get_zero((MethodInfo *)0x0);
   if (pMVar1 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureOffset
-              (pMVar1,StringLiteral__BouncyTex,VVar2,(MethodInfo *)0x0);
-    pMVar1 = (Material *)
-             mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this,
-                        (MethodInfo *)0x0);
-    VVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_get_one((MethodInfo *)0x0);
+              (pMVar1,StringLiteral__BouncyTex,
+               TypeInfo__UnityEngine__Vector2->static_fields->zeroVector,(MethodInfo *)0x0);
+    pMVar1 = (this->fields)._.targetMaterial;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector2);
+      cRam_? = '\x01';
+    }
     if (pMVar1 != (Material *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureScale
-                (pMVar1,StringLiteral__BouncyTex,VVar2,(MethodInfo *)0x0);
+                (pMVar1,StringLiteral__BouncyTex,
+                 TypeInfo__UnityEngine__Vector2->static_fields->oneVector,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -50,55 +44,33 @@ void Assembly-CSharp.dll::BouncyAnimator::BouncyAnimator_Update
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__BouncyTex);
     cRam_? = '\x01';
   }
-  puStack_1 = (undefined1 *)
-              UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?();
-  }
-  dVar2 = (double)((float)puStack_1 * _UNK_?);
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  dVar2 = (double)(fVar1 * _UNK_?);
   func_?();
-  puStack_3 = (undefined1 *)
-              (_UNK_? -
-              (_UNK_? -
-              (float)(double)CONCAT44((uint)((ulonglong)(double)(float)dVar2 >> 0x20) &
-                                      _UNK_?,SUB84((double)(float)dVar2,0) & _UNK_?))
-              * _UNK_?);
-  puStack_1 = (undefined1 *)((_UNK_? - (float)puStack_3) * _UNK_?);
-  pMVar4 = (Material *)
-           mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-           Serialization::JsonProperty]::
-           Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                     ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this,
-                      (MethodInfo *)0x0);
-  VStack_5.x = 0.0;
-  VStack_5.y = 0.0;
-  func_?(&VStack_5,puStack_1,puStack_1);
-  if (pMVar4 != (Material *)0x0) {
+  pMVar3 = (this->fields)._.targetMaterial;
+  fVar1 = _UNK_? -
+          (_UNK_? - (float)((uint)(float)dVar2 & _UNK_?)) * _UNK_?;
+  fVar4 = (_UNK_? - fVar1) * _UNK_?;
+  if (pMVar3 != (Material *)0x0) {
+    value.y = fVar4;
+    value.x = fVar4;
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureOffset
-              (pMVar4,StringLiteral__BouncyTex,VStack_5,(MethodInfo *)0x0);
-    pMVar4 = (Material *)
-             mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this,
-                        (MethodInfo *)0x0);
-    puStack_1 = puStack_3;
-    VStack_5.y = (float)&UNK_?;
-    puStack_3 = &stack0xffffffe4;
-    func_?();
-    if (pMVar4 != (Material *)0x0) {
+              (pMVar3,StringLiteral__BouncyTex,value,(MethodInfo *)0x0);
+    pMVar3 = (this->fields)._.targetMaterial;
+    if (pMVar3 != (Material *)0x0) {
+      value_00.y = fVar1;
+      value_00.x = fVar1;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureScale
-                (pMVar4,StringLiteral__BouncyTex,(Vector2)0x0,(MethodInfo *)0x0);
+                (pMVar3,StringLiteral__BouncyTex,value_00,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -6,19 +6,20 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).autocomments;
   if (this_00 != (List_1_System_String_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)comment,
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)comment,
                MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -30,21 +31,28 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).references;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    item._4_4_ = 
-    MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_;
-    item.rgba = (int32_t)reference;
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-            List_1_UnityEngine_Color32__Contains(this_00,item,unaff_ESI);
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).references;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                      (this_00,(RegexCharClass_SingleRange)reference,
+                       MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                      );
     if (bVar1 == 0) {
       this_01 = (this->fields).references;
       if (this_01 == (List_1_System_String_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)reference,
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)this_01,(Object *)reference,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
     }
@@ -65,19 +73,25 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).autocomments;
-  if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-    List_1_UnityEngine_UIVertex__Clear
-              (this_00,MethodInfo__System__Collections__Generic__List<System::String>__Clear__);
+  pLVar1 = (this->fields).autocomments;
+  if (pLVar1 != (List_1_System_String_ *)0x0) {
+    length = (pLVar1->fields)._size;
+    piVar2 = &(pLVar1->fields)._version;
+    *piVar2 = *piVar2 + 1;
+    (pLVar1->fields)._size = 0;
+    if (0 < length) {
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pLVar1->fields)._items,0,length,(MethodInfo *)0x0);
+    }
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -89,19 +103,25 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).references;
-  if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-    List_1_UnityEngine_UIVertex__Clear
-              (this_00,MethodInfo__System__Collections__Generic__List<System::String>__Clear__);
+  pLVar1 = (this->fields).references;
+  if (pLVar1 != (List_1_System_String_ *)0x0) {
+    length = (pLVar1->fields)._size;
+    piVar2 = &(pLVar1->fields)._version;
+    *piVar2 = *piVar2 + 1;
+    (pLVar1->fields)._size = 0;
+    if (0 < length) {
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pLVar1->fields)._items,0,length,(MethodInfo *)0x0);
+    }
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -113,16 +133,28 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1
-            (this_00,(IEnumerable_1_VoxelHit_ *)lines,
-             MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
-            );
-  (this->fields).deletedLines = (List_1_System_String_ *)this_00;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    UnitySynchronizationContext+WorkRequest]::
+    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1
+              (this_00,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)lines,
+               MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+              );
+    (this->fields).deletedLines = (List_1_System_String_ *)this_00;
+    func_?(&this->fields,this_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -134,29 +166,52 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  this_00 = (List_1_VoxelHit_ *)
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1
-            (this_00,(IEnumerable_1_VoxelHit_ *)deletedLines,
-             MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
-            );
-  (this->fields).deletedLines = (List_1_System_String_ *)this_00;
-  pLVar1 = (List_1_UnityEngine_Vector4_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (pLVar1,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  (this->fields).references = (List_1_System_String_ *)pLVar1;
-  pLVar1 = (List_1_UnityEngine_Vector4_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (pLVar1,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  (this->fields).autocomments = (List_1_System_String_ *)pLVar1;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    UnitySynchronizationContext+WorkRequest]::
+    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1
+              (this_00,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                       deletedLines,
+               MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+              );
+    (this->fields).deletedLines = (List_1_System_String_ *)this_00;
+    func_?(&this->fields,this_00);
+    pLVar1 = (List_1_System_String_ *)
+             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+    if (pLVar1 != (List_1_System_String_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+      LowLevelList_1_System_Object___ctor
+                ((LowLevelList_1_System_Object_ *)pLVar1,
+                 MethodInfo__System__Collections__Generic__List<System::String>__List__);
+      (this->fields).references = pLVar1;
+      func_?(&(this->fields).references,pLVar1);
+      pLVar1 = (List_1_System_String_ *)
+               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+      if (pLVar1 != (List_1_System_String_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+        LowLevelList_1_System_Object___ctor
+                  ((LowLevelList_1_System_Object_ *)pLVar1,
+                   MethodInfo__System__Collections__Generic__List<System::String>__List__);
+        (this->fields).autocomments = pLVar1;
+        func_?(&(this->fields).autocomments,pLVar1);
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -168,42 +223,68 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (dt != (CatalogDeletedEntry *)0x0) {
     pLVar1 = (dt->fields).deletedLines;
-    pLVar2 = (List_1_VoxelHit_ *)
+    pLVar2 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1
-              (pLVar2,(IEnumerable_1_VoxelHit_ *)pLVar1,
-               MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
-              );
-    (this->fields).deletedLines = (List_1_System_String_ *)pLVar2;
-    pLVar1 = (dt->fields).references;
-    pLVar2 = (List_1_VoxelHit_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1
-              (pLVar2,(IEnumerable_1_VoxelHit_ *)pLVar1,
-               MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
-              );
-    (this->fields).references = (List_1_System_String_ *)pLVar2;
-    pLVar1 = (dt->fields).autocomments;
-    pLVar2 = (List_1_VoxelHit_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1
-              (pLVar2,(IEnumerable_1_VoxelHit_ *)pLVar1,
-               MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
-              );
-    (this->fields).autocomments = (List_1_System_String_ *)pLVar2;
-    (this->fields).flags = (dt->fields).flags;
-    (this->fields).comment = (dt->fields).comment;
-    return;
+    if (pLVar2 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+      UnitySynchronizationContext+WorkRequest]::
+      List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1
+                (pLVar2,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar1
+                 ,
+                 MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                );
+      (this->fields).deletedLines = (List_1_System_String_ *)pLVar2;
+      func_?(&this->fields,pLVar2);
+      pLVar1 = (dt->fields).references;
+      pLVar2 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+               func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+      if (pLVar2 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+        UnitySynchronizationContext+WorkRequest]::
+        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1
+                  (pLVar2,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                          pLVar1,
+                   MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                  );
+        (this->fields).references = (List_1_System_String_ *)pLVar2;
+        func_?(&(this->fields).references,pLVar2);
+        pLVar1 = (dt->fields).autocomments;
+        pLVar2 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                 func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+        if (pLVar2 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+          UnitySynchronizationContext+WorkRequest]::
+          List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1
+                    (pLVar2,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                            pLVar1,
+                     MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                    );
+          (this->fields).autocomments = (List_1_System_String_ *)pLVar2;
+          func_?(&(this->fields).autocomments,pLVar2);
+          pSVar3 = (dt->fields).flags;
+          (this->fields).flags = pSVar3;
+          func_?(&(this->fields).flags,pSVar3);
+          pSVar3 = (dt->fields).comment;
+          (this->fields).comment = pSVar3;
+          func_?(&(this->fields).comment,pSVar3);
+          return;
+        }
+      }
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -216,20 +297,24 @@ Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry_get_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)(this->fields).autocomments;
-  if (this_00 != (List_1_VoxelHit_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+            (this->fields).autocomments;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pUVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+             UnitySynchronizationContext+WorkRequest]::
+             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
                        (this_00,
                         MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    return (String__Array *)pVVar1;
+    return (String__Array *)pUVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pSVar3 = (String__Array *)(*pcVar2)();
-  return pSVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String__Array *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -241,20 +326,24 @@ Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry_get_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)(this->fields).deletedLines;
-  if (this_00 != (List_1_VoxelHit_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+            (this->fields).deletedLines;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pUVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+             UnitySynchronizationContext+WorkRequest]::
+             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
                        (this_00,
                         MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    return (String__Array *)pVVar1;
+    return (String__Array *)pUVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pSVar3 = (String__Array *)(*pcVar2)();
-  return pSVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String__Array *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -265,42 +354,32 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedE
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral____);
+    func_?(&::StringLiteral___);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).flags;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields).flags,(MethodInfo *)0x0)
+  ;
+  if (bVar1 != 0) {
     return TypeInfo__System__String->static_fields->Empty;
   }
-  pSVar1 = (this->fields).flags;
-  if (pSVar1 == (String *)0x0) {
+  pSVar2 = (this->fields).flags;
+  if (pSVar2 == (String *)0x0) {
     func_?();
     pcVar3 = (code *)swi(3);
-    pSVar1 = (String *)(*pcVar3)();
-    return pSVar1;
+    pSVar2 = (String *)(*pcVar3)();
+    return pSVar2;
   }
-  bVar2 = mscorlib.dll::System::String::String_StartsWith
-                    (pSVar1,::StringLiteral___,(MethodInfo *)0x0);
-  pSVar1 = (this->fields).flags;
-  if (bVar2 == 0) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_2
-                       (StringLiteral____,pSVar1,(MethodInfo *)0x0);
-    return pSVar1;
+  bVar1 = mscorlib.dll::System::String::String_StartsWith
+                    (pSVar2,::StringLiteral___,(MethodInfo *)0x0);
+  pSVar2 = (this->fields).flags;
+  if (bVar1 == 0) {
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (::StringLiteral____,pSVar2,(MethodInfo *)0x0);
+    return pSVar2;
   }
-  return pSVar1;
+  return pSVar2;
 }
 
 
@@ -310,16 +389,8 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
                (CatalogDeletedEntry *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  value = (this->fields).comment;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                    ((this->fields).comment,(MethodInfo *)0x0);
   return bVar1 == 0;
 }
 
@@ -332,19 +403,23 @@ Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry_get_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)(this->fields).references;
-  if (this_00 != (List_1_VoxelHit_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)(this->fields).references
+  ;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pUVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+             UnitySynchronizationContext+WorkRequest]::
+             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
                        (this_00,
                         MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    return (String__Array *)pVVar1;
+    return (String__Array *)pUVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pSVar3 = (String__Array *)(*pcVar2)();
-  return pSVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String__Array *)(*pcVar4)();
+  return pSVar5;
 }
 

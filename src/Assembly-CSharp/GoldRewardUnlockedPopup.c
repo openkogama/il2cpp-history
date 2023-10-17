@@ -6,23 +6,18 @@ void Assembly-CSharp.dll::GoldRewardUnlockedPopup::GoldRewardUnlockedPopup_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   pTVar2 = (this->fields).titleText;
   (this->fields).bounceEffectStartTime = fVar1;
   format = TM::TM__((this->fields).titleString,(MethodInfo *)0x0);
-  pTStack_3 = (Text *)0x2;
-  arg0 = (Object *)func_?(TypeInfo__System__Int32,&pTStack_3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
+  puStack_3 = (undefined *)0x2;
+  arg0 = (Object *)func_?(TypeInfo__System__Int32,&puStack_3);
   mscorlib.dll::System::String::String_Format(format,arg0,(MethodInfo *)0x0);
   if (pTVar2 != (Text *)0x0) {
-    pTStack_3 = pTVar2;
-    (*(code *)(pTVar2->klass->vtable).set_text.method)();
+    (*(pTVar2->klass->vtable).set_text.methodPtr)();
     return;
   }
   func_?();
@@ -57,21 +52,18 @@ void Assembly-CSharp.dll::GoldRewardUnlockedPopup::GoldRewardUnlockedPopup_Updat
                       (this_00,(fVar1 - (this->fields).bounceEffectStartTime) /
                                (this->fields).bounceEffectDuration,(MethodInfo *)0x0);
     this_01 = (Transform *)(this->fields).imageContentTransform;
-    fStack_2 = 0.0;
-    uStack_3 = 0x3f800000;
-    func_?(&uStack_3,fVar1,fVar1);
     if (this_01 != (Transform *)0x0) {
-      value.z = fStack_2;
-      value.x = (float)(undefined4)uStack_3;
-      value.y = (float)uStack_3._4_4_;
+      value.y = fVar1;
+      value.x = fVar1;
+      value.z = 1.0;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                 (this_01,value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -83,18 +75,13 @@ void Assembly-CSharp.dll::GoldRewardUnlockedPopup::GoldRewardUnlockedPopup__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__0__GOLD_CLAIMED_);
     cRam_? = '\x01';
   }
   (this->fields).titleString = StringLiteral__0__GOLD_CLAIMED_;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  func_?(&(this->fields).titleString,StringLiteral__0__GOLD_CLAIMED_);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

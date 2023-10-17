@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DebugLogHandler : MonoBehaviour
 {
@@ -31,24 +31,6 @@ public class DebugLogHandler : MonoBehaviour
 	private bool isInBrokenState;
 	private static bool didConnectToGameServer;
 	private static string firstError;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache0;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache1;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache2;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache3;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache4;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache5;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache6;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache7;
-	[CompilerGenerated]
-	private static Func<string> __f__mg_cache8;
 
 	// Properties
 	public static bool DidConnectToGameServer { get; set; }

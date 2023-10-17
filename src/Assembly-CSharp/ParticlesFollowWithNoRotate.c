@@ -5,8 +5,8 @@ void Assembly-CSharp.dll::ParticlesFollowWithNoRotate::ParticlesFollowWithNoRota
                (ParticlesFollowWithNoRotate *this,MethodInfo *method)
 
 {
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
               (this_00,(this->fields).startRotation,(MethodInfo *)0x0);
@@ -25,8 +25,8 @@ void Assembly-CSharp.dll::ParticlesFollowWithNoRotate::ParticlesFollowWithNoRota
                (ParticlesFollowWithNoRotate *this,MethodInfo *method)
 
 {
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
     pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                        ((Quaternion *)&stack0xffffffec,this_00,(MethodInfo *)0x0);

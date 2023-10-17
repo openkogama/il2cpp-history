@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace AntiHack
 {
@@ -30,7 +30,6 @@ namespace AntiHack
 	
 		// Constructors
 		public MaterialPlaneRenderer();
-		static MaterialPlaneRenderer();
 	
 		// Methods
 		protected void OnValidate();

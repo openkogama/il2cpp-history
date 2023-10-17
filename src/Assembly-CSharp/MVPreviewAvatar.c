@@ -12,66 +12,43 @@ Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar_Clone
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__MVAvatarLocal);
+    func_?(&TypeInfo__MVAvatarLocal);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  this_00 = (MVAvatarLocal *)
-            MVGroup::MVGroup_Clone
-                      ((MVGroup *)this,ownerActorNumber,cloneGroupId,cloneBookkeeping,worldObjects,
-                       prototypes,(MethodInfo *)0x0);
-  if (this_00 == (MVAvatarLocal *)0x0) {
-    func_?();
-  }
-  else {
-    pTVar1 = mscorlib.dll::System::Object::Object_GetType((Object *)this_00,(MethodInfo *)0x0);
+  pMVar1 = MVGroup::MVGroup_Clone
+                     ((MVGroup *)this,ownerActorNumber,cloneGroupId,cloneBookkeeping,worldObjects,
+                      prototypes,(MethodInfo *)0x0);
+  if (pMVar1 != (MVWorldObjectClient *)0x0) {
+    left = mscorlib.dll::System::Object::Object_GetType((Object *)pMVar1,(MethodInfo *)0x0);
     handle = TypeRef__MVAvatarLocal;
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    if (pTVar1 != pTVar2) {
-      return (MVWorldObjectClient *)this_00;
+    right = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                      ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)left,(Object **)right,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pMStack3 = TypeInfo__MVAvatarLocal;
+      if (((pMVar1->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth
+          ) || ((MVAvatarLocal__Class *)
+                (pMVar1->klass->_1).typeHierarchy
+                [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
+      goto code_?;
+      pMVar1[1].fields.previewLayerMask = _UNK_?;
     }
-    pMVar3 = this_00->klass;
-    bVar4 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
-    bVar5 = (pMVar3->_1).naturalAligment;
-    if ((bVar5 < bVar4) ||
-       ((MVAvatarLocal__Class *)(pMVar3->_1).typeHierarchy[bVar4 - 1] != TypeInfo__MVAvatarLocal)) {
-      bVar6 = false;
-    }
-    else {
-      bVar6 = true;
-    }
-    pMVar7 = (MVAvatarLocal *)0x0;
-    if (bVar6) {
-      pMVar7 = this_00;
-    }
-    if (pMVar7 != (MVAvatarLocal *)0x0) {
-      if ((bVar5 < bVar4) ||
-         ((MVAvatarLocal__Class *)(pMVar3->_1).typeHierarchy[bVar4 - 1] != TypeInfo__MVAvatarLocal))
-      {
-        bVar6 = false;
-      }
-      else {
-        bVar6 = true;
-      }
-      pMVar7 = (MVAvatarLocal *)0x0;
-      if (bVar6) {
-        pMVar7 = this_00;
-      }
-      if (pMVar7 != (MVAvatarLocal *)0x0) {
-        MVAvatarLocal::MVAvatarLocal_set_SpawnId
-                  (pMVar7,(int32_t)(this_00->fields)._.avatar,(MethodInfo *)0x0);
-        return (MVWorldObjectClient *)this_00;
-      }
-    }
+    return pMVar1;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pMVar9 = (MVWorldObjectClient *)(*pcVar8)();
-  return pMVar9;
+  pMStack3 = extraout_EDX;
+code_?:
+  pMStack4 = pMVar1;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pMVar1 = (MVWorldObjectClient *)(*pcVar5)();
+  return pMVar1;
 }
 
 
@@ -84,26 +61,20 @@ void Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                   NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                             ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_00,(MethodInfo *)0x0)
-    ;
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVGroup::MVGroup__ctor
-              ((MVGroup *)this,data,(GameObject *)prefabObject,worldObjects,(MethodInfo *)0x0);
+              ((MVGroup *)this,data,(pPVar1->fields).mvPreviewAvatarPrefab,worldObjects,
+               (MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

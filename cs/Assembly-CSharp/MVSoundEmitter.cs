@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVSoundEmitter : MVLogicObject, ILogicWorldObject
 {
@@ -16,7 +16,6 @@ public class MVSoundEmitter : MVLogicObject, ILogicWorldObject
 	private SoundLoader soundLoader;
 	private const string defaultUrl = "AmbientAudio/Nature/kgm_amb_forest.unity3d";
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 
 	// Properties

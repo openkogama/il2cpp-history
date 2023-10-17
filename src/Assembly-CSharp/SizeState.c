@@ -9,158 +9,160 @@ Vector3 * Assembly-CSharp.dll::SizeState::SizeState_FindValidMoveLocation
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff34;
-  puVar5 = &stack0xffffff34;
+  puStack_4 = &stack0xffffff48;
+  puVar5 = &stack0xffffff48;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
+                   );
+    func_?(&TypeInfo__SizeState);
+    func_?(&StringLiteral_no_position_found_);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  iStack_6 = 0;
-  uStack_7 = 0;
-  uStack_8 = 0;
-  uStack_9 = 0;
-  uStack_10 = 0;
-  uStack_11 = 0;
-  func_?();
-  fStack_12 = scale * _UNK_?;
-  iStack_13 = -1;
-  fStack_14 = (this->fields).currentSize;
-  pMVar15 = (this->fields).controllerLocal;
-  puStack_16 = &stack0xffffff34;
-  puStack_4 = &stack0xffffff34;
-  if ((pMVar15 == (MvCharacterController *)0x0) ||
-     (puStack_16 = &stack0xffffff34, puStack_4 = &stack0xffffff34,
-     pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)pMVar15,(MethodInfo *)0x0), pTVar17 == (Transform *)0x0)) {
+  auStack_6._0_4_ = (Object__Class *)0x0;
+  auStack_6._4_4_ = (MonitorData *)0x0;
+  auStack_6._8_4_ = 0;
+  auStack_6._12_4_ = (SendOrPostCallback *)0x0;
+  __return_storage_ptr__->x = 0.0;
+  __return_storage_ptr__->y = 0.0;
+  pMVar7 = (this->fields).controllerLocal;
+  auStack_6._16_4_ = 0.0;
+  auStack_6[0x14] = 0;
+  auStack_6._21_3_ = 0;
+  fStack_8 = scale * _UNK_?;
+  __return_storage_ptr__->z = 0.0;
+  fStack_9 = (this->fields).currentSize;
+  if (pMVar7 != (MvCharacterController *)0x0) {
+    pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pMVar7,(MethodInfo *)0x0);
+    if (pTVar10 != (Transform *)0x0) {
+      pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         (&VStack_12,pTVar10,(MethodInfo *)0x0);
+      fVar13 = pVVar11->y;
+      fVar14 = pVVar11->z;
+      __return_storage_ptr__->x = pVVar11->x;
+      __return_storage_ptr__->y = fVar13;
+      __return_storage_ptr__->z = fVar14;
+      do {
+        if (scale <= fStack_9) {
 code_?:
-    func_?();
-code_?:
-    func_?();
-    pcVar18 = (code *)swi(3);
-    pVVar19 = (Vector3 *)(*pcVar18)();
-    return pVVar19;
+          *unaff_FS_OFFSET = uStack_3;
+          return __return_storage_ptr__;
+        }
+        fStack_15 = fStack_9 + fStack_8;
+        uStack_16 = 0;
+        fStack_9 = fStack_15;
+        if ((TypeInfo__SizeState->_1).cctor_finished_or_no_cctor == 0) {
+          in_stack_17 = (MethodInfo *)&UNK_?;
+          func_?();
+        }
+        this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                  TypeInfo__SizeState->static_fields->relativePositions;
+        if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) break;
+        pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                 UnitySynchronizationContext+WorkRequest]::
+                 List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__GetEnumerator
+                           ((List_1_T_Enumerator_UnityEngine_UnitySynchronizationContext_WorkRequest_
+                             *)&stack0xffffff54,this_00,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
+                           );
+        uStack_19 = 0;
+        auStack_6._0_4_ = pLVar18->_list;
+        auStack_6._4_4_ = pLVar18->_index;
+        auStack_6._8_4_ = pLVar18->_version;
+        auStack_6._12_4_ = (pLVar18->_current).m_DelagateCallback;
+        auStack_6._16_8_ = *(undefined8 *)&(pLVar18->_current).m_DelagateState;
+        uStack_1 = 1;
+        pOStack_20 = (Object *)auStack_6;
+        do {
+          bVar21 = mscorlib.dll::System::Collections::Generic::
+                  List`1[T]+Enumerator[AnimatedTextureOffset+TextureOffsetAnimationData]::
+                  List_1_T_Enumerator_AnimatedTextureOffset_TextureOffsetAnimationData__MoveNext
+                            ((List_1_T_Enumerator_AnimatedTextureOffset_TextureOffsetAnimationData_
+                              *)auStack_6,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                            );
+          if (bVar21 == 0) {
+            uStack_1 = 0xffffffff;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)auStack_6,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                       ,in_stack_22);
+            uStack_1 = 0xffffffff;
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__UnityEngine__Debug);
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                      ((Object *)StringLiteral_no_position_found_,(MethodInfo *)0x0);
+            goto code_?;
+          }
+          fStack_23 = (float)auStack_6._20_4_ * fStack_9;
+          fStack_24 = (float)auStack_6._16_4_ * fStack_9;
+          fStack_25 = (float)auStack_6._12_4_ * fStack_9;
+          relativeTestPos.y = fStack_24;
+          relativeTestPos.x = fStack_25;
+          relativeTestPos.z = fStack_23;
+          fStack_26 = fStack_23;
+          bVar21 = SizeState_GetIsValidScaledRelativePosition
+                            (this,relativeTestPos,fStack_9,(MethodInfo *)0x0);
+        } while (bVar21 == 0);
+        pMVar7 = (this->fields).controllerLocal;
+        if (pMVar7 == (MvCharacterController *)0x0) break;
+        pTStack_27 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pMVar7,(MethodInfo *)0x0);
+        if (pTStack_27 == (Transform *)0x0) break;
+        pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           (&VStack_28,pTStack_27,(MethodInfo *)0x0);
+        uStack_29._0_4_ = pVVar11->x;
+        uStack_29._4_4_ = pVVar11->y;
+        fStack_30 = pVVar11->z;
+        VStack_12.z = fStack_30 + fStack_26;
+        value.y = (float)uStack_29._4_4_ + fStack_24;
+        value.x = (float)(undefined4)uStack_29 + fStack_25;
+        value.z = VStack_12.z;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                  (pTStack_27,value,(MethodInfo *)0x0);
+        pMVar7 = (this->fields).controllerLocal;
+        if (pMVar7 == (MvCharacterController *)0x0) break;
+        pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pMVar7,(MethodInfo *)0x0);
+        if (pTVar10 == (Transform *)0x0) break;
+        pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           (&VStack_31,pTVar10,(MethodInfo *)0x0);
+        uStack_16 = 1;
+        uStack_1 = 0xffffffff;
+        fVar13 = pVVar11->y;
+        fVar14 = pVVar11->z;
+        __return_storage_ptr__->x = pVVar11->x;
+        __return_storage_ptr__->y = fVar13;
+        __return_storage_ptr__->z = fVar14;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)auStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                   ,in_stack_17);
+        uStack_1 = 0xffffffff;
+      } while( true );
+    }
   }
-  pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                     ((Vector3 *)(auStack_20 + 0xc),pTVar17,(MethodInfo *)0x0);
-  uStack_21._0_4_ = pVVar19->x;
-  uStack_21._4_4_ = pVVar19->y;
-  fStack_22 = pVVar19->z;
-  iVar23 = -1;
-  do {
-    if (scale <= fStack_14) goto code_?;
-    fStack_24 = fStack_14 + fStack_12;
-    cStack_25 = '\0';
-    uStack_26 = 0;
-    fStack_14 = fStack_24;
-    if ((((uint)(TypeInfo__SizeState->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__SizeState->_1).cctor_started == 0)) {
-      func_?();
-    }
-    if (TypeInfo__SizeState->static_fields->relativePositions == (List_1_UnityEngine_Vector3_ *)0x0)
-    goto code_?;
-    method_01 = (MethodInfo *)auStack_20;
-    puVar27 = (uint32_t *)func_?();
-    uStack_8 = *puVar27;
-    uStack_9 = puVar27[1];
-    uStack_10 = puVar27[2];
-    uStack_11 = puVar27[3];
-    uStack_7 = *(undefined8 *)(puVar27 + 4);
-    uStack_1 = 0;
-    do {
-      method_00 = 
-      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
-      ;
-      cVar28 = func_?(&uStack_8);
-      if (cVar28 == '\0') goto code_?;
-      VStack_29.y = (float)
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
-      ;
-      VStack_29.x = (float)&uStack_8;
-      puVar30 = (undefined8 *)func_?();
-      uStack_31 = *puVar30;
-      fVar32 = *(float *)(puVar30 + 1);
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Vector3);
-      }
-      a.z = fVar32;
-      a.x = (float)(undefined4)uStack_31;
-      a.y = uStack_31._4_4_;
-      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                         (aVStack_33,a,fStack_14,(MethodInfo *)0x0);
-      auStack_20._24_4_ = pVVar19->x;
-      auStack_20._28_4_ = pVVar19->y;
-      fStack_34 = pVVar19->z;
-      bVar35 = SizeState_GetIsValidScaledRelativePosition(this,*pVVar19,fStack_14,(MethodInfo *)0x0);
-    } while (bVar35 == 0);
-    pMVar15 = (this->fields).controllerLocal;
-    if ((pMVar15 == (MvCharacterController *)0x0) ||
-       (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pMVar15,method_00), pTVar17 == (Transform *)0x0))
-    goto code_?;
-    pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_36,pTVar17,in_stack_37);
-    auStack_20._16_4_ = pVVar19->x;
-    auStack_20._20_4_ = pVVar19->y;
-    uStack_31 = CONCAT44(pVVar19->z,(undefined4)uStack_31);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    in_stack_37 = (MethodInfo *)auStack_20._24_8_;
-    a_00.z = uStack_31._4_4_;
-    a_00.x = (float)auStack_20._16_4_;
-    a_00.y = (float)auStack_20._20_4_;
-    b.z = fStack_34;
-    b.x = (float)auStack_20._24_4_;
-    b.y = (float)auStack_20._28_4_;
-    pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                       (&VStack_29,a_00,b,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (pTVar17,*pVVar19,(MethodInfo *)0x0);
-    pMVar15 = (this->fields).controllerLocal;
-    if ((pMVar15 == (MvCharacterController *)0x0) ||
-       (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pMVar15,method_01), pTVar17 == (Transform *)0x0))
-    goto code_?;
-    pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffff40,pTVar17,(MethodInfo *)0x0);
-    cStack_25 = '\x01';
-    uStack_21._0_4_ = pVVar19->x;
-    uStack_21._4_4_ = pVVar19->y;
-    fStack_22 = pVVar19->z;
-code_?:
-    iVar38 = iStack_6;
-    iVar39 = iVar23 + 1;
-    *(undefined4 *)(puStack_16 + iVar39 * 4) = 0xb1;
-    uStack_1 = 0xffffffff;
-    VStack_29.y = (float)
-                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-    ;
-    VStack_29.x = (float)&uStack_8;
-    iStack_13 = iVar39;
-    func_?();
-    if (iVar38 != 0) goto code_?;
-    if (((iVar39 != -1) && (*(int *)(puStack_16 + iVar39 * 4) == 0xb1)) && (-1 < iVar39)) {
-      iVar39 = iVar23;
-      iStack_13 = iVar23;
-    }
-    iVar23 = iVar39;
-  } while (cStack_25 != '\0');
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-    func_?();
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-            ((Object *)StringLiteral_no_position_found_,(MethodInfo *)0x0);
-code_?:
-  __return_storage_ptr__->x = (float)(undefined4)uStack_21;
-  __return_storage_ptr__->y = (float)uStack_21._4_4_;
-  __return_storage_ptr__->z = fStack_22;
-  *unaff_FS_OFFSET = uStack_3;
-  return __return_storage_ptr__;
+  uVar32 = func_?();
+  func_?(uVar32);
+  pcVar33 = (code *)swi(3);
+  pVVar11 = (Vector3 *)(*pcVar33)();
+  return pVVar11;
 }
 
 
@@ -171,92 +173,51 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledPosition
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVElipsoidOverlapCheck);
+    func_?(&TypeInfo__SizeState);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).controllerLocal;
   if (pMVar1 != (MvCharacterController *)0x0) {
-    uStack_2._0_4_ = (pMVar1->fields).centerBase.x;
-    uStack_2._4_4_ = (pMVar1->fields).centerBase.y;
-    fVar3 = (pMVar1->fields).centerBase.z;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    a_00.z = fVar3;
-    a_00.x = (float)(undefined4)uStack_2;
-    a_00.y = (float)uStack_2._4_4_;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       (&VStack_5,a_00,scale,(MethodInfo *)0x0);
-    uStack_2._0_4_ = pVVar4->x;
-    uStack_2._4_4_ = pVVar4->y;
-    fVar3 = pVVar4->z;
+    uVar2 = (pMVar1->fields).centerBase.x;
+    uVar3 = (pMVar1->fields).centerBase.y;
+    fVar4 = (pMVar1->fields).centerBase.z;
     pMVar1 = (this->fields).controllerLocal;
     if (pMVar1 != (MvCharacterController *)0x0) {
-      auStack_6._4_4_ = (pMVar1->fields).radiusBase.z;
-      auStack_6._0_4_ = (pMVar1->fields).radiusBase.y;
-      fStack_7 = 0.0;
-      uStack_8 = 0;
-      fStack_9 = 0.0;
-      func_?(&uStack_8,(pMVar1->fields).radiusBase.x);
-      a.z = fStack_9;
-      a.x = (float)(undefined4)uStack_8;
-      a.y = (float)uStack_8._4_4_;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                         ((Vector3 *)(auStack_6 + 4),a,scale,(MethodInfo *)0x0);
-      VStack_5.y = pVVar4->x;
-      VStack_5.z = pVVar4->y;
-      fVar10 = pVVar4->z;
-      b.z = fVar3;
-      b.x = (float)(undefined4)uStack_2;
-      b.y = (float)uStack_2._4_4_;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                         ((Vector3 *)(auStack_6 + 4),position,b,(MethodInfo *)0x0);
-      uStack_2._0_4_ = pVVar4->x;
-      uStack_2._4_4_ = pVVar4->y;
-      fVar3 = pVVar4->z;
-      if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Quaternion);
+      fVar5 = (pMVar1->fields).radiusBase.x;
+      fVar6 = (pMVar1->fields).radiusBase.z;
+      fVar7 = (pMVar1->fields).radiusBase.y;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Quaternion);
+        cRam_? = '\x01';
       }
-      pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                         ((Quaternion *)auStack_6,(MethodInfo *)0x0);
-      auStack_6._0_4_ = pQVar11->x;
-      auStack_6._4_4_ = pQVar11->y;
-      fStack_7 = pQVar11->z;
-      fStack_12 = pQVar11->w;
-      if ((((uint)(TypeInfo__SizeState->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__SizeState->_1).cctor_started == 0)) {
+      rotation = TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
+      if ((TypeInfo__SizeState->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__SizeState);
       }
       layerMask = TypeInfo__SizeState->static_fields->layerMask;
       pMVar1 = (this->fields).controllerLocal;
       if (pMVar1 != (MvCharacterController *)0x0) {
         ignoreWoIds = (pMVar1->fields).IgnoreWoIds;
-        if ((((uint)(TypeInfo__MVElipsoidOverlapCheck->vtable).Equals.methodPtr & 0x2000000) != 0)
-           && ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_started == 0)) {
+        if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVElipsoidOverlapCheck);
         }
-        radius.z = fVar10;
-        radius.x = VStack_5.y;
-        radius.y = VStack_5.z;
-        position_00.z = fVar3;
-        position_00.x = (float)(undefined4)uStack_2;
-        position_00.y = (float)uStack_2._4_4_;
-        rotation.y = (float)auStack_6._4_4_;
-        rotation.x = (float)auStack_6._0_4_;
-        rotation.z = fStack_7;
-        rotation.w = fStack_12;
-        bVar13 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckBool
+        radius.y = fVar7 * scale;
+        radius.x = fVar5 * scale;
+        radius.z = fVar6 * scale;
+        position_00.z = position.z + fVar4 * scale;
+        position_00.x = position.x + (float)uVar2 * scale;
+        position_00.y = position.y + (float)uVar3 * scale;
+        bVar8 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckBool
                           (radius,position_00,rotation,layerMask,ignoreWoIds,(MethodInfo *)0x0);
-        return bVar13 == 0;
+        return bVar8 == 0;
       }
     }
   }
-  func_?(0);
-  pcVar14 = (code *)swi(3);
-  bVar13 = (*pcVar14)();
-  return bVar13;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  bVar8 = (*pcVar9)();
+  return bVar8;
 }
 
 
@@ -266,32 +227,89 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledRelativePosition
                (SizeState *this,Vector3 relativeTestPos,float scale,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).controllerLocal;
-  if (this_00 != (MvCharacterController *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (Transform *)0x0) {
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xffffffe8,this_01,(MethodInfo *)0x0);
-      a = *pVVar1;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?();
+  pMVar1 = (this->fields).controllerLocal;
+  fVar2 = fStack_3;
+  if (pMVar1 != (MvCharacterController *)0x0) {
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pMVar1,(MethodInfo *)0x0);
+    fVar2 = fStack_3;
+    if (this_00 != (Transform *)0x0) {
+      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         (&VStack_5,this_00,(MethodInfo *)0x0);
+      uStack_6._0_4_ = pVVar4->x;
+      uStack_6._4_4_ = pVVar4->y;
+      fStack_7 = pVVar4->z;
+      fVar8 = relativeTestPos.x + (float)(undefined4)uStack_6;
+      fStack_9 = relativeTestPos.y + (float)uStack_6._4_4_;
+      fStack_3 = relativeTestPos.z + fStack_7;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVElipsoidOverlapCheck);
+        func_?(&TypeInfo__SizeState);
+        cRam_? = '\x01';
       }
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                         ((Vector3 *)&stack0xffffffe8,a,relativeTestPos,(MethodInfo *)0x0);
-      bVar2 = SizeState_GetIsValidScaledPosition(this,*pVVar1,scale,(MethodInfo *)0x0);
-      return bVar2;
+      pMVar1 = (this->fields).controllerLocal;
+      fVar2 = fStack_3;
+      if (pMVar1 != (MvCharacterController *)0x0) {
+        uStack_6._0_4_ = (pMVar1->fields).centerBase.x;
+        uStack_6._4_4_ = (pMVar1->fields).centerBase.y;
+        fStack_7 = (pMVar1->fields).centerBase.z;
+        fVar2 = fStack_7 * scale;
+        pMVar1 = (this->fields).controllerLocal;
+        if (pMVar1 != (MvCharacterController *)0x0) {
+          VStack_5.x = (pMVar1->fields).radiusBase.x * scale;
+          VStack_5.y = (pMVar1->fields).radiusBase.y * scale;
+          VStack_5.z = (pMVar1->fields).radiusBase.z * scale;
+          uStack_6 = CONCAT44((float)uStack_6._4_4_ * scale + fStack_9,
+                               (float)(undefined4)uStack_6 * scale + fVar8);
+          fStack_7 = fVar2 + fStack_3;
+          fStack_3 = fVar2;
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__UnityEngine__Quaternion);
+            cRam_? = '\x01';
+          }
+          pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+          fVar8 = (pQVar10->identityQuaternion).x;
+          puVar11 = (undefined *)(pQVar10->identityQuaternion).y;
+          pMVar12 = (MVElipsoidOverlapCheck__Class *)(pQVar10->identityQuaternion).z;
+          fVar13 = (pQVar10->identityQuaternion).w;
+          if ((TypeInfo__SizeState->_1).cctor_finished_or_no_cctor == 0) {
+            puVar11 = &UNK_?;
+            pMVar12 = (MVElipsoidOverlapCheck__Class *)TypeInfo__SizeState;
+            func_?();
+          }
+          layerMask = TypeInfo__SizeState->static_fields->layerMask;
+          pMVar1 = (this->fields).controllerLocal;
+          fVar2 = fStack_3;
+          if (pMVar1 != (MvCharacterController *)0x0) {
+            ignoreWoIds = (pMVar1->fields).IgnoreWoIds;
+            if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
+              puVar11 = &UNK_?;
+              pMVar12 = TypeInfo__MVElipsoidOverlapCheck;
+              func_?();
+            }
+            radius.y = VStack_5.y;
+            radius.x = VStack_5.x;
+            radius.z = VStack_5.z;
+            position.z = fStack_7;
+            position.x = (float)(undefined4)uStack_6;
+            position.y = (float)uStack_6._4_4_;
+            rotation.y = (float)puVar11;
+            rotation.x = fVar8;
+            rotation.z = (float)pMVar12;
+            rotation.w = fVar13;
+            bVar14 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckBool
+                              (radius,position,rotation,layerMask,ignoreWoIds,(MethodInfo *)0x0);
+            return bVar14 == 0;
+          }
+        }
+      }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  fStack_3 = fVar2;
+  func_?();
+  pcVar15 = (code *)swi(3);
+  bVar14 = (*pcVar15)();
+  return bVar14;
 }
 
 
@@ -301,168 +319,65 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
                (SizeState *this,MVControllerColliderHit hitData,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pMVar1 = (this->fields).controllerLocal;
   if (pMVar1 != (MvCharacterController *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)pMVar1,(MethodInfo *)0x0);
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pMVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffd4,pTVar2,(MethodInfo *)0x0);
-      uStack_4._0_4_ = pVVar3->x;
-      uStack_4._4_4_ = pVVar3->y;
-      fVar5 = pVVar3->z;
-      pMVar1 = (this->fields).controllerLocal;
-      if (pMVar1 != (MvCharacterController *)0x0) {
-        pCVar6 = mscorlib.dll::System::
-                  Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::Reflection::
-                  CustomAttributeNamedArgument]::
-                  Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                            ((CustomAttributeNamedArgument *)&stack0xffffffd4,
-                             (Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument_
-                              *)pMVar1,(MethodInfo *)0x0);
-        CVar7 = pCVar6->typedArgument;
-        pMVar8 = pCVar6->memberInfo;
-        pTStack_9 = CVar7.argumentType;
-        pOStack_10 = CVar7.value;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          func_?();
-          CVar7.value = pOStack_10;
-          CVar7.argumentType = pTStack_9;
-        }
-        VVar11.z = fVar5;
-        VVar11.x = (float)(undefined4)uStack_4;
-        VVar11.y = uStack_4._4_4_;
-        b.z = (float)pMVar8;
-        b.x = (float)CVar7.argumentType;
-        b.y = (float)CVar7.value;
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                            ((Vector3 *)&stack0xffffffd4,VVar11,b,(MethodInfo *)0x0);
-        b_00.y = hitData.positionTouchingHit.x;
-        b_00.x = (float)in_stack_12;
-        b_00.z = hitData.positionTouchingHit.y;
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                            (&VStack_13,*pVVar3,b_00,(MethodInfo *)0x0);
-        uVar14 = pVVar3->x;
-        uVar15 = pVVar3->y;
-        a_00.y = (float)uVar15;
-        a_00.x = (float)uVar14;
-        pOStack_10 = (Object *)pVVar3->z;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                ((Vector3 *)&stack0xffffffd0,pTVar2,(MethodInfo *)0x0);
+      if ((this->fields).controllerLocal != (MvCharacterController *)0x0) {
         pMVar1 = (this->fields).controllerLocal;
         if (pMVar1 != (MvCharacterController *)0x0) {
-          fVar5 = System.Core.dll::System::Linq::
-                   Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Object,System::Single]::
-                   Enumerable_CreateSelectIterator_c_Iterator10_2_System_Object_System_Single__System_Collections_Generic_IEnumerator_TResult__get_Current
-                             ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Object_System_Single_
-                               *)pMVar1,(MethodInfo *)0x0);
-          pMVar1 = (this->fields).controllerLocal;
           if (pMVar1 != (MvCharacterController *)0x0) {
-            fVar16 = (pMVar1->fields).centerBase.z;
-            uStack_4 = CONCAT44((pMVar1->fields).radiusBase.x,(undefined4)uStack_4);
-            uVar17 = (pMVar1->fields).centerBase.x;
-            uVar18 = (pMVar1->fields).centerBase.y;
-            VStack_13.y = (float)uVar17;
-            VStack_13.z = (float)uVar18;
-            pVVar3 = (Vector3 *)
-                      mscorlib.dll::System::
-                      Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::Reflection::
-                      CustomAttributeNamedArgument]::
-                      Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                                ((CustomAttributeNamedArgument *)&stack0xffffffc8,
-                                 (Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument_
-                                  *)pMVar1,(MethodInfo *)0x0);
-            a.y = VStack_13.z;
-            a.x = VStack_13.y;
-            a.z = fVar16;
-            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                                ((Vector3 *)&stack0xffffffc8,a,*pVVar3,(MethodInfo *)0x0);
-            uVar19 = pVVar3->x;
-            uVar20 = pVVar3->y;
-            fVar16 = pVVar3->z;
-            a_00.z = (float)pOStack_10;
-            VStack_13.y = (float)uVar19;
-            VStack_13.z = (float)uVar20;
-            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                                ((Vector3 *)&stack0xffffffc8,a_00,fVar5 / uStack_4._4_4_,
-                                 (MethodInfo *)0x0);
-            a_01.y = VStack_13.z;
-            a_01.x = VStack_13.y;
-            a_01.z = fVar16;
-            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                                ((Vector3 *)&stack0xffffffc8,a_01,*pVVar3,(MethodInfo *)0x0);
-            uVar21 = pVVar3->x;
-            uVar22 = pVVar3->y;
-            fVar5 = pVVar3->z;
-            pMVar1 = (this->fields).controllerLocal;
-            VStack_13.y = (float)uVar21;
-            VStack_13.z = (float)uVar22;
             if (pMVar1 != (MvCharacterController *)0x0) {
-              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                        Component_1_get_transform((Component_1 *)pMVar1,(MethodInfo *)0x0);
+              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pMVar1,(MethodInfo *)0x0);
               if (pTVar2 != (Transform *)0x0) {
                 pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                    ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-                VVar11 = *pVVar3;
+                                    ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+                uVar4 = pVVar3->x;
+                uVar5 = pVVar3->y;
                 pMVar1 = (this->fields).controllerLocal;
                 if (pMVar1 != (MvCharacterController *)0x0) {
-                  pVVar3 = (Vector3 *)
-                            mscorlib.dll::System::
-                            Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::
-                            Reflection::CustomAttributeNamedArgument]::
-                            Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                                      ((CustomAttributeNamedArgument *)&stack0xffffffc8,
-                                       (Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument_
-                                        *)pMVar1,(MethodInfo *)0x0);
-                  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                                      ((Vector3 *)&stack0xffffffc8,VVar11,*pVVar3,(MethodInfo *)0x0
-                                      );
-                  b_01.y = hitData.positionTouchingHit.x;
-                  b_01.x = (float)in_stack_12;
-                  b_01.z = hitData.positionTouchingHit.y;
-                  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                                      ((Vector3 *)&stack0xffffffc8,*pVVar3,b_01,(MethodInfo *)0x0);
-                  uVar23 = pVVar3->x;
-                  uVar24 = pVVar3->y;
-                  pOStack_10 = (Object *)pVVar3->z;
-                  uStack_4 = uStack_4 & 0xffffffff00000000;
-                  VStack_13.x = hitData.slopeNormal.x;
-                  VStack_13.y = hitData.slopeNormal.y;
-                  VStack_13.z = (float)uVar23;
-                  pTStack_9 = (Type *)uVar24;
-                  func_?();
-                  pTStack_9 = (Type *)VStack_13.z;
-                  uStack_4 = uStack_4 & 0xffffffff00000000;
-                  VStack_13.z = VStack_13.y;
-                  VStack_13.y = (float)&stack0xffffffb8;
-                  VStack_13.x = (float)&UNK_?;
-                  pOStack_10 = (Object *)fVar5;
-                  fVar25 = (float10)func_?();
-                  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                                      ((Vector3 *)&stack0xffffffc8,hitData._32_12_,(float)fVar25,
-                                       (MethodInfo *)0x0);
-                  VVar11 = *pVVar3;
+                  uVar6 = (pMVar1->fields).center.x;
+                  uVar7 = (pMVar1->fields).center.y;
+                  fVar8 = ((pMVar1->fields).center.z + pVVar3->z) - hitData.positionTouchingHit.y;
+                  fVar9 = ((float)uVar6 + (float)uVar4) - (float)in_stack_10;
+                  fVar11 = ((float)uVar7 + (float)uVar5) - hitData.positionTouchingHit.x;
+                  inPoint.y = fVar11;
+                  inPoint.x = fVar9;
+                  inPoint.z = fVar8;
+                  UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor
+                            ((Plane *)&stack0xffffffc0,hitData._32_12_,inPoint,(MethodInfo *)0x0);
+                  point.y = fVar11;
+                  point.x = fVar9;
+                  point.z = fVar8;
+                  fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_GetDistanceToPoint
+                                     ((Plane *)&stack0xffffffc0,point,(MethodInfo *)0x0);
+                  fVar8 = hitData.slopeNormal.x * fVar9;
+                  fVar11 = hitData.slopeNormal.y * fVar9;
                   pMVar1 = (this->fields).controllerLocal;
                   if (pMVar1 != (MvCharacterController *)0x0) {
+                    in_stack_10 = &UNK_?;
                     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_1_get_transform((Component_1 *)pMVar1,(MethodInfo *)0x0);
+                             Component_get_transform((Component *)pMVar1,(MethodInfo *)0x0);
                     pMVar1 = (this->fields).controllerLocal;
                     if (pMVar1 != (MvCharacterController *)0x0) {
                       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_1_get_transform((Component_1 *)pMVar1,(MethodInfo *)0x0);
+                                Component_get_transform((Component *)pMVar1,(MethodInfo *)0x0);
                       if (this_00 != (Transform *)0x0) {
                         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                   Transform_get_position
-                                            ((Vector3 *)&stack0xffffffc8,this_00,(MethodInfo *)0x0);
-                        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::
-                                  Vector3_op_Addition((Vector3 *)&stack0xffffffc8,*pVVar3,VVar11,
-                                                      (MethodInfo *)0x0);
+                                            ((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
+                        uVar12 = pVVar3->x;
+                        uVar13 = pVVar3->y;
                         if (pTVar2 != (Transform *)0x0) {
+                          value.y = (float)uVar13 + fVar8;
+                          value.x = (float)uVar12 + hitData.elipsoidNormal.z * fVar9;
+                          value.z = pVVar3->z + fVar11;
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                                    (pTVar2,*pVVar3,(MethodInfo *)0x0);
+                                    (pTVar2,value,(MethodInfo *)0x0);
                           return;
                         }
                       }
@@ -476,13 +391,98 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
       }
     }
   }
-  func_?(0);
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  func_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
-/* decompilation failed: Recoverable Error: Unable to find unique hash for varnode */
+
+/* Void OnScalingWhileColliding(MVControllerColliderHit) */
+
+void Assembly-CSharp.dll::SizeState::SizeState_OnScalingWhileColliding
+               (SizeState *this,MVControllerColliderHit hitData,MethodInfo *method)
+
+{
+  uVar1 = 0;
+  puVar2 = &UNK_?;
+  pSVar3 = this;
+  fVar4 = SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
+  pfVar5 = &(this->fields).currentSize;
+  if (*pfVar5 <= fVar4 && fVar4 != *pfVar5) {
+    if (cRam_? == '\0') {
+      unaff_EDI = &UNK_?;
+      func_?();
+      cRam_? = '\x01';
+    }
+    pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar7 = (pVVar6->upVector).x;
+    uVar8 = (pVVar6->upVector).y;
+    fVar4 = hitData.slopeNormal.y - (pVVar6->upVector).z;
+    if (_UNK_? <=
+        (hitData.slopeNormal.x - (float)uVar8) * (hitData.slopeNormal.x - (float)uVar8) +
+        (hitData.elipsoidNormal.z - (float)uVar7) * (hitData.elipsoidNormal.z - (float)uVar7) +
+        fVar4 * fVar4) {
+      uVar9 = 0;
+      puVar10 = (undefined4 *)&stack0x00000008;
+      puVar11 = &uStack_12;
+      for (iVar13 = 0x24; iVar13 != 0; iVar13 = iVar13 + -1) {
+        *puVar11 = *puVar10;
+        puVar10 = puVar10 + 1;
+        puVar11 = puVar11 + 1;
+      }
+      hitData_00.hit._60_4_ = puVar2;
+      auVar14 = in_stack_15._0_12_;
+      auVar16 = in_stack_15._12_12_;
+      auVar17 = in_stack_15._24_12_;
+      auVar18 = in_stack_15._36_12_;
+      auVar19 = in_stack_15._48_12_;
+      auVar20 = in_stack_15._64_12_;
+      auVar21 = in_stack_15._76_12_;
+      uVar22 = in_stack_15._88_6_;
+      hitData_00.positionTouchingHit.x = (float)auVar14._0_4_;
+      hitData_00.positionTouchingHit.y = (float)auVar14._4_4_;
+      hitData_00.positionTouchingHit.z = (float)auVar14._8_4_;
+      hitData_00.moveDirection.x = (float)auVar16._0_4_;
+      hitData_00.moveDirection.y = (float)auVar16._4_4_;
+      hitData_00.moveDirection.z = (float)auVar16._8_4_;
+      hitData_00.elipsoidNormal.x = (float)auVar17._0_4_;
+      hitData_00.elipsoidNormal.y = (float)auVar17._4_4_;
+      hitData_00.elipsoidNormal.z = (float)auVar17._8_4_;
+      hitData_00.slopeNormal.x = (float)auVar18._0_4_;
+      hitData_00.slopeNormal.y = (float)auVar18._4_4_;
+      hitData_00.slopeNormal.z = (float)auVar18._8_4_;
+      hitData_00.impactVelocity.x = (float)auVar19._0_4_;
+      hitData_00.impactVelocity.y = (float)auVar19._4_4_;
+      hitData_00.impactVelocity.z = (float)auVar19._8_4_;
+      hitData_00._60_4_ = in_stack_15._60_4_;
+      hitData_00.hit.point.x = (float)auVar20._0_4_;
+      hitData_00.hit.point.y = (float)auVar20._4_4_;
+      hitData_00.hit.point.z = (float)auVar20._8_4_;
+      hitData_00.hit.normal.x = (float)auVar21._0_4_;
+      hitData_00.hit.normal.y = (float)auVar21._4_4_;
+      hitData_00.hit.normal.z = (float)auVar21._8_4_;
+      hitData_00.hit.cubePos.x = (short)uVar22;
+      hitData_00.hit.cubePos.y = (short)((uint6)uVar22 >> 0x10);
+      hitData_00.hit.cubePos.z = (short)((uint6)uVar22 >> 0x20);
+      hitData_00.hit._30_2_ = in_stack_15._94_2_;
+      hitData_00.hit.face = in_stack_15._96_4_;
+      hitData_00.hit.isCubeHit = in_stack_15[100];
+      hitData_00.hit._37_3_ = in_stack_15._101_3_;
+      hitData_00.hit.woId = in_stack_15._104_4_;
+      hitData_00.hit.cube = (Cube *)in_stack_15._108_4_;
+      hitData_00.hit.distance = (float)in_stack_15._112_4_;
+      hitData_00.hit.collider = (Collider *)in_stack_15._116_4_;
+      hitData_00.hit.transform = (Transform *)in_stack_15._120_4_;
+      hitData_00.hit.interactionFlags._0_4_ = pSVar3;
+      hitData_00.hit.interactionFlags._4_4_ = uVar1;
+      hitData_00.material = (MVMaterial *)unaff_EDI;
+      hitData_00._140_4_ = uVar9;
+      SizeState_MoveOutOfScalingCollision(this,hitData_00,unaff_EBX);
+    }
+  }
+  return;
+}
 
 
 /* Void ScaleChanged() */
@@ -490,85 +490,82 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
 void Assembly-CSharp.dll::SizeState::SizeState_ScaleChanged(SizeState *this,MethodInfo *method)
 
 {
+  pSVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
+    func_?(&TypeInfo__ScaleArgs);
     cRam_? = '\x01';
   }
-  scale = (MVInteractable *)SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
-  pfVar1 = &(this->fields).currentSize;
-  if (*pfVar1 <= (float)scale && (float)scale != *pfVar1) {
-    pVVar2 = SizeState_FindValidMoveLocation
-                       ((Vector3 *)&stack0xffffffe8,this,(float)scale,(MethodInfo *)0x0);
-    uVar3 = pVVar2->x;
-    uVar4 = pVVar2->y;
-    fVar5 = pVVar2->z;
-    pMVar6 = (this->fields).controllerLocal;
-    if ((pMVar6 == (MvCharacterController *)0x0) ||
-       (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                            ((Component_1 *)pMVar6,(MethodInfo *)0x0), this_00 == (Transform *)0x0))
+  this_01 = (SizeState *)SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
+  pfVar2 = &(this->fields).currentSize;
+  if (*pfVar2 <= (float)this_01 && (float)this_01 != *pfVar2) {
+    pVVar3 = SizeState_FindValidMoveLocation
+                        ((Vector3 *)&stack0xffffffe4,this,(float)this_01,(MethodInfo *)0x0);
+    uVar4 = pVVar3->x;
+    uVar5 = pVVar3->y;
+    fVar6 = pVVar3->z;
+    pMVar7 = (this->fields).controllerLocal;
+    if ((pMVar7 == (MvCharacterController *)0x0) ||
+       (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pMVar7,(MethodInfo *)0x0), this_00 == (Transform *)0x0))
     goto code_?;
-    value.y = (float)uVar4;
-    value.x = (float)uVar3;
-    value.z = fVar5;
+    value.y = (float)uVar5;
+    value.x = (float)uVar4;
+    value.z = fVar6;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (this_00,value,(MethodInfo *)0x0);
-    scale = (this->fields).interactableLocal;
-    if (scale == (MVInteractable *)0x0) goto code_?;
-    cVar7 = (*(code *)(scale->klass->vtable).HasModifierEffect.method)();
-    if (cVar7 != '\0') {
-      pEVar8 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)(this->fields).EquipSlapGunEvent
-      ;
-      if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
+    pMVar8 = (this->fields).interactableLocal;
+    if (pMVar8 == (MVInteractable *)0x0) goto code_?;
+    this = (SizeState *)0x5;
+    cVar9 = (*(pMVar8->klass->vtable).HasModifierEffect.methodPtr)();
+    this_01 = this;
+    if (cVar9 != '\0') {
+      pEVar10 = (EventHandler_1_EventArgs_ *)(pSVar1->fields).EquipSlapGunEvent;
+      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      if (pEVar8 == (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) goto code_?;
-      mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-      EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-                (pEVar8,(Object *)this,
-                 (InitializedGameQueryDataEventArgs *)
-                 TypeInfo__System__EventArgs->static_fields->Empty,(MethodInfo *)0x0);
-      scale = (MVInteractable *)this;
+      if (pEVar10 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
+      goto code_?;
     }
   }
-  else {
-    pEVar8 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)(this->fields).UnEquipSlapGunEvent
-    ;
-    if (pEVar8 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-      if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__EventArgs);
-      }
-      if (pEVar8 == (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) goto code_?;
-      mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-      EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-                (pEVar8,(Object *)this,
-                 (InitializedGameQueryDataEventArgs *)
-                 TypeInfo__System__EventArgs->static_fields->Empty,
-                 MethodInfo__System__EventHandler<System::EventArgs>__Invoke_System__Object__System__EventArgs_
-                );
-      scale = (MVInteractable *)this;
+  else if ((this->fields).UnEquipSlapGunEvent != (EventHandler_1_EventArgs_ *)0x0) {
+    pEVar10 = (this->fields).UnEquipSlapGunEvent;
+    if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__EventArgs);
     }
+code_?:
+    this_01 = (SizeState *)TypeInfo__System__EventArgs->static_fields->Empty;
+    (*(pEVar10->fields)._._.invoke_impl)();
   }
-  pMVar6 = (this->fields).controllerLocal;
-  if (pMVar6 != (MvCharacterController *)0x0) {
-    MvCharacterController::MvCharacterController_SetScale(pMVar6,(float)scale,(MethodInfo *)0x0);
-    pEVar8 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)(this->fields).CameraScaleEvent;
-    if (pEVar8 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-      e = (InitializedGameQueryDataEventArgs *)func_?();
-      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)e,(float)pMVar6,(MethodInfo *)0x0);
-      mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-      EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-                (pEVar8,(Object *)this,e,
-                 MethodInfo__System__EventHandler<ScaleArgs>__Invoke_System__Object__ScaleArgs_);
-    }
-    (this->fields).currentSize = (float)pMVar6;
+  pMVar7 = (pSVar1->fields).controllerLocal;
+  if (pMVar7 == (MvCharacterController *)0x0) {
+code_?:
+    func_?();
+    pcVar11 = (code *)swi(3);
+    (*pcVar11)();
     return;
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  uVar12 = (pMVar7->fields).centerBase.x;
+  uVar13 = (pMVar7->fields).centerBase.y;
+  fVar6 = (pMVar7->fields).centerBase.z;
+  (pMVar7->fields).center.x = (float)uVar12 * (float)this_01;
+  (pMVar7->fields).center.y = (float)uVar13 * (float)this_01;
+  (pMVar7->fields).center.z = fVar6 * (float)this_01;
+  fVar6 = (pMVar7->fields).radiusBase.z;
+  fVar14 = (pMVar7->fields).radiusBase.y;
+  fVar15 = (pMVar7->fields).offsetBase;
+  (pMVar7->fields).elipsoidRadius.x = (float)this_01 * (pMVar7->fields).radiusBase.x;
+  (pMVar7->fields).elipsoidRadius.y = (float)this_01 * fVar14;
+  (pMVar7->fields).elipsoidRadius.z = (float)this_01 * fVar6;
+  (pMVar7->fields).offsetFactor = (float)this_01 * fVar15;
+  if ((pSVar1->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
+    pEVar16 = (pSVar1->fields).CameraScaleEvent;
+    this_01 = (SizeState *)func_?();
+    if (this_01 == (SizeState *)0x0) goto code_?;
+    ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.1400256e-29,(MethodInfo *)0x0);
+    (*(pEVar16->fields)._._.invoke_impl)();
+  }
+  (pSVar1->fields).currentSize = (float)this_01;
   return;
 }
 
@@ -592,7 +589,14 @@ void Assembly-CSharp.dll::SizeState::SizeState__cctor(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    func_?(&TypeInfo__SizeState);
+    func_?(&StringLiteral_Player);
+    func_?(&StringLiteral_Logic);
     cRam_? = '\x01';
   }
   uVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
@@ -601,365 +605,117 @@ void Assembly-CSharp.dll::SizeState::SizeState__cctor(MethodInfo *method)
                     (StringLiteral_Logic,(MethodInfo *)0x0);
   TypeInfo__SizeState->static_fields->layerMask =
        ~(1 << (uVar1 & 0x1f)) & 0xfffffffbU & ~(1 << (uVar2 & 0x1f));
-  this = (List_1_UnityEngine_Vector4_ *)
+  this = (List_1_UnityEngine_Vector3_ *)
          func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-  pMVar3 = (ManualResetEvent *)0x0;
-  uVar4 = 0;
-  uVar5 = 0;
-  func_?();
-  if (this != (List_1_UnityEngine_Vector4_ *)0x0) {
-    item_08.m_DelagateState = (Object *)uVar5;
-    item_08.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_08.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_08,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
+  if (this != (List_1_UnityEngine_Vector3_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+    uVar3 = 0;
     uVar4 = 0;
     uVar5 = 0;
-    func_?();
-    item_09.m_DelagateState = (Object *)uVar5;
-    item_09.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_09.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_09,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_10.m_DelagateState = (Object *)uVar5;
-    item_10.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_10.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_10,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
     uVar6 = 0;
-    func_?();
-    item_11.m_WaitHandle = pMVar3;
-    item_11.m_DelagateCallback = (SendOrPostCallback *)(int)uVar6;
-    item_11.m_DelagateState = (Object *)(int)((ulonglong)uVar6 >> 0x20);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_11,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
+    func_?(this,0,0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(_UNK_?,uVar3),0,0,0,0,uVar3,uVar4,uVar5,uVar6);
+    func_?(this,CONCAT44(_UNK_?,uVar3),0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0x3f800000;
+    func_?(this,CONCAT44(uVar3,uVar3),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(uVar3,uVar4),0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(uVar3,_UNK_?),0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0xbf800000;
+    func_?(this,CONCAT44(uVar3,uVar3),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(uVar3,uVar4),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(uVar3,_UNK_?),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0x3f800000;
+    func_?(this,CONCAT44(uVar3,_UNK_?),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar5 = 0xbf800000;
+    func_?(this,CONCAT44(uVar3,uVar4),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0x3f800000;
+    func_?(this,CONCAT44(uVar5,uVar3),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
     uVar5 = 0;
-    func_?();
-    item_12.m_DelagateState = (Object *)uVar5;
-    item_12.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_12.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_12,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
+    func_?(this,CONCAT44(uVar4,uVar4),0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
     uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_13.m_DelagateState = (Object *)uVar5;
-    item_13.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_13.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_13,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_14.m_DelagateState = (Object *)uVar5;
-    item_14.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_14.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_14,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_15.m_DelagateState = (Object *)uVar5;
-    item_15.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_15.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_15,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar6 = 0;
-    func_?();
-    item_16.m_WaitHandle = pMVar3;
-    item_16.m_DelagateCallback = (SendOrPostCallback *)(int)uVar6;
-    item_16.m_DelagateState = (Object *)(int)((ulonglong)uVar6 >> 0x20);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_16,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    pSVar7 = (SafeWaitHandle *)0x0;
-    uVar4._0_1_ = 0;
-    uVar4._1_3_ = 0;
-    func_?();
-    item_17.m_DelagateState = (Object *)uVar4;
-    item_17.m_DelagateCallback = (SendOrPostCallback *)pSVar7;
-    item_17.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_17,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    MVar8._identity = (ServerIdentity *)&stack0xffffff78;
-    pMVar9 = (ManualResetEvent__Class *)0x0;
-    pMVar10 = (MonitorData *)&UNK_?;
-    func_?();
-    item_18.m_DelagateState = (Object *)pMVar10;
-    item_18.m_DelagateCallback = (SendOrPostCallback *)pMVar9;
-    item_18.m_WaitHandle = (ManualResetEvent *)MVar8._identity;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_18,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_19.m_DelagateState = (Object *)uVar5;
-    item_19.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_19.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_19,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_20.m_DelagateState = (Object *)uVar5;
-    item_20.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_20.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_20,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar6 = 0;
-    func_?();
-    item_21.m_WaitHandle = pMVar3;
-    item_21.m_DelagateCallback = (SendOrPostCallback *)(int)uVar6;
-    item_21.m_DelagateState = (Object *)(int)((ulonglong)uVar6 >> 0x20);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_21,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_22.m_DelagateState = (Object *)uVar5;
-    item_22.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_22.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_22,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_23.m_DelagateState = (Object *)uVar5;
-    item_23.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_23.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_23,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    method = (MethodInfo *)0x0;
-    pSVar11 = (SendOrPostCallback *)0x0;
-    uVar4 = 0;
-    func_?();
-    pOVar12 = (Object *)uVar4;
-    UVar13.m_DelagateCallback = pSVar11;
-    UVar13 = (UnitySynchronizationContext_WorkRequest)CONCAT84(uVar14,UVar13.m_DelagateCallback);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,UVar13,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    UVar13.m_DelagateState = (Object *)uVar5;
-    UVar13.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    UVar13.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,UVar13,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar6 = 0;
-    func_?();
-    item.m_WaitHandle = pMVar3;
-    item.m_DelagateCallback = (SendOrPostCallback *)(int)uVar6;
-    item.m_DelagateState = (Object *)(int)((ulonglong)uVar6 >> 0x20);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_00.m_DelagateState = (Object *)uVar5;
-    item_00.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_00.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_01.m_DelagateState = (Object *)uVar5;
-    item_01.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_01.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_01,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_02.m_DelagateState = (Object *)uVar5;
-    item_02.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_02.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_02,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_03.m_DelagateState = (Object *)uVar5;
-    item_03.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_03.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_03,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar6 = 0;
-    func_?();
-    item_04.m_WaitHandle = pMVar3;
-    item_04.m_DelagateCallback = (SendOrPostCallback *)(int)uVar6;
-    item_04.m_DelagateState = (Object *)(int)((ulonglong)uVar6 >> 0x20);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_04,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_05.m_DelagateState = (Object *)uVar5;
-    item_05.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_05.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_05,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_06.m_DelagateState = (Object *)uVar5;
-    item_06.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_06.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_06,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    pMVar3 = (ManualResetEvent *)0x0;
-    uVar4 = 0;
-    uVar5 = 0;
-    func_?();
-    item_07.m_DelagateState = (Object *)uVar5;
-    item_07.m_DelagateCallback = (SendOrPostCallback *)uVar4;
-    item_07.m_WaitHandle = pMVar3;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-              ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this,item_07,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              );
-    TypeInfo__SizeState->static_fields->relativePositions = (List_1_UnityEngine_Vector3_ *)this;
+    func_?(this,CONCAT44(uVar5,_UNK_?),0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar5 = 0xbf800000;
+    func_?(this,CONCAT44(uVar4,uVar3),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0xbf800000;
+    func_?(this,CONCAT44(uVar5,_UNK_?),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar5 = 0x3f800000;
+    func_?(this,CONCAT44(uVar4,_UNK_?),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(uVar5,uVar5),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0x3f800000;
+    func_?(this,CONCAT44(_UNK_?,uVar3),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(_UNK_?,uVar4),0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(_UNK_?,_UNK_?),0,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0xbf800000;
+    func_?(this,CONCAT44(_UNK_?,uVar3),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(_UNK_?,uVar4),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(_UNK_?,_UNK_?),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar4 = 0x3f800000;
+    func_?(this,CONCAT44(_UNK_?,_UNK_?),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    uVar5 = 0xbf800000;
+    func_?(this,CONCAT44(_UNK_?,uVar4),0xbf800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    func_?(this,CONCAT44(uVar5,uVar5),0x3f800000,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                   );
+    TypeInfo__SizeState->static_fields->relativePositions = this;
+    func_?(&TypeInfo__SizeState->static_fields->relativePositions,this);
     return;
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -972,9 +728,12 @@ void Assembly-CSharp.dll::SizeState::SizeState__ctor
 
 {
   (this->fields).currentSize = 1.0;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).interactableLocal = interactable;
+  func_?(&this->fields,interactable);
   (this->fields).controllerLocal = controller;
+  func_?(&(this->fields).controllerLocal,controller);
   return;
 }
 
@@ -986,34 +745,29 @@ void Assembly-CSharp.dll::SizeState::SizeState_add_CameraScaleEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ScaleArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).CameraScaleEvent;
-  a = *ppEVar1;
+  a = (this->fields).CameraScaleEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_ScaleArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<ScaleArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<ScaleArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<ScaleArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ScaleArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ScaleArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_ScaleArgs_ *)func_?(&(this->fields).CameraScaleEvent,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -1024,30 +778,29 @@ void Assembly-CSharp.dll::SizeState::SizeState_add_EquipSlapGunEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).EquipSlapGunEvent;
-  a = *ppEVar1;
+  a = (this->fields).EquipSlapGunEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler__Class *)pDVar2->klass == TypeInfo__System__EventHandler) {
-        pDVar3 = pDVar2;
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((EventHandler__Class *)pDVar1->klass == TypeInfo__System__EventHandler) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__EventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pEVar5 = (EventHandler *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
-    a = pEVar5;
-    if (bVar6) {
+    pEVar4 = (EventHandler *)func_?(&(this->fields).EquipSlapGunEvent,pDVar2,a);
+    bVar5 = pEVar4 == a;
+    a = pEVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -1061,34 +814,30 @@ void Assembly-CSharp.dll::SizeState::SizeState_add_UnEquipSlapGunEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).UnEquipSlapGunEvent;
-  a = *ppEVar1;
+  a = (this->fields).UnEquipSlapGunEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_EventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<System::EventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<System::EventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_EventArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_EventArgs_ *)
+             func_?(&(this->fields).UnEquipSlapGunEvent,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -1098,50 +847,43 @@ float Assembly-CSharp.dll::SizeState::SizeState_get_AvatarScale(SizeState *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
+                   );
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).interactableLocal;
   if (pMVar1 != (MVInteractable *)0x0) {
-    cVar2 = (*(code *)(pMVar1->klass->vtable).HasModifierEffect.method)
-                      (pMVar1,5,(pMVar1->klass->vtable).HandleModifierEffect.methodPtr);
+    cVar2 = (*(pMVar1->klass->vtable).HasModifierEffect.methodPtr)
+                      (pMVar1,5,(pMVar1->klass->vtable).HasModifierEffect.method);
     if (cVar2 == '\0') {
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
-      this_00 = (AvatarUIHandlerRemote *)
-                MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                          ((MethodInfo *)0x0);
-      if (this_00 != (AvatarUIHandlerRemote *)0x0) {
-        this_01 = AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_ShieldBar
-                            (this_00,(MethodInfo *)0x0);
-        if (this_01 != (ShieldBar *)0x0) {
-          mscorlib.dll::System::Collections::Generic::
-          Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-          Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__get_Count
-                    ((Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_ *
-                     )this_01,
-                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
-                    );
-          return (float)extraout_ST0;
-        }
+      pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                         ((MethodInfo *)0x0);
+      if ((pSVar3 != (SpawnRoleDataMediator *)0x0) &&
+         (this_00 = (SpawnRoleVariable_1_System_Single_ *)(pSVar3->fields).size,
+         this_00 != (SpawnRoleVariable_1_System_Single_ *)0x0)) {
+        fVar4 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
+                ::SpawnRoleVariable`1[System::Single]::SpawnRoleVariable_1_System_Single__get_Value
+                          (this_00,
+                           MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
+                          );
+        return fVar4;
       }
     }
     else {
       pMVar1 = (this->fields).interactableLocal;
       if (pMVar1 != (MVInteractable *)0x0) {
-        fVar3 = (float10)(*(code *)(pMVar1->klass->vtable).HandleModifierEffect.method)
+        fVar5 = (float10)(*(pMVar1->klass->vtable).HandleModifierEffect.methodPtr)
                                    (pMVar1,5,0x3f800000,
-                                    (pMVar1->klass->vtable).ClearModifiers.methodPtr);
-        return (float)fVar3;
+                                    (pMVar1->klass->vtable).HandleModifierEffect.method);
+        return (float)fVar5;
       }
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar4)();
-  return (float)fVar3;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  fVar5 = (float10)(*pcVar6)();
+  return (float)fVar5;
 }
 
 
@@ -1151,21 +893,15 @@ float Assembly-CSharp.dll::SizeState::SizeState_get_ControllerCenterY
                 (SizeState *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).controllerLocal;
-  if (this_00 != (MvCharacterController *)0x0) {
-    pCVar1 = mscorlib.dll::System::Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::
-             Reflection::CustomAttributeNamedArgument]::
-             Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                       (&CStack_2,
-                        (Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeNamedArgument_
-                         *)this_00,(MethodInfo *)0x0);
-    pOStack_3 = (pCVar1->typedArgument).value;
-    return (float)pOStack_3;
+  pMVar1 = (this->fields).controllerLocal;
+  if (pMVar1 != (MvCharacterController *)0x0) {
+    uVar2 = (pMVar1->fields).center.y;
+    return (float)uVar2;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  pcVar3 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar3)();
+  return (float)fVar4;
 }
 
 
@@ -1175,14 +911,16 @@ float Assembly-CSharp.dll::SizeState::SizeState_get_ControllerRadius
                 (SizeState *this,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields).controllerLocal;
-  if (pMVar1 != (MvCharacterController *)0x0) {
-    return (pMVar1->fields).elipsoidRadius.x;
+  puStack_1 = &stack0xfffffffc;
+  pMVar2 = (this->fields).controllerLocal;
+  if (pMVar2 != (MvCharacterController *)0x0) {
+    return (pMVar2->fields).elipsoidRadius.x;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar2)();
-  return (float)fVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -1193,34 +931,30 @@ void Assembly-CSharp.dll::SizeState::SizeState_remove_CameraScaleEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ScaleArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).CameraScaleEvent;
-  source = *ppEVar1;
+  source = (this->fields).CameraScaleEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_ScaleArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<ScaleArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<ScaleArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<ScaleArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ScaleArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ScaleArgs_ *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_ScaleArgs_ *)
+             func_?(&(this->fields).CameraScaleEvent,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -1231,30 +965,29 @@ void Assembly-CSharp.dll::SizeState::SizeState_remove_EquipSlapGunEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).EquipSlapGunEvent;
-  source = *ppEVar1;
+  source = (this->fields).EquipSlapGunEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler__Class *)pDVar2->klass == TypeInfo__System__EventHandler) {
-        pDVar3 = pDVar2;
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((EventHandler__Class *)pDVar1->klass == TypeInfo__System__EventHandler) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__EventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pEVar5 = (EventHandler *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
-    source = pEVar5;
-    if (bVar6) {
+    pEVar4 = (EventHandler *)func_?(&(this->fields).EquipSlapGunEvent,pDVar2,source);
+    bVar5 = pEVar4 == source;
+    source = pEVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -1268,33 +1001,29 @@ void Assembly-CSharp.dll::SizeState::SizeState_remove_UnEquipSlapGunEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).UnEquipSlapGunEvent;
-  source = *ppEVar1;
+  source = (this->fields).UnEquipSlapGunEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_EventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<System::EventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<System::EventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_EventArgs_ *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_EventArgs_ *)
+             func_?(&(this->fields).UnEquipSlapGunEvent,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 

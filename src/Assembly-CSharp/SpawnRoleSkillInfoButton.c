@@ -7,8 +7,11 @@ void Assembly-CSharp.dll::SpawnRoleSkillInfoButton::SpawnRoleSkillInfoButton_Ini
 
 {
   (this->fields).skillType = skillType;
+  func_?(&(this->fields).skillType,skillType);
   (this->fields).skillValue = skillValue;
+  func_?(&(this->fields).skillValue,skillValue);
   (this->fields).skillDataManager = skillDataManager;
+  func_?(&(this->fields).skillDataManager,skillDataManager);
   (this->fields).skillCost = skillCost;
   return;
 }

@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventoryTurnPage : MonoBehaviour, IPointerEnterHandler
 {
@@ -27,10 +27,10 @@ public class InventoryTurnPage : MonoBehaviour, IPointerEnterHandler
 	public void OnPointerEnter(PointerEventData eventData);
 	private void TurnPage(IPagedTurned pagedTurned);
 	[CompilerGenerated]
-	private void _Start_m__0();
+	private void _Start_b__2_0();
 	[CompilerGenerated]
-	private void _OnPointerEnter_m__1(IPagedTurned x, BaseEventData y);
+	private void _Start_b__2_1(IPagedTurned x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Start_m__2(IPagedTurned x, BaseEventData y);
+	private void _OnPointerEnter_b__3_0(IPagedTurned x, BaseEventData y);
 }
 

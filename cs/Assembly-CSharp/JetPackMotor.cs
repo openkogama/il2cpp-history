@@ -7,43 +7,49 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.VehicleEnergy;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class JetPackMotor : MVRigidBody
 {
 	// Fields
-	private float velocityConstant;
+	private const float VelocityConstant = 40f;
 	private float thrust;
-	private float thrustLeaveMode;
-	private float leaveModeForward;
-	private KeyValuePair<float, float> leaveModeRotationRange;
-	private float runSpeed;
-	private float speedSmoothing;
+	private const float ThrustLeaveMode = 1000f;
+	private const float LeaveModeForward = 4.5f;
+	private readonly KeyValuePair<float, float> leaveModeRotationRange;
+	private const float RunSpeed = 12f;
+	private const float SpeedSmoothing = 10f;
 	private float speed;
-	private AnimationCurve slopeSpeedMultiplier;
+	private readonly AnimationCurve slopeSpeedMultiplier;
 	private Vector3 velocityPrevFrame;
 	private BounceState bounceState;
 	private MVMovableMotorState movableMotorState;
-	private ImpactState impactState;
+	private readonly ImpactState impactState;
 	private MVInteractableBase interactable;
 	private MVInteractableBase vehicleInteractable;
-	private float HARDCODEDJETPACKAIRFRICTION;
+	private const float JetpackAirFriction = 0.43f;
 	private float waterProximity;
 	private SmoothCharacterController smoothController;
 	protected StuckEvaluator stuckEvaluator;
+	public const bool DefaultVehicleEnergyOn = false;
+	public const int DefaultVehicleEnergyStorage = 20;
+	public const int MinVehicleEnergyStorage = 4;
+	public const int MaxVehicleEnergyStorage = 45;
+	public const int DefaultVehicleEnergyConsumption = 3;
+	public const int MinVehicleEnergyConsumption = 1;
+	public const int MaxVehicleEnergyConsumption = 8;
+	private float thrustOutOfEnergyMax;
+	private VehicleEnergyContainer vehicleEnergyContainer;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _InputMoveDirection_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _Thrust_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _InputRun_k__BackingField;
 	private bool leaveMode;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsMovementLocked_k__BackingField;
 
 	// Properties
@@ -58,6 +64,20 @@ public class JetPackMotor : MVRigidBody
 	public override bool Grounded { get; }
 	public float WaterProximity { get; }
 	public override bool IsMovementLocked { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public bool OutOfEnergy { get; }
+
+	// Nested types
+	public struct JetPackMotorConfig
+	{
+		// Fields
+		public AvatarInteractable interactableLocal;
+		public VehicleInteractable vehicleInteractable;
+		public SmoothCharacterController avatarController;
+		public float thrustStrength;
+		public float density;
+		public VehicleEnergyContainerConfig vehicleEnergyContainerConfig;
+		public float outOfEnergyThrustMax;
+	}
 
 	// Constructors
 	public JetPackMotor();
@@ -66,14 +86,20 @@ public class JetPackMotor : MVRigidBody
 	protected override void SuspendImpactDamage();
 	public List<MVOverlapResult> GetOverlappingObjects();
 	public bool IsStuck();
-	public void Init(AvatarInteractable interactableLocal, VehicleInteractable vehicleInteractable, SmoothCharacterController avatarController, float thrustStrength, float density);
+	public void Init(MVRuntimeDataVariable jetMode, JetPackMotorConfig jetPackMotorConfig);
+	private void OnJetModeChange(MVJetPack.JetModeType jetModeType);
 	public void FrameUpdate();
 	public void FixedUpdateFunction(Quaternion setQuaternion, bool shouldSetRotation);
 	private Vector3 GetVelocity(Vector3 velocity, Vector3 baseVelocity);
 	private void ApplyJetImpulse(float jetpackThrust);
 	protected void DealImpactDamage(Vector3 curVelocity, Vector3 prevVelocity);
-	private GroundChange Move(Vector3 velocity, Vector3 basevelocity);
+	private GroundChange Move(Vector3 velocity, Vector3 baseVelocity);
 	private Vector3 ApplyInputVelocityChange(Vector3 velocity, Vector3 baseVelocity);
 	private Vector3 GetDesiredHorizontalVelocity();
+	public void RefillEnergy(VehicleEnergyRefill vehicleEnergyRefill);
+	public bool UsesEnergy();
+	public void RollbackRefillEnergyPrediction(int spawnerId);
+	[CompilerGenerated]
+	private void _Init_b__65_0(object jetModeVal);
 }
 

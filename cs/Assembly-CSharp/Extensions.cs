@@ -11,27 +11,19 @@ using System.Text;
 using CodeStage.AntiCheat.ObscuredTypes;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class Extensions
 {
 	// Fields
 	private static ObscuredString obscuredString;
-	[CompilerGenerated]
-	private static Action<string> __f__mg_cache0;
-	[CompilerGenerated]
-	private static Action<string> __f__mg_cache1;
-	[CompilerGenerated]
-	private static Action<string> __f__mg_cache2;
-	[CompilerGenerated]
-	private static Action<string> __f__mg_cache3;
-	[CompilerGenerated]
-	private static Action<string> __f__mg_cache4;
-	[CompilerGenerated]
-	private static Action<string> __f__mg_cache5;
 
 	// Constructors
 	static Extensions();
+
+	// Methods
+	private static float ConvertToSingle(string s);
+	private static string GenerateDictionaryString<TKey, TValue>(Dictionary<TKey, TValue> collection, string prependInfo = "");
 
 	// Extension methods
 	public static string ToSerializeString(this Vector3 vec);
@@ -55,7 +47,14 @@ public static class Extensions
 	public static void SetObscuredType<T>(this Dictionary<object, object> hashtable, string key, T value);
 	public static bool ContainsObscuredKey(this Dictionary<object, object> hashtable, string key);
 	public static bool RemoveObscuredKey(this Dictionary<object, object> hashtable, string key);
+	public static int GetClampedInt(this Dictionary<object, object> hashtable, string key, int min, int max, int defaultValue);
+	public static float GetClampedFloat(this Dictionary<object, object> hashtable, string key, float min, float max, float defaultValue);
+	public static bool GetBool(this Dictionary<object, object> hashtable, string key, bool defaultValue);
 	public static void ScaleBounds(this GameObject gameObject, float targetSize);
 	public static Transform FindChildRecursively(this Transform transform, string child);
+	public static T GetValueOrDefault<T>(this Dictionary<object, object> hashtable, string key, T defaultValue = default);
+	public static Color GetColor(this Dictionary<object, object> hashtable, string colorKey);
+	public static Color GetColorOrDefault(this Dictionary<object, object> hashtable, string colorKey, Color defaultColor = default);
+	public static void SetColor(this Dictionary<object, object> hashtable, string colorKey, Color color);
 }
 

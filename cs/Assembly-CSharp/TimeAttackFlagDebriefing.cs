@@ -9,7 +9,7 @@ using MV.Common;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TimeAttackFlagDebriefing : MonoBehaviour
 {
@@ -60,6 +60,5 @@ public class TimeAttackFlagDebriefing : MonoBehaviour
 	private void UpdateButton();
 	private void ExitDebriefing();
 	private void EndDebriefingEarly();
-	private void LockCursor();
 }
 

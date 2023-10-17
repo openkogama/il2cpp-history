@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace UnityStandardAssets.CrossPlatformInput
 {
@@ -32,11 +32,9 @@ namespace UnityStandardAssets.CrossPlatformInput
 		{
 			// Fields
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private string _name_k__BackingField;
 			private float m_Value;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private bool _matchWithInputManager_k__BackingField;
 	
 			// Properties
@@ -58,10 +56,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 		{
 			// Fields
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private string _name_k__BackingField;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private bool _matchWithInputManager_k__BackingField;
 			private int m_LastPressedFrame;
 			private int m_ReleasedFrame;

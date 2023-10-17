@@ -1,24 +1,4 @@
 
-/* String ToString() */
-
-String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
-         MobileAdManager+ConsentAndCompliance::MobileAdManager_ConsentAndCompliance_ToString
-                   (MobileAdManager_ConsentAndCompliance *this,MethodInfo *method)
-
-{
-  pCVar1 = (this->fields).consentData;
-  if (pCVar1 != (ConsentData *)0x0) {
-    pSVar2 = (String *)
-             (*(code *)(pCVar1->klass->vtable).ToString.method)(pCVar1,pCVar1->klass[1]._0.image);
-    return pSVar2;
-  }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar3)();
-  return pSVar2;
-}
-
-
 /* MobileAdManager+ConsentAndCompliance() */
 
 void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
@@ -27,15 +7,24 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__ConsentData);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  method_00 = TypeInfo__Assets__Scripts__AdIntegration__ConsentData;
-  this_00 = (ScaleAnimationBase *)func_?();
-  *(undefined2 *)&(this_00->fields)._._._._.m_CachedPtr = 0x101;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this->fields).consentData = (ConsentData *)this_00;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  value = (ConsentData *)func_?(TypeInfo__Assets__Scripts__AdIntegration__ConsentData);
+  if (value != (ConsentData *)0x0) {
+    (value->fields).isAmerican = 1;
+    (value->fields).isEuropean = 1;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EBP);
+    (this->fields).consentData = value;
+    func_?(&this->fields,value);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -48,19 +37,19 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_ConsentAndCompliance *this,MethodInfo *method)
 
 {
-  pCVar1 = (this->fields).consentData;
-  if (pCVar1 != (ConsentData *)0x0) {
-    if ((pCVar1->fields).isChild == 0) {
-      return 0;
-    }
-    if (pCVar1 != (ConsentData *)0x0) {
-      return (pCVar1->fields).isAmerican != 0;
-    }
+  puStack_1 = &stack0xfffffffc;
+  pCVar2 = (this->fields).consentData;
+  if (pCVar2 == (ConsentData *)0x0) {
+    uVar3 = func_?(auStack_4);
+    func_?(uVar3);
+    pcVar5 = (code *)swi(3);
+    bVar6 = (*pcVar5)();
+    return bVar6;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  if ((pCVar2->fields).isChild == 0) {
+    return 0;
+  }
+  return (pCVar2->fields).isAmerican;
 }
 
 
@@ -72,31 +61,24 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
 
 {
   pCVar1 = (this->fields).consentData;
-  if (pCVar1 != (ConsentData *)0x0) {
-    bVar2 = (pCVar1->fields).isEuropean;
-    if (bVar2 == 0) {
-      bVar3 = 0;
-    }
-    else {
-      if (pCVar1 == (ConsentData *)0x0) goto code_?;
-      bVar3 = (pCVar1->fields).isChild;
-    }
-    if (pCVar1 != (ConsentData *)0x0) {
-      bVar4 = 1;
-      if (bVar2 == 0) {
-        bVar4 = (pCVar1->fields).isAmerican;
-      }
-      if (((pCVar1->fields).hasConsented != 0) && (bVar3 == 0)) {
-        return 1;
-      }
-      return bVar4 == 0;
-    }
+  if (pCVar1 == (ConsentData *)0x0) {
+    func_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
-code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
-  return bVar2;
+  if ((pCVar1->fields).isEuropean == 0) {
+    bVar3 = (pCVar1->fields).isAmerican;
+    bVar4 = true;
+  }
+  else {
+    bVar4 = (pCVar1->fields).isChild == 0;
+    bVar3 = 1;
+  }
+  if (((pCVar1->fields).hasConsented & bVar4) != 0) {
+    return 1;
+  }
+  return bVar3 == 0;
 }
 
 
@@ -108,14 +90,16 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_ConsentAndCompliance *this,MethodInfo *method)
 
 {
-  pCVar1 = (this->fields).consentData;
-  if (pCVar1 != (ConsentData *)0x0) {
-    return (pCVar1->fields).isEuropean;
+  puStack_1 = &stack0xfffffffc;
+  pCVar2 = (this->fields).consentData;
+  if (pCVar2 != (ConsentData *)0x0) {
+    return (pCVar2->fields).isEuropean;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -127,18 +111,18 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_ConsentAndCompliance *this,MethodInfo *method)
 
 {
-  pCVar1 = (this->fields).consentData;
-  if (pCVar1 != (ConsentData *)0x0) {
-    if ((pCVar1->fields).isChild == 0) {
-      return 0;
-    }
-    if (pCVar1 != (ConsentData *)0x0) {
-      return (pCVar1->fields).isEuropean != 0;
-    }
+  puStack_1 = &stack0xfffffffc;
+  pCVar2 = (this->fields).consentData;
+  if (pCVar2 == (ConsentData *)0x0) {
+    uVar3 = func_?(auStack_4);
+    func_?(uVar3);
+    pcVar5 = (code *)swi(3);
+    bVar6 = (*pcVar5)();
+    return bVar6;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  if ((pCVar2->fields).isChild == 0) {
+    return 0;
+  }
+  return (pCVar2->fields).isEuropean;
 }
 

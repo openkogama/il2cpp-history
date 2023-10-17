@@ -8,28 +8,30 @@ Assembly-CSharp.dll::ReviveScreenshotGenerator::ReviveScreenshotGenerator_Genera
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ReviveScreenshotGenerator___GenerateTexture_d__1);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ReviveScreenshotGenerator___GenerateTexture_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    this_00[1].fields._._._._.m_CachedPtr = (void *)height;
-    this_00[1].fields.originalScale.y = cameraPos.x;
-    this_00[1].fields.originalScale.z = cameraPos.y;
-    this_00[1].fields.target = (Transform *)cameraPos.z;
-    this_00[2].fields.originalScale.z = (float)textureDataCallback;
-    this_00[2].fields.target = (Transform *)this;
-    this_00[1].monitor = (MonitorData *)width;
-    this_00[1].fields.testState = (int32_t)cameraRot.x;
-    this_00[1].fields.OnScaleAnimationStopped =
-         (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)cameraRot.y;
-    this_00[2].klass = (ScaleAnimationBase__Class *)cameraRot.z;
-    this_00[2].monitor = (MonitorData *)cameraRot.w;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__ReviveScreenshotGenerator___GenerateTexture_d__1);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[7].klass = (Object__Class *)this;
+    func_?(value + 7,this);
+    value[6].monitor = (MonitorData *)textureDataCallback;
+    func_?(&value[6].monitor,textureDataCallback);
+    value[3].klass = (Object__Class *)cameraPos.x;
+    value[3].monitor = (MonitorData *)cameraPos.y;
+    value[4].klass = (Object__Class *)cameraPos.z;
+    value[2].klass = (Object__Class *)width;
+    value[2].monitor = (MonitorData *)height;
+    value[4].monitor = (MonitorData *)cameraRot.x;
+    value[5].klass = (Object__Class *)cameraRot.y;
+    value[5].monitor = (MonitorData *)cameraRot.z;
+    value[6].klass = (Object__Class *)cameraRot.w;
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -46,27 +48,29 @@ void Assembly-CSharp.dll::ReviveScreenshotGenerator::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ReviveScreenshotGenerator___GenerateTexture_d__1);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ReviveScreenshotGenerator___GenerateTexture_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    this_00[1].fields._._._._.m_CachedPtr = (void *)height;
-    this_00[1].fields.originalScale.y = cameraPos.x;
-    this_00[1].fields.originalScale.z = cameraPos.y;
-    this_00[1].fields.target = (Transform *)cameraPos.z;
-    this_00[2].fields.originalScale.z = (float)callback;
-    this_00[1].monitor = (MonitorData *)width;
-    this_00[1].fields.testState = (int32_t)cameraRot.x;
-    this_00[1].fields.OnScaleAnimationStopped =
-         (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)cameraRot.y;
-    this_00[2].klass = (ScaleAnimationBase__Class *)cameraRot.z;
-    this_00[2].monitor = (MonitorData *)cameraRot.w;
-    this_00[2].fields.target = (Transform *)this;
+  value = (Object *)func_?(TypeInfo__ReviveScreenshotGenerator___GenerateTexture_d__1);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)0x0;
+    value[7].klass = (Object__Class *)this;
+    func_?(value + 7,this);
+    value[6].monitor = (MonitorData *)callback;
+    func_?(&value[6].monitor,callback);
+    value[3].klass = (Object__Class *)cameraPos.x;
+    value[3].monitor = (MonitorData *)cameraPos.y;
+    value[4].klass = (Object__Class *)cameraPos.z;
+    value[2].klass = (Object__Class *)width;
+    value[4].monitor = (MonitorData *)cameraRot.x;
+    value[5].klass = (Object__Class *)cameraRot.y;
+    value[5].monitor = (MonitorData *)cameraRot.z;
+    value[6].klass = (Object__Class *)cameraRot.w;
+    value[2].monitor = (MonitorData *)height;
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
+              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
     return;
   }
   func_?();

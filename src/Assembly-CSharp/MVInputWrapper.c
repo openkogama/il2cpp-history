@@ -5,18 +5,11 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_DebugGetKeyDown_1
                (String *st,MethodInfo *method)
 
 {
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    bVar3 = (*pcVar1)();
-    return bVar3;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
-  bVar3 = (*pcRam_?)(st);
-  return bVar3;
+  bVar1 = (*pcRam_?)(st);
+  return bVar1;
 }
 
 
@@ -26,18 +19,11 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_DebugGetKeyUp
                (KeyCode__Enum key,MethodInfo *method)
 
 {
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    bVar3 = (*pcVar1)();
-    return bVar3;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
-  bVar3 = (*pcRam_?)(key);
-  return bVar3;
+  bVar1 = (*pcRam_?)(key);
+  return bVar1;
 }
 
 
@@ -47,18 +33,11 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_DebugGetKeyUp_1
                (String *st,MethodInfo *method)
 
 {
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    bVar3 = (*pcVar1)();
-    return bVar3;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
-  bVar3 = (*pcRam_?)(st);
-  return bVar3;
+  bVar1 = (*pcRam_?)(st);
+  return bVar1;
 }
 
 
@@ -68,18 +47,11 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_DebugGetKey_1
                (String *st,MethodInfo *method)
 
 {
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    bVar3 = (*pcVar1)();
-    return bVar3;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
-  bVar3 = (*pcRam_?)(st);
-  return bVar3;
+  bVar1 = (*pcRam_?)(st);
+  return bVar1;
 }
 
 
@@ -89,33 +61,29 @@ float Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetAxis(String *axis,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-        cctor_started == 0)) {
+    if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     }
     fVar2 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
             CrossPlatformInputManager_GetAxis(axis,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     return TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier * fVar2;
@@ -131,33 +99,29 @@ float Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetAxisRaw
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-        cctor_started == 0)) {
+    if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     }
     fVar2 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
             CrossPlatformInputManager_GetAxisRaw(axis,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     return TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier * fVar2;
@@ -173,29 +137,26 @@ float Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-        cctor_started == 0)) {
+    if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager)
+      ;
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-        cctor_started == 0)) {
+    if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     }
     fVar2 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
@@ -213,29 +174,26 @@ float Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitiv
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-        cctor_started == 0)) {
+    if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager)
+      ;
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-        cctor_started == 0)) {
+    if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     }
     fVar2 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
@@ -253,15 +211,61 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetBooleanControl
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_GetBooleanControl_1(control,KeyState__Enum_Pressed,(MethodInfo *)0x0);
   return bVar1;
+}
+
+
+/* Boolean GetBooleanControlDeviceDependent(KogamaControls) */
+
+bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetBooleanControlDeviceDependent
+               (KogamaControls__Enum kogamaControls,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVInputWrapper);
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVInputWrapper);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    bVar1 = MVInputWrapper_GetBooleanControl_1(kogamaControls,KeyState__Enum_Down,(MethodInfo *)0x0)
+    ;
+    if (bVar1 != 0) {
+      return 1;
+    }
+    return 0;
+  }
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVInputWrapper);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVInputWrapper);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVInputWrapper);
+  }
+  bVar1 = MVInputWrapper_GetBooleanControl_1(kogamaControls,KeyState__Enum_Up,(MethodInfo *)0x0);
+  return bVar1 != 0;
 }
 
 
@@ -272,11 +276,10 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetBooleanControlDown
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_GetBooleanControl_1(control,KeyState__Enum_Down,(MethodInfo *)0x0);
@@ -291,11 +294,10 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetBooleanControlUp
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_GetBooleanControl_1(control,KeyState__Enum_Up,(MethodInfo *)0x0);
@@ -310,50 +312,46 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetBooleanControl_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__IKogamaInputMap);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
   if (((bVar1 == 0) || (control == KogamaControls__Enum_PointerSelect)) ||
      (control == KogamaControls__Enum_PointerSelectAlt)) {
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
     if (TypeInfo__MVInputWrapper->static_fields->inputMap != (IKogamaInputMap *)0x0) {
-      if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
       pIVar2 = TypeInfo__MVInputWrapper->static_fields->inputMap;
       if (pIVar2 == (IKogamaInputMap *)0x0) {
-        func_?(0);
+        func_?();
         pcVar3 = (code *)swi(3);
         bVar1 = (*pcVar3)();
         return bVar1;
       }
-      pIVar4 = pIVar2->klass;
-      uVar5 = 0;
-      uVar6._0_1_ = (pIVar4->_1).rank;
-      uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-      if (uVar6 != 0) {
+      uVar4 = 0;
+      uVar5 = (pIVar2->klass->_1).interface_offsets_count;
+      if (uVar5 != 0) {
         do {
-          if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+          if (pIVar2->klass->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)TypeInfo__IKogamaInputMap) {
-            ppMVar7 = &(&pIVar2->klass->vtable)[pIVar2->klass->interfaceOffsets[uVar5].offset].
-                       GetBooleanControl.method;
+            pIVar6 = &pIVar2->klass->vtable + pIVar2->klass->interfaceOffsets[uVar4].offset;
             goto code_?;
           }
-          uVar5 = uVar5 + 1;
-        } while (uVar5 < uVar6);
+          uVar4 = uVar4 + 1;
+        } while (uVar4 < uVar5);
       }
-      ppMVar7 = (MethodInfo **)func_?(pIVar2,TypeInfo__IKogamaInputMap,0);
+      pIVar6 = (IKogamaInputMap__VTable *)func_?(pIVar2,TypeInfo__IKogamaInputMap,0);
 code_?:
-      bVar1 = (*(code *)*ppMVar7)(pIVar2,control,keyState,ppMVar7[1]);
+      bVar1 = (*(pIVar6->GetBooleanControl).methodPtr)
+                        (pIVar2,control,keyState,(pIVar6->GetBooleanControl).method);
       return bVar1;
     }
   }
@@ -366,7 +364,8 @@ code_?:
 String * Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetStringInput(MethodInfo *method)
 
 {
-  pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Input::Input_get_inputString((MethodInfo *)0x0);
+  pSVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_inputString
+                     ((MethodInfo *)0x0);
   return pSVar1;
 }
 
@@ -377,18 +376,11 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_InputCharActive
                (KeyCode__Enum key,MethodInfo *method)
 
 {
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    bVar3 = (*pcVar1)();
-    return bVar3;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
-  bVar3 = (*pcRam_?)(key);
-  return bVar3;
+  bVar1 = (*pcRam_?)(key);
+  return bVar1;
 }
 
 
@@ -398,18 +390,11 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_InputCharActiveDown
                (KeyCode__Enum key,MethodInfo *method)
 
 {
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    bVar3 = (*pcVar1)();
-    return bVar3;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
-  bVar3 = (*pcRam_?)(key);
-  return bVar3;
+  bVar1 = (*pcRam_?)(key);
+  return bVar1;
 }
 
 
@@ -419,59 +404,41 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_ResetInput(MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DesktopDefaultKeyboardMapping);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+    return;
+  }
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
-  pDVar1 = (DesktopDefaultKeyboardMapping *)TypeInfo__MVInputWrapper->static_fields->inputMap;
-  if (pDVar1 == (DesktopDefaultKeyboardMapping *)0x0) {
-    func_?(0);
-    pDVar1 = extraout_ECX;
-    pDVar2 = extraout_EDX;
-  }
-  else {
-    bVar3 = (TypeInfo__DesktopDefaultKeyboardMapping->_1).naturalAligment;
-    pDVar4 = pDVar1->klass;
-    bVar5 = (pDVar4->_1).naturalAligment;
-    if ((bVar5 < bVar3) ||
-       ((pDVar4->_1).typeHierarchy[bVar3 - 1] !=
-        (Il2CppClass *)TypeInfo__DesktopDefaultKeyboardMapping)) {
-      bVar6 = false;
-    }
-    else {
-      bVar6 = true;
-    }
-    pDVar7 = (DesktopDefaultKeyboardMapping *)0x0;
-    if (bVar6) {
-      pDVar7 = pDVar1;
-    }
-    pDVar2 = TypeInfo__DesktopDefaultKeyboardMapping;
-    if (pDVar7 != (DesktopDefaultKeyboardMapping *)0x0) {
-      if ((bVar5 < bVar3) ||
-         ((pDVar4->_1).typeHierarchy[bVar3 - 1] !=
-          (Il2CppClass *)TypeInfo__DesktopDefaultKeyboardMapping)) {
-        bVar6 = false;
-      }
-      else {
-        bVar6 = true;
-      }
-      pDVar7 = (DesktopDefaultKeyboardMapping *)0x0;
-      if (bVar6) {
-        pDVar7 = pDVar1;
-      }
-      if (pDVar7 != (DesktopDefaultKeyboardMapping *)0x0) {
-        DesktopDefaultKeyboardMapping::DesktopDefaultKeyboardMapping_Reset(pDVar7,(MethodInfo *)0x0)
-        ;
-        return;
-      }
+  pIVar1 = TypeInfo__MVInputWrapper->static_fields->inputMap;
+  pDVar2 = TypeInfo__DesktopDefaultKeyboardMapping;
+  if (pIVar1 != (IKogamaInputMap *)0x0) {
+    if (((pIVar1->klass->_1).typeHierarchyDepth <
+         (TypeInfo__DesktopDefaultKeyboardMapping->_1).typeHierarchyDepth) ||
+       ((pIVar1->klass->_1).typeHierarchy
+        [(TypeInfo__DesktopDefaultKeyboardMapping->_1).typeHierarchyDepth - 1] !=
+        (Il2CppClass *)TypeInfo__DesktopDefaultKeyboardMapping)) goto code_?;
+    pDVar2 = unaff_ESI;
+    if ((pIVar1[1].monitor != (MonitorData *)0x0) &&
+       (this = *(BitArray **)(pIVar1[1].monitor + 8), this != (BitArray *)0x0)) {
+      mscorlib.dll::System::Collections::BitArray::BitArray_SetAll(this,0,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?(pDVar1,pDVar2);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pIVar1 = extraout_EDX;
+code_?:
+  func_?(pIVar1,pDVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -483,16 +450,14 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_SetInputMap
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
-    TypeInfo__MVInputWrapper->static_fields->inputMap = inputMap;
-    return;
   }
   TypeInfo__MVInputWrapper->static_fields->inputMap = inputMap;
+  func_?(&TypeInfo__MVInputWrapper->static_fields->inputMap,unaff_EBP);
   return;
 }
 
@@ -503,23 +468,16 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_SuppressAllInput(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__MVInputWrapper__InputSuppression;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  (*this->klass[1]._0.gc_desc)(this,1,this->klass[1]._0.name);
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  pMVar1 = MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression_op_Implicit
+                     (1,(MethodInfo *)0x0);
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed =
-       (MVInputWrapper_InputSuppression *)this;
+  TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed = pMVar1;
+  func_?(&TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed);
   return;
 }
 
@@ -530,23 +488,16 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_SuppressInGameInput(Met
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__MVInputWrapper__InputSuppression;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  (*this->klass[1]._0.gc_desc)(this,1,this->klass[1]._0.name);
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  pMVar1 = MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression_op_Implicit
+                     (1,(MethodInfo *)0x0);
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed =
-       (MVInputWrapper_InputSuppression *)this;
+  TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed = pMVar1;
+  func_?(&TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed);
   return;
 }
 
@@ -557,23 +508,16 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_SuppressShortcutKeys(Me
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__MVInputWrapper__InputSuppression;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  (*this->klass[1]._0.gc_desc)(this,1,this->klass[1]._0.name);
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  pMVar1 = MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression_op_Implicit
+                     (1,(MethodInfo *)0x0);
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed =
-       (MVInputWrapper_InputSuppression *)this;
+  TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed = pMVar1;
+  func_?(&TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed);
   return;
 }
 
@@ -584,43 +528,22 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper__cctor(MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  bVar1 = cRam_? == '\0';
   TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier = 1.0;
-  if (bVar1) {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pMVar2 = TypeInfo__MVInputWrapper__InputSuppression;
-  pSVar3 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar3,0.0,(MethodInfo *)pMVar2);
-  (*pSVar3->klass[1]._0.gc_desc)(pSVar3,0,pSVar3->klass[1]._0.name);
-  bVar1 = cRam_? == '\0';
-  TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed =
-       (MVInputWrapper_InputSuppression *)pSVar3;
-  if (bVar1) {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pMVar2 = TypeInfo__MVInputWrapper__InputSuppression;
-  pSVar3 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar3,0.0,(MethodInfo *)pMVar2);
-  (*pSVar3->klass[1]._0.gc_desc)(pSVar3,0,pSVar3->klass[1]._0.name);
-  bVar1 = cRam_? == '\0';
-  TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed =
-       (MVInputWrapper_InputSuppression *)pSVar3;
-  if (bVar1) {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pMVar2 = TypeInfo__MVInputWrapper__InputSuppression;
-  pSVar3 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar3,0.0,(MethodInfo *)pMVar2);
-  (*pSVar3->klass[1]._0.gc_desc)(pSVar3);
-  TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed =
-       (MVInputWrapper_InputSuppression *)pSVar3;
+  pMVar1 = MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression_op_Implicit
+                     (0,(MethodInfo *)0x0);
+  TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed = pMVar1;
+  func_?(&TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed,pMVar1);
+  pMVar1 = MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression_op_Implicit
+                     (0,(MethodInfo *)0x0);
+  TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed = pMVar1;
+  func_?(&TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed,pMVar1);
+  pMVar1 = MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression_op_Implicit
+                     (0,(MethodInfo *)0x0);
+  TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed = pMVar1;
+  func_?(&TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed,pMVar1);
   return;
 }
 
@@ -632,23 +555,23 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_get_IsAllInputSuppresse
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVInputWrapper);
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   pMVar1 = TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed;
   if (pMVar1 != (MVInputWrapper_InputSuppression *)0x0) {
-    bVar2 = (*(code *)(pMVar1->klass->vtable).get_IsSuppressed.method)
-                      (pMVar1,(pMVar1->klass->vtable).set_IsSuppressed.methodPtr);
-    return bVar2;
+    pMStack_2 = pMVar1;
+    bVar3 = (*(pMVar1->klass->vtable).get_IsSuppressed.methodPtr)();
+    return bVar3;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  bVar3 = (*pcVar6)();
+  return bVar3;
 }
 
 
@@ -659,31 +582,30 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppre
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVInputWrapper);
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   pMVar1 = TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed;
   if (pMVar1 != (MVInputWrapper_InputSuppression *)0x0) {
-    cVar2 = (*(code *)(pMVar1->klass->vtable).get_IsSuppressed.method)
-                      (pMVar1,(pMVar1->klass->vtable).set_IsSuppressed.methodPtr);
-    if (cVar2 != '\0') {
+    pMStack_2 = pMVar1;
+    cVar3 = (*(pMVar1->klass->vtable).get_IsSuppressed.methodPtr)();
+    if (cVar3 != '\0') {
       return 1;
     }
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVInputWrapper);
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    bVar3 = MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
-    return bVar3;
+    bVar4 = MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
+    return bVar4;
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  bVar3 = (*pcVar4)();
-  return bVar3;
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  bVar4 = (*pcVar7)();
+  return bVar4;
 }
 
 
@@ -694,31 +616,30 @@ bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_get_IsShortcutKeysSuppr
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVInputWrapper);
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   pMVar1 = TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed;
   if (pMVar1 != (MVInputWrapper_InputSuppression *)0x0) {
-    cVar2 = (*(code *)(pMVar1->klass->vtable).get_IsSuppressed.method)
-                      (pMVar1,(pMVar1->klass->vtable).set_IsSuppressed.methodPtr);
-    if (cVar2 != '\0') {
+    pMStack_2 = pMVar1;
+    cVar3 = (*(pMVar1->klass->vtable).get_IsSuppressed.methodPtr)();
+    if (cVar3 != '\0') {
       return 1;
     }
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVInputWrapper);
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    bVar3 = MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
-    return bVar3;
+    bVar4 = MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
+    return bVar4;
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  bVar3 = (*pcVar4)();
-  return bVar3;
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  bVar4 = (*pcVar7)();
+  return bVar4;
 }
 
 
@@ -729,11 +650,10 @@ float Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_get_MouseSensitivityMo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   return TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier;
@@ -747,11 +667,10 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_set_MouseSensitivityMod
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier = value;

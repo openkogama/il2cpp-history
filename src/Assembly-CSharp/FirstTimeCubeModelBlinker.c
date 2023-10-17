@@ -9,6 +9,7 @@ void Assembly-CSharp.dll::FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_B
   if (this_00 != (MVCubeModelBase *)0x0) {
     pMVar1 = MVCubeModelBase::MVCubeModelBase_get_MeshFilters(this_00,(MethodInfo *)0x0);
     (this->fields)._.meshFilters = pMVar1;
+    func_?(&(this->fields)._.meshFilters,pMVar1);
     return;
   }
   func_?();
@@ -27,38 +28,50 @@ void Assembly-CSharp.dll::FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_I
 {
   if (cRam_? == '\0') {
     func_?();
+    func_?();
+    func_?();
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
+    func_?(&StringLiteral_CamRotateTarget);
     cRam_? = '\x01';
   }
   (this->fields).targetCubeModelBase = targetCubeModelBase;
+  func_?();
   (this->fields)._.targetCamera = targetCamera;
+  func_?(&(this->fields)._.targetCamera);
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
   (this->fields)._.layerMask = iVar1;
   (this->fields)._.blinkMaterial = material;
-  this_00 = (Dictionary_2_BlinkType_Blinker_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__)
-  ;
-  m = (this->fields)._.blinkMaterial;
-  uVar2 = 0;
-  func_?(&stack0xffffffec);
-  this_01 = (Blinker *)func_?(TypeInfo__Blinker);
-  Blinker::Blinker__ctor(this_01,2.0,m,(Color)ZEXT416(uVar2),(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_BlinkType_Blinker_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[BlinkType,System::Object]::
-    Dictionary_2_BlinkType_System_Object__Add
-              ((Dictionary_2_BlinkType_System_Object_ *)this_00,
-               BlinkType__Enum_OnBoardingCubeModelSuccess,(Object *)this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+  func_?(&(this->fields)._.blinkMaterial,material);
+  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+            func_?(TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__
               );
-    (this->fields)._.blinkers = this_00;
-    return;
+    m = (this->fields)._.blinkMaterial;
+    this_01 = (Blinker *)func_?();
+    if (this_01 != (Blinker *)0x0) {
+      color.g = (float)_UNK_?;
+      color.r = (float)_UNK_?;
+      color.b = (float)_UNK_?;
+      color.a = _UNK_?;
+      Blinker::Blinker__ctor(this_01,2.0,m,color,(MethodInfo *)0x0);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                (this_00,(Object *)0x7,(Object *)this_01,
+                 MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+                );
+      (this->fields)._.blinkers = (Dictionary_2_BlinkType_Blinker_ *)this_00;
+      func_?();
+      return;
+    }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

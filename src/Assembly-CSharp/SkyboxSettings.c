@@ -6,132 +6,112 @@ void Assembly-CSharp.dll::SkyboxSettings::SkyboxSettings_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_colorB);
+    func_?(&StringLiteral_colorR);
+    func_?(&StringLiteral_fogDensity);
+    func_?(&StringLiteral_sunAngle);
+    func_?(&StringLiteral_colorG);
+    func_?(&StringLiteral_color);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).settingsBase;
   if (this_00 == (SettingsBase *)0x0) {
 code_?:
-    func_?(0);
+    uVar1 = func_?();
 code_?:
-    uVar1 = func_?(0,0);
     func_?(uVar1);
-code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-code_?:
-    uVar1 = 0;
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar1 = func_?(0,uVar1);
-    uVar3 = func_?(uVar1);
   }
   else {
     SettingsBase::SettingsBase_Initialize
               (this_00,woID,root,MVWorldObjectDocumentationType__Enum_Skybox,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    unaff_EDI = (Image *)woID;
-    if (this_01 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    this_02 = (PrefabPool *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_01,woID,(MethodInfo *)0x0);
-    if (this_02 == (PrefabPool *)0x0) goto code_?;
-    this_03 = (Dictionary_2_System_Type_Pool_ *)
-              PrefabPool::PrefabPool_get_MVBatteryPrefab(this_02,(MethodInfo *)0x0);
-    if (this_03 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    unaff_EDI = (Image *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]
-                         ::Dictionary_2_System_Type_Pool__get_Item
-                                   (this_03,(Type *)StringLiteral_color,
-                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                   );
-    unaff_EBX = TypeInfo__System__Single;
-    pSVar4 = (Single__Array *)0x0;
-    if (unaff_EDI != (Image *)0x0) {
-      pSVar4 = (Single__Array *)func_?(unaff_EDI,TypeInfo__System__Single);
-      if (pSVar4 == (Single__Array *)0x0) goto code_?;
-    }
-    pSVar5 = (this->fields).colorR;
-    (this->fields).color = pSVar4;
-    if (pSVar4 == (Single__Array *)0x0) goto code_?;
-    if (pSVar4->max_length == 0) goto code_?;
-    if (pSVar5 == (SettingsSlider *)0x0) goto code_?;
-    SettingsSlider::SettingsSlider_Initialize
-              (pSVar5,StringLiteral_colorR,pSVar4->vector[0],0.0,1.0,(MethodInfo *)0x0);
-    pSVar4 = (this->fields).color;
-    pSVar5 = (this->fields).colorG;
-    if (pSVar4 == (Single__Array *)0x0) goto code_?;
-    if (pSVar4->max_length < 2) goto code_?;
-    if (pSVar5 == (SettingsSlider *)0x0) goto code_?;
-    SettingsSlider::SettingsSlider_Initialize
-              (pSVar5,StringLiteral_colorG,pSVar4->vector[1],0.0,1.0,(MethodInfo *)0x0);
-    pSVar4 = (this->fields).color;
-    pSVar5 = (this->fields).colorB;
-    if (pSVar4 == (Single__Array *)0x0) goto code_?;
-    if (pSVar4->max_length < 3) goto code_?;
-    if (pSVar5 == (SettingsSlider *)0x0) goto code_?;
-    SettingsSlider::SettingsSlider_Initialize
-              (pSVar5,StringLiteral_colorB,pSVar4->vector[2],0.0,1.0,(MethodInfo *)0x0);
-    unaff_EDI = (Image *)0x0;
-    unaff_EBX = (Single__Array__Class *)(this->fields).angle;
-    pPVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)0x0,(Type *)StringLiteral_sunAngle,
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_02,woID,(MethodInfo *)0x0);
+    if (pMVar2 == (MVWorldObject *)0x0) goto code_?;
+    this_01 = (pMVar2->fields).data;
+    if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_01,(Object *)StringLiteral_color,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    uVar3 = CONCAT44(TypeInfo__System__Single,pPVar6);
-    if ((unaff_EBX == (Single__Array__Class *)0x0) || (pPVar6 == (Pool *)0x0))
-    goto code_?;
-    if ((pPVar6->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar7 = (float *)func_?();
+    if (pOVar3 == (Object *)0x0) {
+      (this->fields).color = (Single__Array *)0x0;
+    }
+    else {
+      pSVar4 = (Single__Array *)func_?();
+      if (pSVar4 == (Single__Array *)0x0) goto code_?;
+      (this->fields).color = pSVar4;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
+    }
+    func_?();
+    pSVar4 = (this->fields).color;
+    pSVar6 = (this->fields).colorR;
+    if (pSVar4 == (Single__Array *)0x0) goto code_?;
+    if (pSVar4->max_length != 0) {
+      if (pSVar6 == (SettingsSlider *)0x0) goto code_?;
       SettingsSlider::SettingsSlider_Initialize
-                ((SettingsSlider *)unaff_EBX,StringLiteral_sunAngle,*pfVar7,0.0,360.0,
-                 (MethodInfo *)0x0);
-      unaff_EBX = (Single__Array__Class *)(this->fields).fog;
-      pPVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-               Dictionary_2_System_Type_Pool__get_Item
-                         ((Dictionary_2_System_Type_Pool_ *)0x0,(Type *)StringLiteral_fogDensity,
+                (pSVar6,StringLiteral_colorR,pSVar4->vector[0],0.0,1.0,(MethodInfo *)0x0);
+      pSVar4 = (this->fields).color;
+      pSVar6 = (this->fields).colorG;
+      if (pSVar4 == (Single__Array *)0x0) goto code_?;
+      if (pSVar4->max_length < 2) goto code_?;
+      if (pSVar6 == (SettingsSlider *)0x0) goto code_?;
+      SettingsSlider::SettingsSlider_Initialize
+                (pSVar6,StringLiteral_colorG,pSVar4->vector[1],0.0,1.0,(MethodInfo *)0x0);
+      pSVar4 = (this->fields).color;
+      pSVar6 = (this->fields).colorB;
+      if (pSVar4 == (Single__Array *)0x0) goto code_?;
+      if (pSVar4->max_length < 3) goto code_?;
+      if (pSVar6 == (SettingsSlider *)0x0) goto code_?;
+      SettingsSlider::SettingsSlider_Initialize
+                (pSVar6,StringLiteral_colorB,pSVar4->vector[2],0.0,1.0,(MethodInfo *)0x0);
+      pSVar6 = (this->fields).angle;
+      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         ((Dictionary_2_System_Object_System_Object_ *)&UNK_?,
+                          (Object *)StringLiteral_sunAngle,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pPVar6);
-      if ((unaff_EBX == (Single__Array__Class *)0x0) || (pPVar6 == (Pool *)0x0))
-      goto code_?;
-      if ((pPVar6->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar7 = (float *)func_?(pPVar6);
-      SettingsSlider::SettingsSlider_Initialize
-                ((SettingsSlider *)unaff_EBX,StringLiteral_fogDensity,*pfVar7,0.005,0.05,
-                 (MethodInfo *)0x0);
-      pSVar4 = (this->fields).color;
-      unaff_EDI = (this->fields).preview;
-      if (pSVar4 == (Single__Array *)0x0) goto code_?;
-      uVar8 = pSVar4->max_length;
-      if (uVar8 == 0) goto code_?;
-      if (pSVar4 == (Single__Array *)0x0) goto code_?;
-      if (uVar8 < 2) goto code_?;
-      if (pSVar4 == (Single__Array *)0x0) goto code_?;
-      uVar1 = 0;
-      if (2 < uVar8) {
-        uVar1 = 0;
-        uVar2 = 0;
-        uVar9 = 0;
-        uVar10 = 0;
-        func_?(&stack0xffffffec,pSVar4->vector[0],pSVar4->vector[1],pSVar4->vector[2],0);
-        if (unaff_EDI != (Image *)0x0) {
-          (*(code *)(unaff_EDI->klass->vtable).set_color.method)
-                    (unaff_EDI,uVar1,uVar2,uVar9,uVar10,
-                     (unaff_EDI->klass->vtable).get_raycastTarget.methodPtr);
-          return;
+      uVar1 = CONCAT44(TypeInfo__System__Single,pOVar3);
+      if ((pSVar6 == (SettingsSlider *)0x0) || (pOVar3 == (Object *)0x0)) goto code_?;
+      if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+        pfVar7 = (float *)func_?(pOVar3);
+        SettingsSlider::SettingsSlider_Initialize
+                  (pSVar6,StringLiteral_sunAngle,*pfVar7,0.0,360.0,(MethodInfo *)0x0);
+        pSVar6 = (this->fields).fog;
+        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           ((Dictionary_2_System_Object_System_Object_ *)&UNK_?,
+                            (Object *)StringLiteral_fogDensity,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        uVar1 = CONCAT44(TypeInfo__System__Single,pOVar3);
+        if ((pSVar6 != (SettingsSlider *)0x0) && (pOVar3 != (Object *)0x0)) {
+          if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+          goto code_?;
+          pfVar7 = (float *)func_?(pOVar3);
+          SettingsSlider::SettingsSlider_Initialize
+                    (pSVar6,StringLiteral_fogDensity,*pfVar7,0.005,0.05,(MethodInfo *)0x0);
+          pSVar4 = (this->fields).color;
+          pIVar8 = (this->fields).preview;
+          if (pSVar4 != (Single__Array *)0x0) {
+            if (((pSVar4->max_length == 0) || (pSVar4->max_length < 2)) || (pSVar4->max_length < 3))
+            goto code_?;
+            if (pIVar8 != (Image *)0x0) {
+              (*(pIVar8->klass->vtable).set_color.methodPtr)
+                        (pIVar8,pSVar4->vector[0],pSVar4->vector[1],pSVar4->vector[2],0x3f800000,
+                         (pIVar8->klass->vtable).set_color.method);
+              return;
+            }
+          }
         }
         goto code_?;
       }
@@ -139,11 +119,11 @@ code_?:
     }
   }
 code_?:
-  func_?(uVar3);
+  func_?();
 code_?:
-  func_?(unaff_EDI,unaff_EBX);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -155,57 +135,31 @@ void Assembly-CSharp.dll::SkyboxSettings::SkyboxSettings_OnColorChange
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_color);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).settingsBase;
-  if (this_00 == (SettingsBase *)0x0) {
-code_?:
-    func_?(0);
-code_?:
-    uStack_1 = 0;
-    fStack_2 = 0.0;
-    uVar3 = func_?();
-    func_?(uVar3);
-  }
-  else {
+  if (this_00 != (SettingsBase *)0x0) {
     SettingsBase::SettingsBase_OnSettingChanged
               (this_00,StringLiteral_color,(Object *)(this->fields).color,(MethodInfo *)0x0);
-    pSVar4 = (this->fields).color;
-    pIVar5 = (this->fields).preview;
-    if (pSVar4 == (Single__Array *)0x0) goto code_?;
-    uVar6 = pSVar4->max_length;
-    if (uVar6 == 0) goto code_?;
-    if (pSVar4 == (Single__Array *)0x0) goto code_?;
-    if (1 < uVar6) {
-      if (pSVar4 != (Single__Array *)0x0) {
-        uStack_1 = 0;
-        if (uVar6 < 3) goto code_?;
-        fStack_2 = pSVar4->vector[2];
-        uStack_1 = 0;
-        uStack_7 = 0;
-        uStack_8 = 0;
-        func_?(&fStack_2,pSVar4->vector[0],pSVar4->vector[1]);
-        if (pIVar5 != (Image *)0x0) {
-          (*(code *)(pIVar5->klass->vtable).set_color.method)
-                    (pIVar5,fStack_2,uStack_1,uStack_7,uStack_8,
-                     (pIVar5->klass->vtable).get_raycastTarget.methodPtr);
-          return;
-        }
-      }
+    pSVar1 = (this->fields).color;
+    pIVar2 = (this->fields).preview;
+    if (pSVar1 != (Single__Array *)0x0) {
+      if (((pSVar1->max_length == 0) || (pSVar1->max_length < 2)) || (pSVar1->max_length < 3))
       goto code_?;
+      if (pIVar2 != (Image *)0x0) {
+        (*(pIVar2->klass->vtable).set_color.methodPtr)
+                  (pIVar2,pSVar1->vector[0],pSVar1->vector[1],
+                   (pIVar2->klass->vtable).set_color.method,0x3f800000);
+        return;
+      }
     }
   }
-  uStack_1 = 0;
-  fStack_2 = 0.0;
-  uVar3 = func_?();
-  func_?(uVar3);
+  func_?();
 code_?:
-  fStack_2 = 0.0;
-  uVar3 = func_?();
-  func_?(uVar3);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -217,121 +171,101 @@ void Assembly-CSharp.dll::SkyboxSettings::SkyboxSettings_OnSettingChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_colorB);
+    func_?(&StringLiteral_Unknown_key__);
+    func_?(&StringLiteral_colorR);
+    func_?(&StringLiteral_fogDensity);
+    func_?(&StringLiteral_sunAngle);
+    func_?(&StringLiteral_colorG);
     cRam_? = '\x01';
-  }
-  if (key == (String *)0x0) {
-code_?:
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    message = mscorlib.dll::System::String::String_Concat_2
-                        (StringLiteral_Unknown_key__,key,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-              ((Object *)message,(MethodInfo *)0x0);
-    return;
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
   }
   bVar1 = mscorlib.dll::System::String::String_op_Equality
                     (key,StringLiteral_colorR,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
     bVar1 = mscorlib.dll::System::String::String_op_Equality
                       (key,StringLiteral_colorG,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      pSVar2 = (this->fields).color;
-      if (pSVar2 == (Single__Array *)0x0) goto code_?;
-      pfVar3 = (float *)func_?(value,TypeInfo__System__Single);
-      if (1 < pSVar2->max_length) {
-        pSVar2->vector[1] = *pfVar3;
+    pSVar2 = StringLiteral_colorB;
+    if (bVar1 == 0) {
+      bVar1 = mscorlib.dll::System::String::String_op_Equality
+                        (key,StringLiteral_colorB,(MethodInfo *)0x0);
+      if (bVar1 == 0) {
+        bVar1 = mscorlib.dll::System::String::String_op_Equality
+                          (key,StringLiteral_sunAngle,(MethodInfo *)0x0);
+        if (bVar1 == 0) {
+          bVar1 = mscorlib.dll::System::String::String_op_Equality
+                            (key,StringLiteral_fogDensity,(MethodInfo *)0x0);
+          if (bVar1 == 0) {
+            pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                               (StringLiteral_Unknown_key__,key,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                      ((Object *)pSVar2,(MethodInfo *)0x0);
+            return;
+          }
+          if (pSVar2[1].klass != (String__Class *)0x0) {
+            SettingsBase::SettingsBase_OnSettingChanged
+                      ((SettingsBase *)pSVar2[1].klass,key,(Object *)key,(MethodInfo *)0x0);
+            return;
+          }
+        }
+        else if (pSVar2[1].klass != (String__Class *)0x0) {
+          SettingsBase::SettingsBase_OnSettingChanged
+                    ((SettingsBase *)pSVar2[1].klass,key,(Object *)key,(MethodInfo *)0x0);
+          SkyboxSettings_OnColorChange((SkyboxSettings *)pSVar2,(MethodInfo *)0x0);
+          return;
+        }
+        goto code_?;
+      }
+      iVar3 = *(int *)&(pSVar2->fields)._firstChar;
+      if (iVar3 == 0) goto code_?;
+      if (value == (Object *)0x0) goto code_?;
+      if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      goto code_?;
+      puVar4 = (undefined4 *)func_?();
+      if (2 < *(uint *)(iVar3 + 0xc)) {
+        *(undefined4 *)(iVar3 + 0x18) = *puVar4;
+        SkyboxSettings_OnColorChange((SkyboxSettings *)pSVar2,(MethodInfo *)0x0);
+        return;
+      }
+    }
+    else {
+      pSVar5 = (this->fields).color;
+      if (pSVar5 == (Single__Array *)0x0) goto code_?;
+      if (value == (Object *)0x0) goto code_?;
+      if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      goto code_?;
+      pfVar6 = (float *)func_?();
+      if (1 < pSVar5->max_length) {
+        pSVar5->vector[1] = *pfVar6;
         SkyboxSettings_OnColorChange(this,(MethodInfo *)0x0);
         return;
       }
-      goto code_?;
-    }
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    bVar1 = mscorlib.dll::System::String::String_op_Equality
-                      (key,StringLiteral_colorB,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      bVar1 = mscorlib.dll::System::String::String_op_Equality
-                        (key,StringLiteral_sunAngle,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        bVar1 = mscorlib.dll::System::String::String_op_Equality
-                          (key,StringLiteral_fogDensity,(MethodInfo *)0x0);
-        if (bVar1 == 0) goto code_?;
-        pSVar4 = (this->fields).settingsBase;
-        if (pSVar4 != (SettingsBase *)0x0) {
-          SettingsBase::SettingsBase_OnSettingChanged(pSVar4,key,value,(MethodInfo *)0x0);
-          return;
-        }
-      }
-      else {
-        pSVar4 = (this->fields).settingsBase;
-        if (pSVar4 != (SettingsBase *)0x0) {
-          SettingsBase::SettingsBase_OnSettingChanged(pSVar4,key,value,(MethodInfo *)0x0);
-          SkyboxSettings_OnColorChange(this,(MethodInfo *)0x0);
-          return;
-        }
-      }
-      goto code_?;
-    }
-    pSVar2 = (this->fields).color;
-    if (pSVar2 == (Single__Array *)0x0) goto code_?;
-    pfVar3 = (float *)func_?(value,TypeInfo__System__Single);
-    if (2 < pSVar2->max_length) {
-      pSVar2->vector[2] = *pfVar3;
-      SkyboxSettings_OnColorChange(this,(MethodInfo *)0x0);
-      return;
     }
   }
   else {
-    pSVar2 = (this->fields).color;
-    if (pSVar2 == (Single__Array *)0x0) goto code_?;
+    pSVar5 = (this->fields).color;
+    if (pSVar5 == (Single__Array *)0x0) goto code_?;
     if (value == (Object *)0x0) goto code_?;
-    pSVar5 = TypeInfo__System__Single;
     if ((value->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar3 = (float *)func_?(value);
-      if (pSVar2->max_length != 0) {
-        pSVar2->vector[0] = *pfVar3;
+      pfVar6 = (float *)func_?(value);
+      if (pSVar5->max_length != 0) {
+        pSVar5->vector[0] = *pfVar6;
         SkyboxSettings_OnColorChange(this,(MethodInfo *)0x0);
         return;
       }
-      uVar6 = func_?(0);
-      func_?(uVar6);
-      value = extraout_ECX;
-      pSVar5 = extraout_EDX;
     }
-    func_?(value,pSVar5);
+    else {
 code_?:
-    uVar6 = func_?(0);
-    func_?(uVar6);
+      func_?();
+    }
   }
-  uVar6 = func_?(0);
-  func_?(uVar6);
+  func_?();
 code_?:
-  func_?(0);
+  func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;
@@ -345,19 +279,14 @@ void Assembly-CSharp.dll::SkyboxSettings::SkyboxSettings__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   pSVar1 = (Single__Array *)func_?(TypeInfo__System__Single,3);
   (this->fields).color = pSVar1;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  func_?(&(this->fields).color,pSVar1);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

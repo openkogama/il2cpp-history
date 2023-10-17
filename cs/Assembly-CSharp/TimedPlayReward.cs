@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TimedPlayReward : RewardButtonBase, IUpdatecontrollerSubscriberUpdate
 {
@@ -17,13 +17,10 @@ public class TimedPlayReward : RewardButtonBase, IUpdatecontrollerSubscriberUpda
 	[SerializeField]
 	private int timeInSeconds;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _RewardAvailable_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _RewardXP_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsClaimable_k__BackingField;
 
 	// Properties
@@ -37,9 +34,6 @@ public class TimedPlayReward : RewardButtonBase, IUpdatecontrollerSubscriberUpda
 		// Fields
 		public static bool IsCollected;
 		public static Action CollectedChanged;
-
-		// Constructors
-		static RewardTracker();
 
 		// Methods
 		public static void Reset();

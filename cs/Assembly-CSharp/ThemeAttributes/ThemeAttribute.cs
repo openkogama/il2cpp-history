@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using ThemeSettings;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace ThemeAttributes
 {
@@ -16,10 +16,8 @@ namespace ThemeAttributes
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private string _Key_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _Groups_k__BackingField;
 		private SettingsWrapper themeSettings;
 		protected const string valueOutOfBoundsMsg = "Theme attribute is out of expected range.";

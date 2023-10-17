@@ -6,335 +6,585 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_Initi
                MethodInfo *method)
 
 {
+  this_02 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::GameObject>);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__ForEach_System__Action<UnityEngine::GameObject>_
+                   );
+    func_?(&TypeInfo__MV__WorldObject__MVTeam);
+    func_?(&
+                    MethodInfo__RequirementNotification____c___Initialize_b__11_0_UnityEngine__GameObject_
+                   );
+    func_?(&TypeInfo__RequirementNotification____c);
+    func_?(&StringLiteral_starAmount);
+    func_?(&StringLiteral_gameCoinAmount);
+    func_?(&StringLiteral_levelAmount);
+    func_?(&StringLiteral_RequiredRank);
+    func_?(&StringLiteral_team);
     cRam_? = '\x01';
   }
-  pDVar1 = data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  data = (Dictionary_2_System_Object_System_Object_ *)(this->fields).PanelsToDestroy;
-  if (TypeInfo__RequirementNotification->static_fields->__f__am_cache0 ==
-      (Action_1_UnityEngine_GameObject_ *)0x0) {
-    this_01 = (RequirementNotification *)
-              func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-    in_stack_2 = this_01;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              ((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )this_01,(Object *)0x0,
-               MethodInfo__RequirementNotification___Initialize_m__0_UnityEngine__GameObject_,
-               MethodInfo__System__Action<UnityEngine::GameObject>__Action_System__Object__void__);
-    TypeInfo__RequirementNotification->static_fields->__f__am_cache0 =
-         (Action_1_UnityEngine_GameObject_ *)this_01;
+  pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)data;
+  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Reset
+            ((LogicObjectManager *)this,(MethodInfo *)data);
+  pLVar2 = (this->fields).PanelsToDestroy;
+  if ((TypeInfo__RequirementNotification____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__RequirementNotification____c);
   }
-  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::GameObject]::
-    List_1_UnityEngine_GameObject__ForEach
-              ((List_1_UnityEngine_GameObject_ *)data,
-               TypeInfo__RequirementNotification->static_fields->__f__am_cache0,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__ForEach_System__Action<UnityEngine::GameObject>_
-              );
-    this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).PanelsToDestroy;
-    if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-      List_1_UnityEngine_UIVertex__Clear
-                (this_00,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__);
-      data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(10,data._0_3_);
-      key = (Type *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pPVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                 Dictionary_2_System_Type_Pool__get_Item
-                           ((Dictionary_2_System_Type_Pool_ *)pDVar1,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        uVar4 = CONCAT44(TypeInfo__System__Int32,pPVar3);
-        if (pPVar3 != (Pool *)0x0) {
-          if ((pPVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-          goto code_?;
-          piVar5 = (int32_t *)func_?(pPVar3);
-          iVar6 = *piVar5;
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?(TypeInfo__MVGameControllerBase);
-          }
-          this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-          if (((this_02 != (MVWorldObjectClientManager *)0x0) &&
-              (this_03 = (PrefabPool *)
-                         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                   (this_02,iVar6,(MethodInfo *)0x0), this_03 != (PrefabPool *)0x0)
-              ) && (pDVar7 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                              *)PrefabPool::PrefabPool_get_MVBatteryPrefab
-                                          (this_03,(MethodInfo *)0x0),
-                   pDVar7 != (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                              *)0x0)) {
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                    WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                    KogamaSettingWrapperBase]::
-                    Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                              (pDVar7,StringLiteral_levelAmount,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+  this_03 = TypeInfo__RequirementNotification____c->static_fields->__9__11_0;
+  if (this_03 == (Action_1_UnityEngine_GameObject_ *)0x0) {
+    if ((TypeInfo__RequirementNotification____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RequirementNotification____c);
+    }
+    data = (Dictionary_2_System_Object_System_Object_ *)
+           TypeInfo__RequirementNotification____c->static_fields->__9;
+    this_03 = (Action_1_UnityEngine_GameObject_ *)
+              func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+    if (this_03 != (Action_1_UnityEngine_GameObject_ *)0x0) {
+      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                ((Action_1_Object_ *)this_03,(Object *)data,
+                 MethodInfo__RequirementNotification____c___Initialize_b__11_0_UnityEngine__GameObject_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__RequirementNotification____c->static_fields->__9__11_0 = this_03;
+      func_?(&TypeInfo__RequirementNotification____c->static_fields->__9__11_0,this_03);
+      goto code_?;
+    }
+  }
+  else {
+code_?:
+    if (pLVar2 != (List_1_UnityEngine_GameObject_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__ForEach
+                ((List_1_System_Object_ *)pLVar2,(Action_1_Object_ *)this_03,
+                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__ForEach_System__Action<UnityEngine::GameObject>_
+                );
+      pLVar2 = (this->fields).PanelsToDestroy;
+      if (pLVar2 != (List_1_UnityEngine_GameObject_ *)0x0) {
+        iVar3 = (pLVar2->fields)._size;
+        piVar4 = &(pLVar2->fields)._version;
+        *piVar4 = *piVar4 + 1;
+        (pLVar2->fields)._size = 0;
+        if (0 < iVar3) {
+          mscorlib.dll::System::Array::Array_Clear
+                    ((Array *)(pLVar2->fields)._items,0,iVar3,(MethodInfo *)0x0);
+        }
+        in_stack_5 = (int)&data + 3;
+        method = (MethodInfo *)TypeInfo__System__Byte;
+        data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+        pMVar6 = (MethodInfo *)func_?();
+        if (pEVar1 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__get_Item
+                              ((Dictionary_2_System_Object_System_Object_ *)pEVar1,
+                               (Object *)pMVar6,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                               );
-            if (bVar8 == 0) {
+          uVar8 = CONCAT44(TypeInfo__System__Int32,pOVar7);
+          if (pOVar7 != (Object *)0x0) {
+            if ((pOVar7->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+            goto code_?;
+            piVar4 = (int32_t *)func_?(pOVar7);
+            iVar9 = *piVar4;
+            this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            if (((this_04 != (MVWorldObjectClientManager *)0x0) &&
+                (pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                     (this_04,iVar9,(MethodInfo *)0x0),
+                pMVar10 != (MVWorldObject *)0x0)) &&
+               (pMVar11 = (MethodInfo *)(pMVar10->fields).data, pMVar11 != (MethodInfo *)0x0)) {
+              method_00 = (MethodInfo *)StringLiteral_levelAmount;
+              bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,GUILoginHandler+PlanetData]::
+                      Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                                ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)pMVar11,
+                                 (Object *)StringLiteral_levelAmount,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                );
+              if (bVar12 == 0) {
 code_?:
-              pDVar7 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)PrefabPool::PrefabPool_get_MVBatteryPrefab(this_03,(MethodInfo *)0x0);
-              if (pDVar7 != (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                             *)0x0) {
-                bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                        WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                        KogamaSettingWrapperBase]::
-                        Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                                  (pDVar7,StringLiteral_gameCoinAmount,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                  );
-                if (bVar8 == 0) {
+                pDVar13 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                         (pMVar10->fields).data;
+                if (pDVar13 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+                  bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,GUILoginHandler+PlanetData]::
+                          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                                    (pDVar13,(Object *)StringLiteral_gameCoinAmount,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                    );
+                  if (bVar12 == 0) {
 code_?:
-                  pDVar7 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                            *)PrefabPool::PrefabPool_get_MVBatteryPrefab(this_03,(MethodInfo *)0x0);
-                  if (pDVar7 != (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                                 *)0x0) {
-                    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            String,MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                            KogamaSettingTypes::KogamaSettingWrapperBase]::
-                            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                                      (pDVar7,StringLiteral_starAmount,
-                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                      );
-                    if (bVar8 == 0) {
+                    pDVar13 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                             (pMVar10->fields).data;
+                    if (pDVar13 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+                      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Object,GUILoginHandler+PlanetData]::
+                              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                                        (pDVar13,(Object *)StringLiteral_starAmount,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                        );
+                      if (bVar12 == 0) {
 code_?:
-                      pDVar7 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                                *)PrefabPool::PrefabPool_get_MVBatteryPrefab
-                                            (this_03,(MethodInfo *)0x0);
-                      if (pDVar7 != (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                                     *)0x0) {
-                        bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                String,MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                                KogamaSettingTypes::KogamaSettingWrapperBase]::
-                                Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                                          (pDVar7,StringLiteral_team,
-                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                          );
-                        if (bVar8 == 0) {
+                        pDVar13 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                                 (pMVar10->fields).data;
+                        if (pDVar13 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+                        {
+                          bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Object,GUILoginHandler+PlanetData]::
+                                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                                            (pDVar13,(Object *)StringLiteral_team,
+                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                            );
+                          if (bVar12 == 0) {
 code_?:
-                          pDVar7 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                                    *)PrefabPool::PrefabPool_get_MVBatteryPrefab
-                                                (this_03,(MethodInfo *)0x0);
-                          if (pDVar7 != (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                                         *)0x0) {
-                            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System
-                                    ::String,MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                                    KogamaSettingTypes::KogamaSettingWrapperBase]::
-                                    Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                                              (pDVar7,StringLiteral_RequiredRank,
-                                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                              );
-                            if (bVar8 == 0) {
-                              return;
-                            }
-                            pDVar9 = (Dictionary_2_System_Type_Pool_ *)
-                                     PrefabPool::PrefabPool_get_MVBatteryPrefab
-                                               (this_03,(MethodInfo *)0x0);
-                            if (pDVar9 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-                              method_00 = (MethodInfo *)&UNK_?;
-                              pPVar3 = mscorlib.dll::System::Collections::Generic::
-                                       Dictionary`2[System::Type,Pool]::
-                                       Dictionary_2_System_Type_Pool__get_Item
-                                                 (pDVar9,(Type *)StringLiteral_RequiredRank,
+                            pDVar13 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                                     (pMVar10->fields).data;
+                            if (pDVar13 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                                          0x0) {
+                              bVar12 = mscorlib.dll::System::Collections::Generic::
+                                      Dictionary`2[System::Object,GUILoginHandler+PlanetData]::
+                                      Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                                                (pDVar13,(Object *)StringLiteral_RequiredRank,
+                                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                                );
+                              if (bVar12 == 0) {
+                                return;
+                              }
+                              pDVar14 = (pMVar10->fields).data;
+                              if (pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                pMVar11 = (MethodInfo *)
+                                          mscorlib.dll::System::Collections::Generic::
+                                          Dictionary`2[System::Object,System::Object]::
+                                          Dictionary_2_System_Object_System_Object__get_Item
+                                                    (pDVar14,(Object *)StringLiteral_RequiredRank,
+                                                                                                          
                                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                 );
-                              uVar4 = CONCAT44(TypeInfo__System__Int32,pPVar3);
-                              if (pPVar3 != (Pool *)0x0) {
-                                if ((pPVar3->klass->_0).element_class !=
-                                    (TypeInfo__System__Int32->_0).element_class)
-                                goto code_?;
-                                puVar10 = (undefined1 *)func_?(pPVar3);
-                                uVar11 = *puVar10;
-                                if (cRam_? == '\0') {
-                                  func_?(_UNK_?);
-                                  cRam_? = '\x01';
-                                }
-                                pSVar12 = (ScaleAnimationBase *)
-                                          func_?(
-                                                  TypeInfo__RequirementNotification___ShowGameTierRequirement_c__AnonStorey4
                                                   );
-                                ScaleAnimationBase::ScaleAnimationBase_Play(pSVar12,0.0,method_00);
-                                if (pSVar12 != (ScaleAnimationBase *)0x0) {
-                                  *(undefined1 *)&(pSVar12->fields)._._._._.m_CachedPtr = uVar11;
-                                  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-                                            RequirementNotification_InstantiatePanel
-                                                      (this,(this->fields).GameTierPanel,
-                                                       (MethodInfo *)0x0);
-                                  *(undefined1 *)&(pSVar12->fields).originalScale.x = 0;
-                                  data = pDVar1;
-                                  if ((((uint)(TypeInfo__GamePassesManager->vtable).Equals.methodPtr
-                                       & 0x2000000) != 0) &&
-                                     ((TypeInfo__GamePassesManager->_1).cctor_started == 0)) {
-                                    func_?(TypeInfo__GamePassesManager);
+                                uVar8 = CONCAT44(TypeInfo__System__Int32,pMVar11);
+                                if (pMVar11 != (MethodInfo *)0x0) {
+                                  if ((((Object__Class *)pMVar11->methodPointer)->_0).element_class
+                                      != (TypeInfo__System__Int32->_0).element_class)
+                                  goto code_?;
+                                  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                                  method = pMVar11;
+                                  puVar15 = (undefined1 *)func_?();
+                                  uVar16 = *puVar15;
+                                  if (cRam_? == '\0') {
+                                    method = (MethodInfo *)
+                                             &
+                                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                                    ;
+                                    data = (Dictionary_2_System_Object_System_Object_ *)
+                                           &UNK_?;
+                                    func_?();
+                                    data = (Dictionary_2_System_Object_System_Object_ *)
+                                           &
+                                           bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                    ;
+                                    func_?();
+                                    func_?();
+                                    func_?();
+                                    func_?(&
+                                                  TypeInfo__RequirementNotification____c__DisplayClass16_0
+                                                  );
+                                    cRam_? = '\x01';
                                   }
-                                  bVar8 = GamePassesManager::GamePassesManager_get_GamePassesActive
-                                                    ((MethodInfo *)0x0);
-                                  if (bVar8 == 0) {
-code_?:
-                                    if (*(char *)&(pSVar12->fields).originalScale.x == '\0') {
-                                      pSVar13 = (this->fields).OffSprite;
+                                  method = (MethodInfo *)
+                                           TypeInfo__RequirementNotification____c__DisplayClass16_0;
+                                  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                                  pOVar7 = (Object *)func_?();
+                                  if (pOVar7 != (Object *)0x0) {
+                                    mscorlib.dll::System::ThrowHelper::
+                                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                                              (pOVar7,ExceptionArgument__Enum_obj,pMVar6);
+                                    *(undefined1 *)&pOVar7[1].klass = uVar16;
+                                    pDVar14 = (Dictionary_2_System_Object_System_Object_ *)
+                                              RequirementNotification_InstantiatePanel
+                                                        (this_02,(this_02->fields).GameTierPanel,
+                                                         (MethodInfo *)0x0);
+                                    *(undefined1 *)&pOVar7[2].klass = 0;
+                                    data = pDVar14;
+                                    if (cRam_? == '\0') {
+                                      func_?(&TypeInfo__GamePassesManager);
+                                      cRam_? = '\x01';
+                                    }
+                                    if (TypeInfo__GamePassesManager->static_fields->
+                                        _GamePassesActive_k__BackingField != 0) {
+                                      bVar17 = *(byte *)&pOVar7[1].klass;
+                                      if (cRam_? == '\0') {
+                                        func_?(&TypeInfo__GamePassesManager);
+                                        cRam_? = '\x01';
+                                      }
+                                      pPVar18 = TypeInfo__GamePassesManager->static_fields->
+                                               playerPlanetData;
+                                      if (pPVar18 == (PlayerPlanetData *)0x0) goto code_?;
+                                      *(bool *)&pOVar7[2].klass =
+                                           bVar17 <= (pPVar18->fields).gamePassTier;
+                                      pDVar14 = data;
+                                    }
+                                    if (*(char *)&pOVar7[2].klass == '\0') {
+                                      pSVar19 = (this_02->fields).OffSprite;
                                     }
                                     else {
-                                      pSVar13 = (this->fields).OnSprite;
+                                      pSVar19 = (this_02->fields).OnSprite;
                                     }
-                                    (pSVar12->fields).state = (int32_t)pSVar13;
-                                    pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                               *)func_?(
+                                    pOVar7[1].monitor = (MonitorData *)pSVar19;
+                                    func_?(&pOVar7[1].monitor,pSVar19);
+                                    pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                                              func_?(
                                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
                                                   );
-                                    UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                    UnityAction`2[UnityEngine::SceneManagement::Scene,UnityEngine::
-                                    SceneManagement::Scene]::
-                                    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                              (pUVar14,(Object *)pSVar12,
-                                               MethodInfo__RequirementNotification___ShowGameTierRequirement_c__AnonStorey4____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                                               ,
-                                               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                                              );
-                                    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents
-                                                ->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                                       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                                        cctor_started == 0)) {
-                                      func_?();
+                                    if (pEVar1 !=
+                                        (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+                                      UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                      UnityAction`2[System::Object,System::Object]::
+                                      UnityAction_2_System_Object_System_Object___ctor
+                                                ((UnityAction_2_System_Object_System_Object_ *)
+                                                 pEVar1,pOVar7,
+                                                 MethodInfo__RequirementNotification____c__DisplayClass16_0___ShowGameTierRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                                                 ,(MethodInfo *)0x0);
+                                      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                                          cctor_finished_or_no_cctor == 0) {
+                                        func_?();
+                                      }
+                                      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                                      ExecuteEvents_Execute_18
+                                                ((GameObject *)pDVar14,(BaseEventData *)0x0,pEVar1,
+                                                 bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                                );
+                                      return;
                                     }
-                                    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                                    ExecuteEvents_Execute_32
-                                              ((GameObject *)pDVar1,(BaseEventData *)0x0,
-                                               (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_
-                                                *)pUVar14,
-                                               bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
-                                              );
-                                    return;
                                   }
-                                  bVar15 = *(byte *)&(pSVar12->fields)._._._._.m_CachedPtr;
-                                  if ((((uint)(TypeInfo__GamePassesManager->vtable).Equals.methodPtr
-                                       & 0x2000000) != 0) &&
-                                     ((TypeInfo__GamePassesManager->_1).cctor_started == 0)) {
-                                    func_?(TypeInfo__GamePassesManager);
-                                  }
-                                  pPVar16 = GamePassesManager::
-                                            GamePassesManager_get_PlayerPlanetData
+                                }
+                              }
+                            }
+                          }
+                          else {
+                            pDVar14 = (pMVar10->fields).data;
+                            if (pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                              pMVar6 = (MethodInfo *)
+                                        mscorlib.dll::System::Collections::Generic::
+                                        Dictionary`2[System::Object,System::Object]::
+                                        Dictionary_2_System_Object_System_Object__get_Item
+                                                  (pDVar14,(Object *)StringLiteral_team,
+                                                                                                      
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                                  );
+                              uVar8 = CONCAT44(TypeInfo__MV__WorldObject__MVTeam,pMVar6);
+                              if (pMVar6 != (MethodInfo *)0x0) {
+                                if ((((Object__Class *)pMVar6->methodPointer)->_0).element_class !=
+                                    (TypeInfo__MV__WorldObject__MVTeam->_0).element_class)
+                                goto code_?;
+                                data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                                method = pMVar6;
+                                puVar20 = (undefined4 *)func_?();
+                                this = (RequirementNotification *)*puVar20;
+                                if (cRam_? == '\0') {
+                                  method = (MethodInfo *)
+                                           &
+                                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                                  ;
+                                  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                                  func_?();
+                                  data = (Dictionary_2_System_Object_System_Object_ *)
+                                         &
+                                         bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                  ;
+                                  func_?();
+                                  this = (RequirementNotification *)
+                                         &TypeInfo__UnityEngine__EventSystems__ExecuteEvents;
+                                  func_?();
+                                  func_?();
+                                  func_?(&
+                                                  TypeInfo__RequirementNotification____c__DisplayClass14_0
+                                                 );
+                                  cRam_? = '\x01';
+                                }
+                                method = (MethodInfo *)
+                                         TypeInfo__RequirementNotification____c__DisplayClass14_0;
+                                data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                                pOVar7 = (Object *)func_?();
+                                if (pOVar7 != (Object *)0x0) {
+                                  mscorlib.dll::System::ThrowHelper::
+                                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                                            (pOVar7,ExceptionArgument__Enum_obj,pMVar11);
+                                  pOVar7[1].klass = (Object__Class *)this;
+                                  RequirementNotification_InstantiatePanel
+                                            (this_02,(this_02->fields).TeamPanel,(MethodInfo *)0x0);
+                                  pMVar21 = MVGameControllerBase::MVGameControllerBase_get_Game
                                                       ((MethodInfo *)0x0);
-                                  if (pPVar16 != (PlayerPlanetData *)0x0) {
-                                    *(bool *)&(pSVar12->fields).originalScale.x =
-                                         bVar15 <= (pPVar16->fields).gamePassTier;
-                                    pDVar1 = data;
-                                    goto code_?;
+                                  if ((pMVar21 != (MVNetworkGame *)0x0) &&
+                                     (pMVar22 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                                          (pMVar21,(MethodInfo *)0x0),
+                                     pMVar22 != (MVLocalPlayer *)0x0)) {
+                                    if (pOVar7[1].klass ==
+                                        (Object__Class *)(pMVar22->fields)._._Team_k__BackingField)
+                                    {
+                                      pMVar21 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                                          ((MethodInfo *)0x0);
+                                      if ((pMVar21 == (MVNetworkGame *)0x0) ||
+                                         (this_01 = (pMVar21->fields).teamManager,
+                                         this_01 == (MVTeamManager *)0x0)) goto code_?;
+                                      iVar9 = MVTeamManager::MVTeamManager_TeamCount
+                                                         (this_01,(MethodInfo *)0x0);
+                                      bVar23 = iVar9 != 1;
+                                    }
+                                    else {
+                                      bVar23 = false;
+                                    }
+                                    *(bool *)&pOVar7[2].klass = bVar23;
+                                    if (bVar23 == false) {
+                                      pSVar19 = (this_02->fields).OffSprite;
+                                    }
+                                    else {
+                                      pSVar19 = (this_02->fields).OnSprite;
+                                    }
+                                    pOVar7[1].monitor = (MonitorData *)pSVar19;
+                                    target_00 = (GameObject *)&pOVar7[1].monitor;
+                                    func_?(target_00,pSVar19);
+                                    pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                                              func_?(
+                                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                                                  );
+                                    if (pEVar1 !=
+                                        (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+                                      UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                      UnityAction`2[System::Object,System::Object]::
+                                      UnityAction_2_System_Object_System_Object___ctor
+                                                ((UnityAction_2_System_Object_System_Object_ *)
+                                                 pEVar1,pOVar7,
+                                                 MethodInfo__RequirementNotification____c__DisplayClass14_0___ShowTeamRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                                                 ,(MethodInfo *)0x0);
+                                      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                                          cctor_finished_or_no_cctor == 0) {
+                                        func_?(
+                                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents
+                                                  );
+                                      }
+                                      pMVar6 = 
+                                      bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                      ;
+                                      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                                      ExecuteEvents_Execute_18
+                                                (target_00,(BaseEventData *)0x0,pEVar1,
+                                                 bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                                );
+                                      goto code_?;
+                                    }
                                   }
                                 }
                               }
                             }
                           }
                         }
-                        else {
-                          pDVar9 = (Dictionary_2_System_Type_Pool_ *)
-                                   PrefabPool::PrefabPool_get_MVBatteryPrefab
-                                             (this_03,(MethodInfo *)0x0);
-                          if (pDVar9 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-                            pPVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System
-                                     ::Type,Pool]::Dictionary_2_System_Type_Pool__get_Item
-                                               (pDVar9,(Type *)StringLiteral_team,
-                                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                               );
-                            uVar4 = CONCAT44(TypeInfo__MV__WorldObject__MVTeam,pPVar3);
-                            if (pPVar3 != (Pool *)0x0) {
-                              if ((pPVar3->klass->_0).element_class !=
-                                  (TypeInfo__MV__WorldObject__MVTeam->_0).element_class)
-                              goto code_?;
-                              pMVar17 = (MVTeam__Enum *)func_?(pPVar3);
-                              RequirementNotification_ShowTeamRequirement
-                                        (this,*pMVar17,(MethodInfo *)0x0);
-                              goto code_?;
+                      }
+                      else {
+                        pDVar14 = (pMVar10->fields).data;
+                        if (pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                          pMVar6 = (MethodInfo *)
+                                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System
+                                    ::Object,System::Object]::
+                                    Dictionary_2_System_Object_System_Object__get_Item
+                                              (pDVar14,(Object *)StringLiteral_starAmount,
+                                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                              );
+                          uVar8 = CONCAT44(TypeInfo__System__Int32,pMVar6);
+                          if (pMVar6 != (MethodInfo *)0x0) {
+                            if ((((Object__Class *)pMVar6->methodPointer)->_0).element_class !=
+                                (TypeInfo__System__Int32->_0).element_class) goto code_?;
+                            data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                            method = pMVar6;
+                            puVar20 = (undefined4 *)func_?();
+                            this = (RequirementNotification *)*puVar20;
+                            if (cRam_? == '\0') {
+                              method = (MethodInfo *)
+                                       &
+                                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                              ;
+                              data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                              func_?();
+                              data = (Dictionary_2_System_Object_System_Object_ *)
+                                     &
+                                     bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                              ;
+                              func_?();
+                              this = (RequirementNotification *)
+                                     &TypeInfo__UnityEngine__EventSystems__ExecuteEvents;
+                              func_?();
+                              func_?();
+                              func_?(&
+                                              TypeInfo__RequirementNotification____c__DisplayClass13_0
+                                             );
+                              cRam_? = '\x01';
+                            }
+                            method = (MethodInfo *)
+                                     TypeInfo__RequirementNotification____c__DisplayClass13_0;
+                            data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                            pOVar7 = (Object *)func_?();
+                            if (pOVar7 != (Object *)0x0) {
+                              mscorlib.dll::System::ThrowHelper::
+                              ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                                        (pOVar7,ExceptionArgument__Enum_obj,method_00);
+                              pOVar7[1].klass = (Object__Class *)this;
+                              RequirementNotification_InstantiatePanel
+                                        (this_02,(this_02->fields).StarPanel,(MethodInfo *)0x0);
+                              pOVar24 = pOVar7[1].klass;
+                              pMVar21 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                                  ((MethodInfo *)0x0);
+                              if ((pMVar21 != (MVNetworkGame *)0x0) &&
+                                 (pMVar22 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                                      (pMVar21,(MethodInfo *)0x0),
+                                 pMVar22 != (MVLocalPlayer *)0x0)) {
+                                iVar9 = MVPlayer::MVPlayer_GetGameStat
+                                                   ((MVPlayer *)pMVar22,
+                                                    GameStatCounterType__Enum_Collectible,
+                                                    (MethodInfo *)0x0);
+                                *(bool *)&pOVar7[2].klass = (int)pOVar24 <= iVar9;
+                                if (iVar9 < (int)pOVar24) {
+                                  pSVar19 = (this_02->fields).OffSprite;
+                                }
+                                else {
+                                  pSVar19 = (this_02->fields).OnSprite;
+                                }
+                                pOVar7[1].monitor = (MonitorData *)pSVar19;
+                                func_?(&pOVar7[1].monitor);
+                                target = 
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                                ;
+                                pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                                          func_?();
+                                if (pEVar1 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
+                                {
+                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                  UnityAction`2[System::Object,System::Object]::
+                                  UnityAction_2_System_Object_System_Object___ctor
+                                            ((UnityAction_2_System_Object_System_Object_ *)pEVar1,
+                                             pOVar7,
+                                             MethodInfo__RequirementNotification____c__DisplayClass13_0___ShowStarRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                                             ,(MethodInfo *)0x0);
+                                  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                                      cctor_finished_or_no_cctor == 0) {
+                                    func_?(
+                                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents
+                                                  );
+                                  }
+                                  pMVar11 = (MethodInfo *)&UNK_?;
+                                  pMVar6 = 
+                                  bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                  ;
+                                  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                                  ExecuteEvents_Execute_18
+                                            ((GameObject *)target,(BaseEventData *)0x0,pEVar1,
+                                             bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                            );
+                                  goto code_?;
+                                }
+                              }
                             }
                           }
                         }
                       }
                     }
-                    else {
-                      pDVar9 = (Dictionary_2_System_Type_Pool_ *)
-                               PrefabPool::PrefabPool_get_MVBatteryPrefab(this_03,(MethodInfo *)0x0)
-                      ;
-                      if (pDVar9 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-                        pPVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                 Type,Pool]::Dictionary_2_System_Type_Pool__get_Item
-                                           (pDVar9,(Type *)StringLiteral_starAmount,
-                                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                           );
-                        uVar4 = CONCAT44(TypeInfo__System__Int32,pPVar3);
-                        if (pPVar3 != (Pool *)0x0) {
-                          if ((pPVar3->klass->_0).element_class !=
-                              (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                          puVar18 = (undefined4 *)func_?(pPVar3);
-                          pvVar19 = (void *)*puVar18;
-                          if (cRam_? == '\0') {
-                            func_?(_UNK_?);
-                            cRam_? = '\x01';
-                          }
-                          pSVar12 = (ScaleAnimationBase *)
-                                    func_?(
-                                                  TypeInfo__RequirementNotification___ShowStarRequirement_c__AnonStorey1
-                                                  );
-                          ScaleAnimationBase::ScaleAnimationBase_Play
-                                    (pSVar12,0.0,(MethodInfo *)in_stack_2);
-                          if (pSVar12 != (ScaleAnimationBase *)0x0) {
-                            (pSVar12->fields)._._._._.m_CachedPtr = pvVar19;
-                            RequirementNotification_InstantiatePanel
-                                      (this,(this->fields).StarPanel,(MethodInfo *)0x0);
-                            pvVar19 = (pSVar12->fields)._._._._.m_CachedPtr;
-                            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr &
-                                 0x2000000) != 0) &&
-                               ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                              func_?(TypeInfo__MVGameControllerBase);
+                  }
+                  else {
+                    pDVar14 = (pMVar10->fields).data;
+                    if (pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                      pMVar6 = (MethodInfo *)
+                                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Object,System::Object]::
+                                Dictionary_2_System_Object_System_Object__get_Item
+                                          (pDVar14,(Object *)StringLiteral_gameCoinAmount,
+                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                          );
+                      uVar8 = CONCAT44(TypeInfo__System__Int32,pMVar6);
+                      if (pMVar6 != (MethodInfo *)0x0) {
+                        if ((((Object__Class *)pMVar6->methodPointer)->_0).element_class !=
+                            (TypeInfo__System__Int32->_0).element_class) goto code_?;
+                        data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                        method = pMVar6;
+                        puVar20 = (undefined4 *)func_?();
+                        this = (RequirementNotification *)*puVar20;
+                        if (cRam_? == '\0') {
+                          method = (MethodInfo *)
+                                   &
+                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                          ;
+                          data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                          func_?();
+                          data = (Dictionary_2_System_Object_System_Object_ *)
+                                 &
+                                 bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                          ;
+                          func_?();
+                          this = (RequirementNotification *)
+                                 &TypeInfo__UnityEngine__EventSystems__ExecuteEvents;
+                          func_?();
+                          func_?();
+                          func_?(&TypeInfo__RequirementNotification____c__DisplayClass12_0)
+                          ;
+                          cRam_? = '\x01';
+                        }
+                        method = (MethodInfo *)
+                                 TypeInfo__RequirementNotification____c__DisplayClass12_0;
+                        data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                        pOVar7 = (Object *)func_?();
+                        if (pOVar7 != (Object *)0x0) {
+                          mscorlib.dll::System::ThrowHelper::
+                          ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                                    (pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)pEVar1);
+                          pOVar7[1].klass = (Object__Class *)this;
+                          RequirementNotification_InstantiatePanel
+                                    (this_02,(this_02->fields).GamecoinPanel,(MethodInfo *)0x0);
+                          pOVar24 = pOVar7[1].klass;
+                          pMVar21 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                              ((MethodInfo *)0x0);
+                          if ((pMVar21 != (MVNetworkGame *)0x0) &&
+                             (this_00 = (pMVar21->fields)._GameCoinManager_k__BackingField,
+                             this_00 != (MVGameCoinManager *)0x0)) {
+                            iVar9 = MVGameCoinManager::MVGameCoinManager_get_GameCoinAmount
+                                               (this_00,(MethodInfo *)0x0);
+                            *(bool *)&pOVar7[2].klass = (int)pOVar24 <= iVar9;
+                            if (iVar9 < (int)pOVar24) {
+                              pSVar19 = (this_02->fields).OffSprite;
                             }
-                            pMVar20 = MVGameControllerBase::MVGameControllerBase_get_Game
-                                                ((MethodInfo *)0x0);
-                            if ((pMVar20 != (MVNetworkGame *)0x0) &&
-                               (pMVar21 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                                    (pMVar20,(MethodInfo *)0x0),
-                               pMVar21 != (MVLocalPlayer *)0x0)) {
-                              iVar6 = MVPlayer::MVPlayer_GetGameStat
-                                                 ((MVPlayer *)pMVar21,
-                                                  GameStatCounterType__Enum_Collectible,
-                                                  (MethodInfo *)0x0);
-                              *(bool *)&(pSVar12->fields).originalScale.x = (int)pvVar19 <= iVar6;
-                              if (iVar6 < (int)pvVar19) {
-                                pSVar13 = (this->fields).OffSprite;
-                              }
-                              else {
-                                pSVar13 = (this->fields).OnSprite;
-                              }
-                              (pSVar12->fields).state = (int32_t)pSVar13;
-                              target = (GameObject *)&UNK_?;
-                              pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                         *)func_?(
+                            else {
+                              pSVar19 = (this_02->fields).OnSprite;
+                            }
+                            pOVar7[1].monitor = (MonitorData *)pSVar19;
+                            method_00 = (MethodInfo *)&pOVar7[1].monitor;
+                            func_?(method_00,pSVar19);
+                            pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                                      func_?(
                                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
                                                   );
-                              UnityEngine.CoreModule.dll::UnityEngine::Events::
-                              UnityAction`2[UnityEngine::SceneManagement::Scene,UnityEngine::
-                              SceneManagement::Scene]::
-                              UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                        (pUVar14,(Object *)pSVar12,
-                                         MethodInfo__RequirementNotification___ShowStarRequirement_c__AnonStorey1____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                                         ,
-                                         MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                                        );
-                              if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->
-                                          vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                                 ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                                  cctor_started == 0)) {
+                            if (pEVar1 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+                              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System
+                              ::Object,System::Object]::
+                              UnityAction_2_System_Object_System_Object___ctor
+                                        ((UnityAction_2_System_Object_System_Object_ *)pEVar1,
+                                         pOVar7,
+                                         MethodInfo__RequirementNotification____c__DisplayClass12_0___ShowGameCoinRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                                         ,(MethodInfo *)0x0);
+                              if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                                  cctor_finished_or_no_cctor == 0) {
                                 func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
                               }
+                              pMVar11 = (MethodInfo *)&UNK_?;
+                              pMVar6 = 
+                              bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                              ;
                               UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                              ExecuteEvents_Execute_32
-                                        (target,(BaseEventData *)0x0,
-                                         (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_
-                                          *)pUVar14,
+                              ExecuteEvents_Execute_18
+                                        ((GameObject *)method_00,(BaseEventData *)0x0,pEVar1,
                                          bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
                                         );
                               goto code_?;
@@ -345,85 +595,86 @@ code_?:
                     }
                   }
                 }
-                else {
-                  pDVar9 = (Dictionary_2_System_Type_Pool_ *)
-                           PrefabPool::PrefabPool_get_MVBatteryPrefab(this_03,(MethodInfo *)0x0);
-                  if (pDVar9 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-                    pPVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Type,Pool]::Dictionary_2_System_Type_Pool__get_Item
-                                       (pDVar9,(Type *)StringLiteral_gameCoinAmount,
-                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                       );
-                    uVar4 = CONCAT44(TypeInfo__System__Int32,pPVar3);
-                    if (pPVar3 != (Pool *)0x0) {
-                      if ((pPVar3->klass->_0).element_class !=
-                          (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                      puVar18 = (undefined4 *)func_?(pPVar3);
-                      pvVar19 = (void *)*puVar18;
-                      if (cRam_? == '\0') {
-                        func_?(_UNK_?);
-                        cRam_? = '\x01';
-                      }
-                      pSVar12 = (ScaleAnimationBase *)
-                                func_?(
-                                               TypeInfo__RequirementNotification___ShowGameCoinRequirement_c__AnonStorey0
-                                               );
-                      ScaleAnimationBase::ScaleAnimationBase_Play
-                                (pSVar12,0.0,(MethodInfo *)in_stack_2);
-                      if (pSVar12 != (ScaleAnimationBase *)0x0) {
-                        (pSVar12->fields)._._._._.m_CachedPtr = pvVar19;
-                        in_stack_2 = this;
-                        RequirementNotification_InstantiatePanel
-                                  (this,(this->fields).GamecoinPanel,(MethodInfo *)0x0);
-                        pvVar19 = (pSVar12->fields)._._._._.m_CachedPtr;
-                        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr &
-                             0x2000000) != 0) &&
-                           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                          func_?(TypeInfo__MVGameControllerBase);
+              }
+              else {
+                pDVar14 = (pMVar10->fields).data;
+                if (pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                  pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Object,System::Object]::
+                            Dictionary_2_System_Object_System_Object__get_Item
+                                      (pDVar14,(Object *)StringLiteral_levelAmount,
+                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                      );
+                  uVar8 = CONCAT44(TypeInfo__System__Int32,pOVar7);
+                  if (pOVar7 != (Object *)0x0) {
+                    if ((pOVar7->klass->_0).element_class !=
+                        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+                    puVar20 = (undefined4 *)func_?(pOVar7);
+                    pOVar24 = (Object__Class *)*puVar20;
+                    if (cRam_? == '\0') {
+                      func_?(&
+                                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                                     );
+                      func_?(&
+                                      bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                                     );
+                      func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+                      func_?(&
+                                      MethodInfo__RequirementNotification____c__DisplayClass15_0___ShowLevelRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                                     );
+                      func_?(&TypeInfo__RequirementNotification____c__DisplayClass15_0);
+                      cRam_? = '\x01';
+                    }
+                    pOVar7 = (Object *)
+                              func_?(
+                                             TypeInfo__RequirementNotification____c__DisplayClass15_0
+                                             );
+                    if (pOVar7 != (Object *)0x0) {
+                      mscorlib.dll::System::ThrowHelper::
+                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                                (pOVar7,ExceptionArgument__Enum_obj,method_00);
+                      pOVar7[1].klass = pOVar24;
+                      method_00 = (MethodInfo *)
+                                  RequirementNotification_InstantiatePanel
+                                            (this,(this->fields).LevelPanel,(MethodInfo *)0x0);
+                      pOVar24 = pOVar7[1].klass;
+                      pMVar21 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                          ((MethodInfo *)0x0);
+                      if ((pMVar21 != (MVNetworkGame *)0x0) &&
+                         (pMVar22 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                              (pMVar21,(MethodInfo *)0x0),
+                         pMVar22 != (MVLocalPlayer *)0x0)) {
+                        iVar3 = (pMVar22->fields)._.level;
+                        *(bool *)&pOVar7[2].klass = (int)pOVar24 <= iVar3;
+                        if (iVar3 < (int)pOVar24) {
+                          pSVar19 = (this->fields).OffSprite;
                         }
-                        pMVar20 = MVGameControllerBase::MVGameControllerBase_get_Game
-                                            ((MethodInfo *)0x0);
-                        if ((pMVar20 != (MVNetworkGame *)0x0) &&
-                           (this_04 = (MVGameCoinManager *)
-                                      TierOnDeathProgress+<DoTierProgress>c__Iterator0::
-                                      TierOnDeathProgress_DoTierProgress_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                                ((TierOnDeathProgress_DoTierProgress_c_Iterator0 *)
-                                                 pMVar20,(MethodInfo *)0x0),
-                           this_04 != (MVGameCoinManager *)0x0)) {
-                          iVar6 = MVGameCoinManager::MVGameCoinManager_get_GameCoinAmount
-                                             (this_04,(MethodInfo *)0x0);
-                          *(bool *)&(pSVar12->fields).originalScale.x = (int)pvVar19 <= iVar6;
-                          if (iVar6 < (int)pvVar19) {
-                            pSVar13 = (this->fields).OffSprite;
-                          }
-                          else {
-                            pSVar13 = (this->fields).OnSprite;
-                          }
-                          (pSVar12->fields).state = (int32_t)pSVar13;
-                          pEVar22 = 
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
-                          ;
-                          pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                     *)func_?();
-                          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine
-                          ::SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                    (pUVar14,(Object *)pSVar12,
-                                     MethodInfo__RequirementNotification___ShowGameCoinRequirement_c__AnonStorey0____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                                     ,
-                                     MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                                    );
-                          if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).
-                                      Equals.methodPtr & 0x2000000) != 0) &&
-                             ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started
-                              == 0)) {
+                        else {
+                          pSVar19 = (this->fields).OnSprite;
+                        }
+                        pOVar7[1].monitor = (MonitorData *)pSVar19;
+                        func_?(&pOVar7[1].monitor,pSVar19);
+                        pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                                  func_?(
+                                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                                                 );
+                        if (pEVar1 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                          Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                                    ((UnityAction_2_System_Object_System_Object_ *)pEVar1,pOVar7,
+                                     MethodInfo__RequirementNotification____c__DisplayClass15_0___ShowLevelRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                                     ,(MethodInfo *)0x0);
+                          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                              cctor_finished_or_no_cctor == 0) {
                             func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
                           }
+                          pMVar11 = (MethodInfo *)&UNK_?;
+                          pMVar6 = 
+                          bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                          ;
                           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                          ExecuteEvents_Execute_32
-                                    ((GameObject *)pEVar22,(BaseEventData *)0x0,
-                                     (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_ *
-                                     )pUVar14,
+                          ExecuteEvents_Execute_18
+                                    ((GameObject *)method_00,(BaseEventData *)0x0,pEVar1,
                                      bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
                                     );
                           goto code_?;
@@ -434,104 +685,17 @@ code_?:
                 }
               }
             }
-            else {
-              pDVar9 = (Dictionary_2_System_Type_Pool_ *)
-                       PrefabPool::PrefabPool_get_MVBatteryPrefab(this_03,(MethodInfo *)0x0);
-              if (pDVar9 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-                pPVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]
-                         ::Dictionary_2_System_Type_Pool__get_Item
-                                   (pDVar9,(Type *)StringLiteral_levelAmount,
-                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                   );
-                uVar4 = CONCAT44(TypeInfo__System__Int32,pPVar3);
-                if (pPVar3 != (Pool *)0x0) {
-                  if ((pPVar3->klass->_0).element_class !=
-                      (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                  puVar18 = (undefined4 *)func_?(pPVar3);
-                  pvVar19 = (void *)*puVar18;
-                  if (cRam_? == '\0') {
-                    func_?(_UNK_?);
-                    cRam_? = '\x01';
-                  }
-                  pSVar12 = (ScaleAnimationBase *)
-                            func_?(
-                                           TypeInfo__RequirementNotification___ShowLevelRequirement_c__AnonStorey3
-                                           );
-                  ScaleAnimationBase::ScaleAnimationBase_Play
-                            (pSVar12,0.0,(MethodInfo *)in_stack_2);
-                  if (pSVar12 != (ScaleAnimationBase *)0x0) {
-                    (pSVar12->fields)._._._._.m_CachedPtr = pvVar19;
-                    in_stack_2 = this;
-                    RequirementNotification_InstantiatePanel
-                              (this,(this->fields).LevelPanel,(MethodInfo *)0x0);
-                    pvVar19 = (pSVar12->fields)._._._._.m_CachedPtr;
-                    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr &
-                         0x2000000) != 0) &&
-                       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                      func_?(TypeInfo__MVGameControllerBase);
-                    }
-                    pMVar20 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
-                    ;
-                    if ((pMVar20 != (MVNetworkGame *)0x0) &&
-                       (pMVar21 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                            (pMVar20,(MethodInfo *)0x0),
-                       pMVar21 != (MVLocalPlayer *)0x0)) {
-                      pOVar23 = System.dll::System::Collections::Generic::
-                                SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                                ::Single,System::Object]::
-                                SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                          ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                            *)pMVar21,(MethodInfo *)0x0);
-                      *(bool *)&(pSVar12->fields).originalScale.x = (int)pvVar19 <= (int)pOVar23;
-                      if ((int)pOVar23 < (int)pvVar19) {
-                        pSVar13 = (this->fields).OffSprite;
-                      }
-                      else {
-                        pSVar13 = (this->fields).OnSprite;
-                      }
-                      (pSVar12->fields).state = (int32_t)pSVar13;
-                      pEVar22 = 
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
-                      ;
-                      pUVar14 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                 *)func_?();
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                      SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                (pUVar14,(Object *)pSVar12,
-                                 MethodInfo__RequirementNotification___ShowLevelRequirement_c__AnonStorey3____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                                 ,
-                                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                                );
-                      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).
-                                  Equals.methodPtr & 0x2000000) != 0) &&
-                         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started ==
-                          0)) {
-                        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-                      }
-                      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                      ExecuteEvents_Execute_32
-                                ((GameObject *)pEVar22,(BaseEventData *)0x0,
-                                 (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_ *)
-                                 pUVar14,
-                                 bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
-                                );
-                      goto code_?;
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
     }
   }
-  uVar4 = func_?(0);
 code_?:
-  func_?(uVar4);
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  uVar8 = func_?();
+code_?:
+  func_?(uVar8);
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 
@@ -544,48 +708,45 @@ Assembly-CSharp.dll::RequirementNotification::RequirementNotification_Instantiat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   if (panel != (NotificationRequirementPanel *)0x0) {
-    pXVar1 = (XpBoostParticlePreviewer *)
-             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)panel,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                       (pXVar1,
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                       );
-    if (pXVar1 != (XpBoostParticlePreviewer *)0x0) {
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          ((GameObject *)pXVar1,(MethodInfo *)0x0);
-      this_00 = (this->fields).Layout;
-      if (this_00 != (RectTransform *)0x0) {
-        parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)this_00,(MethodInfo *)0x0);
-        if (this_02 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_02,parent,0,(MethodInfo *)0x0);
-          this_01 = (this->fields).PanelsToDestroy;
-          if (this_01 != (List_1_UnityEngine_GameObject_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-            List_1_UIPushOption__Add
-                      ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)pXVar1,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                      );
-            return (GameObject *)pXVar1;
-          }
-        }
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)panel,(MethodInfo *)0x0);
+    this_00 = (this->fields).Layout;
+    if (this_00 != (RectTransform *)0x0) {
+      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this_00,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      pGVar1 = (GameObject *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                         ((Object *)pGVar1,parent,0,
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
+                         );
+      this_01 = (this->fields).PanelsToDestroy;
+      if (this_01 != (List_1_UnityEngine_GameObject_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_01,(Object *)pGVar1,
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                  );
+        return pGVar1;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
-  pGVar3 = (GameObject *)(*pcVar2)();
-  return pGVar3;
+  pGVar1 = (GameObject *)(*pcVar2)();
+  return pGVar1;
 }
 
 
@@ -596,60 +757,53 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                   );
+    func_?(&
+                    bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__RequirementNotification____c__DisplayClass12_0___ShowGameCoinRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__RequirementNotification____c__DisplayClass12_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RequirementNotification___ShowGameCoinRequirement_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = (void *)gameCoins;
+  target = (GameObject *)func_?(TypeInfo__RequirementNotification____c__DisplayClass12_0);
+  if (target != (GameObject *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)target,ExceptionArgument__Enum_obj,unaff_EBX);
+    (target->fields)._.m_CachedPtr = (void *)gameCoins;
     RequirementNotification_InstantiatePanel(this,(this->fields).GamecoinPanel,(MethodInfo *)0x0);
-    pvVar1 = (this_00->fields)._._._._.m_CachedPtr;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
+    pvVar1 = (target->fields)._.m_CachedPtr;
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar2 != (MVNetworkGame *)0x0) &&
+       (this_00 = (pMVar2->fields)._GameCoinManager_k__BackingField,
+       this_00 != (MVGameCoinManager *)0x0)) {
+      iVar3 = MVGameCoinManager::MVGameCoinManager_get_GameCoinAmount(this_00,(MethodInfo *)0x0);
+      *(bool *)&target[1].monitor = (int)pvVar1 <= iVar3;
+      if (iVar3 < (int)pvVar1) {
+        pGVar4 = (GameObject__Class *)(this->fields).OffSprite;
+      }
+      else {
+        pGVar4 = (GameObject__Class *)(this->fields).OnSprite;
+      }
+      target[1].klass = pGVar4;
       func_?();
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_01 != (MVNetworkGame *)0x0) {
-      this_02 = (MVGameCoinManager *)
-                TierOnDeathProgress+<DoTierProgress>c__Iterator0::
-                TierOnDeathProgress_DoTierProgress_c_Iterator0_System_Collections_IEnumerator_get_Current
-                          ((TierOnDeathProgress_DoTierProgress_c_Iterator0 *)this_01,
-                           (MethodInfo *)0x0);
-      if (this_02 != (MVGameCoinManager *)0x0) {
-        iVar2 = MVGameCoinManager::MVGameCoinManager_get_GameCoinAmount(this_02,(MethodInfo *)0x0);
-        *(bool *)&(this_00->fields).originalScale.x = (int)pvVar1 <= iVar2;
-        if (iVar2 < (int)pvVar1) {
-          pSVar3 = (this->fields).OffSprite;
-        }
-        else {
-          pSVar3 = (this->fields).OnSprite;
-        }
-        (this_00->fields).state = (int32_t)pSVar3;
-        pEStack4 =
-             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
-        ;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this_00,
-                   MethodInfo__RequirementNotification___ShowGameCoinRequirement_c__AnonStorey0____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+      functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      if (functor != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)functor,(Object *)target,
+                   MethodInfo__RequirementNotification____c__DisplayClass12_0___ShowGameCoinRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
           func_?();
         }
-        pEStack4 =
-             (ExecuteEvents_EventFunction_1_INotificationRequirementPanel___Class *)&UNK_?;
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_32
-                  ((GameObject *)this_03,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_ *)this_03,
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18
+                  (target,(BaseEventData *)0x0,functor,
                    bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
                   );
         return;
@@ -670,60 +824,73 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                   );
+    func_?(&
+                    bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__RequirementNotification____c__DisplayClass16_0___ShowGameTierRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__RequirementNotification____c__DisplayClass16_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RequirementNotification___ShowGameTierRequirement_c__AnonStorey4;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    *(undefined1 *)&(this_00->fields)._._._._.m_CachedPtr = (undefined1)tier;
+  value = (Object *)func_?(TypeInfo__RequirementNotification____c__DisplayClass16_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    *(undefined1 *)&value[1].klass = (undefined1)tier;
     target = RequirementNotification_InstantiatePanel
                        (this,(this->fields).GameTierPanel,(MethodInfo *)0x0);
-    *(undefined1 *)&(this_00->fields).originalScale.x = 0;
-    if ((((uint)(TypeInfo__GamePassesManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__GamePassesManager->_1).cctor_started == 0)) {
-      func_?();
+    *(undefined1 *)&value[2].klass = 0;
+    pGVar1 = target;
+    if (cRam_? == '\0') {
+      pGVar1 = (GameObject *)&UNK_?;
+      func_?(&TypeInfo__GamePassesManager);
+      cRam_? = '\x01';
     }
-    bVar1 = GamePassesManager::GamePassesManager_get_GamePassesActive((MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      bVar2 = *(byte *)&(this_00->fields)._._._._.m_CachedPtr;
-      if ((((uint)(TypeInfo__GamePassesManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__GamePassesManager->_1).cctor_started == 0)) {
-        func_?();
+    if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
+      bVar2 = *(byte *)&value[1].klass;
+      target = pGVar1;
+      if (cRam_? == '\0') {
+        target = (GameObject *)&UNK_?;
+        func_?(&TypeInfo__GamePassesManager);
+        cRam_? = '\x01';
       }
-      pPVar3 = GamePassesManager::GamePassesManager_get_PlayerPlanetData((MethodInfo *)0x0);
+      pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
       if (pPVar3 == (PlayerPlanetData *)0x0) goto code_?;
-      *(bool *)&(this_00->fields).originalScale.x = bVar2 <= (pPVar3->fields).gamePassTier;
+      *(bool *)&value[2].klass = bVar2 <= (pPVar3->fields).gamePassTier;
     }
-    if (*(char *)&(this_00->fields).originalScale.x == '\0') {
+    if (*(char *)&value[2].klass == '\0') {
       pSVar4 = (this->fields).OffSprite;
     }
     else {
       pSVar4 = (this->fields).OnSprite;
     }
-    (this_00->fields).state = (int32_t)pSVar4;
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this_00,
-               MethodInfo__RequirementNotification___ShowGameTierRequirement_c__AnonStorey4____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
+    value[1].monitor = (MonitorData *)pSVar4;
+    func_?(&value[1].monitor,pSVar4);
+    functor = (ExecuteEvents_EventFunction_1_System_Object_ *)
+              func_?(
+                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                             );
+    if (functor != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)functor,value,
+                 MethodInfo__RequirementNotification____c__DisplayClass16_0___ShowGameTierRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18
+                (target,(BaseEventData *)0x0,functor,
+                 bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                );
+      return;
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_32
-              (target,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_ *)this_01,
-               bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
-              );
-    return;
   }
 code_?:
   func_?();
@@ -740,64 +907,57 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowL
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                   );
+    func_?(&
+                    bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__RequirementNotification____c__DisplayClass15_0___ShowLevelRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__RequirementNotification____c__DisplayClass15_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RequirementNotification___ShowLevelRequirement_c__AnonStorey3;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = (void *)level;
+  value = (Object *)func_?(TypeInfo__RequirementNotification____c__DisplayClass15_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EBX);
+    value[1].klass = (Object__Class *)level;
     RequirementNotification_InstantiatePanel(this,(this->fields).LevelPanel,(MethodInfo *)0x0);
-    pvVar1 = (this_00->fields)._._._._.m_CachedPtr;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_01 != (MVNetworkGame *)0x0) {
-      this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-      if (this_02 != (MVLocalPlayer *)0x0) {
-        pOVar2 = System.dll::System::Collections::Generic::
-                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                 ::Single,System::Object]::
-                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                           ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                             *)this_02,(MethodInfo *)0x0);
-        *(bool *)&(this_00->fields).originalScale.x = (int)pvVar1 <= (int)pOVar2;
-        if ((int)pOVar2 < (int)pvVar1) {
-          pSVar3 = (this->fields).OffSprite;
+    pOVar1 = value[1].klass;
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (this_00 != (MVNetworkGame *)0x0) {
+      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+      if (pMVar2 != (MVLocalPlayer *)0x0) {
+        iVar3 = (pMVar2->fields)._.level;
+        *(bool *)&value[2].klass = (int)pOVar1 <= iVar3;
+        if (iVar3 < (int)pOVar1) {
+          pSVar4 = (this->fields).OffSprite;
         }
         else {
-          pSVar3 = (this->fields).OnSprite;
+          pSVar4 = (this->fields).OnSprite;
         }
-        (this_00->fields).state = (int32_t)pSVar3;
-        pEStack4 =
-             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
-        ;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this_00,
-                   MethodInfo__RequirementNotification___ShowLevelRequirement_c__AnonStorey3____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-          func_?();
+        value[1].monitor = (MonitorData *)pSVar4;
+        func_?();
+        functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        if (functor != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)functor,value,
+                     MethodInfo__RequirementNotification____c__DisplayClass15_0___ShowLevelRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18
+                    ((GameObject *)&UNK_?,(BaseEventData *)0x0,functor,
+                     bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                    );
+          return;
         }
-        pEStack4 =
-             (ExecuteEvents_EventFunction_1_INotificationRequirementPanel___Class *)&UNK_?;
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_32
-                  ((GameObject *)this_03,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_ *)this_03,
-                   bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
-                  );
-        return;
       }
     }
   }
@@ -815,67 +975,65 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowS
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                   );
+    func_?(&
+                    bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__RequirementNotification____c__DisplayClass13_0___ShowStarRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__RequirementNotification____c__DisplayClass13_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RequirementNotification___ShowStarRequirement_c__AnonStorey1;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = (void *)stars;
+  value = (Object *)func_?(TypeInfo__RequirementNotification____c__DisplayClass13_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EBX);
+    value[1].klass = (Object__Class *)stars;
     RequirementNotification_InstantiatePanel(this,(this->fields).StarPanel,(MethodInfo *)0x0);
-    pvVar1 = (this_00->fields)._._._._.m_CachedPtr;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_01 != (MVNetworkGame *)0x0) {
-      this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-      if (this_02 != (MVLocalPlayer *)0x0) {
+    pOVar1 = value[1].klass;
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (this_00 != (MVNetworkGame *)0x0) {
+      this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+      if (this_01 != (MVLocalPlayer *)0x0) {
         iVar2 = MVPlayer::MVPlayer_GetGameStat
-                          ((MVPlayer *)this_02,GameStatCounterType__Enum_Collectible,
+                          ((MVPlayer *)this_01,GameStatCounterType__Enum_Collectible,
                            (MethodInfo *)0x0);
-        *(bool *)&(this_00->fields).originalScale.x = (int)pvVar1 <= iVar2;
-        if (iVar2 < (int)pvVar1) {
+        *(bool *)&value[2].klass = (int)pOVar1 <= iVar2;
+        if (iVar2 < (int)pOVar1) {
           pSVar3 = (this->fields).OffSprite;
         }
         else {
           pSVar3 = (this->fields).OnSprite;
         }
-        (this_00->fields).state = (int32_t)pSVar3;
-        pEStack4 =
-             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
-        ;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this_00,
-                   MethodInfo__RequirementNotification___ShowStarRequirement_c__AnonStorey1____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-          func_?();
+        value[1].monitor = (MonitorData *)pSVar3;
+        func_?();
+        functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        if (functor != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)functor,value,
+                     MethodInfo__RequirementNotification____c__DisplayClass13_0___ShowStarRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18
+                    ((GameObject *)&UNK_?,(BaseEventData *)0x0,functor,
+                     bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                    );
+          return;
         }
-        pEStack4 =
-             (ExecuteEvents_EventFunction_1_INotificationRequirementPanel___Class *)&UNK_?;
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_32
-                  ((GameObject *)&UNK_?,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_ *)this_03,
-                   bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
-                  );
-        return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -887,119 +1045,74 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowT
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
+                   );
+    func_?(&
+                    bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__RequirementNotification____c__DisplayClass14_0___ShowTeamRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__RequirementNotification____c__DisplayClass14_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RequirementNotification___ShowTeamRequirement_c__AnonStorey2;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = (void *)team;
+  value = (Object *)func_?(TypeInfo__RequirementNotification____c__DisplayClass14_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)team;
     target = RequirementNotification_InstantiatePanel
                        (this,(this->fields).TeamPanel,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 != (MVNetworkGame *)0x0) {
-      this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-      if (this_01 != (MVLocalPlayer *)0x0) {
-        pIVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                 KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                 KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                           ((KogamaSettingNumericBase_1_System_Single_ *)this_01,(MethodInfo *)0x0);
-        if ((this_00->fields)._._._._.m_CachedPtr != pIVar2) {
-          bVar3 = false;
-code_?:
-          *(bool *)&(this_00->fields).originalScale.x = bVar3;
-          if (bVar3 == false) {
-            pSVar4 = (this->fields).OffSprite;
-          }
-          else {
-            pSVar4 = (this->fields).OnSprite;
-          }
-          (this_00->fields).state = (int32_t)pSVar4;
-          this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                     *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (this_03,(Object *)this_00,
-                     MethodInfo__RequirementNotification___ShowTeamRequirement_c__AnonStorey2____m__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
-                     ,
-                     MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>__EventFunction_System__Object__void__
-                    );
-          if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr
-               & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+      if (pMVar2 != (MVLocalPlayer *)0x0) {
+        if (value[1].klass == (Object__Class *)(pMVar2->fields)._._Team_k__BackingField) {
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar1 == (MVNetworkGame *)0x0) ||
+             (this_00 = (pMVar1->fields).teamManager, this_00 == (MVTeamManager *)0x0))
+          goto code_?;
+          iVar3 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
+          bVar4 = iVar3 != 1;
+        }
+        else {
+          bVar4 = false;
+        }
+        *(bool *)&value[2].klass = bVar4;
+        if (bVar4 == false) {
+          pSVar5 = (this->fields).OffSprite;
+        }
+        else {
+          pSVar5 = (this->fields).OnSprite;
+        }
+        value[1].monitor = (MonitorData *)pSVar5;
+        func_?();
+        functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        if (functor != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)functor,value,
+                     MethodInfo__RequirementNotification____c__DisplayClass14_0___ShowTeamRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
             func_?();
           }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_32
-                    (target,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_INotificationRequirementPanel_ *)this_03,
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18
+                    (target,(BaseEventData *)0x0,functor,
                      bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
                     );
           return;
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          this_02 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                              ((DayNightCycle *)pMVar1,(MethodInfo *)0x0);
-          if (this_02 != (SkyParam *)0x0) {
-            iVar5 = MVTeamManager::MVTeamManager_TeamCount
-                              ((MVTeamManager *)this_02,(MethodInfo *)0x0);
-            bVar3 = iVar5 != 1;
-            goto code_?;
-          }
-        }
       }
     }
   }
+code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
-  return;
-}
-
-
-/* Void <Initialize>m__0(GameObject) */
-
-void Assembly-CSharp.dll::RequirementNotification::RequirementNotification__Initialize_m__0
-               (GameObject *x,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcRam_? = pcVar1;
-  (*pcRam_?)(x,0);
   return;
 }
 
@@ -1011,25 +1124,27 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_UnityEngine_GameObject_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-            );
-  (this->fields).PanelsToDestroy = (List_1_UnityEngine_GameObject_ *)this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_UnityEngine_GameObject_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    (this->fields).PanelsToDestroy = this_00;
+    func_?(&(this->fields).PanelsToDestroy,this_00);
+    Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+    Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

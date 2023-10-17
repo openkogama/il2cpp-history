@@ -8,88 +8,59 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnum
+                   );
     cRam_? = '\x01';
   }
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._._Parent_k__BackingField = parent;
+  func_?(&(this->fields)._._._Parent_k__BackingField,parent);
   (this->fields)._._.key = key;
-  obj = (Dictionary_2_System_String_System_Object_ *)
-        func_?(
-                       TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnum
-                       );
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)obj,0.0,unaff_EBX);
-  pSVar1 = (String__Array *)
-           func_?(TypeInfo__MV__WorldObject__AntiCheat__RangeValidator<int>);
-  System.Core.dll::System::Linq::SortContext`1[System::Collections::Generic::KeyValuePair`2[System::
-  Int32,System::Int32]]::
-  SortContext_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32___ctor
-            ((SortContext_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_ *)
-             pSVar1,min,
-             (SortContext_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_ *)
-             max,
-             MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__RangeValidator_int__int_);
-  (obj->fields).keySlots = pSVar1;
-  if (pSVar1 != (String__Array *)0x0) {
-    value = (int32_t)
-            MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_;
-    AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
-              ((RangeValidator_1_System_Int32_ *)pSVar1,
-               (int32_t)
-               MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_,0,
-               MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_);
+  func_?(&this->fields,key);
+  this_01 = (KogamaSettingEnum *)
+            func_?(
+                           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnum
+                           );
+  if (this_01 != (KogamaSettingEnum *)0x0) {
     if (cRam_? == '\0') {
-      method = _UNK_?;
-      parent = (KogamaSettingsCollectionBase *)&UNK_?;
-      func_?();
+      func_?(&
+                      MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_
+                     );
+      func_?(&
+                      MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__RangeValidator_int__int_
+                     );
+      func_?(&TypeInfo__MV__WorldObject__AntiCheat__RangeValidator<int>);
       cRam_? = '\x01';
     }
-    value_00 = value;
-    pSVar1 = (obj->fields).keySlots;
-    if (pSVar1 != (String__Array *)0x0) {
-      method = MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_;
-      parent = (KogamaSettingsCollectionBase *)0x1;
-      max = value;
-      value = (int32_t)&UNK_?;
-      min = (int32_t)pSVar1;
-      value = AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
-                        ((RangeValidator_1_System_Int32_ *)pSVar1,value_00,1,
-                         MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_
-                        );
-      method = (MethodInfo *)&value;
-      parent = (KogamaSettingsCollectionBase *)TypeInfo__System__Int32;
-      max = (int32_t)&UNK_?;
-      pIVar2 = (Int32__Array *)func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this_01,ExceptionArgument__Enum_obj,unaff_EBX);
+    this_02 = (Tuple_2_Int32_Int32_ *)
+              func_?(TypeInfo__MV__WorldObject__AntiCheat__RangeValidator<int>);
+    if (this_02 != (Tuple_2_Int32_Int32_ *)0x0) {
+      mscorlib.dll::System::Tuple`2[Int32,Int32]::Tuple_2_Int32_Int32___ctor
+                (this_02,min,max,
+                 MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__RangeValidator_int__int_
+                );
+      (this_01->fields).RangeValidator = (RangeValidator_1_System_Int32_ *)this_02;
+      func_?(&(this_01->fields).RangeValidator,this_02);
+      this_00 = (this_01->fields).RangeValidator;
+      if (this_00 != (RangeValidator_1_System_Int32_ *)0x0) {
+        AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
+                  (this_00,value,0,
+                   MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_)
+        ;
+        KogamaSettingEnum::KogamaSettingEnum_set_EnumValue(this_01,value,(MethodInfo *)0x0);
+        (this->fields).KogamaSettingEnum = this_01;
+        func_?(&(this->fields).KogamaSettingEnum,this_01);
+        return;
       }
-      this_00 = (obj->fields).linkSlots;
-      (obj->fields).table = pIVar2;
-      if (this_00 != (Link__Array *)0x0) {
-        mscorlib.dll::System::Action`1[System::Collections::Generic::Dictionary`2[System::
-        String,System::Object]]::
-        Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object__Invoke
-                  ((Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)
-                   this_00,obj,
-                   MethodInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>__Invoke_MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting_
-                  );
-      }
-      (this->fields).KogamaSettingEnum = (KogamaSettingEnum *)obj;
-      return;
     }
   }
-  method = (MethodInfo *)0x0;
-  parent = (KogamaSettingsCollectionBase *)&UNK_?;
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -104,7 +75,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
   pKVar1 = (this->fields).KogamaSettingEnum;
   if (pKVar1 != (KogamaSettingEnum *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__System__Int32);
       cRam_? = '\x01';
     }
     pOVar2 = (pKVar1->fields)._.value;
@@ -117,7 +88,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
       goto code_?;
     }
   }
-  func_?(0);
+  func_?();
   pOVar2 = extraout_ECX;
   pIVar3 = extraout_EDX;
 code_?:
@@ -125,5 +96,42 @@ code_?:
   pcVar5 = (code *)swi(3);
   iVar6 = (*pcVar5)();
   return iVar6;
+}
+
+
+/* Void set_EnumValue(Int32) */
+
+void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
+     KogamaSettingEnumBase::KogamaSettingEnumBase_set_EnumValue
+               (KogamaSettingEnumBase *this,int32_t value,MethodInfo *method)
+
+{
+  pKVar1 = (this->fields).KogamaSettingEnum;
+  if (pKVar1 != (KogamaSettingEnum *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_00 = (pKVar1->fields).RangeValidator;
+    if (this_00 != (RangeValidator_1_System_Int32_ *)0x0) {
+      AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
+                (this_00,value,1,
+                 MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_);
+      pOVar2 = (Object *)func_?();
+      (pKVar1->fields)._.value = pOVar2;
+      func_?();
+      if ((pKVar1->fields)._.OnValueChange !=
+          (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
+        (*(((pKVar1->fields)._.OnValueChange)->fields)._._.invoke_impl)();
+      }
+      return;
+    }
+  }
+  uVar3 = func_?(&stack0xffffffe8);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
 }
 

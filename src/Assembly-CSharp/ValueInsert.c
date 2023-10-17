@@ -7,20 +7,23 @@ Assembly-CSharp.dll::ValueInsert::ValueInsert_AddFloat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
+                   );
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   pVVar1 = this;
   this_00 = (this->fields).values;
   this = (ValueInsert *)input;
-  item = func_?(TypeInfo__System__Single,&this);
+  item = (Object *)func_?(TypeInfo__System__Single,&this);
   if (this_00 != (List_1_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_00,item,
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,item,
                MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
     return pVVar1;
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   pVVar1 = (ValueInsert *)(*pcVar2)();
   return pVVar1;
@@ -35,20 +38,23 @@ Assembly-CSharp.dll::ValueInsert::ValueInsert_AddInt
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
+                   );
     cRam_? = '\x01';
   }
   pVVar1 = this;
   this = (ValueInsert *)input;
   this_00 = (pVVar1->fields).values;
-  item = func_?(TypeInfo__System__Int32,&this);
+  item = (Object *)func_?(TypeInfo__System__Int32,&this);
   if (this_00 != (List_1_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_00,item,
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,item,
                MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
     return pVVar1;
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   pVVar1 = (ValueInsert *)(*pcVar2)();
   return pVVar1;
@@ -63,17 +69,19 @@ Assembly-CSharp.dll::ValueInsert::ValueInsert_AddString
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields).values;
   if (this_00 != (List_1_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)input,
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,(Object *)input,
                MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
     return this;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pVVar2 = (ValueInsert *)(*pcVar1)();
   return pVVar2;
@@ -87,20 +95,23 @@ Assembly-CSharp.dll::ValueInsert::ValueInsert_GetValueParams(ValueInsert *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_VoxelHit_ *)(this->fields).values;
-  if (this_00 != (List_1_VoxelHit_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)(this->fields).values;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pUVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+             UnitySynchronizationContext+WorkRequest]::
+             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
                        (this_00,
                         MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
-    return (Object__Array *)pVVar1;
+    return (Object__Array *)pUVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pOVar3 = (Object__Array *)(*pcVar2)();
-  return pOVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pOVar5 = (Object__Array *)(*pcVar4)();
+  return pOVar5;
 }
 
 
@@ -110,15 +121,27 @@ void Assembly-CSharp.dll::ValueInsert::ValueInsert__ctor(ValueInsert *this,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::Object>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_System_Object_ *)
             func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
-  (this->fields).values = (List_1_System_Object_ *)this_00;
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).values = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

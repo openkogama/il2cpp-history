@@ -7,13 +7,23 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_AttributeValue__0___AttributePoi);
     cRam_? = '\x01';
   }
   pOVar1 = (Object__Array *)func_?(TypeInfo__System__Object,4);
   pOStack_2 = pOVar1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
+                   );
+    func_?(&
+                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumeric<float>__get_NumericValue__
+                   );
     cRam_? = '\x01';
   }
   pKVar3 = (this->fields)._.KogamaSettingNumeric;
@@ -26,51 +36,41 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
                              MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumeric<float>__get_NumericValue__
                             ), pIVar4 == (IAttributePointFloatCalculator *)0x0)) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar7 = func_?(0,0);
+    uVar7 = func_?(0);
     func_?(uVar7);
 code_?:
-    uVar7 = func_?(0,0);
+    uVar7 = func_?(0);
     func_?(uVar7);
 code_?:
-    uVar7 = func_?(0,0);
-    func_?(uVar7);
-code_?:
-    uVar7 = func_?(0,0);
-    func_?(uVar7);
-code_?:
-    uVar7 = func_?(0,0);
-    func_?(uVar7);
-code_?:
-    uVar7 = func_?(0,0);
+    uVar7 = func_?(0);
     func_?(uVar7);
   }
   else {
-    pIStack_8 = pIStack_5->klass;
-    uVar9 = 0;
-    uStack_10 = 0;
-    uVar11._0_1_ = (pIStack_8->_1).rank;
-    uVar11._1_1_ = (pIStack_8->_1).minimumAlignment;
+    uVar8 = 0;
+    uStack_9 = 0;
+    pIStack_10 = pIStack_5->klass;
+    uVar11 = (pIStack_10->_1).interface_offsets_count;
     if (uVar11 != 0) {
       do {
         pOVar1 = pOStack_2;
-        if (pIStack_8->interfaceOffsets[uVar9].interfaceType ==
+        if (pIStack_10->interfaceOffsets[uVar8].interfaceType ==
             (Il2CppClass *)
             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
            ) {
-          ppMVar12 = &(&pIStack_8->vtable)[pIStack_8->interfaceOffsets[uVar9].offset].Calc.method;
+          pIVar12 = &pIStack_10->vtable + pIStack_10->interfaceOffsets[uVar8].offset;
           goto code_?;
         }
-        uVar9 = uVar9 + 1;
-      } while (uVar9 < uVar11);
+        uVar8 = uVar8 + 1;
+      } while (uVar8 < uVar11);
     }
-    ppMVar12 = (MethodInfo **)
-              func_?(pIStack_5,
-                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
-                              ,0);
+    pIVar12 = (IAttributePointFloatCalculator__VTable *)
+             func_?(pIStack_5,
+                             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
+                             ,0);
 code_?:
-    uStack_13 = (*(code *)*ppMVar12)(pIStack_5,fStack_6,ppMVar12[1]);
+    uStack_13 = (*(pIVar12->Calc).methodPtr)(pIStack_5,fStack_6,(pIVar12->Calc).method);
     pOVar14 = (Object *)func_?(TypeInfo__System__Int32,&uStack_13);
     if (pOVar1 == (Object__Array *)0x0) goto code_?;
     if ((pOVar14 != (Object *)0x0) &&
@@ -78,45 +78,45 @@ code_?:
     goto code_?;
     if (pOVar1->max_length == 0) goto code_?;
     pOVar1->vector[0] = pOVar14;
+    func_?(pOVar1->vector,pOVar14);
     pOVar14 = (Object *)(this->fields).Calculator;
     if ((pOVar14 != (Object *)0x0) &&
        (iVar15 = func_?(pOVar14,(pOVar1->klass->_0).element_class), iVar15 == 0))
     goto code_?;
     if (pOVar1->max_length < 2) goto code_?;
     pOVar1->vector[1] = pOVar14;
+    func_?(pOVar1->vector + 1,pOVar14);
+    iStack_16 = (this->fields)._ExclusivityFlag_k__BackingField;
     pOVar14 = (Object *)
              func_?(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
-                             ,&stack0xffffffe0);
+                             ,&iStack_16);
     if ((pOVar14 != (Object *)0x0) &&
        (iVar15 = func_?(pOVar14,(pOVar1->klass->_0).element_class), iVar15 == 0))
     goto code_?;
     if (pOVar1->max_length < 3) goto code_?;
     pOVar1->vector[2] = pOVar14;
+    func_?(pOVar1->vector + 2,pOVar14);
     pKVar3 = (this->fields)._.KogamaSettingNumeric;
     if ((pKVar3 == (KogamaSettingNumeric_1_System_Single_ *)0x0) ||
        (iVar15 = func_?(pKVar3,(pOVar1->klass->_0).element_class), iVar15 != 0)) {
       if (3 < pOVar1->max_length) {
         pOVar1->vector[3] = (Object *)pKVar3;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pSVar16 = mscorlib.dll::System::String::String_Format_3
-                            (StringLiteral_AttributeValue__0___AttributePoi,pOVar1,(MethodInfo *)0x0
-                            );
-        return pSVar16;
+        func_?(pOVar1->vector + 3,pKVar3);
+        pSVar17 = mscorlib.dll::System::String::String_Format_3
+                           (StringLiteral_AttributeValue__0___AttributePoi,pOVar1,(MethodInfo *)0x0)
+        ;
+        return pSVar17;
       }
       goto code_?;
     }
   }
-  uVar7 = func_?(0,0);
+  uVar7 = func_?(0);
   func_?(uVar7);
 code_?:
-  uVar7 = func_?(0,0);
-  func_?(uVar7);
-  pcVar17 = (code *)swi(3);
-  pSVar16 = (String *)(*pcVar17)();
-  return pSVar16;
+  func_?();
+  pcVar18 = (code *)swi(3);
+  pSVar17 = (String *)(*pcVar18)();
+  return pSVar17;
 }
 
 
@@ -131,7 +131,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__KogamaSettingNumericBase_System__String__float__float__float__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
+                   );
     cRam_? = '\x01';
   }
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
@@ -140,6 +142,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
              MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__KogamaSettingNumericBase_System__String__float__float__float__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
             );
   (this->fields).Calculator = calculator;
+  func_?(&(this->fields).Calculator,calculator);
   return;
 }
 
@@ -156,7 +159,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__KogamaSettingNumericBase_System__String__float__float__float__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
+                   );
     cRam_? = '\x01';
   }
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
@@ -165,6 +170,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
              MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__KogamaSettingNumericBase_System__String__float__float__float__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
             );
   (this->fields).Calculator = calculator;
+  func_?(&(this->fields).Calculator,calculator);
   (this->fields)._ExclusivityFlag_k__BackingField = attributeSettingsExclusivityFlag;
   return;
 }
@@ -178,7 +184,12 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
+                   );
+    func_?(&
+                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumeric<float>__get_NumericValue__
+                   );
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).Calculator;
@@ -190,34 +201,32 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
                        MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumeric<float>__get_NumericValue__
                       );
     if (pIVar1 != (IAttributePointFloatCalculator *)0x0) {
-      pIVar3 = pIVar1->klass;
-      uVar4 = 0;
-      uVar5._0_1_ = (pIVar3->_1).rank;
-      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-      if (uVar5 != 0) {
+      uVar3 = 0;
+      uVar4 = (pIVar1->klass->_1).interface_offsets_count;
+      if (uVar4 != 0) {
         do {
-          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+          if (pIVar1->klass->interfaceOffsets[uVar3].interfaceType ==
               (Il2CppClass *)
               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
              ) {
-            ppMVar6 = &(&pIVar1->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].Calc.method;
+            pIVar5 = &pIVar1->klass->vtable + pIVar1->klass->interfaceOffsets[uVar3].offset;
             goto code_?;
           }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar5);
+          uVar3 = uVar3 + 1;
+        } while (uVar3 < uVar4);
       }
-      ppMVar6 = (MethodInfo **)
-                func_?(pIVar1,
-                                TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
-                                ,0);
+      pIVar5 = (IAttributePointFloatCalculator__VTable *)
+               func_?(pIVar1,
+                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
+                               ,0);
 code_?:
-      iVar7 = (*(code *)*ppMVar6)(pIVar1,fVar2,ppMVar6[1]);
-      return iVar7;
+      iVar6 = (*(pIVar5->Calc).methodPtr)(pIVar1,fVar2,(pIVar5->Calc).method);
+      return iVar6;
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  iVar7 = (*pcVar8)();
-  return iVar7;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  iVar6 = (*pcVar7)();
+  return iVar6;
 }
 

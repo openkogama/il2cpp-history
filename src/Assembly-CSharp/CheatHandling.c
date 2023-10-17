@@ -5,7 +5,17 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_CheatSoftwareRunningDetec
                (MethodInfo *method)
 
 {
-  CheatHandling_ExecuteBan(CheatType__Enum_CheatSoftwareRunning,(MethodInfo *)0x0);
+  this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this != (MVNetworkGame_OperationRequests *)0x0) {
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Ban
+              (this,CheatType__Enum_CheatSoftwareRunning,(MethodInfo *)0x0);
+    BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignout((MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff8);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -16,14 +26,6 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_ExecuteBan
                (CheatType__Enum cheatType,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   if (this != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Ban
@@ -31,9 +33,10 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_ExecuteBan
     BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignout((MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff4);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -44,54 +47,34 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_Init(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__CheatHandling__ObscuredCheatingDetected__);
+    func_?(&MethodInfo__CheatHandling__SpeedHackDetected__);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  if (TypeInfo__CheatHandling->static_fields->__f__mg_cache0 == (UnityAction *)0x0) {
-    pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar1,(Object *)0x0,MethodInfo__CheatHandling__SpeedHackDetected__,(MethodInfo *)0x0
+  pNVar1 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction)
+  ;
+  if (pNVar1 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar1,(Object *)0x0,MethodInfo__CheatHandling__SpeedHackDetected__,(MethodInfo *)0x0
               );
-    TypeInfo__CheatHandling->static_fields->__f__mg_cache0 = (UnityAction *)pUVar1;
+    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDetector::
+    SpeedHackDetector_StartDetection_3((UnityAction *)pNVar1,1.0,3,(MethodInfo *)0x0);
+    pNVar1 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    if (pNVar1 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar1,(Object *)0x0,MethodInfo__CheatHandling__ObscuredCheatingDetected__,
+                 (MethodInfo *)0x0);
+      Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+      ObscuredCheatingDetector_StartDetection_1((UnityAction *)pNVar1,(MethodInfo *)0x0);
+      return;
+    }
   }
-  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDetector::
-  SpeedHackDetector_StartDetection_3
-            (TypeInfo__CheatHandling->static_fields->__f__mg_cache0,1.0,3,(MethodInfo *)0x0);
-  if (TypeInfo__CheatHandling->static_fields->__f__mg_cache1 == (UnityAction *)0x0) {
-    pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar1,(Object *)0x0,MethodInfo__CheatHandling__ObscuredCheatingDetected__,
-               (MethodInfo *)0x0);
-    TypeInfo__CheatHandling->static_fields->__f__mg_cache1 = (UnityAction *)pUVar1;
-  }
-  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
-  ObscuredCheatingDetector_StartDetection_1
-            (TypeInfo__CheatHandling->static_fields->__f__mg_cache1,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Void MachineBanDetected() */
-
-void Assembly-CSharp.dll::CheatHandling::CheatHandling_MachineBanDetected(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  MVGameControllerBase::MVGameControllerBase_ApplicationQuit
-            ((QuitBaseCallback *)0x0,(MethodInfo *)0x0);
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -101,7 +84,17 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_MachineBanDetected(Method
 void Assembly-CSharp.dll::CheatHandling::CheatHandling_ObscuredCheatingDetected(MethodInfo *method)
 
 {
-  CheatHandling_ExecuteBan(CheatType__Enum_MemTampering,(MethodInfo *)0x0);
+  this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this != (MVNetworkGame_OperationRequests *)0x0) {
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Ban
+              (this,CheatType__Enum_MemTampering,(MethodInfo *)0x0);
+    BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignout((MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff8);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -111,7 +104,17 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_ObscuredCheatingDetected(
 void Assembly-CSharp.dll::CheatHandling::CheatHandling_SpeedHackDetected(MethodInfo *method)
 
 {
-  CheatHandling_ExecuteBan(CheatType__Enum_SpeedHack,(MethodInfo *)0x0);
+  this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this != (MVNetworkGame_OperationRequests *)0x0) {
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Ban
+              (this,CheatType__Enum_SpeedHack,(MethodInfo *)0x0);
+    BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignout((MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff8);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -121,7 +124,17 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_SpeedHackDetected(MethodI
 void Assembly-CSharp.dll::CheatHandling::CheatHandling_TextureHackDetected(MethodInfo *method)
 
 {
-  CheatHandling_ExecuteBan(CheatType__Enum_TextureTampering,(MethodInfo *)0x0);
+  this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this != (MVNetworkGame_OperationRequests *)0x0) {
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Ban
+              (this,CheatType__Enum_TextureTampering,(MethodInfo *)0x0);
+    BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignout((MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff8);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

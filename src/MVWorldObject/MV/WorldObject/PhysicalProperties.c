@@ -6,11 +6,11 @@ void MVWorldObject.dll::MV::WorldObject::PhysicalProperties::PhysicalProperties_
                float staticFriction,float toughness,MethodInfo *method)
 
 {
-  this->softness = friction;
-  this->staticFriction = bouncyness;
-  this->toughness = softness;
-  this[1].friction = staticFriction;
-  this[1].bouncyness = toughness;
+  this->friction = friction;
+  this->bouncyness = bouncyness;
+  this->softness = softness;
+  this->staticFriction = staticFriction;
+  this->toughness = toughness;
   return;
 }
 

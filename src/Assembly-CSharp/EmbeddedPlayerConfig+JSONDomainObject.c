@@ -7,14 +7,14 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig+JSONDomainObject::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).domain = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).domain = ::StringLiteral__;
+  method_00 = (MethodInfo *)&this->fields;
+  func_?(method_00,::StringLiteral__);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

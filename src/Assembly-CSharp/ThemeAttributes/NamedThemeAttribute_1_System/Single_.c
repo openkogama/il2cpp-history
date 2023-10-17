@@ -8,27 +8,28 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
   if (this != (NamedThemeAttribute_1_System_Single_ *)0x0) {
-    puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 8);
-    (*(code *)*puVar1)(this,settings,key,groups,onChange,puVar1);
-    pSVar2 = TM::TM__((this->fields).name,(MethodInfo *)0x0);
-    (this->fields).name = pSVar2;
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(TypeInfo__System__Action);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,*(void **)(*(int *)(method->name + 0x60) + 0xc),
-               (MethodInfo *)0x0);
-    TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
-    return;
+    (*method->klass->rgctx_data->method->virtualMethodPointer)
+              (this,settings,key,groups,onChange,method->klass->rgctx_data->rgctxDataDummy);
+    pSVar1 = TM::TM__((this->fields).name,(MethodInfo *)0x0);
+    (this->fields).name = pSVar1;
+    func_?(&(this->fields).name,pSVar1);
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_00,(Object *)this,method->klass->rgctx_data[1].rgctxDataDummy,
+                 (MethodInfo *)0x0);
+      TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -42,6 +43,7 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]
 {
   pSVar1 = TM::TM__((this->fields).name,(MethodInfo *)0x0);
   (this->fields).name = pSVar1;
+  func_?(&(this->fields).name,pSVar1);
   return;
 }
 
@@ -53,9 +55,11 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]
                (NamedThemeAttribute_1_System_Single_ *this,MethodInfo *method)
 
 {
-  puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x10);
-  pSVar2 = (String *)(*(code *)*puVar1)(this,(this->fields).name,puVar1);
-  (this->fields).name = pSVar2;
+  pSVar1 = (String *)
+           (*(method->klass->rgctx_data[2].method)->virtualMethodPointer)
+                     (this,(this->fields).name,method->klass->rgctx_data[2].rgctxDataDummy);
+  (this->fields).name = pSVar1;
+  func_?(&(this->fields).name,pSVar1);
   return;
 }
 
@@ -68,81 +72,54 @@ String * Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Sin
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral___);
+    func_?(&::StringLiteral____);
     cRam_? = '\x01';
   }
-  if ((str == (String *)0x0) ||
-     (pIVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)str,(MethodInfo *)0x0),
-     StringLiteral____ == (String *)0x0)) goto code_?;
-  pIVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-           Collection_1_VoxelHit__get_Items
-                     ((Collection_1_VoxelHit_ *)StringLiteral____,(MethodInfo *)0x0);
-  if ((int)pIVar1 < (int)pIVar2) {
+  if ((str == (String *)0x0) || (::StringLiteral____ == (String *)0x0)) goto code_?;
+  if ((str->fields)._stringLength < (::StringLiteral____->fields)._stringLength) {
 code_?:
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    str = mscorlib.dll::System::String::String_Concat_2(StringLiteral____,str,(MethodInfo *)0x0);
+    str = mscorlib.dll::System::String::String_Concat_3(::StringLiteral____,str,(MethodInfo *)0x0);
+    if (str == (String *)0x0) goto code_?;
   }
   else {
-    if (StringLiteral____ == (String *)0x0) goto code_?;
-    pIVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items
-                       ((Collection_1_VoxelHit_ *)StringLiteral____,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Substring_1
-                       (str,0,(int32_t)pIVar1,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar4 = mscorlib.dll::System::String::String_op_Inequality
-                      (pSVar3,StringLiteral____,(MethodInfo *)0x0);
-    if (bVar4 != 0) goto code_?;
+    pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                       (str,0,(::StringLiteral____->fields)._stringLength,(MethodInfo *)0x0);
+    bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar1,::StringLiteral____,(MethodInfo *)0x0);
+    if (bVar2 != 0) goto code_?;
   }
-  if (((Collection_1_VoxelHit_ *)str != (Collection_1_VoxelHit_ *)0x0) &&
-     (pIVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)str,(MethodInfo *)0x0),
-     ::StringLiteral___ != (String *)0x0)) {
-    pIVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items
-                       ((Collection_1_VoxelHit_ *)::StringLiteral___,(MethodInfo *)0x0);
-    if ((int)pIVar2 <= (int)pIVar1) {
-      pIVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)str,(MethodInfo *)0x0);
-      if ((::StringLiteral___ == (String *)0x0) ||
-         (pIVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items
-                             ((Collection_1_VoxelHit_ *)::StringLiteral___,(MethodInfo *)0x0),
-         ::StringLiteral___ == (String *)0x0)) goto code_?;
-      length = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items
-                         ((Collection_1_VoxelHit_ *)::StringLiteral___,(MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::String::String_Substring_1
-                         (str,(int)pIVar1 - (int)pIVar2,(int32_t)length,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar4 = mscorlib.dll::System::String::String_op_Inequality
-                        (pSVar3,::StringLiteral___,(MethodInfo *)0x0);
-      if (bVar4 == 0) {
-        return (String *)(Collection_1_VoxelHit_ *)str;
+  if (::StringLiteral___ != (String *)0x0) {
+    iVar3 = (str->fields)._stringLength;
+    if ((::StringLiteral___->fields)._stringLength <= iVar3) {
+      pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                         (str,iVar3 - (::StringLiteral___->fields)._stringLength,
+                          (::StringLiteral___->fields)._stringLength,(MethodInfo *)0x0);
+      bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                        (pSVar1,::StringLiteral___,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        return str;
       }
     }
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pSVar3 = mscorlib.dll::System::String::String_Concat_2(str,::StringLiteral___,(MethodInfo *)0x0)
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3(str,::StringLiteral___,(MethodInfo *)0x0)
     ;
-    return pSVar3;
+    return pSVar1;
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar5)();
-  return pSVar3;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar4)();
+  return pSVar1;
+}
+
+
+/* String get_Name() */
+
+String * Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]::
+         NamedThemeAttribute_1_System_Single__get_Name
+                   (NamedThemeAttribute_1_System_Single_ *this,MethodInfo *method)
+
+{
+  return (this->fields).name;
 }
 

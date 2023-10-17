@@ -51,19 +51,27 @@ void Assembly-CSharp.dll::FlareLight::FlareLight_Reset(FlareLight *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__LensFlare_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::LensFlare>__
+                   );
+    func_?(&
+                    UnityEngine__Light_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Light>__
+                   );
     cRam_? = '\x01';
   }
-  pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                     ((Component_1 *)this,
-                      UnityEngine__Light_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Light>__
-                     );
-  (this->fields).light = (Light *)pMVar1;
-  pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                     ((Component_1 *)this,
+  pLVar1 = (Light *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                              ((Component *)this,
+                               UnityEngine__Light_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Light>__
+                              );
+  (this->fields).light = pLVar1;
+  func_?(&(this->fields).light,pLVar1);
+  pLVar2 = (LensFlare *)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                     ((Component *)this,
                       UnityEngine__LensFlare_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::LensFlare>__
                      );
-  (this->fields).lensFlare = (LensFlare *)pMVar1;
+  (this->fields).lensFlare = pLVar2;
+  func_?(&(this->fields).lensFlare,pLVar2);
   return;
 }
 
@@ -75,26 +83,20 @@ void Assembly-CSharp.dll::FlareLight::FlareLight_SetEnabled
 
 {
   this_00 = (this->fields).light;
-  if ((this_00 == (Light *)0x0) ||
-     (UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)this_00,b,(MethodInfo *)0x0),
-     (this->fields).lensFlare == (LensFlare *)0x0)) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+  if (this_00 != (Light *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              ((Behaviour *)this_00,b,(MethodInfo *)0x0);
+    if ((this->fields).lensFlare != (LensFlare *)0x0) {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      (*pcRam_?)();
+      return;
+    }
   }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)func_?(), pcVar1 == (code *)0x0))
-  {
-    uVar2 = func_?(&UNK_?);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcRam_? = pcVar1;
-  (*pcRam_?)();
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

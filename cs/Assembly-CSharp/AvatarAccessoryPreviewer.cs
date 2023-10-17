@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarAccessoryPreviewer : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerClickHandler
 {
@@ -48,43 +48,42 @@ public class AvatarAccessoryPreviewer : MonoBehaviour, IDragHandler, IPointerDow
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnPointerClick_c__AnonStorey1
+	private sealed class __c__DisplayClass30_0
 	{
 		// Fields
-		internal AccessoryDataClient accessoryData;
+		public AccessoryDataClient accessoryData;
 
 		// Constructors
-		public _OnPointerClick_c__AnonStorey1();
+		public __c__DisplayClass30_0();
 
 		// Methods
-		internal void __m__0(IAccessoryClicked x, BaseEventData y);
+		internal void _OnPointerClick_b__0(IAccessoryClicked x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _AnimationEndTrack_c__Iterator0 : IEnumerator<object>
+	private sealed class _AnimationEndTrack_d__35 : IEnumerator<object>
 	{
 		// Fields
-		internal float _startTime___0;
-		internal float resetDelay;
-		internal AvatarAccessoryPreviewer _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public float resetDelay;
+		public AvatarAccessoryPreviewer __4__this;
+		private float _startTime_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _AnimationEndTrack_c__Iterator0();
+		public _AnimationEndTrack_d__35(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -104,10 +103,10 @@ public class AvatarAccessoryPreviewer : MonoBehaviour, IDragHandler, IPointerDow
 	public void OnRestartAnimation();
 	private void PlayAnimation();
 	private void PlayAnimation(string animationName);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_AnimationEndTrack_d__35))]
 	private IEnumerator AnimationEndTrack(float resetDelay);
 	private void RemoveSkinnedMeshOptimizers();
 	[CompilerGenerated]
-	private void _Start_m__0(IGetCurrentBody x, BaseEventData y);
+	private void _Start_b__24_0(IGetCurrentBody x, BaseEventData y);
 }
 

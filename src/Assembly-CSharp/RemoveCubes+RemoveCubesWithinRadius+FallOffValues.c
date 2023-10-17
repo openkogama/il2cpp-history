@@ -8,67 +8,74 @@ RemoveCubes_RemoveCubesWithinRadius_FallOffValues_GetDestructionState
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
+  if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
   }
-  iVar1 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
-          numFallOffValues;
-  while( true ) {
-    iVar2 = iVar1;
-    iVar1 = iVar2 + -1;
-    if (iVar1 < 0) {
-      return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_NotDestroyed;
-    }
-    if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
-      func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
-    }
-    if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues
-        == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-    pfVar3 = (float *)func_?(iVar1);
-    if (squaredDistance < *pfVar3) {
-      if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-                  methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
-        func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
+  uVar1 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
+          numFallOffValues - 1;
+  if (-1 < (int)uVar1) {
+    iVar2 = uVar1 * 8 + 0x10;
+    pRVar3 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues;
+    do {
+      if ((pRVar3->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(pRVar3);
+        pRVar3 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues;
       }
-      if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues
-          == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-      iVar4 = func_?(iVar1);
-      fVar5 = 0.0;
-      fVar6 = *(float *)(iVar4 + 4);
-      if (iVar1 < TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
-                  numFallOffValues + -1) {
-        if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-                    methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0))
-        {
-          func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
+      pRVar4 = pRVar3->static_fields->fallOffValues;
+      if (pRVar4 == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0)
+      goto code_?;
+      if (pRVar4->max_length <= uVar1) goto code_?;
+      if (squaredDistance <
+          *(float *)((int)&((RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *
+                            )(pRVar4->vector + -2))->klass + iVar2)) {
+        if ((pRVar3->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(pRVar3);
+          pRVar3 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues;
         }
-        if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
-            fallOffValues ==
-            (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-        iVar2 = func_?(iVar2);
-        fVar5 = *(float *)(iVar2 + 4);
+        if (pRVar3->static_fields->fallOffValues ==
+            (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) {
+code_?:
+          func_?();
+code_?:
+          func_?();
+          pcVar5 = (code *)swi(3);
+          RVar6 = (*pcVar5)();
+          return RVar6;
+        }
+        iVar7 = func_?(uVar1);
+        fVar8 = 0.0;
+        fVar9 = *(float *)(iVar7 + 4);
+        if ((int)uVar1 <
+            TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
+            numFallOffValues + -1) {
+          if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
+              cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
+          }
+          if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
+              fallOffValues ==
+              (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0)
+          goto code_?;
+          iVar7 = func_?(uVar1 + 1);
+          fVar8 = *(float *)(iVar7 + 4);
+        }
+        if (toughness < fVar8) {
+          return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_CompletelyDestroyed;
+        }
+        pRVar3 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues;
+        if (toughness < fVar9) {
+          return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_OnEdgeOfDestruction;
+        }
       }
-      if (toughness < fVar5) {
-        return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_CompletelyDestroyed;
-      }
-      if (toughness < fVar6) {
-        return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_OnEdgeOfDestruction;
-      }
-    }
+      iVar2 = iVar2 + -8;
+      uVar1 = uVar1 - 1;
+    } while (-1 < (int)uVar1);
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  RVar8 = (*pcVar7)();
-  return RVar8;
+  return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_NotDestroyed;
 }
 
 
@@ -80,59 +87,59 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
     cRam_? = '\x01';
   }
   fVar1 = localRadius + _UNK_?;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  fVar2 = fVar1 / _UNK_?;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_CeilToInt
-                    (fVar1 / _UNK_?,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
-    func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  fVar3 = (float10)func_?((double)fVar2);
+  if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_finished_or_no_cctor
+      == 0) {
+    func_?();
   }
   TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues =
-       iVar2;
-  iVar3 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
-          numFallOffValues;
+       (int)fVar3;
   iVar4 = 0;
+  iVar5 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
+          numFallOffValues;
   while( true ) {
-    if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
-      func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
+    if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
         numFallOffValues <= iVar4) {
       return;
     }
-    fStack_5 = (float)(iVar4 + 1) * _UNK_?;
-    if (fVar1 < fStack_5) {
-      fStack_5 = (float)iVar4 * _UNK_?;
-      fStack_5 = (fVar1 - fStack_5) + fStack_5;
+    fStack_6 = (float)(iVar4 + 1) * _UNK_?;
+    if (fVar1 < fStack_6) {
+      fStack_6 = (fVar1 - (float)iVar4 * _UNK_?) + (float)iVar4 * _UNK_?;
     }
-    if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
-      func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
+    fVar2 = (float)iVar4;
+    if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues
         == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-    pfVar6 = (float *)func_?(iVar4);
-    *pfVar6 = fStack_5 * fStack_5;
+    pfVar7 = (float *)func_?();
+    *pfVar7 = fStack_6 * fStack_6;
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues
         == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-    iVar7 = func_?(iVar4);
-    *(float *)(iVar7 + 4) = centerDamage - (float)iVar4 * (centerDamage / (float)iVar3);
+    iVar8 = func_?();
     iVar4 = iVar4 + 1;
+    *(float *)(iVar8 + 4) = centerDamage - fVar2 * (centerDamage / (float)iVar5);
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -145,55 +152,56 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius_FallOffValues__FallOffValue);
+    func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
+  if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
   }
   RemoveCubes_RemoveCubesWithinRadius_FallOffValues_SetFallOffValues
             (radius,centerDamage,(MethodInfo *)0x0);
-  pRVar1 = (RemoveCubes_RemoveCubesWithinRadius_FallOffValues__Class *)0x0;
+  uVar1 = 0;
+  iVar2 = 0x10;
   while( true ) {
-    if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
-      pRStack_2 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues;
-      func_?();
+    if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
     }
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
-        numFallOffValues <= (int)pRVar1) {
+        numFallOffValues <= (int)uVar1) {
       return;
     }
-    if ((((uint)(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_started == 0)) {
-      pRStack_2 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues;
-      func_?();
+    if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
     }
-    if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues
-        == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-    pRStack_2 = pRVar1;
-    puVar3 = (undefined4 *)func_?();
-    pRStack_2 = (RemoveCubes_RemoveCubesWithinRadius_FallOffValues__Class *)*puVar3;
-    uStack_4 = puVar3[1];
+    pRVar3 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
+             fallOffValues;
+    if (pRVar3 == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0)
+    goto code_?;
+    if (pRVar3->max_length <= uVar1) break;
+    uStack_4 = *(undefined4 *)
+                ((int)&((RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)
+                       (pRVar3->vector + -2))->klass + iVar2);
+    uStack_5 = *(undefined4 *)((int)pRVar3->vector + iVar2 + -0xc);
     message = (Object *)
               func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius_FallOffValues__FallOffValue
-                              ,&pRStack_2);
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+                              ,&uStack_4);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
-    pRVar1 = (RemoveCubes_RemoveCubesWithinRadius_FallOffValues__Class *)
-             ((int)&(pRVar1->_0).image + 1);
+    uVar1 = uVar1 + 1;
+    iVar2 = iVar2 + 8;
   }
-  pRStack_2 = (RemoveCubes_RemoveCubesWithinRadius_FallOffValues__Class *)0x0;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -205,7 +213,8 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius_FallOffValues__FallOffValue);
+    func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues =
@@ -215,6 +224,8 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::
                            ,0x14);
   TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues =
        pRVar1;
+  func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
+                   fallOffValues,pRVar1);
   return;
 }
 

@@ -5,19 +5,11 @@ int32_t Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_Constra
                   (IntAttribute *this,int32_t value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   iVar1 = (this->fields).min;
-  max = (this->fields).max;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  if ((value < iVar1) || (iVar1 = (this->fields).max, iVar1 < value)) {
+    value = iVar1;
   }
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp_1
-                    (value,iVar1,max,(MethodInfo *)0x0);
-  return iVar1;
+  return value;
 }
 
 
@@ -29,46 +21,51 @@ Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_GetSettingsUIOb
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<int>);
+    func_?(&
+                    ThemeAttributes__IntAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::IntAttribute::Setter>_ThemeAttributes__IntAttribute__Setter_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__RectTransform);
     cRam_? = '\x01';
   }
-  pXVar1 = (XpBoostParticlePreviewer *)(this->fields).prefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  original = (this->fields).prefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar1,
-                      ThemeAttributes__IntAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::IntAttribute::Setter>_ThemeAttributes__IntAttribute__Setter_
-                     );
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action<int>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,this->klass[1]._0.image,
-             MethodInfo__System__Action<int>__Action_System__Object__void__);
-  if (pXVar1 == (XpBoostParticlePreviewer *)0x0) {
+  this_00 = (Component *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                      ((Object *)original,
+                       ThemeAttributes__IntAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::IntAttribute::Setter>_ThemeAttributes__IntAttribute__Setter_
+                      );
+  this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
+  if (this_01 != (UnityAction_1_System_Int32Enum_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_01,(Object *)this,(this->klass->vtable).OnSettingsChanged.method,
+               (MethodInfo *)0x0);
+    if (this_00 != (Component *)0x0) {
+      (*(code *)this_00->klass[1]._0.image)(this_00,this);
+      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         (this_00,(MethodInfo *)0x0);
+      pTVar2 = (Transform *)0x0;
+      if (pTVar1 != (Transform *)0x0) {
+        if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+          pTVar2 = pTVar1;
+        }
+        if (pTVar2 == (Transform *)0x0) {
+          func_?();
+          goto code_?;
+        }
+      }
+      return (RectTransform *)pTVar2;
+    }
+  }
 code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    pRVar3 = (RectTransform *)(*pcVar2)();
-    return pRVar3;
-  }
-  (*pXVar1->klass[1]._0.gc_desc)(pXVar1,this);
-  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)pXVar1,(MethodInfo *)0x0);
-  pTVar5 = (Transform *)0x0;
-  if (pTVar4 != (Transform *)0x0) {
-    if (pTVar4->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-      pTVar5 = pTVar4;
-    }
-    if (pTVar5 == (Transform *)0x0) {
-      func_?();
-      goto code_?;
-    }
-  }
-  return (RectTransform *)pTVar5;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  pRVar4 = (RectTransform *)(*pcVar3)();
+  return pRVar4;
 }
 
 
@@ -80,7 +77,12 @@ void Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__Initialize_ThemeSettings__SettingsWrapper__System__String__int__System__Action<int>_
+                   );
+    func_?(&
+                    int_MethodInfo__ThemeSettings__SettingsWrapper__GetValueForAttribute<int>_ThemeAttributes__ThemeAttribute_
+                   );
     cRam_? = '\x01';
   }
   NamedThemeAttribute`1[System::Int32]::NamedThemeAttribute_1_System_Int32__Initialize
@@ -88,28 +90,20 @@ void Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_Initialize
              MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__Initialize_ThemeSettings__SettingsWrapper__System__String__int__System__Action<int>_
             );
   if (settings != (SettingsWrapper *)0x0) {
-    iVar1 = ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_4
+    iVar1 = ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_1
                       (settings,(ThemeAttribute *)this,
                        int_MethodInfo__ThemeSettings__SettingsWrapper__GetValueForAttribute<int>_ThemeAttributes__ThemeAttribute_
                       );
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
+    iVar2 = (this->fields).min;
+    if ((iVar1 < iVar2) || (iVar2 = (this->fields).max, iVar2 < iVar1)) {
+      iVar1 = iVar2;
     }
-    min = (this->fields).min;
-    max = (this->fields).max;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?();
-    }
-    iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp_1
-                      (iVar1,min,max,(MethodInfo *)0x0);
     (this->fields)._._.value = iVar1;
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -120,50 +114,40 @@ void Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_OnSettings
                (IntAttribute *this,int32_t value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   iVar1 = (this->fields).min;
-  max = (this->fields).max;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  if ((value < iVar1) || (iVar1 = (this->fields).max, iVar1 < value)) {
+    value = iVar1;
   }
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp_1
-                    (value,iVar1,max,(MethodInfo *)0x0);
   key = (this->fields)._._._._Key_k__BackingField;
-  (this->fields)._._.value = iVar1;
-  value_00 = (Theme *)(*(code *)(this->klass->vtable).get_Data.method)
-                                (this,(this->klass->vtable).GetSettingsUIObject.methodPtr);
+  (this->fields)._._.value = value;
+  value_00 = (Object *)
+             (*(this->klass->vtable).get_Data.methodPtr)(this,(this->klass->vtable).get_Data.method)
+  ;
   pSVar2 = (this->fields)._._._.themeSettings;
   if (pSVar2 != (SettingsWrapper *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                     );
       cRam_? = '\x01';
     }
     this_00 = (pSVar2->fields).settingsData;
     if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,Theme]::
-      Dictionary_2_System_String_Theme__set_Item
-                ((Dictionary_2_System_String_Theme_ *)this_00,key,value_00,
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__set_Item
+                (this_00,(Object *)key,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                 );
-      this_01 = (Action_1_UIPushOption_ *)(this->fields)._._.themeCallback;
-      if (this_01 != (Action_1_UIPushOption_ *)0x0) {
-        mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                  (this_01,(this->fields)._._.value,MethodInfo__System__Action<int>__Invoke_int_);
+      pAVar3 = (this->fields)._._.themeCallback;
+      if (pAVar3 != (Action_1_Int32_ *)0x0) {
+        (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code);
         return;
       }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -175,16 +159,15 @@ void Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__NamedThemeAttribute__);
     cRam_? = '\x01';
   }
   (this->fields).min = -0x80000000;
   (this->fields).max = 0x7fffffff;
-  System.Core.dll::System::Linq::OrderedEnumerable`1[System::Collections::Generic::
-  KeyValuePair`2[System::Int32,System::Int32]]::
-  OrderedEnumerable_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32__System_Collections_IEnumerable_GetEnumerator
-            ((OrderedEnumerable_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_
-              *)this,MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__NamedThemeAttribute__);
+  StreamedAssetToCallback`2[System::Object,System::Object]::
+  StreamedAssetToCallback_2_System_Object_System_Object___ctor
+            ((StreamedAssetToCallback_2_System_Object_System_Object_ *)this,
+             MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__NamedThemeAttribute__);
   return;
 }
 
@@ -196,7 +179,7 @@ Object * Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_get_Da
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   this = (IntAttribute *)(this->fields)._._.value;

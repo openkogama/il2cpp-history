@@ -5,35 +5,10 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_NotifyFirstTimeEven
                (GameEventManager *this,FirstTimeEvent__Enum firstTimeEvent,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_1_UIPushOption_ *)(this->fields).OnFirstTimeEvent;
-  if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,firstTimeEvent,
-               MethodInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>__Invoke_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
-  }
-  return;
-}
-
-
-/* Void NotifyXPDeltaAmount(Int32) */
-
-void Assembly-CSharp.dll::GameEventManager::GameEventManager_NotifyXPDeltaAmount
-               (GameEventManager *this,int32_t xp,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_1_UIPushOption_ *)(this->fields).OnXPRewarded;
-  if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,xp,MethodInfo__System__Action<int>__Invoke_int_);
+  if ((this->fields).OnFirstTimeEvent != (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+    pAVar1 = (this->fields).OnFirstTimeEvent;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,firstTimeEvent,(pAVar1->fields)._._.method);
   }
   return;
 }
@@ -46,45 +21,83 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GameEventManager__AvatarCommandsBuildModeManager);
+    func_?(&TypeInfo__GameEventManager__AvatarCommandsPlayModeManager);
+    func_?(&TypeInfo__GameEventManager__GameStateManager);
     cRam_? = '\x01';
   }
-  method_01 = TypeInfo__GameEventManager__AvatarCommandsPlayModeManager;
-  this_00 = (GameEventManager_AvatarCommandsPlayModeManager *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this_00,0.0,(MethodInfo *)method_01);
-  (this->fields).AvatarCommandsPlayMode = this_00;
-  pSVar1 = (ScaleAnimationBase *)
-           func_?(TypeInfo__GameEventManager__AvatarCommandsBuildModeManager);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  value = (GameEventManager_AvatarCommandsPlayModeManager *)
+          func_?(TypeInfo__GameEventManager__AvatarCommandsPlayModeManager);
+  if (value != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
+    (this->fields).AvatarCommandsPlayMode = value;
+    func_?(&(this->fields).AvatarCommandsPlayMode,value);
+    value_00 = (GameEventManager_AvatarCommandsBuildModeManager *)
+               func_?(TypeInfo__GameEventManager__AvatarCommandsBuildModeManager);
+    if (value_00 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager
+                       );
+        cRam_? = '\x01';
+      }
+      value_01 = (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)
+                 func_?(
+                                TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager
+                                );
+      if (value_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)value_01,ExceptionArgument__Enum_obj,unaff_EDI);
+        pMVar1 = (MethodInfo *)&(value_00->fields).LaserCommands;
+        (value_00->fields).LaserCommands = value_01;
+        func_?(pMVar1,value_01);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar1);
+        (this->fields).AvatarCommandsBuildMode = value_00;
+        func_?(&(this->fields).AvatarCommandsBuildMode,value_00);
+        value_02 = (GameEventManager_GameStateManager *)
+                   func_?(TypeInfo__GameEventManager__GameStateManager);
+        if (value_02 != (GameEventManager_GameStateManager *)0x0) {
+          if (cRam_? == '\0') {
+            func_?(&
+                            MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
+                           );
+            func_?(&
+                            TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
+                           );
+            cRam_? = '\x01';
+          }
+          this_00 = (SubscribableVariable_1_System_Object_ *)
+                    func_?(
+                                   TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
+                                   );
+          if (this_00 != (SubscribableVariable_1_System_Object_ *)0x0) {
+            SubscribableVariable`1[System::Object]::SubscribableVariable_1_System_Object___ctor
+                      (this_00,(Object *)0x0,
+                       MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
+                      );
+            pMVar1 = (MethodInfo *)&(value_02->fields).gameStateType;
+            (value_02->fields).gameStateType =
+                 (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
+                 this_00;
+            func_?(pMVar1,this_00);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)value_02,ExceptionArgument__Enum_obj,pMVar1);
+            pMVar1 = (MethodInfo *)&(this->fields).GameState;
+            (this->fields).GameState = value_02;
+            func_?(pMVar1,value_02);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
+            return;
+          }
+        }
+      }
+    }
   }
-  method_02 = TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_02);
-  (pSVar1->fields).originalScale.y = (float)this_01;
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar1,0.0,(MethodInfo *)method_02);
-  (this->fields).AvatarCommandsBuildMode = (GameEventManager_AvatarCommandsBuildModeManager *)pSVar1
-  ;
-  pSVar1 = (ScaleAnimationBase *)func_?(TypeInfo__GameEventManager__GameStateManager);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
-  ;
-  this_02 = (ReadOnlyCollection_1_UnityEngine_Vector2_ *)func_?();
-  mscorlib.dll::System::Collections::ObjectModel::ReadOnlyCollection`1[UnityEngine::Vector2]::
-  ReadOnlyCollection_1_UnityEngine_Vector2__System_Collections_Generic_IList_T__get_Item
-            (this_02,0,
-             MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
-            );
-  (pSVar1->fields).originalScale.x = (float)this_02;
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar1,0.0,(MethodInfo *)method_00);
-  (this->fields).GameState = (GameEventManager_GameStateManager *)pSVar1;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -97,34 +110,31 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_add_OnFirstTimeEven
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnFirstTimeEvent;
-  a = *ppAVar1;
+  a = (this->fields).OnFirstTimeEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action_1_MV_WorldObject_MetaData_FirstTimeEvent___Class *)pDVar2->klass ==
-          TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
+    pAVar2 = TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
+                              TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pAVar5 = (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
+    pAVar5 = (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)
+             func_?(&(this->fields).OnFirstTimeEvent,iVar3,a);
+    bVar6 = pAVar5 != a;
     a = pAVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -135,33 +145,29 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_add_OnXPRewarded
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnXPRewarded;
-  a = *ppAVar1;
+  a = (this->fields).OnXPRewarded;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action_1_Int32___Class *)pDVar2->klass == TypeInfo__System__Action<int>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action<int>);
+    pAVar2 = TypeInfo__System__Action<int>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
+    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnXPRewarded,iVar3,a);
+    bVar6 = pAVar5 != a;
     a = pAVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -173,35 +179,31 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_remove_OnFirstTimeE
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnFirstTimeEvent;
-  source = *ppAVar1;
+  source = (this->fields).OnFirstTimeEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action_1_MV_WorldObject_MetaData_FirstTimeEvent___Class *)pDVar2->klass ==
-          TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
+    pAVar2 = TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
+                              TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
     pAVar5 = (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-             func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
+             func_?(&(this->fields).OnFirstTimeEvent,iVar3,source);
+    bVar6 = pAVar5 != source;
     source = pAVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -212,32 +214,28 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_remove_OnXPRewarded
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnXPRewarded;
-  source = *ppAVar1;
+  source = (this->fields).OnXPRewarded;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action_1_Int32___Class *)pDVar2->klass == TypeInfo__System__Action<int>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action<int>);
+    pAVar2 = TypeInfo__System__Action<int>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
+    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnXPRewarded,iVar3,source);
+    bVar6 = pAVar5 != source;
     source = pAVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 

@@ -9,11 +9,10 @@ void Assembly-CSharp.dll::AccessoryParticlesSettings::AccessoryParticlesSettings
   (this->fields).EmitRateNormal = 4.0;
   (this->fields).EmitRateMoving = 10.0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

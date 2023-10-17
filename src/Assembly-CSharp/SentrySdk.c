@@ -5,16 +5,12 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__SentrySdk);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
-  }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
@@ -22,69 +18,60 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
   if (bVar2 != 0) {
     return;
   }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?();
-  }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 != (SentrySdk *)0x0) {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__Sentry__Breadcrumb);
+      func_?(&TypeInfo__System__DateTime);
+      func_?(&TypeInfo__UnityEngine__Debug);
+      func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
+      func_?(&StringLiteral_Cannot_AddBreadcrumb_if_we_are_n);
       cRam_? = '\x01';
     }
-    uStack_3 = 0;
-    uStack_4 = 0;
-    iStack_5 = 0;
-    uStack_6 = 0;
     if ((pSVar1->fields)._initialized == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_Cannot_AddBreadcrumb_if_we_are_n,(MethodInfo *)0x0);
       return;
     }
-    if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
-      func_?();
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__DateTime);
     }
-    pDVar7 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow
-                       ((DateTime *)&stack0xffffffd4,(MethodInfo *)0x0);
-    uStack_3 = (undefined4)(pDVar7->ticks)._ticks;
-    uStack_4 = *(undefined4 *)((int)&(pDVar7->ticks)._ticks + 4);
-    iStack_5 = pDVar7->kind;
-    uStack_6 = *(undefined4 *)&pDVar7->field_0xc;
-    pSVar8 = (String *)func_?(&uStack_3,StringLiteral_yyyy_MM_ddTHH__mm__ss,0);
-    pBVar9 = (pSVar1->fields)._breadcrumbs;
-    uStack_10 = (pSVar1->fields)._lastBreadcrumbPos;
-    pSStack_11 = (ScaleAnimationBase *)func_?(TypeInfo__Sentry__Breadcrumb);
-    ScaleAnimationBase::ScaleAnimationBase_Play(pSStack_11,0.0,in_stack_12);
-    (pSStack_11->fields)._._._._.m_CachedPtr = pSVar8;
-    (pSStack_11->fields).state = (int32_t)message;
-    if (pBVar9 != (Breadcrumb__Array *)0x0) {
-      iVar13 = func_?(pSStack_11);
-      if (iVar13 == 0) {
-        uVar14 = func_?(0);
-        func_?(uVar14);
-      }
-      else if (uStack_10 < pBVar9->max_length) {
-        pBVar9->vector[uStack_10] = (Breadcrumb *)pSStack_11;
-        iVar13 = (pSVar1->fields)._noBreadcrumbs;
-        (pSVar1->fields)._lastBreadcrumbPos = ((pSVar1->fields)._lastBreadcrumbPos + 1) % 100;
-        if (99 < iVar13) {
+    DStack_3 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+    pSStack_4 = mscorlib.dll::System::DateTime::DateTime_ToString_1
+                          (&DStack_3,StringLiteral_yyyy_MM_ddTHH__mm__ss,(MethodInfo *)0x0);
+    uStack_5 = (pSVar1->fields)._lastBreadcrumbPos;
+    pBVar6 = (pSVar1->fields)._breadcrumbs;
+    this = (Tuple_2_Object_Object_ *)func_?(TypeInfo__Sentry__Breadcrumb);
+    if (this != (Tuple_2_Object_Object_ *)0x0) {
+      mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
+                (this,(Object *)pSStack_4,(Object *)message,(MethodInfo *)0x0);
+      if (pBVar6 != (Breadcrumb__Array *)0x0) {
+        iVar7 = func_?(this,(pBVar6->klass->_0).element_class);
+        if (iVar7 == 0) {
+          uVar8 = func_?(0);
+          func_?(uVar8);
+        }
+        else if (uStack_5 < pBVar6->max_length) {
+          pBVar6->vector[uStack_5] = (Breadcrumb *)this;
+          func_?(pBVar6->vector + uStack_5,this);
+          (pSVar1->fields)._lastBreadcrumbPos = ((pSVar1->fields)._lastBreadcrumbPos + 1) % 100;
+          if (99 < (pSVar1->fields)._noBreadcrumbs) {
+            return;
+          }
+          piVar9 = &(pSVar1->fields)._noBreadcrumbs;
+          *piVar9 = *piVar9 + 1;
           return;
         }
-        (pSVar1->fields)._noBreadcrumbs = iVar13 + 1;
-        return;
+        func_?();
       }
-      uVar14 = func_?(0);
-      func_?(uVar14);
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -95,25 +82,17 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_CaptureEvent(SentryEvent *event,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__SentrySdk);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
-  }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 == 0) {
-    if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-      func_?();
-    }
     pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
     if (pSVar1 == (SentrySdk *)0x0) {
       func_?();
@@ -136,16 +115,12 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_CaptureMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__SentrySdk);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
-  }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
@@ -153,42 +128,40 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_CaptureMessage
   if (bVar2 != 0) {
     return;
   }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?();
-  }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 != (SentrySdk *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?();
+      func_?(&TypeInfo__Sentry__SentryEvent);
+      func_?(&TypeInfo__SentrySdk);
+      func_?(&StringLiteral_sending_message_to_sentry_);
+      func_?(&StringLiteral_info);
       cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-      func_?(TypeInfo__SentrySdk);
     }
     pSVar3 = TypeInfo__SentrySdk->static_fields->_instance;
     if (pSVar3 != (SentrySdk *)0x0) {
       if ((pSVar3->fields).Debug != 0) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Debug);
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
                   ((Object *)StringLiteral_sending_message_to_sentry_,(MethodInfo *)0x0);
       }
-      breadcrumbs = SentrySdk_GetBreadcrumbs(pSVar1,(MethodInfo *)0x0);
+      breadcrumbs = Sentry::Breadcrumb::Breadcrumb_CombineBreadcrumbs
+                              ((pSVar1->fields)._breadcrumbs,(pSVar1->fields)._lastBreadcrumbPos,
+                               (pSVar1->fields)._noBreadcrumbs,(MethodInfo *)0x0);
       this = (SentryEvent *)func_?(TypeInfo__Sentry__SentryEvent);
-      Sentry::SentryEvent::SentryEvent__ctor
-                (this,message,tags,extraSentryData,breadcrumbs,(MethodInfo *)0x0);
       if (this != (SentryEvent *)0x0) {
+        Sentry::SentryEvent::SentryEvent__ctor
+                  (this,message,tags,extraSentryData,breadcrumbs,(MethodInfo *)0x0);
         (this->fields).level = StringLiteral_info;
+        func_?(&(this->fields).level);
         SentrySdk_DoCaptureEvent(pSVar1,this,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -196,27 +169,30 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_CaptureMessage
 
 
 /* IEnumerator`1[UnityEngine.Networking.UnityWebRequestAsyncOperation]
-   ContinueSendingEvent[SentryExceptionEvent](SentryExceptionEvent) */
+   ContinueSendingEvent[Object](Object) */
 
 IEnumerator_1_UnityEngine_Networking_UnityWebRequestAsyncOperation_ *
-Assembly-CSharp.dll::SentrySdk::SentrySdk_ContinueSendingEvent_3
-          (SentrySdk *this,SentryExceptionEvent *event,MethodInfo *method)
+Assembly-CSharp.dll::SentrySdk::SentrySdk_ContinueSendingEvent
+          (SentrySdk *this,Object *event,MethodInfo *method)
 
 {
-  pIVar1 = *method->parameters;
-  if ((pIVar1[0x17].type & 1) == 0) {
-    func_?(pIVar1);
+  pvVar1 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
+  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+    pvVar1 = (void *)func_?(pvVar1);
   }
   pIVar2 = (IEnumerator_1_UnityEngine_Networking_UnityWebRequestAsyncOperation_ *)
-           func_?(pIVar1);
-  (*(code *)method->parameters[1]->data)(pIVar2,method->parameters[1]);
+           func_?(pvVar1);
   if (pIVar2 != (IEnumerator_1_UnityEngine_Networking_UnityWebRequestAsyncOperation_ *)0x0) {
-    pIVar2[1].klass =
-         (IEnumerator_1_UnityEngine_Networking_UnityWebRequestAsyncOperation___Class *)event;
-    pIVar2[4].monitor = (MonitorData *)this;
+    (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
+              (pIVar2,0,(method->field7_0x1c).rgctx_data[1].method);
+    pIVar2[2].klass =
+         (IEnumerator_1_UnityEngine_Networking_UnityWebRequestAsyncOperation___Class *)this;
+    func_?(pIVar2 + 2,this);
+    pIVar2[2].monitor = (MonitorData *)event;
+    func_?(&pIVar2[2].monitor,event);
     return pIVar2;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   pIVar2 = (IEnumerator_1_UnityEngine_Networking_UnityWebRequestAsyncOperation_ *)(*pcVar3)();
   return pIVar2;
@@ -230,66 +206,55 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_DoAddBreadcrumb
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Sentry__Breadcrumb);
+    func_?(&TypeInfo__System__DateTime);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
+    func_?(&StringLiteral_Cannot_AddBreadcrumb_if_we_are_n);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  uStack_2 = 0;
-  iStack_3 = 0;
-  uStack_4 = 0;
   if ((this->fields)._initialized == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
               ((Object *)StringLiteral_Cannot_AddBreadcrumb_if_we_are_n,(MethodInfo *)0x0);
     return;
   }
-  if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__DateTime);
   }
-  pDVar5 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow
-                     ((DateTime *)apIStack_6,(MethodInfo *)0x0);
-  uStack_1 = (undefined4)(pDVar5->ticks)._ticks;
-  uStack_2 = *(undefined4 *)((int)&(pDVar5->ticks)._ticks + 4);
-  iStack_3 = pDVar5->kind;
-  uStack_4 = *(undefined4 *)&pDVar5->field_0xc;
-  pvVar7 = (void *)func_?(&uStack_1,StringLiteral_yyyy_MM_ddTHH__mm__ss,0);
-  pBVar8 = (this->fields)._breadcrumbs;
-  uStack_9 = (this->fields)._lastBreadcrumbPos;
-  method_00 = TypeInfo__Sentry__Breadcrumb;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields)._._._._.m_CachedPtr = pvVar7;
-  (this_00->fields).state = (int32_t)message;
-  if (pBVar8 != (Breadcrumb__Array *)0x0) {
-    apIStack_6[0] = (pBVar8->klass->_0).element_class;
-    iVar10 = func_?(this_00);
-    if (iVar10 == 0) {
-      apIStack_6[0] = (Il2CppClass *)0x0;
-      uVar11 = func_?(0);
-      func_?(uVar11);
+  mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+  item1 = mscorlib.dll::System::DateTime::DateTime_ToString_1
+                    ((DateTime *)&stack0xfffffff0,StringLiteral_yyyy_MM_ddTHH__mm__ss,
+                     (MethodInfo *)0x0);
+  pBVar1 = (this->fields)._breadcrumbs;
+  this_00 = (Tuple_2_Object_Object_ *)func_?(TypeInfo__Sentry__Breadcrumb);
+  if ((this_00 != (Tuple_2_Object_Object_ *)0x0) &&
+     (mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
+                (this_00,(Object *)item1,(Object *)message,(MethodInfo *)0x0),
+     pBVar1 != (Breadcrumb__Array *)0x0)) {
+    iVar2 = func_?();
+    if (iVar2 == 0) {
+      func_?();
+      func_?();
     }
-    else if (uStack_9 < pBVar8->max_length) {
-      pBVar8->vector[uStack_9] = (Breadcrumb *)this_00;
-      iVar10 = (this->fields)._noBreadcrumbs;
+    else if (&UNK_? < (undefined *)pBVar1->max_length) {
+      pBVar1[0x728cab].vector[0x19] = (Breadcrumb *)this_00;
+      func_?();
       (this->fields)._lastBreadcrumbPos = ((this->fields)._lastBreadcrumbPos + 1) % 100;
-      if (99 < iVar10) {
+      if (99 < (this->fields)._noBreadcrumbs) {
         return;
       }
-      (this->fields)._noBreadcrumbs = iVar10 + 1;
+      piVar3 = &(this->fields)._noBreadcrumbs;
+      *piVar3 = *piVar3 + 1;
       return;
     }
-    apIStack_6[0] = (Il2CppClass *)0x0;
-    uVar11 = func_?(0);
-    func_?(uVar11);
+    func_?();
   }
-  apIStack_6[0] = (Il2CppClass *)0x0;
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -301,69 +266,65 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_DoCaptureEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
+    func_?(&StringLiteral_sending_event_to_sentry_);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
   }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 == (SentrySdk *)0x0) {
-    func_?(0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    uVar2 = func_?(&stack0xfffffff0);
+    func_?(uVar2);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
   if ((pSVar1->fields).Debug != 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
               ((Object *)StringLiteral_sending_event_to_sentry_,(MethodInfo *)0x0);
   }
-  SentrySdk_ContinueSendingEvent_3
-            (this,(SentryExceptionEvent *)event,
+  SentrySdk_ContinueSendingEvent
+            (this,(Object *)event,
              System__Collections__Generic__IEnumerator<UnityEngine::Networking::UnityWebRequestAsyncOperation>_MethodInfo__SentrySdk__ContinueSendingEvent<Sentry::SentryEvent>_Sentry__SentryEvent_
             );
-  if (cRam_? == '\0') {
+  if (in_stack_4 == 0) {
     func_?();
-    cRam_? = '\x01';
-  }
-  if (in_stack_3 == 0) {
     this_00 = (NullReferenceException *)func_?();
-    mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1
-              (this_00,StringLiteral_routine_is_null,(MethodInfo *)0x0);
     func_?();
-code_?:
-    uVar4 = func_?(&UNK_?,0);
-    func_?(uVar4);
+    pMVar5 = (MethodInfo *)0x0;
+    pSVar6 = (String *)func_?();
+    mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1
+              (this_00,pSVar6,pMVar5);
+    func_?();
+    func_?();
   }
   else {
-    pcVar2 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) &&
-       (pcVar2 = (code *)func_?(), pcVar2 == (code *)0x0)) goto code_?;
-    pcRam_? = pcVar2;
-    cVar5 = (*pcRam_?)();
-    if (cVar5 == '\0') goto code_?;
-    pcVar2 = pcRam_?;
-    if ((pcRam_? != (code *)0x0) ||
-       (pcVar2 = (code *)func_?(), pcVar2 != (code *)0x0)) {
-      pcRam_? = pcVar2;
-      (*pcRam_?)(in_stack_6);
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    cVar7 = (*pcRam_?)();
+    if (cVar7 != '\0') {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      (*pcRam_?)();
       return;
     }
   }
-  uVar4 = func_?(&UNK_?,0);
-  func_?(uVar4);
-code_?:
-  this_01 = (ArgumentException *)func_?();
-  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-            (this_01,StringLiteral_Coroutines_can_only_be_stopped_o,(MethodInfo *)0x0);
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  this_01 = (ArgumentException *)func_?();
+  func_?();
+  pMVar5 = (MethodInfo *)0x0;
+  pSVar6 = (String *)func_?();
+  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(this_01,pSVar6,pMVar5);
+  func_?();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -378,34 +339,36 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_DoCaptureMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__Sentry__SentryEvent);
+    func_?(&TypeInfo__SentrySdk);
+    func_?(&StringLiteral_sending_message_to_sentry_);
+    func_?(&StringLiteral_info);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
   }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 != (SentrySdk *)0x0) {
     if ((pSVar1->fields).Debug != 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
                 ((Object *)StringLiteral_sending_message_to_sentry_,(MethodInfo *)0x0);
     }
-    breadcrumbs = SentrySdk_GetBreadcrumbs(this,(MethodInfo *)0x0);
+    breadcrumbs = Sentry::Breadcrumb::Breadcrumb_CombineBreadcrumbs
+                            ((this->fields)._breadcrumbs,(this->fields)._lastBreadcrumbPos,
+                             (this->fields)._noBreadcrumbs,(MethodInfo *)0x0);
     this_00 = (SentryEvent *)func_?(TypeInfo__Sentry__SentryEvent);
-    Sentry::SentryEvent::SentryEvent__ctor
-              (this_00,message,tags,extraSentryData,breadcrumbs,(MethodInfo *)0x0);
     if (this_00 != (SentryEvent *)0x0) {
+      Sentry::SentryEvent::SentryEvent__ctor
+                (this_00,message,tags,extraSentryData,breadcrumbs,(MethodInfo *)0x0);
       (this_00->fields).level = StringLiteral_info;
+      func_?(&(this_00->fields).level,StringLiteral_info);
       SentrySdk_DoCaptureEvent(this,this_00,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -418,43 +381,10 @@ List_1_Sentry_Breadcrumb_ *
 Assembly-CSharp.dll::SentrySdk::SentrySdk_GetBreadcrumbs(SentrySdk *this,MethodInfo *method)
 
 {
-  iVar1 = (this->fields)._lastBreadcrumbPos;
-  capacity = (this->fields)._noBreadcrumbs;
-  pBVar2 = (this->fields)._breadcrumbs;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (List_1_ThemeAttributes_ThemeAttribute_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<Sentry::Breadcrumb>);
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            (this_00,capacity,
-             MethodInfo__System__Collections__Generic__List<Sentry::Breadcrumb>__List_int_);
-  iVar3 = 0;
-  if (0 < capacity) {
-    do {
-      if (pBVar2 == (Breadcrumb__Array *)0x0) {
-code_?:
-        func_?(0);
-code_?:
-        uVar4 = func_?(0,0);
-        func_?(uVar4);
-        pcVar5 = (code *)swi(3);
-        pLVar6 = (List_1_Sentry_Breadcrumb_ *)(*pcVar5)();
-        return pLVar6;
-      }
-      uVar7 = (((iVar1 - capacity) + 100) % 100 + iVar3) % 100;
-      if (pBVar2->max_length <= uVar7) goto code_?;
-      if (this_00 == (List_1_ThemeAttributes_ThemeAttribute_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)pBVar2->vector[uVar7],
-                 MethodInfo__System__Collections__Generic__List<Sentry::Breadcrumb>__Add_Sentry__Breadcrumb_
-                );
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < capacity);
-  }
-  return (List_1_Sentry_Breadcrumb_ *)this_00;
+  pLVar1 = Sentry::Breadcrumb::Breadcrumb_CombineBreadcrumbs
+                     ((this->fields)._breadcrumbs,(this->fields)._lastBreadcrumbPos,
+                      (this->fields)._noBreadcrumbs,(MethodInfo *)0x0);
+  return pLVar1;
 }
 
 
@@ -465,21 +395,26 @@ Assembly-CSharp.dll::SentrySdk::SentrySdk_GetStackTraces(String *stackTrace,Meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SentrySdk___GetStackTraces_d__20);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__SentrySdk___GetStackTraces_c__Iterator0;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  if (this != (ScaleAnimationBase *)0x0) {
-    (this->fields)._._._._.m_CachedPtr = stackTrace;
-    this[1].fields.state = -2;
-    return (IEnumerable_1_Sentry_StackTraceSpec_ *)this;
+  value = (Object *)func_?(TypeInfo__SentrySdk___GetStackTraces_d__20);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0xfffffffe;
+    pOVar1 = (Object__Class *)
+             mscorlib.dll::System::Environment::Environment_get_CurrentManagedThreadId
+                       ((MethodInfo *)0x0);
+    value[2].klass = pOVar1;
+    value[3].klass = (Object__Class *)stackTrace;
+    func_?(value + 3,stackTrace);
+    return (IEnumerable_1_Sentry_StackTraceSpec_ *)value;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerable_1_Sentry_StackTraceSpec_ *)(*pcVar1)();
-  return pIVar2;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pIVar3 = (IEnumerable_1_Sentry_StackTraceSpec_ *)(*pcVar2)();
+  return pIVar3;
 }
 
 
@@ -490,66 +425,67 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_Initialize
 
 {
   uStack_1 = 0xffffffff;
-  pSStack_2 = (SentrySdk__Class *)&DAT_?;
-  puStack_3 = (undefined *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &puStack_3;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Sentry__Breadcrumb);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__Sentry__Dsn);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__SentrySdk);
+    func_?(&StringLiteral_The_client_Sentry_SDK_is_disable);
     cRam_? = '\x01';
   }
-  func_?();
   if (sentryConfig.isEnabled == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
               ((Object *)StringLiteral_The_client_Sentry_SDK_is_disable,(MethodInfo *)0x0);
+    *unaff_FS_OFFSET = uStack_3;
+    return;
   }
-  else {
-    if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-      func_?(TypeInfo__SentrySdk);
-    }
-    x = TypeInfo__SentrySdk->static_fields->_instance;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      uStack_1 = 0;
-      this_00 = (Dsn *)func_?();
-      Sentry::Dsn::Dsn__ctor(this_00,sentryConfig.dns,(MethodInfo *)0x0);
-      uStack_1 = 0xffffffff;
-      (this->fields)._dsn = this_00;
-      pBVar5 = (Breadcrumb__Array *)func_?();
-      (this->fields)._breadcrumbs = pBVar5;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_DontDestroyOnLoad
-                ((Object_1 *)this,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-        pSStack_2 = TypeInfo__SentrySdk;
-        func_?();
-      }
-      TypeInfo__SentrySdk->static_fields->_instance = this;
-      (this->fields)._initialized = 1;
-      *unaff_FS_OFFSET = puStack_3;
-      return;
-    }
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  x = TypeInfo__SentrySdk->static_fields->_instance;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)this,(MethodInfo *)0x0);
+    *unaff_FS_OFFSET = uStack_3;
+    return;
   }
-  *unaff_FS_OFFSET = puStack_3;
+  uStack_1 = 0;
+  this_00 = (Dsn *)func_?();
+  if (this_00 != (Dsn *)0x0) {
+    Sentry::Dsn::Dsn__ctor(this_00,sentryConfig.dns,(MethodInfo *)0x0);
+    (this->fields)._dsn = this_00;
+    func_?();
+    uStack_1 = 0xffffffff;
+    pBVar5 = (Breadcrumb__Array *)func_?();
+    (this->fields)._breadcrumbs = pBVar5;
+    func_?();
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_DontDestroyOnLoad
+              ((Object_1 *)this,(MethodInfo *)0x0);
+    TypeInfo__SentrySdk->static_fields->_instance = this;
+    func_?();
+    (this->fields)._initialized = 1;
+    *unaff_FS_OFFSET = uStack_3;
+    return;
+  }
+  func_?();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -564,87 +500,53 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_OnLogMessageReceived
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__SentrySdk);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
-  }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    return;
-  }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
-  }
-  pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-  if (pSVar1 != (SentrySdk *)0x0) {
-    if ((pSVar1->fields)._initialized == 0) {
-      return;
-    }
-    if (((type != LogType__Enum_Error) && (type != LogType__Enum_Exception)) &&
-       (type != LogType__Enum_Assert)) {
-      return;
-    }
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-      func_?();
-    }
+  if (bVar2 == 0) {
     pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-    if (pSVar1 != (SentrySdk *)0x0) {
-      if (fVar3 - (pSVar1->fields)._timeLastError <= _UNK_?) {
-        return;
-      }
-      if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-        func_?(TypeInfo__SentrySdk);
-      }
+    if (pSVar1 == (SentrySdk *)0x0) {
+code_?:
+      func_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    if (((pSVar1->fields)._initialized != 0) &&
+       (((type == LogType__Enum_Error || (type == LogType__Enum_Exception)) ||
+        (type == LogType__Enum_Assert)))) {
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      if (pSVar1 != (SentrySdk *)0x0) {
-        (pSVar1->fields)._timeLastError = fVar3;
+      if (pSVar1 == (SentrySdk *)0x0) goto code_?;
+      if (_UNK_? < fVar4 - (pSVar1->fields)._timeLastError) {
+        pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
+        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (pSVar1->fields)._timeLastError = fVar4;
         if ((type == LogType__Enum_Exception) || (type == LogType__Enum_Assert)) {
-          if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-            func_?();
-          }
           pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
           if (pSVar1 != (SentrySdk *)0x0) {
             SentrySdk_ScheduleException
                       (pSVar1,condition,stackTrace,extraSentryData,tags,(MethodInfo *)0x0);
             return;
           }
+          goto code_?;
         }
-        else {
-          if (type != LogType__Enum_Error) {
-            return;
-          }
-          if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-            func_?();
-          }
+        if (type == LogType__Enum_Error) {
           pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
-          if (pSVar1 != (SentrySdk *)0x0) {
-            SentrySdk_ScheduleError
-                      (pSVar1,condition,stackTrace,extraSentryData,tags,(MethodInfo *)0x0);
-            return;
-          }
+          if (pSVar1 == (SentrySdk *)0x0) goto code_?;
+          SentrySdk_ScheduleError
+                    (pSVar1,condition,stackTrace,extraSentryData,tags,(MethodInfo *)0x0);
         }
       }
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
   return;
 }
 
@@ -656,12 +558,8 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_PrepareEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SentrySdk);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
   }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 != (SentrySdk *)0x0) {
@@ -669,17 +567,18 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_PrepareEvent
       return;
     }
     if ((event != (SentryEvent *)0x0) &&
-       (pCVar2 = (event->fields).contexts, pCVar2 != (Context_2 *)0x0)) {
+       (pCVar2 = (event->fields).contexts, pCVar2 != (Context *)0x0)) {
       pDVar3 = (pCVar2->fields).device;
       pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceName
                          ((MethodInfo *)0x0);
       if (pDVar3 != (Device *)0x0) {
         (pDVar3->fields).name = pSVar4;
+        func_?(&pDVar3->fields,pSVar4);
         return;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -696,20 +595,22 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_ScheduleError
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__Sentry__SentryErrorEvent);
+    func_?(&
+                    System__Collections__Generic__IEnumerator<UnityEngine::Networking::UnityWebRequestAsyncOperation>_MethodInfo__SentrySdk__ContinueSendingEvent<Sentry::SentryErrorEvent>_Sentry__SentryErrorEvent_
+                   );
+    func_?(&TypeInfo__SentrySdk);
+    func_?(&StringLiteral_sending_exception_to_sentry_);
+    func_?(&StringLiteral_condition___0_);
+    func_?(&StringLiteral_stackTrace___0_);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
   }
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 == (SentrySdk *)0x0) {
 code_?:
-    func_?(0);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
+    func_?();
 code_?:
     uVar2 = func_?(0);
     func_?(uVar2);
@@ -717,34 +618,19 @@ code_?:
   else {
     if ((pSVar1->fields).Debug == 0) {
 code_?:
-      if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-        func_?(TypeInfo__SentrySdk);
-      }
       pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
       if (pSVar1 != (SentrySdk *)0x0) {
-        breadcrumbs = SentrySdk_GetBreadcrumbs(pSVar1,(MethodInfo *)0x0);
-        event = (SentryExceptionEvent *)func_?(TypeInfo__Sentry__SentryErrorEvent);
-        if (cRam_? == '\0') {
-          func_?(_UNK_?);
-          cRam_? = '\x01';
-        }
-        Sentry::SentryEvent::SentryEvent__ctor
-                  ((SentryEvent *)event,condition,tags,extraSentryData,breadcrumbs,(MethodInfo *)0x0
-                  );
-        this_00 = (event->fields)._.extra;
-        if (this_00 != (Dictionary_2_System_String_System_Object_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          String,UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-          Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                    ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                      *)this_00,StringLiteral_error_stack_trace,
-                     (CrossPlatformInputManager_VirtualButton *)stackTrace,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+        breadcrumbs = Sentry::Breadcrumb::Breadcrumb_CombineBreadcrumbs
+                                ((pSVar1->fields)._breadcrumbs,(pSVar1->fields)._lastBreadcrumbPos,
+                                 (pSVar1->fields)._noBreadcrumbs,(MethodInfo *)0x0);
+        this_00 = (SentryErrorEvent *)func_?(TypeInfo__Sentry__SentryErrorEvent);
+        if (this_00 != (SentryErrorEvent *)0x0) {
+          Sentry::SentryErrorEvent::SentryErrorEvent__ctor
+                    (this_00,condition,breadcrumbs,stackTrace,tags,extraSentryData,(MethodInfo *)0x0
                     );
           routine = (IEnumerator *)
-                    SentrySdk_ContinueSendingEvent_3
-                              (this,event,
+                    SentrySdk_ContinueSendingEvent
+                              (this,(Object *)this_00,
                                System__Collections__Generic__IEnumerator<UnityEngine::Networking::UnityWebRequestAsyncOperation>_MethodInfo__SentrySdk__ContinueSendingEvent<Sentry::SentryErrorEvent>_Sentry__SentryErrorEvent_
                               );
           UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
@@ -754,8 +640,7 @@ code_?:
       }
       goto code_?;
     }
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
@@ -770,6 +655,7 @@ code_?:
 code_?:
     if (pOVar3->max_length == 0) goto code_?;
     pOVar3->vector[0] = (Object *)condition;
+    func_?(pOVar3->vector,condition);
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
               (StringLiteral_condition___0_,pOVar3,(MethodInfo *)0x0);
     pOVar3 = (Object__Array *)func_?(TypeInfo__System__Object,1);
@@ -778,6 +664,7 @@ code_?:
 code_?:
       if (pOVar3->max_length == 0) goto code_?;
       pOVar3->vector[0] = (Object *)stackTrace;
+      func_?(pOVar3->vector,stackTrace);
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
                 (StringLiteral_stackTrace___0_,pOVar3,(MethodInfo *)0x0);
       goto code_?;
@@ -785,11 +672,10 @@ code_?:
     iVar4 = func_?(stackTrace,(pOVar3->klass->_0).element_class);
     if (iVar4 != 0) goto code_?;
   }
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-code_?:
   uVar2 = func_?(0);
   func_?(uVar2);
+code_?:
+  func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -810,227 +696,187 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_ScheduleException
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Char);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<Sentry::StackTraceSpec>);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<Sentry::StackTraceSpec>);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Sentry::StackTraceSpec>__Add_Sentry__StackTraceSpec_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<Sentry::StackTraceSpec>__List__)
+    ;
+    func_?(&TypeInfo__System__Collections__Generic__List<Sentry::StackTraceSpec>);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__Sentry__SentryExceptionEvent);
+    func_?(&
+                    System__Collections__Generic__IEnumerator<UnityEngine::Networking::UnityWebRequestAsyncOperation>_MethodInfo__SentrySdk__ContinueSendingEvent<Sentry::SentryExceptionEvent>_Sentry__SentryExceptionEvent_
+                   );
+    func_?(&TypeInfo__SentrySdk);
+    func_?(&StringLiteral_sending_exception_to_sentry_);
+    func_?(&StringLiteral_condition___0_);
+    func_?(&StringLiteral_stackTrace___0_);
     cRam_? = '\x01';
   }
-  pMVar4 = (MethodInfo *)&stack0xffffffc4;
-  func_?();
-  method_01 = (MethodInfo *)&stack0xffffffc4;
-  if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (method_01 = (MethodInfo *)&stack0xffffffc4, (TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-    func_?(TypeInfo__SentrySdk);
-    method_01 = pMVar4;
-  }
-  pSVar5 = TypeInfo__SentrySdk->static_fields->_instance;
-  pSVar6 = unaff_EBX;
-  if (pSVar5 == (SentrySdk *)0x0) goto code_?;
-  if ((pSVar5->fields).Debug == 0) {
+  pSVar4 = TypeInfo__SentrySdk->static_fields->_instance;
+  if (pSVar4 == (SentrySdk *)0x0) goto code_?;
+  if ((pSVar4->fields).Debug == 0) {
 code_?:
-    _Var8.genericMethod =
-         (Il2CppGenericMethod *)
+    stackTrace_00 =
+         (List_1_Sentry_StackTraceSpec_ *)
          func_?(TypeInfo__System__Collections__Generic__List<Sentry::StackTraceSpec>);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-    List_1_UnityEngine_Vector4___ctor
-              ((List_1_UnityEngine_Vector4_ *)_Var8.genericMethod,
+    if (stackTrace_00 == (List_1_Sentry_StackTraceSpec_ *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)stackTrace_00,
                MethodInfo__System__Collections__Generic__List<Sentry::StackTraceSpec>__List__);
     separator = (Char__Array *)func_?(TypeInfo__System__Char,1);
-    pSVar6 = stackTrace;
     if (separator == (Char__Array *)0x0) goto code_?;
-    if (separator->max_length == 0) goto code_?;
-    separator->vector[0] = 0x3a;
-    if ((condition == (String *)0x0) ||
-       (pSVar7 = mscorlib.dll::System::String::String_Split_1
-                           (condition,separator,2,in_stack_8), pSVar7 == (String__Array *)0x0
-       )) goto code_?;
-    if (pSVar7->max_length != 0) {
-      message = pSVar7->vector[0];
-      if (pSVar7->max_length < 2) goto code_?;
-      pMVar4 = (MethodInfo *)pSVar7->vector[1];
-      if (pMVar4 != (MethodInfo *)0x0) {
-        pSVar9 = mscorlib.dll::System::String::String_Substring
-                            ((String *)pMVar4,1,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-          func_?();
-        }
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pSVar10 = (ScaleAnimationBase *)func_?();
-        ScaleAnimationBase::ScaleAnimationBase_Play(pSVar10,0.0,pMVar4);
-        if (pSVar10 != (ScaleAnimationBase *)0x0) {
-          (pSVar10->fields)._._._._.m_CachedPtr = stackTrace;
-          pSVar10[1].fields.state = -2;
-          piVar11 = (int *)func_?(0,
-                                           TypeInfo__System__Collections__Generic__IEnumerable<Sentry::StackTraceSpec>
-                                           ,pSVar10);
-          uStack_1 = 0;
-          while (pSVar6 = stackTrace, piVar11 != (int *)0x0) {
-            cVar12 = func_?();
-            stackTrace = (String *)0x0;
-            if (cVar12 == '\0') {
-              uStack_1 = 0xffffffff;
-              if (piVar11 != (int *)0x0) {
-                func_?(0,TypeInfo__System__IDisposable,piVar11);
+    if (separator->max_length != 0) {
+      separator->vector[0] = 0x3a;
+      if ((condition == (String *)0x0) ||
+         (pSVar5 = mscorlib.dll::System::String::String_Split_2
+                             (condition,separator,2,(MethodInfo *)0x0),
+         pSVar5 == (String__Array *)0x0)) goto code_?;
+      if ((pSVar5->max_length != 0) && (exceptionType = pSVar5->vector[0], 1 < pSVar5->max_length))
+      {
+        if (pSVar5->vector[1] != (String *)0x0) {
+          exceptionValue =
+               mscorlib.dll::System::String::String_Substring(pSVar5->vector[1],1,(MethodInfo *)0x0)
+          ;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pOVar6 = (Object *)func_?();
+          if (pOVar6 != (Object *)0x0) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      (pOVar6,ExceptionArgument__Enum_obj,unaff_EDI);
+            pOVar6[1].klass = (Object__Class *)0xfffffffe;
+            pOVar7 = (Object__Class *)
+                     mscorlib.dll::System::Environment::Environment_get_CurrentManagedThreadId
+                               ((MethodInfo *)0x0);
+            pOVar6[2].klass = pOVar7;
+            pOVar6[3].klass = (Object__Class *)stackTrace;
+            func_?(pOVar6 + 3,stackTrace);
+            piVar8 = (int *)func_?(0,
+                                             TypeInfo__System__Collections__Generic__IEnumerable<Sentry::StackTraceSpec>
+                                             ,pOVar6);
+            uStack_1 = 1;
+            while (piVar8 != (int *)0x0) {
+              cVar9 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar8);
+              if (cVar9 == '\0') {
+                uStack_1 = 0xffffffff;
+                if (piVar8 != (int *)0x0) {
+                  func_?(0,TypeInfo__System__IDisposable,piVar8);
+                }
+                uStack_1 = 0xffffffff;
+                pSVar4 = TypeInfo__SentrySdk->static_fields->_instance;
+                if (pSVar4 != (SentrySdk *)0x0) {
+                  breadcrumbs = Sentry::Breadcrumb::Breadcrumb_CombineBreadcrumbs
+                                          ((pSVar4->fields)._breadcrumbs,
+                                           (pSVar4->fields)._lastBreadcrumbPos,
+                                           (pSVar4->fields)._noBreadcrumbs,(MethodInfo *)0x0);
+                  this_00 = (SentryExceptionEvent *)
+                            func_?(TypeInfo__Sentry__SentryExceptionEvent);
+                  if (this_00 != (SentryExceptionEvent *)0x0) {
+                    Sentry::SentryExceptionEvent::SentryExceptionEvent__ctor
+                              (this_00,exceptionType,exceptionValue,breadcrumbs,stackTrace_00,tags,
+                               extraSentryData,(MethodInfo *)0x0);
+                    routine = (IEnumerator *)
+                              SentrySdk_ContinueSendingEvent
+                                        (this,(Object *)this_00,
+                                         System__Collections__Generic__IEnumerator<UnityEngine::Networking::UnityWebRequestAsyncOperation>_MethodInfo__SentrySdk__ContinueSendingEvent<Sentry::SentryExceptionEvent>_Sentry__SentryExceptionEvent_
+                                        );
+                    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+                    MonoBehaviour_StartCoroutine_Auto
+                              ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+                    *unaff_FS_OFFSET = uStack_3;
+                    return;
+                  }
+                }
+                break;
               }
-              if ((((uint)(TypeInfo__SentrySdk->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                 ((TypeInfo__SentrySdk->_1).cctor_started == 0)) {
-                func_?(TypeInfo__SentrySdk);
+              if (piVar8 == (int *)0x0) break;
+              uVar10 = 0;
+              uVar11 = *(ushort *)(*piVar8 + 0xb2);
+              if (uVar11 != 0) {
+                do {
+                  if (*(IEnumerator_1_Sentry_StackTraceSpec___Class **)
+                       (*(int *)(*piVar8 + 0x58) + (uint)uVar10 * 8) ==
+                      TypeInfo__System__Collections__Generic__IEnumerator<Sentry::StackTraceSpec>) {
+                    puVar12 = (undefined4 *)
+                              (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xbc
+                              + *piVar8);
+                    goto code_?;
+                  }
+                  uVar10 = uVar10 + 1;
+                } while (uVar10 < uVar11);
               }
-              pSVar5 = TypeInfo__SentrySdk->static_fields->_instance;
-              pSVar6 = stackTrace;
-              if (pSVar5 != (SentrySdk *)0x0) {
-                breadcrumbs = SentrySdk_GetBreadcrumbs(pSVar5,(MethodInfo *)0x0);
-                event = (SentryExceptionEvent *)
-                        func_?(TypeInfo__Sentry__SentryExceptionEvent);
-                if (cRam_? == '\0') {
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                pMVar4 = (MethodInfo *)&UNK_?;
-                Sentry::SentryEvent::SentryEvent__ctor
-                          ((SentryEvent *)event,message,tags,extraSentryData,breadcrumbs,
-                           (MethodInfo *)0x0);
-                this_00 = (List_1_UnityEngine_Vector4_ *)func_?();
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-                List_1_UnityEngine_Vector4___ctor
-                          (this_00,
-                           MethodInfo__System__Collections__Generic__List<Sentry::ExceptionSpec>__List__
-                          );
-                pSVar10 = (ScaleAnimationBase *)func_?();
-                if (cRam_? == '\0') {
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                pvVar13 = (void *)0x0;
-                ScaleAnimationBase::ScaleAnimationBase_Play(pSVar10,0.0,method_01);
-                (pSVar10->fields)._._._._.m_CachedPtr = pvVar13;
-                (pSVar10->fields).state = (int32_t)pSVar9;
-                _Var8.genericMethod = (Il2CppGenericMethod *)&UNK_?;
-                this_01 = (ScaleAnimationBase *)func_?();
-                ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,pMVar4);
-                (this_01->fields)._._._._.m_CachedPtr = (void *)_Var8;
-                (pSVar10->fields).originalScale.x = (float)this_01;
-                pSVar6 = (String *)0x0;
-                if (this_00 != (List_1_UnityEngine_Vector4_ *)0x0) {
-                  mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-                  List_1_UIPushOption__Add
-                            ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)pSVar10,
-                             MethodInfo__System__Collections__Generic__List<Sentry::ExceptionSpec>__Add_Sentry__ExceptionSpec_
-                            );
-                  method_00 = TypeInfo__Sentry__ExceptionContainer;
-                  pSVar10 = (ScaleAnimationBase *)func_?();
-                  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar10,0.0,(MethodInfo *)method_00);
-                  (pSVar10->fields)._._._._.m_CachedPtr = this_00;
-                  (event->fields).exception = (ExceptionContainer *)pSVar10;
-                  routine = (IEnumerator *)
-                            SentrySdk_ContinueSendingEvent_3
-                                      (this,event,
-                                       System__Collections__Generic__IEnumerator<UnityEngine::Networking::UnityWebRequestAsyncOperation>_MethodInfo__SentrySdk__ContinueSendingEvent<Sentry::SentryExceptionEvent>_Sentry__SentryExceptionEvent_
-                                      );
-                  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-                  MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0)
-                  ;
-                  *unaff_FS_OFFSET = uStack_3;
-                  return;
-                }
-              }
-              break;
-            }
-            uVar14 = 0;
-            uVar15 = *(ushort *)(*piVar11 + 0xb6);
-            if (uVar15 != 0) {
-              stackTrace = *(String **)(*piVar11 + 0x58);
-              do {
-                if ((&stackTrace->klass)[(uint)uVar14 * 2] ==
-                    (String__Class *)
-                    TypeInfo__System__Collections__Generic__IEnumerator<Sentry::StackTraceSpec>) {
-                  puVar16 = (undefined4 *)
-                            (*piVar11 + (int)((&stackTrace->monitor)[(uint)uVar14 * 2] + 0x18) * 8);
-                  goto code_?;
-                }
-                uVar14 = uVar14 + 1;
-              } while (uVar14 < uVar15);
-            }
-            puVar16 = (undefined4 *)
-                      func_?(piVar11,
-                                      TypeInfo__System__Collections__Generic__IEnumerator<Sentry::StackTraceSpec>
-                                      ,0);
+              puVar12 = (undefined4 *)
+                        func_?(piVar8,
+                                        TypeInfo__System__Collections__Generic__IEnumerator<Sentry::StackTraceSpec>
+                                        ,0);
 code_?:
-            item = (*(code *)*puVar16)(piVar11,puVar16[1]);
-            pSVar6 = stackTrace;
-            if ((List_1_UnityEngine_Vector4_ *)_Var8.genericMethod ==
-                (List_1_UnityEngine_Vector4_ *)0x0) break;
-            mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-            List_1_UIPushOption__Add
-                      ((List_1_UIPushOption_ *)_Var8.genericMethod,item,
-                       MethodInfo__System__Collections__Generic__List<Sentry::StackTraceSpec>__Add_Sentry__StackTraceSpec_
-                      );
+              pOVar6 = (Object *)(*(code *)*puVar12)(piVar8,puVar12[1]);
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__Add
+                        ((List_1_System_Object_ *)stackTrace_00,pOVar6,
+                         MethodInfo__System__Collections__Generic__List<Sentry::StackTraceSpec>__Add_Sentry__StackTraceSpec_
+                        );
+            }
           }
         }
+        goto code_?;
+      }
+    }
+    goto code_?;
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            ((Object *)StringLiteral_sending_exception_to_sentry_,(MethodInfo *)0x0);
+  pOVar13 = (Object__Array *)func_?(TypeInfo__System__Object,1);
+  if (pOVar13 == (Object__Array *)0x0) goto code_?;
+  if ((condition == (String *)0x0) ||
+     (iVar14 = func_?(condition,(pOVar13->klass->_0).element_class), iVar14 != 0)) {
+    if (pOVar13->max_length == 0) {
+code_?:
+      func_?();
+      goto code_?;
+    }
+    pOVar13->vector[0] = (Object *)condition;
+    func_?(pOVar13->vector,condition);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
+              (StringLiteral_condition___0_,pOVar13,(MethodInfo *)0x0);
+    pOVar13 = (Object__Array *)func_?(TypeInfo__System__Object,1);
+    if (pOVar13 == (Object__Array *)0x0) goto code_?;
+    if ((stackTrace == (String *)0x0) ||
+       (iVar14 = func_?(stackTrace,(pOVar13->klass->_0).element_class), iVar14 != 0)) {
+      if (pOVar13->max_length != 0) {
+        pOVar13->vector[0] = (Object *)stackTrace;
+        func_?(pOVar13->vector,stackTrace);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
+                  (StringLiteral_stackTrace___0_,pOVar13,(MethodInfo *)0x0);
+        goto code_?;
       }
       goto code_?;
     }
   }
   else {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-              ((Object *)StringLiteral_sending_exception_to_sentry_,(MethodInfo *)0x0);
-    pOVar17 = (Object__Array *)func_?(TypeInfo__System__Object,1);
-    pSVar6 = unaff_EBX;
-    if (pOVar17 == (Object__Array *)0x0) goto code_?;
-    if ((condition == (String *)0x0) ||
-       (iVar18 = func_?(condition,(pOVar17->klass->_0).element_class), iVar18 != 0)) {
-      if (pOVar17->max_length == 0) goto code_?;
-      pOVar17->vector[0] = (Object *)condition;
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
-                (StringLiteral_condition___0_,pOVar17,(MethodInfo *)0x0);
-      pOVar17 = (Object__Array *)func_?(TypeInfo__System__Object,1);
-      pSVar6 = unaff_EBX;
-      if (pOVar17 == (Object__Array *)0x0) goto code_?;
-      if ((stackTrace != (String *)0x0) &&
-         (iVar18 = func_?(stackTrace,(pOVar17->klass->_0).element_class), iVar18 == 0))
-      goto code_?;
-      pSVar6 = stackTrace;
-      if (pOVar17->max_length != 0) {
-        pOVar17->vector[0] = (Object *)stackTrace;
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
-                  (StringLiteral_stackTrace___0_,pOVar17,(MethodInfo *)0x0);
-        goto code_?;
-      }
-    }
-    else {
-      uVar19 = func_?(0,0);
-      func_?(uVar19);
 code_?:
-      uVar19 = func_?(0);
-      func_?(uVar19);
-      stackTrace = unaff_EBX;
-code_?:
-      uVar19 = func_?(0,0);
-      func_?(uVar19);
-      pSVar6 = stackTrace;
-    }
-    uVar19 = func_?(0);
-    func_?(uVar19);
-code_?:
-    func_?(0);
-code_?:
-    uVar19 = func_?(0);
-    func_?(uVar19);
+    uVar15 = func_?(0);
+    func_?(uVar15);
   }
-  uVar19 = func_?(0);
-  func_?(uVar19);
+  uVar15 = func_?(0);
+  func_?(uVar15);
 code_?:
-  uVar19 = func_?(0);
-  func_?(uVar19);
-  func_?(pSVar6,0,0);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  uVar15 = func_?();
+  func_?(uVar15);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1043,11 +889,10 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk__ctor(SentrySdk *this,MethodInfo 
   (this->fields).sendDefaultPii = 1;
   (this->fields).Debug = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

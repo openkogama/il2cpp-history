@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -25,7 +25,7 @@ namespace MV.Common
 		AvatarImpact75 = 8,
 		VehicleImpact50 = 9,
 		VehicleImpact75 = 10,
-		SwordTerrainDestroy = 15,
+		MeleeWeaponTerrainDestroy = 15,
 		ImpulseGunImpact = 16
 	}
 }

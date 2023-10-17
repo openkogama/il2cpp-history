@@ -10,91 +10,62 @@ AvatarLimbManagerLocal_AvatarHeadRotationCalculator_CalculateHeadRotation
 
 {
   pAVar1 = this;
+  (__return_storage_ptr__->YawRotation).x = 0.0;
+  (__return_storage_ptr__->YawRotation).y = 0.0;
+  (__return_storage_ptr__->YawRotation).z = 0.0;
+  (__return_storage_ptr__->YawRotation).w = 0.0;
   (this->fields).shouldLean = 1;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  fVar2 = localLookDirection.z;
-  localDirection.y = localLookDirection.y;
-  localDirection.x = localLookDirection.x;
-  localDirection.z = localLookDirection.z;
-  pAVar3 = (AvatarLimbManagerLocal_AvatarHeadRotationCalculator *)
+  (__return_storage_ptr__->PitchRotation).x = 0.0;
+  (__return_storage_ptr__->PitchRotation).y = 0.0;
+  (__return_storage_ptr__->PitchRotation).z = 0.0;
+  (__return_storage_ptr__->PitchRotation).w = 0.0;
+  *(undefined4 *)&__return_storage_ptr__->ShouldLean = 0;
+  pAVar2 = (AvatarLimbManagerLocal_AvatarHeadRotationCalculator *)
            MathFunctions::MathFunctions_SignedYawFromLocalDirection
-                     (localDirection,(MethodInfo *)0x0);
-  pMVar4 = (Mathf__Class *)0x0;
-  if (((float)pAVar3 < _UNK_?) || (_UNK_? < (float)pAVar3)) {
+                     (localLookDirection,(MethodInfo *)0x0);
+  if (((float)pAVar2 < _UNK_?) || (_UNK_? < (float)pAVar2)) {
     (this->fields).shouldLean = 0;
     this = (AvatarLimbManagerLocal_AvatarHeadRotationCalculator *)0x0;
-    pAVar3 = this;
+    pAVar2 = this;
   }
-  this = pAVar3;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  this = pAVar2;
+  pAVar2 = _UNK_?;
+  if (((float)this < (float)_UNK_?) ||
+     (pAVar2 = _UNK_?, (float)_UNK_? < (float)this)) {
+    this = pAVar2;
   }
-  fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-                     ((float)this,-90.0,90.0,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                     ((Vector3 *)&stack0xffffffec,(MethodInfo *)0x0);
-  MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
-            ((Quaternion *)&puStack_7,fVar5,*pVVar6,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  localDirection_00.y = localLookDirection.y;
-  localDirection_00.x = localLookDirection.x;
-  localDirection_00.z = fVar2;
-  pMVar8 = (Mathf__Class *)
-            MathFunctions::MathFunctions_PitchFromLocalDirection
-                      (localDirection_00,(MethodInfo *)0x0);
-  value = pMVar8;
-  if ((0.0 < (float)pMVar8) &&
-     (((float)pMVar8 <= 0.0 || (value = pMVar4, _UNK_? <= (float)pMVar8)))) {
-    value = (Mathf__Class *)((float)pMVar8 - _UNK_?);
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    value = TypeInfo__UnityEngine__Mathf;
+  pQVar3 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
+                     ((Quaternion *)&stack0xffffffec,(float)this,
+                      TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+  MVGroundState::MVGroundState_GetGradientAngle(localLookDirection,(MethodInfo *)pQVar3->z);
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  fVar5 = 45.0;
-  fVar2 = -45.0;
-  puVar9 = &UNK_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-            ((float)value,-45.0,45.0,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_right
-                     (&localLookDirection,(MethodInfo *)0x0);
-  uVar10 = pVVar6->x;
-  angle = pVVar6->y;
-  localLookDirection.x = pVVar6->z;
-  localLookDirection.y = 0.0;
-  pQVar11 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
-                     ((Quaternion *)&puStack_7,(float)angle,*pVVar6,(MethodInfo *)0x0);
-  fVar12 = pQVar11->x;
-  fVar13 = pQVar11->y;
-  fVar14 = pQVar11->z;
-  fVar15 = pQVar11->w;
-  uStack_16 = (uint)(pAVar1->fields).shouldLean;
-  ((Quaternion *)uVar10)->x = (float)puVar9;
-  ((Quaternion *)uVar10)->y = (float)value;
-  ((Quaternion *)uVar10)->z = fVar2;
-  ((Quaternion *)uVar10)->w = fVar5;
-  ((Quaternion *)(uVar10 + 0x10))->x = fVar12;
-  ((Quaternion *)(uVar10 + 0x10))->y = fVar13;
-  ((Quaternion *)(uVar10 + 0x10))->z = fVar14;
-  ((Quaternion *)(uVar10 + 0x10))->w = fVar15;
-  *(uint *)(uVar10 + 0x20) = uStack_16;
-  return (AvatarLimbManagerLocal_HeadRotationCalculationResult *)uVar10;
+  pVVar4 = &TypeInfo__UnityEngine__Vector3->static_fields->rightVector;
+  fVar5 = pVVar4->x;
+  pQVar3 = (Quaternion *)&stack0xffffffdc;
+  fVar6 = 0.0;
+  puVar7 = &UNK_?;
+  pQVar8 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
+                     (pQVar3,0.0,*pVVar4,(MethodInfo *)0x0);
+  __return_storage_ptr__->ShouldLean = (pAVar1->fields).shouldLean;
+  (__return_storage_ptr__->YawRotation).x = (float)puVar7;
+  (__return_storage_ptr__->YawRotation).y = (float)pQVar3;
+  (__return_storage_ptr__->YawRotation).z = fVar6;
+  (__return_storage_ptr__->YawRotation).w = fVar5;
+  fVar5 = pQVar8->y;
+  fVar6 = pQVar8->z;
+  fVar9 = pQVar8->w;
+  (__return_storage_ptr__->PitchRotation).x = pQVar8->x;
+  (__return_storage_ptr__->PitchRotation).y = fVar5;
+  (__return_storage_ptr__->PitchRotation).z = fVar6;
+  (__return_storage_ptr__->PitchRotation).w = fVar9;
+  return __return_storage_ptr__;
 }
 
 
@@ -108,40 +79,48 @@ AvatarLimbManagerLocal_AvatarHeadRotationCalculator_GetClampedPitchRotation
           MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  fVar1 = MathFunctions::MathFunctions_PitchFromLocalDirection(localDirection,(MethodInfo *)0x0);
+  fVar1 = MVGroundState::MVGroundState_GetGradientAngle(localDirection,(MethodInfo *)0x0);
   localDirection.z = 0.0;
   fVar2 = fVar1;
   if ((0.0 < fVar1) && ((fVar1 <= 0.0 || (fVar2 = localDirection.z, _UNK_? <= fVar1)))) {
-    fVar2 = fVar1 - _UNK_?;
+    fVar2 = (fVar1 - _UNK_?) / _UNK_?;
+    if (fVar2 < 0.0) {
+      fVar2 = 0.0;
+    }
+    else if (_UNK_? < fVar2) {
+      fVar2 = _UNK_?;
+    }
+    if (fVar2 < 0.0) {
+      fVar2 = 0.0;
+    }
+    else if (_UNK_? < fVar2) {
+      fVar2 = _UNK_?;
+    }
+    fVar2 = fVar2 * _UNK_? * fVar2 * fVar2 + fVar2 * _UNK_? * fVar2;
+    fVar2 = (_UNK_? - fVar2) * 0.0 + fVar2 * _UNK_?;
   }
   localDirection.z = fVar2;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?();
+  if (localDirection.z < _UNK_?) {
+    localDirection.z = _UNK_?;
   }
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-                    (localDirection.z,-45.0,45.0,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
+  else if (_UNK_? < localDirection.z) {
+    localDirection.z = _UNK_?;
   }
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_right
-                     ((Vector3 *)&stack0xffffffec,(MethodInfo *)0x0);
-  uVar4 = pVVar3->y;
-  pQVar5 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
-                     ((Quaternion *)&stack0xffffffe8,fVar2,*pVVar3,(MethodInfo *)0x0);
-  fVar2 = pQVar5->y;
-  fVar1 = pQVar5->z;
-  fVar6 = pQVar5->w;
-  *(float *)uVar4 = pQVar5->x;
-  *(float *)(uVar4 + 4) = fVar2;
-  *(float *)(uVar4 + 8) = fVar1;
-  *(float *)(uVar4 + 0xc) = fVar6;
-  return (Quaternion *)uVar4;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pQVar3 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
+                     ((Quaternion *)&stack0xffffffe8,localDirection.z,
+                      TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
+  fVar2 = pQVar3->y;
+  fVar1 = pQVar3->z;
+  fVar4 = pQVar3->w;
+  __return_storage_ptr__->x = pQVar3->x;
+  __return_storage_ptr__->y = fVar2;
+  __return_storage_ptr__->z = fVar1;
+  __return_storage_ptr__->w = fVar4;
+  return __return_storage_ptr__;
 }
 
 
@@ -155,39 +134,32 @@ AvatarLimbManagerLocal_AvatarHeadRotationCalculator_GetClampedYawRotation
           MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   localDirection.z =
        MathFunctions::MathFunctions_SignedYawFromLocalDirection(localDirection,(MethodInfo *)0x0);
   if ((localDirection.z < _UNK_?) || (_UNK_? < localDirection.z)) {
     localDirection.z = 0.0;
     (this->fields).shouldLean = 0;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?();
+  fVar1 = _UNK_?;
+  if ((localDirection.z < _UNK_?) ||
+     (fVar1 = _UNK_?, _UNK_? < localDirection.z)) {
+    localDirection.z = fVar1;
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-                    (localDirection.z,-90.0,90.0,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                     ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  uVar3 = pVVar2->x;
-  pQVar4 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
-                     ((Quaternion *)&stack0xffffffec,fVar1,*pVVar2,(MethodInfo *)0x0);
-  fVar1 = pQVar4->y;
-  fVar5 = pQVar4->z;
-  fVar6 = pQVar4->w;
-  *(float *)uVar3 = pQVar4->x;
-  *(float *)(uVar3 + 4) = fVar1;
-  *(float *)(uVar3 + 8) = fVar5;
-  *(float *)(uVar3 + 0xc) = fVar6;
-  return (Quaternion *)uVar3;
+  pQVar2 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
+                     ((Quaternion *)&stack0xffffffec,localDirection.z,
+                      TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+  fVar1 = pQVar2->y;
+  fVar3 = pQVar2->z;
+  fVar4 = pQVar2->w;
+  __return_storage_ptr__->x = pQVar2->x;
+  __return_storage_ptr__->y = fVar1;
+  __return_storage_ptr__->z = fVar3;
+  __return_storage_ptr__->w = fVar4;
+  return __return_storage_ptr__;
 }
 
 
@@ -205,7 +177,21 @@ float Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationCalculator::
   if ((0.0 < pitch) && (pitch < _UNK_?)) {
     return 0.0;
   }
-  return pitch - _UNK_?;
+  fVar1 = (pitch - _UNK_?) / _UNK_?;
+  if (fVar1 < 0.0) {
+    fVar1 = 0.0;
+  }
+  else if (_UNK_? < fVar1) {
+    fVar1 = _UNK_?;
+  }
+  if (fVar1 < 0.0) {
+    fVar1 = 0.0;
+  }
+  else if (_UNK_? < fVar1) {
+    fVar1 = _UNK_?;
+  }
+  fVar1 = fVar1 * _UNK_? * fVar1 * fVar1 + fVar1 * _UNK_? * fVar1;
+  return (_UNK_? - fVar1) * 0.0 + fVar1 * _UNK_?;
 }
 
 

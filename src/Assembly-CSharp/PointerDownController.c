@@ -6,6 +6,7 @@ void Assembly-CSharp.dll::PointerDownController::PointerDownController_Initializ
 
 {
   (this->fields).pointerDownCallback = pointerDownCallback;
+  func_?(&(this->fields).pointerDownCallback,pointerDownCallback);
   (this->fields).isInitialized = 1;
   return;
 }
@@ -17,22 +18,31 @@ void Assembly-CSharp.dll::PointerDownController::PointerDownController_OnPointer
                (PointerDownController *this,PointerEventData *eventData,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    ppMStack_1 = &TypeInfo__MVGameControllerBase;
+    func_?();
+    cRam_? = '\x01';
+  }
   if ((this->fields).isInitialized != 0) {
-    if (eventData == (PointerEventData *)0x0) {
+    if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+      if (eventData == (PointerEventData *)0x0) goto code_?;
+      if ((eventData->fields)._button_k__BackingField != 0) {
+        return;
+      }
+    }
+    pUVar2 = (this->fields).pointerDownCallback;
+    if (pUVar2 == (UnityAction *)0x0) {
 code_?:
-      func_?(0);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      ppMStack_1 = (MVGameControllerBase__Class **)&stack0xfffffffc;
+      uVar3 = func_?(&puStack_4);
+      func_?(uVar3);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
-    pHVar2 = MVSentryGun::MVSentryGun_get_RaycastIgnoreWorldObjectIds
-                       ((MVSentryGun *)eventData,(MethodInfo *)0x0);
-    if (pHVar2 == (HashSet_1_System_Int32_ *)0x0) {
-      this_00 = (AvatarMotor_OnActiveBounceDelegate *)(this->fields).pointerDownCallback;
-      if (this_00 == (AvatarMotor_OnActiveBounceDelegate *)0x0) goto code_?;
-      AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-                (this_00,(MethodInfo *)0x0);
-    }
+    ppMStack_1 = (pUVar2->fields)._._.method;
+    puStack_6 = (pUVar2->fields)._._.method_code;
+    (*(pUVar2->fields)._._.invoke_impl)();
   }
   return;
 }

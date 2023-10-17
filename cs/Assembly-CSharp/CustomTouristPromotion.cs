@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CustomTouristPromotion : TouristPromotion
 {
@@ -19,8 +19,23 @@ public class CustomTouristPromotion : TouristPromotion
 	private GameObject adContinueButton;
 	[SerializeField]
 	private Image graphics;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<ITouristAdController> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<ITouristAdController> __9__4_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Continue_b__4_0(ITouristAdController x, BaseEventData y);
+	}
 
 	// Constructors
 	public CustomTouristPromotion();
@@ -31,7 +46,5 @@ public class CustomTouristPromotion : TouristPromotion
 	public void Continue();
 	public void Signup();
 	public void CustomRedirect();
-	[CompilerGenerated]
-	private static void _Continue_m__0(ITouristAdController x, BaseEventData y);
 }
 

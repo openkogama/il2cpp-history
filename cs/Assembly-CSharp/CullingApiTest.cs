@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CullingApiTest : MonoBehaviour
 {
@@ -29,7 +29,6 @@ public class CullingApiTest : MonoBehaviour
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _CullingIndex_k__BackingField;
 
 		// Properties

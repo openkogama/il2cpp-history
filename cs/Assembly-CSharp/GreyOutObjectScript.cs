@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GreyOutObjectScript : MonoBehaviour
 {
@@ -17,8 +17,6 @@ public class GreyOutObjectScript : MonoBehaviour
 	public Shader hiddenShader;
 	private List<PickupOriginalMaterials> pickupOriginalMaterials;
 	private bool isGreyedIn;
-	[CompilerGenerated]
-	private static Action<PickupOriginalMaterials> __f__mg_cache0;
 
 	// Properties
 	public bool IsGreyedIn { get; }

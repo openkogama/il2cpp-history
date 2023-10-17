@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class StreamingAsset<AssetType, PreviewType> : StreamingAsset
 	where AssetType : UnityEngine.Object
@@ -16,8 +16,11 @@ public abstract class StreamingAsset<AssetType, PreviewType> : StreamingAsset
 {
 	// Fields
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("If true, bundle will be cached in memory, and never unloaded. It will also require a unique bundle name. If false, bundle will be destroyed and resources freed on destruction.")]
 	protected bool useCache;
+	[SerializeField]
+	[Tooltip("If true, will not download this asset for WebGL")]
+	private bool excludeWebGL;
 	private AssetType asset;
 
 	// Properties

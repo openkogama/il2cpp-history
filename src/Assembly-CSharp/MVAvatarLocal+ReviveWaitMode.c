@@ -7,7 +7,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveWaitMode::MVAvatarLocal_ReviveWait
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__IAvatarCameraController);
+    func_?(&StringLiteral_Idle);
     cRam_? = '\x01';
   }
   MVAvatarLocal+AvatarMode::MVAvatarLocal_AvatarMode_SetModeTypes
@@ -17,30 +18,17 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveWaitMode::MVAvatarLocal_ReviveWait
     MVAvatarLocal::MVAvatarLocal_ResetAvatar(pMVar1,(MethodInfo *)0x0);
     pMVar1 = (this->fields)._.mvAvatar;
     if (pMVar1 != (MVAvatarLocal *)0x0) {
-      this_01 = (AvatarUIHandlerRemote *)
-                MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0);
-      if (this_01 != (AvatarUIHandlerRemote *)0x0) {
-        pSVar2 = AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_ShieldBar
-                           (this_01,(MethodInfo *)0x0);
-        if (pSVar2 != (ShieldBar *)0x0) {
-          func_?();
+      pAVar2 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0);
+      if ((pAVar2 != (AvatarLocal *)0x0) &&
+         ((pAVar2->fields).avatarCameraController != (IAvatarCameraController *)0x0)) {
+        func_?();
+        pMVar1 = (this->fields)._.mvAvatar;
+        if (pMVar1 != (MVAvatarLocal *)0x0) {
+          MVAvatarLocal::MVAvatarLocal_SetAnimation(pMVar1,StringLiteral_Idle,(MethodInfo *)0x0);
           pMVar1 = (this->fields)._.mvAvatar;
           if (pMVar1 != (MVAvatarLocal *)0x0) {
-            MVAvatarLocal::MVAvatarLocal_SetAnimation(pMVar1,StringLiteral_Idle,(MethodInfo *)0x0);
-            pMVar1 = (this->fields)._.mvAvatar;
-            if ((pMVar1 != (MVAvatarLocal *)0x0) &&
-               (this_00 = (pMVar1->fields)._.avatar, this_00 != (Avatar_1 *)0x0)) {
-              this_02 = (AvatarFader *)
-                        System.Core.dll::System::Linq::
-                        Enumerable+<CreateUnionIterator>c__Iterator1C`1[System::Object]::
-                        Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object__System_Collections_IEnumerator_get_Current
-                                  ((Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object_ *)
-                                   this_00,(MethodInfo *)0x0);
-              if (this_02 != (AvatarFader *)0x0) {
-                AvatarFader::AvatarFader_SetTransparency(this_02,0.5,(MethodInfo *)0x0);
-                return;
-              }
-            }
+            MVAvatar::MVAvatar_set_SetTransparency((MVAvatar *)pMVar1,0.5,(MethodInfo *)0x0);
+            return;
           }
         }
       }
@@ -60,21 +48,13 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveWaitMode::MVAvatarLocal_ReviveWait
                MethodInfo *method)
 
 {
-  pMVar1 = (this->fields)._.mvAvatar;
-  if ((pMVar1 != (MVAvatarLocal *)0x0) &&
-     (this_00 = (pMVar1->fields)._.avatar, this_00 != (Avatar_1 *)0x0)) {
-    this_01 = (AvatarFader *)
-              System.Core.dll::System::Linq::Enumerable+<CreateUnionIterator>c__Iterator1C`1[System
-              ::Object]::
-              Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object__System_Collections_IEnumerator_get_Current
-                        ((Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object_ *)this_00,
-                         (MethodInfo *)0x0);
-    if (this_01 != (AvatarFader *)0x0) {
-      AvatarFader::AvatarFader_SetTransparency(this_01,1.0,(MethodInfo *)0x0);
-      return;
-    }
+  this_00 = (this->fields)._.mvAvatar;
+  if (this_00 != (MVAvatarLocal *)0x0) {
+    MVAvatar::MVAvatar_set_SetTransparency((MVAvatar *)this_00,1.0,(MethodInfo *)0x0);
+    return;
   }
-  func_?();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -87,8 +67,10 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveWaitMode::MVAvatarLocal_ReviveWait
                (MVAvatarLocal_ReviveWaitMode *this,MVAvatarLocal *mvAvatar,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.mvAvatar = mvAvatar;
+  func_?(&this->fields,mvAvatar);
   (this->fields)._.modeTypes = 4;
   return;
 }

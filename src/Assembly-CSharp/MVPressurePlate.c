@@ -12,9 +12,10 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Callback
               (this_00,(this->fields).isDown,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -26,83 +27,91 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
+    func_?(&
+                    MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).plateObject;
   if (pMVar1 != (MVPressurePlateObject *)0x0) {
     pTVar2 = (pMVar1->fields).triggerBoxEvents;
-    pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+    pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar3,(Object *)this,
-               MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-               ,
-               MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-              );
-    if (pTVar2 != (TriggerBoxEvents *)0x0) {
-      TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).plateObject;
-      if (pMVar1 != (MVPressurePlateObject *)0x0) {
-        pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)this,
-                   MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   ,
-                   MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-                  );
-        if (pTVar2 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
-          pMVar1 = (this->fields).plateObject;
-          if (pMVar1 != (MVPressurePlateObject *)0x0) {
-            pTVar2 = (pMVar1->fields).triggerBoxEvents;
-            pUVar4 = (this->fields).useInteractor;
-            pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (pUVar3,(Object *)pUVar4,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                       ,
-                       MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-                      );
+    if (pUVar3 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (pUVar3,(Object *)this,
+                 MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                 ,(MethodInfo *)0x0);
+      if (pTVar2 != (TriggerBoxEvents *)0x0) {
+        TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
+                  (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+        pMVar1 = (this->fields).plateObject;
+        if (pMVar1 != (MVPressurePlateObject *)0x0) {
+          pTVar2 = (pMVar1->fields).triggerBoxEvents;
+          pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+          if (pUVar3 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar3,(Object *)this,
+                       MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
+              TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
                         (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
               pMVar1 = (this->fields).plateObject;
               if (pMVar1 != (MVPressurePlateObject *)0x0) {
                 pTVar2 = (pMVar1->fields).triggerBoxEvents;
                 pUVar4 = (this->fields).useInteractor;
-                pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                          *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                          (pUVar3,(Object *)pUVar4,
-                           MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                           ,
-                           MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-                          );
-                if (pTVar2 != (TriggerBoxEvents *)0x0) {
-                  TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                            (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
-                  pUVar4 = (this->fields).useInteractor;
-                  data = (Dictionary_2_System_Object_System_Object_ *)
-                         PrefabPool::PrefabPool_get_MVBatteryPrefab
-                                   ((PrefabPool *)this,(MethodInfo *)0x0);
-                  if (pUVar4 != (UseInteractor *)0x0) {
-                    UseInteractor::UseInteractor_OnDestroy(pUVar4,data,(MethodInfo *)0x0);
-                    MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
-                    return;
+                pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                         func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                if (pUVar3 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                            (pUVar3,(Object *)pUVar4,
+                             MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                             ,(MethodInfo *)0x0);
+                  if (pTVar2 != (TriggerBoxEvents *)0x0) {
+                    TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
+                              (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                    pMVar1 = (this->fields).plateObject;
+                    if (pMVar1 != (MVPressurePlateObject *)0x0) {
+                      pTVar2 = (pMVar1->fields).triggerBoxEvents;
+                      pUVar4 = (this->fields).useInteractor;
+                      pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                               func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                      if (pUVar3 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                        Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                                  (pUVar3,(Object *)pUVar4,
+                                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                   ,(MethodInfo *)0x0);
+                        if (pTVar2 != (TriggerBoxEvents *)0x0) {
+                          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
+                                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,
+                                     (MethodInfo *)0x0);
+                          pUVar4 = (this->fields).useInteractor;
+                          if (pUVar4 != (UseInteractor *)0x0) {
+                            UseInteractor::UseInteractor_OnDestroy
+                                      (pUVar4,(this->fields)._._._.data,(MethodInfo *)0x0);
+                            MVLogicObject::MVLogicObject_Destroy
+                                      ((MVLogicObject *)this,(MethodInfo *)0x0);
+                            return;
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -112,7 +121,7 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Destroy
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -125,21 +134,10 @@ bool Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_DoEnter
                (MVPressurePlate *this,int32_t instigatorWOID,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-  triggerBoxOwnerId =
-       mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-       Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxEnter
-              (this_00,(int32_t)triggerBoxOwnerId,instigatorWOID,(MethodInfo *)0x0);
+              (this_00,(this->fields)._._._.id,instigatorWOID,(MethodInfo *)0x0);
     (this->fields).localIsDown = 1;
     return 1;
   }
@@ -156,26 +154,16 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_DoExit
                (MVPressurePlate *this,int32_t instigatorWOID,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-  triggerBoxOwnerId =
-       mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-       Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxExit
-              (this_00,(int32_t)triggerBoxOwnerId,instigatorWOID,(MethodInfo *)0x0);
+              (this_00,(this->fields)._._._.id,instigatorWOID,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff4);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -188,59 +176,56 @@ Vector3 * Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_GetClosestGridPo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_one
-                     ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                     ((Vector3 *)&stack0xffffffe4,*pVVar1,2.0,(MethodInfo *)0x0);
-  fVar2 = pVVar1->z;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar2 = (pVVar1->oneVector).x;
+  uVar3 = (pVVar1->oneVector).y;
+  fVar4 = (float)uVar2 * _UNK_?;
+  fVar5 = (float)uVar3 * _UNK_?;
+  fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._.gameObject;
   if (this_00 != (GameObject *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      __return_storage_ptr___00 = (Quaternion *)&stack0xffffffe0;
-      puVar3 = &UNK_?;
-      pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         (__return_storage_ptr___00,this_01,(MethodInfo *)0x0);
-      fVar5 = pQVar4->x;
-      fVar6 = pQVar4->y;
-      fVar7 = pQVar4->z;
-      fVar8 = pQVar4->w;
-      if ((((uint)(TypeInfo__SharedCubeFunctions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__SharedCubeFunctions->_1).cctor_started == 0)) {
+      uVar7 = 0;
+      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
+      fVar4 = pQVar8->z;
+      fVar5 = pQVar8->w;
+      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = fVar6;
-      rotation.x = fVar5;
-      rotation.z = fVar7;
-      rotation.w = fVar8;
-      scale.y = (float)__return_storage_ptr___00;
-      scale.x = (float)puVar3;
-      scale.z = fVar2;
-      pVVar1 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
-                         (&position,worldPosition,rotation,0.0,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar1->y;
-      fVar2 = pVVar1->z;
-      __return_storage_ptr___00->x = pVVar1->x;
-      __return_storage_ptr___00->y = fVar5;
-      __return_storage_ptr___00->z = fVar2;
-      return (Vector3 *)__return_storage_ptr___00;
+      rotation.y = 0.0;
+      rotation.x = fVar6;
+      rotation.z = fVar4;
+      rotation.w = fVar5;
+      scale.y = (float)uVar7;
+      scale.x = (float)this_01;
+      scale.z = fVar6;
+      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+                         (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
+      fVar5 = pVVar9->y;
+      fVar4 = pVVar9->z;
+      __return_storage_ptr__->x = pVVar9->x;
+      __return_storage_ptr__->y = fVar5;
+      __return_storage_ptr__->z = fVar4;
+      return __return_storage_ptr__;
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pVVar1 = (Vector3 *)(*pcVar9)();
-  return pVVar1;
+  func_?(fVar4,fVar5);
+  pcVar10 = (code *)swi(3);
+  pVVar9 = (Vector3 *)(*pcVar10)();
+  return pVVar9;
 }
 
 
@@ -252,28 +237,21 @@ Bounds * Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_GetLocalBounds
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_2,(MethodInfo *)0x0);
-  uStack_3._0_4_ = pVVar1->x;
-  uStack_3._4_4_ = pVVar1->y;
-  fVar4 = pVVar1->z;
-  uStack_5 = 0;
-  uStack_6 = 0;
-  func_?(&uStack_6,0x40200000,0x3ecccccd,0x40200000,0);
+  center = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
+  size.y = (float)_UNK_?;
+  size.x = (float)_UNK_?;
   (__return_storage_ptr__->m_Center).x = 0.0;
   (__return_storage_ptr__->m_Center).y = 0.0;
   (__return_storage_ptr__->m_Center).z = 0.0;
   (__return_storage_ptr__->m_Extents).x = 0.0;
   (__return_storage_ptr__->m_Extents).y = 0.0;
   (__return_storage_ptr__->m_Extents).z = 0.0;
-  func_?(__return_storage_ptr__,uStack_3,fVar4,uStack_6,uStack_5,0);
+  size.z = 2.5;
+  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
+            (__return_storage_ptr__,center,size,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -285,92 +263,99 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
+    func_?(&TypeInfo__Extensions);
+    func_?(&MethodInfo__MVPressurePlate__Callback_bool__bool__LogicObjectManager_);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+    func_?(&TypeInfo__OutputSignalTransmitter);
+    func_?(&StringLiteral_triggerBoxState);
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_01 = (Action_3_Boolean_Boolean_Object_ *)
             func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this,
-             MethodInfo__MVPressurePlate__Callback_bool__bool__LogicObjectManager_,
-             MethodInfo__System__Action<bool,_bool,_LogicObjectManager>__Action_System__Object__void__
-            );
-  pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
-                     ((MVWorldObject *)this,1,
-                      (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
-  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-  woId = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-         Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-  this_02 = (WorldObjectClientRef_1_MVWorldObjectClient_ *)
-            func_?(TypeInfo__OutputSignalTransmitter);
-  WorldObjectClientRef`1[MVWorldObjectClient]::WorldObjectClientRef_1_MVWorldObjectClient___ctor
-            (this_02,(int32_t)woId,(MethodInfo *)0x0);
-  (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_02;
-  this_00 = (this->fields).useInteractor;
-  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)
-           PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_00 != (UseInteractor *)0x0) {
-    UseInteractor::UseInteractor_UpdateData(this_00,pDVar2,(MethodInfo *)0x0);
-    MVPressurePlate_SetVisibility(this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pIVar3 = MVGameControllerBase::MVGameControllerBase_get_EditModeUI((MethodInfo *)0x0);
-    if (pIVar3 == (IEditModeUI *)0x0) {
-      cVar4 = (*(code *)(this->klass->vtable).get_HasVisualsInPlaymode.method)();
-      if (cVar4 == '\0') goto code_?;
-      bVar5 = MVPressurePlate_IsVisible(this,(MethodInfo *)0x0);
-      if (bVar5 == 0) goto code_?;
+  this_02 = (WorldObjectClientRef_1_System_Object_ *)0x0;
+  if (this_01 != (Action_3_Boolean_Boolean_Object_ *)0x0) {
+    mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::Action_3_Boolean_Boolean_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__MVPressurePlate__Callback_bool__bool__LogicObjectManager_,
+               (MethodInfo *)0x0);
+    pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
+                       ((MVWorldObject *)this,1,
+                        (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
+    (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
+    func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+    woId = (this->fields)._._._.id;
+    this_02 = (WorldObjectClientRef_1_System_Object_ *)
+              func_?(TypeInfo__OutputSignalTransmitter);
+    if (this_02 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
+      WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+                (this_02,woId,(MethodInfo *)0x0);
+      (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_02;
+      func_?(&(this->fields).outputSignalTransmitter,this_02);
+      this_00 = (this->fields).useInteractor;
+      if (this_00 != (UseInteractor *)0x0) {
+        UseInteractor::UseInteractor_UpdateData(this_00,(this->fields)._._._.data,(MethodInfo *)0x0)
+        ;
+        MVPressurePlate_SetVisibility(this,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__MVGameControllerBase);
+          cRam_? = '\x01';
+        }
+        if (((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+              (IEditModeUI *)0x0) &&
+            (cVar2 = (*(this->klass->vtable).get_HasVisualsInPlaymode.methodPtr)
+                               (this,(this->klass->vtable).get_HasVisualsInPlaymode.method),
+            cVar2 != '\0')) &&
+           (bVar3 = MVPressurePlate_IsVisible(this,(MethodInfo *)0x0), bVar3 != 0)) {
 code_?:
-      pMVar6 = (this->fields).plateObject;
-      if (pMVar6 == (MVPressurePlateObject *)0x0) goto code_?;
-      MVLogicObject::MVLogicObject_SetupCulling
-                ((MVLogicObject *)this,(pMVar6->fields).plateLogicModel,2.0,(MethodInfo *)0x0);
-    }
-    else {
-code_?:
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
+          pMVar4 = (this->fields).plateObject;
+          if (pMVar4 == (MVPressurePlateObject *)0x0) goto code_?;
+          MVLogicObject::MVLogicObject_SetupCulling
+                    ((MVLogicObject *)this,(pMVar4->fields).plateLogicModel,2.0,(MethodInfo *)0x0);
+        }
+        else {
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__MVGameControllerBase);
+            cRam_? = '\x01';
+          }
+          if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+              (IEditModeUI *)0x0) goto code_?;
+        }
+        hashtable = (Dictionary_2_System_Object_System_Object_ *)
+                    (*(this->klass->vtable).get_RunTimeData.methodPtr)();
+        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__Extensions);
+        }
+        this_02 = (WorldObjectClientRef_1_System_Object_ *)
+                  Extensions::Extensions_GetObscuredType
+                            (hashtable,StringLiteral_triggerBoxState,(MethodInfo *)0x0);
+        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
+            cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+        }
+        if (this_02 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
+          pOVar5 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool;
+          if ((this_02->klass->_0).element_class ==
+              (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_0).element_class) {
+            pOVar6 = (ObscuredBool *)func_?(this_02);
+            bVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool
+                    ::ObscuredBool_op_Implicit_1(*pOVar6,(MethodInfo *)0x0);
+            (this->fields).isDown = bVar3;
+            return;
+          }
+          goto code_?;
+        }
       }
-      pIVar3 = MVGameControllerBase::MVGameControllerBase_get_EditModeUI((MethodInfo *)0x0);
-      if (pIVar3 != (IEditModeUI *)0x0) goto code_?;
-    }
-    pDVar2 = (Dictionary_2_System_Object_System_Object_ *)
-             (*(code *)(this->klass->vtable).get_RunTimeData.method)();
-    if ((((uint)(TypeInfo__Extensions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Extensions->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pOVar7 = Extensions::Extensions_GetObscuredType
-                       (pDVar2,StringLiteral_triggerBoxState,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
-      func_?();
-    }
-    if (pOVar7 != (Object *)0x0) {
-      if ((pOVar7->klass->_0).element_class ==
-          (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_0).element_class) {
-        pOVar8 = (ObscuredBool *)func_?();
-        bVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-                ObscuredBool_op_Implicit_1(*pOVar8,(MethodInfo *)0x0);
-        (this->fields).isDown = bVar5;
-        return;
-      }
-      goto code_?;
     }
   }
 code_?:
   func_?();
+  pOVar5 = extraout_ECX;
 code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?(this_02,pOVar5);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -403,36 +388,38 @@ bool Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_IsVisible
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&StringLiteral_hide);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_00 !=
-      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-       *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      (this_00,StringLiteral_hide,
+  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)StringLiteral_hide,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
       return 1;
     }
-    this_01 = (Dictionary_2_System_Type_Pool_ *)
-              PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-    if (this_01 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-      pPStack2 =
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-           Dictionary_2_System_Type_Pool__get_Item
-                     (this_01,(Type *)StringLiteral_hide,
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-      uVar3 = CONCAT44(TypeInfo__System__Boolean,pPStack2);
-      if (pPStack2 != (Pool *)0x0) {
-        if ((pPStack2->klass->_0).element_class ==
-            (TypeInfo__System__Boolean->_0).element_class) {
+    this_01 = (this->fields)._._._.data;
+    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (this_01,(Object *)StringLiteral_hide,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (pOVar2 != (Object *)0x0) {
+        pBStack3 = TypeInfo__System__Boolean;
+        if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+          pBStack3 = (Boolean__Class *)pOVar2;
           pcVar4 = (char *)func_?();
           return *pcVar4 == '\0';
         }
@@ -440,10 +427,9 @@ bool Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_IsVisible
       }
     }
   }
-  pPStack2 = (Pool *)0x0;
-  uVar3 = func_?();
+  func_?();
+  pBStack3 = extraout_EDX;
 code_?:
-  _puStack0000001c = uVar3;
   func_?();
   pcVar5 = (code *)swi(3);
   bVar1 = (*pcVar5)();
@@ -458,10 +444,8 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_OnDataUpdate
 
 {
   this_00 = (this->fields).useInteractor;
-  data = (Dictionary_2_System_Object_System_Object_ *)
-         PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
   if (this_00 != (UseInteractor *)0x0) {
-    UseInteractor::UseInteractor_UpdateData(this_00,data,(MethodInfo *)0x0);
+    UseInteractor::UseInteractor_UpdateData(this_00,(this->fields)._._._.data,(MethodInfo *)0x0);
     MVPressurePlate_SetVisibility(this,(MethodInfo *)0x0);
     return;
   }
@@ -492,72 +476,35 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_OnUpdate
                (MVPressurePlate *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (((this->fields).isDown == 0) && ((this->fields).localIsDown == 0)) {
     pMVar1 = (this->fields).plateObject;
     if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
        (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 == (Transform *)0x0))
     goto code_?;
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       (&VStack_4,pTVar2,(MethodInfo *)0x0);
-    uStack_5._0_4_ = pVVar3->x;
-    uStack_5._4_4_ = pVVar3->y;
-    fStack_6 = pVVar3->z;
-    if (0.0 <= (float)uStack_5._4_4_) {
+                       ((Vector3 *)&stack0xffffffec,pTVar2,(MethodInfo *)0x0);
+    if (0.0 < pVVar3->y || pVVar3->y == 0.0) {
       return;
     }
-    fStack_7 = (this->fields).speed;
+    pMVar1 = (this->fields).plateObject;
+    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
+       (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 == (Transform *)0x0))
+    goto code_?;
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                       ((Vector3 *)&stack0xffffffe0,pTVar2,(MethodInfo *)0x0);
+    fVar4 = pVVar3->x;
+    fVar5 = pVVar3->y;
+    fVar6 = pVVar3->z;
+    fVar7 = (this->fields).speed;
     fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_smoothDeltaTime
                       ((MethodInfo *)0x0);
-    pMVar1 = (this->fields).plateObject;
-    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
-       (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 == (Transform *)0x0))
-    goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       (&VStack_4,pTVar2,(MethodInfo *)0x0);
-    VStack_9.x = pVVar3->x;
-    VStack_9.y = pVVar3->y;
-    VStack_9.z = pVVar3->z;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      VStack_4.y = (float)TypeInfo__UnityEngine__Mathf;
-      VStack_4.x = (float)&UNK_?;
-      func_?();
+    fVar8 = fVar8 * fVar7;
+    if ((float)((uint)fVar5 ^
+               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) <= fVar8) {
+      fVar8 = (float)((uint)fVar5 ^
+                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
     }
-    fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min
-                      (fVar8 * fStack_7,(float)((uint)VStack_9.y ^ _UNK_?),(MethodInfo *)0x0
-                      );
-    pMVar1 = (this->fields).plateObject;
-    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
-       (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 == (Transform *)0x0))
-    goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       (&VStack_10,pTVar2,(MethodInfo *)0x0);
-    VStack_4.x = pVVar3->x;
-    VStack_4.y = pVVar3->y;
-    pMVar1 = (this->fields).plateObject;
-    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
-       (pTVar11 = (pMVar1->fields).plateModelTransform, pTVar11 == (Transform *)0x0))
-    goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       (&VStack_9,pTVar11,(MethodInfo *)0x0);
-    VStack_10.x = pVVar3->x;
-    VStack_10.y = pVVar3->y;
-    pMVar1 = (this->fields).plateObject;
-    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
-       (pTVar11 = (pMVar1->fields).plateModelTransform, pTVar11 == (Transform *)0x0))
-    goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffb8,pTVar11,(MethodInfo *)0x0);
-    VStack_9.x = pVVar3->x;
-    VStack_9.y = pVVar3->y;
-    fVar12 = pVVar3->z;
-    fVar8 = VStack_10.y + fVar8;
-    fVar13 = VStack_4.x;
-    VStack_9.z = fVar12;
+    fVar8 = fVar8 + fVar5;
   }
   else {
     pMVar1 = (this->fields).plateObject;
@@ -565,79 +512,45 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_OnUpdate
        (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 == (Transform *)0x0))
     goto code_?;
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffb8,pTVar2,(MethodInfo *)0x0);
-    VStack_4.x = pVVar3->x;
-    VStack_4.y = pVVar3->y;
-    VStack_4.z = pVVar3->z;
-    pfVar14 = &(this->fields).minY;
-    if (VStack_4.y < *pfVar14 || VStack_4.y == *pfVar14) {
+                       ((Vector3 *)&stack0xffffffe0,pTVar2,(MethodInfo *)0x0);
+    pfVar9 = &(this->fields).minY;
+    if (pVVar3->y < *pfVar9 || pVVar3->y == *pfVar9) {
       return;
     }
-    fStack_15 = (this->fields).speed;
-    fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_smoothDeltaTime
-                         ((MethodInfo *)0x0);
     pMVar1 = (this->fields).plateObject;
     if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
        (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 == (Transform *)0x0))
     goto code_?;
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffb8,pTVar2,(MethodInfo *)0x0);
-    VStack_4.x = pVVar3->x;
-    VStack_4.y = pVVar3->y;
-    VStack_4.z = pVVar3->z;
-    fVar8 = (this->fields).minY;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      VStack_4.y = (float)TypeInfo__UnityEngine__Mathf;
-      VStack_4.x = (float)&UNK_?;
-      func_?();
+                       ((Vector3 *)&stack0xffffffe0,pTVar2,(MethodInfo *)0x0);
+    fVar7 = pVVar3->x;
+    fVar8 = pVVar3->y;
+    fVar6 = pVVar3->z;
+    fVar4 = (this->fields).speed;
+    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_smoothDeltaTime
+                      ((MethodInfo *)0x0);
+    fVar10 = fVar8 - (this->fields).minY;
+    fVar5 = fVar5 * fVar4;
+    if (fVar10 <= fVar5) {
+      fVar5 = fVar10;
     }
-    fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min
-                      (fStack_7 * fStack_15,VStack_4.y - fVar8,(MethodInfo *)0x0);
-    pMVar1 = (this->fields).plateObject;
-    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
-       (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 == (Transform *)0x0))
-    goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffb8,pTVar2,(MethodInfo *)0x0);
-    VStack_9.x = pVVar3->x;
-    VStack_9.y = pVVar3->y;
-    pMVar1 = (this->fields).plateObject;
-    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
-       (pTVar11 = (pMVar1->fields).plateModelTransform, pTVar11 == (Transform *)0x0))
-    goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffb8,pTVar11,(MethodInfo *)0x0);
-    VStack_10.x = pVVar3->x;
-    VStack_10.y = pVVar3->y;
-    pMVar1 = (this->fields).plateObject;
-    if ((pMVar1 == (MVPressurePlateObject *)0x0) ||
-       (pTVar11 = (pMVar1->fields).plateModelTransform, pTVar11 == (Transform *)0x0))
-    goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffb8,pTVar11,(MethodInfo *)0x0);
-    VStack_4.x = pVVar3->x;
-    VStack_4.y = pVVar3->y;
-    fVar12 = pVVar3->z;
-    fVar8 = VStack_10.y - fVar8;
-    fVar13 = VStack_9.x;
-    VStack_4.z = fVar12;
+    fVar8 = fVar8 - fVar5;
+    fVar4 = fVar7;
   }
-  uStack_5 = 0;
-  fStack_6 = 0.0;
-  func_?(&uStack_5,fVar13,fVar8,fVar12);
-  if (pTVar2 != (Transform *)0x0) {
-    value.z = fStack_6;
-    value.x = (float)(undefined4)uStack_5;
-    value.y = (float)uStack_5._4_4_;
+  pMVar1 = (this->fields).plateObject;
+  if ((pMVar1 != (MVPressurePlateObject *)0x0) &&
+     (pTVar2 = (pMVar1->fields).plateModelTransform, pTVar2 != (Transform *)0x0)) {
+    value.y = fVar8;
+    value.x = fVar4;
+    value.z = fVar6;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
               (pTVar2,value,(MethodInfo *)0x0);
     return;
   }
 code_?:
-  func_?(0);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -648,40 +561,34 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_SetVisibility
                (MVPressurePlate *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).plateObject;
-  if (this_00 != (MVPressurePlateObject *)0x0) {
-    this_01 = (GameObject *)
-              mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-              Serialization::JsonProperty]::
-              Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                        ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                         (MethodInfo *)0x0);
-    pGVar1 = (GameObject__Class *)0x0;
-    if (this_01 != (GameObject *)0x0) {
-      pGVar2 = this_01 + 1;
+  pMVar1 = (this->fields).plateObject;
+  if (pMVar1 != (MVPressurePlateObject *)0x0) {
+    pRVar2 = (pMVar1->fields)._.meshRenderers;
+    uVar3 = 0;
+    if (pRVar2 != (Renderer__Array *)0x0) {
+      ppRVar4 = pRVar2->vector;
       while( true ) {
-        pGVar2 = (GameObject *)&pGVar2->monitor;
-        if ((int)this_01[1].klass <= (int)pGVar1) {
+        if ((int)pRVar2->max_length <= (int)uVar3) {
           return;
         }
-        if (this_01[1].klass <= pGVar1) break;
-        if (*(Component_1 **)pGVar2 == (Component_1 *)0x0) goto code_?;
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            (*(Component_1 **)pGVar2,(MethodInfo *)0x0);
-        value = MVPressurePlate_IsVisible(this,(MethodInfo *)0x0);
-        if (this_01 == (GameObject *)0x0) goto code_?;
+        if (pRVar2->max_length <= uVar3) break;
+        if (*ppRVar4 == (Renderer *)0x0) goto code_?;
+        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)*ppRVar4,(MethodInfo *)0x0);
+        MVPressurePlate_IsVisible(this,(MethodInfo *)0x0);
+        if (this_00 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_01,value,(MethodInfo *)0x0);
-        pGVar1 = (GameObject__Class *)((int)&(pGVar1->_0).image + 1);
+                  (this_00,0,(MethodInfo *)0x0);
+        uVar3 = uVar3 + 1;
+        ppRVar4 = ppRVar4 + 1;
       }
-      uVar3 = func_?(0,0);
-      func_?(uVar3);
+      func_?();
     }
   }
 code_?:
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -694,15 +601,21 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_SetupTierInventory
 {
   pMVar1 = (this->fields).plateObject;
   if ((pMVar1 != (MVPressurePlateObject *)0x0) &&
-     (this_00 = (pMVar1->fields).plateLogicModel, this_00 != (GameObject *)0x0)) {
+     (pGVar2 = (pMVar1->fields).plateLogicModel, pGVar2 != (GameObject *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,0,(MethodInfo *)0x0);
-    MVLogicObject::MVLogicObject_SetupTierInventory((MVLogicObject *)this,(MethodInfo *)0x0);
-    return;
+              (pGVar2,0,(MethodInfo *)0x0);
+    MVWorldObjectClient::MVWorldObjectClient_SetupTierInventory
+              ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
+    pGVar2 = (this->fields)._.lodGameObject;
+    if (pGVar2 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar2,1,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -722,7 +635,7 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_UnSetupTierInventory
               ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -738,196 +651,235 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
+    func_?(&TypeInfo__System__Func<int,_bool>);
+    func_?(&TypeInfo__GameCoinLogic);
+    func_?(&TypeInfo__GameRankRequirement);
+    func_?(&TypeInfo__LevelBasedUseRequirement);
+    func_?(&TypeInfo__MVPressurePlateObject);
+    func_?(&MethodInfo__MVPressurePlate__DoEnter_int_);
+    func_?(&
+                    MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
+    func_?(&TypeInfo__StarRequirement);
+    func_?(&TypeInfo__TeamRequirement);
+    func_?(&TypeInfo__UseInteractor);
+    func_?(&
+                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     cRam_? = '\x01';
   }
   (this->fields).minY = -0.249;
   (this->fields).speed = 1.8;
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = (ObjectPrefab *)
-                   HoverCraftMotor::HoverCraftMotor_get_VehicleCamera
-                             ((HoverCraftMotor *)this_00,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-    pMVar1 = (MVPressurePlateObject *)(this->fields)._._.component;
-    if (pMVar1 == (MVPressurePlateObject *)0x0) {
-      pMVar2 = (MVPressurePlateObject *)0x0;
+              ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvPressurePlatePrefab,
+               worldObjects,(MethodInfo *)0x0);
+    pMVar2 = (MVPressurePlateObject *)(this->fields)._._.component;
+    if (pMVar2 == (MVPressurePlateObject *)0x0) {
+      (this->fields).plateObject = (MVPressurePlateObject *)0x0;
     }
     else {
-      bVar3 = (TypeInfo__MVPressurePlateObject->_1).naturalAligment;
-      if (((((ObjectPrefab__Class *)pMVar1->klass)->_1).naturalAligment < bVar3) ||
-         ((((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchy[bVar3 - 1] !=
-          (Il2CppClass *)TypeInfo__MVPressurePlateObject)) {
-        bVar4 = false;
-      }
-      else {
-        bVar4 = true;
-      }
-      pMVar2 = (MVPressurePlateObject *)0x0;
-      if (bVar4) {
-        pMVar2 = pMVar1;
-      }
-      if (pMVar2 == (MVPressurePlateObject *)0x0) goto code_?;
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
+           (TypeInfo__MVPressurePlateObject->_1).typeHierarchyDepth) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
+          [(TypeInfo__MVPressurePlateObject->_1).typeHierarchyDepth - 1] !=
+          (Il2CppClass *)TypeInfo__MVPressurePlateObject)) goto code_?;
+      (this->fields).plateObject = pMVar2;
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
+           (TypeInfo__MVPressurePlateObject->_1).typeHierarchyDepth) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
+          [(TypeInfo__MVPressurePlateObject->_1).typeHierarchyDepth - 1] !=
+          (Il2CppClass *)TypeInfo__MVPressurePlateObject)) goto code_?;
     }
-    piVar5 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar5 = (uint)*piVar5 | 0x718000;
-    (this->fields).plateObject = pMVar2;
+    func_?(&(this->fields).plateObject);
+    iVar3 = (this->fields)._._.interactionFlags;
+    pMVar2 = (this->fields).plateObject;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    IVar6 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionFlags
-                      ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-    MVWorldObjectClient::MVWorldObjectClient_set_InteractionFlags
-              ((MVWorldObjectClient *)this,IVar6 | InteractionFlags__Enum_CanUseTeam,method_00);
-    IVar6 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionFlags
-                      ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-    MVWorldObjectClient::MVWorldObjectClient_set_InteractionFlags
-              ((MVWorldObjectClient *)this,IVar6 | InteractionFlags__Enum_CanUseGameRank,method_01);
-    pMVar1 = (this->fields).plateObject;
-    if (pMVar1 != (MVPressurePlateObject *)0x0) {
-      pTVar7 = (pMVar1->fields).triggerBoxEvents;
-      pUVar8 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar8,(Object *)this,
-                 MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                 ,
-                 MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-                );
-      if (pTVar7 != (TriggerBoxEvents *)0x0) {
-        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pUVar8,(MethodInfo *)0x0);
-        pMVar1 = (this->fields).plateObject;
-        if (pMVar1 != (MVPressurePlateObject *)0x0) {
-          pTVar7 = (pMVar1->fields).triggerBoxEvents;
-          pUVar8 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                     *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (pUVar8,(Object *)this,
-                     MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                     ,
-                     MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-                    );
-          if (pTVar7 != (TriggerBoxEvents *)0x0) {
-            TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                      (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pUVar8,(MethodInfo *)0x0);
-            MVPressurePlate_SetVisibility(this,(MethodInfo *)0x0);
-            pMVar1 = (this->fields).plateObject;
-            if (pMVar1 != (MVPressurePlateObject *)0x0) {
-              pTVar7 = (pMVar1->fields).triggerBoxEvents;
-              if (pTVar7 != (TriggerBoxEvents *)0x0) {
-                triggerCollider =
-                     TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar7,(MethodInfo *)0x0);
-                pUVar8 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                           *)func_?();
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                          (pUVar8,(Object *)this,MethodInfo__MVPressurePlate__DoEnter_int_,
-                           MethodInfo__System__Func<int,_bool>__Func_System__Object__void__);
-                pUVar9 = (UseInteractor *)func_?();
-                UseInteractor::UseInteractor__ctor
-                          (pUVar9,(MVWorldObjectClient *)this,(GameObject *)0x0,0,triggerCollider,
-                           (Func_2_Int32_Boolean_ *)pUVar8,
-                           (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,(MethodInfo *)0x0);
-                pMVar1 = (this->fields).plateObject;
-                (this->fields).useInteractor = (UseInteractor *)pUVar8;
-                if (pMVar1 != (MVPressurePlateObject *)0x0) {
-                  pTVar7 = (pMVar1->fields).triggerBoxEvents;
-                  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                             *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                  SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                            (this_01,(Object *)pUVar8,
-                             MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                             ,
-                             MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-                            );
-                  if (pTVar7 != (TriggerBoxEvents *)0x0) {
-                    TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                              (pTVar7,(EventHandler_1_TriggerEventArgs_ *)this_01,(MethodInfo *)0x0)
-                    ;
-                    pMVar1 = (this->fields).plateObject;
-                    if (pMVar1 != (MVPressurePlateObject *)0x0) {
-                      pTVar7 = (pMVar1->fields).triggerBoxEvents;
-                      pUVar9 = (this->fields).useInteractor;
-                      pUVar8 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                 *)func_?();
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                      SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                (pUVar8,(Object *)pUVar9,
-                                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                                 ,
-                                 MethodInfo__System__EventHandler<TriggerEventArgs>__EventHandler_System__Object__void__
-                                );
-                      if (pTVar7 != (TriggerBoxEvents *)0x0) {
-                        TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                  (pTVar7,(EventHandler_1_TriggerEventArgs_ *)&UNK_?,
+    *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar3 | 0x12718000;
+    if (pMVar2 != (MVPressurePlateObject *)0x0) {
+      pTVar4 = (pMVar2->fields).triggerBoxEvents;
+      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+               func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar5,(Object *)this,
+                   MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   ,(MethodInfo *)0x0);
+        if (pTVar4 != (TriggerBoxEvents *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                    (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+          pMVar2 = (this->fields).plateObject;
+          if (pMVar2 != (MVPressurePlateObject *)0x0) {
+            pTVar4 = (pMVar2->fields).triggerBoxEvents;
+            pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+              Object]::UnityAction_2_System_Object_System_Object___ctor
+                        (pUVar5,(Object *)this,
+                         MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                         ,(MethodInfo *)0x0);
+              if (pTVar4 != (TriggerBoxEvents *)0x0) {
+                TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                          (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                MVPressurePlate_SetVisibility(this,(MethodInfo *)0x0);
+                pMVar2 = (this->fields).plateObject;
+                if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                  pGVar6 = (pMVar2->fields).useInteractionRotator;
+                  pTVar4 = (((this->fields).plateObject)->fields).triggerBoxEvents;
+                  if (pTVar4 != (TriggerBoxEvents *)0x0) {
+                    triggerCollider =
+                         TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar4,(MethodInfo *)0x0);
+                    this_00 = (Predicate_1_Int32Enum_ *)
+                              func_?(TypeInfo__System__Func<int,_bool>);
+                    if (this_00 != (Predicate_1_Int32Enum_ *)0x0) {
+                      mscorlib.dll::System::Predicate`1[Int32Enum]::Predicate_1_Int32Enum___ctor
+                                (this_00,(Object *)this,MethodInfo__MVPressurePlate__DoEnter_int_,
+                                 (MethodInfo *)0x0);
+                      pUVar7 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+                      if (pUVar7 != (UseInteractor *)0x0) {
+                        UseInteractor::UseInteractor__ctor
+                                  (pUVar7,(MVWorldObjectClient *)this,pGVar6,0,triggerCollider,
+                                   (Func_2_Int32_Boolean_ *)this_00,
+                                   (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,
                                    (MethodInfo *)0x0);
-                        pMVar1 = (this->fields).plateObject;
-                        if (pMVar1 != (MVPressurePlateObject *)0x0) {
-                          pGVar10 = (pMVar1->fields).useInteractionRotator;
-                          this_02 = (GameCoinLogic *)func_?();
-                          GameCoinLogic::GameCoinLogic__ctor(this_02,pGVar10,0,(MethodInfo *)0x0);
-                          pUVar9 = (this->fields).useInteractor;
-                          if (pUVar9 != (UseInteractor *)0x0) {
-                            UseInteractor::UseInteractor_AddRequirement
-                                      (pUVar9,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                            pMVar1 = (this->fields).plateObject;
-                            if (pMVar1 != (MVPressurePlateObject *)0x0) {
-                              pGVar10 = (pMVar1->fields).useInteractionRotator;
-                              this_03 = (LevelBasedUseRequirement *)func_?();
-                              LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                                        (this_03,pGVar10,0,(MethodInfo *)0x0);
-                              pUVar9 = (this->fields).useInteractor;
-                              if (pUVar9 != (UseInteractor *)0x0) {
-                                UseInteractor::UseInteractor_AddRequirement
-                                          (pUVar9,(UseRequirement *)this_03,(MethodInfo *)0x0);
-                                pMVar1 = (this->fields).plateObject;
-                                if (pMVar1 != (MVPressurePlateObject *)0x0) {
-                                  pGVar10 = (pMVar1->fields).useInteractionRotator;
-                                  this_04 = (StarRequirement *)func_?();
-                                  StarRequirement::StarRequirement__ctor
-                                            (this_04,pGVar10,0,(MethodInfo *)0x0);
-                                  pUVar9 = (this->fields).useInteractor;
-                                  if (pUVar9 != (UseInteractor *)0x0) {
-                                    UseInteractor::UseInteractor_AddRequirement
-                                              (pUVar9,(UseRequirement *)this_04,(MethodInfo *)0x0);
-                                    pMVar1 = (this->fields).plateObject;
-                                    if (pMVar1 != (MVPressurePlateObject *)0x0) {
-                                      pGVar10 = (pMVar1->fields).useInteractionRotator;
-                                      this_05 = (GameRankRequirement *)func_?();
-                                      GameRankRequirement::GameRankRequirement__ctor
-                                                (this_05,pGVar10,(MVWorldObjectClient *)this,0,
-                                                 (MethodInfo *)0x0);
-                                      pUVar9 = (this->fields).useInteractor;
-                                      if (pUVar9 != (UseInteractor *)0x0) {
-                                        UseInteractor::UseInteractor_AddRequirement
-                                                  (pUVar9,(UseRequirement *)this_05,
-                                                   (MethodInfo *)0x0);
-                                        pMVar1 = (this->fields).plateObject;
-                                        if (pMVar1 != (MVPressurePlateObject *)0x0) {
-                                          tintObject = (pMVar1->fields).tintObject;
-                                          this_06 = (TeamRequirement *)func_?();
-                                          TeamRequirement::TeamRequirement__ctor
-                                                    (this_06,(TintObject *)tintObject,0,
+                        (this->fields).useInteractor = pUVar7;
+                        func_?(&(this->fields).useInteractor,pUVar7);
+                        pMVar2 = (this->fields).plateObject;
+                        if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                          pUVar7 = (this->fields).useInteractor;
+                          pTVar4 = (pMVar2->fields).triggerBoxEvents;
+                          pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>)
+                          ;
+                          if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+                            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                            Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                                      (pUVar5,(Object *)pUVar7,
+                                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                                       ,(MethodInfo *)0x0);
+                            if (pTVar4 != (TriggerBoxEvents *)0x0) {
+                              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                                        (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
+                                         (MethodInfo *)0x0);
+                              pMVar2 = (this->fields).plateObject;
+                              if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                                pTVar4 = (pMVar2->fields).triggerBoxEvents;
+                                pUVar7 = (this->fields).useInteractor;
+                                pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                                         func_?(
+                                                  TypeInfo__System__EventHandler<TriggerEventArgs>);
+                                if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                  UnityAction`2[System::Object,System::Object]::
+                                  UnityAction_2_System_Object_System_Object___ctor
+                                            (pUVar5,(Object *)pUVar7,
+                                             MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                             ,(MethodInfo *)0x0);
+                                  if (pTVar4 != (TriggerBoxEvents *)0x0) {
+                                    TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                                              (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
+                                               (MethodInfo *)0x0);
+                                    pMVar2 = (this->fields).plateObject;
+                                    if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                                      pGVar6 = (pMVar2->fields).useInteractionRotator;
+                                      this_01 = (GameCoinLogic *)
+                                                func_?(TypeInfo__GameCoinLogic);
+                                      if (this_01 != (GameCoinLogic *)0x0) {
+                                        GameCoinLogic::GameCoinLogic__ctor
+                                                  (this_01,pGVar6,0,(MethodInfo *)0x0);
+                                        pUVar7 = (this->fields).useInteractor;
+                                        if (pUVar7 != (UseInteractor *)0x0) {
+                                          UseInteractor::UseInteractor_AddRequirement
+                                                    (pUVar7,(UseRequirement *)this_01,
                                                      (MethodInfo *)0x0);
-                                          pUVar9 = (this->fields).useInteractor;
-                                          if (pUVar9 != (UseInteractor *)0x0) {
-                                            UseInteractor::UseInteractor_AddRequirement
-                                                      (pUVar9,(UseRequirement *)this_06,
-                                                       (MethodInfo *)0x0);
-                                            return;
+                                          pMVar2 = (this->fields).plateObject;
+                                          if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                                            pGVar6 = (pMVar2->fields).useInteractionRotator;
+                                            this_02 = (LevelBasedUseRequirement *)
+                                                      func_?(
+                                                  TypeInfo__LevelBasedUseRequirement);
+                                            if (this_02 != (LevelBasedUseRequirement *)0x0) {
+                                              LevelBasedUseRequirement::
+                                              LevelBasedUseRequirement__ctor
+                                                        (this_02,pGVar6,0,(MethodInfo *)0x0);
+                                              pUVar7 = (this->fields).useInteractor;
+                                              if (pUVar7 != (UseInteractor *)0x0) {
+                                                UseInteractor::UseInteractor_AddRequirement
+                                                          (pUVar7,(UseRequirement *)this_02,
+                                                           (MethodInfo *)0x0);
+                                                pMVar2 = (this->fields).plateObject;
+                                                if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                                                  pGVar6 = (pMVar2->fields).useInteractionRotator;
+                                                  this_03 = (StarRequirement *)
+                                                            func_?(
+                                                  TypeInfo__StarRequirement);
+                                                  if (this_03 != (StarRequirement *)0x0) {
+                                                    StarRequirement::StarRequirement__ctor
+                                                              (this_03,pGVar6,0,(MethodInfo *)0x0);
+                                                    pUVar7 = (this->fields).useInteractor;
+                                                    if (pUVar7 != (UseInteractor *)0x0) {
+                                                      UseInteractor::UseInteractor_AddRequirement
+                                                                (pUVar7,(UseRequirement *)this_03,
+                                                                 (MethodInfo *)0x0);
+                                                      pMVar2 = (this->fields).plateObject;
+                                                      if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                                                        pGVar6 = (pMVar2->fields).
+                                                                 useInteractionRotator;
+                                                        this_04 = (GameRankRequirement *)
+                                                                  func_?(
+                                                  TypeInfo__GameRankRequirement);
+                                                  if (this_04 != (GameRankRequirement *)0x0) {
+                                                    GameRankRequirement::GameRankRequirement__ctor
+                                                              (this_04,pGVar6,
+                                                               (MVWorldObjectClient *)this,0,
+                                                               (MethodInfo *)0x0);
+                                                    pUVar7 = (this->fields).useInteractor;
+                                                    if (pUVar7 != (UseInteractor *)0x0) {
+                                                      UseInteractor::UseInteractor_AddRequirement
+                                                                (pUVar7,(UseRequirement *)this_04,
+                                                                 (MethodInfo *)0x0);
+                                                      pMVar2 = (this->fields).plateObject;
+                                                      if (pMVar2 != (MVPressurePlateObject *)0x0) {
+                                                        tintObject = (pMVar2->fields).tintObject;
+                                                        this_05 = (TeamRequirement *)
+                                                                  func_?(
+                                                  TypeInfo__TeamRequirement);
+                                                  if (this_05 != (TeamRequirement *)0x0) {
+                                                    TeamRequirement::TeamRequirement__ctor
+                                                              (this_05,(TintObject *)tintObject,0,
+                                                               (MethodInfo *)0x0);
+                                                    pUVar7 = (this->fields).useInteractor;
+                                                    if (pUVar7 != (UseInteractor *)0x0) {
+                                                      UseInteractor::UseInteractor_AddRequirement
+                                                                (pUVar7,(UseRequirement *)this_05,
+                                                                 (MethodInfo *)0x0);
+                                                      return;
+                                                    }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                }
+                                              }
+                                            }
                                           }
                                         }
                                       }
@@ -950,10 +902,11 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
     }
   }
   func_?();
+  pMVar2 = extraout_EDX;
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  func_?(pMVar2);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -975,10 +928,9 @@ Vector3 * Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_get_OutputConnec
                     (Vector3 *__return_storage_ptr__,MVPressurePlate *this,MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = 0.0;
-  __return_storage_ptr__->y = 0.0;
+  __return_storage_ptr__->x = 2.0;
+  __return_storage_ptr__->y = 0.25;
   __return_storage_ptr__->z = 0.0;
-  func_?(__return_storage_ptr__,0x40000000,0x3e800000,0,0);
   return __return_storage_ptr__;
 }
 
@@ -990,69 +942,69 @@ Vector3 * Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_get_WorldPivot
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields)._._.transform;
-  if ((((uint)(TypeInfo__SharedCubeFunctions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SharedCubeFunctions->_1).cctor_started == 0)) {
+  if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__SharedCubeFunctions);
   }
   pVVar2 = SharedCubeFunctions::SharedCubeFunctions_GetWorldCenter_1
-                     ((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
-  fVar3 = pVVar2->z;
+                     (&VStack_3,pTVar1,(MethodInfo *)0x0);
+  uVar4 = pVVar2->x;
+  uVar5 = pVVar2->y;
+  fVar6 = pVVar2->z;
   pTVar1 = (this->fields)._._.transform;
   if (pTVar1 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-              ((Quaternion *)&stack0xffffffcc,pTVar1,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_left
-                       ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    fVar5 = pVVar4->x;
-    pVVar6 = (Vector3 *)pVVar4->y;
-    pVVar2 = (Vector3 *)&stack0xffffffdc;
-    fVar7 = 0.5;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1
-                       (pVVar2,0.5,*pVVar4,(MethodInfo *)0x0);
-    uVar8._0_4_ = pVVar4->x;
-    uVar8._4_4_ = pVVar4->y;
-    fVar9 = pVVar4->z;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
+    pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                        ((Quaternion *)&stack0xffffffd4,pTVar1,(MethodInfo *)0x0);
+    fVar8 = pQVar7->x;
+    fVar9 = pQVar7->y;
+    puVar10 = (undefined *)pQVar7->z;
+    ppVVar11 = (Vector3__Class **)pQVar7->w;
+    if (cRam_? == '\0') {
+      ppVVar11 = &TypeInfo__UnityEngine__Vector3;
       puVar10 = &UNK_?;
-      pQVar11 = TypeInfo__UnityEngine__Quaternion;
       func_?();
-      uVar8 = CONCAT44(pQVar11,puVar10);
+      cRam_? = '\x01';
     }
-    uVar12 = (undefined4)uVar8;
-    rotation.y = fVar7;
-    rotation.x = (float)pVVar2;
-    rotation.z = fVar5;
-    rotation.w = (float)pVVar6;
-    point.z = fVar9;
-    point.x = (float)(int)uVar8;
-    point.y = (float)(int)((ulonglong)uVar8 >> 0x20);
+    pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_3.x = (pVVar12->leftVector).x;
+    VStack_3.y = (pVVar12->leftVector).y;
+    VStack_3.z = (pVVar12->leftVector).z * _UNK_?;
+    rotation.y = fVar9;
+    rotation.x = fVar8;
+    rotation.z = (float)puVar10;
+    rotation.w = (float)ppVVar11;
+    point.y = VStack_3.y * _UNK_?;
+    point.x = VStack_3.x * _UNK_?;
+    point.z = VStack_3.z;
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                       ((Vector3 *)&stack0xffffffdc,rotation,point,(MethodInfo *)0x0);
-    a.y = (float)uVar12;
-    a.x = (float)pVVar6;
-    a.z = fVar3;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                       ((Vector3 *)&stack0xffffffdc,a,*pVVar2,(MethodInfo *)0x0);
-    fVar5 = pVVar2->y;
-    fVar3 = pVVar2->z;
-    pVVar6->x = pVVar2->x;
-    pVVar6->y = fVar5;
-    pVVar6->z = fVar3;
-    return pVVar6;
+                       ((Vector3 *)&stack0xffffffd8,rotation,point,(MethodInfo *)0x0);
+    uVar13 = pVVar2->x;
+    uVar14 = pVVar2->y;
+    fVar8 = pVVar2->z;
+    __return_storage_ptr__->x = (float)uVar13 + (float)uVar4;
+    __return_storage_ptr__->y = (float)uVar14 + (float)uVar5;
+    __return_storage_ptr__->z = fVar8 + fVar6;
+    return __return_storage_ptr__;
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar2 = (Vector3 *)(*pcVar13)();
+  pcVar15 = (code *)swi(3);
+  pVVar2 = (Vector3 *)(*pcVar15)();
   return pVVar2;
+}
+
+
+/* Void set_InputSignalReceiver(IInputSignalReceiver) */
+
+void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_set_InputSignalReceiver
+               (MVPressurePlate *this,IInputSignalReceiver *value,MethodInfo *method)
+
+{
+  (this->fields)._InputSignalReceiver_k__BackingField = value;
+  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,value);
+  return;
 }
 
 
@@ -1063,7 +1015,8 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_triggerBoxEvents_Trig
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Pressure_plate_entered_by_object);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).useInteractor;
@@ -1072,10 +1025,6 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_triggerBoxEvents_Trig
     if ((UVar1 & (UseGUIResult__Enum_CannotAfford|UseGUIResult__Enum_CanAfford)) != 0) {
       return;
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if ((e != (TriggerEventArgs *)0x0) && (this_01 != (MVWorldObjectClientManager *)0x0)) {
       triggerInstigatorId =
@@ -1083,29 +1032,17 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_triggerBoxEvents_Trig
            MVWorldObjectClientManager_GetWoIDWithLocalOwnerHighestInHierarchy
                      (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0);
       if (triggerInstigatorId == -1) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                   ((Object *)StringLiteral_Pressure_plate_entered_by_object,(MethodInfo *)0x0);
         return;
       }
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
       this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      triggerBoxOwnerId =
-           mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-           Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
       if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
         MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxEnter
-                  (this_02,(int32_t)triggerBoxOwnerId,triggerInstigatorId,(MethodInfo *)0x0);
+                  (this_02,(this->fields)._._._.id,triggerInstigatorId,(MethodInfo *)0x0);
         (this->fields).localIsDown = 1;
         return;
       }
@@ -1125,12 +1062,9 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_triggerBoxEvents_Trig
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Pressure_plated_exited_by_object);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((e != (TriggerEventArgs *)0x0) && (this_00 != (MVWorldObjectClientManager *)0x0)) {
@@ -1139,29 +1073,17 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_triggerBoxEvents_Trig
          MVWorldObjectClientManager_GetWoIDWithLocalOwnerHighestInHierarchy
                    (this_00,(e->fields).instigatorWOID,(MethodInfo *)0x0);
     if (triggerInstigatorId == -1) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_Pressure_plated_exited_by_object,(MethodInfo *)0x0);
       return;
     }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    triggerBoxOwnerId =
-         mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-         Collection_1_VoxelHit__get_Items(unaff_EDI,(MethodInfo *)0x0);
     if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxExit
-                (this_01,(int32_t)triggerBoxOwnerId,triggerInstigatorId,(MethodInfo *)0x0);
+                (this_01,iRam_?,triggerInstigatorId,(MethodInfo *)0x0);
       return;
     }
   }

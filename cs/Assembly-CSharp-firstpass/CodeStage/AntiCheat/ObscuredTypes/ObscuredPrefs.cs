@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.ObscuredTypes
 {
@@ -33,7 +33,7 @@ namespace CodeStage.AntiCheat.ObscuredTypes
 		// Properties
 		public static string CryptoKey { get; set; }
 		public static string DeviceId { get; set; }
-		[Obsolete]
+		[Obsolete("This property is obsolete, please use DeviceId instead.")]
 		internal static string DeviceID { get; set; }
 		private static uint DeviceIdHash { get; }
 		private static string DeprecatedDeviceId { get; }
@@ -71,7 +71,7 @@ namespace CodeStage.AntiCheat.ObscuredTypes
 	
 		// Methods
 		public static void ForceLockToDeviceInit();
-		[Obsolete]
+		[Obsolete("This method is obsolete, use property CryptoKey instead")]
 		internal static void SetNewCryptoKey(string newKey);
 		public static void SetInt(string key, int value);
 		public static int GetInt(string key);

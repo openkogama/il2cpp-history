@@ -9,7 +9,7 @@ void Assembly-CSharp.dll::TierTempUnlockedInformationPopupContent::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   TierUnlockedPopupContentBase::TierUnlockedPopupContentBase_Initialize
@@ -19,23 +19,19 @@ void Assembly-CSharp.dll::TierTempUnlockedInformationPopupContent::
   pTVar1 = (this->fields).tempUnlockInformationText;
   onDisplayDoneCallback = (UnityAction *)(unlockedGamePassTier & 0xff);
   arg0 = (Object *)func_?(TypeInfo__System__Int32,&onDisplayDoneCallback);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?();
-  }
-  onDisplayDoneCallback =
-       (UnityAction *)mscorlib.dll::System::String::String_Format(format,arg0,(MethodInfo *)0x0);
+  pUVar2 = (UnityAction *)mscorlib.dll::System::String::String_Format(format,arg0,(MethodInfo *)0x0)
+  ;
   if (pTVar1 != (Text *)0x0) {
-    pTVar2 = pTVar1->klass;
-    method = (MethodInfo *)(pTVar2->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-    (*(code *)(pTVar2->vtable).set_text.method)();
+    pTVar3 = pTVar1->klass;
+    method = (pTVar3->vtable).set_text.method;
+    onDisplayDoneCallback = pUVar2;
+    (*(pTVar3->vtable).set_text.methodPtr)();
     return;
   }
-  method = (MethodInfo *)0x0;
-  onDisplayDoneCallback = (UnityAction *)&UNK_?;
+  method = (MethodInfo *)&UNK_?;
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -48,18 +44,14 @@ void Assembly-CSharp.dll::TierTempUnlockedInformationPopupContent::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Game_Tier__0__is_now_available_u);
     cRam_? = '\x01';
   }
   (this->fields).tempUnlockInformation = StringLiteral_Game_Tier__0__is_now_available_u;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  func_?(&(this->fields).tempUnlockInformation,
+                  StringLiteral_Game_Tier__0__is_now_available_u);
+  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;
 }
 

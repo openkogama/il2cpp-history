@@ -9,30 +9,28 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentTierTempUnlocked::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_FREE_TRY_);
     cRam_? = '\x01';
   }
-  pIStack_1 = (Il2CppMethodPointer)0x0;
   TierUnlockedPopupContentBase::TierUnlockedPopupContentBase_Initialize
             ((TierUnlockedPopupContentBase *)this,unlockedGamePassTier,onDisplayDoneCallback,
              (MethodInfo *)0x0);
-  pTVar2 = (this->fields).tierRankText;
-  pIStack_1 = (Il2CppMethodPointer)(unlockedGamePassTier & 0xff);
-  uVar3 = func_?(&pIStack_1,0);
-  if (pTVar2 != (Text *)0x0) {
-    pIStack_1 = (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-    (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,uVar3);
-    pTVar2 = (this->fields)._.titleText;
-    if (pTVar2 != (Text *)0x0) {
-      pIStack_1 = (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-      (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,StringLiteral_FREE_TRY_);
+  pTVar1 = (this->fields).tierRankText;
+  IStack_2.m_value = unlockedGamePassTier & 0xff;
+  mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
+  if (pTVar1 != (Text *)0x0) {
+    IStack_2.m_value = (int32_t)pTVar1;
+    (*(pTVar1->klass->vtable).set_text.methodPtr)();
+    pTVar1 = (this->fields)._.titleText;
+    if (pTVar1 != (Text *)0x0) {
+      IStack_2.m_value = (int32_t)pTVar1;
+      (*(pTVar1->klass->vtable).set_text.methodPtr)();
       return;
     }
   }
-  pIStack_1 = (Il2CppMethodPointer)0x0;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

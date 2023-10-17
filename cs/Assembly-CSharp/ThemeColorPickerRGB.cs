@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeColorPickerRGB : ColorAttribute.Setter, IHandleSettingChanged
 {
@@ -26,8 +26,23 @@ public class ThemeColorPickerRGB : ColorAttribute.Setter, IHandleSettingChanged
 	[SerializeField]
 	protected RawImage previewImage;
 	protected Action<Color> onChange;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Action<Color> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Action<Color> __9__7_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Initialize_b__7_0(Color c);
+	}
 
 	// Constructors
 	public ThemeColorPickerRGB();
@@ -37,7 +52,5 @@ public class ThemeColorPickerRGB : ColorAttribute.Setter, IHandleSettingChanged
 	public override void Initialize(ColorAttribute attrib, Action<Color> onChange);
 	public virtual void OnSettingChanged(string key, object value);
 	protected void ChangeColor(Color c);
-	[CompilerGenerated]
-	private static void _Initialize_m__0(Color c);
 }
 

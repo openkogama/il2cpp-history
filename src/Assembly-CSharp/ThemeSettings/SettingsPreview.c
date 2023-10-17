@@ -6,33 +6,32 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsPreview::SettingsPreview__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>;
-  this_00 = (List_1_ThemeAttributes_ThemeAttribute_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            (this_00,8,
-             MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
-            );
-  (this->fields)._.attributes = this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  this_01 = (Dictionary_2_System_Object_System_Object_ *)
+  SettingsWrapper::SettingsWrapper__ctor((SettingsWrapper *)this,(MethodInfo *)0x0);
+  this_00 = (Dictionary_2_System_Object_System_Object_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                            );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-            );
-  (this->fields)._.settingsData = this_01;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    (this->fields)._.settingsData = this_00;
+    func_?(&this->fields,this_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

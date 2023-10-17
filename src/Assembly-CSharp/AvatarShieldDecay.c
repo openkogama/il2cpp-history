@@ -33,16 +33,16 @@ void Assembly-CSharp.dll::AvatarShieldDecay::AvatarShieldDecay_Update
     pMVar3 = (this->fields).shield;
     (this->fields).updateValueTime = fVar1 + _UNK_?;
     if (pMVar3 == (MVRuntimeDataVariableClampedFloat *)0x0) {
-      func_?(0);
+      func_?();
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    fVar5 = (float10)(*(code *)(pMVar3->klass->vtable).get_Value.method)
-                               (pMVar3,(pMVar3->klass->vtable).set_Value.methodPtr);
-    (*(code *)(pMVar3->klass->vtable).set_Value.method)
-              (pMVar3,(float)fVar5 - (this->fields).accumulatedShieldDecay,pMVar3->klass[1]._0.image
-              );
+    fVar5 = (float10)(*(pMVar3->klass->vtable).get_Value.methodPtr)
+                               (pMVar3,(pMVar3->klass->vtable).get_Value.method);
+    (*(pMVar3->klass->vtable).set_Value.methodPtr)
+              (pMVar3,(float)fVar5 - (this->fields).accumulatedShieldDecay,
+               (pMVar3->klass->vtable).set_Value.method);
     (this->fields).accumulatedShieldDecay = 0.0;
   }
   return;

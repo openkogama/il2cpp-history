@@ -8,22 +8,22 @@ using System.Runtime.CompilerServices;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ToggleSnapToGrid : ToggleHandler
 {
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ExecuteToggleState_c__AnonStorey0
+	private sealed class __c__DisplayClass0_0
 	{
 		// Fields
-		internal bool toggleState;
+		public bool toggleState;
 
 		// Constructors
-		public _ExecuteToggleState_c__AnonStorey0();
+		public __c__DisplayClass0_0();
 
 		// Methods
-		internal void __m__0(IGridSnapHandler handler, BaseEventData data);
+		internal void _ExecuteToggleState_b__0(IGridSnapHandler handler, BaseEventData data);
 	}
 
 	// Constructors

@@ -1,24 +1,4 @@
 
-/* Void Hide() */
-
-void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_Hide
-               (GameMeterTimeAttackFlag *this,MethodInfo *method)
-
-{
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,0,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
 /* Void Initialize() */
 
 void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_Initialize
@@ -26,102 +6,119 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_Initi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<int>);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__GameMeterTimeAttackFlag__OnEndFlagCountdown__);
+    func_?(&MethodInfo__GameMeterTimeAttackFlag__OnStartFlagCountdown_int_);
+    func_?(&MethodInfo__GameMeterTimeAttackFlag__OnStartFlagCountdown__);
+    func_?(&StringLiteral__00_00_00);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).timeAttackFlagText;
-  if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,StringLiteral__00_00_00,
-               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
+  if (pTVar1 == (Text *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    (*(pTVar1->klass->vtable).set_text.methodPtr)
+              (pTVar1,StringLiteral__00_00_00,(pTVar1->klass->vtable).set_text.method);
     pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
     ;
-    if (pFVar2 != (FlagDebriefingControl *)0x0) {
-      pAVar3 = (pFVar2->fields).OnFlagDebriefing;
-      pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?(TypeInfo__System__Action<int>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar4,(Object *)this,
-                 MethodInfo__GameMeterTimeAttackFlag__OnStartFlagCountdown_int_,
-                 MethodInfo__System__Action<int>__Action_System__Object__void__);
-      pAVar5 = (Action_1_Int32_ *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
-      pAVar3 = (Action_1_Int32_ *)0x0;
-      if (pAVar5 != (Action_1_Int32_ *)0x0) {
-        if (pAVar5->klass == TypeInfo__System__Action<int>) {
-          pAVar3 = pAVar5;
-        }
-        pAVar6 = (Action__Class *)TypeInfo__System__Action<int>;
-        if (pAVar3 == (Action_1_Int32_ *)0x0) goto code_?;
-      }
+    if (pFVar2 == (FlagDebriefingControl *)0x0) goto code_?;
+    pAVar3 = (pFVar2->fields).OnFlagDebriefing;
+    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
+    if (this_00 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)this,MethodInfo__GameMeterTimeAttackFlag__OnStartFlagCountdown_int_
+               ,(MethodInfo *)0x0);
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      (pFVar2->fields).OnFlagDebriefing = (Action_1_Int32_ *)0x0;
+    }
+    else {
+      pAVar3 = (Action_1_Int32_ *)func_?();
+      if (pAVar3 == (Action_1_Int32_ *)0x0) goto code_?;
       (pFVar2->fields).OnFlagDebriefing = pAVar3;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
+    }
+    func_?();
+    pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
+    ;
+    if (pFVar2 == (FlagDebriefingControl *)0x0) goto code_?;
+    pAVar6 = (pFVar2->fields).OnFlagCountDown;
+    pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    if (pNVar7 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar7,(Object *)this,MethodInfo__GameMeterTimeAttackFlag__OnStartFlagCountdown__,
+               (MethodInfo *)0x0);
+    pAVar6 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar6,(Delegate *)pNVar7,(MethodInfo *)0x0);
+    if (pAVar6 == (Action *)0x0) {
+      (pFVar2->fields).OnFlagCountDown = (Action *)0x0;
+code_?:
+      func_?();
       pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                          ((MethodInfo *)0x0);
       if (pFVar2 != (FlagDebriefingControl *)0x0) {
-        pAVar7 = (pFVar2->fields).OnFlagCountDown;
-        pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(TypeInfo__System__Action);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar4,(Object *)this,MethodInfo__GameMeterTimeAttackFlag__OnStartFlagCountdown__
-                   ,(MethodInfo *)0x0);
-        pAVar5 = (Action_1_Int32_ *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar7,(Delegate *)pUVar4,(MethodInfo *)0x0);
-        pAVar3 = (Action_1_Int32_ *)0x0;
-        if (pAVar5 != (Action_1_Int32_ *)0x0) {
-          if ((Action__Class *)pAVar5->klass == TypeInfo__System__Action) {
-            pAVar3 = pAVar5;
-          }
-          pAVar6 = TypeInfo__System__Action;
-          if (pAVar3 == (Action_1_Int32_ *)0x0) goto code_?;
-        }
-        (pFVar2->fields).OnFlagCountDown = (Action *)pAVar3;
-        pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
-                           ((MethodInfo *)0x0);
-        if (pFVar2 != (FlagDebriefingControl *)0x0) {
-          pAVar7 = (pFVar2->fields).OnFlagCountDownEnd;
-          pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                    *)func_?(TypeInfo__System__Action);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (pUVar4,(Object *)this,MethodInfo__GameMeterTimeAttackFlag__OnEndFlagCountdown__
+        pAVar6 = (pFVar2->fields).OnFlagCountDownEnd;
+        pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+        if (pNVar7 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (pNVar7,(Object *)this,MethodInfo__GameMeterTimeAttackFlag__OnEndFlagCountdown__
                      ,(MethodInfo *)0x0);
-          pAVar5 = (Action_1_Int32_ *)
+          pAVar6 = (Action *)
                    mscorlib.dll::System::Delegate::Delegate_Combine
-                             ((Delegate *)pAVar7,(Delegate *)pUVar4,(MethodInfo *)0x0);
-          pAVar3 = (Action_1_Int32_ *)0x0;
-          if (pAVar5 == (Action_1_Int32_ *)0x0) {
-code_?:
-            (pFVar2->fields).OnFlagCountDownEnd = (Action *)pAVar3;
+                             ((Delegate *)pAVar6,(Delegate *)pNVar7,(MethodInfo *)0x0);
+          if (pAVar6 == (Action *)0x0) {
+            (pFVar2->fields).OnFlagCountDownEnd = (Action *)0x0;
+            func_?();
             return;
           }
-          if ((Action__Class *)pAVar5->klass == TypeInfo__System__Action) {
-            pAVar3 = pAVar5;
+          pAVar8 = (Action *)0x0;
+          if (pAVar6->klass == TypeInfo__System__Action) {
+            pAVar8 = pAVar6;
           }
-          pAVar6 = TypeInfo__System__Action;
-          if (pAVar3 != (Action_1_Int32_ *)0x0) goto code_?;
+          if (pAVar8 != (Action *)0x0) {
+            (pFVar2->fields).OnFlagCountDownEnd = pAVar8;
+            pAVar8 = (Action *)0x0;
+            if (pAVar6->klass == TypeInfo__System__Action) {
+              pAVar8 = pAVar6;
+            }
+            if (pAVar8 != (Action *)0x0) {
+              func_?();
+              return;
+            }
+          }
           goto code_?;
         }
       }
+      goto code_?;
+    }
+    pAVar8 = (Action *)0x0;
+    if (pAVar6->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar6;
+    }
+    if (pAVar8 != (Action *)0x0) {
+      (pFVar2->fields).OnFlagCountDown = pAVar8;
+      pAVar8 = (Action *)0x0;
+      if (pAVar6->klass == TypeInfo__System__Action) {
+        pAVar8 = pAVar6;
+      }
+      if (pAVar8 != (Action *)0x0) goto code_?;
     }
   }
-  func_?(0);
-  pAVar5 = extraout_ECX;
-  pAVar6 = extraout_EDX;
 code_?:
-  func_?(pAVar5,pAVar6);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -144,20 +141,23 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_OnSta
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pMStack_1 = (MethodInfo *)&StringLiteral__00_00_00;
+    func_?();
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).timeAttackFlagText;
+  pTStack_2 = (this->fields).timeAttackFlagText;
   (this->fields).shouldUpdate = 0;
-  if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,StringLiteral__00_00_00,
-               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  if (pTStack_2 != (Text *)0x0) {
+    pMStack_1 = (pTStack_2->klass->vtable).set_text.method;
+    pSStack_3 = StringLiteral__00_00_00;
+    (*(pTStack_2->klass->vtable).set_text.methodPtr)();
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  uVar4 = func_?(&pTStack_2);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -172,8 +172,8 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_SetGa
   WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
             ((WinningConditionType__Enum *)&stack0xfffffff8,(MethodInfo *)0x0);
   if (WVar1 == WinningConditionType__Enum_TimeAttackFlag) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar2,1,(MethodInfo *)0x0);
@@ -181,8 +181,8 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_SetGa
     }
   }
   else {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar2,0,(MethodInfo *)0x0);
@@ -203,42 +203,16 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_SetSh
 
 {
   this_00 = (this->fields).timeAttackFlagBar;
-  if ((this_00 == (Image *)0x0) ||
-     (UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)this_00,show,(MethodInfo *)0x0),
-     (this->fields).timeAttackFlagText == (Text *)0x0)) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)func_?(), pcVar1 == (code *)0x0))
-  {
-    uVar2 = func_?(&UNK_?);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcRam_? = pcVar1;
-  (*pcRam_?)();
-  return;
-}
-
-
-/* Void Show() */
-
-void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_Show
-               (GameMeterTimeAttackFlag *this,MethodInfo *method)
-
-{
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,1,(MethodInfo *)0x0);
-    return;
+  if (this_00 != (Image *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              ((Behaviour *)this_00,show,(MethodInfo *)0x0);
+    if ((this->fields).timeAttackFlagText != (Text *)0x0) {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      (*pcRam_?)();
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -253,41 +227,37 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_Updat
                (GameMeterTimeAttackFlag *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if ((this->fields).shouldUpdate == 0) {
     return;
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0);
   if (pFVar2 != (FlagDebriefingControl *)0x0) {
-    pMVar3 = (Mathf__Class *)(pFVar2->fields).RunStartTime;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      pMVar3 = TypeInfo__UnityEngine__Mathf;
+    fVar3 = (pFVar2->fields).RunStartTime;
+    if (cRam_? == '\0') {
       func_?();
+      cRam_? = '\x01';
     }
-    score = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt
-                      ((fVar1 - (float)pMVar3) * _UNK_?,(MethodInfo *)0x0);
+    fVar1 = (fVar1 - fVar3) * _UNK_?;
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    dVar4 = (double)fVar1;
+    statType = &UNK_?;
+    func_?(dVar4,8);
+    method_00 = SUB84(dVar4,0);
+    score = func_?();
     WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-              (score,GameStatCounterType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
-    pTVar4 = (this->fields).timeAttackFlagText;
-    if (pTVar4 != (Text *)0x0) {
-      pTVar5 = pTVar4->klass;
-      pIStack6 = (pTVar5->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-      (*(code *)(pTVar5->vtable).set_text.method)();
+              (score,(GameStatCounterType__Enum)statType,method_00);
+    pTVar5 = (this->fields).timeAttackFlagText;
+    if (pTVar5 != (Text *)0x0) {
+      (*(pTVar5->klass->vtable).set_text.methodPtr)();
       return;
     }
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -299,30 +269,34 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
-            );
-  (this->fields)._.gameMeterVisualEffects =
-       (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)this_00;
-  (this->fields)._.meterActive = 1;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
+              );
+    (this->fields)._.gameMeterVisualEffects = this_00;
+    func_?(&(this->fields)._.gameMeterVisualEffects,this_00);
+    (this->fields)._.meterActive = 1;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

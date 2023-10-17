@@ -7,14 +7,13 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject.GamePassSystem.GamePassEarnings;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class SubscriberRewardDataManager
 {
 	// Fields
 	private static SubscriberRewardData subscriberRewardData;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static KogamaVatValues _VatValues_k__BackingField;
 
 	// Properties

@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class BundleTab : TabMenuButtonBase
 {
@@ -39,55 +39,69 @@ public class BundleTab : TabMenuButtonBase
 	private float startPos;
 	private float startTime;
 	private int highlightId;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryClicked> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryClicked> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IBundleController> __f__am_cache2;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey1
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal int tabId;
-		internal BundleTab _this;
+		public BundleTab __4__this;
+		public int tabId;
+		public ExecuteEvents.EventFunction<ITabSelected> __9__1;
 
 		// Constructors
-		public _Initialize_c__AnonStorey1();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal void __m__0();
-		internal void __m__1(ITabSelected x, BaseEventData y);
+		internal void _Initialize_b__0();
+		internal void _Initialize_b__1(ITabSelected x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IAccessoryClicked> __9__17_0;
+		public static ExecuteEvents.EventFunction<IAccessoryClicked> __9__17_1;
+		public static ExecuteEvents.EventFunction<IBundleController> __9__17_2;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _SetAsSelected_b__17_0(IAccessoryClicked x, BaseEventData y);
+		internal void _SetAsSelected_b__17_1(IAccessoryClicked x, BaseEventData y);
+		internal void _SetAsSelected_b__17_2(IBundleController x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _LerpToSize_c__Iterator0 : IEnumerator<object>
+	private sealed class _LerpToSize_d__20 : IEnumerator<object>
 	{
 		// Fields
-		internal Vector2 _pos___0;
-		internal float _xPos___0;
-		internal float size;
-		internal BundleTab _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public BundleTab __4__this;
+		public float size;
+		private Vector2 _pos_5__2;
+		private float _xPos_5__3;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _LerpToSize_c__Iterator0();
+		public _LerpToSize_d__20(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -101,13 +115,7 @@ public class BundleTab : TabMenuButtonBase
 	public override void SetAsSelected();
 	public override void SetAsDeselected();
 	private void OnDisable();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_LerpToSize_d__20))]
 	private IEnumerator LerpToSize(float size);
-	[CompilerGenerated]
-	private static void _SetAsSelected_m__0(IAccessoryClicked x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _SetAsSelected_m__1(IAccessoryClicked x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _SetAsSelected_m__2(IBundleController x, BaseEventData y);
 }
 

@@ -6,21 +6,33 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   if (pIVar1 != (IAdManager *)0x0) {
-    func_?(8,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1,this);
+    uVar2 = 0;
+    uVar3 = (pIVar1->klass->_1).interface_offsets_count;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar1->klass->interfaceOffsets[uVar2].interfaceType ==
+            (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+          pVVar4 = &(pIVar1->klass->vtable).InitializeCallbackManager +
+                   pIVar1->klass->interfaceOffsets[uVar2].offset;
+          (*pVVar4->methodPtr)(pIVar1,this,pVVar4->method);
+          return;
+        }
+        uVar2 = uVar2 + 1;
+      } while (uVar2 < uVar3);
+    }
+    puVar5 = (undefined4 *)
+             func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,8);
+    (*(code *)*puVar5)(pIVar1,this,puVar5[1]);
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -32,122 +44,138 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_CreatePopup
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__AdUIWithTimeout__OnSkipClicked__);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    ShowingAdsPopup_MethodInfo__UnityEngine__Object__Instantiate<ShowingAdsPopup>_ShowingAdsPopup_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__AdUIWithTimeout____c__DisplayClass17_0___CreatePopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__AdUIWithTimeout____c__DisplayClass17_0);
+    func_?(&
+                    MethodInfo__AdUIWithTimeout____c__DisplayClass17_1___CreatePopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__AdUIWithTimeout____c__DisplayClass17_1);
+    func_?(&StringLiteral_AdUIWithTimeout_CreatePopup__Sta);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AdUIWithTimeout___CreatePopup_c__AnonStorey3;
-  pSVar1 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar1,0.0,(MethodInfo *)method_00);
-  if (pSVar1 != (ScaleAnimationBase *)0x0) {
-    *(undefined1 *)&(pSVar1->fields)._._._._.m_CachedPtr = 0;
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    pUVar3 = this_01;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)pSVar1,
-               MethodInfo__AdUIWithTimeout___CreatePopup_c__AnonStorey3____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    arg1 = (Object *)func_?();
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    message = mscorlib.dll::System::String::String_Concat
-                        ((Object *)StringLiteral_AdUIWithTimeout_CreatePopup__Sta,arg1,
-                         (MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0)
-    ;
-    if (*(char *)&(pSVar1->fields)._._._._.m_CachedPtr == '\0') {
-      return;
-    }
-    pSVar1 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(pSVar1,0.0,(MethodInfo *)pUVar3);
-    pXVar4 = (XpBoostParticlePreviewer *)(this->fields).showingAdPopup;
-    (this->fields).popupShowing = 1;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pXVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                       (pXVar4,
-                        ShowingAdsPopup_MethodInfo__UnityEngine__Object__Instantiate<ShowingAdsPopup>_ShowingAdsPopup_
-                       );
-    if (pSVar1 != (ScaleAnimationBase *)0x0) {
-      (pSVar1->fields)._._._._.m_CachedPtr = pXVar4;
-      if ((((uint)(TypeInfo__AdUIWithTimeout->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AdUIWithTimeout->_1).cctor_started == 0)) {
-        func_?(TypeInfo__AdUIWithTimeout);
+  pOVar1 = (Object *)func_?(TypeInfo__AdUIWithTimeout____c__DisplayClass17_0);
+  if (pOVar1 != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
+    *(undefined1 *)&pOVar1[1].klass = 0;
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this,(MethodInfo *)0x0);
+    pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+    if (pEVar2 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar2,pOVar1,
+                 MethodInfo__AdUIWithTimeout____c__DisplayClass17_0___CreatePopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
-      timeoutTime = TypeInfo__AdUIWithTimeout->static_fields->timeout;
-      pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?(TypeInfo__System__Action);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar3,(Object *)this,MethodInfo__AdUIWithTimeout__OnSkipClicked__,
-                 (MethodInfo *)0x0);
-      if (pXVar4 != (XpBoostParticlePreviewer *)0x0) {
-        ShowingAdsPopup::ShowingAdsPopup_Initialize
-                  ((ShowingAdsPopup *)pXVar4,timeoutTime,(Action *)pUVar3,(MethodInfo *)0x0);
-        this_00 = (pSVar1->fields)._._._._.m_CachedPtr;
-        if (this_00 != (Component_1 *)0x0) {
-          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                             (this_00,(MethodInfo *)0x0);
-          (this->fields).overlayPushedToStack = pGVar2;
-          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                             ((Component_1 *)this,(MethodInfo *)0x0);
-          pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                    *)func_?(
-                                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                     );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (pUVar3,(Object *)pSVar1,
-                     MethodInfo__AdUIWithTimeout___CreatePopup_c__AnonStorey4____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,
-                     MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                    );
-          if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr
-               & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-            func_?();
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                ((GameObject *)
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 ,(BaseEventData *)0x0,pEVar2,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                         ((Boolean *)(pOVar1 + 1),(IFormatProvider *)0x0,unaff_EBP);
+      method_00 = (MethodInfo *)&UNK_?;
+      pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_AdUIWithTimeout_CreatePopup__Sta,pSVar3,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                ((Object *)pSVar3,(MethodInfo *)0x0);
+      if (*(char *)&pOVar1[1].klass == '\0') {
+        return;
+      }
+      pOVar1 = (Object *)func_?();
+      if (pOVar1 != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  (pOVar1,ExceptionArgument__Enum_obj,method_00);
+        original = (this->fields).showingAdPopup;
+        (this->fields).popupShowing = 1;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        pOVar4 = (Object__Class *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)original,
+                            ShowingAdsPopup_MethodInfo__UnityEngine__Object__Instantiate<ShowingAdsPopup>_ShowingAdsPopup_
+                           );
+        pOVar1[1].klass = pOVar4;
+        func_?(pOVar1 + 1,pOVar4);
+        pOVar4 = pOVar1[1].klass;
+        this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+        if ((this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) &&
+           (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (this_00,(Object *)this,MethodInfo__AdUIWithTimeout__OnSkipClicked__,
+                       (MethodInfo *)0x0), pOVar4 != (Object__Class *)0x0)) {
+          (pOVar4->_0).this_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this_00;
+          func_?(&(pOVar4->_0).this_arg,this_00);
+          _Var7 = (_union_86)
+                  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+          (pOVar4->_0).byval_arg.data = _Var7;
+          (pOVar4->_0).byval_arg.attrs = 0;
+          (pOVar4->_0).byval_arg.type = 0x20;
+          (pOVar4->_0).byval_arg.field_0x7 = 0x41;
+          if (pOVar1[1].klass != (Object__Class *)0x0) {
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pOVar1[1].klass,(MethodInfo *)0x0);
+            (this->fields).overlayPushedToStack = pGVar5;
+            func_?(&(this->fields).overlayPushedToStack,pGVar5);
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                     func_?(
+                                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                    );
+            if (pEVar2 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+              Object]::UnityAction_2_System_Object_System_Object___ctor
+                        ((UnityAction_2_System_Object_System_Object_ *)pEVar2,pOVar1,
+                         MethodInfo__AdUIWithTimeout____c__DisplayClass17_1___CreatePopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                         ,(MethodInfo *)0x0);
+              if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                  cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+              }
+              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+              ExecuteEvents_ExecuteHierarchy
+                        (pGVar5,(BaseEventData *)0x0,pEVar2,
+                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                        );
+              return;
+            }
           }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy_63
-                    (pGVar2,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar3,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          return;
         }
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -159,93 +187,87 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_OnSkipClicked
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_AdUIWithTimeout_OnSkipClicked_);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
             ((Object *)StringLiteral_AdUIWithTimeout_OnSkipClicked_,(MethodInfo *)0x0);
-  if ((this->fields).interstitialCallback ==
-      (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
-    if ((this->fields).rewardedCallback ==
-        (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      this_00 = _uStack0000000c;
-      _uStack0000000c =
-           (Component_1 *)CONCAT13(*(undefined1 *)&_uStack0000000c[1].monitor,uStack1);
-      arg1 = (Object *)func_?(TypeInfo__System__Boolean,(int)&stack0x0000000c + 3);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      message = mscorlib.dll::System::String::String_Concat
-                          ((Object *)StringLiteral_AdUIWithTimeout_TryPopOverlay__P,arg1,
-                           (MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)message,(MethodInfo *)0x0);
-      if (*(char *)&this_00[1].monitor != '\0') {
-        _uStack0000000c = (Component_1 *)0x0;
-        *(undefined1 *)&this_00[1].monitor = 0;
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         (this_00,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__AdUIWithTimeout->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__AdUIWithTimeout->_1).cctor_started == 0)) {
-          func_?();
-        }
-        if (TypeInfo__AdUIWithTimeout->static_fields->__f__am_cache0 ==
-            (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                     *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (this_01,(Object *)0x0,
-                     MethodInfo__AdUIWithTimeout___TryPopOverlay_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,
-                     MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                    );
-          if ((((uint)(TypeInfo__AdUIWithTimeout->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__AdUIWithTimeout->_1).cctor_started == 0)) {
-            func_?();
-          }
-          TypeInfo__AdUIWithTimeout->static_fields->__f__am_cache0 =
-               (ExecuteEvents_EventFunction_1_IUIStack_ *)this_01;
-        }
-        if ((((uint)(TypeInfo__AdUIWithTimeout->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__AdUIWithTimeout->_1).cctor_started == 0)) {
-          func_?();
-        }
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-             TypeInfo__AdUIWithTimeout->static_fields->__f__am_cache0;
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-          func_?();
-        }
-        _uStack0000000c = (Component_1 *)0x0;
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
-                  (root,(BaseEventData *)0x0,callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-      }
-      return;
-    }
-    AdUIWithTimeout_PopRewardedVideo(this,RewardedAdResult__Enum_ErrorTimeout,(MethodInfo *)0x0);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this_00 == (MVNetworkGame_OperationRequests *)0x0) {
+code_?:
+    uVar1 = func_?(&stack0xfffffffc);
+    func_?(uVar1);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  AdUIWithTimeout_PopInterstitial(this,InterstitialAdResult__Enum_ErrorTimeout,(MethodInfo *)0x0);
+  MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
+            (this_00,AdType__Enum_RewardedAd,AdActionType__Enum_Failure,AdContext__Enum_None,
+             (MethodInfo *)0x0);
+  if (iRam_? != 0) {
+    AdUIWithTimeout_PopInterstitial
+              ((AdUIWithTimeout *)0x0,InterstitialAdResult__Enum_ErrorTimeout,(MethodInfo *)0x0);
+    return;
+  }
+  if (iRam_? != 0) {
+    AdUIWithTimeout_PopRewardedVideo
+              ((AdUIWithTimeout *)0x0,RewardedAdResult__Enum_ErrorTimeout,(MethodInfo *)0x0);
+    return;
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                     ((Boolean *)&in_stack_4[1].monitor,(IFormatProvider *)0x0,unaff_EDI);
+  pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_AdUIWithTimeout_TryPopOverlay__P,pSVar3,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
+  if (*(char *)&in_stack_4[1].monitor != '\0') {
+    *(undefined1 *)&in_stack_4[1].monitor = 0;
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     (in_stack_4,(MethodInfo *)0x0);
+    if ((TypeInfo__AdUIWithTimeout____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    callbackFunction = TypeInfo__AdUIWithTimeout____c->static_fields->__9__16_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if ((TypeInfo__AdUIWithTimeout____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      object = TypeInfo__AdUIWithTimeout____c->static_fields->__9;
+      callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__AdUIWithTimeout____c___TryPopOverlay_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__AdUIWithTimeout____c->static_fields->__9__16_0 = callbackFunction;
+      func_?();
+    }
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+  }
   return;
 }
 
@@ -257,84 +279,92 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_PopInterstitial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__AdUIWithTimeout____c__DisplayClass14_0___PopInterstitial_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__AdUIWithTimeout____c__DisplayClass14_0);
+    func_?(&StringLiteral_AdUIWithTimeout_PopInterstitial_);
+    func_?(&StringLiteral_AdUIWithTimeout_Pop);
+    func_?(&StringLiteral_AdUIWithTimeout_stack_is_blocked);
+    func_?(&StringLiteral_Closing_interstitial_manager_twi);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AdUIWithTimeout___PopInterstitial_c__AnonStorey1;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields).state = (int32_t)this;
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  value = (Object *)func_?(TypeInfo__AdUIWithTimeout____c__DisplayClass14_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].monitor = (MonitorData *)this;
+    func_?(&value[1].monitor,this);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
               ((Object *)StringLiteral_AdUIWithTimeout_PopInterstitial_,(MethodInfo *)0x0);
     if ((this->fields).interstitialCallback ==
         (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_Closing_interstitial_manager_twi,(MethodInfo *)0x0);
       return;
     }
-    *(undefined1 *)&(this_01->fields)._._._._.m_CachedPtr = 1;
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)this_01,
-               MethodInfo__AdUIWithTimeout___PopInterstitial_c__AnonStorey1____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_02,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    if (*(char *)&(this_01->fields)._._._._.m_CachedPtr != '\0') {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    *(undefined1 *)&value[1].klass = 1;
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__AdUIWithTimeout____c__DisplayClass14_0___PopInterstitial_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      if (*(char *)&value[1].klass != '\0') {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Debug);
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                  ((Object *)StringLiteral_AdUIWithTimeout_stack_is_blocked,(MethodInfo *)0x0);
+        (this->fields).interstitialResultLatePop = adResult;
+        (this->fields).wantsToPop = 1;
+        return;
+      }
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_AdUIWithTimeout_stack_is_blocked,(MethodInfo *)0x0);
-      (this->fields).interstitialResultLatePop = adResult;
-      (this->fields).wantsToPop = 1;
-      return;
-    }
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-              ((Object *)StringLiteral_AdUIWithTimeout_Pop,(MethodInfo *)0x0);
-    AdUIWithTimeout_TryPopOverlay(this,(MethodInfo *)0x0);
-    this_00 = (Action_1_UIPushOption_ *)(this->fields).interstitialCallback;
-    if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-      mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                (this_00,adResult,
-                 MethodInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>__Invoke_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                );
-      (this->fields).interstitialCallback =
-           (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0;
-      return;
+                ((Object *)StringLiteral_AdUIWithTimeout_Pop,(MethodInfo *)0x0);
+      AdUIWithTimeout_TryPopOverlay(this,(MethodInfo *)0x0);
+      pAVar1 = (this->fields).interstitialCallback;
+      if (pAVar1 != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
+        (*(pAVar1->fields)._._.invoke_impl)
+                  ((pAVar1->fields)._._.method_code,adResult,(pAVar1->fields)._._.method);
+        (this->fields).interstitialCallback =
+             (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0;
+        func_?(&(this->fields).interstitialCallback,0);
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -346,84 +376,92 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_PopRewardedVideo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__AdUIWithTimeout____c__DisplayClass15_0___PopRewardedVideo_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__AdUIWithTimeout____c__DisplayClass15_0);
+    func_?(&StringLiteral_AdUIWithTimeout_Pop);
+    func_?(&StringLiteral_AdUIWithTimeout_stack_is_blocked);
+    func_?(&StringLiteral_Closing_rewarded_ad_manager_twic);
+    func_?(&StringLiteral_AdUIWithTimeout_PopRewardedVideo);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AdUIWithTimeout___PopRewardedVideo_c__AnonStorey2;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields).state = (int32_t)this;
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  value = (Object *)func_?(TypeInfo__AdUIWithTimeout____c__DisplayClass15_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].monitor = (MonitorData *)this;
+    func_?(&value[1].monitor,this);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
               ((Object *)StringLiteral_AdUIWithTimeout_PopRewardedVideo,(MethodInfo *)0x0);
     if ((this->fields).rewardedCallback ==
         (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_Closing_rewarded_ad_manager_twic,(MethodInfo *)0x0);
       return;
     }
-    *(undefined1 *)&(this_01->fields)._._._._.m_CachedPtr = 1;
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)this_01,
-               MethodInfo__AdUIWithTimeout___PopRewardedVideo_c__AnonStorey2____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_02,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    if (*(char *)&(this_01->fields)._._._._.m_CachedPtr != '\0') {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    *(undefined1 *)&value[1].klass = 1;
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__AdUIWithTimeout____c__DisplayClass15_0___PopRewardedVideo_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      if (*(char *)&value[1].klass != '\0') {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Debug);
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                  ((Object *)StringLiteral_AdUIWithTimeout_stack_is_blocked,(MethodInfo *)0x0);
+        (this->fields).rewardedAdResultLatePop = adResult;
+        (this->fields).wantsToPop = 1;
+        return;
+      }
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_AdUIWithTimeout_stack_is_blocked,(MethodInfo *)0x0);
-      (this->fields).rewardedAdResultLatePop = adResult;
-      (this->fields).wantsToPop = 1;
-      return;
-    }
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-              ((Object *)StringLiteral_AdUIWithTimeout_Pop,(MethodInfo *)0x0);
-    AdUIWithTimeout_TryPopOverlay(this,(MethodInfo *)0x0);
-    this_00 = (Action_1_UIPushOption_ *)(this->fields).rewardedCallback;
-    if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-      mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                (this_00,adResult,
-                 MethodInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>__Invoke_Assets__Scripts__AdIntegration__RewardedAdResult_
-                );
-      (this->fields).rewardedCallback =
-           (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0;
-      return;
+                ((Object *)StringLiteral_AdUIWithTimeout_Pop,(MethodInfo *)0x0);
+      AdUIWithTimeout_TryPopOverlay(this,(MethodInfo *)0x0);
+      pAVar1 = (this->fields).rewardedCallback;
+      if (pAVar1 != (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
+        (*(pAVar1->fields)._._.invoke_impl)
+                  ((pAVar1->fields)._._.method_code,adResult,(pAVar1->fields)._._.method);
+        (this->fields).rewardedCallback =
+             (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0;
+        func_?(&(this->fields).rewardedCallback,0);
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -437,23 +475,24 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_ShowInterstitial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Requesting_interstitial_twice_);
+    func_?(&StringLiteral_AdUIWithTimeout_ShowInterstitial);
     cRam_? = '\x01';
   }
   if ((this->fields).interstitialCallback ==
       (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
               ((Object *)StringLiteral_AdUIWithTimeout_ShowInterstitial,(MethodInfo *)0x0);
     (this->fields).interstitialCallback = callbackFunction;
+    func_?(&(this->fields).interstitialCallback,callbackFunction);
     AdUIWithTimeout_CreatePopup(this,(MethodInfo *)0x0);
     return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
@@ -471,23 +510,24 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_ShowRewardedVideo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_AdUIWithTimeout_ShowRewardedVide);
+    func_?(&StringLiteral_Requesting_rewarded_ad_twice_);
     cRam_? = '\x01';
   }
   if ((this->fields).rewardedCallback ==
       (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
               ((Object *)StringLiteral_AdUIWithTimeout_ShowRewardedVide,(MethodInfo *)0x0);
     (this->fields).rewardedCallback = callbackFunction;
+    func_?(&(this->fields).rewardedCallback,callbackFunction);
     AdUIWithTimeout_CreatePopup(this,(MethodInfo *)0x0);
     return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
@@ -503,73 +543,63 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_TryPopOverlay
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__AdUIWithTimeout____c___TryPopOverlay_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__AdUIWithTimeout____c);
+    func_?(&StringLiteral_AdUIWithTimeout_TryPopOverlay__P);
     cRam_? = '\x01';
   }
-  this_00 = this;
-  this = (AdUIWithTimeout *)CONCAT13((this->fields).popupShowing,this._0_3_);
-  arg1 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
+  pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                     ((Boolean *)&(this->fields).popupShowing,(IFormatProvider *)0x0,unaff_EDI);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_AdUIWithTimeout_TryPopOverlay__P,pSVar1,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  message = mscorlib.dll::System::String::String_Concat
-                      ((Object *)StringLiteral_AdUIWithTimeout_TryPopOverlay__P,arg1,
-                       (MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Debug);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
-  if ((this_00->fields).popupShowing != 0) {
-    this = (AdUIWithTimeout *)0x0;
-    (this_00->fields).popupShowing = 0;
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__AdUIWithTimeout->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AdUIWithTimeout->_1).cctor_started == 0)) {
-      method = (MethodInfo *)&UNK_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  if ((this->fields).popupShowing != 0) {
+    (this->fields).popupShowing = 0;
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__AdUIWithTimeout____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    if (TypeInfo__AdUIWithTimeout->static_fields->__f__am_cache0 ==
-        (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      method = (MethodInfo *)&UNK_?;
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)0x0,
-                 MethodInfo__AdUIWithTimeout___TryPopOverlay_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                );
-      if ((((uint)(TypeInfo__AdUIWithTimeout->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AdUIWithTimeout->_1).cctor_started == 0)) {
-        method = (MethodInfo *)&UNK_?;
+    callbackFunction = TypeInfo__AdUIWithTimeout____c->static_fields->__9__16_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if ((TypeInfo__AdUIWithTimeout____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      TypeInfo__AdUIWithTimeout->static_fields->__f__am_cache0 =
-           (ExecuteEvents_EventFunction_1_IUIStack_ *)this_01;
-    }
-    if ((((uint)(TypeInfo__AdUIWithTimeout->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AdUIWithTimeout->_1).cctor_started == 0)) {
-      method = (MethodInfo *)&UNK_?;
+      object = TypeInfo__AdUIWithTimeout____c->static_fields->__9;
+      callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        func_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__AdUIWithTimeout____c___TryPopOverlay_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__AdUIWithTimeout____c->static_fields->__9__16_0 = callbackFunction;
       func_?();
     }
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-         TypeInfo__AdUIWithTimeout->static_fields->__f__am_cache0;
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      method = (MethodInfo *)&UNK_?;
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = (AdUIWithTimeout *)0x0;
-    method = (MethodInfo *)callbackFunction;
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,callbackFunction,
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
   }
@@ -584,110 +614,94 @@ void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout_Update
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__AdUIWithTimeout____c__DisplayClass11_0___Update_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__AdUIWithTimeout____c__DisplayClass11_0);
+    func_?(&StringLiteral_AdUIWithTimeout_wantsToPop_);
     cRam_? = '\x01';
   }
-  if ((this->fields).wantsToPop != 0) {
-    method_00 = TypeInfo__AdUIWithTimeout___Update_c__AnonStorey0;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    if (this_00 == (ScaleAnimationBase *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    (this_00->fields).state = (int32_t)this;
-    *(undefined1 *)&(this_00->fields)._._._._.m_CachedPtr = 1;
-    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-              ((Component_1 *)this,(MethodInfo *)0x0);
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this_00,
-               MethodInfo__AdUIWithTimeout___Update_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              ((GameObject *)0x0,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    if (*(char *)&(this_00->fields)._._._._.m_CachedPtr == '\0') {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  value = (Object *)func_?(TypeInfo__AdUIWithTimeout____c__DisplayClass11_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    if ((this->fields).wantsToPop != 0) {
+      *(undefined1 *)&value[1].monitor = 1;
+      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (UnityAction_2_System_Object_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      if (callbackFunction == (UnityAction_2_System_Object_System_Object_ *)0x0)
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (callbackFunction,value,
+                 MethodInfo__AdUIWithTimeout____c__DisplayClass11_0___Update_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                ((GameObject *)callbackFunction,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      if (*(char *)&value[1].monitor == '\0') {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                  ((Object *)StringLiteral_AdUIWithTimeout_wantsToPop_,(MethodInfo *)0x0);
+        AdUIWithTimeout_TryPopOverlay(this,(MethodInfo *)0x0);
+        if ((this->fields).interstitialCallback !=
+            (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
+          pAVar1 = (this->fields).interstitialCallback;
+          pvStack2 = (pAVar1->fields)._._.method;
+          ppGStack3 = (GameObject **)(this->fields).interstitialResultLatePop;
+          puStack4 = (pAVar1->fields)._._.method_code;
+          (*(pAVar1->fields)._._.invoke_impl)();
+          (this->fields).interstitialCallback =
+               (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0;
+          func_?();
+        }
+        if ((this->fields).rewardedCallback !=
+            (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
+          pAVar5 = (this->fields).rewardedCallback;
+          pvStack2 = (pAVar5->fields)._._.method;
+          ppGStack3 = (GameObject **)(this->fields).rewardedAdResultLatePop;
+          puStack4 = (pAVar5->fields)._._.method_code;
+          (*(pAVar5->fields)._._.invoke_impl)();
+          (this->fields).rewardedCallback =
+               (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0;
+          func_?();
+        }
+        ppGStack3 = &(this->fields).overlayPushedToStack;
+        (this->fields).wantsToPop = 0;
+        pvStack2 = (void *)0x0;
+        (this->fields).overlayPushedToStack = (GameObject *)0x0;
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_AdUIWithTimeout_wantsToPop_,(MethodInfo *)0x0);
-      AdUIWithTimeout_TryPopOverlay(this,(MethodInfo *)0x0);
-      pAVar2 = (Action_1_UIPushOption_ *)(this->fields).interstitialCallback;
-      if (pAVar2 != (Action_1_UIPushOption_ *)0x0) {
-        mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                  (pAVar2,(this->fields).interstitialResultLatePop,
-                   MethodInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>__Invoke_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                  );
-        (this->fields).interstitialCallback =
-             (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0;
-      }
-      pAVar2 = (Action_1_UIPushOption_ *)(this->fields).rewardedCallback;
-      if (pAVar2 != (Action_1_UIPushOption_ *)0x0) {
-        mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                  (pAVar2,(this->fields).rewardedAdResultLatePop,
-                   MethodInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>__Invoke_Assets__Scripts__AdIntegration__RewardedAdResult_
-                  );
-        (this->fields).rewardedCallback =
-             (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0;
-      }
-      (this->fields).wantsToPop = 0;
-      (this->fields).overlayPushedToStack = (GameObject *)0x0;
     }
-  }
-  return;
-}
-
-
-/* Void <TryPopOverlay>m__0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout__TryPopOverlay_m__0
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* AdUIWithTimeout() */
-
-void Assembly-CSharp.dll::AdUIWithTimeout::AdUIWithTimeout__cctor(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  TypeInfo__AdUIWithTimeout->static_fields->timeout = 20.0;
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

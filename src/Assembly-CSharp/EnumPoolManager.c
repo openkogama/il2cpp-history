@@ -6,155 +6,127 @@ void Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&MethodInfo__System__Collections__Generic__List<Pool>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_);
+    func_?(&TypeInfo__PoolEnums);
+    func_?(&StringLiteral_A_pool_of_type__s_does_already_e);
     cRam_? = '\x01';
   }
   index = 0;
   pLVar1 = (this->fields).pool;
   if (pLVar1 != (List_1_Pool_ *)0x0) {
     while( true ) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                          MethodInfo__System__Collections__Generic__List<Pool>__get_Count__);
-      if ((int)pOVar2 <= index) {
+      if ((pLVar1->fields)._size <= index) {
         return;
       }
-      pLVar1 = (this->fields).pool;
-      if (pLVar1 == (List_1_Pool_ *)0x0) break;
-      this_00 = (Pool *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                        ::IEventSystemHandler]::
-                        List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                  ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                                   index,
-                                   MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_
-                                  );
-      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if (this_00 == (Pool *)0x0) break;
-      Pool::Pool_Initialize(this_00,parent,(MethodInfo *)0x0);
-      pLVar1 = (this->fields).pool;
-      pPVar3 = (this->fields).lookupTable;
-      if (((pLVar1 == (List_1_Pool_ *)0x0) ||
-          (pSVar4 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                     *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                       ::IEventSystemHandler]::
-                       List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                 ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                                  index,
-                                  MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_
-                                 ),
-          pSVar4 == (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                     *)0x0)) ||
-         (pOVar2 = System.dll::System::Collections::Generic::
-                   SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                   ::Single,System::Object]::
-                   SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                             (pSVar4,(MethodInfo *)0x0), pPVar3 == (Pool__Array *)0x0)) break;
-      if ((Object *)pPVar3->max_length <= pOVar2) goto code_?;
-      pLVar1 = (this->fields).pool;
-      if (pPVar3->vector[(int)pOVar2] == (Pool *)0x0) {
-        pPVar3 = (this->fields).lookupTable;
-        if ((pLVar1 == (List_1_Pool_ *)0x0) ||
-           (pSVar4 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                      *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                        ::IEventSystemHandler]::
-                        List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                  ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                                   index,
-                                   MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_
-                                  ),
-           pSVar4 == (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                      *)0x0)) break;
-        System.dll::System::Collections::Generic::
-        SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-        Single,System::Object]::
-        SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                  (pSVar4,(MethodInfo *)0x0);
-        pLVar1 = (this->fields).pool;
-        if ((pLVar1 == (List_1_Pool_ *)0x0) ||
-           (mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-            IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                      ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,index,
-                       MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_),
-           pPVar3 == (Pool__Array *)0x0)) break;
-        func_?();
-        func_?();
+      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).pool;
+      if (pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (pLVar2,index,
+                         MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_);
+      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
+      Pool::Pool_Initialize((Pool *)RVar3,parent,(MethodInfo *)0x0);
+      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).pool;
+      pPVar4 = (this->fields).lookupTable;
+      if (((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+          (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   RegularExpressions::RegexCharClass+SingleRange]::
+                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                             (pLVar2,index,
+                              MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_),
+          RVar3 == (RegexCharClass_SingleRange)0x0)) || (pPVar4 == (Pool__Array *)0x0)) break;
+      if (pPVar4->max_length <= *(uint *)((int)RVar3 + 0x10)) goto code_?;
+      if (pPVar4->vector[*(uint *)((int)RVar3 + 0x10)] == (Pool *)0x0) {
+        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).pool;
+        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (pLVar2,index,
+                               MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_),
+           RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+        uVar5 = *(undefined4 *)((int)RVar3 + 0x10);
+        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).pool;
+        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (pLVar2,index,
+                               MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_),
+           index == 0)) break;
+        if ((RVar3 != (RegexCharClass_SingleRange)0x0) && (iVar6 = func_?(), iVar6 == 0))
+        goto code_?;
+        func_?(uVar5,RVar3);
       }
       else {
-        if ((pLVar1 == (List_1_Pool_ *)0x0) ||
-           (pSVar4 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                      *)mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                        ::IEventSystemHandler]::
-                        List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                  ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                                   index,
-                                   MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_
-                                  ),
-           pSVar4 == (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                      *)0x0)) break;
-        System.dll::System::Collections::Generic::
-        SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-        Single,System::Object]::
-        SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                  (pSVar4,(MethodInfo *)0x0);
-        iVar5 = func_?();
-        if (iVar5 == 0) break;
-        pOVar2 = (Object *)func_?(3,iVar5);
-        func_?(iVar5);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        message = mscorlib.dll::System::String::String_Format
-                            (StringLiteral_A_pool_of_type__s_does_already_e,pOVar2,(MethodInfo *)0x0
-                            );
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Debug);
+        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).pool;
+        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (pLVar2,index,
+                               MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_),
+           RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+        pSVar7 = mscorlib.dll::System::Enum::Enum_ToString
+                           ((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
+        pSVar7 = mscorlib.dll::System::String::String_Format
+                           (StringLiteral_A_pool_of_type__s_does_already_e,(Object *)pSVar7,
+                            (MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                  ((Object *)message,(MethodInfo *)0x0);
+                  ((Object *)pSVar7,(MethodInfo *)0x0);
       }
       pLVar1 = (this->fields).pool;
       index = index + 1;
       if (pLVar1 == (List_1_Pool_ *)0x0) break;
     }
   }
-  func_?(0);
+  func_?();
 code_?:
-  uVar6 = func_?(0,0);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  uVar5 = func_?(0);
+  func_?(uVar5);
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
 
-/* ImpulseRay Instantiate[ImpulseRay](PoolEnums) */
+/* Object Instantiate[Object](PoolEnums) */
 
-ImpulseRay *
-Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager_Instantiate_18
-          (EnumPoolManager *this,PoolEnums__Enum pEnum,MethodInfo *method)
+Object * Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager_Instantiate
+                   (EnumPoolManager *this,PoolEnums__Enum pEnum,MethodInfo *method)
 
 {
   pPVar1 = (this->fields).lookupTable;
   if (pPVar1 != (Pool__Array *)0x0) {
     if (pPVar1->max_length <= pEnum) goto code_?;
     if (pPVar1->vector[pEnum] != (Pool *)0x0) {
-      pIVar2 = (ImpulseRay *)
-               (*(code *)(*method->parameters)->data)(pPVar1->vector[pEnum],*method->parameters);
-      return pIVar2;
+      pOVar2 = (Object *)
+               (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
+                         (pPVar1->vector[pEnum],((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
+      return pOVar2;
     }
   }
-  func_?(0);
+  func_?();
 code_?:
-  uVar3 = func_?(0,0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  pIVar2 = (ImpulseRay *)(*pcVar4)();
-  return pIVar2;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  pOVar2 = (Object *)(*pcVar3)();
+  return pOVar2;
 }
 
 
@@ -166,18 +138,78 @@ void Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager_Return
 {
   pPVar1 = (this->fields).lookupTable;
   if (pPVar1 != (Pool__Array *)0x0) {
-    if (pPVar1->max_length <= pEnum) goto code_?;
-    if (pPVar1->vector[pEnum] != (Pool *)0x0) {
-      Pool::Pool_ReturnObject(pPVar1->vector[pEnum],obj,(MethodInfo *)0x0);
-      return;
+    if (pEnum < pPVar1->max_length) {
+      pPVar2 = pPVar1->vector[pEnum];
+      if (pPVar2 != (Pool *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+          func_?(&TypeInfo__UnityEngine__Object);
+          cRam_? = '\x01';
+        }
+        pMVar3 = (pPVar2->fields).pool;
+        uVar4 = 0;
+        if (pMVar3 != (MonoBehaviour__Array *)0x0) {
+          this = (EnumPoolManager *)0x10;
+          do {
+            if ((int)pMVar3->max_length <= (int)uVar4) {
+              if (obj != (MonoBehaviour *)0x0) {
+                pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)obj,(MethodInfo *)0x0);
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__UnityEngine__Object);
+                }
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                          ((Object_1 *)pGVar5,(MethodInfo *)0x0);
+                return;
+              }
+              break;
+            }
+            pMVar3 = (pPVar2->fields).pool;
+            if (pMVar3 == (MonoBehaviour__Array *)0x0) break;
+            if (pMVar3->max_length <= uVar4) goto code_?;
+            x = *(Object_1 **)((int)&this->klass + (int)pMVar3);
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__UnityEngine__Object);
+            }
+            bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                              (x,(Object_1 *)obj,(MethodInfo *)0x0);
+            if (bVar6 != 0) {
+              if ((obj != (MonoBehaviour *)0x0) &&
+                 (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)obj,(MethodInfo *)0x0),
+                 pGVar5 != (GameObject *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar5,0,(MethodInfo *)0x0);
+                this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)obj,(MethodInfo *)0x0);
+                if (this_00 != (Transform *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                            (this_00,(pPVar2->fields).parent,(MethodInfo *)0x0);
+                  pLVar7 = (pPVar2->fields).available;
+                  if (pLVar7 != (List_1_System_Int32_ *)0x0) {
+                    func_?(pLVar7,uVar4,
+                                    MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+                    return;
+                  }
+                }
+              }
+              break;
+            }
+            uVar4 = uVar4 + 1;
+            pMVar3 = (pPVar2->fields).pool;
+            this = (EnumPoolManager *)&this->monitor;
+          } while (pMVar3 != (MonoBehaviour__Array *)0x0);
+        }
+      }
+    }
+    else {
+code_?:
+      func_?();
     }
   }
-  func_?(0);
-code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -189,19 +221,14 @@ void Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Pool);
     cRam_? = '\x01';
   }
-  pPVar1 = (Pool__Array *)func_?(TypeInfo__Pool,0x1f);
+  pPVar1 = (Pool__Array *)func_?(TypeInfo__Pool,0x20);
   (this->fields).lookupTable = pPVar1;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  func_?(&(this->fields).lookupTable,pPVar1);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

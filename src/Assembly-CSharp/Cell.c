@@ -5,28 +5,26 @@ Cell Assembly-CSharp.dll::Cell::Cell_Clone(Cell *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Cube);
     cRam_? = '\x01';
   }
-  original = this[1].cube;
-  if ((((uint)(TypeInfo__Cube->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Cube->_1).cctor_started == 0)) {
+  pCVar1 = this->cube;
+  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Cube);
   }
-  CVar1.cube = Cube::Cube_Clone_1(original,(MethodInfo *)0x0);
-  uVar2 = 0;
-  if (CVar1.cube != (Cube *)0x0) {
-    bVar3 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)CVar1.cube,(MethodInfo *)0x0);
-    CVar1._5_3_ = (int3)((ulonglong)uVar2 >> 0x28);
-    CVar1.lightValue = -((bVar3 & 0x3f) != 0x3f);
-    return CVar1;
+  pCVar1 = Cube::Cube_Clone_1(pCVar1,(MethodInfo *)0x0);
+  CStack_2._4_4_ = 0;
+  CStack_2.cube = pCVar1;
+  func_?(&CStack_2,pCVar1);
+  if (pCVar1 != (Cube *)0x0) {
+    CStack_2.lightValue = -(((pCVar1->fields)._.unIndentedSides & 0x3f) != 0x3f);
+    return CStack_2;
   }
-  func_?(0,0);
-  pcVar4 = (code *)swi(3);
-  CVar1 = (Cell)(*pcVar4)();
-  return CVar1;
+  CStack_2.cube = (Cube *)&UNK_?;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  CVar4 = (Cell)(*pcVar3)();
+  return CVar4;
 }
 
 
@@ -35,17 +33,15 @@ Cell Assembly-CSharp.dll::Cell::Cell_Clone(Cell *this,MethodInfo *method)
 void Assembly-CSharp.dll::Cell::Cell__ctor(Cell *this,Cube *cube,MethodInfo *method)
 
 {
-  this[1].cube = cube;
+  this->cube = cube;
+  func_?(this,cube);
   if (cube != (Cube *)0x0) {
-    bVar1 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)cube,(MethodInfo *)0x0);
-    this[1].lightValue = -((bVar1 & 0x3f) != 0x3f);
+    this->lightValue = -(((cube->fields)._.unIndentedSides & 0x3f) != 0x3f);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

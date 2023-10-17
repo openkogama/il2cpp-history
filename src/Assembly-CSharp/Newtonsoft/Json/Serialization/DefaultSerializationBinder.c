@@ -8,27 +8,34 @@ Type * Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializatio
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__Get_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._typeCache;
+  uStack_1 = ZEXT48(assemblyName);
+  func_?(&uStack_1,assemblyName);
+  uStack_1._4_4_ = typeName;
+  func_?((int)&uStack_1 + 4,typeName);
   if (this_00 !=
       (ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Type_
        *)0x0) {
-    key._targetType = (Type *)typeName;
-    key._initialType = (Type *)assemblyName;
-    pTVar1 = (Type *)Json::Utilities::ThreadSafeStore`2[ConvertUtils+TypeConvertKey,System::Object]
-                     ::ThreadSafeStore_2_ConvertUtils_TypeConvertKey_System_Object__Get
-                               ((ThreadSafeStore_2_ConvertUtils_TypeConvertKey_System_Object_ *)
-                                this_00,key,
+    key.TypeName = uStack_1._4_4_;
+    key.AssemblyName = (String *)uStack_1;
+    pTVar2 = (Type *)Json::Utilities::ThreadSafeStore`2[Newtonsoft::Json::Serialization::
+                     DefaultSerializationBinder+TypeNameKey,System::Object]::
+                     ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Get
+                               ((ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+                                 *)this_00,key,
                                 MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__Get_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
                                );
-    return pTVar1;
+    return pTVar2;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pTVar1 = (Type *)(*pcVar2)();
-  return pTVar1;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  pTVar2 = (Type *)(*pcVar3)();
+  return pTVar2;
 }
 
 
@@ -40,78 +47,83 @@ Type * Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializatio
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
+                   );
+    func_?(&MethodInfo__System__Type__GetType_System__String_);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   if (typeNameKey.AssemblyName == (String *)0x0) {
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
     }
-    pSVar1 = (String *)func_?(typeNameKey.TypeName,&UNK_?);
-    pTVar2 = mscorlib.dll::System::Type::Type_GetType(pSVar1,(MethodInfo *)0x0);
-    if (pTVar2 == (Type *)0x0) {
-      pTVar2 = mscorlib.dll::System::Type::Type_GetType(typeNameKey.TypeName,(MethodInfo *)0x0);
-    }
-    return pTVar2;
+    pTVar1 = (Type *)func_?(typeNameKey.TypeName,
+                                     MethodInfo__System__Type__GetType_System__String_,
+                                     MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
+                                    );
+    return pTVar1;
   }
-  message = mscorlib.dll::System::Reflection::Assembly::Assembly_Load
-                      (typeNameKey.AssemblyName,(MethodInfo *)0x0);
-  if (message == (Assembly *)0x0) {
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__Globalization__CultureInfo);
+  left = mscorlib.dll::System::Reflection::Assembly::Assembly_Load
+                   (typeNameKey.AssemblyName,(MethodInfo *)0x0);
+  bVar2 = mscorlib.dll::System::Reflection::Assembly::Assembly_op_Equality
+                    (left,(Assembly *)0x0,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    if (left == (Assembly *)0x0) goto code_?;
+    pTVar1 = (Type *)(*(left->klass->vtable).GetType.methodPtr)(left,typeNameKey.TypeName);
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                       ((MethodInfo *)0x0);
-    pOVar4 = (Object__Array *)func_?(TypeInfo__System__Object,1);
-    func_?(pOVar4,0);
-    func_?(pOVar4,typeNameKey.AssemblyName);
-    func_?(0,typeNameKey.AssemblyName);
-    message = (Assembly *)
-              Json::Utilities::StringUtils::StringUtils_FormatWith
-                        (StringLiteral_Could_not_load_assembly___0___,(IFormatProvider *)pCVar3,
-                         pOVar4,(MethodInfo *)0x0);
-    pJVar5 = (JsonSchemaException *)
-             func_?(TypeInfo__Newtonsoft__Json__JsonSerializationException);
-    Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1
-              (pJVar5,(String *)message,(MethodInfo *)0x0);
-    typeNameKey.TypeName = (String *)0x0;
+    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)pTVar1,(Object **)0x0,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      return pTVar1;
+    }
     func_?();
+    func_?();
+    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+    func_?();
+    args = (Object__Array *)func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    uVar3 = func_?();
+    func_?(args);
+    func_?(args,uVar3);
+    func_?();
+    ppSVar4 = &StringLiteral_Could_not_find_type___0___in_ass;
   }
   else {
-    pTVar2 = (Type *)(*(code *)(message->klass->vtable).GetType_1.method)
-                               (message,typeNameKey.TypeName,
-                                (message->klass->vtable).GetType_2.methodPtr);
-    if (pTVar2 != (Type *)0x0) {
-      return pTVar2;
-    }
+    uVar3 = func_?();
+    func_?(uVar3);
+    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+    func_?();
+    args = (Object__Array *)func_?();
+    func_?(args);
+    func_?(args,typeNameKey.AssemblyName);
+    func_?();
+    ppSVar4 = &StringLiteral_Could_not_load_assembly___0___;
   }
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
-  pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                     ((MethodInfo *)0x0);
-  pOVar4 = (Object__Array *)func_?(TypeInfo__System__Object,2);
-  func_?(pOVar4,0);
-  func_?(pOVar4,typeNameKey.TypeName);
-  func_?(0,typeNameKey.TypeName);
-  func_?(message,0);
-  uVar6 = func_?(6,message);
-  func_?(pOVar4,0);
-  func_?(pOVar4,uVar6);
-  func_?(1,uVar6);
-  pSVar1 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                     (StringLiteral_Could_not_find_type___0___in_ass,(IFormatProvider *)pCVar3,
-                      pOVar4,(MethodInfo *)0x0);
-  pJVar5 = (JsonSchemaException *)
-           func_?(TypeInfo__Newtonsoft__Json__JsonSerializationException);
-  Json::Schema::JsonSchemaException::JsonSchemaException__ctor_1(pJVar5,pSVar1,(MethodInfo *)0x0);
-  func_?(pJVar5);
-  pcVar7 = (code *)swi(3);
-  pTVar2 = (Type *)(*pcVar7)();
-  return pTVar2;
+  method_00 = (MethodInfo *)0x0;
+  pSVar5 = (String *)func_?(ppSVar4);
+  pSVar5 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                     (pSVar5,(IFormatProvider *)provider,args,method_00);
+  uVar3 = func_?(&TypeInfo__Newtonsoft__Json__JsonSerializationException);
+  this = (JsonSerializationException *)func_?(uVar3);
+  func_?(this);
+  JsonSerializationException::JsonSerializationException__ctor_1(this,pSVar5,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
+                 );
+  func_?();
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pTVar1 = (Type *)(*pcVar6)();
+  return pTVar1;
 }
 
 
@@ -122,74 +134,64 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializationB
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
     cRam_? = '\x01';
   }
-  this = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)
+  this = (TweenRunner_1_FloatTween_ *)
          func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).Equals
-              .methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started == 0
-     )) {
-    func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
-  }
-  if (TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-      __f__mg_cache0 ==
-      (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Type_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
-               ,
-               MethodInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__Func_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).
-                Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started ==
-        0)) {
-      func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
+  if (this != (TweenRunner_1_FloatTween_ *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
+                     );
+      func_?(&
+                      TypeInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                     );
+      func_?(&
+                      MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__ThreadSafeStore_System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>_
+                     );
+      func_?(&
+                      TypeInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                     );
+      cRam_? = '\x01';
     }
-    TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-    __f__mg_cache0 =
-         (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Type_ *)
-         this_00;
-  }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).Equals
-              .methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started == 0
-     )) {
-    func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
-  }
-  creator = (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_ *)
-            TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-            __f__mg_cache0;
-  this_01 = (WinningConditionDebriefing *)
-            func_?(
-                           TypeInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
-                           );
-  Json::Utilities::ThreadSafeStore`2[Newtonsoft::Json::Serialization::
-  DefaultSerializationBinder+TypeNameKey,System::Object]::
-  ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object___ctor
-            ((ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
-              *)this_01,creator,
-             MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__ThreadSafeStore_System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>_
-            );
-  if (this != (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)0x0) {
-    (this->fields)._this = this_01;
-    WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-    WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor(this,(MethodInfo *)0x0);
-    TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->Instance =
-         (DefaultSerializationBinder *)this;
-    return;
+    this_00 = (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_ *
+              )func_?(
+                              TypeInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                              );
+    if (this_00 !=
+        (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_ *)0x0)
+    {
+      mscorlib.dll::System::Func`2[Newtonsoft::Json::Serialization::
+      DefaultSerializationBinder+TypeNameKey,Object]::
+      Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object___ctor
+                (this_00,(Object *)0x0,
+                 MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
+                 ,(MethodInfo *)0x0);
+      this_01 = (ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+                 *)func_?(
+                                  TypeInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                                  );
+      if (this_01 !=
+          (ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+           *)0x0) {
+        Json::Utilities::ThreadSafeStore`2[Newtonsoft::Json::Serialization::
+        DefaultSerializationBinder+TypeNameKey,System::Object]::
+        ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object___ctor
+                  (this_01,this_00,
+                   MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__ThreadSafeStore_System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>_
+                  );
+        (this->fields).m_CoroutineContainer = (MonoBehaviour *)this_01;
+        func_?(&this->fields,this_01);
+        UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+        TweenRunner_1_FloatTween___ctor(this,(MethodInfo *)0x0);
+        TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
+        Instance = (DefaultSerializationBinder *)this;
+        func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->
+                        static_fields,this);
+        return;
+      }
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -205,66 +207,54 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializationB
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
+                   );
+    func_?(&
+                    TypeInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                   );
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__ThreadSafeStore_System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>_
+                   );
+    func_?(&
+                    TypeInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).Equals
-              .methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started == 0
-     )) {
-    func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
-  }
-  if (TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-      __f__mg_cache0 ==
-      (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Type_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
+  this_00 = (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_ *)
+            func_?(
+                           TypeInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                           );
+  if (this_00 !=
+      (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_ *)0x0) {
+    mscorlib.dll::System::Func`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,Object]::
+    Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object___ctor
               (this_00,(Object *)0x0,
                MethodInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__GetTypeFromTypeNameKey_Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey_
-               ,
-               MethodInfo__System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__Func_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).
-                Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started ==
-        0)) {
-      func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
+               ,(MethodInfo *)0x0);
+    this_01 = (ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Type_
+               *)func_?(
+                                TypeInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
+                                );
+    if (this_01 !=
+        (ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Type_
+         *)0x0) {
+      Json::Utilities::ThreadSafeStore`2[Newtonsoft::Json::Serialization::
+      DefaultSerializationBinder+TypeNameKey,System::Object]::
+      ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object___ctor
+                ((ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+                  *)this_01,this_00,
+                 MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__ThreadSafeStore_System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>_
+                );
+      (this->fields)._typeCache = this_01;
+      func_?(&this->fields,this_01);
+      UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+      TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+      return;
     }
-    TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-    __f__mg_cache0 =
-         (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Type_ *)
-         this_00;
   }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).Equals
-              .methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started == 0
-     )) {
-    func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
-  }
-  creator = (Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_ *)
-            TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-            __f__mg_cache0;
-  this_01 = (ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Type_
-             *)func_?(
-                              TypeInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>
-                              );
-  Json::Utilities::ThreadSafeStore`2[Newtonsoft::Json::Serialization::
-  DefaultSerializationBinder+TypeNameKey,System::Object]::
-  ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object___ctor
-            ((ThreadSafeStore_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
-              *)this_01,creator,
-             MethodInfo__Newtonsoft__Json__Utilities__ThreadSafeStore<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>__ThreadSafeStore_System__Func<Newtonsoft::Json::Serialization::DefaultSerializationBinder::TypeNameKey,_System::Type>_
-            );
-  if (this != (DefaultSerializationBinder *)0x0) {
-    (this->fields)._typeCache = this_01;
-    return;
-  }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;

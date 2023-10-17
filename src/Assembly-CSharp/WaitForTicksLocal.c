@@ -27,29 +27,34 @@ void Assembly-CSharp.dll::WaitForTicksLocal::WaitForTicksLocal__ctor
                (WaitForTicksLocal *this,int32_t milliseconds,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  if ((double)milliseconds <= _UNK_?) {
-    uVar1 = func_?();
-    (this->fields).maxTicks = uVar1;
-    iVar2 = mscorlib.dll::System::Environment::Environment_get_TickCount((MethodInfo *)0x0);
-    (this->fields).startTicks = iVar2;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  dVar1 = (double)milliseconds;
+  if (dVar1 <= _UNK_?) {
+    if (0.0 <= dVar1) {
+      uVar2 = func_?();
+    }
+    else {
+      uVar2 = (uint32_t)dVar1;
+    }
+    (this->fields).maxTicks = uVar2;
+    iVar3 = mscorlib.dll::System::Environment::Environment_get_TickCount((MethodInfo *)0x0);
+    (this->fields).startTicks = iVar3;
     return;
   }
-  actualValue = (Object *)func_?(TypeInfo__System__Int32,&milliseconds);
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar4 = func_?(&TypeInfo__System__Int32,&milliseconds);
+  actualValue = (Object *)func_?(uVar4);
+  uVar4 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar4);
+  func_?(this_00);
+  message = (String *)func_?(&StringLiteral_Cannot_wait_for_more_than_Int32_);
+  paramName = (String *)func_?(&StringLiteral_milliseconds);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_3
-            (this_00,StringLiteral_milliseconds,actualValue,
-             StringLiteral_Cannot_wait_for_more_than_Int32_,(MethodInfo *)0x0);
-  method = MethodInfo__WaitForTicksLocal__WaitForTicksLocal_int_;
-  milliseconds = 0;
+            (this_00,paramName,actualValue,message,(MethodInfo *)0x0);
+  milliseconds = func_?(&MethodInfo__WaitForTicksLocal__WaitForTicksLocal_int_);
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

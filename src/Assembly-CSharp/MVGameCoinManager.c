@@ -6,87 +6,75 @@ bool Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Consume
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).gameCoins.currentCryptoKey;
   iVar2 = (this->fields).gameCoins.hiddenValue;
   iVar3 = (this->fields).gameCoins.fakeValue;
-  uVar4._0_1_ = (this->fields).gameCoins.inited;
-  uVar4._1_3_ = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
   value_00.hiddenValue = iVar2;
   value_00.currentCryptoKey = iVar1;
   value_00.fakeValue = iVar3;
-  value_00.inited = (bool)uVar4;
-  value_00._13_3_ = SUB43(uVar4,1);
+  value_00.inited = (this->fields).gameCoins.inited;
+  value_00._13_3_ = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
   iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
           ObscuredInt_op_Implicit_1(value_00,(MethodInfo *)0x0);
   if (gameCoinLogic != (GameCoinLogic *)0x0) {
-    pIVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items
-                       ((Collection_1_VoxelHit_ *)gameCoinLogic,(MethodInfo *)0x0);
-    if (iVar1 < (int)pIVar5) {
-      return 0;
-    }
-    iVar1 = (this->fields).gameCoins.currentCryptoKey;
-    iVar2 = (this->fields).gameCoins.hiddenValue;
-    puVar6 = (undefined *)(this->fields).gameCoins.fakeValue;
-    pOVar7 = *(ObscuredInt__Class **)&(this->fields).gameCoins.inited;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
-      puVar6 = &UNK_?;
-      pOVar7 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-      func_?();
-    }
-    value_01.hiddenValue = iVar2;
-    value_01.currentCryptoKey = iVar1;
-    value_01.fakeValue = (int32_t)puVar6;
-    value_01._12_4_ = pOVar7;
-    iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-            ObscuredInt_op_Implicit_1(value_01,(MethodInfo *)0x0);
-    pIVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items
-                       ((Collection_1_VoxelHit_ *)gameCoinLogic,(MethodInfo *)0x0);
-    pOVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-             ObscuredInt_op_Implicit
-                       ((ObscuredInt *)&stack0xffffffec,iVar1 - (int)pIVar5,(MethodInfo *)0x0);
-    this_00 = (this->fields).OnGameCoinAmountChange;
-    iVar1 = pOVar8->currentCryptoKey;
-    iVar2 = pOVar8->hiddenValue;
-    iVar3 = pOVar8->fakeValue;
-    uVar9._0_1_ = pOVar8->inited;
-    uVar9._1_3_ = *(undefined3 *)&pOVar8->field_0xd;
-    (this->fields).gameCoins.currentCryptoKey = iVar1;
-    (this->fields).gameCoins.hiddenValue = iVar2;
-    (this->fields).gameCoins.fakeValue = iVar3;
-    (this->fields).gameCoins.inited = (bool)uVar9;
-    *(undefined3 *)&(this->fields).gameCoins.field_0xd = uVar9._1_3_;
-    if (this_00 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-      if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                  methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+    if ((gameCoinLogic->fields).purchaseAmount <= iVar1) {
+      iVar1 = (this->fields).gameCoins.currentCryptoKey;
+      puVar4 = (undefined *)(this->fields).gameCoins.hiddenValue;
+      pOVar5 = (ObscuredInt__Class *)(this->fields).gameCoins.fakeValue;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+          cctor_finished_or_no_cctor == 0) {
+        puVar4 = &UNK_?;
+        pOVar5 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
         func_?();
       }
-      value.hiddenValue = iVar2;
-      value.currentCryptoKey = iVar1;
-      value.fakeValue = iVar3;
-      value.inited = (bool)uVar9;
-      value._13_3_ = SUB43(uVar9,1);
+      value_01.hiddenValue = (int32_t)puVar4;
+      value_01.currentCryptoKey = iVar1;
+      value_01.fakeValue = (int32_t)pOVar5;
+      value_01.inited = (this->fields).gameCoins.inited;
+      value_01._13_3_ = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
       iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-              ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-      if (this_00 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) goto code_?;
-      MVGameCoinManager+OnGameCoinAmountChangeDelegate::
-      MVGameCoinManager_OnGameCoinAmountChangeDelegate_Invoke(this_00,iVar1,(MethodInfo *)0x0);
+              ObscuredInt_op_Implicit_1(value_01,(MethodInfo *)0x0);
+      pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+               ObscuredInt_op_Implicit
+                         ((ObscuredInt *)&stack0xffffffec,
+                          iVar1 - (gameCoinLogic->fields).purchaseAmount,(MethodInfo *)0x0);
+      pMVar7 = (this->fields).OnGameCoinAmountChange;
+      iVar1 = pOVar6->currentCryptoKey;
+      iVar2 = pOVar6->hiddenValue;
+      iVar3 = pOVar6->fakeValue;
+      uVar8 = *(undefined4 *)&pOVar6->inited;
+      (this->fields).gameCoins.currentCryptoKey = iVar1;
+      (this->fields).gameCoins.hiddenValue = iVar2;
+      (this->fields).gameCoins.fakeValue = iVar3;
+      *(undefined4 *)&(this->fields).gameCoins.inited = uVar8;
+      if (pMVar7 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+        pMVar7 = (this->fields).OnGameCoinAmountChange;
+        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+            cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value.hiddenValue = iVar2;
+        value.currentCryptoKey = iVar1;
+        value.fakeValue = iVar3;
+        value._12_4_ = uVar8;
+        puStack9 = (undefined *)uVar8;
+        puStack9 =
+             (undefined *)
+             Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+             ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+        (*(pMVar7->fields)._._.invoke_impl)();
+      }
+      return 1;
     }
-    return 1;
+    return 0;
   }
-code_?:
   func_?();
   pcVar10 = (code *)swi(3);
   bVar11 = (*pcVar10)();
@@ -101,68 +89,52 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Evaluate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
+                   );
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
     pLVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
                        (pMVar1,WorldObjectType__Enum_GameCoin,(MethodInfo *)0x0);
     if (pLVar2 != (List_1_MVWorldObjectClient_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                         );
+      iVar3 = (pLVar2->fields)._size;
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
         pLVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
                            (pMVar1,WorldObjectType__Enum_GameCoinChest,(MethodInfo *)0x0);
-        this_00 = MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__;
         if (pLVar2 != (List_1_MVWorldObjectClient_ *)0x0) {
-          pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                             );
-          pIVar5 = this_00[3].methodPointer;
-          pIVar6 = this_00[3].virtualMethodPointer;
-          this = (MVGameCoinManager *)this_00[3].invoker_method;
-          method = (MethodInfo *)this_00[3].name;
-          if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                      methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0))
-          {
-            pOStack7 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-            func_?();
+          iVar4 = (pLVar2->fields)._size;
+          iVar5 = (this->fields).totalPurchaseAmount.currentCryptoKey;
+          iVar6 = (this->fields).totalPurchaseAmount.hiddenValue;
+          iVar7 = (this->fields).totalPurchaseAmount.fakeValue;
+          puVar8 = *(undefined **)&(this->fields).totalPurchaseAmount.inited;
+          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+              cctor_finished_or_no_cctor == 0) {
+            puVar8 = &UNK_?;
+            func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
           }
-          pOStack7 = (ObscuredInt__Class *)0x0;
-          iVar8 = (int32_t)pIVar6;
-          value.currentCryptoKey = (int32_t)pIVar5;
-          value = (ObscuredInt)CONCAT124(auVar9,value.currentCryptoKey);
-          iVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          value.hiddenValue = iVar6;
+          value.currentCryptoKey = iVar5;
+          value.fakeValue = iVar7;
+          value._12_4_ = puVar8;
+          iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
                   ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-          if (((iVar10 < 1) && ((int)pOVar3 < 1)) && ((int)pOVar4 < 1)) {
-            MVGameCoinManager_HandleActivationChange
-                      ((MVGameCoinManager *)this_00,0,(MethodInfo *)0x0);
+          if (((iVar5 < 1) && (iVar3 < 1)) && (iVar4 < 1)) {
+            MVGameCoinManager_HandleActivationChange(this,0,(MethodInfo *)0x0);
             return;
           }
-          MVGameCoinManager_HandleActivationChange((MVGameCoinManager *)this_00,1,(MethodInfo *)0x0)
-          ;
+          MVGameCoinManager_HandleActivationChange(this,1,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -174,85 +146,79 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_GameCoinChestColl
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
-  OStack_1.currentCryptoKey = (this->fields).gameCoins.currentCryptoKey;
-  OStack_1.hiddenValue = (this->fields).gameCoins.hiddenValue;
-  iVar2 = (this->fields).gameCoins.fakeValue;
-  uVar3._0_1_ = (this->fields).gameCoins.inited;
-  uVar3._1_3_ = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
-  uVar4 = (this->fields).gameCoins.fakeValue;
-  uVar5 = (this->fields).gameCoins.inited;
-  uVar6 = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
-  OStack_1._13_3_ = uVar6;
-  OStack_1.inited = uVar5;
-  OStack_1.fakeValue = uVar4;
+  auStack_1._0_4_ = (this->fields).gameCoins.currentCryptoKey;
+  auStack_1._4_4_ = (this->fields).gameCoins.hiddenValue;
+  uVar2._0_1_ = (this->fields).gameCoins.inited;
+  uVar2._1_3_ = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
+  uVar3 = (this->fields).gameCoins.fakeValue;
+  uVar4 = (this->fields).gameCoins.inited;
+  uVar5 = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
+  auStack_1._13_3_ = uVar5;
+  auStack_1[0xc] = uVar4;
+  auStack_1._8_4_ = uVar3;
   stack0xfffffffc = unaff_EBP;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  iVar6 = (this->fields).gameCoins.fakeValue;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    iVar2 = OStack_1.fakeValue;
-    uVar3 = OStack_1._12_4_;
+    iVar6 = auStack_1._8_4_;
+    uVar2 = auStack_1._12_4_;
   }
-  OVar7.hiddenValue = OStack_1.hiddenValue;
-  OVar7.currentCryptoKey = OStack_1.currentCryptoKey;
-  OVar7.fakeValue = iVar2;
-  OVar7.inited = (bool)uVar3;
-  OVar7._13_3_ = SUB43(uVar3,1);
-  iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+  OVar7.hiddenValue = auStack_1._4_4_;
+  OVar7.currentCryptoKey = auStack_1._0_4_;
+  OVar7.fakeValue = iVar6;
+  OVar7.inited = (bool)uVar2;
+  OVar7._13_3_ = SUB43(uVar2,1);
+  iVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
           ObscuredInt_op_Implicit_1(OVar7,(MethodInfo *)0x0);
   pOVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
             ObscuredInt_op_Implicit
-                      (&OStack_1,(this->fields).currentBoostMultiplier * amount + iVar2,
-                       (MethodInfo *)0x0);
+                      ((ObscuredInt *)auStack_1,
+                       (this->fields).currentBoostMultiplier * amount + iVar6,(MethodInfo *)0x0);
   auVar9 = stack0xfffffff4;
-  OStack_1.currentCryptoKey = pOVar8->currentCryptoKey;
-  OStack_1.hiddenValue = pOVar8->hiddenValue;
-  iVar2 = pOVar8->fakeValue;
-  uVar10._0_1_ = pOVar8->inited;
-  uVar10._1_3_ = *(undefined3 *)&pOVar8->field_0xd;
-  uVar11 = pOVar8->fakeValue;
-  uVar12 = pOVar8->inited;
-  uVar13 = *(undefined3 *)&pOVar8->field_0xd;
-  OStack_1._13_3_ = uVar13;
-  OStack_1.inited = uVar12;
-  OStack_1.fakeValue = uVar11;
-  (this->fields).gameCoins.currentCryptoKey = OStack_1.currentCryptoKey;
-  (this->fields).gameCoins.hiddenValue = OStack_1.hiddenValue;
-  (this->fields).gameCoins.fakeValue = iVar2;
-  (this->fields).gameCoins.inited = (bool)uVar10;
-  *(undefined3 *)&(this->fields).gameCoins.field_0xd = uVar10._1_3_;
-  this_00 = (this->fields).OnGameCoinAmountChange;
+  pMVar10 = (this->fields).OnGameCoinAmountChange;
+  auStack_1._0_4_ = pOVar8->currentCryptoKey;
+  auStack_1._4_4_ = pOVar8->hiddenValue;
+  iVar6 = pOVar8->fakeValue;
+  uVar11._0_1_ = pOVar8->inited;
+  uVar11._1_3_ = *(undefined3 *)&pOVar8->field_0xd;
+  uVar12 = pOVar8->fakeValue;
+  uVar13 = pOVar8->inited;
+  uVar14 = *(undefined3 *)&pOVar8->field_0xd;
+  auStack_1._13_3_ = uVar14;
+  auStack_1[0xc] = uVar13;
+  auStack_1._8_4_ = uVar12;
   stack0xfffffffc = auVar9._8_4_;
-  if (this_00 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-    iVar14 = OStack_1.hiddenValue;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  (this->fields).gameCoins.currentCryptoKey = auStack_1._0_4_;
+  (this->fields).gameCoins.hiddenValue = auStack_1._4_4_;
+  (this->fields).gameCoins.fakeValue = iVar6;
+  (this->fields).gameCoins.inited = (bool)uVar11;
+  *(undefined3 *)&(this->fields).gameCoins.field_0xd = uVar11._1_3_;
+  if (pMVar10 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+    pMVar10 = (this->fields).OnGameCoinAmountChange;
+    iVar15 = auStack_1._4_4_;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
+        == 0) {
       func_?();
-      iVar14 = OStack_1.hiddenValue;
-      iVar2 = OStack_1.fakeValue;
-      uVar10 = OStack_1._12_4_;
+      iVar15 = auStack_1._4_4_;
+      iVar6 = auStack_1._8_4_;
+      uVar11 = auStack_1._12_4_;
     }
-    OStack_1._12_4_ = iVar14;
-    OStack_1.fakeValue = OStack_1.currentCryptoKey;
-    stack0xfffffffc = iVar2;
+    auStack_1._12_4_ = iVar15;
+    auStack_1._8_4_ = auStack_1._0_4_;
+    stack0xfffffffc = iVar6;
     auVar9 = stack0xfffffff4;
-    OStack_1.hiddenValue = (int32_t)&UNK_?;
-    OVar7 = (ObscuredInt)CONCAT412(CONCAT31(SUB43(uVar10,1),(bool)uVar10),stack0xfffffff4);
-    unique0x100004b4 = auVar9;
-    iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-            ObscuredInt_op_Implicit_1(OVar7,(MethodInfo *)0x0);
-    if (this_00 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-      func_?();
-      pcVar15 = (code *)swi(3);
-      (*pcVar15)();
-      return;
-    }
-    MVGameCoinManager+OnGameCoinAmountChangeDelegate::
-    MVGameCoinManager_OnGameCoinAmountChangeDelegate_Invoke(this_00,iVar2,(MethodInfo *)0x0);
+    auStack_1._4_4_ = &UNK_?;
+    OVar7 = (ObscuredInt)CONCAT412(CONCAT31(SUB43(uVar11,1),(bool)uVar11),stack0xfffffff4);
+    unique0x10000495 = auVar9;
+    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+    ObscuredInt_op_Implicit_1(OVar7,(MethodInfo *)0x0);
+    auStack_1._12_4_ = &UNK_?;
+    stack0xfffffffc = (int32_t)(pMVar10->fields)._._.method_code;
+    (*(pMVar10->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -265,7 +231,7 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_GameCoinCollect
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).gameCoinPickupValue.currentCryptoKey;
@@ -275,22 +241,21 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_GameCoinCollect
   uVar5 = (this->fields).gameCoins.hiddenValue;
   value.hiddenValue = uVar5;
   value.currentCryptoKey = uVar4;
-  iVar6 = (this->fields).gameCoins.fakeValue;
-  uVar7 = *(undefined4 *)&(this->fields).gameCoins.inited;
-  uVar8 = (this->fields).gameCoins.fakeValue;
-  uVar9 = (this->fields).gameCoins.inited;
-  uVar10 = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
-  uVar11 = CONCAT31(uVar10,uVar9);
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  uVar6 = (this->fields).gameCoins.fakeValue;
+  uVar7 = (this->fields).gameCoins.inited;
+  uVar8 = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
+  uVar9 = CONCAT31(uVar8,uVar7);
+  iVar10 = (this->fields).gameCoins.fakeValue;
+  uVar11 = *(undefined4 *)&(this->fields).gameCoins.inited;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    iVar6 = uVar8;
-    uVar7 = uVar11;
+    iVar10 = uVar6;
+    uVar11 = uVar9;
   }
-  value.fakeValue = iVar6;
-  value._12_4_ = uVar7;
-  iVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+  value.fakeValue = iVar10;
+  value._12_4_ = uVar11;
+  iVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
           ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
   value_00.hiddenValue = iVar2;
   value_00.currentCryptoKey = iVar1;
@@ -302,36 +267,29 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_GameCoinCollect
   pOVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
             ObscuredInt_op_Implicit
                       ((ObscuredInt *)&stack0xffffffdc,
-                       (this->fields).currentBoostMultiplier * iVar1 + iVar6,(MethodInfo *)0x0);
-  this_00 = (this->fields).OnGameCoinAmountChange;
-  iVar6 = pOVar12->currentCryptoKey;
-  iVar1 = pOVar12->hiddenValue;
-  iVar2 = pOVar12->fakeValue;
-  uVar7 = *(undefined4 *)&pOVar12->inited;
-  (this->fields).gameCoins.currentCryptoKey = iVar6;
-  (this->fields).gameCoins.hiddenValue = iVar1;
-  (this->fields).gameCoins.fakeValue = iVar2;
-  *(undefined4 *)&(this->fields).gameCoins.inited = uVar7;
-  if (this_00 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+                       (this->fields).currentBoostMultiplier * iVar1 + iVar10,(MethodInfo *)0x0);
+  pMVar13 = (this->fields).OnGameCoinAmountChange;
+  iVar1 = pOVar12->currentCryptoKey;
+  iVar2 = pOVar12->hiddenValue;
+  iVar3 = pOVar12->fakeValue;
+  uVar11 = *(undefined4 *)&pOVar12->inited;
+  (this->fields).gameCoins.currentCryptoKey = iVar1;
+  (this->fields).gameCoins.hiddenValue = iVar2;
+  (this->fields).gameCoins.fakeValue = iVar3;
+  *(undefined4 *)&(this->fields).gameCoins.inited = uVar11;
+  if (pMVar13 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+    pMVar13 = (this->fields).OnGameCoinAmountChange;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
+        == 0) {
       func_?();
     }
-    value_01._12_4_ = uVar7;
-    value_01.currentCryptoKey = iVar6;
-    value_01.hiddenValue = iVar1;
-    value_01.fakeValue = iVar2;
-    iVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-            ObscuredInt_op_Implicit_1(value_01,(MethodInfo *)0x0);
-    if (this_00 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-      func_?();
-      pcVar13 = (code *)swi(3);
-      (*pcVar13)();
-      return;
-    }
-    MVGameCoinManager+OnGameCoinAmountChangeDelegate::
-    MVGameCoinManager_OnGameCoinAmountChangeDelegate_Invoke(this_00,iVar6,(MethodInfo *)0x0);
+    value_01._12_4_ = uVar11;
+    value_01.currentCryptoKey = iVar1;
+    value_01.hiddenValue = iVar2;
+    value_01.fakeValue = iVar3;
+    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+    ObscuredInt_op_Implicit_1(value_01,(MethodInfo *)0x0);
+    (*(pMVar13->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -354,106 +312,79 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_HandleActivationC
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
-    this_02 = (PrefabPool *)MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-    if (this_02 != (PrefabPool *)0x0) {
-      this_03 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                          (this_02,(MethodInfo *)0x0);
-      if (this_03 != (ObjectiveArrow *)0x0) {
-        BoostController::BoostController_AllowBoost
-                  ((BoostController *)this_03,BoostType__Enum_GameCoinsIntMultiplier,active,
-                   (MethodInfo *)0x0);
-        uVar1._0_1_ = (this->fields).isActive.currentCryptoKey;
-        uVar1._1_3_ = *(undefined3 *)&(this->fields).isActive.field_0x1;
-        uVar1._4_4_ = (this->fields).isActive.hiddenValue;
-        uVar2 = (this->fields).isActive.fakeValue;
-        uVar3 = (this->fields).isActive.fakeValueChanged;
-        uVar4 = (this->fields).isActive.inited;
-        uVar5 = (this->fields).isActive.field_0xb;
-        value_00._11_1_ = uVar5;
-        value_00.inited = uVar4;
-        value_00.fakeValueChanged = uVar3;
-        value_00.fakeValue = uVar2;
-        uVar6._4_4_ = (undefined4)uVar1;
-        if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.
-                    methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
-          puVar7 = &UNK_?;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+    pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+       (this_01 = (pMVar2->fields).boostController, this_01 != (BoostController *)0x0)) {
+      BoostController::BoostController_AllowBoost
+                (this_01,BoostType__Enum_GameCoinsIntMultiplier,active,(MethodInfo *)0x0);
+      uStack_3._0_1_ = (this->fields).isActive.currentCryptoKey;
+      uStack_3._1_3_ = *(undefined3 *)&(this->fields).isActive.field_0x1;
+      uStack_3._4_4_ = (this->fields).isActive.hiddenValue;
+      uVar4 = (this->fields).isActive.fakeValue;
+      uVar5 = (this->fields).isActive.fakeValueChanged;
+      uVar6 = (this->fields).isActive.inited;
+      uVar7 = (this->fields).isActive.field_0xb;
+      OVar8._11_1_ = uVar7;
+      OVar8.inited = uVar6;
+      OVar8.fakeValueChanged = uVar5;
+      OVar8.fakeValue = uVar4;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
+          cctor_finished_or_no_cctor == 0) {
+        uStack_3 = CONCAT44(uStack_3._4_4_,
+                            TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+        func_?();
+      }
+      OVar8.currentCryptoKey = (char)uStack_3;
+      OVar8._1_3_ = (int3)((ulonglong)uStack_3 >> 8);
+      OVar8.hiddenValue = (int)((ulonglong)uStack_3 >> 0x20);
+      bVar9 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+               ObscuredBool_op_Implicit_1(OVar8,(MethodInfo *)0x0);
+      if (active != bVar9) {
+        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
+            cctor_finished_or_no_cctor == 0) {
           func_?();
-          uVar1 = CONCAT44(puVar7,uVar6._4_4_);
         }
-        value_00.currentCryptoKey = (char)uVar1;
-        value_00._1_3_ = (int3)((ulonglong)uVar1 >> 8);
-        value_00.hiddenValue = (int)((ulonglong)uVar1 >> 0x20);
-        bVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-                 ObscuredBool_op_Implicit_1(value_00,(MethodInfo *)0x0);
-        if (active != bVar8) {
-          if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.
-                      methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0))
-          {
+        pOVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+                  ObscuredBool_op_Implicit
+                            ((ObscuredBool *)&stack0xffffffe8,active,(MethodInfo *)0x0);
+        pMVar11 = (this->fields).OnActivationChange;
+        uVar12 = *(undefined3 *)&pOVar10->field_0x1;
+        iVar13 = pOVar10->hiddenValue;
+        bVar9 = pOVar10->fakeValue;
+        bVar14 = pOVar10->fakeValueChanged;
+        bVar15 = pOVar10->inited;
+        uVar16 = pOVar10->field_0xb;
+        OVar8 = *pOVar10;
+        (this->fields).isActive.currentCryptoKey = pOVar10->currentCryptoKey;
+        *(undefined3 *)&(this->fields).isActive.field_0x1 = uVar12;
+        (this->fields).isActive.hiddenValue = iVar13;
+        (this->fields).isActive.fakeValue = bVar9;
+        (this->fields).isActive.fakeValueChanged = bVar14;
+        (this->fields).isActive.inited = bVar15;
+        (this->fields).isActive.field_0xb = uVar16;
+        if (pMVar11 != (MVGameCoinManager_OnActivationChangeDelegate *)0x0) {
+          pMVar11 = (this->fields).OnActivationChange;
+          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
+              cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pOVar9 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool
-                    ::ObscuredBool_op_Implicit
-                              ((ObscuredBool *)&stack0xffffffe8,active,(MethodInfo *)0x0);
-          uVar6._0_1_ = pOVar9->currentCryptoKey;
-          uVar6._1_3_ = *(undefined3 *)&pOVar9->field_0x1;
-          uVar6._4_4_ = pOVar9->hiddenValue;
-          uVar10 = pOVar9->fakeValue;
-          uVar11 = pOVar9->fakeValueChanged;
-          uVar12 = pOVar9->inited;
-          uVar13 = pOVar9->field_0xb;
-          value._11_1_ = uVar13;
-          value.inited = uVar12;
-          value.fakeValueChanged = uVar11;
-          value.fakeValue = uVar10;
-          (this->fields).isActive.currentCryptoKey = (undefined1)uVar6;
-          *(undefined3 *)&(this->fields).isActive.field_0x1 = uVar6._1_3_;
-          (this->fields).isActive.hiddenValue = uVar6._4_4_;
-          (this->fields).isActive.fakeValue = uVar10;
-          (this->fields).isActive.fakeValueChanged = uVar11;
-          (this->fields).isActive.inited = uVar12;
-          (this->fields).isActive.field_0xb = uVar13;
-          this_00 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
-                    (this->fields).OnActivationChange;
-          uVar14 = (undefined4)uVar6;
-          if (this_00 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-            if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals
-                        .methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0
-               )) {
-              func_?();
-              uVar6 = CONCAT44(uVar6._4_4_,uVar14);
-            }
-            value.currentCryptoKey = (char)uVar6;
-            value._1_3_ = (int3)((ulonglong)uVar6 >> 8);
-            value.hiddenValue = (int)((ulonglong)uVar6 >> 0x20);
-            bVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                     ObscuredBool::ObscuredBool_op_Implicit_1(value,(MethodInfo *)0x0);
-            if (this_00 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
-            goto code_?;
-            MVNetworkGame+OnMarketPlaceActionCompleteDelegate::
-            MVNetworkGame_OnMarketPlaceActionCompleteDelegate_Invoke
-                      (this_00,bVar8,(MethodInfo *)0x0);
-          }
+          Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+          ObscuredBool_op_Implicit_1(OVar8,(MethodInfo *)0x0);
+          (*(pMVar11->fields)._._.invoke_impl)();
         }
-        return;
       }
+      return;
     }
   }
-code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -464,104 +395,76 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Initialize
                (MVGameCoinManager *this,MethodInfo *method)
 
 {
-  this_00 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__MVGameCoinManager__OnGameCoinBoostChanged__);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      this_02 = (SubscriptionRulesWrapper *)
-                PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                          ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)this_01,
-                           (MethodInfo *)0x0);
-      if (this_02 != (SubscriptionRulesWrapper *)0x0) {
-        bVar2 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-                SubscriptionRulesWrapper_HasBenefit
-                          (this_02,SubscriptionBenefit__Enum_GameCoinBoost,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.
-                    methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
-          bVar2 = 0x16;
-          func_?();
-        }
-        pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-                 ObscuredBool_op_Implicit((ObscuredBool *)&stack0xffffffec,bVar2,(MethodInfo *)0x0);
-        uVar4._0_1_ = pOVar3->currentCryptoKey;
-        uVar4._1_3_ = *(undefined3 *)&pOVar3->field_0x1;
-        uVar4._4_4_ = pOVar3->hiddenValue;
-        uVar5 = pOVar3->fakeValue;
-        uVar6 = pOVar3->fakeValueChanged;
-        uVar7 = pOVar3->inited;
-        uVar8 = pOVar3->field_0xb;
-        this._3_1_ = uVar8;
-        this._2_1_ = uVar7;
-        this._1_1_ = uVar6;
-        this._0_1_ = uVar5;
-        (this_00->fields).boostEnabled.currentCryptoKey = (undefined1)uVar4;
-        *(undefined3 *)&(this_00->fields).boostEnabled.field_0x1 = uVar4._1_3_;
-        (this_00->fields).boostEnabled.hiddenValue = uVar4._4_4_;
-        (this_00->fields).boostEnabled.fakeValue = uVar5;
-        (this_00->fields).boostEnabled.fakeValueChanged = uVar6;
-        (this_00->fields).boostEnabled.inited = uVar7;
-        (this_00->fields).boostEnabled.field_0xb = uVar8;
-        uVar9 = (undefined4)uVar4;
-        iVar10 = uVar4._4_4_;
-        value = (ObscuredBool)CONCAT84(uVar11,uVar9);
-        bVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-                ObscuredBool_op_Implicit_1(value,(MethodInfo *)0x0);
-        MVGameCoinManager_OnGameBoostChanged(this_00,bVar2,(MethodInfo *)0x0);
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          pPVar12 = (PrefabPool *)
-                    MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-          if (pPVar12 != (PrefabPool *)0x0) {
-            pOVar13 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                                (pPVar12,(MethodInfo *)0x0);
-            this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                       *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (this_03,(Object *)this_00,
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+    pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
+    if ((pMVar3 != (MVLocalPlayer *)0x0) &&
+       (this_00 = (pMVar3->fields)._._SubscriptionRules_k__BackingField,
+       this_00 != (SubscriptionRulesWrapper *)0x0)) {
+      bVar4 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+              SubscriptionRulesWrapper_HasBenefit
+                        (this_00,SubscriptionBenefit__Enum_GameCoinBoost,(MethodInfo *)0x0);
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pOVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+                ObscuredBool_op_Implicit((ObscuredBool *)&stack0xffffffec,bVar4,(MethodInfo *)0x0);
+      uVar6 = *(undefined3 *)&pOVar5->field_0x1;
+      iVar7 = pOVar5->hiddenValue;
+      bVar4 = pOVar5->fakeValue;
+      bVar8 = pOVar5->fakeValueChanged;
+      bVar9 = pOVar5->inited;
+      uVar10 = pOVar5->field_0xb;
+      value = *pOVar5;
+      (this->fields).boostEnabled.currentCryptoKey = pOVar5->currentCryptoKey;
+      *(undefined3 *)&(this->fields).boostEnabled.field_0x1 = uVar6;
+      (this->fields).boostEnabled.hiddenValue = iVar7;
+      (this->fields).boostEnabled.fakeValue = bVar4;
+      (this->fields).boostEnabled.fakeValueChanged = bVar8;
+      (this->fields).boostEnabled.inited = bVar9;
+      (this->fields).boostEnabled.field_0xb = uVar10;
+      bVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+              ObscuredBool_op_Implicit_1(value,(MethodInfo *)0x0);
+      MVGameCoinManager_OnGameBoostChanged(this,bVar4,(MethodInfo *)0x0);
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 != (MVNetworkGame *)0x0) &&
+         (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+        pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
+        if (pMVar3 != (MVLocalPlayer *)0x0) {
+          pBVar11 = (pMVar3->fields).boostController;
+          this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+          if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (this_01,(Object *)this,
                        MethodInfo__MVGameCoinManager__OnGameCoinBoostChanged__,(MethodInfo *)0x0);
-            if (pOVar13 != (ObjectiveArrow *)0x0) {
+            if (pBVar11 != (BoostController *)0x0) {
               BoostController::BoostController_SubscribeToBoostChanged
-                        ((BoostController *)pOVar13,BoostType__Enum_GameCoinsIntMultiplier,
-                         (Action *)this_03,(MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              (this_00->fields).currentBoostMultiplier = 1;
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?();
-              }
+                        (pBVar11,BoostType__Enum_GameCoinsIntMultiplier,(Action *)this_01,
+                         (MethodInfo *)0x0);
+              (this->fields).currentBoostMultiplier = 1;
               pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar1 != (MVNetworkGame *)0x0) {
-                pPVar12 = (PrefabPool *)
-                          MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-                if (pPVar12 != (PrefabPool *)0x0) {
-                  pOVar13 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                                      (pPVar12,(MethodInfo *)0x0);
-                  if (pOVar13 != (ObjectiveArrow *)0x0) {
-                    bVar2 = BoostController::BoostController_TryGetActiveBoost
-                                      ((BoostController *)pOVar13,
-                                       BoostType__Enum_GameCoinsIntMultiplier,
-                                       (Boost **)&stack0xfffffff8,(MethodInfo *)0x0);
-                    if (bVar2 != 0) {
-                      (this_00->fields).currentBoostMultiplier = 2;
-                    }
-                    return;
+              if ((pMVar1 != (MVNetworkGame *)0x0) &&
+                 (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+                pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                    (pMVar2,(MethodInfo *)0x0);
+                if ((pMVar3 != (MVLocalPlayer *)0x0) &&
+                   (pBVar11 = (pMVar3->fields).boostController, pBVar11 != (BoostController *)0x0)) {
+                  bVar4 = BoostController::BoostController_TryGetActiveBoost
+                                    (pBVar11,BoostType__Enum_GameCoinsIntMultiplier,
+                                     (Boost **)&stack0xfffffff8,(MethodInfo *)0x0);
+                  if (bVar4 != 0) {
+                    (this->fields).currentBoostMultiplier = 2;
                   }
+                  return;
                 }
               }
             }
@@ -571,8 +474,8 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Initialize
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -584,163 +487,56 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_LateInitialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__MVGameCoinManager__LateInitialize__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_02 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_02 != (MVAvatar *)0x0) {
-    pMVar1 = MVAvatar::MVAvatar_get_Shield(this_02,(MethodInfo *)0x0);
-    if (pMVar1 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-      pDVar2 = *(Delegate **)&(pMVar1->fields)._._.writeThrough;
-      pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Action);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar3,(Object *)this,MethodInfo__MVGameCoinManager__LateInitialize__,
-                 (MethodInfo *)0x0);
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                          (pDVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-      pDVar4 = (Delegate *)0x0;
-      if (pDVar2 == (Delegate *)0x0) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = (pMVar1->fields).playerContainer;
+    if (pMVar2 != (MVPlayerContainer *)0x0) {
+      pAVar3 = (pMVar2->fields).OnLocalPlayerReady;
+      this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_00,(Object *)this,MethodInfo__MVGameCoinManager__LateInitialize__,
+                   (MethodInfo *)0x0);
+        pAVar3 = (Action *)
+                 mscorlib.dll::System::Delegate::Delegate_Remove
+                           ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+        uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
+        pAStack5 = (Action *)0x0;
+        if (pAVar3 == (Action *)0x0) {
+          (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
 code_?:
-        *(Delegate **)&(pMVar1->fields)._._.writeThrough = pDVar4;
-        if (cRam_? == '\0') {
+          ppAStack6 = &(pMVar2->fields).OnLocalPlayerReady;
           func_?();
-          cRam_? = '\x01';
+          MVGameCoinManager_Initialize(this,(MethodInfo *)0x0);
+          return;
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAStack5 = pAVar3;
         }
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar5 != (MVNetworkGame *)0x0) {
-          this_00 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
-          if (this_00 != (MVLocalPlayer *)0x0) {
-            this_01 = (SubscriptionRulesWrapper *)
-                      PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                      PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)this_00,
-                                 (MethodInfo *)0x0);
-            if (this_01 != (SubscriptionRulesWrapper *)0x0) {
-              in_stack_6 = (Delegate *)0x0;
-              in_stack_7 = (MethodInfo *)0x2;
-              bVar8 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-                      SubscriptionRulesWrapper_HasBenefit
-                                (this_01,SubscriptionBenefit__Enum_GameCoinBoost,(MethodInfo *)0x0);
-              if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).
-                          Equals.methodPtr & 0x2000000) != 0) &&
-                 ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started ==
-                  0)) {
-                bVar8 = 0x16;
-                func_?();
-              }
-              in_stack_9 = (Action__Class *)&stack0x00000014;
-              in_stack_6 = (Delegate *)&UNK_?;
-              pOVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                       ObscuredBool::ObscuredBool_op_Implicit
-                                 ((ObscuredBool *)in_stack_9,bVar8,(MethodInfo *)0x0);
-              uVar11 = *(undefined3 *)&pOVar10->field_0x1;
-              iVar12 = pOVar10->hiddenValue;
-              bVar8 = pOVar10->fakeValue;
-              bVar13 = pOVar10->fakeValueChanged;
-              bVar14 = pOVar10->inited;
-              uVar15 = pOVar10->field_0xb;
-              value = *pOVar10;
-              (in_stack_16->fields).boostEnabled.currentCryptoKey = pOVar10->currentCryptoKey;
-              *(undefined3 *)&(in_stack_16->fields).boostEnabled.field_0x1 = uVar11;
-              (in_stack_16->fields).boostEnabled.hiddenValue = iVar12;
-              (in_stack_16->fields).boostEnabled.fakeValue = bVar8;
-              (in_stack_16->fields).boostEnabled.fakeValueChanged = bVar13;
-              (in_stack_16->fields).boostEnabled.inited = bVar14;
-              (in_stack_16->fields).boostEnabled.field_0xb = uVar15;
-              bVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                      ObscuredBool::ObscuredBool_op_Implicit_1(value,(MethodInfo *)0x0);
-              MVGameCoinManager_OnGameBoostChanged(in_stack_16,bVar8,(MethodInfo *)0x0);
-              pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar5 != (MVNetworkGame *)0x0) {
-                pPVar17 = (PrefabPool *)
-                          MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
-                if (pPVar17 != (PrefabPool *)0x0) {
-                  pOVar18 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                                      (pPVar17,(MethodInfo *)0x0);
-                  pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                             *)func_?();
-                  in_stack_6 = (Delegate *)0x0;
-                  in_stack_7 = MethodInfo__MVGameCoinManager__OnGameCoinBoostChanged__;
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                  SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                            (pUVar3,(Object *)in_stack_16,
-                             MethodInfo__MVGameCoinManager__OnGameCoinBoostChanged__,
-                             (MethodInfo *)0x0);
-                  if (pOVar18 != (ObjectiveArrow *)0x0) {
-                    BoostController::BoostController_SubscribeToBoostChanged
-                              ((BoostController *)pOVar18,BoostType__Enum_GameCoinsIntMultiplier,
-                               (Action *)pUVar3,(MethodInfo *)0x0);
-                    if (cRam_? == '\0') {
-                      func_?();
-                      cRam_? = '\x01';
-                    }
-                    (in_stack_16->fields).currentBoostMultiplier = 1;
-                    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr &
-                         0x2000000) != 0) &&
-                       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                      func_?();
-                    }
-                    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                    if (pMVar5 != (MVNetworkGame *)0x0) {
-                      pPVar17 = (PrefabPool *)
-                                MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                          (pMVar5,(MethodInfo *)0x0);
-                      if (pPVar17 != (PrefabPool *)0x0) {
-                        pOVar18 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                                            (pPVar17,(MethodInfo *)0x0);
-                        if (pOVar18 != (ObjectiveArrow *)0x0) {
-                          bVar8 = BoostController::BoostController_TryGetActiveBoost
-                                            ((BoostController *)pOVar18,
-                                             BoostType__Enum_GameCoinsIntMultiplier,
-                                             (Boost **)&stack0x00000020,(MethodInfo *)0x0);
-                          if (bVar8 != 0) {
-                            (in_stack_16->fields).currentBoostMultiplier = 2;
-                          }
-                          return;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+        if (pAStack5 != (Action *)0x0) {
+          (pMVar2->fields).OnLocalPlayerReady = pAStack5;
+          uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
+          pAStack5 = (Action *)0x0;
+          if (pAVar3->klass == TypeInfo__System__Action) {
+            pAStack5 = pAVar3;
           }
+          if (pAStack5 != (Action *)0x0) goto code_?;
         }
-        func_?();
-        pcVar19 = (code *)swi(3);
-        (*pcVar19)();
-        return;
+        goto code_?;
       }
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar4 = pDVar2;
-      }
-      pAVar20 = TypeInfo__System__Action;
-      if (pDVar4 != (Delegate *)0x0) goto code_?;
-      goto code_?;
     }
   }
-  func_?();
-  pDVar2 = extraout_ECX;
-  pAVar20 = extraout_EDX;
+  uVar4 = func_?();
 code_?:
-  in_stack_7 = (MethodInfo *)&UNK_?;
-  in_stack_6 = pDVar2;
-  in_stack_9 = pAVar20;
+  _ppAStack00000010 = uVar4;
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -752,12 +548,15 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_OnGameBoostChange
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    func_?(&
+                    MV__WorldObject__Subscription__SubscriptionRules__GameCoinBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::GameCoinBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
   }
   pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
@@ -788,20 +587,20 @@ code_?:
     (this->fields).boostedInterval.hiddenValueOld = pBVar11;
     (this->fields).boostedInterval.fakeValue = (float)puVar12;
     *(undefined4 *)&(this->fields).boostedInterval.inited = uVar13;
-    this_00 = (Action_1_UIPushOption_ *)(this->fields).BoostStateChanged;
-    if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-      mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                (this_00,_boostEnabled,MethodInfo__System__Action<bool>__Invoke_bool_);
+    func_?(&(this->fields).boostedInterval.hiddenValueOld,0);
+    if ((this->fields).BoostStateChanged != (Action_1_Boolean_ *)0x0) {
+      pAVar14 = (this->fields).BoostStateChanged;
+      (*(pAVar14->fields)._._.invoke_impl)
+                ((pAVar14->fields)._._.method_code,_boostEnabled,(pAVar14->fields)._._.method);
     }
     return;
   }
   auStack_2._4_4_ = AVar9;
   auStack_2._8_4_ = AVar10;
-  pBStack_14 = pBVar11;
-  puStack_15 = puVar12;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
+  pBStack_15 = pBVar11;
+  puStack_16 = puVar12;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
   value.hiddenValue.b1 = auStack_2[8];
@@ -809,51 +608,44 @@ code_?:
   value.hiddenValue.b3 = auStack_2[10];
   value.hiddenValue.b4 = auStack_2[0xb];
   value.currentCryptoKey = auStack_2._4_4_;
-  value.hiddenValueOld = pBStack_14;
-  value.fakeValue = (float)puStack_15;
+  value.hiddenValueOld = pBStack_15;
+  value.fakeValue = (float)puStack_16;
   value.inited = (this->fields).interval.inited;
   value._17_3_ = *(undefined3 *)&(this->fields).interval.field_0x11;
-  fVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
-    this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-    if (this_02 != (MVLocalPlayer *)0x0) {
-      this_03 = (SubscriptionRulesWrapper *)
-                PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                          ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)this_02,
-                           (MethodInfo *)0x0);
-      if (this_03 != (SubscriptionRulesWrapper *)0x0) {
-        this_04 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-                  SubscriptionRulesWrapper_GetRule_2
-                            (this_03,SubscriptionBenefit__Enum_GameCoinBoost,
-                             MV__WorldObject__Subscription__SubscriptionRules__GameCoinBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::GameCoinBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
-                            );
-        if (this_04 != (XpBooster *)0x0) {
-          iVar4 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::
-                  GameCoinBooster::GameCoinBooster_GetBoostedGameCoins
-                            ((GameCoinBooster *)this_04,1,(MethodInfo *)0x0);
-          pOVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat
-                   ::ObscuredFloat_op_Implicit
-                             ((ObscuredFloat *)auStack_2,fVar16 / (float)iVar4,(MethodInfo *)0x0);
-          AVar9 = (ACTkByte4)pOVar17->currentCryptoKey;
-          AVar10 = pOVar17->hiddenValue;
-          pBVar11 = pOVar17->hiddenValueOld;
-          puVar12 = (undefined *)pOVar17->fakeValue;
-          uVar13 = *(undefined4 *)&pOVar17->inited;
-          goto code_?;
-        }
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+  ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+  pMVar17 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar17 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar17->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+    pMVar18 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if ((pMVar18 != (MVLocalPlayer *)0x0) &&
+       (this_01 = (pMVar18->fields)._._SubscriptionRules_k__BackingField,
+       this_01 != (SubscriptionRulesWrapper *)0x0)) {
+      this_02 = (GameCoinBooster *)
+                MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                SubscriptionRulesWrapper_GetRule
+                          (this_01,SubscriptionBenefit__Enum_GameCoinBoost,
+                           MV__WorldObject__Subscription__SubscriptionRules__GameCoinBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::GameCoinBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                          );
+      if (this_02 != (GameCoinBooster *)0x0) {
+        iVar4 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::
+                 GameCoinBooster::GameCoinBooster_GetBoostedGameCoins(this_02,1,(MethodInfo *)0x0);
+        pOVar19 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat
+                  ::ObscuredFloat_op_Implicit
+                            ((ObscuredFloat *)auStack_2,4.0940272e-29 / (float)iVar4,
+                             (MethodInfo *)0x0);
+        AVar9 = (ACTkByte4)pOVar19->currentCryptoKey;
+        AVar10 = pOVar19->hiddenValue;
+        pBVar11 = pOVar19->hiddenValueOld;
+        puVar12 = (undefined *)pOVar19->fakeValue;
+        uVar13 = *(undefined4 *)&pOVar19->inited;
+        goto code_?;
       }
     }
   }
-  func_?(0);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  func_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -864,35 +656,25 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_OnGameCoinBoostCh
                (MVGameCoinManager *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   (this->fields).currentBoostMultiplier = 1;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = (PrefabPool *)MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (PrefabPool *)0x0) {
-      this_02 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                          (this_01,(MethodInfo *)0x0);
-      if (this_02 != (ObjectiveArrow *)0x0) {
-        bVar1 = BoostController::BoostController_TryGetActiveBoost
-                          ((BoostController *)this_02,BoostType__Enum_GameCoinsIntMultiplier,
-                           (Boost **)&stack0xfffffff8,(MethodInfo *)0x0);
-        if (bVar1 != 0) {
-          (this->fields).currentBoostMultiplier = 2;
-        }
-        return;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+    pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+       (this_01 = (pMVar2->fields).boostController, this_01 != (BoostController *)0x0)) {
+      bVar3 = BoostController::BoostController_TryGetActiveBoost
+                        (this_01,BoostType__Enum_GameCoinsIntMultiplier,(Boost **)&stack0xfffffff8,
+                         (MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        (this->fields).currentBoostMultiplier = 2;
       }
+      return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -904,68 +686,52 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_ReportPickupChang
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
+                   );
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
     pLVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
                        (pMVar1,WorldObjectType__Enum_GameCoin,(MethodInfo *)0x0);
     if (pLVar2 != (List_1_MVWorldObjectClient_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                         );
+      iVar3 = (pLVar2->fields)._size;
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
         pLVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
                            (pMVar1,WorldObjectType__Enum_GameCoinChest,(MethodInfo *)0x0);
-        this_00 = MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__;
         if (pLVar2 != (List_1_MVWorldObjectClient_ *)0x0) {
-          pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                             );
-          pIVar5 = this_00[3].methodPointer;
-          pIVar6 = this_00[3].virtualMethodPointer;
-          this = (MVGameCoinManager *)this_00[3].invoker_method;
-          method = (MethodInfo *)this_00[3].name;
-          if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                      methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0))
-          {
-            pOStack7 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-            func_?();
+          iVar4 = (pLVar2->fields)._size;
+          iVar5 = (this->fields).totalPurchaseAmount.currentCryptoKey;
+          iVar6 = (this->fields).totalPurchaseAmount.hiddenValue;
+          iVar7 = (this->fields).totalPurchaseAmount.fakeValue;
+          puVar8 = *(undefined **)&(this->fields).totalPurchaseAmount.inited;
+          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+              cctor_finished_or_no_cctor == 0) {
+            puVar8 = &UNK_?;
+            func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
           }
-          pOStack7 = (ObscuredInt__Class *)0x0;
-          iVar8 = (int32_t)pIVar6;
-          value.currentCryptoKey = (int32_t)pIVar5;
-          value = (ObscuredInt)CONCAT124(auVar9,value.currentCryptoKey);
-          iVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          value.hiddenValue = iVar6;
+          value.currentCryptoKey = iVar5;
+          value.fakeValue = iVar7;
+          value._12_4_ = puVar8;
+          iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
                   ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-          if (((iVar10 < 1) && ((int)pOVar3 < 1)) && ((int)pOVar4 < 1)) {
-            MVGameCoinManager_HandleActivationChange
-                      ((MVGameCoinManager *)this_00,0,(MethodInfo *)0x0);
+          if (((iVar5 < 1) && (iVar3 < 1)) && (iVar4 < 1)) {
+            MVGameCoinManager_HandleActivationChange(this,0,(MethodInfo *)0x0);
             return;
           }
-          MVGameCoinManager_HandleActivationChange((MVGameCoinManager *)this_00,1,(MethodInfo *)0x0)
-          ;
+          MVGameCoinManager_HandleActivationChange(this,1,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -977,7 +743,7 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_ReportPurchaseAmo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
   OStack_1.currentCryptoKey = (this->fields).totalPurchaseAmount.currentCryptoKey;
@@ -985,9 +751,8 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_ReportPurchaseAmo
   OStack_1.fakeValue = (this->fields).totalPurchaseAmount.fakeValue;
   OStack_1.inited = (this->fields).totalPurchaseAmount.inited;
   OStack_1._13_3_ = *(undefined3 *)&(this->fields).totalPurchaseAmount.field_0xd;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
   value.hiddenValue = OStack_1.hiddenValue;
@@ -1020,17 +785,18 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
   pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,fVar1,(MethodInfo *)0x0);
+            ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,fVar1,(MethodInfo *)0x0);
   AVar3 = pOVar2->hiddenValue;
   pBVar4 = pOVar2->hiddenValueOld;
   fVar1 = pOVar2->fakeValue;
@@ -1042,28 +808,28 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Reset
   (this->fields).startTime.fakeValue = fVar1;
   (this->fields).startTime.inited = bVar5;
   *(undefined3 *)&(this->fields).startTime.field_0x11 = uVar6;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  func_?(&(this->fields).startTime.hiddenValueOld,0);
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?();
   }
   pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,0,(MethodInfo *)0x0);
-  this_00 = (this->fields).OnGameCoinAmountChange;
+            ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,0,(MethodInfo *)0x0);
+  pMVar8 = (this->fields).OnGameCoinAmountChange;
   AVar3 = (ACTkByte4)pOVar7->currentCryptoKey;
   pBVar4 = (Byte__Array *)pOVar7->hiddenValue;
-  puVar8 = (undefined *)pOVar7->fakeValue;
-  pOVar9 = *(ObscuredInt__Class **)&pOVar7->inited;
+  puVar9 = (undefined *)pOVar7->fakeValue;
+  pOVar10 = *(ObscuredInt__Class **)&pOVar7->inited;
   (this->fields).gameCoins.currentCryptoKey = (int32_t)AVar3;
   (this->fields).gameCoins.hiddenValue = (int32_t)pBVar4;
-  (this->fields).gameCoins.fakeValue = (int32_t)puVar8;
-  *(ObscuredInt__Class **)&(this->fields).gameCoins.inited = pOVar9;
-  if (this_00 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
-      puVar8 = &UNK_?;
-      pOVar9 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
+  (this->fields).gameCoins.fakeValue = (int32_t)puVar9;
+  *(ObscuredInt__Class **)&(this->fields).gameCoins.inited = pOVar10;
+  if (pMVar8 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+    pMVar8 = (this->fields).OnGameCoinAmountChange;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
+        == 0) {
+      puVar9 = &UNK_?;
+      pOVar10 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
       func_?();
     }
     value.hiddenValue = (int32_t)pBVar4;
@@ -1071,49 +837,38 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Reset
     value.currentCryptoKey._1_1_ = AVar3.b2;
     value.currentCryptoKey._2_1_ = AVar3.b3;
     value.currentCryptoKey._3_1_ = AVar3.b4;
-    value.fakeValue = (int32_t)puVar8;
-    value._12_4_ = pOVar9;
-    amount = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-             ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-    if (this_00 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) goto code_?;
-    MVGameCoinManager+OnGameCoinAmountChangeDelegate::
-    MVGameCoinManager_OnGameCoinAmountChangeDelegate_Invoke(this_00,amount,(MethodInfo *)0x0);
+    value.fakeValue = (int32_t)puVar9;
+    value._12_4_ = pOVar10;
+    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+    ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+    (*(pMVar8->fields)._._.invoke_impl)();
   }
-  this_01 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)(this->fields).OnActivationChange;
-  if (this_01 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-    uVar10._0_1_ = (this->fields).isActive.currentCryptoKey;
-    uVar10._1_3_ = *(undefined3 *)&(this->fields).isActive.field_0x1;
-    uVar10._4_4_ = (this->fields).isActive.hiddenValue;
-    uVar11 = (this->fields).isActive.fakeValue;
-    uVar12 = (this->fields).isActive.fakeValueChanged;
-    uVar13 = (this->fields).isActive.inited;
-    uVar14 = (this->fields).isActive.field_0xb;
-    value_00._11_1_ = uVar14;
-    value_00.inited = uVar13;
-    value_00.fakeValueChanged = uVar12;
-    value_00.fakeValue = uVar11;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
-      puVar8 = &UNK_?;
-      pOVar15 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool;
+  if ((this->fields).OnActivationChange != (MVGameCoinManager_OnActivationChangeDelegate *)0x0) {
+    uVar11._0_1_ = (this->fields).isActive.currentCryptoKey;
+    uVar11._1_3_ = *(undefined3 *)&(this->fields).isActive.field_0x1;
+    uVar11._4_4_ = (this->fields).isActive.hiddenValue;
+    pMVar12 = (this->fields).OnActivationChange;
+    uVar13 = (this->fields).isActive.fakeValue;
+    uVar14 = (this->fields).isActive.fakeValueChanged;
+    uVar15 = (this->fields).isActive.inited;
+    uVar16 = (this->fields).isActive.field_0xb;
+    value_00._11_1_ = uVar16;
+    value_00.inited = uVar15;
+    value_00.fakeValueChanged = uVar14;
+    value_00.fakeValue = uVar13;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+        == 0) {
+      puVar9 = &UNK_?;
+      pOVar17 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool;
       func_?();
-      uVar10 = CONCAT44(pOVar15,puVar8);
+      uVar11 = CONCAT44(pOVar17,puVar9);
     }
-    value_00.currentCryptoKey = (char)uVar10;
-    value_00._1_3_ = (int3)((ulonglong)uVar10 >> 8);
-    value_00.hiddenValue = (int)((ulonglong)uVar10 >> 0x20);
-    bVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-            ObscuredBool_op_Implicit_1(value_00,(MethodInfo *)0x0);
-    if (this_01 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-code_?:
-      func_?();
-      pcVar16 = (code *)swi(3);
-      (*pcVar16)();
-      return;
-    }
-    MVNetworkGame+OnMarketPlaceActionCompleteDelegate::
-    MVNetworkGame_OnMarketPlaceActionCompleteDelegate_Invoke(this_01,bVar5,(MethodInfo *)0x0);
+    value_00.currentCryptoKey = (char)uVar11;
+    value_00._1_3_ = (int3)((ulonglong)uVar11 >> 8);
+    value_00.hiddenValue = (int)((ulonglong)uVar11 >> 0x20);
+    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+    ObscuredBool_op_Implicit_1(value_00,(MethodInfo *)0x0);
+    (*(pMVar12->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -1125,201 +880,146 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_Update
                (MVGameCoinManager *this,MVNetworkGame *game,MethodInfo *method)
 
 {
-  pMVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
-  uVar2 = *(undefined8 *)&(this->fields).isActive;
-  uVar3 = (this->fields).isActive.fakeValue;
-  uVar4 = (this->fields).isActive.fakeValueChanged;
-  uVar5 = (this->fields).isActive.inited;
-  uVar6 = (this->fields).isActive.field_0xb;
-  value_01._11_1_ = uVar6;
-  value_01.inited = uVar5;
-  value_01.fakeValueChanged = uVar4;
-  value_01.fakeValue = uVar3;
-  auVar7._8_4_ = unaff_EBP;
-  auVar7._0_4_ = (int32_t)uVar2;
-  auVar7[4] = SUB81(uVar2,4);
-  auVar7._5_3_ = SUB83(uVar2,5);
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
+  uVar1._0_1_ = (this->fields).isActive.currentCryptoKey;
+  uVar1._1_3_ = *(undefined3 *)&(this->fields).isActive.field_0x1;
+  uVar1._4_4_ = (this->fields).isActive.hiddenValue;
+  uVar2 = (this->fields).isActive.fakeValue;
+  uVar3 = (this->fields).isActive.fakeValueChanged;
+  uVar4 = (this->fields).isActive.inited;
+  uVar5 = (this->fields).isActive.field_0xb;
+  value_01._11_1_ = uVar5;
+  value_01.inited = uVar4;
+  value_01.fakeValueChanged = uVar3;
+  value_01.fakeValue = uVar2;
+  fVar6 = (float)uVar1;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
-    uVar2 = auVar7._0_8_;
+    uVar1 = CONCAT44(uVar1._4_4_,fVar6);
   }
-  value_01._0_8_ = uVar2;
-  bVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+  value_01.currentCryptoKey = (char)uVar1;
+  value_01._1_3_ = (int3)((ulonglong)uVar1 >> 8);
+  value_01.hiddenValue = (int)((ulonglong)uVar1 >> 0x20);
+  bVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
            ObscuredBool_op_Implicit_1(value_01,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
+  if (bVar7 != 0) {
     if (game == (MVNetworkGame *)0x0) {
 code_?:
       func_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    bVar8 = MVNetworkGame::MVNetworkGame_get_IsPlaying(game,(MethodInfo *)0x0);
-    if (bVar8 != 0) {
-      this_01 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                 *)InventoryItemPreviewer::InventoryItemPreviewer_get_PreviewGameObject
-                             ((InventoryItemPreviewer *)game,(MethodInfo *)0x0);
-      if (this_01 ==
-          (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-           *)0x0) goto code_?;
-      auVar10._4_8_ = 0;
-      auVar10._0_4_ = this_01;
-      auVar10 = auVar10 << 0x20;
-      pOVar11 = System.dll::System::Collections::Generic::
-                SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                ::Single,System::Object]::
-                SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                          (this_01,(MethodInfo *)0x0);
-      if (pOVar11 == (Object *)0x1) {
+    bVar7 = MVGameControllerBase::MVGameControllerBase_get_IsPlaying((MethodInfo *)0x0);
+    if (bVar7 != 0) {
+      pMVar9 = (game->fields)._NetworkGameStateListener_k__BackingField;
+      if (pMVar9 == (MVNetworkGameStateListener *)0x0) goto code_?;
+      if ((pMVar9->fields).currentGameState == 1) {
         UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        AVar12 = (ACTkByte4)(this->fields).startTime.currentCryptoKey;
-        AVar13 = (this->fields).startTime.hiddenValue;
-        pBVar14 = (this->fields).startTime.hiddenValueOld;
-        fVar15 = (this->fields).startTime.fakeValue;
-        uVar16 = (this->fields).startTime.hiddenValueOld;
-        uVar17 = (this->fields).startTime.fakeValue;
-        auVar18._4_4_ = uVar17;
-        auVar18._0_4_ = uVar16;
-        this = *(MVGameCoinManager **)&(this->fields).startTime.inited;
-        auVar18._8_4_ = auVar10._8_4_;
-        if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-                    methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0))
-        {
+        AVar10 = (ACTkByte4)(this->fields).startTime.currentCryptoKey;
+        AVar11 = (this->fields).startTime.hiddenValue;
+        pOVar12 = (ObscuredFloat__Class *)(this->fields).startTime.hiddenValueOld;
+        fVar6 = (this->fields).startTime.fakeValue;
+        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+            cctor_finished_or_no_cctor == 0) {
+          AVar11 = (ACTkByte4)&UNK_?;
+          pOVar12 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat;
           func_?();
-          pBVar14 = auVar18._0_4_;
-          fVar15 = auVar18._4_4_;
         }
-        auVar19[4] = AVar13.b1;
-        auVar19[5] = AVar13.b2;
-        auVar19[6] = AVar13.b3;
-        auVar19[7] = AVar13.b4;
-        auVar19[0] = AVar12.b1;
-        auVar19[1] = AVar12.b2;
-        auVar19[2] = AVar12.b3;
-        auVar19[3] = AVar12.b4;
-        auVar19._8_4_ = pBVar14;
-        fVar20 = fVar15;
-        iVar21 = auVar19._0_4_;
-        stack0xfffffff8 = AVar13.b1;
-        stack0xfffffff9 = AVar13.b2;
-        stack0xfffffffa = AVar13.b3;
-        stack0xfffffffb = AVar13.b4;
-        stack0xfffffffc = pBVar14;
-        value_02 = (ObscuredFloat)CONCAT812(uVar22,auVar23);
-        fVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-                 ObscuredFloat_op_Implicit_1(value_02,(MethodInfo *)0x0);
-        uVar24 = auVar19._8_4_;
-        fVar25 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-                 ObscuredFloat_op_Implicit_1((pMVar1->fields).boostedInterval,(MethodInfo *)0x0);
-        if ((float)this - fVar15 <= fVar25) {
+        value_02.hiddenValue = AVar11;
+        value_02.currentCryptoKey._0_1_ = AVar10.b1;
+        value_02.currentCryptoKey._1_1_ = AVar10.b2;
+        value_02.currentCryptoKey._2_1_ = AVar10.b3;
+        value_02.currentCryptoKey._3_1_ = AVar10.b4;
+        value_02.hiddenValueOld = (Byte__Array *)pOVar12;
+        value_02.fakeValue = fVar6;
+        value_02.inited = (this->fields).startTime.inited;
+        value_02._17_3_ = *(undefined3 *)&(this->fields).startTime.field_0x11;
+        Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+        ObscuredFloat_op_Implicit_1(value_02,(MethodInfo *)0x0);
+        uVar13 = (this->fields).boostedInterval.fakeValue;
+        fVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+                 ObscuredFloat_op_Implicit_1((this->fields).boostedInterval,(MethodInfo *)0x0);
+        if ((float)uVar13 <= fVar6) {
           return;
         }
-        AVar12 = (ACTkByte4)(pMVar1->fields).gameCoins.currentCryptoKey;
-        pBVar14 = (Byte__Array *)(pMVar1->fields).gameCoins.hiddenValue;
-        fVar15 = (float)(pMVar1->fields).gameCoins.fakeValue;
-        uVar26._0_1_ = (pMVar1->fields).gameCoins.inited;
-        uVar26._1_3_ = *(undefined3 *)&(pMVar1->fields).gameCoins.field_0xd;
-        uVar27 = (pMVar1->fields).gameCoins.fakeValue;
-        uVar28 = (pMVar1->fields).gameCoins.inited;
-        uVar29 = *(undefined3 *)&(pMVar1->fields).gameCoins.field_0xd;
-        auVar30._5_3_ = uVar29;
-        auVar30[4] = uVar28;
-        auVar30._0_4_ = uVar27;
-        auVar30._8_4_ = uVar24;
-        if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                    methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+        AVar10 = (ACTkByte4)(this->fields).gameCoins.currentCryptoKey;
+        pBVar14 = (Byte__Array *)(this->fields).gameCoins.hiddenValue;
+        fVar6 = (float)(this->fields).gameCoins.fakeValue;
+        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+            cctor_finished_or_no_cctor == 0) {
           func_?();
-          fVar15 = auVar30._0_4_;
-          uVar26 = auVar30._4_4_;
         }
         value.hiddenValue = (int32_t)pBVar14;
-        value.currentCryptoKey._0_1_ = AVar12.b1;
-        value.currentCryptoKey._1_1_ = AVar12.b2;
-        value.currentCryptoKey._2_1_ = AVar12.b3;
-        value.currentCryptoKey._3_1_ = AVar12.b4;
-        value.fakeValue = (int32_t)fVar15;
-        value.inited = (bool)uVar26;
-        value._13_3_ = SUB43(uVar26,1);
-        iVar31 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+        value.currentCryptoKey._0_1_ = AVar10.b1;
+        value.currentCryptoKey._1_1_ = AVar10.b2;
+        value.currentCryptoKey._2_1_ = AVar10.b3;
+        value.currentCryptoKey._3_1_ = AVar10.b4;
+        value.fakeValue = (int32_t)fVar6;
+        value.inited = (this->fields).gameCoins.inited;
+        value._13_3_ = *(undefined3 *)&(this->fields).gameCoins.field_0xd;
+        iVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
                  ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-        iVar32 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                 ObscuredInt_op_Implicit_1((pMVar1->fields).intervalAmount,(MethodInfo *)0x0);
-        pOVar33 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+        iVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                 ObscuredInt_op_Implicit_1((this->fields).intervalAmount,(MethodInfo *)0x0);
+        pOVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
                   ObscuredInt_op_Implicit
                             ((ObscuredInt *)&stack0xffffffec,
-                             (pMVar1->fields).currentBoostMultiplier * iVar32 + iVar31,
+                             (this->fields).currentBoostMultiplier * iVar16 + iVar15,
                              (MethodInfo *)0x0);
-        this_00 = (pMVar1->fields).OnGameCoinAmountChange;
-        AVar12 = (ACTkByte4)pOVar33->currentCryptoKey;
-        pBVar14 = (Byte__Array *)pOVar33->hiddenValue;
-        fVar15 = (float)pOVar33->fakeValue;
-        uVar24._0_1_ = pOVar33->inited;
-        uVar24._1_3_ = *(undefined3 *)&pOVar33->field_0xd;
-        uVar34 = pOVar33->fakeValue;
-        uVar35 = pOVar33->inited;
-        uVar36 = *(undefined3 *)&pOVar33->field_0xd;
-        auVar37._5_3_ = uVar36;
-        auVar37[4] = uVar35;
-        auVar37._0_4_ = uVar34;
-        auVar37._8_4_ = auVar30._8_4_;
-        (pMVar1->fields).gameCoins.currentCryptoKey = (int32_t)AVar12;
-        (pMVar1->fields).gameCoins.hiddenValue = (int32_t)pBVar14;
-        (pMVar1->fields).gameCoins.fakeValue = (int32_t)fVar15;
-        (pMVar1->fields).gameCoins.inited = (bool)uVar24;
-        *(undefined3 *)&(pMVar1->fields).gameCoins.field_0xd = uVar24._1_3_;
-        if (this_00 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-          if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                      methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0))
-          {
+        pMVar18 = (this->fields).OnGameCoinAmountChange;
+        AVar10 = (ACTkByte4)pOVar17->currentCryptoKey;
+        pBVar14 = (Byte__Array *)pOVar17->hiddenValue;
+        fVar6 = (float)pOVar17->fakeValue;
+        uVar19 = *(undefined4 *)&pOVar17->inited;
+        (this->fields).gameCoins.currentCryptoKey = (int32_t)AVar10;
+        (this->fields).gameCoins.hiddenValue = (int32_t)pBVar14;
+        (this->fields).gameCoins.fakeValue = (int32_t)fVar6;
+        *(undefined4 *)&(this->fields).gameCoins.inited = uVar19;
+        if (pMVar18 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+          pMVar18 = (this->fields).OnGameCoinAmountChange;
+          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+              cctor_finished_or_no_cctor == 0) {
             func_?();
-            fVar15 = auVar37._0_4_;
-            uVar24 = auVar37._4_4_;
           }
           value_00.hiddenValue = (int32_t)pBVar14;
-          value_00.currentCryptoKey._0_1_ = AVar12.b1;
-          value_00.currentCryptoKey._1_1_ = AVar12.b2;
-          value_00.currentCryptoKey._2_1_ = AVar12.b3;
-          value_00.currentCryptoKey._3_1_ = AVar12.b4;
-          value_00.fakeValue = (int32_t)fVar15;
-          value_00.inited = (bool)uVar24;
-          value_00._13_3_ = SUB43(uVar24,1);
-          iVar31 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                   ObscuredInt_op_Implicit_1(value_00,(MethodInfo *)0x0);
-          if (this_00 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0)
-          goto code_?;
-          MVGameCoinManager+OnGameCoinAmountChangeDelegate::
-          MVGameCoinManager_OnGameCoinAmountChangeDelegate_Invoke(this_00,iVar31,(MethodInfo *)0x0);
+          value_00.currentCryptoKey._0_1_ = AVar10.b1;
+          value_00.currentCryptoKey._1_1_ = AVar10.b2;
+          value_00.currentCryptoKey._2_1_ = AVar10.b3;
+          value_00.currentCryptoKey._3_1_ = AVar10.b4;
+          value_00.fakeValue = (int32_t)fVar6;
+          value_00._12_4_ = uVar19;
+          Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1(value_00,(MethodInfo *)0x0);
+          (*(pMVar18->fields)._._.invoke_impl)();
         }
       }
     }
-    fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
+    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar38 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-              ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,fVar15,(MethodInfo *)0x0);
-    AVar12 = pOVar38->hiddenValue;
-    pBVar14 = pOVar38->hiddenValueOld;
-    fVar15 = pOVar38->fakeValue;
-    bVar8 = pOVar38->inited;
-    uVar39 = *(undefined3 *)&pOVar38->field_0x11;
-    (pMVar1->fields).startTime.currentCryptoKey = pOVar38->currentCryptoKey;
-    (pMVar1->fields).startTime.hiddenValue = AVar12;
-    (pMVar1->fields).startTime.hiddenValueOld = pBVar14;
-    (pMVar1->fields).startTime.fakeValue = fVar15;
-    (pMVar1->fields).startTime.inited = bVar8;
-    *(undefined3 *)&(pMVar1->fields).startTime.field_0x11 = uVar39;
+    pOVar20 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+              ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,fVar6,(MethodInfo *)0x0);
+    AVar10 = pOVar20->hiddenValue;
+    pBVar14 = pOVar20->hiddenValueOld;
+    fVar6 = pOVar20->fakeValue;
+    bVar7 = pOVar20->inited;
+    uVar21 = *(undefined3 *)&pOVar20->field_0x11;
+    (this->fields).startTime.currentCryptoKey = pOVar20->currentCryptoKey;
+    (this->fields).startTime.hiddenValue = AVar10;
+    (this->fields).startTime.hiddenValueOld = pBVar14;
+    (this->fields).startTime.fakeValue = fVar6;
+    (this->fields).startTime.inited = bVar7;
+    *(undefined3 *)&(this->fields).startTime.field_0x11 = uVar21;
+    func_?();
   }
   return;
 }
@@ -1332,12 +1032,15 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__MVGameCoinManager__LateInitialize__);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
   pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
@@ -1353,6 +1056,7 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager__ctor
   (this->fields).startTime.fakeValue = fVar4;
   (this->fields).startTime.inited = bVar5;
   *(undefined3 *)&(this->fields).startTime.field_0x11 = uVar6;
+  func_?(&(this->fields).startTime.hiddenValueOld,0);
   pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
             ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,2.0,(MethodInfo *)0x0);
   AVar2 = pOVar1->hiddenValue;
@@ -1366,9 +1070,9 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager__ctor
   (this->fields).interval.fakeValue = fVar4;
   (this->fields).interval.inited = bVar5;
   *(undefined3 *)&(this->fields).interval.field_0x11 = uVar6;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  func_?();
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?();
   }
   pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
@@ -1396,6 +1100,7 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager__ctor
   (this->fields).boostedInterval.fakeValue = fVar4;
   (this->fields).boostedInterval.inited = bVar5;
   *(undefined3 *)&(this->fields).boostedInterval.field_0x11 = uVar6;
+  func_?();
   pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
             ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,0x19,(MethodInfo *)0x0);
   iVar8 = pOVar7->hiddenValue;
@@ -1418,9 +1123,8 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager__ctor
   (this->fields).gameCoins.fakeValue = iVar9;
   (this->fields).gameCoins.inited = bVar5;
   *(undefined3 *)&(this->fields).gameCoins.field_0xd = uVar6;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?();
   }
   pOVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
@@ -1449,81 +1153,80 @@ void Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager__ctor
   (this->fields).totalPurchaseAmount.fakeValue = iVar9;
   (this->fields).totalPurchaseAmount.inited = bVar5;
   *(undefined3 *)&(this->fields).totalPurchaseAmount.field_0xd = uVar6;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,in_stack_14);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pMVar15 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar15 != (MVAvatar *)0x0) {
-    pMVar16 = MVAvatar::MVAvatar_get_Shield(pMVar15,(MethodInfo *)0x0);
-    if (pMVar16 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-      iVar8 = MVPlayerContainer::MVPlayerContainer_get_Count
-                         ((MVPlayerContainer *)pMVar16,(MethodInfo *)0x0);
-      if (iVar8 == 0) {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_14);
+  pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar15 != (MVNetworkGame *)0x0) &&
+     (pMVar16 = (pMVar15->fields).playerContainer, pMVar16 != (MVPlayerContainer *)0x0)) {
+    iVar8 = MVPlayerContainer::MVPlayerContainer_get_Count(pMVar16,(MethodInfo *)0x0);
+    if (iVar8 == 0) {
 code_?:
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pMVar15 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
-        ;
-        if (pMVar15 != (MVAvatar *)0x0) {
-          pMVar16 = MVAvatar::MVAvatar_get_Shield(pMVar15,(MethodInfo *)0x0);
-          if (pMVar16 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-            pDVar17 = *(Delegate **)&(pMVar16->fields)._._.writeThrough;
-            this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                       *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (this_02,(Object *)this,MethodInfo__MVGameCoinManager__LateInitialize__,
+      pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar15 != (MVNetworkGame *)0x0) {
+        pMVar16 = (pMVar15->fields).playerContainer;
+        if (pMVar16 != (MVPlayerContainer *)0x0) {
+          pAVar17 = (pMVar16->fields).OnLocalPlayerReady;
+          this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+          if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (this_01,(Object *)this,MethodInfo__MVGameCoinManager__LateInitialize__,
                        (MethodInfo *)0x0);
-            pDStack18 =
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           (pDVar17,(Delegate *)this_02,(MethodInfo *)0x0);
-            pDVar17 = (Delegate *)0x0;
-            if (pDStack18 == (Delegate *)0x0) {
-code_?:
-              *(Delegate **)&(pMVar16->fields)._._.writeThrough = pDVar17;
+            pAVar17 = (Action *)
+                      mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)pAVar17,(Delegate *)this_01,(MethodInfo *)0x0);
+            uVar18 = CONCAT44(TypeInfo__System__Action,pAVar17);
+            if (pAVar17 == (Action *)0x0) {
+              (pMVar16->fields).OnLocalPlayerReady = (Action *)0x0;
+              ppAStack19 = &(pMVar16->fields).OnLocalPlayerReady;
+              pAStack20 = (Action *)0x0;
+              func_?();
               return;
             }
-            if ((Action__Class *)pDStack18->klass == TypeInfo__System__Action) {
-              pDVar17 = pDStack18;
+            pAVar21 = (Action *)0x0;
+            if (pAVar17->klass == TypeInfo__System__Action) {
+              pAVar21 = pAVar17;
             }
-            pAStack19 = TypeInfo__System__Action;
-            if (pDVar17 != (Delegate *)0x0) goto code_?;
-            goto code_?;
-          }
-        }
-      }
-      else {
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_00 != (MVNetworkGame *)0x0) {
-          this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-          if (this_01 != (MVLocalPlayer *)0x0) {
-            bVar5 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_01,(MethodInfo *)0x0);
-            if (bVar5 != 0) {
-              MVGameCoinManager_Initialize(this,(MethodInfo *)0x0);
-              return;
+            if (pAVar21 != (Action *)0x0) {
+              (pMVar16->fields).OnLocalPlayerReady = pAVar21;
+              uVar18 = CONCAT44(TypeInfo__System__Action,pAVar17);
+              pAStack20 = (Action *)0x0;
+              if (pAVar17->klass == TypeInfo__System__Action) {
+                pAStack20 = pAVar17;
+              }
+              if (pAStack20 != (Action *)0x0) {
+                ppAStack19 = &(pMVar16->fields).OnLocalPlayerReady;
+                func_?();
+                return;
+              }
             }
             goto code_?;
           }
         }
       }
     }
+    else {
+      pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar15 != (MVNetworkGame *)0x0) &&
+         (pMVar16 = (pMVar15->fields).playerContainer, pMVar16 != (MVPlayerContainer *)0x0)) {
+        this_00 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar16,(MethodInfo *)0x0);
+        if (this_00 != (MVLocalPlayer *)0x0) {
+          bVar5 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_00,(MethodInfo *)0x0);
+          if (bVar5 != 0) {
+            MVGameCoinManager_Initialize(this,(MethodInfo *)0x0);
+            return;
+          }
+          goto code_?;
+        }
+      }
+    }
   }
-  func_?();
-  pDStack18 = extraout_ECX;
-  pAStack19 = extraout_EDX;
+  uVar18 = func_?();
 code_?:
+  _ppAStack00000084 = uVar18;
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -1535,13 +1238,12 @@ bool Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_get_Active
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
     cRam_? = '\x01';
   }
   value = (this->fields).isActive;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
   }
   bVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
@@ -1557,13 +1259,12 @@ bool Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_get_BoostEnabled
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
     cRam_? = '\x01';
   }
   value = (this->fields).boostEnabled;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
   }
   bVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
@@ -1579,13 +1280,12 @@ int32_t Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_get_GameCoinAm
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
   value = (this->fields).gameCoins;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
   iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
@@ -1601,13 +1301,12 @@ int32_t Assembly-CSharp.dll::MVGameCoinManager::MVGameCoinManager_get_TotalPurch
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
   value = (this->fields).totalPurchaseAmount;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
   iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::

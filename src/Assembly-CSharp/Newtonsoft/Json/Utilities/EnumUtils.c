@@ -1,9 +1,9 @@
 
-/* IList`1[Newtonsoft.Json.Schema.JsonSchemaType] GetFlagsValues[JsonSchemaType](JsonSchemaType) */
+/* IList`1[System.Int32Enum] GetFlagsValues[Int32Enum](Int32Enum) */
 
-IList_1_Newtonsoft_Json_Schema_JsonSchemaType_ *
+IList_1_System_Int32Enum_ *
 Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetFlagsValues
-          (JsonSchemaType__Enum value,MethodInfo *method)
+          (Int32Enum__Enum value,MethodInfo *method)
 
 {
   uStack_1 = 0xffffffff;
@@ -11,201 +11,215 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetFlagsV
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__ObjectModel__Collection<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>__GetEnumerator__
+                   );
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&MethodInfo__Newtonsoft__Json__Utilities__EnumValue<unsigned_long>__get_Value__)
+    ;
+    func_?(&TypeInfo__System__Enum);
+    func_?(&
+                    Newtonsoft__Json__Utilities__EnumValue<unsigned_long>_MethodInfo__System__Linq__Enumerable__SingleOrDefault<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>__System__Func<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>,_bool>_
+                   );
+    func_?(&TypeRef__System__FlagsAttribute);
+    func_?(&
+                    TypeInfo__System__Func<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>,_bool>
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__System__Type);
+    func_?(&TypeInfo__System__UInt64);
     cRam_? = '\x01';
   }
-  func_?();
-  handle.value = *method->parameters;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  handle = *(method->field7_0x1c).rgctx_data;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+  pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                     ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
   mscorlib.dll::System::Type::Type_GetTypeFromHandle
             ((RuntimeTypeHandle)TypeRef__System__FlagsAttribute,(MethodInfo *)0x0);
   if (pTVar4 != (Type *)0x0) {
-    cVar5 = (*(code *)(pTVar4->klass->vtable).__unknown_2.method)();
+    cVar5 = (*(pTVar4->klass->vtable).__unknown_1.methodPtr)();
     if (cVar5 == '\0') {
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+      func_?();
+      func_?();
+      pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+      func_?();
+      args = (Object__Array *)func_?();
+      func_?();
+      func_?();
+      func_?();
+      pMVar7 = (MethodInfo *)0x0;
+      pSVar8 = (String *)func_?(&StringLiteral_Enum_type__0__is_not_a_set_of_fl);
+      pSVar8 = StringUtils::StringUtils_FormatWith(pSVar8,(IFormatProvider *)pCVar6,args,pMVar7);
+      func_?();
+      this_01 = (Exception *)func_?();
+      func_?();
+      mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar8,(MethodInfo *)0x0);
+      func_?(&
+                      System__Collections__Generic__IList<System::Int32Enum>_MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetFlagsValues<System::Int32Enum>_System__Int32Enum_
+                     );
+      func_?();
+code_?:
+      func_?();
+    }
+    else {
+      if ((*(byte *)((int)(method->field7_0x1c).rgctx_data[1].rgctxDataDummy + 0xba) & 1) == 0) {
+        func_?();
+      }
+      pTVar4 = mscorlib.dll::System::Object::Object_GetType
+                         ((Object *)&stack0xffffffa0,(MethodInfo *)0x0);
+      if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pTVar4 = mscorlib.dll::System::Enum::Enum_GetUnderlyingType(pTVar4,(MethodInfo *)0x0);
+      if ((*(byte *)((int)(method->field7_0x1c).rgctx_data[1].rgctxDataDummy + 0xba) & 1) == 0) {
+        func_?();
+      }
+      pOVar9 = (Object *)func_?();
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                          ((MethodInfo *)0x0);
-      args = (Object__Array *)func_?();
-      func_?();
-      func_?(args,pTVar4);
-      func_?();
-      message = StringUtils::StringUtils_FormatWith
-                          (StringLiteral_Enum_type__0__is_not_a_set_of_fl,(IFormatProvider *)pCVar6,
-                           args,(MethodInfo *)0x0);
-      this_02 = (IsolatedStorageException *)func_?();
-      mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-      IsolatedStorageException__ctor_1(this_02,message,(MethodInfo *)0x0);
-      func_?();
-    }
-    else {
-      if ((method->parameters[1][0x17].type & 1) == 0) {
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pOVar7 = (Object *)func_?();
-      if (pOVar7 != (Object *)0x0) {
-        pTVar4 = mscorlib.dll::System::Object::Object_GetType(pOVar7,(MethodInfo *)0x0);
-        func_?();
-        if ((((uint)(TypeInfo__System__Enum->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Enum->_1).cctor_started == 0)) {
-          func_?();
-        }
-        mscorlib.dll::System::Enum::Enum_GetUnderlyingType(pTVar4,(MethodInfo *)0x0);
-        if ((method->parameters[1][0x17].type & 1) == 0) {
-          func_?();
-        }
-        pOVar7 = (Object *)func_?();
-        if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                           ((MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-          func_?();
-        }
-        mscorlib.dll::System::Convert::Convert_ToUInt64_15
-                  (pOVar7,(IFormatProvider *)pCVar6,(MethodInfo *)0x0);
-        pMVar8 = (MethodInfo *)&UNK_?;
-        this = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-               (*(code *)method->parameters[2]->data)();
-        if ((method->parameters[3][0x17].type & 1) == 0) {
-          func_?();
-        }
-        pIVar9 = (IList_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)func_?();
-        pUStack_10 = (UInt64__Class *)method->parameters[4];
-        pIVar11 = pIVar9;
-        (*(code *)(pUStack_10->_0).image)();
-        if (this != (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0) {
-          pIVar12 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                    Serialization::JsonProperty]::
-                    Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_IEnumerable_GetEnumerator
-                              (this,
-                               MethodInfo__System__Collections__ObjectModel__Collection<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>__GetEnumerator__
-                              );
-          uStack_1 = 0;
-          while (pIVar12 != (IEnumerator *)0x0) {
+      uVar10 = mscorlib.dll::System::Convert::Convert_ToUInt64
+                         (pOVar9,(IFormatProvider *)pCVar6,(MethodInfo *)0x0);
+      this = (Collection_1_System_Object_ *)
+             (*((method->field7_0x1c).rgctx_data[3].method)->virtualMethodPointer)();
+      pMVar7 = (method->field7_0x1c).rgctx_data[4].method;
+      if ((pMVar7[3].iflags & 1) == 0) {
+        pMVar7 = (MethodInfo *)func_?();
+      }
+      pIVar11 = (IList_1_System_Int32Enum_ *)func_?();
+      if (pIVar11 != (IList_1_System_Int32Enum_ *)0x0) {
+        (*((method->field7_0x1c).rgctx_data[5].method)->virtualMethodPointer)();
+        if (this != (Collection_1_System_Object_ *)0x0) {
+          pIVar12 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[System::Object]::
+                   Collection_1_System_Object__GetEnumerator
+                             (this,
+                              MethodInfo__System__Collections__ObjectModel__Collection<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>__GetEnumerator__
+                             );
+          uStack_1 = 1;
+          while( true ) {
+            uStack_13 = (uint)(uVar10 >> 0x20);
+            uStack_14 = (uint)uVar10;
+            if (pIVar12 == (IEnumerator_1_System_Object_ *)0x0) break;
             cVar5 = func_?();
             if (cVar5 == '\0') {
-              pMVar8->methodPointer = (Il2CppMethodPointer)0xed;
               uStack_1 = 0xffffffff;
-              if (pIVar12 != (IEnumerator *)0x0) {
+              if (pIVar12 != (IEnumerator_1_System_Object_ *)0x0) {
                 func_?();
               }
-              if (pIVar9 != (IList_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)0x0) {
-                if ((method->parameters[5][0x17].type & 1) == 0) {
+              uStack_1 = 0xffffffff;
+              if ((*(byte *)((int)(method->field7_0x1c).rgctx_data[6].rgctxDataDummy + 0xba) & 1) ==
+                  0) {
+                func_?();
+              }
+              iVar15 = func_?();
+              if (iVar15 == 0) {
+                pIVar16 = (method->field7_0x1c).rgctx_data[9].klass;
+                if (pIVar16->initialized_and_no_error == 0) {
+                  pIVar16 = (Il2CppClass *)func_?();
+                }
+                if (pIVar16->cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                iVar13 = func_?();
-                if (iVar13 == 0) {
-                  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                             *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                  SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                            (this_01,(Object *)0x0,method->parameters[6],
-                             MethodInfo__System__Func<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>,_bool>__Func_System__Object__void__
-                            );
-                  pEVar14 = System.Core.dll::System::Linq::Enumerable::Enumerable_SingleOrDefault_6
-                                      ((IEnumerable_1_Newtonsoft_Json_Utilities_EnumValue_1_System_UInt64_
-                                        *)this,(Func_2_Newtonsoft_Json_Utilities_EnumValue_1_System_UInt64_Boolean_
-                                                *)this_01,
-                                       Newtonsoft__Json__Utilities__EnumValue<unsigned_long>_MethodInfo__System__Linq__Enumerable__SingleOrDefault<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>__System__Func<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>,_bool>_
-                                      );
-                  if (pEVar14 != (EnumValue_1_System_UInt64_ *)0x0) {
-                    func_?();
+                pIVar16 = (method->field7_0x1c).rgctx_data[9].klass;
+                if (pIVar16->initialized_and_no_error == 0) {
+                  pIVar16 = (Il2CppClass *)func_?();
+                }
+                this_00 = *(Func_2_Object_Boolean_ **)((int)pIVar16->static_fields + 4);
+                if (this_00 == (Func_2_Object_Boolean_ *)0x0) {
+                  pIVar16 = (method->field7_0x1c).rgctx_data[9].klass;
+                  if (pIVar16->initialized_and_no_error == 0) {
+                    pIVar16 = (Il2CppClass *)func_?();
+                  }
+                  if (pIVar16->cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
+                  pIVar16 = (method->field7_0x1c).rgctx_data[9].klass;
+                  if (pIVar16->initialized_and_no_error == 0) {
+                    pIVar16 = (Il2CppClass *)func_?();
+                  }
+                  pOVar9 = *(Object **)pIVar16->static_fields;
+                  this_00 = (Func_2_Object_Boolean_ *)func_?();
+                  if (this_00 == (Func_2_Object_Boolean_ *)0x0) break;
+                  mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                            (this_00,pOVar9,(method->field7_0x1c).rgctx_data[10].rgctxDataDummy,
+                             (MethodInfo *)0x0);
+                  pIVar16 = (method->field7_0x1c).rgctx_data[9].klass;
+                  if (pIVar16->initialized_and_no_error == 0) {
+                    pIVar16 = (Il2CppClass *)func_?();
+                  }
+                  *(Func_2_Object_Boolean_ **)((int)pIVar16->static_fields + 4) = this_00;
+                  if ((*(byte *)((int)(method->field7_0x1c).rgctx_data[9].rgctxDataDummy + 0xba) & 1
+                      ) == 0) {
+                    func_?();
+                  }
+                  func_?();
                 }
-                *unaff_FS_OFFSET = uStack_3;
-                return pIVar9;
+                pOVar9 = System.Core.dll::System::Linq::Enumerable::Enumerable_SingleOrDefault_2
+                                   ((IEnumerable_1_System_Object_ *)pMVar7,this_00,
+                                    Newtonsoft__Json__Utilities__EnumValue<unsigned_long>_MethodInfo__System__Linq__Enumerable__SingleOrDefault<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>__System__Func<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>,_bool>_
+                                   );
+                if (pOVar9 != (Object *)0x0) {
+                  if ((*(byte *)((int)(method->field7_0x1c).rgctx_data[6].rgctxDataDummy + 0xba) & 1
+                      ) == 0) {
+                    func_?();
+                  }
+                  func_?();
+                }
               }
-              break;
+              *unaff_FS_OFFSET = uStack_3;
+              return pIVar11;
             }
-            pIVar15 = pIVar12->klass;
-            uVar16 = 0;
-            uVar17._0_1_ = (pIVar15->_1).rank;
-            uVar17._1_1_ = (pIVar15->_1).minimumAlignment;
-            if (uVar17 != 0) {
+            if (pIVar12 == (IEnumerator_1_System_Object_ *)0x0) break;
+            uVar17 = 0;
+            uVar18 = (pIVar12->klass->_1).interface_offsets_count;
+            if (uVar18 != 0) {
               do {
-                if (pIVar15->interfaceOffsets[uVar16].interfaceType ==
+                if (pIVar12->klass->interfaceOffsets[uVar17].interfaceType ==
                     (Il2CppClass *)
                     TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Utilities::EnumValue<unsigned_long>_>
                    ) {
-                  ppMVar18 = &(&(pIVar15->vtable).get_Current)
-                              [pIVar15->interfaceOffsets[uVar16].offset].method;
+                  pIVar19 = &pIVar12->klass->vtable + pIVar12->klass->interfaceOffsets[uVar17].offset;
                   goto code_?;
                 }
-                uVar16 = uVar16 + 1;
-              } while (uVar16 < uVar17);
+                uVar17 = uVar17 + 1;
+              } while (uVar17 < uVar18);
             }
-            ppMVar18 = (MethodInfo **)func_?();
+            pIVar19 = (IEnumerator_1_System_Object___VTable *)func_?();
 code_?:
-            this_00 = (Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument_
-                       *)(*(code *)*ppMVar18)();
-            if (this_00 ==
-                (Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument_
-                 *)0x0) break;
-            CVar19 = mscorlib.dll::System::
-                     Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::Reflection::
-                     CustomAttributeTypedArgument]::
-                     Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                               (this_00,
-                                MethodInfo__Newtonsoft__Json__Utilities__EnumValue<unsigned_long>__get_Value__
-                               );
-            CVar20 = mscorlib.dll::System::
-                     Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::Reflection::
-                     CustomAttributeTypedArgument]::
-                     Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                               (this_00,
-                                MethodInfo__Newtonsoft__Json__Utilities__EnumValue<unsigned_long>__get_Value__
-                               );
-            CVar21.value = (Object *)((uint)CVar19.value & (uint)pIVar11);
-            CVar21.argumentType = (Type *)((uint)CVar19.argumentType & (uint)pUStack_10);
-            if ((CVar20 == CVar21) &&
-               (pMVar8 = 
-                MethodInfo__Newtonsoft__Json__Utilities__EnumValue<unsigned_long>__get_Value__,
-               CVar21 = mscorlib.dll::System::
-                        Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::Reflection
-                        ::CustomAttributeTypedArgument]::
-                        Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                                  (this_00,
-                                   MethodInfo__Newtonsoft__Json__Utilities__EnumValue<unsigned_long>__get_Value__
-                                  ), CVar21 != (CustomAttributeTypedArgument)0x0)) {
-              pMVar8 = (MethodInfo *)&UNK_?;
-              mscorlib.dll::System::Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System
-              ::Reflection::CustomAttributeTypedArgument]::
-              Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                        (this_00,
-                         MethodInfo__Newtonsoft__Json__Utilities__EnumValue<unsigned_long>__get_Value__
-                        );
-              pUStack_10 = TypeInfo__System__UInt64;
-              pIVar11 = (IList_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)&UNK_?;
-              pOVar7 = (Object *)func_?();
-              if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                   0x2000000) != 0) &&
-                 ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-                func_?(TypeInfo__System__Globalization__CultureInfo);
+            iVar15 = (*(pIVar19->get_Current).methodPtr)();
+            if (iVar15 == 0) break;
+            if ((((*(uint *)(iVar15 + 0x10) & uStack_14) == *(uint *)(iVar15 + 0x10)) &&
+                ((*(uint *)(iVar15 + 0x14) & uStack_13) == *(uint *)(iVar15 + 0x14))) &&
+               (*(int *)(iVar15 + 0x10) != 0 || *(int *)(iVar15 + 0x14) != 0)) {
+              pOVar9 = (Object *)func_?();
+              if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0
+                 ) {
+                func_?();
               }
               pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::
                        CultureInfo_get_CurrentCulture((MethodInfo *)0x0);
-              if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                 ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-                func_?(TypeInfo__System__Convert);
+              if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
               }
-              mscorlib.dll::System::Convert::Convert_ChangeType_1
-                        (pOVar7,(Type *)this_00,(IFormatProvider *)pCVar6,(MethodInfo *)0x0);
-              if (pIVar9 == (IList_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)0x0) break;
-              func_?();
+              pOVar9 = mscorlib.dll::System::Convert::Convert_ChangeType_1
+                                 (pOVar9,pTVar4,(IFormatProvider *)pCVar6,(MethodInfo *)0x0);
+              iVar15 = func_?();
+              if (pOVar9 == (Object *)0x0) break;
+              if ((pOVar9->klass->_0).element_class != *(Il2CppClass **)(iVar15 + 0x20))
+              goto code_?;
               func_?();
               func_?();
               func_?();
@@ -217,8 +231,8 @@ code_?:
   }
   func_?();
   func_?();
-  pcVar22 = (code *)swi(3);
-  pIVar11 = (IList_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)(*pcVar22)();
+  pcVar20 = (code *)swi(3);
+  pIVar11 = (IList_1_System_Int32Enum_ *)(*pcVar20)();
   return pIVar11;
 }
 
@@ -229,170 +243,212 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_
                    (Type *enumType,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  pIStack_1 = (Il2CppClass *)0xffffffff;
+  pIStack_2 = (Il2CppInteropData *)&DAT_?;
+  IStack_3.rgctxDataDummy = *(void **)unaff_FS_OFFSET;
+  unaff_FS_OFFSET->rgctxDataDummy = &IStack_3;
+  pIStack_4 = (IEnumerator_1_System_Object___Class *)&stack0xffffffbc;
+  pIVar5 = (IEnumerator_1_System_Object___Class *)&stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__Enum);
+    func_?(&TypeRef__System__FlagsAttribute);
+    func_?(&TypeInfo__System__IConvertible);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<System::Object>);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<System::Object>);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__System__Type);
+    func_?(&TypeInfo__System__UInt64);
     cRam_? = '\x01';
+    pIVar5 = pIStack_4;
   }
-  func_?();
-  if (enumType == (Type *)0x0) {
-    this_00 = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
-    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-              (this_00,StringLiteral_enumType,(MethodInfo *)0x0);
+  pIStack_4 = pIVar5;
+  pIStack_6 = (Il2CppClass *)0x0;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Type);
   }
-  else {
-    if ((((uint)(TypeInfo__System__Enum->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Enum->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__Enum);
-    }
-    pTVar4 = mscorlib.dll::System::Enum::Enum_GetUnderlyingType(enumType,(MethodInfo *)0x0);
-    RVar5.value = *method->parameters;
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  bVar7 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)enumType,(Object **)0x0,(MethodInfo *)0x0);
+  if (bVar7 == 0) {
+    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar5,(MethodInfo *)0x0);
-    if (pTVar6 != (Type *)0x0) {
-      cVar7 = (*(code *)(pTVar6->klass->vtable).IsAssignableFrom.method)();
-      if (cVar7 == '\0') {
-        if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pCVar8 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                           ((MethodInfo *)0x0);
-        args = (Object__Array *)func_?();
-        if ((pTVar4 != (Type *)0x0) &&
-           (pOVar9 = (Object *)(*(code *)(pTVar4->klass->vtable).__unknown.method)(),
-           args != (Object__Array *)0x0)) {
-          if ((pOVar9 == (Object *)0x0) || (iVar10 = func_?(), iVar10 != 0)) {
-            if (args->max_length == 0) goto code_?;
-            args->vector[0] = pOVar9;
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?();
-            }
-            message = mscorlib.dll::System::String::String_Format_4
-                                ((IFormatProvider *)pCVar8,
-                                 StringLiteral_TEnumType_is_not_assignable_from,args,
-                                 (MethodInfo *)0x0);
-            this = (ArgumentException *)func_?();
-            mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-                      (this,message,(MethodInfo *)0x0);
-          }
-          else {
-            func_?();
-          }
-          goto code_?;
-        }
+    unaff_EBX = (MethodInfo *)
+                mscorlib.dll::System::Enum::Enum_GetUnderlyingType(enumType,(MethodInfo *)0x0);
+    IVar8 = *(method->field7_0x1c).rgctx_data;
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)IVar8,(MethodInfo *)0x0);
+    if (pTVar9 != (Type *)0x0) {
+      cVar10 = (*(pTVar9->klass->vtable).IsAssignableFrom.methodPtr)();
+      if (cVar10 == '\0') goto code_?;
+      unaff_EBX = (MethodInfo *)EnumUtils_GetValues(enumType,(MethodInfo *)0x0);
+      IVar8.type = TypeRef__System__FlagsAttribute;
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
-      else {
-        pIVar11 = EnumUtils_GetValues(enumType,(MethodInfo *)0x0);
-        handle = TypeRef__System__FlagsAttribute;
-        if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-          func_?();
-        }
-        mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                  ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-        cVar7 = (*(code *)(enumType->klass->vtable).__unknown_2.method)();
-        if (cVar7 == '\0') {
-          if (pIVar11 != (IList_1_System_Object_ *)0x0) {
-            iVar10 = func_?();
-            uStack_1 = 2;
-            while (iVar10 != 0) {
-              cVar7 = func_?();
-              if (cVar7 == '\0') {
-joined_?:
-                uStack_1 = 0xffffffff;
-                if (iVar10 != 0) {
-                  uStack_1 = 0xffffffff;
-                  func_?();
-                }
-                pOVar9 = (Object *)func_?();
-                RVar5.value = *method->parameters;
-                if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                   ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-                  func_?();
-                }
-                pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar5,(MethodInfo *)0x0)
-                ;
-                if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr
-                     & 0x2000000) != 0) &&
-                   ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-                  func_?();
-                }
-                pCVar8 = mscorlib.dll::System::Globalization::CultureInfo::
-                         CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-                if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0)
-                   && ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-                  func_?();
-                }
-                mscorlib.dll::System::Convert::Convert_ChangeType_1
-                          (pOVar9,pTVar4,(IFormatProvider *)pCVar8,(MethodInfo *)0x0);
-                if ((method->parameters[1][0x17].type & 1) == 0) {
-                  func_?();
-                }
-                pOVar9 = (Object *)func_?();
-                *unaff_FS_OFFSET = uStack_3;
-                return pOVar9;
-              }
-              func_?();
-              if ((method->parameters[1][0x17].type & 1) == 0) {
-                func_?();
-              }
+      mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)IVar8,(MethodInfo *)0x0)
+      ;
+      if ((enumType != (Type *)0x0) &&
+         (cVar10 = (*(enumType->klass->vtable).__unknown_1.methodPtr)(),
+         unaff_EBX != (MethodInfo *)0x0)) {
+        if (cVar10 == '\0') {
+          pIStack_6 = (Il2CppClass *)func_?();
+          IVar8.rgctxDataDummy = &pIStack_6;
+          pIStack_1 = (Il2CppClass *)0x4;
+          while (pIStack_6 != (Il2CppClass *)0x0) {
+            cVar10 = func_?();
+            if (cVar10 == '\0') goto code_?;
+            if (pIStack_6 == (Il2CppClass *)0x0) break;
+            iVar11 = func_?();
+            enumType = (method->field7_0x1c).rgctx_data[1].rgctxDataDummy;
+            if ((((IEnumerator_1_System_Object___Class *)enumType)->_1).initialized_and_no_error ==
+                0) {
+              enumType = (Type *)func_?();
+            }
+            iVar12 = 0;
+            if (iVar11 != 0) {
               iVar12 = func_?();
-              if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                   0x2000000) != 0) &&
-                 ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-                func_?();
-              }
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-              if (iVar12 == 0) break;
-              func_?();
-              func_?();
+              unaff_EBX = (MethodInfo *)0x0;
+              if (iVar12 == 0) goto code_?;
             }
-          }
-        }
-        else if (pIVar11 != (IList_1_System_Object_ *)0x0) {
-          iVar10 = func_?();
-          uStack_1 = 0;
-          while (iVar10 != 0) {
-            cVar7 = func_?();
-            if (cVar7 == '\0') goto joined_?;
-            func_?();
-            if ((method->parameters[1][0x17].type & 1) == 0) {
-              func_?();
-            }
-            iVar12 = func_?();
-            if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+            if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0)
+            {
               func_?();
             }
             mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                       ((MethodInfo *)0x0);
+            unaff_EBX = (MethodInfo *)0x0;
             if (iVar12 == 0) break;
+            pMVar13 = (MethodInfo *)&UNK_?;
+            uVar14 = func_?();
+            unaff_EBX = (MethodInfo *)((ulonglong)uVar14 >> 0x20);
+            enumType = (Type *)uVar14;
+            mscorlib.dll::System::UInt64::UInt64_CompareTo_1
+                      ((UInt64 *)&stack0xffffffd0,ZEXT48(unaff_EBX),pMVar13);
+          }
+        }
+        else {
+          pIStack_6 = (Il2CppClass *)func_?();
+          IVar8.rgctxDataDummy = &pIStack_6;
+          pIStack_1 = (Il2CppClass *)0x1;
+          while (pIStack_6 != (Il2CppClass *)0x0) {
+            cVar10 = func_?();
+            if (cVar10 == '\0') goto code_?;
+            if (pIStack_6 == (Il2CppClass *)0x0) break;
+            pIVar5 = TypeInfo__System__Collections__Generic__IEnumerator<System::Object>;
+            iVar11 = func_?();
+            enumType = (method->field7_0x1c).rgctx_data[1].rgctxDataDummy;
+            if ((((IEnumerator_1_System_Object___Class *)enumType)->_1).initialized_and_no_error ==
+                0) {
+              pIVar5 = (IEnumerator_1_System_Object___Class *)enumType;
+              enumType = (Type *)func_?();
+            }
+            unaff_EBX = (MethodInfo *)0x0;
+            if ((iVar11 != 0) &&
+               (pIVar5 = (IEnumerator_1_System_Object___Class *)enumType,
+               unaff_EBX = (MethodInfo *)func_?(), unaff_EBX == (MethodInfo *)0x0))
+            goto code_?;
+            enumType = (Type *)pIVar5;
+            if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0)
+            {
+              func_?();
+            }
+            mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                      ((MethodInfo *)0x0);
+            if (unaff_EBX == (MethodInfo *)0x0) break;
             func_?();
           }
         }
       }
     }
+  }
+  else {
+    func_?();
+    IVar8.rgctxDataDummy = (void *)func_?();
+    func_?();
+    pMVar13 = (MethodInfo *)0x0;
+    pSVar15 = (String *)func_?();
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              ((ArgumentNullException *)IVar8.method,pSVar15,pMVar13);
+    func_?();
     func_?();
   }
-code_?:
   func_?();
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  pOVar9 = (Object *)(*pcVar13)();
-  return pOVar9;
+  func_?();
+  goto code_?;
+code_?:
+  pIStack_1 = (Il2CppClass *)0xffffffff;
+  if (pIStack_6 != (Il2CppClass *)0x0) {
+    func_?();
+  }
+  pIStack_1 = (Il2CppClass *)0xffffffff;
+  pOVar16 = (Object *)func_?();
+  IVar8 = *(method->field7_0x1c).rgctx_data;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                     ((RuntimeTypeHandle)IVar8,(MethodInfo *)0x0);
+  if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pCVar17 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                     ((MethodInfo *)0x0);
+  if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  enumType = (Type *)mscorlib.dll::System::Convert::Convert_ChangeType_1
+                               (pOVar16,pTVar9,(IFormatProvider *)pCVar17,(MethodInfo *)0x0);
+  IVar8 = (Il2CppRGCTXData)(method->field7_0x1c).rgctx_data[1].rgctxDataDummy;
+  if ((*(byte *)((int)IVar8.rgctxDataDummy + 0xba) & 1) == 0) {
+    IStack_3 = IVar8;
+    IVar8.rgctxDataDummy = (void *)func_?();
+  }
+  if ((IEnumerator_1_System_Object___Class *)enumType == (IEnumerator_1_System_Object___Class *)0x0)
+  {
+    pOVar16 = (Object *)0x0;
+code_?:
+    *unaff_FS_OFFSET = IStack_3;
+    return pOVar16;
+  }
+  pIStack_4 = (IEnumerator_1_System_Object___Class *)enumType;
+  IStack_3 = IVar8;
+  pOVar16 = (Object *)func_?();
+  unaff_EBX = method;
+  if (pOVar16 != (Object *)0x0) goto code_?;
+code_?:
+  pIStack_4 = (IEnumerator_1_System_Object___Class *)enumType;
+  IStack_3 = IVar8;
+  func_?();
+code_?:
+  func_?();
+  func_?();
+  pCVar17 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                     ((MethodInfo *)0x0);
+  func_?();
+  pOVar16 = (Object *)func_?(7,unaff_EBX);
+  pMVar13 = (MethodInfo *)0x0;
+  pSVar15 = (String *)func_?();
+  pSVar15 = mscorlib.dll::System::String::String_Format_4
+                      ((IFormatProvider *)pCVar17,pSVar15,pOVar16,pMVar13);
+  func_?();
+  this = (ArgumentException *)func_?();
+  func_?();
+  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(this,pSVar15,(MethodInfo *)0x0)
+  ;
+  func_?();
+  func_?();
+  pcVar18 = (code *)swi(3);
+  pOVar16 = (Object *)(*pcVar18)();
+  return pOVar16;
 }
 
 
@@ -405,115 +461,179 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNames
 {
   uStack_1 = 0xffffffff;
   puStack_2 = &DAT_?;
-  pMStack_3 = (MethodInfo *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pMStack_3;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>_MethodInfo__System__Linq__Enumerable__Where<System::Reflection::FieldInfo>_System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>__System__Func<System::Reflection::FieldInfo,_bool>_
+                   );
+    func_?(&TypeInfo__System__Func<System::Reflection::FieldInfo,_bool>);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Utilities__EnumUtils____c___GetNames_b__10_0_System__Reflection__FieldInfo_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c);
     cRam_? = '\x01';
   }
-  func_?();
   if (enumType != (Type *)0x0) {
-    bVar4 = mscorlib.dll::System::Type::Type_get_IsEnum(enumType,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      pSVar5 = (String *)(*(code *)(enumType->klass->vtable).__unknown.method)();
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                          (StringLiteral_Type__,pSVar5,StringLiteral___is_not_an_enum_,
-                           (MethodInfo *)0x0);
-      this_01 = (ArgumentException *)func_?();
+    cVar4 = (*(enumType->klass->vtable).get_IsEnum.methodPtr)
+                      (enumType,(enumType->klass->vtable).get_IsEnum.method);
+    if (cVar4 == '\0') {
+      func_?(enumType);
+      pSVar5 = (String *)func_?(7,enumType);
+      str2 = (String *)func_?(&StringLiteral___is_not_an_enum_);
+      str0 = (String *)func_?(&StringLiteral_Type__);
+      pSVar5 = mscorlib.dll::System::String::String_Concat_4(str0,pSVar5,str2,(MethodInfo *)0x0);
+      uVar6 = func_?(&TypeInfo__System__ArgumentException);
+      this_01 = (ArgumentException *)func_?(uVar6);
+      func_?(this_01);
       mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
                 (this_01,pSVar5,(MethodInfo *)0x0);
-      pMStack_3 = MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetNames_System__Type_;
+      func_?(&MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetNames_System__Type_);
       func_?();
     }
     else {
-      this = (List_1_UnityEngine_Vector4_ *)func_?();
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-      List_1_UnityEngine_Vector4___ctor
-                (this,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-      source = mscorlib.dll::System::Type::Type_GetFields(enumType,(MethodInfo *)0x0);
-      if (TypeInfo__Newtonsoft__Json__Utilities__EnumUtils->static_fields->__f__am_cache1 ==
-          (Func_2_System_Reflection_FieldInfo_Boolean_ *)0x0) {
-        this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?(TypeInfo__System__Func<System::Reflection::FieldInfo,_bool>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_00,(Object *)0x0,
-                   MethodInfo__Newtonsoft__Json__Utilities__EnumUtils___GetNames_m__2_System__Reflection__FieldInfo_
-                   ,
-                   MethodInfo__System__Func<System::Reflection::FieldInfo,_bool>__Func_System__Object__void__
-                  );
-        TypeInfo__Newtonsoft__Json__Utilities__EnumUtils->static_fields->__f__am_cache1 =
-             (Func_2_System_Reflection_FieldInfo_Boolean_ *)this_00;
-      }
-      pIVar6 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_17
-                         ((IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)source,
-                          (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Boolean_
-                           *)TypeInfo__Newtonsoft__Json__Utilities__EnumUtils->static_fields->
-                             __f__am_cache1,
-                          System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>_MethodInfo__System__Linq__Enumerable__Where<System::Reflection::FieldInfo>_System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>__System__Func<System::Reflection::FieldInfo,_bool>_
-                         );
-      if (pIVar6 != (IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
-        piVar7 = (int *)func_?(0,
-                                        TypeInfo__System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>
-                                        ,pIVar6);
-        uStack_1 = 0;
-        while (piVar7 != (int *)0x0) {
-          cVar8 = func_?();
-          if (cVar8 == '\0') {
-            uStack_1 = 0xffffffff;
-            if (piVar7 != (int *)0x0) {
-              func_?();
-            }
-            *unaff_FS_OFFSET = pMStack_3;
-            return (IList_1_System_String_ *)this;
+      this = (List_1_System_Object_ *)
+             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+      if (this != (List_1_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+        LowLevelList_1_System_Object___ctor
+                  ((LowLevelList_1_System_Object_ *)this,
+                   MethodInfo__System__Collections__Generic__List<System::String>__List__);
+        source = mscorlib.dll::System::Type::Type_GetFields(enumType,(MethodInfo *)0x0);
+        if ((TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->_1).cctor_finished_or_no_cctor
+            == 0) {
+          func_?(TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c);
+        }
+        this_00 = TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->__9__10_0;
+        if (this_00 == (Func_2_System_Reflection_FieldInfo_Boolean_ *)0x0) {
+          if ((TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->_1).cctor_finished_or_no_cctor
+              == 0) {
+            func_?(TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c);
           }
-          uVar9 = 0;
-          uVar10 = *(ushort *)(*piVar7 + 0xb6);
-          if (uVar10 != 0) {
-            iVar11 = *(int *)(*piVar7 + 0x58);
-            do {
-              if (*(IEnumerator_1_System_Reflection_FieldInfo___Class **)(iVar11 + (uint)uVar9 * 8)
-                  == 
-                  TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
-                 ) {
-                puVar12 = (undefined4 *)
-                         (*piVar7 + (*(int *)(iVar11 + 4 + (uint)uVar9 * 8) + 0x18) * 8);
-                goto code_?;
+          object = TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->__9;
+          this_00 = (Func_2_System_Reflection_FieldInfo_Boolean_ *)
+                    func_?(TypeInfo__System__Func<System::Reflection::FieldInfo,_bool>);
+          if (this_00 == (Func_2_System_Reflection_FieldInfo_Boolean_ *)0x0) goto code_?;
+          mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                    ((Func_2_Object_Boolean_ *)this_00,(Object *)object,
+                     MethodInfo__Newtonsoft__Json__Utilities__EnumUtils____c___GetNames_b__10_0_System__Reflection__FieldInfo_
+                     ,(MethodInfo *)0x0);
+          TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->__9__10_0 = this_00;
+          func_?(&TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->
+                           __9__10_0,this_00);
+        }
+        pIVar7 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_4
+                           ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Boolean_ *)this_00
+                            ,
+                            System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>_MethodInfo__System__Linq__Enumerable__Where<System::Reflection::FieldInfo>_System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>__System__Func<System::Reflection::FieldInfo,_bool>_
+                           );
+        if (pIVar7 != (IEnumerable_1_System_Object_ *)0x0) {
+          piVar8 = (int *)func_?(0,
+                                          TypeInfo__System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>
+                                          ,pIVar7);
+          uStack_1 = 1;
+          while( true ) {
+            if (piVar8 == (int *)0x0) break;
+            cVar4 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar8);
+            if (cVar4 == '\0') {
+              uStack_1 = 0xffffffff;
+              if (piVar8 != (int *)0x0) {
+                func_?(0,TypeInfo__System__IDisposable,piVar8);
+                *unaff_FS_OFFSET = uStack_3;
+                return (IList_1_System_String_ *)this;
               }
-              uVar9 = uVar9 + 1;
-            } while (uVar9 < uVar10);
-          }
-          puVar12 = (undefined4 *)func_?();
+              *unaff_FS_OFFSET = uStack_3;
+              return (IList_1_System_String_ *)this;
+            }
+            if (piVar8 == (int *)0x0) break;
+            uVar9 = 0;
+            uVar10 = *(ushort *)(*piVar8 + 0xb2);
+            if (uVar10 != 0) {
+              do {
+                if (*(IEnumerator_1_System_Reflection_FieldInfo___Class **)
+                     (*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) ==
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
+                   ) {
+                  puVar11 = (undefined4 *)
+                           (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) * 8 + 0xbc +
+                           *piVar8);
+                  goto code_?;
+                }
+                uVar9 = uVar9 + 1;
+              } while (uVar9 < uVar10);
+            }
+            puVar11 = (undefined4 *)
+                     func_?(piVar8,
+                                     TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
+                                     ,0);
 code_?:
-          piVar13 = (int *)(*(code *)*puVar12)();
-          if ((piVar13 == (int *)0x0) ||
-             (item = (**(code **)(*piVar13 + 0x100))(piVar13,*(undefined4 *)(*piVar13 + 0x104)),
-             this == (List_1_UnityEngine_Vector4_ *)0x0)) break;
-          mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                    ((List_1_UIPushOption_ *)this,item,
-                     MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                    );
+            piVar12 = (int *)(*(code *)*puVar11)(piVar8,puVar11[1]);
+            if (piVar12 == (int *)0x0) break;
+            item = (Object *)(**(code **)(*piVar12 + 0xf4))(piVar12,*(undefined4 *)(*piVar12 + 0xf8));
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      (this,item,
+                       MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                      );
+          }
         }
       }
     }
   }
-  func_?(0);
-  func_?();
-  pcVar14 = (code *)swi(3);
-  pIVar15 = (IList_1_System_String_ *)(*pcVar14)();
-  return pIVar15;
+code_?:
+  uVar6 = func_?();
+  func_?(uVar6);
+  pcVar13 = (code *)swi(3);
+  pIVar14 = (IList_1_System_String_ *)(*pcVar13)();
+  return pIVar14;
+}
+
+
+/* EnumValues`1[System.UInt64] GetNamesAndValues[Int32Enum]() */
+
+EnumValues_1_System_UInt64_ *
+Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNamesAndValues
+          (MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    Newtonsoft__Json__Utilities__EnumValues<unsigned_long>_MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetNamesAndValues<unsigned_long>_System__Type_
+                   );
+    func_?(&TypeInfo__System__Type);
+    cRam_? = '\x01';
+  }
+  handle = *(method->field7_0x1c).rgctx_data;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Type);
+  }
+  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+  pEVar1 = EnumUtils_GetNamesAndValues_2
+                     (enumType,
+                      Newtonsoft__Json__Utilities__EnumValues<unsigned_long>_MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetNamesAndValues<unsigned_long>_System__Type_
+                     );
+  return pEVar1;
 }
 
 
 /* EnumValues`1[System.Int64] GetNamesAndValues[Int64](Type) */
 
 EnumValues_1_System_Int64_ *
-Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNamesAndValues
+Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNamesAndValues_1
           (Type *enumType,MethodInfo *method)
 
 {
@@ -522,134 +642,95 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNamesA
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__Collections__Generic__ICollection<System::Object>);
+    func_?(&TypeInfo__System__Collections__Generic__IList<System::Object>);
+    func_?(&TypeInfo__System__Collections__Generic__IList<System::String>);
+    func_?(&TypeInfo__System__Type);
+    func_?(&StringLiteral_enumType);
     cRam_? = '\x01';
   }
-  func_?();
-  if (enumType == (Type *)0x0) {
-    this = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
-    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-              (this,StringLiteral_enumType,(MethodInfo *)0x0);
-    func_?();
-  }
-  else {
-    ValidationUtils::ValidationUtils_ArgumentTypeIsEnum
-              (enumType,StringLiteral_enumType,(MethodInfo *)0x0);
-    pIStack_4 = EnumUtils_GetValues(enumType,(MethodInfo *)0x0);
-    pIVar5 = EnumUtils_GetNames(enumType,(MethodInfo *)0x0);
-    if (((*method->parameters)[0x17].type & 1) == 0) {
-      func_?();
-    }
-    pEStack_6 = (EnumValues_1_System_Int64_ *)func_?();
-    (*(code *)method->parameters[1]->data)();
-    unaff_EDI = (Object__Array *)0x0;
-    while( true ) {
-      unaff_EBX = method;
-      if (pIStack_4 == (IList_1_System_Object_ *)0x0) break;
-      iVar7 = func_?();
-      if (iVar7 <= (int)unaff_EDI) {
-        *unaff_FS_OFFSET = uStack_3;
-        return pEStack_6;
-      }
-      uStack_1 = 0;
-      if (pIVar5 == (IList_1_System_String_ *)0x0) break;
-      func_?();
-      func_?();
-      RVar8.value = method->parameters[2];
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
-      }
-      mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pCVar9 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_CurrentCulture
-                         ((MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-        func_?();
-      }
-      mscorlib.dll::System::Convert::Convert_ChangeType_1
-                ((Object *)pCVar9,(Type *)pCVar9,(IFormatProvider *)pCVar9,(MethodInfo *)0x0);
-      func_?();
-      pIVar5 = (IList_1_System_String_ *)func_?();
-      func_?();
-      puVar10 = (undefined4 *)func_?();
-      pIStack_4 = (IList_1_System_Object_ *)*puVar10;
-      (*(code *)method->parameters[5]->data)();
-      if (pEStack_6 == (EnumValues_1_System_Int64_ *)0x0) break;
-      (*(code *)method->parameters[6]->data)();
-      uStack_1 = 0xffffffff;
-      unaff_EDI = (Object__Array *)((int)&unaff_EDI->klass + 1);
-    }
-  }
-  func_?();
-  func_?();
-  func_?();
-  RVar8.value = method->parameters[2];
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-    func_?();
-  }
-  mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
-  func_?();
-  func_?();
-  value = (Object *)func_?();
-  pCVar9 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                     ((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-    func_?();
-  }
-  mscorlib.dll::System::Convert::Convert_ToUInt64_15
-            (value,(IFormatProvider *)pCVar9,(MethodInfo *)0x0);
-  func_?();
-  func_?();
-  func_?();
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?();
-  }
-  message = mscorlib.dll::System::String::String_Format_4
-                      ((IFormatProvider *)unaff_EBX,StringLiteral_Value_from_enum_with_the_underly,
-                       unaff_EDI,(MethodInfo *)0x0);
-  innerException = TypeInfo__System__Exception;
-  this_00 = (Exception *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_3
-            (this_00,message,(Exception *)innerException,(MethodInfo *)0x0);
-  func_?();
-  func_?();
-  pcVar11 = (code *)swi(3);
-  pEVar12 = (EnumValues_1_System_Int64_ *)(*pcVar11)();
-  return pEVar12;
-}
-
-
-/* EnumValues`1[System.UInt64] GetNamesAndValues[JsonSchemaType]() */
-
-EnumValues_1_System_UInt64_ *
-Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNamesAndValues_1
-          (MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  handle.value = *method->parameters;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
-  pEVar1 = EnumUtils_GetNamesAndValues_2
-                     (enumType,
-                      Newtonsoft__Json__Utilities__EnumValues<unsigned_long>_MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetNamesAndValues<unsigned_long>_System__Type_
-                     );
-  return pEVar1;
+  bVar4 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)enumType,(Object **)0x0,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    ValidationUtils::ValidationUtils_ArgumentTypeIsEnum
+              (enumType,StringLiteral_enumType,(MethodInfo *)0x0);
+    pIVar5 = EnumUtils_GetValues(enumType,(MethodInfo *)0x0);
+    pIVar6 = EnumUtils_GetNames(enumType,(MethodInfo *)0x0);
+    if ((*(byte *)((int)((method->field7_0x1c).rgctx_data)->rgctxDataDummy + 0xba) & 1) == 0) {
+      func_?();
+    }
+    pEVar7 = (EnumValues_1_System_Int64_ *)func_?();
+    if (pEVar7 != (EnumValues_1_System_Int64_ *)0x0) {
+      (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)();
+      iVar8 = 0;
+      if (pIVar5 != (IList_1_System_Object_ *)0x0) {
+        while( true ) {
+          iVar9 = func_?();
+          if (iVar9 <= iVar8) {
+            *unaff_FS_OFFSET = uStack_3;
+            return pEVar7;
+          }
+          uStack_1 = 0;
+          if (pIVar6 == (IList_1_System_String_ *)0x0) break;
+          func_?();
+          func_?();
+          handle = (method->field7_0x1c).rgctx_data[2];
+          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pOVar10 = (Object *)0x0;
+          mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                    ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+          if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          conversionType =
+               mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_CurrentCulture
+                         ((MethodInfo *)0x0);
+          if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pIVar6 = (IList_1_System_String_ *)0x0;
+          pOVar10 = mscorlib.dll::System::Convert::Convert_ChangeType_1
+                             (pOVar10,(Type *)conversionType,(IFormatProvider *)conversionType,
+                              (MethodInfo *)0x0);
+          func_?();
+          iVar9 = func_?();
+          if (iVar9 == 0) break;
+          iVar9 = func_?();
+          if (pOVar10 == (Object *)0x0) break;
+          if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(iVar9 + 0x20))
+          goto code_?;
+          puVar11 = (undefined4 *)func_?();
+          (*(code *)*puVar11)();
+          (*((method->field7_0x1c).rgctx_data[7].method)->virtualMethodPointer)();
+          uStack_1 = 0xffffffff;
+          iVar8 = iVar8 + 1;
+        }
+      }
+    }
+  }
+  else {
+    func_?();
+    this = (ArgumentNullException *)func_?();
+    func_?();
+    method_00 = (MethodInfo *)0x0;
+    paramName = (String *)func_?();
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this,paramName,method_00);
+    func_?();
+    func_?();
+code_?:
+    func_?();
+  }
+  func_?();
+  func_?();
+  return (EnumValues_1_System_Int64_ *)&UNK_?;
 }
 
 
@@ -665,109 +746,95 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNamesA
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__Collections__Generic__ICollection<System::Object>);
+    func_?(&TypeInfo__System__Collections__Generic__IList<System::Object>);
+    func_?(&TypeInfo__System__Collections__Generic__IList<System::String>);
+    func_?(&TypeInfo__System__Type);
+    func_?(&StringLiteral_enumType);
     cRam_? = '\x01';
   }
-  func_?();
-  if (enumType == (Type *)0x0) {
-    this = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
-    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-              (this,StringLiteral_enumType,(MethodInfo *)0x0);
-    func_?();
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Type);
   }
-  else {
+  bVar4 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)enumType,(Object **)0x0,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
     ValidationUtils::ValidationUtils_ArgumentTypeIsEnum
               (enumType,StringLiteral_enumType,(MethodInfo *)0x0);
-    pIStack_4 = EnumUtils_GetValues(enumType,(MethodInfo *)0x0);
-    pIVar5 = EnumUtils_GetNames(enumType,(MethodInfo *)0x0);
-    if (((*method->parameters)[0x17].type & 1) == 0) {
+    pIVar5 = EnumUtils_GetValues(enumType,(MethodInfo *)0x0);
+    pIVar6 = EnumUtils_GetNames(enumType,(MethodInfo *)0x0);
+    if ((*(byte *)((int)((method->field7_0x1c).rgctx_data)->rgctxDataDummy + 0xba) & 1) == 0) {
       func_?();
     }
-    pEStack_6 = (EnumValues_1_System_UInt64_ *)func_?();
-    (*(code *)method->parameters[1]->data)();
-    unaff_EDI = (Object__Array *)0x0;
-    while( true ) {
-      unaff_EBX = method;
-      if (pIStack_4 == (IList_1_System_Object_ *)0x0) break;
-      iVar7 = func_?();
-      if (iVar7 <= (int)unaff_EDI) {
-        *unaff_FS_OFFSET = uStack_3;
-        return pEStack_6;
-      }
-      uStack_1 = 0;
-      if (pIVar5 == (IList_1_System_String_ *)0x0) break;
-      func_?();
-      func_?();
-      RVar8.value = method->parameters[2];
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
-      }
-      mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pCVar9 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_CurrentCulture
+    pEVar7 = (EnumValues_1_System_UInt64_ *)func_?();
+    if (pEVar7 != (EnumValues_1_System_UInt64_ *)0x0) {
+      (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)();
+      iVar8 = 0;
+      if (pIVar5 != (IList_1_System_Object_ *)0x0) {
+        while( true ) {
+          iVar9 = func_?();
+          if (iVar9 <= iVar8) {
+            *unaff_FS_OFFSET = uStack_3;
+            return pEVar7;
+          }
+          uStack_1 = 0;
+          if (pIVar6 == (IList_1_System_String_ *)0x0) break;
+          func_?();
+          func_?();
+          handle = (method->field7_0x1c).rgctx_data[2];
+          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pOVar10 = (Object *)0x0;
+          mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                    ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+          if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          conversionType =
+               mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_CurrentCulture
                          ((MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-        func_?();
+          if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pIVar6 = (IList_1_System_String_ *)0x0;
+          pOVar10 = mscorlib.dll::System::Convert::Convert_ChangeType_1
+                             (pOVar10,(Type *)conversionType,(IFormatProvider *)conversionType,
+                              (MethodInfo *)0x0);
+          func_?();
+          iVar9 = func_?();
+          if (iVar9 == 0) break;
+          iVar9 = func_?();
+          if (pOVar10 == (Object *)0x0) break;
+          if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(iVar9 + 0x20))
+          goto code_?;
+          puVar11 = (undefined4 *)func_?();
+          (*(code *)*puVar11)();
+          (*((method->field7_0x1c).rgctx_data[7].method)->virtualMethodPointer)();
+          uStack_1 = 0xffffffff;
+          iVar8 = iVar8 + 1;
+        }
       }
-      mscorlib.dll::System::Convert::Convert_ChangeType_1
-                ((Object *)pCVar9,(Type *)pCVar9,(IFormatProvider *)pCVar9,(MethodInfo *)0x0);
-      func_?();
-      pIVar5 = (IList_1_System_String_ *)func_?();
-      func_?();
-      puVar10 = (undefined4 *)func_?();
-      pIStack_4 = (IList_1_System_Object_ *)*puVar10;
-      (*(code *)method->parameters[5]->data)();
-      if (pEStack_6 == (EnumValues_1_System_UInt64_ *)0x0) break;
-      (*(code *)method->parameters[6]->data)();
-      uStack_1 = 0xffffffff;
-      unaff_EDI = (Object__Array *)((int)&unaff_EDI->klass + 1);
     }
   }
-  func_?();
-  func_?();
-  func_?();
-  RVar8.value = method->parameters[2];
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  else {
+    func_?();
+    this = (ArgumentNullException *)func_?();
+    func_?();
+    method_00 = (MethodInfo *)0x0;
+    paramName = (String *)func_?();
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this,paramName,method_00);
+    func_?();
+    func_?();
+code_?:
     func_?();
   }
-  mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
   func_?();
   func_?();
-  value = (Object *)func_?();
-  pCVar9 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                     ((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-    func_?();
-  }
-  mscorlib.dll::System::Convert::Convert_ToUInt64_15
-            (value,(IFormatProvider *)pCVar9,(MethodInfo *)0x0);
-  func_?();
-  func_?();
-  func_?();
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?();
-  }
-  message = mscorlib.dll::System::String::String_Format_4
-                      ((IFormatProvider *)unaff_EBX,StringLiteral_Value_from_enum_with_the_underly,
-                       unaff_EDI,(MethodInfo *)0x0);
-  innerException = TypeInfo__System__Exception;
-  this_00 = (Exception *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_3
-            (this_00,message,(Exception *)innerException,(MethodInfo *)0x0);
-  func_?();
-  func_?();
-  pcVar11 = (code *)swi(3);
-  pEVar12 = (EnumValues_1_System_UInt64_ *)(*pcVar11)();
-  return pEVar12;
+  return (EnumValues_1_System_UInt64_ *)&UNK_?;
 }
 
 
@@ -779,15 +846,15 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetNames_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  handle.value = *method->parameters;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  handle = *(method->field7_0x1c).rgctx_data;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
   pIVar1 = EnumUtils_GetNames(enumType,(MethodInfo *)0x0);
   return pIVar1;
 }
@@ -805,105 +872,142 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetValues
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>_MethodInfo__System__Linq__Enumerable__Where<System::Reflection::FieldInfo>_System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>__System__Func<System::Reflection::FieldInfo,_bool>_
+                   );
+    func_?(&TypeInfo__System__Func<System::Reflection::FieldInfo,_bool>);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::Object>);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Utilities__EnumUtils____c___GetValues_b__8_0_System__Reflection__FieldInfo_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c);
     cRam_? = '\x01';
   }
-  func_?();
   if (enumType != (Type *)0x0) {
-    bVar4 = mscorlib.dll::System::Type::Type_get_IsEnum(enumType,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      pSVar5 = (String *)(*(code *)(enumType->klass->vtable).__unknown.method)();
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                          (StringLiteral_Type__,pSVar5,StringLiteral___is_not_an_enum_,
-                           (MethodInfo *)0x0);
-      this_01 = (ArgumentException *)func_?();
+    cVar4 = (*(enumType->klass->vtable).get_IsEnum.methodPtr)
+                      (enumType,(enumType->klass->vtable).get_IsEnum.method);
+    if (cVar4 == '\0') {
+      func_?(enumType);
+      pSVar5 = (String *)func_?(7,enumType);
+      str2 = (String *)func_?(&StringLiteral___is_not_an_enum_);
+      str0 = (String *)func_?(&StringLiteral_Type__);
+      pSVar5 = mscorlib.dll::System::String::String_Concat_4(str0,pSVar5,str2,(MethodInfo *)0x0);
+      uVar6 = func_?(&TypeInfo__System__ArgumentException);
+      this_01 = (ArgumentException *)func_?(uVar6);
+      func_?(this_01);
       mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
                 (this_01,pSVar5,(MethodInfo *)0x0);
+      func_?(&MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetValues_System__Type_);
       func_?();
     }
     else {
-      this = (List_1_UnityEngine_Vector4_ *)func_?();
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-      List_1_UnityEngine_Vector4___ctor
-                (this,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
-      source = mscorlib.dll::System::Type::Type_GetFields(enumType,(MethodInfo *)0x0);
-      if (TypeInfo__Newtonsoft__Json__Utilities__EnumUtils->static_fields->__f__am_cache0 ==
-          (Func_2_System_Reflection_FieldInfo_Boolean_ *)0x0) {
-        this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?(TypeInfo__System__Func<System::Reflection::FieldInfo,_bool>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_00,(Object *)0x0,
-                   MethodInfo__Newtonsoft__Json__Utilities__EnumUtils___GetValues_m__1_System__Reflection__FieldInfo_
-                   ,
-                   MethodInfo__System__Func<System::Reflection::FieldInfo,_bool>__Func_System__Object__void__
-                  );
-        TypeInfo__Newtonsoft__Json__Utilities__EnumUtils->static_fields->__f__am_cache0 =
-             (Func_2_System_Reflection_FieldInfo_Boolean_ *)this_00;
-      }
-      pIVar6 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_17
-                         ((IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)source,
-                          (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Boolean_
-                           *)TypeInfo__Newtonsoft__Json__Utilities__EnumUtils->static_fields->
-                             __f__am_cache0,
-                          System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>_MethodInfo__System__Linq__Enumerable__Where<System::Reflection::FieldInfo>_System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>__System__Func<System::Reflection::FieldInfo,_bool>_
-                         );
-      if (pIVar6 != (IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
-        piVar7 = (int *)func_?(0,
-                                        TypeInfo__System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>
-                                        ,pIVar6);
-        uStack_1 = 0;
-        while (piVar7 != (int *)0x0) {
-          cVar8 = func_?();
-          if (cVar8 == '\0') {
-            uStack_1 = 0xffffffff;
-            if (piVar7 != (int *)0x0) {
-              func_?();
-            }
-            *unaff_FS_OFFSET = uStack_3;
-            return (IList_1_System_Object_ *)this;
+      this = (List_1_System_Object_ *)
+             func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
+      if (this != (List_1_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+        LowLevelList_1_System_Object___ctor
+                  ((LowLevelList_1_System_Object_ *)this,
+                   MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+        source = mscorlib.dll::System::Type::Type_GetFields(enumType,(MethodInfo *)0x0);
+        if ((TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->_1).cctor_finished_or_no_cctor
+            == 0) {
+          func_?(TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c);
+        }
+        this_00 = TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->__9__8_0;
+        if (this_00 == (Func_2_System_Reflection_FieldInfo_Boolean_ *)0x0) {
+          if ((TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->_1).cctor_finished_or_no_cctor
+              == 0) {
+            func_?(TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c);
           }
-          uVar9 = 0;
-          uVar10 = *(ushort *)(*piVar7 + 0xb6);
-          if (uVar10 != 0) {
-            iVar11 = *(int *)(*piVar7 + 0x58);
-            do {
-              if (*(IEnumerator_1_System_Reflection_FieldInfo___Class **)(iVar11 + (uint)uVar9 * 8)
-                  == 
-                  TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
-                 ) {
-                puVar12 = (undefined4 *)
-                         (*piVar7 + (*(int *)(iVar11 + 4 + (uint)uVar9 * 8) + 0x18) * 8);
-                goto code_?;
+          object = TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->__9;
+          this_00 = (Func_2_System_Reflection_FieldInfo_Boolean_ *)
+                    func_?(TypeInfo__System__Func<System::Reflection::FieldInfo,_bool>);
+          if (this_00 == (Func_2_System_Reflection_FieldInfo_Boolean_ *)0x0) goto code_?;
+          mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                    ((Func_2_Object_Boolean_ *)this_00,(Object *)object,
+                     MethodInfo__Newtonsoft__Json__Utilities__EnumUtils____c___GetValues_b__8_0_System__Reflection__FieldInfo_
+                     ,(MethodInfo *)0x0);
+          TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->__9__8_0 = this_00;
+          func_?(&TypeInfo__Newtonsoft__Json__Utilities__EnumUtils____c->static_fields->
+                           __9__8_0,this_00);
+        }
+        pIVar7 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_4
+                           ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Boolean_ *)this_00
+                            ,
+                            System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>_MethodInfo__System__Linq__Enumerable__Where<System::Reflection::FieldInfo>_System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>__System__Func<System::Reflection::FieldInfo,_bool>_
+                           );
+        if (pIVar7 != (IEnumerable_1_System_Object_ *)0x0) {
+          piVar8 = (int *)func_?(0,
+                                          TypeInfo__System__Collections__Generic__IEnumerable<System::Reflection::FieldInfo>
+                                          ,pIVar7);
+          uStack_1 = 1;
+          while( true ) {
+            if (piVar8 == (int *)0x0) break;
+            cVar4 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar8);
+            if (cVar4 == '\0') {
+              uStack_1 = 0xffffffff;
+              if (piVar8 != (int *)0x0) {
+                func_?(0,TypeInfo__System__IDisposable,piVar8);
+                *unaff_FS_OFFSET = uStack_3;
+                return (IList_1_System_Object_ *)this;
               }
-              uVar9 = uVar9 + 1;
-            } while (uVar9 < uVar10);
-          }
-          puVar12 = (undefined4 *)func_?();
+              *unaff_FS_OFFSET = uStack_3;
+              return (IList_1_System_Object_ *)this;
+            }
+            if (piVar8 == (int *)0x0) break;
+            uVar9 = 0;
+            uVar10 = *(ushort *)(*piVar8 + 0xb2);
+            if (uVar10 != 0) {
+              do {
+                if (*(IEnumerator_1_System_Reflection_FieldInfo___Class **)
+                     (*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) ==
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
+                   ) {
+                  puVar11 = (undefined4 *)
+                           (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) * 8 + 0xbc +
+                           *piVar8);
+                  goto code_?;
+                }
+                uVar9 = uVar9 + 1;
+              } while (uVar9 < uVar10);
+            }
+            puVar11 = (undefined4 *)
+                     func_?(piVar8,
+                                     TypeInfo__System__Collections__Generic__IEnumerator<System::Reflection::FieldInfo>
+                                     ,0);
 code_?:
-          piVar13 = (int *)(*(code *)*puVar12)();
-          if ((piVar13 == (int *)0x0) ||
-             (item = (**(code **)(*piVar13 + 0x148))
-                               (piVar13,enumType,*(undefined4 *)(*piVar13 + 0x14c)),
-             this == (List_1_UnityEngine_Vector4_ *)0x0)) break;
-          mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                    ((List_1_UIPushOption_ *)this,item,
-                     MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
-                    );
+            piVar12 = (int *)(*(code *)*puVar11)(piVar8,puVar11[1]);
+            if (piVar12 == (int *)0x0) break;
+            item = (Object *)
+                   (**(code **)(*piVar12 + 0x17c))(piVar12,enumType,*(undefined4 *)(*piVar12 + 0x180));
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      (this,item,
+                       MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
+                      );
+          }
         }
       }
     }
   }
-  func_?(0);
-  func_?();
-  pcVar14 = (code *)swi(3);
-  pIVar15 = (IList_1_System_Object_ *)(*pcVar14)();
-  return pIVar15;
+code_?:
+  uVar6 = func_?();
+  func_?(uVar6);
+  pcVar13 = (code *)swi(3);
+  pIVar14 = (IList_1_System_Object_ *)(*pcVar13)();
+  return pIVar14;
 }
 
 
@@ -915,67 +1019,21 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils_GetValues
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  handle.value = *method->parameters;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  handle = *(method->field7_0x1c).rgctx_data;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
   pIVar1 = EnumUtils_GetValues(enumType,(MethodInfo *)0x0);
-  uVar2 = (*(code *)method->parameters[1]->data)(pIVar1,method->parameters[1]);
+  uVar2 = (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
+                    (pIVar1,(method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
   pIVar1 = (IList_1_System_Object_ *)
-           (*(code *)method->parameters[2]->data)(uVar2,method->parameters[2]);
+           (*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)
+                     (uVar2,(method->field7_0x1c).rgctx_data[2].rgctxDataDummy);
   return pIVar1;
-}
-
-
-/* Boolean <GetFlagsValues`1>m__0[JsonSchemaType](EnumValue`1[System.UInt64]) */
-
-bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils__GetFlagsValues_1_m__0
-               (EnumValue_1_System_UInt64_ *v,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (v != (EnumValue_1_System_UInt64_ *)0x0) {
-    CVar1 = mscorlib.dll::System::Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::
-            Reflection::CustomAttributeTypedArgument]::
-            Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                      ((Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument_
-                        *)v,
-                       MethodInfo__Newtonsoft__Json__Utilities__EnumValue<unsigned_long>__get_Value__
-                      );
-    if (CVar1 == (CustomAttributeTypedArgument)0x0) {
-      return 1;
-    }
-    return 0;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
-}
-
-
-/* Boolean <GetNames>m__2(FieldInfo) */
-
-bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumUtils::EnumUtils__GetNames_m__2
-               (FieldInfo_1 *field,MethodInfo *method)
-
-{
-  if (field != (FieldInfo_1 *)0x0) {
-    uVar1 = (*(code *)(field->klass->vtable).__unknown_6.method)
-                      (field,(field->klass->vtable).__unknown_7.methodPtr);
-    return (byte)(uVar1 >> 6) & 1;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
 }
 

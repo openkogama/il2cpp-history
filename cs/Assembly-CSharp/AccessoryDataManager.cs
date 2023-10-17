@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class AccessoryDataManager
 {
@@ -18,15 +18,10 @@ public static class AccessoryDataManager
 	private static bool accessoriesRequested;
 	private static bool accessoriesReady;
 	private static AccessoryShopDataClient accessoryShopData;
-	[CompilerGenerated]
-	private static Action<string> __f__mg_cache0;
 
 	// Properties
 	public static int AccessoryBundleId { get; }
 	public static AccessoryBundleClient AccessoryBundleClient { get; }
-
-	// Constructors
-	static AccessoryDataManager();
 
 	// Methods
 	public static void SetReady();

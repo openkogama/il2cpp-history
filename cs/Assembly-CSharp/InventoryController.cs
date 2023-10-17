@@ -11,7 +11,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventoryController : MonoBehaviour, IPagedTurned, ITabSelected, ISlotChanged
 {
@@ -31,11 +31,11 @@ public class InventoryController : MonoBehaviour, IPagedTurned, ITabSelected, IS
 	public InventoryController();
 
 	// Methods
-	public void Initialize(int numberOfSlots);
+	public void Initialize(int slots);
 	public void Clear();
 	public void SetHeaderText(string category);
 	public void HighlightSlot(int slotPosition);
-	public void AddTab(int categoryId, string tabname);
+	public void AddTab(int categoryId, string tabName);
 	public void SelectTab(int tabId, int currentPage, int maxPages);
 	public void AddObject(GameObject item, int slotIndex);
 	public void PageTurned(int dir);

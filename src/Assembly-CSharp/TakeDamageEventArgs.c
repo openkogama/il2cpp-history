@@ -7,18 +7,17 @@ void Assembly-CSharp.dll::TakeDamageEventArgs::TakeDamageEventArgs__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__EventArgs);
   }
-  WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-  WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor
-            ((WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)this,(MethodInfo *)0x0);
+  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
   (this->fields).damageSource = damageDealer;
   (this->fields).damage = amount;
+  func_?(&(this->fields).damageSource,damageDealer);
   (this->fields).damageType = (undefined1)damageType;
   return;
 }

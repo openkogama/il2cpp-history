@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class JetPackCamera : MVCameraBase
 {
@@ -36,11 +36,26 @@ public class JetPackCamera : MVCameraBase
 	protected MVBuildModeAvatarLocal avatarLocal;
 	private const string mouseX = "Mouse X";
 	private const string mouseY = "Mouse Y";
-	[CompilerGenerated]
-	private static Func<MVWorldObjectClient, bool> __f__am_cache0;
 
 	// Properties
 	public override CameraType CameraType { get; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<MVWorldObjectClient, bool> __9__35_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _ResetDistanceAndDirectionToAvatar_b__35_0(MVWorldObjectClient wo);
+	}
 
 	// Constructors
 	public JetPackCamera();
@@ -60,7 +75,5 @@ public class JetPackCamera : MVCameraBase
 	private void SetToPosition(Vector3 position);
 	private Vector3 GetLookAtAvatarPosition(Vector3 position);
 	private void LookAt(Vector3 position);
-	[CompilerGenerated]
-	private static bool _ResetDistanceAndDirectionToAvatar_m__0(MVWorldObjectClient wo);
 }
 

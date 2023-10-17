@@ -10,22 +10,23 @@ IState * Assembly-CSharp.dll::StateTransitionTable::StateTransitionTable_GetStat
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__get_Item_System__Object_
+                   );
     cRam_? = '\x01';
   }
-  func_?();
   uStack_1 = 0;
-  this_00 = (this->fields).table;
-  if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
-    pPVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_00,(Type *)evt,
+  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).table;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_00,evt,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__get_Item_System__Object_
                        );
     *unaff_FS_OFFSET = uStack_3;
-    return (IState *)pPVar4;
+    return (IState *)pOVar4;
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   pIVar6 = (IState *)(*pcVar5)();
   return pIVar6;
@@ -39,23 +40,22 @@ void Assembly-CSharp.dll::StateTransitionTable::StateTransitionTable_SetState
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).table;
-  if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_00,(String *)evt,(CrossPlatformInputManager_VirtualButton *)state,
+  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).table;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_00,evt,(Object *)state,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -67,19 +67,32 @@ void Assembly-CSharp.dll::StateTransitionTable::StateTransitionTable__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>);
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Object_IState_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>
                            );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Dictionary__
-            );
-  (this->fields).table = this_00;
+  if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Dictionary__
+              );
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).table = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

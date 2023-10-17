@@ -6,15 +6,22 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarInteractable__DamageSource);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AvatarInteractable__DamageSource;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  (this->fields).originalScale.x = 0.0;
-  TypeInfo__AvatarInteractable__DamageSource->static_fields->none =
-       (AvatarInteractable_DamageSource *)this;
+  value = (AvatarInteractable_DamageSource *)
+          func_?(TypeInfo__AvatarInteractable__DamageSource);
+  if (value != (AvatarInteractable_DamageSource *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
+    (value->fields).time = 0.0;
+    TypeInfo__AvatarInteractable__DamageSource->static_fields->none = value;
+    func_?(TypeInfo__AvatarInteractable__DamageSource->static_fields,value);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -26,8 +33,10 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
                PlayerKilledByType__Enum damageType,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).shooter = shooter;
+  func_?(&this->fields,shooter);
   (this->fields).damageType = (undefined1)damageType;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).time = fVar1;
@@ -41,7 +50,8 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
                (AvatarInteractable_DamageSource *this,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).time = 0.0;
   return;
 }

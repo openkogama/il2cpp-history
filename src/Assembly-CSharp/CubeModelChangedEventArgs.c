@@ -6,7 +6,9 @@ String * Assembly-CSharp.dll::CubeModelChangedEventArgs::CubeModelChangedEventAr
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeAction);
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    func_?(&StringLiteral__0___1_);
     cRam_? = '\x01';
   }
   pCVar1 = this;
@@ -16,10 +18,6 @@ String * Assembly-CSharp.dll::CubeModelChangedEventArgs::CubeModelChangedEventAr
   uStack_2._2_2_ = (pCVar1->fields).Pos.y;
   iStack_3 = (pCVar1->fields).Pos.z;
   arg1 = (Object *)func_?(TypeInfo__MV__WorldObject__IntVector,&uStack_2);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar4 = mscorlib.dll::System::String::String_Format_1
                      (StringLiteral__0___1_,arg0,arg1,(MethodInfo *)0x0);
   return pSVar4;
@@ -34,21 +32,20 @@ void Assembly-CSharp.dll::CubeModelChangedEventArgs::CubeModelChangedEventArgs__
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__EventArgs);
   }
-  WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-  WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor
-            ((WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)this,(MethodInfo *)0x0);
+  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
   (this->fields).Action = (undefined1)action;
   (this->fields).Pos.x = pos.x;
   (this->fields).Pos.y = pos.y;
   (this->fields).Pos.z = pos.z;
   (this->fields).Sender = sender;
+  func_?(&(this->fields).Sender,sender);
   return;
 }
 

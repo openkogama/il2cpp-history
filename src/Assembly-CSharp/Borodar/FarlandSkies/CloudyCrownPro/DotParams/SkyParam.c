@@ -5,25 +5,20 @@ void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyP
                (SkyParam *this,MethodInfo *method)
 
 {
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_grey
-                     (&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields).TopColor.r = pCVar1->r;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).TopColor.r = _UNK_?;
   (this->fields).TopColor.g = fVar3;
-  (this->fields).TopColor.b = fVar4;
-  (this->fields).TopColor.a = fVar5;
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_grey
-                     (&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields).BottomColor.r = pCVar1->r;
+  (this->fields).TopColor.b = fVar2;
+  (this->fields).TopColor.a = fVar1;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).BottomColor.r = _UNK_?;
   (this->fields).BottomColor.g = fVar3;
-  (this->fields).BottomColor.b = fVar4;
-  (this->fields).BottomColor.a = fVar5;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  (this->fields).BottomColor.b = fVar2;
+  (this->fields).BottomColor.a = fVar1;
   return;
 }
 

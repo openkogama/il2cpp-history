@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeSkybox : ThemeComponent
 {
@@ -16,14 +16,14 @@ public class ThemeSkybox : ThemeComponent
 	private PlatformSpecificMaterial skyboxMaterialSerialized;
 	private Material skyboxMaterial;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Color at the top pole of skybox sphere")]
 	private Color _topColor;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Color at the bottom pole of skybox sphere")]
 	private Color _bottomColor;
 	[SerializeField]
 	private bool fogEnabled;
-	[Range]
+	[Range(0f, 0.5f)]
 	[SerializeField]
 	private float fogDensity;
 	[SerializeField]
@@ -32,63 +32,63 @@ public class ThemeSkybox : ThemeComponent
 	private float fogEndDist;
 	[SerializeField]
 	private Color _starsTint;
-	[Range]
+	[Range(0f, 10f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Reduction in stars apparent brightness closer to the horizon")]
 	private float _starsExtinction;
-	[Range]
+	[Range(0f, 25f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Variation in stars apparent brightness caused by the atmospheric turbulence")]
 	private float _starsTwinklingSpeed;
 	[SerializeField]
 	private FlareLight _sun;
 	[SerializeField]
 	private Color _sunTint;
-	[Range]
+	[Range(0.1f, 3f)]
 	[SerializeField]
 	private float _sunSize;
-	[Range]
+	[Range(0.01f, 2f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Actual flare brightness depends on sun tint alpha, and this property is just a coefficient for that value")]
 	private float _sunFlareBrightness;
-	[Range]
+	[Range(0f, 1f)]
 	[SerializeField]
 	private float _sunLightContrast;
-	[Range]
+	[Range(0f, 8f)]
 	[SerializeField]
 	private float _sunLightIntensity;
 	[SerializeField]
 	private FlareLight _moon;
 	[SerializeField]
 	private Color _moonTint;
-	[Range]
+	[Range(0.1f, 3f)]
 	[SerializeField]
 	private float _moonSize;
-	[Range]
+	[Range(0.01f, 2f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Actual flare brightness depends on moon tint alpha, and this property is just a coefficient for that value")]
 	private float _moonFlareBrightness;
-	[Range]
+	[Range(0f, 1f)]
 	[SerializeField]
 	private float _moonLightContrast;
-	[Range]
+	[Range(0f, 8f)]
 	[SerializeField]
 	private float _moonLightIntensity;
-	[Range]
+	[Range(-0.75f, 0.75f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Height of the clouds relative to the horizon")]
 	private float _cloudsHeight;
-	[Range]
+	[Range(0f, 1f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Distance between the cloud waves")]
 	private float _cloudsOffset;
-	[Range]
+	[Range(-50f, 50f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Rotation of the clouds around the positive y axis")]
 	private float _cloudsRotationSpeed;
-	[Range]
+	[Range(0f, 10f)]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Adjusts the brightness of the skybox")]
 	private float _exposure;
 	[SerializeField]
 	private AnimationCurve lightIntensityByEmitterHeight;

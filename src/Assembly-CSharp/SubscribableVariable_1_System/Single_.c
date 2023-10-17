@@ -6,14 +6,8 @@ void Assembly-CSharp.dll::SubscribableVariable`1[System::Single]::
                (SubscribableVariable_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  if (this != (SubscribableVariable_1_System_Single_ *)0x0) {
-    (**(code **)**(undefined4 **)(method->name + 0x60))
-              (this,value,(undefined4 *)**(undefined4 **)(method->name + 0x60));
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
+            (this,value,method->klass->rgctx_data[1].rgctxDataDummy);
   return;
 }
 
@@ -25,10 +19,10 @@ void Assembly-CSharp.dll::SubscribableVariable`1[System::Single]::
                (SubscribableVariable_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  pcVar1 = method->name;
+  pIVar1 = method->klass;
   (this->fields)._.value = value;
-  puVar2 = *(undefined4 **)(*(int *)(pcVar1 + 0x60) + 8);
-  (*(code *)*puVar2)(this,puVar2);
+  (*pIVar1->rgctx_data->method->virtualMethodPointer)
+            (this,method->klass->rgctx_data->rgctxDataDummy);
   return;
 }
 

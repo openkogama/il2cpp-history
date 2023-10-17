@@ -7,24 +7,21 @@ void Assembly-CSharp.dll::MuteToggleExecute::MuteToggleExecute_ExecuteToggleStat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MainCameraManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MainCameraManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MainCameraManager);
+  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   MainCameraManager::MainCameraManager_set_Mute(toggleState,(MethodInfo *)0x0);
   if (toggleCallback != (UnityAction_1_System_Boolean_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Boolean]::
-    UnityAction_1_System_Boolean__Invoke
-              (toggleCallback,toggleState,
-               MethodInfo__UnityEngine__Events__UnityAction<bool>__Invoke_bool_);
+    (*(toggleCallback->fields)._._.invoke_impl)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff8);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

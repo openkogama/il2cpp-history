@@ -6,44 +6,71 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_OnB
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((((this_00 != (MVNetworkGame *)0x0) &&
-       (this_01 = (PrefabPool *)
-                  MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-       this_01 != (PrefabPool *)0x0)) &&
-      (this_02 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                           (this_01,(MethodInfo *)0x0), this_02 != (ObjectiveArrow *)0x0)) &&
-     (this_03 = BoostController::BoostController_GetActiveBoosts
-                          ((BoostController *)this_02,(MethodInfo *)0x0),
-     this_03 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0)) {
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-    Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__get_Count
-              ((Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_ *)
-               this_03,
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-              );
-    pDVar1 = this_03[1].klass;
-    func_?();
-    if (pDVar1 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost___Class *)0x0) {
-      (*(code *)(pDVar1->_0).image[0x11].nameToClassHashTable)();
-      pMVar2 = this_03[1].monitor;
-      if (pMVar2 != (MonitorData *)0x0) {
-        (**(code **)(*(int *)pMVar2 + 0x178))(pMVar2);
-        return;
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_01 != (MVNetworkGame *)0x0) {
+    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+    if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+       (pBVar2 = (pMVar1->fields).boostController, pBVar2 != (BoostController *)0x0)) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)(pBVar2->fields).activeBoosts;
+      if (this_00 !=
+          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
+         ) {
+        this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                  Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                            );
+        if (this_02 !=
+            (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+             *)0x0) {
+          mscorlib.dll::System::Collections::Generic::
+          Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+          Regex+CachedCodeEntryKey,System::Object]::
+          Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                    (this_02,
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                    );
+          pTVar3 = (this->fields).boostsActive;
+          IVar4.m_value = (int32_t)&UNK_?;
+          mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+          if (pTVar3 != (Text *)0x0) {
+            (*(pTVar3->klass->vtable).set_text.methodPtr)();
+            if (IVar4.m_value < 1) {
+              fVar5 = (this->fields).boostInactiveColor.r;
+              fVar6 = (this->fields).boostInactiveColor.g;
+              fVar7 = (this->fields).boostInactiveColor.b;
+              fVar8 = (this->fields).boostInactiveColor.a;
+            }
+            else {
+              fVar5 = (this->fields).boostActiveColor.r;
+              fVar6 = (this->fields).boostActiveColor.g;
+              fVar7 = (this->fields).boostActiveColor.b;
+              fVar8 = (this->fields).boostActiveColor.a;
+            }
+            pIVar9 = (this->fields).backgroundColor;
+            if (pIVar9 != (Image *)0x0) {
+              (*(pIVar9->klass->vtable).set_color.methodPtr)(pIVar9,fVar5,fVar6,fVar7,fVar8);
+              return;
+            }
+          }
+        }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -55,58 +82,63 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_OnD
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (((this_00 != (MVNetworkGame *)0x0) &&
-      (this_01 = (PrefabPool *)
-                 MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-      this_01 != (PrefabPool *)0x0)) &&
-     (pOVar2 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                         (this_01,(MethodInfo *)0x0), object = TypeInfo__System__Action,
-     pOVar2 != (ObjectiveArrow *)0x0)) {
-    pDVar3 = (pOVar2->fields)._._._._.m_CachedPtr;
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)object,MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__,
-               (MethodInfo *)0x0);
-    pDStack4 =
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   (pDVar3,(Delegate *)this_02,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDStack4 != (Delegate *)0x0) {
-      if ((Action__Class *)pDStack4->klass == TypeInfo__System__Action) {
-        pDVar3 = pDStack4;
+      (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+      pMVar2 != (MVLocalPlayer *)0x0)) &&
+     (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
+    pAVar4 = (pBVar3->fields).BoostCountChanged;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_01,(Object *)0x0,MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__,
+                 (MethodInfo *)0x0);
+      pAVar4 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+      if (pAVar4 == (Action *)0x0) {
+        (pBVar3->fields).BoostCountChanged = (Action *)0x0;
+        pBStack6 = &pBVar3->fields;
+        pAStack7 = (Action *)0x0;
+        func_?();
+        return;
       }
-      pAStack5 = TypeInfo__System__Action;
-      if (pDVar3 == (Delegate *)0x0) goto code_?;
+      pAVar8 = (Action *)0x0;
+      if (pAVar4->klass == TypeInfo__System__Action) {
+        pAVar8 = pAVar4;
+      }
+      if (pAVar8 != (Action *)0x0) {
+        (pBVar3->fields).BoostCountChanged = pAVar8;
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+        pAStack7 = (Action *)0x0;
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAStack7 = pAVar4;
+        }
+        if (pAStack7 != (Action *)0x0) {
+          pBStack6 = &pBVar3->fields;
+          func_?();
+          return;
+        }
+      }
+      goto code_?;
     }
-    (pOVar2->fields)._._._._.m_CachedPtr = pDVar3;
-    return;
   }
-  func_?();
-  pDStack4 = extraout_ECX;
-  pAStack5 = extraout_EDX;
+  uVar5 = func_?();
 code_?:
+  _pBStack00000024 = uVar5;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -118,95 +150,112 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_Sta
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    pPVar2 = (PrefabPool *)MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-    if (pPVar2 != (PrefabPool *)0x0) {
-      pOVar3 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab(pPVar2,(MethodInfo *)0x0)
-      ;
-      if (pOVar3 != (ObjectiveArrow *)0x0) {
-        pDVar4 = (pOVar3->fields)._._._._.m_CachedPtr;
-        this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__,(MethodInfo *)0x0);
-        pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
-                           (pDVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-        pDVar4 = (Delegate *)0x0;
-        if (pDVar5 != (Delegate *)0x0) {
-          if ((Action__Class *)pDVar5->klass == TypeInfo__System__Action) {
-            pDVar4 = pDVar5;
-          }
-          if (pDVar4 == (Delegate *)0x0) {
-            func_?(pDVar5,TypeInfo__System__Action);
-            goto code_?;
-          }
-        }
-        bVar6 = cRam_? == '\0';
-        (pOVar3->fields)._._._._.m_CachedPtr = pDVar4;
-        if (bVar6) {
-          func_?(_UNK_?);
+  if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+  pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+  if ((pMVar2 == (MVLocalPlayer *)0x0) ||
+     (pBVar3 = (pMVar2->fields).boostController, pBVar3 == (BoostController *)0x0))
+  goto code_?;
+  IVar4.m_value = (int32_t)(pBVar3->fields).BoostCountChanged;
+  this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_01,(Object *)this,MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__,
+             (MethodInfo *)0x0);
+  pAVar5 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)IVar4.m_value,(Delegate *)this_01,(MethodInfo *)0x0);
+  if (pAVar5 == (Action *)0x0) {
+    (pBVar3->fields).BoostCountChanged = (Action *)0x0;
+code_?:
+    func_?();
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                     );
+      cRam_? = '\x01';
+    }
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 != (MVNetworkGame *)0x0) {
+      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+      if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+         (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                         );
           cRam_? = '\x01';
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          pPVar2 = (PrefabPool *)
-                   MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-          if (pPVar2 != (PrefabPool *)0x0) {
-            pOVar3 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                               (pPVar2,(MethodInfo *)0x0);
-            if (pOVar3 != (ObjectiveArrow *)0x0) {
-              this_01 = BoostController::BoostController_GetActiveBoosts
-                                  ((BoostController *)pOVar3,(MethodInfo *)0x0);
-              if (this_01 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0) {
-                mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__get_Count
-                          ((Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_
-                            *)this_01,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                          );
-                pTVar7 = (this->fields).boostsActive;
-                iVar8 = func_?();
-                if (pTVar7 != (Text *)0x0) {
-                  (*(code *)(pTVar7->klass->vtable).set_text.method)(pTVar7);
-                  pIVar9 = (this->fields).backgroundColor;
-                  if (iVar8 < 1) {
-                    fVar10 = (this->fields).boostInactiveColor.r;
-                    fVar11 = (this->fields).boostInactiveColor.g;
-                    fVar12 = (this->fields).boostInactiveColor.b;
-                  }
-                  else {
-                    fVar10 = (this->fields).boostActiveColor.r;
-                    fVar11 = (this->fields).boostActiveColor.g;
-                    fVar12 = (this->fields).boostActiveColor.b;
-                  }
-                  if (pIVar9 != (Image *)0x0) {
-                    (*(code *)(pIVar9->klass->vtable).set_color.method)(pIVar9,fVar10,fVar11,fVar12)
-                    ;
-                    return;
-                  }
-                }
+        this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                   *)(pBVar3->fields).activeBoosts;
+        if (this_00 !=
+            (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+            0x0) {
+          this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                              (this_00,
+                               MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                              );
+          if (this_02 !=
+              (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               *)0x0) {
+            mscorlib.dll::System::Collections::Generic::
+            Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+            Regex+CachedCodeEntryKey,System::Object]::
+            Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                      (this_02,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                      );
+            pTVar6 = (this->fields).boostsActive;
+            IVar4.m_value = (int32_t)&stack0xfffffff8;
+            mscorlib.dll::System::Int32::Int32_ToString((Int32 *)IVar4.m_value,(MethodInfo *)0x0);
+            if (pTVar6 != (Text *)0x0) {
+              (*(pTVar6->klass->vtable).set_text.methodPtr)();
+              if (IVar4.m_value < 1) {
+                fVar7 = (this->fields).boostInactiveColor.r;
+                fVar8 = (this->fields).boostInactiveColor.g;
+                fVar9 = (this->fields).boostInactiveColor.b;
+                fVar10 = (this->fields).boostInactiveColor.a;
+              }
+              else {
+                fVar7 = (this->fields).boostActiveColor.r;
+                fVar8 = (this->fields).boostActiveColor.g;
+                fVar9 = (this->fields).boostActiveColor.b;
+                fVar10 = (this->fields).boostActiveColor.a;
+              }
+              pIVar11 = (this->fields).backgroundColor;
+              if (pIVar11 != (Image *)0x0) {
+                (*(pIVar11->klass->vtable).set_color.methodPtr)
+                          (pIVar11,fVar7,fVar8,fVar9,fVar10,
+                           (pIVar11->klass->vtable).set_color.method);
+                return;
               }
             }
           }
         }
       }
     }
+  }
+  else {
+    pAVar12 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar12 = pAVar5;
+    }
+    if (pAVar12 != (Action *)0x0) {
+      (pBVar3->fields).BoostCountChanged = pAVar12;
+      pAVar12 = (Action *)0x0;
+      if (pAVar5->klass == TypeInfo__System__Action) {
+        pAVar12 = pAVar5;
+      }
+      if (pAVar12 != (Action *)0x0) goto code_?;
+    }
+    func_?();
   }
 code_?:
   func_?();

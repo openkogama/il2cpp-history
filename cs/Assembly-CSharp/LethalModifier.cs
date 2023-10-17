@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LethalModifier : AvatarModifier
 {
@@ -22,28 +22,27 @@ public class LethalModifier : AvatarModifier
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoFadeAndDestroy_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoFadeAndDestroy_d__7 : IEnumerator<object>
 	{
 		// Fields
-		internal LethalModifier _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public LethalModifier __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoFadeAndDestroy_c__Iterator0();
+		public _DoFadeAndDestroy_d__7(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -53,7 +52,7 @@ public class LethalModifier : AvatarModifier
 	protected override void OnActivated(Avatar target);
 	protected override void OnDeactivated(Avatar target);
 	private void OnDisable();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoFadeAndDestroy_d__7))]
 	private IEnumerator DoFadeAndDestroy();
 	private void Destroy();
 }

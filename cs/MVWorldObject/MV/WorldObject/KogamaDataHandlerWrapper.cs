@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -17,5 +17,6 @@ namespace MV.WorldObject
 	{
 		// Methods
 		public static Dictionary<object, object> GetDataParameters(int serializeVersion, BytePacker bp, KogamaDataType kogamaDataType, bool readRuntimeData);
+		public static BytePacker GetBytePackerFromKogamaDataPackage(int serializeVersion, KogamaDataPackage kogamaDataPackage, bool writeRuntimeData);
 	}
 }

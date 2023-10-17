@@ -6,12 +6,12 @@ void Assembly-CSharp.dll::Styles+ColorStyleDef::Styles_ColorStyleDef_Set
 
 {
   if (graphic != (Graphic *)0x0) {
-    (*(code *)(graphic->klass->vtable).set_color.method)
+    (*(graphic->klass->vtable).set_color.methodPtr)
               (graphic,(this->fields).color.r,(this->fields).color.g,(this->fields).color.b,
-               (this->fields).color.a,(graphic->klass->vtable).get_raycastTarget.methodPtr);
+               (this->fields).color.a,(graphic->klass->vtable).set_color.method);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;

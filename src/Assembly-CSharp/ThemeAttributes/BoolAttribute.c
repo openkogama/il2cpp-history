@@ -7,46 +7,51 @@ Assembly-CSharp.dll::ThemeAttributes::BoolAttribute::BoolAttribute_GetSettingsUI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<bool>);
+    func_?(&
+                    ThemeAttributes__BoolAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::BoolAttribute::Setter>_ThemeAttributes__BoolAttribute__Setter_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__RectTransform);
     cRam_? = '\x01';
   }
-  pXVar1 = (XpBoostParticlePreviewer *)(this->fields).togglePrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  original = (this->fields).togglePrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar1,
-                      ThemeAttributes__BoolAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::BoolAttribute::Setter>_ThemeAttributes__BoolAttribute__Setter_
-                     );
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action<bool>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,this->klass[1]._0.image,
-             MethodInfo__System__Action<bool>__Action_System__Object__void__);
-  if (pXVar1 == (XpBoostParticlePreviewer *)0x0) {
+  this_00 = (Component *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                      ((Object *)original,
+                       ThemeAttributes__BoolAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::BoolAttribute::Setter>_ThemeAttributes__BoolAttribute__Setter_
+                      );
+  this_01 = (UnityAction_1_System_ByteEnum_ *)func_?(TypeInfo__System__Action<bool>);
+  if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
+    UnityAction_1_System_ByteEnum___ctor
+              (this_01,(Object *)this,(this->klass->vtable).OnSettingsChanged.method,
+               (MethodInfo *)0x0);
+    if (this_00 != (Component *)0x0) {
+      (*(code *)this_00->klass[1]._0.image)(this_00,this);
+      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         (this_00,(MethodInfo *)0x0);
+      pTVar2 = (Transform *)0x0;
+      if (pTVar1 != (Transform *)0x0) {
+        if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+          pTVar2 = pTVar1;
+        }
+        if (pTVar2 == (Transform *)0x0) {
+          func_?();
+          goto code_?;
+        }
+      }
+      return (RectTransform *)pTVar2;
+    }
+  }
 code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    pRVar3 = (RectTransform *)(*pcVar2)();
-    return pRVar3;
-  }
-  (*pXVar1->klass[1]._0.gc_desc)(pXVar1,this);
-  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)pXVar1,(MethodInfo *)0x0);
-  pTVar5 = (Transform *)0x0;
-  if (pTVar4 != (Transform *)0x0) {
-    if (pTVar4->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-      pTVar5 = pTVar4;
-    }
-    if (pTVar5 == (Transform *)0x0) {
-      func_?();
-      goto code_?;
-    }
-  }
-  return (RectTransform *)pTVar5;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  pRVar4 = (RectTransform *)(*pcVar3)();
+  return pRVar4;
 }
 
 
@@ -58,7 +63,12 @@ void Assembly-CSharp.dll::ThemeAttributes::BoolAttribute::BoolAttribute_Initiali
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__ThemeAttributes__NamedThemeAttribute<bool>__Initialize_ThemeSettings__SettingsWrapper__System__String__int__System__Action<bool>_
+                   );
+    func_?(&
+                    bool_MethodInfo__ThemeSettings__SettingsWrapper__GetValueForAttribute<bool>_ThemeAttributes__ThemeAttribute_
+                   );
     cRam_? = '\x01';
   }
   NamedThemeAttribute`1[System::Boolean]::NamedThemeAttribute_1_System_Boolean__Initialize
@@ -66,7 +76,7 @@ void Assembly-CSharp.dll::ThemeAttributes::BoolAttribute::BoolAttribute_Initiali
              MethodInfo__ThemeAttributes__NamedThemeAttribute<bool>__Initialize_ThemeSettings__SettingsWrapper__System__String__int__System__Action<bool>_
             );
   if (settings != (SettingsWrapper *)0x0) {
-    bVar1 = ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_1
+    bVar1 = ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute
                       (settings,(ThemeAttribute *)this,
                        bool_MethodInfo__ThemeSettings__SettingsWrapper__GetValueForAttribute<bool>_ThemeAttributes__ThemeAttribute_
                       );
@@ -87,38 +97,40 @@ void Assembly-CSharp.dll::ThemeAttributes::BoolAttribute::BoolAttribute_OnSettin
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
     cRam_? = '\x01';
   }
   bStack1 = value;
   key = (this->fields)._._._._Key_k__BackingField;
   (this->fields)._._.value = value;
-  value_00 = (Theme *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
+  value_00 = (Object *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
   pSVar2 = (this->fields)._._._.themeSettings;
   if (pSVar2 != (SettingsWrapper *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                     );
       cRam_? = '\x01';
     }
     this_00 = (pSVar2->fields).settingsData;
     if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,Theme]::
-      Dictionary_2_System_String_Theme__set_Item
-                ((Dictionary_2_System_String_Theme_ *)this_00,key,value_00,
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__set_Item
+                (this_00,(Object *)key,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                 );
-      this_01 = (Action_1_UIPushOption_ *)(this->fields)._._.themeCallback;
-      if (this_01 != (Action_1_UIPushOption_ *)0x0) {
-        mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                  (this_01,(uint)(this->fields)._._.value,
-                   MethodInfo__System__Action<bool>__Invoke_bool_);
+      pAVar3 = (this->fields)._._.themeCallback;
+      if (pAVar3 != (Action_1_Boolean_ *)0x0) {
+        (*(pAVar3->fields)._._.invoke_impl)
+                  ((pAVar3->fields)._._.method_code,(this->fields)._._.value,
+                   (pAVar3->fields)._._.method);
         return;
       }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -130,14 +142,13 @@ void Assembly-CSharp.dll::ThemeAttributes::BoolAttribute::BoolAttribute__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__ThemeAttributes__NamedThemeAttribute<bool>__NamedThemeAttribute__);
     cRam_? = '\x01';
   }
-  System.Core.dll::System::Linq::OrderedEnumerable`1[System::Collections::Generic::
-  KeyValuePair`2[System::Int32,System::Int32]]::
-  OrderedEnumerable_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32__System_Collections_IEnumerable_GetEnumerator
-            ((OrderedEnumerable_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_
-              *)this,MethodInfo__ThemeAttributes__NamedThemeAttribute<bool>__NamedThemeAttribute__);
+  StreamedAssetToCallback`2[System::Object,System::Object]::
+  StreamedAssetToCallback_2_System_Object_System_Object___ctor
+            ((StreamedAssetToCallback_2_System_Object_System_Object_ *)this,
+             MethodInfo__ThemeAttributes__NamedThemeAttribute<bool>__NamedThemeAttribute__);
   return;
 }
 
@@ -149,7 +160,7 @@ Object * Assembly-CSharp.dll::ThemeAttributes::BoolAttribute::BoolAttribute_get_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
     cRam_? = '\x01';
   }
   this = (BoolAttribute *)CONCAT13((this->fields)._._.value,this._0_3_);

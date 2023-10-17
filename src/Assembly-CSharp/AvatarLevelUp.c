@@ -6,75 +6,84 @@ void Assembly-CSharp.dll::AvatarLevelUp::AvatarLevelUp_Init
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__AvatarLevelUp__OnLevelChanged_int_);
+    func_?(&MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_);
+    func_?(&TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<int>);
     cRam_? = '\x01';
   }
   (this->fields).ownerActorNr = ownerActorNr;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVAvatar *)0x0) {
-    this_01 = MVAvatar::MVAvatar_get_Shield(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-      pMVar1 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                         ((MVPlayerContainer *)this_01,ownerActorNr,(MethodInfo *)0x0);
-      if (pMVar1 != (MVPlayer *)0x0) {
-        pUVar2 = (pMVar1->fields).OnLevelChanged;
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)this,MethodInfo__AvatarLevelUp__OnLevelChanged_int_,
-                   MethodInfo__UnityEngine__Events__UnityAction<int>__UnityAction_System__Object__void__
-                  );
-        pUVar4 = (UnityAction_1_System_Int32_ *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-        pUVar2 = (UnityAction_1_System_Int32_ *)0x0;
-        if (pUVar4 != (UnityAction_1_System_Int32_ *)0x0) {
-          if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction<int>) {
-            pUVar2 = pUVar4;
-          }
-          if (pUVar2 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
-        }
-        (pMVar1->fields).OnLevelChanged = pUVar2;
-        pSVar5 = (this->fields).scaleAnimation;
-        if (pSVar5 != (ScaleAnimation *)0x0) {
-          pSVar6 = (pSVar5->fields)._.OnScaleAnimationStopped;
-          pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                    *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (pUVar3,(Object *)this,MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_
-                     ,(MethodInfo *)0x0);
-          pSVar7 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
-                   mscorlib.dll::System::Delegate::Delegate_Combine
-                             ((Delegate *)pSVar6,(Delegate *)pUVar3,(MethodInfo *)0x0);
-          pSVar6 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
-          if (pSVar7 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 == (MVNetworkGame *)0x0) ||
+     (this_00 = (pMVar1->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) {
 code_?:
-            (pSVar5->fields)._.OnScaleAnimationStopped = pSVar6;
-            return;
-          }
-          if (pSVar7->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-            pSVar6 = pSVar7;
-          }
-          if (pSVar6 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0)
-          goto code_?;
-          goto code_?;
-        }
+    func_?();
+  }
+  else {
+    pMVar2 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                       (this_00,ownerActorNr,(MethodInfo *)0x0);
+    if (pMVar2 == (MVPlayer *)0x0) goto code_?;
+    pUVar3 = (pMVar2->fields).OnLevelChanged;
+    this_01 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
+    if (this_01 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_01,(Object *)this,MethodInfo__AvatarLevelUp__OnLevelChanged_int_,
+               (MethodInfo *)0x0);
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      (pMVar2->fields).OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
+    }
+    else {
+      pUVar3 = (UnityAction_1_System_Int32_ *)func_?();
+      if (pUVar3 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+      (pMVar2->fields).OnLevelChanged = pUVar3;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
+    }
+    func_?();
+    pSVar6 = (this->fields).scaleAnimation;
+    if (pSVar6 == (ScaleAnimation *)0x0) goto code_?;
+    pSVar7 = (pSVar6->fields)._.OnScaleAnimationStopped;
+    this_02 = (UnityAction_1_System_Single_ *)
+              func_?(TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate);
+    if (this_02 == (UnityAction_1_System_Single_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+    UnityAction_1_System_Single___ctor
+              (this_02,(Object *)this,MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_,
+               (MethodInfo *)0x0);
+    pSVar7 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pSVar7,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pSVar7 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+      (pSVar6->fields)._.OnScaleAnimationStopped =
+           (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+      func_?();
+      return;
+    }
+    pSVar8 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+    if (pSVar7->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+      pSVar8 = pSVar7;
+    }
+    if (pSVar8 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+      (pSVar6->fields)._.OnScaleAnimationStopped = pSVar8;
+      pSVar8 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+      if (pSVar7->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+        pSVar8 = pSVar7;
+      }
+      if (pSVar8 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+        func_?();
+        return;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -86,121 +95,108 @@ void Assembly-CSharp.dll::AvatarLevelUp::AvatarLevelUp_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__AvatarLevelUp__OnLevelChanged_int_);
+    func_?(&MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<int>);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if ((bVar1 == 0) ||
+     (pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0),
+     pMVar2 == (MVNetworkGame *)0x0)) {
 code_?:
-    pSVar2 = (this->fields).scaleAnimation;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    pSVar3 = (this->fields).scaleAnimation;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+                      ((Object_1 *)pSVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       return;
     }
-    pSVar2 = (this->fields).scaleAnimation;
-    if (pSVar2 != (ScaleAnimation *)0x0) {
-      source_00 = (pSVar2->fields)._.OnScaleAnimationStopped;
-      pSVar3 = TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate;
-      pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar4,(Object *)this,MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_,
-                 (MethodInfo *)0x0);
-      pIVar5 = (Il2CppClass *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)source_00,(Delegate *)pUVar4,(MethodInfo *)0x0);
-      pIVar6 = (Il2CppClass *)0x0;
-      if (pIVar5 == (Il2CppClass *)0x0) {
-code_?:
-        (pSVar3->_0).castClass = pIVar6;
-        return;
+    pSVar3 = (this->fields).scaleAnimation;
+    if (pSVar3 != (ScaleAnimation *)0x0) {
+      pSVar4 = (pSVar3->fields)._.OnScaleAnimationStopped;
+      this_01 = (UnityAction_1_System_Single_ *)
+                func_?(TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate);
+      if (this_01 != (UnityAction_1_System_Single_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+        UnityAction_1_System_Single___ctor
+                  (this_01,(Object *)this,MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_,
+                   (MethodInfo *)0x0);
+        pSVar4 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
+                  mscorlib.dll::System::Delegate::Delegate_Remove
+                            ((Delegate *)pSVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+        if (pSVar4 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+          (pSVar3->fields)._.OnScaleAnimationStopped =
+               (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+          func_?();
+          return;
+        }
+        pSVar5 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+        if (pSVar4->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+          pSVar5 = pSVar4;
+        }
+        if (pSVar5 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+          (pSVar3->fields)._.OnScaleAnimationStopped = pSVar5;
+          pSVar5 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+          if (pSVar4->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+            pSVar5 = pSVar4;
+          }
+          if (pSVar5 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+            func_?();
+            return;
+          }
+        }
+        goto code_?;
       }
-      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)pIVar5->image ==
-          TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-        pIVar6 = pIVar5;
-      }
-      pSVar7 = TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate;
-      if (pIVar6 != (Il2CppClass *)0x0) goto code_?;
-      goto code_?;
     }
+code_?:
+    func_?();
   }
   else {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar8 == (MVNetworkGame *)0x0) goto code_?;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pMVar9 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar9 != (MVAvatar *)0x0) &&
-       (pMVar10 = MVAvatar::MVAvatar_get_Shield(pMVar9,(MethodInfo *)0x0),
-       pMVar10 != (MVRuntimeDataVariableClampedFloat *)0x0)) {
-      bVar1 = MVPlayerContainer::MVPlayerContainer_ContainsKey
-                        ((MVPlayerContainer *)pMVar10,(this->fields).ownerActorNr,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pMVar9 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (((pMVar9 == (MVAvatar *)0x0) ||
-            (pMVar10 = MVAvatar::MVAvatar_get_Shield(pMVar9,(MethodInfo *)0x0),
-            pMVar10 == (MVRuntimeDataVariableClampedFloat *)0x0)) ||
-           (pMVar11 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                               ((MVPlayerContainer *)pMVar10,(this->fields).ownerActorNr,
-                                (MethodInfo *)0x0), pMVar11 == (MVPlayer *)0x0))
-        goto code_?;
-        source = (pMVar11->fields).OnLevelChanged;
-        pUVar12 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-        pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar4,(Object *)this,MethodInfo__AvatarLevelUp__OnLevelChanged_int_,
-                   MethodInfo__UnityEngine__Events__UnityAction<int>__UnityAction_System__Object__void__
-                  );
-        pIVar5 = (Il2CppClass *)
-                 mscorlib.dll::System::Delegate::Delegate_Remove
-                           ((Delegate *)source,(Delegate *)pUVar4,(MethodInfo *)0x0);
-        pIVar6 = (Il2CppClass *)0x0;
-        if (pIVar5 != (Il2CppClass *)0x0) {
-          if ((UnityAction_1_System_Int32___Class *)pIVar5->image ==
-              TypeInfo__UnityEngine__Events__UnityAction<int>) {
-            pIVar6 = pIVar5;
-          }
-          pSVar7 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)
-                    TypeInfo__UnityEngine__Events__UnityAction<int>;
-          if (pIVar6 == (Il2CppClass *)0x0) goto code_?;
-        }
-        *(Il2CppClass **)&(pUVar12->_0).this_arg.attrs = pIVar6;
-      }
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar2 == (MVNetworkGame *)0x0) ||
+       (pMVar6 = (pMVar2->fields).playerContainer, pMVar6 == (MVPlayerContainer *)0x0))
+    goto code_?;
+    bVar1 = MVPlayerContainer::MVPlayerContainer_ContainsKey
+                      (pMVar6,(this->fields).ownerActorNr,(MethodInfo *)0x0);
+    if (bVar1 == 0) goto code_?;
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar2 == (MVNetworkGame *)0x0) ||
+        (pMVar6 = (pMVar2->fields).playerContainer, pMVar6 == (MVPlayerContainer *)0x0)) ||
+       (pMVar7 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                           (pMVar6,(this->fields).ownerActorNr,(MethodInfo *)0x0),
+       pMVar7 == (MVPlayer *)0x0)) goto code_?;
+    pUVar8 = (pMVar7->fields).OnLevelChanged;
+    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    if (this_00 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)this,MethodInfo__AvatarLevelUp__OnLevelChanged_int_,
+               (MethodInfo *)0x0);
+    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pUVar8,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar9 == (Delegate *)0x0) {
+      (pMVar7->fields).OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
+code_?:
+      func_?();
       goto code_?;
     }
+    pUVar8 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar8 != (UnityAction_1_System_Int32_ *)0x0) {
+      (pMVar7->fields).OnLevelChanged = pUVar8;
+      iVar10 = func_?();
+      if (iVar10 != 0) goto code_?;
+    }
   }
+  func_?();
 code_?:
-  func_?(0);
-  pIVar5 = extraout_ECX;
-  pSVar7 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)extraout_EDX;
-code_?:
-  func_?(pIVar5,pSVar7);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -212,55 +208,49 @@ void Assembly-CSharp.dll::AvatarLevelUp::AvatarLevelUp_OnLevelChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_LEVEL_);
+    func_?(&StringLiteral_Default);
     cRam_? = '\x01';
   }
-  pAVar1 = this;
-  pPVar2 = (this->fields).onLevelUpParticleSystem;
-  if (pPVar2 != (ParticleSystem *)0x0) {
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)pPVar2,(MethodInfo *)0x0);
-    if (pGVar3 != (GameObject *)0x0) {
+  pPVar1 = (this->fields).onLevelUpParticleSystem;
+  if (pPVar1 != (ParticleSystem *)0x0) {
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pPVar1,(MethodInfo *)0x0);
+    if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar3,1,(MethodInfo *)0x0);
-      pPVar2 = (pAVar1->fields).onLevelUpParticleSystem;
-      if (pPVar2 != (ParticleSystem *)0x0) {
-        this = (AvatarLevelUp *)0x0;
+                (pGVar2,1,(MethodInfo *)0x0);
+      pPVar1 = (this->fields).onLevelUpParticleSystem;
+      if (pPVar1 != (ParticleSystem *)0x0) {
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play
-                  (pPVar2,1,(MethodInfo *)0x0);
-        pSVar4 = (pAVar1->fields).scaleAnimation;
-        if (pSVar4 != (ScaleAnimation *)0x0) {
-          in_stack_5 = pSVar4->klass[1]._0.image;
+                  (pPVar1,1,(MethodInfo *)0x0);
+        pSVar3 = (this->fields).scaleAnimation;
+        if (pSVar3 != (ScaleAnimation *)0x0) {
+          in_stack_4 = (pSVar3->klass->vtable).Play.method;
           method = (MethodInfo *)0x0;
-          this = (AvatarLevelUp *)&UNK_?;
-          level = (int32_t)pSVar4;
-          (*(code *)(pSVar4->klass->vtable).Play.method)();
-          pTVar6 = (pAVar1->fields).levelText;
-          if (pTVar6 != (TextMesh *)0x0) {
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                               ((Component_1 *)pTVar6,(MethodInfo *)0x0);
+          level = (int32_t)pSVar3;
+          (*(pSVar3->klass->vtable).Play.methodPtr)();
+          pTVar5 = (this->fields).levelText;
+          if (pTVar5 != (TextMesh *)0x0) {
+            pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar5,(MethodInfo *)0x0);
             value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                               (StringLiteral_Default,(MethodInfo *)0x0);
-            if (pGVar3 != (GameObject *)0x0) {
+            if (pGVar2 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                        (pGVar3,value,(MethodInfo *)0x0);
-              pTVar6 = (pAVar1->fields).levelText;
-              this = (AvatarLevelUp *)level;
-              arg1 = (Object *)func_?(TypeInfo__System__Int32,&this);
-              if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                 ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                func_?(TypeInfo__System__String);
-              }
-              pSVar7 = mscorlib.dll::System::String::String_Concat
-                                 ((Object *)StringLiteral_LEVEL_,arg1,(MethodInfo *)0x0);
-              pSVar7 = TM::TM__(pSVar7,(MethodInfo *)0x0);
-              if (pTVar6 != (TextMesh *)0x0) {
+                        (pGVar2,value,(MethodInfo *)0x0);
+              pTVar5 = (this->fields).levelText;
+              pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
+                                 ((Int32 *)&level,(MethodInfo *)0x0);
+              pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                                 (StringLiteral_LEVEL_,pSVar6,(MethodInfo *)0x0);
+              pSVar6 = TM::TM__(pSVar6,(MethodInfo *)0x0);
+              if (pTVar5 != (TextMesh *)0x0) {
                 UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                          (pTVar6,pSVar7,(MethodInfo *)0x0);
-                pSVar4 = (pAVar1->fields).scaleAnimation;
-                if (pSVar4 != (ScaleAnimation *)0x0) {
-                  (*(code *)(pSVar4->klass->vtable).Play.method)(pSVar4,0,pSVar4->klass[1]._0.image)
-                  ;
+                          (pTVar5,pSVar6,(MethodInfo *)0x0);
+                pSVar3 = (this->fields).scaleAnimation;
+                if (pSVar3 != (ScaleAnimation *)0x0) {
+                  (*(pSVar3->klass->vtable).Play.methodPtr)
+                            (pSVar3,0,(pSVar3->klass->vtable).Play.method);
                   return;
                 }
               }
@@ -270,9 +260,9 @@ void Assembly-CSharp.dll::AvatarLevelUp::AvatarLevelUp_OnLevelChanged
       }
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -284,13 +274,13 @@ void Assembly-CSharp.dll::AvatarLevelUp::AvatarLevelUp_OnScaleAnimationStopped
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Hidden);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).levelText;
   if (this_00 != (TextMesh *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this_00,(MethodInfo *)0x0);
     value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                       (StringLiteral_Hidden,(MethodInfo *)0x0);
     if (this_01 != (GameObject *)0x0) {
@@ -299,7 +289,7 @@ void Assembly-CSharp.dll::AvatarLevelUp::AvatarLevelUp_OnScaleAnimationStopped
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;

@@ -6,30 +6,32 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_DeTintCurrent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
   pWVar1 = (this->fields).tintedWo;
   if (pWVar1 != (WorldObjectClientRef *)0x0) {
-    pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                       ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar1,
+    pOVar2 = WorldObjectClientRef`1[System::Object]::
+             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                       ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
-    if (pMVar2 == (MVRoundCube *)0x0) {
+    if (pOVar2 == (Object *)0x0) {
       return;
     }
     pWVar1 = (this->fields).tintedWo;
     if ((pWVar1 != (WorldObjectClientRef *)0x0) &&
-       (pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-                 WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar1,
+       (pOVar2 = WorldObjectClientRef`1[System::Object]::
+                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                           ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                           ), pMVar2 != (MVRoundCube *)0x0)) {
-      (*(code *)(pMVar2->klass->vtable).DeSelect.method)();
+                           ), pOVar2 != (Object *)0x0)) {
+      (*(code *)pOVar2->klass[3].rgctx_data)();
       pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                          ((MethodInfo *)0x0);
       (this->fields).tintedWo = pWVar1;
+      func_?(&(this->fields).tintedWo,pWVar1);
       return;
     }
   }
@@ -47,40 +49,45 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorEvent);
+    func_?(&TypeInfo__ILogger);
+    func_?(&StringLiteral_Enter_);
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).logger;
-  this = (ESStateBase *)(this->fields).stateType;
-  arg1 = (Object *)func_?(TypeInfo__EditorEvent,&this);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar2 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral_Enter_,arg1,(MethodInfo *)0x0);
-  if (pIVar1 == (ILogger_1 *)0x0) {
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  EStack_2.klass = (Enum__Class *)TypeInfo__EditorEvent;
+  iStack_3 = (this->fields).stateType;
+  EStack_2.monitor = (MonitorData *)0xffffffff;
+  str1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
+  pEStack_4 = (Enum__Class *)
+              mscorlib.dll::System::String::String_Concat_3
+                        (StringLiteral_Enter_,str1,(MethodInfo *)0x0);
+  if (pIVar1 == (ILogger *)0x0) {
+    EStack_2.monitor = (MonitorData *)&UNK_?;
+    func_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
     return;
   }
-  pIVar4 = pIVar1->klass;
-  uVar5 = 0;
-  uVar6._0_1_ = (pIVar4->_1).rank;
-  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-  if (uVar6 != 0) {
+  pIVar6 = pIVar1->klass;
+  uVar7 = 0;
+  uVar8 = (pIVar6->_1).interface_offsets_count;
+  if (uVar8 != 0) {
     do {
-      if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ILogger) {
-        ppMVar7 = &(&pIVar1->klass->vtable)[pIVar4->interfaceOffsets[uVar5].offset].Log.method;
+      if (pIVar6->interfaceOffsets[uVar7].interfaceType == (Il2CppClass *)TypeInfo__ILogger) {
+        pIVar9 = &pIVar6->vtable + pIVar6->interfaceOffsets[uVar7].offset;
         goto code_?;
       }
-      uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
+      uVar7 = uVar7 + 1;
+    } while (uVar7 < uVar8);
   }
-  ppMVar7 = (MethodInfo **)func_?(pIVar1,TypeInfo__ILogger,0);
+  EStack_2.monitor = (MonitorData *)0x0;
+  EStack_2.klass = (Enum__Class *)TypeInfo__ILogger;
+  pIVar9 = (ILogger__VTable *)func_?(pIVar1);
 code_?:
-  (*(code *)*ppMVar7)(pIVar1,pSVar2,ppMVar7[1]);
+  EStack_2.monitor = (MonitorData *)(pIVar9->Log).method;
+  EStack_2.klass = pEStack_4;
+  (*(pIVar9->Log).methodPtr)(pIVar1);
   return;
 }
 
@@ -92,34 +99,20 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Enter_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorStateMachine);
     cRam_? = '\x01';
   }
-  if (e == (FSMEntity *)0x0) {
-    pFVar1 = (FSMEntity *)0x0;
-  }
-  else {
-    bVar2 = (TypeInfo__EditorStateMachine->_1).naturalAligment;
-    if (((e->klass->_1).naturalAligment < bVar2) ||
-       ((e->klass->_1).typeHierarchy[bVar2 - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    pFVar1 = (FSMEntity *)0x0;
-    if (bVar3) {
-      pFVar1 = e;
-    }
-    if (pFVar1 == (FSMEntity *)0x0) {
+  if (e != (FSMEntity *)0x0) {
+    if (((e->klass->_1).typeHierarchyDepth < (TypeInfo__EditorStateMachine->_1).typeHierarchyDepth)
+       || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).typeHierarchyDepth - 1]
+           != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
       func_?(e,TypeInfo__EditorStateMachine);
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
   }
-  (*(code *)(this->klass->vtable).Enter_1.method)
-            (this,pFVar1,(this->klass->vtable).Execute_1.methodPtr);
+  (*(this->klass->vtable).Enter_1.methodPtr)(this,e,(this->klass->vtable).Enter_1.method);
   return;
 }
 
@@ -131,34 +124,20 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Execute_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorStateMachine);
     cRam_? = '\x01';
   }
-  if (e == (FSMEntity *)0x0) {
-    pFVar1 = (FSMEntity *)0x0;
-  }
-  else {
-    bVar2 = (TypeInfo__EditorStateMachine->_1).naturalAligment;
-    if (((e->klass->_1).naturalAligment < bVar2) ||
-       ((e->klass->_1).typeHierarchy[bVar2 - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    pFVar1 = (FSMEntity *)0x0;
-    if (bVar3) {
-      pFVar1 = e;
-    }
-    if (pFVar1 == (FSMEntity *)0x0) {
+  if (e != (FSMEntity *)0x0) {
+    if (((e->klass->_1).typeHierarchyDepth < (TypeInfo__EditorStateMachine->_1).typeHierarchyDepth)
+       || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).typeHierarchyDepth - 1]
+           != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
       func_?(e,TypeInfo__EditorStateMachine);
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
   }
-  (*(code *)(this->klass->vtable).Execute_1.method)
-            (this,pFVar1,(this->klass->vtable).Exit_1.methodPtr);
+  (*(this->klass->vtable).Execute_1.methodPtr)(this,e,(this->klass->vtable).Execute_1.method);
   return;
 }
 
@@ -170,33 +149,20 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Exit_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorStateMachine);
     cRam_? = '\x01';
   }
-  if (e == (FSMEntity *)0x0) {
-    pFVar1 = (FSMEntity *)0x0;
-  }
-  else {
-    bVar2 = (TypeInfo__EditorStateMachine->_1).naturalAligment;
-    if (((e->klass->_1).naturalAligment < bVar2) ||
-       ((e->klass->_1).typeHierarchy[bVar2 - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    pFVar1 = (FSMEntity *)0x0;
-    if (bVar3) {
-      pFVar1 = e;
-    }
-    if (pFVar1 == (FSMEntity *)0x0) {
+  if (e != (FSMEntity *)0x0) {
+    if (((e->klass->_1).typeHierarchyDepth < (TypeInfo__EditorStateMachine->_1).typeHierarchyDepth)
+       || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).typeHierarchyDepth - 1]
+           != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
       func_?(e,TypeInfo__EditorStateMachine);
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
   }
-  (*(code *)(this->klass->vtable).Exit_1.method)(this,pFVar1,this->klass[1]._0.image);
+  (*(this->klass->vtable).Exit_1.methodPtr)(this,e,(this->klass->vtable).Exit_1.method);
   return;
 }
 
@@ -208,84 +174,71 @@ bool Assembly-CSharp.dll::ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnab
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Transform__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Transform>______
+                   );
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-    this = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                     (pMVar1,woId,(MethodInfo *)0x0);
-    if ((this == (MVWorldObject *)0x0) ||
-       (pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this,
-                            (MethodInfo *)0x0), pOVar2 == (Object *)0xffffffff)) {
+    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (pMVar1,woId,(MethodInfo *)0x0);
+    if ((pMVar2 == (MVWorldObject *)0x0) || ((pMVar2->fields).groupId == -1)) {
       return 0;
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-      this_00 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRoot
-                          (pMVar1,woId,(MethodInfo *)0x0);
-      this_01 = (MVBuildModeAvatarLocal_EditMode *)
-                MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (this_01 != (MVBuildModeAvatarLocal_EditMode *)0x0) {
-        bVar3 = MVBuildModeAvatarLocal+EditMode::
-                MVBuildModeAvatarLocal_EditMode_get_MovementConstrained(this_01,(MethodInfo *)0x0);
-        if ((bVar3 != 0) || (this_00 == (MVWorldObjectClient *)0x0)) {
+      pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRoot
+                         (pMVar1,woId,(MethodInfo *)0x0);
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if (pMVar4 != (MainCameraManager *)0x0) {
+        if (((pMVar4->fields).isLogicRendered != 0) || (pMVar3 == (MVWorldObjectClient *)0x0)) {
           return 1;
         }
-        iVar4 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Default,(MethodInfo *)0x0);
-        pCVar5 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)this_00,(MethodInfo *)0x0);
-        if (pCVar5 != (CelestialParam *)0x0) {
-          iVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                            ((GameObject *)pCVar5,(MethodInfo *)0x0);
-          if (iVar6 == iVar4) {
+        iVar5 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Default,(MethodInfo *)0x0);
+        pGVar6 = (pMVar3->fields).gameObject;
+        if (pGVar6 != (GameObject *)0x0) {
+          iVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                            (pGVar6,(MethodInfo *)0x0);
+          if (iVar7 == iVar5) {
             return 1;
           }
-          pCVar5 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                             ((DayNightCycle *)this_00,(MethodInfo *)0x0);
-          if (pCVar5 != (CelestialParam *)0x0) {
-            pUVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                     GameObject_GetComponentsInChildren_29
-                               ((GameObject *)pCVar5,
+          pGVar6 = (pMVar3->fields).gameObject;
+          if (pGVar6 != (GameObject *)0x0) {
+            pIVar8 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                               ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar6,
                                 UnityEngine__Transform__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Transform>______
                                );
-            iVar8 = 0;
-            if (pUVar7 != (UseInteratorVisualization__Array *)0x0) {
+            pMVar9 = (MonitorData *)0x0;
+            if (pIVar8 != (IEnumerable_1_System_Object_ *)0x0) {
+              pIVar10 = pIVar8 + 2;
               do {
-                if ((int)pUVar7->max_length <= iVar8) {
+                if ((int)pIVar8[1].monitor <= (int)pMVar9) {
                   return 0;
                 }
-                pCVar9 = (Component_1 *)func_?();
-                if ((pCVar9 == (Component_1 *)0x0) ||
-                   (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_1_get_gameObject(pCVar9,(MethodInfo *)0x0),
-                   pGVar10 == (GameObject *)0x0)) break;
-                iVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                                  (pGVar10,(MethodInfo *)0x0);
-                if (iVar6 == iVar4) {
-                  pCVar9 = (Component_1 *)func_?();
-                  if ((pCVar9 == (Component_1 *)0x0) ||
-                     (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_1_get_gameObject(pCVar9,(MethodInfo *)0x0),
-                     pGVar10 == (GameObject *)0x0)) break;
-                  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_activeInHierarchy(pGVar10,(MethodInfo *)0x0);
-                  if (bVar3 != 0) {
+                if (pIVar8[1].monitor <= pMVar9) goto code_?;
+                if ((pIVar10->klass == (IEnumerable_1_System_Object___Class *)0x0) ||
+                   (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Component_get_gameObject
+                                        ((Component *)pIVar10->klass,(MethodInfo *)0x0),
+                   pGVar6 == (GameObject *)0x0)) break;
+                iVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                                  (pGVar6,(MethodInfo *)0x0);
+                if (iVar7 == iVar5) {
+                  if (pIVar8[1].monitor <= pMVar9) goto code_?;
+                  if ((pIVar10->klass == (IEnumerable_1_System_Object___Class *)0x0) ||
+                     (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                Component_get_gameObject
+                                          ((Component *)pIVar10->klass,(MethodInfo *)0x0),
+                     pGVar6 == (GameObject *)0x0)) break;
+                  bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                          GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
+                  if (bVar11 != 0) {
                     return 1;
                   }
                 }
-                iVar8 = iVar8 + 1;
+                pMVar9 = pMVar9 + 1;
+                pIVar10 = (IEnumerable_1_System_Object_ *)&pIVar10->monitor;
               } while( true );
             }
           }
@@ -294,9 +247,11 @@ bool Assembly-CSharp.dll::ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnab
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar3 = (*pcVar11)();
-  return bVar3;
+code_?:
+  func_?();
+  pcVar12 = (code *)swi(3);
+  bVar11 = (*pcVar12)();
+  return bVar11;
 }
 
 
@@ -341,162 +296,144 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
-  pWVar1 = (WorldObjectClientRef *)0x0;
-  id = (undefined *)0x0;
-  pWVar2 = (this->fields).tintedWo;
-  if (pWVar2 == (WorldObjectClientRef *)0x0) goto code_?;
-  pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-           WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                     ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar2,
+  pWVar1 = (this->fields).tintedWo;
+  if (pWVar1 == (WorldObjectClientRef *)0x0) goto code_?;
+  method_00 = MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__;
+  pOVar2 = WorldObjectClientRef`1[System::Object]::
+           WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                     ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                       MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                      );
-  if (pMVar3 != (MVRoundCube *)0x0) {
+  if (pOVar2 != (Object *)0x0) {
     pWVar1 = (this->fields).tintedWo;
-    if ((((pWVar1 == (WorldObjectClientRef *)0x0) ||
-         (pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-                   WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                             ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar1,
-                              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                             ), pMVar3 == (MVRoundCube *)0x0)) ||
-        (pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                  Collection_1_VoxelHit__get_Items
-                            ((Collection_1_VoxelHit_ *)pMVar3,(MethodInfo *)0x0),
-        e == (EditorStateMachine *)0x0)) ||
-       (pSVar5 = (e->fields).selectionController, pSVar5 == (SelectionController *)0x0))
+    if (pWVar1 == (WorldObjectClientRef *)0x0) goto code_?;
+    method_00 = (MethodInfo *)&UNK_?;
+    pOVar2 = WorldObjectClientRef`1[System::Object]::
+             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                       ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
+                        MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                       );
+    if (((pOVar2 == (Object *)0x0) || (e == (EditorStateMachine *)0x0)) ||
+       (pSVar3 = (e->fields).selectionController, pSVar3 == (SelectionController *)0x0))
     goto code_?;
-    pWVar1 = (WorldObjectClientRef *)0x0;
-    bVar6 = SelectionController::SelectionController_IsSelected
-                      (pSVar5,(int32_t)pIVar4,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      pWVar7 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
+    bVar4 = SelectionController::SelectionController_IsSelected
+                      (pSVar3,(int32_t)pOVar2[1].klass,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                          ((MethodInfo *)0x0);
-      (this->fields).tintedWo = pWVar7;
+      (this->fields).tintedWo = pWVar1;
+      func_?();
     }
   }
   if (pickSuccess == 0) {
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar8 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (pMVar8,hit._36_4_,(MethodInfo *)0x0);
-    if (pMVar9 != (MVWorldObject *)0x0) {
-      (*pMVar9->klass[1].vtable.IsSingletonObject.methodPtr)();
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (pMVar5,hit._36_4_,(MethodInfo *)0x0);
+    if (pMVar6 != (MVWorldObject *)0x0) {
+      (*(code *)pMVar6->klass[1].vtable.TraverseRecursiveTail.method)
+                (pMVar6,pMVar6->klass[1].vtable.ShallowCopy.methodPtr);
+      ESStateBase_DeTintCurrent(this,(MethodInfo *)0x0);
+      return;
     }
 code_?:
-    hit.point.y = 0.0;
-code_?:
-    ESStateBase_DeTintCurrent(this,(MethodInfo *)hit.point.y);
+    ESStateBase_DeTintCurrent(this,(MethodInfo *)0x0);
     return;
   }
   if ((hit._60_4_ & 1) == 0) goto code_?;
   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
             ((MethodInfo *)0x0);
   if ((hit._60_4_ & 8) == 0) {
-    if ((e == (EditorStateMachine *)0x0) ||
-       (pSVar5 = (e->fields).selectionController, pSVar5 == (SelectionController *)0x0))
-    goto code_?;
-    parentId = SelectionController::SelectionController_get_ParentGroupID(pSVar5,(MethodInfo *)0x0);
-    id = (undefined *)MVGroup::MVGroup_GetParentBelow(parentId,hit._36_4_,(MethodInfo *)0x0);
-    if (id == (undefined *)0xffffffff) {
+    if (e == (EditorStateMachine *)0x0) goto code_?;
+    iVar7 = EditorStateMachine::EditorStateMachine_get_ParentGroupID(e,(MethodInfo *)0x0);
+    id = 0;
+    iVar7 = MVGroup::MVGroup_GetParentBelow(iVar7,hit._36_4_,(MethodInfo *)0x0);
+    if (iVar7 == -1) {
       return;
     }
-    pSVar5 = (e->fields).selectionController;
-    if (pSVar5 == (SelectionController *)0x0) goto code_?;
-    pMVar10 = (MethodInfo *)&UNK_?;
-    bVar6 = SelectionController::SelectionController_IsSelected
-                      (pSVar5,(int32_t)id,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
+    pSVar3 = (e->fields).selectionController;
+    if (pSVar3 == (SelectionController *)0x0) goto code_?;
+    bVar4 = SelectionController::SelectionController_IsSelected(pSVar3,iVar7,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
       return;
     }
-    pWVar1 = (WorldObjectClientRef *)0x0;
-    pMVar8 = ESStateBase_get_WOCM(this,(MethodInfo *)0x0);
-    if (pMVar8 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
   }
   else {
-    pMVar8 = ESStateBase_get_WOCM(this,(MethodInfo *)0x0);
-    if (pMVar8 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    pMVar10 = (MethodInfo *)0x0;
-    pWVar2 = (WorldObjectClientRef *)hit._36_4_;
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    method_00 = (MethodInfo *)0x0;
+    id = hit._36_4_;
   }
-  pWVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                     (pMVar8,(int32_t)pWVar2,pMVar10);
-  if (pWVar2 == (WorldObjectClientRef *)0x0) goto code_?;
-  pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-           WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                     ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar2,
-                      MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                     );
-  if (pMVar3 == (MVRoundCube *)0x0) {
-    return;
-  }
-  pWVar7 = (this->fields).tintedWo;
-  if (pWVar7 == (WorldObjectClientRef *)0x0) goto code_?;
-  pMVar10 = MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__;
-  pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-           WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                     ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar7,
-                      MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                     );
-  if (pMVar3 != (MVRoundCube *)0x0) {
-    pWVar1 = (this->fields).tintedWo;
-    if (pWVar1 == (WorldObjectClientRef *)0x0) goto code_?;
-    pMVar10 = (MethodInfo *)&UNK_?;
-    pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                       ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar1,
+  pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                     (pMVar5,id,method_00);
+  if (pWVar1 != (WorldObjectClientRef *)0x0) {
+    pOVar2 = WorldObjectClientRef`1[System::Object]::
+             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                       ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
-    if (pMVar3 == (MVRoundCube *)0x0) goto code_?;
-    pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pMVar3,(MethodInfo *)0x0);
-    id = &UNK_?;
-    pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                       ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar2,
-                        MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                       );
-    if (pMVar3 == (MVRoundCube *)0x0) goto code_?;
-    pIVar11 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-              Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pMVar3,(MethodInfo *)0x0);
-    if (pIVar4 != pIVar11) goto code_?;
-  }
-  this_00 = (this->fields).tintedWo;
-  if (this_00 != (WorldObjectClientRef *)0x0) {
-    pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                       ((WorldObjectClientRef_1_MVRoundCube_ *)this_00,
-                        MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                       );
-    if (pMVar3 != (MVRoundCube *)0x0) {
+    if (pOVar2 == (Object *)0x0) {
       return;
     }
-    (this->fields).tintedWo = pWVar2;
-    func_?(&stack0xffffffec,0,0x3f4ccccd,0,0x3f800000,0);
-    pWVar2 = (this->fields).tintedWo;
-    if ((pWVar2 != (WorldObjectClientRef *)0x0) &&
-       (pMVar3 = WorldObjectClientRef`1[MVRoundCube]::
-                 WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar2,
+    pWVar8 = (this->fields).tintedWo;
+    if (pWVar8 != (WorldObjectClientRef *)0x0) {
+      pOVar2 = WorldObjectClientRef`1[System::Object]::
+               WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                         ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
+                          MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                         );
+      if (pOVar2 != (Object *)0x0) {
+        pWVar8 = (this->fields).tintedWo;
+        if ((pWVar8 == (WorldObjectClientRef *)0x0) ||
+           (pOVar2 = WorldObjectClientRef`1[System::Object]::
+                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                               ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
+                                MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                               ), pOVar2 == (Object *)0x0)) goto code_?;
+        pOVar9 = pOVar2[1].klass;
+        pOVar2 = WorldObjectClientRef`1[System::Object]::
+                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                           ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                           ), pMVar3 != (MVRoundCube *)0x0)) {
-      func_?(0x43,pMVar3,pWVar7,pMVar10,pWVar1,id);
-      return;
+                           );
+        if (pOVar2 == (Object *)0x0) goto code_?;
+        if (pOVar9 != pOVar2[1].klass) goto code_?;
+      }
+      pWVar8 = (this->fields).tintedWo;
+      if (pWVar8 != (WorldObjectClientRef *)0x0) {
+        pOVar2 = WorldObjectClientRef`1[System::Object]::
+                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                           ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
+                            MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                           );
+        if (pOVar2 != (Object *)0x0) {
+          return;
+        }
+        (this->fields).tintedWo = pWVar1;
+        func_?(&(this->fields).tintedWo,pWVar1);
+        pWVar1 = (this->fields).tintedWo;
+        if ((pWVar1 != (WorldObjectClientRef *)0x0) &&
+           (pOVar2 = WorldObjectClientRef`1[System::Object]::
+                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                               ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
+                                MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                               ), pOVar2 != (Object *)0x0)) {
+          func_?(0x46,pOVar2,_UNK_?,_UNK_?,_UNK_?,_UNK_?);
+          return;
+        }
+      }
     }
   }
 code_?:
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -506,47 +443,24 @@ code_?:
 void Assembly-CSharp.dll::ESStateBase::ESStateBase__ctor(ESStateBase *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                      ((MethodInfo *)0x0);
   (this->fields).tintedWo = pWVar1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  if ((((uint)(TypeInfo__LoggerManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__LoggerManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LoggerManager);
-  }
+  method_00 = (MethodInfo *)&(this->fields).tintedWo;
+  func_?(method_00,pWVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
   type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
   if (this_00 != (LoggerManager *)0x0) {
     pIVar2 = LoggerManager::LoggerManager_GetLogger(this_00,type,(MethodInfo *)0x0);
     (this->fields).logger = pIVar2;
+    func_?();
     return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
-}
-
-
-/* MVWorldObjectClientManager get_WOCM() */
-
-MVWorldObjectClientManager *
-Assembly-CSharp.dll::ESStateBase::ESStateBase_get_WOCM(ESStateBase *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  return pMVar1;
 }
 

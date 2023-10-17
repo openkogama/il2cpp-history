@@ -7,120 +7,67 @@ int32_t Assembly-CSharp.dll::WinningConditionControl::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                   );
+    func_?(&
+                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                   );
+    func_?(&
+                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                   );
     cRam_? = '\x01';
   }
   switch(gameStatType & 0xff) {
   case GameStatCounterType__Enum_Kill:
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar1 != (MVNetworkGame *)0x0) &&
+        (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+        pWVar2 != (WinningConditionManager *)0x0)) &&
+       (pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                 WinningConditionManager_GetSingletonWinnerConditionByType
+                           (pWVar2,
+                            KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                           ), pOVar3 != (Object *)0x0)) {
+      return (int32_t)pOVar3[2].klass;
     }
-    pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (this = (WinningConditionManager *)
-               PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0),
-       this == (WinningConditionManager *)0x0)) goto code_?;
-    gameStatType = (GameStatCounterType__Enum)
-                   KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-    ;
     break;
   default:
     return 0;
   case GameStatCounterType__Enum_Collectible:
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar1 != (MVNetworkGame *)0x0) &&
+        (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+        pWVar2 != (WinningConditionManager *)0x0)) &&
+       (pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                 WinningConditionManager_GetSingletonWinnerConditionByType
+                           (pWVar2,
+                            AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                           ), pOVar3 != (Object *)0x0)) {
+      return (int32_t)pOVar3[2].klass;
     }
-    pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (this = (WinningConditionManager *)
-               PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0),
-       this == (WinningConditionManager *)0x0)) goto code_?;
-    gameStatType = (GameStatCounterType__Enum)
-                   AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-    ;
     break;
   case GameStatCounterType__Enum_OculusKill:
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar1 != (MVNetworkGame *)0x0) &&
+        (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+        pWVar2 != (WinningConditionManager *)0x0)) &&
+       (pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                 WinningConditionManager_GetSingletonWinnerConditionByType
+                           (pWVar2,
+                            OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                           ), pOVar3 != (Object *)0x0)) {
+      return (int32_t)pOVar3[2].klass;
     }
-    pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (this = (WinningConditionManager *)
-               PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0),
-       this == (WinningConditionManager *)0x0)) goto code_?;
-    gameStatType = (GameStatCounterType__Enum)
-                   OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-    ;
   }
-  pTVar2 = MVWorldObject.dll::WinningConditionManager::
-           WinningConditionManager_GetSingletonWinnerConditionByType_6
-                     (this,(MethodInfo *)gameStatType);
-  if (pTVar2 != (TimeAttackFlagReachedClient *)0x0) {
-    return *(int32_t *)(in_stack_3 + 0x10);
-  }
-code_?:
-  uStack4 = 0;
-  uVar5 = func_?();
-  bVar6 = (byte)((ulonglong)uVar5 >> 0x20);
-  bVar7 = *(byte *)uVar5;
-  pbVar8 = unaff_EDI + 1;
-  bVar9 = CARRY1(*pbVar8,unaff_BL) || CARRY1(*pbVar8 + unaff_BL,*unaff_ESI < *unaff_EDI);
-  *pbVar8 = *pbVar8 + unaff_BL + (*unaff_ESI < *unaff_EDI);
-  pbVar8 = (byte *)((int)*(undefined6 *)
-                          CONCAT31((int3)(CONCAT22((short)((ulonglong)uVar5 >> 0x30),
-                                                   CONCAT11(0xc3,bVar6)) >> 8),bVar6 ^ bVar7) +
-                   -0x59efcd3c);
-  bVar7 = *pbVar8;
-  bVar10 = (byte)((ulonglong)uVar5 >> 8);
-  bVar6 = *pbVar8;
-  *pbVar8 = bVar6 + bVar10 + bVar9;
-  *(char *)(extraout_ECX + -0x3c) =
-       *(char *)(extraout_ECX + -0x3c) + bVar10 +
-       (CARRY1(bVar7,bVar10) || CARRY1(bVar6 + bVar10,bVar9));
-  pcVar11 = (code *)swi(3);
-  iVar12 = (*pcVar11)();
-  return iVar12;
+  uVar4 = func_?(&stack0xfffffffc);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
-/* Boolean IsNewScoreBetter(Int32, Int32, GameStatCounterType) */
-
-bool Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_IsNewScoreBetter
-               (int32_t newScore,int32_t oldScore,GameStatCounterType__Enum statType,
-               MethodInfo *method)
-
-{
-  switch(statType & 0xff) {
-  case GameStatCounterType__Enum_Kill:
-  case GameStatCounterType__Enum_Collectible:
-  case GameStatCounterType__Enum_OculusKill:
-    if (oldScore < newScore) {
-      return 1;
-    }
-    break;
-  case GameStatCounterType__Enum_Flag:
-  case GameStatCounterType__Enum_TimeAttackFlag:
-    if (oldScore < 0) {
-      return 1;
-    }
-    if (0 < newScore) {
-      if (newScore < oldScore) {
-        return 1;
-      }
-      if (oldScore == 0) {
-        return 1;
-      }
-    }
-  }
-  return 0;
-}
-
-
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* String MakeIntoScoreText(Int32, GameStatCounterType) */
 
 String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_MakeIntoScoreText
@@ -128,275 +75,177 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral______);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral__0);
     cRam_? = '\x01';
   }
+  pSVar1 = ::StringLiteral__;
   switch(statType & 0xff) {
   default:
-    pSVar1 = (String *)func_?(&score,0);
+    pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&score,(MethodInfo *)0x0);
     return pSVar1;
   case GameStatCounterType__Enum_Flag:
   case GameStatCounterType__Enum_TimeAttackFlag:
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
+    break;
   }
-  pSVar1 = TypeInfo__System__String->static_fields->Empty;
   if (score == 0) {
     return StringLiteral______;
   }
-  iVar2 = (int)((float)score / _UNK_?);
-  iVar3 = (int)((float)(score + (int)((float)score / _UNK_?) * 1000) / _UNK_?);
-  iVar4 = iVar2 % 0x3c;
-  score = iVar2;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  IVar2.m_value =
+       (int32_t)((float)(score + (int)((float)score / _UNK_?) * -1000) / _UNK_?);
+  score = (int32_t)((float)score / _UNK_?);
+  IVar3.m_value = score % 0x3c;
+  iVar4 = func_?((float)score / _UNK_?,0);
+  if (0x3b < iVar4) {
+    func_?((float)iVar4 / _UNK_?,0);
+    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                       (pSVar1,pSVar5,::StringLiteral__,(MethodInfo *)0x0);
   }
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt
-                     ((float)iVar2 / _UNK_?,(MethodInfo *)0x0);
-  if (0x3b < iVar2) {
-    iVar5 = iVar2;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
-    }
-    statType = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt
-                         ((float)iVar2 / _UNK_?,(MethodInfo *)0x0);
-    iVar2 = (int)((ulonglong)((longlong)iVar5 * 0x77777777) >> 0x20) - iVar5;
-    iVar2 = iVar5 + ((iVar2 >> 5) - (iVar2 >> 0x1f)) * 0x3c;
-    arg1 = (Object *)func_?(TypeInfo__System__Int32,&statType);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_1
-                       ((Object *)pSVar1,arg1,(Object *)::StringLiteral__,(MethodInfo *)0x0);
+  pSVar5 = ::StringLiteral__;
+  if (IVar2.m_value < 10) {
+    pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
+  pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0)
+  ;
+  pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar6,(MethodInfo *)0x0);
+  pSVar5 = ::StringLiteral__;
+  if (IVar3.m_value < 10) {
+    pSVar6 = StringLiteral__0;
+    pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar6 = TypeInfo__System__String->static_fields->Empty;
-  if (iVar3 < 10) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar6 = mscorlib.dll::System::String::String_Concat_2
-                       (pSVar6,StringLiteral__0,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0)
+  ;
+  IVar2.m_value = 0;
+  statType = (GameStatCounterType__Enum)
+             mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
+  pSVar5 = ::StringLiteral__;
+  if (IVar2.m_value < 10) {
+    method = (MethodInfo *)0x0;
+    statType = (GameStatCounterType__Enum)StringLiteral__0;
+    score = (int32_t)::StringLiteral__;
+    pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  str1 = (String *)func_?(&stack0xfffffff4,0);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  mscorlib.dll::System::String::String_Concat_2(pSVar6,str1,(MethodInfo *)0x0);
-  pSVar6 = TypeInfo__System__String->static_fields->Empty;
-  if (iVar4 < 10) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar6 = mscorlib.dll::System::String::String_Concat_2
-                       (pSVar6,StringLiteral__0,(MethodInfo *)0x0);
-  }
-  pSVar7 = (String *)func_?(&stack0xfffffff0,0);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  puVar8 = &UNK_?;
-  mscorlib.dll::System::String::String_Concat_2(pSVar6,pSVar7,(MethodInfo *)0x0);
-  pSVar6 = TypeInfo__System__String->static_fields->Empty;
-  if (iVar2 < 10) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pSVar6 = mscorlib.dll::System::String::String_Concat_2
-                       (pSVar6,StringLiteral__0,(MethodInfo *)0x0);
-  }
-  pSVar7 = (String *)func_?();
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?();
-  }
-  mscorlib.dll::System::String::String_Concat_2(pSVar6,pSVar7,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0)
+  ;
+  method = (MethodInfo *)&UNK_?;
+  pSVar5 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
-  bVar9 = (POPCOUNT((uint)values & 0xff) & 1U) == 0;
-  if (values == (String__Array *)0x0) {
-    score = 0;
-    pSVar6 = (String *)func_?();
-    if (bVar9) goto code_?;
-    bVar10 = extraout_DL ^ *(byte *)&pSVar6->klass ^ *(byte *)&pSVar6->klass;
-    if ((POPCOUNT(bVar10) & 1U) == 0) {
-      puVar8 = &pSVar1[0x56a57c].fields.field_0x6;
-      *puVar8 = *puVar8 | extraout_CL;
-      goto code_?;
+  bVar8 = 0;
+  if (values == (String__Array *)0x0) goto code_?;
+  if (pSVar1 == (String *)0x0) {
+code_?:
+    pIStack9 = (Il2CppClass *)pSVar1;
+    func_?();
+    if (pSVar5 != (String *)0x0) {
+      iVar4 = func_?();
+      bVar8 = 0;
+      if (iVar4 == 0) goto code_?;
     }
-    bVar10 = bVar10 ^ *(byte *)&pSVar6->klass;
-    if ((POPCOUNT(bVar10) & 1U) != 0) {
-      bVar10 = bVar10 ^ *(byte *)&pSVar6->klass;
-      if ((POPCOUNT(bVar10) & 1U) != 0) {
-        bVar10 = bVar10 ^ *(byte *)&pSVar6->klass;
-        if ((POPCOUNT(bVar10) & 1U) == 0) {
-          cRam_? = cRam_? + bVar10;
-          *(char *)&pSVar1[0x5e5f08c].monitor = *(char *)&pSVar1[0x5e5f08c].monitor + (char)pSVar6;
-          return pSVar6;
-        }
-        if ((POPCOUNT(bVar10 ^ *(byte *)&pSVar6->klass) & 1U) != 0) {
-          if (cRam_? == '\0') {
-            func_?(_UNK_?,in_ES);
-            cRam_? = '\x01';
-          }
-          *puVar8 = 0;
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?(TypeInfo__MVGameControllerBase,0);
-          }
-          pPVar11 = (PrefabPool *)
-                   MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pPVar11 != (PrefabPool *)0x0) &&
-             (pWVar12 = (WinningConditionManager *)
-                       PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar11,(MethodInfo *)0x0),
-             pWVar12 != (WinningConditionManager *)0x0)) {
-            pTVar13 = MVWorldObject.dll::WinningConditionManager::
-                     WinningConditionManager_GetSingletonWinnerConditionByType_6
-                               (pWVar12,
-                                FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
-                               );
-            if (pTVar13 != (TimeAttackFlagReachedClient *)0x0) {
-              *puVar8 = 2;
-              return (String *)CONCAT31((int3)((uint)pTVar13 >> 8),1);
-            }
-            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-              func_?(TypeInfo__MVGameControllerBase);
-            }
-            pPVar11 = (PrefabPool *)
-                     MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pPVar11 != (PrefabPool *)0x0) &&
-               (pWVar12 = (WinningConditionManager *)
-                         PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar11,(MethodInfo *)0x0),
-               pWVar12 != (WinningConditionManager *)0x0)) {
-              pTVar13 = MVWorldObject.dll::WinningConditionManager::
-                       WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                 (pWVar12,
-                                  TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
-                                 );
-              if (pTVar13 != (TimeAttackFlagReachedClient *)0x0) {
-                *puVar8 = 8;
-                return (String *)CONCAT31((int3)((uint)pTVar13 >> 8),1);
-              }
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?();
-              }
-              pPVar11 = (PrefabPool *)
-                       MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pPVar11 != (PrefabPool *)0x0) &&
-                 (pWVar12 = (WinningConditionManager *)
-                           PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar11,(MethodInfo *)0x0)
-                 , pWVar12 != (WinningConditionManager *)0x0)) {
-                score = (int32_t)
-                        AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                ;
-                pTVar13 = MVWorldObject.dll::WinningConditionManager::
-                         WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                   (pWVar12,
-                                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                                   );
-                if (pTVar13 != (TimeAttackFlagReachedClient *)0x0) {
-                  *puVar8 = 3;
-                  return (String *)CONCAT31((int3)((uint)pTVar13 >> 8),1);
-                }
-                if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                     != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                  method = (MethodInfo *)TypeInfo__MVGameControllerBase;
-                  statType = (GameStatCounterType__Enum)&UNK_?;
-                  func_?();
-                }
-                method = (MethodInfo *)0x0;
-                statType = (GameStatCounterType__Enum)&UNK_?;
-                pPVar11 = (PrefabPool *)
-                         MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if (pPVar11 != (PrefabPool *)0x0) {
-                  statType = (GameStatCounterType__Enum)&UNK_?;
-                  method = (MethodInfo *)pPVar11;
-                  pWVar12 = (WinningConditionManager *)
-                           PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar11,(MethodInfo *)0x0)
-                  ;
-                  if (pWVar12 != (WinningConditionManager *)0x0) {
-                    pTVar13 = MVWorldObject.dll::WinningConditionManager::
-                             WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                       (pWVar12,
-                                        KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                                       );
-                    if (pTVar13 != (TimeAttackFlagReachedClient *)0x0) {
-                      *puVar8 = 1;
-                      return (String *)CONCAT31((int3)((uint)pTVar13 >> 8),1);
-                    }
-                    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr &
-                         0x2000000) != 0) &&
-                       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                      func_?();
-                    }
-                    pPVar11 = (PrefabPool *)
-                             MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                    if ((pPVar11 != (PrefabPool *)0x0) &&
-                       (pWVar12 = (WinningConditionManager *)
-                                 PrefabPool::PrefabPool_get_MVSoundEmitterPrefab
-                                           (pPVar11,(MethodInfo *)0x0),
-                       pWVar12 != (WinningConditionManager *)0x0)) {
-                      pTVar13 = MVWorldObject.dll::WinningConditionManager::
-                               WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                         (pWVar12,
-                                          OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                                         );
-                      if (pTVar13 != (TimeAttackFlagReachedClient *)0x0) {
-                        *puVar8 = 6;
-                        return (String *)CONCAT31((int3)((uint)pTVar13 >> 8),1);
-                      }
-                      return (String *)0x0;
-                    }
-                  }
-                }
-              }
-            }
-          }
-          func_?();
-          pcVar14 = (code *)swi(3);
-          pSVar1 = (String *)(*pcVar14)();
-          return pSVar1;
-        }
-      }
-      goto code_?;
+    func_?();
+    if (::StringLiteral__ != (String *)0x0) {
+      iVar4 = func_?();
+      bVar8 = 0;
+      if (iVar4 == 0) goto code_?;
     }
+    func_?();
+    pSVar5 = (String *)statType;
+    if (statType != GameStatCounterType__Enum_None) {
+      method = (MethodInfo *)&UNK_?;
+      iVar4 = func_?();
+      bVar8 = 0;
+      if (iVar4 == 0) goto code_?;
+    }
+    method = (MethodInfo *)&UNK_?;
+    func_?();
+    if (::StringLiteral__ != (String *)0x0) {
+      method = (MethodInfo *)(values->klass->_0).element_class;
+      statType = (GameStatCounterType__Enum)::StringLiteral__;
+      score = (int32_t)&UNK_?;
+      iVar4 = func_?();
+      bVar8 = 0;
+      if (iVar4 == 0) goto code_?;
+    }
+    pSVar5 = pSVar6;
+    method = (MethodInfo *)::StringLiteral__;
+    statType = GameStatCounterType__Enum_Time_1;
+    score = (int32_t)&UNK_?;
+    func_?();
+    if (pSVar5 == (String *)0x0) {
+code_?:
+      score = (int32_t)pSVar5;
+      func_?();
+      pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+      return pSVar1;
+    }
+    score = (int32_t)(values->klass->_0).element_class;
+    iVar4 = func_?();
+    bVar8 = 0;
+    if (iVar4 != 0) goto code_?;
   }
   else {
-    score = (int32_t)pSVar1;
+    pIStack9 = (values->klass->_0).element_class;
+    iVar4 = func_?();
+    bVar8 = 0;
+    if (iVar4 != 0) goto code_?;
+    pIStack9 = (Il2CppClass *)0x0;
     func_?();
-    score = (int32_t)pSVar1;
     func_?();
-    func_?();
-    func_?();
-    func_?();
-    puVar15 = &UNK_?;
-    func_?();
-    func_?(values,puVar15);
-    str1 = (String *)0x3;
-    func_?(3,puVar15);
-    func_?(values,::StringLiteral__);
-    func_?(4,::StringLiteral__);
 code_?:
-    func_?(values,str1);
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    func_?();
+code_?:
+    method = (MethodInfo *)0x0;
+    statType = (GameStatCounterType__Enum)&UNK_?;
+    statType = func_?();
+    score = (int32_t)&UNK_?;
+    func_?();
   }
-  str1 = (String *)0x5;
+  score = 0;
+  func_?();
+  func_?();
 code_?:
-  func_?(str1);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+  func_?();
+  bVar10 = (byte)pSVar5;
+  *(byte *)&pSVar1->klass = bVar10;
+  ppSVar11 = values[-1].vector + 2;
+  bVar12 = CARRY1(*(byte *)ppSVar11,bVar10) || CARRY1(*(byte *)ppSVar11 + bVar10,bVar8);
+  *(byte *)ppSVar11 = *(byte *)ppSVar11 + bVar10 + bVar8;
+  pbVar13 = (byte *)(extraout_EDX + -0x79);
+  bVar14 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar12);
+  *pbVar13 = *pbVar13 + extraout_CL + bVar12;
+  pbVar13 = (byte *)(extraout_EDX + -0x79);
+  bVar12 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar14);
+  *pbVar13 = *pbVar13 + extraout_CL + bVar14;
+  pbVar13 = (byte *)(extraout_EDX + -0x79);
+  bVar14 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar12);
+  *pbVar13 = *pbVar13 + extraout_CL + bVar12;
+  pbVar13 = (byte *)(extraout_EDX + -0x79);
+  bVar12 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar14);
+  *pbVar13 = *pbVar13 + extraout_CL + bVar14;
+  pbVar13 = (byte *)(extraout_EDX + -0x79);
+  bVar8 = *pbVar13;
+  bVar15 = *pbVar13;
+  *pbVar13 = bVar15 + extraout_CL + bVar12;
+  *(byte *)(values[-1].vector + 2) =
+       *(char *)(values[-1].vector + 2) + bVar10 +
+       (CARRY1(bVar8,extraout_CL) || CARRY1(bVar15 + extraout_CL,bVar12));
+  pcVar16 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar16)();
   return pSVar1;
 }
 
@@ -408,110 +257,90 @@ bool Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_TryGe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                   );
+    func_?(&
+                    FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
+                   );
+    func_?(&
+                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                   );
+    func_?(&
+                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                   );
+    func_?(&
+                    TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
+                   );
     cRam_? = '\x01';
   }
   *(undefined1 *)statType = GameStatCounterType__Enum_None;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pPVar1 != (PrefabPool *)0x0) {
-    pWVar2 = (WinningConditionManager *)
-             PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-    if (pWVar2 != (WinningConditionManager *)0x0) {
-      pTVar3 = MVWorldObject.dll::WinningConditionManager::
-               WinningConditionManager_GetSingletonWinnerConditionByType_6
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+     pWVar2 != (WinningConditionManager *)0x0)) {
+    pOVar3 = MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType
+                       (pWVar2,
+                        FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
+                       );
+    if (pOVar3 != (Object *)0x0) {
+      *(undefined1 *)statType = GameStatCounterType__Enum_Flag;
+      return 1;
+    }
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+       (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+       pWVar2 != (WinningConditionManager *)0x0)) {
+      pOVar3 = MVWorldObject.dll::WinningConditionManager::
+               WinningConditionManager_GetSingletonWinnerConditionByType
                          (pWVar2,
-                          FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
+                          TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
                          );
-      if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-        *(undefined1 *)statType = GameStatCounterType__Enum_Flag;
+      if (pOVar3 != (Object *)0x0) {
+        *(undefined1 *)statType = GameStatCounterType__Enum_TimeAttackFlag;
         return 1;
       }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pPVar1 != (PrefabPool *)0x0) {
-        pWVar2 = (WinningConditionManager *)
-                 PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-        if (pWVar2 != (WinningConditionManager *)0x0) {
-          pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                   WinningConditionManager_GetSingletonWinnerConditionByType_6
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 != (MVNetworkGame *)0x0) &&
+         (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+         pWVar2 != (WinningConditionManager *)0x0)) {
+        pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                 WinningConditionManager_GetSingletonWinnerConditionByType
+                           (pWVar2,
+                            AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                           );
+        if (pOVar3 != (Object *)0x0) {
+          *(undefined1 *)statType = GameStatCounterType__Enum_Collectible;
+          return 1;
+        }
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 != (MVNetworkGame *)0x0) &&
+           (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+           pWVar2 != (WinningConditionManager *)0x0)) {
+          pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                   WinningConditionManager_GetSingletonWinnerConditionByType
                              (pWVar2,
-                              TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
+                              KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
                              );
-          if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-            *(undefined1 *)statType = GameStatCounterType__Enum_TimeAttackFlag;
+          if (pOVar3 != (Object *)0x0) {
+            *(undefined1 *)statType = GameStatCounterType__Enum_Kill;
             return 1;
           }
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pPVar1 = (PrefabPool *)
-                   MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pPVar1 != (PrefabPool *)0x0) {
-            pWVar2 = (WinningConditionManager *)
-                     PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-            if (pWVar2 != (WinningConditionManager *)0x0) {
-              pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                       WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                 (pWVar2,
-                                  AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                                 );
-              if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-                *(undefined1 *)statType = GameStatCounterType__Enum_Collectible;
-                return 1;
-              }
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?();
-              }
-              pPVar1 = (PrefabPool *)
-                       MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pPVar1 != (PrefabPool *)0x0) {
-                pWVar2 = (WinningConditionManager *)
-                         PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-                if (pWVar2 != (WinningConditionManager *)0x0) {
-                  pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                           WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                     (pWVar2,
-                                      KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                                     );
-                  if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-                    *(undefined1 *)statType = GameStatCounterType__Enum_Kill;
-                    return 1;
-                  }
-                  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                       != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                    func_?();
-                  }
-                  pPVar1 = (PrefabPool *)
-                           MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                  if (pPVar1 != (PrefabPool *)0x0) {
-                    pWVar2 = (WinningConditionManager *)
-                             PrefabPool::PrefabPool_get_MVSoundEmitterPrefab
-                                       (pPVar1,(MethodInfo *)0x0);
-                    if (pWVar2 != (WinningConditionManager *)0x0) {
-                      pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                               WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                         (pWVar2,
-                                          OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                                         );
-                      if (pTVar3 == (TimeAttackFlagReachedClient *)0x0) {
-                        return 0;
-                      }
-                      *(undefined1 *)statType = GameStatCounterType__Enum_OculusKill;
-                      return 1;
-                    }
-                  }
-                }
-              }
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar1 != (MVNetworkGame *)0x0) &&
+             (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+             pWVar2 != (WinningConditionManager *)0x0)) {
+            pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                     WinningConditionManager_GetSingletonWinnerConditionByType
+                               (pWVar2,
+                                OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                               );
+            if (pOVar3 == (Object *)0x0) {
+              return 0;
             }
+            *(undefined1 *)statType = GameStatCounterType__Enum_OculusKill;
+            return 1;
           }
         }
       }
@@ -532,110 +361,90 @@ bool Assembly-CSharp.dll::WinningConditionControl::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                   );
+    func_?(&
+                    FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
+                   );
+    func_?(&
+                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                   );
+    func_?(&
+                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                   );
+    func_?(&
+                    TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
+                   );
     cRam_? = '\x01';
   }
   *condition = WinningConditionType__Enum_None;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pPVar1 != (PrefabPool *)0x0) {
-    pWVar2 = (WinningConditionManager *)
-             PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-    if (pWVar2 != (WinningConditionManager *)0x0) {
-      pTVar3 = MVWorldObject.dll::WinningConditionManager::
-               WinningConditionManager_GetSingletonWinnerConditionByType_6
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+     pWVar2 != (WinningConditionManager *)0x0)) {
+    pOVar3 = MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType
+                       (pWVar2,
+                        FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
+                       );
+    if (pOVar3 != (Object *)0x0) {
+      *condition = WinningConditionType__Enum_Flag;
+      return 1;
+    }
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+       (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+       pWVar2 != (WinningConditionManager *)0x0)) {
+      pOVar3 = MVWorldObject.dll::WinningConditionManager::
+               WinningConditionManager_GetSingletonWinnerConditionByType
                          (pWVar2,
-                          FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
+                          TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
                          );
-      if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-        *condition = WinningConditionType__Enum_Flag;
+      if (pOVar3 != (Object *)0x0) {
+        *condition = WinningConditionType__Enum_TimeAttackFlag;
         return 1;
       }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pPVar1 != (PrefabPool *)0x0) {
-        pWVar2 = (WinningConditionManager *)
-                 PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-        if (pWVar2 != (WinningConditionManager *)0x0) {
-          pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                   WinningConditionManager_GetSingletonWinnerConditionByType_6
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 != (MVNetworkGame *)0x0) &&
+         (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+         pWVar2 != (WinningConditionManager *)0x0)) {
+        pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                 WinningConditionManager_GetSingletonWinnerConditionByType
+                           (pWVar2,
+                            AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                           );
+        if (pOVar3 != (Object *)0x0) {
+          *condition = WinningConditionType__Enum_Collectible;
+          return 1;
+        }
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 != (MVNetworkGame *)0x0) &&
+           (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+           pWVar2 != (WinningConditionManager *)0x0)) {
+          pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                   WinningConditionManager_GetSingletonWinnerConditionByType
                              (pWVar2,
-                              TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
+                              KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
                              );
-          if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-            *condition = WinningConditionType__Enum_TimeAttackFlag;
+          if (pOVar3 != (Object *)0x0) {
+            *condition = WinningConditionType__Enum_Kill;
             return 1;
           }
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pPVar1 = (PrefabPool *)
-                   MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pPVar1 != (PrefabPool *)0x0) {
-            pWVar2 = (WinningConditionManager *)
-                     PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-            if (pWVar2 != (WinningConditionManager *)0x0) {
-              pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                       WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                 (pWVar2,
-                                  AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                                 );
-              if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-                *condition = WinningConditionType__Enum_Collectible;
-                return 1;
-              }
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?();
-              }
-              pPVar1 = (PrefabPool *)
-                       MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pPVar1 != (PrefabPool *)0x0) {
-                pWVar2 = (WinningConditionManager *)
-                         PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-                if (pWVar2 != (WinningConditionManager *)0x0) {
-                  pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                           WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                     (pWVar2,
-                                      KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                                     );
-                  if (pTVar3 != (TimeAttackFlagReachedClient *)0x0) {
-                    *condition = WinningConditionType__Enum_Kill;
-                    return 1;
-                  }
-                  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                       != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                    func_?();
-                  }
-                  pPVar1 = (PrefabPool *)
-                           MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                  if (pPVar1 != (PrefabPool *)0x0) {
-                    pWVar2 = (WinningConditionManager *)
-                             PrefabPool::PrefabPool_get_MVSoundEmitterPrefab
-                                       (pPVar1,(MethodInfo *)0x0);
-                    if (pWVar2 != (WinningConditionManager *)0x0) {
-                      pTVar3 = MVWorldObject.dll::WinningConditionManager::
-                               WinningConditionManager_GetSingletonWinnerConditionByType_6
-                                         (pWVar2,
-                                          OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                                         );
-                      if (pTVar3 == (TimeAttackFlagReachedClient *)0x0) {
-                        return 0;
-                      }
-                      *condition = WinningConditionType__Enum_Oculus;
-                      return 1;
-                    }
-                  }
-                }
-              }
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar1 != (MVNetworkGame *)0x0) &&
+             (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+             pWVar2 != (WinningConditionManager *)0x0)) {
+            pOVar3 = MVWorldObject.dll::WinningConditionManager::
+                     WinningConditionManager_GetSingletonWinnerConditionByType
+                               (pWVar2,
+                                OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                               );
+            if (pOVar3 == (Object *)0x0) {
+              return 0;
             }
+            *condition = WinningConditionType__Enum_Oculus;
+            return 1;
           }
         }
       }

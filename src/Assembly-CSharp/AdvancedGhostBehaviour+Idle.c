@@ -9,16 +9,22 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_Id
   if ((ghostBehaviour != (AdvancedGhostBehaviour *)0x0) &&
      (pAVar1 = (ghostBehaviour->fields).weapon, pAVar1 != (AdvancedGhostBodyRotateWeapon *)0x0)) {
     (pAVar1->fields).factor = 0.3;
-    this_00 = (ghostBehaviour->fields).GhostVisualization;
-    if (this_00 != (AdvancedGhostVisualizaton *)0x0) {
-      AdvancedGhostVisualizaton::AdvancedGhostVisualizaton_SetRotationSpeed
-                (this_00,(this->fields).idleRotationSpeed,(MethodInfo *)0x0);
-      return;
+    pAVar2 = (ghostBehaviour->fields).GhostVisualization;
+    if ((pAVar2 != (AdvancedGhostVisualizaton *)0x0) &&
+       (this_00 = (pAVar2->fields).moving, this_00 != (AudioSource *)0x0)) {
+      fVar3 = (this->fields).idleRotationSpeed;
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
+                (this_00,fVar3 * _UNK_?,(MethodInfo *)0x0);
+      pGVar4 = (pAVar2->fields).ghostBody;
+      if (pGVar4 != (GhostBody *)0x0) {
+        (pGVar4->fields).angularMaxRotation = fVar3 * (pGVar4->fields).angularMaxRotationBase;
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -31,7 +37,8 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__AdvancedGhostBehaviour__Alert);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   pMStack_1 = (MVWorldObjectClient *)0x0;
@@ -59,13 +66,9 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_
         }
       }
       else if (pMStack_1 != (MVWorldObjectClient *)0x0) {
-        pIVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items
-                           ((Collection_1_VoxelHit_ *)pMStack_1,(MethodInfo *)0x0);
-        (this_00->fields).currentWoID = (int32_t)pIVar7;
+        (this_00->fields).currentWoID = (pMStack_1->fields)._.id;
         handle = TypeRef__AdvancedGhostBehaviour__Alert;
-        if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
@@ -75,8 +78,8 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pTVar6 = (Type *)(*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  pTVar6 = (Type *)(*pcVar7)();
   return pTVar6;
 }
 

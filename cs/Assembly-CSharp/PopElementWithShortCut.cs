@@ -8,15 +8,30 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PopElementWithShortCut : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
 	private KogamaControls kogamaControl;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Pop_b__2_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public PopElementWithShortCut();
@@ -24,7 +39,5 @@ public class PopElementWithShortCut : MonoBehaviour
 	// Methods
 	private void Update();
 	public void Pop();
-	[CompilerGenerated]
-	private static void _Pop_m__0(IUIStack x, BaseEventData y);
 }
 

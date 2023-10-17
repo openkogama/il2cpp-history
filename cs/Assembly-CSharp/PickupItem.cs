@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class PickupItem : MonoBehaviour
 {
@@ -27,14 +27,12 @@ public abstract class PickupItem : MonoBehaviour
 	private Quaternion originalRot;
 	private Vector3 originalScale;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsHolstered_k__BackingField;
 	[SerializeField]
 	protected Transform center;
 	[SerializeField]
 	protected MeshRenderer[] meshRenderers;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _VariantID_k__BackingField;
 
 	// Properties
@@ -58,7 +56,7 @@ public abstract class PickupItem : MonoBehaviour
 	protected PickupItem();
 
 	// Methods
-	public static GameObject InstantiateAvatarItemType(AvatarItemType type);
+	public static GameObject InstantiateAvatarItemType(AvatarItemType type, int variantId);
 	public void HolsterPickup(Transform targetHolsterTransform);
 	public void UnholsterPickup();
 	public void EnterFirstPersonView(MVCameraBase camera);
@@ -79,5 +77,7 @@ public abstract class PickupItem : MonoBehaviour
 	protected virtual int GetAmmoMultiplier(int defaultAmmo);
 	public virtual void UpdateWithDirection(Vector3 dir);
 	public bool GetAndResetFiredThisFrame();
+	public static GameObject CloneCubeModelInstance(MVCubeModelInstance cmb, bool forceVisible = false);
+	private static GameObject InstantiateMeleeWeapon(int variantId);
 }
 

@@ -6,20 +6,19 @@ void Assembly-CSharp.dll::ItemPurchaseConfirmationPopup::
                (ItemPurchaseConfirmationPopup *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).resultCallback;
-  if (this_00 != (UnityAction_1_System_Boolean_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Boolean]::
-    UnityAction_1_System_Boolean__Invoke
-              (this_00,1,MethodInfo__UnityEngine__Events__UnityAction<bool>__Invoke_bool_);
+  puStack_1 = &stack0xfffffffc;
+  pUVar2 = (this->fields).resultCallback;
+  if (pUVar2 != (UnityAction_1_System_Boolean_ *)0x0) {
+    puStack_1 = (pUVar2->fields)._._.method;
+    uStack_3 = 1;
+    pvStack_4 = (pUVar2->fields)._._.method_code;
+    (*(pUVar2->fields)._._.invoke_impl)();
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar5 = func_?(&pvStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -31,20 +30,19 @@ void Assembly-CSharp.dll::ItemPurchaseConfirmationPopup::
                (ItemPurchaseConfirmationPopup *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).resultCallback;
-  if (this_00 != (UnityAction_1_System_Boolean_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Boolean]::
-    UnityAction_1_System_Boolean__Invoke
-              (this_00,0,MethodInfo__UnityEngine__Events__UnityAction<bool>__Invoke_bool_);
+  puStack_1 = &stack0xfffffffc;
+  pUVar2 = (this->fields).resultCallback;
+  if (pUVar2 != (UnityAction_1_System_Boolean_ *)0x0) {
+    puStack_1 = (pUVar2->fields)._._.method;
+    uStack_3 = 0;
+    pvStack_4 = (pUVar2->fields)._._.method_code;
+    (*(pUVar2->fields)._._.invoke_impl)();
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar5 = func_?(&pvStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::PressurePlateTintObject::PressurePlateTintObject_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Material);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).meshRendererToTint;
@@ -14,20 +14,14 @@ void Assembly-CSharp.dll::PressurePlateTintObject::PressurePlateTintObject_Awake
   pMVar3 = (this->fields).materialCylinderToTint;
   if (pMVar2 == (Material__Array *)0x0) {
 code_?:
-    func_?(0);
-code_?:
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
+    func_?();
   }
   else {
-    if (pMVar3 != (Material *)0x0) {
-      iVar5 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
-      if (iVar5 != 0) goto code_?;
-      goto code_?;
-    }
+    if (pMVar3 == (Material *)0x0) {
 code_?:
-    if (pMVar2->max_length != 0) {
+      if (pMVar2->max_length == 0) goto code_?;
       pMVar2->vector[0] = pMVar3;
+      func_?(pMVar2->vector,pMVar3);
       if (pMVar1 != (MeshRenderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterials
                   ((Renderer *)pMVar1,pMVar2,(MethodInfo *)0x0);
@@ -37,7 +31,9 @@ code_?:
                              ((Renderer *)pMVar1,(MethodInfo *)0x0);
           if (pMVar2 != (Material__Array *)0x0) {
             if (pMVar2->max_length != 0) {
-              (this->fields).materialCylinderToTint = pMVar2->vector[0];
+              pMVar3 = pMVar2->vector[0];
+              (this->fields).materialCylinderToTint = pMVar3;
+              func_?(&(this->fields).materialCylinderToTint,pMVar3);
               return;
             }
             goto code_?;
@@ -46,12 +42,13 @@ code_?:
       }
       goto code_?;
     }
+    iVar4 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
+    if (iVar4 != 0) goto code_?;
   }
-  uVar4 = func_?(0,0);
-  func_?(uVar4);
+  uVar5 = func_?(0);
+  func_?(uVar5);
 code_?:
-  uVar4 = func_?(0,0);
-  func_?(uVar4);
+  func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -65,12 +62,11 @@ void Assembly-CSharp.dll::PressurePlateTintObject::PressurePlateTintObject_OnDes
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   obj = (this->fields).materialCylinderToTint;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -87,24 +83,26 @@ void Assembly-CSharp.dll::PressurePlateTintObject::PressurePlateTintObject_TeamT
 {
   switch(team) {
   case MVTeam__Enum_Blue:
-    (*(code *)(this->klass->vtable).Tint_1.method)
-              (this,0x3c23d70a,0x3f0a3d71,0x3f800000,0,this->klass[1]._0.image);
+    (*(this->klass->vtable).Tint_1.methodPtr)
+              (this,0x3c23d70a,0x3f0a3d71,0x3f800000,0,(this->klass->vtable).Tint_1.method);
     return;
   case MVTeam__Enum_Red:
-    (*(code *)(this->klass->vtable).Tint_1.method)(this,0x3f5ae148,0,0,0,this->klass[1]._0.image);
+    (*(this->klass->vtable).Tint_1.methodPtr)
+              (this,0x3f5ae148,0,0,0,(this->klass->vtable).Tint_1.method);
     return;
   case MVTeam__Enum_Green:
-    (*(code *)(this->klass->vtable).Tint_1.method)(this,0,0x3f27ae14,0,0,this->klass[1]._0.image);
+    (*(this->klass->vtable).Tint_1.methodPtr)
+              (this,0,0x3f27ae14,0,0,(this->klass->vtable).Tint_1.method);
     return;
   case MVTeam__Enum_Yellow:
-    (*(code *)(this->klass->vtable).Tint_1.method)
-              (this,0x3f800000,0x3f800000,0,0,this->klass[1]._0.image);
+    (*(this->klass->vtable).Tint_1.methodPtr)
+              (this,0x3f800000,0x3f800000,0,0,(this->klass->vtable).Tint_1.method);
     return;
   default:
-    (*(code *)(this->klass->vtable).Tint.method)
+    (*(this->klass->vtable).Tint.methodPtr)
               (this,(this->fields).OriginalColor.r,(this->fields).OriginalColor.g,
                (this->fields).OriginalColor.b,(this->fields).OriginalColor.a,
-               (this->klass->vtable).TeamTint.methodPtr);
+               (this->klass->vtable).Tint.method);
     return;
   case MVTeam__Enum_None:
     func_?(4,this,(this->fields).OriginalColor.r,(this->fields).OriginalColor.g,
@@ -120,33 +118,31 @@ void Assembly-CSharp.dll::PressurePlateTintObject::PressurePlateTintObject_Tint
                (PressurePlateTintObject *this,Color c,MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_op_Equality
-                    (c,(this->fields).OriginalColor,(MethodInfo *)0x0);
-  pMStack2 = (this->fields).materialCylinderToTint;
-  if (pMStack2 != (Material *)0x0) {
-    if (bVar1 == 0) {
-      value_00 = (this->fields).teamTexture;
-    }
-    else {
-      value_00 = (this->fields).defaultTexture;
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
-              (pMStack2,value_00,(MethodInfo *)0x0);
-    this_00 = (this->fields).materialCylinderToTint;
-    if (this_00 != (Material *)0x0) {
-      value.g = (float)&UNK_?;
-      value.r = c.r;
-      value.b = (float)pMStack2;
-      value.a = (float)value_00;
-      pTStack3 = value_00;
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                (this_00,value,(MethodInfo *)0x0);
-      return;
-    }
+  fVar1 = c.r - (this->fields).OriginalColor.r;
+  fVar2 = c.g - (this->fields).OriginalColor.g;
+  fVar3 = c.b - (this->fields).OriginalColor.b;
+  fVar4 = c.a - (this->fields).OriginalColor.a;
+  pMVar5 = (this->fields).materialCylinderToTint;
+  if (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3 + fVar4 * fVar4 < _UNK_?) {
+    if (pMVar5 == (Material *)0x0) goto code_?;
+    value = (this->fields).defaultTexture;
   }
+  else {
+    if (pMVar5 == (Material *)0x0) goto code_?;
+    value = (this->fields).teamTexture;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
+            (pMVar5,value,(MethodInfo *)0x0);
+  pMVar5 = (this->fields).materialCylinderToTint;
+  if (pMVar5 != (Material *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+              (pMVar5,c,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -157,17 +153,20 @@ void Assembly-CSharp.dll::PressurePlateTintObject::PressurePlateTintObject__ctor
                (PressurePlateTintObject *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  func_?(&fStack_1,0x3f800000,0x3f800000,0x3f800000,0,0);
-  (this->fields).OriginalColor.r = fStack_1;
-  (this->fields).OriginalColor.g = fStack_2;
-  (this->fields).OriginalColor.b = fStack_3;
-  (this->fields).OriginalColor.a = fStack_4;
-  LockCursorManager3DMode::LockCursorManager3DMode__ctor
-            ((LockCursorManager3DMode *)this,(MethodInfo *)0x0);
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).OriginalColor.r = _UNK_?;
+  (this->fields).OriginalColor.g = fVar3;
+  (this->fields).OriginalColor.b = fVar2;
+  (this->fields).OriginalColor.a = fVar1;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
 }
 

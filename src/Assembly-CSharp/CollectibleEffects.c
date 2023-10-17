@@ -22,101 +22,82 @@ void Assembly-CSharp.dll::CollectibleEffects::CollectibleEffects_Update
                (CollectibleEffects *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  iVar1 = (this->fields).state;
-  if ((iVar1 == 0) || (iVar1 == 3)) {
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+  if (((this->fields).state == 0) || ((this->fields).state == 3)) {
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                       ((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
-    }
-    dVar3 = (double)(fVar2 * _UNK_?);
+    dVar2 = (double)(fVar1 * _UNK_?);
     func_?();
-    fVar2 = (float)dVar3 * _UNK_? + _UNK_?;
-    fVar2 = fVar2 + fVar2;
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    fStack_5 = 0.0;
-    uStack_6 = 0;
-    func_?(&uStack_6,fVar2,fVar2,fVar2,0);
-    if (pTVar4 != (Transform *)0x0) {
-      value.z = fStack_5;
-      value.x = (float)(undefined4)uStack_6;
-      value.y = (float)uStack_6._4_4_;
+    fVar1 = (float)dVar2 * _UNK_? + _UNK_?;
+    fVar1 = fVar1 + fVar1;
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
+      value.y = fVar1;
+      value.x = fVar1;
+      value.z = fVar1;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (pTVar4,value,(MethodInfo *)0x0);
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Vector3);
+                (pTVar3,value,(MethodInfo *)0x0);
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Vector3);
+        cRam_? = '\x01';
       }
-      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                         ((Vector3 *)&stack0xffffffd8,(MethodInfo *)0x0);
-      uVar8 = pVVar7->x;
-      uVar9 = pVVar7->y;
-      fVar2 = pVVar7->z;
-      VStack_10.y = (float)uVar8;
-      VStack_10.z = (float)uVar9;
-      fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+      pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+      fVar1 = (pVVar4->upVector).x;
+      fVar5 = (pVVar4->upVector).y;
+      fVar6 = (pVVar4->upVector).z;
+      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
       ;
-      if (pTVar4 != (Transform *)0x0) {
-        axis.y = VStack_10.z;
-        axis.x = VStack_10.y;
-        axis.z = fVar2;
+      if (pTVar3 != (Transform *)0x0) {
+        axis.y = fVar5;
+        axis.x = fVar1;
+        axis.z = fVar6;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_4
-                  (pTVar4,axis,(this->fields).rotationSpeed * fVar11 * _UNK_?,Space__Enum_Self
+                  (pTVar3,axis,fVar7 * (this->fields).rotationSpeed * _UNK_?,Space__Enum_Self
                    ,(MethodInfo *)0x0);
         return;
       }
     }
   }
   else {
-    if (iVar1 == 1) {
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if (pTVar4 == (Transform *)0x0) goto code_?;
-      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                         (&VStack_10,pTVar4,(MethodInfo *)0x0);
-      uStack_6._0_4_ = pVVar7->x;
-      uStack_6._4_4_ = pVVar7->y;
-      if ((float)(undefined4)uStack_6 <= _UNK_?) {
+    if ((this->fields).state == 1) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar3 == (Transform *)0x0) goto code_?;
+      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                         ((Vector3 *)&stack0xfffffff0,pTVar3,(MethodInfo *)0x0);
+      if (pVVar8->x <= _UNK_?) {
         return;
       }
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      uStack_6 = uStack_6 & 0xffffffff00000000;
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      fVar1 = 0.0;
     }
     else {
-      if (iVar1 != 2) {
+      if ((this->fields).state != 2) {
         return;
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
-                ((MethodInfo *)0x0);
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)this,(MethodInfo *)0x0);
+      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+                        ((MethodInfo *)0x0);
+      fVar1 = (fVar1 - (this->fields).reshowingStartTime) * _UNK_?;
+      fVar1 = fVar1 + fVar1;
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
     }
-    VStack_10.y = 0.0;
-    VStack_10.x = 0.0;
-    VStack_10.z = 0.0;
-    func_?(&VStack_10);
-    if (pTVar4 != (Transform *)0x0) {
-      value_00.y = VStack_10.y;
-      value_00.x = VStack_10.x;
-      value_00.z = VStack_10.z;
+    if (pTVar3 != (Transform *)0x0) {
+      value_00.y = fVar1;
+      value_00.x = fVar1;
+      value_00.z = fVar1;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (pTVar4,value_00,(MethodInfo *)0x0);
+                (pTVar3,value_00,(MethodInfo *)0x0);
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -129,11 +110,10 @@ void Assembly-CSharp.dll::CollectibleEffects::CollectibleEffects__ctor
 {
   (this->fields).rotationSpeed = 0.6;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

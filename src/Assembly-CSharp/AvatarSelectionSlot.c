@@ -12,9 +12,10 @@ void Assembly-CSharp.dll::AvatarSelectionSlot::AvatarSelectionSlot_BuildAvatarSe
               (this_00,(Texture *)texture,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -26,32 +27,43 @@ void Assembly-CSharp.dll::AvatarSelectionSlot::AvatarSelectionSlot_SlotClicked
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__AvatarSelectionSlot___SlotClicked_b__8_0_UnityEngine__EventSystems__IAvatarSlotClicked__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSlotClicked>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSlotClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSlotClicked>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(
-                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSlotClicked>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,
-             MethodInfo__AvatarSelectionSlot___SlotClicked_m__0_UnityEngine__EventSystems__IAvatarSlotClicked__UnityEngine__EventSystems__BaseEventData_
-             ,
-             MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSlotClicked>__EventFunction_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-    func_?();
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  callbackFunction =
+       (ExecuteEvents_EventFunction_1_System_Object_ *)
+       func_?(
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSlotClicked>
+                      );
+  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+               MethodInfo__AvatarSelectionSlot___SlotClicked_b__8_0_UnityEngine__EventSystems__IAvatarSlotClicked__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSlotClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSlotClicked>_
+              );
+    return;
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_00,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSlotClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSlotClicked>_
-            );
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -63,47 +75,48 @@ void Assembly-CSharp.dll::AvatarSelectionSlot::AvatarSelectionSlot_ToggleActive
 
 {
   this_00 = (this->fields).selectionOutline;
-  if ((this_00 == (RectTransform *)0x0) ||
-     (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this_00,(MethodInfo *)0x0), pGVar1 == (GameObject *)0x0)) {
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+  if (this_00 != (RectTransform *)0x0) {
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this_00,(MethodInfo *)0x0);
+    if (pGVar1 != (GameObject *)0x0) {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      (*pcRam_?)();
+      return;
+    }
   }
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)func_?(), pcVar2 == (code *)0x0))
-  {
-    uVar3 = func_?(&UNK_?,0);
-    func_?(uVar3);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-  (*pcRam_?)(0);
+  uVar2 = func_?(&stack0xfffffff8);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
 
-/* Void <SlotClicked>m__0(IAvatarSlotClicked, BaseEventData) */
+/* Void <SlotClicked>b__8_0(IAvatarSlotClicked, BaseEventData) */
 
-void Assembly-CSharp.dll::AvatarSelectionSlot::AvatarSelectionSlot__SlotClicked_m__0
+void Assembly-CSharp.dll::AvatarSelectionSlot::AvatarSelectionSlot__SlotClicked_b__8_0
                (AvatarSelectionSlot *this,IAvatarSlotClicked *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IAvatarSlotClicked;
+    func_?();
     cRam_? = '\x01';
   }
   if (x != (IAvatarSlotClicked *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IAvatarSlotClicked,x,
-                    (this->fields)._BodyIndex_k__BackingField);
+    ppIStack_1 = (IAvatarSlotClicked__Class **)(this->fields)._BodyIndex_k__BackingField;
+    pIStack_2 = x;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IAvatarSlotClicked;
+    func_?(0);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ppIStack_1 = (IAvatarSlotClicked__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

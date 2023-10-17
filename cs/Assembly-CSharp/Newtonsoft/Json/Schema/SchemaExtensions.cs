@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Linq;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Schema
 {
@@ -15,16 +15,16 @@ namespace Newtonsoft.Json.Schema
 	{
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _IsValid_c__AnonStorey0
+		private sealed class __c__DisplayClass0_0
 		{
 			// Fields
-			internal bool valid;
+			public bool valid;
 	
 			// Constructors
-			public _IsValid_c__AnonStorey0();
+			public __c__DisplayClass0_0();
 	
 			// Methods
-			internal void __m__0(object sender, ValidationEventArgs args);
+			internal void _IsValid_b__0(object sender, ValidationEventArgs args);
 		}
 	
 		// Extension methods

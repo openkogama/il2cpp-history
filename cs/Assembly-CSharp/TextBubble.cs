@@ -10,12 +10,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TextBubble : MonoBehaviour
 {
 	// Fields
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	private LayoutGroup bubble;
 	[SerializeField]
@@ -51,6 +51,6 @@ public class TextBubble : MonoBehaviour
 	protected void OnValidate();
 	private float CalculatePivotNearEdgeOffset(float pivot);
 	[CompilerGenerated]
-	private void _OnDestroy_m__0(TextBubbleController x, BaseEventData y);
+	private void _OnDestroy_b__16_0(TextBubbleController x, BaseEventData y);
 }
 

@@ -11,7 +11,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Utilities;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -25,15 +25,11 @@ namespace Newtonsoft.Json.Serialization
 		public const string ArrayValuesPropertyName = "$values";
 		public const string ShouldSerializePrefix = "ShouldSerialize";
 		public const string SpecifiedPostfix = "Specified";
-		private static readonly ThreadSafeStore<ICustomAttributeProvider, Type> JsonConverterTypeCache;
-		private static readonly ThreadSafeStore<Type, Type> AssociatedMetadataTypesCache;
+		private static readonly ThreadSafeStore<ICustomAttributeProvider, System.Type> JsonConverterTypeCache;
+		private static readonly ThreadSafeStore<System.Type, System.Type> AssociatedMetadataTypesCache;
 		private const string MetadataTypeAttributeTypeName = "System.ComponentModel.DataAnnotations.MetadataTypeAttribute, System.ComponentModel.DataAnnotations, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35";
-		private static Type _cachedMetadataTypeAttributeType;
+		private static System.Type _cachedMetadataTypeAttributeType;
 		private static bool? _dynamicCodeGeneration;
-		[CompilerGenerated]
-		private static Func<ICustomAttributeProvider, Type> __f__mg_cache0;
-		[CompilerGenerated]
-		private static Func<Type, Type> __f__mg_cache1;
 	
 		// Properties
 		public static bool DynamicCodeGeneration { get; }
@@ -43,20 +39,20 @@ namespace Newtonsoft.Json.Serialization
 		static JsonTypeReflector();
 	
 		// Methods
-		public static JsonContainerAttribute GetJsonContainerAttribute(Type type);
-		public static JsonObjectAttribute GetJsonObjectAttribute(Type type);
-		public static JsonArrayAttribute GetJsonArrayAttribute(Type type);
-		public static DataContractAttribute GetDataContractAttribute(Type type);
+		public static JsonContainerAttribute GetJsonContainerAttribute(System.Type type);
+		public static JsonObjectAttribute GetJsonObjectAttribute(System.Type type);
+		public static JsonArrayAttribute GetJsonArrayAttribute(System.Type type);
+		public static DataContractAttribute GetDataContractAttribute(System.Type type);
 		public static DataMemberAttribute GetDataMemberAttribute(MemberInfo memberInfo);
-		public static MemberSerialization GetObjectMemberSerialization(Type objectType);
-		private static Type GetJsonConverterType(ICustomAttributeProvider attributeProvider);
-		private static Type GetJsonConverterTypeFromAttribute(ICustomAttributeProvider attributeProvider);
-		public static JsonConverter GetJsonConverter(ICustomAttributeProvider attributeProvider, Type targetConvertedType);
-		public static TypeConverter GetTypeConverter(Type type);
-		private static Type GetAssociatedMetadataType(Type type);
-		private static Type GetAssociateMetadataTypeFromAttribute(Type type);
-		private static Type GetMetadataTypeAttributeType();
-		private static T GetAttribute<T>(Type type)
+		public static MemberSerialization GetObjectMemberSerialization(System.Type objectType);
+		private static System.Type GetJsonConverterType(ICustomAttributeProvider attributeProvider);
+		private static System.Type GetJsonConverterTypeFromAttribute(ICustomAttributeProvider attributeProvider);
+		public static JsonConverter GetJsonConverter(ICustomAttributeProvider attributeProvider, System.Type targetConvertedType);
+		public static TypeConverter GetTypeConverter(System.Type type);
+		private static System.Type GetAssociatedMetadataType(System.Type type);
+		private static System.Type GetAssociateMetadataTypeFromAttribute(System.Type type);
+		private static System.Type GetMetadataTypeAttributeType();
+		private static T GetAttribute<T>(System.Type type)
 			where T : Attribute;
 		private static T GetAttribute<T>(MemberInfo memberInfo)
 			where T : Attribute;

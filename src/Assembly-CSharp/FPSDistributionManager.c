@@ -6,50 +6,54 @@ void Assembly-CSharp.dll::FPSDistributionManager::FPSDistributionManager_OnPlaye
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__FPSDistributionManager__OnPlayerReady__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVAvatar *)0x0) {
-    pMVar1 = MVAvatar::MVAvatar_get_Shield(this_00,(MethodInfo *)0x0);
-    if (pMVar1 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-      pDVar2 = *(Delegate **)&(pMVar1->fields)._._.writeThrough;
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Action);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)this,MethodInfo__FPSDistributionManager__OnPlayerReady__,
-                 (MethodInfo *)0x0);
-      pDStack3 =
-           mscorlib.dll::System::Delegate::Delegate_Remove
-                     (pDVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-      pDVar2 = (Delegate *)0x0;
-      if (pDStack3 == (Delegate *)0x0) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = (pMVar1->fields).playerContainer;
+    if (pMVar2 != (MVPlayerContainer *)0x0) {
+      pAVar3 = (pMVar2->fields).OnLocalPlayerReady;
+      this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_00,(Object *)this,MethodInfo__FPSDistributionManager__OnPlayerReady__,
+                   (MethodInfo *)0x0);
+        pAVar3 = (Action *)
+                 mscorlib.dll::System::Delegate::Delegate_Remove
+                           ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+        if (pAVar3 == (Action *)0x0) {
+          (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
 code_?:
-        *(Delegate **)&(pMVar1->fields)._._.writeThrough = pDVar2;
-        (this->fields).calculatingFPS = 1;
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (this->fields).startTime = fVar4;
-        return;
+          func_?();
+          (this->fields).calculatingFPS = 1;
+          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+          (this->fields).startTime = fVar4;
+          return;
+        }
+        pAVar5 = (Action *)0x0;
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAVar5 = pAVar3;
+        }
+        if (pAVar5 != (Action *)0x0) {
+          (pMVar2->fields).OnLocalPlayerReady = pAVar5;
+          pAVar5 = (Action *)0x0;
+          if (pAVar3->klass == TypeInfo__System__Action) {
+            pAVar5 = pAVar3;
+          }
+          if (pAVar5 != (Action *)0x0) goto code_?;
+        }
+        goto code_?;
       }
-      if ((Action__Class *)pDStack3->klass == TypeInfo__System__Action) {
-        pDVar2 = pDStack3;
-      }
-      if (pDVar2 != (Delegate *)0x0) goto code_?;
-      goto code_?;
     }
   }
   func_?();
-  pDStack3 = extraout_ECX;
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -61,95 +65,105 @@ void Assembly-CSharp.dll::FPSDistributionManager::FPSDistributionManager_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__FPSDistributionManager__OnPlayerReady__);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<int>__Enqueue_int_);
     cRam_? = '\x01';
   }
-  item = (SmoothPhysicsMovement_Package *)0x0;
+  item = 0;
   do {
-    this_00 = (Queue_1_SmoothPhysicsMovement_Package_ *)(this->fields).intervals;
-    if (this_00 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-    System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-    Queue_1_SmoothPhysicsMovement_Package__Enqueue
+    this_00 = (this->fields).intervals;
+    if (this_00 == (Queue_1_System_Int32_ *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Queue`1[System::Int32]::
+    Queue_1_System_Int32__Enqueue
               (this_00,item,MethodInfo__System__Collections__Generic__Queue<int>__Enqueue_int_);
-    item = (SmoothPhysicsMovement_Package *)((int)&item->klass + 2);
-  } while ((int)item < 0x12);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
-    this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-    if (this_02 != (MVLocalPlayer *)0x0) {
-      bVar1 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_02,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        pMVar2 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar2 != (MVAvatar *)0x0) {
-          pMVar3 = MVAvatar::MVAvatar_get_Shield(pMVar2,(MethodInfo *)0x0);
-          if (pMVar3 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-            pDVar4 = *(Delegate **)&(pMVar3->fields)._._.writeThrough;
-            pUVar5 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)func_?(TypeInfo__System__Action);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (pUVar5,(Object *)this,MethodInfo__FPSDistributionManager__OnPlayerReady__,
+    item = item + 2;
+  } while (item < 0x12);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+    this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
+    if (this_01 != (MVLocalPlayer *)0x0) {
+      bVar3 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_01,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 != (MVNetworkGame *)0x0) &&
+           (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+          pAVar4 = (pMVar2->fields).OnLocalPlayerReady;
+          pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+          if (pNVar5 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (pNVar5,(Object *)this,MethodInfo__FPSDistributionManager__OnPlayerReady__,
                        (MethodInfo *)0x0);
-            pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                               (pDVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-            pDVar4 = (Delegate *)0x0;
-            if (pDVar6 != (Delegate *)0x0) {
-              if ((Action__Class *)pDVar6->klass == TypeInfo__System__Action) {
-                pDVar4 = pDVar6;
-              }
-              if (pDVar4 == (Delegate *)0x0) goto code_?;
+            pAVar4 = (Action *)
+                     mscorlib.dll::System::Delegate::Delegate_Combine
+                               ((Delegate *)pAVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
+            if (pAVar4 == (Action *)0x0) {
+              (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
+              func_?();
+              return;
             }
-            *(Delegate **)&(pMVar3->fields)._._.writeThrough = pDVar4;
-            return;
+            pAVar6 = (Action *)0x0;
+            if (pAVar4->klass == TypeInfo__System__Action) {
+              pAVar6 = pAVar4;
+            }
+            if (pAVar6 != (Action *)0x0) {
+              (pMVar2->fields).OnLocalPlayerReady = pAVar6;
+              pAVar6 = (Action *)0x0;
+              if (pAVar4->klass == TypeInfo__System__Action) {
+                pAVar6 = pAVar4;
+              }
+              if (pAVar6 != (Action *)0x0) {
+                func_?();
+                return;
+              }
+            }
+            goto code_?;
           }
         }
       }
       else {
         if (cRam_? == '\0') {
-          func_?(_UNK_?);
+          func_?();
+          func_?();
           cRam_? = '\x01';
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        pMVar2 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar2 != (MVAvatar *)0x0) {
-          pMVar3 = MVAvatar::MVAvatar_get_Shield(pMVar2,(MethodInfo *)0x0);
-          if (pMVar3 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-            pDVar4 = *(Delegate **)&(pMVar3->fields)._._.writeThrough;
-            pUVar5 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)func_?(TypeInfo__System__Action);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (pUVar5,(Object *)this,MethodInfo__FPSDistributionManager__OnPlayerReady__,
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 != (MVNetworkGame *)0x0) &&
+           (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+          pAVar4 = (pMVar2->fields).OnLocalPlayerReady;
+          pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+          if (pNVar5 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (pNVar5,(Object *)this,MethodInfo__FPSDistributionManager__OnPlayerReady__,
                        (MethodInfo *)0x0);
-            pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
-                               (pDVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-            pDVar4 = (Delegate *)0x0;
-            if (pDVar6 == (Delegate *)0x0) {
+            pAVar4 = (Action *)
+                     mscorlib.dll::System::Delegate::Delegate_Remove
+                               ((Delegate *)pAVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
+            if (pAVar4 == (Action *)0x0) {
+              (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
 code_?:
-              *(Delegate **)&(pMVar3->fields)._._.writeThrough = pDVar4;
+              func_?();
               (this->fields).calculatingFPS = 1;
               fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                                 ((MethodInfo *)0x0);
               (this->fields).startTime = fVar7;
               return;
             }
-            if ((Action__Class *)pDVar6->klass == TypeInfo__System__Action) {
-              pDVar4 = pDVar6;
+            pAVar6 = (Action *)0x0;
+            if (pAVar4->klass == TypeInfo__System__Action) {
+              pAVar6 = pAVar4;
             }
-            if (pDVar4 != (Delegate *)0x0) goto code_?;
+            if (pAVar6 != (Action *)0x0) {
+              (pMVar2->fields).OnLocalPlayerReady = pAVar6;
+              pAVar6 = (Action *)0x0;
+              if (pAVar4->klass == TypeInfo__System__Action) {
+                pAVar6 = pAVar4;
+              }
+              if (pAVar6 != (Action *)0x0) goto code_?;
+            }
             goto code_?;
           }
         }
@@ -157,7 +171,7 @@ code_?:
     }
   }
 code_?:
-  func_?(0);
+  func_?();
 code_?:
   func_?();
   pcVar8 = (code *)swi(3);
@@ -173,7 +187,11 @@ void Assembly-CSharp.dll::FPSDistributionManager::FPSDistributionManager_Update
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<int>__Dequeue__);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<int>__Peek__);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<int>__get_Count__);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&StringLiteral_FPSMeasuredAtMinute);
     cRam_? = '\x01';
   }
   if ((this->fields).calculatingFPS == 0) {
@@ -181,50 +199,41 @@ void Assembly-CSharp.dll::FPSDistributionManager::FPSDistributionManager_Update
   }
   pQVar1 = (this->fields).intervals;
   if (pQVar1 != (Queue_1_System_Int32_ *)0x0) {
-    pIVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pQVar1,
-                        MethodInfo__System__Collections__Generic__Queue<int>__get_Count__);
-    if ((int)pIVar2 < 1) {
+    if ((pQVar1->fields)._size < 1) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                 ((Behaviour *)this,0,(MethodInfo *)0x0);
       return;
     }
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    pQVar1 = (this->fields).intervals;
-    if (pQVar1 != (Queue_1_System_Int32_ *)0x0) {
-      fVar4 = (this->fields).startTime;
-      iVar5 = System.dll::System::Collections::Generic::Queue`1[System::Int32]::
-              Queue_1_System_Int32__Peek
-                        (pQVar1,MethodInfo__System__Collections__Generic__Queue<int>__Peek__);
-      if ((float)(iVar5 * 0x3c) < fVar3 - fVar4) {
-        this_00 = (Queue_1_SmoothPhysicsMovement_Package_ *)(this->fields).intervals;
-        if (this_00 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-        System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-        Queue_1_SmoothPhysicsMovement_Package__Dequeue
-                  (this_00,MethodInfo__System__Collections__Generic__Queue<int>__Dequeue__);
-        pSVar6 = (String *)func_?();
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    this_00 = (Queue_1_System_Object_ *)(this->fields).intervals;
+    if (this_00 != (Queue_1_System_Object_ *)0x0) {
+      fVar3 = (this->fields).startTime;
+      pOVar4 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+               Queue_1_System_Object__Peek
+                         (this_00,MethodInfo__System__Collections__Generic__Queue<int>__Peek__);
+      if ((float)((int)pOVar4 * 0x3c) < fVar2 - fVar3) {
+        pQVar1 = (this->fields).intervals;
+        if (pQVar1 == (Queue_1_System_Int32_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Queue`1[System::Int32]::
+        Queue_1_System_Int32__Dequeue
+                  (pQVar1,MethodInfo__System__Collections__Generic__Queue<int>__Dequeue__);
+        pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+                           ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+        pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral_FPSMeasuredAtMinute,pSVar5,(MethodInfo *)0x0);
+        fVar2 = FpsCounter::FpsCounter_get_Fps((MethodInfo *)0x0);
+        if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pSVar6 = mscorlib.dll::System::String::String_Concat_2
-                           (StringLiteral_FPSMeasuredAtMinute,pSVar6,(MethodInfo *)0x0);
-        fVar3 = FpsCounter::FpsCounter_get_Fps((MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
-          func_?();
-        }
-        StatHatWrapper::StatHatWrapper_Value_1(pSVar6,fVar3,(MethodInfo *)0x0);
+        StatHatWrapper::StatHatWrapper_Value_1(pSVar5,fVar2,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -236,24 +245,26 @@ void Assembly-CSharp.dll::FPSDistributionManager::FPSDistributionManager__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<int>__Queue__);
+    func_?(&TypeInfo__System__Collections__Generic__Queue<int>);
     cRam_? = '\x01';
   }
-  this_00 = (Queue_1_SmoothPhysicsMovement_Package_ *)
+  this_00 = (Queue_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__Queue<int>);
-  System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-  Queue_1_SmoothPhysicsMovement_Package___ctor
-            (this_00,MethodInfo__System__Collections__Generic__Queue<int>__Queue__);
-  (this->fields).intervals = (Queue_1_System_Int32_ *)this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (Queue_1_System_Int32_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+    Stack_1_System_Object___ctor
+              ((Stack_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Queue<int>__Queue__);
+    (this->fields).intervals = this_00;
+    func_?(&(this->fields).intervals,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

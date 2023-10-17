@@ -7,29 +7,40 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.VehicleEnergy;
+using WorldObjectTypes.VehiclesBase.Shared;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVVehicleBase : MVBlueprintBase, IBulletImpactVisualizer
 {
 	// Fields
 	protected MVWorldObjectDocumentationType documentationType;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsInSpawner_k__BackingField;
 	public MVRuntimeDataVariable IsVehicleDead;
 	protected VehicleSeatManager seatManager;
 	protected LocalObjectsBase localObjects;
 	protected VehicleVisualizationBase visualization;
 	protected VehicleBaseObject vehicleBaseObject;
+	[CompilerGenerated]
+	private readonly VehicleEnergyContainerConfig _VehicleEnergyContainerConfig_k__BackingField;
 
 	// Properties
 	public override MVWorldObjectDocumentationType DocumentationType { get; }
 	public virtual bool IsDead { get; }
 	public virtual bool IsInSpawner { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	protected VehicleEnergyContainerConfig VehicleEnergyContainerConfig { [CompilerGenerated] get; }
 	public VehicleVisualizationBase Visualization { get; }
 
 	// Nested types
+	protected struct HealthChangeAffects
+	{
+		// Fields
+		public bool detachAvatar;
+		public bool causeVehicleDestruction;
+	}
+
 	protected abstract class LocalObjectsBase : ILocalObject
 	{
 		// Fields
@@ -45,16 +56,16 @@ public abstract class MVVehicleBase : MVBlueprintBase, IBulletImpactVisualizer
 
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _OnHealthChange_c__AnonStorey0
+		private sealed class __c__DisplayClass15_0
 		{
 			// Fields
-			internal MVAvatarLocal localAvatar;
+			public MVAvatarLocal localAvatar;
 
 			// Constructors
-			public _OnHealthChange_c__AnonStorey0();
+			public __c__DisplayClass15_0();
 
 			// Methods
-			internal void __m__0(MVWorldObjectClient wo);
+			internal void _OnHealthChange_g__DetachLocalAvatar_0(MVWorldObjectClient wo);
 		}
 
 		// Constructors
@@ -69,12 +80,16 @@ public abstract class MVVehicleBase : MVBlueprintBase, IBulletImpactVisualizer
 		public abstract InputToInGameAction Update(InputToInGameAction interactionInput);
 		public abstract IInputToPlayerMovement FixedUpdate(IInputToPlayerMovement movementMap);
 		protected void OnHealthChange(object v);
+		public abstract void RefillEnergy(VehicleEnergyRefill vehicleEnergyRefill);
+		public abstract bool UsesEnergy();
+		public abstract void RollbackVehicleRefillEnergyPrediction(int spawnerId);
 	}
 
 	// Constructors
 	protected MVVehicleBase(Dictionary<object, object> data, ObjectPrefab vehiclePrefab, Dictionary<int, MVWorldObjectClient> worldObjects);
 
 	// Methods
+	protected abstract VehicleEnergyContainerConfig SetupVehicleEnergyContainerConfig();
 	public override void OnDataUpdate();
 	public override void Initialize();
 	public void LeaveLocal();
@@ -82,5 +97,11 @@ public abstract class MVVehicleBase : MVBlueprintBase, IBulletImpactVisualizer
 	protected abstract LocalObjectsBase CreateLocalObjects(int seatID, MVAvatarLocal vehicleUser);
 	protected virtual void VehicleEntered(MVAvatar vehicleUser, int seatID);
 	public void VisualizeBulletImpact(VoxelHit voxelHit, Ray lineOfFire, int shooterActorNumber, float damage);
+	protected virtual HealthChangeAffects HealthChangeResult(float health);
+	public MVAvatar GetDriver();
+	public void RefillEnergy(VehicleEnergyRefill vehicleEnergyRefill);
+	public bool UsesEnergy();
+	public void RollbackRefillEnergyPrediction(int spawnerId);
+	public bool IsPlayerInVehicle(int playerId);
 }
 

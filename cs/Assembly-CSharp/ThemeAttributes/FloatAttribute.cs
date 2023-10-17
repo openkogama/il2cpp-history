@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using ThemeSettings;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace ThemeAttributes
 {
@@ -20,7 +20,7 @@ namespace ThemeAttributes
 		private float min;
 		[SerializeField]
 		private float max;
-		[Header]
+		[Header("Dependencies")]
 		[SerializeField]
 		private Setter sliderPrefab;
 	

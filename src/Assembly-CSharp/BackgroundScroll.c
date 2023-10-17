@@ -5,35 +5,28 @@ void Assembly-CSharp.dll::BackgroundScroll::BackgroundScroll_Awake
                (BackgroundScroll *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  pRVar5 = (this->fields).image;
-  if (pRVar5 != (RawImage *)0x0) {
-    pRVar6 = UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_get_uvRect
-                       (&RStack_7,pRVar5,(MethodInfo *)0x0);
-    RStack_7.m_Width = (this->fields).Scale.x;
-    fStack_1 = pRVar6->m_XMin;
-    fStack_2 = pRVar6->m_YMin;
-    fStack_3 = pRVar6->m_Width;
-    fStack_4 = pRVar6->m_Height;
-    RStack_7.m_Height = (this->fields).Scale.y;
-    func_?(&fStack_1,RStack_7.m_Width,RStack_7.m_Height,0);
-    pRVar5 = (this->fields).image;
-    if (pRVar5 != (RawImage *)0x0) {
-      value.m_YMin = fStack_2;
-      value.m_XMin = fStack_1;
-      value.m_Width = fStack_3;
-      value.m_Height = fStack_4;
+  pRVar1 = (this->fields).image;
+  if (pRVar1 != (RawImage *)0x0) {
+    fVar2 = (pRVar1->fields).m_UVRect.m_XMin;
+    fVar3 = (pRVar1->fields).m_UVRect.m_YMin;
+    fVar4 = (pRVar1->fields).m_UVRect.m_Width;
+    fVar5 = (pRVar1->fields).m_UVRect.m_Height;
+    UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_set_size
+              ((Rect *)&stack0xffffffe4,(this->fields).Scale,(MethodInfo *)0x0);
+    pRVar1 = (this->fields).image;
+    if (pRVar1 != (RawImage *)0x0) {
+      value.m_YMin = fVar3;
+      value.m_XMin = fVar2;
+      value.m_Width = fVar4;
+      value.m_Height = fVar5;
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_uvRect
-                (pRVar5,value,(MethodInfo *)0x0);
+                (pRVar1,value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -44,48 +37,38 @@ void Assembly-CSharp.dll::BackgroundScroll::BackgroundScroll_Update
                (BackgroundScroll *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pRVar1 = (this->fields).image;
   if (pRVar1 != (RawImage *)0x0) {
-    pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_get_uvRect
-                       (&RStack_3,pRVar1,(MethodInfo *)0x0);
-    fVar4 = pRVar2->m_YMin;
-    fVar5 = pRVar2->m_Width;
-    fVar6 = pRVar2->m_Height;
-    VVar7 = (Vector2)func_?(&stack0xffffffd8,0);
-    RStack_3.m_Width = (this->fields).Direction.x;
-    RStack_3.m_Height = (this->fields).Direction.y;
-    fStack_8 = (this->fields).Speed;
-    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Vector2->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector2->_1).cctor_started == 0)) {
-      func_?();
-    }
-    VVar10.y = RStack_3.m_Height;
-    VVar10.x = RStack_3.m_Width;
-    VVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_op_Multiply_1
-                      (VVar10,fVar9 * fStack_8,(MethodInfo *)0x0);
-    VVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_op_Addition
-                      (VVar7,VVar10,(MethodInfo *)0x0);
-    uVar11 = 0;
-    func_?(&stack0xffffffd8,VVar7.x,VVar7.y);
+    fVar2 = (pRVar1->fields).m_UVRect.m_XMin;
+    fVar3 = (pRVar1->fields).m_UVRect.m_YMin;
+    fVar4 = (pRVar1->fields).m_UVRect.m_Width;
+    fVar5 = (pRVar1->fields).m_UVRect.m_Height;
+    VVar6 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_get_min
+                      ((Rect *)&stack0xffffffdc,(MethodInfo *)0x0);
+    fVar7 = (this->fields).Direction.x;
+    fVar8 = (this->fields).Direction.y;
+    fVar9 = (this->fields).Speed;
+    fVar10 = VVar6.x;
+    fVar11 = VVar6.y;
+    fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    fVar12 = fVar12 * fVar9;
+    mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
+              ((ValueTuple_2_Single_Single_ *)&stack0xffffffdc,fVar10 + fVar7 * fVar12,
+               fVar11 + fVar8 * fVar12,(MethodInfo *)0x0);
     pRVar1 = (this->fields).image;
     if (pRVar1 != (RawImage *)0x0) {
-      value.m_YMin = fVar4;
-      value.m_XMin = (float)uVar11;
-      value.m_Width = fVar5;
-      value.m_Height = fVar6;
+      value.m_YMin = fVar3;
+      value.m_XMin = fVar2;
+      value.m_Width = fVar4;
+      value.m_Height = fVar5;
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_uvRect
                 (pRVar1,value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -96,16 +79,18 @@ void Assembly-CSharp.dll::BackgroundScroll::BackgroundScroll__ctor
                (BackgroundScroll *this,MethodInfo *method)
 
 {
-  uStack_1 = 0;
   (this->fields).Speed = 1.0;
-  func_?(&uStack_1,0x3f800000,0x3e4ccccd,0);
-  (this->fields).Direction.x = (float)uStack_1;
-  (this->fields).Direction.y = uStack_1._4_4_;
-  uStack_2 = 0;
-  func_?(&uStack_2,0x3f800000,0x3ecccccd,0);
-  (this->fields).Scale.x = (float)uStack_2;
-  (this->fields).Scale.y = uStack_2._4_4_;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  (this->fields).Direction.x = 1.0;
+  (this->fields).Direction.y = 0.2;
+  (this->fields).Scale.x = 1.0;
+  (this->fields).Scale.y = 0.4;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
 }
 

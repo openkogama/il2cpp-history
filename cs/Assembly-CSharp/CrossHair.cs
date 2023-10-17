@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CrossHair : MonoBehaviour, IGUICrossHair
 {
@@ -29,7 +29,6 @@ public class CrossHair : MonoBehaviour, IGUICrossHair
 	private bool isFillOn;
 	private float timer;
 	private bool hitEffectActive;
-	private const string infinity = "\uFFFD";
 
 	// Properties
 	public bool Visible { get; set; }

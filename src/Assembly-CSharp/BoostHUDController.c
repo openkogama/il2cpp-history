@@ -10,124 +10,156 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_CreateActiveBoo
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
+                   );
+    func_?(&
+                    UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image__UnityEngine__Transform__bool_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                   );
     cRam_? = '\x01';
   }
-  func_?();
   pLVar4 = (this->fields).currentBoosts;
   if (pLVar4 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    index = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-            Serialization::JsonProperty]::
-            Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                      ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar4,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
-                      );
-    while (index = (Object *)((int)&index[-1].monitor + 3), -1 < (int)index) {
-      pLVar4 = (this->fields).currentBoosts;
-      if (pLVar4 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-      obj = (Object_1 *)
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-            IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                      ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar4,(int32_t)index
-                       ,
+    iVar5 = (pLVar4->fields)._size;
+    while (iVar5 = iVar5 + -1, -1 < iVar5) {
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).currentBoosts;
+      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      goto code_?;
+      obj = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      (this_00,iVar5,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
                       );
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        unaff_ESI = (MVGameControllerBase__Class *)&UNK_?;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(obj,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)obj,(MethodInfo *)0x0);
     }
-    this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).currentBoosts;
-    if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-      List_1_UnityEngine_UIVertex__Clear
-                (this_00,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__);
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        unaff_ESI = TypeInfo__MVGameControllerBase;
-        func_?();
+    pLVar4 = (this->fields).currentBoosts;
+    if (pLVar4 != (List_1_UnityEngine_GameObject_ *)0x0) {
+      iVar5 = (pLVar4->fields)._size;
+      piVar6 = &(pLVar4->fields)._version;
+      *piVar6 = *piVar6 + 1;
+      (pLVar4->fields)._size = 0;
+      if (0 < iVar5) {
+        mscorlib.dll::System::Array::Array_Clear
+                  ((Array *)(pLVar4->fields)._items,0,iVar5,(MethodInfo *)0x0);
       }
-      this_02 = (PrefabPool *)
-                MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-      if (this_02 != (PrefabPool *)0x0) {
-        method_01 = (MethodInfo *)&UNK_?;
-        this_03 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                            (this_02,(MethodInfo *)0x0);
-        if ((this_03 != (ObjectiveArrow *)0x0) &&
-           (this_04 = BoostController::BoostController_GetActiveBoosts
-                                ((BoostController *)this_03,(MethodInfo *)unaff_ESI),
-           this_04 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0)) {
-          mscorlib.dll::System::Collections::Generic::
-          Dictionary`2[TKey,TValue]+ValueCollection[ChatCommand,System::Object]::
-          Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object__GetEnumerator
-                    ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_ChatCommand_System_Object_
-                      *)&stack0xffffffb8,
-                     (Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object_ *)this_04,
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
-                    );
-          uStack_1 = 0;
+      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+      if ((pMVar7 != (MVLocalPlayer *)0x0) &&
+         (pBVar8 = (pMVar7->fields).boostController, pBVar8 != (BoostController *)0x0)) {
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                         );
+          cRam_? = '\x01';
+        }
+        this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                   *)(pBVar8->fields).activeBoosts;
+        if ((this_01 !=
+             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+             0x0) && (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                                          (this_01,
+                                           MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                                          ),
+                     this_03 !=
+                     (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                      *)0x0)) {
+          pDVar9 = mscorlib.dll::System::Collections::Generic::
+                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+                   Regex+CachedCodeEntryKey,System::Object]::
+                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                             ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                               *)&stack0xffffffd4,this_03,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                             );
+          method_00 = (MethodInfo *)pDVar9->_version;
+          this_05 = (HorizontalLayoutGroup *)pDVar9->_currentValue;
+          uStack_1 = 1;
           while( true ) {
-            cVar5 = func_?();
-            if (cVar5 == '\0') {
+            bVar10 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                    Object,System::Object]::
+                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                                *)&stack0xffffffc4,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                              );
+            if (bVar10 == 0) {
               uStack_1 = 0xffffffff;
-              func_?();
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&stack0xffffffc4,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                         ,method_00);
               *unaff_FS_OFFSET = uStack_3;
               return;
             }
-            this_05 = (Collection_1_VoxelHit_ *)func_?();
-            this_08 = (MethodInfo *)(this->fields).boostImageController;
-            if ((this_05 == (Collection_1_VoxelHit_ *)0x0) ||
-               (type = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items(this_05,in_stack_6),
-               this_08 == (MethodInfo *)0x0)) break;
+            this_02 = (this->fields).boostImageController;
+            if ((this_05 == (HorizontalLayoutGroup *)0x0) ||
+               (this_02 == (BoostImageController *)0x0)) break;
             original = BoostImageController::BoostImageController_GetBoostVisualization
-                                 ((BoostImageController *)this_08,(BoostType__Enum)type,
-                                  in_stack_7);
-            in_stack_6 = this_08;
-            method_00 = in_stack_8;
-            if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-              func_?(TypeInfo__UnityEngine__Object);
-              in_stack_6 = this_08;
-              method_00 = in_stack_8;
+                                 (this_02,(BoostType__Enum)(this_05->fields)._._._._._._._,
+                                  (MethodInfo *)0x0);
+            this_05 = (this->fields).content;
+            if (this_05 == (HorizontalLayoutGroup *)0x0) break;
+            method_00 = (MethodInfo *)&UNK_?;
+            parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)this_05,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
             }
-            this_06 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                                ((XpBoostParticlePreviewer *)original,
-                                 UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image_
+            this_04 = (Component *)
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                                ((Object *)original,parent,0,
+                                 UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image__UnityEngine__Transform__bool_
                                 );
-            in_stack_8 = (MethodInfo *)(this->fields).currentBoosts;
-            if ((this_06 == (XpBoostParticlePreviewer *)0x0) ||
-               (item = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                       Component_1_get_gameObject((Component_1 *)this_06,method_00),
-               in_stack_8 == (MethodInfo *)0x0)) break;
-            mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-            List_1_UIPushOption__Add
-                      ((List_1_UIPushOption_ *)in_stack_8,(UIPushOption__Enum)item,
+            pLVar4 = (this->fields).currentBoosts;
+            if ((this_04 == (Component *)0x0) ||
+               (item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 (this_04,(MethodInfo *)0x0),
+               pLVar4 == (List_1_UnityEngine_GameObject_ *)0x0)) break;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)pLVar4,(Object *)item,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
                       );
-            this_07 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                                ((Component_1 *)this_06,(MethodInfo *)0x0);
-            this_01 = (this->fields).content;
-            if ((this_01 == (HorizontalLayoutGroup *)0x0) ||
-               (method_01 = (MethodInfo *)
-                            UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_1_get_transform((Component_1 *)this_01,method_01),
-               this_07 == (Transform *)0x0)) break;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                      (this_07,(Transform *)method_01,0,(MethodInfo *)0x0);
           }
         }
       }
     }
   }
 code_?:
-  func_?(0);
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -139,55 +171,61 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__BoostHUDController__CreateActiveBoosts__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)
-            MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if ((this_00 != (PrefabPool *)0x0) &&
-     (pOVar2 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                         (this_00,(MethodInfo *)0x0), pOVar2 != (ObjectiveArrow *)0x0)) {
-    pDVar3 = (pOVar2->fields)._._._._.m_CachedPtr;
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(TypeInfo__System__Action);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,unaff_ESI,MethodInfo__BoostHUDController__CreateActiveBoosts__,
-               (MethodInfo *)0x0);
-    pDStack4 =
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   (pDVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDStack4 != (Delegate *)0x0) {
-      if ((Action__Class *)pDStack4->klass == TypeInfo__System__Action) {
-        pDVar3 = pDStack4;
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+     (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
+    pAVar4 = (pBVar3->fields).BoostCountChanged;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_00,(Object *)this,MethodInfo__BoostHUDController__CreateActiveBoosts__,
+                 (MethodInfo *)0x0);
+      pAVar4 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+      if (pAVar4 == (Action *)0x0) {
+        (pBVar3->fields).BoostCountChanged = (Action *)0x0;
+        pBStack6 = &pBVar3->fields;
+        pAStack7 = (Action *)0x0;
+        func_?();
+        return;
       }
-      pAStack5 = TypeInfo__System__Action;
-      if (pDVar3 == (Delegate *)0x0) goto code_?;
+      pAVar8 = (Action *)0x0;
+      if (pAVar4->klass == TypeInfo__System__Action) {
+        pAVar8 = pAVar4;
+      }
+      if (pAVar8 != (Action *)0x0) {
+        (pBVar3->fields).BoostCountChanged = pAVar8;
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+        pAStack7 = (Action *)0x0;
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAStack7 = pAVar4;
+        }
+        if (pAStack7 != (Action *)0x0) {
+          pBStack6 = &pBVar3->fields;
+          func_?();
+          return;
+        }
+      }
+      goto code_?;
     }
-    (pOVar2->fields)._._._._.m_CachedPtr = pDVar3;
-    return;
   }
-  func_?();
-  pDStack4 = extraout_ECX;
-  pAStack5 = extraout_EDX;
+  uVar5 = func_?();
 code_?:
+  _pBStack0000001c = uVar5;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -200,68 +238,72 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_SetupHUD
 {
   BoostHUDController_CreateActiveBoosts(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = (PrefabPool *)
-            MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (((this_01 != (PrefabPool *)0x0) &&
-      (this_02 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                           (this_01,(MethodInfo *)0x0), this_02 != (ObjectiveArrow *)0x0)) &&
-     (this_03 = BoostController::BoostController_GetActiveBoosts
-                          ((BoostController *)this_02,(MethodInfo *)0x0),
-     this_03 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0)) {
-    iVar1 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-            Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__get_Count
-                      ((Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_
-                        *)this_03,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                      );
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      pTVar3 = (Transform *)0x0;
-      if (pTVar2->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-        pTVar3 = pTVar2;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if (pMVar1 != (MVLocalPlayer *)0x0) {
+    pBVar2 = (pMVar1->fields).boostController;
+    if (pBVar2 != (BoostController *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                       );
+        cRam_? = '\x01';
       }
-      if (pTVar3 == (Transform *)0x0) goto code_?;
-    }
-    this_00 = (this->fields).slideOnClick;
-    uVar4 = 0;
-    puVar5 = &UNK_?;
-    func_?();
-    if (this_00 != (SlideOnClick *)0x0) {
-      newPos.z = (float)puVar5;
-      newPos.x = (float)(int)uVar4;
-      newPos.y = (float)(int)((ulonglong)uVar4 >> 0x20);
-      GameMeterVisuals::SlideOnClick::SlideOnClick_SetNewStartPosition
-                (this_00,newPos,(MethodInfo *)0x0);
-      pCVar6 = (this->fields).canvasGroup;
-      if (pCVar6 != (CanvasGroup *)0x0) {
-        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (pCVar6,0.0,(MethodInfo *)0x0);
-        if (iVar1 < 1) {
-          return;
-        }
-        pCVar6 = (this->fields).canvasGroup;
-        if (pCVar6 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (pCVar6,1.0,(MethodInfo *)0x0);
-          return;
+      this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)(pBVar2->fields).activeBoosts;
+      if (this_00 !=
+          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
+         ) {
+        this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                  Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                            );
+        if (this_01 !=
+            (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+             *)0x0) {
+          iVar3 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+                  Regex+CachedCodeEntryKey,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                            (this_01,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                            );
+          pSVar4 = (this->fields).slideOnClick;
+          if ((pSVar4 != (SlideOnClick *)0x0) &&
+             (uVar5 = (pSVar4->fields)._StartPos_k__BackingField.x, pSVar4 != (SlideOnClick *)0x0))
+          {
+            uVar6 = (pSVar4->fields)._StartPos_k__BackingField.y;
+            (pSVar4->fields).targetPos.x =
+                 (float)((this->fields).boosterWidth * iVar3) + (float)uVar5;
+            (pSVar4->fields).targetPos.y = (float)uVar6;
+            (pSVar4->fields).targetPos.z = 0.0;
+            pCVar7 = (this->fields).canvasGroup;
+            if (pCVar7 != (CanvasGroup *)0x0) {
+              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                        (pCVar7,0.0,(MethodInfo *)0x0);
+              if (0 < iVar3) {
+                pCVar7 = (this->fields).canvasGroup;
+                if (pCVar7 == (CanvasGroup *)0x0) goto code_?;
+                UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                          (pCVar7,1.0,(MethodInfo *)0x0);
+              }
+              return;
+            }
+          }
         }
       }
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -273,65 +315,65 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_SetupTransform
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = (PrefabPool *)
-            MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (((this_01 != (PrefabPool *)0x0) &&
-      (this_02 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                           (this_01,(MethodInfo *)0x0), this_02 != (ObjectiveArrow *)0x0)) &&
-     (this_03 = BoostController::BoostController_GetActiveBoosts
-                          ((BoostController *)this_02,(MethodInfo *)0x0),
-     this_03 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0)) {
-    iVar1 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-            Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__get_Count
-                      ((Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_
-                        *)this_03,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                      );
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      pTVar3 = (Transform *)0x0;
-      if (pTVar2->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-        pTVar3 = pTVar2;
-      }
-      if (pTVar3 == (Transform *)0x0) goto code_?;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+     (pBVar2 = (pMVar1->fields).boostController, pBVar2 != (BoostController *)0x0)) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                     );
+      cRam_? = '\x01';
     }
-    iVar4 = (this->fields).boosterWidth;
-    this_00 = (this->fields).slideOnClick;
-    fVar5 = (this->fields).startPos.x;
-    uVar6 = CONCAT44(&stack0xfffffff0,&UNK_?);
-    func_?();
-    if (this_00 != (SlideOnClick *)0x0) {
-      newPos.z = (float)(iVar4 * iVar1) + fVar5;
-      newPos.x = (float)(int)uVar6;
-      newPos.y = (float)(int)((ulonglong)uVar6 >> 0x20);
-      GameMeterVisuals::SlideOnClick::SlideOnClick_SetNewStartPosition
-                (this_00,newPos,(MethodInfo *)0x0);
-      pCVar7 = (this->fields).canvasGroup;
-      if (pCVar7 != (CanvasGroup *)0x0) {
-        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (pCVar7,0.0,(MethodInfo *)0x0);
-        if (iVar1 < 1) {
-          return;
-        }
-        pCVar7 = (this->fields).canvasGroup;
-        if (pCVar7 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (pCVar7,1.0,(MethodInfo *)0x0);
-          return;
+    this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )(pBVar2->fields).activeBoosts;
+    if (this_00 !=
+        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
+    {
+      this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                          (this_00,
+                           MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                          );
+      if (this_01 !=
+          (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+           *)0x0) {
+        iVar3 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+                Regex+CachedCodeEntryKey,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                          (this_01,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                          );
+        pSVar4 = (this->fields).slideOnClick;
+        if ((pSVar4 != (SlideOnClick *)0x0) &&
+           (uVar5 = (pSVar4->fields)._StartPos_k__BackingField.x, pSVar4 != (SlideOnClick *)0x0)) {
+          uVar6 = (pSVar4->fields)._StartPos_k__BackingField.y;
+          (pSVar4->fields).targetPos.x = (float)((this->fields).boosterWidth * iVar3) + (float)uVar5
+          ;
+          (pSVar4->fields).targetPos.y = (float)uVar6;
+          (pSVar4->fields).targetPos.z = 0.0;
+          pCVar7 = (this->fields).canvasGroup;
+          if (pCVar7 != (CanvasGroup *)0x0) {
+            UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                      (pCVar7,0.0,(MethodInfo *)0x0);
+            if (0 < iVar3) {
+              pCVar7 = (this->fields).canvasGroup;
+              if (pCVar7 == (CanvasGroup *)0x0) goto code_?;
+              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                        (pCVar7,1.0,(MethodInfo *)0x0);
+            }
+            return;
+          }
         }
       }
     }
   }
-  func_?();
 code_?:
   func_?();
   pcVar8 = (code *)swi(3);
@@ -347,65 +389,111 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__BoostHUDController__SetupHUD__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)
-            MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    pOVar1 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab(this_00,(MethodInfo *)0x0);
-    if (pOVar1 != (ObjectiveArrow *)0x0) {
-      pDVar2 = (pOVar1->fields)._._._._.m_CachedPtr;
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Action);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+     (pBVar2 = (pMVar1->fields).boostController, pBVar2 != (BoostController *)0x0)) {
+    pAVar3 = (pBVar2->fields).BoostCountChanged;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
                 (this_01,(Object *)this,MethodInfo__BoostHUDController__SetupHUD__,(MethodInfo *)0x0
                 );
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         (pDVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-      pDVar2 = (Delegate *)0x0;
-      if (pDVar3 != (Delegate *)0x0) {
-        if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
-          pDVar2 = pDVar3;
-        }
-        pAVar4 = TypeInfo__System__Action;
-        if (pDVar2 == (Delegate *)0x0) goto code_?;
+      pAVar4 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+      pAVar3 = (Action *)0x0;
+      if (pAVar4 == (Action *)0x0) {
+        (pBVar2->fields).BoostCountChanged = (Action *)0x0;
       }
-      *(Delegate **)(unaff_ESI + 8) = pDVar2;
-      pDVar3 = (Delegate *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      pDVar2 = (Delegate *)0x0;
-      if (pDVar3 != (Delegate *)0x0) {
-        if (pDVar3->klass == (Delegate__Class *)TypeInfo__UnityEngine__RectTransform) {
-          pDVar2 = pDVar3;
+      else {
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAVar3 = pAVar4;
         }
-        pAVar4 = (Action__Class *)TypeInfo__UnityEngine__RectTransform;
-        if (pDVar2 == (Delegate *)0x0) goto code_?;
+        if (pAVar3 == (Action *)0x0) goto code_?;
+        (pBVar2->fields).BoostCountChanged = pAVar3;
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+        pAVar3 = (Action *)0x0;
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAVar3 = pAVar4;
+        }
+        if (pAVar3 == (Action *)0x0) goto code_?;
       }
-      (this->fields).rectTransform = (RectTransform *)pDVar2;
-      if (pDVar2 != (Delegate *)0x0) {
-        VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                RectTransform_get_anchoredPosition((RectTransform *)pDVar2,(MethodInfo *)0x0);
-        (this->fields).startPos = VVar5;
-        BoostHUDController_SetupHUD(this,(MethodInfo *)0x0);
-        return;
+      func_?(&pBVar2->fields,pAVar3);
+      BoostHUDController_CreateActiveBoosts(this,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                       );
+        cRam_? = '\x01';
+      }
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+      if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+         (pBVar2 = (pMVar1->fields).boostController, pBVar2 != (BoostController *)0x0)) {
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                         );
+          cRam_? = '\x01';
+        }
+        this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                   *)(pBVar2->fields).activeBoosts;
+        if ((this_00 !=
+             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+             0x0) && (this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                                          (this_00,
+                                           MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                                          ),
+                     this_02 !=
+                     (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                      *)0x0)) {
+          iVar6 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+                  Regex+CachedCodeEntryKey,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                            (this_02,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                            );
+          pSVar7 = (this->fields).slideOnClick;
+          if ((pSVar7 != (SlideOnClick *)0x0) &&
+             (uVar8 = (pSVar7->fields)._StartPos_k__BackingField.x, pSVar7 != (SlideOnClick *)0x0))
+          {
+            uVar9 = (pSVar7->fields)._StartPos_k__BackingField.y;
+            (pSVar7->fields).targetPos.x =
+                 (float)((this->fields).boosterWidth * iVar6) + (float)uVar8;
+            (pSVar7->fields).targetPos.y = (float)uVar9;
+            (pSVar7->fields).targetPos.z = 0.0;
+            pCVar10 = (this->fields).canvasGroup;
+            if (pCVar10 != (CanvasGroup *)0x0) {
+              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                        (pCVar10,0.0,(MethodInfo *)0x0);
+              if (iVar6 < 1) {
+                return;
+              }
+              pCVar10 = (this->fields).canvasGroup;
+              if (pCVar10 != (CanvasGroup *)0x0) {
+                UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                          (pCVar10,1.0,(MethodInfo *)0x0);
+                return;
+              }
+            }
+          }
+        }
       }
     }
   }
-  func_?(0);
-  pDVar3 = extraout_ECX;
-  pAVar4 = extraout_EDX;
+  uVar5 = func_?();
 code_?:
-  func_?(pDVar3,pAVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?(uVar5);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -417,18 +505,28 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
     cRam_? = '\x01';
   }
   (this->fields).boosterWidth = 100;
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_UnityEngine_GameObject_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-            );
-  (this->fields).currentBoosts = (List_1_UnityEngine_GameObject_ *)this_00;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  if (this_00 != (List_1_UnityEngine_GameObject_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    (this->fields).currentBoosts = this_00;
+    func_?(&(this->fields).currentBoosts,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

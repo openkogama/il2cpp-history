@@ -5,10 +5,11 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UGUI.Desktop.Scripts.EditMode.Gizmo;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GizmoMenu : MonoBehaviour
 {
@@ -22,53 +23,76 @@ public class GizmoMenu : MonoBehaviour
 	private GizmoButton xzTranslate;
 	[SerializeField]
 	private GizmoButton yTranslate;
+	[SerializeField]
+	private GizmoRotationModeButton xRotation;
+	[SerializeField]
+	private GizmoRotationModeButton yRotation;
+	[SerializeField]
+	private GizmoRotationModeButton zRotation;
+	private RotationMode? rotationMode;
 	private int woID;
 	private EditorStateMachine editorStateMachine;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
+
+	// Properties
+	public RotationMode RotationMode { get; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _CloneRoot_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal MVWorldObjectClient root;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__18_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
+		public static ExecuteEvents.EventFunction<IGizmoHandler> __9__28_0;
 
 		// Constructors
-		public _CloneRoot_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(ICloneHandler handler, BaseEventData data);
+		internal void _Pop_b__18_0(IUIStack handler, BaseEventData data);
+		internal void _Clone_b__21_0(IUIStack handler, BaseEventData data);
+		internal void _CloneRoot_b__22_0(IUIStack handler, BaseEventData data);
+		internal void _ChangeRotationMode_b__28_0(IGizmoHandler handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass22_0
+	{
+		// Fields
+		public MVWorldObjectClient root;
+
+		// Constructors
+		public __c__DisplayClass22_0();
+
+		// Methods
+		internal void _CloneRoot_b__1(ICloneHandler handler, BaseEventData data);
 	}
 
 	// Constructors
 	public GizmoMenu();
 
 	// Methods
-	public void Initialize(int woID, Vector3 worldPosition, EditorStateMachine esm);
+	public void Initialize(int id, Vector3 wp, EditorStateMachine esm);
 	private void Update();
-	private void Setup(int woID);
+	private void Setup();
 	private void SetToScreenPoint();
 	private void HandleCloningHotkey();
-	private void LateUpdate();
-	private void Pop();
+	public void Pop();
 	private void OnDestroy();
 	private void PopWoDestroyed(object obj, WorldObjectDestroyedEventArgs args);
 	private void Clone();
 	private void CloneRoot();
 	private bool CanClone();
 	private bool CanCloneRoot();
+	public void ChangeRotationModeToX();
+	public void ChangeRotationModeToY();
+	public void ChangeRotationModeToZ();
+	private void ChangeRotationMode(RotationMode mode, GizmoRotationModeButton highlight);
 	[CompilerGenerated]
-	private static void _Pop_m__0(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _Clone_m__1(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private void _Clone_m__2(ICloneHandler handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _CloneRoot_m__3(IUIStack handler, BaseEventData data);
+	private void _Clone_b__21_1(ICloneHandler handler, BaseEventData data);
 }
 

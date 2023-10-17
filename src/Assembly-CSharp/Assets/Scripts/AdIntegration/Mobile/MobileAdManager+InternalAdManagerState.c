@@ -6,23 +6,54 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_InternalAdManagerState *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_InternalAdManagerState_Destroy);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            ((Object *)StringLiteral_InternalAdManagerState_Destroy,(MethodInfo *)0x0);
   this_00 = (this->fields).internalStateRewardedAds;
   if (this_00 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Debug);
+      func_?(&StringLiteral_InternalStateRewardedAd_Destroy);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+              ((Object *)StringLiteral_InternalStateRewardedAd_Destroy,(MethodInfo *)0x0);
     (this_00->fields).rewardedAdCallback =
          (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0;
-    MobileAdManager+InternalStateRewardedAd::MobileAdManager_InternalStateRewardedAd_RemoveCallbacks
-              (this_00,(MethodInfo *)0x0);
-    (this_00->fields).rewardedAd = (RewardedAd *)0x0;
+    func_?(&(this_00->fields).rewardedAdCallback,0);
+    MobileAdManager+InternalStateRewardedAd::
+    MobileAdManager_InternalStateRewardedAd_DestroyRewardedAd(this_00,(MethodInfo *)0x0);
     this_01 = (this->fields).internalStateInterstitial;
     if (this_01 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Debug);
+        func_?(&StringLiteral_InternalStateInterstitial_Destro);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                ((Object *)StringLiteral_InternalStateInterstitial_Destro,(MethodInfo *)0x0);
       MobileAdManager+InternalStateInterstitial::
       MobileAdManager_InternalStateInterstitial_DestroyInterstitial(this_01,(MethodInfo *)0x0);
       (this_01->fields).interstitialAdCallback =
            (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0;
+      func_?(&(this_01->fields).interstitialAdCallback,0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -36,6 +67,16 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_InternalAdManagerState *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_InternalAdManagerState_Initializ);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            ((Object *)StringLiteral_InternalAdManagerState_Initializ,(MethodInfo *)0x0);
   this_00 = (this->fields).internalStateRewardedAds;
   if (this_00 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
     MobileAdManager+InternalStateRewardedAd::
@@ -49,7 +90,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -66,47 +107,91 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                MethodInfo *method)
 
 {
+  uStack_1 = in_ECX;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Interstitial_ad_request_is_not_r);
+    func_?(&StringLiteral_InternalAdManagerState_RequestIn);
     cRam_? = '\x01';
   }
+  if ((this->fields).isReady == 0) {
+code_?:
+    bVar2 = 0;
+  }
+  else {
+    pMVar3 = (this->fields).internalStateRewardedAds;
+    if (pMVar3 == (MobileAdManager_InternalStateRewardedAd *)0x0) goto code_?;
+    if ((pMVar3->fields).isHandlingRequest != 0) goto code_?;
+    pMVar4 = (this->fields).internalStateInterstitial;
+    if (pMVar4 == (MobileAdManager_InternalStateInterstitial *)0x0) goto code_?;
+    if ((pMVar4->fields).isHandlingRequest != 0) goto code_?;
+    pMVar5 = (((this->fields).internalStateInterstitial)->fields).adLoadState;
+    if (pMVar5 == (MobileAdManager_AdLoadState *)0x0) goto code_?;
+    bVar2 = (byte)((uint)(pMVar5->fields).loadAttempts >> 0x1f) ^ 1;
+  }
+  uStack_1 = (undefined *)CONCAT13(bVar2,(undefined3)uStack_1);
+  pSVar6 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                     ((Boolean *)((int)&uStack_1 + 3),(IFormatProvider *)0x0,unaff_EDI);
+  pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_InternalAdManagerState_RequestIn,pSVar6,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar6,(MethodInfo *)0x0);
   if ((this->fields).isReady != 0) {
-    pMVar1 = (this->fields).internalStateRewardedAds;
-    if (pMVar1 == (MobileAdManager_InternalStateRewardedAd *)0x0) goto code_?;
-    if ((pMVar1->fields).isHandlingRequest == 0) {
-      this_00 = (this->fields).internalStateInterstitial;
-      if (this_00 == (MobileAdManager_InternalStateInterstitial *)0x0) goto code_?;
-      if ((this_00->fields).isHandlingRequest == 0) {
-        if ((this_00 == (MobileAdManager_InternalStateInterstitial *)0x0) ||
-           (pMVar2 = (this_00->fields).adLoadState, pMVar2 == (MobileAdManager_AdLoadState *)0x0))
-        goto code_?;
-        if (-1 < (pMVar2->fields).loadAttempts) {
-          if (this_00 != (MobileAdManager_InternalStateInterstitial *)0x0) {
-            (this_00->fields).interstitialAdCallback = interstitialCallback;
-            pIVar3 = (this_00->fields).interstitial;
-            (this_00->fields).isHandlingRequest = 1;
-            if (pIVar3 != (InterstitialAd *)0x0) {
-              bVar4 = GoogleMobileAds::Api::InterstitialAd::InterstitialAd_IsLoaded
-                                (pIVar3,(MethodInfo *)0x0);
-              if (bVar4 == 0) {
-                pMVar2 = (this_00->fields).adLoadState;
-                if (pMVar2 != (MobileAdManager_AdLoadState *)0x0) {
-                  if ((pMVar2->fields).loadingAd == 0) {
-                    MobileAdManager+InternalStateInterstitial::
-                    MobileAdManager_InternalStateInterstitial_CreateAndLoadInterstitialAd
-                              (this_00,(MethodInfo *)0x0);
-                  }
-                  return;
-                }
+    pMVar3 = (this->fields).internalStateRewardedAds;
+    if (pMVar3 == (MobileAdManager_InternalStateRewardedAd *)0x0) goto code_?;
+    if ((pMVar3->fields).isHandlingRequest == 0) {
+      pMVar4 = (this->fields).internalStateInterstitial;
+      if (pMVar4 == (MobileAdManager_InternalStateInterstitial *)0x0) goto code_?;
+      if ((pMVar4->fields).isHandlingRequest == 0) {
+        pMVar5 = (((this->fields).internalStateInterstitial)->fields).adLoadState;
+        if (pMVar5 == (MobileAdManager_AdLoadState *)0x0) goto code_?;
+        if (-1 < (pMVar5->fields).loadAttempts) {
+          pMVar4 = (this->fields).internalStateInterstitial;
+          if (cRam_? == '\0') {
+            func_?();
+            func_?();
+            func_?();
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pSVar6 = StringLiteral_InternalStateInterstitial_Reques;
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                    ((Object *)StringLiteral_InternalStateInterstitial_Reques,(MethodInfo *)0x0);
+          (pMVar4->fields).interstitialAdCallback =
+               (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)pSVar6;
+          func_?();
+          (pMVar4->fields).isHandlingRequest = 1;
+          if (((pMVar4->fields).interstitial == (InterstitialAd *)0x0) ||
+             (bVar7 = GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
+                      RewardedInterstitialAd_CanShowAd
+                                ((RewardedInterstitialAd *)(pMVar4->fields).interstitial,
+                                 (MethodInfo *)0x0), bVar7 == 0)) {
+            pMVar5 = (pMVar4->fields).adLoadState;
+            if (pMVar5 != (MobileAdManager_AdLoadState *)0x0) {
+              if ((pMVar5->fields).loadingAd != 0) {
+                return;
               }
-              else {
-                pIVar3 = (this_00->fields).interstitial;
-                if (pIVar3 != (InterstitialAd *)0x0) {
-                  GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Show
-                            (pIVar3,(MethodInfo *)0x0);
-                  return;
-                }
-              }
+              MobileAdManager+InternalStateInterstitial::
+              MobileAdManager_InternalStateInterstitial_CreateAndLoadInterstitialAd
+                        (pMVar4,(MethodInfo *)0x0);
+              return;
+            }
+          }
+          else {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                      ((Object *)StringLiteral_InternalStateInterstitial_Reques,(MethodInfo *)0x0);
+            this_00 = (pMVar4->fields).interstitial;
+            if (this_00 != (InterstitialAd *)0x0) {
+              GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Show
+                        (this_00,(MethodInfo *)0x0);
+              return;
             }
           }
           goto code_?;
@@ -114,23 +199,20 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       }
     }
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
+  pSVar6 = StringLiteral_Interstitial_ad_request_is_not_r;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
             ((Object *)StringLiteral_Interstitial_ad_request_is_not_r,(MethodInfo *)0x0);
-  if (interstitialCallback != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              ((Action_1_UIPushOption_ *)interstitialCallback,UIPushOption__Enum_None,
-               MethodInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>__Invoke_Assets__Scripts__AdIntegration__InterstitialAdResult_
-              );
+  if (pSVar6 != (String *)0x0) {
+    (**(code **)&(pSVar6->fields)._firstChar)();
     return;
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -146,45 +228,82 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Rewarded_ad_request_is_not_ready);
+    func_?(&StringLiteral_InternalAdManagerState_RequestRe);
     cRam_? = '\x01';
   }
+  if (((this->fields).isReady != 0) &&
+     ((pMVar1 = (this->fields).internalStateRewardedAds,
+      pMVar1 == (MobileAdManager_InternalStateRewardedAd *)0x0 ||
+      (((pMVar1->fields).isHandlingRequest == 0 &&
+       ((pMVar2 = (this->fields).internalStateInterstitial,
+        pMVar2 == (MobileAdManager_InternalStateInterstitial *)0x0 ||
+        (((pMVar2->fields).isHandlingRequest == 0 &&
+         ((((this->fields).internalStateRewardedAds)->fields).adLoadState ==
+          (MobileAdManager_AdLoadState *)0x0)))))))))) goto code_?;
+  pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                     ((Boolean *)&stack0xfffffffb,(IFormatProvider *)0x0,unaff_EDI);
+  pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_InternalAdManagerState_RequestRe,pSVar3,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
   if ((this->fields).isReady != 0) {
-    this_00 = (this->fields).internalStateRewardedAds;
-    if (this_00 == (MobileAdManager_InternalStateRewardedAd *)0x0) goto code_?;
-    if ((this_00->fields).isHandlingRequest == 0) {
-      pMVar1 = (this->fields).internalStateInterstitial;
-      if (pMVar1 == (MobileAdManager_InternalStateInterstitial *)0x0) goto code_?;
-      if ((pMVar1->fields).isHandlingRequest == 0) {
-        if ((this_00 == (MobileAdManager_InternalStateRewardedAd *)0x0) ||
-           (pMVar2 = (this_00->fields).adLoadState, pMVar2 == (MobileAdManager_AdLoadState *)0x0))
-        goto code_?;
-        if (-1 < (pMVar2->fields).loadAttempts) {
-          if (this_00 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
-            (this_00->fields).rewardedAdCallback = rewardedAdCallback;
-            pRVar3 = (this_00->fields).rewardedAd;
-            (this_00->fields).isHandlingRequest = 1;
-            if (pRVar3 != (RewardedAd *)0x0) {
-              bVar4 = GoogleMobileAds::Api::RewardedAd::RewardedAd_IsLoaded
-                                (pRVar3,(MethodInfo *)0x0);
-              if (bVar4 == 0) {
-                pMVar2 = (this_00->fields).adLoadState;
-                if (pMVar2 != (MobileAdManager_AdLoadState *)0x0) {
-                  if ((pMVar2->fields).loadingAd == 0) {
-                    MobileAdManager+InternalStateRewardedAd::
-                    MobileAdManager_InternalStateRewardedAd_CreateAndLoadRewardedAd
-                              (this_00,(MethodInfo *)0x0);
-                  }
-                  return;
-                }
+    pMVar1 = (this->fields).internalStateRewardedAds;
+    if (pMVar1 == (MobileAdManager_InternalStateRewardedAd *)0x0) goto code_?;
+    if ((pMVar1->fields).isHandlingRequest == 0) {
+      pMVar2 = (this->fields).internalStateInterstitial;
+      if (pMVar2 == (MobileAdManager_InternalStateInterstitial *)0x0) goto code_?;
+      if ((pMVar2->fields).isHandlingRequest == 0) {
+        pMVar4 = (((this->fields).internalStateRewardedAds)->fields).adLoadState;
+        if (pMVar4 == (MobileAdManager_AdLoadState *)0x0) goto code_?;
+        if (-1 < (pMVar4->fields).loadAttempts) {
+          pMVar1 = (this->fields).internalStateRewardedAds;
+          if (cRam_? == '\0') {
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                    ((Object *)StringLiteral_InternalStateRewardedAd_RequestR,(MethodInfo *)0x0);
+          (pMVar1->fields).rewardedAdCallback =
+               (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0;
+          func_?();
+          (pMVar1->fields).isHandlingRequest = 1;
+          if (((pMVar1->fields).rewardedAd == (RewardedAd *)0x0) ||
+             (bVar5 = GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
+                      RewardedInterstitialAd_CanShowAd
+                                ((RewardedInterstitialAd *)(pMVar1->fields).rewardedAd,
+                                 (MethodInfo *)0x0), bVar5 == 0)) {
+            pMVar4 = (pMVar1->fields).adLoadState;
+            if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
+              if ((pMVar4->fields).loadingAd != 0) {
+                return;
               }
-              else {
-                pRVar3 = (this_00->fields).rewardedAd;
-                if (pRVar3 != (RewardedAd *)0x0) {
-                  GoogleMobileAds::Api::RewardedAd::RewardedAd_Show(pRVar3,(MethodInfo *)0x0);
-                  return;
-                }
-              }
+              MobileAdManager+InternalStateRewardedAd::
+              MobileAdManager_InternalStateRewardedAd_CreateAndLoadRewardedAd
+                        (pMVar1,(MethodInfo *)0x0);
+              return;
+            }
+          }
+          else {
+            this_00 = (pMVar1->fields).rewardedAd;
+            this_01 = (Action_1_Object_ *)func_?();
+            if ((this_01 != (Action_1_Object_ *)0x0) &&
+               (mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                          (this_01,(Object *)pMVar1,
+                           MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__UserRewardEarnedCallback_GoogleMobileAds__Api__Reward_
+                           ,(MethodInfo *)0x0), this_00 != (RewardedAd *)0x0)) {
+              GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd_Show
+                        (this_00,(Action_1_GoogleMobileAds_Api_Reward_ *)this_01,(MethodInfo *)0x0);
+              return;
             }
           }
           goto code_?;
@@ -192,23 +311,15 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       }
     }
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
             ((Object *)StringLiteral_Rewarded_ad_request_is_not_ready,(MethodInfo *)0x0);
-  if (rewardedAdCallback != (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              ((Action_1_UIPushOption_ *)rewardedAdCallback,UIPushOption__Enum_None,
-               MethodInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>__Invoke_Assets__Scripts__AdIntegration__RewardedAdResult_
-              );
-    return;
-  }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -221,21 +332,17 @@ String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&StringLiteral_isReady__0_u000A_internalStateInters);
     cRam_? = '\x01';
   }
   pMVar1 = this;
   this = (MobileAdManager_InternalAdManagerState *)CONCAT13((this->fields).isReady,this._0_3_);
   arg0 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-  arg1 = (pMVar1->fields).internalStateInterstitial;
-  arg2 = (pMVar1->fields).internalStateRewardedAds;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar2 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_isReady__0_u000A_internalStateInters,arg0,(Object *)arg1,
-                      (Object *)arg2,(MethodInfo *)0x0);
+                     (StringLiteral_isReady__0_u000A_internalStateInters,arg0,
+                      (Object *)(pMVar1->fields).internalStateInterstitial,
+                      (Object *)(pMVar1->fields).internalStateRewardedAds,(MethodInfo *)0x0);
   return pSVar2;
 }
 
@@ -248,70 +355,101 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial
+                   );
+    func_?(&
+                    TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd
+                   );
+    func_?(&StringLiteral_InternalAdManagerState_construct);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  this_00 = (MobileAdManager_InternalStateRewardedAd *)
-            func_?(
-                           TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd
-                           );
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
   }
-  if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__DateTime);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            ((Object *)StringLiteral_InternalAdManagerState_construct,(MethodInfo *)0x0);
+  value = (MobileAdManager_InternalStateRewardedAd *)
+          func_?(
+                         TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd
+                         );
+  if (value != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState
+                     );
+      func_?(&TypeInfo__System__DateTime);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__DateTime);
+    }
+    uVar1 = *(undefined4 *)
+             ((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
+    *(int *)&(value->fields).prevInterstitialTime._dateData =
+         (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
+    *(undefined4 *)((int)&(value->fields).prevInterstitialTime._dateData + 4) = uVar1;
+    pMVar2 = (MobileAdManager_AdLoadState *)
+             func_?(
+                            TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState
+                            );
+    if (pMVar2 != (MobileAdManager_AdLoadState *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)pMVar2,ExceptionArgument__Enum_obj,unaff_retaddr);
+      pMVar3 = (MethodInfo *)&(value->fields).adLoadState;
+      (value->fields).adLoadState = pMVar2;
+      func_?(pMVar3,pMVar2);
+      (value->fields).rewardAdResult = 4;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)value,ExceptionArgument__Enum_obj,pMVar3);
+      (this->fields).internalStateRewardedAds = value;
+      func_?(&(this->fields).internalStateRewardedAds,value);
+      value_00 = (MobileAdManager_InternalStateInterstitial *)
+                 func_?(
+                                TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial
+                                );
+      if (value_00 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&
+                          TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState
+                         );
+          func_?(&TypeInfo__System__DateTime);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__DateTime);
+        }
+        uVar1 = *(undefined4 *)
+                 ((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
+        *(int *)&(value_00->fields).prevInterstitialTime._dateData =
+             (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
+        *(undefined4 *)((int)&(value_00->fields).prevInterstitialTime._dateData + 4) = uVar1;
+        pMVar2 = (MobileAdManager_AdLoadState *)
+                 func_?(
+                                TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState
+                                );
+        if (pMVar2 != (MobileAdManager_AdLoadState *)0x0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)pMVar2,ExceptionArgument__Enum_obj,unaff_retaddr);
+          pMVar3 = (MethodInfo *)&(value_00->fields).adLoadState;
+          (value_00->fields).adLoadState = pMVar2;
+          func_?(pMVar3,pMVar2);
+          (value_00->fields).interstitialAdResult = 3;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar3);
+          (this->fields).internalStateInterstitial = value_00;
+          func_?(&(this->fields).internalStateInterstitial,value_00);
+          return;
+        }
+      }
+    }
   }
-  pDVar1 = TypeInfo__System__DateTime->static_fields;
-  uVar2 = *(undefined4 *)((int)&(pDVar1->MinValue).ticks._ticks + 4);
-  fVar3 = (float)(pDVar1->MinValue).kind;
-  fVar4 = *(float *)&(pDVar1->MinValue).field_0xc;
-  (((Component_1__Fields *)&(this_00->fields).prevInterstitialTime.ticks._ticks)->_).m_CachedPtr =
-       *(void **)&(pDVar1->MinValue).ticks._ticks;
-  ((Component_1__Fields *)&(this_00->fields).prevInterstitialTime.ticks._ticks)[1] =
-       (Component_1__Fields)uVar2;
-  ((Vector3 *)&(this_00->fields).prevInterstitialTime.kind)->x = fVar3;
-  *(float *)&(this_00->fields).prevInterstitialTime.field_0xc = fVar4;
-  pMVar5 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState;
-  pSVar6 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar6,0.0,(MethodInfo *)pMVar5);
-  (this_00->fields).adLoadState = (MobileAdManager_AdLoadState *)pSVar6;
-  (this_00->fields).rewardAdResult = 4;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this_00,0.0,(MethodInfo *)pMVar5);
-  (this->fields).internalStateRewardedAds = this_00;
-  this_01 = (MobileAdManager_InternalStateInterstitial *)
-            func_?(
-                           TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial
-                           );
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pDVar1 = TypeInfo__System__DateTime->static_fields;
-  uVar2 = *(undefined4 *)((int)&(pDVar1->MinValue).ticks._ticks + 4);
-  fVar3 = (float)(pDVar1->MinValue).kind;
-  fVar4 = *(float *)&(pDVar1->MinValue).field_0xc;
-  (((Component_1__Fields *)&(this_01->fields).prevInterstitialTime.ticks._ticks)->_).m_CachedPtr =
-       *(void **)&(pDVar1->MinValue).ticks._ticks;
-  ((Component_1__Fields *)&(this_01->fields).prevInterstitialTime.ticks._ticks)[1] =
-       (Component_1__Fields)uVar2;
-  ((Vector3 *)&(this_01->fields).prevInterstitialTime.kind)->x = fVar3;
-  *(float *)&(this_01->fields).prevInterstitialTime.field_0xc = fVar4;
-  pMVar5 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState;
-  pSVar6 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar6,0.0,(MethodInfo *)pMVar5);
-  (this_01->fields).adLoadState = (MobileAdManager_AdLoadState *)pSVar6;
-  (this_01->fields).interstitialAdResult = 3;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this_01,0.0,(MethodInfo *)pMVar5);
-  (this->fields).internalStateInterstitial = this_01;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -324,20 +462,22 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_InternalAdManagerState *this,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields).internalStateRewardedAds;
-  if (pMVar1 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
-    if ((pMVar1->fields).isHandlingRequest != 0) {
+  puStack_1 = &stack0xfffffffc;
+  pMVar2 = (this->fields).internalStateRewardedAds;
+  if (pMVar2 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+    if ((pMVar2->fields).isHandlingRequest != 0) {
       return 1;
     }
-    pMVar2 = (this->fields).internalStateInterstitial;
-    if (pMVar2 != (MobileAdManager_InternalStateInterstitial *)0x0) {
-      return (pMVar2->fields).isHandlingRequest != 0;
+    pMVar3 = (this->fields).internalStateInterstitial;
+    if (pMVar3 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+      return (pMVar3->fields).isHandlingRequest;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  uVar4 = func_?(auStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -349,29 +489,31 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_InternalAdManagerState *this,MethodInfo *method)
 
 {
+  puStack_1 = &stack0xfffffffc;
   if ((this->fields).isReady == 0) {
     return 0;
   }
-  pMVar1 = (this->fields).internalStateRewardedAds;
-  if (pMVar1 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
-    if ((pMVar1->fields).isHandlingRequest != 0) {
+  pMVar2 = (this->fields).internalStateRewardedAds;
+  if (pMVar2 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+    if ((pMVar2->fields).isHandlingRequest != 0) {
       return 0;
     }
-    pMVar2 = (this->fields).internalStateInterstitial;
-    if (pMVar2 != (MobileAdManager_InternalStateInterstitial *)0x0) {
-      if ((pMVar2->fields).isHandlingRequest != 0) {
+    pMVar3 = (this->fields).internalStateInterstitial;
+    if (pMVar3 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+      if ((pMVar3->fields).isHandlingRequest != 0) {
         return 0;
       }
-      if ((pMVar2 != (MobileAdManager_InternalStateInterstitial *)0x0) &&
-         (pMVar3 = (pMVar2->fields).adLoadState, pMVar3 != (MobileAdManager_AdLoadState *)0x0)) {
-        return (byte)~(byte)((uint)(pMVar3->fields).loadAttempts >> 0x18) >> 7;
+      pMVar4 = (((this->fields).internalStateInterstitial)->fields).adLoadState;
+      if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
+        return (byte)((uint)(pMVar4->fields).loadAttempts >> 0x1f) ^ 1;
       }
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  uVar5 = func_?(auStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 
 
@@ -383,29 +525,31 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_InternalAdManagerState *this,MethodInfo *method)
 
 {
+  puStack_1 = &stack0xfffffffc;
   if ((this->fields).isReady == 0) {
     return 0;
   }
-  pMVar1 = (this->fields).internalStateRewardedAds;
-  if (pMVar1 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
-    if ((pMVar1->fields).isHandlingRequest != 0) {
+  pMVar2 = (this->fields).internalStateRewardedAds;
+  if (pMVar2 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+    if ((pMVar2->fields).isHandlingRequest != 0) {
       return 0;
     }
-    pMVar2 = (this->fields).internalStateInterstitial;
-    if (pMVar2 != (MobileAdManager_InternalStateInterstitial *)0x0) {
-      if ((pMVar2->fields).isHandlingRequest != 0) {
+    pMVar3 = (this->fields).internalStateInterstitial;
+    if (pMVar3 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+      if ((pMVar3->fields).isHandlingRequest != 0) {
         return 0;
       }
-      if ((pMVar1 != (MobileAdManager_InternalStateRewardedAd *)0x0) &&
-         (pMVar3 = (pMVar1->fields).adLoadState, pMVar3 != (MobileAdManager_AdLoadState *)0x0)) {
-        return (byte)~(byte)((uint)(pMVar3->fields).loadAttempts >> 0x18) >> 7;
+      pMVar4 = (((this->fields).internalStateRewardedAds)->fields).adLoadState;
+      if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
+        return (byte)((uint)(pMVar4->fields).loadAttempts >> 0x1f) ^ 1;
       }
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  uVar5 = func_?(auStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 
 
@@ -417,18 +561,21 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                    (MobileAdManager_InternalAdManagerState *this,MethodInfo *method)
 
 {
-  iStack_1 = 0;
-  iStack_2 = 0;
-  iStack_1 = (int64_t)MobileAdManager_InternalAdManagerState_get_TimeSinceLastInterstitial
-                                (this,(MethodInfo *)0x0);
-  iVar3 = func_?(&iStack_1,0);
-  iStack_2 = (int64_t)MobileAdManager_InternalAdManagerState_get_TimeSinceLastRewarded
-                                 (this,(MethodInfo *)0x0);
-  val2 = func_?(&iStack_2,0);
-  iVar3 = mscorlib.dll::System::Math::Math_Min_3(iVar3,val2,(MethodInfo *)0x0);
-  iStack_4 = 0;
-  func_?(&iStack_4,iVar3,0);
-  return (TimeSpan)iStack_4;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  val1 = MobileAdManager_InternalAdManagerState_get_TimeSinceLastInterstitial
+                   (this,(MethodInfo *)0x0);
+  TVar1 = MobileAdManager_InternalAdManagerState_get_TimeSinceLastRewarded(this,(MethodInfo *)0x0);
+  pMVar2 = (Math__Class *)((ulonglong)TVar1._ticks >> 0x20);
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    pMVar2 = TypeInfo__System__Math;
+    func_?();
+  }
+  iVar3 = mscorlib.dll::System::Math::Math_Min_2
+                    (val1._ticks,CONCAT44(pMVar2,(int)TVar1._ticks),(MethodInfo *)0x0);
+  return (TimeSpan)iVar3;
 }
 
 
@@ -443,23 +590,22 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   pMVar1 = (this->fields).internalStateInterstitial;
   if (pMVar1 != (MobileAdManager_InternalStateInterstitial *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__System__DateTime);
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__DateTime);
     }
-    pDVar2 = mscorlib.dll::System::DateTime::DateTime_get_Now
-                       ((DateTime *)&stack0xffffffec,(MethodInfo *)0x0);
-    TVar3 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction
-                      (*pDVar2,(pMVar1->fields).prevInterstitialTime,(MethodInfo *)0x0);
-    return (TimeSpan)TVar3._ticks;
+    d1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
+    TVar2 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
+                      (d1,(DateTime)(pMVar1->fields).prevInterstitialTime._dateData,
+                       (MethodInfo *)0x0);
+    return (TimeSpan)TVar2._ticks;
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  TVar3._ticks = (*pcVar4)();
-  return (TimeSpan)TVar3._ticks;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  TVar2._ticks = (*pcVar3)();
+  return (TimeSpan)TVar2._ticks;
 }
 
 
@@ -474,22 +620,21 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   pMVar1 = (this->fields).internalStateRewardedAds;
   if (pMVar1 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__System__DateTime);
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__DateTime);
     }
-    pDVar2 = mscorlib.dll::System::DateTime::DateTime_get_Now
-                       ((DateTime *)&stack0xffffffec,(MethodInfo *)0x0);
-    TVar3 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction
-                      (*pDVar2,(pMVar1->fields).prevInterstitialTime,(MethodInfo *)0x0);
-    return (TimeSpan)TVar3._ticks;
+    d1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
+    TVar2 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
+                      (d1,(DateTime)(pMVar1->fields).prevInterstitialTime._dateData,
+                       (MethodInfo *)0x0);
+    return (TimeSpan)TVar2._ticks;
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  TVar3._ticks = (*pcVar4)();
-  return (TimeSpan)TVar3._ticks;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  TVar2._ticks = (*pcVar3)();
+  return (TimeSpan)TVar2._ticks;
 }
 

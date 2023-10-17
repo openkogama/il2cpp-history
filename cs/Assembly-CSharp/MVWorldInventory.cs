@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVWorldInventory
 {
@@ -30,6 +30,7 @@ public class MVWorldInventory
 	// Methods
 	public void AddRuntimePrototypeToDirty(RuntimePrototypeCubeModel rpcm);
 	public void OnUpdatePrototypeEvent(int worldInventoryID, byte[] worldInventoryData);
+	public void OnUpdatePrototypeScaleEvent(int worldInventoryID, float scale);
 	private void GenerateAllDirty(ref int counter);
 	private bool GenerateDirty(MeshGeneratePriority priority, ref int counter);
 	private void GenerateDirtyRPCM();

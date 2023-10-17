@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesSpawnRoleRewardInfo : MonoBehaviour, IGamePassShopContent
 {
@@ -66,65 +66,79 @@ public class GamePassesSpawnRoleRewardInfo : MonoBehaviour, IGamePassShopContent
 	private bool enterPlayWhenPlayerCanSpawn;
 	private bool isWaitingForFreeTryTier;
 	private bool haveShownFreeTryUnlock;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache5;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache6;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache7;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache8;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache9;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnPressed_c__AnonStorey0
+	private sealed class __c__DisplayClass32_0
 	{
 		// Fields
-		internal SpawnRoleSelectionSkillMenu skillMenu;
+		public SpawnRoleSelectionSkillMenu skillMenu;
 
 		// Constructors
-		public _OnPressed_c__AnonStorey0();
+		public __c__DisplayClass32_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnEditPressed_c__AnonStorey1
+	private sealed class __c__DisplayClass33_0
 	{
 		// Fields
-		internal SpawnRoleEditorMenu spawnRoleMenu;
+		public SpawnRoleEditorMenu spawnRoleMenu;
 
 		// Constructors
-		public _OnEditPressed_c__AnonStorey1();
+		public __c__DisplayClass33_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnEditPressed_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__36_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__38_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__43_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__50_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__51_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__51_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__52_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__52_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__53_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__53_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPlayPressed_b__36_0(IModalPopupCreator x, BaseEventData y);
+		internal void _Close_b__38_0(IUIStack handler, BaseEventData data);
+		internal void _Update_b__43_0(IUIStack x, BaseEventData y);
+		internal void _ShowAd_b__50_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__51_0(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__51_1(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__52_0(IModalPopupCreator x, BaseEventData y);
+		internal void _PreviewTier_b__52_1(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__53_0(IUIStack x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__53_1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPlayerPlanetDataUpdated_c__AnonStorey2
+	private sealed class __c__DisplayClass53_0
 	{
 		// Fields
-		internal SpawnRoleUnlockedPopupController spawnRoleUnlockPopup;
+		public SpawnRoleUnlockedPopupController spawnRoleUnlockPopup;
 
 		// Constructors
-		public _OnPlayerPlanetDataUpdated_c__AnonStorey2();
+		public __c__DisplayClass53_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__2(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -157,25 +171,5 @@ public class GamePassesSpawnRoleRewardInfo : MonoBehaviour, IGamePassShopContent
 	private void OnPlayerPlanetDataUpdated();
 	private bool CanSpawn();
 	private bool CanShowFreeTry();
-	[CompilerGenerated]
-	private static void _OnPlayPressed_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Close_m__1(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private static void _Update_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ShowAd_m__3(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__4(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__5(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__6(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _PreviewTier_m__7(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPlayerPlanetDataUpdated_m__8(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPlayerPlanetDataUpdated_m__9(IUIStack x, BaseEventData y);
 }
 

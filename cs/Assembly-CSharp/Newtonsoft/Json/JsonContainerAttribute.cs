@@ -6,22 +6,19 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json
 {
-	[AttributeUsage]
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false)]
 	public abstract class JsonContainerAttribute : Attribute
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private string _Id_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private string _Title_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private string _Description_k__BackingField;
 		internal bool? _isReference;
 	

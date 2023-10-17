@@ -1,16 +1,4 @@
 
-/* Void Awake() */
-
-void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Awake
-               (ServerTimeThemeToggle *this,MethodInfo *method)
-
-{
-  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-            ((Behaviour *)this,0,(MethodInfo *)0x0);
-  return;
-}
-
-
 /* Void Initialize(BoolAttribute, Action`1[Boolean]) */
 
 void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Initialize
@@ -18,14 +6,34 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Initializ
                MethodInfo *method)
 
 {
-  ThemeToggle::ThemeToggle_Initialize((ThemeToggle *)this,attrib,onChange,(MethodInfo *)0x0);
-  pTVar1 = (this->fields)._.label;
-  if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)(*(code *)(pTVar1->klass->vtable).get_text.method)();
-    (this->fields).labelText = pSVar2;
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)this,1,(MethodInfo *)0x0);
-    return;
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__ThemeAttributes__NamedThemeAttribute<bool>__get_Name__);
+    func_?(&MethodInfo__ThemeAttributes__ThemeAttribute<bool>__get_Value__);
+    cRam_? = '\x01';
+  }
+  (this->fields)._.onChange = onChange;
+  func_?(&(this->fields)._.onChange,onChange);
+  if ((attrib != (BoolAttribute *)0x0) && (pTVar1 = (this->fields)._.label, pTVar1 != (Text *)0x0))
+  {
+    (*(pTVar1->klass->vtable).set_text.methodPtr)
+              (pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).set_text.method);
+    this_00 = (this->fields)._.toggle;
+    if (this_00 != (SettingsToggle *)0x0) {
+      SettingsToggle::SettingsToggle_Initialize
+                (this_00,(attrib->fields)._._._._Key_k__BackingField,(attrib->fields)._._.value,
+                 (MethodInfo *)0x0);
+      pTVar1 = (this->fields)._.label;
+      if (pTVar1 != (Text *)0x0) {
+        pSVar2 = (String *)
+                 (*(pTVar1->klass->vtable).get_text.methodPtr)
+                           (pTVar1,(pTVar1->klass->vtable).get_text.method);
+        (this->fields).labelText = pSVar2;
+        func_?(&(this->fields).labelText,pSVar2);
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  ((Behaviour *)this,1,(MethodInfo *)0x0);
+        return;
+      }
+    }
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -41,48 +49,39 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Update
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__DateTime);
+    func_?(&StringLiteral__0___1_);
+    func_?(&StringLiteral_HH_mm_ss);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__DateTime);
   }
-  pDVar1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow
-                     ((DateTime *)&stack0xffffffd8,(MethodInfo *)0x0);
-  uStack_2 = (undefined4)(pDVar1->ticks)._ticks;
-  uStack_3 = *(undefined4 *)((int)&(pDVar1->ticks)._ticks + 4);
-  iStack_4 = pDVar1->kind;
-  uStack_5 = *(undefined4 *)&pDVar1->field_0xc;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
+  mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
-    fStack_6 = MVNetworkGame::MVNetworkGame_get_TimeZone(this_00,(MethodInfo *)0x0);
-    puVar7 = (undefined4 *)func_?(&stack0xffffffd8,&uStack_2,(double)fStack_6);
-    uStack_2 = *puVar7;
-    uStack_3 = puVar7[1];
-    iStack_4 = puVar7[2];
-    uStack_5 = puVar7[3];
-    pTVar8 = (this->fields)._.label;
+    method_00 = (MethodInfo *)MVNetworkGame::MVNetworkGame_get_TimeZone(this_00,(MethodInfo *)0x0);
+    DVar1 = mscorlib.dll::System::DateTime::DateTime_AddHours
+                      ((DateTime *)&stack0xfffffff0,
+                       (double)((ulonglong)(double)(float)method_00 >> 0x20),method_00);
+    pTVar2 = (this->fields)._.label;
     arg0 = (this->fields).labelText;
-    arg1 = (Object *)func_?(&uStack_2,StringLiteral_HH_mm_ss,0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    mscorlib.dll::System::String::String_Format_1
-              (StringLiteral__0___1_,(Object *)arg0,arg1,(MethodInfo *)0x0);
-    if (pTVar8 != (Text *)0x0) {
-      (*(code *)(pTVar8->klass->vtable).set_text.method)();
+    arg1 = mscorlib.dll::System::DateTime::DateTime_ToString_1
+                     ((DateTime *)&stack0xfffffff0,(String *)(DVar1._dateData >> 0x20),
+                      (MethodInfo *)0x0);
+    pSStack3 =
+         mscorlib.dll::System::String::String_Format_1
+                   (StringLiteral__0___1_,(Object *)arg0,(Object *)arg1,(MethodInfo *)0x0);
+    if (pTVar2 != (Text *)0x0) {
+      pMStack4 = (pTVar2->klass->vtable).set_text.method;
+      pTStack5 = pTVar2;
+      (*(pTVar2->klass->vtable).set_text.methodPtr)();
       return;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -94,22 +93,13 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).labelText = TypeInfo__System__String->static_fields->Empty;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  (this->fields).labelText = ::StringLiteral__;
+  func_?(&(this->fields).labelText,::StringLiteral__);
+  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;
 }
 

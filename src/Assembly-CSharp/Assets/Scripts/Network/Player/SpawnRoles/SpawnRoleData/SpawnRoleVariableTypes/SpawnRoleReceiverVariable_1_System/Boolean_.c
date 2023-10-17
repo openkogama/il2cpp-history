@@ -7,31 +7,30 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                (SpawnRoleReceiverVariable_1_System_Boolean_ *this,bool value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).spawnRoleDataReceiver;
-  if (this_00 != (SpawnRoleDataReceiver *)0x0) {
-    bVar1 = Mediator::SpawnRoleDataReceiver::SpawnRoleDataReceiver_get_IsActive
-                      (this_00,(MethodInfo *)0x0);
-    if (bVar1 == 0) goto code_?;
-    if ((this->fields).subscribableVariable != (SubscribableVariable_1_System_Boolean_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x1c))();
+  pSVar1 = (this->fields).spawnRoleDataReceiver;
+  if (pSVar1 != (SpawnRoleDataReceiver *)0x0) {
+    if ((pSVar1->fields).isActive == 0) goto code_?;
+    pSVar2 = (this->fields).subscribableVariable;
+    if (pSVar2 != (SubscribableVariable_1_System_Boolean_ *)0x0) {
+      (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
+                (pSVar2,_value,method->klass->rgctx_data[3].rgctxDataDummy);
       return;
     }
   }
   func_?();
 code_?:
-  this_01 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this_01,StringLiteral_SpawnRole_receiver_not_active__P,(MethodInfo *)0x0);
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar3 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar3);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_SpawnRole_receiver_not_active__P);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+  func_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<bool>__set_Value_bool_
+                 );
+  func_?(this_00);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

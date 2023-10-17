@@ -10,7 +10,7 @@ SpawnRoleVariable_1_T_SubDelegate_System_Int32__BeginInvoke
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

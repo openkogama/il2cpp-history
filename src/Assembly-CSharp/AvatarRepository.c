@@ -6,58 +6,53 @@ void Assembly-CSharp.dll::AvatarRepository::AvatarRepository_AddItem
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__Add_int__AvatarRepositoryItem_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__ContainsKey_int_
+                   );
+    func_?(&StringLiteral_Avatar_with_slotPosition__);
+    func_?(&StringLiteral__already_exists_in_AvatarReposit);
     cRam_? = '\x01';
   }
-  pAVar1 = item;
   if (item != (AvatarRepositoryItem *)0x0) {
-    pDVar2 = (this->fields).avatars;
-    if (pDVar2 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-              ::Dictionary_2_System_Int32_System_Object__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,
-                         (item->fields).slotPosition,
+    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).avatars;
+    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        (this_00,(Object *)(item->fields).slotPosition,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__ContainsKey_int_
                         );
-      if (bVar3 != 0) {
-        item = (AvatarRepositoryItem *)(pAVar1->fields).slotPosition;
-        arg1 = (Object *)func_?(TypeInfo__System__Int32,&item);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        pAVar1 = (AvatarRepositoryItem *)
-                 mscorlib.dll::System::String::String_Concat_1
-                           ((Object *)StringLiteral_Avatar_with_slotPosition__,arg1,
-                            (Object *)StringLiteral__already_exists_in_AvatarReposit,
-                            (MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          method = (MethodInfo *)TypeInfo__UnityEngine__Debug;
-          item = (AvatarRepositoryItem *)&UNK_?;
+      if (bVar1 != 0) {
+        pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
+                           ((Int32 *)&(item->fields).slotPosition,(MethodInfo *)0x0);
+        pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                           (StringLiteral_Avatar_with_slotPosition__,pSVar2,
+                            StringLiteral__already_exists_in_AvatarReposit,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        method = (MethodInfo *)0x0;
-        item = pAVar1;
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                  ((Object *)pAVar1,(MethodInfo *)0x0);
+                  ((Object *)pSVar2,(MethodInfo *)0x0);
         return;
       }
-      pDVar2 = (this->fields).avatars;
-      if (pDVar2 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,(pAVar1->fields).slotPosition,
-                   (Object *)pAVar1,
+      this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatars;
+      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  (this_01,(Object *)(item->fields).slotPosition,(Object *)item,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__Add_int__AvatarRepositoryItem_
                   );
         return;
       }
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -70,26 +65,23 @@ Assembly-CSharp.dll::AvatarRepository::AvatarRepository_GetAvatar
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-             *)(this->fields).avatars;
-  if (this_00 !=
-      (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-      0x0) {
+  this_00 = (this->fields).avatars;
+  if (this_00 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
     pAVar1 = (AvatarRepositoryItem *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-             Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-             Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                       (this_00,slotPosition,
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,slotPosition,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Item_int_
                        );
     return pAVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pAVar1 = (AvatarRepositoryItem *)(*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pAVar1 = (AvatarRepositoryItem *)(*pcVar3)();
   return pAVar1;
 }
 
@@ -102,61 +94,67 @@ Assembly-CSharp.dll::AvatarRepository::AvatarRepository_GetAvatars
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Values__
+                   );
+    func_?(&
+                    System__Linq__IOrderedEnumerable<AvatarRepositoryItem>_MethodInfo__System__Linq__Enumerable__OrderBy<AvatarRepositoryItem,_int>_System__Collections__Generic__IEnumerable<AvatarRepositoryItem>__System__Func<AvatarRepositoryItem,_int>_
+                   );
+    func_?(&
+                    System__Collections__Generic__List<AvatarRepositoryItem>_MethodInfo__System__Linq__Enumerable__ToList<AvatarRepositoryItem>_System__Collections__Generic__IEnumerable<AvatarRepositoryItem>_
+                   );
+    func_?(&TypeInfo__System__Func<AvatarRepositoryItem,_int>);
+    func_?(&MethodInfo__AvatarRepository____c___GetAvatars_b__5_0_AvatarRepositoryItem_);
+    func_?(&TypeInfo__AvatarRepository____c);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).avatars;
-  if (this_00 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
-    source = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__get_Values
-                       ((Dictionary_2_WinningConditionType_System_Object_ *)this_00,
+  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+            (this->fields).avatars;
+  if (this_00 !=
+      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
+    source = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+             RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+             Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                       (this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Values__
                        );
-    if (TypeInfo__AvatarRepository->static_fields->__f__am_cache0 ==
-        (Func_2_AvatarRepositoryItem_Int32_ *)0x0) {
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Func<AvatarRepositoryItem,_int>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)0x0,
-                 MethodInfo__AvatarRepository___GetAvatars_m__0_AvatarRepositoryItem_,
-                 MethodInfo__System__Func<AvatarRepositoryItem,_int>__Func_System__Object__void__);
-      TypeInfo__AvatarRepository->static_fields->__f__am_cache0 =
-           (Func_2_AvatarRepositoryItem_Int32_ *)this_01;
+    if ((TypeInfo__AvatarRepository____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__AvatarRepository____c);
     }
-    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_ThenBy_6
-                          ((IOrderedEnumerable_1_System_Object_ *)source,
-                           (Func_2_Object_Int64_ *)
-                           TypeInfo__AvatarRepository->static_fields->__f__am_cache0,
+    this_01 = TypeInfo__AvatarRepository____c->static_fields->__9__5_0;
+    if (this_01 == (Func_2_AvatarRepositoryItem_Int32_ *)0x0) {
+      if ((TypeInfo__AvatarRepository____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AvatarRepository____c);
+      }
+      object = TypeInfo__AvatarRepository____c->static_fields->__9;
+      this_01 = (Func_2_AvatarRepositoryItem_Int32_ *)
+                func_?(TypeInfo__System__Func<AvatarRepositoryItem,_int>);
+      if (this_01 == (Func_2_AvatarRepositoryItem_Int32_ *)0x0) goto code_?;
+      mscorlib.dll::System::Reflection::RuntimePropertyInfo+Getter`2[System::Object,System::Object]
+      ::RuntimePropertyInfo_Getter_2_System_Object_System_Object___ctor
+                ((RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)this_01,
+                 (Object *)object,
+                 MethodInfo__AvatarRepository____c___GetAvatars_b__5_0_AvatarRepositoryItem_,
+                 (MethodInfo *)0x0);
+      TypeInfo__AvatarRepository____c->static_fields->__9__5_0 = this_01;
+      func_?(&TypeInfo__AvatarRepository____c->static_fields->__9__5_0,this_01);
+    }
+    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderBy_3
+                          ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Single_ *)this_01,
                            System__Linq__IOrderedEnumerable<AvatarRepositoryItem>_MethodInfo__System__Linq__Enumerable__OrderBy<AvatarRepositoryItem,_int>_System__Collections__Generic__IEnumerable<AvatarRepositoryItem>__System__Func<AvatarRepositoryItem,_int>_
                           );
-    pLVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                       ((IEnumerable_1_UseInteractor_ *)source_00,
+    pLVar1 = (List_1_AvatarRepositoryItem_ *)
+             System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+                       ((IEnumerable_1_System_Object_ *)source_00,
                         System__Collections__Generic__List<AvatarRepositoryItem>_MethodInfo__System__Linq__Enumerable__ToList<AvatarRepositoryItem>_System__Collections__Generic__IEnumerable<AvatarRepositoryItem>_
                        );
-    return (List_1_AvatarRepositoryItem_ *)pLVar1;
+    return pLVar1;
   }
-  func_?(0);
+code_?:
+  func_?();
   pcVar2 = (code *)swi(3);
-  pLVar3 = (List_1_AvatarRepositoryItem_ *)(*pcVar2)();
-  return pLVar3;
-}
-
-
-/* Int32 <GetAvatars>m__0(AvatarRepositoryItem) */
-
-int32_t Assembly-CSharp.dll::AvatarRepository::AvatarRepository__GetAvatars_m__0
-                  (AvatarRepositoryItem *x,MethodInfo *method)
-
-{
-  if (x != (AvatarRepositoryItem *)0x0) {
-    return (x->fields).slotPosition;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  iVar2 = (*pcVar1)();
-  return iVar2;
+  pLVar1 = (List_1_AvatarRepositoryItem_ *)(*pcVar2)();
+  return pLVar1;
 }
 
 
@@ -167,19 +165,32 @@ void Assembly-CSharp.dll::AvatarRepository::AvatarRepository__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>);
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>
                            );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__Dictionary__
-            );
-  (this->fields).avatars = this_00;
+  if (this_00 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__Dictionary__
+              );
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).avatars = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -191,23 +202,25 @@ int32_t Assembly-CSharp.dll::AvatarRepository::AvatarRepository_get_Count
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).avatars;
-  if (this_00 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
-    pOVar1 = System.Core.dll::System::Linq::Enumerable+<CreateSelectIterator>c__Iterator10`2[System
-             ::Collections::Generic::KeyValuePair`2[System::Object,System::Object],System::Object]::
-             Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                       ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                         *)this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Count__
-                       );
-    return (int32_t)pOVar1;
+  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+            (this->fields).avatars;
+  if (this_00 !=
+      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+            RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+            Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                      (this_00,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Count__
+                      );
+    return iVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  iVar1 = (*pcVar4)();
+  return iVar1;
 }
 

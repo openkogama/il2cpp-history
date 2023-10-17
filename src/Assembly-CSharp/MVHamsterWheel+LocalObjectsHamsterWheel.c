@@ -9,197 +9,154 @@ MVHamsterWheel_LocalObjectsHamsterWheel_FixedUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__HamsterWheelMotor);
+    func_?(&TypeInfo__MVHamsterWheel);
     cRam_? = '\x01';
   }
-  pMVar1 = this;
-  pSVar2 = (this->fields)._.vehicleMotor;
-  if (pSVar2 == (SimpleVehicleMotorBase *)0x0) {
-    pSVar3 = (SimpleVehicleMotorBase *)0x0;
+  this_00 = this;
+  pSVar1 = (this->fields)._.vehicleMotor;
+  this = (MVHamsterWheel_LocalObjectsHamsterWheel *)
+         (*(this->klass->vtable).get_Owner.methodPtr)(this,(this->klass->vtable).get_Owner.method);
+  if (this == (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0) {
+    pMVar2 = (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0;
   }
   else {
-    bVar4 = (TypeInfo__HamsterWheelMotor->_1).naturalAligment;
-    if (((pSVar2->klass->_1).naturalAligment < bVar4) ||
-       ((pSVar2->klass->_1).typeHierarchy[bVar4 - 1] != (Il2CppClass *)TypeInfo__HamsterWheelMotor))
-    {
-      bVar5 = false;
+    if (((this->klass->_1).typeHierarchyDepth < (TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth)
+       || ((MVHamsterWheel__Class *)
+           (this->klass->_1).typeHierarchy[(TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth - 1] !=
+           TypeInfo__MVHamsterWheel)) {
+      bVar3 = false;
     }
     else {
-      bVar5 = true;
+      bVar3 = true;
     }
-    pSVar3 = (SimpleVehicleMotorBase *)0x0;
-    if (bVar5) {
-      pSVar3 = pSVar2;
-    }
-  }
-  piVar6 = (int *)(*(code *)(this->klass->vtable).get_Owner.method)
-                            (this,(this->klass->vtable).Destroy.methodPtr);
-  if (piVar6 == (int *)0x0) {
-    piVar7 = (int *)0x0;
-  }
-  else {
-    bVar4 = (TypeInfo__MVHamsterWheel->_1).naturalAligment;
-    if ((*(byte *)(*piVar6 + 0xb8) < bVar4) ||
-       (*(MVHamsterWheel__Class **)(*(int *)(*piVar6 + 100) + -4 + (uint)bVar4 * 4) !=
-        TypeInfo__MVHamsterWheel)) {
-      bVar5 = false;
-    }
-    else {
-      bVar5 = true;
-    }
-    piVar7 = (int *)0x0;
-    if (bVar5) {
-      piVar7 = piVar6;
+    pMVar2 = (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0;
+    if (bVar3) {
+      pMVar2 = this;
     }
   }
-  if (pSVar3 != (SimpleVehicleMotorBase *)0x0) {
-    fVar8 = (pSVar3->fields).DirectInputMoveMap.z;
-    if (0.0 < fVar8) {
-      if (piVar7 == (int *)0x0) goto code_?;
-      if ((char)piVar7[0x4d] == '\0') {
-        pMVar9 = (MVRuntimeDataVariable *)piVar7[0x4c];
-        bStack_10 = 1;
-        pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_10);
-        if (pMVar9 == (MVRuntimeDataVariable *)0x0) goto code_?;
-        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar9,pOVar11,(MethodInfo *)0x0);
-        *(undefined1 *)(piVar7 + 0x4d) = 1;
-        fVar8 = (pSVar3->fields).DirectInputMoveMap.z;
+  if (((pSVar1 != (SimpleVehicleMotorBase *)0x0) &&
+      ((TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth <=
+       (pSVar1->klass->_1).typeHierarchyDepth)) &&
+     ((pSVar1->klass->_1).typeHierarchy[(TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth - 1] ==
+      (Il2CppClass *)TypeInfo__HamsterWheelMotor)) {
+    if (_UNK_? < (pSVar1->fields).DirectInputMoveMap.z) {
+      if (pMVar2 == (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0) goto code_?;
+      if (*(char *)&pMVar2[6].fields._.owner == '\0') {
+        pSVar4 = pMVar2[6].fields._.vehicleMotor;
+        this = (MVHamsterWheel_LocalObjectsHamsterWheel *)CONCAT13(1,this._0_3_);
+        pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+        if (pSVar4 == (SimpleVehicleMotorBase *)0x0) goto code_?;
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                  ((MVRuntimeDataVariable *)pSVar4,pOVar5,(MethodInfo *)0x0);
+        *(undefined1 *)&pMVar2[6].fields._.owner = 1;
       }
     }
-    if (fVar8 <= 0.0) {
-      if (piVar7 == (int *)0x0) goto code_?;
-      if ((char)piVar7[0x4d] != '\0') {
-        pMVar9 = (MVRuntimeDataVariable *)piVar7[0x4c];
-        bStack_10 = 0;
-        pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_10);
-        if (pMVar9 == (MVRuntimeDataVariable *)0x0) goto code_?;
-        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar9,pOVar11,(MethodInfo *)0x0);
-        *(undefined1 *)(piVar7 + 0x4d) = 0;
-        fVar8 = (pSVar3->fields).DirectInputMoveMap.z;
+    if ((pSVar1->fields).DirectInputMoveMap.z <= 0.0) {
+      if (pMVar2 == (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0) goto code_?;
+      if (*(char *)&pMVar2[6].fields._.owner != '\0') {
+        pSVar4 = pMVar2[6].fields._.vehicleMotor;
+        this = (MVHamsterWheel_LocalObjectsHamsterWheel *)((uint)this & 0xffffff);
+        pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+        if (pSVar4 == (SimpleVehicleMotorBase *)0x0) goto code_?;
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                  ((MVRuntimeDataVariable *)pSVar4,pOVar5,(MethodInfo *)0x0);
+        *(undefined1 *)&pMVar2[6].fields._.owner = 0;
       }
-      if (fVar8 < 0.0) {
-        if (piVar7 == (int *)0x0) goto code_?;
-        if ((char)piVar7[0x4f] == '\0') {
-          pMVar9 = (MVRuntimeDataVariable *)piVar7[0x4e];
-          bStack_10 = 1;
-          pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_10);
-          if (pMVar9 == (MVRuntimeDataVariable *)0x0) goto code_?;
-          MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar9,pOVar11,(MethodInfo *)0x0);
-          *(undefined1 *)(piVar7 + 0x4f) = 1;
-          fVar8 = (pSVar3->fields).DirectInputMoveMap.z;
+      pfVar6 = &(pSVar1->fields).DirectInputMoveMap.z;
+      if (*pfVar6 <= 0.0 && *pfVar6 != 0.0) {
+        if (pMVar2 == (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0) goto code_?;
+        if (*(char *)&pMVar2[7].monitor == '\0') {
+          pMVar7 = pMVar2[7].klass;
+          this = (MVHamsterWheel_LocalObjectsHamsterWheel *)CONCAT13(1,this._0_3_);
+          pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+          if (pMVar7 == (MVHamsterWheel_LocalObjectsHamsterWheel__Class *)0x0)
+          goto code_?;
+          MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                    ((MVRuntimeDataVariable *)pMVar7,pOVar5,(MethodInfo *)0x0);
+          *(undefined1 *)&pMVar2[7].monitor = 1;
         }
-      }
-    }
-    if (0.0 <= fVar8) {
-      if (piVar7 == (int *)0x0) goto code_?;
-      if ((char)piVar7[0x4f] != '\0') {
-        pMVar9 = (MVRuntimeDataVariable *)piVar7[0x4e];
-        bStack_10 = 0;
-        pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_10);
-        if (pMVar9 == (MVRuntimeDataVariable *)0x0) goto code_?;
-        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar9,pOVar11,(MethodInfo *)0x0);
-        *(undefined1 *)(piVar7 + 0x4f) = 0;
       }
     }
-    pMVar12 = this;
-    pSVar2 = (pMVar1->fields)._.vehicleMotor;
-    if (pSVar2 != (SimpleVehicleMotorBase *)0x0) {
-      bStack_13 = (pSVar2->klass->_1).naturalAligment;
-      bStack_10 = (TypeInfo__HamsterWheelMotor->_1).naturalAligment;
-      if ((bStack_13 < bStack_10) ||
-         (bStack_14 = 1,
-         (pSVar2->klass->_1).typeHierarchy[bStack_10 - 1] !=
-         (Il2CppClass *)TypeInfo__HamsterWheelMotor)) {
-        bStack_14 = 0;
+    if (_UNK_? <= (pSVar1->fields).DirectInputMoveMap.z) {
+      if (pMVar2 == (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0) goto code_?;
+      if (*(char *)&pMVar2[7].monitor != '\0') {
+        pMVar7 = pMVar2[7].klass;
+        this = (MVHamsterWheel_LocalObjectsHamsterWheel *)((uint)this & 0xffffff);
+        pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+        if (pMVar7 == (MVHamsterWheel_LocalObjectsHamsterWheel__Class *)0x0) goto code_?;
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                  ((MVRuntimeDataVariable *)pMVar7,pOVar5,(MethodInfo *)0x0);
+        *(undefined1 *)&pMVar2[7].monitor = 0;
       }
-      pSVar3 = (SimpleVehicleMotorBase *)0x0;
-      if (bStack_14 != 0) {
-        pSVar3 = pSVar2;
+    }
+    pSVar1 = (this_00->fields)._.vehicleMotor;
+    if (((pSVar1 != (SimpleVehicleMotorBase *)0x0) &&
+        ((TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth <=
+         (pSVar1->klass->_1).typeHierarchyDepth)) &&
+       ((pSVar1->klass->_1).typeHierarchy[(TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth - 1]
+        == (Il2CppClass *)TypeInfo__HamsterWheelMotor)) {
+      pSVar4 = (SimpleVehicleMotorBase *)0x0;
+      if ((pSVar1->klass->_1).typeHierarchy
+          [(TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__HamsterWheelMotor) {
+        pSVar4 = pSVar1;
       }
-      if (pSVar3 != (SimpleVehicleMotorBase *)0x0) {
-        if ((bStack_13 < bStack_10) ||
-           ((pSVar2->klass->_1).typeHierarchy[bStack_10 - 1] !=
-            (Il2CppClass *)TypeInfo__HamsterWheelMotor)) {
-          bVar5 = false;
+      cVar8 = (*(pSVar4->klass->vtable).get_Grounded.methodPtr)
+                        (pSVar4,(pSVar4->klass->vtable).get_Grounded.method);
+      if (cVar8 != '\0') {
+        if (pMVar2 == (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0) goto code_?;
+        if (*(char *)&pMVar2[7].fields._._.onLeave == '\0') {
+          pAVar9 = pMVar2[7].fields._._.onDestroy;
+          this = (MVHamsterWheel_LocalObjectsHamsterWheel *)CONCAT13(1,this._0_3_);
+          pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+          if (pAVar9 == (Action *)0x0) goto code_?;
+          MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                    ((MVRuntimeDataVariable *)pAVar9,pOVar5,(MethodInfo *)0x0);
+          *(undefined1 *)&pMVar2[7].fields._._.onLeave = 1;
         }
-        else {
-          bVar5 = true;
+      }
+      pSVar1 = (this_00->fields)._.vehicleMotor;
+      if (((pSVar1 != (SimpleVehicleMotorBase *)0x0) &&
+          ((TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth <=
+           (pSVar1->klass->_1).typeHierarchyDepth)) &&
+         ((pSVar1->klass->_1).typeHierarchy
+          [(TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__HamsterWheelMotor)) {
+        pSVar4 = (SimpleVehicleMotorBase *)0x0;
+        if ((pSVar1->klass->_1).typeHierarchy
+            [(TypeInfo__HamsterWheelMotor->_1).typeHierarchyDepth - 1] ==
+            (Il2CppClass *)TypeInfo__HamsterWheelMotor) {
+          pSVar4 = pSVar1;
         }
-        pSVar3 = (SimpleVehicleMotorBase *)0x0;
-        if (bVar5) {
-          pSVar3 = pSVar2;
-        }
-        cVar15 = (*(code *)(pSVar3->klass->vtable).__unknown.method)
-                          (pSVar3,(pSVar3->klass->vtable).__unknown_1.methodPtr);
-        if (cVar15 != '\0') {
-          if (piVar7 == (int *)0x0) goto code_?;
-          if ((char)piVar7[0x51] == '\0') {
-            pMVar9 = (MVRuntimeDataVariable *)piVar7[0x50];
-            bStack_10 = 1;
-            pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_10);
-            if (pMVar9 == (MVRuntimeDataVariable *)0x0) goto code_?;
-            MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar9,pOVar11,(MethodInfo *)0x0)
-            ;
-            *(undefined1 *)(piVar7 + 0x51) = 1;
+        cVar8 = (*(pSVar4->klass->vtable).get_Grounded.methodPtr)
+                          (pSVar4,(pSVar4->klass->vtable).get_Grounded.method);
+        if (cVar8 == '\0') {
+          if (pMVar2 == (MVHamsterWheel_LocalObjectsHamsterWheel *)0x0) goto code_?;
+          if (*(char *)&pMVar2[7].fields._._.onLeave != '\0') {
+            pAVar9 = pMVar2[7].fields._._.onDestroy;
+            this = (MVHamsterWheel_LocalObjectsHamsterWheel *)((uint)this & 0xffffff);
+            pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+            if (pAVar9 == (Action *)0x0) goto code_?;
+            MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                      ((MVRuntimeDataVariable *)pAVar9,pOVar5,(MethodInfo *)0x0);
+            *(undefined1 *)&pMVar2[7].fields._._.onLeave = 0;
           }
         }
-        pMVar1 = this;
-        pSVar2 = (pMVar12->fields)._.vehicleMotor;
-        if (pSVar2 != (SimpleVehicleMotorBase *)0x0) {
-          bStack_13 = (pSVar2->klass->_1).naturalAligment;
-          bStack_14 = (TypeInfo__HamsterWheelMotor->_1).naturalAligment;
-          if ((bStack_13 < bStack_14) ||
-             (bStack_10 = 1,
-             (pSVar2->klass->_1).typeHierarchy[bStack_14 - 1] !=
-             (Il2CppClass *)TypeInfo__HamsterWheelMotor)) {
-            bStack_10 = 0;
-          }
-          pSVar3 = (SimpleVehicleMotorBase *)0x0;
-          if (bStack_10 != 0) {
-            pSVar3 = pSVar2;
-          }
-          if (pSVar3 != (SimpleVehicleMotorBase *)0x0) {
-            if ((bStack_13 < bStack_14) ||
-               ((pSVar2->klass->_1).typeHierarchy[bStack_14 - 1] !=
-                (Il2CppClass *)TypeInfo__HamsterWheelMotor)) {
-              bVar5 = false;
-            }
-            else {
-              bVar5 = true;
-            }
-            pSVar3 = (SimpleVehicleMotorBase *)0x0;
-            if (bVar5) {
-              pSVar3 = pSVar2;
-            }
-            cVar15 = (*(code *)(pSVar3->klass->vtable).__unknown.method)
-                              (pSVar3,(pSVar3->klass->vtable).__unknown_1.methodPtr);
-            if (cVar15 == '\0') {
-              if (piVar7 == (int *)0x0) goto code_?;
-              if ((char)piVar7[0x51] != '\0') {
-                pMVar9 = (MVRuntimeDataVariable *)piVar7[0x50];
-                this = (MVHamsterWheel_LocalObjectsHamsterWheel *)((uint)this & 0xffffff);
-                pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-                if (pMVar9 == (MVRuntimeDataVariable *)0x0) goto code_?;
-                MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                          (pMVar9,pOVar11,(MethodInfo *)0x0);
-                *(undefined1 *)(piVar7 + 0x51) = 0;
-              }
-            }
-            pIVar16 = MVSimpleOneSeatVehicle+LocalObjectsSimpleVehicle::
-                      MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle_FixedUpdate
-                                ((MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)pMVar1,
-                                 movementMap,(MethodInfo *)0x0);
-            return pIVar16;
-          }
-        }
+        pIVar10 = MVSimpleOneSeatVehicle+LocalObjectsSimpleVehicle::
+                 MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle_FixedUpdate
+                           ((MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)this_00,movementMap,
+                            (MethodInfo *)0x0);
+        return pIVar10;
       }
     }
   }
 code_?:
-  func_?(0);
-  pcVar17 = (code *)swi(3);
-  pIVar16 = (IInputToPlayerMovement *)(*pcVar17)();
-  return pIVar16;
+  func_?();
+  pcVar11 = (code *)swi(3);
+  pIVar10 = (IInputToPlayerMovement *)(*pcVar11)();
+  return pIVar10;
 }
 
 
@@ -211,79 +168,54 @@ void Assembly-CSharp.dll::MVHamsterWheel+LocalObjectsHamsterWheel::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__MVHamsterWheel);
     cRam_? = '\x01';
   }
+  pMVar1 = this;
   MVSimpleOneSeatVehicle+LocalObjectsSimpleVehicle::
   MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle_Leave
             ((MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)this,(MethodInfo *)0x0);
-  piVar1 = (int *)(*(code *)(this->klass->vtable).get_Owner.method)
-                            (this,(this->klass->vtable).Destroy.methodPtr);
-  if (piVar1 != (int *)0x0) {
-    iVar2 = *piVar1;
-    bVar3 = (TypeInfo__MVHamsterWheel->_1).naturalAligment;
-    if ((*(byte *)(iVar2 + 0xb8) < bVar3) ||
-       (bVar4 = true,
-       *(MVHamsterWheel__Class **)(*(int *)(iVar2 + 100) + -4 + (uint)bVar3 * 4) !=
-       TypeInfo__MVHamsterWheel)) {
-      bVar4 = false;
-    }
-    piVar5 = (int *)0x0;
-    if (bVar4) {
-      piVar5 = piVar1;
-    }
-    if (piVar5 != (int *)0x0) {
-      if ((*(byte *)(iVar2 + 0xb8) < bVar3) ||
-         (*(MVHamsterWheel__Class **)(*(int *)(iVar2 + 100) + -4 + (uint)bVar3 * 4) !=
-          TypeInfo__MVHamsterWheel)) {
-        bVar4 = false;
+  piVar2 = (int *)(*(pMVar1->klass->vtable).get_Owner.methodPtr)
+                            (pMVar1,(pMVar1->klass->vtable).get_Owner.method);
+  if (piVar2 != (int *)0x0) {
+    if (((TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth <= *(byte *)(*piVar2 + 0xb4)) &&
+       (*(MVHamsterWheel__Class **)
+         (*(int *)(*piVar2 + 100) + -4 + (uint)(TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth * 4
+         ) == TypeInfo__MVHamsterWheel)) {
+      piVar3 = (int *)0x0;
+      if (*(MVHamsterWheel__Class **)
+           (*(int *)(*piVar2 + 100) + -4 +
+           (uint)(TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth * 4) == TypeInfo__MVHamsterWheel)
+      {
+        piVar3 = piVar2;
       }
-      else {
-        bVar4 = true;
-      }
-      piVar5 = (int *)0x0;
-      if (bVar4) {
-        piVar5 = piVar1;
-      }
-      pMVar6 = (MVRuntimeDataVariable *)piVar5[0x4c];
-      pOVar7 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffff9);
-      if (pMVar6 != (MVRuntimeDataVariable *)0x0) {
-        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar6,pOVar7,(MethodInfo *)0x0);
-        piVar1 = (int *)(*(code *)(this->klass->vtable).get_Owner.method)
-                                  (this,(this->klass->vtable).Destroy.methodPtr);
-        if (piVar1 != (int *)0x0) {
-          iVar2 = *piVar1;
-          bVar3 = (TypeInfo__MVHamsterWheel->_1).naturalAligment;
-          if ((*(byte *)(iVar2 + 0xb8) < bVar3) ||
-             (*(MVHamsterWheel__Class **)(*(int *)(iVar2 + 100) + -4 + (uint)bVar3 * 4) !=
+      pMVar4 = (MVRuntimeDataVariable *)piVar3[0x52];
+      this = (MVHamsterWheel_LocalObjectsHamsterWheel *)((uint)this & 0xffffff);
+      pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+      if (pMVar4 != (MVRuntimeDataVariable *)0x0) {
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar4,pOVar5,(MethodInfo *)0x0);
+        piVar2 = (int *)(*(pMVar1->klass->vtable).get_Owner.methodPtr)
+                                  (pMVar1,(pMVar1->klass->vtable).get_Owner.method);
+        if (piVar2 != (int *)0x0) {
+          if (((TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth <= *(byte *)(*piVar2 + 0xb4)) &&
+             (*(MVHamsterWheel__Class **)
+               (*(int *)(*piVar2 + 100) + -4 +
+               (uint)(TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth * 4) ==
               TypeInfo__MVHamsterWheel)) {
-            bVar4 = false;
-          }
-          else {
-            bVar4 = true;
-          }
-          piVar5 = (int *)0x0;
-          if (bVar4) {
-            piVar5 = piVar1;
-          }
-          if (piVar5 != (int *)0x0) {
-            if ((*(byte *)(iVar2 + 0xb8) < bVar3) ||
-               (*(MVHamsterWheel__Class **)(*(int *)(iVar2 + 100) + -4 + (uint)bVar3 * 4) !=
-                TypeInfo__MVHamsterWheel)) {
-              bVar4 = false;
+            piVar3 = (int *)0x0;
+            if (*(MVHamsterWheel__Class **)
+                 (*(int *)(*piVar2 + 100) + -4 +
+                 (uint)(TypeInfo__MVHamsterWheel->_1).typeHierarchyDepth * 4) ==
+                TypeInfo__MVHamsterWheel) {
+              piVar3 = piVar2;
             }
-            else {
-              bVar4 = true;
-            }
-            piVar5 = (int *)0x0;
-            if (bVar4) {
-              piVar5 = piVar1;
-            }
-            pMVar6 = (MVRuntimeDataVariable *)piVar5[0x4e];
-            pOVar7 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffff8);
-            if (pMVar6 != (MVRuntimeDataVariable *)0x0) {
+            pMVar4 = (MVRuntimeDataVariable *)piVar3[0x54];
+            uStack_6 = uStack_6 & 0xffffff;
+            pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&uStack_6 + 3);
+            if (pMVar4 != (MVRuntimeDataVariable *)0x0) {
               MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                        (pMVar6,pOVar7,(MethodInfo *)0x0);
+                        (pMVar4,pOVar5,(MethodInfo *)0x0);
               return;
             }
           }
@@ -291,9 +223,9 @@ void Assembly-CSharp.dll::MVHamsterWheel+LocalObjectsHamsterWheel::
       }
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GameSetupMenu : MonoBehaviour
 {
@@ -34,68 +34,68 @@ public class GameSetupMenu : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowGamePassesShopDetails_c__AnonStorey0
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal GamePassesShopDetails gameShopDetails;
+		public GamePassesShopDetails gameShopDetails;
 
 		// Constructors
-		public _ShowGamePassesShopDetails_c__AnonStorey0();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowGamePassesShopDetails_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowBoostEditMenu_c__AnonStorey1
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal BoostEditMenu boostEditMenu;
+		public BoostEditMenu boostEditMenu;
 
 		// Constructors
-		public _ShowBoostEditMenu_c__AnonStorey1();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowBoostEditMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnInactiveTierButtonPressed_c__AnonStorey2
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		internal GameObject popup;
+		public GameObject popup;
 
 		// Constructors
-		public _OnInactiveTierButtonPressed_c__AnonStorey2();
+		public __c__DisplayClass15_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnInactiveTierButtonPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowGameEarnings_c__AnonStorey3
+	private sealed class __c__DisplayClass16_0
 	{
 		// Fields
-		internal GameEarningsMenu earningsMenu;
+		public GameEarningsMenu earningsMenu;
 
 		// Constructors
-		public _ShowGameEarnings_c__AnonStorey3();
+		public __c__DisplayClass16_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowGameEarnings_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowMiscOptions_c__AnonStorey4
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
-		internal GameSetupOptions optionsMenu;
+		public GameSetupOptions optionsMenu;
 
 		// Constructors
-		public _ShowMiscOptions_c__AnonStorey4();
+		public __c__DisplayClass17_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowMiscOptions_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -6,10 +6,12 @@ void Assembly-CSharp.dll::InventoryItemData::InventoryItemData__ctor
                ,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).slotIndex = slotIndex;
   (this->fields).categoryId = categoryId;
   (this->fields).name = name;
+  func_?(&(this->fields).name,name);
   (this->fields).id = id;
   return;
 }

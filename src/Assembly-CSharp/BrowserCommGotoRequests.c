@@ -6,21 +6,30 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoD
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     url = (pGVar1->fields).disconnectedURL;
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__BrowserComm);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (url,(MethodInfo *)0x0);
+    }
     return;
   }
   func_?();
@@ -37,21 +46,30 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoE
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     url = (pGVar1->fields).eliteUpgradeURL;
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__BrowserComm);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (url,(MethodInfo *)0x0);
+    }
     return;
   }
   func_?();
@@ -68,21 +86,30 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     url = (pGVar1->fields).idleURL;
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__BrowserComm);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (url,(MethodInfo *)0x0);
+    }
     return;
   }
   func_?();
@@ -99,21 +126,30 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoL
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     url = (pGVar1->fields).loginURL;
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__BrowserComm);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (url,(MethodInfo *)0x0);
+    }
     return;
   }
   func_?();
@@ -130,26 +166,31 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoM
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this != (PrefabPool *)0x0) {
-    url = PrefabPool::PrefabPool_get_MVCameraSettingsPrefab(this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
-      func_?();
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    url = (pMVar1->fields)._KogamaMainpageURL_k__BackingField;
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
     }
-    BrowserComm::BrowserComm_ExecuteBrowserRequest((String *)url,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__BrowserComm);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (url,(MethodInfo *)0x0);
+    }
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -161,33 +202,46 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoP
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     pSVar2 = (pGVar1->fields).playerProfileURL;
-    str1 = (String *)func_?(&profileId,0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+    str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&profileId,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4
                        (pSVar2,str1,::StringLiteral__,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
-      profileId = (int32_t)TypeInfo__BrowserComm;
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      _modalPopup = (BrowserComm__Class **)TypeInfo__BrowserComm;
+      _newTab = (String *)&UNK_?;
       func_?();
     }
-    profileId = 0;
-    BrowserComm::BrowserComm_ExecuteBrowserRequest(pSVar2,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      _modalPopup = &TypeInfo__BrowserComm;
+      _newTab = (String *)&UNK_?;
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      _modalPopup = (BrowserComm__Class **)TypeInfo__BrowserComm;
+      _newTab = (String *)&UNK_?;
+      func_?();
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      _modalPopup = (BrowserComm__Class **)0x0;
+      profileId = (int32_t)&UNK_?;
+      _newTab = pSVar2;
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (pSVar2,(MethodInfo *)0x0);
+    }
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -201,21 +255,30 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoP
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     url = (pGVar1->fields).purchaseGoldURL;
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__BrowserComm);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (url,(MethodInfo *)0x0);
+    }
     return;
   }
   func_?();
@@ -231,14 +294,6 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoS
                (MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   MVGameControllerBase::MVGameControllerBase_ApplicationQuit
             ((QuitBaseCallback *)0x0,(MethodInfo *)0x0);
   return;
@@ -252,21 +307,30 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoS
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     url = (pGVar1->fields).signupURL;
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__BrowserComm);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm);
+    }
+    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL
+                (url,(MethodInfo *)0x0);
+    }
     return;
   }
   func_?();
@@ -283,14 +347,23 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoU
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
-  BrowserComm::BrowserComm_ExecuteBrowserRequest(URL,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__BrowserComm);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__BrowserComm);
+  }
+  if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(URL,(MethodInfo *)0x0)
+    ;
+  }
   return;
 }
 

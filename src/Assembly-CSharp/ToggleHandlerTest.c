@@ -7,33 +7,29 @@ void Assembly-CSharp.dll::ToggleHandlerTest::ToggleHandlerTest_ExecuteToggleStat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Toggle_is_);
     cRam_? = '\x01';
   }
   if (toggleCallback != (UnityAction_1_System_Boolean_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Boolean]::
-    UnityAction_1_System_Boolean__Invoke
-              (toggleCallback,toggleState,
-               MethodInfo__UnityEngine__Events__UnityAction<bool>__Invoke_bool_);
-    toggleCallback = (UnityAction_1_System_Boolean_ *)CONCAT13(toggleState,toggleCallback._0_3_);
-    arg1 = (Object *)func_?(TypeInfo__System__Boolean,(int)&toggleCallback + 3);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    message = mscorlib.dll::System::String::String_Concat
-                        ((Object *)StringLiteral_Toggle_is_,arg1,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    method_00 = (toggleCallback->fields)._._.method_code;
+    (*(toggleCallback->fields)._._.invoke_impl)
+              (method_00,_toggleState,(toggleCallback->fields)._._.method);
+    pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                       ((Boolean *)&toggleState,(IFormatProvider *)0x0,method_00);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_Toggle_is_,pSVar1,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      _toggleState = TypeInfo__UnityEngine__Debug;
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0)
-    ;
+    _toggleState = (Debug_1__Class *)0x0;
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

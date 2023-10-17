@@ -5,6 +5,13 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::MathUtils::MathUtils_Appr
                (double d1,double d2,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
   return (double)CONCAT44((uint)((ulonglong)(d1 - d2) >> 0x20) & _UNK_?,
                           SUB84(d1 - d2,0) & _UNK_?) <
          (double)CONCAT44((uint)((ulonglong)d1 >> 0x20) & _UNK_?,SUB84(d1,0) & _UNK_?)
@@ -18,17 +25,29 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::MathUtils::MathUtils_G
                   (double value,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  uStack_1 = mscorlib.dll::System::Math::Math_Pow
+                        ((double)CONCAT44(_UNK_?,_UNK_?),
+                         (double)CONCAT44(_UNK_?,_UNK_?),(MethodInfo *)0x0);
   if (value != _UNK_?) {
-    dVar1 = _UNK_?;
-    func_?();
-    fVar2 = (float10)func_?(value);
-    dVar3 = value - (double)fVar2;
-    for (iVar4 = 0; (dVar1 < dVar3 && (iVar4 < 10)); iVar4 = iVar4 + 1) {
+    iVar2 = 0;
+    while( true ) {
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      uStack_1 = (double)CONCAT44(&UNK_?,(undefined4)uStack_1);
+      fVar3 = (float10)func_?();
+      if ((value - (double)fVar3 <= uStack_1) || (9 < iVar2)) break;
       value = value * _UNK_?;
-      fVar2 = (float10)func_?(value);
-      dVar3 = value - (double)fVar2;
+      iVar2 = iVar2 + 1;
     }
-    return iVar4;
+    return iVar2;
   }
   return 0;
 }
@@ -59,29 +78,32 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::MathUtils::MathUtils_I
                   (int32_t i,MethodInfo *method)
 
 {
-  uVar1 = (undefined4)((ulonglong)in_stack_2 >> 0x20);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
   if (-1 < i) {
     if (i != 0) {
-      dVar3 = (double)i;
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      dVar1 = (double)i;
       func_?();
-      fVar4 = (float10)func_?(dVar3);
-      return (int)fVar4 + 1;
+      fVar2 = (float10)func_?(dVar1);
+      return (int)fVar2 + 1;
     }
     return 1;
   }
-  this = (ArgumentOutOfRangeException *)func_?();
+  uVar3 = func_?();
+  this = (ArgumentOutOfRangeException *)func_?(uVar3);
+  func_?(this);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor
             (this,(MethodInfo *)0x0);
-  uVar5 = CONCAT44(uVar1,MethodInfo__Newtonsoft__Json__Utilities__MathUtils__IntLength_int_);
-  uVar1 = 0;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  iVar7 = (*pcVar6)(uVar1,uVar5);
-  return iVar7;
+  uVar3 = func_?(&MethodInfo__Newtonsoft__Json__Utilities__MathUtils__IntLength_int_);
+  func_?(this,uVar3);
+  pcVar4 = (code *)swi(3);
+  iVar5 = (*pcVar4)();
+  return iVar5;
 }
 
 
@@ -106,26 +128,43 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::MathUtils::MathUtils_Max
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Math);
+    func_?(&MethodInfo__System__Nullable<int>__Nullable_int_);
+    func_?(&MethodInfo__System__Nullable<int>__get_HasValue__);
+    func_?(&MethodInfo__System__Nullable<int>__get_Value__);
     cRam_? = '\x01';
   }
-  cVar1 = func_?(&val1,MethodInfo__System__Nullable<int>__get_HasValue__);
-  if (cVar1 != '\0') {
-    cVar1 = func_?(&val2,MethodInfo__System__Nullable<int>__get_HasValue__);
-    if (cVar1 != '\0') {
-      iVar2 = func_?(&val1,MethodInfo__System__Nullable<int>__get_Value__);
-      b = func_?(&val2,MethodInfo__System__Nullable<int>__get_Value__);
-      iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Max_2(iVar2,b,(MethodInfo *)0x0)
-      ;
-      NStack_3.value = 0;
-      NStack_3.has_value = 0;
-      NStack_3._5_3_ = 0;
-      func_?(&NStack_3,iVar2,MethodInfo__System__Nullable<int>__Nullable_int_);
-      return NStack_3;
+  if (val1.hasValue != 0) {
+    if (val2.hasValue != 0) {
+      val1_00 = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
+                          ((Nullable_1_UInt32_ *)&val1,
+                           MethodInfo__System__Nullable<int>__get_Value__);
+      val2_00 = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
+                          ((Nullable_1_UInt32_ *)&val2,
+                           MethodInfo__System__Nullable<int>__get_Value__);
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Math::Math_Max_2(val1_00,val2_00,(MethodInfo *)0x0);
+      NVar1.hasValue = 0;
+      NVar1._1_3_ = 0;
+      NVar1.value = 0;
+      mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+                ((Nullable_1_UInt32_ *)&stack0xfffffff4,0,(MethodInfo *)0x0);
+      NVar2.hasValue = NVar1.hasValue;
+      uVar3._1_3_ = NVar1._1_3_;
+      register0x00000008 = NVar1.value;
+      return NVar2;
     }
-    return val1;
+    NVar4.value = val1.value;
+    NVar4.hasValue = val1.hasValue;
+    NVar4._1_3_ = val1._1_3_;
+    return NVar4;
   }
-  return val2;
+  NVar5._1_3_ = val2._1_3_;
+  NVar5.value = val2.value;
+  NVar5.hasValue = val2.hasValue;
+  return NVar5;
 }
 
 
@@ -137,46 +176,51 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::MathUtils::MathUtils_Max_1
           Nullable_1_Double_ val2,MethodInfo *method)
 
 {
+  this = __return_storage_ptr__;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?(&MethodInfo__System__Nullable<double>__Nullable_double_);
+    func_?(&MethodInfo__System__Nullable<double>__get_HasValue__);
+    func_?(&MethodInfo__System__Nullable<double>__get_Value__);
     cRam_? = '\x01';
   }
-  bVar1 = SubscribableVariableBase`1[System::Boolean]::
-          SubscribableVariableBase_1_System_Boolean__get_Value
-                    ((SubscribableVariableBase_1_System_Boolean_ *)&stack0x00000008,
-                     MethodInfo__System__Nullable<double>__get_HasValue__);
-  if (bVar1 != 0) {
-    bVar1 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&val1.field_0xc,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar1 != 0) {
-      fVar2 = (float10)func_?();
-      fVar3 = (float10)func_?();
-      mscorlib.dll::System::Math::Math_Max_1((double)fVar2,(double)fVar3,(MethodInfo *)0x0);
-      uVar4 = 0;
-      uVar5 = 0;
-      uVar6 = 0;
-      func_?();
-      *(undefined4 *)&__return_storage_ptr__->value = uVar4;
-      *(int *)((int)&__return_storage_ptr__->value + 4) = (int)uVar5;
-      *(int *)&__return_storage_ptr__->has_value = (int)((ulonglong)uVar5 >> 0x20);
-      *(undefined4 *)&__return_storage_ptr__->field_0xc = uVar6;
-      return __return_storage_ptr__;
+  if (bStack1 != 0) {
+    if (val1.value._4_1_ != '\0') {
+      mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double__get_Value
+                ((Nullable_1_Double_ *)&stack0x00000008,
+                 MethodInfo__System__Nullable<double>__get_Value__);
+      dVar2 = mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double__get_Value
+                        ((Nullable_1_Double_ *)((int)&val1.value + 4),
+                         MethodInfo__System__Nullable<double>__get_Value__);
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        dVar2 = (double)CONCAT44(TypeInfo__System__Math,&UNK_?);
+        func_?();
+      }
+      dVar2 = mscorlib.dll::System::Math::Math_Max_1(dVar2,dVar2,(MethodInfo *)0x0);
+      *(undefined4 *)__return_storage_ptr__ = 0;
+      *(undefined4 *)&__return_storage_ptr__->field_0x4 = 0;
+      *(undefined4 *)&__return_storage_ptr__->value = 0;
+      *(undefined4 *)((int)&__return_storage_ptr__->value + 4) = 0;
+      _bStack00000008 = MethodInfo__System__Nullable<double>__Nullable_double_;
+      __return_storage_ptr__ = (Nullable_1_Double_ *)((ulonglong)dVar2 >> 0x20);
+      mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double___ctor
+                (this,(double)CONCAT44(MethodInfo__System__Nullable<double>__Nullable_double_,
+                                       __return_storage_ptr__),(MethodInfo *)val1._0_4_);
+      return this;
     }
-    *(SubscribableVariableBase_1_System_Boolean___Class **)&__return_storage_ptr__->value =
-         in_stack_7;
+    __return_storage_ptr__->hasValue = bStack1;
+    *(undefined3 *)&__return_storage_ptr__->field_0x1 = uStack3;
+    __return_storage_ptr__->field_0x4 = val1.hasValue;
+    *(undefined3 *)&__return_storage_ptr__->field_0x5 = val1._1_3_;
+    *(undefined4 *)&__return_storage_ptr__->value = val1._4_4_;
     *(undefined4 *)((int)&__return_storage_ptr__->value + 4) = val1.value._0_4_;
-    *(undefined4 *)&__return_storage_ptr__->has_value = val1.value._4_4_;
-    __return_storage_ptr__->field_0xc = val1.has_value;
-    *(undefined3 *)&__return_storage_ptr__->field_0xd = val1._9_3_;
     return __return_storage_ptr__;
   }
-  *(undefined4 *)&__return_storage_ptr__->value = val1._12_4_;
+  *(undefined4 *)__return_storage_ptr__ = val1.value._4_4_;
+  __return_storage_ptr__->field_0x4 = val2.hasValue;
+  *(undefined3 *)&__return_storage_ptr__->field_0x5 = val2._1_3_;
+  *(undefined4 *)&__return_storage_ptr__->value = val2._4_4_;
   *(undefined4 *)((int)&__return_storage_ptr__->value + 4) = val2.value._0_4_;
-  *(undefined4 *)&__return_storage_ptr__->has_value = val2.value._4_4_;
-  __return_storage_ptr__->field_0xc = val2.has_value;
-  *(undefined3 *)&__return_storage_ptr__->field_0xd = val2._9_3_;
   return __return_storage_ptr__;
 }
 
@@ -189,26 +233,43 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::MathUtils::MathUtils_Min
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Math);
+    func_?(&MethodInfo__System__Nullable<int>__Nullable_int_);
+    func_?(&MethodInfo__System__Nullable<int>__get_HasValue__);
+    func_?(&MethodInfo__System__Nullable<int>__get_Value__);
     cRam_? = '\x01';
   }
-  cVar1 = func_?(&val1,MethodInfo__System__Nullable<int>__get_HasValue__);
-  if (cVar1 != '\0') {
-    cVar1 = func_?(&val2,MethodInfo__System__Nullable<int>__get_HasValue__);
-    if (cVar1 != '\0') {
-      iVar2 = func_?(&val1,MethodInfo__System__Nullable<int>__get_Value__);
-      b = func_?(&val2,MethodInfo__System__Nullable<int>__get_Value__);
-      iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min_1(iVar2,b,(MethodInfo *)0x0)
-      ;
-      NStack_3.value = 0;
-      NStack_3.has_value = 0;
-      NStack_3._5_3_ = 0;
-      func_?(&NStack_3,iVar2,MethodInfo__System__Nullable<int>__Nullable_int_);
-      return NStack_3;
+  if (val1.hasValue != 0) {
+    if (val2.hasValue != 0) {
+      val1_00 = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
+                          ((Nullable_1_UInt32_ *)&val1,
+                           MethodInfo__System__Nullable<int>__get_Value__);
+      val2_00 = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
+                          ((Nullable_1_UInt32_ *)&val2,
+                           MethodInfo__System__Nullable<int>__get_Value__);
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Math::Math_Min_1(val1_00,val2_00,(MethodInfo *)0x0);
+      NVar1.hasValue = 0;
+      NVar1._1_3_ = 0;
+      NVar1.value = 0;
+      mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+                ((Nullable_1_UInt32_ *)&stack0xfffffff4,0,(MethodInfo *)0x0);
+      NVar2.hasValue = NVar1.hasValue;
+      uVar3._1_3_ = NVar1._1_3_;
+      register0x00000008 = NVar1.value;
+      return NVar2;
     }
-    return val1;
+    NVar4.value = val1.value;
+    NVar4.hasValue = val1.hasValue;
+    NVar4._1_3_ = val1._1_3_;
+    return NVar4;
   }
-  return val2;
+  NVar5._1_3_ = val2._1_3_;
+  NVar5.value = val2.value;
+  NVar5.hasValue = val2.hasValue;
+  return NVar5;
 }
 
 
@@ -220,46 +281,51 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::MathUtils::MathUtils_Min_1
           Nullable_1_Double_ val2,MethodInfo *method)
 
 {
+  this = __return_storage_ptr__;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?(&MethodInfo__System__Nullable<double>__Nullable_double_);
+    func_?(&MethodInfo__System__Nullable<double>__get_HasValue__);
+    func_?(&MethodInfo__System__Nullable<double>__get_Value__);
     cRam_? = '\x01';
   }
-  bVar1 = SubscribableVariableBase`1[System::Boolean]::
-          SubscribableVariableBase_1_System_Boolean__get_Value
-                    ((SubscribableVariableBase_1_System_Boolean_ *)&stack0x00000008,
-                     MethodInfo__System__Nullable<double>__get_HasValue__);
-  if (bVar1 != 0) {
-    bVar1 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&val1.field_0xc,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar1 != 0) {
-      fVar2 = (float10)func_?();
-      fVar3 = (float10)func_?();
-      mscorlib.dll::System::Math::Math_Min((double)fVar2,(double)fVar3,(MethodInfo *)0x0);
-      uVar4 = 0;
-      uVar5 = 0;
-      uVar6 = 0;
-      func_?();
-      *(undefined4 *)&__return_storage_ptr__->value = uVar4;
-      *(int *)((int)&__return_storage_ptr__->value + 4) = (int)uVar5;
-      *(int *)&__return_storage_ptr__->has_value = (int)((ulonglong)uVar5 >> 0x20);
-      *(undefined4 *)&__return_storage_ptr__->field_0xc = uVar6;
-      return __return_storage_ptr__;
+  if (bStack1 != 0) {
+    if (val1.value._4_1_ != '\0') {
+      mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double__get_Value
+                ((Nullable_1_Double_ *)&stack0x00000008,
+                 MethodInfo__System__Nullable<double>__get_Value__);
+      dVar2 = mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double__get_Value
+                        ((Nullable_1_Double_ *)((int)&val1.value + 4),
+                         MethodInfo__System__Nullable<double>__get_Value__);
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        dVar2 = (double)CONCAT44(TypeInfo__System__Math,&UNK_?);
+        func_?();
+      }
+      dVar2 = mscorlib.dll::System::Math::Math_Min(dVar2,dVar2,(MethodInfo *)0x0);
+      *(undefined4 *)__return_storage_ptr__ = 0;
+      *(undefined4 *)&__return_storage_ptr__->field_0x4 = 0;
+      *(undefined4 *)&__return_storage_ptr__->value = 0;
+      *(undefined4 *)((int)&__return_storage_ptr__->value + 4) = 0;
+      _bStack00000008 = MethodInfo__System__Nullable<double>__Nullable_double_;
+      __return_storage_ptr__ = (Nullable_1_Double_ *)((ulonglong)dVar2 >> 0x20);
+      mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double___ctor
+                (this,(double)CONCAT44(MethodInfo__System__Nullable<double>__Nullable_double_,
+                                       __return_storage_ptr__),(MethodInfo *)val1._0_4_);
+      return this;
     }
-    *(SubscribableVariableBase_1_System_Boolean___Class **)&__return_storage_ptr__->value =
-         in_stack_7;
+    __return_storage_ptr__->hasValue = bStack1;
+    *(undefined3 *)&__return_storage_ptr__->field_0x1 = uStack3;
+    __return_storage_ptr__->field_0x4 = val1.hasValue;
+    *(undefined3 *)&__return_storage_ptr__->field_0x5 = val1._1_3_;
+    *(undefined4 *)&__return_storage_ptr__->value = val1._4_4_;
     *(undefined4 *)((int)&__return_storage_ptr__->value + 4) = val1.value._0_4_;
-    *(undefined4 *)&__return_storage_ptr__->has_value = val1.value._4_4_;
-    __return_storage_ptr__->field_0xc = val1.has_value;
-    *(undefined3 *)&__return_storage_ptr__->field_0xd = val1._9_3_;
     return __return_storage_ptr__;
   }
-  *(undefined4 *)&__return_storage_ptr__->value = val1._12_4_;
+  *(undefined4 *)__return_storage_ptr__ = val1.value._4_4_;
+  __return_storage_ptr__->field_0x4 = val2.hasValue;
+  *(undefined3 *)&__return_storage_ptr__->field_0x5 = val2._1_3_;
+  *(undefined4 *)&__return_storage_ptr__->value = val2._4_4_;
   *(undefined4 *)((int)&__return_storage_ptr__->value + 4) = val2.value._0_4_;
-  *(undefined4 *)&__return_storage_ptr__->has_value = val2.value._4_4_;
-  __return_storage_ptr__->field_0xc = val2.has_value;
-  *(undefined3 *)&__return_storage_ptr__->field_0xd = val2._9_3_;
   return __return_storage_ptr__;
 }
 

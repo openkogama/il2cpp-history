@@ -6,7 +6,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::Gam
                   (GameCoinBooster *this,int32_t gameCoins,MethodInfo *method)
 
 {
-  return (1 - (int)((float)(this->fields)._GameCoinBoost_k__BackingField / _UNK_?)) *
+  return ((int)((float)(this->fields)._GameCoinBoost_k__BackingField / _UNK_?) + 1) *
          gameCoins;
 }
 

@@ -6,16 +6,19 @@ void Assembly-CSharp.dll::CubeModelChunk+FaceData::CubeModelChunk_FaceData__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Color);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,4);
   (this->fields).faceVertices = pVVar1;
-  method_00 = TypeInfo__UnityEngine__Color;
+  func_?(&this->fields,pVVar1);
   pCVar2 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,4);
   (this->fields).colors = pCVar2;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  method_00 = (MethodInfo *)&(this->fields).colors;
+  func_?(method_00,pCVar2);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

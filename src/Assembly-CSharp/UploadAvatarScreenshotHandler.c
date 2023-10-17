@@ -8,46 +8,56 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__UploadAvatarScreenshotHandler____c___OnScreenshotReady_b__11_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__UploadAvatarScreenshotHandler____c);
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__UploadAvatarScreenshotHandler->static_fields->__f__am_cache1 ==
-      (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__UploadAvatarScreenshotHandler___OnScreenshotReady_m__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    TypeInfo__UploadAvatarScreenshotHandler->static_fields->__f__am_cache1 =
-         (ExecuteEvents_EventFunction_1_IUIStack_ *)this_00;
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UploadAvatarScreenshotHandler____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UploadAvatarScreenshotHandler____c);
   }
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__UploadAvatarScreenshotHandler->static_fields->__f__am_cache1;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+  callbackFunction = TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9__11_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if ((TypeInfo__UploadAvatarScreenshotHandler____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UploadAvatarScreenshotHandler____c);
+    }
+    object = TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IUIStack_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__UploadAvatarScreenshotHandler____c___OnScreenshotReady_b__11_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9__11_0 = callbackFunction;
+    func_?(&TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9__11_0);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,callbackFunction,
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
   pRVar1 = (this->fields).toImage;
-  uVar2 = 0x3f800000;
-  uVar3 = 0x3f800000;
-  func_?(&stack0xffffffec,0x3f800000,0x3f800000);
   if (pRVar1 != (RawImage *)0x0) {
-    (*(code *)(pRVar1->klass->vtable).set_color.method)(pRVar1,uVar3,uVar2);
+    (*(pRVar1->klass->vtable).set_color.methodPtr)
+              (pRVar1,_UNK_?,_UNK_?,_UNK_?,_UNK_?);
     pRVar1 = (this->fields).toImage;
     if (pRVar1 != (RawImage *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
@@ -55,9 +65,10 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
       return;
     }
   }
+code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -71,61 +82,69 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__UploadAvatarScreenshotHandler____c___OnScreenshotReadyUploadDirect_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__UploadAvatarScreenshotHandler____c);
     cRam_? = '\x01';
   }
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__UploadAvatarScreenshotHandler->static_fields->__f__am_cache0 ==
-      (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)0x0,
-               MethodInfo__UploadAvatarScreenshotHandler___OnScreenshotReadyUploadDirect_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    TypeInfo__UploadAvatarScreenshotHandler->static_fields->__f__am_cache0 =
-         (ExecuteEvents_EventFunction_1_IUIStack_ *)this_01;
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UploadAvatarScreenshotHandler____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UploadAvatarScreenshotHandler____c);
   }
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__UploadAvatarScreenshotHandler->static_fields->__f__am_cache0;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+  callbackFunction = TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9__10_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if ((TypeInfo__UploadAvatarScreenshotHandler____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UploadAvatarScreenshotHandler____c);
+    }
+    object = TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IUIStack_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__UploadAvatarScreenshotHandler____c___OnScreenshotReadyUploadDirect_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9__10_0 = callbackFunction;
+    func_?(&TypeInfo__UploadAvatarScreenshotHandler____c->static_fields->__9__10_0);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (pGVar1,(BaseEventData *)0x0,callbackFunction,
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar1,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  this_00 = (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)
-            (this->fields).OnUploadScreenshot;
-  if (this_00 != (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)0x0) {
-    System.Core.dll::System::Action`2[Object,UnityEngine::ReflectionProbe+ReflectionProbeEvent]::
-    Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent__Invoke
-              (this_00,(Object *)texture,(ReflectionProbe_ReflectionProbeEvent__Enum)text,
-               MethodInfo__System__Action<UnityEngine::Texture2D,_System::String>__Invoke_UnityEngine__Texture2D__System__String_
-              );
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pAVar2 = (this->fields).OnUploadScreenshot;
+  if (pAVar2 != (Action_2_UnityEngine_Texture2D_String_ *)0x0) {
+    (*(pAVar2->fields)._._.invoke_impl)((pAVar2->fields)._._.method_code,texture,text);
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)pGVar1,(MethodInfo *)0x0);
     return;
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -138,67 +157,88 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    PleaseWaitPopup_MethodInfo__UnityEngine__Object__Instantiate<PleaseWaitPopup>_PleaseWaitPopup_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__UploadAvatarScreenshotHandler____c__DisplayClass12_0___OnUpdatePressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__UploadAvatarScreenshotHandler____c__DisplayClass12_0);
+    func_?(&
+                    MethodInfo__UploadAvatarScreenshotHandler__UploadAndDestroy_UnityEngine__Texture2D__System__String_
+                   );
+    func_?(&StringLiteral_Screenshot_taken_successfully_);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__UploadAvatarScreenshotHandler___OnUpdatePressed_c__AnonStorey1;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  original = (this->fields).pleaseWaitPopupPrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     ((XpBoostParticlePreviewer *)original,
-                      PleaseWaitPopup_MethodInfo__UnityEngine__Object__Instantiate<PleaseWaitPopup>_PleaseWaitPopup_
-                     );
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields)._._._._.m_CachedPtr = pXVar1;
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                            );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar2,(Object *)this_01,
-               MethodInfo__UploadAvatarScreenshotHandler___OnUpdatePressed_c__AnonStorey1____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
+  value = (Object *)func_?(TypeInfo__UploadAvatarScreenshotHandler____c__DisplayClass12_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    original = (this->fields).pleaseWaitPopupPrefab;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar2,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    this_00 = (this->fields).screenShooter;
-    pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar2,(Object *)this,
-               MethodInfo__UploadAvatarScreenshotHandler__UploadAndDestroy_UnityEngine__Texture2D__System__String_
-               ,
-               MethodInfo__System__Action<UnityEngine::Texture2D,_System::String>__Action_System__Object__void__
-              );
-    if (this_00 != (AvatarScreenShooter *)0x0) {
-      AvatarScreenShooter::AvatarScreenShooter_TakeScreenShot
-                (this_00,(Action_2_UnityEngine_Texture2D_String_ *)pUVar2,(this->fields).avatarBody,
-                 0,StringLiteral_Screenshot_taken_successfully_,(MethodInfo *)0x0);
-      return;
+    pOVar1 = (Object__Class *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original,
+                        PleaseWaitPopup_MethodInfo__UnityEngine__Object__Instantiate<PleaseWaitPopup>_PleaseWaitPopup_
+                       );
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__UploadAvatarScreenshotHandler____c__DisplayClass12_0___OnUpdatePressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                ((GameObject *)
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 ,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      this_00 = (this->fields).screenShooter;
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+                func_?(TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
+      if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (this_01,(Object *)this,
+                   MethodInfo__UploadAvatarScreenshotHandler__UploadAndDestroy_UnityEngine__Texture2D__System__String_
+                   ,(MethodInfo *)0x0);
+        if (this_00 != (AvatarScreenShooter *)0x0) {
+          AvatarScreenShooter::AvatarScreenShooter_TakeScreenShot
+                    (this_00,(Action_2_UnityEngine_Texture2D_String_ *)this_01,
+                     (this->fields).avatarBody,0,StringLiteral_Screenshot_taken_successfully_,
+                     (MethodInfo *)0x0);
+          return;
+        }
+      }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -213,57 +253,79 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__UploadAvatarScreenshotHandler____c__DisplayClass9_0___PrepareScreenshot_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__UploadAvatarScreenshotHandler____c__DisplayClass9_0);
+    func_?(&StringLiteral_Screenshot_taken_successfully);
+    func_?(&StringLiteral_New_avatar_purchased_);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__UploadAvatarScreenshotHandler___PrepareScreenshot_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this->fields).OnUploadScreenshot = onUploadScreenshot;
-  pSVar1 = StringLiteral_New_avatar_purchased_;
-  if (purchasedAvatar == 0) {
-    pSVar1 = StringLiteral_Screenshot_taken_successfully;
+  value = (Object *)func_?(TypeInfo__UploadAvatarScreenshotHandler____c__DisplayClass9_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    (this->fields).OnUploadScreenshot = onUploadScreenshot;
+    func_?(&(this->fields).OnUploadScreenshot,onUploadScreenshot);
+    if (purchasedAvatar == 0) {
+      pSVar1 = TM::TM__(StringLiteral_Screenshot_taken_successfully,(MethodInfo *)0x0);
+    }
+    else {
+      pSVar1 = TM::TM__(StringLiteral_New_avatar_purchased_,(MethodInfo *)0x0);
+    }
+    *successText = pSVar1;
+    func_?(successText,pSVar1);
+    (this->fields).avatarBody = currentBody;
+    func_?(&(this->fields).avatarBody,currentBody);
+    pGVar2 = (this->fields).invisibleBlocker;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    pOVar3 = (Object__Class *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)pGVar2,
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+    value[1].klass = pOVar3;
+    func_?(value + 1,pOVar3);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__UploadAvatarScreenshotHandler____c__DisplayClass9_0___PrepareScreenshot_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar2,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
+    }
   }
-  pSVar1 = TM::TM__(pSVar1,(MethodInfo *)0x0);
-  *successText = pSVar1;
-  pXVar2 = (XpBoostParticlePreviewer *)(this->fields).invisibleBlocker;
-  (this->fields).avatarBody = currentBody;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  pXVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar2,
-                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                     );
-  if (this_00 == (ScaleAnimationBase *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  (this_00->fields)._._._._.m_CachedPtr = pXVar2;
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this_00,
-             MethodInfo__UploadAvatarScreenshotHandler___PrepareScreenshot_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-             ,
-             MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-    func_?();
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-            );
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -278,33 +340,35 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
+    func_?(&
+                    MethodInfo__UploadAvatarScreenshotHandler__OnScreenshotReadyUploadDirect_UnityEngine__Texture2D__System__String_
+                   );
     cRam_? = '\x01';
   }
-  pSStack_1 = (String *)0x0;
   UploadAvatarScreenshotHandler_PrepareScreenshot
-            (this,currentBody,onUploadScreenshot,purchasedAvatar,&pSStack_1,(MethodInfo *)0x0);
+            (this,currentBody,onUploadScreenshot,purchasedAvatar,(String **)&stack0xfffffff8,
+             (MethodInfo *)0x0);
   this_00 = (this->fields).screenShooter;
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this,
-             MethodInfo__UploadAvatarScreenshotHandler__OnScreenshotReadyUploadDirect_UnityEngine__Texture2D__System__String_
-             ,
-             MethodInfo__System__Action<UnityEngine::Texture2D,_System::String>__Action_System__Object__void__
-            );
-  successMessage = pSStack_1;
-  if (this_00 != (AvatarScreenShooter *)0x0) {
-    AvatarScreenShooter::AvatarScreenShooter_TakeScreenShot
-              (this_00,(Action_2_UnityEngine_Texture2D_String_ *)this_01,(this->fields).avatarBody,0
-               ,successMessage,(MethodInfo *)0x0);
-    return;
+  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+    successMessage = this;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__UploadAvatarScreenshotHandler__OnScreenshotReadyUploadDirect_UnityEngine__Texture2D__System__String_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (AvatarScreenShooter *)0x0) {
+      AvatarScreenShooter::AvatarScreenShooter_TakeScreenShot
+                (this_00,(Action_2_UnityEngine_Texture2D_String_ *)this_01,(this->fields).avatarBody
+                 ,0,(String *)successMessage,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -319,33 +383,35 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
+    func_?(&
+                    MethodInfo__UploadAvatarScreenshotHandler__OnScreenshotReady_UnityEngine__Texture2D__System__String_
+                   );
     cRam_? = '\x01';
   }
-  pSStack_1 = (String *)0x0;
   UploadAvatarScreenshotHandler_PrepareScreenshot
-            (this,currentBody,onUploadScreenshot,purchasedAvatar,&pSStack_1,(MethodInfo *)0x0);
+            (this,currentBody,onUploadScreenshot,purchasedAvatar,(String **)&stack0xfffffff8,
+             (MethodInfo *)0x0);
   this_00 = (this->fields).screenShooter;
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this,
-             MethodInfo__UploadAvatarScreenshotHandler__OnScreenshotReady_UnityEngine__Texture2D__System__String_
-             ,
-             MethodInfo__System__Action<UnityEngine::Texture2D,_System::String>__Action_System__Object__void__
-            );
-  successMessage = pSStack_1;
-  if (this_00 != (AvatarScreenShooter *)0x0) {
-    AvatarScreenShooter::AvatarScreenShooter_TakeScreenShot
-              (this_00,(Action_2_UnityEngine_Texture2D_String_ *)this_01,(this->fields).avatarBody,0
-               ,successMessage,(MethodInfo *)0x0);
-    return;
+  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+    successMessage = this;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__UploadAvatarScreenshotHandler__OnScreenshotReady_UnityEngine__Texture2D__System__String_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (AvatarScreenShooter *)0x0) {
+      AvatarScreenShooter::AvatarScreenShooter_TakeScreenShot
+                (this_00,(Action_2_UnityEngine_Texture2D_String_ *)this_01,(this->fields).avatarBody
+                 ,0,(String *)successMessage,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -358,67 +424,19 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
                MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)
-            (this->fields).OnUploadScreenshot;
-  if (this_00 != (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)0x0) {
-    System.Core.dll::System::Action`2[Object,UnityEngine::ReflectionProbe+ReflectionProbeEvent]::
-    Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent__Invoke
-              (this_00,(Object *)texture,(ReflectionProbe_ReflectionProbeEvent__Enum)successText,
-               MethodInfo__System__Action<UnityEngine::Texture2D,_System::String>__Invoke_UnityEngine__Texture2D__System__String_
-              );
+  puStack_1 = &stack0xfffffffc;
+  pAVar2 = (this->fields).OnUploadScreenshot;
+  if (pAVar2 != (Action_2_UnityEngine_Texture2D_String_ *)0x0) {
+    puStack_1 = (pAVar2->fields)._._.method;
+    pSStack_3 = successText;
+    pTStack_4 = texture;
+    (*(pAVar2->fields)._._.invoke_impl)((pAVar2->fields)._._.method_code);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void <OnScreenshotReadyUploadDirect>m__0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
-     UploadAvatarScreenshotHandler__OnScreenshotReadyUploadDirect_m__0
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void <OnScreenshotReady>m__1(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
-     UploadAvatarScreenshotHandler__OnScreenshotReady_m__1
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar5 = func_?(&pTStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

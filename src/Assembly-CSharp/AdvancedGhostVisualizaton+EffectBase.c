@@ -13,15 +13,15 @@ bool Assembly-CSharp.dll::AdvancedGhostVisualizaton+EffectBase::
   (this->fields).timeLeft = fVar1;
   if (fVar1 <= 0.0) {
     (this->fields).timeLeft = 0.0;
-    fVar1 = 0.0;
   }
   pAVar3 = this->klass;
-  if (0.0 < fVar1) {
-    (*(code *)(pAVar3->vtable).__unknown.method)
-              (this,ghostVisualizaton,(pAVar3->vtable).__unknown_1.methodPtr);
+  if (0.0 < (this->fields).timeLeft) {
+    (*(pAVar3->vtable).__unknown.methodPtr)
+              (this,ghostVisualizaton,(pAVar3->vtable).__unknown.method);
     return 0;
   }
-  (*(code *)(pAVar3->vtable).__unknown_1.method)(this,ghostVisualizaton,pAVar3[1]._0.image);
+  (*(pAVar3->vtable).__unknown_1.methodPtr)
+            (this,ghostVisualizaton,(pAVar3->vtable).__unknown_1.method);
   return 1;
 }
 

@@ -30,29 +30,20 @@ int32_t Assembly-CSharp.dll::PlayerListsLayout+ScoreSorter::
   if (data == (MVPlayer *)0x0) {
     return 0;
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = (GameStatCounterManager *)
-              DayNightCycle::DayNightCycle_get_CurrentStarsParam
-                        ((DayNightCycle *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (GameStatCounterManager *)0x0) {
-      iVar1 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
-                        (this_01,GameStatCounterType__Enum_Kill,(data->fields).team,
-                         (data->fields)._ActorNr_k__BackingField,(MethodInfo *)0x0);
-      return iVar1;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    this_00 = (pMVar1->fields).gameStatCounterManager;
+    if (this_00 != (GameStatCounterManager *)0x0) {
+      iVar2 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
+                        (this_00,GameStatCounterType__Enum_Kill,(data->fields)._Team_k__BackingField
+                         ,(data->fields)._ActorNr_k__BackingField,(MethodInfo *)0x0);
+      return iVar2;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  iVar1 = (*pcVar2)();
-  return iVar1;
+  uVar3 = func_?(&stack0xfffffff4);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  iVar2 = (*pcVar4)();
+  return iVar2;
 }
 

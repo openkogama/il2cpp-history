@@ -6,25 +6,30 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    UnityEngine__CanvasGroup_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_This_class_does_not_implement_sk);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
             ((Object *)StringLiteral_This_class_does_not_implement_sk,(MethodInfo *)0x0);
-  pXVar1 = (XpBoostParticlePreviewer *)(this->fields).popupPrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pCVar1 = (this->fields).popupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar1,
+  pCVar1 = (CanvasGroup *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)pCVar1,
                       UnityEngine__CanvasGroup_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
                      );
-  (this->fields).createdPopup = (CanvasGroup *)pXVar1;
+  (this->fields).createdPopup = pCVar1;
+  func_?(&(this->fields).createdPopup,pCVar1);
   return;
 }
 
@@ -36,34 +41,42 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   if ((this->fields).destroyCreatedPopup != 0) {
     this_00 = (this->fields).createdPopup;
-    if (this_00 == (CanvasGroup *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                    ((Component_1 *)this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if (this_00 == (CanvasGroup *)0x0) goto code_?;
+    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((Component *)this_00,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)obj,(MethodInfo *)0x0);
   }
-  firstTimeEvent = (this->fields)._._.firstTimeEvent;
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
+  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+            ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent(firstTimeEvent,(MethodInfo *)0x0);
-  FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_OnDestroy
+  FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_UnRegister
             ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+  this_01 = (Action_2_Object_Int32Enum_ *)func_?();
+  if (this_01 != (Action_2_Object_Int32Enum_ *)0x0) {
+    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+              (this_01,(Object *)this,(this->klass->vtable).OnFirstTimeState.method,
+               (MethodInfo *)0x0);
+    FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
+              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                *)this_01,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -75,31 +88,22 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
+    func_?(&TypeInfo__UnityEngine__Object,unaff_EBP);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
   (*pcRam_?)(this,0);
   return;
 }
@@ -111,86 +115,91 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
                (FirstTimeActivatablePopupTimed *this,MethodInfo *method)
 
 {
-  this_00 = this;
   if ((this->fields).isShown != 0) {
     return;
   }
   (this->fields).isShown = 1;
   FirstTimeActivatablePopupTimed_CreatePopup(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_);
+    func_?(&
+                    MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__FirstTimeActivatablePopupTimed___PushToStack_c__AnonStorey0;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields).state = (int32_t)this;
-    (this_01->fields)._._._._.m_CachedPtr = (void *)0x0;
-    pLVar1 = (this->fields).pushOptions;
-    if (pLVar1 != (List_1_UIPushOption_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                          MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__)
-      ;
-      if ((int)pOVar2 < 1) {
+  value = (Object *)func_?(TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0)
+  ;
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EBX);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    value[1].monitor = (MonitorData *)0x0;
+    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).pushOptions;
+    if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((pLVar1->fields)._size < 1) {
 code_?:
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this_00,(MethodInfo *)0x0);
-        this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_02,(Object *)this_01,
-                   MethodInfo__FirstTimeActivatablePopupTimed___PushToStack_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-          func_?();
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_System_Object_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
-                  (root,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_02,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        return;
       }
-      pLVar1 = (this->fields).pushOptions;
-      if (pLVar1 != (List_1_UIPushOption_ *)0x0) {
-        pvVar3 = (void *)mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-                         List_1_UIPushOption__get_Item
-                                   (pLVar1,0,
-                                    MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
-                                   );
-        (this_01->fields)._._._._.m_CachedPtr = pvVar3;
-        pLVar1 = (this->fields).pushOptions;
-        this = (FirstTimeActivatablePopupTimed *)0x1;
-        while (pLVar1 != (List_1_UIPushOption_ *)0x0) {
-          pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                              MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__
-                             );
-          if ((int)pOVar2 <= (int)this) goto code_?;
-          pvVar3 = (this_01->fields)._._._._.m_CachedPtr;
-          pLVar1 = (this_00->fields).pushOptions;
-          if (pLVar1 == (List_1_UIPushOption_ *)0x0) break;
-          UVar4 = mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-                  List_1_UIPushOption__get_Item
-                            (pLVar1,(int32_t)this,
+      else {
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLVar1,0,
+                           MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
+                          );
+        value[1].monitor = (MonitorData *)RVar2;
+        index = 1;
+        pLVar3 = (this->fields).pushOptions;
+        while (pLVar3 != (List_1_UIPushOption_ *)0x0) {
+          if ((pLVar3->fields)._size <= index) goto code_?;
+          pMVar4 = value[1].monitor;
+          pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                   (this->fields).pushOptions;
+          if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          break;
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (pLVar1,index,
                              MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
                             );
-          this = (FirstTimeActivatablePopupTimed *)((int)&this->klass + 1);
-          (this_01->fields)._._._._.m_CachedPtr = (void *)(UVar4 | (uint)pvVar3);
-          pLVar1 = (this_00->fields).pushOptions;
+          index = index + 1;
+          value[1].monitor = (MonitorData *)((uint)RVar2 | (uint)pMVar4);
+          pLVar3 = (this->fields).pushOptions;
         }
       }
     }
@@ -211,10 +220,10 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::
 {
   this_00 = (this->fields).createdPopup;
   if (this_00 != (CanvasGroup *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
-    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                 (this_01,parent,0,(MethodInfo *)0x0);
@@ -236,87 +245,92 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_);
+    func_?(&
+                    MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__FirstTimeActivatablePopupTimed___PushToStack_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).state = (int32_t)this;
-    (this_00->fields)._._._._.m_CachedPtr = (void *)0x0;
-    pLVar1 = (this->fields).pushOptions;
-    if (pLVar1 != (List_1_UIPushOption_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                          MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__)
-      ;
-      if ((int)pOVar2 < 1) {
+  value = (Object *)func_?(TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0)
+  ;
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    value[1].monitor = (MonitorData *)0x0;
+    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).pushOptions;
+    if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((pLVar1->fields)._size < 1) {
 code_?:
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-        this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_01,(Object *)this_00,
-                   MethodInfo__FirstTimeActivatablePopupTimed___PushToStack_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-          func_?();
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_System_Object_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
-                  (root,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        return;
       }
-      pLVar1 = (this->fields).pushOptions;
-      if (pLVar1 != (List_1_UIPushOption_ *)0x0) {
-        pvVar3 = (void *)mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-                         List_1_UIPushOption__get_Item
-                                   (pLVar1,0,
-                                    MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
-                                   );
-        (this_00->fields)._._._._.m_CachedPtr = pvVar3;
+      else {
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLVar1,0,
+                           MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
+                          );
+        value[1].monitor = (MonitorData *)RVar2;
         index = 1;
-        pLVar1 = (this->fields).pushOptions;
-        while (pLVar1 != (List_1_UIPushOption_ *)0x0) {
-          iVar4 = index;
-          pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                              MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__
-                             );
-          if ((int)pOVar2 <= iVar4) goto code_?;
-          pvVar3 = (this_00->fields)._._._._.m_CachedPtr;
-          pLVar1 = (this->fields).pushOptions;
-          if (pLVar1 == (List_1_UIPushOption_ *)0x0) break;
-          UVar5 = mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-                  List_1_UIPushOption__get_Item
+        pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).pushOptions;
+        while (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          if ((pLVar1->fields)._size <= index) goto code_?;
+          pMVar3 = value[1].monitor;
+          if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          break;
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                             (pLVar1,index,
                              MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
                             );
           index = index + 1;
-          (this_00->fields)._._._._.m_CachedPtr = (void *)(UVar5 | (uint)pvVar3);
-          pLVar1 = (this->fields).pushOptions;
+          value[1].monitor = (MonitorData *)((uint)RVar2 | (uint)pMVar3);
+          pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                   (this->fields).pushOptions;
         }
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -328,12 +342,25 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__FirstTimeActivatablePopupTimed____c___Update_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FirstTimeActivatablePopupTimed____c);
+    func_?(&StringLiteral_Mouse_Y);
+    func_?(&StringLiteral_Mouse_X);
     cRam_? = '\x01';
   }
   if ((this->fields).isShown != 0) {
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
     fVar1 = MVInputWrapper::MVInputWrapper_GetAxis(StringLiteral_Mouse_X,(MethodInfo *)0x0);
@@ -342,94 +369,76 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
        ((this->fields).inputRequired == 0)) {
       (this->fields).isUpdating = 1;
     }
-    else if ((this->fields).isUpdating == 0) {
-      return;
-    }
-    fVar1 = (this->fields).currentTime;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar2 = fVar2 + fVar1;
-    fVar1 = (this->fields).visibleDuration;
-    (this->fields).currentTime = fVar2;
-    if (fVar1 <= fVar2) {
-      if ((this->fields).destroyCreatedPopup == 0) {
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-        if (TypeInfo__FirstTimeActivatablePopupTimed->static_fields->__f__am_cache0 ==
-            (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                     *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (this_01,(Object *)0x0,
-                     MethodInfo__FirstTimeActivatablePopupTimed___Update_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,
-                     MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
+    if ((this->fields).isUpdating != 0) {
+      fVar1 = (this->fields).currentTime;
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+      ;
+      fVar2 = fVar2 + fVar1;
+      (this->fields).currentTime = fVar2;
+      if ((this->fields).visibleDuration <= fVar2) {
+        if ((this->fields).destroyCreatedPopup == 0) {
+          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+          if ((TypeInfo__FirstTimeActivatablePopupTimed____c->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          callbackFunction = TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9__15_0
+          ;
+          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+            if ((TypeInfo__FirstTimeActivatablePopupTimed____c->_1).cctor_finished_or_no_cctor == 0)
+            {
+              func_?();
+            }
+            object = TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9;
+            callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
+            goto code_?;
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                       (Object *)object,
+                       MethodInfo__FirstTimeActivatablePopupTimed____c___Update_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9__15_0 =
+                 callbackFunction;
+            func_?();
+          }
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,
+                     (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                     );
-          TypeInfo__FirstTimeActivatablePopupTimed->static_fields->__f__am_cache0 =
-               (ExecuteEvents_EventFunction_1_IUIStack_ *)this_01;
+          return;
         }
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-             TypeInfo__FirstTimeActivatablePopupTimed->static_fields->__f__am_cache0;
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
-                  (root,(BaseEventData *)0x0,callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        return;
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                  ((Object_1 *)this,(MethodInfo *)0x0);
       }
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)this,(MethodInfo *)0x0);
-    }
-    else {
-      fVar3 = (this->fields).fadeTime;
-      fVar1 = fVar1 - fVar3;
-      if (fVar1 <= fVar2) {
+      else if ((this->fields).visibleDuration - (this->fields).fadeTime <= fVar2) {
         this_00 = (this->fields).createdPopup;
         if (this_00 != (CanvasGroup *)0x0) {
           UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (this_00,_UNK_? - (fVar2 - fVar1) / fVar3,(MethodInfo *)0x0);
+                    (this_00,_UNK_? -
+                             (fVar2 - ((this->fields).visibleDuration - (this->fields).fadeTime)) /
+                             (this->fields).fadeTime,(MethodInfo *)0x0);
           (this->fields).isFading = 1;
           return;
         }
+code_?:
         func_?();
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
   }
-  return;
-}
-
-
-/* Void <Update>m__0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::
-     FirstTimeActivatablePopupTimed__Update_m__0(IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(3,TypeInfo__UnityEngine__EventSystems__IUIStack,x,0x20);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 

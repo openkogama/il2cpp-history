@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryShopController : MonoBehaviour, IInventoryChanged, IAttachToBody, IAccessoryInventoryControl
 {
@@ -35,83 +35,98 @@ public class AccessoryShopController : MonoBehaviour, IInventoryChanged, IAttach
 	private UIPushOption pushOption;
 	private AccessoryDataClient accessoryDataToShow;
 	private bool firstTimeSetup;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditStateCommands> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditStateCommands> __f__am_cache3;
-	[CompilerGenerated]
-	private static Func<AccessoryDataClient, int> __f__am_cache4;
-	[CompilerGenerated]
-	private static Func<AccessoryDataClient, int> __f__am_cache5;
-	[CompilerGenerated]
-	private static Func<AccessoryDataClient, int> __f__am_cache6;
-	[CompilerGenerated]
-	private static Func<AccessoryDataClient, int> __f__am_cache7;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache8;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache9;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryChanged> __f__am_cacheA;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OpenAccessoryViewDelayed_c__Iterator0 : IEnumerator<object>
+	private sealed class _OpenAccessoryViewDelayed_d__21 : IEnumerator<object>
 	{
 		// Fields
-		internal AccessoryShopController _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public AccessoryShopController __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _OpenAccessoryViewDelayed_c__Iterator0();
+		public _OpenAccessoryViewDelayed_d__21(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IEditStateCommands> __9__25_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__25_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__33_0;
+		public static ExecuteEvents.EventFunction<IEditStateCommands> __9__37_0;
+		public static Func<AccessoryDataClient, int> __9__40_0;
+		public static Func<AccessoryDataClient, int> __9__40_1;
+		public static Func<AccessoryDataClient, int> __9__40_2;
+		public static Func<AccessoryDataClient, int> __9__40_3;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__42_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__43_0;
+		public static ExecuteEvents.EventFunction<IAccessoryChanged> __9__43_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _ReadyCallback_b__25_0(IEditStateCommands x, BaseEventData y);
+		internal void _ReadyCallback_b__25_1(IUIStack handler, BaseEventData data);
+		internal void _InventoryChanged_b__33_0(IUIStack x, BaseEventData y);
+		internal void _OnPop_b__37_0(IEditStateCommands x, BaseEventData y);
+		internal int _GetAccessoryDataFromCategoryType_b__40_0(AccessoryDataClient o);
+		internal int _GetAccessoryDataFromCategoryType_b__40_1(AccessoryDataClient o);
+		internal int _GetAccessoryDataFromCategoryType_b__40_2(AccessoryDataClient o);
+		internal int _GetAccessoryDataFromCategoryType_b__40_3(AccessoryDataClient o);
+		internal void _Attach_b__42_0(IModalPopupCreator x, BaseEventData y);
+		internal void _AttacherFinished_b__43_0(IUIStack x, BaseEventData y);
+		internal void _AttacherFinished_b__43_1(IAccessoryChanged x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _SetAccessoriesToSelectable_c__AnonStorey1
+	private sealed class __c__DisplayClass32_0
 	{
 		// Fields
-		internal MVBody currentBody;
+		public MVBody currentBody;
+		public Action<MVBody> __9__1;
 
 		// Constructors
-		public _SetAccessoriesToSelectable_c__AnonStorey1();
+		public __c__DisplayClass32_0();
 
 		// Methods
-		internal void __m__0(IGetCurrentBody x, BaseEventData y);
-		internal void __m__1(MVBody body);
+		internal void _SetAccessoriesToSelectable_b__0(IGetCurrentBody x, BaseEventData y);
+		internal void _SetAccessoriesToSelectable_b__1(MVBody body);
 	}
 
 	[CompilerGenerated]
-	private sealed class _AttachToBody_c__AnonStorey2
+	private sealed class __c__DisplayClass41_0
 	{
 		// Fields
-		internal float offset;
-		internal float scale;
-		internal AccessoryShopController _this;
+		public AccessoryShopController __4__this;
+		public float offset;
+		public float scale;
+		public Action<MVBody> __9__1;
 
 		// Constructors
-		public _AttachToBody_c__AnonStorey2();
+		public __c__DisplayClass41_0();
 
 		// Methods
-		internal void __m__0(IGetCurrentBody x, BaseEventData y);
-		internal void __m__1(MVBody body);
+		internal void _AttachToBody_b__0(IGetCurrentBody x, BaseEventData y);
+		internal void _AttachToBody_b__1(MVBody body);
 	}
 
 	// Constructors
@@ -123,7 +138,7 @@ public class AccessoryShopController : MonoBehaviour, IInventoryChanged, IAttach
 	public void OpenInventoryAtItem(UIPushOption pushOption, AccessoryDataClient accessoryData);
 	public void Activate(UIPushOption pushOption, AccessoryCategoryClient category);
 	private void ReadyCallbackAccessoryView();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_OpenAccessoryViewDelayed_d__21))]
 	private IEnumerator OpenAccessoryViewDelayed();
 	public void DisplayPurchasableItems(bool displayShopItems);
 	public void RefreshItems();
@@ -147,30 +162,8 @@ public class AccessoryShopController : MonoBehaviour, IInventoryChanged, IAttach
 	private void Attach(MVBody body, float offset, float scale);
 	private void AttacherFinished();
 	[CompilerGenerated]
-	private static void _ReadyCallback_m__0(IEditStateCommands x, BaseEventData y);
+	private void _ReadyCallback_b__25_2(IUIStack x, BaseEventData y);
 	[CompilerGenerated]
-	private static void _ReadyCallback_m__1(IUIStack handler, BaseEventData data);
-	[CompilerGenerated]
-	private void _ReadyCallback_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _InventoryChanged_m__3(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPop_m__4(IEditStateCommands x, BaseEventData y);
-	[CompilerGenerated]
-	private void _UpdateContent_m__5(IGetCurrentBody x, BaseEventData y);
-	[CompilerGenerated]
-	private static int _GetAccessoryDataFromCategoryType_m__6(AccessoryDataClient o);
-	[CompilerGenerated]
-	private static int _GetAccessoryDataFromCategoryType_m__7(AccessoryDataClient o);
-	[CompilerGenerated]
-	private static int _GetAccessoryDataFromCategoryType_m__8(AccessoryDataClient o);
-	[CompilerGenerated]
-	private static int _GetAccessoryDataFromCategoryType_m__9(AccessoryDataClient o);
-	[CompilerGenerated]
-	private static void _Attach_m__A(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _AttacherFinished_m__B(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _AttacherFinished_m__C(IAccessoryChanged x, BaseEventData y);
+	private void _UpdateContent_b__38_0(IGetCurrentBody x, BaseEventData y);
 }
 

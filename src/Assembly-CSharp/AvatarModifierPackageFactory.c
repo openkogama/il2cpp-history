@@ -9,48 +9,74 @@ AvatarModifierPackageFactory_AssembleInvulnerabilityPackage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarModifierPackageFactory);
+    func_?(&TypeInfo__AvatarModifierPackage__AvatarModifier);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                   );
     cRam_? = '\x01';
   }
-  iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,1);
-  if (iVar1 != 0) {
-    if ((((uint)(TypeInfo__AvatarModifierPackageFactory->vtable).Equals.methodPtr & 0x2000000) != 0)
-       && ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AvatarModifierPackageFactory);
-    }
-    uVar2 = 2;
-    pFVar3 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(10,uVar2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar3;
-    this = (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
-                          );
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
-              );
-    if (this != (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::
-      Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-      Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-                (this,AvatarModifierPackageType__Enum_SpawnProtection,ModifierActions__Enum_Renew,
+  avatarModifiers =
+       (AvatarModifierPackage_AvatarModifier__Array *)
+       func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,1);
+  if ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__AvatarModifierPackageFactory);
+  }
+  pinnable = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
+  pFVar1 = (Func_1_Single_ *)0x0;
+  uStack_2._0_4_ = (Void *)0x0;
+  uStack_2._4_4_ = (void *)0x0;
+  mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+            ((MemoryHandle *)&uStack_2,(Void *)0x2,(GCHandle)0xa,(IPinnable *)pinnable,
+             (MethodInfo *)0x0);
+  if (avatarModifiers != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+    if (avatarModifiers->max_length == 0) goto code_?;
+    avatarModifiers->vector[0].avatarModifierType = (int32_t)(Void *)uStack_2;
+    avatarModifiers->vector[0].avatarModifierEffect = (int32_t)uStack_2._4_4_;
+    avatarModifiers->vector[0].value = pFVar1;
+    uStack_2._4_4_ = &UNK_?;
+    func_?();
+    uStack_2._4_4_ =
+         TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+    ;
+    uStack_2._0_4_ = (Void *)&UNK_?;
+    this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                ((ParameterOverride_1_System_Object_ *)this_00,
+                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                );
+      this = 
+      MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+      ;
+      uStack_2._4_4_ = &UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                (this_00,(Object *)0x11,(Object *)0x1,
                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
                 );
-      func_?(__return_storage_ptr__,0,0x40);
-      func_?(__return_storage_ptr__,type,1,time,iVar1,this,1,0);
-      return __return_storage_ptr__;
+      func_?();
+      AvatarModifierPackage::AvatarModifierPackage__ctor
+                ((AvatarModifierPackage *)this,AvatarModifierPackageType__Enum_Fire,
+                 AvatarModifierPackageAdditionPolicy__Enum_Renew,time,avatarModifiers,
+                 (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)this_00,1,
+                 (MethodInfo *)0x0);
+      return (AvatarModifierPackage *)this;
     }
   }
-  func_?(0);
+  func_?();
 code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pAVar5 = (AvatarModifierPackage *)(*pcVar4)();
-  return pAVar5;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  pAVar4 = (AvatarModifierPackage *)(*pcVar3)();
+  return pAVar4;
 }
 
 
@@ -62,28 +88,29 @@ Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFactory_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Func<float>);
+    func_?(&MethodInfo__AvatarModifierPackageFactory____c__DisplayClass0_0___Const_b__0__);
+    func_?(&TypeInfo__AvatarModifierPackageFactory____c__DisplayClass0_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AvatarModifierPackageFactory___Const_c__AnonStorey0;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  if (this != (ScaleAnimationBase *)0x0) {
-    (this->fields)._._._._.m_CachedPtr = (void *)c;
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(TypeInfo__System__Func<float>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,
-               MethodInfo__AvatarModifierPackageFactory___Const_c__AnonStorey0____m__0__,
-               MethodInfo__System__Func<float>__Func_System__Object__void__);
-    return (Func_1_Single_ *)this_00;
+  value = (Object *)func_?(TypeInfo__AvatarModifierPackageFactory____c__DisplayClass0_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)c;
+    pFVar1 = (Func_1_Single_ *)func_?(TypeInfo__System__Func<float>);
+    if (pFVar1 != (Func_1_Single_ *)0x0) {
+      mscorlib.dll::System::Func`1[Single]::Func_1_Single___ctor
+                (pFVar1,value,
+                 MethodInfo__AvatarModifierPackageFactory____c__DisplayClass0_0___Const_b__0__,
+                 (MethodInfo *)0x0);
+      return pFVar1;
+    }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  pFVar2 = (Func_1_Single_ *)(*pcVar1)();
-  return pFVar2;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pFVar1 = (Func_1_Single_ *)(*pcVar2)();
+  return pFVar1;
 }
 
 
@@ -96,61 +123,71 @@ Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFactory_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarModifierPackageFactory);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__get_Item_AvatarModifierPackageType_
+                   );
     cRam_? = '\x01';
   }
-  func_?(&iStack_1,0,0x40);
-  if ((((uint)(TypeInfo__AvatarModifierPackageFactory->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_started == 0)) {
+  func_?(__return_storage_ptr__,0,0x44);
+  if ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AvatarModifierPackageFactory);
   }
-  this = TypeInfo__AvatarModifierPackageFactory->static_fields->protoPackages;
-  if (this != (Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage_ *)0x0) {
-    pAVar2 = mscorlib.dll::System::Collections::Generic::
-             Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-             Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__get_Item
-                       (&AStack_3,this,packageType,
-                        MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__get_Item_AvatarModifierPackageType_
-                       );
-    iStack_1 = pAVar2->id;
-    iStack_4 = (pAVar2->duration).currentCryptoKey;
-    AStack_5 = (pAVar2->duration).hiddenValue;
-    pBStack_6 = (pAVar2->duration).hiddenValueOld;
-    fStack_7 = (pAVar2->duration).fakeValue;
-    uStack_8 = *(undefined4 *)&(pAVar2->duration).inited;
-    pAStack_9 = pAVar2->avatarModifiers;
-    pDStack_10 = pAVar2->actionsToTakeVsTypes;
-    iStack_11 = (pAVar2->timeStamp).currentCryptoKey;
-    AStack_12 = (pAVar2->timeStamp).hiddenValue;
-    pBStack_13 = (pAVar2->timeStamp).hiddenValueOld;
-    fStack_14 = (pAVar2->timeStamp).fakeValue;
-    uStack_15 = *(undefined4 *)&(pAVar2->timeStamp).inited;
-    uStack_16 = *(undefined4 *)&pAVar2->persistant;
-    iStack_17 = pAVar2->avatarModifierPackageType;
-    iStack_18 = pAVar2->avatarModifierPackageAdditionPolicy;
-    func_?(&iStack_1,0);
-    __return_storage_ptr__->id = iStack_1;
-    (__return_storage_ptr__->duration).currentCryptoKey = iStack_4;
-    (__return_storage_ptr__->duration).hiddenValue = AStack_5;
-    (__return_storage_ptr__->duration).hiddenValueOld = pBStack_6;
-    (__return_storage_ptr__->duration).fakeValue = fStack_7;
-    *(undefined4 *)&(__return_storage_ptr__->duration).inited = uStack_8;
-    __return_storage_ptr__->avatarModifiers = pAStack_9;
-    __return_storage_ptr__->actionsToTakeVsTypes = pDStack_10;
-    (__return_storage_ptr__->timeStamp).currentCryptoKey = iStack_11;
-    (__return_storage_ptr__->timeStamp).hiddenValue = AStack_12;
-    (__return_storage_ptr__->timeStamp).hiddenValueOld = pBStack_13;
-    (__return_storage_ptr__->timeStamp).fakeValue = fStack_14;
-    *(undefined4 *)&(__return_storage_ptr__->timeStamp).inited = uStack_15;
-    *(undefined4 *)&__return_storage_ptr__->persistant = uStack_16;
-    __return_storage_ptr__->avatarModifierPackageType = iStack_17;
-    __return_storage_ptr__->avatarModifierPackageAdditionPolicy = iStack_18;
+  this = (Dictionary_2_System_Int32Enum_AvatarModifierPackage_ *)
+         TypeInfo__AvatarModifierPackageFactory->static_fields->protoPackages;
+  if (this != (Dictionary_2_System_Int32Enum_AvatarModifierPackage_ *)0x0) {
+    pAVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Int32Enum,AvatarModifierPackage]::
+              Dictionary_2_System_Int32Enum_AvatarModifierPackage__get_Item
+                        (&AStack_2,this,packageType,
+                         MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__get_Item_AvatarModifierPackageType_
+                        );
+    iVar3 = (pAVar1->duration).currentCryptoKey;
+    AVar4 = (pAVar1->duration).hiddenValue;
+    pBVar5 = (pAVar1->duration).hiddenValueOld;
+    iVar6 = pAVar1->avatarModifierPackageAdditionPolicy;
+    fVar7 = (pAVar1->duration).fakeValue;
+    bVar8 = (pAVar1->duration).inited;
+    uVar9 = *(undefined3 *)&(pAVar1->duration).field_0x11;
+    pAVar10 = pAVar1->avatarModifiers;
+    pDVar11 = pAVar1->actionsToTakeVsTypes;
+    iVar12 = (pAVar1->timeStamp).currentCryptoKey;
+    AVar13 = (pAVar1->timeStamp).hiddenValue;
+    pBVar14 = (pAVar1->timeStamp).hiddenValueOld;
+    fVar15 = (pAVar1->timeStamp).fakeValue;
+    bVar16 = (pAVar1->timeStamp).inited;
+    uVar17 = *(undefined3 *)&(pAVar1->timeStamp).field_0x11;
+    bVar18 = pAVar1->persistant;
+    uVar19 = *(undefined3 *)&pAVar1->field_0x35;
+    fVar20 = pAVar1->lastTimeStamp;
+    iVar21 = pAVar1->avatarModifierPackageType;
+    __return_storage_ptr__->id = pAVar1->id;
+    (__return_storage_ptr__->duration).currentCryptoKey = iVar3;
+    (__return_storage_ptr__->duration).hiddenValue = AVar4;
+    (__return_storage_ptr__->duration).hiddenValueOld = pBVar5;
+    (__return_storage_ptr__->duration).fakeValue = fVar7;
+    (__return_storage_ptr__->duration).inited = bVar8;
+    *(undefined3 *)&(__return_storage_ptr__->duration).field_0x11 = uVar9;
+    __return_storage_ptr__->avatarModifiers = pAVar10;
+    __return_storage_ptr__->actionsToTakeVsTypes = pDVar11;
+    (__return_storage_ptr__->timeStamp).currentCryptoKey = iVar12;
+    (__return_storage_ptr__->timeStamp).hiddenValue = AVar13;
+    (__return_storage_ptr__->timeStamp).hiddenValueOld = pBVar14;
+    (__return_storage_ptr__->timeStamp).fakeValue = fVar15;
+    (__return_storage_ptr__->timeStamp).inited = bVar16;
+    *(undefined3 *)&(__return_storage_ptr__->timeStamp).field_0x11 = uVar17;
+    __return_storage_ptr__->persistant = bVar18;
+    *(undefined3 *)&__return_storage_ptr__->field_0x35 = uVar19;
+    __return_storage_ptr__->lastTimeStamp = fVar20;
+    __return_storage_ptr__->avatarModifierPackageType = iVar21;
+    __return_storage_ptr__->avatarModifierPackageAdditionPolicy = iVar6;
+    AvatarModifierPackage::AvatarModifierPackage_Renew(__return_storage_ptr__,(MethodInfo *)0x0);
     return __return_storage_ptr__;
   }
-  func_?(0);
-  pcVar19 = (code *)swi(3);
-  pAVar2 = (AvatarModifierPackage *)(*pcVar19)();
-  return pAVar2;
+  func_?();
+  pcVar22 = (code *)swi(3);
+  pAVar1 = (AvatarModifierPackage *)(*pcVar22)();
+  return pAVar1;
 }
 
 
@@ -161,1394 +198,2123 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarModifierPackageFactory);
+    func_?(&TypeInfo__AvatarModifierPackage__AvatarModifier);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                   );
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage_ *)
+  this = (Dictionary_2_System_Int32Enum_AvatarModifierPackage_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>
                         );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Dictionary__
-            );
-  iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,1);
-  if (iVar1 == 0) goto code_?;
-  uStack_2 = 1;
-  uStack_3 = 0xe;
-  pFVar4 = AvatarModifierPackageFactory_Const(10.0,(MethodInfo *)0x0);
-  if (*(int *)(iVar1 + 0xc) == 0) {
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-  }
-  else {
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_6,0);
-    func_?(&uStack_6,1,1,0x3f800000,iVar1,0,0);
-    if (this == (Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage_ *)0x0) {
-code_?:
-      func_?(0);
-      goto code_?;
-    }
-    value.duration.currentCryptoKey = uStack_7;
-    value.id = uStack_6;
-    value.duration.hiddenValue.b1 = (undefined1)uStack_8;
-    value.duration.hiddenValue.b2 = uStack_8._1_1_;
-    value.duration.hiddenValue.b3 = uStack_8._2_1_;
-    value.duration.hiddenValue.b4 = uStack_8._3_1_;
-    value.duration.hiddenValueOld = (Byte__Array *)uStack_9;
-    value.duration.fakeValue = (float)uStack_10;
-    value.duration._16_4_ = uStack_11;
-    value.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_12;
-    value.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_13;
-    value.timeStamp.currentCryptoKey = uStack_14;
-    value.timeStamp.hiddenValue.b1 = (undefined1)uStack_15;
-    value.timeStamp.hiddenValue.b2 = uStack_15._1_1_;
-    value.timeStamp.hiddenValue.b3 = uStack_15._2_1_;
-    value.timeStamp.hiddenValue.b4 = uStack_15._3_1_;
-    value.timeStamp.hiddenValueOld = (Byte__Array *)uStack_16;
-    value.timeStamp.fakeValue = (float)uStack_17;
-    value.timeStamp._16_4_ = uStack_18;
-    value._52_4_ = uStack_19;
-    value.avatarModifierPackageType = uStack_20;
-    value.avatarModifierPackageAdditionPolicy = iStack_21;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Fire,value,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+  if (this != (Dictionary_2_System_Int32Enum_AvatarModifierPackage_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Dictionary__
               );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,6);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 2;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.5,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.25,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 7;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
-    *(ulonglong *)(iVar1 + 0x28) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x30) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 9;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
-    *(ulonglong *)(iVar1 + 0x34) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x3c) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 0xb;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 5) goto code_?;
-    *(ulonglong *)(iVar1 + 0x40) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x48) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 10;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 6) goto code_?;
-    *(ulonglong *)(iVar1 + 0x4c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x54) = pFVar4;
-    func_?();
-    func_?();
-    value_22.duration.currentCryptoKey = uStack_22;
-    value_22.id = uStack_23;
-    value_22.duration.hiddenValue.b1 = (undefined1)uStack_24;
-    value_22.duration.hiddenValue.b2 = uStack_24._1_1_;
-    value_22.duration.hiddenValue.b3 = uStack_24._2_1_;
-    value_22.duration.hiddenValue.b4 = uStack_24._3_1_;
-    value_22.duration.hiddenValueOld = (Byte__Array *)uStack_25;
-    value_22.duration.fakeValue = (float)uStack_26;
-    value_22.duration._16_4_ = uStack_27;
-    value_22.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_28;
-    value_22.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_29;
-    value_22.timeStamp.currentCryptoKey = uStack_30;
-    value_22.timeStamp.hiddenValue.b1 = (undefined1)uStack_31;
-    value_22.timeStamp.hiddenValue.b2 = uStack_31._1_1_;
-    value_22.timeStamp.hiddenValue.b3 = uStack_31._2_1_;
-    value_22.timeStamp.hiddenValue.b4 = uStack_31._3_1_;
-    value_22.timeStamp.hiddenValueOld = (Byte__Array *)uStack_32;
-    value_22.timeStamp.fakeValue = (float)uStack_33;
-    value_22.timeStamp._16_4_ = uStack_34;
-    value_22._52_4_ = uStack_35;
-    value_22.avatarModifierPackageType = uStack_36;
-    value_22.avatarModifierPackageAdditionPolicy = iStack_37;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Mutant,value_22,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 2;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.01,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.03,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 0xc;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
-    *(ulonglong *)(iVar1 + 0x28) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x30) = pFVar4;
-    func_?();
-    func_?(&uStack_38,3,1);
-    value_17.duration.currentCryptoKey = uStack_39;
-    value_17.id = uStack_38;
-    value_17.duration.hiddenValue.b1 = (undefined1)uStack_40;
-    value_17.duration.hiddenValue.b2 = uStack_40._1_1_;
-    value_17.duration.hiddenValue.b3 = uStack_40._2_1_;
-    value_17.duration.hiddenValue.b4 = uStack_40._3_1_;
-    value_17.duration.hiddenValueOld = (Byte__Array *)uStack_41;
-    value_17.duration.fakeValue = (float)uStack_42;
-    value_17.duration._16_4_ = uStack_43;
-    value_17.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_44;
-    value_17.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_45;
-    value_17.timeStamp.currentCryptoKey = uStack_46;
-    value_17.timeStamp.hiddenValue.b1 = (undefined1)uStack_47;
-    value_17.timeStamp.hiddenValue.b2 = uStack_47._1_1_;
-    value_17.timeStamp.hiddenValue.b3 = uStack_47._2_1_;
-    value_17.timeStamp.hiddenValue.b4 = uStack_47._3_1_;
-    value_17.timeStamp.hiddenValueOld = (Byte__Array *)uStack_48;
-    value_17.timeStamp.fakeValue = (float)uStack_49;
-    value_17.timeStamp._16_4_ = uStack_50;
-    value_17._52_4_ = uStack_51;
-    value_17.avatarModifierPackageType = uStack_52;
-    value_17.avatarModifierPackageAdditionPolicy = iStack_53;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Sticky,value_17,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 2;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.1,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.5,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    func_?();
-    func_?(&uStack_54,0x16,1,0x3ecccccd,iVar1);
-    value_11.duration.currentCryptoKey = uStack_55;
-    value_11.id = uStack_54;
-    value_11.duration.hiddenValue.b1 = (undefined1)uStack_56;
-    value_11.duration.hiddenValue.b2 = uStack_56._1_1_;
-    value_11.duration.hiddenValue.b3 = uStack_56._2_1_;
-    value_11.duration.hiddenValue.b4 = uStack_56._3_1_;
-    value_11.duration.hiddenValueOld = (Byte__Array *)uStack_57;
-    value_11.duration.fakeValue = (float)uStack_58;
-    value_11.duration._16_4_ = uStack_59;
-    value_11.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_60;
-    value_11.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_61;
-    value_11.timeStamp.currentCryptoKey = uStack_62;
-    value_11.timeStamp.hiddenValue.b1 = (undefined1)uStack_63;
-    value_11.timeStamp.hiddenValue.b2 = uStack_63._1_1_;
-    value_11.timeStamp.hiddenValue.b3 = uStack_63._2_1_;
-    value_11.timeStamp.hiddenValue.b4 = uStack_63._3_1_;
-    value_11.timeStamp.hiddenValueOld = (Byte__Array *)uStack_64;
-    value_11.timeStamp.fakeValue = (float)uStack_65;
-    value_11.timeStamp._16_4_ = uStack_66;
-    value_11._52_4_ = uStack_67;
-    value_11.avatarModifierPackageType = uStack_68;
-    value_11.avatarModifierPackageAdditionPolicy = iStack_69;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_SlowMat,value_11,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(3.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 0x13;
-    pFVar4 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    func_?();
-    func_?(&uStack_70,0x17,1,0x3ecccccd,iVar1);
-    value_12.duration.currentCryptoKey = uStack_71;
-    value_12.id = uStack_70;
-    value_12.duration.hiddenValue.b1 = (undefined1)uStack_72;
-    value_12.duration.hiddenValue.b2 = uStack_72._1_1_;
-    value_12.duration.hiddenValue.b3 = uStack_72._2_1_;
-    value_12.duration.hiddenValue.b4 = uStack_72._3_1_;
-    value_12.duration.hiddenValueOld = (Byte__Array *)uStack_73;
-    value_12.duration.fakeValue = (float)uStack_74;
-    value_12.duration._16_4_ = uStack_75;
-    value_12.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_76;
-    value_12.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_77;
-    value_12.timeStamp.currentCryptoKey = uStack_78;
-    value_12.timeStamp.hiddenValue.b1 = (undefined1)uStack_79;
-    value_12.timeStamp.hiddenValue.b2 = uStack_79._1_1_;
-    value_12.timeStamp.hiddenValue.b3 = uStack_79._2_1_;
-    value_12.timeStamp.hiddenValue.b4 = uStack_79._3_1_;
-    value_12.timeStamp.hiddenValueOld = (Byte__Array *)uStack_80;
-    value_12.timeStamp.fakeValue = (float)uStack_81;
-    value_12.timeStamp._16_4_ = uStack_82;
-    value_12._52_4_ = uStack_83;
-    value_12.avatarModifierPackageType = uStack_84;
-    value_12.avatarModifierPackageAdditionPolicy = iStack_85;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_SpeedMat,value_12,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 2;
-    uStack_3 = 0x1a;
-    pFVar4 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_86,0);
-    func_?(&uStack_86,0x18,1,0x3ecccccd,iVar1,0,0);
-    value_00.duration.currentCryptoKey = uStack_87;
-    value_00.id = uStack_86;
-    value_00.duration.hiddenValue.b1 = (undefined1)uStack_88;
-    value_00.duration.hiddenValue.b2 = uStack_88._1_1_;
-    value_00.duration.hiddenValue.b3 = uStack_88._2_1_;
-    value_00.duration.hiddenValue.b4 = uStack_88._3_1_;
-    value_00.duration.hiddenValueOld = (Byte__Array *)uStack_89;
-    value_00.duration.fakeValue = (float)uStack_90;
-    value_00.duration._16_4_ = uStack_91;
-    value_00.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_92;
-    value_00.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_93;
-    value_00.timeStamp.currentCryptoKey = uStack_94;
-    value_00.timeStamp.hiddenValue.b1 = (undefined1)uStack_95;
-    value_00.timeStamp.hiddenValue.b2 = uStack_95._1_1_;
-    value_00.timeStamp.hiddenValue.b3 = uStack_95._2_1_;
-    value_00.timeStamp.hiddenValue.b4 = uStack_95._3_1_;
-    value_00.timeStamp.hiddenValueOld = (Byte__Array *)uStack_96;
-    value_00.timeStamp.fakeValue = (float)uStack_97;
-    value_00.timeStamp._16_4_ = uStack_98;
-    value_00._52_4_ = uStack_99;
-    value_00.avatarModifierPackageType = uStack_100;
-    value_00.avatarModifierPackageAdditionPolicy = iStack_101;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_CrumbleMat,value_00,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 1;
-    uStack_3 = 0x15;
-    pFVar4 = AvatarModifierPackageFactory_Const(25.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_102,0);
-    func_?(&uStack_102,4,1,0x7f800000,iVar1,0,0);
-    value_01.duration.currentCryptoKey = uStack_103;
-    value_01.id = uStack_102;
-    value_01.duration.hiddenValue.b1 = (undefined1)uStack_104;
-    value_01.duration.hiddenValue.b2 = uStack_104._1_1_;
-    value_01.duration.hiddenValue.b3 = uStack_104._2_1_;
-    value_01.duration.hiddenValue.b4 = uStack_104._3_1_;
-    value_01.duration.hiddenValueOld = (Byte__Array *)uStack_105;
-    value_01.duration.fakeValue = (float)uStack_106;
-    value_01.duration._16_4_ = uStack_107;
-    value_01.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_108;
-    value_01.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_109;
-    value_01.timeStamp.currentCryptoKey = uStack_110;
-    value_01.timeStamp.hiddenValue.b1 = (undefined1)uStack_111;
-    value_01.timeStamp.hiddenValue.b2 = uStack_111._1_1_;
-    value_01.timeStamp.hiddenValue.b3 = uStack_111._2_1_;
-    value_01.timeStamp.hiddenValue.b4 = uStack_111._3_1_;
-    value_01.timeStamp.hiddenValueOld = (Byte__Array *)uStack_112;
-    value_01.timeStamp.fakeValue = (float)uStack_113;
-    value_01.timeStamp._16_4_ = uStack_114;
-    value_01._52_4_ = uStack_115;
-    value_01.avatarModifierPackageType = uStack_116;
-    value_01.avatarModifierPackageAdditionPolicy = iStack_117;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Poison,value_01,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 1;
-    uStack_3 = 0xe;
-    pFVar4 = AvatarModifierPackageFactory_Const(-2.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 1;
-    uStack_3 = 0x14;
-    pFVar4 = AvatarModifierPackageFactory_Const(2.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    pDVar118 = (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)pDVar118,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
-              );
-    if (pDVar118 == (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0)
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-    Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-              (pDVar118,AvatarModifierPackageType__Enum_Poison,ModifierActions__Enum_Replace,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-              );
-    func_?(&uStack_119,0,0x40);
-    func_?(&uStack_119,0x15,1,0x3ecccccd,iVar1);
-    value_13.duration.currentCryptoKey = uStack_120;
-    value_13.id = uStack_119;
-    value_13.duration.hiddenValue.b1 = (undefined1)uStack_121;
-    value_13.duration.hiddenValue.b2 = uStack_121._1_1_;
-    value_13.duration.hiddenValue.b3 = uStack_121._2_1_;
-    value_13.duration.hiddenValue.b4 = uStack_121._3_1_;
-    value_13.duration.hiddenValueOld = (Byte__Array *)uStack_122;
-    value_13.duration.fakeValue = (float)uStack_123;
-    value_13.duration._16_4_ = uStack_124;
-    value_13.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_125;
-    value_13.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_126;
-    value_13.timeStamp.currentCryptoKey = uStack_127;
-    value_13.timeStamp.hiddenValue.b1 = (undefined1)uStack_128;
-    value_13.timeStamp.hiddenValue.b2 = uStack_128._1_1_;
-    value_13.timeStamp.hiddenValue.b3 = uStack_128._2_1_;
-    value_13.timeStamp.hiddenValue.b4 = uStack_128._3_1_;
-    value_13.timeStamp.hiddenValueOld = (Byte__Array *)uStack_129;
-    value_13.timeStamp.fakeValue = (float)uStack_130;
-    value_13.timeStamp._16_4_ = uStack_131;
-    value_13._52_4_ = uStack_132;
-    value_13.avatarModifierPackageType = uStack_133;
-    value_13.avatarModifierPackageAdditionPolicy = iStack_134;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_HealingMat,value_13,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 1;
-    uStack_3 = 0x16;
-    pFVar4 = AvatarModifierPackageFactory_Const(500.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_135,0);
-    func_?(&uStack_135,0x14,1,0x7f800000,iVar1,0,0);
-    value_02.duration.currentCryptoKey = uStack_136;
-    value_02.id = uStack_135;
-    value_02.duration.hiddenValue.b1 = (undefined1)uStack_137;
-    value_02.duration.hiddenValue.b2 = uStack_137._1_1_;
-    value_02.duration.hiddenValue.b3 = uStack_137._2_1_;
-    value_02.duration.hiddenValue.b4 = uStack_137._3_1_;
-    value_02.duration.hiddenValueOld = (Byte__Array *)uStack_138;
-    value_02.duration.fakeValue = (float)uStack_139;
-    value_02.duration._16_4_ = uStack_140;
-    value_02.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_141;
-    value_02.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_142;
-    value_02.timeStamp.currentCryptoKey = uStack_143;
-    value_02.timeStamp.hiddenValue.b1 = (undefined1)uStack_144;
-    value_02.timeStamp.hiddenValue.b2 = uStack_144._1_1_;
-    value_02.timeStamp.hiddenValue.b3 = uStack_144._2_1_;
-    value_02.timeStamp.hiddenValue.b4 = uStack_144._3_1_;
-    value_02.timeStamp.hiddenValueOld = (Byte__Array *)uStack_145;
-    value_02.timeStamp.fakeValue = (float)uStack_146;
-    value_02.timeStamp._16_4_ = uStack_147;
-    value_02._52_4_ = uStack_148;
-    value_02.avatarModifierPackageType = uStack_149;
-    value_02.avatarModifierPackageAdditionPolicy = iStack_150;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Lethal,value_02,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 1;
-    uStack_3 = 0xe;
-    pFVar4 = AvatarModifierPackageFactory_Const(150.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_151,0);
-    func_?(&uStack_151,6,1,0x7f800000,iVar1,0,0);
-    value_03.duration.currentCryptoKey = uStack_152;
-    value_03.id = uStack_151;
-    value_03.duration.hiddenValue.b1 = (undefined1)uStack_153;
-    value_03.duration.hiddenValue.b2 = uStack_153._1_1_;
-    value_03.duration.hiddenValue.b3 = uStack_153._2_1_;
-    value_03.duration.hiddenValue.b4 = uStack_153._3_1_;
-    value_03.duration.hiddenValueOld = (Byte__Array *)uStack_154;
-    value_03.duration.fakeValue = (float)uStack_155;
-    value_03.duration._16_4_ = uStack_156;
-    value_03.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_157;
-    value_03.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_158;
-    value_03.timeStamp.currentCryptoKey = uStack_159;
-    value_03.timeStamp.hiddenValue.b1 = (undefined1)uStack_160;
-    value_03.timeStamp.hiddenValue.b2 = uStack_160._1_1_;
-    value_03.timeStamp.hiddenValue.b3 = uStack_160._2_1_;
-    value_03.timeStamp.hiddenValue.b4 = uStack_160._3_1_;
-    value_03.timeStamp.hiddenValueOld = (Byte__Array *)uStack_161;
-    value_03.timeStamp.fakeValue = (float)uStack_162;
-    value_03.timeStamp._16_4_ = uStack_163;
-    value_03._52_4_ = uStack_164;
-    value_03.avatarModifierPackageType = uStack_165;
-    value_03.avatarModifierPackageAdditionPolicy = iStack_166;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_InstantDeath,value_03,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 2;
-    uStack_3 = 0x11;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_167,0);
-    func_?(&uStack_167,5,1,0x3e4ccccd,iVar1,0,0);
-    value_04.duration.currentCryptoKey = uStack_168;
-    value_04.id = uStack_167;
-    value_04.duration.hiddenValue.b1 = (undefined1)uStack_169;
-    value_04.duration.hiddenValue.b2 = uStack_169._1_1_;
-    value_04.duration.hiddenValue.b3 = uStack_169._2_1_;
-    value_04.duration.hiddenValue.b4 = uStack_169._3_1_;
-    value_04.duration.hiddenValueOld = (Byte__Array *)uStack_170;
-    value_04.duration.fakeValue = (float)uStack_171;
-    value_04.duration._16_4_ = uStack_172;
-    value_04.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_173;
-    value_04.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_174;
-    value_04.timeStamp.currentCryptoKey = uStack_175;
-    value_04.timeStamp.hiddenValue.b1 = (undefined1)uStack_176;
-    value_04.timeStamp.hiddenValue.b2 = uStack_176._1_1_;
-    value_04.timeStamp.hiddenValue.b3 = uStack_176._2_1_;
-    value_04.timeStamp.hiddenValue.b4 = uStack_176._3_1_;
-    value_04.timeStamp.hiddenValueOld = (Byte__Array *)uStack_177;
-    value_04.timeStamp.fakeValue = (float)uStack_178;
-    value_04.timeStamp._16_4_ = uStack_179;
-    value_04._52_4_ = uStack_180;
-    value_04.avatarModifierPackageType = uStack_181;
-    value_04.avatarModifierPackageAdditionPolicy = iStack_182;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_WallJump,value_04,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 2;
-    uStack_3 = 0xc;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_183,0);
-    func_?(&uStack_183,7,1,0x3e4ccccd,iVar1,0,0);
-    value_05.duration.currentCryptoKey = uStack_184;
-    value_05.id = uStack_183;
-    value_05.duration.hiddenValue.b1 = (undefined1)uStack_185;
-    value_05.duration.hiddenValue.b2 = uStack_185._1_1_;
-    value_05.duration.hiddenValue.b3 = uStack_185._2_1_;
-    value_05.duration.hiddenValue.b4 = uStack_185._3_1_;
-    value_05.duration.hiddenValueOld = (Byte__Array *)uStack_186;
-    value_05.duration.fakeValue = (float)uStack_187;
-    value_05.duration._16_4_ = uStack_188;
-    value_05.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_189;
-    value_05.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_190;
-    value_05.timeStamp.currentCryptoKey = uStack_191;
-    value_05.timeStamp.hiddenValue.b1 = (undefined1)uStack_192;
-    value_05.timeStamp.hiddenValue.b2 = uStack_192._1_1_;
-    value_05.timeStamp.hiddenValue.b3 = uStack_192._2_1_;
-    value_05.timeStamp.hiddenValue.b4 = uStack_192._3_1_;
-    value_05.timeStamp.hiddenValueOld = (Byte__Array *)uStack_193;
-    value_05.timeStamp.fakeValue = (float)uStack_194;
-    value_05.timeStamp._16_4_ = uStack_195;
-    value_05._52_4_ = uStack_196;
-    value_05.avatarModifierPackageType = uStack_197;
-    value_05.avatarModifierPackageAdditionPolicy = iStack_198;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_NoFriction,value_05,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 1;
-    uStack_3 = 0x12;
-    pFVar4 = AvatarModifierPackageFactory_Const(25.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_199,0);
-    func_?(&uStack_199,8,1,0x3f000000,iVar1,0,0);
-    value_06.duration.currentCryptoKey = uStack_200;
-    value_06.id = uStack_199;
-    value_06.duration.hiddenValue.b1 = (undefined1)uStack_201;
-    value_06.duration.hiddenValue.b2 = uStack_201._1_1_;
-    value_06.duration.hiddenValue.b3 = uStack_201._2_1_;
-    value_06.duration.hiddenValue.b4 = uStack_201._3_1_;
-    value_06.duration.hiddenValueOld = (Byte__Array *)uStack_202;
-    value_06.duration.fakeValue = (float)uStack_203;
-    value_06.duration._16_4_ = uStack_204;
-    value_06.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_205;
-    value_06.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_206;
-    value_06.timeStamp.currentCryptoKey = uStack_207;
-    value_06.timeStamp.hiddenValue.b1 = (undefined1)uStack_208;
-    value_06.timeStamp.hiddenValue.b2 = uStack_208._1_1_;
-    value_06.timeStamp.hiddenValue.b3 = uStack_208._2_1_;
-    value_06.timeStamp.hiddenValue.b4 = uStack_208._3_1_;
-    value_06.timeStamp.hiddenValueOld = (Byte__Array *)uStack_209;
-    value_06.timeStamp.fakeValue = (float)uStack_210;
-    value_06.timeStamp._16_4_ = uStack_211;
-    value_06._52_4_ = uStack_212;
-    value_06.avatarModifierPackageType = uStack_213;
-    value_06.avatarModifierPackageAdditionPolicy = iStack_214;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_FlamerBurn,value_06,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 0;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.5,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 4;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.95,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    func_?();
-    func_?(&uStack_215,9,1,0x41200000,iVar1);
-    value_14.duration.currentCryptoKey = uStack_216;
-    value_14.id = uStack_215;
-    value_14.duration.hiddenValue.b1 = (undefined1)uStack_217;
-    value_14.duration.hiddenValue.b2 = uStack_217._1_1_;
-    value_14.duration.hiddenValue.b3 = uStack_217._2_1_;
-    value_14.duration.hiddenValue.b4 = uStack_217._3_1_;
-    value_14.duration.hiddenValueOld = (Byte__Array *)uStack_218;
-    value_14.duration.fakeValue = (float)uStack_219;
-    value_14.duration._16_4_ = uStack_220;
-    value_14.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_221;
-    value_14.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_222;
-    value_14.timeStamp.currentCryptoKey = uStack_223;
-    value_14.timeStamp.hiddenValue.b1 = (undefined1)uStack_224;
-    value_14.timeStamp.hiddenValue.b2 = uStack_224._1_1_;
-    value_14.timeStamp.hiddenValue.b3 = uStack_224._2_1_;
-    value_14.timeStamp.hiddenValue.b4 = uStack_224._3_1_;
-    value_14.timeStamp.hiddenValueOld = (Byte__Array *)uStack_225;
-    value_14.timeStamp.fakeValue = (float)uStack_226;
-    value_14.timeStamp._16_4_ = uStack_227;
-    value_14._52_4_ = uStack_228;
-    value_14.avatarModifierPackageType = uStack_229;
-    value_14.avatarModifierPackageAdditionPolicy = iStack_230;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Underwater,value_14,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 2;
-    uStack_3 = 0xc;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 2;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.1,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.4,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
-    *(ulonglong *)(iVar1 + 0x28) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x30) = pFVar4;
-    func_?();
-    func_?(&uStack_231,10,1);
-    value_18.duration.currentCryptoKey = uStack_232;
-    value_18.id = uStack_231;
-    value_18.duration.hiddenValue.b1 = (undefined1)uStack_233;
-    value_18.duration.hiddenValue.b2 = uStack_233._1_1_;
-    value_18.duration.hiddenValue.b3 = uStack_233._2_1_;
-    value_18.duration.hiddenValue.b4 = uStack_233._3_1_;
-    value_18.duration.hiddenValueOld = (Byte__Array *)uStack_234;
-    value_18.duration.fakeValue = (float)uStack_235;
-    value_18.duration._16_4_ = uStack_236;
-    value_18.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_237;
-    value_18.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_238;
-    value_18.timeStamp.currentCryptoKey = uStack_239;
-    value_18.timeStamp.hiddenValue.b1 = (undefined1)uStack_240;
-    value_18.timeStamp.hiddenValue.b2 = uStack_240._1_1_;
-    value_18.timeStamp.hiddenValue.b3 = uStack_240._2_1_;
-    value_18.timeStamp.hiddenValue.b4 = uStack_240._3_1_;
-    value_18.timeStamp.hiddenValueOld = (Byte__Array *)uStack_241;
-    value_18.timeStamp.fakeValue = (float)uStack_242;
-    value_18.timeStamp._16_4_ = uStack_243;
-    value_18._52_4_ = uStack_244;
-    value_18.avatarModifierPackageType = uStack_245;
-    value_18.avatarModifierPackageAdditionPolicy = iStack_246;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Frozen,value_18,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(3.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 0x13;
-    pFVar4 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    func_?();
-    func_?(&uStack_247,0xb,1,0x40e00000,iVar1);
-    value_15.duration.currentCryptoKey = uStack_248;
-    value_15.id = uStack_247;
-    value_15.duration.hiddenValue.b1 = (undefined1)uStack_249;
-    value_15.duration.hiddenValue.b2 = uStack_249._1_1_;
-    value_15.duration.hiddenValue.b3 = uStack_249._2_1_;
-    value_15.duration.hiddenValue.b4 = uStack_249._3_1_;
-    value_15.duration.hiddenValueOld = (Byte__Array *)uStack_250;
-    value_15.duration.fakeValue = (float)uStack_251;
-    value_15.duration._16_4_ = uStack_252;
-    value_15.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_253;
-    value_15.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_254;
-    value_15.timeStamp.currentCryptoKey = uStack_255;
-    value_15.timeStamp.hiddenValue.b1 = (undefined1)uStack_256;
-    value_15.timeStamp.hiddenValue.b2 = uStack_256._1_1_;
-    value_15.timeStamp.hiddenValue.b3 = uStack_256._2_1_;
-    value_15.timeStamp.hiddenValue.b4 = uStack_256._3_1_;
-    value_15.timeStamp.hiddenValueOld = (Byte__Array *)uStack_257;
-    value_15.timeStamp.fakeValue = (float)uStack_258;
-    value_15.timeStamp._16_4_ = uStack_259;
-    value_15._52_4_ = uStack_260;
-    value_15.avatarModifierPackageType = uStack_261;
-    value_15.avatarModifierPackageAdditionPolicy = iStack_262;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_NinjaRun,value_15,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.3,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_263,0);
-    func_?(&uStack_263,0x13,1,0x40e00000,iVar1,0,0);
-    value_07.duration.currentCryptoKey = uStack_264;
-    value_07.id = uStack_263;
-    value_07.duration.hiddenValue.b1 = (undefined1)uStack_265;
-    value_07.duration.hiddenValue.b2 = uStack_265._1_1_;
-    value_07.duration.hiddenValue.b3 = uStack_265._2_1_;
-    value_07.duration.hiddenValue.b4 = uStack_265._3_1_;
-    value_07.duration.hiddenValueOld = (Byte__Array *)uStack_266;
-    value_07.duration.fakeValue = (float)uStack_267;
-    value_07.duration._16_4_ = uStack_268;
-    value_07.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_269;
-    value_07.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_270;
-    value_07.timeStamp.currentCryptoKey = uStack_271;
-    value_07.timeStamp.hiddenValue.b1 = (undefined1)uStack_272;
-    value_07.timeStamp.hiddenValue.b2 = uStack_272._1_1_;
-    value_07.timeStamp.hiddenValue.b3 = uStack_272._2_1_;
-    value_07.timeStamp.hiddenValue.b4 = uStack_272._3_1_;
-    value_07.timeStamp.hiddenValueOld = (Byte__Array *)uStack_273;
-    value_07.timeStamp.fakeValue = (float)uStack_274;
-    value_07.timeStamp._16_4_ = uStack_275;
-    value_07._52_4_ = uStack_276;
-    value_07.avatarModifierPackageType = uStack_277;
-    value_07.avatarModifierPackageAdditionPolicy = iStack_278;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_TimeAttackFlagDebriefSlow,value_07,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.4,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 5;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.25,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 2;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.6,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
-    *(ulonglong *)(iVar1 + 0x28) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x30) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 6;
-    pFVar4 = AvatarModifierPackageFactory_Const(4.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
-    *(ulonglong *)(iVar1 + 0x34) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x3c) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 8;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 5) goto code_?;
-    *(ulonglong *)(iVar1 + 0x40) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x48) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 9;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 6) goto code_?;
-    *(ulonglong *)(iVar1 + 0x4c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x54) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 1;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.25,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 7) goto code_?;
-    *(ulonglong *)(iVar1 + 0x58) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x60) = pFVar4;
-    pDVar118 = (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)pDVar118,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
-              );
-    if (pDVar118 == (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0)
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-    Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-              (pDVar118,AvatarModifierPackageType__Enum_Shrunken,ModifierActions__Enum_Renew,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-              );
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-    Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-              (pDVar118,AvatarModifierPackageType__Enum_Enlarged,ModifierActions__Enum_CancelOut,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-              );
-    func_?(&uStack_279,0,0x40);
-    func_?(&uStack_279);
-    value_19.duration.currentCryptoKey = uStack_280;
-    value_19.id = uStack_279;
-    value_19.duration.hiddenValue.b1 = (undefined1)uStack_281;
-    value_19.duration.hiddenValue.b2 = uStack_281._1_1_;
-    value_19.duration.hiddenValue.b3 = uStack_281._2_1_;
-    value_19.duration.hiddenValue.b4 = uStack_281._3_1_;
-    value_19.duration.hiddenValueOld = (Byte__Array *)uStack_282;
-    value_19.duration.fakeValue = (float)uStack_283;
-    value_19.duration._16_4_ = uStack_284;
-    value_19.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_285;
-    value_19.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_286;
-    value_19.timeStamp.currentCryptoKey = uStack_287;
-    value_19.timeStamp.hiddenValue.b1 = (undefined1)uStack_288;
-    value_19.timeStamp.hiddenValue.b2 = uStack_288._1_1_;
-    value_19.timeStamp.hiddenValue.b3 = uStack_288._2_1_;
-    value_19.timeStamp.hiddenValue.b4 = uStack_288._3_1_;
-    value_19.timeStamp.hiddenValueOld = (Byte__Array *)uStack_289;
-    value_19.timeStamp.fakeValue = (float)uStack_290;
-    value_19.timeStamp._16_4_ = uStack_291;
-    value_19._52_4_ = uStack_292;
-    value_19.avatarModifierPackageType = uStack_293;
-    value_19.avatarModifierPackageAdditionPolicy = iStack_294;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Shrunken,value_19,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 2;
-    uStack_3 = 4;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.96,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_295,0);
-    func_?(&uStack_295,0xd,1,0x7f800000,iVar1,0,0);
-    value_08.duration.currentCryptoKey = uStack_296;
-    value_08.id = uStack_295;
-    value_08.duration.hiddenValue.b1 = (undefined1)uStack_297;
-    value_08.duration.hiddenValue.b2 = uStack_297._1_1_;
-    value_08.duration.hiddenValue.b3 = uStack_297._2_1_;
-    value_08.duration.hiddenValue.b4 = uStack_297._3_1_;
-    value_08.duration.hiddenValueOld = (Byte__Array *)uStack_298;
-    value_08.duration.fakeValue = (float)uStack_299;
-    value_08.duration._16_4_ = uStack_300;
-    value_08.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_301;
-    value_08.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_302;
-    value_08.timeStamp.currentCryptoKey = uStack_303;
-    value_08.timeStamp.hiddenValue.b1 = (undefined1)uStack_304;
-    value_08.timeStamp.hiddenValue.b2 = uStack_304._1_1_;
-    value_08.timeStamp.hiddenValue.b3 = uStack_304._2_1_;
-    value_08.timeStamp.hiddenValue.b4 = uStack_304._3_1_;
-    value_08.timeStamp.hiddenValueOld = (Byte__Array *)uStack_305;
-    value_08.timeStamp.fakeValue = (float)uStack_306;
-    value_08.timeStamp._16_4_ = uStack_307;
-    value_08._52_4_ = uStack_308;
-    value_08.avatarModifierPackageType = uStack_309;
-    value_08.avatarModifierPackageAdditionPolicy = iStack_310;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_WindFriction,value_08,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 2;
-    uStack_3 = 6;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.5,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_311,0);
-    func_?(&uStack_311,0x10,1,0x7f800000,iVar1,0,1);
-    value_09.duration.currentCryptoKey = uStack_312;
-    value_09.id = uStack_311;
-    value_09.duration.hiddenValue.b1 = (undefined1)uStack_313;
-    value_09.duration.hiddenValue.b2 = uStack_313._1_1_;
-    value_09.duration.hiddenValue.b3 = uStack_313._2_1_;
-    value_09.duration.hiddenValue.b4 = uStack_313._3_1_;
-    value_09.duration.hiddenValueOld = (Byte__Array *)uStack_314;
-    value_09.duration.fakeValue = (float)uStack_315;
-    value_09.duration._16_4_ = uStack_316;
-    value_09.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_317;
-    value_09.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_318;
-    value_09.timeStamp.currentCryptoKey = uStack_319;
-    value_09.timeStamp.hiddenValue.b1 = (undefined1)uStack_320;
-    value_09.timeStamp.hiddenValue.b2 = uStack_320._1_1_;
-    value_09.timeStamp.hiddenValue.b3 = uStack_320._2_1_;
-    value_09.timeStamp.hiddenValue.b4 = uStack_320._3_1_;
-    value_09.timeStamp.hiddenValueOld = (Byte__Array *)uStack_321;
-    value_09.timeStamp.fakeValue = (float)uStack_322;
-    value_09.timeStamp._16_4_ = uStack_323;
-    value_09._52_4_ = uStack_324;
-    value_09.avatarModifierPackageType = uStack_325;
-    value_09.avatarModifierPackageAdditionPolicy = iStack_326;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Shielded,value_09,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 2;
-    uStack_3 = 7;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    func_?(&uStack_327,0);
-    func_?(&uStack_327,0xe,1,0x7f800000,iVar1,0,0);
-    value_10.duration.currentCryptoKey = uStack_328;
-    value_10.id = uStack_327;
-    value_10.duration.hiddenValue.b1 = (undefined1)uStack_329;
-    value_10.duration.hiddenValue.b2 = uStack_329._1_1_;
-    value_10.duration.hiddenValue.b3 = uStack_329._2_1_;
-    value_10.duration.hiddenValue.b4 = uStack_329._3_1_;
-    value_10.duration.hiddenValueOld = (Byte__Array *)uStack_330;
-    value_10.duration.fakeValue = (float)uStack_331;
-    value_10.duration._16_4_ = uStack_332;
-    value_10.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_333;
-    value_10.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_334;
-    value_10.timeStamp.currentCryptoKey = uStack_335;
-    value_10.timeStamp.hiddenValue.b1 = (undefined1)uStack_336;
-    value_10.timeStamp.hiddenValue.b2 = uStack_336._1_1_;
-    value_10.timeStamp.hiddenValue.b3 = uStack_336._2_1_;
-    value_10.timeStamp.hiddenValue.b4 = uStack_336._3_1_;
-    value_10.timeStamp.hiddenValueOld = (Byte__Array *)uStack_337;
-    value_10.timeStamp.fakeValue = (float)uStack_338;
-    value_10.timeStamp._16_4_ = uStack_339;
-    value_10._52_4_ = uStack_340;
-    value_10.avatarModifierPackageType = uStack_341;
-    value_10.avatarModifierPackageAdditionPolicy = iStack_342;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_DisableVehiclePickup,value_10,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier);
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 0;
-    uStack_3 = 3;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.5,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 5;
-    pFVar4 = AvatarModifierPackageFactory_Const(2.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 2;
-    pFVar4 = AvatarModifierPackageFactory_Const(2.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
-    *(ulonglong *)(iVar1 + 0x28) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x30) = pFVar4;
-    uStack_2 = 0;
-    uStack_3 = 6;
-    pFVar4 = AvatarModifierPackageFactory_Const(0.5,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
-    *(ulonglong *)(iVar1 + 0x34) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x3c) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 8;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 5) goto code_?;
-    *(ulonglong *)(iVar1 + 0x40) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x48) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 9;
-    uVar5 = 0x3f800000;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    uVar343 = 0;
-    if (*(uint *)(iVar1 + 0xc) < 6) goto code_?;
-    *(ulonglong *)(iVar1 + 0x4c) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x54) = pFVar4;
-    uStack_2 = 2;
-    uStack_3 = 1;
-    uVar344 = 0x40000000;
-    puVar345 = &UNK_?;
-    pFVar4 = AvatarModifierPackageFactory_Const(2.0,(MethodInfo *)0x0);
-    if (*(uint *)(iVar1 + 0xc) < 7) goto code_?;
-    *(ulonglong *)(iVar1 + 0x58) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x60) = pFVar4;
-    pDVar346 = 
-    TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>;
-    pDVar118 = (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)pDVar118,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
-              );
-    if (pDVar118 == (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0)
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-    Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-              (pDVar118,AvatarModifierPackageType__Enum_Shrunken,ModifierActions__Enum_CancelOut,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-              );
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-    Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-              (pDVar118,AvatarModifierPackageType__Enum_Enlarged,ModifierActions__Enum_Renew,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-              );
-    func_?(&uStack_347,0,0x40);
-    func_?(&uStack_347);
-    value_20.duration.currentCryptoKey = uStack_348;
-    value_20.id = uStack_347;
-    value_20.duration.hiddenValue.b1 = (undefined1)uStack_349;
-    value_20.duration.hiddenValue.b2 = uStack_349._1_1_;
-    value_20.duration.hiddenValue.b3 = uStack_349._2_1_;
-    value_20.duration.hiddenValue.b4 = uStack_349._3_1_;
-    value_20.duration.hiddenValueOld = (Byte__Array *)uStack_350;
-    value_20.duration.fakeValue = (float)uStack_351;
-    value_20.duration._16_4_ = uStack_352;
-    value_20.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_353;
-    value_20.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uStack_354;
-    value_20.timeStamp.currentCryptoKey = uStack_355;
-    value_20.timeStamp.hiddenValue.b1 = (undefined1)uStack_356;
-    value_20.timeStamp.hiddenValue.b2 = uStack_356._1_1_;
-    value_20.timeStamp.hiddenValue.b3 = uStack_356._2_1_;
-    value_20.timeStamp.hiddenValue.b4 = uStack_356._3_1_;
-    value_20.timeStamp.hiddenValueOld = (Byte__Array *)uStack_357;
-    value_20.timeStamp.fakeValue = (float)uStack_358;
-    value_20.timeStamp._16_4_ = uStack_359;
-    value_20._52_4_ = uStack_360;
-    value_20.avatarModifierPackageType = uStack_361;
-    value_20.avatarModifierPackageAdditionPolicy = iStack_362;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_Enlarged,value_20,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    if (cRam_? == '\0') {
-      uStack_363 = _UNK_?;
-      func_?();
-      cRam_? = '\x01';
-    }
-    uStack_363 = 1;
-    pAStack_364 = TypeInfo__AvatarModifierPackage__AvatarModifier;
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    if ((((uint)(TypeInfo__AvatarModifierPackageFactory->vtable).Equals.methodPtr & 0x2000000) != 0)
-       && ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AvatarModifierPackageFactory);
-    }
-    uStack_2 = 2;
-    uStack_3 = 10;
-    pFVar4 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-    *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-    pDVar118 = (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)pDVar118,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
-              );
-    if (pDVar118 == (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0)
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-    Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-              (pDVar118,AvatarModifierPackageType__Enum_SpawnProtection,ModifierActions__Enum_Renew,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-              );
-    func_?(&uStack_365,0,0x40);
-    func_?(&uStack_365,0x11,1,0x40800000,iVar1);
-    value_16.duration.currentCryptoKey = uStack_366;
-    value_16.id = uStack_365;
-    value_16.duration.hiddenValue.b1 = (undefined1)uStack_367;
-    value_16.duration.hiddenValue.b2 = uStack_367._1_1_;
-    value_16.duration.hiddenValue.b3 = uStack_367._2_1_;
-    value_16.duration.hiddenValue.b4 = uStack_367._3_1_;
-    value_16.duration.hiddenValueOld = (Byte__Array *)uStack_368;
-    value_16.duration.fakeValue = (float)uStack_369;
-    value_16.duration._16_4_ = uStack_370;
-    value_16.avatarModifiers = (AvatarModifierPackage_AvatarModifier__Array *)uStack_371;
-    value_16.actionsToTakeVsTypes =
-         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)puStack_372;
-    value_16.timeStamp.currentCryptoKey = (int32_t)pAStack_364;
-    value_16.timeStamp.hiddenValue.b1 = (undefined1)uStack_363;
-    value_16.timeStamp.hiddenValue.b2 = uStack_363._1_1_;
-    value_16.timeStamp.hiddenValue.b3 = uStack_363._2_1_;
-    value_16.timeStamp.hiddenValue.b4 = uStack_363._3_1_;
-    value_16.timeStamp.hiddenValueOld = (Byte__Array *)uStack_373;
-    value_16.timeStamp.fakeValue = (float)uStack_374;
-    value_16.timeStamp._16_4_ = uStack_375;
-    value_16._52_4_ = uStack_376;
-    value_16.avatarModifierPackageType = uStack_377;
-    value_16.avatarModifierPackageAdditionPolicy = iStack_378;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-    Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-              (this,AvatarModifierPackageType__Enum_SpawnProtection,value_16,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-              );
-    iVar1 = func_?();
-    if (iVar1 == 0) goto code_?;
-    uStack_2 = 1;
-    uStack_3 = 0xe;
-    pFVar4 = AvatarModifierPackageFactory_Const(-20.0,(MethodInfo *)0x0);
-    if (*(int *)(iVar1 + 0xc) != 0) {
-      *(ulonglong *)(iVar1 + 0x10) = CONCAT44(uStack_3,uStack_2);
-      *(Func_1_Single_ **)(iVar1 + 0x18) = pFVar4;
-      uStack_2 = 1;
-      uStack_3 = 0x14;
-      pFVar4 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
-      if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-      *(ulonglong *)(iVar1 + 0x1c) = CONCAT44(uStack_3,uStack_2);
-      *(Func_1_Single_ **)(iVar1 + 0x24) = pFVar4;
-      pDVar118 = (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)func_?();
-      System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]
-      ::HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)pDVar118,
-                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+    pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+             func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,1);
+    pFVar2 = AvatarModifierPackageFactory_Const(10.0,(MethodInfo *)0x0);
+    MStack_3._pinnable = (IPinnable *)0x0;
+    MStack_3._pointer = (Void *)0x0;
+    MStack_3._handle.handle = (void *)0x0;
+    mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+              (&MStack_3,(Void *)0x1,(GCHandle)0xe,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+    if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+      if (pAVar1->max_length == 0) goto code_?;
+      pAVar1->vector[0].avatarModifierType = (int32_t)MStack_3._pointer;
+      pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_3._handle.handle;
+      pAVar1->vector[0].value = (Func_1_Single_ *)MStack_3._pinnable;
+      func_?(&pAVar1->vector[0].value,0);
+      func_?(&AStack_4,0,0x44);
+      AvatarModifierPackage::AvatarModifierPackage__ctor
+                (&AStack_4,AvatarModifierPackageType__Enum_Fire,
+                 AvatarModifierPackageAdditionPolicy__Enum_Renew,1.0,pAVar1,
+                 (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,(MethodInfo *)0x0)
+      ;
+      value.duration.currentCryptoKey = AStack_4.duration.currentCryptoKey;
+      value.id = AStack_4.id;
+      value.duration.hiddenValue = AStack_4.duration.hiddenValue;
+      value.duration.hiddenValueOld = AStack_4.duration.hiddenValueOld;
+      value.duration.fakeValue = AStack_4.duration.fakeValue;
+      value.duration.inited = AStack_4.duration.inited;
+      value.duration._17_3_ = AStack_4.duration._17_3_;
+      value.avatarModifiers = AStack_4.avatarModifiers;
+      value.actionsToTakeVsTypes = AStack_4.actionsToTakeVsTypes;
+      value.timeStamp.currentCryptoKey = AStack_4.timeStamp.currentCryptoKey;
+      value.timeStamp.hiddenValue = AStack_4.timeStamp.hiddenValue;
+      value.timeStamp.hiddenValueOld = AStack_4.timeStamp.hiddenValueOld;
+      value.timeStamp.fakeValue = AStack_4.timeStamp.fakeValue;
+      value.timeStamp.inited = AStack_4.timeStamp.inited;
+      value.timeStamp._17_3_ = AStack_4.timeStamp._17_3_;
+      value.persistant = AStack_4.persistant;
+      value._53_3_ = AStack_4._53_3_;
+      value.lastTimeStamp = AStack_4.lastTimeStamp;
+      value.avatarModifierPackageType = AStack_4.avatarModifierPackageType;
+      value.avatarModifierPackageAdditionPolicy = AStack_4.avatarModifierPackageAdditionPolicy;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+      Int32Enum,AvatarModifierPackage]::Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                (this,1,value,
+                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
                 );
-      if (pDVar118 != (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::
-        Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-        Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-                  (pDVar118,AvatarModifierPackageType__Enum_Poison,ModifierActions__Enum_Replace,
-                   MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-                  );
-        mscorlib.dll::System::Collections::Generic::
-        Dictionary`2[AvatarModifierPackageType,ModifierActions]::
-        Dictionary_2_AvatarModifierPackageType_ModifierActions__Add
-                  (pDVar118,AvatarModifierPackageType__Enum_Fire,ModifierActions__Enum_Replace,
-                   MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-                  );
-        func_?(&stack0xfffff9f0,0,0x40);
-        uVar379 = 0;
-        uVar380 = 0x3e4ccccd;
-        uVar381 = 0;
-        uVar382 = 0x12;
-        func_?(&stack0xfffff9f0);
-        value_21.duration.currentCryptoKey = uVar381;
-        value_21.id = uVar382;
-        value_21.duration.hiddenValue.b1 = (char)uVar380;
-        value_21.duration.hiddenValue.b2 = (char)((uint)uVar380 >> 8);
-        value_21.duration.hiddenValue.b3 = (char)((uint)uVar380 >> 0x10);
-        value_21.duration.hiddenValue.b4 = (char)((uint)uVar380 >> 0x18);
-        value_21.duration.hiddenValueOld = (Byte__Array *)iVar1;
-        value_21.duration.fakeValue = (float)pDVar118;
-        value_21.duration._16_4_ = uVar379;
-        value_21.avatarModifiers =
-             (AvatarModifierPackage_AvatarModifier__Array *)
-             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
-        ;
-        value_21.actionsToTakeVsTypes =
-             (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)uVar5;
-        value_21.timeStamp.currentCryptoKey = (int32_t)puVar345;
-        value_21.timeStamp.hiddenValue.b1 = (char)uVar344;
-        value_21.timeStamp.hiddenValue.b2 = (char)((uint)uVar344 >> 8);
-        value_21.timeStamp.hiddenValue.b3 = (char)((uint)uVar344 >> 0x10);
-        value_21.timeStamp.hiddenValue.b4 = (char)((uint)uVar344 >> 0x18);
-        value_21.timeStamp.hiddenValueOld = (Byte__Array *)uVar343;
-        value_21.timeStamp.fakeValue = (float)&UNK_?;
-        value_21.timeStamp._16_4_ = pDVar346;
-        value_21._52_4_ = uStack_383;
-        value_21.avatarModifierPackageType = uStack_384;
-        value_21.avatarModifierPackageAdditionPolicy = iStack_385;
-        mscorlib.dll::System::Collections::Generic::
-        Dictionary`2[AvatarModifierPackageType,AvatarModifierPackage]::
-        Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage__Add
-                  (this,AvatarModifierPackageType__Enum_RayHeal,value_21,
+      pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+      pFVar2 = AvatarModifierPackageFactory_Const(1.5,(MethodInfo *)0x0);
+      MStack_5._pinnable = (IPinnable *)0x0;
+      MStack_5._pointer = (Void *)0x0;
+      MStack_5._handle.handle = (void *)0x0;
+      mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                (&MStack_5,(Void *)0x0,(GCHandle)0x2,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+      if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+        if (pAVar1->max_length == 0) goto code_?;
+        pAVar1->vector[0].avatarModifierType = (int32_t)MStack_5._pointer;
+        pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_5._handle.handle;
+        pAVar1->vector[0].value = (Func_1_Single_ *)MStack_5._pinnable;
+        func_?(&pAVar1->vector[0].value,0);
+        pFVar2 = AvatarModifierPackageFactory_Const(1.25,(MethodInfo *)0x0);
+        MStack_6._pinnable = (IPinnable *)0x0;
+        MStack_6._pointer = (Void *)0x0;
+        MStack_6._handle.handle = (void *)0x0;
+        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                  (&MStack_6,(Void *)0x0,(GCHandle)0x3,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+        if (pAVar1->max_length < 2) goto code_?;
+        pAVar1->vector[1].avatarModifierType = (int32_t)MStack_6._pointer;
+        pAVar1->vector[1].avatarModifierEffect = (int32_t)MStack_6._handle.handle;
+        pAVar1->vector[1].value = (Func_1_Single_ *)MStack_6._pinnable;
+        func_?(&pAVar1->vector[1].value,0);
+        pFVar2 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
+        MStack_7._pinnable = (IPinnable *)0x0;
+        MStack_7._pointer = (Void *)0x0;
+        MStack_7._handle.handle = (void *)0x0;
+        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                  (&MStack_7,(Void *)0x2,(GCHandle)0x7,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+        if (pAVar1->max_length < 3) goto code_?;
+        pAVar1->vector[2].avatarModifierType = (int32_t)MStack_7._pointer;
+        pAVar1->vector[2].avatarModifierEffect = (int32_t)MStack_7._handle.handle;
+        pAVar1->vector[2].value = (Func_1_Single_ *)MStack_7._pinnable;
+        func_?(&pAVar1->vector[2].value,0);
+        pFVar2 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
+        MStack_8._pinnable = (IPinnable *)0x0;
+        MStack_8._pointer = (Void *)0x0;
+        MStack_8._handle.handle = (void *)0x0;
+        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                  (&MStack_8,(Void *)0x2,(GCHandle)0x9,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+        if (pAVar1->max_length < 4) goto code_?;
+        pAVar1->vector[3].avatarModifierType = (int32_t)MStack_8._pointer;
+        pAVar1->vector[3].avatarModifierEffect = (int32_t)MStack_8._handle.handle;
+        pAVar1->vector[3].value = (Func_1_Single_ *)MStack_8._pinnable;
+        func_?(&pAVar1->vector[3].value,0);
+        pFVar2 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
+        MStack_9._pinnable = (IPinnable *)0x0;
+        MStack_9._pointer = (Void *)0x0;
+        MStack_9._handle.handle = (void *)0x0;
+        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                  (&MStack_9,(Void *)0x2,(GCHandle)0xb,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+        if (pAVar1->max_length < 5) goto code_?;
+        pAVar1->vector[4].avatarModifierType = (int32_t)MStack_9._pointer;
+        pAVar1->vector[4].avatarModifierEffect = (int32_t)MStack_9._handle.handle;
+        pAVar1->vector[4].value = (Func_1_Single_ *)MStack_9._pinnable;
+        func_?(&pAVar1->vector[4].value,0);
+        pFVar2 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
+        MStack_10._pinnable = (IPinnable *)0x0;
+        MStack_10._pointer = (Void *)0x0;
+        MStack_10._handle.handle = (void *)0x0;
+        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                  (&MStack_10,(Void *)0x2,(GCHandle)0xa,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+        if (pAVar1->max_length < 6) goto code_?;
+        pAVar1->vector[5].avatarModifierType = (int32_t)MStack_10._pointer;
+        pAVar1->vector[5].avatarModifierEffect = (int32_t)MStack_10._handle.handle;
+        pAVar1->vector[5].value = (Func_1_Single_ *)MStack_10._pinnable;
+        func_?(&pAVar1->vector[5].value,0);
+        func_?(&AStack_11,0,0x44);
+        AvatarModifierPackage::AvatarModifierPackage__ctor
+                  (&AStack_11,AvatarModifierPackageType__Enum_Mutant,
+                   AvatarModifierPackageAdditionPolicy__Enum_Renew,20.0,pAVar1,
+                   (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,
+                   (MethodInfo *)0x0);
+        value_00.duration.currentCryptoKey = AStack_11.duration.currentCryptoKey;
+        value_00.id = AStack_11.id;
+        value_00.duration.hiddenValue = AStack_11.duration.hiddenValue;
+        value_00.duration.hiddenValueOld = AStack_11.duration.hiddenValueOld;
+        value_00.duration.fakeValue = AStack_11.duration.fakeValue;
+        value_00.duration.inited = AStack_11.duration.inited;
+        value_00.duration._17_3_ = AStack_11.duration._17_3_;
+        value_00.avatarModifiers = AStack_11.avatarModifiers;
+        value_00.actionsToTakeVsTypes = AStack_11.actionsToTakeVsTypes;
+        value_00.timeStamp.currentCryptoKey = AStack_11.timeStamp.currentCryptoKey;
+        value_00.timeStamp.hiddenValue = AStack_11.timeStamp.hiddenValue;
+        value_00.timeStamp.hiddenValueOld = AStack_11.timeStamp.hiddenValueOld;
+        value_00.timeStamp.fakeValue = AStack_11.timeStamp.fakeValue;
+        value_00.timeStamp.inited = AStack_11.timeStamp.inited;
+        value_00.timeStamp._17_3_ = AStack_11.timeStamp._17_3_;
+        value_00.persistant = AStack_11.persistant;
+        value_00._53_3_ = AStack_11._53_3_;
+        value_00.lastTimeStamp = AStack_11.lastTimeStamp;
+        value_00.avatarModifierPackageType = AStack_11.avatarModifierPackageType;
+        value_00.avatarModifierPackageAdditionPolicy =
+             AStack_11.avatarModifierPackageAdditionPolicy;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+        Int32Enum,AvatarModifierPackage]::Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                  (this,2,value_00,
                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
                   );
-        TypeInfo__AvatarModifierPackageFactory->static_fields->protoPackages = this;
-        return;
+        pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+        pFVar2 = AvatarModifierPackageFactory_Const(0.01,(MethodInfo *)0x0);
+        MStack_12._pinnable = (IPinnable *)0x0;
+        MStack_12._pointer = (Void *)0x0;
+        MStack_12._handle.handle = (void *)0x0;
+        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                  (&MStack_12,(Void *)0x0,(GCHandle)0x2,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+        if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+          if (pAVar1->max_length == 0) goto code_?;
+          pAVar1->vector[0].avatarModifierType = (int32_t)MStack_12._pointer;
+          pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_12._handle.handle;
+          pAVar1->vector[0].value = (Func_1_Single_ *)MStack_12._pinnable;
+          func_?(&pAVar1->vector[0].value,0);
+          pFVar2 = AvatarModifierPackageFactory_Const(0.03,(MethodInfo *)0x0);
+          MStack_13._pinnable = (IPinnable *)0x0;
+          MStack_13._pointer = (Void *)0x0;
+          MStack_13._handle.handle = (void *)0x0;
+          mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                    (&MStack_13,(Void *)0x0,(GCHandle)0x3,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+          if (pAVar1->max_length < 2) goto code_?;
+          pAVar1->vector[1].avatarModifierType = (int32_t)MStack_13._pointer;
+          pAVar1->vector[1].avatarModifierEffect = (int32_t)MStack_13._handle.handle;
+          pAVar1->vector[1].value = (Func_1_Single_ *)MStack_13._pinnable;
+          func_?(&pAVar1->vector[1].value,0);
+          pFVar2 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
+          MStack_14._pinnable = (IPinnable *)0x0;
+          MStack_14._pointer = (Void *)0x0;
+          MStack_14._handle.handle = (void *)0x0;
+          mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                    (&MStack_14,(Void *)0x2,(GCHandle)0xc,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+          if (pAVar1->max_length < 3) goto code_?;
+          pAVar1->vector[2].avatarModifierType = (int32_t)MStack_14._pointer;
+          pAVar1->vector[2].avatarModifierEffect = (int32_t)MStack_14._handle.handle;
+          pAVar1->vector[2].value = (Func_1_Single_ *)MStack_14._pinnable;
+          func_?(&pAVar1->vector[2].value,0);
+          func_?(&AStack_15,0,0x44);
+          AvatarModifierPackage::AvatarModifierPackage__ctor
+                    (&AStack_15,AvatarModifierPackageType__Enum_Sticky,
+                     AvatarModifierPackageAdditionPolicy__Enum_Renew,0.4,pAVar1,
+                     (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,
+                     (MethodInfo *)0x0);
+          value_01.duration.currentCryptoKey = AStack_15.duration.currentCryptoKey;
+          value_01.id = AStack_15.id;
+          value_01.duration.hiddenValue = AStack_15.duration.hiddenValue;
+          value_01.duration.hiddenValueOld = AStack_15.duration.hiddenValueOld;
+          value_01.duration.fakeValue = AStack_15.duration.fakeValue;
+          value_01.duration.inited = AStack_15.duration.inited;
+          value_01.duration._17_3_ = AStack_15.duration._17_3_;
+          value_01.avatarModifiers = AStack_15.avatarModifiers;
+          value_01.actionsToTakeVsTypes = AStack_15.actionsToTakeVsTypes;
+          value_01.timeStamp.currentCryptoKey = AStack_15.timeStamp.currentCryptoKey;
+          value_01.timeStamp.hiddenValue = AStack_15.timeStamp.hiddenValue;
+          value_01.timeStamp.hiddenValueOld = AStack_15.timeStamp.hiddenValueOld;
+          value_01.timeStamp.fakeValue = AStack_15.timeStamp.fakeValue;
+          value_01.timeStamp.inited = AStack_15.timeStamp.inited;
+          value_01.timeStamp._17_3_ = AStack_15.timeStamp._17_3_;
+          value_01.persistant = AStack_15.persistant;
+          value_01._53_3_ = AStack_15._53_3_;
+          value_01.lastTimeStamp = AStack_15.lastTimeStamp;
+          value_01.avatarModifierPackageType = AStack_15.avatarModifierPackageType;
+          value_01.avatarModifierPackageAdditionPolicy =
+               AStack_15.avatarModifierPackageAdditionPolicy;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          Int32Enum,AvatarModifierPackage]::Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                    (this,3,value_01,
+                     MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                    );
+          pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+          pFVar2 = AvatarModifierPackageFactory_Const(0.1,(MethodInfo *)0x0);
+          MStack_16._pinnable = (IPinnable *)0x0;
+          MStack_16._pointer = (Void *)0x0;
+          MStack_16._handle.handle = (void *)0x0;
+          mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                    (&MStack_16,(Void *)0x0,(GCHandle)0x2,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+          if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+            if (pAVar1->max_length == 0) goto code_?;
+            pAVar1->vector[0].avatarModifierType = (int32_t)MStack_16._pointer;
+            pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_16._handle.handle;
+            pAVar1->vector[0].value = (Func_1_Single_ *)MStack_16._pinnable;
+            func_?(&pAVar1->vector[0].value,0);
+            pFVar2 = AvatarModifierPackageFactory_Const(0.5,(MethodInfo *)0x0);
+            MStack_17._pinnable = (IPinnable *)0x0;
+            MStack_17._pointer = (Void *)0x0;
+            MStack_17._handle.handle = (void *)0x0;
+            mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                      (&MStack_17,(Void *)0x0,(GCHandle)0x3,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+            if (pAVar1->max_length < 2) goto code_?;
+            pAVar1->vector[1].avatarModifierType = (int32_t)MStack_17._pointer;
+            pAVar1->vector[1].avatarModifierEffect = (int32_t)MStack_17._handle.handle;
+            pAVar1->vector[1].value = (Func_1_Single_ *)MStack_17._pinnable;
+            func_?(&pAVar1->vector[1].value,0);
+            func_?(&AStack_18,0,0x44);
+            AvatarModifierPackage::AvatarModifierPackage__ctor
+                      (&AStack_18,AvatarModifierPackageType__Enum_SlowMat,
+                       AvatarModifierPackageAdditionPolicy__Enum_Renew,0.4,pAVar1,
+                       (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,
+                       (MethodInfo *)0x0);
+            value_02.duration.currentCryptoKey = AStack_18.duration.currentCryptoKey;
+            value_02.id = AStack_18.id;
+            value_02.duration.hiddenValue = AStack_18.duration.hiddenValue;
+            value_02.duration.hiddenValueOld = AStack_18.duration.hiddenValueOld;
+            value_02.duration.fakeValue = AStack_18.duration.fakeValue;
+            value_02.duration.inited = AStack_18.duration.inited;
+            value_02.duration._17_3_ = AStack_18.duration._17_3_;
+            value_02.avatarModifiers = AStack_18.avatarModifiers;
+            value_02.actionsToTakeVsTypes = AStack_18.actionsToTakeVsTypes;
+            value_02.timeStamp.currentCryptoKey = AStack_18.timeStamp.currentCryptoKey;
+            value_02.timeStamp.hiddenValue = AStack_18.timeStamp.hiddenValue;
+            value_02.timeStamp.hiddenValueOld = AStack_18.timeStamp.hiddenValueOld;
+            value_02.timeStamp.fakeValue = AStack_18.timeStamp.fakeValue;
+            value_02.timeStamp.inited = AStack_18.timeStamp.inited;
+            value_02.timeStamp._17_3_ = AStack_18.timeStamp._17_3_;
+            value_02.persistant = AStack_18.persistant;
+            value_02._53_3_ = AStack_18._53_3_;
+            value_02.lastTimeStamp = AStack_18.lastTimeStamp;
+            value_02.avatarModifierPackageType = AStack_18.avatarModifierPackageType;
+            value_02.avatarModifierPackageAdditionPolicy =
+                 AStack_18.avatarModifierPackageAdditionPolicy;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Int32Enum,AvatarModifierPackage]::
+            Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                      (this,0x16,value_02,
+                       MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                      );
+            pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+            pFVar2 = AvatarModifierPackageFactory_Const(3.0,(MethodInfo *)0x0);
+            MStack_19._pinnable = (IPinnable *)0x0;
+            MStack_19._pointer = (Void *)0x0;
+            MStack_19._handle.handle = (void *)0x0;
+            mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                      (&MStack_19,(Void *)0x0,(GCHandle)0x3,(IPinnable *)pFVar2,(MethodInfo *)0x0);
+            if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+              if (pAVar1->max_length == 0) goto code_?;
+              pAVar1->vector[0].avatarModifierType = (int32_t)MStack_19._pointer;
+              pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_19._handle.handle;
+              pAVar1->vector[0].value = (Func_1_Single_ *)MStack_19._pinnable;
+              func_?(&pAVar1->vector[0].value,0);
+              pFVar2 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
+              MStack_20._pinnable = (IPinnable *)0x0;
+              MStack_20._pointer = (Void *)0x0;
+              MStack_20._handle.handle = (void *)0x0;
+              mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                        (&MStack_20,(Void *)0x0,(GCHandle)0x13,(IPinnable *)pFVar2,(MethodInfo *)0x0
+                        );
+              if (pAVar1->max_length < 2) goto code_?;
+              pAVar1->vector[1].avatarModifierType = (int32_t)MStack_20._pointer;
+              pAVar1->vector[1].avatarModifierEffect = (int32_t)MStack_20._handle.handle;
+              pAVar1->vector[1].value = (Func_1_Single_ *)MStack_20._pinnable;
+              func_?(&pAVar1->vector[1].value,0);
+              func_?(&AStack_21,0,0x44);
+              AvatarModifierPackage::AvatarModifierPackage__ctor
+                        (&AStack_21,AvatarModifierPackageType__Enum_SpeedMat,
+                         AvatarModifierPackageAdditionPolicy__Enum_Renew,0.4,pAVar1,
+                         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,
+                         (MethodInfo *)0x0);
+              value_03.duration.currentCryptoKey = AStack_21.duration.currentCryptoKey;
+              value_03.id = AStack_21.id;
+              value_03.duration.hiddenValue = AStack_21.duration.hiddenValue;
+              value_03.duration.hiddenValueOld = AStack_21.duration.hiddenValueOld;
+              value_03.duration.fakeValue = AStack_21.duration.fakeValue;
+              value_03.duration.inited = AStack_21.duration.inited;
+              value_03.duration._17_3_ = AStack_21.duration._17_3_;
+              value_03.avatarModifiers = AStack_21.avatarModifiers;
+              value_03.actionsToTakeVsTypes = AStack_21.actionsToTakeVsTypes;
+              value_03.timeStamp.currentCryptoKey = AStack_21.timeStamp.currentCryptoKey;
+              value_03.timeStamp.hiddenValue = AStack_21.timeStamp.hiddenValue;
+              value_03.timeStamp.hiddenValueOld = AStack_21.timeStamp.hiddenValueOld;
+              value_03.timeStamp.fakeValue = AStack_21.timeStamp.fakeValue;
+              value_03.timeStamp.inited = AStack_21.timeStamp.inited;
+              value_03.timeStamp._17_3_ = AStack_21.timeStamp._17_3_;
+              value_03.persistant = AStack_21.persistant;
+              value_03._53_3_ = AStack_21._53_3_;
+              value_03.lastTimeStamp = AStack_21.lastTimeStamp;
+              value_03.avatarModifierPackageType = AStack_21.avatarModifierPackageType;
+              value_03.avatarModifierPackageAdditionPolicy =
+                   AStack_21.avatarModifierPackageAdditionPolicy;
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Int32Enum,AvatarModifierPackage]::
+              Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                        (this,0x17,value_03,
+                         MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                        );
+              pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+              pFVar2 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
+              MStack_22._pinnable = (IPinnable *)0x0;
+              MStack_22._pointer = (Void *)0x0;
+              MStack_22._handle.handle = (void *)0x0;
+              mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                        (&MStack_22,(Void *)0x2,(GCHandle)0x1a,(IPinnable *)pFVar2,(MethodInfo *)0x0
+                        );
+              if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                if (pAVar1->max_length == 0) goto code_?;
+                pAVar1->vector[0].avatarModifierType = (int32_t)MStack_22._pointer;
+                pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_22._handle.handle;
+                pAVar1->vector[0].value = (Func_1_Single_ *)MStack_22._pinnable;
+                func_?(&pAVar1->vector[0].value,0);
+                func_?(&AStack_23,0,0x44);
+                AvatarModifierPackage::AvatarModifierPackage__ctor
+                          (&AStack_23,AvatarModifierPackageType__Enum_CrumbleMat,
+                           AvatarModifierPackageAdditionPolicy__Enum_Renew,0.4,pAVar1,
+                           (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,
+                           (MethodInfo *)0x0);
+                value_04.duration.currentCryptoKey = AStack_23.duration.currentCryptoKey;
+                value_04.id = AStack_23.id;
+                value_04.duration.hiddenValue = AStack_23.duration.hiddenValue;
+                value_04.duration.hiddenValueOld = AStack_23.duration.hiddenValueOld;
+                value_04.duration.fakeValue = AStack_23.duration.fakeValue;
+                value_04.duration.inited = AStack_23.duration.inited;
+                value_04.duration._17_3_ = AStack_23.duration._17_3_;
+                value_04.avatarModifiers = AStack_23.avatarModifiers;
+                value_04.actionsToTakeVsTypes = AStack_23.actionsToTakeVsTypes;
+                value_04.timeStamp.currentCryptoKey = AStack_23.timeStamp.currentCryptoKey;
+                value_04.timeStamp.hiddenValue = AStack_23.timeStamp.hiddenValue;
+                value_04.timeStamp.hiddenValueOld = AStack_23.timeStamp.hiddenValueOld;
+                value_04.timeStamp.fakeValue = AStack_23.timeStamp.fakeValue;
+                value_04.timeStamp.inited = AStack_23.timeStamp.inited;
+                value_04.timeStamp._17_3_ = AStack_23.timeStamp._17_3_;
+                value_04.persistant = AStack_23.persistant;
+                value_04._53_3_ = AStack_23._53_3_;
+                value_04.lastTimeStamp = AStack_23.lastTimeStamp;
+                value_04.avatarModifierPackageType = AStack_23.avatarModifierPackageType;
+                value_04.avatarModifierPackageAdditionPolicy =
+                     AStack_23.avatarModifierPackageAdditionPolicy;
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Int32Enum,AvatarModifierPackage]::
+                Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                          (this,0x18,value_04,
+                           MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                          );
+                pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+                pFVar2 = AvatarModifierPackageFactory_Const(25.0,(MethodInfo *)0x0);
+                MStack_24._pinnable = (IPinnable *)0x0;
+                MStack_24._pointer = (Void *)0x0;
+                MStack_24._handle.handle = (void *)0x0;
+                mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                          (&MStack_24,(Void *)0x1,(GCHandle)0x15,(IPinnable *)pFVar2,
+                           (MethodInfo *)0x0);
+                if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                  if (pAVar1->max_length == 0) goto code_?;
+                  pAVar1->vector[0].avatarModifierType = (int32_t)MStack_24._pointer;
+                  pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_24._handle.handle;
+                  pAVar1->vector[0].value = (Func_1_Single_ *)MStack_24._pinnable;
+                  func_?(&pAVar1->vector[0].value,0);
+                  func_?(&AStack_25,0,0x44);
+                  AvatarModifierPackage::AvatarModifierPackage__ctor
+                            (&AStack_25,AvatarModifierPackageType__Enum_Poison,
+                             AvatarModifierPackageAdditionPolicy__Enum_Renew,INFINITY,pAVar1,
+                             (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,
+                             (MethodInfo *)0x0);
+                  value_05.duration.currentCryptoKey = AStack_25.duration.currentCryptoKey;
+                  value_05.id = AStack_25.id;
+                  value_05.duration.hiddenValue = AStack_25.duration.hiddenValue;
+                  value_05.duration.hiddenValueOld = AStack_25.duration.hiddenValueOld;
+                  value_05.duration.fakeValue = AStack_25.duration.fakeValue;
+                  value_05.duration.inited = AStack_25.duration.inited;
+                  value_05.duration._17_3_ = AStack_25.duration._17_3_;
+                  value_05.avatarModifiers = AStack_25.avatarModifiers;
+                  value_05.actionsToTakeVsTypes = AStack_25.actionsToTakeVsTypes;
+                  value_05.timeStamp.currentCryptoKey = AStack_25.timeStamp.currentCryptoKey;
+                  value_05.timeStamp.hiddenValue = AStack_25.timeStamp.hiddenValue;
+                  value_05.timeStamp.hiddenValueOld = AStack_25.timeStamp.hiddenValueOld;
+                  value_05.timeStamp.fakeValue = AStack_25.timeStamp.fakeValue;
+                  value_05.timeStamp.inited = AStack_25.timeStamp.inited;
+                  value_05.timeStamp._17_3_ = AStack_25.timeStamp._17_3_;
+                  value_05.persistant = AStack_25.persistant;
+                  value_05._53_3_ = AStack_25._53_3_;
+                  value_05.lastTimeStamp = AStack_25.lastTimeStamp;
+                  value_05.avatarModifierPackageType = AStack_25.avatarModifierPackageType;
+                  value_05.avatarModifierPackageAdditionPolicy =
+                       AStack_25.avatarModifierPackageAdditionPolicy;
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Int32Enum,AvatarModifierPackage]::
+                  Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                            (this,4,value_05,
+                             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                            );
+                  pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+                  pFVar2 = AvatarModifierPackageFactory_Const(-2.0,(MethodInfo *)0x0);
+                  MStack_26._pinnable = (IPinnable *)0x0;
+                  MStack_26._pointer = (Void *)0x0;
+                  MStack_26._handle.handle = (void *)0x0;
+                  mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                            (&MStack_26,(Void *)0x1,(GCHandle)0xe,(IPinnable *)pFVar2,
+                             (MethodInfo *)0x0);
+                  if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                    if (pAVar1->max_length == 0) goto code_?;
+                    pAVar1->vector[0].avatarModifierType = (int32_t)MStack_26._pointer;
+                    pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_26._handle.handle;
+                    pAVar1->vector[0].value = (Func_1_Single_ *)MStack_26._pinnable;
+                    func_?(&pAVar1->vector[0].value,0);
+                    pFVar2 = AvatarModifierPackageFactory_Const(2.0,(MethodInfo *)0x0);
+                    MStack_27._pinnable = (IPinnable *)0x0;
+                    MStack_27._pointer = (Void *)0x0;
+                    MStack_27._handle.handle = (void *)0x0;
+                    mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                              (&MStack_27,(Void *)0x1,(GCHandle)0x14,(IPinnable *)pFVar2,
+                               (MethodInfo *)0x0);
+                    if (pAVar1->max_length < 2) goto code_?;
+                    pAVar1->vector[1].avatarModifierType = (int32_t)MStack_27._pointer;
+                    pAVar1->vector[1].avatarModifierEffect = (int32_t)MStack_27._handle.handle;
+                    pAVar1->vector[1].value = (Func_1_Single_ *)MStack_27._pinnable;
+                    func_?(&pAVar1->vector[1].value,0);
+                    pDVar28 = (Dictionary_2_System_Object_System_Object_ *)
+                             func_?(
+                                            TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                                            );
+                    if (pDVar28 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+                      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                                ((ParameterOverride_1_System_Object_ *)pDVar28,
+                                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                                );
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                      ::Object]::Dictionary_2_System_Object_System_Object__Add
+                                (pDVar28,(Object *)0x4,(Object *)0x2,
+                                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                );
+                      func_?(&AStack_29,0,0x44);
+                      AvatarModifierPackage::AvatarModifierPackage__ctor
+                                (&AStack_29,AvatarModifierPackageType__Enum_HealingMat,
+                                 AvatarModifierPackageAdditionPolicy__Enum_Renew,0.4,pAVar1,
+                                 (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)pDVar28,0
+                                 ,(MethodInfo *)0x0);
+                      value_19.duration.currentCryptoKey = AStack_29.duration.currentCryptoKey;
+                      value_19.id = AStack_29.id;
+                      value_19.duration.hiddenValue = AStack_29.duration.hiddenValue;
+                      value_19.duration.hiddenValueOld = AStack_29.duration.hiddenValueOld;
+                      value_19.duration.fakeValue = AStack_29.duration.fakeValue;
+                      value_19.duration.inited = AStack_29.duration.inited;
+                      value_19.duration._17_3_ = AStack_29.duration._17_3_;
+                      value_19.avatarModifiers = AStack_29.avatarModifiers;
+                      value_19.actionsToTakeVsTypes = AStack_29.actionsToTakeVsTypes;
+                      value_19.timeStamp.currentCryptoKey = AStack_29.timeStamp.currentCryptoKey;
+                      value_19.timeStamp.hiddenValue = AStack_29.timeStamp.hiddenValue;
+                      value_19.timeStamp.hiddenValueOld = AStack_29.timeStamp.hiddenValueOld;
+                      value_19.timeStamp.fakeValue = AStack_29.timeStamp.fakeValue;
+                      value_19.timeStamp.inited = AStack_29.timeStamp.inited;
+                      value_19.timeStamp._17_3_ = AStack_29.timeStamp._17_3_;
+                      value_19.persistant = AStack_29.persistant;
+                      value_19._53_3_ = AStack_29._53_3_;
+                      value_19.lastTimeStamp = AStack_29.lastTimeStamp;
+                      value_19.avatarModifierPackageType = AStack_29.avatarModifierPackageType;
+                      value_19.avatarModifierPackageAdditionPolicy =
+                           AStack_29.avatarModifierPackageAdditionPolicy;
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,AvatarModifierPackage]::
+                      Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                (this,0x15,value_19,
+                                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                );
+                      pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+                      pFVar2 = AvatarModifierPackageFactory_Const(500.0,(MethodInfo *)0x0);
+                      MStack_30._pinnable = (IPinnable *)0x0;
+                      MStack_30._pointer = (Void *)0x0;
+                      MStack_30._handle.handle = (void *)0x0;
+                      mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                (&MStack_30,(Void *)0x1,(GCHandle)0x16,(IPinnable *)pFVar2,
+                                 (MethodInfo *)0x0);
+                      if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                        if (pAVar1->max_length == 0) goto code_?;
+                        pAVar1->vector[0].avatarModifierType = (int32_t)MStack_30._pointer;
+                        pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_30._handle.handle;
+                        pAVar1->vector[0].value = (Func_1_Single_ *)MStack_30._pinnable;
+                        func_?(&pAVar1->vector[0].value,0);
+                        func_?(&AStack_31,0,0x44);
+                        AvatarModifierPackage::AvatarModifierPackage__ctor
+                                  (&AStack_31,AvatarModifierPackageType__Enum_Lethal,
+                                   AvatarModifierPackageAdditionPolicy__Enum_Renew,INFINITY,pAVar1,
+                                   (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0,0,
+                                   (MethodInfo *)0x0);
+                        value_06.duration.currentCryptoKey = AStack_31.duration.currentCryptoKey;
+                        value_06.id = AStack_31.id;
+                        value_06.duration.hiddenValue = AStack_31.duration.hiddenValue;
+                        value_06.duration.hiddenValueOld = AStack_31.duration.hiddenValueOld;
+                        value_06.duration.fakeValue = AStack_31.duration.fakeValue;
+                        value_06.duration.inited = AStack_31.duration.inited;
+                        value_06.duration._17_3_ = AStack_31.duration._17_3_;
+                        value_06.avatarModifiers = AStack_31.avatarModifiers;
+                        value_06.actionsToTakeVsTypes = AStack_31.actionsToTakeVsTypes;
+                        value_06.timeStamp.currentCryptoKey = AStack_31.timeStamp.currentCryptoKey;
+                        value_06.timeStamp.hiddenValue = AStack_31.timeStamp.hiddenValue;
+                        value_06.timeStamp.hiddenValueOld = AStack_31.timeStamp.hiddenValueOld;
+                        value_06.timeStamp.fakeValue = AStack_31.timeStamp.fakeValue;
+                        value_06.timeStamp.inited = AStack_31.timeStamp.inited;
+                        value_06.timeStamp._17_3_ = AStack_31.timeStamp._17_3_;
+                        value_06.persistant = AStack_31.persistant;
+                        value_06._53_3_ = AStack_31._53_3_;
+                        value_06.lastTimeStamp = AStack_31.lastTimeStamp;
+                        value_06.avatarModifierPackageType = AStack_31.avatarModifierPackageType;
+                        value_06.avatarModifierPackageAdditionPolicy =
+                             AStack_31.avatarModifierPackageAdditionPolicy;
+                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Int32Enum,AvatarModifierPackage]::
+                        Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                  (this,0x14,value_06,
+                                   MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                  );
+                        pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+                        pFVar2 = AvatarModifierPackageFactory_Const(150.0,(MethodInfo *)0x0);
+                        MStack_32._pinnable = (IPinnable *)0x0;
+                        MStack_32._pointer = (Void *)0x0;
+                        MStack_32._handle.handle = (void *)0x0;
+                        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                  (&MStack_32,(Void *)0x1,(GCHandle)0xe,(IPinnable *)pFVar2,
+                                   (MethodInfo *)0x0);
+                        if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                          if (pAVar1->max_length == 0) goto code_?;
+                          pAVar1->vector[0].avatarModifierType = (int32_t)MStack_32._pointer;
+                          pAVar1->vector[0].avatarModifierEffect = (int32_t)MStack_32._handle.handle
+                          ;
+                          pAVar1->vector[0].value = (Func_1_Single_ *)MStack_32._pinnable;
+                          func_?(&pAVar1->vector[0].value,0);
+                          func_?(&AStack_33,0,0x44);
+                          AvatarModifierPackage::AvatarModifierPackage__ctor
+                                    (&AStack_33,AvatarModifierPackageType__Enum_InstantDeath,
+                                     AvatarModifierPackageAdditionPolicy__Enum_Renew,INFINITY,pAVar1
+                                     ,(Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)0x0
+                                     ,0,(MethodInfo *)0x0);
+                          value_07.duration.currentCryptoKey = AStack_33.duration.currentCryptoKey;
+                          value_07.id = AStack_33.id;
+                          value_07.duration.hiddenValue = AStack_33.duration.hiddenValue;
+                          value_07.duration.hiddenValueOld = AStack_33.duration.hiddenValueOld;
+                          value_07.duration.fakeValue = AStack_33.duration.fakeValue;
+                          value_07.duration.inited = AStack_33.duration.inited;
+                          value_07.duration._17_3_ = AStack_33.duration._17_3_;
+                          value_07.avatarModifiers = AStack_33.avatarModifiers;
+                          value_07.actionsToTakeVsTypes = AStack_33.actionsToTakeVsTypes;
+                          value_07.timeStamp.currentCryptoKey =
+                               AStack_33.timeStamp.currentCryptoKey;
+                          value_07.timeStamp.hiddenValue = AStack_33.timeStamp.hiddenValue;
+                          value_07.timeStamp.hiddenValueOld = AStack_33.timeStamp.hiddenValueOld;
+                          value_07.timeStamp.fakeValue = AStack_33.timeStamp.fakeValue;
+                          value_07.timeStamp.inited = AStack_33.timeStamp.inited;
+                          value_07.timeStamp._17_3_ = AStack_33.timeStamp._17_3_;
+                          value_07.persistant = AStack_33.persistant;
+                          value_07._53_3_ = AStack_33._53_3_;
+                          value_07.lastTimeStamp = AStack_33.lastTimeStamp;
+                          value_07.avatarModifierPackageType = AStack_33.avatarModifierPackageType;
+                          value_07.avatarModifierPackageAdditionPolicy =
+                               AStack_33.avatarModifierPackageAdditionPolicy;
+                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Int32Enum,AvatarModifierPackage]::
+                          Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                    (this,6,value_07,
+                                     MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                    );
+                          pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
+                          pFVar2 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
+                          MStack_34._pinnable = (IPinnable *)0x0;
+                          MStack_34._pointer = (Void *)0x0;
+                          MStack_34._handle.handle = (void *)0x0;
+                          mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                    (&MStack_34,(Void *)0x2,(GCHandle)0x11,(IPinnable *)pFVar2,
+                                     (MethodInfo *)0x0);
+                          if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                            if (pAVar1->max_length == 0) goto code_?;
+                            pAVar1->vector[0].avatarModifierType = (int32_t)MStack_34._pointer;
+                            pAVar1->vector[0].avatarModifierEffect =
+                                 (int32_t)MStack_34._handle.handle;
+                            pAVar1->vector[0].value = (Func_1_Single_ *)MStack_34._pinnable;
+                            func_?(&pAVar1->vector[0].value,0);
+                            func_?(&AStack_35,0,0x44);
+                            AvatarModifierPackage::AvatarModifierPackage__ctor
+                                      (&AStack_35,AvatarModifierPackageType__Enum_WallJump,
+                                       AvatarModifierPackageAdditionPolicy__Enum_Renew,0.2,pAVar1,
+                                       (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)
+                                       0x0,0,(MethodInfo *)0x0);
+                            value_08.duration.currentCryptoKey =
+                                 AStack_35.duration.currentCryptoKey;
+                            value_08.id = AStack_35.id;
+                            value_08.duration.hiddenValue = AStack_35.duration.hiddenValue;
+                            value_08.duration.hiddenValueOld = AStack_35.duration.hiddenValueOld;
+                            value_08.duration.fakeValue = AStack_35.duration.fakeValue;
+                            value_08.duration.inited = AStack_35.duration.inited;
+                            value_08.duration._17_3_ = AStack_35.duration._17_3_;
+                            value_08.avatarModifiers = AStack_35.avatarModifiers;
+                            value_08.actionsToTakeVsTypes = AStack_35.actionsToTakeVsTypes;
+                            value_08.timeStamp.currentCryptoKey =
+                                 AStack_35.timeStamp.currentCryptoKey;
+                            value_08.timeStamp.hiddenValue = AStack_35.timeStamp.hiddenValue;
+                            value_08.timeStamp.hiddenValueOld = AStack_35.timeStamp.hiddenValueOld;
+                            value_08.timeStamp.fakeValue = AStack_35.timeStamp.fakeValue;
+                            value_08.timeStamp.inited = AStack_35.timeStamp.inited;
+                            value_08.timeStamp._17_3_ = AStack_35.timeStamp._17_3_;
+                            value_08.persistant = AStack_35.persistant;
+                            value_08._53_3_ = AStack_35._53_3_;
+                            value_08.lastTimeStamp = AStack_35.lastTimeStamp;
+                            value_08.avatarModifierPackageType =
+                                 AStack_35.avatarModifierPackageType;
+                            value_08.avatarModifierPackageAdditionPolicy =
+                                 AStack_35.avatarModifierPackageAdditionPolicy;
+                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Int32Enum,AvatarModifierPackage]::
+                            Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                      (this,5,value_08,
+                                       MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                      );
+                            pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                     func_?();
+                            pFVar2 = AvatarModifierPackageFactory_Const(0.0,(MethodInfo *)0x0);
+                            MStack_36._pinnable = (IPinnable *)0x0;
+                            MStack_36._pointer = (Void *)0x0;
+                            MStack_36._handle.handle = (void *)0x0;
+                            mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                      (&MStack_36,(Void *)0x2,(GCHandle)0xc,(IPinnable *)pFVar2,
+                                       (MethodInfo *)0x0);
+                            if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                              if (pAVar1->max_length == 0) goto code_?;
+                              pAVar1->vector[0].avatarModifierType = (int32_t)MStack_36._pointer;
+                              pAVar1->vector[0].avatarModifierEffect =
+                                   (int32_t)MStack_36._handle.handle;
+                              pAVar1->vector[0].value = (Func_1_Single_ *)MStack_36._pinnable;
+                              func_?(&pAVar1->vector[0].value,0);
+                              func_?(&AStack_37,0,0x44);
+                              AvatarModifierPackage::AvatarModifierPackage__ctor
+                                        (&AStack_37,AvatarModifierPackageType__Enum_NoFriction,
+                                         AvatarModifierPackageAdditionPolicy__Enum_Renew,0.2,pAVar1,
+                                         (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)
+                                         0x0,0,(MethodInfo *)0x0);
+                              value_09.duration.currentCryptoKey =
+                                   AStack_37.duration.currentCryptoKey;
+                              value_09.id = AStack_37.id;
+                              value_09.duration.hiddenValue = AStack_37.duration.hiddenValue;
+                              value_09.duration.hiddenValueOld = AStack_37.duration.hiddenValueOld;
+                              value_09.duration.fakeValue = AStack_37.duration.fakeValue;
+                              value_09.duration.inited = AStack_37.duration.inited;
+                              value_09.duration._17_3_ = AStack_37.duration._17_3_;
+                              value_09.avatarModifiers = AStack_37.avatarModifiers;
+                              value_09.actionsToTakeVsTypes = AStack_37.actionsToTakeVsTypes;
+                              value_09.timeStamp.currentCryptoKey =
+                                   AStack_37.timeStamp.currentCryptoKey;
+                              value_09.timeStamp.hiddenValue = AStack_37.timeStamp.hiddenValue;
+                              value_09.timeStamp.hiddenValueOld =
+                                   AStack_37.timeStamp.hiddenValueOld;
+                              value_09.timeStamp.fakeValue = AStack_37.timeStamp.fakeValue;
+                              value_09.timeStamp.inited = AStack_37.timeStamp.inited;
+                              value_09.timeStamp._17_3_ = AStack_37.timeStamp._17_3_;
+                              value_09.persistant = AStack_37.persistant;
+                              value_09._53_3_ = AStack_37._53_3_;
+                              value_09.lastTimeStamp = AStack_37.lastTimeStamp;
+                              value_09.avatarModifierPackageType =
+                                   AStack_37.avatarModifierPackageType;
+                              value_09.avatarModifierPackageAdditionPolicy =
+                                   AStack_37.avatarModifierPackageAdditionPolicy;
+                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Int32Enum,AvatarModifierPackage]::
+                              Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                        (this,7,value_09,
+                                         MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                        );
+                              pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                       func_?();
+                              pFVar2 = AvatarModifierPackageFactory_Const(25.0,(MethodInfo *)0x0);
+                              MStack_38._pinnable = (IPinnable *)0x0;
+                              MStack_38._pointer = (Void *)0x0;
+                              MStack_38._handle.handle = (void *)0x0;
+                              mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                        (&MStack_38,(Void *)0x1,(GCHandle)0x12,(IPinnable *)pFVar2,
+                                         (MethodInfo *)0x0);
+                              if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                                if (pAVar1->max_length == 0) goto code_?;
+                                pAVar1->vector[0].avatarModifierType = (int32_t)MStack_38._pointer;
+                                pAVar1->vector[0].avatarModifierEffect =
+                                     (int32_t)MStack_38._handle.handle;
+                                pAVar1->vector[0].value = (Func_1_Single_ *)MStack_38._pinnable;
+                                func_?(&pAVar1->vector[0].value,0);
+                                func_?(&AStack_39,0,0x44);
+                                AvatarModifierPackage::AvatarModifierPackage__ctor
+                                          (&AStack_39,AvatarModifierPackageType__Enum_FlamerBurn,
+                                           AvatarModifierPackageAdditionPolicy__Enum_Renew,0.5,
+                                           pAVar1,(
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                value_10.duration.currentCryptoKey =
+                                     AStack_39.duration.currentCryptoKey;
+                                value_10.id = AStack_39.id;
+                                value_10.duration.hiddenValue = AStack_39.duration.hiddenValue;
+                                value_10.duration.hiddenValueOld =
+                                     AStack_39.duration.hiddenValueOld;
+                                value_10.duration.fakeValue = AStack_39.duration.fakeValue;
+                                value_10.duration.inited = AStack_39.duration.inited;
+                                value_10.duration._17_3_ = AStack_39.duration._17_3_;
+                                value_10.avatarModifiers = AStack_39.avatarModifiers;
+                                value_10.actionsToTakeVsTypes = AStack_39.actionsToTakeVsTypes;
+                                value_10.timeStamp.currentCryptoKey =
+                                     AStack_39.timeStamp.currentCryptoKey;
+                                value_10.timeStamp.hiddenValue = AStack_39.timeStamp.hiddenValue;
+                                value_10.timeStamp.hiddenValueOld =
+                                     AStack_39.timeStamp.hiddenValueOld;
+                                value_10.timeStamp.fakeValue = AStack_39.timeStamp.fakeValue;
+                                value_10.timeStamp.inited = AStack_39.timeStamp.inited;
+                                value_10.timeStamp._17_3_ = AStack_39.timeStamp._17_3_;
+                                value_10.persistant = AStack_39.persistant;
+                                value_10._53_3_ = AStack_39._53_3_;
+                                value_10.lastTimeStamp = AStack_39.lastTimeStamp;
+                                value_10.avatarModifierPackageType =
+                                     AStack_39.avatarModifierPackageType;
+                                value_10.avatarModifierPackageAdditionPolicy =
+                                     AStack_39.avatarModifierPackageAdditionPolicy;
+                                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Int32Enum,AvatarModifierPackage]::
+                                Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                          (this,8,value_10,
+                                           MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                          );
+                                pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                         func_?();
+                                pFVar2 = AvatarModifierPackageFactory_Const(0.5,(MethodInfo *)0x0);
+                                MStack_40._pinnable = (IPinnable *)0x0;
+                                MStack_40._pointer = (Void *)0x0;
+                                MStack_40._handle.handle = (void *)0x0;
+                                mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                          (&MStack_40,(Void *)0x0,(GCHandle)0x0,(IPinnable *)pFVar2
+                                           ,(MethodInfo *)0x0);
+                                if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+                                  if (pAVar1->max_length == 0) goto code_?;
+                                  pAVar1->vector[0].avatarModifierType =
+                                       (int32_t)MStack_40._pointer;
+                                  pAVar1->vector[0].avatarModifierEffect =
+                                       (int32_t)MStack_40._handle.handle;
+                                  pAVar1->vector[0].value = (Func_1_Single_ *)MStack_40._pinnable;
+                                  func_?(&pAVar1->vector[0].value,0);
+                                  pFVar2 = AvatarModifierPackageFactory_Const
+                                                     (0.95,(MethodInfo *)0x0);
+                                  MStack_41._pinnable = (IPinnable *)0x0;
+                                  MStack_41._pointer = (Void *)0x0;
+                                  MStack_41._handle.handle = (void *)0x0;
+                                  mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                            (&MStack_41,(Void *)0x0,(GCHandle)0x4,
+                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                  if (pAVar1->max_length < 2) goto code_?;
+                                  pAVar1->vector[1].avatarModifierType =
+                                       (int32_t)MStack_41._pointer;
+                                  pAVar1->vector[1].avatarModifierEffect =
+                                       (int32_t)MStack_41._handle.handle;
+                                  pAVar1->vector[1].value = (Func_1_Single_ *)MStack_41._pinnable;
+                                  func_?(&pAVar1->vector[1].value,0);
+                                  func_?(&AStack_42,0,0x44);
+                                  AvatarModifierPackage::AvatarModifierPackage__ctor
+                                            (&AStack_42,AvatarModifierPackageType__Enum_Underwater,
+                                             AvatarModifierPackageAdditionPolicy__Enum_Renew,10.0,
+                                             pAVar1,(
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                  value_11.duration.currentCryptoKey =
+                                       AStack_42.duration.currentCryptoKey;
+                                  value_11.id = AStack_42.id;
+                                  value_11.duration.hiddenValue = AStack_42.duration.hiddenValue;
+                                  value_11.duration.hiddenValueOld =
+                                       AStack_42.duration.hiddenValueOld;
+                                  value_11.duration.fakeValue = AStack_42.duration.fakeValue;
+                                  value_11.duration.inited = AStack_42.duration.inited;
+                                  value_11.duration._17_3_ = AStack_42.duration._17_3_;
+                                  value_11.avatarModifiers = AStack_42.avatarModifiers;
+                                  value_11.actionsToTakeVsTypes = AStack_42.actionsToTakeVsTypes;
+                                  value_11.timeStamp.currentCryptoKey =
+                                       AStack_42.timeStamp.currentCryptoKey;
+                                  value_11.timeStamp.hiddenValue = AStack_42.timeStamp.hiddenValue;
+                                  value_11.timeStamp.hiddenValueOld =
+                                       AStack_42.timeStamp.hiddenValueOld;
+                                  value_11.timeStamp.fakeValue = AStack_42.timeStamp.fakeValue;
+                                  value_11.timeStamp.inited = AStack_42.timeStamp.inited;
+                                  value_11.timeStamp._17_3_ = AStack_42.timeStamp._17_3_;
+                                  value_11.persistant = AStack_42.persistant;
+                                  value_11._53_3_ = AStack_42._53_3_;
+                                  value_11.lastTimeStamp = AStack_42.lastTimeStamp;
+                                  value_11.avatarModifierPackageType =
+                                       AStack_42.avatarModifierPackageType;
+                                  value_11.avatarModifierPackageAdditionPolicy =
+                                       AStack_42.avatarModifierPackageAdditionPolicy;
+                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Int32Enum,AvatarModifierPackage]::
+                                  Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                            (this,9,value_11,
+                                             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                            );
+                                  pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                           func_?();
+                                  pFVar2 = AvatarModifierPackageFactory_Const(0.0,(MethodInfo *)0x0)
+                                  ;
+                                  MStack_43._pinnable = (IPinnable *)0x0;
+                                  MStack_43._pointer = (Void *)0x0;
+                                  MStack_43._handle.handle = (void *)0x0;
+                                  mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                            (&MStack_43,(Void *)0x2,(GCHandle)0xc,
+                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                  if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                  {
+                                    if (pAVar1->max_length == 0) goto code_?;
+                                    pAVar1->vector[0].avatarModifierType =
+                                         (int32_t)MStack_43._pointer;
+                                    pAVar1->vector[0].avatarModifierEffect =
+                                         (int32_t)MStack_43._handle.handle;
+                                    pAVar1->vector[0].value = (Func_1_Single_ *)MStack_43._pinnable
+                                    ;
+                                    func_?(&pAVar1->vector[0].value,0);
+                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                       (0.1,(MethodInfo *)0x0);
+                                    MStack_44._pinnable = (IPinnable *)0x0;
+                                    MStack_44._pointer = (Void *)0x0;
+                                    MStack_44._handle.handle = (void *)0x0;
+                                    mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                              (&MStack_44,(Void *)0x0,(GCHandle)0x2,
+                                               (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                    if (pAVar1->max_length < 2) goto code_?;
+                                    pAVar1->vector[1].avatarModifierType =
+                                         (int32_t)MStack_44._pointer;
+                                    pAVar1->vector[1].avatarModifierEffect =
+                                         (int32_t)MStack_44._handle.handle;
+                                    pAVar1->vector[1].value = (Func_1_Single_ *)MStack_44._pinnable
+                                    ;
+                                    func_?(&pAVar1->vector[1].value,0);
+                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                       (0.4,(MethodInfo *)0x0);
+                                    MStack_45._pinnable = (IPinnable *)0x0;
+                                    MStack_45._pointer = (Void *)0x0;
+                                    MStack_45._handle.handle = (void *)0x0;
+                                    mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                              (&MStack_45,(Void *)0x0,(GCHandle)0x3,
+                                               (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                    if (pAVar1->max_length < 3) goto code_?;
+                                    pAVar1->vector[2].avatarModifierType =
+                                         (int32_t)MStack_45._pointer;
+                                    pAVar1->vector[2].avatarModifierEffect =
+                                         (int32_t)MStack_45._handle.handle;
+                                    pAVar1->vector[2].value = (Func_1_Single_ *)MStack_45._pinnable
+                                    ;
+                                    func_?(&pAVar1->vector[2].value,0);
+                                    func_?(&AStack_46,0,0x44);
+                                    AvatarModifierPackage::AvatarModifierPackage__ctor
+                                              (&AStack_46,AvatarModifierPackageType__Enum_Frozen,
+                                               AvatarModifierPackageAdditionPolicy__Enum_Renew,4.2,
+                                               pAVar1,(
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                    value_12.duration.currentCryptoKey =
+                                         AStack_46.duration.currentCryptoKey;
+                                    value_12.id = AStack_46.id;
+                                    value_12.duration.hiddenValue = AStack_46.duration.hiddenValue;
+                                    value_12.duration.hiddenValueOld =
+                                         AStack_46.duration.hiddenValueOld;
+                                    value_12.duration.fakeValue = AStack_46.duration.fakeValue;
+                                    value_12.duration.inited = AStack_46.duration.inited;
+                                    value_12.duration._17_3_ = AStack_46.duration._17_3_;
+                                    value_12.avatarModifiers = AStack_46.avatarModifiers;
+                                    value_12.actionsToTakeVsTypes = AStack_46.actionsToTakeVsTypes;
+                                    value_12.timeStamp.currentCryptoKey =
+                                         AStack_46.timeStamp.currentCryptoKey;
+                                    value_12.timeStamp.hiddenValue =
+                                         AStack_46.timeStamp.hiddenValue;
+                                    value_12.timeStamp.hiddenValueOld =
+                                         AStack_46.timeStamp.hiddenValueOld;
+                                    value_12.timeStamp.fakeValue = AStack_46.timeStamp.fakeValue;
+                                    value_12.timeStamp.inited = AStack_46.timeStamp.inited;
+                                    value_12.timeStamp._17_3_ = AStack_46.timeStamp._17_3_;
+                                    value_12.persistant = AStack_46.persistant;
+                                    value_12._53_3_ = AStack_46._53_3_;
+                                    value_12.lastTimeStamp = AStack_46.lastTimeStamp;
+                                    value_12.avatarModifierPackageType =
+                                         AStack_46.avatarModifierPackageType;
+                                    value_12.avatarModifierPackageAdditionPolicy =
+                                         AStack_46.avatarModifierPackageAdditionPolicy;
+                                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System
+                                    ::Int32Enum,AvatarModifierPackage]::
+                                    Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                              (this,10,value_12,
+                                               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                              );
+                                    pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                             func_?();
+                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                       (3.0,(MethodInfo *)0x0);
+                                    MStack_47._pinnable = (IPinnable *)0x0;
+                                    MStack_47._pointer = (Void *)0x0;
+                                    MStack_47._handle.handle = (void *)0x0;
+                                    mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
+                                              (&MStack_47,(Void *)0x0,(GCHandle)0x3,
+                                               (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                    if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0
+                                       ) {
+                                      if (pAVar1->max_length == 0) goto code_?;
+                                      pAVar1->vector[0].avatarModifierType =
+                                           (int32_t)MStack_47._pointer;
+                                      pAVar1->vector[0].avatarModifierEffect =
+                                           (int32_t)MStack_47._handle.handle;
+                                      pAVar1->vector[0].value =
+                                           (Func_1_Single_ *)MStack_47._pinnable;
+                                      func_?(&pAVar1->vector[0].value,0);
+                                      pFVar2 = AvatarModifierPackageFactory_Const
+                                                         (20.0,(MethodInfo *)0x0);
+                                      MStack_48._pinnable = (IPinnable *)0x0;
+                                      MStack_48._pointer = (Void *)0x0;
+                                      MStack_48._handle.handle = (void *)0x0;
+                                      mscorlib.dll::System::Buffers::MemoryHandle::
+                                      MemoryHandle__ctor(&MStack_48,(Void *)0x0,(GCHandle)0x13,
+                                                         (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                      if (pAVar1->max_length < 2) goto code_?;
+                                      pAVar1->vector[1].avatarModifierType =
+                                           (int32_t)MStack_48._pointer;
+                                      pAVar1->vector[1].avatarModifierEffect =
+                                           (int32_t)MStack_48._handle.handle;
+                                      pAVar1->vector[1].value =
+                                           (Func_1_Single_ *)MStack_48._pinnable;
+                                      func_?(&pAVar1->vector[1].value,0);
+                                      func_?(&AStack_49,0,0x44);
+                                      AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                (&AStack_49,
+                                                 AvatarModifierPackageType__Enum_NinjaRun,
+                                                 AvatarModifierPackageAdditionPolicy__Enum_Renew,7.0
+                                                 ,pAVar1,(
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                      value_13.duration.currentCryptoKey =
+                                           AStack_49.duration.currentCryptoKey;
+                                      value_13.id = AStack_49.id;
+                                      value_13.duration.hiddenValue =
+                                           AStack_49.duration.hiddenValue;
+                                      value_13.duration.hiddenValueOld =
+                                           AStack_49.duration.hiddenValueOld;
+                                      value_13.duration.fakeValue = AStack_49.duration.fakeValue;
+                                      value_13.duration.inited = AStack_49.duration.inited;
+                                      value_13.duration._17_3_ = AStack_49.duration._17_3_;
+                                      value_13.avatarModifiers = AStack_49.avatarModifiers;
+                                      value_13.actionsToTakeVsTypes =
+                                           AStack_49.actionsToTakeVsTypes;
+                                      value_13.timeStamp.currentCryptoKey =
+                                           AStack_49.timeStamp.currentCryptoKey;
+                                      value_13.timeStamp.hiddenValue =
+                                           AStack_49.timeStamp.hiddenValue;
+                                      value_13.timeStamp.hiddenValueOld =
+                                           AStack_49.timeStamp.hiddenValueOld;
+                                      value_13.timeStamp.fakeValue = AStack_49.timeStamp.fakeValue;
+                                      value_13.timeStamp.inited = AStack_49.timeStamp.inited;
+                                      value_13.timeStamp._17_3_ = AStack_49.timeStamp._17_3_;
+                                      value_13.persistant = AStack_49.persistant;
+                                      value_13._53_3_ = AStack_49._53_3_;
+                                      value_13.lastTimeStamp = AStack_49.lastTimeStamp;
+                                      value_13.avatarModifierPackageType =
+                                           AStack_49.avatarModifierPackageType;
+                                      value_13.avatarModifierPackageAdditionPolicy =
+                                           AStack_49.avatarModifierPackageAdditionPolicy;
+                                      mscorlib.dll::System::Collections::Generic::
+                                      Dictionary`2[System::Int32Enum,AvatarModifierPackage]::
+                                      Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                (this,0xb,value_13,
+                                                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                );
+                                      pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                               func_?();
+                                      pFVar2 = AvatarModifierPackageFactory_Const
+                                                         (0.3,(MethodInfo *)0x0);
+                                      MStack_50._pinnable = (IPinnable *)0x0;
+                                      MStack_50._pointer = (Void *)0x0;
+                                      MStack_50._handle.handle = (void *)0x0;
+                                      mscorlib.dll::System::Buffers::MemoryHandle::
+                                      MemoryHandle__ctor(&MStack_50,(Void *)0x0,(GCHandle)0x3,
+                                                         (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                      if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)
+                                                    0x0) {
+                                        if (pAVar1->max_length == 0) goto code_?;
+                                        pAVar1->vector[0].avatarModifierType =
+                                             (int32_t)MStack_50._pointer;
+                                        pAVar1->vector[0].avatarModifierEffect =
+                                             (int32_t)MStack_50._handle.handle;
+                                        pAVar1->vector[0].value =
+                                             (Func_1_Single_ *)MStack_50._pinnable;
+                                        func_?(&pAVar1->vector[0].value,0);
+                                        func_?(&AStack_51,0,0x44);
+                                        AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                  (&AStack_51,
+                                                                                                      
+                                                  AvatarModifierPackageType__Enum_TimeAttackFlagDebriefSlow
+                                                  ,AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  7.0,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                        value_14.duration.currentCryptoKey =
+                                             AStack_51.duration.currentCryptoKey;
+                                        value_14.id = AStack_51.id;
+                                        value_14.duration.hiddenValue =
+                                             AStack_51.duration.hiddenValue;
+                                        value_14.duration.hiddenValueOld =
+                                             AStack_51.duration.hiddenValueOld;
+                                        value_14.duration.fakeValue = AStack_51.duration.fakeValue;
+                                        value_14.duration.inited = AStack_51.duration.inited;
+                                        value_14.duration._17_3_ = AStack_51.duration._17_3_;
+                                        value_14.avatarModifiers = AStack_51.avatarModifiers;
+                                        value_14.actionsToTakeVsTypes =
+                                             AStack_51.actionsToTakeVsTypes;
+                                        value_14.timeStamp.currentCryptoKey =
+                                             AStack_51.timeStamp.currentCryptoKey;
+                                        value_14.timeStamp.hiddenValue =
+                                             AStack_51.timeStamp.hiddenValue;
+                                        value_14.timeStamp.hiddenValueOld =
+                                             AStack_51.timeStamp.hiddenValueOld;
+                                        value_14.timeStamp.fakeValue =
+                                             AStack_51.timeStamp.fakeValue;
+                                        value_14.timeStamp.inited = AStack_51.timeStamp.inited;
+                                        value_14.timeStamp._17_3_ = AStack_51.timeStamp._17_3_;
+                                        value_14.persistant = AStack_51.persistant;
+                                        value_14._53_3_ = AStack_51._53_3_;
+                                        value_14.lastTimeStamp = AStack_51.lastTimeStamp;
+                                        value_14.avatarModifierPackageType =
+                                             AStack_51.avatarModifierPackageType;
+                                        value_14.avatarModifierPackageAdditionPolicy =
+                                             AStack_51.avatarModifierPackageAdditionPolicy;
+                                        mscorlib.dll::System::Collections::Generic::
+                                        Dictionary`2[System::Int32Enum,AvatarModifierPackage]::
+                                        Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                  (this,0x13,value_14,
+                                                                                                      
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                        pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                                 func_?();
+                                        pFVar2 = AvatarModifierPackageFactory_Const
+                                                           (0.4,(MethodInfo *)0x0);
+                                        MStack_52._pinnable = (IPinnable *)0x0;
+                                        MStack_52._pointer = (Void *)0x0;
+                                        MStack_52._handle.handle = (void *)0x0;
+                                        mscorlib.dll::System::Buffers::MemoryHandle::
+                                        MemoryHandle__ctor(&MStack_52,(Void *)0x0,(GCHandle)0x3,
+                                                           (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                        if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *
+                                                      )0x0) {
+                                          if (pAVar1->max_length == 0) goto code_?;
+                                          pAVar1->vector[0].avatarModifierType =
+                                               (int32_t)MStack_52._pointer;
+                                          pAVar1->vector[0].avatarModifierEffect =
+                                               (int32_t)MStack_52._handle.handle;
+                                          pAVar1->vector[0].value =
+                                               (Func_1_Single_ *)MStack_52._pinnable;
+                                          func_?(&pAVar1->vector[0].value,0);
+                                          pFVar2 = AvatarModifierPackageFactory_Const
+                                                             (0.25,(MethodInfo *)0x0);
+                                          MStack_53._pinnable = (IPinnable *)0x0;
+                                          MStack_53._pointer = (Void *)0x0;
+                                          MStack_53._handle.handle = (void *)0x0;
+                                          mscorlib.dll::System::Buffers::MemoryHandle::
+                                          MemoryHandle__ctor(&MStack_53,(Void *)0x2,(GCHandle)0x5,
+                                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                          if (pAVar1->max_length < 2) goto code_?;
+                                          pAVar1->vector[1].avatarModifierType =
+                                               (int32_t)MStack_53._pointer;
+                                          pAVar1->vector[1].avatarModifierEffect =
+                                               (int32_t)MStack_53._handle.handle;
+                                          pAVar1->vector[1].value =
+                                               (Func_1_Single_ *)MStack_53._pinnable;
+                                          func_?(&pAVar1->vector[1].value,0);
+                                          pFVar2 = AvatarModifierPackageFactory_Const
+                                                             (0.6,(MethodInfo *)0x0);
+                                          MStack_54._pinnable = (IPinnable *)0x0;
+                                          MStack_54._pointer = (Void *)0x0;
+                                          MStack_54._handle.handle = (void *)0x0;
+                                          mscorlib.dll::System::Buffers::MemoryHandle::
+                                          MemoryHandle__ctor(&MStack_54,(Void *)0x0,(GCHandle)0x2,
+                                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                          if (pAVar1->max_length < 3) goto code_?;
+                                          pAVar1->vector[2].avatarModifierType =
+                                               (int32_t)MStack_54._pointer;
+                                          pAVar1->vector[2].avatarModifierEffect =
+                                               (int32_t)MStack_54._handle.handle;
+                                          pAVar1->vector[2].value =
+                                               (Func_1_Single_ *)MStack_54._pinnable;
+                                          func_?(&pAVar1->vector[2].value,0);
+                                          pFVar2 = AvatarModifierPackageFactory_Const
+                                                             (4.0,(MethodInfo *)0x0);
+                                          MStack_55._pinnable = (IPinnable *)0x0;
+                                          MStack_55._pointer = (Void *)0x0;
+                                          MStack_55._handle.handle = (void *)0x0;
+                                          mscorlib.dll::System::Buffers::MemoryHandle::
+                                          MemoryHandle__ctor(&MStack_55,(Void *)0x0,(GCHandle)0x6,
+                                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                          if (pAVar1->max_length < 4) goto code_?;
+                                          pAVar1->vector[3].avatarModifierType =
+                                               (int32_t)MStack_55._pointer;
+                                          pAVar1->vector[3].avatarModifierEffect =
+                                               (int32_t)MStack_55._handle.handle;
+                                          pAVar1->vector[3].value =
+                                               (Func_1_Single_ *)MStack_55._pinnable;
+                                          func_?(&pAVar1->vector[3].value,0);
+                                          pFVar2 = AvatarModifierPackageFactory_Const
+                                                             (1.0,(MethodInfo *)0x0);
+                                          MStack_56._pinnable = (IPinnable *)0x0;
+                                          MStack_56._pointer = (Void *)0x0;
+                                          MStack_56._handle.handle = (void *)0x0;
+                                          mscorlib.dll::System::Buffers::MemoryHandle::
+                                          MemoryHandle__ctor(&MStack_56,(Void *)0x2,(GCHandle)0x8,
+                                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                          if (pAVar1->max_length < 5) goto code_?;
+                                          pAVar1->vector[4].avatarModifierType =
+                                               (int32_t)MStack_56._pointer;
+                                          pAVar1->vector[4].avatarModifierEffect =
+                                               (int32_t)MStack_56._handle.handle;
+                                          pAVar1->vector[4].value =
+                                               (Func_1_Single_ *)MStack_56._pinnable;
+                                          func_?(&pAVar1->vector[4].value,0);
+                                          pFVar2 = AvatarModifierPackageFactory_Const
+                                                             (1.0,(MethodInfo *)0x0);
+                                          MStack_57._pinnable = (IPinnable *)0x0;
+                                          MStack_57._pointer = (Void *)0x0;
+                                          MStack_57._handle.handle = (void *)0x0;
+                                          mscorlib.dll::System::Buffers::MemoryHandle::
+                                          MemoryHandle__ctor(&MStack_57,(Void *)0x2,(GCHandle)0x9,
+                                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                          if (pAVar1->max_length < 6) goto code_?;
+                                          pAVar1->vector[5].avatarModifierType =
+                                               (int32_t)MStack_57._pointer;
+                                          pAVar1->vector[5].avatarModifierEffect =
+                                               (int32_t)MStack_57._handle.handle;
+                                          pAVar1->vector[5].value =
+                                               (Func_1_Single_ *)MStack_57._pinnable;
+                                          func_?(&pAVar1->vector[5].value,0);
+                                          pFVar2 = AvatarModifierPackageFactory_Const
+                                                             (0.25,(MethodInfo *)0x0);
+                                          MStack_58._pinnable = (IPinnable *)0x0;
+                                          MStack_58._pointer = (Void *)0x0;
+                                          MStack_58._handle.handle = (void *)0x0;
+                                          mscorlib.dll::System::Buffers::MemoryHandle::
+                                          MemoryHandle__ctor(&MStack_58,(Void *)0x2,(GCHandle)0x1,
+                                                             (IPinnable *)pFVar2,(MethodInfo *)0x0);
+                                          if (pAVar1->max_length < 7) goto code_?;
+                                          pAVar1->vector[6].avatarModifierType =
+                                               (int32_t)MStack_58._pointer;
+                                          pAVar1->vector[6].avatarModifierEffect =
+                                               (int32_t)MStack_58._handle.handle;
+                                          pAVar1->vector[6].value =
+                                               (Func_1_Single_ *)MStack_58._pinnable;
+                                          func_?(&pAVar1->vector[6].value,0);
+                                          pDVar28 = (Dictionary_2_System_Object_System_Object_ *)
+                                                   func_?(
+                                                  TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                                                  );
+                                          if (pDVar28 != (Dictionary_2_System_Object_System_Object_ *
+                                                        )0x0) {
+                                            Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering
+                                            ::PostProcessing::ParameterOverride`1[System::Object]::
+                                            ParameterOverride_1_System_Object___ctor
+                                                      ((ParameterOverride_1_System_Object_ *)pDVar28,
+                                                                                                              
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                                                  );
+                                            mscorlib.dll::System::Collections::Generic::
+                                            Dictionary`2[System::Object,System::Object]::
+                                            Dictionary_2_System_Object_System_Object__Add
+                                                      (pDVar28,(Object *)0xc,(Object *)0x1,
+                                                                                                              
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  );
+                                            mscorlib.dll::System::Collections::Generic::
+                                            Dictionary`2[System::Object,System::Object]::
+                                            Dictionary_2_System_Object_System_Object__Add
+                                                      (pDVar28,(Object *)0xf,(Object *)0x3,
+                                                                                                              
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  );
+                                            func_?(&AStack_59,0,0x44);
+                                            AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                      (&AStack_59,
+                                                       AvatarModifierPackageType__Enum_Shrunken,
+                                                                                                              
+                                                  AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  35.0,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)pDVar28,0,(MethodInfo *)0x0);
+                                            value_21.duration.currentCryptoKey =
+                                                 AStack_59.duration.currentCryptoKey;
+                                            value_21.id = AStack_59.id;
+                                            value_21.duration.hiddenValue =
+                                                 AStack_59.duration.hiddenValue;
+                                            value_21.duration.hiddenValueOld =
+                                                 AStack_59.duration.hiddenValueOld;
+                                            value_21.duration.fakeValue =
+                                                 AStack_59.duration.fakeValue;
+                                            value_21.duration.inited = AStack_59.duration.inited;
+                                            value_21.duration._17_3_ = AStack_59.duration._17_3_;
+                                            value_21.avatarModifiers = AStack_59.avatarModifiers;
+                                            value_21.actionsToTakeVsTypes =
+                                                 AStack_59.actionsToTakeVsTypes;
+                                            value_21.timeStamp.currentCryptoKey =
+                                                 AStack_59.timeStamp.currentCryptoKey;
+                                            value_21.timeStamp.hiddenValue =
+                                                 AStack_59.timeStamp.hiddenValue;
+                                            value_21.timeStamp.hiddenValueOld =
+                                                 AStack_59.timeStamp.hiddenValueOld;
+                                            value_21.timeStamp.fakeValue =
+                                                 AStack_59.timeStamp.fakeValue;
+                                            value_21.timeStamp.inited = AStack_59.timeStamp.inited;
+                                            value_21.timeStamp._17_3_ = AStack_59.timeStamp._17_3_;
+                                            value_21.persistant = AStack_59.persistant;
+                                            value_21._53_3_ = AStack_59._53_3_;
+                                            value_21.lastTimeStamp = AStack_59.lastTimeStamp;
+                                            value_21.avatarModifierPackageType =
+                                                 AStack_59.avatarModifierPackageType;
+                                            value_21.avatarModifierPackageAdditionPolicy =
+                                                 AStack_59.avatarModifierPackageAdditionPolicy;
+                                            mscorlib.dll::System::Collections::Generic::
+                                            Dictionary`2[System::Int32Enum,AvatarModifierPackage]::
+                                            Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                      (this,0xc,value_21,
+                                                                                                              
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                            pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)
+                                                     func_?();
+                                            pFVar2 = AvatarModifierPackageFactory_Const
+                                                               (0.96,(MethodInfo *)0x0);
+                                            MStack_60._pinnable = (IPinnable *)0x0;
+                                            MStack_60._pointer = (Void *)0x0;
+                                            MStack_60._handle.handle = (void *)0x0;
+                                            mscorlib.dll::System::Buffers::MemoryHandle::
+                                            MemoryHandle__ctor(&MStack_60,(Void *)0x2,(GCHandle)0x4
+                                                               ,(IPinnable *)pFVar2,
+                                                               (MethodInfo *)0x0);
+                                            if (pAVar1 != (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                            {
+                                              if (pAVar1->max_length == 0) goto code_?;
+                                              pAVar1->vector[0].avatarModifierType =
+                                                   (int32_t)MStack_60._pointer;
+                                              pAVar1->vector[0].avatarModifierEffect =
+                                                   (int32_t)MStack_60._handle.handle;
+                                              pAVar1->vector[0].value =
+                                                   (Func_1_Single_ *)MStack_60._pinnable;
+                                              func_?(&pAVar1->vector[0].value,0);
+                                              func_?(&AStack_61,0,0x44);
+                                              AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                        (&AStack_61,
+                                                                                                                  
+                                                  AvatarModifierPackageType__Enum_WindFriction,
+                                                  AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  INFINITY,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                              value_15.duration.currentCryptoKey =
+                                                   AStack_61.duration.currentCryptoKey;
+                                              value_15.id = AStack_61.id;
+                                              value_15.duration.hiddenValue =
+                                                   AStack_61.duration.hiddenValue;
+                                              value_15.duration.hiddenValueOld =
+                                                   AStack_61.duration.hiddenValueOld;
+                                              value_15.duration.fakeValue =
+                                                   AStack_61.duration.fakeValue;
+                                              value_15.duration.inited = AStack_61.duration.inited;
+                                              value_15.duration._17_3_ = AStack_61.duration._17_3_;
+                                              value_15.avatarModifiers = AStack_61.avatarModifiers;
+                                              value_15.actionsToTakeVsTypes =
+                                                   AStack_61.actionsToTakeVsTypes;
+                                              value_15.timeStamp.currentCryptoKey =
+                                                   AStack_61.timeStamp.currentCryptoKey;
+                                              value_15.timeStamp.hiddenValue =
+                                                   AStack_61.timeStamp.hiddenValue;
+                                              value_15.timeStamp.hiddenValueOld =
+                                                   AStack_61.timeStamp.hiddenValueOld;
+                                              value_15.timeStamp.fakeValue =
+                                                   AStack_61.timeStamp.fakeValue;
+                                              value_15.timeStamp.inited =
+                                                   AStack_61.timeStamp.inited;
+                                              value_15.timeStamp._17_3_ =
+                                                   AStack_61.timeStamp._17_3_;
+                                              value_15.persistant = AStack_61.persistant;
+                                              value_15._53_3_ = AStack_61._53_3_;
+                                              value_15.lastTimeStamp = AStack_61.lastTimeStamp;
+                                              value_15.avatarModifierPackageType =
+                                                   AStack_61.avatarModifierPackageType;
+                                              value_15.avatarModifierPackageAdditionPolicy =
+                                                   AStack_61.avatarModifierPackageAdditionPolicy;
+                                              mscorlib.dll::System::Collections::Generic::
+                                              Dictionary`2[System::Int32Enum,AvatarModifierPackage]
+                                              ::
+                                              Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                        (this,0xd,value_15,
+                                                                                                                  
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                              pAVar1 = (AvatarModifierPackage_AvatarModifier__Array
+                                                        *)func_?();
+                                              pFVar2 = AvatarModifierPackageFactory_Const
+                                                                 (0.5,(MethodInfo *)0x0);
+                                              MStack_62._pinnable = (IPinnable *)0x0;
+                                              MStack_62._pointer = (Void *)0x0;
+                                              MStack_62._handle.handle = (void *)0x0;
+                                              mscorlib.dll::System::Buffers::MemoryHandle::
+                                              MemoryHandle__ctor(&MStack_62,(Void *)0x2,
+                                                                 (GCHandle)0x6,(IPinnable *)pFVar2,
+                                                                 (MethodInfo *)0x0);
+                                              if (pAVar1 != (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                              {
+                                                if (pAVar1->max_length == 0) goto code_?;
+                                                pAVar1->vector[0].avatarModifierType =
+                                                     (int32_t)MStack_62._pointer;
+                                                pAVar1->vector[0].avatarModifierEffect =
+                                                     (int32_t)MStack_62._handle.handle;
+                                                pAVar1->vector[0].value =
+                                                     (Func_1_Single_ *)MStack_62._pinnable;
+                                                func_?(&pAVar1->vector[0].value,0);
+                                                func_?(&AStack_63,0,0x44);
+                                                AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                          (&AStack_63,
+                                                           AvatarModifierPackageType__Enum_Shielded,
+                                                                                                                      
+                                                  AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  INFINITY,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,1,(MethodInfo *)0x0);
+                                                value_16.duration.currentCryptoKey =
+                                                     AStack_63.duration.currentCryptoKey;
+                                                value_16.id = AStack_63.id;
+                                                value_16.duration.hiddenValue =
+                                                     AStack_63.duration.hiddenValue;
+                                                value_16.duration.hiddenValueOld =
+                                                     AStack_63.duration.hiddenValueOld;
+                                                value_16.duration.fakeValue =
+                                                     AStack_63.duration.fakeValue;
+                                                value_16.duration.inited =
+                                                     AStack_63.duration.inited;
+                                                value_16.duration._17_3_ =
+                                                     AStack_63.duration._17_3_;
+                                                value_16.avatarModifiers =
+                                                     AStack_63.avatarModifiers;
+                                                value_16.actionsToTakeVsTypes =
+                                                     AStack_63.actionsToTakeVsTypes;
+                                                value_16.timeStamp.currentCryptoKey =
+                                                     AStack_63.timeStamp.currentCryptoKey;
+                                                value_16.timeStamp.hiddenValue =
+                                                     AStack_63.timeStamp.hiddenValue;
+                                                value_16.timeStamp.hiddenValueOld =
+                                                     AStack_63.timeStamp.hiddenValueOld;
+                                                value_16.timeStamp.fakeValue =
+                                                     AStack_63.timeStamp.fakeValue;
+                                                value_16.timeStamp.inited =
+                                                     AStack_63.timeStamp.inited;
+                                                value_16.timeStamp._17_3_ =
+                                                     AStack_63.timeStamp._17_3_;
+                                                value_16.persistant = AStack_63.persistant;
+                                                value_16._53_3_ = AStack_63._53_3_;
+                                                value_16.lastTimeStamp = AStack_63.lastTimeStamp;
+                                                value_16.avatarModifierPackageType =
+                                                     AStack_63.avatarModifierPackageType;
+                                                value_16.avatarModifierPackageAdditionPolicy =
+                                                     AStack_63.avatarModifierPackageAdditionPolicy;
+                                                mscorlib.dll::System::Collections::Generic::
+                                                Dictionary`2[System::
+                                                Int32Enum,AvatarModifierPackage]::
+                                                Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                          (this,0x10,value_16,
+                                                                                                                      
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                                pAVar1 = (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)
+                                                  func_?();
+                                                pFVar2 = AvatarModifierPackageFactory_Const
+                                                                   (1.0,(MethodInfo *)0x0);
+                                                MStack_64._pinnable = (IPinnable *)0x0;
+                                                MStack_64._pointer = (Void *)0x0;
+                                                MStack_64._handle.handle = (void *)0x0;
+                                                mscorlib.dll::System::Buffers::MemoryHandle::
+                                                MemoryHandle__ctor(&MStack_64,(Void *)0x2,
+                                                                   (GCHandle)0x7,(IPinnable *)pFVar2
+                                                                   ,(MethodInfo *)0x0);
+                                                if (pAVar1 != (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                                {
+                                                  if (pAVar1->max_length == 0)
+                                                  goto code_?;
+                                                  pAVar1->vector[0].avatarModifierType =
+                                                       (int32_t)MStack_64._pointer;
+                                                  pAVar1->vector[0].avatarModifierEffect =
+                                                       (int32_t)MStack_64._handle.handle;
+                                                  pAVar1->vector[0].value =
+                                                       (Func_1_Single_ *)MStack_64._pinnable;
+                                                  func_?(&pAVar1->vector[0].value,0);
+                                                  func_?(&AStack_65,0,0x44);
+                                                  AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                            (&AStack_65,
+                                                                                                                          
+                                                  AvatarModifierPackageType__Enum_DisableVehiclePickup
+                                                  ,AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  INFINITY,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                                  value_17.duration.currentCryptoKey =
+                                                       AStack_65.duration.currentCryptoKey;
+                                                  value_17.id = AStack_65.id;
+                                                  value_17.duration.hiddenValue =
+                                                       AStack_65.duration.hiddenValue;
+                                                  value_17.duration.hiddenValueOld =
+                                                       AStack_65.duration.hiddenValueOld;
+                                                  value_17.duration.fakeValue =
+                                                       AStack_65.duration.fakeValue;
+                                                  value_17.duration.inited =
+                                                       AStack_65.duration.inited;
+                                                  value_17.duration._17_3_ =
+                                                       AStack_65.duration._17_3_;
+                                                  value_17.avatarModifiers =
+                                                       AStack_65.avatarModifiers;
+                                                  value_17.actionsToTakeVsTypes =
+                                                       AStack_65.actionsToTakeVsTypes;
+                                                  value_17.timeStamp.currentCryptoKey =
+                                                       AStack_65.timeStamp.currentCryptoKey;
+                                                  value_17.timeStamp.hiddenValue =
+                                                       AStack_65.timeStamp.hiddenValue;
+                                                  value_17.timeStamp.hiddenValueOld =
+                                                       AStack_65.timeStamp.hiddenValueOld;
+                                                  value_17.timeStamp.fakeValue =
+                                                       AStack_65.timeStamp.fakeValue;
+                                                  value_17.timeStamp.inited =
+                                                       AStack_65.timeStamp.inited;
+                                                  value_17.timeStamp._17_3_ =
+                                                       AStack_65.timeStamp._17_3_;
+                                                  value_17.persistant = AStack_65.persistant;
+                                                  value_17._53_3_ = AStack_65._53_3_;
+                                                  value_17.lastTimeStamp = AStack_65.lastTimeStamp;
+                                                  value_17.avatarModifierPackageType =
+                                                       AStack_65.avatarModifierPackageType;
+                                                  value_17.avatarModifierPackageAdditionPolicy =
+                                                       AStack_65.
+                                                       avatarModifierPackageAdditionPolicy;
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::
+                                                  Int32Enum,AvatarModifierPackage]::
+                                                  Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                            (this,0xe,value_17,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                                  pAVar1 = (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)
+                                                  func_?();
+                                                  pFVar2 = AvatarModifierPackageFactory_Const
+                                                                     (1.5,(MethodInfo *)0x0);
+                                                  MStack_66._pinnable = (IPinnable *)0x0;
+                                                  MStack_66._pointer = (Void *)0x0;
+                                                  MStack_66._handle.handle = (void *)0x0;
+                                                  mscorlib.dll::System::Buffers::MemoryHandle::
+                                                  MemoryHandle__ctor(&MStack_66,(Void *)0x0,
+                                                                     (GCHandle)0x3,
+                                                                     (IPinnable *)pFVar2,
+                                                                     (MethodInfo *)0x0);
+                                                  if (pAVar1 != (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                                  {
+                                                    if (pAVar1->max_length == 0)
+                                                    goto code_?;
+                                                    pAVar1->vector[0].avatarModifierType =
+                                                         (int32_t)MStack_66._pointer;
+                                                    pAVar1->vector[0].avatarModifierEffect =
+                                                         (int32_t)MStack_66._handle.handle;
+                                                    pAVar1->vector[0].value =
+                                                         (Func_1_Single_ *)MStack_66._pinnable;
+                                                    func_?(&pAVar1->vector[0].value,0);
+                                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                                       (2.0,(MethodInfo *)0x0);
+                                                    MStack_67._pinnable = (IPinnable *)0x0;
+                                                    MStack_67._pointer = (Void *)0x0;
+                                                    MStack_67._handle.handle = (void *)0x0;
+                                                    mscorlib.dll::System::Buffers::MemoryHandle::
+                                                    MemoryHandle__ctor(&MStack_67,(Void *)0x2,
+                                                                       (GCHandle)0x5,
+                                                                       (IPinnable *)pFVar2,
+                                                                       (MethodInfo *)0x0);
+                                                    if (pAVar1->max_length < 2)
+                                                    goto code_?;
+                                                    pAVar1->vector[1].avatarModifierType =
+                                                         (int32_t)MStack_67._pointer;
+                                                    pAVar1->vector[1].avatarModifierEffect =
+                                                         (int32_t)MStack_67._handle.handle;
+                                                    pAVar1->vector[1].value =
+                                                         (Func_1_Single_ *)MStack_67._pinnable;
+                                                    func_?(&pAVar1->vector[1].value,0);
+                                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                                       (2.0,(MethodInfo *)0x0);
+                                                    MStack_68._pinnable = (IPinnable *)0x0;
+                                                    MStack_68._pointer = (Void *)0x0;
+                                                    MStack_68._handle.handle = (void *)0x0;
+                                                    mscorlib.dll::System::Buffers::MemoryHandle::
+                                                    MemoryHandle__ctor(&MStack_68,(Void *)0x0,
+                                                                       (GCHandle)0x2,
+                                                                       (IPinnable *)pFVar2,
+                                                                       (MethodInfo *)0x0);
+                                                    if (pAVar1->max_length < 3)
+                                                    goto code_?;
+                                                    pAVar1->vector[2].avatarModifierType =
+                                                         (int32_t)MStack_68._pointer;
+                                                    pAVar1->vector[2].avatarModifierEffect =
+                                                         (int32_t)MStack_68._handle.handle;
+                                                    pAVar1->vector[2].value =
+                                                         (Func_1_Single_ *)MStack_68._pinnable;
+                                                    func_?(&pAVar1->vector[2].value,0);
+                                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                                       (0.5,(MethodInfo *)0x0);
+                                                    MStack_69._pinnable = (IPinnable *)0x0;
+                                                    MStack_69._pointer = (Void *)0x0;
+                                                    MStack_69._handle.handle = (void *)0x0;
+                                                    mscorlib.dll::System::Buffers::MemoryHandle::
+                                                    MemoryHandle__ctor(&MStack_69,(Void *)0x0,
+                                                                       (GCHandle)0x6,
+                                                                       (IPinnable *)pFVar2,
+                                                                       (MethodInfo *)0x0);
+                                                    if (pAVar1->max_length < 4)
+                                                    goto code_?;
+                                                    pAVar1->vector[3].avatarModifierType =
+                                                         (int32_t)MStack_69._pointer;
+                                                    pAVar1->vector[3].avatarModifierEffect =
+                                                         (int32_t)MStack_69._handle.handle;
+                                                    pAVar1->vector[3].value =
+                                                         (Func_1_Single_ *)MStack_69._pinnable;
+                                                    func_?(&pAVar1->vector[3].value,0);
+                                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                                       (1.0,(MethodInfo *)0x0);
+                                                    MStack_70._pinnable = (IPinnable *)0x0;
+                                                    MStack_70._pointer = (Void *)0x0;
+                                                    MStack_70._handle.handle = (void *)0x0;
+                                                    mscorlib.dll::System::Buffers::MemoryHandle::
+                                                    MemoryHandle__ctor(&MStack_70,(Void *)0x2,
+                                                                       (GCHandle)0x8,
+                                                                       (IPinnable *)pFVar2,
+                                                                       (MethodInfo *)0x0);
+                                                    if (pAVar1->max_length < 5)
+                                                    goto code_?;
+                                                    pAVar1->vector[4].avatarModifierType =
+                                                         (int32_t)MStack_70._pointer;
+                                                    pAVar1->vector[4].avatarModifierEffect =
+                                                         (int32_t)MStack_70._handle.handle;
+                                                    pAVar1->vector[4].value =
+                                                         (Func_1_Single_ *)MStack_70._pinnable;
+                                                    func_?(&pAVar1->vector[4].value,0);
+                                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                                       (1.0,(MethodInfo *)0x0);
+                                                    MStack_71._pinnable = (IPinnable *)0x0;
+                                                    MStack_71._pointer = (Void *)0x0;
+                                                    MStack_71._handle.handle = (void *)0x0;
+                                                    mscorlib.dll::System::Buffers::MemoryHandle::
+                                                    MemoryHandle__ctor(&MStack_71,(Void *)0x2,
+                                                                       (GCHandle)0x9,
+                                                                       (IPinnable *)pFVar2,
+                                                                       (MethodInfo *)0x0);
+                                                    if (pAVar1->max_length < 6)
+                                                    goto code_?;
+                                                    pAVar1->vector[5].avatarModifierType =
+                                                         (int32_t)MStack_71._pointer;
+                                                    pAVar1->vector[5].avatarModifierEffect =
+                                                         (int32_t)MStack_71._handle.handle;
+                                                    pAVar1->vector[5].value =
+                                                         (Func_1_Single_ *)MStack_71._pinnable;
+                                                    func_?(&pAVar1->vector[5].value,0);
+                                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                                       (2.0,(MethodInfo *)0x0);
+                                                    MStack_72._pinnable = (IPinnable *)0x0;
+                                                    MStack_72._pointer = (Void *)0x0;
+                                                    MStack_72._handle.handle = (void *)0x0;
+                                                    mscorlib.dll::System::Buffers::MemoryHandle::
+                                                    MemoryHandle__ctor(&MStack_72,(Void *)0x2,
+                                                                       (GCHandle)0x1,
+                                                                       (IPinnable *)pFVar2,
+                                                                       (MethodInfo *)0x0);
+                                                    if (pAVar1->max_length < 7)
+                                                    goto code_?;
+                                                    pAVar1->vector[6].avatarModifierType =
+                                                         (int32_t)MStack_72._pointer;
+                                                    pAVar1->vector[6].avatarModifierEffect =
+                                                         (int32_t)MStack_72._handle.handle;
+                                                    pAVar1->vector[6].value =
+                                                         (Func_1_Single_ *)MStack_72._pinnable;
+                                                    func_?(&pAVar1->vector[6].value,0);
+                                                    pDVar28 = (
+                                                  Dictionary_2_System_Object_System_Object_ *)
+                                                  func_?(
+                                                  TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                                                  );
+                                                  if (pDVar28 != (
+                                                  Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                    Unity.Postprocessing.Runtime.dll::UnityEngine::
+                                                    Rendering::PostProcessing::
+                                                    ParameterOverride`1[System::Object]::
+                                                    ParameterOverride_1_System_Object___ctor
+                                                              ((ParameterOverride_1_System_Object_ *
+                                                               )pDVar28,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                                                  );
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::Object,System::Object]::
+                                                  Dictionary_2_System_Object_System_Object__Add
+                                                            (pDVar28,(Object *)0xc,(Object *)0x3,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  );
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::Object,System::Object]::
+                                                  Dictionary_2_System_Object_System_Object__Add
+                                                            (pDVar28,(Object *)0xf,(Object *)0x1,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  );
+                                                  func_?(&AStack_73,0,0x44);
+                                                  AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                            (&AStack_73,
+                                                                                                                          
+                                                  AvatarModifierPackageType__Enum_Enlarged,
+                                                  AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  35.0,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)pDVar28,0,(MethodInfo *)0x0);
+                                                  value_22.duration.currentCryptoKey =
+                                                       AStack_73.duration.currentCryptoKey;
+                                                  value_22.id = AStack_73.id;
+                                                  value_22.duration.hiddenValue =
+                                                       AStack_73.duration.hiddenValue;
+                                                  value_22.duration.hiddenValueOld =
+                                                       AStack_73.duration.hiddenValueOld;
+                                                  value_22.duration.fakeValue =
+                                                       AStack_73.duration.fakeValue;
+                                                  value_22.duration.inited =
+                                                       AStack_73.duration.inited;
+                                                  value_22.duration._17_3_ =
+                                                       AStack_73.duration._17_3_;
+                                                  value_22.avatarModifiers =
+                                                       AStack_73.avatarModifiers;
+                                                  value_22.actionsToTakeVsTypes =
+                                                       AStack_73.actionsToTakeVsTypes;
+                                                  value_22.timeStamp.currentCryptoKey =
+                                                       AStack_73.timeStamp.currentCryptoKey;
+                                                  value_22.timeStamp.hiddenValue =
+                                                       AStack_73.timeStamp.hiddenValue;
+                                                  value_22.timeStamp.hiddenValueOld =
+                                                       AStack_73.timeStamp.hiddenValueOld;
+                                                  value_22.timeStamp.fakeValue =
+                                                       AStack_73.timeStamp.fakeValue;
+                                                  value_22.timeStamp.inited =
+                                                       AStack_73.timeStamp.inited;
+                                                  value_22.timeStamp._17_3_ =
+                                                       AStack_73.timeStamp._17_3_;
+                                                  value_22.persistant = AStack_73.persistant;
+                                                  value_22._53_3_ = AStack_73._53_3_;
+                                                  value_22.lastTimeStamp = AStack_73.lastTimeStamp;
+                                                  value_22.avatarModifierPackageType =
+                                                       AStack_73.avatarModifierPackageType;
+                                                  value_22.avatarModifierPackageAdditionPolicy =
+                                                       AStack_73.
+                                                       avatarModifierPackageAdditionPolicy;
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::
+                                                  Int32Enum,AvatarModifierPackage]::
+                                                  Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                            (this,0xf,value_22,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                                  if (cRam_? == '\0') {
+                                                    AStack_74.id =
+                                                         (int32_t)&
+                                                  TypeInfo__AvatarModifierPackageFactory;
+                                                  pAStack_75 = (
+                                                  AvatarModifierPackage_AvatarModifier__Array__Class
+                                                  *)&UNK_?;
+                                                  func_?();
+                                                  pAStack_75 = (
+                                                  AvatarModifierPackage_AvatarModifier__Array__Class
+                                                  *)&TypeInfo__AvatarModifierPackage__AvatarModifier
+                                                  ;
+                                                  func_?();
+                                                  ppMStack_76 = &
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  ;
+                                                  func_?();
+                                                  ppMStack_77 = &
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                                                  ;
+                                                  func_?();
+                                                  pBStack_78 = (Byte__Array *)
+                                                                &
+                                                  TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                                                  ;
+                                                  func_?();
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  AStack_74.id = 1;
+                                                  pAStack_75 = 
+                                                  TypeInfo__AvatarModifierPackage__AvatarModifier;
+                                                  pAVar1 = (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)
+                                                  func_?();
+                                                  if ((TypeInfo__AvatarModifierPackageFactory->_1).
+                                                      cctor_finished_or_no_cctor == 0) {
+                                                    func_?(
+                                                  TypeInfo__AvatarModifierPackageFactory);
+                                                  }
+                                                  pFVar2 = AvatarModifierPackageFactory_Const
+                                                                     (1.0,(MethodInfo *)0x0);
+                                                  MStack_79._pinnable = (IPinnable *)0x0;
+                                                  MStack_79._pointer = (Void *)0x0;
+                                                  MStack_79._handle.handle = (void *)0x0;
+                                                  mscorlib.dll::System::Buffers::MemoryHandle::
+                                                  MemoryHandle__ctor(&MStack_79,(Void *)0x2,
+                                                                     (GCHandle)0xa,
+                                                                     (IPinnable *)pFVar2,
+                                                                     (MethodInfo *)0x0);
+                                                  if (pAVar1 != (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                                  {
+                                                    if (pAVar1->max_length == 0)
+                                                    goto code_?;
+                                                    pAVar1->vector[0].avatarModifierType =
+                                                         (int32_t)MStack_79._pointer;
+                                                    pAVar1->vector[0].avatarModifierEffect =
+                                                         (int32_t)MStack_79._handle.handle;
+                                                    pAVar1->vector[0].value =
+                                                         (Func_1_Single_ *)MStack_79._pinnable;
+                                                    func_?(&pAVar1->vector[0].value,0);
+                                                    pDVar28 = (
+                                                  Dictionary_2_System_Object_System_Object_ *)
+                                                  func_?(
+                                                  TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                                                  );
+                                                  if (pDVar28 != (
+                                                  Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                    Unity.Postprocessing.Runtime.dll::UnityEngine::
+                                                    Rendering::PostProcessing::
+                                                    ParameterOverride`1[System::Object]::
+                                                    ParameterOverride_1_System_Object___ctor
+                                                              ((ParameterOverride_1_System_Object_ *
+                                                               )pDVar28,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                                                  );
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::Object,System::Object]::
+                                                  Dictionary_2_System_Object_System_Object__Add
+                                                            (pDVar28,(Object *)0x11,(Object *)0x1,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  );
+                                                  func_?(&AStack_74,0,0x44);
+                                                  AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                            (&AStack_74,
+                                                                                                                          
+                                                  AvatarModifierPackageType__Enum_SpawnProtection,
+                                                  AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  4.0,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)pDVar28,1,(MethodInfo *)0x0);
+                                                  value_20.duration.currentCryptoKey =
+                                                       AStack_74.duration.currentCryptoKey;
+                                                  value_20.id = AStack_74.id;
+                                                  value_20.duration.hiddenValue =
+                                                       AStack_74.duration.hiddenValue;
+                                                  value_20.duration.hiddenValueOld =
+                                                       AStack_74.duration.hiddenValueOld;
+                                                  value_20.duration.fakeValue =
+                                                       AStack_74.duration.fakeValue;
+                                                  value_20.duration.inited =
+                                                       AStack_74.duration.inited;
+                                                  value_20.duration._17_3_ =
+                                                       AStack_74.duration._17_3_;
+                                                  value_20.avatarModifiers =
+                                                       AStack_74.avatarModifiers;
+                                                  value_20.actionsToTakeVsTypes =
+                                                       AStack_74.actionsToTakeVsTypes;
+                                                  value_20.timeStamp.currentCryptoKey =
+                                                       AStack_74.timeStamp.currentCryptoKey;
+                                                  value_20.timeStamp.hiddenValue =
+                                                       AStack_74.timeStamp.hiddenValue;
+                                                  value_20.timeStamp.hiddenValueOld =
+                                                       AStack_74.timeStamp.hiddenValueOld;
+                                                  value_20.timeStamp.fakeValue =
+                                                       AStack_74.timeStamp.fakeValue;
+                                                  value_20.timeStamp.inited =
+                                                       AStack_74.timeStamp.inited;
+                                                  value_20.timeStamp._17_3_ =
+                                                       AStack_74.timeStamp._17_3_;
+                                                  value_20.persistant = AStack_74.persistant;
+                                                  value_20._53_3_ = AStack_74._53_3_;
+                                                  value_20.lastTimeStamp = AStack_74.lastTimeStamp;
+                                                  value_20.avatarModifierPackageType =
+                                                       AStack_74.avatarModifierPackageType;
+                                                  value_20.avatarModifierPackageAdditionPolicy =
+                                                       AStack_74.
+                                                       avatarModifierPackageAdditionPolicy;
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::
+                                                  Int32Enum,AvatarModifierPackage]::
+                                                  Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                            (this,0x11,value_20,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                                  pAVar1 = (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)
+                                                  func_?();
+                                                  pFVar2 = AvatarModifierPackageFactory_Const
+                                                                     (-20.0,(MethodInfo *)0x0);
+                                                  MStack_80._pinnable = (IPinnable *)0x0;
+                                                  MStack_80._pointer = (Void *)0x0;
+                                                  MStack_80._handle.handle = (void *)0x0;
+                                                  mscorlib.dll::System::Buffers::MemoryHandle::
+                                                  MemoryHandle__ctor(&MStack_80,(Void *)0x1,
+                                                                     (GCHandle)0xe,
+                                                                     (IPinnable *)pFVar2,
+                                                                     (MethodInfo *)0x0);
+                                                  if (pAVar1 != (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                                  {
+                                                    if (pAVar1->max_length == 0)
+                                                    goto code_?;
+                                                    pAVar1->vector[0].avatarModifierType =
+                                                         (int32_t)MStack_80._pointer;
+                                                    pAVar1->vector[0].avatarModifierEffect =
+                                                         (int32_t)MStack_80._handle.handle;
+                                                    pAVar1->vector[0].value =
+                                                         (Func_1_Single_ *)MStack_80._pinnable;
+                                                    func_?(&pAVar1->vector[0].value,0);
+                                                    pFVar2 = AvatarModifierPackageFactory_Const
+                                                                       (20.0,(MethodInfo *)0x0);
+                                                    MStack_81._pinnable = (IPinnable *)0x0;
+                                                    MStack_81._pointer = (Void *)0x0;
+                                                    MStack_81._handle.handle = (void *)0x0;
+                                                    mscorlib.dll::System::Buffers::MemoryHandle::
+                                                    MemoryHandle__ctor(&MStack_81,(Void *)0x1,
+                                                                       (GCHandle)0x14,
+                                                                       (IPinnable *)pFVar2,
+                                                                       (MethodInfo *)0x0);
+                                                    if (pAVar1->max_length < 2)
+                                                    goto code_?;
+                                                    pAVar1->vector[1].avatarModifierType =
+                                                         (int32_t)MStack_81._pointer;
+                                                    pAVar1->vector[1].avatarModifierEffect =
+                                                         (int32_t)MStack_81._handle.handle;
+                                                    pAVar1->vector[1].value =
+                                                         (Func_1_Single_ *)MStack_81._pinnable;
+                                                    func_?(&pAVar1->vector[1].value,0);
+                                                    pDVar28 = (
+                                                  Dictionary_2_System_Object_System_Object_ *)
+                                                  func_?(
+                                                  TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
+                                                  );
+                                                  if (pDVar28 != (
+                                                  Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                    Unity.Postprocessing.Runtime.dll::UnityEngine::
+                                                    Rendering::PostProcessing::
+                                                    ParameterOverride`1[System::Object]::
+                                                    ParameterOverride_1_System_Object___ctor
+                                                              ((ParameterOverride_1_System_Object_ *
+                                                               )pDVar28,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
+                                                  );
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::Object,System::Object]::
+                                                  Dictionary_2_System_Object_System_Object__Add
+                                                            (pDVar28,(Object *)0x4,(Object *)0x2,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  );
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::Object,System::Object]::
+                                                  Dictionary_2_System_Object_System_Object__Add
+                                                            (pDVar28,(Object *)0x1,(Object *)0x2,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
+                                                  );
+                                                  func_?(auStack_82,0,0x44);
+                                                  AvatarModifierPackage::AvatarModifierPackage__ctor
+                                                            ((AvatarModifierPackage *)auStack_82,
+                                                             AvatarModifierPackageType__Enum_RayHeal
+                                                             ,
+                                                  AvatarModifierPackageAdditionPolicy__Enum_Add,0.2,
+                                                  pAVar1,(
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)pDVar28,0,(MethodInfo *)0x0);
+                                                  value_23.duration.currentCryptoKey =
+                                                       auStack_82._4_4_;
+                                                  value_23.id = auStack_82._0_4_;
+                                                  value_23.duration.hiddenValue.b1 = auStack_82[8];
+                                                  value_23.duration.hiddenValue.b2 = auStack_82[9];
+                                                  value_23.duration.hiddenValue.b3 = auStack_82[10]
+                                                  ;
+                                                  value_23.duration.hiddenValue.b4 =
+                                                       auStack_82[0xb];
+                                                  value_23.duration.hiddenValueOld =
+                                                       (Byte__Array *)auStack_82._12_4_;
+                                                  value_23.duration.fakeValue =
+                                                       (float)auStack_82._16_4_;
+                                                  value_23.duration._16_4_ = auStack_82._20_4_;
+                                                  value_23.avatarModifiers = pAStack_83;
+                                                  value_23.actionsToTakeVsTypes = pDStack_84;
+                                                  value_23.timeStamp.currentCryptoKey = iStack_85;
+                                                  value_23.timeStamp.hiddenValue = AStack_86;
+                                                  value_23.timeStamp.hiddenValueOld = pBStack_87;
+                                                  value_23.timeStamp.fakeValue = fStack_88;
+                                                  value_23.timeStamp.inited = AStack_89.b1;
+                                                  value_23.timeStamp._17_1_ = AStack_89.b2;
+                                                  value_23.timeStamp._18_1_ = AStack_89.b3;
+                                                  value_23.timeStamp._19_1_ = AStack_89.b4;
+                                                  value_23._52_4_ = pBStack_78;
+                                                  value_23.lastTimeStamp = (float)ppMStack_77;
+                                                  value_23.avatarModifierPackageType =
+                                                       (int32_t)ppMStack_76;
+                                                  value_23.avatarModifierPackageAdditionPolicy =
+                                                       (int32_t)pAStack_75;
+                                                  AVar90 = AStack_89;
+                                                  pBVar91 = pBStack_78;
+                                                  ppMVar92 = ppMStack_77;
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::
+                                                  Int32Enum,AvatarModifierPackage]::
+                                                  Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                            (this,0x12,value_23,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                                  fVar93 = 1.4013e-45;
+                                                  puVar94 = &UNK_?;
+                                                  pAVar95 = 
+                                                  TypeInfo__AvatarModifierPackage__AvatarModifier;
+                                                  pAVar1 = (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)
+                                                  func_?();
+                                                  pFVar2 = AvatarModifierPackageFactory_Const
+                                                                     (7.0,(MethodInfo *)0x0);
+                                                  MStack_96._pinnable = (IPinnable *)0x0;
+                                                  MStack_96._pointer = (Void *)0x0;
+                                                  MStack_96._handle.handle = (void *)0x0;
+                                                  mscorlib.dll::System::Buffers::MemoryHandle::
+                                                  MemoryHandle__ctor(&MStack_96,(Void *)0x1,
+                                                                     (GCHandle)0x1c,
+                                                                     (IPinnable *)pFVar2,
+                                                                     (MethodInfo *)0x0);
+                                                  if (pAVar1 != (
+                                                  AvatarModifierPackage_AvatarModifier__Array *)0x0)
+                                                  {
+                                                    if (pAVar1->max_length != 0) {
+                                                      pAVar1->vector[0].avatarModifierType =
+                                                           (int32_t)MStack_96._pointer;
+                                                      pAVar1->vector[0].avatarModifierEffect =
+                                                           (int32_t)MStack_96._handle.handle;
+                                                      pAVar1->vector[0].value =
+                                                           (Func_1_Single_ *)MStack_96._pinnable;
+                                                      func_?(&pAVar1->vector[0].value,0);
+                                                      func_?(&stack0xfffff6e8,0,0x44);
+                                                      AvatarModifierPackage::
+                                                      AvatarModifierPackage__ctor
+                                                                ((AvatarModifierPackage *)
+                                                                 &stack0xfffff6e8,
+                                                                                                                                  
+                                                  AvatarModifierPackageType__Enum_RayHealEnemy,
+                                                  AvatarModifierPackageAdditionPolicy__Enum_Renew,
+                                                  1.0,pAVar1,
+                                                  (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)0x0,0,(MethodInfo *)0x0);
+                                                  value_18.duration.currentCryptoKey =
+                                                       auStack_82._16_4_;
+                                                  value_18.id = auStack_82._12_4_;
+                                                  value_18.duration.hiddenValue =
+                                                       (ACTkByte4)auStack_82._20_4_;
+                                                  value_18.duration.hiddenValueOld =
+                                                       (Byte__Array *)pAStack_83;
+                                                  value_18.duration.fakeValue =
+                                                       (float)
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  ;
+                                                  value_18.duration._16_4_ = iStack_85;
+                                                  value_18.avatarModifiers =
+                                                       (AvatarModifierPackage_AvatarModifier__Array
+                                                        *)AStack_86;
+                                                  value_18.actionsToTakeVsTypes =
+                                                       (
+                                                  Dictionary_2_AvatarModifierPackageType_ModifierActions_
+                                                  *)pBStack_87;
+                                                  value_18.timeStamp.currentCryptoKey =
+                                                       (int32_t)fStack_88;
+                                                  value_18.timeStamp.hiddenValue = AVar90;
+                                                  value_18.timeStamp.hiddenValueOld = pBVar91;
+                                                  value_18.timeStamp.fakeValue = (float)ppMVar92;
+                                                  value_18.timeStamp._16_4_ = puVar94;
+                                                  value_18._52_4_ = pAVar95;
+                                                  value_18.lastTimeStamp = fVar93;
+                                                  value_18.avatarModifierPackageType = iStack_97;
+                                                  value_18.avatarModifierPackageAdditionPolicy =
+                                                       iStack_98;
+                                                  mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::
+                                                  Int32Enum,AvatarModifierPackage]::
+                                                  Dictionary_2_System_Int32Enum_AvatarModifierPackage__Add
+                                                            (this,0x19,value_18,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
+                                                  );
+                                                  TypeInfo__AvatarModifierPackageFactory->
+                                                  static_fields->protoPackages =
+                                                       (
+                                                  Dictionary_2_AvatarModifierPackageType_AvatarModifierPackage_
+                                                  *)this;
+                                                  func_?();
+                                                  return;
+                                                  }
+                                                  goto code_?;
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
-      goto code_?;
     }
   }
-  uVar5 = func_?(0);
-  func_?(uVar5);
+  func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar386 = (code *)swi(3);
-  (*pcVar386)();
+  pcVar99 = (code *)swi(3);
+  (*pcVar99)();
   return;
 }
 

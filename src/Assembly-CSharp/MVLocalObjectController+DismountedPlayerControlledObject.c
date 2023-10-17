@@ -33,8 +33,10 @@ void Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObje
                ILocalObject *playerControlledObject,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).playerControlledObject = playerControlledObject;
+  func_?(&(this->fields).playerControlledObject,playerControlledObject);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).dismountTime = fVar1;
   return;

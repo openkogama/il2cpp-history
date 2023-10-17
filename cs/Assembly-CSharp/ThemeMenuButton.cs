@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeMenuButton : MonoBehaviour
 {
@@ -20,14 +20,28 @@ public class ThemeMenuButton : MonoBehaviour
 	private ToolTip toolTip;
 	private static readonly string toolTipStr_ButtonDisabled;
 	private static readonly string toolTipStr_ButtonEnabled;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IClickHandler> __f__am_cache0;
 
 	// Nested types
 	public interface IClickHandler : IEventSystemHandler
 	{
 		// Methods
 		void OpenThemesMenu();
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IClickHandler> __9__6_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnClick_b__6_0(IClickHandler handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -38,7 +52,5 @@ public class ThemeMenuButton : MonoBehaviour
 	protected void Awake();
 	private void SetButtonAvailability(MVLocalPlayer.PlanetOwnershipType planetOwnership);
 	public void OnClick();
-	[CompilerGenerated]
-	private static void _OnClick_m__0(IClickHandler handler, BaseEventData data);
 }
 

@@ -6,65 +6,45 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    cVar3 = (*(code *)(pVVar2->klass->vtable).__unknown_1.method)
-                      (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_2.methodPtr);
+    cVar3 = (*(pVVar2->klass->vtable).__unknown_1.methodPtr)
+                      (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_1.method);
     if (cVar3 != '\0') {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&
+                        TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
+                       );
         cRam_? = '\x01';
       }
       pSVar1 = (this->fields).Name;
-      if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                  vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-          cctor_started == 0)) {
+      if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+          cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
                        );
       }
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-                  vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-          cctor_started == 0)) {
-        func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
-                       );
-      }
-      pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-               static_fields->activeInput;
-      if (pVVar2 == (VirtualInput *)0x0) goto code_?;
-      (*(code *)(pVVar2->klass->vtable).__unknown_5.method)
-                (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_6.methodPtr);
+      CrossPlatformInputManager::CrossPlatformInputManager_SetButtonUp(pSVar1,(MethodInfo *)0x0);
     }
     return;
   }
-code_?:
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -78,34 +58,30 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_7.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_8.methodPtr);
+    (*(pVVar2->klass->vtable).__unknown_7.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_7.method);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -119,34 +95,30 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_8.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_9.methodPtr);
+    (*(pVVar2->klass->vtable).__unknown_8.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_8.method);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -160,34 +132,30 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_6.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_7.methodPtr);
+    (*(pVVar2->klass->vtable).__unknown_6.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_6.method);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -201,36 +169,15 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).Name;
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  name = (this->fields).Name;
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
-  }
-  pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-           static_fields->activeInput;
-  if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_4.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_5.methodPtr);
-    return;
-  }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  CrossPlatformInputManager::CrossPlatformInputManager_SetButtonDown(name,(MethodInfo *)0x0);
   return;
 }
 
@@ -242,36 +189,15 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).Name;
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  name = (this->fields).Name;
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
-  }
-  pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-           static_fields->activeInput;
-  if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_5.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_6.methodPtr);
-    return;
-  }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  CrossPlatformInputManager::CrossPlatformInputManager_SetButtonUp(name,(MethodInfo *)0x0);
   return;
 }
 

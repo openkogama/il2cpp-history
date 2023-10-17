@@ -5,25 +5,20 @@ bool Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader_Update
                (GUICellCursor_Fader *this,float *fadeVal,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if ((this->fields).end <= fVar1) {
     *fadeVal = (this->fields).endValue;
     return 0;
   }
-  fVar2 = (this->fields).startMulDurationInv;
-  b = (this->fields).endValue;
-  fVar3 = (this->fields).durationInv;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  fVar2 = (this->fields).startValue;
+  fVar1 = fVar1 * (this->fields).durationInv - (this->fields).startMulDurationInv;
+  if (fVar1 < 0.0) {
+    fVar1 = 0.0;
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Lerp
-                    (0.0,b,fVar3 * fVar1 - fVar2,(MethodInfo *)0x0);
-  *fadeVal = fVar1;
+  else if (_UNK_? < fVar1) {
+    fVar1 = _UNK_?;
+  }
+  *fadeVal = ((this->fields).endValue - fVar2) * fVar1 + fVar2;
   return 1;
 }
 
@@ -35,7 +30,8 @@ void Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader__ctor
                MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).start = fVar1;
   (this->fields).end = fVar1 + duration;

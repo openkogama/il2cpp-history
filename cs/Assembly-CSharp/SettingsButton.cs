@@ -9,9 +9,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent]
+[RequireComponent(typeof(Button))]
 public class SettingsButton : MonoBehaviour
 {
 	// Fields
@@ -27,6 +27,6 @@ public class SettingsButton : MonoBehaviour
 	public void Initialize(string key, int value);
 	private void ValueChanged();
 	[CompilerGenerated]
-	private void _ValueChanged_m__0(IHandleSettingChanged handler, BaseEventData data);
+	private void _ValueChanged_b__4_0(IHandleSettingChanged handler, BaseEventData data);
 }
 

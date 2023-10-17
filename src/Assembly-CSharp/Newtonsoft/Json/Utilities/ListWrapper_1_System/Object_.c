@@ -6,18 +6,36 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
                (ListWrapper_1_System_Object_ *this,Object *item,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x18))();
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    (*(method->klass->rgctx_data[0xc].method)->virtualMethodPointer)
+              (this,item,method->klass->rgctx_data[0xc].rgctxDataDummy);
     return;
   }
-  iVar2 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pIVar1 = (this->fields)._genericList;
+  if (pIVar1 != (IList_1_System_Object_ *)0x0) {
+    pIVar2 = method->klass->rgctx_data[10].rgctxDataDummy;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    uVar3 = 0;
+    uVar4 = (pIVar1->klass->_1).interface_offsets_count;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar1->klass->interfaceOffsets[uVar3].interfaceType == pIVar2) {
+          pVVar5 = &(pIVar1->klass->vtable).IndexOf + pIVar1->klass->interfaceOffsets[uVar3].offset;
+          (*pVVar5->methodPtr)(pIVar1,item,pVVar5->method);
+          return;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    puVar6 = (undefined4 *)func_?(pIVar1,pIVar2,2);
+    (*(code *)*puVar6)(pIVar1,item,puVar6[1]);
+    return;
   }
-  func_?(2,iVar2,pIVar1,item);
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -28,18 +46,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
      ListWrapper_1_System_Object__Clear(ListWrapper_1_System_Object_ *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x1c))();
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    (*(method->klass->rgctx_data[0xe].method)->virtualMethodPointer)
+              (this,method->klass->rgctx_data[0xe].rgctxDataDummy);
     return;
   }
-  iVar2 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pIVar1 = (this->fields)._genericList;
+  if (pIVar1 != (IList_1_System_Object_ *)0x0) {
+    pvVar2 = method->klass->rgctx_data[10].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
+    }
+    func_?(3,pvVar2,pIVar1);
+    return;
   }
-  func_?(3,iVar2,pIVar1);
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -51,19 +74,24 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
                (ListWrapper_1_System_Object_ *this,Object *item,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    bVar2 = (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x20))();
-    return bVar2;
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    bVar1 = (*(method->klass->rgctx_data[0x10].method)->virtualMethodPointer)
+                      (this,item,method->klass->rgctx_data[0x10].rgctxDataDummy);
+    return bVar1;
   }
-  iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
+  pIVar2 = (this->fields)._genericList;
+  if (pIVar2 != (IList_1_System_Object_ *)0x0) {
+    pvVar3 = method->klass->rgctx_data[10].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
+    }
+    bVar1 = func_?(4,pvVar3,pIVar2,item);
+    return bVar1;
   }
-  bVar2 = func_?(4,iVar3,pIVar1,item);
-  return bVar2;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
+  return bVar1;
 }
 
 
@@ -75,18 +103,36 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
                MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x24))();
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    (*(method->klass->rgctx_data[0x12].method)->virtualMethodPointer)
+              (this,array,arrayIndex,method->klass->rgctx_data[0x12].rgctxDataDummy);
     return;
   }
-  iVar2 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pIVar1 = (this->fields)._genericList;
+  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
+    func_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  func_?(5,iVar2,pIVar1,array,arrayIndex);
+  pIVar3 = method->klass->rgctx_data[10].rgctxDataDummy;
+  if (pIVar3->initialized_and_no_error == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  }
+  uVar4 = 0;
+  uVar5 = (pIVar1->klass->_1).interface_offsets_count;
+  if (uVar5 != 0) {
+    do {
+      if (pIVar1->klass->interfaceOffsets[uVar4].interfaceType == pIVar3) {
+        ppIVar6 = &pIVar1->klass[1]._0.image + pIVar1->klass->interfaceOffsets[uVar4].offset * 2;
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
+  }
+  ppIVar6 = (Il2CppImage **)func_?(pIVar1,pIVar3,5);
+code_?:
+  (*(code *)*ppIVar6)(pIVar1,array,arrayIndex,ppIVar6[1]);
   return;
 }
 
@@ -98,20 +144,25 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Object]:
 ListWrapper_1_System_Object__GetEnumerator(ListWrapper_1_System_Object_ *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pIVar2 = (IEnumerator_1_System_Object_ *)
-             (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x38))();
-    return pIVar2;
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    pIVar1 = (IEnumerator_1_System_Object_ *)
+             (*(method->klass->rgctx_data[0x1b].method)->virtualMethodPointer)
+                       (this,method->klass->rgctx_data[0x1b].rgctxDataDummy);
+    return pIVar1;
   }
-  iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x34);
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
+  pIVar2 = (this->fields)._genericList;
+  if (pIVar2 != (IList_1_System_Object_ *)0x0) {
+    pvVar3 = method->klass->rgctx_data[0x19].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
+    }
+    pIVar1 = (IEnumerator_1_System_Object_ *)func_?(0,pvVar3,pIVar2);
+    return pIVar1;
   }
-  pIVar2 = (IEnumerator_1_System_Object_ *)func_?(0,iVar3,pIVar1);
-  return pIVar2;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pIVar1 = (IEnumerator_1_System_Object_ *)(*pcVar4)();
+  return pIVar1;
 }
 
 
@@ -123,20 +174,26 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-    iVar2 = func_?(7,TypeInfo__System__Collections__IList,this,item);
-    return iVar2;
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    iVar1 = func_?(7,TypeInfo__System__Collections__IList,this,item);
+    return iVar1;
   }
-  iVar3 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
+  pIVar2 = (this->fields)._genericList;
+  if (pIVar2 != (IList_1_System_Object_ *)0x0) {
+    pvVar3 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
+    }
+    iVar1 = func_?(2,pvVar3,pIVar2,item);
+    return iVar1;
   }
-  iVar2 = func_?(0,iVar3,pIVar1,item);
-  return iVar2;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  iVar1 = (*pcVar4)();
+  return iVar1;
 }
 
 
@@ -148,19 +205,25 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
     func_?(8,TypeInfo__System__Collections__IList,this,index,item);
     return;
   }
-  iVar2 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pIVar1 = (this->fields)._genericList;
+  if (pIVar1 != (IList_1_System_Object_ *)0x0) {
+    pvVar2 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
+    }
+    func_?(3,pvVar2,pIVar1,index,item);
+    return;
   }
-  func_?(1,iVar2,pIVar1,index,item);
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -172,21 +235,28 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
                (ListWrapper_1_System_Object_ *this,Object *item,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-    puVar2 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x20);
-    bVar3 = (*(code *)*puVar2)(this,item,puVar2);
-    if (bVar3 != 0) {
-      puVar2 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x30);
-      (*(code *)*puVar2)(this,item,puVar2);
+  if ((this->fields)._genericList != (IList_1_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._genericList;
+    if (pIVar1 != (IList_1_System_Object_ *)0x0) {
+      pvVar2 = method->klass->rgctx_data[10].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+        pvVar2 = (void *)func_?(pvVar2);
+      }
+      bVar3 = func_?(6,pvVar2,pIVar1,item);
+      return bVar3;
     }
+    func_?();
+    pcVar4 = (code *)swi(3);
+    bVar3 = (*pcVar4)();
     return bVar3;
   }
-  iVar4 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
+  bVar3 = (*(method->klass->rgctx_data[0x10].method)->virtualMethodPointer)
+                    (this,item,method->klass->rgctx_data[0x10].rgctxDataDummy);
+  if (bVar3 == 0) {
+    return 0;
   }
-  bVar3 = func_?(6,iVar4,pIVar1,item);
+  (*(method->klass->rgctx_data[0x18].method)->virtualMethodPointer)
+            (this,item,method->klass->rgctx_data[0x18].rgctxDataDummy);
   return bVar3;
 }
 
@@ -199,63 +269,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
     func_?(10,TypeInfo__System__Collections__IList,this,index);
     return;
   }
-  iVar2 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
-  }
-  func_?(2,iVar2,pIVar1,index);
-  return;
-}
-
-
-/* ListWrapper`1[System.Object](IList) */
-
-void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Object]::
-     ListWrapper_1_System_Object___ctor
-               (ListWrapper_1_System_Object_ *this,IList *list,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (this != (ListWrapper_1_System_Object_ *)0x0) {
-    (**(code **)**(undefined4 **)(method->name + 0x60))
-              (this,list,(undefined4 *)**(undefined4 **)(method->name + 0x60));
-    ValidationUtils::ValidationUtils_ArgumentNotNull
-              ((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
-    iVar1 = *(int *)(*(int *)(method->name + 0x60) + 8);
-    if ((*(byte *)(iVar1 + 0xbe) & 1) == 0) {
-      func_?(iVar1);
+  pIVar1 = (this->fields)._genericList;
+  if (pIVar1 != (IList_1_System_Object_ *)0x0) {
+    pvVar2 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
     }
-    iVar1 = func_?(list,iVar1);
-    if (iVar1 != 0) {
-      unaff_EDI = *(int *)(*(int *)(method->name + 0x60) + 8);
-      if ((*(byte *)(unaff_EDI + 0xbe) & 1) == 0) {
-        func_?(unaff_EDI);
-      }
-      if (list == (IList *)0x0) {
-        (this->fields)._genericList = (IList_1_System_Object_ *)0x0;
-        return;
-      }
-      pIVar2 = (IList_1_System_Object_ *)func_?(list,unaff_EDI);
-      if (pIVar2 == (IList_1_System_Object_ *)0x0) goto code_?;
-      (this->fields)._genericList = pIVar2;
-    }
+    func_?(4,pvVar2,pIVar1,index);
     return;
   }
-  func_?(0);
-  list = unaff_ESI;
-code_?:
-  func_?(list,unaff_EDI);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -265,25 +295,76 @@ code_?:
 /* ListWrapper`1[System.Object](IList`1[System.Object]) */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Object]::
-     ListWrapper_1_System_Object___ctor_1
+     ListWrapper_1_System_Object___ctor
                (ListWrapper_1_System_Object_ *this,IList_1_System_Object_ *list,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_list);
     cRam_? = '\x01';
   }
-  if (this != (ListWrapper_1_System_Object_ *)0x0) {
-    puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0xc);
-    (*(code *)*puVar1)(this,list,puVar1);
-    ValidationUtils::ValidationUtils_ArgumentNotNull
-              ((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
-    (this->fields)._genericList = list;
-    return;
+  (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
+            (this,list,method->klass->rgctx_data[3].rgctxDataDummy);
+  ValidationUtils::ValidationUtils_ArgumentNotNull
+            ((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
+  (this->fields)._genericList = list;
+  func_?(&(this->fields)._genericList,list);
+  return;
+}
+
+
+/* ListWrapper`1[System.Object](IList) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Object]::
+     ListWrapper_1_System_Object___ctor_1
+               (ListWrapper_1_System_Object_ *this,IList *list,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_list);
+    cRam_? = '\x01';
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  (*method->klass->rgctx_data->method->virtualMethodPointer)
+            (this,list,method->klass->rgctx_data->rgctxDataDummy);
+  ValidationUtils::ValidationUtils_ArgumentNotNull
+            ((Object *)list,StringLiteral_list,(MethodInfo *)0x0);
+  pvVar1 = method->klass->rgctx_data[2].rgctxDataDummy;
+  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+    pvVar1 = (void *)func_?(pvVar1);
+  }
+  iVar2 = func_?(list,pvVar1);
+  if (iVar2 != 0) {
+    pvVar1 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+      pvVar1 = (void *)func_?(pvVar1);
+    }
+    if (list == (IList *)0x0) {
+      pIVar3 = (IList_1_System_Object_ *)0x0;
+    }
+    else {
+      pIVar3 = (IList_1_System_Object_ *)func_?(list,pvVar1);
+      if (pIVar3 == (IList_1_System_Object_ *)0x0) goto code_?;
+    }
+    (this->fields)._genericList = pIVar3;
+    pvVar1 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+      pvVar1 = (void *)func_?(pvVar1);
+    }
+    if (list == (IList *)0x0) {
+      iVar2 = 0;
+    }
+    else {
+      iVar2 = func_?(list,pvVar1);
+      if (iVar2 == 0) {
+code_?:
+        func_?(list,pvVar1);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+    }
+    func_?(&(this->fields)._genericList,iVar2);
+  }
   return;
 }
 
@@ -295,19 +376,24 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::
                   (ListWrapper_1_System_Object_ *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    iVar2 = (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x28))();
-    return iVar2;
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    iVar1 = (*(method->klass->rgctx_data[0x14].method)->virtualMethodPointer)
+                      (this,method->klass->rgctx_data[0x14].rgctxDataDummy);
+    return iVar1;
   }
-  iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
+  pIVar2 = (this->fields)._genericList;
+  if (pIVar2 != (IList_1_System_Object_ *)0x0) {
+    pvVar3 = method->klass->rgctx_data[10].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
+    }
+    iVar1 = func_?(0,pvVar3,pIVar2);
+    return iVar1;
   }
-  iVar2 = func_?(0,iVar3,pIVar1);
-  return iVar2;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  iVar1 = (*pcVar4)();
+  return iVar1;
 }
 
 
@@ -318,19 +404,24 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
                (ListWrapper_1_System_Object_ *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    bVar2 = (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x2c))();
-    return bVar2;
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    bVar1 = (*(method->klass->rgctx_data[0x16].method)->virtualMethodPointer)
+                      (this,method->klass->rgctx_data[0x16].rgctxDataDummy);
+    return bVar1;
   }
-  iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
+  pIVar2 = (this->fields)._genericList;
+  if (pIVar2 != (IList_1_System_Object_ *)0x0) {
+    pvVar3 = method->klass->rgctx_data[10].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
+    }
+    bVar1 = func_?(1,pvVar3,pIVar2);
+    return bVar1;
   }
-  bVar2 = func_?(1,iVar3,pIVar1);
-  return bVar2;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
+  return bVar1;
 }
 
 
@@ -342,35 +433,40 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-    iVar2 = func_?(2,TypeInfo__System__Collections__IList,this,index);
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x10);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    unaff_EDI = func_?(0,TypeInfo__System__Collections__IList,this,index);
+    pvVar1 = method->klass->rgctx_data[5].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+      pvVar1 = (void *)func_?(pvVar1);
     }
-    if (iVar2 == 0) {
+    if (unaff_EDI == 0) {
       return (Object *)0x0;
     }
-    pOVar4 = (Object *)func_?(iVar2,iVar3);
-    if (pOVar4 == (Object *)0x0) {
-      func_?(iVar2,iVar3);
-      pcVar5 = (code *)swi(3);
-      pOVar4 = (Object *)(*pcVar5)();
-      return pOVar4;
+    pOVar2 = (Object *)func_?(unaff_EDI,pvVar1);
+    if (pOVar2 != (Object *)0x0) {
+      return pOVar2;
     }
   }
   else {
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 8);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
+    pIVar3 = (this->fields)._genericList;
+    if (pIVar3 != (IList_1_System_Object_ *)0x0) {
+      pvVar1 = method->klass->rgctx_data[2].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+        pvVar1 = (void *)func_?(pvVar1);
+      }
+      pOVar2 = (Object *)func_?(0,pvVar1,pIVar3,index);
+      return pOVar2;
     }
-    pOVar4 = (Object *)func_?(3,iVar3,pIVar1,index);
+    func_?();
+    pvVar1 = (void *)0x0;
   }
-  return pOVar4;
+  func_?(unaff_EDI,pvVar1);
+  pcVar4 = (code *)swi(3);
+  pOVar2 = (Object *)(*pcVar4)();
+  return pOVar2;
 }
 
 
@@ -381,14 +477,13 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System:
                    (ListWrapper_1_System_Object_ *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pOVar2 = (Object *)(*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x3c))();
-    return pOVar2;
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    pOVar1 = (Object *)
+             (*(method->klass->rgctx_data[0x1c].method)->virtualMethodPointer)
+                       (this,method->klass->rgctx_data[0x1c].rgctxDataDummy);
+    return pOVar1;
   }
-  return (Object *)pIVar1;
+  return (Object *)(this->fields)._genericList;
 }
 
 
@@ -400,19 +495,25 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ListWrapper`1[System::Obj
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericList;
-  if (pIVar1 == (IList_1_System_Object_ *)0x0) {
-    func_?(3,TypeInfo__System__Collections__IList,this,index,value);
+  if ((this->fields)._genericList == (IList_1_System_Object_ *)0x0) {
+    func_?(1,TypeInfo__System__Collections__IList,this,index,value);
     return;
   }
-  iVar2 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pIVar1 = (this->fields)._genericList;
+  if (pIVar1 != (IList_1_System_Object_ *)0x0) {
+    pvVar2 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
+    }
+    func_?(1,pvVar2,pIVar1,index,value);
+    return;
   }
-  func_?(4,iVar2,pIVar1,index,value);
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class BoostMenuItem : MonoBehaviour
 {
@@ -28,9 +28,9 @@ public class BoostMenuItem : MonoBehaviour
 	[SerializeField]
 	private RectTransform boostTypeImageParent;
 	[SerializeField]
-	private Button getWithAd;
+	private Button getWithAdOrSubscriptionButton;
 	[SerializeField]
-	private GameObject buttonAdImage;
+	private GameObject buttonIcon;
 	[SerializeField]
 	private Button getWithAdDisabled;
 	[SerializeField]
@@ -69,29 +69,29 @@ public class BoostMenuItem : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPurchaseBoostPressed_c__AnonStorey0
+	private sealed class __c__DisplayClass29_0
 	{
 		// Fields
-		internal GameObject informationPopup;
+		public GameObject informationPopup;
 
 		// Constructors
-		public _OnPurchaseBoostPressed_c__AnonStorey0();
+		public __c__DisplayClass29_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPurchaseBoostPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPurchaseBoostPressed_c__AnonStorey1
+	private sealed class __c__DisplayClass29_1
 	{
 		// Fields
-		internal BoostPurchasePopup boostPurchasePopup;
+		public BoostPurchasePopup boostPurchasePopup;
 
 		// Constructors
-		public _OnPurchaseBoostPressed_c__AnonStorey1();
+		public __c__DisplayClass29_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPurchaseBoostPressed_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -102,14 +102,16 @@ public class BoostMenuItem : MonoBehaviour
 	private void Update();
 	private void SetBoostUIUnlocked(bool boostUnlocked);
 	private void ActivateActiveBoostIconEffect();
+	public void OnUnlockBoostWithSubscriptionClicked();
 	public void OnUnlockBoostWithAdClicked();
 	public void OnPurchaseBoostPressed();
 	private int GetBoostPrice();
+	private void SetBoostActive(bool isBoostActive);
 	private void BoostChanged();
 	private void BoostUnlockedResponse(bool boostUnlocked);
 	private void OnPurchaseSuccessful();
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _OnUnlockBoostWithAdClicked_m__0(IBoostAdController x, BaseEventData y);
+	private void _OnUnlockBoostWithAdClicked_b__28_0(IBoostAdController x, BaseEventData y);
 }
 

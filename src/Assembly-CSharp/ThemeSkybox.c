@@ -5,116 +5,98 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_Activate(ThemeSkybox *this,Me
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_sunMatrix);
+    func_?(&StringLiteral_moonMatrix);
     cRam_? = '\x01';
   }
-  pSVar1 = ThemeSkybox_get_Skybox(this,(MethodInfo *)0x0);
-  if (pSVar1 != (Skybox *)0x0) {
-    pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Skybox::Skybox_get_material
-                       (pSVar1,(MethodInfo *)0x0);
-    (this->fields).previousSkyboxMaterial = pMVar2;
-    pSVar1 = ThemeSkybox_get_Skybox(this,(MethodInfo *)0x0);
-    if (pSVar1 != (Skybox *)0x0) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if ((pMVar1 != (MainCameraManager *)0x0) &&
+     (pSVar2 = (pMVar1->fields).skybox, pSVar2 != (Skybox *)0x0)) {
+    pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Skybox::Skybox_get_material
+                       (pSVar2,(MethodInfo *)0x0);
+    (this->fields).previousSkyboxMaterial = pMVar3;
+    func_?(&(this->fields).previousSkyboxMaterial,pMVar3);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if ((pMVar1 != (MainCameraManager *)0x0) &&
+       (pSVar2 = (pMVar1->fields).skybox, pSVar2 != (Skybox *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Skybox::Skybox_set_material
-                (pSVar1,(this->fields).skyboxMaterial,(MethodInfo *)0x0);
-      pFVar3 = (this->fields)._sun;
-      pMVar2 = (this->fields).skyboxMaterial;
-      if (pFVar3 != (FlareLight *)0x0) {
-        pCVar4 = (Component_1 *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pFVar3,
-                            (MethodInfo *)0x0);
-        if (pCVar4 != (Component_1 *)0x0) {
-          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                             (pCVar4,(MethodInfo *)0x0);
-          if (pTVar5 != (Transform *)0x0) {
-            pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                      Transform_get_worldToLocalMatrix
-                                ((Matrix4x4 *)&stack0xffffffac,pTVar5,(MethodInfo *)0x0);
-            if (pMVar2 != (Material *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
-                        (pMVar2,StringLiteral_sunMatrix,*pMVar6,(MethodInfo *)0x0);
-              pFVar3 = (this->fields)._moon;
-              pMVar2 = (this->fields).skyboxMaterial;
-              if (pFVar3 != (FlareLight *)0x0) {
-                pCVar4 = (Component_1 *)
-                         mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::
-                         Json::Serialization::JsonProperty]::
-                         Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                   ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                                    pFVar3,(MethodInfo *)0x0);
-                if (pCVar4 != (Component_1 *)0x0) {
-                  pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_1_get_transform(pCVar4,(MethodInfo *)0x0);
-                  if (pTVar5 != (Transform *)0x0) {
-                    pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_worldToLocalMatrix
-                                        ((Matrix4x4 *)&stack0xffffffac,pTVar5,(MethodInfo *)0x0);
-                    if (pMVar2 != (Material *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
-                                (pMVar2,StringLiteral_moonMatrix,*pMVar6,(MethodInfo *)0x0);
-                      pCVar7 = ThemeSkybox_get_Camera(this,(MethodInfo *)0x0);
-                      if (pCVar7 != (Camera *)0x0) {
-                        CVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                 Camera_get_clearFlags(pCVar7,(MethodInfo *)0x0);
-                        (this->fields).previousClearFlags = CVar8;
-                        pCVar7 = ThemeSkybox_get_Camera(this,(MethodInfo *)0x0);
-                        if (pCVar7 != (Camera *)0x0) {
-                          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_clearFlags
-                                    (pCVar7,CameraClearFlags__Enum_Skybox,(MethodInfo *)0x0);
-                          pFVar3 = (this->fields)._sun;
-                          if (pFVar3 != (FlareLight *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
-                            Behaviour_set_enabled((Behaviour *)pFVar3,1,(MethodInfo *)0x0);
-                            pFVar3 = (this->fields)._moon;
-                            if (pFVar3 != (FlareLight *)0x0) {
-                              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
-                              Behaviour_set_enabled((Behaviour *)pFVar3,1,(MethodInfo *)0x0);
-                              UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
-                              RenderSettings_set_fog((this->fields).fogEnabled,(MethodInfo *)0x0);
-                              UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
-                              RenderSettings_set_fogMode
-                                        (FogMode__Enum_ExponentialSquared,(MethodInfo *)0x0);
-                              UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
-                              RenderSettings_set_fogStartDistance
-                                        ((this->fields).fogStartDist,(MethodInfo *)0x0);
-                              UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
-                              RenderSettings_set_fogEndDistance
-                                        ((this->fields).fogEndDist,(MethodInfo *)0x0);
-                              UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
-                              RenderSettings_set_fogDensity
-                                        ((this->fields).fogDensity,(MethodInfo *)0x0);
-                              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector4::
-                                        Vector4_op_Multiply(&VStack_10,
-                                                            (Vector4)(this->fields)._bottomColor,
-                                                            (this->fields)._exposure,
-                                                            (MethodInfo *)0x0);
-                              VStack_10.x = pVVar9->x;
-                              VStack_10.y = pVVar9->y;
-                              VStack_10.z = pVVar9->z;
-                              uVar11 = pVVar9->x;
-                              uVar12 = pVVar9->y;
-                              uVar13 = pVVar9->z;
-                              value.b = (float)uVar13;
-                              value.g = (float)uVar12;
-                              value.r = (float)uVar11;
-                              VStack_10.w = 1.0;
-                              value.a = 1.0;
-                              UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
-                              RenderSettings_set_fogColor(value,(MethodInfo *)0x0);
-                              pCVar14 = (Color *)UnityEngine.CoreModule.dll::UnityEngine::Vector4::
-                                                 Vector4_op_Multiply(&VStack_10,
-                                                                     (Vector4)(this->fields).
-                                                                              _bottomColor,
-                                                                     (this->fields)._exposure,
-                                                                     (MethodInfo *)0x0);
-                              UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
-                              RenderSettings_set_ambientLight(*pCVar14,(MethodInfo *)0x0);
-                              return;
-                            }
-                          }
+                (pSVar2,(this->fields).skyboxMaterial,(MethodInfo *)0x0);
+      pFVar4 = (this->fields)._sun;
+      pMVar3 = (this->fields).skyboxMaterial;
+      if ((pFVar4 != (FlareLight *)0x0) && (pLVar5 = (pFVar4->fields).light, pLVar5 != (Light *)0x0)
+         ) {
+        pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pLVar5,(MethodInfo *)0x0);
+        if (pTVar6 != (Transform *)0x0) {
+          pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                    Transform_get_worldToLocalMatrix
+                              ((Matrix4x4 *)&stack0xffffffac,pTVar6,(MethodInfo *)0x0);
+          if (pMVar3 != (Material *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
+                      (pMVar3,StringLiteral_sunMatrix,*pMVar7,(MethodInfo *)0x0);
+            pFVar4 = (this->fields)._moon;
+            pMVar3 = (this->fields).skyboxMaterial;
+            if ((pFVar4 != (FlareLight *)0x0) &&
+               (pLVar5 = (pFVar4->fields).light, pLVar5 != (Light *)0x0)) {
+              pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pLVar5,(MethodInfo *)0x0);
+              if (pTVar6 != (Transform *)0x0) {
+                pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                          Transform_get_worldToLocalMatrix
+                                    ((Matrix4x4 *)&stack0xffffffac,pTVar6,(MethodInfo *)0x0);
+                if (pMVar3 != (Material *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
+                            (pMVar3,StringLiteral_moonMatrix,*pMVar7,(MethodInfo *)0x0);
+                  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                     ((MethodInfo *)0x0);
+                  if ((pMVar1 != (MainCameraManager *)0x0) &&
+                     (pCVar8 = (pMVar1->fields).mainCamera, pCVar8 != (Camera *)0x0)) {
+                    CVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_clearFlags
+                                       (pCVar8,(MethodInfo *)0x0);
+                    (this->fields).previousClearFlags = CVar9;
+                    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                       ((MethodInfo *)0x0);
+                    if ((pMVar1 != (MainCameraManager *)0x0) &&
+                       (pCVar8 = (pMVar1->fields).mainCamera, pCVar8 != (Camera *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_clearFlags
+                                (pCVar8,CameraClearFlags__Enum_Skybox,(MethodInfo *)0x0);
+                      pFVar4 = (this->fields)._sun;
+                      if (pFVar4 != (FlareLight *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                                  ((Behaviour *)pFVar4,1,(MethodInfo *)0x0);
+                        pFVar4 = (this->fields)._moon;
+                        if (pFVar4 != (FlareLight *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                                    ((Behaviour *)pFVar4,1,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
+                          RenderSettings_set_fog((this->fields).fogEnabled,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
+                          RenderSettings_set_fogMode
+                                    (FogMode__Enum_ExponentialSquared,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
+                          RenderSettings_set_fogStartDistance
+                                    ((this->fields).fogStartDist,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
+                          RenderSettings_set_fogEndDistance
+                                    ((this->fields).fogEndDist,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
+                          RenderSettings_set_fogDensity((this->fields).fogDensity,(MethodInfo *)0x0)
+                          ;
+                          fVar10 = (this->fields)._exposure;
+                          value.g = (this->fields)._bottomColor.g * fVar10;
+                          value.r = (this->fields)._bottomColor.r * fVar10;
+                          value.b = (this->fields)._bottomColor.b * fVar10;
+                          value.a = 1.0;
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
+                          RenderSettings_set_fogColor(value,(MethodInfo *)0x0);
+                          fVar10 = (this->fields)._exposure;
+                          value_00.g = (this->fields)._bottomColor.g * fVar10;
+                          value_00.r = (this->fields)._bottomColor.r * fVar10;
+                          value_00.b = (this->fields)._bottomColor.b * fVar10;
+                          value_00.a = (this->fields)._bottomColor.a * fVar10;
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::
+                          RenderSettings_set_ambientLight(value_00,(MethodInfo *)0x0);
+                          return;
                         }
                       }
                     }
@@ -128,8 +110,8 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_Activate(ThemeSkybox *this,Me
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -140,6 +122,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_ApplyRenderSettings
                (ThemeSkybox *this,MethodInfo *method)
 
 {
+  pTVar1 = this;
   UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_fog
             ((this->fields).fogEnabled,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_fogMode
@@ -150,24 +133,24 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_ApplyRenderSettings
             ((this->fields).fogEndDist,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_fogDensity
             ((this->fields).fogDensity,(MethodInfo *)0x0);
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                     ((Vector4 *)&puStack_2,(Vector4)(this->fields)._bottomColor,
-                      (this->fields)._exposure,(MethodInfo *)0x0);
-  puStack_2 = (undefined *)pVVar1->x;
-  uVar3 = pVVar1->x;
-  uVar4 = pVVar1->y;
-  uVar5 = pVVar1->z;
-  value.b = (float)uVar5;
-  value.g = (float)uVar4;
-  value.r = (float)uVar3;
-  value.a = 1.0;
+  pTVar2 = &this->fields;
+  pTVar3 = &this->fields;
+  fVar4 = (this->fields)._exposure;
+  puStack5 = (undefined *)0x0;
+  this = (ThemeSkybox *)((this->fields)._bottomColor.b * fVar4);
+  fVar6 = (pTVar3->_bottomColor).g * fVar4;
+  method = (MethodInfo *)0x3f800000;
+  CVar7.r = (pTVar2->_bottomColor).r * fVar4;
+  CVar7 = (Color)CONCAT124(auVar8,CVar7.r);
   UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_fogColor
-            (value,(MethodInfo *)0x0);
-  pCVar6 = (Color *)UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                              ((Vector4 *)&puStack_2,(Vector4)(this->fields)._bottomColor,
-                               (this->fields)._exposure,(MethodInfo *)0x0);
+            (CVar7,(MethodInfo *)0x0);
+  fVar4 = (pTVar1->fields)._exposure;
+  CVar7.g = (pTVar1->fields)._bottomColor.g * fVar4;
+  CVar7.r = (pTVar1->fields)._bottomColor.r * fVar4;
+  CVar7.b = (pTVar1->fields)._bottomColor.b * fVar4;
+  CVar7.a = (pTVar1->fields)._bottomColor.a * fVar4;
   UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_ambientLight
-            (*pCVar6,(MethodInfo *)0x0);
+            (CVar7,(MethodInfo *)0x0);
   return;
 }
 
@@ -178,24 +161,28 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_Awake(ThemeSkybox *this,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).skyboxMaterialSerialized;
   if (pTVar1 != (ThemeSkybox_PlatformSpecificMaterial *)0x0) {
-    pXVar2 = (XpBoostParticlePreviewer *)(pTVar1->fields).skyboxMaterialStandalone;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    pMVar2 = (pTVar1->fields).skyboxMaterialStandalone;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pXVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                       (pXVar2,
+    pMVar2 = (Material *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)pMVar2,
                         UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
                        );
-    (this->fields).skyboxMaterial = (Material *)pXVar2;
+    (this->fields).skyboxMaterial = pMVar2;
+    func_?(&(this->fields).skyboxMaterial,pMVar2);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -208,27 +195,28 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_Deactivate(ThemeSkybox *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SkyboxManager);
     cRam_? = '\x01';
   }
-  this_00 = ThemeSkybox_get_Skybox(this,(MethodInfo *)0x0);
-  if (this_00 != (Skybox *)0x0) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if ((pMVar1 != (MainCameraManager *)0x0) &&
+     (this_00 = (pMVar1->fields).skybox, this_00 != (Skybox *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Skybox::Skybox_set_material
               (this_00,(this->fields).previousSkyboxMaterial,(MethodInfo *)0x0);
-    this_01 = ThemeSkybox_get_Camera(this,(MethodInfo *)0x0);
-    if (this_01 != (Camera *)0x0) {
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if ((pMVar1 != (MainCameraManager *)0x0) &&
+       (this_01 = (pMVar1->fields).mainCamera, this_01 != (Camera *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_clearFlags
                 (this_01,(this->fields).previousClearFlags,(MethodInfo *)0x0);
-      pFVar1 = (this->fields)._sun;
-      if (pFVar1 != (FlareLight *)0x0) {
+      pFVar2 = (this->fields)._sun;
+      if (pFVar2 != (FlareLight *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)pFVar1,0,(MethodInfo *)0x0);
-        pFVar1 = (this->fields)._moon;
-        if (pFVar1 != (FlareLight *)0x0) {
+                  ((Behaviour *)pFVar2,0,(MethodInfo *)0x0);
+        pFVar2 = (this->fields)._moon;
+        if (pFVar2 != (FlareLight *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                    ((Behaviour *)pFVar1,0,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__SkyboxManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__SkyboxManager->_1).cctor_started == 0)) {
+                    ((Behaviour *)pFVar2,0,(MethodInfo *)0x0);
+          if ((TypeInfo__SkyboxManager->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           SkyboxManager::SkyboxManager_ResetAmbientLight((MethodInfo *)0x0);
@@ -238,8 +226,8 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_Deactivate(ThemeSkybox *this,
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -250,12 +238,11 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_OnDestroy(ThemeSkybox *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   obj = (this->fields).skyboxMaterial;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -270,19 +257,11 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateFogColor
                (ThemeSkybox *this,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                     (&VStack_2,(Vector4)(this->fields)._bottomColor,(this->fields)._exposure,
-                      (MethodInfo *)0x0);
-  VStack_2.x = pVVar1->x;
-  uVar3 = pVVar1->x;
-  uVar4 = pVVar1->y;
-  uVar5 = pVVar1->z;
-  fVar6 = (float)uVar5;
-  VStack_2.w = (float)uVar4;
-  VStack_2.z = (float)uVar3;
-  VStack_2.y = (float)&UNK_?;
+  fVar1 = (this->fields)._exposure;
+  value.g = (this->fields)._bottomColor.g * fVar1;
+  value.r = (this->fields)._bottomColor.r * fVar1;
+  value.b = (this->fields)._bottomColor.b * fVar1;
   value.a = 1.0;
-  value = (Color)CONCAT412(value.a,VStack_2._0_12_);
   UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_fogColor
             (value,(MethodInfo *)0x0);
   return;
@@ -295,121 +274,62 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateMoonLight
                (ThemeSkybox *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pFVar1 = (this->fields)._moon;
   if (pFVar1 != (FlareLight *)0x0) {
-    pLVar2 = (Light *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json
-                      ::Serialization::JsonProperty]::
-                      Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pFVar1,
-                                 (MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-              ((Vector4 *)&stack0xffffffe8,(Vector4)(this->fields)._moonTint,
-               (this->fields)._moonLightContrast,(MethodInfo *)0x0);
-    pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_white
-                       ((Color *)&stack0xffffffd8,(MethodInfo *)0x0);
-    d = _UNK_? - (this->fields)._moonLightContrast;
-    fVar4 = pCVar3->g;
-    fVar5 = pCVar3->b;
-    fVar6 = pCVar3->a;
-    pCVar3 = (Color *)UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                                ((Vector4 *)&stack0xffffffd8,(Vector4)*pCVar3,d,(MethodInfo *)0x0);
-    auVar7._4_4_ = fVar5;
-    auVar7._0_4_ = fVar4;
-    auVar7._8_4_ = fVar6;
-    a.a = d;
-    a.r = fVar4;
-    a.g = fVar5;
-    a.b = fVar6;
-    pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_op_Addition
-                       ((Color *)&stack0xffffffd8,a,*pCVar3,(MethodInfo *)0x0);
+    pLVar2 = (pFVar1->fields).light;
+    fVar3 = (this->fields)._moonLightContrast;
+    fVar4 = _UNK_? - fVar3;
     if (pLVar2 != (Light *)0x0) {
+      value.g = fVar4 + (this->fields)._moonTint.g * fVar3;
+      value.r = fVar4 + (this->fields)._moonTint.r * fVar3;
+      value.b = fVar4 + (this->fields)._moonTint.b * fVar3;
+      value.a = fVar4 + (this->fields)._moonTint.a * fVar3;
       UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color
-                (pLVar2,*pCVar3,(MethodInfo *)0x0);
-      auVar8._4_4_ = auVar7._8_4_;
-      auVar8._0_4_ = (this->fields)._cloudsHeight;
-      auVar8._8_4_ = 0;
-      auVar8 = auVar8 << 0x20;
-      fVar4 = (this->fields).moonAngle / _UNK_?;
+                (pLVar2,value,(MethodInfo *)0x0);
       pFVar1 = (this->fields)._moon;
       if (pFVar1 != (FlareLight *)0x0) {
-        pLVar2 = (Light *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::
-                          Json::Serialization::JsonProperty]::
-                          Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                    ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                                     pFVar1,(MethodInfo *)0x0);
+        pLVar2 = (pFVar1->fields).light;
         this_00 = (this->fields).lightIntensityByEmitterHeight;
         if (this_00 != (AnimationCurve *)0x0) {
-          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                            (this_00,fVar4 - auVar8._4_4_,(MethodInfo *)0x0);
+          fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                            (this_00,(this->fields).moonAngle / _UNK_? -
+                                     (this->fields)._cloudsHeight,(MethodInfo *)0x0);
           if (pLVar2 != (Light *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_intensity
-                      (pLVar2,(this->fields)._moonLightIntensity * fVar4,(MethodInfo *)0x0);
-            pSVar9 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                      *)(this->fields)._moon;
-            if (pSVar9 != (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                           *)0x0) {
-              pLVar10 = (LensFlare *)
-                       System.dll::System::Collections::Generic::
-                       SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                       ::Single,System::Object]::
-                       SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                 (pSVar9,(MethodInfo *)0x0);
-              pFVar1 = (this->fields)._moon;
-              if (pFVar1 != (FlareLight *)0x0) {
-                pLVar2 = (Light *)mscorlib.dll::System::Collections::ObjectModel::
-                                  Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::
-                                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_
-                                              *)pFVar1,(MethodInfo *)0x0);
-                if (pLVar2 != (Light *)0x0) {
-                  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
-                                    (pLVar2,(MethodInfo *)0x0);
-                  if (pLVar10 != (LensFlare *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
-                              (pLVar10,(this->fields)._moonFlareBrightness * fVar4,(MethodInfo *)0x0)
-                    ;
-                    pSVar9 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                              *)(this->fields)._moon;
-                    if (pSVar9 != (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                   *)0x0) {
-                      this_01 = (Behaviour *)
-                                System.dll::System::Collections::Generic::
-                                SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                                ::Single,System::Object]::
-                                SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                          (pSVar9,(MethodInfo *)0x0);
-                      pSVar9 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                *)(this->fields)._moon;
-                      if (pSVar9 != (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                     *)0x0) {
-                        pLVar10 = (LensFlare *)
-                                 System.dll::System::Collections::Generic::
-                                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                                 ::Single,System::Object]::
-                                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                           (pSVar9,(MethodInfo *)0x0);
-                        if (pLVar10 != (LensFlare *)0x0) {
-                          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::LensFlare::
-                                  LensFlare_get_brightness(pLVar10,(MethodInfo *)0x0);
-                          if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr &
-                               0x2000000) != 0) &&
-                             ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-                            func_?();
-                          }
-                          bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::
-                                  Mathf_Approximately(fVar4,0.0,(MethodInfo *)0x0);
-                          if (this_01 != (Behaviour *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
-                            Behaviour_set_enabled(this_01,bVar11 == 0,(MethodInfo *)0x0);
-                            return;
-                          }
-                        }
-                      }
+                      (pLVar2,fVar3 * (this->fields)._moonLightIntensity,(MethodInfo *)0x0);
+            pFVar1 = (this->fields)._moon;
+            if (pFVar1 != (FlareLight *)0x0) {
+              pLVar5 = (pFVar1->fields).lensFlare;
+              pLVar2 = (pFVar1->fields).light;
+              if (pLVar2 != (Light *)0x0) {
+                fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
+                                  (pLVar2,(MethodInfo *)0x0);
+                if (pLVar5 != (LensFlare *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
+                            (pLVar5,fVar3 * (this->fields)._moonFlareBrightness,(MethodInfo *)0x0);
+                  pFVar1 = (this->fields)._moon;
+                  if ((pFVar1 != (FlareLight *)0x0) &&
+                     (pLVar5 = (pFVar1->fields).lensFlare, pLVar5 != (LensFlare *)0x0)) {
+                    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::LensFlare::
+                            LensFlare_get_brightness(pLVar5,(MethodInfo *)0x0);
+                    if (cRam_? == '\0') {
+                      func_?();
+                      cRam_? = '\x01';
                     }
+                    fVar4 = (float)((uint)fVar3 & _UNK_?);
+                    if (fVar4 <= 0.0) {
+                      fVar4 = 0.0;
+                    }
+                    fVar6 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+                    fVar7 = fVar4 * _UNK_?;
+                    if (fVar4 * _UNK_? <= fVar6) {
+                      fVar7 = fVar6;
+                    }
+                    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                              ((Behaviour *)pLVar5,
+                               fVar7 <= (float)((uint)(0.0 - fVar3) & _UNK_?),
+                               (MethodInfo *)0x0);
+                    return;
                   }
                 }
               }
@@ -419,9 +339,9 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateMoonLight
       }
     }
   }
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -432,120 +352,62 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateSunLight
                (ThemeSkybox *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pFVar1 = (this->fields)._sun;
   if (pFVar1 != (FlareLight *)0x0) {
-    pLVar2 = (Light *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json
-                      ::Serialization::JsonProperty]::
-                      Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pFVar1,
-                                 (MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-              ((Vector4 *)&stack0xffffffe8,(Vector4)(this->fields)._sunTint,
-               (this->fields)._sunLightContrast,(MethodInfo *)0x0);
-    pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_white
-                       ((Color *)&stack0xffffffd8,(MethodInfo *)0x0);
-    d = _UNK_? - (this->fields)._sunLightContrast;
-    fVar4 = pCVar3->g;
-    fVar5 = pCVar3->b;
-    fVar6 = pCVar3->a;
-    pCVar3 = (Color *)UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                                ((Vector4 *)&stack0xffffffd8,(Vector4)*pCVar3,d,(MethodInfo *)0x0);
-    auVar7._4_4_ = fVar5;
-    auVar7._0_4_ = fVar4;
-    auVar7._8_4_ = fVar6;
-    a.a = d;
-    a.r = fVar4;
-    a.g = fVar5;
-    a.b = fVar6;
-    pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_op_Addition
-                       ((Color *)&stack0xffffffd8,a,*pCVar3,(MethodInfo *)0x0);
+    pLVar2 = (pFVar1->fields).light;
+    fVar3 = (this->fields)._sunLightContrast;
+    fVar4 = _UNK_? - fVar3;
     if (pLVar2 != (Light *)0x0) {
+      value.g = fVar4 + (this->fields)._sunTint.g * fVar3;
+      value.r = fVar4 + (this->fields)._sunTint.r * fVar3;
+      value.b = fVar4 + (this->fields)._sunTint.b * fVar3;
+      value.a = fVar4 + (this->fields)._sunTint.a * fVar3;
       UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color
-                (pLVar2,*pCVar3,(MethodInfo *)0x0);
-      auVar8._4_4_ = auVar7._8_4_;
-      auVar8._0_4_ = (this->fields)._cloudsHeight;
-      auVar8._8_4_ = 0;
-      auVar8 = auVar8 << 0x20;
-      fVar4 = (this->fields).sunAngle / _UNK_?;
+                (pLVar2,value,(MethodInfo *)0x0);
       pFVar1 = (this->fields)._sun;
       if (pFVar1 != (FlareLight *)0x0) {
-        pLVar2 = (Light *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::
-                          Json::Serialization::JsonProperty]::
-                          Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                    ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                                     pFVar1,(MethodInfo *)0x0);
+        pLVar2 = (pFVar1->fields).light;
         this_00 = (this->fields).lightIntensityByEmitterHeight;
         if (this_00 != (AnimationCurve *)0x0) {
-          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                            (this_00,fVar4 - auVar8._4_4_,(MethodInfo *)0x0);
+          fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                            (this_00,(this->fields).sunAngle / _UNK_? -
+                                     (this->fields)._cloudsHeight,(MethodInfo *)0x0);
           if (pLVar2 != (Light *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_intensity
-                      (pLVar2,(this->fields)._sunLightIntensity * fVar4,(MethodInfo *)0x0);
-            pSVar9 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                      *)(this->fields)._sun;
-            if (pSVar9 != (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                           *)0x0) {
-              pLVar10 = (LensFlare *)
-                       System.dll::System::Collections::Generic::
-                       SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                       ::Single,System::Object]::
-                       SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                 (pSVar9,(MethodInfo *)0x0);
-              pFVar1 = (this->fields)._sun;
-              if (pFVar1 != (FlareLight *)0x0) {
-                pLVar2 = (Light *)mscorlib.dll::System::Collections::ObjectModel::
-                                  Collection`1[Newtonsoft::Json::Serialization::JsonProperty]::
-                                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_
-                                              *)pFVar1,(MethodInfo *)0x0);
-                if (pLVar2 != (Light *)0x0) {
-                  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
-                                    (pLVar2,(MethodInfo *)0x0);
-                  if (pLVar10 != (LensFlare *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
-                              (pLVar10,(this->fields)._sunFlareBrightness * fVar4,(MethodInfo *)0x0);
-                    pSVar9 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                              *)(this->fields)._sun;
-                    if (pSVar9 != (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                   *)0x0) {
-                      this_01 = (Behaviour *)
-                                System.dll::System::Collections::Generic::
-                                SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                                ::Single,System::Object]::
-                                SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                          (pSVar9,(MethodInfo *)0x0);
-                      pSVar9 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                *)(this->fields)._sun;
-                      if (pSVar9 != (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                     *)0x0) {
-                        pLVar10 = (LensFlare *)
-                                 System.dll::System::Collections::Generic::
-                                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                                 ::Single,System::Object]::
-                                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                           (pSVar9,(MethodInfo *)0x0);
-                        if (pLVar10 != (LensFlare *)0x0) {
-                          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::LensFlare::
-                                  LensFlare_get_brightness(pLVar10,(MethodInfo *)0x0);
-                          if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr &
-                               0x2000000) != 0) &&
-                             ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-                            func_?();
-                          }
-                          bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::
-                                  Mathf_Approximately(fVar4,0.0,(MethodInfo *)0x0);
-                          if (this_01 != (Behaviour *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
-                            Behaviour_set_enabled(this_01,bVar11 == 0,(MethodInfo *)0x0);
-                            return;
-                          }
-                        }
-                      }
+                      (pLVar2,fVar3 * (this->fields)._sunLightIntensity,(MethodInfo *)0x0);
+            pFVar1 = (this->fields)._sun;
+            if (pFVar1 != (FlareLight *)0x0) {
+              pLVar5 = (pFVar1->fields).lensFlare;
+              pLVar2 = (pFVar1->fields).light;
+              if (pLVar2 != (Light *)0x0) {
+                fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
+                                  (pLVar2,(MethodInfo *)0x0);
+                if (pLVar5 != (LensFlare *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
+                            (pLVar5,fVar3 * (this->fields)._sunFlareBrightness,(MethodInfo *)0x0);
+                  pFVar1 = (this->fields)._sun;
+                  if ((pFVar1 != (FlareLight *)0x0) &&
+                     (pLVar5 = (pFVar1->fields).lensFlare, pLVar5 != (LensFlare *)0x0)) {
+                    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::LensFlare::
+                            LensFlare_get_brightness(pLVar5,(MethodInfo *)0x0);
+                    if (cRam_? == '\0') {
+                      func_?();
+                      cRam_? = '\x01';
                     }
+                    fVar4 = (float)((uint)fVar3 & _UNK_?);
+                    if (fVar4 <= 0.0) {
+                      fVar4 = 0.0;
+                    }
+                    fVar6 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+                    fVar7 = fVar4 * _UNK_?;
+                    if (fVar4 * _UNK_? <= fVar6) {
+                      fVar7 = fVar6;
+                    }
+                    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                              ((Behaviour *)pLVar5,
+                               fVar7 <= (float)((uint)(0.0 - fVar3) & _UNK_?),
+                               (MethodInfo *)0x0);
+                    return;
                   }
                 }
               }
@@ -555,9 +417,9 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateSunLight
       }
     }
   }
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -567,88 +429,66 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateSunLight
 void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox__ctor(ThemeSkybox *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  func_?(&fStack_1,0x3e7ced91,0x3ea2d0e5,0x3f0f9db2,0);
-  (this->fields)._topColor.r = fStack_1;
-  (this->fields)._topColor.g = fStack_2;
-  (this->fields)._topColor.b = fStack_3;
-  (this->fields)._topColor.a = fStack_4;
-  fStack_5 = 0.0;
-  fStack_6 = 0.0;
-  fStack_7 = 0.0;
-  fStack_8 = 0.0;
-  func_?(&fStack_5,0x3f45e354,0x3ee8f5c3,0x3f2e978d,0);
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields)._topColor.r = _UNK_?;
+  (this->fields)._topColor.g = fVar3;
+  (this->fields)._topColor.b = fVar2;
+  (this->fields)._topColor.a = fVar1;
   (this->fields).fogStartDist = 10.0;
-  (this->fields)._bottomColor.r = fStack_5;
-  (this->fields)._bottomColor.g = fStack_6;
-  (this->fields)._bottomColor.b = fStack_7;
-  (this->fields)._bottomColor.a = fStack_8;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields)._bottomColor.r = _UNK_?;
+  (this->fields)._bottomColor.g = fVar3;
+  (this->fields)._bottomColor.b = fVar2;
+  (this->fields)._bottomColor.a = fVar1;
   (this->fields).fogEndDist = 100.0;
-  pCVar9 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_grey
-                     (&CStack_10,(MethodInfo *)0x0);
-  fVar11 = pCVar9->r;
-  fVar12 = pCVar9->g;
-  fVar13 = pCVar9->b;
-  fVar14 = pCVar9->a;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields)._starsTint.r = _UNK_?;
+  (this->fields)._starsTint.g = fVar3;
+  (this->fields)._starsTint.b = fVar2;
+  (this->fields)._starsTint.a = fVar1;
   (this->fields)._starsExtinction = 2.0;
-  (this->fields)._starsTint.r = fVar11;
-  (this->fields)._starsTint.g = fVar12;
-  (this->fields)._starsTint.b = fVar13;
-  (this->fields)._starsTint.a = fVar14;
+  fVar4 = _UNK_?;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
   (this->fields)._starsTwinklingSpeed = 4.0;
-  pCVar9 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_grey
-                     (&CStack_10,(MethodInfo *)0x0);
-  fVar11 = pCVar9->r;
-  fVar12 = pCVar9->g;
-  fVar13 = pCVar9->b;
-  fVar14 = pCVar9->a;
+  (this->fields)._sunTint.r = fVar3;
+  (this->fields)._sunTint.g = fVar2;
+  (this->fields)._sunTint.b = fVar1;
+  (this->fields)._sunTint.a = fVar4;
   (this->fields)._sunSize = 1.0;
-  (this->fields)._sunTint.r = fVar11;
-  (this->fields)._sunTint.g = fVar12;
-  (this->fields)._sunTint.b = fVar13;
-  (this->fields)._sunTint.a = fVar14;
+  fVar4 = _UNK_?;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
   (this->fields)._sunFlareBrightness = 0.3;
   (this->fields)._sunLightContrast = 0.5;
   (this->fields)._sunLightIntensity = 1.0;
-  pCVar9 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_grey
-                     (&CStack_10,(MethodInfo *)0x0);
-  fVar11 = pCVar9->r;
-  fVar12 = pCVar9->g;
-  fVar13 = pCVar9->b;
-  fVar14 = pCVar9->a;
+  (this->fields)._moonTint.r = fVar3;
+  (this->fields)._moonTint.g = fVar2;
+  (this->fields)._moonTint.b = fVar1;
+  (this->fields)._moonTint.a = fVar4;
   (this->fields)._moonSize = 1.0;
   (this->fields)._moonFlareBrightness = 0.3;
-  (this->fields)._moonTint.r = fVar11;
-  (this->fields)._moonTint.g = fVar12;
-  (this->fields)._moonTint.b = fVar13;
-  (this->fields)._moonTint.a = fVar14;
   (this->fields)._moonLightContrast = 0.5;
   (this->fields)._moonLightIntensity = 1.0;
   (this->fields)._cloudsOffset = 0.2;
   (this->fields)._cloudsRotationSpeed = 1.0;
   (this->fields)._exposure = 1.0;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
-}
-
-
-/* Color get_BottomColor() */
-
-Color * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_BottomColor
-                  (Color *__return_storage_ptr__,ThemeSkybox *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._bottomColor.g;
-  fVar2 = (this->fields)._bottomColor.b;
-  fVar3 = (this->fields)._bottomColor.a;
-  __return_storage_ptr__->r = (this->fields)._bottomColor.r;
-  __return_storage_ptr__->g = fVar1;
-  __return_storage_ptr__->b = fVar2;
-  __return_storage_ptr__->a = fVar3;
-  return __return_storage_ptr__;
 }
 
 
@@ -658,28 +498,15 @@ Camera * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_Camera
                    (ThemeSkybox *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (pMVar1 != (MainCameraManager *)0x0) {
+    return (pMVar1->fields).mainCamera;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_00 != (MainCameraManager *)0x0) {
-    pCVar1 = (Camera *)
-             mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                        (MethodInfo *)0x0);
-    return pCVar1;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pCVar1 = (Camera *)(*pcVar2)();
-  return pCVar1;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pCVar5 = (Camera *)(*pcVar4)();
+  return pCVar5;
 }
 
 
@@ -690,16 +517,6 @@ float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_CloudsHeight
 
 {
   return (this->fields)._cloudsHeight;
-}
-
-
-/* Single get_CloudsOffset() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_CloudsOffset
-                (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields)._cloudsOffset;
 }
 
 
@@ -723,63 +540,6 @@ float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_Exposure
 }
 
 
-/* Single get_FogDensity() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_FogDensity
-                (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields).fogDensity;
-}
-
-
-/* Boolean get_FogEnabled() */
-
-bool Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_FogEnabled
-               (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields).fogEnabled;
-}
-
-
-/* Single get_FogEndDistance() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_FogEndDistance
-                (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields).fogEndDist;
-}
-
-
-/* Single get_FogStartDistance() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_FogStartDistance
-                (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields).fogStartDist;
-}
-
-
-/* LensFlare get_MoonFlare() */
-
-LensFlare *
-Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonFlare(ThemeSkybox *this,MethodInfo *method)
-
-{
-  pFVar1 = (this->fields)._moon;
-  if (pFVar1 != (FlareLight *)0x0) {
-    return (pFVar1->fields).lensFlare;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (LensFlare *)(*pcVar2)();
-  return pLVar3;
-}
-
-
 /* Single get_MoonFlareBrightness() */
 
 float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonFlareBrightness
@@ -787,23 +547,6 @@ float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonFlareBrightness
 
 {
   return (this->fields)._moonFlareBrightness;
-}
-
-
-/* Light get_MoonLight() */
-
-Light * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonLight
-                  (ThemeSkybox *this,MethodInfo *method)
-
-{
-  pFVar1 = (this->fields)._moon;
-  if (pFVar1 != (FlareLight *)0x0) {
-    return (pFVar1->fields).light;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (Light *)(*pcVar2)();
-  return pLVar3;
 }
 
 
@@ -817,16 +560,6 @@ float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonLightContrast
 }
 
 
-/* Single get_MoonLightIntensity() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonLightIntensity
-                (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields)._moonLightIntensity;
-}
-
-
 /* Quaternion get_MoonRotation() */
 
 Quaternion *
@@ -836,8 +569,8 @@ Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonRotation
 {
   this_00 = (this->fields)._sun;
   if (this_00 != (FlareLight *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                          ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
@@ -858,70 +591,21 @@ Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonRotation
 }
 
 
-/* Single get_MoonSize() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonSize
-                (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields)._moonSize;
-}
-
-
-/* Color get_MoonTint() */
-
-Color * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonTint
-                  (Color *__return_storage_ptr__,ThemeSkybox *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._moonTint.g;
-  fVar2 = (this->fields)._moonTint.b;
-  fVar3 = (this->fields)._moonTint.a;
-  __return_storage_ptr__->r = (this->fields)._moonTint.r;
-  __return_storage_ptr__->g = fVar1;
-  __return_storage_ptr__->b = fVar2;
-  __return_storage_ptr__->a = fVar3;
-  return __return_storage_ptr__;
-}
-
-
 /* Skybox get_Skybox() */
 
 Skybox * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_Skybox
                    (ThemeSkybox *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (pMVar1 != (MainCameraManager *)0x0) {
+    return (pMVar1->fields).skybox;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_00 != (MainCameraManager *)0x0) {
-    pSVar1 = (Skybox *)
-             UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-             TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-             TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                       ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)this_00,(MethodInfo *)0x0);
-    return pSVar1;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (Skybox *)(*pcVar2)();
-  return pSVar1;
-}
-
-
-/* Single get_StarsExtinction() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_StarsExtinction
-                (ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields)._starsExtinction;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (Skybox *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -958,14 +642,16 @@ LensFlare *
 Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_SunFlare(ThemeSkybox *this,MethodInfo *method)
 
 {
-  pFVar1 = (this->fields)._sun;
-  if (pFVar1 != (FlareLight *)0x0) {
-    return (pFVar1->fields).lensFlare;
+  puStack_1 = &stack0xfffffffc;
+  pFVar2 = (this->fields)._sun;
+  if (pFVar2 != (FlareLight *)0x0) {
+    return (pFVar2->fields).lensFlare;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (LensFlare *)(*pcVar2)();
-  return pLVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  pLVar6 = (LensFlare *)(*pcVar5)();
+  return pLVar6;
 }
 
 
@@ -985,14 +671,16 @@ Light * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_SunLight
                   (ThemeSkybox *this,MethodInfo *method)
 
 {
-  pFVar1 = (this->fields)._sun;
-  if (pFVar1 != (FlareLight *)0x0) {
-    return (pFVar1->fields).light;
+  puStack_1 = &stack0xfffffffc;
+  pFVar2 = (this->fields)._sun;
+  if (pFVar2 != (FlareLight *)0x0) {
+    return (pFVar2->fields).light;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (Light *)(*pcVar2)();
-  return pLVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  pLVar6 = (Light *)(*pcVar5)();
+  return pLVar6;
 }
 
 
@@ -1050,7 +738,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_BottomColor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__BottomColor);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).skyboxMaterial;
@@ -1059,38 +747,25 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_BottomColor
   (this->fields)._bottomColor.b = value.b;
   (this->fields)._bottomColor.a = value.a;
   if (this_00 != (Material *)0x0) {
-    value_01.y = value.g;
-    value_01.x = value.r;
-    value_01.z = value.b;
-    value_01.w = value.a;
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-              (this_00,StringLiteral__BottomColor,value_01,(MethodInfo *)0x0);
-    value.g = (this->fields)._exposure;
-    value.b = 0.0;
-    value.r = (this->fields)._bottomColor.a;
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                       ((Vector4 *)&value,(Vector4)(this->fields)._bottomColor,value.g,
-                        (MethodInfo *)0x0);
-    value.r = pVVar1->x;
-    value.g = pVVar1->y;
-    value.b = pVVar1->z;
-    uVar2 = pVVar1->x;
-    uVar3 = pVVar1->y;
-    uVar4 = pVVar1->z;
-    value_00.b = (float)uVar4;
-    value_00.g = (float)uVar3;
-    value_00.r = (float)uVar2;
-    value.a = 1.0;
+              (this_00,StringLiteral__BottomColor,(Vector4)value,(MethodInfo *)0x0);
+    fVar1 = (this->fields)._exposure;
+    method_00 = (MethodInfo *)((this->fields)._bottomColor.b * fVar1);
+    value_00.g = (this->fields)._bottomColor.g * fVar1;
+    value_00.r = (this->fields)._bottomColor.r * fVar1;
+    value_00.b = (float)method_00;
     value_00.a = 1.0;
     UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_fogColor
-              (value_00,(MethodInfo *)0x0);
+              (value_00,method_00);
+    fStack2 = (this->fields)._bottomColor.b;
+    fStack3 = (this->fields)._bottomColor.a;
     UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_ambientLight
               ((this->fields)._bottomColor,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1102,7 +777,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_CloudsHeight
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__CloudsHeight);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).skyboxMaterial;
@@ -1128,7 +803,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_CloudsOffset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   (this->fields)._cloudsOffset = value;
@@ -1138,9 +813,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_CloudsOffset
               (this_00,StringLiteral__CloudsOffset,value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1152,7 +828,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_CloudsRotationSpeed
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   (this->fields)._cloudsRotationSpeed = value;
@@ -1162,9 +838,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_CloudsRotationSpeed
               (this_00,StringLiteral__CloudsRotationSpeed,value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1176,7 +853,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_Exposure
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__Exposure);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).skyboxMaterial;
@@ -1184,23 +861,22 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_Exposure
   if (this_00 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
               (this_00,StringLiteral__Exposure,value,(MethodInfo *)0x0);
-    pCVar1 = (Color *)UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                                ((Vector4 *)&stack0xffffffec,(Vector4)(this->fields)._bottomColor,
-                                 (this->fields)._exposure,(MethodInfo *)0x0);
+    fVar1 = (this->fields)._exposure;
+    CVar2.g = (this->fields)._bottomColor.g * fVar1;
+    CVar2.r = (this->fields)._bottomColor.r * fVar1;
+    CVar2.b = (this->fields)._bottomColor.b * fVar1;
+    CVar2.a = (this->fields)._bottomColor.a * fVar1;
     UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_ambientLight
-              (*pCVar1,(MethodInfo *)0x0);
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4_op_Multiply
-                       ((Vector4 *)&stack0xffffffec,(Vector4)(this->fields)._bottomColor,
-                        (this->fields)._exposure,(MethodInfo *)0x0);
-    uVar3 = pVVar2->x;
-    uVar4 = pVVar2->y;
-    uVar5 = pVVar2->z;
-    value_00.b = (float)uVar5;
-    value_00.g = (float)uVar4;
-    value_00.r = (float)uVar3;
-    value_00.a = 1.0;
+              (CVar2,(MethodInfo *)0x0);
+    pTVar3 = &this->fields;
+    fVar1 = (this->fields)._exposure;
+    _fStack_8 = CONCAT44((this->fields)._bottomColor.g * fVar1,(this->fields)._bottomColor.r * fVar1
+                        );
+    this = (ThemeSkybox *)0x3f800000;
+    fVar4 = (pTVar3->_bottomColor).b * fVar1;
+    CVar2 = (Color)CONCAT88(uVar5,_fStack_8);
     UnityEngine.CoreModule.dll::UnityEngine::RenderSettings::RenderSettings_set_fogColor
-              (value_00,(MethodInfo *)0x0);
+              (CVar2,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -1269,13 +945,13 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonAxisDegrees
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_moonMatrix);
     cRam_? = '\x01';
   }
   pFVar1 = (this->fields)._moon;
   if (pFVar1 != (FlareLight *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pFVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles
                          (&VStack_4,pTVar2,(MethodInfo *)0x0);
@@ -1284,8 +960,8 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonAxisDegrees
       pFVar1 = (this->fields)._moon;
       uStack_7 = CONCAT44(value,uVar5);
       if (pFVar1 != (FlareLight *)0x0) {
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pFVar1,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
           value_00.z = fVar6;
           value_00.x = (float)(undefined4)uStack_7;
@@ -1295,8 +971,8 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonAxisDegrees
           pFVar1 = (this->fields)._moon;
           this_00 = (this->fields).skyboxMaterial;
           if (pFVar1 != (FlareLight *)0x0) {
-            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pFVar1,(MethodInfo *)0x0);
             if (pTVar2 != (Transform *)0x0) {
               pMVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                        Transform_get_worldToLocalMatrix
@@ -1312,7 +988,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonAxisDegrees
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -1325,39 +1001,24 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonFlareBrightness
                (ThemeSkybox *this,float value,MethodInfo *method)
 
 {
-  this_00 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-             *)(this->fields)._moon;
+  pFVar1 = (this->fields)._moon;
   (this->fields)._moonFlareBrightness = value;
-  if (this_00 !=
-      (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-       *)0x0) {
-    this_02 = (LensFlare *)
-              System.dll::System::Collections::Generic::
-              SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-              Single,System::Object]::
-              SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
+  if (pFVar1 != (FlareLight *)0x0) {
+    this_00 = (pFVar1->fields).light;
+    this_01 = (pFVar1->fields).lensFlare;
+    if (this_00 != (Light *)0x0) {
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
                         (this_00,(MethodInfo *)0x0);
-    this_01 = (this->fields)._moon;
-    if (this_01 != (FlareLight *)0x0) {
-      this_03 = (Light *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::
-                         Json::Serialization::JsonProperty]::
-                         Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                   ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                                    this_01,(MethodInfo *)0x0);
-      if (this_03 != (Light *)0x0) {
-        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
-                          (this_03,(MethodInfo *)0x0);
-        if (this_02 != (LensFlare *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
-                    (this_02,fVar1 * value,(MethodInfo *)0x0);
-          return;
-        }
+      if (this_01 != (LensFlare *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
+                  (this_01,fVar2 * value,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1369,59 +1030,51 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonHeight
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_moonMatrix);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  fVar1 = value * _UNK_?;
+  fVar2 = _UNK_?;
+  if ((_UNK_? <= fVar1) && (fVar2 = fVar1, _UNK_? < fVar1)) {
+    fVar2 = _UNK_?;
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-                    (value * _UNK_?,-90.0,90.0,(MethodInfo *)0x0);
-  pFVar2 = (this->fields)._moon;
-  (this->fields).moonAngle = fVar1;
-  if (pFVar2 != (FlareLight *)0x0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pFVar2,(MethodInfo *)0x0);
-    if (pTVar3 != (Transform *)0x0) {
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles
-                         ((Vector3 *)&stack0xffffffe4,pTVar3,(MethodInfo *)0x0);
-      uVar5 = pVVar4->y;
-      fVar6 = pVVar4->z;
-      pFVar2 = (this->fields)._moon;
-      fVar1 = (this->fields).moonAngle;
-      if (pFVar2 != (FlareLight *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pFVar2,(MethodInfo *)0x0);
-        if (pTVar3 != (Transform *)0x0) {
-          value_00.y = (float)uVar5;
-          value_00.x = fVar1;
-          value_00.z = fVar6;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles
-                    (pTVar3,value_00,(MethodInfo *)0x0);
-          pFVar2 = (this->fields)._moon;
-          this_00 = (this->fields).skyboxMaterial;
-          if (pFVar2 != (FlareLight *)0x0) {
-            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pFVar2,(MethodInfo *)0x0);
-            if (pTVar3 != (Transform *)0x0) {
-              pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                       Transform_get_worldToLocalMatrix
-                                 ((Matrix4x4 *)&stack0xffffffa4,pTVar3,(MethodInfo *)0x0);
-              if (this_00 != (Material *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
-                          (this_00,StringLiteral_moonMatrix,*pMVar7,(MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
-        }
+  pFVar3 = (this->fields)._moon;
+  (this->fields).moonAngle = fVar2;
+  if ((pFVar3 != (FlareLight *)0x0) &&
+     (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pFVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles
+                       (&VStack_6,pTVar4,(MethodInfo *)0x0);
+    uVar7 = pVVar5->y;
+    fVar2 = pVVar5->z;
+    pFVar3 = (this->fields)._moon;
+    uStack_8 = CONCAT44(uVar7,(this->fields).moonAngle);
+    if ((pFVar3 != (FlareLight *)0x0) &&
+       (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pFVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+      value_00.z = fVar2;
+      value_00.x = (float)(undefined4)uStack_8;
+      value_00.y = (float)uStack_8._4_4_;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles
+                (pTVar4,value_00,(MethodInfo *)0x0);
+      pFVar3 = (this->fields)._moon;
+      this_00 = (this->fields).skyboxMaterial;
+      if (((pFVar3 != (FlareLight *)0x0) &&
+          (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pFVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0))
+         && (pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                      Transform_get_worldToLocalMatrix
+                                ((Matrix4x4 *)&stack0xffffffa4,pTVar4,(MethodInfo *)0x0),
+            this_00 != (Material *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
+                  (this_00,StringLiteral_moonMatrix,*pMVar9,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1457,21 +1110,21 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonRotation
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_moonMatrix);
     cRam_? = '\x01';
   }
   pFVar1 = (this->fields)._moon;
   if (pFVar1 != (FlareLight *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pFVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                 (pTVar2,value,(MethodInfo *)0x0);
       pFVar1 = (this->fields)._moon;
       this_00 = (this->fields).skyboxMaterial;
       if (pFVar1 != (FlareLight *)0x0) {
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pFVar1,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
           pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                    Transform_get_worldToLocalMatrix
@@ -1485,7 +1138,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonRotation
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -1499,7 +1152,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonSize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   (this->fields)._moonSize = value;
@@ -1509,9 +1162,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonSize
               (this_00,StringLiteral__MoonSize,value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1523,7 +1177,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonTint
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).skyboxMaterial;
@@ -1536,9 +1190,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_MoonTint
               (this_00,StringLiteral__MoonTint,(Vector4)value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1550,7 +1205,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_StarsExtinction
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   (this->fields)._starsExtinction = value;
@@ -1560,9 +1215,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_StarsExtinction
               (this_00,StringLiteral__StarsExtinction,value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1574,7 +1230,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_StarsTint
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).skyboxMaterial;
@@ -1587,9 +1243,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_StarsTint
               (this_00,StringLiteral__StarsTint,(Vector4)value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1601,7 +1258,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_StarsTwinklingSpeed
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   (this->fields)._starsTwinklingSpeed = value;
@@ -1611,9 +1268,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_StarsTwinklingSpeed
               (this_00,StringLiteral__StarsTwinklingSpeed,value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1625,13 +1283,13 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunAxisDegrees
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_sunMatrix);
     cRam_? = '\x01';
   }
   pFVar1 = (this->fields)._sun;
   if (pFVar1 != (FlareLight *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pFVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles
                          (&VStack_4,pTVar2,(MethodInfo *)0x0);
@@ -1640,8 +1298,8 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunAxisDegrees
       pFVar1 = (this->fields)._sun;
       uStack_7 = CONCAT44(value,uVar5);
       if (pFVar1 != (FlareLight *)0x0) {
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pFVar1,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
           value_00.z = fVar6;
           value_00.x = (float)(undefined4)uStack_7;
@@ -1651,8 +1309,8 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunAxisDegrees
           pFVar1 = (this->fields)._sun;
           this_00 = (this->fields).skyboxMaterial;
           if (pFVar1 != (FlareLight *)0x0) {
-            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pFVar1,(MethodInfo *)0x0);
             if (pTVar2 != (Transform *)0x0) {
               pMVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                        Transform_get_worldToLocalMatrix
@@ -1668,7 +1326,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunAxisDegrees
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -1694,59 +1352,51 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunHeight
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_sunMatrix);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  fVar1 = value * _UNK_?;
+  fVar2 = _UNK_?;
+  if ((_UNK_? <= fVar1) && (fVar2 = fVar1, _UNK_? < fVar1)) {
+    fVar2 = _UNK_?;
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-                    (value * _UNK_?,-90.0,90.0,(MethodInfo *)0x0);
-  pFVar2 = (this->fields)._sun;
-  (this->fields).sunAngle = fVar1;
-  if (pFVar2 != (FlareLight *)0x0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pFVar2,(MethodInfo *)0x0);
-    if (pTVar3 != (Transform *)0x0) {
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles
-                         ((Vector3 *)&stack0xffffffe4,pTVar3,(MethodInfo *)0x0);
-      uVar5 = pVVar4->y;
-      fVar6 = pVVar4->z;
-      pFVar2 = (this->fields)._sun;
-      fVar1 = (this->fields).sunAngle;
-      if (pFVar2 != (FlareLight *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pFVar2,(MethodInfo *)0x0);
-        if (pTVar3 != (Transform *)0x0) {
-          value_00.y = (float)uVar5;
-          value_00.x = fVar1;
-          value_00.z = fVar6;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles
-                    (pTVar3,value_00,(MethodInfo *)0x0);
-          pFVar2 = (this->fields)._sun;
-          this_00 = (this->fields).skyboxMaterial;
-          if (pFVar2 != (FlareLight *)0x0) {
-            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pFVar2,(MethodInfo *)0x0);
-            if (pTVar3 != (Transform *)0x0) {
-              pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                       Transform_get_worldToLocalMatrix
-                                 ((Matrix4x4 *)&stack0xffffffa4,pTVar3,(MethodInfo *)0x0);
-              if (this_00 != (Material *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
-                          (this_00,StringLiteral_sunMatrix,*pMVar7,(MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
-        }
+  pFVar3 = (this->fields)._sun;
+  (this->fields).sunAngle = fVar2;
+  if ((pFVar3 != (FlareLight *)0x0) &&
+     (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pFVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles
+                       (&VStack_6,pTVar4,(MethodInfo *)0x0);
+    uVar7 = pVVar5->y;
+    fVar2 = pVVar5->z;
+    pFVar3 = (this->fields)._sun;
+    uStack_8 = CONCAT44(uVar7,(this->fields).sunAngle);
+    if ((pFVar3 != (FlareLight *)0x0) &&
+       (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pFVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+      value_00.z = fVar2;
+      value_00.x = (float)(undefined4)uStack_8;
+      value_00.y = (float)uStack_8._4_4_;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles
+                (pTVar4,value_00,(MethodInfo *)0x0);
+      pFVar3 = (this->fields)._sun;
+      this_00 = (this->fields).skyboxMaterial;
+      if (((pFVar3 != (FlareLight *)0x0) &&
+          (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pFVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0))
+         && (pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                      Transform_get_worldToLocalMatrix
+                                ((Matrix4x4 *)&stack0xffffffa4,pTVar4,(MethodInfo *)0x0),
+            this_00 != (Material *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
+                  (this_00,StringLiteral_sunMatrix,*pMVar9,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1782,21 +1432,21 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunRotation
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_sunMatrix);
     cRam_? = '\x01';
   }
   pFVar1 = (this->fields)._sun;
   if (pFVar1 != (FlareLight *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pFVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                 (pTVar2,value,(MethodInfo *)0x0);
       pFVar1 = (this->fields)._sun;
       this_00 = (this->fields).skyboxMaterial;
       if (pFVar1 != (FlareLight *)0x0) {
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pFVar1,(MethodInfo *)0x0);
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pFVar1,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
           pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                    Transform_get_worldToLocalMatrix
@@ -1810,7 +1460,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunRotation
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -1824,7 +1474,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunSize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   (this->fields)._sunSize = value;
@@ -1834,9 +1484,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunSize
               (this_00,StringLiteral__SunSize,value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1848,7 +1499,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunTint
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).skyboxMaterial;
@@ -1861,9 +1512,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_SunTint
               (this_00,StringLiteral__SunTint,(Vector4)value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1875,7 +1527,7 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_TopColor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).skyboxMaterial;
@@ -1888,9 +1540,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_set_TopColor
               (this_00,StringLiteral__TopColor,(Vector4)value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

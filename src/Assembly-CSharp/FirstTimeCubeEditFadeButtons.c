@@ -81,19 +81,18 @@ bool Assembly-CSharp.dll::FirstTimeCubeEditFadeButtons::FirstTimeCubeEditFadeBut
 
 {
   this_00 = (this->fields).canvasGroup;
-  if (this_00 != (CanvasGroup *)0x0) {
-    bVar1 = UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_interactable
-                      (this_00,(MethodInfo *)0x0);
-    bVar2 = 1;
-    if (bVar1 == 0) {
-      bVar2 = (this->fields).doFading;
-    }
-    return bVar2 != 0;
+  if (this_00 == (CanvasGroup *)0x0) {
+    func_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  bVar2 = UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_interactable
+                    (this_00,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    return 1;
+  }
+  return (this->fields).doFading;
 }
 
 
@@ -103,47 +102,44 @@ void Assembly-CSharp.dll::FirstTimeCubeEditFadeButtons::FirstTimeCubeEditFadeBut
                (FirstTimeCubeEditFadeButtons *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if ((this->fields).doFading == 0) {
     return;
   }
   fVar1 = (this->fields).currentTime;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar3 = _UNK_?;
   fVar2 = fVar2 + fVar1;
-  pCVar3 = (this->fields).canvasGroup;
-  fVar1 = (this->fields).fadeIn;
+  pCVar4 = (this->fields).canvasGroup;
   (this->fields).currentTime = fVar2;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  fVar2 = fVar2 / (this->fields).fadeIn;
+  if (fVar2 < 0.0) {
+    fVar2 = 0.0;
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                    (fVar2 / fVar1,(MethodInfo *)0x0);
-  if (pCVar3 != (CanvasGroup *)0x0) {
+  else if (fVar3 < fVar2) {
+    fVar2 = fVar3;
+  }
+  if (pCVar4 != (CanvasGroup *)0x0) {
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar3,fVar1,(MethodInfo *)0x0);
+              (pCVar4,fVar2,(MethodInfo *)0x0);
     if ((this->fields).currentTime < (this->fields).fadeIn) {
       return;
     }
-    pCVar3 = (this->fields).canvasGroup;
+    pCVar4 = (this->fields).canvasGroup;
     (this->fields).doFading = 0;
-    if (pCVar3 != (CanvasGroup *)0x0) {
+    if (pCVar4 != (CanvasGroup *)0x0) {
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (pCVar3,1.0,(MethodInfo *)0x0);
-      pCVar3 = (this->fields).canvasGroup;
-      if (pCVar3 != (CanvasGroup *)0x0) {
+                (pCVar4,1.0,(MethodInfo *)0x0);
+      pCVar4 = (this->fields).canvasGroup;
+      if (pCVar4 != (CanvasGroup *)0x0) {
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_interactable
-                  (pCVar3,1,(MethodInfo *)0x0);
+                  (pCVar4,1,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -156,11 +152,10 @@ void Assembly-CSharp.dll::FirstTimeCubeEditFadeButtons::FirstTimeCubeEditFadeBut
 {
   (this->fields).fadeIn = 0.2;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

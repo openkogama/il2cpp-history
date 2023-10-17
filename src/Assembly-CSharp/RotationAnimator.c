@@ -5,10 +5,6 @@ void Assembly-CSharp.dll::RotationAnimator::RotationAnimator_Update
                (RotationAnimator *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   this_00 = (this->fields).rotateCurve;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_timeSinceLevelLoad
                     ((MethodInfo *)0x0);
@@ -16,22 +12,21 @@ void Assembly-CSharp.dll::RotationAnimator::RotationAnimator_Update
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_00,(this->fields).rotateSpeed * fVar1,(MethodInfo *)0x0);
     this_01 = (Transform *)(this->fields).rotateTarget;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Euler
-                       ((Quaternion *)&stack0xffffffec,0.0,0.0,
-                        (float)((uint)fVar1 ^ _UNK_?) * _UNK_?,(MethodInfo *)0x0);
+    auVar2._4_8_ = 0;
+    auVar2._0_4_ = (float)((uint)fVar1 ^
+                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                   * _UNK_? * _UNK_?;
+    pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                       ((Quaternion *)&stack0xffffffec,(Vector3)(auVar2 << 0x40),(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (this_01,*pQVar2,(MethodInfo *)0x0);
+                (this_01,*pQVar3,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

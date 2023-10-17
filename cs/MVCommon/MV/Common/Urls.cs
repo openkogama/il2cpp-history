@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -20,8 +20,12 @@ namespace MV.Common
 		private static string api;
 	
 		// Properties
+		public static string Badges { get; }
+		public static string XPData { get; }
 		public static string XPLimit { get; }
 		public static string Level { get; }
+		public static string XP { get; }
+		public static string UpdateXP { get; }
 		public static string InitialData { get; }
 		public static string StreamingAssets { get; }
 		public static string API { get; }

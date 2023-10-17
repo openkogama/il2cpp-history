@@ -9,9 +9,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent]
+[RequireComponent(typeof(Toggle))]
 public class SettingsToggle : MonoBehaviour
 {
 	// Fields
@@ -21,17 +21,17 @@ public class SettingsToggle : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ValueChanged_c__AnonStorey0
+	private sealed class __c__DisplayClass3_0
 	{
 		// Fields
-		internal bool value;
-		internal SettingsToggle _this;
+		public SettingsToggle __4__this;
+		public bool value;
 
 		// Constructors
-		public _ValueChanged_c__AnonStorey0();
+		public __c__DisplayClass3_0();
 
 		// Methods
-		internal void __m__0(IHandleSettingChanged handler, BaseEventData data);
+		internal void _ValueChanged_b__0(IHandleSettingChanged handler, BaseEventData data);
 	}
 
 	// Constructors

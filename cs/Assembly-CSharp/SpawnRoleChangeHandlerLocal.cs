@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleChangeHandlerLocal : ISpawnRoleChangeHandler
 {

@@ -14,10 +14,10 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimedParentToGameobject::
             ((FirstTimeActivatablePopupTimed *)this,(MethodInfo *)0x0);
   this_00 = (this->fields)._.createdPopup;
   if (this_00 != (CanvasGroup *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
-    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                 (this_01,parent,0,(MethodInfo *)0x0);
@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimedParentToGameobject::
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -46,11 +46,10 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimedParentToGameobject::
   (this->fields)._._.prerequisiteEvent = -1;
   (this->fields)._._.checkForStackBlocking = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

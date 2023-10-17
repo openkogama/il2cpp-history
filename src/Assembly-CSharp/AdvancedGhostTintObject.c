@@ -6,65 +6,68 @@ void Assembly-CSharp.dll::AdvancedGhostTintObject::AdvancedGhostTintObject_TeamT
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
-  index = (IEventSystemHandler__Class *)0x0;
-  pLVar1 = (this->fields).teamIrisObjects;
-  if (pLVar1 != (List_1_OculusTeamGameObject_ *)0x0) {
+  MVar1 = MVTeam__Enum_Server;
+  if (team != MVTeam__Enum_None) {
+    MVar1 = team;
+  }
+  index = 0;
+  pLVar2 = (this->fields).teamIrisObjects;
+  if (pLVar2 != (List_1_OculusTeamGameObject_ *)0x0) {
     while( true ) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                          MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Count__
-                         );
-      if ((int)pOVar2 <= (int)index) {
+      if ((pLVar2->fields)._size <= index) {
         return;
       }
-      pLVar1 = (this->fields).teamIrisObjects;
-      if (((pLVar1 == (List_1_OculusTeamGameObject_ *)0x0) ||
-          (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                    IEventSystemHandler]::
-                    List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                              ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                               (int32_t)index,
-                               MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                              ), pIVar3 == (IEventSystemHandler *)0x0)) ||
-         ((GameObject *)pIVar3[1].monitor == (GameObject *)0x0)) break;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                ((GameObject *)pIVar3[1].monitor,0,(MethodInfo *)0x0);
-      pLVar1 = (this->fields).teamIrisObjects;
-      if ((pLVar1 == (List_1_OculusTeamGameObject_ *)0x0) ||
-         (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                   IEventSystemHandler]::
-                   List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                             ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                              (int32_t)index,
+      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).teamIrisObjects;
+      if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+          (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   RegularExpressions::RegexCharClass+SingleRange]::
+                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                             (pLVar3,index,
                               MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                             ), pIVar3 == (IEventSystemHandler *)0x0)) break;
-      if (pIVar3[1].klass == index) {
-        pLVar1 = (this->fields).teamIrisObjects;
-        if (((pLVar1 == (List_1_OculusTeamGameObject_ *)0x0) ||
-            (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                      IEventSystemHandler]::
-                      List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                                 (int32_t)index,
-                                 MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                                ), pIVar3 == (IEventSystemHandler *)0x0)) ||
-           ((GameObject *)pIVar3[1].monitor == (GameObject *)0x0)) break;
+                             ), RVar4 == (RegexCharClass_SingleRange)0x0)) ||
+         (*(GameObject **)((int)RVar4 + 0xc) == (GameObject *)0x0)) break;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (*(GameObject **)((int)RVar4 + 0xc),0,(MethodInfo *)0x0);
+      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).teamIrisObjects;
+      if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+         (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (pLVar3,index,
+                             MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
+                            ), RVar4 == (RegexCharClass_SingleRange)0x0)) break;
+      if (*(MVTeam__Enum *)((int)RVar4 + 8) == MVar1) {
+        pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).teamIrisObjects;
+        if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+            (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                     RegularExpressions::RegexCharClass+SingleRange]::
+                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                               (pLVar3,index,
+                                MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
+                               ), RVar4 == (RegexCharClass_SingleRange)0x0)) ||
+           (*(GameObject **)((int)RVar4 + 0xc) == (GameObject *)0x0)) break;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  ((GameObject *)pIVar3[1].monitor,1,(MethodInfo *)0x0);
+                  (*(GameObject **)((int)RVar4 + 0xc),1,(MethodInfo *)0x0);
       }
-      pLVar1 = (this->fields).teamIrisObjects;
-      index = (IEventSystemHandler__Class *)((int)&(index->_0).image + 1);
-      if (pLVar1 == (List_1_OculusTeamGameObject_ *)0x0) break;
+      pLVar2 = (this->fields).teamIrisObjects;
+      index = index + 1;
+      if (pLVar2 == (List_1_OculusTeamGameObject_ *)0x0) break;
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -76,11 +79,11 @@ void Assembly-CSharp.dll::AdvancedGhostTintObject::AdvancedGhostTintObject_Tint
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Attempting_to_tint_oculus_object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning

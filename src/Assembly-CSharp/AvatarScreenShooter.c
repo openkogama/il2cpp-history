@@ -6,32 +6,28 @@ void Assembly-CSharp.dll::AvatarScreenShooter::AvatarScreenShooter_ScreenShotDat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   obj = (this->fields).bodyCloneGO;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
             ((Object_1 *)obj,(MethodInfo *)0x0);
-  this_00 = (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)
-            (this->fields).callback;
   (this->fields).bodyCloneGO = (GameObject *)0x0;
+  func_?(&(this->fields).bodyCloneGO,0);
+  pAVar1 = (this->fields).callback;
   (this->fields).isMakingScreenShot = 0;
-  if (this_00 != (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)0x0) {
-    System.Core.dll::System::Action`2[Object,UnityEngine::ReflectionProbe+ReflectionProbeEvent]::
-    Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent__Invoke
-              (this_00,(Object *)screenshotTex,
-               (ReflectionProbe_ReflectionProbeEvent__Enum)(this->fields).successMessage,
-               MethodInfo__System__Action<UnityEngine::Texture2D,_System::String>__Invoke_UnityEngine__Texture2D__System__String_
-              );
+  if (pAVar1 != (Action_2_UnityEngine_Texture2D_String_ *)0x0) {
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,screenshotTex,(this->fields).successMessage,
+               (pAVar1->fields)._._.method);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -44,102 +40,109 @@ void Assembly-CSharp.dll::AvatarScreenShooter::AvatarScreenShooter_TakeScreenSho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Texture2D>);
+    func_?(&
+                    MethodInfo__AvatarScreenShooter__ScreenShotDataTexHandler_UnityEngine__Texture2D_
+                   );
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    AvatarAccessory__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AvatarAccessory>______
+                   );
+    func_?(&
+                    SkinnedMeshOptimizer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SkinnedMeshOptimizer>______
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_screenshot_generation_of_avatar_);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
             ((Object *)StringLiteral_screenshot_generation_of_avatar_,(MethodInfo *)0x0);
   if ((this->fields).isMakingScreenShot == 0) {
     (this->fields).callback = callback;
+    func_?(&(this->fields).callback,callback);
     (this->fields).successMessage = successMessage;
+    func_?(&(this->fields).successMessage,successMessage);
     if (body != (MVBody *)0x0) {
-      original = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)body,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      pGVar1 = (body->fields)._._._.gameObject;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                          ((XpBoostParticlePreviewer *)original,
-                           UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                          );
-      (this->fields).bodyCloneGO = (GameObject *)this_00;
-      if (this_00 == (XpBoostParticlePreviewer *)0x0) {
+      pGVar1 = (GameObject *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)pGVar1,
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                         );
+      (this->fields).bodyCloneGO = pGVar1;
+      func_?(&(this->fields).bodyCloneGO,pGVar1);
+      pGVar1 = (this->fields).bodyCloneGO;
+      if (pGVar1 == (GameObject *)0x0) {
 code_?:
         func_?();
 code_?:
         func_?();
-        func_?();
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      pUVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-               GameObject_GetComponentsInChildren_29
-                         ((GameObject *)this_00,
+      pIVar3 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar1,
                           SkinnedMeshOptimizer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SkinnedMeshOptimizer>______
                          );
-      uVar3 = 0;
-      if (pUVar2 == (UseInteratorVisualization__Array *)0x0) goto code_?;
-      ppUVar4 = pUVar2->vector;
-      while( true ) {
-        if ((int)pUVar2->max_length <= (int)uVar3) break;
-        if (pUVar2->max_length <= uVar3) goto code_?;
-        this = (AvatarScreenShooter *)*ppUVar4;
-        if (this == (AvatarScreenShooter *)0x0) goto code_?;
+      pMVar4 = (MonitorData *)0x0;
+      if (pIVar3 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
+      pIVar5 = pIVar3 + 2;
+      for (; (int)pMVar4 < (int)pIVar3[1].monitor; pMVar4 = pMVar4 + 1) {
+        if (pIVar3[1].monitor <= pMVar4) goto code_?;
+        if (pIVar5->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
         SkinnedMeshOptimizer::SkinnedMeshOptimizer_DisableOptimizer
-                  ((SkinnedMeshOptimizer *)this,(MethodInfo *)0x0);
-        if (pUVar2->max_length <= uVar3) goto code_?;
-        if (*ppUVar4 == (UseInteratorVisualization *)0x0) goto code_?;
-        ignoreAccessories = 0;
+                  ((SkinnedMeshOptimizer *)pIVar5->klass,(MethodInfo *)0x0);
+        if (pIVar3[1].monitor <= pMVar4) goto code_?;
+        this = (AvatarScreenShooter *)pIVar5->klass;
+        if ((IEnumerable_1_System_Object___Class *)this ==
+            (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
         SkinnedMeshOptimizer::SkinnedMeshOptimizer_TurnOffMesh
-                  ((SkinnedMeshOptimizer *)*ppUVar4,(MethodInfo *)0x0);
-        uVar3 = uVar3 + 1;
-        ppUVar4 = ppUVar4 + 1;
+                  ((SkinnedMeshOptimizer *)this,(MethodInfo *)0x0);
+        pIVar5 = (IEnumerable_1_System_Object_ *)&pIVar5->monitor;
       }
       if (ignoreAccessories != 0) {
-        this = (AvatarScreenShooter *)(this->fields).bodyCloneGO;
-        if (this == (AvatarScreenShooter *)0x0) goto code_?;
-        pUVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentsInChildren_29
-                           ((GameObject *)this,
+        pGVar1 = (this->fields).bodyCloneGO;
+        if (pGVar1 == (GameObject *)0x0) goto code_?;
+        pIVar3 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                           ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar1,
                             AvatarAccessory__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AvatarAccessory>______
                            );
-        uVar3 = 0;
-        if (pUVar2 == (UseInteratorVisualization__Array *)0x0) goto code_?;
-        ppUVar4 = pUVar2->vector;
-        while( true ) {
-          if ((int)pUVar2->max_length <= (int)uVar3) break;
-          if (pUVar2->max_length <= uVar3) goto code_?;
-          this = (AvatarScreenShooter *)*ppUVar4;
-          if (this == (AvatarScreenShooter *)0x0) goto code_?;
-          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                             ((Component_1 *)this,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        pMVar4 = (MonitorData *)0x0;
+        if (pIVar3 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
+        pIVar5 = pIVar3 + 2;
+        for (; (int)pMVar4 < (int)pIVar3[1].monitor; pMVar4 = pMVar4 + 1) {
+          if (pIVar3[1].monitor <= pMVar4) goto code_?;
+          if (pIVar5->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+          this = (AvatarScreenShooter *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pIVar5->klass,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)pGVar5,(MethodInfo *)0x0);
-          uVar3 = uVar3 + 1;
-          ppUVar4 = ppUVar4 + 1;
+                    ((Object_1 *)this,(MethodInfo *)0x0);
+          pIVar5 = (IEnumerable_1_System_Object_ *)&pIVar5->monitor;
         }
       }
-      pGVar5 = (this->fields).bodyCloneGO;
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)this,
+      pGVar1 = (this->fields).bodyCloneGO;
+      this_00 = (Action_1_Object_ *)func_?();
+      if (this_00 == (Action_1_Object_ *)0x0) goto code_?;
+      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                (this_00,(Object *)this,
                  MethodInfo__AvatarScreenShooter__ScreenShotDataTexHandler_UnityEngine__Texture2D_,
-                 MethodInfo__System__Action<UnityEngine::Texture2D>__Action_System__Object__void__);
+                 (MethodInfo *)0x0);
       AvatarScreenshotGenerator::AvatarScreenshotGenerator_Generate
-                (pGVar5,(Action_1_UnityEngine_Texture2D_ *)this_01,(MethodInfo *)0x0);
+                (pGVar1,(Action_1_UnityEngine_Texture2D_ *)this_00,(MethodInfo *)0x0);
     }
     (this->fields).isMakingScreenShot = 1;
   }
@@ -153,28 +156,25 @@ void Assembly-CSharp.dll::AvatarScreenShooter::AvatarScreenShooter__ctor
                (AvatarScreenShooter *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  uStack_2 = 0;
-  func_?(&uStack_2,0xbf800000,0x3f000000,0x40000000,0);
-  fStack_3 = 0.0;
-  (this->fields).cameraOffset.x = (float)(undefined4)uStack_2;
-  (this->fields).cameraOffset.y = (float)uStack_2._4_4_;
-  (this->fields).cameraOffset.z = fStack_1;
-  uStack_4 = 0;
-  func_?(&uStack_4,0,0,0,0);
-  (this->fields).lookAtOffset.x = (float)(undefined4)uStack_4;
-  (this->fields).lookAtOffset.y = (float)uStack_4._4_4_;
-  (this->fields).lookAtOffset.z = fStack_3;
-  fStack_5 = 0.0;
-  fStack_6 = 0.0;
-  fStack_7 = 0.0;
-  fStack_8 = 0.0;
-  func_?(&fStack_5,0x435c0000,0x43500000,0x43480000,0x43480000,0);
-  (this->fields).previewPosition.m_XMin = fStack_5;
-  (this->fields).previewPosition.m_YMin = fStack_6;
-  (this->fields).previewPosition.m_Width = fStack_7;
-  (this->fields).previewPosition.m_Height = fStack_8;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  uVar1 = _UNK_?;
+  (this->fields).cameraOffset.x = (float)_UNK_?;
+  (this->fields).cameraOffset.y = (float)uVar1;
+  (this->fields).cameraOffset.z = 2.0;
+  (this->fields).lookAtOffset.x = 0.0;
+  (this->fields).lookAtOffset.y = 0.0;
+  (this->fields).lookAtOffset.z = 0.0;
+  VStack_2.x = 0.0;
+  VStack_2.y = 0.0;
+  VStack_2.z = 0.0;
+  VStack_2.w = 0.0;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4__ctor
+            (&VStack_2,220.0,208.0,200.0,200.0,(MethodInfo *)0x0);
+  (this->fields).previewPosition.m_XMin = VStack_2.x;
+  (this->fields).previewPosition.m_YMin = VStack_2.y;
+  (this->fields).previewPosition.m_Width = VStack_2.z;
+  (this->fields).previewPosition.m_Height = VStack_2.w;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

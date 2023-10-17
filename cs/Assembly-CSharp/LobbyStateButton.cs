@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -43,14 +43,7 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 	private bool isMoveOverButton;
 	private bool showingAdSprite;
 	private bool shouldPop;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
+	private bool isInAd;
 
 	// Properties
 	public bool ShouldPop { set; }
@@ -58,58 +51,94 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnPressPlay_c__AnonStorey0
+	private sealed class __c__DisplayClass26_0
 	{
 		// Fields
-		internal bool hasGameWinningCondition;
-		internal WinningConditionType winCon;
-		internal LobbyStateButton _this;
+		public LobbyStateButton __4__this;
+		public bool hasGameWinningCondition;
+		public WinningConditionType winCon;
 
 		// Constructors
-		public _OnPressPlay_c__AnonStorey0();
+		public __c__DisplayClass26_0();
 
 		// Methods
-		internal void __m__0(InterstitialAdResult result);
-		internal void __m__1(InterstitialAdResult result);
+		internal void _OnPressPlay_b__0(InterstitialAdResult result);
+		internal void _OnPressPlay_b__1(InterstitialAdResult result);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreateTeamMenu_c__AnonStorey1
+	private sealed class __c__DisplayClass27_0
 	{
 		// Fields
-		internal TeamMenu newTeamMenu;
+		public LobbyStateButton __4__this;
+		public Action<InterstitialAdResult> callback;
 
 		// Constructors
-		public _CreateTeamMenu_c__AnonStorey1();
+		public __c__DisplayClass27_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _RequestAdWithCallback_b__0(InterstitialAdResult result);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__30_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__38_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _PopThenLockCursor_b__30_0(IUIStack x, BaseEventData y);
+		internal void _CreateTeamMenu_b__37_0(IUIStack x, BaseEventData y);
+		internal void _CreateSpawnRoleSelectionMenu_b__38_0(IUIStack x, BaseEventData y);
+		internal void _CreateBriefing_b__39_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreateSpawnRoleSelectionMenu_c__AnonStorey2
+	private sealed class __c__DisplayClass37_0
 	{
 		// Fields
-		internal SpawnRoleMenu spawnRoleMenu;
+		public TeamMenu newTeamMenu;
 
 		// Constructors
-		public _CreateSpawnRoleSelectionMenu_c__AnonStorey2();
+		public __c__DisplayClass37_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreateTeamMenu_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreateBriefing_c__AnonStorey3
+	private sealed class __c__DisplayClass38_0
 	{
 		// Fields
-		internal WinningConditionBriefing winConMenu;
+		public SpawnRoleMenu spawnRoleMenu;
 
 		// Constructors
-		public _CreateBriefing_c__AnonStorey3();
+		public __c__DisplayClass38_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreateSpawnRoleSelectionMenu_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass39_0
+	{
+		// Fields
+		public WinningConditionBriefing winConMenu;
+
+		// Constructors
+		public __c__DisplayClass39_0();
+
+		// Methods
+		internal void _CreateBriefing_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -135,13 +164,5 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 	private void CreateTeamMenu();
 	private void CreateSpawnRoleSelectionMenu();
 	private void CreateBriefing(WinningConditionType winCon);
-	[CompilerGenerated]
-	private static void _PopThenLockCursor_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _CreateTeamMenu_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _CreateSpawnRoleSelectionMenu_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _CreateBriefing_m__3(IUIStack x, BaseEventData y);
 }
 

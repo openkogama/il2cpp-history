@@ -8,45 +8,59 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerRepository : ARepository
 {
 	// Fields
 	private Dictionary<int, MVItem> playerInventory;
-	[CompilerGenerated]
-	private static Func<KeyValuePair<int, MVItem>, int> __f__am_cache0;
-	[CompilerGenerated]
-	private static Func<KeyValuePair<int, MVItem>, MVItem> __f__am_cache1;
 
 	// Properties
 	public IDictionary<int, MVItem> PlayerInventory { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _GetItemsByItemCategory_c__AnonStorey0
+	private sealed class __c__DisplayClass5_0
 	{
 		// Fields
-		internal int[] itemCategories;
+		public int[] itemCategories;
 
 		// Constructors
-		public _GetItemsByItemCategory_c__AnonStorey0();
+		public __c__DisplayClass5_0();
 
 		// Methods
-		internal bool __m__0(KeyValuePair<int, MVItem> p);
+		internal bool _GetItemsByItemCategory_b__0(KeyValuePair<int, MVItem> p);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<KeyValuePair<int, MVItem>, int> __9__5_1;
+		public static Func<KeyValuePair<int, MVItem>, MVItem> __9__5_2;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal int _GetItemsByItemCategory_b__5_1(KeyValuePair<int, MVItem> pair);
+		internal MVItem _GetItemsByItemCategory_b__5_2(KeyValuePair<int, MVItem> pair);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CountItemsWithOriginalID_c__AnonStorey1
+	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
-		internal int originalId;
+		public int originalId;
 
 		// Constructors
-		public _CountItemsWithOriginalID_c__AnonStorey1();
+		public __c__DisplayClass6_0();
 
 		// Methods
-		internal bool __m__0(KeyValuePair<int, MVItem> p);
+		internal bool _CountItemsWithOriginalID_b__0(KeyValuePair<int, MVItem> p);
 	}
 
 	// Constructors
@@ -57,9 +71,5 @@ public class PlayerRepository : ARepository
 	public Dictionary<int, MVItem> GetItemsByItemCategory(int[] itemCategories);
 	public int CountItemsWithOriginalID(int originalId);
 	public void CreateWorldObjectHierarchies();
-	[CompilerGenerated]
-	private static int _GetItemsByItemCategory_m__0(KeyValuePair<int, MVItem> pair);
-	[CompilerGenerated]
-	private static MVItem _GetItemsByItemCategory_m__1(KeyValuePair<int, MVItem> pair);
 }
 

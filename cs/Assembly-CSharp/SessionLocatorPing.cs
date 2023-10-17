@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine.Events;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SessionLocatorPing : IUpdatecontrollerSubscriberUpdate
 {
@@ -17,8 +17,23 @@ public class SessionLocatorPing : IUpdatecontrollerSubscriberUpdate
 	private int pingIntervalInMilliSeconds;
 	private bool pingInFlight;
 	private bool connectionLost;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static UnityAction __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static UnityAction __9__12_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _CloseApplication_b__12_0();
+	}
 
 	// Constructors
 	public SessionLocatorPing();
@@ -32,7 +47,5 @@ public class SessionLocatorPing : IUpdatecontrollerSubscriberUpdate
 	private void WWWCallBack(UnityWebRequest result);
 	private void OnPingError(UnityWebRequest result);
 	private void CloseApplication();
-	[CompilerGenerated]
-	private static void _CloseApplication_m__0();
 }
 

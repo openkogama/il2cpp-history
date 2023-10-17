@@ -30,22 +30,26 @@ void Assembly-CSharp.dll::ClosestPointPoint::ClosestPointPoint_OnValidate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Transform_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Transform>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  x = (this->fields).transform;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pTVar1 = (this->fields).transform;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                       ((Component_1 *)this,
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pTVar1 = (Transform *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                       ((Component *)this,
                         UnityEngine__Transform_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Transform>__
                        );
-    (this->fields).transform = (Transform *)pMVar2;
+    (this->fields).transform = pTVar1;
+    func_?(&(this->fields).transform,pTVar1);
   }
   return;
 }

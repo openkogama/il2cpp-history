@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarPictureTakerUGUI : MonoBehaviour
 {
@@ -18,12 +18,27 @@ public class AvatarPictureTakerUGUI : MonoBehaviour
 	private bool isCurrentAvatarBody;
 	[SerializeField]
 	private Camera pictureCamera;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Action<MeshRenderer> __f__am_cache0;
-	[CompilerGenerated]
-	private static Action<MeshRenderer> __f__am_cache1;
-	[CompilerGenerated]
-	private static Action<MeshRenderer> __f__am_cache2;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Action<MeshRenderer> __9__5_0;
+		public static Action<MeshRenderer> __9__6_0;
+		public static Action<MeshRenderer> __9__7_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _TakePicture_b__5_0(MeshRenderer mr);
+		internal void _OnPreCull_b__6_0(MeshRenderer mr);
+		internal void _OnPostRender_b__7_0(MeshRenderer mr);
+	}
 
 	// Constructors
 	public AvatarPictureTakerUGUI();
@@ -33,11 +48,5 @@ public class AvatarPictureTakerUGUI : MonoBehaviour
 	private void OnPreCull();
 	private void OnPostRender();
 	private void CleanupRenderTex();
-	[CompilerGenerated]
-	private static void _TakePicture_m__0(MeshRenderer mr);
-	[CompilerGenerated]
-	private static void _OnPreCull_m__1(MeshRenderer mr);
-	[CompilerGenerated]
-	private static void _OnPostRender_m__2(MeshRenderer mr);
 }
 

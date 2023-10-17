@@ -7,63 +7,83 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_Initializ
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__AccessoryOffsetSlider___Initialize_b__7_0_UnityEngine__EventSystems__IGetCurrentBody__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     cRam_? = '\x01';
   }
   (this->fields).accessorySlot = accessorySlot;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar1 == MVGameMode__Enum_CharacterEditor) {
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)this,
-               MethodInfo__AccessoryOffsetSlider___Initialize_m__0_UnityEngine__EventSystems__IGetCurrentBody__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 != (GameSessionData *)0x0) {
+    if ((pGVar1->fields).gameMode == 2) {
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>
+                          );
+      if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                   MethodInfo__AccessoryOffsetSlider___Initialize_b__7_0_UnityEngine__EventSystems__IGetCurrentBody__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
+                  );
+        return;
+      }
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_02,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
-              );
-    return;
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (this_00 != (MVLocalPlayer *)0x0) {
-    this_01 = MVLocalPlayer::MVLocalPlayer_get_Body(this_00,(MethodInfo *)0x0);
-    pSVar2 = (this->fields).slider;
-    (this->fields).avatarBody = this_01;
-    if ((this->fields).isInPreview == 0) {
-      if (this_01 == (MVBody *)0x0) goto code_?;
-      MVBody::MVBody_GetAccessoryOffset(this_01,(this->fields).accessorySlot,(MethodInfo *)0x0);
-    }
-    if (pSVar2 != (Slider *)0x0) {
-      (*(code *)(pSVar2->klass->vtable).set_value.method)();
-      return;
-    }
-  }
+    else {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+          (this_00 = (pMVar2->fields).game, this_00 != (MVNetworkGame *)0x0)) &&
+         (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+         this_01 != (MVLocalPlayer *)0x0)) {
+        this_02 = MVLocalPlayer::MVLocalPlayer_get_Body(this_01,(MethodInfo *)0x0);
+        (this->fields).avatarBody = this_02;
+        func_?(&(this->fields).avatarBody,this_02);
+        pSVar3 = (this->fields).slider;
+        if ((this->fields).isInPreview == 0) {
+          if ((this_02 != (MVBody *)0x0) &&
+             (fVar4 = MVBody::MVBody_GetAccessoryOffset
+                                (this_02,(this->fields).accessorySlot,(MethodInfo *)0x0),
+             pSVar3 != (Slider *)0x0)) goto code_?;
+        }
+        else if (pSVar3 != (Slider *)0x0) {
+          fVar4 = (this->fields).defaultValue;
 code_?:
+          (*(pSVar3->klass->vtable).set_value.methodPtr)
+                    (pSVar3,fVar4,(pSVar3->klass->vtable).set_value.method);
+          return;
+        }
+      }
+    }
+  }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -74,8 +94,9 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_Initializ
                (AccessoryOffsetSlider *this,MVBody *avatarBody,MethodInfo *method)
 
 {
-  pSVar1 = (this->fields).slider;
   (this->fields).avatarBody = avatarBody;
+  func_?(&(this->fields).avatarBody,avatarBody);
+  pSVar1 = (this->fields).slider;
   if ((this->fields).isInPreview == 0) {
     if ((avatarBody != (MVBody *)0x0) &&
        (fVar2 = MVBody::MVBody_GetAccessoryOffset
@@ -85,7 +106,8 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_Initializ
   else if (pSVar1 != (Slider *)0x0) {
     fVar2 = (this->fields).defaultValue;
 code_?:
-    (*(code *)(pSVar1->klass->vtable).set_value.method)(pSVar1,fVar2);
+    (*(pSVar1->klass->vtable).set_value.methodPtr)
+              (pSVar1,fVar2,(pSVar1->klass->vtable).set_value.method);
     return;
   }
   func_?();
@@ -102,15 +124,18 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__UI__Slider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Slider>__
+                   );
     cRam_? = '\x01';
   }
   pSVar1 = (Slider *)
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                     ((Component_1 *)this,
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                     ((Component *)this,
                       UnityEngine__UI__Slider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Slider>__
                      );
   (this->fields).slider = pSVar1;
+  func_?(&(this->fields).slider,pSVar1);
   return;
 }
 
@@ -125,14 +150,14 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_SyncPosit
   this_00 = (this->fields).avatarBody;
   slot = (this->fields).accessorySlot;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
+    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
+                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
     if (this_00 != (MVBody *)0x0) {
       MVBody::MVBody_SyncOffset(this_00,slot,(float)fVar2,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -147,8 +172,8 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_ValueChan
 {
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
+    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
+                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
     this_00 = (this->fields).avatarBody;
     if (this_00 != (MVBody *)0x0) {
       MVBody::MVBody_ApplyAccessoryOffset
@@ -156,33 +181,34 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_ValueChan
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
 }
 
 
-/* Void <Initialize>m__0(IGetCurrentBody, BaseEventData) */
+/* Void <Initialize>b__7_0(IGetCurrentBody, BaseEventData) */
 
-void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider__Initialize_m__0
+void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider__Initialize_b__7_0
                (AccessoryOffsetSlider *this,IGetCurrentBody *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__AccessoryOffsetSlider__Initialize_MVBody_);
+    func_?(&TypeInfo__System__Action<MVBody>);
+    func_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
     cRam_? = '\x01';
   }
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action<MVBody>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__AccessoryOffsetSlider__Initialize_MVBody_,
-             MethodInfo__System__Action<MVBody>__Action_System__Object__void__);
-  if (x != (IGetCurrentBody *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
-    return;
+  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<MVBody>);
+  if (this_00 != (Action_1_Object_ *)0x0) {
+    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+              (this_00,(Object *)this,MethodInfo__AccessoryOffsetSlider__Initialize_MVBody_,
+               (MethodInfo *)0x0);
+    if (x != (IGetCurrentBody *)0x0) {
+      func_?(0,TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);

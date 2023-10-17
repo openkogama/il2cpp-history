@@ -6,39 +6,25 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
                (AvatarLimbManager_AvatarLookDirectionHandler *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  uStack_1._0_4_ = (this->fields).localLookDirection.x;
+  uStack_1._4_4_ = (this->fields).localLookDirection.y;
+  uVar2 = (this->fields).previousLookDirection.x;
+  uVar3 = (this->fields).previousLookDirection.y;
+  fStack_4 = (this->fields).localLookDirection.z - (this->fields).previousLookDirection.z;
+  uStack_5 = CONCAT44((float)uStack_1._4_4_ - (float)uVar3,
+                       (float)(undefined4)uStack_1 - (float)uVar2);
+  fStack_6 = fStack_4;
+  fVar7 = (float10)func_?(&uStack_5,0);
+  if ((_UNK_? < (float)fVar7) && ((this->fields).OnRotationChange != (Action *)0x0)) {
+    pAVar8 = (this->fields).OnRotationChange;
+    (*(pAVar8->fields)._._.invoke_impl)
+              ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
   }
-  uStack_1 = 0;
-  puStack_2 = (undefined *)0x0;
-  uVar3._0_4_ = (this->fields).previousLookDirection.x;
-  uVar3._4_4_ = (this->fields).previousLookDirection.y;
-  a = (this->fields).localLookDirection;
-  fVar4 = (this->fields).previousLookDirection.z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  b.z = fVar4;
-  b.x = (float)uVar3;
-  b.y = SUB84(uVar3,4);
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                     ((Vector3 *)&stack0xffffffe8,a,b,(MethodInfo *)0x0);
-  uStack_1._0_4_ = pVVar5->x;
-  uStack_1._4_4_ = pVVar5->y;
-  puStack_2 = (undefined *)pVVar5->z;
-  fVar6 = (float10)func_?(&uStack_1,0);
-  if ((_UNK_? < (float)fVar6) &&
-     (this_00 = (JumpState_OnWallJumpDelegate *)(this->fields).OnRotationChange,
-     this_00 != (JumpState_OnWallJumpDelegate *)0x0)) {
-    JumpState+OnWallJumpDelegate::JumpState_OnWallJumpDelegate_Invoke(this_00,(MethodInfo *)0x0);
-  }
-  fVar7 = (this->fields).localLookDirection.y;
-  fVar4 = (this->fields).localLookDirection.z;
+  fVar9 = (this->fields).localLookDirection.y;
+  fVar10 = (this->fields).localLookDirection.z;
   (this->fields).previousLookDirection.x = (this->fields).localLookDirection.x;
-  (this->fields).previousLookDirection.y = fVar7;
-  (this->fields).previousLookDirection.z = fVar4;
+  (this->fields).previousLookDirection.y = fVar9;
+  (this->fields).previousLookDirection.z = fVar10;
   return;
 }
 
@@ -51,146 +37,97 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
                MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (PrefabPool *)(this->fields).avatarWO;
-  if (this_00 != (PrefabPool *)0x0) {
-    this_02 = PrefabPool::PrefabPool_get_MVPointLightPrefab(this_00,(MethodInfo *)0x0);
-    if (this_02 != (MVPointLightObject *)0x0) {
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xffffffd4,(Transform *)this_02,(MethodInfo *)0x0);
-      uVar2._0_4_ = pVVar1->x;
-      uVar2._4_4_ = pVVar1->y;
-      fVar3 = pVVar1->z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?();
-      }
-      a.z = fVar3;
-      a.x = (float)(int)uVar2;
-      a.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                         ((Vector3 *)&stack0xffffffd4,a,lookDirection,(MethodInfo *)0x0);
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
-                         ((Vector3 *)&stack0xffffffd4,(Transform *)this_02,*pVVar1,(MethodInfo *)0x0
-                         );
-      bVar4 = cRam_? == '\0';
-      fVar5 = pVVar1->y;
-      fVar3 = pVVar1->z;
-      (this->fields).localLookDirection.x = pVVar1->x;
-      (this->fields).localLookDirection.y = fVar5;
-      (this->fields).localLookDirection.z = fVar3;
-      if (bVar4) {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      fStack_6 = 0.0;
-      puStack_7 = (undefined *)0x0;
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
-      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (pMVar8 != (MainCameraManager *)0x0) {
-        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pMVar8,(MethodInfo *)0x0);
-        if (pTVar9 != (Transform *)0x0) {
-          pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                             ((Quaternion *)&stack0xffffffd0,pTVar9,(MethodInfo *)0x0);
-          fStack_6 = pQVar10->x;
-          puStack_7 = (undefined *)pQVar10->y;
-          puVar11 = (undefined8 *)func_?(&VStack_12,&fStack_6,0);
-          fVar3 = (float)((ulonglong)*puVar11 >> 0x20);
-          if (fVar3 != (this->fields).previousYaw) {
-            pSVar13 = (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)
-                     (this->fields).OnLookDirectionYawChange;
-            if (pSVar13 != (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)0x0) {
-              Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-              SpawnRoleVariable`1[T]+SubDelegate[System::Single]::
-              SpawnRoleVariable_1_T_SubDelegate_System_Single__Invoke
-                        (pSVar13,fVar3,MethodInfo__System__Action<float>__Invoke_float_);
+  pMVar1 = (this->fields).avatarWO;
+  if ((pMVar1 != (MVWorldObjectClient *)0x0) &&
+     (pTVar2 = (pMVar1->fields).transform, pTVar2 != (Transform *)0x0)) {
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       (&VStack_4,pTVar2,(MethodInfo *)0x0);
+    puStack_5 = (undefined *)pVVar3->x;
+    unique0x0000a404 = pVVar3->y;
+    VStack_4.z = lookDirection.z + pVVar3->z;
+    position.y = lookDirection.y + (float)unique0x0000a404;
+    position.x = lookDirection.x + (float)puStack_5;
+    position.z = VStack_4.z;
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
+                       (&VStack_4,pTVar2,position,(MethodInfo *)0x0);
+    fVar6 = pVVar3->y;
+    fVar7 = pVVar3->z;
+    (this->fields).localLookDirection.x = pVVar3->x;
+    (this->fields).localLookDirection.y = fVar6;
+    (this->fields).localLookDirection.z = fVar7;
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if (pMVar8 != (MainCameraManager *)0x0) {
+      _puStack_10 = CONCAT44(pMVar8,&UNK_?);
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pMVar8,(MethodInfo *)0x0);
+      if (pTVar2 != (Transform *)0x0) {
+        _puStack_10 = CONCAT44(&UNK_?,puStack_5);
+        pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                            ((Quaternion *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+        pvStack_10 = (void *)pQVar9->x;
+        _puStack_10 = CONCAT44(&UNK_?,pQVar9->y);
+        iVar11 = func_?();
+        fVar7 = *(float *)(iVar11 + 4);
+        if (fVar7 != (this->fields).previousYaw) {
+          if ((this->fields).OnLookDirectionYawChange != (Action_1_Single_ *)0x0) {
+            pAVar12 = (this->fields).OnLookDirectionYawChange;
+            _puStack_10 = CONCAT44((pAVar12->fields)._._.method,fVar7);
+            pvStack_10 = (pAVar12->fields)._._.method_code;
+            VStack_4.z = (float)&UNK_?;
+            (*(pAVar12->fields)._._.invoke_impl)();
+          }
+          (this->fields).previousYaw = fVar7;
+        }
+        _puStack_10 = 0xADDR;
+        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
+        ;
+        if (pMVar8 != (MainCameraManager *)0x0) {
+          _puStack_10 = CONCAT44(pMVar8,&UNK_?);
+          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pMVar8,(MethodInfo *)0x0);
+          if (pTVar2 != (Transform *)0x0) {
+            _puStack_10 = CONCAT44(&UNK_?,puStack_5);
+            pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                ((Quaternion *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+            pvStack_10 = (void *)pQVar9->x;
+            _puStack_10 = CONCAT44(&UNK_?,pQVar9->y);
+            pfVar13 = (float *)func_?();
+            pvVar14 = (void *)*pfVar13;
+            if ((float)pvVar14 != (this->fields).previousPitch) {
+              if ((this->fields).OnLookDirectionPitchChange != (Action_1_Single_ *)0x0) {
+                pAVar12 = (this->fields).OnLookDirectionPitchChange;
+                pvVar14 = (pAVar12->fields)._._.method_code;
+                (*(pAVar12->fields)._._.invoke_impl)();
+              }
+              (this->fields).previousPitch = (float)pvVar14;
             }
-            (this->fields).previousYaw = fVar3;
-          }
-          if (cRam_? == '\0') {
-            func_?(_UNK_?);
-            cRam_? = '\x01';
-          }
-          fStack_6 = 0.0;
-          puStack_7 = (undefined *)0x0;
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?(TypeInfo__MVGameControllerBase);
-          }
-          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                             ((MethodInfo *)0x0);
-          if (pMVar8 != (MainCameraManager *)0x0) {
-            pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pMVar8,(MethodInfo *)0x0);
-            if (pTVar9 != (Transform *)0x0) {
-              pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                 ((Quaternion *)&stack0xffffffd0,pTVar9,(MethodInfo *)0x0);
-              fStack_6 = pQVar10->x;
-              puStack_7 = (undefined *)pQVar10->y;
-              puVar11 = (undefined8 *)func_?(&VStack_12,&fStack_6,0);
-              fVar3 = (float)*puVar11;
-              if (fVar3 != (this->fields).previousPitch) {
-                pSVar13 = (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)
-                         (this->fields).OnLookDirectionPitchChange;
-                if (pSVar13 != (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)0x0) {
-                  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                  SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Single]::
-                  SpawnRoleVariable_1_T_SubDelegate_System_Single__Invoke
-                            (pSVar13,fVar3,MethodInfo__System__Action<float>__Invoke_float_);
-                }
-                (this->fields).previousPitch = fVar3;
-              }
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              VStack_12.y = (this->fields).previousLookDirection.x;
-              VStack_12.z = (this->fields).previousLookDirection.y;
-              fVar3 = (this->fields).localLookDirection.z;
-              fVar5 = (this->fields).previousLookDirection.z;
-              uVar14._0_4_ = (this->fields).localLookDirection.x;
-              uVar14._4_4_ = (this->fields).localLookDirection.y;
-              if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-                func_?();
-              }
-              a_00.z = fVar3;
-              a_00.x = (float)(int)uVar14;
-              a_00.y = (float)(int)((ulonglong)uVar14 >> 0x20);
-              b.z = fVar5;
-              b.x = VStack_12.y;
-              b.y = VStack_12.z;
-              UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                        (&VStack_12,a_00,b,(MethodInfo *)0x0);
-              fVar15 = (float10)func_?();
-              if ((_UNK_? < (float)fVar15) &&
-                 (this_01 = (JumpState_OnWallJumpDelegate *)(this->fields).OnRotationChange,
-                 this_01 != (JumpState_OnWallJumpDelegate *)0x0)) {
-                JumpState+OnWallJumpDelegate::JumpState_OnWallJumpDelegate_Invoke
-                          (this_01,(MethodInfo *)0x0);
-              }
-              fVar5 = (this->fields).localLookDirection.y;
-              fVar3 = (this->fields).localLookDirection.z;
-              (this->fields).previousLookDirection.x = (this->fields).localLookDirection.x;
-              (this->fields).previousLookDirection.y = fVar5;
-              (this->fields).previousLookDirection.z = fVar3;
-              return;
+            puStack_5 = (undefined *)(this->fields).localLookDirection.x;
+            unique0x0000a404 = (this->fields).localLookDirection.y;
+            uVar15 = (this->fields).previousLookDirection.x;
+            uVar16 = (this->fields).previousLookDirection.y;
+            VStack_4.z = (this->fields).localLookDirection.z -
+                          (this->fields).previousLookDirection.z;
+            VStack_4.y = (float)unique0x0000a404 - (float)uVar16;
+            VStack_4.x = (float)puStack_5 - (float)uVar15;
+            fVar17 = (float10)func_?();
+            if ((_UNK_? < (float)fVar17) &&
+               ((this->fields).OnRotationChange != (Action *)0x0)) {
+              (*(((this->fields).OnRotationChange)->fields)._._.invoke_impl)();
             }
+            fVar6 = (this->fields).localLookDirection.y;
+            fVar7 = (this->fields).localLookDirection.z;
+            (this->fields).previousLookDirection.x = (this->fields).localLookDirection.x;
+            (this->fields).previousLookDirection.y = fVar6;
+            (this->fields).previousLookDirection.z = fVar7;
+            return;
           }
         }
       }
     }
   }
-  func_?(0);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -202,40 +139,29 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
                (AvatarLimbManager_AvatarLookDirectionHandler *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_01 != (MainCameraManager *)0x0) {
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this_01,(MethodInfo *)0x0);
-    if (this_02 != (Transform *)0x0) {
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_00 != (MainCameraManager *)0x0) {
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                ((Quaternion *)&stack0xffffffe0,this_02,(MethodInfo *)0x0);
-      puVar1 = (undefined8 *)func_?(auStack_2);
-      uStack_3 = *puVar1;
-      if ((float)uStack_3 != (this->fields).previousPitch) {
-        this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)
-                  (this->fields).OnLookDirectionPitchChange;
-        if (this_00 != (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)0x0) {
-          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Single]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Single__Invoke
-                    (this_00,(float)uStack_3,MethodInfo__System__Action<float>__Invoke_float_);
+                ((Quaternion *)&stack0xffffffdc,this_01,(MethodInfo *)0x0);
+      pfVar1 = (float *)func_?(apvStack_2);
+      fStack_3 = *pfVar1;
+      if (fStack_3 != (this->fields).previousPitch) {
+        if ((this->fields).OnLookDirectionPitchChange != (Action_1_Single_ *)0x0) {
+          pAVar4 = (this->fields).OnLookDirectionPitchChange;
+          apvStack_2[0] = (pAVar4->fields)._._.method;
+          (*(pAVar4->fields)._._.invoke_impl)();
         }
-        (this->fields).previousPitch = (float)uStack_3;
+        (this->fields).previousPitch = fStack_3;
       }
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -247,42 +173,29 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
                (AvatarLimbManager_AvatarLookDirectionHandler *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_01 != (MainCameraManager *)0x0) {
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this_01,(MethodInfo *)0x0);
-    if (this_02 != (Transform *)0x0) {
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_00 != (MainCameraManager *)0x0) {
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                ((Quaternion *)&stack0xffffffe0,this_02,(MethodInfo *)0x0);
-      puVar1 = (undefined8 *)func_?(auStack_2);
-      uStack_3._4_4_ = (float)((ulonglong)*puVar1 >> 0x20);
-      value = uStack_3._4_4_;
-      if (uStack_3._4_4_ != (this->fields).previousYaw) {
-        this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)
-                  (this->fields).OnLookDirectionYawChange;
-        if (this_00 != (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)0x0) {
-          uStack_3 = *puVar1;
-          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Single]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Single__Invoke
-                    (this_00,value,MethodInfo__System__Action<float>__Invoke_float_);
+                ((Quaternion *)&stack0xffffffdc,this_01,(MethodInfo *)0x0);
+      iVar1 = func_?(apvStack_2);
+      fStack_3 = *(float *)(iVar1 + 4);
+      if (fStack_3 != (this->fields).previousYaw) {
+        if ((this->fields).OnLookDirectionYawChange != (Action_1_Single_ *)0x0) {
+          pAVar4 = (this->fields).OnLookDirectionYawChange;
+          apvStack_2[0] = (pAVar4->fields)._._.method;
+          (*(pAVar4->fields)._._.invoke_impl)();
         }
-        (this->fields).previousYaw = uStack_3._4_4_;
+        (this->fields).previousYaw = fStack_3;
       }
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

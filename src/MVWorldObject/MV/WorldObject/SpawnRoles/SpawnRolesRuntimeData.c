@@ -6,26 +6,30 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)(this->fields).spawnRoleAvatarIds;
-  if (this_00 != (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-            UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                      (this_00,(UnityWebRequest *)id,
+  this_00 = (HashSet_1_System_Object_ *)(this->fields).spawnRoleAvatarIds;
+  if (this_00 != (HashSet_1_System_Object_ *)0x0) {
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            HashSet_1_System_Object__Add
+                      (this_00,(Object *)id,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
     if (bVar1 != 0) {
       return;
     }
-    this_01 = (IsolatedStorageException *)func_?();
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-    IsolatedStorageException__ctor_1(this_01,StringLiteral_Id_already_added,(MethodInfo *)0x0);
+    uVar2 = func_?();
+    this_01 = (Exception *)func_?(uVar2);
+    func_?(this_01);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Id_already_added);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
+    func_?();
     func_?();
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -38,19 +42,20 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)(this->fields).spawnRoleAvatarIds;
-  if (this_00 != (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-    FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__Remove
+  this_00 = (this->fields).spawnRoleAvatarIds;
+  if (this_00 != (HashSet_1_System_Int32_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32__Remove
               (this_00,id,MethodInfo__System__Collections__Generic__HashSet<int>__Remove_int_);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -63,36 +68,47 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)(this->fields).spawnRoleAvatarIds;
-  if (this_00 == (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)0x0) {
-    func_?(0);
+  this_00 = (this->fields).spawnRoleAvatarIds;
+  if (this_00 == (HashSet_1_System_Int32_ *)0x0) {
+    func_?();
   }
   else {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::Api::
-            NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+            HashSet_1_System_Int32__Contains
                       (this_00,id,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-    if (bVar1 == 0) {
-      this_01 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-      message = StringLiteral_spawn_role_id_not_found;
-      goto code_?;
-    }
+    if (bVar1 == 0) goto code_?;
     if ((this->fields).activeSpawnRole != id) {
       (this->fields).activeSpawnRole = id;
       return;
     }
   }
-  this_01 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  message = StringLiteral_Spawn_role_already_active;
-code_?:
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1(this_01,message,(MethodInfo *)0x0);
+  uVar2 = func_?(&TypeInfo__System__Exception);
+  pEVar3 = (Exception *)func_?(uVar2);
+  func_?(pEVar3);
+  pMVar4 = (MethodInfo *)0x0;
+  pSVar5 = (String *)func_?(&StringLiteral_Spawn_role_already_active);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar5,pMVar4);
+  func_?(&
+                  MethodInfo__MV__WorldObject__SpawnRoles__SpawnRolesRuntimeData__SetActiveSpawnRole_int_
+                 );
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+code_?:
+  uVar2 = func_?(&TypeInfo__System__Exception);
+  pEVar3 = (Exception *)func_?(uVar2);
+  func_?(pEVar3);
+  pMVar4 = (MethodInfo *)0x0;
+  pSVar5 = (String *)func_?(&StringLiteral_spawn_role_id_not_found);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar5,pMVar4);
+  func_?(&
+                  MethodInfo__MV__WorldObject__SpawnRoles__SpawnRolesRuntimeData__SetActiveSpawnRole_int_
+                 );
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -107,57 +123,64 @@ String * MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb0;
-  puVar5 = &stack0xffffffb0;
+  puStack_4 = &stack0xffffffb4;
+  puVar5 = &stack0xffffffb4;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_u000A);
+    func_?(&StringLiteral_All_spawn_roles_);
+    func_?(&StringLiteral_ActiveSpawnRole___0__u000A);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  func_?();
   iStack_6 = (this->fields).activeSpawnRole;
-  puStack_4 = &stack0xffffffb0;
   pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar8 = mscorlib.dll::System::String::String_Format
                      (StringLiteral_ActiveSpawnRole___0__u000A,pOVar7,(MethodInfo *)0x0);
-  pSVar8 = mscorlib.dll::System::String::String_Concat_2
+  pSVar8 = mscorlib.dll::System::String::String_Concat_3
                      (pSVar8,StringLiteral_All_spawn_roles_,(MethodInfo *)0x0);
-  this_00 = (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)(this->fields).spawnRoleAvatarIds;
-  if (this_00 != (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-    FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-              ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)&stack0xffffffbc,
-               this_00,MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-    uStack_1 = 0;
-    while (cVar9 = func_?(), cVar9 != '\0') {
-      mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::
-      JsonProperty]::
-      Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)&stack0xffffffcc,
-                 MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__
-                );
+  this_00 = (HashSet_1_System_Object_ *)(this->fields).spawnRoleAvatarIds;
+  if (this_00 != (HashSet_1_System_Object_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+    HashSet_1_System_Object__GetEnumerator
+              ((HashSet_1_T_Enumerator_System_Object_ *)&stack0xffffffd0,this_00,
+               MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
+    uStack_1 = 1;
+    while( true ) {
+      bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::Int32]
+              ::HashSet_1_T_Enumerator_System_Int32__MoveNext
+                        ((HashSet_1_T_Enumerator_System_Int32_ *)&stack0xffffffc0,
+                         MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                        );
+      if (bVar9 == 0) break;
       pOVar7 = (Object *)func_?();
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
       pSVar8 = mscorlib.dll::System::String::String_Concat_1
                          ((Object *)pSVar8,(Object *)StringLiteral_u000A,pOVar7,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
-    func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&stack0xffffffc0,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,
+               in_stack_10);
     *unaff_FS_OFFSET = uStack_3;
     return pSVar8;
   }
   func_?();
   func_?();
-  pcVar10 = (code *)swi(3);
-  pSVar8 = (String *)(*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  pSVar8 = (String *)(*pcVar11)();
   return pSVar8;
 }
 
@@ -169,18 +192,27 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
   (this->fields).activeSpawnRole = -1;
-  method_00 = TypeInfo__System__Collections__Generic__HashSet<int>;
-  this_00 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (this->fields).spawnRoleAvatarIds = (HashSet_1_System_Int32_ *)this_00;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+    HashSet_1_UnityEngine_Vector3___ctor
+              (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    method_00 = (MethodInfo *)&(this->fields).spawnRoleAvatarIds;
+    (this->fields).spawnRoleAvatarIds = (HashSet_1_System_Int32_ *)this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -194,20 +226,30 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
   (this->fields).activeSpawnRole = -1;
-  method_00 = TypeInfo__System__Collections__Generic__HashSet<int>;
-  this_00 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (this->fields).spawnRoleAvatarIds = (HashSet_1_System_Int32_ *)this_00;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  (this->fields).activeSpawnRole = activeSpawnRole;
-  (this->fields).spawnRoleAvatarIds = spawnRoleAvatarIds;
+  this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+    HashSet_1_UnityEngine_Vector3___ctor
+              (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    method_00 = (MethodInfo *)&(this->fields).spawnRoleAvatarIds;
+    (this->fields).spawnRoleAvatarIds = (HashSet_1_System_Int32_ *)this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    (this->fields).activeSpawnRole = activeSpawnRole;
+    (this->fields).spawnRoleAvatarIds = spawnRoleAvatarIds;
+    func_?(&(this->fields).spawnRoleAvatarIds,spawnRoleAvatarIds);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

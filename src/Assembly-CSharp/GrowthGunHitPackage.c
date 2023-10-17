@@ -13,7 +13,8 @@ Assembly-CSharp.dll::GrowthGunHitPackage::GrowthGunHitPackage_Create
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,0x11,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor
+            (__return_storage_ptr__,InteractionPackageType__Enum_GrowthGunHit,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 

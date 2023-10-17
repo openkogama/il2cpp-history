@@ -5,61 +5,29 @@ void Assembly-CSharp.dll::DrawPlaneAltitude::DrawPlaneAltitude_Update
                (DrawPlaneAltitude *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pSStack_1 = (String *)0x0;
-  pSStack_2 = (String *)0x0;
-  pTVar3 = (this->fields).altitudeText;
-  if (pTVar3 != (Text *)0x0) {
-    a = (String *)
-        (*(code *)(pTVar3->klass->vtable).get_text.method)
-                  (pTVar3,(pTVar3->klass->vtable).set_text.methodPtr);
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
+  pDVar1 = this;
+  pTVar2 = (this->fields).altitudeText;
+  if (pTVar2 != (Text *)0x0) {
+    pSVar3 = (String *)
+             (*(pTVar2->klass->vtable).get_text.methodPtr)
+                       (pTVar2,(pTVar2->klass->vtable).get_text.method);
+    this = (DrawPlaneAltitude *)DrawPlane::DrawPlane_get_Altitude((MethodInfo *)0x0);
+    b = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
+    bVar4 = mscorlib.dll::System::String::String_op_Inequality(pSVar3,b,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      pTVar2 = (pDVar1->fields).altitudeText;
+      this = (DrawPlaneAltitude *)DrawPlane::DrawPlane_get_Altitude((MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
+      if (pTVar2 == (Text *)0x0) goto code_?;
+      (*(pTVar2->klass->vtable).set_text.methodPtr)
+                (pTVar2,pSVar3,(pTVar2->klass->vtable).set_text.method);
     }
-    pDVar4 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
-    if ((pDVar4 != (DrawPlaneControllerUUI *)0x0) &&
-       (pWVar5 = (pDVar4->fields).worldEditorDrawPlane, pWVar5 != (WorldEditorDrawPlane *)0x0)) {
-      pSStack_1 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                  NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                            ((NamedThemeAttribute_1_UnityEngine_Color_ *)pWVar5,(MethodInfo *)0x0);
-      b = (String *)func_?(&pSStack_1,0);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      bVar6 = mscorlib.dll::System::String::String_op_Inequality(a,b,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        return;
-      }
-      pTVar3 = (this->fields).altitudeText;
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      pDVar4 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
-      if ((pDVar4 != (DrawPlaneControllerUUI *)0x0) &&
-         (pWVar5 = (pDVar4->fields).worldEditorDrawPlane, pWVar5 != (WorldEditorDrawPlane *)0x0)) {
-        pSStack_2 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                    NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                              ((NamedThemeAttribute_1_UnityEngine_Color_ *)pWVar5,(MethodInfo *)0x0)
-        ;
-        uVar7 = func_?(&pSStack_2,0);
-        if (pTVar3 != (Text *)0x0) {
-          (*(code *)(pTVar3->klass->vtable).set_text.method)
-                    (pTVar3,uVar7,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr
-                    );
-          return;
-        }
-      }
-    }
+    return;
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

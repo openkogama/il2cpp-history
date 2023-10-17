@@ -6,41 +6,48 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    ClosestPointPoint_MethodInfo__UnityEngine__GameObject__AddComponent<ClosestPointPoint>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   MVComponent::MVComponent_Awake((MVComponent *)this,(MethodInfo *)0x0);
-  x = (this->fields).closestPoint;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pCVar1 = (this->fields).closestPoint;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
     return;
   }
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (GameObject *)0x0) {
-    this_01 = (LockCursorManager3DMode *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_85
-                        (this_00,
-                         ClosestPointPoint_MethodInfo__UnityEngine__GameObject__AddComponent<ClosestPointPoint>__
-                        );
-    value = (Action_1_Boolean_ *)
-            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-    if (this_01 != (LockCursorManager3DMode *)0x0) {
-      LockCursorManager3DMode::LockCursorManager3DMode_set_OnCursorLockChanged
-                (this_01,value,(MethodInfo *)0x0);
-      (this->fields).closestPoint = (ClosestPointBase *)this_01;
+    pCVar1 = (ClosestPointBase *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                       (this_00,
+                        ClosestPointPoint_MethodInfo__UnityEngine__GameObject__AddComponent<ClosestPointPoint>__
+                       );
+    pCStack3 =
+         (ClosestPointBase__Class *)
+         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                   ((Component *)this,(MethodInfo *)0x0);
+    if (pCVar1 != (ClosestPointBase *)0x0) {
+      pCVar1[1].klass = pCStack3;
+      pCStack4 = pCVar1 + 1;
+      func_?();
+      ppCStack5 = &(this->fields).closestPoint;
+      (this->fields).closestPoint = pCVar1;
+      pCStack6 = pCVar1;
+      func_?();
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -56,8 +63,8 @@ Vector3 * Assembly-CSharp.dll::InteractionDataHandlerBase::
   pCVar1 = (this->fields).closestPoint;
   if (pCVar1 != (ClosestPointBase *)0x0) {
     puVar2 = (undefined8 *)
-             (*(code *)(pCVar1->klass->vtable).__unknown.method)
-                       (&from,pCVar1,from._0_8_,from.z,pCVar1->klass[1]._0.image);
+             (*(pCVar1->klass->vtable).__unknown.methodPtr)
+                       (&from,pCVar1,from._0_8_,from.z,(pCVar1->klass->vtable).__unknown.method);
     uVar3 = *puVar2;
     fVar4 = *(float *)(puVar2 + 1);
     __return_storage_ptr__->x = (float)(int)uVar3;
@@ -65,7 +72,7 @@ Vector3 * Assembly-CSharp.dll::InteractionDataHandlerBase::
     __return_storage_ptr__->z = fVar4;
     return __return_storage_ptr__;
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   pVVar6 = (Vector3 *)(*pcVar5)();
   return pVVar6;
@@ -79,10 +86,10 @@ bool Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
                ,MethodInfo *method)
 
 {
-  bVar1 = (*(code *)(this->klass->vtable).__unknown_1.method)
+  bVar1 = (*(this->klass->vtable).__unknown_1.methodPtr)
                     (this,0,interaction.damage,interaction.impulse.x,interaction.impulse.y,
                      interaction.impulse.z,interaction._16_4_,_interactionIsLocal,
-                     (this->klass->vtable).OnValidate.methodPtr);
+                     (this->klass->vtable).__unknown_1.method);
   return bVar1;
 }
 
@@ -94,11 +101,10 @@ bool Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -106,49 +112,28 @@ bool Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
   if (bVar1 == 0) {
     return 0;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((((pMVar2 != (MVNetworkGame *)0x0) &&
-       (pSVar3 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                           ((DayNightCycle *)pMVar2,(MethodInfo *)0x0),
-       interactor != (MVPickupOwner *)0x0)) &&
-      (this_00 = (TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)
-                 System.dll::System::Collections::Generic::
-                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                 ::Single,System::Object]::
-                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                           ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                             *)interactor,(MethodInfo *)0x0),
-      this_00 != (TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)0x0)) &&
-     (actorNumber = UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-                    TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-                    TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                              (this_00,(MethodInfo *)0x0), pSVar3 != (SkyParam *)0x0)) {
-    MVar4 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
-                      ((MVTeamManager *)pSVar3,(int32_t)actorNumber,(MethodInfo *)0x0);
-    MVar5 = (**(code **)(_UNK_? + 0xe8))();
-    if (MVar4 != MVar5) {
+       (pMVar3 = (pMVar2->fields).teamManager, interactor != (MVPickupOwner *)0x0)) &&
+      (pMVar4 = (interactor->fields)._.worldObjectParent, pMVar4 != (MVWorldObjectClient *)0x0)) &&
+     (pMVar3 != (MVTeamManager *)0x0)) {
+    MVar5 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
+                      (pMVar3,(pMVar4->fields)._.ownerActorNr,(MethodInfo *)0x0);
+    MVar6 = (*(this->klass->vtable).__unknown.methodPtr)
+                      (this,(this->klass->vtable).__unknown.method);
+    if (MVar5 != MVar6) {
       return 0;
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if ((pMVar2 != (MVNetworkGame *)0x0) &&
-       (pSVar3 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                           ((DayNightCycle *)pMVar2,(MethodInfo *)0x0), pSVar3 != (SkyParam *)0x0))
-    {
-      iVar6 = MVTeamManager::MVTeamManager_TeamCount((MVTeamManager *)pSVar3,(MethodInfo *)0x0);
-      return 1 < iVar6;
+       (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
+      iVar7 = MVTeamManager::MVTeamManager_TeamCount(pMVar3,(MethodInfo *)0x0);
+      return 1 < iVar7;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar1 = (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  bVar1 = (*pcVar8)();
   return bVar1;
 }
 
@@ -160,30 +145,34 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    ClosestPointBase_MethodInfo__UnityEngine__GameObject__GetComponent<ClosestPointBase>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  x = (this->fields).closestPoint;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pCVar1 = (this->fields).closestPoint;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this,(MethodInfo *)0x0);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
     if (this_00 == (GameObject *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    pUVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
+    pCVar1 = (ClosestPointBase *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                        (this_00,
                         ClosestPointBase_MethodInfo__UnityEngine__GameObject__GetComponent<ClosestPointBase>__
                        );
-    (this->fields).closestPoint = (ClosestPointBase *)pUVar3;
+    (this->fields).closestPoint = pCVar1;
+    func_?();
   }
   return;
 }

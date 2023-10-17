@@ -6,15 +6,14 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_A
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).animations;
   if (pAVar1 != (Animation *)0x0) {
     x = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetClip
                   (pAVar1,animationName,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -48,80 +47,76 @@ float Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
   index = 0;
   fStack_1 = 1.0;
   pLVar2 = (this->fields).animationData;
   while (pLVar2 != (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) {
-    pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Count__
-                       );
-    if ((int)pOVar3 <= index) {
+    if ((pLVar2->fields)._size <= index) {
       return fStack_1;
     }
     pLVar2 = (this->fields).animationData;
     if (pLVar2 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
-    pAVar4 = mscorlib.dll::System::Collections::Generic::
-             List`1[AccessoryAnimationHandler+AnimationData]::
-             List_1_AccessoryAnimationHandler_AnimationData__get_Item
-                       (&AStack_5,pLVar2,index,
+    pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+             UnitySynchronizationContext+WorkRequest]::
+             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
+                       (&UStack_4,
+                        (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar2,index,
                         MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
                        );
-    uStack_6._0_4_ = pAVar4->animationName;
-    uStack_6._4_4_ = pAVar4->animationSpeed;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      pSStack_7 = TypeInfo__System__String;
-      func_?();
-    }
-    bVar8 = mscorlib.dll::System::String::String_op_Equality
-                      ((String *)uStack_6,animationName,(MethodInfo *)0x0);
-    if (bVar8 != 0) {
+    uStack_5._0_4_ = pUVar3->m_DelagateCallback;
+    uStack_5._4_4_ = pUVar3->m_DelagateState;
+    bVar6 = mscorlib.dll::System::String::String_op_Equality
+                      ((String *)(undefined4)uStack_5,animationName,(MethodInfo *)0x0);
+    if (bVar6 != 0) {
       pLVar2 = (this->fields).animationData;
       if (pLVar2 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
-      puVar9 = (undefined8 *)
-               func_?(auStack_10,pLVar2,index,
-                               MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
-                              );
-      uStack_11._4_4_ = (float)((ulonglong)*puVar9 >> 0x20);
-      fStack_1 = uStack_11._4_4_;
-      uStack_11 = *puVar9;
+      UStack_4.m_DelagateCallback =
+           (SendOrPostCallback *)
+           MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
+      ;
+      ppppuStack_2c = &ppppuStack_2c;
+      pLStack_7 = pLVar2;
+      iStack_8 = index;
+      iVar9 = func_?();
+      fStack_1 = *(float *)(iVar9 + 4);
     }
     index = index + 1;
     pLVar2 = (this->fields).animationData;
   }
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  fVar13 = (float10)(*pcVar12)();
-  return (float)fVar13;
+  func_?();
+  pcVar10 = (code *)swi(3);
+  fVar11 = (float10)(*pcVar10)();
+  return (float)fVar11;
 }
 
 
 /* Avatar GetAvatar() */
 
-Avatar_1 *
-Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_GetAvatar
-          (AccessoryAnimationHandler *this,MethodInfo *method)
+Avatar * Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_GetAvatar
+                   (AccessoryAnimationHandler *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pAVar1 = (Avatar_1 *)0x0;
-  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)this,(MethodInfo *)0x0);
+  pAVar1 = (Avatar *)0x0;
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
   if (pTVar2 != (Transform *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                        (pTVar2,(MethodInfo *)0x0);
     while( true ) {
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -130,14 +125,13 @@ Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_GetAva
         return pAVar1;
       }
       if (pTVar2 == (Transform *)0x0) break;
-      pAVar1 = (Avatar_1 *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                         ((Component_1 *)pTVar2,
+      pAVar1 = (Avatar *)
+               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                         ((Component *)pTVar2,
                           Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                          (pTVar2,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -147,9 +141,9 @@ Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_GetAva
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
-  pAVar1 = (Avatar_1 *)(*pcVar4)();
+  pAVar1 = (Avatar *)(*pcVar4)();
   return pAVar1;
 }
 
@@ -161,37 +155,35 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_H
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  a = (this->fields).currentCrossFadedAnimation;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   bVar1 = mscorlib.dll::System::String::String_op_Equality
-                    (a,TypeInfo__System__String->static_fields->Empty,(MethodInfo *)0x0);
+                    ((this->fields).currentCrossFadedAnimation,::StringLiteral__,(MethodInfo *)0x0);
   if (bVar1 != 0) {
     return;
   }
-  method_00 = (MethodInfo *)(this->fields).animations;
-  if (method_00 != (MethodInfo *)0x0) {
-    UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_3
-              ((Animation *)method_00,(this->fields).currentCrossFadedAnimation,(MethodInfo *)0x0);
+  this_00 = (this->fields).animations;
+  if (this_00 != (Animation *)0x0) {
+    UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_2
+              (this_00,(this->fields).currentCrossFadedAnimation,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-    if (this_00 != (ScaleAnimationBase *)0x0) {
-      (this_00->fields).state = (int32_t)this;
+    value = (Object *)func_?();
+    if (value != (Object *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)&UNK_?);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].klass = (Object__Class *)this;
+      func_?(value + 2);
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
+                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -205,49 +197,43 @@ bool Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_H
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
   index = 0;
   pLVar1 = (this->fields).animationData;
   while (pLVar1 != (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                        MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Count__
-                       );
-    if ((int)pOVar2 <= index) {
+    if ((pLVar1->fields)._size <= index) {
       return 0;
     }
     pLVar1 = (this->fields).animationData;
     if (pLVar1 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
-    pAVar3 = mscorlib.dll::System::Collections::Generic::
-             List`1[AccessoryAnimationHandler+AnimationData]::
-             List_1_AccessoryAnimationHandler_AnimationData__get_Item
-                       (&AStack_4,pLVar1,index,
+    pUVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+             UnitySynchronizationContext+WorkRequest]::
+             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
+                       (&UStack_3,
+                        (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar1,index,
                         MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
                        );
-    uStack_5._0_4_ = pAVar3->animationName;
-    uStack_5._4_4_ = pAVar3->animationSpeed;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      AStack_4.TransitionToAnimationName = (String *)TypeInfo__System__String;
-      AStack_4.animationSpeed = (float)&UNK_?;
-      func_?();
-    }
-    bVar6 = mscorlib.dll::System::String::String_op_Equality
-                      ((String *)uStack_5,animationName,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
+    uStack_4._0_4_ = pUVar2->m_DelagateCallback;
+    uStack_4._4_4_ = pUVar2->m_DelagateState;
+    bVar5 = mscorlib.dll::System::String::String_op_Equality
+                      ((String *)(undefined4)uStack_4,animationName,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
       return 1;
     }
     index = index + 1;
     pLVar1 = (this->fields).animationData;
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  bVar6 = (*pcVar7)();
-  return bVar6;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  bVar5 = (*pcVar6)();
+  return bVar5;
 }
 
 
@@ -258,15 +244,15 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_I
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Idle);
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).animations;
   if (pAVar1 != (Animation *)0x0) {
     x = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetClip
                   (pAVar1,StringLiteral_Idle,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -275,7 +261,7 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_I
       AccessoryAnimationHandler_ApplyAnimationSpeed(this,StringLiteral_Idle,(MethodInfo *)0x0);
       pAVar1 = (this->fields).animations;
       if (pAVar1 == (Animation *)0x0) goto code_?;
-      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_3
+      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_2
                 (pAVar1,StringLiteral_Idle,(MethodInfo *)0x0);
     }
     return;
@@ -295,16 +281,8 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::
                (AccessoryAnimationHandler *this,String *newAnimation,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  a = (this->fields).currentCrossFadedAnimation;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  bVar1 = mscorlib.dll::System::String::String_op_Equality(a,newAnimation,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_op_Equality
+                    ((this->fields).currentCrossFadedAnimation,newAnimation,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     AccessoryAnimationHandler_PlayAnimation(this,newAnimation,(MethodInfo *)0x0);
   }
@@ -319,182 +297,160 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_P
 
 {
   do {
-    pSVar1 = animationName;
+    a_01 = (MethodInfo *)animationName;
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Count__
+                     );
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
+                     );
+      func_?(&StringLiteral_Idle);
+      func_?(&::StringLiteral__);
       cRam_? = '\x01';
     }
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this,(MethodInfo *)0x0);
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
     if (this_00 == (GameObject *)0x0) goto code_?;
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                       (this_00,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    if (bVar1 == 0) {
       return;
     }
     if (cRam_? == '\0') {
       func_?();
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
+                     );
       cRam_? = '\x01';
     }
-    iVar3 = 0;
+    iVar2 = 0;
     while( true ) {
-      pLVar4 = (this->fields).animationData;
-      if (pLVar4 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) goto code_?;
-      pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar4,
-                          MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Count__
-                         );
-      if ((int)pOVar5 <= iVar3) break;
-      pLVar4 = (this->fields).animationData;
-      if (pLVar4 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) goto code_?;
-      pAVar6 = mscorlib.dll::System::Collections::Generic::
-               List`1[AccessoryAnimationHandler+AnimationData]::
-               List_1_AccessoryAnimationHandler_AnimationData__get_Item
-                         (&AStack_7,pLVar4,iVar3,
+      pLVar3 = (this->fields).animationData;
+      if (pLVar3 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) goto code_?;
+      if ((pLVar3->fields)._size <= iVar2) break;
+      pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+               UnitySynchronizationContext+WorkRequest]::
+               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
+                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffd8,
+                          (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar3,
+                          iVar2,
                           MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
                          );
-      uStack_8._0_4_ = pAVar6->animationName;
-      uStack_8._4_4_ = pAVar6->animationSpeed;
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar2 = mscorlib.dll::System::String::String_op_Equality
-                        ((String *)uStack_8,pSVar1,(MethodInfo *)0x0);
-      if (bVar2 != 0) goto code_?;
-      iVar3 = iVar3 + 1;
+      a = pUVar4->m_DelagateCallback;
+      bVar1 = mscorlib.dll::System::String::String_op_Equality
+                        ((String *)a,(String *)a_01,(MethodInfo *)0x0);
+      if (bVar1 != 0) goto code_?;
+      iVar2 = iVar2 + 1;
     }
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                      (pSVar1,StringLiteral_Idle,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Inequality
+                      ((String *)a_01,StringLiteral_Idle,(MethodInfo *)0x0);
     animationName = StringLiteral_Idle;
-  } while (bVar2 != 0);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?();
-  }
-  bVar2 = mscorlib.dll::System::String::String_op_Equality
-                    (pSVar1,StringLiteral_Idle,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  } while (bVar1 != 0);
+  method_00 = a_01;
+  bVar1 = mscorlib.dll::System::String::String_op_Equality
+                    ((String *)a_01,StringLiteral_Idle,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
 code_?:
     (this->fields).shouldTransitionToNewAnimation = 0;
-    AccessoryAnimationHandler_ApplyAnimationSpeed(this,pSVar1,(MethodInfo *)0x0);
-    pAVar9 = (this->fields).animations;
-    (this->fields).currentCrossFadedAnimation = pSVar1;
-    if (pAVar9 != (Animation *)0x0) {
-      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_CrossFadeQueued_1
-                (pAVar9,pSVar1,0.2,QueueMode__Enum_PlayNow,(MethodInfo *)0x0);
-      pAVar9 = (this->fields).animations;
-      if ((pAVar9 != (Animation *)0x0) &&
-         (pAStack_10 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState
-                                (pAVar9,pSVar1,(MethodInfo *)0x0),
-         pAStack_10 != (AnimationState *)0x0)) {
-        WVar11 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
-                AnimationState_get_wrapMode(pAStack_10,(MethodInfo *)0x0);
-        if (WVar11 != WrapMode__Enum_Clamp) {
+    AccessoryAnimationHandler_ApplyAnimationSpeed(this,(String *)a_01,(MethodInfo *)0x0);
+    (this->fields).currentCrossFadedAnimation = (String *)a_01;
+    func_?();
+    pAVar5 = (this->fields).animations;
+    if (pAVar5 != (Animation *)0x0) {
+      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_CrossFadeQueued
+                (pAVar5,(String *)a_01,0.2,QueueMode__Enum_PlayNow,(MethodInfo *)0x0);
+      pAVar5 = (this->fields).animations;
+      if ((pAVar5 != (Animation *)0x0) &&
+         (this_01 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState
+                              (pAVar5,(String *)a_01,(MethodInfo *)0x0),
+         this_01 != (AnimationState *)0x0)) {
+        WVar6 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
+                AnimationState_get_wrapMode(this_01,(MethodInfo *)0x0);
+        if (WVar6 != WrapMode__Enum_Clamp) {
           return;
         }
-        pLVar4 = (this->fields).animationData;
-        pSStack_12 = (String *)0x0;
-        pSVar13 = pSStack_12;
-        while (pSStack_12 = pSVar13, pLVar4 != (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0
-              ) {
-          pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar4,
-                              MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Count__
-                             );
-          if ((int)pOVar5 <= (int)pSStack_12) {
+        iVar2 = 0;
+        pLVar3 = (this->fields).animationData;
+        while (pLVar3 != (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) {
+          if ((pLVar3->fields)._size <= iVar2) {
             return;
           }
-          if ((this->fields).animationData == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0
-             ) break;
-          puVar14 = (undefined8 *)func_?(&AStack_7);
-          uStack_8 = *puVar14;
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          bVar2 = mscorlib.dll::System::String::String_op_Equality
-                            ((String *)uStack_8,pSVar1,(MethodInfo *)0x0);
-          if (bVar2 != 0) {
-            pLVar4 = (this->fields).animationData;
-            if (pLVar4 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
-            iVar3 = func_?(&stack0xffffffcc,pLVar4,pSVar13);
-            pSStack_12 = *(String **)(iVar3 + 8);
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__String);
-            }
-            bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                              (pSStack_12,TypeInfo__System__String->static_fields->Empty,
-                               (MethodInfo *)0x0);
-            if (bVar2 != 0) {
-              pSStack_12 = (String *)
-                          UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
-                          AnimationState_get_length(pAStack_10,(MethodInfo *)0x0);
-              fStack_15 = AccessoryAnimationHandler_GetAnimationSpeed(this,pSVar1,(MethodInfo *)0x0)
-              ;
+          pLVar3 = (this->fields).animationData;
+          if (pLVar3 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
+          pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                   UnitySynchronizationContext+WorkRequest]::
+                   List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
+                             ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffd8,
+                              (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar3,
+                              iVar2,
+                              MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
+                             );
+          a_00 = pUVar4->m_DelagateCallback;
+          bVar1 = mscorlib.dll::System::String::String_op_Equality
+                            ((String *)a_00,(String *)a_01,(MethodInfo *)0x0);
+          if (bVar1 != 0) {
+            if ((this->fields).animationData ==
+                (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
+            iVar7 = func_?();
+            bVar1 = mscorlib.dll::System::String::String_op_Inequality
+                              (*(String **)(iVar7 + 8),::StringLiteral__,(MethodInfo *)0x0);
+            if (bVar1 != 0) {
+              fVar8 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
+                      AnimationState_get_length(this_01,(MethodInfo *)0x0);
+              fVar9 = AccessoryAnimationHandler_GetAnimationSpeed
+                                 (this,(String *)a_01,(MethodInfo *)0x0);
               if ((this->fields).animationData ==
                   (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
-              iVar3 = func_?();
+              iVar7 = func_?();
               routine = AccessoryAnimationHandler_TransitionToNewAnimation
-                                  (this,(float)pSStack_12 / fStack_15,*(String **)(iVar3 + 8),
-                                   (MethodInfo *)0x0);
+                                  (this,fVar8 / fVar9,*(String **)(iVar7 + 8),(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
               MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
             }
           }
-          pSVar13 = (String *)((int)pSVar13 + 1);
-          pLVar4 = (this->fields).animationData;
+          iVar2 = iVar2 + 1;
+          pLVar3 = (this->fields).animationData;
         }
       }
     }
   }
   else {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?();
       cRam_? = '\x01';
     }
-    pSVar1 = (this->fields).currentCrossFadedAnimation;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    bVar2 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar1,TypeInfo__System__String->static_fields->Empty,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    bVar1 = mscorlib.dll::System::String::String_op_Equality
+                      ((this->fields).currentCrossFadedAnimation,::StringLiteral__,(MethodInfo *)0x0
+                      );
+    if (bVar1 != 0) {
       return;
     }
-    method_00 = (MethodInfo *)(this->fields).animations;
-    if (method_00 != (MethodInfo *)0x0) {
-      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_3
-                ((Animation *)method_00,(this->fields).currentCrossFadedAnimation,(MethodInfo *)0x0)
-      ;
+    pAVar5 = (this->fields).animations;
+    if (pAVar5 != (Animation *)0x0) {
+      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_2
+                (pAVar5,(this->fields).currentCrossFadedAnimation,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (ScaleAnimationBase *)func_?();
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,method_00);
-      if (this_01 != (ScaleAnimationBase *)0x0) {
-        (this_01->fields).state = (int32_t)this;
+      value = (Object *)func_?();
+      if (value != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  (value,ExceptionArgument__Enum_obj,method_00);
+        value[1].klass = (Object__Class *)0x0;
+        value[2].klass = (Object__Class *)this;
+        func_?(value + 2);
         UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                  ((MonoBehaviour *)this,(IEnumerator *)this_01,(MethodInfo *)0x0);
+                  ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -511,62 +467,69 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__AnimationState);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
     cRam_? = '\x01';
   }
-  func_?();
   this_00 = (this->fields).animations;
   if (this_00 != (Animation *)0x0) {
     pIVar4 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetEnumerator
                        (this_00,(MethodInfo *)0x0);
-    uStack_1 = 0;
+    uStack_1 = 1;
     while (pIVar4 != (IEnumerator *)0x0) {
-      cVar5 = func_?(1);
-      unaff_EBX = (Il2CppRuntimeInterfaceOffsetPair *)0x0;
+      cVar5 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar4);
       if (cVar5 == '\0') {
         uStack_1 = 0xffffffff;
-        iVar6 = func_?();
+        iVar6 = func_?(pIVar4,TypeInfo__System__IDisposable);
         if (iVar6 != 0) {
-          func_?(0);
+          func_?(0,TypeInfo__System__IDisposable,iVar6);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
         }
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pIVar7 = pIVar4->klass;
-      uVar8 = 0;
-      uVar9._0_1_ = (pIVar7->_1).rank;
-      uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
-      if (uVar9 != 0) {
-        unaff_EBX = pIVar7->interfaceOffsets;
+      if (pIVar4 == (IEnumerator *)0x0) break;
+      uVar7 = 0;
+      uVar8 = (pIVar4->klass->_1).interface_offsets_count;
+      if (uVar8 != 0) {
         do {
-          if (unaff_EBX[uVar8].interfaceType ==
+          if (pIVar4->klass->interfaceOffsets[uVar7].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-            ppMVar10 = &(&(pIVar4->klass->vtable).get_Current)[unaff_EBX[uVar8].offset].method;
+            pVVar9 = &(pIVar4->klass->vtable).get_Current +
+                     pIVar4->klass->interfaceOffsets[uVar7].offset;
             goto code_?;
           }
-          uVar8 = uVar8 + 1;
-        } while (uVar8 < uVar9);
+          uVar7 = uVar7 + 1;
+        } while (uVar7 < uVar8);
       }
-      ppMVar10 = (MethodInfo **)func_?(pIVar4);
+      pVVar9 = (VirtualInvokeData *)
+               func_?(pIVar4,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-      pAVar11 = (AnimationState *)(*(code *)*ppMVar10)();
-      if (pAVar11 == (AnimationState *)0x0) break;
-      this_01 = (AnimationState *)0x0;
-      if (pAVar11->klass == TypeInfo__UnityEngine__AnimationState) {
-        this_01 = pAVar11;
+      pAVar10 = (AnimationState *)(*pVVar9->methodPtr)(pIVar4,pVVar9->method);
+      if (pAVar10 == (AnimationState *)0x0) break;
+      pAVar11 = (AnimationState *)0x0;
+      if (pAVar10->klass == TypeInfo__UnityEngine__AnimationState) {
+        pAVar11 = pAVar10;
       }
-      if (this_01 == (AnimationState *)0x0) {
-        func_?();
-        break;
+      pAVar12 = TypeInfo__UnityEngine__AnimationState;
+      if (pAVar11 == (AnimationState *)0x0) goto code_?;
+      pAVar11 = (AnimationState *)0x0;
+      if (pAVar10->klass == TypeInfo__UnityEngine__AnimationState) {
+        pAVar11 = pAVar10;
       }
       UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_wrapMode
-                (this_01,WrapMode__Enum_Loop,(MethodInfo *)0x0);
+                (pAVar11,WrapMode__Enum_Loop,(MethodInfo *)0x0);
     }
   }
   func_?();
-  func_?(unaff_EBX);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pAVar10 = extraout_ECX;
+  pAVar12 = extraout_EDX;
+code_?:
+  func_?(pAVar10,pAVar12);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -580,15 +543,15 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_S
   ActivateOnAnimationBase::ActivateOnAnimationBase_Start
             ((ActivateOnAnimationBase *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Idle);
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).animations;
   if (pAVar1 != (Animation *)0x0) {
     x = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetClip
                   (pAVar1,StringLiteral_Idle,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -597,13 +560,13 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_S
       AccessoryAnimationHandler_ApplyAnimationSpeed(this,StringLiteral_Idle,(MethodInfo *)0x0);
       pAVar1 = (this->fields).animations;
       if (pAVar1 == (Animation *)0x0) goto code_?;
-      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_3
+      UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_2
                 (pAVar1,StringLiteral_Idle,(MethodInfo *)0x0);
     }
     return;
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -617,9 +580,10 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_S
 
 {
   (this->fields).currentCrossFadedAnimation = animationName;
+  func_?(&(this->fields).currentCrossFadedAnimation,animationName);
   this_00 = (this->fields).animations;
   if (this_00 != (Animation *)0x0) {
-    UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_CrossFadeQueued_1
+    UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_CrossFadeQueued
               (this_00,animationName,0.2,QueueMode__Enum_PlayNow,(MethodInfo *)0x0);
     return;
   }
@@ -640,7 +604,7 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_S
   AccessoryAnimationHandler_ApplyAnimationSpeed(this,transitionToAnimationName,(MethodInfo *)0x0);
   pAVar1 = (this->fields).animations;
   if (pAVar1 != (Animation *)0x0) {
-    UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_3
+    UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_2
               (pAVar1,transitionToAnimationName,(MethodInfo *)0x0);
     pAVar1 = (this->fields).animations;
     if (pAVar1 != (Animation *)0x0) {
@@ -679,17 +643,20 @@ Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_StopAn
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AccessoryAnimationHandler___StopAnimationNextFrame_d__19);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AccessoryAnimationHandler___StopAnimationNextFrame_c__Iterator1;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).state = (int32_t)this;
-    return (IEnumerator *)this_00;
+  value = (Object *)
+          func_?(TypeInfo__AccessoryAnimationHandler___StopAnimationNextFrame_d__19);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -705,19 +672,23 @@ Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_Transi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AccessoryAnimationHandler___TransitionToNewAnimation_d__15);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AccessoryAnimationHandler___TransitionToNewAnimation_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).originalScale.x = (float)transitionToAnimationName;
-    (this_00->fields).originalScale.y = (float)this;
-    (this_00->fields).state = (int32_t)resetDelay;
-    return (IEnumerator *)this_00;
+  value = (Object *)
+          func_?(TypeInfo__AccessoryAnimationHandler___TransitionToNewAnimation_d__15);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    value[3].klass = (Object__Class *)transitionToAnimationName;
+    value[2].monitor = (MonitorData *)resetDelay;
+    func_?(value + 3,transitionToAnimationName);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -731,22 +702,13 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler__
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).currentCrossFadedAnimation = TypeInfo__System__String->static_fields->Empty;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  (this->fields).currentCrossFadedAnimation = ::StringLiteral__;
+  func_?(&(this->fields).currentCrossFadedAnimation,::StringLiteral__);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -7,18 +7,21 @@ Assembly-CSharp.dll::CoroutineWorker::CoroutineWorker_Run
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CoroutineWorker___Run_d__1);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__CoroutineWorker___Run_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).state = (int32_t)this;
-    (this_00->fields)._._._._.m_CachedPtr = coroutine;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__CoroutineWorker___Run_d__1);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    value[2].monitor = (MonitorData *)coroutine;
+    func_?(&value[2].monitor,coroutine);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -32,13 +35,13 @@ void Assembly-CSharp.dll::CoroutineWorker::CoroutineWorker_RunCoroutineAndDestro
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_RunCoroutineAndDestroy);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
             ((MonoBehaviour *)this,coroutine,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log

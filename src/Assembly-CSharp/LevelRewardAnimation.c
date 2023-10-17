@@ -7,17 +7,19 @@ Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_DisplayAndFadeGo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__LevelRewardAnimation___DisplayAndFadeGoldIcon_d__30);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LevelRewardAnimation___DisplayAndFadeGoldIcon_c__Iterator2;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).originalScale.y = (float)this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__LevelRewardAnimation___DisplayAndFadeGoldIcon_d__30);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -32,17 +34,19 @@ Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_DisplayAndFadeNe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__LevelRewardAnimation___DisplayAndFadeNextBadge_d__29);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LevelRewardAnimation___DisplayAndFadeNextBadge_c__Iterator1;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).target = (Transform *)this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__LevelRewardAnimation___DisplayAndFadeNextBadge_d__29);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -57,17 +61,19 @@ Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_DisplayAndFadePr
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__LevelRewardAnimation___DisplayAndFadePrevBadge_d__28);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LevelRewardAnimation___DisplayAndFadePrevBadge_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).originalScale.y = (float)this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__LevelRewardAnimation___DisplayAndFadePrevBadge_d__28);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -85,122 +91,162 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_Initialize
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
+  puStack_4 = &stack0xffffff9c;
+  puVar5 = &stack0xffffff9c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
+                   );
+    func_?(&
+                    System__Linq__IOrderedEnumerable<System::Collections::Generic::KeyValuePair<int,_int>_>_MethodInfo__System__Linq__Enumerable__OrderByDescending<System::Collections::Generic::KeyValuePair<int,_int>,_int>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_int>_>__System__Func<System::Collections::Generic::KeyValuePair<int,_int>,_int>_
+                   );
+    func_?(&
+                    System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>_MethodInfo__System__Linq__Enumerable__ToList<System::Collections::Generic::KeyValuePair<int,_int>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_int>_>_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
+                   );
+    func_?(&
+                    TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<int,_int>,_int>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__Add_System__Collections__Generic__KeyValuePair<int,_int>_
+                   );
+    func_?(&
+                    MethodInfo__LevelRewardAnimation____c___Initialize_b__23_0_System__Collections__Generic__KeyValuePair<int,_int>_
+                   );
+    func_?(&TypeInfo__LevelRewardAnimation____c);
+    func_?(&StringLiteral_LEVEL_UP_);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  this_03 = (Text *)0x0;
-  LStack_6.fields._NextReward_k__BackingField.value = 0;
-  LStack_6.klass = (LevelRewardsManager__Class *)0x0;
-  LStack_6.monitor = (MonitorData *)0x0;
-  LStack_6.fields.unseenLevelRewards = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  LStack_6.fields._NextReward_k__BackingField.key = 0;
-  func_?();
-  puStack_7 = (undefined4 *)&stack0xffffffac;
-  puStack_4 = &stack0xffffffac;
+  DStack_6._current.value = 0;
+  DStack_6._getEnumeratorRetType = 0;
+  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
   if (levelRewards != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
-    puStack_7 = (undefined4 *)&stack0xffffffac;
-    puStack_4 = &stack0xffffffac;
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                       (&DStack_9,(Dictionary_2_WinningConditionType_System_Object_ *)levelRewards,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
-                       );
-    LStack_6.klass = (LevelRewardsManager__Class *)pDVar8->dictionary;
-    LStack_6.monitor = (MonitorData *)pDVar8->next;
-    LStack_6.fields.unseenLevelRewards = (Dictionary_2_System_Int32_System_Int32_ *)pDVar8->stamp;
-    LStack_6.fields._NextReward_k__BackingField.key = (pDVar8->current).key;
-    LStack_6.fields._NextReward_k__BackingField.value = (int32_t)(pDVar8->current).value;
-    uStack_1 = 0;
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                        (&DStack_8,(Dictionary_2_System_Object_System_Object_ *)levelRewards,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
+                        );
+    uStack_9 = 0;
+    DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (int32_t)(pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
+    uStack_1 = 1;
+    pDStack_10 = &DStack_6;
     while( true ) {
-      DStack_9.dictionary =
-           (Dictionary_2_WinningConditionType_System_Object_ *)
-           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+      bVar11 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Int32Enum]::
+              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum__MoveNext
+                        (&DStack_6,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                        );
+      pMVar12 = 
+      MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__Add_System__Collections__Generic__KeyValuePair<int,_int>_
       ;
-      cVar10 = func_?();
-      if (cVar10 == '\0') break;
-      item = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                       (&LStack_6,
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
-                       );
-      pLVar11 = (this->fields).rewards;
-      if (pLVar11 == (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::BeforeRenderHelper+OrderBlock]
-      ::List_1_UnityEngine_BeforeRenderHelper_OrderBlock__Add
-                ((List_1_UnityEngine_BeforeRenderHelper_OrderBlock_ *)pLVar11,
-                 (BeforeRenderHelper_OrderBlock)item,
-                 MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__Add_System__Collections__Generic__KeyValuePair<int,_int>_
-                );
+      if (bVar11 == 0) break;
+      pLVar13 = (this->fields).rewards;
+      iStack_14 = DStack_6._current.value;
+      if (pLVar13 == (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)0x0) goto code_?;
+      piVar15 = &(pLVar13->fields)._version;
+      *piVar15 = *piVar15 + 1;
+      pKVar16 = (pLVar13->fields)._items;
+      uVar17 = (pLVar13->fields)._size;
+      if (pKVar16 == (KeyValuePair_2_System_Int32_System_Int32___Array *)0x0) goto code_?;
+      if (uVar17 < pKVar16->max_length) {
+        (pLVar13->fields)._size = uVar17 + 1;
+        if (pKVar16->max_length <= uVar17) {
+          func_?();
+          goto code_?;
+        }
+        pKVar16->vector[uVar17].key = DStack_6._current.key;
+        pKVar16->vector[uVar17].value = DStack_6._current.value;
+      }
+      else {
+        (*(pMVar12->klass->rgctx_data[0xb].method)->virtualMethodPointer)
+                  (pLVar13,DStack_6._current.key,DStack_6._current.value,
+                   pMVar12->klass->rgctx_data[0xb].rgctxDataDummy);
+      }
     }
-    *puStack_7 = 0x3f;
     uStack_1 = 0xffffffff;
-    pMVar12 = 
-    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
-    ;
-    func_?(&LStack_6);
-    pLVar11 = (this->fields).rewards;
-    if (TypeInfo__LevelRewardAnimation->static_fields->__f__am_cache0 ==
-        (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_Int32_ *)0x0) {
-      this_03 = (Text *)func_?(
-                                       TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<int,_int>,_int>
-                                       );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                ((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)this_03,(Object *)0x0,
-                 MethodInfo__LevelRewardAnimation___Initialize_m__0_System__Collections__Generic__KeyValuePair<int,_int>_
-                 ,
-                 MethodInfo__System__Func<System::Collections::Generic::KeyValuePair<int,_int>,_int>__Func_System__Object__void__
-                );
-      TypeInfo__LevelRewardAnimation->static_fields->__f__am_cache0 =
-           (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_Int32_ *)
-           this_03;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&DStack_6,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
+               ,unaff_EDI);
+    uStack_1 = 0xffffffff;
+    pLStack_18 = (this->fields).rewards;
+    if ((TypeInfo__LevelRewardAnimation____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    source = System.Core.dll::System::Linq::Enumerable::Enumerable_ThenBy_6
-                       ((IOrderedEnumerable_1_System_Object_ *)pLVar11,
-                        (Func_2_Object_Int64_ *)
-                        TypeInfo__LevelRewardAnimation->static_fields->__f__am_cache0,
+    this_01 = TypeInfo__LevelRewardAnimation____c->static_fields->__9__23_0;
+    if (this_01 ==
+        (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_Int32_ *)0x0) {
+      if ((TypeInfo__LevelRewardAnimation____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      object = TypeInfo__LevelRewardAnimation____c->static_fields->__9;
+      this_01 = (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_Int32_ *
+                )func_?();
+      if (this_01 ==
+          (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_Int32_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Func`2[Newtonsoft::Json::Serialization::
+      DefaultSerializationBinder+TypeNameKey,Object]::
+      Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object___ctor
+                ((Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_
+                  *)this_01,(Object *)object,
+                 MethodInfo__LevelRewardAnimation____c___Initialize_b__23_0_System__Collections__Generic__KeyValuePair<int,_int>_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__LevelRewardAnimation____c->static_fields->__9__23_0 = this_01;
+      func_?(&TypeInfo__LevelRewardAnimation____c->static_fields->__9__23_0,this_01);
+    }
+    source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderByDescending_2
+                       ((IEnumerable_1_System_Object_ *)pLStack_18,(Func_2_Object_Object_ *)this_01,
                         System__Linq__IOrderedEnumerable<System::Collections::Generic::KeyValuePair<int,_int>_>_MethodInfo__System__Linq__Enumerable__OrderByDescending<System::Collections::Generic::KeyValuePair<int,_int>,_int>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_int>_>__System__Func<System::Collections::Generic::KeyValuePair<int,_int>,_int>_
                        );
-    pLVar11 = (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)
-             System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                       ((IEnumerable_1_UseInteractor_ *)source,
-                        System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>_MethodInfo__System__Linq__Enumerable__ToList<System::Collections::Generic::KeyValuePair<int,_int>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_int>_>_
-                       );
-    if (this != (LevelRewardAnimation *)0x0) {
-      (this->fields).rewards = pLVar11;
-      this_00 = (this->fields).header;
-      if ((this_00 != (Text *)0x0) &&
-         (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                              ((Component_1 *)this_00,pMVar12), this_02 != (GameObject *)0x0)) {
-        pMVar12 = (MethodInfo *)&UNK_?;
+    pLVar13 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList
+                        ((IEnumerable_1_KeyValuePair_2_System_Int32_System_Int32_ *)source,
+                         System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>_MethodInfo__System__Linq__Enumerable__ToList<System::Collections::Generic::KeyValuePair<int,_int>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_int>_>_
+                        );
+    (this->fields).rewards = pLVar13;
+    func_?();
+    pTVar19 = (this->fields).header;
+    if (pTVar19 != (Text *)0x0) {
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pTVar19,(MethodInfo *)0x0);
+      if (this_02 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_02,0,(MethodInfo *)0x0);
-        this_03 = (this->fields).header;
-        pDVar13 = (Dictionary_2_WinningConditionType_System_Object_ *)
-                 TM::TM__(StringLiteral_LEVEL_UP_,(MethodInfo *)0x0);
-        if (this_03 != (Text *)0x0) {
-          DStack_9.next =
-               (int32_t)(this_03->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-          DStack_9.dictionary = pDVar13;
-          (*(code *)(this_03->klass->vtable).set_text.method)();
-          pRVar14 = (this->fields).prevLevelBadge;
-          if (pRVar14 != (RawImage *)0x0) {
+        pTVar19 = (this->fields).header;
+        pSVar20 = TM::TM__(StringLiteral_LEVEL_UP_,(MethodInfo *)0x0);
+        if (pTVar19 != (Text *)0x0) {
+          (*(pTVar19->klass->vtable).set_text.methodPtr)
+                    (pTVar19,pSVar20,(pTVar19->klass->vtable).set_text.method);
+          pRVar21 = (this->fields).prevLevelBadge;
+          if (pRVar21 != (RawImage *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                      ((Behaviour *)pRVar14,0,in_stack_15);
-            pRVar14 = (this->fields).nextLevelBadge;
-            if (pRVar14 != (RawImage *)0x0) {
+                      ((Behaviour *)pRVar21,0,(MethodInfo *)0x0);
+            pRVar21 = (this->fields).nextLevelBadge;
+            if (pRVar21 != (RawImage *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                        ((Behaviour *)pRVar14,0,pMVar12);
-              this_01 = (this->fields).goldImage;
-              if (this_01 != (Image *)0x0) {
+                        ((Behaviour *)pRVar21,0,(MethodInfo *)0x0);
+              this_00 = (this->fields).goldImage;
+              if (this_00 != (Image *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          ((Behaviour *)this_01,0,(MethodInfo *)0x0);
+                          ((Behaviour *)this_00,0,(MethodInfo *)0x0);
                 LevelRewardAnimation_OnShow(this,(MethodInfo *)0x0);
                 *unaff_FS_OFFSET = uStack_3;
                 return;
@@ -212,10 +258,9 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_Initialize
     }
   }
 code_?:
-  func_?(0);
-  func_?(this_03,0,0);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -227,39 +272,47 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    func_?(&TypeInfo__BadgeManager);
+    func_?(&
+                    MethodInfo__LevelRewardAnimation__OnNextBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&
+                    MethodInfo__LevelRewardAnimation__OnPrevBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                   );
     cRam_? = '\x01';
   }
-  pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  pAVar1 = (Action_1_Object_ *)
            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (pUVar1,(Object *)this,
-             MethodInfo__LevelRewardAnimation__OnPrevBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
-             ,
-             MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
-    func_?();
+  if (pAVar1 != (Action_1_Object_ *)0x0) {
+    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+              (pAVar1,(Object *)this,
+               MethodInfo__LevelRewardAnimation__OnPrevBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,(MethodInfo *)0x0);
+    (this->fields).previousBadgeTextureAsset = (Texture2D *)0x0;
+    func_?(&(this->fields).previousBadgeTextureAsset);
+    pAVar1 = (Action_1_Object_ *)
+             func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    if (pAVar1 != (Action_1_Object_ *)0x0) {
+      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                (pAVar1,(Object *)this,
+                 MethodInfo__LevelRewardAnimation__OnNextBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+                ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,(MethodInfo *)0x0);
+      (this->fields).currentBadgeTextureAsset = (Texture2D *)0x0;
+      func_?(&(this->fields).currentBadgeTextureAsset,0);
+      return;
+    }
   }
-  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar1,(MethodInfo *)0x0);
-  (this->fields).previousBadgeTextureAsset = (Texture2D *)0x0;
-  pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-           func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (pUVar1,(Object *)this,
-             MethodInfo__LevelRewardAnimation__OnNextBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
-             ,
-             MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-            );
-  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar1,(MethodInfo *)0x0);
-  (this->fields).currentBadgeTextureAsset = (Texture2D *)0x0;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -271,33 +324,31 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_OnNextBadge
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Error_downloading_nextLevel_badg);
     cRam_? = '\x01';
   }
-  x = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::DownloadHandlerTexture
-      ::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-  (this->fields).currentBadgeTextureAsset = x;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pTVar1 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
+           DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
+  (this->fields).currentBadgeTextureAsset = pTVar1;
+  func_?(&(this->fields).currentBadgeTextureAsset,pTVar1);
+  pTVar1 = (this->fields).currentBadgeTextureAsset;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
     if (www == (UnityWebRequest *)0x0) goto code_?;
     value = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
             UnityWebRequest_get_error(www,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
-    if (bVar1 == 0) goto code_?;
+    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+    if (bVar2 == 0) goto code_?;
   }
   else {
 code_?:
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
@@ -311,8 +362,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -324,33 +375,31 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_OnPrevBadge
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Error_downloading_prevLevel_badg);
     cRam_? = '\x01';
   }
-  x = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::DownloadHandlerTexture
-      ::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-  (this->fields).previousBadgeTextureAsset = x;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pTVar1 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
+           DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
+  (this->fields).previousBadgeTextureAsset = pTVar1;
+  func_?(&(this->fields).previousBadgeTextureAsset,pTVar1);
+  pTVar1 = (this->fields).previousBadgeTextureAsset;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
     if (www == (UnityWebRequest *)0x0) goto code_?;
     value = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
             UnityWebRequest_get_error(www,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
-    if (bVar1 == 0) goto code_?;
+    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+    if (bVar2 == 0) goto code_?;
   }
   else {
 code_?:
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
@@ -364,8 +413,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -377,182 +426,158 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_OnShow
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    func_?(&TypeInfo__BadgeManager);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Key__);
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Value__);
+    func_?(&
+                    MethodInfo__LevelRewardAnimation__OnNextBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&
+                    MethodInfo__LevelRewardAnimation__OnPrevBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__RemoveAt_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__get_Item_int_
+                   );
+    func_?(&
+                    MethodInfo__LevelRewardAnimation____c___OnShow_b__24_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__LevelRewardAnimation____c);
+    func_?(&StringLiteral__0__);
+    func_?(&StringLiteral_GOLD_);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   pLVar1 = (this->fields).rewards;
   if (pLVar1 != (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                        MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__get_Count__
-                       );
-    if ((int)pOVar2 < 1) {
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-      if (TypeInfo__LevelRewardAnimation->static_fields->__f__am_cache1 ==
-          (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)0x0,
-                   MethodInfo__LevelRewardAnimation___OnShow_m__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                  );
-        TypeInfo__LevelRewardAnimation->static_fields->__f__am_cache1 =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)pUVar3;
+    if ((pLVar1->fields)._size < 1) {
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__LevelRewardAnimation____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__LevelRewardAnimation____c);
       }
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-           TypeInfo__LevelRewardAnimation->static_fields->__f__am_cache1;
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-        func_?();
+      callbackFunction = TypeInfo__LevelRewardAnimation____c->static_fields->__9__24_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__LevelRewardAnimation____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__LevelRewardAnimation____c);
+        }
+        object = TypeInfo__LevelRewardAnimation____c->static_fields->__9;
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_IUIStack_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
+        goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__LevelRewardAnimation____c___OnShow_b__24_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__LevelRewardAnimation____c->static_fields->__9__24_0 = callbackFunction;
+        func_?(&TypeInfo__LevelRewardAnimation____c->static_fields->__9__24_0);
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,callbackFunction,
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       return;
     }
+    KVar2 = (KeyValuePair_2_System_Int32_System_Int32_)
+            mscorlib.dll::System::Collections::Generic::
+            List`1[TabMenuButtonAccessory+AccessoryTabDef]::
+            List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+                      ((List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).rewards,
+                       (pLVar1->fields)._size + -1,
+                       MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__get_Item_int_
+                      );
     pLVar1 = (this->fields).rewards;
+    (this->fields).currentReward = KVar2;
     if (pLVar1 != (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                          MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__get_Count__
-                         );
-      KVar4 = mscorlib.dll::System::Collections::Generic::List`1[KeyValuePair`2[System::Int32,System
-              ::Int32]]::List_1_KeyValuePair_2_System_Int32_System_Int32__get_Item
-                        (pLVar1,(int32_t)((int)&pOVar2[-1].monitor + 3),
-                         MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__get_Item_int_
-                        );
-      pLVar1 = (this->fields).rewards;
-      (this->fields).currentReward = KVar4;
-      if (pLVar1 != (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)0x0) {
-        pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                            MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__get_Count__
-                           );
-        mscorlib.dll::System::Collections::Generic::List`1[KeyValuePair`2[System::Int32,System::
-        Int32]]::List_1_KeyValuePair_2_System_Int32_System_Int32__RemoveAt
-                  (pLVar1,(int32_t)((int)&pOVar2[-1].monitor + 3),
-                   MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__RemoveAt_int_
-                  );
-        iVar5 = func_?();
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)this,
+      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RegexCharClass+SingleRange]::
+      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__RemoveAt
+                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).rewards,(pLVar1->fields)._size + -1,
+                 MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__RemoveAt_int_
+                );
+      iVar3 = (this->fields).currentReward.key;
+      pAVar4 = (Action_1_Object_ *)func_?();
+      if (pAVar4 != (Action_1_Object_ *)0x0) {
+        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                  (pAVar4,(Object *)this,
                    MethodInfo__LevelRewardAnimation__OnPrevBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
-                   ,
-                   MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         BadgeManager::BadgeManager_GetBadgeTexture
-                  (iVar5 + -1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar3,
+                  (iVar3 + -1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar4,
                    (MethodInfo *)0x0);
-        level = func_?();
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)this,
-                   MethodInfo__LevelRewardAnimation__OnNextBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
-                   ,
-                   MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-                  );
-        BadgeManager::BadgeManager_GetBadgeTexture
-                  (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar3,
-                   (MethodInfo *)0x0);
-        method_00 = (this->fields).goldText;
-        pSVar6 = TM::TM__(StringLiteral_GOLD_,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pSVar6 = mscorlib.dll::System::String::String_Concat_2
-                           (StringLiteral__0__,pSVar6,(MethodInfo *)0x0);
-        func_?();
-        pOVar2 = (Object *)func_?();
-        mscorlib.dll::System::String::String_Format(pSVar6,pOVar2,(MethodInfo *)0x0);
-        if (method_00 != (Text *)0x0) {
-          (*(code *)(method_00->klass->vtable).set_text.method)();
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          this_00 = (ScaleAnimationBase *)func_?();
-          ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-          if (this_00 != (ScaleAnimationBase *)0x0) {
-            (this_00->fields).originalScale.y = (float)this;
-            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-            MonoBehaviour_StartCoroutine_Auto
-                      ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
-            return;
+        level = (this->fields).currentReward.key;
+        pAVar4 = (Action_1_Object_ *)func_?();
+        if (pAVar4 != (Action_1_Object_ *)0x0) {
+          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                    (pAVar4,(Object *)this,
+                     MethodInfo__LevelRewardAnimation__OnNextBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                     ,(MethodInfo *)0x0);
+          BadgeManager::BadgeManager_GetBadgeTexture
+                    (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar4,
+                     (MethodInfo *)0x0);
+          pTVar5 = (this->fields).goldText;
+          pSVar6 = TM::TM__(StringLiteral_GOLD_,(MethodInfo *)0x0);
+          pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral__0__,pSVar6,(MethodInfo *)0x0);
+          method_00 = (MethodInfo *)(this->fields).currentReward.value;
+          pOVar7 = (Object *)func_?(TypeInfo__System__Int32);
+          pSVar6 = mscorlib.dll::System::String::String_Format(pSVar6,pOVar7,(MethodInfo *)0x0);
+          if (pTVar5 != (Text *)0x0) {
+            (*(pTVar5->klass->vtable).set_text.methodPtr)(pTVar5,pSVar6);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            pOVar7 = (Object *)func_?();
+            if (pOVar7 != (Object *)0x0) {
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        (pOVar7,ExceptionArgument__Enum_obj,method_00);
+              pOVar7[1].klass = (Object__Class *)0x0;
+              pOVar7[2].klass = (Object__Class *)this;
+              func_?(pOVar7 + 2);
+              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+              MonoBehaviour_StartCoroutine_Auto
+                        ((MonoBehaviour *)this,(IEnumerator *)pOVar7,(MethodInfo *)0x0);
+              return;
+            }
           }
         }
       }
     }
   }
+code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
-}
-
-
-/* Int32 <Initialize>m__0(KeyValuePair`2[System.Int32,System.Int32]) */
-
-int32_t Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation__Initialize_m__0
-                  (KeyValuePair_2_System_Int32_System_Int32_ o,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  iVar1 = func_?(&o,
-                          MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Key__
-                         );
-  return iVar1;
-}
-
-
-/* Void <OnShow>m__1(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation__OnShow_m__1
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -564,28 +589,33 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__List__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__List__
-            );
-  (this->fields).rewards = (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_KeyValuePair_2_System_Int32_System_Int32_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_int>_>__List__
+              );
+    (this->fields).rewards = this_00;
+    func_?(&(this->fields).rewards,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

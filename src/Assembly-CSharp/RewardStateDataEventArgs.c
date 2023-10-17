@@ -7,20 +7,18 @@ void Assembly-CSharp.dll::RewardStateDataEventArgs::RewardStateDataEventArgs__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__EventArgs);
   }
-  WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-  WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor
-            ((WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)this,(MethodInfo *)0x0);
-  uStack_1 = 0;
-  func_?(&uStack_1,0,0,0,timeInSeconds,0);
-  *(undefined4 *)&(this->fields).timeSpan._ticks = (undefined4)uStack_1;
-  *(undefined4 *)((int)&(this->fields).timeSpan._ticks + 4) = uStack_1._4_4_;
+  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  TStack_1._ticks = 0;
+  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2(&TStack_1,0,0,0,timeInSeconds,(MethodInfo *)0x0);
+  *(undefined4 *)&(this->fields).timeSpan._ticks = (undefined4)TStack_1._ticks;
+  *(undefined4 *)((int)&(this->fields).timeSpan._ticks + 4) = TStack_1._ticks._4_4_;
   (this->fields).amountGold = amountGold;
   return;
 }

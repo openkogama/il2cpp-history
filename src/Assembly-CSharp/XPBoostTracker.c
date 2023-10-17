@@ -6,54 +6,61 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((this_00 != (MVAvatar *)0x0) &&
-     (pMVar2 = MVAvatar::MVAvatar_get_Shield(this_00,(MethodInfo *)0x0),
-     pMVar2 != (MVRuntimeDataVariableClampedFloat *)0x0)) {
-    pDVar3 = (Delegate *)(pMVar2->fields)._._.sendInterval;
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(TypeInfo__System__Action);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,unaff_ESI,MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__,(MethodInfo *)0x0
-              );
-    pDStack4 =
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   (pDVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDStack4 != (Delegate *)0x0) {
-      if ((Action__Class *)pDStack4->klass == TypeInfo__System__Action) {
-        pDVar3 = pDStack4;
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+    pAVar4 = (pMVar3->fields).OnPlayerListChanged;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_00,(Object *)this,MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__,
+                 (MethodInfo *)0x0);
+      pAVar4 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+      if (pAVar4 == (Action *)0x0) {
+        (pMVar3->fields).OnPlayerListChanged = (Action *)0x0;
+        ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
+        pAStack7 = (Action *)0x0;
+        func_?();
+        return;
       }
-      pAStack5 = TypeInfo__System__Action;
-      if (pDVar3 == (Delegate *)0x0) goto code_?;
+      pAVar8 = (Action *)0x0;
+      if (pAVar4->klass == TypeInfo__System__Action) {
+        pAVar8 = pAVar4;
+      }
+      if (pAVar8 != (Action *)0x0) {
+        (pMVar3->fields).OnPlayerListChanged = pAVar8;
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+        pAStack7 = (Action *)0x0;
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAStack7 = pAVar4;
+        }
+        if (pAStack7 != (Action *)0x0) {
+          ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
+          func_?();
+          return;
+        }
+      }
+      goto code_?;
     }
-    (pMVar2->fields)._._.sendInterval = (float)pDVar3;
-    return;
   }
-  func_?();
-  pDStack4 = extraout_ECX;
-  pAStack5 = extraout_EDX;
+  uVar5 = func_?();
 code_?:
+  _ppAStack0000001c = uVar5;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -66,70 +73,61 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_OnPlayerJoinOrLeave
 {
   XPBoostTracker_UpdateMemberCount(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                   );
+    func_?(&::StringLiteral__);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_01 != (MVNetworkGame *)0x0) {
-    this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-    if (this_02 != (MVLocalPlayer *)0x0) {
-      this_03 = (SubscriptionRulesWrapper *)
-                PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                          ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)this_02,
-                           (MethodInfo *)0x0);
-      this_00 = 
-      MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
-      ;
-      if (this_03 != (SubscriptionRulesWrapper *)0x0) {
-        this_04 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-                  SubscriptionRulesWrapper_GetRule_2
-                            (this_03,SubscriptionBenefit__Enum_XPBoost,
-                             MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
-                            );
-        if (this_04 != (XpBooster *)0x0) {
-          iVar1 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
-                  XpBooster_GetTotalXPBoost(this_04,(int32_t)this_00->klass,(MethodInfo *)0x0);
-          piVar2 = (int *)this_00->name;
-          pSVar3 = (String *)func_?();
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                             (::StringLiteral__,pSVar3,::StringLiteral__,(MethodInfo *)0x0);
-          if (piVar2 != (int *)0x0) {
-            (**(code **)(*piVar2 + 0x308))(piVar2,pSVar3,*(undefined4 *)(*piVar2 + 0x30c));
-            if (iVar1 < 1) {
-              pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                       Component_1_get_gameObject((Component_1 *)this_00,(MethodInfo *)0x0);
-              if (pGVar4 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,0,(MethodInfo *)0x0);
-                return;
-              }
+    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+    if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+       (this_00 = (pMVar1->fields)._._SubscriptionRules_k__BackingField,
+       this_00 != (SubscriptionRulesWrapper *)0x0)) {
+      this_02 = (XpBooster *)
+                MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                SubscriptionRulesWrapper_GetRule
+                          (this_00,SubscriptionBenefit__Enum_XPBoost,
+                           MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                          );
+      if (this_02 != (XpBooster *)0x0) {
+        MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
+        XpBooster_GetTotalXPBoost(this_02,(int32_t)in_stack_2[1].monitor,(MethodInfo *)0x0);
+        pCVar3 = in_stack_2[1].klass;
+        str1 = mscorlib.dll::System::Int32::Int32_ToString
+                         ((Int32 *)&stack0x00000000,(MethodInfo *)0x0);
+        IVar4.m_value = (int32_t)::StringLiteral__;
+        mscorlib.dll::System::String::String_Concat_4
+                  (::StringLiteral__,str1,::StringLiteral__,(MethodInfo *)0x0);
+        if (pCVar3 != (Component__Class *)0x0) {
+          (**(code **)&(pCVar3->_0).image[0x11].dynamic)();
+          if (IVar4.m_value < 1) {
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               (in_stack_2,(MethodInfo *)0x0);
+            if (pGVar5 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar5,0,(MethodInfo *)0x0);
+              return;
             }
-            else {
-              pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                       Component_1_get_gameObject((Component_1 *)this_00,(MethodInfo *)0x0);
-              if (pGVar4 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,1,(MethodInfo *)0x0);
-                return;
-              }
+          }
+          else {
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               (in_stack_2,(MethodInfo *)0x0);
+            if (pGVar5 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar5,1,(MethodInfo *)0x0);
+              return;
             }
           }
         }
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -141,63 +139,66 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      pSVar1 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-               NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                         ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_01,(MethodInfo *)0x0);
-      (this->fields).localActorNr = (int32_t)pSVar1;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+    if (pMVar2 != (MVLocalPlayer *)0x0) {
+      (this->fields).localActorNr = (pMVar2->fields)._._ActorNr_k__BackingField;
       XPBoostTracker_UpdateMemberCount(this,(MethodInfo *)0x0);
       XPBoostTracker_UpdateBoostText(this,(MethodInfo *)0x0);
-      this_02 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (this_02 != (MVAvatar *)0x0) {
-        pMVar2 = MVAvatar::MVAvatar_get_Shield(this_02,(MethodInfo *)0x0);
-        if (pMVar2 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-          pAStack3 = TypeInfo__System__Action;
-          pDVar4 = (Delegate *)(pMVar2->fields)._._.sendInterval;
-          this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                     *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (this_03,(Object *)this,MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__,
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 != (MVNetworkGame *)0x0) &&
+         (pMVar3 = (pMVar1->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+        pAVar4 = (pMVar3->fields).OnPlayerListChanged;
+        this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (this_00,(Object *)this,MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__,
                      (MethodInfo *)0x0);
-          pDStack5 =
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         (pDVar4,(Delegate *)this_03,(MethodInfo *)0x0);
-          pDVar4 = (Delegate *)0x0;
-          if (pDStack5 == (Delegate *)0x0) {
-code_?:
-            (pMVar2->fields)._._.sendInterval = (float)pDVar4;
+          pAVar4 = (Action *)
+                   mscorlib.dll::System::Delegate::Delegate_Combine
+                             ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+          uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+          if (pAVar4 == (Action *)0x0) {
+            (pMVar3->fields).OnPlayerListChanged = (Action *)0x0;
+            ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
+            pAStack7 = (Action *)0x0;
+            func_?();
             return;
           }
-          if ((Action__Class *)pDStack5->klass == TypeInfo__System__Action) {
-            pDVar4 = pDStack5;
+          pAVar8 = (Action *)0x0;
+          if (pAVar4->klass == TypeInfo__System__Action) {
+            pAVar8 = pAVar4;
           }
-          pAStack6 = TypeInfo__System__Action;
-          if (pDVar4 != (Delegate *)0x0) goto code_?;
+          if (pAVar8 != (Action *)0x0) {
+            (pMVar3->fields).OnPlayerListChanged = pAVar8;
+            uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+            pAStack7 = (Action *)0x0;
+            if (pAVar4->klass == TypeInfo__System__Action) {
+              pAStack7 = pAVar4;
+            }
+            if (pAStack7 != (Action *)0x0) {
+              ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
+              func_?();
+              return;
+            }
+          }
           goto code_?;
         }
       }
     }
   }
-  pAStack3 = (Action__Class *)0x0;
-  func_?();
-  pDStack5 = extraout_ECX;
-  pAStack6 = extraout_EDX;
+  uVar5 = func_?();
 code_?:
+  _ppAStack00000028 = uVar5;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -209,68 +210,59 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_UpdateBoostText
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                   );
+    func_?(&::StringLiteral__);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_01 != (MVNetworkGame *)0x0) {
-    this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-    if (this_02 != (MVLocalPlayer *)0x0) {
-      this_03 = (SubscriptionRulesWrapper *)
-                PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                          ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)this_02,
-                           (MethodInfo *)0x0);
-      this_00 = 
-      MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
-      ;
-      if (this_03 != (SubscriptionRulesWrapper *)0x0) {
-        this_04 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-                  SubscriptionRulesWrapper_GetRule_2
-                            (this_03,SubscriptionBenefit__Enum_XPBoost,
-                             MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
-                            );
-        if (this_04 != (XpBooster *)0x0) {
-          iVar1 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
-                  XpBooster_GetTotalXPBoost(this_04,(int32_t)this_00->klass,(MethodInfo *)0x0);
-          piVar2 = (int *)this_00->name;
-          pSVar3 = (String *)func_?();
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                             (::StringLiteral__,pSVar3,::StringLiteral__,(MethodInfo *)0x0);
-          if (piVar2 != (int *)0x0) {
-            (**(code **)(*piVar2 + 0x308))(piVar2,pSVar3,*(undefined4 *)(*piVar2 + 0x30c));
-            if (iVar1 < 1) {
-              pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                       Component_1_get_gameObject((Component_1 *)this_00,(MethodInfo *)0x0);
-              if (pGVar4 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,0,(MethodInfo *)0x0);
-                return;
-              }
+    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+    if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+       (this_00 = (pMVar1->fields)._._SubscriptionRules_k__BackingField,
+       this_00 != (SubscriptionRulesWrapper *)0x0)) {
+      this_02 = (XpBooster *)
+                MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                SubscriptionRulesWrapper_GetRule
+                          (this_00,SubscriptionBenefit__Enum_XPBoost,
+                           MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                          );
+      if (this_02 != (XpBooster *)0x0) {
+        MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
+        XpBooster_GetTotalXPBoost(this_02,(this->fields).memberCount,(MethodInfo *)0x0);
+        pTVar2 = (this->fields).XPBoostText;
+        str1 = mscorlib.dll::System::Int32::Int32_ToString
+                         ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+        IVar3.m_value = (int32_t)::StringLiteral__;
+        mscorlib.dll::System::String::String_Concat_4
+                  (::StringLiteral__,str1,::StringLiteral__,(MethodInfo *)0x0);
+        if (pTVar2 != (Text *)0x0) {
+          (*(pTVar2->klass->vtable).set_text.methodPtr)();
+          if (IVar3.m_value < 1) {
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            if (pGVar4 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar4,0,(MethodInfo *)0x0);
+              return;
             }
-            else {
-              pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                       Component_1_get_gameObject((Component_1 *)this_00,(MethodInfo *)0x0);
-              if (pGVar4 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,1,(MethodInfo *)0x0);
-                return;
-              }
+          }
+          else {
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            if (pGVar4 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar4,1,(MethodInfo *)0x0);
+              return;
             }
           }
         }
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -287,97 +279,90 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_UpdateMemberCount
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
+                   );
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  pMStack_6 = (MVGameControllerBase__Class *)0x0;
-  puStack_7 = (undefined4 *)&stack0xffffffac;
-  func_?();
+  pOStack_4 = (Object__Class *)0x0;
+  this_01 = (MVPlayer *)0x0;
   (this->fields).memberCount = 0;
-  puStack_4 = &stack0xffffffac;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (puStack_4 = &stack0xffffffac, (TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    puStack_4 = &stack0xffffffac;
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pMVar8 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((pMVar8 != (MVAvatar *)0x0) &&
-      (pMVar9 = MVAvatar::MVAvatar_get_Shield(pMVar8,(MethodInfo *)0x0),
-      pMVar9 != (MVRuntimeDataVariableClampedFloat *)0x0)) &&
-     (this_00 = MVPlayerContainer::MVPlayerContainer_get_Values
-                          ((MVPlayerContainer *)pMVar9,(MethodInfo *)0x0),
-     this_00 != (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)0x0)) {
-    method_01 = 
-    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-    ;
-    pDVar10 = mscorlib.dll::System::Collections::Generic::
-             Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-             Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_WinningConditionType_System_Object_
-                         *)&stack0xffffffb8,
-                        (Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_
-                         *)this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                       );
-    method_00 = (pDVar10->host_enumerator).dictionary;
-    method_02 = (MethodInfo *)(pDVar10->host_enumerator).stamp;
-    uStack_1 = 0;
-    while( true ) {
-      do {
-        cVar11 = func_?();
-        if (cVar11 == '\0') {
-          *puStack_7 = 0xa4;
-          uStack_1 = 0xffffffff;
-          func_?();
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        this_01 = (NamedThemeAttribute_1_UnityEngine_Color_ *)func_?();
-      } while ((this_01 == (NamedThemeAttribute_1_UnityEngine_Color_ *)0x0) ||
-              (pSVar12 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                        NamedThemeAttribute_1_UnityEngine_Color__get_Name(this_01,(MethodInfo *)0x0)
-              , pSVar12 == (String *)(this->fields).localActorNr));
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        pMStack_6 = TypeInfo__MVGameControllerBase;
-        func_?();
-      }
-      pMVar8 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar8 == (MVAvatar *)0x0) break;
-      pMVar9 = MVAvatar::MVAvatar_get_Shield(pMVar8,(MethodInfo *)0x0);
-      pSVar12 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-               NamedThemeAttribute_1_UnityEngine_Color__get_Name(this_01,(MethodInfo *)0x0);
-      if (pMVar9 == (MVRuntimeDataVariableClampedFloat *)0x0) break;
-      bVar13 = MVPlayerContainer::MVPlayerContainer_TryGetValue
-                        ((MVPlayerContainer *)pMVar9,(int32_t)pSVar12,(MVPlayer **)&pMStack_6,
-                         method_01);
-      if (bVar13 != 0) {
-        if ((pMStack_6 == (MVGameControllerBase__Class *)0x0) ||
-           (method_00 = (Dictionary_2_WinningConditionType_System_Object_ *)
-                        PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                        PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                  ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)pMStack_6,
-                                   (MethodInfo *)method_00),
-           method_00 == (Dictionary_2_WinningConditionType_System_Object_ *)0x0)) break;
-        bVar13 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-                SubscriptionRulesWrapper_HasBenefit
-                          ((SubscriptionRulesWrapper *)method_00,SubscriptionBenefit__Enum_XPBoost,
-                           method_02);
-        if (bVar13 != 0) {
-          piVar14 = &(this->fields).memberCount;
-          *piVar14 = *piVar14 + 1;
+  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar5 != (MVNetworkGame *)0x0) &&
+     (pMVar6 = (pMVar5->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0)) {
+    this_00 = (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(pMVar6,(MethodInfo *)0x0);
+    if (this_00 !=
+        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+         *)0x0) {
+      pDVar7 = mscorlib.dll::System::Collections::Generic::
+               Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+               Regex+CachedCodeEntryKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                           *)&stack0xffffffd4,this_00,
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
+                         );
+      actorNr = pDVar7->_currentValue;
+      uStack_1 = 1;
+      while( true ) {
+        do {
+          do {
+            bVar8 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                    Object,System::Object]::
+                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                                *)&pOStack_4,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                              );
+            if (bVar8 == 0) {
+              uStack_1 = 0xffffffff;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&pOStack_4,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
+                         ,in_stack_9);
+              *unaff_FS_OFFSET = uStack_3;
+              return;
+            }
+          } while ((actorNr == (Object *)0x0) ||
+                  (actorNr[6].klass == (Object__Class *)(this->fields).localActorNr));
+          pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar5 == (MVNetworkGame *)0x0) ||
+             (pMVar6 = (pMVar5->fields).playerContainer, pMVar6 == (MVPlayerContainer *)0x0))
+          goto code_?;
+          in_stack_9 = (MethodInfo *)0x0;
+          actorNr = (Object *)actorNr[6].klass;
+          bVar8 = MVPlayerContainer::MVPlayerContainer_TryGetValue
+                            (pMVar6,(int32_t)actorNr,(MVPlayer **)&stack0xffffffe8,(MethodInfo *)0x0
+                            );
+        } while (bVar8 == 0);
+        if (this_01 == (MVPlayer *)0x0) break;
+        pMVar10 = (MVPlayer *)0x0;
+        bVar8 = MVPlayer::MVPlayer_get_IsSubscriber(this_01,(MethodInfo *)0x0);
+        this_01 = pMVar10;
+        if (bVar8 != 0) {
+          piVar11 = &(this->fields).memberCount;
+          *piVar11 = *piVar11 + 1;
         }
       }
     }
   }
+code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

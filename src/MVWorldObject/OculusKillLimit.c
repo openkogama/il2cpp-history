@@ -5,39 +5,45 @@ void MVWorldObject.dll::OculusKillLimit::OculusKillLimit_GameCountersQuery_OnCou
                (OculusKillLimit *this,Object *sender,OnCounterTypeChangedArgs *e,MethodInfo *method)
 
 {
-  this_01 = this;
+  pOVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_IsTeamMode.method)
-                    (this,(this->klass->vtable).get_HighScores.methodPtr);
+  cVar2 = (*(this->klass->vtable).get_IsTeamMode_1.methodPtr)
+                    (this,(this->klass->vtable).get_IsTeamMode_1.method);
   if (e != (OnCounterTypeChangedArgs *)0x0) {
-    if (cVar1 == '\0') {
-      iVar2 = (e->fields).count;
+    if (cVar2 == '\0') {
+      iVar3 = (e->fields).count;
     }
     else {
       this_00 = (this->fields)._.gameCounterManager;
       if (this_00 == (GameStatCounterManager *)0x0) goto code_?;
       this = (OculusKillLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-      iVar2 = GameStatCounterManager::GameStatCounterManager_GetTeamCount
+      iVar3 = GameStatCounterManager::GameStatCounterManager_GetTeamCount
                         (this_00,(GameStatCounterType__Enum)this,(e->fields).team,(MethodInfo *)0x0)
       ;
     }
-    if ((this_01->fields)._.limit <= iVar2) {
-      this_02 = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)
-                func_?(TypeInfo__System__EventArgs);
-      Assembly-CSharp.dll::WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-      WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor(this_02,(MethodInfo *)0x0);
-      WinningCondition::WinningCondition_SendWinningConditionChangedEvent
-                ((WinningCondition *)this_01,(EventArgs *)this_02,e,(MethodInfo *)0x0);
+    if ((pOVar1->fields)._.limit <= iVar3) {
+      this_01 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
+      if (this_01 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
+      UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+      TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
+      (pOVar1->fields)._.forfilled = 1;
+      (pOVar1->fields)._.instigatorCounterTypeChangedEvent = e;
+      func_?(&(pOVar1->fields)._.instigatorCounterTypeChangedEvent,e);
+      if ((pOVar1->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+        pEVar4 = (pOVar1->fields)._.OnWinningConditionChanged;
+        (*(pEVar4->fields)._._.invoke_impl)
+                  ((pEVar4->fields)._._.method_code,pOVar1,this_01,(pEVar4->fields)._._.method);
+      }
     }
     return;
   }
 code_?:
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

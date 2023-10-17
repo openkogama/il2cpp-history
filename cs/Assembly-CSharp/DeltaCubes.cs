@@ -8,12 +8,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DeltaCubes
 {
 	// Fields
-	private Queue<KeyValuePair<IntVector, CubeAction>> cubeChange;
+	private readonly Queue<KeyValuePair<IntVector, CubeAction>> cubeChange;
 
 	// Properties
 	public Queue<KeyValuePair<IntVector, CubeAction>> CubeChange { get; }

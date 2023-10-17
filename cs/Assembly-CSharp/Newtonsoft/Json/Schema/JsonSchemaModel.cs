@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Linq;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Schema
 {
@@ -16,61 +16,42 @@ namespace Newtonsoft.Json.Schema
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _Required_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonSchemaType _Type_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int? _MinimumLength_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int? _MaximumLength_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private double? _DivisibleBy_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private double? _Minimum_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private double? _Maximum_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _ExclusiveMinimum_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _ExclusiveMaximum_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int? _MinimumItems_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int? _MaximumItems_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IList<string> _Patterns_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IList<JsonSchemaModel> _Items_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IDictionary<string, JsonSchemaModel> _Properties_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IDictionary<string, JsonSchemaModel> _PatternProperties_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonSchemaModel _AdditionalProperties_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _AllowAdditionalProperties_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private IList<JToken> _Enum_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonSchemaType _Disallow_k__BackingField;
 	
 		// Properties

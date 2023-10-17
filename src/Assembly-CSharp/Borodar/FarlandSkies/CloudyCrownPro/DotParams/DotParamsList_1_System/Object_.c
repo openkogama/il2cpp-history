@@ -6,99 +6,81 @@ int32_t Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::
                   (IList_1_System_Object_ *list,Object *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (list == (IList_1_System_Object_ *)0x0) {
-    this = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
+    uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+    this = (ArgumentNullException *)func_?(uVar1);
+    func_?(this);
+    method_00 = (MethodInfo *)0x0;
+    paramName = (String *)func_?(&StringLiteral_list);
     mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-              (this,StringLiteral_list,(MethodInfo *)0x0);
-    func_?(this,0,
-                    int_MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<System::Object>__BinarySearch<System::Object>_System__Collections__Generic__IList<System::Object>__System__Object_
-                   );
+              (this,paramName,method_00);
+    uVar1 = func_?(&
+                            int_MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<System::Object>__BinarySearch<System::Object>_System__Collections__Generic__IList<System::Object>__System__Object_
+                           );
+    func_?(this,uVar1);
   }
   else {
-    ppIVar1 = method->parameters;
-    pIVar2 = ppIVar1[1];
-    if ((pIVar2[0x17].type & 1) == 0) {
-      func_?(pIVar2);
-      ppIVar1 = method->parameters;
+    piVar2 = (int *)(*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
+                              (((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
+    iStack_3 = 0;
+    pvVar4 = (method->field7_0x1c).rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+      pvVar4 = (void *)func_?(pvVar4);
     }
-    if ((pIVar2[0x17].num_mods & 2) != 0) {
-      pIVar2 = ppIVar1[1];
-      if ((pIVar2[0x17].type & 1) == 0) {
-        func_?(pIVar2);
-        ppIVar1 = method->parameters;
-      }
-      if (pIVar2[0xe].data.dummy == (void *)0x0) {
-        pIVar2 = ppIVar1[1];
-        if ((pIVar2[0x17].type & 1) == 0) {
-          func_?(pIVar2);
-        }
-        func_?(pIVar2);
-      }
-    }
-    piVar3 = (int *)(*(code *)(*method->parameters)->data)(*method->parameters);
-    iVar4 = 0;
-    pIVar2 = method->parameters[2];
-    if ((pIVar2[0x17].type & 1) == 0) {
-      func_?(pIVar2);
-    }
-    iStack_5 = func_?(0,pIVar2,list);
+    iStack_5 = func_?(0,pvVar4,list);
     iStack_5 = iStack_5 + -1;
+    iVar6 = 0;
     if (0 < iStack_5) {
       do {
-        iVar6 = (iStack_5 + iVar4) / 2;
-        pIVar7 = (Il2CppClass *)method->parameters[3];
-        if (((uint)pIVar7->vtable[0].methodPtr & 0x10000) == 0) {
-          func_?(pIVar7);
+        iVar6 = (iStack_5 + iStack_3) / 2;
+        pIVar7 = (method->field7_0x1c).rgctx_data[4].rgctxDataDummy;
+        if (pIVar7->initialized_and_no_error == 0) {
+          pIVar7 = (Il2CppClass *)func_?(pIVar7);
         }
         pIVar8 = list->klass;
         uVar9 = 0;
-        uVar10._0_1_ = (pIVar8->_1).rank;
-        uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
+        uVar10 = (pIVar8->_1).interface_offsets_count;
         if (uVar10 != 0) {
           do {
             if (pIVar8->interfaceOffsets[uVar9].interfaceType == pIVar7) {
-              ppMVar11 = &(&(list->klass->vtable).get_Item)[pIVar8->interfaceOffsets[uVar9].offset].
-                          method;
+              pVVar11 = &(pIVar8->vtable).get_Item + pIVar8->interfaceOffsets[uVar9].offset;
               goto code_?;
             }
             uVar9 = uVar9 + 1;
           } while (uVar9 < uVar10);
         }
-        ppMVar11 = (MethodInfo **)func_?(list,pIVar7,3);
+        pVVar11 = (VirtualInvokeData *)func_?(list,pIVar7,0);
 code_?:
-        uVar12 = (*(code *)*ppMVar11)(list,iVar6,ppMVar11[1]);
-        if (piVar3 == (int *)0x0) goto code_?;
-        iVar13 = (**(code **)(*piVar3 + 0xf0))(piVar3,uVar12,value,*(undefined4 *)(*piVar3 + 0xf4));
-        if (iVar13 < 0) {
-          iVar4 = iVar6 + 1;
+        uVar1 = (*pVVar11->methodPtr)(list,iVar6,pVVar11->method);
+        if (piVar2 == (int *)0x0) goto code_?;
+        iVar12 = (**(code **)(*piVar2 + 0xec))(piVar2,uVar1,value,*(undefined4 *)(*piVar2 + 0xf0));
+        if (iVar12 < 0) {
+          iStack_3 = iVar6 + 1;
         }
         else {
           iStack_5 = iVar6 + -1;
         }
-      } while (iVar4 < iStack_5);
+        iVar6 = iStack_3;
+      } while (iStack_3 < iStack_5);
     }
-    pIVar2 = method->parameters[3];
-    if ((pIVar2[0x17].type & 1) == 0) {
-      func_?(pIVar2);
+    pvVar4 = (method->field7_0x1c).rgctx_data[4].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+      pvVar4 = (void *)func_?(pvVar4);
     }
-    uVar12 = func_?(3,pIVar2,list,iVar4);
-    if (piVar3 != (int *)0x0) {
-      iVar6 = (**(code **)(*piVar3 + 0xf0))(piVar3,uVar12,value,*(undefined4 *)(*piVar3 + 0xf4));
-      if (iVar6 < 0) {
-        iVar4 = iVar4 + 1;
+    uVar1 = func_?(0,pvVar4,list,iVar6);
+    if (piVar2 != (int *)0x0) {
+      iVar12 = (**(code **)(*piVar2 + 0xec))(piVar2,uVar1,value,*(undefined4 *)(*piVar2 + 0xf0));
+      if (iVar12 < 0) {
+        iVar6 = iVar6 + 1;
       }
-      return iVar4;
+      return iVar6;
     }
   }
 code_?:
-  func_?(0);
-  pcVar14 = (code *)swi(3);
-  iVar15 = (*pcVar14)();
-  return iVar15;
+  func_?();
+  pcVar13 = (code *)swi(3);
+  iVar14 = (*pcVar13)();
+  return iVar14;
 }
 
 
@@ -109,137 +91,103 @@ int32_t Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::
                   (IList_1_System_Single_ *list,float value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (list == (IList_1_System_Single_ *)0x0) {
-    this = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
+    uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+    this = (ArgumentNullException *)func_?(uVar1);
+    func_?(this);
+    method_00 = (MethodInfo *)0x0;
+    paramName = (String *)func_?(&StringLiteral_list);
     mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-              (this,StringLiteral_list,(MethodInfo *)0x0);
-    func_?(this,0,
-                    int_MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<System::Object>__BinarySearch<float>_System__Collections__Generic__IList<float>__float_
-                   );
+              (this,paramName,method_00);
+    uVar1 = func_?(&
+                             int_MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<System::Object>__BinarySearch<float>_System__Collections__Generic__IList<float>__float_
+                            );
+    func_?(this,uVar1);
   }
   else {
-    ppIVar1 = method->parameters;
-    pIVar2 = ppIVar1[1];
-    if ((pIVar2[0x17].type & 1) == 0) {
-      func_?(pIVar2);
-      ppIVar1 = method->parameters;
+    piVar2 = (int *)(*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
+                              (((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
+    iStack_3 = 0;
+    pvVar4 = (method->field7_0x1c).rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+      pvVar4 = (void *)func_?(pvVar4);
     }
-    if ((pIVar2[0x17].num_mods & 2) != 0) {
-      pIVar2 = ppIVar1[1];
-      if ((pIVar2[0x17].type & 1) == 0) {
-        func_?(pIVar2);
-        ppIVar1 = method->parameters;
-      }
-      if (pIVar2[0xe].data.dummy == (void *)0x0) {
-        pIVar2 = ppIVar1[1];
-        if ((pIVar2[0x17].type & 1) == 0) {
-          func_?(pIVar2);
-        }
-        func_?(pIVar2);
-      }
-    }
-    piVar3 = (int *)(*(code *)(*method->parameters)->data)(*method->parameters);
-    iVar4 = 0;
-    pIVar2 = method->parameters[2];
-    if ((pIVar2[0x17].type & 1) == 0) {
-      func_?(pIVar2);
-    }
-    iStack_5 = func_?(0,pIVar2,list);
+    iStack_5 = func_?(0,pvVar4,list);
     iStack_5 = iStack_5 + -1;
+    iVar6 = 0;
     if (0 < iStack_5) {
       do {
-        iVar6 = (iStack_5 + iVar4) / 2;
-        pIVar7 = (Il2CppClass *)method->parameters[3];
-        if (((uint)pIVar7->vtable[0].methodPtr & 0x10000) == 0) {
-          func_?(pIVar7);
+        iVar6 = (iStack_5 + iStack_3) / 2;
+        pIVar7 = (method->field7_0x1c).rgctx_data[4].rgctxDataDummy;
+        if (pIVar7->initialized_and_no_error == 0) {
+          pIVar7 = (Il2CppClass *)func_?(pIVar7);
         }
         pIVar8 = list->klass;
         uVar9 = 0;
-        uVar10._0_1_ = (pIVar8->_1).rank;
-        uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
+        uVar10 = (pIVar8->_1).interface_offsets_count;
         if (uVar10 != 0) {
           do {
             if (pIVar8->interfaceOffsets[uVar9].interfaceType == pIVar7) {
-              ppMVar11 = &(&(list->klass->vtable).get_Item)[pIVar8->interfaceOffsets[uVar9].offset].
-                          method;
+              pVVar11 = &(pIVar8->vtable).get_Item + pIVar8->interfaceOffsets[uVar9].offset;
               goto code_?;
             }
             uVar9 = uVar9 + 1;
           } while (uVar9 < uVar10);
         }
-        ppMVar11 = (MethodInfo **)func_?(list,pIVar7,3);
+        pVVar11 = (VirtualInvokeData *)func_?(list,pIVar7,0);
 code_?:
-        fVar12 = (float10)(*(code *)*ppMVar11)(list,iVar6,ppMVar11[1]);
-        if (piVar3 == (int *)0x0) goto code_?;
-        iVar13 = (**(code **)(*piVar3 + 0xf0))
-                           (piVar3,(float)fVar12,value,*(undefined4 *)(*piVar3 + 0xf4));
+        fVar12 = (float10)(*pVVar11->methodPtr)(list,iVar6,pVVar11->method);
+        if (piVar2 == (int *)0x0) goto code_?;
+        iVar13 = (**(code **)(*piVar2 + 0xec))
+                          (piVar2,(float)fVar12,value,*(undefined4 *)(*piVar2 + 0xf0));
         if (iVar13 < 0) {
-          iVar4 = iVar6 + 1;
+          iStack_3 = iVar6 + 1;
         }
         else {
           iStack_5 = iVar6 + -1;
         }
-      } while (iVar4 < iStack_5);
+        iVar6 = iStack_3;
+      } while (iStack_3 < iStack_5);
     }
-    pIVar2 = method->parameters[3];
-    if ((pIVar2[0x17].type & 1) == 0) {
-      func_?(pIVar2);
+    pvVar4 = (method->field7_0x1c).rgctx_data[4].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+      pvVar4 = (void *)func_?(pvVar4);
     }
-    fVar12 = (float10)func_?(3,pIVar2,list,iVar4);
-    if (piVar3 != (int *)0x0) {
-      iVar6 = (**(code **)(*piVar3 + 0xf0))
-                        (piVar3,(float)fVar12,value,*(undefined4 *)(*piVar3 + 0xf4));
-      if (iVar6 < 0) {
-        iVar4 = iVar4 + 1;
+    fVar12 = (float10)func_?(0,pvVar4,list,iVar6);
+    if (piVar2 != (int *)0x0) {
+      iVar13 = (**(code **)(*piVar2 + 0xec))
+                        (piVar2,(float)fVar12,value,*(undefined4 *)(*piVar2 + 0xf0));
+      if (iVar13 < 0) {
+        iVar6 = iVar6 + 1;
       }
-      return iVar4;
+      return iVar6;
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar14 = (code *)swi(3);
   iVar15 = (*pcVar14)();
   return iVar15;
 }
 
 
-/* DotParamsList`1[System.Object](Int32) */
+/* Int32 FindIndexPerTime(Single) */
 
-void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::DotParamsList`1[System::
-     Object]::DotParamsList_1_System_Object___ctor
-               (DotParamsList_1_System_Object_ *this,int32_t capacity,MethodInfo *method)
+int32_t Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::
+        DotParamsList`1[System::Object]::DotParamsList_1_System_Object__FindIndexPerTime
+                  (DotParamsList_1_System_Object_ *this,float time,MethodInfo *method)
 
 {
   if (this != (DotParamsList_1_System_Object_ *)0x0) {
-    iVar1 = *(int *)(*(int *)(method->name + 0x60) + 4);
-    if ((*(byte *)(iVar1 + 0xbe) & 1) == 0) {
-      func_?(iVar1);
-    }
-    if ((*(byte *)(iVar1 + 0xbf) & 2) != 0) {
-      iVar1 = *(int *)(*(int *)(method->name + 0x60) + 4);
-      if ((*(byte *)(iVar1 + 0xbe) & 1) == 0) {
-        func_?(iVar1);
-      }
-      if (*(int *)(iVar1 + 0x70) == 0) {
-        iVar1 = *(int *)(*(int *)(method->name + 0x60) + 4);
-        if ((*(byte *)(iVar1 + 0xbe) & 1) == 0) {
-          func_?(iVar1);
-        }
-        func_?(iVar1);
-      }
-    }
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    (**(code **)**(undefined4 **)(method->name + 0x60))();
-    return;
+    uVar1 = (*(method->klass->rgctx_data[2].method)->virtualMethodPointer)
+                      (this,method->klass->rgctx_data[2].rgctxDataDummy);
+    iVar2 = (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
+                      (uVar1,time,method->klass->rgctx_data[3].rgctxDataDummy);
+    return iVar2;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  iVar2 = (*pcVar3)();
+  return iVar2;
 }
 

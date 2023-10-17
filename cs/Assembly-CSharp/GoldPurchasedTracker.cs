@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GoldPurchasedTracker : MonoBehaviour
 {
@@ -17,8 +17,23 @@ public class GoldPurchasedTracker : MonoBehaviour
 	private int currentGold;
 	private int goldGainedTotal;
 	private const string goldPendingUpdate = "GoldPendingUpdate";
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__6_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _StartGoldPurchasePendingUpdate_b__6_0(IModalPopupCreator x, BaseEventData y);
+	}
 
 	// Constructors
 	public GoldPurchasedTracker();
@@ -29,7 +44,5 @@ public class GoldPurchasedTracker : MonoBehaviour
 	public void StartGoldPurchasePendingUpdate(int currentGold, int goldDelta);
 	public void GoldPendingUpdate();
 	private void GoldUpdatedCallback();
-	[CompilerGenerated]
-	private static void _StartGoldPurchasePendingUpdate_m__0(IModalPopupCreator x, BaseEventData y);
 }
 

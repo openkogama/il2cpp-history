@@ -8,23 +8,22 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class WindTurbine : MVLogicObject, ILogicWorldObject, IUpdatecontrollerSubscriberFixedUpdate
 {
 	// Fields
-	private Dictionary<int, MVRigidBody> affectedBodies;
+	private readonly Dictionary<int, MVRigidBody> affectedBodies;
 	private bool isActive;
 	private float windStrength;
 	private float windAreaSize;
 	private float windPitch;
-	private const float maxWindStrength = 280f;
-	private const float maxWindAreaSize = 20f;
-	private WindTurbineObject windTurbineObject;
+	private readonly List<int> keysToRemove;
+	private const float MaxWindStrength = 280f;
+	private const float MaxWindAreaSize = 20f;
+	private readonly WindTurbineObject windTurbineObject;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
-	private List<int> keysToRemove;
 
 	// Properties
 	public override MVWorldObjectDocumentationType DocumentationType { get; }

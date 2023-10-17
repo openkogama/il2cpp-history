@@ -6,114 +6,146 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVAvatarLocal);
+    func_?(&StringLiteral_Idle);
     cRam_? = '\x01';
   }
   if (vehicleUser != (MVAvatar *)0x0) {
-    instigatorActorNr =
-         (String *)
-         UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-         TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-         TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                   ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)vehicleUser,(MethodInfo *)0x0);
-    (*(code *)(vehicleUser->klass->vtable).BeforeVehicleEntered.method)
-              (vehicleUser,(vehicleUser->klass->vtable).OnEnterVehicle.methodPtr);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_01 != (MVNetworkGame *)0x0) &&
-       (this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
-       this_02 != (MVLocalPlayer *)0x0)) {
-      pSVar1 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-               NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                         ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_02,(MethodInfo *)0x0);
-      this_00 = (this->fields).seatManager;
-      if (this_00 != (VehicleSeatManager *)0x0) {
-        VehicleSeatManager::VehicleSeatManager_AttachWorldObjectToSeat
-                  (this_00,(int32_t)instigatorActorNr,pSVar1 == instigatorActorNr,vehicleUser,seatID
-                   ,(MethodInfo *)0x0);
-        pMVar2 = (this->fields).localObjects;
-        if (pSVar1 != instigatorActorNr) {
-          if (pMVar2 != (MVVehicleBase_LocalObjectsBase *)0x0) {
-            (*(code *)(pMVar2->klass->vtable).Destroy.method)
-                      (pMVar2,(pMVar2->klass->vtable).Enter.methodPtr);
-            (this->fields).localObjects = (MVVehicleBase_LocalObjectsBase *)0x0;
-          }
+    instigatorActorNr = (vehicleUser->fields)._._._.ownerActorNr;
+    (*(vehicleUser->klass->vtable).BeforeVehicleEntered.methodPtr)
+              (vehicleUser,(vehicleUser->klass->vtable).BeforeVehicleEntered.method);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 != (MVNetworkGame *)0x0) {
+      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+      if (pMVar2 != (MVLocalPlayer *)0x0) {
+        iVar3 = (pMVar2->fields)._._ActorNr_k__BackingField;
+        this_00 = (this->fields).seatManager;
+        if (this_00 != (VehicleSeatManager *)0x0) {
+          VehicleSeatManager::VehicleSeatManager_AttachWorldObjectToSeat
+                    (this_00,instigatorActorNr,iVar3 == instigatorActorNr,vehicleUser,seatID,
+                     (MethodInfo *)0x0);
+          pMVar4 = (this->fields).localObjects;
+          if (iVar3 != instigatorActorNr) {
+            if (pMVar4 != (MVVehicleBase_LocalObjectsBase *)0x0) {
+              (*(pMVar4->klass->vtable).Destroy.methodPtr)
+                        (pMVar4,(pMVar4->klass->vtable).Destroy.method);
+              (this->fields).localObjects = (MVVehicleBase_LocalObjectsBase *)0x0;
+              func_?(&(this->fields).localObjects,0);
+            }
 code_?:
-          (*(code *)(vehicleUser->klass->vtable).OnEnterVehicle.method)
-                    (vehicleUser,(vehicleUser->klass->vtable).OnLeaveVehicle.methodPtr);
-          (*(code *)(this->klass->vtable).VehicleEntered.method)
-                    (this,vehicleUser,seatID,this->klass[1]._0.image);
-          return;
-        }
-        if (pMVar2 == (MVVehicleBase_LocalObjectsBase *)0x0) {
-          uVar3 = func_?(vehicleUser,TypeInfo__MVAvatarLocal);
-          pMVar2 = (MVVehicleBase_LocalObjectsBase *)
-                   (*(code *)(this->klass->vtable).__unknown.method)
-                             (this,seatID,uVar3,(this->klass->vtable).VehicleEntered.methodPtr);
-          (this->fields).localObjects = pMVar2;
-        }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        this_03 = (PrefabPool *)
-                  MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((this_03 != (PrefabPool *)0x0) &&
-           (this_04 = (MVLocalObjectController *)
-                      PrefabPool::PrefabPool_get_MVSmokePrefab(this_03,(MethodInfo *)0x0),
-           this_04 != (MVLocalObjectController *)0x0)) {
-          MVLocalObjectController::MVLocalObjectController_Push
-                    (this_04,(ILocalObject *)(this->fields).localObjects,(MethodInfo *)0x0);
-          bVar4 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
-          bVar5 = (vehicleUser->klass->_1).naturalAligment;
-          if ((bVar5 < bVar4) ||
-             ((MVAvatarLocal__Class *)(vehicleUser->klass->_1).typeHierarchy[bVar4 - 1] !=
-              TypeInfo__MVAvatarLocal)) {
-            bVar6 = false;
+            (*(vehicleUser->klass->vtable).OnEnterVehicle.methodPtr)
+                      (vehicleUser,(vehicleUser->klass->vtable).OnEnterVehicle.method);
+            (*(this->klass->vtable).VehicleEntered.methodPtr)
+                      (this,vehicleUser,seatID,(this->klass->vtable).VehicleEntered.method);
+            return;
           }
-          else {
-            bVar6 = true;
-          }
-          pMVar7 = (MVAvatar *)0x0;
-          if (bVar6) {
-            pMVar7 = vehicleUser;
-          }
-          pMVar8 = TypeInfo__MVAvatarLocal;
-          if (pMVar7 == (MVAvatar *)0x0) goto code_?;
-          if ((bVar5 < bVar4) ||
-             ((MVAvatarLocal__Class *)(vehicleUser->klass->_1).typeHierarchy[bVar4 - 1] !=
-              TypeInfo__MVAvatarLocal)) {
-            bVar6 = false;
-          }
-          else {
-            bVar6 = true;
-          }
-          this_05 = (MVAvatarLocal *)0x0;
-          if (bVar6) {
-            this_05 = (MVAvatarLocal *)vehicleUser;
-          }
-          if (this_05 == (MVAvatarLocal *)0x0) goto code_?;
-          MVAvatarLocal::MVAvatarLocal_SetAnimation(this_05,StringLiteral_Idle,(MethodInfo *)0x0);
-          pMVar2 = (this->fields).localObjects;
-          if (pMVar2 != (MVVehicleBase_LocalObjectsBase *)0x0) {
-            (*(code *)(pMVar2->klass->vtable).Enter.method)
-                      (pMVar2,(pMVar2->klass->vtable).Leave.methodPtr);
+          if (pMVar4 == (MVVehicleBase_LocalObjectsBase *)0x0) {
+            pMVar5 = TypeInfo__MVAvatarLocal;
+            if (((vehicleUser->klass->_1).typeHierarchyDepth <
+                 (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) ||
+               ((MVAvatarLocal__Class *)
+                (vehicleUser->klass->_1).typeHierarchy
+                [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
             goto code_?;
+            pMVar4 = (MVVehicleBase_LocalObjectsBase *)
+                     (*(this->klass->vtable).__unknown_1.methodPtr)
+                               (this,seatID,vehicleUser,(this->klass->vtable).__unknown_1.method);
+            (this->fields).localObjects = pMVar4;
+            func_?(&(this->fields).localObjects,pMVar4);
+          }
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar1 != (MVNetworkGame *)0x0) &&
+             (this_01 = (pMVar1->fields)._PlayerController_k__BackingField,
+             this_01 != (MVLocalObjectController *)0x0)) {
+            MVLocalObjectController::MVLocalObjectController_Push
+                      (this_01,(ILocalObject *)(this->fields).localObjects,(MethodInfo *)0x0);
+            pMVar5 = TypeInfo__MVAvatarLocal;
+            if (((vehicleUser->klass->_1).typeHierarchyDepth <
+                 (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) ||
+               ((MVAvatarLocal__Class *)
+                (vehicleUser->klass->_1).typeHierarchy
+                [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
+            goto code_?;
+            MVAvatarLocal::MVAvatarLocal_SetAnimation
+                      ((MVAvatarLocal *)vehicleUser,StringLiteral_Idle,(MethodInfo *)0x0);
+            pMVar4 = (this->fields).localObjects;
+            if (pMVar4 != (MVVehicleBase_LocalObjectsBase *)0x0) {
+              (*(pMVar4->klass->vtable).Enter.methodPtr)
+                        (pMVar4,(pMVar4->klass->vtable).Enter.method);
+              goto code_?;
+            }
           }
         }
       }
     }
   }
-  func_?(0);
-  pMVar8 = extraout_ECX;
+  func_?();
+  pMVar5 = extraout_EDX;
 code_?:
-  func_?(vehicleUser,pMVar8);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?(vehicleUser,pMVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
+}
+
+
+/* MVAvatar GetDriver() */
+
+MVAvatar *
+Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_GetDriver(MVVehicleBase *this,MethodInfo *method)
+
+{
+  this_00 = (this->fields).seatManager;
+  if (this_00 != (VehicleSeatManager *)0x0) {
+    pVVar1 = VehicleSeatManager::VehicleSeatManager_get_DriverSeat(this_00,(MethodInfo *)0x0);
+    if (pVVar1 != (VehicleSeatBase *)0x0) {
+      return (pVVar1->fields).owner;
+    }
+  }
+  uVar2 = func_?(&stack0xfffffff8);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pMVar4 = (MVAvatar *)(*pcVar3)();
+  return pMVar4;
+}
+
+
+/* MVVehicleBase+HealthChangeAffects HealthChangeResult(Single) */
+
+MVVehicleBase_HealthChangeAffects
+Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_HealthChangeResult
+          (MVVehicleBase *this,float health,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (0.0 < health) {
+    MVar1.detachAvatar = 0;
+    MVar1.causeVehicleDestruction = 0;
+    return MVar1;
+  }
+  this_00 = (this->fields).IsVehicleDead;
+  if (this_00 != (MVRuntimeDataVariable *)0x0) {
+    pOVar2 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0);
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+        pcVar3 = (char *)func_?();
+        health._0_2_ = (MVVehicleBase_HealthChangeAffects)CONCAT11(*pcVar3 == '\0',*pcVar3 == '\0');
+        return health._0_2_;
+      }
+      func_?();
+      pcVar4 = (code *)swi(3);
+      MVar1 = (MVVehicleBase_HealthChangeAffects)(*pcVar4)();
+      return MVar1;
+    }
+  }
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar4 = (code *)swi(3);
+  MVar1 = (MVVehicleBase_HealthChangeAffects)(*pcVar4)();
+  return MVar1;
 }
 
 
@@ -124,7 +156,13 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    VehicleSeatManager_MethodInfo__UnityEngine__GameObject__GetComponent<VehicleSeatManager>__
+                   );
+    func_?(&TypeInfo__MVWorldObjectSpawnerVehicle);
+    func_?(&StringLiteral_Default);
+    func_?(&StringLiteral_isDead);
+    func_?(&StringLiteral_Player);
     cRam_? = '\x01';
   }
   MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
@@ -133,51 +171,136 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_Initialize
     pMVar1 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
                        (this_00,StringLiteral_isDead,0.0,1,(MethodInfo *)0x0);
     (this->fields).IsVehicleDead = pMVar1;
+    func_?(&(this->fields).IsVehicleDead,pMVar1);
     this_01 = (this->fields)._._._.gameObject;
     if (this_01 != (GameObject *)0x0) {
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                          (this_01,
-                           VehicleSeatManager_MethodInfo__UnityEngine__GameObject__GetComponent<VehicleSeatManager>__
-                          );
-      (this->fields).seatManager = (VehicleSeatManager *)this_02;
-      if (this_02 != (UseInteractorHandler *)0x0) {
+      pVVar2 = (VehicleSeatManager *)
+               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                         (this_01,
+                          VehicleSeatManager_MethodInfo__UnityEngine__GameObject__GetComponent<VehicleSeatManager>__
+                         );
+      (this->fields).seatManager = pVVar2;
+      func_?(&(this->fields).seatManager,pVVar2);
+      pVVar2 = (this->fields).seatManager;
+      if (pVVar2 != (VehicleSeatManager *)0x0) {
         VehicleSeatManager::VehicleSeatManager_Init
-                  ((VehicleSeatManager *)this_02,this,(this->fields).IsVehicleDead,(MethodInfo *)0x0
-                  );
-        pMVar2 = (this->fields)._._._.group;
-        if (pMVar2 != (MVGroup *)0x0) {
-          bVar3 = (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment;
-          if (((pMVar2->klass->_1).naturalAligment < bVar3) ||
-             ((MVWorldObjectSpawnerVehicle__Class *)(pMVar2->klass->_1).typeHierarchy[bVar3 - 1] !=
-              TypeInfo__MVWorldObjectSpawnerVehicle)) {
-            bVar4 = false;
-          }
-          else {
-            bVar4 = true;
-          }
-          pMVar5 = (MVGroup *)0x0;
-          if (bVar4) {
-            pMVar5 = pMVar2;
-          }
-          if (pMVar5 != (MVGroup *)0x0) {
-            (this->fields)._IsInSpawner_k__BackingField = 1;
-          }
+                  (pVVar2,this,(this->fields).IsVehicleDead,(MethodInfo *)0x0);
+        pMVar3 = (this->fields)._._._.group;
+        if (((pMVar3 != (MVGroup *)0x0) &&
+            (pMVar4 = pMVar3->klass,
+            (TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth <=
+            (pMVar4->_1).typeHierarchyDepth)) &&
+           ((MVWorldObjectSpawnerVehicle__Class *)
+            (pMVar4->_1).typeHierarchy
+            [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth - 1] ==
+            TypeInfo__MVWorldObjectSpawnerVehicle)) {
+          (this->fields)._IsInSpawner_k__BackingField = 1;
         }
         LayerUtil::LayerUtil_SetLayerRecursively_3
                   ((this->fields)._._._.transform,StringLiteral_Default,StringLiteral_Player,
                    (MethodInfo *)0x0);
-        uVar6 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-        piVar7 = &(this->fields)._._._.interactionFlags;
-        *(uint *)piVar7 = (uint)*piVar7 | 0xADDR;
-        *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar6;
+        iVar5 = (this->fields)._._._.interactionFlags;
+        *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
+             *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+        puVar6 = (uint *)((int)&(this->fields)._._._.interactionFlags + 4);
+        *puVar6 = *puVar6 | 2;
+        *(uint *)&(this->fields)._._._.interactionFlags = (uint)iVar5 | 0xADDR;
         return;
       }
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
+}
+
+
+/* Boolean IsPlayerInVehicle(Int32) */
+
+bool Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_IsPlayerInVehicle
+               (MVVehicleBase *this,int32_t playerId,MethodInfo *method)
+
+{
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffffbc;
+  puVar5 = &stack0xffffffbc;
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VehicleSeatBase>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VehicleSeatBase>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VehicleSeatBase>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__GetEnumerator__
+                   );
+    cRam_? = '\x01';
+    puVar5 = puStack_4;
+  }
+  puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  pVVar7 = (this->fields).seatManager;
+  if ((pVVar7 != (VehicleSeatManager *)0x0) &&
+     (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (pVVar7->fields).seats,
+     this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_9,this_00,
+                        MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__GetEnumerator__
+                       );
+    LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
+    LStack_6._index = pLVar8->_index;
+    LStack_6._version = pLVar8->_version;
+    LStack_6._current = *(Object **)&pLVar8->_current;
+    LStack_9._version = 0;
+    uStack_1 = 1;
+    LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
+    while( true ) {
+      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_6,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VehicleSeatBase>__MoveNext__
+                        );
+      if (bVar10 == 0) {
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VehicleSeatBase>__Dispose__
+                   ,unaff_EDI);
+        *unaff_FS_OFFSET = uStack_3;
+        return 0;
+      }
+      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+         (*(int *)((int)LStack_6._current + 0x10) == 0)) break;
+      if (*(int *)(*(int *)((int)LStack_6._current + 0x10) + 8) == playerId) {
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VehicleSeatBase>__Dispose__
+                   ,unaff_EDI);
+        *unaff_FS_OFFSET = uStack_3;
+        return 1;
+      }
+    }
+  }
+  func_?();
+  pcVar11 = (code *)swi(3);
+  bVar10 = (*pcVar11)();
+  return bVar10;
 }
 
 
@@ -187,15 +310,17 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_LeaveLocal
                (MVVehicleBase *this,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields).localObjects;
-  if (pMVar1 != (MVVehicleBase_LocalObjectsBase *)0x0) {
-    (*(code *)(pMVar1->klass->vtable).Leave.method)
-              (pMVar1,(pMVar1->klass->vtable).__unknown_2.methodPtr);
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pMStack_2 = (this->fields).localObjects;
+  if (pMStack_2 != (MVVehicleBase_LocalObjectsBase *)0x0) {
+    pMStack_1 = (pMStack_2->klass->vtable).Leave.method;
+    (*(pMStack_2->klass->vtable).Leave.methodPtr)();
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -206,151 +331,263 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_OnDataUpdate
                (MVVehicleBase *this,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EBP);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   uVar1 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff8;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__get_Value__
+                   );
+    func_?(&StringLiteral_ChildrenMap);
+    func_?(&StringLiteral_No_blueprint_data);
+    func_?(&StringLiteral_BlueprintData);
     cRam_? = '\x01';
   }
-  puStack_2 = (undefined *)0x0;
-  stack0xffffffe8 = 0;
-  ppuStack_3 = (undefined **)&stack0xffffffb0;
-  func_?();
-  this_01 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)PrefabPool::PrefabPool_get_MVBatteryPrefab(in_stack_4,(MethodInfo *)0x0);
-  if (this_01 !=
-      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-       *)0x0) {
-    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      (this_01,StringLiteral_BlueprintData,
+  DStack_2._current.value = (Object *)0x0;
+  DStack_2._getEnumeratorRetType = 0;
+  DStack_2._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_2._version = 0;
+  DStack_2._index = 0;
+  DStack_2._current.key = (Object *)0x0;
+  if (*(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)(in_stack_3 + 0x58) !=
+      (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (*(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)
+                        (in_stack_3 + 0x58),(Object *)StringLiteral_BlueprintData,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar5 == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if (bVar4 == 0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_No_blueprint_data,(MethodInfo *)0x0);
-code_?:
       *unaff_FS_OFFSET = uVar1;
       return;
     }
-    pDVar6 = (Dictionary_2_System_Type_Pool_ *)
-             PrefabPool::PrefabPool_get_MVBatteryPrefab(in_stack_4,(MethodInfo *)0x0);
-    if (pDVar6 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-      pDVar7 = (Dictionary_2_System_Type_Pool_ *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-               Dictionary_2_System_Type_Pool__get_Item
-                         (pDVar6,(Type *)StringLiteral_BlueprintData,
+    if (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_3 + 0x58) !=
+        (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_3 + 0x58),
+                          (Object *)StringLiteral_BlueprintData,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-      ;
-      pDVar6 = pDVar7;
-      if (pDVar7 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-        bVar8 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment;
-        if (((pDVar7->klass->_1).naturalAligment < bVar8) ||
-           ((Dictionary_2_System_Object_System_Object___Class *)
-            (pDVar7->klass->_1).typeHierarchy[bVar8 - 1] !=
-            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar9 = false;
-        }
-        else {
-          bVar9 = true;
-        }
-        pDVar6 = (Dictionary_2_System_Type_Pool_ *)0x0;
-        if (bVar9) {
-          pDVar6 = pDVar7;
-        }
-        if (pDVar6 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
+      if (pOVar5 == (Object *)0x0) {
+        *(undefined4 *)(in_stack_3 + 0xe0) = 0;
       }
-      (in_stack_4->fields).mvMovingPlatformNodePrefab = (GameObject *)pDVar6;
-      if (pDVar6 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-        pDVar10 = (Dictionary_2_WinningConditionType_System_Object_ *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                 Dictionary_2_System_Type_Pool__get_Item
-                           (pDVar6,(Type *)StringLiteral_ChildrenMap,
+      else if (((((pOVar5->klass->_1).typeHierarchyDepth <
+                  (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).typeHierarchyDepth) ||
+                ((Dictionary_2_System_Object_System_Object___Class *)
+                 (pOVar5->klass->_1).typeHierarchy
+                 [(
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).typeHierarchyDepth - 1] !=
+                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
+                ) || (*(Object **)(in_stack_3 + 0xe0) = pOVar5,
+                     (pOVar5->klass->_1).typeHierarchyDepth <
+                     (
+                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     ->_1).typeHierarchyDepth)) ||
+              ((Dictionary_2_System_Object_System_Object___Class *)
+               (pOVar5->klass->_1).typeHierarchy
+               [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                ->_1).typeHierarchyDepth - 1] !=
+               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+      goto code_?;
+      DStack_6._version = in_stack_3 + 0xe0;
+      DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+      DStack_6._index = (int32_t)pOVar5;
+      func_?();
+      if (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_3 + 0xe0) !=
+          (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (*(Dictionary_2_System_Object_System_Object_ **)
+                             (in_stack_3 + 0xe0),(Object *)StringLiteral_ChildrenMap,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        unaff_ESI = 
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-        this_02 = pDVar10;
-        if (pDVar10 != (Dictionary_2_WinningConditionType_System_Object_ *)0x0) {
-          bVar8 = (
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                  ->_1).naturalAligment;
-          if (((pDVar10->klass->_1).naturalAligment < bVar8) ||
-             ((Dictionary_2_System_Object_System_Object___Class *)
-              (pDVar10->klass->_1).typeHierarchy[bVar8 - 1] !=
-              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-            bVar9 = false;
-          }
-          else {
-            bVar9 = true;
-          }
-          this_02 = (Dictionary_2_WinningConditionType_System_Object_ *)0x0;
-          if (bVar9) {
-            this_02 = pDVar10;
-          }
-          if (this_02 == (Dictionary_2_WinningConditionType_System_Object_ *)0x0)
-          goto code_?;
+        if (pOVar5 == (Object *)0x0) {
+          *(undefined4 *)(in_stack_3 + 0xe4) = 0;
         }
-        (in_stack_4->fields).mvObjectEnablerPrefab = (MVObjectEnablerObject *)this_02;
-        if (this_02 != (Dictionary_2_WinningConditionType_System_Object_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-          Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                    ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *)
-                     &stack0xffffffbc,this_02,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
-                    );
+        else if ((((pOVar5->klass->_1).typeHierarchyDepth <
+                   (
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).typeHierarchyDepth) ||
+                 ((Dictionary_2_System_Object_System_Object___Class *)
+                  (pOVar5->klass->_1).typeHierarchy
+                  [(
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).typeHierarchyDepth - 1] !=
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 )) || ((*(Object **)(in_stack_3 + 0xe4) = pOVar5,
+                        (pOVar5->klass->_1).typeHierarchyDepth <
+                        (
+                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                        ->_1).typeHierarchyDepth ||
+                        ((Dictionary_2_System_Object_System_Object___Class *)
+                         (pOVar5->klass->_1).typeHierarchy
+                         [(
+                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                          ->_1).typeHierarchyDepth - 1] !=
+                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                        )))) goto code_?;
+        method_00 = (MethodInfo *)&UNK_?;
+        func_?();
+        if (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_3 + 0xe4) !=
+            (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                             (&DStack_6,
+                              *(Dictionary_2_System_Object_System_Object_ **)
+                               (in_stack_3 + 0xe4),
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
+                             );
+          uStack_8 = 0;
+          DStack_2._dictionary = pDVar7->_dictionary;
+          DStack_2._version = pDVar7->_version;
+          DStack_2._index = pDVar7->_index;
+          DStack_2._current.key = (pDVar7->_current).key;
+          DStack_2._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
+          pDStack_9 = &DStack_2;
           while( true ) {
-            _puStack_1c = (KeyValuePair_2_System_Int32_System_Int32_)
-                          CONCAT44(&stack0xffffffd0,&UNK_?);
-            cVar11 = func_?();
-            if (cVar11 == '\0') break;
-            _puStack_1c = (KeyValuePair_2_System_Int32_System_Int32_)
-                          CONCAT44((LevelRewardsManager *)&stack0xffffffd0,&UNK_?);
-            _puStack_1c = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                                    ((LevelRewardsManager *)&stack0xffffffd0,
-                                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__get_Current__
-                                    );
-            this_00 = (Dictionary_2_System_String_Theme_ *)
-                      (in_stack_4->fields).mvKillLimitPrefab;
-            key = (String *)func_?();
-            ppuStack_3 = &puStack_2;
-            value = (Theme *)func_?();
-            unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)0x0;
-            if (this_00 == (Dictionary_2_System_String_Theme_ *)0x0) goto code_?;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,Theme]::
-            Dictionary_2_System_String_Theme__set_Item
-                      (this_00,key,value,
+            bVar4 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                    Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                              (&DStack_2,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                              );
+            if (bVar4 == 0) {
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&DStack_2,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+                         ,method_00);
+              *unaff_FS_OFFSET = uVar1;
+              return;
+            }
+            if (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_3 + 0xe8) ==
+                (Dictionary_2_System_Object_System_Object_ *)0x0) break;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__set_Item
+                      (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_3 + 0xe8),
+                       DStack_2._current.value,DStack_2._current.key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                       );
           }
-          *ppuStack_3 = (undefined *)0xab;
-          _puStack_1c = (KeyValuePair_2_System_Int32_System_Int32_)
-                        CONCAT44(&stack0xffffffd0,&UNK_?);
-          func_?();
-          goto code_?;
         }
       }
     }
   }
+  uVar1 = func_?();
+  func_?(uVar1);
 code_?:
   func_?();
-  stack0xffffffe8 = 0;
-  puStack_2 = (undefined *)unaff_ESI;
-  func_?();
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
+}
+
+
+/* Void RefillEnergy(VehicleEnergyRefill) */
+
+void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_RefillEnergy
+               (MVVehicleBase *this,VehicleEnergyRefill vehicleEnergyRefill,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_vehicleEnergyRefill);
+    cRam_? = '\x01';
+  }
+  if ((this->fields).localObjects == (MVVehicleBase_LocalObjectsBase *)0x0) {
+    return;
+  }
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
+  pVVar1 = (this->fields).vehicleBaseObject;
+  if (pVVar1 != (VehicleBaseObject *)0x0) {
+    audioSource = (pVVar1->fields).vehicleEnergyPickupSound;
+    this_00 = (this->fields)._._._.transform;
+    if ((this_00 != (Transform *)0x0) &&
+       (pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           ((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0),
+       this_01 != (AudioManager *)0x0)) {
+      AudioManager::AudioManager_Play_2
+                (this_01,StringLiteral_vehicleEnergyRefill,audioSource,*pVVar2,(MethodInfo *)0x0);
+      pMVar3 = (this->fields).localObjects;
+      if (pMVar3 != (MVVehicleBase_LocalObjectsBase *)0x0) {
+        (*(pMVar3->klass->vtable).__unknown_4.methodPtr)();
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
+/* Void RollbackRefillEnergyPrediction(Int32) */
+
+void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_RollbackRefillEnergyPrediction
+               (MVVehicleBase *this,int32_t spawnerId,MethodInfo *method)
+
+{
+  if ((this->fields).localObjects != (MVVehicleBase_LocalObjectsBase *)0x0) {
+    pMVar1 = (this->fields).localObjects;
+    pMVar2 = pMVar1->klass;
+    (*(pMVar2->vtable).__unknown_6.methodPtr)(pMVar1,spawnerId,(pMVar2->vtable).__unknown_6.method);
+  }
+  return;
+}
+
+
+/* Boolean UsesEnergy() */
+
+bool Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_UsesEnergy
+               (MVVehicleBase *this,MethodInfo *method)
+
+{
+  if ((this->fields).localObjects == (MVVehicleBase_LocalObjectsBase *)0x0) {
+    return 0;
+  }
+  pMVar1 = (this->fields).localObjects;
+  pMVar2 = pMVar1->klass;
+  bVar3 = (*(pMVar2->vtable).__unknown_5.methodPtr)(pMVar1,(pMVar2->vtable).__unknown_5.method);
+  return bVar3;
 }
 
 
@@ -361,184 +598,91 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_VisualizeBulletImpact
                float damage,MethodInfo *method)
 
 {
+  uVar1 = CONCAT44(unaff_ESI,unaff_EDI);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppIVar2 = &TypeInfo__IBulletImpactVisualizer;
+    func_?(&TypeInfo__IBulletImpactVisualizer);
+    func_?(&TypeInfo__IGUICrossHair,ppIVar2,uVar1);
+    func_?(&TypeInfo__IPlayModeUI);
     cRam_? = '\x01';
   }
-  this_06 = (MVPlayer *)0x0;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    this_06 = (MVPlayer *)0x0;
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((this_01 != (MVAvatar *)0x0) &&
-     (this_02 = MVAvatar::MVAvatar_get_Shield(this_01,(MethodInfo *)0x0),
-     this_02 != (MVRuntimeDataVariableClampedFloat *)0x0)) {
-    bVar1 = MVPlayerContainer::MVPlayerContainer_TryGetValue
-                      ((MVPlayerContainer *)this_02,(int32_t)lineOfFire.m_Direction.z,
-                       (MVPlayer **)&stack0xfffffff8,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if (this_06 == (MVPlayer *)0x0) goto code_?;
-      bVar1 = MVPlayer::MVPlayer_IsOnSameTeam_1
-                        (this_06,(MVWorldObjectClient *)this,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        pIVar2 = (this->klass->vtable).get_IsInSpawner.methodPtr;
-        in_stack_3 = &UNK_?;
-        cVar4 = (*(code *)(this->klass->vtable).get_IsDead.method)();
-        if (cVar4 == '\0') {
-          this_00 = (KogamaSettingNumericBase_1_System_Single_ *)(this->fields).vehicleBaseObject;
-          if ((this_00 != (KogamaSettingNumericBase_1_System_Single_ *)0x0) &&
-             (pIVar5 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                       KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                                 (this_00,(MethodInfo *)0x0), pIVar5 != (IKogamaSetting *)0x0)) {
-            pIVar6 = pIVar5->klass;
-            uVar7 = 0;
-            uVar8._0_1_ = (pIVar6->_1).rank;
-            uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
-            if (uVar8 != 0) {
-              do {
-                if (pIVar6->interfaceOffsets[uVar7].interfaceType ==
-                    (Il2CppClass *)TypeInfo__IBulletImpactVisualizer) {
-                  ppMVar9 = &(&(pIVar5->klass->vtable).get_Value)
-                             [pIVar6->interfaceOffsets[uVar7].offset].method;
-                  goto code_?;
-                }
-                uVar7 = uVar7 + 1;
-              } while (uVar7 < uVar8);
+  this_02 = (MVPlayer *)0x0;
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar3 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar3->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+    bVar4 = MVPlayerContainer::MVPlayerContainer_TryGetValue
+                      (this_00,(int32_t)lineOfFire.m_Direction.z,(MVPlayer **)&stack0xfffffff8,
+                       (MethodInfo *)0x0);
+    if (bVar4 == 0) {
+      return;
+    }
+    if (this_02 != (MVPlayer *)0x0) {
+      bVar4 = MVPlayer::MVPlayer_IsOnSameTeam_1
+                        (this_02,(MVWorldObjectClient *)this,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        return;
+      }
+      cVar5 = (*(this->klass->vtable).get_IsDead.methodPtr)();
+      if (cVar5 != '\0') {
+        return;
+      }
+      pVVar6 = (this->fields).vehicleBaseObject;
+      if ((pVVar6 != (VehicleBaseObject *)0x0) &&
+         (pBVar7 = (pVVar6->fields).bulletImpactVisualizer, pBVar7 != (BulletImpactVisualizer *)0x0)
+         ) {
+        pBVar8 = pBVar7->klass;
+        uVar9 = 0;
+        uVar10 = (pBVar8->_1).interface_offsets_count;
+        if (uVar10 != 0) {
+          do {
+            if (pBVar8->interfaceOffsets[uVar9].interfaceType ==
+                (Il2CppClass *)TypeInfo__IBulletImpactVisualizer) {
+              pVVar11 = &(pBVar8->vtable).Equals + pBVar8->interfaceOffsets[uVar9].offset;
+              goto code_?;
             }
-            ppMVar9 = (MethodInfo **)func_?();
+            uVar9 = uVar9 + 1;
+          } while (uVar9 < uVar10);
+        }
+        pVVar11 = (VirtualInvokeData *)func_?(pBVar7,TypeInfo__IBulletImpactVisualizer);
 code_?:
-            (*(code *)*ppMVar9)(pIVar5,in_stack_3,this,pIVar2,voxelHit.point.z,
-                                voxelHit.normal.x,voxelHit.normal.y,voxelHit.normal.z,
-                                voxelHit.cubePos._0_4_,voxelHit._28_4_,voxelHit.face,voxelHit._36_4_
-                                ,voxelHit.woId,voxelHit.cube,voxelHit.distance,voxelHit.collider,
-                                voxelHit.transform,voxelHit._60_8_,voxelHit.interactionFlags._4_4_,
-                                lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,lineOfFire.m_Origin.z,
-                                lineOfFire.m_Direction._0_8_);
-            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
+        (*pVVar11->methodPtr)
+                  (shooterActorNumber,in_stack_12,voxelHit.point.x,voxelHit.point.y,
+                   voxelHit.point.z,voxelHit.normal.x,voxelHit.normal.y,voxelHit.normal.z,
+                   voxelHit.cubePos._0_4_,voxelHit._28_4_,voxelHit.face,voxelHit._36_4_,
+                   voxelHit.woId,voxelHit.cube,voxelHit.distance,voxelHit.collider,
+                   voxelHit.transform,voxelHit._60_8_,voxelHit.interactionFlags._4_4_,
+                   lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,lineOfFire.m_Origin.z,
+                   lineOfFire.m_Direction._0_8_,lineOfFire.m_Direction.z);
+        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar3 != (MVNetworkGame *)0x0) &&
+           (pMVar13 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+           pMVar13 != (MVLocalPlayer *)0x0)) {
+          if (lineOfFire.m_Direction.z != (float)(pMVar13->fields)._._ActorNr_k__BackingField) {
+            return;
+          }
+          this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                              ((MethodInfo *)0x0);
+          if (this_01 != (MainCameraManager *)0x0) {
+            MainCameraManager::MainCameraManager_PlayPlingSound(this_01,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
               func_?();
+              cRam_? = '\x01';
             }
-            this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((this_03 != (MVNetworkGame *)0x0) &&
-               (this_04 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0),
-               this_04 != (MVLocalPlayer *)0x0)) {
-              pSVar10 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                       NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                                 ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_04,
-                                  (MethodInfo *)0x0);
-              if ((String *)lineOfFire.m_Direction.z != pSVar10) {
-                return;
-              }
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?(TypeInfo__MVGameControllerBase);
-              }
-              this_05 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                  ((MethodInfo *)0x0);
-              if (this_05 != (MainCameraManager *)0x0) {
-                MainCameraManager::MainCameraManager_PlayPlingSound(this_05,(MethodInfo *)0x0);
-                pIVar11 = MVGameControllerBase::MVGameControllerBase_get_PlayModeUI
-                                    ((MethodInfo *)0x0);
-                if ((pIVar11 != (IPlayModeUI *)0x0) && (iVar12 = func_?(), iVar12 != 0)) {
-                  func_?();
-                  return;
-                }
-              }
+            if ((TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+                 (IPlayModeUI *)0x0) &&
+               (iVar14 = func_?(2,TypeInfo__IPlayModeUI), iVar14 != 0)) {
+              func_?(3,TypeInfo__IGUICrossHair);
+              return;
             }
           }
-          goto code_?;
         }
       }
     }
-    return;
   }
-code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
-}
-
-
-/* MVVehicleBase(Dictionary`2[System.Object,System.Object], ObjectPrefab,
-   Dictionary`2[System.Int32,MVWorldObjectClient]) */
-
-void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase__ctor
-               (MVVehicleBase *this,Dictionary_2_System_Object_System_Object_ *data,
-               ObjectPrefab *vehiclePrefab,
-               Dictionary_2_System_Int32_MVWorldObjectClient_ *worldObjects,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  MVBlueprintBase::MVBlueprintBase__ctor_1
-            ((MVBlueprintBase *)this,data,vehiclePrefab,worldObjects,(MethodInfo *)0x0);
-  pVVar1 = (VehicleBaseObject *)(this->fields)._._._.component;
-  if (pVVar1 == (VehicleBaseObject *)0x0) {
-    pVVar2 = (VehicleBaseObject *)0x0;
-  }
-  else {
-    bVar3 = (TypeInfo__VehicleBaseObject->_1).naturalAligment;
-    if (((((ObjectPrefab__Class *)pVVar1->klass)->_1).naturalAligment < bVar3) ||
-       ((((ObjectPrefab__Class *)pVVar1->klass)->_1).typeHierarchy[bVar3 - 1] !=
-        (Il2CppClass *)TypeInfo__VehicleBaseObject)) {
-      bVar4 = false;
-    }
-    else {
-      bVar4 = true;
-    }
-    pVVar2 = (VehicleBaseObject *)0x0;
-    if (bVar4) {
-      pVVar2 = pVVar1;
-    }
-    if (pVVar2 == (VehicleBaseObject *)0x0) {
-      func_?();
-      goto code_?;
-    }
-  }
-  (this->fields).vehicleBaseObject = pVVar2;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      pSVar5 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-               NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                         ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_01,(MethodInfo *)0x0);
-      pSVar6 = (String *)
-               UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-               TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-               TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                         ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)this,(MethodInfo *)0x0);
-      MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject
-                ((MVWorldObjectClient *)this,pSVar5 == pSVar6,(MethodInfo *)0x0);
-      return;
-    }
-  }
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_get_DocumentationType
-          (MVVehicleBase *this,MethodInfo *method)
-
-{
-  return (this->fields).documentationType;
 }
 
 
@@ -549,7 +693,7 @@ bool Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_get_IsDead
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).IsVehicleDead;
@@ -560,46 +704,36 @@ bool Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_get_IsDead
         pbVar2 = (bool *)func_?();
         return *pbVar2;
       }
-      goto code_?;
+      func_?();
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
     }
   }
-  pOVar1 = (Object *)func_?(0);
-code_?:
-  func_?(pOVar1);
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
   pcVar3 = (code *)swi(3);
   bVar4 = (*pcVar3)();
   return bVar4;
 }
 
 
-/* Boolean get_IsInSpawner() */
+/* VehicleEnergyContainerConfig get_VehicleEnergyContainerConfig() */
 
-bool Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_get_IsInSpawner
-               (MVVehicleBase *this,MethodInfo *method)
-
-{
-  return (this->fields)._IsInSpawner_k__BackingField;
-}
-
-
-/* VehicleVisualizationBase get_Visualization() */
-
-VehicleVisualizationBase *
-Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_get_Visualization
-          (MVVehicleBase *this,MethodInfo *method)
+VehicleEnergyContainerConfig *
+Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_get_VehicleEnergyContainerConfig
+          (VehicleEnergyContainerConfig *__return_storage_ptr__,MVVehicleBase *this,
+          MethodInfo *method)
 
 {
-  return (this->fields).visualization;
-}
-
-
-/* Void set_IsInSpawner(Boolean) */
-
-void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_set_IsInSpawner
-               (MVVehicleBase *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._IsInSpawner_k__BackingField = value;
-  return;
+  uVar1 = *(undefined3 *)&(this->fields)._VehicleEnergyContainerConfig_k__BackingField.field_0x1;
+  iVar2 = (this->fields)._VehicleEnergyContainerConfig_k__BackingField.storage;
+  iVar3 = (this->fields)._VehicleEnergyContainerConfig_k__BackingField.consumption;
+  __return_storage_ptr__->usingEnergy =
+       (this->fields)._VehicleEnergyContainerConfig_k__BackingField.usingEnergy;
+  *(undefined3 *)&__return_storage_ptr__->field_0x1 = uVar1;
+  __return_storage_ptr__->storage = iVar2;
+  __return_storage_ptr__->consumption = iVar3;
+  return __return_storage_ptr__;
 }
 

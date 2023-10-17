@@ -9,7 +9,8 @@ void Assembly-CSharp.dll::Friend::Friend__ctor
   (this->fields).profileID = -1;
   (this->fields).friendID = -1;
   (this->fields).status = -1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).friendID = friendID;
   (this->fields).profileID = id;
   (this->fields).status = status;

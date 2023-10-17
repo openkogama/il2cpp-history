@@ -6,12 +6,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonConverterCollection::JsonConvert
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__ObjectModel__Collection<Newtonsoft::Json::JsonConverter>__Collection__
+                   );
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::JsonConverter]::
-  Collection_1_Newtonsoft_Json_JsonConverter___ctor
-            ((Collection_1_Newtonsoft_Json_JsonConverter_ *)this,
+  DictionaryWithChangeEvent`2[System::Object,System::Object]::
+  DictionaryWithChangeEvent_2_System_Object_System_Object___ctor
+            ((DictionaryWithChangeEvent_2_System_Object_System_Object_ *)this,
              MethodInfo__System__Collections__ObjectModel__Collection<Newtonsoft::Json::JsonConverter>__Collection__
             );
   return;

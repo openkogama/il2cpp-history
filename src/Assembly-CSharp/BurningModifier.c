@@ -6,15 +6,14 @@ void Assembly-CSharp.dll::BurningModifier::BurningModifier_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
-  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                  ((Component_1 *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                  ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -31,17 +30,19 @@ Assembly-CSharp.dll::BurningModifier::BurningModifier_DoFadeAndDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BurningModifier___DoFadeAndDestroy_d__7);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__BurningModifier___DoFadeAndDestroy_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__BurningModifier___DoFadeAndDestroy_d__7);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -51,14 +52,13 @@ Assembly-CSharp.dll::BurningModifier::BurningModifier_DoFadeAndDestroy
 /* Void OnDeactivated(Avatar) */
 
 void Assembly-CSharp.dll::BurningModifier::BurningModifier_OnDeactivated
-               (BurningModifier *this,Avatar_1 *target,MethodInfo *method)
+               (BurningModifier *this,Avatar *target,MethodInfo *method)
 
 {
   (this->fields).isDeactivating = 1;
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_01 != (GameObject *)0x0) {
-    method_00 = (MethodInfo *)&UNK_?;
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                       (this_01,(MethodInfo *)0x0);
     if (bVar1 == 0) {
@@ -71,27 +71,31 @@ void Assembly-CSharp.dll::BurningModifier::BurningModifier_OnDeactivated
       }
     }
     else {
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                          ((Component_1 *)this,(MethodInfo *)0x0);
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
       if (this_02 != (Transform *)0x0) {
+        method_00 = (MethodInfo *)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_02,(Transform *)0x0,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        this_03 = (ScaleAnimationBase *)func_?();
-        ScaleAnimationBase::ScaleAnimationBase_Play(this_03,0.0,method_00);
-        if (this_03 != (ScaleAnimationBase *)0x0) {
-          (this_03->fields)._._._._.m_CachedPtr = this;
+        value = (Object *)func_?();
+        if (value != (Object *)0x0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    (value,ExceptionArgument__Enum_obj,method_00);
+          value[1].klass = (Object__Class *)0x0;
+          value[2].klass = (Object__Class *)this;
+          func_?(value + 2,this);
           UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                    ((MonoBehaviour *)this,(IEnumerator *)this_03,(MethodInfo *)0x0);
+                    ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -105,14 +109,13 @@ void Assembly-CSharp.dll::BurningModifier::BurningModifier_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   if ((this->fields).isDeactivating != 0) {
-    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                    ((Component_1 *)this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1

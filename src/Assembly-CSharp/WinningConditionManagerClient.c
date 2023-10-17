@@ -5,311 +5,396 @@ Object * Assembly-CSharp.dll::WinningConditionManagerClient::WinningConditionMan
                    (WinningConditionManagerClient *this,Object__Array *args,MethodInfo *method)
 
 {
-  pMVar1 = method;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__AllCollectiblesCollectedClient);
+    func_?(&TypeInfo__AllCollectiblesCollectedClient);
+    func_?(&TypeRef__FlagReachedClient);
+    func_?(&TypeInfo__FlagReachedClient);
+    func_?(&TypeInfo__GameStatCounterManager);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeRef__KillLimitClient);
+    func_?(&TypeInfo__KillLimitClient);
+    func_?(&TypeRef__OculusKillLimitClient);
+    func_?(&TypeInfo__OculusKillLimitClient);
+    func_?(&TypeRef__TimeAttackFlagReachedClient);
+    func_?(&TypeInfo__TimeAttackFlagReachedClient);
+    func_?(&TypeRef__TimeLimitClient);
+    func_?(&TypeInfo__TimeLimitClient);
+    func_?(&TypeInfo__System__Type);
+    func_?(&TypeInfo__WinningCondition);
     cRam_? = '\x01';
   }
-  RVar2.value = *method->parameters;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  RVar1.value = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar2,(MethodInfo *)0x0);
-  pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+  gameCounterManager =
+       (Int32__Class *)mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
+  pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                      ((RuntimeTypeHandle)TypeRef__AllCollectiblesCollectedClient,(MethodInfo *)0x0);
-  pIVar5 = (Int32__Class *)TypeRef__FlagReachedClient;
-  if (pTVar3 == pTVar4) {
+  bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)gameCounterManager,(Object **)pTVar2,(MethodInfo *)0x0);
+  pIVar4 = TypeRef__FlagReachedClient;
+  pIVar5 = (Int32__Class *)method;
+  if (bVar3 == 0) {
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Type);
+    }
+    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+    bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)gameCounterManager,(Object **)pTVar2,(MethodInfo *)0x0);
+    RVar1.value = TypeRef__KillLimitClient;
+    if (bVar3 != 0) {
+      RVar1.value = pIVar4;
+      if (args != (Object__Array *)0x0) {
+        if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
+           (pIVar5 = (Int32__Class *)args->vector[1], args->max_length < 3)) goto code_?;
+        gameCounterManager = (Int32__Class *)args->vector[2];
+        method = (MethodInfo *)&UNK_?;
+        this_00 = (Int32__Class *)func_?();
+        if (this_00 != (Int32__Class *)0x0) {
+          if ((gameCounterManager == (Int32__Class *)0x0) ||
+             ((pIVar6 = gameCounterManager,
+              pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+              (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
+              *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
+              (pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+              *(GameStatCounterManager__Class **)
+               (((gameCounterManager->_0).image[2].typeCount - 4) +
+               (uint)(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth * 4) ==
+              TypeInfo__GameStatCounterManager)))) {
+            if (pIVar5 == (Int32__Class *)0x0) goto code_?;
+            pIVar6 = pIVar5;
+            pIVar7 = TypeInfo__System__Int32;
+            if ((Il2CppClass *)((pIVar5->_0).image)->codeGenModule ==
+                (TypeInfo__System__Int32->_0).element_class) {
+              piVar8 = (int32_t *)func_?(pIVar5);
+              if ((RVar1.value == (Int32__Class *)0x0) ||
+                 ((pIVar5 = (Int32__Class *)(((Int32__Class *)RVar1.value)->_0).image,
+                  pIVar6 = RVar1.value, pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+                  (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
+                  (pIVar5->_1).typeHierarchyDepth &&
+                  (pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+                  (pIVar5->_1).typeHierarchy
+                  [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
+                  (Il2CppClass *)TypeInfo__WinningCondition)))) {
+                FlagReachedClient::FlagReachedClient__ctor
+                          ((FlagReachedClient *)this_00,RVar1.value,*piVar8,
+                           (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
+                goto code_?;
+              }
+            }
+          }
+          goto code_?;
+        }
+      }
+code_?:
+      func_?();
+      pIVar6 = gameCounterManager;
+      pIVar7 = RVar1.value;
+      goto code_?;
+    }
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
+    bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)gameCounterManager,(Object **)pTVar2,(MethodInfo *)0x0);
+    pIVar4 = TypeRef__OculusKillLimitClient;
+    if (bVar3 != 0) {
+      if (args != (Object__Array *)0x0) {
+        if ((((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
+            (pIVar9 = (Int32__Class *)args->vector[1], args->max_length < 3)) ||
+           (pIVar5 = (Int32__Class *)args->vector[2], args->max_length < 4)) goto code_?;
+        gameCounterManager = (Int32__Class *)args->vector[3];
+        method = (MethodInfo *)&UNK_?;
+        iVar10 = func_?();
+        if ((iVar10 != 0) && (gameCounterManager != (Int32__Class *)0x0)) {
+          pIVar6 = gameCounterManager;
+          pIVar7 = TypeInfo__System__Int32;
+          if ((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
+              (TypeInfo__System__Int32->_0).element_class) {
+            piVar8 = (int32_t *)func_?(gameCounterManager);
+            killLimit = *piVar8;
+            if ((pIVar5 == (Int32__Class *)0x0) ||
+               ((gameCounterManager = (Int32__Class *)(pIVar5->_0).image, pIVar6 = pIVar5,
+                pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+                (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
+                (gameCounterManager->_1).typeHierarchyDepth &&
+                (pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+                (gameCounterManager->_1).typeHierarchy
+                [(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1] ==
+                (Il2CppClass *)TypeInfo__GameStatCounterManager)))) {
+              if (pIVar9 == (Int32__Class *)0x0) goto code_?;
+              pIVar6 = pIVar9;
+              pIVar7 = TypeInfo__System__Int32;
+              if ((Il2CppClass *)((pIVar9->_0).image)->codeGenModule ==
+                  (TypeInfo__System__Int32->_0).element_class) {
+                this_00 = (Int32__Class *)&UNK_?;
+                piVar8 = (int32_t *)func_?(pIVar9);
+                if ((RVar1.value == (Int32__Class *)0x0) ||
+                   ((gameCounterManager = (Int32__Class *)(((Int32__Class *)RVar1.value)->_0).image,
+                    pIVar6 = RVar1.value, pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+                    (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
+                    (gameCounterManager->_1).typeHierarchyDepth &&
+                    (pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+                    (gameCounterManager->_1).typeHierarchy
+                    [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
+                    (Il2CppClass *)TypeInfo__WinningCondition)))) {
+                  KillLimitClient::KillLimitClient__ctor
+                            ((KillLimitClient *)this_00,RVar1.value,*piVar8,
+                             (GameStatCounterManager *)pIVar5,killLimit,(MethodInfo *)0x0);
+                  goto code_?;
+                }
+              }
+            }
+          }
+          goto code_?;
+        }
+      }
+      goto code_?;
+    }
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+    bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)gameCounterManager,(Object **)pTVar2,(MethodInfo *)0x0);
+    RVar1.value = TypeRef__TimeLimitClient;
+    if (bVar3 != 0) {
+      RVar1.value = pIVar4;
+      if (args != (Object__Array *)0x0) {
+        if ((((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
+            (pIVar9 = (Int32__Class *)args->vector[1], args->max_length < 3)) ||
+           (pIVar5 = (Int32__Class *)args->vector[2], args->max_length < 4)) goto code_?;
+        gameCounterManager = (Int32__Class *)args->vector[3];
+        this_00 = (Int32__Class *)func_?();
+        if ((this_00 != (Int32__Class *)0x0) && (gameCounterManager != (Int32__Class *)0x0)) {
+          pIVar6 = gameCounterManager;
+          pIVar7 = TypeInfo__System__Int32;
+          if (((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
+               (TypeInfo__System__Int32->_0).element_class) &&
+             ((func_?(gameCounterManager), pIVar5 == (Int32__Class *)0x0 ||
+              ((gameCounterManager = (Int32__Class *)(pIVar5->_0).image, pIVar6 = pIVar5,
+               pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+               (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
+               (gameCounterManager->_1).typeHierarchyDepth &&
+               (pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+               (gameCounterManager->_1).typeHierarchy
+               [(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1] ==
+               (Il2CppClass *)TypeInfo__GameStatCounterManager)))))) {
+            if (pIVar9 == (Int32__Class *)0x0) goto code_?;
+            pIVar6 = pIVar9;
+            pIVar7 = TypeInfo__System__Int32;
+            if ((Il2CppClass *)((pIVar9->_0).image)->codeGenModule ==
+                (TypeInfo__System__Int32->_0).element_class) {
+              piVar8 = (int32_t *)func_?(pIVar9);
+              if ((RVar1.value == (Int32__Class *)0x0) ||
+                 ((gameCounterManager = (Int32__Class *)(((Int32__Class *)RVar1.value)->_0).image,
+                  pIVar6 = RVar1.value, pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+                  (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
+                  (gameCounterManager->_1).typeHierarchyDepth &&
+                  (pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+                  (gameCounterManager->_1).typeHierarchy
+                  [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
+                  (Il2CppClass *)TypeInfo__WinningCondition)))) {
+                OculusKillLimitClient::OculusKillLimitClient__ctor
+                          ((OculusKillLimitClient *)this_00,RVar1.value,*piVar8,
+                           (GameStatCounterManager *)pIVar5,0,(MethodInfo *)0x0);
+                RVar1.value = *(void **)(_UNK_? + 4);
+                bVar11 = (((Int32__Class *)RVar1.value)->_1).field_0x56;
+                goto joined_?;
+              }
+            }
+          }
+          goto code_?;
+        }
+      }
+      goto code_?;
+    }
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
+    bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)gameCounterManager,(Object **)pTVar2,(MethodInfo *)0x0);
+    pIVar4 = TypeRef__TimeAttackFlagReachedClient;
+    if (bVar3 != 0) {
+      if (args != (Object__Array *)0x0) {
+        if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
+           (gameCounterManager = (Int32__Class *)args->vector[1], args->max_length < 3))
+        goto code_?;
+        pIVar5 = (Int32__Class *)args->vector[2];
+        method = (MethodInfo *)&UNK_?;
+        iVar10 = func_?();
+        if (iVar10 != 0) {
+          if ((pIVar5 == (Int32__Class *)0x0) ||
+             ((pIVar6 = pIVar5, pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+              (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
+              *(byte *)&(pIVar5->_0).image[4].nameNoExt &&
+              (pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+              *(GameStatCounterManager__Class **)
+               (((pIVar5->_0).image[2].typeCount - 4) +
+               (uint)(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth * 4) ==
+              TypeInfo__GameStatCounterManager)))) {
+            if (gameCounterManager == (Int32__Class *)0x0) goto code_?;
+            pIVar6 = gameCounterManager;
+            pIVar7 = TypeInfo__System__Int32;
+            if ((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
+                (TypeInfo__System__Int32->_0).element_class) {
+              this_00 = (Int32__Class *)&UNK_?;
+              piVar8 = (int32_t *)func_?(gameCounterManager);
+              if (RVar1.value == (Int32__Class *)0x0) {
+                TimeLimitClient::TimeLimitClient__ctor
+                          ((TimeLimitClient *)this_00,(WinningCondition *)0x0,*piVar8,
+                           (GameStatCounterManager *)pIVar5,(MethodInfo *)0x0);
+              }
+              else {
+                gameCounterManager = (Int32__Class *)(((Int32__Class *)RVar1.value)->_0).image;
+                pIVar6 = RVar1.value;
+                pIVar7 = (Int32__Class *)TypeInfo__WinningCondition;
+                if (((gameCounterManager->_1).typeHierarchyDepth <
+                     (TypeInfo__WinningCondition->_1).typeHierarchyDepth) ||
+                   (pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+                   (gameCounterManager->_1).typeHierarchy
+                   [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] !=
+                   (Il2CppClass *)TypeInfo__WinningCondition)) goto code_?;
+                TimeLimitClient::TimeLimitClient__ctor
+                          ((TimeLimitClient *)this_00,RVar1.value,*piVar8,
+                           (GameStatCounterManager *)pIVar5,(MethodInfo *)0x0);
+              }
+code_?:
+              RVar1.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+              pOVar12 = (Object *)func_?(this_00,RVar1.value);
+              goto code_?;
+            }
+          }
+          goto code_?;
+        }
+      }
+      goto code_?;
+    }
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+    bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)gameCounterManager,(Object **)pTVar2,(MethodInfo *)0x0);
+    RVar1.value = pIVar4;
+    if (bVar3 == 0) {
+      if (this != (WinningConditionManagerClient *)0x0) {
+        pOVar12 = (Object *)(*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)();
+        return pOVar12;
+      }
+      goto code_?;
+    }
     if (args == (Object__Array *)0x0) goto code_?;
-    uVar6 = args->max_length;
-    if (uVar6 == 0) goto code_?;
-    if (1 < uVar6) {
-      RVar2.value = args->vector[1];
-      if (uVar6 < 3) goto code_?;
-      in_stack_7 = (WinningCondition *)args->vector[2];
-      this_02 = (KillLimitClient *)func_?(TypeInfo__AllCollectiblesCollectedClient);
-      pGVar8 = TypeInfo__GameStatCounterManager;
-      if (in_stack_7 == (WinningCondition *)0x0) {
-        method = (MethodInfo *)0x0;
-code_?:
-        if (RVar2.value == (Int32__Class *)0x0) goto code_?;
-        pIVar5 = TypeInfo__System__Int32;
-        if (*(Il2CppClass **)
-             (((_union_86 *)&((Int32__Class *)RVar2.value)->_0)->__klassIndex + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar9 = (int32_t *)func_?();
-        if (RVar2.value == (Int32__Class *)0x0) {
-          in_stack_10 = (Int32__Class *)0x0;
-        }
-        else {
-          piVar9 = (int32_t *)&UNK_?;
-          pIVar5 = RVar2.value;
-          in_stack_10 =
-               (Int32__Class *)func_?(RVar2.value,TypeInfo__WinningCondition);
-          if (in_stack_10 == (Int32__Class *)0x0) goto code_?;
-        }
-        AllCollectiblesCollectedClient::AllCollectiblesCollectedClient__ctor
-                  ((AllCollectiblesCollectedClient *)this_02,(WinningCondition *)in_stack_10,
-                   *piVar9,(GameStatCounterManager *)method,(MethodInfo *)0x0);
-code_?:
-        RVar2.value = pMVar1->parameters[1];
-        if (((uint)(((Int32__Class *)RVar2.value)->vtable).Equals.methodPtr & 0x10000) == 0) {
-          func_?();
-        }
-        if (this_02 == (KillLimitClient *)0x0) {
-          return (Object *)0x0;
-        }
-        pOVar11 = (Object *)func_?();
-        if (pOVar11 != (Object *)0x0) {
-          return pOVar11;
+    if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
+       (gameCounterManager = (Int32__Class *)args->vector[1], args->max_length < 3))
+    goto code_?;
+    pIVar5 = (Int32__Class *)args->vector[2];
+    method = (MethodInfo *)&UNK_?;
+    this_00 = (Int32__Class *)func_?();
+    if (this_00 == (Int32__Class *)0x0) goto code_?;
+    if ((pIVar5 == (Int32__Class *)0x0) ||
+       ((pGVar13 = TypeInfo__GameStatCounterManager,
+        (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
+        *(byte *)&(pIVar5->_0).image[4].nameNoExt &&
+        (*(GameStatCounterManager__Class **)
+          (((pIVar5->_0).image[2].typeCount - 4) +
+          (uint)(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth * 4) ==
+         TypeInfo__GameStatCounterManager)))) {
+      if (gameCounterManager == (Int32__Class *)0x0) goto code_?;
+      pIVar6 = TypeInfo__System__Int32;
+      if ((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
+          (TypeInfo__System__Int32->_0).element_class) {
+        piVar8 = (int32_t *)func_?(gameCounterManager);
+        if ((RVar1.value == (Int32__Class *)0x0) ||
+           ((gameCounterManager = (Int32__Class *)(((Int32__Class *)RVar1.value)->_0).image,
+            pWVar14 = TypeInfo__WinningCondition,
+            (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
+            (gameCounterManager->_1).typeHierarchyDepth &&
+            ((gameCounterManager->_1).typeHierarchy
+             [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
+             (Il2CppClass *)TypeInfo__WinningCondition)))) {
+          TimeAttackFlagReachedClient::TimeAttackFlagReachedClient__ctor
+                    ((TimeAttackFlagReachedClient *)this_00,RVar1.value,*piVar8,
+                     (GameStatCounterManager *)pIVar5,(MethodInfo *)0x0);
+          goto code_?;
         }
         goto code_?;
       }
-      method = (MethodInfo *)
-               func_?(in_stack_7,TypeInfo__GameStatCounterManager,
-                               TypeInfo__GameStatCounterManager);
-      if (method != (MethodInfo *)0x0) goto code_?;
       goto code_?;
     }
   }
   else {
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__Type);
-    }
-    pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
-    RVar2.value = TypeRef__KillLimitClient;
-    if (pTVar3 == pTVar4) {
-      RVar2.value = pIVar5;
-      if (args == (Object__Array *)0x0) goto code_?;
-      uVar6 = args->max_length;
-      if (uVar6 == 0) goto code_?;
-      if (uVar6 < 2) goto code_?;
-      RVar2.value = args->vector[1];
-      pIVar5 = in_stack_10;
-      if (uVar6 < 3) goto code_?;
-      in_stack_7 = (WinningCondition *)args->vector[2];
-      this_02 = (KillLimitClient *)func_?(TypeInfo__FlagReachedClient);
-      pGVar8 = TypeInfo__GameStatCounterManager;
-      if (in_stack_7 == (WinningCondition *)0x0) {
-        method = (MethodInfo *)0x0;
-      }
-      else {
-        method = (MethodInfo *)
-                 func_?(in_stack_7,TypeInfo__GameStatCounterManager,
-                                 TypeInfo__GameStatCounterManager);
-        if (method == (MethodInfo *)0x0) goto code_?;
-      }
-      if (RVar2.value == (Int32__Class *)0x0) goto code_?;
-      pIVar5 = TypeInfo__System__Int32;
-      if (*(Il2CppClass **)(((_union_86 *)&((Int32__Class *)RVar2.value)->_0)->__klassIndex + 0x20)
-          == (TypeInfo__System__Int32->_0).element_class) {
-        piVar9 = (int32_t *)func_?();
-        if (RVar2.value == (Int32__Class *)0x0) {
-          in_stack_10 = (Int32__Class *)0x0;
+    if (args == (Object__Array *)0x0) goto code_?;
+    if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
+       (pIVar5 = (Int32__Class *)args->vector[1], args->max_length < 3)) goto code_?;
+    gameCounterManager = (Int32__Class *)args->vector[2];
+    this_00 = (Int32__Class *)func_?(TypeInfo__AllCollectiblesCollectedClient);
+    if (this_00 == (Int32__Class *)0x0) goto code_?;
+    if ((gameCounterManager == (Int32__Class *)0x0) ||
+       ((pIVar6 = gameCounterManager, pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+        (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
+        *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
+        (pIVar7 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+        *(GameStatCounterManager__Class **)
+         (((gameCounterManager->_0).image[2].typeCount - 4) +
+         (uint)(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth * 4) ==
+        TypeInfo__GameStatCounterManager)))) {
+      if (pIVar5 == (Int32__Class *)0x0) goto code_?;
+      pIVar6 = pIVar5;
+      pIVar7 = TypeInfo__System__Int32;
+      if ((Il2CppClass *)((pIVar5->_0).image)->codeGenModule ==
+          (TypeInfo__System__Int32->_0).element_class) {
+        piVar8 = (int32_t *)func_?(pIVar5);
+        if ((RVar1.value == (Int32__Class *)0x0) ||
+           ((pIVar5 = (Int32__Class *)(((Int32__Class *)RVar1.value)->_0).image,
+            pIVar6 = RVar1.value, pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+            (TypeInfo__WinningCondition->_1).typeHierarchyDepth <= (pIVar5->_1).typeHierarchyDepth
+            && (pIVar7 = (Int32__Class *)TypeInfo__WinningCondition,
+               (pIVar5->_1).typeHierarchy[(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1]
+               == (Il2CppClass *)TypeInfo__WinningCondition)))) {
+          AllCollectiblesCollectedClient::AllCollectiblesCollectedClient__ctor
+                    ((AllCollectiblesCollectedClient *)this_00,RVar1.value,*piVar8,
+                     (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
 code_?:
-          FlagReachedClient::FlagReachedClient__ctor
-                    ((FlagReachedClient *)this_02,(WinningCondition *)in_stack_10,*piVar9,
-                     (GameStatCounterManager *)method,(MethodInfo *)0x0);
-          goto code_?;
-        }
-        piVar9 = (int32_t *)&UNK_?;
-        pIVar5 = RVar2.value;
-        in_stack_10 = (Int32__Class *)func_?(RVar2.value,TypeInfo__WinningCondition)
-        ;
-        if (in_stack_10 != (Int32__Class *)0x0) goto code_?;
-        goto code_?;
-      }
-    }
-    else {
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__Type);
-      }
-      pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar2,(MethodInfo *)0x0);
-      pIVar12 = TypeRef__OculusKillLimitClient;
-      if (pTVar3 == pTVar4) {
-        if (args == (Object__Array *)0x0) goto code_?;
-        uVar6 = args->max_length;
-        if (uVar6 == 0) goto code_?;
-        pIVar5 = (Int32__Class *)args->vector[0];
-        if (uVar6 < 2) goto code_?;
-        if (uVar6 < 3) goto code_?;
-        RVar2.value = args->vector[2];
-        if (uVar6 < 4) goto code_?;
-        this_02 = (KillLimitClient *)func_?(args->vector[3]);
-        if (RVar2.value == (Int32__Class *)0x0) {
-          method = (MethodInfo *)0x0;
+          RVar1.value = (method->field7_0x1c).rgctx_data[1].rgctxDataDummy;
+          bVar11 = (((Int32__Class *)RVar1.value)->_1).field_0x56;
+joined_?:
+          if ((bVar11 & 1) == 0) {
+            RVar1.value = (void *)func_?();
+          }
+          pOVar12 = (Object *)func_?();
 code_?:
-          RVar2.value = pIVar5;
-          if (RVar2.value == (Int32__Class *)0x0) {
-            in_stack_7 = (WinningCondition *)0x0;
-          }
-          else {
-            in_stack_10 = (Int32__Class *)&UNK_?;
-            in_stack_7 =
-                 (WinningCondition *)func_?(RVar2.value,TypeInfo__WinningCondition);
-            if (in_stack_7 == (WinningCondition *)0x0) goto code_?;
-          }
-          pIVar5 = TypeInfo__System__Int32;
-          piVar9 = (int32_t *)func_?(TypeInfo__System__Int32);
-          iVar13 = *piVar9;
-          in_stack_10 = TypeInfo__System__Int32;
-          piVar9 = (int32_t *)func_?(pIVar5,TypeInfo__System__Int32);
-          KillLimitClient::KillLimitClient__ctor
-                    (this_02,in_stack_7,*piVar9,(GameStatCounterManager *)method,iVar13,
-                     (MethodInfo *)0x0);
-          goto code_?;
-        }
-        in_stack_10 = (Int32__Class *)&UNK_?;
-        method = (MethodInfo *)func_?(RVar2.value,TypeInfo__GameStatCounterManager);
-        if (method != (MethodInfo *)0x0) goto code_?;
-      }
-      else {
-        if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__Type);
-        }
-        pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                           ((RuntimeTypeHandle)pIVar12,(MethodInfo *)0x0);
-        RVar2.value = TypeRef__TimeLimitClient;
-        if (pTVar3 == pTVar4) {
-          RVar2.value = (Int32__Class *)0x0;
-          if (args != (Object__Array *)0x0) {
-            uVar14 = func_?(0);
-            uVar15 = func_?(1);
-            uVar16 = func_?(2);
-            uVar17 = func_?(3);
-            this_01 = (OculusKillLimitClient *)func_?(TypeInfo__OculusKillLimitClient);
-            piVar9 = (int32_t *)func_?(uVar17,TypeInfo__System__Int32);
-            iVar13 = *piVar9;
-            piVar9 = (int32_t *)func_?(uVar15,TypeInfo__System__Int32);
-            pMVar1 = (MethodInfo *)0x0;
-            pGVar18 = (GameStatCounterManager *)
-                      func_?(uVar16,TypeInfo__GameStatCounterManager);
-            id = *piVar9;
-            pWVar19 = (WinningCondition *)func_?(uVar14,TypeInfo__WinningCondition);
-            OculusKillLimitClient::OculusKillLimitClient__ctor
-                      (this_01,pWVar19,id,pGVar18,iVar13,pMVar1);
-            pIVar12 = method->parameters[1];
-            if ((pIVar12[0x17].type & 1) == 0) {
-              func_?(pIVar12);
-            }
-            pOVar11 = (Object *)func_?(this_01,pIVar12);
-            return pOVar11;
+          gameCounterManager = this_00;
+          pIVar6 = this_00;
+          pIVar7 = RVar1.value;
+          if (pOVar12 != (Object *)0x0) {
+            return pOVar12;
           }
         }
-        else {
-          if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__Type);
-          }
-          pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar2,(MethodInfo *)0x0);
-          pIVar12 = TypeRef__TimeAttackFlagReachedClient;
-          if (pTVar3 == pTVar4) {
-            if (args != (Object__Array *)0x0) {
-              uVar14 = func_?(0);
-              uVar15 = func_?(1);
-              uVar16 = func_?(2);
-              this_00 = (TimeLimitClient *)func_?(TypeInfo__TimeLimitClient);
-              piVar9 = (int32_t *)func_?(uVar15,TypeInfo__System__Int32);
-              pMVar1 = (MethodInfo *)0x0;
-              pGVar18 = (GameStatCounterManager *)
-                        func_?(uVar16,TypeInfo__GameStatCounterManager);
-              iVar13 = *piVar9;
-              pWVar19 = (WinningCondition *)func_?(uVar14,TypeInfo__WinningCondition);
-              TimeLimitClient::TimeLimitClient__ctor(this_00,pWVar19,iVar13,pGVar18,pMVar1);
-code_?:
-              uVar14 = func_?(method->parameters[1]);
-              pOVar11 = (Object *)func_?(this_00,uVar14);
-              return pOVar11;
-            }
-          }
-          else {
-            if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__Type);
-            }
-            pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                               ((RuntimeTypeHandle)pIVar12,(MethodInfo *)0x0);
-            RVar2.value = pIVar12;
-            if (pTVar3 == pTVar4) {
-              if (args != (Object__Array *)0x0) {
-                uVar14 = func_?(0);
-                uVar15 = func_?(1);
-                uVar16 = func_?(2);
-                this_00 = (TimeLimitClient *)func_?(TypeInfo__TimeAttackFlagReachedClient);
-                piVar9 = (int32_t *)func_?(uVar15,TypeInfo__System__Int32);
-                pMVar1 = (MethodInfo *)0x0;
-                pGVar18 = (GameStatCounterManager *)
-                          func_?(uVar16,TypeInfo__GameStatCounterManager);
-                iVar13 = *piVar9;
-                pWVar19 = (WinningCondition *)func_?(uVar14,TypeInfo__WinningCondition);
-                TimeAttackFlagReachedClient::TimeAttackFlagReachedClient__ctor
-                          ((TimeAttackFlagReachedClient *)this_00,pWVar19,iVar13,pGVar18,pMVar1);
-                goto code_?;
-              }
-            }
-            else if (this != (WinningConditionManagerClient *)0x0) {
-              pOVar11 = (Object *)
-                       (*(code *)method->parameters[2]->data)(this,args,method->parameters[2]);
-              return pOVar11;
-            }
-          }
-        }
-code_?:
-        func_?(0);
-code_?:
-        uVar14 = func_?(0,0);
-        func_?(uVar14);
-code_?:
-        uVar14 = func_?(0,0);
-        func_?(uVar14);
-code_?:
-        uVar14 = func_?(0,0);
-        func_?(uVar14);
-code_?:
-        in_stack_10 = (Int32__Class *)0x0;
-        uVar14 = func_?(0,0);
-        func_?(uVar14);
-code_?:
-        func_?();
       }
-code_?:
-      func_?(RVar2.value,in_stack_10);
-      pIVar5 = RVar2.value;
-code_?:
-      uVar14 = func_?(0,0);
-      func_?(uVar14);
-      RVar2.value = pIVar5;
-code_?:
-      uVar14 = func_?(0,0);
-      func_?(uVar14);
-      pIVar5 = in_stack_10;
-code_?:
-      uVar14 = func_?(0,0);
-      func_?(uVar14);
-code_?:
-      pGVar8 = (GameStatCounterManager__Class *)&UNK_?;
-      func_?(RVar2.value,pIVar5);
-      pIVar5 = extraout_ECX;
     }
 code_?:
-    func_?(RVar2.value,pIVar5);
+    func_?(pIVar6,pIVar7);
+    pWVar14 = extraout_EDX;
 code_?:
-    func_?(in_stack_7,pGVar8);
+    func_?(RVar1.value,pWVar14);
+    pIVar6 = extraout_ECX;
 code_?:
-    uVar14 = func_?(0,0);
-    func_?(uVar14);
+    func_?(gameCounterManager,pIVar6);
+    pGVar13 = extraout_EDX_00;
   }
-  uVar14 = func_?(0,0);
-  func_?(uVar14);
+  func_?(pIVar5,pGVar13);
 code_?:
-  uVar14 = func_?(0,0);
-  func_?(uVar14);
-  pcVar20 = (code *)swi(3);
-  pOVar11 = (Object *)(*pcVar20)();
-  return pOVar11;
+  func_?();
+  pcVar15 = (code *)swi(3);
+  pOVar12 = (Object *)(*pcVar15)();
+  return pOVar12;
 }
 

@@ -6,142 +6,34 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_A
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
+  this_00 = (this->fields).stackBottom;
   pCVar1 = (this->fields).chatController;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  pCVar1 = (ChatControllerUGUI *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     ((XpBoostParticlePreviewer *)pCVar1,
-                      ChatControllerUGUI_MethodInfo__UnityEngine__Object__Instantiate<ChatControllerUGUI>_ChatControllerUGUI_
-                     );
-  (this->fields).chatController = pCVar1;
-  if (pCVar1 != (ChatControllerUGUI *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)pCVar1,(MethodInfo *)0x0);
-    this_00 = (this->fields).stackBottom;
-    if (this_00 != (GameObject *)0x0) {
-      parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (this_00,(MethodInfo *)0x0);
-      if (this_01 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                  (this_01,parent,0,(MethodInfo *)0x0);
-        pCVar1 = (this->fields).chatController;
-        if (pCVar1 != (ChatControllerUGUI *)0x0) {
-          ChatControllerUGUI::ChatControllerUGUI_SubscribeToMessages(pCVar1,(MethodInfo *)0x0);
-          pUVar2 = (this->fields).uiStack;
-          if (pUVar2 != (UIStack *)0x0) {
-            UIStack::UIStack_Push
-                      (pUVar2,(this->fields).stackBottom,UIPushOption__Enum_None,(UnityAction *)0x0,
-                       UIGroupFlags__Enum_StackBottom,(MethodInfo *)0x0);
-            MVGameControllerDesktop::MVGameControllerDesktop_RegisterEditModeController
-                      (this,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-              func_?();
-            }
-            this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (this_02 != (MVNetworkGame *)0x0) {
-              this_03 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
-              if (this_03 != (MVLocalPlayer *)0x0) {
-                bVar3 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_03,(MethodInfo *)0x0);
-                if (bVar3 == 0) {
-                  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                       != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                    func_?();
-                  }
-                  pAVar4 = MVGameControllerBase::
-                           MVGameControllerBase_get_OnFirstFrameUpdateActorReady((MethodInfo *)0x0);
-                  pUVar5 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                            *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                  SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                            (pUVar5,(Object *)this,
-                             MethodInfo__DesktopEditModeController__SetUIReady__,(MethodInfo *)0x0);
-                  pDStack6 =
-                       mscorlib.dll::System::Delegate::Delegate_Combine
-                                 ((Delegate *)pAVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-                }
-                else {
-                  if (cRam_? == '\0') {
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  pUVar2 = (this->fields).uiStack;
-                  if (pUVar2 == (UIStack *)0x0) goto code_?;
-                  UIStack::UIStack_SetStackReady(pUVar2,(MethodInfo *)0x0);
-                  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                       != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                    func_?();
-                  }
-                  pAVar4 = MVGameControllerBase::
-                           MVGameControllerBase_get_OnFirstFrameUpdateActorReady((MethodInfo *)0x0);
-                  pUVar5 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                            *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                  SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                            (pUVar5,(Object *)this,
-                             MethodInfo__DesktopEditModeController__SetUIReady__,(MethodInfo *)0x0);
-                  pDStack6 =
-                       mscorlib.dll::System::Delegate::Delegate_Remove
-                                 ((Delegate *)pAVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-                }
-                if (pDStack6 == (Delegate *)0x0) {
-Assembly_CSharp_dll_MVGameControllerBase_MVGameControllerBase_set_OnFirstFrameUpdateActorReady:
-                  if (cRam_? == '\0') {
-                    pMStack7 = (MVGameControllerBase__Class *)_UNK_?;
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                       != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                    pMStack7 = TypeInfo__MVGameControllerBase;
-                    func_?();
-                  }
-                  pMVar8 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                  if ((pMVar8 != (MVGameControllerBase *)0x0) &&
-                     (pFVar9 = (pMVar8->fields).firstFrameUpdateActorReady,
-                     pFVar9 != (FirstFrameUpdateActorReady *)0x0)) {
-                    (pFVar9->fields).callbacks = in_stack_10;
-                    return;
-                  }
-                  pMStack7 = (MVGameControllerBase__Class *)0x0;
-                  func_?();
-                  pcVar11 = (code *)swi(3);
-                  (*pcVar11)();
-                  return;
-                }
-                pDVar12 = (Delegate *)0x0;
-                if ((Action__Class *)pDStack6->klass == TypeInfo__System__Action) {
-                  pDVar12 = pDStack6;
-                }
-                pAStack13 = TypeInfo__System__Action;
-                if (pDVar12 != (Delegate *)0x0)
-                goto 
-                Assembly_CSharp_dll_MVGameControllerBase_MVGameControllerBase_set_OnFirstFrameUpdateActorReady
-                ;
-                goto code_?;
-              }
-            }
-          }
-        }
-      }
+  if (this_00 != (GameObject *)0x0) {
+    parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                       (this_00,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    pCVar1 = (ChatControllerUGUI *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                       ((Object *)pCVar1,parent,0,
+                        ChatControllerUGUI_MethodInfo__UnityEngine__Object__Instantiate<ChatControllerUGUI>_ChatControllerUGUI__UnityEngine__Transform__bool_
+                       );
+    (this->fields).chatController = pCVar1;
+    ppCStack_2 = &(this->fields).chatController;
+    func_?();
+    return;
   }
-code_?:
-  func_?();
-  pDStack6 = extraout_ECX;
-  pAStack13 = extraout_EDX;
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -152,43 +44,29 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_C
                (DesktopEditModeController *this,MethodInfo *method)
 
 {
-  pDVar1 = (DesktopEditModeController *)(this->fields)._EditModeStateMachine_k__BackingField;
-  if (pDVar1 == (DesktopEditModeController *)0x0) {
-    func_?(0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  method = (MethodInfo *)0x0;
-  this = pDVar1;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pDVar1 = this;
-  this_00 = (this->fields).editorWorldObjectCreation;
-  if (this_00 != (EditorWorldObjectCreation *)0x0) {
-    pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                        MethodInfo__System__Collections__Generic__Stack<EditorEvent>__get_Count__);
-    if (0 < (int)pOVar3) {
-      this_01 = (Stack_1_EditorEvent_ *)(pDVar1->fields).editorWorldObjectCreation;
-      if (this_01 == (Stack_1_EditorEvent_ *)0x0) goto code_?;
-      this = (DesktopEditModeController *)
-             System.dll::System::Collections::Generic::Stack`1[EditorEvent]::
-             Stack_1_EditorEvent__Pop
-                       (this_01,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__)
-      ;
-      *(undefined1 *)&(pDVar1->fields)._EditModeStateMachine_k__BackingField = 1;
-      pOVar3 = (Object *)func_?(TypeInfo__EditorEvent,&this);
-      FSMEntity::FSMEntity_set_Event((FSMEntity *)pDVar1,pOVar3,(MethodInfo *)0x0);
+  this_01 = (this->fields)._EditModeStateMachine_k__BackingField;
+  if (this_01 != (EditorStateMachine *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      cRam_? = '\x01';
     }
-    return;
+    this_00 = (Stack_1_System_Int32Enum_ *)(this_01->fields)._.stateStack;
+    if (this_00 != (Stack_1_System_Int32Enum_ *)0x0) {
+      if (0 < (this_00->fields)._size) {
+        mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::
+        Stack_1_System_Int32Enum__Pop
+                  (this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
+        (this_01->fields)._.clearStack = 1;
+        value = (Object *)func_?();
+        FSMEntity::FSMEntity_set_Event((FSMEntity *)this_01,value,(MethodInfo *)0x0);
+      }
+      return;
+    }
   }
-code_?:
-  func_?(0);
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -202,94 +80,120 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_D
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__DesktopEditModeController____c___DeleteWoid_b__61_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__DesktopEditModeController____c__DisplayClass61_0___DeleteWoid_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__DesktopEditModeController____c__DisplayClass61_0);
+    func_?(&TypeInfo__DesktopEditModeController____c);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DesktopEditModeController___DeleteWoid_c__AnonStorey1;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  this_00 = (this->fields)._EditModeStateMachine_k__BackingField;
-  if (this_00 != (EditorStateMachine *)0x0) {
-    EditorStateMachine::EditorStateMachine_DeSelectAll(this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    if (this_01 != (ScaleAnimationBase *)0x0) {
-      (this_01->fields)._._._._.m_CachedPtr = TypeInfo__System__String->static_fields->Empty;
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
+  this_01 = (TweenRunner_1_FloatTween_ *)
+            func_?(TypeInfo__DesktopEditModeController____c__DisplayClass61_0);
+  if (this_01 != (TweenRunner_1_FloatTween_ *)0x0) {
+    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+    TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
+    this_00 = (this->fields)._EditModeStateMachine_k__BackingField;
+    if (this_00 != (EditorStateMachine *)0x0) {
+      EditorStateMachine::EditorStateMachine_DeSelectAll(this_00,(MethodInfo *)0x0);
+      (this_01->fields).m_CoroutineContainer = (MonoBehaviour *)::StringLiteral__;
+      func_?(&this_01->fields,::StringLiteral__);
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
         pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                            (pMVar1,woid,(MethodInfo *)0x0);
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMVar2 != (MVWorldObject *)0x0) {
-          cVar3 = (*(code *)pMVar2->klass[2]._0.byval_arg.data)(pMVar2,pMVar1,&this_01->fields);
-          root_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                              ((Component_1 *)this,(MethodInfo *)0x0);
+          cVar3 = (**(code **)&pMVar2->klass[2]._0.byval_arg.attrs)
+                            (pMVar2,pMVar1,&this_01->fields,pMVar2->klass[2]._0.this_arg.data.dummy)
+          ;
           if (cVar3 != '\0') {
-            if (TypeInfo__DesktopEditModeController->static_fields->__f__am_cache0 ==
-                (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-              pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                        *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-              SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-              UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                        (pUVar4,(Object *)0x0,
-                         MethodInfo__DesktopEditModeController___DeleteWoid_m__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                         ,
-                         MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                        );
-              TypeInfo__DesktopEditModeController->static_fields->__f__am_cache0 =
-                   (ExecuteEvents_EventFunction_1_IUIStack_ *)pUVar4;
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            if ((TypeInfo__DesktopEditModeController____c->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__DesktopEditModeController____c);
             }
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-                 TypeInfo__DesktopEditModeController->static_fields->__f__am_cache0;
-            if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.
-                        methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-              func_?();
+            callbackFunction = TypeInfo__DesktopEditModeController____c->static_fields->__9__61_1;
+            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+              if ((TypeInfo__DesktopEditModeController____c->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__DesktopEditModeController____c);
+              }
+              object = TypeInfo__DesktopEditModeController____c->static_fields->__9;
+              callbackFunction =
+                   (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                   func_?(
+                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                  );
+              if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
+              goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+              Object]::UnityAction_2_System_Object_System_Object___ctor
+                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                         (Object *)object,
+                         MethodInfo__DesktopEditModeController____c___DeleteWoid_b__61_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                         ,(MethodInfo *)0x0);
+              TypeInfo__DesktopEditModeController____c->static_fields->__9__61_1 = callbackFunction;
+              func_?(&TypeInfo__DesktopEditModeController____c->static_fields->__9__61_1,
+                              callbackFunction);
+            }
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy_63
-                      (root_00,(BaseEventData *)0x0,callbackFunction,
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar4,(BaseEventData *)0x0,
+                       (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
             return;
           }
-          pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                    *)func_?();
-          root = 
-          MethodInfo__DesktopEditModeController___DeleteWoid_c__AnonStorey1____m__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-          ;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (pUVar4,(Object *)this_01,
-                     MethodInfo__DesktopEditModeController___DeleteWoid_c__AnonStorey1____m__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                     ,
-                     MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>__EventFunction_System__Object__void__
-                    );
-          if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr
-               & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-            func_?();
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this,(MethodInfo *)0x0);
+          callbackFunction_00 =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                              );
+          if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
+                       (Object *)this_01,
+                       MethodInfo__DesktopEditModeController____c__DisplayClass61_0___DeleteWoid_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar4,(BaseEventData *)0x0,callbackFunction_00,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                      );
+            return;
           }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy_63
-                    ((GameObject *)root,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar4,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                    );
-          return;
         }
       }
     }
   }
+code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -303,54 +207,33 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_D
                (DesktopEditModeController *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_01 = this;
   this_00 = (this->fields).desktopPlayModeController;
   (this->fields).isInPlayInEditMode = 1;
   if (this_00 != (DesktopPlayModeController *)0x0) {
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
-    if (this_02 != (GameObject *)0x0) {
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this_00,(MethodInfo *)0x0);
+    if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_02,1,(MethodInfo *)0x0);
-      pDVar1 = (DesktopEditModeController *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this_01,(MethodInfo *)0x0);
-      if (pDVar1 != (DesktopEditModeController *)0x0) {
-        method = (MethodInfo *)0x0;
-        this = pDVar1;
+                (pGVar1,1,(MethodInfo *)0x0);
+      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (pGVar1 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  ((GameObject *)pDVar1,0,(MethodInfo *)0x0);
-        pDVar1 = (DesktopEditModeController *)(this_01->fields).editModeChange;
-        if (pDVar1 != (DesktopEditModeController *)0x0) {
-          uStack2 = 0;
-          ppDStack3 = &this;
-          this = (DesktopEditModeController *)((uint)this & 0xffffff00);
-          uStack4 = 1;
-          func_?();
-          method = (MethodInfo *)this;
-          pMVar5 = method;
-          method._0_1_ = (bool)this;
-          value = (bool)method;
-          this = pDVar1;
-          method = pMVar5;
-          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Boolean]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Boolean__Invoke
-                    ((SpawnRoleVariable_1_T_SubDelegate_System_Boolean_ *)pDVar1,value,
-                     MethodInfo__System__Action<EditModeChangeArgs>__Invoke_EditModeChangeArgs_);
+                  (pGVar1,0,(MethodInfo *)0x0);
+        pAVar2 = (this->fields).editModeChange;
+        if (pAVar2 != (Action_1_EditModeChangeArgs_ *)0x0) {
+          pvStack3 = (pAVar2->fields)._._.method;
+          pvStack4 = (pAVar2->fields)._._.method_code;
+          (*(pAVar2->fields)._._.invoke_impl)();
         }
-        (this_01->fields).enterBuildModeOnceGuard = 0;
+        (this->fields).enterBuildModeOnceGuard = 0;
         return;
       }
     }
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -361,33 +244,35 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_E
                (DesktopEditModeController *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_01 = this;
-  bVar1 = cRam_? == '\0';
   (this->fields).isInPlayInEditMode = 0;
-  if (bVar1) {
-    func_?(_UNK_?);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DesktopEditModeController___HandleCursorVisible_c__Iterator0;
-  this_02 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_02,0.0,(MethodInfo *)method_00);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-            ((MonoBehaviour *)this_01,(IEnumerator *)this_02,(MethodInfo *)0x0);
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Boolean_ *)(this_01->fields).editModeChange;
-  if (this_00 != (SpawnRoleVariable_1_T_SubDelegate_System_Boolean_ *)0x0) {
-    this = (DesktopEditModeController *)0x0;
-    func_?(&this);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Boolean]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Boolean__Invoke
-              (this_00,(bool)this,
-               MethodInfo__System__Action<EditModeChangeArgs>__Invoke_EditModeChangeArgs_);
+  bVar1 = cRam_? == '\0';
+  TypeInfo__MVGameControllerBase->static_fields->_LeavingEditPlayMode_k__BackingField = 0;
+  if (bVar1) {
+    func_?(&TypeInfo__DesktopEditModeController___HandleCursorVisible_d__52);
+    cRam_? = '\x01';
   }
-  (this_01->fields).enterPlayModeOnceGuard = 0;
+  this_00 = (SubscribableVariableBase_1_System_Int32Enum_ *)
+            func_?(TypeInfo__DesktopEditModeController___HandleCursorVisible_d__52);
+  if (this_00 != (SubscribableVariableBase_1_System_Int32Enum_ *)0x0) {
+    SubscribableVariableBase`1[System::Int32Enum]::
+    SubscribableVariableBase_1_System_Int32Enum___ctor(this_00,0,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+              ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
+    pAVar2 = (this->fields).editModeChange;
+    if (pAVar2 != (Action_1_EditModeChangeArgs_ *)0x0) {
+      pvStack3 = (pAVar2->fields)._._.method;
+      (*(pAVar2->fields)._._.invoke_impl)();
+    }
+    (this->fields).enterPlayModeOnceGuard = 0;
+    return;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -406,7 +291,7 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_E
   if (pEVar2 != (EditorStateMachine *)0x0) {
     FSMEntity::FSMEntity_ClearStateStack((FSMEntity *)pEVar2,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__EditorEvent);
       cRam_? = '\x01';
     }
     pEVar2 = (pDVar1->fields)._EditModeStateMachine_k__BackingField;
@@ -433,46 +318,56 @@ Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_Handle
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DesktopEditModeController___HandleCursorVisible_d__52);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DesktopEditModeController___HandleCursorVisible_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  return (IEnumerator *)this_00;
+  this_00 = (SubscribableVariableBase_1_System_Int32Enum_ *)
+            func_?(TypeInfo__DesktopEditModeController___HandleCursorVisible_d__52);
+  if (this_00 != (SubscribableVariableBase_1_System_Int32Enum_ *)0x0) {
+    SubscribableVariableBase`1[System::Int32Enum]::
+    SubscribableVariableBase_1_System_Int32Enum___ctor(this_00,0,(MethodInfo *)0x0);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 
-/* Void HandleFocusInputSupress() */
+/* Void HandleFocusInputSuppress() */
 
 void Assembly-CSharp.dll::DesktopEditModeController::
-     DesktopEditModeController_HandleFocusInputSupress
+     DesktopEditModeController_HandleFocusInputSuppress
                (DesktopEditModeController *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
   if ((this->fields).focusSuppressInput != 0) {
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Input::Input_GetKeyUp
+    bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyUp
                       (KeyCode__Enum_Mouse0,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Input::Input_GetKeyDown
+      bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyDown
                         (KeyCode__Enum_Mouse1,(MethodInfo *)0x0);
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+                        ((MethodInfo *)0x0);
+      if (_UNK_? < fVar2 - (this->fields).focusTime) {
+        bVar1 = 1;
+      }
+      if (bVar1 == 0) {
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        MVInputWrapper::MVInputWrapper_SuppressAllInput((MethodInfo *)0x0);
+        return;
+      }
     }
     else {
-      bVar1 = 1;
-    }
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
-                      ((MethodInfo *)0x0);
-    if ((bVar1 == 0) && (fVar2 - (this->fields).focusTime <= _UNK_?)) {
-      if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-        func_?();
-      }
-      MVInputWrapper::MVInputWrapper_SuppressAllInput((MethodInfo *)0x0);
-      return;
+      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+                ((MethodInfo *)0x0);
     }
     (this->fields).focusSuppressInput = 0;
   }
@@ -487,17 +382,26 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&TypeInfo__ChatCommandManager);
+    func_?(&MethodInfo__DesktopEditModeController__HideUI__);
+    func_?(&TypeInfo__DesktopPlayMode);
+    func_?(&TypeInfo__EditorEvent);
+    func_?(&TypeInfo__EditorStateMachine);
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&
+                    ChatBubbleController_MethodInfo__UnityEngine__Object__Instantiate<ChatBubbleController>_ChatBubbleController__UnityEngine__Transform__bool_
+                   );
+    func_?(&
+                    UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   ModeControllerBase::ModeControllerBase_Initialize((ModeControllerBase *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_04 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_04 != (MainCameraManager *)0x0) {
-    MainCameraManager::MainCameraManager_set_IsLogicRendered(this_04,1,(MethodInfo *)0x0);
+  this_07 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_07 != (MainCameraManager *)0x0) {
+    MainCameraManager::MainCameraManager_set_IsLogicRendered(this_07,1,(MethodInfo *)0x0);
     pDVar1 = (this->fields).drawPlaneController;
     if (pDVar1 != (DrawPlaneControllerUUI *)0x0) {
       DrawPlaneControllerUUI::DrawPlaneControllerUUI_Initialize(pDVar1,(MethodInfo *)0x0);
@@ -507,213 +411,193 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
         cRam_? = '\x01';
       }
       TypeInfo__DrawPlane->static_fields->drawPlaneController = pDVar1;
-      pXVar2 = (XpBoostParticlePreviewer *)(this->fields).chatBubbleController;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      func_?();
+      pCVar2 = (this->fields).chatBubbleController;
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pXVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                         (pXVar2,
-                          ChatBubbleController_MethodInfo__UnityEngine__Object__Instantiate<ChatBubbleController>_ChatBubbleController_
+      pCVar2 = (ChatBubbleController *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                         ((Object *)pCVar2,pTVar3,0,
+                          ChatBubbleController_MethodInfo__UnityEngine__Object__Instantiate<ChatBubbleController>_ChatBubbleController__UnityEngine__Transform__bool_
                          );
-      (this->fields).chatBubbleController = (ChatBubbleController *)pXVar2;
-      if (pXVar2 != (XpBoostParticlePreviewer *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pXVar2,(MethodInfo *)0x0);
-        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-        if (pTVar3 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar3,pTVar4,0,(MethodInfo *)0x0);
-          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                             ((Component_1 *)this,(MethodInfo *)0x0);
-          contextMenuController = (this->fields).contextMenuController;
-          gizmoController = (this->fields).gizmoController;
-          pEVar6 = (EditorStateMachine *)func_?();
-          EditorStateMachine::EditorStateMachine__ctor_2
-                    (pEVar6,pGVar5,contextMenuController,gizmoController,(MethodInfo *)0x0);
-          _UNK_? = pEVar6;
-          if (_UNK_? != (EditorWorldObjectCreation *)0x0) {
-            EditorWorldObjectCreation::EditorWorldObjectCreation_Initialize
-                      (_UNK_?,pEVar6,(MethodInfo *)0x0);
-            this_01 = _UNK_?;
-            if (_UNK_? != (EditorStateMachine *)0x0) {
-              pCVar7 = (CubeModelingStateMachine *)
-                       PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                       PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                 ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)_UNK_?,
-                                  (MethodInfo *)0x0);
-              if (this_01 != (MaterialsController *)0x0) {
-                MaterialsController::MaterialsController_Initialize
-                          (this_01,pCVar7,(MethodInfo *)0x0);
-                this_00 = _UNK_?;
-                if (_UNK_? != (MaterialsController *)0x0) {
-                  this_05 = (Component_1 *)
-                            (*(code *)(_UNK_?->klass->vtable).SetActive.method)();
-                  if (this_05 != (Component_1 *)0x0) {
-                    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_1_get_gameObject(this_05,(MethodInfo *)0x0);
-                    if (this_00 != (UIStack *)0x0) {
-                      UIStack::UIStack_Push
-                                (this_00,pGVar5,UIPushOption__Enum_None,(UnityAction *)0x0,
-                                 UIGroupFlags__Enum_MainUI,(MethodInfo *)0x0);
-                      if (_UNK_? != (EditorStateMachine *)0x0) {
-                        pCVar7 = (CubeModelingStateMachine *)
-                                 PlayerListsLayout+<CreatePlayerLists>c__Iterator0::
-                                 PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                           ((PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)
-                                            _UNK_?,(MethodInfo *)0x0);
-                        if (pCVar7 != (CubeModelingStateMachine *)0x0) {
-                          CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
-                                    (pCVar7,0x15,(MethodInfo *)0x0);
-                          if (_UNK_? != (ChatControllerUGUI *)0x0) {
-                            ChatControllerUGUI::ChatControllerUGUI_Initialize
-                                      (_UNK_?,(MethodInfo *)0x0);
-                            if (_UNK_? != (ContextMenuController *)0x0) {
-                              ContextMenuController::ContextMenuController_Initialize
-                                        (_UNK_?,_UNK_?,(MethodInfo *)0x0);
-                              if (_UNK_? != (MaterialDescription *)0x0) {
-                                MaterialDescription::MaterialDescription_set_SpecialProperties
-                                          (_UNK_?,(BitArray *)_UNK_?,(MethodInfo *)0x0
-                                          );
-                                this_06 = (DesktopPlayMode *)func_?();
-                                DesktopPlayMode::DesktopPlayMode__ctor(this_06,(MethodInfo *)0x0);
-                                if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr &
-                                     0x2000000) != 0) &&
-                                   ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-                                  func_?();
-                                }
-                                MVInputWrapper::MVInputWrapper_SetInputMap
-                                          ((IKogamaInputMap *)this_06,(MethodInfo *)0x0);
-                                pEVar6 = _UNK_?;
-                                value = (Object *)func_?();
-                                if (pEVar6 != (EditorStateMachine *)0x0) {
-                                  FSMEntity::FSMEntity_set_Event
-                                            ((FSMEntity *)pEVar6,value,(MethodInfo *)0x0);
-                                  if (_UNK_? != (EditModeClientShopController *)0x0) {
-                                    EditModeClientShopController::
-                                    EditModeClientShopController_Initialize
-                                              (_UNK_?,_UNK_?,(MethodInfo *)0x0);
-                                    if (_UNK_? != (PlayerInventoryController *)0x0) {
-                                      PlayerInventoryController::
-                                      PlayerInventoryController_Initialize
-                                                (_UNK_?,(MethodInfo *)0x0);
-                                      if (_UNK_? != (int *)0x0) {
-                                        (**(code **)(*_UNK_? + 0xe8))();
-                                        this_07 = MVGameControllerBase::
-                                                  MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-                                        if (this_07 != (MVWorldObjectClientManager *)0x0) {
-                                          pMVar8 = MVWorldObjectClientManager::
-                                                   MVWorldObjectClientManager_get_RootGroup
-                                                             (this_07,(MethodInfo *)0x0);
-                                          if (pMVar8 != (MVGroup *)0x0) {
-                                            (*(code *)(pMVar8->klass->vtable).PlayModeInitialize.
-                                                      method)();
-                                            if (_UNK_? != (GoldPurchasedTracker *)0x0) {
-                                              GoldPurchasedTracker::GoldPurchasedTracker_Initialize
-                                                        (_UNK_?,(MethodInfo *)0x0);
-                                              _UNK_? =
-                                                   UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                                   Object_1_Instantiate_251
-                                                             (_UNK_?,
-                                                                                                                            
-                                                  UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform_
-                                                  );
-                                              if (_UNK_? != (XpBoostParticlePreviewer *)0x0)
-                                              {
-                                                pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                         Component::Component_1_get_transform
-                                                                   ((Component_1 *)_UNK_?,
-                                                                    (MethodInfo *)0x0);
-                                                if (_UNK_? != (GameObject *)0x0) {
-                                                  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                           GameObject::GameObject_get_transform
-                                                                     (_UNK_?,
-                                                                      (MethodInfo *)0x0);
-                                                  if (pTVar3 != (Transform *)0x0) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::
-                                                    Transform::Transform_SetParent_1
-                                                              (pTVar3,pTVar4,0,(MethodInfo *)0x0);
-                                                    this_02 = _UNK_?;
-                                                    if (_UNK_? != (EditorStateMachine *)0x0)
-                                                    {
-                                                      pCVar7 = (CubeModelingStateMachine *)
-                                                                                                                              
-                                                  PlayerListsLayout+<CreatePlayerLists>c__Iterator0
-                                                  ::
-                                                  PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                                            ((
-                                                  PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)
-                                                  _UNK_?,(MethodInfo *)0x0);
-                                                  if (this_02 !=
-                                                      (FirstTimeSetupTerrainEditTutorial *)0x0) {
-                                                    FirstTimeSetupTerrainEditTutorial::
-                                                    FirstTimeSetupTerrainEditTutorial_Initialize
-                                                              (this_02,pCVar7,_UNK_?,
-                                                               (MethodInfo *)0x0);
-                                                    this_03 = _UNK_?;
-                                                    if (_UNK_? != (EditorStateMachine *)0x0)
-                                                    {
-                                                      value_00 = (Action_1_Boolean_ *)
+      (this->fields).chatBubbleController = pCVar2;
+      func_?();
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      pCVar5 = (this->fields).contextMenuController;
+      pGVar6 = (this->fields).gizmoController;
+      pEVar7 = (EditorStateMachine *)func_?();
+      if (pEVar7 != (EditorStateMachine *)0x0) {
+        EditorStateMachine::EditorStateMachine__ctor_2
+                  (pEVar7,pGVar4,pCVar5,pGVar6,(MethodInfo *)0x0);
+        (this->fields)._EditModeStateMachine_k__BackingField = pEVar7;
+        func_?(&(this->fields)._EditModeStateMachine_k__BackingField,pEVar7);
+        this_00 = (this->fields).editorWorldObjectCreation;
+        if (this_00 != (EditorWorldObjectCreation *)0x0) {
+          EditorWorldObjectCreation::EditorWorldObjectCreation_Initialize
+                    (this_00,(this->fields)._EditModeStateMachine_k__BackingField,(MethodInfo *)0x0)
+          ;
+          pEVar7 = (this->fields)._EditModeStateMachine_k__BackingField;
+          if ((pEVar7 != (EditorStateMachine *)0x0) &&
+             (pMVar8 = (this->fields).materialsController,
+             pMVar8 != (MaterialsControllerEditMode *)0x0)) {
+            MaterialsController::MaterialsController_Initialize
+                      ((MaterialsController *)pMVar8,(pEVar7->fields).cubeModelingStateMachine,
+                       (MethodInfo *)0x0);
+            pMVar8 = (this->fields).materialsController;
+            this_01 = (this->fields).uiStack;
+            if (pMVar8 != (MaterialsControllerEditMode *)0x0) {
+              this_08 = (Component *)
+                        (*(pMVar8->klass->vtable).SetActive.methodPtr)
+                                  (pMVar8,(pMVar8->klass->vtable).SetActive.method);
+              if (this_08 != (Component *)0x0) {
+                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject(this_08,(MethodInfo *)0x0);
+                if (this_01 != (UIStack *)0x0) {
+                  UIStack::UIStack_Push
+                            (this_01,pGVar4,UIPushOption__Enum_None,(UnityAction *)0x0,
+                             UIGroupFlags__Enum_MainUI,(MethodInfo *)0x0);
+                  pEVar7 = (this->fields)._EditModeStateMachine_k__BackingField;
+                  if ((pEVar7 != (EditorStateMachine *)0x0) &&
+                     (pCVar9 = (pEVar7->fields).cubeModelingStateMachine,
+                     pCVar9 != (CubeModelingStateMachine *)0x0)) {
+                    CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
+                              (pCVar9,0x15,(MethodInfo *)0x0);
+                    this_02 = (this->fields).chatController;
+                    if (this_02 != (ChatControllerUGUI *)0x0) {
+                      ChatControllerUGUI::ChatControllerUGUI_Initialize(this_02,(MethodInfo *)0x0);
+                      pCVar5 = (this->fields).contextMenuController;
+                      if (pCVar5 != (ContextMenuController *)0x0) {
+                        ContextMenuController::ContextMenuController_Initialize
+                                  (pCVar5,(this->fields)._EditModeStateMachine_k__BackingField,
+                                   (MethodInfo *)0x0);
+                        pGVar6 = (this->fields).gizmoController;
+                        if (pGVar6 != (GizmoController *)0x0) {
+                          GizmoController::GizmoController_Initialize
+                                    (pGVar6,(this->fields)._EditModeStateMachine_k__BackingField,
+                                     (MethodInfo *)0x0);
+                          this_09 = (DesktopPlayMode *)func_?(TypeInfo__DesktopPlayMode);
+                          if (this_09 != (DesktopPlayMode *)0x0) {
+                            DesktopPlayMode::DesktopPlayMode__ctor(this_09,(MethodInfo *)0x0);
+                            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+                              func_?();
+                            }
+                            pDStack_10 = this_09;
+                            func_?();
+                            pEVar7 = (this->fields)._EditModeStateMachine_k__BackingField;
+                            pDStack_10 = (DesktopPlayMode *)0x2f;
+                            value = (Object *)func_?(TypeInfo__EditorEvent,&pDStack_10);
+                            if (pEVar7 != (EditorStateMachine *)0x0) {
+                              FSMEntity::FSMEntity_set_Event
+                                        ((FSMEntity *)pEVar7,value,(MethodInfo *)0x0);
+                              this_03 = (this->fields).clientShopController;
+                              if (this_03 != (EditModeClientShopController *)0x0) {
+                                EditModeClientShopController::
+                                EditModeClientShopController_Initialize
+                                          (this_03,(this->fields).repositoryController,
+                                           (MethodInfo *)0x0);
+                                this_04 = (this->fields).playerInventoryController;
+                                if (this_04 != (PlayerInventoryController *)0x0) {
+                                  PlayerInventoryController::PlayerInventoryController_Initialize
+                                            (this_04,(MethodInfo *)0x0);
+                                  pDVar11 = (this->fields).desktopPlayModeController;
+                                  if (pDVar11 != (DesktopPlayModeController *)0x0) {
+                                    (*(pDVar11->klass->vtable).Initialize.methodPtr)
+                                              (pDVar11,(pDVar11->klass->vtable).Initialize.method);
+                                    this_10 = MVGameControllerBase::MVGameControllerBase_get_WOCM
+                                                        ((MethodInfo *)0x0);
+                                    if (this_10 != (MVWorldObjectClientManager *)0x0) {
+                                      pMVar12 = MVWorldObjectClientManager::
+                                                MVWorldObjectClientManager_get_RootGroup
+                                                          (this_10,(MethodInfo *)0x0);
+                                      if (pMVar12 != (MVGroup *)0x0) {
+                                        (*(pMVar12->klass->vtable).PlayModeInitialize.methodPtr)
+                                                  (pMVar12,(pMVar12->klass->vtable).
+                                                           PlayModeInitialize.method);
+                                        this_05 = (this->fields).goldPurchasedTracker;
+                                        if (this_05 != (GoldPurchasedTracker *)0x0) {
+                                          GoldPurchasedTracker::GoldPurchasedTracker_Initialize
+                                                    (this_05,(MethodInfo *)0x0);
+                                          pGVar4 = (this->fields).stackBottom;
+                                          pRVar13 = (this->fields).notificationsManager;
+                                          if (pGVar4 != (GameObject *)0x0) {
+                                            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                     GameObject::GameObject_get_transform
+                                                               (pGVar4,(MethodInfo *)0x0);
+                                            pRVar13 = (RectTransform *)
+                                                      UnityEngine.CoreModule.dll::UnityEngine::
+                                                      Object::Object_1_Instantiate_6
+                                                                ((Object *)pRVar13,pTVar3,0,
                                                                                                                                   
-                                                  PlayerListsLayout+<CreatePlayerLists>c__Iterator0
-                                                  ::
-                                                  PlayerListsLayout_CreatePlayerLists_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                                            ((
-                                                  PlayerListsLayout_CreatePlayerLists_c_Iterator0 *)
-                                                  _UNK_?,(MethodInfo *)0x0);
-                                                  if (this_03 != (LockCursorManager3DMode *)0x0) {
-                                                    LockCursorManager3DMode::
-                                                    LockCursorManager3DMode_set_OnCursorLockChanged
-                                                              (this_03,value_00,(MethodInfo *)0x0);
-                                                    if ((((uint)(TypeInfo__ChatCommandManager->
-                                                                vtable).Equals.methodPtr & 0x2000000
-                                                         ) != 0) &&
-                                                       ((TypeInfo__ChatCommandManager->_1).
-                                                        cctor_started == 0)) {
-                                                      func_?();
-                                                    }
-                                                    pAVar9 = ChatCommandManager::
-                                                                                                                            
-                                                  ChatCommandManager_GetChatCommandCallback
-                                                            (ChatCommand__Enum_HideAllUI,
-                                                             (MethodInfo *)0x0);
-                                                  this_08 = (
-                                                  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                                  *)func_?();
-                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                                  UnityAction`2[UnityEngine::SceneManagement::
-                                                  Scene,UnityEngine::SceneManagement::Scene]::
-                                                  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                                            (this_08,(Object *)&UNK_?,
+                                                  UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
+                                                  );
+                                            (this->fields).notificationsManager = pRVar13;
+                                            func_?(&(this->fields).notificationsManager,
+                                                            pRVar13);
+                                            pEVar7 = (this->fields).
+                                                      _EditModeStateMachine_k__BackingField;
+                                            if ((pEVar7 != (EditorStateMachine *)0x0) &&
+                                               (this_06 = (this->fields).
+                                                          firstTimeSetupTerrainEditTutorial,
+                                               this_06 != (FirstTimeSetupTerrainEditTutorial *)0x0))
+                                            {
+                                              FirstTimeSetupTerrainEditTutorial::
+                                              FirstTimeSetupTerrainEditTutorial_Initialize
+                                                        (this_06,(pEVar7->fields).
+                                                                 cubeModelingStateMachine,
+                                                         (MaterialsController *)
+                                                         (this->fields).materialsController,
+                                                         (MethodInfo *)0x0);
+                                              pEVar7 = (this->fields).
+                                                        _EditModeStateMachine_k__BackingField;
+                                              if ((pEVar7 != (EditorStateMachine *)0x0) &&
+                                                 (pSVar14 = (this->fields).setupCubeModelTutorialUI,
+                                                 pSVar14 != (SetupCubeModelTutorialUI *)0x0)) {
+                                                pCVar9 = (pEVar7->fields).cubeModelingStateMachine;
+                                                (pSVar14->fields).cubeModelingStateMachine = pCVar9;
+                                                func_?(&(pSVar14->fields).
+                                                                 cubeModelingStateMachine,pCVar9);
+                                                if ((TypeInfo__ChatCommandManager->_1).
+                                                    cctor_finished_or_no_cctor == 0) {
+                                                  func_?(TypeInfo__ChatCommandManager);
+                                                }
+                                                pAVar15 = ChatCommandManager::
+                                                          ChatCommandManager_GetChatCommandCallback
+                                                                    (ChatCommand__Enum_HideAllUI,
+                                                                     (MethodInfo *)0x0);
+                                                this_11 = (NavMesh_OnNavMeshPreUpdate *)
+                                                          func_?(TypeInfo__System__Action);
+                                                if (this_11 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+                                                  UnityEngine.AIModule.dll::UnityEngine::AI::
+                                                  NavMesh+OnNavMeshPreUpdate::
+                                                  NavMesh_OnNavMeshPreUpdate__ctor
+                                                            (this_11,(Object *)this,
                                                                                                                           
                                                   MethodInfo__DesktopEditModeController__HideUI__,
                                                   (MethodInfo *)0x0);
-                                                  pAVar10 = (Action *)
+                                                  pAVar16 = (Action *)
                                                             mscorlib.dll::System::Delegate::
-                                                            Delegate_Combine((Delegate *)pAVar9,
-                                                                             (Delegate *)this_08,
+                                                            Delegate_Combine((Delegate *)pAVar15,
+                                                                             (Delegate *)this_11,
                                                                              (MethodInfo *)0x0);
-                                                  pAVar9 = (Action *)0x0;
-                                                  if (pAVar10 == (Action *)0x0) {
+                                                  pAVar15 = (Action *)0x0;
+                                                  if (pAVar16 == (Action *)0x0) {
 code_?:
                                                     ChatCommandManager::
                                                     ChatCommandManager_UpdateChatCommandCallback
-                                                              (ChatCommand__Enum_HideAllUI,pAVar9,
+                                                              (ChatCommand__Enum_HideAllUI,pAVar15,
                                                                (MethodInfo *)0x0);
                                                     return;
                                                   }
-                                                  if (pAVar10->klass == TypeInfo__System__Action) {
-                                                    pAVar9 = pAVar10;
+                                                  if (pAVar16->klass == TypeInfo__System__Action) {
+                                                    pAVar15 = pAVar16;
                                                   }
-                                                  if (pAVar9 != (Action *)0x0)
+                                                  if (pAVar15 != (Action *)0x0)
                                                   goto code_?;
                                                   goto code_?;
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
                                                 }
                                               }
                                             }
@@ -741,19 +625,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
-}
-
-
-/* Boolean IsGridSnap() */
-
-bool Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_IsGridSnap
-               (DesktopEditModeController *this,MethodInfo *method)
-
-{
-  return (this->fields).gridSnap;
 }
 
 
@@ -764,7 +638,7 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_L
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
   if ((this->fields).enterBuildModeOnceGuard != 0) {
@@ -772,12 +646,12 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_L
   }
   this_00 = (this->fields).desktopPlayModeController;
   if ((this_00 != (DesktopPlayModeController *)0x0) &&
-     (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this_00,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0)) {
+     (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this_00,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar1,0,(MethodInfo *)0x0);
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,1,(MethodInfo *)0x0);
@@ -803,30 +677,21 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_M
                (DesktopEditModeController *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   this_00 = (this->fields)._EditModeStateMachine_k__BackingField;
   if (this_00 != (EditorStateMachine *)0x0) {
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(this_00,(MethodInfo *)0x0);
     if (pMVar1 == (MVWorldObjectClient *)0x0) {
       return;
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if ((this_01 != (MainCameraManager *)0x0) &&
        (pMVar2 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_01,(MethodInfo *)0x0),
        pMVar2 != (MVCameraBase *)0x0)) {
-      (*(code *)(pMVar2->klass->vtable).FocusOnObject.method)
-                (pMVar2,pMVar1,0x40000000,0,0,0,0,(pMVar2->klass->vtable).Activate.methodPtr);
+      (*(pMVar2->klass->vtable).FocusOnObject.methodPtr)(pMVar2,pMVar1,0x40000000,0,0,0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -869,49 +734,64 @@ void Assembly-CSharp.dll::DesktopEditModeController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__DesktopEditModeController__LeaveEditPlayMode__);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
   (this->fields).desktopPlayModeController = desktopPlayModeController;
+  func_?(&(this->fields).desktopPlayModeController,desktopPlayModeController);
   if (desktopPlayModeController != (DesktopPlayModeController *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)desktopPlayModeController,(MethodInfo *)0x0);
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)desktopPlayModeController,(MethodInfo *)0x0);
     if (this_00 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_00,0,(MethodInfo *)0x0);
       pUVar1 = (desktopPlayModeController->fields).OnLeaveEditPlayMode;
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)this,MethodInfo__DesktopEditModeController__LeaveEditPlayMode__,
-                 (MethodInfo *)0x0);
-      pUStack2 =
-           (UnityAction *)
-           mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-      pUVar1 = (UnityAction *)0x0;
-      if (pUStack2 == (UnityAction *)0x0) {
-code_?:
-        (desktopPlayModeController->fields).OnLeaveEditPlayMode = pUVar1;
-        return;
+      this_01 = (NavMesh_OnNavMeshPreUpdate *)
+                func_?(TypeInfo__UnityEngine__Events__UnityAction);
+      if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_01,(Object *)this,MethodInfo__DesktopEditModeController__LeaveEditPlayMode__
+                   ,(MethodInfo *)0x0);
+        pUVar1 = (UnityAction *)
+                 mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pUVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+        uVar2 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar1);
+        if (pUVar1 == (UnityAction *)0x0) {
+          (desktopPlayModeController->fields).OnLeaveEditPlayMode = (UnityAction *)0x0;
+          ppUStack3 = &(desktopPlayModeController->fields).OnLeaveEditPlayMode;
+          pUStack4 = (UnityAction *)0x0;
+          func_?();
+          return;
+        }
+        pUVar5 = (UnityAction *)0x0;
+        if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pUVar5 = pUVar1;
+        }
+        if (pUVar5 != (UnityAction *)0x0) {
+          (desktopPlayModeController->fields).OnLeaveEditPlayMode = pUVar5;
+          uVar2 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar1);
+          pUStack4 = (UnityAction *)0x0;
+          if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+            pUStack4 = pUVar1;
+          }
+          if (pUStack4 != (UnityAction *)0x0) {
+            ppUStack3 = &(desktopPlayModeController->fields).OnLeaveEditPlayMode;
+            func_?();
+            return;
+          }
+        }
+        goto code_?;
       }
-      if (pUStack2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar1 = pUStack2;
-      }
-      pUStack3 = TypeInfo__UnityEngine__Events__UnityAction;
-      if (pUVar1 != (UnityAction *)0x0) goto code_?;
-      goto code_?;
     }
   }
-  func_?(0);
-  pUStack2 = extraout_ECX;
-  pUStack3 = extraout_EDX;
+  uVar2 = func_?();
 code_?:
+  _ppUStack00000014 = uVar2;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -923,88 +803,59 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_R
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__DesktopEditModeController___RegisterShortcuts_b__58_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__DesktopEditModeController___RegisterShortcuts_b__58_1_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     cRam_? = '\x01';
   }
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-  pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (pUVar2,(Object *)this,
-             MethodInfo__DesktopEditModeController___RegisterShortcuts_m__0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
-             ,
-             MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>__EventFunction_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-    func_?();
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar2,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
-            );
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-  pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-           func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (pUVar2,(Object *)this,
-             MethodInfo__DesktopEditModeController___RegisterShortcuts_m__1_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
-             ,
-             MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>__EventFunction_System__Object__void__
-            );
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar2,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
-            );
-  return;
-}
-
-
-/* Void Respawn() */
-
-void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_Respawn
-               (DesktopEditModeController *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-  if ((pGVar1 != (GameEventManager *)0x0) &&
-     (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
-     this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    GameEventManager+AvatarCommandsPlayModeManager::
-    GameEventManager_AvatarCommandsPlayModeManager_KillSelf(this_00,(MethodInfo *)0x0);
-    return;
+  if (pEVar2 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
+               MethodInfo__DesktopEditModeController___RegisterShortcuts_b__58_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar1,(BaseEventData *)0x0,pEVar2,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+              );
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+    if (pEVar2 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
+                 MethodInfo__DesktopEditModeController___RegisterShortcuts_b__58_1_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar1,(BaseEventData *)0x0,pEVar2,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+                );
+      return;
+    }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
-}
-
-
-/* Void Set(Boolean) */
-
-void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_Set
-               (DesktopEditModeController *this,bool snap,MethodInfo *method)
-
-{
-  (this->fields).gridSnap = snap;
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1016,7 +867,7 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_S
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._EditModeStateMachine_k__BackingField;
@@ -1040,66 +891,54 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_S
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).uiStack;
   if (this_00 != (UIStack *)0x0) {
     UIStack::UIStack_SetStackReady(this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     source = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
                        ((MethodInfo *)0x0);
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(TypeInfo__System__Action);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this,MethodInfo__DesktopEditModeController__SetUIReady__,
-               (MethodInfo *)0x0);
-    pDStack1 =
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDStack1 != (Delegate *)0x0) {
-      pDVar2 = (Delegate *)0x0;
-      if ((Action__Class *)pDStack1->klass == TypeInfo__System__Action) {
-        pDVar2 = pDStack1;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_01,(Object *)this,MethodInfo__DesktopEditModeController__SetUIReady__,
+                 (MethodInfo *)0x0);
+      pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
+      if (pDVar1 != (Delegate *)0x0) {
+        pDVar2 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+          pDVar2 = pDVar1;
+        }
+        if (pDVar2 == (Delegate *)0x0) {
+          pDStack_3 = pDVar1;
+          func_?();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
       }
-      pMStack3 = (MVGameControllerBase__Class *)TypeInfo__System__Action;
-      if (pDVar2 == (Delegate *)0x0) goto code_?;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar5 != (MVGameControllerBase *)0x0) &&
+         (pFVar6 = (pMVar5->fields).firstFrameUpdateActorReady,
+         pFVar6 != (FirstFrameUpdateActorReady *)0x0)) {
+        (pFVar6->fields).callbacks = unaff_ESI;
+        func_?();
+        return;
+      }
     }
-    if (cRam_? == '\0') {
-      pMStack3 = (MVGameControllerBase__Class *)_UNK_?;
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      pMStack3 = TypeInfo__MVGameControllerBase;
-      func_?();
-    }
-    pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((pMVar4 != (MVGameControllerBase *)0x0) &&
-       (pFVar5 = (pMVar4->fields).firstFrameUpdateActorReady,
-       pFVar5 != (FirstFrameUpdateActorReady *)0x0)) {
-      (pFVar5->fields).callbacks = in_stack_6;
-      return;
-    }
-    pMStack3 = (MVGameControllerBase__Class *)0x0;
-    func_?();
-    pcVar7 = (code *)swi(3);
-    (*pcVar7)();
-    return;
   }
-  func_?();
-  pDStack1 = extraout_ECX;
-  pMStack3 = (MVGameControllerBase__Class *)extraout_EDX;
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  uVar7 = func_?(&puStack_8);
+  func_?(uVar7);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1111,16 +950,14 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_T
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVQualitySettings);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVQualitySettings->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVQualitySettings->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVQualitySettings->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVQualitySettings);
   }
   iVar1 = MVQualitySettings::MVQualitySettings_get_CurrentLevel((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVQualitySettings->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVQualitySettings->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVQualitySettings->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVQualitySettings);
   }
   MVQualitySettings::MVQualitySettings_set_CurrentLevel((uint)(iVar1 == 0),(MethodInfo *)0x0);
@@ -1135,44 +972,46 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_U
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
   ModeControllerBase::ModeControllerBase_HandleFpsShortcut
             ((ModeControllerBase *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
   if ((this->fields).focusSuppressInput != 0) {
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Input::Input_GetKeyUp
+    bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyUp
                       (KeyCode__Enum_Mouse0,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Input::Input_GetKeyDown
+      bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyDown
                         (KeyCode__Enum_Mouse1,(MethodInfo *)0x0);
-    }
-    else {
-      bVar1 = 1;
-    }
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
-                      ((MethodInfo *)0x0);
-    if ((bVar1 != 0) || (_UNK_? < fVar2 - (this->fields).focusTime)) {
-      (this->fields).focusSuppressInput = 0;
-    }
-    else {
-      if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVInputWrapper);
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+                        ((MethodInfo *)0x0);
+      if (_UNK_? < fVar2 - (this->fields).focusTime) {
+        bVar1 = 1;
       }
-      MVInputWrapper::MVInputWrapper_SuppressAllInput((MethodInfo *)0x0);
+      if (bVar1 == 0) {
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        MVInputWrapper::MVInputWrapper_SuppressAllInput((MethodInfo *)0x0);
+        goto code_?;
+      }
     }
+    else {
+      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+                ((MethodInfo *)0x0);
+    }
+    (this->fields).focusSuppressInput = 0;
   }
+code_?:
   pEVar3 = (this->fields)._EditModeStateMachine_k__BackingField;
   if (pEVar3 != (EditorStateMachine *)0x0) {
-    (*(code *)(pEVar3->klass->vtable).Update.method)(pEVar3,pEVar3->klass[1]._0.image);
+    (*(pEVar3->klass->vtable).Update.methodPtr)(pEVar3,(pEVar3->klass->vtable).Update.method);
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
@@ -1191,13 +1030,11 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_U
         func_?();
         cRam_? = '\x01';
       }
-      if ((((uint)(TypeInfo__MVQualitySettings->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVQualitySettings->_1).cctor_started == 0)) {
+      if ((TypeInfo__MVQualitySettings->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       iVar5 = MVQualitySettings::MVQualitySettings_get_CurrentLevel((MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__MVQualitySettings->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVQualitySettings->_1).cctor_started == 0)) {
+      if ((TypeInfo__MVQualitySettings->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       MVQualitySettings::MVQualitySettings_set_CurrentLevel((uint)(iVar5 == 0),(MethodInfo *)0x0);
@@ -1207,49 +1044,31 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_U
 }
 
 
-/* Void <DeleteWoid>m__2(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController__DeleteWoid_m__2
-               (IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,handler);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void <RegisterShortcuts>m__0(IShortcutKeyRegister, BaseEventData) */
+/* Void <RegisterShortcuts>b__58_0(IShortcutKeyRegister, BaseEventData) */
 
 void Assembly-CSharp.dll::DesktopEditModeController::
-     DesktopEditModeController__RegisterShortcuts_m__0
+     DesktopEditModeController__RegisterShortcuts_b__58_0
                (DesktopEditModeController *this,IShortcutKeyRegister *x,BaseEventData *y,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__DesktopEditModeController__Respawn__);
+    func_?(&TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__DesktopEditModeController__Respawn__,
-             (MethodInfo *)0x0);
-  if (x != (IShortcutKeyRegister *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x10);
-    return;
+  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__DesktopEditModeController__Respawn__,
+               (MethodInfo *)0x0);
+    if (x != (IShortcutKeyRegister *)0x0) {
+      func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x10);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -1258,28 +1077,31 @@ void Assembly-CSharp.dll::DesktopEditModeController::
 }
 
 
-/* Void <RegisterShortcuts>m__1(IShortcutKeyRegister, BaseEventData) */
+/* Void <RegisterShortcuts>b__58_1(IShortcutKeyRegister, BaseEventData) */
 
 void Assembly-CSharp.dll::DesktopEditModeController::
-     DesktopEditModeController__RegisterShortcuts_m__1
+     DesktopEditModeController__RegisterShortcuts_b__58_1
                (DesktopEditModeController *this,IShortcutKeyRegister *x,BaseEventData *y,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__DesktopEditModeController__MoveToSelectedObject__);
+    func_?(&TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__DesktopEditModeController__MoveToSelectedObject__,
-             (MethodInfo *)0x0);
-  if (x != (IShortcutKeyRegister *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x15);
-    return;
+  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__DesktopEditModeController__MoveToSelectedObject__,
+               (MethodInfo *)0x0);
+    if (x != (IShortcutKeyRegister *)0x0) {
+      func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x15);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -1297,71 +1119,12 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController__
   (this->fields).enterBuildModeOnceGuard = 1;
   (this->fields).focusSuppressInput = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  return;
-}
-
-
-/* ClientShopRepository get_ClientShopRepository() */
-
-ClientShopRepository *
-Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_get_ClientShopRepository
-          (DesktopEditModeController *this,MethodInfo *method)
-
-{
-  return (this->fields)._ClientShopRepository_k__BackingField;
-}
-
-
-/* Boolean get_IsInPlayInEditMode() */
-
-bool Assembly-CSharp.dll::DesktopEditModeController::
-     DesktopEditModeController_get_IsInPlayInEditMode
-               (DesktopEditModeController *this,MethodInfo *method)
-
-{
-  return (this->fields).isInPlayInEditMode;
-}
-
-
-/* Void set_ClientShopRepository(ClientShopRepository) */
-
-void Assembly-CSharp.dll::DesktopEditModeController::
-     DesktopEditModeController_set_ClientShopRepository
-               (DesktopEditModeController *this,ClientShopRepository *value,MethodInfo *method)
-
-{
-  (this->fields)._ClientShopRepository_k__BackingField = value;
-  return;
-}
-
-
-/* Void set_EditModeStateMachine(EditorStateMachine) */
-
-void Assembly-CSharp.dll::DesktopEditModeController::
-     DesktopEditModeController_set_EditModeStateMachine
-               (DesktopEditModeController *this,EditorStateMachine *value,MethodInfo *method)
-
-{
-  (this->fields)._EditModeStateMachine_k__BackingField = value;
-  return;
-}
-
-
-/* Void set_PlayerInventoryRepository(PlayerInventoryRepository) */
-
-void Assembly-CSharp.dll::DesktopEditModeController::
-     DesktopEditModeController_set_PlayerInventoryRepository
-               (DesktopEditModeController *this,PlayerInventoryRepository *value,MethodInfo *method)
-
-{
-  (this->fields)._PlayerInventoryRepository_k__BackingField = value;
   return;
 }
 

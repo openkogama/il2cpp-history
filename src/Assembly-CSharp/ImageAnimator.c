@@ -11,10 +11,11 @@ float Assembly-CSharp.dll::ImageAnimator::ImageAnimator_GetCurrentAlpha
                       (this_00,(this->fields).speed * (this->fields).time,(MethodInfo *)0x0);
     return fVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar2)();
-  return (float)fVar3;
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar3)();
+  return (float)fVar4;
 }
 
 
@@ -58,30 +59,36 @@ void Assembly-CSharp.dll::ImageAnimator::ImageAnimator_Update
   fVar2 = fVar2 + fVar1;
   this_00 = (this->fields).curve;
   pIVar3 = (this->fields).image;
-  fVar1 = (this->fields).startColor.b;
-  fVar4 = (this->fields).startColor.a;
+  fVar1 = (this->fields).startColor.r;
+  fVar4 = (this->fields).startColor.g;
+  fVar5 = (this->fields).startColor.b;
+  fVar6 = (this->fields).startColor.a;
   (this->fields).time = fVar2;
-  b = (this->fields).endColor;
+  fVar7 = (this->fields).endColor.r;
+  fVar8 = (this->fields).endColor.g;
+  fVar9 = (this->fields).endColor.b;
+  fVar10 = (this->fields).endColor.a;
   if (this_00 != (AnimationCurve *)0x0) {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_00,fVar2 * (this->fields).speed,(MethodInfo *)0x0);
-    a.g = 0.0;
-    a.r = fVar2;
-    a.b = fVar1;
-    a.a = fVar4;
-    UnityEngine.CoreModule.dll::UnityEngine::Color::Color_Lerp
-              ((Color *)&stack0xffffffdc,a,b,fVar2,(MethodInfo *)0x0);
+    if (fVar2 < 0.0) {
+      fVar2 = 0.0;
+    }
+    else if (_UNK_? < fVar2) {
+      fVar2 = _UNK_?;
+    }
+    fVar5 = (fVar9 - fVar5) * fVar2 + fVar5;
+    fVar6 = (fVar10 - fVar6) * fVar2 + fVar6;
     if (pIVar3 != (Image *)0x0) {
-      pIVar5 = pIVar3->klass;
-      pIStack6 = (pIVar5->vtable).get_raycastTarget.methodPtr;
-      (*(code *)(pIVar5->vtable).set_color.method)();
+      (*(pIVar3->klass->vtable).set_color.methodPtr)
+                (pIVar3,(fVar7 - fVar1) * fVar2 + fVar1,(fVar8 - fVar4) * fVar2 + fVar4,fVar5,
+                 fVar6,(pIVar3->klass->vtable).set_color.method);
       return;
     }
   }
-  pIStack6 = (Il2CppMethodPointer)0x0;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?(fVar5,fVar6,fVar7,fVar8);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

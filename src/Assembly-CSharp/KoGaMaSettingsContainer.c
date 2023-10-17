@@ -7,96 +7,71 @@ void Assembly-CSharp.dll::KoGaMaSettingsContainer::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__KoGaMaSettingsContainer__CrunchDesc);
+    func_?(&TypeInfo__System__DateTime);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__DateTime);
   }
-  pDVar1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow(&DStack_2,(MethodInfo *)0x0);
-  uStack_3 = (undefined4)(pDVar1->ticks)._ticks;
-  uStack_4 = *(undefined4 *)((int)&(pDVar1->ticks)._ticks + 4);
-  iStack_5 = pDVar1->kind;
-  uStack_6 = *(undefined4 *)&pDVar1->field_0xc;
-  iVar7 = func_?(TypeInfo__KoGaMaSettingsContainer__CrunchDesc,6);
-  uVar8 = 0;
-  if (iVar7 == 0) {
-    func_?(0);
-code_?:
-    uVar9 = func_?(0,uVar8);
-    func_?(uVar9);
-code_?:
-    uVar9 = func_?(0,uVar8);
-    func_?(uVar9);
-code_?:
-    uVar9 = func_?(0,uVar8);
-    func_?(uVar9);
-code_?:
-    uVar9 = func_?(0,uVar8);
-    func_?(uVar9);
+  mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+  iVar1 = func_?(TypeInfo__KoGaMaSettingsContainer__CrunchDesc,6);
+  uVar2 = 0;
+  iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Year
+                    ((DateTime *)&stack0xfffffff0,(MethodInfo *)0x0);
+  if (iVar1 == 0) {
+    func_?();
   }
-  else {
-    uStack_10 = 0;
-    sVar11 = func_?(&uStack_3);
-    uStack_10 = CONCAT13(uStack_10._3_1_,0x60000);
-    uStack_10 = CONCAT22(uStack_10._2_2_,sVar11 + -0x7e1);
-    uVar8 = 0;
-    if (*(int *)(iVar7 + 0xc) == 0) goto code_?;
-    puVar12 = (undefined4 *)(iVar7 + 0x10);
-    *puVar12 = uStack_10;
-    uStack_10 = 0;
-    uVar13 = func_?(&uStack_3);
-    uStack_10._0_3_ = CONCAT12(4,uVar13);
-    uVar8 = 0;
-    if (*(uint *)(iVar7 + 0xc) < 2) goto code_?;
-    *(undefined4 *)(iVar7 + 0x14) = uStack_10;
-    uStack_10 = 0;
-    uVar13 = func_?(&uStack_3);
-    uStack_10._0_3_ = CONCAT12(5,uVar13);
-    uVar8 = 0;
-    if (*(uint *)(iVar7 + 0xc) < 3) goto code_?;
-    *(undefined4 *)(iVar7 + 0x18) = uStack_10;
-    uStack_10 = 0;
-    uVar13 = func_?(&uStack_3);
-    uStack_10._0_3_ = CONCAT12(5,uVar13);
-    uVar8 = 0;
-    if (*(uint *)(iVar7 + 0xc) < 4) goto code_?;
-    *(undefined4 *)(iVar7 + 0x1c) = uStack_10;
-    uStack_10 = 0;
-    uVar13 = func_?(&uStack_3);
-    uStack_10._0_3_ = CONCAT12(6,uVar13);
-    uVar8 = 0;
-    if (4 < *(uint *)(iVar7 + 0xc)) {
-      *(undefined4 *)(iVar7 + 0x20) = uStack_10;
-      uStack_10 = 0;
-      uVar13 = func_?(&uStack_3);
-      uStack_10._0_3_ = CONCAT12(6,uVar13);
-      if (5 < *(uint *)(iVar7 + 0xc)) {
-        iVar14 = 0;
-        *(undefined4 *)(iVar7 + 0x24) = uStack_10;
-        uVar15 = 0;
-        while( true ) {
-          if ((int)*(uint *)(iVar7 + 0xc) <= (int)uVar15) {
-            (this->fields).streamingAssetVersion = iVar14;
-            return;
+  else if (*(int *)(iVar1 + 0xc) != 0) {
+    *(uint *)(iVar1 + 0x10) =
+         CONCAT22((short)(CONCAT13(uVar2,0x60000) >> 0x10),(short)iVar3 + -0x7e1);
+    uVar2 = 0;
+    iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Month
+                      ((DateTime *)&stack0xfffffff0,(MethodInfo *)0x0);
+    if (1 < *(uint *)(iVar1 + 0xc)) {
+      *(uint *)(iVar1 + 0x14) = CONCAT13(uVar2,CONCAT12(4,(short)iVar3));
+      uVar2 = 0;
+      iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Day
+                        ((DateTime *)&stack0xfffffff0,(MethodInfo *)0x0);
+      if (2 < *(uint *)(iVar1 + 0xc)) {
+        *(uint *)(iVar1 + 0x18) = CONCAT13(uVar2,CONCAT12(5,(short)iVar3));
+        uVar2 = 0;
+        iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Hour((DateTime *)0x0,(MethodInfo *)0x0)
+        ;
+        if (3 < *(uint *)(iVar1 + 0xc)) {
+          *(uint *)(iVar1 + 0x1c) = CONCAT13(uVar2,CONCAT12(5,(short)iVar3));
+          uVar2 = 0;
+          iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Minute
+                            ((DateTime *)&stack0xfffffff0,(MethodInfo *)0x0);
+          if (4 < *(uint *)(iVar1 + 0xc)) {
+            *(uint *)(iVar1 + 0x20) = CONCAT13(uVar2,CONCAT12(6,(short)iVar3));
+            uVar2 = 0;
+            iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Second
+                              ((DateTime *)&stack0xfffffff0,(MethodInfo *)0x0);
+            if (5 < *(uint *)(iVar1 + 0xc)) {
+              puVar4 = (undefined4 *)(iVar1 + 0x10);
+              *(uint *)(iVar1 + 0x24) = CONCAT13(uVar2,CONCAT12(6,(short)iVar3));
+              iVar5 = 0;
+              uVar6 = 0;
+              while( true ) {
+                if (*(int *)(iVar1 + 0xc) <= (int)uVar6) {
+                  _UNK_? = iVar5;
+                  return;
+                }
+                if (*(uint *)(iVar1 + 0xc) <= uVar6) break;
+                uVar6 = uVar6 + 1;
+                iVar5 = (iVar5 << ((byte)((uint)*puVar4 >> 0x10) & 0x1f)) + (int)(short)*puVar4;
+                puVar4 = puVar4 + 1;
+              }
+            }
           }
-          if (*(uint *)(iVar7 + 0xc) <= uVar15) break;
-          uVar15 = uVar15 + 1;
-          iVar14 = (iVar14 << ((byte)((uint)*puVar12 >> 0x10) & 0x1f)) + (int)(short)*puVar12;
-          puVar12 = puVar12 + 1;
         }
       }
-      goto code_?;
     }
   }
-  uVar8 = func_?(0,uVar8);
-  func_?(uVar8);
-code_?:
-  uVar8 = func_?(0,0);
-  func_?(uVar8);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -108,36 +83,17 @@ void Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  (this->fields).versionGuid = TypeInfo__System__String->static_fields->Empty;
-  (this->fields).branchName = TypeInfo__System__String->static_fields->Empty;
-  (this->fields).buildTime = TypeInfo__System__String->static_fields->Empty;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EBP);
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)func_?(), pcVar1 == (code *)0x0))
-  {
-    uVar2 = func_?(&UNK_?,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcRam_? = pcVar1;
-  (*pcRam_?)();
+  (this->fields).versionGuid = ::StringLiteral__;
+  func_?(&(this->fields).versionGuid,::StringLiteral__);
+  (this->fields).branchName = ::StringLiteral__;
+  func_?(&(this->fields).branchName,::StringLiteral__);
+  (this->fields).buildTime = ::StringLiteral__;
+  func_?(&(this->fields).buildTime,::StringLiteral__);
+  UnityEngine.CoreModule.dll::UnityEngine::ScriptableObject::ScriptableObject__ctor
+            ((ScriptableObject *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -149,24 +105,120 @@ String * Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_g
 
 {
   pTVar1 = (this->fields).additionalMetaData;
-  if (pTVar1 == (TextAsset *)0x0) {
-    func_?(0);
-    pcVar2 = (code *)swi(3);
-    pSVar3 = (String *)(*pcVar2)();
-    return pSVar3;
+  puVar2 = &stack0xfffffffc;
+  if (pTVar1 != (TextAsset *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    pTStack_3 = pTVar1;
+    (*pcRam_?)();
+    in_stack_4 = 0xffffffff;
+    in_stack_5 = &DAT_?;
+    in_stack_6 = *unaff_FS_OFFSET;
+    *unaff_FS_OFFSET = &stack0x00000028;
+    if (cRam_? == '\0') {
+      func_?();
+      pTStack_3 = (TextAsset *)
+                  &
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Key__
+      ;
+      func_?();
+      ppMStack_7 = &
+                   MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Value__
+      ;
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pKVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup;
+    puVar2 = &stack0x00000034;
+    if (pKVar8 != (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
+      iVar9 = pKVar8->max_length;
+      pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+      for (uVar11 = 0; (int)uVar11 < (int)iVar9; uVar11 = uVar11 + 1) {
+        if ((pTVar10->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+          pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+        }
+        pKVar8 = pTVar10->static_fields->encodingLookup;
+        puVar2 = &stack0x00000034;
+        if (pKVar8 == (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0)
+        goto code_?;
+        if (pKVar8->max_length <= uVar11) {
+code_?:
+          func_?();
+          pcVar12 = (code *)swi(3);
+          pSVar13 = (String *)(*pcVar12)();
+          return pSVar13;
+        }
+        pBVar14 = pKVar8->vector[uVar11].key;
+        puVar2 = &stack0x00000034;
+        if ((pBVar14 == (Byte__Array *)0x0) ||
+           (iVar15 = pBVar14->max_length, puVar2 = &stack0x00000034,
+           in_stack_16 == (undefined *)0x0)) goto code_?;
+        if ((int)iVar15 <= *(int *)(in_stack_16 + 0xc)) {
+          uVar17 = 0;
+          if (0 < (int)iVar15) {
+            do {
+              if ((pBVar14->max_length <= uVar17) || (*(uint *)(in_stack_16 + 0xc) <= uVar17))
+              goto code_?;
+              if (pBVar14->vector[uVar17] != in_stack_16[uVar17 + 0x10]) {
+                iVar15 = 0xffffffff;
+              }
+              uVar17 = uVar17 + 1;
+              pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+            } while ((int)uVar17 < (int)iVar15);
+          }
+          if (-1 < (int)iVar15) {
+            in_stack_4 = 0;
+            if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            puVar2 = &stack0x00000034;
+            if (TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup !=
+                (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
+              iVar18 = func_?();
+              puVar2 = &stack0x00000034;
+              if (*(undefined **)(iVar18 + 4) != (undefined *)0x0) {
+                ppMStack_7 = (MethodInfo **)in_stack_16;
+                puStack_19 = *(undefined **)(iVar18 + 4);
+                pTStack_3 = (TextAsset *)iVar15;
+                pSVar13 = (String *)func_?(0x23);
+                *unaff_FS_OFFSET = in_stack_6;
+                return pSVar13;
+              }
+            }
+            goto code_?;
+          }
+        }
+      }
+      if ((pTVar10->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+        pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+      }
+      pEVar20 = pTVar10->static_fields->targetEncoding;
+      puVar2 = &stack0x00000034;
+      if ((in_stack_16 != (undefined *)0x0) &&
+         (puVar2 = &stack0x00000034, pEVar20 != (Encoding *)0x0)) {
+        pTStack_3 = *(TextAsset **)(in_stack_16 + 0xc);
+        ppMStack_7 = (MethodInfo **)0x0;
+        puStack_19 = in_stack_16;
+        pSVar13 = (String *)(*(pEVar20->klass->vtable).GetString_1.methodPtr)(pEVar20);
+        *unaff_FS_OFFSET = in_stack_6;
+        return pSVar13;
+      }
+    }
   }
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)func_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar4 = func_?(&UNK_?,0,0);
-    func_?(uVar4);
-    pcVar2 = (code *)swi(3);
-    pSVar3 = (String *)(*pcVar2)();
-    return pSVar3;
-  }
-  pcRam_? = pcVar2;
-  pSVar3 = (String *)(*pcRam_?)(pTVar1);
-  return pSVar3;
+code_?:
+  pTStack_3 = (TextAsset *)puVar2;
+  uVar21 = func_?(&puStack_19);
+  func_?(uVar21);
+  pcVar12 = (code *)swi(3);
+  pSVar13 = (String *)(*pcVar12)();
+  return pSVar13;
 }
 
 
@@ -178,17 +230,13 @@ String * Assembly-CSharp.dll::KoGaMaSettingsContainer::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__version_);
     cRam_? = '\x01';
   }
-  this = (KoGaMaSettingsContainer *)(this->fields).streamingAssetVersion;
-  arg1 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar1 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral__version_,arg1,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+                     ((Int32 *)&(this->fields).streamingAssetVersion,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral__version_,pSVar1,(MethodInfo *)0x0);
   return pSVar1;
 }
 
@@ -200,26 +248,45 @@ int32_t Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_ge
 
 {
   this_00 = (this->fields).versionText;
-  if (this_00 == (TextAsset *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
+  if (this_00 != (TextAsset *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
+              (this_00,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentNullException
+                (ExceptionArgument__Enum_s,(MethodInfo *)0x0);
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+      iVar2 = 0;
+      BVar3._value = (void *)0x0;
+    }
+    else {
+      BVar3._value = mscorlib.dll::System::Number+NumberBuffer::Number_NumberBuffer_get_digits
+                               (in_stack_1,(MethodInfo *)0x0);
+      iVar2 = in_stack_1->_sign;
+    }
+    info = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                     ((MethodInfo *)0x0);
+    if ((TypeInfo__System__Number->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    value._length = iVar2;
+    value._pointer._value = BVar3._value;
+    iVar2 = mscorlib.dll::System::Number::Number_ParseInt32
+                      (value,NumberStyles__Enum_Integer,info,(MethodInfo *)0x0);
     return iVar2;
   }
-  UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString(this_00,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  bVar3 = mscorlib.dll::System::Int32::Int32_Parse
-                    (in_stack_4,0,(int32_t *)&stack0x00000000,(Exception **)&stack0xfffffffc,
-                     (MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    return 0;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  iVar2 = (*pcVar1)();
+  uVar4 = func_?(&stack0xfffffff0);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  iVar2 = (*pcVar5)();
   return iVar2;
 }
 
@@ -240,27 +307,41 @@ int32_t Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_ge
         func_?();
         cRam_? = '\x01';
       }
-      pEStack1 = (Exception *)0x0;
-      puStack2 = (undefined *)0x0;
-      bVar3 = mscorlib.dll::System::Int32::Int32_Parse
-                        ((String *)in_stack_4,0,(int32_t *)&stack0x00000010,&stack0x0000000c,
-                         (MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        return (int32_t)puStack2;
+      if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentNullException
+                  (ExceptionArgument__Enum_s,(MethodInfo *)0x0);
       }
-      in_stack_4 = MethodInfo__System__Int32__Parse_System__String_;
-      uStack5 = 0;
-      pEStack6 = pEStack1;
-      func_?();
-      pcVar7 = (code *)swi(3);
-      iVar8 = (*pcVar7)();
-      return iVar8;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+        iStack2 = 0;
+        BStack3._value = (void *)0x0;
+      }
+      else {
+        BStack3._value =
+             mscorlib.dll::System::Number+NumberBuffer::Number_NumberBuffer_get_digits
+                       (in_stack_1,(MethodInfo *)0x0);
+        iStack2 = in_stack_1->_sign;
+      }
+      info = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                       ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Number->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      value._length = iStack2;
+      value._pointer._value = BStack3._value;
+      iVar4 = mscorlib.dll::System::Number::Number_ParseInt32
+                        (value,NumberStyles__Enum_Integer,info,(MethodInfo *)0x0);
+      return iVar4;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  iVar8 = (*pcVar7)();
-  return iVar8;
+  uVar5 = func_?(&stack0xfffffff8);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  iVar4 = (*pcVar6)();
+  return iVar4;
 }
 
 
@@ -280,27 +361,41 @@ int32_t Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_ge
         func_?();
         cRam_? = '\x01';
       }
-      pEStack1 = (Exception *)0x0;
-      puStack2 = (undefined *)0x0;
-      bVar3 = mscorlib.dll::System::Int32::Int32_Parse
-                        ((String *)in_stack_4,0,(int32_t *)&stack0x00000010,&stack0x0000000c,
-                         (MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        return (int32_t)puStack2;
+      if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentNullException
+                  (ExceptionArgument__Enum_s,(MethodInfo *)0x0);
       }
-      in_stack_4 = MethodInfo__System__Int32__Parse_System__String_;
-      uStack5 = 0;
-      pEStack6 = pEStack1;
-      func_?();
-      pcVar7 = (code *)swi(3);
-      iVar8 = (*pcVar7)();
-      return iVar8;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+        iStack2 = 0;
+        BStack3._value = (void *)0x0;
+      }
+      else {
+        BStack3._value =
+             mscorlib.dll::System::Number+NumberBuffer::Number_NumberBuffer_get_digits
+                       (in_stack_1,(MethodInfo *)0x0);
+        iStack2 = in_stack_1->_sign;
+      }
+      info = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                       ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Number->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      value._length = iStack2;
+      value._pointer._value = BStack3._value;
+      iVar4 = mscorlib.dll::System::Number::Number_ParseInt32
+                        (value,NumberStyles__Enum_Integer,info,(MethodInfo *)0x0);
+      return iVar4;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  iVar8 = (*pcVar7)();
-  return iVar8;
+  uVar5 = func_?(&stack0xfffffff8);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  iVar4 = (*pcVar6)();
+  return iVar4;
 }
 
 
@@ -320,27 +415,41 @@ int32_t Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_ge
         func_?();
         cRam_? = '\x01';
       }
-      pEStack1 = (Exception *)0x0;
-      puStack2 = (undefined *)0x0;
-      bVar3 = mscorlib.dll::System::Int32::Int32_Parse
-                        ((String *)in_stack_4,0,(int32_t *)&stack0x00000010,&stack0x0000000c,
-                         (MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        return (int32_t)puStack2;
+      if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentNullException
+                  (ExceptionArgument__Enum_s,(MethodInfo *)0x0);
       }
-      in_stack_4 = MethodInfo__System__Int32__Parse_System__String_;
-      uStack5 = 0;
-      pEStack6 = pEStack1;
-      func_?();
-      pcVar7 = (code *)swi(3);
-      iVar8 = (*pcVar7)();
-      return iVar8;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if (in_stack_1 == (Number_NumberBuffer *)0x0) {
+        iStack2 = 0;
+        BStack3._value = (void *)0x0;
+      }
+      else {
+        BStack3._value =
+             mscorlib.dll::System::Number+NumberBuffer::Number_NumberBuffer_get_digits
+                       (in_stack_1,(MethodInfo *)0x0);
+        iStack2 = in_stack_1->_sign;
+      }
+      info = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                       ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Number->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      value._length = iStack2;
+      value._pointer._value = BStack3._value;
+      iVar4 = mscorlib.dll::System::Number::Number_ParseInt32
+                        (value,NumberStyles__Enum_Integer,info,(MethodInfo *)0x0);
+      return iVar4;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  iVar8 = (*pcVar7)();
-  return iVar8;
+  uVar5 = func_?(&stack0xfffffff8);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  iVar4 = (*pcVar6)();
+  return iVar4;
 }
 
 
@@ -351,40 +460,23 @@ String * Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_g
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,7);
+  values = (String__Array *)func_?(TypeInfo__System__String,7);
   pTVar1 = (this->fields).versionText;
   if ((pTVar1 == (TextAsset *)0x0) ||
      (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
                          (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0)) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
+    func_?();
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
+    func_?();
+    func_?();
 code_?:
     func_?();
     func_?();
@@ -400,61 +492,59 @@ code_?:
   }
   else {
     pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,0,1,(MethodInfo *)0x0);
-    puStack_4 = (undefined *)mscorlib.dll::System::Int32::Int32_Parse_3(pSVar2,(MethodInfo *)0x0);
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&puStack_4);
-    if (args == (Object__Array *)0x0) goto code_?;
-    if ((pOVar5 != (Object *)0x0) &&
-       (iVar6 = func_?(pOVar5,(args->klass->_0).element_class), iVar6 == 0))
+    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+    if (values == (String__Array *)0x0) goto code_?;
+    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
+    if (values->max_length == 0) goto code_?;
+    values->vector[0] = pSVar2;
+    func_?();
+    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
     goto code_?;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar5;
-    if ((::StringLiteral__ != (String *)0x0) &&
-       (iVar6 = func_?(::StringLiteral__,(args->klass->_0).element_class), iVar6 == 0))
-    goto code_?;
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)::StringLiteral__;
+    if (values->max_length < 2) goto code_?;
+    values->vector[1] = ::StringLiteral__;
+    func_?();
     pTVar1 = (this->fields).versionText;
     if ((pTVar1 == (TextAsset *)0x0) ||
        (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
                            (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
     goto code_?;
     pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,1,2,(MethodInfo *)0x0);
-    mscorlib.dll::System::Int32::Int32_Parse_3(pSVar2,(MethodInfo *)0x0);
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32);
-    if ((pOVar5 != (Object *)0x0) &&
-       (iVar6 = func_?(pOVar5,(args->klass->_0).element_class), iVar6 == 0))
+    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
+    if (values->max_length < 3) goto code_?;
+    values->vector[2] = pSVar2;
+    func_?();
+    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
     goto code_?;
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar5;
-    if ((::StringLiteral__ != (String *)0x0) &&
-       (iVar6 = func_?(::StringLiteral__,(args->klass->_0).element_class), iVar6 == 0))
-    goto code_?;
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = (Object *)::StringLiteral__;
+    if (values->max_length < 4) goto code_?;
+    values->vector[3] = ::StringLiteral__;
+    func_?();
     pTVar1 = (this->fields).versionText;
     if ((pTVar1 == (TextAsset *)0x0) ||
        (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
                            (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
     goto code_?;
     pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,3,3,(MethodInfo *)0x0);
-    mscorlib.dll::System::Int32::Int32_Parse_3(pSVar2,(MethodInfo *)0x0);
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32);
-    if ((pOVar5 != (Object *)0x0) && (iVar6 = func_?(), iVar6 == 0)) goto code_?;
-    if (args->max_length < 5) goto code_?;
-    args->vector[4] = pOVar5;
-    if ((::StringLiteral__ != (String *)0x0) && (iVar6 = func_?(), iVar6 == 0))
+    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
+    if (values->max_length < 5) goto code_?;
+    values->vector[4] = pSVar2;
+    func_?();
+    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
     goto code_?;
-    if (args->max_length < 6) goto code_?;
-    args->vector[5] = (Object *)::StringLiteral__;
-    pOVar5 = (Object *)func_?();
-    if ((pOVar5 == (Object *)0x0) || (iVar6 = func_?(), iVar6 != 0)) {
-      if (6 < args->max_length) {
-        args->vector[6] = pOVar5;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pSVar2 = mscorlib.dll::System::String::String_Concat_5(args,(MethodInfo *)0x0);
+    if (values->max_length < 6) goto code_?;
+    values->vector[5] = ::StringLiteral__;
+    func_?();
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&(this->fields).versionBuild,(MethodInfo *)0x0);
+    if ((pSVar2 == (String *)0x0) || (iVar4 = func_?(), iVar4 != 0)) {
+      if (6 < values->max_length) {
+        values->vector[6] = pSVar2;
+        func_?();
+        pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
         return pSVar2;
       }
       goto code_?;
@@ -464,9 +554,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar5)();
   return pSVar2;
 }
 
@@ -479,90 +568,74 @@ String * Assembly-CSharp.dll::KoGaMaSettingsContainer::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,5);
+  values = (String__Array *)func_?(TypeInfo__System__String,5);
   pTVar1 = (this->fields).versionText;
   if ((pTVar1 == (TextAsset *)0x0) ||
      (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
                          (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0)) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
+    func_?();
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
+    func_?();
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
+    func_?();
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
+    func_?();
+    func_?();
   }
   else {
     pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,0,1,(MethodInfo *)0x0);
-    iStack_4 = mscorlib.dll::System::Int32::Int32_Parse_3(pSVar2,(MethodInfo *)0x0);
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_4);
-    if (args == (Object__Array *)0x0) goto code_?;
-    if ((pOVar5 != (Object *)0x0) &&
-       (iVar6 = func_?(pOVar5,(args->klass->_0).element_class), iVar6 == 0))
+    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+    if (values == (String__Array *)0x0) goto code_?;
+    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
+    if (values->max_length == 0) goto code_?;
+    values->vector[0] = pSVar2;
+    func_?();
+    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
     goto code_?;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar5;
-    if ((::StringLiteral__ != (String *)0x0) &&
-       (iVar6 = func_?(::StringLiteral__,(args->klass->_0).element_class), iVar6 == 0))
-    goto code_?;
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)::StringLiteral__;
+    if (values->max_length < 2) goto code_?;
+    values->vector[1] = ::StringLiteral__;
+    func_?();
     pTVar1 = (this->fields).versionText;
     if ((pTVar1 == (TextAsset *)0x0) ||
        (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
                            (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
     goto code_?;
     pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,1,2,(MethodInfo *)0x0);
-    mscorlib.dll::System::Int32::Int32_Parse_3(pSVar2,(MethodInfo *)0x0);
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32);
-    if ((pOVar5 != (Object *)0x0) &&
-       (iVar6 = func_?(pOVar5,(args->klass->_0).element_class), iVar6 == 0))
+    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
+    if (values->max_length < 3) goto code_?;
+    values->vector[2] = pSVar2;
+    func_?();
+    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
     goto code_?;
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar5;
-    if ((::StringLiteral__ != (String *)0x0) &&
-       (iVar6 = func_?(::StringLiteral__,(args->klass->_0).element_class), iVar6 == 0))
-    goto code_?;
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = (Object *)::StringLiteral__;
+    if (values->max_length < 4) goto code_?;
+    values->vector[3] = ::StringLiteral__;
+    func_?();
     pTVar1 = (this->fields).versionText;
     if ((pTVar1 == (TextAsset *)0x0) ||
        (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
                            (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
     goto code_?;
     pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,3,3,(MethodInfo *)0x0);
-    mscorlib.dll::System::Int32::Int32_Parse_3(pSVar2,(MethodInfo *)0x0);
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32);
-    if ((pOVar5 == (Object *)0x0) || (iVar6 = func_?(), iVar6 != 0)) {
-      if (4 < args->max_length) {
-        args->vector[4] = pOVar5;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pSVar2 = mscorlib.dll::System::String::String_Concat_5(args,(MethodInfo *)0x0);
+    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+    if ((pSVar2 == (String *)0x0) || (iVar4 = func_?(), iVar4 != 0)) {
+      if (4 < values->max_length) {
+        values->vector[4] = pSVar2;
+        func_?();
+        pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
         return pSVar2;
       }
       goto code_?;
@@ -572,9 +645,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar5)();
   return pSVar2;
 }
 

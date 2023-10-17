@@ -6,65 +6,96 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
-    in_ECX = extraout_ECX;
   }
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
-    in_ECX = extraout_ECX_00;
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?,in_ECX,unaff_EBP);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
+                   );
+    func_?(&TypeInfo__System__Predicate<PriorityDataUpdate>);
+    func_?(&
+                    MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                   );
+    func_?(&TypeInfo__UpdateController____c__DisplayClass6_0);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__UpdateController___RemoveUpdateObject_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  object = this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    iVar1 = 0;
-    (this_00->fields)._._._._.m_CachedPtr = this;
+  value = (Object *)func_?(TypeInfo__UpdateController____c__DisplayClass6_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    iVar1 = 0x10;
+    uVar2 = 0;
     while( true ) {
-      if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+      iVar3 = iVar1;
+      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UpdateController);
       }
-      pLVar2 = TypeInfo__UpdateController->static_fields->updateBuckets;
-      if (pLVar2 == (List_1_PriorityDataUpdate___Array *)0x0) break;
-      if ((int)pLVar2->max_length <= iVar1) {
+      pLVar4 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar4 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
+      if ((int)pLVar4->max_length <= (int)uVar2) {
         return;
       }
-      if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UpdateController);
       }
-      if (TypeInfo__UpdateController->static_fields->updateBuckets ==
-          (List_1_PriorityDataUpdate___Array *)0x0) break;
-      this_01 = (List_1_UnityEngine_Vector3_ *)func_?(iVar1);
-      this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_02,(Object *)object,
-                 MethodInfo__UpdateController___RemoveUpdateObject_c__AnonStorey0____m__0_PriorityDataUpdate_
-                 ,
-                 MethodInfo__System__Predicate<PriorityDataUpdate>__Predicate_System__Object__void__
-                );
-      if (this_01 == (List_1_UnityEngine_Vector3_ *)0x0) break;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector3]::
-      List_1_UnityEngine_Vector3__RemoveAll
-                (this_01,(Predicate_1_UnityEngine_Vector3_ *)this_02,
+      pLVar4 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar4 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
+      if (pLVar4->max_length <= uVar2) break;
+      this_00 = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ **)
+                 ((int)pLVar4->vector + iVar1 + -0x10);
+      this_01 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)value[1].monitor
+      ;
+      if (this_01 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        this_01 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                  func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
+        if (this_01 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0)
+        goto code_?;
+        mscorlib.dll::System::Predicate`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::
+        Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor
+                  (this_01,value,
+                   MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                   ,(MethodInfo *)0x0);
+        value[1].monitor = (MonitorData *)this_01;
+        func_?(&value[1].monitor,this_01);
+      }
+      if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+      UnitySynchronizationContext+WorkRequest]::
+      List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__RemoveAll
+                (this_00,this_01,
                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
                 );
-      iVar1 = iVar1 + 1;
+      uVar2 = uVar2 + 1;
+      iVar1 = iVar3 + 4;
     }
+    func_?();
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void UpdateConfiguration(SpawnStateWrapper+SpawnStateConfiguration) */
+
+void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_UpdateConfiguration
+               (SpawnStateWrapper *this,
+               SpawnStateWrapper_SpawnStateConfiguration spawnStateConfiguration,MethodInfo *method)
+
+{
+  (this->fields).respawnInterval = spawnStateConfiguration.respawnInterval;
+  (this->fields).respawnCount = spawnStateConfiguration.respawnCount;
+  (this->fields).takenCounter = 0;
   return;
 }
 
@@ -75,16 +106,15 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_UpdateControllerF
                (SpawnStateWrapper *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (NotImplementedException *)func_?(TypeInfo__System__NotImplementedException);
+  uVar1 = func_?(&TypeInfo__System__NotImplementedException);
+  this_00 = (NotImplementedException *)func_?(uVar1);
+  func_?(this_00);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?(&MethodInfo__SpawnStateWrapper__UpdateControllerFixedUpdate__);
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -95,46 +125,52 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_UpdateControllerU
                (SpawnStateWrapper *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  iVar1 = WaitForTicks::WaitForTicks_Diff((this->fields).takenTime,(MethodInfo *)0x0);
-  obj = (iVar1 <= (this->fields).respawnInterval) + UIPushOption__Enum_Blocking;
-  (this->fields).spawnState = obj;
-  if ((this->fields).prevSpawnState != obj) {
-    this_00 = (Action_1_UIPushOption_ *)(this->fields).stateChangeCallback;
-    if (this_00 == (Action_1_UIPushOption_ *)0x0) {
-      func_?(0);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+  diff = WaitForTicks::WaitForTicks_Diff((this->fields).takenTime,(MethodInfo *)0x0);
+  bVar1 = MVWorldObject.dll::MV::WorldObject::WorldObjects::Spawner::CanSpawnChecker::
+          CanSpawnChecker_Check
+                    (diff,(this->fields).respawnInterval,(this->fields).takenCounter,
+                     (this->fields).respawnCount,(MethodInfo *)0x0);
+  (this->fields)._SpawnState_k__BackingField = 2 - (uint)(bVar1 != 0);
+  if ((this->fields).prevSpawnState != (this->fields)._SpawnState_k__BackingField) {
+    if ((this->fields)._SpawnState_k__BackingField == 2) {
+      piVar2 = &(this->fields).takenCounter;
+      *piVar2 = *piVar2 + 1;
+    }
+    pAVar3 = (this->fields).stateChangeCallback;
+    if (pAVar3 == (Action_1_SpawnState_ *)0x0) {
+      func_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,obj,MethodInfo__System__Action<SpawnState>__Invoke_SpawnState_);
+    puStack5 = (pAVar3->fields)._._.method;
+    iStack6 = (this->fields)._SpawnState_k__BackingField;
+    (*(pAVar3->fields)._._.invoke_impl)();
   }
-  (this->fields).prevSpawnState = (this->fields).spawnState;
+  (this->fields).prevSpawnState = (this->fields)._SpawnState_k__BackingField;
   return;
 }
 
 
-/* SpawnStateWrapper(Int32, Int32, Action`1[SpawnState]) */
+/* SpawnStateWrapper(Int32, Int32, Int32, Action`1[SpawnState]) */
 
 void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper__ctor
-               (SpawnStateWrapper *this,int32_t respawnInterval,int32_t takenTime,
-               Action_1_SpawnState_ *stateChangeCallback,MethodInfo *method)
+               (SpawnStateWrapper *this,int32_t respawnInterval,int32_t respawnCount,
+               int32_t takenTime,Action_1_SpawnState_ *stateChangeCallback,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).respawnInterval = respawnInterval;
+  (this->fields).respawnCount = respawnCount;
   (this->fields).stateChangeCallback = stateChangeCallback;
+  func_?(&(this->fields).stateChangeCallback,stateChangeCallback);
   (this->fields).takenTime = takenTime;
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
   UpdateController::UpdateController_AddUpdateObject

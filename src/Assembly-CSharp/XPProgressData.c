@@ -6,61 +6,12 @@ void Assembly-CSharp.dll::XPProgressData::XPProgressData__ctor
                MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).playerCurrentXP = playerCurrentXP;
   (this->fields).xpLevelLimits = xpLevelLimits;
+  func_?(&this->fields,xpLevelLimits);
   return;
-}
-
-
-/* Int32 get_Level() */
-
-int32_t Assembly-CSharp.dll::XPProgressData::XPProgressData_get_Level
-                  (XPProgressData *this,MethodInfo *method)
-
-{
-  pXVar1 = (this->fields).xpLevelLimits;
-  if (pXVar1 != (XPLevelLimits *)0x0) {
-    return (pXVar1->fields)._Level_k__BackingField;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
-}
-
-
-/* Int32 get_NextXP() */
-
-int32_t Assembly-CSharp.dll::XPProgressData::XPProgressData_get_NextXP
-                  (XPProgressData *this,MethodInfo *method)
-
-{
-  pXVar1 = (this->fields).xpLevelLimits;
-  if (pXVar1 != (XPLevelLimits *)0x0) {
-    return (pXVar1->fields)._NextXP_k__BackingField;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
-}
-
-
-/* Int32 get_PrevXP() */
-
-int32_t Assembly-CSharp.dll::XPProgressData::XPProgressData_get_PrevXP
-                  (XPProgressData *this,MethodInfo *method)
-
-{
-  pXVar1 = (this->fields).xpLevelLimits;
-  if (pXVar1 != (XPLevelLimits *)0x0) {
-    return (pXVar1->fields)._PrevXP_k__BackingField;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
 }
 
 
@@ -70,16 +21,53 @@ bool Assembly-CSharp.dll::XPProgressData::XPProgressData_get_XPLimitExceeded
                (XPProgressData *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).xpLevelLimits;
-  if (this_00 != (XPLevelLimits *)0x0) {
-    bVar1 = XPLevelLimits::XPLevelLimits_Validate
-                      (this_00,(this->fields).playerCurrentXP,(MethodInfo *)0x0);
-    return bVar1 == 0;
+  pXVar1 = (this->fields).xpLevelLimits;
+  iVar2 = (this->fields).playerCurrentXP;
+  if (pXVar1 == (XPLevelLimits *)0x0) {
+    func_?();
+code_?:
+    uVar3 = func_?(&TypeInfo__System__Exception);
+    pEVar4 = (Exception *)func_?(uVar3);
+    func_?(pEVar4);
+    pMVar5 = (MethodInfo *)0x0;
+    pSVar6 = (String *)func_?(&StringLiteral_currentXp__0);
+    mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
+    func_?(&MethodInfo__XPLevelLimits__Validate_int_);
+    func_?(pEVar4);
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  else {
+    iVar7 = (pXVar1->fields)._PrevXP_k__BackingField;
+    if ((pXVar1->fields)._NextXP_k__BackingField <= iVar7) goto code_?;
+    if (iVar7 <= iVar2) {
+      if ((pXVar1->fields)._NextXP_k__BackingField <= iVar2) {
+        return 1;
+      }
+      if (-1 < iVar2) {
+        return 0;
+      }
+      goto code_?;
+    }
+  }
+  uVar3 = func_?(&TypeInfo__System__Exception);
+  pEVar4 = (Exception *)func_?(uVar3);
+  func_?(pEVar4);
+  pMVar5 = (MethodInfo *)0x0;
+  pSVar6 = (String *)func_?(&StringLiteral_currentXp___prevXp);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
+  func_?(&MethodInfo__XPLevelLimits__Validate_int_);
+  func_?(pEVar4);
+code_?:
+  uVar3 = func_?(&TypeInfo__System__Exception);
+  pEVar4 = (Exception *)func_?(uVar3);
+  func_?(pEVar4);
+  pMVar5 = (MethodInfo *)0x0;
+  pSVar6 = (String *)func_?(&StringLiteral_prevXp___nextXp);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
+  func_?(&MethodInfo__XPLevelLimits__Validate_int_);
+  func_?(pEVar4);
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 
@@ -101,14 +89,16 @@ int32_t Assembly-CSharp.dll::XPProgressData::XPProgressData_get_XpNextRel
                   (XPProgressData *this,MethodInfo *method)
 
 {
-  pXVar1 = (this->fields).xpLevelLimits;
-  if (pXVar1 != (XPLevelLimits *)0x0) {
-    return (pXVar1->fields)._NextXP_k__BackingField - (pXVar1->fields)._PrevXP_k__BackingField;
+  puStack_1 = &stack0xfffffffc;
+  pXVar2 = (this->fields).xpLevelLimits;
+  if (pXVar2 != (XPLevelLimits *)0x0) {
+    return (pXVar2->fields)._NextXP_k__BackingField - (pXVar2->fields)._PrevXP_k__BackingField;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
@@ -118,15 +108,15 @@ int32_t Assembly-CSharp.dll::XPProgressData::XPProgressData_get_XpRel
                   (XPProgressData *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).xpLevelLimits;
-  if (this_00 != (XPLevelLimits *)0x0) {
-    iVar1 = XPLevelLimits::XPLevelLimits_XpRel
-                      (this_00,(this->fields).playerCurrentXP,(MethodInfo *)0x0);
-    return iVar1;
+  puStack_1 = &stack0xfffffffc;
+  pXVar2 = (this->fields).xpLevelLimits;
+  if (pXVar2 != (XPLevelLimits *)0x0) {
+    return (this->fields).playerCurrentXP - (pXVar2->fields)._PrevXP_k__BackingField;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  iVar1 = (*pcVar2)();
-  return iVar1;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 

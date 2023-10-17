@@ -8,20 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-[assembly: AssemblyCompany]
-[assembly: AssemblyConfiguration]
-[assembly: AssemblyCopyright]
-[assembly: AssemblyDescription]
-[assembly: AssemblyFileVersion]
-[assembly: AssemblyProduct]
-[assembly: AssemblyTitle]
-[assembly: AssemblyTrademark]
-[assembly: CompilationRelaxations]
-[assembly: ComVisible]
-[assembly: Debuggable]
-[assembly: Guid]
-[assembly: RuntimeCompatibility]
+// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -31,6 +18,10 @@ namespace MV.Common
 		public int gold;
 	
 		// Constructors
+		public Price(int gold);
 		public Price(int[] price);
+	
+		// Methods
+		public int[] ToArray();
 	}
 }

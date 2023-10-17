@@ -6,20 +6,21 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Add
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).attributes;
   if (this_00 != (List_1_ThemeAttributes_ThemeAttribute_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)attrib,
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)attrib,
                MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -30,133 +31,128 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Disabl
                (SettingsWrapper *this,int32_t groupsFlag,MethodInfo *method)
 
 {
-  uVar1 = (this->fields).activeAttributeGroup & ~groupsFlag;
-  uStack_2 = 0xffffffff;
-  puStack_3 = &DAT_?;
-  uStack_4 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff98;
-  puVar6 = &stack0xffffff98;
+  method_00 = (MethodInfo *)((this->fields).activeAttributeGroup & ~groupsFlag);
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
+                   );
+    func_?(&TypeInfo__ThemeSettings__IMenu);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>);
     cRam_? = '\x01';
-    puVar6 = puStack_5;
   }
-  puStack_5 = puVar6;
-  iStack_7 = 0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  CStack_9.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_9.monitor = (MonitorData *)0x0;
-  CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_9.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_10 = 0xffffffff;
-  piStack_11 = (int *)&stack0xffffff98;
-  puStack_5 = &stack0xffffff98;
-  this_01 = (List_1_UnityEngine_Color32_ *)
+  pOStack_4 = (Object__Class *)0x0;
+  this_01 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            ((List_1_ThemeAttributes_ThemeAttribute_ *)this_01,2,
-             MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
-            );
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).attributes;
-  pLStack_12 = this_01;
-  if (this_00 == (List_1_UnityEngine_Color32_ *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    pLVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffa4,this_00,
-                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                       );
-    CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar13->l;
-    CStack_8.monitor = (MonitorData *)pLVar13->next;
-    CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar13->ver;
-    CStack_8.fields.syncRoot = (Object *)(pLVar13->current).rgba;
-    uStack_2 = 0;
-    while (cVar14 = func_?(), cVar14 != '\0') {
-      pOVar15 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_8,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
+  if (this_01 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pLVar5 = this_01;
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    UnitySynchronizationContext+WorkRequest]::
+    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
+              (this_01,2,
+               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+              );
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).attributes;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffc8,this_00,
+                          MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                          );
-      if (pOVar15 == (Object *)0x0) goto code_?;
-      if (((MonitorData *)((uint)pOVar15[1].monitor & (this->fields).activeAttributeGroup) !=
-           pOVar15[1].monitor) &&
-         ((MonitorData *)((uint)pOVar15[1].monitor & uVar1) == pOVar15[1].monitor)) {
-        if (this_01 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)pOVar15,
-                   MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
-                  );
-      }
-    }
-    iVar16 = 0;
-    *piStack_11 = 0x7b;
-    uStack_2 = 0xffffffff;
-    func_?();
-    if (iStack_7 == 0) {
-      if (*piStack_11 == 0x7b) {
-        iVar16 = -1;
-      }
-      (this->fields).activeAttributeGroup = uVar1;
-      if (this_01 != (List_1_UnityEngine_Color32_ *)0x0) {
-        pLVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                 List_1_UnityEngine_Color32__GetEnumerator
-                           ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffa4,this_01,
-                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                           );
-        CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar13->ver;
-        CStack_9.fields.syncRoot = (Object *)(pLVar13->current).rgba;
-        uStack_2 = 2;
-        while( true ) {
-          CStack_9.monitor =
-               (MonitorData *)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
-          ;
-          CStack_9.klass =
-               (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)&CStack_9;
-          cVar14 = func_?();
-          iVar17 = iStack_7;
-          if (cVar14 == '\0') break;
-          pOVar15 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             (&CStack_9,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
-                             );
-          if (pOVar15 == (Object *)0x0) goto code_?;
-          (**(code **)&pOVar15->klass[1]._0.byval_arg.attrs)();
+      RVar7 = pLVar6->_current;
+      uStack_1 = 1;
+      while( true ) {
+        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                          );
+        if (bVar8 == 0) break;
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        uVar9 = *(uint *)((int)RVar7 + 0xc);
+        this_01 = pLVar5;
+        if ((uVar9 & (uint)method_00) == *(uint *)((int)RVar7 + 0xc) &&
+            ((this->fields).activeAttributeGroup & uVar9) != uVar9) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)pLVar5,(Object *)RVar7,
+                     MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                    );
         }
-        piStack_11[iVar16 + 1] = 0xbe;
-        uStack_2 = 0xffffffff;
-        func_?();
-        if (iVar17 == 0) {
+      }
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&pOStack_4,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                 ,in_stack_10);
+      uStack_1 = 0xffffffff;
+      (this->fields).activeAttributeGroup = (int32_t)method_00;
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffc8,
+                          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          this_01,
+                          MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                         );
+      pOStack_4 = (Object__Class *)pLVar6->_list;
+      RVar7 = pLVar6->_current;
+      uStack_1 = 4;
+      while( true ) {
+        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                          );
+        if (bVar8 == 0) {
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&pOStack_4,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                     ,method_00);
+          uStack_1 = 0xffffffff;
           if ((this->fields).menu != (IMenu *)0x0) {
             func_?();
           }
-          *unaff_FS_OFFSET = uStack_4;
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        goto code_?;
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
+        (**(code **)(*(int *)RVar7 + 0xec))();
       }
-      goto code_?;
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -167,172 +163,167 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Enable
                (SettingsWrapper *this,int32_t groupsFlag,MethodInfo *method)
 
 {
-  uVar1 = groupsFlag | (this->fields).activeAttributeGroup;
-  uStack_2 = 0xffffffff;
-  puStack_3 = &DAT_?;
-  uStack_4 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff98;
-  puVar6 = &stack0xffffff98;
+  method_00 = (MethodInfo *)(groupsFlag | (this->fields).activeAttributeGroup);
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
+                   );
+    func_?(&TypeInfo__ThemeSettings__IMenu);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>);
     cRam_? = '\x01';
-    puVar6 = puStack_5;
   }
-  puStack_5 = puVar6;
-  iStack_7 = 0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  CStack_9.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_9.monitor = (MonitorData *)0x0;
-  CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_9.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_10 = 0xffffffff;
-  piStack_11 = (int *)&stack0xffffff98;
-  puStack_5 = &stack0xffffff98;
-  this_01 = (List_1_UnityEngine_Color32_ *)
+  pOStack_4 = (Object__Class *)0x0;
+  this_01 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            ((List_1_ThemeAttributes_ThemeAttribute_ *)this_01,2,
-             MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
-            );
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).attributes;
-  pLStack_12 = this_01;
-  if (this_00 == (List_1_UnityEngine_Color32_ *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    pLVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffa4,this_00,
-                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                       );
-    CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar13->l;
-    CStack_8.monitor = (MonitorData *)pLVar13->next;
-    CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar13->ver;
-    CStack_8.fields.syncRoot = (Object *)(pLVar13->current).rgba;
-    uStack_2 = 0;
-    while (cVar14 = func_?(), cVar14 != '\0') {
-      pOVar15 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_8,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
+  if (this_01 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pLVar5 = this_01;
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    UnitySynchronizationContext+WorkRequest]::
+    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
+              (this_01,2,
+               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+              );
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).attributes;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffc8,this_00,
+                          MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                          );
-      if (pOVar15 == (Object *)0x0) goto code_?;
-      if (((MonitorData *)((uint)pOVar15[1].monitor & (this->fields).activeAttributeGroup) !=
-           pOVar15[1].monitor) &&
-         ((MonitorData *)((uint)pOVar15[1].monitor & uVar1) == pOVar15[1].monitor)) {
-        if (this_01 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)pOVar15,
-                   MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
-                  );
-      }
-    }
-    iVar16 = 0;
-    *piStack_11 = 0x7b;
-    uStack_2 = 0xffffffff;
-    func_?();
-    if (iStack_7 == 0) {
-      if (*piStack_11 == 0x7b) {
-        iVar16 = -1;
-      }
-      (this->fields).activeAttributeGroup = uVar1;
-      if (this_01 != (List_1_UnityEngine_Color32_ *)0x0) {
-        pLVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                 List_1_UnityEngine_Color32__GetEnumerator
-                           ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffa4,this_01,
-                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                           );
-        CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar13->ver;
-        CStack_9.fields.syncRoot = (Object *)(pLVar13->current).rgba;
-        uStack_2 = 2;
-        while( true ) {
-          CStack_9.monitor =
-               (MonitorData *)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
-          ;
-          CStack_9.klass =
-               (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)&CStack_9;
-          cVar14 = func_?();
-          iVar17 = iStack_7;
-          if (cVar14 == '\0') break;
-          pOVar15 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             (&CStack_9,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
-                             );
-          if (pOVar15 == (Object *)0x0) goto code_?;
-          (**(code **)&pOVar15->klass[1]._0.byval_arg.attrs)();
+      RVar7 = pLVar6->_current;
+      uStack_1 = 1;
+      while( true ) {
+        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                          );
+        if (bVar8 == 0) break;
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        uVar9 = *(uint *)((int)RVar7 + 0xc);
+        this_01 = pLVar5;
+        if ((uVar9 & (uint)method_00) == *(uint *)((int)RVar7 + 0xc) &&
+            ((this->fields).activeAttributeGroup & uVar9) != uVar9) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)pLVar5,(Object *)RVar7,
+                     MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                    );
         }
-        piStack_11[iVar16 + 1] = 0xbe;
-        uStack_2 = 0xffffffff;
-        func_?();
-        if (iVar17 == 0) {
+      }
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&pOStack_4,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                 ,in_stack_10);
+      uStack_1 = 0xffffffff;
+      (this->fields).activeAttributeGroup = (int32_t)method_00;
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffc8,
+                          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          this_01,
+                          MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                         );
+      pOStack_4 = (Object__Class *)pLVar6->_list;
+      RVar7 = pLVar6->_current;
+      uStack_1 = 4;
+      while( true ) {
+        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                          );
+        if (bVar8 == 0) {
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&pOStack_4,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                     ,method_00);
+          uStack_1 = 0xffffffff;
           if ((this->fields).menu != (IMenu *)0x0) {
             func_?();
           }
-          *unaff_FS_OFFSET = uStack_4;
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        goto code_?;
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
+        (**(code **)(*(int *)RVar7 + 0xec))();
       }
-      goto code_?;
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
 
 /* Boolean GetValueForAttribute[Boolean](ThemeAttribute) */
 
-bool Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_1
+bool Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute
                (SettingsWrapper *this,ThemeAttribute *attrib,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).settingsData;
   if ((attrib != (ThemeAttribute *)0x0) &&
-     (key = (String *)
-            mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-            Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0),
-     pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)pDVar1,key,
+     (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                (this->fields).settingsData,
+     this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)(attrib->fields)._Key_k__BackingField,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar2 == 0) {
-      attrib = (ThemeAttribute *)(*(code *)(attrib->klass->vtable).__unknown.method)(attrib);
-      this = (SettingsWrapper *)*method->parameters;
-      if (((uint)this[7].fields.menu & 0x10000) == 0) {
-        pPStack3 = (Pool *)this;
-        func_?();
+    if (bVar1 == 0) {
+      piVar2 = (int *)(*(attrib->klass->vtable).__unknown.methodPtr)
+                                (attrib,(attrib->klass->vtable).__unknown.method);
+      pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+      if (pIVar3->initialized_and_no_error == 0) {
+        pIVar3 = (Il2CppClass *)func_?();
       }
-      if ((Pool *)attrib != (Pool *)0x0) {
-        if ((((Pool *)attrib)->klass->_0).element_class ==
-            (Il2CppClass *)this[1].fields.settingsData) {
+      if (piVar2 != (int *)0x0) {
+        if (*(Il2CppClass **)(*piVar2 + 0x20) == pIVar3->element_class) {
 code_?:
-          pPStack3 = (Pool *)attrib;
           pbVar4 = (bool *)func_?();
           return *pbVar4;
         }
@@ -340,110 +331,160 @@ code_?:
       }
     }
     else {
-      pDVar1 = (this->fields).settingsData;
-      key_00 = (Type *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0);
-      this = (SettingsWrapper *)0x0;
-      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        attrib = (ThemeAttribute *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                 Dictionary_2_System_Type_Pool__get_Item
-                           ((Dictionary_2_System_Type_Pool_ *)pDVar1,key_00,
+      this_01 = (this->fields).settingsData;
+      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (this_01,(Object *)(attrib->fields)._Key_k__BackingField,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        this = (SettingsWrapper *)*method->parameters;
-        if (((uint)this[7].fields.menu & 0x10000) == 0) {
-          pPStack3 = (Pool *)this;
-          func_?();
+        pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+        if (pIVar3->initialized_and_no_error == 0) {
+          pIVar3 = (Il2CppClass *)func_?();
         }
-        if ((Pool *)attrib != (Pool *)0x0) {
-          if ((((Pool *)attrib)->klass->_0).element_class ==
-              (Il2CppClass *)this[1].fields.settingsData) goto code_?;
+        if (pOVar5 != (Object *)0x0) {
+          if ((pOVar5->klass->_0).element_class == pIVar3->element_class) goto code_?;
           goto code_?;
         }
       }
     }
   }
-  pPStack3 = (Pool *)0x0;
   func_?();
 code_?:
-  pPStack5 = (Pool *)attrib;
-  pPStack3 = (Pool *)this;
   func_?();
   pcVar6 = (code *)swi(3);
-  bVar2 = (*pcVar6)();
-  return bVar2;
+  bVar1 = (*pcVar6)();
+  return bVar1;
 }
 
 
-/* Dictionary`2[System.Object,System.Object]
-   GetValueForAttribute[Dictionary`2[System.Object,System.Object]](ThemeAttribute) */
+/* Int32 GetValueForAttribute[Int32](ThemeAttribute) */
 
-Dictionary_2_System_Object_System_Object_ *
-Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_2
-          (SettingsWrapper *this,ThemeAttribute *attrib,MethodInfo *method)
+int32_t Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_1
+                  (SettingsWrapper *this,ThemeAttribute *attrib,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).settingsData;
   if ((attrib != (ThemeAttribute *)0x0) &&
-     (key = (String *)
-            mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-            Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0),
-     pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)pDVar1,key,
+     (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                (this->fields).settingsData,
+     this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)(attrib->fields)._Key_k__BackingField,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar2 == 0) {
-      this = (SettingsWrapper *)(*(code *)(attrib->klass->vtable).__unknown.method)(attrib);
+    if (bVar1 == 0) {
+      piVar2 = (int *)(*(attrib->klass->vtable).__unknown.methodPtr)
+                                (attrib,(attrib->klass->vtable).__unknown.method);
+      pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+      if (pIVar3->initialized_and_no_error == 0) {
+        pIVar3 = (Il2CppClass *)func_?();
+      }
+      if (piVar2 != (int *)0x0) {
+        if (*(Il2CppClass **)(*piVar2 + 0x20) == pIVar3->element_class) {
+code_?:
+          piVar4 = (int32_t *)func_?();
+          return *piVar4;
+        }
+        goto code_?;
+      }
     }
     else {
-      pDVar1 = (this->fields).settingsData;
-      key_00 = (Type *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0);
-      this = (SettingsWrapper *)0x0;
-      if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      this = (SettingsWrapper *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)pDVar1,key_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+      this_01 = (this->fields).settingsData;
+      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (this_01,(Object *)(attrib->fields)._Key_k__BackingField,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+        if (pIVar3->initialized_and_no_error == 0) {
+          pIVar3 = (Il2CppClass *)func_?();
+        }
+        if (pOVar5 != (Object *)0x0) {
+          if ((pOVar5->klass->_0).element_class == pIVar3->element_class) goto code_?;
+          goto code_?;
+        }
+      }
     }
-    attrib = (ThemeAttribute *)*method->parameters;
-    if (((uint)attrib[9].fields._Key_k__BackingField & 0x10000) == 0) {
-      pTStack3 = attrib;
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  iVar7 = (*pcVar6)();
+  return iVar7;
+}
+
+
+/* Object GetValueForAttribute[Object](ThemeAttribute) */
+
+Object * Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_2
+                   (SettingsWrapper *this,ThemeAttribute *attrib,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    cRam_? = '\x01';
+  }
+  if ((attrib != (ThemeAttribute *)0x0) &&
+     (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                (this->fields).settingsData,
+     this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)(attrib->fields)._Key_k__BackingField,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
+    if (bVar1 == 0) {
+      pOVar2 = (Object *)
+               (*(attrib->klass->vtable).__unknown.methodPtr)
+                         (attrib,(attrib->klass->vtable).__unknown.method);
+    }
+    else {
+      this_01 = (this->fields).settingsData;
+      if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (this_01,(Object *)(attrib->fields)._Key_k__BackingField,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+    }
+    if ((*(byte *)((int)((method->field7_0x1c).rgctx_data)->rgctxDataDummy + 0xba) & 1) == 0) {
       func_?();
     }
-    if ((Pool *)this == (Pool *)0x0) {
-      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+    if (pOVar2 == (Object *)0x0) {
+      pOVar2 = (Object *)0x0;
     }
     else {
-      pPStack4 = (Pool *)this;
-      pTStack3 = attrib;
-      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-      if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+      pOVar2 = (Object *)func_?();
+      if (pOVar2 == (Object *)0x0) goto code_?;
     }
-    return pDVar1;
+    return pOVar2;
   }
 code_?:
   func_?();
 code_?:
-  pPStack4 = (Pool *)this;
-  pTStack3 = attrib;
   func_?();
-  pcVar5 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar5)();
-  return pDVar1;
+  pcVar3 = (code *)swi(3);
+  pOVar2 = (Object *)(*pcVar3)();
+  return pOVar2;
 }
 
 
@@ -454,34 +495,34 @@ float Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_GetVa
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).settingsData;
   if ((attrib != (ThemeAttribute *)0x0) &&
-     (key = (String *)
-            mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-            Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0),
-     pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)pDVar1,key,
+     (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                (this->fields).settingsData,
+     this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)(attrib->fields)._Key_k__BackingField,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar2 == 0) {
-      attrib = (ThemeAttribute *)(*(code *)(attrib->klass->vtable).__unknown.method)(attrib);
-      this = (SettingsWrapper *)*method->parameters;
-      if (((uint)this[7].fields.menu & 0x10000) == 0) {
-        pPStack3 = (Pool *)this;
-        func_?();
+    if (bVar1 == 0) {
+      piVar2 = (int *)(*(attrib->klass->vtable).__unknown.methodPtr)
+                                (attrib,(attrib->klass->vtable).__unknown.method);
+      pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+      if (pIVar3->initialized_and_no_error == 0) {
+        pIVar3 = (Il2CppClass *)func_?();
       }
-      if ((Pool *)attrib != (Pool *)0x0) {
-        if ((((Pool *)attrib)->klass->_0).element_class ==
-            (Il2CppClass *)this[1].fields.settingsData) {
+      if (piVar2 != (int *)0x0) {
+        if (*(Il2CppClass **)(*piVar2 + 0x20) == pIVar3->element_class) {
 code_?:
-          pPStack3 = (Pool *)attrib;
           pfVar4 = (float *)func_?();
           return *pfVar4;
         }
@@ -489,119 +530,30 @@ code_?:
       }
     }
     else {
-      pDVar1 = (this->fields).settingsData;
-      key_00 = (Type *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0);
-      this = (SettingsWrapper *)0x0;
-      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        attrib = (ThemeAttribute *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                 Dictionary_2_System_Type_Pool__get_Item
-                           ((Dictionary_2_System_Type_Pool_ *)pDVar1,key_00,
+      this_01 = (this->fields).settingsData;
+      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (this_01,(Object *)(attrib->fields)._Key_k__BackingField,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        this = (SettingsWrapper *)*method->parameters;
-        if (((uint)this[7].fields.menu & 0x10000) == 0) {
-          pPStack3 = (Pool *)this;
-          func_?();
+        pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+        if (pIVar3->initialized_and_no_error == 0) {
+          pIVar3 = (Il2CppClass *)func_?();
         }
-        if ((Pool *)attrib != (Pool *)0x0) {
-          if ((((Pool *)attrib)->klass->_0).element_class ==
-              (Il2CppClass *)this[1].fields.settingsData) goto code_?;
+        if (pOVar5 != (Object *)0x0) {
+          if ((pOVar5->klass->_0).element_class == pIVar3->element_class) goto code_?;
           goto code_?;
         }
       }
     }
   }
-  pPStack3 = (Pool *)0x0;
   func_?();
 code_?:
-  pPStack5 = (Pool *)attrib;
-  pPStack3 = (Pool *)this;
   func_?();
   pcVar6 = (code *)swi(3);
   fVar7 = (float10)(*pcVar6)();
   return (float)fVar7;
-}
-
-
-/* Int32 GetValueForAttribute[Int32](ThemeAttribute) */
-
-int32_t Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_GetValueForAttribute_4
-                  (SettingsWrapper *this,ThemeAttribute *attrib,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pDVar1 = (this->fields).settingsData;
-  if ((attrib != (ThemeAttribute *)0x0) &&
-     (key = (String *)
-            mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-            Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0),
-     pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)pDVar1,key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar2 == 0) {
-      attrib = (ThemeAttribute *)(*(code *)(attrib->klass->vtable).__unknown.method)(attrib);
-      this = (SettingsWrapper *)*method->parameters;
-      if (((uint)this[7].fields.menu & 0x10000) == 0) {
-        pPStack3 = (Pool *)this;
-        func_?();
-      }
-      if ((Pool *)attrib != (Pool *)0x0) {
-        if ((((Pool *)attrib)->klass->_0).element_class ==
-            (Il2CppClass *)this[1].fields.settingsData) {
-code_?:
-          pPStack3 = (Pool *)attrib;
-          piVar4 = (int32_t *)func_?();
-          return *piVar4;
-        }
-        goto code_?;
-      }
-    }
-    else {
-      pDVar1 = (this->fields).settingsData;
-      key_00 = (Type *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)attrib,(MethodInfo *)0x0);
-      this = (SettingsWrapper *)0x0;
-      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        attrib = (ThemeAttribute *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                 Dictionary_2_System_Type_Pool__get_Item
-                           ((Dictionary_2_System_Type_Pool_ *)pDVar1,key_00,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        this = (SettingsWrapper *)*method->parameters;
-        if (((uint)this[7].fields.menu & 0x10000) == 0) {
-          pPStack3 = (Pool *)this;
-          func_?();
-        }
-        if ((Pool *)attrib != (Pool *)0x0) {
-          if ((((Pool *)attrib)->klass->_0).element_class ==
-              (Il2CppClass *)this[1].fields.settingsData) goto code_?;
-          goto code_?;
-        }
-      }
-    }
-  }
-  pPStack3 = (Pool *)0x0;
-  func_?();
-code_?:
-  pPStack5 = (Pool *)attrib;
-  pPStack3 = (Pool *)this;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  iVar7 = (*pcVar6)();
-  return iVar7;
 }
 
 
@@ -618,58 +570,67 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Initia
   puStack_4 = &stack0xffffffbc;
   puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).attributes;
-  puStack_4 = &stack0xffffffbc;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    puStack_4 = &stack0xffffffbc;
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_8,this_00,
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).attributes;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                        );
-    CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar7->l;
-    CStack_6.monitor = (MonitorData *)pLVar7->next;
-    CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar7->ver;
-    CStack_6.fields.syncRoot = (Object *)(pLVar7->current).rgba;
-    uStack_1 = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
+    uStack_1 = 1;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      cVar9 = func_?(&CStack_6,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
-                             );
-      if (cVar9 == '\0') {
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_6,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                        );
+      if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        func_?(&CStack_6,
-                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
-                       );
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                   ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pOVar10 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_6,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
-                         );
-      if (pOVar10 == (Object *)0x0) break;
-      if (pOVar10[1].monitor == (MonitorData *)0x0) {
-        func_?(6,pOVar10);
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
+      if (*(int *)((int)LStack_6._current + 0xc) == 0) {
+        func_?(6,LStack_6._current);
       }
     }
   }
-  func_?(0);
-  func_?(0,0,0);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -684,128 +645,123 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_SetAtt
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
+                   );
+    func_?(&TypeInfo__ThemeSettings__IMenu);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  iStack_6 = 0;
-  CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_7.monitor = (MonitorData *)0x0;
-  CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_7.fields.syncRoot = (Object *)0x0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_9 = 0xffffffff;
-  piStack_10 = (int *)&stack0xffffff98;
-  puStack_4 = &stack0xffffff98;
-  this_01 = (List_1_UnityEngine_Color32_ *)
+  pOStack_4 = (Object__Class *)0x0;
+  this_01 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            ((List_1_ThemeAttributes_ThemeAttribute_ *)this_01,2,
-             MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
-            );
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).attributes;
-  pLStack_11 = this_01;
-  if (this_00 == (List_1_UnityEngine_Color32_ *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffa4,this_00,
-                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                       );
-    CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar12->l;
-    CStack_7.monitor = (MonitorData *)pLVar12->next;
-    CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar12->ver;
-    CStack_7.fields.syncRoot = (Object *)(pLVar12->current).rgba;
-    uStack_1 = 0;
-    while (cVar13 = func_?(), cVar13 != '\0') {
-      pOVar14 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_7,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
+  if (this_01 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    pLVar5 = this_01;
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    UnitySynchronizationContext+WorkRequest]::
+    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
+              (this_01,2,
+               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+              );
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).attributes;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffc8,this_00,
+                          MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                          );
-      if (pOVar14 == (Object *)0x0) goto code_?;
-      if (((MonitorData *)((uint)pOVar14[1].monitor & (this->fields).activeAttributeGroup) !=
-           pOVar14[1].monitor) &&
-         ((MonitorData *)((uint)pOVar14[1].monitor & groupsFlag) == pOVar14[1].monitor)) {
-        if (this_01 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)pOVar14,
-                   MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
-                  );
-      }
-    }
-    iVar15 = 0;
-    *piStack_10 = 0x7b;
-    uStack_1 = 0xffffffff;
-    func_?();
-    if (iStack_6 == 0) {
-      if (*piStack_10 == 0x7b) {
-        iVar15 = -1;
-      }
-      (this->fields).activeAttributeGroup = groupsFlag;
-      if (this_01 != (List_1_UnityEngine_Color32_ *)0x0) {
-        pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                 List_1_UnityEngine_Color32__GetEnumerator
-                           ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffa4,this_01,
-                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                           );
-        CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar12->ver;
-        CStack_8.fields.syncRoot = (Object *)(pLVar12->current).rgba;
-        uStack_1 = 2;
-        while( true ) {
-          CStack_8.monitor =
-               (MonitorData *)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
-          ;
-          CStack_8.klass =
-               (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)&CStack_8;
-          cVar13 = func_?();
-          iVar16 = iStack_6;
-          if (cVar13 == '\0') break;
-          pOVar14 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             (&CStack_8,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__get_Current__
-                             );
-          if (pOVar14 == (Object *)0x0) goto code_?;
-          (**(code **)&pOVar14->klass[1]._0.byval_arg.attrs)();
+      RVar7 = pLVar6->_current;
+      uStack_1 = 1;
+      while( true ) {
+        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                          );
+        if (bVar8 == 0) break;
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        uVar9 = *(uint *)((int)RVar7 + 0xc);
+        this_01 = pLVar5;
+        if ((uVar9 & groupsFlag) == *(uint *)((int)RVar7 + 0xc) &&
+            ((this->fields).activeAttributeGroup & uVar9) != uVar9) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)pLVar5,(Object *)RVar7,
+                     MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                    );
         }
-        piStack_10[iVar15 + 1] = 0xbe;
-        uStack_1 = 0xffffffff;
-        func_?();
-        if (iVar16 == 0) {
+      }
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&pOStack_4,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                 ,in_stack_10);
+      uStack_1 = 0xffffffff;
+      (this->fields).activeAttributeGroup = groupsFlag;
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffc8,
+                          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          this_01,
+                          MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                         );
+      pOStack_4 = (Object__Class *)pLVar6->_list;
+      RVar7 = pLVar6->_current;
+      uStack_1 = 4;
+      while( true ) {
+        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                          );
+        if (bVar8 == 0) {
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&pOStack_4,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                     ,(MethodInfo *)groupsFlag);
+          uStack_1 = 0xffffffff;
           if ((this->fields).menu != (IMenu *)0x0) {
             func_?();
           }
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        goto code_?;
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
+        (**(code **)(*(int *)RVar7 + 0xec))();
       }
-      goto code_?;
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -817,17 +773,30 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Subscr
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ThemeSettings__IMenu);
     cRam_? = '\x01';
   }
   (this->fields).menu = menu;
+  func_?(&(this->fields).menu,menu);
   if (menu != (IMenu *)0x0) {
     func_?(0,TypeInfo__ThemeSettings__IMenu,menu);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
+  return;
+}
+
+
+/* Void UnsubscribeToSettingsUI() */
+
+void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_UnsubscribeToSettingsUI
+               (SettingsWrapper *this,MethodInfo *method)
+
+{
+  (this->fields).menu = (IMenu *)0x0;
+  func_?(&(this->fields).menu);
   return;
 }
 
@@ -839,21 +808,22 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Update
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).settingsData;
   if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,Theme]::
-    Dictionary_2_System_String_Theme__set_Item
-              ((Dictionary_2_System_String_Theme_ *)this_00,key,(Theme *)val,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__set_Item
+              (this_00,(Object *)key,val,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -865,37 +835,53 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_ThemeAttributes_ThemeAttribute_ *)
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            (this_00,8,
-             MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
-            );
-  (this->fields).attributes = this_00;
+  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    UnitySynchronizationContext+WorkRequest]::
+    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
+              (this_00,8,
+               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+              );
+    method_00 = (MethodInfo *)&(this->fields).attributes;
+    (this->fields).attributes = (List_1_ThemeAttributes_ThemeAttribute_ *)this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
 
-/* Boolean <get_SettingsUI>m__0(ThemeAttribute) */
+/* Boolean <get_SettingsUI>b__9_0(ThemeAttribute) */
 
-bool Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper__get_SettingsUI_m__0
+bool Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper__get_SettingsUI_b__9_0
                (SettingsWrapper *this,ThemeAttribute *attrib,MethodInfo *method)
 
 {
+  puStack_1 = &stack0xfffffffc;
   if (attrib != (ThemeAttribute *)0x0) {
-    uVar1 = (attrib->fields)._Groups_k__BackingField;
-    return ((this->fields).activeAttributeGroup & uVar1) == uVar1;
+    return ((this->fields).activeAttributeGroup & (attrib->fields)._Groups_k__BackingField) ==
+           (attrib->fields)._Groups_k__BackingField;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
@@ -907,78 +893,79 @@ Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_get_Setting
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Item_int_
+                   );
+    func_?(&TypeInfo__System__Predicate<ThemeAttributes::ThemeAttribute>);
+    func_?(&TypeInfo__UnityEngine__RectTransform);
+    func_?(&
+                    MethodInfo__ThemeSettings__SettingsWrapper___get_SettingsUI_b__9_0_ThemeAttributes__ThemeAttribute_
+                   );
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_VoxelHit_ *)(this->fields).attributes;
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_00 = (this->fields).attributes;
+  this_01 = (Predicate_1_Object_ *)
             func_?(TypeInfo__System__Predicate<ThemeAttributes::ThemeAttribute>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this,
-             MethodInfo__ThemeSettings__SettingsWrapper___get_SettingsUI_m__0_ThemeAttributes__ThemeAttribute_
-             ,
-             MethodInfo__System__Predicate<ThemeAttributes::ThemeAttribute>__Predicate_System__Object__void__
-            );
-  if (pLVar1 != (List_1_VoxelHit_ *)0x0) {
-    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__FindAll
-                       (pLVar1,(Predicate_1_VoxelHit_ *)this_01,
-                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
-                       );
-    if (pLVar1 != (List_1_VoxelHit_ *)0x0) {
-      mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::
-      JsonProperty]::
-      Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                 MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Count__
-                );
-      pRVar2 = (RectTransform__Array *)func_?();
-      index = 0;
-      ppRVar3 = pRVar2->vector;
-      while( true ) {
-        this_00 = 
-        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Count__
-        ;
-        pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Count__
-                            ,
-                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Count__
-                           );
-        if ((int)pOVar4 <= (int)index) {
-          return pRVar2;
-        }
-        pIVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                 IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                           ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_00,index,
-                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Item_int_
-                           );
-        if (pIVar5 == (IEventSystemHandler *)0x0) break;
-        pRVar6 = (RectTransform *)(*(code *)pIVar5->klass[1]._0.parent)();
-        if (pRVar2 == (RectTransform__Array *)0x0) break;
-        if (pRVar6 != (RectTransform *)0x0) {
-          iVar7 = func_?();
-          if (iVar7 == 0) goto code_?;
-        }
-        if (pRVar2->max_length <= index) goto code_?;
-        index = index + 1;
-        *ppRVar3 = pRVar6;
-        ppRVar3 = ppRVar3 + 1;
+  if (((this_01 != (Predicate_1_Object_ *)0x0) &&
+      (mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                 (this_01,(Object *)this,
+                  MethodInfo__ThemeSettings__SettingsWrapper___get_SettingsUI_b__9_0_ThemeAttributes__ThemeAttribute_
+                  ,(MethodInfo *)0x0), this_00 != (List_1_ThemeAttributes_ThemeAttribute_ *)0x0)) &&
+     (this_02 = (MethodInfo *)
+                mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                List_1_System_Object__FindAll
+                          ((List_1_System_Object_ *)this_00,this_01,
+                           MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
+                          ), this_02 != (MethodInfo *)0x0)) {
+    this = (SettingsWrapper *)func_?();
+    index = 0;
+    ppIVar1 = (IMenu **)&(this->fields).activeAttributeGroup;
+    while( true ) {
+      if ((int)this_02->name <= (int)index) {
+        return (RectTransform__Array *)this;
       }
+      pMVar2 = 
+      MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Item_int_
+      ;
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         this_02,index,
+                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Item_int_
+                        );
+      if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
+      piVar4 = *(int **)(*(int *)RVar3 + 0xe8);
+      this = (SettingsWrapper *)(**(code **)(*(int *)RVar3 + 0xe4))();
+      if (piVar4 == (int *)0x0) break;
+      this_02 = pMVar2;
+      if (this != (SettingsWrapper *)0x0) {
+        piVar4 = *(int **)(*piVar4 + 0x20);
+        iVar5 = func_?();
+        this_02 = pMVar2;
+        if (iVar5 == 0) goto code_?;
+      }
+      if ((uint)piVar4[3] <= index) goto code_?;
+      *ppIVar1 = (IMenu *)this;
+      func_?();
+      index = index + 1;
+      ppIVar1 = ppIVar1 + 1;
     }
   }
   func_?();
 code_?:
-  uVar8 = func_?();
-  func_?(uVar8);
+  func_?();
+  func_?();
 code_?:
-  uVar8 = func_?();
-  func_?(uVar8);
-  pcVar9 = (code *)swi(3);
-  pRVar2 = (RectTransform__Array *)(*pcVar9)();
-  return pRVar2;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pRVar7 = (RectTransform__Array *)(*pcVar6)();
+  return pRVar7;
 }
 

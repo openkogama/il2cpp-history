@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LoggerManager
 {
@@ -37,12 +37,11 @@ public class LoggerManager
 
 	// Constructors
 	private LoggerManager();
-	static LoggerManager();
 
 	// Methods
 	public static void Destroy();
 	private void ApplySettingsFromIniFile();
-	public ILogger GetLogger(Type type);
+	public ILogger GetLogger(System.Type type);
 	public ILogger GetLogger(string name);
 	private void Log(string loggerName, string message);
 }

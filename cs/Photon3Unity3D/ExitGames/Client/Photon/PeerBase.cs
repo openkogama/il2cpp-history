@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Photon.SocketServer.Security;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -22,7 +22,7 @@ namespace ExitGames.Client.Photon
 		internal ConnectionProtocol usedTransportProtocol;
 		internal IPhotonSocket PhotonSocket;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		private string _ServerAddress_k__BackingField;
 		internal ConnectionStateValue peerConnectionState;
 		internal int ByteCountLastOperation;
@@ -68,14 +68,21 @@ namespace ExitGames.Client.Photon
 		internal Queue<CmdLogItem> InReliableLog;
 	
 		// Properties
-		internal Type SocketImplementation { get; }
+		internal System.Type SocketImplementation { get; }
 		public string ServerAddress { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 		internal IPhotonPeerListener Listener { get; }
 		public DebugLevel debugOut { get; }
 		internal int DisconnectTimeout { get; }
 		internal int timePingInterval { get; }
 		internal byte ChannelCount { get; }
+		internal long BytesOut { get; }
+		internal long BytesIn { get; }
+		internal abstract int QueuedIncomingCommandsCount { get; }
+		internal abstract int QueuedOutgoingCommandsCount { get; }
+		internal virtual int SentReliableCommandsCount { get; }
+		public virtual string PeerID { get; }
 		internal int timeInt { get; }
+		internal static int outgoingStreamBufferSize { get; }
 		internal bool IsSendingOnlyAcks { get; }
 		internal int mtu { get; }
 		protected internal bool IsIpv6 { get; }
@@ -84,7 +91,7 @@ namespace ExitGames.Client.Photon
 		internal TrafficStats TrafficStatsIncoming { get; }
 		internal TrafficStats TrafficStatsOutgoing { get; }
 		internal TrafficStatsGameLevel TrafficStatsGameLevel { get; }
-		internal int CommandLogSize { get; }
+		internal int CommandLogSize { get; set; }
 	
 		// Nested types
 		internal delegate void MyAction();
@@ -137,11 +144,15 @@ namespace ExitGames.Client.Photon
 		internal abstract void FetchServerTimestamp();
 		internal abstract bool EnqueueOperation(Dictionary<byte, object> parameters, byte opCode, SendOptions sendParams, EgMessageType messageType = EgMessageType.Operation);
 		internal abstract StreamBuffer SerializeOperationToMessage(byte opCode, Dictionary<byte, object> parameters, EgMessageType messageType, bool encrypt);
+		internal abstract bool EnqueueMessage(object message, SendOptions sendOptions);
+		internal StreamBuffer SerializeMessageToMessage(object message, bool encrypt, byte[] messageHeader, bool writeLength = true);
 		internal abstract bool SendOutgoingCommands();
+		internal virtual bool SendAcksOnly();
 		internal abstract void ReceiveIncomingCommands(byte[] inBuff, int dataLength);
 		internal abstract bool DispatchIncomingCommands();
 		internal virtual bool DeserializeMessageAndCallback(StreamBuffer stream);
 		internal void UpdateRoundTripTimeAndVariance(int lastRoundtripTime);
+		internal bool ExchangeKeysForEncryption(object lockObject);
 		internal void DeriveSharedKey(OperationResponse operationResponse);
 		internal virtual void InitEncryption(byte[] secret);
 		internal void EnqueueActionForDispatch(MyAction action);
@@ -152,5 +163,6 @@ namespace ExitGames.Client.Photon
 		protected internal void NetworkSimRun();
 		internal void CommandLogResize();
 		internal void CommandLogInit();
+		public string CommandLogToString();
 	}
 }

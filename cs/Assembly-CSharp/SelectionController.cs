@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SelectionController : ISelectionController
 {
@@ -15,14 +15,12 @@ public class SelectionController : ISelectionController
 	private HashSet<int> selectedIDs;
 	private Stack<int> parentGroups;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<WorldObjectDestroyedEventArgs> SelectedWorldObjectDeleted;
-	[CompilerGenerated]
-	private static EventHandler<WorldObjectDestroyedEventArgs> __f__am_cache0;
 
 	// Properties
 	private MVWorldObjectClientManager WOCM { get; }
 	public int ParentGroupID { get; }
+	public bool ParentGroupIsRoot { get; }
 	public MVGroup ParentGroup { get; }
 	public HashSet<int> SelectedIDs { get; }
 	public HashSet<MVWorldObjectClient> SelectedWOs { get; }
@@ -35,17 +33,33 @@ public class SelectionController : ISelectionController
 	}
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _DeSelectAllExcept_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal int id;
+		public static readonly __c __9;
+		public static EventHandler<WorldObjectDestroyedEventArgs> __9__19_0;
 
 		// Constructors
-		public _DeSelectAllExcept_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal bool __m__0(int s);
+		internal void _.ctor_b__19_0(object _p0_, WorldObjectDestroyedEventArgs _p1_);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass27_0
+	{
+		// Fields
+		public int id;
+
+		// Constructors
+		public __c__DisplayClass27_0();
+
+		// Methods
+		internal bool _DeSelectAllExcept_b__0(int s);
 	}
 
 	// Constructors
@@ -67,7 +81,5 @@ public class SelectionController : ISelectionController
 	public bool IsSelected(int id);
 	public bool IsChildOf(int childId, int parentId);
 	public bool IsChildOf(MVWorldObjectClient child, MVWorldObjectClient parent);
-	[CompilerGenerated]
-	private static void _SelectedWorldObjectDeleted_m__0(object param_00005ba9, WorldObjectDestroyedEventArgs param_00005baa);
 }
 

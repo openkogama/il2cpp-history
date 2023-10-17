@@ -6,60 +6,34 @@ float Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch_DoFallBehind
                 MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  fStack_1 = MathFunctions::MathFunctions_NormalizeAngle(currentPitch,(MethodInfo *)0x0);
+  if (_UNK_? < fStack_1) {
+    fStack_1 = fStack_1 - _UNK_?;
   }
-  fStack_1 = 0.0;
-  uStack_2 = 0;
-  puVar3 = (undefined *)MathFunctions::MathFunctions_NormalizeAngle(currentPitch,(MethodInfo *)0x0);
-  if (_UNK_? < (float)puVar3) {
-    puVar3 = (undefined *)((float)puVar3 - _UNK_?);
-  }
-  if ((float)puVar3 == basePitch) {
-    return (float)puVar3;
-  }
-  puStack_4 = (undefined *)(this->fields).prevPosition.x;
-  unique0x0000a404 = (this->fields).prevPosition.y;
-  fVar5 = (this->fields).prevPosition.z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  b.z = fVar5;
-  b.x = (float)puStack_4;
-  b.y = stack0xfffffff4;
-  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                     ((Vector3 *)&stack0xffffffec,position,b,(MethodInfo *)0x0);
-  uStack_2._0_4_ = pVVar6->x;
-  uStack_2._4_4_ = pVVar6->y;
-  fStack_1 = pVVar6->z;
-  fVar7 = (float10)func_?(&uStack_2,0);
-  fVar8 = (float10)_UNK_?;
-  (this->fields).prevPosition.x = position.x;
-  (this->fields).prevPosition.y = position.y;
-  (this->fields).prevPosition.z = position.z;
-  if ((float)puVar3 < basePitch) {
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?();
+  if (fStack_1 != basePitch) {
+    uVar2 = (this->fields).prevPosition.x;
+    uVar3 = (this->fields).prevPosition.y;
+    fStack_4 = position.z - (this->fields).prevPosition.z;
+    uStack_5 = CONCAT44(position.y - (float)uVar3,position.x - (float)uVar2);
+    fVar6 = (float10)func_?(&uStack_5,0);
+    fVar7 = (float10)_UNK_?;
+    (this->fields).prevPosition.x = (float)(int)position._0_8_;
+    (this->fields).prevPosition.y = (float)(int)((ulonglong)position._0_8_ >> 0x20);
+    (this->fields).prevPosition.z = position.z;
+    if (fStack_1 < basePitch) {
+      fStack_1 = (float)(fVar6 * fVar7) + fStack_1;
+      if (basePitch <= fStack_1) {
+        fStack_1 = basePitch;
+      }
+      return fStack_1;
     }
-    register0x00001200 = (float)(fVar7 * fVar8) + basePitch;
-    join_0x00001100_4_ =
-         UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min
-                   (register0x00001200,basePitch,(MethodInfo *)0x0);
-    return join_0x00001100_4_;
+    fStack_1 = fStack_1 - (float)(fVar6 * fVar7);
+    if (fStack_1 <= basePitch) {
+      fStack_1 = basePitch;
+    }
+    return fStack_1;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    puVar3 = &UNK_?;
-    func_?();
-  }
-  register0x00001200 = (float)puVar3 - (float)(fVar7 * fVar8);
-  join_0x00001100_4_ =
-       UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Max
-                 (register0x00001200,basePitch,(MethodInfo *)0x0);
-  return join_0x00001100_4_;
+  return fStack_1;
 }
 
 
@@ -71,82 +45,57 @@ Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch_FallBehind
           Vector3 position,float basePitch,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  puVar1 = (undefined8 *)func_?(auStack_2,&rotation,0);
+  uStack_3 = *puVar1;
+  fStack_4 = *(float *)(puVar1 + 1);
+  fStack_5 = MathFunctions::MathFunctions_NormalizeAngle((float)uStack_3,(MethodInfo *)0x0);
+  fStack_6 = fStack_5;
+  if (_UNK_? < fStack_5) {
+    fStack_6 = fStack_5 - _UNK_?;
   }
-  puVar1 = (undefined8 *)func_?(&uStack_2,&rotation,0);
-  QStack_3._4_8_ = *puVar1;
-  fVar4 = *(float *)(puVar1 + 1);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  fStack_5 = 0.0;
-  uStack_2 = 0;
-  VStack_6.z = MathFunctions::MathFunctions_NormalizeAngle(QStack_3.y,(MethodInfo *)0x0);
-  fVar7 = VStack_6.z;
-  if (_UNK_? < VStack_6.z) {
-    fVar7 = VStack_6.z - _UNK_?;
-  }
-  fStack_8 = fVar7;
-  if (fVar7 != basePitch) {
-    VStack_6.y = (this->fields).prevPosition.x;
-    VStack_6.z = (this->fields).prevPosition.y;
-    fVar7 = (this->fields).prevPosition.z;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    b.z = fVar7;
-    b.x = VStack_6.y;
-    b.y = VStack_6.z;
-    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                       (&VStack_6,position,b,(MethodInfo *)0x0);
-    uStack_2._0_4_ = pVVar9->x;
-    uStack_2._4_4_ = pVVar9->y;
-    fStack_5 = pVVar9->z;
-    fVar10 = (float10)func_?(&uStack_2,0);
-    fVar11 = (float10)_UNK_?;
-    (this->fields).prevPosition.x = position.x;
+  fVar7 = fStack_6;
+  if (fStack_6 != basePitch) {
+    uVar8 = (this->fields).prevPosition.x;
+    uVar9 = (this->fields).prevPosition.y;
+    QStack_10.x = position.x;
+    QStack_10.y = 0.0;
+    QStack_10.z = 0.0;
+    QStack_10.w = 0.0;
+    fStack_11 = position.z - (this->fields).prevPosition.z;
+    uStack_12 = CONCAT44(position.y - (float)uVar9,position.x - (float)uVar8);
+    fStack_13 = fStack_11;
+    fVar14 = (float10)func_?(&uStack_12,0);
+    fVar15 = (float10)_UNK_?;
+    (this->fields).prevPosition.x = QStack_10.x;
     (this->fields).prevPosition.y = position.y;
-    fVar7 = (float)(fVar10 * fVar11);
     (this->fields).prevPosition.z = position.z;
-    VStack_6.z = fVar7;
-    if (basePitch <= fStack_8) {
-      if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Mathf);
+    fStack_5 = (float)(fVar14 * fVar15);
+    if (basePitch <= fStack_6) {
+      fVar7 = fStack_6 - fStack_5;
+      if (fStack_6 - fStack_5 <= basePitch) {
+        fVar7 = basePitch;
       }
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Max
-                        (fStack_8 - VStack_6.z,basePitch,(MethodInfo *)0x0);
     }
     else {
-      if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Mathf);
+      fVar7 = fStack_5 + fStack_6;
+      if (basePitch <= fStack_5 + fStack_6) {
+        fVar7 = basePitch;
       }
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min
-                        (VStack_6.z + fStack_8,basePitch,(MethodInfo *)0x0);
     }
   }
-  QStack_3.y = fVar7;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Quaternion);
-  }
-  euler.y = QStack_3.z;
-  euler.x = QStack_3.y;
-  euler.z = fVar4;
-  pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Euler_1
-                     (&QStack_3,euler,(MethodInfo *)0x0);
-  fVar4 = pQVar12->y;
-  fVar7 = pQVar12->z;
-  fVar13 = pQVar12->w;
-  __return_storage_ptr__->x = pQVar12->x;
-  __return_storage_ptr__->y = fVar4;
-  __return_storage_ptr__->z = fVar7;
-  __return_storage_ptr__->w = fVar13;
+  fStack_11 = fStack_4 * _UNK_?;
+  euler.y = uStack_3._4_4_ * _UNK_?;
+  euler.x = fVar7 * _UNK_?;
+  euler.z = fStack_11;
+  pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                     (&QStack_10,euler,(MethodInfo *)0x0);
+  fVar7 = pQVar16->y;
+  fVar17 = pQVar16->z;
+  fVar18 = pQVar16->w;
+  __return_storage_ptr__->x = pQVar16->x;
+  __return_storage_ptr__->y = fVar7;
+  __return_storage_ptr__->z = fVar17;
+  __return_storage_ptr__->w = fVar18;
   return __return_storage_ptr__;
 }
 
@@ -173,123 +122,89 @@ Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch_Update
           Vector3 position,float basePitch,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  uStack_1 = 0;
-  fStack_2 = 0.0;
-  iVar3 = (this->fields).state;
-  if (iVar3 != 1) {
-    if (iVar3 != 0) {
-      this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-      mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-      IsolatedStorageException__ctor_1(this_00,StringLiteral_Unknown_state,(MethodInfo *)0x0);
-      func_?(this_00,0,
-                      MethodInfo__FallBehindPitch__Update_UnityEngine__Quaternion__UnityEngine__Vector3__float_
-                     );
-      pcVar4 = (code *)swi(3);
-      pQVar5 = (Quaternion *)(*pcVar4)();
-      return pQVar5;
+  iVar1 = (this->fields).state;
+  if (iVar1 == 0) {
+    fStack_2 = rotation.x;
+    fStack_3 = rotation.y;
+    fStack_4 = rotation.z;
+    fStack_5 = rotation.w;
+    puVar6 = (undefined8 *)func_?(auStack_7,&fStack_2,0);
+    uStack_8 = *puVar6;
+    fStack_9 = *(float *)(puVar6 + 1);
+    fStack_10 = MathFunctions::MathFunctions_NormalizeAngle((float)uStack_8,(MethodInfo *)0x0);
+    fStack_11 = fStack_10;
+    if (_UNK_? < fStack_10) {
+      fStack_11 = fStack_10 - _UNK_?;
     }
-    fStack_6 = rotation.x;
-    fStack_7 = rotation.y;
-    fStack_8 = rotation.z;
-    fStack_9 = rotation.w;
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    puVar10 = (undefined8 *)func_?(auStack_11,&fStack_6,0);
-    unique0x0000a400 = *puVar10;
-    fVar12 = *(float *)(puVar10 + 1);
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    fStack_13 = 0.0;
-    uStack_14 = 0;
-    fVar15 = MathFunctions::MathFunctions_NormalizeAngle((float)auStack_16._4_4_,(MethodInfo *)0x0);
-    if (_UNK_? < fVar15) {
-      fVar15 = fVar15 - _UNK_?;
-    }
-    if (fVar15 != basePitch) {
-      uStack_17._0_4_ = (this->fields).prevPosition.x;
-      uStack_17._4_4_ = (this->fields).prevPosition.y;
-      fVar18 = (this->fields).prevPosition.z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Vector3);
-      }
-      b.z = fVar18;
-      b.x = (float)(undefined4)uStack_17;
-      b.y = uStack_17._4_4_;
-      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                         (&VStack_20,position,b,(MethodInfo *)0x0);
-      uStack_14._0_4_ = pVVar19->x;
-      uStack_14._4_4_ = pVVar19->y;
-      fStack_13 = pVVar19->z;
-      fVar21 = (float10)func_?(&uStack_14,0);
-      fVar22 = (float10)_UNK_?;
-      (this->fields).prevPosition.x = position.x;
+    fVar12 = fStack_11;
+    if (fStack_11 != basePitch) {
+      uVar13 = (this->fields).prevPosition.x;
+      uVar14 = (this->fields).prevPosition.y;
+      QStack_15.x = position.x;
+      QStack_15.y = 0.0;
+      QStack_15.z = 0.0;
+      QStack_15.w = 0.0;
+      fStack_5 = position.z - (this->fields).prevPosition.z;
+      uStack_16 = CONCAT44(position.y - (float)uVar14,position.x - (float)uVar13);
+      fStack_17 = fStack_5;
+      fVar18 = (float10)func_?(&uStack_16,0);
+      fVar19 = (float10)_UNK_?;
+      (this->fields).prevPosition.x = QStack_15.x;
       (this->fields).prevPosition.y = position.y;
-      uStack_17 = CONCAT44((float)(fVar21 * fVar22),(undefined4)uStack_17);
       (this->fields).prevPosition.z = position.z;
-      if (basePitch <= fVar15) {
-        if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Mathf);
+      fStack_10 = (float)(fVar18 * fVar19);
+      if (basePitch <= fStack_11) {
+        fVar12 = fStack_11 - fStack_10;
+        if (fStack_11 - fStack_10 <= basePitch) {
+          fVar12 = basePitch;
         }
-        fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Max
-                           (fVar15 - uStack_17._4_4_,basePitch,(MethodInfo *)0x0);
       }
       else {
-        if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Mathf);
+        fVar12 = fStack_10 + fStack_11;
+        if (basePitch <= fStack_10 + fStack_11) {
+          fVar12 = basePitch;
         }
-        fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min
-                           (uStack_17._4_4_ + fVar15,basePitch,(MethodInfo *)0x0);
       }
     }
-    auStack_16._4_4_ = fVar15;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Quaternion);
-    }
-    euler.y = fStack_23;
-    euler.x = (float)auStack_16._4_4_;
-    euler.z = fVar12;
-    pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Euler_1
-                       ((Quaternion *)auStack_16,euler,(MethodInfo *)0x0);
-    fVar12 = pQVar5->y;
-    fVar15 = pQVar5->z;
-    fVar18 = pQVar5->w;
-    __return_storage_ptr__->x = pQVar5->x;
+    fStack_5 = fStack_9 * _UNK_?;
+    euler.y = uStack_8._4_4_ * _UNK_?;
+    euler.x = fVar12 * _UNK_?;
+    euler.z = fStack_5;
+    pQVar20 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                        (&QStack_15,euler,(MethodInfo *)0x0);
+    fVar12 = pQVar20->y;
+    fVar21 = pQVar20->z;
+    fVar22 = pQVar20->w;
+    __return_storage_ptr__->x = pQVar20->x;
     __return_storage_ptr__->y = fVar12;
-    __return_storage_ptr__->z = fVar15;
-    __return_storage_ptr__->w = fVar18;
+    __return_storage_ptr__->z = fVar21;
+    __return_storage_ptr__->w = fVar22;
     return __return_storage_ptr__;
   }
-  uStack_17._0_4_ = (this->fields).prevCameraRotatedPosition.x;
-  uStack_17._4_4_ = (this->fields).prevCameraRotatedPosition.y;
-  fVar12 = (this->fields).prevCameraRotatedPosition.z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  if (iVar1 != 1) {
+    uVar23 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar23);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Unknown_state);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+    uVar23 = func_?(&
+                             MethodInfo__FallBehindPitch__Update_UnityEngine__Quaternion__UnityEngine__Vector3__float_
+                            );
+    func_?(this_00,uVar23);
+    pcVar24 = (code *)swi(3);
+    pQVar20 = (Quaternion *)(*pcVar24)();
+    return pQVar20;
   }
-  a.z = fVar12;
-  a.x = (float)(undefined4)uStack_17;
-  a.y = uStack_17._4_4_;
-  pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                     ((Vector3 *)(auStack_16 + 4),a,position,(MethodInfo *)0x0);
-  uStack_1._0_4_ = pVVar19->x;
-  uStack_1._4_4_ = pVVar19->y;
-  fStack_2 = pVVar19->z;
-  fVar22 = (float10)func_?(&uStack_1,0);
-  if (_UNK_? < (float)fVar22) {
-    (this->fields).prevPosition.x = position.x;
-    (this->fields).prevPosition.y = position.y;
+  uVar25 = (this->fields).prevCameraRotatedPosition.x;
+  uVar26 = (this->fields).prevCameraRotatedPosition.y;
+  fStack_5 = (this->fields).prevCameraRotatedPosition.z - position.z;
+  uStack_8 = CONCAT44((float)uVar26 - position.y,(float)uVar25 - position.x);
+  fStack_9 = fStack_5;
+  fVar19 = (float10)func_?(&uStack_8,0);
+  if (_UNK_? < (float)fVar19) {
+    (this->fields).prevPosition.x = (float)(int)position._0_8_;
+    (this->fields).prevPosition.y = (float)(int)((ulonglong)position._0_8_ >> 0x20);
     (this->fields).prevPosition.z = position.z;
     (this->fields).state = 0;
   }
@@ -308,21 +223,15 @@ void Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  fVar2 = pVVar1->y;
-  fVar3 = pVVar1->z;
-  (this->fields).prevCameraRotatedPosition.x = pVVar1->x;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).prevCameraRotatedPosition.x = (pVVar1->zeroVector).x;
   (this->fields).prevCameraRotatedPosition.y = fVar2;
   (this->fields).prevCameraRotatedPosition.z = fVar3;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,in_stack_4);
   return;
 }
 

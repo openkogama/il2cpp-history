@@ -6,53 +6,73 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral_count);
+    func_?(&StringLiteral__c);
+    func_?(&StringLiteral_ukey);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  if (this != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_key,(CrossPlatformInputManager_VirtualButton *)key,
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,
+               (Object *)key,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_ukey,(CrossPlatformInputManager_VirtualButton *)ukey,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,
+               (Object *)ukey,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    value = (CrossPlatformInputManager_VirtualButton *)func_?(&count,0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_count,value,
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    method_00 = TypeInfo__StatHat__Post__FormPoster;
-    this_00 = (ScaleAnimationBase *)func_?();
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__c;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    pSVar2 = StringLiteral__c;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)pSVar1;
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    (this_00->fields).state = (int32_t)pSVar2;
-    Post+FormPoster::Post_FormPoster_PostForm((Post_FormPoster *)this_00,(MethodInfo *)0x0);
-    return;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -65,53 +85,73 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter_1
 {
   count = (int32_t)(float)count;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral_count);
+    func_?(&StringLiteral__c);
+    func_?(&StringLiteral_ukey);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  if (this != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_key,(CrossPlatformInputManager_VirtualButton *)key,
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,
+               (Object *)key,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_ukey,(CrossPlatformInputManager_VirtualButton *)ukey,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,
+               (Object *)ukey,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    value = (CrossPlatformInputManager_VirtualButton *)func_?(&count,0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_count,value,
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    method_00 = TypeInfo__StatHat__Post__FormPoster;
-    this_00 = (ScaleAnimationBase *)func_?();
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__c;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    pSVar2 = StringLiteral__c;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)pSVar1;
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    (this_00->fields).state = (int32_t)pSVar2;
-    Post+FormPoster::Post_FormPoster_PostForm((Post_FormPoster *)this_00,(MethodInfo *)0x0);
-    return;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -124,53 +164,73 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter
 {
   count = (int32_t)(float)count;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral_count);
+    func_?(&StringLiteral__ez);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_ezkey);
+    func_?(&StringLiteral_stat);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  if (this != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_ezkey,(CrossPlatformInputManager_VirtualButton *)ezkey,
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,
+               (Object *)ezkey,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_stat,(CrossPlatformInputManager_VirtualButton *)stat,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,
+               (Object *)stat,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    value = (CrossPlatformInputManager_VirtualButton *)func_?(&count,0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_count,value,
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    method_00 = TypeInfo__StatHat__Post__FormPoster;
-    this_00 = (ScaleAnimationBase *)func_?();
-    pSVar1 = StringLiteral__ez;
-    pSVar2 = StringLiteral_https___api_stathat_com;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)pSVar2;
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    (this_00->fields).state = (int32_t)pSVar1;
-    Post+FormPoster::Post_FormPoster_PostForm((Post_FormPoster *)this_00,(MethodInfo *)0x0);
-    return;
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__ez;
+    pSVar1 = StringLiteral_https___api_stathat_com;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -182,53 +242,73 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral_count);
+    func_?(&StringLiteral__ez);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_ezkey);
+    func_?(&StringLiteral_stat);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  if (this != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_ezkey,(CrossPlatformInputManager_VirtualButton *)ezkey,
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,
+               (Object *)ezkey,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_stat,(CrossPlatformInputManager_VirtualButton *)stat,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,
+               (Object *)stat,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    value = (CrossPlatformInputManager_VirtualButton *)func_?(&count,0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_count,value,
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    method_00 = TypeInfo__StatHat__Post__FormPoster;
-    this_00 = (ScaleAnimationBase *)func_?();
-    pSVar1 = StringLiteral__ez;
-    pSVar2 = StringLiteral_https___api_stathat_com;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)pSVar2;
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    (this_00->fields).state = (int32_t)pSVar1;
-    Post+FormPoster::Post_FormPoster_PostForm((Post_FormPoster *)this_00,(MethodInfo *)0x0);
-    return;
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__ez;
+    pSVar1 = StringLiteral_https___api_stathat_com;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -240,53 +320,73 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral_value);
+    func_?(&StringLiteral__ez);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_ezkey);
+    func_?(&StringLiteral_stat);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  if (this != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_ezkey,(CrossPlatformInputManager_VirtualButton *)ezkey,
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,
+               (Object *)ezkey,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_stat,(CrossPlatformInputManager_VirtualButton *)stat,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,
+               (Object *)stat,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    value_00 = (CrossPlatformInputManager_VirtualButton *)func_?(&value,0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_value,value_00,
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    method_00 = TypeInfo__StatHat__Post__FormPoster;
-    this_00 = (ScaleAnimationBase *)func_?();
-    pSVar1 = StringLiteral__ez;
-    pSVar2 = StringLiteral_https___api_stathat_com;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)pSVar2;
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    (this_00->fields).state = (int32_t)pSVar1;
-    Post+FormPoster::Post_FormPoster_PostForm((Post_FormPoster *)this_00,(MethodInfo *)0x0);
-    return;
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__ez;
+    pSVar1 = StringLiteral_https___api_stathat_com;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -297,7 +397,75 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue_1
                (String *ezkey,String *stat,int32_t value,MethodInfo *method)
 
 {
-  Post_EzValue(ezkey,stat,(float)value,(MethodInfo *)0x0);
+  value = (int32_t)(float)value;
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral_value);
+    func_?(&StringLiteral__ez);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_ezkey);
+    func_?(&StringLiteral_stat);
+    cRam_? = '\x01';
+  }
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,
+               (Object *)ezkey,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,
+               (Object *)stat,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+              );
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,
+               (Object *)pSVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+              );
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__ez;
+    pSVar1 = StringLiteral_https___api_stathat_com;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -310,53 +478,73 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value
 {
   value = (int32_t)(float)value;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral__v);
+    func_?(&StringLiteral_ukey);
+    func_?(&StringLiteral_value);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  if (this != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_key,(CrossPlatformInputManager_VirtualButton *)key,
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,
+               (Object *)key,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_ukey,(CrossPlatformInputManager_VirtualButton *)ukey,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,
+               (Object *)ukey,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    value_00 = (CrossPlatformInputManager_VirtualButton *)func_?(&value,0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_value,value_00,
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    method_00 = TypeInfo__StatHat__Post__FormPoster;
-    this_00 = (ScaleAnimationBase *)func_?();
-    pSVar1 = StringLiteral__v;
-    pSVar2 = StringLiteral_https___api_stathat_com;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)pSVar2;
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    (this_00->fields).state = (int32_t)pSVar1;
-    Post+FormPoster::Post_FormPoster_PostForm((Post_FormPoster *)this_00,(MethodInfo *)0x0);
-    return;
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__v;
+    pSVar1 = StringLiteral_https___api_stathat_com;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -368,53 +556,73 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&TypeInfo__StatHat__Post__FormPoster);
+    func_?(&StringLiteral__v);
+    func_?(&StringLiteral_ukey);
+    func_?(&StringLiteral_value);
+    func_?(&StringLiteral_https___api_stathat_com);
+    func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  if (this != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_key,(CrossPlatformInputManager_VirtualButton *)key,
+  this = (Dictionary_2_System_String_System_String_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,
+               (Object *)key,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_ukey,(CrossPlatformInputManager_VirtualButton *)ukey,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,
+               (Object *)ukey,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    value_00 = (CrossPlatformInputManager_VirtualButton *)func_?(&value,0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this,StringLiteral_value,value_00,
+    pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    method_00 = TypeInfo__StatHat__Post__FormPoster;
-    this_00 = (ScaleAnimationBase *)func_?();
-    pSVar1 = StringLiteral__v;
-    pSVar2 = StringLiteral_https___api_stathat_com;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields).originalScale.x = (float)pSVar2;
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    (this_00->fields).state = (int32_t)pSVar1;
-    Post+FormPoster::Post_FormPoster_PostForm((Post_FormPoster *)this_00,(MethodInfo *)0x0);
-    return;
+    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
+    in_stack_3 = &UNK_?;
+    this_00 = (Post_FormPoster *)func_?();
+    pSVar4 = StringLiteral__v;
+    pSVar1 = StringLiteral_https___api_stathat_com;
+    if (this_00 != (Post_FormPoster *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (this_00->fields).BaseUrl = pSVar1;
+      func_?(&(this_00->fields).BaseUrl,pSVar1);
+      (this_00->fields).Parameters = this;
+      func_?(&this_00->fields,this);
+      (this_00->fields).RelUrl = pSVar4;
+      func_?(&(this_00->fields).RelUrl,pSVar4);
+      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

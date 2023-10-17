@@ -6,11 +6,10 @@ int32_t Assembly-CSharp.dll::SubscriberRewardDataManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SubscriberRewardDataManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SubscriberRewardDataManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SubscriberRewardDataManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__SubscriberRewardDataManager);
   }
   return (TypeInfo__SubscriberRewardDataManager->static_fields->subscriberRewardData).baseXPBonus;
@@ -24,11 +23,10 @@ void Assembly-CSharp.dll::SubscriberRewardDataManager::SubscriberRewardDataManag
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SubscriberRewardDataManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SubscriberRewardDataManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SubscriberRewardDataManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__SubscriberRewardDataManager);
     (TypeInfo__SubscriberRewardDataManager->static_fields->subscriberRewardData).baseXPBonus =
          baseXpBonus;
@@ -36,21 +34,6 @@ void Assembly-CSharp.dll::SubscriberRewardDataManager::SubscriberRewardDataManag
   }
   (TypeInfo__SubscriberRewardDataManager->static_fields->subscriberRewardData).baseXPBonus =
        baseXpBonus;
-  return;
-}
-
-
-/* SubscriberRewardDataManager() */
-
-void Assembly-CSharp.dll::SubscriberRewardDataManager::SubscriberRewardDataManager__cctor
-               (MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  (TypeInfo__SubscriberRewardDataManager->static_fields->subscriberRewardData).baseXPBonus = 0;
   return;
 }
 
@@ -63,11 +46,10 @@ Assembly-CSharp.dll::SubscriberRewardDataManager::SubscriberRewardDataManager_ge
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SubscriberRewardDataManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SubscriberRewardDataManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SubscriberRewardDataManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__SubscriberRewardDataManager);
   }
   return TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField;
@@ -81,16 +63,15 @@ void Assembly-CSharp.dll::SubscriberRewardDataManager::SubscriberRewardDataManag
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SubscriberRewardDataManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__SubscriberRewardDataManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__SubscriberRewardDataManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__SubscriberRewardDataManager);
-    TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField = value;
-    return;
   }
   TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField = value;
+  func_?(&TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField,
+                  unaff_EBP);
   return;
 }
 

@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleSkillsEditor : MonoBehaviour
 {
@@ -38,42 +38,42 @@ public class SpawnRoleSkillsEditor : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnAddDefenceSkillPressed_c__AnonStorey0
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
-		internal SpawnRoleSkillSelectionMenu skillSelectionMenu;
+		public SpawnRoleSkillSelectionMenu skillSelectionMenu;
 
 		// Constructors
-		public _OnAddDefenceSkillPressed_c__AnonStorey0();
+		public __c__DisplayClass17_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnAddDefenceSkillPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnAddOffenceSkillPressed_c__AnonStorey1
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
-		internal SpawnRoleSkillSelectionMenu skillSelectionMenu;
+		public SpawnRoleSkillSelectionMenu skillSelectionMenu;
 
 		// Constructors
-		public _OnAddOffenceSkillPressed_c__AnonStorey1();
+		public __c__DisplayClass18_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnAddOffenceSkillPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnAddTacticalSkillPressed_c__AnonStorey2
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
-		internal SpawnRoleSkillSelectionMenu skillSelectionMenu;
+		public SpawnRoleSkillSelectionMenu skillSelectionMenu;
 
 		// Constructors
-		public _OnAddTacticalSkillPressed_c__AnonStorey2();
+		public __c__DisplayClass19_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnAddTacticalSkillPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -5,48 +5,54 @@ void Assembly-CSharp.dll::GameLoader::GameLoader_Awake(GameLoader *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GameLoader);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__GameLoader->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GameLoader->_1).cctor_started == 0)) {
+  if ((TypeInfo__GameLoader->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__GameLoader);
   }
   if (TypeInfo__GameLoader->static_fields->applicationStartUp == 0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__AsyncWWWManager);
+      func_?(&TypeInfo__BackButtonManager);
+      func_?(&TypeInfo__CullingApiWrapper);
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
     CullingApiWrapper::CullingApiWrapper_PostDestroyCleanup((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
     MVGameControllerBase::MVGameControllerBase_PostDestroyCleanup((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    AsyncWWWManager::AsyncWWWManager_PostResetCleanup((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?(&StringLiteral_AsyncWWWManager_quitCallback_is_);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    if (TypeInfo__AsyncWWWManager->static_fields->quitCallback != (Action *)0x0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+                ((Object *)StringLiteral_AsyncWWWManager_quitCallback_is_,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      TypeInfo__AsyncWWWManager->static_fields->quitCallback = (Action *)0x0;
       func_?();
     }
     TimedPlayReward+RewardTracker::TimedPlayReward_RewardTracker_PostResetCleanup((MethodInfo *)0x0)
     ;
-    if ((((uint)(TypeInfo__BackButtonManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BackButtonManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     BackButtonManager::BackButtonManager_PostDestroyCleanup((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__GamePointGainEffectManager->vtable).Equals.methodPtr & 0x2000000) != 0)
-       && ((TypeInfo__GamePointGainEffectManager->_1).cctor_started == 0)) {
-      func_?();
-    }
     GamePointGainEffectManager::GamePointGainEffectManager_PostResetCleanup((MethodInfo *)0x0);
   }
   return;
@@ -59,38 +65,45 @@ void Assembly-CSharp.dll::GameLoader::GameLoader_Cleanup(GameLoader *this,Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__BackButtonManager);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   CullingApiWrapper::CullingApiWrapper_PostDestroyCleanup((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
   MVGameControllerBase::MVGameControllerBase_PostDestroyCleanup((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  AsyncWWWManager::AsyncWWWManager_PostResetCleanup((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    func_?(&StringLiteral_AsyncWWWManager_quitCallback_is_);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (TypeInfo__AsyncWWWManager->static_fields->quitCallback != (Action *)0x0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+              ((Object *)StringLiteral_AsyncWWWManager_quitCallback_is_,(MethodInfo *)0x0);
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    TypeInfo__AsyncWWWManager->static_fields->quitCallback = (Action *)0x0;
     func_?();
   }
   TimedPlayReward+RewardTracker::TimedPlayReward_RewardTracker_PostResetCleanup((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__BackButtonManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BackButtonManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   BackButtonManager::BackButtonManager_PostDestroyCleanup((MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__GamePointGainEffectManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GamePointGainEffectManager->_1).cctor_started == 0)) {
-    func_?();
-  }
   GamePointGainEffectManager::GamePointGainEffectManager_PostResetCleanup((MethodInfo *)0x0);
   return;
 }
@@ -102,16 +115,19 @@ void Assembly-CSharp.dll::GameLoader::GameLoader_Start(GameLoader *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__GC);
+    func_?(&TypeInfo__GameLoader);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__GameLoader->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GameLoader->_1).cctor_started == 0)) {
+  if ((TypeInfo__GameLoader->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__GameLoader);
   }
   if (TypeInfo__GameLoader->static_fields->applicationStartUp == 0) {
     UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_UnloadUnusedAssets
               ((MethodInfo *)0x0);
+    if ((TypeInfo__System__GC->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
     mscorlib.dll::System::GC::GC_1_Collect((MethodInfo *)0x0);
   }
   return;
@@ -124,18 +140,16 @@ void Assembly-CSharp.dll::GameLoader::GameLoader_UnloadGame(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GameLoader);
+    func_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__SceneManagement__SceneManager->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__SceneManagement__SceneManager);
   }
   UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_LoadScene_2
             (0,LoadSceneMode__Enum_Single,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__GameLoader->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GameLoader->_1).cctor_started == 0)) {
+  if ((TypeInfo__GameLoader->_1).cctor_finished_or_no_cctor == 0) {
     pGStack1 = TypeInfo__GameLoader;
     func_?();
   }
@@ -150,7 +164,7 @@ void Assembly-CSharp.dll::GameLoader::GameLoader__cctor(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GameLoader);
     cRam_? = '\x01';
   }
   TypeInfo__GameLoader->static_fields->applicationStartUp = 1;
@@ -165,11 +179,10 @@ void Assembly-CSharp.dll::GameLoader::GameLoader__ctor(GameLoader *this,MethodIn
 {
   (this->fields).gameBaseSceneIndex = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

@@ -2,11 +2,11 @@
 /* String GetClaimText() */
 
 String * Assembly-CSharp.dll::GoldRewardCountdownMeter::GoldRewardCountdownMeter_GetClaimText
-                   (GoldRewardCountdownMeter *this,MethodInfo *method)
+                   (MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_CLAIM);
     cRam_? = '\x01';
   }
   pSVar1 = TM::TM__(StringLiteral_CLAIM,(MethodInfo *)0x0);
@@ -17,36 +17,27 @@ String * Assembly-CSharp.dll::GoldRewardCountdownMeter::GoldRewardCountdownMeter
 /* Boolean IsGoldRewardCountdownActive() */
 
 bool Assembly-CSharp.dll::GoldRewardCountdownMeter::
-     GoldRewardCountdownMeter_IsGoldRewardCountdownActive
-               (GoldRewardCountdownMeter *this,MethodInfo *method)
+     GoldRewardCountdownMeter_IsGoldRewardCountdownActive(MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
   if (pGVar1 != (GoldRewardManager *)0x0) {
-    bVar2 = GoldRewardManager::GoldRewardManager_CanGetGoldReward(pGVar1,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      return 0;
+    bVar2 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+    MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    if ((bVar2 == 0) || ((pGVar1->fields).isGoldRewardGame == 0)) {
+      bVar5 = false;
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
+    else {
+      bVar5 = (pGVar1->fields).isGoldRewardDone == 0;
+    }
+    if ((!(bool)(bVar5 & MVar3 == MVGameMode__Enum_Play)) || (bVar4 != 0)) {
+      return 0;
     }
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
     if (pGVar1 != (GoldRewardManager *)0x0) {
       if ((pGVar1->fields).isCountingDownGoldReward == 0) {
         return 0;
-      }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
       }
       pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
       if (pGVar1 != (GoldRewardManager *)0x0) {
@@ -55,8 +46,8 @@ bool Assembly-CSharp.dll::GoldRewardCountdownMeter::
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
+  pcVar6 = (code *)swi(3);
+  bVar2 = (*pcVar6)();
   return bVar2;
 }
 
@@ -68,17 +59,17 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::GoldRewardCountdownMeter_Sta
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Claim_gold_when_countdown_comple);
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).goldRewardCountdownUI;
   if (pGVar1 != (GameObject *)0x0) {
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar1,(MethodInfo *)0x0);
-    bVar3 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive(this,(MethodInfo *)0x0);
+    bVar3 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive((MethodInfo *)0x0);
     if (bVar2 != bVar3) {
       pGVar1 = (this->fields).goldRewardCountdownUI;
-      bVar2 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive(this,(MethodInfo *)0x0);
+      bVar2 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive((MethodInfo *)0x0);
       if (pGVar1 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,bVar2,(MethodInfo *)0x0);
@@ -106,77 +97,94 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__GoldRewardCountdownMeter____c__DisplayClass14_0___TryShowClaimGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__GoldRewardCountdownMeter____c__DisplayClass14_0);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-  if (pGVar1 == (GoldRewardManager *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  method_00 = (MethodInfo *)&UNK_?;
-  bVar3 = GoldRewardManager::GoldRewardManager_CanGetGoldReward(pGVar1,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
+  if (pGVar1 != (GoldRewardManager *)0x0) {
+    bVar2 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+    MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    if ((bVar2 == 0) || ((pGVar1->fields).isGoldRewardGame == 0)) {
+      bVar5 = false;
+    }
+    else {
+      bVar5 = (pGVar1->fields).isGoldRewardDone == 0;
+    }
+    if ((!(bool)(bVar5 & MVar3 == MVGameMode__Enum_Play)) || (bVar4 != 0)) {
+      return;
     }
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-    if (pGVar1 == (GoldRewardManager *)0x0) goto code_?;
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar5 = _UNK_? - (fVar4 - (pGVar1->fields).startTime);
-    fVar4 = 0.0;
-    if (0.0 <= fVar5) {
-      fVar4 = fVar5;
-    }
-    if (fVar4 <= 0.0) {
-      this_00 = (ScaleAnimationBase *)
-                func_?(
-                               TypeInfo__GoldRewardCountdownMeter___TryShowClaimGoldRewardPopup_c__AnonStorey0
-                               );
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-      pXVar6 = unaff_EBX[2].fields._.m_CachedPtr;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Object);
+    if (pGVar1 != (GoldRewardManager *)0x0) {
+      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      this_00 = TypeInfo__GoldRewardCountdownMeter____c__DisplayClass14_0;
+      fVar7 = _UNK_? - (fVar6 - (pGVar1->fields).startTime);
+      fVar6 = 0.0;
+      if (0.0 <= fVar7) {
+        fVar6 = fVar7;
       }
-      pXVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                         (pXVar6,
-                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                         );
-      if (this_00 == (ScaleAnimationBase *)0x0) goto code_?;
-      (this_00->fields)._._._._.m_CachedPtr = pXVar6;
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       (unaff_EBX,(MethodInfo *)0x0);
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)this_00,
-                 MethodInfo__GoldRewardCountdownMeter___TryShowClaimGoldRewardPopup_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                );
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+      if (0.0 < fVar6) {
+        return;
+      }
+      value = (Object *)func_?();
+      if (value != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  (value,ExceptionArgument__Enum_obj,unaff_EDI);
+        original = (this_00->_0).element_class;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pOVar8 = (Object__Class *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)original,
+                            UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                           );
+        value[1].klass = pOVar8;
         func_?();
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this_00,(MethodInfo *)0x0);
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_System_Object_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__GoldRewardCountdownMeter____c__DisplayClass14_0___TryShowClaimGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
+        }
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
     }
   }
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -187,12 +195,101 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::GoldRewardCountdownMeter_Upd
                (GoldRewardCountdownMeter *this,MethodInfo *method)
 
 {
-  bVar1 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive(this,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    GoldRewardCountdownMeter_UpdateCountdownVisibility(this,(MethodInfo *)0x0);
+  bVar1 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive((MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_Go_to_menu_to_claim);
+      cRam_? = '\x01';
+    }
+    pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+    if ((pGVar2 != (GoldRewardManager *)0x0) &&
+       (fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
+       pPRam00000010 != (ProgressBarAndroid *)0x0)) {
+      ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                (pPRam00000010,(fVar3 - (pGVar2->fields).startTime) / _UNK_?,
+                 (MethodInfo *)0x0);
+      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+      if (pGVar2 != (GoldRewardManager *)0x0) {
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        piVar4 = piRam_?;
+        fVar5 = _UNK_? - (fVar3 - (pGVar2->fields).startTime);
+        fVar3 = 0.0;
+        if (0.0 <= fVar5) {
+          fVar3 = fVar5;
+        }
+        if (0.0 < fVar3) {
+          pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager
+                             ((MethodInfo *)0x0);
+          if (pGVar2 != (GoldRewardManager *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            fVar6 = (float10)func_?();
+            uVar7 = CONCAT44((int)fVar6 + 1,SUB84((double)fVar6,0));
+            pSVar8 = mscorlib.dll::System::Int32::Int32_ToString
+                               ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+            if (piVar4 != (int *)0x0) {
+              (**(code **)(*piVar4 + 0x314))(piVar4,pSVar8,*(undefined4 *)(*piVar4 + 0x318),uVar7);
+              return;
+            }
+          }
+        }
+        else {
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pSVar8 = TM::TM__(StringLiteral_CLAIM,(MethodInfo *)0x0);
+          if ((piVar4 != (int *)0x0) &&
+             ((**(code **)(*piVar4 + 0x314))(piVar4,pSVar8,*(undefined4 *)(*piVar4 + 0x318)),
+             pGRam00000018 != (GameObject *)0x0)) {
+            bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                              (pGRam00000018,(MethodInfo *)0x0);
+            if (bVar1 == 0) {
+              if (pGRam00000018 == (GameObject *)0x0) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGRam00000018,1,(MethodInfo *)0x0);
+            }
+            this_01 = pGRam0000001c;
+            if (cRam_? == '\0') {
+              pSVar8 = TM::TM__(StringLiteral_Go_to_menu_to_claim,(MethodInfo *)0x0);
+              if (this_01 == (GamePassesTextBubble *)0x0) goto code_?;
+              GamePassesTextBubble::GamePassesTextBubble_Activate(this_01,pSVar8,(MethodInfo *)0x0);
+            }
+            cRam_? = 1;
+            return;
+          }
+        }
+      }
+    }
+code_?:
+    func_?();
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
     return;
   }
-  GoldRewardCountdownMeter_UpdateCountDownProgress(this,(MethodInfo *)0x0);
+  if (pGRam0000000c != (GameObject *)0x0) {
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGRam0000000c,(MethodInfo *)0x0);
+    bVar10 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive((MethodInfo *)0x0);
+    this_00 = pGRam0000000c;
+    if (bVar1 != bVar10) {
+      GoldRewardCountdownMeter_IsGoldRewardCountdownActive((MethodInfo *)0x0);
+      if (this_00 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_00,0,(MethodInfo *)0x0);
+    }
+    return;
+  }
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -204,58 +301,44 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::GoldRewardCountdownMeter_Upd
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Go_to_menu_to_claim);
     cRam_? = '\x01';
   }
-  puStack_1 = (undefined *)0x0;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-  if (pGVar2 != (GoldRewardManager *)0x0) {
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    this_00 = (this->fields).countdownProgressBar;
-    if (this_00 != (ProgressBar *)0x0) {
-      ProgressBar::ProgressBar_set_Progress
-                (this_00,(fVar3 - (pGVar2->fields).startTime) / _UNK_?,(MethodInfo *)0x0);
-      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-      if (pGVar2 != (GoldRewardManager *)0x0) {
-        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        pTVar4 = (this->fields).countdownText;
-        fVar5 = _UNK_? - (fVar3 - (pGVar2->fields).startTime);
-        fVar3 = 0.0;
-        if (0.0 <= fVar5) {
-          fVar3 = fVar5;
+  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+  if (pGVar1 != (GoldRewardManager *)0x0) {
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    this_00 = (ProgressBarAndroid *)(this->fields).countdownProgressBar;
+    if (this_00 != (ProgressBarAndroid *)0x0) {
+      ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                (this_00,(fVar2 - (pGVar1->fields).startTime) / _UNK_?,(MethodInfo *)0x0);
+      pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+      if (pGVar1 != (GoldRewardManager *)0x0) {
+        fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        pTVar3 = (this->fields).countdownText;
+        fVar4 = _UNK_? - (fVar2 - (pGVar1->fields).startTime);
+        fVar2 = 0.0;
+        if (0.0 <= fVar4) {
+          fVar2 = fVar4;
         }
-        if (0.0 < fVar3) {
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager
+        if (0.0 < fVar2) {
+          pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager
                              ((MethodInfo *)0x0);
-          if (pGVar2 != (GoldRewardManager *)0x0) {
-            fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                               ((MethodInfo *)0x0);
-            pMVar6 = (Mathf__Class *)(_UNK_? - (fVar3 - (pGVar2->fields).startTime));
-            f = (Mathf__Class *)0x0;
-            if (0.0 <= (float)pMVar6) {
-              f = pMVar6;
+          if (pGVar1 != (GoldRewardManager *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
             }
-            if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-              f = TypeInfo__UnityEngine__Mathf;
+            if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt
-                              ((float)f,(MethodInfo *)0x0);
-            puStack_1 = (undefined *)(iVar7 + 1);
-            uVar8 = func_?(&puStack_1,0);
-            if (pTVar4 != (Text *)0x0) {
-              (*(code *)(pTVar4->klass->vtable).set_text.method)
-                        (pTVar4,uVar8,
-                         (pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            fVar5 = (float10)func_?();
+            uVar6 = CONCAT44((int)fVar5 + 1,SUB84((double)fVar5,0));
+            pSVar7 = mscorlib.dll::System::Int32::Int32_ToString
+                               ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
+            if (pTVar3 != (Text *)0x0) {
+              (*(pTVar3->klass->vtable).set_text.methodPtr)
+                        (pTVar3,pSVar7,(pTVar3->klass->vtable).set_text.method,uVar6);
               return;
             }
           }
@@ -265,27 +348,26 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::GoldRewardCountdownMeter_Upd
             func_?();
             cRam_? = '\x01';
           }
-          pSVar9 = TM::TM__(StringLiteral_CLAIM,(MethodInfo *)0x0);
-          if (pTVar4 != (Text *)0x0) {
-            (*(code *)(pTVar4->klass->vtable).set_text.method)
-                      (pTVar4,pSVar9,
-                       (pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-            pGVar10 = (this->fields).goldRewardClaimableUI;
-            if (pGVar10 != (GameObject *)0x0) {
-              bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                                (pGVar10,(MethodInfo *)0x0);
-              if (bVar11 == 0) {
-                pGVar10 = (this->fields).goldRewardClaimableUI;
-                if (pGVar10 == (GameObject *)0x0) goto code_?;
+          pSVar7 = TM::TM__(StringLiteral_CLAIM,(MethodInfo *)0x0);
+          if (pTVar3 != (Text *)0x0) {
+            (*(pTVar3->klass->vtable).set_text.methodPtr)
+                      (pTVar3,pSVar7,(pTVar3->klass->vtable).set_text.method);
+            pGVar8 = (this->fields).goldRewardClaimableUI;
+            if (pGVar8 != (GameObject *)0x0) {
+              bVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                                (pGVar8,(MethodInfo *)0x0);
+              if (bVar9 == 0) {
+                pGVar8 = (this->fields).goldRewardClaimableUI;
+                if (pGVar8 == (GameObject *)0x0) goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar10,1,(MethodInfo *)0x0);
+                          (pGVar8,1,(MethodInfo *)0x0);
               }
               if ((this->fields).isDone == 0) {
                 this_01 = (this->fields).tipBubble;
-                pSVar9 = TM::TM__(StringLiteral_Go_to_menu_to_claim,(MethodInfo *)0x0);
+                pSVar7 = TM::TM__(StringLiteral_Go_to_menu_to_claim,(MethodInfo *)0x0);
                 if (this_01 == (GamePassesTextBubble *)0x0) goto code_?;
                 GamePassesTextBubble::GamePassesTextBubble_Activate
-                          (this_01,pSVar9,(MethodInfo *)0x0);
+                          (this_01,pSVar7,(MethodInfo *)0x0);
               }
               (this->fields).isDone = 1;
               return;
@@ -296,9 +378,9 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::GoldRewardCountdownMeter_Upd
     }
   }
 code_?:
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -314,13 +396,13 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::
   if (pGVar1 != (GameObject *)0x0) {
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar1,(MethodInfo *)0x0);
-    bVar3 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive(this,(MethodInfo *)0x0);
+    bVar3 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive((MethodInfo *)0x0);
     if (bVar2 != bVar3) {
       pGVar1 = (this->fields).goldRewardCountdownUI;
-      bVar2 = GoldRewardCountdownMeter_IsGoldRewardCountdownActive(this,(MethodInfo *)0x0);
+      GoldRewardCountdownMeter_IsGoldRewardCountdownActive((MethodInfo *)0x0);
       if (pGVar1 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,bVar2,(MethodInfo *)0x0);
+                (pGVar1,0,(MethodInfo *)0x0);
     }
     return;
   }

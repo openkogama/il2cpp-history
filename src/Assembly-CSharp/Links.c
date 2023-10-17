@@ -2,21 +2,29 @@
 /* Void AddLink(Link, MVWorldObjectClient, MVWorldObjectClient) */
 
 void Assembly-CSharp.dll::Links::Links_AddLink
-               (Links *this,Link_1 *link,MVWorldObjectClient *outputWo,MVWorldObjectClient *inputWo,
+               (Links *this,Link *link,MVWorldObjectClient *outputWo,MVWorldObjectClient *inputWo,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Add_int__MV__WorldObject__Link_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Add_int__LinkObjectScript_
+                   );
+    func_?(&
+                    LinkObjectScript_MethodInfo__UnityEngine__Object__Instantiate<LinkObjectScript>_LinkObjectScript_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((link != (Link_1 *)0x0) &&
-       (this_00 = (this->fields).links,
-       this_00 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0)) &&
-      (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-       Dictionary_2_System_Int32_System_Object__Add
-                 ((Dictionary_2_System_Int32_System_Object_ *)this_00,(link->fields).id,
-                  (Object *)link,
+  if ((((link != (Link *)0x0) &&
+       (pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).links,
+       pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) &&
+      (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+       Dictionary_2_System_Object_System_Object__Add
+                 (pDVar1,(Object *)(link->fields).id,(Object *)link,
                   MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Add_int__MV__WorldObject__Link_
                  ), outputWo != (MVWorldObjectClient *)0x0)) &&
      (MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_AddOutputLink
@@ -24,40 +32,32 @@ void Assembly-CSharp.dll::Links::Links_AddLink
      inputWo != (MVWorldObjectClient *)0x0)) {
     MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_AddInputLink
               ((MVWorldObject *)inputWo,link,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar1 != MVGameMode__Enum_Edit) {
+    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar2 != MVGameMode__Enum_Edit) {
       return;
     }
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
+    if (cRam_? == '\0') {
       func_?();
+      cRam_? = '\x01';
     }
-    this_02 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if (this_02 != (PrefabPool *)0x0) {
-      pLVar2 = PrefabPool::PrefabPool_get_LinkObject(this_02,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar3 != (PrefabPool *)0x0) {
+      pLVar4 = (pPVar3->fields).linkObject;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pLVar2 = (LinkObjectScript *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                         ((XpBoostParticlePreviewer *)pLVar2,
+      pLVar4 = (LinkObjectScript *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)pLVar4,
                           LinkObjectScript_MethodInfo__UnityEngine__Object__Instantiate<LinkObjectScript>_LinkObjectScript_
                          );
-      if (pLVar2 != (LinkObjectScript *)0x0) {
-        (pLVar2->fields)._.isObjectLink = 0;
-        (pLVar2->fields)._.linkID = (link->fields).id;
-        LinkObjectScript::LinkObjectScript_UpdateLinkVisual(pLVar2,link,(MethodInfo *)0x0);
-        this_01 = (this->fields).linkObjects;
-        if (this_01 != (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-          Dictionary_2_System_Int32_System_Object__Add
-                    ((Dictionary_2_System_Int32_System_Object_ *)this_01,(link->fields).id,
-                     (Object *)pLVar2,
+      if (pLVar4 != (LinkObjectScript *)0x0) {
+        LinkObjectScript::LinkObjectScript_Initialize(pLVar4,link,(MethodInfo *)0x0);
+        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).linkObjects;
+        if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (pDVar1,(Object *)(link->fields).id,(Object *)pLVar4,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Add_int__LinkObjectScript_
                     );
           return;
@@ -66,8 +66,8 @@ void Assembly-CSharp.dll::Links::Links_AddLink
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -78,68 +78,74 @@ bool Assembly-CSharp.dll::Links::Links_Contains(Links *this,int32_t linkID,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).links;
-  if (this_00 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Object_ *)this_00,linkID,
+  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).links;
+  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)linkID,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__ContainsKey_int_
                       );
     return bVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 
 
 /* Link GetLink(Int32) */
 
-Link_1 * Assembly-CSharp.dll::Links::Links_GetLink(Links *this,int32_t linkID,MethodInfo *method)
+Link * Assembly-CSharp.dll::Links::Links_GetLink(Links *this,int32_t linkID,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__ContainsKey_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Item_int_
+                   );
+    func_?(&StringLiteral_Link_not_found);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).links;
-  if (this_00 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Object_ *)this_00,linkID,
+  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).links;
+  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)linkID,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__ContainsKey_int_
                       );
     if (bVar1 == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
                 ((Object *)StringLiteral_Link_not_found,(MethodInfo *)0x0);
-      return (Link_1 *)0x0;
+      return (Link *)0x0;
     }
-    this_01 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)(this->fields).links;
-    if (this_01 !=
-        (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-        0x0) {
-      pTVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-               Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-               Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                         (this_01,linkID,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Item_int_
-                         );
-      return (Link_1 *)pTVar2;
+    this_01 = (this->fields).links;
+    if (this_01 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0) {
+      pLVar2 = (Link *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Int32Enum,System::Object]::
+                       Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,linkID,
+                                  MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Item_int_
+                                 );
+      return pLVar2;
     }
   }
   func_?();
   pcVar3 = (code *)swi(3);
-  pLVar4 = (Link_1 *)(*pcVar3)();
-  return pLVar4;
+  pLVar2 = (Link *)(*pcVar3)();
+  return pLVar2;
 }
 
 
@@ -151,64 +157,67 @@ bool Assembly-CSharp.dll::Links::Links_RemoveLink
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__ContainsKey_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Remove_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Remove_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__get_Item_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Item_int_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Attempt_to_remove_link_with_id__);
+    func_?(&StringLiteral___but_link_not_registered_);
     cRam_? = '\x01';
   }
-  key = linkID;
-  pLVar1 = this;
-  this_00 = (this->fields).links;
-  if (this_00 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Object_ *)this_00,linkID,
+  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).links;
+  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)linkID,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__ContainsKey_int_
                       );
-    if (bVar2 == 0) {
-      this = (Links *)key;
-      arg1 = (Object *)func_?(TypeInfo__System__Int32,&this);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      message = mscorlib.dll::System::String::String_Concat_1
-                          ((Object *)StringLiteral_Attempt_to_remove_link_with_id__,arg1,
-                           (Object *)StringLiteral___but_link_not_registered_,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        outputWo = (MVWorldObjectClient *)TypeInfo__UnityEngine__Debug;
-        linkID = (int32_t)&UNK_?;
+    if (bVar1 == 0) {
+      str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&linkID,(MethodInfo *)0x0);
+      message = (MethodInfo *)
+                mscorlib.dll::System::String::String_Concat_4
+                          (StringLiteral_Attempt_to_remove_link_with_id__,str1,
+                           StringLiteral___but_link_not_registered_,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        method = (MethodInfo *)&UNK_?;
         func_?();
       }
-      outputWo = (MVWorldObjectClient *)0x0;
-      this = (Links *)&UNK_?;
-      linkID = (int32_t)message;
+      inputWo = (MVWorldObjectClient *)&UNK_?;
+      method = message;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)message,(MethodInfo *)0x0);
       return 0;
     }
-    pDVar3 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-              *)(pLVar1->fields).links;
-    if (((pDVar3 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) &&
+    pDVar2 = (this->fields).links;
+    if (((pDVar2 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0) &&
         (link = (MVWorldObjectClient *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-                Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                          (pDVar3,key,
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,linkID,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Item_int_
                           ), link != (MVWorldObjectClient *)0x0)) &&
-       (pDVar3 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                  *)(pLVar1->fields).links,
-       pDVar3 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                  *)0x0)) {
+       (pDVar2 = (this->fields).links,
+       pDVar2 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0)) {
       linkID = (int32_t)
                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Remove_int_
       ;
-      this = (Links *)(link->fields)._.id;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-      Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-      Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                (pDVar3,(int32_t)this,
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__Remove
+                ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,(link->fields)._.id,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Remove_int_
                 );
       if (outputWo != (MVWorldObjectClient *)0x0) {
@@ -216,45 +225,37 @@ bool Assembly-CSharp.dll::Links::Links_RemoveLink
         linkID = (int32_t)&UNK_?;
         inputWo = link;
         MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_RemoveOutputLink
-                  ((MVWorldObject *)outputWo,(Link_1 *)link,(MethodInfo *)0x0);
+                  ((MVWorldObject *)outputWo,(Link *)link,(MethodInfo *)0x0);
         if (inputWo != (MVWorldObjectClient *)0x0) {
           method = (MethodInfo *)&UNK_?;
           MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_RemoveInputLink
-                    ((MVWorldObject *)inputWo,(Link_1 *)link,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
-          }
-          MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-          if (MVar4 != MVGameMode__Enum_Edit) {
+                    ((MVWorldObject *)inputWo,(Link *)link,(MethodInfo *)0x0);
+          MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+          if (MVar3 != MVGameMode__Enum_Edit) {
             return 1;
           }
-          pDVar3 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                    *)(pLVar1->fields).linkObjects;
-          if ((pDVar3 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                          *)0x0) &&
-             (this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                        Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                                  (pDVar3,(link->fields)._.id,
+          pDVar4 = (this->fields).linkObjects;
+          if ((pDVar4 != (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0) &&
+             (this_01 = (Component *)
+                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Int32Enum,System::Object]::
+                        Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar4,
+                                   (link->fields)._.id,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__get_Item_int_
-                                  ), this_01 != (TerrainUtility_TerrainMap *)0x0)) {
-            obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)this_01,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+                                  ), this_01 != (Component *)0x0)) {
+            obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (this_01,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                       ((Object_1 *)obj,(MethodInfo *)0x0);
-            pDVar3 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                      *)(pLVar1->fields).linkObjects;
-            if (pDVar3 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                           *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-              Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-              Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                        (pDVar3,(link->fields)._.id,
+            pDVar4 = (this->fields).linkObjects;
+            if (pDVar4 != (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__Remove
+                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(link->fields)._.id,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Remove_int_
                         );
               return 1;
@@ -266,8 +267,8 @@ bool Assembly-CSharp.dll::Links::Links_RemoveLink
   }
   func_?();
   pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
-  return bVar2;
+  bVar1 = (*pcVar5)();
+  return bVar1;
 }
 
 
@@ -281,73 +282,101 @@ void Assembly-CSharp.dll::Links::Links_Update(Links *this,MethodInfo *method)
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__get_Item_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Values__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MV::WorldObject::Link>__GetEnumerator__
+                   );
     cRam_? = '\x01';
-  }
-  func_?();
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar4 == MVGameMode__Enum_Edit) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_02 = (MVBuildModeAvatarLocal_EditMode *)
-              MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if (this_02 == (MVBuildModeAvatarLocal_EditMode *)0x0) {
-code_?:
-      func_?();
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
-    }
-    bVar6 = MVBuildModeAvatarLocal+EditMode::MVBuildModeAvatarLocal_EditMode_get_MovementConstrained
-                      (this_02,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      this_00 = (this->fields).links;
-      if ((this_00 == (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0) ||
-         (method_00 = (MethodInfo *)
-                      mscorlib.dll::System::Collections::Generic::
-                      Dictionary`2[WinningConditionType,System::Object]::
-                      Dictionary_2_WinningConditionType_System_Object__get_Values
-                                ((Dictionary_2_WinningConditionType_System_Object_ *)this_00,
-                                 MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Values__
-                                ), method_00 == (MethodInfo *)0x0)) goto code_?;
-      mscorlib.dll::System::Collections::Generic::
-      Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-      Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__GetEnumerator
-                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_WinningConditionType_System_Object_
-                  *)&stack0xffffffbc,
-                 (Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_ *)
-                 method_00,
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MV::WorldObject::Link>__GetEnumerator__
-                );
-      uStack_1 = 0;
-      while (cVar7 = func_?(), cVar7 != '\0') {
-        link = (Link_1 *)func_?();
-        this_01 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)(this->fields).linkObjects;
-        if (((link == (Link_1 *)0x0) ||
-            (this_01 ==
-             (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-              *)0x0)) ||
-           (this_03 = (LinkObjectScript *)
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if (pMVar5 != (MainCameraManager *)0x0) {
+      if ((pMVar5->fields).isLogicRendered == 0) goto code_?;
+      this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)(this->fields).links;
+      if (this_00 !=
+          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
+         ) {
+        this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                  Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__get_Values__
+                            );
+        if (this_02 !=
+            (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+             *)0x0) {
+          mscorlib.dll::System::Collections::Generic::
+          Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+          Regex+CachedCodeEntryKey,System::Object]::
+          Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                    ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                      *)&stack0xffffffd8,this_02,
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MV::WorldObject::Link>__GetEnumerator__
+                    );
+          this_03 = (LinkObjectScript *)0x0;
+          uStack_1 = 1;
+          while( true ) {
+            link = 
+            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__MoveNext__
+            ;
+            bVar6 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                    Object,System::Object]::
+                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                                *)&stack0xffffffc8,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__MoveNext__
+                              );
+            if (bVar6 == 0) break;
+            this_01 = (this->fields).linkObjects;
+            if ((link == (MethodInfo *)0x0) ||
+               (this_01 == (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0))
+            goto code_?;
+            this_03 = (LinkObjectScript *)
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                      Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                                (this_01,(link->fields).id,
+                      Int32Enum,System::Object]::
+                      Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,
+                                 (Int32Enum__Enum)link->invoker_method,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__get_Item_int_
-                                ), this_03 == (LinkObjectScript *)0x0)) goto code_?;
-        LinkObjectScript::LinkObjectScript_UpdateLinkVisual(this_03,link,method_00);
+                                );
+            if (this_03 == (LinkObjectScript *)0x0) goto code_?;
+            LinkObjectScript::LinkObjectScript_UpdateLinkVisual
+                      (this_03,(Link *)link,(MethodInfo *)0x0);
+          }
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&stack0xffffffc8,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__Dispose__
+                     ,(MethodInfo *)this_03);
+          goto code_?;
+        }
       }
-      uStack_1 = 0xffffffff;
-      func_?();
     }
+code_?:
+    func_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
   }
+code_?:
   *unaff_FS_OFFSET = uStack_3;
   return;
 }
@@ -359,29 +388,50 @@ void Assembly-CSharp.dll::Links::Links__ctor(Links *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>);
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>)
+    ;
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>
                            );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Dictionary__
-            );
-  (this->fields).links = this_00;
-  method_00 = TypeInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>;
-  this_01 = (Dictionary_2_System_Int32_LinkObjectScript_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Dictionary__
-            );
-  (this->fields).linkObjects = this_01;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  if (this_00 != (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Dictionary__
+              );
+    (this->fields).links = this_00;
+    func_?(&this->fields,this_00);
+    this_01 = (Dictionary_2_System_Int32_LinkObjectScript_ *)
+              func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>
+                             );
+    if (this_01 != (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0) {
+      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                ((ParameterOverride_1_System_Object_ *)this_01,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Dictionary__
+                );
+      method_00 = (MethodInfo *)&(this->fields).linkObjects;
+      (this->fields).linkObjects = this_01;
+      func_?(method_00,this_01);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+      return;
+    }
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

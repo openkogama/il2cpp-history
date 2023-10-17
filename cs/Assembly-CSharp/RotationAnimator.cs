@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class RotationAnimator : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class RotationAnimator : MonoBehaviour
 	[SerializeField]
 	private RectTransform rotateTarget;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Rotation animation curve, value 1 = full rotation")]
 	private AnimationCurve rotateCurve;
 	[SerializeField]
 	private float rotateSpeed;

@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ObjExportHandler : MonoBehaviour
 {
@@ -26,6 +26,6 @@ public class ObjExportHandler : MonoBehaviour
 	public static void ExportSelfAvatar();
 	private void Update();
 	private static bool Pick(ref VoxelHit hit, HashSet<int> ignoreWoIds = null, int layerMask = -262149);
-	private static bool MVObjectIsType(Transform t, Type type, out int woId);
+	private static bool MVObjectIsType(Transform t, System.Type type, out int woId);
 }
 

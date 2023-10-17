@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatableExitPlayInEditPointer : FirstTimeActivatableButtonPointer
 {
@@ -19,11 +19,26 @@ public class FirstTimeActivatableExitPlayInEditPointer : FirstTimeActivatableBut
 	private float currentTime;
 	private bool canShow;
 	private bool isDeleting;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __f__am_cache0;
 
 	// Properties
 	public override bool CanShow { get; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __9__8_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Update_b__8_1(IFirstTimeElementActivator x, BaseEventData y);
+	}
 
 	// Constructors
 	public FirstTimeActivatableExitPlayInEditPointer();
@@ -33,10 +48,8 @@ public class FirstTimeActivatableExitPlayInEditPointer : FirstTimeActivatableBut
 	private void Update();
 	protected override void OnShown();
 	[CompilerGenerated]
-	private void _Update_m__0(TextBubbleController x, BaseEventData y);
+	private void _Update_b__8_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private static void _Update_m__1(IFirstTimeElementActivator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _OnShown_m__2(TextBubbleController x, BaseEventData y);
+	private void _OnShown_b__9_0(TextBubbleController x, BaseEventData y);
 }
 

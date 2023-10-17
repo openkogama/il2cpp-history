@@ -7,17 +7,18 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarMotor : MVRigidBody
 {
 	// Fields
-	private float walkSpeedDefault;
+	public const float WalkSpeedDefaultBase = 8f;
+	private const float AirAccelerationDefault = 3f;
 	private float walkSpeed;
+	private float walkSpeedBase;
 	private float speed;
 	private AnimationCurve slopeSpeedMultiplier;
 	private Vector3 velocityPrevFrame;
-	private const float airAccelerationDefault = 3f;
 	private JumpState jumpState;
 	private BounceState bounceState;
 	private WaterState waterState;
@@ -30,12 +31,10 @@ public class AvatarMotor : MVRigidBody
 	private float frictionMultiplier;
 	protected StuckEvaluator stuckEvaluator;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private SizeState _GetSizeState_k__BackingField;
 	public OnWallJumpDelegate OnWallJump;
 	public OnActiveBounceDelegate OnActiveBounce;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsMovementLocked_k__BackingField;
 	private float currentLerp;
 	private readonly float lerpTime;
@@ -43,6 +42,7 @@ public class AvatarMotor : MVRigidBody
 	// Properties
 	private MvCharacterController Controller { get; }
 	public SizeState GetSizeState { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public float WalkSpeedBase { get; set; }
 	private float FrictionCoefficient { get; }
 	public override Vector3 Velocity { get; }
 	public override bool Grounded { get; }
@@ -79,6 +79,6 @@ public class AvatarMotor : MVRigidBody
 	public bool IsJumping();
 	public bool IsAirJumping();
 	[CompilerGenerated]
-	private void _Init_m__0();
+	private void _Init_b__43_0();
 }
 

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVNetworkGameStateListener
 {
@@ -17,7 +17,6 @@ public class MVNetworkGameStateListener
 	private MVGameStateType currentGameState;
 	private int timeLeft;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<GameStateChangeEventArgs> OnGameStateChanged;
 
 	// Properties

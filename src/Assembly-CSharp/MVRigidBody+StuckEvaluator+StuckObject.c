@@ -7,152 +7,111 @@ bool Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeBase);
+    func_?(0x9c);
+    func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_00 == (MVWorldObjectClientManager *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    pMVar1 = (MVCubeModelBase *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(this->fields).overlapResult.woId,(MethodInfo *)0x0);
-    if (pMVar1 == (MVCubeModelBase *)0x0) {
+  this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_02 != (MVWorldObjectClientManager *)0x0) {
+    this_03 = (MVCubeModelBase *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (this_02,(this->fields).overlapResult.woId,(MethodInfo *)0x0);
+    if (this_03 == (MVCubeModelBase *)0x0) {
       return 0;
     }
-    pMVar2 = pMVar1->klass;
-    bVar3 = (pMVar2->_1).naturalAligment;
-    bVar4 = (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment;
-    if ((bVar3 < bVar4) ||
-       ((MVCubeModelFineGrainedTerrain__Class *)(pMVar2->_1).typeHierarchy[bVar4 - 1] !=
-        TypeInfo__MVCubeModelFineGrainedTerrain)) {
-      bVar5 = false;
-    }
-    else {
-      bVar5 = true;
-    }
-    pMVar6 = (MVCubeModelBase *)0x0;
-    if (bVar5) {
-      pMVar6 = pMVar1;
-    }
-    if (pMVar6 == (MVCubeModelBase *)0x0) {
+    if ((this_03->klass->_1).typeHierarchyDepth <
+        (TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth) {
       return 0;
     }
-    bVar4 = (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment;
-    if ((bVar3 < bVar4) ||
-       ((MVCubeModelFineGrainedTerrain__Class *)(pMVar2->_1).typeHierarchy[bVar4 - 1] !=
-        TypeInfo__MVCubeModelFineGrainedTerrain)) {
-      bVar5 = false;
+    if ((MVCubeModelFineGrainedTerrain__Class *)
+        (this_03->klass->_1).typeHierarchy
+        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth - 1] !=
+        TypeInfo__MVCubeModelFineGrainedTerrain) {
+      return 0;
     }
-    else {
-      bVar5 = true;
-    }
-    pMVar6 = (MVCubeModelBase *)0x0;
-    if (bVar5) {
-      pMVar6 = pMVar1;
-    }
-    if (pMVar6 == (MVCubeModelBase *)0x0) goto code_?;
-    uVar7 = 0;
-    pIVar8 = (this->fields).overlapResult.localCubePos;
-    if (pIVar8 == (IntVector__Array *)0x0) goto code_?;
-    pIVar9 = pIVar8->vector;
-    while( true ) {
-      if ((int)pIVar8->max_length <= (int)uVar7) {
-        return 1;
-      }
-      if (pIVar8->max_length <= uVar7) break;
-      position = *pIVar9;
-      pos_00 = *pIVar9;
-      pos.z._1_1_ = (char)((ushort)pIVar9->z >> 8);
-      pos._0_5_ = *(undefined5 *)pIVar9;
-      pSVar10 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                 *)MVCubeModelBase::MVCubeModelBase_GetCube(pMVar6,pos,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__MV__WorldObject__CubeBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-         && ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar11 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
-                        ((CubeBase *)pSVar10,(CubeBase *)0x0,(MethodInfo *)0x0);
-      if (bVar11 == 0) {
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?((short)TypeInfo__MVGameControllerBase);
-        }
-        pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((((pMVar12 == (MVNetworkGame *)0x0) ||
-             (this_01 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                                  ((DayNightCycle *)pMVar12,(MethodInfo *)0x0),
-             pSVar10 ==
-             (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-              *)0x0)) ||
-            (pOVar13 = System.dll::System::Collections::Generic::
-                       SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                       ::Single,System::Object]::
-                       SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                 (pSVar10,(MethodInfo *)0x0), pOVar13 == (Object *)0x0)) ||
-           ((materialId = func_?(), this_01 == (CelestialParam *)0x0 ||
-            (this_02 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                                 ((MVMaterialRepository *)this_01,materialId,(MethodInfo *)0x0),
-            this_02 == (MVMaterial *)0x0)))) goto code_?;
-        pPVar14 = MVMaterial::MVMaterial_get_PhysicalProperties
-                            ((PhysicalProperties *)&stack0xffffffc0,this_02,(MethodInfo *)0x0);
-        if (pPVar14->toughness != 0.0) {
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
+    pMVar1 = TypeInfo__MVCubeModelFineGrainedTerrain;
+    unaff_ESI = this_03;
+    if (((this_03->klass->_1).typeHierarchyDepth <
+         (TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth) ||
+       ((MVCubeModelFineGrainedTerrain__Class *)
+        (this_03->klass->_1).typeHierarchy
+        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth - 1] !=
+        TypeInfo__MVCubeModelFineGrainedTerrain)) goto code_?;
+    pIVar2 = (this->fields).overlapResult.localCubePos;
+    unaff_ESI = (MVCubeModelBase *)0x0;
+    if (pIVar2 != (IntVector__Array *)0x0) {
+      pIVar3 = pIVar2->vector;
+      while( true ) {
+        while( true ) {
+          if ((int)pIVar2->max_length <= (int)unaff_ESI) {
+            return 1;
           }
-          pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar12 != (MVNetworkGame *)0x0) &&
-             (pSVar10 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)CloudyTheme::CloudyTheme_get_Identifier
-                                     ((CloudyTheme *)pMVar12,(MethodInfo *)0x0),
-             pSVar10 !=
-             (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-              *)0x0)) {
-            this_03 = (RuntimeEventManager *)
-                      System.dll::System::Collections::Generic::
-                      SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                      ::Single,System::Object]::
-                      SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                (pSVar10,(MethodInfo *)0x0);
-            this_04 = (SingleCubeFineGrainedEvent *)func_?();
-            MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::
-            SingleCubeFineGrainedEvent__ctor_1(this_04,position,(MethodInfo *)0x0);
-            if (this_03 != (RuntimeEventManager *)0x0) {
-              RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent_1
-                        (this_03,this_04,(MethodInfo *)0x0);
-              func_?();
-              goto code_?;
-            }
+          if ((MVCubeModelBase *)pIVar2->max_length <= unaff_ESI) goto code_?;
+          uVar4._0_2_ = pIVar3->x;
+          uVar4._2_2_ = pIVar3->y;
+          iVar5 = pIVar3->z;
+          IVar6 = *pIVar3;
+          uVar7 = *(undefined5 *)pIVar3;
+          a = MVCubeModelBase::MVCubeModelBase_GetCube(this_03,*pIVar3,(MethodInfo *)0x0);
+          if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__MV__WorldObject__CubeBase);
           }
-          goto code_?;
+          bVar8 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
+                            ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
+          if (bVar8 == 0) break;
+          unaff_ESI = (MVCubeModelBase *)((int)&unaff_ESI->klass + 1);
+          pIVar3 = pIVar3 + 1;
         }
-        MVCubeModelBase::MVCubeModelBase_RemoveCube(pMVar6,pos_00,(MethodInfo *)0x0);
-        MVCubeModelBase::MVCubeModelBase_HandleDelta(pMVar6,(MethodInfo *)0x0);
-        uVar7 = uVar7 + 1;
-        pIVar9 = pIVar9 + 1;
-      }
-      else {
-code_?:
-        uVar7 = uVar7 + 1;
-        pIVar9 = pIVar9 + 1;
+        pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (((pMVar9 == (MVNetworkGame *)0x0) || (a == (Cube *)0x0)) ||
+           (pBVar10 = (a->fields)._.faceMaterials, pBVar10 == (Byte__Array *)0x0)) break;
+        if (pBVar10->max_length == 0) goto code_?;
+        this_00 = (pMVar9->fields)._MaterialRepository_k__BackingField;
+        if ((this_00 == (MVMaterialRepository *)0x0) ||
+           (pMVar11 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                                (this_00,pBVar10->vector[0],(MethodInfo *)0x0),
+           pMVar11 == (MVMaterial *)0x0)) break;
+        fVar12 = (pMVar11->fields)._PhysicalProperties_k__BackingField.bouncyness;
+        fVar13 = (pMVar11->fields)._PhysicalProperties_k__BackingField.softness;
+        fVar14 = (pMVar11->fields)._PhysicalProperties_k__BackingField.staticFriction;
+        if ((pMVar11->fields)._PhysicalProperties_k__BackingField.toughness == 0.0) {
+          MVCubeModelBase::MVCubeModelBase_RemoveCube(this_03,IVar6,(MethodInfo *)0x0);
+          MVCubeModelBase::MVCubeModelBase_HandleDelta(this_03,(MethodInfo *)0x0);
+          unaff_ESI = (MVCubeModelBase *)((int)&unaff_ESI->klass + 1);
+          pIVar3 = pIVar3 + 1;
+        }
+        else {
+          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar9 == (MVNetworkGame *)0x0) ||
+             (pWVar15 = (pMVar9->fields).worldNetwork, pWVar15 == (WorldNetwork *)0x0)) break;
+          this_01 = (RuntimeEventManager *)(pWVar15->fields)._.runtimeEventManagerNetwork;
+          this_04 = (SingleCubeFineGrainedEvent *)
+                    func_?(TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent
+                                    ,fVar12,fVar13,fVar14);
+          if ((this_04 == (SingleCubeFineGrainedEvent *)0x0) ||
+             (IVar6.z._1_1_ = (char)((ushort)iVar5 >> 8), IVar6._0_5_ = uVar7,
+             MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::
+             SingleCubeFineGrainedEvent__ctor_1(this_04,IVar6,(MethodInfo *)0x0),
+             this_01 == (RuntimeEventManager *)0x0)) break;
+          RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent_1
+                    (this_01,this_04,(MethodInfo *)0x0);
+          func_?(0x65,this_03,uVar4,iVar5);
+          unaff_ESI = (MVCubeModelBase *)((int)&unaff_ESI->klass + 1);
+          pIVar3 = pIVar3 + 1;
+        }
       }
     }
   }
-  uVar15 = func_?(0);
-  func_?(uVar15);
+  func_?();
+code_?:
+  func_?();
   pMVar1 = extraout_EDX;
 code_?:
-  func_?((char)pMVar1);
+  func_?((short)unaff_ESI,pMVar1);
   pcVar16 = (code *)swi(3);
-  bVar11 = (*pcVar16)();
-  return bVar11;
+  bVar8 = (*pcVar16)();
+  return bVar8;
 }
 
 
@@ -180,11 +139,28 @@ void Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
                MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).overlapResult.woId = overlapResult.woId;
   (this->fields).overlapResult.localCubePos = overlapResult.localCubePos;
+  func_?(&(this->fields).overlapResult.localCubePos,0);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).stuckTime = fVar1;
+  return;
+}
+
+
+/* Void set_OverlapResult(MVOverlapResult) */
+
+void Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
+     MVRigidBody_StuckEvaluator_StuckObject_set_OverlapResult
+               (MVRigidBody_StuckEvaluator_StuckObject *this,MVOverlapResult value,
+               MethodInfo *method)
+
+{
+  (this->fields).overlapResult.woId = value.woId;
+  (this->fields).overlapResult.localCubePos = value.localCubePos;
+  func_?(&(this->fields).overlapResult.localCubePos,0);
   return;
 }
 

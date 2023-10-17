@@ -9,15 +9,30 @@ using ThemeAttributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeColorPickerRGBA : ThemeColorPickerRGB, IHandleSettingChanged
 {
 	// Fields
 	[SerializeField]
 	private SettingsSlider sliderA;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Action<Color> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Action<Color> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Initialize_b__2_0(Color c);
+	}
 
 	// Constructors
 	public ThemeColorPickerRGBA();
@@ -26,7 +41,5 @@ public class ThemeColorPickerRGBA : ThemeColorPickerRGB, IHandleSettingChanged
 	protected override void Reset();
 	public override void Initialize(ColorAttribute attrib, Action<Color> onChange);
 	public override void OnSettingChanged(string key, object value);
-	[CompilerGenerated]
-	private static new void _Initialize_m__0(Color c);
 }
 

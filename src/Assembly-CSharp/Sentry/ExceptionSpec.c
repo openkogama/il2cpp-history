@@ -7,17 +7,28 @@ void Assembly-CSharp.dll::Sentry::ExceptionSpec::ExceptionSpec__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Sentry__StackTraceContainer);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).type = type;
+  func_?(&this->fields,type);
   (this->fields).value = value;
-  method_00 = TypeInfo__Sentry__StackTraceContainer;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this_00->fields)._._._._.m_CachedPtr = stacktrace;
-  (this->fields).stacktrace = (StackTraceContainer *)this_00;
+  func_?(&(this->fields).value,value);
+  value_00 = (StackTraceContainer *)func_?(TypeInfo__Sentry__StackTraceContainer);
+  if (value_00 != (StackTraceContainer *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EBP);
+    (value_00->fields).frames = stacktrace;
+    func_?(&value_00->fields,stacktrace);
+    (this->fields).stacktrace = value_00;
+    func_?(&(this->fields).stacktrace,value_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

@@ -6,172 +6,160 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&
+                    MethodInfo__FirstTimeSystemPopupCamera____c___Update_b__8_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FirstTimeSystemPopupCamera____c);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
-  method_00 = (MethodInfo *)0x6;
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                     (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
     bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                       (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-        func_?();
+      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MVInputWrapper);
       }
       pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
                StandaloneInput_MousePosition
-                         ((Vector3 *)&stack0xffffffe4,(StandaloneInput *)0x0,in_stack_3);
-      uVar4._0_4_ = (this->fields).mousePos.x;
-      uVar4._4_4_ = (this->fields).mousePos.y;
-      fVar5 = (this->fields).mousePos.z;
-      uVar6._0_4_ = pVVar2->x;
-      uVar6._4_4_ = pVVar2->y;
+                         ((Vector3 *)&stack0x00000000,(StandaloneInput *)0x0,in_stack_3);
+      uVar4 = pVVar2->x;
+      uVar5 = pVVar2->y;
+      method = (MethodInfo *)(this->fields).mousePos.x;
+      in_stack_6 = (this->fields).mousePos.y;
+      fVar7 = (float)uVar4 - (float)method;
+      fVar8 = (float)uVar5 - in_stack_6;
+      fVar9 = pVVar2->z - (this->fields).mousePos.z;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      dVar10 = (double)(fVar8 * fVar8 + fVar7 * fVar7 + fVar9 * fVar9);
+      if (dVar10 < 0.0) {
+        func_?();
+      }
+      else {
+        dVar10 = SQRT(dVar10);
+      }
+      (this->fields).mouseMoved = (float)dVar10 + in_stack_11;
+      pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
+               StandaloneInput_MousePosition
+                         ((Vector3 *)&method,(StandaloneInput *)0x0,in_stack_12);
+      fVar8 = pVVar2->y;
       fVar7 = pVVar2->z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        puVar8 = &UNK_?;
-        func_?();
-        uVar6 = CONCAT44(puVar8,(undefined4)uVar6);
-      }
-      a.z = fVar7;
-      a.x = (float)(int)uVar6;
-      a.y = (float)(int)((ulonglong)uVar6 >> 0x20);
-      b.z = fVar5;
-      b.x = (float)(int)uVar4;
-      b.y = (float)(int)((ulonglong)uVar4 >> 0x20);
-      UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                ((Vector3 *)&stack0xffffffe4,a,b,(MethodInfo *)0x0);
-      uVar4._0_4_ = 0.0;
-      fVar9 = (float10)func_?();
-      (this->fields).mouseMoved = (float)(fVar9 + (float10)(float)uVar4);
-      pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-               StandaloneInput_MousePosition
-                         ((Vector3 *)&stack0xffffffe4,(StandaloneInput *)0x0,method_00);
-      uVar4._4_4_ = pVVar2->y;
-      uVar4._0_4_ = pVVar2->z;
       (this->fields).mousePos.x = pVVar2->x;
-      (this->fields).mousePos.y = uVar4._4_4_;
-      (this->fields).mousePos.z = (float)uVar4;
+      (this->fields).mousePos.y = fVar8;
+      (this->fields).mousePos.z = fVar7;
     }
   }
   else {
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
     pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
              StandaloneInput_MousePosition
-                       ((Vector3 *)&stack0xffffffe4,(StandaloneInput *)0x0,unaff_EBX);
-    uVar4._4_4_ = pVVar2->y;
-    uVar4._0_4_ = pVVar2->z;
+                       ((Vector3 *)&stack0xfffffff0,(StandaloneInput *)0x0,unaff_EBX);
+    fVar8 = pVVar2->y;
+    fVar7 = pVVar2->z;
     (this->fields).mousePos.x = pVVar2->x;
-    (this->fields).mousePos.y = uVar4._4_4_;
-    (this->fields).mousePos.z = (float)uVar4;
-    pGVar10 = (this->fields).inActiveImage;
-    if (pGVar10 == (GameObject *)0x0) goto code_?;
+    (this->fields).mousePos.y = fVar8;
+    (this->fields).mousePos.z = fVar7;
+    pGVar13 = (this->fields).inActiveImage;
+    if (pGVar13 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar10,0,(MethodInfo *)0x0);
-    pGVar10 = (this->fields).activeImage;
-    if (pGVar10 == (GameObject *)0x0) goto code_?;
+              (pGVar13,0,(MethodInfo *)0x0);
+    pGVar13 = (this->fields).activeImage;
+    if (pGVar13 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar10,1,(MethodInfo *)0x0);
+              (pGVar13,1,(MethodInfo *)0x0);
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-    func_?();
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                     (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    pGVar10 = (this->fields).inActiveImage;
-    if (pGVar10 == (GameObject *)0x0) goto code_?;
+    pGVar13 = (this->fields).inActiveImage;
+    if (pGVar13 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar10,1,(MethodInfo *)0x0);
-    pGVar10 = (this->fields).activeImage;
-    if (pGVar10 == (GameObject *)0x0) goto code_?;
+              (pGVar13,1,(MethodInfo *)0x0);
+    pGVar13 = (this->fields).activeImage;
+    if (pGVar13 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar10,0,(MethodInfo *)0x0);
+              (pGVar13,0,(MethodInfo *)0x0);
   }
   if ((this->fields).mouseMoveDistance <= (this->fields).mouseMoved) {
-    uVar4._0_4_ = (this->fields).currentFade;
-    uVar4._4_4_ = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                            ((MethodInfo *)0x0);
+    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     this_00 = (this->fields).group;
-    (this->fields).currentFade = uVar4._4_4_ + (float)uVar4;
+    (this->fields).currentFade = fVar7 + in_stack_14;
     if (this_00 == (CanvasGroup *)0x0) {
 code_?:
+      method = (MethodInfo *)&UNK_?;
       func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
       return;
     }
+    _method = _method & 0xffffffff00000000;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (this_00,_UNK_? - (uVar4._4_4_ + (float)uVar4) / (this->fields).fadeDuration,
+              (this_00,_UNK_? - (fVar7 + in_stack_14) / (this->fields).fadeDuration,
                (MethodInfo *)0x0);
     if ((this->fields).fadeDuration <= (this->fields).currentFade) {
-      pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if (TypeInfo__FirstTimeSystemPopupCamera->static_fields->__f__am_cache0 ==
-          (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_01,(Object *)0x0,
-                   MethodInfo__FirstTimeSystemPopupCamera___Update_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                  );
-        TypeInfo__FirstTimeSystemPopupCamera->static_fields->__f__am_cache0 =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)this_01;
-      }
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-           TypeInfo__FirstTimeSystemPopupCamera->static_fields->__f__am_cache0;
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+      _method = CONCAT44(&UNK_?,method);
+      pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__FirstTimeSystemPopupCamera____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (pGVar10,(BaseEventData *)0x0,callbackFunction,
+      callbackFunction = TypeInfo__FirstTimeSystemPopupCamera____c->static_fields->__9__8_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__FirstTimeSystemPopupCamera____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        object = TypeInfo__FirstTimeSystemPopupCamera____c->static_fields->__9;
+        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
+        goto code_?;
+        _method = _method & 0xffffffff00000000;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__FirstTimeSystemPopupCamera____c___Update_b__8_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        _method = CONCAT44(in_stack_6,callbackFunction);
+        TypeInfo__FirstTimeSystemPopupCamera____c->static_fields->__9__8_0 = callbackFunction;
+        func_?();
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      in_stack_6 = (float)&UNK_?;
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar13,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
     }
   }
-  return;
-}
-
-
-/* Void <Update>m__0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera__Update_m__0
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(3,TypeInfo__UnityEngine__EventSystems__IUIStack,x,0x20);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 
@@ -182,15 +170,13 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera
                (FirstTimeSystemPopupCamera *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
+  (this->fields).mousePos.x = 0.0;
+  (this->fields).mousePos.y = 0.0;
   (this->fields).mouseMoveDistance = 30.0;
   (this->fields).fadeDuration = 0.4;
-  uStack_2 = 0;
-  func_?(&uStack_2,0,0,0,0);
-  (this->fields).mousePos.x = (float)(undefined4)uStack_2;
-  (this->fields).mousePos.y = (float)uStack_2._4_4_;
-  (this->fields).mousePos.z = fStack_1;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  (this->fields).mousePos.z = 0.0;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

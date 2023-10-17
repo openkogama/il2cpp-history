@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MaterialsController : MonoBehaviour, IMaterialClicked, IHandleMaterial
 {
@@ -28,39 +28,53 @@ public class MaterialsController : MonoBehaviour, IMaterialClicked, IHandleMater
 	private MaterialViewItem materialViewItemPrefab;
 	public UnityAction<byte> materialChange;
 	public UnityAction materialsPop;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Push_c__AnonStorey0
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal UIPushOption pushOption;
-		internal UnityAction onPop;
-		internal MaterialsController _this;
+		public MaterialsController __4__this;
+		public UIPushOption pushOption;
+		public UnityAction onPop;
 
 		// Constructors
-		public _Push_c__AnonStorey0();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Push_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__17_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnMaterialClicked_b__16_0(IUIStack x, BaseEventData y);
+		internal void _ShowInventory_b__17_0(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowInventory_c__AnonStorey1
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
-		internal UIPushOption pushOption;
-		internal MaterialsController _this;
+		public MaterialsController __4__this;
+		public UIPushOption pushOption;
 
 		// Constructors
-		public _ShowInventory_c__AnonStorey1();
+		public __c__DisplayClass17_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowInventory_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -79,9 +93,5 @@ public class MaterialsController : MonoBehaviour, IMaterialClicked, IHandleMater
 	public void UpdateContent();
 	private void InitializeMaterialInventoryData();
 	private void OnPop();
-	[CompilerGenerated]
-	private static void _OnMaterialClicked_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ShowInventory_m__1(IUIStack handler, BaseEventData data);
 }
 

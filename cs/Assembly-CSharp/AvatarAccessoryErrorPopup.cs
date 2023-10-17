@@ -10,7 +10,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarAccessoryErrorPopup : MonoBehaviour
 {
@@ -28,8 +28,23 @@ public class AvatarAccessoryErrorPopup : MonoBehaviour
 	[SerializeField]
 	private GameObject emptyFrame;
 	private UnityAction<bool> resultCallback;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__8_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnButtonPressed_b__8_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public AvatarAccessoryErrorPopup();
@@ -38,7 +53,5 @@ public class AvatarAccessoryErrorPopup : MonoBehaviour
 	public void Initialize(UnityAction<bool> resultCallback, string previewImageUrl, AccessoryDataClient accessoryData, string header, string buttonText);
 	public void OnButtonPressed(bool confirmed);
 	private void OnPreviewImageDownLoaded();
-	[CompilerGenerated]
-	private static void _OnButtonPressed_m__0(IUIStack x, BaseEventData y);
 }
 

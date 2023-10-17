@@ -6,13 +6,8 @@ Vector3 * Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper_Clamp
                     MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  func_?(&fStack_1,0,0x40);
-  uStack_2._0_4_ = (this->fields).worldToElipsoidSpace.m00;
-  uStack_2._4_4_ = (this->fields).worldToElipsoidSpace.m10;
+  auStack_1._8_4_ = (this->fields).worldToElipsoidSpace.m00;
+  fStack_2 = (this->fields).worldToElipsoidSpace.m10;
   fStack_3 = (this->fields).worldToElipsoidSpace.m20;
   fStack_4 = (this->fields).worldToElipsoidSpace.m30;
   fStack_5 = (this->fields).worldToElipsoidSpace.m01;
@@ -27,48 +22,65 @@ Vector3 * Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper_Clamp
   fStack_14 = (this->fields).worldToElipsoidSpace.m13;
   fStack_15 = (this->fields).worldToElipsoidSpace.m23;
   fStack_16 = (this->fields).worldToElipsoidSpace.m33;
-  puVar17 = (undefined8 *)func_?(auStack_18,&uStack_2,deltaDir.x,deltaDir.y,deltaDir.z,0);
-  uVar19 = *puVar17;
-  fVar20 = *(float *)(puVar17 + 1);
-  deltaDir.y = (float)uVar19;
-  deltaDir.z = (float)((ulonglong)uVar19 >> 0x20);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-    uVar19 = CONCAT44(deltaDir.z,deltaDir.y);
+  pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                     (&VStack_18,(Matrix4x4 *)(auStack_1 + 8),deltaDir,(MethodInfo *)0x0);
+  fStack_19 = pVVar17->x;
+  fStack_20 = pVVar17->y;
+  fVar21 = pVVar17->z;
+  fStack_5 = 0.0;
+  fStack_6 = 0.0;
+  fStack_22 = fVar21;
+  fStack_3 = fStack_19;
+  fStack_4 = fStack_20;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
-  vector.z = fVar20;
-  vector.x = (float)(int)uVar19;
-  vector.y = (float)(int)((ulonglong)uVar19 >> 0x20);
-  pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_ClampMagnitude
-                     (&deltaDir,vector,1.0,(MethodInfo *)0x0);
-  fStack_1 = (this->fields).elipsoidSpaceToWorld.m00;
-  fStack_22 = (this->fields).elipsoidSpaceToWorld.m10;
-  fStack_23 = (this->fields).elipsoidSpaceToWorld.m20;
-  fStack_24 = (this->fields).elipsoidSpaceToWorld.m30;
-  uStack_2._0_4_ = pVVar21->x;
-  uStack_2._4_4_ = pVVar21->y;
-  fStack_3 = pVVar21->z;
-  fStack_4 = 0.0;
-  fStack_25 = (this->fields).elipsoidSpaceToWorld.m01;
-  fStack_26 = (this->fields).elipsoidSpaceToWorld.m11;
-  fStack_27 = (this->fields).elipsoidSpaceToWorld.m21;
-  fStack_28 = (this->fields).elipsoidSpaceToWorld.m31;
-  fStack_29 = (this->fields).elipsoidSpaceToWorld.m02;
-  fStack_30 = (this->fields).elipsoidSpaceToWorld.m12;
-  fStack_31 = (this->fields).elipsoidSpaceToWorld.m22;
-  fStack_32 = (this->fields).elipsoidSpaceToWorld.m32;
-  fStack_33 = (this->fields).elipsoidSpaceToWorld.m03;
-  fStack_34 = (this->fields).elipsoidSpaceToWorld.m13;
-  fStack_35 = (this->fields).elipsoidSpaceToWorld.m23;
-  fStack_36 = (this->fields).elipsoidSpaceToWorld.m33;
-  puVar17 = (undefined8 *)func_?(&deltaDir,&fStack_1);
-  uVar19 = *puVar17;
-  fVar20 = *(float *)(puVar17 + 1);
-  __return_storage_ptr__->x = (float)(int)uVar19;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar19 >> 0x20);
-  __return_storage_ptr__->z = fVar20;
-  return __return_storage_ptr__;
+  VStack_18.z = fStack_20 * fStack_20 + fStack_19 * fStack_19 + fStack_22 * fStack_22;
+  fVar23 = fStack_3;
+  fVar24 = fStack_4;
+  if (_UNK_? < VStack_18.z) {
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    dVar25 = (double)VStack_18.z;
+    if (dVar25 < 0.0) {
+      func_?();
+    }
+    else {
+      dVar25 = SQRT(dVar25);
+    }
+    fVar24 = (float)dVar25;
+    fVar21 = fStack_22 / fVar24;
+    fVar23 = fStack_19 / fVar24;
+    fVar24 = fStack_20 / fVar24;
+    fStack_22 = fVar21;
+  }
+  fStack_7 = (this->fields).elipsoidSpaceToWorld.m00;
+  fStack_8 = (this->fields).elipsoidSpaceToWorld.m10;
+  fStack_9 = (this->fields).elipsoidSpaceToWorld.m20;
+  fStack_10 = (this->fields).elipsoidSpaceToWorld.m30;
+  fStack_11 = (this->fields).elipsoidSpaceToWorld.m01;
+  fStack_12 = (this->fields).elipsoidSpaceToWorld.m11;
+  fStack_13 = (this->fields).elipsoidSpaceToWorld.m21;
+  fStack_14 = (this->fields).elipsoidSpaceToWorld.m31;
+  fStack_15 = (this->fields).elipsoidSpaceToWorld.m02;
+  fStack_16 = (this->fields).elipsoidSpaceToWorld.m12;
+  fStack_26 = (this->fields).elipsoidSpaceToWorld.m22;
+  fStack_27 = (this->fields).elipsoidSpaceToWorld.m32;
+  fStack_28 = (this->fields).elipsoidSpaceToWorld.m03;
+  pVVar17 = (Vector3 *)(this->fields).elipsoidSpaceToWorld.m33;
+  vector.y = fVar24;
+  vector.x = fVar23;
+  vector.z = fVar21;
+  pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                     ((Vector3 *)auStack_1,(Matrix4x4 *)&fStack_7,vector,(MethodInfo *)0x0);
+  fVar23 = pVVar29->y;
+  fVar21 = pVVar29->z;
+  pVVar17->x = pVVar29->x;
+  pVVar17->y = fVar23;
+  pVVar17->z = fVar21;
+  return pVVar17;
 }
 
 
@@ -78,28 +90,38 @@ bool Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper_IsIdentical
                (UIElipsoidHelper *this,float width,float height,MethodInfo *method)
 
 {
+  fVar1 = (this->fields).width;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Mathf);
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields).width;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  fVar2 = (float)((uint)fVar1 & _UNK_?);
+  if (fVar2 <= (float)((uint)width & _UNK_?)) {
+    fVar2 = (float)((uint)width & _UNK_?);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Approximately
-                    (fVar1,width,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  fVar3 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+  fVar4 = fVar2 * _UNK_?;
+  if (fVar2 * _UNK_? <= fVar3) {
+    fVar4 = fVar3;
+  }
+  if (fVar4 <= (float)((uint)(width - fVar1) & _UNK_?)) {
     return 0;
   }
   fVar1 = (this->fields).height;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?();
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Mathf);
+    cRam_? = '\x01';
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Approximately
-                    (fVar1,height,(MethodInfo *)0x0);
-  return bVar2;
+  fVar2 = (float)((uint)fVar1 & _UNK_?);
+  if (fVar2 <= (float)((uint)height & _UNK_?)) {
+    fVar2 = (float)((uint)height & _UNK_?);
+  }
+  fVar3 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+  fVar4 = fVar2 * _UNK_?;
+  if (fVar2 * _UNK_? <= fVar3) {
+    fVar4 = fVar3;
+  }
+  return (float)((uint)(height - fVar1) & _UNK_?) < fVar4;
 }
 
 
@@ -109,29 +131,46 @@ float Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper_NormalizedDistance
                 (UIElipsoidHelper *this,Vector3 deltaDir,MethodInfo *method)
 
 {
-  uStack_1 = 0;
-  uStack_2 = 0;
-  fStack_3 = (this->fields).worldToElipsoidSpace.m00;
-  fStack_4 = (this->fields).worldToElipsoidSpace.m10;
-  fStack_5 = (this->fields).worldToElipsoidSpace.m20;
-  fStack_6 = (this->fields).worldToElipsoidSpace.m30;
-  fStack_7 = (this->fields).worldToElipsoidSpace.m01;
-  fStack_8 = (this->fields).worldToElipsoidSpace.m11;
-  fStack_9 = (this->fields).worldToElipsoidSpace.m21;
-  fStack_10 = (this->fields).worldToElipsoidSpace.m31;
-  fStack_11 = (this->fields).worldToElipsoidSpace.m02;
-  fStack_12 = (this->fields).worldToElipsoidSpace.m12;
-  fStack_13 = (this->fields).worldToElipsoidSpace.m22;
-  fStack_14 = (this->fields).worldToElipsoidSpace.m32;
-  fStack_15 = (this->fields).worldToElipsoidSpace.m03;
-  fStack_16 = (this->fields).worldToElipsoidSpace.m13;
-  fStack_17 = (this->fields).worldToElipsoidSpace.m23;
-  fStack_18 = (this->fields).worldToElipsoidSpace.m33;
-  puVar19 = (undefined8 *)func_?(&deltaDir,&fStack_3,deltaDir._0_8_,deltaDir.z,0);
-  uStack_1 = *puVar19;
-  uStack_2 = *(undefined4 *)(puVar19 + 1);
-  fVar20 = (float10)func_?(&uStack_1,0);
-  return (float)fVar20;
+  fStack_1 = (this->fields).worldToElipsoidSpace.m10;
+  fStack_2 = (this->fields).worldToElipsoidSpace.m20;
+  fStack_3 = (this->fields).worldToElipsoidSpace.m30;
+  auStack_4._4_4_ = (this->fields).worldToElipsoidSpace.m00;
+  fStack_5 = (this->fields).worldToElipsoidSpace.m01;
+  fStack_6 = (this->fields).worldToElipsoidSpace.m11;
+  fStack_7 = (this->fields).worldToElipsoidSpace.m21;
+  fStack_8 = (this->fields).worldToElipsoidSpace.m31;
+  fStack_9 = (this->fields).worldToElipsoidSpace.m02;
+  fStack_10 = (this->fields).worldToElipsoidSpace.m12;
+  fStack_11 = (this->fields).worldToElipsoidSpace.m22;
+  fStack_12 = (this->fields).worldToElipsoidSpace.m32;
+  fStack_13 = (this->fields).worldToElipsoidSpace.m03;
+  fStack_14 = (this->fields).worldToElipsoidSpace.m13;
+  fStack_15 = (this->fields).worldToElipsoidSpace.m23;
+  fStack_16 = (this->fields).worldToElipsoidSpace.m33;
+  pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                     (&VStack_18,(Matrix4x4 *)(auStack_4 + 4),deltaDir,(MethodInfo *)0x0);
+  auStack_4._0_4_ = pVVar17->x;
+  auStack_4._4_4_ = pVVar17->y;
+  fStack_1 = pVVar17->z;
+  if (cRam_? == '\0') {
+    VStack_18.y = (float)&TypeInfo__System__Math;
+    VStack_18.x = (float)&UNK_?;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    VStack_18.y = (float)TypeInfo__System__Math;
+    VStack_18.x = (float)&UNK_?;
+    func_?();
+  }
+  dVar19 = (double)((float)auStack_4._4_4_ * (float)auStack_4._4_4_ +
+                   (float)auStack_4._0_4_ * (float)auStack_4._0_4_ + fStack_1 * fStack_1);
+  if (0.0 <= dVar19) {
+    return (float)SQRT(dVar19);
+  }
+  VStack_18.y = (float)&UNK_?;
+  func_?();
+  return (float)dVar19;
 }
 
 
@@ -141,68 +180,54 @@ void Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper__ctor
                (UIElipsoidHelper *this,float width,float height,MethodInfo *method)
 
 {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  (this->fields).width = width;
+  fStack_1 = width;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  (this->fields).height = height;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  (this->fields).width = width;
-  (this->fields).height = height;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_6._0_4_ = (pVVar5->zeroVector).x;
+  uStack_6._4_4_ = (pVVar5->zeroVector).y;
+  fVar7 = (pVVar5->zeroVector).z;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                      ((Vector3 *)(auStack_2 + 4),(MethodInfo *)0x0);
-  uStack_3._0_4_ = pVVar1->x;
-  uStack_3._4_4_ = pVVar1->y;
-  fVar4 = pVVar1->z;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                      ((Quaternion *)auStack_2,(MethodInfo *)0x0);
-  auStack_2._0_4_ = pQVar5->x;
-  auStack_2._4_4_ = pQVar5->y;
-  fStack_6 = pQVar5->z;
-  fStack_7 = pQVar5->w;
-  fStack_8 = 0.0;
-  uStack_9 = 0;
-  func_?(&uStack_9);
-  if ((((uint)(TypeInfo__UnityEngine__Matrix4x4->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Matrix4x4->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pos.z = fVar4;
-  pos.x = (float)(undefined4)uStack_3;
-  pos.y = (float)uStack_3._4_4_;
-  q.y = (float)auStack_2._4_4_;
-  q.x = (float)auStack_2._0_4_;
-  q.z = fStack_6;
-  q.w = fStack_7;
-  s.z = fStack_8;
-  s.x = (float)(undefined4)uStack_9;
-  s.y = (float)uStack_9._4_4_;
-  pMVar10 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                      ((Matrix4x4 *)&stack0xffffff98,pos,q,s,(MethodInfo *)0x0);
-  fVar4 = pMVar10->m10;
-  fVar11 = pMVar10->m20;
-  fVar12 = pMVar10->m30;
-  fVar13 = pMVar10->m01;
-  fVar14 = pMVar10->m11;
-  fVar15 = pMVar10->m21;
-  fVar16 = pMVar10->m31;
-  fVar17 = pMVar10->m02;
-  fVar18 = pMVar10->m12;
-  fVar19 = pMVar10->m22;
-  fVar20 = pMVar10->m32;
-  fVar21 = pMVar10->m03;
-  fVar22 = pMVar10->m13;
-  fVar23 = pMVar10->m23;
-  fVar24 = pMVar10->m33;
-  (this->fields).elipsoidSpaceToWorld.m00 = pMVar10->m00;
-  (this->fields).elipsoidSpaceToWorld.m10 = fVar4;
+  uStack_8 = 0x3f800000;
+  pos.z = fVar7;
+  pos.x = (float)(undefined4)uStack_6;
+  pos.y = (float)uStack_6._4_4_;
+  s.y = height;
+  s.x = fStack_1;
+  s.z = 1.0;
+  pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                      (&MStack_10,pos,
+                       TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,s,
+                       (MethodInfo *)0x0);
+  fVar7 = pMVar9->m10;
+  fVar11 = pMVar9->m20;
+  fVar12 = pMVar9->m30;
+  fVar13 = pMVar9->m01;
+  fVar14 = pMVar9->m11;
+  fVar15 = pMVar9->m21;
+  fVar16 = pMVar9->m31;
+  fVar17 = pMVar9->m02;
+  fVar18 = pMVar9->m12;
+  fVar19 = pMVar9->m22;
+  fVar20 = pMVar9->m32;
+  fVar21 = pMVar9->m03;
+  fVar22 = pMVar9->m13;
+  fVar23 = pMVar9->m23;
+  fVar24 = pMVar9->m33;
+  (this->fields).elipsoidSpaceToWorld.m00 = pMVar9->m00;
+  (this->fields).elipsoidSpaceToWorld.m10 = fVar7;
   (this->fields).elipsoidSpaceToWorld.m20 = fVar11;
   (this->fields).elipsoidSpaceToWorld.m30 = fVar12;
   (this->fields).elipsoidSpaceToWorld.m01 = fVar13;
@@ -217,24 +242,25 @@ void Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper__ctor
   (this->fields).elipsoidSpaceToWorld.m13 = fVar22;
   (this->fields).elipsoidSpaceToWorld.m23 = fVar23;
   (this->fields).elipsoidSpaceToWorld.m33 = fVar24;
-  pfVar25 = (float *)func_?();
-  fVar4 = pfVar25[1];
-  fVar11 = pfVar25[2];
-  fVar12 = pfVar25[3];
-  fVar13 = pfVar25[4];
-  fVar14 = pfVar25[5];
-  fVar15 = pfVar25[6];
-  fVar16 = pfVar25[7];
-  fVar17 = pfVar25[8];
-  fVar18 = pfVar25[9];
-  fVar19 = pfVar25[10];
-  fVar20 = pfVar25[0xb];
-  fVar21 = pfVar25[0xc];
-  fVar22 = pfVar25[0xd];
-  fVar23 = pfVar25[0xe];
-  fVar24 = pfVar25[0xf];
-  (this->fields).worldToElipsoidSpace.m00 = *pfVar25;
-  (this->fields).worldToElipsoidSpace.m10 = fVar4;
+  pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                      (&MStack_10,&(this->fields).elipsoidSpaceToWorld,(MethodInfo *)0x0);
+  fVar7 = pMVar9->m10;
+  fVar11 = pMVar9->m20;
+  fVar12 = pMVar9->m30;
+  fVar13 = pMVar9->m01;
+  fVar14 = pMVar9->m11;
+  fVar15 = pMVar9->m21;
+  fVar16 = pMVar9->m31;
+  fVar17 = pMVar9->m02;
+  fVar18 = pMVar9->m12;
+  fVar19 = pMVar9->m22;
+  fVar20 = pMVar9->m32;
+  fVar21 = pMVar9->m03;
+  fVar22 = pMVar9->m13;
+  fVar23 = pMVar9->m23;
+  fVar24 = pMVar9->m33;
+  (this->fields).worldToElipsoidSpace.m00 = pMVar9->m00;
+  (this->fields).worldToElipsoidSpace.m10 = fVar7;
   (this->fields).worldToElipsoidSpace.m20 = fVar11;
   (this->fields).worldToElipsoidSpace.m30 = fVar12;
   (this->fields).worldToElipsoidSpace.m01 = fVar13;

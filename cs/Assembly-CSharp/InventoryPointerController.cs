@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventoryPointerController : MonoBehaviour
 {
@@ -31,25 +31,38 @@ public class InventoryPointerController : MonoBehaviour
 	private int slotToHighlight;
 	private int categoryToOpen;
 	private Button open;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__11_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _CreateBubble_b__11_0(IUIStack handler, BaseEventData data);
+	}
 
 	// Constructors
 	public InventoryPointerController();
 
 	// Methods
 	private void Start();
-	public void CreateBubble(int category, int slot);
+	public void CreateBubble(int category, int slot, bool showBubble);
 	private void RemoveBubbles();
 	private void OpenAtSlot();
 	private void ClearImmediate();
 	[CompilerGenerated]
-	private static void _CreateBubble_m__0(IUIStack handler, BaseEventData data);
+	private void _CreateBubble_b__11_1(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _CreateBubble_m__1(TextBubbleController x, BaseEventData y);
+	private void _OpenAtSlot_b__13_0(IPlayerInventory x, BaseEventData y);
 	[CompilerGenerated]
-	private void _OpenAtSlot_m__2(IPlayerInventory x, BaseEventData y);
-	[CompilerGenerated]
-	private void _ClearImmediate_m__3(TextBubbleController x, BaseEventData y);
+	private void _ClearImmediate_b__14_0(TextBubbleController x, BaseEventData y);
 }
 

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ActivateParticlesOnAnimation : ActivateOnAnimationBase
 {
@@ -29,30 +29,29 @@ public class ActivateParticlesOnAnimation : ActivateOnAnimationBase
 	}
 
 	[CompilerGenerated]
-	private sealed class _PlayParticles_c__Iterator0 : IEnumerator<object>
+	private sealed class _PlayParticles_d__4 : IEnumerator<object>
 	{
 		// Fields
-		internal float _startTime___0;
-		internal float activationDelay;
-		internal ActivateParticlesOnAnimation _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public float activationDelay;
+		public ActivateParticlesOnAnimation __4__this;
+		private float _startTime_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _PlayParticles_c__Iterator0();
+		public _PlayParticles_d__4(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -60,7 +59,7 @@ public class ActivateParticlesOnAnimation : ActivateOnAnimationBase
 
 	// Methods
 	public override void OnAvatarAnimationChange(string newAnimation);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_PlayParticles_d__4))]
 	private IEnumerator PlayParticles(float activationDelay);
 }
 

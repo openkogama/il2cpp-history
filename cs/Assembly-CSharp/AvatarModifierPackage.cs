@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using CodeStage.AntiCheat.ObscuredTypes;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public struct AvatarModifierPackage
 {
@@ -19,6 +19,7 @@ public struct AvatarModifierPackage
 	public Dictionary<AvatarModifierPackageType, ModifierActions> actionsToTakeVsTypes;
 	private ObscuredFloat timeStamp;
 	public bool persistant;
+	private float lastTimeStamp;
 	private AvatarModifierPackageType avatarModifierPackageType;
 	private AvatarModifierPackageAdditionPolicy avatarModifierPackageAdditionPolicy;
 	public static string[] AvatarModifierPackageTypeLookupTable;
@@ -46,6 +47,7 @@ public struct AvatarModifierPackage
 
 	// Methods
 	public bool IsEqualTo(AvatarModifierPackage other);
+	public void InPause();
 	public void Renew();
 }
 

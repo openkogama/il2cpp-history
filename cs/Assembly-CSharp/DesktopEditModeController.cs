@@ -7,10 +7,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UGUI.Desktop.Scripts.EditMode.Inventories;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopEditModeController : ModeControllerBase, IEditStateCommands, IEditModeUI, IGridSnapHandler, IEditModeController
 {
@@ -22,7 +23,6 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	private bool gridSnap;
 	private DesktopPlayModeController desktopPlayModeController;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EditorStateMachine _EditModeStateMachine_k__BackingField;
 	[SerializeField]
 	private EditorWorldObjectCreation editorWorldObjectCreation;
@@ -59,60 +59,68 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	[SerializeField]
 	private GoldPurchasedTracker goldPurchasedTracker;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
-	private ClientShopRepository _ClientShopRepository_k__BackingField;
-	[CompilerGenerated]
-	[DebuggerBrowsable]
-	private PlayerInventoryRepository _PlayerInventoryRepository_k__BackingField;
+	private PlayerShopInventoryRepository _PlayerShopInventoryRepository_k__BackingField;
 	private float focusTime;
 	private bool focusSuppressInput;
 	private const float focusTimeInputSupressTimeOut = 5f;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	public EditorStateMachine EditModeStateMachine { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public bool IsInPlayInEditMode { get; }
-	public ClientShopRepository ClientShopRepository { [CompilerGenerated] get; [CompilerGenerated] set; }
-	public PlayerInventoryRepository PlayerInventoryRepository { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public PlayerShopInventoryRepository PlayerShopInventoryRepository { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public Action<EditModeChangeArgs> EditModeChange { get; set; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _HandleCursorVisible_c__Iterator0 : IEnumerator<object>
+	private sealed class _HandleCursorVisible_d__52 : IEnumerator<object>
 	{
 		// Fields
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _HandleCursorVisible_c__Iterator0();
+		public _HandleCursorVisible_d__52(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class _DeleteWoid_c__AnonStorey1
+	private sealed class __c__DisplayClass61_0
 	{
 		// Fields
-		internal string errorText;
+		public string errorText;
 
 		// Constructors
-		public _DeleteWoid_c__AnonStorey1();
+		public __c__DisplayClass61_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _DeleteWoid_b__0(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__61_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _DeleteWoid_b__61_1(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -122,7 +130,7 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	private void Awake();
 	protected void OnDestroy();
 	private void Start();
-	private void HandleFocusInputSupress();
+	private void HandleFocusInputSuppress();
 	private void Update();
 	private void OnApplicationFocus(bool focus);
 	private void ToggleHD();
@@ -135,7 +143,7 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	public void EnterBuildMode();
 	public void SetState(EditorEvent editorEvent);
 	public void ClearStateStack();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_HandleCursorVisible_d__52))]
 	private IEnumerator HandleCursorVisible();
 	public bool IsGridSnap();
 	public void Set(bool snap);
@@ -145,10 +153,8 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	public void DeleteWoid(int woid);
 	public void SetUIReady();
 	[CompilerGenerated]
-	private void _RegisterShortcuts_m__0(IShortcutKeyRegister x, BaseEventData y);
+	private void _RegisterShortcuts_b__58_0(IShortcutKeyRegister x, BaseEventData y);
 	[CompilerGenerated]
-	private void _RegisterShortcuts_m__1(IShortcutKeyRegister x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _DeleteWoid_m__2(IUIStack handler, BaseEventData data);
+	private void _RegisterShortcuts_b__58_1(IShortcutKeyRegister x, BaseEventData y);
 }
 

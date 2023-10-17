@@ -7,15 +7,21 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class TextureAtlas
 {
 	// Fields
-	public const int tiles = 16;
-	public const float singlePixelUV = 9.765625E-06f;
-	public const float Tilewidth = 0.06248047f;
-	public const float Tileheight = 0.06248047f;
+	public const int tiles = 14;
+	public const int tilePixelSize = 64;
+	public const int tilePixelMargin = 4;
+	public const float AtlasWidth = 1024f;
+	public const float AtlasHeight = 1024f;
+	public const int tilePixelSizeWMargin = 72;
+	public const float TileWidth = 0.0625f;
+	public const float TileHeight = 0.0625f;
+	private const float TileBleedMarginWidthUV = 0.00390625f;
+	private const float TileBleedMarginHeightUV = 0.00390625f;
 	public static int[] GlowingMaterials;
 	public static Vector2[] IndexMap;
 	public static bool Initialized;

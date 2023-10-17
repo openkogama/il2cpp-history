@@ -7,13 +7,16 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Add
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__IGameStateControllerSubscriber);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__Add_IGameStateControllerSubscriber_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).UpdateList;
-  if (this_00 != (List_1_IGameStateControllerSubscriber_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)obj,
+  this_00 = (List_1_System_Object_ *)(this->fields).UpdateList;
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,(Object *)obj,
                MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__Add_IGameStateControllerSubscriber_
               );
     MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
@@ -36,42 +39,23 @@ Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_GetPrese
           (MVGameModeChangeNotifier *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar1 == MVGameMode__Enum_Edit) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame *)0x0) {
+      uVar3 = func_?(&stack0xfffffffc);
+      func_?(uVar3);
+      pcVar4 = (code *)swi(3);
+      UVar5 = (*pcVar4)();
+      return UVar5;
     }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_00 == (MVNetworkGame *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      UVar3 = (*pcVar2)();
-      return UVar3;
-    }
-    bVar4 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    bVar6 = MVGameControllerBase::MVGameControllerBase_get_IsPlaying((MethodInfo *)0x0);
+    if (bVar6 != 0) {
       return UpdateCondition__Enum_EDITOR_PLAYMODE;
     }
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
   MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar1 != MVGameMode__Enum_Edit) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
     MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
     return UpdateCondition__Enum_INGAME - (MVar1 != MVGameMode__Enum_Play);
   }
@@ -87,35 +71,41 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Rem
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__RemoveAll_System__Predicate<IGameStateControllerSubscriber>_
+                   );
+    func_?(&TypeInfo__System__Predicate<IGameStateControllerSubscriber>);
+    func_?(&
+                    MethodInfo__MVGameModeChangeNotifier____c__DisplayClass4_0___RemoveObject_b__0_IGameStateControllerSubscriber_
+                   );
+    func_?(&TypeInfo__MVGameModeChangeNotifier____c__DisplayClass4_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MVGameModeChangeNotifier___RemoveObject_c__AnonStorey0;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields)._._._._.m_CachedPtr = obj;
-    this_00 = (this->fields).UpdateList;
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  value = (Object *)func_?(TypeInfo__MVGameModeChangeNotifier____c__DisplayClass4_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)obj;
+    func_?(value + 1,obj);
+    this_00 = (List_1_System_Object_ *)(this->fields).UpdateList;
+    this_01 = (Predicate_1_Object_ *)
               func_?(TypeInfo__System__Predicate<IGameStateControllerSubscriber>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)this_01,
-               MethodInfo__MVGameModeChangeNotifier___RemoveObject_c__AnonStorey0____m__0_IGameStateControllerSubscriber_
-               ,
-               MethodInfo__System__Predicate<IGameStateControllerSubscriber>__Predicate_System__Object__void__
-              );
-    if (this_00 != (List_1_IGameStateControllerSubscriber_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-      List_1_UIPushOption__RemoveAll
-                ((List_1_UIPushOption_ *)this_00,(Predicate_1_UIPushOption_ *)this_02,
-                 MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__RemoveAll_System__Predicate<IGameStateControllerSubscriber>_
-                );
-      return;
+    if (this_01 != (Predicate_1_Object_ *)0x0) {
+      mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                (this_01,value,
+                 MethodInfo__MVGameModeChangeNotifier____c__DisplayClass4_0___RemoveObject_b__0_IGameStateControllerSubscriber_
+                 ,(MethodInfo *)0x0);
+      if (this_00 != (List_1_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__RemoveAll
+                  (this_00,this_01,
+                   MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__RemoveAll_System__Predicate<IGameStateControllerSubscriber>_
+                  );
+        return;
+      }
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -132,110 +122,98 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Upd
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__get_Current__
+                   );
+    func_?(&TypeInfo__IGameStateControllerSubscriber);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__RemoveAll_System__Predicate<IGameStateControllerSubscriber>_
+                   );
+    func_?(&TypeInfo__System__Predicate<IGameStateControllerSubscriber>);
+    func_?(&
+                    MethodInfo__MVGameModeChangeNotifier____c___UpdateControllerUpdate_b__6_0_IGameStateControllerSubscriber_
+                   );
+    func_?(&TypeInfo__MVGameModeChangeNotifier____c);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  iStack_6 = 0;
-  CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_7.monitor = (MonitorData *)0x0;
-  CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_7.fields.syncRoot = (Object *)0x0;
-  func_?();
-  puStack_8 = (undefined4 *)&stack0xffffffac;
-  puStack_4 = &stack0xffffffac;
-  pCVar9 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)
-           MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
-  pLStack_10 = (this->fields).UpdateList;
-  pCStack_11 = pCVar9;
-  if (TypeInfo__MVGameModeChangeNotifier->static_fields->__f__am_cache0 ==
-      (Predicate_1_IGameStateControllerSubscriber_ *)0x0) {
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)0x0,
-               MethodInfo__MVGameModeChangeNotifier___UpdateControllerUpdate_m__0_IGameStateControllerSubscriber_
-               ,
-               MethodInfo__System__Predicate<IGameStateControllerSubscriber>__Predicate_System__Object__void__
-              );
-    TypeInfo__MVGameModeChangeNotifier->static_fields->__f__am_cache0 =
-         (Predicate_1_IGameStateControllerSubscriber_ *)this_01;
+  UVar4 = MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
+  this_00 = (List_1_System_Object_ *)(this->fields).UpdateList;
+  if ((TypeInfo__MVGameModeChangeNotifier____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  if (pLStack_10 != (List_1_IGameStateControllerSubscriber_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__RemoveAll
-              ((List_1_UIPushOption_ *)pLStack_10,
-               (Predicate_1_UIPushOption_ *)
-               TypeInfo__MVGameModeChangeNotifier->static_fields->__f__am_cache0,
+  this_02 = TypeInfo__MVGameModeChangeNotifier____c->static_fields->__9__6_0;
+  if (this_02 == (Predicate_1_IGameStateControllerSubscriber_ *)0x0) {
+    if ((TypeInfo__MVGameModeChangeNotifier____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    object = TypeInfo__MVGameModeChangeNotifier____c->static_fields->__9;
+    this_02 = (Predicate_1_IGameStateControllerSubscriber_ *)func_?();
+    if (this_02 == (Predicate_1_IGameStateControllerSubscriber_ *)0x0) goto code_?;
+    mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+              ((Predicate_1_Object_ *)this_02,(Object *)object,
+               MethodInfo__MVGameModeChangeNotifier____c___UpdateControllerUpdate_b__6_0_IGameStateControllerSubscriber_
+               ,(MethodInfo *)0x0);
+    TypeInfo__MVGameModeChangeNotifier____c->static_fields->__9__6_0 = this_02;
+    func_?();
+  }
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+    List_1_System_Object__RemoveAll
+              (this_00,(Predicate_1_Object_ *)this_02,
                MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__RemoveAll_System__Predicate<IGameStateControllerSubscriber>_
               );
-    if (pCVar9 == (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)
-                  (this->fields)._currentState) {
-code_?:
-      *unaff_FS_OFFSET = uStack_3;
-      return;
-    }
-    this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).UpdateList;
-    if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-      pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-               List_1_UnityEngine_Color32__GetEnumerator
-                         ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffb8,this_00,
-                          MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__GetEnumerator__
-                         );
-      CStack_7.monitor = (MonitorData *)pLVar12->next;
-      CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar12->ver;
-      CStack_7.fields.syncRoot = (Object *)(pLVar12->current).rgba;
-      uStack_1 = 0;
+    if (UVar4 != (this->fields)._currentState) {
+      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).UpdateList;
+      if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RegexCharClass+SingleRange]::
+      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 &stack0xffffffd8,this_01,
+                 MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__GetEnumerator__
+                );
+      uStack_1 = 1;
       while( true ) {
-        CStack_7.klass =
-             (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)
-             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__MoveNext__
-        ;
-        cVar13 = func_?();
-        if (cVar13 == '\0') break;
-        pOVar14 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           (&CStack_7,
-                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__get_Current__
-                           );
-        if (pOVar14 != (Object *)0x0) {
-          CStack_7.klass = pCVar9;
+        this_03 = (List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0;
+        bVar5 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          (this_03,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__MoveNext__
+                          );
+        if (bVar5 == 0) break;
+        if (this_03 != (List_1_T_Enumerator_System_Object_ *)0x0) {
           func_?();
         }
       }
-      *puStack_8 = 0x82;
       uStack_1 = 0xffffffff;
-      func_?();
-      if (iStack_6 == 0) {
-        (this->fields)._currentState = (int32_t)pCVar9;
-        goto code_?;
-      }
-      goto code_?;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&stack0xffffffc0,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__Dispose__
+                 ,in_stack_6);
+      (this->fields)._currentState = UVar4;
     }
+    *unaff_FS_OFFSET = uStack_3;
+    return;
   }
-  func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
-}
-
-
-/* Boolean <UpdateControllerUpdate>m__0(IGameStateControllerSubscriber) */
-
-bool Assembly-CSharp.dll::MVGameModeChangeNotifier::
-     MVGameModeChangeNotifier__UpdateControllerUpdate_m__0
-               (IGameStateControllerSubscriber *pd,MethodInfo *method)
-
-{
-  return pd == (IGameStateControllerSubscriber *)0x0;
 }
 
 
@@ -246,29 +224,42 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
   (this->fields)._currentState = 1;
-  method_00 = TypeInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>;
-  this_00 = (List_1_UnityEngine_Vector4_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__)
-  ;
-  (this->fields).UpdateList = (List_1_IGameStateControllerSubscriber_ *)this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  UVar1 = MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
-  (this->fields)._currentState = UVar1;
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
-    func_?();
+  this_00 = (List_1_IGameStateControllerSubscriber_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>
+                           );
+  if (this_00 != (List_1_IGameStateControllerSubscriber_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__
+              );
+    method_00 = (MethodInfo *)&(this->fields).UpdateList;
+    (this->fields).UpdateList = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    UVar1 = MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
+    (this->fields)._currentState = UVar1;
+    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UpdateController::UpdateController_AddUpdateObject
+              ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,
+               1,(MethodInfo *)0x0);
+    return;
   }
-  UpdateController::UpdateController_AddUpdateObject
-            ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
-             (MethodInfo *)0x0);
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -8,66 +8,69 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>
+                   );
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBool
+                   );
+    func_?(&
+                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__KogamaSettingOnOnValueChange_MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting_
+                   );
     cRam_? = '\x01';
   }
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._._Parent_k__BackingField = parent;
+  func_?(&(this->fields)._._._Parent_k__BackingField,parent);
   (this->fields)._._.key = key;
-  method_00 = 
-  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBool
-  ;
-  this_00 = (ScaleAnimationBase *)func_?();
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            (this_00,0.0,(MethodInfo *)method_00);
-  KogamaSettingBool::KogamaSettingBool_set_ValueBool
-            ((KogamaSettingBool *)this_00,value,(MethodInfo *)0x0);
-  (this->fields).KogamaSettingBool = (KogamaSettingBool *)this_00;
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(
-                           TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this,
-             MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__KogamaSettingOnOnValueChange_MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting_
-             ,
-             MethodInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>__Action_System__Object__void__
-            );
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    a = (Delegate *)(this_00->fields).state;
-    do {
-      pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         (a,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar1 != (Delegate *)0x0) {
-        pDVar2 = (Delegate *)0x0;
-        if ((Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting___Class *)
-            pDVar1->klass ==
-            TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>
-           ) {
-          pDVar2 = pDVar1;
+  func_?(&this->fields,key);
+  pKVar1 = (KogamaSettingBool *)
+           func_?(
+                          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBool
+                          );
+  if (pKVar1 != (KogamaSettingBool *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)pKVar1,ExceptionArgument__Enum_obj,unaff_EBX);
+    KogamaSettingBool::KogamaSettingBool_set_ValueBool(pKVar1,value,(MethodInfo *)0x0);
+    (this->fields).KogamaSettingBool = pKVar1;
+    func_?(&(this->fields).KogamaSettingBool,pKVar1);
+    pKVar1 = (this->fields).KogamaSettingBool;
+    this_00 = (Action_1_Object_ *)
+              func_?(
+                             TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>
+                             );
+    if ((this_00 != (Action_1_Object_ *)0x0) &&
+       (mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__KogamaSettingOnOnValueChange_MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting_
+                   ,(MethodInfo *)0x0), pKVar1 != (KogamaSettingBool *)0x0)) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>
+                       );
+        cRam_? = '\x01';
+      }
+      a = (pKVar1->fields)._.OnValueChange;
+      while( true ) {
+        pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
+        iVar3 = 0;
+        if ((pDVar2 != (Delegate *)0x0) && (iVar3 = func_?(pDVar2), iVar3 == 0)) break;
+        pAVar4 = (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)
+                 func_?(&(pKVar1->fields)._.OnValueChange,iVar3);
+        bVar5 = pAVar4 == a;
+        a = pAVar4;
+        if (bVar5) {
+          return;
         }
-        if (pDVar2 == (Delegate *)0x0) goto code_?;
       }
-      pDVar1 = (Delegate *)func_?();
-      bVar3 = pDVar1 == a;
-      a = pDVar1;
-      if (bVar3) {
-        return;
-      }
-    } while( true );
+      func_?(pDVar2);
+    }
   }
   func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -82,7 +85,7 @@ bool MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   pKVar1 = (this->fields).KogamaSettingBool;
   if (pKVar1 != (KogamaSettingBool *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__System__Boolean);
       cRam_? = '\x01';
     }
     pOVar2 = (pKVar1->fields)._.value;
@@ -95,7 +98,7 @@ bool MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
       goto code_?;
     }
   }
-  func_?(0);
+  func_?();
   pOVar2 = extraout_ECX;
   pBVar3 = extraout_EDX;
 code_?:
@@ -113,35 +116,34 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                (KogamaSettingBoolBase *this,bool value,MethodInfo *method)
 
 {
-  obj = (Dictionary_2_System_String_System_Object_ *)(this->fields).KogamaSettingBool;
-  if (obj != (Dictionary_2_System_String_System_Object_ *)0x0) {
+  pBVar1 = (Boolean__Class *)(this->fields).KogamaSettingBool;
+  if (pBVar1 != (Boolean__Class *)0x0) {
     method = (MethodInfo *)0x0;
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?();
       cRam_? = '\x01';
     }
-    bStack1 = value;
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    this_00 = (obj->fields).linkSlots;
-    (obj->fields).table = pIVar2;
-    if (this_00 != (Link__Array *)0x0) {
-      mscorlib.dll::System::Action`1[System::Collections::Generic::Dictionary`2[System::
-      String,System::Object]]::
-      Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object__Invoke
-                ((Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)
-                 this_00,obj,
-                 MethodInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>__Invoke_MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting_
-                );
+    bStack2 = value;
+    puStack_3 = &stack0x0000000b;
+    pBStack_4 = TypeInfo__System__Boolean;
+    pOVar5 = (Object *)func_?();
+    (((KogamaSettingBool__Fields *)&(pBVar1->_0).name)->_).value = pOVar5;
+    func_?((KogamaSettingBool__Fields *)&(pBVar1->_0).name,pOVar5);
+    if ((Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)
+        (pBVar1->_0).namespaze !=
+        (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
+      pAVar6 = (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)
+               (pBVar1->_0).namespaze;
+      puStack_3 = (pAVar6->fields)._._.method;
+      pBStack_4 = pBVar1;
+      (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code);
     }
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar7 = func_?(&pBStack_4);
+  func_?(uVar7);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

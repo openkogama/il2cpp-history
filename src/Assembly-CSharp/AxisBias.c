@@ -6,34 +6,33 @@ Vector3 * Assembly-CSharp.dll::AxisBias::AxisBias_GetBiased
                     Vector3 normalizedInputVector,Vector3 biasVector,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
+  __return_storage_ptr__->x = 0.0;
+  __return_storage_ptr__->y = 0.0;
+  __return_storage_ptr__->z = 0.0;
   this_00 = (this->fields).horizontalBias;
   if (this_00 != (AnimationCurve *)0x0) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_00,dotVal,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?();
+    if (fVar1 < 0.0) {
+      fVar1 = 0.0;
     }
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Lerp
-                       ((Vector3 *)&stack0xffffffe4,normalizedInputVector,biasVector,fVar1,
-                        (MethodInfo *)0x0);
-    fVar3 = pVVar2->x;
-    fVar4 = pVVar2->y;
-    fVar1 = pVVar2->z;
-    func_?();
-    __return_storage_ptr__->x = fVar3;
-    __return_storage_ptr__->y = fVar4;
-    __return_storage_ptr__->z = fVar1;
+    else if (_UNK_? < fVar1) {
+      fVar1 = _UNK_?;
+    }
+    __return_storage_ptr__->x =
+         (biasVector.x - normalizedInputVector.x) * fVar1 + normalizedInputVector.x;
+    __return_storage_ptr__->y =
+         (biasVector.y - normalizedInputVector.y) * fVar1 + normalizedInputVector.y;
+    __return_storage_ptr__->z =
+         (biasVector.z - normalizedInputVector.z) * fVar1 + normalizedInputVector.z;
+    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+              (__return_storage_ptr__,(MethodInfo *)0x0);
     return __return_storage_ptr__;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar2 = (Vector3 *)(*pcVar5)();
-  return pVVar2;
+  pcVar2 = (code *)swi(3);
+  pVVar3 = (Vector3 *)(*pcVar2)();
+  return pVVar3;
 }
 
 
@@ -44,74 +43,79 @@ Vector3 * Assembly-CSharp.dll::AxisBias::AxisBias_GetBiasedVector
                     MethodInfo *method)
 
 {
+  fVar1 = (float10)func_?();
+  fStack_2 = (float)fVar1;
+  puVar3 = (undefined8 *)func_?(&uStack_4);
+  VStack_5._0_8_ = *puVar3;
+  fVar6 = *(float *)(puVar3 + 1);
+  VStack_5.z = fVar6;
+  VStack_7._0_8_ = VStack_5._0_8_;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  func_?(&inputVector,0);
-  puVar1 = (undefined8 *)func_?(&stack0xffffffe0,&inputVector,0);
-  uVar2 = *puVar1;
-  d = *(float *)(puVar1 + 1);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                     ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
-  rhs.z = d;
-  rhs.x = (float)(int)uVar2;
-  rhs.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Dot
-                    (*pVVar3,rhs,(MethodInfo *)0x0);
-  if (0.0 < fVar4) {
-    uVar5 = uVar2;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_4._0_4_ = (pVVar8->upVector).x;
+  uStack_4._4_4_ = (pVVar8->upVector).y;
+  fStack_9 = (pVVar8->upVector).z;
+  VStack_7.z = VStack_5.y * (float)uStack_4._4_4_ + VStack_5.x * (float)(undefined4)uStack_4 +
+                VStack_5.z * fStack_9;
+  if (0.0 < VStack_7.z) {
+    if (cRam_? == '\0') {
       func_?();
-      uVar5 = uVar2;
+      cRam_? = '\x01';
     }
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                       ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
+    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar10 = (pVVar8->upVector).x;
+    uVar11 = (pVVar8->upVector).y;
+    fVar12 = (pVVar8->upVector).z;
+    fVar13 = VStack_7.x;
+    fVar14 = VStack_7.y;
+    uVar15 = uVar10;
+    uVar16 = uVar11;
   }
   else {
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+    if (cRam_? == '\0') {
       func_?();
+      cRam_? = '\x01';
     }
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_down
-                       ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
-    uVar5._0_4_ = pVVar3->x;
-    uVar5._4_4_ = pVVar3->y;
-    rhs_00.z = d;
-    rhs_00.x = (float)(int)uVar2;
-    rhs_00.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Dot
-                      (*pVVar3,rhs_00,(MethodInfo *)0x0);
-    if (fVar4 <= 0.0) {
-      uRam_?._0_4_ = inputVector.x;
-      uRam_?._4_4_ = inputVector.y;
-      fRam00000008 = inputVector.z;
-      return (Vector3 *)0x0;
+    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_4._0_4_ = (pVVar8->downVector).x;
+    uStack_4._4_4_ = (pVVar8->downVector).y;
+    fStack_9 = (pVVar8->downVector).z;
+    VStack_7.z = VStack_5.y * (float)uStack_4._4_4_ + VStack_5.x * (float)(undefined4)uStack_4
+                  + VStack_5.z * fStack_9;
+    if (VStack_7.z <= 0.0) {
+      __return_storage_ptr__->x = inputVector.x;
+      __return_storage_ptr__->y = inputVector.y;
+      __return_storage_ptr__->z = inputVector.z;
+      return __return_storage_ptr__;
     }
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+    if (cRam_? == '\0') {
       func_?();
+      cRam_? = '\x01';
     }
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_down
-                       ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
+    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar15 = (pVVar8->downVector).x;
+    uVar16 = (pVVar8->downVector).y;
+    fVar12 = (pVVar8->downVector).z;
+    fVar13 = VStack_7.x;
+    fVar14 = VStack_7.y;
   }
-  dotVal = pVVar3->x;
-  normalizedInputVector.z = d;
-  normalizedInputVector.x = (float)(int)uVar5;
-  normalizedInputVector.y = (float)(int)((ulonglong)uVar5 >> 0x20);
-  pVVar3 = AxisBias_GetBiased((Vector3 *)&stack0xffffffe0,this,(float)dotVal,normalizedInputVector,
-                              *pVVar3,(MethodInfo *)0x0);
-  inputVector.z = (float)&UNK_?;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                     ((Vector3 *)&stack0xffffffe0,*pVVar3,d,(MethodInfo *)0x0);
-  uRam_?._0_4_ = pVVar3->x;
-  uRam_?._4_4_ = pVVar3->y;
-  fRam00000008 = pVVar3->z;
-  return (Vector3 *)0x0;
+  normalizedInputVector.y = fVar14;
+  normalizedInputVector.x = fVar13;
+  normalizedInputVector.z = fVar6;
+  biasVector.y = (float)uVar16;
+  biasVector.x = (float)uVar15;
+  biasVector.z = fVar12;
+  pVVar17 = AxisBias_GetBiased(&VStack_5,this,VStack_7.z,normalizedInputVector,biasVector,
+                               (MethodInfo *)0x0);
+  uVar18 = pVVar17->x;
+  uVar19 = pVVar17->y;
+  fVar6 = pVVar17->z;
+  __return_storage_ptr__->x = (float)uVar18 * fStack_2;
+  __return_storage_ptr__->y = (float)uVar19 * fStack_2;
+  __return_storage_ptr__->z = fVar6 * fStack_2;
+  return __return_storage_ptr__;
 }
 

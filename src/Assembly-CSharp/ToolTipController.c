@@ -6,32 +6,25 @@ void Assembly-CSharp.dll::ToolTipController::ToolTipController_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    ToolTipUI_MethodInfo__UnityEngine__Object__Instantiate<ToolTipUI>_ToolTipUI__UnityEngine__Transform__bool_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pXVar1 = (XpBoostParticlePreviewer *)(this->fields).toolTipUi;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pTVar1 = (this->fields).toolTipUi;
+  parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar1,
-                      ToolTipUI_MethodInfo__UnityEngine__Object__Instantiate<ToolTipUI>_ToolTipUI_);
-  (this->fields).toolTipUi = (ToolTipUI *)pXVar1;
-  if (pXVar1 != (XpBoostParticlePreviewer *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)pXVar1,(MethodInfo *)0x0);
-    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (this_00,parent,0,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pTVar1 = (ToolTipUI *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                     ((Object *)pTVar1,parent,0,
+                      ToolTipUI_MethodInfo__UnityEngine__Object__Instantiate<ToolTipUI>_ToolTipUI__UnityEngine__Transform__bool_
+                     );
+  (this->fields).toolTipUi = pTVar1;
+  func_?(&(this->fields).toolTipUi,pTVar1);
   return;
 }
 
@@ -49,15 +42,15 @@ code_?:
   }
   this_00 = (this->fields).toolTipUi;
   if (this_00 != (ToolTipUI *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this_00,(MethodInfo *)0x0);
     if (this_01 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_01,0,(MethodInfo *)0x0);
       goto code_?;
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -70,78 +63,60 @@ void Assembly-CSharp.dll::ToolTipController::ToolTipController_SendToolTip
                (ToolTipController *this,Vector2 position,String *toolTip,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(toolTip,(MethodInfo *)0x0);
   if (bVar1 != 0) {
     return;
   }
   pTVar2 = (this->fields).toolTipUi;
   if ((pTVar2 != (ToolTipUI *)0x0) &&
-     (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)pTVar2,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
+     (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pTVar2,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar3,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       pTVar2 = (this->fields).toolTipUi;
       if ((pTVar2 == (ToolTipUI *)0x0) ||
-         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                             ((Component_1 *)pTVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0)
-         ) goto code_?;
+         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
+      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar3,1,(MethodInfo *)0x0);
     }
     pTVar2 = (this->fields).toolTipUi;
-    if (pTVar2 != (ToolTipUI *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
+    if ((pTVar2 != (ToolTipUI *)0x0) &&
+       (pTVar4 = (pTVar2->fields).toolTipText, pTVar4 != (Text *)0x0)) {
+      pTVar5 = pTVar4->klass;
+      pMVar6 = (pTVar5->vtable).set_text.method;
+      (*(pTVar5->vtable).set_text.methodPtr)();
+      this_00 = (pTVar2->fields).rectTransform;
+      fVar7 = 0.0;
+      fVar8 = 0.0;
+      iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+      if ((float)iVar9 * _UNK_? < (float)toolTip) {
+        fVar7 = 1.0;
       }
-      pTVar4 = (pTVar2->fields).toolTipText;
-      if (pTVar4 != (Text *)0x0) {
-        (*(code *)(pTVar4->klass->vtable).set_text.method)();
-        this_00 = (pTVar2->fields).rectTransform;
-        fVar5 = 0.0;
-        fVar6 = 0.0;
-        func_?();
-        iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0)
-        ;
-        if ((float)iVar7 * _UNK_? < 0.0) {
-          fVar5 = 1.0;
-        }
-        iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
-                          ((MethodInfo *)0x0);
-        if ((float)iVar7 * _UNK_? < 0.0) {
-          fVar6 = 1.0;
-        }
-        if (this_00 != (RectTransform *)0x0) {
-          value.y = fVar6;
-          value.x = fVar5;
-          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
-                    (this_00,value,(MethodInfo *)0x0);
-          pTVar8 = (Transform *)(pTVar2->fields).rectTransform;
-          if ((((uint)(TypeInfo__UnityEngine__Vector2->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__UnityEngine__Vector2->_1).cctor_started == 0)) {
-            func_?(TypeInfo__UnityEngine__Vector2);
-          }
-          pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_op_Implicit_1
-                             ((Vector3 *)&stack0xfffffff0,(Vector2)0x0,(MethodInfo *)0x0);
-          if (pTVar8 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                      (pTVar8,*pVVar9,(MethodInfo *)0x0);
-            pTVar8 = (Transform *)(pTVar2->fields).rectTransform;
-            if (pTVar8 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                        (pTVar8,(MethodInfo *)0x0);
-              (this->fields).updatedThisFrame = 1;
-              return;
-            }
+      iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+      if ((float)iVar9 * _UNK_? < (float)pMVar6) {
+        fVar8 = 1.0;
+      }
+      if (this_00 != (RectTransform *)0x0) {
+        value.y = fVar8;
+        value.x = fVar7;
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
+                  (this_00,value,(MethodInfo *)0x0);
+        pTVar10 = (Transform *)(pTVar2->fields).rectTransform;
+        if (pTVar10 != (Transform *)0x0) {
+          value_00.y = (float)pMVar6;
+          value_00.x = (float)toolTip;
+          value_00.z = 0.0;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                    (pTVar10,value_00,(MethodInfo *)0x0);
+          pTVar10 = (Transform *)(pTVar2->fields).rectTransform;
+          if (pTVar10 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                      (pTVar10,(MethodInfo *)0x0);
+            (this->fields).updatedThisFrame = 1;
+            return;
           }
         }
       }
@@ -149,8 +124,8 @@ void Assembly-CSharp.dll::ToolTipController::ToolTipController_SendToolTip
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

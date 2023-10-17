@@ -7,14 +7,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LevelRewardsManager
 {
 	// Fields
 	private Dictionary<int, int> unseenLevelRewards;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private KeyValuePair<int, int> _NextReward_k__BackingField;
 	public Action OnRewardsReturned;
 

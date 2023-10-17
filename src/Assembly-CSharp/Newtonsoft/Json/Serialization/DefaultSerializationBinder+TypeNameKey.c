@@ -7,7 +7,9 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializationB
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey
+                   );
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
@@ -17,18 +19,24 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializationB
       pOVar1 = obj;
     }
     if (pOVar1 != (Object *)0x0) {
-      if ((((DefaultSerializationBinder_TypeNameKey__Class *)obj->klass)->_0).element_class ==
+      if ((obj->klass->_0).element_class !=
           (TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey->_0).
           element_class) {
-        puVar2 = (undefined4 *)func_?(obj);
-        bVar3 = func_?(this + 1,*puVar2,puVar2[1],0);
+        func_?(obj,
+                        TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey
+                       );
+        pcVar2 = (code *)swi(3);
+        bVar3 = (*pcVar2)();
         return bVar3;
       }
-      func_?(obj,
-                      TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder__TypeNameKey
-                     );
-      pcVar4 = (code *)swi(3);
-      bVar3 = (*pcVar4)();
+      puVar4 = (undefined4 *)func_?(obj);
+      b = (String *)puVar4[1];
+      bVar3 = mscorlib.dll::System::String::String_op_Equality
+                        (this->AssemblyName,(String *)*puVar4,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
+        return 0;
+      }
+      bVar3 = mscorlib.dll::System::String::String_op_Equality(this->TypeName,b,(MethodInfo *)0x0);
       return bVar3;
     }
   }
@@ -44,7 +52,13 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializationB
                DefaultSerializationBinder_TypeNameKey other,MethodInfo *method)
 
 {
-  bVar1 = func_?(this + 1,other.AssemblyName,other.TypeName,method);
+  bVar1 = mscorlib.dll::System::String::String_op_Equality
+                    (this->AssemblyName,other.AssemblyName,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return 0;
+  }
+  bVar1 = mscorlib.dll::System::String::String_op_Equality
+                    (this->TypeName,other.TypeName,(MethodInfo *)0x0);
   return bVar1;
 }
 
@@ -56,20 +70,20 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Serialization::DefaultSerializati
                   (DefaultSerializationBinder_TypeNameKey *this,MethodInfo *method)
 
 {
-  pSVar1 = this[1].AssemblyName;
-  if (pSVar1 == (String *)0x0) {
-    uVar2 = 0;
+  if (this->AssemblyName == (String *)0x0) {
+    uVar1 = 0;
   }
   else {
-    uVar2 = (*(code *)(pSVar1->klass->vtable).GetHashCode.method)
-                      (pSVar1,(pSVar1->klass->vtable).ToString.methodPtr);
+    pSVar2 = this->AssemblyName->klass;
+    uVar1 = (*(pSVar2->vtable).GetHashCode.methodPtr)
+                      (this->AssemblyName,(pSVar2->vtable).GetHashCode.method);
   }
-  pSVar1 = this[1].TypeName;
-  if (pSVar1 == (String *)0x0) {
-    return uVar2;
+  if (this->TypeName != (String *)0x0) {
+    pSVar2 = this->TypeName->klass;
+    uVar3 = (*(pSVar2->vtable).GetHashCode.methodPtr)
+                      (this->TypeName,(pSVar2->vtable).GetHashCode.method);
+    return uVar3 ^ uVar1;
   }
-  uVar3 = (*(code *)(pSVar1->klass->vtable).GetHashCode.method)
-                    (pSVar1,(pSVar1->klass->vtable).ToString.methodPtr);
-  return uVar3 ^ uVar2;
+  return uVar1;
 }
 

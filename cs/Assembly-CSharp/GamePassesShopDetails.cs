@@ -10,7 +10,7 @@ using MV.Common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesShopDetails : MonoBehaviour
 {
@@ -24,34 +24,48 @@ public class GamePassesShopDetails : MonoBehaviour
 	private float interpolationStartTime;
 	private GamePassTier currentFocusedTier;
 	private const float outlineInterpolationSpeed = 2f;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _InstantiateGamePassesShop_c__AnonStorey0
+	private sealed class __c__DisplayClass9_0
 	{
 		// Fields
-		internal GamePassesShop gamePassesShop;
+		public GamePassesShop gamePassesShop;
 
 		// Constructors
-		public _InstantiateGamePassesShop_c__AnonStorey0();
+		public __c__DisplayClass9_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _InstantiateGamePassesShop_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Exit_b__10_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowHighScore_c__AnonStorey1
+	private sealed class __c__DisplayClass16_0
 	{
 		// Fields
-		internal GamePassesHighScoreList highScoreList;
+		public GamePassesHighScoreList highScoreList;
 
 		// Constructors
-		public _ShowHighScore_c__AnonStorey1();
+		public __c__DisplayClass16_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowHighScore_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -69,7 +83,5 @@ public class GamePassesShopDetails : MonoBehaviour
 	public void OnTier2ShopPressed();
 	public void OnTier3ShopPressed();
 	public void ShowHighScore();
-	[CompilerGenerated]
-	private static void _Exit_m__0(IUIStack x, BaseEventData y);
 }
 

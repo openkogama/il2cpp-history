@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SellAvatarController : MonoBehaviour
 {
@@ -26,44 +26,58 @@ public class SellAvatarController : MonoBehaviour
 	private int woID;
 	private MvAvatarMetaData metaData;
 	private MVBody body;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache5;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _OnAddToMarketplace_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal string text;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__9_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__11_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__11_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__12_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__14_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__15_0;
 
 		// Constructors
-		public _OnAddToMarketplace_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _ScreenShotCallback_b__9_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnAddToMarketplace_b__11_0(IUIStack x, BaseEventData y);
+		internal void _OnAddToMarketplace_b__11_1(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPop_b__12_0(IUIStack x, BaseEventData y);
+		internal void _OnRemovePressed_b__14_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnRemoveFromMarketplace_b__15_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnRemoveFromMarketplace_c__AnonStorey1
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal string text;
+		public string text;
 
 		// Constructors
-		public _OnRemoveFromMarketplace_c__AnonStorey1();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnAddToMarketplace_b__2(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass15_0
+	{
+		// Fields
+		public string text;
+
+		// Constructors
+		public __c__DisplayClass15_0();
+
+		// Methods
+		internal void _OnRemoveFromMarketplace_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -79,17 +93,5 @@ public class SellAvatarController : MonoBehaviour
 	private bool IsSelectedBodyValid();
 	public void OnRemovePressed();
 	private void OnRemoveFromMarketplace(bool added);
-	[CompilerGenerated]
-	private static void _ScreenShotCallback_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnAddToMarketplace_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnAddToMarketplace_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPop_m__3(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnRemovePressed_m__4(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnRemoveFromMarketplace_m__5(IUIStack x, BaseEventData y);
 }
 

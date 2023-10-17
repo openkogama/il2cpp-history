@@ -7,55 +7,45 @@ void MVWorldObject.dll::AllCollectiblesCollected::
                MethodInfo *method)
 
 {
-  this_01 = this;
+  pAVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_IsTeamMode.method)
-                    (this,(this->klass->vtable).get_HighScores.methodPtr);
-  if (cVar1 == '\0') {
-    if (e == (OnCounterTypeChangedArgs *)0x0) goto code_?;
-    iVar2 = (e->fields).count;
-    pOVar3 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)this,(MethodInfo *)0x0);
-  }
-  else {
-    this_00 = (this->fields)._.gameCounterManager;
-    uVar4 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-            Byte]::
-            Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte__System_Collections_Generic_IEnumerator_TResult__get_Current
-                      ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_ *)this,
-                       (MethodInfo *)0x0);
-    this = (AllCollectiblesCollected *)CONCAT31(this._1_3_,uVar4);
-    if ((e == (OnCounterTypeChangedArgs *)0x0) || (this_00 == (GameStatCounterManager *)0x0)) {
-code_?:
-      func_?(0);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
+  cVar2 = (*(this->klass->vtable).get_IsTeamMode_1.methodPtr)
+                    (this,(this->klass->vtable).get_IsTeamMode_1.method);
+  if (e != (OnCounterTypeChangedArgs *)0x0) {
+    if (cVar2 == '\0') {
+      iVar3 = (e->fields).count;
     }
-    iVar2 = GameStatCounterManager::GameStatCounterManager_GetTeamCount
-                      (this_00,(GameStatCounterType__Enum)this,(e->fields).team,(MethodInfo *)0x0);
-    pOVar3 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)this_01,(MethodInfo *)0x0);
+    else {
+      this_00 = (this->fields)._.gameCounterManager;
+      if (this_00 == (GameStatCounterManager *)0x0) goto code_?;
+      this = (AllCollectiblesCollected *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
+      iVar3 = GameStatCounterManager::GameStatCounterManager_GetTeamCount
+                        (this_00,(GameStatCounterType__Enum)this,(e->fields).team,(MethodInfo *)0x0)
+      ;
+    }
+    if ((pAVar1->fields)._.limit <= iVar3) {
+      this_01 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
+      if (this_01 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
+      UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+      TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
+      (pAVar1->fields)._.forfilled = 1;
+      (pAVar1->fields)._.instigatorCounterTypeChangedEvent = e;
+      func_?(&(pAVar1->fields)._.instigatorCounterTypeChangedEvent,e);
+      if ((pAVar1->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+        pEVar4 = (pAVar1->fields)._.OnWinningConditionChanged;
+        (*(pEVar4->fields)._._.invoke_impl)
+                  ((pEVar4->fields)._._.method_code,pAVar1,this_01,(pEVar4->fields)._._.method);
+      }
+    }
+    return;
   }
-  if ((int)pOVar3 <= iVar2) {
-    this_02 = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)
-              func_?(TypeInfo__System__EventArgs);
-    Assembly-CSharp.dll::WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-    WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor(this_02,(MethodInfo *)0x0);
-    WinningCondition::WinningCondition_SendWinningConditionChangedEvent
-              ((WinningCondition *)this_01,(EventArgs *)this_02,e,(MethodInfo *)0x0);
-  }
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -82,56 +72,18 @@ MVWorldObject.dll::AllCollectiblesCollected::AllCollectiblesCollected_get_HighSc
           (AllCollectiblesCollected *this,MethodInfo *method)
 
 {
-  pGVar1 = (this->fields)._.gameCounterManager;
-  uVar2 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::Byte]
-          ::
-          Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte__System_Collections_Generic_IEnumerator_TResult__get_Current
-                    ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_ *)this,
-                     (MethodInfo *)0x0);
-  this = (AllCollectiblesCollected *)CONCAT31(this._1_3_,uVar2);
-  if (pGVar1 != (GameStatCounterManager *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    pDVar3 = (pGVar1->fields).statTypeCounters;
-    if (pDVar3 != (Dictionary_2_GameStatCounterType_TeamsCounter_ *)0x0) {
-      bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[GameStatCounterType,System::
-              Object]::Dictionary_2_GameStatCounterType_System_Object__ContainsKey
-                        ((Dictionary_2_GameStatCounterType_System_Object_ *)pDVar3,
-                         (GameStatCounterType__Enum)this,
-                         MethodInfo__System__Collections__Generic__Dictionary<GameStatCounterType,_TeamsCounter>__ContainsKey_GameStatCounterType_
-                        );
-      if (bVar4 == 0) {
-        pHVar5 = (HighScores *)func_?();
-        HighScores::HighScores__ctor
-                  (pHVar5,(GameStatCounterType__Enum)this,
-                   (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0,0,
-                   WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-        return pHVar5;
-      }
-      pDVar3 = (pGVar1->fields).statTypeCounters;
-      if (pDVar3 != (Dictionary_2_GameStatCounterType_TeamsCounter_ *)0x0) {
-        this_00 = (TeamsCounter *)
-                  mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[GameStatCounterType,System::Object]::
-                  Dictionary_2_GameStatCounterType_System_Object__get_Item
-                            ((Dictionary_2_GameStatCounterType_System_Object_ *)pDVar3,
-                             (GameStatCounterType__Enum)this,
-                             MethodInfo__System__Collections__Generic__Dictionary<GameStatCounterType,_TeamsCounter>__get_Item_GameStatCounterType_
-                            );
-        if (this_00 != (TeamsCounter *)0x0) {
-          pHVar5 = TeamsCounter::TeamsCounter_GetHighScores
-                             (this_00,(GameStatCounterType__Enum)this,0,
-                              WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-          return pHVar5;
-        }
-      }
-    }
+  this_00 = (this->fields)._.gameCounterManager;
+  this = (AllCollectiblesCollected *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
+  if (this_00 != (GameStatCounterManager *)0x0) {
+    pHVar1 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                       (this_00,(GameStatCounterType__Enum)this,0,
+                        WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
+    return pHVar1;
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  pHVar5 = (HighScores *)(*pcVar6)();
-  return pHVar5;
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pHVar1 = (HighScores *)(*pcVar3)();
+  return pHVar1;
 }
 

@@ -6,28 +6,27 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields)._._.owner;
-  if ((pAVar1 != (Avatar_1 *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0)
-     ) {
+  if ((pAVar1 != (Avatar *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0))
+  {
     uVar3._0_4_ = (this->fields)._.defaultScale.x;
     uVar3._4_4_ = (this->fields)._.defaultScale.y;
-    (*(code *)(pMVar2->klass->vtable).set_Scale.method)
-              (pMVar2,uVar3,(this->fields)._.defaultScale.z,
-               (pMVar2->klass->vtable).get_WorldPosition.methodPtr);
-    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                    ((Component_1 *)this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    (*(pMVar2->klass->vtable).set_Scale.methodPtr)
+              (pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).set_Scale.method
+              );
+    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)obj,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -41,14 +40,13 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   pAVar1 = (this->fields)._._.owner;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -58,41 +56,33 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_OnDisable
   }
   pAVar1 = (this->fields)._._.owner;
   if ((this->fields)._.isDeactivating == 0) {
-    if (pAVar1 != (Avatar_1 *)0x0) {
-      pMVar3 = (pAVar1->fields).mvAvatar;
-      uStack_4._0_4_ = (this->fields)._.defaultScale.x;
-      fStack_5 = (this->fields)._.defaultScale.y;
-      d = (this->fields)._.sizeModifier;
-      fVar6 = (this->fields)._.defaultScale.z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        uStack_4._0_4_ = (float)TypeInfo__UnityEngine__Vector3;
-        func_?();
-      }
-      a.z = fVar6;
-      a.x = (float)uStack_4;
-      a.y = SUB84(uStack_4,4);
-      UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                ((Vector3 *)&stack0xfffffff0,a,d,(MethodInfo *)0x0);
-      if (pMVar3 != (MVAvatar *)0x0) {
-        pMVar7 = pMVar3->klass;
-        pIStack8 = (pMVar7->vtable).get_WorldPosition.methodPtr;
-        (*(code *)(pMVar7->vtable).set_Scale.method)();
+    if (pAVar1 != (Avatar *)0x0) {
+      uVar3 = (this->fields)._.defaultScale.x;
+      uVar4 = (this->fields)._.defaultScale.y;
+      fVar5 = (this->fields)._.sizeModifier;
+      pMVar6 = (pAVar1->fields).mvAvatar;
+      if (pMVar6 != (MVAvatar *)0x0) {
+        (*(pMVar6->klass->vtable).set_Scale.methodPtr)
+                  (pMVar6,(float)uVar3 * fVar5,(float)uVar4 * fVar5,
+                   (this->fields)._.defaultScale.z * fVar5,(pMVar6->klass->vtable).set_Scale.method)
+        ;
         return;
       }
     }
   }
-  else if ((pAVar1 != (Avatar_1 *)0x0) &&
-          (pMVar3 = (pAVar1->fields).mvAvatar, pMVar3 != (MVAvatar *)0x0)) {
-    uVar9 = (this->fields)._.defaultScale.x;
-    uVar10 = (this->fields)._.defaultScale.y;
-    (*(code *)(pMVar3->klass->vtable).set_Scale.method)(pMVar3,uVar9,uVar10);
+  else if ((pAVar1 != (Avatar *)0x0) &&
+          (pMVar6 = (pAVar1->fields).mvAvatar, pMVar6 != (MVAvatar *)0x0)) {
+    uVar7 = (this->fields)._.defaultScale.x;
+    uVar8 = (this->fields)._.defaultScale.y;
+    (*(pMVar6->klass->vtable).set_Scale.methodPtr)
+              (pMVar6,uVar7,uVar8,(this->fields)._.defaultScale.z,
+               (pMVar6->klass->vtable).set_Scale.method);
     MouseModifier_Destroy(this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -103,42 +93,37 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SizeModifier__ActionDelegate);
+    func_?(&MethodInfo__MouseModifier___Scale_b__2_0_float_);
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields)._._.owner;
-  if ((pAVar1 != (Avatar_1 *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0)
-     ) {
+  if ((pAVar1 != (Avatar *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0))
+  {
     uVar3._0_4_ = (this->fields)._.defaultScale.x;
     uVar3._4_4_ = (this->fields)._.defaultScale.y;
-    (*(code *)(pMVar2->klass->vtable).set_Scale.method)
-              (pMVar2,uVar3,(this->fields)._.defaultScale.z,
-               (pMVar2->klass->vtable).get_WorldPosition.methodPtr);
+    (*(pMVar2->klass->vtable).set_Scale.methodPtr)
+              (pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).set_Scale.method
+              );
     pAVar1 = (this->fields)._._.owner;
-    if (pAVar1 != (Avatar_1 *)0x0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)pAVar1,(MethodInfo *)0x0);
+    if (pAVar1 != (Avatar *)0x0) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pAVar1,(MethodInfo *)0x0);
       if (pGVar4 != (GameObject *)0x0) {
         bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                 GameObject_get_activeInHierarchy(pGVar4,(MethodInfo *)0x0);
         if (bVar5 == 0) {
           pAVar1 = (this->fields)._._.owner;
-          if (pAVar1 != (Avatar_1 *)0x0) {
+          if (pAVar1 != (Avatar *)0x0) {
+            uVar6 = (this->fields)._.defaultScale.x;
+            uVar7 = (this->fields)._.defaultScale.y;
+            fVar8 = (this->fields)._.sizeModifier;
             pMVar2 = (pAVar1->fields).mvAvatar;
-            fVar6 = (this->fields)._.sizeModifier;
-            a = (this->fields)._.defaultScale;
-            if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-              func_?(TypeInfo__UnityEngine__Vector3);
-            }
-            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                                ((Vector3 *)&stack0xfffffff0,a,fVar6,(MethodInfo *)0x0);
             if (pMVar2 != (MVAvatar *)0x0) {
-              uVar8._0_4_ = pVVar7->x;
-              uVar8._4_4_ = pVVar7->y;
-              (*(code *)(pMVar2->klass->vtable).set_Scale.method)
-                        (pMVar2,uVar8,pVVar7->z,(pMVar2->klass->vtable).get_WorldPosition.methodPtr
-                        );
+              (*(pMVar2->klass->vtable).set_Scale.methodPtr)
+                        (pMVar2,CONCAT44((float)uVar7 * fVar8,(float)uVar6 * fVar8),
+                         (this->fields)._.defaultScale.z * fVar8,
+                         (pMVar2->klass->vtable).set_Scale.method);
               return;
             }
           }
@@ -146,8 +131,8 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
         else {
           pAVar9 = (this->fields)._.audioSource;
           if (pAVar9 != (AudioSource *)0x0) {
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                               ((Component_1 *)pAVar9,(MethodInfo *)0x0);
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)pAVar9,(MethodInfo *)0x0);
             if (pGVar4 != (GameObject *)0x0) {
               bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                       GameObject_get_activeInHierarchy(pGVar4,(MethodInfo *)0x0);
@@ -157,20 +142,20 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
                 UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayOneShot
                           (pAVar9,(this->fields)._.shrinkSound,(MethodInfo *)0x0);
               }
-              fVar6 = (this->fields)._.timeToSize;
-              this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                         *)func_?(TypeInfo__SizeModifier__ActionDelegate);
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-              SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-              UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                        (this_00,(Object *)this,MethodInfo__MouseModifier___Scale_m__0_float_,
-                         (MethodInfo *)0x0);
-              routine = SizeModifier::SizeModifier_DoForSeconds
-                                  ((SizeModifier *)this,fVar6,(SizeModifier_ActionDelegate *)this_00
-                                   ,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-              MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-              return;
+              fVar8 = (this->fields)._.timeToSize;
+              body = (SizeModifier_ActionDelegate *)
+                     func_?(TypeInfo__SizeModifier__ActionDelegate);
+              if (body != (SizeModifier_ActionDelegate *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+                UnityAction_1_System_Single___ctor
+                          ((UnityAction_1_System_Single_ *)body,(Object *)this,
+                           MethodInfo__MouseModifier___Scale_b__2_0_float_,(MethodInfo *)0x0);
+                routine = SizeModifier::SizeModifier_DoForSeconds
+                                    ((SizeModifier *)this,fVar8,body,(MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }
@@ -178,7 +163,7 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;
@@ -192,28 +177,24 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SizeModifier__ActionDelegate);
+    func_?(&MethodInfo__MouseModifier___UnScale_b__3_0_float_);
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields)._._.owner;
-  if (pAVar1 != (Avatar_1 *)0x0) {
-    pMVar2 = (pAVar1->fields).mvAvatar;
-    fVar3 = (this->fields)._.sizeModifier;
-    a = (this->fields)._.defaultScale;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xfffffff0,a,fVar3,(MethodInfo *)0x0);
-    if (pMVar2 != (MVAvatar *)0x0) {
-      uVar5._0_4_ = pVVar4->x;
-      uVar5._4_4_ = pVVar4->y;
-      (*(code *)(pMVar2->klass->vtable).set_Scale.method)(pMVar2,uVar5);
+  if (pAVar1 != (Avatar *)0x0) {
+    uVar2 = (this->fields)._.defaultScale.x;
+    uVar3 = (this->fields)._.defaultScale.y;
+    fVar4 = (this->fields)._.sizeModifier;
+    pMVar5 = (pAVar1->fields).mvAvatar;
+    if (pMVar5 != (MVAvatar *)0x0) {
+      (*(pMVar5->klass->vtable).set_Scale.methodPtr)
+                (pMVar5,CONCAT44((float)uVar3 * fVar4,(float)uVar2 * fVar4),
+                 (this->fields)._.defaultScale.z * fVar4,(pMVar5->klass->vtable).set_Scale.method);
       pAVar1 = (this->fields)._._.owner;
-      if (pAVar1 != (Avatar_1 *)0x0) {
-        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)pAVar1,(MethodInfo *)0x0);
+      if (pAVar1 != (Avatar *)0x0) {
+        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pAVar1,(MethodInfo *)0x0);
         if (pGVar6 != (GameObject *)0x0) {
           bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                   GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
@@ -223,8 +204,8 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
           }
           pAVar8 = (this->fields)._.audioSource;
           if (pAVar8 != (AudioSource *)0x0) {
-            pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                               ((Component_1 *)pAVar8,(MethodInfo *)0x0);
+            pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pAVar8,(MethodInfo *)0x0);
             if (pGVar6 != (GameObject *)0x0) {
               bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                       GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
@@ -234,20 +215,20 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
                 UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayOneShot
                           (pAVar8,(this->fields)._.growSound,(MethodInfo *)0x0);
               }
-              fVar3 = (this->fields)._.timeToSize;
-              this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                         *)func_?(TypeInfo__SizeModifier__ActionDelegate);
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-              SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-              UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                        (this_00,(Object *)this,MethodInfo__MouseModifier___UnScale_m__1_float_,
-                         (MethodInfo *)0x0);
-              routine = SizeModifier::SizeModifier_DoForSeconds
-                                  ((SizeModifier *)this,fVar3,(SizeModifier_ActionDelegate *)this_00
-                                   ,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-              MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-              return;
+              fVar4 = (this->fields)._.timeToSize;
+              body = (SizeModifier_ActionDelegate *)
+                     func_?(TypeInfo__SizeModifier__ActionDelegate);
+              if (body != (SizeModifier_ActionDelegate *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+                UnityAction_1_System_Single___ctor
+                          ((UnityAction_1_System_Single_ *)body,(Object *)this,
+                           MethodInfo__MouseModifier___UnScale_b__3_0_float_,(MethodInfo *)0x0);
+                routine = SizeModifier::SizeModifier_DoForSeconds
+                                    ((SizeModifier *)this,fVar4,body,(MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }
@@ -255,7 +236,7 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -271,249 +252,148 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Update
   if ((this->fields)._.isDeactivating != 0) {
     return;
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  pMStack_2 = (Mathf__Class *)(fVar1 - (this->fields)._._.timeStamp);
-  pfVar3 = &(this->fields)._.sizeUnstableAfterSeconds;
-  if ((float)pMStack_2 < *pfVar3 || (float)pMStack_2 == *pfVar3) {
+  fVar1 = fVar1 - (this->fields)._._.timeStamp;
+  pfVar2 = &(this->fields)._.sizeUnstableAfterSeconds;
+  if (fVar1 < *pfVar2 || fVar1 == *pfVar2) {
     return;
   }
-  fVar1 = (this->fields)._.unstableSpeed;
-  uVar4._0_4_ = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                           ((MethodInfo *)0x0);
+  fVar3 = (this->fields)._.unstableSpeed;
+  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar4 = fVar4 + fVar3;
   pAVar5 = (this->fields)._._.owner;
-  (this->fields)._.unstableSpeed = (float)uVar4 + fVar1;
-  if (pAVar5 != (Avatar_1 *)0x0) {
-    VStack_6.y = (this->fields)._.defaultScale.x;
-    VStack_6.z = (this->fields)._.defaultScale.y;
-    fVar1 = (this->fields)._.sizeModifier;
-    pMVar7 = (pAVar5->fields).mvAvatar;
-    uVar4._0_4_ = (this->fields)._.defaultScale.z;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    a_01.z = (float)uVar4;
-    a_01.x = VStack_6.y;
-    a_01.y = VStack_6.z;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xffffffdc,a_01,fVar1,(MethodInfo *)0x0);
-    fVar9 = pVVar8->z;
-    fVar10 = (this->fields)._.defaultScale.z;
-    pVVar8 = &(this->fields)._.defaultScale;
-    fVar11 = pVVar8->y;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       (&VStack_6,*pVVar8,0.03,(MethodInfo *)0x0);
-    uVar4._0_4_ = pVVar8->x;
-    fStack_12 = pVVar8->y;
-    fVar1 = (this->fields)._.sizeUnstableAfterSeconds;
-    VStack_6.z = pVVar8->z;
-    puStack_13 = (undefined *)(this->fields)._.unstableSpeed;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      pMStack_2 = TypeInfo__UnityEngine__Mathf;
-      func_?();
-    }
-    fVar1 = (float)pMStack_2 - fVar1;
-    pMStack_2 = (Mathf__Class *)0x0;
-    dVar14 = (double)(fVar1 * (float)puStack_13);
+  (this->fields)._.unstableSpeed = fVar4;
+  if (pAVar5 != (Avatar *)0x0) {
+    uVar6 = (this->fields)._.defaultScale.x;
+    uVar7 = (this->fields)._.defaultScale.y;
+    fVar8 = (this->fields)._.defaultScale.z;
+    pMVar9 = (pAVar5->fields).mvAvatar;
+    fVar3 = (this->fields)._.sizeModifier;
+    uVar10 = (this->fields)._.defaultScale.x;
+    uVar11 = (this->fields)._.defaultScale.y;
+    fVar12 = (float)uVar10 * _UNK_?;
+    fVar13 = (float)uVar11 * _UNK_?;
+    fVar14 = fVar8 * _UNK_?;
+    dVar15 = (double)((fVar1 - (this->fields)._.sizeUnstableAfterSeconds) * fVar4);
     func_?();
-    a.z = VStack_6.z;
-    a.x = (float)uVar4;
-    a.y = fStack_12;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xffffffdc,a,_UNK_? - (float)dVar14,
-                        in_stack_15);
-    a_00.y = fVar10;
-    a_00.x = fVar11;
-    a_00.z = fVar9;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                       ((Vector3 *)&stack0xffffffd0,a_00,*pVVar8,(MethodInfo *)0x0);
-    if (pMVar7 != (MVAvatar *)0x0) {
-      uVar16 = pVVar8->x;
-      uVar17 = pVVar8->y;
-      (*(code *)(pMVar7->klass->vtable).set_Scale.method)
-                (pMVar7,uVar16,uVar17,pVVar8->z,(pMVar7->klass->vtable).get_WorldPosition.methodPtr);
+    fVar1 = _UNK_? - (float)dVar15;
+    uStack_16 = CONCAT44(fVar13 * fVar1 + (float)uVar7 * fVar3,
+                         fVar12 * fVar1 + (float)uVar6 * fVar3);
+    if (pMVar9 != (MVAvatar *)0x0) {
+      (*(pMVar9->klass->vtable).set_Scale.methodPtr)
+                (pMVar9,uStack_16,fVar14 * fVar1 + fVar8 * fVar3,
+                 (pMVar9->klass->vtable).set_Scale.method);
       return;
     }
   }
-  func_?(0);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  func_?();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
 
-/* Void <Scale>m__0(Single) */
+/* Void <Scale>b__2_0(Single) */
 
-void Assembly-CSharp.dll::MouseModifier::MouseModifier__Scale_m__0
+void Assembly-CSharp.dll::MouseModifier::MouseModifier__Scale_b__2_0
                (MouseModifier *this,float t,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pAVar1 = (this->fields)._._.owner;
-  if (pAVar1 != (Avatar_1 *)0x0) {
-    uVar2._0_4_ = (this->fields)._.defaultScale.x;
-    uVar2._4_4_ = (this->fields)._.defaultScale.y;
-    pMVar3 = (pAVar1->fields).mvAvatar;
-    fVar4 = (this->fields)._.defaultScale.z;
-    fVar5 = SizeModifier::SizeModifier_BlockStep
-                       ((SizeModifier *)this,t,40.0,0.0,
-                        _UNK_? - (this->fields)._.sizeModifier,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?();
+  if (pAVar1 != (Avatar *)0x0) {
+    uVar2 = (this->fields)._.defaultScale.x;
+    uVar3 = (this->fields)._.defaultScale.y;
+    pMVar4 = (pAVar1->fields).mvAvatar;
+    fVar5 = (this->fields)._.defaultScale.z;
+    fVar6 = _UNK_? - (this->fields)._.sizeModifier;
+    fVar7 = (float10)func_?(t * _UNK_?);
+    fVar8 = (float)(fVar7 / (float10)_UNK_?);
+    if (fVar8 < 0.0) {
+      fVar8 = 0.0;
     }
-    a_02.z = fVar4;
-    a_02.x = (float)uVar2;
-    a_02.y = SUB84(uVar2,4);
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xffffffe4,a_02,_UNK_? - fVar5,(MethodInfo *)0x0);
-    uVar7 = pVVar6->x;
-    fVar5 = pVVar6->z;
-    uVar8._4_4_ = (float)&UNK_?;
-    uVar8._0_4_ = (float)uVar7;
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xfffffff0,(this->fields)._.defaultScale,
-                        (this->fields)._.sizeModifier,(MethodInfo *)0x0);
-    uVar9._0_4_ = pVVar6->x;
-    uVar9._4_4_ = pVVar6->y;
-    fVar10 = pVVar6->z;
-    fVar4 = (this->fields)._.sineStrength;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?();
+    else if (fVar6 < fVar8) {
+      fVar8 = fVar6;
     }
-    dVar11 = (double)(fVar4 * t);
+    fVar8 = _UNK_? - fVar8;
+    uVar9 = (this->fields)._.defaultScale.x;
+    uVar10 = (this->fields)._.defaultScale.y;
+    fVar11 = (this->fields)._.defaultScale.z;
+    fVar6 = (this->fields)._.sizeModifier;
+    dVar12 = (double)(t * (this->fields)._.sineStrength);
     func_?();
-    a.z = fVar10;
-    a.x = (float)uVar9;
-    a.y = SUB84(uVar9,4);
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xffffffe4,a,_UNK_? - (float)dVar11,in_stack_12
-                       );
-    a_00.z = fVar5;
-    a_00.x = (float)uVar8;
-    a_00.y = SUB84(uVar8,4);
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                       ((Vector3 *)&stack0xffffffd8,a_00,*pVVar6,(MethodInfo *)0x0);
-    if (pMVar3 != (MVAvatar *)0x0) {
-      uVar13._0_4_ = pVVar6->x;
-      uVar13._4_4_ = pVVar6->y;
-      (*(code *)(pMVar3->klass->vtable).set_Scale.method)
-                (pMVar3,uVar13,pVVar6->z,(pMVar3->klass->vtable).get_WorldPosition.methodPtr);
+    fVar13 = _UNK_? - (float)dVar12;
+    uStack_14 = CONCAT44((float)uVar10 * fVar6 * fVar13 + (float)uVar3 * fVar8,
+                         (float)uVar9 * fVar6 * fVar13 + (float)uVar2 * fVar8);
+    if (pMVar4 != (MVAvatar *)0x0) {
+      (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+                (pMVar4,uStack_14,fVar11 * fVar6 * fVar13 + fVar5 * fVar8,
+                 (pMVar4->klass->vtable).set_Scale.method);
       if (t != (this->fields)._.timeToSize) {
         return;
       }
       pAVar1 = (this->fields)._._.owner;
-      if (pAVar1 != (Avatar_1 *)0x0) {
-        uVar14._0_4_ = (this->fields)._.defaultScale.x;
-        uVar14._4_4_ = (this->fields)._.defaultScale.y;
-        fVar4 = (this->fields)._.sizeModifier;
-        pMVar3 = (pAVar1->fields).mvAvatar;
-        fVar5 = (this->fields)._.defaultScale.z;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Vector3);
-        }
-        a_01.z = fVar5;
-        a_01.x = (float)uVar14;
-        a_01.y = SUB84(uVar14,4);
-        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                           ((Vector3 *)&stack0xffffffd8,a_01,fVar4,(MethodInfo *)0x0);
-        if (pMVar3 != (MVAvatar *)0x0) {
-          uVar15._0_4_ = pVVar6->x;
-          uVar15._4_4_ = pVVar6->y;
-          (*(code *)(pMVar3->klass->vtable).set_Scale.method)
-                    (pMVar3,uVar15,pVVar6->z,(pMVar3->klass->vtable).get_WorldPosition.methodPtr);
+      if (pAVar1 != (Avatar *)0x0) {
+        uVar15 = (this->fields)._.defaultScale.x;
+        uVar16 = (this->fields)._.defaultScale.y;
+        fVar8 = (this->fields)._.sizeModifier;
+        pMVar4 = (pAVar1->fields).mvAvatar;
+        if (pMVar4 != (MVAvatar *)0x0) {
+          (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+                    (pMVar4,CONCAT44((float)uVar16 * fVar8,(float)uVar15 * fVar8),
+                     (this->fields)._.defaultScale.z * fVar8,
+                     (pMVar4->klass->vtable).set_Scale.method);
           return;
         }
       }
     }
   }
-  func_?(0);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
 
-/* Void <UnScale>m__1(Single) */
+/* Void <UnScale>b__3_0(Single) */
 
-void Assembly-CSharp.dll::MouseModifier::MouseModifier__UnScale_m__1
+void Assembly-CSharp.dll::MouseModifier::MouseModifier__UnScale_b__3_0
                (MouseModifier *this,float t,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pAVar1 = (this->fields)._._.owner;
-  if (pAVar1 != (Avatar_1 *)0x0) {
-    uVar2._0_4_ = (this->fields)._.defaultScale.x;
-    uVar2._4_4_ = (this->fields)._.defaultScale.y;
-    pMVar3 = (pAVar1->fields).mvAvatar;
-    fVar4 = (this->fields)._.defaultScale.z;
-    fVar5 = SizeModifier::SizeModifier_BlockStep
-                      ((SizeModifier *)this,t,40.0,(this->fields)._.sizeModifier,1.0,
-                       (MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?();
+  if (pAVar1 != (Avatar *)0x0) {
+    uVar2 = (this->fields)._.defaultScale.x;
+    uVar3 = (this->fields)._.defaultScale.y;
+    pMVar4 = (pAVar1->fields).mvAvatar;
+    fVar5 = (this->fields)._.defaultScale.z;
+    fVar6 = (this->fields)._.sizeModifier;
+    fVar7 = (float10)func_?(t * _UNK_?);
+    fVar8 = (float)(fVar7 / (float10)_UNK_?);
+    if ((fVar6 <= fVar8) && (fVar6 = fVar8, _UNK_? < fVar8)) {
+      fVar6 = _UNK_?;
     }
-    a_01.z = fVar4;
-    a_01.x = (float)uVar2;
-    a_01.y = SUB84(uVar2,4);
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xffffffe4,a_01,fVar5,(MethodInfo *)0x0);
-    uVar7 = pVVar6->x;
-    fVar5 = pVVar6->z;
-    uVar8._4_4_ = (float)&UNK_?;
-    uVar8._0_4_ = (float)uVar7;
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xfffffff0,(this->fields)._.defaultScale,
-                        (this->fields)._.sizeModifier,(MethodInfo *)0x0);
-    uVar9._0_4_ = pVVar6->x;
-    uVar9._4_4_ = pVVar6->y;
-    fVar10 = pVVar6->z;
-    fVar4 = (this->fields)._.sineStrength;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?();
-    }
-    dVar11 = (double)(fVar4 * t);
+    uVar9 = (this->fields)._.defaultScale.x;
+    uVar10 = (this->fields)._.defaultScale.y;
+    fVar11 = (this->fields)._.defaultScale.z;
+    fVar8 = (this->fields)._.sizeModifier;
+    dVar12 = (double)(t * (this->fields)._.sineStrength);
     func_?();
-    a.z = fVar10;
-    a.x = (float)uVar9;
-    a.y = SUB84(uVar9,4);
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                       ((Vector3 *)&stack0xffffffe4,a,_UNK_? - (float)dVar11,in_stack_12
-                       );
-    a_00.z = fVar5;
-    a_00.x = (float)uVar8;
-    a_00.y = SUB84(uVar8,4);
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                       ((Vector3 *)&stack0xffffffd8,a_00,*pVVar6,(MethodInfo *)0x0);
-    if (pMVar3 != (MVAvatar *)0x0) {
-      uVar13._0_4_ = pVVar6->x;
-      uVar13._4_4_ = pVVar6->y;
-      (*(code *)(pMVar3->klass->vtable).set_Scale.method)
-                (pMVar3,uVar13,pVVar6->z,(pMVar3->klass->vtable).get_WorldPosition.methodPtr);
+    fVar13 = _UNK_? - (float)dVar12;
+    uStack_14 = CONCAT44((float)uVar10 * fVar8 * fVar13 + (float)uVar3 * fVar6,
+                         (float)uVar9 * fVar8 * fVar13 + (float)uVar2 * fVar6);
+    if (pMVar4 != (MVAvatar *)0x0) {
+      (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+                (pMVar4,uStack_14,fVar11 * fVar8 * fVar13 + fVar5 * fVar6,
+                 (pMVar4->klass->vtable).set_Scale.method);
       if (t == (this->fields)._.timeToSize) {
         MouseModifier_Destroy(this,(MethodInfo *)0x0);
       }
       return;
     }
   }
-  func_?(0);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -523,28 +403,23 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier__UnScale_m__1
 void Assembly-CSharp.dll::MouseModifier::MouseModifier__ctor(MouseModifier *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   (this->fields)._.timeToSize = 1.5;
   (this->fields)._.sizeModifier = 1.0;
   (this->fields)._.sizeUnstableAfterSeconds = 28.0;
   (this->fields)._.unstableSpeed = 10.0;
   (this->fields)._.sineStrength = 14.0;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_one
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields)._.defaultScale.x = pVVar1->x;
-  (this->fields)._.defaultScale.y = fVar3;
-  (this->fields)._.defaultScale.z = fVar4;
-  LockCursorManager3DMode::LockCursorManager3DMode__ctor
-            ((LockCursorManager3DMode *)this,(MethodInfo *)0x0);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->oneVector).y;
+  fVar3 = (pVVar1->oneVector).z;
+  (this->fields)._.defaultScale.x = (pVVar1->oneVector).x;
+  (this->fields)._.defaultScale.y = fVar2;
+  (this->fields)._.defaultScale.z = fVar3;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

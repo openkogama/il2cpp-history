@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal class ESSelection : ESStateBase
 {
@@ -20,8 +20,6 @@ internal class ESSelection : ESStateBase
 	private PickResult<LinkObjectBase> pickedLink;
 	private ContextMenuController contextMenuController;
 	private GizmoController gizmoController;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Nested types
 	private class PickResult<T>
@@ -36,16 +34,32 @@ internal class ESSelection : ESStateBase
 	}
 
 	[CompilerGenerated]
-	private sealed class _Execute_c__AnonStorey0
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal string errorText;
+		public string errorText;
 
 		// Constructors
-		public _Execute_c__AnonStorey0();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator handler, BaseEventData data);
+		internal void _Execute_b__0(IModalPopupCreator handler, BaseEventData data);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__14_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Execute_b__14_1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -56,6 +70,7 @@ internal class ESSelection : ESStateBase
 	private void ShowLinkMenuGizmo();
 	private void PopMenuGizmos();
 	public override void Enter(EditorStateMachine e);
+	private void DeselectAll(EditorStateMachine e);
 	public override void Execute(EditorStateMachine e);
 	public override void Exit(EditorStateMachine e);
 	private bool IsMouseUpValid(Vector3 mousePosition);
@@ -64,7 +79,5 @@ internal class ESSelection : ESStateBase
 	private LinkObjectBase GetLinkHit(EditorStateMachine e, ref VoxelHit hit);
 	private bool EnterObject(EditorStateMachine e, MVWorldObjectClient selectedWo);
 	private void HandleEscape(EditorStateMachine e);
-	[CompilerGenerated]
-	private static void _Execute_m__0(IUIStack x, BaseEventData y);
 }
 

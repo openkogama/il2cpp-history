@@ -6,12 +6,11 @@ void Assembly-CSharp.dll::GameCoinDisplayObject::GameCoinDisplayObject_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   obj = (this->fields).textMesh1;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -31,16 +30,12 @@ void Assembly-CSharp.dll::GameCoinDisplayObject::GameCoinDisplayObject_SetAmount
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  value = TypeInfo__System__String->static_fields->Empty;
+  value = ::StringLiteral__;
   if (0 < amount) {
-    value = (String *)func_?(&amount,0);
+    value = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&amount,(MethodInfo *)0x0);
   }
   pTVar1 = (this->fields).textMesh1;
   if (pTVar1 != (TextMesh *)0x0) {
@@ -48,34 +43,16 @@ void Assembly-CSharp.dll::GameCoinDisplayObject::GameCoinDisplayObject_SetAmount
               (pTVar1,value,(MethodInfo *)0x0);
     pTVar1 = (this->fields).textMesh2;
     if (pTVar1 != (TextMesh *)0x0) {
+      amount = 0;
       UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
                 (pTVar1,value,(MethodInfo *)0x0);
       return;
     }
   }
+  amount = (int32_t)&UNK_?;
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
-  return;
-}
-
-
-/* Void SetScale(Vector3) */
-
-void Assembly-CSharp.dll::GameCoinDisplayObject::GameCoinDisplayObject_SetScale
-               (GameCoinDisplayObject *this,Vector3 size,MethodInfo *method)
-
-{
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-  if (this_00 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (this_00,size,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 

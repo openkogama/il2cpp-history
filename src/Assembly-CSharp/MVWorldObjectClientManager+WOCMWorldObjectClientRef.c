@@ -8,11 +8,13 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager+WOCMWorldObjectClientRef::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__WorldObjectClientRef_int_
+                   );
     cRam_? = '\x01';
   }
-  WorldObjectClientRef`1[MVWorldObjectClient]::WorldObjectClientRef_1_MVWorldObjectClient___ctor
-            ((WorldObjectClientRef_1_MVWorldObjectClient_ *)this,woId,
+  WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+            ((WorldObjectClientRef_1_System_Object_ *)this,woId,
              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__WorldObjectClientRef_int_);
   return;
 }

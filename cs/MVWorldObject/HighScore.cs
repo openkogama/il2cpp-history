@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class HighScore
 {
@@ -17,14 +17,19 @@ public class HighScore
 	public List<ScoreActorEntry> highScoreEntries;
 	public readonly int teamScore;
 	[CompilerGenerated]
+	private static Func<ScoreActorEntry, int> CS___9__CachedAnonymousMethodDelegate1;
+	[CompilerGenerated]
 	private static Func<ScoreActorEntry, int> CS___9__CachedAnonymousMethodDelegate3;
 
 	// Constructors
 	public HighScore(int teamScore, Dictionary<int, ActorCounter> actorCounters);
 
 	// Methods
+	public void Sort();
 	public void SortDescending();
 	public override string ToString();
+	[CompilerGenerated]
+	private static int _Sort_b__0(ScoreActorEntry x);
 	[CompilerGenerated]
 	private static int _SortDescending_b__2(ScoreActorEntry x);
 }

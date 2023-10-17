@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PickHelper : MonoBehaviour
 {
@@ -24,6 +24,6 @@ public class PickHelper : MonoBehaviour
 	// Methods
 	public void Initialize(UnityAction<MVWorldObjectClient, MVWorldObjectClient> onPickCallback, string msg);
 	private void Update();
-	private bool MVObjectIsType(Transform t, Type type, out int woId);
+	private bool MVObjectIsType(Transform t, System.Type type, out int woId);
 }
 

@@ -5,29 +5,34 @@ void Assembly-CSharp.dll::GameMeterBase::GameMeterBase__ctor(GameMeterBase *this
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
-            );
-  (this->fields).gameMeterVisualEffects = (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)this_00;
-  (this->fields).meterActive = 1;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
+              );
+    (this->fields).gameMeterVisualEffects = this_00;
+    func_?(&(this->fields).gameMeterVisualEffects,this_00);
+    (this->fields).meterActive = 1;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -40,8 +45,7 @@ void Assembly-CSharp.dll::GameMeterBase::GameMeterBase_set_MeterActive
 {
   pGVar1 = this->klass;
   (this->fields).meterActive = value;
-  (*(code *)(pGVar1->vtable).__unknown_2.method)(this,_value,(pGVar1->vtable).__unknown_3.methodPtr)
-  ;
+  (*(pGVar1->vtable).__unknown_2.methodPtr)(this,_value,(pGVar1->vtable).__unknown_2.method);
   return;
 }
 

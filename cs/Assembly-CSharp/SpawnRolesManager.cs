@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject.SpawnRoles;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRolesManager
 {
@@ -16,7 +16,6 @@ public class SpawnRolesManager
 	private readonly SpawnRolesRuntimeData spawnRolesRuntimeData;
 	private readonly ISpawnRoleChangeHandler spawnRoleChangeHandler;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Action<int> OnSpawnRoleActivated;
 
 	// Properties

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryAnimationHandler : ActivateOnAnimationBase
 {
@@ -33,57 +33,55 @@ public class AccessoryAnimationHandler : ActivateOnAnimationBase
 	}
 
 	[CompilerGenerated]
-	private sealed class _TransitionToNewAnimation_c__Iterator0 : IEnumerator<object>
+	private sealed class _TransitionToNewAnimation_d__15 : IEnumerator<object>
 	{
 		// Fields
-		internal float _startTime___0;
-		internal float resetDelay;
-		internal string transitionToAnimationName;
-		internal AccessoryAnimationHandler _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public AccessoryAnimationHandler __4__this;
+		public float resetDelay;
+		public string transitionToAnimationName;
+		private float _startTime_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _TransitionToNewAnimation_c__Iterator0();
+		public _TransitionToNewAnimation_d__15(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class _StopAnimationNextFrame_c__Iterator1 : IEnumerator<object>
+	private sealed class _StopAnimationNextFrame_d__19 : IEnumerator<object>
 	{
 		// Fields
-		internal bool _hasFramePassed___0;
-		internal AccessoryAnimationHandler _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public AccessoryAnimationHandler __4__this;
+		private bool _hasFramePassed_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _StopAnimationNextFrame_c__Iterator1();
+		public _StopAnimationNextFrame_d__19(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -99,12 +97,12 @@ public class AccessoryAnimationHandler : ActivateOnAnimationBase
 	public float GetAnimationSpeed(string animationName);
 	public void Initialize();
 	public void SetAllAnimationToLooping();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_TransitionToNewAnimation_d__15))]
 	private IEnumerator TransitionToNewAnimation(float resetDelay, string transitionToAnimationName);
 	private void StartTransitioning(string transitionToAnimationName);
 	private void StartCrossfading(string animationName);
 	private void HandleNoIdleAnimation();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_StopAnimationNextFrame_d__19))]
 	private IEnumerator StopAnimationNextFrame();
 }
 

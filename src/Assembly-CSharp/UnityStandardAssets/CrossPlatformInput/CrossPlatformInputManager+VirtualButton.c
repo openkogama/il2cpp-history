@@ -37,43 +37,41 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
   key = (this->fields)._name_k__BackingField;
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->vtable)
-              .Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_started == 0)) {
+  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
   }
   pVVar1 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar1 != (VirtualInput *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_
+                     );
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__Remove_System__String_
+                     );
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-               *)(pVVar1->fields).m_VirtualButtons;
-    if (this_00 !=
-        (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-         *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-              WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-              KogamaSettingWrapperBase]::
-              Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                        (this_00,key,
+    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+              (pVVar1->fields).m_VirtualButtons;
+    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        (this_00,(Object *)key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_
                         );
       if (bVar2 != 0) {
@@ -81,10 +79,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
         if (this_01 ==
             (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
              *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets
-        ::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-        Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Remove
-                  (this_01,key,
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Remove
+                  ((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)key,
                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__Remove_System__String_
                   );
       }
@@ -92,7 +89,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -108,8 +105,10 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
+  func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = 1;
   return;
 }
@@ -125,8 +124,10 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
+  func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = matchToInputSettings;
   return;
 }
@@ -157,30 +158,5 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
   iVar1 = (this->fields).m_ReleasedFrame;
   iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
   return iVar1 == iVar2 + -1;
-}
-
-
-/* Boolean get_matchWithInputManager() */
-
-bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
-     CrossPlatformInputManager+VirtualButton::
-     CrossPlatformInputManager_VirtualButton_get_matchWithInputManager
-               (CrossPlatformInputManager_VirtualButton *this,MethodInfo *method)
-
-{
-  return (this->fields)._matchWithInputManager_k__BackingField;
-}
-
-
-/* Void set_matchWithInputManager(Boolean) */
-
-void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
-     CrossPlatformInputManager+VirtualButton::
-     CrossPlatformInputManager_VirtualButton_set_matchWithInputManager
-               (CrossPlatformInputManager_VirtualButton *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._matchWithInputManager_k__BackingField = value;
-  return;
 }
 

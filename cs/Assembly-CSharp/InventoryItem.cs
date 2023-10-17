@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventoryItem
 {
@@ -16,18 +16,20 @@ public class InventoryItem
 	public readonly int itemID;
 	public readonly int itemCategoryID;
 	public readonly int itemTypeID;
-	public readonly byte[] data;
+	public string name;
+	public string description;
+	public byte[] data;
+	public bool hasData;
 	public readonly bool resellable;
 	public readonly int priceGold;
-	public readonly bool purchased;
+	public bool purchased;
 	public readonly int authorProfileID;
 	public readonly int originalItemID;
 	public readonly bool isDeleted;
 	public readonly bool isDefaultInvItem;
 	public int shopInventoryID;
-	public string name;
-	public string description;
 	public int slotPosition;
+	public string imagePath;
 	public static readonly Dictionary<MVWorldObjectDocumentationType, ItemDescription> localItemDescriptionOverride;
 
 	// Nested types

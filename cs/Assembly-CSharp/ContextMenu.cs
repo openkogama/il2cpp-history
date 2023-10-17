@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ContextMenu : MonoBehaviour
 {
@@ -20,9 +20,26 @@ public class ContextMenu : MonoBehaviour
 	[SerializeField]
 	private ContextMenuButton contextMenuButtonPrefab;
 	[SerializeField]
+	private ContextMenuButton contextMenuLockedButtonPrefab;
+	[SerializeField]
 	private RectTransform rectTransform;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Pop_b__9_0(IUIStack handler, BaseEventData data);
+	}
 
 	// Constructors
 	public ContextMenu();
@@ -33,11 +50,10 @@ public class ContextMenu : MonoBehaviour
 	private void PopWoDestroyed(object obj, WorldObjectDestroyedEventArgs args);
 	private void Pop();
 	public void AddButton(string buttonText, UnityAction onClickCallback);
+	public void AddLockedButton(string buttonText);
 	private void Update();
 	private void SetToScreenPoint();
 	private void LateUpdate();
 	private void OnDestroy();
-	[CompilerGenerated]
-	private static void _Pop_m__0(IUIStack handler, BaseEventData data);
 }
 

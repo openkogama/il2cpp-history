@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActivateUIElement, ILeaveEditPlayModeHandler, ICanvasController, IAccessoryPopupHandler
 {
@@ -27,6 +27,8 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	private InGameMenu inGameMenuPrefab;
 	[SerializeField]
 	private RectTransform playerListButton;
+	[SerializeField]
+	private RectTransform adminGameMgmtButton;
 	[SerializeField]
 	private RectTransform notificationsManager;
 	[SerializeField]
@@ -57,13 +59,28 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	private InGameMenu inGameMenu;
 	public UnityAction OnLeaveEditPlayMode;
 	private GameObject playModeState;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	public GameObject InGameUIRoot { get; }
 	public ILockCursorManager LockCursorManager { get; }
-	public bool InLobbyState { get; set; }
+	public override bool InLobbyState { get; set; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__36_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Initialize_b__36_0(IUIStack handler, BaseEventData data);
+	}
 
 	// Constructors
 	public DesktopPlayModeController();
@@ -77,6 +94,7 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	private void RegisterHotkeys();
 	private void Respawn();
 	public override void Initialize();
+	private void ActivateAdminButton(bool active);
 	private void HideUI();
 	private void ToggleLogicVisibility();
 	private void ToggleHD();
@@ -86,17 +104,15 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	private void OnHideTimeAttackFlagCountDown();
 	private void OnRoundEnd(IWinningCondition winningCondition);
 	private void LeavePlayMode();
-	public void ShowEUseIcon(ShowUseOption option, int woID = 0);
-	public void HideEUseIcon();
-	public IGUICrossHair GetCrossHair();
+	public override void ShowEUseIcon(ShowUseOption option, int woID = 0);
+	public override void HideEUseIcon();
+	public override IGUICrossHair GetCrossHair();
 	public void Activate(ActivateUIElement element);
 	public void LeaveEditPlayMode();
 	public void SetPixelPerfect(bool pixelPerfect);
 	public void SetUIReady();
 	public void OpenInventoryAtItem(UIPushOption pushOption, AccessoryDataClient displayShopItems);
 	[CompilerGenerated]
-	private void _RegisterHotkeys_m__0(IShortcutKeyRegister x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Initialize_m__1(IUIStack handler, BaseEventData data);
+	private void _RegisterHotkeys_b__34_0(IShortcutKeyRegister x, BaseEventData y);
 }
 

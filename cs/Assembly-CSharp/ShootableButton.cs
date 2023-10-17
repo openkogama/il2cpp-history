@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ShootableButton : MVLogicObject, IIsLogicObjectFiringEventHandler, ILogicWorldObject
 {
@@ -21,7 +21,6 @@ public class ShootableButton : MVLogicObject, IIsLogicObjectFiringEventHandler, 
 	private const int currentTimeDefaultValue = -1;
 	private OutputSignalTransmitter outputSignalTransmitter;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 
 	// Properties

@@ -6,17 +6,19 @@ void Assembly-CSharp.dll::FirstTimePressPlayController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__FirstTimePressPlayController);
+    func_?(&TypeInfo__NotificationController);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__FirstTimePressPlayController->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__FirstTimePressPlayController->_1).cctor_started == 0)) {
-    func_?(TypeInfo__FirstTimePressPlayController);
-  }
-  bVar1 = cRam_? == '\0';
   TypeInfo__FirstTimePressPlayController->static_fields->haveBeenPressed = 1;
-  if (bVar1) {
-    func_?(_UNK_?);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__FpsCounter);
     cRam_? = '\x01';
   }
   TypeInfo__FpsCounter->static_fields->_StartedPlaying_k__BackingField = 1;
@@ -24,17 +26,23 @@ void Assembly-CSharp.dll::FirstTimePressPlayController::
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                         );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)data,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-            );
-  if ((((uint)(TypeInfo__NotificationController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__NotificationController->_1).cctor_started == 0)) {
-    func_?();
+  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)data,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    NotificationController::NotificationController_PushNotification_2
+              (NotificationType__Enum_XPBoost,data,NotificationLifetime__Enum_High,(MethodInfo *)0x0
+              );
+    return;
   }
-  NotificationController::NotificationController_PushNotification_2
-            (NotificationType__Enum_XPBoost,data,NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -46,12 +54,8 @@ bool Assembly-CSharp.dll::FirstTimePressPlayController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__FirstTimePressPlayController);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__FirstTimePressPlayController->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__FirstTimePressPlayController->_1).cctor_started == 0)) {
-    func_?(TypeInfo__FirstTimePressPlayController);
   }
   return TypeInfo__FirstTimePressPlayController->static_fields->haveBeenPressed;
 }

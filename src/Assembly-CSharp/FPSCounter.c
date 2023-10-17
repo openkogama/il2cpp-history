@@ -5,27 +5,26 @@ void Assembly-CSharp.dll::FPSCounter::FPSCounter_Update(FPSCounter *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_F0);
     cRam_? = '\x01';
   }
-  fStack_1 = 0.0;
-  fVar2 = (this->fields).currTime;
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar3 = fVar3 + fVar2;
-  pfVar4 = &(this->fields).frameUpdateRate;
-  (this->fields).currTime = fVar3;
-  if (*pfVar4 <= fVar3 && fVar3 != *pfVar4) {
-    pTVar5 = (this->fields).fpsText;
-    fStack_1 = FpsCounter::FpsCounter_get_Fps((MethodInfo *)0x0);
-    uVar6 = func_?(&fStack_1,StringLiteral_F0,0);
-    if (pTVar5 == (Text *)0x0) {
-      func_?(0);
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
+  fVar1 = (this->fields).currTime;
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar2 = fVar2 + fVar1;
+  pfVar3 = &(this->fields).frameUpdateRate;
+  (this->fields).currTime = fVar2;
+  if (*pfVar3 <= fVar2 && fVar2 != *pfVar3) {
+    pTVar4 = (this->fields).fpsText;
+    SStack_5.m_value = FpsCounter::FpsCounter_get_Fps((MethodInfo *)0x0);
+    mscorlib.dll::System::Single::Single_ToString_2(&SStack_5,StringLiteral_F0,(MethodInfo *)0x0);
+    if (pTVar4 == (Text *)0x0) {
+      func_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    (*(code *)(pTVar5->klass->vtable).set_text.method)
-              (pTVar5,uVar6,(pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    SStack_5.m_value = (float)pTVar4;
+    (*(pTVar4->klass->vtable).set_text.methodPtr)();
     (this->fields).currTime = 0.0;
   }
   return;
@@ -39,11 +38,10 @@ void Assembly-CSharp.dll::FPSCounter::FPSCounter__ctor(FPSCounter *this,MethodIn
 {
   (this->fields).frameUpdateRate = 0.5;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

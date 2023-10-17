@@ -6,34 +6,28 @@ Assembly-CSharp.dll::CachedTextureRequest::CachedTextureRequest_Create
           (CachedTextureRequest *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pSVar1 = (this->fields)._._._.path;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-  if (this_00 != (KoGaMaSettingsContainer *)0x0) {
-    str1 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_UrlCacheAssetVersionArgument
-                     (this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
+  pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
+  if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral__version_);
+      cRam_? = '\x01';
     }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_2(pSVar1,str1,(MethodInfo *)0x0);
-    pUVar2 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
-             UnityWebRequestTexture::UnityWebRequestTexture_GetTexture
+    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&(pKVar2->fields).streamingAssetVersion,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral__version_,pSVar3,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar3,(MethodInfo *)0x0);
+    pUVar4 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
+             UnityWebRequestTexture::UnityWebRequestTexture_GetTexture_1
                        (pSVar1,(this->fields)._ReadableTextureData_k__BackingField == 0,
                         (MethodInfo *)0x0);
-    return pUVar2;
+    return pUVar4;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  pUVar2 = (UnityWebRequest *)(*pcVar3)();
-  return pUVar2;
+  pcVar5 = (code *)swi(3);
+  pUVar4 = (UnityWebRequest *)(*pcVar5)();
+  return pUVar4;
 }
 
 
@@ -46,29 +40,9 @@ void Assembly-CSharp.dll::CachedTextureRequest::CachedTextureRequest__ctor
                WWWRequestPriority__Enum requestPriority,bool readable,MethodInfo *method)
 
 {
-  GetRequest::GetRequest__ctor((GetRequest *)this,path,callback,requestPriority,(MethodInfo *)0x0);
+  AsyncWebRequest::AsyncWebRequest__ctor
+            ((AsyncWebRequest *)this,path,callback,requestPriority,(MethodInfo *)0x0);
   (this->fields)._ReadableTextureData_k__BackingField = readable;
-  return;
-}
-
-
-/* Boolean get_ReadableTextureData() */
-
-bool Assembly-CSharp.dll::CachedTextureRequest::CachedTextureRequest_get_ReadableTextureData
-               (CachedTextureRequest *this,MethodInfo *method)
-
-{
-  return (this->fields)._ReadableTextureData_k__BackingField;
-}
-
-
-/* Void set_ReadableTextureData(Boolean) */
-
-void Assembly-CSharp.dll::CachedTextureRequest::CachedTextureRequest_set_ReadableTextureData
-               (CachedTextureRequest *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._ReadableTextureData_k__BackingField = value;
   return;
 }
 

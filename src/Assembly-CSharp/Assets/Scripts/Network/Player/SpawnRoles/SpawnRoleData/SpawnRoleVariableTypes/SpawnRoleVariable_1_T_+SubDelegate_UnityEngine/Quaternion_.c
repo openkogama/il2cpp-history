@@ -10,7 +10,7 @@ SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Quaternion__BeginInvoke
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Quaternion);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

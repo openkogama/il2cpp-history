@@ -8,20 +8,26 @@ MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_GetSharedDa
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__ContainsKey_MV__WorldObject__InteractionPackageType_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__get_Item_MV__WorldObject__InteractionPackageType_
+                   );
+    func_?(&TypeInfo__MV__WorldObject__InteractionData);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__InteractionData->vtable).Equals.methodPtr & 0x2000000) !=
-       0) && ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_started == 0)) {
+  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__InteractionData);
   }
   pDVar1 = TypeInfo__MV__WorldObject__InteractionData->static_fields->sharedStaticValues;
   if (pDVar1 != (Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData_
                  *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-            InteractionPackageType,MV::WorldObject::InteractionData]::
-            Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__ContainsKey
-                      (pDVar1,interactionType,
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)pDVar1,
+                       (Object *)interactionType,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__ContainsKey_MV__WorldObject__InteractionPackageType_
                       );
     if (bVar2 == 0) {
@@ -34,8 +40,7 @@ MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_GetSharedDa
       *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
       return __return_storage_ptr__;
     }
-    if ((((uint)(TypeInfo__MV__WorldObject__InteractionData->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_started == 0)) {
+    if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
       IStack_3.impulse.y = (float)TypeInfo__MV__WorldObject__InteractionData;
       IStack_3.impulse.x = (float)&UNK_?;
       func_?();
@@ -43,10 +48,12 @@ MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_GetSharedDa
     pDVar1 = TypeInfo__MV__WorldObject__InteractionData->static_fields->sharedStaticValues;
     if (pDVar1 != (Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData_
                    *)0x0) {
-      pIVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-                InteractionPackageType,MV::WorldObject::InteractionData]::
-                Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__get_Item
-                          (&IStack_3,pDVar1,interactionType,
+      pIVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::
+                WorldObject::InteractionData]::
+                Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__get_Item
+                          (&IStack_3,
+                           (Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)pDVar1,
+                           interactionType,
                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__get_Item_MV__WorldObject__InteractionPackageType_
                           );
       fVar5 = (pIVar4->impulse).x;
@@ -65,7 +72,7 @@ MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_GetSharedDa
       return __return_storage_ptr__;
     }
   }
-  func_?(0);
+  func_?();
   pcVar11 = (code *)swi(3);
   pIVar4 = (InteractionData *)(*pcVar11)();
   return pIVar4;
@@ -79,89 +86,78 @@ MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
           (InteractionData *this,MethodInfo *method)
 
 {
-  pIVar1 = this;
-  pfVar2 = &(this->impulse).y;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__BytePacker);
+    func_?(&TypeInfo__MV__WorldObject__InteractionData);
     cRam_? = '\x01';
   }
-  this_01 = (ScaleAnimationBase *)func_?(TypeInfo__MV__WorldObject__BytePacker);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,unaff_ESI);
-  this_02 = (List_1_System_Byte__1 *)
-            func_?(TypeInfo__System__Collections__Generic__List<unsigned_char>);
-  mscorlib.dll::System::Collections::Generic::List`1[System::Byte]::List_1_System_Byte__1__ctor_1
-            (this_02,0x20,MethodInfo__System__Collections__Generic__List<unsigned_char>__List_int_);
-  (this_01->fields)._._._._.m_CachedPtr = this_02;
-  pIVar3 = this + 1;
-  this = (InteractionData *)CONCAT31((int3)((uint)pfVar2 >> 8),*(undefined1 *)&(pIVar3->impulse).x);
-  if ((((uint)(TypeInfo__MV__WorldObject__InteractionData->vtable).Equals.methodPtr & 0x2000000) !=
-       0) && ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pIVar3 = InteractionData_GetSharedData
-                     ((InteractionData *)&stack0xffffffd4,(InteractionPackageType__Enum)this,
-                      (MethodInfo *)0x0);
-  pSVar4 = (ScaleAnimationBase *)pIVar3->damage;
-  BytePacker::BytePacker_Write((BytePacker *)this_01,0,(MethodInfo *)0x0);
-  uVar5 = *(uint8_t *)&pIVar1[1].impulse.x;
-  bVar6 = uVar5 != 0;
-  if ((bool)bVar6) {
-    pSVar4 = this_01;
-    BytePacker::BytePacker_Write((BytePacker *)this_01,uVar5,(MethodInfo *)0x0);
-  }
-  value = *pfVar2;
-  if ((value != 0.0) && ((float)pSVar4 == 0.0)) {
-    BytePacker::BytePacker_Write_7((BytePacker *)this_01,value,(MethodInfo *)0x0);
-    bVar6 = bVar6 | 2;
-  }
-  cVar7 = (char)((uint)&(pIVar1->impulse).z >> 8);
-  fVar8 = (float10)func_?();
-  if (_UNK_? < (float)fVar8) {
-    cVar7 = (char)((uint)&stack0xffffffec >> 8);
-    fVar8 = (float10)func_?();
-    if ((float)fVar8 <= _UNK_?) {
-      BytePacker::BytePacker_Write_7((BytePacker *)this_01,(pIVar1->impulse).z,(MethodInfo *)0x0);
-      BytePacker::BytePacker_Write_7
-                ((BytePacker *)this_01,*(float *)&pIVar1->interactionType,(MethodInfo *)0x0);
-      BytePacker::BytePacker_Write_7((BytePacker *)this_01,pIVar1[1].damage,(MethodInfo *)0x0);
-      bVar6 = bVar6 | 4;
+  this_01 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
+  if (this_01 != (BytePacker *)0x0) {
+    BytePacker::BytePacker__ctor(this_01,(MethodInfo *)0x0);
+    interactionType = CONCAT31((int3)((uint)in_stack_1 >> 8),this->interactionType);
+    if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__InteractionData);
     }
-  }
-  uVar5 = *(uint8_t *)((int)&pIVar1[1].impulse.x + 1);
-  if ((uVar5 != 0) && (cVar7 == '\0')) {
-    BytePacker::BytePacker_Write((BytePacker *)this_01,uVar5,(MethodInfo *)0x0);
-    bVar6 = bVar6 | 8;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  this_00 = (this_01->fields)._._._._.m_CachedPtr;
-  if (this_00 != (List_1_VoxelHit_ *)0x0) {
-    pVVar9 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray
-                       (this_00,
-                        MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__);
-    if (pVVar9 != (VoxelHit__Array *)0x0) {
-      if (pVVar9->max_length != 0) {
-        *(byte *)&pVVar9->vector[0].point.x = bVar6;
-        return (Byte__Array *)pVVar9;
+    pIVar2 = InteractionData_GetSharedData
+                       ((InteractionData *)&stack0xffffffd0,interactionType,(MethodInfo *)0x0);
+    fVar3 = pIVar2->damage;
+    value = (pIVar2->impulse).x;
+    fVar4 = (pIVar2->impulse).y;
+    fVar5 = (pIVar2->impulse).z;
+    cVar6 = pIVar2->playerKilledByType;
+    BytePacker::BytePacker_Write(this_01,0,(MethodInfo *)0x0);
+    bVar7 = this->interactionType != 0;
+    if ((bool)bVar7) {
+      BytePacker::BytePacker_Write(this_01,this->interactionType,(MethodInfo *)0x0);
+    }
+    if ((this->damage != 0.0) && (fVar3 == 0.0)) {
+      value = this->damage;
+      fVar4 = 0.0;
+      BytePacker::BytePacker_Write_10(this_01,value,(MethodInfo *)0x0);
+      bVar7 = bVar7 | 2;
+    }
+    fVar3 = (this->impulse).y;
+    fVar8 = (this->impulse).x;
+    fVar9 = (this->impulse).z;
+    if ((_UNK_? < fVar8 * fVar8 + fVar3 * fVar3 + fVar9 * fVar9) &&
+       (value * value + fVar4 * fVar4 + fVar5 * fVar5 <= _UNK_?)) {
+      BytePacker::BytePacker_Write_10(this_01,(this->impulse).x,(MethodInfo *)0x0);
+      BytePacker::BytePacker_Write_10(this_01,(this->impulse).y,(MethodInfo *)0x0);
+      cVar6 = ',';
+      BytePacker::BytePacker_Write_10(this_01,(this->impulse).z,(MethodInfo *)0x0);
+      bVar7 = bVar7 | 4;
+    }
+    if ((this->playerKilledByType != 0) && (cVar6 == '\0')) {
+      BytePacker::BytePacker_Write(this_01,this->playerKilledByType,(MethodInfo *)0x0);
+      bVar7 = bVar7 | 8;
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+              (this_01->fields)._buffer;
+    if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+      pUVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+               UnitySynchronizationContext+WorkRequest]::
+               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
+                         (this_00,
+                          MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__);
+      if (pUVar10 != (UnitySynchronizationContext_WorkRequest__Array *)0x0) {
+        if (pUVar10->max_length != 0) {
+          *(byte *)&pUVar10->vector[0].m_DelagateCallback = bVar7;
+          return (Byte__Array *)pUVar10;
+        }
+        goto code_?;
       }
-      goto code_?;
     }
   }
   func_?();
 code_?:
-  uStack10 = 0;
-  uStack11 = 0;
   func_?();
-  func_?();
-  pcVar12 = (code *)swi(3);
-  pBVar13 = (Byte__Array *)(*pcVar12)();
-  return pBVar13;
+  pcVar11 = (code *)swi(3);
+  pBVar12 = (Byte__Array *)(*pcVar11)();
+  return pBVar12;
 }
 
 
@@ -172,31 +168,30 @@ String * MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_To
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__InteractionPackageType);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    func_?(&StringLiteral_damage___0___AvatarPackageType__);
     cRam_? = '\x01';
   }
   args = (Object__Array *)func_?(TypeInfo__System__Object,4);
-  fStack_1 = (this->impulse).y;
+  fStack_1 = this->damage;
   pOVar2 = (Object *)func_?(TypeInfo__System__Single,&fStack_1);
   if (args == (Object__Array *)0x0) {
-    func_?(0);
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
+    uVar3 = func_?(0);
     func_?(uVar3);
 code_?:
-    uVar3 = func_?(0,0);
+    uVar3 = func_?(0);
     func_?(uVar3);
 code_?:
-    uVar3 = func_?(0,0);
+    uVar3 = func_?(0);
     func_?(uVar3);
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
+    uVar3 = func_?(0);
     func_?(uVar3);
   }
   else {
@@ -206,51 +201,43 @@ code_?:
     }
     if (args->max_length == 0) goto code_?;
     args->vector[0] = pOVar2;
-    uStack_5 = *(undefined1 *)&this[1].impulse.x;
+    func_?(args->vector,pOVar2);
+    uStack_5 = this->interactionType;
     pOVar2 = (Object *)func_?(TypeInfo__MV__WorldObject__InteractionPackageType,&uStack_5);
     if (pOVar2 != (Object *)0x0) {
       iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 != 0) goto code_?;
-      goto code_?;
+      if (iVar4 == 0) goto code_?;
     }
-code_?:
     if (args->max_length < 2) goto code_?;
     args->vector[1] = pOVar2;
-    fStack_6 = this[1].damage;
-    uStack_7 = *(undefined8 *)&(this->impulse).z;
+    func_?(args->vector + 1,pOVar2);
+    fStack_6 = (this->impulse).z;
+    uStack_7._0_4_ = (this->impulse).x;
+    uStack_7._4_4_ = (this->impulse).y;
     pOVar2 = (Object *)func_?(TypeInfo__UnityEngine__Vector3,&uStack_7);
     if (pOVar2 != (Object *)0x0) {
       iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 != 0) goto code_?;
-      goto code_?;
+      if (iVar4 == 0) goto code_?;
     }
-code_?:
     if (args->max_length < 3) goto code_?;
     args->vector[2] = pOVar2;
-    uStack_8 = *(undefined1 *)((int)&this[1].impulse.x + 1);
+    func_?(args->vector + 2,pOVar2);
+    uStack_8 = this->playerKilledByType;
     pOVar2 = (Object *)func_?(TypeInfo__MV__Common__PlayerKilledByType,&uStack_8);
-    if (pOVar2 == (Object *)0x0) {
-code_?:
-      if (3 < args->max_length) {
-        args->vector[3] = pOVar2;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        pSVar9 = mscorlib.dll::System::String::String_Format_3
-                           (StringLiteral_damage___0___AvatarPackageType__,args,(MethodInfo *)0x0);
-        return pSVar9;
-      }
-      goto code_?;
+    if (pOVar2 != (Object *)0x0) {
+      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
+      if (iVar4 == 0) goto code_?;
     }
-    iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-    if (iVar4 != 0) goto code_?;
+    if (3 < args->max_length) {
+      args->vector[3] = pOVar2;
+      func_?(args->vector + 3,pOVar2);
+      pSVar9 = mscorlib.dll::System::String::String_Format_3
+                         (StringLiteral_damage___0___AvatarPackageType__,args,(MethodInfo *)0x0);
+      return pSVar9;
+    }
   }
-  uVar3 = func_?(0,0);
-  func_?(uVar3);
 code_?:
-  uVar3 = func_?(0,0);
-  func_?(uVar3);
+  func_?();
   pcVar10 = (code *)swi(3);
   pSVar9 = (String *)(*pcVar10)();
   return pSVar9;
@@ -265,85 +252,46 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_Valida
                MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if ((damage == 0.0) || (sharedInteractionData.damage == 0.0)) {
-    fVar1 = (float10)func_?(&impulse,0);
-    damage = (float)fVar1;
-    if (_UNK_? < damage) {
-      fVar1 = (float10)func_?(&sharedInteractionData.impulse,0);
-      damage = (float)fVar1;
-      if (_UNK_? < damage) goto code_?;
+    if ((impulse.y * impulse.y + impulse.x * impulse.x + impulse.z * impulse.z <= _UNK_?) ||
+       (sharedInteractionData.impulse.x * sharedInteractionData.impulse.x +
+        sharedInteractionData.impulse.y * sharedInteractionData.impulse.y +
+        sharedInteractionData.impulse.z * sharedInteractionData.impulse.z <= _UNK_?)) {
+      if (((undefined1)playerKilledByType == PlayerKilledByType__Enum_None) ||
+         (sharedInteractionData.playerKilledByType == 0)) {
+        return;
+      }
+      damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
+      uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
+      arg1 = (Object *)func_?(uVar1);
+      ppSVar2 = &StringLiteral_Both_sharedValues_playerKilledBy;
     }
-    if (((undefined1)playerKilledByType == PlayerKilledByType__Enum_None) ||
-       (sharedInteractionData.playerKilledByType == 0)) {
-      return;
+    else {
+      damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
+      uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
+      arg1 = (Object *)func_?(uVar1);
+      ppSVar2 = &StringLiteral_Both_sharedValues_impulse_and_co;
     }
   }
   else {
     damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
-    pOVar2 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar3 = mscorlib.dll::System::String::String_Concat
-                       ((Object *)StringLiteral_Both_sharedValues_damage_and_con,pOVar2,
-                        (MethodInfo *)0x0);
-    pIVar4 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-    IsolatedStorageException__ctor_1(pIVar4,pSVar3,(MethodInfo *)0x0);
-    sharedInteractionData.impulse.x =
-         (float)
-         MethodInfo__MV__WorldObject__InteractionData__Validate_MethodInfo__MV__WorldObject__InteractionData__MV__WorldObject__InteractionPackageType__float__UnityEngine__Vector3__MV__Common__PlayerKilledByType_
-    ;
-    sharedInteractionData.damage = 0.0;
-    func_?();
-code_?:
-    damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
-    pOVar2 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar3 = mscorlib.dll::System::String::String_Concat
-                       ((Object *)StringLiteral_Both_sharedValues_impulse_and_co,pOVar2,
-                        (MethodInfo *)0x0);
-    pIVar4 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-    IsolatedStorageException__ctor_1(pIVar4,pSVar3,(MethodInfo *)0x0);
-    sharedInteractionData.impulse.x =
-         (float)
-         MethodInfo__MV__WorldObject__InteractionData__Validate_MethodInfo__MV__WorldObject__InteractionData__MV__WorldObject__InteractionPackageType__float__UnityEngine__Vector3__MV__Common__PlayerKilledByType_
-    ;
-    sharedInteractionData.damage = 0.0;
-    func_?();
+    uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
+    arg1 = (Object *)func_?(uVar1);
+    ppSVar2 = &StringLiteral_Both_sharedValues_damage_and_con;
   }
-  damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
-  pOVar2 = (Object *)
-           func_?(TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar3 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral_Both_sharedValues_playerKilledBy,pOVar2,
-                      (MethodInfo *)0x0);
-  pIVar4 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1(pIVar4,pSVar3,(MethodInfo *)0x0);
-  sharedInteractionData.impulse.x =
-       (float)
-       MethodInfo__MV__WorldObject__InteractionData__Validate_MethodInfo__MV__WorldObject__InteractionData__MV__WorldObject__InteractionPackageType__float__UnityEngine__Vector3__MV__Common__PlayerKilledByType_
-  ;
-  sharedInteractionData.damage = 0.0;
+  method_00 = (MethodInfo *)0x0;
+  arg0 = (Object *)func_?(ppSVar2);
+  message = mscorlib.dll::System::String::String_Concat(arg0,arg1,method_00);
+  uVar1 = func_?(&TypeInfo__System__Exception);
+  this = (Exception *)func_?(uVar1);
+  func_?(this);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this,message,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__MV__WorldObject__InteractionData__Validate_MethodInfo__MV__WorldObject__InteractionData__MV__WorldObject__InteractionPackageType__float__UnityEngine__Vector3__MV__Common__PlayerKilledByType_
+                 );
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -359,9 +307,7 @@ bool MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_Valida
     bVar1 = MVMath::MVMath_ValidateFloat(validateVector.y,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       bVar1 = MVMath::MVMath_ValidateFloat(validateVector.z,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
-        return 1;
-      }
+      return bVar1 != 0;
     }
   }
   return 0;
@@ -375,227 +321,269 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
 {
   if (cRam_? == '\0') {
     func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   this = (Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData_ *)
          func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Dictionary__
-            );
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-            ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  uVar1 = 1;
-  uVar2 = 0;
-  func_?(&stack0xffffffdc,9,0x41380000);
   if (this != (Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData_ *)
               0x0) {
-    value_06.impulse.x = (float)uVar1;
-    value_06.damage = (float)uVar2;
-    value_06.impulse.y =
-         (float)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
-    ;
-    value_06.impulse.z = 0.0;
-    value_06.interactionType = 0;
-    value_06.playerKilledByType = 0;
-    value_06._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_CenterGun,value_06,
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Dictionary__
+              );
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar1._0_1_ = 0;
+    uVar1._1_1_ = 0;
+    uVar1._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    fVar5 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_CenterGun,11.5,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_05.impulse.x = fVar3;
+    value_05.damage = fVar2;
+    value_05.impulse.y = fVar4;
+    value_05.impulse.z = fVar5;
+    value_05.interactionType = (uint8_t)uVar1;
+    value_05.playerKilledByType = SUB41(uVar1,1);
+    value_05._18_2_ = SUB42(uVar1,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,9,value_05,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    func_?();
-    fVar4 = (float)uVar1;
-    fVar5 = (float)uVar2;
-    uVar6 = CONCAT44(fVar4,fVar5);
-    method = (MethodInfo *)&UNK_?;
-    fVar7 = (float)uVar3;
-    stack0x00000008 = &stack0xffffffdc;
-    IVar8 = (InteractionData)CONCAT128(auVar9,uVar6);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_MutantHit,IVar8,
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar6._0_1_ = 0;
+    uVar6._1_1_ = 0;
+    uVar6._2_2_ = 0;
+    puStack_7 = (undefined *)0x0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&puStack_7,InteractionPackageType__Enum_MutantHit,110.0,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_06.impulse.x = fVar2;
+    value_06.damage = (float)puStack_7;
+    value_06.impulse.y = fVar3;
+    value_06.impulse.z = fVar4;
+    value_06.interactionType = (uint8_t)uVar6;
+    value_06.playerKilledByType = SUB41(uVar6,1);
+    value_06._18_2_ = SUB42(uVar6,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,6,value_06,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack10 = &stack0xffffffdc;
-    func_?();
-    IVar8.impulse.x = (float)uVar1;
-    IVar8.damage = (float)uVar2;
-    IVar8.impulse.y = (float)uVar3;
-    IVar8.impulse.z = 0.0;
-    IVar8.interactionType = 0;
-    IVar8.playerKilledByType = 0;
-    IVar8._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_RailGunHit,IVar8,
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar9._0_1_ = 0;
+    uVar9._1_1_ = 0;
+    uVar9._2_2_ = 0;
+    fVar4 = 0.0;
+    fVar5 = 0.0;
+    fVar2 = (pVVar8->zeroVector).y;
+    fVar3 = (pVVar8->zeroVector).z;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffffc0,InteractionPackageType__Enum_RailGunHit,100.0,
+               pVVar8->zeroVector,PlayerKilledByType__Enum_None,0,(MethodInfo *)0x0);
+    value_07.impulse.x = fVar3;
+    value_07.damage = fVar2;
+    value_07.impulse.y = fVar4;
+    value_07.impulse.z = fVar5;
+    value_07.interactionType = (uint8_t)uVar9;
+    value_07.playerKilledByType = SUB41(uVar9,1);
+    value_07._18_2_ = SUB42(uVar9,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,4,value_07,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack11 = &stack0xffffffdc;
-    func_?();
-    value.impulse.x = (float)uVar1;
-    value.damage = (float)uVar2;
-    value.impulse.y = (float)uVar3;
-    value.impulse.z = 0.0;
-    value.interactionType = 0;
-    value.playerKilledByType = 0;
-    value._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_ShotgunHit,value,
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar10._0_1_ = 0;
+    uVar10._1_1_ = 0;
+    uVar10._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    fVar5 = 0.0;
+    fStack11 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffffac,InteractionPackageType__Enum_ShotgunHit,13.0,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value.impulse.x = fVar3;
+    value.damage = fVar2;
+    value.impulse.y = fVar4;
+    value.impulse.z = fVar5;
+    value.interactionType = (uint8_t)uVar10;
+    value.playerKilledByType = SUB41(uVar10,1);
+    value._18_2_ = SUB42(uVar10,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,7,value,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack12 = &stack0xffffffdc;
-    func_?();
-    value_00.impulse.x = (float)uVar1;
-    value_00.damage = (float)uVar2;
-    value_00.impulse.y = (float)uVar3;
-    value_00.impulse.z = 0.0;
-    value_00.interactionType = 0;
-    value_00.playerKilledByType = 0;
-    value_00._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_SixShooterHit,value_00,
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar12._0_1_ = 0;
+    uVar12._1_1_ = 0;
+    uVar12._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    fVar5 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffff98,InteractionPackageType__Enum_SixShooterHit,12.5,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_00.impulse.x = fVar3;
+    value_00.damage = fVar2;
+    value_00.impulse.y = fVar4;
+    value_00.impulse.z = fVar5;
+    value_00.interactionType = (uint8_t)uVar12;
+    value_00.playerKilledByType = SUB41(uVar12,1);
+    value_00._18_2_ = SUB42(uVar12,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0xe,value_00,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack13 = &stack0xffffffdc;
-    func_?();
-    value_01.impulse.x = (float)uVar1;
-    value_01.damage = (float)uVar2;
-    value_01.impulse.y = (float)uVar3;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar13._0_1_ = 0;
+    uVar13._1_1_ = 0;
+    uVar13._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffff84,InteractionPackageType__Enum_DoubleSixShooterHit,
+               12.5,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_01.impulse.x = fVar3;
+    value_01.damage = fVar2;
+    value_01.impulse.y = fVar4;
     value_01.impulse.z = 0.0;
-    value_01.interactionType = 0;
-    value_01.playerKilledByType = 0;
-    value_01._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_DoubleSixShooterHit,value_01,
+    value_01.interactionType = (uint8_t)uVar13;
+    value_01.playerKilledByType = SUB41(uVar13,1);
+    value_01._18_2_ = SUB42(uVar13,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x19,value_01,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack14 = &stack0xffffffdc;
-    func_?();
-    value_02.impulse.x = (float)uVar1;
-    value_02.damage = (float)uVar2;
-    value_02.impulse.y = (float)uVar3;
-    value_02.impulse.z = 0.0;
-    value_02.interactionType = 0;
-    value_02.playerKilledByType = 0;
-    value_02._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_SwordHit,value_02,
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar14._0_1_ = 0;
+    uVar14._1_1_ = 0;
+    uVar14._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    fVar5 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffff70,InteractionPackageType__Enum_ThrowingStarHit,15.0
+               ,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_02.impulse.x = fVar3;
+    value_02.damage = fVar2;
+    value_02.impulse.y = fVar4;
+    value_02.impulse.z = fVar5;
+    value_02.interactionType = (uint8_t)uVar14;
+    value_02.playerKilledByType = SUB41(uVar14,1);
+    value_02._18_2_ = SUB42(uVar14,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0xf,value_02,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack15 = &stack0xffffffdc;
-    func_?();
-    value_03.impulse.x = (float)uVar1;
-    value_03.damage = (float)uVar2;
-    value_03.impulse.y = (float)uVar3;
-    value_03.impulse.z = 0.0;
-    value_03.interactionType = 0;
-    value_03.playerKilledByType = 0;
-    value_03._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_ThrowingStarHit,value_03,
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar15._0_1_ = 0;
+    uVar15._1_1_ = 0;
+    uVar15._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    fVar5 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffff5c,InteractionPackageType__Enum_MultiThrowingStarHit
+               ,12.0,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_03.impulse.x = fVar3;
+    value_03.damage = fVar2;
+    value_03.impulse.y = fVar4;
+    value_03.impulse.z = fVar5;
+    value_03.interactionType = (uint8_t)uVar15;
+    value_03.playerKilledByType = SUB41(uVar15,1);
+    value_03._18_2_ = SUB42(uVar15,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x18,value_03,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack16 = &stack0xffffffdc;
-    func_?();
-    value_04.impulse.x = (float)uVar1;
-    value_04.damage = (float)uVar2;
-    value_04.impulse.y = (float)uVar3;
-    value_04.impulse.z = 0.0;
-    value_04.interactionType = 0;
-    value_04.playerKilledByType = 0;
-    value_04._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_MultiThrowingStarHit,value_04,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
-              );
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-              ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-    uVar2 = 0;
-    uVar1 = 0;
-    uVar3 = 0;
-    puStack17 = &stack0xffffffdc;
-    func_?();
-    value_05.impulse.x = (float)uVar1;
-    value_05.damage = (float)uVar2;
-    value_05.impulse.y = (float)uVar3;
-    value_05.impulse.z = 0.0;
-    value_05.interactionType = 0;
-    value_05.playerKilledByType = 0;
-    value_05._18_2_ = 0;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-    InteractionPackageType,MV::WorldObject::InteractionData]::
-    Dictionary_2_MV_WorldObject_InteractionPackageType_MV_WorldObject_InteractionData__Add
-              (this,InteractionPackageType__Enum_SlapGunHit,value_05,
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar16._0_1_ = 0;
+    uVar16._1_1_ = 0;
+    uVar16._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar4 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffff48,InteractionPackageType__Enum_SlapGunHit,25.0,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_04.impulse.x = 0.0;
+    value_04.damage = fVar2;
+    value_04.impulse.y = fVar3;
+    value_04.impulse.z = fVar4;
+    value_04.interactionType = (uint8_t)uVar16;
+    value_04.playerKilledByType = SUB41(uVar16,1);
+    value_04._18_2_ = SUB42(uVar16,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x1a,value_04,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     TypeInfo__MV__WorldObject__InteractionData->static_fields->sharedStaticValues = this;
+    func_?();
     return;
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -611,79 +599,120 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor
     func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  InteractionData__ctor_7
+            (&IStack_1,interactionType,0.0,
+             TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,PlayerKilledByType__Enum_None
+             ,(MethodInfo *)0x0);
+  this->damage = IStack_1.damage;
+  (this->impulse).x = IStack_1.impulse.x;
+  (this->impulse).y = IStack_1.impulse.y;
+  (this->impulse).z = IStack_1.impulse.z;
+  this->interactionType = IStack_1.interactionType;
+  this->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&this->field_0x12 = IStack_1._18_2_;
+  return;
+}
+
+
+/* InteractionData(InteractionPackageType, Single) */
+
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_1
+               (InteractionData *this,InteractionPackageType__Enum interactionType,float damage,
+               MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero(&VStack_1,(MethodInfo *)0x0);
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  uStack_4 = 0;
-  fStack_5 = 0.0;
-  fStack_6 = 0.0;
-  func_?(&fStack_6,interactionType,0);
-  (this->impulse).y = fStack_6;
-  (this->impulse).z = fStack_3;
-  this->interactionType = (undefined1)uStack_4;
-  this->playerKilledByType = uStack_4._1_1_;
-  *(undefined2 *)&this->field_0x12 = uStack_4._2_2_;
-  this[1].damage = fStack_5;
-  this[1].impulse.x = fStack_2;
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  InteractionData__ctor_7
+            (&IStack_1,interactionType,damage,
+             TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,PlayerKilledByType__Enum_None
+             ,(MethodInfo *)0x0);
+  this->damage = IStack_1.damage;
+  (this->impulse).x = IStack_1.impulse.x;
+  (this->impulse).y = IStack_1.impulse.y;
+  (this->impulse).z = IStack_1.impulse.z;
+  this->interactionType = IStack_1.interactionType;
+  this->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&this->field_0x12 = IStack_1._18_2_;
   return;
 }
 
 
 /* InteractionData(InteractionPackageType, Vector3) */
 
-void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_1
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_2
                (InteractionData *this,InteractionPackageType__Enum interactionType,Vector3 impulse,
                MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  uStack_4 = 0;
-  fStack_5 = 0.0;
-  func_?(&fStack_2,interactionType,0);
-  (this->impulse).y = fStack_2;
-  (this->impulse).z = fStack_3;
-  this->interactionType = (undefined1)uStack_4;
-  this->playerKilledByType = uStack_4._1_1_;
-  *(undefined2 *)&this->field_0x12 = uStack_4._2_2_;
-  this[1].damage = fStack_5;
-  this[1].impulse.x = fStack_1;
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  InteractionData__ctor_7
+            (&IStack_1,interactionType,0.0,impulse,PlayerKilledByType__Enum_None,(MethodInfo *)0x0)
+  ;
+  this->damage = IStack_1.damage;
+  (this->impulse).x = IStack_1.impulse.x;
+  (this->impulse).y = IStack_1.impulse.y;
+  (this->impulse).z = IStack_1.impulse.z;
+  this->interactionType = IStack_1.interactionType;
+  this->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&this->field_0x12 = IStack_1._18_2_;
   return;
 }
 
 
 /* InteractionData(InteractionPackageType, Single, Vector3) */
 
-void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_2
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_3
                (InteractionData *this,InteractionPackageType__Enum interactionType,float damage,
                Vector3 impulse,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  uStack_4 = 0;
-  fStack_5 = 0.0;
-  func_?(&fStack_2,interactionType,damage);
-  (this->impulse).y = fStack_2;
-  (this->impulse).z = fStack_3;
-  this->interactionType = (undefined1)uStack_4;
-  this->playerKilledByType = uStack_4._1_1_;
-  *(undefined2 *)&this->field_0x12 = uStack_4._2_2_;
-  this[1].damage = fStack_5;
-  this[1].impulse.x = fStack_1;
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  InteractionData__ctor_7
+            (&IStack_1,interactionType,damage,impulse,PlayerKilledByType__Enum_None,
+             (MethodInfo *)0x0);
+  this->damage = IStack_1.damage;
+  (this->impulse).x = IStack_1.impulse.x;
+  (this->impulse).y = IStack_1.impulse.y;
+  (this->impulse).z = IStack_1.impulse.z;
+  this->interactionType = IStack_1.interactionType;
+  this->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&this->field_0x12 = IStack_1._18_2_;
   return;
 }
 
 
 /* InteractionData(InteractionPackageType, PlayerKilledByType) */
 
-void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_3
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_4
                (InteractionData *this,InteractionPackageType__Enum interactionType,
                PlayerKilledByType__Enum playerKilledByType,MethodInfo *method)
 
@@ -692,158 +721,330 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
     func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  InteractionData__ctor_7
+            (&IStack_1,interactionType,0.0,
+             TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,playerKilledByType,
+             (MethodInfo *)0x0);
+  this->damage = IStack_1.damage;
+  (this->impulse).x = IStack_1.impulse.x;
+  (this->impulse).y = IStack_1.impulse.y;
+  (this->impulse).z = IStack_1.impulse.z;
+  this->interactionType = IStack_1.interactionType;
+  this->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&this->field_0x12 = IStack_1._18_2_;
+  return;
+}
+
+
+/* InteractionData(InteractionPackageType, Single, PlayerKilledByType) */
+
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5
+               (InteractionData *this,InteractionPackageType__Enum interactionType,float damage,
+               PlayerKilledByType__Enum playerKilledByType,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
     func_?();
+    cRam_? = '\x01';
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero(&VStack_1,(MethodInfo *)0x0);
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  uStack_4 = 0;
-  fStack_5 = 0.0;
-  fStack_6 = 0.0;
-  func_?(&fStack_6,interactionType,0);
-  (this->impulse).y = fStack_6;
-  (this->impulse).z = fStack_3;
-  this->interactionType = (undefined1)uStack_4;
-  this->playerKilledByType = uStack_4._1_1_;
-  *(undefined2 *)&this->field_0x12 = uStack_4._2_2_;
-  this[1].damage = fStack_5;
-  this[1].impulse.x = fStack_2;
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  InteractionData__ctor_7
+            (&IStack_1,interactionType,damage,
+             TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,playerKilledByType,
+             (MethodInfo *)0x0);
+  this->damage = IStack_1.damage;
+  (this->impulse).x = IStack_1.impulse.x;
+  (this->impulse).y = IStack_1.impulse.y;
+  (this->impulse).z = IStack_1.impulse.z;
+  this->interactionType = IStack_1.interactionType;
+  this->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&this->field_0x12 = IStack_1._18_2_;
   return;
 }
 
 
 /* InteractionData(InteractionPackageType, Vector3, PlayerKilledByType) */
 
-void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_4
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_6
                (InteractionData *this,InteractionPackageType__Enum interactionType,Vector3 impulse,
                PlayerKilledByType__Enum playerKilledByType,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  uStack_3 = 0;
-  fStack_4 = 0.0;
-  fStack_5 = 0.0;
-  func_?(&fStack_1,interactionType,0);
-  (this->impulse).y = fStack_1;
-  (this->impulse).z = fStack_2;
-  this->interactionType = (undefined1)uStack_3;
-  this->playerKilledByType = uStack_3._1_1_;
-  *(undefined2 *)&this->field_0x12 = uStack_3._2_2_;
-  this[1].damage = fStack_4;
-  this[1].impulse.x = fStack_5;
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  InteractionData__ctor_7
+            (&IStack_1,interactionType,0.0,impulse,playerKilledByType,(MethodInfo *)0x0);
+  this->damage = IStack_1.damage;
+  (this->impulse).x = IStack_1.impulse.x;
+  (this->impulse).y = IStack_1.impulse.y;
+  (this->impulse).z = IStack_1.impulse.z;
+  this->interactionType = IStack_1.interactionType;
+  this->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&this->field_0x12 = IStack_1._18_2_;
   return;
 }
 
 
 /* InteractionData(InteractionPackageType, Single, Vector3, PlayerKilledByType) */
 
-void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7
                (InteractionData *this,InteractionPackageType__Enum interactionType,float damage,
                Vector3 impulse,PlayerKilledByType__Enum playerKilledByType,MethodInfo *method)
 
 {
-  func_?(&(this->impulse).y,interactionType,damage);
+  validateFloat = impulse.z;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  this->interactionType = (uint8_t)interactionType;
+  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pIVar1 = InteractionData_GetSharedData(&IStack_2,interactionType,(MethodInfo *)0x0);
+  fStack_3 = pIVar1->damage;
+  fStack_4 = (pIVar1->impulse).x;
+  fStack_5 = (pIVar1->impulse).y;
+  fStack_6 = (pIVar1->impulse).z;
+  InteractionData_Validate
+            (*pIVar1,interactionType,damage,impulse,playerKilledByType,(MethodInfo *)0x0);
+  bVar7 = MVMath::MVMath_ValidateFloat(damage,(MethodInfo *)0x0);
+  fVar8 = damage;
+  if (bVar7 == 0) {
+    fVar8 = 0.0;
+  }
+  this->damage = fVar8;
+  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  interactionType._1_1_ = InteractionPackageType__Enum_None >> 8;
+  bVar7 = MVMath::MVMath_ValidateFloat(impulse.x,(MethodInfo *)0x0);
+  uVar9 = interactionType._1_1_;
+  if (bVar7 != 0) {
+    impulse.x = 0.0;
+    damage = impulse.y;
+    interactionType._1_1_ = 0x3a;
+    uVar9 = interactionType._1_1_;
+    interactionType._1_1_ = 0x3a;
+    bVar7 = MVMath::MVMath_ValidateFloat(impulse.y,(MethodInfo *)0x0);
+    if (bVar7 != 0) {
+      impulse.z = 0.0;
+      impulse.y = validateFloat;
+      impulse.x = (float)&UNK_?;
+      bVar7 = MVMath::MVMath_ValidateFloat(validateFloat,(MethodInfo *)0x0);
+      if (bVar7 != 0) {
+        uVar10 = CONCAT44(validateFloat,&UNK_?);
+        goto code_?;
+      }
+    }
+  }
+  interactionType._1_1_ = uVar9;
+  if (cRam_? == '\0') {
+    playerKilledByType = (PlayerKilledByType__Enum)&UNK_?;
+    func_?();
+    cRam_? = '\x01';
+  }
+  pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar10._0_4_ = (pVVar11->zeroVector).x;
+  uVar10._4_4_ = (pVVar11->zeroVector).y;
+  validateFloat = (pVVar11->zeroVector).z;
+code_?:
+  (this->impulse).x = (float)(int)uVar10;
+  (this->impulse).y = (float)(int)((ulonglong)uVar10 >> 0x20);
+  (this->impulse).z = validateFloat;
+  this->playerKilledByType = (uint8_t)playerKilledByType;
+  if (damage == 0.0) {
+    this->damage = fStack_3;
+  }
+  if (impulse.y * impulse.y + impulse.x * impulse.x + impulse.z * impulse.z <= _UNK_?) {
+    (this->impulse).x = fStack_4;
+    (this->impulse).y = fStack_5;
+    (this->impulse).z = fStack_6;
+  }
+  uVar9 = this->playerKilledByType;
+  if ((uint8_t)playerKilledByType == 0) {
+    uVar9 = interactionType._1_1_;
+  }
+  this->playerKilledByType = uVar9;
   return;
 }
 
 
 /* InteractionData(InteractionPackageType, Single, Vector3, PlayerKilledByType, Boolean) */
 
-void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_6
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_8
                (InteractionData *this,InteractionPackageType__Enum interactionType,float damage,
                Vector3 impulse,PlayerKilledByType__Enum playerKilledByType,bool isShared,
                MethodInfo *method)
 
 {
-  func_?(&(this->impulse).y,interactionType,damage);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__InteractionData);
+    cRam_? = '\x01';
+  }
+  this->interactionType = (undefined1)interactionType;
+  bVar1 = MVMath::MVMath_ValidateFloat(damage,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    damage = 0.0;
+  }
+  this->damage = damage;
+  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MV__WorldObject__InteractionData);
+  }
+  bVar1 = MVMath::MVMath_ValidateFloat(impulse.x,(MethodInfo *)0x0);
+  if (((bVar1 != 0) &&
+      (bVar1 = MVMath::MVMath_ValidateFloat(impulse.y,(MethodInfo *)0x0), bVar1 != 0)) &&
+     (bVar1 = MVMath::MVMath_ValidateFloat(impulse.z,(MethodInfo *)0x0), bVar1 != 0)) {
+    (this->impulse).x = (float)(int)impulse._0_8_;
+    (this->impulse).y = (float)(int)((ulonglong)impulse._0_8_ >> 0x20);
+    (this->impulse).z = impulse.z;
+    this->playerKilledByType = (undefined1)playerKilledByType;
+    return;
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  fVar4 = (pVVar2->zeroVector).z;
+  (this->impulse).x = (pVVar2->zeroVector).x;
+  (this->impulse).y = fVar3;
+  (this->impulse).z = fVar4;
+  this->playerKilledByType = (undefined1)playerKilledByType;
   return;
 }
 
 
 /* InteractionData(Byte[]) */
 
-void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7
+void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_9
                (InteractionData *this,Byte__Array *byteArray,MethodInfo *method)
 
 {
-  pIVar1 = this;
-  pfVar2 = &(this->impulse).y;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__BytePacker);
+    func_?(&TypeInfo__MV__WorldObject__InteractionData);
     cRam_? = '\x01';
   }
-  *pfVar2 = 0.0;
-  *(undefined1 *)&this[1].impulse.x = 0;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  this->damage = 0.0;
+  this->interactionType = 0;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     ((Vector3 *)&stack0xffffffe8,(MethodInfo *)0x0);
-  fVar4 = pVVar3->z;
-  *(undefined8 *)&(this->impulse).z = *(undefined8 *)pVVar3;
-  this[1].damage = fVar4;
-  *(undefined1 *)((int)&this[1].impulse.x + 1) = 0;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->impulse).x = (pVVar1->zeroVector).x;
+  (this->impulse).y = fVar2;
+  (this->impulse).z = fVar3;
+  this->playerKilledByType = 0;
   this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
-  BytePacker::BytePacker__ctor_1(this_00,byteArray,(MethodInfo *)0x0);
-  if (this_00 == (BytePacker *)0x0) {
-    func_?();
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
-    return;
+  if (this_00 != (BytePacker *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<unsigned_char>__List_System__Collections__Generic__IEnumerable<unsigned_char>_
+                     );
+      func_?(&TypeInfo__System__Collections__Generic__List<unsigned_char>);
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
+    if (byteArray == (Byte__Array *)0x0) goto code_?;
+    pLStack_4 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                 func_?(TypeInfo__System__Collections__Generic__List<unsigned_char>);
+    if (pLStack_4 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+      UnitySynchronizationContext+WorkRequest]::
+      List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1
+                (pLStack_4,
+                 (IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)byteArray,
+                 MethodInfo__System__Collections__Generic__List<unsigned_char>__List_System__Collections__Generic__IEnumerable<unsigned_char>_
+                );
+      (this_00->fields)._buffer = (List_1_System_Byte_ *)pLStack_4;
+      func_?(&this_00->fields,pLStack_4);
+      uStack_5 = BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
+      if ((uStack_5 & 1) != 0) {
+        uVar6 = BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
+        this->interactionType = uVar6;
+      }
+      pLStack_4 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                   CONCAT31(pLStack_4._1_3_,this->interactionType);
+      if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__InteractionData);
+      }
+      pIVar7 = InteractionData_GetSharedData
+                         ((InteractionData *)auStack_8,(InteractionPackageType__Enum)pLStack_4,
+                          (MethodInfo *)0x0);
+      fVar3 = (pIVar7->impulse).x;
+      fVar2 = (pIVar7->impulse).y;
+      puStack_9 = (undefined *)(pIVar7->impulse).z;
+      uStack_10._0_1_ = pIVar7->interactionType;
+      uStack_10._1_1_ = pIVar7->playerKilledByType;
+      uStack_10._2_2_ = *(undefined2 *)&pIVar7->field_0x12;
+      if ((uStack_5 & 2) == 0) {
+        this->damage = pIVar7->damage;
+      }
+      else {
+        fVar11 = BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
+        this->damage = fVar11;
+      }
+      if ((uStack_5 & 4) == 0) {
+        (this->impulse).x = fVar3;
+        (this->impulse).y = fVar2;
+      }
+      else {
+        pLStack_4 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                     BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
+        fStack_12 = BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
+        pLVar13 = pLStack_4;
+        puStack_9 = (undefined *)BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
+        (this->impulse).x = (float)pLVar13;
+        (this->impulse).y = fStack_12;
+        auStack_8._16_4_ = puStack_9;
+      }
+      (this->impulse).z = (float)puStack_9;
+      if ((uStack_5 & 8) == 0) {
+        this->playerKilledByType = (uint8_t)((uint)uStack_10 >> 8);
+        return;
+      }
+      uVar6 = BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
+      this->playerKilledByType = uVar6;
+      return;
+    }
   }
-  uVar6 = BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
-  if ((uVar6 & 1) != 0) {
-    uVar7 = BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
-    *(uint8_t *)&this[1].impulse.x = uVar7;
-  }
-  pIVar8 = this + 1;
-  this = (InteractionData *)CONCAT31((int3)((uint)pfVar2 >> 8),*(undefined1 *)&(pIVar8->impulse).x);
-  if ((((uint)(TypeInfo__MV__WorldObject__InteractionData->vtable).Equals.methodPtr & 0x2000000) !=
-       0) && ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pIVar8 = InteractionData_GetSharedData
-                     ((InteractionData *)&stack0xffffffcc,(InteractionPackageType__Enum)this,
-                      (MethodInfo *)0x0);
-  puStack_9 = (undefined *)(pIVar8->impulse).x;
-  pBVar10 = (BytePacker *)(pIVar8->impulse).y;
-  fVar4 = (pIVar8->impulse).z;
-  uVar11 = pIVar8->playerKilledByType;
-  if ((uVar6 & 2) == 0) {
-    *pfVar2 = pIVar8->damage;
-  }
-  else {
-    fVar4 = 0.0;
-    pBVar10 = this_00;
-    fVar12 = BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
-    *pfVar2 = fVar12;
-  }
-  if ((uVar6 & 4) == 0) {
-    uVar13 = CONCAT44(pBVar10,puStack_9);
-  }
-  else {
-    BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
-    BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
-    uVar11 = 0;
-    BytePacker::BytePacker_ReadSingle(this_00,(MethodInfo *)0x0);
-    fVar4 = 0.0;
-    fVar12 = 0.0;
-    fVar14 = 0.0;
-    func_?();
-    uVar13 = CONCAT44(fVar14,fVar12);
-  }
-  *(undefined8 *)&(pIVar1->impulse).z = uVar13;
-  pIVar1[1].damage = fVar4;
-  if ((uVar6 & 8) == 0) {
-    *(undefined1 *)((int)&pIVar1[1].impulse.x + 1) = uVar11;
-    return;
-  }
-  uVar6 = BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
-  *(uint8_t *)((int)&pIVar1[1].impulse.x + 1) = uVar6;
+  func_?();
+code_?:
+  uVar14 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_01 = (ArgumentNullException *)func_?(uVar14);
+  func_?(this_01);
+  message = (String *)func_?(&StringLiteral_The_buffer_cannot_be_null_);
+  paramName = (String *)func_?(&StringLiteral_buffer);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_2
+            (this_01,paramName,message,(MethodInfo *)0x0);
+  uVar14 = func_?(&MethodInfo__MV__WorldObject__BytePacker__BytePacker_System__Byte____);
+  func_?(this_01,uVar14);
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -855,6 +1056,6 @@ MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_get_PlayerK
           (InteractionData *this,MethodInfo *method)
 
 {
-  return CONCAT31((int3)((uint)this >> 8),*(undefined1 *)((int)&this[1].impulse.x + 1));
+  return CONCAT31((int3)((uint)this >> 8),this->playerKilledByType);
 }
 

@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarMode::MVAvatarLocal_AvatarMode_Set
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).mvAvatar;
@@ -19,7 +19,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarMode::MVAvatarLocal_AvatarMode_Set
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

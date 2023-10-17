@@ -7,6 +7,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarEmote::AvatarLimbManager_Avata
 
 {
   (this->fields).limbRotator = limbRotator;
+  func_?(&(this->fields).limbRotator,limbRotator);
   (this->fields).lifeTime = lifeTime;
   return;
 }
@@ -30,17 +31,12 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarEmote::AvatarLimbManager_Avata
                (AvatarLimbManager_AvatarEmote *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_1_UIPushOption_ *)(this->fields).OnEmoteEnd;
   (this->fields).duration = 0.0;
   (this->fields).isActive = 0;
-  if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,(uint)(this->fields).emote,
-               MethodInfo__System__Action<EmoteTypes>__Invoke_EmoteTypes_);
+  if ((this->fields).OnEmoteEnd != (Action_1_EmoteTypes_ *)0x0) {
+    pAVar1 = (this->fields).OnEmoteEnd;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,(this->fields).emote,(pAVar1->fields)._._.method);
   }
   return;
 }

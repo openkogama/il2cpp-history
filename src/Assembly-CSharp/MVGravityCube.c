@@ -6,27 +6,26 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVPhysics);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVPhysics);
   }
   MVPhysics::MVPhysics_Reset((MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
   UpdateController::UpdateController_RemoveUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)0x0,(MethodInfo *)0x0);
-  if (pCRam000000e8 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(pCRam000000e8,(MethodInfo *)0x0);
-    pCRam000000e8 = (CullingSubscriberBase *)0x0;
+  if (pCRam000000f0 != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy(pCRam000000f0,(MethodInfo *)0x0);
+    pCRam000000f0 = (CullingSubscriberBase *)0x0;
+    func_?(0xf0);
   }
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)0x0,(MethodInfo *)0x0);
   return;
@@ -40,8 +39,7 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_Initialize
 
 {
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).OnDataUpdate.method)
-            (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
+  (*(this->klass->vtable).OnDataUpdate.methodPtr)(this,(this->klass->vtable).OnDataUpdate.method);
   return;
 }
 
@@ -53,55 +51,80 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_OnDataUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__MVPhysics);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_gravity);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Type_Pool_ *)
-            PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       (this_00,(Type *)StringLiteral_gravity,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
+  this_00 = (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (this_00,(Object *)StringLiteral_gravity,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+        cctor_finished_or_no_cctor == 0) {
+      OStack_1.hiddenValue =
+           (ACTkByte4)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat;
+      OStack_1.currentCryptoKey = (int32_t)&UNK_?;
       func_?();
     }
-    if (pPVar1 != (Pool *)0x0) {
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pfVar2 = (float *)func_?();
-        pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-                 ObscuredFloat_op_Implicit
-                           ((ObscuredFloat *)&stack0xffffffd8,*pfVar2,(MethodInfo *)0x0);
-        puVar4 = (undefined *)pOVar3->currentCryptoKey;
-        AVar5 = pOVar3->hiddenValue;
-        pBVar6 = pOVar3->hiddenValueOld;
-        fVar7 = pOVar3->fakeValue;
-        if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
-          puVar4 = &UNK_?;
-          AVar5 = (ACTkByte4)TypeInfo__MVPhysics;
+    if (unaff_ESI != (Object *)0x0) {
+      pSVar2 = TypeInfo__System__Single;
+      if ((unaff_ESI->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+        pfVar3 = (float *)func_?(unaff_ESI);
+        pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+                 ObscuredFloat_op_Implicit(&OStack_1,*pfVar3,(MethodInfo *)0x0);
+        iStack_5 = pOVar4->currentCryptoKey;
+        AStack_6 = pOVar4->hiddenValue;
+        pBStack_7 = pOVar4->hiddenValueOld;
+        fStack_8 = pOVar4->fakeValue;
+        bVar9 = pOVar4->inited;
+        uVar10 = *(undefined3 *)&pOVar4->field_0x11;
+        if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
+          OStack_1.hiddenValueOld = (Byte__Array *)TypeInfo__MVPhysics;
+          OStack_1.hiddenValue = (ACTkByte4)&UNK_?;
           func_?();
         }
-        value.hiddenValue = AVar5;
-        value.currentCryptoKey = (int32_t)puVar4;
-        value.hiddenValueOld = pBVar6;
-        value.fakeValue = fVar7;
-        value.inited = pOVar3->inited;
-        value._17_3_ = *(undefined3 *)&pOVar3->field_0x11;
-        MVPhysics::MVPhysics_set_Gravity(value,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          OStack_1.hiddenValueOld = (Byte__Array *)&TypeInfo__MVPhysics;
+          OStack_1.hiddenValue = (ACTkByte4)&UNK_?;
+          func_?();
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
+          OStack_1.hiddenValueOld = (Byte__Array *)TypeInfo__MVPhysics;
+          OStack_1.hiddenValue = (ACTkByte4)&UNK_?;
+          func_?();
+        }
+        OStack_1.hiddenValueOld = (Byte__Array *)0x0;
+        pMVar11 = TypeInfo__MVPhysics->static_fields;
+        (pMVar11->gravity).currentCryptoKey = iStack_5;
+        (pMVar11->gravity).hiddenValue = AStack_6;
+        (pMVar11->gravity).hiddenValueOld = pBStack_7;
+        (pMVar11->gravity).fakeValue = fStack_8;
+        (pMVar11->gravity).inited = bVar9;
+        *(undefined3 *)&(pMVar11->gravity).field_0x11 = uVar10;
+        OStack_1.hiddenValue =
+             (ACTkByte4)&(TypeInfo__MVPhysics->static_fields->gravity).hiddenValueOld;
+        OStack_1.currentCryptoKey = (int32_t)&UNK_?;
+        func_?();
         return;
       }
       goto code_?;
     }
   }
   func_?();
+  pSVar2 = extraout_ECX;
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?(unaff_ESI,pSVar2);
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -115,29 +138,23 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                             ((DayNightCycle *)this_00,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,(ObjectPrefab *)prefabObject,worldObjects,
+              ((MVLogicObject *)this,data,(pPVar1->fields).mvGravityCubePrefab,worldObjects,
                (MethodInfo *)0x0);
-    uVar1 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar1;
+    uVar2 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    piVar3 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar3 = (uint)*piVar3 | 0x8000;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar2;
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

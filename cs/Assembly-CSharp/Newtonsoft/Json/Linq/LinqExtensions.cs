@@ -8,32 +8,77 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
 	public static class LinqExtensions
 	{
-		// Fields
-		[CompilerGenerated]
-		private static Func<JObject, IEnumerable<JProperty>> __f__am_cache0;
-	
 		// Nested types
+		[Serializable]
 		[CompilerGenerated]
-		private sealed class _Values_c__Iterator0<T, U> : IEnumerable<U>, IEnumerator<U>
+		private sealed class __c__0<T>
 			where T : JToken
 		{
 			// Fields
-			internal IEnumerable<T> source;
-			internal IEnumerator<T> _locvar0;
-			internal JToken _token___1;
-			internal object key;
-			internal IEnumerator<JToken> _locvar1;
-			internal JToken _t___2;
-			internal JToken _value___3;
-			internal U _current;
-			internal bool _disposing;
-			internal int _PC;
+			public static readonly __c__0<T> __9;
+			public static Func<T, IEnumerable<JToken>> __9__0_0;
+	
+			// Constructors
+			static __c__0();
+			public __c__0();
+	
+			// Methods
+			internal IEnumerable<JToken> _Ancestors_b__0_0(T j);
+		}
+	
+		[Serializable]
+		[CompilerGenerated]
+		private sealed class __c__1<T>
+			where T : JContainer
+		{
+			// Fields
+			public static readonly __c__1<T> __9;
+			public static Func<T, IEnumerable<JToken>> __9__1_0;
+	
+			// Constructors
+			static __c__1();
+			public __c__1();
+	
+			// Methods
+			internal IEnumerable<JToken> _Descendants_b__1_0(T j);
+		}
+	
+		[Serializable]
+		[CompilerGenerated]
+		private sealed class __c
+		{
+			// Fields
+			public static readonly __c __9;
+			public static Func<JObject, IEnumerable<JProperty>> __9__2_0;
+	
+			// Constructors
+			static __c();
+			public __c();
+	
+			// Methods
+			internal IEnumerable<JProperty> _Properties_b__2_0(JObject d);
+		}
+	
+		[CompilerGenerated]
+		private sealed class _Values_d__9<T, U> : IEnumerable<U>, IEnumerator<U>
+			where T : JToken
+		{
+			// Fields
+			private int __1__state;
+			private U __2__current;
+			private int __l__initialThreadId;
+			private IEnumerable<T> source;
+			public IEnumerable<T> __3__source;
+			private object key;
+			public object __3__key;
+			private IEnumerator<T> __7__wrap1;
+			private IEnumerator<JToken> __7__wrap2;
 	
 			// Properties
 			U IEnumerator<U>.Current { [DebuggerHidden] get; }
@@ -41,31 +86,50 @@ namespace Newtonsoft.Json.Linq
 	
 			// Constructors
 			[DebuggerHidden]
-			public _Values_c__Iterator0();
+			public _Values_d__9(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
+			private void __m__Finally1();
+			private void __m__Finally2();
 			[DebuggerHidden]
-			public void Reset();
-			[DebuggerHidden]
-			IEnumerator IEnumerable.GetEnumerator();
+			void IEnumerator.Reset();
 			[DebuggerHidden]
 			IEnumerator<U> IEnumerable<U>.GetEnumerator();
+			[DebuggerHidden]
+			IEnumerator IEnumerable.GetEnumerator();
 		}
 	
+		[Serializable]
 		[CompilerGenerated]
-		private sealed class _Convert_c__Iterator1<T, U> : IEnumerable<U>, IEnumerator<U>
+		private sealed class __c__11<T, U>
 			where T : JToken
 		{
 			// Fields
-			internal IEnumerable<T> source;
-			internal IEnumerator<T> _locvar0;
-			internal JToken _token___1;
-			internal U _current;
-			internal bool _disposing;
-			internal int _PC;
+			public static readonly __c__11<T, U> __9;
+			public static Func<T, IEnumerable<JToken>> __9__11_0;
+	
+			// Constructors
+			static __c__11();
+			public __c__11();
+	
+			// Methods
+			internal IEnumerable<JToken> _Children_b__11_0(T c);
+		}
+	
+		[CompilerGenerated]
+		private sealed class _Convert_d__12<T, U> : IEnumerable<U>, IEnumerator<U>
+			where T : JToken
+		{
+			// Fields
+			private int __1__state;
+			private U __2__current;
+			private int __l__initialThreadId;
+			private IEnumerable<T> source;
+			public IEnumerable<T> __3__source;
+			private IEnumerator<T> __7__wrap1;
 	
 			// Properties
 			U IEnumerator<U>.Current { [DebuggerHidden] get; }
@@ -73,32 +137,20 @@ namespace Newtonsoft.Json.Linq
 	
 			// Constructors
 			[DebuggerHidden]
-			public _Convert_c__Iterator1();
+			public _Convert_d__12(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
+			private void __m__Finally1();
 			[DebuggerHidden]
-			public void Reset();
-			[DebuggerHidden]
-			IEnumerator IEnumerable.GetEnumerator();
+			void IEnumerator.Reset();
 			[DebuggerHidden]
 			IEnumerator<U> IEnumerable<U>.GetEnumerator();
+			[DebuggerHidden]
+			IEnumerator IEnumerable.GetEnumerator();
 		}
-	
-		// Methods
-		[CompilerGenerated]
-		private static IEnumerable<JToken> _Ancestors_1_m__0<T>(T j)
-			where T : JToken;
-		[CompilerGenerated]
-		private static IEnumerable<JToken> _Descendants_1_m__1<T>(T j)
-			where T : JContainer;
-		[CompilerGenerated]
-		private static IEnumerable<JProperty> _Properties_m__2(JObject d);
-		[CompilerGenerated]
-		private static IEnumerable<JToken> _Children_2_m__3<T, U>(T c)
-			where T : JToken;
 	
 		// Extension methods
 		public static IJEnumerable<JToken> Ancestors<T>(this IEnumerable<T> source)
@@ -113,14 +165,14 @@ namespace Newtonsoft.Json.Linq
 		public static U Value<U>(this IEnumerable<JToken> value);
 		public static U Value<T, U>(this IEnumerable<T> value)
 			where T : JToken;
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_Values_d__9<T, U>))]
 		internal static IEnumerable<U> Values<T, U>(this IEnumerable<T> source, object key)
 			where T : JToken;
 		public static IJEnumerable<JToken> Children<T>(this IEnumerable<T> source)
 			where T : JToken;
 		public static IEnumerable<U> Children<T, U>(this IEnumerable<T> source)
 			where T : JToken;
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_Convert_d__12<T, U>))]
 		internal static IEnumerable<U> Convert<T, U>(this IEnumerable<T> source)
 			where T : JToken;
 		internal static U Convert<T, U>(this T token)

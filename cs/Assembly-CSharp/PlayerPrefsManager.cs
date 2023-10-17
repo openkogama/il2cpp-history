@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class PlayerPrefsManager
 {
@@ -23,9 +23,6 @@ public static class PlayerPrefsManager
 	public static bool IsFirstTimeSession { get; }
 	public static bool IsReturningAsSignedUp { get; }
 	public static bool IsReturningPlayer { get; }
-
-	// Constructors
-	static PlayerPrefsManager();
 
 	// Methods
 	private static void HandleSignInState(bool isRegistered);

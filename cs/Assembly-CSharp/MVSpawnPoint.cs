@@ -9,15 +9,18 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVSpawnPoint : MVLogicObject
 {
 	// Fields
+	public const string spawnPointDataOnlyFirstSpawn = "onlyFirstSpawn";
 	private bool isInWorld;
+	private bool? spawnPointOnlyFirstDeath;
 
 	// Properties
 	protected override bool HasVisualsInPlaymode { get; }
+	public bool SpawnPointOnlyFirstDeath { get; }
 
 	// Constructors
 	public MVSpawnPoint(Dictionary<object, object> data, ObjectPrefab prefabObject, Dictionary<int, MVWorldObjectClient> worldObjects);

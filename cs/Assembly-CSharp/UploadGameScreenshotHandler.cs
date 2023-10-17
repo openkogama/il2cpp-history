@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class UploadGameScreenshotHandler : MonoBehaviour
 {
@@ -20,25 +20,39 @@ public class UploadGameScreenshotHandler : MonoBehaviour
 	private RawImage fromImage;
 	[SerializeField]
 	private RawImage toImage;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _OnScreenShotUploaded_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal string text;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__5_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__6_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__6_1;
 
 		// Constructors
-		public _OnScreenShotUploaded_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _UploadScreenshot_b__5_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnScreenShotUploaded_b__6_0(IUIStack x, BaseEventData y);
+		internal void _OnScreenShotUploaded_b__6_1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass6_0
+	{
+		// Fields
+		public string text;
+
+		// Constructors
+		public __c__DisplayClass6_0();
+
+		// Methods
+		internal void _OnScreenShotUploaded_b__2(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -49,11 +63,5 @@ public class UploadGameScreenshotHandler : MonoBehaviour
 	private void OnScreenshotReady(byte[] imageData);
 	public void UploadScreenshot();
 	private void OnScreenShotUploaded(object sender, ScreenshotUploadedEventArgs args);
-	[CompilerGenerated]
-	private static void _UploadScreenshot_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnScreenShotUploaded_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnScreenShotUploaded_m__2(IUIStack x, BaseEventData y);
 }
 

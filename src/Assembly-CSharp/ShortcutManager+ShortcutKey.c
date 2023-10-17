@@ -6,13 +6,15 @@ bool Assembly-CSharp.dll::ShortcutManager+ShortcutKey::ShortcutManager_ShortcutK
                MethodInfo *method)
 
 {
+  puStack_1 = &stack0xfffffffc;
   if (other != (ShortcutManager_ShortcutKey *)0x0) {
     return (other->fields).kogamaControl == (this->fields).kogamaControl;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  bVar2 = (*pcVar1)();
-  return bVar2;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
@@ -23,10 +25,12 @@ void Assembly-CSharp.dll::ShortcutManager+ShortcutKey::ShortcutManager_ShortcutK
                KeyState__Enum keyState,UnityAction *callback,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).kogamaControl = kogamaControl;
   (this->fields).keyState = keyState;
   (this->fields).callback = callback;
+  func_?(&(this->fields).callback,callback);
   return;
 }
 

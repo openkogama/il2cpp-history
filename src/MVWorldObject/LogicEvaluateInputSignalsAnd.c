@@ -25,3 +25,14 @@ void MVWorldObject.dll::LogicEvaluateInputSignalsAnd::LogicEvaluateInputSignalsA
   return;
 }
 
+
+/* LogicEvaluateInputSignalsAnd() */
+
+void MVWorldObject.dll::LogicEvaluateInputSignalsAnd::LogicEvaluateInputSignalsAnd__ctor
+               (LogicEvaluateInputSignalsAnd *this,MethodInfo *method)
+
+{
+  (this->fields).andIsTrue = 1;
+  return;
+}
+

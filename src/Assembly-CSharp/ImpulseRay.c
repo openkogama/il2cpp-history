@@ -5,79 +5,45 @@ void Assembly-CSharp.dll::ImpulseRay::ImpulseRay_Initialize
                (ImpulseRay *this,Vector3 target,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  uStack_1 = 0;
-  fStack_2 = 0.0;
-  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-  if (pTVar3 != (Transform *)0x0) {
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
-    uStack_5._0_4_ = pVVar4->x;
-    uStack_5._4_4_ = pVVar4->y;
-    fVar6 = pVVar4->z;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?();
+  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar1 != (Transform *)0x0) {
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)(auStack_3 + 4),pTVar1,(MethodInfo *)0x0);
+    uVar4 = pVVar2->x;
+    uVar5 = pVVar2->y;
+    fStack_6 = target.z - pVVar2->z;
+    uStack_7 = CONCAT44(target.y - (float)uVar5,target.x - (float)uVar4);
+    pVVar2 = (Vector3 *)func_?(auStack_3 + 4,&uStack_7,0);
+    forward = *pVVar2;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3);
+      cRam_? = '\x01';
     }
-    a.y = target.y;
-    a.x = target.x;
-    a.z = target.z;
-    b.z = fVar6;
-    b.x = (float)(undefined4)uStack_5;
-    b.y = (float)uStack_5._4_4_;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                       (&target,a,b,(MethodInfo *)0x0);
-    uStack_1._0_4_ = pVVar4->x;
-    uStack_1._4_4_ = pVVar4->y;
-    fStack_2 = pVVar4->z;
-    puVar7 = (undefined8 *)func_?(&target);
-    uStack_5 = *puVar7;
-    fVar6 = *(float *)(puVar7 + 1);
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                       ((Vector3 *)&stack0xffffffdc,(MethodInfo *)0x0);
-    uVar8._0_4_ = pVVar4->x;
-    uVar8._4_4_ = pVVar4->y;
-    fVar9 = pVVar4->z;
-    target.y = (float)(undefined4)uVar8;
-    target.z = (float)uVar8._4_4_;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Quaternion);
-      uVar8 = CONCAT44(target.z,target.y);
-    }
-    forward.z = fVar6;
-    forward.x = (float)(undefined4)uStack_5;
-    forward.y = (float)uStack_5._4_4_;
-    upwards.z = fVar9;
-    upwards.x = (float)(int)uVar8;
-    upwards.y = (float)(int)((ulonglong)uVar8 >> 0x20);
-    pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                       ((Quaternion *)&stack0xffffffd8,forward,upwards,(MethodInfo *)0x0);
-    fVar6 = pQVar10->x;
-    fVar9 = pQVar10->y;
-    fVar11 = pQVar10->z;
-    fVar12 = pQVar10->w;
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar3 != (Transform *)0x0) {
-      value.y = fVar9;
-      value.x = fVar6;
-      value.z = fVar11;
-      value.w = fVar12;
+    pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                       ((Quaternion *)auStack_3,forward,
+                        TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+    auStack_3._0_4_ = pQVar8->x;
+    auStack_3._4_4_ = pQVar8->y;
+    fStack_9 = pQVar8->z;
+    fStack_10 = pQVar8->w;
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar1 != (Transform *)0x0) {
+      value.y = (float)auStack_3._4_4_;
+      value.x = (float)auStack_3._0_4_;
+      value.z = fStack_9;
+      value.w = fStack_10;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (pTVar3,value,(MethodInfo *)0x0);
-      fVar13 = (float10)func_?(&uStack_1,0);
-      (this->fields).rayMagnitude = (float)fVar13;
+                (pTVar1,value,(MethodInfo *)0x0);
+      fVar11 = (float10)func_?(&uStack_7,0);
+      (this->fields).rayMagnitude = (float)fVar11;
       return;
     }
   }
-  func_?(0);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -88,66 +54,67 @@ void Assembly-CSharp.dll::ImpulseRay::ImpulseRay_Update(ImpulseRay *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__TintColor);
     cRam_? = '\x01';
   }
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
   fVar1 = (this->fields).radius;
-  uVar2 = 0;
-  uVar3 = 0;
-  fVar4 = 0.0;
-  func_?(&stack0xfffffff0,fVar1,fVar1,
-                  ((this->fields).rayMagnitude * (this->fields).t) / _UNK_?,0);
-  if (this_01 != (Transform *)0x0) {
-    value.y = (float)uVar3;
-    value.x = (float)uVar2;
-    value.z = fVar4;
+  if (this_02 != (Transform *)0x0) {
+    value.y = fVar1;
+    value.x = fVar1;
+    value.z = ((this->fields).rayMagnitude * (this->fields).t) / _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (this_01,value,(MethodInfo *)0x0);
+              (this_02,value,(MethodInfo *)0x0);
     this_00 = (this->fields).rayRenderer;
     if (this_00 != (MeshRenderer *)0x0) {
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+      this_03 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                           ((Renderer *)this_00,(MethodInfo *)0x0);
-      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_Lerp
-                         ((Color *)&stack0xffffffe0,(this->fields).startColor,
-                          (this->fields).endColor,(this->fields).t / _UNK_?,(MethodInfo *)0x0
-                         );
-      if (this_02 != (Material *)0x0) {
+      fVar2 = (this->fields).t / _UNK_?;
+      fVar1 = (this->fields).startColor.r;
+      fVar3 = (this->fields).startColor.g;
+      fVar4 = (this->fields).startColor.b;
+      fVar5 = (this->fields).startColor.a;
+      if (fVar2 < 0.0) {
+        fVar2 = 0.0;
+      }
+      else if (_UNK_? < fVar2) {
+        fVar2 = _UNK_?;
+      }
+      if (this_03 != (Material *)0x0) {
+        value_00.y = ((this->fields).endColor.g - fVar3) * fVar2 + fVar3;
+        value_00.x = ((this->fields).endColor.r - fVar1) * fVar2 + fVar1;
+        value_00.z = ((this->fields).endColor.b - fVar4) * fVar2 + fVar4;
+        value_00.w = ((this->fields).endColor.a - fVar5) * fVar2 + fVar5;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                  (this_02,StringLiteral__TintColor,(Vector4)*pCVar5,(MethodInfo *)0x0);
+                  (this_03,StringLiteral__TintColor,value_00,(MethodInfo *)0x0);
         fVar1 = (this->fields).t;
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                           ((MethodInfo *)0x0);
-        fVar4 = fVar4 + fVar1;
-        bVar6 = fVar4 < _UNK_?;
-        (this->fields).t = fVar4;
+        fVar3 = fVar3 + fVar1;
+        bVar6 = _UNK_? <= fVar3;
+        (this->fields).t = fVar3;
         if (bVar6) {
-          return;
-        }
-        (this->fields).t = 0.0;
-        if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-          func_?();
-        }
-        this_03 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-        if ((this_03 != (PrefabPool *)0x0) &&
-           (this_04 = (EnumPoolManager *)
-                      mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json
-                      ::Serialization::JsonProperty]::
-                      Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_03
-                                 ,(MethodInfo *)0x0), this_04 != (EnumPoolManager *)0x0)) {
+          (this->fields).t = 0.0;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
+          if ((pPVar7 == (PrefabPool *)0x0) ||
+             (this_01 = (pPVar7->fields).enumPoolManager, this_01 == (EnumPoolManager *)0x0))
+          goto code_?;
           EnumPoolManager::EnumPoolManager_Return
-                    (this_04,(MonoBehaviour *)this,PoolEnums__Enum_ImpulseGunRay,(MethodInfo *)0x0);
-          return;
+                    (this_01,(MonoBehaviour *)this,PoolEnums__Enum_ImpulseGunRay,(MethodInfo *)0x0);
         }
+        return;
       }
     }
   }
+code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -157,16 +124,20 @@ void Assembly-CSharp.dll::ImpulseRay::ImpulseRay_Update(ImpulseRay *this,MethodI
 void Assembly-CSharp.dll::ImpulseRay::ImpulseRay__ctor(ImpulseRay *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  func_?(&fStack_1,0x3dcccccd,0x3dcccccd,0x3dcccccd,0,0);
-  (this->fields).endColor.r = fStack_1;
-  (this->fields).endColor.g = fStack_2;
-  (this->fields).endColor.b = fStack_3;
-  (this->fields).endColor.a = fStack_4;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).endColor.r = _UNK_?;
+  (this->fields).endColor.g = fVar3;
+  (this->fields).endColor.b = fVar2;
+  (this->fields).endColor.a = fVar1;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
 }
 

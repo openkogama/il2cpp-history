@@ -8,24 +8,24 @@ void Assembly-CSharp.dll::SpawnRoleSkillIconController::SpawnRoleSkillIconContro
 {
   pIVar1 = (this->fields).skillIcon;
   if (pIVar1 != (Image *)0x0) {
-    (*(code *)(pIVar1->klass->vtable).set_color.method)
+    (*(pIVar1->klass->vtable).set_color.methodPtr)
               (pIVar1,newIconColor.r,newIconColor.g,newIconColor.b,newIconColor.a,
-               (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
+               (pIVar1->klass->vtable).set_color.method);
     pIVar1 = (this->fields).negativeIcon;
     if (pIVar1 != (Image *)0x0) {
-      (*(code *)(pIVar1->klass->vtable).set_color.method)
+      (*(pIVar1->klass->vtable).set_color.methodPtr)
                 (pIVar1,newIconColor.r,newIconColor.g,newIconColor.b,newIconColor.a,
-                 (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
+                 (pIVar1->klass->vtable).set_color.method);
       pIVar1 = (this->fields).negativeBackgroundIcon;
       if (pIVar1 != (Image *)0x0) {
-        (*(code *)(pIVar1->klass->vtable).set_color.method)
+        (*(pIVar1->klass->vtable).set_color.methodPtr)
                   (pIVar1,newBackgroundColor.r,newBackgroundColor.g,newBackgroundColor.b,
-                   newBackgroundColor.a,(pIVar1->klass->vtable).get_raycastTarget.methodPtr);
+                   newBackgroundColor.a,(pIVar1->klass->vtable).set_color.method);
         return;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -42,18 +42,15 @@ void Assembly-CSharp.dll::SpawnRoleSkillIconController::SpawnRoleSkillIconContro
   if (this_00 != (Image *)0x0) {
     this_01 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
                         ((Graphic *)this_00,(MethodInfo *)0x0);
-    VStack_1.x = 0.0;
-    VStack_1.y = 0.0;
-    func_?(&VStack_1,width,height);
     if (this_01 != (RectTransform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
-                (this_01,VStack_1,(MethodInfo *)0x0);
+                (this_01,(Vector2)0x0,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -67,15 +64,15 @@ void Assembly-CSharp.dll::SpawnRoleSkillIconController::
 {
   pIVar1 = (this->fields).negativeIcon;
   if (pIVar1 != (Image *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)pIVar1,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pIVar1,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar2,(byte)((uint)skillCost >> 0x1f),(MethodInfo *)0x0);
       pIVar1 = (this->fields).negativeBackgroundIcon;
       if (pIVar1 != (Image *)0x0) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)pIVar1,(MethodInfo *)0x0);
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pIVar1,(MethodInfo *)0x0);
         if (pGVar2 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar2,(bool)pIVar1,(MethodInfo *)0x0);
@@ -84,7 +81,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillIconController::
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;

@@ -6,39 +6,43 @@ void Assembly-CSharp.dll::SettingsInputField::SettingsInputField_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__SettingsInputField__ValueChanged_System__String_);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    func_?(&
+                    MethodInfo__UnityEngine__Events__UnityEvent<System::String>__AddListener_UnityEngine__Events__UnityAction<System::String>_
+                   );
     cRam_? = '\x01';
   }
   (this->fields).key = key;
-  this_00 = (this->fields).inputField;
-  if (this_00 != (InputField *)0x0) {
+  func_?(&(this->fields).key,key);
+  pIVar1 = (this->fields).inputField;
+  if (pIVar1 != (InputField *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-              (this_00,value,(MethodInfo *)0x0);
-    this_01 = (PrefabPool *)(this->fields).inputField;
-    if (this_01 != (PrefabPool *)0x0) {
-      this_02 = PrefabPool::PrefabPool_get_MVTextMsgPrefab(this_01,(MethodInfo *)0x0);
-      this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_03,(Object *)this,MethodInfo__SettingsInputField__ValueChanged_System__String_
-                 ,
-                 MethodInfo__UnityEngine__Events__UnityAction<System::String>__UnityAction_System__Object__void__
-                );
-      if (this_02 != (MVTextMsgObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[System::String]::
-        UnityEvent_1_System_String__AddListener
-                  ((UnityEvent_1_System_String_ *)this_02,(UnityAction_1_System_String_ *)this_03,
-                   MethodInfo__UnityEngine__Events__UnityEvent<System::String>__AddListener_UnityEngine__Events__UnityAction<System::String>_
-                  );
-        return;
+              (pIVar1,value,(MethodInfo *)0x0);
+    pIVar1 = (this->fields).inputField;
+    if (pIVar1 != (InputField *)0x0) {
+      this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pIVar1->fields).m_OnValueChanged;
+      this_01 = (UnityAction_1_System_Object_ *)
+                func_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+      if (this_01 != (UnityAction_1_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+        UnityAction_1_System_Object___ctor
+                  (this_01,(Object *)this,
+                   MethodInfo__SettingsInputField__ValueChanged_System__String_,(MethodInfo *)0x0);
+        if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[UnityEngine::Vector2]::
+          UnityEvent_1_UnityEngine_Vector2__AddListener
+                    (this_00,(UnityAction_1_UnityEngine_Vector2_ *)this_01,
+                     MethodInfo__UnityEngine__Events__UnityEvent<System::String>__AddListener_UnityEngine__Events__UnityAction<System::String>_
+                    );
+          return;
+        }
       }
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -50,15 +54,18 @@ void Assembly-CSharp.dll::SettingsInputField::SettingsInputField_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__
+                   );
     cRam_? = '\x01';
   }
   pIVar1 = (InputField *)
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                     ((Component_1 *)this,
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                     ((Component *)this,
                       UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__
                      );
   (this->fields).inputField = pIVar1;
+  func_?(&(this->fields).inputField,pIVar1);
   return;
 }
 
@@ -70,25 +77,23 @@ void Assembly-CSharp.dll::SettingsInputField::SettingsInputField_Update
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).inputField;
-  if (this_00 != (InputField *)0x0) {
-    bVar1 = UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_get_isFocused
-                      (this_00,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  pIVar1 = (this->fields).inputField;
+  if (pIVar1 != (InputField *)0x0) {
+    if ((pIVar1->fields).m_AllowInput != 0) {
+      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       MVInputWrapper::MVInputWrapper_SuppressShortcutKeys((MethodInfo *)0x0);
     }
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -100,39 +105,50 @@ void Assembly-CSharp.dll::SettingsInputField::SettingsInputField_ValueChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__SettingsInputField____c__DisplayClass4_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__SettingsInputField____c__DisplayClass4_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__SettingsInputField___ValueChanged_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = value;
-    (this_00->fields).state = (int32_t)this;
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this_00,
-               MethodInfo__SettingsInputField___ValueChanged_c__AnonStorey0____m__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
+  value_00 = (Object *)func_?(TypeInfo__SettingsInputField____c__DisplayClass4_0);
+  if (value_00 != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value_00,ExceptionArgument__Enum_obj,unaff_EDI);
+    value_00[1].klass = (Object__Class *)this;
+    func_?(value_00 + 1,this);
+    value_00[1].monitor = (MonitorData *)value;
+    func_?(&value_00[1].monitor,value);
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>
+                        );
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value_00,
+                 MethodInfo__SettingsInputField____c__DisplayClass4_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
+                );
+      return;
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
-              );
-    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

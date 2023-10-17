@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarInteractable : MVInteractable, IMoveHitHandler
 {
@@ -24,6 +24,7 @@ public class AvatarInteractable : MVInteractable, IMoveHitHandler
 	private readonly MaterialHitPackage[] hitPackages;
 	private InteractableMaterialHitHandler materialHitHandler;
 	private bool canWallJumpAnySurfaces;
+	private static readonly int AvatarModifierPackagesCount;
 
 	// Properties
 	public DamageSource LastDamageSource { get; }
@@ -49,12 +50,14 @@ public class AvatarInteractable : MVInteractable, IMoveHitHandler
 
 	// Constructors
 	public AvatarInteractable();
+	static AvatarInteractable();
 
 	// Methods
 	public override void Init(MVRuntimeDataVariable runtimeDataModifiers, MVRuntimeDataVariable<float> health, MVRuntimeDataVariable<int> maxHealth, MVRuntimeDataVariableClampedFloat shield, WorldObjectSkillDataManager skillDataManager);
 	private void OnDestroy();
 	public void InitializeSkills(WorldObjectSkillDataManager skillDataManager);
 	public override void TakeDamage(float amount, MVPlayer damageDealer, PlayerKilledByType damageType);
+	public override void TakeDamageOverTime(AvatarModifierPackageType type, MVPlayer damageDealer, PlayerKilledByType damageType);
 	private void DoKilledNotification(MVPlayer damageDealer, PlayerKilledByType defaultDamageType);
 	private float GetBoostedHealth(float defaultHealth);
 	public void DieFromRespawn(MVPlayer damageDealer, PlayerKilledByType damageType);

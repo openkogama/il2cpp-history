@@ -6,7 +6,9 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_Activ
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__MVAvatarLocal__GhostMode__OnEnterEditMode__);
+    func_?(&TypeInfo__IAvatarCameraController);
     cRam_? = '\x01';
   }
   MVAvatarLocal+AvatarMode::MVAvatarLocal_AvatarMode_SetModeTypes
@@ -18,7 +20,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_Activ
     pMVar1 = (this->fields)._.mvAvatar;
     if ((pMVar1 != (MVAvatarLocal *)0x0) &&
        (pMVar3 = (pMVar1->fields)._.shield, pMVar3 != (MVRuntimeDataVariableClampedFloat *)0x0)) {
-      (*(code *)(pMVar3->klass->vtable).set_Value.method)(pMVar3,0,pMVar3->klass[1]._0.image);
+      (*(pMVar3->klass->vtable).set_Value.methodPtr)
+                (pMVar3,0,(pMVar3->klass->vtable).set_Value.method);
       pMVar1 = (this->fields)._.mvAvatar;
       if (pMVar1 != (MVAvatarLocal *)0x0) {
         MVAvatarLocal::MVAvatarLocal_ResetAvatar(pMVar1,(MethodInfo *)0x0);
@@ -28,42 +31,36 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_Activ
           pMVar1 = (this->fields)._.mvAvatar;
           (this->fields).haveSetTransparency = 0;
           if (pMVar1 != (MVAvatarLocal *)0x0) {
-            this_01 = (AvatarUIHandlerRemote *)
-                      MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0);
-            if (this_01 != (AvatarUIHandlerRemote *)0x0) {
-              pSVar4 = AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_ShieldBar
-                                 (this_01,(MethodInfo *)0x0);
-              if (pSVar4 != (ShieldBar *)0x0) {
-                func_?(2,TypeInfo__IAvatarCameraController,pSVar4,0x13);
-                if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                     != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                  func_?(TypeInfo__MVGameControllerBase);
-                }
-                this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                    ((MethodInfo *)0x0);
-                if (this_02 != (MainCameraManager *)0x0) {
-                  pMVar5 = MainCameraManager::MainCameraManager_get_CurrentCamera
-                                     (this_02,(MethodInfo *)0x0);
-                  if (pMVar5 != (MVCameraBase *)0x0) {
-                    (*(code *)(pMVar5->klass->vtable).Reset.method)
-                              (pMVar5,(pMVar5->klass->vtable).FocusOnObject.methodPtr);
-                    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                    if ((pMVar6 != (MVNetworkGame *)0x0) &&
-                       (pGVar7 = (pMVar6->fields).GameEventManager,
-                       pGVar7 != (GameEventManager *)0x0)) {
-                      this_00 = (pGVar7->fields).AvatarCommandsBuildMode;
-                      this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                 *)func_?(TypeInfo__System__Action);
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                      SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                (this_03,(Object *)this,
+            pAVar4 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0);
+            if ((pAVar4 != (AvatarLocal *)0x0) &&
+               (pIVar5 = (pAVar4->fields).avatarCameraController,
+               pIVar5 != (IAvatarCameraController *)0x0)) {
+              func_?(2,TypeInfo__IAvatarCameraController,pIVar5,0x13);
+              this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                  ((MethodInfo *)0x0);
+              if (this_01 != (MainCameraManager *)0x0) {
+                pMVar6 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                                   (this_01,(MethodInfo *)0x0);
+                if (pMVar6 != (MVCameraBase *)0x0) {
+                  (*(pMVar6->klass->vtable).Reset.methodPtr)
+                            (pMVar6,(pMVar6->klass->vtable).Reset.method);
+                  pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                  if ((pMVar7 != (MVNetworkGame *)0x0) &&
+                     (pGVar8 = (pMVar7->fields).GameEventManager, pGVar8 != (GameEventManager *)0x0)
+                     ) {
+                    this_00 = (pGVar8->fields).AvatarCommandsBuildMode;
+                    this_02 = (NavMesh_OnNavMeshPreUpdate *)
+                              func_?(TypeInfo__System__Action);
+                    if (this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+                      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                      NavMesh_OnNavMeshPreUpdate__ctor
+                                (this_02,(Object *)this,
                                  MethodInfo__MVAvatarLocal__GhostMode__OnEnterEditMode__,
                                  (MethodInfo *)0x0);
                       if (this_00 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
                         GameEventManager+AvatarCommandsBuildModeManager::
                         GameEventManager_AvatarCommandsBuildModeManager_add_OnSetToEditMode
-                                  (this_00,(Action *)this_03,(MethodInfo *)0x0);
+                                  (this_00,(Action *)this_02,(MethodInfo *)0x0);
                         return;
                       }
                     }
@@ -76,9 +73,9 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_Activ
       }
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -91,17 +88,36 @@ Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_CreateInpu
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarInputControllerAndroid);
+    func_?(&TypeInfo__AvatarInputController);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+  if (MVar1 != MVGameMode__Enum_CharacterEditor) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+      this_00 = (AvatarInputControllerAndroid *)
+                func_?(TypeInfo__AvatarInputControllerAndroid);
+      if (this_00 != (AvatarInputControllerAndroid *)0x0) {
+        AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(this_00,(MethodInfo *)0x0);
+        return (IAvatarInputController *)this_00;
+      }
+      goto code_?;
+    }
   }
-  MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  this_00 = (AvatarInputController *)func_?(TypeInfo__AvatarInputController);
-  AvatarInputController::AvatarInputController__ctor(this_00,(MethodInfo *)0x0);
-  return (IAvatarInputController *)this_00;
+  this_01 = (AvatarInputController *)func_?(TypeInfo__AvatarInputController);
+  if (this_01 != (AvatarInputController *)0x0) {
+    AvatarInputController::AvatarInputController__ctor(this_01,(MethodInfo *)0x0);
+    return (IAvatarInputController *)this_01;
+  }
+code_?:
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pIVar3 = (IAvatarInputController *)(*pcVar2)();
+  return pIVar3;
 }
 
 
@@ -112,48 +128,91 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_DeAct
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__MVAvatarLocal__GhostMode__OnEnterEditMode__);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._.mvAvatar;
-  if ((pMVar1 != (MVAvatarLocal *)0x0) &&
-     (this_00 = (pMVar1->fields)._.avatar, this_00 != (Avatar_1 *)0x0)) {
-    this_02 = (AvatarFader *)
-              System.Core.dll::System::Linq::Enumerable+<CreateUnionIterator>c__Iterator1C`1[System
-              ::Object]::
-              Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object__System_Collections_IEnumerator_get_Current
-                        ((Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object_ *)this_00,
-                         (MethodInfo *)0x0);
-    if (this_02 != (AvatarFader *)0x0) {
-      AvatarFader::AvatarFader_SetTransparency(this_02,1.0,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar2 != (MVNetworkGame *)0x0) &&
-         (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 != (GameEventManager *)0x0)) {
-        this_01 = (pGVar3->fields).AvatarCommandsBuildMode;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this,MethodInfo__MVAvatarLocal__GhostMode__OnEnterEditMode__,
+  if (pMVar1 != (MVAvatarLocal *)0x0) {
+    MVAvatar::MVAvatar_set_SetTransparency((MVAvatar *)pMVar1,1.0,(MethodInfo *)0x0);
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar2 != (MVNetworkGame *)0x0) &&
+       (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 != (GameEventManager *)0x0)) {
+      QStack_4.x = (float)TypeInfo__System__Action;
+      this_00 = (pGVar3->fields).AvatarCommandsBuildMode;
+      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      if (this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_02,(Object *)this,MethodInfo__MVAvatarLocal__GhostMode__OnEnterEditMode__,
                    (MethodInfo *)0x0);
-        if (this_01 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
+        if (this_00 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
           GameEventManager+AvatarCommandsBuildModeManager::
           GameEventManager_AvatarCommandsBuildModeManager_remove_OnSetToEditMode
-                    (this_01,(Action *)this_03,(MethodInfo *)0x0);
-          MVAvatarLocal_GhostMode_ResetCamera(this,(MethodInfo *)0x0);
-          return;
+                    (this_00,(Action *)this_02,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__IAvatarCameraController);
+            cRam_? = '\x01';
+          }
+          pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                             ((MethodInfo *)0x0);
+          if (pMVar5 != (MainCameraManager *)0x0) {
+            MainCameraManager::MainCameraManager_set_CamMaskMode
+                      (pMVar5,MaskMode__Enum_Default,(MethodInfo *)0x0);
+            pMVar1 = (this->fields)._.mvAvatar;
+            if (pMVar1 != (MVAvatarLocal *)0x0) {
+              (*(pMVar1->klass->vtable).set_Visible.methodPtr)
+                        (pMVar1,1,(pMVar1->klass->vtable).set_Visible.method);
+              pMVar1 = (this->fields)._.mvAvatar;
+              if (pMVar1 != (MVAvatarLocal *)0x0) {
+                pAVar6 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0);
+                if ((pAVar6 != (AvatarLocal *)0x0) &&
+                   (pIVar7 = (pAVar6->fields).avatarCameraController,
+                   pIVar7 != (IAvatarCameraController *)0x0)) {
+                  func_?(2,TypeInfo__IAvatarCameraController,pIVar7,0);
+                  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                     ((MethodInfo *)0x0);
+                  if (pMVar5 != (MainCameraManager *)0x0) {
+                    pMVar8 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                                       (pMVar5,(MethodInfo *)0x0);
+                    if (pMVar8 != (MVCameraBase *)0x0) {
+                      (*(pMVar8->klass->vtable).Reset.methodPtr)
+                                (pMVar8,(pMVar8->klass->vtable).Reset.method);
+                      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                         ((MethodInfo *)0x0);
+                      if (pMVar5 != (MainCameraManager *)0x0) {
+                        pMVar8 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                                           (pMVar5,(MethodInfo *)0x0);
+                        if (pMVar8 != (MVCameraBase *)0x0) {
+                          this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                    Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0);
+                          pMVar1 = (this->fields)._.mvAvatar;
+                          if ((pMVar1 != (MVAvatarLocal *)0x0) &&
+                             (this_01 = (pMVar1->fields)._._._.transform,
+                             this_01 != (Transform *)0x0)) {
+                            pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                     Transform_get_rotation(&QStack_4,this_01,(MethodInfo *)0x0);
+                            if (this_03 != (Transform *)0x0) {
+                              UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                              Transform_set_rotation(this_03,*pQVar9,(MethodInfo *)0x0);
+                              return;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -165,25 +224,17 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_Fixed
                )
 
 {
-  if ((this->fields).haveSetTransparency != 0) {
-    return;
-  }
-  pMVar1 = (this->fields)._.mvAvatar;
-  if (((pMVar1 != (MVAvatarLocal *)0x0) &&
-      (this_00 = (pMVar1->fields)._.avatar, this_00 != (Avatar_1 *)0x0)) &&
-     (this_01 = (AvatarFader *)
-                System.Core.dll::System::Linq::
-                Enumerable+<CreateUnionIterator>c__Iterator1C`1[System::Object]::
-                Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object__System_Collections_IEnumerator_get_Current
-                          ((Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object_ *)this_00,
-                           (MethodInfo *)0x0), this_01 != (AvatarFader *)0x0)) {
-    AvatarFader::AvatarFader_SetTransparency(this_01,0.5,(MethodInfo *)0x0);
+  if ((this->fields).haveSetTransparency == 0) {
+    this_00 = (this->fields)._.mvAvatar;
+    if (this_00 == (MVAvatarLocal *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    MVAvatar::MVAvatar_set_SetTransparency((MVAvatar *)this_00,0.5,(MethodInfo *)0x0);
     (this->fields).haveSetTransparency = 1;
-    return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 
@@ -195,21 +246,24 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_OnEnt
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
   }
-  pIVar1 = MVGameControllerBase::MVGameControllerBase_get_PlayModeUI((MethodInfo *)0x0);
+  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    func_?(4,TypeInfo__IPlayModeUI,pIVar1);
+    pIStack_2 = TypeInfo__IPlayModeUI;
+    pIStack_3 = pIVar1;
+    func_?(4);
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar4 = func_?(&pIStack_2);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -221,12 +275,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__IAvatarCameraController);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if (pMVar1 != (MainCameraManager *)0x0) {
@@ -234,42 +284,38 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_Reset
               (pMVar1,MaskMode__Enum_Default,(MethodInfo *)0x0);
     pMVar2 = (this->fields)._.mvAvatar;
     if (pMVar2 != (MVAvatarLocal *)0x0) {
-      (*(code *)(pMVar2->klass->vtable).set_Visible.method)(pMVar2);
+      (*(pMVar2->klass->vtable).set_Visible.methodPtr)(pMVar2);
       pMVar2 = (this->fields)._.mvAvatar;
       if (pMVar2 != (MVAvatarLocal *)0x0) {
-        this_01 = (AvatarUIHandlerRemote *)
-                  MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar2,(MethodInfo *)0x0);
-        if (this_01 != (AvatarUIHandlerRemote *)0x0) {
-          pSVar3 = AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_ShieldBar
-                             (this_01,(MethodInfo *)0x0);
-          if (pSVar3 != (ShieldBar *)0x0) {
-            func_?(2,TypeInfo__IAvatarCameraController);
-            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                               ((MethodInfo *)0x0);
-            if (pMVar1 != (MainCameraManager *)0x0) {
-              pMVar4 = MainCameraManager::MainCameraManager_get_CurrentCamera
-                                 (pMVar1,(MethodInfo *)0x0);
-              if (pMVar4 != (MVCameraBase *)0x0) {
-                (*(code *)(pMVar4->klass->vtable).Reset.method)();
-                pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                   ((MethodInfo *)0x0);
-                if (pMVar1 != (MainCameraManager *)0x0) {
-                  pMVar4 = MainCameraManager::MainCameraManager_get_CurrentCamera
-                                     (pMVar1,(MethodInfo *)0x0);
-                  if (pMVar4 != (MVCameraBase *)0x0) {
-                    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_1_get_transform((Component_1 *)pMVar4,(MethodInfo *)0x0);
-                    pMVar2 = (this->fields)._.mvAvatar;
-                    if ((pMVar2 != (MVAvatarLocal *)0x0) &&
-                       (this_00 = (pMVar2->fields)._._._.transform, this_00 != (Transform *)0x0)) {
-                      pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                               Transform_get_rotation
-                                         ((Quaternion *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
-                      if (this_02 != (Transform *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                                  (this_02,*pQVar5,(MethodInfo *)0x0);
-                        return;
-                      }
+        pAVar3 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar2,(MethodInfo *)0x0);
+        if ((pAVar3 != (AvatarLocal *)0x0) &&
+           ((pAVar3->fields).avatarCameraController != (IAvatarCameraController *)0x0)) {
+          func_?(2,TypeInfo__IAvatarCameraController);
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                             ((MethodInfo *)0x0);
+          if (pMVar1 != (MainCameraManager *)0x0) {
+            pMVar4 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                               (pMVar1,(MethodInfo *)0x0);
+            if (pMVar4 != (MVCameraBase *)0x0) {
+              (*(pMVar4->klass->vtable).Reset.methodPtr)();
+              pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                 ((MethodInfo *)0x0);
+              if (pMVar1 != (MainCameraManager *)0x0) {
+                pMVar4 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                                   (pMVar1,(MethodInfo *)0x0);
+                if (pMVar4 != (MVCameraBase *)0x0) {
+                  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_transform((Component *)pMVar4,(MethodInfo *)0x0);
+                  pMVar2 = (this->fields)._.mvAvatar;
+                  if ((pMVar2 != (MVAvatarLocal *)0x0) &&
+                     (this_00 = (pMVar2->fields)._._._.transform, this_00 != (Transform *)0x0)) {
+                    pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                             Transform_get_rotation
+                                       ((Quaternion *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
+                    if (this_01 != (Transform *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                                (this_01,*pQVar5,(MethodInfo *)0x0);
+                      return;
                     }
                   }
                 }
@@ -294,41 +340,50 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode_SendN
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__NotificationController);
     cRam_? = '\x01';
   }
-  data = (Dictionary_2_System_Object_System_Object_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)data,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-            );
-  key = (String *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-  value = (CrossPlatformInputManager_VirtualButton *)
-          func_?(TypeInfo__System__Boolean,&stack0xfffffffa);
-  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)data,key,value,
+  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                           );
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    uStack_1 = (undefined *)CONCAT13(0x12,(undefined3)uStack_1);
+    key = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_1 + 3);
+    uStack_1._0_3_ = CONCAT12(1,(undefined2)uStack_1);
+    value = (Object *)func_?(TypeInfo__System__Boolean,(int)&uStack_1 + 2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_00,key,value,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    if ((((uint)(TypeInfo__NotificationController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__NotificationController->_1).cctor_started == 0)) {
+    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     NotificationController::NotificationController_PushNotification_2
-              (NotificationType__Enum_WaitCountDown,data,NotificationLifetime__Enum_High,
+              (NotificationType__Enum_WaitCountDown,this_00,NotificationLifetime__Enum_High,
                (MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -339,21 +394,40 @@ void Assembly-CSharp.dll::MVAvatarLocal+GhostMode::MVAvatarLocal_GhostMode__ctor
                (MVAvatarLocal_GhostMode *this,MVAvatarLocal *mvAvatar,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  bVar1 = cRam_? == '\0';
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.mvAvatar = mvAvatar;
+  func_?(&this->fields,mvAvatar);
   (this->fields)._.modeTypes = 4;
-  if (bVar1) {
+  if (cRam_? == '\0') {
     func_?();
+    func_?(&TypeInfo__AvatarInputController);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
+  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+  if (MVar1 != MVGameMode__Enum_CharacterEditor) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+      this_00 = (AvatarInputControllerAndroid *)func_?();
+      if (this_00 != (AvatarInputControllerAndroid *)0x0) {
+        AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(this_00,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
+    }
   }
-  MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  this_00 = (AvatarInputController *)func_?();
-  AvatarInputController::AvatarInputController__ctor(this_00,(MethodInfo *)0x0);
+  this_01 = (AvatarInputController *)func_?();
+  if (this_01 != (AvatarInputController *)0x0) {
+    AvatarInputController::AvatarInputController__ctor(this_01,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

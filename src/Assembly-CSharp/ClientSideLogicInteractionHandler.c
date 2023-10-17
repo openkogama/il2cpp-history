@@ -21,52 +21,53 @@ bool Assembly-CSharp.dll::ClientSideLogicInteractionHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
     cRam_? = '\x01';
   }
-  bVar1 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-          CrossPlatformInputManager_VirtualAxis_get_matchWithInputManager
-                    ((CrossPlatformInputManager_VirtualAxis *)&interaction,(MethodInfo *)0x0);
-  pCVar2 = this;
-  cVar3 = (*(code *)(this->klass->vtable).CanHandle.method)
-                    (this,bVar1,_interactionIsLocal,
-                     (this->klass->vtable).HandleInteraction.methodPtr);
-  if (cVar3 == '\0') {
+  pCVar1 = this;
+  cVar2 = (*(this->klass->vtable).CanHandle.methodPtr)
+                    (this,interaction._16_4_,_interactionIsLocal,
+                     (this->klass->vtable).CanHandle.method);
+  if (cVar2 == '\0') {
     return 0;
   }
-  this_00 = (pCVar2->fields)._._.worldObjectParent;
-  package = (Dictionary_2_System_Object_System_Object_ *)
+  this_00 = (pCVar1->fields)._._.worldObjectParent;
+  this_01 = (Dictionary_2_System_Object_System_Object_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                            );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)package,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-            );
-  this = (ClientSideLogicInteractionHandler *)((uint)this & 0xffffff);
-  key = (String *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-  value = (CrossPlatformInputManager_VirtualButton *)func_?(&interaction,0);
-  if (package != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)package,key,value,
+  if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_01,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    this = (ClientSideLogicInteractionHandler *)((uint)this & 0xffffff);
+    key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+    value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
+                      (&interaction,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_01,key,(Object *)value,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     if (this_00 != (MVWorldObjectClient *)0x0) {
-      interactor = (MVPickupOwner *)0x0;
-      this = (ClientSideLogicInteractionHandler *)package;
-      MVWorldObjectClient::MVWorldObjectClient_SendPackage(this_00,package,(MethodInfo *)0x0);
+      MVWorldObjectClient::MVWorldObjectClient_SendPackage(this_00,this_01,(MethodInfo *)0x0);
       return 1;
     }
   }
-  interactor = (MVPickupOwner *)0x0;
-  this = (ClientSideLogicInteractionHandler *)&UNK_?;
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
-  return bVar1;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 

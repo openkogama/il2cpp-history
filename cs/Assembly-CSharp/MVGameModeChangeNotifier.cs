@@ -7,28 +7,42 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVGameModeChangeNotifier : IUpdatecontrollerSubscriberUpdate
 {
 	// Fields
 	private UpdateCondition _currentState;
 	private List<IGameStateControllerSubscriber> UpdateList;
-	[CompilerGenerated]
-	private static Predicate<IGameStateControllerSubscriber> __f__am_cache0;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _RemoveObject_c__AnonStorey0
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal IGameStateControllerSubscriber obj;
+		public IGameStateControllerSubscriber obj;
 
 		// Constructors
-		public _RemoveObject_c__AnonStorey0();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal bool __m__0(IGameStateControllerSubscriber x);
+		internal bool _RemoveObject_b__0(IGameStateControllerSubscriber x);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Predicate<IGameStateControllerSubscriber> __9__6_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _UpdateControllerUpdate_b__6_0(IGameStateControllerSubscriber pd);
 	}
 
 	// Constructors
@@ -40,7 +54,5 @@ public class MVGameModeChangeNotifier : IUpdatecontrollerSubscriberUpdate
 	public void UpdateControllerFixedUpdate();
 	public void UpdateControllerUpdate();
 	private UpdateCondition GetPresentState();
-	[CompilerGenerated]
-	private static bool _UpdateControllerUpdate_m__0(IGameStateControllerSubscriber pd);
 }
 

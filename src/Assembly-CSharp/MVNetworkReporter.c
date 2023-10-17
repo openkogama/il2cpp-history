@@ -5,117 +5,176 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter_Update
                (MVNetworkReporter *this,MVNetworkGame *game,MethodInfo *method)
 
 {
-  this_00 = game;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
+  dVar1 = 0.0;
   if (game != (MVNetworkGame *)0x0) {
-    iVar1 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(game,(MethodInfo *)0x0);
-    pBStack_2 = *(Byte__Array **)&(this->fields).lastUpdateTimestamp;
-    pMStack_3 = *(MVNetworkGame_OperationRequests **)((int)&(this->fields).lastUpdateTimestamp + 4);
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
-    }
+    MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(game,(MethodInfo *)0x0);
     func_?();
-    if ((float)(double)CONCAT44((uint)((ulonglong)(double)(float)in_XMM0_Qa >> 0x20) & _UNK_?
-                                ,SUB84((double)(float)in_XMM0_Qa,0) & _UNK_?) <=
-        _UNK_?) {
+    if ((float)((uint)(float)dVar1 & _UNK_?) <= _UNK_?) {
       return;
     }
-    pMVar4 = (this->fields)._.worldObject;
-    if (pMVar4 != (MVWorldObjectClient *)0x0) {
-      puVar5 = (undefined8 *)
-               (*(code *)(pMVar4->klass->vtable).get_Rotation.method)
-                         (&uStack_6,pMVar4,(pMVar4->klass->vtable).set_Rotation.methodPtr);
-      uStack_6 = *puVar5;
-      fStack_7 = *(float *)(puVar5 + 1);
-      pBStack_8 = *(Byte__Array **)((int)puVar5 + 0xc);
-      uVar9 = *(undefined4 *)puVar5;
-      uVar10 = *(undefined4 *)((int)puVar5 + 4);
-      if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
+    pMVar2 = (this->fields)._.worldObject;
+    if (pMVar2 != (MVWorldObjectClient *)0x0) {
+      pfVar3 = (float *)(*(pMVar2->klass->vtable).get_Rotation.methodPtr)
+                                  (&MStack_4,pMVar2,(pMVar2->klass->vtable).get_Rotation.method);
+      MStack_4.position.x = *pfVar3;
+      MStack_4.position.y = pfVar3[1];
+      pfVar5 = pfVar3 + 2;
+      MStack_4.position.z = pfVar5[0];
+      MStack_4.rotation = (Byte__Array *)pfVar5[1];
+      fVar6 = *pfVar5;
+      pBVar7 = (Byte__Array *)pfVar3[3];
+      if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
-        uVar9 = (float)uStack_6;
-        uVar10 = uStack_6._4_4_;
+        fVar6 = MStack_4.position.z;
+        pBVar7 = MStack_4.rotation;
       }
-      quaternion.y = (float)uVar10;
-      quaternion.x = (float)uVar9;
-      quaternion.z = fStack_7;
-      quaternion.w = (float)pBStack_8;
-      pBStack_2 = MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
+      quaternion.y = MStack_4.position.y;
+      quaternion.x = MStack_4.position.x;
+      quaternion.z = fVar6;
+      quaternion.w = (float)pBVar7;
+      pBStack_8 = MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
                   QuaternionCompression_ToBytes(quaternion,(MethodInfo *)0x0);
-      pMVar4 = (this->fields)._.worldObject;
-      game._1_3_ = (undefined3)((uint)iVar1 >> 8);
-      game = (MVNetworkGame *)CONCAT31(game._1_3_,1);
-      if (pMVar4 != (MVWorldObjectClient *)0x0) {
-        puVar5 = (undefined8 *)
-                 (*(code *)(pMVar4->klass->vtable).get_Position.method)
-                           (&fStack_11,pMVar4,(pMVar4->klass->vtable).set_Position.methodPtr);
-        uVar12 = *puVar5;
-        fStack_7 = *(float *)(puVar5 + 1);
-        uStack_6._0_4_ = (float)uVar12;
-        uStack_6._4_4_ = (float)((ulonglong)uVar12 >> 0x20);
-        fStack_13 = (float)uStack_6;
-        fStack_11 = uStack_6._4_4_;
-        pBStack_14 = pBStack_2;
-        pBStack_8 = pBStack_2;
-        uStack_6 = uVar12;
-        fStack_15 = fStack_7;
-        cVar16 = func_?(&uStack_6,(this->fields).prevSendTransformData.position.x,
-                                (this->fields).prevSendTransformData.position.y,
-                                (this->fields).prevSendTransformData.position.z,
-                                (this->fields).prevSendTransformData.rotation,0);
-        if (cVar16 == '\0') {
-          bVar17 = 0;
+      pMVar2 = (this->fields)._.worldObject;
+      cStack_9 = '\x01';
+      if (pMVar2 != (MVWorldObjectClient *)0x0) {
+        puVar10 = (undefined8 *)
+                 (*(pMVar2->klass->vtable).get_Position.methodPtr)
+                           (&MStack_4.position.y,pMVar2,(pMVar2->klass->vtable).get_Position.method
+                           );
+        fVar11 = (float)*puVar10;
+        fVar12 = (float)((ulonglong)*puVar10 >> 0x20);
+        fVar6 = *(float *)(puVar10 + 1);
+        pBVar7 = pBStack_8;
+        func_?(&stack0xffffffc0,pBStack_8);
+        MStack_4.rotation = pBVar7;
+        MStack_4.position.z = fVar6;
+        MStack_4.position.x = fVar11;
+        MStack_4.position.y = fVar12;
+        bVar13 = MVNetworkReporter+SendTransformData::MVNetworkReporter_SendTransformData_Equals
+                          (&MStack_4,(this->fields).prevSendTransformData,(MethodInfo *)0x0);
+        if (bVar13 == 0) {
+          bVar13 = 0;
         }
         else {
           if ((this->fields).stopPackageSent != 0) {
             return;
           }
-          game = (MVNetworkGame *)CONCAT31(game._1_3_,2);
-          bVar17 = 1;
+          cStack_9 = '\x02';
+          bVar13 = 1;
         }
-        (this->fields).stopPackageSent = bVar17;
-        (this->fields).prevSendTransformData.position.x = fStack_13;
-        (this->fields).prevSendTransformData.position.y = fStack_11;
-        (this->fields).prevSendTransformData.position.z = fStack_15;
-        (this->fields).prevSendTransformData.rotation = pBStack_14;
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        pMStack_3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                              ((MethodInfo *)0x0);
-        pMVar4 = (this->fields)._.worldObject;
-        if (pMVar4 != (MVWorldObjectClient *)0x0) {
-          pIStack_18 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)pMVar4,(MethodInfo *)0x0);
-          pMVar4 = (this->fields)._.worldObject;
-          if ((pMVar4 != (MVWorldObjectClient *)0x0) &&
-             (pVVar19 = (Vector3 *)
-                       (*(code *)(pMVar4->klass->vtable).get_Position.method)
-                                 (&fStack_11,pMVar4,(pMVar4->klass->vtable).set_Position.methodPtr),
-             pMStack_3 != (MVNetworkGame_OperationRequests *)0x0)) {
-            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObject
-                      (pMStack_3,(int32_t)pIStack_18,*pVVar19,pBStack_2,
-                       (TransformPackageType__Enum)game,(MethodInfo *)0x0);
-            iVar1 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
-                              (this_00,(MethodInfo *)0x0);
-            *(int32_t *)&(this->fields).lastUpdateTimestamp = iVar1;
-            *(int32_t *)((int)&(this->fields).lastUpdateTimestamp + 4) = iVar1 >> 0x1f;
-            return;
+        (this->fields).stopPackageSent = bVar13;
+        (this->fields).prevSendTransformData.position.x = fVar11;
+        (this->fields).prevSendTransformData.position.y = fVar12;
+        (this->fields).prevSendTransformData.position.z = fVar6;
+        (this->fields).prevSendTransformData.rotation = pBVar7;
+        func_?(&(this->fields).prevSendTransformData.rotation);
+        pMVar14 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
+        ;
+        pMVar2 = (this->fields)._.worldObject;
+        pMStack_15 = pMVar14;
+        if (pMVar2 != (MVWorldObjectClient *)0x0) {
+          iStack_16 = (pMVar2->fields)._.id;
+          puVar10 = (undefined8 *)
+                   (*(pMVar2->klass->vtable).get_Position.methodPtr)
+                             (auStack_17,pMVar2,(pMVar2->klass->vtable).get_Position.method);
+          MStack_4._8_8_ = *puVar10;
+          fStack_18 = *(float *)(puVar10 + 1);
+          if (pMVar14 != (MVNetworkGame_OperationRequests *)0x0) {
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__System__Byte);
+              func_?(&
+                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                             );
+              func_?(&
+                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                             );
+              func_?(&
+                              TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                             );
+              func_?(&TypeInfo__System__Int32);
+              cRam_? = '\x01';
+            }
+            MVar19 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
+            if (MVar19 != MVJoinState__Enum_Playing) {
+code_?:
+              iVar20 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                                 (game,(MethodInfo *)0x0);
+              *(int32_t *)&(this->fields).lastUpdateTimestamp = iVar20;
+              *(int32_t *)((int)&(this->fields).lastUpdateTimestamp + 4) = iVar20 >> 0x1f;
+              return;
+            }
+            this_01 = (Dictionary_2_System_Object_System_Object_ *)
+                      func_?(
+                                     TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                                     );
+            if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+              ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                        ((ParameterOverride_1_System_Object_ *)this_01,
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                        );
+              iStack_21 = iStack_16;
+              pOVar22 = (Object *)func_?(TypeInfo__System__Int32,&iStack_21);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        (this_01,(Object *)0x16,pOVar22,
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                        );
+              this_00 = (pMStack_15->fields).networkGame;
+              if (this_00 != (MVNetworkGame *)0x0) {
+                iStack_23 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                                      (this_00,(MethodInfo *)0x0);
+                pOVar22 = (Object *)func_?(TypeInfo__System__Int32,&iStack_23);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          (this_01,(Object *)0x23,pOVar22,
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                          );
+                position.z = fStack_18;
+                position.x = MStack_4.position.z;
+                position.y = (float)MStack_4.rotation;
+                MVWorldObject.dll::MV::WorldObject::TransformHelper::TransformHelper_SetPosition_1
+                          (position,(Dictionary_2_System_Byte_System_Object_ *)this_01,
+                           (MethodInfo *)0x0);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          (this_01,(Object *)0x9d,(Object *)pBStack_8,
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                          );
+                cStack_24 = cStack_9;
+                pOVar22 = (Object *)func_?(TypeInfo__System__Byte);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          (this_01,(Object *)0x24,pOVar22,
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                          );
+                SStack_25.DeliveryMode = 0;
+                SStack_25.Encrypt = 0;
+                SStack_25.Channel = 0;
+                SStack_25._6_2_ = 0;
+                Photon3Unity3D.dll::ExitGames::Client::Photon::SendOptions::
+                SendOptions_set_Reliability(&SStack_25,cStack_9 == '\x02',(MethodInfo *)0x0);
+                pPVar26 = (pMStack_15->fields).peer;
+                if (pPVar26 != (PhotonPeer *)0x0) {
+                  (*(pPVar26->klass->vtable).SendOperation.methodPtr)
+                            (pPVar26,2,this_01,SStack_25.DeliveryMode,SStack_25._4_4_,
+                             (pPVar26->klass->vtable).SendOperation.method);
+                  goto code_?;
+                }
+              }
+            }
           }
         }
       }
     }
   }
-  func_?(0);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  func_?();
+  pcVar27 = (code *)swi(3);
+  (*pcVar27)();
   return;
 }
 
@@ -127,29 +186,34 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
     cRam_? = '\x01';
   }
   *(undefined4 *)&(this->fields).lastUpdateTimestamp = 0xffffffff;
   *(undefined4 *)((int)&(this->fields).lastUpdateTimestamp + 4) = 0xffffffff;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_2,(MethodInfo *)0x0);
-  uVar3 = pVVar1->x;
-  uVar4 = pVVar1->y;
-  fVar5 = pVVar1->z;
-  method_00 = TypeInfo__System__Byte;
-  pBVar6 = (Byte__Array *)func_?(TypeInfo__System__Byte,3);
-  (this->fields).prevSendTransformData.position.x = (float)uVar3;
-  (this->fields).prevSendTransformData.position.y = (float)uVar4;
-  (this->fields).prevSendTransformData.position.z = fVar5;
-  (this->fields).prevSendTransformData.rotation = pBVar6;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_2._0_4_ = (pVVar1->zeroVector).x;
+  uStack_2._4_4_ = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  pBStack_4 = (Byte__Array *)func_?(TypeInfo__System__Byte,3);
+  uVar5 = uStack_2;
+  func_?(&pBStack_4,pBStack_4);
+  fStack_6 = (float)uVar5;
+  fStack_7 = (float)((ulonglong)uVar5 >> 0x20);
+  method_00 = (MethodInfo *)&(this->fields).prevSendTransformData.rotation;
+  (this->fields).prevSendTransformData.position.x = fStack_6;
+  (this->fields).prevSendTransformData.position.y = fStack_7;
+  (this->fields).prevSendTransformData.position.z = fVar3;
+  (this->fields).prevSendTransformData.rotation = pBStack_4;
+  func_?(method_00,0);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._.worldObject = owner;
+  func_?(&this->fields,owner);
   return;
 }
 

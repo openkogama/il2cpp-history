@@ -9,20 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-[assembly: AssemblyCompany]
-[assembly: AssemblyConfiguration]
-[assembly: AssemblyCopyright]
-[assembly: AssemblyDescription]
-[assembly: AssemblyFileVersion]
-[assembly: AssemblyProduct]
-[assembly: AssemblyTitle]
-[assembly: AssemblyTrademark]
-[assembly: CompilationRelaxations]
-[assembly: ComVisible]
-[assembly: Debuggable]
-[assembly: Guid]
-[assembly: RuntimeCompatibility]
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -51,6 +38,7 @@ namespace MV.WorldObject
 		public static bool operator !=(IntVector a, IntVector b);
 		public Vector3 ToVector3();
 		public override string ToString();
+		public static IntVector operator +(IntVector i1);
 		public static IntVector operator -(IntVector i1);
 		public static IntVector operator +(IntVector i1, IntVector i2);
 		public static IntVector operator -(IntVector i1, IntVector i2);
@@ -58,5 +46,8 @@ namespace MV.WorldObject
 		public static IntVector operator *(IntVector iV, int i);
 		public static Vector3 operator *(IntVector iV, Vector3 vector3);
 		public static IntVector operator /(IntVector iV, int i);
+		public int SquareMagnitude();
+		public static int IntVectorToIndex(IntVector intVector, int chunkSize);
+		public static IntVector IndexToIntVector(int index, int chunkSize);
 	}
 }

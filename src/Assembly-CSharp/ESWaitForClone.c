@@ -6,58 +6,51 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&StringLiteral_goToInsert);
     cRam_? = '\x01';
   }
   if ((e != (EditorStateMachine *)0x0) &&
-     (this_00 = (e->fields)._.data, this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)this_00,StringLiteral_goToInsert,
+     (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(e->fields)._.data,
+     this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)StringLiteral_goToInsert,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     (this->fields).goToInsert = bVar1 != 0;
-    pSVar2 = (e->fields).selectionController;
-    if (pSVar2 != (SelectionController *)0x0) {
-      pMVar3 = SelectionController::SelectionController_get_SingleSelectedWO
-                         (pSVar2,(MethodInfo *)0x0);
-      if ((pMVar3 != (MVWorldObjectClient *)0x0) && ((this->fields).goToInsert == 0)) {
-        pSVar2 = (e->fields).selectionController;
-        if (pSVar2 == (SelectionController *)0x0) goto code_?;
-        pMVar3 = SelectionController::SelectionController_get_SingleSelectedWO
-                           (pSVar2,(MethodInfo *)0x0);
-        if (pMVar3 == (MVWorldObjectClient *)0x0) goto code_?;
-        puVar4 = (undefined8 *)(*(code *)(pMVar3->klass->vtable).get_WorldPosition_1.method)();
-        uVar5 = *puVar4;
-        fVar6 = *(float *)(puVar4 + 1);
-        (this->fields).pos.x = (float)(int)uVar5;
-        (this->fields).pos.y = (float)(int)((ulonglong)uVar5 >> 0x20);
-        (this->fields).pos.z = fVar6;
-        pSVar2 = (e->fields).selectionController;
-        if (pSVar2 == (SelectionController *)0x0) goto code_?;
-        pMVar3 = SelectionController::SelectionController_get_SingleSelectedWO
-                           (pSVar2,(MethodInfo *)0x0);
-        if (pMVar3 == (MVWorldObjectClient *)0x0) goto code_?;
-        pQVar7 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
-                            ((Quaternion *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
-        fVar6 = pQVar7->y;
-        fVar8 = pQVar7->z;
-        fVar9 = pQVar7->w;
-        (this->fields).rot.x = pQVar7->x;
-        (this->fields).rot.y = fVar6;
+    pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    if ((pMVar2 == (MVWorldObjectClient *)0x0) || ((this->fields).goToInsert != 0)) {
+code_?:
+      EditorStateMachine::EditorStateMachine_DeSelectAll(e,(MethodInfo *)0x0);
+      return;
+    }
+    pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    if (pMVar2 != (MVWorldObjectClient *)0x0) {
+      puVar3 = (undefined8 *)(*(pMVar2->klass->vtable).get_WorldPosition_1.methodPtr)();
+      uVar4 = *puVar3;
+      fVar5 = *(float *)(puVar3 + 1);
+      (this->fields).pos.x = (float)(int)uVar4;
+      (this->fields).pos.y = (float)(int)((ulonglong)uVar4 >> 0x20);
+      (this->fields).pos.z = fVar5;
+      pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+      if (pMVar2 != (MVWorldObjectClient *)0x0) {
+        pQVar6 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
+                           ((Quaternion *)&puStack_7,pMVar2,(MethodInfo *)0x0);
+        fVar5 = pQVar6->y;
+        fVar8 = pQVar6->z;
+        fVar9 = pQVar6->w;
+        (this->fields).rot.x = pQVar6->x;
+        (this->fields).rot.y = fVar5;
         (this->fields).rot.z = fVar8;
         (this->fields).rot.w = fVar9;
-      }
-      pSVar2 = (e->fields).selectionController;
-      if (pSVar2 != (SelectionController *)0x0) {
-        SelectionController::SelectionController_DeSelectAll(pSVar2,(MethodInfo *)0x0);
-        return;
+        goto code_?;
       }
     }
   }
-code_?:
   func_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
@@ -71,78 +64,65 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Execute
                (ESWaitForClone *this,EditorStateMachine *e,MethodInfo *method)
 
 {
-  uVar1 = CONCAT44(unaff_ESI,unaff_EDI);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&TypeInfo__TranslateMode);
+    func_?(&StringLiteral_moveWithAvatar);
+    func_?(&StringLiteral_translateMode);
     cRam_? = '\x01';
   }
-  this_00 = e;
-  if ((e != (EditorStateMachine *)0x0) &&
-     (pSVar2 = (e->fields).selectionController, pSVar2 != (SelectionController *)0x0)) {
-    pMVar3 = SelectionController::SelectionController_get_SingleSelectedWO(pSVar2,(MethodInfo *)0x0)
-    ;
-    if (pMVar3 == (MVWorldObjectClient *)0x0) {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
+  if (e != (EditorStateMachine *)0x0) {
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    if (pMVar1 == (MVWorldObjectClient *)0x0) {
       return;
     }
-    pSVar2 = (this_00->fields).selectionController;
-    if (pSVar2 != (SelectionController *)0x0) {
-      uVar1 = ZEXT48(pSVar2);
-      pMVar3 = SelectionController::SelectionController_get_SingleSelectedWO
-                         (pSVar2,(MethodInfo *)0x0);
-      if (pMVar3 != (MVWorldObjectClient *)0x0) {
-        uVar1._0_4_ = (this->fields).pos.x;
-        uVar1._4_4_ = (this->fields).pos.y;
-        (*(code *)(pMVar3->klass->vtable).set_WorldPosition.method)
-                  (pMVar3,uVar1,(this->fields).pos.z);
-        pSVar2 = (this_00->fields).selectionController;
-        if ((pSVar2 != (SelectionController *)0x0) &&
-           (pMVar3 = SelectionController::SelectionController_get_SingleSelectedWO
-                               (pSVar2,(MethodInfo *)0x0), pMVar3 != (MVWorldObjectClient *)0x0)) {
-          MVWorldObjectClient::MVWorldObjectClient_set_SyncRot
-                    (pMVar3,(this->fields).rot,(MethodInfo *)0x0);
-          if ((this->fields).goToInsert != 0) {
-            FSMEntity::FSMEntity_PushState_1
-                      ((FSMEntity *)this_00,EditorEvent__Enum_ESInsert,
-                       EditorEvent__Enum_ObjectSelected,(MethodInfo *)0x0);
-            return;
-          }
-          pDVar4 = (this_00->fields)._.data;
-          pCVar5 = (CrossPlatformInputManager_VirtualButton *)func_?();
-          if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            String,UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]
-            ::
-            Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                      ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                        *)pDVar4,StringLiteral_translateMode,pCVar5,
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    if (pMVar1 != (MVWorldObjectClient *)0x0) {
+      uVar2 = (this->fields).pos.x;
+      (*(pMVar1->klass->vtable).set_WorldPosition.methodPtr)(pMVar1,uVar2);
+      pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+      if (pMVar1 != (MVWorldObjectClient *)0x0) {
+        MVWorldObjectClient::MVWorldObjectClient_set_SyncRot
+                  (pMVar1,(this->fields).rot,(MethodInfo *)0x0);
+        if ((this->fields).goToInsert != 0) {
+          FSMEntity::FSMEntity_PushState_1
+                    ((FSMEntity *)e,EditorEvent__Enum_ESInsert,EditorEvent__Enum_ObjectSelected,
+                     (MethodInfo *)0x0);
+          return;
+        }
+        pDVar3 = (e->fields)._.data;
+        pOVar4 = (Object *)func_?();
+        if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (pDVar3,(Object *)StringLiteral_translateMode,pOVar4,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+          pDVar3 = (e->fields)._.data;
+          pOVar4 = (Object *)func_?();
+          if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__Add
+                      (pDVar3,(Object *)StringLiteral_moveWithAvatar,pOVar4,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                       );
-            pDVar4 = (this_00->fields)._.data;
-            e = (EditorStateMachine *)CONCAT13(1,e._0_3_);
-            pCVar5 = (CrossPlatformInputManager_VirtualButton *)
-                     func_?(TypeInfo__System__Boolean,(int)&e + 3);
-            if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              String,UnityStandardAssets::CrossPlatformInput::
-              CrossPlatformInputManager+VirtualButton]::
-              Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                        ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                          *)pDVar4,StringLiteral_moveWithAvatar,pCVar5,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              FSMEntity::FSMEntity_PushState_1
-                        ((FSMEntity *)this_00,EditorEvent__Enum_ESTranslate,
-                         EditorEvent__Enum_ObjectSelected,(MethodInfo *)0x0);
-              return;
-            }
+            FSMEntity::FSMEntity_PushState_1
+                      ((FSMEntity *)e,EditorEvent__Enum_ESTranslate,EditorEvent__Enum_ObjectSelected
+                       ,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
-  func_?(0,uVar1);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -154,33 +134,27 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Exit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).pos.x = (pVVar1->zeroVector).x;
+  (this->fields).pos.y = fVar2;
+  (this->fields).pos.z = fVar3;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).pos.x = pVVar1->x;
-  (this->fields).pos.y = fVar3;
-  (this->fields).pos.z = fVar4;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                     ((Quaternion *)&stack0xffffffec,(MethodInfo *)0x0);
-  fVar4 = pQVar5->y;
-  fVar3 = pQVar5->z;
-  fVar6 = pQVar5->w;
-  (this->fields).rot.x = pQVar5->x;
-  (this->fields).rot.y = fVar4;
-  (this->fields).rot.z = fVar3;
-  (this->fields).rot.w = fVar6;
+  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar3 = (pQVar4->identityQuaternion).y;
+  fVar2 = (pQVar4->identityQuaternion).z;
+  fVar5 = (pQVar4->identityQuaternion).w;
+  (this->fields).rot.x = (pQVar4->identityQuaternion).x;
+  (this->fields).rot.y = fVar3;
+  (this->fields).rot.z = fVar2;
+  (this->fields).rot.w = fVar5;
   return;
 }
 
@@ -192,33 +166,27 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).pos.x = (pVVar1->zeroVector).x;
+  (this->fields).pos.y = fVar2;
+  (this->fields).pos.z = fVar3;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).pos.x = pVVar1->x;
-  (this->fields).pos.y = fVar3;
-  (this->fields).pos.z = fVar4;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                     ((Quaternion *)&stack0xffffffec,(MethodInfo *)0x0);
-  fVar4 = pQVar5->y;
-  fVar3 = pQVar5->z;
-  fVar6 = pQVar5->w;
-  (this->fields).rot.x = pQVar5->x;
-  (this->fields).rot.y = fVar4;
-  (this->fields).rot.z = fVar3;
-  (this->fields).rot.w = fVar6;
+  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar3 = (pQVar4->identityQuaternion).y;
+  fVar2 = (pQVar4->identityQuaternion).z;
+  fVar5 = (pQVar4->identityQuaternion).w;
+  (this->fields).rot.x = (pQVar4->identityQuaternion).x;
+  (this->fields).rot.y = fVar3;
+  (this->fields).rot.z = fVar2;
+  (this->fields).rot.w = fVar5;
   ESStateBase::ESStateBase__ctor((ESStateBase *)this,(MethodInfo *)0x0);
   return;
 }

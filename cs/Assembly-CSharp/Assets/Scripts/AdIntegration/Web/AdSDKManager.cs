@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Assets.Scripts.AdIntegration;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Assets.Scripts.AdIntegration.Web
 {
@@ -20,6 +20,8 @@ namespace Assets.Scripts.AdIntegration.Web
 		private bool wasInitializedSuccessfully;
 	
 		// Properties
+		public System.Type AdSDKType { get; }
+		public bool WasInitializedSuccessfully { get; }
 		public string RewardedAdNotAvailableText { get; }
 		public TimeSpan TimeSinceLastAd { get; }
 		public TimeSpan TimeSinceLastInterstitial { get; }
@@ -35,6 +37,7 @@ namespace Assets.Scripts.AdIntegration.Web
 		public void RequestInterstitial(Action<InterstitialAdResult> interstitialCallback, AdContext context);
 		public void RequestRewardedAd(Action<RewardedAdResult> rewardedAdCallback, AdContext context);
 		public void InitializeAdConfigSettings(AdConfigSettings config);
+		public bool HideFullscreen();
 		public void InitializeCallbackManager(IAdUIManager handler);
 	}
 }

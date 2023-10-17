@@ -9,7 +9,7 @@ AvatarModifierPackages_OnModifierExpiredDelegate_BeginInvoke
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarModifierPackage);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatableCubeTutorialPointer : FirstTimeActivatableButtonPointer
 {
@@ -28,10 +28,10 @@ public class FirstTimeActivatableCubeTutorialPointer : FirstTimeActivatableButto
 	private new void Clear();
 	private void OnSkipPressed();
 	[CompilerGenerated]
-	private new void _CreateBubble_m__0(TextBubbleController x, BaseEventData y);
+	private void _CreateBubble_b__5_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private new void _Clear_m__1(TextBubbleController x, BaseEventData y);
+	private void _Clear_b__7_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _OnSkipPressed_m__2(IFirstTimeElementActivator x, BaseEventData y);
+	private void _OnSkipPressed_b__8_0(IFirstTimeElementActivator x, BaseEventData y);
 }
 

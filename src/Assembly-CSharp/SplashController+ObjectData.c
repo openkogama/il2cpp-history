@@ -5,7 +5,8 @@ void Assembly-CSharp.dll::SplashController+ObjectData::SplashController_ObjectDa
                (SplashController_ObjectData *this,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._TimeSinceLastRingEmission_k__BackingField = INFINITY;
   (this->fields)._IsInWater_k__BackingField = 0;
   return;

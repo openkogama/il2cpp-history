@@ -7,44 +7,87 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_AddButton
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    ContextMenuButton_MethodInfo__UnityEngine__Object__Instantiate<ContextMenuButton>_ContextMenuButton_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pXVar1 = (XpBoostParticlePreviewer *)(this->fields).contextMenuButtonPrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  original = (this->fields).contextMenuButtonPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar1,
-                      ContextMenuButton_MethodInfo__UnityEngine__Object__Instantiate<ContextMenuButton>_ContextMenuButton_
-                     );
-  if ((pXVar1 != (XpBoostParticlePreviewer *)0x0) &&
-     (pCVar2 = (pXVar1->fields).previewCam, pCVar2 != (Camera *)0x0)) {
-    (*(code *)pCVar2->klass[3]._1.cctor_finished_or_no_cctor)
-              (pCVar2,buttonText,pCVar2->klass[3]._1.cctor_thread);
-    this_00 = (HoverCraftMotor *)(pXVar1->fields).layersToRender;
-    if (this_00 != (HoverCraftMotor *)0x0) {
-      this_01 = (UnityEvent *)
-                HoverCraftMotor::HoverCraftMotor_get_VehicleCamera(this_00,(MethodInfo *)0x0);
-      if (this_01 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                  (this_01,onClickCallback,(MethodInfo *)0x0);
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                            ((Component_1 *)pXVar1,(MethodInfo *)0x0);
-        parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-        if (this_02 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_02,parent,0,(MethodInfo *)0x0);
-          return;
-        }
+  this_01 = (Component *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                      ((Object *)original,
+                       ContextMenuButton_MethodInfo__UnityEngine__Object__Instantiate<ContextMenuButton>_ContextMenuButton_
+                      );
+  if ((this_01 != (Component *)0x0) && (pMVar1 = this_01[1].monitor, pMVar1 != (MonitorData *)0x0))
+  {
+    (**(code **)(*(int *)pMVar1 + 0x314))(pMVar1,buttonText,*(undefined4 *)(*(int *)pMVar1 + 0x318))
+    ;
+    if ((this_01[1].klass != (Component__Class *)0x0) &&
+       (this_00 = *(UnityEvent **)&((this_01[1].klass)->_1).interfaces_count,
+       this_00 != (UnityEvent *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                (this_00,onClickCallback,(MethodInfo *)0x0);
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          (this_01,(MethodInfo *)0x0);
+      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (this_02 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                  (this_02,parent,0,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void AddLockedButton(String) */
+
+void Assembly-CSharp.dll::ContextMenu::ContextMenu_AddLockedButton
+               (ContextMenu *this,String *buttonText,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    ContextMenuButton_MethodInfo__UnityEngine__Object__Instantiate<ContextMenuButton>_ContextMenuButton_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  original = (this->fields).contextMenuLockedButtonPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  this_00 = (Component *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                      ((Object *)original,
+                       ContextMenuButton_MethodInfo__UnityEngine__Object__Instantiate<ContextMenuButton>_ContextMenuButton_
+                      );
+  if ((this_00 != (Component *)0x0) && (pMVar1 = this_00[1].monitor, pMVar1 != (MonitorData *)0x0))
+  {
+    (**(code **)(*(int *)pMVar1 + 0x314))(pMVar1,buttonText,*(undefined4 *)(*(int *)pMVar1 + 0x318))
+    ;
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        (this_00,(MethodInfo *)0x0);
+    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (this_01 != (Transform *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                (this_01,parent,0,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -56,34 +99,33 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>);
+    func_?(&
+                    MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
+                   );
     cRam_? = '\x01';
   }
   (this->fields).woID = woID;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>)
   ;
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this,
-             MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_,
-             MethodInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>__Action_System__Object__void__
-            );
-  if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    MVWorldObjectClientManager::MVWorldObjectClientManager_SubscribeWODestroyedEvent
-              (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
-               (MethodInfo *)0x0);
-    (this->fields).worldPosition.x = worldPosition.x;
-    (this->fields).worldPosition.y = worldPosition.y;
-    (this->fields).worldPosition.z = worldPosition.z;
-    ContextMenu_SetToScreenPoint(this,(MethodInfo *)0x0);
-    return;
+  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (MVWorldObjectClientManager *)0x0) {
+      MVWorldObjectClientManager::MVWorldObjectClientManager_SubscribeWODestroyedEvent
+                (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
+                 (MethodInfo *)0x0);
+      (this->fields).worldPosition.x = worldPosition.x;
+      (this->fields).worldPosition.y = worldPosition.y;
+      (this->fields).worldPosition.z = worldPosition.z;
+      ContextMenu_SetToScreenPoint(this,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -113,27 +155,27 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_LateUpdate(ContextMenu *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                     (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__EventSystem->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     this_00 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current
                         ((MethodInfo *)0x0);
     if (this_00 == (EventSystem *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+code_?:
+      uVar2 = func_?(&stack0xfffffffc);
+      func_?(uVar2);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     bVar1 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
@@ -141,36 +183,41 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_LateUpdate(ContextMenu *this,
     if (bVar1 == 0) {
       if (cRam_? == '\0') {
         func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
         cRam_? = '\x01';
       }
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       (in_stack_3,(MethodInfo *)0x0);
-      if (TypeInfo__ContextMenu->static_fields->__f__am_cache0 ==
-          (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_01,(Object *)0x0,
-                   MethodInfo__ContextMenu___Pop_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                  );
-        TypeInfo__ContextMenu->static_fields->__f__am_cache0 =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)this_01;
-      }
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-           TypeInfo__ContextMenu->static_fields->__f__am_cache0;
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       (in_stack_4,(MethodInfo *)0x0);
+      if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,callbackFunction,
+      callbackFunction = TypeInfo__ContextMenu____c->static_fields->__9__9_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        object = TypeInfo__ContextMenu____c->static_fields->__9;
+        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
+        goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__ContextMenu____c___Pop_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__ContextMenu____c->static_fields->__9__9_0 = callbackFunction;
+        func_?();
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       return;
@@ -186,38 +233,34 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_OnDestroy(ContextMenu *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>);
+    func_?(&
+                    MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
+                   );
     cRam_? = '\x01';
   }
-  if ((this->fields).linkMenu == 0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    woID = (this->fields).woID;
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this,
-               MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
-               ,
-               MethodInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>__Action_System__Object__void__
-              );
-    if (this_00 == (MVWorldObjectClientManager *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
+  if ((this->fields).linkMenu != 0) {
+    return;
+  }
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  woID = (this->fields).woID;
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
+            func_?(TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>)
+  ;
+  if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
+     (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
+                 ,(MethodInfo *)0x0), this_00 != (MVWorldObjectClientManager *)0x0)) {
     MVWorldObjectClientManager::MVWorldObjectClientManager_UnsubscribeWODestroyedEvent
               (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
                (MethodInfo *)0x0);
+    return;
   }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -228,38 +271,55 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_Pop(ContextMenu *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__ContextMenu____c___Pop_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__ContextMenu____c);
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__ContextMenu->static_fields->__f__am_cache0 ==
-      (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__ContextMenu___Pop_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    TypeInfo__ContextMenu->static_fields->__f__am_cache0 =
-         (ExecuteEvents_EventFunction_1_IUIStack_ *)this_00;
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ContextMenu____c);
   }
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__ContextMenu->static_fields->__f__am_cache0;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+  callbackFunction = TypeInfo__ContextMenu____c->static_fields->__9__9_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__ContextMenu____c);
+    }
+    object = TypeInfo__ContextMenu____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IUIStack_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__ContextMenu____c___Pop_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__ContextMenu____c->static_fields->__9__9_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenu____c->static_fields->__9__9_0,callbackFunction);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,callbackFunction,
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
   return;
@@ -284,47 +344,33 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_SetToScreenPoint
                (ContextMenu *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_01 != (MainCameraManager *)0x0) {
-    this_02 = (Camera *)
-              mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-              Serialization::JsonProperty]::
-              Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                        ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                         (MethodInfo *)0x0);
-    if (this_02 != (Camera *)0x0) {
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                         ((Vector3 *)&stack0xffffffe8,this_02,(this->fields).worldPosition,
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (pMVar1 != (MainCameraManager *)0x0) {
+    this_00 = (pMVar1->fields).mainCamera;
+    if (this_00 != (Camera *)0x0) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                         ((Vector3 *)&stack0xffffffe8,this_00,(this->fields).worldPosition,
                           (MethodInfo *)0x0);
-      uVar2 = pVVar1->x;
-      fVar3 = pVVar1->z;
-      this_00 = (this->fields).rectTransform;
-      if (this_00 != (RectTransform *)0x0) {
-        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                            ((Component_1 *)this_00,(MethodInfo *)0x0);
-        if (this_03 != (Transform *)0x0) {
-          this = (ContextMenu *)fVar3;
-          fVar4 = (float)&UNK_?;
-          value.x = (float)uVar2;
-          value = (Vector3)CONCAT84(uVar5,value.x);
+      fVar3 = pVVar2->z;
+      this_02 = (this->fields).rectTransform;
+      if (this_02 != (RectTransform *)0x0) {
+        uVar4 = 0;
+        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this_02,(MethodInfo *)0x0);
+        if (this_01 != (Transform *)0x0) {
+          value.y = (float)uVar4;
+          value.x = (float)this_02;
+          value.z = fVar3;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (this_03,value,(MethodInfo *)0x0);
+                    (this_01,value,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -334,68 +380,33 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_SetToScreenPoint
 void Assembly-CSharp.dll::ContextMenu::ContextMenu_Update(ContextMenu *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_01 != (MainCameraManager *)0x0) {
-    this_02 = (Camera *)
-              mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-              Serialization::JsonProperty]::
-              Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                        ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                         (MethodInfo *)0x0);
-    if (this_02 != (Camera *)0x0) {
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                         ((Vector3 *)&stack0xffffffe8,this_02,(this->fields).worldPosition,
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (pMVar1 != (MainCameraManager *)0x0) {
+    this_00 = (pMVar1->fields).mainCamera;
+    if (this_00 != (Camera *)0x0) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                         ((Vector3 *)&stack0xffffffe8,this_00,(this->fields).worldPosition,
                           (MethodInfo *)0x0);
-      uVar2 = pVVar1->x;
-      fVar3 = pVVar1->z;
-      this_00 = (this->fields).rectTransform;
-      if (this_00 != (RectTransform *)0x0) {
-        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                            ((Component_1 *)this_00,(MethodInfo *)0x0);
-        if (this_03 != (Transform *)0x0) {
-          this = (ContextMenu *)fVar3;
-          fVar4 = (float)&UNK_?;
-          value.x = (float)uVar2;
-          value = (Vector3)CONCAT84(uVar5,value.x);
+      fVar3 = pVVar2->z;
+      this_02 = (this->fields).rectTransform;
+      if (this_02 != (RectTransform *)0x0) {
+        uVar4 = 0;
+        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this_02,(MethodInfo *)0x0);
+        if (this_01 != (Transform *)0x0) {
+          value.y = (float)uVar4;
+          value.x = (float)this_02;
+          value.z = fVar3;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (this_03,value,(MethodInfo *)0x0);
+                    (this_01,value,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
-  return;
-}
-
-
-/* Void <Pop>m__0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenu::ContextMenu__Pop_m__0
-               (IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    func_?(3,TypeInfo__UnityEngine__EventSystems__IUIStack,handler,2);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

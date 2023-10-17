@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LevelErrorPopup : MonoBehaviour
 {
@@ -23,8 +23,23 @@ public class LevelErrorPopup : MonoBehaviour
 	private UnityAction resultCallback;
 	private Texture2D requiredLevelTextureAsset;
 	private Texture2D playerLevelTextureAsset;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__8_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnButtonPressed_b__8_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public LevelErrorPopup();
@@ -35,7 +50,5 @@ public class LevelErrorPopup : MonoBehaviour
 	private void OnPlayerLevelLoaded(UnityWebRequest www);
 	public void OnButtonPressed();
 	private void OnDestroy();
-	[CompilerGenerated]
-	private static void _OnButtonPressed_m__0(IUIStack x, BaseEventData y);
 }
 

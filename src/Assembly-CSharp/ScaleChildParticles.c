@@ -6,47 +6,40 @@ void Assembly-CSharp.dll::ScaleChildParticles::ScaleChildParticles_Start
 
 {
   uVar1 = 0;
-  pOStack_2 = (Object *)0x0;
-  pPVar3 = (this->fields).ToScale;
-  pOStack_4 = (Object *)0x0;
-  if (pPVar3 != (ParticleSystem__Array *)0x0) {
-    ppPVar5 = pPVar3->vector;
+  pPVar2 = (this->fields).ToScale;
+  if (pPVar2 != (ParticleSystem__Array *)0x0) {
+    ppPVar3 = pPVar2->vector;
     while( true ) {
-      if ((int)pPVar3->max_length <= (int)uVar1) {
+      if ((int)pPVar2->max_length <= (int)uVar1) {
         return;
       }
-      if (pPVar3->max_length <= uVar1) break;
-      if ((Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-           *)*ppPVar5 ==
-          (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-           *)0x0) goto code_?;
-      pOStack_2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
-                  ::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                  Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                            ((Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                              *)*ppPVar5,(MethodInfo *)0x0);
-      fVar6 = (float10)func_?(&pOStack_2,0);
-      this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)(this->fields).Source;
-      if (this_00 ==
-          (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-           *)0x0) goto code_?;
-      pOStack_4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
-                  ::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                  Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                            (this_00,(MethodInfo *)0x0);
-      fVar7 = (float10)func_?(&pOStack_4,0);
-      func_?(&pOStack_2,(float)fVar7 * (float)fVar6,0);
+      if (pPVar2->max_length <= uVar1) break;
+      if (*ppPVar3 == (ParticleSystem *)0x0) goto code_?;
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+      ParticleSystem_get_collision(*ppPVar3,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+      ParticleSystem_MainModule_get_startSizeMultiplier_Injected
+                ((ParticleSystem_MainModule *)&stack0xfffffff8,(MethodInfo *)0x0);
+      this_00 = (this->fields).Source;
+      if (this_00 == (ParticleSystem *)0x0) goto code_?;
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+      ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
+      fVar4 = 0.0;
+      fVar5 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+              ParticleSystem_MainModule_get_startSizeMultiplier_Injected
+                        ((ParticleSystem_MainModule *)&stack0xfffffff4,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+      ParticleSystem_MainModule_set_startSizeMultiplier_Injected
+                ((ParticleSystem_MainModule *)&stack0xfffffff8,fVar5 * fVar4,(MethodInfo *)0x0);
       uVar1 = uVar1 + 1;
-      ppPVar5 = ppPVar5 + 1;
+      ppPVar3 = ppPVar3 + 1;
     }
-    uVar8 = func_?(0,0);
-    func_?(uVar8);
+    func_?();
   }
 code_?:
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -6,69 +6,62 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_ApplyDamage
                InteractionDataHandlerBase *interactionDataHandlerBase,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  uStack_1 = 0;
-  fStack_2 = 0.0;
-  uVar3 = (this->fields).beamType;
+  uVar1 = (this->fields).beamType;
   if (wo == (MVWorldObjectClient *)0x0) goto code_?;
-  puVar4 = (undefined8 *)
-           (*(code *)(wo->klass->vtable).GetTargetPosition.method)
-                     (&IStack_5.impulse.y,wo,wo->klass[1]._0.image);
-  uStack_6 = *puVar4;
-  fVar7 = *(float *)(puVar4 + 1);
+  puVar2 = (undefined8 *)
+           (*(wo->klass->vtable).GetTargetPosition.methodPtr)
+                     (auStack_3 + 8,wo,(wo->klass->vtable).GetTargetPosition.method);
+  auStack_4._8_8_ = *puVar2;
+  auStack_4._16_4_ = *(undefined4 *)(puVar2 + 1);
   this_00 = (this->fields)._._.gameObject;
   if (this_00 == (GameObject *)0x0) goto code_?;
   this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                       (this_00,(MethodInfo *)0x0);
   if (this_01 == (Transform *)0x0) goto code_?;
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                     ((Vector3 *)&IStack_9.impulse.y,this_01,(MethodInfo *)0x0);
-  IStack_5._12_8_ = *(undefined8 *)pVVar8;
-  fVar10 = pVVar8->z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  a.z = fVar7;
-  a.x = (float)(undefined4)uStack_6;
-  a.y = (float)uStack_6._4_4_;
-  b.z = fVar10;
-  b._0_8_ = IStack_5._12_8_;
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                     ((Vector3 *)&IStack_9.impulse.y,a,b,(MethodInfo *)0x0);
-  uStack_1._0_4_ = pVVar8->x;
-  uStack_1._4_4_ = pVVar8->y;
-  fStack_2 = pVVar8->z;
-  pVVar8 = (Vector3 *)func_?(&IStack_9.impulse.y,&uStack_1,0);
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                     ((Vector3 *)&IStack_9.impulse.y,*pVVar8,(this->fields).pushBackStrength,
-                      (MethodInfo *)0x0);
-  if (uVar3 == 0) {
-    pIVar11 = &IStack_9;
+  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                     ((Vector3 *)&IStack_6.impulse.y,this_01,(MethodInfo *)0x0);
+  uVar7 = pVVar5->x;
+  uVar8 = pVVar5->y;
+  auStack_3._16_4_ = (float)auStack_4._16_4_ - pVVar5->z;
+  auStack_3._12_4_ = (float)auStack_4._12_4_ - (float)uVar8;
+  auStack_3._8_4_ = (float)auStack_4._8_4_ - (float)uVar7;
+  auStack_4._16_4_ = auStack_3._16_4_;
+  puVar2 = (undefined8 *)func_?(&IStack_6.impulse.y,auStack_3 + 8,0);
+  auStack_4._16_4_ = (this->fields).pushBackStrength;
+  auStack_3._8_8_ = *puVar2;
+  auStack_3._16_4_ = *(undefined4 *)(puVar2 + 1);
+  auStack_4._8_4_ = (float)auStack_3._8_4_ * (float)auStack_4._16_4_;
+  auStack_4._12_4_ = (float)auStack_3._12_4_ * (float)auStack_4._16_4_;
+  auStack_4._16_4_ = (float)auStack_3._16_4_ * (float)auStack_4._16_4_;
+  if (uVar1 == 0) {
+    pIVar9 = &IStack_6;
 code_?:
-    pIVar11 = SentryTowerFirePackage::SentryTowerFirePackage_Create(pIVar11,*pVVar8,(MethodInfo *)0x0)
-    ;
+    impulse_00.y = (float)auStack_4._12_4_;
+    impulse_00.x = (float)auStack_4._8_4_;
+    impulse_00.z = (float)auStack_4._16_4_;
+    pIVar9 = SentryTowerFirePackage::SentryTowerFirePackage_Create
+                       (pIVar9,impulse_00,(MethodInfo *)0x0);
   }
   else {
-    if (uVar3 != 1) {
-      pIVar11 = &IStack_12;
+    if (uVar1 != 1) {
+      pIVar9 = (InteractionData *)auStack_4;
       goto code_?;
     }
-    pIVar11 = SentryTowerIcePackage::SentryTowerIcePackage_Create
-                       (&IStack_5,*pVVar8,(MethodInfo *)0x0);
+    impulse.y = (float)auStack_4._12_4_;
+    impulse.x = (float)auStack_4._8_4_;
+    impulse.z = (float)auStack_4._16_4_;
+    pIVar9 = SentryTowerIcePackage::SentryTowerIcePackage_Create
+                       ((InteractionData *)auStack_3,impulse,(MethodInfo *)0x0);
   }
   if (interactionDataHandlerBase != (InteractionDataHandlerBase *)0x0) {
     InteractionDataHandlerBase::InteractionDataHandlerBase_HandleInteraction
-              (interactionDataHandlerBase,*pIVar11,1,(MethodInfo *)0x0);
+              (interactionDataHandlerBase,*pIVar9,1,(MethodInfo *)0x0);
     return;
   }
 code_?:
-  func_?(0);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -115,68 +108,65 @@ bool Assembly-CSharp.dll::MVSentryGun::MVSentryGun_CompareWithKoGaMaPackage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__MVSentryGun);
+    func_?(&TypeInfo__SentryGunBeamType);
+    func_?(&StringLiteral_beamType);
     cRam_? = '\x01';
   }
-  if (wo == (MVWorldObjectClient *)0x0) {
-    this_00 = (PrefabPool *)0x0;
-  }
-  else {
-    bVar1 = (TypeInfo__MVSentryGun->_1).naturalAligment;
-    if (((wo->klass->_1).naturalAligment < bVar1) ||
-       ((MVSentryGun__Class *)(wo->klass->_1).typeHierarchy[bVar1 - 1] != TypeInfo__MVSentryGun)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    this_00 = (PrefabPool *)0x0;
-    if (bVar2) {
-      this_00 = (PrefabPool *)wo;
-    }
-  }
-  pDVar3 = (Dictionary_2_System_Type_Pool_ *)
-           PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (pDVar3 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-    pPVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       (pDVar3,(Type *)StringLiteral_beamType,
+  pDVar1 = (this->fields)._._._.data;
+  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (pDVar1,(Object *)StringLiteral_beamType,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    uVar5 = CONCAT44(TypeInfo__SentryGunBeamType,pPVar4);
-    if (pPVar4 != (Pool *)0x0) {
-      if ((pPVar4->klass->_0).element_class != (TypeInfo__SentryGunBeamType->_0).element_class)
+    uVar3 = CONCAT44(TypeInfo__SentryGunBeamType,pOVar2);
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class != (TypeInfo__SentryGunBeamType->_0).element_class)
       goto code_?;
-      pcVar6 = (char *)func_?();
-      cVar7 = *pcVar6;
-      if (this_00 != (PrefabPool *)0x0) {
-        pDVar3 = (Dictionary_2_System_Type_Pool_ *)
-                 PrefabPool::PrefabPool_get_MVBatteryPrefab(this_00,(MethodInfo *)0x0);
-        if (pDVar3 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-          pPVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                   Dictionary_2_System_Type_Pool__get_Item
-                             (pDVar3,(Type *)StringLiteral_beamType,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-          uVar5 = CONCAT44(TypeInfo__SentryGunBeamType,pPVar4);
-          if (pPVar4 != (Pool *)0x0) {
-            if ((pPVar4->klass->_0).element_class == (TypeInfo__SentryGunBeamType->_0).element_class
-               ) {
-              pcVar6 = (char *)func_?(pPVar4);
-              return *pcVar6 == cVar7;
+      pcVar4 = (char *)func_?(pOVar2);
+      cVar5 = *pcVar4;
+      if (wo != (MVWorldObjectClient *)0x0) {
+        if (((TypeInfo__MVSentryGun->_1).typeHierarchyDepth <= (wo->klass->_1).typeHierarchyDepth)
+           && ((MVSentryGun__Class *)
+               (wo->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).typeHierarchyDepth - 1] ==
+               TypeInfo__MVSentryGun)) {
+          pMVar6 = (MVWorldObjectClient *)0x0;
+          if ((MVSentryGun__Class *)
+              (wo->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).typeHierarchyDepth - 1] ==
+              TypeInfo__MVSentryGun) {
+            pMVar6 = wo;
+          }
+          pDVar1 = (pMVar6->fields)._.data;
+          if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                               (pDVar1,(Object *)StringLiteral_beamType,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+            uVar3 = CONCAT44(TypeInfo__SentryGunBeamType,pOVar2);
+            if (pOVar2 != (Object *)0x0) {
+              if ((pOVar2->klass->_0).element_class ==
+                  (TypeInfo__SentryGunBeamType->_0).element_class) {
+                pcVar4 = (char *)func_?();
+                return *pcVar4 == cVar5;
+              }
+              goto code_?;
             }
-            goto code_?;
           }
         }
       }
     }
   }
-  uVar5 = func_?(0);
+  uVar3 = func_?();
 code_?:
-  func_?(uVar5);
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  func_?(uVar3);
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 
 
@@ -197,10 +187,11 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Destroy(MVSentryGun *this,Met
 
 {
   MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_00 = (this->fields)._.cullingSubscriberBase;
-  if (this_00 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(this_00,(MethodInfo *)0x0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
     (this->fields)._.cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    func_?(&(this->fields)._.cullingSubscriberBase,0);
   }
   return;
 }
@@ -216,199 +207,165 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_DoFrameDelete
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff7c;
-  method_00 = in_stack_5;
-  puVar6 = &stack0xffffff7c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Remove_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_SentryGunBeam>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_SentryGunBeam>__get_Value__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Clear__);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
-    method_00 = in_stack_5;
-    puVar6 = puStack_4;
   }
-  puStack_4 = puVar6;
-  puStack_7 = (undefined *)0x0;
-  KStack_8.key = 0;
-  KStack_8.value = 0;
-  pLStack_9 = (LevelRewardsManager__Class *)0x0;
-  pMStack_10 = (MonitorData *)0x0;
-  pDStack_11 = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  iStack_12 = 0;
-  func_?();
-  this_00 = (this->fields).woIdsBeamsMap;
-  pOStack_13 = (Object *)&stack0xffffff7c;
-  puStack_4 = &stack0xffffff7c;
-  if (this_00 != (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0) {
-    method_01.rgctx_data = (Il2CppRGCTXData *)&stack0xffffff9c;
-    pOStack_13 = (Object *)&stack0xffffff7c;
-    puStack_4 = &stack0xffffff7c;
-    pDVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *)
-                        method_01.methodMetadataHandle,
-                        (Dictionary_2_WinningConditionType_System_Object_ *)this_00,
+  method_00 = (MethodInfo *)(this->fields).woIdsBeamsMap;
+  if (method_00 != (MethodInfo *)0x0) {
+    pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                        &stack0xffffffa0,(Dictionary_2_System_Object_System_Object_ *)method_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__GetEnumerator__
                        );
-    pLStack_9 = (LevelRewardsManager__Class *)pDVar14->dictionary;
-    pMStack_10 = (MonitorData *)pDVar14->next;
-    pDStack_11 = (Dictionary_2_System_Int32_System_Int32_ *)pDVar14->stamp;
-    iStack_12 = (pDVar14->current).key;
-    uStack_1 = 0;
+    uVar5 = *(undefined8 *)&(pDVar4->_current).value;
+    uStack_1 = 1;
+    pMVar6 = (MethodInfo *)(pDVar4->_current).key;
 code_?:
-    cVar15 = func_?();
-    if (cVar15 != '\0') {
-      KStack_8 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                            ((LevelRewardsManager *)&pLStack_9,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__get_Current__
-                            );
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      iVar16 = func_?();
-      unaff_EDI = (ObjectPrefab *)0x0;
-      if (this_03 != (MVWorldObjectClientManager *)0x0) {
-        this_04 = (PrefabPool *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (this_03,iVar16,in_stack_17);
-        if (this_04 == (PrefabPool *)0x0) {
+    id = pMVar6;
+    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+            ::Int32Enum,System::Object]::
+            Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                      ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                       &stack0xffffff88,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__MoveNext__
+                      );
+    if (bVar7 != 0) {
+      x = (Object_1 *)uVar5;
+      pMVar6 = id;
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (this_02 != (MVWorldObjectClientManager *)0x0) {
+        pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                           (this_02,(int32_t)id,(MethodInfo *)0x0);
+        if (pMVar8 == (MVWorldObject *)0x0) {
 code_?:
-          method_01 = (_union_154)(this->fields).deleteList;
-          item = func_?(&KStack_8,
-                                 MethodInfo__System__Collections__Generic__KeyValuePair<int,_SentryGunBeam>__get_Key__
-                                );
-          unaff_EDI = (ObjectPrefab *)0x0;
-          if (method_01.rgctx_data != (Il2CppRGCTXData *)0x0) goto code_?;
+          pLVar9 = (this->fields).deleteList;
+          if (pLVar9 != (List_1_System_Int32_ *)0x0) goto code_?;
         }
         else {
-          pOStack_18 = (ObjectPrefab *)
-                       func_?(&KStack_8,
-                                       MethodInfo__System__Collections__Generic__KeyValuePair<int,_SentryGunBeam>__get_Value__
-                                      );
-          if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-            func_?(TypeInfo__UnityEngine__Object);
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
           }
-          in_stack_17 = (MethodInfo *)0x0;
-          bVar19 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            ((Object_1 *)pOStack_18,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar19 != 0) goto code_?;
-          pOStack_18 = PrefabPool::PrefabPool_get_MVNegatePrefab(this_04,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-            func_?(TypeInfo__UnityEngine__Object);
+          method_00 = (MethodInfo *)&UNK_?;
+          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar7 != 0) goto code_?;
+          pLVar10 = pMVar8[1].fields.objectLinkRefs;
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
           }
-          bVar19 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            ((Object_1 *)pOStack_18,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar19 != 0) goto code_?;
-          unaff_EDI = PrefabPool::PrefabPool_get_MVNegatePrefab(this_04,(MethodInfo *)0x0);
-          pGVar20 = (this->fields)._._.gameObject;
-          if (((pGVar20 != (GameObject *)0x0) &&
-              (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar20,in_stack_22),
-              pTVar21 != (Transform *)0x0)) &&
-             (pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)(auStack_24 + 0xc),pTVar21,method_00),
-             unaff_EDI != (ObjectPrefab *)0x0)) {
-            method_00 = (MethodInfo *)pVVar23->x;
-            in_stack_22 = (MethodInfo *)auStack_24;
-            pVVar23 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::
-                      Collider_ClosestPointOnBounds
-                                ((Vector3 *)in_stack_22,(Collider *)unaff_EDI,*pVVar23,
-                                 in_stack_25);
-            auStack_24._24_4_ = pVVar23->x;
-            auStack_24._28_4_ = pVVar23->y;
-            pOStack_18 = (ObjectPrefab *)pVVar23->z;
-            pGVar20 = (this->fields)._._.gameObject;
-            if ((pGVar20 != (GameObject *)0x0) &&
-               (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_transform
-                                    (pGVar20,(MethodInfo *)method_01.methodMetadataHandle),
-               pTVar21 != (Transform *)0x0)) goto code_?;
+          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            ((Object_1 *)pLVar10,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar7 != 0) goto code_?;
+          pLVar10 = pMVar8[1].fields.objectLinkRefs;
+          pGVar11 = (this->fields)._._.gameObject;
+          if (((pGVar11 != (GameObject *)0x0) &&
+              (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(pGVar11,(MethodInfo *)0x0),
+              pTVar12 != (Transform *)0x0)) &&
+             (pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                  ((Vector3 *)&stack0xffffffc4,pTVar12,(MethodInfo *)0x0),
+             pLVar10 != (List_1_MV_WorldObject_ObjectLink_ *)0x0)) {
+            uVar5._4_4_ = (int32_t)pLVar10;
+            uVar5._0_4_ = (Object *)&stack0xffffffb8;
+            pMVar6 = (MethodInfo *)&UNK_?;
+            UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_ClosestPointOnBounds
+                      ((Vector3 *)&stack0xffffffb8,(Collider *)pLVar10,*pVVar13,(MethodInfo *)0x0);
+            pGVar11 = (this->fields)._._.gameObject;
+            if (pGVar11 != (GameObject *)0x0) {
+              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar11,(MethodInfo *)0x0);
+              if (pTVar12 != (Transform *)0x0) goto code_?;
+            }
           }
         }
       }
       goto code_?;
     }
-    unaff_EDI = (ObjectPrefab *)0x0;
-    pOStack_13->klass = (Object__Class *)0xf0;
     uStack_1 = 0xffffffff;
-    func_?();
-    pLVar26 = (this->fields).deleteList;
-    if (pLVar26 == (List_1_System_Int32_ *)0x0) goto code_?;
-    pOStack_13 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar26,
-                            MethodInfo__System__Collections__Generic__List<int>__get_Count__);
-    if (0 < (int)pOStack_13) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&stack0xffffff88,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__Dispose__
+               ,method_00);
+    uStack_1 = 0xffffffff;
+    pLVar9 = (this->fields).deleteList;
+    if (pLVar9 == (List_1_System_Int32_ *)0x0) goto code_?;
+    iVar14 = (pLVar9->fields)._size;
+    index = 0;
+    if (0 < iVar14) {
       do {
-        this_01 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)(this->fields).woIdsBeamsMap;
-        pLVar26 = (this->fields).deleteList;
-        if ((pLVar26 == (List_1_System_Int32_ *)0x0) ||
-           (iVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-                     List_1_System_Int32__get_Item
-                               (pLVar26,(int32_t)unaff_EDI,
-                                MethodInfo__System__Collections__Generic__List<int>__get_Item_int_),
-           this_01 ==
-           (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-            *)0x0)) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-        Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-        Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                  (this_01,iVar16,
+        this_00 = (this->fields).woIdsBeamsMap;
+        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields).deleteList;
+        if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           (key = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_01,index,
+                             MethodInfo__System__Collections__Generic__List<int>__get_Item_int_),
+           this_00 == (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0)) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Remove
+                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)key,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Remove_int_
                   );
-        unaff_EDI = (ObjectPrefab *)((int)&unaff_EDI->klass + 1);
-      } while ((int)unaff_EDI < (int)pOStack_13);
+        index = index + 1;
+      } while (index < iVar14);
     }
-    this_02 = (List_1_UnityEngine_UIVertex_ *)(this->fields).deleteList;
-    if (this_02 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-      List_1_UnityEngine_UIVertex__Clear
-                (this_02,MethodInfo__System__Collections__Generic__List<int>__Clear__);
+    pLVar9 = (this->fields).deleteList;
+    if (pLVar9 != (List_1_System_Int32_ *)0x0) {
+      piVar15 = &(pLVar9->fields)._version;
+      *piVar15 = *piVar15 + 1;
+      (pLVar9->fields)._size = 0;
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
   }
 code_?:
-  func_?(0);
-  func_?(unaff_EDI,0,0);
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  uVar16 = func_?();
+  func_?(uVar16);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 code_?:
-  pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&pIStack_28,pTVar21,(MethodInfo *)0x0);
-  auStack_24._32_4_ = pVVar23->x;
-  auStack_24._36_4_ = pVVar23->y;
-  fVar29 = pVVar23->z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  method_01 = SUB84(auStack_24._24_8_,4);
-  a.z = (float)pOStack_18;
-  a.x = (float)auStack_24._24_4_;
-  a.y = (float)auStack_24._28_4_;
-  b.z = fVar29;
-  b.x = (float)auStack_24._32_4_;
-  b.y = (float)auStack_24._36_4_;
-  pOStack_18 = (ObjectPrefab *)
-               UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Distance
-                         (a,b,(MethodInfo *)0x0);
-  pfVar30 = &(this->fields).laserRange;
-  if (*pfVar30 <= (float)pOStack_18 && (float)pOStack_18 != *pfVar30) {
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+            ((Vector3 *)&stack0xffffffac,pTVar12,(MethodInfo *)0x0);
+  fVar18 = (float10)func_?();
+  pfVar19 = &(this->fields).laserRange;
+  if (*pfVar19 <= (float)fVar18 && (float)fVar18 != *pfVar19) {
 code_?:
-    method_01 = (_union_154)(this->fields).deleteList;
-    item = func_?();
-    unaff_EDI = (ObjectPrefab *)0x0;
-    if (method_01.rgctx_data == (Il2CppRGCTXData *)0x0) goto code_?;
+    pLVar9 = (this->fields).deleteList;
+    if (pLVar9 == (List_1_System_Int32_ *)0x0) goto code_?;
 code_?:
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)method_01.methodMetadataHandle,item,
-               MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    func_?(pLVar9,id,MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    method_00 = id;
   }
   goto code_?;
 }
@@ -461,7 +418,25 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
+    func_?(&TypeInfo__CullingSubscriberBase);
+    func_?(&
+                    ClientSideNPCInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<ClientSideNPCInteractable>__
+                   );
+    func_?(&
+                    ClientSideNPCInteractionHandler_MethodInfo__UnityEngine__GameObject__GetComponent<ClientSideNPCInteractionHandler>__
+                   );
+    func_?(&
+                    MethodInfo__MVSentryGun__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                   );
+    func_?(&MethodInfo__MVSentryGun__OnStateChange_UnityEngine__CullingGroupEvent_);
+    func_?(&
+                    MethodInfo__MVSentryGun__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
+                   );
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+    func_?(&
+                    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                   );
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
@@ -469,100 +444,109 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
                      ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
                       (Action_2_LogicInputState_LogicObjectManager_ *)0x0,(MethodInfo *)0x0);
   (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-  pCVar2 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                     ((DayNightCycle *)this,(MethodInfo *)0x0);
-  if (pCVar2 != (CelestialParam *)0x0) {
+  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  pGVar2 = (this->fields)._._.gameObject;
+  if (pGVar2 != (GameObject *)0x0) {
     pCVar3 = (ClientSideNPCInteractable *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_85
-                       ((GameObject *)pCVar2,
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                       (pGVar2,
                         ClientSideNPCInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<ClientSideNPCInteractable>__
                        );
     (this->fields).interactable = pCVar3;
-    pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar4,(Object *)this,
-               MethodInfo__MVSentryGun__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
-               ,
-               MethodInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>__Action_System__Object__void__
-              );
-    if (pCVar3 != (ClientSideNPCInteractable *)0x0) {
+    func_?();
+    pCVar3 = (this->fields).interactable;
+    this_01 = (Action_3_Single_Object_ByteEnum_ *)func_?();
+    if ((this_01 != (Action_3_Single_Object_ByteEnum_ *)0x0) &&
+       (mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::
+        Action_3_Single_Object_ByteEnum___ctor
+                  (this_01,(Object *)this,
+                   MethodInfo__MVSentryGun__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
+                   ,(MethodInfo *)0x0), pCVar3 != (ClientSideNPCInteractable *)0x0)) {
       ClientSideNPCInteractable::ClientSideNPCInteractable_Init
-                (pCVar3,(Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)pUVar4,
+                (pCVar3,(Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)this_01,
                  (MethodInfo *)0x0);
       MVSentryGun_InitializeCommon(this,(MethodInfo *)0x0);
-      pCVar2 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                         ((DayNightCycle *)this,(MethodInfo *)0x0);
-      if (pCVar2 != (CelestialParam *)0x0) {
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                            ((GameObject *)pCVar2,
-                             ClientSideNPCInteractionHandler_MethodInfo__UnityEngine__GameObject__GetComponent<ClientSideNPCInteractionHandler>__
-                            );
-        if (this_01 != (UseInteractorHandler *)0x0) {
-          MVComponent::MVComponent_FindWorldObjectParent((MVComponent *)this_01,(MethodInfo *)0x0);
-          pCVar3 = (this->fields).interactable;
-          if (pCVar3 != (ClientSideNPCInteractable *)0x0) {
-            bVar5 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead
-                              (pCVar3,(MethodInfo *)0x0);
-            (this->fields).wasDead = bVar5;
-            MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
-            pUVar6 = (this->fields)._._.PositionChanged;
-            pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (pUVar4,(Object *)this,
+      pGVar2 = (this->fields)._._.gameObject;
+      if ((pGVar2 != (GameObject *)0x0) &&
+         (this_02 = (MVComponent *)
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                              (pGVar2,
+                               ClientSideNPCInteractionHandler_MethodInfo__UnityEngine__GameObject__GetComponent<ClientSideNPCInteractionHandler>__
+                              ), this_02 != (MVComponent *)0x0)) {
+        MVComponent::MVComponent_FindWorldObjectParent(this_02,(MethodInfo *)0x0);
+        pCVar3 = (this->fields).interactable;
+        if (pCVar3 != (ClientSideNPCInteractable *)0x0) {
+          bVar4 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead
+                            (pCVar3,(MethodInfo *)0x0);
+          (this->fields).wasDead = bVar4;
+          MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
+          pUVar5 = (this->fields)._._.PositionChanged;
+          this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+          if (this_03 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (this_03,(Object *)this,
                        MethodInfo__MVSentryGun__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-                       ,
-                       MethodInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>__UnityAction_System__Object__void__
-                      );
-            pUVar7 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)pUVar6,(Delegate *)pUVar4,(MethodInfo *)0x0);
-            pUVar6 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-            if (pUVar7 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-              if (pUVar7->klass ==
-                  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                 ) {
-                pUVar6 = pUVar7;
-              }
-              if (pUVar6 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
-              goto code_?;
+                       ,(MethodInfo *)0x0);
+            pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)pUVar5,(Delegate *)this_03,(MethodInfo *)0x0);
+            if (pDVar6 == (Delegate *)0x0) {
+              (this->fields)._._.PositionChanged =
+                   (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
             }
-            (this->fields)._._.PositionChanged = pUVar6;
-            puVar8 = (undefined8 *)(*(code *)(this->klass->vtable).get_WorldPosition_1.method)();
-            uVar9 = *puVar8;
-            fVar10 = *(float *)(puVar8 + 1);
-            pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (pUVar4,(Object *)this,
-                       MethodInfo__MVSentryGun__OnStateChange_UnityEngine__CullingGroupEvent_,
-                       MethodInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>__UnityAction_System__Object__void__
-                      );
-            this_02 = (CullingSubscriberBase *)func_?();
-            position.z = fVar10;
-            position.x = (float)(int)uVar9;
-            position.y = (float)(int)((ulonglong)uVar9 >> 0x20);
-            CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                      (this_02,2.0,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)pUVar4,
-                       (MethodInfo *)0x0);
-            (this->fields)._.cullingSubscriberBase = this_02;
-            if (this_02 != (CullingSubscriberBase *)0x0) {
-              LockCursorManager3DMode::LockCursorManager3DMode_set_OnCursorLockChanged
-                        ((LockCursorManager3DMode *)this_02,(Action_1_Boolean_ *)0x3,
+            else {
+              pUVar5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+                        func_?();
+              if (pUVar5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+              goto code_?;
+              (this->fields)._._.PositionChanged = pUVar5;
+              iVar7 = func_?();
+              if (iVar7 == 0) goto code_?;
+            }
+            func_?();
+            iVar7 = (*(this->klass->vtable).get_WorldPosition_1.methodPtr)();
+            fVar8 = *(float *)(iVar7 + 8);
+            this_04 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
+            if (this_04 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
+              UnityAction_1_UnityEngine_Vector2___ctor
+                        (this_04,(Object *)this,
+                         MethodInfo__MVSentryGun__OnStateChange_UnityEngine__CullingGroupEvent_,
                          (MethodInfo *)0x0);
-              pMVar11 = (this->fields).gunObject;
-              if ((pMVar11 != (MVSentryGunObject *)0x0) &&
-                 (this_00 = (pMVar11->fields).sentryGunScript, this_00 != (SentryGunScript *)0x0)) {
-                SentryGunScript::SentryGunScript_SetLaserRange
-                          (this_00,(this->fields).laserRange,(MethodInfo *)0x0);
-                return;
+              pCVar9 = TypeInfo__CullingSubscriberBase;
+              pCVar10 = (CullingSubscriberBase *)func_?();
+              if (pCVar10 != (CullingSubscriberBase *)0x0) {
+                position.y = (float)&UNK_?;
+                position.x = (float)pCVar9;
+                position.z = fVar8;
+                CullingSubscriberBase::CullingSubscriberBase__ctor_2
+                          (pCVar10,2.0,position,
+                           (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_04,(MethodInfo *)0x0
+                          );
+                (this->fields)._.cullingSubscriberBase = pCVar10;
+                func_?();
+                pCVar10 = (this->fields)._.cullingSubscriberBase;
+                if (pCVar10 != (CullingSubscriberBase *)0x0) {
+                  (pCVar10->fields)._DistanceBandIndex_k__BackingField = 3;
+                  pMVar11 = (this->fields).gunObject;
+                  if (pMVar11 != (MVSentryGunObject *)0x0) {
+                    pSVar12 = (pMVar11->fields).sentryGunScript;
+                    fVar8 = (this->fields).laserRange;
+                    if (pSVar12 != (SentryGunScript *)0x0) {
+                      MVar13 = MVGameControllerBase::MVGameControllerBase_get_GameMode
+                                         ((MethodInfo *)0x0);
+                      if (MVar13 != MVGameMode__Enum_Edit) {
+                        return;
+                      }
+                      this_00 = (pSVar12->fields).rangeVisualization;
+                      if (this_00 != (SphereVolumeIndicator *)0x0) {
+                        SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
+                                  (this_00,fVar8,(MethodInfo *)0x0);
+                        return;
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -573,8 +557,8 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -586,62 +570,129 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_InitializeCommon
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__SentryGunBeamType);
+    func_?(&StringLiteral_beamType);
     cRam_? = '\x01';
   }
-  this_01 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_01 !=
-      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-       *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      (this_01,StringLiteral_beamType,
+  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)StringLiteral_beamType,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
 code_?:
       pMVar2 = (this->fields).gunObject;
       if ((pMVar2 != (MVSentryGunObject *)0x0) &&
-         (this_00 = (pMVar2->fields).sentryGunScript, this_00 != (SentryGunScript *)0x0)) {
-        SentryGunScript::SentryGunScript_SetSentryGunBeamType
-                  (this_00,(uint)(this->fields).beamType,(MethodInfo *)0x0);
-        uVar3 = (this->fields).beamType;
-        if (uVar3 == 0) {
-          (this->fields).interactionType = 10;
+         (pSVar3 = (pMVar2->fields).sentryGunScript, pSVar3 != (SentryGunScript *)0x0)) {
+        uVar4 = (this->fields).beamType;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral__TintColor);
+          func_?(&StringLiteral__Color);
+          cRam_? = '\x01';
         }
-        else if (uVar3 == 1) {
-          (this->fields).interactionType = 0xb;
-          return;
+        if (uVar4 == 0) {
+          pMVar5 = (pSVar3->fields).sentryRenderer;
+          if (pMVar5 != (MeshRenderer *)0x0) {
+            pMVar6 = (pSVar3->fields).materialFireBeam;
+code_?:
+            UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                      ((Renderer *)pMVar5,pMVar6,(MethodInfo *)0x0);
+            goto code_?;
+          }
         }
-        return;
+        else if (uVar4 == 1) {
+          pMVar5 = (pSVar3->fields).sentryRenderer;
+          if (pMVar5 != (MeshRenderer *)0x0) {
+            pMVar6 = (pSVar3->fields).materialIceBeam;
+            goto code_?;
+          }
+        }
+        else {
+code_?:
+          pMVar5 = (pSVar3->fields).sentryRenderer;
+          if (pMVar5 != (MeshRenderer *)0x0) {
+            pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial
+                                ((Renderer *)pMVar5,(MethodInfo *)0x0);
+            if (pMVar6 != (Material *)0x0) {
+              pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
+                                  ((Vector4 *)&stack0xffffffec,pMVar6,StringLiteral__Color,
+                                   (MethodInfo *)0x0);
+              fVar8 = pVVar7->y;
+              fVar9 = pVVar7->z;
+              fVar10 = pVVar7->w;
+              this_02 = (pSVar3->fields).glowPlaneRenderer;
+              (pSVar3->fields).color.r = pVVar7->x;
+              (pSVar3->fields).color.g = fVar8;
+              (pSVar3->fields).color.b = fVar9;
+              (pSVar3->fields).color.a = fVar10;
+              if (this_02 != (Renderer *)0x0) {
+                pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                    (this_02,(MethodInfo *)0x0);
+                if (pMVar6 != (Material *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                            (pMVar6,StringLiteral__TintColor,(Vector4)(pSVar3->fields).color,
+                             (MethodInfo *)0x0);
+                  if (uVar4 == 0) {
+                    this_03 = (pSVar3->fields).audioSource;
+                    if (this_03 == (AudioSource *)0x0) goto code_?;
+                    value = (pSVar3->fields).audioClipFireBeam;
+                  }
+                  else {
+                    if (uVar4 != 1) goto code_?;
+                    this_03 = (pSVar3->fields).audioSource;
+                    if (this_03 == (AudioSource *)0x0) goto code_?;
+                    value = (pSVar3->fields).audioClipIceBeam;
+                  }
+                  UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
+                            (this_03,value,(MethodInfo *)0x0);
+code_?:
+                  if ((this->fields).beamType == 0) {
+                    (this->fields).interactionType = 10;
+                  }
+                  if ((this->fields).beamType == 1) {
+                    (this->fields).interactionType = 0xb;
+                  }
+                  return;
+                }
+              }
+            }
+          }
+        }
       }
     }
     else {
-      this_02 = (Dictionary_2_System_Type_Pool_ *)
-                PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-      if (this_02 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-        pPVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                 Dictionary_2_System_Type_Pool__get_Item
-                           (this_02,(Type *)StringLiteral_beamType,
+      this_01 = (this->fields)._._._.data;
+      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (this_01,(Object *)StringLiteral_beamType,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        if (pPVar4 != (Pool *)0x0) {
-          if ((pPVar4->klass->_0).element_class != (TypeInfo__SentryGunBeamType->_0).element_class)
+        if (pOVar11 != (Object *)0x0) {
+          if ((pOVar11->klass->_0).element_class != (TypeInfo__SentryGunBeamType->_0).element_class)
           goto code_?;
-          puVar5 = (uint8_t *)func_?();
-          (this->fields).beamType = *puVar5;
+          puVar12 = (uint8_t *)func_?();
+          (this->fields).beamType = *puVar12;
           goto code_?;
         }
       }
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -658,8 +709,8 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_InitializeInventory
   if (((pMVar1 != (MVSentryGunObject *)0x0) &&
       (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) &&
      (this_00 = (pSVar2->fields).glowPlane, this_00 != (Transform *)0x0)) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this_00,(MethodInfo *)0x0);
     if (this_01 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_01,0,(MethodInfo *)0x0);
@@ -686,7 +737,7 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_OnPositionChanged
               (this_00,(positionChangedEventArgs->fields).NewPos,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -699,49 +750,50 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_OnStateChange
                (MVSentryGun *this,CullingGroupEvent cullingGroupEvent,MethodInfo *method)
 
 {
+  pMVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  uVar1 = cullingGroupEvent._4_4_;
-  iVar2 = cullingGroupEvent.m_Index;
-  this_00 = (this->fields)._.cullingSubscriberBase;
-  if (this_00 != (CullingSubscriberBase *)0x0) {
-    distanceBandIndex =
-         mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-         Serialization::JsonProperty]::
-         Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                   ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                    (MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  uVar2 = cullingGroupEvent._4_4_;
+  iVar3 = cullingGroupEvent.m_Index;
+  pCVar4 = (this->fields)._.cullingSubscriberBase;
+  if (pCVar4 != (CullingSubscriberBase *)0x0) {
+    distanceBandIndex = (pCVar4->fields)._DistanceBandIndex_k__BackingField;
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
-    uVar3 = cullingGroupEvent._4_4_;
-    cullingGroupEvent.m_PrevState = (uint8_t)uVar1;
-    cullingGroupEvent.m_ThisState = SUB41(uVar1,1);
-    cullingGroupEvent._6_2_ = SUB42(uVar1,2);
+    uVar5 = cullingGroupEvent._4_4_;
+    cullingGroupEvent.m_PrevState = (uint8_t)uVar2;
+    cullingGroupEvent.m_ThisState = SUB41(uVar2,1);
+    cullingGroupEvent._6_2_ = SUB42(uVar2,2);
     cullingGroupEvent_00.m_PrevState = cullingGroupEvent.m_PrevState;
     cullingGroupEvent_00.m_ThisState = cullingGroupEvent.m_ThisState;
     cullingGroupEvent_00._6_2_ = cullingGroupEvent._6_2_;
-    cullingGroupEvent_00.m_Index = iVar2;
-    cullingGroupEvent._4_4_ = uVar3;
+    cullingGroupEvent_00.m_Index = iVar3;
+    cullingGroupEvent._4_4_ = uVar5;
     value = CullingApiWrapper::CullingApiWrapper_Visible
-                      (cullingGroupEvent_00,(int32_t)distanceBandIndex,(MethodInfo *)0x0);
-    iVar4 = func_?(&cullingGroupEvent,0);
-    if (iVar4 < 4) {
+                      (cullingGroupEvent_00,distanceBandIndex,(MethodInfo *)0x0);
+    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_currentDistance(&cullingGroupEvent,(MethodInfo *)0x0);
+    if (iVar3 < 4) {
       value = 1;
     }
-    this_01 = (this->fields)._._.gameObject;
-    if (this_01 != (GameObject *)0x0) {
+    this = (MVSentryGun *)CONCAT31(this._1_3_,value);
+    this_00 = (pMVar1->fields)._._.gameObject;
+    if (this_00 != (GameObject *)0x0) {
+      cullingGroupEvent.m_PrevState = 0;
+      cullingGroupEvent.m_ThisState = 0;
+      cullingGroupEvent._6_2_ = 0;
+      cullingGroupEvent.m_Index = (int32_t)this;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,value,(MethodInfo *)0x0);
+                (this_00,value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -756,637 +808,673 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_OnUpdate(MVSentryGun *this,Me
   puStack_3 = &DAT_?;
   uStack_4 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xfffffea4;
-  puVar6 = &stack0xfffffea4;
+  puStack_5 = &stack0xfffffeac;
+  puVar6 = &stack0xfffffeac;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CollisionDetectionGlobalBuffers);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Add_int__SentryGunBeam_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Remove_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__TryGetValue_int__SentryGunBeam__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__get_Count__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    func_?(&TypeInfo__IInputSignalReceiver);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_SentryGunBeam>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_SentryGunBeam>__get_Value__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<int>);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Sentry_gun_have_an_invalid_beam_);
+    func_?(&StringLiteral_Player);
     cRam_? = '\x01';
     puVar6 = puStack_5;
   }
   puStack_5 = puVar6;
-  fStack_7 = 0.0;
-  iStack_8 = 0;
-  pDStack_9 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)0x0;
-  auStack_10._20_8_ = 0;
-  KStack_11.key = 0;
-  KStack_11.value = 0;
-  auStack_10._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_10._4_4_ = (GameObject *)0x0;
-  auStack_10._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_10._12_4_ = 0;
-  auStack_10._16_4_ = 0;
-  auStack_12._0_4_ = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  auStack_12._4_4_ = (GameObject *)0x0;
-  auStack_12._8_4_ = (Collider *)0x0;
-  auStack_12._12_4_ = (Transform *)0x0;
-  _Stack_94.genericMethod = (Il2CppGenericMethod *)0x0;
-  KStack_13.key = 0;
-  KStack_13.value = 0;
-  auStack_12._16_4_ = (Il2CppClass *)0x0;
-  pOStack_14 = (ObjectPrefab *)0x0;
-  pMStack_15 = (MVGroup *)0x0;
-  _Stack_98.rgctx_data = (Il2CppRGCTXData *)0x0;
-  uVar16._0_4_ = (Il2CppClass *)0x0;
-  uVar16._4_4_ = (Il2CppType *)0x0;
-  func_?();
-  iVar17 = -1;
-  fStack_18 = -NAN;
-  pMVar19 = this;
-  pLStack_20 = (List_1_System_Int32_ *)&stack0xfffffea4;
-  puStack_5 = &stack0xfffffea4;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  if ((this->fields).wasDead == 0) {
-code_?:
-    if ((this->fields)._InputSignalReceiver_k__BackingField == (IInputSignalReceiver *)0x0)
-    goto code_?;
-    method_01 = (MethodInfo *)0x1;
-    method_00 = (MethodInfo *)&UNK_?;
-    method_02 = TypeInfo__IInputSignalReceiver;
-    cVar21 = func_?();
-    if (cVar21 == '\0') {
-code_?:
-      MVSentryGun_DoFrameDelete(this,(MethodInfo *)0x0);
-      this_06 = (MVSentryGun__Class *)(this->fields).woIdsBeamsMap;
-      if (this_06 != (MVSentryGun__Class *)0x0) {
-        pMVar22 = (MethodInfo *)&UNK_?;
-        pDVar23 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[WinningConditionType,System::Object]::
-                  Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                            ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_
-                              *)&stack0xffffff30,
-                             (Dictionary_2_WinningConditionType_System_Object_ *)this_06,
-                             MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__GetEnumerator__
-                            );
-        auStack_12._16_4_ = pDVar23->dictionary;
-        pOStack_14 = (ObjectPrefab *)pDVar23->next;
-        pMStack_15 = (MVGroup *)pDVar23->stamp;
-        _Stack_98 = (_union_154)(pDVar23->current).key;
-        _Stack_94 = (_union_155)(pDVar23->current).value;
-        uStack_2 = 4;
-        while (cVar21 = func_?(), iVar24 = iStack_8, cVar21 != '\0') {
-          KStack_13 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                                ((LevelRewardsManager *)(auStack_12 + 0x10),
-                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__get_Current__
-                                );
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
+  RStack_7.m_Origin.x = 0.0;
+  RStack_7.m_Origin.y = 0.0;
+  RStack_7.m_Origin.z = 0.0;
+  RStack_7.m_Direction.x = 0.0;
+  pMStack_8 = (MethodInfo *)0x0;
+  RStack_7.m_Direction.y = 0.0;
+  RStack_7.m_Direction.z = 0.0;
+  DStack_9._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  DStack_9._version = 0;
+  DStack_9._index = 0;
+  DStack_9._current.key = 0;
+  DStack_9._current.value = (Object *)0x0;
+  DStack_9._getEnumeratorRetType = 0;
+  LStack_10._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+  LStack_10._index = 0;
+  LStack_10._version = 0;
+  LStack_10._current.First = 0;
+  LStack_10._current.Last = 0;
+  pMVar11 = this;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  if ((this->fields).wasDead != 0) {
+    pCVar12 = (this->fields).interactable;
+    if (pCVar12 == (ClientSideNPCInteractable *)0x0) goto code_?;
+    bVar13 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(pCVar12,(MethodInfo *)0x0);
+    if (bVar13 == 0) {
+      (this->fields).wasDead = 0;
+      MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
+    }
+  }
+  if ((this->fields)._InputSignalReceiver_k__BackingField == (IInputSignalReceiver *)0x0)
+  goto code_?;
+  cVar14 = func_?();
+  if (cVar14 != '\0') {
+    method_00 = (MethodInfo *)(this->fields).interactable;
+    if (method_00 == (MethodInfo *)0x0) goto code_?;
+    pMVar11 = (MVSentryGun *)0x0;
+    bVar13 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead
+                       ((ClientSideNPCInteractable *)method_00,(MethodInfo *)0x0);
+    if (bVar13 == 0) {
+      this_00 = (this->fields).intervalWithRandomSeed;
+      if (this_00 == (IntervalWithRandomSeed *)0x0) goto code_?;
+      pMVar11 = (MVSentryGun *)&UNK_?;
+      bVar13 = IntervalWithRandomSeed::IntervalWithRandomSeed_Update(this_00,(MethodInfo *)0x0);
+      if (bVar13 != 0) {
+        this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (this_03 == (MVNetworkGame *)0x0) goto code_?;
+        bVar13 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_03,(MethodInfo *)0x0);
+        if (bVar13 != 0) {
+          pHStack_15 = (HashSet_1_UnityEngine_Vector3_ *)func_?();
+          if (pHStack_15 == (HashSet_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+          System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+          HashSet_1_UnityEngine_Vector3___ctor
+                    (pHStack_15,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+          pGVar16 = (this->fields)._._.gameObject;
+          if ((pGVar16 == (GameObject *)0x0) ||
+             (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar16,(MethodInfo *)0x0),
+             pTVar17 == (Transform *)0x0)) goto code_?;
+          pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              (&VStack_19,pTVar17,(MethodInfo *)0x0);
+          uStack_20._0_4_ = pVVar18->x;
+          uStack_20._4_4_ = (MethodInfo *)pVVar18->y;
+          fStack_21 = pVVar18->z;
+          pMStack_22 = (MethodInfo *)(this->fields).laserRange;
+          if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pMVar25 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-          pMStack_26 = pMVar25;
-          iVar27 = func_?();
-          if ((pMStack_26 == (MVWorldObjectClientManager *)0x0) ||
-             (pMVar25 = pMStack_26,
-             pPVar28 = (PrefabPool *)
-                       MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                 (pMStack_26,iVar27,method_00), pPVar28 == (PrefabPool *)0x0))
-          goto code_?;
-          pOVar29 = PrefabPool::PrefabPool_get_MVNegatePrefab(pPVar28,(MethodInfo *)0x0);
-          pMStack_26 = (MVWorldObjectClientManager *)pOVar29;
-          pSStack_30 = (SentryGunBeam *)func_?();
-          pGVar31 = (this->fields)._._.gameObject;
-          if ((pGVar31 == (GameObject *)0x0) ||
-             (pTVar32 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(pGVar31,(MethodInfo *)pMVar25),
-             pTVar32 == (Transform *)0x0)) goto code_?;
-          pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)(auStack_34 + 4),pTVar32,method_00);
-          VStack_35.y = pVVar33->x;
-          VStack_35.z = pVVar33->y;
-          pHStack_36 = (HashSet_1_System_Int32_ *)pVVar33->z;
-          if (pMStack_26 == (MVWorldObjectClientManager *)0x0) goto code_?;
-          UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                    ((Bounds *)&stack0xfffffeb0,(Collider *)pMStack_26,(MethodInfo *)0x0);
-          pMVar22 = (MethodInfo *)&stack0xfffffeec;
-          pVVar33 = (Vector3 *)func_?();
-          if (pSStack_30 == (SentryGunBeam *)0x0) goto code_?;
-          method_00 = (MethodInfo *)pVVar33->x;
-          method_01 = (MethodInfo *)pVVar33->y;
-          start.z = (float)pHStack_36;
-          start.x = VStack_35.y;
-          start.y = VStack_35.z;
-          SentryGunBeam::SentryGunBeam_SetBeamPositions(pSStack_30,start,*pVVar33,(MethodInfo *)0x0)
-          ;
-        }
-        (&pLStack_20->monitor)[iVar17] = (MonitorData *)0x370;
-        uStack_2 = 0xffffffff;
-        func_?();
-        if (iVar24 != 0) goto code_?;
-        pDVar37 = (this->fields).woIdsBeamsMap;
-        if (pDVar37 != (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0) {
-          pOVar38 = System.Core.dll::System::Linq::
-                    Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Collections::Generic::
-                    KeyValuePair`2[System::Object,System::Object],System::Object]::
-                    Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                              ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                                *)pDVar37,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__get_Count__
-                              );
-          if (0 < (int)pOVar38) {
-            pMVar39 = (this->fields).gunObject;
-            if ((pMVar39 == (MVSentryGunObject *)0x0) ||
-               (pAVar40 = (pMVar39->fields).audioSource, pAVar40 == (AudioSource *)0x0))
-            goto code_?;
-            bVar41 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
-                     AudioSource_get_isPlaying(pAVar40,method_01);
-            if (bVar41 == 0) {
-              pMVar39 = (this->fields).gunObject;
-              if ((pMVar39 == (MVSentryGunObject *)0x0) ||
-                 (pAVar40 = (pMVar39->fields).audioSource, pAVar40 == (AudioSource *)0x0))
-              goto code_?;
-              UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
-                        (pAVar40,(MethodInfo *)0x0);
-            }
-          }
-          pDVar37 = (this->fields).woIdsBeamsMap;
-          if (pDVar37 != (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0) {
-            pOVar38 = System.Core.dll::System::Linq::
-                      Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Collections::Generic
-                      ::KeyValuePair`2[System::Object,System::Object],System::Object]::
-                      Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                                ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                                  *)pDVar37,
-                                 MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__get_Count__
-                                );
-            if (pOVar38 == (Object *)0x0) {
-              pMVar39 = (this->fields).gunObject;
-              if ((pMVar39 == (MVSentryGunObject *)0x0) ||
-                 (pAVar40 = (pMVar39->fields).audioSource, pAVar40 == (AudioSource *)0x0))
-              goto code_?;
-              bVar41 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
-                       AudioSource_get_isPlaying(pAVar40,pMVar22);
-              if (bVar41 != 0) {
-                pMVar39 = (this->fields).gunObject;
-                if ((pMVar39 == (MVSentryGunObject *)0x0) ||
-                   (pAVar40 = (pMVar39->fields).audioSource, pAVar40 == (AudioSource *)0x0))
+          pCVar23 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
+          iVar24 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                             (StringLiteral_Player,(MethodInfo *)0x0);
+          method_01 = uStack_20._4_4_;
+          position_01.z = fStack_21;
+          position_01.x = (float)(undefined4)uStack_20;
+          position_01.y = (float)uStack_20._4_4_;
+          iVar24 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::
+                   Physics_OverlapSphereNonAlloc_1
+                             (position_01,(float)pMStack_22,pCVar23,1 << ((byte)iVar24 & 0x1f),
+                              (MethodInfo *)0x0);
+          uStack_20 = CONCAT44(iVar24,(undefined4)uStack_20);
+          fStack_21 = 0.0;
+          if (0 < iVar24) {
+            pMStack_22 = (MethodInfo *)0x10;
+            do {
+              if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              pCVar23 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
+              if (pCVar23 == (Collider__Array *)0x0) goto code_?;
+              if (pCVar23->max_length <= (uint)fStack_21) {
+                func_?();
+                func_?();
                 goto code_?;
-                pMVar22 = (MethodInfo *)&UNK_?;
-                UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop
-                          (pAVar40,(MethodInfo *)this_06);
               }
-            }
-            pDVar37 = (this->fields).woIdsBeamsMap;
-            if (pDVar37 != (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0) {
-              pOVar38 = System.Core.dll::System::Linq::
-                        Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Collections::
-                        Generic::KeyValuePair`2[System::Object,System::Object],System::Object]::
-                        Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                                  ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                                    *)pDVar37,
-                                   MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__get_Count__
-                                  );
-              pMVar19 = _UNK_?;
-              if ((int)pOVar38 < 1) {
-                pMVar19 = _UNK_?;
-              }
-              pCVar42 = (this->fields).interactable;
-              if (pCVar42 != (ClientSideNPCInteractable *)0x0) {
-                bVar41 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(pCVar42,pMVar22)
-                ;
-                this = pMVar19;
-                if (bVar41 != 0) {
-                  this = (MVSentryGun *)0x0;
-                }
-                pSStack_30 = (SentryGunBeam *)(pMVar1->fields).glowFactor;
-                fVar43 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                                   ((MethodInfo *)0x0);
-                pMStack_26 = (MVWorldObjectClientManager *)fVar43;
-                if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) !=
-                     0) && ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
+              this_01 = *(Component **)((int)pCVar23->vector + (int)&pMStack_22[-1].field8_0x20);
+              if (this_01 == (Component *)0x0) goto code_?;
+              method_01 = (MethodInfo *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform(this_01,(MethodInfo *)0x0);
+              pMVar25 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
+                                  ((Transform *)method_01,(MethodInfo *)0x0);
+              if (pMVar25 != (MVWorldObjectClient *)0x0) {
+                iStack_26 = (pMVar25->fields)._.id;
+                pMVar27 = (MethodInfo *)
+                          MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
+                                    (pMVar25,(MethodInfo *)0x0);
+                pMStack_28 = pMVar27;
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                fVar43 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Lerp
-                                   ((float)pSStack_30,(float)this,(float)pMStack_26 * _UNK_?,
-                                    (MethodInfo *)0x0);
-                (pMVar1->fields).glowFactor = fVar43;
-                *unaff_FS_OFFSET = uStack_4;
-                return;
-              }
-            }
-          }
-        }
-      }
-      goto code_?;
-    }
-    pCVar42 = (this->fields).interactable;
-    if (pCVar42 == (ClientSideNPCInteractable *)0x0) goto code_?;
-    pMVar22 = (MethodInfo *)&UNK_?;
-    bVar41 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(pCVar42,method_00);
-    if (bVar41 != 0) goto code_?;
-    method_01 = (MethodInfo *)(this->fields).intervalWithRandomSeed;
-    if (method_01 == (MethodInfo *)0x0) goto code_?;
-    method_00 = (MethodInfo *)&UNK_?;
-    bVar41 = IntervalWithRandomSeed::IntervalWithRandomSeed_Update
-                       ((IntervalWithRandomSeed *)method_01,(MethodInfo *)method_02);
-    if (bVar41 == 0) {
+                bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                                   ((Object_1 *)pMVar27,(Object_1 *)0x0,(MethodInfo *)0x0);
+                if (bVar13 == 0) {
+                  uStack_29._0_5_ = CONCAT14((this->fields).interactionType,(undefined4)uStack_29);
+                  if (pMVar27 == (MethodInfo *)0x0) goto code_?;
+                  method_01 = uStack_29._4_4_;
+                  cVar14 = func_?();
+                  if (cVar14 != '\0') {
+                    pMVar30 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0)
+                    ;
+                    if ((pMVar30 == (MVWorldObjectClientManager *)0x0) ||
+                       (pMVar25 = (MVWorldObjectClient *)
+                                  MVWorldObjectClientManager::
+                                  MVWorldObjectClientManager_GetWorldObject
+                                            (pMVar30,iStack_26,(MethodInfo *)0x0),
+                       pMVar25 == (MVWorldObjectClient *)0x0)) goto code_?;
+                    puVar31 = (undefined8 *)func_?();
+                    uStack_32 = *puVar31;
+                    pDStack_33 = *(Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_
+                                   **)(puVar31 + 1);
+                    pGVar16 = (this->fields)._._.gameObject;
+                    if ((pGVar16 == (GameObject *)0x0) ||
+                       (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_get_transform(pGVar16,(MethodInfo *)0x0),
+                       pTVar17 == (Transform *)0x0)) goto code_?;
+                    pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                              Transform_get_position
+                                        ((Vector3 *)&stack0xfffffeec,pTVar17,(MethodInfo *)0x0);
+                    uStack_34 = *(double *)pVVar18;
+                    uStack_35 = CONCAT44(pVVar18->z,(undefined4)uStack_35);
+                    pGVar16 = (this->fields)._._.gameObject;
+                    if ((pGVar16 == (GameObject *)0x0) ||
+                       (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_get_transform(pGVar16,(MethodInfo *)0x0),
+                       pTVar17 == (Transform *)0x0)) goto code_?;
+                    pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                              Transform_get_position
+                                        ((Vector3 *)&puStack_36,pTVar17,(MethodInfo *)0x0);
+                    uStack_37._0_4_ = pVVar18->x;
+                    uStack_37._4_4_ = pVVar18->y;
+                    pMStack_38 = (MethodInfo *)pVVar18->z;
+                    VStack_19.z = (float)pDStack_33 - (float)pMStack_38;
+                    uStack_39 = CONCAT44(uStack_32._4_4_ - uStack_37._4_4_,
+                                         (float)uStack_32 - (float)uStack_37);
+                    fStack_40 = VStack_19.z;
+                    pVVar18 = (Vector3 *)func_?();
+                    method_00 = (MethodInfo *)pVVar18->y;
+                    origin.z = (float)uStack_35._4_4_;
+                    origin._0_8_ = uStack_34;
+                    UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray__ctor
+                              (&RStack_7,origin,*pVVar18,(MethodInfo *)0x0);
+                    ray.m_Origin.y = RStack_7.m_Origin.y;
+                    ray.m_Origin.x = RStack_7.m_Origin.x;
+                    ray.m_Origin.z = RStack_7.m_Origin.z;
+                    ray.m_Direction.x = RStack_7.m_Direction.x;
+                    ray.m_Direction.y = RStack_7.m_Direction.y;
+                    ray.m_Direction.z = RStack_7.m_Direction.z;
+                    method_01 = (MethodInfo *)RStack_7.m_Direction.y;
+                    bVar13 = MVSentryGun_HitsTarget(this,ray,iStack_26,(MethodInfo *)0x0);
+                    if (bVar13 != 0) {
+                      bVar13 = System.Core.dll::System::Collections::Generic::HashSet`1[System::
+                               Int32]::HashSet_1_System_Int32__Contains
+                                         ((HashSet_1_System_Int32_ *)pHStack_15,iStack_26,
+                                          MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
+                                         );
+                      if (bVar13 == 0) {
+                        pDVar41 = (Dictionary_2_System_Object_System_Object_ *)
+                                 (this->fields).woIdsBeamsMap;
+                        if (pDVar41 == (Dictionary_2_System_Object_System_Object_ *)0x0)
+                        goto code_?;
+                        bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                 Object,System::Object]::
+                                 Dictionary_2_System_Object_System_Object__TryGetValue
+                                           (pDVar41,(Object *)(pMVar25->fields)._.id,
+                                            (Object **)&pMStack_8,
+                                            MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__TryGetValue_int__SentryGunBeam__
+                                           );
+                        if (bVar13 == 0) {
 code_?:
-      pMVar39 = (this->fields).gunObject;
-      if ((pMVar39 != (MVSentryGunObject *)0x0) &&
-         (this_01 = (pMVar39->fields).sentryGunScript, this_01 != (SentryGunScript *)0x0)) {
-        SentryGunScript::SentryGunScript_UpdateAnimation(this_01,(MethodInfo *)in_stack_44);
-        goto code_?;
-      }
-      goto code_?;
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      in_stack_44 = TypeInfo__MVGameControllerBase;
-      func_?();
-    }
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_02 == (MVNetworkGame *)0x0) goto code_?;
-    method_01 = (MethodInfo *)&UNK_?;
-    bVar41 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_02,(MethodInfo *)0x0);
-    if (bVar41 == 0) goto code_?;
-    pHStack_45 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              (pHStack_45,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    pGVar31 = (this->fields)._._.gameObject;
-    if ((pGVar31 == (GameObject *)0x0) ||
-       (pTVar32 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar31,in_stack_46), pTVar32 == (Transform *)0x0))
-    goto code_?;
-    pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        (&VStack_35,pTVar32,in_stack_47);
-    _pCStack_38 = *(undefined8 *)pVVar33;
-    pIStack_48 = (Il2CppClass *)pVVar33->z;
-    pLStack_49 = (List_1_UnityEngine_Vector4_ *)(this->fields).laserRange;
-    if ((((uint)(TypeInfo__CollisionDetectionGlobalBuffers->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_started == 0)) {
-      func_?();
-    }
-    results = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
-    iVar27 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                       (StringLiteral_Player,(MethodInfo *)0x0);
-    position.z = (float)pIStack_48;
-    position._0_8_ = _pCStack_38;
-    iVar27 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
-                       (position,(float)pLStack_49,results,1 << ((byte)iVar27 & 0x1f),
-                        (MethodInfo *)0x0);
-    pMStack_26 = (MVWorldObjectClientManager *)iVar27;
-    pLStack_49 = (List_1_UnityEngine_Vector4_ *)0x0;
-    if (0 < iVar27) {
-      do {
-        method_03 = (Il2CppClass *)uVar16;
-        if ((((uint)(TypeInfo__CollisionDetectionGlobalBuffers->vtable).Equals.methodPtr & 0x2000000
-             ) != 0) && ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_started == 0)) {
-          func_?();
-        }
-        if ((TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer ==
-             (Collider__Array *)0x0) ||
-           (this_03 = (Component_1 *)func_?(), this_03 == (Component_1 *)0x0))
-        goto code_?;
-        pTVar32 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                            (this_03,(MethodInfo *)method_03);
-        uVar16._0_4_ = (Il2CppClass *)0x0;
-        uVar16._4_4_ = (Il2CppType *)0x0;
-        this_04.methodMetadataHandle =
-             (Il2CppMetadataMethodDefinitionHandle)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
-                       (pTVar32,(MethodInfo *)0x0);
-        if (this_04.rgctx_data != (Il2CppRGCTXData *)0x0) {
-          pIStack_48 = (Il2CppClass *)
-                       mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)this_04.methodMetadataHandle,
-                                  (MethodInfo *)0x0);
-          _Var31.genericMethod = (Il2CppGenericMethod *)0x0;
-          pSVar50 = (SentryGunBeam *)
-                    MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
-                              ((MVWorldObjectClient *)this_04.methodMetadataHandle,(MethodInfo *)0x0
-                              );
-          pSStack_30 = pSVar50;
-          if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-            func_?();
-          }
-          puVar51 = &UNK_?;
-          pSVar52 = pSVar50;
-          bVar41 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                             ((Object_1 *)pSVar50,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar41 == 0) {
-            _uStack_58 = (float)CONCAT31(uStack_53,(this->fields).interactionType);
-            if (pSVar50 == (SentryGunBeam *)0x0) goto code_?;
-            uVar54._4_4_ = (float)&UNK_?;
-            uVar54._0_4_ = (float)pSVar52;
-            cVar21 = func_?();
-            if (cVar21 != '\0') {
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                this_04.rgctx_data = (Il2CppRGCTXData *)&UNK_?;
-                _Var31 = (_union_155)TypeInfo__MVGameControllerBase;
-                func_?();
-              }
-              pMVar25 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-              if ((pMVar25 == (MVWorldObjectClientManager *)0x0) ||
-                 (wo = (MVWorldObjectClient *)
-                       MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                 (pMVar25,(int32_t)pIStack_48,(MethodInfo *)0x0),
-                 wo == (MVWorldObjectClient *)0x0)) goto code_?;
-              puVar55 = (undefined8 *)func_?();
-              uVar56 = *puVar55;
-              fStack_57 = *(float *)(puVar55 + 1);
-              pGVar31 = (this->fields)._._.gameObject;
-              if ((pGVar31 == (GameObject *)0x0) ||
-                 (pTVar32 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_get_transform(pGVar31,(MethodInfo *)pMVar19),
-                 pTVar32 == (Transform *)0x0)) goto code_?;
-              pMVar19 = (MVSentryGun *)&stack0xfffffec8;
-              pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)pMVar19,pTVar32,pMVar22);
-              VStack_35.y = pVVar33->x;
-              VStack_35.z = pVVar33->y;
-              pDStack_58 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                            *)pVVar33->z;
-              pGVar31 = (this->fields)._._.gameObject;
-              if ((pGVar31 == (GameObject *)0x0) ||
-                 (pTVar32 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_get_transform(pGVar31,(MethodInfo *)pMVar25),
-                 pTVar32 == (Transform *)0x0)) goto code_?;
-              pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)&stack0xfffffebc,pTVar32,(MethodInfo *)0x0);
-              uVar59._0_4_ = (Dictionary_2_System_Object_System_Object_ *)pVVar33->x;
-              uVar59._4_4_ = (int32_t)pVVar33->y;
-              fStack_60 = pVVar33->z;
-              if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-                func_?();
-              }
-              pMVar22 = (MethodInfo *)&UNK_?;
-              a.z = fStack_57;
-              a.x = (float)(int32_t)uVar56;
-              a.y = (float)SUB84(uVar56,4);
-              b.z = fStack_60;
-              b.x = (float)(Dictionary_2_System_Object_System_Object_ *)uVar59;
-              b.y = (float)SUB84(uVar59,4);
-              pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                                  ((Vector3 *)&stack0xfffffee0,a,b,(MethodInfo *)0x0);
-              auStack_10._20_8_ = *(undefined8 *)pVVar33;
-              fStack_7 = pVVar33->z;
-              func_?();
-              func_?();
-              ray.m_Origin.y = (float)this_04.rgctx_data;
-              ray.m_Origin.x = (float)&UNK_?;
-              ray.m_Origin.z = (float)_Var31.genericMethod;
-              ray.m_Direction.x = (float)puVar51;
-              ray.m_Direction.y = (float)uVar54;
-              ray.m_Direction.z = SUB84(uVar54,4);
-              bVar41 = MVSentryGun_HitsTarget(this,ray,(int32_t)pIStack_48,(MethodInfo *)0x0);
-              if (bVar41 != 0) {
-                if (pHStack_45 == (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)0x0)
-                goto code_?;
-                uVar16._4_4_ = (Il2CppType *)
-                               MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
-                ;
-                uVar16._0_4_ = pIStack_48;
-                bVar41 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::
-                         Api::NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
-                                   ((HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)pHStack_45,
-                                    (NativeAdType__Enum)pIStack_48,
-                                    MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
-                                   );
-                if (bVar41 == 0) {
-                  pDStack_58 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                                *)(this->fields).woIdsBeamsMap;
-                  pIVar61 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                            Collection_1_VoxelHit__get_Items
-                                      ((Collection_1_VoxelHit_ *)wo,(MethodInfo *)0x0);
-                  if (pDStack_58 ==
-                      (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                       *)0x0) goto code_?;
-                  bVar41 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                           Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                           Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__TryGetValue
-                                     (pDStack_58,(int32_t)pIVar61,
-                                      (TerrainUtility_TerrainMap **)&pDStack_9,
-                                      MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__TryGetValue_int__SentryGunBeam__
-                                     );
-                  if (bVar41 == 0) {
-code_?:
-                    pDStack_58 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                                  *)(this->fields).woIdsBeamsMap;
-                    pIVar61 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]
-                              ::Collection_1_VoxelHit__get_Items
-                                        ((Collection_1_VoxelHit_ *)wo,(MethodInfo *)0x0);
-                    if (pDStack_58 ==
-                        (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                         *)0x0) goto code_?;
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                    Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                              (pDStack_58,(int32_t)pIVar61,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Remove_int_
-                              );
-                    uVar62 = (this->fields).beamType;
-                    if (uVar62 == 0) {
-                      if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0)
-                         && ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-                        auStack_34._4_4_ = TypeInfo__PrefabPool;
-                        auStack_34._0_4_ = &UNK_?;
-                        func_?();
+                          pDVar42 = (this->fields).woIdsBeamsMap;
+                          if (pDVar42 == (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0)
+                          goto code_?;
+                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove
+                                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar42,
+                                     (pMVar25->fields)._.id,
+                                     MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Remove_int_
+                                    );
+                          uVar43 = (this->fields).beamType;
+                          if (uVar43 == 0) {
+                            iVar44 = func_?();
+                            if (iVar44 == 0) goto code_?;
+                            pDStack_45 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_
+                                          *)CONCAT31(pDStack_45._1_3_,(this->fields).beamType);
+                            method_00 = (MethodInfo *)&UNK_?;
+                            pMStack_8 = (MethodInfo *)
+                                         SentryGunBeam::SentryGunBeam_Create
+                                                   (*(SentryGunBeam **)(iVar44 + 0x138),
+                                                    (SentryGunBeamType__Enum)pDStack_45,this,
+                                                    (MethodInfo *)0x0);
+                          }
+                          else if (uVar43 == 1) {
+                            iVar44 = func_?();
+                            if (iVar44 == 0) goto code_?;
+                            pDStack_46 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_
+                                          *)CONCAT31(pDStack_46._1_3_,(this->fields).beamType);
+                            pMStack_8 = (MethodInfo *)
+                                         SentryGunBeam::SentryGunBeam_Create
+                                                   (*(SentryGunBeam **)(iVar44 + 0x134),
+                                                    (SentryGunBeamType__Enum)pDStack_46,this,
+                                                    (MethodInfo *)0x0);
+                          }
+                          else {
+                            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0)
+                            {
+                              func_?();
+                            }
+                            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                                      ((Object *)StringLiteral_Sentry_gun_have_an_invalid_beam_,
+                                       (MethodInfo *)0x0);
+                          }
+                          pDVar41 = (Dictionary_2_System_Object_System_Object_ *)
+                                   (this->fields).woIdsBeamsMap;
+                          if (pDVar41 == (Dictionary_2_System_Object_System_Object_ *)0x0)
+                          goto code_?;
+                          method_01 = pMStack_8;
+                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,System::Object]::Dictionary_2_System_Object_System_Object__Add
+                                    (pDVar41,(Object *)(pMVar25->fields)._.id,(Object *)pMStack_8,
+                                     MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Add_int__SentryGunBeam_
+                                    );
+                        }
+                        else {
+                          uStack_35 = CONCAT44(pMStack_8,(undefined4)uStack_35);
+                          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                            func_?();
+                          }
+                          bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::
+                                   Object_1_op_Inequality
+                                             (uStack_35._4_4_,(Object_1 *)0x0,(MethodInfo *)0x0);
+                          if (bVar13 == 0) goto code_?;
+                          if (pMStack_8 == (MethodInfo *)0x0) goto code_?;
+                          pMStack_8->klass = (Il2CppClass *)0x3f800000;
+                        }
+                        MVSentryGun_ApplyDamage
+                                  (this,pMVar25,(InteractionDataHandlerBase *)pMStack_28,
+                                   (MethodInfo *)0x0);
+                        System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                        HashSet_1_System_Object__Add
+                                  ((HashSet_1_System_Object_ *)pHStack_15,
+                                   (Object *)(pMVar25->fields)._.id,
+                                   MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_)
+                        ;
                       }
-                      pPVar28 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-                      if (pPVar28 == (PrefabPool *)0x0) goto code_?;
-                      prefab = MVAvatar::MVAvatar_get_Body((MVAvatar *)pPVar28,(MethodInfo *)0x0);
-                      fStack_63 = (float)CONCAT31(fStack_63._1_3_,(this->fields).beamType);
-                      pDStack_9 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                                    *)SentryGunBeam::SentryGunBeam_Create
-                                                ((SentryGunBeam *)prefab,
-                                                 (SentryGunBeamType__Enum)fStack_63,this,
-                                                 (MethodInfo *)0x0);
                     }
-                    else if (uVar62 == 1) {
-                      if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0)
-                         && ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-                        auStack_34._4_4_ = TypeInfo__PrefabPool;
-                        auStack_34._0_4_ = &UNK_?;
-                        func_?();
-                      }
-                      pPVar28 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-                      if (pPVar28 == (PrefabPool *)0x0) goto code_?;
-                      pSVar50 = PrefabPool::PrefabPool_get_IceBeamObject(pPVar28,(MethodInfo *)0x0);
-                      pHStack_36 = (HashSet_1_System_Int32_ *)
-                                   CONCAT31(pHStack_36._1_3_,(this->fields).beamType);
-                      pDStack_9 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                                    *)SentryGunBeam::SentryGunBeam_Create
-                                                (pSVar50,(SentryGunBeamType__Enum)pHStack_36,this,
-                                                 (MethodInfo *)0x0);
-                    }
-                    else {
-                      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr &
-                           0x2000000) != 0) &&
-                         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-                        auStack_34._4_4_ = TypeInfo__UnityEngine__Debug;
-                        auStack_34._0_4_ = &UNK_?;
-                        func_?();
-                      }
-                      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                                ((Object *)StringLiteral_Sentry_gun_have_an_invalid_beam_,
-                                 (MethodInfo *)0x0);
-                    }
-                    pDStack_58 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                                  *)(this->fields).woIdsBeamsMap;
-                    pIVar61 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]
-                              ::Collection_1_VoxelHit__get_Items
-                                        ((Collection_1_VoxelHit_ *)wo,(MethodInfo *)0x0);
-                    if (pDStack_58 ==
-                        (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                         *)0x0) goto code_?;
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                    Object]::Dictionary_2_System_Int32_System_Object__Add
-                              ((Dictionary_2_System_Int32_System_Object_ *)pDStack_58,
-                               (int32_t)pIVar61,(Object *)pDStack_9,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Add_int__SentryGunBeam_
-                              );
                   }
-                  else {
-                    pDStack_58 = pDStack_9;
-                    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000
-                         ) != 0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-                      func_?();
-                    }
-                    bVar41 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                       ((Object_1 *)pDStack_58,(Object_1 *)0x0,(MethodInfo *)0x0);
-                    if (bVar41 == 0) goto code_?;
-                    if (pDStack_9 ==
-                        (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                         *)0x0) goto code_?;
-                    SentryGunBeam::SentryGunBeam_RefreshTime
-                              ((SentryGunBeam *)pDStack_9,(MethodInfo *)in_stack_64);
-                  }
-                  MVSentryGun_ApplyDamage
-                            (this,wo,(InteractionDataHandlerBase *)pSStack_30,(MethodInfo *)0x0);
-                  item = (UnityWebRequest *)
-                         mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                         Collection_1_VoxelHit__get_Items
-                                   ((Collection_1_VoxelHit_ *)wo,(MethodInfo *)0x0);
-                  System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-                  UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                            ((HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)pHStack_45,item,
-                             MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
                 }
               }
+              fStack_21 = (float)((int)fStack_21 + 1);
+              pMStack_22 = (MethodInfo *)&pMStack_22->virtualMethodPointer;
+            } while ((int)fStack_21 < (int)uStack_20._4_4_);
+          }
+          pMVar27 = (MethodInfo *)func_?();
+          pMStack_22 = pMVar27;
+          if (pMVar27 == (MethodInfo *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+          LowLevelList_1_System_Object___ctor
+                    ((LowLevelList_1_System_Object_ *)pMVar27,
+                     MethodInfo__System__Collections__Generic__List<int>__List__);
+          pDVar41 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).woIdsBeamsMap;
+          pMStack_28 = pMVar27;
+          if (pDVar41 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+          pDVar47 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                              ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                               auStack_48,pDVar41,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__GetEnumerator__
+                              );
+          uStack_49 = 0;
+          DStack_9._dictionary =
+               (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar47->_dictionary;
+          DStack_9._version = pDVar47->_version;
+          DStack_9._index = pDVar47->_index;
+          DStack_9._current.key = (int32_t)(pDVar47->_current).key;
+          DStack_9._16_8_ = *(undefined8 *)&(pDVar47->_current).value;
+          uStack_2 = 1;
+          pDStack_46 = &DStack_9;
+          while (bVar13 = mscorlib.dll::System::Collections::Generic::
+                          Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                          Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                                    (&DStack_9,
+                                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__MoveNext__
+                                    ), bVar13 != 0) {
+            uStack_20 = CONCAT44(DStack_9._current.key,(undefined4)uStack_20);
+            uStack_34 = (double)CONCAT44(DStack_9._current.value,(undefined4)uStack_34);
+            bVar13 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+                     HashSet_1_System_Int32__Contains
+                               ((HashSet_1_System_Int32_ *)pHStack_15,DStack_9._current.key,
+                                MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
+                               );
+            if (bVar13 == 0) {
+              method_00 = pMStack_22;
+              func_?(pMStack_22,uStack_20._4_4_,
+                              MethodInfo__System__Collections__Generic__List<int>__Add_int_);
             }
           }
+          uStack_2 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&DStack_9,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__Dispose__
+                     ,method_00);
+          uStack_2 = 0xffffffff;
+          pMVar11 = (MVSentryGun *)
+                    MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__;
+          pLVar50 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                *)(auStack_48 + 8),
+                               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               pMStack_22,
+                               MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__)
+          ;
+          uStack_20 = ZEXT48(&LStack_10) << 0x20;
+          LStack_10._list = pLVar50->_list;
+          LStack_10._index = pLVar50->_index;
+          LStack_10._version = pLVar50->_version;
+          LStack_10._current = pLVar50->_current;
+          uStack_2 = 4;
+          while (bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                          Text::RegularExpressions::RegexCharClass+SingleRange]::
+                          List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
+                                    (&LStack_10,
+                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
+                                    ), bVar13 != 0) {
+            pDVar42 = (this->fields).woIdsBeamsMap;
+            if (pDVar42 == (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+            Dictionary_2_System_Int32_System_Object__Remove
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar42,
+                       (int32_t)LStack_10._current,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Remove_int_
+                      );
+          }
+          uStack_2 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&LStack_10,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
+                     ,method_01);
+          uStack_2 = 0xffffffff;
         }
-        pLStack_49 = (List_1_UnityEngine_Vector4_ *)((int)&pLStack_49->klass + 1);
-      } while ((int)pLStack_49 < (int)pMStack_26);
-    }
-    this_05 = (List_1_UnityEngine_Vector4_ *)func_?();
-    pLStack_49 = this_05;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-    List_1_UnityEngine_Vector4___ctor
-              (this_05,MethodInfo__System__Collections__Generic__List<int>__List__);
-    pMStack_26 = (MVWorldObjectClientManager *)this_05;
-    if ((this->fields).woIdsBeamsMap == (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0)
-    goto code_?;
-    puVar65 = (undefined4 *)func_?();
-    auStack_10._0_4_ = *puVar65;
-    auStack_10._4_4_ = puVar65[1];
-    auStack_10._8_4_ = puVar65[2];
-    auStack_10._12_4_ = puVar65[3];
-    auStack_10._16_4_ = puVar65[4];
-    uStack_2 = 0;
-    while (cVar21 = func_?(), cVar21 != '\0') {
-      KStack_11 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                            ((LevelRewardsManager *)auStack_10,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__get_Current__
-                            );
-      item_00 = func_?();
-      if (pHStack_45 == (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)0x0)
-      goto code_?;
-      bVar41 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::Api::
-               NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
-                         ((HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)pHStack_45,item_00,
-                          MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-      if (bVar41 == 0) {
-        item_01 = func_?();
-        if (this_05 == (List_1_UnityEngine_Vector4_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_05,item_01,
-                   MethodInfo__System__Collections__Generic__List<int>__Add_int_);
       }
-    }
-    iVar24 = 0;
-    fStack_18 = 0.0;
-    pLStack_20->klass = (List_1_System_Int32___Class *)0x294;
-    uStack_2 = 0xffffffff;
-    func_?();
-    if (iStack_8 != 0) goto code_?;
-    if (pLStack_20->klass == (List_1_System_Int32___Class *)0x294) {
-      iVar24 = -1;
-      fStack_18 = -NAN;
-    }
-    if (pLStack_49 == (List_1_UnityEngine_Vector4_ *)0x0) goto code_?;
-    pLVar66 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-              List_1_UnityEngine_Color32__GetEnumerator
-                        ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_34,
-                         (List_1_UnityEngine_Color32_ *)pLStack_49,
-                         MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
-    auStack_12._0_4_ = pLVar66->l;
-    auStack_12._4_4_ = pLVar66->next;
-    auStack_12._8_4_ = pLVar66->ver;
-    auStack_12._12_4_ = (pLVar66->current).rgba;
-    uStack_2 = 2;
-    while( true ) {
-      in_stack_44 = (MVGameControllerBase__Class *)&UNK_?;
-      cVar21 = func_?();
-      if (cVar21 == '\0') break;
-      pOVar38 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                Serialization::JsonProperty]::
-                Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                          ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)auStack_12,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__get_Current__
-                          );
-      this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)(this->fields).woIdsBeamsMap;
-      if (this_00 ==
-          (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-           *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-      Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-      Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                (this_00,(int32_t)pOVar38,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Remove_int_
-                );
-    }
-    iVar17 = iVar24 + 1;
-    (&pLStack_20->monitor)[iVar24] = (MonitorData *)0x2d8;
-    uStack_2 = 0xffffffff;
-    method_00 = (MethodInfo *)auStack_12;
-    method_01 = MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__;
-    func_?();
-    if (iStack_8 == 0) {
-      if (((iVar17 != -1) && ((&pLStack_20->monitor)[iVar24] == (MonitorData *)0x2d8)) &&
-         (-1 < iVar17)) {
-        iVar17 = iVar24;
-      }
+      pMVar51 = (this->fields).gunObject;
+      if ((pMVar51 == (MVSentryGunObject *)0x0) ||
+         (pSVar52 = (pMVar51->fields).sentryGunScript, pSVar52 == (SentryGunScript *)0x0))
       goto code_?;
-    }
-  }
-  else {
-    pCVar42 = (this->fields).interactable;
-    if (pCVar42 != (ClientSideNPCInteractable *)0x0) {
-      bVar41 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(pCVar42,(MethodInfo *)0x0)
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      this_02 = (pSVar52->fields).sentryRenderer;
+      if (this_02 == (MeshRenderer *)0x0) goto code_?;
+      this_04 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                          ((Renderer *)this_02,(MethodInfo *)0x0);
+      pHStack_15 = (HashSet_1_UnityEngine_Vector3_ *)
+                   UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
       ;
-      if (bVar41 == 0) {
-        (this->fields).wasDead = 0;
-        MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
+      uStack_34 = (double)(float)pHStack_15;
+      fVar53 = (float10)func_?();
+      pMVar54 = (MVSentryGun *)((float)pHStack_15 - (float)fVar53);
+      if ((float)pMVar54 < 0.0) {
+        pMVar54 = (MVSentryGun *)0x0;
       }
-      goto code_?;
+      else if ((float)_UNK_? < (float)pMVar54) {
+        pMVar54 = _UNK_?;
+      }
+      uStack_20 = ZEXT48(pMVar54);
+      if (this_04 == (Material *)0x0) goto code_?;
+      value.y = 0.0;
+      value.x = (float)pMVar54;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureOffset
+                (this_04,StringLiteral__MainTex,value,(MethodInfo *)0x0);
     }
-code_?:
-    func_?();
-code_?:
-    func_?();
   }
-  func_?();
+  MVSentryGun_DoFrameDelete(this,(MethodInfo *)0x0);
+  pDVar41 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).woIdsBeamsMap;
+  if (pDVar41 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pDVar47 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                         auStack_48,pDVar41,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__GetEnumerator__
+                        );
+    uStack_55 = 0;
+    DStack_9._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar47->_dictionary;
+    DStack_9._version = pDVar47->_version;
+    DStack_9._index = pDVar47->_index;
+    DStack_9._current.key = (int32_t)(pDVar47->_current).key;
+    DStack_9._16_8_ = *(undefined8 *)&(pDVar47->_current).value;
+    uStack_2 = 7;
+    pDStack_45 = &DStack_9;
+    while (bVar13 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                    Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                              (&DStack_9,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__MoveNext__
+                              ), bVar13 != 0) {
+      uStack_20 = CONCAT44(DStack_9._current.key,(undefined4)uStack_20);
+      pHStack_15 = (HashSet_1_UnityEngine_Vector3_ *)DStack_9._current.value;
+      pMVar30 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar30 == (MVWorldObjectClientManager *)0x0) goto code_?;
+      pMVar11 = (MVSentryGun *)0x0;
+      pMVar56 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (pMVar30,(int32_t)uStack_20._4_4_,(MethodInfo *)0x0);
+      if (pMVar56 == (MVWorldObject *)0x0) goto code_?;
+      uStack_20 = CONCAT44(pMVar56[1].fields.objectLinkRefs,(undefined4)uStack_20);
+      pGVar16 = (this->fields)._._.gameObject;
+      if ((pGVar16 == (GameObject *)0x0) ||
+         (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGVar16,(MethodInfo *)0x0), pTVar17 == (Transform *)0x0))
+      goto code_?;
+      pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          (aVStack_57,pTVar17,(MethodInfo *)0x0);
+      uStack_29._0_4_ = pVVar18->x;
+      uStack_29._4_4_ = (MethodInfo *)pVVar18->y;
+      pDStack_33 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)pVVar18->z
+      ;
+      uStack_32 = uStack_29;
+      pDStack_46 = pDStack_33;
+      if (uStack_20._4_4_ == (MethodInfo *)0x0) goto code_?;
+      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
+                ((Bounds *)&stack0xfffffeb8,(Collider *)uStack_20._4_4_,(MethodInfo *)0x0);
+      pRVar58 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
+                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
+                          ((Regex_CachedCodeEntryKey *)&puStack_36,
+                           (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                            *)&stack0xfffffef8,(MethodInfo *)0x0);
+      uStack_37._0_4_ = (float)pRVar58->_options;
+      uStack_37._4_4_ = (float)pRVar58->_cultureKey;
+      pMStack_38 = (MethodInfo *)pRVar58->_pattern;
+      uStack_35 = uStack_37;
+      pMStack_22 = pMStack_38;
+      if (pHStack_15 == (HashSet_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+      pMStack_28 = (MethodInfo *)
+                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pHStack_15,(MethodInfo *)0x0);
+      VStack_19.z = (float)pMStack_38 - (float)pDStack_33;
+      puStack_36 = &uStack_39;
+      uStack_39 = CONCAT44(uStack_37._4_4_ - uStack_32._4_4_,(float)uStack_37 - (float)uStack_32);
+      fStack_40 = VStack_19.z;
+      pdVar59 = (double *)func_?();
+      uStack_34 = *pdVar59;
+      uStack_20 = CONCAT44(*(undefined4 *)(pdVar59 + 1),(undefined4)uStack_20);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Vector3);
+        cRam_? = '\x01';
+      }
+      forward.z = (float)uStack_20._4_4_;
+      forward._0_8_ = uStack_34;
+      pQVar60 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                          ((Quaternion *)&stack0xfffffed0,forward,
+                           TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0
+                          );
+      if (pMStack_28 == (MethodInfo *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                ((Transform *)pMStack_28,*pQVar60,(MethodInfo *)0x0);
+      *(undefined8 *)&(pHStack_15->fields)._siInfo = uStack_35;
+      pHStack_15[1].monitor = (MonitorData *)pMStack_22;
+      pHVar61 = (pHStack_15->fields)._slots;
+      (pHStack_15->fields)._freeList = (undefined4)uStack_29;
+      (pHStack_15->fields)._comparer = (IEqualityComparer_1_UnityEngine_Vector3_ *)uStack_29._4_4_;
+      (pHStack_15->fields)._version = (int32_t)pDStack_46;
+      if (pHVar61 == (HashSet_1_T_Slot_UnityEngine_Vector3___Array *)0x0) goto code_?;
+      position.z = (float)pDStack_46;
+      position.x = (float)(undefined4)uStack_29;
+      position.y = (float)uStack_29._4_4_;
+      UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
+                ((LineRenderer *)pHVar61,0,position,(MethodInfo *)0x0);
+      pHVar61 = (pHStack_15->fields)._slots;
+      if (pHVar61 == (HashSet_1_T_Slot_UnityEngine_Vector3___Array *)0x0) goto code_?;
+      position_00.z = (float)pMStack_22;
+      position_00.x = (float)(undefined4)uStack_35;
+      position_00.y = (float)uStack_35._4_4_;
+      UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
+                ((LineRenderer *)pHVar61,1,position_00,(MethodInfo *)0x0);
+    }
+    uStack_2 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&DStack_9,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_SentryGunBeam>__Dispose__
+               ,(MethodInfo *)pMVar11);
+    uStack_2 = 0xffffffff;
+    pDVar62 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )(this->fields).woIdsBeamsMap;
+    if (pDVar62 !=
+        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
+    {
+      iVar24 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+               RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+               Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                         (pDVar62,
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__get_Count__
+                         );
+      if (0 < iVar24) {
+        pMVar51 = (this->fields).gunObject;
+        if ((pMVar51 == (MVSentryGunObject *)0x0) ||
+           (pAVar63 = (pMVar51->fields).audioSource, pAVar63 == (AudioSource *)0x0))
+        goto code_?;
+        bVar13 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
+                           (pAVar63,(MethodInfo *)0x0);
+        if (bVar13 == 0) {
+          pMVar51 = (this->fields).gunObject;
+          if ((pMVar51 == (MVSentryGunObject *)0x0) ||
+             (pAVar63 = (pMVar51->fields).audioSource, pAVar63 == (AudioSource *)0x0))
+          goto code_?;
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play
+                    (pAVar63,(MethodInfo *)0x0);
+        }
+      }
+      pDVar62 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)(this->fields).woIdsBeamsMap;
+      if (pDVar62 !=
+          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
+         ) {
+        iVar24 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                 RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                 Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                           (pDVar62,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__get_Count__
+                           );
+        if (iVar24 == 0) {
+          pMVar51 = (this->fields).gunObject;
+          if ((pMVar51 == (MVSentryGunObject *)0x0) ||
+             (pAVar63 = (pMVar51->fields).audioSource, pAVar63 == (AudioSource *)0x0))
+          goto code_?;
+          bVar13 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
+                             (pAVar63,(MethodInfo *)0x0);
+          if (bVar13 != 0) {
+            pMVar51 = (this->fields).gunObject;
+            if ((pMVar51 == (MVSentryGunObject *)0x0) ||
+               (pAVar63 = (pMVar51->fields).audioSource, pAVar63 == (AudioSource *)0x0))
+            goto code_?;
+            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
+                      (pAVar63,(MethodInfo *)0x0);
+          }
+        }
+        pDVar62 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                   *)(this->fields).woIdsBeamsMap;
+        if (pDVar62 !=
+            (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+            0x0) {
+          iVar24 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                   RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                   Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                             (pDVar62,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__get_Count__
+                             );
+          pMVar11 = _UNK_?;
+          if (0 < iVar24) {
+            pMVar11 = _UNK_?;
+          }
+          pCVar12 = (this->fields).interactable;
+          if (pCVar12 != (ClientSideNPCInteractable *)0x0) {
+            bVar13 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead
+                               (pCVar12,(MethodInfo *)0x0);
+            this = pMVar11;
+            if (bVar13 != 0) {
+              this = (MVSentryGun *)0x0;
+            }
+            pMStack_28 = (MethodInfo *)(pMVar1->fields).glowFactor;
+            fVar64 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                               ((MethodInfo *)0x0);
+            pMVar11 = (MVSentryGun *)(fVar64 * _UNK_?);
+            if ((float)pMVar11 < 0.0) {
+              pMVar11 = (MVSentryGun *)0x0;
+            }
+            else if ((float)_UNK_? < (float)pMVar11) {
+              pMVar11 = _UNK_?;
+            }
+            (pMVar1->fields).glowFactor =
+                 ((float)this - (float)pMStack_28) * (float)pMVar11 + (float)pMStack_28;
+            *unaff_FS_OFFSET = uStack_4;
+            return;
+          }
+        }
+      }
+    }
+  }
 code_?:
   func_?();
-  pcVar67 = (code *)swi(3);
-  (*pcVar67)();
+  func_?();
+  func_?();
+  pcVar65 = (code *)swi(3);
+  (*pcVar65)();
   return;
 }
 
@@ -1403,12 +1491,13 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_ReceiveDamage
     if ((pMVar1 == (MVSentryGunObject *)0x0) ||
        (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 == (SentryGunScript *)0x0))
     goto code_?;
-    SentryGunScript::SentryGunScript_BlinkDamage(pSVar2,(MethodInfo *)0x0);
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    (pSVar2->fields).damageBlinkTimeoutTime = fVar3 + _UNK_?;
   }
   this_00 = (this->fields).interactable;
   if (this_00 != (ClientSideNPCInteractable *)0x0) {
-    bVar3 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_00,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
+    bVar4 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_00,(MethodInfo *)0x0);
+    if (bVar4 == 0) {
 code_?:
       MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
       return;
@@ -1416,20 +1505,71 @@ code_?:
     pMVar1 = (this->fields).gunObject;
     if ((pMVar1 != (MVSentryGunObject *)0x0) &&
        (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) {
-      SentryGunScript::SentryGunScript_Explode(pSVar2,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).gunObject;
-      if ((pMVar1 != (MVSentryGunObject *)0x0) &&
-         (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) {
-        SentryGunScript::SentryGunScript_EnableSmoke(pSVar2,(MethodInfo *)0x0);
-        (this->fields).wasDead = 1;
-        goto code_?;
+      if (cRam_? == '\0') {
+        func_?(&
+                        UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                       );
+        func_?(&TypeInfo__UnityEngine__Object);
+        cRam_? = '\x01';
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__PrefabPool);
+        cRam_? = '\x01';
+      }
+      pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
+      if (pPVar5 != (PrefabPool *)0x0) {
+        pPVar6 = (pPVar5->fields).particleExplosion;
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pSVar2,(MethodInfo *)0x0);
+        if (pTVar7 != (Transform *)0x0) {
+          pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&puStack_9,pTVar7,(MethodInfo *)0x0);
+          uVar10._0_4_ = pVVar8->x;
+          uStack_11 = pVVar8->y;
+          fVar3 = pVVar8->z;
+          pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pSVar2,(MethodInfo *)0x0);
+          if (pTVar7 != (Transform *)0x0) {
+            uVar10 = uVar10 & 0xffffffff00000000;
+            pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                               ((Quaternion *)&fStack_13,pTVar7,(MethodInfo *)0x0);
+            fStack_13 = pQVar12->x;
+            puStack_9 = (undefined *)pQVar12->y;
+            fVar14 = pQVar12->z;
+            fVar15 = pQVar12->w;
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            position.z = fVar3;
+            uStack_11 = (undefined4)(uVar10 >> 0x20);
+            position.x = (float)(undefined4)uVar10;
+            position.y = (float)uStack_11;
+            rotation.y = (float)puStack_9;
+            rotation.x = fStack_13;
+            rotation.z = fVar14;
+            rotation.w = fVar15;
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+                      ((Object *)pPVar6,position,rotation,
+                       UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                      );
+            pMVar1 = (this->fields).gunObject;
+            if (((pMVar1 != (MVSentryGunObject *)0x0) &&
+                (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) &&
+               (pPVar6 = (pSVar2->fields).smokeEffectEmitter, pPVar6 != (ParticleSystem *)0x0)) {
+              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+              ParticleSystem_Play_1(pPVar6,(MethodInfo *)0x0);
+              (this->fields).wasDead = 1;
+              goto code_?;
+            }
+          }
+        }
       }
     }
   }
 code_?:
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1472,7 +1612,9 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_UpdateSentryState
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Extensions);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    func_?(&StringLiteral_health);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).interactable;
@@ -1480,25 +1622,24 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_UpdateSentryState
     bVar1 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_00,(MethodInfo *)0x0);
     pMVar2 = (this->fields).gunObject;
     if (bVar1 == 0) {
-      if ((pMVar2 != (MVSentryGunObject *)0x0) &&
-         (pSVar3 = (pMVar2->fields).sentryGunScript, pSVar3 != (SentryGunScript *)0x0)) {
-        SentryGunScript::SentryGunScript_DisableSmoke(pSVar3,(MethodInfo *)0x0);
+      if (((pMVar2 != (MVSentryGunObject *)0x0) &&
+          (pSVar3 = (pMVar2->fields).sentryGunScript, pSVar3 != (SentryGunScript *)0x0)) &&
+         (this_01 = (pSVar3->fields).smokeEffectEmitter, this_01 != (ParticleSystem *)0x0)) {
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
+                  (this_01,(MethodInfo *)0x0);
         pMVar2 = (this->fields).gunObject;
         if (pMVar2 != (MVSentryGunObject *)0x0) {
           pSVar3 = (pMVar2->fields).sentryGunScript;
           hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                      (*(code *)(this->klass->vtable).get_RunTimeData.method)(this);
-          if ((((uint)(TypeInfo__Extensions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__Extensions->_1).cctor_started == 0)) {
+                      (*(this->klass->vtable).get_RunTimeData.methodPtr)(this);
+          if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__Extensions);
           }
           this = (MVSentryGun *)
                  Extensions::Extensions_GetObscuredType
                            (hashtable,StringLiteral_health,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-                      methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)
-             ) {
+          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+              cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
           }
           if (this != (MVSentryGun *)0x0) {
@@ -1523,7 +1664,7 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_UpdateSentryState
       return;
     }
   }
-  func_?(0);
+  func_?();
   pOVar4 = extraout_ECX;
 code_?:
   func_?(this,pOVar4);
@@ -1542,100 +1683,108 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    func_?(&TypeInfo__IntervalWithRandomSeed);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__List_int_);
+    func_?(&TypeInfo__System__Collections__Generic__List<int>);
+    func_?(&TypeInfo__MVSentryGunObject);
     cRam_? = '\x01';
   }
   (this->fields).laserRange = 20.0;
   (this->fields).pushBackStrength = 5.0;
   this_00 = (IntervalWithRandomSeed *)func_?(TypeInfo__IntervalWithRandomSeed);
-  IntervalWithRandomSeed::IntervalWithRandomSeed__ctor(this_00,1.0,(MethodInfo *)0x0);
-  (this->fields).intervalWithRandomSeed = this_00;
-  this_01 = (Dictionary_2_System_Int32_SentryGunBeam_ *)
-            func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Dictionary__)
-  ;
-  (this->fields).woIdsBeamsMap = this_01;
-  this_02 = (List_1_System_Int32_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<int>);
-  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32___ctor_1
-            (this_02,8,MethodInfo__System__Collections__Generic__List<int>__List_int_);
-  (this->fields).deleteList = this_02;
-  (this->fields).glowFactor = 0.5;
-  (this->fields).beamType = 1;
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?();
-  }
-  this_03 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_03 != (PrefabPool *)0x0) {
-    prefabObject = (ObjectPrefab *)
-                   MVVehicleBase::MVVehicleBase_get_DocumentationType
-                             ((MVVehicleBase *)this_03,(MethodInfo *)0x0);
-    MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,prefabObject,
-               (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?,(MethodInfo *)0x0);
-    piVar1 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar1 = (uint)*piVar1 | 0x10000;
-    pMVar2 = (MVSentryGunObject *)(this->fields)._._.component;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
-         *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    if (pMVar2 == (MVSentryGunObject *)0x0) {
-      pMVar3 = (MVSentryGunObject *)0x0;
-    }
-    else {
-      bVar4 = (TypeInfo__MVSentryGunObject->_1).naturalAligment;
-      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment < bVar4) ||
-         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar4 - 1] !=
-          (Il2CppClass *)TypeInfo__MVSentryGunObject)) {
-        bVar5 = false;
-      }
-      else {
-        bVar5 = true;
-      }
-      pMVar3 = (MVSentryGunObject *)0x0;
-      if (bVar5) {
-        pMVar3 = pMVar2;
-      }
-      if (pMVar3 == (MVSentryGunObject *)0x0) goto code_?;
-    }
-    (this->fields).gunObject = pMVar3;
-    this_04 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              (this_04,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    if (this_04 != (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-      UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                ((HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)this_04,
-                 (UnityWebRequest *)(this->fields)._._._.id,
-                 MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-      (this->fields)._RaycastIgnoreWorldObjectIds_k__BackingField =
-           (HashSet_1_System_Int32_ *)this_04;
-      MVWorldObjectClient::MVWorldObjectClient_set_PlayInteractionType
-                ((MVWorldObjectClient *)this,PlayInteractionType__Enum_HandlesHits,(MethodInfo *)0x0
+  if (this_00 != (IntervalWithRandomSeed *)0x0) {
+    IntervalWithRandomSeed::IntervalWithRandomSeed__ctor(this_00,1.0,(MethodInfo *)0x0);
+    (this->fields).intervalWithRandomSeed = this_00;
+    func_?(&(this->fields).intervalWithRandomSeed,this_00);
+    this_01 = (Dictionary_2_System_Int32_SentryGunBeam_ *)
+              func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>
+                             );
+    if (this_01 != (Dictionary_2_System_Int32_SentryGunBeam_ *)0x0) {
+      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                ((ParameterOverride_1_System_Object_ *)this_01,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_SentryGunBeam>__Dictionary__
                 );
-      return;
+      (this->fields).woIdsBeamsMap = this_01;
+      func_?(&(this->fields).woIdsBeamsMap,this_01);
+      this_02 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                func_?(TypeInfo__System__Collections__Generic__List<int>);
+      if (this_02 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+        UnitySynchronizationContext+WorkRequest]::
+        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
+                  (this_02,8,MethodInfo__System__Collections__Generic__List<int>__List_int_);
+        (this->fields).deleteList = (List_1_System_Int32_ *)this_02;
+        func_?(&(this->fields).deleteList,this_02);
+        (this->fields).glowFactor = 0.5;
+        (this->fields).beamType = 1;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__PrefabPool);
+          cRam_? = '\x01';
+        }
+        pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar1 != (PrefabPool *)0x0) {
+          MVLogicObject::MVLogicObject__ctor
+                    ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvSentryGunPrefab,
+                     worldObjects,(MethodInfo *)0x0);
+          piVar2 = &(this->fields)._._.interactionFlags;
+          *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
+          piVar2 = &(this->fields)._._.interactionFlags;
+          *(uint *)piVar2 = (uint)*piVar2 | 8;
+          pMVar3 = (MVSentryGunObject *)(this->fields)._._.component;
+          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
+               *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+          if (pMVar3 == (MVSentryGunObject *)0x0) {
+            (this->fields).gunObject = (MVSentryGunObject *)0x0;
+          }
+          else {
+            if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchyDepth <
+                 (TypeInfo__MVSentryGunObject->_1).typeHierarchyDepth) ||
+               ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
+                [(TypeInfo__MVSentryGunObject->_1).typeHierarchyDepth - 1] !=
+                (Il2CppClass *)TypeInfo__MVSentryGunObject)) goto code_?;
+            (this->fields).gunObject = pMVar3;
+            if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchyDepth <
+                 (TypeInfo__MVSentryGunObject->_1).typeHierarchyDepth) ||
+               ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
+                [(TypeInfo__MVSentryGunObject->_1).typeHierarchyDepth - 1] !=
+                (Il2CppClass *)TypeInfo__MVSentryGunObject)) goto code_?;
+          }
+          func_?();
+          this_03 = (HashSet_1_UnityEngine_Vector3_ *)
+                    func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+          if (this_03 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+            System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+            HashSet_1_UnityEngine_Vector3___ctor
+                      (this_03,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            HashSet_1_System_Object__Add
+                      ((HashSet_1_System_Object_ *)this_03,(Object *)(this->fields)._._._.id,
+                       MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+            (this->fields)._RaycastIgnoreWorldObjectIds_k__BackingField =
+                 (HashSet_1_System_Int32_ *)this_03;
+            func_?(&(this->fields)._RaycastIgnoreWorldObjectIds_k__BackingField,this_03);
+            (this->fields)._._._PlayInteractionType_k__BackingField = 1;
+            return;
+          }
+        }
+      }
     }
   }
   func_?();
+  pMVar3 = extraout_EDX;
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?(pMVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
-}
-
-
-/* SentryGunBeamType get_BeamType() */
-
-SentryGunBeamType__Enum
-Assembly-CSharp.dll::MVSentryGun::MVSentryGun_get_BeamType(MVSentryGun *this,MethodInfo *method)
-
-{
-  return CONCAT31((int3)((uint)this >> 8),(this->fields).beamType);
 }
 
 
@@ -1664,32 +1813,9 @@ Vector3 * Assembly-CSharp.dll::MVSentryGun::MVSentryGun_get_InputConnectorOffset
                     (Vector3 *__return_storage_ptr__,MVSentryGun *this,MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = 0.0;
+  __return_storage_ptr__->x = -2.0;
   __return_storage_ptr__->y = 0.0;
   __return_storage_ptr__->z = 0.0;
-  func_?(__return_storage_ptr__,0xc0000000,0,0,0);
   return __return_storage_ptr__;
-}
-
-
-/* HashSet`1[System.Int32] get_RaycastIgnoreWorldObjectIds() */
-
-HashSet_1_System_Int32_ *
-Assembly-CSharp.dll::MVSentryGun::MVSentryGun_get_RaycastIgnoreWorldObjectIds
-          (MVSentryGun *this,MethodInfo *method)
-
-{
-  return (this->fields)._RaycastIgnoreWorldObjectIds_k__BackingField;
-}
-
-
-/* Void set_RaycastIgnoreWorldObjectIds(HashSet`1[System.Int32]) */
-
-void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_set_RaycastIgnoreWorldObjectIds
-               (MVSentryGun *this,HashSet_1_System_Int32_ *value,MethodInfo *method)
-
-{
-  (this->fields)._RaycastIgnoreWorldObjectIds_k__BackingField = value;
-  return;
 }
 

@@ -7,12 +7,14 @@ Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_GetValidWorldObject
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<UnityEngine::Rigidbody>_int_
+                   );
     cRam_? = '\x01';
   }
   if ((other != (Collider *)0x0) &&
-     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                          ((Component_1 *)other,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)) {
+     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)other,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)) {
     t = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                   (this_00,(MethodInfo *)0x0);
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject(t,(MethodInfo *)0x0)
@@ -20,56 +22,29 @@ Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_GetValidWorldObject
     if (pMVar1 == (MVWorldObjectClient *)0x0) {
       return (MVWorldObjectClient *)0x0;
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    pIVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pMVar1,(MethodInfo *)0x0);
     if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-      pIVar3 = (IList_1_VoxelHit_ *)
-               MVWorldObjectClientManager::
-               MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent_2
-                         (pMVar2,(int32_t)pIVar3,
-                          int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<UnityEngine::Rigidbody>_int_
-                         );
-      if (pIVar3 == (IList_1_VoxelHit_ *)0xffffffff) {
+      id = MVWorldObjectClientManager::
+           MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
+                     (pMVar2,(pMVar1->fields)._.id,
+                      int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<UnityEngine::Rigidbody>_int_
+                     );
+      if (id == -1) {
         return (MVWorldObjectClient *)0x0;
       }
-      pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pMVar1,(MethodInfo *)0x0);
-      if (pIVar3 != pIVar4) {
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        if (pMVar2 == (MVWorldObjectClientManager *)0x0) goto code_?;
-        pMVar1 = (MVWorldObjectClient *)
-                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMVar2,(int32_t)pIVar3,(MethodInfo *)0x0);
-      }
-      if (pMVar1 != (MVWorldObjectClient *)0x0) {
-        pSVar5 = (String *)
-                 UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-                 TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-                 TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                           ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)pMVar1,
-                            (MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
+      if ((id == (pMVar1->fields)._.id) ||
+         ((pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0),
+          pMVar2 != (MVWorldObjectClientManager *)0x0 &&
+          (pMVar1 = (MVWorldObjectClient *)
+                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (pMVar2,id,(MethodInfo *)0x0), pMVar1 != (MVWorldObjectClient *)0x0)))
+         ) {
+        iVar3 = (pMVar1->fields)._.ownerActorNr;
         this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((this_01 != (MVNetworkGame *)0x0) &&
-           (this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
-           this_02 != (MVLocalPlayer *)0x0)) {
-          pSVar6 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                   NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                             ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_02,(MethodInfo *)0x0)
-          ;
-          if (pSVar5 != pSVar6) {
+           (pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
+           pMVar4 != (MVLocalPlayer *)0x0)) {
+          if (iVar3 != (pMVar4->fields)._._ActorNr_k__BackingField) {
             return (MVWorldObjectClient *)0x0;
           }
           return pMVar1;
@@ -77,10 +52,9 @@ Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_GetValidWorldObject
       }
     }
   }
-code_?:
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  pMVar1 = (MVWorldObjectClient *)(*pcVar7)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pMVar1 = (MVWorldObjectClient *)(*pcVar5)();
   return pMVar1;
 }
 
@@ -92,49 +66,43 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerEnter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__TriggerEventArgs);
     cRam_? = '\x01';
   }
-  this_00 = TriggerBoxEvents_GetValidWorldObject(this,other,(MethodInfo *)0x0);
-  if (this_00 != (MVWorldObjectClient *)0x0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_01 == (MVNetworkGame *)0x0) ||
-       (this_02 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                   *)InventoryItemPreviewer::InventoryItemPreviewer_get_PreviewGameObject
-                               ((InventoryItemPreviewer *)this_01,(MethodInfo *)0x0),
-       this_02 ==
-       (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-        *)0x0)) {
+  pMVar1 = TriggerBoxEvents_GetValidWorldObject(this,other,(MethodInfo *)0x0);
+  if (pMVar1 != (MVWorldObjectClient *)0x0) {
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar2 == (MVNetworkGame *)0x0) ||
+       (pMVar3 = (pMVar2->fields)._NetworkGameStateListener_k__BackingField,
+       pMVar3 == (MVNetworkGameStateListener *)0x0)) {
+code_?:
       func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    pOVar2 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       (this_02,(MethodInfo *)0x0);
-    if ((pOVar2 == (Object *)0x1) &&
-       (((this->fields).isInTrigger = 1,
-        (this->fields).TriggerEnterOverride != (EventHandler_1_TriggerEventArgs_ *)0x0 ||
-        ((this->fields).TriggerEnter != (EventHandler_1_TriggerEventArgs_ *)0x0)))) {
-      woid = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_00,(MethodInfo *)0x0);
-      e = (InitializedGameQueryDataEventArgs *)func_?();
-      TriggerEventArgs::TriggerEventArgs__ctor
-                ((TriggerEventArgs *)e,(int32_t)woid,(MethodInfo *)0x0);
-      mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-      EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-                ((EventHandler_1_InitializedGameQueryDataEventArgs_ *)
-                 MethodInfo__System__EventHandler<TriggerEventArgs>__Invoke_System__Object__TriggerEventArgs_
-                 ,(Object *)this,e,
-                 MethodInfo__System__EventHandler<TriggerEventArgs>__Invoke_System__Object__TriggerEventArgs_
-                );
+    if ((pMVar3->fields).currentGameState == 1) {
+      (this->fields).isInTrigger = 1;
+      if ((this->fields).TriggerEnterOverride != (EventHandler_1_TriggerEventArgs_ *)0x0) {
+        iVar5 = (pMVar1->fields)._.id;
+        pEVar6 = (this->fields).TriggerEnterOverride;
+        pTVar7 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
+        if ((pTVar7 != (TriggerEventArgs *)0x0) &&
+           (TriggerEventArgs::TriggerEventArgs__ctor(pTVar7,iVar5,(MethodInfo *)0x0),
+           pEVar6 != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
+          (*(pEVar6->fields)._._.invoke_impl)((pEVar6->fields)._._.method_code,this,pTVar7);
+          return;
+        }
+        goto code_?;
+      }
+      if ((this->fields).TriggerEnter != (EventHandler_1_TriggerEventArgs_ *)0x0) {
+        iVar5 = (pMVar1->fields)._.id;
+        pEVar6 = (this->fields).TriggerEnter;
+        pTVar7 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
+        if (pTVar7 == (TriggerEventArgs *)0x0) goto code_?;
+        TriggerEventArgs::TriggerEventArgs__ctor(pTVar7,iVar5,(MethodInfo *)0x0);
+        (*(pEVar6->fields)._._.invoke_impl)((pEVar6->fields)._._.method_code,this,pTVar7);
+      }
     }
   }
   return;
@@ -148,26 +116,37 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__TriggerEventArgs);
     cRam_? = '\x01';
   }
-  this_00 = TriggerBoxEvents_GetValidWorldObject(this,other,(MethodInfo *)0x0);
-  if (this_00 != (MVWorldObjectClient *)0x0) {
-    other = (Collider *)(this->fields).TriggerExitOverride;
+  pMVar1 = TriggerBoxEvents_GetValidWorldObject(this,other,(MethodInfo *)0x0);
+  if (pMVar1 != (MVWorldObjectClient *)0x0) {
     (this->fields).isInTrigger = 0;
-    if (((EventHandler_1_TriggerEventArgs_ *)other != (EventHandler_1_TriggerEventArgs_ *)0x0) ||
-       (other = (Collider *)(this->fields).TriggerExit,
-       (EventHandler_1_TriggerEventArgs_ *)other != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
-      woid = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_00,(MethodInfo *)0x0);
-      e = (InitializedGameQueryDataEventArgs *)func_?(TypeInfo__TriggerEventArgs);
-      TriggerEventArgs::TriggerEventArgs__ctor
-                ((TriggerEventArgs *)e,(int32_t)woid,(MethodInfo *)0x0);
-      mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-      EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-                ((EventHandler_1_InitializedGameQueryDataEventArgs_ *)other,(Object *)this,e,
-                 MethodInfo__System__EventHandler<TriggerEventArgs>__Invoke_System__Object__TriggerEventArgs_
-                );
+    if ((this->fields).TriggerExitOverride != (EventHandler_1_TriggerEventArgs_ *)0x0) {
+      iVar2 = (pMVar1->fields)._.id;
+      pEVar3 = (this->fields).TriggerExitOverride;
+      pTVar4 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
+      if ((pTVar4 != (TriggerEventArgs *)0x0) &&
+         (TriggerEventArgs::TriggerEventArgs__ctor(pTVar4,iVar2,(MethodInfo *)0x0),
+         pEVar3 != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
+        (*(pEVar3->fields)._._.invoke_impl)
+                  ((pEVar3->fields)._._.method_code,this,pTVar4,(pEVar3->fields)._._.method);
+        return;
+      }
+code_?:
+      func_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    if ((this->fields).TriggerExit != (EventHandler_1_TriggerEventArgs_ *)0x0) {
+      iVar2 = (pMVar1->fields)._.id;
+      pEVar3 = (this->fields).TriggerExit;
+      pTVar4 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
+      if (pTVar4 == (TriggerEventArgs *)0x0) goto code_?;
+      TriggerEventArgs::TriggerEventArgs__ctor(pTVar4,iVar2,(MethodInfo *)0x0);
+      (*(pEVar3->fields)._._.invoke_impl)
+                ((pEVar3->fields)._._.method_code,this,pTVar4,(pEVar3->fields)._._.method);
     }
   }
   return;
@@ -181,37 +160,47 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnValidate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
+                   );
+    func_?(&
+                    UnityEngine__Collider__MethodInfo__UnityEngine__Component__GetComponents<UnityEngine::Collider>______
+                   );
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_TriggerBoxEvents__triggerCollide);
+    func_?(&StringLiteral_TriggerBoxEvents__triggerCollide);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).triggerCollider;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
-    pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponents_10
-                       ((Component_1 *)this,
+    pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponents_1
+                       ((Component *)this,
                         UnityEngine__Collider__MethodInfo__UnityEngine__Component__GetComponents<UnityEngine::Collider>______
                        );
-    if (pCVar3 == (Collider__Array *)0x0) goto code_?;
-    if ((int)pCVar3->max_length < 2) {
-      if (pCVar3->max_length == 1) {
-        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                            ((Component_1 *)this,
-                             UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
-                            );
-        (this->fields).triggerCollider = (Collider *)this_00;
-        if (this_00 == (MVInteractableBase *)0x0) goto code_?;
+    if (pOVar3 == (Object__Array *)0x0) goto code_?;
+    if ((int)pOVar3->max_length < 2) {
+      if (pOVar3->max_length == 1) {
+        pCVar1 = (Collider *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                           ((Component *)this,
+                            UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
+                           );
+        (this->fields).triggerCollider = pCVar1;
+        func_?();
+        pCVar1 = (this->fields).triggerCollider;
+        if (pCVar1 == (Collider *)0x0) goto code_?;
         UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger
-                  ((Collider *)this_00,1,(MethodInfo *)0x0);
+                  (pCVar1,1,(MethodInfo *)0x0);
       }
     }
     else {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
@@ -223,8 +212,7 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnValidate
     bVar2 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_isTrigger
                       (pCVar1,(MethodInfo *)0x0);
     if (bVar2 == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
@@ -247,34 +235,30 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerEnter;
-  a = *ppEVar1;
+  a = (this->fields).TriggerEnter;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerEnter,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -285,34 +269,30 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOve
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerEnterOverride;
-  a = *ppEVar1;
+  a = (this->fields).TriggerEnterOverride;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerEnterOverride,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -323,34 +303,30 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerExit;
-  a = *ppEVar1;
+  a = (this->fields).TriggerExit;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerExit,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -361,34 +337,30 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOver
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerExitOverride;
-  a = *ppEVar1;
+  a = (this->fields).TriggerExitOverride;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerExitOverride,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -400,22 +372,26 @@ Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_get_Collider
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  exists = (this->fields).triggerCollider;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pCVar1 = (this->fields).triggerCollider;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                    ((Object_1 *)exists,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                       ((Component_1 *)this,
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                    ((Object_1 *)pCVar1,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    pCVar1 = (Collider *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                       ((Component *)this,
                         UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                        );
-    (this->fields).triggerCollider = (Collider *)pMVar2;
+    (this->fields).triggerCollider = pCVar1;
+    func_?(&(this->fields).triggerCollider,pCVar1);
   }
   return (this->fields).triggerCollider;
 }
@@ -428,34 +404,30 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerEnter;
-  source = *ppEVar1;
+  source = (this->fields).TriggerEnter;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerEnter,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -466,34 +438,30 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerEnterOverride;
-  source = *ppEVar1;
+  source = (this->fields).TriggerEnterOverride;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerEnterOverride,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -504,34 +472,30 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerExit;
-  source = *ppEVar1;
+  source = (this->fields).TriggerExit;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerExit,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -542,33 +506,29 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExitO
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).TriggerExitOverride;
-  source = *ppEVar1;
+  source = (this->fields).TriggerExitOverride;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_TriggerEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<TriggerEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<TriggerEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<TriggerEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_TriggerEventArgs_ *)
+             func_?(&(this->fields).TriggerExitOverride,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 

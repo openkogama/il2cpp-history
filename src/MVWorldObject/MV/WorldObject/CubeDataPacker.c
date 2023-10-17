@@ -1,4 +1,277 @@
 
+/* Void AddCube(IntVector, Byte[], Dictionary`2[MV.WorldObject.IntVector,System.Byte[]] ByRef) */
+
+void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_AddCube
+               (IntVector pos,Byte__Array *cubeData,
+               Dictionary_2_MV_WorldObject_IntVector_System_Byte_ **cubeDict,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(0x8f2c);
+    func_?(0x8fdc);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__set_Item_MV__WorldObject__IntVector__System__Byte____
+                   );
+    cRam_? = '\x01';
+  }
+  iVar1 = 0;
+  if ((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)*cubeDict !=
+      (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0) {
+    sVar2 = pos.x;
+    iVar3 = pos.y;
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+            IntVector,ChunkInstances+ChunkInstanceVariables]::
+            Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__ContainsKey
+                      ((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_
+                        *)*cubeDict,pos,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__ContainsKey_MV__WorldObject__IntVector_
+                      );
+    if (bVar4 == 0) goto code_?;
+    if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+      pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+               IntVector,System::Object]::
+               Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                         ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,pos,
+                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                         );
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        iVar1 = -0x61c6;
+        func_?();
+      }
+      if ((pOVar5 != (Object *)0x0) && (cubeData != (Byte__Array *)0x0)) {
+        if (pOVar5[1].monitor == (MonitorData *)cubeData->max_length) {
+          pMVar6 = (MonitorData *)0x1;
+          while( true ) {
+            if ((int)pOVar5[1].monitor <= (int)pMVar6) {
+              return;
+            }
+            if ((pOVar5[1].monitor <= pMVar6) || ((MonitorData *)cubeData->max_length <= pMVar6))
+            break;
+            if ((cubeData->vector + ((int)pOVar5 - (int)cubeData))[(int)pMVar6] !=
+                cubeData->vector[(int)pMVar6]) goto code_?;
+            pMVar6 = pMVar6 + 1;
+          }
+          goto code_?;
+        }
+code_?:
+        if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+           (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                     IntVector,System::Object]::
+                     Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                               ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,
+                                pos,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                               ), pOVar5 != (Object *)0x0)) {
+          if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
+          bVar7 = *(byte *)&pOVar5[2].klass;
+          if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+            func_?((short)TypeInfo__MV__WorldObject__CubeDataPacker);
+          }
+          bVar7 = bVar7 >> 2;
+          if (1 < bVar7) {
+            if ((*cubeDict == (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) ||
+               (key_00.y = iVar3, key_00.x = sVar2 + 1, key_00.z = pos.z,
+               pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                        IntVector,System::Object]::
+                        Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                  ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict
+                                   ,key_00,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                  ), pOVar5 == (Object *)0x0)) goto code_?;
+            if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+              func_?((short)TypeInfo__MV__WorldObject__CubeDataPacker);
+            }
+            if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
+            *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass & 3;
+            *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass | bVar7 * '\x04' - 4;
+          }
+code_?:
+          if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+            IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__set_Item
+                      ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,pos,
+                       (Object *)cubeData,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__set_Item_MV__WorldObject__IntVector__System__Byte____
+                      );
+            if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+               (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                         IntVector,System::Object]::
+                         Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                   ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                    *cubeDict,pos,
+                                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                   ), pOVar5 != (Object *)0x0)) {
+              if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
+              *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass & 3;
+              *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass | 4;
+              bVar4 = CubeDataPacker_GetCubeOriginal
+                                (pos,1,cubeDict,(IntVector *)&stack0xffffffec,(MethodInfo *)0x0);
+              if (bVar4 == 0) {
+code_?:
+                if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0)
+                {
+                  func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+                }
+code_?:
+                pos_01.z = pos.z;
+                pos_01.x = pos.x;
+                pos_01.y = pos.y;
+                CubeDataPacker_CombineRows(pos_01,cubeDict,(MethodInfo *)0x0);
+                return;
+              }
+              if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+                key_03.z = iVar1;
+                key_03._0_4_ = 
+                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                ;
+                pMVar8 = 
+                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                ;
+                pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                         IntVector,System::Object]::
+                         Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                   ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                    *cubeDict,key_03,
+                                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                   );
+                if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0)
+                {
+                  func_?();
+                }
+                if ((cubeData != (Byte__Array *)0x0) && (pOVar5 != (Object *)0x0)) {
+                  if ((MonitorData *)cubeData->max_length == pOVar5[1].monitor) {
+                    for (pMVar6 = (MonitorData *)0x1; (int)pMVar6 < (int)cubeData->max_length;
+                        pMVar6 = pMVar6 + 1) {
+                      if (((MonitorData *)cubeData->max_length <= pMVar6) ||
+                         (pOVar5[1].monitor <= pMVar6)) goto code_?;
+                      if (pMVar6[(int)(pOVar5 + 2) + ((int)cubeData - (int)pOVar5)] !=
+                          pMVar6[(int)&pOVar5[2].klass]) goto code_?;
+                    }
+                    bVar9 = true;
+                  }
+                  else {
+code_?:
+                    bVar9 = false;
+                  }
+                  if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+                     (key_01.z = iVar1, key_01._0_4_ = pMVar8,
+                     pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::
+                              WorldObject::IntVector,System::Object]::
+                              Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                        ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                         *cubeDict,key_01,
+                                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                        ), pOVar5 != (Object *)0x0)) {
+                    if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
+                    uVar10 = (uint)(*(byte *)&pOVar5[2].klass >> 2);
+                    pCStack_11 = (CubeDataPacker__Class *)((int)sVar2 - (int)(short)pMVar8);
+                    if ((bVar9) || ((int)uVar10 <= (int)pCStack_11)) goto code_?;
+                    iVar12 = (uVar10 - (int)pCStack_11) + -1;
+                    if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+                       (key_02.z = iVar1, key_02._0_4_ = pMVar8,
+                       pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::
+                                WorldObject::IntVector,System::Object]::
+                                Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                          ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                           *cubeDict,key_02,
+                                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                          ), pOVar5 != (Object *)0x0)) {
+                      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor
+                          == 0) {
+                        pCStack_11 = TypeInfo__MV__WorldObject__CubeDataPacker;
+                        iVar1 = -0x5e94;
+                        func_?();
+                      }
+                      if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
+                      *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass & 3;
+                      *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass | (char)pCStack_11 << 2;
+                      pos_00.z = iVar1;
+                      pos_00._0_4_ = pMVar8;
+                      CubeDataPacker_CombineRows(pos_00,cubeDict,(MethodInfo *)0x0);
+                      if (iVar12 < 1) {
+                        if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).
+                            cctor_finished_or_no_cctor == 0) {
+                          func_?((short)TypeInfo__MV__WorldObject__CubeDataPacker);
+                        }
+                        goto code_?;
+                      }
+                      sVar2 = sVar2 + 1;
+                      if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0)
+                         && (key.y = iVar3, key.x = sVar2, key.z = pos.z,
+                            pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::
+                                     WorldObject::IntVector,System::Object]::
+                                     Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                               ((Dictionary_2_MV_WorldObject_IntVector_System_Object_
+                                                 *)*cubeDict,key,
+                                                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                               ), pOVar5 != (Object *)0x0)) {
+                        if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).
+                            cctor_finished_or_no_cctor == 0) {
+                          func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+                        }
+                        if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
+                        *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass & 3;
+                        pos.y = iVar3;
+                        pos.x = sVar2;
+                        *(byte *)&pOVar5[2].klass = *(byte *)&pOVar5[2].klass | (char)iVar12 << 2;
+                        goto code_?;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
+  return;
+}
+
+
+/* Boolean AreCubesEqual(Byte[], Byte[]) */
+
+bool MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_AreCubesEqual
+               (Byte__Array *cube0,Byte__Array *cube1,MethodInfo *method)
+
+{
+  if ((cube0 == (Byte__Array *)0x0) || (cube1 == (Byte__Array *)0x0)) {
+    func_?();
+  }
+  else {
+    if (cube0->max_length != cube1->max_length) {
+      return 0;
+    }
+    uVar1 = 1;
+    while( true ) {
+      if ((int)cube0->max_length <= (int)uVar1) {
+        return 1;
+      }
+      if ((cube0->max_length <= uVar1) || (cube1->max_length <= uVar1)) break;
+      if (cube0->vector[uVar1] != cube1->vector[uVar1]) {
+        return 0;
+      }
+      uVar1 = uVar1 + 1;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
+}
+
+
 /* Vector3[] ByteArrayToCorners(Byte[]) */
 
 Vector3__Array *
@@ -7,37 +280,50 @@ MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_ByteArrayToCo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVStack_1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,8);
-  uVar2 = 0;
-  while ((pVStack_1 != (Vector3__Array *)0x0 && (byteArray != (Byte__Array *)0x0))) {
-    if (byteArray->max_length <= uVar2) goto code_?;
-    _uStack_c = CONCAT31(uStack_3,byteArray->vector[uVar2]);
-    if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-    }
-    pVVar4 = CubeDataPacker_ByteToVector3(&VStack_5,(uint8_t)_uStack_c,(MethodInfo *)0x0);
-    uStack_6._0_4_ = pVVar4->x;
-    uStack_6._4_4_ = pVVar4->y;
-    fVar7 = pVVar4->z;
-    puVar8 = (undefined8 *)func_?(uVar2);
-    uVar2 = uVar2 + 1;
-    *puVar8 = uStack_6;
-    *(float *)(puVar8 + 1) = fVar7;
-    if (7 < (int)uVar2) {
-      return pVStack_1;
+  pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,8);
+  pVVar2 = pVVar1->vector;
+  if ((pVVar1 == (Vector3__Array *)0x0) || (uVar3 = 0, byteArray == (Byte__Array *)0x0)) {
+code_?:
+    func_?();
+  }
+  else {
+    while (uVar3 < byteArray->max_length) {
+      bVar4 = byteArray->vector[uVar3];
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      pVVar5 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
+      if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+      uVar6 = (uint)bVar4;
+      if (pVVar5->max_length <= uVar6) break;
+      fVar7 = pVVar5->vector[uVar6].y;
+      fVar8 = pVVar5->vector[uVar6].z;
+      if (pVVar1->max_length <= uVar3) break;
+      pVVar2->x = pVVar5->vector[uVar6].x;
+      pVVar2->y = fVar7;
+      uVar3 = uVar3 + 1;
+      pVVar2->z = fVar8;
+      pVVar2 = pVVar2 + 1;
+      if (7 < (int)uVar3) {
+        return pVVar1;
+      }
     }
   }
-  func_?(0);
-code_?:
-  uVar9 = func_?(0,0);
-  func_?(uVar9);
-  pcVar10 = (code *)swi(3);
-  pVVar11 = (Vector3__Array *)(*pcVar10)();
-  return pVVar11;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pVVar1 = (Vector3__Array *)(*pcVar9)();
+  return pVVar1;
 }
 
 
@@ -48,28 +334,43 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_ByteArra
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
-  pMVar1 = (MethodInfo *)0x0;
-  do {
-    if ((*byteArray == (Byte__Array *)0x0) || (*corners == (Vector3__Array *)0x0)) {
-      func_?(0);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
+  uVar1 = 0;
+  iStack_2 = 0;
+  while ((pBVar3 = *byteArray, pBVar3 != (Byte__Array *)0x0 &&
+         (pVVar4 = *corners, pVVar4 != (Vector3__Array *)0x0))) {
+    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
     }
-    uVar3 = func_?(pMVar1,0);
-    vector = (Vector3 *)&UNK_?;
-    method_00 = pMVar1;
-    key = (uint8_t *)func_?(pMVar1,uVar3);
-    CubeDataPacker_ByteToVector3_1(key,vector,method_00);
-    pMVar1 = (MethodInfo *)((int)&pMVar1->methodPointer + 1);
-  } while ((int)pMVar1 < 8);
+    if ((pVVar4->max_length <= uVar1) || (pBVar3->max_length <= uVar1)) goto code_?;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+    }
+    pVVar5 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
+    if (pVVar5 == (Vector3__Array *)0x0) break;
+    uVar6 = (uint)pBVar3->vector[uVar1];
+    if (pVVar5->max_length <= uVar6) goto code_?;
+    uVar1 = uVar1 + 1;
+    fVar7 = pVVar5->vector[uVar6].z;
+    iVar8 = iStack_2 + 0xc;
+    *(undefined8 *)((int)&pVVar4->vector[0].x + iStack_2) = *(undefined8 *)(pVVar5->vector + uVar6);
+    *(float *)((int)&pVVar4->vector[0].z + iStack_2) = fVar7;
+    iStack_2 = iVar8;
+    if (0x5f < iVar8) {
+      return;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -81,33 +382,38 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_Byt
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pCStack_1 = (CubeDataPacker__Class *)&TypeInfo__MV__WorldObject__CubeDataPacker;
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) != 0
-      ) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+    pCStack_1 = TypeInfo__MV__WorldObject__CubeDataPacker;
+    func_?();
   }
-  pVVar1 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
-  if (pVVar1 == (Vector3__Array *)0x0) {
-    func_?(0);
-  }
-  else {
-    uVar2 = (uint)key;
-    if (uVar2 < pVVar1->max_length) {
-      fVar3 = pVVar1->vector[uVar2].y;
-      fVar4 = pVVar1->vector[uVar2].z;
-      __return_storage_ptr__->x = pVVar1->vector[uVar2].x;
-      __return_storage_ptr__->y = fVar3;
-      __return_storage_ptr__->z = fVar4;
+  pVVar2 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
+  if (pVVar2 != (Vector3__Array *)0x0) {
+    uVar3 = (uint)key;
+    if (uVar3 < pVVar2->max_length) {
+      fVar4 = pVVar2->vector[uVar3].y;
+      fVar5 = pVVar2->vector[uVar3].z;
+      __return_storage_ptr__->x = pVVar2->vector[uVar3].x;
+      __return_storage_ptr__->y = fVar4;
+      __return_storage_ptr__->z = fVar5;
       return __return_storage_ptr__;
     }
+    pCStack_1 = (CubeDataPacker__Class *)0x0;
+    puStack_6 = (undefined *)func_?();
+    func_?();
+    pcVar7 = (code *)swi(3);
+    pVVar8 = (Vector3 *)(*pcVar7)();
+    return pVVar8;
   }
-  uVar5 = func_?(0,0);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  pVVar7 = (Vector3 *)(*pcVar6)();
-  return pVVar7;
+  pCStack_1 = (CubeDataPacker__Class *)&stack0xfffffffc;
+  uVar9 = func_?(&puStack_10);
+  func_?(uVar9);
+  pcVar7 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar7)();
+  return pVVar8;
 }
 
 
@@ -118,32 +424,316 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_ByteToVe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pCStack_1 = (CubeDataPacker__Class *)&TypeInfo__MV__WorldObject__CubeDataPacker;
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) != 0
-      ) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+    pCStack_1 = TypeInfo__MV__WorldObject__CubeDataPacker;
+    func_?();
   }
-  pVVar1 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
-  if (pVVar1 == (Vector3__Array *)0x0) {
-    func_?(0);
-  }
-  else {
-    uVar2 = (uint)*key;
-    if (uVar2 < pVVar1->max_length) {
-      fVar3 = pVVar1->vector[uVar2].y;
-      fVar4 = pVVar1->vector[uVar2].z;
-      vector->x = pVVar1->vector[uVar2].x;
-      vector->y = fVar3;
-      vector->z = fVar4;
+  pVVar2 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
+  if (pVVar2 != (Vector3__Array *)0x0) {
+    uVar3 = (uint)*key;
+    if (uVar3 < pVVar2->max_length) {
+      fVar4 = pVVar2->vector[uVar3].y;
+      fVar5 = pVVar2->vector[uVar3].z;
+      vector->x = pVVar2->vector[uVar3].x;
+      vector->y = fVar4;
+      vector->z = fVar5;
       return;
     }
+    pCStack_1 = (CubeDataPacker__Class *)0x0;
+    puStack_6 = (undefined *)func_?();
+    func_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
   }
-  uVar5 = func_?(0,0);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pCStack_1 = (CubeDataPacker__Class *)&stack0xfffffffc;
+  uVar8 = func_?(&puStack_9);
+  func_?(uVar8);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
+  return;
+}
+
+
+/* Void CombineRows(IntVector, Dictionary`2[MV.WorldObject.IntVector,System.Byte[]] ByRef) */
+
+void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_CombineRows
+               (IntVector pos,Dictionary_2_MV_WorldObject_IntVector_System_Byte_ **cubeDict,
+               MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(0x8fdc);
+    cRam_? = '\x01';
+  }
+  pCVar1 = (CubeDataPacker__Class *)0x0;
+  uStack_2._0_2_ = 0;
+  uStack_2._2_2_ = 0;
+  uStack_2._4_4_ = (undefined *)((uint)uStack_2._6_2_ << 0x10);
+  if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+     (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+               IntVector,System::Object]::
+               Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                         ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,pos,
+                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                         ), pOVar3 != (Object *)0x0)) {
+    if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+    bVar4 = *(byte *)&pOVar3[2].klass;
+    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+      pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
+      func_?();
+    }
+    uStack_5 = (uint)(bVar4 >> 2);
+    bVar6 = CubeDataPacker_GetCubeOriginal
+                      (pos,1,cubeDict,(IntVector *)&stack0xffffffdc,(MethodInfo *)0x0);
+    bStack_7 = CubeDataPacker_GetCubeOriginal
+                         (pos,0,cubeDict,(IntVector *)&uStack_2,(MethodInfo *)0x0);
+    cStack_8 = '\0';
+    if (bVar6 == 0) {
+code_?:
+      if (bStack_7 == 0) {
+        return;
+      }
+      if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+        key_02.z = uStack_2._4_2_;
+        key_02.x = (int16_t)uStack_2;
+        key_02.y = uStack_2._2_2_;
+        pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                 IntVector,System::Object]::
+                 Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                           ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,key_02
+                            ,
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                           );
+        if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+          pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
+          func_?();
+        }
+        if (pOVar9 != (Object *)0x0) {
+          pMStack_10 = pOVar3[1].monitor;
+          if (pMStack_10 != pOVar9[1].monitor) {
+            return;
+          }
+          pCStack_11 = (CubeDataPacker__Class *)pOVar9[1].monitor;
+          for (pCVar12 = (CubeDataPacker__Class *)0x1; (int)pCVar12 < (int)pMStack_10;
+              pCVar12 = (CubeDataPacker__Class *)((int)&(pCVar12->_0).image + 1)) {
+            if (((CubeDataPacker__Class *)pOVar3[1].monitor <= pCVar12) || (pCStack_11 <= pCVar12))
+            goto code_?;
+            if (*(char *)((int)(pOVar9 + 2) + ((int)pOVar3 - (int)pOVar9) + (int)pCVar12) !=
+                *(char *)((int)&(pCVar12->_0).image + (int)&pOVar9[2].klass)) {
+              return;
+            }
+          }
+          this = *cubeDict;
+          if (cStack_8 == '\0') {
+            if (this != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+              key_03.z = uStack_2._4_2_;
+              key_03.x = (int16_t)uStack_2;
+              key_03.y = uStack_2._2_2_;
+              pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                       IntVector,System::Object]::
+                       Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                 ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this,
+                                  key_03,
+                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                 );
+              if (pOVar3 != (Object *)0x0) {
+                if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+                bVar4 = *(byte *)&pOVar3[2].klass;
+                if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0)
+                {
+                  func_?();
+                }
+                bVar4 = bVar4 >> 2;
+                if (TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->rowMaxLength <
+                    (int)(uStack_5 + bVar4)) {
+                  return;
+                }
+                if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+                   (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::
+                             WorldObject::IntVector,System::Object]::
+                             Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                       ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                        *cubeDict,pos,
+                                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                       ), pOVar3 != (Object *)0x0)) {
+                  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor ==
+                      0) {
+                    func_?();
+                  }
+                  if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+                  *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass & 3;
+                  cVar13 = bVar4 + (char)uStack_5;
+code_?:
+                  *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass | cVar13 << 2;
+                  if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+                    key_04.z = uStack_2._4_2_;
+                    key_04.x = (int16_t)uStack_2;
+                    key_04.y = uStack_2._2_2_;
+                    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::
+                             WorldObject::IntVector,System::Object]::
+                             Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                       ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                        *cubeDict,key_04,
+                                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                       );
+                    if (pOVar3 != (Object *)0x0) {
+                      if (pOVar3[1].monitor != (MonitorData *)0x0) {
+                        *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass & 3;
+                        return;
+                      }
+                      goto code_?;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          else if ((this != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+                  (key_05.z = 0, key_05._0_4_ = pCVar1,
+                  pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject
+                           ::IntVector,System::Object]::
+                           Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                     ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this,
+                                      key_05,
+                                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                     ), pOVar3 != (Object *)0x0)) {
+            if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+            bVar4 = *(byte *)&pOVar3[2].klass;
+            if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            bVar4 = bVar4 >> 2;
+            if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+              key_06.z = uStack_2._4_2_;
+              key_06.x = (int16_t)uStack_2;
+              key_06.y = uStack_2._2_2_;
+              pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                       IntVector,System::Object]::
+                       Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                 ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,
+                                  key_06,
+                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                 );
+              if (pOVar3 != (Object *)0x0) {
+                if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+                bVar14 = *(byte *)&pOVar3[2].klass >> 2;
+                if (TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->rowMaxLength <
+                    (int)((uint)bVar14 + (uint)bVar4)) {
+                  return;
+                }
+                if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+                   (key_07.z = 0,
+                   key_07._0_4_ = 
+                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                   , pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::
+                              WorldObject::IntVector,System::Object]::
+                              Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                        ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                         *cubeDict,key_07,
+                                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                        ), pOVar3 != (Object *)0x0)) {
+                  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor ==
+                      0) {
+                    pCStack_11 = TypeInfo__MV__WorldObject__CubeDataPacker;
+                    uStack_2._4_4_ = &UNK_?;
+                    func_?();
+                  }
+                  if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+                  *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass & 3;
+                  cVar13 = bVar4 + bVar14;
+                  goto code_?;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    else if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+      key.z = 0;
+      key._0_4_ = pCVar1;
+      pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+               IntVector,System::Object]::
+               Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                         ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,key,
+                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                         );
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      if (pOVar9 != (Object *)0x0) {
+        if (pOVar3[1].monitor != pOVar9[1].monitor) goto code_?;
+        pMStack_10 = pOVar9[1].monitor;
+        for (pMVar15 = (MonitorData *)0x1; (int)pMVar15 < (int)pOVar3[1].monitor; pMVar15 = pMVar15 + 1)
+        {
+          if ((pOVar3[1].monitor <= pMVar15) || (pMStack_10 <= pMVar15)) goto code_?;
+          if (pMVar15[(int)&pOVar3[2].klass] !=
+              pMVar15[(int)pOVar3 + (int)pOVar9 + (0x10 - (int)pOVar3)]) goto code_?;
+        }
+        if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+           (key_00.z = 0, key_00._0_4_ = pCVar1,
+           pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                    IntVector,System::Object]::
+                    Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                              ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,
+                               key_00,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                              ), pOVar9 != (Object *)0x0)) {
+          if (pOVar9[1].monitor == (MonitorData *)0x0) goto code_?;
+          bVar4 = *(byte *)&pOVar9[2].klass;
+          if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+            pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
+            func_?();
+          }
+          pMStack_10 = (MonitorData *)(uint)(bVar4 >> 2);
+          if (TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->rowMaxLength <
+              (int)(pMStack_10 + uStack_5)) goto code_?;
+          if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+             (key_01.z = 0, key_01._0_4_ = pCVar1,
+             pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                      IntVector,System::Object]::
+                      Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,
+                                 key_01,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                ), pOVar9 != (Object *)0x0)) {
+            if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+              pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
+              func_?();
+            }
+            if (pOVar9[1].monitor == (MonitorData *)0x0) goto code_?;
+            *(byte *)&pOVar9[2].klass = *(byte *)&pOVar9[2].klass & 3;
+            *(byte *)&pOVar9[2].klass =
+                 *(byte *)&pOVar9[2].klass | ((char)uStack_5 + (char)pMStack_10) * '\x04';
+            if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+               (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                         IntVector,System::Object]::
+                         Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                   ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                    *cubeDict,pos,
+                                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                   ), pOVar9 != (Object *)0x0)) {
+              if (pOVar9[1].monitor == (MonitorData *)0x0) goto code_?;
+              *(byte *)&pOVar9[2].klass = *(byte *)&pOVar9[2].klass & 3;
+              cStack_8 = '\x01';
+              goto code_?;
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -156,40 +746,124 @@ MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_CornersToByte
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
-  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,8);
-  uVar2 = 0;
-  pVVar3 = corners->vector;
-  while (corners != (Vector3__Array *)0x0) {
-    if (corners->max_length <= uVar2) goto code_?;
-    fVar4 = pVVar3->z;
-    uVar5._0_4_ = pVVar3->x;
-    uVar5._4_4_ = pVVar3->y;
-    if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-    }
-    corner.z = fVar4;
-    corner.x = (float)(int)uVar5;
-    corner.y = (float)(int)((ulonglong)uVar5 >> 0x20);
-    uVar6 = CubeDataPacker_Vector3ToByte(corner,(MethodInfo *)0x0);
-    if (pBVar1 == (Byte__Array *)0x0) break;
-    func_?(uVar2,uVar6);
-    uVar2 = uVar2 + 1;
-    pVVar3 = pVVar3 + 1;
-    if (7 < (int)uVar2) {
-      return pBVar1;
+  VStack_1.z = (float)func_?(TypeInfo__System__Byte,8);
+  pVVar2 = corners->vector;
+  uVar3 = 0;
+  if (corners == (Vector3__Array *)0x0) {
+code_?:
+    func_?();
+code_?:
+    uVar4 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+    this_00 = (IndexOutOfRangeException *)func_?(uVar4);
+    func_?(this_00);
+    method_00 = (MethodInfo *)0x0;
+    pSVar5 = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
+    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+              (this_00,pSVar5,method_00);
+    uVar4 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+    func_?(this_00,uVar4);
+  }
+  else {
+    while (uVar3 < corners->max_length) {
+      VStack_1.x = pVVar2->x;
+      VStack_1.y = pVVar2->y;
+      pSVar5 = (String *)pVVar2->z;
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      VStack_6._0_8_ = VStack_1._0_8_;
+      VStack_6.z = (float)pSVar5;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__ContainsKey_UnityEngine__Vector3_
+                       );
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__get_Item_UnityEngine__Vector3_
+                       );
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      this = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+             TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+      if (this == (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                   *)0x0) goto code_?;
+      key._pattern = pSVar5;
+      key._options = (int32_t)VStack_1.x;
+      key._cultureKey = (String *)VStack_1.y;
+      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__ContainsKey
+                        (this,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__ContainsKey_UnityEngine__Vector3_
+                        );
+      if (bVar7 == 0) {
+        index = 0;
+        do {
+          if (index == 0) {
+            pSVar5 = (String *)VStack_6.x;
+          }
+          else if (index == 1) {
+            pSVar5 = (String *)VStack_6.y;
+          }
+          else {
+            pSVar5 = (String *)VStack_6.z;
+            if (index != 2) goto code_?;
+          }
+          if ((float)pSVar5 == 0.0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
+                      (&VStack_6,index,0.0,(MethodInfo *)0x0);
+          }
+          index = index + 1;
+        } while (index < 3);
+        if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+        }
+        this_01 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+        if (this_01 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
+        fVar8 = VStack_6.x;
+        fVar9 = VStack_6.y;
+        pSVar5 = (String *)VStack_6.z;
+      }
+      else {
+        if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+          VStack_6.y = (float)TypeInfo__MV__WorldObject__CubeDataPacker;
+          VStack_6.x = (float)&UNK_?;
+          func_?();
+        }
+        this_01 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+        if (this_01 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
+        fVar8 = VStack_1.x;
+        fVar9 = VStack_1.y;
+      }
+      key_00.y = fVar9;
+      key_00.x = fVar8;
+      key_00.z = (float)pSVar5;
+      uVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::
+              Byte]::Dictionary_2_UnityEngine_Vector3_System_Byte__get_Item
+                        (this_01,key_00,
+                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__get_Item_UnityEngine__Vector3_
+                        );
+      if ((Byte__Array *)VStack_1.z == (Byte__Array *)0x0) goto code_?;
+      if (*(il2cpp_array_size_t *)((int)VStack_1.z + 0xc) <= uVar3) break;
+      ((uint8_t *)((int)VStack_1.z + 0x10))[uVar3] = uVar10;
+      pVVar2 = pVVar2 + 1;
+      uVar3 = uVar3 + 1;
+      if (7 < (int)uVar3) {
+        return (Byte__Array *)VStack_1.z;
+      }
     }
   }
-  func_?(0);
-code_?:
-  uVar7 = func_?(0,0);
-  func_?(uVar7);
-  pcVar8 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar8)();
-  return pBVar1;
+  func_?();
+  pcVar11 = (code *)swi(3);
+  pBVar12 = (Byte__Array *)(*pcVar11)();
+  return pBVar12;
 }
 
 
@@ -201,60 +875,212 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetCompr
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
   uVar1 = 0;
-  bVar2 = true;
+  pCVar2 = TypeInfo__MV__WorldObject__CubeDataPacker;
+  bVar3 = true;
   if (byteCorners == (Byte__Array *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
+    func_?();
     pcVar4 = (code *)swi(3);
     (*pcVar4)();
     return;
   }
-  for (; (int)uVar1 < (int)byteCorners->max_length; uVar1 = uVar1 + 1) {
+  while (bVar5 = bVar3, (int)uVar1 < (int)byteCorners->max_length) {
     if (byteCorners->max_length <= uVar1) goto code_?;
-    uVar5 = byteCorners->vector[uVar1];
-    if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+    uVar6 = byteCorners->vector[uVar1];
+    if ((pCVar2->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pCVar2);
+      pCVar2 = TypeInfo__MV__WorldObject__CubeDataPacker;
     }
-    if (TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners ==
-        (Byte__Array *)0x0) goto code_?;
-    uVar6 = func_?(uVar1);
-    if (uVar5 != uVar6) {
-      bVar2 = false;
+    pBVar7 = pCVar2->static_fields->IdentityByteCorners;
+    if (pBVar7 == (Byte__Array *)0x0) goto code_?;
+    if (pBVar7->max_length <= uVar1) goto code_?;
+    uVar8 = uVar1 + 1;
+    puVar9 = pBVar7->vector + uVar1;
+    uVar1 = uVar8;
+    bVar3 = false;
+    if (uVar6 == *puVar9) {
+      bVar3 = bVar5;
     }
   }
-  bVar7 = true;
-  bVar8 = true;
-  iVar9 = 0;
+  uVar1 = 0;
+  bVar3 = true;
   do {
-    if (0 < iVar9) {
+    if (0 < (int)uVar1) {
       if (materials == (Byte__Array *)0x0) goto code_?;
-      cVar10 = func_?(iVar9 + -1);
-      cVar11 = func_?(iVar9);
-      bVar7 = bVar8;
-      if (cVar10 != cVar11) {
-        bVar7 = false;
-        bVar8 = bVar7;
+      if ((materials->max_length <= uVar1 - 1) || (materials->max_length <= uVar1))
+      goto code_?;
+      if (materials->vector[uVar1 - 1] != materials->vector[uVar1]) {
+        bVar3 = false;
       }
     }
-    iVar9 = iVar9 + 1;
-    if (5 < iVar9) {
-      if (bVar2) {
+    uVar1 = uVar1 + 1;
+    if (5 < (int)uVar1) {
+      if (bVar5) {
         *compressionFlags = *compressionFlags | 1;
       }
-      if (bVar7) {
+      if (bVar3) {
         *compressionFlags = *compressionFlags | 2;
       }
       return;
     }
   } while( true );
+}
+
+
+/* Byte[] GetCubeByteData(IntVector, Dictionary`2[MV.WorldObject.IntVector,System.Byte[]] ByRef) */
+
+Byte__Array *
+MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetCubeByteData
+          (IntVector pos,Dictionary_2_MV_WorldObject_IntVector_System_Byte_ **cubeDict,
+          MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(0x8f2c);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                   );
+    cRam_? = '\x01';
+  }
+  this = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)*cubeDict;
+  do {
+    if (this == (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0)
+    {
+code_?:
+      func_?();
+code_?:
+      func_?();
+      pcVar1 = (code *)swi(3);
+      pBVar2 = (Byte__Array *)(*pcVar1)();
+      return pBVar2;
+    }
+    key_01.y = pos.y;
+    key_01.x = pos.x;
+    key.z = pos.z;
+    key.x = pos.x;
+    key.y = pos.y;
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+            IntVector,ChunkInstances+ChunkInstanceVariables]::
+            Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__ContainsKey
+                      (this,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__ContainsKey_MV__WorldObject__IntVector_
+                      );
+    if (bVar3 == 0) {
+      return (Byte__Array *)0x0;
+    }
+    if ((*cubeDict == (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) ||
+       (key_01.z = pos.z,
+       pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                IntVector,System::Object]::
+                Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                          ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,key_01,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                          ), pOVar4 == (Object *)0x0)) goto code_?;
+    if (pOVar4[1].monitor == (MonitorData *)0x0) goto code_?;
+    bVar5 = *(byte *)&pOVar4[2].klass;
+    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+      pos.z = -0x5081;
+      in_stack_6 = 0x10a0;
+      func_?();
+    }
+    this = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)*cubeDict
+    ;
+    if (3 < bVar5) {
+      if (this != (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
+                  0x0) {
+        key_00.y = pos.y;
+        key_00.x = pos.x;
+        key_00.z = pos.z;
+        pBVar2 = (Byte__Array *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                 IntVector,System::Object]::
+                 Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                           ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this,key_00,
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                           );
+        return pBVar2;
+      }
+      goto code_?;
+    }
+    pos.x = pos.x + -1;
+  } while( true );
+}
+
+
+/* Boolean GetCubeOriginal(IntVector, Boolean, Dictionary`2[MV.WorldObject.IntVector,System.Byte[]]
+   ByRef, IntVector ByRef) */
+
+bool MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetCubeOriginal
+               (IntVector pos,bool left,
+               Dictionary_2_MV_WorldObject_IntVector_System_Byte_ **cubeDict,IntVector *targetCube,
+               MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(0x8f2c);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                   );
+    cRam_? = '\x01';
+  }
+  sVar1 = (ushort)(left ^ 1) * 2 + -1;
+  sVar2 = pos.x + sVar1;
+  uVar3 = CONCAT22(pos.y,sVar2);
+  targetCube->x = sVar2;
+  targetCube->y = pos.y;
+  targetCube->z = pos.z;
+  this = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)*cubeDict;
+  while (this != (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0
+        ) {
+    key.z = pos.z;
+    key.x = (short)uVar3;
+    key.y = (short)((uint)uVar3 >> 0x10);
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+            IntVector,ChunkInstances+ChunkInstanceVariables]::
+            Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__ContainsKey
+                      (this,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__ContainsKey_MV__WorldObject__IntVector_
+                      );
+    if (bVar4 == 0) {
+      return 0;
+    }
+    if ((*cubeDict == (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) ||
+       (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                 IntVector,System::Object]::
+                 Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                           ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,
+                            *targetCube,
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                           ), pOVar5 == (Object *)0x0)) break;
+    if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
+    bVar6 = *(byte *)&pOVar5[2].klass;
+    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    if (3 < bVar6) {
+      return 1;
+    }
+    targetCube->x = targetCube->x + sVar1;
+    uVar3._0_2_ = targetCube->x;
+    uVar3._2_2_ = targetCube->y;
+    pos.z = targetCube->z;
+    this = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)*cubeDict
+    ;
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar7 = (code *)swi(3);
+  bVar4 = (*pcVar7)();
+  return bVar4;
 }
 
 
@@ -268,6 +1094,28 @@ int32_t MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetCu
 }
 
 
+/* Int32 GetDataLength(BytePacker) */
+
+int32_t MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetDataLength
+                  (BytePacker *bp,MethodInfo *method)
+
+{
+  if (bp != (BytePacker *)0x0) {
+    uVar1 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_set_Position(bp,(bp->fields)._position + -1,(MethodInfo *)0x0);
+    iVar2 = 2;
+    if ((uVar1 & 2) == 0) {
+      iVar2 = 7;
+    }
+    return iVar2 + ((byte)~uVar1 & 1) * 8;
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  iVar4 = (*pcVar3)();
+  return iVar4;
+}
+
+
 /* Void ReadCompressedCube(Byte, BytePacker, Byte[] ByRef, Byte[] ByRef) */
 
 void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_ReadCompressedCube
@@ -276,45 +1124,229 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_ReadComp
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
   if ((cubeFlags & 1) == 0) {
     if (bp == (BytePacker *)0x0) goto code_?;
     pBVar1 = BytePacker::BytePacker_ReadBytes(bp,8,(MethodInfo *)0x0);
+    *byteCorners = pBVar1;
+    func_?(byteCorners,pBVar1);
   }
   else {
-    if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
+    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
     }
     pBVar1 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners;
+    *byteCorners = pBVar1;
+    func_?(byteCorners,pBVar1);
+    if (bp == (BytePacker *)0x0) goto code_?;
   }
-  *byteCorners = pBVar1;
-  if (bp != (BytePacker *)0x0) {
-    if ((cubeFlags & 2) == 0) {
-      pBVar1 = BytePacker::BytePacker_ReadBytes(bp,6,(MethodInfo *)0x0);
-      *materials = pBVar1;
+  if ((cubeFlags & 2) == 0) {
+    pBVar1 = BytePacker::BytePacker_ReadBytes(bp,6,(MethodInfo *)0x0);
+    *materials = pBVar1;
+    func_?(materials,pBVar1);
+    return;
+  }
+  uVar2 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+  uVar3 = 0;
+  while (pBVar1 = *materials, pBVar1 != (Byte__Array *)0x0) {
+    if (pBVar1->max_length <= uVar3) goto code_?;
+    pBVar1->vector[uVar3] = uVar2;
+    uVar3 = uVar3 + 1;
+    if (5 < (int)uVar3) {
       return;
     }
-    uVar2 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-    uVar3 = 0;
-    while (pBVar1 = *materials, pBVar1 != (Byte__Array *)0x0) {
-      if (pBVar1->max_length <= uVar3) goto code_?;
-      pBVar1->vector[uVar3] = uVar2;
-      uVar3 = uVar3 + 1;
-      if (5 < (int)uVar3) {
-        return;
-      }
-    }
   }
 code_?:
-  func_?(0);
-code_?:
   func_?();
+code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
+  return;
+}
+
+
+/* Void RemoveCube(IntVector, Dictionary`2[MV.WorldObject.IntVector,System.Byte[]] ByRef) */
+
+void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_RemoveCube
+               (IntVector pos,Dictionary_2_MV_WorldObject_IntVector_System_Byte_ **cubeDict,
+               MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(0x8f2c);
+    func_?(0x8f84);
+    func_?(0x8fdc);
+    cRam_? = '\x01';
+  }
+  if ((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)*cubeDict !=
+      (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+            IntVector,ChunkInstances+ChunkInstanceVariables]::
+            Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__ContainsKey
+                      ((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_
+                        *)*cubeDict,pos,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__ContainsKey_MV__WorldObject__IntVector_
+                      );
+    if (bVar1 == 0) {
+      return;
+    }
+    if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+       (pCVar2 = (CubeDataPacker__Class *)
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+       , pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                  IntVector,System::Object]::
+                  Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                            ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,pos,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                            ), pOVar3 != (Object *)0x0)) {
+      if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+      bVar4 = *(byte *)&pOVar3[2].klass;
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      this = *cubeDict;
+      bVar4 = bVar4 >> 2;
+      if (bVar4 < 2) {
+        if (this != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System
+          ::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Remove
+                    ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this,pos,
+                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__Remove_MV__WorldObject__IntVector_
+                    );
+          if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+            pCVar2 = TypeInfo__MV__WorldObject__CubeDataPacker;
+            func_?();
+          }
+          bVar1 = CubeDataPacker_GetCubeOriginal
+                            (pos,1,cubeDict,(IntVector *)&stack0xfffffff0,(MethodInfo *)0x0);
+          if (bVar1 == 0) {
+            return;
+          }
+          if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+             (key.z = 0, key._0_4_ = pCVar2,
+             pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                      IntVector,System::Object]::
+                      Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,
+                                 key,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                ), pOVar3 != (Object *)0x0)) {
+            if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+            bVar4 = *(byte *)&pOVar3[2].klass;
+            if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+            }
+            uVar5 = (uint)(bVar4 >> 2);
+            iVar6 = (int)pos.x - (int)(short)pCVar2;
+            if ((int)uVar5 <= iVar6) {
+              return;
+            }
+            iVar7 = (uVar5 - iVar6) + -1;
+            if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+               (key_00.z = 0, key_00._0_4_ = pCVar2,
+               pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                        IntVector,System::Object]::
+                        Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                  ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict
+                                   ,key_00,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                  ), pOVar3 != (Object *)0x0)) {
+              if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+                pCVar2 = TypeInfo__MV__WorldObject__CubeDataPacker;
+                func_?();
+              }
+              if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+              *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass & 3;
+              *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass | (char)iVar6 << 2;
+              pos_01.z = 0;
+              pos_01._0_4_ = pCVar2;
+              CubeDataPacker_CombineRows(pos_01,cubeDict,(MethodInfo *)0x0);
+              if (iVar7 < 1) {
+                return;
+              }
+              if ((*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+                 (key_02.z = pos.z,
+                 key_02._0_4_ = 
+                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                 , pMVar8 = 
+                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                 , pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject
+                            ::IntVector,System::Object]::
+                            Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                      ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
+                                       *cubeDict,key_02,
+                                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                                      ), pOVar3 != (Object *)0x0)) {
+                if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0)
+                {
+                  func_?();
+                }
+                pbVar9 = (byte *)func_?(0);
+                *pbVar9 = *pbVar9 & 3;
+                *pbVar9 = *pbVar9 | (char)iVar7 << 2;
+                pos_00.z = pos.z;
+                pos_00._0_4_ = pMVar8;
+                CubeDataPacker_CombineRows(pos_00,cubeDict,(MethodInfo *)0x0);
+                return;
+              }
+            }
+          }
+        }
+      }
+      else {
+        sVar10 = pos.x + 1;
+        pCVar2 = (CubeDataPacker__Class *)CONCAT22(pos.y,sVar10);
+        if ((this != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) &&
+           (key_01.y = pos.y, key_01.x = sVar10, key_01.z = pos.z,
+           pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                    IntVector,System::Object]::
+                    Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                              ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this,key_01,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
+                              ), pOVar3 != (Object *)0x0)) {
+          if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+            pCVar2 = TypeInfo__MV__WorldObject__CubeDataPacker;
+            func_?();
+          }
+          if (pOVar3[1].monitor == (MonitorData *)0x0) goto code_?;
+          *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass & 3;
+          *(byte *)&pOVar3[2].klass = *(byte *)&pOVar3[2].klass | bVar4 * '\x04' - 4;
+          if (*cubeDict != (Dictionary_2_MV_WorldObject_IntVector_System_Byte_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+            IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Remove
+                      ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)*cubeDict,pos,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__Remove_MV__WorldObject__IntVector_
+                      );
+            pos_02.z = pos.z;
+            pos_02._0_4_ = pCVar2;
+            CubeDataPacker_CombineRows(pos_02,cubeDict,(MethodInfo *)0x0);
+            return;
+          }
+        }
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
+  return;
+}
+
+
+/* Void SetCubesInRow(Byte ByRef, Int32) */
+
+void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_SetCubesInRow
+               (uint8_t *cubeFlags,int32_t cubesInRow,MethodInfo *method)
+
+{
+  *cubeFlags = *cubeFlags & 3;
+  *cubeFlags = *cubeFlags | (char)cubesInRow << 2;
   return;
 }
 
@@ -326,54 +1358,94 @@ uint8_t MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_Vecto
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__ContainsKey_UnityEngine__Vector3_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__get_Item_UnityEngine__Vector3_
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) != 0
-      ) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
+  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
   }
-  pDVar1 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
-  if (pDVar1 != (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) {
-    key.z = corner.z;
-    key.x = corner.x;
-    key.y = corner.y;
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::
-            Byte]::Dictionary_2_UnityEngine_Vector3_System_Byte__ContainsKey
-                      (pDVar1,key,
+  fVar1 = corner.z;
+  this = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+         TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+  if (this != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )0x0) {
+    key._cultureKey = (String *)corner.y;
+    key._options = (int32_t)corner.x;
+    key._pattern = (String *)corner.z;
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+            RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+            Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__ContainsKey
+                      (this,key,
                        MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__ContainsKey_UnityEngine__Vector3_
                       );
     if (bVar2 == 0) {
-      iVar3 = 0;
+      index = 0;
       do {
-        fVar4 = (float10)func_?(&corner,iVar3,0);
-        if ((float)fVar4 == 0.0) {
-          func_?(&corner,iVar3,0,0);
+        fVar1 = corner.x;
+        if (((index != 0) && (fVar1 = corner.y, index != 1)) && (fVar1 = corner.z, index != 2))
+        goto code_?;
+        if (fVar1 == 0.0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
+                    (&corner,index,0.0,(MethodInfo *)0x0);
         }
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < 3);
+        index = index + 1;
+      } while (index < 3);
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      pDVar3 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+      if (pDVar3 != (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) {
+        key_01.y = corner.y;
+        key_01.x = corner.x;
+        key_01.z = corner.z;
+        uVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System
+                ::Byte]::Dictionary_2_UnityEngine_Vector3_System_Byte__get_Item
+                          (pDVar3,key_01,
+                           MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__get_Item_UnityEngine__Vector3_
+                          );
+        return uVar4;
+      }
     }
-    if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-    }
-    pDVar1 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
-    if (pDVar1 != (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) {
-      key_00.z = corner.z;
-      key_00.x = corner.x;
-      key_00.y = corner.y;
-      uVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::
-              Byte]::Dictionary_2_UnityEngine_Vector3_System_Byte__get_Item
-                        (pDVar1,key_00,
-                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__get_Item_UnityEngine__Vector3_
-                        );
-      return uVar5;
+    else {
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        corner.y = (float)TypeInfo__MV__WorldObject__CubeDataPacker;
+        corner.x = (float)&UNK_?;
+        func_?();
+      }
+      pDVar3 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+      if (pDVar3 != (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) {
+        key_00.y = corner.y;
+        key_00.x = corner.x;
+        key_00.z = fVar1;
+        uVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System
+                ::Byte]::Dictionary_2_UnityEngine_Vector3_System_Byte__get_Item
+                          (pDVar3,key_00,
+                           MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__get_Item_UnityEngine__Vector3_
+                          );
+        return uVar4;
+      }
     }
   }
-  func_?(0);
+  func_?();
+code_?:
+  uVar5 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+  this_00 = (IndexOutOfRangeException *)func_?(uVar5);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
+  mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+            (this_00,message,method_00);
+  func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+  func_?(this_00);
   pcVar6 = (code *)swi(3);
-  uVar5 = (*pcVar6)();
-  return uVar5;
+  uVar4 = (*pcVar6)();
+  return uVar4;
 }
 
 
@@ -385,15 +1457,14 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_WriteCom
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
   if (bp != (BytePacker *)0x0) {
-    BytePacker::BytePacker_Write_4(bp,x,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_4(bp,y,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_4(bp,z,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
+    BytePacker::BytePacker_Write_5(bp,x,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_5(bp,y,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_5(bp,z,(MethodInfo *)0x0);
+    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     CubeDataPacker_WriteCompressedCubeData
@@ -414,61 +1485,62 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_WriteCom
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000) != 0
-      ) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
+  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
-  uVar1 = 0;
-  bVar2 = 1;
+  pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
+  uVar2 = 0;
+  bVar3 = true;
   if (byteCorners != (Byte__Array *)0x0) {
-    for (; (int)uVar1 < (int)byteCorners->max_length; uVar1 = uVar1 + 1) {
-      if (byteCorners->max_length <= uVar1) goto code_?;
-      uVar3 = byteCorners->vector[uVar1];
-      if ((((uint)(TypeInfo__MV__WorldObject__CubeDataPacker->vtable).Equals.methodPtr & 0x2000000)
-           != 0) && ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+    while (value = bVar3, (int)uVar2 < (int)byteCorners->max_length) {
+      if (byteCorners->max_length <= uVar2) goto code_?;
+      uVar4 = byteCorners->vector[uVar2];
+      if ((pCVar1->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(pCVar1);
+        pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
       }
-      if (TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners ==
-          (Byte__Array *)0x0) goto code_?;
-      uVar4 = func_?(uVar1);
-      if (uVar3 != uVar4) {
-        bVar2 = 0;
+      pBVar5 = pCVar1->static_fields->IdentityByteCorners;
+      if (pBVar5 == (Byte__Array *)0x0) goto code_?;
+      if (pBVar5->max_length <= uVar2) goto code_?;
+      uVar6 = uVar2 + 1;
+      puVar7 = pBVar5->vector + uVar2;
+      uVar2 = uVar6;
+      bVar3 = false;
+      if (uVar4 == *puVar7) {
+        bVar3 = value;
       }
     }
-    bVar5 = true;
-    iVar6 = 0;
-    bVar7 = true;
+    uVar2 = 0;
+    bVar3 = true;
     do {
-      if (0 < iVar6) {
+      if (0 < (int)uVar2) {
         if (materials == (Byte__Array *)0x0) goto code_?;
-        cVar8 = func_?(iVar6 + -1);
-        cVar9 = func_?(iVar6);
-        bVar5 = bVar7;
-        if (cVar8 != cVar9) {
-          bVar5 = false;
-          bVar7 = bVar5;
+        if ((materials->max_length <= uVar2 - 1) || (materials->max_length <= uVar2))
+        goto code_?;
+        if (materials->vector[uVar2 - 1] != materials->vector[uVar2]) {
+          bVar3 = false;
         }
       }
-      iVar6 = iVar6 + 1;
-    } while (iVar6 < 6);
-    if (bVar5) {
-      bVar2 = bVar2 | 2;
+      uVar2 = uVar2 + 1;
+    } while ((int)uVar2 < 6);
+    bVar8 = value;
+    if (bVar3) {
+      bVar8 = 2;
     }
     if (bp != (BytePacker *)0x0) {
-      BytePacker::BytePacker_Write(bp,bVar2 | 4,(MethodInfo *)0x0);
-      if ((bVar2 & 1) == 0) {
+      BytePacker::BytePacker_Write(bp,value,(MethodInfo *)0x0);
+      if (!value) {
         BytePacker::BytePacker_Write_2(bp,byteCorners,0,byteCorners->max_length,(MethodInfo *)0x0);
       }
       if (materials != (Byte__Array *)0x0) {
-        uVar10 = 0;
-        if ((bVar2 & 2) == 0) {
+        if ((bVar8 & 2) == 0) {
           BytePacker::BytePacker_Write_2(bp,materials,0,materials->max_length,(MethodInfo *)0x0);
           return;
         }
@@ -481,16 +1553,11 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_WriteCom
     }
   }
 code_?:
-  func_?(0);
+  func_?();
 code_?:
-  uVar10 = 0;
-  uVar11 = func_?(0,0);
-  func_?(uVar11);
-code_?:
-  uVar10 = func_?(0,uVar10);
-  func_?(uVar10);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -501,2755 +1568,1629 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker__cctor(M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>
+                   );
+    func_?(&__method0x60003ee_1_Field);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,0x7d);
-  if (pVVar1 == (Vector3__Array *)0x0) {
-code_?:
-    func_?(0);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-  }
-  else {
-    fStack_3 = 0.0;
-    uStack_4 = 0;
-    func_?(&uStack_4,0xbf000000,0xbf000000,0xbf000000,0);
+  if (pVVar1 != (Vector3__Array *)0x0) {
     if (pVVar1->max_length == 0) goto code_?;
-    pVVar1->vector[0].x = (float)(undefined4)uStack_4;
-    pVVar1->vector[0].y = (float)uStack_4._4_4_;
-    pVVar1->vector[0].z = fStack_3;
-    uStack_5 = 0;
-    fStack_6 = 0.0;
-    func_?(&uStack_5,0xbf000000,0xbf000000,0xbe800000,0);
+    pVVar1->vector[0].x = -0.5;
+    pVVar1->vector[0].y = -0.5;
+    pVVar1->vector[0].z = -0.5;
     if (pVVar1->max_length < 2) goto code_?;
-    pVVar1->vector[1].x = (float)(undefined4)uStack_5;
-    pVVar1->vector[1].y = (float)uStack_5._4_4_;
-    pVVar1->vector[1].z = fStack_6;
-    uVar7 = 0;
-    func_?(&stack0xffffffd8,0xbf000000,0xbf000000,0,0);
+    pVVar1->vector[1].x = -0.5;
+    pVVar1->vector[1].y = -0.5;
+    pVVar1->vector[1].z = -0.25;
     if (pVVar1->max_length < 3) goto code_?;
-    pVVar1->vector[2].x = (float)(int)uVar7;
-    pVVar1->vector[2].y = (float)(int)((ulonglong)uVar7 >> 0x20);
+    pVVar1->vector[2].x = -0.5;
+    pVVar1->vector[2].y = -0.5;
     pVVar1->vector[2].z = 0.0;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffffcc,0xbf000000,0xbf000000,0x3e800000,0);
     if (pVVar1->max_length < 4) goto code_?;
-    pVVar1->vector[3].x = (float)uVar2;
-    pVVar1->vector[3].y = (float)uVar8;
-    pVVar1->vector[3].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffffc0,0xbf000000,0xbf000000,0x3f000000,0);
+    pVVar1->vector[3].x = -0.5;
+    pVVar1->vector[3].y = -0.5;
+    pVVar1->vector[3].z = 0.25;
     if (pVVar1->max_length < 5) goto code_?;
-    pVVar1->vector[4].x = (float)(int)uVar7;
-    pVVar1->vector[4].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[4].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffffb4,0xbf000000,0xbe800000,0xbf000000,0);
+    pVVar1->vector[4].x = -0.5;
+    pVVar1->vector[4].y = -0.5;
+    pVVar1->vector[4].z = 0.5;
     if (pVVar1->max_length < 6) goto code_?;
-    pVVar1->vector[5].x = (float)uVar2;
-    pVVar1->vector[5].y = (float)uVar8;
-    pVVar1->vector[5].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffffa8,0xbf000000,0xbe800000,0xbe800000,0);
+    pVVar1->vector[5].x = -0.5;
+    pVVar1->vector[5].y = -0.25;
+    pVVar1->vector[5].z = -0.5;
     if (pVVar1->max_length < 7) goto code_?;
-    pVVar1->vector[6].x = (float)(int)uVar7;
-    pVVar1->vector[6].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[6].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff9c,0xbf000000,0xbe800000,0,0);
+    pVVar1->vector[6].x = -0.5;
+    pVVar1->vector[6].y = -0.25;
+    pVVar1->vector[6].z = -0.25;
     if (pVVar1->max_length < 8) goto code_?;
-    pVVar1->vector[7].x = (float)uVar2;
-    pVVar1->vector[7].y = (float)uVar8;
-    pVVar1->vector[7].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff90,0xbf000000,0xbe800000,0x3e800000,0);
+    pVVar1->vector[7].x = -0.5;
+    pVVar1->vector[7].y = -0.25;
+    pVVar1->vector[7].z = 0.0;
     if (pVVar1->max_length < 9) goto code_?;
-    pVVar1->vector[8].x = (float)(int)uVar7;
-    pVVar1->vector[8].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[8].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff84,0xbf000000,0xbe800000,0x3f000000,0);
+    pVVar1->vector[8].x = -0.5;
+    pVVar1->vector[8].y = -0.25;
+    pVVar1->vector[8].z = 0.25;
     if (pVVar1->max_length < 10) goto code_?;
-    pVVar1->vector[9].x = (float)uVar2;
-    pVVar1->vector[9].y = (float)uVar8;
-    pVVar1->vector[9].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff78,0xbf000000,0,0xbf000000,0);
+    pVVar1->vector[9].x = -0.5;
+    pVVar1->vector[9].y = -0.25;
+    pVVar1->vector[9].z = 0.5;
     if (pVVar1->max_length < 0xb) goto code_?;
-    pVVar1->vector[10].x = (float)(int)uVar7;
-    pVVar1->vector[10].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[10].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff6c,0xbf000000,0,0xbe800000,0);
+    pVVar1->vector[10].x = -0.5;
+    pVVar1->vector[10].y = 0.0;
+    pVVar1->vector[10].z = -0.5;
     if (pVVar1->max_length < 0xc) goto code_?;
-    pVVar1->vector[0xb].x = (float)uVar2;
-    pVVar1->vector[0xb].y = (float)uVar8;
-    pVVar1->vector[0xb].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff60,0xbf000000,0,0,0);
+    pVVar1->vector[0xb].x = -0.5;
+    pVVar1->vector[0xb].y = 0.0;
+    pVVar1->vector[0xb].z = -0.25;
     if (pVVar1->max_length < 0xd) goto code_?;
-    pVVar1->vector[0xc].x = (float)(int)uVar7;
-    pVVar1->vector[0xc].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0xc].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff54,0xbf000000,0,0x3e800000,0);
+    pVVar1->vector[0xc].x = -0.5;
+    pVVar1->vector[0xc].y = 0.0;
+    pVVar1->vector[0xc].z = 0.0;
     if (pVVar1->max_length < 0xe) goto code_?;
-    pVVar1->vector[0xd].x = (float)uVar2;
-    pVVar1->vector[0xd].y = (float)uVar8;
-    pVVar1->vector[0xd].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff48,0xbf000000,0,0x3f000000,0);
+    pVVar1->vector[0xd].x = -0.5;
+    pVVar1->vector[0xd].y = 0.0;
+    pVVar1->vector[0xd].z = 0.25;
     if (pVVar1->max_length < 0xf) goto code_?;
-    pVVar1->vector[0xe].x = (float)(int)uVar7;
-    pVVar1->vector[0xe].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0xe].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff3c,0xbf000000,0x3e800000,0xbf000000,0);
+    pVVar1->vector[0xe].x = -0.5;
+    pVVar1->vector[0xe].y = 0.0;
+    pVVar1->vector[0xe].z = 0.5;
     if (pVVar1->max_length < 0x10) goto code_?;
-    pVVar1->vector[0xf].x = (float)uVar2;
-    pVVar1->vector[0xf].y = (float)uVar8;
-    pVVar1->vector[0xf].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff30,0xbf000000,0x3e800000,0xbe800000,0);
+    pVVar1->vector[0xf].x = -0.5;
+    pVVar1->vector[0xf].y = 0.25;
+    pVVar1->vector[0xf].z = -0.5;
     if (pVVar1->max_length < 0x11) goto code_?;
-    pVVar1->vector[0x10].x = (float)(int)uVar7;
-    pVVar1->vector[0x10].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x10].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff24,0xbf000000,0x3e800000,0,0);
+    pVVar1->vector[0x10].x = -0.5;
+    pVVar1->vector[0x10].y = 0.25;
+    pVVar1->vector[0x10].z = -0.25;
     if (pVVar1->max_length < 0x12) goto code_?;
-    pVVar1->vector[0x11].x = (float)uVar2;
-    pVVar1->vector[0x11].y = (float)uVar8;
-    pVVar1->vector[0x11].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff18,0xbf000000,0x3e800000,0x3e800000,0);
+    pVVar1->vector[0x11].x = -0.5;
+    pVVar1->vector[0x11].y = 0.25;
+    pVVar1->vector[0x11].z = 0.0;
     if (pVVar1->max_length < 0x13) goto code_?;
-    pVVar1->vector[0x12].x = (float)(int)uVar7;
-    pVVar1->vector[0x12].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x12].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff0c,0xbf000000,0x3e800000,0x3f000000,0);
+    pVVar1->vector[0x12].x = -0.5;
+    pVVar1->vector[0x12].y = 0.25;
+    pVVar1->vector[0x12].z = 0.25;
     if (pVVar1->max_length < 0x14) goto code_?;
-    pVVar1->vector[0x13].x = (float)uVar2;
-    pVVar1->vector[0x13].y = (float)uVar8;
-    pVVar1->vector[0x13].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xffffff00,0xbf000000,0x3f000000,0xbf000000,0);
+    pVVar1->vector[0x13].x = -0.5;
+    pVVar1->vector[0x13].y = 0.25;
+    pVVar1->vector[0x13].z = 0.5;
     if (pVVar1->max_length < 0x15) goto code_?;
-    pVVar1->vector[0x14].x = (float)(int)uVar7;
-    pVVar1->vector[0x14].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x14].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffef4,0xbf000000,0x3f000000,0xbe800000,0);
+    pVVar1->vector[0x14].x = -0.5;
+    pVVar1->vector[0x14].y = 0.5;
+    pVVar1->vector[0x14].z = -0.5;
     if (pVVar1->max_length < 0x16) goto code_?;
-    pVVar1->vector[0x15].x = (float)uVar2;
-    pVVar1->vector[0x15].y = (float)uVar8;
-    pVVar1->vector[0x15].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffee8,0xbf000000,0x3f000000,0,0);
+    pVVar1->vector[0x15].x = -0.5;
+    pVVar1->vector[0x15].y = 0.5;
+    pVVar1->vector[0x15].z = -0.25;
     if (pVVar1->max_length < 0x17) goto code_?;
-    pVVar1->vector[0x16].x = (float)(int)uVar7;
-    pVVar1->vector[0x16].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x16].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffedc,0xbf000000,0x3f000000,0x3e800000,0);
+    pVVar1->vector[0x16].x = -0.5;
+    pVVar1->vector[0x16].y = 0.5;
+    pVVar1->vector[0x16].z = 0.0;
     if (pVVar1->max_length < 0x18) goto code_?;
-    pVVar1->vector[0x17].x = (float)uVar2;
-    pVVar1->vector[0x17].y = (float)uVar8;
-    pVVar1->vector[0x17].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffed0,0xbf000000,0x3f000000,0x3f000000,0);
+    pVVar1->vector[0x17].x = -0.5;
+    pVVar1->vector[0x17].y = 0.5;
+    pVVar1->vector[0x17].z = 0.25;
     if (pVVar1->max_length < 0x19) goto code_?;
-    pVVar1->vector[0x18].x = (float)(int)uVar7;
-    pVVar1->vector[0x18].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x18].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffec4,0xbe800000,0xbf000000,0xbf000000,0);
+    pVVar1->vector[0x18].x = -0.5;
+    pVVar1->vector[0x18].y = 0.5;
+    pVVar1->vector[0x18].z = 0.5;
     if (pVVar1->max_length < 0x1a) goto code_?;
-    pVVar1->vector[0x19].x = (float)uVar2;
-    pVVar1->vector[0x19].y = (float)uVar8;
-    pVVar1->vector[0x19].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffeb8,0xbe800000,0xbf000000,0xbe800000,0);
+    pVVar1->vector[0x19].x = -0.25;
+    pVVar1->vector[0x19].y = -0.5;
+    pVVar1->vector[0x19].z = -0.5;
     if (pVVar1->max_length < 0x1b) goto code_?;
-    pVVar1->vector[0x1a].x = (float)(int)uVar7;
-    pVVar1->vector[0x1a].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x1a].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffeac,0xbe800000,0xbf000000,0,0);
+    pVVar1->vector[0x1a].x = -0.25;
+    pVVar1->vector[0x1a].y = -0.5;
+    pVVar1->vector[0x1a].z = -0.25;
     if (pVVar1->max_length < 0x1c) goto code_?;
-    pVVar1->vector[0x1b].x = (float)uVar2;
-    pVVar1->vector[0x1b].y = (float)uVar8;
-    pVVar1->vector[0x1b].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffea0,0xbe800000,0xbf000000,0x3e800000,0);
+    pVVar1->vector[0x1b].x = -0.25;
+    pVVar1->vector[0x1b].y = -0.5;
+    pVVar1->vector[0x1b].z = 0.0;
     if (pVVar1->max_length < 0x1d) goto code_?;
-    pVVar1->vector[0x1c].x = (float)(int)uVar7;
-    pVVar1->vector[0x1c].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x1c].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe94,0xbe800000,0xbf000000,0x3f000000,0);
+    pVVar1->vector[0x1c].x = -0.25;
+    pVVar1->vector[0x1c].y = -0.5;
+    pVVar1->vector[0x1c].z = 0.25;
     if (pVVar1->max_length < 0x1e) goto code_?;
-    pVVar1->vector[0x1d].x = (float)uVar2;
-    pVVar1->vector[0x1d].y = (float)uVar8;
-    pVVar1->vector[0x1d].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe88,0xbe800000,0xbe800000,0xbf000000,0);
+    pVVar1->vector[0x1d].x = -0.25;
+    pVVar1->vector[0x1d].y = -0.5;
+    pVVar1->vector[0x1d].z = 0.5;
     if (pVVar1->max_length < 0x1f) goto code_?;
-    pVVar1->vector[0x1e].x = (float)(int)uVar7;
-    pVVar1->vector[0x1e].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1->vector[0x1e].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe7c,0xbe800000,0xbe800000,0xbe800000,0);
+    pVVar1->vector[0x1e].x = -0.25;
+    pVVar1->vector[0x1e].y = -0.25;
+    pVVar1->vector[0x1e].z = -0.5;
     if (pVVar1->max_length < 0x20) goto code_?;
-    pVVar1->vector[0x1f].x = (float)uVar2;
-    pVVar1->vector[0x1f].y = (float)uVar8;
-    pVVar1->vector[0x1f].z = fVar9;
-    uVar7 = 0;
-    pIVar10 = (Il2CppArrayBounds *)0x0;
-    func_?(&stack0xfffffe70,0xbe800000,0xbe800000,0,0);
+    pVVar1->vector[0x1f].x = -0.25;
+    pVVar1->vector[0x1f].y = -0.25;
+    pVVar1->vector[0x1f].z = -0.25;
     if (pVVar1->max_length < 0x21) goto code_?;
-    pVVar1[1].klass = (Vector3__Array__Class *)(int)uVar7;
-    pVVar1[1].monitor = (MonitorData *)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[1].bounds = pIVar10;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe64,0xbe800000,0xbe800000,0x3e800000,0);
+    pVVar1[1].klass = (Vector3__Array__Class *)0xbe800000;
+    pVVar1[1].monitor = (MonitorData *)0xbe800000;
+    pVVar1[1].bounds = (Il2CppArrayBounds *)0x0;
     if (pVVar1->max_length < 0x22) goto code_?;
-    pVVar1[1].max_length = uVar2;
-    pVVar1[1].vector[0].x = (float)uVar8;
-    pVVar1[1].vector[0].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe58,0xbe800000,0xbe800000,0x3f000000,0);
+    pVVar1[1].max_length = 0xbe800000;
+    pVVar1[1].vector[0].x = -0.25;
+    pVVar1[1].vector[0].y = 0.25;
     if (pVVar1->max_length < 0x23) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0].z = uVar7;
-    pVVar1[1].vector[1].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe4c,0xbe800000,0,0xbf000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0].z = 0xbe800000be800000;
+    pVVar1[1].vector[1].y = 0.5;
     if (pVVar1->max_length < 0x24) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[1].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[2].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe40,0xbe800000,0,0xbe800000,0);
+    *(undefined8 *)&pVVar1[1].vector[1].z = 0xbe800000;
+    pVVar1[1].vector[2].y = -0.5;
     if (pVVar1->max_length < 0x25) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[2].z = uVar7;
-    pVVar1[1].vector[3].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe34,0xbe800000,0,0,0);
+    *(undefined8 *)&pVVar1[1].vector[2].z = 0xbe800000;
+    pVVar1[1].vector[3].y = -0.25;
     if (pVVar1->max_length < 0x26) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[3].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[4].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe28,0xbe800000,0,0x3e800000,0);
+    *(undefined8 *)&pVVar1[1].vector[3].z = 0xbe800000;
+    pVVar1[1].vector[4].y = 0.0;
     if (pVVar1->max_length < 0x27) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[4].z = uVar7;
-    pVVar1[1].vector[5].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe1c,0xbe800000,0,0x3f000000,0);
+    *(undefined8 *)&pVVar1[1].vector[4].z = 0xbe800000;
+    pVVar1[1].vector[5].y = 0.25;
     if (pVVar1->max_length < 0x28) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[5].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[6].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe10,0xbe800000,0x3e800000,0xbf000000,0);
+    *(undefined8 *)&pVVar1[1].vector[5].z = 0xbe800000;
+    pVVar1[1].vector[6].y = 0.5;
     if (pVVar1->max_length < 0x29) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[6].z = uVar7;
-    pVVar1[1].vector[7].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffe04,0xbe800000,0x3e800000,0xbe800000,0);
+    *(undefined8 *)&pVVar1[1].vector[6].z = 0x3e800000be800000;
+    pVVar1[1].vector[7].y = -0.5;
     if (pVVar1->max_length < 0x2a) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[7].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[8].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffdf8,0xbe800000,0x3e800000,0,0);
+    *(undefined8 *)&pVVar1[1].vector[7].z = 0x3e800000be800000;
+    pVVar1[1].vector[8].y = -0.25;
     if (pVVar1->max_length < 0x2b) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[8].z = uVar7;
-    pVVar1[1].vector[9].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffdec,0xbe800000,0x3e800000,0x3e800000,0);
+    *(undefined8 *)&pVVar1[1].vector[8].z = 0x3e800000be800000;
+    pVVar1[1].vector[9].y = 0.0;
     if (pVVar1->max_length < 0x2c) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[9].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[10].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffde0,0xbe800000,0x3e800000,0x3f000000,0);
+    *(undefined8 *)&pVVar1[1].vector[9].z = 0x3e800000be800000;
+    pVVar1[1].vector[10].y = 0.25;
     if (pVVar1->max_length < 0x2d) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[10].z = uVar7;
-    pVVar1[1].vector[0xb].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffdd4,0xbe800000,0x3f000000,0xbf000000,0);
+    *(undefined8 *)&pVVar1[1].vector[10].z = 0x3e800000be800000;
+    pVVar1[1].vector[0xb].y = 0.5;
     if (pVVar1->max_length < 0x2e) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0xb].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0xc].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffdc8,0xbe800000,0x3f000000,0xbe800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0xb].z = 0x3f000000be800000;
+    pVVar1[1].vector[0xc].y = -0.5;
     if (pVVar1->max_length < 0x2f) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0xc].z = uVar7;
-    pVVar1[1].vector[0xd].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffdbc,0xbe800000,0x3f000000,0,0);
+    *(undefined8 *)&pVVar1[1].vector[0xc].z = 0x3f000000be800000;
+    pVVar1[1].vector[0xd].y = -0.25;
     if (pVVar1->max_length < 0x30) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0xd].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0xe].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffdb0,0xbe800000,0x3f000000,0x3e800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0xd].z = 0x3f000000be800000;
+    pVVar1[1].vector[0xe].y = 0.0;
     if (pVVar1->max_length < 0x31) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0xe].z = uVar7;
-    pVVar1[1].vector[0xf].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffda4,0xbe800000,0x3f000000,0x3f000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0xe].z = 0x3f000000be800000;
+    pVVar1[1].vector[0xf].y = 0.25;
     if (pVVar1->max_length < 0x32) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0xf].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x10].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd98,0,0xbf000000,0xbf000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0xf].z = 0x3f000000be800000;
+    pVVar1[1].vector[0x10].y = 0.5;
     if (pVVar1->max_length < 0x33) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x10].z = uVar7;
-    pVVar1[1].vector[0x11].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd8c,0,0xbf000000,0xbe800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x10].z = 0xbf00000000000000;
+    pVVar1[1].vector[0x11].y = -0.5;
     if (pVVar1->max_length < 0x34) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x11].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x12].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd80,0,0xbf000000,0,0);
+    *(undefined8 *)&pVVar1[1].vector[0x11].z = 0xbf00000000000000;
+    pVVar1[1].vector[0x12].y = -0.25;
     if (pVVar1->max_length < 0x35) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x12].z = uVar7;
-    pVVar1[1].vector[0x13].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd74,0,0xbf000000,0x3e800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x12].z = 0xbf00000000000000;
+    pVVar1[1].vector[0x13].y = 0.0;
     if (pVVar1->max_length < 0x36) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x13].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x14].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd68,0,0xbf000000,0x3f000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x13].z = 0xbf00000000000000;
+    pVVar1[1].vector[0x14].y = 0.25;
     if (pVVar1->max_length < 0x37) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x14].z = uVar7;
-    pVVar1[1].vector[0x15].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd5c,0,0xbe800000,0xbf000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x14].z = 0xbf00000000000000;
+    pVVar1[1].vector[0x15].y = 0.5;
     if (pVVar1->max_length < 0x38) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x15].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x16].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd50,0,0xbe800000,0xbe800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x15].z = 0xbe80000000000000;
+    pVVar1[1].vector[0x16].y = -0.5;
     if (pVVar1->max_length < 0x39) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x16].z = uVar7;
-    pVVar1[1].vector[0x17].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd44,0,0xbe800000,0,0);
+    *(undefined8 *)&pVVar1[1].vector[0x16].z = 0xbe80000000000000;
+    pVVar1[1].vector[0x17].y = -0.25;
     if (pVVar1->max_length < 0x3a) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x17].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x18].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd38,0,0xbe800000,0x3e800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x17].z = 0xbe80000000000000;
+    pVVar1[1].vector[0x18].y = 0.0;
     if (pVVar1->max_length < 0x3b) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x18].z = uVar7;
-    pVVar1[1].vector[0x19].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd2c,0,0xbe800000,0x3f000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x18].z = 0xbe80000000000000;
+    pVVar1[1].vector[0x19].y = 0.25;
     if (pVVar1->max_length < 0x3c) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x19].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x1a].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd20,0,0,0xbf000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x19].z = 0xbe80000000000000;
+    pVVar1[1].vector[0x1a].y = 0.5;
     if (pVVar1->max_length < 0x3d) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x1a].z = uVar7;
-    pVVar1[1].vector[0x1b].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd14,0,0,0xbe800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x1a].z = 0;
+    pVVar1[1].vector[0x1b].y = -0.5;
     if (pVVar1->max_length < 0x3e) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x1b].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x1c].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffd08,0,0,0,0);
+    *(undefined8 *)&pVVar1[1].vector[0x1b].z = 0;
+    pVVar1[1].vector[0x1c].y = -0.25;
     if (pVVar1->max_length < 0x3f) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x1c].z = uVar7;
-    pVVar1[1].vector[0x1d].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffcfc,0,0,0x3e800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x1c].z = 0;
+    pVVar1[1].vector[0x1d].y = 0.0;
     if (pVVar1->max_length < 0x40) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x1d].z = CONCAT44(uVar8,uVar2);
-    pVVar1[1].vector[0x1e].y = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffcf0,0,0,0x3f000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x1d].z = 0;
+    pVVar1[1].vector[0x1e].y = 0.25;
     if (pVVar1->max_length < 0x41) goto code_?;
-    *(undefined8 *)&pVVar1[1].vector[0x1e].z = uVar7;
-    pVVar1[1].vector[0x1f].y = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    pMVar11 = (MonitorData *)0x0;
-    func_?(&stack0xfffffce4,0,0x3e800000,0xbf000000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x1e].z = 0;
+    pVVar1[1].vector[0x1f].y = 0.5;
     if (pVVar1->max_length < 0x42) goto code_?;
-    *(ulonglong *)&pVVar1[1].vector[0x1f].z = CONCAT44(uVar8,uVar2);
-    pVVar1[2].monitor = pMVar11;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffcd8,0,0x3e800000,0xbe800000,0);
+    *(undefined8 *)&pVVar1[1].vector[0x1f].z = 0x3e80000000000000;
+    pVVar1[2].monitor = (MonitorData *)0xbf000000;
     if (pVVar1->max_length < 0x43) goto code_?;
-    pVVar1[2].bounds = (Il2CppArrayBounds *)(int)uVar7;
-    pVVar1[2].max_length = (int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffccc,0,0x3e800000,0,0);
+    pVVar1[2].bounds = (Il2CppArrayBounds *)0x0;
+    pVVar1[2].max_length = 0x3e800000;
+    pVVar1[2].vector[0].x = -0.25;
     if (pVVar1->max_length < 0x44) goto code_?;
-    pVVar1[2].vector[0].y = (float)uVar2;
-    pVVar1[2].vector[0].z = (float)uVar8;
-    pVVar1[2].vector[1].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffcc0,0,0x3e800000,0x3e800000,0);
+    pVVar1[2].vector[0].y = 0.0;
+    pVVar1[2].vector[0].z = 0.25;
+    pVVar1[2].vector[1].x = 0.0;
     if (pVVar1->max_length < 0x45) goto code_?;
-    pVVar1[2].vector[1].y = (float)(int)uVar7;
-    pVVar1[2].vector[1].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[2].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffcb4,0,0x3e800000,0x3f000000,0);
+    pVVar1[2].vector[1].y = 0.0;
+    pVVar1[2].vector[1].z = 0.25;
+    pVVar1[2].vector[2].x = 0.25;
     if (pVVar1->max_length < 0x46) goto code_?;
-    pVVar1[2].vector[2].y = (float)uVar2;
-    pVVar1[2].vector[2].z = (float)uVar8;
-    pVVar1[2].vector[3].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffca8,0,0x3f000000,0xbf000000,0);
+    pVVar1[2].vector[2].y = 0.0;
+    pVVar1[2].vector[2].z = 0.25;
+    pVVar1[2].vector[3].x = 0.5;
     if (pVVar1->max_length < 0x47) goto code_?;
-    pVVar1[2].vector[3].y = (float)(int)uVar7;
-    pVVar1[2].vector[3].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[4].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc9c,0,0x3f000000,0xbe800000,0);
+    pVVar1[2].vector[3].y = 0.0;
+    pVVar1[2].vector[3].z = 0.5;
+    pVVar1[2].vector[4].x = -0.5;
     if (pVVar1->max_length < 0x48) goto code_?;
-    pVVar1[2].vector[4].y = (float)uVar2;
-    pVVar1[2].vector[4].z = (float)uVar8;
-    pVVar1[2].vector[5].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc90,0,0x3f000000,0,0);
+    pVVar1[2].vector[4].y = 0.0;
+    pVVar1[2].vector[4].z = 0.5;
+    pVVar1[2].vector[5].x = -0.25;
     if (pVVar1->max_length < 0x49) goto code_?;
-    pVVar1[2].vector[5].y = (float)(int)uVar7;
-    pVVar1[2].vector[5].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[6].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc84,0,0x3f000000,0x3e800000,0);
+    pVVar1[2].vector[5].y = 0.0;
+    pVVar1[2].vector[5].z = 0.5;
+    pVVar1[2].vector[6].x = 0.0;
     if (pVVar1->max_length < 0x4a) goto code_?;
-    pVVar1[2].vector[6].y = (float)uVar2;
-    pVVar1[2].vector[6].z = (float)uVar8;
-    pVVar1[2].vector[7].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc78,0,0x3f000000,0x3f000000,0);
+    pVVar1[2].vector[6].y = 0.0;
+    pVVar1[2].vector[6].z = 0.5;
+    pVVar1[2].vector[7].x = 0.25;
     if (pVVar1->max_length < 0x4b) goto code_?;
-    pVVar1[2].vector[7].y = (float)(int)uVar7;
-    pVVar1[2].vector[7].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[8].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc6c,0x3e800000,0xbf000000,0xbf000000,0);
+    pVVar1[2].vector[7].y = 0.0;
+    pVVar1[2].vector[7].z = 0.5;
+    pVVar1[2].vector[8].x = 0.5;
     if (pVVar1->max_length < 0x4c) goto code_?;
-    pVVar1[2].vector[8].y = (float)uVar2;
-    pVVar1[2].vector[8].z = (float)uVar8;
-    pVVar1[2].vector[9].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc60,0x3e800000,0xbf000000,0xbe800000,0);
+    pVVar1[2].vector[8].y = 0.25;
+    pVVar1[2].vector[8].z = -0.5;
+    pVVar1[2].vector[9].x = -0.5;
     if (pVVar1->max_length < 0x4d) goto code_?;
-    pVVar1[2].vector[9].y = (float)(int)uVar7;
-    pVVar1[2].vector[9].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[10].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc54,0x3e800000,0xbf000000,0,0);
+    pVVar1[2].vector[9].y = 0.25;
+    pVVar1[2].vector[9].z = -0.5;
+    pVVar1[2].vector[10].x = -0.25;
     if (pVVar1->max_length < 0x4e) goto code_?;
-    pVVar1[2].vector[10].y = (float)uVar2;
-    pVVar1[2].vector[10].z = (float)uVar8;
-    pVVar1[2].vector[0xb].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc48,0x3e800000,0xbf000000,0x3e800000,0);
+    pVVar1[2].vector[10].y = 0.25;
+    pVVar1[2].vector[10].z = -0.5;
+    pVVar1[2].vector[0xb].x = 0.0;
     if (pVVar1->max_length < 0x4f) goto code_?;
-    pVVar1[2].vector[0xb].y = (float)(int)uVar7;
-    pVVar1[2].vector[0xb].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0xc].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc3c,0x3e800000,0xbf000000,0x3f000000,0);
+    pVVar1[2].vector[0xb].y = 0.25;
+    pVVar1[2].vector[0xb].z = -0.5;
+    pVVar1[2].vector[0xc].x = 0.25;
     if (pVVar1->max_length < 0x50) goto code_?;
-    pVVar1[2].vector[0xc].y = (float)uVar2;
-    pVVar1[2].vector[0xc].z = (float)uVar8;
-    pVVar1[2].vector[0xd].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc30,0x3e800000,0xbe800000,0xbf000000,0);
+    pVVar1[2].vector[0xc].y = 0.25;
+    pVVar1[2].vector[0xc].z = -0.5;
+    pVVar1[2].vector[0xd].x = 0.5;
     if (pVVar1->max_length < 0x51) goto code_?;
-    pVVar1[2].vector[0xd].y = (float)(int)uVar7;
-    pVVar1[2].vector[0xd].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0xe].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc24,0x3e800000,0xbe800000,0xbe800000,0);
+    pVVar1[2].vector[0xd].y = 0.25;
+    pVVar1[2].vector[0xd].z = -0.25;
+    pVVar1[2].vector[0xe].x = -0.5;
     if (pVVar1->max_length < 0x52) goto code_?;
-    pVVar1[2].vector[0xe].y = (float)uVar2;
-    pVVar1[2].vector[0xe].z = (float)uVar8;
-    pVVar1[2].vector[0xf].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc18,0x3e800000,0xbe800000,0,0);
+    pVVar1[2].vector[0xe].y = 0.25;
+    pVVar1[2].vector[0xe].z = -0.25;
+    pVVar1[2].vector[0xf].x = -0.25;
     if (pVVar1->max_length < 0x53) goto code_?;
-    pVVar1[2].vector[0xf].y = (float)(int)uVar7;
-    pVVar1[2].vector[0xf].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x10].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc0c,0x3e800000,0xbe800000,0x3e800000,0);
+    pVVar1[2].vector[0xf].y = 0.25;
+    pVVar1[2].vector[0xf].z = -0.25;
+    pVVar1[2].vector[0x10].x = 0.0;
     if (pVVar1->max_length < 0x54) goto code_?;
-    pVVar1[2].vector[0x10].y = (float)uVar2;
-    pVVar1[2].vector[0x10].z = (float)uVar8;
-    pVVar1[2].vector[0x11].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffc00,0x3e800000,0xbe800000,0x3f000000,0);
+    pVVar1[2].vector[0x10].y = 0.25;
+    pVVar1[2].vector[0x10].z = -0.25;
+    pVVar1[2].vector[0x11].x = 0.25;
     if (pVVar1->max_length < 0x55) goto code_?;
-    pVVar1[2].vector[0x11].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x11].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x12].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffbf4,0x3e800000,0,0xbf000000,0);
+    pVVar1[2].vector[0x11].y = 0.25;
+    pVVar1[2].vector[0x11].z = -0.25;
+    pVVar1[2].vector[0x12].x = 0.5;
     if (pVVar1->max_length < 0x56) goto code_?;
-    pVVar1[2].vector[0x12].y = (float)uVar2;
-    pVVar1[2].vector[0x12].z = (float)uVar8;
-    pVVar1[2].vector[0x13].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffbe8,0x3e800000,0,0xbe800000,0);
+    pVVar1[2].vector[0x12].y = 0.25;
+    pVVar1[2].vector[0x12].z = 0.0;
+    pVVar1[2].vector[0x13].x = -0.5;
     if (pVVar1->max_length < 0x57) goto code_?;
-    pVVar1[2].vector[0x13].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x13].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x14].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffbdc,0x3e800000,0,0,0);
+    pVVar1[2].vector[0x13].y = 0.25;
+    pVVar1[2].vector[0x13].z = 0.0;
+    pVVar1[2].vector[0x14].x = -0.25;
     if (pVVar1->max_length < 0x58) goto code_?;
-    pVVar1[2].vector[0x14].y = (float)uVar2;
-    pVVar1[2].vector[0x14].z = (float)uVar8;
-    pVVar1[2].vector[0x15].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffbd0,0x3e800000,0,0x3e800000,0);
+    pVVar1[2].vector[0x14].y = 0.25;
+    pVVar1[2].vector[0x14].z = 0.0;
+    pVVar1[2].vector[0x15].x = 0.0;
     if (pVVar1->max_length < 0x59) goto code_?;
-    pVVar1[2].vector[0x15].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x15].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x16].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffbc4,0x3e800000,0,0x3f000000,0);
+    pVVar1[2].vector[0x15].y = 0.25;
+    pVVar1[2].vector[0x15].z = 0.0;
+    pVVar1[2].vector[0x16].x = 0.25;
     if (pVVar1->max_length < 0x5a) goto code_?;
-    pVVar1[2].vector[0x16].y = (float)uVar2;
-    pVVar1[2].vector[0x16].z = (float)uVar8;
-    pVVar1[2].vector[0x17].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffbb8,0x3e800000,0x3e800000,0xbf000000,0);
+    pVVar1[2].vector[0x16].y = 0.25;
+    pVVar1[2].vector[0x16].z = 0.0;
+    pVVar1[2].vector[0x17].x = 0.5;
     if (pVVar1->max_length < 0x5b) goto code_?;
-    pVVar1[2].vector[0x17].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x17].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x18].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffbac,0x3e800000,0x3e800000,0xbe800000,0);
+    pVVar1[2].vector[0x17].y = 0.25;
+    pVVar1[2].vector[0x17].z = 0.25;
+    pVVar1[2].vector[0x18].x = -0.5;
     if (pVVar1->max_length < 0x5c) goto code_?;
-    pVVar1[2].vector[0x18].y = (float)uVar2;
-    pVVar1[2].vector[0x18].z = (float)uVar8;
-    pVVar1[2].vector[0x19].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffba0,0x3e800000,0x3e800000,0,0);
+    pVVar1[2].vector[0x18].y = 0.25;
+    pVVar1[2].vector[0x18].z = 0.25;
+    pVVar1[2].vector[0x19].x = -0.25;
     if (pVVar1->max_length < 0x5d) goto code_?;
-    pVVar1[2].vector[0x19].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x19].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x1a].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb94,0x3e800000,0x3e800000,0x3e800000,0);
+    pVVar1[2].vector[0x19].y = 0.25;
+    pVVar1[2].vector[0x19].z = 0.25;
+    pVVar1[2].vector[0x1a].x = 0.0;
     if (pVVar1->max_length < 0x5e) goto code_?;
-    pVVar1[2].vector[0x1a].y = (float)uVar2;
-    pVVar1[2].vector[0x1a].z = (float)uVar8;
-    pVVar1[2].vector[0x1b].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb88,0x3e800000,0x3e800000,0x3f000000,0);
+    pVVar1[2].vector[0x1a].y = 0.25;
+    pVVar1[2].vector[0x1a].z = 0.25;
+    pVVar1[2].vector[0x1b].x = 0.25;
     if (pVVar1->max_length < 0x5f) goto code_?;
-    pVVar1[2].vector[0x1b].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x1b].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x1c].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb7c,0x3e800000,0x3f000000,0xbf000000,0);
+    pVVar1[2].vector[0x1b].y = 0.25;
+    pVVar1[2].vector[0x1b].z = 0.25;
+    pVVar1[2].vector[0x1c].x = 0.5;
     if (pVVar1->max_length < 0x60) goto code_?;
-    pVVar1[2].vector[0x1c].y = (float)uVar2;
-    pVVar1[2].vector[0x1c].z = (float)uVar8;
-    pVVar1[2].vector[0x1d].x = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb70,0x3e800000,0x3f000000,0xbe800000,0);
+    pVVar1[2].vector[0x1c].y = 0.25;
+    pVVar1[2].vector[0x1c].z = 0.5;
+    pVVar1[2].vector[0x1d].x = -0.5;
     if (pVVar1->max_length < 0x61) goto code_?;
-    pVVar1[2].vector[0x1d].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x1d].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[2].vector[0x1e].x = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb64,0x3e800000,0x3f000000,0,0);
+    pVVar1[2].vector[0x1d].y = 0.25;
+    pVVar1[2].vector[0x1d].z = 0.5;
+    pVVar1[2].vector[0x1e].x = -0.25;
     if (pVVar1->max_length < 0x62) goto code_?;
-    pVVar1[2].vector[0x1e].y = (float)uVar2;
-    pVVar1[2].vector[0x1e].z = (float)uVar8;
-    pVVar1[2].vector[0x1f].x = fVar9;
-    uVar7 = 0;
-    pVVar12 = (Vector3__Array__Class *)0x0;
-    func_?(&stack0xfffffb58,0x3e800000,0x3f000000,0x3e800000,0);
+    pVVar1[2].vector[0x1e].y = 0.25;
+    pVVar1[2].vector[0x1e].z = 0.5;
+    pVVar1[2].vector[0x1f].x = 0.0;
     if (pVVar1->max_length < 99) goto code_?;
-    pVVar1[2].vector[0x1f].y = (float)(int)uVar7;
-    pVVar1[2].vector[0x1f].z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].klass = pVVar12;
-    uVar2 = 0;
-    uVar8 = 0;
-    iVar13 = 0;
-    func_?(&stack0xfffffb4c,0x3e800000,0x3f000000,0x3f000000,0);
+    pVVar1[2].vector[0x1f].y = 0.25;
+    pVVar1[2].vector[0x1f].z = 0.5;
+    pVVar1[3].klass = (Vector3__Array__Class *)0x3e800000;
     if (pVVar1->max_length < 100) goto code_?;
-    pVVar1[3].monitor = (MonitorData *)uVar2;
-    pVVar1[3].bounds = (Il2CppArrayBounds *)uVar8;
-    pVVar1[3].max_length = iVar13;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb40,0x3f000000,0xbf000000,0xbf000000,0);
+    pVVar1[3].monitor = (MonitorData *)0x3e800000;
+    pVVar1[3].bounds = (Il2CppArrayBounds *)0x3f000000;
+    pVVar1[3].max_length = 0x3f000000;
     if (pVVar1->max_length < 0x65) goto code_?;
-    pVVar1[3].vector[0].x = (float)(int)uVar7;
-    pVVar1[3].vector[0].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[0].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb34,0x3f000000,0xbf000000,0xbe800000,0);
+    pVVar1[3].vector[0].x = 0.5;
+    pVVar1[3].vector[0].y = -0.5;
+    pVVar1[3].vector[0].z = -0.5;
     if (pVVar1->max_length < 0x66) goto code_?;
-    pVVar1[3].vector[1].x = (float)uVar2;
-    pVVar1[3].vector[1].y = (float)uVar8;
-    pVVar1[3].vector[1].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb28,0x3f000000,0xbf000000,0,0);
+    pVVar1[3].vector[1].x = 0.5;
+    pVVar1[3].vector[1].y = -0.5;
+    pVVar1[3].vector[1].z = -0.25;
     if (pVVar1->max_length < 0x67) goto code_?;
-    pVVar1[3].vector[2].x = (float)(int)uVar7;
-    pVVar1[3].vector[2].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[2].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb1c,0x3f000000,0xbf000000,0x3e800000,0);
+    pVVar1[3].vector[2].x = 0.5;
+    pVVar1[3].vector[2].y = -0.5;
+    pVVar1[3].vector[2].z = 0.0;
     if (pVVar1->max_length < 0x68) goto code_?;
-    pVVar1[3].vector[3].x = (float)uVar2;
-    pVVar1[3].vector[3].y = (float)uVar8;
-    pVVar1[3].vector[3].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb10,0x3f000000,0xbf000000,0x3f000000,0);
+    pVVar1[3].vector[3].x = 0.5;
+    pVVar1[3].vector[3].y = -0.5;
+    pVVar1[3].vector[3].z = 0.25;
     if (pVVar1->max_length < 0x69) goto code_?;
-    pVVar1[3].vector[4].x = (float)(int)uVar7;
-    pVVar1[3].vector[4].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[4].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffb04,0x3f000000,0xbe800000,0xbf000000,0);
+    pVVar1[3].vector[4].x = 0.5;
+    pVVar1[3].vector[4].y = -0.5;
+    pVVar1[3].vector[4].z = 0.5;
     if (pVVar1->max_length < 0x6a) goto code_?;
-    pVVar1[3].vector[5].x = (float)uVar2;
-    pVVar1[3].vector[5].y = (float)uVar8;
-    pVVar1[3].vector[5].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffaf8,0x3f000000,0xbe800000,0xbe800000,0);
+    pVVar1[3].vector[5].x = 0.5;
+    pVVar1[3].vector[5].y = -0.25;
+    pVVar1[3].vector[5].z = -0.5;
     if (pVVar1->max_length < 0x6b) goto code_?;
-    pVVar1[3].vector[6].x = (float)(int)uVar7;
-    pVVar1[3].vector[6].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[6].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffaec,0x3f000000,0xbe800000,0,0);
+    pVVar1[3].vector[6].x = 0.5;
+    pVVar1[3].vector[6].y = -0.25;
+    pVVar1[3].vector[6].z = -0.25;
     if (pVVar1->max_length < 0x6c) goto code_?;
-    pVVar1[3].vector[7].x = (float)uVar2;
-    pVVar1[3].vector[7].y = (float)uVar8;
-    pVVar1[3].vector[7].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffae0,0x3f000000,0xbe800000,0x3e800000,0);
+    pVVar1[3].vector[7].x = 0.5;
+    pVVar1[3].vector[7].y = -0.25;
+    pVVar1[3].vector[7].z = 0.0;
     if (pVVar1->max_length < 0x6d) goto code_?;
-    pVVar1[3].vector[8].x = (float)(int)uVar7;
-    pVVar1[3].vector[8].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[8].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffad4,0x3f000000,0xbe800000,0x3f000000,0);
+    pVVar1[3].vector[8].x = 0.5;
+    pVVar1[3].vector[8].y = -0.25;
+    pVVar1[3].vector[8].z = 0.25;
     if (pVVar1->max_length < 0x6e) goto code_?;
-    pVVar1[3].vector[9].x = (float)uVar2;
-    pVVar1[3].vector[9].y = (float)uVar8;
-    pVVar1[3].vector[9].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffac8,0x3f000000,0,0xbf000000,0);
+    pVVar1[3].vector[9].x = 0.5;
+    pVVar1[3].vector[9].y = -0.25;
+    pVVar1[3].vector[9].z = 0.5;
     if (pVVar1->max_length < 0x6f) goto code_?;
-    pVVar1[3].vector[10].x = (float)(int)uVar7;
-    pVVar1[3].vector[10].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[10].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffabc,0x3f000000,0,0xbe800000,0);
+    pVVar1[3].vector[10].x = 0.5;
+    pVVar1[3].vector[10].y = 0.0;
+    pVVar1[3].vector[10].z = -0.5;
     if (pVVar1->max_length < 0x70) goto code_?;
-    pVVar1[3].vector[0xb].x = (float)uVar2;
-    pVVar1[3].vector[0xb].y = (float)uVar8;
-    pVVar1[3].vector[0xb].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffab0,0x3f000000,0,0,0);
+    pVVar1[3].vector[0xb].x = 0.5;
+    pVVar1[3].vector[0xb].y = 0.0;
+    pVVar1[3].vector[0xb].z = -0.25;
     if (pVVar1->max_length < 0x71) goto code_?;
-    pVVar1[3].vector[0xc].x = (float)(int)uVar7;
-    pVVar1[3].vector[0xc].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[0xc].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffaa4,0x3f000000,0,0x3e800000,0);
+    pVVar1[3].vector[0xc].x = 0.5;
+    pVVar1[3].vector[0xc].y = 0.0;
+    pVVar1[3].vector[0xc].z = 0.0;
     if (pVVar1->max_length < 0x72) goto code_?;
-    pVVar1[3].vector[0xd].x = (float)uVar2;
-    pVVar1[3].vector[0xd].y = (float)uVar8;
-    pVVar1[3].vector[0xd].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa98,0x3f000000,0,0x3f000000,0);
+    pVVar1[3].vector[0xd].x = 0.5;
+    pVVar1[3].vector[0xd].y = 0.0;
+    pVVar1[3].vector[0xd].z = 0.25;
     if (pVVar1->max_length < 0x73) goto code_?;
-    pVVar1[3].vector[0xe].x = (float)(int)uVar7;
-    pVVar1[3].vector[0xe].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[0xe].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa8c,0x3f000000,0x3e800000,0xbf000000,0);
+    pVVar1[3].vector[0xe].x = 0.5;
+    pVVar1[3].vector[0xe].y = 0.0;
+    pVVar1[3].vector[0xe].z = 0.5;
     if (pVVar1->max_length < 0x74) goto code_?;
-    pVVar1[3].vector[0xf].x = (float)uVar2;
-    pVVar1[3].vector[0xf].y = (float)uVar8;
-    pVVar1[3].vector[0xf].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa80,0x3f000000,0x3e800000,0xbe800000,0);
+    pVVar1[3].vector[0xf].x = 0.5;
+    pVVar1[3].vector[0xf].y = 0.25;
+    pVVar1[3].vector[0xf].z = -0.5;
     if (pVVar1->max_length < 0x75) goto code_?;
-    pVVar1[3].vector[0x10].x = (float)(int)uVar7;
-    pVVar1[3].vector[0x10].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[0x10].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa74,0x3f000000,0x3e800000,0,0);
+    pVVar1[3].vector[0x10].x = 0.5;
+    pVVar1[3].vector[0x10].y = 0.25;
+    pVVar1[3].vector[0x10].z = -0.25;
     if (pVVar1->max_length < 0x76) goto code_?;
-    pVVar1[3].vector[0x11].x = (float)uVar2;
-    pVVar1[3].vector[0x11].y = (float)uVar8;
-    pVVar1[3].vector[0x11].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa68,0x3f000000,0x3e800000,0x3e800000,0);
+    pVVar1[3].vector[0x11].x = 0.5;
+    pVVar1[3].vector[0x11].y = 0.25;
+    pVVar1[3].vector[0x11].z = 0.0;
     if (pVVar1->max_length < 0x77) goto code_?;
-    pVVar1[3].vector[0x12].x = (float)(int)uVar7;
-    pVVar1[3].vector[0x12].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[0x12].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa5c,0x3f000000,0x3e800000,0x3f000000,0);
+    pVVar1[3].vector[0x12].x = 0.5;
+    pVVar1[3].vector[0x12].y = 0.25;
+    pVVar1[3].vector[0x12].z = 0.25;
     if (pVVar1->max_length < 0x78) goto code_?;
-    pVVar1[3].vector[0x13].x = (float)uVar2;
-    pVVar1[3].vector[0x13].y = (float)uVar8;
-    pVVar1[3].vector[0x13].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa50,0x3f000000,0x3f000000,0xbf000000,0);
+    pVVar1[3].vector[0x13].x = 0.5;
+    pVVar1[3].vector[0x13].y = 0.25;
+    pVVar1[3].vector[0x13].z = 0.5;
     if (pVVar1->max_length < 0x79) goto code_?;
-    pVVar1[3].vector[0x14].x = (float)(int)uVar7;
-    pVVar1[3].vector[0x14].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[0x14].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa44,0x3f000000,0x3f000000,0xbe800000,0);
+    pVVar1[3].vector[0x14].x = 0.5;
+    pVVar1[3].vector[0x14].y = 0.5;
+    pVVar1[3].vector[0x14].z = -0.5;
     if (pVVar1->max_length < 0x7a) goto code_?;
-    pVVar1[3].vector[0x15].x = (float)uVar2;
-    pVVar1[3].vector[0x15].y = (float)uVar8;
-    pVVar1[3].vector[0x15].z = fVar9;
-    uVar7 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa38,0x3f000000,0x3f000000,0,0);
+    pVVar1[3].vector[0x15].x = 0.5;
+    pVVar1[3].vector[0x15].y = 0.5;
+    pVVar1[3].vector[0x15].z = -0.25;
     if (pVVar1->max_length < 0x7b) goto code_?;
-    pVVar1[3].vector[0x16].x = (float)(int)uVar7;
-    pVVar1[3].vector[0x16].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-    pVVar1[3].vector[0x16].z = fVar9;
-    uVar2 = 0;
-    uVar8 = 0;
-    fVar9 = 0.0;
-    func_?(&stack0xfffffa2c,0x3f000000,0x3f000000,0x3e800000,0);
-    if (0x7b < pVVar1->max_length) {
-      pVVar1[3].vector[0x17].x = (float)uVar2;
-      pVVar1[3].vector[0x17].y = (float)uVar8;
-      pVVar1[3].vector[0x17].z = fVar9;
-      uVar7 = 0;
-      fVar9 = 0.0;
-      func_?(&stack0xfffffa20,0x3f000000,0x3f000000,0x3f000000,0);
-      if (pVVar1->max_length < 0x7d) goto code_?;
-      pVVar1[3].vector[0x18].x = (float)(int)uVar7;
-      pVVar1[3].vector[0x18].y = (float)(int)((ulonglong)uVar7 >> 0x20);
-      pVVar1[3].vector[0x18].z = fVar9;
-      TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable = pVVar1;
-      this = (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)
-             func_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>
-                            );
-      System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]
-      ::HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
+    pVVar1[3].vector[0x16].x = 0.5;
+    pVVar1[3].vector[0x16].y = 0.5;
+    pVVar1[3].vector[0x16].z = 0.0;
+    if (pVVar1->max_length < 0x7c) goto code_?;
+    pVVar1[3].vector[0x17].x = 0.5;
+    pVVar1[3].vector[0x17].y = 0.5;
+    pVVar1[3].vector[0x17].z = 0.25;
+    if (pVVar1->max_length < 0x7d) goto code_?;
+    pVVar1[3].vector[0x18].x = 0.5;
+    pVVar1[3].vector[0x18].y = 0.5;
+    pVVar1[3].vector[0x18].z = 0.5;
+    TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable = pVVar1;
+    func_?(TypeInfo__MV__WorldObject__CubeDataPacker->static_fields,pVVar1);
+    this = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+           func_?(
+                          TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>
+                          );
+    if (this != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)0x0) {
+      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                ((ParameterOverride_1_System_Object_ *)this,
                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Dictionary__
                 );
-      fVar9 = 0.0;
-      uVar2 = 0;
-      uVar8 = 0;
-      func_?(&stack0xfffffa14,0xbf000000,0xbf000000,0xbf000000);
-      if (this != (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) {
-        key.y = (float)uVar8;
-        key.x = (float)uVar2;
-        key.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key,0,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_00.z = fVar9;
-        key_00.x = (float)(int)uVar7;
-        key_00.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_00,1,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_01.y = (float)uVar8;
-        key_01.x = (float)uVar2;
-        key_01.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_01,2,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_02.z = fVar9;
-        key_02.x = (float)(int)uVar7;
-        key_02.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_02,3,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        uVar2 = 0;
-        uVar8 = 0;
-        fVar9 = 0.0;
-        func_?();
-        key_03.y = (float)uVar8;
-        key_03.x = (float)uVar2;
-        key_03.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_03,4,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_04.z = fVar9;
-        key_04.x = (float)(int)uVar7;
-        key_04.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_04,5,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_05.y = (float)uVar8;
-        key_05.x = (float)uVar2;
-        key_05.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_05,6,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_06.z = fVar9;
-        key_06.x = (float)(int)uVar7;
-        key_06.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_06,7,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_07.y = (float)uVar8;
-        key_07.x = (float)uVar2;
-        key_07.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_07,8,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_08.z = fVar9;
-        key_08.x = (float)(int)uVar7;
-        key_08.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_08,9,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_09.y = (float)uVar8;
-        key_09.x = (float)uVar2;
-        key_09.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_09,10,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        uVar7 = 0;
-        fVar9 = 0.0;
-        func_?();
-        key_10.z = fVar9;
-        key_10.x = (float)(int)uVar7;
-        key_10.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_10,0xb,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_11.y = (float)uVar8;
-        key_11.x = (float)uVar2;
-        key_11.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_11,0xc,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_12.z = fVar9;
-        key_12.x = (float)(int)uVar7;
-        key_12.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_12,0xd,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_13.y = (float)uVar8;
-        key_13.x = (float)uVar2;
-        key_13.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_13,0xe,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_14.z = fVar9;
-        key_14.x = (float)(int)uVar7;
-        key_14.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_14,0xf,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_15.y = (float)uVar8;
-        key_15.x = (float)uVar2;
-        key_15.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_15,0x10,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_16.z = fVar9;
-        key_16.x = (float)(int)uVar7;
-        key_16.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_16,0x11,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_17.y = (float)uVar8;
-        key_17.x = (float)uVar2;
-        key_17.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_17,0x12,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_18.z = fVar9;
-        key_18.x = (float)(int)uVar7;
-        key_18.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_18,0x13,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_19.y = (float)uVar8;
-        key_19.x = (float)uVar2;
-        key_19.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_19,0x14,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_20.z = fVar9;
-        key_20.x = (float)(int)uVar7;
-        key_20.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_20,0x15,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_21.y = (float)uVar8;
-        key_21.x = (float)uVar2;
-        key_21.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_21,0x16,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_22.z = fVar9;
-        key_22.x = (float)(int)uVar7;
-        key_22.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_22,0x17,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_23.y = (float)uVar8;
-        key_23.x = (float)uVar2;
-        key_23.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_23,0x18,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_24.z = fVar9;
-        key_24.x = (float)(int)uVar7;
-        key_24.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_24,0x19,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_25.y = (float)uVar8;
-        key_25.x = (float)uVar2;
-        key_25.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_25,0x1a,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_26.z = fVar9;
-        key_26.x = (float)(int)uVar7;
-        key_26.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_26,0x1b,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_27.y = (float)uVar8;
-        key_27.x = (float)uVar2;
-        key_27.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_27,0x1c,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_28.z = fVar9;
-        key_28.x = (float)(int)uVar7;
-        key_28.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_28,0x1d,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_29.y = (float)uVar8;
-        key_29.x = (float)uVar2;
-        key_29.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_29,0x1e,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_30.z = fVar9;
-        key_30.x = (float)(int)uVar7;
-        key_30.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_30,0x1f,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_31.y = (float)uVar8;
-        key_31.x = (float)uVar2;
-        key_31.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_31,0x20,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_32.z = fVar9;
-        key_32.x = (float)(int)uVar7;
-        key_32.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_32,0x21,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_33.y = (float)uVar8;
-        key_33.x = (float)uVar2;
-        key_33.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_33,0x22,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_34.z = fVar9;
-        key_34.x = (float)(int)uVar7;
-        key_34.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_34,0x23,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_35.y = (float)uVar8;
-        key_35.x = (float)uVar2;
-        key_35.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_35,0x24,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_36.z = fVar9;
-        key_36.x = (float)(int)uVar7;
-        key_36.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_36,0x25,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_37.y = (float)uVar8;
-        key_37.x = (float)uVar2;
-        key_37.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_37,0x26,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_38.z = fVar9;
-        key_38.x = (float)(int)uVar7;
-        key_38.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_38,0x27,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_39.y = (float)uVar8;
-        key_39.x = (float)uVar2;
-        key_39.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_39,0x28,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_40.z = fVar9;
-        key_40.x = (float)(int)uVar7;
-        key_40.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_40,0x29,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        puVar14 = &stack0xfffff81c;
-        fVar9 = 0.25;
-        uVar2 = 0xbe800000;
-        func_?();
-        key_41.y = (float)uVar2;
-        key_41.x = (float)puVar14;
-        key_41.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_41,0x2a,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_42.z = fVar9;
-        key_42.x = (float)(int)uVar7;
-        key_42.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_42,0x2b,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_43.y = (float)uVar8;
-        key_43.x = (float)uVar2;
-        key_43.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_43,0x2c,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_44.z = fVar9;
-        key_44.x = (float)(int)uVar7;
-        key_44.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_44,0x2d,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_45.y = (float)uVar8;
-        key_45.x = (float)uVar2;
-        key_45.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_45,0x2e,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_46.z = fVar9;
-        key_46.x = (float)(int)uVar7;
-        key_46.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_46,0x2f,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_47.y = (float)uVar8;
-        key_47.x = (float)uVar2;
-        key_47.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_47,0x30,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_48.z = fVar9;
-        key_48.x = (float)(int)uVar7;
-        key_48.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_48,0x31,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_49.y = (float)uVar8;
-        key_49.x = (float)uVar2;
-        key_49.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_49,0x32,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_50.z = fVar9;
-        key_50.x = (float)(int)uVar7;
-        key_50.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_50,0x33,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_51.y = (float)uVar8;
-        key_51.x = (float)uVar2;
-        key_51.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_51,0x34,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_52.z = fVar9;
-        key_52.x = (float)(int)uVar7;
-        key_52.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_52,0x35,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_53.y = (float)uVar8;
-        key_53.x = (float)uVar2;
-        key_53.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_53,0x36,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_54.z = fVar9;
-        key_54.x = (float)(int)uVar7;
-        key_54.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_54,0x37,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_55.y = (float)uVar8;
-        key_55.x = (float)uVar2;
-        key_55.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_55,0x38,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_56.z = fVar9;
-        key_56.x = (float)(int)uVar7;
-        key_56.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_56,0x39,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_57.y = (float)uVar8;
-        key_57.x = (float)uVar2;
-        key_57.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_57,0x3a,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_58.z = fVar9;
-        key_58.x = (float)(int)uVar7;
-        key_58.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_58,0x3b,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_59.y = (float)uVar8;
-        key_59.x = (float)uVar2;
-        key_59.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_59,0x3c,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_60.z = fVar9;
-        key_60.x = (float)(int)uVar7;
-        key_60.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_60,0x3d,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_61.y = (float)uVar8;
-        key_61.x = (float)uVar2;
-        key_61.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_61,0x3e,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_62.z = fVar9;
-        key_62.x = (float)(int)uVar7;
-        key_62.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_62,0x3f,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_63.y = (float)uVar8;
-        key_63.x = (float)uVar2;
-        key_63.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_63,0x40,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_64.z = fVar9;
-        key_64.x = (float)(int)uVar7;
-        key_64.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_64,0x41,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_65.y = (float)uVar8;
-        key_65.x = (float)uVar2;
-        key_65.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_65,0x42,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_66.z = fVar9;
-        key_66.x = (float)(int)uVar7;
-        key_66.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_66,0x43,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_67.y = (float)uVar8;
-        key_67.x = (float)uVar2;
-        key_67.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_67,0x44,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_68.z = fVar9;
-        key_68.x = (float)(int)uVar7;
-        key_68.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_68,0x45,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_69.y = (float)uVar8;
-        key_69.x = (float)uVar2;
-        key_69.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_69,0x46,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_70.z = fVar9;
-        key_70.x = (float)(int)uVar7;
-        key_70.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_70,0x47,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_71.y = (float)uVar8;
-        key_71.x = (float)uVar2;
-        key_71.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_71,0x48,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_72.z = fVar9;
-        key_72.x = (float)(int)uVar7;
-        key_72.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_72,0x49,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_73.y = (float)uVar8;
-        key_73.x = (float)uVar2;
-        key_73.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_73,0x4a,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_74.z = fVar9;
-        key_74.x = (float)(int)uVar7;
-        key_74.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_74,0x4b,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_75.y = (float)uVar8;
-        key_75.x = (float)uVar2;
-        key_75.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_75,0x4c,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_76.z = fVar9;
-        key_76.x = (float)(int)uVar7;
-        key_76.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_76,0x4d,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_77.y = (float)uVar8;
-        key_77.x = (float)uVar2;
-        key_77.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_77,0x4e,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_78.z = fVar9;
-        key_78.x = (float)(int)uVar7;
-        key_78.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_78,0x4f,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_79.y = (float)uVar8;
-        key_79.x = (float)uVar2;
-        key_79.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_79,0x50,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_80.z = fVar9;
-        key_80.x = (float)(int)uVar7;
-        key_80.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_80,0x51,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_81.y = (float)uVar8;
-        key_81.x = (float)uVar2;
-        key_81.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_81,0x52,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_82.z = fVar9;
-        key_82.x = (float)(int)uVar7;
-        key_82.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_82,0x53,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_83.y = (float)uVar8;
-        key_83.x = (float)uVar2;
-        key_83.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_83,0x54,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        uVar7 = 0;
-        fVar9 = 0.0;
-        func_?();
-        key_84.z = fVar9;
-        key_84.x = (float)(int)uVar7;
-        key_84.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_84,0x55,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_85.y = (float)uVar8;
-        key_85.x = (float)uVar2;
-        key_85.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_85,0x56,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_86.z = fVar9;
-        key_86.x = (float)(int)uVar7;
-        key_86.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_86,0x57,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_87.y = (float)uVar8;
-        key_87.x = (float)uVar2;
-        key_87.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_87,0x58,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_88.z = fVar9;
-        key_88.x = (float)(int)uVar7;
-        key_88.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_88,0x59,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_89.y = (float)uVar8;
-        key_89.x = (float)uVar2;
-        key_89.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_89,0x5a,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_90.z = fVar9;
-        key_90.x = (float)(int)uVar7;
-        key_90.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_90,0x5b,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        uVar2 = 0;
-        uVar8 = 0;
-        fVar9 = 0.0;
-        func_?();
-        key_91.y = (float)uVar8;
-        key_91.x = (float)uVar2;
-        key_91.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_91,0x5c,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_92.z = fVar9;
-        key_92.x = (float)(int)uVar7;
-        key_92.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_92,0x5d,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_93.y = (float)uVar8;
-        key_93.x = (float)uVar2;
-        key_93.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_93,0x5e,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_94.z = fVar9;
-        key_94.x = (float)(int)uVar7;
-        key_94.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_94,0x5f,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_95.y = (float)uVar8;
-        key_95.x = (float)uVar2;
-        key_95.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_95,0x60,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_96.z = fVar9;
-        key_96.x = (float)(int)uVar7;
-        key_96.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_96,0x61,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_97.y = (float)uVar8;
-        key_97.x = (float)uVar2;
-        key_97.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_97,0x62,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_98.z = fVar9;
-        key_98.x = (float)(int)uVar7;
-        key_98.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_98,99,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_99.y = (float)uVar8;
-        key_99.x = (float)uVar2;
-        key_99.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_99,100,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00100.z = fVar9;
-        key_x00100.x = (float)(int)uVar7;
-        key_x00100.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00100,0x65,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00101.y = (float)uVar8;
-        key_x00101.x = (float)uVar2;
-        key_x00101.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00101,0x66,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00102.z = fVar9;
-        key_x00102.x = (float)(int)uVar7;
-        key_x00102.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00102,0x67,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00103.y = (float)uVar8;
-        key_x00103.x = (float)uVar2;
-        key_x00103.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00103,0x68,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00104.z = fVar9;
-        key_x00104.x = (float)(int)uVar7;
-        key_x00104.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00104,0x69,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00105.y = (float)uVar8;
-        key_x00105.x = (float)uVar2;
-        key_x00105.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00105,0x6a,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00106.z = fVar9;
-        key_x00106.x = (float)(int)uVar7;
-        key_x00106.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00106,0x6b,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00107.y = (float)uVar8;
-        key_x00107.x = (float)uVar2;
-        key_x00107.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00107,0x6c,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00108.z = fVar9;
-        key_x00108.x = (float)(int)uVar7;
-        key_x00108.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00108,0x6d,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00109.y = (float)uVar8;
-        key_x00109.x = (float)uVar2;
-        key_x00109.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00109,0x6e,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00110.z = fVar9;
-        key_x00110.x = (float)(int)uVar7;
-        key_x00110.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00110,0x6f,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00111.y = (float)uVar8;
-        key_x00111.x = (float)uVar2;
-        key_x00111.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00111,0x70,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00112.z = fVar9;
-        key_x00112.x = (float)(int)uVar7;
-        key_x00112.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00112,0x71,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00113.y = (float)uVar8;
-        key_x00113.x = (float)uVar2;
-        key_x00113.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00113,0x72,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00114.z = fVar9;
-        key_x00114.x = (float)(int)uVar7;
-        key_x00114.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00114,0x73,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00115.y = (float)uVar8;
-        key_x00115.x = (float)uVar2;
-        key_x00115.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00115,0x74,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00116.z = fVar9;
-        key_x00116.x = (float)(int)uVar7;
-        key_x00116.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00116,0x75,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00117.y = (float)uVar8;
-        key_x00117.x = (float)uVar2;
-        key_x00117.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00117,0x76,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00118.z = fVar9;
-        key_x00118.x = (float)(int)uVar7;
-        key_x00118.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00118,0x77,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00119.y = (float)uVar8;
-        key_x00119.x = (float)uVar2;
-        key_x00119.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00119,0x78,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00120.z = fVar9;
-        key_x00120.x = (float)(int)uVar7;
-        key_x00120.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00120,0x79,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00121.y = (float)uVar8;
-        key_x00121.x = (float)uVar2;
-        key_x00121.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00121,0x7a,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar7 = 0;
-        func_?();
-        key_x00122.z = fVar9;
-        key_x00122.x = (float)(int)uVar7;
-        key_x00122.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00122,0x7b,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        fVar9 = 0.0;
-        uVar2 = 0;
-        uVar8 = 0;
-        func_?();
-        key_x00123.y = (float)uVar8;
-        key_x00123.x = (float)uVar2;
-        key_x00123.z = fVar9;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::Byte]
-        ::Dictionary_2_UnityEngine_Vector3_System_Byte__Add
-                  (this,key_x00123,0x7c,
-                   MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
-                  );
-        TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable = this;
-        array = (Byte__Array *)func_?();
-        mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-        RuntimeHelpers_InitializeArray_1
-                  ((Array *)array,___method0x60003e6_1_Field,(MethodInfo *)0x0);
-        TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners = array;
-        TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->rowMaxLength = 0x3f;
-        return;
-      }
-      goto code_?;
+      key_x00110._cultureKey = (String *)_UNK_?;
+      key_x00110._options = _UNK_?;
+      key_x00110._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00110,(Object *)0x0,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00111._cultureKey = (String *)_UNK_?;
+      key_x00111._options = _UNK_?;
+      key_x00111._pattern = (String *)0xbe800000;
+      uVar2 = _UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00111,(Object *)0x1,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00112._cultureKey = (String *)_UNK_?;
+      key_x00112._options = _UNK_?;
+      key_x00112._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00112,(Object *)0x2,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      method = (MethodInfo *)0x3e800000;
+      pSVar3 = (String *)_UNK_?;
+      RVar4._options = _UNK_?;
+      RVar4 = (Regex_CachedCodeEntryKey)CONCAT84(uVar5,RVar4._options);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,RVar4,(Object *)0x3,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      RVar4._cultureKey = (String *)_UNK_?;
+      RVar4._options = _UNK_?;
+      RVar4._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,RVar4,(Object *)0x4,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key._cultureKey = (String *)_UNK_?;
+      key._options = _UNK_?;
+      key._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key,(Object *)0x5,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_00._cultureKey = (String *)_UNK_?;
+      key_00._options = _UNK_?;
+      key_00._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_00,(Object *)0x6,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_01._cultureKey = (String *)_UNK_?;
+      key_01._options = _UNK_?;
+      key_01._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_01,(Object *)0x7,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_02._cultureKey = (String *)_UNK_?;
+      key_02._options = _UNK_?;
+      key_02._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_02,(Object *)0x8,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_03._cultureKey = (String *)_UNK_?;
+      key_03._options = _UNK_?;
+      key_03._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_03,(Object *)0x9,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_04._cultureKey = (String *)0x0;
+      key_04._options = _UNK_?;
+      key_04._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_04,(Object *)0xa,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_05._cultureKey = (String *)0x0;
+      key_05._options = _UNK_?;
+      key_05._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_05,(Object *)0xb,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_06._cultureKey = (String *)0x0;
+      key_06._pattern = (String *)0x0;
+      key_06._options = _UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_06,(Object *)0xc,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_07._cultureKey = (String *)0x0;
+      key_07._options = _UNK_?;
+      key_07._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_07,(Object *)0xd,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_08._cultureKey = (String *)0x0;
+      key_08._options = _UNK_?;
+      key_08._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_08,(Object *)0xe,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_09._cultureKey = (String *)_UNK_?;
+      key_09._options = _UNK_?;
+      key_09._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_09,(Object *)0xf,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_10._cultureKey = (String *)_UNK_?;
+      key_10._options = _UNK_?;
+      key_10._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_10,(Object *)0x10,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_11._cultureKey = (String *)_UNK_?;
+      key_11._options = _UNK_?;
+      key_11._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_11,(Object *)0x11,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_12._cultureKey = (String *)_UNK_?;
+      key_12._options = _UNK_?;
+      key_12._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_12,(Object *)0x12,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_13._cultureKey = (String *)_UNK_?;
+      key_13._options = _UNK_?;
+      key_13._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_13,(Object *)0x13,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_14._cultureKey = (String *)uVar2;
+      key_14._options = _UNK_?;
+      key_14._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_14,(Object *)0x14,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_15._cultureKey = (String *)uVar2;
+      key_15._options = _UNK_?;
+      key_15._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_15,(Object *)0x15,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_16._cultureKey = (String *)uVar2;
+      key_16._options = _UNK_?;
+      key_16._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_16,(Object *)0x16,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_17._cultureKey = (String *)uVar2;
+      key_17._options = _UNK_?;
+      key_17._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_17,(Object *)0x17,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_18._cultureKey = (String *)uVar2;
+      key_18._options = _UNK_?;
+      key_18._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_18,(Object *)0x18,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_19._cultureKey = (String *)_UNK_?;
+      key_19._options = _UNK_?;
+      key_19._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_19,(Object *)0x19,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_20._cultureKey = (String *)_UNK_?;
+      key_20._options = _UNK_?;
+      key_20._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_20,(Object *)0x1a,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_21._cultureKey = (String *)_UNK_?;
+      key_21._options = _UNK_?;
+      key_21._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_21,(Object *)0x1b,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_22._cultureKey = (String *)_UNK_?;
+      key_22._options = _UNK_?;
+      key_22._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_22,(Object *)0x1c,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_23._cultureKey = (String *)_UNK_?;
+      key_23._options = _UNK_?;
+      key_23._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_23,(Object *)0x1d,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_24._cultureKey = (String *)_UNK_?;
+      key_24._options = _UNK_?;
+      key_24._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_24,(Object *)0x1e,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_25._cultureKey = (String *)_UNK_?;
+      key_25._options = _UNK_?;
+      key_25._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_25,(Object *)0x1f,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_26._cultureKey = (String *)_UNK_?;
+      key_26._options = _UNK_?;
+      key_26._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_26,(Object *)0x20,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_27._cultureKey = (String *)_UNK_?;
+      key_27._options = _UNK_?;
+      key_27._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_27,(Object *)0x21,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_28._cultureKey = (String *)_UNK_?;
+      key_28._options = _UNK_?;
+      key_28._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_28,(Object *)0x22,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_29._cultureKey = (String *)0x0;
+      key_29._options = _UNK_?;
+      key_29._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_29,(Object *)0x23,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_30._cultureKey = (String *)0x0;
+      key_30._options = _UNK_?;
+      key_30._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_30,(Object *)0x24,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_31._cultureKey = (String *)0x0;
+      key_31._pattern = (String *)0x0;
+      key_31._options = _UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_31,(Object *)0x25,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_32._cultureKey = (String *)0x0;
+      key_32._options = _UNK_?;
+      key_32._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_32,(Object *)0x26,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_33._cultureKey = (String *)0x0;
+      key_33._options = _UNK_?;
+      key_33._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_33,(Object *)0x27,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_34._cultureKey = (String *)_UNK_?;
+      key_34._options = _UNK_?;
+      key_34._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_34,(Object *)0x28,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_35._cultureKey = (String *)_UNK_?;
+      key_35._options = _UNK_?;
+      key_35._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_35,(Object *)0x29,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_36._cultureKey = (String *)_UNK_?;
+      key_36._options = _UNK_?;
+      key_36._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_36,(Object *)0x2a,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_37._cultureKey = (String *)_UNK_?;
+      key_37._options = _UNK_?;
+      key_37._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_37,(Object *)0x2b,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_38._cultureKey = (String *)_UNK_?;
+      key_38._options = _UNK_?;
+      key_38._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_38,(Object *)0x2c,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_39._cultureKey = (String *)uVar2;
+      key_39._options = _UNK_?;
+      key_39._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_39,(Object *)0x2d,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_40._cultureKey = (String *)uVar2;
+      key_40._options = _UNK_?;
+      key_40._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_40,(Object *)0x2e,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_41._cultureKey = (String *)uVar2;
+      key_41._options = _UNK_?;
+      key_41._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_41,(Object *)0x2f,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_42._cultureKey = (String *)uVar2;
+      key_42._options = _UNK_?;
+      key_42._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_42,(Object *)0x30,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_43._cultureKey = (String *)uVar2;
+      key_43._options = _UNK_?;
+      key_43._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_43,(Object *)0x31,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_44._pattern = (String *)0xbf000000;
+      key_44._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_44._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_44,(Object *)0x32,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_45._pattern = (String *)0xbe800000;
+      key_45._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_45._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_45,(Object *)0x33,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      auVar6._4_8_ = 0;
+      auVar6._0_4_ = _UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(auVar6 << 0x20),(Object *)0x34,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_46._pattern = (String *)0x3e800000;
+      key_46._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_46._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_46,(Object *)0x35,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_47._pattern = (String *)0x3f000000;
+      key_47._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_47._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_47,(Object *)0x36,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_48._pattern = (String *)0xbf000000;
+      key_48._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_48._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_48,(Object *)0x37,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_49._pattern = (String *)0xbe800000;
+      key_49._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_49._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_49,(Object *)0x38,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      auVar7._4_8_ = 0;
+      auVar7._0_4_ = _UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(auVar7 << 0x20),(Object *)0x39,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_50._pattern = (String *)0x3e800000;
+      key_50._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_50._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_50,(Object *)0x3a,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_51._pattern = (String *)0x3f000000;
+      key_51._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_51._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_51,(Object *)0x3b,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(ZEXT412(0xbf000000) << 0x40),(Object *)0x3c,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(ZEXT412(0xbe800000) << 0x40),(Object *)0x3d,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)ZEXT812(0),(Object *)0x3e,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(ZEXT412(0x3e800000) << 0x40),(Object *)0x3f,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(ZEXT412(0x3f000000) << 0x40),(Object *)0x40,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_52._pattern = (String *)0xbf000000;
+      key_52._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_52._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_52,(Object *)0x41,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_53._pattern = (String *)0xbe800000;
+      key_53._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_53._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_53,(Object *)0x42,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      auVar8._4_8_ = 0;
+      auVar8._0_4_ = _UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(auVar8 << 0x20),(Object *)0x43,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_54._pattern = (String *)0x3e800000;
+      key_54._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_54._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_54,(Object *)0x44,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_55._pattern = (String *)0x3f000000;
+      key_55._options = (int)((ulonglong)_UNK_? << 0x20);
+      key_55._cultureKey = (String *)(int)(((ulonglong)_UNK_? << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_55,(Object *)0x45,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_56._pattern = (String *)0xbf000000;
+      key_56._options = (int)((ulonglong)uVar2 << 0x20);
+      key_56._cultureKey = (String *)(int)(((ulonglong)uVar2 << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_56,(Object *)0x46,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_57._pattern = (String *)0xbe800000;
+      key_57._options = (int)((ulonglong)uVar2 << 0x20);
+      key_57._cultureKey = (String *)(int)(((ulonglong)uVar2 << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_57,(Object *)0x47,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      auVar9._4_8_ = 0;
+      auVar9._0_4_ = uVar2;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,(Regex_CachedCodeEntryKey)(auVar9 << 0x20),(Object *)0x48,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_58._pattern = (String *)0x3e800000;
+      key_58._options = (int)((ulonglong)uVar2 << 0x20);
+      key_58._cultureKey = (String *)(int)(((ulonglong)uVar2 << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_58,(Object *)0x49,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_59._pattern = (String *)0x3f000000;
+      key_59._options = (int)((ulonglong)uVar2 << 0x20);
+      key_59._cultureKey = (String *)(int)(((ulonglong)uVar2 << 0x20) >> 0x20);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_59,(Object *)0x4a,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_60._cultureKey = (String *)_UNK_?;
+      key_60._options = _UNK_?;
+      key_60._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_60,(Object *)0x4b,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_61._cultureKey = (String *)_UNK_?;
+      key_61._options = _UNK_?;
+      key_61._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_61,(Object *)0x4c,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_62._cultureKey = (String *)_UNK_?;
+      key_62._options = _UNK_?;
+      key_62._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_62,(Object *)0x4d,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_63._cultureKey = (String *)_UNK_?;
+      key_63._options = _UNK_?;
+      key_63._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_63,(Object *)0x4e,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_64._cultureKey = (String *)_UNK_?;
+      key_64._options = _UNK_?;
+      key_64._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_64,(Object *)0x4f,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_65._cultureKey = (String *)_UNK_?;
+      key_65._options = _UNK_?;
+      key_65._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_65,(Object *)0x50,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_66._cultureKey = (String *)_UNK_?;
+      key_66._options = _UNK_?;
+      key_66._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_66,(Object *)0x51,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_67._cultureKey = (String *)_UNK_?;
+      key_67._options = _UNK_?;
+      key_67._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_67,(Object *)0x52,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_68._cultureKey = (String *)_UNK_?;
+      key_68._options = _UNK_?;
+      key_68._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_68,(Object *)0x53,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_69._cultureKey = (String *)_UNK_?;
+      key_69._options = _UNK_?;
+      key_69._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_69,(Object *)0x54,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_70._cultureKey = (String *)0x0;
+      key_70._options = _UNK_?;
+      key_70._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_70,(Object *)0x55,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_71._cultureKey = (String *)0x0;
+      key_71._options = _UNK_?;
+      key_71._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_71,(Object *)0x56,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_72._cultureKey = (String *)0x0;
+      key_72._pattern = (String *)0x0;
+      key_72._options = _UNK_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_72,(Object *)0x57,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_73._cultureKey = (String *)0x0;
+      key_73._options = _UNK_?;
+      key_73._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_73,(Object *)0x58,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_74._cultureKey = (String *)0x0;
+      key_74._options = _UNK_?;
+      key_74._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_74,(Object *)0x59,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_75._cultureKey = (String *)_UNK_?;
+      key_75._options = _UNK_?;
+      key_75._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_75,(Object *)0x5a,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_76._cultureKey = (String *)_UNK_?;
+      key_76._options = _UNK_?;
+      key_76._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_76,(Object *)0x5b,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_77._cultureKey = (String *)_UNK_?;
+      key_77._options = _UNK_?;
+      key_77._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_77,(Object *)0x5c,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_78._cultureKey = (String *)_UNK_?;
+      key_78._options = _UNK_?;
+      key_78._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_78,(Object *)0x5d,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_79._cultureKey = (String *)_UNK_?;
+      key_79._options = _UNK_?;
+      key_79._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_79,(Object *)0x5e,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_80._cultureKey = (String *)uVar2;
+      key_80._options = _UNK_?;
+      key_80._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_80,(Object *)0x5f,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_81._cultureKey = (String *)uVar2;
+      key_81._options = _UNK_?;
+      key_81._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_81,(Object *)0x60,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_82._cultureKey = (String *)uVar2;
+      key_82._options = _UNK_?;
+      key_82._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_82,(Object *)0x61,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_83._cultureKey = (String *)uVar2;
+      key_83._options = _UNK_?;
+      key_83._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_83,(Object *)0x62,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_84._cultureKey = (String *)uVar2;
+      key_84._options = _UNK_?;
+      key_84._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_84,(Object *)0x63,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_85._cultureKey = (String *)_UNK_?;
+      key_85._options = uVar2;
+      key_85._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_85,(Object *)0x64,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_86._cultureKey = (String *)_UNK_?;
+      key_86._options = uVar2;
+      key_86._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_86,(Object *)0x65,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_87._cultureKey = (String *)_UNK_?;
+      key_87._options = uVar2;
+      key_87._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_87,(Object *)0x66,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_88._cultureKey = (String *)_UNK_?;
+      key_88._options = uVar2;
+      key_88._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_88,(Object *)0x67,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_89._cultureKey = (String *)_UNK_?;
+      key_89._options = uVar2;
+      key_89._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_89,(Object *)0x68,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_90._cultureKey = (String *)_UNK_?;
+      key_90._options = uVar2;
+      key_90._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_90,(Object *)0x69,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_91._cultureKey = (String *)_UNK_?;
+      key_91._options = uVar2;
+      key_91._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_91,(Object *)0x6a,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_92._cultureKey = (String *)_UNK_?;
+      key_92._options = uVar2;
+      key_92._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_92,(Object *)0x6b,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_93._cultureKey = (String *)_UNK_?;
+      key_93._options = uVar2;
+      key_93._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_93,(Object *)0x6c,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_94._cultureKey = (String *)_UNK_?;
+      key_94._options = uVar2;
+      key_94._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_94,(Object *)0x6d,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_95._cultureKey = (String *)0x0;
+      key_95._options = uVar2;
+      key_95._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_95,(Object *)0x6e,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_96._cultureKey = (String *)0x0;
+      key_96._options = uVar2;
+      key_96._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_96,(Object *)0x6f,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_97._cultureKey = (String *)0x0;
+      key_97._pattern = (String *)0x0;
+      key_97._options = uVar2;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_97,(Object *)0x70,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_98._cultureKey = (String *)0x0;
+      key_98._options = uVar2;
+      key_98._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_98,(Object *)0x71,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_99._cultureKey = (String *)0x0;
+      key_99._options = uVar2;
+      key_99._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_99,(Object *)0x72,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00100._cultureKey = (String *)_UNK_?;
+      key_x00100._options = uVar2;
+      key_x00100._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00100,(Object *)0x73,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00101._cultureKey = (String *)_UNK_?;
+      key_x00101._options = uVar2;
+      key_x00101._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00101,(Object *)0x74,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00102._cultureKey = (String *)_UNK_?;
+      key_x00102._options = uVar2;
+      key_x00102._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00102,(Object *)0x75,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00103._cultureKey = (String *)_UNK_?;
+      key_x00103._options = uVar2;
+      key_x00103._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00103,(Object *)0x76,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00104._cultureKey = (String *)_UNK_?;
+      key_x00104._options = uVar2;
+      key_x00104._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00104,(Object *)0x77,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00105._cultureKey = (String *)uVar2;
+      key_x00105._options = uVar2;
+      key_x00105._pattern = (String *)0xbf000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00105,(Object *)0x78,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00106._cultureKey = (String *)uVar2;
+      key_x00106._options = uVar2;
+      key_x00106._pattern = (String *)0xbe800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00106,(Object *)0x79,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00107._cultureKey = (String *)uVar2;
+      key_x00107._options = uVar2;
+      key_x00107._pattern = (String *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00107,(Object *)0x7a,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00108._cultureKey = (String *)uVar2;
+      key_x00108._options = uVar2;
+      key_x00108._pattern = (String *)0x3e800000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00108,(Object *)0x7b,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      key_x00109._cultureKey = (String *)uVar2;
+      key_x00109._options = uVar2;
+      key_x00109._pattern = (String *)0x3f000000;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Add
+                (this,key_x00109,(Object *)0x7c,
+                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__Add_UnityEngine__Vector3__unsigned_char_
+                );
+      TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable =
+           (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)this;
+      func_?();
+      array = (Byte__Array *)func_?();
+      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+      RuntimeHelpers_InitializeArray_1((Array *)array,___method0x60003ee_1_Field,(MethodInfo *)0x0);
+      TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners = array;
+      func_?();
+      TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->rowMaxLength = 0x3f;
+      return;
     }
   }
-  uVar2 = func_?(0);
-  func_?(uVar2);
+  func_?();
 code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

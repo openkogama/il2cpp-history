@@ -7,22 +7,21 @@ void Assembly-CSharp.dll::InventoryItemPreview::InventoryItemPreview_Initialize
 
 {
   (this->fields).item = inventoryItem;
-  if ((inventoryItem != (InventoryItem *)0x0) &&
-     (pTVar1 = (this->fields).title, pTVar1 != (Text *)0x0)) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,(inventoryItem->fields).name,
-               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pIVar2 = (this->fields).item;
-    if ((pIVar2 != (InventoryItem *)0x0) &&
-       (pTVar1 = (this->fields).description, pTVar1 != (Text *)0x0)) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)
-                (pTVar1,(pIVar2->fields).description,
-                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  func_?(&(this->fields).item,inventoryItem);
+  pIVar1 = (this->fields).item;
+  if ((pIVar1 != (InventoryItem *)0x0) && (pTVar2 = (this->fields).title, pTVar2 != (Text *)0x0)) {
+    (*(pTVar2->klass->vtable).set_text.methodPtr)
+              (pTVar2,(pIVar1->fields).name,(pTVar2->klass->vtable).set_text.method);
+    pIVar1 = (this->fields).item;
+    if ((pIVar1 != (InventoryItem *)0x0) &&
+       (pTVar2 = (this->fields).description, pTVar2 != (Text *)0x0)) {
+      (*(pTVar2->klass->vtable).set_text.methodPtr)
+                (pTVar2,(pIVar1->fields).description,(pTVar2->klass->vtable).set_text.method);
       this_00 = (this->fields).previewImage;
       if (preview != (RawImage *)0x0) {
         value = (Texture *)
-                (*(code *)(preview->klass->vtable).get_mainTexture.method)
-                          (preview,(preview->klass->vtable).OnCullingChanged.methodPtr);
+                (*(preview->klass->vtable).get_mainTexture.methodPtr)
+                          (preview,(preview->klass->vtable).get_mainTexture.method);
         if (this_00 != (RawImage *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
                     (this_00,value,(MethodInfo *)0x0);
@@ -31,7 +30,7 @@ void Assembly-CSharp.dll::InventoryItemPreview::InventoryItemPreview_Initialize
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;

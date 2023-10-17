@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
@@ -19,9 +19,9 @@ namespace Newtonsoft.Json.Linq
 		private JToken _current;
 	
 		// Properties
+		private bool IsEndElement { get; }
 		int IJsonLineInfo.LineNumber { get; }
 		int IJsonLineInfo.LinePosition { get; }
-		private bool IsEndElement { get; }
 	
 		// Constructors
 		public JTokenReader(JToken token);

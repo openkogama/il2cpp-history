@@ -5,9 +5,98 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_AvatarStateChanged
                (TeamMenuButton *this,SpawnRoleModeType__Enum state,MethodInfo *method)
 
 {
-  if ((state & SpawnRoleModeType__Enum_Hidden) != SpawnRoleModeType__Enum_None) {
-    TeamMenuButton_SetButtonIsActive(this,(MethodInfo *)0x0);
+  if ((state & SpawnRoleModeType__Enum_Hidden) == SpawnRoleModeType__Enum_None) {
+    return;
   }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
+    MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
+    if ((this->fields).buttonEnabler != (GameObject *)0x0) {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      (*pcRam_?)();
+      return;
+    }
+  }
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
+/* Void OnDestroy() */
+
+void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_OnDestroy
+               (TeamMenuButton *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    func_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
+    func_?(&MethodInfo__TeamMenuButton__AvatarStateChanged_MV__Common__SpawnRoleModeType_);
+    func_?(&
+                    MethodInfo__TeamMenuButton__TeamChanged_System__Object__MV__WorldObject__TeamEventArgs_
+                   );
+    cRam_? = '\x01';
+  }
+  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return;
+  }
+  pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                     ((MethodInfo *)0x0);
+  if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
+    this_00 = (pSVar2->fields).SpawnRoleModeTypeWrapper;
+    this_01 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    if ((this_01 != (UnityAction_1_System_Int32Enum_ *)0x0) &&
+       (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_01,(Object *)this,
+                   MethodInfo__TeamMenuButton__AvatarStateChanged_MV__Common__SpawnRoleModeType_,
+                   (MethodInfo *)0x0), this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
+      SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_remove_OnChange
+                (this_00,(Action_1_MV_Common_SpawnRoleModeType_ *)this_01,(MethodInfo *)0x0);
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar3 != (MVNetworkGame *)0x0) {
+        pMVar4 = (pMVar3->fields).teamManager;
+        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        if ((pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
+           (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar5,(Object *)this,
+                       MethodInfo__TeamMenuButton__TeamChanged_System__Object__MV__WorldObject__TeamEventArgs_
+                       ,(MethodInfo *)0x0), pMVar4 != (MVTeamManager *)0x0)) {
+          MVTeamManager::MVTeamManager_remove_OnTeamAdded
+                    (pMVar4,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar5,(MethodInfo *)0x0
+                    );
+          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar3 != (MVNetworkGame *)0x0) {
+            pMVar4 = (pMVar3->fields).teamManager;
+            pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+            if ((pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
+               (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
+                ::Object]::UnityAction_2_System_Object_System_Object___ctor
+                          (pUVar5,(Object *)this,
+                           MethodInfo__TeamMenuButton__TeamChanged_System__Object__MV__WorldObject__TeamEventArgs_
+                           ,(MethodInfo *)0x0), pMVar4 != (MVTeamManager *)0x0)) {
+              MVTeamManager::MVTeamManager_remove_OnTeamRemoved
+                        (pMVar4,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar5,
+                         (MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -18,30 +107,21 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_SetButtonIsActive
                (TeamMenuButton *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                        ((DayNightCycle *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (SkyParam *)0x0) {
-      iVar1 = MVTeamManager::MVTeamManager_TeamCount((MVTeamManager *)this_01,(MethodInfo *)0x0);
-      if (pGRam00000010 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGRam00000010,1 < iVar1,(MethodInfo *)0x0);
-        return;
-      }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
+    iVar2 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
+    this_01 = (this->fields).buttonEnabler;
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_01,1 < iVar2,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -53,91 +133,103 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_ShowTeamMenu
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TeamMenu_MethodInfo__UnityEngine__Object__Instantiate<TeamMenu>_TeamMenu_);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__TeamMenuButton____c___ShowTeamMenu_b__7_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__TeamMenuButton____c__DisplayClass7_0___ShowTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__TeamMenuButton____c__DisplayClass7_0);
+    func_?(&TypeInfo__TeamMenuButton____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TeamMenuButton___ShowTeamMenu_c__AnonStorey0;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  original = (this->fields).teamMenuPrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     ((XpBoostParticlePreviewer *)original,
-                      TeamMenu_MethodInfo__UnityEngine__Object__Instantiate<TeamMenu>_TeamMenu_);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields)._._._._.m_CachedPtr = pXVar1;
-    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-              ((Component_1 *)this,(MethodInfo *)0x0);
-    if (TypeInfo__TeamMenuButton->static_fields->__f__am_cache0 ==
-        (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar2,(Object *)0x0,
-                 MethodInfo__TeamMenuButton___ShowTeamMenu_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                );
-      TypeInfo__TeamMenuButton->static_fields->__f__am_cache0 =
-           (ExecuteEvents_EventFunction_1_IUIStack_ *)pUVar2;
+  value = (Object *)func_?(TypeInfo__TeamMenuButton____c__DisplayClass7_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    original = (this->fields).teamMenuPrefab;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-         TypeInfo__TeamMenuButton->static_fields->__f__am_cache0;
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
+    pOVar1 = (Object__Class *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original,
+                        TeamMenu_MethodInfo__UnityEngine__Object__Instantiate<TeamMenu>_TeamMenu_);
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__TeamMenuButton____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__TeamMenuButton____c);
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              ((GameObject *)
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-               ,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar2,(Object *)this_01,
-               MethodInfo__TeamMenuButton___ShowTeamMenu_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar2,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if ((pGVar3 != (GameEventManager *)0x0) &&
-       (this_00 = (pGVar3->fields).AvatarCommandsPlayMode,
-       this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-      GameEventManager+AvatarCommandsPlayModeManager::
-      GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
+    callbackFunction = TypeInfo__TeamMenuButton____c->static_fields->__9__7_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if ((TypeInfo__TeamMenuButton____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__TeamMenuButton____c);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_ShowTeamMenu,(MethodInfo *)0x0);
-      return;
+      object = (Object *)&UNK_?;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IUIStack_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,object,
+                 MethodInfo__TeamMenuButton____c___ShowTeamMenu_b__7_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__TeamMenuButton____c->static_fields->__9__7_0 = callbackFunction;
+      func_?(&TypeInfo__TeamMenuButton____c->static_fields->__9__7_0,callbackFunction);
+    }
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              ((GameObject *)0x0,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction_00 =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                 MethodInfo__TeamMenuButton____c__DisplayClass7_0___ShowTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar2 != (GameEventManager *)0x0) &&
+         (this_00 = (pGVar2->fields).AvatarCommandsPlayMode,
+         this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+        GoogleMobileAds.dll::GoogleMobileAds::Api::BannerView::
+        BannerView__ConfigureBannerEvents_m__9((BannerView *)this_00,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -149,110 +241,84 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    func_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
+    func_?(&MethodInfo__TeamMenuButton__AvatarStateChanged_MV__Common__SpawnRoleModeType_);
+    func_?(&
+                    MethodInfo__TeamMenuButton__TeamChanged_System__Object__MV__WorldObject__TeamEventArgs_
+                   );
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if (pSVar1 != (SpawnRoleDataMediator *)0x0) {
     this_00 = (pSVar1->fields).SpawnRoleModeTypeWrapper;
-    pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?(TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar2,(Object *)this,
-               MethodInfo__TeamMenuButton__AvatarStateChanged_MV__Common__SpawnRoleModeType_,
-               MethodInfo__System__Action<MV::Common::SpawnRoleModeType>__Action_System__Object__void__
-              );
-    if (this_00 != (SpawnRoleModeTypeWrapper *)0x0) {
-      SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add_OnChange
-                (this_00,(Action_1_MV_Common_SpawnRoleModeType_ *)pUVar2,(MethodInfo *)0x0);
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar3 != (MVNetworkGame *)0x0) {
-        pSVar4 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                           ((DayNightCycle *)pMVar3,(MethodInfo *)0x0);
-        pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar2,(Object *)this,
-                   MethodInfo__TeamMenuButton__TeamChanged_System__Object__MV__WorldObject__TeamEventArgs_
-                   ,
-                   MethodInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>__EventHandler_System__Object__void__
-                  );
-        if (pSVar4 != (SkyParam *)0x0) {
-          MVTeamManager::MVTeamManager_add_OnTeamAdded
-                    ((MVTeamManager *)pSVar4,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar2,
-                     (MethodInfo *)0x0);
-          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar3 != (MVNetworkGame *)0x0) {
-            pSVar4 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                               ((DayNightCycle *)pMVar3,(MethodInfo *)0x0);
-            pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)func_?(
-                                       TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>
-                                       );
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (pUVar2,(Object *)this,
+    this_02 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    if (this_02 != (UnityAction_1_System_Int32Enum_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_02,(Object *)this,
+                 MethodInfo__TeamMenuButton__AvatarStateChanged_MV__Common__SpawnRoleModeType_,
+                 (MethodInfo *)0x0);
+      if (this_00 != (SpawnRoleModeTypeWrapper *)0x0) {
+        SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add_OnChange
+                  (this_00,(Action_1_MV_Common_SpawnRoleModeType_ *)this_02,(MethodInfo *)0x0);
+        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar2 != (MVNetworkGame *)0x0) {
+          pMVar3 = (pMVar2->fields).teamManager;
+          pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+                   func_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
+          if (pUVar4 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar4,(Object *)this,
                        MethodInfo__TeamMenuButton__TeamChanged_System__Object__MV__WorldObject__TeamEventArgs_
-                       ,
-                       MethodInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>__EventHandler_System__Object__void__
-                      );
-            if (pSVar4 != (SkyParam *)0x0) {
-              MVTeamManager::MVTeamManager_add_OnTeamRemoved
-                        ((MVTeamManager *)pSVar4,
-                         (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar2,(MethodInfo *)0x0);
-              TeamMenuButton_SetButtonIsActive(this,(MethodInfo *)0x0);
-              return;
+                       ,(MethodInfo *)0x0);
+            if (pMVar3 != (MVTeamManager *)0x0) {
+              MVTeamManager::MVTeamManager_add_OnTeamAdded
+                        (pMVar3,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar4,
+                         (MethodInfo *)0x0);
+              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if (pMVar2 != (MVNetworkGame *)0x0) {
+                pMVar3 = (pMVar2->fields).teamManager;
+                pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+                         func_?(
+                                        TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>
+                                        );
+                if (pUVar4 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                            (pUVar4,(Object *)this,
+                             MethodInfo__TeamMenuButton__TeamChanged_System__Object__MV__WorldObject__TeamEventArgs_
+                             ,(MethodInfo *)0x0);
+                  if (pMVar3 != (MVTeamManager *)0x0) {
+                    MVTeamManager::MVTeamManager_add_OnTeamRemoved
+                              (pMVar3,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar4,
+                               (MethodInfo *)0x0);
+                    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                    if ((pMVar2 != (MVNetworkGame *)0x0) &&
+                       (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
+                      iVar5 = MVTeamManager::MVTeamManager_TeamCount(pMVar3,(MethodInfo *)0x0);
+                      this_01 = (this->fields).buttonEnabler;
+                      if (this_01 != (GameObject *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                  (this_01,1 < iVar5,(MethodInfo *)0x0);
+                        return;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void TeamChanged(Object, TeamEventArgs) */
-
-void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_TeamChanged
-               (TeamMenuButton *this,Object *sender,TeamEventArgs *eventArgs,MethodInfo *method)
-
-{
-  TeamMenuButton_SetButtonIsActive(this,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Void <ShowTeamMenu>m__0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton__ShowTeamMenu_m__0
-               (IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    func_?(3,TypeInfo__UnityEngine__EventSystems__IUIStack,handler,0xc);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

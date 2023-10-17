@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -42,9 +42,11 @@ namespace MV.WorldObject
 	
 		// Constructors
 		public InteractionData(InteractionPackageType interactionType);
+		public InteractionData(InteractionPackageType interactionType, float damage);
 		public InteractionData(InteractionPackageType interactionType, Vector3 impulse);
 		public InteractionData(InteractionPackageType interactionType, float damage, Vector3 impulse);
 		public InteractionData(InteractionPackageType interactionType, PlayerKilledByType playerKilledByType);
+		public InteractionData(InteractionPackageType interactionType, float damage, PlayerKilledByType playerKilledByType);
 		public InteractionData(InteractionPackageType interactionType, Vector3 impulse, PlayerKilledByType playerKilledByType);
 		public InteractionData(InteractionPackageType interactionType, float damage, Vector3 impulse, PlayerKilledByType playerKilledByType);
 		private InteractionData(InteractionPackageType interactionType, float damage, Vector3 impulse, PlayerKilledByType playerKilledByType, bool isShared);

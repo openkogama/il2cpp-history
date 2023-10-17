@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GNU.Gettext
 {
@@ -15,10 +15,8 @@ namespace GNU.Gettext
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _Level_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private StringBuilder _Text_k__BackingField;
 	
 		// Properties

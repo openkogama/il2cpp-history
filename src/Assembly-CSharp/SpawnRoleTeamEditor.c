@@ -7,105 +7,120 @@ void Assembly-CSharp.dll::SpawnRoleTeamEditor::SpawnRoleTeamEditor_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
-  iVar1 = 0;
   (this->fields).onTeamChangeCallback = onTeamChangeCallback;
-  pLVar2 = (this->fields).teamButtons;
-  while (pLVar2 != (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) {
-    pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Count__
-                       );
-    if ((int)pOVar3 <= iVar1) {
-      return;
+  func_?(&(this->fields).onTeamChangeCallback,onTeamChangeCallback);
+  pLVar1 = (this->fields).teamButtons;
+  index = 0;
+  if (pLVar1 != (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) {
+    while( true ) {
+      if ((pLVar1->fields)._size <= index) {
+        return;
+      }
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar2 == (MVNetworkGame *)0x0) ||
+         (pMVar3 = (pMVar2->fields).teamManager, pMVar3 == (MVTeamManager *)0x0)) break;
+      this_00 = (pMVar3->fields).teamNames;
+      pLVar1 = (this->fields).teamButtons;
+      if ((pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) ||
+         (pSVar4 = mscorlib.dll::System::Collections::Generic::
+                   List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
+                   List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
+                             (&SStack_5,pLVar1,index,
+                              MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                             ), this_00 == (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)
+         ) break;
+      pTVar6 = (Text *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Int32Enum,System::Object]::
+                       Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                                  pSVar4->team,
+                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                                 );
+      pLVar1 = (this->fields).teamButtons;
+      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pSVar4 = mscorlib.dll::System::Collections::Generic::
+               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
+               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+                          MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                         );
+      pTVar7 = pSVar4->buttonSelectedText;
+      SStack_5.team = pSVar4->team;
+      if (pTVar7 == (Text *)0x0) break;
+      SStack_5.buttonNotSelectedText = (Text *)(pTVar7->klass->vtable).set_text.method;
+      SStack_5.buttonSelected = (GameObject *)&UNK_?;
+      SStack_5.buttonNotSelected = (GameObject *)pTVar7;
+      SStack_5.buttonSelectedText = pTVar6;
+      (*(pTVar7->klass->vtable).set_text.methodPtr)();
+      pLVar1 = (this->fields).teamButtons;
+      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pSVar4 = mscorlib.dll::System::Collections::Generic::
+               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
+               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+                          MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                         );
+      pTVar7 = pSVar4->buttonNotSelectedText;
+      SStack_5.team = pSVar4->team;
+      if (pTVar7 == (Text *)0x0) break;
+      (*(pTVar7->klass->vtable).set_text.methodPtr)
+                (pTVar7,pTVar6,(pTVar7->klass->vtable).set_text.method);
+      pLVar1 = (this->fields).teamButtons;
+      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pSVar4 = mscorlib.dll::System::Collections::Generic::
+               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
+               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+                          MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                         );
+      value = spawnRolesTeam == pSVar4->team;
+      SStack_5.buttonSelected = pSVar4->buttonSelected;
+      SStack_5.buttonNotSelected = pSVar4->buttonNotSelected;
+      SStack_5.buttonSelectedText = pSVar4->buttonSelectedText;
+      SStack_5.buttonNotSelectedText = pSVar4->buttonNotSelectedText;
+      pLVar1 = (this->fields).teamButtons;
+      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pSVar4 = mscorlib.dll::System::Collections::Generic::
+               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
+               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+                          MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                         );
+      SStack_5.team = pSVar4->team;
+      if (pSVar4->buttonSelected == (GameObject *)0x0) break;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pSVar4->buttonSelected,value,(MethodInfo *)0x0);
+      pLVar1 = (this->fields).teamButtons;
+      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pSVar4 = mscorlib.dll::System::Collections::Generic::
+               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
+               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+                          MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                         );
+      SStack_5.team = pSVar4->team;
+      if (pSVar4->buttonNotSelected == (GameObject *)0x0) break;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pSVar4->buttonNotSelected,!value,(MethodInfo *)0x0);
+      pLVar1 = (this->fields).teamButtons;
+      index = index + 1;
+      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_00 == (MVNetworkGame *)0x0) ||
-       (this_01 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                            ((DayNightCycle *)this_00,(MethodInfo *)0x0), this_01 == (SkyParam *)0x0
-       )) break;
-    this_02 = (Dictionary_2_MV_WorldObject_MVTeam_System_Object_ *)
-              mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-              Serialization::JsonProperty]::
-              Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                        ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                         (MethodInfo *)0x0);
-    pLVar2 = (this->fields).teamButtons;
-    if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-    puVar4 = (undefined4 *)
-             func_?(&uStack_5,pLVar2,iVar1,
-                             MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
-                            );
-    uStack_6 = *puVar4;
-    uStack_7 = puVar4[1];
-    uStack_8 = puVar4[2];
-    uStack_9 = puVar4[3];
-    if (this_02 == (Dictionary_2_MV_WorldObject_MVTeam_System_Object_ *)0x0) break;
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::MVTeam,System
-             ::Object]::Dictionary_2_MV_WorldObject_MVTeam_System_Object__get_Item
-                       (this_02,puVar4[4],
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                       );
-    pLVar2 = (this->fields).teamButtons;
-    if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-    iVar10 = func_?(&uStack_6,pLVar2,iVar1,
-                            MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
-                           );
-    uStack_11 = *(undefined4 *)(iVar10 + 0x10);
-    if (*(int *)(iVar10 + 8) == 0) break;
-    func_?(0x49,*(int *)(iVar10 + 8),pOVar3);
-    pLVar2 = (this->fields).teamButtons;
-    if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-    iVar10 = func_?(&uStack_6,pLVar2,iVar1,
-                            MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
-                           );
-    uStack_11 = *(undefined4 *)(iVar10 + 0x10);
-    if (*(int *)(iVar10 + 0xc) == 0) break;
-    func_?(0x49,*(int *)(iVar10 + 0xc),pOVar3);
-    pLVar2 = (this->fields).teamButtons;
-    if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-    puVar4 = (undefined4 *)
-             func_?(&uStack_6,pLVar2,iVar1,
-                             MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
-                            );
-    MVar12 = puVar4[4];
-    uStack_5 = *puVar4;
-    uStack_13 = puVar4[1];
-    uStack_14 = puVar4[2];
-    uStack_15 = puVar4[3];
-    pLVar2 = (this->fields).teamButtons;
-    if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-    puVar4 = (undefined4 *)
-             func_?(&uStack_6,pLVar2,iVar1,
-                             MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
-                            );
-    uStack_11 = puVar4[4];
-    if ((GameObject *)*puVar4 == (GameObject *)0x0) break;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              ((GameObject *)*puVar4,spawnRolesTeam == MVar12,(MethodInfo *)0x0);
-    pLVar2 = (this->fields).teamButtons;
-    if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-    iVar10 = func_?(&uStack_6,pLVar2,iVar1,
-                            MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
-                           );
-    uStack_11 = *(undefined4 *)(iVar10 + 0x10);
-    if (*(GameObject **)(iVar10 + 4) == (GameObject *)0x0) break;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (*(GameObject **)(iVar10 + 4),spawnRolesTeam != MVar12,(MethodInfo *)0x0);
-    iVar1 = iVar1 + 1;
-    pLVar2 = (this->fields).teamButtons;
   }
-  func_?(0);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -150,64 +165,60 @@ void Assembly-CSharp.dll::SpawnRoleTeamEditor::SpawnRoleTeamEditor_SelectTeam
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_UIPushOption_ *)(this->fields).onTeamChangeCallback;
-  if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,teamSelected,
-               MethodInfo__UnityEngine__Events__UnityAction<MV::WorldObject::MVTeam>__Invoke_MV__WorldObject__MVTeam_
-              );
+  pUVar1 = (this->fields).onTeamChangeCallback;
+  if (pUVar1 != (UnityAction_1_MV_WorldObject_MVTeam_ *)0x0) {
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,teamSelected,(pUVar1->fields)._._.method);
     index = 0;
-    pLVar1 = (this->fields).teamButtons;
-    while (pLVar1 != (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                          MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Count__
-                         );
-      if ((int)pOVar2 <= index) {
+    pLVar2 = (this->fields).teamButtons;
+    while (pLVar2 != (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) {
+      if ((pLVar2->fields)._size <= index) {
         return;
       }
-      pLVar1 = (this->fields).teamButtons;
-      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pLVar2 = (this->fields).teamButtons;
+      if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
       pSVar3 = mscorlib.dll::System::Collections::Generic::
                List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
                List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffe8,pLVar1,index,
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffe8,pLVar2,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
       value = teamSelected == pSVar3->team;
-      pLVar1 = (this->fields).teamButtons;
-      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pLVar2 = (this->fields).teamButtons;
+      if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
       pSVar3 = mscorlib.dll::System::Collections::Generic::
                List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
                List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar2,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
       if (pSVar3->buttonSelected == (GameObject *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pSVar3->buttonSelected,value,(MethodInfo *)0x0);
-      pLVar1 = (this->fields).teamButtons;
-      if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
+      pLVar2 = (this->fields).teamButtons;
+      if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
       pSVar3 = mscorlib.dll::System::Collections::Generic::
                List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
                List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar2,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
       if (pSVar3->buttonNotSelected == (GameObject *)0x0) break;
-      teamSelected = (MVTeam__Enum)&UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pSVar3->buttonNotSelected,!value,(MethodInfo *)0x0);
       index = index + 1;
-      pLVar1 = (this->fields).teamButtons;
+      pLVar2 = (this->fields).teamButtons;
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

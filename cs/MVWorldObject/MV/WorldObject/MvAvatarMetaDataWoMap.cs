@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -19,12 +19,14 @@ namespace MV.WorldObject
 		private Dictionary<int, MvAvatarMetaData> avatarWOIDAvatarMetaData;
 	
 		// Constructors
+		public MvAvatarMetaDataWoMap();
 		public MvAvatarMetaDataWoMap(BytePacker bp);
 	
 		// Methods
 		public bool TryGetValue(int woID, out MvAvatarMetaData avatarMetaData);
 		public void Add(int woID, MvAvatarMetaData avatarMetaData);
 		public void ResetAvatar(int prevAvatarWoID, int newAvatarWoID);
+		public byte[] ToByteArray();
 		public override string ToString();
 	}
 }

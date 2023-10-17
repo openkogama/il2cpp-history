@@ -11,9 +11,10 @@ void Assembly-CSharp.dll::ScrollBarAutoHide::ScrollBarAutoHide_OnBeginDrag
               (this_00,1.0,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -29,9 +30,10 @@ void Assembly-CSharp.dll::ScrollBarAutoHide::ScrollBarAutoHide_OnEndDrag
     NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&puStack_2);
+  func_?(uVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -7,55 +7,69 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Equality
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsNode);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  method_00 = (MethodInfo *)0x0;
   pPVar1 = PluralFormsParser_RelationalExpression(this,(MethodInfo *)0x0);
   if (pPVar1 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
   pPVar2 = (this->fields).scanner;
-  if ((pPVar2 != (PluralFormsScanner *)0x0) &&
-     (pPVar3 = (pPVar2->fields).token, pPVar3 != (PluralFormsToken *)0x0)) {
-    iVar4 = (pPVar3->fields).type;
-    if (iVar4 != 6) {
-      if ((pPVar2 == (PluralFormsScanner *)0x0) || (pPVar3 == (PluralFormsToken *)0x0))
-      goto code_?;
-      if (iVar4 != 0xd) {
-        return pPVar1;
-      }
-    }
-    if (pPVar2 != (PluralFormsScanner *)0x0) {
-      this_00 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-      if (pPVar3 != (PluralFormsToken *)0x0) {
-        (this_00->fields)._._._._.m_CachedPtr = (void *)(pPVar3->fields).type;
-        (this_00->fields).state = (pPVar3->fields).number;
-        this_01 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-        PluralFormsNode::PluralFormsNode__ctor
-                  (this_01,(PluralFormsToken *)this_00,(MethodInfo *)0x0);
-        pPVar2 = (this->fields).scanner;
-        if (pPVar2 != (PluralFormsScanner *)0x0) {
-          bVar5 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
-          if ((bVar5 == 0) ||
-             (n = PluralFormsParser_RelationalExpression(this,(MethodInfo *)0x0),
-             n == (PluralFormsNode *)0x0)) {
-            return (PluralFormsNode *)0x0;
-          }
-          if (this_01 != (PluralFormsNode *)0x0) {
-            PluralFormsNode::PluralFormsNode_SetNode(this_01,1,n,(MethodInfo *)0x0);
-            PluralFormsNode::PluralFormsNode_SetNode(this_01,0,pPVar1,(MethodInfo *)0x0);
-            return this_01;
-          }
-        }
-      }
+  if ((pPVar2 == (PluralFormsScanner *)0x0) ||
+     (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) goto code_?;
+  if (((pPVar3->fields).type != 6) &&
+     ((((((this->fields).scanner)->fields).token)->fields).type != 0xd)) {
+    return pPVar1;
+  }
+  pPVar3 = (((this->fields).scanner)->fields).token;
+  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+  if (token == (PluralFormsToken *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  (token->fields).type = (pPVar3->fields).type;
+  (token->fields).number = (pPVar3->fields).number;
+  this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
+  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
+  PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
+  pPVar2 = (this->fields).scanner;
+  if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
+  bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar5 = PluralFormsParser_RelationalExpression(this,(MethodInfo *)0x0);
+  if (pPVar5 == (PluralFormsNode *)0x0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar6 = (this_00->fields).nodes;
+  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
+  if (iVar7 == 0) {
+    uVar8 = func_?(0);
+    func_?(uVar8);
+code_?:
+    uVar8 = func_?(0);
+    func_?(uVar8);
+  }
+  else if (1 < pPVar6->max_length) {
+    pPVar6->vector[1] = pPVar5;
+    func_?(pPVar6->vector + 1,pPVar5);
+    pPVar6 = (this_00->fields).nodes;
+    if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar7 = func_?(pPVar1,(pPVar6->klass->_0).element_class);
+    if (iVar7 == 0) goto code_?;
+    if (pPVar6->max_length != 0) {
+      pPVar6->vector[0] = pPVar1;
+      func_?(pPVar6->vector,pPVar1);
+      return this_00;
     }
   }
+  func_?();
 code_?:
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  pPVar1 = (PluralFormsNode *)(*pcVar6)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pPVar1 = (PluralFormsNode *)(*pcVar9)();
   return pPVar1;
 }
 
@@ -68,65 +82,93 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Expressi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsNode);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  method_00 = (MethodInfo *)0x0;
   pPVar1 = PluralFormsParser_LogicalOrExpression(this,(MethodInfo *)0x0);
   if (pPVar1 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
   pPVar2 = (this->fields).scanner;
-  if ((pPVar2 != (PluralFormsScanner *)0x0) &&
-     (pPVar3 = (pPVar2->fields).token, pPVar3 != (PluralFormsToken *)0x0)) {
-    if ((pPVar3->fields).type != 0x10) {
-      return pPVar1;
+  if ((pPVar2 == (PluralFormsScanner *)0x0) ||
+     (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) goto code_?;
+  if ((pPVar3->fields).type != 0x10) {
+    return pPVar1;
+  }
+  pPVar3 = (((this->fields).scanner)->fields).token;
+  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+  if (token == (PluralFormsToken *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  (token->fields).type = (pPVar3->fields).type;
+  (token->fields).number = (pPVar3->fields).number;
+  this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
+  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
+  PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
+  pPVar2 = (this->fields).scanner;
+  if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
+  bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar5 = PluralFormsParser_Expression(this,(MethodInfo *)0x0);
+  if (pPVar5 == (PluralFormsNode *)0x0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar6 = (this_00->fields).nodes;
+  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
+  if (iVar7 == 0) {
+    uVar8 = func_?(0);
+    func_?(uVar8);
+code_?:
+    uVar8 = func_?(0);
+    func_?(uVar8);
+code_?:
+    uVar8 = func_?(0);
+    func_?(uVar8);
+  }
+  else if (1 < pPVar6->max_length) {
+    pPVar6->vector[1] = pPVar5;
+    func_?(pPVar6->vector + 1,pPVar5);
+    pPVar2 = (this->fields).scanner;
+    if ((pPVar2 == (PluralFormsScanner *)0x0) ||
+       (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) goto code_?;
+    if ((pPVar3->fields).type != 0x11) {
+      return (PluralFormsNode *)0x0;
     }
-    if (pPVar2 != (PluralFormsScanner *)0x0) {
-      this_00 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-      if (pPVar3 != (PluralFormsToken *)0x0) {
-        (this_00->fields)._._._._.m_CachedPtr = (void *)(pPVar3->fields).type;
-        (this_00->fields).state = (pPVar3->fields).number;
-        this_01 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-        PluralFormsNode::PluralFormsNode__ctor
-                  (this_01,(PluralFormsToken *)this_00,(MethodInfo *)0x0);
-        pPVar2 = (this->fields).scanner;
-        if (pPVar2 != (PluralFormsScanner *)0x0) {
-          bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
-          if ((bVar4 == 0) ||
-             (pPVar5 = PluralFormsParser_Expression(this,(MethodInfo *)0x0),
-             pPVar5 == (PluralFormsNode *)0x0)) {
-            return (PluralFormsNode *)0x0;
-          }
-          if (this_01 != (PluralFormsNode *)0x0) {
-            PluralFormsNode::PluralFormsNode_SetNode(this_01,1,pPVar5,(MethodInfo *)0x0);
-            pPVar2 = (this->fields).scanner;
-            if ((pPVar2 != (PluralFormsScanner *)0x0) &&
-               (pPVar3 = (pPVar2->fields).token, pPVar3 != (PluralFormsToken *)0x0)) {
-              if ((pPVar3->fields).type != 0x11) {
-                return (PluralFormsNode *)0x0;
-              }
-              bVar4 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
-              if (bVar4 == 0) {
-                return (PluralFormsNode *)0x0;
-              }
-              pPVar5 = PluralFormsParser_Expression(this,(MethodInfo *)0x0);
-              if (pPVar5 == (PluralFormsNode *)0x0) {
-                return (PluralFormsNode *)0x0;
-              }
-              PluralFormsNode::PluralFormsNode_SetNode(this_01,2,pPVar5,(MethodInfo *)0x0);
-              PluralFormsNode::PluralFormsNode_SetNode(this_01,0,pPVar1,(MethodInfo *)0x0);
-              return this_01;
-            }
-          }
-        }
+    bVar4 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
+    if (bVar4 == 0) {
+      return (PluralFormsNode *)0x0;
+    }
+    pPVar5 = PluralFormsParser_Expression(this,(MethodInfo *)0x0);
+    if (pPVar5 == (PluralFormsNode *)0x0) {
+      return (PluralFormsNode *)0x0;
+    }
+    pPVar6 = (this_00->fields).nodes;
+    if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
+    if (iVar7 == 0) goto code_?;
+    if (2 < pPVar6->max_length) {
+      pPVar6->vector[2] = pPVar5;
+      func_?(pPVar6->vector + 2,pPVar5);
+      pPVar6 = (this_00->fields).nodes;
+      if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+      iVar7 = func_?(pPVar1,(pPVar6->klass->_0).element_class);
+      if (iVar7 == 0) goto code_?;
+      if (pPVar6->max_length != 0) {
+        pPVar6->vector[0] = pPVar1;
+        func_?(pPVar6->vector,pPVar1);
+        return this_00;
       }
     }
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  pPVar1 = (PluralFormsNode *)(*pcVar6)();
+  func_?();
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pPVar1 = (PluralFormsNode *)(*pcVar9)();
   return pPVar1;
 }
 
@@ -139,99 +181,113 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_LogicalA
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsNode);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  method_00 = (MethodInfo *)0x0;
-  pPVar1 = PluralFormsParser_RelationalExpression(this,(MethodInfo *)0x0);
+  pPVar1 = PluralFormsParser_EqualityExpression(this,(MethodInfo *)0x0);
   if (pPVar1 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
   pPVar2 = (this->fields).scanner;
   if ((pPVar2 == (PluralFormsScanner *)0x0) ||
      (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) goto code_?;
-  iVar4 = (pPVar3->fields).type;
-  if (iVar4 == 6) {
-code_?:
-    if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
-    pSVar5 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-    ScaleAnimationBase::ScaleAnimationBase_Play(pSVar5,0.0,method_00);
-    if (pPVar3 == (PluralFormsToken *)0x0) goto code_?;
-    (pSVar5->fields)._._._._.m_CachedPtr = (void *)(pPVar3->fields).type;
-    (pSVar5->fields).state = (pPVar3->fields).number;
-    pPVar6 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-    PluralFormsNode::PluralFormsNode__ctor(pPVar6,(PluralFormsToken *)pSVar5,(MethodInfo *)0x0);
-    pPVar2 = (this->fields).scanner;
-    if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
-    bVar7 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
-    if (bVar7 == 0) {
-      return (PluralFormsNode *)0x0;
-    }
-    pPVar8 = PluralFormsParser_RelationalExpression(this,(MethodInfo *)0x0);
-    if (pPVar8 == (PluralFormsNode *)0x0) {
-      return (PluralFormsNode *)0x0;
-    }
-    if (pPVar6 == (PluralFormsNode *)0x0) goto code_?;
-    PluralFormsNode::PluralFormsNode_SetNode(pPVar6,1,pPVar8,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)0x0;
-    PluralFormsNode::PluralFormsNode_SetNode(pPVar6,0,pPVar1,(MethodInfo *)0x0);
+  if ((pPVar3->fields).type != 0xe) {
+    return pPVar1;
   }
-  else {
-    if ((pPVar2 == (PluralFormsScanner *)0x0) || (pPVar3 == (PluralFormsToken *)0x0))
-    goto code_?;
-    pPVar6 = pPVar1;
-    if (iVar4 == 0xd) goto code_?;
-  }
-  if (pPVar6 == (PluralFormsNode *)0x0) {
+  pPVar3 = (((this->fields).scanner)->fields).token;
+  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+  if (token == (PluralFormsToken *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  (token->fields).type = (pPVar3->fields).type;
+  (token->fields).number = (pPVar3->fields).number;
+  this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
+  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
+  PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
+  pPVar2 = (this->fields).scanner;
+  if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
+  bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
     return (PluralFormsNode *)0x0;
   }
-  pPVar2 = (this->fields).scanner;
-  if ((pPVar2 != (PluralFormsScanner *)0x0) &&
-     (pPVar3 = (pPVar2->fields).token, pPVar3 != (PluralFormsToken *)0x0)) {
-    if ((pPVar3->fields).type != 0xe) {
-      return pPVar6;
-    }
-    if (pPVar2 != (PluralFormsScanner *)0x0) {
-      pSVar5 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-      ScaleAnimationBase::ScaleAnimationBase_Play(pSVar5,0.0,method_00);
-      if (pPVar3 != (PluralFormsToken *)0x0) {
-        (pSVar5->fields)._._._._.m_CachedPtr = (void *)(pPVar3->fields).type;
-        (pSVar5->fields).state = (pPVar3->fields).number;
-        pPVar1 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-        PluralFormsNode::PluralFormsNode__ctor(pPVar1,(PluralFormsToken *)pSVar5,(MethodInfo *)0x0);
-        pPVar2 = (this->fields).scanner;
-        if (pPVar2 != (PluralFormsScanner *)0x0) {
-          bVar7 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
-          if ((bVar7 == 0) ||
-             (pPVar8 = PluralFormsParser_LogicalAndExpression(this,(MethodInfo *)0x0),
-             pPVar8 == (PluralFormsNode *)0x0)) {
-            return (PluralFormsNode *)0x0;
-          }
-          pPVar3 = (pPVar8->fields).token;
-          if ((pPVar3 != (PluralFormsToken *)0x0) && (pPVar1 != (PluralFormsNode *)0x0)) {
-            if ((pPVar3->fields).type == 0xe) {
-              PluralFormsNode::PluralFormsNode_SetNode(pPVar1,0,pPVar6,(MethodInfo *)0x0);
-              pPVar6 = PluralFormsNode::PluralFormsNode_ReleaseNode(pPVar8,0,(MethodInfo *)0x0);
-              PluralFormsNode::PluralFormsNode_SetNode(pPVar1,1,pPVar6,(MethodInfo *)0x0);
-              PluralFormsNode::PluralFormsNode_SetNode(pPVar8,0,pPVar1,(MethodInfo *)0x0);
-              return pPVar8;
-            }
-            PluralFormsNode::PluralFormsNode_SetNode(pPVar1,0,pPVar6,(MethodInfo *)0x0);
-            PluralFormsNode::PluralFormsNode_SetNode(pPVar1,1,pPVar8,(MethodInfo *)0x0);
-            return pPVar1;
-          }
+  this_01 = PluralFormsParser_LogicalAndExpression(this,(MethodInfo *)0x0);
+  if (this_01 == (PluralFormsNode *)0x0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar3 = (this_01->fields).token;
+  if (pPVar3 == (PluralFormsToken *)0x0) goto code_?;
+  pPVar5 = (this_00->fields).nodes;
+  if ((pPVar3->fields).type == 0xe) {
+    if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar6 = func_?(pPVar1,(pPVar5->klass->_0).element_class);
+    if (iVar6 == 0) goto code_?;
+    if (pPVar5->max_length == 0) goto code_?;
+    pPVar5->vector[0] = pPVar1;
+    func_?(pPVar5->vector,pPVar1);
+    pPVar1 = PluralFormsNode::PluralFormsNode_ReleaseNode(this_01,0,(MethodInfo *)0x0);
+    pPVar5 = (this_00->fields).nodes;
+    if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+    if ((pPVar1 != (PluralFormsNode *)0x0) &&
+       (iVar6 = func_?(pPVar1,(pPVar5->klass->_0).element_class), iVar6 == 0))
+    goto code_?;
+    if (1 < pPVar5->max_length) {
+      pPVar5->vector[1] = pPVar1;
+      func_?(pPVar5->vector + 1,pPVar1);
+      pPVar5 = (this_01->fields).nodes;
+      if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+      iVar6 = func_?(this_00,(pPVar5->klass->_0).element_class);
+      if (iVar6 != 0) {
+        if (pPVar5->max_length != 0) {
+          pPVar5->vector[0] = this_00;
+          func_?(pPVar5->vector,this_00);
+          return this_01;
         }
+        goto code_?;
       }
+      goto code_?;
     }
   }
+  else {
+    if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar6 = func_?(pPVar1,(pPVar5->klass->_0).element_class);
+    if (iVar6 != 0) {
+      if (pPVar5->max_length != 0) {
+        pPVar5->vector[0] = pPVar1;
+        func_?(pPVar5->vector,pPVar1);
+        pPVar5 = (this_00->fields).nodes;
+        if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+        iVar6 = func_?(this_01,(pPVar5->klass->_0).element_class);
+        if (iVar6 == 0) goto code_?;
+        if (1 < pPVar5->max_length) {
+          pPVar5->vector[1] = this_01;
+          func_?(pPVar5->vector + 1,this_01);
+          return this_00;
+        }
+      }
+      goto code_?;
+    }
+    uVar7 = func_?(0);
+    func_?(uVar7);
 code_?:
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  pPVar1 = (PluralFormsNode *)(*pcVar9)();
+    uVar7 = func_?(0);
+    func_?(uVar7);
+code_?:
+    uVar7 = func_?(0);
+    func_?(uVar7);
+code_?:
+    uVar7 = func_?(0);
+    func_?(uVar7);
+code_?:
+    uVar7 = func_?(0);
+    func_?(uVar7);
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pPVar1 = (PluralFormsNode *)(*pcVar8)();
   return pPVar1;
 }
 
@@ -244,57 +300,113 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_LogicalO
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsNode);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  method_00 = (MethodInfo *)0x0;
   pPVar1 = PluralFormsParser_LogicalAndExpression(this,(MethodInfo *)0x0);
   if (pPVar1 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
   pPVar2 = (this->fields).scanner;
-  if ((pPVar2 != (PluralFormsScanner *)0x0) &&
-     (pPVar3 = (pPVar2->fields).token, pPVar3 != (PluralFormsToken *)0x0)) {
-    if ((pPVar3->fields).type != 0xf) {
-      return pPVar1;
-    }
-    if (pPVar2 != (PluralFormsScanner *)0x0) {
-      this_00 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-      if (pPVar3 != (PluralFormsToken *)0x0) {
-        (this_00->fields)._._._._.m_CachedPtr = (void *)(pPVar3->fields).type;
-        (this_00->fields).state = (pPVar3->fields).number;
-        this_01 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-        PluralFormsNode::PluralFormsNode__ctor
-                  (this_01,(PluralFormsToken *)this_00,(MethodInfo *)0x0);
-        pPVar2 = (this->fields).scanner;
-        if (pPVar2 != (PluralFormsScanner *)0x0) {
-          bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
-          if ((bVar4 == 0) ||
-             (this_02 = PluralFormsParser_LogicalOrExpression(this,(MethodInfo *)0x0),
-             this_02 == (PluralFormsNode *)0x0)) {
-            return (PluralFormsNode *)0x0;
-          }
-          pPVar3 = (this_02->fields).token;
-          if ((pPVar3 != (PluralFormsToken *)0x0) && (this_01 != (PluralFormsNode *)0x0)) {
-            if ((pPVar3->fields).type == 0xf) {
-              PluralFormsNode::PluralFormsNode_SetNode(this_01,0,pPVar1,(MethodInfo *)0x0);
-              pPVar1 = PluralFormsNode::PluralFormsNode_ReleaseNode(this_02,0,(MethodInfo *)0x0);
-              PluralFormsNode::PluralFormsNode_SetNode(this_01,1,pPVar1,(MethodInfo *)0x0);
-              PluralFormsNode::PluralFormsNode_SetNode(this_02,0,this_01,(MethodInfo *)0x0);
-              return this_02;
-            }
-            PluralFormsNode::PluralFormsNode_SetNode(this_01,0,pPVar1,(MethodInfo *)0x0);
-            PluralFormsNode::PluralFormsNode_SetNode(this_01,1,this_02,(MethodInfo *)0x0);
-            return this_01;
-          }
+  if ((pPVar2 == (PluralFormsScanner *)0x0) ||
+     (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) goto code_?;
+  if ((pPVar3->fields).type != 0xf) {
+    return pPVar1;
+  }
+  pPVar3 = (((this->fields).scanner)->fields).token;
+  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+  if (token == (PluralFormsToken *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  (token->fields).type = (pPVar3->fields).type;
+  (token->fields).number = (pPVar3->fields).number;
+  this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
+  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
+  PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
+  pPVar2 = (this->fields).scanner;
+  if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
+  bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    return (PluralFormsNode *)0x0;
+  }
+  this_01 = PluralFormsParser_LogicalOrExpression(this,(MethodInfo *)0x0);
+  if (this_01 == (PluralFormsNode *)0x0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar3 = (this_01->fields).token;
+  if (pPVar3 == (PluralFormsToken *)0x0) goto code_?;
+  pPVar5 = (this_00->fields).nodes;
+  if ((pPVar3->fields).type == 0xf) {
+    if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar6 = func_?(pPVar1,(pPVar5->klass->_0).element_class);
+    if (iVar6 == 0) goto code_?;
+    if (pPVar5->max_length == 0) goto code_?;
+    pPVar5->vector[0] = pPVar1;
+    func_?(pPVar5->vector,pPVar1);
+    pPVar1 = PluralFormsNode::PluralFormsNode_ReleaseNode(this_01,0,(MethodInfo *)0x0);
+    pPVar5 = (this_00->fields).nodes;
+    if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+    if ((pPVar1 != (PluralFormsNode *)0x0) &&
+       (iVar6 = func_?(pPVar1,(pPVar5->klass->_0).element_class), iVar6 == 0))
+    goto code_?;
+    if (1 < pPVar5->max_length) {
+      pPVar5->vector[1] = pPVar1;
+      func_?(pPVar5->vector + 1,pPVar1);
+      pPVar5 = (this_01->fields).nodes;
+      if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+      iVar6 = func_?(this_00,(pPVar5->klass->_0).element_class);
+      if (iVar6 != 0) {
+        if (pPVar5->max_length != 0) {
+          pPVar5->vector[0] = this_00;
+          func_?(pPVar5->vector,this_00);
+          return this_01;
         }
+        goto code_?;
       }
+      goto code_?;
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  pPVar1 = (PluralFormsNode *)(*pcVar5)();
+  else {
+    if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar6 = func_?(pPVar1,(pPVar5->klass->_0).element_class);
+    if (iVar6 != 0) {
+      if (pPVar5->max_length != 0) {
+        pPVar5->vector[0] = pPVar1;
+        func_?(pPVar5->vector,pPVar1);
+        pPVar5 = (this_00->fields).nodes;
+        if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
+        iVar6 = func_?(this_01,(pPVar5->klass->_0).element_class);
+        if (iVar6 == 0) goto code_?;
+        if (1 < pPVar5->max_length) {
+          pPVar5->vector[1] = this_01;
+          func_?(pPVar5->vector + 1,this_01);
+          return this_00;
+        }
+      }
+      goto code_?;
+    }
+    uVar7 = func_?(0);
+    func_?(uVar7);
+code_?:
+    uVar7 = func_?(0);
+    func_?(uVar7);
+code_?:
+    uVar7 = func_?(0);
+    func_?(uVar7);
+code_?:
+    uVar7 = func_?(0);
+    func_?(uVar7);
+code_?:
+    uVar7 = func_?(0);
+    func_?(uVar7);
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pPVar1 = (PluralFormsNode *)(*pcVar8)();
   return pPVar1;
 }
 
@@ -307,50 +419,69 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Multipli
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsNode);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  method_00 = (MethodInfo *)0x0;
   pPVar1 = PluralFormsParser_PmExpression(this,(MethodInfo *)0x0);
-  if (pPVar1 != (PluralFormsNode *)0x0) {
-    pPVar2 = (this->fields).scanner;
-    if ((pPVar2 != (PluralFormsScanner *)0x0) &&
-       (pPVar3 = (pPVar2->fields).token, pPVar3 != (PluralFormsToken *)0x0)) {
-      if ((pPVar3->fields).type != 0xc) {
-        return pPVar1;
-      }
-      if (pPVar2 != (PluralFormsScanner *)0x0) {
-        this_00 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-        ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-        if (pPVar3 != (PluralFormsToken *)0x0) {
-          (this_00->fields)._._._._.m_CachedPtr = (void *)(pPVar3->fields).type;
-          (this_00->fields).state = (pPVar3->fields).number;
-          this_01 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-          PluralFormsNode::PluralFormsNode__ctor
-                    (this_01,(PluralFormsToken *)this_00,(MethodInfo *)0x0);
-          pPVar2 = (this->fields).scanner;
-          if (pPVar2 != (PluralFormsScanner *)0x0) {
-            bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
-            if ((bVar4 == 0) ||
-               (n = PluralFormsParser_PmExpression(this,(MethodInfo *)0x0),
-               n == (PluralFormsNode *)0x0)) {
-              return (PluralFormsNode *)0x0;
-            }
-            if (this_01 != (PluralFormsNode *)0x0) {
-              PluralFormsNode::PluralFormsNode_SetNode(this_01,1,n,(MethodInfo *)0x0);
-              PluralFormsNode::PluralFormsNode_SetNode(this_01,0,pPVar1,(MethodInfo *)0x0);
-              return this_01;
-            }
-          }
-        }
-      }
-    }
-    func_?(0);
-    pcVar5 = (code *)swi(3);
-    pPVar1 = (PluralFormsNode *)(*pcVar5)();
+  if (pPVar1 == (PluralFormsNode *)0x0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar2 = (this->fields).scanner;
+  if ((pPVar2 == (PluralFormsScanner *)0x0) ||
+     (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) goto code_?;
+  if ((pPVar3->fields).type != 0xc) {
     return pPVar1;
   }
-  return (PluralFormsNode *)0x0;
+  pPVar3 = (((this->fields).scanner)->fields).token;
+  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+  if (token == (PluralFormsToken *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  (token->fields).type = (pPVar3->fields).type;
+  (token->fields).number = (pPVar3->fields).number;
+  this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
+  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
+  PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
+  pPVar2 = (this->fields).scanner;
+  if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
+  bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar5 = PluralFormsParser_PmExpression(this,(MethodInfo *)0x0);
+  if (pPVar5 == (PluralFormsNode *)0x0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar6 = (this_00->fields).nodes;
+  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
+  if (iVar7 == 0) {
+    uVar8 = func_?(0);
+    func_?(uVar8);
+code_?:
+    uVar8 = func_?(0);
+    func_?(uVar8);
+  }
+  else if (1 < pPVar6->max_length) {
+    pPVar6->vector[1] = pPVar5;
+    func_?(pPVar6->vector + 1,pPVar5);
+    pPVar6 = (this_00->fields).nodes;
+    if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar7 = func_?(pPVar1,(pPVar6->klass->_0).element_class);
+    if (iVar7 == 0) goto code_?;
+    if (pPVar6->max_length != 0) {
+      pPVar6->vector[0] = pPVar1;
+      func_?(pPVar6->vector,pPVar1);
+      return this_00;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pPVar1 = (PluralFormsNode *)(*pcVar9)();
+  return pPVar1;
 }
 
 
@@ -365,9 +496,10 @@ bool Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Nex
     bVar1 = PluralFormsScanner::PluralFormsScanner_NextToken(this_00,(MethodInfo *)0x0);
     return bVar1 != 0;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 
@@ -381,95 +513,88 @@ bool Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Par
   pPVar1 = (this->fields).scanner;
   if ((pPVar1 != (PluralFormsScanner *)0x0) &&
      (pPVar2 = (pPVar1->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
-    if ((pPVar2->fields).type != 5) {
-      return 0;
-    }
-    if (pPVar1 != (PluralFormsScanner *)0x0) {
-      bVar3 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar1,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
-        return 0;
-      }
+    if (((pPVar2->fields).type == 5) &&
+       (bVar3 = PluralFormsScanner::PluralFormsScanner_NextToken
+                          ((this->fields).scanner,(MethodInfo *)0x0), bVar3 != 0)) {
       pPVar1 = (this->fields).scanner;
-      if ((pPVar1 != (PluralFormsScanner *)0x0) &&
-         (pPVar2 = (pPVar1->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
-        if ((pPVar2->fields).type != 7) {
-          return 0;
-        }
-        if (pPVar1 != (PluralFormsScanner *)0x0) {
-          bVar3 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar1,(MethodInfo *)0x0);
-          if (bVar3 == 0) {
-            return 0;
-          }
-          pPVar1 = (this->fields).scanner;
-          if ((pPVar1 != (PluralFormsScanner *)0x0) &&
-             (pPVar2 = (pPVar1->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
-            if ((pPVar2->fields).type != 2) {
-              return 0;
-            }
-            pPVar2 = PluralFormsParser_get_Token(this,(MethodInfo *)0x0);
-            if (pPVar2 != (PluralFormsToken *)0x0) {
-              pPVar1 = (PluralFormsScanner *)(pPVar2->fields).number;
+      if ((pPVar1 == (PluralFormsScanner *)0x0) ||
+         (pPVar2 = (pPVar1->fields).token, pPVar2 == (PluralFormsToken *)0x0))
+      goto code_?;
+      if (((pPVar2->fields).type == 7) &&
+         (bVar3 = PluralFormsScanner::PluralFormsScanner_NextToken
+                            ((this->fields).scanner,(MethodInfo *)0x0), bVar3 != 0)) {
+        pPVar1 = (this->fields).scanner;
+        if ((pPVar1 == (PluralFormsScanner *)0x0) ||
+           (pPVar2 = (pPVar1->fields).token, pPVar2 == (PluralFormsToken *)0x0))
+        goto code_?;
+        if ((pPVar2->fields).type == 2) {
+          pPVar1 = (PluralFormsScanner *)(((((this->fields).scanner)->fields).token)->fields).number
+          ;
+          bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
+          if (bVar3 != 0) {
+            pPVar4 = (this->fields).scanner;
+            if ((pPVar4 != (PluralFormsScanner *)0x0) &&
+               (pPVar2 = (pPVar4->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+              if ((pPVar2->fields).type != 0x12) {
+                return 0;
+              }
               bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
               if (bVar3 == 0) {
                 return 0;
               }
-              pPVar2 = PluralFormsParser_get_Token(this,(MethodInfo *)0x0);
-              if (pPVar2 != (PluralFormsToken *)0x0) {
-                if ((pPVar2->fields).type != 0x12) {
+              pPVar4 = (this->fields).scanner;
+              if ((pPVar4 != (PluralFormsScanner *)0x0) &&
+                 (pPVar2 = (pPVar4->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+                if ((pPVar2->fields).type != 4) {
                   return 0;
                 }
                 bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
                 if (bVar3 == 0) {
                   return 0;
                 }
-                pPVar2 = PluralFormsParser_get_Token(this,(MethodInfo *)0x0);
-                if (pPVar2 != (PluralFormsToken *)0x0) {
-                  if ((pPVar2->fields).type != 4) {
+                pPVar4 = (this->fields).scanner;
+                if ((pPVar4 != (PluralFormsScanner *)0x0) &&
+                   (pPVar2 = (pPVar4->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+                  if ((pPVar2->fields).type != 7) {
                     return 0;
                   }
                   bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
                   if (bVar3 == 0) {
                     return 0;
                   }
-                  pPVar2 = PluralFormsParser_get_Token(this,(MethodInfo *)0x0);
-                  if (pPVar2 != (PluralFormsToken *)0x0) {
-                    if ((pPVar2->fields).type != 7) {
+                  pPStack5 =
+                       (PluralFormsParser__Class *)
+                       PluralFormsParser_Expression(this,(MethodInfo *)0x0);
+                  if (pPStack5 == (PluralFormsParser__Class *)0x0) {
+                    return 0;
+                  }
+                  pPVar4 = (this->fields).scanner;
+                  if ((pPVar4 != (PluralFormsScanner *)0x0) &&
+                     (pPVar2 = (pPVar4->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+                    if ((pPVar2->fields).type != 0x12) {
                       return 0;
                     }
-                    bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
-                    if (bVar3 == 0) {
-                      return 0;
-                    }
-                    pPVar4 = (PluralFormsParser__Class *)
-                             PluralFormsParser_Expression(this,(MethodInfo *)0x0);
-                    if (pPVar4 == (PluralFormsParser__Class *)0x0) {
-                      return 0;
-                    }
-                    pPVar5 = (this->fields).scanner;
-                    if ((pPVar5 != (PluralFormsScanner *)0x0) &&
-                       (pPVar2 = (pPVar5->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+                    pPVar2 = (((this->fields).scanner)->fields).token;
+                    if (pPVar2 != (PluralFormsToken *)0x0) {
                       if ((pPVar2->fields).type != 0x12) {
                         return 0;
                       }
-                      pPVar2 = PluralFormsParser_get_Token(this,(MethodInfo *)0x0);
-                      if (pPVar2 != (PluralFormsToken *)0x0) {
-                        if ((pPVar2->fields).type != 0x12) {
+                      bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
+                      if (bVar3 == 0) {
+                        return 0;
+                      }
+                      pPVar4 = (this->fields).scanner;
+                      if ((pPVar4 != (PluralFormsScanner *)0x0) &&
+                         (pPVar2 = (pPVar4->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+                        if ((pPVar2->fields).type != 1) {
                           return 0;
                         }
-                        bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
-                        if (bVar3 == 0) {
-                          return 0;
-                        }
-                        pPVar2 = PluralFormsParser_get_Token(this,(MethodInfo *)0x0);
-                        if (pPVar2 != (PluralFormsToken *)0x0) {
-                          if ((pPVar2->fields).type != 1) {
-                            return 0;
-                          }
-                          if (this != (PluralFormsParser *)0x0) {
-                            this[1].klass = pPVar4;
-                            (this->fields).scanner = pPVar1;
-                            return 1;
-                          }
+                        if (this != (PluralFormsParser *)0x0) {
+                          (this->fields).scanner = pPVar1;
+                          this[1].klass = pPStack5;
+                          pPStack6 = this + 1;
+                          func_?();
+                          return 1;
                         }
                       }
                     }
@@ -477,14 +602,17 @@ bool Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Par
                 }
               }
             }
+            goto code_?;
           }
         }
       }
     }
+    return 0;
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  bVar3 = (*pcVar6)();
+code_?:
+  func_?();
+  pcVar7 = (code *)swi(3);
+  bVar3 = (*pcVar7)();
   return bVar3;
 }
 
@@ -501,7 +629,7 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_ParsePlu
     pPVar2 = (this->fields).scanner;
     if ((pPVar2 == (PluralFormsScanner *)0x0) ||
        (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) {
-      func_?(0);
+      func_?();
       pcVar4 = (code *)swi(3);
       pPVar1 = (PluralFormsNode *)(*pcVar4)();
       return pPVar1;
@@ -522,65 +650,69 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_PmExpres
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsNode);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).scanner;
-  if ((pPVar1 == (PluralFormsScanner *)0x0) ||
-     (pPVar2 = (pPVar1->fields).token, pPVar2 == (PluralFormsToken *)0x0)) goto code_?;
-  iVar3 = (pPVar2->fields).type;
-  if (iVar3 != 3) {
-    if ((pPVar1 == (PluralFormsScanner *)0x0) || (pPVar2 == (PluralFormsToken *)0x0))
-    goto code_?;
-    if (iVar3 != 2) {
-      if (iVar3 != 0x13) {
+  if ((pPVar1 != (PluralFormsScanner *)0x0) &&
+     (pPVar2 = (pPVar1->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+    if (((pPVar2->fields).type == 3) ||
+       ((((((this->fields).scanner)->fields).token)->fields).type == 2)) {
+      pPVar1 = (this->fields).scanner;
+      if (pPVar1 != (PluralFormsScanner *)0x0) {
+        pPVar2 = (pPVar1->fields).token;
+        token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+        if ((token != (PluralFormsToken *)0x0) &&
+           (mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBP),
+           pPVar2 != (PluralFormsToken *)0x0)) {
+          (token->fields).type = (pPVar2->fields).type;
+          (token->fields).number = (pPVar2->fields).number;
+          pPVar3 = (PluralFormsNode *)func_?();
+          if (pPVar3 != (PluralFormsNode *)0x0) {
+            PluralFormsNode::PluralFormsNode__ctor(pPVar3,token,(MethodInfo *)0x0);
+            pPVar1 = (this->fields).scanner;
+            if (pPVar1 != (PluralFormsScanner *)0x0) {
+              bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar1,(MethodInfo *)0x0);
+              goto code_?;
+            }
+          }
+        }
+      }
+    }
+    else {
+      if ((((((this->fields).scanner)->fields).token)->fields).type != 0x13) {
         return (PluralFormsNode *)0x0;
       }
-      bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar1,(MethodInfo *)0x0);
+      bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken
+                        ((this->fields).scanner,(MethodInfo *)0x0);
       if (bVar4 == 0) {
         return (PluralFormsNode *)0x0;
       }
-      pPVar5 = PluralFormsParser_Expression(this,(MethodInfo *)0x0);
-      if (pPVar5 == (PluralFormsNode *)0x0) {
+      pPVar3 = PluralFormsParser_Expression(this,(MethodInfo *)0x0);
+      if (pPVar3 == (PluralFormsNode *)0x0) {
         return (PluralFormsNode *)0x0;
       }
-      pPVar2 = PluralFormsParser_get_Token(this,(MethodInfo *)0x0);
-      if (pPVar2 != (PluralFormsToken *)0x0) {
+      pPVar1 = (this->fields).scanner;
+      if ((pPVar1 != (PluralFormsScanner *)0x0) &&
+         (pPVar2 = (pPVar1->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
         if ((pPVar2->fields).type != 0x14) {
           return (PluralFormsNode *)0x0;
         }
         bVar4 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          return pPVar5;
-        }
-        return (PluralFormsNode *)0x0;
-      }
-      goto code_?;
-    }
-  }
-  if (pPVar1 != (PluralFormsScanner *)0x0) {
-    this_00 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,unaff_retaddr);
-    if (pPVar2 != (PluralFormsToken *)0x0) {
-      (this_00->fields)._._._._.m_CachedPtr = (void *)(pPVar2->fields).type;
-      (this_00->fields).state = (pPVar2->fields).number;
-      pPVar5 = (PluralFormsNode *)func_?();
-      PluralFormsNode::PluralFormsNode__ctor(pPVar5,(PluralFormsToken *)this_00,(MethodInfo *)0x0);
-      pPVar1 = (this->fields).scanner;
-      if (pPVar1 != (PluralFormsScanner *)0x0) {
-        bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar1,(MethodInfo *)0x0);
+code_?:
         if (bVar4 == 0) {
           return (PluralFormsNode *)0x0;
         }
-        return pPVar5;
+        return pPVar3;
       }
     }
   }
-code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pPVar5 = (PluralFormsNode *)(*pcVar6)();
-  return pPVar5;
+  pcVar5 = (code *)swi(3);
+  pPVar3 = (PluralFormsNode *)(*pcVar5)();
+  return pPVar3;
 }
 
 
@@ -592,73 +724,71 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Relation
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsNode);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  method_00 = (MethodInfo *)0x0;
   pPVar1 = PluralFormsParser_MultiplicativeExpression(this,(MethodInfo *)0x0);
   if (pPVar1 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
   pPVar2 = (this->fields).scanner;
-  if ((pPVar2 != (PluralFormsScanner *)0x0) &&
-     (pPVar3 = (pPVar2->fields).token, pPVar3 != (PluralFormsToken *)0x0)) {
-    iVar4 = (pPVar3->fields).type;
-    if (iVar4 != 8) {
-      if ((pPVar2 == (PluralFormsScanner *)0x0) || (pPVar3 == (PluralFormsToken *)0x0))
-      goto code_?;
-      if ((iVar4 != 10) && ((iVar4 != 9 && (iVar4 != 0xb)))) {
-        return pPVar1;
-      }
-    }
-    if (pPVar2 != (PluralFormsScanner *)0x0) {
-      this_00 = (ScaleAnimationBase *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-      if (pPVar3 != (PluralFormsToken *)0x0) {
-        (this_00->fields)._._._._.m_CachedPtr = (void *)(pPVar3->fields).type;
-        (this_00->fields).state = (pPVar3->fields).number;
-        this_01 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-        PluralFormsNode::PluralFormsNode__ctor
-                  (this_01,(PluralFormsToken *)this_00,(MethodInfo *)0x0);
-        pPVar2 = (this->fields).scanner;
-        if (pPVar2 != (PluralFormsScanner *)0x0) {
-          bVar5 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
-          if ((bVar5 == 0) ||
-             (n = PluralFormsParser_MultiplicativeExpression(this,(MethodInfo *)0x0),
-             n == (PluralFormsNode *)0x0)) {
-            return (PluralFormsNode *)0x0;
-          }
-          if (this_01 != (PluralFormsNode *)0x0) {
-            PluralFormsNode::PluralFormsNode_SetNode(this_01,1,n,(MethodInfo *)0x0);
-            PluralFormsNode::PluralFormsNode_SetNode(this_01,0,pPVar1,(MethodInfo *)0x0);
-            return this_01;
-          }
-        }
-      }
-    }
+  if ((pPVar2 == (PluralFormsScanner *)0x0) ||
+     (pPVar3 = (pPVar2->fields).token, pPVar3 == (PluralFormsToken *)0x0)) goto code_?;
+  if (((pPVar3->fields).type != 8) &&
+     ((((((((this->fields).scanner)->fields).token)->fields).type != 10 &&
+       ((((((this->fields).scanner)->fields).token)->fields).type != 9)) &&
+      ((((((this->fields).scanner)->fields).token)->fields).type != 0xb)))) {
+    return pPVar1;
   }
+  pPVar3 = (((this->fields).scanner)->fields).token;
+  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+  if (token == (PluralFormsToken *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  (token->fields).type = (pPVar3->fields).type;
+  (token->fields).number = (pPVar3->fields).number;
+  this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
+  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
+  PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
+  pPVar2 = (this->fields).scanner;
+  if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
+  bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar2,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar5 = PluralFormsParser_MultiplicativeExpression(this,(MethodInfo *)0x0);
+  if (pPVar5 == (PluralFormsNode *)0x0) {
+    return (PluralFormsNode *)0x0;
+  }
+  pPVar6 = (this_00->fields).nodes;
+  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
+  if (iVar7 == 0) {
+    uVar8 = func_?(0);
+    func_?(uVar8);
 code_?:
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  pPVar1 = (PluralFormsNode *)(*pcVar6)();
-  return pPVar1;
-}
-
-
-/* PluralFormsToken get_Token() */
-
-PluralFormsToken *
-Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_get_Token
-          (PluralFormsParser *this,MethodInfo *method)
-
-{
-  pPVar1 = (this->fields).scanner;
-  if (pPVar1 != (PluralFormsScanner *)0x0) {
-    return (pPVar1->fields).token;
+    uVar8 = func_?(0);
+    func_?(uVar8);
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pPVar3 = (PluralFormsToken *)(*pcVar2)();
-  return pPVar3;
+  else if (1 < pPVar6->max_length) {
+    pPVar6->vector[1] = pPVar5;
+    func_?(pPVar6->vector + 1,pPVar5);
+    pPVar6 = (this_00->fields).nodes;
+    if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+    iVar7 = func_?(pPVar1,(pPVar6->klass->_0).element_class);
+    if (iVar7 == 0) goto code_?;
+    if (pPVar6->max_length != 0) {
+      pPVar6->vector[0] = pPVar1;
+      func_?(pPVar6->vector,pPVar1);
+      return this_00;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pPVar1 = (PluralFormsNode *)(*pcVar9)();
+  return pPVar1;
 }
 

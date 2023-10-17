@@ -7,7 +7,7 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ConvertUtils+TypeConvertK
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__ConvertUtils__TypeConvertKey);
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
@@ -17,17 +17,16 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ConvertUtils+TypeConvertK
       pOVar1 = obj;
     }
     if (pOVar1 != (Object *)0x0) {
-      if ((((ConvertUtils_TypeConvertKey__Class *)obj->klass)->_0).element_class !=
+      if ((obj->klass->_0).element_class ==
           (TypeInfo__Newtonsoft__Json__Utilities__ConvertUtils__TypeConvertKey->_0).element_class) {
-        func_?(obj,TypeInfo__Newtonsoft__Json__Utilities__ConvertUtils__TypeConvertKey);
-        pcVar2 = (code *)swi(3);
-        bVar3 = (*pcVar2)();
+        pCVar2 = (ConvertUtils_TypeConvertKey *)func_?(obj);
+        bVar3 = ConvertUtils_TypeConvertKey_Equals_1(this,*pCVar2,(MethodInfo *)0x0);
         return bVar3;
       }
-      piVar4 = (int *)func_?(obj);
-      if (this[1]._initialType == (Type *)*piVar4) {
-        return this[1]._targetType == (Type *)piVar4[1];
-      }
+      func_?(obj,TypeInfo__Newtonsoft__Json__Utilities__ConvertUtils__TypeConvertKey);
+      pcVar4 = (code *)swi(3);
+      bVar3 = (*pcVar4)();
+      return bVar3;
     }
   }
   return 0;
@@ -42,34 +41,25 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ConvertUtils+TypeConvertK
                MethodInfo *method)
 
 {
-  if (this[1]._initialType != other._initialType) {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Type);
+    cRam_? = '\x01';
+  }
+  pTVar1 = this->_initialType;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Type);
+  }
+  bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)pTVar1,(Object **)other._initialType,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
     return 0;
   }
-  return this[1]._targetType == other._targetType;
-}
-
-
-/* Int32 GetHashCode() */
-
-int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::ConvertUtils+TypeConvertKey::
-        ConvertUtils_TypeConvertKey_GetHashCode
-                  (ConvertUtils_TypeConvertKey *this,MethodInfo *method)
-
-{
-  pTVar1 = this[1]._initialType;
-  if (pTVar1 != (Type *)0x0) {
-    uVar2 = (*(code *)(pTVar1->klass->vtable).GetHashCode.method)
-                      (pTVar1,(pTVar1->klass->vtable).ToString.methodPtr);
-    pTVar1 = this[1]._targetType;
-    if (pTVar1 != (Type *)0x0) {
-      uVar3 = (*(code *)(pTVar1->klass->vtable).GetHashCode.method)
-                        (pTVar1,(pTVar1->klass->vtable).ToString.methodPtr);
-      return uVar3 ^ uVar2;
-    }
+  pTVar1 = this->_targetType;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Type);
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)pTVar1,(Object **)other._targetType,(MethodInfo *)0x0);
+  return bVar2;
 }
 

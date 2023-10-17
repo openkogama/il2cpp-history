@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PickupItemHand : PickupItemWithDelay
 {
@@ -27,6 +27,7 @@ public class PickupItemHand : PickupItemWithDelay
 
 	// Methods
 	public override bool CanFire();
+	private void Awake();
 	protected override void OnFire(bool isLocal);
 	private void DoRemoveCubes();
 }

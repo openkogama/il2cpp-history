@@ -9,19 +9,20 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class NotificationsManager : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
 	private NotificationArea[] notificationAreas;
+	private static NotificationsManager _activeInstance;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
-	private static NotificationsManager _ActiveInstance_k__BackingField;
+	private static bool _Initialized_k__BackingField;
 
 	// Properties
-	public static NotificationsManager ActiveInstance { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public static NotificationsManager ActiveInstance { get; private set; }
+	public static bool Initialized { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Constructors
 	public NotificationsManager();

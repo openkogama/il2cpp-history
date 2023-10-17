@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatableLogicPointer : FirstTimeActivatableElementBase
 {
@@ -34,11 +34,26 @@ public class FirstTimeActivatableLogicPointer : FirstTimeActivatableElementBase
 	protected bool skipAllowed;
 	[SerializeField]
 	private Vector2 offset;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __f__am_cache0;
 
 	// Properties
 	public override bool CanShow { get; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __9__17_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Update_b__17_1(IFirstTimeElementActivator x, BaseEventData y);
+	}
 
 	// Constructors
 	public FirstTimeActivatableLogicPointer();
@@ -51,12 +66,10 @@ public class FirstTimeActivatableLogicPointer : FirstTimeActivatableElementBase
 	private void Clear();
 	private void OnShown();
 	[CompilerGenerated]
-	private void _OnShow_m__0(TextBubbleController x, BaseEventData y);
+	private void _OnShow_b__16_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Update_m__1(TextBubbleController x, BaseEventData y);
+	private void _Update_b__17_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private static void _Update_m__2(IFirstTimeElementActivator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _Clear_m__3(TextBubbleController x, BaseEventData y);
+	private void _Clear_b__19_0(TextBubbleController x, BaseEventData y);
 }
 

@@ -5,244 +5,12 @@ void Assembly-CSharp.dll::PrefabPool::PrefabPool_Awake(PrefabPool *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?();
   }
   TypeInfo__PrefabPool->static_fields->instance = this;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
-            );
-  pOVar1 = (ObjectPrefab *)0x0;
-  iVar2 = 0;
-  func_?(&stack0xfffffff4,(this->fields).avatarCenterGunPrefab,0,0);
-  if (this_00 != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0) {
-    value_08.equipableType = iVar2;
-    value_08.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_CenterGun,value_08,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?(&stack0xffffffec,(this->fields).avatarImpulseGunPrefab,0,0);
-    value_07.equipableType = iVar2;
-    value_07.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_ImpulseGun,value_07,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?(&stack0xffffffe4,(this->fields).avatarHealthPrefab,1,0);
-    value_10.equipableType = iVar2;
-    value_10.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Health,value_10,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_09.equipableType = iVar2;
-    value_09.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Bazooka,value_09,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_RailGun,(EquipableData)0x0,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_11.equipableType = iVar2;
-    value_11.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Mutant,value_11,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_13.equipableType = iVar2;
-    value_13.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Sword,value_13,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    value_12.equipableType =
-         (int32_t)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-    ;
-    value_12.prefabObject =
-         (ObjectPrefab *)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-    ;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Shotgun,value_12,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_14.equipableType = iVar2;
-    value_14.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Flamethrower,value_14,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_CubeGun,(EquipableData)0x0,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_00.equipableType = iVar2;
-    value_00.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_NinjaRun,value_00,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value.equipableType = iVar2;
-    value.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_SixShooter,value,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_02.equipableType = iVar2;
-    value_02.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_DoubleSixShooter,value_02,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_01.equipableType = iVar2;
-    value_01.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_ThrowingStar,value_01,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_MultiThrowingStar,(EquipableData)0x0,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_03.equipableType = iVar2;
-    value_03.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_MouseGun,value_03,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_05.equipableType = iVar2;
-    value_05.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_GrowthGun,value_05,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_04.equipableType = iVar2;
-    value_04.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_MousePack,value_04,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_06.equipableType = iVar2;
-    value_06.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_GrowthPack,value_06,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_HealRay,(EquipableData)0x0,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    (this->fields).pickupPrefabLUT = this_00;
-    this_01 = (Dictionary_2_MVJetPack_JetPackType_VehicleBaseObject_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_VehicleBaseObject>__Dictionary__
-              );
-    if (this_01 != (Dictionary_2_MVJetPack_JetPackType_VehicleBaseObject_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[MVJetPack+JetPackType,System::Object]
-      ::Dictionary_2_MVJetPack_JetPackType_System_Object__Add
-                ((Dictionary_2_MVJetPack_JetPackType_System_Object_ *)this_01,
-                 MVJetPack_JetPackType__Enum_JetPack,(Object *)(this->fields).mvJetPackPrefab,
-                 MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_VehicleBaseObject>__Add_MVJetPack__JetPackType__VehicleBaseObject_
-                );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[MVJetPack+JetPackType,System::Object]
-      ::Dictionary_2_MVJetPack_JetPackType_System_Object__Add
-                ((Dictionary_2_MVJetPack_JetPackType_System_Object_ *)this_01,
-                 MVJetPack_JetPackType__Enum_JetPackDeluxe,
-                 (Object *)(this->fields).mvJetPackDeluxePrefab,
-                 MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_VehicleBaseObject>__Add_MVJetPack__JetPackType__VehicleBaseObject_
-                );
-      (this->fields).jetPackPrefabLUT = this_01;
-      return;
-    }
-  }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(TypeInfo__PrefabPool->static_fields,this);
+  PrefabPool_BuildLookupTables(this,(MethodInfo *)0x0);
   return;
 }
 
@@ -254,235 +22,441 @@ void Assembly-CSharp.dll::PrefabPool::PrefabPool_BuildLookupTables
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
-            );
-  pOVar1 = (ObjectPrefab *)0x0;
-  iVar2 = 0;
-  func_?(&stack0xfffffff4,(this->fields).avatarCenterGunPrefab,0,0);
-  if (this_00 != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0) {
-    value_08.equipableType = iVar2;
-    value_08.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_CenterGun,value_08,
+  pDVar1 = (Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+            *)func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
+                             );
+  if (pDVar1 != (Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+                 *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)pDVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
+              );
+    SStack_2._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_2._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_2,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarCenterGunPrefab,0,(MethodInfo *)0x0);
+    key_14.TypeName = (String *)SStack_2._source;
+    key_14.AssemblyName = (String *)0x1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_14,(Object *)SStack_2._index,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
               );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?(&stack0xffffffec,(this->fields).avatarImpulseGunPrefab,0,0);
-    value_07.equipableType = iVar2;
-    value_07.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_ImpulseGun,value_07,
+    SStack_3._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_3._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_3,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarImpulseGunPrefab,0,(MethodInfo *)0x0);
+    key_15.TypeName = (String *)SStack_3._source;
+    key_15.AssemblyName = (String *)0x2;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_15,(Object *)SStack_3._index,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
               );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?(&stack0xffffffe4,(this->fields).avatarHealthPrefab,1,0);
-    value_10.equipableType = iVar2;
-    value_10.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Health,value_10,
+    SStack_4._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_4._index = 0;
+    stack0xffffff78 = (Object *)&UNK_?;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_4,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarHealthPrefab,
+               1,(MethodInfo *)0x0);
+    key_17.TypeName = (String *)SStack_4._source;
+    key_17.AssemblyName = (String *)0x3;
+    stack0xffffff78 = (Object *)pDVar1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_17,(Object *)SStack_4._index,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
               );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_09.equipableType = iVar2;
-    value_09.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Bazooka,value_09,
+    SStack_5._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_5._index = 0;
+    stack0xffffff78 = (Object *)&UNK_?;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_5,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarBazookaPrefab
+               ,0,(MethodInfo *)0x0);
+    key_18.TypeName = (String *)SStack_5._source;
+    key_18.AssemblyName = (String *)0x4;
+    stack0xffffff78 = (Object *)pDVar1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_18,(Object *)SStack_5._index,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
               );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_RailGun,(EquipableData)0x0,
+    SStack_6._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_6._index = 0;
+    stack0xffffffc0 = (Object *)&UNK_?;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_6,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarRailGunPrefab
+               ,0,(MethodInfo *)0x0);
+    key_19.TypeName = (String *)SStack_6._source;
+    key_19.AssemblyName = (String *)0x6;
+    stack0xffffffc0 = (Object *)pDVar1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_19,(Object *)SStack_6._index,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
               );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_11.equipableType = iVar2;
-    value_11.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Mutant,value_11,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_13.equipableType = iVar2;
-    value_13.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Sword,value_13,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    value_12.equipableType =
-         (int32_t)
+    stack0xffffffc0 = (Object *)&UNK_?;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffffcc,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMutantPrefab,
+               0,(MethodInfo *)0x0);
+    key_20.TypeName =
+         (String *)
          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
     ;
-    value_12.prefabObject =
-         (ObjectPrefab *)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-    ;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Shotgun,value_12,
+    key_20.AssemblyName = (String *)0x7;
+    stack0xffffffc0 = (Object *)pDVar1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_20,
+               (Object *)
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
               );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
+    SVar7._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SVar7._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffffc4,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
+    key.TypeName = (String *)SVar7._source;
+    key.AssemblyName = (String *)0x8;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key,(Object *)SVar7._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    pSStack_8 = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    stack0xffffffc0 = (Object *)0x0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pSStack_8,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarShotgunPrefab
+               ,0,(MethodInfo *)0x0);
+    key_00.TypeName = (String *)pSStack_8;
+    key_00.AssemblyName = (String *)0x9;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_00,stack0xffffffc0,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_9._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_9._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_9,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarFlamethrowerPrefab,0,(MethodInfo *)0x0);
+    key_01.TypeName = (String *)SStack_9._source;
+    key_01.AssemblyName = (String *)0xa;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_01,(Object *)SStack_9._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_10._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_10._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_10,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCubeGunPrefab
+               ,0,(MethodInfo *)0x0);
+    key_02.TypeName = (String *)SStack_10._source;
+    key_02.AssemblyName = (String *)0xb;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_02,(Object *)SStack_10._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_11._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_11._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_11,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarNinjaRunPrefab,1,(MethodInfo *)0x0);
+    key_03.TypeName = (String *)SStack_11._source;
+    key_03.AssemblyName = (String *)0xe;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_03,(Object *)SStack_11._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_12._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_12._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_12,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarSixShooterPrefab,0,(MethodInfo *)0x0);
+    key_04.TypeName = (String *)SStack_12._source;
+    key_04.AssemblyName = (String *)0xc;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_04,(Object *)SStack_12._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_13._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_13._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_13,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarDoubleSixShooterPrefab,0,(MethodInfo *)0x0);
+    key_05.TypeName = (String *)SStack_13._source;
+    key_05.AssemblyName = (String *)0xd;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_05,(Object *)SStack_13._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_14._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_14._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_14,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarThrowingStarPrefab,0,(MethodInfo *)0x0);
+    key_06.TypeName = (String *)SStack_14._source;
+    key_06.AssemblyName = (String *)0x2d;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_06,(Object *)SStack_14._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SVar15._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SVar15._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff84,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarMultiThrowingStarPrefab,0,(MethodInfo *)0x0);
+    key_07.TypeName = (String *)SVar15._source;
+    key_07.AssemblyName = (String *)0x2e;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_07,(Object *)SVar15._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SVar16._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SVar16._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff7c,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarMouseGunPrefab,0,(MethodInfo *)0x0);
+    key_08.TypeName = (String *)SVar16._source;
+    key_08.AssemblyName = (String *)0x3c;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_08,(Object *)SVar16._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    pSStack_17 = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    stack0xffffff78 = (Object *)0x0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pSStack_17,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarGrowthGunPrefab,0,(MethodInfo *)0x0);
+    key_09.TypeName = (String *)pSStack_17;
+    key_09.AssemblyName = (String *)0x3e;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_09,stack0xffffff78,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_18._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_18._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_18,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarMousePackPrefab,1,(MethodInfo *)0x0);
+    key_10.TypeName = (String *)SStack_18._source;
+    key_10.AssemblyName = (String *)0x3f;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_10,(Object *)SStack_18._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_19._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_19._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_19,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)
+               (this->fields).avatarGrowthPackPrefab,1,(MethodInfo *)0x0);
+    key_11.TypeName = (String *)SStack_19._source;
+    key_11.AssemblyName = (String *)0x40;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_11,(Object *)SStack_19._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_20._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_20._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_20,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarHealRayPrefab
+               ,0,(MethodInfo *)0x0);
+    key_12.TypeName = (String *)SStack_20._source;
+    key_12.AssemblyName = (String *)0x46;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_12,(Object *)SStack_20._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    SStack_21._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_21._index = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+              (&SStack_21,
+               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCostumePrefab
+               ,0,(MethodInfo *)0x0);
+    key_13.TypeName = (String *)SStack_21._source;
+    key_13.AssemblyName = (String *)0x3b;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+    DefaultSerializationBinder+TypeNameKey,System::Object]::
+    Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+              (pDVar1,key_13,(Object *)SStack_21._index,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+              );
+    (this->fields).pickupPrefabLUT = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)pDVar1;
     func_?();
-    value_14.equipableType = iVar2;
-    value_14.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_Flamethrower,value_14,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_CubeGun,(EquipableData)0x0,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_00.equipableType = iVar2;
-    value_00.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_NinjaRun,value_00,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value.equipableType = iVar2;
-    value.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_SixShooter,value,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_02.equipableType = iVar2;
-    value_02.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_DoubleSixShooter,value_02,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_01.equipableType = iVar2;
-    value_01.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_ThrowingStar,value_01,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_MultiThrowingStar,(EquipableData)0x0,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_03.equipableType = iVar2;
-    value_03.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_MouseGun,value_03,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_05.equipableType = iVar2;
-    value_05.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_GrowthGun,value_05,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_04.equipableType = iVar2;
-    value_04.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_MousePack,value_04,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar1 = (ObjectPrefab *)0x0;
-    iVar2 = 0;
-    func_?();
-    value_06.equipableType = iVar2;
-    value_06.prefabObject = pOVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_GrowthPack,value_06,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-    AvatarItemType,EquipableData]::Dictionary_2_MV_Common_AvatarItemType_EquipableData__Add
-              (this_00,AvatarItemType__Enum_HealRay,(EquipableData)0x0,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    (this->fields).pickupPrefabLUT = this_00;
-    this_01 = (Dictionary_2_MVJetPack_JetPackType_VehicleBaseObject_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_VehicleBaseObject>__Dictionary__
-              );
-    if (this_01 != (Dictionary_2_MVJetPack_JetPackType_VehicleBaseObject_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[MVJetPack+JetPackType,System::Object]
-      ::Dictionary_2_MVJetPack_JetPackType_System_Object__Add
-                ((Dictionary_2_MVJetPack_JetPackType_System_Object_ *)this_01,
-                 MVJetPack_JetPackType__Enum_JetPack,(Object *)(this->fields).mvJetPackPrefab,
-                 MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_VehicleBaseObject>__Add_MVJetPack__JetPackType__VehicleBaseObject_
+    pDVar1 = (Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+              *)func_?();
+    if (pDVar1 != (Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+                   *)0x0) {
+      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                ((ParameterOverride_1_System_Object_ *)pDVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
                 );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[MVJetPack+JetPackType,System::Object]
-      ::Dictionary_2_MVJetPack_JetPackType_System_Object__Add
-                ((Dictionary_2_MVJetPack_JetPackType_System_Object_ *)this_01,
-                 MVJetPack_JetPackType__Enum_JetPackDeluxe,
-                 (Object *)(this->fields).mvJetPackDeluxePrefab,
-                 MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_VehicleBaseObject>__Add_MVJetPack__JetPackType__VehicleBaseObject_
+      SStack_22._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+      SStack_22._index = 0;
+      mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+      SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+                (&SStack_22,
+                 (SparselyPopulatedArrayFragment_1_System_Object_ *)
+                 (this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+      DefaultSerializationBinder+TypeNameKey,System::Object]::
+      Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+                (pDVar1,(DefaultSerializationBinder_TypeNameKey)((longlong)SStack_22 << 0x20),
+                 (Object *)SStack_22._index,
+                 MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
                 );
-      (this->fields).jetPackPrefabLUT = this_01;
-      return;
+      SStack_23._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+      SStack_23._index = 0;
+      mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
+      SparselyPopulatedArrayAddInfo_1_System_Object___ctor
+                (&SStack_23,
+                 (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarSwordPrefab
+                 ,0,(MethodInfo *)0x0);
+      key_16.TypeName = (String *)SStack_23._source;
+      key_16.AssemblyName = (String *)0x1;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
+      DefaultSerializationBinder+TypeNameKey,System::Object]::
+      Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
+                (pDVar1,key_16,(Object *)SStack_23._index,
+                 MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
+                );
+      (this->fields).meleeWeaponPrefabLUT = (Dictionary_2_System_Boolean_EquipableData_ *)pDVar1;
+      func_?();
+      this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                  ((ParameterOverride_1_System_Object_ *)this_00,
+                   MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Dictionary__
+                  );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  (this_00,(Object *)0x0,(Object *)(this->fields).mvJetPackPrefab,
+                   MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
+                  );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  (this_00,(Object *)0x1,(Object *)(this->fields).mvJetPackDeluxePrefab,
+                   MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
+                  );
+        (this->fields).jetPackPrefabLUT =
+             (Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_
+              *)this_00;
+        func_?(&(this->fields).jetPackPrefabLUT,this_00);
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -507,20 +481,82 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_CubeEditHelpTextBubble
 }
 
 
+/* EquipableData GetPickupPrefab(AvatarItemType, Int32) */
+
+EquipableData
+Assembly-CSharp.dll::PrefabPool::PrefabPool_GetPickupPrefab
+          (AvatarItemType__Enum avatarItemType,int32_t itemId,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__get_Item_MV__Common__AvatarItemType_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__get_Item_bool_
+                   );
+    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
+  }
+  if (avatarItemType == AvatarItemType__Enum_MeleeWeapon) {
+    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar1 != (PrefabPool *)0x0) {
+      this_00 = (pPVar1->fields).meleeWeaponPrefabLUT;
+      if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
+      }
+      key = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+            MeleeWeaponData_IsLegacySword(itemId,(MethodInfo *)0x0);
+      if (this_00 != (Dictionary_2_System_Boolean_EquipableData_ *)0x0) {
+        EVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Boolean,EquipableData]::Dictionary_2_System_Boolean_EquipableData__get_Item
+                          (this_00,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__get_Item_bool_
+                          );
+        return EVar2;
+      }
+    }
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__PrefabPool);
+      cRam_? = '\x01';
+    }
+    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+    if ((pPVar1 != (PrefabPool *)0x0) &&
+       (this = (pPVar1->fields).pickupPrefabLUT,
+       this != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0)) {
+      EVar2 = (EquipableData)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+              Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
+                        ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *
+                         )this,avatarItemType,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__get_Item_MV__Common__AvatarItemType_
+                        );
+      return EVar2;
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  EVar2 = (EquipableData)(*pcVar3)();
+  return EVar2;
+}
+
+
 /* Void OnDestroy() */
 
 void Assembly-CSharp.dll::PrefabPool::PrefabPool_OnDestroy(PrefabPool *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
   TypeInfo__PrefabPool->static_fields->instance = (PrefabPool *)0x0;
+  func_?(TypeInfo__PrefabPool->static_fields,0);
   return;
 }
 
@@ -544,6 +580,28 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarBazookaPrefab
 
 {
   return (this->fields).avatarBazookaPrefab;
+}
+
+
+/* MVPickupItemBaseObject get_AvatarCenterGunPrefab() */
+
+MVPickupItemBaseObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCenterGunPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarCenterGunPrefab;
+}
+
+
+/* MVPickupItemBaseObject get_AvatarCostumePrefab() */
+
+MVPickupItemBaseObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCostumePrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarCostumePrefab;
 }
 
 
@@ -588,6 +646,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarGrowthGunPrefab
 
 {
   return (this->fields).avatarGrowthGunPrefab;
+}
+
+
+/* MVPickupItemBaseObject get_AvatarGrowthPackPrefab() */
+
+MVPickupItemBaseObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarGrowthPackPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarGrowthPackPrefab;
 }
 
 
@@ -643,6 +712,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCollectTheItem
 
 {
   return (this->fields).avatarItemCollectTheItem;
+}
+
+
+/* GameObject get_AvatarItemCostume() */
+
+GameObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCostume
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarItemCostume;
 }
 
 
@@ -733,6 +813,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemLaserPointer
 }
 
 
+/* GameObject get_AvatarItemMeleeWeapon() */
+
+GameObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemMeleeWeapon
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarItemMeleeWeapon;
+}
+
+
 /* GameObject get_AvatarItemMouseGun() */
 
 GameObject *
@@ -820,25 +911,14 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemThrowingStar
 }
 
 
-/* MVPickupItemBaseObject get_AvatarMouseGunPrefab() */
+/* MVPickupItemBaseObject get_AvatarMeleeWeaponPrefab() */
 
 MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMouseGunPrefab
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMeleeWeaponPrefab
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarMouseGunPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarMousePackPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMousePackPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarMousePackPrefab;
+  return (this->fields).avatarMeleeWeaponPrefab;
 }
 
 
@@ -951,17 +1031,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ChatBubble(PrefabPool *this,Meth
 }
 
 
-/* ObjectiveArrow get_CollectTheItemDropOffArrowPrefab() */
-
-ObjectiveArrow *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).collectTheItemDropOffArrow;
-}
-
-
 /* ParticleSystem get_CollectTheItemParticles() */
 
 ParticleSystem *
@@ -1047,35 +1116,13 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_DrawPlaneObject(PrefabPool *this
 }
 
 
-/* GameCoinDisplayObject get_GameCoinDisplayPrefab() */
+/* SentryGunBeam get_FireBeamObject() */
 
-GameCoinDisplayObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_GameCoinDisplayPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).gameCoinDisplayPrefab;
-}
-
-
-/* ObjectPrefab get_GamePointChestPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_GamePointChestPrefab
-          (PrefabPool *this,MethodInfo *method)
+SentryGunBeam *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_FireBeamObject(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).gamePointChestPrefab;
-}
-
-
-/* MVGamePointObject get_GamePointPrefab() */
-
-MVGamePointObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_GamePointPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).gamePointPrefab;
+  return (this->fields).fireBeamObject;
 }
 
 
@@ -1169,50 +1216,34 @@ PrefabPool * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_Instance(MethodInfo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
   }
   return TypeInfo__PrefabPool->static_fields->instance;
 }
 
 
-/* Dictionary`2[MVJetPack+JetPackType,VehicleBaseObject] get_JetPackPrefabLUT() */
+/* Dictionary`2[MVJetPack+JetPackType,WorldObjectTypes.VehiclesBase.Shared.VehicleBaseObject]
+   get_JetPackPrefabLUT() */
 
-Dictionary_2_MVJetPack_JetPackType_VehicleBaseObject_ *
+Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_ *
 Assembly-CSharp.dll::PrefabPool::PrefabPool_get_JetPackPrefabLUT(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 != (PrefabPool *)0x0) {
     return (pPVar1->fields).jetPackPrefabLUT;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pDVar3 = (Dictionary_2_MVJetPack_JetPackType_VehicleBaseObject_ *)(*pcVar2)();
-  return pDVar3;
-}
-
-
-/* LevelDisplayCube get_LevelDisplayPrefab() */
-
-LevelDisplayCube *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LevelDisplayPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).levelDisplayPrefab;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pDVar5 = (Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_
+            *)(*pcVar4)();
+  return pDVar5;
 }
 
 
@@ -1314,103 +1345,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicOutputConnectorPrefab
 }
 
 
-/* ObjectPrefab get_MVBatteryPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVBatteryPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvBatteryPrefab;
-}
-
-
-/* ObjectPrefab get_MVCameraSettingsPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVCameraSettingsPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvCameraSettingsPrefab;
-}
-
-
-/* ObjectPrefab get_MVCheckpointPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVCheckpointPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvCheckpointPrefab;
-}
-
-
-/* MVCollectibleObject get_MVCollectibleFantaPrefab() */
-
-MVCollectibleObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVCollectibleFantaPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvCollectibleFantaPrefab;
-}
-
-
-/* MVCollectibleObject get_MVCollectiblePrefab() */
-
-MVCollectibleObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVCollectiblePrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvCollectiblePrefab;
-}
-
-
-/* ObjectPrefab get_MVGameCoinChestPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVGameCoinChestPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvGameCoinChestPrefab;
-}
-
-
-/* MVGameCoinObject get_MVGameCoinPrefab() */
-
-MVGameCoinObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVGameCoinPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvGameCoinPrefab;
-}
-
-
-/* VehicleBaseObject get_MVJetPackPrefab() */
-
-VehicleBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVJetPackPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvJetPackPrefab;
-}
-
-
-/* ObjectPrefab get_MVKillLimitPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVKillLimitPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvKillLimitPrefab;
-}
-
-
 /* ObjectPrefab get_MVNegatePrefab() */
 
 ObjectPrefab *
@@ -1418,39 +1352,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVNegatePrefab(PrefabPool *this,
 
 {
   return (this->fields).mvNegatePrefab;
-}
-
-
-/* MVPointLightObject get_MVPointLightPrefab() */
-
-MVPointLightObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVPointLightPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvPointLightPrefab;
-}
-
-
-/* ObjectPrefab get_MVPulseBoxPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVPulseBoxPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvPulseBoxPrefab;
-}
-
-
-/* ObjectPrefab get_MVRandomBoxPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVRandomBoxPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvRandomBoxPrefab;
 }
 
 
@@ -1465,78 +1366,14 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVRoundCubePrefab
 }
 
 
-/* ObjectPrefab get_MVSmokePrefab() */
+/* MVTriggerBoxObject get_MVTriggerBoxPrefab() */
 
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVSmokePrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvSmokePrefab;
-}
-
-
-/* SoundEmitterObject get_MVSoundEmitterPrefab() */
-
-SoundEmitterObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVSoundEmitterPrefab
+MVTriggerBoxObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVTriggerBoxPrefab
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).mvSoundEmitterPrefab;
-}
-
-
-/* ObjectPrefab get_MVSpawnPointRedPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVSpawnPointRedPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvSpawnPointRedPrefab;
-}
-
-
-/* ObjectPrefab get_MVSpawnPointYellowPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVSpawnPointYellowPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvSpawnPointYellowPrefab;
-}
-
-
-/* MVTextMsgObject get_MVTextMsgPrefab() */
-
-MVTextMsgObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVTextMsgPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvTextMsgPrefab;
-}
-
-
-/* ObjectPrefab get_MVTimeTriggerPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVTimeTriggerPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvTimeTriggerPrefab;
-}
-
-
-/* ObjectPrefab get_MVToggleBoxPrefab() */
-
-ObjectPrefab *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVToggleBoxPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvToggleBoxPrefab;
+  return (this->fields).mvTriggerBoxPrefab;
 }
 
 
@@ -1657,21 +1494,18 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_PickupPrefabLUT(MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 != (PrefabPool *)0x0) {
     return (pPVar1->fields).pickupPrefabLUT;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pDVar3 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)(*pcVar2)();
-  return pDVar3;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pDVar5 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)(*pcVar4)();
+  return pDVar5;
 }
 
 
@@ -1707,6 +1541,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_RangeVisualizationObject
 }
 
 
+/* RewardedAdDisplayObject get_RewardedAdDisplayPrefab() */
+
+RewardedAdDisplayObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_RewardedAdDisplayPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).rewardedAdDisplayPrefab;
+}
+
+
 /* Material get_SelectBoxMaterial() */
 
 Material *
@@ -1728,6 +1573,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ShieldModifier(PrefabPool *this,
 }
 
 
+/* StarDisplayObject get_StarDisplayPrefab() */
+
+StarDisplayObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_StarDisplayPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).starDisplayPrefab;
+}
+
+
 /* ObjectPrefab get_TeamEditorPrefab() */
 
 ObjectPrefab *
@@ -1736,5 +1592,15 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_TeamEditorPrefab
 
 {
   return (this->fields).teamEditorPrefab;
+}
+
+
+/* TransformGizmo get_TransformGizmo() */
+
+TransformGizmo *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_TransformGizmo(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).transformGizmo;
 }
 

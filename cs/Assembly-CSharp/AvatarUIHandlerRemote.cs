@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarUIHandlerRemote : AvatarUIHandler
 {
@@ -54,10 +54,12 @@ public class AvatarUIHandlerRemote : AvatarUIHandler
 	private GameObject memberFrame;
 	private bool shouldShowMobileIcon;
 	private bool nameTagLabelVisible;
+	private bool forceHideUI;
 
 	// Properties
 	private Material EnemyIconMaterial { get; }
 	public bool NameTagLabelVisible { get; set; }
+	public bool ForceHideUI { get; set; }
 	public HealthBar HealthBar { get; }
 	public ShieldBar ShieldBar { get; }
 	public SayChatBubbleHandler SayChatBubbleHandler { get; }

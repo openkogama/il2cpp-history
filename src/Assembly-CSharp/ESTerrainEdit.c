@@ -6,51 +6,44 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
+                   );
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVMaterialRepository->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVMaterialRepository->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVMaterialRepository);
   }
   MVMaterialRepository::MVMaterialRepository_set_AllowDestructibleMaterialSelection
             (1,(MethodInfo *)0x0);
-  if ((e != (EditorStateMachine *)0x0) &&
-     (pSVar1 = (e->fields).selectionController, pSVar1 != (SelectionController *)0x0)) {
-    pMVar2 = SelectionController::SelectionController_get_SingleSelectedWO(pSVar1,(MethodInfo *)0x0)
-    ;
-    if (pMVar2 != (MVWorldObjectClient *)0x0) {
-      pSVar1 = (e->fields).selectionController;
-      if (pSVar1 == (SelectionController *)0x0) goto code_?;
-      SelectionController::SelectionController_DeSelectAll(pSVar1,(MethodInfo *)0x0);
+  if (e != (EditorStateMachine *)0x0) {
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    if (pMVar1 != (MVWorldObjectClient *)0x0) {
+      this_00 = (e->fields).selectionController;
+      if (this_00 == (SelectionController *)0x0) goto code_?;
+      SelectionController::SelectionController_DeSelectAll(this_00,(MethodInfo *)0x0);
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_01 != (MVWorldObjectClientManager *)0x0) {
-      targetCubeModel =
-           (MVCubeModelPrototypeTerrain *)
-           MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject_4
-                     (this_01,
-                      MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
-                     );
-      (this->fields).terrain = targetCubeModel;
-      this_00 = (e->fields).cubeModelingStateMachine;
-      if (this_00 != (CubeModelingStateMachine *)0x0) {
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_02 != (MVWorldObjectClientManager *)0x0) {
+      pMVar2 = (MVCubeModelPrototypeTerrain *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
+                         (this_02,
+                          MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
+                         );
+      (this->fields).terrain = pMVar2;
+      func_?(&(this->fields).terrain,pMVar2);
+      this_01 = (e->fields).cubeModelingStateMachine;
+      if (this_01 != (CubeModelingStateMachine *)0x0) {
         CubeModelingStateMachine::CubeModelingStateMachine_StartEdit
-                  (this_00,(MVCubeModelBase *)targetCubeModel,(IModelingConstraint *)0x0,
+                  (this_01,(MVCubeModelBase *)(this->fields).terrain,(IModelingConstraint *)0x0,
                    (MethodInfo *)0x0);
         pWVar3 = MVWorldObjectClientManager::
                  MVWorldObjectClientManager_GetWorldObjectClientRefNullRef((MethodInfo *)0x0);
         (this->fields)._.tintedWo = pWVar3;
+        func_?(&(this->fields)._.tintedWo,pWVar3);
         return;
       }
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -63,245 +56,279 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Execute
                (ESTerrainEdit *this,EditorStateMachine *e,MethodInfo *method)
 
 {
-  this_00 = e;
+  this_02 = e;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorEvent);
+    func_?(&
+                    LinkObjectBase_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<LinkObjectBase>__
+                   );
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffff5c,0,0x2c);
-  func_?(&stack0xffffff98,0,0x48);
-  bStack_1 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                       ((VoxelHit *)&stack0xffffff98,(HashSet_1_System_Int32_ *)0x0,-0x40005,
-                        (MethodInfo *)0x0);
-  pIVar2 = in_stack_3;
-  if (bStack_1 != 0) {
-    pMVar4 = (this->fields).terrain;
-    if (pMVar4 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
-    pIVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pMVar4,(MethodInfo *)0x0);
-    if ((in_stack_3 == pIVar5) || (in_stack_3 == (IList_1_VoxelHit_ *)0xffffffff)) {
-      bStack_1 = 0;
-    }
-  }
-  bVar6 = ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnabled
-                    ((int32_t)in_stack_3,(MethodInfo *)0x0);
-  if (this == (ESTerrainEdit *)0x0) goto code_?;
-  hit.point.y = in_stack_7;
-  hit.point.x = in_stack_8;
-  hit.point.z = fStack_9;
-  hit.normal.x = fStack_10;
-  hit.normal.y = fStack_11;
-  hit.normal.z = (float)uStack_12;
-  hit.cubePos.x = (int16_t)in_stack_13;
-  hit.cubePos.y = SUB42(in_stack_13,2);
-  hit._28_4_ = in_stack_14;
-  hit.face = (int32_t)in_stack_15;
-  hit._36_4_ = pIVar2;
-  hit.woId = (int32_t)in_stack_16;
-  hit.cube = (Cube *)in_stack_17;
-  hit.distance = (float)in_stack_18;
-  hit.collider = (Collider *)in_stack_19;
-  hit.transform = (Transform *)in_stack_20;
-  hit._60_4_ = in_stack_21;
-  hit.interactionFlags._0_4_ = in_stack_22;
-  hit.interactionFlags._4_4_ = 0;
-  ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
-            ((ESStateBase *)this,e,bStack_1 & bVar6,hit,(MethodInfo *)in_stack_23);
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pCVar24 = (Cube *)0x5;
-  this_07 = (SelectionController *)&UNK_?;
-  bVar25 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
-                    (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-  if (bVar25 == 0) {
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pTVar26 = (Transform *)0x0;
-    pCVar27 = (Collider *)0x6;
-    puVar28 = &UNK_?;
-    bVar25 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
-                      (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
-    if (bVar25 != 0) goto code_?;
-  }
-  else {
+  func_?(&RStack_1,0,0x2c);
+  func_?(&VStack_2,0,0x48);
+  bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                    (&VStack_2,(HashSet_1_System_Int32_ *)0x0,-0x40005,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
 code_?:
-    if ((e == (EditorStateMachine *)0x0) ||
-       (this_07 = (e->fields).selectionController, this_07 == (SelectionController *)0x0))
-    goto code_?;
-    pTVar26 = (Transform *)0x0;
-    pCVar27 = (Collider *)0xfffffffb;
-    puVar28 = (undefined *)0x1;
-    pCVar24 = (Cube *)0x0;
-    in_stack_15 = &UNK_?;
-    this_01 = SelectionController::SelectionController_Select(this_07,0,1,-5,(MethodInfo *)0x0);
-    if ((bVar6 != 0) && (this_01 != (WorldObjectClientRef *)0x0)) {
-      in_stack_22 = &UNK_?;
-      pMVar29 = WorldObjectClientRef`1[MVRoundCube]::
-               WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                         ((WorldObjectClientRef_1_MVRoundCube_ *)this_01,
-                          MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                         );
-      if (pMVar29 != (MVRoundCube *)0x0) goto code_?;
+    bVar4 = ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnabled
+                      (VStack_2.woId,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
     }
-  }
-  targetHit.interactionFlags._0_4_ = in_stack_22;
-  targetHit._60_4_ = in_stack_21;
-  targetHit.point.y = in_stack_7;
-  targetHit.point.x = in_stack_8;
-  targetHit.point.z = fStack_9;
-  targetHit.normal.x = fStack_10;
-  targetHit.normal.y = fStack_11;
-  targetHit.normal.z = (float)uStack_12;
-  targetHit.cubePos.x = (int16_t)in_stack_13;
-  targetHit.cubePos.y = SUB42(in_stack_13,2);
-  targetHit._28_4_ = in_stack_14;
-  targetHit.face = (int32_t)in_stack_15;
-  targetHit._36_4_ = this_07;
-  targetHit.woId = (int32_t)pCVar24;
-  targetHit.cube = (Cube *)puVar28;
-  targetHit.distance = (float)pCVar27;
-  targetHit.collider = (Collider *)pTVar26;
-  targetHit.transform = (Transform *)in_stack_20;
-  targetHit.interactionFlags._4_4_ = 0;
-  bVar25 = ESTerrainEdit_ResettingTerrain(this,targetHit,(MethodInfo *)in_stack_30);
-  if (bVar25 != 0) {
-    return;
-  }
-  if ((e != (EditorStateMachine *)0x0) &&
-     (pCVar31 = (e->fields).cubeModelingStateMachine, pCVar31 != (CubeModelingStateMachine *)0x0)) {
-    (*(code *)(pCVar31->klass->vtable).Update.method)();
-    if (in_stack_3 != (IList_1_VoxelHit_ *)0x0) {
-      pMVar4 = (this->fields).terrain;
-      if (pMVar4 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
-      pIVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pMVar4,(MethodInfo *)0x0)
-      ;
-      if ((in_stack_3 != pIVar2) && (bVar6 != 0)) {
-        pCVar31 = (e->fields).cubeModelingStateMachine;
-        if (pCVar31 == (CubeModelingStateMachine *)0x0) goto code_?;
-        CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
-                  (pCVar31,0,(MethodInfo *)0x0);
-      }
+    if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+      hit.point.y = VStack_2.point.z;
+      hit.point.x = VStack_2.point.y;
+      hit.point.z = VStack_2.normal.x;
+      hit.normal.x = VStack_2.normal.y;
+      hit.normal.y = VStack_2.normal.z;
+      hit.normal.z = (float)VStack_2.cubePos._0_4_;
+      hit.cubePos.x = VStack_2.cubePos.z;
+      hit.cubePos.y = VStack_2._30_2_;
+      hit._28_4_ = VStack_2.face;
+      hit.face = VStack_2._36_4_;
+      hit._36_4_ = VStack_2.woId;
+      hit.woId = (int32_t)VStack_2.cube;
+      hit.cube = (Cube *)VStack_2.distance;
+      hit.distance = (float)VStack_2.collider;
+      hit.collider = (Collider *)VStack_2.transform;
+      hit.transform = (Transform *)VStack_2._60_4_;
+      hit._60_4_ = (float)VStack_2.interactionFlags;
+      hit.interactionFlags._0_4_ = (float)((ulonglong)VStack_2.interactionFlags >> 0x20);
+      hit.interactionFlags._4_4_ = 0;
+      ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
+                ((ESStateBase *)this,e,bVar4 & bVar3,hit,in_stack_5);
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this_02 = (MVBuildModeAvatarLocal_EditMode *)
-              MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if (this_02 != (MVBuildModeAvatarLocal_EditMode *)0x0) {
-      pEVar32 = (EditorStateMachine *)&UNK_?;
-      bVar6 = MVBuildModeAvatarLocal+EditMode::
-              MVBuildModeAvatarLocal_EditMode_get_MovementConstrained(this_02,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        return;
-      }
-      if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+                      (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar6 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+      bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                         (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        return;
-      }
+      if (bVar3 != 0) goto code_?;
+    }
+    else {
+code_?:
+      if ((e == (EditorStateMachine *)0x0) ||
+         (this_00 = (e->fields).selectionController, this_00 == (SelectionController *)0x0))
+      goto code_?;
       func_?();
-      e = _UNK_?;
-      bVar6 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                        ((VoxelHit *)&stack0xffffff98,(HashSet_1_System_Int32_ *)0x0,-0x40005,
-                         (MethodInfo *)0x0);
-      if (bVar6 != 0) {
-        e = pEVar32;
+      bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                        (&VStack_6,(HashSet_1_System_Int32_ *)0x0,-5,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
+        this_03 = (WorldObjectClientRef *)0x0;
       }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
+      else {
+        uVar7 = (undefined4)((ulonglong)VStack_6.interactionFlags >> 0x20);
+        hit_00.point.y = VStack_6.point.z;
+        hit_00.point.x = VStack_6.point.y;
+        hit_00.point.z = VStack_6.normal.x;
+        hit_00.normal.x = VStack_6.normal.y;
+        hit_00.normal.y = VStack_6.normal.z;
+        hit_00.normal.z = (float)VStack_6.cubePos._0_4_;
+        hit_00.cubePos.x = VStack_6.cubePos.z;
+        hit_00.cubePos.y = VStack_6._30_2_;
+        hit_00._28_4_ = VStack_6.face;
+        hit_00.face = VStack_6._36_4_;
+        hit_00._36_4_ = VStack_6.woId;
+        hit_00.woId = (int32_t)VStack_6.cube;
+        hit_00.cube = (Cube *)VStack_6.distance;
+        hit_00.distance = (float)VStack_6.collider;
+        hit_00.collider = (Collider *)VStack_6.transform;
+        hit_00.transform = (Transform *)VStack_6._60_4_;
+        hit_00._60_4_ = (float)VStack_6.interactionFlags;
+        hit_00.interactionFlags._0_2_ = (int16_t)uVar7;
+        hit_00.interactionFlags._2_2_ = SUB42(uVar7,2);
+        hit_00.interactionFlags._4_4_ = 0;
+        this_03 = SelectionController::SelectionController_Select_1
+                            (this_00,hit_00,1,0,in_stack_8);
       }
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (this_03 != (MainCameraManager *)0x0) {
-        this_04 = (Camera *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_03,
-                             (MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pVVar33 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                  StandaloneInput_MousePosition
-                            ((Vector3 *)&stack0xffffffec,(StandaloneInput *)0x0,
-                             (MethodInfo *)this_02);
-        if (this_04 != (Camera *)0x0) {
-          pRVar34 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                              ((Ray *)&stack0xffffffe0,this_04,*pVVar33,(MethodInfo *)0x0);
-          VVar35 = pRVar34->m_Origin;
-          fVar36 = (pRVar34->m_Direction).x;
-          uVar37 = (pRVar34->m_Direction).z;
-          iVar38 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Logic,(MethodInfo *)0x0);
-          ray.m_Direction.x = fVar36;
-          ray.m_Origin = VVar35;
-          ray.m_Direction.y = 0.0;
-          ray.m_Direction.z = (float)uVar37;
-          UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_Raycast_13
-                    (ray,(RaycastHit *)&stack0xffffff5c,INFINITY,1 << ((byte)iVar38 & 0x1f),
-                     (MethodInfo *)0x0);
-          x = (Object_1 *)func_?();
-          if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      if (((bVar4 != 0) && (this_03 != (WorldObjectClientRef *)0x0)) &&
+         (pOVar9 = WorldObjectClientRef`1[System::Object]::
+                   WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                             ((WorldObjectClientRef_1_System_Object_ *)this_03,
+                              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                             ), pOVar9 != (Object *)0x0)) goto code_?;
+    }
+    targetHit.point.y = VStack_2.point.z;
+    targetHit.point.x = VStack_2.point.y;
+    targetHit.point.z = VStack_2.normal.x;
+    targetHit.normal.x = VStack_2.normal.y;
+    targetHit.normal.y = VStack_2.normal.z;
+    targetHit.normal.z = (float)VStack_2.cubePos._0_4_;
+    targetHit.cubePos.x = VStack_2.cubePos.z;
+    targetHit.cubePos.y = VStack_2._30_2_;
+    targetHit._28_4_ = VStack_2.face;
+    targetHit.face = VStack_2._36_4_;
+    targetHit._36_4_ = VStack_2.woId;
+    targetHit.woId = (int32_t)VStack_2.cube;
+    targetHit.cube = (Cube *)VStack_2.distance;
+    targetHit.distance = (float)VStack_2.collider;
+    targetHit.collider = (Collider *)VStack_2.transform;
+    targetHit.transform = (Transform *)VStack_2._60_4_;
+    targetHit._60_1_ = (bool)(int)VStack_2.interactionFlags;
+    targetHit._61_3_ = SUB43((int)VStack_2.interactionFlags,1);
+    targetHit.interactionFlags._0_4_ = (int32_t)((ulonglong)VStack_2.interactionFlags >> 0x20);
+    targetHit.interactionFlags._4_4_ = 0;
+    bVar3 = ESTerrainEdit_ResettingTerrain(this,targetHit,(MethodInfo *)in_stack_10);
+    if (bVar3 != 0) {
+      return;
+    }
+    if ((e != (EditorStateMachine *)0x0) &&
+       (pCVar11 = (e->fields).cubeModelingStateMachine, pCVar11 != (CubeModelingStateMachine *)0x0)) {
+      VStack_6.transform = (Transform *)(pCVar11->klass->vtable).Update.method;
+      VStack_6.distance = (float)&UNK_?;
+      VStack_6.collider = (Collider *)pCVar11;
+      (*(pCVar11->klass->vtable).Update.methodPtr)();
+      if (VStack_2.woId == 0) {
+        bVar12 = false;
+      }
+      else {
+        pMVar13 = (this->fields).terrain;
+        if (pMVar13 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
+        bVar12 = VStack_2.woId != (pMVar13->fields)._._._.id;
+      }
+      if ((bVar12 & bVar4) == 0) {
+code_?:
+        pMVar14 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
+        ;
+        if (pMVar14 != (MainCameraManager *)0x0) {
+          if ((pMVar14->fields).isLogicRendered == 0) {
+            return;
+          }
+          if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar6 == 0) {
+          bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+                            (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
+          if (bVar3 == 0) {
             return;
           }
-          this_05 = (Component_1 *)func_?();
-          if ((this_05 != (Component_1 *)0x0) &&
-             (this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                        Component_1_get_gameObject(this_05,(MethodInfo *)0x0),
-             this_06 != (GameObject *)0x0)) {
-            x_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                   GameObject_GetComponentsInChildren_29
-                             (this_06,
-                              LinkObjectBase_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<LinkObjectBase>__
-                             );
-            if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+          func_?();
+          e = _UNK_?;
+          bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                            ((VoxelHit *)&stack0xfffffed0,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+                             (MethodInfo *)0x0);
+          if (bVar3 != 0) {
+            e = in_stack_10;
+          }
+          pMVar14 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                             ((MethodInfo *)0x0);
+          if (pMVar14 != (MainCameraManager *)0x0) {
+            this_01 = (pMVar14->fields).mainCamera;
+            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                              ((Object_1 *)x_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar6 == 0) {
-              return;
-            }
-            fVar36 = System.Core.dll::System::Linq::
-                     Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Object,System::Single]
-                     ::
-                     Enumerable_CreateSelectIterator_c_Iterator10_2_System_Object_System_Single__System_Collections_Generic_IEnumerator_TResult__get_Current
-                               ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Object_System_Single_
-                                 *)&stack0xffffff5c,(MethodInfo *)0x0);
-            if ((float)e <= fVar36) {
-              return;
-            }
+            pVVar15 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
+                      StandaloneInput_MousePosition
+                                (&RStack_16.m_Direction,(StandaloneInput *)0x0,in_stack_17);
+            if (this_01 != (Camera *)0x0) {
+              pRVar18 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
+                                  (&RStack_16,this_01,*pVVar15,(MethodInfo *)0x0);
+              fStack_19 = (pRVar18->m_Origin).x;
+              fStack_20 = (pRVar18->m_Origin).y;
+              fStack_21 = (pRVar18->m_Origin).z;
+              fStack_22 = (pRVar18->m_Direction).x;
+              RStack_16.m_Direction.y = (pRVar18->m_Direction).y;
+              RStack_16.m_Direction.z = (pRVar18->m_Direction).z;
+              iVar23 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Logic,(MethodInfo *)0x0)
+              ;
+              ray.m_Origin.y = fStack_20;
+              ray.m_Origin.x = fStack_19;
+              ray.m_Origin.z = fStack_21;
+              ray.m_Direction.x = fStack_22;
+              ray.m_Direction.y = RStack_16.m_Direction.y;
+              ray.m_Direction.z = RStack_16.m_Direction.z;
+              UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_Raycast_13
+                        (ray,&RStack_1,INFINITY,1 << ((byte)iVar23 & 0x1f),(MethodInfo *)0x0);
+              pCVar24 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::
+                        RaycastHit_get_collider(&RStack_1,(MethodInfo *)0x0);
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__UnityEngine__Object);
+              }
+              bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                ((Object_1 *)pCVar24,(Object_1 *)0x0,(MethodInfo *)0x0);
+              if (bVar3 == 0) {
+                return;
+              }
+              pCVar24 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::
+                        RaycastHit_get_collider(&RStack_1,(MethodInfo *)0x0);
+              if ((pCVar24 != (Collider *)0x0) &&
+                 (source = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)pCVar24,(MethodInfo *)0x0),
+                 source != (GameObject *)0x0)) {
+                x = (Object_1 *)
+                    Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                              ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
+                               LinkObjectBase_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<LinkObjectBase>__
+                              );
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                  (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                if (bVar3 == 0) {
+                  return;
+                }
+                fVar25 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::
+                         RaycastHit_get_distance(&RStack_1,(MethodInfo *)0x0);
+                RStack_16.m_Direction.z = fVar25;
+                if ((float)e <= fVar25) {
+                  return;
+                }
 code_?:
-            value = (Object *)func_?();
-            FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
-            return;
+                pOVar9 = (Object *)func_?();
+                FSMEntity::FSMEntity_set_Event((FSMEntity *)this_02,pOVar9,(MethodInfo *)0x0);
+                return;
+              }
+            }
           }
         }
       }
+      else {
+        pCVar11 = (e->fields).cubeModelingStateMachine;
+        if (pCVar11 != (CubeModelingStateMachine *)0x0) {
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pIVar26 = (pCVar11->fields)._.currentState;
+          if (pIVar26 != (IState *)0x0) {
+            pIVar27 = pIVar26->klass;
+            if (((pIVar27->_1).typeHierarchyDepth < (TypeInfo__CubeModelTool->_1).typeHierarchyDepth)
+               || ((pIVar27->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).typeHierarchyDepth - 1]
+                   != (Il2CppClass *)TypeInfo__CubeModelTool)) goto code_?;
+            (*(code *)pIVar27[1]._0.declaringType)();
+            goto code_?;
+          }
+        }
+      }
+    }
+  }
+  else {
+    pMVar13 = (this->fields).terrain;
+    if (pMVar13 != (MVCubeModelPrototypeTerrain *)0x0) {
+      if ((VStack_2.woId == (pMVar13->fields)._._._.id) || (VStack_2.woId == -1)) {
+        bVar3 = 0;
+      }
+      goto code_?;
     }
   }
 code_?:
   func_?();
-  pcVar39 = (code *)swi(3);
-  (*pcVar39)();
+code_?:
+  func_?();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -313,19 +340,11 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Exit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__get_Count__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVMaterialRepository->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVMaterialRepository->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVMaterialRepository);
   }
   MVMaterialRepository::MVMaterialRepository_set_AllowDestructibleMaterialSelection
             (0,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
   pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
   if (((pGVar1 != (GameEventManager *)0x0) &&
       (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
@@ -335,41 +354,32 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Exit
     GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
     GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
               (this_00,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
-    if ((e != (EditorStateMachine *)0x0) &&
-       (this_01 = (ESStateBase *)(e->fields).selectionController, this_01 != (ESStateBase *)0x0)) {
-      this_02 = (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-                 *)mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items
-                             ((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0);
-      if (this_02 !=
-          (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)
-          0x0) {
-        JVar3 = System.Core.dll::System::Linq::
-                Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-                JsonSchemaType]::
-                Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                          (this_02,
-                           MethodInfo__System__Collections__Generic__HashSet<int>__get_Count__);
-        if (JVar3 == JsonSchemaType__Enum_None) {
-          ESStateBase::ESStateBase_DeTintCurrent(this_01,(MethodInfo *)0x0);
-        }
-        pCVar4 = (e->fields).cubeModelingStateMachine;
-        if (pCVar4 != (CubeModelingStateMachine *)0x0) {
-          CubeModelingStateMachine::CubeModelingStateMachine_RemoveCursors(pCVar4,(MethodInfo *)0x0)
-          ;
-          pCVar4 = (e->fields).cubeModelingStateMachine;
-          if (pCVar4 != (CubeModelingStateMachine *)0x0) {
-            CubeModelingStateMachine::CubeModelingStateMachine_EndEdit(pCVar4,(MethodInfo *)0x0);
-            this_01[1].klass = (ESStateBase__Class *)0x0;
-            return;
-          }
+    if (((e != (EditorStateMachine *)0x0) &&
+        (pSVar3 = (e->fields).selectionController, pSVar3 != (SelectionController *)0x0)) &&
+       (pHVar4 = (pSVar3->fields).selectedIDs, pHVar4 != (HashSet_1_System_Int32_ *)0x0)) {
+      if ((pHVar4->fields)._count == 0) {
+        ESStateBase::ESStateBase_DeTintCurrent(unaff_ESI,(MethodInfo *)0x0);
+      }
+      pCVar5 = (e->fields).cubeModelingStateMachine;
+      if (pCVar5 != (CubeModelingStateMachine *)0x0) {
+        CubeModelingStateMachine::CubeModelingStateMachine_RemoveCursors(pCVar5,(MethodInfo *)0x0);
+        pCVar5 = (e->fields).cubeModelingStateMachine;
+        if ((pCVar5 != (CubeModelingStateMachine *)0x0) &&
+           (this_01 = (pCVar5->fields)._TargetCubeModel_k__BackingField,
+           this_01 != (MVCubeModelBase *)0x0)) {
+          MVCubeModelBase::MVCubeModelBase_set_BeingEdited(this_01,0,(MethodInfo *)0x0);
+          (pCVar5->fields)._TargetCubeModel_k__BackingField = (MVCubeModelBase *)0x0;
+          func_?();
+          unaff_ESI[1].klass = (ESStateBase__Class *)0x0;
+          func_?();
+          return;
         }
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -381,18 +391,22 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&
+                    MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
+                   );
+    func_?(&
+                    MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                     (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
     bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
@@ -404,45 +418,27 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
   if (targetHit._36_4_ == -1) {
     return 0;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-    this_00 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (pMVar2,targetHit._36_4_,(MethodInfo *)0x0);
-    if (this_00 == (MVWorldObject *)0x0) {
+    pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (pMVar2,targetHit._36_4_,(MethodInfo *)0x0);
+    if (pMVar3 == (MVWorldObject *)0x0) {
       return 0;
     }
-    pOVar3 = System.Core.dll::System::Linq::Enumerable+<CreateGroupByIterator>c__Iterator5`2[System
-             ::Object,System::Object]::
-             Enumerable_CreateGroupByIterator_c_Iterator5_2_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                       ((Enumerable_CreateGroupByIterator_c_Iterator5_2_System_Object_System_Object_
-                         *)this_00,(MethodInfo *)0x0);
-    if ((pOVar3 != (Object *)0x20) &&
-       (pOVar3 = System.Core.dll::System::Linq::
-                 Enumerable+<CreateGroupByIterator>c__Iterator5`2[System::Object,System::Object]::
-                 Enumerable_CreateGroupByIterator_c_Iterator5_2_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                           ((Enumerable_CreateGroupByIterator_c_Iterator5_2_System_Object_System_Object_
-                             *)this_00,(MethodInfo *)0x0), pOVar3 != (Object *)0x8)) {
+    if (((pMVar3->fields).type != 0x20) && ((pMVar3->fields).type != 8)) {
       return 0;
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
       this_01 = (MVCubeModelPrototypeTerrain *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject_4
+                MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
                           (pMVar2,
                            MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
                           );
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if ((pMVar2 != (MVWorldObjectClientManager *)0x0) &&
          (this_02 = (MVCubeModelFineGrainedTerrain *)
-                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject_4
+                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
                               (pMVar2,
                                MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
                               ), this_01 != (MVCubeModelPrototypeTerrain *)0x0)) {
@@ -456,31 +452,17 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
             return 0;
           }
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (((this_03 != (MVNetworkGame *)0x0) &&
-            (this_04 = (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                        *)CloudyTheme::CloudyTheme_get_Identifier
-                                    ((CloudyTheme *)this_03,(MethodInfo *)0x0),
-            this_04 !=
-            (SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-             *)0x0)) &&
-           (this_05 = (RuntimeEventManager *)
-                      System.dll::System::Collections::Generic::
-                      SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                      ::Single,System::Object]::
-                      SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                (this_04,(MethodInfo *)0x0), this_05 != (RuntimeEventManager *)0x0))
-        {
-          RuntimeEventManager::RuntimeEventManager_ResetTerrain(this_05,(MethodInfo *)0x0);
-          this_06 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (((pMVar4 != (MVNetworkGame *)0x0) &&
+            (pWVar5 = (pMVar4->fields).worldNetwork, pWVar5 != (WorldNetwork *)0x0)) &&
+           (this_00 = (RuntimeEventManager *)(pWVar5->fields)._.runtimeEventManagerNetwork,
+           this_00 != (RuntimeEventManager *)0x0)) {
+          RuntimeEventManager::RuntimeEventManager_ResetTerrain(this_00,(MethodInfo *)0x0);
+          this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
-          if (this_06 != (MVNetworkGame_OperationRequests *)0x0) {
+          if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
             MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestResetTerrain
-                      (this_06,(MethodInfo *)0x0);
+                      (this_03,(MethodInfo *)0x0);
             return 1;
           }
         }
@@ -489,8 +471,8 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  bVar1 = (*pcVar6)();
   return bVar1;
 }
 

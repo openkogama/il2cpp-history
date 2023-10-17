@@ -9,15 +9,30 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class SharedCollisionFunctions
 {
 	// Fields
 	private static readonly RaycastHitComparer rayHitComparer;
 	private static readonly PhysicsCollisionDatasWrapper physicsCollisionWrapper;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Comparison<RaycastHit> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Comparison<RaycastHit> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal int _GetPhysicsCollisionData_b__2_0(RaycastHit hit0, RaycastHit hit1);
+	}
 
 	// Constructors
 	static SharedCollisionFunctions();
@@ -29,7 +44,5 @@ public static class SharedCollisionFunctions
 	public static void SetToNoneVoxelHit(ref VoxelHit voxelHit, PhysicsCollisionData hit, int woId);
 	public static void SetToVoxelHit(ref VoxelHit voxelHit0, ref VoxelHit voxelHit1);
 	public static bool IgnoreCollision(MVWorldObjectClient wo, HashSet<int> ignoreWoIds);
-	[CompilerGenerated]
-	private static int _GetPhysicsCollisionData_m__0(RaycastHit hit0, RaycastHit hit1);
 }
 

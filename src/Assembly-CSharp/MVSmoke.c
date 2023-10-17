@@ -5,59 +5,58 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_Initialize(MVSmoke *this,MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    func_?(&TypeInfo__IInputSignalReceiver);
+    func_?(&MethodInfo__MVSmoke__OnInputStateUpdate_LogicInputState__LogicObjectManager_);
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   MVLogicObject::MVLogicObject_SetupCulling
             ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
-  pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-            *)(this->fields).particleSystem;
-  if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Experimental
-    ::TerrainAPI::TerrainUtility+TerrainMap]::
-    Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-              (pDVar1,(MethodInfo *)0x0);
-    fVar2 = (float10)func_?();
-    MVSmoke_SetupSmokeCulling(this,(float)fVar2,(this->fields)._._.gameObject,(MethodInfo *)0x0);
+  pPVar1 = (this->fields).particleSystem;
+  if (pPVar1 != (ParticleSystem *)0x0) {
+    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision
+              (pPVar1,(MethodInfo *)0x0);
+    radius = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+             ParticleSystem_MainModule_get_startLifetimeMultiplier_Injected
+                       ((ParticleSystem_MainModule *)&stack0xfffffff8,(MethodInfo *)0x0);
+    MVSmoke_SetupSmokeCulling(this,radius,(this->fields)._._.gameObject,(MethodInfo *)0x0);
     MVSmoke_SetSmokeProperties(this,(MethodInfo *)0x0);
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this,
-               MethodInfo__MVSmoke__OnInputStateUpdate_LogicInputState__LogicObjectManager_,
-               MethodInfo__System__Action<LogicInputState,_LogicObjectManager>__Action_System__Object__void__
-              );
-    pIVar3 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                       ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                        (Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar3;
-    if (pIVar3 != (IInputSignalReceiver *)0x0) {
+    this_00 = (Action_2_Int32Enum_Object_ *)func_?();
+    if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
+      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__MVSmoke__OnInputStateUpdate_LogicInputState__LogicObjectManager_,
+                 (MethodInfo *)0x0);
+      pIVar2 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                         ((MVWorldObject *)this,1,
+                          (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                          (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0)
+      ;
+      (this->fields)._InputSignalReceiver_k__BackingField = pIVar2;
       func_?();
-      pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)(this->fields).particleSystem;
-      if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-        Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-        Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                  (pDVar1,(MethodInfo *)0x0);
-        func_?();
-        this_00 = (this->fields).particleSystem;
-        if (this_00 != (ParticleSystem *)0x0) {
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                    (this_00,(MethodInfo *)0x0);
-          return;
+      if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
+        value = func_?();
+        pPVar1 = (this->fields).particleSystem;
+        if (pPVar1 != (ParticleSystem *)0x0) {
+          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+          ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
+          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+          ParticleSystem_EmissionModule_set_enabled_Injected
+                    ((ParticleSystem_EmissionModule *)&stack0xfffffff4,value,(MethodInfo *)0x0);
+          pPVar1 = (this->fields).particleSystem;
+          if (pPVar1 != (ParticleSystem *)0x0) {
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
+                      (pPVar1,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -68,26 +67,19 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_InitializeInventory(MVSmoke *this,Met
 
 {
   MVLogicObject::MVLogicObject_InitializeInventory((MVLogicObject *)this,(MethodInfo *)0x0);
-  if ((this->fields).particleSystem == (ParticleSystem *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)func_?(), pcVar1 == (code *)0x0))
-  {
-    uVar2 = func_?(&UNK_?,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcRam_? = pcVar1;
-  uStack3 = 1;
+  if ((this->fields).particleSystem != (ParticleSystem *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    uStack1 = 1;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*pcRam_?)();
+    (*pcRam_?)();
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -97,20 +89,11 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_InitializeInventory(MVSmoke *this,Met
 void Assembly-CSharp.dll::MVSmoke::MVSmoke_OnDataUpdate(MVSmoke *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   MVSmoke_SetSmokeProperties(this,(MethodInfo *)0x0);
-  woID = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-         Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
+  woID = (this->fields)._._._.id;
   worldObjectManager = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
-            ((int32_t)woID,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
+            (woID,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
   return;
 }
 
@@ -123,38 +106,34 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_OnInputStateUpdate
 
 {
   if (logicInputState == LogicInputState__Enum_FromColdToHot) {
-    pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-              *)(this->fields).particleSystem;
-    if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)0x0) {
+    pPVar1 = (this->fields).particleSystem;
+    if (pPVar1 != (ParticleSystem *)0x0) {
       logicInputState =
            (LogicInputState__Enum)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-           Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-           Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                     (pDVar1,(MethodInfo *)0x0);
-      func_?(&logicInputState,1,0);
+           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+           ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+      ParticleSystem_EmissionModule_set_enabled_Injected
+                ((ParticleSystem_EmissionModule *)&logicInputState,1,(MethodInfo *)0x0);
       return;
     }
 code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    uVar2 = func_?(&stack0xfffffff0);
+    func_?(uVar2);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
   if (logicInputState == LogicInputState__Enum_FromHotToCold) {
-    logicInputState = LogicInputState__Enum_FromColdToHot;
-    pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-              *)(this->fields).particleSystem;
-    if (pDVar1 == (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)0x0) goto code_?;
+    pPVar1 = (this->fields).particleSystem;
+    if (pPVar1 == (ParticleSystem *)0x0) goto code_?;
     logicInputState =
          (LogicInputState__Enum)
-         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-         Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-         Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                   (pDVar1,(MethodInfo *)0x0);
-    func_?(&logicInputState,0,0);
+         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+         ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
+    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+    ParticleSystem_EmissionModule_set_enabled_Injected
+              ((ParticleSystem_EmissionModule *)&logicInputState,0,(MethodInfo *)0x0);
   }
   return;
 }
@@ -165,208 +144,239 @@ code_?:
 void Assembly-CSharp.dll::MVSmoke::MVSmoke_SetSmokeProperties(MVSmoke *this,MethodInfo *method)
 
 {
-  this_02 = this;
+  this_01 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__AnimationCurve);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_color);
+    func_?(&StringLiteral_wind);
+    func_?(&StringLiteral_length);
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object *)0x0;
-  pOStack_2 = (Object *)0x0;
-  pOStack_3 = (Object *)0x0;
-  pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-            *)(this->fields).particleSystem;
-  pOStack_5 = (Object *)0x0;
-  if (pDVar4 == (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)0x0) goto code_?;
-  pOStack_1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-              Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-              Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                        (pDVar4,(MethodInfo *)0x0);
-  func_?(&pOStack_1,0);
-  pDVar6 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-            *)PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (pDVar6 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                 *)0x0) goto code_?;
-  bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject::
-          KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-          Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                    (pDVar6,StringLiteral_color,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                    );
-  if (bVar7 == 0) {
+  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
+  pPVar2 = (this->fields).particleSystem;
+  if (pPVar2 == (ParticleSystem *)0x0) {
 code_?:
-    this = (MVSmoke *)0x0;
-    pDVar6 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-              *)PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this_02,(MethodInfo *)0x0);
-    if (pDVar6 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                   *)0x0) goto code_?;
-    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      (pDVar6,StringLiteral_length,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar7 == 0) {
-      return;
-    }
-    pDVar6 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-              *)PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this_02,(MethodInfo *)0x0);
-    if (pDVar6 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                   *)0x0) goto code_?;
-    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      (pDVar6,StringLiteral_wind,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar7 == 0) {
+    func_?();
 code_?:
-      pDVar8 = (Dictionary_2_System_Type_Pool_ *)
-               PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this_02,(MethodInfo *)0x0);
-      if ((pDVar8 == (Dictionary_2_System_Type_Pool_ *)0x0) ||
-         (pPVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                   Dictionary_2_System_Type_Pool__get_Item
-                             (pDVar8,(Type *)StringLiteral_length,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pPVar9 == (Pool *)0x0)) goto code_?;
-      if ((pPVar9->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pfVar10 = (float *)func_?(pPVar9);
-        fStack_11 = *pfVar10;
-        MVSmoke_SetupSmokeCulling
-                  (this_02,(this_02->fields).lengthCullingScale * fStack_11,
-                   (this_02->fields)._._.gameObject,(MethodInfo *)0x0);
-        pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                  *)(this_02->fields).particleSystem;
-        if (pDVar4 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                       *)0x0) {
-          pOStack_3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                       Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                                 (pDVar4,(MethodInfo *)0x0);
-          func_?(&pOStack_3,fStack_11 / ((float)this + _UNK_?),0);
-          this_00 = (this_02->fields).particleSystem;
-          if (this_00 != (ParticleSystem *)0x0) {
-            this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                                ((Component_1 *)this_00,(MethodInfo *)0x0);
-            this_01 = (this_02->fields)._._.transform;
-            if ((this_01 != (Transform *)0x0) &&
-               (pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                    (&QStack_13,this_01,(MethodInfo *)0x0),
-               this_03 != (Transform *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                        (this_03,*pQVar12,(MethodInfo *)0x0);
-              pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                        *)(this_02->fields).particleSystem;
-              if (pDVar4 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                             *)0x0) {
-                pOStack_5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]
-                             ::
-                             Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                                       (pDVar4,(MethodInfo *)0x0);
-                this_04 = (AnimationCurve *)func_?(TypeInfo__UnityEngine__AnimationCurve);
-                UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve__ctor_1
-                          (this_04,(MethodInfo *)0x0);
-                if (this_04 != (AnimationCurve *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
-                            (this_04,0.0,0.0,(MethodInfo *)0x0);
-                  UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
-                            (this_04,0.05,(float)this,(MethodInfo *)0x0);
-                  func_?();
-                  func_?(&pOStack_5,0,0);
-                  return;
+    func_?();
+  }
+  else {
+    PStack_3.m_ParticleSystem =
+         (ParticleSystem *)
+         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+         ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
+    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+    ParticleSystem_MainModule_get_startLifetimeMultiplier_Injected(&PStack_3,(MethodInfo *)0x0);
+    pDVar4 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
+    if (pDVar4 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+    goto code_?;
+    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+             Object,GUILoginHandler+PlanetData]::
+             Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                       (pDVar4,(Object *)StringLiteral_color,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                       );
+    if (bVar5 == 0) {
+code_?:
+      pDVar4 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+               (this_01->fields)._._._.data;
+      this = (MVSmoke *)0x0;
+      if (pDVar4 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+        bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                 Object,GUILoginHandler+PlanetData]::
+                 Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                           (pDVar4,(Object *)StringLiteral_length,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                           );
+        if (bVar5 == 0) {
+          return;
+        }
+        pDVar4 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                 (this_01->fields)._._._.data;
+        if (pDVar4 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+          bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                   Object,GUILoginHandler+PlanetData]::
+                   Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                             (pDVar4,(Object *)StringLiteral_wind,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                             );
+          if (bVar5 == 0) {
+code_?:
+            pDVar6 = (this_01->fields)._._._.data;
+            if (pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                  (pDVar6,(Object *)StringLiteral_length,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
+              uVar8 = CONCAT44(TypeInfo__System__Single,pOVar7);
+              if (pOVar7 != (Object *)0x0) {
+                if ((pOVar7->klass->_0).element_class !=
+                    (TypeInfo__System__Single->_0).element_class) goto code_?;
+                pfVar9 = (float *)func_?(pOVar7);
+                fStack_10 = *pfVar9;
+                MVSmoke_SetupSmokeCulling
+                          (this_01,fStack_10 * (this_01->fields).lengthCullingScale,
+                           (this_01->fields)._._.gameObject,(MethodInfo *)0x0);
+                pPVar2 = (this_01->fields).particleSystem;
+                if (pPVar2 != (ParticleSystem *)0x0) {
+                  PStack_11.m_ParticleSystem =
+                       (ParticleSystem *)
+                       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                       ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
+                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+                  ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
+                            (&PStack_11,fStack_10 / ((float)this + _UNK_?),(MethodInfo *)0x0)
+                  ;
+                  pPVar2 = (this_01->fields).particleSystem;
+                  if (pPVar2 != (ParticleSystem *)0x0) {
+                    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Component_get_transform((Component *)pPVar2,(MethodInfo *)0x0);
+                    this_00 = (this_01->fields)._._.transform;
+                    if ((this_00 != (Transform *)0x0) &&
+                       (pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                  Transform_get_rotation
+                                            ((Quaternion *)&stack0xffffffd8,this_00,
+                                             (MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                                (this_02,*pQVar12,(MethodInfo *)0x0);
+                      pPVar2 = (this_01->fields).particleSystem;
+                      if (pPVar2 != (ParticleSystem *)0x0) {
+                        PStack_13.m_ParticleSystem =
+                             (ParticleSystem *)
+                             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                             ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
+                        this_03 = (AnimationCurve *)
+                                  func_?(TypeInfo__UnityEngine__AnimationCurve);
+                        if (this_03 != (AnimationCurve *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                          AnimationCurve__ctor_1(this_03,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                          AnimationCurve_AddKey(this_03,0.0,0.0,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                          AnimationCurve_AddKey(this_03,0.05,(float)this,(MethodInfo *)0x0);
+                          pAVar14 = (AnimationCurve *)0x0;
+                          pAVar15 = (AnimationCurve *)0x0;
+                          fVar16 = 0.0;
+                          uVar8._0_4_ = 0.0;
+                          uVar8._4_4_ = 0.0;
+                          UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                          ParticleSystem+MinMaxCurve::ParticleSystem_MinMaxCurve__ctor_2
+                                    ((ParticleSystem_MinMaxCurve *)&stack0xffffffc0,1.0,this_03,
+                                     this_03,(MethodInfo *)0x0);
+                          value_00.m_CurveMultiplier = fVar16;
+                          value_00.m_Mode = (int32_t)this_03;
+                          value_00.m_CurveMin = pAVar14;
+                          value_00.m_CurveMax = pAVar15;
+                          value_00.m_ConstantMin = (float)uVar8;
+                          value_00.m_ConstantMax = SUB84(uVar8,4);
+                          UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                          ParticleSystem+ForceOverLifetimeModule::
+                          ParticleSystem_ForceOverLifetimeModule_set_x
+                                    (&PStack_13,value_00,(MethodInfo *)0x0);
+                          return;
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
           }
+          else {
+            pDVar6 = (this_01->fields)._._._.data;
+            if (pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                  (pDVar6,(Object *)StringLiteral_wind,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
+              uVar8 = CONCAT44(TypeInfo__System__Single,pOVar7);
+              if (pOVar7 != (Object *)0x0) {
+                if ((pOVar7->klass->_0).element_class !=
+                    (TypeInfo__System__Single->_0).element_class) goto code_?;
+                puVar17 = (undefined4 *)func_?();
+                this = (MVSmoke *)*puVar17;
+                goto code_?;
+              }
+            }
+          }
         }
-        goto code_?;
       }
+      goto code_?;
     }
-    else {
-      pDVar8 = (Dictionary_2_System_Type_Pool_ *)
-               PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this_02,(MethodInfo *)0x0);
-      if ((pDVar8 == (Dictionary_2_System_Type_Pool_ *)0x0) ||
-         (pPVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                   Dictionary_2_System_Type_Pool__get_Item
-                             (pDVar8,(Type *)StringLiteral_wind,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pPVar9 == (Pool *)0x0)) goto code_?;
-      if ((pPVar9->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        puVar14 = (undefined4 *)func_?(pPVar9);
-        this = (MVSmoke *)*puVar14;
-        goto code_?;
-      }
-    }
-    func_?(pPVar9,TypeInfo__System__Single);
-code_?:
-    uVar15 = func_?(0);
-    func_?(uVar15);
-code_?:
-    uVar15 = func_?(0);
-    func_?(uVar15);
-code_?:
-    uVar15 = func_?(0);
-    func_?(uVar15);
-code_?:
-    uVar15 = func_?(0);
-    func_?(uVar15);
-  }
-  else {
-    pDVar8 = (Dictionary_2_System_Type_Pool_ *)
-             PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-    if (pDVar8 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                Dictionary_2_System_Type_Pool__get_Item
-                          (pDVar8,(Type *)StringLiteral_color,
+    pDVar6 = (this->fields)._._._.data;
+    if (pDVar6 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (pDVar6,(Object *)StringLiteral_color,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
     this = (MVSmoke *)TypeInfo__System__Single;
-    if (unaff_EBX == (Pool *)0x0) {
-      iVar16 = 0;
+    if (unaff_EBX == (Object *)0x0) {
+      iVar18 = 0;
 code_?:
-      pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)(this_02->fields).particleSystem;
-      if ((pDVar4 == (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                      *)0x0) ||
-         (pOStack_2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                      Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                                (pDVar4,(MethodInfo *)0x0), iVar16 == 0)) goto code_?;
-      uVar17 = *(uint *)(iVar16 + 0xc);
-      if (uVar17 == 0) goto code_?;
-      if (uVar17 < 2) goto code_?;
-      if (uVar17 < 3) goto code_?;
-      if (3 < uVar17) {
-        QStack_13.x = 0.0;
-        QStack_13.y = 0.0;
-        QStack_13.z = 0.0;
-        QStack_13.w = 0.0;
-        func_?(&QStack_13,*(undefined4 *)(iVar16 + 0x10),*(undefined4 *)(iVar16 + 0x14),
-                        *(undefined4 *)(iVar16 + 0x18),*(undefined4 *)(iVar16 + 0x1c),0);
-        color.g = QStack_13.y;
-        color.r = QStack_13.x;
-        color.b = QStack_13.z;
-        color.a = QStack_13.w;
-        pPVar18 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
-                 ParticleSystem_MinMaxGradient_op_Implicit
-                           ((ParticleSystem_MinMaxGradient *)&stack0xffffffac,color,
-                            (MethodInfo *)0x0);
-        func_?(&pOStack_2,pPVar18->m_Mode,pPVar18->m_GradientMin,pPVar18->m_GradientMax,
-                        (pPVar18->m_ColorMin).r,(pPVar18->m_ColorMin).g,(pPVar18->m_ColorMin).b,
-                        (pPVar18->m_ColorMin).a);
+      pPVar2 = (this_01->fields).particleSystem;
+      if ((pPVar2 == (ParticleSystem *)0x0) ||
+         (PStack_1.m_ParticleSystem =
+               (ParticleSystem *)
+               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+               ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0), iVar18 == 0))
+      goto code_?;
+      if ((*(int *)(iVar18 + 0xc) != 0) &&
+         (((1 < *(uint *)(iVar18 + 0xc) && (2 < *(uint *)(iVar18 + 0xc))) &&
+          (3 < *(uint *)(iVar18 + 0xc))))) {
+        color.g = (float)*(undefined4 *)(iVar18 + 0x14);
+        color.r = (float)*(undefined4 *)(iVar18 + 0x10);
+        color.b = (float)*(undefined4 *)(iVar18 + 0x18);
+        color.a = *(float *)(iVar18 + 0x1c);
+        pPVar19 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+                  ParticleSystem_MinMaxGradient_op_Implicit
+                            ((ParticleSystem_MinMaxGradient *)&stack0xffffffac,color,
+                             (MethodInfo *)0x0);
+        uVar20 = (pPVar19->m_ColorMax).b;
+        uVar21 = pPVar19->m_Mode;
+        uVar22 = pPVar19->m_GradientMin;
+        uVar23 = pPVar19->m_GradientMax;
+        uVar24 = (pPVar19->m_ColorMin).r;
+        uVar25 = (pPVar19->m_ColorMin).g;
+        uVar26 = (pPVar19->m_ColorMin).b;
+        uVar27 = (pPVar19->m_ColorMin).a;
+        value.m_ColorMin.a = (float)uVar27;
+        value.m_ColorMin.b = (float)uVar26;
+        value.m_ColorMin.g = (float)uVar25;
+        value.m_ColorMin.r = (float)uVar24;
+        uVar28 = (pPVar19->m_ColorMax).r;
+        uVar29 = (pPVar19->m_ColorMax).g;
+        value.m_ColorMax.g = (float)uVar29;
+        value.m_ColorMax.r = (float)uVar28;
+        value.m_GradientMax = (Gradient *)uVar23;
+        value.m_GradientMin = (Gradient *)uVar22;
+        value.m_Mode = uVar21;
+        value.m_ColorMax.b = (float)uVar20;
+        value.m_ColorMax.a = (pPVar19->m_ColorMax).a;
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+        ParticleSystem_MainModule_set_startColor(&PStack_1,value,(MethodInfo *)0x0);
         goto code_?;
       }
       goto code_?;
     }
-    iVar16 = func_?(unaff_EBX,TypeInfo__System__Single);
-    if (iVar16 != 0) goto code_?;
+    iVar18 = func_?();
+    if (iVar18 != 0) goto code_?;
   }
-  func_?(unaff_EBX,this);
+  uVar8 = func_?(unaff_EBX,this);
 code_?:
-  func_?(0);
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  func_?(uVar8);
+  pcVar30 = (code *)swi(3);
+  (*pcVar30)();
   return;
 }
 
@@ -380,31 +390,35 @@ Assembly-CSharp.dll::MVSmoke::MVSmoke_SetupSmokeCulling
 {
   if (cRam_? == '\0') {
     func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  pCVar1 = (this->fields)._.cullingSubscriberBase;
-  if (pCVar1 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar1,(MethodInfo *)0x0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
   }
-  pVVar2 = (Vector3 *)
-           (*(code *)(this->klass->vtable).get_WorldPosition_1.method)(&stack0xffffffe8,this);
-  position = *pVVar2;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(
-                           TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,(this->klass->vtable).UpdateControllerUpdate_1.methodPtr,
-             MethodInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>__UnityAction_System__Object__void__
-            );
-  pCVar1 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
-  CullingSubscriberBase::CullingSubscriberBase__ctor_2
-            (pCVar1,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
-             (MethodInfo *)0x0);
-  (this->fields)._.cullingSubscriberBase = pCVar1;
-  return pCVar1;
+  pVVar1 = (Vector3 *)(*(this->klass->vtable).get_WorldPosition_1.methodPtr)();
+  position = *pVVar1;
+  this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
+  if (this_00 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
+    UnityAction_1_UnityEngine_Vector2___ctor
+              (this_00,(Object *)this,(this->klass->vtable).OnStateChanged.method,(MethodInfo *)0x0)
+    ;
+    pCVar2 = (CullingSubscriberBase *)func_?();
+    if (pCVar2 != (CullingSubscriberBase *)0x0) {
+      CullingSubscriberBase::CullingSubscriberBase__ctor_2
+                (pCVar2,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
+                 (MethodInfo *)0x0);
+      (this->fields)._.cullingSubscriberBase = pCVar2;
+      func_?();
+      return (this->fields)._.cullingSubscriberBase;
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  pCVar2 = (CullingSubscriberBase *)(*pcVar3)();
+  return pCVar2;
 }
 
 
@@ -414,20 +428,18 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_ToggleEmitter
                (MVSmoke *this,bool toggle,MethodInfo *method)
 
 {
-  pOStack_1 = (Object *)0x0;
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-             *)(this->fields).particleSystem;
-  if (this_00 !=
-      (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-      0x0) {
-    pOStack_1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-                Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                          (this_00,(MethodInfo *)0x0);
-    func_?(&pOStack_1,_toggle,0);
+  this_00 = (this->fields).particleSystem;
+  if (this_00 != (ParticleSystem *)0x0) {
+    this = (MVSmoke *)
+           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+           ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
+    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+    ParticleSystem_EmissionModule_set_enabled_Injected
+              ((ParticleSystem_EmissionModule *)&this,(bool)_toggle,(MethodInfo *)0x0);
     return;
   }
-  func_?();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -443,86 +455,95 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
+  this_00 = this;
   (this->fields).lengthCullingScale = 1.5;
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 != (PrefabPool *)0x0) {
-    prefabObject = PrefabPool::PrefabPool_get_MVSmokePrefab(pPVar1,(MethodInfo *)0x0);
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-    uVar2 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    piVar3 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar3 = (uint)*piVar3 | 0x18000;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar2;
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
+              ((MVLogicObject *)this_00,data,(pPVar1->fields).mvSmokePrefab,worldObjects,
+               (MethodInfo *)0x0);
+    piVar2 = &(this_00->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
+    uVar3 = *(undefined4 *)((int)&(this_00->fields)._._.interactionFlags + 4);
+    piVar2 = &(this_00->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
+    *(undefined4 *)((int)&(this_00->fields)._._.interactionFlags + 4) = uVar3;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
     if (pPVar1 != (PrefabPool *)0x0) {
-      pSVar4 = (SentryGunBeam *)
-               PrefabPool::PrefabPool_get_ParticleFluffySmoke(pPVar1,(MethodInfo *)0x0);
-      pGVar5 = (this->fields)._._.gameObject;
-      if ((pGVar5 != (GameObject *)0x0) &&
-         (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             (pGVar5,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
-        pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)(auStack_8 + 4),pTVar6,(MethodInfo *)0x0);
-        uVar9._0_4_ = pVVar7->x;
-        uVar9._4_4_ = pVVar7->y;
-        fVar10 = pVVar7->z;
-        if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0)
-           && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                            ((Quaternion *)auStack_8,(MethodInfo *)0x0);
-        auStack_8._0_4_ = pQVar11->x;
-        auStack_8._4_4_ = pQVar11->y;
-        fStack_12 = pQVar11->z;
-        puStack_13 = (undefined *)pQVar11->w;
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
-        }
-        position.z = fVar10;
-        position.x = (float)(int)uVar9;
-        position.y = (float)(int)((ulonglong)uVar9 >> 0x20);
-        rotation.y = (float)auStack_8._4_4_;
-        rotation.x = (float)auStack_8._0_4_;
-        rotation.z = fStack_12;
-        rotation.w = (float)puStack_13;
-        pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_161
-                           (pSVar4,position,rotation,
-                            UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
-                           );
-        (this->fields).particleSystem = (ParticleSystem *)pSVar4;
-        if (pSVar4 != (SentryGunBeam *)0x0) {
-          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                             ((Component_1 *)pSVar4,(MethodInfo *)0x0);
-          pGVar5 = (this->fields)._._.gameObject;
-          if ((pGVar5 != (GameObject *)0x0) &&
-             (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar5,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                      (pTVar6,value,(MethodInfo *)0x0);
-            this_00 = (this->fields).particleSystem;
-            if (this_00 != (ParticleSystem *)0x0) {
-              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-              ParticleSystem_Stop_2(this_00,(MethodInfo *)0x0);
-              this_01 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                         *)(this->fields).particleSystem;
-              if (this_01 !=
-                  (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)0x0) {
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-                Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                          (this_01,(MethodInfo *)0x0);
-                func_?();
-                return;
+      pPVar4 = (pPVar1->fields).particleFluffySmoke;
+      pGVar5 = (this_00->fields)._._.gameObject;
+      if (pGVar5 != (GameObject *)0x0) {
+        pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar5,(MethodInfo *)0x0);
+        if (pTVar6 != (Transform *)0x0) {
+          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              ((Vector3 *)&stack0xffffffe8,pTVar6,(MethodInfo *)0x0);
+          position = *pVVar7;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+          puVar9 = (undefined *)(pQVar8->identityQuaternion).x;
+          pOVar10 = (Object_1__Class *)(pQVar8->identityQuaternion).y;
+          fVar11 = (pQVar8->identityQuaternion).z;
+          fVar12 = (pQVar8->identityQuaternion).w;
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            puVar9 = &UNK_?;
+            pOVar10 = TypeInfo__UnityEngine__Object;
+            func_?();
+          }
+          rotation.y = (float)pOVar10;
+          rotation.x = (float)puVar9;
+          rotation.z = fVar11;
+          rotation.w = fVar12;
+          pPVar4 = (ParticleSystem *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+                              ((Object *)pPVar4,position,rotation,
+                               UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                              );
+          (this_00->fields).particleSystem = pPVar4;
+          func_?(&(this_00->fields).particleSystem);
+          pPVar4 = (this_00->fields).particleSystem;
+          if (pPVar4 != (ParticleSystem *)0x0) {
+            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pPVar4,(MethodInfo *)0x0);
+            pGVar5 = (this_00->fields)._._.gameObject;
+            if (pGVar5 != (GameObject *)0x0) {
+              value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar5,(MethodInfo *)0x0);
+              if (pTVar6 != (Transform *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                          (pTVar6,value,(MethodInfo *)0x0);
+                pPVar4 = (this_00->fields).particleSystem;
+                if (pPVar4 != (ParticleSystem *)0x0) {
+                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                  ParticleSystem_Stop_2(pPVar4,(MethodInfo *)0x0);
+                  pPVar4 = (this_00->fields).particleSystem;
+                  if (pPVar4 != (ParticleSystem *)0x0) {
+                    this = (MVSmoke *)
+                           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                           ParticleSystem_get_collision(pPVar4,(MethodInfo *)0x0);
+                    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule
+                    ::ParticleSystem_EmissionModule_set_enabled_Injected
+                              ((ParticleSystem_EmissionModule *)&this,0,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
               }
             }
           }
@@ -531,8 +552,8 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke__ctor
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

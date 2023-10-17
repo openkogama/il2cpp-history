@@ -7,136 +7,92 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__
+                   );
+    func_?(&
+                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                   );
+    func_?(&StringLiteral_Failed_to_determine_collectibles);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pOVar1 = (Object *)0xffffffff;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (PrefabPool *)0x0) {
-    this_02 = (WinningConditionManager *)
-              PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(this_01,(MethodInfo *)0x0);
-    if (this_02 != (WinningConditionManager *)0x0) {
-      this_03 = MVWorldObject.dll::WinningConditionManager::
-                WinningConditionManager_GetSingletonWinnerConditionByType_6
-                          (this_02,
-                           AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                          );
-      if (this_03 == (TimeAttackFlagReachedClient *)0x0) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?();
+  pOVar1 = (Object__Class *)0xffffffff;
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField,
+     this_00 != (WinningConditionManager *)0x0)) {
+    pOVar3 = MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType
+                       (this_00,
+                        AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                       );
+    if (pOVar3 == (Object *)0x0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                ((Object *)StringLiteral_Failed_to_determine_collectibles,(MethodInfo *)0x0);
+    }
+    else {
+      pOVar1 = pOVar3[2].klass;
+    }
+    (this->fields).amountOfStars = (int32_t)pOVar1;
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar2 != (MVNetworkGame *)0x0) &&
+       (this_01 = (pMVar2->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
+      pLVar4 = MVTeamManager::MVTeamManager_GetTeamList(this_01,(MethodInfo *)0x0);
+      if (pLVar4 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
+        if ((pLVar4->fields)._size < 2) {
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+          pGVar5 = (pMVar2->fields).gameStatCounterManager;
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+          pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
+          if (pMVar6 == (MVLocalPlayer *)0x0) goto code_?;
+          team = (pMVar6->fields)._._Team_k__BackingField;
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+          pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
+          if ((pMVar6 == (MVLocalPlayer *)0x0) || (pGVar5 == (GameStatCounterManager *)0x0))
+          goto code_?;
+          iVar7 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
+                            (pGVar5,GameStatCounterType__Enum_Collectible,team,
+                             (pMVar6->fields)._._ActorNr_k__BackingField,(MethodInfo *)0x0);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                  ((Object *)StringLiteral_Failed_to_determine_collectibles,(MethodInfo *)0x0);
-      }
-      else {
-        pOVar1 = System.dll::System::Collections::Generic::
-                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                 ::Single,System::Object]::
-                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                           ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                             *)this_03,(MethodInfo *)0x0);
-      }
-      (this->fields).amountOfStars = (int32_t)pOVar1;
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar2 != (MVNetworkGame *)0x0) {
-        this_04 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                            ((DayNightCycle *)pMVar2,(MethodInfo *)0x0);
-        if (this_04 != (SkyParam *)0x0) {
-          this_05 = MVTeamManager::MVTeamManager_GetTeamList
-                              ((MVTeamManager *)this_04,(MethodInfo *)0x0);
-          if (this_05 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
-            pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                     Serialization::JsonProperty]::
-                     Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                               ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_05,
-                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__
-                               );
-            if ((int)pOVar1 < 2) {
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?();
-              }
-              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-              pGVar3 = (GameStatCounterManager *)
-                       DayNightCycle::DayNightCycle_get_CurrentStarsParam
-                                 ((DayNightCycle *)pMVar2,(MethodInfo *)0x0);
-              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-              pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-              if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-              pIVar5 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                       KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                                 ((KogamaSettingNumericBase_1_System_Single_ *)pMVar4,
-                                  (MethodInfo *)0x0);
-              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-              pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-              if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-              actorNumber = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                            NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                                      ((NamedThemeAttribute_1_UnityEngine_Color_ *)pMVar4,
-                                       (MethodInfo *)0x0);
-              if (pGVar3 == (GameStatCounterManager *)0x0) goto code_?;
-              iVar6 = MVWorldObject.dll::GameStatCounterManager::
-                      GameStatCounterManager_GetActorCount
-                                (pGVar3,GameStatCounterType__Enum_Collectible,(MVTeam__Enum)pIVar5,
-                                 (int32_t)actorNumber,(MethodInfo *)0x0);
-            }
-            else {
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?();
-              }
-              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-              pGVar3 = (GameStatCounterManager *)
-                       DayNightCycle::DayNightCycle_get_CurrentStarsParam
-                                 ((DayNightCycle *)pMVar2,(MethodInfo *)0x0);
-              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-              pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-              if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-              pIVar5 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                       KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                                 ((KogamaSettingNumericBase_1_System_Single_ *)pMVar4,
-                                  (MethodInfo *)0x0);
-              if (pGVar3 == (GameStatCounterManager *)0x0) goto code_?;
-              iVar6 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetTeamCount
-                                (pGVar3,GameStatCounterType__Enum_Collectible,(MVTeam__Enum)pIVar5,
-                                 (MethodInfo *)0x0);
-            }
-            pTVar7 = (this->fields).progress;
-            value = (float)iVar6 / (float)(this->fields).amountOfStars;
-            pOVar1 = (Object *)func_?();
-            arg2 = (Object *)func_?();
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?();
-            }
-            mscorlib.dll::System::String::String_Concat_1
-                      (pOVar1,(Object *)::StringLiteral__,arg2,(MethodInfo *)0x0);
-            if (pTVar7 != (Text *)0x0) {
-              (*(code *)(pTVar7->klass->vtable).set_text.method)();
-              this_00 = (this->fields).progressBar;
-              if (this_00 != (ProgressBar *)0x0) {
-                ProgressBar::ProgressBar_set_Progress(this_00,value,(MethodInfo *)0x0);
-                WinningConditionBase::WinningConditionBase_InitializeGameUI
-                          ((WinningConditionBase *)this,(RectTransform *)this_05,(MethodInfo *)0x0);
-                return;
-              }
-            }
+        else {
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+          pGVar5 = (pMVar2->fields).gameStatCounterManager;
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+          pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
+          if ((pMVar6 == (MVLocalPlayer *)0x0) || (pGVar5 == (GameStatCounterManager *)0x0))
+          goto code_?;
+          iVar7 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetTeamCount
+                            (pGVar5,GameStatCounterType__Enum_Collectible,
+                             (pMVar6->fields)._._Team_k__BackingField,(MethodInfo *)0x0);
+        }
+        iVar8 = (this->fields).amountOfStars;
+        pTVar9 = (this->fields).progress;
+        str0 = mscorlib.dll::System::Int32::Int32_ToString
+                         ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+        str2 = mscorlib.dll::System::Int32::Int32_ToString
+                         ((Int32 *)&(this->fields).amountOfStars,(MethodInfo *)0x0);
+        mscorlib.dll::System::String::String_Concat_4(str0,::StringLiteral__,str2,(MethodInfo *)0x0)
+        ;
+        if (pTVar9 != (Text *)0x0) {
+          (*(pTVar9->klass->vtable).set_text.methodPtr)();
+          this_02 = (ProgressBarAndroid *)(this->fields).progressBar;
+          if (this_02 != (ProgressBarAndroid *)0x0) {
+            ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                      (this_02,(float)iVar7 / (float)iVar8,(MethodInfo *)0x0);
+            WinningConditionBase::WinningConditionBase_InitializeGameUI
+                      ((WinningConditionBase *)this,(RectTransform *)&UNK_?,(MethodInfo *)0x0
+                      );
+            return;
           }
         }
       }
@@ -144,8 +100,8 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -157,35 +113,28 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::CollectiblesWinningCondi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  this_01 = this;
-  pTVar1 = (this->fields).progress;
-  this = (CollectiblesWinningCondition *)0x0;
-  arg0 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  iStack_2 = (this_01->fields).amountOfStars;
-  arg2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar3 = mscorlib.dll::System::String::String_Concat_1
-                     (arg0,(Object *)::StringLiteral__,arg2,(MethodInfo *)0x0);
-  if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,pSVar3,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    this_00 = (this_01->fields).progressBar;
-    if (this_00 != (ProgressBar *)0x0) {
-      ProgressBar::ProgressBar_set_Progress(this_00,0.0,(MethodInfo *)0x0);
+  IStack_1.m_value = 0;
+  pTVar2 = (this->fields).progress;
+  str0 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+  str2 = mscorlib.dll::System::Int32::Int32_ToString
+                   ((Int32 *)&(this->fields).amountOfStars,(MethodInfo *)0x0);
+  mscorlib.dll::System::String::String_Concat_4(str0,::StringLiteral__,str2,(MethodInfo *)0x0);
+  if (pTVar2 != (Text *)0x0) {
+    (*(pTVar2->klass->vtable).set_text.methodPtr)();
+    this_00 = (ProgressBarAndroid *)(this->fields).progressBar;
+    if (this_00 != (ProgressBarAndroid *)0x0) {
+      ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,0.0,(MethodInfo *)0x0);
       WinningConditionBase::WinningConditionBase_RoundEndReset
-                ((WinningConditionBase *)this_01,(MethodInfo *)0x0);
+                ((WinningConditionBase *)this,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -197,61 +146,47 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::CollectiblesWinningCondi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                   );
+    func_?(&StringLiteral_Failed_to_determine_collectibles);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (PrefabPool *)0x0) {
-    this_02 = (WinningConditionManager *)
-              PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(this_01,(MethodInfo *)0x0);
-    if (this_02 != (WinningConditionManager *)0x0) {
-      this_03 = MVWorldObject.dll::WinningConditionManager::
-                WinningConditionManager_GetSingletonWinnerConditionByType_6
-                          (this_02,
-                           AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                          );
-      if (this_03 == (TimeAttackFlagReachedClient *)0x0) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                  ((Object *)StringLiteral_Failed_to_determine_collectibles,(MethodInfo *)0x0);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+     this_00 != (WinningConditionManager *)0x0)) {
+    pOVar2 = MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType
+                       (this_00,
+                        AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                       );
+    if (pOVar2 == (Object *)0x0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
-      else {
-        pOVar1 = System.dll::System::Collections::Generic::
-                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                 ::Single,System::Object]::
-                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                           ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                             *)this_03,(MethodInfo *)0x0);
-        if (pOVar1 != (Object *)(this->fields).amountOfStars) {
-          (this->fields).amountOfStars = (int32_t)pOVar1;
-        }
-      }
-      pTVar2 = (this->fields).progress;
-      func_?();
-      arg0 = TypeInfo__System__Int32;
-      pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar3 = mscorlib.dll::System::String::String_Concat_1
-                         ((Object *)arg0,(Object *)::StringLiteral__,pOVar1,(MethodInfo *)0x0);
-      if (pTVar2 != (Text *)0x0) {
-        (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar3);
-        this_00 = (this->fields).progressBar;
-        if (this_00 != (ProgressBar *)0x0) {
-          ProgressBar::ProgressBar_set_Progress
-                    (this_00,(float)newValue / (float)(this->fields).amountOfStars,(MethodInfo *)0x0
-                    );
-          return;
-        }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                ((Object *)StringLiteral_Failed_to_determine_collectibles,(MethodInfo *)0x0);
+    }
+    else if (pOVar2[2].klass != (Object__Class *)(this->fields).amountOfStars) {
+      (this->fields).amountOfStars = (int32_t)pOVar2[2].klass;
+    }
+    pTVar3 = (this->fields).progress;
+    str0 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&newValue,(MethodInfo *)0x0);
+    str2 = mscorlib.dll::System::Int32::Int32_ToString
+                     ((Int32 *)&(this->fields).amountOfStars,(MethodInfo *)0x0);
+    mscorlib.dll::System::String::String_Concat_4(str0,::StringLiteral__,str2,(MethodInfo *)0x0);
+    if (pTVar3 != (Text *)0x0) {
+      method = (MethodInfo *)&UNK_?;
+      (*(pTVar3->klass->vtable).set_text.methodPtr)();
+      this_01 = (ProgressBarAndroid *)(this->fields).progressBar;
+      if (this_01 != (ProgressBarAndroid *)0x0) {
+        method = (MethodInfo *)&UNK_?;
+        ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                  (this_01,(float)newValue / (float)(this->fields).amountOfStars,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -259,16 +194,5 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::CollectiblesWinningCondi
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
-}
-
-
-/* GameStatCounterType get_StatType() */
-
-GameStatCounterType__Enum
-Assembly-CSharp.dll::CollectiblesWinningCondition::CollectiblesWinningCondition_get_StatType
-          (CollectiblesWinningCondition *this,MethodInfo *method)
-
-{
-  return CONCAT31((int3)((uint)in_EAX >> 8),3);
 }
 

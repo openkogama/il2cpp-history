@@ -7,42 +7,33 @@ bool Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper_OnE
 {
   if (cRam_? == '\0') {
     func_?();
+    func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)e,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_02 != (MainCameraManager *)0x0) {
-    pMVar1 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_02,(MethodInfo *)0x0);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_00 != (MainCameraManager *)0x0) {
+    pMVar1 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0);
     if (pMVar1 != (MVCameraBase *)0x0) {
-      (*(code *)(pMVar1->klass->vtable).FocusOnObject.method)
+      (*(pMVar1->klass->vtable).FocusOnObject.methodPtr)
                 (pMVar1,(this->fields).cubeModelBase,0x40000000,0,0,0);
-      this_00 = (this->fields).cubeModelBase;
-      if (this_00 != (MVCubeModelInstance *)0x0) {
-        id = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_00,(MethodInfo *)0x0);
-        if ((e != (EditorStateMachine *)0x0) &&
-           (this_01 = (e->fields).selectionController, this_01 != (SelectionController *)0x0)) {
-          SelectionController::SelectionController_SelectWO
-                    (this_01,(int32_t)id,0,1,(MethodInfo *)0x0);
-          value = (Object *)func_?();
-          FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
-          return 1;
-        }
+      pMVar2 = (this->fields).cubeModelBase;
+      if ((pMVar2 != (MVCubeModelInstance *)0x0) && (e != (EditorStateMachine *)0x0)) {
+        EditorStateMachine::EditorStateMachine_SelectWO
+                  (e,(pMVar2->fields)._._._.id,0,1,(MethodInfo *)0x0);
+        value = (Object *)func_?();
+        FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
+        return 1;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -53,19 +44,18 @@ bool Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper_OnE
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
-  this_01 = e;
-  if ((e != (EditorStateMachine *)0x0) &&
-     (this_00 = (e->fields).selectionController, this_00 != (SelectionController *)0x0)) {
-    SelectionController::SelectionController_ExitGroupToRoot(this_00,(MethodInfo *)0x0);
+  this_00 = e;
+  if (e != (EditorStateMachine *)0x0) {
+    EditorStateMachine::EditorStateMachine_ExitGroupToRoot(e,(MethodInfo *)0x0);
     e = (EditorStateMachine *)0x2f;
     value = (Object *)func_?(TypeInfo__EditorEvent,&e);
-    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_01,value,(MethodInfo *)0x0);
+    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
     return 1;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   bVar2 = (*pcVar1)();
   return bVar2;
@@ -80,37 +70,44 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper_Set
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Func<IModelingConstraint>);
+    func_?(&
+                    MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__
+                   );
+    func_?(&TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__EditableCubeModelWrapper___SetConstraints_c__AnonStorey0;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields)._._._._.m_CachedPtr = (void *)min._0_4_;
-    *(int16_t *)&(this_01->fields).state = min.z;
-    *(undefined4 *)((int)&(this_01->fields).state + 2) = max._0_4_;
-    *(int16_t *)((int)&(this_01->fields).originalScale.x + 2) = max.z;
-    (this_01->fields).originalScale.y = (float)minCubeCount;
-    (this_01->fields).originalScale.z = (float)this;
-    this_00 = (this->fields).cubeModelBase;
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  value = (Object *)func_?(TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    value[1].monitor = (MonitorData *)min._0_4_;
+    *(int16_t *)&value[2].klass = min.z;
+    *(undefined4 *)((int)&value[2].klass + 2) = max._0_4_;
+    *(int16_t *)((int)&value[2].monitor + 2) = max.z;
+    value[3].klass = (Object__Class *)minCubeCount;
+    pMVar1 = (this->fields).cubeModelBase;
+    this_00 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
               func_?(TypeInfo__System__Func<IModelingConstraint>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)this_01,
-               MethodInfo__EditableCubeModelWrapper___SetConstraints_c__AnonStorey0____m__0__,
-               MethodInfo__System__Func<IModelingConstraint>__Func_System__Object__void__);
-    if (this_00 != (MVCubeModelInstance *)0x0) {
-      MVPreviewAvatar::MVPreviewAvatar_set_SpawnRoleCreatorId
-                ((MVPreviewAvatar *)this_00,(int32_t)this_02,(MethodInfo *)0x0);
-      return;
+    if (this_00 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
+      mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
+      RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
+                (this_00,value,
+                 MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__,
+                 (MethodInfo *)0x0);
+      if (pMVar1 != (MVCubeModelInstance *)0x0) {
+        (pMVar1->fields)._._ModelingConstraintBuilder_k__BackingField =
+             (Func_1_IModelingConstraint_ *)this_00;
+        func_?(&(pMVar1->fields)._._ModelingConstraintBuilder_k__BackingField,this_00);
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -122,19 +119,20 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper__ct
                )
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).cubeModelBase = cubeModelBase;
+  func_?(&this->fields,cubeModelBase);
   if (cubeModelBase != (MVCubeModelInstance *)0x0) {
-    IVar1 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionFlags
-                      ((MVWorldObjectClient *)cubeModelBase,(MethodInfo *)0x0);
-    MVWorldObjectClient::MVWorldObjectClient_set_InteractionFlags
-              ((MVWorldObjectClient *)cubeModelBase,
-               IVar1 | InteractionFlags__Enum_SelectionRequiresEditGroup,method_00);
+    uVar1 = *(undefined4 *)((int)&(cubeModelBase->fields)._._.interactionFlags + 4);
+    piVar2 = &(cubeModelBase->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x10;
+    *(undefined4 *)((int)&(cubeModelBase->fields)._._.interactionFlags + 4) = uVar1;
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -146,46 +144,56 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper__ct
                IntVector max,int32_t minCubeCount,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).cubeModelBase = cubeModelBase;
+  func_?(&this->fields,cubeModelBase);
   if (cubeModelBase != (MVCubeModelInstance *)0x0) {
-    IVar1 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionFlags
-                      ((MVWorldObjectClient *)cubeModelBase,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)(IVar1 | InteractionFlags__Enum_SelectionRequiresEditGroup);
-    MVWorldObjectClient::MVWorldObjectClient_set_InteractionFlags
-              ((MVWorldObjectClient *)cubeModelBase,(InteractionFlags__Enum)method_00,method_01);
-    if (cRam_? == '\0') {
-      func_?();
+    piVar1 = &(cubeModelBase->fields)._._.interactionFlags;
+    *(uint *)piVar1 = (uint)*piVar1 | 0x10;
+    bVar2 = cRam_? == '\0';
+    *(undefined4 *)((int)&(cubeModelBase->fields)._._.interactionFlags + 4) =
+         *(undefined4 *)((int)&(cubeModelBase->fields)._._.interactionFlags + 4);
+    if (bVar2) {
+      func_?(&TypeInfo__System__Func<IModelingConstraint>);
+      func_?(&
+                      MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__
+                     );
+      func_?(&TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0);
       cRam_? = '\x01';
     }
-    this_01 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,method_00);
-    if (this_01 != (ScaleAnimationBase *)0x0) {
-      (this_01->fields)._._._._.m_CachedPtr = (void *)min._0_4_;
-      *(int16_t *)&(this_01->fields).state = min.z;
-      *(undefined4 *)((int)&(this_01->fields).state + 2) = max._0_4_;
-      *(int16_t *)((int)&(this_01->fields).originalScale.x + 2) = max.z;
-      (this_01->fields).originalScale.y = (float)minCubeCount;
-      (this_01->fields).originalScale.z = (float)this;
-      this_00 = (this->fields).cubeModelBase;
-      this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Func<IModelingConstraint>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_02,(Object *)this_01,
-                 MethodInfo__EditableCubeModelWrapper___SetConstraints_c__AnonStorey0____m__0__,
-                 MethodInfo__System__Func<IModelingConstraint>__Func_System__Object__void__);
-      if (this_00 != (MVCubeModelInstance *)0x0) {
-        MVPreviewAvatar::MVPreviewAvatar_set_SpawnRoleCreatorId
-                  ((MVPreviewAvatar *)this_00,(int32_t)this_02,(MethodInfo *)0x0);
-        return;
+    value = (Object *)func_?(TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0);
+    if (value != (Object *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                (value,ExceptionArgument__Enum_obj,unaff_EBX);
+      value[1].klass = (Object__Class *)this;
+      func_?(value + 1,this);
+      value[1].monitor = (MonitorData *)min._0_4_;
+      *(int16_t *)&value[2].klass = min.z;
+      *(undefined4 *)((int)&value[2].klass + 2) = max._0_4_;
+      *(int16_t *)((int)&value[2].monitor + 2) = max.z;
+      value[3].klass = (Object__Class *)minCubeCount;
+      pMVar3 = (this->fields).cubeModelBase;
+      this_00 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
+                func_?(TypeInfo__System__Func<IModelingConstraint>);
+      if (this_00 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
+        mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
+        RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
+                  (this_00,value,
+                   MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__
+                   ,(MethodInfo *)0x0);
+        if (pMVar3 != (MVCubeModelInstance *)0x0) {
+          (pMVar3->fields)._._ModelingConstraintBuilder_k__BackingField =
+               (Func_1_IModelingConstraint_ *)this_00;
+          func_?(&(pMVar3->fields)._._ModelingConstraintBuilder_k__BackingField,this_00);
+          return;
+        }
       }
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class RuntimePrototypeCubeModel
 {
@@ -19,20 +19,19 @@ public class RuntimePrototypeCubeModel
 	private MeshGeneratePriority meshGeneratePriority;
 	private bool useMeshGeneratePrioritySystem;
 	private int chunkSize;
+	public Action<IntVector> OnChunkRebuilt;
+	public float? PendingScaleUpdate;
 	private PrototypeState prototypeState;
 	private List<byte> pendingDeltaCubes;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private float _Scale_k__BackingField;
 	protected int prototypeId;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _AuthorProfileID_k__BackingField;
 	private DeltaCubes deltaCubes;
 	private Dictionary<IntVector, CubeModelChunk> chunks;
 	private HashSet<int> instances;
 	public Action<HashSet<IntVector>> DirtyChunksRegenerated;
-	public Action<IntVector> OnChunkRebuilt;
 
 	// Properties
 	public MeshGeneratePriority MeshGeneratePriority { get; }

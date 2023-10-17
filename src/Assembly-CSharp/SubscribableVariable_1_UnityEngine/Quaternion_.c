@@ -7,15 +7,8 @@ void Assembly-CSharp.dll::SubscribableVariable`1[UnityEngine::Quaternion]::
                MethodInfo *method)
 
 {
-  if (this != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-    (**(code **)**(undefined4 **)(method->name + 0x60))
-              (this,value.x,value.y,value.z,value.w,
-               (undefined4 *)**(undefined4 **)(method->name + 0x60));
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
+            (this,value.x,value.y,value.z,value.w,method->klass->rgctx_data[1].rgctxDataDummy);
   return;
 }
 
@@ -32,8 +25,8 @@ void Assembly-CSharp.dll::SubscribableVariable`1[UnityEngine::Quaternion]::
   (this->fields)._.value.y = value.y;
   (this->fields)._.value.z = value.z;
   (this->fields)._.value.w = value.w;
-  puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 8);
-  (*(code *)*puVar1)(this,puVar1);
+  (*method->klass->rgctx_data->method->virtualMethodPointer)
+            (this,method->klass->rgctx_data->rgctxDataDummy);
   return;
 }
 

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -19,21 +19,19 @@ namespace Newtonsoft.Json.Utilities
 		private readonly IDictionary _dictionary;
 		private readonly IDictionary<TKey, TValue> _genericDictionary;
 		private object _syncRoot;
-		[CompilerGenerated]
-		private static Func<DictionaryEntry, KeyValuePair<TKey, TValue>> __f__am_cache0;
 	
 		// Properties
+		public ICollection<TKey> Keys { get; }
+		public ICollection<TValue> Values { get; }
+		public TValue this[TKey key] { get => default; set {} }
+		public int Count { get; }
+		public bool IsReadOnly { get; }
 		bool IDictionary.IsFixedSize { get; }
 		ICollection IDictionary.Keys { get; }
 		ICollection IDictionary.Values { get; }
 		object IDictionary.this[object key] { get => default; set {} }
 		bool ICollection.IsSynchronized { get; }
 		object ICollection.SyncRoot { get; }
-		public ICollection<TKey> Keys { get; }
-		public ICollection<TValue> Values { get; }
-		public TValue this[TKey key] { get => default; set {} }
-		public int Count { get; }
-		public bool IsReadOnly { get; }
 		public object UnderlyingDictionary { get; }
 	
 		// Nested types
@@ -54,6 +52,22 @@ namespace Newtonsoft.Json.Utilities
 			// Methods
 			public bool MoveNext();
 			public void Reset();
+		}
+	
+		[Serializable]
+		[CompilerGenerated]
+		private sealed class __c
+		{
+			// Fields
+			public static readonly __c<TKey, TValue> __9;
+			public static Func<DictionaryEntry, KeyValuePair<TKey, TValue>> __9__25_0;
+	
+			// Constructors
+			static __c();
+			public __c();
+	
+			// Methods
+			internal KeyValuePair<TKey, TValue> _GetEnumerator_b__25_0(DictionaryEntry de);
 		}
 	
 		// Constructors
@@ -77,7 +91,5 @@ namespace Newtonsoft.Json.Utilities
 		IDictionaryEnumerator IDictionary.GetEnumerator();
 		public void Remove(object key);
 		void ICollection.CopyTo(Array array, int index);
-		[CompilerGenerated]
-		private static KeyValuePair<TKey, TValue> _GetEnumerator_m__0(DictionaryEntry de);
 	}
 }

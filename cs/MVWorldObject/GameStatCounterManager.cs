@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GameStatCounterManager : IGameStatCounterQuery
 {
@@ -34,11 +34,13 @@ public class GameStatCounterManager : IGameStatCounterQuery
 
 	// Constructors
 	public GameStatCounterManager();
+	public GameStatCounterManager(byte[] data);
 
 	// Methods
 	public static bool IsNewScoreBetter(int newScore, int oldScore, GameStatCounterType statType);
 	public void OnTeamAdded(object sender, TeamEventArgs e);
 	public void OnTeamRemoved(object sender, TeamEventArgs e);
+	public bool ContainsStatTypeForActor(GameStatCounterType statType, MVTeam team, int actorNr);
 	public int GetTeamCount(GameStatCounterType statType, MVTeam team);
 	public HighScores GetHighScores(GameStatCounterType statType, bool presentAsTeamScore, WinningConditionPresentStyle winningConditionPresentStyle, bool byAscending);
 	public int GetActorCount(GameStatCounterType counterType, MVTeam team, int actorNumber);
@@ -51,6 +53,9 @@ public class GameStatCounterManager : IGameStatCounterQuery
 	private void Validate(int actorNumber, MVTeam team);
 	private void AddIfNotPresent(GameStatCounterType statType);
 	public override string ToString();
+	public byte[] ToByteArray();
+	public byte[] ToByteArrayStatType(GameStatCounterType statCounterType);
+	private void ToByteArray(GameStatCounterType statTypeCounter, TeamsCounter teamsCounter, BytePacker bytePacker);
 	public void SetStats(byte[] data);
 	public void SetStat(byte[] data);
 	private void SetStat(BytePacker bp);

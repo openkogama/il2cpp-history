@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatableGotItPointer : FirstTimeActivatableButtonPointer
 {
@@ -18,6 +18,6 @@ public class FirstTimeActivatableGotItPointer : FirstTimeActivatableButtonPointe
 	public override void OnShow();
 	private void ShowGotItBubble();
 	[CompilerGenerated]
-	private void _ShowGotItBubble_m__0(TextBubbleController x, BaseEventData y);
+	private void _ShowGotItBubble_b__1_0(TextBubbleController x, BaseEventData y);
 }
 

@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using GNU.Gettext;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TM
 {
@@ -21,10 +21,6 @@ public class TM
 	private string cultureName;
 	private const string baseResourcesPath = "Languages/";
 	private static TM instance;
-	[CompilerGenerated]
-	private static Action<UnityWebRequest> __f__mg_cache0;
-	[CompilerGenerated]
-	private static Action<UnityWebRequest> __f__mg_cache1;
 
 	// Properties
 	private static TM Instance { get; }

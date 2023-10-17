@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Bson
 {
@@ -14,10 +14,8 @@ namespace Newtonsoft.Json.Bson
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _ByteCount_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _IncludeLength_k__BackingField;
 	
 		// Properties

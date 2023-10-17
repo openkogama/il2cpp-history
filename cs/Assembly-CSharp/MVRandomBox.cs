@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using CodeStage.AntiCheat.ObscuredTypes;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVRandomBox : MVLogicObject, ILogicWorldObject
 {
@@ -20,7 +20,6 @@ public class MVRandomBox : MVLogicObject, ILogicWorldObject
 	private RandomGenerator randomGenerator;
 	private OutputSignalTransmitterSpecific _outputSignalTransmitter;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 
 	// Properties

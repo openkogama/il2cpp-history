@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal static class MVInputWrapper
 {
@@ -59,6 +59,7 @@ internal static class MVInputWrapper
 	public static float GetAxisRaw(string axis);
 	public static float GetAxisRawWithoutSensitivity(string axis);
 	public static void ResetInput();
+	public static bool GetBooleanControlDeviceDependent(KogamaControls kogamaControls);
 	public static bool DebugGetKeyDown(KeyCode key);
 	public static bool DebugGetKeyDown(string st);
 	public static bool DebugGetKey(KeyCode key);

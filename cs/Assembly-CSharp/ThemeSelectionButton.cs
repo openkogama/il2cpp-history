@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeSelectionButton : TextButton
 {
@@ -20,7 +20,7 @@ public class ThemeSelectionButton : TextButton
 	private GameObject nameLabel;
 	[SerializeField]
 	private RectTransform previewImageArea;
-	[Header]
+	[Header("Configuration")]
 	[SerializeField]
 	private Color selectedColor;
 	private Color normalColor;

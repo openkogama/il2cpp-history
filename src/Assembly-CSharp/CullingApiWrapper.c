@@ -5,71 +5,62 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_AddBoundingSphere
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   uVar2 = TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
+  }
+  puStack_3 = (undefined *)0x0;
+  fVar4 = 0.0;
+  fVar5 = 0.0;
+  fVar6 = 0.0;
+  UnityEngine.CoreModule.dll::UnityEngine::BoundingSphere::BoundingSphere__ctor
+            ((BoundingSphere *)&puStack_3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector
+             ,1.0,(MethodInfo *)0x0);
   if (pBVar1 != (BoundingSphere__Array *)0x0) {
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                       (&VStack_4,(MethodInfo *)0x0);
-    uVar5._0_4_ = pVVar3->x;
-    uVar5._4_4_ = pVVar3->y;
-    fStack_6 = 0.0;
-    fStack_7 = 0.0;
-    fStack_8 = 0.0;
-    fStack_9 = 0.0;
-    func_?(&fStack_6,uVar5,pVVar3->z,0x3f800000,0);
     if (pBVar1->max_length <= uVar2) goto code_?;
-    bVar10 = cRam_? == '\0';
-    pBVar11 = pBVar1->vector + uVar2;
-    (pBVar11->position).x = fStack_6;
-    (pBVar11->position).y = fStack_7;
-    (pBVar11->position).z = fStack_8;
-    pBVar11->radius = fStack_9;
-    if (bVar10) {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CullingApiWrapper);
-    }
-    iVar12 = TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
+    pBVar7 = pBVar1->vector + uVar2;
+    (pBVar7->position).x = (float)puStack_3;
+    (pBVar7->position).y = fVar4;
+    (pBVar7->position).z = fVar5;
+    pBVar7->radius = fVar6;
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?();
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CullingApiWrapper);
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    bVar10 = cRam_? == '\0';
-    TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField = iVar12 + 1;
+    iVar8 = TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField = iVar8 + 1;
     this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
-    if (bVar10) {
-      func_?(_UNK_?);
+    if (cRam_? == '\0') {
+      func_?();
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CullingApiWrapper);
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     if (this != (CullingGroup *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSphereCount
@@ -78,14 +69,11 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_AddBoundingSphere
       return;
     }
   }
-  func_?(0);
+  func_?();
 code_?:
-  uVar13 = 0;
-  uVar14 = 0;
-  uVar15 = func_?();
-  func_?(uVar15,uVar14,uVar13);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -97,81 +85,74 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_ChangeDistances
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
-  pCVar1 = TypeInfo__CullingApiWrapper->static_fields;
-  pCVar1->baseDistance = newBaseDistance;
-  pSVar2 = pCVar1->sizes;
-  if (pSVar2 != (Single__Array *)0x0) {
-    pSVar2 = (Single__Array *)func_?(TypeInfo__System__Single,pSVar2->max_length);
-    iVar3 = 0;
+  TypeInfo__CullingApiWrapper->static_fields->baseDistance = newBaseDistance;
+  pSVar1 = TypeInfo__CullingApiWrapper->static_fields->sizes;
+  if (pSVar1 == (Single__Array *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    pSVar1 = (Single__Array *)func_?(TypeInfo__System__Single,pSVar1->max_length);
+    uVar2 = 0;
+    iVar3 = 0x10;
     while( true ) {
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
       pSVar4 = TypeInfo__CullingApiWrapper->static_fields->sizes;
       if (pSVar4 == (Single__Array *)0x0) goto code_?;
-      if ((int)pSVar4->max_length <= iVar3) break;
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+      if ((int)pSVar4->max_length <= (int)uVar2) break;
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      if (TypeInfo__CullingApiWrapper->static_fields->sizes == (Single__Array *)0x0)
-      goto code_?;
-      fVar5 = (float10)func_?(iVar3);
-      fVar6 = (float)fVar5;
-      if (TypeInfo__CullingApiWrapper->static_fields->sizes == (Single__Array *)0x0)
-      goto code_?;
-      fVar5 = (float10)func_?(0);
-      if (pSVar2 == (Single__Array *)0x0) goto code_?;
-      func_?(iVar3,(fVar6 / (float)fVar5) * newBaseDistance);
-      iVar3 = iVar3 + 1;
+      pSVar4 = TypeInfo__CullingApiWrapper->static_fields->sizes;
+      if (pSVar4 == (Single__Array *)0x0) goto code_?;
+      if ((pSVar4->max_length <= uVar2) || (pSVar4->max_length == 0)) goto code_?;
+      if (pSVar1 == (Single__Array *)0x0) goto code_?;
+      if (pSVar1->max_length <= uVar2) goto code_?;
+      uVar2 = uVar2 + 1;
+      *(float *)((int)pSVar1->vector + iVar3 + -0x10) =
+           (*(float *)((int)pSVar4->vector + iVar3 + -0x10) / pSVar4->vector[0]) * newBaseDistance;
+      iVar3 = iVar3 + 4;
     }
     this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
-    if (this != (CullingGroup *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingDistances
-                (this,pSVar2,(MethodInfo *)0x0);
-      if (pSVar2 != (Single__Array *)0x0) {
-        uVar7 = pSVar2->max_length;
-        if (uVar7 <= uVar7 - 1) goto code_?;
-        pSVar4 = TypeInfo__CullingApiWrapper->static_fields->sizes;
-        if (pSVar4 != (Single__Array *)0x0) {
-          uVar8 = pSVar4->max_length;
-          if (uVar8 <= uVar8 - 1) goto code_?;
-          if (camera != (Camera *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_farClipPlane
-                      (camera,(pSVar4->vector[uVar8 - 1] + pSVar2->vector[uVar7 - 1]) *
-                              _UNK_?,(MethodInfo *)0x0);
-            return;
-          }
+    if (this == (CullingGroup *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingDistances
+              (this,pSVar1,(MethodInfo *)0x0);
+    if (pSVar1 == (Single__Array *)0x0) goto code_?;
+    if (pSVar1->max_length - 1 < pSVar1->max_length) {
+      pSVar4 = TypeInfo__CullingApiWrapper->static_fields->sizes;
+      if (pSVar4 == (Single__Array *)0x0) goto code_?;
+      if (pSVar4->max_length - 1 < pSVar4->max_length) {
+        if (camera != (Camera *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_farClipPlane
+                    (camera,(pSVar1->vector[pSVar1->max_length - 1] +
+                            pSVar4->vector[pSVar4->max_length - 1]) * _UNK_?,
+                     (MethodInfo *)0x0);
+          return;
         }
+        goto code_?;
       }
     }
   }
 code_?:
-  func_?(0);
-code_?:
-  uVar9 = func_?(0,0);
-  func_?(uVar9);
-code_?:
-  uVar9 = func_?(0,0);
-  func_?(uVar9);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -183,128 +164,108 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_DebugCullingEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_cullingGroupEvent_u000AcurrentDistan);
     cRam_? = '\x01';
   }
   args = (Object__Array *)func_?(TypeInfo__System__Object,6);
-  uStack_1 = func_?(&cullingGroupEvent,0);
-  pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&uStack_1);
+  iStack_1 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+             CullingGroupEvent_get_currentDistance(&cullingGroupEvent,(MethodInfo *)0x0);
+  pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
   if (args == (Object__Array *)0x0) {
-    func_?(0);
+    func_?();
 code_?:
-    uVar3 = 0;
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
+    uVar3 = func_?(0);
+    func_?(uVar3);
 code_?:
-    uVar4 = func_?(0,uVar3);
-    func_?(uVar4);
+    uVar3 = func_?(0);
+    func_?(uVar3);
 code_?:
-    uVar3 = 0;
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
+    uVar3 = func_?(0);
+    func_?(uVar3);
 code_?:
-    uVar4 = func_?(0,uVar3);
-    func_?(uVar4);
+    uVar3 = func_?(0);
+    func_?(uVar3);
 code_?:
-    uVar3 = 0;
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
+    uVar3 = func_?(0);
+    func_?(uVar3);
 code_?:
-    uVar4 = func_?(0,uVar3);
-    func_?(uVar4);
-code_?:
-    uVar3 = 0;
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
-code_?:
-    uVar4 = func_?(0,uVar3);
-    func_?(uVar4);
-code_?:
-    uVar3 = 0;
-    uVar4 = func_?(0,0);
-    func_?(uVar4);
-code_?:
-    uVar4 = func_?(0,uVar3);
-    func_?(uVar4);
+    uVar3 = func_?(0);
+    func_?(uVar3);
   }
   else {
     if (pOVar2 != (Object *)0x0) {
-      iVar5 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar5 == 0) goto code_?;
+      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
+      if (iVar4 == 0) goto code_?;
     }
-    uVar3 = 0;
     if (args->max_length == 0) goto code_?;
     args->vector[0] = pOVar2;
-    uStack_6 = func_?(&cullingGroupEvent);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&uStack_6);
+    func_?(args->vector,pOVar2);
+    iStack_5 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+                CullingGroupEvent_get_previousDistance(&cullingGroupEvent,(MethodInfo *)0x0);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_5);
     if (pOVar2 != (Object *)0x0) {
-      iVar5 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar5 != 0) goto code_?;
-      goto code_?;
+      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
+      if (iVar4 == 0) goto code_?;
     }
-code_?:
-    uVar3 = 0;
     if (args->max_length < 2) goto code_?;
     args->vector[1] = pOVar2;
-    uStack_7 = func_?(&cullingGroupEvent);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_7);
+    func_?(args->vector + 1,pOVar2);
+    bStack_6 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+               CullingGroupEvent_get_hasBecomeVisible(&cullingGroupEvent,(MethodInfo *)0x0);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_6);
     if (pOVar2 != (Object *)0x0) {
-      iVar5 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar5 != 0) goto code_?;
-      goto code_?;
+      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
+      if (iVar4 == 0) goto code_?;
     }
-code_?:
-    uVar3 = 0;
     if (args->max_length < 3) goto code_?;
     args->vector[2] = pOVar2;
-    uStack_8 = func_?(&cullingGroupEvent);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_8);
+    func_?(args->vector + 2,pOVar2);
+    bStack_7 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+               CullingGroupEvent_get_hasBecomeInvisible(&cullingGroupEvent,(MethodInfo *)0x0);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_7);
     if (pOVar2 != (Object *)0x0) {
-      iVar5 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar5 != 0) goto code_?;
-      goto code_?;
+      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
+      if (iVar4 == 0) goto code_?;
     }
-code_?:
-    uVar3 = 0;
     if (args->max_length < 4) goto code_?;
     args->vector[3] = pOVar2;
-    uStack_9 = func_?(&cullingGroupEvent);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_9);
+    func_?(args->vector + 3,pOVar2);
+    bStack_8 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+               CullingGroupEvent_get_isVisible(&cullingGroupEvent,(MethodInfo *)0x0);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_8);
     if (pOVar2 != (Object *)0x0) {
-      iVar5 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar5 != 0) goto code_?;
-      goto code_?;
+      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
+      if (iVar4 == 0) goto code_?;
     }
-code_?:
-    uVar3 = 0;
     if (args->max_length < 5) goto code_?;
     args->vector[4] = pOVar2;
-    uStack_10 = func_?(&cullingGroupEvent);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_10);
-    if (pOVar2 == (Object *)0x0) {
-code_?:
-      if (5 < args->max_length) {
-        args->vector[5] = pOVar2;
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
-                  (StringLiteral_cullingGroupEvent_u000AcurrentDistan,args,(MethodInfo *)0x0);
-        return;
-      }
-      goto code_?;
+    func_?(args->vector + 4,pOVar2);
+    bStack_9 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+               CullingGroupEvent_get_wasVisible(&cullingGroupEvent,(MethodInfo *)0x0);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_9);
+    if (pOVar2 != (Object *)0x0) {
+      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
+      if (iVar4 == 0) goto code_?;
     }
-    iVar5 = func_?(pOVar2,(args->klass->_0).element_class);
-    if (iVar5 != 0) goto code_?;
+    if (5 < args->max_length) {
+      args->vector[5] = pOVar2;
+      func_?(args->vector + 5,pOVar2);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
+                (StringLiteral_cullingGroupEvent_u000AcurrentDistan,args,(MethodInfo *)0x0);
+      return;
+    }
   }
-  uVar4 = func_?(0,0);
-  func_?(uVar4);
 code_?:
-  uVar4 = func_?(0,0);
-  func_?(uVar4);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -315,40 +276,42 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_DebugVisualize(Me
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  iVar1 = 0;
+  uVar1 = 0;
+  iVar2 = 0;
   while( true ) {
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__CullingApiWrapper);
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
-    if (TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField <= iVar1) {
+    if (TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField <= (int)uVar1)
+    {
       return;
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
-    if (TypeInfo__CullingApiWrapper->static_fields->spheres == (BoundingSphere__Array *)0x0) break;
-    pVVar2 = (Vector3 *)func_?(iVar1);
-    center = *pVVar2;
-    if (TypeInfo__CullingApiWrapper->static_fields->spheres == (BoundingSphere__Array *)0x0) break;
-    iVar3 = func_?(iVar1);
+    pBVar3 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+    if (pBVar3 == (BoundingSphere__Array *)0x0) goto code_?;
+    if (pBVar3->max_length <= uVar1) break;
+    center.z = *(float *)((int)&pBVar3->vector[0].position.z + iVar2);
+    center._0_8_ = *(undefined8 *)((int)&pBVar3->vector[0].position.x + iVar2);
     UnityEngine.CoreModule.dll::UnityEngine::Gizmos::Gizmos_DrawWireSphere
-              (center,*(float *)(iVar3 + 0xc),(MethodInfo *)0x0);
-    iVar1 = iVar1 + 1;
+              (center,*(float *)((int)&pBVar3->vector[0].radius + iVar2),(MethodInfo *)0x0);
+    uVar1 = uVar1 + 1;
+    iVar2 = iVar2 + 0x10;
   }
-  func_?(0);
+  func_?();
+code_?:
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -361,35 +324,37 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_Destroy(MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   if (TypeInfo__CullingApiWrapper->static_fields->cullingGroup == (CullingGroup *)0x0) {
     return;
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  this = (LockCursorManager3DMode *)TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
-  if (this != (LockCursorManager3DMode *)0x0) {
-    LockCursorManager3DMode::LockCursorManager3DMode_set_OnCursorLockChanged
-              (this,(Action_1_Boolean_ *)0x0,(MethodInfo *)0x0);
+  this = (PostProcessEffectRenderer_1_System_Object_ *)
+         TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+  if (this != (PostProcessEffectRenderer_1_System_Object_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    PostProcessEffectRenderer`1[System::Object]::
+    PostProcessEffectRenderer_1_System_Object__set_settings(this,(Object *)0x0,(MethodInfo *)0x0);
     this_00 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
     if (this_00 != (CullingGroup *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_Dispose
                 (this_00,(MethodInfo *)0x0);
       TypeInfo__CullingApiWrapper->static_fields->cullingGroup = (CullingGroup *)0x0;
+      func_?();
       return;
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff4);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -401,12 +366,11 @@ int32_t Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_GetDistance
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
   if (this != (CullingGroup *)0x0) {
@@ -414,9 +378,10 @@ int32_t Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_GetDistance
                       (this,index,(MethodInfo *)0x0);
     return iVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  iVar1 = (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  iVar1 = (*pcVar3)();
   return iVar1;
 }
 
@@ -428,43 +393,49 @@ int32_t Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_GetDistanceBan
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  iVar1 = 0;
+  uVar1 = 0;
+  iVar2 = 0x10;
+  pCVar3 = TypeInfo__CullingApiWrapper;
   while( true ) {
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CullingApiWrapper);
+    if ((pCVar3->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pCVar3);
+      pCVar3 = TypeInfo__CullingApiWrapper;
     }
-    pSVar2 = TypeInfo__CullingApiWrapper->static_fields->sizes;
-    if (pSVar2 == (Single__Array *)0x0) break;
-    if ((int)pSVar2->max_length <= iVar1) {
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-        func_?(TypeInfo__CullingApiWrapper);
+    pSVar4 = pCVar3->static_fields->sizes;
+    if (pSVar4 == (Single__Array *)0x0) break;
+    if ((int)pSVar4->max_length <= (int)uVar1) {
+      if ((pCVar3->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(pCVar3);
+        pCVar3 = TypeInfo__CullingApiWrapper;
       }
-      pSVar2 = TypeInfo__CullingApiWrapper->static_fields->sizes;
-      if (pSVar2 != (Single__Array *)0x0) {
-        return pSVar2->max_length - 1;
+      pSVar4 = pCVar3->static_fields->sizes;
+      if (pSVar4 != (Single__Array *)0x0) {
+        return pSVar4->max_length - 1;
       }
       break;
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CullingApiWrapper);
+    if ((pCVar3->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pCVar3);
+      pCVar3 = TypeInfo__CullingApiWrapper;
     }
-    if (TypeInfo__CullingApiWrapper->static_fields->sizes == (Single__Array *)0x0) break;
-    fVar3 = (float10)func_?(iVar1);
-    if (radius < (float)fVar3) {
-      return iVar1;
+    pSVar4 = pCVar3->static_fields->sizes;
+    if (pSVar4 == (Single__Array *)0x0) break;
+    if (pSVar4->max_length <= uVar1) goto code_?;
+    if (radius < *(float *)((int)pSVar4->vector + iVar2 + -0x10)) {
+      return uVar1;
     }
-    iVar1 = iVar1 + 1;
+    uVar1 = uVar1 + 1;
+    iVar2 = iVar2 + 4;
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  func_?();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
@@ -475,89 +446,91 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_Init
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__BoundingSphere);
+    func_?(&MethodInfo__CullingApiWrapper__OnStateChanged_UnityEngine__CullingGroupEvent_);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__UnityEngine__CullingGroup);
+    func_?(&TypeInfo__UnityEngine__CullingGroup__StateChanged);
     cRam_? = '\x01';
   }
   pBVar1 = (BoundingSphere__Array *)
            func_?(TypeInfo__UnityEngine__BoundingSphere,initialSphereCount + 1000);
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   TypeInfo__CullingApiWrapper->static_fields->spheres = pBVar1;
+  func_?(&TypeInfo__CullingApiWrapper->static_fields->spheres,pBVar1);
   pCVar2 = (CullingGroup *)func_?(TypeInfo__UnityEngine__CullingGroup);
-  UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup__ctor
-            (pCVar2,(MethodInfo *)0x0);
-  TypeInfo__CullingApiWrapper->static_fields->cullingGroup = pCVar2;
-  pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
   if (pCVar2 != (CullingGroup *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_set_targetCamera
-              (pCVar2,camera,(MethodInfo *)0x0);
-    if (camera != (Camera *)0x0) {
-      distanceReferencePoint =
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)camera,(MethodInfo *)0x0);
-      CullingApiWrapper_SetDistanceReferencePoint(distanceReferencePoint,(MethodInfo *)0x0);
-      newBaseDistance = (float)TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
-      if ((CullingGroup *)newBaseDistance != (CullingGroup *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSpheres
-                  ((CullingGroup *)newBaseDistance,
-                   TypeInfo__CullingApiWrapper->static_fields->spheres,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup__ctor
+              (pCVar2,(MethodInfo *)0x0);
+    TypeInfo__CullingApiWrapper->static_fields->cullingGroup = pCVar2;
+    func_?(&TypeInfo__CullingApiWrapper->static_fields->cullingGroup,pCVar2);
+    pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+    if (pCVar2 != (CullingGroup *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_set_targetCamera
+                (pCVar2,camera,(MethodInfo *)0x0);
+      if (camera != (Camera *)0x0) {
+        transform = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)camera,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__CullingApiWrapper);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__CullingApiWrapper);
+        }
         pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
         if (pCVar2 != (CullingGroup *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSphereCount
-                    (pCVar2,0,(MethodInfo *)0x0);
-          this = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                 TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
-          if (this != (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0) {
-            a = (Delegate *)
-                mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                Serialization::JsonProperty]::
-                Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                          (this,(MethodInfo *)0x0);
-            if (TypeInfo__CullingApiWrapper->static_fields->__f__mg_cache0 ==
-                (CullingGroup_StateChanged *)0x0) {
-              this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                         *)func_?();
-              newBaseDistance = (float)&UNK_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-              SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-              UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                        (this_00,(Object *)0x0,
-                         MethodInfo__CullingApiWrapper__OnStateChanged_UnityEngine__CullingGroupEvent_
-                         ,(MethodInfo *)0x0);
-              if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0)
-                 && ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-                func_?();
-              }
-              TypeInfo__CullingApiWrapper->static_fields->__f__mg_cache0 =
-                   (CullingGroup_StateChanged *)this_00;
-            }
-            if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pAVar3 = (Action_1_Boolean_ *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               (a,(Delegate *)
-                                  TypeInfo__CullingApiWrapper->static_fields->__f__mg_cache0,
-                                (MethodInfo *)0x0);
-            if (this != (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0) {
-              value = (Action_1_Boolean_ *)0x0;
-              if (pAVar3 == (Action_1_Boolean_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::
+          CullingGroup_SetDistanceReferencePoint(pCVar2,transform,(MethodInfo *)0x0);
+          pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+          if (pCVar2 != (CullingGroup *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSpheres
+                      (pCVar2,TypeInfo__CullingApiWrapper->static_fields->spheres,(MethodInfo *)0x0)
+            ;
+            pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+            if (pCVar2 != (CullingGroup *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::
+              CullingGroup_SetBoundingSphereCount(pCVar2,0,(MethodInfo *)0x0);
+              this = (ValueListBuilder_1_System_Object__1 *)
+                     TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+              if (this != (ValueListBuilder_1_System_Object__1 *)0x0) {
+                pDVar3 = (Delegate *)
+                         mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::
+                         Object]::ValueListBuilder_1_System_Object__1_get_Length
+                                   (this,(MethodInfo *)0x0);
+                this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
+                if (this_00 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::
+                  Vector2]::UnityAction_1_UnityEngine_Vector2___ctor
+                            (this_00,(Object *)0x0,
+                             MethodInfo__CullingApiWrapper__OnStateChanged_UnityEngine__CullingGroupEvent_
+                             ,(MethodInfo *)0x0);
+                  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                     (pDVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+                  pDVar3 = (Delegate *)0x0;
+                  if (pDVar4 == (Delegate *)0x0) {
 code_?:
-                LockCursorManager3DMode::LockCursorManager3DMode_set_OnCursorLockChanged
-                          ((LockCursorManager3DMode *)this,value,(MethodInfo *)0x0);
-                TypeInfo__CullingApiWrapper->static_fields->baseDistance = newBaseDistance;
-                CullingApiWrapper_ChangeDistances(newBaseDistance,camera,(MethodInfo *)0x0);
-                return;
+                    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+                    PostProcessEffectRenderer`1[System::Object]::
+                    PostProcessEffectRenderer_1_System_Object__set_settings
+                              ((PostProcessEffectRenderer_1_System_Object_ *)this,(Object *)pDVar3,
+                               (MethodInfo *)0x0);
+                    TypeInfo__CullingApiWrapper->static_fields->baseDistance = (float)pDVar3;
+                    CullingApiWrapper_ChangeDistances
+                              (TypeInfo__CullingApiWrapper->static_fields->baseDistance,camera,
+                               (MethodInfo *)0x0);
+                    return;
+                  }
+                  if ((CullingGroup_StateChanged__Class *)pDVar4->klass ==
+                      TypeInfo__UnityEngine__CullingGroup__StateChanged) {
+                    pDVar3 = pDVar4;
+                  }
+                  if (pDVar3 != (Delegate *)0x0) goto code_?;
+                  goto code_?;
+                }
               }
-              if ((CullingGroup_StateChanged__Class *)pAVar3->klass ==
-                  TypeInfo__UnityEngine__CullingGroup__StateChanged) {
-                value = pAVar3;
-              }
-              if (value != (Action_1_Boolean_ *)0x0) goto code_?;
-              goto code_?;
             }
           }
         }
@@ -567,8 +540,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -580,12 +553,11 @@ bool Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_IsVisible
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
   if (this != (CullingGroup *)0x0) {
@@ -593,9 +565,10 @@ bool Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_IsVisible
                       (this,index,(MethodInfo *)0x0);
     return bVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 
@@ -607,51 +580,49 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_OnStateChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__get_Item_int_
+                   );
+    func_?(&TypeInfo__ICullingSubscriber);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
-  this = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *
-         )TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-  iVar1 = func_?(&cullingGroupEvent,0);
-  if (this != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)0x0) {
-    pTVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-             Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-             Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                       (this,iVar1,
+  this = (Dictionary_2_System_Int32Enum_System_Object_ *)
+         TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+  key = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_7
+                  ((uint8_t *)&cullingGroupEvent,(MethodInfo *)0x0);
+  if (this != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       (this,(Int32Enum__Enum)key,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__get_Item_int_
                        );
-    uVar3 = cullingGroupEvent._4_4_;
-    iVar1 = cullingGroupEvent.m_Index;
-    if (pTVar2 != (TerrainUtility_TerrainMap *)0x0) {
-      pTVar4 = pTVar2->klass;
-      uVar5 = 0;
-      uVar6._0_1_ = (pTVar4->_1).rank;
-      uVar6._1_1_ = (pTVar4->_1).minimumAlignment;
-      if (uVar6 != 0) {
+    if (pOVar1 != (Object *)0x0) {
+      uVar2 = 0;
+      uVar3 = (pOVar1->klass->_1).interface_offsets_count;
+      if (uVar3 != 0) {
         do {
-          if (pTVar4->interfaceOffsets[uVar5].interfaceType ==
+          if (pOVar1->klass->interfaceOffsets[uVar2].interfaceType ==
               (Il2CppClass *)TypeInfo__ICullingSubscriber) {
-            ppMVar7 = &(&(pTVar2->klass->vtable).Equals)[pTVar4->interfaceOffsets[uVar5].offset].
-                       method;
+            pVVar4 = &(pOVar1->klass->vtable).Equals + pOVar1->klass->interfaceOffsets[uVar2].offset
+            ;
             goto code_?;
           }
-          uVar5 = uVar5 + 1;
-        } while (uVar5 < uVar6);
+          uVar2 = uVar2 + 1;
+        } while (uVar2 < uVar3);
       }
-      ppMVar7 = (MethodInfo **)func_?(pTVar2,TypeInfo__ICullingSubscriber,0);
+      pVVar4 = (VirtualInvokeData *)func_?(pOVar1,TypeInfo__ICullingSubscriber,0);
 code_?:
-      (*(code *)*ppMVar7)(pTVar2,iVar1,uVar3,ppMVar7[1]);
+      (*pVVar4->methodPtr)(pOVar1,pVVar4->method);
       return;
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -666,144 +637,165 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_PostDestroyCleanu
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff88;
-  puVar5 = &stack0xffffff88;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__get_Current__
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_ICullingSubscriber>__get_Value__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__Add_ICullingSubscriber_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__GetEnumerator__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__List_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__get_Count__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<ICullingSubscriber>);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral__0__subscribers_are_never_unsubs);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  iStack_6 = 0;
-  KStack_7.key = 0;
-  KStack_7.value = 0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  func_?();
-  pOStack_9 = (Object *)0xffffffff;
-  piStack_10 = (int *)&stack0xffffff88;
-  puStack_4 = &stack0xffffff88;
-  this_00 = (List_1_UnityEngine_Color32_ *)
+  pOStack_4 = (Object__Class *)0x0;
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(TypeInfo__System__Collections__Generic__List<ICullingSubscriber>);
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            ((List_1_ThemeAttributes_ThemeAttribute_ *)this_00,0,
-             MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__List_int_);
-  pLStack_11 = this_00;
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?();
-  }
-  this = TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-  if (this == (Dictionary_2_System_Int32_ICullingSubscriber_ *)0x0) {
+  if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
 code_?:
     func_?();
-code_?:
     func_?();
-code_?:
     func_?();
   }
   else {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::Object]::
-    Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-              ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *)auStack_12
-               ,(Dictionary_2_WinningConditionType_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__GetEnumerator__
-              );
-    uStack_1 = 0;
-    while (cVar13 = func_?(), cVar13 != '\0') {
-      KStack_7 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                            ((LevelRewardsManager *)&stack0xffffff94,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__get_Current__
-                            );
-      item = func_?();
-      if (this_00 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_00,item,
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    UnitySynchronizationContext+WorkRequest]::
+    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
+              (this_00,0,
+               MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__List_int_);
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    this = (Dictionary_2_System_Object_System_Object_ *)
+           TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+    if (this == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                        &stack0xffffffc0,this,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__GetEnumerator__
+                       );
+    uVar6 = *(undefined8 *)&(pDVar5->_current).value;
+    uStack_1 = 1;
+    while( true ) {
+      pMVar7 = SUB84(uVar6,4);
+      bVar8 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                         &pOStack_4,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__MoveNext__
+                        );
+      if (bVar8 == 0) break;
+      uVar6._4_4_ = (int32_t)pMVar7;
+      uVar6._0_4_ = (Object *)
+                    MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__Add_ICullingSubscriber_
+      ;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)this_00,
+                 (Object *)
+                 MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__Add_ICullingSubscriber_
+                 ,
                  MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__Add_ICullingSubscriber_
                 );
     }
-    iVar14 = 0;
-    *piStack_10 = 0x4b;
     uStack_1 = 0xffffffff;
-    func_?();
-    if (iStack_6 != 0) goto code_?;
-    if (*piStack_10 == 0x4b) {
-      iVar14 = -1;
-    }
-    if (this_00 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-    pLVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)(auStack_12 + 4),this_00,
-                        MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__GetEnumerator__
-                       );
-    CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar15->l;
-    CStack_8.monitor = (MonitorData *)pLVar15->next;
-    CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar15->ver;
-    CStack_8.fields.syncRoot = (Object *)(pLVar15->current).rgba;
-    uStack_1 = 2;
-    while (cVar13 = func_?(), iVar16 = iStack_6, cVar13 != '\0') {
-      pOStack_9 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             (&CStack_8,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__get_Current__
-                             );
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&pOStack_4,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__Dispose__
+               ,pMVar7);
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RegexCharClass+SingleRange]::
+    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               &stack0xffffffc8,
+               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__GetEnumerator__);
+    uStack_1 = 4;
+    while( true ) {
+      pMVar7 = 
+      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__MoveNext__
+      ;
+      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb0,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__MoveNext__
+                        );
+      if (bVar8 == 0) break;
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      CullingApiWrapper_UnSubscribe((ICullingSubscriber *)pOStack_9,(MethodInfo *)0x0);
+      CullingApiWrapper_UnSubscribe((ICullingSubscriber *)pMVar7,(MethodInfo *)0x0);
     }
-    piStack_10[iVar14 + 1] = 0x85;
     uStack_1 = 0xffffffff;
-    func_?();
-    if (iVar16 != 0) goto code_?;
-    if (this_00 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-    pOVar17 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                        MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__get_Count__
-                       );
-    if ((int)pOVar17 < 1) {
-code_?:
-      *unaff_FS_OFFSET = uStack_3;
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&stack0xffffffb0,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__Dispose__
+               ,in_stack_9);
+    uStack_1 = 0xffffffff;
+    if ((this_00->fields)._size < 1) goto code_?;
     args = (Object__Array *)func_?();
-    pLStack_11 = (List_1_UnityEngine_Color32_ *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                            MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__get_Count__
-                           );
-    pOVar17 = (Object *)func_?();
+    pOVar10 = (Object *)func_?();
     if (args == (Object__Array *)0x0) goto code_?;
-    if ((pOVar17 == (Object *)0x0) || (iVar14 = func_?(), iVar14 != 0)) {
+    if (pOVar10 == (Object *)0x0) {
+code_?:
       if (args->max_length != 0) {
-        args->vector[0] = pOVar17;
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+        args->vector[0] = pOVar10;
+        func_?();
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarningFormat
                   (StringLiteral__0__subscribers_are_never_unsubs,args,(MethodInfo *)0x0);
-        goto code_?;
+code_?:
+        *unaff_FS_OFFSET = uStack_3;
+        return;
       }
       goto code_?;
     }
+    iVar11 = func_?();
+    if (iVar11 != 0) goto code_?;
   }
   func_?();
   func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -815,12 +807,11 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_SetDistanceRefere
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
   if (this != (CullingGroup *)0x0) {
@@ -828,9 +819,10 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_SetDistanceRefere
               (this,distanceReferencePoint,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -842,82 +834,156 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_Subscribe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_
+                   );
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Add_int__ICullingSubscriber_
+                   );
+    func_?(&TypeInfo__ICullingSubscriber);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-  if (pBVar1 == (BoundingSphere__Array *)0x0) goto code_?;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
-  }
-  if (pBVar1->max_length ==
-      TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField) {
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CullingApiWrapper);
-    }
-    array = &TypeInfo__CullingApiWrapper->static_fields->spheres;
-    pBVar1 = *array;
-    if (pBVar1 == (BoundingSphere__Array *)0x0) goto code_?;
-    mscorlib.dll::System::Array::Array_Resize_161
-              ((VoxelHit__Array **)array,pBVar1->max_length + 1000,
-               void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_
-              );
-    this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
-    if (this == (CullingGroup *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSpheres
-              (this,TypeInfo__CullingApiWrapper->static_fields->spheres,(MethodInfo *)0x0);
-  }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
-  }
-  this_00 = (Dictionary_2_System_Int32_System_Object_ *)
-            TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
-  }
-  if (this_00 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-    Dictionary_2_System_Int32_System_Object__Add
-              (this_00,TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField,
-               (Object *)iCullingGroupSubscriber,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Add_int__ICullingSubscriber_
-              );
-    CullingApiWrapper_AddBoundingSphere((MethodInfo *)0x0);
+  if (pBVar1 != (BoundingSphere__Array *)0x0) {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__CullingApiWrapper);
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
-    if (iCullingGroupSubscriber != (ICullingSubscriber *)0x0) {
-      func_?(2,TypeInfo__ICullingSubscriber,iCullingGroupSubscriber,
-                      TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField +
-                      -1);
-      return;
+    if (pBVar1->max_length ==
+        TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField) {
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CullingApiWrapper);
+      }
+      pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+      if (pBVar1 != (BoundingSphere__Array *)0x0) {
+        mscorlib.dll::System::Array::Array_Resize
+                  (&TypeInfo__CullingApiWrapper->static_fields->spheres,pBVar1->max_length + 1000,
+                   void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_
+                  );
+        pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+        if (pCVar2 != (CullingGroup *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSpheres
+                    (pCVar2,TypeInfo__CullingApiWrapper->static_fields->spheres,(MethodInfo *)0x0);
+          goto code_?;
+        }
+      }
+    }
+    else {
+code_?:
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CullingApiWrapper);
+      }
+      this = (Dictionary_2_System_Object_System_Object_ *)
+             TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__CullingApiWrapper);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CullingApiWrapper);
+      }
+      if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  (this,(Object *)
+                        TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField
+                   ,(Object *)iCullingGroupSubscriber,
+                   MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Add_int__ICullingSubscriber_
+                  );
+        if (cRam_? == '\0') {
+          BStack_3.position.x = (float)&TypeInfo__CullingApiWrapper;
+          func_?();
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__CullingApiWrapper);
+        }
+        pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__CullingApiWrapper);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__CullingApiWrapper);
+        }
+        uVar4 = TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__UnityEngine__Vector3);
+          cRam_? = '\x01';
+        }
+        BStack_3.position.x = 0.0;
+        BStack_3.position.y = 0.0;
+        BStack_3.position.z = 0.0;
+        BStack_3.radius = 0.0;
+        UnityEngine.CoreModule.dll::UnityEngine::BoundingSphere::BoundingSphere__ctor
+                  (&BStack_3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,1.0,
+                   (MethodInfo *)0x0);
+        if (pBVar1 != (BoundingSphere__Array *)0x0) {
+          if (pBVar1->max_length <= uVar4) goto code_?;
+          pBVar5 = pBVar1->vector + uVar4;
+          (pBVar5->position).x = BStack_3.position.x;
+          (pBVar5->position).y = BStack_3.position.y;
+          (pBVar5->position).z = BStack_3.position.z;
+          pBVar5->radius = BStack_3.radius;
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__CullingApiWrapper);
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__CullingApiWrapper);
+          }
+          iVar6 = TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__CullingApiWrapper);
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__CullingApiWrapper);
+          }
+          TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField = iVar6 + 1;
+          pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__CullingApiWrapper);
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__CullingApiWrapper);
+          }
+          if (pCVar2 != (CullingGroup *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::
+            CullingGroup_SetBoundingSphereCount
+                      (pCVar2,TypeInfo__CullingApiWrapper->static_fields->
+                              _NumBoundSpheres_k__BackingField,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__CullingApiWrapper);
+              cRam_? = '\x01';
+            }
+            if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__CullingApiWrapper);
+            }
+            if (iCullingGroupSubscriber != (ICullingSubscriber *)0x0) {
+              func_?(2,TypeInfo__ICullingSubscriber,iCullingGroupSubscriber,
+                              TypeInfo__CullingApiWrapper->static_fields->
+                              _NumBoundSpheres_k__BackingField + -1);
+              return;
+            }
+          }
+        }
+      }
     }
   }
+  func_?();
 code_?:
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -929,158 +995,190 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_UnSubscribe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Remove_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__get_Item_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__set_Item_int__ICullingSubscriber_
+                   );
+    func_?(&TypeInfo__ICullingSubscriber);
+    func_?(&StringLiteral_Trying_to_unsubscribe_object_wit);
     cRam_? = '\x01';
   }
-  if (unSubscriber == (ICullingSubscriber *)0x0) {
-code_?:
-    func_?(0);
-  }
-  else {
+  if (unSubscriber != (ICullingSubscriber *)0x0) {
     iVar1 = func_?(1,TypeInfo__ICullingSubscriber,unSubscriber);
     if (iVar1 < 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_Trying_to_unsubscribe_object_wit,(MethodInfo *)0x0);
       return;
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__CullingApiWrapper);
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
     if (TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField < 2) {
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-      iVar3 = CullingApiWrapper_get_NumBoundSpheres((MethodInfo *)0x0);
-      if (pDVar2 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-        Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-        Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                  (pDVar2,iVar3 + -1,
+      pDVar2 = (Dictionary_2_System_Int32_System_Object_ *)
+               TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__CullingApiWrapper);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CullingApiWrapper);
+      }
+      if (pDVar2 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Remove
+                  (pDVar2,TypeInfo__CullingApiWrapper->static_fields->
+                          _NumBoundSpheres_k__BackingField + -1,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Remove_int_
                   );
 code_?:
         func_?(2,TypeInfo__ICullingSubscriber,unSubscriber);
-        if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__CullingApiWrapper);
         }
         if (cRam_? == '\0') {
-          func_?(_UNK_?);
+          func_?(&TypeInfo__CullingApiWrapper);
           cRam_? = '\x01';
         }
-        if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__CullingApiWrapper);
         }
-        CullingApiWrapper_set_NumBoundSpheres
-                  (TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField + -1
-                   ,(MethodInfo *)0x0);
+        iVar1 = TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__CullingApiWrapper);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__CullingApiWrapper);
+        }
+        TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField = iVar1 + -1;
         if (TypeInfo__CullingApiWrapper->static_fields->cullingGroup == (CullingGroup *)0x0) {
           return;
         }
-        if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__CullingApiWrapper);
         }
-        this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
-        iVar3 = CullingApiWrapper_get_NumBoundSpheres((MethodInfo *)0x0);
-        if (this != (CullingGroup *)0x0) {
+        this_01 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__CullingApiWrapper);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__CullingApiWrapper);
+        }
+        if (this_01 != (CullingGroup *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSphereCount
-                    (this,iVar3,(MethodInfo *)0x0);
+                    (this_01,TypeInfo__CullingApiWrapper->static_fields->
+                             _NumBoundSpheres_k__BackingField,(MethodInfo *)0x0);
           return;
         }
       }
-      goto code_?;
     }
-    if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CullingApiWrapper);
-    }
-    pBVar4 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-    uVar5 = func_?(1,TypeInfo__ICullingSubscriber,unSubscriber);
-    if (pBVar4 == (BoundingSphere__Array *)0x0) goto code_?;
-    pBVar6 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-    iVar3 = CullingApiWrapper_get_NumBoundSpheres((MethodInfo *)0x0);
-    if (pBVar6 == (BoundingSphere__Array *)0x0) goto code_?;
-    if (iVar3 - 1U < pBVar6->max_length) {
-      pBVar7 = pBVar6->vector + iVar3 + -1;
-      fVar8 = (pBVar7->position).y;
-      fVar9 = (pBVar7->position).z;
-      fVar10 = pBVar7->radius;
-      if (pBVar4->max_length <= uVar5) goto code_?;
-      pBVar11 = pBVar4->vector + uVar5;
-      (pBVar11->position).x = (pBVar7->position).x;
-      (pBVar11->position).y = fVar8;
-      (pBVar11->position).z = fVar9;
-      pBVar11->radius = fVar10;
-      pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-      iVar3 = CullingApiWrapper_get_NumBoundSpheres((MethodInfo *)0x0);
-      if (pDVar2 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) {
-        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-                Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                          (pDVar2,iVar3 + -1,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__get_Item_int_
+    else {
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CullingApiWrapper);
+      }
+      pBVar3 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+      uVar4 = func_?(1,TypeInfo__ICullingSubscriber,unSubscriber);
+      pBVar5 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__CullingApiWrapper);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CullingApiWrapper);
+      }
+      if (pBVar5 != (BoundingSphere__Array *)0x0) {
+        iVar1 = TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
+        if (pBVar5->max_length <= iVar1 - 1U) goto code_?;
+        if (pBVar3 != (BoundingSphere__Array *)0x0) {
+          pBVar6 = pBVar5->vector + iVar1 + -1;
+          fVar7 = (pBVar6->position).y;
+          fVar8 = (pBVar6->position).z;
+          fVar9 = pBVar6->radius;
+          if (pBVar3->max_length <= uVar4) goto code_?;
+          pBVar10 = pBVar3->vector + uVar4;
+          (pBVar10->position).x = (pBVar6->position).x;
+          (pBVar10->position).y = fVar7;
+          (pBVar10->position).z = fVar8;
+          pBVar10->radius = fVar9;
+          this = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                 TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__CullingApiWrapper);
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__CullingApiWrapper);
+          }
+          if (this != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+            value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              (this,TypeInfo__CullingApiWrapper->static_fields->
+                                    _NumBoundSpheres_k__BackingField - 1,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__get_Item_int_
+                              );
+            this_00 = (Dictionary_2_System_Object_System_Object_ *)
+                      TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+            key = (Object *)func_?(1,TypeInfo__ICullingSubscriber,unSubscriber);
+            if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__set_Item
+                        (this_00,key,value,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__set_Item_int__ICullingSubscriber_
+                        );
+              pDVar2 = (Dictionary_2_System_Int32_System_Object_ *)
+                       TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+              if (cRam_? == '\0') {
+                func_?(&TypeInfo__CullingApiWrapper);
+                cRam_? = '\x01';
+              }
+              if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__CullingApiWrapper);
+              }
+              if (pDVar2 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                Object]::Dictionary_2_System_Int32_System_Object__Remove
+                          (pDVar2,TypeInfo__CullingApiWrapper->static_fields->
+                                  _NumBoundSpheres_k__BackingField + -1,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Remove_int_
                           );
-        pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                  *)TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-        iVar3 = func_?(1,TypeInfo__ICullingSubscriber,unSubscriber);
-        if (pDVar2 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                       *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-          Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-          Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__set_Item
-                    (pDVar2,iVar3,value,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__set_Item_int__ICullingSubscriber_
-                    );
-          pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                    *)TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-          iVar3 = CullingApiWrapper_get_NumBoundSpheres((MethodInfo *)0x0);
-          if (pDVar2 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                         *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-            Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-            Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                      (pDVar2,iVar3 + -1,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Remove_int_
-                      );
-            uVar12 = func_?(1,TypeInfo__ICullingSubscriber,unSubscriber);
-            if (value != (TerrainUtility_TerrainMap *)0x0) {
-              func_?(2,TypeInfo__ICullingSubscriber,value,uVar12);
-              goto code_?;
+                uVar11 = func_?(1,TypeInfo__ICullingSubscriber,unSubscriber);
+                if (value != (Object *)0x0) {
+                  func_?(2,TypeInfo__ICullingSubscriber,value,uVar11);
+                  goto code_?;
+                }
+              }
             }
           }
         }
       }
-      goto code_?;
     }
   }
-  uVar12 = func_?(0);
-  func_?(uVar12);
+  func_?();
 code_?:
-  uVar12 = func_?(0);
-  func_?(uVar12);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -1093,46 +1191,50 @@ Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_UpdateDistances
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
-  pCVar1 = TypeInfo__CullingApiWrapper->static_fields;
-  pCVar1->baseDistance = newBaseDistance;
-  pSVar2 = pCVar1->sizes;
-  if (pSVar2 != (Single__Array *)0x0) {
-    pSVar2 = (Single__Array *)func_?(TypeInfo__System__Single,pSVar2->max_length);
-    iVar3 = 0;
+  TypeInfo__CullingApiWrapper->static_fields->baseDistance = newBaseDistance;
+  pSVar1 = TypeInfo__CullingApiWrapper->static_fields->sizes;
+  if (pSVar1 == (Single__Array *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    pSVar1 = (Single__Array *)func_?(TypeInfo__System__Single,pSVar1->max_length);
+    uVar2 = 0;
+    iVar3 = 0x10;
     while( true ) {
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
       pSVar4 = TypeInfo__CullingApiWrapper->static_fields->sizes;
-      if (pSVar4 == (Single__Array *)0x0) break;
-      if ((int)pSVar4->max_length <= iVar3) {
-        return pSVar2;
+      if (pSVar4 == (Single__Array *)0x0) goto code_?;
+      if ((int)pSVar4->max_length <= (int)uVar2) {
+        return pSVar1;
       }
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      if (TypeInfo__CullingApiWrapper->static_fields->sizes == (Single__Array *)0x0) break;
-      fVar5 = (float10)func_?(iVar3);
-      if (TypeInfo__CullingApiWrapper->static_fields->sizes == (Single__Array *)0x0) break;
-      fVar6 = (float10)func_?(0);
-      if (pSVar2 == (Single__Array *)0x0) break;
-      func_?(iVar3,((float)fVar5 / (float)fVar6) * newBaseDistance);
-      iVar3 = iVar3 + 1;
+      pSVar4 = TypeInfo__CullingApiWrapper->static_fields->sizes;
+      if (pSVar4 == (Single__Array *)0x0) goto code_?;
+      if ((pSVar4->max_length <= uVar2) || (pSVar4->max_length == 0)) break;
+      if (pSVar1 == (Single__Array *)0x0) goto code_?;
+      if (pSVar1->max_length <= uVar2) break;
+      uVar2 = uVar2 + 1;
+      *(float *)((int)pSVar1->vector + iVar3 + -0x10) =
+           (*(float *)((int)pSVar4->vector + iVar3 + -0x10) / pSVar4->vector[0]) * newBaseDistance;
+      iVar3 = iVar3 + 4;
     }
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  pSVar2 = (Single__Array *)(*pcVar7)();
-  return pSVar2;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pSVar1 = (Single__Array *)(*pcVar5)();
+  return pSVar1;
 }
 
 
@@ -1142,28 +1244,42 @@ bool Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_Visible
                (CullingGroupEvent cullingGroupEvent,int32_t distanceBandIndex,MethodInfo *method)
 
 {
-  cVar1 = func_?(&cullingGroupEvent,0);
-  if (cVar1 != '\0') {
-    return 0;
-  }
-  iVar2 = func_?(&cullingGroupEvent,0);
-  if ((distanceBandIndex < iVar2) && (cVar1 = func_?(&cullingGroupEvent,0), cVar1 != '\0'))
-  {
-    return 0;
-  }
-  cVar1 = func_?(&cullingGroupEvent,0);
-  if (cVar1 != '\0') {
-    return 1;
-  }
-  cVar1 = func_?(&cullingGroupEvent,0);
-  if ((cVar1 != '\0') && (iVar2 = func_?(&cullingGroupEvent,0), iVar2 <= distanceBandIndex)
-     ) {
-    return 1;
-  }
-  cVar1 = func_?(&cullingGroupEvent,0);
-  if (cVar1 != '\0') {
-    iVar2 = func_?(&cullingGroupEvent,0);
-    return iVar2 <= distanceBandIndex;
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+          CullingGroupEvent_get_hasBecomeInvisible(&cullingGroupEvent,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_currentDistance(&cullingGroupEvent,(MethodInfo *)0x0);
+    if (distanceBandIndex < iVar2) {
+      cullingGroupEvent.m_Index = 0;
+      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+              CullingGroupEvent_get_isVisible(&cullingGroupEvent,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        return 0;
+      }
+    }
+    cullingGroupEvent._4_4_ = &cullingGroupEvent;
+    cullingGroupEvent.m_Index = (int32_t)&UNK_?;
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_hasBecomeVisible
+                      ((CullingGroupEvent *)cullingGroupEvent._4_4_,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      return 1;
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_isVisible(&cullingGroupEvent,(MethodInfo *)0x0);
+    if ((bVar1 != 0) &&
+       (iVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+                CullingGroupEvent_get_currentDistance(&cullingGroupEvent,(MethodInfo *)0x0),
+       iVar2 <= distanceBandIndex)) {
+      return 1;
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_isVisible(&cullingGroupEvent,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      iVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+              CullingGroupEvent_get_currentDistance(&cullingGroupEvent,(MethodInfo *)0x0);
+      return iVar2 <= distanceBandIndex;
+    }
   }
   return 0;
 }
@@ -1175,24 +1291,40 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper__cctor(MethodInfo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>);
+    func_?(&TypeInfo__System__Single);
+    func_?(&::C1C288957BE7B49A6A9994351091D0E2D605B5A5E77624DCE2A9491DF0AA7633_Field);
     cRam_? = '\x01';
   }
   TypeInfo__CullingApiWrapper->static_fields->baseDistance = 2.5;
   this = (Dictionary_2_System_Int32_ICullingSubscriber_ *)
          func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>
                         );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Dictionary__
-            );
-  TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers = this;
-  array = (Single__Array *)func_?(TypeInfo__System__Single,7);
-  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
-            ((Array *)array,__field_59848606DBD5ED7AD50B791FE431D108ED6FE332_Field,(MethodInfo *)0x0
-            );
-  TypeInfo__CullingApiWrapper->static_fields->sizes = array;
+  if (this != (Dictionary_2_System_Int32_ICullingSubscriber_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Dictionary__
+              );
+    TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers = this;
+    func_?(&TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers,this);
+    array = (Single__Array *)func_?(TypeInfo__System__Single,7);
+    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+    RuntimeHelpers_InitializeArray_1
+              ((Array *)array,
+               _C1C288957BE7B49A6A9994351091D0E2D605B5A5E77624DCE2A9491DF0AA7633_Field,
+               (MethodInfo *)0x0);
+    TypeInfo__CullingApiWrapper->static_fields->sizes = array;
+    func_?(&TypeInfo__CullingApiWrapper->static_fields->sizes,array);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1204,11 +1336,10 @@ int32_t Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_get_NumBoundSp
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   return TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField;
@@ -1222,12 +1353,11 @@ Camera * Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_get_TargetCam
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
   if (this != (CullingGroup *)0x0) {
@@ -1235,9 +1365,10 @@ Camera * Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_get_TargetCam
                        (this,(MethodInfo *)0x0);
     return pCVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pCVar1 = (Camera *)(*pcVar2)();
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  pCVar1 = (Camera *)(*pcVar4)();
   return pCVar1;
 }
 
@@ -1249,11 +1380,10 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_set_NumBoundSpher
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
     TypeInfo__CullingApiWrapper->static_fields->_NumBoundSpheres_k__BackingField = value;
     return;
@@ -1270,11 +1400,10 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_set_TargetCamera
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   pCVar1 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
@@ -1282,31 +1411,26 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_set_TargetCamera
     UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_set_targetCamera
               (pCVar1,value,(MethodInfo *)0x0);
     if (value != (Camera *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                ((Component_1 *)value,(MethodInfo *)0x0);
+      transform = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)value,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-        func_?();
+      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CullingApiWrapper);
       }
       pCVar1 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
       if (pCVar1 != (CullingGroup *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::
-        CullingGroup_SetDistanceReferencePoint(pCVar1,in_stack_2,(MethodInfo *)0x0);
+        CullingGroup_SetDistanceReferencePoint(pCVar1,transform,(MethodInfo *)0x0);
         return;
       }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

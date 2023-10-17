@@ -10,151 +10,150 @@ Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetTargets
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
+  puStack_4 = &stack0xffffffb0;
+  puVar5 = &stack0xffffffb0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
+    in_stack_6 = &MethodInfo__System__Collections__Generic__HashSet<int>__Remove_int_;
+    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Clear__);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pWStack_6 = (WorldObjectClientRef *)0x0;
-  pUStack_7 = (UnityWebRequest *)0x0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  CStack_9.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_9.monitor = (MonitorData *)0x0;
-  CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_9.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_10 = 0xffffffff;
+  HStack_7._set = (HashSet_1_System_Int32_ *)0x0;
+  HStack_7._index = 0;
+  HStack_7._version = 0;
+  HStack_7._current = 0;
+  pWStack_8 = (WorldObjectClientRef *)0x0;
   this_00 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).removeSet;
-  piStack_11 = (int *)&stack0xffffff98;
-  puStack_4 = &stack0xffffff98;
-  if (this_00 == (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-code_?:
-    pUVar12 = (UnityWebRequest *)func_?(0);
-    pUVar13 = unaff_EDI;
-  }
-  else {
-    piStack_11 = (int *)&stack0xffffff98;
-    puStack_4 = &stack0xffffff98;
+  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
     System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
     HashSet_1_UnityEngine_Vector3__Clear
               (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-    this_01 = (List_1_UnityEngine_UIVertex_ *)(this->fields).targets;
-    if (this_01 == (List_1_UnityEngine_UIVertex_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-    List_1_UnityEngine_UIVertex__Clear
-              (this_01,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Clear__
-              );
-    pHVar14 = (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)(this->fields).potentialTargets;
-    if (pHVar14 == (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) goto code_?;
-    pHVar15 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-             FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                        &stack0xffffffa4,pHVar14,
-                        MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-    CStack_8.klass =
-         (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar15->hashset;
-    CStack_8.monitor = (MonitorData *)pHVar15->next;
-    CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar15->stamp;
-    CStack_8.fields.syncRoot = (Object *)pHVar15->current;
-    uStack_1 = 0;
-    while (cVar16 = func_?(), cVar16 != '\0') {
-      unaff_EDI = (UnityWebRequest *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            (&CStack_8,
-                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__
-                            );
-      bVar17 = OptimizedPerception_GetValidTarget
-                        (this,(int32_t)unaff_EDI,alliedTeam,&pWStack_6,(MethodInfo *)0x0);
-      if (bVar17 == 0) {
-        this_02 = (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)(this->fields).removeSet;
-        if (this_02 == (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)0x0)
-        goto code_?;
-        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-        UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                  (this_02,unaff_EDI,
-                   MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    pLVar9 = (this->fields).targets;
+    if (pLVar9 != (List_1_WorldObjectClientRef_ *)0x0) {
+      length = (MethodInfo *)(pLVar9->fields)._size;
+      piVar10 = &(pLVar9->fields)._version;
+      *piVar10 = *piVar10 + 1;
+      (pLVar9->fields)._size = 0;
+      if (0 < (int)length) {
+        mscorlib.dll::System::Array::Array_Clear
+                  ((Array *)(pLVar9->fields)._items,0,(int32_t)length,(MethodInfo *)0x0);
+        unaff_EDI = length;
       }
-      else {
-        pLVar18 = (this->fields).targets;
-        if (pLVar18 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)pLVar18,(UIPushOption__Enum)pWStack_6,
-                   MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_
-                  );
-      }
-    }
-    unaff_EDI = (UnityWebRequest *)0x0;
-    *piStack_11 = 0x7b;
-    uStack_1 = 0xffffffff;
-    func_?(&CStack_8,
-                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
-                   );
-    pUVar12 = pUStack_7;
-    pUVar13 = unaff_EDI;
-    if (pUStack_7 == (UnityWebRequest *)0x0) {
-      if (*piStack_11 == 0x7b) {
-        unaff_EDI = (UnityWebRequest *)0xffffffff;
-      }
-      pHVar14 = (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)(this->fields).removeSet;
-      if (pHVar14 != (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
-        pHVar15 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData
-                 ::FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                           ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                            &stack0xffffffa4,pHVar14,
+      pHVar11 = (HashSet_1_System_Object_ *)(this->fields).potentialTargets;
+      if (pHVar11 != (HashSet_1_System_Object_ *)0x0) {
+        pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                 HashSet_1_System_Object__GetEnumerator
+                           (&HStack_13,pHVar11,
                             MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__)
         ;
-        CStack_9.klass =
-             (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar15->hashset;
-        CStack_9.monitor = (MonitorData *)pHVar15->next;
-        CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar15->stamp
-        ;
-        CStack_9.fields.syncRoot = (Object *)pHVar15->current;
-        uStack_1 = 2;
-        while (cVar16 = func_?(), pUVar13 = pUStack_7, cVar16 != '\0') {
-          item = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           (&CStack_9,
-                            MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__
-                           );
-          pHVar14 = (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                   (this->fields).potentialTargets;
-          if (pHVar14 == (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0)
-          goto code_?;
-          System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-          FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__Remove
-                    (pHVar14,(FirstTimeEvent__Enum)item,
-                     MethodInfo__System__Collections__Generic__HashSet<int>__Remove_int_);
+        HStack_7._set = (HashSet_1_System_Int32_ *)pHVar12->_set;
+        HStack_7._index = pHVar12->_index;
+        HStack_7._version = pHVar12->_version;
+        HStack_7._current = (int32_t)pHVar12->_current;
+        HStack_13._version = 0;
+        uStack_1 = 1;
+        HStack_13._current = (Object *)&HStack_7;
+        while( true ) {
+          bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                  Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
+                            (&HStack_7,
+                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                            );
+          if (bVar14 == 0) break;
+          pOStack_15 = (Object *)HStack_7._current;
+          bVar14 = OptimizedPerception_GetValidTarget
+                            (this,HStack_7._current,alliedTeam,&pWStack_8,(MethodInfo *)0x0);
+          if (bVar14 == 0) {
+            pHVar11 = (HashSet_1_System_Object_ *)(this->fields).removeSet;
+            if (pHVar11 == (HashSet_1_System_Object_ *)0x0) goto code_?;
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            HashSet_1_System_Object__Add
+                      (pHVar11,pOStack_15,
+                       MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+          }
+          else {
+            pLVar9 = (this->fields).targets;
+            if (pLVar9 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)pLVar9,(Object *)pWStack_8,
+                       MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_
+                      );
+          }
         }
-        piStack_11[(int)((int)&unaff_EDI->klass + 1)] = 0xc1;
         uStack_1 = 0xffffffff;
-        func_?(&CStack_9,
-                        MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
-                       );
-        if (pUVar13 == (UnityWebRequest *)0x0) {
-          pLVar18 = (this->fields).targets;
-          *unaff_FS_OFFSET = uStack_3;
-          return pLVar18;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&HStack_7,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                   ,(MethodInfo *)in_stack_6);
+        uStack_1 = 0xffffffff;
+        pHVar11 = (HashSet_1_System_Object_ *)(this->fields).removeSet;
+        if (pHVar11 != (HashSet_1_System_Object_ *)0x0) {
+          pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                   HashSet_1_System_Object__GetEnumerator
+                             (&HStack_13,pHVar11,
+                              MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__
+                             );
+          HStack_7._set = (HashSet_1_System_Int32_ *)pHVar12->_set;
+          HStack_7._index = pHVar12->_index;
+          HStack_7._version = pHVar12->_version;
+          HStack_7._current = (int32_t)pHVar12->_current;
+          HStack_13._version = 0;
+          uStack_1 = 4;
+          HStack_13._current = (Object *)&HStack_7;
+          while( true ) {
+            bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                    Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
+                              (&HStack_7,
+                               MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                              );
+            if (bVar14 == 0) {
+              uStack_1 = 0xffffffff;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&HStack_7,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                         ,unaff_EDI);
+              pLVar9 = (this->fields).targets;
+              *unaff_FS_OFFSET = uStack_3;
+              return pLVar9;
+            }
+            this_01 = (this->fields).potentialTargets;
+            if (this_01 == (HashSet_1_System_Int32_ *)0x0) break;
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+            HashSet_1_System_Int32__Remove
+                      (this_01,HStack_7._current,
+                       MethodInfo__System__Collections__Generic__HashSet<int>__Remove_int_);
+          }
         }
-        goto code_?;
       }
-      goto code_?;
     }
   }
-  func_?(pUVar12,0,0);
 code_?:
-  func_?(pUVar13,0,0);
-  pcVar19 = (code *)swi(3);
-  pLVar18 = (List_1_WorldObjectClientRef_ *)(*pcVar19)();
-  return pLVar18;
+  uVar16 = func_?();
+  uVar16 = func_?(uVar16);
+  func_?(uVar16);
+  pcVar17 = (code *)swi(3);
+  pLVar9 = (List_1_WorldObjectClientRef_ *)(*pcVar17)();
+  return pLVar9;
 }
 
 
@@ -166,121 +165,122 @@ bool Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetValidTarge
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
+    func_?(&StringLiteral_Does_not_contain_woid_);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
     bVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_Contains
                       (pMVar1,woID,(MethodInfo *)0x0);
     if (bVar2 == 0) {
-      pOVar3 = (Object *)func_?();
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
+      str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&woID,(MethodInfo *)0x0);
+      message = (MethodInfo *)
+                mscorlib.dll::System::String::String_Concat_3
+                          (StringLiteral_Does_not_contain_woid_,str1,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        method = (MethodInfo *)&UNK_?;
         func_?();
       }
-      message = mscorlib.dll::System::String::String_Concat
-                          ((Object *)StringLiteral_Does_not_contain_woid_,pOVar3,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
-      }
+      wo = (WorldObjectClientRef **)&UNK_?;
+      method = message;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
                 ((Object *)message,(MethodInfo *)0x0);
-      uRam_? = 0;
-      return 0;
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
+      method = (MethodInfo *)wo;
+      *wo = (WorldObjectClientRef *)0x0;
+      wo = (WorldObjectClientRef **)&UNK_?;
       func_?();
     }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-      this_00 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                          (pMVar1,woID,(MethodInfo *)0x0);
-      *wo = this_00;
-      if (this_00 == (WorldObjectClientRef *)0x0) {
-        return 0;
-      }
-      pMVar4 = WorldObjectClientRef`1[MVRoundCube]::
-               WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                         ((WorldObjectClientRef_1_MVRoundCube_ *)this_00,
-                          MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                         );
-      if (pMVar4 == (MVRoundCube *)0x0) {
-        return 0;
-      }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar5 != (MVNetworkGame *)0x0) {
-        pSVar6 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                           ((DayNightCycle *)pMVar5,(MethodInfo *)0x0);
-        if (((*wo != (WorldObjectClientRef *)0x0) &&
-            (pMVar4 = WorldObjectClientRef`1[MVRoundCube]::
-                      WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                                ((WorldObjectClientRef_1_MVRoundCube_ *)*wo,
-                                 MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                ), pMVar4 != (MVRoundCube *)0x0)) &&
-           (pOVar3 = UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-                     TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-                     TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                               ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)pMVar4,
-                                (MethodInfo *)0x0), pSVar6 != (SkyParam *)0x0)) {
-          MVar7 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
-                            ((MVTeamManager *)pSVar6,(int32_t)pOVar3,(MethodInfo *)0x0);
+    else {
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar1 == (MVWorldObjectClientManager *)0x0) goto code_?;
+      woID = 0;
+      woID = (int32_t)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                                (pMVar1,0,(MethodInfo *)0x0);
+      ppWVar3 = wo;
+      *wo = (WorldObjectClientRef *)woID;
+      func_?();
+      if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
+        pOVar4 = WorldObjectClientRef`1[System::Object]::
+                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                           ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                            MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                           );
+        if (pOVar4 != (Object *)0x0) {
           pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar5 != (MVNetworkGame *)0x0) &&
-             (pSVar6 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                                 ((DayNightCycle *)pMVar5,(MethodInfo *)0x0),
-             pSVar6 != (SkyParam *)0x0)) {
-            iVar8 = MVTeamManager::MVTeamManager_TeamCount
-                              ((MVTeamManager *)pSVar6,(MethodInfo *)0x0);
-            if ((*wo != (WorldObjectClientRef *)0x0) &&
-               (pMVar4 = WorldObjectClientRef`1[MVRoundCube]::
-                         WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                                   ((WorldObjectClientRef_1_MVRoundCube_ *)*wo,
-                                    MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                   ), pMVar4 != (MVRoundCube *)0x0)) {
-              pIVar9 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
-                                  ((MVWorldObjectClient *)pMVar4,(MethodInfo *)0x0);
-              if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0
-                  ) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-                func_?(TypeInfo__UnityEngine__Object);
-              }
-              bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                ((Object_1 *)pIVar9,(Object_1 *)0x0,(MethodInfo *)0x0);
-              if (bVar2 == 0) {
-                return 0;
-              }
-              if (((*wo != (WorldObjectClientRef *)0x0) &&
-                  (pMVar4 = WorldObjectClientRef`1[MVRoundCube]::
-                            WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                                      ((WorldObjectClientRef_1_MVRoundCube_ *)*wo,
-                                       MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                      ), pMVar4 != (MVRoundCube *)0x0)) &&
-                 (pIVar9 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
-                                      ((MVWorldObjectClient *)pMVar4,(MethodInfo *)0x0),
-                 pIVar9 != (InteractionDataHandlerBase *)0x0)) {
-                bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                                  ((Behaviour *)pIVar9,(MethodInfo *)0x0);
-                return bVar2 & (MVar7 != alliedTeam || iVar8 < 2);
+          if (pMVar5 != (MVNetworkGame *)0x0) {
+            pMVar6 = (pMVar5->fields).teamManager;
+            if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
+              pOVar4 = WorldObjectClientRef`1[System::Object]::
+                       WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                                 ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                                  MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                                 );
+              if ((pOVar4 != (Object *)0x0) && (pMVar6 != (MVTeamManager *)0x0)) {
+                MVar7 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
+                                  (pMVar6,(int32_t)pOVar4[4].monitor,(MethodInfo *)0x0);
+                pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar5 != (MVNetworkGame *)0x0) &&
+                   (pMVar6 = (pMVar5->fields).teamManager, pMVar6 != (MVTeamManager *)0x0)) {
+                  iVar8 = MVTeamManager::MVTeamManager_TeamCount(pMVar6,(MethodInfo *)0x0);
+                  bVar9 = MVar7 != alliedTeam;
+                  if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
+                    pMVar10 = (MVWorldObjectClient *)
+                              WorldObjectClientRef`1[System::Object]::
+                              WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                                        ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                                        );
+                    if (pMVar10 != (MVWorldObjectClient *)0x0) {
+                      pIVar11 = MVWorldObjectClient::
+                                MVWorldObjectClient_get_InteractionDataHandlerBase
+                                          (pMVar10,(MethodInfo *)0x0);
+                      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                        func_?(TypeInfo__UnityEngine__Object);
+                      }
+                      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::
+                              Object_1_op_Inequality
+                                        ((Object_1 *)pIVar11,(Object_1 *)0x0,(MethodInfo *)0x0);
+                      if (bVar2 == 0) {
+                        return 0;
+                      }
+                      if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
+                        pMVar10 = (MVWorldObjectClient *)
+                                  WorldObjectClientRef`1[System::Object]::
+                                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                                            ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                                            );
+                        if (pMVar10 != (MVWorldObjectClient *)0x0) {
+                          pIVar11 = MVWorldObjectClient::
+                                    MVWorldObjectClient_get_InteractionDataHandlerBase
+                                              (pMVar10,(MethodInfo *)0x0);
+                          if (pIVar11 != (InteractionDataHandlerBase *)0x0) {
+                            bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
+                                    Behaviour_get_enabled((Behaviour *)pIVar11,(MethodInfo *)0x0);
+                            return bVar2 & (iVar8 < 2 || bVar9);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
+          goto code_?;
         }
       }
     }
+    return 0;
   }
-  func_?(0);
-  pcVar10 = (code *)swi(3);
-  bVar2 = (*pcVar10)();
+code_?:
+  func_?();
+  pcVar12 = (code *)swi(3);
+  bVar2 = (*pcVar12)();
   return bVar2;
 }
 
@@ -307,84 +307,82 @@ void Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_UpdatePotenti
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CollisionDetectionGlobalBuffers);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Player);
     cRam_? = '\x01';
   }
   this_00 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).potentialTargets;
-  if (this_00 == (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-code_?:
-    func_?(0);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-  HashSet_1_UnityEngine_Vector3__Clear
-            (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-  uVar2._0_4_ = (this->fields).position.x;
-  uStack_3 = (this->fields).position.y;
-  fVar4 = (this->fields).position.z;
-  radius = (this->fields).radius;
-  if ((((uint)(TypeInfo__CollisionDetectionGlobalBuffers->vtable).Equals.methodPtr & 0x2000000) != 0
-      ) && ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CollisionDetectionGlobalBuffers);
-  }
-  results = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
-  iVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                    (StringLiteral_Player,(MethodInfo *)0x0);
-  position.z = fVar4;
-  uStack_3 = (undefined4)((ulonglong)uVar2 >> 0x20);
-  position.x = (float)(undefined4)uVar2;
-  position.y = (float)uStack_3;
-  iVar5 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
-                    (position,radius,results,1 << ((byte)iVar5 & 0x1f),(MethodInfo *)0x0);
-  iVar6 = 0;
-  if (0 < iVar5) {
-    do {
-      if ((((uint)(TypeInfo__CollisionDetectionGlobalBuffers->vtable).Equals.methodPtr & 0x2000000)
-           != 0) && ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_started == 0)) {
-        func_?(TypeInfo__CollisionDetectionGlobalBuffers);
-      }
-      if ((TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer ==
-           (Collider__Array *)0x0) ||
-         (this_02 = (Component_1 *)func_?(iVar6), this_02 == (Component_1 *)0x0))
-      goto code_?;
-      t = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                    (this_02,(MethodInfo *)0x0);
-      this_03 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
-                          (t,(MethodInfo *)0x0);
-      if (this_03 != (MVWorldObjectClient *)0x0) {
-        item = (UnityWebRequest *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_03,(MethodInfo *)0x0)
-        ;
-        this_04 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
-                            (this_03,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
+  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+    HashSet_1_UnityEngine_Vector3__Clear
+              (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+    position = (this->fields).position;
+    radius = (this->fields).radius;
+    if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__CollisionDetectionGlobalBuffers);
+    }
+    pCVar1 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
+    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                      (StringLiteral_Player,(MethodInfo *)0x0);
+    puVar3 = (undefined *)
+             UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
+                       (position,radius,pCVar1,1 << ((byte)iVar2 & 0x1f),(MethodInfo *)0x0);
+    uVar4 = 0;
+    if (0 < (int)puVar3) {
+      iVar5 = 0x10;
+      do {
+        if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__CollisionDetectionGlobalBuffers);
         }
-        bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_04,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar7 != 0) {
-          if (this_04 == (InteractionDataHandlerBase *)0x0) goto code_?;
-          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                            ((Behaviour *)this_04,(MethodInfo *)0x0);
+        pCVar1 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
+        if (pCVar1 == (Collider__Array *)0x0) goto code_?;
+        if (pCVar1->max_length <= uVar4) goto code_?;
+        this_01 = *(Component **)((int)pCVar1->vector + iVar5 + -0x10);
+        if (this_01 == (Component *)0x0) goto code_?;
+        t = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      (this_01,(MethodInfo *)0x0);
+        this_03 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
+                            (t,(MethodInfo *)0x0);
+        if (this_03 != (MVWorldObjectClient *)0x0) {
+          pOStack_6 = (Object_1__Class *)(this_03->fields)._.id;
+          this_04 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
+                              (this_03,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            pOStack_6 = TypeInfo__UnityEngine__Object;
+            puVar3 = &UNK_?;
+            func_?();
+          }
+          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                            ((Object_1 *)this_04,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar7 != 0) {
-            this_01 = (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)
-                      (this->fields).potentialTargets;
-            if (this_01 == (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)0x0)
-            goto code_?;
-            System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-            UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                      (this_01,item,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_
-                      );
+            if (this_04 == (InteractionDataHandlerBase *)0x0) goto code_?;
+            bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+                              ((Behaviour *)this_04,(MethodInfo *)0x0);
+            if (bVar7 != 0) {
+              this_02 = (HashSet_1_System_Object_ *)(this->fields).potentialTargets;
+              if (this_02 == (HashSet_1_System_Object_ *)0x0) goto code_?;
+              System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+              HashSet_1_System_Object__Add
+                        (this_02,(Object *)pOStack_6,
+                         MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+            }
           }
         }
-      }
-      iVar6 = iVar6 + 1;
-    } while (iVar6 < iVar5);
+        uVar4 = uVar4 + 1;
+        iVar5 = iVar5 + 4;
+      } while ((int)uVar4 < (int)puVar3);
+    }
+    return;
   }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -396,30 +394,49 @@ void Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    func_?(&MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
     cRam_? = '\x01';
   }
-  pHVar1 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)
+  pHVar1 = (HashSet_1_UnityEngine_Vector3_ *)
            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (this->fields).potentialTargets = (HashSet_1_System_Int32_ *)pHVar1;
-  pHVar1 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)
-           func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (this->fields).removeSet = (HashSet_1_System_Int32_ *)pHVar1;
-  method_00 = TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>;
-  this_00 = (List_1_ThemeAttributes_ThemeAttribute_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[ThemeAttributes::ThemeAttribute]::
-  List_1_ThemeAttributes_ThemeAttribute___ctor
-            (this_00,0x10,
-             MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_);
-  (this->fields).targets = (List_1_WorldObjectClientRef_ *)this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  if (pHVar1 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+    HashSet_1_UnityEngine_Vector3___ctor
+              (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    (this->fields).potentialTargets = (HashSet_1_System_Int32_ *)pHVar1;
+    func_?(&(this->fields).potentialTargets,pHVar1);
+    pHVar1 = (HashSet_1_UnityEngine_Vector3_ *)
+             func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+    if (pHVar1 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+      HashSet_1_UnityEngine_Vector3___ctor
+                (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+      (this->fields).removeSet = (HashSet_1_System_Int32_ *)pHVar1;
+      func_?(&(this->fields).removeSet,pHVar1);
+      this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                func_?(TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
+      if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+        UnitySynchronizationContext+WorkRequest]::
+        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
+                  (this_00,0x10,
+                   MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_);
+        method_00 = (MethodInfo *)&(this->fields).targets;
+        (this->fields).targets = (List_1_WorldObjectClientRef_ *)this_00;
+        func_?(method_00,this_00);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

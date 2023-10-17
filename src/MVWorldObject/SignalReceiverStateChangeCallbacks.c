@@ -7,30 +7,23 @@ void MVWorldObject.dll::SignalReceiverStateChangeCallbacks::
                LogicObjectManager *logicObjectManager,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (isHot == 0) {
-    arg1 = (wasHot == 0) + 2;
+    cVar1 = (wasHot == 0) + '\x02';
   }
   else {
-    arg1 = (uint)wasHot;
+    cVar1 = wasHot != 0;
   }
-  this_00 = (Action_2_Int32_Object_ *)(this->fields).OnInputStateUpdate;
-  if (this_00 != (Action_2_Int32_Object_ *)0x0) {
-    System.Core.dll::System::Action`2[Int32,Object]::Action_2_Int32_Object__Invoke
-              (this_00,arg1,(Object *)logicObjectManager,
-               MethodInfo__System__Action<LogicInputState,_LogicObjectManager>__Invoke_LogicInputState__LogicObjectManager_
+  if ((this->fields).OnInputStateUpdate != (Action_2_LogicInputState_LogicObjectManager_ *)0x0) {
+    pAVar2 = (this->fields).OnInputStateUpdate;
+    (*(pAVar2->fields)._._.invoke_impl)
+              ((pAVar2->fields)._._.method_code,cVar1,logicObjectManager,(pAVar2->fields)._._.method
               );
   }
-  this_01 = (Action_3_Boolean_Boolean_Object_ *)(this->fields).OnSignal;
-  if (this_01 != (Action_3_Boolean_Boolean_Object_ *)0x0) {
-    System.Core.dll::System::Action`3[Boolean,Boolean,Object]::
-    Action_3_Boolean_Boolean_Object__Invoke
-              (this_01,isHot,wasHot,(Object *)logicObjectManager,
-               MethodInfo__System__Action<bool,_bool,_LogicObjectManager>__Invoke_bool__bool__LogicObjectManager_
-              );
+  if ((this->fields).OnSignal != (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) {
+    pAVar3 = (this->fields).OnSignal;
+    (*(pAVar3->fields)._._.invoke_impl)
+              ((pAVar3->fields)._._.method_code,_isHot,_wasHot,logicObjectManager,
+               (pAVar3->fields)._._.method);
   }
   return;
 }
@@ -42,14 +35,16 @@ void MVWorldObject.dll::SignalReceiverStateChangeCallbacks::SignalReceiverStateC
                (SignalReceiverStateChangeCallbacks *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._inputSignalReceiverBase;
-  if (pIVar1 != (InputSignalReceiverBase *)0x0) {
-    (pIVar1->fields).firstFrame = 1;
+  puStack_1 = &stack0xfffffffc;
+  pIVar2 = (this->fields)._inputSignalReceiverBase;
+  if (pIVar2 != (InputSignalReceiverBase *)0x0) {
+    (pIVar2->fields).firstFrame = 1;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -62,48 +57,38 @@ void MVWorldObject.dll::SignalReceiverStateChangeCallbacks::
 
 {
   this_00 = (this->fields)._inputSignalReceiverBase;
-  if (this_00 == (InputSignalReceiverBase *)0x0) {
-    func_?(0);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pLVar2 = (this_00->fields).logicEvaluateSignalComponentBase;
-  if (pLVar2 != (LogicEvaluateSignalComponentBase *)0x0) {
-    if ((pLVar2->fields).signalsToEvaluate == 0) {
+  if ((this_00 != (InputSignalReceiverBase *)0x0) &&
+     (pLVar1 = (this_00->fields).logicEvaluateSignalComponentBase,
+     pLVar1 != (LogicEvaluateSignalComponentBase *)0x0)) {
+    if ((pLVar1->fields).signalsToEvaluate == 0) {
       InputSignalReceiverBase::InputSignalReceiverBase_SendSignal(this_00,isHot,(MethodInfo *)0x0);
       return;
     }
-    if (pLVar2 != (LogicEvaluateSignalComponentBase *)0x0) {
-      (*(code *)(pLVar2->klass->vtable).__unknown_1.method)(pLVar2,_isHot,pLVar2->klass[1]._0.image)
-      ;
-      pLVar2 = (this_00->fields).logicEvaluateSignalComponentBase;
-      if (pLVar2 != (LogicEvaluateSignalComponentBase *)0x0) {
-        pLVar3 = &pLVar2->fields;
-        pLVar3->evaluatedSignals = pLVar3->evaluatedSignals + 1;
-        pLVar2 = (this_00->fields).logicEvaluateSignalComponentBase;
-        if (pLVar2 != (LogicEvaluateSignalComponentBase *)0x0) {
-          if ((pLVar2->fields).evaluatedSignals != (pLVar2->fields).signalsToEvaluate) {
-            return;
-          }
-          if (pLVar2 != (LogicEvaluateSignalComponentBase *)0x0) {
-            (pLVar2->fields).evaluatedSignals = 0;
-            pLVar2 = (this_00->fields).logicEvaluateSignalComponentBase;
-            if (pLVar2 != (LogicEvaluateSignalComponentBase *)0x0) {
-              isHot_00 = (*(code *)(pLVar2->klass->vtable).__unknown.method)
-                                   (pLVar2,(pLVar2->klass->vtable).__unknown_1.methodPtr);
-              InputSignalReceiverBase::InputSignalReceiverBase_SendSignal
-                        (this_00,isHot_00,(MethodInfo *)0x0);
-              return;
-            }
-          }
+    (*(pLVar1->klass->vtable).__unknown_1.methodPtr)
+              (pLVar1,_isHot,(pLVar1->klass->vtable).__unknown_1.method);
+    pLVar1 = (this_00->fields).logicEvaluateSignalComponentBase;
+    if (pLVar1 != (LogicEvaluateSignalComponentBase *)0x0) {
+      pLVar2 = &pLVar1->fields;
+      pLVar2->evaluatedSignals = pLVar2->evaluatedSignals + 1;
+      pLVar1 = (this_00->fields).logicEvaluateSignalComponentBase;
+      if (pLVar1 != (LogicEvaluateSignalComponentBase *)0x0) {
+        if ((pLVar1->fields).evaluatedSignals == (pLVar1->fields).signalsToEvaluate) {
+          (pLVar1->fields).evaluatedSignals = 0;
+          pLVar1 = (this_00->fields).logicEvaluateSignalComponentBase;
+          if (pLVar1 == (LogicEvaluateSignalComponentBase *)0x0) goto code_?;
+          isHot_00 = (*(pLVar1->klass->vtable).__unknown.methodPtr)
+                               (pLVar1,(pLVar1->klass->vtable).__unknown.method);
+          InputSignalReceiverBase::InputSignalReceiverBase_SendSignal
+                    (this_00,isHot_00,(MethodInfo *)0x0);
         }
+        return;
       }
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -116,43 +101,55 @@ void MVWorldObject.dll::SignalReceiverStateChangeCallbacks::SignalReceiverStateC
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
+    func_?(&
+                    MethodInfo__SignalReceiverStateChangeCallbacks__HandleOnSignal_bool__bool__LogicObjectManager_
+                   );
     cRam_? = '\x01';
   }
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._inputSignalReceiverBase = _inputSignalReceiverBase;
-  if (_inputSignalReceiverBase != (InputSignalReceiverBase *)0x0) {
-    pAVar1 = (_inputSignalReceiverBase->fields).OnSignal;
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  func_?(&this->fields,_inputSignalReceiverBase);
+  pIVar1 = (this->fields)._inputSignalReceiverBase;
+  if (pIVar1 != (InputSignalReceiverBase *)0x0) {
+    pAVar2 = (pIVar1->fields).OnSignal;
+    this_00 = (Action_3_Boolean_Boolean_Object_ *)
               func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,
-               MethodInfo__SignalReceiverStateChangeCallbacks__HandleOnSignal_bool__bool__LogicObjectManager_
-               ,
-               MethodInfo__System__Action<bool,_bool,_LogicObjectManager>__Action_System__Object__void__
-              );
-    pAStack2 =
-         (Action_3_Boolean_Boolean_LogicObjectManager_ *)
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    pAVar1 = (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0;
-    if (pAStack2 != (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) {
-      if (pAStack2->klass == TypeInfo__System__Action<bool,_bool,_LogicObjectManager>) {
-        pAVar1 = pAStack2;
+    unaff_EBX = (Action_3_Boolean_Boolean_LogicObjectManager___Class *)0x0;
+    if (this_00 != (Action_3_Boolean_Boolean_Object_ *)0x0) {
+      mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::Action_3_Boolean_Boolean_Object___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__SignalReceiverStateChangeCallbacks__HandleOnSignal_bool__bool__LogicObjectManager_
+                 ,(MethodInfo *)0x0);
+      pAStack3 =
+           (Action_3_Boolean_Boolean_LogicObjectManager___Class *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+      unaff_EBX = TypeInfo__System__Action<bool,_bool,_LogicObjectManager>;
+      if (pAStack3 == (Action_3_Boolean_Boolean_LogicObjectManager___Class *)0x0) {
+        (pIVar1->fields).OnSignal = (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0;
+        func_?();
+        return;
       }
       pAStack3 = TypeInfo__System__Action<bool,_bool,_LogicObjectManager>;
-      if (pAVar1 == (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) goto code_?;
+      pAVar2 = (Action_3_Boolean_Boolean_LogicObjectManager_ *)func_?();
+      if (pAVar2 != (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) {
+        (pIVar1->fields).OnSignal = pAVar2;
+        unaff_EBX = TypeInfo__System__Action<bool,_bool,_LogicObjectManager>;
+        pAStack3 = TypeInfo__System__Action<bool,_bool,_LogicObjectManager>;
+        pAStack3 = (Action_3_Boolean_Boolean_LogicObjectManager___Class *)func_?();
+        if (pAStack3 != (Action_3_Boolean_Boolean_LogicObjectManager___Class *)0x0) {
+          func_?();
+          return;
+        }
+      }
+      goto code_?;
     }
-    (_inputSignalReceiverBase->fields).OnSignal = pAVar1;
-    return;
   }
-  func_?(0);
-  pAStack2 = extraout_ECX;
-  pAStack3 = extraout_EDX;
+  func_?();
 code_?:
+  pAStack3 = unaff_EBX;
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -167,16 +164,18 @@ bool MVWorldObject.dll::SignalReceiverStateChangeCallbacks::
                (SignalReceiverStateChangeCallbacks *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._inputSignalReceiverBase;
-  if (pIVar1 != (InputSignalReceiverBase *)0x0) {
-    bVar2 = (*(code *)(pIVar1->klass->vtable).__unknown.method)
-                      (pIVar1,(pIVar1->klass->vtable).__unknown_1.methodPtr);
-    return bVar2;
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_2 = (this->fields)._inputSignalReceiverBase;
+  if (pIStack_2 != (InputSignalReceiverBase *)0x0) {
+    pMStack_1 = (pIStack_2->klass->vtable).__unknown.method;
+    bVar3 = (*(pIStack_2->klass->vtable).__unknown.methodPtr)();
+    return bVar3;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  bVar3 = (*pcVar6)();
+  return bVar3;
 }
 
 
@@ -187,13 +186,15 @@ bool MVWorldObject.dll::SignalReceiverStateChangeCallbacks::
                (SignalReceiverStateChangeCallbacks *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._inputSignalReceiverBase;
-  if (pIVar1 != (InputSignalReceiverBase *)0x0) {
-    return (pIVar1->fields)._DefaultInput_k__BackingField;
+  puStack_1 = &stack0xfffffffc;
+  pIVar2 = (this->fields)._inputSignalReceiverBase;
+  if (pIVar2 != (InputSignalReceiverBase *)0x0) {
+    return (pIVar2->fields)._DefaultInput_k__BackingField;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 

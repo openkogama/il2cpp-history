@@ -5,137 +5,79 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler_InvokeButton
                (BackButtonHandler *this,MethodInfo *method)
 
 {
-  pIVar1 = in_stack_2;
-  this_00 = (this->fields).invokeButton;
-  if (this_00 == (Button *)0x0) {
-code_?:
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  bVar4 = AvatarMotor::AvatarMotor_get_IsMovementLocked((AvatarMotor *)this_00,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
-    return;
-  }
-  this_01 = (HoverCraftMotor *)(this->fields).invokeButton;
-  if ((this_01 == (HoverCraftMotor *)0x0) ||
-     (pIVar5 = HoverCraftMotor::HoverCraftMotor_get_VehicleCamera(this_01,(MethodInfo *)0x0),
-     pIVar5 == (IVehicleCamera *)0x0)) goto code_?;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (*(char *)&(in_stack_2->_0).byval_arg.data != '\0') {
-    this_02 = (PersistentCallGroup *)(in_stack_2->_0).namespaze;
-    if (this_02 == (PersistentCallGroup *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
-    PersistentCallGroup_Initialize
-              (this_02,(InvokableCallList *)(in_stack_2->_0).name,
-               (UnityEventBase *)in_stack_2,(MethodInfo *)0x0);
-    *(undefined1 *)&(in_stack_2->_0).byval_arg.data = 0;
-  }
-  pcVar6 = (in_stack_2->_0).name;
-  if (pcVar6 == (char *)0x0) goto code_?;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (pcVar6[0x14] != '\0') {
-    if (*(List_1_UnityEngine_UIVertex_ **)(pcVar6 + 0x10) == (List_1_UnityEngine_UIVertex_ *)0x0)
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-    List_1_UnityEngine_UIVertex__Clear
-              (*(List_1_UnityEngine_UIVertex_ **)(pcVar6 + 0x10),
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__Clear__
-              );
-    if (*(List_1_VoxelHit_ **)(pcVar6 + 0x10) == (List_1_VoxelHit_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__AddRange
-              (*(List_1_VoxelHit_ **)(pcVar6 + 0x10),*(IEnumerable_1_VoxelHit_ **)(pcVar6 + 8),
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-              );
-    if (*(List_1_VoxelHit_ **)(pcVar6 + 0x10) == (List_1_VoxelHit_ *)0x0) goto code_?;
-    in_stack_2 = *(InvokableCall__Class **)(pcVar6 + 0xc);
-    mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__AddRange
-              (*(List_1_VoxelHit_ **)(pcVar6 + 0x10),(IEnumerable_1_VoxelHit_ *)in_stack_2,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-              );
-    pcVar6[0x14] = '\0';
-  }
-  this_04 = *(List_1_UnityEngine_EventSystems_IEventSystemHandler_ **)(pcVar6 + 0x10);
-  method = (MethodInfo *)0x0;
-  if (this_04 != (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) {
-    do {
-      while( true ) {
-        pOVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_04,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Count__
-                           );
-        if ((int)pOVar7 <= (int)method) {
-          return;
-        }
-        pIVar8 = (InvokableCall *)
-                 mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                 IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                           (this_04,(int32_t)method,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                           );
-        if (pIVar8 == (InvokableCall *)0x0) break;
-        bVar9 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
-        if (((pIVar8->klass->_1).naturalAligment < bVar9) ||
-           (pIVar1 = in_stack_2,
-           (pIVar8->klass->_1).typeHierarchy[bVar9 - 1] !=
-           (Il2CppClass *)TypeInfo__UnityEngine__Events__InvokableCall)) {
-          bVar10 = false;
-        }
-        else {
-          bVar10 = true;
-        }
-        this_03 = (InvokableCall *)0x0;
-        if (bVar10) {
-          this_03 = pIVar8;
-        }
-        if (this_03 == (InvokableCall *)0x0) break;
-code_?:
-        UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                  (this_03,(MethodInfo *)0x0);
-        method = (MethodInfo *)((int)&method->methodPointer + 1);
+  pBVar1 = (this->fields).invokeButton;
+  if (pBVar1 != (Button *)0x0) {
+    if ((pBVar1->fields)._.m_Interactable == 0) {
+      return;
+    }
+    this_00 = (pBVar1->fields).m_OnClick;
+    if (this_00 != (Button_ButtonClickedEvent *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        cRam_? = '\x01';
       }
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-      IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                (this_04,(int32_t)method,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                );
-      in_stack_2 = TypeInfo__UnityEngine__Events__InvokableCall;
-      this_03 = (InvokableCall *)func_?();
-      if (this_03 != (InvokableCall *)0x0) goto code_?;
-      pIVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                          (this_04,(int32_t)method,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                          );
-      iVar12._0_2_ = (pIVar1->_0).byval_arg.attrs;
-      iVar12._2_1_ = (pIVar1->_0).byval_arg.type;
-      iVar12._3_1_ = (pIVar1->_0).byval_arg.field_0x7;
-      if (iVar12 == 0) {
-        uVar13 = func_?();
-        (pIVar1->_0).byval_arg.attrs = (short)uVar13;
-        (pIVar1->_0).byval_arg.type = (char)((uint)uVar13 >> 0x10);
-        (pIVar1->_0).byval_arg.field_0x7 = (char)((uint)uVar13 >> 0x18);
-      }
-      if (pIVar11 == (IEventSystemHandler *)0x0) break;
-      this_04 = *(List_1_UnityEngine_EventSystems_IEventSystemHandler_ **)
-                 &(pIVar1->_0).byval_arg.attrs;
-      func_?(4);
-      method = (MethodInfo *)((int)&method->methodPointer + 1);
-    } while( true );
-  }
+      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEventBase::
+                UnityEventBase_PrepareInvoke((UnityEventBase *)this_00,(MethodInfo *)0x0);
+      index = 0;
+      if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        do {
+          while( true ) {
+            if ((this_01->fields)._size <= index) {
+              return;
+            }
+            RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (this_01,index,
+                               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                              );
+            if ((((RVar2 == (RegexCharClass_SingleRange)0x0) ||
+                 (*(byte *)(*(int *)RVar2 + 0xb4) <
+                  (TypeInfo__UnityEngine__Events__InvokableCall->_1).typeHierarchyDepth)) ||
+                (*(InvokableCall__Class **)
+                  (*(int *)(*(int *)RVar2 + 100) + -4 +
+                  (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).typeHierarchyDepth * 4)
+                 != TypeInfo__UnityEngine__Events__InvokableCall)) ||
+               (RVar2 == (RegexCharClass_SingleRange)0x0)) break;
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                      ((InvokableCall *)RVar2,(MethodInfo *)0x0);
+            index = index + 1;
+          }
+          mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+          RegexCharClass+SingleRange]::
+          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                    (this_01,index,
+                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                    );
+          RVar2 = (RegexCharClass_SingleRange)func_?();
+          if (RVar2 != (RegexCharClass_SingleRange)0x0) goto code_?;
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_01,index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                            );
+          if ((this_00->fields)._.m_InvokeArray == (Object__Array *)0x0) {
+            pOVar3 = (Object__Array *)func_?();
+            (this_00->fields)._.m_InvokeArray = pOVar3;
+            func_?();
+          }
+          if (RVar2 == (RegexCharClass_SingleRange)0x0) break;
+          func_?();
+          index = index + 1;
+        } while( true );
+      }
+    }
+  }
+  uVar4 = func_?(&stack0xffffffe8);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -147,74 +89,73 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BackButtonManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BackButtonManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BackButtonManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BackButtonManager);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BackButtonManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__RemoveAt_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Item_int_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BackButtonManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BackButtonManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BackButtonManager);
   }
   pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
   if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                        MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Count__
-                       );
-    index = (undefined1 *)((int)&pOVar2[-1].monitor + 3);
-    while( true ) {
-      if ((int)index < 1) {
+    index = (pLVar1->fields)._size;
+    do {
+      index = index + -1;
+      if (index < 1) {
         return;
       }
-      if ((((uint)(TypeInfo__BackButtonManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__BackButtonManager->_1).cctor_started == 0)) {
+      if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__BackButtonManager);
       }
-      pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
-      if ((pLVar1 == (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) ||
-         (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                   IEventSystemHandler]::
-                   List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                             ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                              (int32_t)index,
-                              MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Item_int_
-                             ), pIVar3 == (IEventSystemHandler *)0x0)) goto code_?;
-      x = pIVar3[1].klass;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?();
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                TypeInfo__BackButtonManager->static_fields->subscribers;
+      if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+         (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_00,index,
+                             MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Item_int_
+                            ), RVar2 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+      x = *(Object_1 **)((int)RVar2 + 8);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)x,(Object_1 *)this,(MethodInfo *)0x0);
-      if (bVar4 != 0) break;
-      index = index + -1;
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        (x,(Object_1 *)this,(MethodInfo *)0x0);
+    } while (bVar3 == 0);
+    if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BackButtonManager);
     }
-    if ((((uint)(TypeInfo__BackButtonManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BackButtonManager->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_00 = (List_1_MVPlayer_ *)TypeInfo__BackButtonManager->static_fields->subscribers;
-    if (this_00 != (List_1_MVPlayer_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[MVPlayer]::List_1_MVPlayer__RemoveAt
-                (this_00,(int32_t)index,
+    pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
+    if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__RemoveAt
+                ((List_1_System_Object_ *)pLVar1,index,
                  MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__RemoveAt_int_
                 );
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -226,24 +167,30 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler_OnEnable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__BackButtonHandler__InvokeButton__);
+    func_?(&TypeInfo__BackButtonManager);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
   state = (this->fields).onKeyState;
   button = (this->fields).kogamaControl;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__BackButtonHandler__InvokeButton__,(MethodInfo *)0x0)
-  ;
-  if ((((uint)(TypeInfo__BackButtonManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BackButtonManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__BackButtonManager);
+  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__BackButtonHandler__InvokeButton__,
+               (MethodInfo *)0x0);
+    if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BackButtonManager);
+    }
+    BackButtonManager::BackButtonManager_Subscribe
+              (this,button,state,(UnityAction *)this_00,(MethodInfo *)0x0);
+    return;
   }
-  BackButtonManager::BackButtonManager_Subscribe
-            (this,button,state,(UnityAction *)this_00,(MethodInfo *)0x0);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -257,11 +204,10 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler__ctor
   (this->fields).kogamaControl = 0x2a;
   (this->fields).onKeyState = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

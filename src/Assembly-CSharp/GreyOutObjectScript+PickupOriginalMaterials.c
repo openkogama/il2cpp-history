@@ -7,44 +7,44 @@ String * Assembly-CSharp.dll::GreyOutObjectScript+PickupOriginalMaterials::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&StringLiteral_meshRenderer_enabled___0__);
+    func_?(&StringLiteral_meshRendererEnabled___0__);
+    func_?(&StringLiteral_GameObject___0__);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar1 = TypeInfo__System__String->static_fields->Empty;
-  pMVar2 = (this->fields).meshRenderer;
-  if (pMVar2 != (MeshRenderer *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)pMVar2,(MethodInfo *)0x0);
+  pMVar1 = (this->fields).meshRenderer;
+  if (pMVar1 != (MeshRenderer *)0x0) {
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pMVar1,(MethodInfo *)0x0);
     if (this_00 != (GameObject *)0x0) {
-      pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+      pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                          ((Object_1 *)this_00,(MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::String::String_Format
-                         (StringLiteral_GameObject___0__,(Object *)pSVar3,(MethodInfo *)0x0);
-      pSVar1 = mscorlib.dll::System::String::String_Concat_2(pSVar1,pSVar3,(MethodInfo *)0x0);
-      pMVar2 = (this->fields).meshRenderer;
-      if (pMVar2 != (MeshRenderer *)0x0) {
+      pSVar2 = mscorlib.dll::System::String::String_Format
+                         (StringLiteral_GameObject___0__,(Object *)pSVar2,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (::StringLiteral__,pSVar2,(MethodInfo *)0x0);
+      pMVar1 = (this->fields).meshRenderer;
+      if (pMVar1 != (MeshRenderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                  ((Renderer *)pMVar2,(MethodInfo *)0x0);
-        pOVar4 = (Object *)func_?();
-        pSVar3 = mscorlib.dll::System::String::String_Format
-                           (StringLiteral_meshRenderer_enabled___0__,pOVar4,(MethodInfo *)0x0);
-        pSVar1 = mscorlib.dll::System::String::String_Concat_2(pSVar1,pSVar3,(MethodInfo *)0x0);
-        pOVar4 = (Object *)func_?();
-        pSVar3 = mscorlib.dll::System::String::String_Format
-                           (StringLiteral_meshRendererEnabled___0__,pOVar4,(MethodInfo *)0x0);
-        pSVar1 = mscorlib.dll::System::String::String_Concat_2(pSVar1,pSVar3,(MethodInfo *)0x0);
-        return pSVar1;
+                  ((Renderer *)pMVar1,(MethodInfo *)0x0);
+        pOVar3 = (Object *)func_?();
+        pSVar4 = mscorlib.dll::System::String::String_Format
+                           (StringLiteral_meshRenderer_enabled___0__,pOVar3,(MethodInfo *)0x0);
+        pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar4,(MethodInfo *)0x0);
+        pOVar3 = (Object *)func_?();
+        pSVar4 = mscorlib.dll::System::String::String_Format
+                           (StringLiteral_meshRendererEnabled___0__,pOVar3,(MethodInfo *)0x0);
+        pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar4,(MethodInfo *)0x0);
+        return pSVar2;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar5)();
-  return pSVar1;
+  pSVar2 = (String *)(*pcVar5)();
+  return pSVar2;
 }
 
 
@@ -57,12 +57,15 @@ void Assembly-CSharp.dll::GreyOutObjectScript+PickupOriginalMaterials::
 
 {
   (this->fields).meshRendererEnabled = 1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).meshRenderer = meshRenderer;
+  func_?(&this->fields,meshRenderer);
   if (meshRenderer != (MeshRenderer *)0x0) {
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
                        ((Renderer *)meshRenderer,(MethodInfo *)0x0);
     (this->fields).originalMaterials = pMVar1;
+    func_?(&(this->fields).originalMaterials,pMVar1);
     return;
   }
   func_?();

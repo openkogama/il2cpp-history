@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopCubeModelingToolsController : MonoBehaviour
 {
@@ -27,7 +27,6 @@ public class DesktopCubeModelingToolsController : MonoBehaviour
 	[SerializeField]
 	private float enabledAlpha;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private CubeModelingEvent _ActiveTool_k__BackingField;
 
 	// Properties
@@ -48,10 +47,10 @@ public class DesktopCubeModelingToolsController : MonoBehaviour
 	public void SetAllToTransparent();
 	private void SetAlpha(Image image, float alpha);
 	[CompilerGenerated]
-	private void _SetupButtons_m__0();
+	private void _SetupButtons_b__13_0();
 	[CompilerGenerated]
-	private void _SetupButtons_m__1();
+	private void _SetupButtons_b__13_1();
 	[CompilerGenerated]
-	private void _SetupButtons_m__2();
+	private void _SetupButtons_b__13_2();
 }
 

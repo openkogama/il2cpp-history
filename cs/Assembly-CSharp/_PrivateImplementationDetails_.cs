@@ -6,76 +6,79 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [CompilerGenerated]
-internal static class _PrivateImplementationDetails_
+internal sealed class _PrivateImplementationDetails_
 {
 	// Fields
-	internal static readonly _ArrayType_40 _field_88821E1DF26D78EB18754B6C63B782777B7168F7;
-	internal static readonly _ArrayType_40 _field_E59613C63D9245F8B2CF85740BCAEDBBF24B0851;
-	internal static readonly _ArrayType_40 _field_162A7A46BCD84A244E3F402C23AB0DBF2624532C;
-	internal static readonly _ArrayType_40 _field_2BE616D9E50D27B7FFF12AA0CD2B09D8F53BE4C9;
-	internal static readonly _ArrayType_40 _field_5E4A22E3EAE42CEF4AFC0C6280B473C9A110DB2C;
-	internal static readonly _ArrayType_40 _field_0A0D5B5AA815BDD0017F22ADA6671FAFFA4B77EA;
-	internal static readonly _ArrayType_40 _field_E0E6D7E415DD8962026D3157A5FB8B7C3B4B3C50;
-	internal static readonly _ArrayType_12 _field_4252C6F90ECAA2224CCAE50ECACB287C08401B6E;
-	internal static readonly _ArrayType_12 _field_2B66D5FD203619B430FEFD12728434197CB1E6F3;
-	internal static readonly _ArrayType_16 _field_EF3889166B5BE0E93965516E181CBA6F61F91F85;
-	internal static readonly _ArrayType_16 _field_A6455EF620D582230E301BBFB6200818126320E2;
-	internal static readonly _ArrayType_36 _field_30FD64AA2D79FA3FEE42A8BD5147DAFB8836D66D;
-	internal static readonly _ArrayType_28 _field_59848606DBD5ED7AD50B791FE431D108ED6FE332;
-	internal static readonly _ArrayType_20 _field_E80567F7D25EDB4B89421071D1BAC660E79DD772;
-	internal static readonly _ArrayType_20 _field_F5B13E731396C7753C9658C812EF590154B412D0;
-	internal static readonly _ArrayType_1024 _field_C660A6C2191F7639613A25F2A723ED819CE3C613;
-	internal static readonly _ArrayType_4 _field_4FBCF37E911813BC544C7C89CE9F8121C8740F1D;
-	internal static readonly _ArrayType_12 _field_D7A8399668C6A27F435CABD199B3FB2E1B012423;
-	internal static readonly _ArrayType_4 _field_9B79B32FB1257B488C71348417A65E0B10FFA1A5;
-	internal static readonly _ArrayType_4 _field_02B580D51090F954F512D923E9B8123F50D1A3CE;
-	internal static readonly _ArrayType_8 _field_9C638200F9333526E877E70D66D638368EC4125A;
-	internal static readonly _ArrayType_8 _field_E143CF669B33B35FA24A183794D1CC22515F0F52;
-	internal static readonly _ArrayType_8 _field_F6D2281FFD8CE28C3B4E23B8C750B40267FCB5A5;
-	internal static readonly _ArrayType_8 _field_31CFEFED70C71F509321F194DF865602BE32FAA1;
-	internal static readonly _ArrayType_12 _field_5634B569C5020C3164DDD5018822998BFE3BFB90;
-	internal static readonly _ArrayType_16 _field_6FB784F76A1ECD7AC5C37C2137ADEDDD4F8099DA;
-	internal static readonly _ArrayType_16 _field_74501839227B264CB4BF46A3B9FB614F0CF013FC;
-	internal static readonly _ArrayType_12 _field_2771C32B635C7C7154A48DBE4F54B3449ABC6B50;
+	internal static readonly __StaticArrayInitTypeSize_16 _0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF;
+	internal static readonly __StaticArrayInitTypeSize_12 _1925626019DF8597605C21A63C8ED15E1FFE58D1E27D69E1E77ADD2D4C43AAFE;
+	internal static readonly __StaticArrayInitTypeSize_20 _1D938725B43024CD1DE507AE64F4E512BE661FABD0876BE9FF1D6BBCE7A2774A;
+	internal static readonly __StaticArrayInitTypeSize_16 _1DC5C8E021C663CD8F7ECF1FB0C6D4112BC8D7F3C9E0095CD26BD7AF7B8D7F13;
+	internal static readonly __StaticArrayInitTypeSize_16 _22F9E13B351DD0E6242C73AA96EAE83BAF7713684B5E8493CCED630DF6E47F09;
+	internal static readonly __StaticArrayInitTypeSize_12 _2C699A84B0526F49E282B1E6BCA03A337065953829C8A51594B9791894741925;
+	internal static readonly __StaticArrayInitTypeSize_16 _4599282D3F9B45AF3BD85923032DA3555BB21379E7B4794D7CDC90902084CA13;
+	internal static readonly __StaticArrayInitTypeSize_40 _500BC8012F14DB59363F5E3E3D335855E3930E9CB2A8C099208DDA412343B74C;
+	internal static readonly __StaticArrayInitTypeSize_3 _5F4C7E3BCFA8C6ACC6CE23964419D17A794C3AA4EFB5F94B393C30094512435C;
+	internal static readonly __StaticArrayInitTypeSize_40 _621772E970F68144C113FF85430E9419433D6FC95A8697E93B462818430DE67D;
+	internal static readonly __StaticArrayInitTypeSize_20 _6D14F76A35801E92A153C606F99E1BAEAD19C4A687AD608FCD9FADCBB41E3C25;
+	internal static readonly __StaticArrayInitTypeSize_16 _6D6ED29E7B71395FD414437CC70BAB636F696CFEACF98E9AAFA4492C3E3F8719;
+	internal static readonly __StaticArrayInitTypeSize_12 _754BBD310DEC84C967A58DC1431E57A6CBF5D9E514CAC20410E78B8ECCCE08A0;
+	internal static readonly __StaticArrayInitTypeSize_3 _831D17CBF55E6A6EBB90B45C3EC4F41A557F6262DCEE4D6EA14D12FBD179E5BD;
+	internal static readonly __StaticArrayInitTypeSize_40 _8CACA7897261DCBD9989CFB6CC76639A877FC18198CCE0346BCF3E04E2F24846;
+	internal static readonly long _910B8605B36FADCEA4E73E93069C6CF3C267517EB35F1F1EDCBCAA766B91ABC1;
+	internal static readonly __StaticArrayInitTypeSize_40 AE12043E64531100568614A62FEB4A5E2494928804704E78FDAB015240F5D976;
+	internal static readonly __StaticArrayInitTypeSize_40 BA4918AD0FB646D7D70E74C81D75582EA4CA90B77CBA9A3BB6C785E27B72CD59;
+	internal static readonly __StaticArrayInitTypeSize_28 C1C288957BE7B49A6A9994351091D0E2D605B5A5E77624DCE2A9491DF0AA7633;
+	internal static readonly __StaticArrayInitTypeSize_16 C36CE5638DD27777014447AD9350E44FA4D4894EC74053BF0961E590F8D30685;
+	internal static readonly __StaticArrayInitTypeSize_12 C636521C6D02D3A8CF5ADC5B7FBACDB485933B8516F1D7F7484AB2ADB6DC44EC;
+	internal static readonly long CA66B4132C71AA567724432EE944896F3FB783BD66199A48BD185469C486F6F6;
+	internal static readonly long DA31D4A621FF6B9CEF190E1E3120AC4475BEED9AE301BCA7D911603382372ABB;
+	internal static readonly __StaticArrayInitTypeSize_3 DD5CE2C05B256C578ABF6E71A1ED1333F4485549E8BD792C67E31B6E82755C18;
+	internal static readonly __StaticArrayInitTypeSize_16 E47C56787A2D4D1A0F11D726D19241867452F74BA55E5B2B9CC270DCEBB4C727;
+	internal static readonly __StaticArrayInitTypeSize_40 E5FCA2DE6F1F5CA7A7AE38BEFCB8ECB431C80BD69AC37780CA3A1025F416C484;
+	internal static readonly __StaticArrayInitTypeSize_1024 EA3CF748EF2EED46C8D386654894EFB4A0ACA29E79789C2D3A4A27B57352CECD;
+	internal static readonly __StaticArrayInitTypeSize_36 F002D88D1605774CD2608C1D941E46CAD47C23D0F8E6530B87794DC9244A45AB;
+	internal static readonly long F3251C4424AE7E75C326B098E00FF103D1693D5A68F69A1CC5077575B51FCCD6;
+	internal static readonly __StaticArrayInitTypeSize_16 F6BB1294DA2F78CD935B01C7656280DF5EAA0439E9D97BC03775825A41A508E4;
+	internal static readonly __StaticArrayInitTypeSize_40 FB3FC0BF5680059D0A1B61BC161F53830DF9F36268D447C60C9BCFDC6BDC7CDF;
+	internal static readonly __StaticArrayInitTypeSize_12 FBFE4CA61EC299680879894A16CA776F81F23454312659AC8736249AA1E9722B;
 
 	// Nested types
-	private struct _ArrayType_40
+	private struct __StaticArrayInitTypeSize_3
 	{
 	}
 
-	private struct _ArrayType_12
+	private struct __StaticArrayInitTypeSize_12
 	{
 	}
 
-	private struct _ArrayType_16
+	private struct __StaticArrayInitTypeSize_16
 	{
 	}
 
-	private struct _ArrayType_36
+	private struct __StaticArrayInitTypeSize_20
 	{
 	}
 
-	private struct _ArrayType_28
+	private struct __StaticArrayInitTypeSize_28
 	{
 	}
 
-	private struct _ArrayType_20
+	private struct __StaticArrayInitTypeSize_36
 	{
 	}
 
-	private struct _ArrayType_1024
+	private struct __StaticArrayInitTypeSize_40
 	{
 	}
 
-	private struct _ArrayType_4
+	private struct __StaticArrayInitTypeSize_1024
 	{
 	}
 
-	private struct _ArrayType_8
-	{
-	}
+	// Methods
+	internal static uint ComputeStringHash(string s);
 }
 

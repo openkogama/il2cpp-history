@@ -9,13 +9,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GenerateTextureData : MonoBehaviour
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _IsCreatingScreenShot_k__BackingField;
 
 	// Properties
@@ -23,39 +22,32 @@ public class GenerateTextureData : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _GenerateTexture_c__Iterator0 : IEnumerator<object>
+	private sealed class _GenerateTexture_d__5 : IEnumerator<object>
 	{
 		// Fields
-		internal GameObject _screenshotCamObject___0;
-		internal SkyboxManager _skyboxManager___0;
-		internal Color _color___0;
-		internal Camera _screenshotCam___0;
-		internal Skybox _skybox___0;
-		internal int _height___0;
-		internal LayerFlags _layers___0;
-		internal RenderTexture _screenshotRenderTexture___0;
-		internal Texture2D _screenshotTexture___0;
-		internal byte[] _bytes___0;
-		internal Action<byte[]> textureDataCallback;
-		internal GenerateTextureData _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public Action<byte[]> textureDataCallback;
+		public GenerateTextureData __4__this;
+		private GameObject _screenshotCamObject_5__2;
+		private Camera _screenshotCam_5__3;
+		private int _height_5__4;
+		private RenderTexture _screenshotRenderTexture_5__5;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _GenerateTexture_c__Iterator0();
+		public _GenerateTexture_d__5(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -63,7 +55,8 @@ public class GenerateTextureData : MonoBehaviour
 
 	// Methods
 	public void GenerateTextureDataCameraView(Action<byte[]> callback);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_GenerateTexture_d__5))]
 	private IEnumerator GenerateTexture(Action<byte[]> textureDataCallback);
+	public static void AddPostProcessing(GameObject screenshotCamObject, MainCameraManager mainCameraManager, LayerFlags layers);
 }
 

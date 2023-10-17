@@ -5,31 +5,16 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot
                (BrowserComm *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   MVar1 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
   if (MVar1 == MVJoinState__Enum_Playing) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
     MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
     if (MVar2 == MVGameMode__Enum_Edit) {
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
       this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (this_00 == (MVNetworkGame_OperationRequests *)0x0) {
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+        uVar3 = func_?(&stack0x00000000);
+        func_?(uVar3);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UploadGameScreenShot
@@ -47,27 +32,19 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_ExecuteBrowserRequest
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
-  if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest == 0) {
+  if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?(&UNK_?,unaff_EBP);
+    }
+    (*pcRam_?)(url);
     return;
   }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?,unaff_EBP), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcRam_? = pcVar1;
-  (*pcRam_?)(url);
   return;
 }
 
@@ -78,11 +55,11 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_Exit(BrowserComm *this,Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_This_does_nothing_remove_from_we);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
@@ -98,100 +75,98 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_ExternalCallback
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__ContainsKey_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__Remove_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__get_Item_int_
+                   );
+    func_?(&
+                    BrowserComm__JsonReturnData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<BrowserComm::JsonReturnData>_System__String_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?(&StringLiteral_No_callback_function_with_callba);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
+  if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
   }
-  this_01 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_43
+  this_01 = (BrowserComm_JsonReturnData *)
+            Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
                       (jsonData,
                        BrowserComm__JsonReturnData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<BrowserComm::JsonReturnData>_System__String_
                       );
-  if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
-  this_00 = TypeInfo__BrowserComm->static_fields->callbacks;
-  if ((this_01 != (XPLevelLimits *)0x0) &&
-     (this_00 != (Dictionary_2_System_Int32_BrowserComm_Callback_ *)0x0)) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                       (this_01->fields)._PrevXP_k__BackingField,
+  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+            TypeInfo__BrowserComm->static_fields->callbacks;
+  if ((this_01 != (BrowserComm_JsonReturnData *)0x0) &&
+     (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)(this_01->fields).callbackId,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__ContainsKey_int_
                       );
     if (bVar1 == 0) {
-      jsonData = (String *)&jsonData;
-      arg1 = (Object *)func_?();
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        jsonData = (String *)TypeInfo__System__String;
+      pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
+                         ((Int32 *)&this_01->fields,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_No_callback_function_with_callba,pSVar2,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      jsonData = (String *)0x0;
-      message = mscorlib.dll::System::String::String_Concat
-                          ((Object *)StringLiteral_No_callback_function_with_callba,arg1,
-                           (MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
-      }
-      method = (MethodInfo *)&UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
-                ((Object *)message,(MethodInfo *)0x0);
+                ((Object *)pSVar2,(MethodInfo *)0x0);
       return;
     }
-    if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
-      jsonData = (String *)TypeInfo__BrowserComm;
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-              *)TypeInfo__BrowserComm->static_fields->callbacks;
-    if (pDVar2 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)0x0) {
-      this_02 = (MethodInfo *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-                Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                          (pDVar2,(this_01->fields)._PrevXP_k__BackingField,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__get_Item_int_
-                          );
-      pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)TypeInfo__BrowserComm->static_fields->callbacks;
-      if (pDVar2 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-        Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-        Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                  (pDVar2,(this_01->fields)._PrevXP_k__BackingField,
+    pDVar3 = TypeInfo__BrowserComm->static_fields->callbacks;
+    if (pDVar3 != (Dictionary_2_System_Int32_BrowserComm_Callback_ *)0x0) {
+      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar3,
+                          (this_01->fields).callbackId,
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__get_Item_int_
+                         );
+      pDVar3 = TypeInfo__BrowserComm->static_fields->callbacks;
+      if (pDVar3 != (Dictionary_2_System_Int32_BrowserComm_Callback_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Remove
+                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(this_01->fields).callbackId,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__Remove_int_
                   );
         bVar1 = BrowserComm+JsonReturnData::BrowserComm_JsonReturnData_Validate
-                          ((BrowserComm_JsonReturnData *)this_01,(MethodInfo *)0x0);
-        if (this_02 != (MethodInfo *)0x0) {
-          method = this_02;
+                          (this_01,(MethodInfo *)0x0);
+        if (pOVar4 != (Object *)0x0) {
+          pOVar5 = pOVar4[1].klass;
           if (bVar1 == 0) {
-            jsonData = (String *)&UNK_?;
-            BrowserComm+Callback::BrowserComm_Callback_Execute
-                      ((BrowserComm_Callback *)this_02,0,
-                       (String *)(this_01->fields)._Level_k__BackingField,(MethodInfo *)0x0);
+            if (pOVar5 != (Object__Class *)0x0) {
+              puStack6 = (undefined *)0x0;
+              (*(code *)(pOVar5->_0).namespaze)();
+              return;
+            }
+          }
+          else if (pOVar5 != (Object__Class *)0x0) {
+            puStack6 = (undefined *)0x1;
+            (*(code *)(pOVar5->_0).namespaze)();
             return;
           }
-          jsonData = (String *)&UNK_?;
-          BrowserComm+Callback::BrowserComm_Callback_Execute
-                    ((BrowserComm_Callback *)this_02,1,
-                     (String *)(this_01->fields)._NextXP_k__BackingField,(MethodInfo *)0x0);
-          return;
         }
       }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -203,47 +178,34 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_GiveBrowserInfo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  separator = (Char__Array *)func_?(TypeInfo__System__Char,1);
-  if (separator == (Char__Array *)0x0) goto code_?;
-  if (separator->max_length == 0) {
-code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-  }
-  else {
-    separator->vector[0] = 0x2c;
-    if (browserinfo == (String *)0x0) {
-code_?:
-      func_?();
-      goto code_?;
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Split(browserinfo,separator,(MethodInfo *)0x0);
-    if (pSVar2 == (String__Array *)0x0) goto code_?;
-    if (pSVar2->max_length != 0) {
-      pSVar3 = pSVar2->vector[0];
-      if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
-        func_?(TypeInfo__BrowserComm);
-      }
-      TypeInfo__BrowserComm->static_fields->browserName = pSVar3;
-      if (1 < pSVar2->max_length) {
-        iVar4 = mscorlib.dll::System::Int32::Int32_Parse_3(pSVar2->vector[1],(MethodInfo *)0x0);
-        TypeInfo__BrowserComm->static_fields->browserVersion = iVar4;
-        return;
+  if (browserinfo != (String *)0x0) {
+    pSVar1 = mscorlib.dll::System::String::String_Split
+                       (browserinfo,0x2c,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+    if (pSVar1 != (String__Array *)0x0) {
+      if (pSVar1->max_length != 0) {
+        pSVar2 = pSVar1->vector[0];
+        if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        TypeInfo__BrowserComm->static_fields->browserName = pSVar2;
+        func_?(&TypeInfo__BrowserComm->static_fields->browserName);
+        if (1 < pSVar1->max_length) {
+          iVar3 = mscorlib.dll::System::Int32::Int32_Parse(pSVar1->vector[1],(MethodInfo *)0x0);
+          TypeInfo__BrowserComm->static_fields->browserVersion = iVar3;
+          return;
+        }
       }
       goto code_?;
     }
   }
-  uVar1 = func_?(0);
-  func_?(uVar1);
+  func_?();
 code_?:
-  uVar1 = func_?(0);
-  func_?(uVar1);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -255,23 +217,36 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_PublishPlanetFromWeb
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<System::String>);
+    func_?(&MethodInfo__BrowserComm____c___PublishPlanetFromWeb_b__12_0_System__String_);
+    func_?(&TypeInfo__BrowserComm____c);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if ((TypeInfo__BrowserComm____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__BrowserComm____c);
+  }
+  this_01 = TypeInfo__BrowserComm____c->static_fields->__9__12_0;
+  if (this_01 == (Action_1_String_ *)0x0) {
+    if ((TypeInfo__BrowserComm____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BrowserComm____c);
+    }
+    object = TypeInfo__BrowserComm____c->static_fields->__9;
+    this_01 = (Action_1_String_ *)func_?(TypeInfo__System__Action<System::String>);
+    if (this_01 == (Action_1_String_ *)0x0) goto code_?;
+    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+              ((Action_1_Object_ *)this_01,(Object *)object,
+               MethodInfo__BrowserComm____c___PublishPlanetFromWeb_b__12_0_System__String_,
+               (MethodInfo *)0x0);
+    TypeInfo__BrowserComm____c->static_fields->__9__12_0 = this_01;
+    func_?(&TypeInfo__BrowserComm____c->static_fields->__9__12_0,this_01);
+  }
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet
-              (this_00,(String **)&stack0xfffffff8,(MethodInfo *)0x0);
+              (this_00,this_01,(MethodInfo *)0x0);
     return;
   }
+code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
@@ -286,29 +261,27 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_UserGoldUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-    func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
+  if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  pXVar1 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_43
+  pOVar1 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
                      (data,
                       BrowserComm__JsonGoldUpdateData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<BrowserComm::JsonGoldUpdateData>_System__String_
                      );
-  this_00 = (Action_2_Int32_Object_ *)(this->fields).OnGoldPurchasedFromWeb;
-  if (this_00 != (Action_2_Int32_Object_ *)0x0) {
-    if (pXVar1 == (XPLevelLimits *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+  if ((this->fields).OnGoldPurchasedFromWeb != (Action_2_Int32_Int32_ *)0x0) {
+    if (pOVar1 == (Object *)0x0) {
+      uVar2 = func_?(&stack0xfffffff8);
+      func_?(uVar2);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    System.Core.dll::System::Action`2[Int32,Object]::Action_2_Int32_Object__Invoke
-              (this_00,(pXVar1->fields)._NextXP_k__BackingField,
-               (Object *)(pXVar1->fields)._PrevXP_k__BackingField,
-               MethodInfo__System__Action<int,_int>__Invoke_int__int_);
+    pAVar4 = (this->fields).OnGoldPurchasedFromWeb;
+    (*(pAVar4->fields)._._.invoke_impl)((pAVar4->fields)._._.method_code);
   }
   return;
 }
@@ -320,23 +293,38 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm__cctor(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>)
+    ;
+    func_?(&StringLiteral_browser_name_not_set);
     cRam_? = '\x01';
   }
   TypeInfo__BrowserComm->static_fields->enableExternalCall = 1;
   TypeInfo__BrowserComm->static_fields->enableBrowserRequest = 1;
   TypeInfo__BrowserComm->static_fields->browserName = StringLiteral_browser_name_not_set;
+  func_?(&TypeInfo__BrowserComm->static_fields->browserName,
+                  StringLiteral_browser_name_not_set);
   TypeInfo__BrowserComm->static_fields->browserVersion = -1;
   this = (Dictionary_2_System_Int32_BrowserComm_Callback_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>
                         );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__Dictionary__
-            );
-  TypeInfo__BrowserComm->static_fields->callbacks = this;
+  if (this != (Dictionary_2_System_Int32_BrowserComm_Callback_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__Dictionary__
+              );
+    TypeInfo__BrowserComm->static_fields->callbacks = this;
+    func_?(&TypeInfo__BrowserComm->static_fields->callbacks,this);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -347,11 +335,10 @@ String * Assembly-CSharp.dll::BrowserComm::BrowserComm_get_BrowserName(MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
   return TypeInfo__BrowserComm->static_fields->browserName;
@@ -364,11 +351,10 @@ int32_t Assembly-CSharp.dll::BrowserComm::BrowserComm_get_BrowserVersion(MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BrowserComm);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BrowserComm->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BrowserComm->_1).cctor_started == 0)) {
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
   return TypeInfo__BrowserComm->static_fields->browserVersion;

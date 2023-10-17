@@ -7,61 +7,33 @@ MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Math);
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
+  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
   }
-  uStack_1._4_4_ = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->radToDeg;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  fVar1 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->radToDeg;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
   }
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                     ((Vector3 *)auStack_3,eulerAngles,uStack_1._4_4_,(MethodInfo *)0x0);
-  uVar4 = pVVar2->x;
-  uVar5 = pVVar2->y;
-  fVar6 = pVVar2->z;
-  dVar7 = (double)(float)uVar4 * _UNK_?;
-  uStack_8 = (double)CONCAT44(&UNK_?,(undefined4)uStack_8);
-  uStack_1 = dVar7;
+  dVar2 = (double)(eulerAngles.x * fVar1) * _UNK_?;
   func_?();
-  uStack_8 = (double)CONCAT44(&UNK_?,(undefined4)uStack_8);
-  dStack_9 = dVar7;
+  dVar3 = (double)(eulerAngles.x * fVar1) * _UNK_?;
   func_?();
-  dVar7 = (double)(float)uVar5 * _UNK_?;
-  uStack_8._0_4_ = SUB84(uStack_1,0);
-  uStack_8 = (double)CONCAT44(&UNK_?,(undefined4)uStack_8);
-  uStack_1 = dVar7;
+  dVar4 = (double)(eulerAngles.y * fVar1) * _UNK_?;
   func_?();
-  uStack_8 = (double)CONCAT44(&UNK_?,(undefined4)uStack_8);
-  dStack_10 = dVar7;
+  dVar5 = (double)(eulerAngles.y * fVar1) * _UNK_?;
   func_?();
-  dVar11 = (double)fVar6 * _UNK_?;
-  uStack_8 = (double)CONCAT44(&UNK_?,(undefined4)uStack_8);
-  dVar7 = dVar11;
+  dVar6 = (double)(eulerAngles.z * fVar1) * _UNK_?;
   func_?();
-  uStack_8 = (double)CONCAT44(&UNK_?,(undefined4)uStack_8);
-  unique0x10000380 = dVar7;
+  dVar7 = (double)(eulerAngles.z * fVar1) * _UNK_?;
   func_?();
-  dVar7 = uStack_1 * uStack_8;
-  uStack_8 = (double)((ulonglong)uStack_8 & 0xffffffff);
-  dVar12 = dStack_10 * uStack_8;
-  __return_storage_ptr__->x = 0.0;
-  __return_storage_ptr__->y = 0.0;
-  __return_storage_ptr__->z = 0.0;
-  __return_storage_ptr__->w = 0.0;
-  dVar13 = dVar7 * stack0xffffffd4;
-  uStack_8 = (double)(ulonglong)
-                      (uint)(float)(dStack_10 * dStack_9 * stack0xffffffd4 - dVar7 * dVar11);
-  dVar7 = dVar12 * stack0xffffffd4;
-  fStack_14 = (float)(uStack_1 * dStack_9 * stack0xffffffd4 - dVar12 * dVar11);
-  auStack_3._4_4_ = (float)(dVar7 + uStack_1 * dStack_9 * dVar11);
-  auStack_3._0_4_ = (undefined4)(dStack_10 * dStack_9 * dVar11 + dVar13);
-  func_?(__return_storage_ptr__);
+  __return_storage_ptr__->x = (float)(dVar4 * dVar2 * dVar7 + dVar5 * dVar3 * dVar6);
+  __return_storage_ptr__->y = (float)(dVar5 * dVar2 * dVar7 + dVar4 * dVar3 * dVar6);
+  __return_storage_ptr__->z = (float)(dVar5 * dVar2 * dVar6 - dVar4 * dVar3 * dVar7);
+  __return_storage_ptr__->w = (float)(dVar4 * dVar2 * dVar6 - dVar5 * dVar3 * dVar7);
   return __return_storage_ptr__;
 }
 
@@ -88,12 +60,10 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
+  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
   }
   for (; _UNK_? < angles.x; angles.x = angles.x - _UNK_?) {
@@ -115,6 +85,49 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
 }
 
 
+/* Void Test() */
+
+void MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression_Test
+               (MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
+  }
+  pBVar1 = QuaternionCompression_ToBytes((Quaternion)ZEXT816(0),(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (pBVar1 == (Byte__Array *)0x0) {
+    func_?();
+  }
+  else if (((pBVar1->max_length != 0) && (1 < pBVar1->max_length)) &&
+          (bVar2 = pBVar1->vector[1], 2 < pBVar1->max_length)) {
+    pQVar3 = (QuaternionCompression__Class *)(float)pBVar1->vector[0];
+    bVar4 = pBVar1->vector[2];
+    if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
+      pQVar3 = TypeInfo__MV__WorldObject__QuaternionCompression;
+      func_?();
+    }
+    fVar5 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor;
+    eulerAngles.y = (float)bVar2 * fVar5;
+    eulerAngles.x = (float)pQVar3 * fVar5;
+    eulerAngles.z = (float)bVar4 * fVar5;
+    QuaternionCompression_FromEuler((Quaternion *)&stack0xffffffd0,eulerAngles,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
 /* Byte[] ToBytes(Quaternion) */
 
 Byte__Array *
@@ -123,36 +136,23 @@ MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
+  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
   }
-  q1.y = quaternion.y;
-  q1.x = quaternion.x;
-  q1.z = quaternion.z;
-  q1.w = quaternion.w;
-  pVVar1 = QuaternionCompression_ToEuler((Vector3 *)&quaternion.y,q1,(MethodInfo *)0x0);
-  fVar2 = pVVar1->x;
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
+  pVVar1 = QuaternionCompression_ToEuler(&VStack_2,quaternion,(MethodInfo *)0x0);
+  fVar3 = pVVar1->x;
+  fVar4 = pVVar1->y;
+  fVar5 = pVVar1->z;
   if (cRam_? == '\0') {
-    quaternion.x = _UNK_?;
     func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
-    quaternion.x = (float)TypeInfo__MV__WorldObject__QuaternionCompression;
+  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
-  }
-  for (; _UNK_? < fVar2; fVar2 = fVar2 - _UNK_?) {
-  }
-  for (; fVar2 < 0.0; fVar2 = fVar2 + _UNK_?) {
   }
   for (; _UNK_? < fVar3; fVar3 = fVar3 - _UNK_?) {
   }
@@ -162,61 +162,29 @@ MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression
   }
   for (; fVar4 < 0.0; fVar4 = fVar4 + _UNK_?) {
   }
-  quaternion.w = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->
-                 degreesToByteFactor;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    quaternion.x = (float)TypeInfo__UnityEngine__Vector3;
-    func_?();
+  for (; _UNK_? < fVar5; fVar5 = fVar5 - _UNK_?) {
   }
-  quaternion.x = 0.0;
-  a.y = fVar3;
-  a.x = fVar2;
-  a.z = fVar4;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                     ((Vector3 *)&stack0xfffffff0,a,quaternion.w,(MethodInfo *)0x0);
-  quaternion.x = 4.2039e-45;
-  uVar5 = pVVar1->x;
-  uVar6 = pVVar1->y;
-  quaternion.w = pVVar1->z;
-  quaternion.y = (float)uVar5;
-  quaternion.z = (float)uVar6;
+  for (; fVar5 < 0.0; fVar5 = fVar5 + _UNK_?) {
+  }
+  fVar4 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degreesToByteFactor;
+  pBStack_6 = TypeInfo__System__Byte;
   pBVar7 = (Byte__Array *)func_?();
   if (pBVar7 == (Byte__Array *)0x0) {
-    uStack8 = 0;
-    func_?();
-code_?:
-    uStack8 = 0;
-    puStack9 = (undefined *)0x0;
-    func_?();
-    quaternion.w = (float)&UNK_?;
     func_?();
   }
-  else {
-    if (pBVar7->max_length == 0) goto code_?;
-    pBVar7->vector[0] = (uint8_t)(int)quaternion.y;
+  else if (pBVar7->max_length != 0) {
+    pBVar7->vector[0] = (uint8_t)(int)(fVar3 * fVar4);
     if (1 < pBVar7->max_length) {
-      pBVar7->vector[1] = (uint8_t)(int)quaternion.z;
+      pBVar7->vector[1] = (uint8_t)(int)(float)pBStack_6;
       if (2 < pBVar7->max_length) {
-        pBVar7->vector[2] = (uint8_t)(int)quaternion.w;
+        pBVar7->vector[2] = (uint8_t)(int)(float)puStack_8;
         return pBVar7;
       }
-      goto code_?;
     }
   }
-  uStack8 = 0;
-  puStack9 = (undefined *)0x0;
   func_?();
-  quaternion.w = (float)&UNK_?;
-  func_?();
-code_?:
-  uStack8 = 0;
-  puStack9 = (undefined *)0x0;
-  func_?();
-  quaternion.w = (float)&UNK_?;
-  func_?();
-  pcVar10 = (code *)swi(3);
-  pBVar7 = (Byte__Array *)(*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  pBVar7 = (Byte__Array *)(*pcVar9)();
   return pBVar7;
 }
 
@@ -228,76 +196,48 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionC
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Math);
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
-  fStack_1 = 0.0;
-  dStack_2 = (double)(q1.w * q1.w);
-  dStack_3 = (double)(q1.x * q1.x);
-  dStack_4 = (double)(q1.y * q1.y);
-  dStack_5 = (double)(q1.z * q1.z);
-  dStack_6 = dStack_4 + dStack_3 + dStack_5 + dStack_2;
-  dStack_7 = (double)(q1.y * q1.x + q1.z * q1.w);
-  if (dStack_6 * _UNK_? < dStack_7) {
-    uStack_8 = 0;
-    q1._8_8_ = (BADTYPE)q1.w;
-    fVar9 = (float10)func_?();
-    uVar10 = 0;
-    q1._8_8_ = (BADTYPE)fVar9;
-    dVar11 = (double)q1._8_8_ + (double)q1._8_8_;
-    uVar12 = 0;
-    uVar13 = 0x3fc90fdb;
-  }
-  else {
-    uVar10 = 0;
-    uStack_8 = 0;
-    if (dStack_6 * _UNK_? <= dStack_7) {
-      dStack_14 = (double)q1.y;
-      dStack_15 = (double)q1.x + (double)q1.x;
-      uStack_16 = (((double)CONCAT44((uint)((ulonglong)dStack_3 >> 0x20) ^ _UNK_?,
-                                    SUB84(dStack_3,0) ^ _UNK_?) + dStack_4) - dStack_5) +
-                 dStack_2;
-      fVar9 = (float10)func_?();
-      uStack_16 = (double)CONCAT44((float)fVar9,(undefined4)uStack_16);
-      dVar11 = (dStack_7 + dStack_7) / dStack_6;
-      func_?((float)fVar9);
-      q1._8_8_ = ((dStack_3 - dStack_4) - dStack_5) + dStack_2;
-      fVar9 = (float10)func_?((float)dVar11);
-      q1.w = (float)fVar9;
-      func_?(&uStack_8,q1.w);
-      if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
+  dVar1 = (double)(q1.y * q1.y) + (double)(q1.x * q1.x) + (double)(q1.z * q1.z) +
+          (double)(q1.w * q1.w);
+  dVar2 = (double)(q1.y * q1.x + q1.z * q1.w);
+  if (dVar2 <= dVar1 * _UNK_?) {
+    if (dVar1 * _UNK_? <= dVar2) {
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      fVar3 = (float10)func_?();
+      dVar1 = (dVar2 + dVar2) / dVar1;
+      func_?();
+      fVar4 = (float10)func_?();
+      if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
       }
-      q1.w = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degToRad;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Vector3);
-      }
-      a.z = fStack_1;
-      a.x = (float)(undefined4)uStack_8;
-      a.y = (float)uStack_8._4_4_;
-      pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                         ((Vector3 *)&q1.y,a,q1.w,(MethodInfo *)0x0);
-      fVar18 = pVVar17->y;
-      fVar19 = pVVar17->z;
-      __return_storage_ptr__->x = pVVar17->x;
-      __return_storage_ptr__->y = fVar18;
-      __return_storage_ptr__->z = fVar19;
+      fVar5 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degToRad;
+      __return_storage_ptr__->x = (float)fVar3 * fVar5;
+      __return_storage_ptr__->y = (float)dVar1 * fVar5;
+      __return_storage_ptr__->z = (float)fVar4 * fVar5;
       return __return_storage_ptr__;
     }
-    uVar12 = 0;
-    uVar13 = 0xbfc90fdb;
-    q1._8_8_ = (BADTYPE)q1.w;
-    fVar9 = (float10)func_?(0xbfc90fdb,0,0);
-    q1._8_8_ = (BADTYPE)fVar9;
-    dVar11 = (double)q1._8_8_ * _UNK_?;
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    fVar3 = (float10)func_?();
+    dVar1 = (double)fVar3 * _UNK_?;
+    __return_storage_ptr__->y = -1.5707964;
+    __return_storage_ptr__->z = 0.0;
+    __return_storage_ptr__->x = (float)dVar1;
+    return __return_storage_ptr__;
   }
-  func_?(&uStack_8,(float)dVar11,uVar13,uVar12,uVar10);
-  __return_storage_ptr__->x = (float)(undefined4)uStack_8;
-  __return_storage_ptr__->y = (float)uStack_8._4_4_;
-  __return_storage_ptr__->z = fStack_1;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  fVar3 = (float10)func_?();
+  __return_storage_ptr__->y = 1.5707964;
+  __return_storage_ptr__->z = 0.0;
+  __return_storage_ptr__->x = (float)((double)fVar3 + (double)fVar3);
   return __return_storage_ptr__;
 }
 
@@ -310,107 +250,42 @@ MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
   if (eulerAnglesByteRange == (Byte__Array *)0x0) {
-    func_?(0);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
+    func_?();
   }
-  else {
-    uVar2 = eulerAnglesByteRange->max_length;
-    if (uVar2 == 0) goto code_?;
-    if (1 < uVar2) {
-      if (2 < uVar2) {
-        func_?(&stack0xffffffb4,(float)eulerAnglesByteRange->vector[0],
-                        (float)eulerAnglesByteRange->vector[1],
-                        (float)eulerAnglesByteRange->vector[2]);
-        if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
-        }
-        fVar3 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Vector3);
-        }
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                           (&VStack_5,(Vector3)ZEXT812(0),fVar3,(MethodInfo *)0x0);
-        dStack_6._0_4_ = pVVar4->x;
-        dStack_6._4_4_ = pVVar4->y;
-        fVar3 = pVVar4->z;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        if ((((uint)(TypeInfo__MV__WorldObject__QuaternionCompression->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_started == 0)) {
-          func_?();
-        }
-        d = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->radToDeg;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          func_?();
-        }
-        a.z = fVar3;
-        a._0_8_ = dStack_6;
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                           ((Vector3 *)&stack0xffffffa8,a,d,(MethodInfo *)0x0);
-        uVar7 = pVVar4->x;
-        uVar8 = pVVar4->y;
-        VStack_5.z = pVVar4->z;
-        dVar9 = (double)(float)uVar7 * _UNK_?;
-        VStack_5.x = (float)uVar7;
-        VStack_5.y = (float)uVar8;
-        dStack_6 = dVar9;
-        func_?();
-        dStack_10 = dVar9;
-        func_?();
-        dVar9 = (double)VStack_5.y * _UNK_?;
-        uStack_11 = dStack_6;
-        dStack_6 = dVar9;
-        func_?();
-        dStack_12 = dVar9;
-        func_?();
-        dVar9 = (double)VStack_5.z * _UNK_?;
-        dStack_13 = dStack_6;
-        dStack_6 = dVar9;
-        func_?();
-        VStack_5.y = SUB84(dVar9,0);
-        VStack_5.z = (float)((ulonglong)dVar9 >> 0x20);
-        dVar14 = dStack_6;
-        func_?();
-        dVar9 = (double)CONCAT44(VStack_5.z,VStack_5.y);
-        dVar15 = dStack_13 * uStack_11;
-        dVar16 = dStack_12 * uStack_11;
-        puStack_17 = (undefined *)0x0;
-        fStack_18 = 0.0;
-        uStack_11 = 0.0;
-        VStack_5.z = (float)(dStack_12 * dStack_10 * dVar9 - dVar15 * dVar14);
-        VStack_5.y = (float)(dStack_13 * dStack_10 * dVar9 - dVar16 * dVar14);
-        VStack_5.x = (float)(dVar16 * dVar9 + dStack_13 * dStack_10 * dVar14);
-        func_?();
-        __return_storage_ptr__->x = (float)puStack_17;
-        __return_storage_ptr__->y = fStack_18;
-        __return_storage_ptr__->z = (float)uStack_11;
-        __return_storage_ptr__->w = uStack_11._4_4_;
-        return __return_storage_ptr__;
-      }
-      goto code_?;
+  else if (((eulerAnglesByteRange->max_length != 0) && (1 < eulerAnglesByteRange->max_length)) &&
+          (2 < eulerAnglesByteRange->max_length)) {
+    QStack_1.x = (float)eulerAnglesByteRange->vector[0];
+    fStack_2 = (float)eulerAnglesByteRange->vector[1];
+    fStack_3 = (float)eulerAnglesByteRange->vector[2];
+    QStack_1.y = 0.0;
+    QStack_1.z = 0.0;
+    QStack_1.w = 0.0;
+    if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
     }
+    fVar4 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor;
+    QStack_1.w = fStack_3 * fVar4;
+    eulerAngles.y = fStack_2 * fVar4;
+    eulerAngles.x = QStack_1.x * fVar4;
+    eulerAngles.z = QStack_1.w;
+    pQVar5 = QuaternionCompression_FromEuler(&QStack_1,eulerAngles,(MethodInfo *)0x0);
+    fVar4 = pQVar5->y;
+    fVar6 = pQVar5->z;
+    fVar7 = pQVar5->w;
+    __return_storage_ptr__->x = pQVar5->x;
+    __return_storage_ptr__->y = fVar4;
+    __return_storage_ptr__->z = fVar6;
+    __return_storage_ptr__->w = fVar7;
+    return __return_storage_ptr__;
   }
-  uVar1 = func_?(0);
-  func_?(uVar1);
-code_?:
-  uVar1 = func_?(0);
-  func_?(uVar1);
-  pcVar19 = (code *)swi(3);
-  pQVar20 = (Quaternion *)(*pcVar19)();
-  return pQVar20;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pQVar5 = (Quaternion *)(*pcVar8)();
+  return pQVar5;
 }
 
 
@@ -421,14 +296,13 @@ void MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompre
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
-  pQVar1 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields;
-  pQVar1->degreesToByteFactor = 0.7111111;
-  pQVar1->byteToDegreeFactor = 1.40625;
-  pQVar1->degToRad = 57.29578;
-  pQVar1->radToDeg = 0.017453292;
+  TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degreesToByteFactor = 0.7111111;
+  TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor = 1.40625;
+  TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degToRad = 57.29578;
+  TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->radToDeg = 0.017453292;
   return;
 }
 

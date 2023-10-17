@@ -8,16 +8,14 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVMovingPlatformNode : MVWorldObjectClient
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVMovingPlatformNode _Previous_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private MVMovingPlatformNode _Next_k__BackingField;
 
 	// Properties

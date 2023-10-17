@@ -6,64 +6,76 @@ void Assembly-CSharp.dll::GizmoButton::GizmoButton_OnPointerDown
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IGizmoHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__GizmoButton___OnPointerDown_b__1_0_IGizmoHandler__UnityEngine__EventSystems__BaseEventData_
+                   );
     cRam_? = '\x01';
   }
   if (eventData != (PointerEventData *)0x0) {
-    pHVar1 = MVSentryGun::MVSentryGun_get_RaycastIgnoreWorldObjectIds
-                       ((MVSentryGun *)eventData,(MethodInfo *)0x0);
-    if (pHVar1 == (HashSet_1_System_Int32_ *)0x0) {
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-      this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(
-                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>
-                                  );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__GizmoButton___OnPointerDown_m__0_IGizmoHandler__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>__EventFunction_System__Object__void__
-                );
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+    if ((eventData->fields)._button_k__BackingField == 0) {
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>
+                          );
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                 MethodInfo__GizmoButton___OnPointerDown_b__1_0_IGizmoHandler__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
         func_?();
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_00,
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IGizmoHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>_
                 );
     }
     return;
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
 
-/* Void <OnPointerDown>m__0(IGizmoHandler, BaseEventData) */
+/* Void <OnPointerDown>b__1_0(IGizmoHandler, BaseEventData) */
 
-void Assembly-CSharp.dll::GizmoButton::GizmoButton__OnPointerDown_m__0
+void Assembly-CSharp.dll::GizmoButton::GizmoButton__OnPointerDown_b__1_0
                (GizmoButton *this,IGizmoHandler *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppIStack_1 = &TypeInfo__IGizmoHandler;
+    func_?();
     cRam_? = '\x01';
   }
   if (handler != (IGizmoHandler *)0x0) {
-    func_?(0,TypeInfo__IGizmoHandler,handler,(this->fields).gizmoAction);
+    ppIStack_1 = (IGizmoHandler__Class **)(this->fields).gizmoAction;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__IGizmoHandler;
+    func_?(0);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ppIStack_1 = (IGizmoHandler__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

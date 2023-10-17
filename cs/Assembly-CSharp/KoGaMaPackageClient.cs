@@ -8,14 +8,14 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class KoGaMaPackageClient
 {
 	// Fields
 	public Dictionary<int, RuntimePrototypeCubeModel> prototypes;
 	public Dictionary<int, MVWorldObjectClient> worldObjects;
-	public Dictionary<int, MV.WorldObject.Link> links;
+	public Dictionary<int, Link> links;
 	public Dictionary<int, ObjectLink> objectLinks;
 	public int worldObjectRoot;
 

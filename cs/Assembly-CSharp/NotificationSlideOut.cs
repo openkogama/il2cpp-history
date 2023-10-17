@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class NotificationSlideOut : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class NotificationSlideOut : MonoBehaviour
 	private Notification notification;
 	[SerializeField]
 	private Vector2 slideVelocity;
-	[Range]
+	[Range(0f, 1f)]
 	[SerializeField]
 	private float slideOutStartTime;
 

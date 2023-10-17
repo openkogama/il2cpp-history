@@ -6,48 +6,46 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_AddToLOD
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__Add_MVTerrainLOD_
+                   );
     cRam_? = '\x01';
   }
-  fStack_1 = (this->fields).scale;
-  this_00 = (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)(this->fields).LODBookkeeping;
-  this_01 = (this->fields).prototypeCubeModel;
-  if (this_01 != (RuntimePrototypeCubeModel *)0x0) {
-    iVar2 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-            Int32]::
-            Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                      ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)this_01,
-                       (MethodInfo *)0x0);
-    uStack_3 = 0;
-    fStack_4 = 0.0;
-    func_?(&uStack_3);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?();
-    }
-    a.z = fStack_4;
-    a.x = (float)(undefined4)uStack_3;
-    a.y = (float)uStack_3._4_4_;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1
-                       (&VStack_6,(float)iVar2 * fStack_1,a,(MethodInfo *)0x0);
-    uVar7 = pVVar5->x;
-    uVar8 = pVVar5->y;
-    fVar9 = pVVar5->z;
-    uStack_10 = (uint)(ushort)localPos.z;
-    func_?();
-    if (this_00 != (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) {
-      item.buttonNotSelected = (GameObject *)uVar7;
-      item.buttonSelected = (GameObject *)uStack_10;
-      item.buttonSelectedText = (Text *)uVar8;
-      item.buttonNotSelectedText = (Text *)fVar9;
-      item.team = 0;
-      mscorlib.dll::System::Collections::Generic::List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-      List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__Add
-                (this_00,item,
-                 MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__Add_MVTerrainLOD_);
-      return;
+  pMVar1 = MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__Add_MVTerrainLOD_;
+  pLVar2 = (this->fields).LODBookkeeping;
+  if ((this->fields).prototypeCubeModel != (RuntimePrototypeCubeModel *)0x0) {
+    uVar3 = localPos._0_4_;
+    fVar4 = (float)(((this->fields).prototypeCubeModel)->fields).chunkSize * (this->fields).scale;
+    fVar5 = fVar4 * (float)(int)localPos.x;
+    uStack_6 = (uint)(ushort)localPos.z;
+    if (pLVar2 != (List_1_MVTerrainLOD_ *)0x0) {
+      piVar7 = &(pLVar2->fields)._version;
+      *piVar7 = *piVar7 + 1;
+      pMVar8 = (pLVar2->fields)._items;
+      if (pMVar8 != (MVTerrainLOD__Array *)0x0) {
+        uVar9 = (pLVar2->fields)._size;
+        if (pMVar8->max_length <= uVar9) {
+          (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
+                    (pLVar2,uVar3,uStack_6,fVar5,fVar4 * (float)(int)localPos.y,
+                     fVar4 * (float)(int)localPos.z,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+          return;
+        }
+        (pLVar2->fields)._size = uVar9 + 1;
+        if (uVar9 < pMVar8->max_length) {
+          pIVar10 = &pMVar8->vector[uVar9].localPos;
+          pIVar10->x = (short)uVar3;
+          pIVar10->y = (short)((uint)uVar3 >> 0x10);
+          *(uint *)&pIVar10->z = uStack_6;
+          ((Vector3 *)((int)(pIVar10 + 1) + 2))->x = fVar5;
+          *(float *)(pIVar10 + 2) = fVar4 * (float)(int)localPos.y;
+          pMVar8->vector[uVar9].worldPos.z = fVar4 * (float)(int)localPos.z;
+          return;
+        }
+        goto code_?;
+      }
     }
   }
+  func_?();
+code_?:
   func_?();
   pcVar11 = (code *)swi(3);
   (*pcVar11)();
@@ -105,10 +103,17 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__RemoveAt_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
+                   );
+    func_?(0xc19c);
+    func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }
-  this_01 = this;
   CStack_1.gameObject = (GameObject *)0x0;
   CStack_1.collider = (BoxCollider *)0x0;
   CStack_1.renderer = (MeshRenderer *)0x0;
@@ -116,224 +121,204 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
   fStack_2 = 0.0;
   uStack_3._0_2_ = 0;
   uStack_3._2_2_ = 0;
-  uStack_3._4_4_ = 0;
-  uStack_4 = 0;
+  uStack_3._4_4_ = (undefined *)0x0;
+  pDStack_4 = (Debug_1__Class *)0x0;
   uStack_5 = 0;
   pLVar6 = (this->fields).LODBookkeeping;
-  if (pLVar6 != (List_1_MVTerrainLOD_ *)0x0) {
-    pOVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar6,
-                        MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Count__);
-    if (pOVar7 == (Object *)0x0) {
+  SStack_7.m_value = 0.0;
+  IStack_8.m_value = 0;
+  if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+  if ((pLVar6->fields)._size == 0) {
+    return;
+  }
+  this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if ((this_02 == (MainCameraManager *)0x0) ||
+     (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_02,(MethodInfo *)0x0), this_03 == (Transform *)0x0))
+  goto code_?;
+  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                     ((Vector3 *)auStack_10,this_03,(MethodInfo *)0x0);
+  uStack_11._0_4_ = pVVar9->x;
+  uStack_11._4_4_ = pVVar9->y;
+  fStack_12 = pVVar9->z;
+  fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  fVar13 = fVar13 * _UNK_?;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if ((double)fVar13 < _UNK_?) {
+    fVar14 = (float10)func_?();
+    auStack_10._4_8_ = (undefined8)fVar14;
+    if ((double)auStack_10._4_8_ != _UNK_?) {
+      auStack_10._4_8_ = (double)fVar13 - _UNK_?;
+      fVar14 = (float10)func_?();
+      goto code_?;
+    }
+    uVar15 = func_?();
+    dVar16 = dStack_17;
+    if ((uVar15 & 1) != 0) {
+      dVar16 = dStack_17 - _UNK_?;
+    }
+  }
+  else {
+    fVar14 = (float10)func_?();
+    auStack_10._4_8_ = (undefined8)fVar14;
+    if ((double)auStack_10._4_8_ == _UNK_?) {
+      uVar15 = func_?();
+      dVar16 = dStack_17;
+      if ((uVar15 & 1) != 0) {
+        dVar16 = dStack_17 + _UNK_?;
+      }
+    }
+    else {
+      auStack_10._4_8_ = (double)fVar13 + _UNK_?;
+      fVar14 = (float10)func_?();
+code_?:
+      dStack_17 = (double)fVar14;
+      dVar16 = dStack_17;
+    }
+  }
+  iVar18 = (int)dVar16;
+  iVar19 = 0;
+  if (iVar18 < 1) {
+    iVar18 = 1;
+  }
+  do {
+    pLVar6 = (this->fields).LODBookkeeping;
+    if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+    if ((pLVar6->fields)._size == 0) {
       return;
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
+    if ((pLVar6->fields)._size <= (this->fields).currentLODPosition) {
+      (this->fields).currentLODPosition = 0;
     }
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if ((this_02 != (MainCameraManager *)0x0) &&
-       (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                            ((Component_1 *)this_02,(MethodInfo *)0x0), this_03 != (Transform *)0x0)
-       ) {
-      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          (&VStack_9,this_03,(MethodInfo *)0x0);
-      uStack_10._0_4_ = pVVar8->x;
-      uStack_10._4_4_ = pVVar8->y;
-      fStack_11 = pVVar8->z;
-      this = (TerrainLODComponent *)
-             UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-        func_?((short)TypeInfo__UnityEngine__Mathf);
+    if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+    puVar20 = (undefined8 *)
+             func_?(&stack0xffffff94,pLVar6,(this->fields).currentLODPosition,
+                             MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
+                            );
+    this_00 = (this->fields).chunkInstances;
+    uStack_3._0_4_ = *(undefined4 *)puVar20;
+    uStack_3._4_4_ = *(undefined **)((int)puVar20 + 4);
+    pDStack_4 = *(Debug_1__Class **)(puVar20 + 1);
+    uStack_5 = *(undefined4 *)((int)puVar20 + 0xc);
+    fStack_2 = *(float *)(puVar20 + 2);
+    uStack_21 = *puVar20;
+    auStack_10._0_4_ = *(undefined4 *)(puVar20 + 1);
+    auStack_10._4_4_ = *(undefined4 *)((int)puVar20 + 0xc);
+    if (this_00 == (ChunkInstances *)0x0) goto code_?;
+    bVar22 = ChunkInstances::ChunkInstances_TryGetValue
+                      (this_00,SUB86(uStack_21,0),&CStack_1,(MethodInfo *)0x0);
+    pLVar6 = (this->fields).LODBookkeeping;
+    if (bVar22 == 0) {
+      if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RegexCharClass+SingleRange]::
+      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__RemoveAt
+                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pLVar6,
+                 (this->fields).currentLODPosition,
+                 MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__RemoveAt_int_);
+    }
+    else {
+      if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+      iVar23 = func_?(&stack0xffffff94,(short)pLVar6,(this->fields).currentLODPosition,
+                               MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
+                              );
+      fVar14 = (float10)func_?(*(undefined4 *)(iVar23 + 8),*(undefined4 *)(iVar23 + 0xc),
+                                        *(undefined4 *)(iVar23 + 0x10),(int)uStack_11,
+                                        (short)((ulonglong)uStack_11 >> 0x20),fStack_12,0);
+      pDVar24 = (this->fields).dynamicLodDistance;
+      if (pDVar24 == (DynamicLODDistance *)0x0) goto code_?;
+      chunk.collider = CStack_1.collider;
+      chunk.gameObject = CStack_1.gameObject;
+      chunk.renderer = CStack_1.renderer;
+      chunk.filter = CStack_1.filter;
+      TerrainLODComponent_ChangeLODChunk
+                (this,chunk,(IntVector *)&uStack_3,(float)fVar14,(pDVar24->fields).currentRadius,
+                 (MethodInfo *)0x0);
+      pDVar24 = (this->fields).dynamicLodDistance;
+      if (pDVar24 == (DynamicLODDistance *)0x0) goto code_?;
+      pTVar25 = (this->fields).triangleCounter;
+      if ((float)fVar14 < (pDVar24->fields).maxRadius) {
+        if (pTVar25 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
+        localPos_00.z = uStack_3._4_2_;
+        localPos_00.x = (int16_t)uStack_3;
+        localPos_00.y = uStack_3._2_2_;
+        TerrainLODComponent+TriangleCounter::TerrainLODComponent_TriangleCounter_Add
+                  (pTVar25,localPos_00,(MethodInfo *)0x0);
       }
-      iVar12 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_RoundToInt
-                         ((float)this * _UNK_?,(MethodInfo *)0x0);
-      iStack_13 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Max_2
-                            (1,iVar12,(MethodInfo *)0x0);
-      iVar14 = 0;
-      if (0 < iStack_13) {
-        do {
-          pLVar6 = (this_01->fields).LODBookkeeping;
-          if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-          pOVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar6,
-                              MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Count__
-                             );
-          if (pOVar7 == (Object *)0x0) {
-            return;
-          }
-          pLVar6 = (this_01->fields).LODBookkeeping;
-          iVar15 = (this_01->fields).currentLODPosition;
-          if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-          pOVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar6,
-                              MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Count__
-                             );
-          if (iVar15 < (int)pOVar7) {
-            iVar12 = (this_01->fields).currentLODPosition;
-          }
-          else {
-            (this_01->fields).currentLODPosition = 0;
-            iVar12 = 0;
-          }
-          pLVar6 = (this_01->fields).LODBookkeeping;
-          if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-          pIVar16 = (IntVector *)
-                    func_?(auStack_17,pLVar6,iVar12,
-                                    MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
-                                   );
-          this_00 = (this_01->fields).chunkInstances;
-          uStack_3._0_2_ = pIVar16->x;
-          uStack_3._2_2_ = pIVar16->y;
-          uStack_3._4_4_ = *(undefined4 *)&pIVar16->z;
-          uStack_4._0_2_ = pIVar16[1].y;
-          uStack_4._2_2_ = pIVar16[1].z;
-          uStack_5._0_2_ = pIVar16[2].x;
-          uStack_5._2_2_ = pIVar16[2].y;
-          fStack_2 = *(float *)&pIVar16[2].z;
-          if (this_00 == (ChunkInstances *)0x0) goto code_?;
-          bVar18 = ChunkInstances::ChunkInstances_TryGetValue
-                            (this_00,*pIVar16,&CStack_1,(MethodInfo *)0x0);
-          pLVar6 = (this_01->fields).LODBookkeeping;
-          if (bVar18 == 0) {
-            if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-            mscorlib.dll::System::Collections::Generic::List`1[MVTerrainLOD]::
-            List_1_MVTerrainLOD__RemoveAt
-                      (pLVar6,(this_01->fields).currentLODPosition,
-                       MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__RemoveAt_int_);
-          }
-          else {
-            if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-            iVar15 = func_?(auStack_17,pLVar6,(this_01->fields).currentLODPosition,
-                                     MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
-                                    );
-            uVar19 = *(undefined4 *)(iVar15 + 8);
-            uVar20 = *(undefined4 *)(iVar15 + 0xc);
-            fVar21 = *(float *)(iVar15 + 0x10);
-            if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-              func_?(TypeInfo__UnityEngine__Vector3);
-            }
-            a.y = (float)uVar20;
-            a.x = (float)uVar19;
-            a.z = fVar21;
-            b.z = fStack_11;
-            b.x = (float)(undefined4)uStack_10;
-            b.y = (float)uStack_10._4_4_;
-            this = (TerrainLODComponent *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Distance
-                             (a,b,(MethodInfo *)0x0);
-            pDVar22 = (this_01->fields).dynamicLodDistance;
-            pGStack_23 = CStack_1.gameObject;
-            VStack_9.x = (float)CStack_1.collider;
-            VStack_9.y = (float)CStack_1.renderer;
-            VStack_9.z = (float)CStack_1.filter;
-            if (pDVar22 == (DynamicLODDistance *)0x0) goto code_?;
-            fStack_24 = ProgressBarAndroid::ProgressBarAndroid_get_Progress
-                                 ((ProgressBarAndroid *)pDVar22,(MethodInfo *)0x0);
-            chunk.collider = (BoxCollider *)VStack_9.x;
-            chunk.gameObject = pGStack_23;
-            chunk.renderer = (MeshRenderer *)VStack_9.y;
-            chunk.filter = (MeshFilter *)VStack_9.z;
-            TerrainLODComponent_ChangeLODChunk
-                      (this_01,chunk,(IntVector *)&uStack_3,(float)this,fStack_24,(MethodInfo *)0x0)
-            ;
-            pDVar22 = (this_01->fields).dynamicLodDistance;
-            if (pDVar22 == (DynamicLODDistance *)0x0) goto code_?;
-            pTVar25 = (this_01->fields).triangleCounter;
-            if ((float)this < (pDVar22->fields).maxRadius) {
-              if (pTVar25 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
-              localPos_00.z = uStack_3._4_2_;
-              localPos_00.x = (int16_t)uStack_3;
-              localPos_00.y = uStack_3._2_2_;
-              TerrainLODComponent+TriangleCounter::TerrainLODComponent_TriangleCounter_Add
-                        (pTVar25,localPos_00,(MethodInfo *)0x0);
-            }
-            else {
-              if (pTVar25 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
-              localPos.z = uStack_3._4_2_;
-              localPos.x = (int16_t)uStack_3;
-              localPos.y = uStack_3._2_2_;
-              TerrainLODComponent+TriangleCounter::TerrainLODComponent_TriangleCounter_Remove
-                        (pTVar25,localPos,(MethodInfo *)0x0);
-            }
-            pLVar6 = (this_01->fields).LODBookkeeping;
-            if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-            value._4_4_ = uStack_3._4_4_;
-            value.localPos.x = (int16_t)uStack_3;
-            value.localPos.y = uStack_3._2_2_;
-            value.worldPos.x = (float)uStack_4;
-            value.worldPos.y._0_2_ = (short)uStack_5;
-            value.worldPos.y._2_2_ = (short)((uint)uStack_5 >> 0x10);
-            value.worldPos.z = fStack_2;
-            mscorlib.dll::System::Collections::Generic::List`1[MVTerrainLOD]::
-            List_1_MVTerrainLOD__set_Item
-                      (pLVar6,(this_01->fields).currentLODPosition,value,
-                       MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
-                      );
-          }
-          piVar26 = &(this_01->fields).currentLODPosition;
-          *piVar26 = *piVar26 + 1;
-          iVar14 = iVar14 + 1;
-        } while (iVar14 < iStack_13);
+      else {
+        if (pTVar25 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
+        localPos.z = uStack_3._4_2_;
+        localPos.x = (int16_t)uStack_3;
+        localPos.y = uStack_3._2_2_;
+        TerrainLODComponent+TriangleCounter::TerrainLODComponent_TriangleCounter_Remove
+                  (pTVar25,localPos,(MethodInfo *)0x0);
       }
-      pTVar25 = (this_01->fields).triangleCounter;
-      if (pTVar25 != (TerrainLODComponent_TriangleCounter *)0x0) {
-        iVar12 = TerrainLODComponent+TriangleCounter::
+      this_01 = (List_1_TranslateSoundData_ *)(this->fields).LODBookkeeping;
+      if (this_01 == (List_1_TranslateSoundData_ *)0x0) goto code_?;
+      value._4_4_ = uStack_3._4_4_;
+      value.moveValue = (float)(undefined4)uStack_3;
+      value.worldPos.x = (float)pDStack_4;
+      value.worldPos.y = (float)uStack_5;
+      value.worldPos.z = fStack_2;
+      mscorlib.dll::System::Collections::Generic::List`1[TranslateSoundData]::
+      List_1_TranslateSoundData__set_Item
+                (this_01,(this->fields).currentLODPosition,value,
+                 MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
+                );
+    }
+    piVar26 = &(this->fields).currentLODPosition;
+    *piVar26 = *piVar26 + 1;
+    iVar19 = iVar19 + 1;
+  } while (iVar19 < iVar18);
+  pTVar25 = (this->fields).triangleCounter;
+  if (pTVar25 != (TerrainLODComponent_TriangleCounter *)0x0) {
+    numObjects = TerrainLODComponent+TriangleCounter::
                  TerrainLODComponent_TriangleCounter_GetEnabledTriangleCount
-                           (pTVar25,(this_01->fields).prototypeCubeModel,(MethodInfo *)0x0);
-        pDVar22 = (this_01->fields).dynamicLodDistance;
-        if (pDVar22 != (DynamicLODDistance *)0x0) {
-          DynamicLODDistance::DynamicLODDistance_Update(pDVar22,iVar12,(MethodInfo *)0x0);
-          if ((this_01->fields).debug == 0) {
-            return;
-          }
-          pDVar22 = (this_01->fields).dynamicLodDistance;
-          if (pDVar22 != (DynamicLODDistance *)0x0) {
-            this = (TerrainLODComponent *)
-                   ProgressBarAndroid::ProgressBarAndroid_get_Progress
-                             ((ProgressBarAndroid *)pDVar22,(MethodInfo *)0x0);
-            pOVar7 = (Object *)func_?(TypeInfo__System__Single,&this);
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?((short)TypeInfo__System__String);
-            }
-            pSVar27 = mscorlib.dll::System::String::String_Concat
-                                ((Object *)StringLiteral_dynamicLodDistance_CurrentRadius,pOVar7,
-                                 (MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-              func_?((short)TypeInfo__UnityEngine__Debug);
-            }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                      ((Object *)pSVar27,(MethodInfo *)0x0);
-            pTVar25 = (this_01->fields).triangleCounter;
-            if (pTVar25 != (TerrainLODComponent_TriangleCounter *)0x0) {
-              iStack_13 = TerrainLODComponent+TriangleCounter::
-                          TerrainLODComponent_TriangleCounter_GetEnabledTriangleCount
-                                    (pTVar25,(this_01->fields).prototypeCubeModel,(MethodInfo *)0x0);
-              pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&iStack_13);
-              pSVar27 = mscorlib.dll::System::String::String_Concat
-                                  ((Object *)StringLiteral_TriangleCount__,pOVar7,(MethodInfo *)0x0)
-              ;
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                        ((Object *)pSVar27,(MethodInfo *)0x0);
-              return;
-            }
-          }
+                           (pTVar25,(this->fields).prototypeCubeModel,(MethodInfo *)0x0);
+    pDVar24 = (this->fields).dynamicLodDistance;
+    if (pDVar24 != (DynamicLODDistance *)0x0) {
+      DynamicLODDistance::DynamicLODDistance_Update(pDVar24,numObjects,(MethodInfo *)0x0);
+      if ((this->fields).debug == 0) {
+        return;
+      }
+      pDVar24 = (this->fields).dynamicLodDistance;
+      if (pDVar24 != (DynamicLODDistance *)0x0) {
+        SStack_7.m_value = (pDVar24->fields).currentRadius;
+        pSVar27 = mscorlib.dll::System::Single::Single_ToString(&SStack_7,(MethodInfo *)0x0);
+        pSVar27 = mscorlib.dll::System::String::String_Concat_3
+                            (StringLiteral_dynamicLodDistance_CurrentRadius,pSVar27,
+                             (MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          pDStack_4 = TypeInfo__UnityEngine__Debug;
+          uStack_3._4_4_ = &UNK_?;
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                  ((Object *)pSVar27,(MethodInfo *)0x0);
+        pTVar25 = (this->fields).triangleCounter;
+        if (pTVar25 != (TerrainLODComponent_TriangleCounter *)0x0) {
+          IStack_8.m_value =
+               TerrainLODComponent+TriangleCounter::
+               TerrainLODComponent_TriangleCounter_GetEnabledTriangleCount
+                         (pTVar25,(this->fields).prototypeCubeModel,(MethodInfo *)0x0);
+          pSVar27 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
+          pSVar27 = mscorlib.dll::System::String::String_Concat_3
+                              (StringLiteral_TriangleCount__,pSVar27,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                    ((Object *)pSVar27,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar28 = (code *)swi(3);
   (*pcVar28)();
   return;
@@ -354,103 +339,138 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ChunkInstancesChanged>);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__IEnumerable);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Key__
+                   );
+    func_?(0xe3ec);
+    func_?(0x935c);
+    func_?(&TypeInfo__System__Collections__Generic__List<MVTerrainLOD>);
+    func_?(&
+                    MethodInfo__TerrainLODComponent__chunkInstances_Changed_System__Object__ChunkInstancesChanged_
+                   );
+    func_?(&TypeInfo__TerrainLODComponent__TriangleCounter);
     cRam_? = '\x01';
   }
-  func_?();
   this_00 = (List_1_MVTerrainLOD_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVTerrainLOD>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            ((List_1_UnityEngine_Vector4_ *)this_00,
-             MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__List__);
-  (this->fields).LODBookkeeping = this_00;
-  this_01 = (ScaleAnimationBase *)func_?(TypeInfo__TerrainLODComponent__TriangleCounter);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>;
-  this_02 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_02,
-             MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
-            );
-  (this_01->fields)._._._._.m_CachedPtr = this_02;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  (this->fields).triangleCounter = (TerrainLODComponent_TriangleCounter *)this_01;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  (this->fields).prototypeCubeModel = prototypeCubeModel;
-  (this->fields).dynamicLodDistance = dynamicLodDistance;
-  (this->fields).chunkInstances = chunkInstances;
-  (this->fields).scale = scale;
-  (this->fields).debug = debug;
-  if (chunkInstances != (ChunkInstances *)0x0) {
-    piVar4 = (int *)func_?();
-    uStack_1 = 0;
-    while (piVar4 != (int *)0x0) {
-      cVar5 = func_?();
-      if (cVar5 == '\0') {
-        uStack_1 = 0xffffffff;
-        iVar6 = func_?();
-        if (iVar6 != 0) {
-          func_?();
-        }
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this,
-                   MethodInfo__TerrainLODComponent__chunkInstances_Changed_System__Object__ChunkInstancesChanged_
-                   ,
-                   MethodInfo__System__EventHandler<ChunkInstancesChanged>__EventHandler_System__Object__void__
+  if (this_00 != (List_1_MVTerrainLOD_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__List__);
+    (this->fields).LODBookkeeping = this_00;
+    func_?(&this->fields,this_00);
+    value = (TerrainLODComponent_TriangleCounter *)
+            func_?(TypeInfo__TerrainLODComponent__TriangleCounter);
+    if (value != (TerrainLODComponent_TriangleCounter *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
+                       );
+        func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>
+                       );
+        cRam_? = '\x01';
+      }
+      this_01 = (HashSet_1_UnityEngine_Vector3_ *)
+                func_?(
+                               TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>
+                               );
+      if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+        HashSet_1_UnityEngine_Vector3___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
                   );
+        pMVar4 = (MethodInfo *)&value->fields;
+        (value->fields).enabledChunks = (HashSet_1_MV_WorldObject_IntVector_ *)this_01;
+        func_?(pMVar4,this_01);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)value,ExceptionArgument__Enum_obj,pMVar4);
+        pMVar4 = (MethodInfo *)&(this->fields).triangleCounter;
+        (this->fields).triangleCounter = value;
+        func_?(pMVar4,value);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)this,ExceptionArgument__Enum_obj,pMVar4);
+        (this->fields).prototypeCubeModel = prototypeCubeModel;
+        func_?((short)&(this->fields).prototypeCubeModel,prototypeCubeModel);
+        (this->fields).chunkInstances = chunkInstances;
+        func_?(&(this->fields).chunkInstances,(short)chunkInstances);
+        (this->fields).dynamicLodDistance = dynamicLodDistance;
+        func_?(&(this->fields).dynamicLodDistance,dynamicLodDistance);
+        (this->fields).scale = scale;
+        (this->fields).debug = debug;
         if (chunkInstances != (ChunkInstances *)0x0) {
-          ChunkInstances::ChunkInstances_add_Changed
-                    (chunkInstances,(EventHandler_1_ChunkInstancesChanged_ *)this_03,
-                     (MethodInfo *)0x0);
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        break;
-      }
-      uVar7 = 0;
-      uVar8 = *(ushort *)(*piVar4 + 0xb6);
-      if (uVar8 != 0) {
-        do {
-          if (*(IEnumerator__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar7 * 8) ==
-              TypeInfo__System__Collections__IEnumerator) {
-            puVar9 = (undefined4 *)
-                     (*piVar4 +
-                     (*(int *)(*(int *)(*piVar4 + 0x58) + 4 + (uint)uVar7 * 8) + 0x18) * 8);
-            goto code_?;
-          }
-          uVar7 = uVar7 + 1;
-        } while (uVar7 < uVar8);
-      }
-      puVar9 = (undefined4 *)func_?();
+          piVar5 = (int *)func_?(0,TypeInfo__System__Collections__IEnumerable,
+                                          chunkInstances);
+          uStack_1 = 1;
+          while (piVar5 != (int *)0x0) {
+            cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar5);
+            if (cVar6 == '\0') {
+              uStack_1 = 0xffffffff;
+              iVar7 = func_?(piVar5,TypeInfo__System__IDisposable);
+              if (iVar7 != 0) {
+                func_?(0,TypeInfo__System__IDisposable,iVar7);
+              }
+              uStack_1 = 0xffffffff;
+              this_02 = (UnityAction_2_System_Object_System_Object_ *)
+                        func_?(TypeInfo__System__EventHandler<ChunkInstancesChanged>);
+              if (this_02 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
+                ::Object]::UnityAction_2_System_Object_System_Object___ctor
+                          (this_02,(Object *)this,
+                           MethodInfo__TerrainLODComponent__chunkInstances_Changed_System__Object__ChunkInstancesChanged_
+                           ,(MethodInfo *)0x0);
+                ChunkInstances::ChunkInstances_add_Changed
+                          (chunkInstances,(EventHandler_1_ChunkInstancesChanged_ *)this_02,
+                           (MethodInfo *)0x0);
+                *unaff_FS_OFFSET = uStack_3;
+                return;
+              }
+              break;
+            }
+            if (piVar5 == (int *)0x0) break;
+            uVar8 = 0;
+            uVar9 = *(ushort *)(*piVar5 + 0xb2);
+            if (uVar9 != 0) {
+              do {
+                if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) ==
+                    TypeInfo__System__Collections__IEnumerator) {
+                  puVar10 = (undefined4 *)
+                           (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) * 8 + 0xc4 +
+                           *piVar5);
+                  goto code_?;
+                }
+                uVar8 = uVar8 + 1;
+              } while (uVar8 < uVar9);
+            }
+            puVar10 = (undefined4 *)
+                     func_?(piVar5,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-      piVar10 = (int *)(*(code *)*puVar9)();
-      if (piVar10 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar10 + 0x20) !=
-          (
-          TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-          ->_0).element_class) {
-        func_?();
-        break;
+            piVar11 = (int *)(*(code *)*puVar10)(piVar5,puVar10[1]);
+            if (piVar11 == (int *)0x0) break;
+            if (*(Il2CppClass **)(*piVar11 + 0x20) !=
+                (
+                TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+                ->_0).element_class) {
+              func_?(piVar11,
+                              TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+                             );
+              break;
+            }
+            pIVar12 = (IntVector *)func_?(piVar11);
+            TerrainLODComponent_AddToLOD(this,*pIVar12,(MethodInfo *)0x0);
+          }
+        }
       }
-      func_?();
-      pIVar11 = (IntVector *)func_?();
-      TerrainLODComponent_AddToLOD(this,*pIVar11,(MethodInfo *)0x0);
     }
   }
   func_?();
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -468,9 +488,10 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_chunkInstance
     }
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

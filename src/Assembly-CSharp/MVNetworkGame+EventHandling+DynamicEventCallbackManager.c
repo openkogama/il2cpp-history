@@ -8,22 +8,22 @@ bool Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)
-            (this->fields).eventsHandledByDynamicEventCallbackManager;
-  if (this_00 != (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::Api::
-            NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
+  this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).eventsHandledByDynamicEventCallbackManager;
+  if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+            HashSet_1_System_ByteEnum__Contains
                       (this_00,eventCode,
                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Contains_MV__Common__MVEventCodes_
                       );
     return bVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 
@@ -37,46 +37,44 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields).eventCallbacks;
   if (this_00 !=
       (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
        *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-             MVEventCodes,System::Object]::
-             Dictionary_2_MV_Common_MVEventCodes_System_Object__get_Item
-                       ((Dictionary_2_MV_Common_MVEventCodes_System_Object_ *)this_00,eventCode,
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                       ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,eventCode,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
                        );
     if (pOVar1 != (Object *)0x0) {
       if (cRam_? == '\0') {
         func_?();
+        func_?(&StringLiteral_No_subscribers_to_event_data);
         cRam_? = '\x01';
       }
       if (pOVar1[1].klass == (Object__Class *)0x0) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                   ((Object *)StringLiteral_No_subscribers_to_event_data,(MethodInfo *)0x0);
         return;
       }
-      mscorlib.dll::System::Action`1[System::Collections::Generic::Dictionary`2[System::
-      String,System::Object]]::
-      Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object__Invoke
-                ((Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)
-                 pOVar1[1].klass,(Dictionary_2_System_String_System_Object_ *)eventData,
-                 MethodInfo__System__Action<ExitGames::Client::Photon::EventData>__Invoke_ExitGames__Client__Photon__EventData_
-                );
-      return;
+      pOVar2 = pOVar1[1].klass;
+      if (pOVar2 != (Object__Class *)0x0) {
+        (*(code *)(pOVar2->_0).namespaze)((pOVar2->_0).element_class,eventData);
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -91,90 +89,108 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Add_MV__Common__MVEventCodes__MVNetworkGame_EventHandling_DynamicEventCallbackManager__EventCallback_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__ContainsKey_MV__Common__MVEventCodes_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
+                   );
+    func_?(&
+                    TypeInfo__MVNetworkGame_EventHandling_DynamicEventCallbackManager__EventCallback
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Contains_MV__Common__MVEventCodes_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)
-            (this->fields).eventsHandledByDynamicEventCallbackManager;
-  if (this_00 != (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)0x0) {
-    method_00 = (MethodInfo *)&UNK_?;
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::Api::
-            NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
-                      (this_00,eventCode,
+  pMVar1 = (MethodInfo *)(this->fields).eventsHandledByDynamicEventCallbackManager;
+  if (pMVar1 != (MethodInfo *)0x0) {
+    bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+            HashSet_1_System_ByteEnum__Contains
+                      ((HashSet_1_System_ByteEnum_ *)pMVar1,eventCode,
                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Contains_MV__Common__MVEventCodes_
                       );
-    if (bVar1 == 0) goto code_?;
-    pDVar2 = (this->fields).eventCallbacks;
-    if (pDVar2 != (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
-                   *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-              MVEventCodes,System::Object]::
-              Dictionary_2_MV_Common_MVEventCodes_System_Object__ContainsKey
-                        ((Dictionary_2_MV_Common_MVEventCodes_System_Object_ *)pDVar2,eventCode,
+    if (bVar2 == 0) goto code_?;
+    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+              (this->fields).eventCallbacks;
+    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        (this_00,(Object *)eventCode,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__ContainsKey_MV__Common__MVEventCodes_
                         );
-      if (bVar1 == 0) {
-        pDVar2 = (this->fields).eventCallbacks;
-        this_01 = (ScaleAnimationBase *)func_?();
-        ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,method_00);
-        if (pDVar2 == (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
-                       *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::MVEventCodes,System::
-        Object]::Dictionary_2_MV_Common_MVEventCodes_System_Object__Add
-                  ((Dictionary_2_MV_Common_MVEventCodes_System_Object_ *)pDVar2,eventCode,
-                   (Object *)this_01,
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Add_MV__Common__MVEventCodes__MVNetworkGame_EventHandling_DynamicEventCallbackManager__EventCallback_
-                  );
-      }
-      pDVar2 = (this->fields).eventCallbacks;
-      if (pDVar2 != (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
-                     *)0x0) {
-        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-                 MVEventCodes,System::Object]::
-                 Dictionary_2_MV_Common_MVEventCodes_System_Object__get_Item
-                           ((Dictionary_2_MV_Common_MVEventCodes_System_Object_ *)pDVar2,eventCode,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
-                           );
+      if (bVar2 == 0) {
+        this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).eventCallbacks;
+        pOVar3 = (Object *)func_?();
         if (pOVar3 != (Object *)0x0) {
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    (pOVar3,ExceptionArgument__Enum_obj,pMVar1);
+          if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__Add
+                      (this_01,(Object *)eventCode,pOVar3,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Add_MV__Common__MVEventCodes__MVNetworkGame_EventHandling_DynamicEventCallbackManager__EventCallback_
+                      );
+            goto code_?;
           }
-          a = pOVar3[1].klass;
-          do {
-            pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)a,(Delegate *)callback,(MethodInfo *)0x0);
-            if (pDVar4 != (Delegate *)0x0) {
-              pDVar5 = (Delegate *)0x0;
-              if ((Action_1_ExitGames_Client_Photon_EventData___Class *)pDVar4->klass ==
-                  TypeInfo__System__Action<ExitGames::Client::Photon::EventData>) {
-                pDVar5 = pDVar4;
+        }
+      }
+      else {
+code_?:
+        this_02 = (this->fields).eventCallbacks;
+        if (this_02 !=
+            (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
+             *)0x0) {
+          pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                             ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,eventCode,
+                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
+                             );
+          if (pOVar3 != (Object *)0x0) {
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            a = pOVar3[1].klass;
+            do {
+              pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                 ((Delegate *)a,(Delegate *)callback,(MethodInfo *)0x0);
+              if (pDVar4 != (Delegate *)0x0) {
+                iVar5 = func_?();
+                if (iVar5 == 0) goto code_?;
               }
-              if (pDVar5 == (Delegate *)0x0) goto code_?;
-            }
-            pOVar6 = (Object__Class *)func_?(pOVar3 + 1);
-            bVar7 = pOVar6 == a;
-            a = pOVar6;
-            if (bVar7) {
-              return;
-            }
-          } while( true );
+              pOVar6 = (Object__Class *)func_?(a);
+              bVar7 = pOVar6 == a;
+              a = pOVar6;
+              if (bVar7) {
+                return;
+              }
+            } while( true );
+          }
         }
       }
     }
   }
-code_?:
-  func_?(0);
+  func_?();
 code_?:
   func_?();
 code_?:
-  this_02 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this_02,StringLiteral_Event_not_handled_by_dynamic_eve,(MethodInfo *)0x0);
-  func_?(this_02);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar8 = func_?(&TypeInfo__System__Exception);
+  this_03 = (Exception *)func_?(uVar8);
+  func_?(this_03);
+  pMVar1 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Event_not_handled_by_dynamic_eve);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_03,message,pMVar1);
+  func_?(&
+                  MethodInfo__MVNetworkGame_EventHandling__DynamicEventCallbackManager__SubscribeToEvent_MV__Common__MVEventCodes__System__Action<ExitGames::Client::Photon::EventData>_
+                 );
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -189,47 +205,53 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Remove_MV__Common__MVEventCodes_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
+                   );
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).eventCallbacks;
   if (pDVar1 != (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
                  *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::
-             MVEventCodes,System::Object]::
-             Dictionary_2_MV_Common_MVEventCodes_System_Object__get_Item
-                       ((Dictionary_2_MV_Common_MVEventCodes_System_Object_ *)pDVar1,eventCode,
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                       ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,eventCode,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
                        );
+    unaff_EBX = (Action_1_ExitGames_Client_Photon_EventData___Class *)0x0;
     if (pOVar2 != (Object *)0x0) {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
         cRam_? = '\x01';
       }
-      source = pOVar2[1].klass;
+      source = (Action_1_ExitGames_Client_Photon_EventData___Class *)pOVar2[1].klass;
       do {
-        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                           ((Delegate *)source,(Delegate *)callback,(MethodInfo *)0x0);
-        pDVar4 = (Delegate *)0x0;
-        if (pDVar3 != (Delegate *)0x0) {
-          if ((Action_1_ExitGames_Client_Photon_EventData___Class *)pDVar3->klass ==
-              TypeInfo__System__Action<ExitGames::Client::Photon::EventData>) {
-            pDVar4 = pDVar3;
-          }
-          pAVar5 = TypeInfo__System__Action<ExitGames::Client::Photon::EventData>;
-          if (pDVar4 == (Delegate *)0x0) goto code_?;
+        unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Remove
+                              ((Delegate *)source,(Delegate *)callback,(MethodInfo *)0x0);
+        unaff_EBX = TypeInfo__System__Action<ExitGames::Client::Photon::EventData>;
+        iVar3 = 0;
+        if (unaff_EDI != (Delegate *)0x0) {
+          iVar3 = func_?(unaff_EDI,
+                                  TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+          if (iVar3 == 0) goto code_?;
         }
-        pOVar6 = (Object__Class *)func_?(pOVar2 + 1,pDVar4,source);
-        bVar7 = pOVar6 != source;
-        source = pOVar6;
-      } while (bVar7);
+        unaff_EDI = (Delegate *)(pOVar2 + 1);
+        unaff_EBX = source;
+        pAVar4 = (Action_1_ExitGames_Client_Photon_EventData___Class *)
+                 func_?((Delegate *)(pOVar2 + 1),iVar3,source);
+        bVar5 = pAVar4 != source;
+        source = pAVar4;
+      } while (bVar5);
       if (pOVar2[1].klass == (Object__Class *)0x0) {
         pDVar1 = (this->fields).eventCallbacks;
         if (pDVar1 == (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
                        *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::Common::MVEventCodes,System::
-        Object]::Dictionary_2_MV_Common_MVEventCodes_System_Object__Remove
-                  ((Dictionary_2_MV_Common_MVEventCodes_System_Object_ *)pDVar1,eventCode,
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+        Dictionary_2_System_ByteEnum_System_Object__Remove
+                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,eventCode,
                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Remove_MV__Common__MVEventCodes_
                   );
       }
@@ -237,13 +259,11 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
     }
   }
 code_?:
-  func_?(0);
-  pDVar3 = extraout_ECX;
-  pAVar5 = extraout_EDX;
+  func_?();
 code_?:
-  func_?(pDVar3,pAVar5);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?(unaff_EDI,unaff_EBX);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -256,39 +276,58 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__HashSet__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>);
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>
                               );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Dictionary__
-            );
-  (this->fields).eventCallbacks = this_00;
-  this_01 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__HashSet__)
-  ;
-  if (this_01 != (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[MV::Common::MVOperationCodes]::
-    HashSet_1_MV_Common_MVOperationCodes__Add
-              ((HashSet_1_MV_Common_MVOperationCodes_ *)this_01,
-               MVOperationCodes__Enum_SetGamePassTierToSeenOperation,
-               MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
+  if (this_00 !=
+      (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
+       *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__Dictionary__
               );
-    (this->fields).eventsHandledByDynamicEventCallbackManager =
-         (HashSet_1_MV_Common_MVEventCodes_ *)this_01;
-    ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,(MethodInfo *)this);
-    return;
+    (this->fields).eventCallbacks = this_00;
+    func_?(&this->fields,this_00);
+    this_01 = (HashSet_1_UnityEngine_Vector3_ *)
+              func_?(
+                             TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>
+                             );
+    if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+      HashSet_1_UnityEngine_Vector3___ctor
+                (this_01,
+                 MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__HashSet__
+                );
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+      HashSet_1_System_Object__Add
+                ((HashSet_1_System_Object_ *)this_01,(Object *)0x6a,
+                 MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
+                );
+      method_00 = (MethodInfo *)&(this->fields).eventsHandledByDynamicEventCallbackManager;
+      (this->fields).eventsHandledByDynamicEventCallbackManager =
+           (HashSet_1_MV_Common_MVEventCodes_ *)this_01;
+      func_?(method_00,this_01);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);

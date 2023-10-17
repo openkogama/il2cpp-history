@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FadeableObject : MonoBehaviour
 {
@@ -18,31 +18,33 @@ public class FadeableObject : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Start_c__AnonStorey0
+	private sealed class __c__DisplayClass1_0
 	{
 		// Fields
-		internal int i;
-		internal FadeableObject _this;
+		public FadeableObject __4__this;
+		public int i;
+		public ExecuteEvents.EventFunction<IFadeParent> __9__0;
 
 		// Constructors
-		public _Start_c__AnonStorey0();
+		public __c__DisplayClass1_0();
 
 		// Methods
-		internal void __m__0(IFadeParent x, BaseEventData y);
+		internal void _Start_b__0(IFadeParent x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnDestroy_c__AnonStorey1
+	private sealed class __c__DisplayClass2_0
 	{
 		// Fields
-		internal int i;
-		internal FadeableObject _this;
+		public FadeableObject __4__this;
+		public int i;
+		public ExecuteEvents.EventFunction<IFadeParent> __9__0;
 
 		// Constructors
-		public _OnDestroy_c__AnonStorey1();
+		public __c__DisplayClass2_0();
 
 		// Methods
-		internal void __m__0(IFadeParent x, BaseEventData y);
+		internal void _OnDestroy_b__0(IFadeParent x, BaseEventData y);
 	}
 
 	// Constructors

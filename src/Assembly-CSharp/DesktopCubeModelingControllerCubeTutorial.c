@@ -37,55 +37,47 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
                MethodInfo *method)
 
 {
+  this_00 = (this->fields).materialsButtonImage;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).materialsButtonImage;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
-    this_02 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                        ((DayNightCycle *)this_01,(MethodInfo *)0x0);
-    if (this_02 != (CelestialParam *)0x0) {
-      this_03 = (GamePointGainEffect *)
-                MVMaterialRepository::MVMaterialRepository_GetMaterial
-                          ((MVMaterialRepository *)this_02,materialId,(MethodInfo *)0x0);
-      if (this_03 != (GamePointGainEffect *)0x0) {
-        value = (Texture *)
-                GamePointGainEffect::GamePointGainEffect_get_ID(this_03,(MethodInfo *)0x0);
-        if (this_00 != (RawImage *)0x0) {
-          UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                    (this_00,value,(MethodInfo *)0x0);
-          pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                             ((MethodInfo *)0x0);
-          if (((pGVar1 != (GameEventManager *)0x0) &&
-              (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
-              pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-             ((pGVar2->fields).LaserCommands !=
-              (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            if (*(Action_1_UIPushOption_ **)(in_stack_3 + 0xc) !=
-                (Action_1_UIPushOption_ *)0x0) {
-              mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                        (*(Action_1_UIPushOption_ **)(in_stack_3 + 0xc),in_stack_4,
-                         MethodInfo__System__Action<unsigned_char>__Invoke_unsigned_char_);
-            }
-            return;
-          }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (this_01 = (pMVar2->fields)._MaterialRepository_k__BackingField,
+     this_01 != (MVMaterialRepository *)0x0)) {
+    pMVar3 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                       (this_01,materialId,(MethodInfo *)0x0);
+    if ((pMVar3 != (MVMaterial *)0x0) && (this_00 != (RawImage *)0x0)) {
+      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                (this_00,(Texture *)(pMVar3->fields)._ButtonTexture_k__BackingField,
+                 (MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+          (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+         ((pGVar4 = (pMVar2->fields).GameEventManager, pGVar4 != (GameEventManager *)0x0 &&
+          ((pGVar5 = (pGVar4->fields).AvatarCommandsBuildMode,
+           pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0 &&
+           (pGVar6 = (pGVar5->fields).LaserCommands,
+           pGVar6 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))))
+         )) {
+        if ((pGVar6->fields).OnCubeMaterialChanged != (Action_1_Byte__1 *)0x0) {
+          pAVar7 = (pGVar6->fields).OnCubeMaterialChanged;
+          (*(pAVar7->fields)._._.invoke_impl)
+                    ((pAVar7->fields)._._.method_code,_materialId,(pAVar7->fields)._._.method);
         }
+        return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -100,14 +92,27 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                   );
+    func_?(&MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__);
+    func_?(&
+                    MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                   );
+    func_?(&
+                    MethodInfo__DesktopCubeModelingControllerCubeTutorial__SetMaterial_unsigned_char_
+                   );
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
   (this->fields).materialsController = materialsController;
+  func_?(&(this->fields).materialsController,materialsController);
   (this->fields).cubeModelingStateMachine = cubeModelingStateMachine;
+  func_?(&(this->fields).cubeModelingStateMachine,cubeModelingStateMachine);
   if (cubeModelingStateMachine == (CubeModelingStateMachine *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
   }
   else {
     uVar1 = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId
@@ -116,69 +121,72 @@ code_?:
     pDVar2 = (this->fields).desktopCubeModelingController;
     if (pDVar2 == (DesktopCubeModelingToolsController *)0x0) goto code_?;
     (pDVar2->fields).cubeModelingStateMachine = cubeModelingStateMachine;
-    pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?(
-                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                            );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar3,(Object *)this,
+    func_?(&(pDVar2->fields).cubeModelingStateMachine,cubeModelingStateMachine);
+    this_00 = (Action_2_Object_Int32Enum_ *)
+              func_?(
+                             TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                             );
+    if (this_00 == (Action_2_Object_Int32Enum_ *)0x0) goto code_?;
+    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+              (this_00,(Object *)this,
                MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-               ,
-               MethodInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>__Action_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__FirstTimeEventManager);
-    }
+               ,(MethodInfo *)0x0);
     FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
               ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)pUVar3,(MethodInfo *)0x0);
+                *)this_00,(MethodInfo *)0x0);
     if (materialsController == (MaterialsController *)0x0) goto code_?;
-    pUVar4 = (materialsController->fields).materialChange;
-    pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar3,(Object *)this,
+    pUVar3 = (materialsController->fields).materialChange;
+    this_01 = (UnityAction_1_System_ByteEnum_ *)
+              func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
+    if (this_01 == (UnityAction_1_System_ByteEnum_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
+    UnityAction_1_System_ByteEnum___ctor
+              (this_01,(Object *)this,
                MethodInfo__DesktopCubeModelingControllerCubeTutorial__SetMaterial_unsigned_char_,
-               MethodInfo__UnityEngine__Events__UnityAction<unsigned_char>__UnityAction_System__Object__void__
-              );
-    pUVar5 = (UnityAction_1_System_Byte_ *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar4,(Delegate *)pUVar3,(MethodInfo *)0x0);
-    pUVar4 = (UnityAction_1_System_Byte_ *)0x0;
-    if (pUVar5 != (UnityAction_1_System_Byte_ *)0x0) {
-      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>) {
-        pUVar4 = pUVar5;
-      }
-      if (pUVar4 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
+               (MethodInfo *)0x0);
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      (materialsController->fields).materialChange = (UnityAction_1_System_Byte_ *)0x0;
     }
-    (materialsController->fields).materialChange = pUVar4;
-    a = (materialsController->fields).materialsPop;
-    pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar3,(Object *)this,
+    else {
+      pUVar3 = (UnityAction_1_System_Byte_ *)func_?();
+      if (pUVar3 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
+      (materialsController->fields).materialChange = pUVar3;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
+    }
+    func_?();
+    pUVar6 = (materialsController->fields).materialsPop;
+    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    if (this_02 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_02,(Object *)this,
                MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__,
                (MethodInfo *)0x0);
-    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)pUVar3,(MethodInfo *)0x0);
-    if (pDVar6 == (Delegate *)0x0) {
-      pDRam00000030 = (Delegate *)0x0;
+    pUVar6 = (UnityAction *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar6,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pUVar6 == (UnityAction *)0x0) {
+      (materialsController->fields).materialsPop = (UnityAction *)0x0;
+      func_?();
       return;
     }
-    pDVar7 = (Delegate *)0x0;
-    if ((UnityAction__Class *)pDVar6->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pDVar7 = pDVar6;
+    pUVar7 = (UnityAction *)0x0;
+    if (pUVar6->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar7 = pUVar6;
     }
-    if (pDVar7 != (Delegate *)0x0) {
-      pDRam00000030 = pDVar7;
-      return;
+    if (pUVar7 != (UnityAction *)0x0) {
+      (materialsController->fields).materialsPop = pUVar7;
+      pUVar7 = (UnityAction *)0x0;
+      if (pUVar6->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar7 = pUVar6;
+      }
+      if (pUVar7 != (UnityAction *)0x0) {
+        func_?();
+        return;
+      }
     }
   }
   func_?();
@@ -198,17 +206,23 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__DesktopCubeModelingControllerCubeTutorial___OverRideIfDefaultMaterial_d__20
+                   );
     cRam_? = '\x01';
   }
-  method_00 = 
-  TypeInfo__DesktopCubeModelingControllerCubeTutorial___OverRideIfDefaultMaterial_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = this;
+  value = (Object *)
+          func_?(
+                         TypeInfo__DesktopCubeModelingControllerCubeTutorial___OverRideIfDefaultMaterial_d__20
+                         );
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
+              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -226,136 +240,122 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                   );
+    func_?(&MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__);
+    func_?(&
+                    MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                   );
+    func_?(&
+                    MethodInfo__DesktopCubeModelingControllerCubeTutorial__SetMaterial_unsigned_char_
+                   );
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
   (this->fields).cubeModelingStateMachine = (CubeModelingStateMachine *)0x0;
-  pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-           func_?(
-                          TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                          );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (pUVar1,(Object *)this,
-             MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-             ,
-             MethodInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>__Action_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__FirstTimeEventManager);
+  func_?(&(this->fields).cubeModelingStateMachine,0);
+  this_02 = (Action_2_Object_Int32Enum_ *)
+            func_?(
+                           TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                           );
+  if (this_02 == (Action_2_Object_Int32Enum_ *)0x0) {
+code_?:
+    func_?();
   }
-  FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
-            ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-              *)pUVar1,(MethodInfo *)0x0);
-  pUVar2 = TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>;
-  pMVar3 = (this->fields).materialsController;
-  if (pMVar3 != (MaterialsController *)0x0) {
-    source = (pMVar3->fields).materialChange;
-    pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar1,(Object *)this,
+  else {
+    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+              (this_02,(Object *)this,
+               MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+               ,(MethodInfo *)0x0);
+    FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
+              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                *)this_02,(MethodInfo *)0x0);
+    pMVar1 = (this->fields).materialsController;
+    if (pMVar1 == (MaterialsController *)0x0) goto code_?;
+    this_03 = (UnityAction_1_System_ByteEnum_ *)func_?();
+    if (this_03 == (UnityAction_1_System_ByteEnum_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
+    UnityAction_1_System_ByteEnum___ctor
+              (this_03,(Object *)this,
                MethodInfo__DesktopCubeModelingControllerCubeTutorial__SetMaterial_unsigned_char_,
-               MethodInfo__UnityEngine__Events__UnityAction<unsigned_char>__UnityAction_System__Object__void__
-              );
-    pIVar4 = (Il2CppClass *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)pUVar1,(MethodInfo *)0x0);
-    pIVar5 = (Il2CppClass *)0x0;
-    if (pIVar4 != (Il2CppClass *)0x0) {
-      if ((UnityAction_1_System_Byte___Class *)pIVar4->image ==
-          TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>) {
-        pIVar5 = pIVar4;
-      }
-      if (pIVar5 == (Il2CppClass *)0x0) goto code_?;
+               (MethodInfo *)0x0);
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)0x0,(Delegate *)this_03,(MethodInfo *)0x0);
+    if (pDVar2 == (Delegate *)0x0) {
+      (pMVar1->fields).materialChange = (UnityAction_1_System_Byte_ *)0x0;
     }
-    (pUVar2->_0).parent = pIVar5;
-    pUVar6 = TypeInfo__UnityEngine__Events__UnityAction;
-    pMVar3 = (this->fields).materialsController;
-    if (pMVar3 != (MaterialsController *)0x0) {
-      source_00 = (pMVar3->fields).materialsPop;
-      pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar1,(Object *)this,
-                 MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__,
-                 (MethodInfo *)0x0);
-      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)source_00,(Delegate *)pUVar1,(MethodInfo *)0x0);
-      pDVar8 = (Delegate *)0x0;
-      if (pDVar7 != (Delegate *)0x0) {
-        if ((UnityAction__Class *)pDVar7->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pDVar8 = pDVar7;
-        }
-        if (pDVar8 == (Delegate *)0x0) goto code_?;
-      }
-      (pUVar6->_0).generic_class = (Il2CppGenericClass *)pDVar8;
+    else {
+      pUVar3 = (UnityAction_1_System_Byte_ *)func_?();
+      if (pUVar3 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
+      (pMVar1->fields).materialChange = pUVar3;
+      iVar4 = func_?();
+      if (iVar4 == 0) goto code_?;
+    }
+    func_?();
+    pMVar1 = (this->fields).materialsController;
+    if (pMVar1 == (MaterialsController *)0x0) goto code_?;
+    this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    if (this_04 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_04,(Object *)this,
+               MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__,
+               (MethodInfo *)0x0);
+    pUVar5 = (UnityAction *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)0x0,(Delegate *)this_04,(MethodInfo *)0x0);
+    if (pUVar5 == (UnityAction *)0x0) {
+      (pMVar1->fields).materialsPop = (UnityAction *)0x0;
+code_?:
+      func_?();
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-        func_?();
-      }
       this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
       if (this_00 != (FirstTimeState *)0x0) {
         MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
-        FirstTimeState_SetFirstTimeEvent(this_00,in_stack_9,(MethodInfo *)0x0);
+        FirstTimeState_SetFirstTimeEvent(this_00,in_stack_6,(MethodInfo *)0x0);
         if (TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher !=
             (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
              *)0x0) {
-          if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-            func_?();
-          }
-          this_01 = (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)
-                    TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
-          if (this_01 == (Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent_ *)0x0)
-          goto code_?;
-          System.Core.dll::System::Action`2[Object,UnityEngine::
-          ReflectionProbe+ReflectionProbeEvent]::
-          Action_2_Object_UnityEngine_ReflectionProbe_ReflectionProbeEvent__Invoke
-                    (this_01,(Object *)
-                             TypeInfo__FirstTimeEventManager->static_fields->firstTimeState,
-                     in_stack_9,
-                     MethodInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>__Invoke_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-                    );
+          (*(TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher->fields)._._.
+            invoke_impl)();
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        this_02 = (MVJetPack *)
-                  MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_02 != (MVJetPack *)0x0) {
-          this_03 = MVJetPack::MVJetPack_get_Shield(this_02,(MethodInfo *)0x0);
-          if (this_03 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetFirstTimeEvent
-                      ((MVNetworkGame_OperationRequests *)this_03,in_stack_9,
-                       (MethodInfo *)0x0);
-            return;
-          }
+        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar7 != (MVNetworkGame *)0x0) &&
+           (this_01 = (pMVar7->fields).operationRequests,
+           this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetFirstTimeEvent
+                    (this_01,in_stack_6,(MethodInfo *)0x0);
+          return;
         }
       }
-code_?:
       func_?();
-      pcVar10 = (code *)swi(3);
-      (*pcVar10)();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
+    }
+    pUVar9 = (UnityAction *)0x0;
+    if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar9 = pUVar5;
+    }
+    if (pUVar9 != (UnityAction *)0x0) {
+      (pMVar1->fields).materialsPop = pUVar9;
+      pUVar9 = (UnityAction *)0x0;
+      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar9 = pUVar5;
+      }
+      if (pUVar9 != (UnityAction *)0x0) goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -369,89 +369,85 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__DesktopCubeModelingControllerCubeTutorial___OnFirstTimeState_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&StringLiteral_Trying_to_pop);
     cRam_? = '\x01';
   }
   if (firstTimeEvent == (this->fields).exitFirstTimeEvent) {
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,
-               MethodInfo__DesktopCubeModelingControllerCubeTutorial___OnFirstTimeState_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
+    goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+               MethodInfo__DesktopCubeModelingControllerCubeTutorial___OnFirstTimeState_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_00,
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar1,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
               ((Object *)StringLiteral_Trying_to_pop,(MethodInfo *)0x0);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_delete_tool_set_active);
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).deleteTool;
   if (pGVar1 == (GameObject *)0x0) goto code_?;
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                     (pGVar1,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__FirstTimeEventManager);
+  if ((bVar2 == 0) &&
+     (bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
+                        (FirstTimeEvent__Enum_BM_CubeTutorialPaintedCubes,(MethodInfo *)0x0),
+     bVar2 != 0)) {
+    DesktopCubeModelingControllerCubeTutorial_DeactivateAllToolButtons(this,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                      (FirstTimeEvent__Enum_BM_CubeTutorialPaintedCubes,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      DesktopCubeModelingControllerCubeTutorial_DeactivateAllToolButtons(this,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_delete_tool_set_active,(MethodInfo *)0x0);
-      pGVar1 = (this->fields).deleteTool;
-      if (pGVar1 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,1,(MethodInfo *)0x0);
-      pDVar3 = (this->fields).desktopCubeModelingToolsController;
-      if (pDVar3 == (DesktopCubeModelingToolsController *)0x0) goto code_?;
-      DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAllToTransparent
-                (pDVar3,(MethodInfo *)0x0);
-    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+              ((Object *)StringLiteral_delete_tool_set_active,(MethodInfo *)0x0);
+    pGVar1 = (this->fields).deleteTool;
+    if (pGVar1 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar1,1,(MethodInfo *)0x0);
+    pDVar3 = (this->fields).desktopCubeModelingToolsController;
+    if (pDVar3 == (DesktopCubeModelingToolsController *)0x0) goto code_?;
+    DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAllToTransparent
+              (pDVar3,(MethodInfo *)0x0);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Activate_materials);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__FirstTimeEventManager);
   }
   bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
                     (FirstTimeEvent__Enum_BM_CubeTutorialAddedCubes,(MethodInfo *)0x0);
   if (bVar2 == 0) {
     return;
-  }
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__FirstTimeEventManager);
   }
   bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
                     (FirstTimeEvent__Enum_BM_ChangeToolToPaint,(MethodInfo *)0x0);
@@ -461,8 +457,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
     bVar2 = FirstTimeCubeEditFadeButtons::FirstTimeCubeEditFadeButtons_IsEnabled
                       (pFVar4,(MethodInfo *)0x0);
     if (bVar2 == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
@@ -498,7 +493,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -514,18 +509,24 @@ DesktopCubeModelingControllerCubeTutorial_OverRideIfDefaultMaterial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__DesktopCubeModelingControllerCubeTutorial___OverRideIfDefaultMaterial_d__20
+                   );
     cRam_? = '\x01';
   }
-  method_00 = 
-  TypeInfo__DesktopCubeModelingControllerCubeTutorial___OverRideIfDefaultMaterial_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    return (IEnumerator *)this_00;
+  value = (Object *)
+          func_?(
+                         TypeInfo__DesktopCubeModelingControllerCubeTutorial___OverRideIfDefaultMaterial_d__20
+                         );
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -563,7 +564,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_delete_tool_set_active);
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).deleteTool;
@@ -571,16 +573,11 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar1,(MethodInfo *)0x0);
     if (bVar2 == 0) {
-      if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-        func_?(TypeInfo__FirstTimeEventManager);
-      }
       bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
                         (FirstTimeEvent__Enum_BM_CubeTutorialPaintedCubes,(MethodInfo *)0x0);
       if (bVar2 != 0) {
         DesktopCubeModelingControllerCubeTutorial_DeactivateAllToolButtons(this,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
@@ -591,28 +588,29 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
                     (pGVar1,1,(MethodInfo *)0x0);
           if ((this->fields).desktopCubeModelingToolsController !=
               (DesktopCubeModelingToolsController *)0x0) {
-            pBVar3 = (in_stack_4->fields).editCube;
-            if (pBVar3 != (Button *)0x0) {
-              pIVar5 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                                 ((Selectable *)pBVar3,(MethodInfo *)0x0);
-              DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAlpha
-                        (in_stack_4,pIVar5,(in_stack_4->fields).disabledAlpha,
-                         (MethodInfo *)0x0);
-              pBVar3 = (in_stack_4->fields).deletecube;
-              if (pBVar3 != (Button *)0x0) {
-                pIVar5 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                                   ((Selectable *)pBVar3,(MethodInfo *)0x0);
-                DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAlpha
-                          (in_stack_4,pIVar5,(in_stack_4->fields).disabledAlpha,
-                           (MethodInfo *)0x0);
-                pBVar3 = (in_stack_4->fields).paintCube;
-                if (pBVar3 != (Button *)0x0) {
-                  pIVar5 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                                     ((Selectable *)pBVar3,(MethodInfo *)0x0);
-                  DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAlpha
-                            (in_stack_4,pIVar5,(in_stack_4->fields).disabledAlpha,
-                             (MethodInfo *)0x0);
-                  return;
+            if (*(Selectable **)(in_stack_3 + 0x14) != (Selectable *)0x0) {
+              pIVar4 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                                 (*(Selectable **)(in_stack_3 + 0x14),(MethodInfo *)0x0);
+              if (pIVar4 != (Image *)0x0) {
+                (*(pIVar4->klass->vtable).get_color.methodPtr)();
+                (*(pIVar4->klass->vtable).set_color.methodPtr)();
+                if (*(Selectable **)(in_stack_3 + 0x18) != (Selectable *)0x0) {
+                  pIVar4 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                                     (*(Selectable **)(in_stack_3 + 0x18),(MethodInfo *)0x0);
+                  if (pIVar4 != (Image *)0x0) {
+                    puVar5 = (undefined4 *)(*(pIVar4->klass->vtable).get_color.methodPtr)();
+                    (*(pIVar4->klass->vtable).set_color.methodPtr)(pIVar4,*puVar5);
+                    if (*(Selectable **)(in_stack_3 + 0x1c) != (Selectable *)0x0) {
+                      pIVar4 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                                         (*(Selectable **)(in_stack_3 + 0x1c),
+                                          (MethodInfo *)0x0);
+                      if (pIVar4 != (Image *)0x0) {
+                        puVar5 = (undefined4 *)(*(pIVar4->klass->vtable).get_color.methodPtr)();
+                        (*(pIVar4->klass->vtable).set_color.methodPtr)(pIVar4,*puVar5);
+                        return;
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -643,21 +641,14 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Activate_materials);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__FirstTimeEventManager);
   }
   bVar1 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
                     (FirstTimeEvent__Enum_BM_CubeTutorialAddedCubes,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
-  }
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-    func_?();
   }
   bVar1 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
                     (FirstTimeEvent__Enum_BM_ChangeToolToPaint,(MethodInfo *)0x0);
@@ -667,8 +658,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
     bVar1 = FirstTimeCubeEditFadeButtons::FirstTimeCubeEditFadeButtons_IsEnabled
                       (pFVar2,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
@@ -697,70 +687,81 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
       (this->fields).paintHasBeenActivated = 1;
       if ((this->fields).desktopCubeModelingToolsController !=
           (DesktopCubeModelingToolsController *)0x0) {
-        pBVar4 = (in_stack_5->fields).editCube;
-        if (pBVar4 != (Button *)0x0) {
-          pIVar6 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                             ((Selectable *)pBVar4,(MethodInfo *)0x0);
-          DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAlpha
-                    (in_stack_5,pIVar6,(in_stack_5->fields).disabledAlpha,
-                     (MethodInfo *)0x0);
-          pBVar4 = (in_stack_5->fields).deletecube;
-          if (pBVar4 != (Button *)0x0) {
-            pIVar6 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                               ((Selectable *)pBVar4,(MethodInfo *)0x0);
-            DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAlpha
-                      (in_stack_5,pIVar6,(in_stack_5->fields).disabledAlpha,
-                       (MethodInfo *)0x0);
-            pBVar4 = (in_stack_5->fields).paintCube;
-            if (pBVar4 != (Button *)0x0) {
-              pIVar6 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                                 ((Selectable *)pBVar4,(MethodInfo *)0x0);
-              DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetAlpha
-                        (in_stack_5,pIVar6,(in_stack_5->fields).disabledAlpha,
-                         (MethodInfo *)0x0);
+        if ((*(Selectable **)(in_stack_4 + 0x14) != (Selectable *)0x0) &&
+           (pIVar5 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                               (*(Selectable **)(in_stack_4 + 0x14),(MethodInfo *)0x0),
+           pIVar5 != (Image *)0x0)) {
+          (*(pIVar5->klass->vtable).get_color.methodPtr)();
+          (*(pIVar5->klass->vtable).set_color.methodPtr)();
+          if ((*(Selectable **)(in_stack_4 + 0x18) != (Selectable *)0x0) &&
+             (pIVar5 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                                 (*(Selectable **)(in_stack_4 + 0x18),(MethodInfo *)0x0),
+             pIVar5 != (Image *)0x0)) {
+            (*(pIVar5->klass->vtable).get_color.methodPtr)();
+            (*(pIVar5->klass->vtable).set_color.methodPtr)();
+            if ((*(Selectable **)(in_stack_4 + 0x1c) != (Selectable *)0x0) &&
+               (pIVar5 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                                   (*(Selectable **)(in_stack_4 + 0x1c),(MethodInfo *)0x0),
+               pIVar5 != (Image *)0x0)) {
+              (*(pIVar5->klass->vtable).get_color.methodPtr)();
+              (*(pIVar5->klass->vtable).set_color.methodPtr)();
               return;
             }
           }
         }
         func_?();
-        pcVar7 = (code *)swi(3);
-        (*pcVar7)();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
 
-/* Void <OnFirstTimeState>m__0(IUIStack, BaseEventData) */
+/* Void <OnFirstTimeState>b__12_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
-     DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_m__0
+     DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_b__12_0
                (DesktopCubeModelingControllerCubeTutorial *this,IUIStack *x,BaseEventData *y,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
     cRam_? = '\x01';
   }
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-  if (x != (IUIStack *)0x0) {
-    cVar2 = func_?(5,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1);
-    if (cVar2 != '\0') {
-      func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+            ((Component *)this,(MethodInfo *)0x0);
+  if (x == (IUIStack *)0x0) {
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar2 = 0;
+  uVar3 = (x->klass->_1).interface_offsets_count;
+  if (uVar3 != 0) {
+    do {
+      if (x->klass->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar4 = &(x->klass->vtable).PopToStackElement + x->klass->interfaceOffsets[uVar2].offset;
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar3);
+  }
+  pVVar4 = (VirtualInvokeData *)func_?(x,TypeInfo__UnityEngine__EventSystems__IUIStack,5);
+code_?:
+  cVar5 = (*pVVar4->methodPtr)(x,unaff_EBX,pVVar4->method);
+  if (cVar5 != '\0') {
+    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
+  }
   return;
 }
 

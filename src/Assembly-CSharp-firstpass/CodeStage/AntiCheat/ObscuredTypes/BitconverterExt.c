@@ -7,54 +7,73 @@ BitconverterExt_GetBytes(Decimal dec,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__BitConverter);
+    func_?(&TypeInfo__System__Decimal);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__);
+    func_?(&MethodInfo__System__Collections__Generic__List<unsigned_char>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<unsigned_char>);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__Decimal->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Decimal->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Decimal);
   }
-  pIVar1 = mscorlib.dll::System::Decimal::Decimal_GetBits(dec,(MethodInfo *)0x0);
-  this = (List_1_VoxelHit_ *)
+  auVar1 = dec._0_16_;
+  d.ulomidLE._0_4_ = 0;
+  d.flags = auVar1._0_4_;
+  d.hi = auVar1._4_4_;
+  d.lo = auVar1._8_4_;
+  d.mid = auVar1._12_4_;
+  d.ulomidLE._4_4_ = unaff_EDI;
+  pIVar2 = mscorlib.dll::System::Decimal::Decimal_GetBits(d,unaff_ESI);
+  this = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
          func_?(TypeInfo__System__Collections__Generic__List<unsigned_char>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            ((List_1_UnityEngine_Vector4_ *)this,
-             MethodInfo__System__Collections__Generic__List<unsigned_char>__List__);
-  uVar2 = 0;
-  if (pIVar1 != (Int32__Array *)0x0) {
-    piVar3 = pIVar1->vector;
-    for (; (int)uVar2 < (int)pIVar1->max_length; uVar2 = uVar2 + 1) {
-      if (pIVar1->max_length <= uVar2) goto code_?;
-      value = *piVar3;
-      if ((((uint)(TypeInfo__System__BitConverter->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__BitConverter->_1).cctor_started == 0)) {
-        func_?();
+  if (this != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__List<unsigned_char>__List__);
+    uVar3 = 0;
+    if (pIVar2 != (Int32__Array *)0x0) {
+      piVar4 = pIVar2->vector;
+      while( true ) {
+        if ((int)pIVar2->max_length <= (int)uVar3) {
+          pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                   UnitySynchronizationContext+WorkRequest]::
+                   List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
+                             (this,
+                              MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__
+                             );
+          return (Byte__Array *)pUVar5;
+        }
+        if (pIVar2->max_length <= uVar3) break;
+        value = *piVar4;
+        if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pBVar6 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_1
+                           (value,(MethodInfo *)0x0);
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+        UnitySynchronizationContext+WorkRequest]::
+        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__AddRange
+                  (this,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pBVar6
+                   ,
+                   MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
+                  );
+        uVar3 = uVar3 + 1;
+        piVar4 = piVar4 + 1;
       }
-      pBVar4 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_2(value,(MethodInfo *)0x0);
-      if (this == (List_1_VoxelHit_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__AddRange
-                (this,(IEnumerable_1_VoxelHit_ *)pBVar4,
-                 MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
-                );
-      piVar3 = piVar3 + 1;
-    }
-    if (this != (List_1_VoxelHit_ *)0x0) {
-      pVVar5 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::
-               List_1_VoxelHit__ToArray
-                         (this,
-                          MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__);
-      return (Byte__Array *)pVVar5;
+      goto code_?;
     }
   }
-code_?:
   func_?();
 code_?:
-  uVar6 = func_?();
-  func_?(uVar6);
+  func_?();
   pcVar7 = (code *)swi(3);
-  pBVar4 = (Byte__Array *)(*pcVar7)();
-  return pBVar4;
+  pBVar6 = (Byte__Array *)(*pcVar7)();
+  return pBVar6;
 }
 
 
@@ -66,44 +85,52 @@ Decimal * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Bi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__BitConverter);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   if (bytes != (Byte__Array *)0x0) {
     if (bytes->max_length != 0x10) goto code_?;
-    iVar1 = func_?(TypeInfo__System__Int32,4);
+    bits = (Int32__Array *)func_?(TypeInfo__System__Int32,4);
     startIndex = 0;
     while( true ) {
-      if ((((uint)(TypeInfo__System__BitConverter->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__BitConverter->_1).cctor_started == 0)) {
+      if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__BitConverter);
       }
-      iVar2 = mscorlib.dll::System::BitConverter::BitConverter_ToInt32
+      iVar1 = mscorlib.dll::System::BitConverter::BitConverter_ToInt32
                         (bytes,startIndex,(MethodInfo *)0x0);
-      if (iVar1 == 0) break;
-      func_?((int)(startIndex + (startIndex >> 0x1f & 3U)) >> 2,iVar2);
+      if (bits == (Int32__Array *)0x0) break;
+      uVar2 = (int)(startIndex + (startIndex >> 0x1f & 3U)) >> 2;
+      if (bits->max_length <= uVar2) goto code_?;
       startIndex = startIndex + 4;
+      bits->vector[uVar2] = iVar1;
       if (0xf < startIndex) {
         __return_storage_ptr__->flags = 0;
         __return_storage_ptr__->hi = 0;
         __return_storage_ptr__->lo = 0;
         __return_storage_ptr__->mid = 0;
-        func_?(__return_storage_ptr__,iVar1,0);
+        mscorlib.dll::System::Decimal::Decimal__ctor_6
+                  (__return_storage_ptr__,bits,(MethodInfo *)0x0);
         return __return_storage_ptr__;
       }
     }
   }
-  func_?(0);
+  func_?();
 code_?:
-  this = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this,StringLiteral__ACTk__A_decimal_must_be_created,(MethodInfo *)0x0);
-  func_?(this,0,
-                  MethodInfo__CodeStage__AntiCheat__ObscuredTypes__BitconverterExt__ToDecimal_System__Byte____
-                 );
-  pcVar3 = (code *)swi(3);
-  pDVar4 = (Decimal *)(*pcVar3)();
-  return pDVar4;
+  func_?();
+code_?:
+  uVar3 = func_?(&TypeInfo__System__Exception);
+  this = (Exception *)func_?(uVar3);
+  func_?(this);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral__ACTk__A_decimal_must_be_created);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this,message,method_00);
+  uVar3 = func_?(&
+                          MethodInfo__CodeStage__AntiCheat__ObscuredTypes__BitconverterExt__ToDecimal_System__Byte____
+                         );
+  func_?(this,uVar3);
+  pcVar4 = (code *)swi(3);
+  pDVar5 = (Decimal *)(*pcVar4)();
+  return pDVar5;
 }
 

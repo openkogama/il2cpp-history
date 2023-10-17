@@ -6,9 +6,11 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                (HackingToolDetector_HackingToolReport *this,ApplicationDesc *app,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  (this->fields).kind = 0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
+  (this->fields).kind = 0;
+  func_?(&(this->fields).app,app);
   return;
 }
 
@@ -21,10 +23,13 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
   (this->fields).kind = 1;
+  func_?(&(this->fields).app,app);
   (this->fields).exactFind = exactFind;
+  func_?(&(this->fields).exactFind,exactFind);
   return;
 }
 
@@ -37,10 +42,13 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                ApplicationDesc_RegistryKey *foundKey,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
   (this->fields).kind = 2;
+  func_?(&(this->fields).app,app);
   (this->fields).foundKey = foundKey;
+  func_?(&(this->fields).foundKey,foundKey);
   return;
 }
 
@@ -53,11 +61,15 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                ApplicationDesc_RegistryKey *foundKey,String *exactFind,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
-  (this->fields).foundKey = foundKey;
   (this->fields).kind = 3;
+  func_?(&(this->fields).app,app);
+  (this->fields).foundKey = foundKey;
+  func_?(&(this->fields).foundKey,foundKey);
   (this->fields).exactFind = exactFind;
+  func_?(&(this->fields).exactFind,exactFind);
   return;
 }
 

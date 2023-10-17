@@ -7,147 +7,139 @@ void Assembly-CSharp.dll::PlayerJoinedNotification::PlayerJoinedNotification_Ini
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__ContainsKey_System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__String);
+    func_?(&StringLiteral__joined_);
+    func_?(&StringLiteral__joined_from_);
+    func_?(&StringLiteral__returning_English_);
+    func_?(&StringLiteral_Country_dictionary_doesn_t_conta);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral_en_US);
     cRam_? = '\x01';
   }
-  pDVar1 = data;
+  this_02 = data;
   PlayerNotification::PlayerNotification_Initialize
             ((PlayerNotification *)this,data,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVAvatar *)0x0) {
-    this_01 = MVAvatar::MVAvatar_get_Shield(this_00,(MethodInfo *)0x0);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    this_00 = (pMVar1->fields).playerContainer;
     data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,data._0_3_);
-    pTVar2 = (Type *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-    if (((pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-        (pPVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                  Dictionary_2_System_Type_Pool__get_Item
-                            ((Dictionary_2_System_Type_Pool_ *)pDVar1,pTVar2,
+    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
+    if (((this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+        (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__get_Item
+                            (this_02,pOVar2,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), this_01 != (MVRuntimeDataVariableClampedFloat *)0x0)) &&
-       (pPVar3 != (Pool *)0x0)) {
-      if ((pPVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        piVar4 = (int32_t *)func_?(pPVar3);
-        this_02 = MVPlayerContainer::MVPlayerContainer_get_Item
-                            ((MVPlayerContainer *)this_01,*piVar4,(MethodInfo *)0x0);
-        uStack_5 = (undefined *)CONCAT13(0xc,(undefined3)uStack_5);
-        pTVar2 = (Type *)func_?(TypeInfo__System__Byte,(int)&uStack_5 + 3);
-        pPVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                 Dictionary_2_System_Type_Pool__get_Item
-                           ((Dictionary_2_System_Type_Pool_ *)pDVar1,pTVar2,
+                            ), this_00 != (MVPlayerContainer *)0x0)) && (pOVar2 != (Object *)0x0)) {
+      if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+        piVar3 = (int32_t *)func_?(pOVar2);
+        pMVar4 = MVPlayerContainer::MVPlayerContainer_get_Item(this_00,*piVar3,(MethodInfo *)0x0);
+        pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
+        pSVar5 = (String *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (this_02,pOVar2,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        pPVar3 = (Pool *)0x0;
-        if (pPVar6 != (Pool *)0x0) {
-          if ((String__Class *)pPVar6->klass == TypeInfo__System__String) {
-            pPVar3 = pPVar6;
+        pSVar6 = (String *)0x0;
+        if (pSVar5 != (String *)0x0) {
+          if (pSVar5->klass == TypeInfo__System__String) {
+            pSVar6 = pSVar5;
           }
           pSVar7 = TypeInfo__System__String;
-          if (pPVar3 == (Pool *)0x0) goto code_?;
+          if (pSVar6 == (String *)0x0) goto code_?;
         }
-        pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__MVGameControllerBase);
+          cRam_? = '\x01';
+        }
+        pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
         if (pGVar8 != (GameSessionData *)0x0) {
-          pSVar7 = (String__Class *)(pGVar8->fields).language;
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            pSVar7 = TypeInfo__System__String;
-            func_?();
-          }
           bVar9 = mscorlib.dll::System::String::String_op_Equality
-                            ((String *)pPVar3,(String *)pSVar7,(MethodInfo *)0x0);
+                            (pSVar6,(pGVar8->fields).language,(MethodInfo *)0x0);
           if (bVar9 == 0) {
             pTVar10 = (this->fields)._.NameLabel;
-            if ((this_02 != (MVPlayer *)0x0) &&
-               (iVar11 = GamePointGainEffect::GamePointGainEffect_get_ID
-                                  ((GamePointGainEffect *)this_02,(MethodInfo *)0x0), iVar11 != 0)) {
-              pSVar12 = *(String **)(iVar11 + 0xc);
-              str1 = TM::TM__(StringLiteral__joined_,(MethodInfo *)0x0);
-              if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                 ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                func_?(TypeInfo__System__String);
-              }
-              pSVar12 = mscorlib.dll::System::String::String_Concat_2
-                                  (pSVar12,str1,(MethodInfo *)0x0);
+            if ((pMVar4 != (MVPlayer *)0x0) &&
+               (pUVar11 = (pMVar4->fields)._UserProfileData_k__BackingField,
+               pUVar11 != (UserProfileData *)0x0)) {
+              pSVar6 = (pUVar11->fields).UserName;
+              pSVar5 = TM::TM__(StringLiteral__joined_,(MethodInfo *)0x0);
+              pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                                  (pSVar6,pSVar5,(MethodInfo *)0x0);
 code_?:
               if (pTVar10 != (Text *)0x0) {
-                (*(code *)(pTVar10->klass->vtable).set_text.method)
-                          (pTVar10,pSVar12,
-                           (pTVar10->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+                (*(pTVar10->klass->vtable).set_text.methodPtr)
+                          (pTVar10,pSVar6,(pTVar10->klass->vtable).set_text.method);
                 return;
               }
             }
           }
           else {
+            this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                      (this->fields).Country;
             (this->fields)._.lifeTime = 8;
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__String);
-            }
-            pDVar13 = (this->fields).Country;
-            if (pDVar13 != (Dictionary_2_System_String_System_String_ *)0x0) {
-              pMVar14 = 
-              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__ContainsKey_System__String_
-              ;
-              bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                      WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                      KogamaSettingWrapperBase]::
-                      Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                                ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                                  *)pDVar13,(String *)pPVar3,
+            if (this_01 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+              method_00 = (MethodInfo *)&UNK_?;
+              bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,GUILoginHandler+PlanetData]::
+                      Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                                (this_01,(Object *)pSVar6,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__ContainsKey_System__String_
                                 );
               if (bVar9 == 0) {
-                if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0)
-                   && ((TypeInfo__System__String->_1).cctor_started == 0)) {
+                method = (MethodInfo *)0x0;
+                data = (Dictionary_2_System_Object_System_Object_ *)
+                       StringLiteral__returning_English_;
+                pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                                    (StringLiteral_Country_dictionary_doesn_t_conta,pSVar6,
+                                     StringLiteral__returning_English_,(MethodInfo *)0x0);
+                if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                  in_stack_12 = TypeInfo__UnityEngine__Debug;
+                  in_stack_13 = &UNK_?;
                   func_?();
                 }
-                pSVar12 = mscorlib.dll::System::String::String_Concat_3
-                                    (StringLiteral_Country_dictionary_doesn_t_conta,(String *)pPVar3
-                                     ,StringLiteral__returning_English_,(MethodInfo *)0x0);
-                if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) !=
-                     0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-                  func_?(TypeInfo__UnityEngine__Debug);
-                }
                 UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
-                          ((Object *)pSVar12,(MethodInfo *)0x0);
-                pDVar13 = (this->fields).Country;
-                pPVar3 = (Pool *)StringLiteral_en_US;
-                pMVar14 = 
+                          ((Object *)pSVar6,(MethodInfo *)0x0);
+                this_03 = (this->fields).Country;
+                pSVar6 = StringLiteral_en_US;
+                method_00 = 
                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
                 ;
+                if (this_03 != (Dictionary_2_System_String_System_String_ *)0x0)
+                goto code_?;
               }
               else {
-                pDVar13 = (this->fields).Country;
-              }
-              if (pDVar13 != (Dictionary_2_System_String_System_String_ *)0x0) {
-                pMVar14 = (MethodInfo *)
-                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Type,Pool]::Dictionary_2_System_Type_Pool__get_Item
-                                    ((Dictionary_2_System_Type_Pool_ *)pDVar13,(Type *)pPVar3,pMVar14
-                                    );
-                pTVar10 = (this->fields)._.NameLabel;
-                if (this_02 != (MVPlayer *)0x0) {
-                  iVar11 = GamePointGainEffect::GamePointGainEffect_get_ID
-                                    ((GamePointGainEffect *)this_02,(MethodInfo *)0x0);
-                  if (iVar11 != 0) {
-                    pSVar12 = *(String **)(iVar11 + 0xc);
-                    data = (Dictionary_2_System_Object_System_Object_ *)0x0;
-                    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-                              TM::TM__(StringLiteral__joined_from_,(MethodInfo *)0x0);
-                    method = pMVar14;
-                    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) !=
-                         0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                      method = (MethodInfo *)&UNK_?;
-                      func_?();
-                      method = pMVar14;
-                    }
-                    data = pDVar1;
-                    pSVar12 = mscorlib.dll::System::String::String_Concat_3
-                                        (pSVar12,(String *)pDVar1,(String *)method,
-                                         (MethodInfo *)0x0);
+                this_03 = (this->fields).Country;
+                if (this_03 != (Dictionary_2_System_String_System_String_ *)0x0) {
+                  method = 
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
+                  ;
+code_?:
+                  pSVar6 = (String *)
+                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Object,System::Object]::
+                            Dictionary_2_System_Object_System_Object__get_Item
+                                      ((Dictionary_2_System_Object_System_Object_ *)this_03,
+                                       (Object *)pSVar6,method_00);
+                  pTVar10 = (this->fields)._.NameLabel;
+                  if ((pMVar4 != (MVPlayer *)0x0) &&
+                     (pUVar11 = (pMVar4->fields)._UserProfileData_k__BackingField,
+                     pUVar11 != (UserProfileData *)0x0)) {
+                    pSVar5 = (pUVar11->fields).UserName;
+                    str1 = TM::TM__(StringLiteral__joined_from_,(MethodInfo *)0x0);
+                    pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                                        (pSVar5,str1,pSVar6,(MethodInfo *)0x0);
                     goto code_?;
                   }
                 }
@@ -157,16 +149,16 @@ code_?:
         }
       }
       else {
-        func_?(pPVar3,TypeInfo__System__Int32);
+        func_?(pOVar2,TypeInfo__System__Int32);
       }
     }
   }
-  pPVar6 = (Pool *)func_?(0);
+  pSVar5 = (String *)func_?();
   pSVar7 = extraout_ECX;
 code_?:
-  func_?(pPVar6,pSVar7);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  func_?(pSVar5,pSVar7);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -178,178 +170,192 @@ void Assembly-CSharp.dll::PlayerJoinedNotification::PlayerJoinedNotification__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                   );
+    func_?(&StringLiteral_Italy);
+    func_?(&StringLiteral_es_ES);
+    func_?(&StringLiteral_Brazil);
+    func_?(&StringLiteral_Russia);
+    func_?(&StringLiteral_pt);
+    func_?(&StringLiteral_Norway);
+    func_?(&StringLiteral_Turkey);
+    func_?(&StringLiteral_Indonesia);
+    func_?(&StringLiteral_France);
+    func_?(&StringLiteral_The_United_Kingdom);
+    func_?(&StringLiteral_Germany);
+    func_?(&StringLiteral_da_DK);
+    func_?(&StringLiteral_pt_BR);
+    func_?(&StringLiteral_The_United_States);
+    func_?(&StringLiteral_it_IT);
+    func_?(&StringLiteral_Denmark);
+    func_?(&StringLiteral_Finland);
+    func_?(&StringLiteral_nl_NL);
+    func_?(&StringLiteral_sv_SE);
+    func_?(&StringLiteral_fi);
+    func_?(&StringLiteral_de_DE);
+    func_?(&StringLiteral_fr_FR);
+    func_?(&StringLiteral_The_Netherlands);
+    func_?(&StringLiteral_pl_PL);
+    func_?(&StringLiteral_en_GB);
+    func_?(&StringLiteral_id_ID);
+    func_?(&StringLiteral_Sweden);
+    func_?(&StringLiteral_Spain);
+    func_?(&StringLiteral_ru_RU);
+    func_?(&StringLiteral_tr_TR);
+    func_?(&StringLiteral_nb_NO);
+    func_?(&StringLiteral_Portugal);
+    func_?(&StringLiteral_en_US);
+    func_?(&StringLiteral_Poland);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                              );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-           TM::TM__(StringLiteral_Denmark,(MethodInfo *)0x0);
-  if (this_00 !=
-      (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-       *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_da_DK,pCVar1,
+  this_00 = (Dictionary_2_System_String_System_String_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                           );
+  if (this_00 != (Dictionary_2_System_String_System_String_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+              );
+    pSVar1 = TM::TM__(StringLiteral_Denmark,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_da_DK,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Germany,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_de_DE,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Germany,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_de_DE,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_The_United_States,(MethodInfo *)0x0);
-    pMVar2 = 
-    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-    ;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_en_US,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_The_United_States,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_en_US,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_The_United_Kingdom,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_en_GB,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_The_United_Kingdom,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_en_GB,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Spain,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_es_ES,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Spain,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_es_ES,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Finland,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_fi,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Finland,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_fi,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_France,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_fr_FR,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_France,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_fr_FR,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Indonesia,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_id_ID,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Indonesia,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_id_ID,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Italy,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_it_IT,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Italy,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_it_IT,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Norway,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_nb_NO,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Norway,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_nb_NO,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_The_Netherlands,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_nl_NL,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_The_Netherlands,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_nl_NL,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Poland,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_pl_PL,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Poland,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_pl_PL,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Brazil,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_pt_BR,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Brazil,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_pt_BR,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Russia,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_ru_RU,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Russia,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_ru_RU,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Sweden,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_sv_SE,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Sweden,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_sv_SE,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Turkey,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_tr_TR,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Turkey,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_tr_TR,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pCVar1 = (CrossPlatformInputManager_VirtualButton *)
-             TM::TM__(StringLiteral_Portugal,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              (this_00,StringLiteral_pt,pCVar1,
+    pSVar1 = TM::TM__(StringLiteral_Portugal,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_pt,
+               (Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pMVar2[1].virtualMethodPointer = (Il2CppMethodPointer)this_00;
-    pMVar2[1].methodPointer = (Il2CppMethodPointer)0x2;
-    uStack3 = 0;
-    if (cRam_? == '\0') {
-      pOStack4 = (Object_1__Class *)_UNK_?;
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      pOStack4 = TypeInfo__UnityEngine__Object;
-      func_?();
-    }
+    ppDStack2 = &(this->fields).Country;
+    (this->fields).Country = this_00;
+    pDStack3 = this_00;
+    func_?();
+    (this->fields)._.lifeTime = 2;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

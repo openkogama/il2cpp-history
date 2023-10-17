@@ -8,7 +8,7 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_Dupli
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CSUACSelfElevation__SafeTokenHandle);
     cRam_? = '\x01';
   }
   if (pcRam_? == (code *)0x0) {
@@ -19,21 +19,16 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_Dupli
     uStack_5 = 0xc;
     uStack_6 = 0;
     pcRam_? = (code *)func_?(&ppvStack_7);
-    if (pcRam_? == (code *)0x0) {
-      uVar8 = func_?(&UNK_?,0,0);
-      func_?(uVar8);
-      goto code_?;
-    }
   }
   if (ExistingTokenHandle != (SafeTokenHandle *)0x0) {
-    bStack_9 = 0;
+    bStack_8 = 0;
     mscorlib.dll::System::Runtime::InteropServices::SafeHandle::SafeHandle_DangerousAddRef
-              ((SafeHandle *)ExistingTokenHandle,&bStack_9,(MethodInfo *)0x0);
-    pvStack_10 = (void *)0x0;
-    ppvStack_7 = &pvStack_10;
-    iVar11 = (*pcRam_?)((ExistingTokenHandle->fields)._._.handle,ImpersonationLevel);
+              ((SafeHandle *)ExistingTokenHandle,&bStack_8,(MethodInfo *)0x0);
+    pvStack_9 = (void *)0x0;
+    ppvStack_7 = &pvStack_9;
+    iVar10 = (*pcRam_?)((ExistingTokenHandle->fields)._._.handle,ImpersonationLevel);
     func_?();
-    if (bStack_9 != 0) {
+    if (bStack_8 != 0) {
       mscorlib.dll::System::Runtime::InteropServices::SafeHandle::SafeHandle_DangerousRelease
                 ((SafeHandle *)ExistingTokenHandle,(MethodInfo *)0x0);
     }
@@ -41,13 +36,13 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_Dupli
     mscorlib.dll::Microsoft::Win32::SafeHandles::SafeHandleZeroOrMinusOneIsInvalid::
     SafeHandleZeroOrMinusOneIsInvalid__ctor
               ((SafeHandleZeroOrMinusOneIsInvalid *)this,1,(MethodInfo *)0x0);
-    (this->fields)._._.handle = pvStack_10;
+    (this->fields)._._.handle = pvStack_9;
     *DuplicateTokenHandle = this;
-    return iVar11 != 0;
+    func_?(DuplicateTokenHandle,&pvStack_9);
+    return iVar10 != 0;
   }
-code_?:
-  uVar8 = func_?(&UNK_?,0);
-  func_?(uVar8);
+  uVar11 = func_?(&UNK_?,0);
+  func_?(uVar11);
   pcVar12 = (code *)swi(3);
   bVar13 = (*pcVar12)();
   return bVar13;
@@ -68,17 +63,10 @@ void * Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_Get
     uStack_5 = 1;
     uStack_6 = 8;
     pcRam_? = (code *)func_?(&puStack_7);
-    if (pcRam_? == (code *)0x0) {
-      uVar8 = func_?(&UNK_?,0,0);
-      func_?(uVar8);
-      pcVar9 = (code *)swi(3);
-      pvVar10 = (void *)(*pcVar9)();
-      return pvVar10;
-    }
   }
-  pvVar10 = (void *)(*pcRam_?)(pSid,nSubAuthority);
+  pvVar8 = (void *)(*pcRam_?)(pSid,nSubAuthority);
   func_?();
-  return pvVar10;
+  return pvVar8;
 }
 
 
@@ -98,28 +86,22 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_GetTo
     uStack_5 = 0x14;
     uStack_6 = 0;
     pcRam_? = (code *)func_?(&piStack_7);
-    if (pcRam_? == (code *)0x0) {
-      uVar8 = func_?(&UNK_?,0,0);
-      func_?(uVar8);
-      goto code_?;
-    }
   }
   if (hToken != (SafeTokenHandle *)0x0) {
-    bStack_9 = 0;
+    bStack_8 = 0;
     mscorlib.dll::System::Runtime::InteropServices::SafeHandle::SafeHandle_DangerousAddRef
-              ((SafeHandle *)hToken,&bStack_9,(MethodInfo *)0x0);
+              ((SafeHandle *)hToken,&bStack_8,(MethodInfo *)0x0);
     piStack_7 = returnLength;
-    iVar10 = (*pcRam_?)((hToken->fields)._._.handle,tokenInfoClass,pTokenInfo,tokenInfoLength);
+    iVar9 = (*pcRam_?)((hToken->fields)._._.handle,tokenInfoClass,pTokenInfo,tokenInfoLength);
     func_?();
-    if (bStack_9 != 0) {
+    if (bStack_8 != 0) {
       mscorlib.dll::System::Runtime::InteropServices::SafeHandle::SafeHandle_DangerousRelease
                 ((SafeHandle *)hToken,(MethodInfo *)0x0);
     }
-    return iVar10 != 0;
+    return iVar9 != 0;
   }
-code_?:
-  uVar8 = func_?(&UNK_?,0);
-  func_?(uVar8);
+  uVar10 = func_?(&UNK_?);
+  func_?(uVar10);
   pcVar11 = (code *)swi(3);
   bVar12 = (*pcVar11)();
   return bVar12;
@@ -133,7 +115,7 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_OpenP
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CSUACSelfElevation__SafeTokenHandle);
     cRam_? = '\x01';
   }
   if (pcRam_? == (code *)0x0) {
@@ -144,24 +126,18 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_OpenP
     uStack_5 = 1;
     uStack_6 = 0xc;
     pcRam_? = (code *)func_?(&puStack_7);
-    if (pcRam_? == (code *)0x0) {
-      uVar8 = func_?(&UNK_?,0,0);
-      func_?(uVar8);
-      pcVar9 = (code *)swi(3);
-      bVar10 = (*pcVar9)();
-      return bVar10;
-    }
   }
-  pvStack_11 = (void *)0x0;
-  iVar12 = (*pcRam_?)(hProcess,desiredAccess,&pvStack_11);
+  pvStack_8 = (void *)0x0;
+  iVar9 = (*pcRam_?)(hProcess,desiredAccess,&pvStack_8);
   func_?();
   this = (SafeTokenHandle *)func_?(TypeInfo__CSUACSelfElevation__SafeTokenHandle);
   mscorlib.dll::Microsoft::Win32::SafeHandles::SafeHandleZeroOrMinusOneIsInvalid::
   SafeHandleZeroOrMinusOneIsInvalid__ctor
             ((SafeHandleZeroOrMinusOneIsInvalid *)this,1,(MethodInfo *)0x0);
-  (this->fields)._._.handle = pvStack_11;
+  (this->fields)._._.handle = pvStack_8;
   *hToken = this;
-  return iVar12 != 0;
+  func_?(hToken,&pvStack_8);
+  return iVar9 != 0;
 }
 
 
@@ -179,16 +155,9 @@ int32_t Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_Se
     uStack_5 = 1;
     uStack_6 = 0x10;
     pcRam_? = (code *)func_?(&puStack_7);
-    if (pcRam_? == (code *)0x0) {
-      uVar8 = func_?(&UNK_?,0,0);
-      func_?(uVar8);
-      pcVar9 = (code *)swi(3);
-      iVar10 = (*pcVar9)();
-      return iVar10;
-    }
   }
-  iVar10 = (*pcRam_?)(hWnd,Msg,wParam,lParam);
+  iVar8 = (*pcRam_?)(hWnd,Msg,wParam,lParam);
   func_?();
-  return iVar10;
+  return iVar8;
 }
 

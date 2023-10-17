@@ -9,38 +9,37 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class Worker : MonoBehaviour
 {
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoTo_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoTo_d__1 : IEnumerator<object>
 	{
 		// Fields
-		internal float duration;
-		internal float startValue;
-		internal float endValue;
-		internal Action<float> callback;
-		internal Worker _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public Worker __4__this;
+		public float duration;
+		public float startValue;
+		public float endValue;
+		public Action<float> callback;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoTo_c__Iterator0();
+		public _DoTo_d__1(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -48,7 +47,7 @@ public class Worker : MonoBehaviour
 
 	// Methods
 	public void To(float duration, float startValue, float endValue, Action<float> callback);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoTo_d__1))]
 	public IEnumerator DoTo(float duration, float startValue, float endValue, Action<float> callback);
 }
 

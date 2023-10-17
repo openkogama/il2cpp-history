@@ -9,24 +9,38 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FullscreenToggleExecute : ToggleHandler
 {
 	// Fields
 	[SerializeField]
 	private ToggleStateHandler toggleStateHandler;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__3_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _ExecuteToggleState_b__3_0(IModalPopupCreator x, BaseEventData y);
+	}
 
 	// Constructors
 	public FullscreenToggleExecute();
 
 	// Methods
 	private void Awake();
+	private bool StartSetValue();
 	public override void ExecuteToggleState(bool toggleState, UnityAction<bool> toggleCallback);
 	private void FullscreenChanged(bool fullscreenState);
-	[CompilerGenerated]
-	private static void _ExecuteToggleState_m__0(IModalPopupCreator x, BaseEventData y);
 }
 

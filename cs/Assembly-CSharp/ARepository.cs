@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class ARepository
 {
@@ -23,16 +23,16 @@ public abstract class ARepository
 	public delegate void OnWorldObjectTypeExtracted(WorldObjectType worldObjectType, Dictionary<object, object> woData);
 
 	[CompilerGenerated]
-	private sealed class _GetWorldObjectTypeFromMVItemData_c__AnonStorey0
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal OnWorldObjectTypeExtracted onWorldObjectExtracted;
+		public OnWorldObjectTypeExtracted onWorldObjectExtracted;
 
 		// Constructors
-		public _GetWorldObjectTypeFromMVItemData_c__AnonStorey0();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(Dictionary<object, object> returnData, KogamaDataType dataType);
+		internal void _GetWorldObjectTypeFromMVItemData_b__0(Dictionary<object, object> returnData, KogamaDataType dataType);
 	}
 
 	// Constructors

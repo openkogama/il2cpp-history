@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MvCharacterController : MonoBehaviour
 {
@@ -28,10 +28,8 @@ public abstract class MvCharacterController : MonoBehaviour
 	public Vector3 centerBase;
 	public Vector3 radiusBase;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsGrounded_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _Velocity_k__BackingField;
 	public HashSet<int> IgnoreWoIds;
 	public Action<MVControllerColliderHit> OnControllerColliderHit;

@@ -6,14 +6,13 @@ void Assembly-CSharp.dll::AvatarTweakSheet+WalkMode::AvatarTweakSheet_WalkMode__
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarTweakSheet__WalkMode);
     cRam_? = '\x01';
   }
-  pAVar1 = TypeInfo__AvatarTweakSheet__WalkMode->static_fields;
-  pAVar1->walkSpeed = 8.0;
-  pAVar1->runSpeed = 8.0;
-  pAVar1->animationSpeedRatio = 0.38;
-  pAVar1->speedSmoothing = 10.0;
+  TypeInfo__AvatarTweakSheet__WalkMode->static_fields->walkSpeed = 8.0;
+  TypeInfo__AvatarTweakSheet__WalkMode->static_fields->runSpeed = 8.0;
+  TypeInfo__AvatarTweakSheet__WalkMode->static_fields->animationSpeedRatio = 0.38;
+  TypeInfo__AvatarTweakSheet__WalkMode->static_fields->speedSmoothing = 10.0;
   return;
 }
 

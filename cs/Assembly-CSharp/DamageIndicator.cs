@@ -9,23 +9,23 @@ using MV.Common;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DamageIndicator : MonoBehaviour
 {
 	// Fields
-	[Header]
+	[Header("Configuration")]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Distance from center, for indicator arrow to appear.")]
 	private float indicationRadius;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Transparency [0..1] by time [0..1] remaining")]
 	private AnimationCurve fade;
 	[SerializeField]
 	private float durationPerPointOfDamage;
 	[SerializeField]
 	private int maxNumberOfArrows;
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	private Image damageOverlay;
 	[SerializeField]
@@ -55,10 +55,9 @@ public class DamageIndicator : MonoBehaviour
 		// Constructors
 		public IndicatorArrow(int numberOfArrows, DamageArrow arrowBase, float indicationRadius);
 		private IndicatorArrow(int numberOfArrows, DamageArrow arrowBase, IndicatorArrow firstArrow);
-		static IndicatorArrow();
 
 		// Methods
-		public void Show(Transform damageOrigin, float time, float indicationRadius);
+		public void Show(Transform origin, float time, float indicationRadius);
 		public void Update();
 		public void Reset();
 		public void SetSprite(Sprite sprite);

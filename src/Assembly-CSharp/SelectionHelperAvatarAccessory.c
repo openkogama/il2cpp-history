@@ -8,6 +8,7 @@ void Assembly-CSharp.dll::SelectionHelperAvatarAccessory::SelectionHelperAvatarA
 
 {
   (this->fields).avatarAccessory = avatarAccessory;
+  func_?(&(this->fields).avatarAccessory,avatarAccessory);
   (this->fields).slot = slot;
   (this->fields).avatarBodyWoID = avatarBodyWoID;
   (this->fields).streamingAssetsId = accessoryStreamingAssetsId;
@@ -23,19 +24,29 @@ String * Assembly-CSharp.dll::SelectionHelperAvatarAccessory::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&System__Object__MethodInfo__System__Array__Empty<System::Object>______);
+    func_?(&StringLiteral_AvatarBodyWoID_);
     cRam_? = '\x01';
   }
-  this = (SelectionHelperAvatarAccessory *)(this->fields).avatarBodyWoID;
-  arg1 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
+  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+                     ((Int32 *)&(this->fields).avatarBodyWoID,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_AvatarBodyWoID_,pSVar1,(MethodInfo *)0x0);
+  pMVar2 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
+  pIVar3 = ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
+           rgctx_data)->klass;
+  if (pIVar3->initialized_and_no_error == 0) {
+    pIVar3 = (Il2CppClass *)func_?();
   }
-  pSVar1 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral_AvatarBodyWoID_,arg1,(MethodInfo *)0x0);
-  args = (Object__Array *)func_?(TypeInfo__System__Object,0);
-  pSVar1 = mscorlib.dll::System::String::String_Format_3(pSVar1,args,(MethodInfo *)0x0);
+  if (pIVar3->cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pIVar3 = ((pMVar2->field7_0x1c).rgctx_data)->klass;
+  if (pIVar3->initialized_and_no_error == 0) {
+    pIVar3 = (Il2CppClass *)func_?();
+  }
+  pSVar1 = mscorlib.dll::System::String::String_Format_3
+                     (pSVar1,*(Object__Array **)pIVar3->static_fields,(MethodInfo *)0x0);
   return pSVar1;
 }
 
@@ -48,11 +59,10 @@ void Assembly-CSharp.dll::SelectionHelperAvatarAccessory::SelectionHelperAvatarA
 {
   (this->fields).streamingAssetsId = -1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

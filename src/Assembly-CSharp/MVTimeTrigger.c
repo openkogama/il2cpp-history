@@ -6,33 +6,42 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    func_?(&
+                    MethodInfo__MVTimeTrigger__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+                   );
+    func_?(&TypeInfo__OutputSignalTransmitter);
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   MVLogicObject::MVLogicObject_SetupCulling
             ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_00 = (Action_2_Int32Enum_Object_ *)
             func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,
-             MethodInfo__MVTimeTrigger__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-             ,
-             MethodInfo__System__Action<LogicInputState,_LogicObjectManager>__Action_System__Object__void__
-            );
-  pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                     ((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                      (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-  woId = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-         Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-  pOStack2 = TypeInfo__OutputSignalTransmitter;
-  this_01 = (WorldObjectClientRef_1_MVWorldObjectClient_ *)func_?();
-  WorldObjectClientRef`1[MVWorldObjectClient]::WorldObjectClientRef_1_MVWorldObjectClient___ctor
-            (this_01,(int32_t)woId,(MethodInfo *)0x0);
-  (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
+  if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
+    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+              (this_00,(Object *)this,
+               MethodInfo__MVTimeTrigger__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+               ,(MethodInfo *)0x0);
+    pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                       ((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                        (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
+    (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
+    func_?();
+    woId = (this->fields)._._._.id;
+    this_01 = (WorldObjectClientRef_1_System_Object_ *)
+              func_?(TypeInfo__OutputSignalTransmitter);
+    if (this_01 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
+      WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+                (this_01,woId,(MethodInfo *)0x0);
+      (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
+      func_?();
+      return;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -91,29 +100,6 @@ code_?:
 }
 
 
-/* Void OnDataUpdate() */
-
-void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_OnDataUpdate
-               (MVTimeTrigger *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  woID = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-         Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  worldObjectManager = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
-            ((int32_t)woID,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
-  return;
-}
-
-
 /* Void Reset() */
 
 void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_Reset(MVTimeTrigger *this,MethodInfo *method)
@@ -133,27 +119,25 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = PrefabPool::PrefabPool_get_MVTimeTriggerPrefab(this_00,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-    uVar1 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+              ((MVLogicObject *)this,data,(pPVar1->fields).mvTimeTriggerPrefab,worldObjects,
+               (MethodInfo *)0x0);
     piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x18000;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar1;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
+    uVar3 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar3;
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -165,35 +149,34 @@ int32_t Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_ActiveDurationTime
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Type_Pool_ *)
-            PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       (this_00,(Type *)StringLiteral_duration,
+  this_00 = (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_00,(Object *)StringLiteral_duration,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar1 != (Pool *)0x0) {
-      pSStack2 = TypeInfo__System__Single;
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pSStack2 = (Single__Class *)pPVar1;
-        pfVar3 = (float *)func_?();
-        return (int)(*pfVar3 * _UNK_?);
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+        pfVar2 = (float *)func_?();
+        return (int)(*pfVar2 * _UNK_?);
       }
-      goto code_?;
+      func_?();
+      pcVar3 = (code *)swi(3);
+      iVar4 = (*pcVar3)();
+      return iVar4;
     }
   }
-  pSStack2 = (Single__Class *)0x0;
-  func_?();
-  pSStack2 = extraout_EDX;
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  uVar5 = func_?(&stack0xfffffff0);
+  func_?(uVar5);
+  pcVar3 = (code *)swi(3);
+  iVar4 = (*pcVar3)();
+  return iVar4;
 }
 
 
@@ -204,20 +187,20 @@ int32_t Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_CurrentTime
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Extensions);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    func_?(&StringLiteral_cT);
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-  if ((((uint)(TypeInfo__Extensions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Extensions->_1).cctor_started == 0)) {
+              (*(this->klass->vtable).get_RunTimeData.methodPtr)
+                        (this,(this->klass->vtable).get_RunTimeData.method);
+  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
   pOVar1 = Extensions::Extensions_GetObscuredType(hashtable,StringLiteral_cT,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?();
   }
   if (pOVar1 == (Object *)0x0) {
@@ -244,35 +227,34 @@ int32_t Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_DelayTime
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Type_Pool_ *)
-            PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       (this_00,(Type *)StringLiteral_time,
+  this_00 = (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_00,(Object *)StringLiteral_time,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar1 != (Pool *)0x0) {
-      pSStack2 = TypeInfo__System__Single;
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pSStack2 = (Single__Class *)pPVar1;
-        pfVar3 = (float *)func_?();
-        return (int)(*pfVar3 * _UNK_?);
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+        pfVar2 = (float *)func_?();
+        return (int)(*pfVar2 * _UNK_?);
       }
-      goto code_?;
+      func_?();
+      pcVar3 = (code *)swi(3);
+      iVar4 = (*pcVar3)();
+      return iVar4;
     }
   }
-  pSStack2 = (Single__Class *)0x0;
-  func_?();
-  pSStack2 = extraout_EDX;
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  uVar5 = func_?(&stack0xfffffff0);
+  func_?(uVar5);
+  pcVar3 = (code *)swi(3);
+  iVar4 = (*pcVar3)();
+  return iVar4;
 }
 
 
@@ -294,15 +276,19 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_set_CurrentTime
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
+                   );
+    func_?(&TypeInfo__Extensions);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    func_?(&StringLiteral_cT);
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+              (*(this->klass->vtable).get_RunTimeData.methodPtr)
+                        (this,(this->klass->vtable).get_RunTimeData.method);
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
   pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
@@ -310,8 +296,7 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_set_CurrentTime
   puVar2 = (undefined *)pOVar1->currentCryptoKey;
   pEVar3 = (Extensions__Class *)pOVar1->hiddenValue;
   iVar4 = pOVar1->fakeValue;
-  if ((((uint)(TypeInfo__Extensions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Extensions->_1).cctor_started == 0)) {
+  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     puVar2 = &UNK_?;
     pEVar3 = TypeInfo__Extensions;
     func_?();
@@ -321,7 +306,7 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_set_CurrentTime
   value_00.fakeValue = iVar4;
   value_00.inited = pOVar1->inited;
   value_00._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_2
+  Extensions::Extensions_SetObscuredType_3
             (hashtable,StringLiteral_cT,value_00,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
             );

@@ -9,11 +9,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class WinningConditionDebriefing : MonoBehaviour, IDebriefing
 {
 	// Fields
+	private const float fadeTime = 0.3f;
 	[SerializeField]
 	private CanvasGroup group;
 	[SerializeField]
@@ -22,63 +23,58 @@ public class WinningConditionDebriefing : MonoBehaviour, IDebriefing
 	private DebriefingWinnerGUI teamWinPrefab;
 	[SerializeField]
 	private DebriefingWinnerGUI noWinnerPrefab;
-	private DebriefingWinnerGUI debriefing;
 	[SerializeField]
 	private AvatarCapture captureCameraPrefab;
+	private DebriefingWinnerGUI debriefing;
 	private AvatarCapture captureCamera;
-	private float fadeTime;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowDebriefingCoroutine_c__Iterator0 : IEnumerator<object>
+	private sealed class _ShowDebriefingCoroutine_d__16 : IEnumerator<object>
 	{
 		// Fields
-		internal WinningConditionDebriefing _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public WinningConditionDebriefing __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _ShowDebriefingCoroutine_c__Iterator0();
+		public _ShowDebriefingCoroutine_d__16(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
-		internal void __m__0(float t);
-		internal void __m__1(float t);
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class _WaitForFadeOut_c__Iterator1 : IEnumerator<object>
+	private sealed class _WaitForFadeOut_d__19 : IEnumerator<object>
 	{
 		// Fields
-		internal WinningConditionDebriefing _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public WinningConditionDebriefing __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _WaitForFadeOut_c__Iterator1();
+		public _WaitForFadeOut_d__19(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -93,16 +89,20 @@ public class WinningConditionDebriefing : MonoBehaviour, IDebriefing
 	private void SetupDebriefingTeam(WinningConditionType winType, List<ScoreTeamEntry> scoreTeamEntries, GameStatCounterType counterType);
 	private void OnDisable();
 	private void SetupDebriefingNoWinner();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_ShowDebriefingCoroutine_d__16))]
 	private IEnumerator ShowDebriefingCoroutine();
 	private void Clear();
 	private void Update();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_WaitForFadeOut_d__19))]
 	private IEnumerator WaitForFadeOut();
 	private static string FormatCount(GameStatCounterType statType, int count);
 	private void RenderPlayerToRenderTexture(List<int> actorNrs);
 	private List<ScoreTeamEntry> GetWinningTeamsFromScoreTeamEntries(List<ScoreTeamEntry> scoreTeamEntries, GameStatCounterType counterType);
 	private List<ScoreActorEntry> GetWinningActorsFromScoreActorEntries(List<ScoreActorEntry> scoreActorEntries, GameStatCounterType counterType);
 	private void ResetScoreWhenDone();
+	[CompilerGenerated]
+	private void _ShowDebriefingCoroutine_b__16_0(float t);
+	[CompilerGenerated]
+	private void _ShowDebriefingCoroutine_b__16_1(float t);
 }
 

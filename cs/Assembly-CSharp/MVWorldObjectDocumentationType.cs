@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public enum MVWorldObjectDocumentationType
 {
@@ -16,7 +16,7 @@ public enum MVWorldObjectDocumentationType
 	ImpulseGun = 3,
 	Bazooka = 4,
 	Railgun = 5,
-	Sword = 6,
+	MeleeWeapon = 6,
 	Mutant = 7,
 	Flamethrower = 8,
 	Shotgun = 9,
@@ -83,6 +83,11 @@ public enum MVWorldObjectDocumentationType
 	TeamEditor = 70,
 	GamePoint = 71,
 	GamePointChest = 72,
-	AvatarClass = 73
+	AvatarClass = 73,
+	VehicleEnergy = 74,
+	Door = 75,
+	SlidingDoor = 76,
+	TrapDoor = 77,
+	Costume = 78
 }
 

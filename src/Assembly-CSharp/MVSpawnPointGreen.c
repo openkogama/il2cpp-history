@@ -8,27 +8,21 @@ void Assembly-CSharp.dll::MVSpawnPointGreen::MVSpawnPointGreen__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = (ObjectPrefab *)
-                   CloudyTheme::CloudyTheme_get_Description
-                             ((CloudyTheme *)this_00,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-    *(undefined4 *)&(this->fields)._._._.interactionFlags = 0x2101;
+              ((MVLogicObject *)this,data,(pPVar1->fields).mvSpawnPointGreenPrefab,worldObjects,
+               (MethodInfo *)0x0);
+    *(undefined4 *)&(this->fields)._._._.interactionFlags = 0xa101;
     *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = 0;
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

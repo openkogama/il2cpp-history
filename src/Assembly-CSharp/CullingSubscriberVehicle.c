@@ -7,12 +7,11 @@ void Assembly-CSharp.dll::CullingSubscriberVehicle::CullingSubscriberVehicle_OnS
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
   distanceBandIndex = (this->fields)._._CullingIndex_k__BackingField;
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
   value = CullingApiWrapper::CullingApiWrapper_Visible
@@ -45,17 +44,17 @@ void Assembly-CSharp.dll::CullingSubscriberVehicle::CullingSubscriberVehicle_Pos
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_positionChanged);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
             ((Object *)StringLiteral_positionChanged,(MethodInfo *)0x0);
   if (arg0 != (MVWorldObjectClient *)0x0) {
-    pVVar1 = (Vector3 *)(*(code *)(arg0->klass->vtable).get_Position.method)(&stack0xfffffff0);
+    pVVar1 = (Vector3 *)(*(arg0->klass->vtable).get_Position.methodPtr)(&stack0xfffffff0);
     CullingSubscriberBase::CullingSubscriberBase_set_Position
               ((CullingSubscriberBase *)this,*pVVar1,(MethodInfo *)0x0);
     return;
@@ -73,17 +72,10 @@ void Assembly-CSharp.dll::CullingSubscriberVehicle::CullingSubscriberVehicle__ct
                (CullingSubscriberVehicle *this,GameObject *visualRoot,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  if ((((uint)(TypeInfo__CullingApiWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CullingApiWrapper->_1).cctor_started == 0)) {
-    func_?(TypeInfo__CullingApiWrapper);
-  }
-  CullingApiWrapper::CullingApiWrapper_Subscribe((ICullingSubscriber *)this,(MethodInfo *)0x0);
+  CullingSubscriberBase::CullingSubscriberBase__ctor
+            ((CullingSubscriberBase *)this,(MethodInfo *)0x0);
   (this->fields).visualRoot = visualRoot;
+  func_?(&(this->fields).visualRoot,visualRoot);
   (this->fields)._._CullingIndex_k__BackingField = 2;
   CullingSubscriberBase::CullingSubscriberBase_set_Radius
             ((CullingSubscriberBase *)this,10.0,(MethodInfo *)0x0);

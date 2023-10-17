@@ -6,124 +6,140 @@ void Assembly-CSharp.dll::MVCubeGun::MVCubeGun_OnDataUpdate(MVCubeGun *this,Meth
 {
   MVPickupItemBase::MVPickupItemBase_OnDataUpdate((MVPickupItemBase *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&
+                    CubeBullet_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<CubeBullet>__
+                   );
+    func_?(&
+                    GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<GreyOutObjectScript>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_material);
+    func_?(&StringLiteral_itemData);
     cRam_? = '\x01';
   }
-  pOVar1 = (in_stack_2->fields).timeAttackFlagPrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  x = *(Object_1 **)(in_stack_1 + 0x118);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pOVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
 code_?:
-    pDVar4 = (Dictionary_2_System_Type_Pool_ *)
-             PrefabPool::PrefabPool_get_MVBatteryPrefab(in_stack_2,(MethodInfo *)0x0);
-    if (pDVar4 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    pDVar5 = (Dictionary_2_System_Type_Pool_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       (pDVar4,(Type *)StringLiteral_itemData,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    pDVar4 = pDVar5;
-    if (pDVar5 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-      bVar6 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment;
-      if (((pDVar5->klass->_1).naturalAligment < bVar6) ||
-         ((Dictionary_2_System_Object_System_Object___Class *)
-          (pDVar5->klass->_1).typeHierarchy[bVar6 - 1] !=
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-        bVar7 = false;
-      }
-      else {
-        bVar7 = true;
-      }
-      pDVar4 = (Dictionary_2_System_Type_Pool_ *)0x0;
-      if (bVar7) {
-        pDVar4 = pDVar5;
-      }
-      if (pDVar4 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    }
-    pOVar1 = (in_stack_2->fields).timeAttackFlagPrefab;
-    if (pDVar4 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    pPVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-              Dictionary_2_System_Type_Pool__get_Item
-                        (pDVar4,(Type *)StringLiteral_material,
+    if (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_1 + 0x58) ==
+        (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    this_02 = (Dictionary_2_System_Object_System_Object_ *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__get_Item
+                        (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_1 + 0x58),
+                         (Object *)StringLiteral_itemData,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-    if ((pOVar1 == (ObjectPrefab *)0x0) || (pPVar8 == (Pool *)0x0)) goto code_?;
-    if ((pPVar8->klass->_0).element_class == (TypeInfo__System__Byte->_0).element_class) {
-      puVar9 = (uint8_t *)func_?();
-      CubeBullet::CubeBullet_SetCubeMaterial((CubeBullet *)pOVar1,*puVar9,(MethodInfo *)0x0);
-      pOVar1 = (in_stack_2->fields).mvGravityCubePrefab;
-      if (pOVar1 != (ObjectPrefab *)0x0) {
-        pUVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentsInChildren_29
-                           ((GameObject *)pOVar1,
+    if (this_02 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    if (((this_02->klass->_1).typeHierarchyDepth <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         typeHierarchyDepth) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (this_02->klass->_1).typeHierarchy
+        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         typeHierarchyDepth - 1] !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    this_01 = *(CubeBullet **)(in_stack_1 + 0x118);
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_02,(Object *)StringLiteral_material,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((this_01 == (CubeBullet *)0x0) || (pOVar3 == (Object *)0x0)) goto code_?;
+    if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Byte->_0).element_class) {
+      puVar4 = (uint8_t *)func_?();
+      CubeBullet::CubeBullet_SetCubeMaterial(this_01,*puVar4,(MethodInfo *)0x0);
+      if (*(IEnumerable_1_Newtonsoft_Json_Linq_JToken_ **)(in_stack_1 + 0x88) !=
+          (IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+        pIVar5 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                           (*(IEnumerable_1_Newtonsoft_Json_Linq_JToken_ **)
+                             (in_stack_1 + 0x88),
                             GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<GreyOutObjectScript>__
                            );
-        if (pUVar10 != (UseInteratorVisualization__Array *)0x0) {
+        if (pIVar5 != (IEnumerable_1_System_Object_ *)0x0) {
           if (cRam_? == '\0') {
-            func_?();
+            func_?(&
+                            UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                           );
+            func_?(&
+                            MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
+                           );
+            func_?(&
+                            MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Clear__
+                           );
+            func_?(&TypeInfo__GreyOutObjectScript__PickupOriginalMaterials);
             cRam_? = '\x01';
           }
-          if (*(List_1_UnityEngine_UIVertex_ **)(in_stack_11 + 0x14) !=
-              (List_1_UnityEngine_UIVertex_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-            List_1_UnityEngine_UIVertex__Clear
-                      (*(List_1_UnityEngine_UIVertex_ **)(in_stack_11 + 0x14),
-                       MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Clear__
-                      );
-            if (*(GameObject **)(in_stack_11 + 0xc) != (GameObject *)0x0) {
-              method_00 = (MethodInfo *)&UNK_?;
-              pUVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                       GameObject_GetComponentsInChildren_29
-                                 (*(GameObject **)(in_stack_11 + 0xc),
+          pLVar6 = pLRam00000014;
+          if (pLRam00000014 != (List_1_System_Object_ *)0x0) {
+            length = (pLRam00000014->fields)._size;
+            piVar7 = &(pLRam00000014->fields)._version;
+            *piVar7 = *piVar7 + 1;
+            (pLVar6->fields)._size = 0;
+            if (0 < length) {
+              mscorlib.dll::System::Array::Array_Clear
+                        ((Array *)(pLVar6->fields)._items,0,length,(MethodInfo *)0x0);
+            }
+            if (pIRam0000000c != (IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+              pMVar8 = (MethodInfo *)
+                       Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                                 (pIRam0000000c,
                                   UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
                                  );
-              pcVar12 = (char *)0x0;
-              if (pUVar10 != (UseInteratorVisualization__Array *)0x0) {
-                ppUVar13 = pUVar10->vector;
+              pcVar9 = (char *)0x0;
+              if (pMVar8 != (MethodInfo *)0x0) {
+                method_00 = (MethodInfo *)&pMVar8->klass;
                 while( true ) {
-                  if ((int)pUVar10->max_length <= (int)pcVar12) {
+                  if ((int)pMVar8->name <= (int)pcVar9) {
                     return;
                   }
-                  if ((char *)pUVar10->max_length <= pcVar12) break;
-                  this_00 = *ppUVar13;
-                  this_01 = (ScaleAnimationBase *)func_?();
-                  *(undefined1 *)&(this_01->fields).originalScale.x = 1;
-                  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,method_00);
-                  (this_01->fields)._._._._.m_CachedPtr = this_00;
-                  if (this_00 == (UseInteratorVisualization *)0x0) goto code_?;
-                  method_00 = (MethodInfo *)&UNK_?;
-                  pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
+                  if (pMVar8->name <= pcVar9) break;
+                  this_00 = (Object__Class *)method_00->methodPointer;
+                  pOVar3 = (Object *)func_?();
+                  if (pOVar3 == (Object *)0x0) goto code_?;
+                  *(undefined1 *)&pOVar3[2].klass = 1;
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                            (pOVar3,ExceptionArgument__Enum_obj,method_00);
+                  pOVar3[1].klass = this_00;
+                  func_?(pOVar3 + 1);
+                  if (this_00 == (Object__Class *)0x0) goto code_?;
+                  pMVar10 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
                            Renderer_get_sharedMaterials((Renderer *)this_00,(MethodInfo *)0x0);
-                  (this_01->fields).state = (int32_t)pMVar14;
-                  pUVar10 = (UseInteratorVisualization__Array *)
-                           MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
+                  pOVar3[1].monitor = (MonitorData *)pMVar10;
+                  func_?(&pOVar3[1].monitor);
+                  if (pLRam00000014 == (List_1_System_Object_ *)0x0) goto code_?;
+                  pMVar8 = 
+                  MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
                   ;
-                  if (*(List_1_UIPushOption_ **)(in_stack_11 + 0x14) ==
-                      (List_1_UIPushOption_ *)0x0) goto code_?;
-                  mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-                  List_1_UIPushOption__Add
-                            (*(List_1_UIPushOption_ **)(in_stack_11 + 0x14),
-                             (UIPushOption__Enum)this_01,
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                  List_1_System_Object__Add
+                            (pLRam00000014,pOVar3,
                              MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
                             );
-                  pcVar12 = pcVar12 + 1;
-                  ppUVar13 = ppUVar13 + 1;
+                  pcVar9 = pcVar9 + 1;
+                  method_00 = (MethodInfo *)&method_00->virtualMethodPointer;
                 }
-                func_?();
                 func_?();
               }
             }
           }
 code_?:
           func_?();
-          pcVar15 = (code *)swi(3);
-          (*pcVar15)();
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
           return;
         }
       }
@@ -131,14 +147,15 @@ code_?:
     }
   }
   else {
-    pOVar1 = (in_stack_2->fields).mvGravityCubePrefab;
-    if (pOVar1 != (ObjectPrefab *)0x0) {
-      pUVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-               GameObject_GetComponentsInChildren_29
-                         ((GameObject *)pOVar1,
+    if (*(IEnumerable_1_Newtonsoft_Json_Linq_JToken_ **)(in_stack_1 + 0x88) !=
+        (IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+      pIVar5 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                         (*(IEnumerable_1_Newtonsoft_Json_Linq_JToken_ **)(in_stack_1 + 0x88)
+                          ,
                           CubeBullet_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<CubeBullet>__
                          );
-      (in_stack_2->fields).timeAttackFlagPrefab = (ObjectPrefab *)pUVar10;
+      *(IEnumerable_1_System_Object_ **)(in_stack_1 + 0x118) = pIVar5;
+      func_?();
       goto code_?;
     }
 code_?:
@@ -147,8 +164,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -159,116 +176,136 @@ void Assembly-CSharp.dll::MVCubeGun::MVCubeGun_SetCubeMaterial(MVCubeGun *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&
+                    CubeBullet_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<CubeBullet>__
+                   );
+    func_?(&
+                    GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<GreyOutObjectScript>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_material);
+    func_?(&StringLiteral_itemData);
     cRam_? = '\x01';
   }
-  pCVar1 = (this->fields).cubeBullet;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).cubeBullet;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)this_01,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
 code_?:
-    pDVar3 = (Dictionary_2_System_Type_Pool_ *)
-             PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-    if (pDVar3 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    pDVar4 = (Dictionary_2_System_Type_Pool_ *)
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-              Dictionary_2_System_Type_Pool__get_Item
-                        (pDVar3,(Type *)StringLiteral_itemData,
+    pDVar2 = (this->fields)._._._._.data;
+    if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    pDVar3 = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+    pDVar2 = (Dictionary_2_System_Object_System_Object_ *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (pDVar2,(Object *)StringLiteral_itemData,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    this_01 = pDVar2;
+    if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    pDVar4 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    if (((pDVar2->klass->_1).typeHierarchyDepth <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         typeHierarchyDepth) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (pDVar2->klass->_1).typeHierarchy
+        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         typeHierarchyDepth - 1] !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).cubeBullet;
+    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__get_Item
+                        (pDVar2,(Object *)StringLiteral_material,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-    pDVar3 = pDVar4;
-    if (pDVar4 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-      bVar5 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment;
-      if (((pDVar4->klass->_1).naturalAligment < bVar5) ||
-         ((Dictionary_2_System_Object_System_Object___Class *)
-          (pDVar4->klass->_1).typeHierarchy[bVar5 - 1] !=
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-        bVar6 = false;
-      }
-      else {
-        bVar6 = true;
-      }
-      pDVar3 = (Dictionary_2_System_Type_Pool_ *)0x0;
-      if (bVar6) {
-        pDVar3 = pDVar4;
-      }
-      if (pDVar3 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    }
-    pCVar1 = (this->fields).cubeBullet;
-    if (pDVar3 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    pPVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-              Dictionary_2_System_Type_Pool__get_Item
-                        (pDVar3,(Type *)StringLiteral_material,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-    if ((pCVar1 == (CubeBullet *)0x0) || (pPVar7 == (Pool *)0x0)) goto code_?;
-    if ((pPVar7->klass->_0).element_class == (TypeInfo__System__Byte->_0).element_class) {
-      puVar8 = (uint8_t *)func_?();
-      CubeBullet::CubeBullet_SetCubeMaterial(pCVar1,*puVar8,(MethodInfo *)0x0);
-      pGVar9 = (this->fields)._._._.gameObject;
-      if (pGVar9 != (GameObject *)0x0) {
-        pUVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentsInChildren_29
-                           (pGVar9,
-                            GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<GreyOutObjectScript>__
-                           );
-        if (pUVar10 != (UseInteratorVisualization__Array *)0x0) {
+    uVar6 = CONCAT44(TypeInfo__System__Byte,pOVar5);
+    if ((this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pOVar5 == (Object *)0x0))
+    goto code_?;
+    if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Byte->_0).element_class) {
+      puVar7 = (uint8_t *)func_?();
+      CubeBullet::CubeBullet_SetCubeMaterial((CubeBullet *)this_01,*puVar7,(MethodInfo *)0x0);
+      this_01 = pDVar3;
+      pGVar8 = (this->fields)._._._.gameObject;
+      if (pGVar8 != (GameObject *)0x0) {
+        pIVar9 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                            ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar8,
+                             GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<GreyOutObjectScript>__
+                            );
+        if (pIVar9 != (IEnumerable_1_System_Object_ *)0x0) {
           if (cRam_? == '\0') {
-            func_?();
+            func_?(&
+                            UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                           );
+            func_?(&
+                            MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
+                           );
+            func_?(&
+                            MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Clear__
+                           );
+            func_?(&TypeInfo__GreyOutObjectScript__PickupOriginalMaterials);
             cRam_? = '\x01';
           }
-          if (*(List_1_UnityEngine_UIVertex_ **)(in_stack_11 + 0x14) !=
-              (List_1_UnityEngine_UIVertex_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-            List_1_UnityEngine_UIVertex__Clear
-                      (*(List_1_UnityEngine_UIVertex_ **)(in_stack_11 + 0x14),
-                       MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Clear__
-                      );
-            if (*(GameObject **)(in_stack_11 + 0xc) != (GameObject *)0x0) {
-              method_00 = (MethodInfo *)&UNK_?;
-              pUVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                       GameObject_GetComponentsInChildren_29
-                                 (*(GameObject **)(in_stack_11 + 0xc),
+          pLVar10 = pLRam00000014;
+          if (pLRam00000014 != (List_1_System_Object_ *)0x0) {
+            length = (pLRam00000014->fields)._size;
+            piVar11 = &(pLRam00000014->fields)._version;
+            *piVar11 = *piVar11 + 1;
+            (pLVar10->fields)._size = 0;
+            if (0 < length) {
+              mscorlib.dll::System::Array::Array_Clear
+                        ((Array *)(pLVar10->fields)._items,0,length,(MethodInfo *)0x0);
+            }
+            if (pIRam0000000c != (IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+              pMVar12 = (MethodInfo *)
+                       Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                                 (pIRam0000000c,
                                   UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
                                  );
-              pcVar12 = (char *)0x0;
-              if (pUVar10 != (UseInteratorVisualization__Array *)0x0) {
-                ppUVar13 = pUVar10->vector;
+              pcVar13 = (char *)0x0;
+              if (pMVar12 != (MethodInfo *)0x0) {
+                method_00 = (MethodInfo *)&pMVar12->klass;
                 while( true ) {
-                  if ((int)pUVar10->max_length <= (int)pcVar12) {
+                  if ((int)pMVar12->name <= (int)pcVar13) {
                     return;
                   }
-                  if ((char *)pUVar10->max_length <= pcVar12) break;
-                  this_00 = *ppUVar13;
-                  this_01 = (ScaleAnimationBase *)func_?();
-                  *(undefined1 *)&(this_01->fields).originalScale.x = 1;
-                  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,method_00);
-                  (this_01->fields)._._._._.m_CachedPtr = this_00;
-                  if (this_00 == (UseInteratorVisualization *)0x0) goto code_?;
-                  method_00 = (MethodInfo *)&UNK_?;
+                  if (pMVar12->name <= pcVar13) break;
+                  this_00 = (Il2CppClass *)method_00->methodPointer;
+                  pOVar5 = (Object *)func_?();
+                  if (pOVar5 == (Object *)0x0) goto code_?;
+                  *(undefined1 *)&pOVar5[2].klass = 1;
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                            (pOVar5,ExceptionArgument__Enum_obj,method_00);
+                  pOVar5[1].klass = (Object__Class *)this_00;
+                  func_?(pOVar5 + 1,this_00);
+                  if (this_00 == (Il2CppClass *)0x0) goto code_?;
                   pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
                            Renderer_get_sharedMaterials((Renderer *)this_00,(MethodInfo *)0x0);
-                  (this_01->fields).state = (int32_t)pMVar14;
-                  pUVar10 = (UseInteratorVisualization__Array *)
-                           MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
+                  pOVar5[1].monitor = (MonitorData *)pMVar14;
+                  func_?(&pOVar5[1].monitor,pMVar14);
+                  if (pLRam00000014 == (List_1_System_Object_ *)0x0) goto code_?;
+                  pMVar12 = 
+                  MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
                   ;
-                  if (*(List_1_UIPushOption_ **)(in_stack_11 + 0x14) ==
-                      (List_1_UIPushOption_ *)0x0) goto code_?;
-                  mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-                  List_1_UIPushOption__Add
-                            (*(List_1_UIPushOption_ **)(in_stack_11 + 0x14),
-                             (UIPushOption__Enum)this_01,
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                  List_1_System_Object__Add
+                            (pLRam00000014,pOVar5,
                              MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
                             );
-                  pcVar12 = pcVar12 + 1;
-                  ppUVar13 = ppUVar13 + 1;
+                  pcVar13 = pcVar13 + 1;
+                  method_00 = (MethodInfo *)&method_00->virtualMethodPointer;
                 }
-                func_?();
                 func_?();
               }
             }
@@ -284,22 +321,24 @@ code_?:
     }
   }
   else {
-    pGVar9 = (this->fields)._._._.gameObject;
-    if (pGVar9 != (GameObject *)0x0) {
-      pUVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-               GameObject_GetComponentsInChildren_29
-                         (pGVar9,
+    pGVar8 = (this->fields)._._._.gameObject;
+    if (pGVar8 != (GameObject *)0x0) {
+      pCVar16 = (CubeBullet *)
+               Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar8,
                           CubeBullet_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<CubeBullet>__
                          );
-      (this->fields).cubeBullet = (CubeBullet *)pUVar10;
+      (this->fields).cubeBullet = pCVar16;
+      func_?(&(this->fields).cubeBullet,pCVar16);
       goto code_?;
     }
 code_?:
-    func_?();
+    uVar6 = func_?();
   }
-  func_?();
+  func_?(uVar6);
+  pDVar4 = extraout_EDX;
 code_?:
-  func_?();
+  func_?(this_01,pDVar4);
   pcVar15 = (code *)swi(3);
   (*pcVar15)();
   return;
@@ -315,11 +354,10 @@ void Assembly-CSharp.dll::MVCubeGun::MVCubeGun__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVPickupItemBase);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVPickupItemBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVPickupItemBase->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVPickupItemBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVPickupItemBase);
   }
   MVPickupItemBase::MVPickupItemBase__ctor

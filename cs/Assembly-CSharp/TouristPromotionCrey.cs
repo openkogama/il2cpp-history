@@ -8,15 +8,30 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TouristPromotionCrey : TouristPromotion
 {
 	// Fields
 	[SerializeField]
 	private GameObject adContinueButton;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<ITouristAdController> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<ITouristAdController> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Continue_b__2_0(ITouristAdController x, BaseEventData y);
+	}
 
 	// Constructors
 	public TouristPromotionCrey();
@@ -26,7 +41,5 @@ public class TouristPromotionCrey : TouristPromotion
 	public void Continue();
 	public void Signup();
 	public void CreyRedirect();
-	[CompilerGenerated]
-	private static void _Continue_m__0(ITouristAdController x, BaseEventData y);
 }
 

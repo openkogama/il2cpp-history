@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TouristPromotionExternalEvaluator : MonoBehaviour
 {
@@ -24,10 +24,8 @@ public class TouristPromotionExternalEvaluator : MonoBehaviour
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private TouristPromotion _Promotion_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private int _FrequencyPercent_k__BackingField;
 
 		// Properties

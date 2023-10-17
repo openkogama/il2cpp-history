@@ -5,24 +5,17 @@ bool Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_DoAddLink
                (ESAddObjectLink *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AddObjectLink
               (this_00,(this->fields).tempLink,(MethodInfo *)0x0);
     return 1;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  bVar2 = (*pcVar1)();
-  return bVar2;
+  uVar1 = func_?(&stack0xfffffff4);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -33,14 +26,16 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__MV__WorldObject__ObjectLink);
+    func_?(&StringLiteral_state_started_with_multi_selecti);
+    func_?(&StringLiteral_Should_not_happen___object_links);
     cRam_? = '\x01';
   }
   if (esm != (EditorStateMachine *)0x0) {
-    this_00 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-    if (this_00 == (MVWorldObjectClient *)0x0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
+    if (pMVar1 == (MVWorldObjectClient *)0x0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
@@ -48,64 +43,46 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Enter
       FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
       return;
     }
-    pOVar1 = (ObjectLink *)func_?(TypeInfo__MV__WorldObject__ObjectLink);
-    MVWorldObject.dll::MV::WorldObject::ObjectLink::ObjectLink__ctor_1(pOVar1,(MethodInfo *)0x0);
-    (this->fields).tempLink = pOVar1;
-    pTVar2 = CloudyThemeBase::CloudyThemeBase_get_Skybox
-                       ((CloudyThemeBase *)this_00,(MethodInfo *)0x0);
-    if (pTVar2 != (ThemeSkybox *)0x3) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)StringLiteral_Should_not_happen___object_links,(MethodInfo *)0x0);
-      FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
-      return;
-    }
-    pOVar1 = (this->fields).tempLink;
-    this_01 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-    if (this_01 != (MVWorldObjectClient *)0x0) {
-      pIVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0)
-      ;
-      if (pOVar1 != (ObjectLink *)0x0) {
-        (pOVar1->fields).objectConnectorWOID = (int32_t)pIVar3;
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
+    pOVar2 = (ObjectLink *)func_?(TypeInfo__MV__WorldObject__ObjectLink);
+    if (pOVar2 != (ObjectLink *)0x0) {
+      MVWorldObject.dll::MV::WorldObject::ObjectLink::ObjectLink__ctor_1(pOVar2,(MethodInfo *)0x0);
+      (this->fields).tempLink = pOVar2;
+      func_?(&(this->fields).tempLink,pOVar2);
+      if ((pMVar1->fields).selectedConnector != 3) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Debug);
         }
-        this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                            ((MethodInfo *)0x0);
-        if (this_02 != (MainCameraManager *)0x0) {
-          this_03 = (ObjectPool_1_System_Object_ *)
-                    ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                    NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                              ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_02,(MethodInfo *)0x0
-                              );
-          if (this_03 != (ObjectPool_1_System_Object_ *)0x0) {
-            UnityEngine.UI.dll::UnityEngine::UI::ObjectPool`1[System::Object]::
-            ObjectPool_1_System_Object__set_countAll
-                      (this_03,(int32_t)(this->fields).tempLink,(MethodInfo *)0x0);
-            this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            pIVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                     Collection_1_VoxelHit__get_Items
-                               ((Collection_1_VoxelHit_ *)this_00,(MethodInfo *)0x0);
-            if (this_04 != (MVWorldObjectClientManager *)0x0) {
-              pWVar4 = MVWorldObjectClientManager::
-                       MVWorldObjectClientManager_GetWorldObjectClientRef
-                                 (this_04,(int32_t)pIVar3,(MethodInfo *)0x0);
-              (this->fields).woRef = pWVar4;
-              return;
-            }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                  ((Object *)StringLiteral_Should_not_happen___object_links,(MethodInfo *)0x0);
+        FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
+        return;
+      }
+      pOVar2 = (this->fields).tempLink;
+      pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
+      if ((pMVar3 != (MVWorldObjectClient *)0x0) && (pOVar2 != (ObjectLink *)0x0)) {
+        (pOVar2->fields).objectConnectorWOID = (pMVar3->fields)._.id;
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
+        ;
+        if ((pMVar4 != (MainCameraManager *)0x0) &&
+           (pLVar5 = (pMVar4->fields).lineDrawManager, pLVar5 != (LineDrawManager *)0x0)) {
+          pOVar2 = (this->fields).tempLink;
+          (pLVar5->fields).tempObjectLink = pOVar2;
+          func_?(&(pLVar5->fields).tempObjectLink,pOVar2);
+          this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+          if (this_00 != (MVWorldObjectClientManager *)0x0) {
+            pWVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                               (this_00,(pMVar1->fields)._.id,(MethodInfo *)0x0);
+            (this->fields).woRef = pWVar6;
+            func_?(&(this->fields).woRef,pWVar6);
+            return;
           }
         }
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -117,129 +94,96 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Execute
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::ObjectLink>__Exists_System__Predicate<MV::WorldObject::ObjectLink>_
+                   );
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&TypeInfo__System__Predicate<MV::WorldObject::ObjectLink>);
+    func_?(&
+                    MethodInfo__ESAddObjectLink____c__DisplayClass3_0___Execute_b__0_MV__WorldObject__ObjectLink_
+                   );
+    func_?(&TypeInfo__ESAddObjectLink____c__DisplayClass3_0);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,(float)e,(MethodInfo *)0x0)
-  ;
   this_00 = (this->fields).woRef;
   if (this_00 == (WorldObjectClientRef *)0x0) goto code_?;
-  this_01 = WorldObjectClientRef`1[MVRoundCube]::
-            WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                      ((WorldObjectClientRef_1_MVRoundCube_ *)this_00,
-                       MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                      );
-  if (this_01 == (MVRoundCube *)0x0) {
+  pOVar1 = WorldObjectClientRef`1[System::Object]::
+           WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                     ((WorldObjectClientRef_1_System_Object_ *)this_00,
+                      MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                     );
+  if (pOVar1 == (Object *)0x0) {
     ESAddObjectLink_LeaveAddLink(this,e,(MethodInfo *)0x0);
     return;
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-    func_?();
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVInputWrapper);
   }
-  bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+  method_00 = (MethodInfo *)0x5;
+  bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                     (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    method_00 = TypeInfo__ESAddObjectLink___Execute_c__AnonStorey0;
-    this_02 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_02,0.0,(MethodInfo *)method_00);
-    iVar2 = 0x48;
-    pvVar3 = (void *)0x0;
-    func_?(&stack0xffffffac);
-    if (this_02 == (ScaleAnimationBase *)0x0) goto code_?;
-    (this_02->fields)._._._._.m_CachedPtr = pvVar3;
-    (this_02->fields).state = iVar2;
-    (this_02->fields).originalScale.x = (float)method_00;
-    (this_02->fields).originalScale.y = fStack_4;
-    (this_02->fields).originalScale.z = fStack_5;
-    (this_02->fields).target = pTStack_6;
-    (this_02->fields).testState = iStack_7;
-    (this_02->fields).OnScaleAnimationStopped = pSStack_8;
-    this_02[1].klass = pSStack_9;
-    this_02[1].monitor = pMStack_10;
-    this_02[1].fields._._._._.m_CachedPtr = pvStack_11;
-    this_02[1].fields.state = iStack_12;
-    this_02[1].fields.originalScale.x = fStack_13;
-    this_02[1].fields.originalScale.y = fStack_14;
-    this_02[1].fields.originalScale.z = fStack_15;
-    this_02[1].fields.target = pTStack_16;
-    this_02[1].fields.testState = (undefined4)uStack_17;
-    this_02[1].fields.OnScaleAnimationStopped =
-         (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)uStack_17._4_4_;
-    bVar1 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                      ((VoxelHit *)&this_02->fields,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+  if (bVar2 != 0) {
+    value = (Object *)func_?(TypeInfo__ESAddObjectLink____c__DisplayClass3_0);
+    if (value == (Object *)0x0) goto code_?;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,method_00);
+    func_?(value + 1,0,0x48);
+    bVar2 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                      ((VoxelHit *)(value + 1),(HashSet_1_System_Int32_ *)0x0,-0x40005,
                        (MethodInfo *)0x0);
-    if ((bVar1 != 0) && (this_02[1].fields._._._._.m_CachedPtr != (void *)0xffffffff)) {
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
-      pMVar18 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (this_03,(int32_t)this_02[1].fields._._._._.m_CachedPtr,(MethodInfo *)0x0);
-      if (pMVar18 != (MVWorldObject *)0x0) {
-        pIVar19 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items
-                           ((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0);
-        if (pIVar19 != this_02[1].fields._._._._.m_CachedPtr) {
-          this_04 = (List_1_VoxelHit_ *)
-                    System.Core.dll::System::Linq::
-                    Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Collections::Generic::
-                    KeyValuePair`2[System::Object,System::Object],System::Object]::
-                    Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                              ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                                *)this_01,(MethodInfo *)0x0);
-          this_05 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                     *)func_?(TypeInfo__System__Predicate<MV::WorldObject::ObjectLink>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (this_05,(Object *)this_02,
-                     MethodInfo__ESAddObjectLink___Execute_c__AnonStorey0____m__0_MV__WorldObject__ObjectLink_
-                     ,
-                     MethodInfo__System__Predicate<MV::WorldObject::ObjectLink>__Predicate_System__Object__void__
-                    );
-          if (this_04 == (List_1_VoxelHit_ *)0x0) goto code_?;
-          bVar1 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::
-                  List_1_VoxelHit__Exists
-                            (this_04,(Predicate_1_VoxelHit_ *)this_05,
-                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::ObjectLink>__Exists_System__Predicate<MV::WorldObject::ObjectLink>_
-                            );
-          if (bVar1 == 0) {
-            cVar20 = (*(code *)(this_01->klass->vtable).ValidateObjectLinkTarget.method)
-                              (this_01,pMVar18,(this_01->klass->vtable).ReceivePackage.methodPtr);
-            if (cVar20 != '\0') {
-              pOVar21 = (this->fields).tempLink;
-              if (pOVar21 == (ObjectLink *)0x0) goto code_?;
-              bVar22 = cRam_? == '\0';
-              (pOVar21->fields).objectWOID = (int32_t)this_02[1].fields._._._._.m_CachedPtr;
-              if (bVar22) {
-                func_?(_UNK_?);
-                cRam_? = '\x01';
-              }
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?(TypeInfo__MVGameControllerBase);
-              }
-              this_06 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                  ((MethodInfo *)0x0);
-              if (this_06 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-              MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AddObjectLink
-                        (this_06,(this->fields).tempLink,(MethodInfo *)0x0);
-            }
+    if ((bVar2 != 0) && (value[6].klass != (Object__Class *)0xffffffff)) {
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
+      pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_02,(int32_t)value[6].klass,(MethodInfo *)0x0);
+      if ((pMVar3 != (MVWorldObject *)0x0) && (pOVar1[1].klass != value[6].klass)) {
+        pOVar4 = pOVar1[4].klass;
+        this_03 = (Predicate_1_Object_ *)
+                  func_?(TypeInfo__System__Predicate<MV::WorldObject::ObjectLink>);
+        if (this_03 == (Predicate_1_Object_ *)0x0) goto code_?;
+        mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                  (this_03,value,
+                   MethodInfo__ESAddObjectLink____c__DisplayClass3_0___Execute_b__0_MV__WorldObject__ObjectLink_
+                   ,(MethodInfo *)0x0);
+        if (pOVar4 == (Object__Class *)0x0) goto code_?;
+        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                UnitySynchronizationContext+WorkRequest]::
+                List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Exists
+                          ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pOVar4,
+                           (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                           this_03,
+                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::ObjectLink>__Exists_System__Predicate<MV::WorldObject::ObjectLink>_
+                          );
+        if (bVar2 == 0) {
+          pOVar4 = pOVar1->klass;
+          uVar5._0_2_ = pOVar4[3]._0.byval_arg.attrs;
+          uVar5._2_1_ = pOVar4[3]._0.byval_arg.type;
+          uVar5._3_1_ = pOVar4[3]._0.byval_arg.field_0x7;
+          cVar6 = (*(code *)pOVar4[3]._0.byval_arg.data)(pOVar1,pMVar3,uVar5);
+          if (cVar6 != '\0') {
+            pOVar7 = (this->fields).tempLink;
+            if (pOVar7 == (ObjectLink *)0x0) goto code_?;
+            (pOVar7->fields).objectWOID = (int32_t)value[6].klass;
+            this_04 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                ((MethodInfo *)0x0);
+            if (this_04 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AddObjectLink
+                      (this_04,(this->fields).tempLink,(MethodInfo *)0x0);
           }
         }
       }
     }
-    if (e == (EditorStateMachine *)0x0) {
+    if ((e == (EditorStateMachine *)0x0) ||
+       (this_01 = (e->fields).selectionController, this_01 == (SelectionController *)0x0)) {
 code_?:
-      func_?(0);
-      pcVar23 = (code *)swi(3);
-      (*pcVar23)();
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    EditorStateMachine::EditorStateMachine_DeSelectAll(e,(MethodInfo *)0x0);
+    SelectionController::SelectionController_DeSelectAll(this_01,(MethodInfo *)0x0);
     ESAddObjectLink_LeaveAddLink(this,e,(MethodInfo *)0x0);
   }
   return;
@@ -252,29 +196,17 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Exit
                (ESAddObjectLink *this,EditorStateMachine *esm,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if ((pMVar1 != (MainCameraManager *)0x0) &&
+     (pLVar2 = (pMVar1->fields).lineDrawManager, pLVar2 != (LineDrawManager *)0x0)) {
+    (pLVar2->fields).tempObjectLink = (ObjectLink *)0x0;
+    func_?();
+    return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_00 != (MainCameraManager *)0x0) {
-    this_01 = (ObjectPool_1_System_Object_ *)
-              ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-              NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                        ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (ObjectPool_1_System_Object_ *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::ObjectPool`1[System::Object]::
-      ObjectPool_1_System_Object__set_countAll(this_01,0,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -286,37 +218,44 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_LeaveAddLink
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
+  this_01 = e;
   if (e != (EditorStateMachine *)0x0) {
-    pIVar1 = (IList_1_VoxelHit_ *)
-             EditorStateMachine::EditorStateMachine_get_ParentGroupID(e,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_00 != (MVWorldObjectClientManager *)0x0) {
-      this_01 = MVWorldObjectClientManager::MVWorldObjectClientManager_get_RootGroup
-                          (this_00,(MethodInfo *)0x0);
-      if (this_01 != (MVGroup *)0x0) {
-        pIVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items
-                           ((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0);
-        if (pIVar1 != pIVar2) {
-          FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
-          return;
+    pSVar1 = (e->fields).selectionController;
+    if (pSVar1 != (SelectionController *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&MethodInfo__System__Collections__Generic__Stack<int>__Peek__);
+        cRam_? = '\x01';
+      }
+      this_00 = (Stack_1_System_Object_ *)(pSVar1->fields).parentGroups;
+      if (this_00 != (Stack_1_System_Object_ *)0x0) {
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+                 Stack_1_System_Object__Peek
+                           (this_00,MethodInfo__System__Collections__Generic__Stack<int>__Peek__);
+        this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if (this_02 != (MVWorldObjectClientManager *)0x0) {
+          pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_get_RootGroup
+                             (this_02,(MethodInfo *)0x0);
+          if (pMVar3 != (MVGroup *)0x0) {
+            if (pOVar2 != (Object *)(pMVar3->fields)._._.id) {
+              e = (EditorStateMachine *)0x0;
+              FSMEntity::FSMEntity_PopState((FSMEntity *)this_01,(MethodInfo *)0x0);
+              return;
+            }
+            e = (EditorStateMachine *)&e;
+            pOVar2 = (Object *)func_?();
+            FSMEntity::FSMEntity_set_Event((FSMEntity *)this_01,pOVar2,(MethodInfo *)0x0);
+            return;
+          }
         }
-        value = (Object *)func_?();
-        FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
-        return;
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

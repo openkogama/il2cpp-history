@@ -31,13 +31,12 @@ void Assembly-CSharp.dll::PickupItemMouseGun::PickupItemMouseGun__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
   (this->fields)._.range = 300.0;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
   pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
@@ -46,33 +45,25 @@ void Assembly-CSharp.dll::PickupItemMouseGun::PickupItemMouseGun__ctor
   iVar4 = pOVar1->fakeValue;
   bVar5 = pOVar1->inited;
   uVar6 = *(undefined3 *)&pOVar1->field_0xd;
-  OStack_2.hiddenValue = 0;
   (this->fields)._.maxAmmo.currentCryptoKey = pOVar1->currentCryptoKey;
   (this->fields)._.maxAmmo.hiddenValue = iVar3;
   (this->fields)._.maxAmmo.fakeValue = iVar4;
   (this->fields)._.maxAmmo.inited = bVar5;
+  fVar7 = _UNK_?;
+  fVar8 = _UNK_?;
+  fVar9 = _UNK_?;
   *(undefined3 *)&(this->fields)._.maxAmmo.field_0xd = uVar6;
-  OStack_2.currentCryptoKey = 0x3f666666;
-  fStack_7 = 0.0;
-  fStack_8 = 0.0;
-  fStack_9 = 0.0;
-  fStack_10 = 0.0;
-  func_?(&fStack_7,0x3e4ccccd,0x3e99999a);
-  (this->fields)._.hitColor.r = fStack_7;
-  (this->fields)._.hitColor.g = fStack_8;
-  (this->fields)._.hitColor.b = fStack_9;
-  (this->fields)._.hitColor.a = fStack_10;
-  OStack_2.hiddenValue = 0;
-  fStack_11 = 0.0;
-  fStack_12 = 0.0;
-  fStack_13 = 0.0;
-  fStack_14 = 0.0;
-  OStack_2.currentCryptoKey = 0x3e4ccccd;
-  func_?(&fStack_11,0x3f666666,0x3e99999a);
-  (this->fields)._.missColor.r = fStack_11;
-  (this->fields)._.missColor.g = fStack_12;
-  (this->fields)._.missColor.b = fStack_13;
-  (this->fields)._.missColor.a = fStack_14;
+  (this->fields)._.hitColor.r = _UNK_?;
+  (this->fields)._.hitColor.g = fVar9;
+  (this->fields)._.hitColor.b = fVar8;
+  (this->fields)._.hitColor.a = fVar7;
+  fVar7 = _UNK_?;
+  fVar8 = _UNK_?;
+  fVar9 = _UNK_?;
+  (this->fields)._.missColor.r = _UNK_?;
+  (this->fields)._.missColor.g = fVar9;
+  (this->fields)._.missColor.b = fVar8;
+  (this->fields)._.missColor.a = fVar7;
   PickupItemWithDelay::PickupItemWithDelay__ctor((PickupItemWithDelay *)this,(MethodInfo *)0x0);
   return;
 }

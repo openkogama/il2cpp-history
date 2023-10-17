@@ -7,64 +7,69 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
 {
   pOVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_ParticleSystemInstance_is_null);
+    func_?(&StringLiteral_ParticleSystemPrefab_is_null);
     cRam_? = '\x01';
   }
   pPVar2 = (this->fields).particleSystemPrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pPVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar3 == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
               ((Object *)StringLiteral_ParticleSystemPrefab_is_null,(MethodInfo *)0x0);
     return;
   }
-  pSVar4 = (SentryGunBeam *)(this->fields).particleSystemPrefab;
-  pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-  if (pTVar5 != (Transform *)0x0) {
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffffe8,pTVar5,(MethodInfo *)0x0);
-    fVar7 = pVVar6->z;
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar5 != (Transform *)0x0) {
+  pPVar2 = (this->fields).particleSystemPrefab;
+  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar4 != (Transform *)0x0) {
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)&stack0xffffffe8,pTVar4,(MethodInfo *)0x0);
+    fVar6 = pVVar5->z;
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar4 != (Transform *)0x0) {
       __return_storage_ptr__ = (Quaternion *)&stack0xffffffe4;
-      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         (__return_storage_ptr__,pTVar5,(MethodInfo *)0x0);
-      fVar9 = pQVar8->x;
-      fVar10 = pQVar8->y;
-      fVar11 = pQVar8->z;
-      this = (ObjectParticleEmitterScript *)pQVar8->w;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                         (__return_storage_ptr__,pTVar4,(MethodInfo *)0x0);
+      fVar8 = pQVar7->x;
+      fVar9 = pQVar7->y;
+      fVar10 = pQVar7->z;
+      this = (ObjectParticleEmitterScript *)pQVar7->w;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      fVar12 = fVar11;
-      position.y = fVar9;
+      fVar11 = fVar10;
+      position.y = fVar8;
       position.x = (float)__return_storage_ptr__;
-      position.z = fVar7;
-      fVar13 = fVar10;
-      fVar14 = fVar9;
-      rotation._0_8_ = CONCAT44(fVar13,fVar14);
-      rotation = (Quaternion)CONCAT88(uVar15,rotation._0_8_);
-      pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_161
-                         (pSVar4,position,rotation,
+      position.z = fVar6;
+      fVar12 = fVar9;
+      fVar13 = fVar8;
+      rotation._0_8_ = CONCAT44(fVar12,fVar13);
+      rotation = (Quaternion)CONCAT88(uVar14,rotation._0_8_);
+      pPVar2 = (ParticleSystem *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+                         ((Object *)pPVar2,position,rotation,
                           UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
                          );
-      (pOVar1->fields).particleSystemInstance = (ParticleSystem *)pSVar4;
+      (pOVar1->fields).particleSystemInstance = pPVar2;
+      func_?();
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pSVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)(pOVar1->fields).particleSystemInstance,(Object_1 *)0x0,
+                         (MethodInfo *)0x0);
       if (bVar3 == 0) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
@@ -80,8 +85,8 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

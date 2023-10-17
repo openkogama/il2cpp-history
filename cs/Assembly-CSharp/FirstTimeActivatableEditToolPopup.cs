@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatableEditToolPopup : FirstTimeActivatableElementBase
 {
@@ -31,44 +31,44 @@ public class FirstTimeActivatableEditToolPopup : FirstTimeActivatableElementBase
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnShow_c__AnonStorey0
+	private sealed class __c__DisplayClass9_0
 	{
 		// Fields
-		internal bool blocked;
-		internal FirstTimeActivatableEditToolPopup _this;
+		public bool blocked;
+		public FirstTimeActivatableEditToolPopup __4__this;
 
 		// Constructors
-		public _OnShow_c__AnonStorey0();
+		public __c__DisplayClass9_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnShow_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Update_c__AnonStorey1
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal bool blocked;
-		internal FirstTimeActivatableEditToolPopup _this;
+		public FirstTimeActivatableEditToolPopup __4__this;
+		public bool blocked;
 
 		// Constructors
-		public _Update_c__AnonStorey1();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnPopupRemoved_c__AnonStorey2
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal GameObject popupGameObject;
+		public GameObject popupGameObject;
 
 		// Constructors
-		public _OnPopupRemoved_c__AnonStorey2();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPopupRemoved_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -82,6 +82,6 @@ public class FirstTimeActivatableEditToolPopup : FirstTimeActivatableElementBase
 	protected void OnShown();
 	private void OnPopupRemoved(GameObject popupGameObject);
 	[CompilerGenerated]
-	private void _ShowPopup_m__0(IUIStack x, BaseEventData y);
+	private void _ShowPopup_b__10_0(IUIStack x, BaseEventData y);
 }
 

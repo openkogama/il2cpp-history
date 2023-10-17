@@ -9,16 +9,12 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class NotificationController : MonoBehaviour
 {
 	// Fields
 	private static HashSet<int> incomingPlayerFriendRequests;
-	[CompilerGenerated]
-	private static MVGameControllerBase.OnReceivedNotificationEventDelegate __f__mg_cache0;
-	[CompilerGenerated]
-	private static MVGameControllerBase.OnReceivedNotificationEventDelegate __f__mg_cache1;
 
 	// Properties
 	private static NotificationsManager NotificationsManager { get; }

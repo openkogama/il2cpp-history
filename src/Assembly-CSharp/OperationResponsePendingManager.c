@@ -8,44 +8,48 @@ bool Assembly-CSharp.dll::OperationResponsePendingManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Add_MV__Common__MVOperationCodes_
+                   );
+    func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+    func_?(&StringLiteral_Operation_is_already_pending_);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)(this->fields).pendingOperations;
-  if (this_00 != (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::Api::
-            NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
+  this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).pendingOperations;
+  if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+            HashSet_1_System_ByteEnum__Contains
                       (this_00,operationCode,
                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
                       );
     if (bVar1 != 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
                 ((Object *)StringLiteral_Operation_is_already_pending_,(MethodInfo *)0x0);
       return 0;
     }
-    this_01 = (this->fields).pendingOperations;
-    if (this_01 != (HashSet_1_MV_Common_MVOperationCodes_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[MV::Common::MVOperationCodes]::
-      HashSet_1_MV_Common_MVOperationCodes__Add
-                (this_01,operationCode,
+    this_01 = (HashSet_1_System_Object_ *)(this->fields).pendingOperations;
+    if (this_01 != (HashSet_1_System_Object_ *)0x0) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+      HashSet_1_System_Object__Add
+                (this_01,(Object *)operationCode,
                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Add_MV__Common__MVOperationCodes_
                 );
       pPVar2 = (this->fields).peer;
-      if ((((uint)(TypeInfo__ExitGames__Client__Photon__SendOptions->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_started == 0)) {
+      if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       if (pPVar2 != (PhotonPeer *)0x0) {
-        (*(code *)(pPVar2->klass->vtable).SendOperation.method)(pPVar2,operationCode,data);
+        (*(pPVar2->klass->vtable).SendOperation.methodPtr)(pPVar2,operationCode,data);
         return 1;
       }
     }
@@ -66,21 +70,22 @@ bool Assembly-CSharp.dll::OperationResponsePendingManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)(this->fields).pendingOperations;
-  if (this_00 != (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::Api::
-            NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
+  this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).pendingOperations;
+  if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+            HashSet_1_System_ByteEnum__Contains
                       (this_00,operationCode,
                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
                       );
     return bVar1 != 0;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 
@@ -94,23 +99,27 @@ void Assembly-CSharp.dll::OperationResponsePendingManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Remove_MV__Common__MVOperationCodes_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)(this->fields).pendingOperations;
-  if (this_00 != (HashSet_1_GoogleMobileAds_Api_NativeAdType_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[GoogleMobileAds::Api::
-            NativeAdType]::HashSet_1_GoogleMobileAds_Api_NativeAdType__Contains
-                      (this_00,operationCode,
+  pHVar1 = (HashSet_1_System_ByteEnum_ *)(this->fields).pendingOperations;
+  if (pHVar1 != (HashSet_1_System_ByteEnum_ *)0x0) {
+    bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+            HashSet_1_System_ByteEnum__Contains
+                      (pHVar1,operationCode,
                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
                       );
-    if (bVar1 != 0) {
-      this_01 = (HashSet_1_MV_WorldObject_InteractionPackageType_ *)(this->fields).pendingOperations
-      ;
-      if (this_01 == (HashSet_1_MV_WorldObject_InteractionPackageType_ *)0x0) goto code_?;
-      System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::
-      InteractionPackageType]::HashSet_1_MV_WorldObject_InteractionPackageType__Remove
-                (this_01,operationCode,
+    if (bVar2 != 0) {
+      pHVar1 = (HashSet_1_System_ByteEnum_ *)(this->fields).pendingOperations;
+      if (pHVar1 == (HashSet_1_System_ByteEnum_ *)0x0) goto code_?;
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+      HashSet_1_System_ByteEnum__Remove
+                (pHVar1,operationCode,
                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Remove_MV__Common__MVOperationCodes_
                 );
     }
@@ -118,8 +127,8 @@ void Assembly-CSharp.dll::OperationResponsePendingManager::
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -131,20 +140,34 @@ void Assembly-CSharp.dll::OperationResponsePendingManager::OperationResponsePend
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__HashSet__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>;
-  this_00 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__HashSet__
-            );
-  (this->fields).pendingOperations = (HashSet_1_MV_Common_MVOperationCodes_ *)this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  (this->fields).peer = peer;
+  this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>
+                           );
+  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+    HashSet_1_UnityEngine_Vector3___ctor
+              (this_00,
+               MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__HashSet__
+              );
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).pendingOperations = (HashSet_1_MV_Common_MVOperationCodes_ *)this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    (this->fields).peer = peer;
+    func_?(&(this->fields).peer,peer);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

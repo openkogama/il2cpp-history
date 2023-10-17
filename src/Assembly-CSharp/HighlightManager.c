@@ -1,9 +1,8 @@
 
-/* List`1[Highlight`1[MV.WorldObject.HighlightSystem.HighlightPayloads.HighlightAccessoryBundle]]
-   GetHighLights[HighlightAccessoryBundle](HighlightType) */
+/* List`1[Highlight`1[System.Object]] GetHighLights[Object](HighlightType) */
 
-List_1_Highlight_1_MV_WorldObject_HighlightSystem_HighlightPayloads_HighlightAccessoryBundle_ *
-Assembly-CSharp.dll::HighlightManager::HighlightManager_GetHighLights_2
+List_1_Highlight_1_System_Object_ *
+Assembly-CSharp.dll::HighlightManager::HighlightManager_GetHighLights
           (HighlightType__Enum highlightType,MethodInfo *method)
 
 {
@@ -11,144 +10,115 @@ Assembly-CSharp.dll::HighlightManager::HighlightManager_GetHighLights_2
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff7c;
-  puVar5 = &stack0xffffff7c;
+  puStack_4 = &stack0xffffff8c;
+  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__get_Current__
+                   );
+    func_?(&TypeInfo__HighlightManager);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__get_Value__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  auStack_6._16_4_ = (Object *)0x0;
-  iStack_7 = 0;
-  KStack_8.key = 0;
-  KStack_8.value = 0;
-  auStack_6._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_6._4_4_ = (MonitorData *)0x0;
-  auStack_6._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_6._12_4_ = 0;
-  func_?();
-  pIVar9 = *method->parameters;
-  puStack_10 = (undefined4 *)&stack0xffffff7c;
-  puStack_4 = &stack0xffffff7c;
-  if ((pIVar9[0x17].type & 1) == 0) {
-    puStack_10 = (undefined4 *)&stack0xffffff7c;
-    puStack_4 = &stack0xffffff7c;
-    func_?(pIVar9);
+  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
+  pvVar7 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
+  if ((*(byte *)((int)pvVar7 + 0xba) & 1) == 0) {
+    pvVar7 = (void *)func_?(pvVar7);
   }
-  pLVar11 = (List_1_Highlight_1_MV_WorldObject_HighlightSystem_HighlightPayloads_HighlightAccessoryBundle_
-            *)func_?(pIVar9);
-  pLStack_12 = pLVar11;
-  (*(code *)method->parameters[1]->data)(pLVar11,method->parameters[1]);
-  pLStack_13 = pLVar11;
-  if ((((uint)(TypeInfo__HighlightManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__HighlightManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__HighlightManager);
-  }
-  this = TypeInfo__HighlightManager->static_fields->highlightDatas;
-  if (this == (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
-              0x0) {
-code_?:
-    iVar14 = func_?(0);
-  }
-  else {
-    pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                       (&DStack_16,(Dictionary_2_WinningConditionType_System_Object_ *)this,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__GetEnumerator__
-                       );
-    auStack_6._0_4_ = pDVar15->dictionary;
-    auStack_6._4_4_ = pDVar15->next;
-    auStack_6._8_4_ = pDVar15->stamp;
-    auStack_6._12_4_ = (pDVar15->current).key;
-    auStack_6._16_4_ = (pDVar15->current).value;
-    uStack_1 = 0;
-    while (cVar17 = func_?(auStack_6,
-                                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__MoveNext__
-                                  ), cVar17 != '\0') {
-      KStack_8 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                            ((LevelRewardsManager *)auStack_6,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__get_Current__
+  pLVar8 = (List_1_Highlight_1_System_Object_ *)func_?(pvVar7);
+  pLStack_9 = pLVar8;
+  if (pLVar8 != (List_1_Highlight_1_System_Object_ *)0x0) {
+    (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
+              (pLVar8,(method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
+    pLStack_10 = pLVar8;
+    if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__HighlightManager);
+    }
+    this = (Dictionary_2_System_Object_System_Object_ *)
+           TypeInfo__HighlightManager->static_fields->highlightDatas;
+    if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         (&DStack_12,this,
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__GetEnumerator__
+                         );
+      uStack_13 = 0;
+      DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar11->_dictionary;
+      DStack_6._version = pDVar11->_version;
+      DStack_6._index = pDVar11->_index;
+      DStack_6._current.key = (int32_t)(pDVar11->_current).key;
+      DStack_6._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
+      uStack_1 = 1;
+      pLVar8 = pLStack_9;
+      pDStack_14 = &DStack_6;
+      while( true ) {
+        do {
+          bVar15 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                  Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                            (&DStack_6,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__MoveNext__
                             );
-      iVar14 = func_?();
-      if (iVar14 == 0) goto code_?;
-      if (*(char *)(iVar14 + 0x10) == (undefined1)highlightType) {
-        iVar14 = func_?(&KStack_8,
-                                 MethodInfo__System__Collections__Generic__KeyValuePair<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__get_Value__
-                                );
-        if (iVar14 == 0) goto code_?;
-        uVar18 = *(undefined4 *)(iVar14 + 0x14);
-        if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000)
-             != 0) && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
+          if (bVar15 == 0) {
+            uStack_1 = 0xffffffff;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)&DStack_6,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dispose__
+                       ,unaff_EDI);
+            *unaff_FS_OFFSET = uStack_3;
+            return pLVar8;
+          }
+          pOVar16 = DStack_6._current.value;
+          if (DStack_6._current.value == (Object *)0x0) goto code_?;
+          pLVar8 = pLStack_9;
+        } while (*(undefined1 *)&DStack_6._current.value[2].klass != (undefined1)highlightType);
+        pMStack_17 = DStack_6._current.value[2].monitor;
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
         }
-        uStack_19 = (*(code *)method->parameters[2]->data)(uVar18,method->parameters[2]);
-        iVar14 = func_?(&KStack_8,
-                                 MethodInfo__System__Collections__Generic__KeyValuePair<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__get_Value__
-                                );
-        if (iVar14 == 0) goto code_?;
-        uVar18 = *(undefined4 *)(iVar14 + 8);
-        uVar20 = func_?(method->parameters[3]);
-        uVar20 = func_?(uVar20);
-        (*(code *)method->parameters[4]->data)(uVar20,uVar18,uStack_19,method->parameters[4]);
-        if (pLStack_12 ==
-            (List_1_Highlight_1_MV_WorldObject_HighlightSystem_HighlightPayloads_HighlightAccessoryBundle_
-             *)0x0) goto code_?;
-        (*(code *)method->parameters[5]->data)(pLStack_12,uVar20,method->parameters[5]);
+        pMStack_17 = (MonitorData *)
+                     (*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)
+                               (pMStack_17,(method->field7_0x1c).rgctx_data[2].rgctxDataDummy);
+        if (pOVar16 == (Object *)0x0) break;
+        pOStack_18 = pOVar16[1].klass;
+        uVar19 = func_?((method->field7_0x1c).rgctx_data,3);
+        iStack_20 = func_?(uVar19);
+        if (iStack_20 == 0) break;
+        (*((method->field7_0x1c).rgctx_data[4].method)->virtualMethodPointer)
+                  (iStack_20,pOStack_18,pMStack_17,
+                   (method->field7_0x1c).rgctx_data[4].rgctxDataDummy);
+        pLVar8 = pLStack_9;
+        (*((method->field7_0x1c).rgctx_data[5].method)->virtualMethodPointer)
+                  (pLStack_9,iStack_20,(method->field7_0x1c).rgctx_data[5].rgctxDataDummy);
       }
     }
-    *puStack_10 = 0x7d;
-    uStack_1 = 0xffffffff;
-    pOStack_21 = (Object *)auStack_6._16_4_;
-    uVar22 = 0;
-    pDStack_23 = 
-    TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
-    ;
-    uStack_24 = 0xffffffff;
-    pLStack_25 = (LevelRewardsManager__Class *)auStack_6._0_4_;
-    pMStack_26 = (MonitorData *)auStack_6._4_4_;
-    pDStack_27 = (Dictionary_2_System_Int32_System_Int32_ *)auStack_6._8_4_;
-    iStack_28 = auStack_6._12_4_;
-    uVar29._0_1_ = (
-                  TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
-                  ->_1).rank;
-    uVar29._1_1_ = (
-                  TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
-                  ->_1).minimumAlignment;
-    if (uVar29 != 0) {
-      do {
-        if (TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
-            ->interfaceOffsets[uVar22].interfaceType == (Il2CppClass *)TypeInfo__System__IDisposable)
-        {
-          ppMVar30 = &(&(
-                        TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
-                        ->vtable).Equals)
-                      [TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
-                       ->interfaceOffsets[uVar22].offset].method;
-          goto code_?;
-        }
-        uVar22 = uVar22 + 1;
-      } while (uVar22 < uVar29);
-    }
-    ppMVar30 = (MethodInfo **)func_?(&pDStack_23,TypeInfo__System__IDisposable,0);
-code_?:
-    (*(code *)*ppMVar30)(&pDStack_23,ppMVar30[1]);
-    auStack_6._16_4_ = pOStack_21;
-    auStack_6._0_4_ = pLStack_25;
-    auStack_6._4_4_ = pMStack_26;
-    auStack_6._8_4_ = pDStack_27;
-    auStack_6._12_4_ = iStack_28;
-    iVar14 = iStack_7;
-    if (iStack_7 == 0) {
-      *unaff_FS_OFFSET = uStack_3;
-      return pLStack_12;
-    }
   }
-  func_?(iVar14,0,0);
-  pcVar31 = (code *)swi(3);
-  pLVar11 = (List_1_Highlight_1_MV_WorldObject_HighlightSystem_HighlightPayloads_HighlightAccessoryBundle_
-            *)(*pcVar31)();
-  return pLVar11;
+code_?:
+  uVar19 = func_?();
+  func_?(uVar19);
+  pcVar21 = (code *)swi(3);
+  pLVar8 = (List_1_Highlight_1_System_Object_ *)(*pcVar21)();
+  return pLVar8;
 }
 
 
@@ -159,23 +129,26 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager_Init
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__HighlightManager);
+    func_?(&
+                    System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>_>_System__String_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
+  if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
   }
   pDVar1 = (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
-           Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_43
+           Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
                      (availableHighlightDatasString,
                       System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>_>_System__String_
                      );
-  if ((((uint)(TypeInfo__HighlightManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__HighlightManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__HighlightManager);
   }
   TypeInfo__HighlightManager->static_fields->highlightDatas = pDVar1;
+  func_?(TypeInfo__HighlightManager->static_fields,pDVar1);
   return;
 }
 
@@ -186,23 +159,36 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager_Reset(MethodInfo *m
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
+                   );
+    func_?(&TypeInfo__HighlightManager);
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
                         );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
-            );
-  if ((((uint)(TypeInfo__HighlightManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__HighlightManager->_1).cctor_started == 0)) {
-    func_?();
+  if (this != (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
+              0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
+              );
+    if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    TypeInfo__HighlightManager->static_fields->highlightDatas = this;
+    func_?(TypeInfo__HighlightManager->static_fields);
+    return;
   }
-  TypeInfo__HighlightManager->static_fields->highlightDatas = this;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -214,41 +200,40 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager_SetHighlightToSeen
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__HighlightManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__HighlightManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__HighlightManager);
+  if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  this = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *
-         )TypeInfo__HighlightManager->static_fields->highlightDatas;
-  if (this != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Experimental
-    ::TerrainAPI::TerrainUtility+TerrainMap]::
-    Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-              (this,highlightId,
+  this = TypeInfo__HighlightManager->static_fields->highlightDatas;
+  if (this != (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
+              0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Remove
+              ((Dictionary_2_System_Int32_System_Object_ *)this,highlightId,
                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Remove_int_
               );
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      highlightId = (int32_t)TypeInfo__MVGameControllerBase;
+    if (cRam_? == '\0') {
+      highlightId = (int32_t)&TypeInfo__MVGameControllerBase;
       func_?();
+      cRam_? = '\x01';
     }
-    this_00 = (MVJetPack *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_00 != (MVJetPack *)0x0) {
-      this_01 = MVJetPack::MVJetPack_get_Shield(this_00,(MethodInfo *)0x0);
-      if (this_01 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetHighlightToSeen
-                  ((MVNetworkGame_OperationRequests *)this_01,highlightId,(MethodInfo *)0x0);
-        return;
-      }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+        (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+       (this_00 = (pMVar2->fields).operationRequests,
+       this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetHighlightToSeen
+                (this_00,highlightId,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -259,19 +244,33 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager__cctor(MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
+                   );
+    func_?(&TypeInfo__HighlightManager);
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
                         );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
-            );
-  TypeInfo__HighlightManager->static_fields->highlightDatas = this;
+  if (this != (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
+              0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
+              );
+    TypeInfo__HighlightManager->static_fields->highlightDatas = this;
+    func_?(TypeInfo__HighlightManager->static_fields,this);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

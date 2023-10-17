@@ -5,7 +5,8 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine+ValidPos::MoveCubeFromCoarseT
                (MoveCubeFromCoarseToFine_ValidPos *this,bool valid,Vector3 pos,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).valid = valid;
   (this->fields).pos.x = pos.x;
   (this->fields).pos.y = pos.y;

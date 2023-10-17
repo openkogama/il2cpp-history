@@ -21,7 +21,8 @@ void Assembly-CSharp.dll::PostRequest::PostRequest__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&StringLiteral_binary);
     cRam_? = '\x01';
   }
   AsyncWebRequest::AsyncWebRequest__ctor
@@ -31,6 +32,7 @@ void Assembly-CSharp.dll::PostRequest::PostRequest__ctor
     UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddBinaryData
               (form,StringLiteral_binary,contents,(MethodInfo *)0x0);
     (this->fields).form = form;
+    func_?();
     return;
   }
   func_?();

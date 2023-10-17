@@ -5,21 +5,19 @@ void Assembly-CSharp.dll::BrowserComm+Callback::BrowserComm_Callback_Execute
                (BrowserComm_Callback *this,bool success,String *data,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (UnityAction_2_System_Boolean_System_Object_ *)(this->fields).callbackFunction;
-  if (this_00 != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::
-    UnityAction_2_System_Boolean_System_Object__Invoke
-              (this_00,success,(Object *)data,
-               MethodInfo__System__Action<bool,_System::String>__Invoke_bool__System__String_);
+  puStack_1 = &stack0xfffffffc;
+  pAVar2 = (this->fields).callbackFunction;
+  if (pAVar2 != (Action_2_Boolean_String_ *)0x0) {
+    puStack_1 = (pAVar2->fields)._._.method;
+    pSStack_3 = data;
+    uStack_4 = _success;
+    (*(pAVar2->fields)._._.invoke_impl)((pAVar2->fields)._._.method_code);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar5 = func_?(&uStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

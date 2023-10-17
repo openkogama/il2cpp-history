@@ -8,7 +8,7 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarLimbDataManagerLocal::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).limbRotationRuntimeData;
@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarLimbDataManagerLocal::
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -37,36 +37,32 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarLimbDataManagerLocal::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   pAVar1 = this;
   pLVar2 = (this->fields).limbRotationRuntimeData;
   if (pLVar2 != (LimbRotationRuntimeData *)0x0) {
     pMVar3 = (pLVar2->fields).HeadRotationYaw;
-    puVar4 = (undefined8 *)func_?(auStack_5,&newHeadRotation,0);
-    uStack_6._4_4_ =
-         (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *)((ulonglong)*puVar4 >> 0x20);
-    this = uStack_6._4_4_;
-    uStack_6 = *puVar4;
-    pOVar7 = (Object *)func_?(TypeInfo__System__Single,&this);
+    iVar4 = func_?(auStack_5,&newHeadRotation,0);
+    this = *(AvatarLimbManagerLocal_AvatarLimbDataManagerLocal **)(iVar4 + 4);
+    pOVar6 = (Object *)func_?(TypeInfo__System__Single,&this);
     if (pMVar3 != (MVRuntimeDataVariable *)0x0) {
-      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar7,(MethodInfo *)0x0);
+      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar6,(MethodInfo *)0x0);
       pLVar2 = (pAVar1->fields).limbRotationRuntimeData;
       if (pLVar2 != (LimbRotationRuntimeData *)0x0) {
         pMVar3 = (pLVar2->fields).HeadRotationPitch;
-        puVar4 = (undefined8 *)func_?(auStack_5,&newHeadRotation,0);
-        uStack_6 = *puVar4;
-        uStack_8 = (undefined4)uStack_6;
-        pOVar7 = (Object *)func_?(TypeInfo__System__Single,&uStack_8);
+        puVar7 = (undefined4 *)func_?(auStack_5,&newHeadRotation,0);
+        uStack_8 = *puVar7;
+        pOVar6 = (Object *)func_?(TypeInfo__System__Single,&uStack_8);
         if (pMVar3 != (MVRuntimeDataVariable *)0x0) {
-          MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar7,(MethodInfo *)0x0);
+          MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar6,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -82,36 +78,32 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarLimbDataManagerLocal::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   pAVar1 = this;
   pLVar2 = (this->fields).limbRotationRuntimeData;
   if (pLVar2 != (LimbRotationRuntimeData *)0x0) {
     pMVar3 = (pLVar2->fields).PointRotationYaw;
-    puVar4 = (undefined8 *)func_?(auStack_5,&newPointRotation,0);
-    uStack_6._4_4_ =
-         (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *)((ulonglong)*puVar4 >> 0x20);
-    this = uStack_6._4_4_;
-    uStack_6 = *puVar4;
-    pOVar7 = (Object *)func_?(TypeInfo__System__Single,&this);
+    iVar4 = func_?(auStack_5,&newPointRotation,0);
+    this = *(AvatarLimbManagerLocal_AvatarLimbDataManagerLocal **)(iVar4 + 4);
+    pOVar6 = (Object *)func_?(TypeInfo__System__Single,&this);
     if (pMVar3 != (MVRuntimeDataVariable *)0x0) {
-      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar7,(MethodInfo *)0x0);
+      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar6,(MethodInfo *)0x0);
       pLVar2 = (pAVar1->fields).limbRotationRuntimeData;
       if (pLVar2 != (LimbRotationRuntimeData *)0x0) {
         pMVar3 = (pLVar2->fields).PointRotationPitch;
-        puVar4 = (undefined8 *)func_?(auStack_5,&newPointRotation,0);
-        uStack_6 = *puVar4;
-        uStack_8 = (undefined4)uStack_6;
-        pOVar7 = (Object *)func_?(TypeInfo__System__Single,&uStack_8);
+        puVar7 = (undefined4 *)func_?(auStack_5,&newPointRotation,0);
+        uStack_8 = *puVar7;
+        pOVar6 = (Object *)func_?(TypeInfo__System__Single,&uStack_8);
         if (pMVar3 != (MVRuntimeDataVariable *)0x0) {
-          MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar7,(MethodInfo *)0x0);
+          MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar6,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;

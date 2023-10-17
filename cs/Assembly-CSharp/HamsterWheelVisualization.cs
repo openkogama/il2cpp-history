@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class HamsterWheelVisualization : VehicleVisualizationBase
 {
@@ -51,8 +51,8 @@ public class HamsterWheelVisualization : VehicleVisualizationBase
 	private void OnGroundedChange(bool val);
 	private void HandleUnoccupiedVehicle();
 	[CompilerGenerated]
-	private void _Init_m__0(object healthVal);
+	private void _Init_b__16_0(object healthVal);
 	[CompilerGenerated]
-	private void _Init_m__1(object val);
+	private void _Init_b__16_1(object val);
 }
 

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using CodeStage.AntiCheat.ObscuredTypes;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class PickupItemWithDelay : PickupItem, IUpdatecontrollerSubscriberUpdate
 {
@@ -20,6 +20,7 @@ public abstract class PickupItemWithDelay : PickupItem, IUpdatecontrollerSubscri
 	protected ObscuredFloat fireInterval;
 	protected bool isFiring;
 	private float lastFireTime;
+	private bool triggerBegin;
 
 	// Properties
 	protected override bool IsAmmoDepleted { get; }

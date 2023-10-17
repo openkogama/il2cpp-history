@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Schema
 {
@@ -19,24 +19,22 @@ namespace Newtonsoft.Json.Schema
 		private readonly IList<JsonSchema> _stack;
 		private readonly JsonSchemaResolver _resolver;
 		private JsonSchema _currentSchema;
-		[CompilerGenerated]
-		private static Dictionary<string, int> __f__switch_map0;
 	
 		// Properties
 		private JsonSchema CurrentSchema { get; }
 	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _MapType_c__AnonStorey0
+		private sealed class __c__DisplayClass23_0
 		{
 			// Fields
-			internal JsonSchemaType type;
+			public JsonSchemaType type;
 	
 			// Constructors
-			public _MapType_c__AnonStorey0();
+			public __c__DisplayClass23_0();
 	
 			// Methods
-			internal bool __m__0(KeyValuePair<string, JsonSchemaType> kv);
+			internal bool _MapType_b__0(KeyValuePair<string, JsonSchemaType> kv);
 		}
 	
 		// Constructors

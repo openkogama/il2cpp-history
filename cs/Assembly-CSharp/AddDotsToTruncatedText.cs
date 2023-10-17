@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AddDotsToTruncatedText : MonoBehaviour
 {
@@ -20,41 +20,38 @@ public class AddDotsToTruncatedText : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Start_c__Iterator0 : IEnumerator<object>
+	private sealed class _Start_d__1 : IEnumerator<object>
 	{
 		// Fields
-		internal Color _c___0;
-		internal float _alpha___0;
-		internal string _textValue___0;
-		internal bool _addDots___0;
-		internal float _res___0;
-		internal float _dotSize___0;
-		internal AddDotsToTruncatedText _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public AddDotsToTruncatedText __4__this;
+		private Color _c_5__2;
+		private float _alpha_5__3;
+		private string _textValue_5__4;
+		private bool _addDots_5__5;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _Start_c__Iterator0();
+		public _Start_d__1(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
 	public AddDotsToTruncatedText();
 
 	// Methods
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_Start_d__1))]
 	private IEnumerator Start();
 	private int CalculateLengthOfMessage(string message);
 }

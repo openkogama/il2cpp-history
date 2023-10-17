@@ -9,7 +9,7 @@ using MV.Common;
 using MV.WorldObject.MetaData;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GameEventManager
 {
@@ -19,10 +19,8 @@ public class GameEventManager
 	public readonly AvatarCommandsBuildModeManager AvatarCommandsBuildMode;
 	public readonly GameStateManager GameState;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Action<FirstTimeEvent> OnFirstTimeEvent;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Action<int> OnXPRewarded;
 
 	// Events
@@ -66,43 +64,30 @@ public class GameEventManager
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnKillSelf;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnSetRespawnWhenPossible;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnReadyScreenShot;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnEnterPlaymode;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnSetToSpawnPoint;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action<WinningConditionType> OnWinningConditionIntermediateDebriefing;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnRemoveFromGame;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnRespawn;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnSetToDeadMode;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action<int> OnMoveBodyToSafeSpot;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action<int> OnSpawnAtSafeSpot;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnSpawnAsGhost;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnReviveTimeElapsed;
 
 		// Events
@@ -182,17 +167,13 @@ public class GameEventManager
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action<EditorEvent, object> OnEnterBuildStateEvent;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action<EditorEvent, object> OnExitBuildStateEvent;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action<Vector3, Quaternion> OnSetSpawn;
 		public readonly LaserCommandsManager LaserCommands;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnSetToEditMode;
 
 		// Events
@@ -218,19 +199,14 @@ public class GameEventManager
 		{
 			// Fields
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private Action<bool> OnLaserActiveChanged;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private Action<byte> OnCubeMaterialChanged;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private Action<LaserPointerState> OnChangeState;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private Action<Vector3> OnUpdatePosition;
 			[CompilerGenerated]
-			[DebuggerBrowsable]
 			private Action<float> OnActivateLaserForDuration;
 
 			// Events

@@ -7,16 +7,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator;
+using Assets.Scripts.Tools;
 using MV.Common;
 using MV.WorldObject.KogamaSettings.KogamaSettingsCore.KogamaSettingTypes;
 using MV.WorldObject.MetaData;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, ICurrentItemOwner, ISpawnRoleLocal
 {
 	// Fields
+	public Action<float, MVPlayer, PlayerKilledByType> OnDamageTaken;
 	protected SpawnRoleDataReceiver spawnRoleDataReceiver;
 	private string currAnim;
 	private const float exitVehicleMomentumModifier = 7f;
@@ -35,27 +37,28 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	private float previousHealth;
 	private float previousShield;
 	private float boostedHealthMultiplier;
-	public Action<float, MVPlayer, PlayerKilledByType> OnDamageTaken;
+	private int defaultBaseMaxHealth;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _ForceRotateAvatarToFiringDirection_k__BackingField;
 	private bool suspended;
 	private int spawnWorldObjectId;
-	[CompilerGenerated]
-	private static Func<KeyValuePair<object, object>, KogamaSettingValueWrapperBase, KogamaSettingsCollectionBase, KogamaSettingValueWrapperBase> __f__mg_cache0;
 
 	// Properties
 	private Vector3 LookAtPos { get; }
 	public AvatarInteractable InteractableLocal { get; }
 	public override Vector3 VelocityAbsolute { get; }
 	public AvatarPickupOwner PickupOwner { get; }
-	public bool InGunMode { get; }
 	public bool ForceRotateAvatarToFiringDirection { [CompilerGenerated] private get; [CompilerGenerated] set; }
 	public MVRigidBody RigidBody { get; }
 	public bool IsEnteringVehicle { get; }
 	public bool IsInVehicle { get; }
+	public Bounds Bounds { get; }
+	public ColliderCollection TriggingColliders { get; }
+	public AvatarMotor AvatarMotor { get; }
+	public bool InGunMode { get; }
 	public override Vector3 VelocityRelative { get; }
 	public KogamaSettingWrapperBase Settings { get; }
+	public int BaseMaxHealth { get; set; }
 	private AvatarLocal AvatarLocal { get; }
 	public int SpawnId { private get; set; }
 	int ILocalObject.Id { get; }
@@ -82,6 +85,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 		public void SetMode(AvatarRuntimeState mode);
 		public void SetToStartMode();
 		private AvatarRuntimeState GetStartState();
+		public bool HasDied();
 	}
 
 	public abstract class AvatarMode
@@ -107,7 +111,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 		protected float deadTime;
 		protected float deadInterval;
 		private bool setDeadCamDelayed;
-		private AvatarInputControllerDead inputController;
+		private readonly AvatarInputControllerDead inputController;
 
 		// Nested types
 		private class AvatarInputControllerDead : IMotorAPI
@@ -135,6 +139,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 		public override void DeActivate(AvatarRuntimeState toMode);
 		public override void FixedUpdate(IInputToPlayerMovement movementMap);
 		public override void FrameUpdate(InputToInGameAction interactionMap);
+		public bool HasDied();
 		private void RevivePlayer();
 		private void OnEnterEditMode();
 	}
@@ -318,8 +323,12 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 
 	// Methods
 	public bool IsSpawnRoleActive();
+	public bool IsPlaying();
+	public bool HasDied();
 	public float GetColliderRadius();
 	public override void Initialize();
+	private void OnResume();
+	private void OnObserve();
 	public void Activate(int idFrom, SpawnRoleDataReceiver spawnRoleDataReceiver, Vector3 position, Quaternion rotation);
 	private void SubscribeToExternalEvents();
 	private void UnsubscribeFromExternalEvents();
@@ -332,6 +341,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	public void LeaveVehicle(bool leaveBecauseOfServer);
 	public override void BeforeVehicleEntered();
 	public override void OnEnterVehicle();
+	public override void OnLeaveVehicle();
 	public InputToInGameAction Update(InputToInGameAction interactionMap);
 	public IInputToPlayerMovement FixedUpdate(IInputToPlayerMovement movementMap);
 	public Dictionary<object, object> GetCurrentItemState();
@@ -356,6 +366,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	private void GameEventManagerOnOnFirstTimeEvent(FirstTimeEvent firstTimeEvent);
 	private void OnHolsteredChanged(bool obj);
 	private void OnUnequip(object sender, EventArgs e);
+	public bool IsEquipped(AvatarItemType avatarItemType);
 	private void KillSelf();
 	private void SetToSpawnTransform();
 	private void ResetAvatar();
@@ -386,8 +397,8 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	protected override void OnCurrentPickupChange(object newPickupDataData);
 	private void HandleBlinkerVisibility();
 	[CompilerGenerated]
-	private void _InitializeShield_m__0(object shield);
+	private void _InitializeShield_b__122_0(object shield);
 	[CompilerGenerated]
-	private void _InitializeHealth_m__1(object health);
+	private void _InitializeHealth_b__125_0(object health);
 }
 

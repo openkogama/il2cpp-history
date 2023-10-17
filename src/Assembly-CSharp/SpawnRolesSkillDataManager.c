@@ -6,19 +6,17 @@ Color * Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataMana
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
   }
   if (skillCost < 0) {
-    if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Styles->_1).cctor_started == 0)) {
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
     colorStyle = ColorStyle__Enum_NegativeRed;
   }
   else {
-    if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Styles->_1).cctor_started == 0)) {
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
     colorStyle = ColorStyle__Enum_OffWhite;
@@ -45,100 +43,96 @@ Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
+                   );
+    func_?(&
+                    SpawnRoleSkillIconController_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSkillIconController>_SpawnRoleSkillIconController_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__Styles);
+    func_?(&StringLiteral__because_it_is_not_in_the_dataLi);
+    func_?(&StringLiteral_SkillDataManager_can_not_create_);
     cRam_? = '\x01';
   }
-  iVar1 = 0;
+  pSVar1 = (String *)0x0;
   pLVar2 = (this->fields).skillDataList;
   do {
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       pcVar3 = (code *)swi(3);
       pSVar4 = (SpawnRoleSkillIconController *)(*pcVar3)();
       return pSVar4;
     }
-    pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                       );
-    if ((int)pOVar5 <= iVar1) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar6 = mscorlib.dll::System::String::String_Concat_3
+    if ((pLVar2->fields)._size <= (int)pSVar1) {
+      pSVar1 = mscorlib.dll::System::String::String_Concat_4
                          (StringLiteral_SkillDataManager_can_not_create_,skillType,
                           StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Debug);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)pSVar6,(MethodInfo *)0x0);
+                ((Object *)pSVar1,(MethodInfo *)0x0);
       return (SpawnRoleSkillIconController *)0x0;
     }
     pLVar2 = (this->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pSVar7 = mscorlib.dll::System::Collections::Generic::
+    pSVar5 = mscorlib.dll::System::Collections::Generic::
              List`1[SpawnRolesSkillDataManager+SkillData]::
              List_1_SpawnRolesSkillDataManager_SkillData__get_Item
-                       ((SpawnRolesSkillDataManager_SkillData *)&stack0xffffffe4,pLVar2,iVar1,
+                       ((SpawnRolesSkillDataManager_SkillData *)&stack0xffffffcc,pLVar2,
+                        (int32_t)pSVar1,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
-    pSVar6 = pSVar7->type;
-    pSStack_8 = (String__Class *)pSVar7->description;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      pSStack_8 = TypeInfo__System__String;
-      func_?();
-    }
-    bVar9 = mscorlib.dll::System::String::String_op_Equality(skillType,pSVar6,(MethodInfo *)0x0);
+    CStack_6.b = (float)pSVar5->settingsPrefab;
+    CStack_6.a = pSVar5->zeroValue;
+    bVar7 = mscorlib.dll::System::String::String_op_Equality
+                      (skillType,pSVar5->type,(MethodInfo *)0x0);
     pLVar2 = (this->fields).skillDataList;
-    if (bVar9 != 0) {
+    if (bVar7 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        iVar1 = func_?(&stack0xffffffe4,pLVar2,iVar1,
-                                 MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                                );
-        pSStack_8 = *(String__Class **)(iVar1 + 8);
-        pXVar10 = *(XpBoostParticlePreviewer **)(iVar1 + 0xc);
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        pSStack_8 = pSVar1;
+        iVar9 = func_?();
+        pSStack_8 = *(String **)(iVar9 + 8);
+        pSVar4 = *(SpawnRoleSkillIconController **)(iVar9 + 0xc);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pXVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                           (pXVar10,
+        pSVar4 = (SpawnRoleSkillIconController *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)pSVar4,
                             SpawnRoleSkillIconController_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSkillIconController>_SpawnRoleSkillIconController_
                            );
-        if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__Styles->_1).cctor_started == 0)) {
+        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
         }
-        pCVar11 = Styles::Styles_GetColor(&CStack_12,iconColorStyle,(MethodInfo *)0x0);
-        CStack_12.r = pCVar11->r;
-        CStack_12.g = pCVar11->g;
-        CStack_12.b = pCVar11->b;
-        CStack_12.a = pCVar11->a;
-        pCVar11 = Styles::Styles_GetColor
+        pCVar10 = Styles::Styles_GetColor(&CStack_6,iconColorStyle,(MethodInfo *)0x0);
+        CStack_6.r = pCVar10->r;
+        CStack_6.g = pCVar10->g;
+        CStack_6.b = pCVar10->b;
+        CStack_6.a = pCVar10->a;
+        pCVar10 = Styles::Styles_GetColor
                            ((Color *)&pSStack_8,iconBackgroundColorStyle,(MethodInfo *)0x0);
-        if (pXVar10 != (XpBoostParticlePreviewer *)0x0) {
-          newIconColor.g = CStack_12.g;
-          newIconColor.r = CStack_12.r;
-          newIconColor.b = CStack_12.b;
-          newIconColor.a = CStack_12.a;
+        if (pSVar4 != (SpawnRoleSkillIconController *)0x0) {
+          newIconColor.g = CStack_6.g;
+          newIconColor.r = CStack_6.r;
+          newIconColor.b = CStack_6.b;
+          newIconColor.a = CStack_6.a;
           SpawnRoleSkillIconController::SpawnRoleSkillIconController_ChangeColor
-                    ((SpawnRoleSkillIconController *)pXVar10,newIconColor,*pCVar11,(MethodInfo *)0x0);
+                    (pSVar4,newIconColor,*pCVar10,(MethodInfo *)0x0);
           SpawnRoleSkillIconController::SpawnRoleSkillIconController_ChangeSize
-                    ((SpawnRoleSkillIconController *)pXVar10,imageWidth,imageHeight,(MethodInfo *)0x0
-                    );
-          return (SpawnRoleSkillIconController *)pXVar10;
+                    (pSVar4,imageWidth,imageHeight,(MethodInfo *)0x0);
+          return pSVar4;
         }
       }
       goto code_?;
     }
-    iVar1 = iVar1 + 1;
+    pSVar1 = (String *)((int)&pSVar1->klass + 1);
   } while( true );
 }
 
@@ -150,7 +144,16 @@ String * Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataMan
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
+                   );
+    func_?(&StringLiteral__because_it_is_not_in_the_dataLi);
+    func_?(&StringLiteral_SkillDataManager_can_not_create_);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   iVar1 = 0;
@@ -158,53 +161,36 @@ String * Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataMan
   do {
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       pcVar3 = (code *)swi(3);
       pSVar4 = (String *)(*pcVar3)();
       return pSVar4;
     }
-    pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                       );
-    if ((int)pOVar5 <= iVar1) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar4 = mscorlib.dll::System::String::String_Concat_3
+    if ((pLVar2->fields)._size <= iVar1) {
+      pSVar4 = mscorlib.dll::System::String::String_Concat_4
                          (StringLiteral_SkillDataManager_can_not_create_,skillType,
                           StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)pSVar4,(MethodInfo *)0x0);
-      return TypeInfo__System__String->static_fields->Empty;
+      return ::StringLiteral__;
     }
     pLVar2 = (this->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pSVar6 = mscorlib.dll::System::Collections::Generic::
+    pSVar5 = mscorlib.dll::System::Collections::Generic::
              List`1[SpawnRolesSkillDataManager+SkillData]::
              List_1_SpawnRolesSkillDataManager_SkillData__get_Item
-                       ((SpawnRolesSkillDataManager_SkillData *)&stack0xffffffcc,pLVar2,iVar1,
+                       (&SStack_6,pLVar2,iVar1,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
-    pSVar4 = pSVar6->type;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar7 = mscorlib.dll::System::String::String_op_Equality(skillType,pSVar4,(MethodInfo *)0x0);
+    bVar7 = mscorlib.dll::System::String::String_op_Equality
+                      (skillType,pSVar5->type,(MethodInfo *)0x0);
     pLVar2 = (this->fields).skillDataList;
     if (bVar7 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        iVar1 = func_?(&stack0xffffffcc,pLVar2,iVar1,
-                                MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                               );
+        iVar1 = func_?();
         return *(String **)(iVar1 + 4);
       }
       goto code_?;
@@ -223,7 +209,17 @@ String * Assembly-CSharp.dll::SpawnRolesSkillDataManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
+                   );
+    func_?(&TypeInfo__Styles);
+    func_?(&StringLiteral__because_it_is_not_in_the_dataLi);
+    func_?(&StringLiteral_SkillDataManager_can_not_create_);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   iVar1 = 0;
@@ -231,68 +227,48 @@ String * Assembly-CSharp.dll::SpawnRolesSkillDataManager::
   do {
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       pcVar3 = (code *)swi(3);
       pSVar4 = (String *)(*pcVar3)();
       return pSVar4;
     }
-    pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                       );
-    if ((int)pOVar5 <= iVar1) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar4 = mscorlib.dll::System::String::String_Concat_3
+    if ((pLVar2->fields)._size <= iVar1) {
+      pSVar4 = mscorlib.dll::System::String::String_Concat_4
                          (StringLiteral_SkillDataManager_can_not_create_,skillType,
                           StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)pSVar4,(MethodInfo *)0x0);
-      return TypeInfo__System__String->static_fields->Empty;
+      return ::StringLiteral__;
     }
     pLVar2 = (this->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pSVar6 = mscorlib.dll::System::Collections::Generic::
+    pSVar5 = mscorlib.dll::System::Collections::Generic::
              List`1[SpawnRolesSkillDataManager+SkillData]::
              List_1_SpawnRolesSkillDataManager_SkillData__get_Item
                        ((SpawnRolesSkillDataManager_SkillData *)&stack0xffffffcc,pLVar2,iVar1,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
-    method_00 = (MethodInfo *)pSVar6->type;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
+    CStack_6.b = (float)pSVar5->settingsPrefab;
+    CStack_6.a = pSVar5->zeroValue;
     bVar7 = mscorlib.dll::System::String::String_op_Equality
-                      (skillType,(String *)method_00,(MethodInfo *)0x0);
+                      (skillType,pSVar5->type,(MethodInfo *)0x0);
     pLVar2 = (this->fields).skillDataList;
     if (bVar7 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        iVar1 = func_?(&stack0xffffffe4,pLVar2,iVar1,
-                                MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                               );
+        iVar1 = func_?();
         pSVar4 = *(String **)(iVar1 + 8);
         pCVar8 = SpawnRolesSkillDataManager_GetValueColor
-                           ((Color *)&stack0xffffffec,this,skillCost,(MethodInfo *)0x0);
+                           (&CStack_6,this,skillCost,(MethodInfo *)0x0);
         CVar9 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit
                           (*pCVar8,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__Styles->_1).cctor_started == 0)) {
+        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        arg0 = Styles::Styles_ColorToHex((Color32)((ulonglong)CVar9 & 0xffffffff),method_00);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
+        arg0 = Styles::Styles_ColorToHex((Color32)((ulonglong)CVar9 & 0xffffffff),in_stack_10)
+        ;
         pSVar4 = mscorlib.dll::System::String::String_Format_1
                            (pSVar4,(Object *)arg0,settingValue,(MethodInfo *)0x0);
         return pSVar4;
@@ -312,46 +288,51 @@ Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetS
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                   );
+    func_?(&StringLiteral__is_not_in_any_skill_category_li);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).defenceSkillsList;
-  if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-    item_00._4_4_ =
-         MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_;
-    item_00.rgba = (int32_t)skillKey;
-    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-            List_1_UnityEngine_Color32__Contains(pLVar1,item_00,unaff_EDI);
+  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).defenceSkillsList;
+  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                      (pLVar1,(RegexCharClass_SingleRange)skillKey,
+                       MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                      );
     if (bVar2 != 0) {
       return SkillCategory__Enum_Defence;
     }
-    pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).offenceSkillsList;
-    if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-      item_01._4_4_ =
-           MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_;
-      item_01.rgba = (int32_t)skillKey;
-      bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-              List_1_UnityEngine_Color32__Contains(pLVar1,item_01,unaff_retaddr);
+    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).offenceSkillsList;
+    if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                        (pLVar1,(RegexCharClass_SingleRange)skillKey,
+                         MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                        );
       if (bVar2 != 0) {
         return SkillCategory__Enum_Offence;
       }
-      pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).tacticalSkillsList;
-      if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-        item._4_4_ = 
-        MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_;
-        item.rgba = (int32_t)skillKey;
-        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                List_1_UnityEngine_Color32__Contains(pLVar1,item,method);
+      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).tacticalSkillsList;
+      if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                          (pLVar1,(RegexCharClass_SingleRange)skillKey,
+                           MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                          );
         if (bVar2 == 0) {
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?();
-          }
-          message = mscorlib.dll::System::String::String_Concat_2
+          message = mscorlib.dll::System::String::String_Concat_3
                               (skillKey,StringLiteral__is_not_in_any_skill_category_li,
                                (MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
@@ -377,77 +358,74 @@ Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetS
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
+                   );
+    func_?(&
+                    SkillSettingBase_MethodInfo__UnityEngine__Object__Instantiate<SkillSettingBase>_SkillSettingBase_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral__because_it_is_not_in_the_dataLi);
+    func_?(&StringLiteral_SkillDataManager_can_not_create_);
     cRam_? = '\x01';
   }
-  iVar1 = 0;
-  pLVar2 = (this->fields).skillDataList;
+  index = 0;
+  pLVar1 = (this->fields).skillDataList;
   do {
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
+    if (pLVar1 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
 code_?:
-      func_?(0);
-      pcVar3 = (code *)swi(3);
-      pSVar4 = (SkillSettingBase *)(*pcVar3)();
-      return pSVar4;
+      func_?();
+      pcVar2 = (code *)swi(3);
+      pSVar3 = (SkillSettingBase *)(*pcVar2)();
+      return pSVar3;
     }
-    pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                       );
-    if ((int)pOVar5 <= iVar1) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_SkillDataManager_can_not_create_,skillType,
-                          StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((pLVar1->fields)._size <= index) {
+      message = mscorlib.dll::System::String::String_Concat_4
+                          (StringLiteral_SkillDataManager_can_not_create_,skillType,
+                           StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)pSVar6,(MethodInfo *)0x0);
+                ((Object *)message,(MethodInfo *)0x0);
       return (SkillSettingBase *)0x0;
     }
-    pLVar2 = (this->fields).skillDataList;
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pSVar7 = mscorlib.dll::System::Collections::Generic::
+    pLVar1 = (this->fields).skillDataList;
+    if (pLVar1 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
+    pSVar4 = mscorlib.dll::System::Collections::Generic::
              List`1[SpawnRolesSkillDataManager+SkillData]::
              List_1_SpawnRolesSkillDataManager_SkillData__get_Item
-                       ((SpawnRolesSkillDataManager_SkillData *)&stack0xffffffcc,pLVar2,iVar1,
+                       (&SStack_5,pLVar1,index,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
-    pSVar6 = pSVar7->type;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar8 = mscorlib.dll::System::String::String_op_Equality(skillType,pSVar6,(MethodInfo *)0x0);
-    pLVar2 = (this->fields).skillDataList;
-    if (bVar8 != 0) {
-      if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        iVar1 = func_?(&stack0xffffffcc,pLVar2,iVar1,
-                                MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                               );
-        uVar9 = *(undefined8 *)(iVar1 + 0x10);
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Object);
+    bVar6 = mscorlib.dll::System::String::String_op_Equality
+                      (skillType,pSVar4->type,(MethodInfo *)0x0);
+    pLVar1 = (this->fields).skillDataList;
+    if (bVar6 != 0) {
+      if (pLVar1 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
+        puVar7 = (undefined4 *)func_?();
+        SStack_5.type = (String *)*puVar7;
+        SStack_5.name = (String *)puVar7[1];
+        SStack_5.description = (String *)puVar7[2];
+        SStack_5.iconPrefab = (SpawnRoleSkillIconController *)puVar7[3];
+        SStack_5._16_8_ = *(undefined8 *)(puVar7 + 4);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
         }
-        pXStack_10 = (XpBoostParticlePreviewer *)uVar9;
-        pSVar4 = (SkillSettingBase *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                           (pXStack_10,
+        pSVar3 = (SkillSettingBase *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)SStack_5.settingsPrefab,
                             SkillSettingBase_MethodInfo__UnityEngine__Object__Instantiate<SkillSettingBase>_SkillSettingBase_
                            );
-        return pSVar4;
+        return pSVar3;
       }
       goto code_?;
     }
-    iVar1 = iVar1 + 1;
+    index = index + 1;
   } while( true );
 }
 
@@ -460,28 +438,25 @@ Color * Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataMana
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
   }
   if (skillCost < 1) {
     if (skillCost < 0) {
-      if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__Styles->_1).cctor_started == 0)) {
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
       colorStyle = ColorStyle__Enum_NegativeRed;
     }
     else {
-      if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__Styles->_1).cctor_started == 0)) {
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
       colorStyle = ColorStyle__Enum_OffGray;
     }
   }
   else {
-    if ((((uint)(TypeInfo__Styles->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Styles->_1).cctor_started == 0)) {
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
     colorStyle = ColorStyle__Enum_PositiveGreen;
@@ -505,7 +480,15 @@ float Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataManage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
+                   );
+    func_?(&StringLiteral_s_zero_value_because_it_is_not_i);
+    func_?(&StringLiteral_SkillDataManager_can_not_get_ski);
     cRam_? = '\x01';
   }
   iVar1 = 0;
@@ -513,55 +496,38 @@ float Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataManage
   do {
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       pcVar3 = (code *)swi(3);
       fVar4 = (float10)(*pcVar3)();
       return (float)fVar4;
     }
-    pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                       );
-    if ((int)pOVar5 <= iVar1) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_SkillDataManager_can_not_get_ski,skillType,
-                          StringLiteral_s_zero_value_because_it_is_not_i,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((pLVar2->fields)._size <= iVar1) {
+      message = mscorlib.dll::System::String::String_Concat_4
+                          (StringLiteral_SkillDataManager_can_not_get_ski,skillType,
+                           StringLiteral_s_zero_value_because_it_is_not_i,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)pSVar6,(MethodInfo *)0x0);
+                ((Object *)message,(MethodInfo *)0x0);
       return 0.0;
     }
     pLVar2 = (this->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pSVar7 = mscorlib.dll::System::Collections::Generic::
+    pSVar5 = mscorlib.dll::System::Collections::Generic::
              List`1[SpawnRolesSkillDataManager+SkillData]::
              List_1_SpawnRolesSkillDataManager_SkillData__get_Item
-                       ((SpawnRolesSkillDataManager_SkillData *)&stack0xffffffcc,pLVar2,iVar1,
+                       (&SStack_6,pLVar2,iVar1,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
-    pSVar6 = pSVar7->type;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar8 = mscorlib.dll::System::String::String_op_Equality(skillType,pSVar6,(MethodInfo *)0x0);
+    bVar7 = mscorlib.dll::System::String::String_op_Equality
+                      (skillType,pSVar5->type,(MethodInfo *)0x0);
     pLVar2 = (this->fields).skillDataList;
-    if (bVar8 != 0) {
+    if (bVar7 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        iVar1 = func_?(&stack0xffffffcc,pLVar2,iVar1,
-                                MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                               );
-        fStack_9 = (float)((ulonglong)*(undefined8 *)(iVar1 + 0x10) >> 0x20);
-        return fStack_9;
+        iVar1 = func_?();
+        SStack_6.zeroValue = (float)((ulonglong)*(undefined8 *)(iVar1 + 0x10) >> 0x20);
+        return SStack_6.zeroValue;
       }
       goto code_?;
     }

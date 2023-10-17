@@ -7,34 +7,39 @@ int32_t Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Day_Night_cycle_color_preset_ind);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).colorPresets;
-  if (this_00 != (DayNightCycleColorPresets *)0x0) {
-    iVar1 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Length
-                      (this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
+  pDVar1 = (this->fields).colorPresets;
+  if ((pDVar1 != (DayNightCycleColorPresets *)0x0) &&
+     (pDVar2 = (pDVar1->fields).presets, pDVar2 != (DayNightCycleColorPresets_Preset__Array *)0x0))
+  {
+    iVar3 = pDVar2->max_length;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Math);
+      cRam_? = '\x01';
     }
-    iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Abs_1
-                      (value % iVar1,(MethodInfo *)0x0);
-    if (iVar1 != value) {
-      iVar1 = 0;
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
+    uVar4 = value % (int)iVar3;
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    uVar5 = (int)uVar4 >> 0x1f;
+    iVar6 = (uVar4 ^ uVar5) - uVar5;
+    if (iVar6 != value) {
+      iVar6 = 0;
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_Day_Night_cycle_color_preset_ind,(MethodInfo *)0x0);
     }
-    return iVar1;
+    return iVar6;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar1 = (*pcVar2)();
-  return iVar1;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  iVar6 = (*pcVar7)();
+  return iVar6;
 }
 
 
@@ -45,22 +50,36 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
                (ThemeDayNightCycleColorPresetSetter *this,MethodInfo *method)
 
 {
-  piVar1 = &(this->fields).colorPresetIndex;
-  *piVar1 = *piVar1 + -1;
-  iVar2 = (this->fields).colorPresetIndex;
-  if (*piVar1 < 0) {
-    this_00 = (this->fields).colorPresets;
-    if (this_00 == (DayNightCycleColorPresets *)0x0) {
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+  iVar1 = (this->fields).colorPresetIndex + -1;
+  (this->fields).colorPresetIndex = iVar1;
+  if (iVar1 < 0) {
+    pDVar2 = (this->fields).colorPresets;
+    if ((pDVar2 == (DayNightCycleColorPresets *)0x0) ||
+       (pDVar3 = (pDVar2->fields).presets, pDVar3 == (DayNightCycleColorPresets_Preset__Array *)0x0)
+       ) goto code_?;
+    (this->fields).colorPresetIndex = pDVar3->max_length + iVar1;
+  }
+  i = ThemeDayNightCycleColorPresetSetter_Constrain
+                (this,(this->fields).colorPresetIndex,(MethodInfo *)0x0);
+  pDVar2 = (this->fields).colorPresets;
+  pTVar4 = (this->fields).presetNameLabel;
+  (this->fields).colorPresetIndex = i;
+  if (((pDVar2 != (DayNightCycleColorPresets *)0x0) &&
+      (pDVar5 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
+                          (pDVar2,i,(MethodInfo *)0x0),
+      pDVar5 != (DayNightCycleColorPresets_Preset *)0x0)) && (pTVar4 != (Text *)0x0)) {
+    (*(pTVar4->klass->vtable).set_text.methodPtr)();
+    pAVar6 = (this->fields).onChange;
+    if (pAVar6 != (Action_1_Int32_ *)0x0) {
+      (*(pAVar6->fields)._._.invoke_impl)();
       return;
     }
-    iVar4 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Length
-                      (this_00,(MethodInfo *)0x0);
-    (this->fields).colorPresetIndex = iVar4 + iVar2;
   }
-  ThemeDayNightCycleColorPresetSetter_OnSettingChanged(this,(MethodInfo *)0x0);
+code_?:
+  uVar7 = func_?(&stack0xfffffff0);
+  func_?(uVar7);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -75,24 +94,34 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
   pDVar1 = (this->fields).colorPresets;
   iVar2 = (this->fields).colorPresetIndex + 1;
   (this->fields).colorPresetIndex = iVar2;
-  if (pDVar1 != (DayNightCycleColorPresets *)0x0) {
-    iVar3 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Length
-                      (pDVar1,(MethodInfo *)0x0);
-    if (iVar3 <= iVar2) {
-      pDVar1 = (this->fields).colorPresets;
-      iVar2 = (this->fields).colorPresetIndex;
-      if (pDVar1 == (DayNightCycleColorPresets *)0x0) goto code_?;
-      iVar3 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Length
-                        (pDVar1,(MethodInfo *)0x0);
-      (this->fields).colorPresetIndex = iVar2 - iVar3;
+  if ((pDVar1 != (DayNightCycleColorPresets *)0x0) &&
+     (pDVar3 = (pDVar1->fields).presets, pDVar3 != (DayNightCycleColorPresets_Preset__Array *)0x0))
+  {
+    if ((int)pDVar3->max_length <= iVar2) {
+      (this->fields).colorPresetIndex =
+           iVar2 - ((((this->fields).colorPresets)->fields).presets)->max_length;
     }
-    ThemeDayNightCycleColorPresetSetter_OnSettingChanged(this,(MethodInfo *)0x0);
-    return;
+    i = ThemeDayNightCycleColorPresetSetter_Constrain
+                  (this,(this->fields).colorPresetIndex,(MethodInfo *)0x0);
+    pDVar1 = (this->fields).colorPresets;
+    pTVar4 = (this->fields).presetNameLabel;
+    (this->fields).colorPresetIndex = i;
+    if (((pDVar1 != (DayNightCycleColorPresets *)0x0) &&
+        (pDVar5 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
+                            (pDVar1,i,(MethodInfo *)0x0),
+        pDVar5 != (DayNightCycleColorPresets_Preset *)0x0)) && (pTVar4 != (Text *)0x0)) {
+      (*(pTVar4->klass->vtable).set_text.methodPtr)();
+      pAVar6 = (this->fields).onChange;
+      if (pAVar6 != (Action_1_Int32_ *)0x0) {
+        (*(pAVar6->fields)._._.invoke_impl)();
+        return;
+      }
+    }
   }
-code_?:
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  uVar7 = func_?(&stack0xfffffff0);
+  func_?(uVar7);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -106,45 +135,36 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__get_Name__);
+    func_?(&MethodInfo__ThemeAttributes__ThemeAttribute<int>__get_Value__);
     cRam_? = '\x01';
   }
   (this->fields).onChange = onChange;
+  func_?(&(this->fields).onChange,onChange);
   if (attrib != (IntAttribute *)0x0) {
-    value = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-            KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-            KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                      ((KogamaSettingNumericBase_1_System_Single_ *)attrib,
-                       MethodInfo__ThemeAttributes__ThemeAttribute<int>__get_Value__);
-    iVar1 = ThemeDayNightCycleColorPresetSetter_Constrain(this,(int32_t)value,(MethodInfo *)0x0);
+    iVar1 = ThemeDayNightCycleColorPresetSetter_Constrain
+                      (this,(attrib->fields)._._.value,(MethodInfo *)0x0);
     pTVar2 = (this->fields).settingNameLabel;
     (this->fields).colorPresetIndex = iVar1;
-    System.Core.dll::System::Linq::Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json
-    ::Schema::JsonSchemaType]::
-    Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-              ((Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-                *)attrib,MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__get_Name__);
     if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)();
+      (*(pTVar2->klass->vtable).set_text.methodPtr)
+                (pTVar2,(attrib->fields)._.name,(pTVar2->klass->vtable).set_text.method);
       this_00 = (this->fields).colorPresets;
       pTVar2 = (this->fields).presetNameLabel;
       if (this_00 != (DayNightCycleColorPresets *)0x0) {
-        this_01 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
-                            (this_00,(this->fields).colorPresetIndex,(MethodInfo *)0x0);
-        if (this_01 != (DayNightCycleColorPresets_Preset *)0x0) {
-          mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-          Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0);
-          if (pTVar2 != (Text *)0x0) {
-            (*(code *)(pTVar2->klass->vtable).set_text.method)();
-            return;
-          }
+        pDVar3 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
+                           (this_00,(this->fields).colorPresetIndex,(MethodInfo *)0x0);
+        if ((pDVar3 != (DayNightCycleColorPresets_Preset *)0x0) && (pTVar2 != (Text *)0x0)) {
+          (*(pTVar2->klass->vtable).set_text.methodPtr)
+                    (pTVar2,(pDVar3->fields).name,(pTVar2->klass->vtable).set_text.method);
+          return;
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -156,36 +176,28 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
                (ThemeDayNightCycleColorPresetSetter *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   i = ThemeDayNightCycleColorPresetSetter_Constrain
                 (this,(this->fields).colorPresetIndex,(MethodInfo *)0x0);
   this_00 = (this->fields).colorPresets;
   pTVar1 = (this->fields).presetNameLabel;
   (this->fields).colorPresetIndex = i;
   if (this_00 != (DayNightCycleColorPresets *)0x0) {
-    this_02 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
-                        (this_00,i,(MethodInfo *)0x0);
-    if (this_02 != (DayNightCycleColorPresets_Preset *)0x0) {
-      mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-      Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_02,(MethodInfo *)0x0);
-      if (pTVar1 != (Text *)0x0) {
-        (*(code *)(pTVar1->klass->vtable).set_text.method)();
-        this_01 = (Action_1_UIPushOption_ *)(this->fields).onChange;
-        if (this_01 != (Action_1_UIPushOption_ *)0x0) {
-          mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                    (this_01,(this->fields).colorPresetIndex,
-                     MethodInfo__System__Action<int>__Invoke_int_);
-          return;
-        }
+    pDVar2 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
+                       (this_00,i,(MethodInfo *)0x0);
+    if ((pDVar2 != (DayNightCycleColorPresets_Preset *)0x0) && (pTVar1 != (Text *)0x0)) {
+      (*(pTVar1->klass->vtable).set_text.methodPtr)();
+      pAVar3 = (this->fields).onChange;
+      if (pAVar3 != (Action_1_Int32_ *)0x0) {
+        (*(pAVar3->fields)._._.invoke_impl)
+                  ((pAVar3->fields)._._.method_code,(this->fields).colorPresetIndex,
+                   (pAVar3->fields)._._.method);
+        return;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -7,27 +7,27 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual+StreamedAssetSpriteHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->_1).cctor_started == 0)) {
-    func_?(TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler);
+  if ((TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  this = (Dictionary_2_System_String_Theme_ *)
-         TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields->sprites;
-  if (this != (Dictionary_2_System_String_Theme_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,Theme]::
-    Dictionary_2_System_String_Theme__set_Item
-              (this,url,(Theme *)sprite,
+  this = TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields->sprites;
+  if (this != (Dictionary_2_System_String_UnityEngine_Sprite_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__set_Item
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)url,(Object *)sprite,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__set_Item_System__String__UnityEngine__Sprite_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -40,20 +40,23 @@ Sprite * Assembly-CSharp.dll::StreamedSpriteToImageManual+StreamedAssetSpriteHan
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__TryGetValue_System__String__UnityEngine__Sprite__
+                   );
+    func_?(&TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler);
     cRam_? = '\x01';
   }
   pSStack_1 = (Sprite *)0x0;
-  if ((((uint)(TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->_1).cctor_started == 0)) {
+  if ((TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler);
   }
   this = TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields->sprites;
   if (this != (Dictionary_2_System_String_UnityEngine_Sprite_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityEngine::
-            Sprite]::Dictionary_2_System_String_UnityEngine_Sprite__TryGetValue
-                      (this,url,&pSStack_1,
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryGetValue
+                      ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)url,
+                       (Object **)&pSStack_1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__TryGetValue_System__String__UnityEngine__Sprite__
                       );
     if (bVar2 == 0) {
@@ -61,7 +64,7 @@ Sprite * Assembly-CSharp.dll::StreamedSpriteToImageManual+StreamedAssetSpriteHan
     }
     return pSStack_1;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   pSVar4 = (Sprite *)(*pcVar3)();
   return pSVar4;
@@ -75,19 +78,34 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual+StreamedAssetSpriteHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>
+                   );
+    func_?(&TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler);
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_String_UnityEngine_Sprite_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>
                         );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__Dictionary__
-            );
-  TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields->sprites = this;
+  if (this != (Dictionary_2_System_String_UnityEngine_Sprite_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__Dictionary__
+              );
+    TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields->sprites = this
+    ;
+    func_?(TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields
+                    ,this);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

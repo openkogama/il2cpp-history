@@ -8,11 +8,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVBlueprintBase : MVGroup
 {
 	// Fields
+	public const string BlueprintDataKey = "BlueprintData";
 	protected Dictionary<object, object> blueprintData;
 	protected Dictionary<object, object> childIdMap;
 	protected Dictionary<object, object> idChildMap;

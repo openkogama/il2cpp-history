@@ -6,7 +6,10 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement_FixedUpda
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__SmoothPhysicsMovement__Package);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Enqueue_SmoothPhysicsMovement__Package_
+                   );
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).targetTransform;
@@ -14,43 +17,46 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement_FixedUpda
   if (pTVar1 != (Transform *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                        ((Vector3 *)(auStack_3 + 4),pTVar1,(MethodInfo *)0x0);
-    uStack_4._0_4_ = pVVar2->x;
-    uStack_4._4_4_ = pVVar2->y;
-    fVar5 = pVVar2->z;
+    OStack_4.klass = (Object__Class *)pVVar2->x;
+    OStack_4.monitor = (MonitorData *)pVVar2->y;
+    pOVar5 = (Object__Class *)pVVar2->z;
     pTVar1 = (this->fields).targetTransform;
     if (pTVar1 != (Transform *)0x0) {
+      method_00 = (MethodInfo *)&UNK_?;
       pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                          ((Quaternion *)auStack_3,pTVar1,(MethodInfo *)0x0);
       auStack_3._0_4_ = pQVar6->x;
       auStack_3._4_4_ = pQVar6->y;
-      pTStack_7 = (Transform *)pQVar6->z;
-      fStack_8 = pQVar6->w;
-      this_01 = (ScaleAnimationBase *)func_?(TypeInfo__SmoothPhysicsMovement__Package);
-      ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,in_stack_9);
-      pSVar10 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
-               UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime
-                         ((MethodInfo *)0x0);
-      (this_01->fields)._ = (MonoBehaviour__Fields)(undefined4)uStack_4;
-      (this_01->fields).state = uStack_4._4_4_;
-      (this_01->fields).originalScale.x = fVar5;
-      (this_01->fields).OnScaleAnimationStopped = pSVar10;
-      (this_01->fields).originalScale.y = (float)auStack_3._0_4_;
-      (this_01->fields).originalScale.z = (float)auStack_3._4_4_;
-      (this_01->fields).target = pTStack_7;
-      (this_01->fields).testState = (int32_t)fStack_8;
-      if (this_00 != (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) {
-        System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-        Queue_1_SmoothPhysicsMovement_Package__Enqueue
-                  (this_00,(SmoothPhysicsMovement_Package *)this_01,
-                   MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Enqueue_SmoothPhysicsMovement__Package_
-                  );
-        return;
+      pMStack_7 = (MonitorData *)pQVar6->z;
+      pOStack_8 = (Object__Class *)pQVar6->w;
+      value = (Object *)func_?(TypeInfo__SmoothPhysicsMovement__Package);
+      if (value != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  (value,ExceptionArgument__Enum_obj,method_00);
+        pMVar9 = (MonitorData *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime
+                           ((MethodInfo *)0x0);
+        value[1] = OStack_4;
+        value[2].klass = pOVar5;
+        value[4].monitor = pMVar9;
+        value[2].monitor = (MonitorData *)auStack_3._0_4_;
+        value[3].klass = (Object__Class *)auStack_3._4_4_;
+        value[3].monitor = pMStack_7;
+        value[4].klass = pOStack_8;
+        if (this_00 != (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+          Queue_1_System_Object__Enqueue
+                    ((Queue_1_System_Object_ *)this_00,value,
+                     MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Enqueue_SmoothPhysicsMovement__Package_
+                    );
+          return;
+        }
       }
     }
   }
-  func_?(0);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -64,8 +70,11 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement_Init
 
 {
   (this->fields).targetTransform = targetTransform;
+  func_?(&(this->fields).targetTransform,targetTransform);
   (this->fields).cullingSubscriberBase = cullingSubscriberBase;
+  func_?(&(this->fields).cullingSubscriberBase,cullingSubscriberBase);
   (this->fields).worldObjectOwner = worldObjectOwner;
+  func_?(&(this->fields).worldObjectOwner,worldObjectOwner);
   return;
 }
 
@@ -77,44 +86,51 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Clear__
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).packages;
-  if (this_00 != (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) {
-    System.dll::System::Collections::Generic::Queue`1[System::Int32]::Queue_1_System_Int32__Clear
-              ((Queue_1_System_Int32_ *)this_00,
+  this_00 = (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)
+            (this->fields).packages;
+  if (this_00 != (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::
+    Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+    Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__Clear
+              (this_00,
                MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Clear__
               );
-    pTVar1 = (this->fields).targetTransform;
     (this->fields).current = (SmoothPhysicsMovement_Package *)0x0;
+    func_?(&(this->fields).current,0);
     (this->fields).next = (SmoothPhysicsMovement_Package *)0x0;
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    func_?(&(this->fields).next,0);
+    pTVar1 = (this->fields).targetTransform;
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+                         ((Vector3 *)(auStack_4 + 4),pTVar2,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (pTVar1,*pVVar3,(MethodInfo *)0x0);
         pTVar1 = (this->fields).targetTransform;
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)this,(MethodInfo *)0x0);
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
-          pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                             ((Quaternion *)&stack0xffffffec,pTVar2,(MethodInfo *)0x0);
+          pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                             ((Quaternion *)auStack_4,pTVar2,(MethodInfo *)0x0);
           if (pTVar1 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                      (pTVar1,*pQVar4,(MethodInfo *)0x0);
+                      (pTVar1,*pQVar5,(MethodInfo *)0x0);
             return;
           }
         }
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -126,7 +142,12 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement_SmoothMov
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__get_Count__
+                   );
     cRam_? = '\x01';
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
@@ -135,21 +156,15 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement_SmoothMov
   if ((this->fields).current == (SmoothPhysicsMovement_Package *)0x0) {
     pQVar3 = (this->fields).packages;
     if (pQVar3 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-    pIVar4 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pQVar3,
-                        MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__get_Count__
-                       );
-    if (0 < (int)pIVar4) {
-      pQVar3 = (this->fields).packages;
-      if (pQVar3 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-      pSVar5 = System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-                Queue_1_SmoothPhysicsMovement_Package__Dequeue
-                          (pQVar3,
+    if (0 < (pQVar3->fields)._size) {
+      pSVar4 = (SmoothPhysicsMovement_Package *)
+                mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                Queue_1_System_Object__Dequeue
+                          ((Queue_1_System_Object_ *)pQVar3,
                            MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
                           );
-      (this->fields).current = pSVar5;
+      (this->fields).current = pSVar4;
+      func_?(&(this->fields).current,pSVar4);
     }
     if ((this->fields).current == (SmoothPhysicsMovement_Package *)0x0) {
       return;
@@ -158,185 +173,115 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement_SmoothMov
   if ((this->fields).next == (SmoothPhysicsMovement_Package *)0x0) {
     pQVar3 = (this->fields).packages;
     if (pQVar3 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-    pIVar4 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pQVar3,
-                        MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__get_Count__
-                       );
-    if (0 < (int)pIVar4) {
-      pQVar3 = (this->fields).packages;
-      if (pQVar3 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-      pSVar5 = System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-                Queue_1_SmoothPhysicsMovement_Package__Dequeue
-                          (pQVar3,
+    if (0 < (pQVar3->fields)._size) {
+      pSVar4 = (SmoothPhysicsMovement_Package *)
+                mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                Queue_1_System_Object__Dequeue
+                          ((Queue_1_System_Object_ *)pQVar3,
                            MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
                           );
-      (this->fields).next = pSVar5;
+      (this->fields).next = pSVar4;
+      func_?(&(this->fields).next,pSVar4);
     }
   }
   if (((this->fields).current == (SmoothPhysicsMovement_Package *)0x0) ||
-     (pSVar5 = (this->fields).next, pSVar5 == (SmoothPhysicsMovement_Package *)0x0)) {
+     ((this->fields).next == (SmoothPhysicsMovement_Package *)0x0)) {
     return;
   }
+  pSVar4 = (this->fields).next;
+  ppSVar5 = &(this->fields).current;
+  ppSVar6 = &(this->fields).next;
   do {
-    if (fVar1 - fVar2 < (pSVar5->fields).time) {
+    if (fVar1 - fVar2 < (pSVar4->fields).time) {
 code_?:
-      pSVar5 = (this->fields).current;
-      if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-      fVar6 = (pSVar5->fields).time;
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+      pSVar4 = (this->fields).current;
+      if (pSVar4 == (SmoothPhysicsMovement_Package *)0x0) break;
+      fVar7 = (pSVar4->fields).time;
+      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                          ((MethodInfo *)0x0);
-      fVar7 = ((fVar1 - fVar2) - fVar6) / fVar7;
-      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                          ((Component_1 *)this,(MethodInfo *)0x0);
-      pSVar5 = (this->fields).current;
-      if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-      pSVar9 = (this->fields).next;
-      VVar10 = (pSVar5->fields).position;
-      if (pSVar9 == (SmoothPhysicsMovement_Package *)0x0) break;
-      uVar11._0_4_ = (pSVar9->fields).position.x;
-      uVar11._4_4_ = (pSVar9->fields).position.y;
-      fVar1 = (pSVar9->fields).position.z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?();
+      fVar8 = ((fVar1 - fVar2) - fVar7) / fVar8;
+      pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
+      pSVar4 = (this->fields).current;
+      if (pSVar4 == (SmoothPhysicsMovement_Package *)0x0) break;
+      uVar10 = (pSVar4->fields).position.x;
+      uVar11 = (pSVar4->fields).position.y;
+      pSVar12 = (this->fields).next;
+      fVar1 = (pSVar4->fields).position.z;
+      if (pSVar12 == (SmoothPhysicsMovement_Package *)0x0) break;
+      uVar13 = (pSVar12->fields).position.x;
+      uVar14 = (pSVar12->fields).position.y;
+      fVar2 = 0.0;
+      if ((0.0 <= fVar8) && (fVar2 = _UNK_?, fVar8 <= _UNK_?)) {
+        fVar2 = fVar8;
       }
-      b_01.z = fVar1;
-      b_01.x = (float)uVar11;
-      b_01.y = SUB84(uVar11,4);
-      pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Lerp
-                          ((Vector3 *)&stack0xffffffdc,VVar10,b_01,fVar7,(MethodInfo *)0x0);
-      if (pTVar8 == (Transform *)0x0) break;
+      if (pTVar9 == (Transform *)0x0) break;
+      value.y = ((float)uVar14 - (float)uVar11) * fVar2 + (float)uVar11;
+      value.x = ((float)uVar13 - (float)uVar10) * fVar2 + (float)uVar10;
+      value.z = ((pSVar12->fields).position.z - fVar1) * fVar2 + fVar1;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar8,*pVVar12,(MethodInfo *)0x0);
-      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                          ((Component_1 *)this,(MethodInfo *)0x0);
-      pSVar5 = (this->fields).current;
-      if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-      fVar1 = (pSVar5->fields).rotation.x;
-      fVar2 = (pSVar5->fields).rotation.y;
-      fVar6 = (pSVar5->fields).rotation.z;
-      fVar13 = (pSVar5->fields).rotation.w;
-      pSVar5 = (this->fields).next;
-      if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-      fVar14 = (pSVar5->fields).rotation.x;
-      puVar15 = (undefined *)(pSVar5->fields).rotation.y;
-      pQVar16 = (Quaternion__Class *)(pSVar5->fields).rotation.z;
-      fVar17 = (pSVar5->fields).rotation.w;
-      if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-        puVar15 = &UNK_?;
-        pQVar16 = TypeInfo__UnityEngine__Quaternion;
-        func_?();
-      }
-      a_00.y = fVar2;
-      a_00.x = fVar1;
-      a_00.z = fVar6;
-      a_00.w = fVar13;
-      b_00.y = (float)puVar15;
-      b_00.x = fVar14;
-      b_00.z = (float)pQVar16;
-      b_00.w = fVar17;
-      pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                          ((Quaternion *)&stack0xffffffd8,a_00,b_00,fVar7,(MethodInfo *)0x0);
-      if (pTVar8 == (Transform *)0x0) break;
+                (pTVar9,value,(MethodInfo *)0x0);
+      pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
+      pSVar4 = (this->fields).current;
+      if (((pSVar4 == (SmoothPhysicsMovement_Package *)0x0) ||
+          (pSVar12 = (this->fields).next, pSVar12 == (SmoothPhysicsMovement_Package *)0x0)) ||
+         (pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                              ((Quaternion *)&stack0xffffffd0,(pSVar4->fields).rotation,
+                               (pSVar12->fields).rotation,fVar8,(MethodInfo *)0x0),
+         pTVar9 == (Transform *)0x0)) break;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                (pTVar8,*pQVar18,(MethodInfo *)0x0);
-      pMVar19 = (this->fields).worldObjectOwner;
-      if (pMVar19 != (MVWorldObjectClient *)0x0) {
-        pSVar5 = (this->fields).current;
-        if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-        VVar10 = (pSVar5->fields).position;
-        pSVar5 = (this->fields).next;
-        if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-        uVar20._0_4_ = (pSVar5->fields).position.x;
-        uVar20._4_4_ = (pSVar5->fields).position.y;
-        fVar1 = (pSVar5->fields).position.z;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          uVar20._0_4_ = (float)TypeInfo__UnityEngine__Vector3;
-          func_?();
-        }
-        b_02.z = fVar1;
-        b_02.x = (float)uVar20;
-        b_02.y = SUB84(uVar20,4);
-        pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Lerp
-                            ((Vector3 *)&stack0xffffffdc,VVar10,b_02,fVar7,(MethodInfo *)0x0);
-        if (pMVar19 == (MVWorldObjectClient *)0x0) break;
-        uVar21 = pVVar12->x;
-        (*(code *)(pMVar19->klass->vtable).set_WorldPosition.method)(pMVar19,uVar21);
-        pSVar5 = (this->fields).current;
-        pMVar19 = (this->fields).worldObjectOwner;
-        if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-        fVar1 = (pSVar5->fields).rotation.x;
-        fVar2 = (pSVar5->fields).rotation.y;
-        fVar6 = (pSVar5->fields).rotation.z;
-        fVar13 = (pSVar5->fields).rotation.w;
-        pSVar5 = (this->fields).next;
-        if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-        fVar14 = (pSVar5->fields).rotation.x;
-        puVar15 = (undefined *)(pSVar5->fields).rotation.y;
-        pQVar16 = (Quaternion__Class *)(pSVar5->fields).rotation.z;
-        fVar17 = (pSVar5->fields).rotation.w;
-        if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0)
-           && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-          puVar15 = &UNK_?;
-          pQVar16 = TypeInfo__UnityEngine__Quaternion;
-          func_?();
-        }
-        a.y = fVar2;
-        a.x = fVar1;
-        a.z = fVar6;
-        a.w = fVar13;
-        b.y = (float)puVar15;
-        b.x = fVar14;
-        b.z = (float)pQVar16;
-        b.w = fVar17;
-        pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                            ((Quaternion *)&stack0xffffffd8,a,b,fVar7,(MethodInfo *)0x0);
-        if (pMVar19 == (MVWorldObjectClient *)0x0) break;
-        MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(pMVar19,*pQVar18,(MethodInfo *)0x0);
+                (pTVar9,*pQVar15,(MethodInfo *)0x0);
+      if ((this->fields).worldObjectOwner != (MVWorldObjectClient *)0x0) {
+        if (((this->fields).current == (SmoothPhysicsMovement_Package *)0x0) ||
+           ((this->fields).next == (SmoothPhysicsMovement_Package *)0x0)) break;
+        (*(((this->fields).worldObjectOwner)->klass->vtable).set_WorldPosition.methodPtr)();
+        pSVar4 = (this->fields).current;
+        this_00 = (this->fields).worldObjectOwner;
+        if ((pSVar4 == (SmoothPhysicsMovement_Package *)0x0) ||
+           ((pSVar12 = (this->fields).next, pSVar12 == (SmoothPhysicsMovement_Package *)0x0 ||
+            (pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                                 ((Quaternion *)&stack0xffffffd0,(pSVar4->fields).rotation,
+                                  (pSVar12->fields).rotation,3.1695622e-29,(MethodInfo *)0x0),
+            this_00 == (MVWorldObjectClient *)0x0)))) break;
+        MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(this_00,*pQVar15,(MethodInfo *)0x0);
       }
-      this_00 = (this->fields).cullingSubscriberBase;
-      if (this_00 == (CullingSubscriberBase *)0x0) {
+      if ((this->fields).cullingSubscriberBase == (CullingSubscriberBase *)0x0) {
         return;
       }
-      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                          ((Component_1 *)this,(MethodInfo *)0x0);
-      if ((pTVar8 != (Transform *)0x0) &&
-         (pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffdc,pTVar8,(MethodInfo *)0x0),
-         this_00 != (CullingSubscriberBase *)0x0)) {
+      this_01 = (this->fields).cullingSubscriberBase;
+      pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar9 != (Transform *)0x0) {
+        pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&stack0xffffffd4,pTVar9,(MethodInfo *)0x0);
         CullingSubscriberBase::CullingSubscriberBase_set_Position
-                  (this_00,*pVVar12,(MethodInfo *)0x0);
+                  (this_01,*pVVar16,(MethodInfo *)0x0);
         return;
       }
       break;
     }
     pQVar3 = (this->fields).packages;
     if (pQVar3 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
-    pIVar4 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pQVar3,
-                        MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__get_Count__
-                       );
-    if ((int)pIVar4 < 1) goto code_?;
-    (this->fields).current = (this->fields).next;
+    if ((pQVar3->fields)._size < 1) goto code_?;
+    *ppSVar5 = *ppSVar6;
+    func_?(ppSVar5,*ppSVar6);
     pQVar3 = (this->fields).packages;
     if (pQVar3 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
-    pSVar5 = System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-              Queue_1_SmoothPhysicsMovement_Package__Dequeue
-                        (pQVar3,
+    pSVar4 = (SmoothPhysicsMovement_Package *)
+              mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+              Queue_1_System_Object__Dequeue
+                        ((Queue_1_System_Object_ *)pQVar3,
                          MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
                         );
-    (this->fields).next = pSVar5;
-  } while (pSVar5 != (SmoothPhysicsMovement_Package *)0x0);
+    *ppSVar6 = pSVar4;
+    func_?(ppSVar6,pSVar4);
+    pSVar4 = *ppSVar6;
+  } while (pSVar4 != (SmoothPhysicsMovement_Package *)0x0);
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -348,28 +293,31 @@ void Assembly-CSharp.dll::SmoothPhysicsMovement::SmoothPhysicsMovement__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Queue__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>);
     cRam_? = '\x01';
   }
   this_00 = (Queue_1_SmoothPhysicsMovement_Package_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>
                            );
-  System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-  Queue_1_SmoothPhysicsMovement_Package___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Queue__
-            );
-  (this->fields).packages = this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+    Stack_1_System_Object___ctor
+              ((Stack_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Queue__
+              );
+    (this->fields).packages = this_00;
+    func_?(&(this->fields).packages,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

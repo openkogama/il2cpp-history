@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GameMeterVisuals
 {
@@ -25,37 +25,40 @@ namespace GameMeterVisuals
 		private float lerpSpeed;
 		[SerializeField]
 		private float waitBeforeMoveBack;
-		private Vector3 startPos;
+		[SerializeField]
+		private bool ignoreY;
+		[CompilerGenerated]
+		private Vector3 _StartPos_k__BackingField;
 		private bool readyForSlide;
 		private bool holding;
 	
+		// Properties
+		public Vector3 StartPos { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _SlideTowardsPosition_c__Iterator0 : IEnumerator<object>
+		private sealed class _SlideTowardsPosition_d__14 : IEnumerator<object>
 		{
 			// Fields
-			internal float _i___1;
-			internal float _i___2;
-			internal float _i___3;
-			internal SlideOnClick _this;
-			internal object _current;
-			internal bool _disposing;
-			internal int _PC;
+			private int __1__state;
+			private object __2__current;
+			public SlideOnClick __4__this;
+			private float _i_5__2;
 	
 			// Properties
-			object IEnumerator<object>.Current { [DebuggerHidden] get; }
+			object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 			object IEnumerator.Current { [DebuggerHidden] get; }
 	
 			// Constructors
 			[DebuggerHidden]
-			public _SlideTowardsPosition_c__Iterator0();
+			public _SlideTowardsPosition_d__14(int __1__state);
 	
 			// Methods
-			public bool MoveNext();
 			[DebuggerHidden]
-			public void Dispose();
+			void IDisposable.Dispose();
+			private bool MoveNext();
 			[DebuggerHidden]
-			public void Reset();
+			void IEnumerator.Reset();
 		}
 	
 		// Constructors
@@ -65,9 +68,11 @@ namespace GameMeterVisuals
 		private void Start();
 		public void SetNewStartPosition(Vector3 newPos);
 		public override void ExecuteEffect();
-		[DebuggerHidden]
+		[IteratorStateMachine(typeof(_SlideTowardsPosition_d__14))]
 		private IEnumerator SlideTowardsPosition();
+		private void LerpToPos(Vector2 from, Vector2 to, float i);
 		private void OnDisable();
+		private void SetToPosition(Vector2 pos);
 		public void OnPointerEnter(PointerEventData eventData);
 		public void OnPointerExit(PointerEventData eventData);
 	}

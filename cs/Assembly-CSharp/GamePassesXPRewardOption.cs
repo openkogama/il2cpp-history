@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePassesXPRewardOption : MonoBehaviour
 {
@@ -22,20 +22,33 @@ public class GamePassesXPRewardOption : MonoBehaviour
 	[SerializeField]
 	private UnityEngine.UI.Text bonusXPAmountText;
 	private GamePassTier gamePassTier;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__8_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnOkayPressed_b__8_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public GamePassesXPRewardOption();
 
 	// Methods
-	public void Initialize(GamePassesXpRewardInfo rewardInfo, GamePassTier gamePassTier);
+	public void Initialize(GamePassesXpRewardInfo rewardInfo, GamePassTier gpt);
 	public void OnSliderChange();
 	public void OnInputFieldChange();
 	public void UpdateXPData(int xpAmount);
 	public void OnOkayPressed();
 	private void UpdateBonusXpAmountText(int xpRewardAmount);
-	[CompilerGenerated]
-	private static void _OnOkayPressed_m__0(IUIStack x, BaseEventData y);
 }
 

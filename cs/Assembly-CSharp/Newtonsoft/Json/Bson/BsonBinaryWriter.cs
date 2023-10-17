@@ -8,7 +8,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Bson
 {
@@ -20,7 +20,6 @@ namespace Newtonsoft.Json.Bson
 		private byte[] _largeByteBuffer;
 		private int _maxChars;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private DateTimeKind _DateTimeKindHandling_k__BackingField;
 	
 		// Properties

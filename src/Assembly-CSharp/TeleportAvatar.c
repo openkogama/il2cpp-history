@@ -5,39 +5,8 @@ float Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_BlockStep
                 (TeleportAvatar *this,float t,float steps,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
-  }
-  fVar1 = t * steps;
-  fVar2 = (float10)func_?((double)fVar1,&dStack_3);
-  if (fVar1 < _UNK_?) {
-    if ((double)fVar2 != _UNK_?) {
-      fVar2 = (float10)func_?((double)(fVar1 - _UNK_?));
-      return (float)fVar2 / steps;
-    }
-    uVar4 = func_?();
-    fVar1 = (float)dStack_3;
-    if ((uVar4 & 1) != 0) {
-      return (fVar1 - _UNK_?) / steps;
-    }
-  }
-  else {
-    if ((double)fVar2 != _UNK_?) {
-      fVar2 = (float10)func_?((double)(fVar1 + _UNK_?));
-      return (float)fVar2 / steps;
-    }
-    uVar4 = func_?();
-    fVar1 = (float)dStack_3;
-    if ((uVar4 & 1) != 0) {
-      fVar1 = fVar1 + _UNK_?;
-    }
-  }
-  return fVar1 / steps;
+  fVar1 = (float10)func_?(t * steps);
+  return (float)(fVar1 / (float10)steps);
 }
 
 
@@ -50,18 +19,20 @@ Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_DoForSeconds
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__TeleportAvatar___DoForSeconds_d__6);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TeleportAvatar___DoForSeconds_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).originalScale.x = (float)body;
-    (this_00->fields).state = (int32_t)duration;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__TeleportAvatar___DoForSeconds_d__6);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[2].klass = (Object__Class *)body;
+    value[1].klass = (Object__Class *)0x0;
+    value[2].monitor = (MonitorData *)duration;
+    func_?(value + 2,body);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -75,48 +46,44 @@ void Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_EndTeleportation
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&MethodInfo__TeleportAvatar__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)rigidBody,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 != 0) {
     if (rigidBody == (MVRigidBody *)0x0) goto code_?;
-    (*(code *)(rigidBody->klass->vtable).__unknown_3.method)(rigidBody,0);
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
+    (*(rigidBody->klass->vtable).__unknown_3.methodPtr)(rigidBody,0);
   }
   pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
     this_00 = (pSVar2->fields).SpawnRoleModeTypeWrapper;
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this,
-               MethodInfo__TeleportAvatar__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_,
-               MethodInfo__System__Action<MV::Common::SpawnRoleModeType>__Action_System__Object__void__
-              );
-    if (this_00 != (SpawnRoleModeTypeWrapper *)0x0) {
-      SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_remove_OnChange
-                (this_00,(Action_1_MV_Common_SpawnRoleModeType_ *)this_01,(MethodInfo *)0x0);
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?();
+    this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    if (this_01 != (UnityAction_1_System_Int32Enum_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_01,(Object *)unaff_EBX,
+                 MethodInfo__TeleportAvatar__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_,
+                 (MethodInfo *)0x0);
+      if (this_00 != (SpawnRoleModeTypeWrapper *)0x0) {
+        SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_remove_OnChange
+                  (this_00,(Action_1_MV_Common_SpawnRoleModeType_ *)this_01,(MethodInfo *)0x0);
+        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        (unaff_EBX,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                  ((Object_1 *)obj,(MethodInfo *)0x0);
+        return;
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)obj,(MethodInfo *)0x0);
-      return;
     }
   }
 code_?:
@@ -145,20 +112,62 @@ Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_Start(TeleportAvatar *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__TeleportAvatar___Start_d__8);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TeleportAvatar___Start_c__Iterator1;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).state = (int32_t)this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__TeleportAvatar___Start_d__8);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
+}
+
+
+/* Void <Start>b__8_0(Single) */
+
+void Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar__Start_b__8_0
+               (TeleportAvatar *this,float t,MethodInfo *method)
+
+{
+  this_00 = (this->fields).avatar;
+  fVar1 = (float10)func_?(t * _UNK_?);
+  if (this_00 != (MVAvatarLocal *)0x0) {
+    MVAvatar::MVAvatar_set_SetTransparency
+              ((MVAvatar *)this_00,_UNK_? - (float)fVar1 / _UNK_?,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void <Start>b__8_1(Single) */
+
+void Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar__Start_b__8_1
+               (TeleportAvatar *this,float t,MethodInfo *method)
+
+{
+  this_00 = (this->fields).avatar;
+  fVar1 = (float10)func_?(t * _UNK_?);
+  if (this_00 != (MVAvatarLocal *)0x0) {
+    MVAvatar::MVAvatar_set_SetTransparency
+              ((MVAvatar *)this_00,(float)fVar1 / _UNK_?,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
 }
 
 
@@ -170,11 +179,10 @@ void Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar__ctor
 {
   (this->fields).teleportTime = 2.0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

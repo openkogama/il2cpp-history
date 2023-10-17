@@ -7,143 +7,136 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::
                ReceivedItemFromQueryEventArgs *e,MethodInfo *method)
 
 {
-  method_02 = (MethodInfo *)&DAT_?;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                   );
+    func_?(&TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    func_?(&TypeInfo__Extensions);
+    func_?(&TypeInfo__KoGaMaPackageClient);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__Add_SpawnRoleAvatarSelectionData_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    func_?(&
+                    MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                   );
+    func_?(&StringLiteral_GameOnReceivedAvatarBodiesFromQu);
+    func_?(&StringLiteral_DBId);
     cRam_? = '\x01';
   }
-  func_?();
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
             ((Object *)StringLiteral_GameOnReceivedAvatarBodiesFromQu,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_05 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?();
-  method_00 = (MethodInfo *)this;
-  method_01 = 
-  MethodInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>__EventHandler_System__Object__void__
-  ;
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_05,(Object *)this,
-             MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
-             ,
-             MethodInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>__EventHandler_System__Object__void__
-            );
-  if (this_04 != (MVNetworkGame *)0x0) {
-    MVNetworkGame::MVNetworkGame_remove_ReceivedAvatarBodiesFromQuery
-              (this_04,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_05,(MethodInfo *)0x0);
-    this_06 = (List_1_UnityEngine_Vector4_ *)func_?();
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-    List_1_UnityEngine_Vector4___ctor
-              (this_06,
-               MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__List__)
-    ;
-    (this->fields).avatarSelectionDataList = (List_1_SpawnRoleAvatarSelectionData_ *)this_06;
-    while ((e != (ReceivedItemFromQueryEventArgs *)0x0 &&
-           (pBVar1 = (e->fields).KoGaMaData, pBVar1 != (BytePacker *)0x0))) {
-      pOVar2 = (Object *)
-               MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
-                         (pBVar1,method_02);
-      this_00 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)(e->fields).KoGaMaData;
-      if (this_00 == (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0) break;
-      method_02 = (MethodInfo *)&UNK_?;
-      pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (this_00,unaff_EBP);
-      pKVar4 = TypeInfo__KoGaMaPackageClient;
-      if (pOVar2 == pOVar3) {
-        this_03 = (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)
-                  (this->fields).onDataRecieved;
-        if (this_03 !=
-            (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)0x0) {
-          mscorlib.dll::System::Action`1[System::Collections::Generic::Dictionary`2[System::
-          String,System::Object]]::
-          Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object__Invoke
-                    (this_03,(Dictionary_2_System_String_System_Object_ *)
-                             (this->fields).avatarSelectionDataList,
-                     MethodInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::List<SpawnRoleAvatarSelectionData>_>__Invoke_System__Collections__Generic__List<SpawnRoleAvatarSelectionData>_
-                    );
-        }
-        (this->fields).onDataRecieved =
-             (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)0x0;
-        *unaff_FS_OFFSET = pBVar1;
-        return;
-      }
-      this = (SpawnRoleAvatarSelectionDataController *)TypeInfo__KoGaMaPackageClient;
-      pBVar1 = (e->fields).KoGaMaData;
-      this_07 = (KoGaMaPackageClient *)func_?();
-      KoGaMaPackageClient::KoGaMaPackageClient__ctor(this_07,pBVar1,1,(MethodInfo *)0x0);
-      if (this_07 == (KoGaMaPackageClient *)0x0) break;
-      KoGaMaPackageClient::KoGaMaPackageClient_InventoryInitialize
-                (this_07,(MethodInfo *)in_stack_5);
-      in_stack_5 =
-           (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-            *)(this_07->fields).worldObjects;
-      if (((in_stack_5 ==
-            (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-             *)0x0) ||
-          (this_08 = (DayNightCycle *)
-                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                     Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                     Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                               (in_stack_5,(this_07->fields).worldObjectRoot,
-                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                               ), this_08 == (DayNightCycle *)0x0)) ||
-         (this_09 = DayNightCycle::DayNightCycle_get_CurrentMoonParam(this_08,method_00),
-         this_09 == (CelestialParam *)0x0)) break;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                ((GameObject *)this_09,0,method_01);
-      this_01 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)(this_07->fields).worldObjects;
-      if ((this_01 ==
-           (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-            *)0x0) ||
-         (pTVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                   Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                   Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                             (this_01,(this_07->fields).worldObjectRoot,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                             ), pTVar6 == (TerrainUtility_TerrainMap *)0x0)) break;
-      hashtable = (Dictionary_2_System_Object_System_Object_ *)func_?();
-      if ((((uint)(TypeInfo__Extensions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__Extensions->_1).cctor_started == 0)) {
-        func_?();
-      }
-      Extensions::Extensions_GetObscuredType(hashtable,StringLiteral_DBId,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->vtable).Equals.
-                  methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pOVar7 = (ObscuredInt *)func_?();
-      method_00 = (MethodInfo *)pOVar7->hiddenValue;
-      method_01 = *(MethodInfo **)&pOVar7->inited;
-      pMVar8 = (ManualResetEvent *)
-               Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-               ObscuredInt_op_Implicit_1(*pOVar7,(MethodInfo *)0x0);
-      this_02 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                (pKVar4->_0).namespaze;
-      if (this_02 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) break;
-      item.m_DelagateState = (Object *)this_07;
-      item.m_DelagateCallback = (SendOrPostCallback *)this_08;
-      item.m_WaitHandle = pMVar8;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-      UnitySynchronizationContext+WorkRequest]::
-      List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Add
-                (this_02,item,
-                 MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__Add_SpawnRoleAvatarSelectionData_
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
+            func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_remove_ReceivedAvatarBodiesFromQuery
+                (this_00,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0
                 );
+      this_02 = (List_1_SpawnRoleAvatarSelectionData_ *)func_?();
+      if (this_02 != (List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+        LowLevelList_1_System_Object___ctor
+                  ((LowLevelList_1_System_Object_ *)this_02,
+                   MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__List__
+                  );
+        (this->fields).avatarSelectionDataList = this_02;
+        func_?();
+        if (e != (ReceivedItemFromQueryEventArgs *)0x0) {
+          while( true ) {
+            pBVar4 = (e->fields).KoGaMaData;
+            if (pBVar4 == (BytePacker *)0x0) break;
+            iVar5 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
+                              (pBVar4,(MethodInfo *)0x0);
+            pBVar4 = (e->fields).KoGaMaData;
+            if (pBVar4 == (BytePacker *)0x0) break;
+            if (iVar5 == (pBVar4->fields)._position) {
+              if ((this->fields).onDataRecieved !=
+                  (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)
+                  0x0) {
+                (*(((this->fields).onDataRecieved)->fields)._._.invoke_impl)();
+              }
+              (this->fields).onDataRecieved =
+                   (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)
+                   0x0;
+              func_?();
+              *unaff_FS_OFFSET = uStack_3;
+              return;
+            }
+            this_03 = (KoGaMaPackageClient *)func_?();
+            if (this_03 == (KoGaMaPackageClient *)0x0) break;
+            KoGaMaPackageClient::KoGaMaPackageClient__ctor(this_03,pBVar4,1,(MethodInfo *)0x0);
+            uStack_1 = 0;
+            KoGaMaPackageClient::KoGaMaPackageClient_InventoryInitialize(this_03,(MethodInfo *)0x0);
+            pDVar6 = (this_03->fields).worldObjects;
+            if (pDVar6 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) break;
+            pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Int32Enum,System::Object]::
+                     Dictionary_2_System_Int32Enum_System_Object__get_Item
+                               ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,
+                                (this_03->fields).worldObjectRoot,
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                               );
+            if ((pOVar7 == (Object *)0x0) || (pOVar7[0x11].klass == (Object__Class *)0x0)) break;
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      ((GameObject *)pOVar7[0x11].klass,0,(MethodInfo *)0x0);
+            uStack_1 = 0xffffffff;
+            pDVar6 = (this_03->fields).worldObjects;
+            if (pDVar6 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) break;
+            pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Int32Enum,System::Object]::
+                     Dictionary_2_System_Int32Enum_System_Object__get_Item
+                               ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,
+                                (this_03->fields).worldObjectRoot,
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                               );
+            if (pOVar7 == (Object *)0x0) break;
+            hashtable = (Dictionary_2_System_Object_System_Object_ *)func_?();
+            if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            pOVar7 = Extensions::Extensions_GetObscuredType
+                               (hashtable,StringLiteral_DBId,(MethodInfo *)0x0);
+            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            if (pOVar7 == (Object *)0x0) break;
+            if ((pOVar7->klass->_0).element_class !=
+                (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class) {
+              func_?();
+              break;
+            }
+            pOVar8 = (ObscuredInt *)func_?();
+            Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+            ObscuredInt_op_Implicit_1(*pOVar8,(MethodInfo *)0x0);
+            func_?();
+            func_?();
+            if ((this->fields).avatarSelectionDataList ==
+                (List_1_SpawnRoleAvatarSelectionData_ *)0x0) break;
+            func_?();
+          }
+        }
+      }
     }
   }
   func_?();
@@ -162,57 +155,51 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Item_int_
+                   );
+    func_?(&
+                    MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                   );
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 != 0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+    this_02 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)this,
-               MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
-               ,
-               MethodInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>__EventHandler_System__Object__void__
-              );
-    if (this_01 == (MVNetworkGame *)0x0) goto code_?;
+    if ((this_02 == (UnityAction_2_System_Object_System_Object_ *)0x0) ||
+       (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (this_02,(Object *)this,
+                   MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                   ,(MethodInfo *)0x0), this_01 == (MVNetworkGame *)0x0)) goto code_?;
     MVNetworkGame::MVNetworkGame_remove_ReceivedAvatarBodiesFromQuery
               (this_01,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_02,(MethodInfo *)0x0);
   }
-  pLVar2 = (this->fields).avatarSelectionDataList;
-  if (pLVar2 == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
+  if ((this->fields).avatarSelectionDataList == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
     return;
   }
+  pLVar2 = (this->fields).avatarSelectionDataList;
   index = 0;
   do {
-    pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                        MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Count__
-                       );
-    if ((int)pOVar3 <= index) {
+    if ((pLVar2->fields)._size <= index) {
       return;
     }
     pLVar2 = (this->fields).avatarSelectionDataList;
     if (pLVar2 == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) break;
-    pSVar4 = mscorlib.dll::System::Collections::Generic::List`1[SpawnRoleAvatarSelectionData]::
-             List_1_SpawnRoleAvatarSelectionData__get_Item
-                       ((SpawnRoleAvatarSelectionData *)&pMStack_5,pLVar2,index,
+    pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+             UnitySynchronizationContext+WorkRequest]::
+             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
+                       ((UnitySynchronizationContext_WorkRequest *)&pSStack_4,
+                        (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar2,index,
                         MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Item_int_
                        );
-    this_00 = pSVar4->koGaMaPackageClientInventoryItem;
+    this_00 = pUVar3->m_DelagateState;
     if ((KoGaMaPackageClient *)this_00 == (KoGaMaPackageClient *)0x0) break;
     KoGaMaPackageClient::KoGaMaPackageClient_Destroy
               ((KoGaMaPackageClient *)this_00,(MethodInfo *)0x0);
@@ -221,8 +208,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::
   } while (pLVar2 != (List_1_SpawnRoleAvatarSelectionData_ *)0x0);
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -239,55 +226,52 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    func_?(&
+                    MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::List<SpawnRoleAvatarSelectionData>_>
+                   );
     cRam_? = '\x01';
   }
-  obj = (Dictionary_2_System_String_System_Object_ *)(this->fields).avatarSelectionDataList;
-  if (obj == (Dictionary_2_System_String_System_Object_ *)0x0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  if ((this->fields).avatarSelectionDataList == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this,
-               MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
-               ,
-               MethodInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>__EventHandler_System__Object__void__
-              );
-    if (this_00 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_add_ReceivedAvatarBodiesFromQuery
-                (this_00,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0
-                );
-      pUVar1 = (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)(this->fields).onDataRecieved,(Delegate *)onDataReady,
-                          (MethodInfo *)0x0);
-      pUVar2 = (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)0x0;
-      if (pUVar1 != (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *
-                    )0x0) {
-        if (pUVar1->klass ==
-            TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::List<SpawnRoleAvatarSelectionData>_>
-           ) {
-          pUVar2 = pUVar1;
+    if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                 ,(MethodInfo *)0x0);
+      if (pMVar1 != (MVNetworkGame *)0x0) {
+        MVNetworkGame::MVNetworkGame_add_ReceivedAvatarBodiesFromQuery
+                  (pMVar1,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,
+                   (MethodInfo *)0x0);
+        pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)(this->fields).onDataRecieved,(Delegate *)onDataReady,
+                            (MethodInfo *)0x0);
+        if (pDVar2 == (Delegate *)0x0) {
+          (this->fields).onDataRecieved =
+               (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)0x0;
         }
-        pUVar3 = 
-        TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::List<SpawnRoleAvatarSelectionData>_>
-        ;
-        if (pUVar2 == (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_
-                       *)0x0) goto code_?;
-      }
-      (this->fields).onDataRecieved = pUVar2;
-      this_02 = (MVJetPack *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (this_02 != (MVJetPack *)0x0) {
-        this_03 = MVJetPack::MVJetPack_get_Shield(this_02,(MethodInfo *)0x0);
-        if (this_03 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+        else {
+          pUVar3 = (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)
+                   func_?();
+          if (pUVar3 == (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_
+                         *)0x0) goto code_?;
+          (this->fields).onDataRecieved = pUVar3;
+          iVar4 = func_?();
+          if (iVar4 == 0) goto code_?;
+        }
+        func_?();
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 != (MVNetworkGame *)0x0) &&
+           (this_00 = (pMVar1->fields).operationRequests,
+           this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetAvatarBodies
-                    ((MVNetworkGame_OperationRequests *)this_03,(MethodInfo *)0x0);
+                    (this_00,(MethodInfo *)0x0);
           return;
         }
       }
@@ -295,21 +279,16 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::
   }
   else if (onDataReady !=
            (UnityAction_1_System_Collections_Generic_List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
-    mscorlib.dll::System::Action`1[System::Collections::Generic::Dictionary`2[System::String,System
-    ::Object]]::Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object__Invoke
-              ((Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)
-               onDataReady,obj,
-               MethodInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::List<SpawnRoleAvatarSelectionData>_>__Invoke_System__Collections__Generic__List<SpawnRoleAvatarSelectionData>_
-              );
+    (*(onDataReady->fields)._._.invoke_impl)
+              ((onDataReady->fields)._._.method_code,(this->fields).avatarSelectionDataList,
+               (onDataReady->fields)._._.method);
     return;
   }
-  func_?(0);
-  pUVar1 = extraout_ECX;
-  pUVar3 = extraout_EDX;
+  func_?();
 code_?:
-  func_?(pUVar1,pUVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

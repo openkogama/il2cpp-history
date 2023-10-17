@@ -6,99 +6,65 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_CalculatePosAroundPiv
                MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  uVar1 = 0;
-  func_?(&stack0xffffffe4,0,0,distanceFromPivot,0);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  fVar2 = pivot.z;
-  a_00.z = 0.0;
-  uStack_3 = (undefined4)(uVar1 >> 0x20);
-  a_00.x = (float)uVar4;
-  a_00.y = (float)uStack_3;
-  b_00.y = pivot.y;
-  b_00.x = pivot.x;
-  b_00.z = pivot.z;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                     ((Vector3 *)&puStack_6,a_00,b_00,(MethodInfo *)0x0);
-  a_01.y = pivot.y;
-  a_01.x = pivot.x;
-  a_01.z = fVar2;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                     ((Vector3 *)&stack0xffffffd8,a_01,*pVVar5,(MethodInfo *)0x0);
-  fVar7 = pVVar5->z;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pQVar8 = (Quaternion *)&stack0xffffffd4;
-  fVar9 = 0.0;
-  pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Euler
-                     ((Quaternion *)&stack0xffffffd4,0.0,spacingAngle,0.0,(MethodInfo *)0x0);
-  pivot.z = fVar9;
-  pivot.y = (float)pQVar8;
-  uVar11 = pQVar10->z;
-  pivot.x = pQVar10->w;
-  point.y = pivot.z;
-  point.x = pivot.y;
-  point.z = fVar7;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     ((Vector3 *)&stack0xffffffd8,*pQVar10,point,(MethodInfo *)0x0);
-  b.y = pivot.y;
-  b.x = pivot.x;
-  b.z = fVar2;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                     ((Vector3 *)&stack0xffffffd8,*pVVar5,b,(MethodInfo *)0x0);
-  uVar12._0_4_ = pVVar5->x;
-  uVar12._4_4_ = pVVar5->y;
-  fVar7 = pVVar5->z;
-  pGVar13 = ((StarRequirement__Fields *)(uVar11 + 8))->displayGO;
-  if (pGVar13 != (GameObject *)0x0) {
-    pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (pGVar13,(MethodInfo *)0x0);
-    if (pTVar14 != (Transform *)0x0) {
-      value.z = fVar7;
-      value.x = (float)uVar12;
-      value.y = SUB84(uVar12,4);
+  fVar1 = pivot.x - (pivot.x + 0.0);
+  fVar2 = pivot.y - (pivot.y + 0.0);
+  auVar3._4_8_ = 0;
+  auVar3._0_4_ = spacingAngle * _UNK_?;
+  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                     ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
+  point.y = fVar2;
+  point.x = fVar1;
+  point.z = pivot.z - (pivot.z + distanceFromPivot);
+  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+            ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
+  pGVar6 = (this->fields).displayGO;
+  if (pGVar6 != (GameObject *)0x0) {
+    fVar2 = 0.0;
+    puVar7 = &UNK_?;
+    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (pGVar6,(MethodInfo *)0x0);
+    if (pTVar8 != (Transform *)0x0) {
+      value_00.y = (float)pGVar6;
+      value_00.x = (float)puVar7;
+      value_00.z = fVar2;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar14,value,(MethodInfo *)0x0);
-      pGVar13 = ((StarRequirement__Fields *)(uVar11 + 8))->displayGO;
-      if (pGVar13 != (GameObject *)0x0) {
-        pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar13,(MethodInfo *)0x0);
-        pGVar13 = ((StarRequirement__Fields *)(uVar11 + 8))->displayObjectRoot;
-        if (pGVar13 != (GameObject *)0x0) {
+                (pTVar8,value_00,(MethodInfo *)0x0);
+      pGVar6 = (this->fields).displayGO;
+      if (pGVar6 != (GameObject *)0x0) {
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0);
+        pGVar6 = (this->fields).displayObjectRoot;
+        if (pGVar6 != (GameObject *)0x0) {
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGVar13,(MethodInfo *)0x0);
+                              (pGVar6,(MethodInfo *)0x0);
           if (this_01 != (Transform *)0x0) {
-            pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                               ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
-            a.y = pivot.y;
-            a.x = pivot.x;
-            a.z = fVar2;
-            pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                               (&pivot,a,*pVVar5,(MethodInfo *)0x0);
-            if (pTVar14 != (Transform *)0x0) {
+            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
+            uVar10 = pVVar9->x;
+            uVar11 = pVVar9->y;
+            if (pTVar8 != (Transform *)0x0) {
+              worldPosition.y = pivot.y + (float)uVar11;
+              worldPosition.x = pivot.x + (float)uVar10;
+              worldPosition.z = pivot.z + pVVar9->z;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
-                        (pTVar14,*pVVar5,(MethodInfo *)0x0);
-              this_00 = ((StarRequirement__Fields *)(uVar11 + 8))->displayObject;
+                        (pTVar8,worldPosition,(MethodInfo *)0x0);
+              this_00 = (this->fields).displayObject;
               if (this_00 != (StarDisplayObject *)0x0) {
-                pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_1_get_transform((Component_1 *)this_00,(MethodInfo *)0x0);
-                if (pTVar14 != (Transform *)0x0) {
-                  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                           Transform_get_position(&pivot,pTVar14,(MethodInfo *)0x0);
-                  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                                     (&pivot,*pVVar5,
-                                      ((StarRequirement__Fields *)(uVar11 + 8))->displayObjectOffset,
-                                      (MethodInfo *)0x0);
+                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+                if (pTVar8 != (Transform *)0x0) {
+                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_get_position((Vector3 *)&puStack_5,pTVar8,(MethodInfo *)0x0)
+                  ;
+                  uVar12 = pVVar9->x;
+                  uVar13 = pVVar9->y;
+                  uVar14 = (this->fields).displayObjectOffset.x;
+                  uVar15 = (this->fields).displayObjectOffset.y;
+                  value.y = (float)uVar15 + (float)uVar13;
+                  value.x = (float)uVar14 + (float)uVar12;
+                  value.z = (this->fields).displayObjectOffset.z + pVVar9->z;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                            (pTVar14,*pVVar5,(MethodInfo *)0x0);
+                            (pTVar8,value,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -109,8 +75,8 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_CalculatePosAroundPiv
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -122,62 +88,55 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_CreateDisplayObject
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    this_01 = MVAvatar::MVAvatar_GetHealRayAttachmentObject((MVAvatar *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
-      pXVar1 = (XpBoostParticlePreviewer *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this_01,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?();
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if ((pPVar1 != (PrefabPool *)0x0) &&
+     (pSVar2 = (pPVar1->fields).starDisplayPrefab, pSVar2 != (StarDisplayObject *)0x0)) {
+    original = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pSVar2,(MethodInfo *)0x0);
+    pGVar3 = (this->fields).displayObjectRoot;
+    if (pGVar3 != (GameObject *)0x0) {
+      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar3,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
       }
-      pMVar2 = 
-      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-      ;
-      pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                         (pXVar1,
-                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+      pGVar3 = (GameObject *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                         ((Object *)original,pTVar4,1,
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                          );
-      (pMVar2->field7_0x1c).methodMetadataHandle = (Il2CppMetadataMethodDefinitionHandle)pXVar1;
-      if (pXVar1 != (XpBoostParticlePreviewer *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           ((GameObject *)pXVar1,(MethodInfo *)0x0);
-        if ((GameObject *)pMVar2->token != (GameObject *)0x0) {
-          value_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               ((GameObject *)pMVar2->token,(MethodInfo *)0x0);
-          if (pTVar3 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                      (pTVar3,value_00,(MethodInfo *)0x0);
-            if ((GameObject *)(pMVar2->field7_0x1c).methodMetadataHandle != (GameObject *)0x0) {
-              pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 ((GameObject *)(pMVar2->field7_0x1c).methodMetadataHandle,
-                                  (MethodInfo *)0x0);
-              if (pTVar3 != (Transform *)0x0) {
-                value.x = (float)pMVar2->klass;
-                value.y = (float)pMVar2->return_type;
-                value.z = (float)pMVar2->parameters;
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                          (pTVar3,value,(MethodInfo *)0x0);
-                if ((GameObject *)(pMVar2->field7_0x1c).methodMetadataHandle != (GameObject *)0x0) {
-                  pUVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                           GameObject_GetComponent_47
-                                     ((GameObject *)(pMVar2->field7_0x1c).methodMetadataHandle,
-                                      StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
-                                     );
-                  (pMVar2->field8_0x20).genericMethod = (Il2CppGenericMethod *)pUVar4;
-                  return;
-                }
-              }
-            }
+      (this->fields).displayGO = pGVar3;
+      func_?(&(this->fields).displayGO,pGVar3);
+      pGVar3 = (this->fields).displayGO;
+      if (pGVar3 != (GameObject *)0x0) {
+        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar3,(MethodInfo *)0x0);
+        if (pTVar4 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                    (pTVar4,(this->fields).displayObjectOffset,(MethodInfo *)0x0);
+          pGVar3 = (this->fields).displayGO;
+          if (pGVar3 != (GameObject *)0x0) {
+            pSVar2 = (StarDisplayObject *)
+                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                               (pGVar3,
+                                StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
+                               );
+            (this->fields).displayObject = pSVar2;
+            func_?(&(this->fields).displayObject,pSVar2);
+            return;
           }
         }
       }
@@ -198,12 +157,11 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_DestroyRequirement
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).displayObject;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -211,18 +169,17 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_DestroyRequirement
   if (bVar2 != 0) {
     pSVar1 = (this->fields).displayObject;
     if (pSVar1 == (StarDisplayObject *)0x0) {
-      func_?(0);
+      func_?();
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__UnityEngine__Object);
       cRam_? = '\x01';
     }
     obj = (pSVar1->fields).frontText;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -230,8 +187,7 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_DestroyRequirement
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)(pSVar1->fields).backText,(MethodInfo *)0x0);
     obj_00 = (this->fields).displayGO;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -266,70 +222,40 @@ int32_t Assembly-CSharp.dll::StarRequirement::StarRequirement_GetLocalPLayerStat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    this_00 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                        ((DayNightCycle *)pMVar1,(MethodInfo *)0x0);
-    if (this_00 != (SkyParam *)0x0) {
-      this_01 = MVTeamManager::MVTeamManager_GetTeamList((MVTeamManager *)this_00,(MethodInfo *)0x0)
-      ;
-      if (this_01 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
-        pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                            MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__
-                           );
-        if ((int)pOVar2 < 2) {
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
+    pLVar2 = MVTeamManager::MVTeamManager_GetTeamList(this_00,(MethodInfo *)0x0);
+    if (pLVar2 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
+      if ((pLVar2->fields)._size < 2) {
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar1 != (MVNetworkGame *)0x0) {
+          pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+          if (pMVar3 != (MVLocalPlayer *)0x0) {
+            iVar4 = MVPlayer::MVPlayer_GetGameStat
+                              ((MVPlayer *)pMVar3,GameStatCounterType__Enum_Collectible,
+                               (MethodInfo *)0x0);
+            return iVar4;
           }
+        }
+      }
+      else {
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar1 != (MVNetworkGame *)0x0) {
+          this_01 = (pMVar1->fields).gameStatCounterManager;
           pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar1 != (MVNetworkGame *)0x0) {
             pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-            if (pMVar3 != (MVLocalPlayer *)0x0) {
-              iVar4 = MVPlayer::MVPlayer_GetGameStat
-                                ((MVPlayer *)pMVar3,GameStatCounterType__Enum_Collectible,
-                                 (MethodInfo *)0x0);
+            if ((pMVar3 != (MVLocalPlayer *)0x0) && (this_01 != (GameStatCounterManager *)0x0)) {
+              iVar4 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetTeamCount
+                                (this_01,GameStatCounterType__Enum_Collectible,
+                                 (pMVar3->fields)._._Team_k__BackingField,(MethodInfo *)0x0);
               return iVar4;
-            }
-          }
-        }
-        else {
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar1 != (MVNetworkGame *)0x0) {
-            this_02 = (GameStatCounterManager *)
-                      DayNightCycle::DayNightCycle_get_CurrentStarsParam
-                                ((DayNightCycle *)pMVar1,(MethodInfo *)0x0);
-            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (pMVar1 != (MVNetworkGame *)0x0) {
-              pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-              if (pMVar3 != (MVLocalPlayer *)0x0) {
-                team = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                       KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                                 ((KogamaSettingNumericBase_1_System_Single_ *)pMVar3,
-                                  (MethodInfo *)0x0);
-                if (this_02 != (GameStatCounterManager *)0x0) {
-                  iVar4 = MVWorldObject.dll::GameStatCounterManager::
-                          GameStatCounterManager_GetTeamCount
-                                    (this_02,GameStatCounterType__Enum_Collectible,
-                                     (MVTeam__Enum)team,(MethodInfo *)0x0);
-                  return iVar4;
-                }
-              }
             }
           }
         }
@@ -350,14 +276,15 @@ Assembly-CSharp.dll::StarRequirement::StarRequirement_GetShowOption
           (StarRequirement *this,MethodInfo *method)
 
 {
-  if ((this->fields).starAmount == 0) {
-    return ShowUseOption__Enum_Normal;
+  if ((this->fields).starAmount != 0) {
+    iVar1 = StarRequirement_GetLocalPLayerStat(this,(MethodInfo *)0x0);
+    SVar2 = ShowUseOption__Enum_StarsEnough|ShowUseOption__Enum_UsingStars;
+    if (iVar1 < (this->fields).starAmount) {
+      SVar2 = ShowUseOption__Enum_StarsInsufficient|ShowUseOption__Enum_UsingStars;
+    }
+    return SVar2;
   }
-  iVar1 = StarRequirement_GetLocalPLayerStat(this,(MethodInfo *)0x0);
-  if (iVar1 < (this->fields).starAmount) {
-    return ShowUseOption__Enum_StarsInsufficient|ShowUseOption__Enum_UsingStars;
-  }
-  return ShowUseOption__Enum_StarsEnough|ShowUseOption__Enum_UsingStars;
+  return ShowUseOption__Enum_Normal;
 }
 
 
@@ -368,12 +295,11 @@ bool Assembly-CSharp.dll::StarRequirement::StarRequirement_IsActive
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   x = (this->fields).displayGO;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -390,152 +316,153 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_OnDataUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_starAmount);
     cRam_? = '\x01';
   }
   pDVar1 = data;
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)data,StringLiteral_starAmount,
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,
+                       (Object *)StringLiteral_starAmount,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar2 == 0) {
       return;
     }
-    pPVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)pDVar1,(Type *)StringLiteral_starAmount,
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (pDVar1,(Object *)StringLiteral_starAmount,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar3 != (Pool *)0x0) {
-      if ((pPVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+    if (pOVar3 != (Object *)0x0) {
+      if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
         puVar4 = (undefined4 *)func_?();
-        pPVar5 = pPVar3[1].klass;
-        (pPVar3->fields).prefab = (MonoBehaviour *)*puVar4;
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        pOVar5 = pOVar3[4].klass;
+        pOVar3[1].monitor = (MonitorData *)*puVar4;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pPVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
+                          ((Object_1 *)pOVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar2 != 0) {
           if (cRam_? == '\0') {
-            func_?(_UNK_?);
+            func_?(&
+                            StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
+                           );
+            func_?(&
+                            UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
+                           );
+            func_?(&TypeInfo__UnityEngine__Object);
             cRam_? = '\x01';
           }
-          if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-            func_?(TypeInfo__PrefabPool);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__PrefabPool);
+            cRam_? = '\x01';
           }
-          this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-          if ((this_00 == (PrefabPool *)0x0) ||
-             (pGVar6 = MVAvatar::MVAvatar_GetHealRayAttachmentObject
-                                 ((MVAvatar *)this_00,(MethodInfo *)0x0),
-             pGVar6 == (GameObject *)0x0)) goto code_?;
-          original = (XpBoostParticlePreviewer *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                               ((Component_1 *)pGVar6,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+          pPVar6 = TypeInfo__PrefabPool->static_fields->instance;
+          if ((pPVar6 == (PrefabPool *)0x0) ||
+             (this_00 = (pPVar6->fields).starDisplayPrefab, this_00 == (StarDisplayObject *)0x0))
+          goto code_?;
+          pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this_00,(MethodInfo *)0x0);
+          if ((GameObject *)pOVar3[4].monitor == (GameObject *)0x0) goto code_?;
+          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             ((GameObject *)pOVar3[4].monitor,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          pMVar7 = (MonoBehaviour__Array *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                             (original,
-                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                             );
-          (pPVar3->fields).pool = pMVar7;
-          if (pMVar7 == (MonoBehaviour__Array *)0x0) goto code_?;
-          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             ((GameObject *)pMVar7,(MethodInfo *)0x0);
-          if (((GameObject *)pPVar3[1].monitor == (GameObject *)0x0) ||
-             (value_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform((GameObject *)pPVar3[1].monitor,(MethodInfo *)0x0)
-             , pTVar8 == (Transform *)0x0)) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (pTVar8,value_00,(MethodInfo *)0x0);
-          pMVar7 = (pPVar3->fields).pool;
-          if ((pMVar7 == (MonoBehaviour__Array *)0x0) ||
+          pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                              ((Object *)pGVar7,pTVar8,1,
+                               UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
+                              );
+          pOVar3[3].monitor = (MonitorData *)pOVar9;
+          func_?(&pOVar3[3].monitor,pOVar9);
+          if (((GameObject *)pOVar3[3].monitor == (GameObject *)0x0) ||
              (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 ((GameObject *)pMVar7,(MethodInfo *)0x0),
+                                 ((GameObject *)pOVar3[3].monitor,(MethodInfo *)0x0),
              pTVar8 == (Transform *)0x0)) goto code_?;
-          value.x = (float)(pPVar3->fields).poolEnum;
-          value.y = (float)(pPVar3->fields).parent;
-          value.z = (float)(pPVar3->fields).available;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar8,value,(MethodInfo *)0x0);
-          pMVar7 = (pPVar3->fields).pool;
-          if (pMVar7 == (MonoBehaviour__Array *)0x0) goto code_?;
-          pPVar5 = (Pool__Class *)
-                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                             ((GameObject *)pMVar7,
-                              StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
-                             );
-          pPVar3[1].klass = pPVar5;
+                    (pTVar8,*(Vector3 *)(pOVar3 + 2),(MethodInfo *)0x0);
+          if ((GameObject *)pOVar3[3].monitor == (GameObject *)0x0) goto code_?;
+          pOVar5 = (Object__Class *)
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                              ((GameObject *)pOVar3[3].monitor,
+                               StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
+                              );
+          pOVar3[4].klass = pOVar5;
+          func_?(pOVar3 + 4,pOVar5);
         }
-        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(pPVar3->fields).prefab;
-        if (0 < (int)pDVar1) {
-          pPVar5 = pPVar3[1].klass;
-          if (pPVar5 == (Pool__Class *)0x0) goto code_?;
-          pTVar9 = (TextMesh *)(pPVar5->_0).namespaze;
-          data = pDVar1;
-          pSVar10 = (String *)func_?(&data,0);
-          if (pTVar9 == (TextMesh *)0x0) goto code_?;
+        pMVar10 = pOVar3[1].monitor;
+        if (0 < (int)pMVar10) {
+          pOVar5 = pOVar3[4].klass;
+          if (pOVar5 == (Object__Class *)0x0) goto code_?;
+          data = (Dictionary_2_System_Object_System_Object_ *)pOVar3[1].monitor;
+          pTVar11 = (TextMesh *)(pOVar5->_0).namespaze;
+          pSVar12 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&data,(MethodInfo *)0x0);
+          if (pTVar11 == (TextMesh *)0x0) goto code_?;
           UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                    (pTVar9,pSVar10,(MethodInfo *)0x0);
-          pTVar9 = (TextMesh *)(pPVar5->_0).byval_arg.data.typeHandle;
-          pSVar10 = (String *)func_?(&data,0);
-          if (pTVar9 == (TextMesh *)0x0) goto code_?;
+                    (pTVar11,pSVar12,(MethodInfo *)0x0);
+          pTVar11 = (TextMesh *)(pOVar5->_0).byval_arg.data.typeHandle;
+          pSVar12 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&data,(MethodInfo *)0x0);
+          if (pTVar11 == (TextMesh *)0x0) goto code_?;
+          data = (Dictionary_2_System_Object_System_Object_ *)0x0;
           UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                    (pTVar9,pSVar10,(MethodInfo *)0x0);
-          pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(pPVar3->fields).prefab;
+                    (pTVar11,pSVar12,(MethodInfo *)0x0);
+          pMVar10 = pOVar3[1].monitor;
         }
-        if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        if (pMVar10 != (MonitorData *)0x0) {
           return;
         }
         pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
                   func_?(
                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                  );
-        System.Core.dll::System::Collections::Generic::
-        HashSet`1[AvatarModifierPackage+AvatarModifier]::
-        HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                  ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)pDVar1,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
-        data = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        value_01 = (CrossPlatformInputManager_VirtualButton *)
-                   func_?(TypeInfo__System__Int32,&data);
         if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          String,UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-          Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                    ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                      *)pDVar1,StringLiteral_starAmount,value_01,
+          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                    ((ParameterOverride_1_System_Object_ *)pDVar1,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                    );
+          data = (Dictionary_2_System_Object_System_Object_ *)0x0;
+          pOVar9 = (Object *)func_?(TypeInfo__System__Int32,&data);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (pDVar1,(Object *)StringLiteral_starAmount,pOVar9,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?(TypeInfo__MVGameControllerBase);
-          }
           this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
           if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
             MVNetworkGame+OperationRequests::
             MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
                       (this_01,ownerID,pDVar1,(MethodInfo *)0x0);
-            if (pPVar3[1].klass != (Pool__Class *)0x0) {
-              pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                       Component_1_get_gameObject((Component_1 *)pPVar3[1].klass,(MethodInfo *)0x0);
-              if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0
-                  ) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+            if (pOVar3[4].klass != (Object__Class *)0x0) {
+              pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)pOVar3[4].klass,(MethodInfo *)0x0);
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                        ((Object_1 *)pGVar6,(MethodInfo *)0x0);
+                        ((Object_1 *)pGVar7,(MethodInfo *)0x0);
               return;
             }
           }
@@ -547,43 +474,9 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_OnDataUpdate
     }
   }
 code_?:
-  func_?(0);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
-  return;
-}
-
-
-/* Void SetScale(Vector3) */
-
-void Assembly-CSharp.dll::StarRequirement::StarRequirement_SetScale
-               (StarRequirement *this,Vector3 scale,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).displayObject;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Division
-                     ((Vector3 *)&puStack_2,scale,2.0,(MethodInfo *)0x0);
-  value = *pVVar1;
-  if (this_00 != (StarDisplayObject *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_01,value,(MethodInfo *)0x0);
-      return;
-    }
-  }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -594,19 +487,15 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement__ctor
                (StarRequirement *this,GameObject *root,bool hasUseButtonWhenFree,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  (this->fields).requirementType = 2;
-  uStack_2 = 0;
-  func_?(&uStack_2,0,0,0,0);
-  (this->fields).displayObjectOffset.x = (float)(undefined4)uStack_2;
-  (this->fields).displayObjectOffset.y = (float)uStack_2._4_4_;
-  (this->fields).displayObjectOffset.z = fStack_1;
+  (this->fields).displayObjectOffset.x = 0.0;
+  (this->fields).displayObjectOffset.y = 0.0;
+  (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).hasUseWhenFree = 1;
-  WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-  WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor
-            ((WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)this,(MethodInfo *)0x0);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
   (this->fields).displayObjectRoot = root;
+  func_?(&(this->fields).displayObjectRoot,root);
   return;
 }
 
@@ -618,61 +507,21 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement__ctor_1
                bool hasUseButtonWhenFree,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  fStack_1 = 0.0;
-  (this->fields).requirementType = 2;
-  uStack_2 = 0;
-  func_?(&uStack_2,0,0,0,0);
-  (this->fields).displayObjectOffset.x = (float)(undefined4)uStack_2;
-  (this->fields).displayObjectOffset.y = (float)uStack_2._4_4_;
-  (this->fields).displayObjectOffset.z = fStack_1;
+  (this->fields).displayObjectOffset.x = 0.0;
+  (this->fields).displayObjectOffset.y = 0.0;
+  (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).hasUseWhenFree = 1;
-  WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-  WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor
-            ((WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)this,(MethodInfo *)0x0);
-  uStack_3._0_4_ = (this->fields).displayObjectOffset.x;
-  uStack_3._4_4_ = (this->fields).displayObjectOffset.y;
-  fVar4 = (this->fields).displayObjectOffset.z;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  uVar1 = (this->fields).displayObjectOffset.x;
+  uVar2 = (this->fields).displayObjectOffset.y;
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  a.z = fVar4;
-  a.x = (float)(undefined4)uStack_3;
-  a.y = (float)uStack_3._4_4_;
-  b.z = displayOffset.z;
-  b.x = displayOffset.x;
-  b.y = displayOffset.y;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                     (&displayOffset,a,b,(MethodInfo *)0x0);
-  fVar6 = pVVar5->y;
-  fVar4 = pVVar5->z;
-  (this->fields).displayObjectOffset.x = pVVar5->x;
-  (this->fields).displayObjectOffset.y = fVar6;
-  (this->fields).displayObjectOffset.z = fVar4;
+  fVar3 = (this->fields).displayObjectOffset.z;
+  (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
+  (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
+  (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
   (this->fields).displayObjectRoot = root;
+  func_?(&(this->fields).displayObjectRoot,root);
   return;
-}
-
-
-/* GameObject get_GameObject() */
-
-GameObject *
-Assembly-CSharp.dll::StarRequirement::StarRequirement_get_GameObject
-          (StarRequirement *this,MethodInfo *method)
-
-{
-  pGVar1 = (this->fields).displayGO;
-  if (pGVar1 != (GameObject *)0x0) {
-    return pGVar1;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pGVar1 = (GameObject *)(*pcVar2)();
-  return pGVar1;
 }
 

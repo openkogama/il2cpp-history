@@ -7,84 +7,83 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_GetBadgeTexture
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__BadgeManager);
+    func_?(&TypeInfo__CachedTextureRequest);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__ContainsKey_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__get_Item_int_
+                   );
+    func_?(&StringLiteral_Level_exceeds_defined_badges__Us);
+    func_?(&StringLiteral_No_badges_was_loaded);
+    func_?(&StringLiteral__Unity_2);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BadgeManager);
   }
   if (TypeInfo__BadgeManager->static_fields->maxLevelBadge == 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
               ((Object *)StringLiteral_No_badges_was_loaded,(MethodInfo *)0x0);
     return;
   }
-  if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BadgeManager);
   }
-  this = (Dictionary_2_System_Int32_System_Object_ *)
+  this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
          TypeInfo__BadgeManager->static_fields->badgeUrls;
-  if (this != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__ContainsKey
-                      (this,level,
+  if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this,(Object *)level,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__ContainsKey_int_
                       );
     if (bVar1 == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Debug);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
                 ((Object *)StringLiteral_Level_exceeds_defined_badges__Us,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+      if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__BadgeManager);
       }
       level = TypeInfo__BadgeManager->static_fields->maxLevelBadge;
     }
-    if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BadgeManager);
     }
-    this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)TypeInfo__BadgeManager->static_fields->badgeUrls;
-    if ((this_00 !=
-         (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *
-         )0x0) &&
-       (pTVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
-                 ::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                 Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                           (this_00,level,
+    this_00 = TypeInfo__BadgeManager->static_fields->badgeUrls;
+    if ((this_00 != (Dictionary_2_System_Int32_BadgeUrlData_ *)0x0) &&
+       (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,level,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__get_Item_int_
-                           ), pTVar2 != (TerrainUtility_TerrainMap *)0x0)) {
-      pSVar3 = (String *)(pTVar2->fields).m_patchSize.y;
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
+                           ), pOVar2 != (Object *)0x0)) {
+      path = mscorlib.dll::System::String::String_Concat_3
+                       ((String *)pOVar2[1].monitor,StringLiteral__Unity_2,(MethodInfo *)0x0);
+      this_01 = (CachedTextureRequest *)func_?();
+      if (this_01 != (CachedTextureRequest *)0x0) {
+        CachedTextureRequest::CachedTextureRequest__ctor
+                  (this_01,path,callback,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,0,
+                   (MethodInfo *)0x0);
+        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+        return;
       }
-      pSVar3 = mscorlib.dll::System::String::String_Concat_2
-                         (pSVar3,StringLiteral__Unity_2,(MethodInfo *)0x0);
-      this_01 = (CachedTextureRequest *)func_?(TypeInfo__CachedTextureRequest);
-      CachedTextureRequest::CachedTextureRequest__ctor
-                (this_01,pSVar3,callback,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,0,
-                 (MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-        func_?();
-      }
-      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-      return;
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -96,49 +95,47 @@ int32_t Assembly-CSharp.dll::BadgeManager::BadgeManager_GetFriendsLimit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__BadgeManager);
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  this = (Dictionary_2_System_Int32_System_Object_ *)
+  this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
          TypeInfo__BadgeManager->static_fields->badgeUrls;
-  if (this != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__ContainsKey
-                      (this,level,
+  if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this,(Object *)level,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__ContainsKey_int_
                       );
     if (bVar1 == 0) {
       return 200;
     }
-    if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
       level = (int32_t)TypeInfo__BadgeManager;
       func_?();
     }
-    this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)TypeInfo__BadgeManager->static_fields->badgeUrls;
-    if (this_00 !=
-        (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-        0x0) {
-      pTVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-               Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-               Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__get_Item
-                         (this_00,level,
+    this_00 = TypeInfo__BadgeManager->static_fields->badgeUrls;
+    if (this_00 != (Dictionary_2_System_Int32_BadgeUrlData_ *)0x0) {
+      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,level,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__get_Item_int_
                          );
-      if (pTVar2 != (TerrainUtility_TerrainMap *)0x0) {
-        return (int32_t)(pTVar2->fields).m_patchSize.z;
+      if (pOVar2 != (Object *)0x0) {
+        return (int32_t)pOVar2[2].klass;
       }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  iVar4 = (*pcVar3)();
-  return iVar4;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  iVar5 = (*pcVar4)();
+  return iVar5;
 }
 
 
@@ -152,101 +149,105 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_Initialize
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb8;
-  puVar5 = &stack0xffffffb8;
+  puStack_4 = &stack0xffffffbc;
+  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BadgeManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Add_int__BadgeUrlData_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__ContainsKey_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<BadgeUrlData>__GetEnumerator__);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  puStack_7 = (undefined4 *)&stack0xffffffb8;
-  puStack_4 = &stack0xffffffb8;
   if (badgeUrlDatas != (List_1_BadgeUrlData_ *)0x0) {
-    puStack_7 = (undefined4 *)&stack0xffffffb8;
-    puStack_4 = &stack0xffffffb8;
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_9,
-                        (List_1_UnityEngine_Color32_ *)badgeUrlDatas,
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_7,
+                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        badgeUrlDatas,
                         MethodInfo__System__Collections__Generic__List<BadgeUrlData>__GetEnumerator__
                        );
-    CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar8->l;
-    CStack_6.monitor = (MonitorData *)pLVar8->next;
-    CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar8->ver;
-    CStack_6.fields.syncRoot = (Object *)(pLVar8->current).rgba;
-    uStack_1 = 0;
-    while( true ) {
-      auStack_9._0_4_ =
-           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__MoveNext__
-      ;
-      cVar10 = func_?();
-      if (cVar10 == '\0') {
-        *puStack_7 = 0x74;
+    LStack_7._version = 0;
+    uStack_1 = 1;
+    RVar8 = pLVar6->_current;
+    LStack_7._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
+    do {
+      method_00 = RVar8;
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__MoveNext__
+                        );
+      if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        func_?(&CStack_6,
-                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__Dispose__
-                       );
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&stack0xffffffc8,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__Dispose__
+                   ,(MethodInfo *)method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      value = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-              Serialization::JsonProperty]::
-              Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                        (&CStack_6,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__get_Current__
-                        );
-      if (value == (Object *)0x0) break;
-      unaff_EDI = value[1].klass;
-      if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
-        func_?(TypeInfo__BadgeManager);
+      if (method_00 == (RegexCharClass_SingleRange)0x0) break;
+      iVar10 = *(int *)((int)method_00 + 8);
+      RVar8 = method_00;
+      if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
-      if (TypeInfo__BadgeManager->static_fields->maxLevelBadge < (int)unaff_EDI) {
-        unaff_EDI = value[1].klass;
-        if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+      if (TypeInfo__BadgeManager->static_fields->maxLevelBadge < iVar10) {
+        if (method_00 == (RegexCharClass_SingleRange)0x0) break;
+        iVar11 = *(int32_t *)((int)method_00 + 8);
+        if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__BadgeManager);
         }
-        TypeInfo__BadgeManager->static_fields->maxLevelBadge = (int32_t)unaff_EDI;
+        TypeInfo__BadgeManager->static_fields->maxLevelBadge = iVar11;
       }
-      if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+      if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__BadgeManager);
       }
-      pDVar11 = (Dictionary_2_System_Int32_System_Object_ *)
-               TypeInfo__BadgeManager->static_fields->badgeUrls;
-      if (pDVar11 == (Dictionary_2_System_Int32_System_Object_ *)0x0) break;
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-              ::Dictionary_2_System_Int32_System_Object__ContainsKey
-                        (pDVar11,(int32_t)value[1].klass,
+      this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+             TypeInfo__BadgeManager->static_fields->badgeUrls;
+      if ((method_00 == (RegexCharClass_SingleRange)0x0) ||
+         (this == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) break;
+      bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        (this,*(Object **)((int)method_00 + 8),
                          MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__ContainsKey_int_
                         );
-      if (bVar12 == 0) {
-        if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
+      if (bVar9 == 0) {
+        if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pDVar11 = (Dictionary_2_System_Int32_System_Object_ *)
-                 TypeInfo__BadgeManager->static_fields->badgeUrls;
-        if (pDVar11 == (Dictionary_2_System_Int32_System_Object_ *)0x0) break;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Add
-                  (pDVar11,(int32_t)value[1].klass,value,
+        this_00 = (Dictionary_2_System_Object_System_Object_ *)
+                  TypeInfo__BadgeManager->static_fields->badgeUrls;
+        if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  (this_00,*(Object **)((int)method_00 + 8),(Object *)method_00,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Add_int__BadgeUrlData_
                   );
       }
-    }
+    } while( true );
   }
-  func_?(0);
-  func_?(unaff_EDI,0,0);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -257,21 +258,32 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_Reset(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BadgeManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>);
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_Int32_BadgeUrlData_ *)
          func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Dictionary__);
-  if ((((uint)(TypeInfo__BadgeManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__BadgeManager->_1).cctor_started == 0)) {
-    func_?();
+  if (this != (Dictionary_2_System_Int32_BadgeUrlData_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Dictionary__
+              );
+    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    TypeInfo__BadgeManager->static_fields->badgeUrls = this;
+    func_?(TypeInfo__BadgeManager->static_fields);
+    TypeInfo__BadgeManager->static_fields->maxLevelBadge = 0;
+    return;
   }
-  TypeInfo__BadgeManager->static_fields->badgeUrls = this;
-  TypeInfo__BadgeManager->static_fields->maxLevelBadge = 0;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -283,181 +295,230 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = _UNK_?;
+    pAStack_1 = (AsyncWWWManager__Class *)&TypeInfo__AsyncWWWManager;
     func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    pIStack_1 = (Il2CppClass *)TypeInfo__AsyncWWWManager;
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    pAStack_1 = TypeInfo__AsyncWWWManager;
     func_?();
   }
-  pIStack_1 = (Il2CppClass *)0xffffffff;
-  pIStack_2 = (Il2CppClass *)&DAT_?;
-  pIStack_3 = (Il2CppClass *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_3;
-  pIStack_4 = (Il2CppClass *)&stack0xffffff7c;
-  pIVar5 = (Il2CppClass *)&stack0xffffff7c;
+  pAStack_1._0_1_ = 0xff;
+  pAStack_1._1_3_ = 0xffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffff64;
+  puVar5 = &stack0xffffff64;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-    pIVar5 = pIStack_4;
-  }
-  pIStack_4 = pIVar5;
-  auStack_6._16_4_ = (Object *)0x0;
-  iStack_7 = 0;
-  auStack_6._20_4_ = (Action *)0x0;
-  iStack_8 = 0;
-  iStack_9 = 0;
-  iStack_10 = 0;
-  iStack_11 = 0;
-  KStack_12.key = 0;
-  KStack_12.value = 0;
-  auStack_6._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_6._4_4_ = (MethodInfo *)0x0;
-  auStack_6._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_6._12_4_ = 0;
-  uStack_13 = 0;
-  func_?();
-  iStack_14 = -1;
-  _Stack_1c.dummy = &stack0xffffff7c;
-  pIStack_4 = (Il2CppClass *)&stack0xffffff7c;
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (_Stack_1c.dummy = &stack0xffffff7c, pIStack_4 = (Il2CppClass *)&stack0xffffff7c,
-     (TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    _Stack_1c.dummy = &stack0xffffff7c;
-    pIStack_4 = (Il2CppClass *)&stack0xffffff7c;
-    func_?(TypeInfo__AsyncWWWManager);
-  }
-  this = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-  iVar15 = 0;
-  if (this != (HashSet_1_AsyncWebRequest_ *)0x0) {
-    pHVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-             FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                        (auStack_17 + 4),(HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)this,
-                        MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
-                       );
-    auStack_6._20_4_ = pHVar16->hashset;
-    iStack_8 = pHVar16->next;
-    iStack_9 = pHVar16->stamp;
-    iStack_10 = pHVar16->current;
-    pIStack_1 = (Il2CppClass *)0x0;
-    while (cVar18 = func_?(), cVar18 != '\0') {
-      pAVar19 = (AsyncWebRequest *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                          (auStack_6 + 0x14),
-                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
-                         );
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-        func_?(TypeInfo__AsyncWWWManager);
-      }
-      AsyncWWWManager::AsyncWWWManager_Unsubscribe(pAVar19,callback,(MethodInfo *)0x0);
-    }
-    iVar20 = 0;
-    iStack_14 = 0;
-    iVar21 = 0;
-    ((_Stack_1c.type)->data).__klassIndex = 0x3e;
-    pIStack_1 = (Il2CppClass *)0xffffffff;
-    func_?(auStack_6 + 0x14,
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
+                   );
+    func_?(&
                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
                    );
-    if ((_Stack_1c.array)->etype == (Il2CppType *)0x3e) {
-      iVar20 = -1;
-      iStack_14 = -1;
-    }
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AsyncWWWManager);
-    }
-    this_00 = TypeInfo__AsyncWWWManager->static_fields->requests;
-    iVar15 = iVar21;
-    if (this_00 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
-      pDVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System
-               ::Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *
-                          )auStack_17,(Dictionary_2_WinningConditionType_System_Object_ *)this_00,
-                          MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
-                         );
-      auStack_6._0_4_ = pDVar22->dictionary;
-      auStack_6._4_4_ = pDVar22->next;
-      auStack_6._8_4_ = pDVar22->stamp;
-      auStack_6._12_4_ = (pDVar22->current).key;
-      auStack_6._16_4_ = (pDVar22->current).value;
-      pIStack_1 = (Il2CppClass *)0x2;
-      while (iVar23 = iVar20, cVar18 = func_?(), iVar15 = iStack_11, cVar18 != '\0') {
-        KStack_12 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                              ((LevelRewardsManager *)auStack_6,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Current__
-                              );
-        auStack_6._0_4_ = &KStack_12;
-        auStack_6._4_4_ =
-             MethodInfo__System__Collections__Generic__KeyValuePair<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Value__
-        ;
-        this_02 = (Queue_1_System_Int32_ *)func_?();
-        iVar15 = iVar21;
-        if (this_02 == (Queue_1_System_Int32_ *)0x0) goto code_?;
-        pQVar24 = System.dll::System::Collections::Generic::Queue`1[System::Int32]::
-                 Queue_1_System_Int32__GetEnumerator
-                           (&QStack_25,this_02,
-                            MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__GetEnumerator__
-                           );
-        uStack_13._0_4_ = pQVar24->q;
-        uStack_13._4_4_ = pQVar24->idx;
-        iStack_7 = pQVar24->ver;
-        pIStack_1._0_1_ = 3;
-        while (cVar18 = func_?(), cVar18 != '\0') {
-          pAVar19 = (AsyncWebRequest *)func_?();
-          if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-            func_?(TypeInfo__AsyncWWWManager);
-          }
-          AsyncWWWManager::AsyncWWWManager_Unsubscribe(pAVar19,callback,(MethodInfo *)0x0);
-        }
-        iVar21 = iVar23 + 1;
-        pIStack_1 = (Il2CppClass *)CONCAT31(pIStack_1._1_3_,2);
-        *(undefined4 *)((int)_Stack_1c.dummy + iVar21 * 4) = 0x99;
-        iStack_14 = iVar21;
-        func_?();
-        if (iStack_11 != 0) {
-          func_?();
-          iVar15 = iVar21;
-          goto code_?;
-        }
-        iVar20 = iVar21;
-        if (((iVar21 != -1) && (*(int *)((int)_Stack_1c.dummy + iVar21 * 4) == 0x99)) &&
-           (iVar20 = iVar23, iStack_14 = iVar23, iVar21 < 0)) {
-          iVar20 = iVar21;
-          iStack_14 = iVar21;
-        }
-      }
-      *(undefined4 *)((int)_Stack_1c.dummy + iVar23 * 4 + 4) = 0xb8;
-      pIStack_1 = (Il2CppClass *)0xffffffff;
-      func_?();
-      if (iVar15 != 0) goto code_?;
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Value__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__GetEnumerator__
+                   );
+    cRam_? = '\x01';
+    puVar5 = puStack_4;
+  }
+  puStack_4 = puVar5;
+  QStack_6._q = (Queue_1_System_Object_ *)0x0;
+  QStack_6._version = 0;
+  QStack_6._index = 0;
+  QStack_6._currentElement = (Object *)0x0;
+  QStack_7._q = (Queue_1_System_Object_ *)0x0;
+  QStack_7._version = 0;
+  QStack_7._index = 0;
+  QStack_7._currentElement = (Object *)0x0;
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__AsyncWWWManager);
+  }
+  method_00 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)
+              TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+  if (method_00 != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
+    pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+             HashSet_1_System_Object__GetEnumerator
+                       (&HStack_9,(HashSet_1_System_Object_ *)method_00,
+                        MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                       );
+    QStack_6._q = (Queue_1_System_Object_ *)pHVar8->_set;
+    QStack_6._version = pHVar8->_index;
+    QStack_6._index = pHVar8->_version;
+    QStack_6._currentElement = pHVar8->_current;
+    HStack_9._version = 0;
+    pAStack_1._0_1_ = 1;
+    pAStack_1._1_3_ = 0;
+    HStack_9._current = (Object *)&QStack_6;
+    while( true ) {
+      bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::Object]
+              ::HashSet_1_T_Enumerator_System_Object__MoveNext
+                        ((HashSet_1_T_Enumerator_System_Object_ *)&QStack_6,
+                         MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                        );
+      if (bVar10 == 0) break;
+      pOStack_11 = QStack_6._currentElement;
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__AsyncWWWManager);
       }
-      this_01 = TypeInfo__AsyncWWWManager->static_fields->cache;
-      if (this_01 != (AsyncWWWManager_Cache *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+        cRam_? = '\x01';
+      }
+      if (pOStack_11 == (Object *)0x0) goto code_?;
+      method_00 = callback;
+      bVar10 = mscorlib.dll::System::Delegate::Delegate_op_Equality
+                        ((Delegate *)pOStack_11[1].klass,(Delegate *)callback,(MethodInfo *)0x0);
+      if (bVar10 != 0) {
+        pDStack_12 = mscorlib.dll::System::Delegate::Delegate_Remove
+                               ((Delegate *)pOStack_11[1].klass,(Delegate *)callback,
+                                (MethodInfo *)0x0);
+        pAStack_13 = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
+        if (pDStack_12 == (Delegate *)0x0) {
+          pOVar14 = (Object__Class *)0x0;
+        }
+        else {
+          pOVar14 = (Object__Class *)func_?();
+          if (pOVar14 == (Object__Class *)0x0) {
+            func_?();
+            goto code_?;
+          }
+        }
+        pOStack_11[1].klass = pOVar14;
+        func_?();
+      }
+    }
+    pAStack_1 = (AsyncWWWManager__Class *)0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&QStack_6,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+               ,(MethodInfo *)method_00);
+    pAStack_1._0_1_ = 0xff;
+    pAStack_1._1_3_ = 0xffffff;
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__AsyncWWWManager);
+    }
+    method_01 = (MethodInfo *)TypeInfo__AsyncWWWManager->static_fields->requests;
+    if (method_01 != (MethodInfo *)0x0) {
+      pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                          auStack_16,(Dictionary_2_System_Object_System_Object_ *)method_01,
+                          MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
+                         );
+      uStack_17 = 0;
+      uVar18 = *(undefined8 *)&(pDVar15->_current).value;
+      pDStack_12 = (Delegate *)&stack0xffffff70;
+      pAStack_1 = (AsyncWWWManager__Class *)0x0;
+      while( true ) {
+        pAStack_1._0_1_ = 4;
+        bVar10 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                           &stack0xffffff70,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__MoveNext__
+                          );
+        if (bVar10 == 0) break;
+        pQStack_19 = (Queue_1_System_Object_ *)uVar18;
+        if (pQStack_19 == (Queue_1_System_Object_ *)0x0) goto code_?;
+        pQVar20 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                 Queue_1_System_Object__GetEnumerator
+                           ((Queue_1_T_Enumerator_System_Object_ *)(auStack_16 + 8),pQStack_19,
+                            MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__GetEnumerator__
+                           );
+        HStack_9._version = 0;
+        QStack_7._q = pQVar20->_q;
+        QStack_7._version = pQVar20->_version;
+        QStack_7._index = pQVar20->_index;
+        QStack_7._currentElement = pQVar20->_currentElement;
+        pAStack_1._0_1_ = 6;
+        HStack_9._current = (Object *)&QStack_7;
+        while( true ) {
+          method_01 = (MethodInfo *)&UNK_?;
+          bVar10 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]
+                  ::Queue_1_T_Enumerator_System_Object__MoveNext
+                            (&QStack_7,
+                             MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                            );
+          if (bVar10 == 0) break;
+          request = (AsyncWebRequest *)
+                    mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::
+                    Object]::Queue_1_T_Enumerator_System_Object__get_Current
+                              (&QStack_7,
+                               MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                              );
+          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          AsyncWWWManager::AsyncWWWManager_Unsubscribe(request,callback,(MethodInfo *)0x0);
+        }
+        pAStack_1 = (AsyncWWWManager__Class *)CONCAT31(pAStack_1._1_3_,4);
+        mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
+        Queue_1_T_Enumerator_System_Object__Dispose
+                  (&QStack_7,
+                   MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                  );
+      }
+      pAStack_1 = (AsyncWWWManager__Class *)0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)pDStack_12,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__
+                 ,method_01);
+      pAStack_1._0_1_ = 0xff;
+      pAStack_1._1_3_ = 0xffffff;
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AsyncWWWManager);
+      }
+      this = TypeInfo__AsyncWWWManager->static_fields->cache;
+      if (this != (AsyncWWWManager_Cache *)0x0) {
         AsyncWWWManager+Cache::AsyncWWWManager_Cache_UnsubscribeCached
-                  (this_01,callback,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pIStack_3;
+                  (this,callback,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
   }
 code_?:
-  func_?(0);
-code_?:
-  func_?(iVar15,0,0);
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  uVar21 = func_?();
+  uVar21 = func_?(uVar21);
+  func_?(uVar21);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -468,17 +529,29 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager__cctor(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BadgeManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>);
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_Int32_BadgeUrlData_ *)
          func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Dictionary__);
-  TypeInfo__BadgeManager->static_fields->badgeUrls = this;
-  TypeInfo__BadgeManager->static_fields->maxLevelBadge = 0;
+  if (this != (Dictionary_2_System_Int32_BadgeUrlData_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Dictionary__
+              );
+    TypeInfo__BadgeManager->static_fields->badgeUrls = this;
+    func_?(TypeInfo__BadgeManager->static_fields,this);
+    TypeInfo__BadgeManager->static_fields->maxLevelBadge = 0;
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

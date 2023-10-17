@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ThemeSelection : MonoBehaviour
 {
@@ -33,10 +33,6 @@ public class ThemeSelection : MonoBehaviour
 	public string currentDescription;
 	private ThemeMenuController menuController;
 	private Theme previewTheme;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Properties
 	public string ThemeDescription { set; }
@@ -50,46 +46,51 @@ public class ThemeSelection : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreateThemeButtons_c__AnonStorey0
+	private sealed class __c__DisplayClass21_0
 	{
 		// Fields
-		internal ThemeSelectionButton b;
-		internal ThemeSelection _this;
+		public ThemeSelectionButton b;
+		public string identifier;
+		public ThemeData copy;
+		public ThemeSelection __4__this;
 
 		// Constructors
-		public _CreateThemeButtons_c__AnonStorey0();
+		public __c__DisplayClass21_0();
 
 		// Methods
-		internal void __m__0();
+		internal void _CreateThemeButtons_b__2();
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreateThemeButtons_c__AnonStorey1
+	private sealed class __c__DisplayClass23_0
 	{
 		// Fields
-		internal string identifier;
-		internal ThemeData copy;
-		internal _CreateThemeButtons_c__AnonStorey0 __f__ref_0;
+		public string msg;
+		public ThemeSelection __4__this;
 
 		// Constructors
-		public _CreateThemeButtons_c__AnonStorey1();
+		public __c__DisplayClass23_0();
 
 		// Methods
-		internal void __m__0();
+		internal void _ShowThemeRemovalWarning_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _ShowThemeRemovalWarning_c__AnonStorey2
+	private sealed class __c
 	{
 		// Fields
-		internal string msg;
-		internal ThemeSelection _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__25_0;
 
 		// Constructors
-		public _ShowThemeRemovalWarning_c__AnonStorey2();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnThemeRemovalWarningResolved_b__24_0(IUIStack x, BaseEventData y);
+		internal void _GoBackToSettings_b__25_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -107,10 +108,8 @@ public class ThemeSelection : MonoBehaviour
 	private void GoBackToSettings();
 	private void LocalizeAndSetDescriptionText();
 	[CompilerGenerated]
-	private void _CreateThemeButtons_m__0();
+	private void _CreateThemeButtons_b__21_0();
 	[CompilerGenerated]
-	private static void _OnThemeRemovalWarningResolved_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _GoBackToSettings_m__2(IUIStack x, BaseEventData y);
+	private void _CreateThemeButtons_b__21_1();
 }
 

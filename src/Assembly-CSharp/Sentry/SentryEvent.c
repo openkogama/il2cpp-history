@@ -9,61 +9,79 @@ void Assembly-CSharp.dll::Sentry::SentryEvent::SentryEvent__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Sentry__Context);
+    func_?(&TypeInfo__System__DateTime);
+    func_?(&TypeInfo__Sentry__SdkVersion);
+    func_?(&StringLiteral_csharp);
+    func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
+    func_?(&StringLiteral_N);
+    func_?(&StringLiteral_error);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
-  uStack_2 = 0;
-  uStack_3 = 0;
-  uStack_4 = 0;
   (this->fields).platform = StringLiteral_csharp;
-  this_00 = (ScaleAnimationBase *)func_?(TypeInfo__Sentry__SdkVersion);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  (this_00->fields)._._._._.m_CachedPtr = StringLiteral_sentry_unity_lite;
-  (this_00->fields).state = (int32_t)StringLiteral__0_0_4;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,unaff_EDI);
-  (this->fields).sdk = (SdkVersion *)this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  if ((((uint)(TypeInfo__System__Guid->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Guid->_1).cctor_started == 0)) {
+  func_?(&(this->fields).platform,StringLiteral_csharp);
+  value = (SdkVersion *)func_?(TypeInfo__Sentry__SdkVersion);
+  if (value != (SdkVersion *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_sentry_unity_lite);
+      func_?(&StringLiteral__0_0_4);
+      cRam_? = '\x01';
+    }
+    (value->fields).name = StringLiteral_sentry_unity_lite;
+    func_?(&value->fields,StringLiteral_sentry_unity_lite);
+    (value->fields).version = StringLiteral__0_0_4;
+    pMVar1 = (MethodInfo *)&(value->fields).version;
+    func_?(pMVar1,StringLiteral__0_0_4);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
+    pMVar1 = (MethodInfo *)&(this->fields).sdk;
+    (this->fields).sdk = value;
+    func_?(pMVar1,value);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
+    mscorlib.dll::System::Guid::Guid_NewGuid((Guid *)auStack_2,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::Guid::Guid_ToString_1
+                       ((Guid *)&stack0xffffffe4,StringLiteral_N,(MethodInfo *)0x0);
+    (this->fields).event_id = pSVar3;
+    func_?(&this->fields,pSVar3);
+    (this->fields).message = message;
     func_?();
-  }
-  pGVar5 = mscorlib.dll::System::Guid::Guid_NewGuid((Guid *)&stack0xffffffcc,(MethodInfo *)0x0);
-  iStack_1 = pGVar5->_a;
-  uStack_2._0_2_ = pGVar5->_b;
-  uStack_2._2_2_ = pGVar5->_c;
-  uStack_3._0_1_ = pGVar5->_d;
-  uStack_3._1_1_ = pGVar5->_e;
-  uStack_3._2_1_ = pGVar5->_f;
-  uStack_3._3_1_ = pGVar5->_g;
-  uStack_4._0_1_ = pGVar5->_h;
-  uStack_4._1_1_ = pGVar5->_i;
-  uStack_4._2_1_ = pGVar5->_j;
-  uStack_4._3_1_ = pGVar5->_k;
-  pSVar6 = (String *)func_?(&iStack_1);
-  (this->fields).event_id = pSVar6;
-  (this->fields).message = message;
-  if ((((uint)(TypeInfo__System__DateTime->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__DateTime->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    DStack_4 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::DateTime::DateTime_ToString_1
+                       (&DStack_4,StringLiteral_yyyy_MM_ddTHH__mm__ss,(MethodInfo *)0x0);
+    (this->fields).timestamp = pSVar3;
     func_?();
+    (this->fields).level = StringLiteral_error;
+    ppSStack_5 = &(this->fields).level;
+    func_?();
+    pLStack_6 = breadcrumbs;
+    (this->fields).breadcrumbs = breadcrumbs;
+    auStack_2._4_4_ = &(this->fields).breadcrumbs;
+    auStack_2._0_4_ = &UNK_?;
+    func_?();
+    auStack_2._0_4_ = TypeInfo__Sentry__Context;
+    this_00 = (Context *)func_?();
+    if (this_00 != (Context *)0x0) {
+      Context::Context__ctor(this_00,(MethodInfo *)0x0);
+      (this->fields).contexts = this_00;
+      func_?(&(this->fields).contexts,this_00);
+      pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_version
+                         ((MethodInfo *)0x0);
+      (this->fields).release = pSVar3;
+      func_?(&(this->fields).release,pSVar3);
+      (this->fields).tags = tags;
+      func_?(&(this->fields).tags,tags);
+      (this->fields).extra = extra;
+      func_?(&(this->fields).extra,extra);
+      return;
+    }
   }
-  mscorlib.dll::System::DateTime::DateTime_get_UtcNow
-            ((DateTime *)&stack0xffffffcc,(MethodInfo *)0x0);
-  pSVar6 = (String *)func_?();
-  (this->fields).timestamp = pSVar6;
-  (this->fields).level = StringLiteral_error;
-  (this->fields).breadcrumbs = breadcrumbs;
-  this_01 = (Context_2 *)func_?();
-  Context::Context_2__ctor(this_01,(MethodInfo *)0x0);
-  (this->fields).contexts = this_01;
-  pSVar6 = UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_version
-                     ((MethodInfo *)0x0);
-  (this->fields).release = pSVar6;
-  (this->fields).tags = tags;
-  (this->fields).extra = extra;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

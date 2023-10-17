@@ -9,13 +9,12 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVRotator : MVMovable
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _InitAngularVelocity_k__BackingField;
 	protected CullingSubscriberBase cullingSubscriberBase;
 	private static HashSet<MVRotator> selectedRotators;
@@ -30,18 +29,18 @@ public class MVRotator : MVMovable
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
-		internal IntVector min;
-		internal IntVector max;
-		internal MVRotator _this;
+		public MVRotator __4__this;
+		public IntVector min;
+		public IntVector max;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass17_0();
 
 		// Methods
-		internal IModelingConstraint __m__0();
+		internal IModelingConstraint _Initialize_b__0();
 	}
 
 	// Constructors

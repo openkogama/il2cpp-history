@@ -5,77 +5,79 @@ void Assembly-CSharp.dll::ToggleBoxSettings::ToggleBoxSettings_Initialize
                (ToggleBoxSettings *this,int32_t woID,GameObject *root,MethodInfo *method)
 
 {
+  pTVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&StringLiteral_once);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).settingsBase;
-  if (this_00 != (SettingsBase *)0x0) {
-    SettingsBase::SettingsBase_Initialize
-              (this_00,woID,root,MVWorldObjectDocumentationType__Enum_ToggleBox,(MethodInfo *)0x0);
-    if (woID == -1) {
-      this_04 = (Dictionary_2_System_Type_Pool_ *)func_?();
-      System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]
-      ::HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_04,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      value = (CrossPlatformInputManager_VirtualButton *)func_?(TypeInfo__System__Boolean);
-      if (this_04 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets
-        ::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-        Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                  ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                    *)this_04,StringLiteral_once,value,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-code_?:
-        this_01 = (this->fields).toggle;
-        if (this_04 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-          pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                   Dictionary_2_System_Type_Pool__get_Item
-                             (this_04,(Type *)StringLiteral_once,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-          if ((this_01 != (SettingsToggle *)0x0) && (pPVar1 != (Pool *)0x0)) {
-            pBStack2 = TypeInfo__System__Boolean;
-            if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class)
-            {
-              pBStack2 = (Boolean__Class *)pPVar1;
-              pbVar3 = (bool *)func_?();
-              SettingsToggle::SettingsToggle_Initialize
-                        (this_01,StringLiteral_once,*pbVar3,(MethodInfo *)0x0);
-              return;
-            }
-            goto code_?;
-          }
-        }
-      }
-    }
-    else {
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (this_02 != (MVWorldObjectClientManager *)0x0) {
-        this_03 = (PrefabPool *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (this_02,woID,(MethodInfo *)0x0);
-        if (this_03 != (PrefabPool *)0x0) {
-          this_04 = (Dictionary_2_System_Type_Pool_ *)
-                    PrefabPool::PrefabPool_get_MVBatteryPrefab(this_03,(MethodInfo *)0x0);
-          goto code_?;
-        }
-      }
-    }
+  id = woID;
+  this_00 = (pTVar1->fields).settingsBase;
+  if (this_00 == (SettingsBase *)0x0) goto code_?;
+  SettingsBase::SettingsBase_Initialize
+            (this_00,woID,root,MVWorldObjectDocumentationType__Enum_ToggleBox,(MethodInfo *)0x0);
+  if (id == -1) {
+    this = (ToggleBoxSettings *)
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    this_02 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+    if (this_02 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_02,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    this = (ToggleBoxSettings *)((uint)this & 0xffffff);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_02,(Object *)StringLiteral_once,pOVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    this_03 = (pTVar1->fields).toggle;
   }
-  func_?();
-  pBStack2 = extraout_EDX;
+  else {
+    this = (ToggleBoxSettings *)0x0;
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_01 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    woID = 0;
+    this = (ToggleBoxSettings *)id;
+    pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_01,id,(MethodInfo *)0x0);
+    if (pMVar3 == (MVWorldObject *)0x0) goto code_?;
+    this_02 = (pMVar3->fields).data;
+    this_03 = (pTVar1->fields).toggle;
+    if (this_02 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+  }
+  pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+           Dictionary_2_System_Object_System_Object__get_Item
+                     (this_02,(Object *)StringLiteral_once,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+  if ((this_03 != (SettingsToggle *)0x0) && (pOVar2 != (Object *)0x0)) {
+    if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+      pbVar4 = (bool *)func_?(pOVar2);
+      SettingsToggle::SettingsToggle_Initialize
+                (this_03,StringLiteral_once,*pbVar4,(MethodInfo *)0x0);
+      return;
+    }
+    func_?(pOVar2,TypeInfo__System__Boolean);
+  }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

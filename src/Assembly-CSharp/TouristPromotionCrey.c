@@ -6,52 +6,69 @@ void Assembly-CSharp.dll::TouristPromotionCrey::TouristPromotionCrey_Continue
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ITouristAdController>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<ITouristAdController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ITouristAdController>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&
+                    MethodInfo__TouristPromotionCrey____c___Continue_b__2_0_ITouristAdController__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__TouristPromotionCrey____c);
+    func_?(&StringLiteral_TouristPromotion_CreyGames_Conti);
+    func_?(&StringLiteral_TouristPromotion_CreyGames_Conti);
     cRam_? = '\x01';
   }
   if ((this->fields)._.promotionShowsAd == 0) {
-    if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__StatHatWrapper);
     }
     StatHatWrapper::StatHatWrapper_Count
               (StringLiteral_TouristPromotion_CreyGames_Conti,1,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).OnContinueClicked.method)(this,this->klass[1]._0.image);
+    (*(this->klass->vtable).OnContinueClicked.methodPtr)
+              (this,(this->klass->vtable).OnContinueClicked.method);
     return;
   }
-  if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__StatHatWrapper);
   }
   StatHatWrapper::StatHatWrapper_Count
             (StringLiteral_TouristPromotion_CreyGames_Conti,1,(MethodInfo *)0x0);
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__TouristPromotionCrey->static_fields->__f__am_cache0 ==
-      (ExecuteEvents_EventFunction_1_ITouristAdController_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__TouristPromotionCrey___Continue_m__0_ITouristAdController__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ITouristAdController>__EventFunction_System__Object__void__
-              );
-    TypeInfo__TouristPromotionCrey->static_fields->__f__am_cache0 =
-         (ExecuteEvents_EventFunction_1_ITouristAdController_ *)this_00;
-  }
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__TouristPromotionCrey->static_fields->__f__am_cache0;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__TouristPromotionCrey____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,callbackFunction,
+  callbackFunction = TypeInfo__TouristPromotionCrey____c->static_fields->__9__2_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_ITouristAdController_ *)0x0) {
+    if ((TypeInfo__TouristPromotionCrey____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    object = TypeInfo__TouristPromotionCrey____c->static_fields->__9;
+    callbackFunction = (ExecuteEvents_EventFunction_1_ITouristAdController_ *)func_?();
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_ITouristAdController_ *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__TouristPromotionCrey____c___Continue_b__2_0_ITouristAdController__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__TouristPromotionCrey____c->static_fields->__9__2_0 = callbackFunction;
+    func_?(&TypeInfo__TouristPromotionCrey____c->static_fields->__9__2_0);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<ITouristAdController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ITouristAdController>_
             );
   return;
@@ -65,41 +82,26 @@ void Assembly-CSharp.dll::TouristPromotionCrey::TouristPromotionCrey_CreyRedirec
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&StringLiteral_TouristPromotion_CreyGames_Redir);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__StatHatWrapper);
   }
   StatHatWrapper::StatHatWrapper_Count
             (StringLiteral_TouristPromotion_CreyGames_Redir,1,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pPVar1 != (PrefabPool *)0x0) {
-    pMVar2 = PrefabPool::PrefabPool_get_MVCollectiblePrefab(pPVar1,(MethodInfo *)0x0);
-    if (pMVar2 != (MVCollectibleObject *)0x0) {
-      bVar3 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-              CrossPlatformInputManager_VirtualAxis_get_matchWithInputManager
-                        ((CrossPlatformInputManager_VirtualAxis *)pMVar2,(MethodInfo *)0x0);
-      pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pPVar1 != (PrefabPool *)0x0) {
-        pMVar2 = PrefabPool::PrefabPool_get_MVCollectiblePrefab(pPVar1,(MethodInfo *)0x0);
-        if (pMVar2 != (MVCollectibleObject *)0x0) {
-          URL = (String *)
-                mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                Serialization::JsonProperty]::
-                Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                          ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pMVar2,
-                           (MethodInfo *)0x0);
-          BrowserCommGotoRequests::BrowserCommGotoRequests_GotoURL
-                    (URL,bVar3 == 0,0,(MethodInfo *)0x0);
-          return;
-        }
-      }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pCVar2 = (pMVar1->fields)._CreySettings_k__BackingField, pCVar2 != (CreySettings *)0x0)) {
+    bVar3 = (pCVar2->fields)._TouristPromotionCreyRedirect_k__BackingField;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+       (pCVar2 = (pMVar1->fields)._CreySettings_k__BackingField, pCVar2 != (CreySettings *)0x0)) {
+      BrowserCommGotoRequests::BrowserCommGotoRequests_GotoURL
+                ((pCVar2->fields)._TouristPromotionCreyURL_k__BackingField,bVar3 == 0,0,
+                 (MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -116,41 +118,26 @@ void Assembly-CSharp.dll::TouristPromotionCrey::TouristPromotionCrey_Signup
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&StringLiteral_TouristPromotion_CreyGames_Signu);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__StatHatWrapper);
   }
   StatHatWrapper::StatHatWrapper_Count
             (StringLiteral_TouristPromotion_CreyGames_Signu,1,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pPVar1 != (PrefabPool *)0x0) {
-    pMVar2 = PrefabPool::PrefabPool_get_MVCollectiblePrefab(pPVar1,(MethodInfo *)0x0);
-    if (pMVar2 != (MVCollectibleObject *)0x0) {
-      bVar3 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-              CrossPlatformInputManager_VirtualAxis_get_matchWithInputManager
-                        ((CrossPlatformInputManager_VirtualAxis *)pMVar2,(MethodInfo *)0x0);
-      pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pPVar1 != (PrefabPool *)0x0) {
-        pMVar2 = PrefabPool::PrefabPool_get_MVCollectiblePrefab(pPVar1,(MethodInfo *)0x0);
-        if (pMVar2 != (MVCollectibleObject *)0x0) {
-          URL = (String *)
-                mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                Serialization::JsonProperty]::
-                Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                          ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pMVar2,
-                           (MethodInfo *)0x0);
-          BrowserCommGotoRequests::BrowserCommGotoRequests_GotoURL
-                    (URL,bVar3 == 0,0,(MethodInfo *)0x0);
-          return;
-        }
-      }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pCVar2 = (pMVar1->fields)._CreySettings_k__BackingField, pCVar2 != (CreySettings *)0x0)) {
+    bVar3 = (pCVar2->fields)._TouristPromotionCreyRedirect_k__BackingField;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+       (pCVar2 = (pMVar1->fields)._CreySettings_k__BackingField, pCVar2 != (CreySettings *)0x0)) {
+      BrowserCommGotoRequests::BrowserCommGotoRequests_GotoURL
+                ((pCVar2->fields)._TouristPromotionCreyURL_k__BackingField,bVar3 == 0,0,
+                 (MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -167,45 +154,25 @@ void Assembly-CSharp.dll::TouristPromotionCrey::TouristPromotionCrey_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).adContinueButton;
   if (this_00 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,(this->fields)._.promotionShowsAd,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     StatHatWrapper::StatHatWrapper_Count
               (StringLiteral_TouristPromotion_CreyGames,1,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void <Continue>m__0(ITouristAdController, BaseEventData) */
-
-void Assembly-CSharp.dll::TouristPromotionCrey::TouristPromotionCrey__Continue_m__0
-               (ITouristAdController *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (ITouristAdController *)0x0) {
-    func_?(0,TypeInfo__ITouristAdController,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -13,7 +13,9 @@ Assembly-CSharp.dll::SentryTowerIcePackage::SentryTowerIcePackage_Create
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,0xb,impulse._0_8_,impulse.z,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_2
+            (__return_storage_ptr__,InteractionPackageType__Enum_SentryTowerIce,impulse,
+             (MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -25,9 +27,8 @@ void Assembly-CSharp.dll::SentryTowerIcePackage::SentryTowerIcePackage_ParseAndH
                ,InteractionData interactionStruct,MethodInfo *method)
 
 {
-  pVVar1 = (Vector3 *)func_?(auStack_2,&interactionStruct,0);
   InteractionPackage::InteractionPackage_HandlePackage_4
-            ((InteractionPackage *)this,worldObjectClient,*pVVar1,
+            ((InteractionPackage *)this,worldObjectClient,interactionStruct.impulse,
              AvatarModifierPackageType__Enum_Frozen,(MethodInfo *)0x0);
   return;
 }

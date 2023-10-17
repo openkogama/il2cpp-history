@@ -7,62 +7,62 @@ void Assembly-CSharp.dll::FirstTimeRequestActivatableElementsEvaluation::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__FirstTimeRequestActivatableElementsEvaluation____c___OnEnable_b__0_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c);
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__FirstTimeRequestActivatableElementsEvaluation->static_fields->__f__am_cache0 ==
-      (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__FirstTimeRequestActivatableElementsEvaluation___OnEnable_m__0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>__EventFunction_System__Object__void__
-              );
-    TypeInfo__FirstTimeRequestActivatableElementsEvaluation->static_fields->__f__am_cache0 =
-         (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)this_00;
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c->_1).cctor_finished_or_no_cctor
+      == 0) {
+    func_?(TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c);
   }
   callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__FirstTimeRequestActivatableElementsEvaluation->static_fields->__f__am_cache0;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+       TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c->static_fields->__9__0_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)0x0) {
+    if ((TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c);
+    }
+    object = TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__FirstTimeRequestActivatableElementsEvaluation____c___OnEnable_b__0_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c->static_fields->__9__0_0 =
+         callbackFunction;
+    func_?(&TypeInfo__FirstTimeRequestActivatableElementsEvaluation____c->static_fields->
+                     __9__0_0,callbackFunction);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,callbackFunction,
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
             );
-  return;
-}
-
-
-/* Void <OnEnable>m__0(IFirstTimeElementActivator, BaseEventData) */
-
-void Assembly-CSharp.dll::FirstTimeRequestActivatableElementsEvaluation::
-     FirstTimeRequestActivatableElementsEvaluation__OnEnable_m__0
-               (IFirstTimeElementActivator *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IFirstTimeElementActivator *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 

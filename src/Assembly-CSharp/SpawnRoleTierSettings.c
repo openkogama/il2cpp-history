@@ -7,23 +7,26 @@ void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings_Initializ
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).tierSelectedEffectObjects;
-  (this->fields).canSelectTier0 = canSelectTier0;
   (this->fields).OnChangeTierCallback = OnChangeTierCallback;
-  if (this_00 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    pGVar1 = (GameObject *)
-             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-             IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                       ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_00,
-                        currentTier & 0xff,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
-                       );
-    if (pGVar1 != (GameObject *)0x0) {
+  (this->fields).canSelectTier0 = canSelectTier0;
+  func_?(&(this->fields).OnChangeTierCallback,OnChangeTierCallback);
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).tierSelectedEffectObjects;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,currentTier & 0xff,
+                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
+                        );
+    if (this_01 != (RegexCharClass_SingleRange)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,1,(MethodInfo *)0x0);
+                ((GameObject *)this_01,1,(MethodInfo *)0x0);
       pGVar1 = (this->fields).tierZero;
       if (pGVar1 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -97,70 +100,63 @@ void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings_SelectTie
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__SpawnRoleTierSettings____c___SelectTier_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__SpawnRoleTierSettings____c);
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_UIPushOption_ *)(this->fields).OnChangeTierCallback;
-  if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,newTier,
-               MethodInfo__UnityEngine__Events__UnityAction<MV::Common::GamePassTier>__Invoke_MV__Common__GamePassTier_
-              );
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    if (TypeInfo__SpawnRoleTierSettings->static_fields->__f__am_cache0 ==
-        (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)0x0,
-                 MethodInfo__SpawnRoleTierSettings___SelectTier_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                );
-      TypeInfo__SpawnRoleTierSettings->static_fields->__f__am_cache0 =
-           (ExecuteEvents_EventFunction_1_IUIStack_ *)this_01;
+  pUVar1 = (this->fields).OnChangeTierCallback;
+  if (pUVar1 != (UnityAction_1_MV_Common_GamePassTier_ *)0x0) {
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,newTier,(pUVar1->fields)._._.method);
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__SpawnRoleTierSettings____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__SpawnRoleTierSettings____c);
     }
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-         TypeInfo__SpawnRoleTierSettings->static_fields->__f__am_cache0;
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
+    callbackFunction = TypeInfo__SpawnRoleTierSettings____c->static_fields->__9__10_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if ((TypeInfo__SpawnRoleTierSettings____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__SpawnRoleTierSettings____c);
+      }
+      object = TypeInfo__SpawnRoleTierSettings____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IUIStack_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__SpawnRoleTierSettings____c___SelectTier_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__SpawnRoleTierSettings____c->static_fields->__9__10_0 = callbackFunction;
+      func_?(&TypeInfo__SpawnRoleTierSettings____c->static_fields->__9__10_0,
+                      callbackFunction);
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,callbackFunction,
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void <SelectTier>m__0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings__SelectTier_m__0
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+code_?:
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

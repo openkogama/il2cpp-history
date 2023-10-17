@@ -7,39 +7,35 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_AttributeValue__0___AttributePoi);
     cRam_? = '\x01';
   }
   args = (Object__Array *)func_?(TypeInfo__System__Object,4);
   pKVar1 = (this->fields)._.KogamaSettingBool;
   if (pKVar1 == (KogamaSettingBool *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
 code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
 code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
 code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
   }
   else {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__System__Boolean);
       cRam_? = '\x01';
     }
     pOVar3 = (pKVar1->fields)._.value;
@@ -62,50 +58,53 @@ code_?:
       goto code_?;
     }
 code_?:
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar3;
-    iStack_8 = (this->fields).AttributePointsValue;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
-    if (pOVar3 != (Object *)0x0) {
-      iVar7 = func_?(pOVar3,(args->klass->_0).element_class);
-      if (iVar7 != 0) goto code_?;
-      goto code_?;
-    }
+    if (args->max_length != 0) {
+      args->vector[0] = pOVar3;
+      func_?(args->vector,pOVar3);
+      iStack_8 = (this->fields).AttributePointsValue;
+      pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
+      if (pOVar3 != (Object *)0x0) {
+        iVar7 = func_?(pOVar3,(args->klass->_0).element_class);
+        if (iVar7 != 0) goto code_?;
+        goto code_?;
+      }
 code_?:
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar3;
-    iStack_9 = (this->fields)._ExclusivityFlag_k__BackingField;
-    pOVar3 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
-                             ,&iStack_9);
-    if (pOVar3 != (Object *)0x0) {
-      iVar7 = func_?(pOVar3,(args->klass->_0).element_class);
-      if (iVar7 != 0) goto code_?;
-      goto code_?;
-    }
+      if (args->max_length < 2) goto code_?;
+      args->vector[1] = pOVar3;
+      func_?(args->vector + 1,pOVar3);
+      iStack_9 = (this->fields)._ExclusivityFlag_k__BackingField;
+      pOVar3 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
+                               ,&iStack_9);
+      if (pOVar3 != (Object *)0x0) {
+        iVar7 = func_?(pOVar3,(args->klass->_0).element_class);
+        if (iVar7 != 0) goto code_?;
+        goto code_?;
+      }
 code_?:
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar3;
-    pKVar1 = (this->fields)._.KogamaSettingBool;
-    if (pKVar1 != (KogamaSettingBool *)0x0) {
+      if (args->max_length < 3) goto code_?;
+      args->vector[2] = pOVar3;
+      func_?(args->vector + 2,pOVar3);
+      pKVar1 = (this->fields)._.KogamaSettingBool;
+      if (pKVar1 == (KogamaSettingBool *)0x0) {
+code_?:
+        if (3 < args->max_length) {
+          args->vector[3] = (Object *)pKVar1;
+          func_?(args->vector + 3,pKVar1);
+          pSVar10 = mscorlib.dll::System::String::String_Format_3
+                             (StringLiteral_AttributeValue__0___AttributePoi,args,(MethodInfo *)0x0)
+          ;
+          return pSVar10;
+        }
+        goto code_?;
+      }
       iVar7 = func_?(pKVar1,(args->klass->_0).element_class);
       if (iVar7 != 0) goto code_?;
       goto code_?;
     }
-code_?:
-    if (3 < args->max_length) {
-      args->vector[3] = (Object *)pKVar1;
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar10 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_AttributeValue__0___AttributePoi,args,(MethodInfo *)0x0);
-      return pSVar10;
-    }
   }
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
+code_?:
+  func_?();
   pOVar3 = extraout_ECX;
   pBVar4 = extraout_EDX;
 code_?:
@@ -159,7 +158,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
   pKVar1 = (this->fields)._.KogamaSettingBool;
   if (pKVar1 != (KogamaSettingBool *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__System__Boolean);
       cRam_? = '\x01';
     }
     pOVar2 = (pKVar1->fields)._.value;
@@ -175,7 +174,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
       goto code_?;
     }
   }
-  func_?(0);
+  func_?();
   pOVar2 = extraout_ECX;
   pBVar3 = extraout_EDX;
 code_?:

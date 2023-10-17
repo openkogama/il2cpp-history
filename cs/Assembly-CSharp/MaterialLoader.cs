@@ -8,12 +8,12 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MaterialLoader : MonoBehaviour
 {
 	// Fields
-	private const string highResAtlasFileName = "AssetBundles/Atlas/atlas1.unity3d";
+	private const string highResAtlasFileName = "AssetBundles/Atlas/atlas.unity3d";
 	[SerializeField]
 	private Material cubeModelMaterialHigh;
 	[SerializeField]
@@ -29,7 +29,6 @@ public class MaterialLoader : MonoBehaviour
 	[SerializeField]
 	private Texture2D lowResMaterials;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Material _CubeModelMaterial_k__BackingField;
 	private uint atlasHash;
 
@@ -51,6 +50,7 @@ public class MaterialLoader : MonoBehaviour
 	private void SetupMaterials();
 	public void Initialize();
 	private void DownloadWhenPossible();
+	private Texture2D FixTexture(Texture2D source);
 	private void Callback(UnityWebRequest www);
 	private void InitAllMaterials(bool useSM3);
 	private uint Hash(Texture2D tex);

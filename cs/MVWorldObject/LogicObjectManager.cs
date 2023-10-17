@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LogicObjectManager
 {
@@ -26,6 +26,7 @@ public class LogicObjectManager
 
 	// Properties
 	public int TimeStamp { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public int FrameCount { get; }
 
 	// Nested types
 	public enum ValidateLinkStatus
@@ -72,7 +73,7 @@ public class LogicObjectManager
 	public void Update();
 	public static int ResetChunk(int woID, IWorldObjectManager worldObjectManager);
 	public static ValidateObjectLinkStatus ValidateObjectLink(ObjectLink objectLink, IWorldObjectManager worldObjectManager, out ReportSeverity reportSeverity);
-	public static ValidateLinkStatus ValidateLink(int linkOutputWoId, int linkInputWoId, IWorldObjectManager worldObjectManager, out ReportSeverity reportSeverity);
+	public static ValidateLinkStatus ValidateLink(int linkOutputWoId, int linkInputWoId, IWorldObjectManager worldObjectManager, bool validateLoops, out ReportSeverity reportSeverity);
 	private static bool DoesLinkExist(MVWorldObject outputWo, int inputWOID);
 	private static void ValidateLink(int woIdFrom, int woIdTo, IWorldObjectManager worldObjectManager, ref bool loopDetected);
 	private static void ResetNode(int woID, HashSet<int> resetNodes, IWorldObjectManager worldObjectManager);

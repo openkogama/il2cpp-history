@@ -6,16 +6,11 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Value__0_);
     cRam_? = '\x01';
   }
-  arg0 = (this->fields)._.value;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar1 = mscorlib.dll::System::String::String_Format
-                     (StringLiteral_Value__0_,arg0,(MethodInfo *)0x0);
+                     (StringLiteral_Value__0_,(this->fields)._.value,(MethodInfo *)0x0);
   return pSVar1;
 }
 
@@ -27,25 +22,17 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                (KogamaSettingBool *this,bool value,MethodInfo *method)
 
 {
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,unaff_EBP);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  uVar1 = func_?(TypeInfo__System__Boolean,&stack0x00000013);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  uRam_? = uVar1;
-  if (pARam0000000c !=
-      (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[System::Collections::Generic::Dictionary`2[System::String,System
-    ::Object]]::Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object__Invoke
-              (pARam0000000c,(Dictionary_2_System_String_System_Object_ *)0x0,
-               MethodInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>__Invoke_MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting_
-              );
+  uRam_? = func_?(TypeInfo__System__Boolean,&stack0x00000013);
+  func_?(8,uRam_?);
+  if (iRam_? != 0) {
+    (**(code **)(iRam_? + 0xc))
+              (*(undefined4 *)(iRam_? + 0x20),0,*(undefined4 *)(iRam_? + 0x14));
   }
   return;
 }
@@ -58,26 +45,30 @@ bool MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pBStack_1 = (Boolean__Class *)&TypeInfo__System__Boolean;
+    func_?();
     cRam_? = '\x01';
   }
-  pOVar1 = (this->fields)._.value;
-  if (pOVar1 == (Object *)0x0) {
-    func_?(0);
-    pOVar1 = extraout_ECX;
-    pBVar2 = extraout_EDX;
-  }
-  else {
-    pBVar2 = TypeInfo__System__Boolean;
-    if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-      pbVar3 = (bool *)func_?(pOVar1);
+  pOVar2 = (this->fields)._.value;
+  if (pOVar2 != (Object *)0x0) {
+    if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+      pBStack_1 = (Boolean__Class *)pOVar2;
+      pbVar3 = (bool *)func_?();
       return *pbVar3;
     }
+    pBStack_1 = TypeInfo__System__Boolean;
+    pOStack_4 = pOVar2;
+    func_?();
+    pcVar5 = (code *)swi(3);
+    bVar6 = (*pcVar5)();
+    return bVar6;
   }
-  func_?(pOVar1,pBVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pBStack_1 = (Boolean__Class *)&stack0xfffffffc;
+  uVar7 = func_?(&puStack_8);
+  func_?(uVar7);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -89,25 +80,18 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
     cRam_? = '\x01';
   }
   bStack1 = value;
   pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)
-            (this->fields)._.OnValueChange;
   (this->fields)._.value = pOVar2;
-  if (this_00 !=
-      (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[System::Collections::Generic::Dictionary`2[System::String,System
-    ::Object]]::Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object__Invoke
-              (this_00,(Dictionary_2_System_String_System_Object_ *)this,
-               MethodInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>__Invoke_MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting_
-              );
+  func_?(&this->fields,pOVar2);
+  if ((this->fields)._.OnValueChange !=
+      (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
+    pAVar3 = (this->fields)._.OnValueChange;
+    (*(pAVar3->fields)._._.invoke_impl)
+              ((pAVar3->fields)._._.method_code,this,(pAVar3->fields)._._.method);
   }
   return;
 }

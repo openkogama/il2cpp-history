@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class HealthBar : MonoBehaviour
 {
@@ -15,7 +15,6 @@ public class HealthBar : MonoBehaviour
 	public Transform healthPivot;
 	public Transform oxygenPivot;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private float _MaxHealth_k__BackingField;
 
 	// Properties

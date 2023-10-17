@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerListToggle : MonoBehaviour
 {
@@ -17,24 +17,38 @@ public class PlayerListToggle : MonoBehaviour
 	private bool showingPlayerWindow;
 	[SerializeField]
 	private PlayerListsHold playerListsPrefab;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CreatePlayerList_c__AnonStorey0
+	private sealed class __c__DisplayClass5_0
 	{
 		// Fields
-		internal PlayerListsHold newPlayerLists;
-		internal PlayerListToggle _this;
+		public PlayerListsHold newPlayerLists;
+		public PlayerListToggle __4__this;
 
 		// Constructors
-		public _CreatePlayerList_c__AnonStorey0();
+		public __c__DisplayClass5_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _CreatePlayerList_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__5_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__7_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _CreatePlayerList_b__5_0(IUIStack x, BaseEventData y);
+		internal void _LateUpdate_b__7_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -47,10 +61,6 @@ public class PlayerListToggle : MonoBehaviour
 	private void OnPop();
 	private void LateUpdate();
 	[CompilerGenerated]
-	private void _Start_m__0(IShortcutKeyRegister x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _CreatePlayerList_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _LateUpdate_m__2(IUIStack x, BaseEventData y);
+	private void _Start_b__3_0(IShortcutKeyRegister x, BaseEventData y);
 }
 

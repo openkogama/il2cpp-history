@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventoryItemPreviewSell : ManageItemPage
 {
@@ -36,66 +36,80 @@ public class InventoryItemPreviewSell : ManageItemPage
 	private UnityEngine.UI.Text compareText;
 	private InventoryItem previewItem;
 	private bool addingToMarket;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _AddToMarket_c__AnonStorey0
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal string txt;
+		public string txt;
 
 		// Constructors
-		public _AddToMarket_c__AnonStorey0();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _AddToMarket_b__1(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__13_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__15_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_2;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _AddToMarket_b__13_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnRemoveFromMarketplace_b__15_0(IUIStack x, BaseEventData y);
+		internal void _OnAddToMarketplaceReturn_b__16_0(IUIStack x, BaseEventData y);
+		internal void _OnAddToMarketplaceReturn_b__16_2(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnRemoveFromMarketplace_c__AnonStorey1
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		internal string txt;
+		public string txt;
 
 		// Constructors
-		public _OnRemoveFromMarketplace_c__AnonStorey1();
+		public __c__DisplayClass15_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnRemoveFromMarketplace_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnAddToMarketplaceReturn_c__AnonStorey2
+	private sealed class __c__DisplayClass16_0
 	{
 		// Fields
-		internal string txt;
+		public string txt;
 
 		// Constructors
-		public _OnAddToMarketplaceReturn_c__AnonStorey2();
+		public __c__DisplayClass16_0();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnAddToMarketplaceReturn_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnAddToMarketplaceReturn_c__AnonStorey3
+	private sealed class __c__DisplayClass16_1
 	{
 		// Fields
-		internal string txt;
+		public string txt;
 
 		// Constructors
-		public _OnAddToMarketplaceReturn_c__AnonStorey3();
+		public __c__DisplayClass16_1();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnAddToMarketplaceReturn_b__3(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -108,13 +122,5 @@ public class InventoryItemPreviewSell : ManageItemPage
 	private void OnRemoveFromMarketplace(bool success);
 	private void OnAddToMarketplaceReturn(bool success);
 	private void OnLoadMarketPlaceItem(object sender, ReceivedItemFromQueryEventArgs e);
-	[CompilerGenerated]
-	private static void _AddToMarket_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnRemoveFromMarketplace_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnAddToMarketplaceReturn_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnAddToMarketplaceReturn_m__3(IUIStack x, BaseEventData y);
 }
 

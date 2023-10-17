@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TierUnlockedItemsRewardInfo : MonoBehaviour, IGamePassShopContent
 {
@@ -31,16 +31,16 @@ public class TierUnlockedItemsRewardInfo : MonoBehaviour, IGamePassShopContent
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnSeeItemsButtonPressed_c__AnonStorey0
+	private sealed class __c__DisplayClass8_0
 	{
 		// Fields
-		internal TierUnlockedItemsPopup tierUnlockedItemsPopup;
+		public TierUnlockedItemsPopup tierUnlockedItemsPopup;
 
 		// Constructors
-		public _OnSeeItemsButtonPressed_c__AnonStorey0();
+		public __c__DisplayClass8_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnSeeItemsButtonPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

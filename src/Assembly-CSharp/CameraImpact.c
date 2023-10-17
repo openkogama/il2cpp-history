@@ -6,11 +6,13 @@ void Assembly-CSharp.dll::CameraImpact::CameraImpact__ctor
                float forceMultiplier,Space__Enum impactSpace,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).impactDirection.x = impactDirection.x;
   (this->fields).impactDirection.y = impactDirection.y;
   (this->fields).impactDirection.z = impactDirection.z;
   (this->fields).impactCurve = impactCurve;
+  func_?(&(this->fields).impactCurve,impactCurve);
   (this->fields).forceMultiplier = forceMultiplier;
   (this->fields).impactSpace = impactSpace;
   return;

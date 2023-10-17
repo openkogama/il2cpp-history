@@ -6,46 +6,37 @@ void Assembly-CSharp.dll::ToggleStateHandlerTransparent::
                (ToggleStateHandlerTransparent *this,MethodInfo *method)
 
 {
-  pBVar1 = (this->fields)._.button;
-  if (pBVar1 != (Button *)0x0) {
-    pIVar2 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                       ((Selectable *)pBVar1,(MethodInfo *)0x0);
-    if (pIVar2 != (Image *)0x0) {
-      pIStack_3 = (pIVar2->klass->vtable).set_color.methodPtr;
-      puVar4 = (undefined4 *)(*(code *)(pIVar2->klass->vtable).get_color.method)(&pIStack_3,pIVar2)
-      ;
-      pIStack_3 = (Il2CppMethodPointer)*puVar4;
-      uStack_5 = puVar4[1];
-      uStack_6 = puVar4[2];
-      uStack_7 = puVar4[3];
-      if ((this->fields)._.toggleState == 0) {
-        fVar8 = (this->fields).notToggled;
-      }
-      else {
-        fVar8 = (this->fields).toggled;
-      }
-      pBVar1 = (this->fields)._.button;
-      if (pBVar1 != (Button *)0x0) {
-        pIVar2 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                           ((Selectable *)pBVar1,(MethodInfo *)0x0);
-        pIVar9 = pIStack_3;
-        pIStack_10 = pIStack_3;
-        uStack_11 = uStack_5;
-        uStack_12 = uStack_6;
-        fStack_13 = fVar8;
-        if (pIVar2 != (Image *)0x0) {
-          pIStack_3 = (pIVar2->klass->vtable).get_raycastTarget.methodPtr;
-          (*(code *)(pIVar2->klass->vtable).set_color.method)
-                    (pIVar2,pIVar9,uStack_5,uStack_6,fVar8);
-          return;
-        }
-      }
-    }
+  if ((this->fields)._.usingImageComponent == 0) {
+    this_00 = (this->fields)._.button;
+    if (this_00 == (Button *)0x0) goto code_?;
+    pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                       ((Selectable *)this_00,(MethodInfo *)0x0);
   }
-  pIStack_3 = (Il2CppMethodPointer)0x0;
+  else {
+    pIVar1 = (this->fields)._.imageComponent;
+  }
+  if (pIVar1 != (Image *)0x0) {
+    puVar2 = (undefined4 *)
+             (*(pIVar1->klass->vtable).get_color.methodPtr)
+                       (&uStack_3,pIVar1,(pIVar1->klass->vtable).get_color.method);
+    uStack_3 = *puVar2;
+    uStack_4 = puVar2[1];
+    uStack_5 = puVar2[2];
+    if ((this->fields)._.toggleState == 0) {
+      fStack_6 = (this->fields).notToggled;
+    }
+    else {
+      fStack_6 = (this->fields).toggled;
+    }
+    (*(pIVar1->klass->vtable).set_color.methodPtr)
+              (pIVar1,uStack_3,uStack_4,uStack_5,fStack_6,(pIVar1->klass->vtable).set_color.method
+              );
+    return;
+  }
+code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -59,11 +50,10 @@ void Assembly-CSharp.dll::ToggleStateHandlerTransparent::ToggleStateHandlerTrans
   (this->fields).toggled = 1.0;
   (this->fields).notToggled = 0.3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

@@ -1,58 +1,55 @@
 
-/* XpBooster GetRule[XpBooster](SubscriptionBenefit) */
+/* Object GetRule[Object](SubscriptionBenefit) */
 
-XpBooster *
-MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-SubscriptionRulesWrapper_GetRule_2
-          (SubscriptionRulesWrapper *this,SubscriptionBenefit__Enum subscriptionBenefit,
-          MethodInfo *method)
+Object * MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+         SubscriptionRulesWrapper_GetRule
+                   (SubscriptionRulesWrapper *this,SubscriptionBenefit__Enum subscriptionBenefit,
+                   MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pMVar1 = method;
   SVar2 = subscriptionBenefit;
   pSVar3 = this;
-  pIStack_4 = (IsolatedStorageException *)0x0;
+  pOStack_4 = (Object *)0x0;
   pSVar5 = (this->fields).subscriptionBase;
   if (pSVar5 != (SubscriptionBase *)0x0) {
-    cVar6 = (*(code *)(*method->parameters)->data)
-                      (pSVar5,subscriptionBenefit,&pIStack_4,*method->parameters);
+    cVar6 = (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
+                      (pSVar5,subscriptionBenefit,&pOStack_4,
+                       ((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
     if (cVar6 != '\0') {
-      return (XpBooster *)pIStack_4;
+      return pOStack_4;
     }
     pSVar7 = (pSVar3->fields).subscriptionDefault;
-    unaff_EDI = (SubscriptionRulesWrapper *)SVar2;
+    unaff_EBX = (SubscriptionRulesWrapper *)SVar2;
     if (pSVar7 != (SubscriptionDefault *)0x0) {
-      cVar6 = (*(code *)(*pMVar1->parameters)->data)(pSVar7,SVar2,&pIStack_4,*pMVar1->parameters);
+      cVar6 = (*((pMVar1->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
+                        (pSVar7,SVar2,&pOStack_4,((pMVar1->field7_0x1c).rgctx_data)->rgctxDataDummy)
+      ;
       if (cVar6 != '\0') {
-        return (XpBooster *)pIStack_4;
+        return pOStack_4;
       }
       goto code_?;
     }
   }
-  func_?(0);
-code_?:
-  this = unaff_EDI;
-  arg1 = (Object *)
-         func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionBenefit,&this);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  message = mscorlib.dll::System::String::String_Concat
-                      ((Object *)StringLiteral_SubscriptionDefault_must_impleme,arg1,
-                       (MethodInfo *)0x0);
-  this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1(this_00,message,(MethodInfo *)0x0);
-  pIStack_4 = this_00;
   func_?();
-  pcVar8 = (code *)swi(3);
-  pXVar9 = (XpBooster *)(*pcVar8)();
-  return pXVar9;
+code_?:
+  this = unaff_EBX;
+  uVar8 = func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionBenefit,&this);
+  pOVar9 = (Object *)func_?(uVar8);
+  pMVar1 = (MethodInfo *)0x0;
+  arg0 = (Object *)func_?(&StringLiteral_SubscriptionDefault_must_impleme);
+  message = mscorlib.dll::System::String::String_Concat(arg0,pOVar9,pMVar1);
+  uVar8 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar8);
+  func_?(this_00);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  func_?(&
+                  System__Object_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<System::Object>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                 );
+  func_?();
+  pcVar10 = (code *)swi(3);
+  pOVar9 = (Object *)(*pcVar10)();
+  return pOVar9;
 }
 
 
@@ -64,239 +61,201 @@ SubscriptionRulesWrapper_GetSubscription(SubscriptionType__Enum subscriptionType
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__SubscriptionMember1
+                   );
+    func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__SubscriptionMember2
+                   );
+    func_?(&
+                    TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__BuiltInTypes__SubscriptionNone
+                   );
     cRam_? = '\x01';
   }
-  if (subscriptionType != SubscriptionType__Enum_None) {
-    if (subscriptionType == SubscriptionType__Enum_Membership1) {
-      pSVar1 = (ScaleAnimationBase *)
-               func_?(
-                              TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__SubscriptionMember1
+  if (subscriptionType == SubscriptionType__Enum_None) {
+    pSVar1 = (SubscriptionBase *)
+             func_?(
+                            TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__BuiltInTypes__SubscriptionNone
+                            );
+    if (pSVar1 != (SubscriptionBase *)0x0) {
+      SubscriptionBase::SubscriptionBase__ctor(pSVar1,(MethodInfo *)0x0);
+      return pSVar1;
+    }
+  }
+  else if (subscriptionType == SubscriptionType__Enum_Membership1) {
+    pSVar1 = (SubscriptionBase *)
+             func_?(
+                            TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__SubscriptionMember1
+                            );
+    if (pSVar1 != (SubscriptionBase *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                       );
+        func_?(&
+                        TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                       );
+        func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster);
+        cRam_? = '\x01';
+      }
+      SubscriptionBase::SubscriptionBase__ctor(pSVar1,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(pSVar1->fields).benefits;
+      pMVar3 = (MethodInfo *)&UNK_?;
+      pOVar4 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster
                               );
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      pDVar2 = 
-      TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>
-      ;
-      pHVar3 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-      System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]
-      ::HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                (pHVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Dictionary__
-                );
-      (pSVar1->fields)._._._._.m_CachedPtr = pHVar3;
-      Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                (pSVar1,0.0,(MethodInfo *)pDVar2);
-      pDVar4 = (pSVar1->fields)._._._._.m_CachedPtr;
-      pXVar5 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
-      pSVar6 = (ScaleAnimationBase *)func_?();
-      Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                (pSVar6,0.0,(MethodInfo *)pXVar5);
-      (pSVar6->fields)._._._._.m_CachedPtr = (void *)0x32;
-      (pSVar6->fields).state = 10;
-      (pSVar6->fields).originalScale.x = 1.4013e-44;
-      (pSVar6->fields).originalScale.y = 5.60519e-43;
-      if (pDVar4 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_ *)
-                    0x0) {
-        subscriptionType =
-             (SubscriptionType__Enum)
-             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-        ;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-        SubscriptionBenefit,System::Object]::
-        Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                  (pDVar4,SubscriptionBenefit__Enum_XPBoost,(Object *)pSVar6,
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-                  );
-        subscriptionType =
-             (SubscriptionType__Enum)
-             TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean;
-        pDVar4 = (pSVar1->fields)._._._._.m_CachedPtr;
-        pSVar6 = (ScaleAnimationBase *)func_?();
-        Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                  (pSVar6,0.0,(MethodInfo *)pDVar2);
-        *(undefined1 *)&(pSVar6->fields)._._._._.m_CachedPtr = 1;
-        if (pDVar4 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_ *
-                      )0x0) {
-          subscriptionType =
-               (SubscriptionType__Enum)
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-          ;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-          SubscriptionBenefit,System::Object]::
-          Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                    (pDVar4,SubscriptionBenefit__Enum_FreeBuildingGameObjects,(Object *)pSVar6,
+      if (pOVar4 != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  (pOVar4,ExceptionArgument__Enum_obj,pMVar3);
+        pOVar4[1].klass = (Object__Class *)0x32;
+        pOVar4[1].monitor = (MonitorData *)0xa;
+        pOVar4[2].klass = (Object__Class *)0xa;
+        pOVar4[2].monitor = (MonitorData *)0x190;
+        if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (pDVar2,(Object *)0x1,pOVar4,
                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                     );
-          subscriptionType =
-               (SubscriptionType__Enum)
-               TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean;
-          pDVar4 = (pSVar1->fields)._._._._.m_CachedPtr;
-          pSVar6 = (ScaleAnimationBase *)func_?();
-          Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                    (pSVar6,0.0,(MethodInfo *)pDVar2);
-          *(undefined1 *)&(pSVar6->fields)._._._._.m_CachedPtr = 1;
-          if (pDVar4 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_
-                         *)0x0) {
-            subscriptionType =
-                 (SubscriptionType__Enum)
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-            ;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-            SubscriptionBenefit,System::Object]::
-            Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                      (pDVar4,SubscriptionBenefit__Enum_FreeBuildingMaterials,(Object *)pSVar6,
-                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-                      );
-            subscriptionType =
-                 (SubscriptionType__Enum)
-                 TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
-            ;
-            pDVar4 = (pSVar1->fields)._._._._.m_CachedPtr;
-            pSVar6 = (ScaleAnimationBase *)func_?();
-            Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                      (pSVar6,0.0,(MethodInfo *)pDVar2);
-            *(undefined1 *)&(pSVar6->fields)._._._._.m_CachedPtr = 1;
-            if (pDVar4 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_
-                           *)0x0) {
-              subscriptionType =
-                   (SubscriptionType__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-              ;
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription
-              ::SubscriptionBenefit,System::Object]::
-              Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                        (pDVar4,SubscriptionBenefit__Enum_FreeBuildingThemes,(Object *)pSVar6,
+          pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(pSVar1->fields).benefits;
+          pMVar3 = (MethodInfo *)&UNK_?;
+          pOVar4 = (Object *)
+                   func_?(
+                                  TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                                  );
+          if (pOVar4 != (Object *)0x0) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      (pOVar4,ExceptionArgument__Enum_obj,pMVar3);
+            *(undefined1 *)&pOVar4[1].klass = 1;
+            if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        (pDVar2,(Object *)0x3,pOVar4,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                         );
-              return (SubscriptionBase *)pSVar1;
+              pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(pSVar1->fields).benefits;
+              pMVar3 = (MethodInfo *)&UNK_?;
+              pOVar4 = (Object *)
+                       func_?(
+                                      TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                                      );
+              if (pOVar4 != (Object *)0x0) {
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                          (pOVar4,ExceptionArgument__Enum_obj,pMVar3);
+                *(undefined1 *)&pOVar4[1].klass = 1;
+                if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__Add
+                            (pDVar2,(Object *)0x4,pOVar4,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                            );
+                  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(pSVar1->fields).benefits;
+                  pMVar3 = (MethodInfo *)&UNK_?;
+                  pOVar4 = (Object *)
+                           func_?(
+                                          TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                                          );
+                  if (pOVar4 != (Object *)0x0) {
+                    mscorlib.dll::System::ThrowHelper::
+                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                              (pOVar4,ExceptionArgument__Enum_obj,pMVar3);
+                    *(undefined1 *)&pOVar4[1].klass = 1;
+                    if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                      ::Object]::Dictionary_2_System_Object_System_Object__Add
+                                (pDVar2,(Object *)0x5,pOVar4,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                                );
+                      return pSVar1;
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
     }
-    else if (subscriptionType == SubscriptionType__Enum_Membership2) {
-      pSVar1 = (ScaleAnimationBase *)
-               func_?(
-                              TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__SubscriptionMember2
+  }
+  else {
+    if (subscriptionType != SubscriptionType__Enum_Membership2) goto code_?;
+    pSVar1 = (SubscriptionBase *)
+             func_?(
+                            TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__SubscriptionMember2
+                            );
+    if (pSVar1 != (SubscriptionBase *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                       );
+        func_?(&
+                        TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                       );
+        func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster);
+        cRam_? = '\x01';
+      }
+      SubscriptionBase::SubscriptionBase__ctor(pSVar1,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(pSVar1->fields).benefits;
+      pMVar3 = (MethodInfo *)&UNK_?;
+      pOVar4 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster
                               );
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      pDVar2 = 
-      TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>
-      ;
-      pHVar3 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-      System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]
-      ::HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                (pHVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Dictionary__
-                );
-      (pSVar1->fields)._._._._.m_CachedPtr = pHVar3;
-      Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                (pSVar1,0.0,(MethodInfo *)pDVar2);
-      pDVar4 = (pSVar1->fields)._._._._.m_CachedPtr;
-      pXVar5 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
-      pSVar6 = (ScaleAnimationBase *)func_?();
-      Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                (pSVar6,0.0,(MethodInfo *)pXVar5);
-      (pSVar6->fields)._._._._.m_CachedPtr = (void *)0x32;
-      (pSVar6->fields).state = 10;
-      (pSVar6->fields).originalScale.x = 2.8026e-45;
-      (pSVar6->fields).originalScale.y = 5.60519e-43;
-      if (pDVar4 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_ *)
-                    0x0) {
-        subscriptionType =
-             (SubscriptionType__Enum)
-             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-        ;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-        SubscriptionBenefit,System::Object]::
-        Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                  (pDVar4,SubscriptionBenefit__Enum_XPBoost,(Object *)pSVar6,
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-                  );
-        subscriptionType =
-             (SubscriptionType__Enum)
-             TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean;
-        pDVar4 = (pSVar1->fields)._._._._.m_CachedPtr;
-        pSVar6 = (ScaleAnimationBase *)func_?();
-        Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                  (pSVar6,0.0,(MethodInfo *)pDVar2);
-        *(undefined1 *)&(pSVar6->fields)._._._._.m_CachedPtr = 1;
-        if (pDVar4 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_ *
-                      )0x0) {
-          subscriptionType =
-               (SubscriptionType__Enum)
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-          ;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-          SubscriptionBenefit,System::Object]::
-          Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                    (pDVar4,SubscriptionBenefit__Enum_FreeBuildingGameObjects,(Object *)pSVar6,
+      if (pOVar4 != (Object *)0x0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  (pOVar4,ExceptionArgument__Enum_obj,pMVar3);
+        pOVar4[1].klass = (Object__Class *)0x32;
+        pOVar4[1].monitor = (MonitorData *)0xa;
+        pOVar4[2].klass = (Object__Class *)0x2;
+        pOVar4[2].monitor = (MonitorData *)0x190;
+        if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (pDVar2,(Object *)0x1,pOVar4,
                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                     );
-          return (SubscriptionBase *)pSVar1;
+          pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(pSVar1->fields).benefits;
+          pMVar3 = (MethodInfo *)&UNK_?;
+          pOVar4 = (Object *)
+                   func_?(
+                                  TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                                  );
+          if (pOVar4 != (Object *)0x0) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      (pOVar4,ExceptionArgument__Enum_obj,pMVar3);
+            *(undefined1 *)&pOVar4[1].klass = 1;
+            if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        (pDVar2,(Object *)0x3,pOVar4,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                        );
+              return pSVar1;
+            }
+          }
         }
       }
     }
-    else {
-      arg1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionType,
-                             &subscriptionType);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      message = mscorlib.dll::System::String::String_Concat
-                          ((Object *)StringLiteral_Unknown_subscription_type__,arg1,
-                           (MethodInfo *)0x0);
-      this = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-      mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-      IsolatedStorageException__ctor_1(this,message,(MethodInfo *)0x0);
-      subscriptionType =
-           (SubscriptionType__Enum)
-           MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetSubscription_MV__WorldObject__Subscription__SubscriptionType_
-      ;
-      func_?(this);
-    }
-    subscriptionType = SubscriptionType__Enum_None;
-    func_?();
-    pcVar7 = (code *)swi(3);
-    pSVar8 = (SubscriptionBase *)(*pcVar7)();
-    return pSVar8;
   }
-  pSVar1 = (ScaleAnimationBase *)
-           func_?(
-                          TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__BuiltInTypes__SubscriptionNone
-                          );
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pDVar2 = 
-  TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>
-  ;
-  pHVar3 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (pHVar3,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Dictionary__
-            );
-  (pSVar1->fields)._._._._.m_CachedPtr = pHVar3;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play(pSVar1,0.0,(MethodInfo *)pDVar2);
-  return (SubscriptionBase *)pSVar1;
+  func_?();
+  subscriptionType = extraout_ECX;
+code_?:
+  uVar5 = func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionType,
+                          &subscriptionType);
+  pOVar4 = (Object *)func_?(uVar5);
+  pMVar3 = (MethodInfo *)0x0;
+  arg0 = (Object *)func_?(&StringLiteral_Unknown_subscription_type__);
+  message = mscorlib.dll::System::String::String_Concat(arg0,pOVar4,pMVar3);
+  uVar5 = func_?(&TypeInfo__System__Exception);
+  this = (Exception *)func_?(uVar5);
+  func_?(this);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this,message,(MethodInfo *)0x0);
+  subscriptionType =
+       func_?(&
+                       MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetSubscription_MV__WorldObject__Subscription__SubscriptionType_
+                      );
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pSVar1 = (SubscriptionBase *)(*pcVar6)();
+  return pSVar1;
 }
 
 
@@ -311,24 +270,23 @@ bool MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper:
   pSVar1 = (this->fields).subscriptionBase;
   if (pSVar1 != (SubscriptionBase *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__ContainsKey_MV__WorldObject__Subscription__SubscriptionBenefit_
+                     );
       cRam_? = '\x01';
     }
-    this_00 = (pSVar1->fields).benefits;
-    if (this_00 !=
-        (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_MV_WorldObject_Subscription_SubscriptionRule_
-         *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription
-              ::SubscriptionBenefit,System::Object]::
-              Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__ContainsKey
-                        ((Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_
-                          *)this_00,subscriptionBenefit,
+    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pSVar1->fields).benefits;
+    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        (this_00,(Object *)subscriptionBenefit,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__ContainsKey_MV__WorldObject__Subscription__SubscriptionBenefit_
                         );
       return bVar2;
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   bVar2 = (*pcVar3)();
   return bVar2;
@@ -342,15 +300,12 @@ String * MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrap
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionType);
+    func_?(&StringLiteral_SubscriptionType__);
     cRam_? = '\x01';
   }
   this = (SubscriptionRulesWrapper *)(this->fields).SubscriptionType;
   arg1 = (Object *)func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionType,&this);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar1 = mscorlib.dll::System::String::String_Concat
                      ((Object *)StringLiteral_SubscriptionType__,arg1,(MethodInfo *)0x0);
   return pSVar1;
@@ -366,90 +321,97 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__BuiltInTypes__SubscriptionDefault
+                   );
     cRam_? = '\x01';
   }
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).SubscriptionType = subscriptionType;
-  this_00 = (ScaleAnimationBase *)
+  this_00 = (SubscriptionDefault *)
             func_?(
                            TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__BuiltInTypes__SubscriptionDefault
                            );
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  method_01 = 
-  TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>
-  ;
-  this_01 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Dictionary__
-            );
-  (this_00->fields)._._._._.m_CachedPtr = this_01;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            (this_00,0.0,(MethodInfo *)method_01);
-  pDVar1 = (this_00->fields)._._._._.m_CachedPtr;
-  method_00 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
-  pSVar2 = (ScaleAnimationBase *)func_?();
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            (pSVar2,0.0,(MethodInfo *)method_00);
-  (pSVar2->fields)._._._._.m_CachedPtr = (void *)0x0;
-  (pSVar2->fields).state = 10;
-  (pSVar2->fields).originalScale.x = 1.4013e-44;
-  (pSVar2->fields).originalScale.y = 5.60519e-43;
-  if (pDVar1 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_ *)0x0)
-  {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-    SubscriptionBenefit,System::Object]::
-    Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-              (pDVar1,SubscriptionBenefit__Enum_XPBoost,(Object *)pSVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-              );
-    pDVar1 = (this_00->fields)._._._._.m_CachedPtr;
-    pSVar2 = (ScaleAnimationBase *)func_?();
-    Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-              (pSVar2,0.0,(MethodInfo *)method_01);
-    (pSVar2->fields)._._._._.m_CachedPtr = (void *)0x0;
-    if (pDVar1 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_ *)0x0
-       ) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-      SubscriptionBenefit,System::Object]::
-      Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                (pDVar1,SubscriptionBenefit__Enum_GameCoinBoost,(Object *)pSVar2,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-                );
-      pDVar1 = (this_00->fields)._._._._.m_CachedPtr;
-      pSVar2 = (ScaleAnimationBase *)func_?();
-      Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-                (pSVar2,0.0,(MethodInfo *)method_01);
-      *(undefined1 *)&(pSVar2->fields)._._._._.m_CachedPtr = 0;
-      if (pDVar1 != (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object_ *)
-                    0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::Subscription::
-        SubscriptionBenefit,System::Object]::
-        Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_System_Object__Add
-                  (pDVar1,SubscriptionBenefit__Enum_FreeBuildingGameObjects,(Object *)pSVar2,
+  if (this_00 != (SubscriptionDefault *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                     );
+      func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__GameCoinBooster);
+      func_?(&
+                      TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                     );
+      func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster);
+      cRam_? = '\x01';
+    }
+    SubscriptionBase::SubscriptionBase__ctor((SubscriptionBase *)this_00,(MethodInfo *)0x0);
+    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._.benefits;
+    pMVar2 = (MethodInfo *)&UNK_?;
+    pOVar3 = (Object *)
+             func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster);
+    if (pOVar3 != (Object *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                (pOVar3,ExceptionArgument__Enum_obj,pMVar2);
+      pOVar3[1].klass = (Object__Class *)0x0;
+      pOVar3[1].monitor = (MonitorData *)0xa;
+      pOVar3[2].klass = (Object__Class *)0xa;
+      pOVar3[2].monitor = (MonitorData *)0x190;
+      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  (pDVar1,(Object *)0x1,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                   );
-        (this->fields).subscriptionDefault = (SubscriptionDefault *)this_00;
-        pSVar3 = SubscriptionRulesWrapper_GetSubscription
-                           ((SubscriptionType__Enum)pSVar2,(MethodInfo *)0x0);
-        (this->fields).subscriptionBase = pSVar3;
-        return;
+        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._.benefits;
+        pMVar2 = (MethodInfo *)&UNK_?;
+        pOVar3 = (Object *)
+                 func_?(
+                                TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__GameCoinBooster
+                                );
+        if (pOVar3 != (Object *)0x0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    (pOVar3,ExceptionArgument__Enum_obj,pMVar2);
+          pOVar3[1].klass = (Object__Class *)0x0;
+          if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__Add
+                      (pDVar1,(Object *)0x2,pOVar3,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                      );
+            pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._.benefits;
+            pMVar2 = (MethodInfo *)&UNK_?;
+            pOVar3 = (Object *)
+                     func_?(
+                                    TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                                    );
+            if (pOVar3 != (Object *)0x0) {
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        (pOVar3,ExceptionArgument__Enum_obj,pMVar2);
+              *(undefined1 *)&pOVar3[1].klass = 0;
+              if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          (pDVar1,(Object *)0x3,pOVar3,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                          );
+                (this->fields).subscriptionDefault = this_00;
+                func_?(&(this->fields).subscriptionDefault,this_00);
+                pSVar4 = SubscriptionRulesWrapper_GetSubscription
+                                   (subscriptionType,(MethodInfo *)0x0);
+                (this->fields).subscriptionBase = pSVar4;
+                func_?(&this->fields,pSVar4);
+                return;
+              }
+            }
+          }
+        }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

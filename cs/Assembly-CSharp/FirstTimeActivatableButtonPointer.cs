@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatableButtonPointer : FirstTimeActivatableElementBase
 {
@@ -44,8 +44,8 @@ public class FirstTimeActivatableButtonPointer : FirstTimeActivatableElementBase
 	private void Clear();
 	protected virtual void OnShown();
 	[CompilerGenerated]
-	private void _CreateBubble_m__0(TextBubbleController x, BaseEventData y);
+	private void _CreateBubble_b__11_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Clear_m__1(TextBubbleController x, BaseEventData y);
+	private void _Clear_b__13_0(TextBubbleController x, BaseEventData y);
 }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DeathUIBoostMenuController : MonoBehaviour
 {
@@ -54,43 +54,57 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	private bool shouldPop;
 	private bool wantsToPlay;
 	private bool isGhost;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache4;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass22_0
 	{
 		// Fields
-		internal bool readyForAd;
+		public bool readyForAd;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass22_0();
 
 		// Methods
-		internal void __m__0(IDeathPromotionSelector x, BaseEventData y);
+		internal void _Initialize_b__0(IDeathPromotionSelector x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__23_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__25_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__25_2;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__29_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__30_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OpenMenu_b__23_0(IUIStack x, BaseEventData y);
+		internal void _Update_b__25_1(IUIStack x, BaseEventData y);
+		internal void _Update_b__25_2(IUIStack x, BaseEventData y);
+		internal void _ReadyToSpawn_b__29_0(IUIStack x, BaseEventData y);
+		internal void _LockCursorAndPop_b__30_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Update_c__AnonStorey1
+	private sealed class __c__DisplayClass25_0
 	{
 		// Fields
-		internal bool isBlocked;
-		internal DeathUIBoostMenuController _this;
+		public bool isBlocked;
+		public DeathUIBoostMenuController __4__this;
 
 		// Constructors
-		public _Update_c__AnonStorey1();
+		public __c__DisplayClass25_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -108,16 +122,6 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	private void LockCursorAndPop();
 	private void OnAvatarStateChanged(SpawnRoleModeType mode);
 	[CompilerGenerated]
-	private static void _OpenMenu_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Update_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Update_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private void _OnRespawn_m__3(IDeathPromotionSelector x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ReadyToSpawn_m__4(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _LockCursorAndPop_m__5(IUIStack x, BaseEventData y);
+	private void _OnRespawn_b__28_0(IDeathPromotionSelector x, BaseEventData y);
 }
 

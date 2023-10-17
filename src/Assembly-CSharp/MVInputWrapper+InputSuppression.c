@@ -5,8 +5,10 @@ void Assembly-CSharp.dll::MVInputWrapper+InputSuppression::MVInputWrapper_InputS
                (MVInputWrapper_InputSuppression *this,bool a,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  (*(code *)(this->klass->vtable).set_IsSuppressed.method)(this,_a,this->klass[1]._0.image);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (*(this->klass->vtable).set_IsSuppressed.methodPtr)
+            (this,_a,(this->klass->vtable).set_IsSuppressed.method);
   return;
 }
 
@@ -18,19 +20,18 @@ bool Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
                (MVInputWrapper_InputSuppression *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
   iVar2 = (this->fields).suppressionFrame;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Abs_1
-                    (iVar1 - iVar2,(MethodInfo *)0x0);
-  return iVar1 < 2;
+  uVar3 = iVar1 - iVar2;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  uVar4 = (int)uVar3 >> 0x1f;
+  return (int)((uVar3 ^ uVar4) - uVar4) < 2;
 }
 
 
@@ -42,14 +43,22 @@ Assembly-CSharp.dll::MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppre
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper__InputSuppression);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MVInputWrapper__InputSuppression;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  (*this->klass[1]._0.gc_desc)(this,_a,this->klass[1]._0.name);
-  return (MVInputWrapper_InputSuppression *)this;
+  pMVar1 = (MVInputWrapper_InputSuppression *)
+           func_?(TypeInfo__MVInputWrapper__InputSuppression);
+  if (pMVar1 != (MVInputWrapper_InputSuppression *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)pMVar1,ExceptionArgument__Enum_obj,unaff_ESI);
+    (*(pMVar1->klass->vtable).set_IsSuppressed.methodPtr)
+              (pMVar1,_a,(pMVar1->klass->vtable).set_IsSuppressed.method);
+    return pMVar1;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pMVar1 = (MVInputWrapper_InputSuppression *)(*pcVar2)();
+  return pMVar1;
 }
 
 
@@ -60,15 +69,18 @@ bool Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
                (MVInputWrapper_InputSuppression *a,MethodInfo *method)
 
 {
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
   if (a != (MVInputWrapper_InputSuppression *)0x0) {
-    bVar1 = (*(code *)(a->klass->vtable).get_IsSuppressed.method)
-                      (a,(a->klass->vtable).set_IsSuppressed.methodPtr);
-    return bVar1;
+    pMStack_1 = (a->klass->vtable).get_IsSuppressed.method;
+    pMStack_2 = a;
+    bVar3 = (*(a->klass->vtable).get_IsSuppressed.methodPtr)();
+    return bVar3;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  bVar3 = (*pcVar6)();
+  return bVar3;
 }
 
 
@@ -89,9 +101,10 @@ void Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
     (this->fields).suppressionFrame = iVar1;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

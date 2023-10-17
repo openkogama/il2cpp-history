@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class AdRequestHandler
 {
@@ -15,21 +15,12 @@ public static class AdRequestHandler
 	private static Action<bool> OnHealthAdShownCallback;
 	private static Action<bool> OnGoldAdAvailableCallback;
 	private static Action<bool> OnGoldAdShownCallback;
-	[CompilerGenerated]
-	private static Action<bool, string> __f__mg_cache0;
-	[CompilerGenerated]
-	private static Action<bool, string> __f__mg_cache1;
-	[CompilerGenerated]
-	private static Action<bool, string> __f__mg_cache2;
-	[CompilerGenerated]
-	private static Action<bool, string> __f__mg_cache3;
 
 	// Nested types
 	private class Available
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _available_k__BackingField;
 
 		// Properties
@@ -43,7 +34,6 @@ public static class AdRequestHandler
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _shouldReward_k__BackingField;
 
 		// Properties

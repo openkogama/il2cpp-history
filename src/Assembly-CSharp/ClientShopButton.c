@@ -6,61 +6,57 @@ void Assembly-CSharp.dll::ClientShopButton::ClientShopButton_OnClick
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IOpenClientShop>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IOpenClientShop>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IOpenClientShop>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__ClientShopButton____c___OnClick_b__0_0_UnityEngine__EventSystems__IOpenClientShop__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__ClientShopButton____c);
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__ClientShopButton->static_fields->__f__am_cache0 ==
-      (ExecuteEvents_EventFunction_1_IOpenClientShop_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IOpenClientShop>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__ClientShopButton___OnClick_m__0_UnityEngine__EventSystems__IOpenClientShop__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IOpenClientShop>__EventFunction_System__Object__void__
-              );
-    TypeInfo__ClientShopButton->static_fields->__f__am_cache0 =
-         (ExecuteEvents_EventFunction_1_IOpenClientShop_ *)this_00;
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__ClientShopButton____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ClientShopButton____c);
   }
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__ClientShopButton->static_fields->__f__am_cache0;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+  callbackFunction = TypeInfo__ClientShopButton____c->static_fields->__9__0_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IOpenClientShop_ *)0x0) {
+    if ((TypeInfo__ClientShopButton____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__ClientShopButton____c);
+    }
+    object = TypeInfo__ClientShopButton____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IOpenClientShop_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IOpenClientShop>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IOpenClientShop_ *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__ClientShopButton____c___OnClick_b__0_0_UnityEngine__EventSystems__IOpenClientShop__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__ClientShopButton____c->static_fields->__9__0_0 = callbackFunction;
+    func_?(&TypeInfo__ClientShopButton____c->static_fields->__9__0_0,callbackFunction);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,callbackFunction,
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IOpenClientShop>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IOpenClientShop>_
             );
-  return;
-}
-
-
-/* Void <OnClick>m__0(IOpenClientShop, BaseEventData) */
-
-void Assembly-CSharp.dll::ClientShopButton::ClientShopButton__OnClick_m__0
-               (IOpenClientShop *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IOpenClientShop *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IOpenClientShop,x,1);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 

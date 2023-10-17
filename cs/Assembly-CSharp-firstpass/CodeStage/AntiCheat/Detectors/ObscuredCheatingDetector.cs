@@ -9,27 +9,26 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.Detectors
 {
-	[AddComponentMenu]
+	[AddComponentMenu("Code Stage/Anti-Cheat Toolkit/Obscured Cheating Detector")]
 	public class ObscuredCheatingDetector : ActDetectorBase
 	{
 		// Fields
 		internal const string COMPONENT_NAME = "Obscured Cheating Detector";
 		internal const string FINAL_LOG_PREFIX = "[ACTk] Obscured Cheating Detector: ";
 		private static int instancesInScene;
-		[Tooltip]
+		[Tooltip("Max allowed difference between encrypted and fake values in ObscuredFloat. Increase in case of false positives.")]
 		public float floatEpsilon;
-		[Tooltip]
+		[Tooltip("Max allowed difference between encrypted and fake values in ObscuredVector2. Increase in case of false positives.")]
 		public float vector2Epsilon;
-		[Tooltip]
+		[Tooltip("Max allowed difference between encrypted and fake values in ObscuredVector3. Increase in case of false positives.")]
 		public float vector3Epsilon;
-		[Tooltip]
+		[Tooltip("Max allowed difference between encrypted and fake values in ObscuredQuaternion. Increase in case of false positives.")]
 		public float quaternionEpsilon;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private static ObscuredCheatingDetector _Instance_k__BackingField;
 	
 		// Properties

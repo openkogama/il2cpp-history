@@ -8,85 +8,138 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
   index = 0;
-  pOStack_1 = (Object *)0x0;
-  pOStack_2 = (Object *)0x0;
+  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
+  PStack_2.m_ParticleSystem = (ParticleSystem *)0x0;
   pLVar3 = (this->fields).boostColors;
   while (pLVar3 != (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0) {
-    pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar3,
-                        MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Count__
-                       );
-    if ((int)pOVar4 <= index) {
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).activationStartTime = fVar5;
+    if ((pLVar3->fields)._size <= index) {
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields).activationStartTime = fVar4;
       return;
     }
     pLVar3 = (this->fields).boostColors;
     if (pLVar3 == (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0) break;
-    pBVar6 = mscorlib.dll::System::Collections::Generic::
-             List`1[BoostParticlesActivationEffect+BoosterColors]::
-             List_1_BoostParticlesActivationEffect_BoosterColors__get_Item
-                       ((BoostParticlesActivationEffect_BoosterColors *)(auStack_7 + 8),pLVar3,
-                        index,
-                        MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
-                       );
-    if (pBVar6->type == typeToActivate) {
-      pDVar8 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)(this->fields).rayParticles;
-      if (pDVar8 == (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) break;
-      pOStack_1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
-                  ::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                  Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                            (pDVar8,(MethodInfo *)0x0);
-      pLVar3 = (this->fields).boostColors;
-      if (pLVar3 == (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0) break;
-      iVar9 = func_?(auStack_7 + 8,pLVar3,index,
-                               MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
-                              );
-      pPVar10 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+    pBVar5 = mscorlib.dll::System::Collections::Generic::
+              List`1[BoostParticlesActivationEffect+BoosterColors]::
+              List_1_BoostParticlesActivationEffect_BoosterColors__get_Item
+                        (&BStack_6,pLVar3,index,
+                         MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
+                        );
+    fStack_7 = (pBVar5->rayColor).a;
+    fStack_8 = (pBVar5->bubbleColor).r;
+    fStack_9 = (pBVar5->bubbleColor).g;
+    fStack_10 = (pBVar5->bubbleColor).b;
+    fStack_11 = (pBVar5->bubbleColor).a;
+    if (pBVar5->type == typeToActivate) {
+      pPVar12 = (this->fields).rayParticles;
+      if ((pPVar12 == (ParticleSystem *)0x0) ||
+         (PStack_1.m_ParticleSystem =
+               (ParticleSystem *)
+               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+               ParticleSystem_get_collision(pPVar12,(MethodInfo *)0x0),
+         (this->fields).boostColors == (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0))
+      break;
+      apMStack_13[0] =
+           MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
+      ;
+      piVar14 = (int32_t *)func_?(apMStack_13);
+      BStack_6.type = *piVar14;
+      BStack_6.rayColor.r = ((Color *)(piVar14 + 1))->r;
+      BStack_6.rayColor.g = (float)piVar14[2];
+      BStack_6.rayColor.b = (float)piVar14[3];
+      BStack_6.rayColor.a = (float)piVar14[4];
+      BStack_6.bubbleColor.r = (float)piVar14[5];
+      BStack_6.bubbleColor.g = (float)piVar14[6];
+      BStack_6.bubbleColor.b = (float)piVar14[7];
+      BStack_6.bubbleColor.a = (float)piVar14[8];
+      pPVar15 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                 ParticleSystem_MinMaxGradient_op_Implicit
-                          ((ParticleSystem_MinMaxGradient *)auStack_7,*(Color *)(iVar9 + 4),
-                           (MethodInfo *)0x0);
-      uVar11._0_4_ = (pPVar10->m_ColorMax).g;
-      uVar11._4_4_ = (pPVar10->m_ColorMax).b;
-      func_?(&pOStack_1,pPVar10->m_Mode,pPVar10->m_GradientMin,pPVar10->m_GradientMax,
-                      (pPVar10->m_ColorMin).r,(pPVar10->m_ColorMin).g,(pPVar10->m_ColorMin).b,
-                      (pPVar10->m_ColorMin).a,(pPVar10->m_ColorMax).r,uVar11,(pPVar10->m_ColorMax).a,
-                      0);
+                          ((ParticleSystem_MinMaxGradient *)&stack0xffffff80,*(Color *)(piVar14 + 1)
+                           ,(MethodInfo *)0x0);
+      uVar16 = (pPVar15->m_ColorMax).b;
+      uVar17 = pPVar15->m_Mode;
+      uVar18 = pPVar15->m_GradientMin;
+      uVar19 = pPVar15->m_GradientMax;
+      uVar20 = (pPVar15->m_ColorMin).r;
+      uVar21 = (pPVar15->m_ColorMin).g;
+      uVar22 = (pPVar15->m_ColorMin).b;
+      uVar23 = (pPVar15->m_ColorMin).a;
+      value.m_ColorMin.a = (float)uVar23;
+      value.m_ColorMin.b = (float)uVar22;
+      value.m_ColorMin.g = (float)uVar21;
+      value.m_ColorMin.r = (float)uVar20;
+      uVar24 = (pPVar15->m_ColorMax).r;
+      uVar25 = (pPVar15->m_ColorMax).g;
+      value.m_ColorMax.g = (float)uVar25;
+      value.m_ColorMax.r = (float)uVar24;
+      value.m_GradientMax = (Gradient *)uVar19;
+      value.m_GradientMin = (Gradient *)uVar18;
+      value.m_Mode = uVar17;
+      value.m_ColorMax.b = (float)uVar16;
+      value.m_ColorMax.a = (pPVar15->m_ColorMax).a;
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+      ParticleSystem_MainModule_set_startColor(&PStack_1,value,(MethodInfo *)0x0);
       pPVar12 = (this->fields).rayParticles;
       if (pPVar12 == (ParticleSystem *)0x0) break;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
                 (pPVar12,(MethodInfo *)0x0);
-      pDVar8 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)(this->fields).bubbleParticles;
-      if (pDVar8 == (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) break;
-      pOStack_2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
-                  ::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                  Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                            (pDVar8,(MethodInfo *)0x0);
+      pPVar12 = (this->fields).bubbleParticles;
+      if (pPVar12 == (ParticleSystem *)0x0) break;
+      PStack_2.m_ParticleSystem =
+           (ParticleSystem *)
+           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+           ParticleSystem_get_collision(pPVar12,(MethodInfo *)0x0);
       pLVar3 = (this->fields).boostColors;
       if (pLVar3 == (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0) break;
-      iVar9 = func_?(auStack_7 + 8,pLVar3,index,
-                               MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
-                              );
-      pPVar10 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+      puVar26 = (undefined4 *)
+                func_?(apMStack_13,pLVar3,index,
+                                MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
+                               );
+      uStack_27 = *puVar26;
+      uStack_28 = puVar26[1];
+      uStack_29 = puVar26[2];
+      uStack_30 = puVar26[3];
+      fStack_7 = (float)puVar26[4];
+      fStack_8 = ((Color *)(puVar26 + 5))->r;
+      fStack_9 = (float)puVar26[6];
+      fStack_10 = (float)puVar26[7];
+      fStack_11 = (float)puVar26[8];
+      pPVar15 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                 ParticleSystem_MinMaxGradient_op_Implicit
-                          ((ParticleSystem_MinMaxGradient *)auStack_7,*(Color *)(iVar9 + 0x14),
-                           (MethodInfo *)0x0);
-      uVar13 = (pPVar10->m_ColorMax).g;
-      uVar14 = (pPVar10->m_ColorMax).b;
-      func_?(&pOStack_2,pPVar10->m_Mode,pPVar10->m_GradientMin,pPVar10->m_GradientMax,
-                      (pPVar10->m_ColorMin).r,(pPVar10->m_ColorMin).g,(pPVar10->m_ColorMin).b,
-                      (pPVar10->m_ColorMin).a,(pPVar10->m_ColorMax).r,uVar13,uVar14,
-                      (pPVar10->m_ColorMax).a,0);
+                          ((ParticleSystem_MinMaxGradient *)&stack0xffffff80,*(Color *)(puVar26 + 5)
+                           ,(MethodInfo *)0x0);
+      uVar31 = (pPVar15->m_ColorMax).b;
+      uVar32 = pPVar15->m_Mode;
+      uVar33 = pPVar15->m_GradientMin;
+      uVar34 = pPVar15->m_GradientMax;
+      uVar35 = (pPVar15->m_ColorMin).r;
+      uVar36 = (pPVar15->m_ColorMin).g;
+      uVar37 = (pPVar15->m_ColorMin).b;
+      uVar38 = (pPVar15->m_ColorMin).a;
+      value_00.m_ColorMin.a = (float)uVar38;
+      value_00.m_ColorMin.b = (float)uVar37;
+      value_00.m_ColorMin.g = (float)uVar36;
+      value_00.m_ColorMin.r = (float)uVar35;
+      uVar39 = (pPVar15->m_ColorMax).r;
+      uVar40 = (pPVar15->m_ColorMax).g;
+      value_00.m_ColorMax.g = (float)uVar40;
+      value_00.m_ColorMax.r = (float)uVar39;
+      value_00.m_GradientMax = (Gradient *)uVar34;
+      value_00.m_GradientMin = (Gradient *)uVar33;
+      value_00.m_Mode = uVar32;
+      value_00.m_ColorMax.b = (float)uVar31;
+      value_00.m_ColorMax.a = (pPVar15->m_ColorMax).a;
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+      ParticleSystem_MainModule_set_startColor(&PStack_2,value_00,(MethodInfo *)0x0);
       pPVar12 = (this->fields).bubbleParticles;
       if (pPVar12 == (ParticleSystem *)0x0) break;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
@@ -95,9 +148,9 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
     index = index + 1;
     pLVar3 = (this->fields).boostColors;
   }
-  func_?(0);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  func_?();
+  pcVar41 = (code *)swi(3);
+  (*pcVar41)();
   return;
 }
 
@@ -110,8 +163,7 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
                MethodInfo *method)
 
 {
-  iVar1 = (this->fields).previousMode;
-  if ((iVar1 != 4) && (iVar1 != 2)) {
+  if (((this->fields).previousMode != 4) && ((this->fields).previousMode != 2)) {
     (this->fields).previousMode = newMode;
     return;
   }
@@ -134,86 +186,99 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffffbc;
+  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__get_Current__
+                   );
+    in_stack_6 = &MethodInfo__System__Collections__Generic__List<BoostType>__Add_BoostType_;
+    func_?();
+    func_?(&MethodInfo__System__Collections__Generic__List<BoostType>__Clear__);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                   );
     cRam_? = '\x01';
+    puVar5 = puStack_4;
   }
-  func_?();
-  this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).boostsToActivate;
-  if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-    List_1_UnityEngine_UIVertex__Clear
-              (this_00,MethodInfo__System__Collections__Generic__List<BoostType>__Clear__);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      unaff_ESI = TypeInfo__MVGameControllerBase;
-      func_?();
-    }
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((this_02 != (MVNetworkGame *)0x0) &&
-        (pPVar4 = (PrefabPool *)
-                  MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0),
-        pPVar4 != (PrefabPool *)0x0)) &&
-       (pOVar5 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                           (pPVar4,(MethodInfo *)unaff_ESI), pOVar5 != (ObjectiveArrow *)0x0)) {
-      this_05 = (ObjectiveArrow *)&UNK_?;
-      this_03 = BoostController::BoostController_GetAllBoosts
-                          ((BoostController *)pOVar5,in_stack_6);
-      if (this_03 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0) {
-        method_00 = (MethodInfo *)&stack0xffffffbc;
-        mscorlib.dll::System::Collections::Generic::
-        Dictionary`2[TKey,TValue]+ValueCollection[ChatCommand,System::Object]::
-        Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object__GetEnumerator
-                  ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_ChatCommand_System_Object_
-                    *)method_00,
-                   (Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object_ *)this_03,
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
-                  );
-        uStack_1 = 0;
-        while( true ) {
-          do {
-            cVar7 = func_?();
-            if (cVar7 == '\0') {
-              uStack_1 = 0xffffffff;
-              func_?();
-              *unaff_FS_OFFSET = uStack_3;
-              return;
-            }
-            this_04 = (Collection_1_VoxelHit_ *)func_?();
-            pOVar5 = this_05;
-            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-              func_?(TypeInfo__MVGameControllerBase);
-              pOVar5 = this_05;
-            }
-            pPVar4 = (PrefabPool *)
-                     MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-            if (((pPVar4 == (PrefabPool *)0x0) ||
-                (this_05 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                                     (pPVar4,(MethodInfo *)0x0),
-                this_04 == (Collection_1_VoxelHit_ *)0x0)) ||
-               (pIVar8 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                         Collection_1_VoxelHit__get_Items(this_04,(MethodInfo *)pOVar5),
-               this_05 == (ObjectiveArrow *)0x0)) goto code_?;
-            bVar9 = BoostController::BoostController_IsBoostActive
-                              ((BoostController *)this_05,(BoostType__Enum)pIVar8,method_00);
-          } while (bVar9 == 0);
-          this_01 = (List_1_UIPushOption_ *)(this->fields).boostsToActivate;
-          pIVar8 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items(this_04,(MethodInfo *)0x0);
-          if (this_01 == (List_1_UIPushOption_ *)0x0) break;
-          mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                    (this_01,(UIPushOption__Enum)pIVar8,
-                     MethodInfo__System__Collections__Generic__List<BoostType>__Add_BoostType_);
+  puStack_4 = puVar5;
+  pLVar7 = (this->fields).boostsToActivate;
+  if (pLVar7 != (List_1_BoostType_ *)0x0) {
+    piVar8 = &(pLVar7->fields)._version;
+    *piVar8 = *piVar8 + 1;
+    (pLVar7->fields)._size = 0;
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (this_00 != (MVNetworkGame *)0x0) {
+      pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+      if ((pMVar9 != (MVLocalPlayer *)0x0) &&
+         (pBVar10 = (pMVar9->fields).boostController, pBVar10 != (BoostController *)0x0)) {
+        this_01 = (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                   *)BoostController::BoostController_GetAllBoosts(pBVar10,(MethodInfo *)0x0);
+        if (this_01 !=
+            (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+             *)0x0) {
+          pDVar11 = mscorlib.dll::System::Collections::Generic::
+                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+                   Regex+CachedCodeEntryKey,System::Object]::
+                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                             (&DStack_12,this_01,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                             );
+          pOVar13 = pDVar11->_currentValue;
+          DStack_12._version = 0;
+          uStack_1 = 1;
+          DStack_12._currentValue = (Object *)&stack0xffffffc8;
+          while( true ) {
+            do {
+              bVar14 = mscorlib.dll::System::Collections::Generic::
+                      Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                      Object,System::Object]::
+                      Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                                  *)&stack0xffffffc8,
+                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                                );
+              if (bVar14 == 0) {
+                uStack_1 = 0xffffffff;
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                          ((Object *)&stack0xffffffc8,
+                           (ExceptionArgument__Enum)
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                           ,(MethodInfo *)in_stack_6);
+                *unaff_FS_OFFSET = uStack_3;
+                return;
+              }
+              pMVar9 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0)
+              ;
+              if (((pMVar9 == (MVLocalPlayer *)0x0) ||
+                  (pBVar10 = (pMVar9->fields).boostController, pOVar13 == (Object *)0x0)) ||
+                 (pBVar10 == (BoostController *)0x0)) goto code_?;
+              in_stack_6 = (MethodInfo **)0x0;
+              bVar14 = BoostController::BoostController_IsBoostActive
+                                (pBVar10,(BoostType__Enum)pOVar13[1].klass,(MethodInfo *)0x0);
+            } while (bVar14 == 0);
+            pLVar7 = (this->fields).boostsToActivate;
+            if (pLVar7 == (List_1_BoostType_ *)0x0) break;
+            in_stack_6 = (MethodInfo **)&UNK_?;
+            func_?(pLVar7,pOVar13[1].klass,
+                            MethodInfo__System__Collections__Generic__List<BoostType>__Add_BoostType_
+                           );
+          }
         }
       }
     }
   }
 code_?:
-  func_?(0);
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -225,57 +290,48 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
+                   );
+    func_?(&
+                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                   );
+    func_?(&
+                    TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                   );
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)
-            MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if ((this_00 != (PrefabPool *)0x0) &&
-     (this_01 = (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-                 *)PrefabPool::PrefabPool_get_MVBatteryPrefab(this_00,(MethodInfo *)0x0),
-     this_01 !=
-     (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)0x0)) {
-    this_02 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
-              System.Core.dll::System::Linq::
-              Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-              JsonSchemaType]::
-              Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                        (this_01,(MethodInfo *)0x0);
-    this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_03,unaff_EDI,
-               MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
-               ,
-               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>__SubDelegate_System__Object__void__
-              );
-    if (this_02 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) {
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+     (pSVar3 = (pMVar2->fields).spawnRoleDataMediator, pSVar3 != (SpawnRoleDataMediator *)0x0)) {
+    this_00 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar3->fields).spawnRoleMode;
+    value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
+            func_?(
+                           TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                           );
+    if ((value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) &&
+       (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+                   MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
+                   ,(MethodInfo *)0x0), this_00 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0))
+    {
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
       SpawnRoleVariable`1[UnityEngine::Vector3]::
       SpawnRoleVariable_1_UnityEngine_Vector3__remove_OnChange
-                (this_02,(SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)this_03,
+                (this_00,value,
                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
                 );
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -287,44 +343,36 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
+                   );
+    func_?(&
+                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                   );
+    func_?(&
+                    TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)
-            MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    this_01 = (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-               *)PrefabPool::PrefabPool_get_MVBatteryPrefab(this_00,(MethodInfo *)0x0);
-    if (this_01 !=
-        (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)0x0)
-    {
-      this_02 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
-                System.Core.dll::System::Linq::
-                Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-                JsonSchemaType]::
-                Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                          (this_01,(MethodInfo *)0x0);
-      this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(
-                                  TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                                  );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_03,unaff_ESI,
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+     (pSVar2 = (pMVar1->fields).spawnRoleDataMediator, pSVar2 != (SpawnRoleDataMediator *)0x0)) {
+    this_00 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar2->fields).spawnRoleMode;
+    value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
+            func_?(
+                           TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                           );
+    if (value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
                  MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
-                 ,
-                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>__SubDelegate_System__Object__void__
-                );
-      if (this_02 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) {
+                 ,(MethodInfo *)0x0);
+      if (this_00 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) {
         Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
         SpawnRoleVariable`1[UnityEngine::Vector3]::
         SpawnRoleVariable_1_UnityEngine_Vector3__add_OnChange
-                  (this_02,(SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)this_03,
+                  (this_00,value,
                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
                   );
         return;
@@ -332,8 +380,8 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
     }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -345,43 +393,43 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<BoostType>__RemoveAt_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<BoostType>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<BoostType>__get_Item_int_);
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields).activationCooldown + (this->fields).activationStartTime;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if (fVar2 < fVar1) {
-    return;
-  }
-  pLVar3 = (this->fields).boostsToActivate;
-  if (pLVar3 != (List_1_BoostType_ *)0x0) {
-    pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar3,
-                        MethodInfo__System__Collections__Generic__List<BoostType>__get_Count__);
-    if ((int)pOVar4 < 1) {
+  fVar1 = (this->fields).activationCooldown;
+  fVar2 = (this->fields).activationStartTime;
+  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  if (fVar1 + fVar2 <= fVar3) {
+    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).boostsToActivate;
+    if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+code_?:
+      func_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
-    pLVar3 = (this->fields).boostsToActivate;
-    if (pLVar3 != (List_1_BoostType_ *)0x0) {
+    if (0 < (pLVar4->fields)._size) {
       typeToActivate =
-           mscorlib.dll::System::Collections::Generic::List`1[BoostType]::List_1_BoostType__get_Item
-                     (pLVar3,0,
+           mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+           RegexCharClass+SingleRange]::
+           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                     (pLVar4,0,
                       MethodInfo__System__Collections__Generic__List<BoostType>__get_Item_int_);
-      BoostParticlesActivationEffect_ActivateParticles(this,typeToActivate,(MethodInfo *)0x0);
-      pLVar3 = (this->fields).boostsToActivate;
-      if (pLVar3 != (List_1_BoostType_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[BoostType]::List_1_BoostType__RemoveAt
-                  (pLVar3,0,MethodInfo__System__Collections__Generic__List<BoostType>__RemoveAt_int_
-                  );
-        return;
-      }
+      BoostParticlesActivationEffect_ActivateParticles
+                (this,(BoostType__Enum)typeToActivate,(MethodInfo *)0x0);
+      pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).boostsToActivate;
+      if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RegexCharClass+SingleRange]::
+      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__RemoveAt
+                (pLVar4,0,MethodInfo__System__Collections__Generic__List<BoostType>__RemoveAt_int_);
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
   return;
 }
 
@@ -393,24 +441,26 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<BoostType>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<BoostType>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_BoostType_ *)
             func_?(TypeInfo__System__Collections__Generic__List<BoostType>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<BoostType>__List__);
-  (this->fields).boostsToActivate = (List_1_BoostType_ *)this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_BoostType_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<BoostType>__List__);
+    (this->fields).boostsToActivate = this_00;
+    func_?(&(this->fields).boostsToActivate,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

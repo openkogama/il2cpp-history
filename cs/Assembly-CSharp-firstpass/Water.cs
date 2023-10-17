@@ -8,27 +8,38 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [ExecuteInEditMode]
 public class Water : MonoBehaviour
 {
 	// Fields
+	private static bool s_InsideWater;
 	public WaterMode m_WaterMode;
+	public LayerMask m_ReflectLayers;
 	public bool m_DisablePixelLights;
 	public int m_TextureSize;
 	public float m_ClipPlaneOffset;
-	public LayerMask m_ReflectLayers;
 	private Dictionary<object, object> m_ReflectionCameras;
 	private RenderTexture m_ReflectionTexture;
 	private WaterMode m_HardwareWaterSupport;
 	private int m_OldReflectionTextureSize;
-	private static bool s_InsideWater;
+	private bool m_IsLethal;
+	[SerializeField]
+	private Texture m_WaterBumpTexture;
+	[SerializeField]
+	private Texture m_LethalBumpTexture;
+	[SerializeField]
+	private Color m_WaterHorizon;
+	[SerializeField]
+	private Color m_LethalHorizon;
 	[SerializeField]
 	private Renderer meshRenderer;
 
 	// Properties
 	public Renderer Renderer { get; }
+	public bool IsLethal { get; set; }
+	public Color WaterHorizon { get; set; }
 
 	// Nested types
 	public enum WaterMode
@@ -39,10 +50,10 @@ public class Water : MonoBehaviour
 
 	// Constructors
 	public Water();
-	static Water();
 
 	// Methods
 	public void OnWillRenderObject();
+	private void SetLethal(bool isLethal);
 	private bool IsNanCheck(Vector3 v);
 	private void OnDisable();
 	private void Update();

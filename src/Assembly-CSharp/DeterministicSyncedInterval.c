@@ -7,13 +7,14 @@ int32_t Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInt
 
 {
   iVar1 = curTime % range;
-  if (offset < iVar1) {
-    offset = (offset - iVar1) + range;
+  if (iVar1 <= offset) {
+    iVar2 = offset - iVar1;
+    if (offset <= iVar1) {
+      iVar2 = offset;
+    }
+    return iVar2;
   }
-  else if (iVar1 < offset) {
-    return offset - iVar1;
-  }
-  return offset;
+  return (offset - iVar1) + range;
 }
 
 
@@ -24,8 +25,15 @@ int32_t Assembly-CSharp.dll::DeterministicSyncedInterval::
                   (DeterministicSyncedInterval *this,int32_t seed,int32_t range,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
   uVar1 = (seed & 0xffffU) * 0x9069 + (seed >> 0x10);
   uVar1 = ((uVar1 & 0xffff) * 18000 + ((int)uVar1 >> 0x10)) * 0x10001;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
   uVar2 = (int)uVar1 >> 0x1f;
   return (int)((uVar1 ^ uVar2) - uVar2) % range;
 }
@@ -49,12 +57,13 @@ bool Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInterv
 
 {
   iVar1 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
-  iVar2 = (this->fields).nextTickThres;
-  if (iVar2 <= iVar1) {
-    iVar3 = (this->fields).range;
-    (this->fields).nextTickThres = (iVar3 - (iVar1 - iVar2) % iVar3) + iVar1;
+  bVar2 = (this->fields).nextTickThres <= iVar1;
+  if (bVar2) {
+    (this->fields).nextTickThres =
+         ((this->fields).range - (iVar1 - (this->fields).nextTickThres) % (this->fields).range) +
+         iVar1;
   }
-  return iVar2 <= iVar1;
+  return bVar2;
 }
 
 
@@ -64,22 +73,31 @@ void Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInterv
                (DeterministicSyncedInterval *this,int32_t id,int32_t range,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  bVar1 = cRam_? == '\0';
   (this->fields).range = range;
-  uVar1 = (id & 0xffffU) * 0x9069 + (id >> 0x10);
-  iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
-  uVar1 = ((uVar1 & 0xffff) * 18000 + ((int)uVar1 >> 0x10)) * 0x10001;
-  uVar3 = (int)uVar1 >> 0x1f;
-  iVar4 = (int)((uVar1 ^ uVar3) - uVar3) % range;
-  iVar5 = iVar2 % range;
-  if (iVar5 <= iVar4) {
-    if (iVar5 < iVar4) {
-      iVar4 = iVar4 - iVar5;
+  if (bVar1) {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  uVar2 = (id & 0xffffU) * 0x9069 + (id >> 0x10);
+  uVar2 = ((uVar2 & 0xffff) * 18000 + ((int)uVar2 >> 0x10)) * 0x10001;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  iVar3 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
+  uVar4 = (int)uVar2 >> 0x1f;
+  iVar5 = (int)((uVar2 ^ uVar4) - uVar4) % range;
+  iVar6 = iVar3 % range;
+  if (iVar6 <= iVar5) {
+    if (iVar6 < iVar5) {
+      iVar5 = iVar5 - iVar6;
     }
-    (this->fields).nextTickThres = iVar4 + iVar2;
+    (this->fields).nextTickThres = iVar5 + iVar3;
     return;
   }
-  (this->fields).nextTickThres = range + (iVar4 - iVar5) + iVar2;
+  (this->fields).nextTickThres = range + (iVar5 - iVar6) + iVar3;
   return;
 }
 

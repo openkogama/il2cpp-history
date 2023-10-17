@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVTeamManager
 {
@@ -17,10 +17,8 @@ public class MVTeamManager
 	private Dictionary<MVTeam, string> teamNames;
 	public OnTeamsUpdatedDelegate OnTeamsUpdated;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<TeamEventArgs> OnTeamAdded;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<TeamEventArgs> OnTeamRemoved;
 	private Dictionary<MVTeam, HashSet<int>> teams;
 
@@ -41,16 +39,16 @@ public class MVTeamManager
 	public delegate void OnTeamsUpdatedDelegate();
 
 	[CompilerGenerated]
-	private sealed class _GetPlayersInTeam_c__AnonStorey0
+	private sealed class __c__DisplayClass29_0
 	{
 		// Fields
-		internal MVTeam team;
+		public MVTeam team;
 
 		// Constructors
-		public _GetPlayersInTeam_c__AnonStorey0();
+		public __c__DisplayClass29_0();
 
 		// Methods
-		internal bool __m__0(MVPlayer player);
+		internal bool _GetPlayersInTeam_b__0(MVPlayer player);
 	}
 
 	// Constructors

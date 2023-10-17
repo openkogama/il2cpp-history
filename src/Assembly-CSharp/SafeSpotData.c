@@ -6,18 +6,20 @@ void Assembly-CSharp.dll::SafeSpotData::SafeSpotData__ctor
                MethodInfo *method)
 
 {
-  *(undefined8 *)&(this->Position).z = pos._0_8_;
-  (this->Rotation).y = pos.z;
-  (this->Rotation).z = rot.x;
-  (this->Rotation).w = rot.y;
-  (this->CameraPosition).x = rot.z;
-  (this->CameraPosition).y = rot.w;
-  *(undefined8 *)&(this->CameraPosition).z = camPos._0_8_;
-  (this->CameraRotation).y = camPos.z;
-  (this->CameraRotation).z = camRot.x;
-  (this->CameraRotation).w = camRot.y;
-  this[1].Position.x = camRot.z;
-  this[1].Position.y = camRot.w;
+  (this->Position).x = pos.x;
+  (this->Position).y = pos.y;
+  (this->Position).z = pos.z;
+  (this->Rotation).x = rot.x;
+  (this->Rotation).y = rot.y;
+  (this->Rotation).z = rot.z;
+  (this->Rotation).w = rot.w;
+  (this->CameraPosition).x = camPos.x;
+  (this->CameraPosition).y = camPos.y;
+  (this->CameraPosition).z = camPos.z;
+  (this->CameraRotation).x = camRot.x;
+  (this->CameraRotation).y = camRot.y;
+  (this->CameraRotation).z = camRot.z;
+  (this->CameraRotation).w = camRot.w;
   return;
 }
 

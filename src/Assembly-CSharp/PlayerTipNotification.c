@@ -7,41 +7,54 @@ void Assembly-CSharp.dll::PlayerTipNotification::PlayerTipNotification_Initializ
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  this_01 = data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  pTVar1 = (this->fields).tipText;
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(1,data._0_3_);
-  key = (Type *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_01,key,
+  pPVar1 = this;
+  this = (PlayerTipNotification *)CONCAT13(1,this._0_3_);
+  pTVar2 = (pPVar1->fields).tipText;
+  (pPVar1->fields)._.timeSinceStart = 0.0;
+  pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar3,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pTVar1 != (Text *)0x0) {
-      pPVar3 = (Pool *)0x0;
-      if (pPVar2 != (Pool *)0x0) {
-        if ((String__Class *)pPVar2->klass == TypeInfo__System__String) {
-          pPVar3 = pPVar2;
+    uVar4 = CONCAT44(TypeInfo__System__String,pOVar3);
+    if (pTVar2 != (Text *)0x0) {
+      pOVar5 = (Object *)0x0;
+      if (pOVar3 != (Object *)0x0) {
+        if ((String__Class *)pOVar3->klass == TypeInfo__System__String) {
+          pOVar5 = pOVar3;
         }
-        if (pPVar3 == (Pool *)0x0) goto code_?;
+        if (pOVar5 == (Object *)0x0) goto code_?;
       }
-      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pPVar3);
-      this_00 = (this->fields).fader;
-      if (this_00 != (NotificationFade *)0x0) {
-        NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
-        return;
+      (*(pTVar2->klass->vtable).set_text.methodPtr)
+                (pTVar2,pOVar5,(pTVar2->klass->vtable).set_text.method);
+      pNVar6 = (pPVar1->fields).fader;
+      if (pNVar6 != (NotificationFade *)0x0) {
+        (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
+        this_00 = (pNVar6->fields).group;
+        (pNVar6->fields).playing = 1;
+        if (this_00 != (CanvasGroup *)0x0) {
+          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                    (this_00,0.0,(MethodInfo *)0x0);
+          (pNVar6->fields).currentTime = 0.0;
+          return;
+        }
       }
     }
   }
-  pPVar2 = (Pool *)func_?();
+  uVar4 = func_?();
 code_?:
-  func_?(pPVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(uVar4);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

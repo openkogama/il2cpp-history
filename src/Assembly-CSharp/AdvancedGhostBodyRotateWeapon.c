@@ -6,12 +6,10 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this_01 == (MVWorldObjectClientManager *)0x0) {
@@ -26,101 +24,62 @@ code_?:
                       (this_01,woid,(MethodInfo *)0x0);
   if (this_02 != (MVWorldObjectClient *)0x0) {
     pTVar2 = (this->fields).timeoutMap;
-    pIVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_02,(MethodInfo *)0x0);
     if (pTVar2 == (TimeoutMap *)0x0) goto code_?;
-    bVar4 = TimeoutMap::TimeoutMap_Contains(pTVar2,(int32_t)pIVar3,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      x = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
-                    (this_02,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    bVar3 = TimeoutMap::TimeoutMap_Contains(pTVar2,(this_02->fields)._.id,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      this_03 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
+                          (this_02,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar5 != (MVNetworkGame *)0x0) {
-          pSVar6 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                             ((DayNightCycle *)pMVar5,(MethodInfo *)0x0);
-          actorNumber = UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-                        TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-                        TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                                  ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)this_02,
-                                   (MethodInfo *)0x0);
-          if (pSVar6 != (SkyParam *)0x0) {
-            MVar7 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
-                              ((MVTeamManager *)pSVar6,(int32_t)actorNumber,(MethodInfo *)0x0);
-            if (MVar7 == (this->fields).alliedTeam) {
-              if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                func_?();
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar4 != (MVNetworkGame *)0x0) &&
+           (pMVar5 = (pMVar4->fields).teamManager, pMVar5 != (MVTeamManager *)0x0)) {
+          MVar6 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
+                            (pMVar5,(this_02->fields)._.ownerActorNr,(MethodInfo *)0x0);
+          if (MVar6 == (this->fields).alliedTeam) {
+            pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar4 == (MVNetworkGame *)0x0) ||
+               (pMVar5 = (pMVar4->fields).teamManager, pMVar5 == (MVTeamManager *)0x0))
+            goto code_?;
+            MVTeamManager::MVTeamManager_TeamCount(pMVar5,(MethodInfo *)0x0);
+          }
+          (*(this_02->klass->vtable).GetTargetPosition.methodPtr)();
+          this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this,(MethodInfo *)0x0);
+          if ((this_04 != (GameObject *)0x0) &&
+             (this_05 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(this_04,(MethodInfo *)0x0),
+             this_05 != (Transform *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                      ((Vector3 *)&stack0xffffffd8,this_05,(MethodInfo *)0x0);
+            puVar7 = (undefined8 *)func_?();
+            fVar8 = (this->fields).impulseStrength;
+            fVar9 = (this->fields).factor;
+            impulse.y = (float)((ulonglong)*puVar7 >> 0x20) * fVar8 * fVar9;
+            impulse.x = (float)*puVar7 * fVar8 * fVar9;
+            impulse.z = *(float *)(puVar7 + 1) * fVar8 * fVar9;
+            pIVar10 = AdvancedGhostBodyRotateWeaponPackage::
+                      AdvancedGhostBodyRotateWeaponPackage_Create
+                                ((InteractionData *)&stack0xffffffd0,(float)this_02,impulse,
+                                 (MethodInfo *)0x0);
+            if (this_03 != (InteractionDataHandlerBase *)0x0) {
+              bVar3 = InteractionDataHandlerBase::InteractionDataHandlerBase_HandleInteraction
+                                (this_03,*pIVar10,1,(MethodInfo *)0x0);
+              if (bVar3 == 0) {
+                return;
               }
-              pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar5 == (MVNetworkGame *)0x0) ||
-                 (pSVar6 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                                     ((DayNightCycle *)pMVar5,(MethodInfo *)0x0),
-                 pSVar6 == (SkyParam *)0x0)) goto code_?;
-              MVTeamManager::MVTeamManager_TeamCount((MVTeamManager *)pSVar6,(MethodInfo *)0x0);
-            }
-            puVar8 = (undefined8 *)(*(code *)(this_02->klass->vtable).GetTargetPosition.method)();
-            uVar9 = *puVar8;
-            method_00 = *(MethodInfo **)(puVar8 + 1);
-            this_05 = this;
-            this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                                ((Component_1 *)this,method_00);
-            if ((this_03 != (GameObject *)0x0) &&
-               (this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_transform(this_03,(MethodInfo *)0x0),
-               this_04 != (Transform *)0x0)) {
-              pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 ((Vector3 *)&stack0xffffffc8,this_04,(MethodInfo *)0x0);
-              b = *pVVar10;
-              if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-                func_?();
-              }
-              woid = (int32_t)uVar9;
-              a.z = (float)method_00;
-              a.x = (float)(int)uVar9;
-              a.y = (float)(int)((ulonglong)uVar9 >> 0x20);
-              UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                        ((Vector3 *)&stack0xffffffc8,a,b,(MethodInfo *)0x0);
-              pVVar10 = (Vector3 *)func_?();
-              pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                                 ((Vector3 *)&stack0xffffffc8,*pVVar10,(this->fields).impulseStrength
-                                  ,(MethodInfo *)0x0);
-              pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                                 ((Vector3 *)&stack0xffffffc8,*pVVar10,(this->fields).factor,
-                                  (MethodInfo *)0x0);
-              pIVar11 = AdvancedGhostBodyRotateWeaponPackage::
-                        AdvancedGhostBodyRotateWeaponPackage_Create
-                                  ((InteractionData *)&stack0xffffffc0,(float)woid,*pVVar10,
-                                   (MethodInfo *)0x0);
-              if (this_05 != (AdvancedGhostBodyRotateWeapon *)0x0) {
-                bVar4 = InteractionDataHandlerBase::InteractionDataHandlerBase_HandleInteraction
-                                  ((InteractionDataHandlerBase *)this_05,*pIVar11,1,
-                                   (MethodInfo *)0x0);
-                if (bVar4 == 0) {
+              pTVar2 = (this->fields).timeoutMap;
+              if (pTVar2 != (TimeoutMap *)0x0) {
+                TimeoutMap::TimeoutMap_Add(pTVar2,(this_02->fields)._.id,(MethodInfo *)0x0);
+                this_00 = (this->fields).weaponHitSound;
+                if (this_00 != (AudioSource *)0x0) {
+                  UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play
+                            (this_00,(MethodInfo *)0x0);
                   return;
-                }
-                pTVar2 = (this->fields).timeoutMap;
-                pIVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                         Collection_1_VoxelHit__get_Items
-                                   ((Collection_1_VoxelHit_ *)this_02,(MethodInfo *)0x0);
-                if (pTVar2 != (TimeoutMap *)0x0) {
-                  TimeoutMap::TimeoutMap_Add(pTVar2,(int32_t)pIVar3,(MethodInfo *)0x0);
-                  this_00 = (this->fields).weaponHitSound;
-                  if (this_00 != (AudioSource *)0x0) {
-                    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
-                              (this_00,(MethodInfo *)0x0);
-                    return;
-                  }
                 }
               }
             }
@@ -128,8 +87,7 @@ code_?:
         }
         goto code_?;
       }
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
@@ -148,40 +106,46 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    func_?(&
+                    MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_
+                   );
     cRam_? = '\x01';
   }
   (this->fields).weaponHitSound = weaponHitSound;
+  func_?(&(this->fields).weaponHitSound,weaponHitSound);
   if (body != (MVCubeModelBase *)0x0) {
     pAVar1 = (body->fields).Changed;
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+    this_00 = (Action_1_Object_ *)
               func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,
-               MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_,
-               MethodInfo__System__Action<CubeModelChangedEventArgs>__Action_System__Object__void__)
-    ;
-    pAVar2 = (Action_1_CubeModelChangedEventArgs_ *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    pAVar1 = (Action_1_CubeModelChangedEventArgs_ *)0x0;
-    if (pAVar2 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
-      if (pAVar2->klass == TypeInfo__System__Action<CubeModelChangedEventArgs>) {
-        pAVar1 = pAVar2;
+    if (this_00 != (Action_1_Object_ *)0x0) {
+      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_,
+                 (MethodInfo *)0x0);
+      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar2 == (Delegate *)0x0) {
+        (body->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
+code_?:
+        func_?();
+        AdvancedGhostBodyRotateWeapon_SetupWeaponCollision(this,(MethodInfo *)0x0);
+        return;
       }
-      if (pAVar1 == (Action_1_CubeModelChangedEventArgs_ *)0x0) goto code_?;
+      pAVar1 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
+      if (pAVar1 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
+        (body->fields).Changed = pAVar1;
+        iVar3 = func_?();
+        if (iVar3 != 0) goto code_?;
+      }
+      goto code_?;
     }
-    (body->fields).Changed = pAVar1;
-    AdvancedGhostBodyRotateWeapon_SetupWeaponCollision(this,(MethodInfo *)0x0);
-    return;
   }
-  func_?(0);
+  func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -193,118 +157,157 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::
                (AdvancedGhostBodyRotateWeapon *this,MethodInfo *method)
 
 {
-  puStack_1 = (undefined *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &puStack_1;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  CStack_3.fields._.m_CachedPtr = (Object_1__Fields)unaff_FS_OFFSET->m_CachedPtr;
+  unaff_FS_OFFSET->m_CachedPtr = &CStack_3.fields;
+  CStack_3.monitor = (MonitorData *)&stack0xffffffc8;
+  pMVar4 = (MonitorData *)&stack0xffffffc8;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
+                   );
+    func_?(&
+                    AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostTriggerBase>__
+                   );
+    func_?(&
+                    AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__GetComponent<AdvancedGhostTriggerBase>__
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__Add_AdvancedGhostTriggerBase_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__Clear__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__Transform);
     cRam_? = '\x01';
+    pMVar4 = CStack_3.monitor;
   }
-  puVar2 = (undefined4 *)&stack0xffffffd4;
-  func_?();
-  this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).ghostTriggers;
-  if (this_00 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-    List_1_UnityEngine_UIVertex__Clear
-              (this_00,
-               MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__Clear__);
-    uVar3 = 0;
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this,(MethodInfo *)0x0);
-    if (this_02 == (Transform *)0x0) goto code_?;
-    pIVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                       (this_02,(MethodInfo *)0x0);
-    while (pIVar4 != (IEnumerator *)0x0) {
-      cVar5 = func_?(1,TypeInfo__System__Collections__IEnumerator,pIVar4);
-      if (cVar5 == '\0') {
-        *puVar2 = 0x99;
-        iVar6 = func_?(pIVar4,TypeInfo__System__IDisposable);
-        if (iVar6 != 0) {
-          func_?(0,TypeInfo__System__IDisposable,iVar6);
+  CStack_3.monitor = pMVar4;
+  pLVar5 = (this->fields).ghostTriggers;
+  if (pLVar5 != (List_1_AdvancedGhostTriggerBase_ *)0x0) {
+    iVar6 = (pLVar5->fields)._size;
+    piVar7 = &(pLVar5->fields)._version;
+    *piVar7 = *piVar7 + 1;
+    (pLVar5->fields)._size = 0;
+    if (0 < iVar6) {
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pLVar5->fields)._items,0,iVar6,(MethodInfo *)0x0);
+    }
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (this_00 != (Transform *)0x0) {
+      CStack_3.klass =
+           (Component__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                     (this_00,(MethodInfo *)0x0);
+      unaff_EDI = &CStack_3;
+      uStack_1 = 1;
+      while (CStack_3.klass != (Component__Class *)0x0) {
+        cVar8 = func_?(0,TypeInfo__System__Collections__IEnumerator,CStack_3.klass);
+        pCVar9 = CStack_3.klass;
+        if (cVar8 == '\0') {
+          uStack_1 = 0xffffffff;
+          iVar6 = func_?(CStack_3.klass,TypeInfo__System__IDisposable);
+          if (iVar6 != 0) {
+            func_?(0,TypeInfo__System__IDisposable,iVar6);
+            unaff_FS_OFFSET->m_CachedPtr = (void *)CStack_3.fields._.m_CachedPtr;
+            return;
+          }
+          unaff_FS_OFFSET->m_CachedPtr = (void *)CStack_3.fields._.m_CachedPtr;
+          return;
         }
-        *unaff_FS_OFFSET = puStack_1;
-        return;
-      }
-      pCVar7 = (Component_1 *)func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar4);
-      unaff_EDI = TypeInfo__UnityEngine__Transform;
-      if (pCVar7 == (Component_1 *)0x0) break;
-      bVar8 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
-      if (((pCVar7->klass->_1).naturalAligment < bVar8) ||
-         ((pCVar7->klass->_1).typeHierarchy[bVar8 - 1] !=
-          (Il2CppClass *)TypeInfo__UnityEngine__Transform)) {
-        bVar9 = false;
-      }
-      else {
-        bVar9 = true;
-      }
-      this_04 = (Component_1 *)0x0;
-      if (bVar9) {
-        this_04 = pCVar7;
-      }
-      if (this_04 == (Component_1 *)0x0) goto code_?;
-      unaff_EDI = (Transform__Class *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                            (this_04,
-                             UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
-                            );
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)unaff_EDI,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar10 != 0) {
-        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                            (this_04,
-                             UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
-                            );
-        uVar3 = 0;
-        if (this_03 == (MVInteractableBase *)0x0) goto code_?;
-        UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger
-                  ((Collider *)this_03,1,(MethodInfo *)0x0);
-        pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           (this_04,(MethodInfo *)0x0);
-        if (pGVar11 == (GameObject *)0x0) break;
-        unaff_EDI = (Transform__Class *)
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                              (pGVar11,
-                               AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__GetComponent<AdvancedGhostTriggerBase>__
+        if (CStack_3.klass == (Component__Class *)0x0) break;
+        pIVar10 = (IEnumerator__Class *)((CStack_3.klass)->_0).image;
+        uVar11 = 0;
+        uVar12 = (pIVar10->_1).interface_offsets_count;
+        if (uVar12 != 0) {
+          do {
+            if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
+                (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+              pIVar10 = (IEnumerator__Class *)((CStack_3.klass)->_0).image;
+              ppIVar13 = &(&(pIVar10->vtable).get_Current)[pIVar10->interfaceOffsets[uVar11].offset].
+                          methodPtr;
+              goto code_?;
+            }
+            uVar11 = uVar11 + 1;
+          } while (uVar11 < uVar12);
+        }
+        ppIVar13 = (Il2CppMethodPointer *)
+                   func_?(CStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
+code_?:
+        this_01 = (Component *)(**ppIVar13)(pCVar9,(MethodInfo *)ppIVar13[1]);
+        unaff_EDI = this_01;
+        if (this_01 == (Component *)0x0) break;
+        pTVar14 = TypeInfo__UnityEngine__Transform;
+        if (((this_01->klass->_1).typeHierarchyDepth <
+             (TypeInfo__UnityEngine__Transform->_1).typeHierarchyDepth) ||
+           ((this_01->klass->_1).typeHierarchy
+            [(TypeInfo__UnityEngine__Transform->_1).typeHierarchyDepth - 1] !=
+            (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
+        unaff_EDI = (Component *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                              (this_01,
+                               UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                               );
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
         }
-        puVar2 = (undefined4 *)0x0;
-        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+        bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           ((Object_1 *)unaff_EDI,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar10 != 0) {
-          pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                             (this_04,(MethodInfo *)0x0);
-          if (pGVar11 == (GameObject *)0x0) break;
-          unaff_EDI = (Transform__Class *)
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                      GameObject_AddComponent_85
-                                (pGVar11,
-                                 AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostTriggerBase>__
+        if (bVar15 != 0) {
+          this_02 = (Collider *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                              (this_01,
+                               UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
+                              );
+          if (this_02 == (Collider *)0x0) break;
+          UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger
+                    (this_02,1,(MethodInfo *)0x0);
+          pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              (this_01,(MethodInfo *)0x0);
+          if (pGVar16 == (GameObject *)0x0) break;
+          unaff_EDI = (Component *)
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                                (pGVar16,
+                                 AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__GetComponent<AdvancedGhostTriggerBase>__
                                 );
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
+          }
+          bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            ((Object_1 *)unaff_EDI,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar15 != 0) {
+            pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                (this_01,(MethodInfo *)0x0);
+            if (pGVar16 == (GameObject *)0x0) break;
+            unaff_EDI = (Component *)
+                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_AddComponent_1
+                                  (pGVar16,
+                                   AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostTriggerBase>__
+                                  );
+          }
+          pLVar5 = (this->fields).ghostTriggers;
+          if (pLVar5 == (List_1_AdvancedGhostTriggerBase_ *)0x0) break;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)pLVar5,(Object *)unaff_EDI,
+                     MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__Add_AdvancedGhostTriggerBase_
+                    );
         }
-        this_01 = (this->fields).ghostTriggers;
-        if (this_01 == (List_1_AdvancedGhostTriggerBase_ *)0x0) break;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_01,(UIPushOption__Enum)unaff_EDI,
-                   MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__Add_AdvancedGhostTriggerBase_
-                  );
       }
     }
   }
-  uVar3 = 0;
+  func_?();
+  pTVar14 = extraout_EDX;
 code_?:
-  func_?(uVar3);
-  pCVar7 = extraout_EDX;
-code_?:
-  func_?(pCVar7,unaff_EDI);
-  func_?(unaff_EDI,0,0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?(unaff_EDI,pTVar14);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -322,72 +325,91 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
   puStack_4 = &stack0xffffffb8;
   puVar5 = &stack0xffffffb8;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__GetEnumerator__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  if ((this->fields).factor <= 0.0) {
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  if (0.0 < (this->fields).factor) {
+    this_00 = (this->fields).timeoutMap;
+    if (this_00 != (TimeoutMap *)0x0) {
+      TimeoutMap::TimeoutMap_Update(this_00,(MethodInfo *)0x0);
+      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).ghostTriggers;
+      if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                           (&LStack_8,this_01,
+                            MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__GetEnumerator__
+                           );
+        LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+        LStack_6._index = pLVar7->_index;
+        LStack_6._version = pLVar7->_version;
+        LStack_6._current = *(Object **)&pLVar7->_current;
+        LStack_8._version = 0;
+        uStack_1 = 1;
+        LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+        while( true ) {
+          bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                  List_1_T_Enumerator_System_Object__MoveNext
+                            (&LStack_6,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__MoveNext__
+                            );
+          pOVar10 = LStack_6._current;
+          if (bVar9 == 0) break;
+          if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+          goto code_?;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pIStack_11 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToArray_1
+                                 (*(IEnumerable_1_System_Int32_ **)((int)pOVar10 + 0xc),
+                                  System__Int32__MethodInfo__System__Linq__Enumerable__ToArray<int>_System__Collections__Generic__IEnumerable<int>_____
+                                 );
+          uVar12 = 0;
+          if (pIStack_11 == (Int32__Array *)0x0) goto code_?;
+          for (; (int)uVar12 < (int)pIStack_11->max_length; uVar12 = uVar12 + 1) {
+            if (pIStack_11->max_length <= uVar12) {
+              func_?();
+              goto code_?;
+            }
+            AdvancedGhostBodyRotateWeapon_Attack(this,pIStack_11->vector[uVar12],(MethodInfo *)0x0);
+          }
+        }
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__Dispose__
+                   ,unaff_EBX);
+        goto code_?;
+      }
+    }
 code_?:
-    *unaff_FS_OFFSET = uStack_3;
+    func_?();
+    pcVar13 = (code *)swi(3);
+    (*pcVar13)();
     return;
   }
-  this_00 = (this->fields).timeoutMap;
-  puStack_7 = (undefined4 *)&stack0xffffffb8;
-  puStack_4 = &stack0xffffffb8;
-  if (this_00 != (TimeoutMap *)0x0) {
-    puStack_7 = (undefined4 *)&stack0xffffffb8;
-    puStack_4 = &stack0xffffffb8;
-    TimeoutMap::TimeoutMap_Update(this_00,(MethodInfo *)0x0);
-    this_01 = (List_1_UnityEngine_Color32_ *)(this->fields).ghostTriggers;
-    if (this_01 != (List_1_UnityEngine_Color32_ *)0x0) {
-      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-               List_1_UnityEngine_Color32__GetEnumerator
-                         ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffc4,this_01,
-                          MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__GetEnumerator__
-                         );
-      CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar8->l
-      ;
-      CStack_6.monitor = (MonitorData *)pLVar8->next;
-      CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar8->ver;
-      CStack_6.fields.syncRoot = (Object *)(pLVar8->current).rgba;
-      uStack_1 = 0;
-      while (cVar9 = func_?(), cVar9 != '\0') {
-        this_02 = (AdvancedGhostTriggerBase *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            (&CStack_6,
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__get_Current__
-                            );
-        if (this_02 == (AdvancedGhostTriggerBase *)0x0) goto code_?;
-        pIVar10 = AdvancedGhostTriggerBase::AdvancedGhostTriggerBase_get_AttackTargets
-                           (this_02,(MethodInfo *)0x0);
-        iVar11 = 0;
-        while( true ) {
-          if (pIVar10 == (Int32__Array *)0x0) goto code_?;
-          if ((int)pIVar10->max_length <= iVar11) break;
-          woid = func_?();
-          AdvancedGhostBodyRotateWeapon_Attack(this,woid,(MethodInfo *)0x0);
-          iVar11 = iVar11 + 1;
-        }
-      }
-      *puStack_7 = 0x7f;
-      uStack_1 = 0xffffffff;
-      func_?();
-      goto code_?;
-    }
-  }
 code_?:
-  func_?();
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -399,24 +421,40 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>);
+    func_?(&TypeInfo__TimeoutMap);
     cRam_? = '\x01';
   }
   (this->fields).damage = 55.0;
   (this->fields).impulseStrength = 2500.0;
   (this->fields).factor = 1.0;
   this_00 = (TimeoutMap *)func_?(TypeInfo__TimeoutMap);
-  TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
-  (this->fields).timeoutMap = this_00;
-  (this->fields).alliedTeam = 4;
-  this_01 = (List_1_UnityEngine_Vector4_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__List__);
-  (this->fields).ghostTriggers = (List_1_AdvancedGhostTriggerBase_ *)this_01;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  if (this_00 != (TimeoutMap *)0x0) {
+    TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
+    (this->fields).timeoutMap = this_00;
+    func_?(&(this->fields).timeoutMap,this_00);
+    (this->fields).alliedTeam = 4;
+    this_01 = (List_1_AdvancedGhostTriggerBase_ *)
+              func_?(TypeInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>
+                             );
+    if (this_01 != (List_1_AdvancedGhostTriggerBase_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+      LowLevelList_1_System_Object___ctor
+                ((LowLevelList_1_System_Object_ *)this_01,
+                 MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__List__);
+      (this->fields).ghostTriggers = this_01;
+      func_?(&(this->fields).ghostTriggers,this_01);
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+                ((Transform *)this,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

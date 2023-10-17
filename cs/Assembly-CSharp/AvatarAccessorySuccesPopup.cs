@@ -10,7 +10,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarAccessorySuccesPopup : MonoBehaviour
 {
@@ -20,8 +20,23 @@ public class AvatarAccessorySuccesPopup : MonoBehaviour
 	[SerializeField]
 	private AccessoryItemBackground itemBackground;
 	private UnityAction resultCallback;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__4_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnButtonPressed_b__4_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public AvatarAccessorySuccesPopup();
@@ -29,7 +44,5 @@ public class AvatarAccessorySuccesPopup : MonoBehaviour
 	// Methods
 	public void Initialize(UnityAction resultCallback, Texture previewImage, AccessoryDataClient accessoryData);
 	public void OnButtonPressed();
-	[CompilerGenerated]
-	private static void _OnButtonPressed_m__0(IUIStack x, BaseEventData y);
 }
 

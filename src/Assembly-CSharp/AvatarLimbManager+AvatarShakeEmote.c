@@ -6,96 +6,68 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
                (AvatarLimbManager_AvatarShakeEmote *this,MethodInfo *method)
 
 {
+  unique0x10000085 =
+       (double)(((((this->fields)._.duration / (this->fields)._.lifeTime) * _UNK_?) /
+                _UNK_?) * _UNK_?);
+  fVar1 = (float10)func_?(unique0x10000085);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Quaternion);
     cRam_? = '\x01';
   }
-  fVar1 = (((this->fields)._.duration / (this->fields)._.lifeTime) * _UNK_?) / _UNK_?;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  unique0x1000008d = (double)((float)fVar1 + _UNK_?);
+  fVar1 = (float10)func_?();
+  stack0xfffffff4 = (double)((ulonglong)(double)fVar1 & 0xffffffff);
+  uVar2 = _UNK_?;
+  if ((float)fVar1 != 0.0) {
+    uVar2 = _UNK_?;
   }
-  uStack_2 = (double)(fVar1 * _UNK_?);
-  fVar3 = (float10)func_?(SUB84(uStack_2,0),(int)((ulonglong)uStack_2 >> 0x20));
-  uStack_2 = (double)fVar3;
-  fVar1 = (float)fVar3 + _UNK_?;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Quaternion);
-  }
-  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                     ((Quaternion *)&stack0xffffffcc,(MethodInfo *)0x0);
-  fStack_5 = pQVar4->x;
-  fStack_6 = pQVar4->y;
-  fStack_7 = pQVar4->z;
-  fStack_8 = pQVar4->w;
-  uStack_2 = (double)fVar1;
-  fVar3 = (float10)func_?();
-  fStack_9 = 0.0;
-  uStack_2._0_4_ = 0.0;
-  uStack_2._4_4_ = 0.0;
-  if ((float)fVar3 == 0.0) {
-    uVar10 = 0x41c80000;
-  }
-  else {
-    uVar10 = 0x43a78000;
-  }
-  func_?(&fStack_9,0,uVar10,0);
-  func_?(&fStack_5,fStack_9,(float)uStack_2,uStack_2._4_4_);
-  fStack_11 = fStack_5;
-  fStack_9 = fStack_6;
-  uStack_2._0_4_ = fStack_7;
-  uStack_2._4_4_ = fStack_8;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pLVar12 = (this->fields).headController;
-  if (pLVar12 != (LimbController *)0x0) {
-    pQVar4 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                       ((Quaternion *)&stack0xffffffcc,pLVar12,(MethodInfo *)0x0);
-    fVar1 = pQVar4->x;
-    fVar13 = pQVar4->y;
-    puVar14 = (undefined *)pQVar4->z;
-    pQVar15 = (Quaternion__Class *)pQVar4->w;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      puVar14 = &UNK_?;
-      pQVar15 = TypeInfo__UnityEngine__Quaternion;
-      func_?();
-    }
-    lhs.y = fVar13;
-    lhs.x = fVar1;
-    lhs.z = (float)puVar14;
-    lhs.w = (float)pQVar15;
-    rhs.y = fStack_9;
-    rhs.x = fStack_11;
-    rhs.z = (float)uStack_2;
-    rhs.w = uStack_2._4_4_;
-    bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Inequality
-                      (lhs,rhs,(MethodInfo *)0x0);
-    if (bVar16 == 0) {
+  auVar3._4_8_ = 0;
+  auVar3._0_4_ = uVar2;
+  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                      ((Quaternion *)auStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
+  fVar6 = pQVar4->x;
+  fVar7 = pQVar4->y;
+  fVar8 = pQVar4->z;
+  fVar9 = pQVar4->w;
+  pLVar10 = (this->fields).headController;
+  if (pLVar10 != (LimbController *)0x0) {
+    if (_UNK_? <
+        fVar7 * (pLVar10->fields).interpolateTowardsYawRotation.y +
+        fVar6 * (pLVar10->fields).interpolateTowardsYawRotation.x +
+        fVar8 * (pLVar10->fields).interpolateTowardsYawRotation.z +
+        fVar9 * (pLVar10->fields).interpolateTowardsYawRotation.w) {
       return;
     }
-    pLVar12 = (this->fields).headController;
-    if (pLVar12 != (LimbController *)0x0) {
-      LimbController::LimbController_ResetInterpolation(pLVar12,(MethodInfo *)0x0);
-      pLVar12 = (this->fields).headController;
-      if (pLVar12 != (LimbController *)0x0) {
-        pQVar4 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                           ((Quaternion *)&stack0xffffffcc,pLVar12,(MethodInfo *)0x0);
-        yawRotation.y = fStack_9;
-        yawRotation.x = fStack_11;
-        yawRotation.z = (float)uStack_2;
-        yawRotation.w = uStack_2._4_4_;
-        LimbController::LimbController_SetNewRotation(pLVar12,yawRotation,*pQVar4,(MethodInfo *)0x0);
+    if (pLVar10 != (LimbController *)0x0) {
+      (pLVar10->fields).elapsedInterpolationTime = 0.0;
+      (pLVar10->fields).elapsedInterpolateAnimationTime = 0.0;
+      (pLVar10->fields).shouldRotate = 1;
+      (pLVar10->fields).rotationDuration = 0.0;
+      pLVar10 = (this->fields).headController;
+      if (pLVar10 != (LimbController *)0x0) {
+        fVar11 = (pLVar10->fields).interpolateTowardsPitchRotation.x;
+        fVar12 = (pLVar10->fields).interpolateTowardsPitchRotation.y;
+        fVar13 = (pLVar10->fields).interpolateTowardsPitchRotation.z;
+        fVar14 = (pLVar10->fields).interpolateTowardsPitchRotation.w;
+        (pLVar10->fields).elapsedInterpolationTime = 0.0;
+        (pLVar10->fields).elapsedInterpolateAnimationTime = 0.0;
+        (pLVar10->fields).shouldRotate = 1;
+        (pLVar10->fields).rotationDuration = 0.0;
+        (pLVar10->fields).interpolateTowardsYawRotation.x = fVar6;
+        (pLVar10->fields).interpolateTowardsYawRotation.y = fVar7;
+        (pLVar10->fields).interpolateTowardsYawRotation.z = fVar8;
+        (pLVar10->fields).interpolateTowardsYawRotation.w = fVar9;
+        (pLVar10->fields).interpolateTowardsPitchRotation.x = fVar11;
+        (pLVar10->fields).interpolateTowardsPitchRotation.y = fVar12;
+        (pLVar10->fields).interpolateTowardsPitchRotation.z = fVar13;
+        (pLVar10->fields).interpolateTowardsPitchRotation.w = fVar14;
         return;
       }
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -109,21 +81,43 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
 
 {
   (this->fields)._.limbRotator = limbRotator;
+  func_?(&(this->fields)._.limbRotator,limbRotator);
   (this->fields)._.lifeTime = lifeTime;
   if (limbRotator != (AvatarLimbManager_LimbRotator *)0x0) {
-    this_00 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_GetLimbController
-                        (limbRotator,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
-    (this->fields).headController = this_00;
-    if (this_00 != (LimbController *)0x0) {
-      fVar1 = LimbController::LimbController_get_InterpolationSpeed(this_00,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                     );
+      cRam_? = '\x01';
+    }
+    bVar1 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_HasLimbController
+                      (limbRotator,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      pLVar2 = (LimbController *)0x0;
+    }
+    else {
+      this_00 = (limbRotator->fields).limbControllers;
+      if (this_00 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) goto code_?;
+      pLVar2 = (LimbController *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,
+                          MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                         );
+    }
+    (this->fields).headController = pLVar2;
+    func_?(&(this->fields).headController,pLVar2);
+    pLVar2 = (this->fields).headController;
+    if (pLVar2 != (LimbController *)0x0) {
+      (this->fields).originalInterpolationSpeed = (pLVar2->fields).interpolationSpeed;
       (this->fields)._.emote = 1;
-      (this->fields).originalInterpolationSpeed = fVar1;
       return;
     }
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -135,48 +129,47 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
                (AvatarLimbManager_AvatarShakeEmote *this,Quaternion yawRotation,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pLVar1 = (this->fields).headController;
-  if (pLVar1 != (LimbController *)0x0) {
-    pQVar2 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                       ((Quaternion *)&stack0xffffffec,pLVar1,(MethodInfo *)0x0);
-    puVar3 = (undefined *)pQVar2->x;
-    pQVar4 = (Quaternion__Class *)pQVar2->y;
-    fVar5 = pQVar2->z;
-    fVar6 = pQVar2->w;
-    if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-      puVar3 = &UNK_?;
-      pQVar4 = TypeInfo__UnityEngine__Quaternion;
-      func_?();
-    }
-    lhs.y = (float)pQVar4;
-    lhs.x = (float)puVar3;
-    lhs.z = fVar5;
-    lhs.w = fVar6;
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Inequality
-                      (lhs,yawRotation,(MethodInfo *)0x0);
-    if (bVar7 == 0) {
+  puStack_1 = &stack0xfffffffc;
+  pLVar2 = (this->fields).headController;
+  if (pLVar2 != (LimbController *)0x0) {
+    if (_UNK_? <
+        (pLVar2->fields).interpolateTowardsYawRotation.y * yawRotation.y +
+        (pLVar2->fields).interpolateTowardsYawRotation.x * yawRotation.x +
+        (pLVar2->fields).interpolateTowardsYawRotation.z * yawRotation.z +
+        (pLVar2->fields).interpolateTowardsYawRotation.w * yawRotation.w) {
       return;
     }
-    pLVar1 = (this->fields).headController;
-    if (pLVar1 != (LimbController *)0x0) {
-      LimbController::LimbController_ResetInterpolation(pLVar1,(MethodInfo *)0x0);
-      pLVar1 = (this->fields).headController;
-      if (pLVar1 != (LimbController *)0x0) {
-        pQVar2 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                           ((Quaternion *)&stack0xffffffec,pLVar1,(MethodInfo *)0x0);
-        LimbController::LimbController_SetNewRotation(pLVar1,yawRotation,*pQVar2,(MethodInfo *)0x0);
+    if (pLVar2 != (LimbController *)0x0) {
+      (pLVar2->fields).elapsedInterpolationTime = 0.0;
+      (pLVar2->fields).elapsedInterpolateAnimationTime = 0.0;
+      (pLVar2->fields).shouldRotate = 1;
+      (pLVar2->fields).rotationDuration = 0.0;
+      pLVar2 = (this->fields).headController;
+      if (pLVar2 != (LimbController *)0x0) {
+        fVar3 = (pLVar2->fields).interpolateTowardsPitchRotation.x;
+        fVar4 = (pLVar2->fields).interpolateTowardsPitchRotation.y;
+        fVar5 = (pLVar2->fields).interpolateTowardsPitchRotation.z;
+        fVar6 = (pLVar2->fields).interpolateTowardsPitchRotation.w;
+        (pLVar2->fields).elapsedInterpolationTime = 0.0;
+        (pLVar2->fields).elapsedInterpolateAnimationTime = 0.0;
+        (pLVar2->fields).shouldRotate = 1;
+        (pLVar2->fields).rotationDuration = 0.0;
+        (pLVar2->fields).interpolateTowardsYawRotation.x = yawRotation.x;
+        (pLVar2->fields).interpolateTowardsYawRotation.y = yawRotation.y;
+        (pLVar2->fields).interpolateTowardsYawRotation.z = yawRotation.z;
+        (pLVar2->fields).interpolateTowardsYawRotation.w = yawRotation.w;
+        (pLVar2->fields).interpolateTowardsPitchRotation.x = fVar3;
+        (pLVar2->fields).interpolateTowardsPitchRotation.y = fVar4;
+        (pLVar2->fields).interpolateTowardsPitchRotation.z = fVar5;
+        (pLVar2->fields).interpolateTowardsPitchRotation.w = fVar6;
         return;
       }
     }
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar7 = func_?(auStack_8);
+  func_?(uVar7);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -188,22 +181,23 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
                (AvatarLimbManager_AvatarShakeEmote *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._.lifeTime;
+  puStack_1 = &stack0xfffffffc;
+  (this->fields)._.duration = (this->fields)._.lifeTime;
   pLVar2 = (this->fields).headController;
   (this->fields)._.isActive = 1;
-  (this->fields)._.duration = fVar1;
   if (pLVar2 != (LimbController *)0x0) {
-    LimbController::LimbController_set_InterpolationSpeed
-              (pLVar2,(_UNK_? / fVar1) * _UNK_?,(MethodInfo *)0x0);
+    (pLVar2->fields).interpolationSpeed =
+         (_UNK_? / (this->fields)._.lifeTime) * _UNK_?;
     pLVar2 = (this->fields).headController;
     if (pLVar2 != (LimbController *)0x0) {
-      LimbController::LimbController_set_IsEventControllingLimb(pLVar2,1,(MethodInfo *)0x0);
+      (pLVar2->fields).isEventControllingLimb = 1;
       return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -215,31 +209,26 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
                (AvatarLimbManager_AvatarShakeEmote *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_1_UIPushOption_ *)(this->fields)._.OnEmoteEnd;
+  pAVar1 = (this->fields)._.OnEmoteEnd;
   (this->fields)._.duration = 0.0;
   (this->fields)._.isActive = 0;
-  if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,(uint)(this->fields)._.emote,
-               MethodInfo__System__Action<EmoteTypes>__Invoke_EmoteTypes_);
+  if (pAVar1 != (Action_1_EmoteTypes_ *)0x0) {
+    pAVar1 = (this->fields)._.OnEmoteEnd;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,(this->fields)._.emote,(pAVar1->fields)._._.method);
   }
-  pLVar1 = (this->fields).headController;
-  if (pLVar1 != (LimbController *)0x0) {
-    LimbController::LimbController_set_InterpolationSpeed
-              (pLVar1,(this->fields).originalInterpolationSpeed,(MethodInfo *)0x0);
-    pLVar1 = (this->fields).headController;
-    if (pLVar1 != (LimbController *)0x0) {
-      LimbController::LimbController_set_IsEventControllingLimb(pLVar1,0,(MethodInfo *)0x0);
+  pLVar2 = (this->fields).headController;
+  if (pLVar2 != (LimbController *)0x0) {
+    (pLVar2->fields).interpolationSpeed = (this->fields).originalInterpolationSpeed;
+    pLVar2 = (this->fields).headController;
+    if (pLVar2 != (LimbController *)0x0) {
+      (pLVar2->fields).isEventControllingLimb = 0;
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -260,7 +249,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
       AvatarLimbManager_AvatarShakeEmote_HandleRotation(this,(MethodInfo *)0x0);
       return;
     }
-    (*(code *)(this->klass->vtable).StopEmote.method)(this,this->klass[1]._0.image);
+    (*(this->klass->vtable).StopEmote.methodPtr)(this,(this->klass->vtable).StopEmote.method);
   }
   return;
 }

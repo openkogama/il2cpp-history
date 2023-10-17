@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarAccessoryEquipPopup : MonoBehaviour, IEventSystemHandler
 {
@@ -26,10 +26,25 @@ public class AvatarAccessoryEquipPopup : MonoBehaviour, IEventSystemHandler
 	private AccessoryDataClient accessoryDataClient;
 	private float accessoryOffset;
 	private float accessoryScale;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Equip_b__9_1(IUIStack x, BaseEventData y);
+		internal void _DontEquip_b__10_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public AvatarAccessoryEquipPopup();
@@ -40,10 +55,6 @@ public class AvatarAccessoryEquipPopup : MonoBehaviour, IEventSystemHandler
 	public void DontEquip();
 	private void OnPreviewImageDownLoaded();
 	[CompilerGenerated]
-	private void _Equip_m__0(IAttachToBody x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Equip_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _DontEquip_m__2(IUIStack x, BaseEventData y);
+	private void _Equip_b__9_0(IAttachToBody x, BaseEventData y);
 }
 

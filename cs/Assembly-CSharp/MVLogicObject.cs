@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVLogicObject : MVWorldObjectClient, IUpdatecontrollerSubscriberUpdate
 {
@@ -27,6 +27,7 @@ public abstract class MVLogicObject : MVWorldObjectClient, IUpdatecontrollerSubs
 	protected virtual void OnUpdate();
 	public override void Reset();
 	public override void Initialize();
+	public void SetLocalBounds();
 	protected CullingSubscriberBase SetupCulling(GameObject lodGameObject, float cullingRadius = 2f);
 	private void OnPositionChanged(MVWorldObjectClient arg0, PositionChangedEventArgs positionChangedEventArgs);
 	protected virtual void OnStateChanged(CullingGroupEvent cullingGroupEvent);

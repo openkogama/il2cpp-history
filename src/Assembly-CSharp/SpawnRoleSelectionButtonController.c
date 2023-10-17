@@ -21,26 +21,31 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButtonController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Unlock_Tier_);
+    func_?(&StringLiteral_Tier_);
+    func_?(&StringLiteral__Locked);
     cRam_? = '\x01';
   }
   (this->fields).currentSpawnRoleGamePassTier = (undefined1)spawnRoleTier;
-  if ((((uint)(TypeInfo__GamePassesManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GamePassesManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__GamePassesManager);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GamePassesManager);
+    cRam_? = '\x01';
   }
-  pPVar1 = GamePassesManager::GamePassesManager_get_PlayerPlanetData((MethodInfo *)0x0);
-  if (pPVar1 == (PlayerPlanetData *)0x0) {
+  if (TypeInfo__GamePassesManager->static_fields->playerPlanetData == (PlayerPlanetData *)0x0) {
     return;
   }
-  if ((((uint)(TypeInfo__GamePassesManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GamePassesManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__GamePassesManager);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GamePassesManager);
+    cRam_? = '\x01';
   }
-  pPVar1 = GamePassesManager::GamePassesManager_get_PlayerPlanetData((MethodInfo *)0x0);
+  pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
   if (pPVar1 != (PlayerPlanetData *)0x0) {
     uVar2 = (pPVar1->fields).gamePassTier;
-    pPVar1 = GamePassesManager::GamePassesManager_get_PlayerPlanetData((MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__GamePassesManager);
+      cRam_? = '\x01';
+    }
+    pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
     if (pPVar1 != (PlayerPlanetData *)0x0) {
       uVar3 = (pPVar1->fields).previewGamePassTier;
       pGVar4 = (this->fields).FreeTryUI;
@@ -64,13 +69,10 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButtonController::
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar4,0,(MethodInfo *)0x0);
             pTVar5 = (this->fields).buyTierButtonText;
-            pOVar6 = (Object *)func_?();
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?();
-            }
-            mscorlib.dll::System::String::String_Concat
-                      ((Object *)StringLiteral_Unlock_Tier_,pOVar6,(MethodInfo *)0x0);
+            pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
+                               ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+            pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                               (StringLiteral_Unlock_Tier_,pSVar6,(MethodInfo *)0x0);
           }
           else {
             if (pGVar4 == (GameObject *)0x0) goto code_?;
@@ -85,18 +87,14 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButtonController::
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar4,1,(MethodInfo *)0x0);
             pTVar5 = (this->fields).lockedTierButtonText;
-            pOVar6 = (Object *)func_?();
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?();
-            }
-            mscorlib.dll::System::String::String_Concat_1
-                      ((Object *)StringLiteral_Tier_,pOVar6,(Object *)StringLiteral__Locked,
-                       (MethodInfo *)0x0);
+            pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
+                               ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+            pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                               (StringLiteral_Tier_,pSVar6,StringLiteral__Locked,(MethodInfo *)0x0);
           }
           if (pTVar5 != (Text *)0x0) {
-            pIStack7 = (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-            (*(code *)(pTVar5->klass->vtable).set_text.method)();
+            (*(pTVar5->klass->vtable).set_text.methodPtr)
+                      (pTVar5,pSVar6,(pTVar5->klass->vtable).set_text.method);
             return;
           }
         }
@@ -106,26 +104,15 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButtonController::
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar4,1,(MethodInfo *)0x0);
             pGVar4 = (this->fields).buyTierButton;
-            if ((pGVar4 != (GameObject *)0x0) &&
-               (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,0,(MethodInfo *)0x0),
-               (this->fields).lockedTierButton != (GameObject *)0x0)) {
-              pcVar8 = pcRam_?;
-              if (pcRam_? == (code *)0x0) {
-                pcVar8 = (code *)func_?();
-                if (pcVar8 == (code *)0x0) {
-                  puStack9 = (undefined *)0x0;
-                  puStack10 = (undefined *)0x0;
-                  pIStack7 = (Il2CppMethodPointer)func_?();
-                  func_?();
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
-                  return;
-                }
+            if (pGVar4 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar4,0,(MethodInfo *)0x0);
+              pGVar4 = (this->fields).lockedTierButton;
+              if (pGVar4 != (GameObject *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar4,0,(MethodInfo *)0x0);
+                return;
               }
-              pcRam_? = pcVar8;
-              (*pcRam_?)();
-              return;
             }
           }
         }
@@ -133,10 +120,9 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButtonController::
     }
   }
 code_?:
-  pIStack7 = (Il2CppMethodPointer)0x0;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

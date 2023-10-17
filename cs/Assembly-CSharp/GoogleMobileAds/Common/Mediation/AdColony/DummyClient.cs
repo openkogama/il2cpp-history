@@ -5,8 +5,9 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using GoogleMobileAds.Api.Mediation.AdColony;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Common.Mediation.AdColony
 {
@@ -16,13 +17,13 @@ namespace GoogleMobileAds.Common.Mediation.AdColony
 		public DummyClient();
 	
 		// Methods
-		public void SetGDPRConsentString(string consentString);
-		public void SetGDPRRequired(bool gdprRequired);
+		public void SetPrivacyFrameworkRequired(AdColonyPrivacyFramework privacyFramework, bool isRequired);
+		public bool GetPrivacyFrameworkRequired(AdColonyPrivacyFramework privacyFramework);
+		public void SetPrivacyConsentString(AdColonyPrivacyFramework privacyFramework, string consentString);
+		public string GetPrivacyConsentString(AdColonyPrivacyFramework privacyFramework);
 		public void SetUserId(string userId);
-		public void SetTestMode(bool isTestMode);
-		public string GetGDPRConsentString();
-		public bool IsGDPRRequired();
 		public string GetUserId();
+		public void SetTestMode(bool isTestMode);
 		public bool IsTestMode();
 	}
 }

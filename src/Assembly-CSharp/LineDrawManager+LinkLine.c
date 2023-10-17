@@ -6,7 +6,8 @@ void Assembly-CSharp.dll::LineDrawManager+LinkLine::LineDrawManager_LinkLine__ct
                MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).startPos.x = startPos.x;
   (this->fields).startPos.y = startPos.y;
   (this->fields).endPos.x = endPos.x;

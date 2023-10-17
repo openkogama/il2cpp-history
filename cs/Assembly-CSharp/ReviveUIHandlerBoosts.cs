@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ReviveUIHandlerBoosts : ReviveUIHandlerBase
 {
@@ -33,40 +33,53 @@ public class ReviveUIHandlerBoosts : ReviveUIHandlerBase
 	[SerializeField]
 	private GameObject boostContent;
 	private GamePassTier tier;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	protected override AdContext AdContext { get; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _Update_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal bool isBlocked;
-		internal ReviveUIHandlerBoosts _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__13_0;
 
 		// Constructors
-		public _Update_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnAdFinishedContinue_b__13_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnRewardedAdWatched_c__AnonStorey1
+	private sealed class __c__DisplayClass16_0
 	{
 		// Fields
-		internal NotificationPopup popup;
-		internal ReviveUIHandlerBoosts _this;
+		public bool isBlocked;
+		public ReviveUIHandlerBoosts __4__this;
 
 		// Constructors
-		public _OnRewardedAdWatched_c__AnonStorey1();
+		public __c__DisplayClass16_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
-		internal void __m__1();
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass17_0
+	{
+		// Fields
+		public NotificationPopup popup;
+		public ReviveUIHandlerBoosts __4__this;
+
+		// Constructors
+		public __c__DisplayClass17_0();
+
+		// Methods
+		internal void _OnRewardedAdWatched_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -81,6 +94,6 @@ public class ReviveUIHandlerBoosts : ReviveUIHandlerBase
 	protected override void Update();
 	protected override void OnRewardedAdWatched(RewardedAdResult result);
 	[CompilerGenerated]
-	private static void _OnAdFinishedContinue_m__0(IUIStack x, BaseEventData y);
+	private void _OnRewardedAdWatched_b__17_1();
 }
 

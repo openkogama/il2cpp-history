@@ -10,7 +10,9 @@ Vector3 * Assembly-CSharp.dll::JumpState::JumpState_ApplyJumping
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVPhysics);
+    func_?(&TypeInfo__System__Math);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
   JumpState_UpdateWallJumpValues(this,(MethodInfo *)0x0);
@@ -28,291 +30,253 @@ Vector3 * Assembly-CSharp.dll::JumpState::JumpState_ApplyJumping
   if (groundState == (MVGroundState *)0x0) goto code_?;
   bVar3 = MVGroundState::MVGroundState_get_Grounded(groundState,(MethodInfo *)0x0);
   if (((bVar3 == 0) && ((this->fields).jumping != 0)) && ((this->fields).holdingJumpButton != 0)) {
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     fVar2 = (this->fields).lastStartTime;
     if (interactableLocal == (MVInteractableBase *)0x0) goto code_?;
-    fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-    fVar6 = (float)fVar5;
-    fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-    fVar7 = (float)fVar5;
-    if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVPhysics);
-    }
-    fVar7 = MVPhysics::MVPhysics_CalculateJumpVerticalSpeed(fVar7,(MethodInfo *)0x0);
-    if (fVar6 / fVar7 + fVar2 <= fVar4) goto code_?;
-    fVar6 = (this->fields).jumpDir.z;
-    fVar2 = (this->fields).jumpDir.x;
-    fVar4 = (this->fields).jumpDir.y;
-    if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
+    auStack_4._4_4_ = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
+    fVar5 = (float10)(*(code *)auStack_4._4_4_)();
+    auStack_4._0_4_ = (undefined4)fVar5;
+    auStack_4._4_4_ = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
+    fVar5 = (float10)(*(code *)auStack_4._4_4_)();
+    if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar8 = MVPhysics::MVPhysics_get_Gravity((ObscuredFloat *)&stack0xffffffc0,(MethodInfo *)0x0);
-    puVar9 = (undefined *)pOVar8->currentCryptoKey;
-    AVar10 = pOVar8->hiddenValue;
-    uVar11._0_4_ = pOVar8->hiddenValueOld;
-    fVar7 = pOVar8->fakeValue;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
-      puVar9 = &UNK_?;
-      AVar10 = (ACTkByte4)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat;
+    fVar6 = MVPhysics::MVPhysics_CalculateJumpVerticalSpeed((float)fVar5,(MethodInfo *)0x0);
+    auStack_4._0_4_ = fVar2 / fVar6 + (float)fVar5;
+    if ((float)auStack_4._0_4_ <= fStack_7) goto code_?;
+    fStack_8 = (this->fields).jumpDir.z;
+    uStack_9._0_4_ = (this->fields).jumpDir.x;
+    uStack_9._4_4_ = (this->fields).jumpDir.y;
+    if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    value.hiddenValue = AVar10;
-    value.currentCryptoKey = (int32_t)puVar9;
-    value.hiddenValueOld = (Byte__Array *)uVar11;
-    value.fakeValue = fVar7;
-    value.inited = pOVar8->inited;
-    value._17_3_ = *(undefined3 *)&pOVar8->field_0x11;
-    fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-            ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    a_02.y = fVar4;
-    a_02.x = fVar2;
-    a_02.z = fVar6;
-    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                        ((Vector3 *)&stack0xffffffb4,a_02,fVar7,(MethodInfo *)0x0);
-    fVar2 = pVVar12->z;
-    fVar4 = 0.0;
-    pMVar13 = interactableLocal;
-    fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-    a.y = fVar4;
-    a.x = (float)pMVar13;
-    a.z = fVar2;
-    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                        ((Vector3 *)&stack0xffffffb4,a,(float)fVar5,(MethodInfo *)0x0);
-    fVar6 = pVVar12->x;
-    fVar7 = pVVar12->y;
-    fVar2 = pVVar12->z;
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    a_00.y = fVar7;
-    a_00.x = fVar6;
-    a_00.z = fVar2;
-    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                        ((Vector3 *)&stack0xffffffb4,a_00,fVar4,(MethodInfo *)0x0);
-    a_01.y = velocity.y;
-    a_01.x = velocity.x;
-    a_01.z = velocity.z;
-    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                        ((Vector3 *)&stack0xffffffb4,a_01,*pVVar12,(MethodInfo *)0x0);
-    uVar14._0_4_ = pVVar12->x;
-    uVar14._4_4_ = pVVar12->y;
-    pVVar12 = (Vector3 *)pVVar12->z;
-    velocity.x = (float)(undefined4)uVar14;
-    velocity.y = (float)uVar14._4_4_;
+    pMVar10 = TypeInfo__MVPhysics->static_fields;
+    fStack_11 = (float)(pMVar10->gravity).currentCryptoKey;
+    AStack_12 = (pMVar10->gravity).hiddenValue;
+    pBStack_13 = (pMVar10->gravity).hiddenValueOld;
+    fStack_14 = (pMVar10->gravity).fakeValue;
+    auStack_4._0_4_ = *(undefined4 *)&(pMVar10->gravity).inited;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    value.hiddenValue = AStack_12;
+    value.currentCryptoKey = (int32_t)fStack_11;
+    value.hiddenValueOld = pBStack_13;
+    value.fakeValue = fStack_14;
+    value._16_4_ = auStack_4._0_4_;
+    fVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+             ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+    stack0xffffffbc = CONCAT44(fStack_11 * fVar2,(float)AStack_12 * fVar2);
+    auStack_4._4_4_ = (float)pBStack_13 * fVar2;
+    pMVar15 = (interactableLocal->klass->vtable).__unknown_6.method;
+    pIVar16 = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
+    stack0xffffffcc = CONCAT44(fStack_17,pIVar16);
+    fVar5 = (float10)(*pIVar16)();
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    pBStack_13 = (Byte__Array *)(velocity.z + (float)fVar5 * 0.0 * fVar2);
+    velocity.y = density * (float)fVar5 * fVar2 + velocity.y;
+    velocity.x = velocity.x + (float)pMVar15 * fVar2;
+    uStack_9 = CONCAT44(velocity.y,velocity.x);
   }
   else {
+    if (interactableLocal == (MVInteractableBase *)0x0) goto code_?;
 code_?:
-    uVar14 = CONCAT44(velocity.y,velocity.x);
-    pVVar12 = (Vector3 *)velocity.z;
+    uStack_9 = velocity._0_8_;
   }
-  uVar11._0_4_ = (Byte__Array *)uVar14;
-  uVar11._4_4_ = (float)((ulonglong)uVar14 >> 0x20);
-  if (interactableLocal == (MVInteractableBase *)0x0) {
-code_?:
+  uStack_18 = 0;
+  fStack_8 = 0.0;
+  auStack_4._0_4_ = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
+  fVar5 = (float10)(*(code *)auStack_4._0_4_)();
+  auStack_4._0_4_ = (undefined4)fVar5;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
-    pcVar15 = (code *)swi(3);
-    pVVar12 = (Vector3 *)(*pcVar15)();
-    return pVVar12;
   }
-  fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)
-                              (interactableLocal,5,0x3f800000);
-  fVar2 = mscorlib.dll::System::Math::Math_Min_1
-                    (1.0,(float)fVar5 * _UNK_?,(MethodInfo *)0x0);
-  if ((waterProximity < fVar2) ||
-     (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
-     fVar2 - (this->fields).lastStartTime < _UNK_?)) {
-    bVar3 = 0;
+  fVar2 = mscorlib.dll::System::Math::Math_Min_3
+                     (1.0,(float)auStack_4._0_4_ * _UNK_?,(MethodInfo *)0x0);
+  stack0xffffffbc = CONCAT44(fVar2,auStack_4._8_4_);
+  if (fVar2 <= waterProximity) {
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    bVar19 = _UNK_? <= fVar2 - (this->fields).lastStartTime;
   }
   else {
-    bVar3 = SUB41(_inputJump,0);
+    bVar19 = false;
   }
-  canWaterJump = bVar3;
-  fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-  wallJumpPossible = _UNK_? < (float)fVar5;
-  if ((((((bool)wallJumpPossible) || (bVar3 != 0)) ||
-       ((this->fields).airJumpsAllowed <= (this->fields).airJumpsDone)) ||
-      ((inputJump == 0 ||
-       (_inputJump = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                               ((MethodInfo *)0x0),
-       _inputJump - (this->fields).lastStartTime < _UNK_?)))) ||
-     ((this->fields).holdingJumpButton != 0)) {
-    _inputJump = 0.0;
+  auStack_4._4_4_ = ZEXT14(bVar19 & inputJump);
+  stack0xffffffcc = CONCAT14(bVar19 & inputJump,auStack_20._8_4_);
+  pMStack_21 = (interactableLocal->klass->vtable).__unknown_6.method;
+  auStack_20._0_4_ = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
+  fStack_22 = 2.38221e-44;
+  cVar23 = '+';
+  fVar5 = (float10)(*(code *)auStack_20._0_4_)();
+  fVar2 = (float)fVar5;
+  if ((_UNK_? < fVar2) || (cVar23 != '\0')) {
+    bVar19 = false;
   }
   else {
-    bVar16 = MVGroundState::MVGroundState_get_Grounded(groundState,(MethodInfo *)0x0);
-    _inputJump = (float)(uint)(bVar16 == 0);
+    bVar19 = (this->fields).airJumpsDone < (this->fields).airJumpsAllowed;
   }
-  bVar16 = MVGroundState::MVGroundState_get_Grounded(groundState,(MethodInfo *)0x0);
-  if ((((bVar16 != 0) || (wallJumpPossible != 0)) || ((bVar3 != 0 || (inputJump != 0)))) &&
-     (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
-     fVar2 = fVar2 - (this->fields).lastStartTime, pfVar1 = &(this->fields).jumpTimeOut,
-     *pfVar1 <= fVar2 && fVar2 != *pfVar1)) {
-    fVar2 = (this->fields).regularButtonDownTimeLimit;
-    pMVar17 = (MVMaterial *)
-              mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-              Collection_1_VoxelHit__get_Items
-                        ((Collection_1_VoxelHit_ *)groundState,(MethodInfo *)0x0);
-    if (pMVar17 == (MVMaterial *)0x0) goto code_?;
-    MVMaterial::MVMaterial_get_PhysicalProperties
-              ((PhysicalProperties *)&stack0xffffffac,pMVar17,(MethodInfo *)0x0);
-    fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-    pfVar1 = &(this->fields).bouncinessThresshold;
-    if (*pfVar1 <= (float)fVar5 && (float)fVar5 != *pfVar1) {
-      fVar2 = (this->fields).bouncyMaterialButtonDownTimeLimit;
-    }
-    (this->fields).holdingJumpButton = 0;
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (((fVar4 - (this->fields).lastButtonDownTime < fVar2) || (bVar3 != 0)) ||
-       (SUB41(_inputJump,0) != '\0')) {
-      if (SUB41(_inputJump,0) != '\0') {
-        piVar18 = &(this->fields).airJumpsDone;
-        *piVar18 = *piVar18 + 1;
-        velocity.y = 0.0;
-        movableVelocity.y = 0.0;
-        (this->fields).airJumping = 1;
-        uVar11._4_4_ = 0.0;
-        uVar11._0_4_ = (Byte__Array *)velocity.x;
-      }
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      fVar2 = ThemeAttributes::FloatAttribute::FloatAttribute_get_Max
-                        ((FloatAttribute *)groundState,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Mathf);
-      }
-      pMVar17 = (MVMaterial *)
-                mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                Collection_1_VoxelHit__get_Items
-                          ((Collection_1_VoxelHit_ *)groundState,(MethodInfo *)0x0);
-      if (pMVar17 == (MVMaterial *)0x0) goto code_?;
-      MVMaterial::MVMaterial_get_PhysicalProperties
-                ((PhysicalProperties *)&stack0xffffffac,pMVar17,(MethodInfo *)0x0);
-      fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-      fVar4 = (float)fVar5;
-      dVar19 = (double)(fVar2 * _UNK_?);
+  if ((((inputJump & bVar19) != 0) &&
+      (pMStack_21 = (MethodInfo *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              ((MethodInfo *)0x0),
+      _UNK_? <= (float)pMStack_21 - (this->fields).lastStartTime)) &&
+     ((this->fields).holdingJumpButton == 0)) {
+    bVar3 = MVGroundState::MVGroundState_get_Grounded(groundState,(MethodInfo *)0x0);
+    fStack_22 = (float)(uint)(bVar3 == 0);
+  }
+  sliperyFactor = &UNK_?;
+  bVar3 = MVGroundState::MVGroundState_get_Grounded(groundState,(MethodInfo *)0x0);
+  if ((((bVar3 != 0 || fStack_22._0_1_ != 0) || (char)pMStack_21 != '\0') || SUB41(fVar2,0) != '\0'
+      ) && (fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                               ((MethodInfo *)0x0), fVar6 = fVar6 - (this->fields).lastStartTime,
+           pfVar1 = &(this->fields).jumpTimeOut, *pfVar1 <= fVar6 && fVar6 != *pfVar1)) {
+    pMVar24 = (groundState->fields).groundMaterial;
+    if (pMVar24 == (MVMaterial *)0x0) {
+code_?:
       func_?();
-      fVar2 = (float)dVar19 *
-              (_UNK_? -
-              ((float)((uint)(fVar4 * fVar4) ^ _UNK_?) + fVar4 * _UNK_?));
-      if (((fVar2 < (this->fields).sliperyValMin) ||
-          ((bVar3 != 0 && (_UNK_? < waterProximity)))) || (inputJump != 0)) {
-        fVar2 = 0.0;
-      }
-      (this->fields).jumping = 1;
-      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).lastButtonDownTime = -100.0;
-      (this->fields).lastStartTime = fVar4;
-      (this->fields).holdingJumpButton = 1;
-      if (wallJumpPossible == 0) {
-        fVar4 = 0.0;
+      pcVar25 = (code *)swi(3);
+      pVVar26 = (Vector3 *)(*pcVar25)();
+      return pVVar26;
+    }
+    pBStack_13 = (Byte__Array *)(pMVar24->fields)._PhysicalProperties_k__BackingField.toughness;
+    fVar5 = (float10)(*(interactableLocal->klass->vtable).__unknown_6.methodPtr)(interactableLocal)
+    ;
+    (this->fields).holdingJumpButton = 0;
+    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    uVar27 = (uint)pMStack_21 & 0xff | (uint)fVar2 & 0xff;
+    if (fVar6 - (this->fields).lastButtonDownTime < (float)fVar5) {
+      uVar27 = 1;
+    }
+    if (uVar27 != 0) {
+      if (SUB41(fVar2,0) == '\0') {
+        fStack_28 = movableVelocity.y;
+        fStack_7 = velocity.y;
       }
       else {
-        fVar4 = (this->fields).jumpTimeOutWallJump;
+        piVar29 = &(this->fields).airJumpsDone;
+        *piVar29 = *piVar29 + 1;
+        fStack_28 = 0.0;
+        fStack_7 = 0.0;
+        (this->fields).airJumping = 1;
+        stack0xffffffcc = (ulonglong)(uint)velocity.x;
+        uStack_9 = 0;
       }
-      (this->fields).jumpTimeOut = fVar4;
-      bVar20 = cRam_? == '\0';
-      fVar4 = (this->fields).extraHeight;
-      (this->fields).accExtraHeight = fVar4 - fVar2 * fVar4;
-      if (bVar20) {
+      dVar30 = (double)((groundState->fields).gradientAngle * _UNK_?);
+      func_?();
+      auStack_4._0_4_ = (undefined4)dVar30;
+      pMVar24 = (groundState->fields).groundMaterial;
+      if (pMVar24 == (MVMaterial *)0x0) goto code_?;
+      pBStack_13 = (Byte__Array *)(pMVar24->fields)._PhysicalProperties_k__BackingField.toughness;
+      (*(interactableLocal->klass->vtable).__unknown_6.methodPtr)(interactableLocal);
+      (this->fields).jumping = 1;
+      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields).lastButtonDownTime = -100.0;
+      (this->fields).lastStartTime = fVar6;
+      (this->fields).holdingJumpButton = 1;
+      if (fStack_7._0_1_ == '\0') {
+        fVar6 = 0.0;
+      }
+      else {
+        fVar6 = (this->fields).jumpTimeOutWallJump;
+      }
+      (this->fields).jumpTimeOut = fVar6;
+      bVar19 = cRam_? == '\0';
+      (this->fields).accExtraHeight =
+           (this->fields).extraHeight - fStack_22 * (this->fields).extraHeight;
+      if (bVar19) {
         func_?();
         cRam_? = '\x01';
       }
-      fVar5 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-      fVar4 = (this->fields).jumpVelocityMultiplier;
-      fVar6 = (float)fVar5;
-      if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
-        func_?();
+      auStack_4._4_4_ = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
+      bVar3 = 2;
+      fVar5 = (float10)(*(code *)auStack_4._4_4_)();
+      fVar6 = (this->fields).jumpVelocityMultiplier;
+      fVar31 = (float)fVar5;
+      if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MVPhysics);
       }
-      pVVar21 = (Vector3 *)
-                MVPhysics::MVPhysics_CalculateJumpVerticalSpeed(fVar4 * fVar6,(MethodInfo *)0x0);
-      if (inputJump == 0) {
-        pVVar21 = (Vector3 *)((float)pVVar21 - (float)pVVar21 * fVar2);
-      }
-      _inputJump = 0.0;
-      pVVar22 = JumpState_JumpDir((Vector3 *)&stack0xffffffb4,this,
-                                  (JumpState_JumpType__Enum *)&inputJump,groundState,fVar2,
-                                  wallJumpPossible,canWaterJump,(MethodInfo *)0x0);
-      fVar4 = pVVar22->y;
-      fVar2 = pVVar22->z;
-      (this->fields).jumpDir.x = pVVar22->x;
-      (this->fields).jumpDir.y = fVar4;
-      (this->fields).jumpDir.z = fVar2;
-      if (_inputJump == 1.4013e-45) {
-        if (cRam_? == '\0') {
+      MVPhysics::MVPhysics_CalculateJumpVerticalSpeed(fVar6 * fVar31,(MethodInfo *)0x0);
+      pVVar26 = JumpState_JumpDir((Vector3 *)auStack_20,this,
+                                 (JumpState_JumpType__Enum *)&stack0xffffff80,groundState,
+                                 (float)sliperyFactor,bVar3,fStack_22._0_1_,(MethodInfo *)0x0);
+      fVar31 = pVVar26->y;
+      fVar6 = pVVar26->z;
+      (this->fields).jumpDir.x = pVVar26->x;
+      (this->fields).jumpDir.y = fVar31;
+      (this->fields).jumpDir.z = fVar6;
+      uStack_32 = stack0xffffffcc;
+      uVar33 = stack0xffffffcc;
+      if (pMStack_21 == (MethodInfo *)0x1) {
+        uStack_9 = CONCAT44(uStack_9._4_4_,fStack_22);
+        auStack_20._0_4_ = fStack_22;
+        if (fStack_7 < _UNK_?) {
+          stack0xffffffbc = stack0xffffffcc;
           func_?();
-          cRam_? = '\x01';
-        }
-        if (uVar11._4_4_ < _UNK_?) {
-          fVar5 = (float10)func_?();
-          fVar2 = 0.0;
-          func_?();
-          if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+          auStack_4._4_4_ = (Il2CppMethodPointer)0x0;
+          auStack_20._4_4_ = 0.0;
+          UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+                    ((Vector3 *)auStack_4,(MethodInfo *)0x0);
+          uStack_32 = CONCAT44(fStack_34 * (float)auStack_4._4_4_,
+                               (float)auStack_4._8_4_ * (float)auStack_4._4_4_);
+          fStack_11 = (float)auStack_20._0_4_ * (float)auStack_4._4_4_;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pVVar22 = (Vector3 *)&stack0xffffffd4;
-          a_03.y = fVar2;
-          a_03.x = (float)(Byte__Array *)uVar11;
-          a_03.z = (float)pVVar12;
-          pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                              (pVVar22,a_03,(float)fVar5,(MethodInfo *)0x0);
-          pVVar23 = (Vector3 *)pVVar12->z;
-          pVVar21 = pVVar22;
-          func_?();
-          pVVar12 = pVVar22;
-          fVar5 = (float10)func_?();
-          if (_UNK_? < (float)fVar5) {
-            pVVar12 = pVVar23;
+          dVar30 = (double)((float)uStack_9 * (float)uStack_9 +
+                           (float)auStack_20._8_4_ * (float)auStack_20._8_4_);
+          if (dVar30 < 0.0) {
+            func_?();
+          }
+          else {
+            dVar30 = SQRT(dVar30);
+          }
+          uVar33 = stack0xffffffcc;
+          auStack_20._0_4_ = fStack_22;
+          if (_UNK_? < (float)dVar30) {
+            uVar33 = uStack_32;
+            auStack_20._0_4_ = fStack_11;
           }
         }
       }
-      fVar2 = (this->fields).jumpDir.z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?();
+      else {
+        auStack_20._0_4_ = fStack_22;
+        if ((pMStack_21 != (MethodInfo *)0x2) && (fStack_7 < 0.0)) {
+          uStack_32 = stack0xffffffcc & 0xffffffff;
+          uVar33 = uStack_32;
+        }
       }
-      fVar4 = 0.0;
-      a_04.y = 0.0;
-      a_04.x = (float)pVVar21;
-      a_04.z = fVar2;
-      pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                          ((Vector3 *)&stack0xffffffb4,a_04,(float)pVVar21,(MethodInfo *)0x0);
-      a_05.y = fVar2;
-      a_05.x = fVar4;
-      a_05.z = (float)pVVar12;
-      pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                          ((Vector3 *)&stack0xffffffb4,a_05,*pVVar21,(MethodInfo *)0x0);
-      _inputJump = 0.0;
-      uVar24 = pVVar12->x;
-      b.y = movableVelocity.y;
-      b.x = movableVelocity.x;
-      b.z = movableVelocity.z;
-      pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                          ((Vector3 *)&stack0xffffffb4,*pVVar12,b,(MethodInfo *)0x0);
-      uVar11._0_4_ = (Byte__Array *)pVVar12->x;
-      uVar11._4_4_ = pVVar12->y;
-      pVVar12 = (Vector3 *)pVVar12->z;
-      __return_storage_ptr__ = (Vector3 *)uVar24;
-      if ((_inputJump != 1.4013e-45) ||
-         (this_00 = (this->fields).OnWallJump, this_00 == (JumpState_OnWallJumpDelegate *)0x0))
-      goto code_?;
-      JumpState+OnWallJumpDelegate::JumpState_OnWallJumpDelegate_Invoke(this_00,(MethodInfo *)0x0);
+      uStack_32._0_4_ = (this->fields).jumpDir.x;
+      uStack_32._4_4_ = (this->fields).jumpDir.y;
+      fStack_34 = (float)(uVar33 >> 0x20);
+      auStack_4._8_4_ = (undefined4)uVar33;
+      fStack_22 = movableVelocity.z + (float)auStack_20._0_4_ + (this->fields).jumpDir.z * fVar2;
+      fStack_17 = fStack_34 + (float)uStack_32._4_4_ * fVar2 + fStack_28;
+      auStack_20._8_4_ =
+           movableVelocity.x + (float)auStack_4._8_4_ + (float)(undefined4)uStack_32 * fVar2;
+      uStack_9 = 0;
+      if ((pMStack_21 != (MethodInfo *)0x1) ||
+         ((this->fields).OnWallJump == (JumpState_OnWallJumpDelegate *)0x0)) goto code_?;
+      unique0x10000eeb = uVar33;
+      fStack_11 = fStack_22;
+      (*(((this->fields).OnWallJump)->fields)._._.invoke_impl)();
     }
   }
 code_?:
-  __return_storage_ptr__->x = (float)(int)uVar11;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar11 >> 0x20);
-  __return_storage_ptr__->z = (float)pVVar12;
+  __return_storage_ptr__->x = (float)auStack_20._8_4_;
+  __return_storage_ptr__->y = fStack_17;
+  __return_storage_ptr__->z = fStack_22;
   return __return_storage_ptr__;
 }
 
@@ -332,44 +296,34 @@ void Assembly-CSharp.dll::JumpState::JumpState_Destroy(JumpState *this,MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__JumpState__HandleJumpBoost__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((this_00 != (MVNetworkGame *)0x0) &&
-     (this_01 = (PrefabPool *)
-                MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-     this_01 != (PrefabPool *)0x0)) {
-    this_02 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab(this_01,(MethodInfo *)0x0)
-    ;
-    this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_03,unaff_EDI,MethodInfo__JumpState__HandleJumpBoost__,(MethodInfo *)0x0);
-    if (this_02 != (ObjectiveArrow *)0x0) {
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((this_01 != (MVNetworkGame *)0x0) &&
+     (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
+     pMVar2 != (MVLocalPlayer *)0x0)) {
+    this_00 = (pMVar2->fields).boostController;
+    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    if ((this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0) &&
+       (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_02,unaff_EDI,MethodInfo__JumpState__HandleJumpBoost__,(MethodInfo *)0x0),
+       this_00 != (BoostController *)0x0)) {
       BoostController::BoostController_UnSubscribeToBoostChanged
-                ((BoostController *)this_02,BoostType__Enum_JumpPowerFloatMultiplier,
-                 (Action *)this_03,(MethodInfo *)0x0);
+                (this_00,BoostType__Enum_JumpPowerFloatMultiplier,(Action *)this_02,
+                 (MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -382,16 +336,15 @@ float Assembly-CSharp.dll::JumpState::JumpState_GetJumpSpeed
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVPhysics);
     cRam_? = '\x01';
   }
   if (interactableLocal != (MVInteractableBase *)0x0) {
-    fVar1 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)
+    fVar1 = (float10)(*(interactableLocal->klass->vtable).__unknown_6.methodPtr)
                                (interactableLocal,2,(this->fields).jumpHeight,
-                                (interactableLocal->klass->vtable).__unknown_6.methodPtr);
+                                (interactableLocal->klass->vtable).__unknown_6.method);
     fVar2 = (this->fields).jumpVelocityMultiplier;
-    if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVPhysics);
     }
     interactableLocal =
@@ -404,7 +357,7 @@ float Assembly-CSharp.dll::JumpState::JumpState_GetJumpSpeed
     }
     return (float)interactableLocal;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   fVar1 = (float10)(*pcVar3)();
   return (float)fVar1;
@@ -427,49 +380,45 @@ Vector3 * Assembly-CSharp.dll::JumpState::JumpState_GetJumpTypeVelocity
     __return_storage_ptr__->z = velocity.z;
     return __return_storage_ptr__;
   }
-  uStack_1 = velocity._0_8_;
-  fStack_2 = velocity.z;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  uStack_3 = 0;
-  if (uStack_1._4_4_ < 0.0) {
-    uStack_4 = uStack_1;
-    fStack_5 = fStack_2;
-    fVar6 = (float10)func_?(&uStack_1,0);
-    uStack_4 = uStack_4 & 0xffffffff;
-    uStack_1 = uStack_1 & 0xffffffff;
-    func_?(&uStack_4,0);
-    fVar7 = fStack_5;
-    VStack_8.y = (float)(undefined *)uStack_4;
-    VStack_8.z = (float)uStack_4._4_4_;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
+  fStack_1 = velocity.z;
+  VStack_2._0_8_ = velocity._0_8_;
+  if (velocity.y < 0.0) {
+    VStack_2.z = velocity.z;
+    uStack_3 = VStack_2._0_8_;
+    fVar4 = (float10)func_?(&uStack_3,0);
+    VStack_2._0_8_ = VStack_2._0_8_ & 0xffffffff;
+    fVar5 = (float)fVar4;
+    uStack_3 = uStack_3 & 0xffffffff;
+    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+              (&VStack_2,(MethodInfo *)0x0);
+    fStack_6 = VStack_2.z * VStack_2.y;
+    fStack_7 = (float)uStack_3 * VStack_2.y;
+    fVar8 = uStack_3._4_4_ * VStack_2.y;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Math,fVar5);
+      cRam_? = '\x01';
     }
-    a.z = fVar7;
-    a.x = VStack_8.y;
-    a.y = VStack_8.z;
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-              (&VStack_8,a,(float)fVar6,(MethodInfo *)0x0);
-    uStack_4._4_4_ = &uStack_3;
-    uStack_1 = (ulonglong)(uint)fStack_2;
-    fStack_5 = fStack_2;
-    uStack_4._0_4_ = &UNK_?;
-    func_?();
-    uStack_4 = ZEXT48(uStack_4._4_4_) << 0x20;
-    fVar6 = (float10)func_?(&uStack_3);
-    if (_UNK_? < (float)fVar6) {
-      __return_storage_ptr__->x = (float)(undefined *)uStack_4;
-      __return_storage_ptr__->y = (float)uStack_4._4_4_;
-      __return_storage_ptr__->z = fStack_5;
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    dVar9 = (double)(fStack_10 * fStack_10 + fStack_1 * fStack_1);
+    if (dVar9 < 0.0) {
+      func_?();
+    }
+    else {
+      dVar9 = SQRT(dVar9);
+    }
+    if (_UNK_? < (float)dVar9) {
+      __return_storage_ptr__->x = fStack_6;
+      __return_storage_ptr__->y = fStack_7;
+      __return_storage_ptr__->z = fVar8;
       return __return_storage_ptr__;
     }
+    VStack_2._0_8_ = CONCAT44(uStack_11,fStack_1);
   }
-  __return_storage_ptr__->x = (float)(int)uStack_1;
-  __return_storage_ptr__->y = (float)(int)(uStack_1 >> 0x20);
-  __return_storage_ptr__->z = fStack_2;
+  __return_storage_ptr__->x = (float)(int)VStack_2._0_8_;
+  __return_storage_ptr__->y = (float)(int)((ulonglong)VStack_2._0_8_ >> 0x20);
+  __return_storage_ptr__->z = velocity.z;
   return __return_storage_ptr__;
 }
 
@@ -481,33 +430,22 @@ float Assembly-CSharp.dll::JumpState::JumpState_GetSliperyFactor
                 float waterProximity,bool canWaterJump,bool isDoingAirJump,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (groundState != (MVGroundState *)0x0) {
-    fVar1 = ThemeAttributes::FloatAttribute::FloatAttribute_get_Max
-                      ((FloatAttribute *)groundState,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_00 = (MVMaterial *)
-              mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-              Collection_1_VoxelHit__get_Items
-                        ((Collection_1_VoxelHit_ *)groundState,(MethodInfo *)0x0);
-    if (this_00 != (MVMaterial *)0x0) {
-      MVMaterial::MVMaterial_get_PhysicalProperties
-                ((PhysicalProperties *)&stack0xffffffd0,this_00,(MethodInfo *)0x0);
+    dVar1 = (double)((groundState->fields).gradientAngle * _UNK_?);
+    func_?();
+    pMVar2 = (groundState->fields).groundMaterial;
+    if (pMVar2 != (MVMaterial *)0x0) {
       if (interactableLocal != (MVInteractableBase *)0x0) {
-        fVar2 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_5.method)();
-        fVar3 = (float)fVar2;
-        dVar4 = (double)(fVar1 * _UNK_?);
-        func_?();
+        fVar3 = (float10)(*(interactableLocal->klass->vtable).__unknown_6.methodPtr)
+                                   (interactableLocal,0xc,
+                                    (pMVar2->fields)._PhysicalProperties_k__BackingField.friction,
+                                    (interactableLocal->klass->vtable).__unknown_6.method);
+        fVar4 = (float)fVar3;
         groundState = (MVGroundState *)
-                      ((float)dVar4 *
-                      (_UNK_? -
-                      ((float)((uint)(fVar3 * fVar3) ^ _UNK_?) + fVar3 * _UNK_?)));
+                      ((_UNK_? -
+                       ((float)((uint)(fVar4 * fVar4) ^
+                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               ) + fVar4 * _UNK_?)) * (float)dVar1);
         if (((float)groundState < (this->fields).sliperyValMin) ||
            (((canWaterJump != 0 && (_UNK_? < waterProximity)) || (isDoingAirJump != 0)))) {
           groundState = (MVGroundState *)0x0;
@@ -518,8 +456,8 @@ float Assembly-CSharp.dll::JumpState::JumpState_GetSliperyFactor
   }
   func_?();
   pcVar5 = (code *)swi(3);
-  fVar2 = (float10)(*pcVar5)();
-  return (float)fVar2;
+  fVar3 = (float10)(*pcVar5)();
+  return (float)fVar3;
 }
 
 
@@ -530,49 +468,46 @@ Vector3 * Assembly-CSharp.dll::JumpState::JumpState_GetWallJumpVelocity
                     MethodInfo *method)
 
 {
+  fVar1 = velocity.z;
+  VStack_2._0_8_ = velocity._0_8_;
+  if (0.0 <= velocity.y) {
+    __return_storage_ptr__->x = (float)(int)VStack_2._0_8_;
+    __return_storage_ptr__->y = (float)(int)((ulonglong)VStack_2._0_8_ >> 0x20);
+    __return_storage_ptr__->z = velocity.z;
+    return __return_storage_ptr__;
+  }
+  VStack_2.z = velocity.z;
+  func_?(&velocity,0);
+  VStack_2._0_8_ = VStack_2._0_8_ & 0xffffffff;
+  velocity.y = 0.0;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+            (&VStack_2,(MethodInfo *)0x0);
+  fStack_3 = VStack_2.z * VStack_2.y;
+  fStack_4 = fStack_5 * VStack_2.y;
+  fVar6 = fStack_7 * VStack_2.y;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  if (velocity.y < 0.0) {
-    uStack_2 = CONCAT44(velocity.y,velocity.x);
-    fStack_3 = velocity.z;
-    fVar4 = (float10)func_?(&velocity,0);
-    uStack_2 = uStack_2 & 0xffffffff;
-    fStack_5 = (float)fVar4;
-    velocity.y = 0.0;
-    func_?(&uStack_2,0);
-    fVar6 = fStack_3;
-    VStack_7.y = (float)(undefined *)uStack_2;
-    VStack_7.z = (float)uStack_2._4_4_;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    a.z = fVar6;
-    a.x = VStack_7.y;
-    a.y = VStack_7.z;
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-              (&VStack_7,a,fStack_5,(MethodInfo *)0x0);
-    VStack_7._4_8_ = VStack_7._4_8_ & 0xffffffff00000000;
-    uStack_2._4_4_ = &uStack_1;
-    VStack_7.x = velocity.z;
-    fStack_3 = velocity.x;
-    uStack_2._0_4_ = &UNK_?;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar8 = (double)(velocity.z * velocity.z + velocity.x * velocity.x);
+  if (dVar8 < 0.0) {
     func_?();
-    uStack_2 = ZEXT48(uStack_2._4_4_) << 0x20;
-    fVar4 = (float10)func_?(&uStack_1);
-    if (_UNK_? < (float)fVar4) {
-      __return_storage_ptr__->x = (float)(undefined *)uStack_2;
-      __return_storage_ptr__->y = (float)uStack_2._4_4_;
-      __return_storage_ptr__->z = fStack_3;
-      return __return_storage_ptr__;
-    }
+  }
+  else {
+    dVar8 = SQRT(dVar8);
+  }
+  if (_UNK_? < (float)dVar8) {
+    __return_storage_ptr__->x = fStack_3;
+    __return_storage_ptr__->y = fStack_4;
+    __return_storage_ptr__->z = fVar6;
+    return __return_storage_ptr__;
   }
   __return_storage_ptr__->x = velocity.x;
   __return_storage_ptr__->y = velocity.y;
-  __return_storage_ptr__->z = velocity.z;
+  __return_storage_ptr__->z = fVar1;
   return __return_storage_ptr__;
 }
 
@@ -583,48 +518,42 @@ void Assembly-CSharp.dll::JumpState::JumpState_HandleJumpBoost(JumpState *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   (this->fields).jumpHeight = 1.0;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((this_00 != (MVNetworkGame *)0x0) &&
-      (this_01 = (PrefabPool *)
-                 MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-      this_01 != (PrefabPool *)0x0)) &&
-     (this_02 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                          (this_01,(MethodInfo *)0x0), this_02 != (ObjectiveArrow *)0x0)) {
-    bVar1 = BoostController::BoostController_TryGetActiveBoost
-                      ((BoostController *)this_02,BoostType__Enum_JumpPowerFloatMultiplier,
-                       (Boost **)&stack0xfffffff8,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (((this_01 != (MVNetworkGame *)0x0) &&
+      (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
+      pMVar1 != (MVLocalPlayer *)0x0)) &&
+     (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
+    this_02 = (Boost__Class *)&stack0xfffffff8;
+    bVar2 = BoostController::BoostController_TryGetActiveBoost
+                      (this_00,BoostType__Enum_JumpPowerFloatMultiplier,(Boost **)this_02,
+                       (MethodInfo *)0x0);
+    if (bVar2 == 0) {
       return;
     }
-    if (this_02 != (ObjectiveArrow *)0x0) {
-      pOStack2 = Boost::Boost_get_Value((Boost *)this_02,(MethodInfo *)0x0);
-      uVar3 = CONCAT44(TypeInfo__System__Int32,pOStack2);
-      if (pOStack2 != (Object *)0x0) {
-        if ((pOStack2->klass->_0).element_class ==
+    if (this_02 != (Boost__Class *)0x0) {
+      pOStack3 = Boost::Boost_get_Value((Boost *)this_02,(MethodInfo *)0x0);
+      uVar4 = CONCAT44(TypeInfo__System__Int32,pOStack3);
+      if (pOStack3 != (Object *)0x0) {
+        if ((pOStack3->klass->_0).element_class ==
             (TypeInfo__System__Int32->_0).element_class) {
-          piVar4 = (int *)func_?();
-          (this->fields).jumpHeight = (float)*piVar4 / _UNK_? + _UNK_?;
+          piVar5 = (int *)func_?();
+          (this->fields).jumpHeight = (float)*piVar5 / _UNK_? + _UNK_?;
           return;
         }
         goto code_?;
       }
     }
   }
-  pOStack2 = (Object *)0x0;
-  uVar3 = func_?();
+  uVar4 = func_?();
 code_?:
-  _puStack00000018 = uVar3;
+  _puStack00000010 = uVar4;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -636,85 +565,64 @@ void Assembly-CSharp.dll::JumpState::JumpState_HandleMoveHit
 
 {
   if (cRam_? == '\0') {
+    IStack_1.rgctxDataDummy =
+         &
+         MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__Add_MVControllerColliderHit_
+    ;
     func_?();
     cRam_? = '\x01';
   }
-  if (moveHit.hit.interactionFlags._4_4_ != (AddDotsToTruncatedText_Start_c_Iterator0 *)0x0) {
-    uVar1 = 0;
-    puVar2 = &UNK_?;
-    pAVar3 = moveHit.hit.interactionFlags._4_4_;
-    pOVar4 = AddDotsToTruncatedText+<Start>c__Iterator0::
-             AddDotsToTruncatedText_Start_c_Iterator0_System_Collections_IEnumerator_get_Current
-                       (moveHit.hit.interactionFlags._4_4_,(MethodInfo *)0x0);
-    if ((pOVar4 == (Object *)0x5) || ((this->fields).canWallJumpAnySurface != 0)) {
-      this_00 = (this->fields).wallJumpHits;
-      if (this_00 == (List_1_MVControllerColliderHit_ *)0x0) goto code_?;
-      puVar5 = (undefined4 *)&stack0x00000008;
-      puVar6 = &uStack_7;
-      pMVar8 = 
-      MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__Add_MVControllerColliderHit_
-      ;
-      for (iVar9 = 0x24; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *puVar6 = *puVar5;
-        puVar5 = puVar5 + 1;
-        puVar6 = puVar6 + 1;
-      }
-      item.hit._60_4_ = puVar2;
-      auVar10 = in_stack_11._0_12_;
-      auVar12 = in_stack_11._12_12_;
-      auVar13 = in_stack_11._24_12_;
-      auVar14 = in_stack_11._36_12_;
-      auVar15 = in_stack_11._48_12_;
-      auVar16 = in_stack_11._64_12_;
-      auVar17 = in_stack_11._76_12_;
-      uVar18 = in_stack_11._88_6_;
-      item.positionTouchingHit.x = (float)auVar10._0_4_;
-      item.positionTouchingHit.y = (float)auVar10._4_4_;
-      item.positionTouchingHit.z = (float)auVar10._8_4_;
-      item.moveDirection.x = (float)auVar12._0_4_;
-      item.moveDirection.y = (float)auVar12._4_4_;
-      item.moveDirection.z = (float)auVar12._8_4_;
-      item.elipsoidNormal.x = (float)auVar13._0_4_;
-      item.elipsoidNormal.y = (float)auVar13._4_4_;
-      item.elipsoidNormal.z = (float)auVar13._8_4_;
-      item.slopeNormal.x = (float)auVar14._0_4_;
-      item.slopeNormal.y = (float)auVar14._4_4_;
-      item.slopeNormal.z = (float)auVar14._8_4_;
-      item.impactVelocity.x = (float)auVar15._0_4_;
-      item.impactVelocity.y = (float)auVar15._4_4_;
-      item.impactVelocity.z = (float)auVar15._8_4_;
-      item._60_4_ = in_stack_11._60_4_;
-      item.hit.point.x = (float)auVar16._0_4_;
-      item.hit.point.y = (float)auVar16._4_4_;
-      item.hit.point.z = (float)auVar16._8_4_;
-      item.hit.normal.x = (float)auVar17._0_4_;
-      item.hit.normal.y = (float)auVar17._4_4_;
-      item.hit.normal.z = (float)auVar17._8_4_;
-      item.hit.cubePos.x = (short)uVar18;
-      item.hit.cubePos.y = (short)((uint6)uVar18 >> 0x10);
-      item.hit.cubePos.z = (short)((uint6)uVar18 >> 0x20);
-      item.hit._30_2_ = in_stack_11._94_2_;
-      item.hit.face = in_stack_11._96_4_;
-      item.hit.isCubeHit = in_stack_11[100];
-      item.hit._37_3_ = in_stack_11._101_3_;
-      item.hit.woId = in_stack_11._104_4_;
-      item.hit.cube = (Cube *)in_stack_11._108_4_;
-      item.hit.distance = (float)in_stack_11._112_4_;
-      item.hit.collider = (Collider *)in_stack_11._116_4_;
-      item.hit.transform = (Transform *)in_stack_11._120_4_;
-      item.hit.interactionFlags._0_4_ = pAVar3;
-      item.hit.interactionFlags._4_4_ = uVar1;
-      item.material = (MVMaterial *)unaff_EDI;
-      item._140_4_ = pMVar8;
-      mscorlib.dll::System::Collections::Generic::List`1[MVControllerColliderHit]::
-      List_1_MVControllerColliderHit__Add(this_00,item,unaff_EBP);
+  pMVar2 = 
+  MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__Add_MVControllerColliderHit_
+  ;
+  if (moveHit.hit.interactionFlags._4_4_ != 0) {
+    if ((*(int *)(moveHit.hit.interactionFlags._4_4_ + 0x30) != 5) &&
+       ((this->fields).canWallJumpAnySurface == 0)) {
+      return;
     }
-    return;
+    pLVar3 = (this->fields).wallJumpHits;
+    if (pLVar3 != (List_1_MVControllerColliderHit_ *)0x0) {
+      pMVar4 = (pLVar3->fields)._items;
+      piVar5 = &(pLVar3->fields)._version;
+      *piVar5 = *piVar5 + 1;
+      if (pMVar4 != (MVControllerColliderHit__Array *)0x0) {
+        uVar6 = (pLVar3->fields)._size;
+        if (pMVar4->max_length <= uVar6) {
+          IStack_1 = pMVar2->klass->rgctx_data[0xb];
+          pIVar7 = (pMVar2->klass->rgctx_data[0xb].method)->virtualMethodPointer;
+          puVar8 = (undefined4 *)&stack0x00000008;
+          puVar9 = auStack_10;
+          for (iVar11 = 0x24; iVar11 != 0; iVar11 = iVar11 + -1) {
+            *puVar9 = *puVar8;
+            puVar8 = puVar8 + 1;
+            puVar9 = puVar9 + 1;
+          }
+          (*pIVar7)(pLVar3);
+          return;
+        }
+        (pLVar3->fields)._size = uVar6 + 1;
+        if (uVar6 < pMVar4->max_length) {
+          pfVar12 = (float *)&stack0x00000008;
+          pMVar13 = pMVar4->vector + uVar6;
+          for (iVar11 = 0x24; iVar11 != 0; iVar11 = iVar11 + -1) {
+            (pMVar13->positionTouchingHit).x = *pfVar12;
+            pfVar12 = pfVar12 + 1;
+            pMVar13 = (MVControllerColliderHit *)&(pMVar13->positionTouchingHit).y;
+          }
+          ppCStack_14 = &pMVar4->vector[uVar6].hit.cube;
+          IStack_1 = (Il2CppRGCTXData)0x0;
+          func_?();
+          return;
+        }
+        goto code_?;
+      }
+    }
   }
+  func_?();
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -727,10 +635,6 @@ Vector3 * Assembly-CSharp.dll::JumpState::JumpState_JumpDir
                     float sliperyFactor,bool wallJumpPossible,bool canWaterJump,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (groundState == (MVGroundState *)0x0) {
     func_?();
     pcVar1 = (code *)swi(3);
@@ -738,76 +642,106 @@ Vector3 * Assembly-CSharp.dll::JumpState::JumpState_JumpDir
     return pVVar2;
   }
   bVar3 = MVGroundState::MVGroundState_get_Grounded(groundState,(MethodInfo *)0x0);
-  if ((bVar3 == 0) && (canWaterJump != 0)) {
-    *jumpType = JumpState_JumpType__Enum_Water;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    pVVar2 = (Vector3 *)&stack0xfffffff0;
+  bVar4 = 0;
+  if (bVar3 == 0) {
+    bVar4 = canWaterJump;
   }
-  else {
-    pfVar4 = &(this->fields).sliperyValMax;
-    if (*pfVar4 <= sliperyFactor && sliperyFactor != *pfVar4) {
+  if (bVar4 == 0) {
+    pfVar5 = &(this->fields).sliperyValMax;
+    if (*pfVar5 <= sliperyFactor && sliperyFactor != *pfVar5) {
       *jumpType = JumpState_JumpType__Enum_Regular;
-      pVVar2 = SentryGunBeam::SentryGunBeam_get_StartPosition
-                         ((Vector3 *)&stack0xffffffe4,(SentryGunBeam *)groundState,(MethodInfo *)0x0
-                         );
-      goto code_?;
+      fVar6 = (groundState->fields).groundNormal.y;
+      fVar7 = (groundState->fields).groundNormal.z;
+      __return_storage_ptr__->x = (groundState->fields).groundNormal.x;
+      __return_storage_ptr__->y = fVar6;
+      __return_storage_ptr__->z = fVar7;
+      return __return_storage_ptr__;
     }
     bVar3 = MVGroundState::MVGroundState_get_Grounded(groundState,(MethodInfo *)0x0);
-    if ((bVar3 == 0) && (wallJumpPossible != 0)) {
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+    bVar4 = 0;
+    if (bVar3 == 0) {
+      bVar4 = wallJumpPossible;
+    }
+    if (bVar4 != 0) {
+      puVar8 = (undefined8 *)func_?(auStack_9,0);
+      uVar10 = (this->fields).latestSlopeDir.x;
+      uVar11 = (this->fields).latestSlopeDir.y;
+      fVar7 = (this->fields).latestSlopeDir.z;
+      uVar12 = *puVar8;
+      fVar6 = *(float *)(puVar8 + 1);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
+      }
+      fStack_13 = (float)uVar12;
+      fStack_14 = (float)((ulonglong)uVar12 >> 0x20);
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      pMVar15 = TypeInfo__System__Math;
+      dVar16 = (double)(((float)uVar11 * (float)uVar11 + (float)uVar10 * (float)uVar10 + fVar7 * fVar7
+                        ) * (fStack_14 * fStack_14 + fStack_13 * fStack_13 + fVar6 * fVar6));
+      if (dVar16 < 0.0) {
         func_?();
       }
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                         ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-      pVVar2 = &(this->fields).latestSlopeDir;
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Angle
-                        (*pVVar5,(this->fields).latestSlopeDir,(MethodInfo *)0x0);
-      pfVar4 = &(this->fields).wallJumpAngleMin;
-      if ((*pfVar4 <= fVar6 && fVar6 != *pfVar4) && (fVar6 < (this->fields).wallJumpAngleMax)) {
-        a = *pVVar2;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          jumpType = (JumpState_JumpType__Enum *)TypeInfo__UnityEngine__Vector3;
-          func_?();
+      else {
+        dVar16 = SQRT(dVar16);
+      }
+      if ((float)dVar16 < _UNK_?) {
+        fVar7 = 0.0;
+      }
+      else {
+        fStack_17 = ((float)uVar11 * fStack_14 + (float)uVar10 * fStack_13 + fVar7 * fVar6) /
+                    (float)dVar16;
+        fVar7 = _UNK_?;
+        if ((fStack_17 < _UNK_?) || (fVar7 = _UNK_?, _UNK_? < fStack_17)) {
+          fStack_17 = fVar7;
         }
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                           ((Vector3 *)&stack0xffffffe4,(MethodInfo *)0x0);
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                           ((Vector3 *)&stack0xffffffe4,a,*pVVar5,(MethodInfo *)0x0);
-        fVar7 = pVVar5->y;
-        fVar6 = pVVar5->z;
-        pVVar2->x = pVVar5->x;
-        pVVar2->y = fVar7;
-        (this->fields).latestSlopeDir.z = fVar6;
+        if ((pMVar15->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(pMVar15);
+        }
+        dVar16 = (double)fStack_17;
         func_?();
+        fVar7 = (float)dVar16 * _UNK_?;
+      }
+      pfVar5 = &(this->fields).wallJumpAngleMin;
+      if ((*pfVar5 <= fVar7 && fVar7 != *pfVar5) && (fVar7 < (this->fields).wallJumpAngleMax)) {
+        fVar7 = (this->fields).latestSlopeDir.z;
+        uVar18 = (this->fields).latestSlopeDir.x;
+        uVar19 = (this->fields).latestSlopeDir.y;
+        puVar8 = (undefined8 *)func_?(auStack_9,0);
+        fVar6 = *(float *)(puVar8 + 1);
+        fStack_13 = (float)*puVar8;
+        fStack_14 = (float)((ulonglong)*puVar8 >> 0x20);
+        (this->fields).latestSlopeDir.x = fStack_13 + (float)uVar18;
+        (this->fields).latestSlopeDir.y = fStack_14 + (float)uVar19;
+        (this->fields).latestSlopeDir.z = fVar6 + fVar7;
+        UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+                  (&(this->fields).latestSlopeDir,(MethodInfo *)0x0);
         *jumpType = JumpState_JumpType__Enum_Wall;
-        fVar7 = pVVar2->y;
-        fVar6 = (this->fields).latestSlopeDir.z;
-        __return_storage_ptr__->x = pVVar2->x;
-        __return_storage_ptr__->y = fVar7;
-        __return_storage_ptr__->z = fVar6;
+        fVar6 = (this->fields).latestSlopeDir.y;
+        fVar7 = (this->fields).latestSlopeDir.z;
+        __return_storage_ptr__->x = (this->fields).latestSlopeDir.x;
+        __return_storage_ptr__->y = fVar6;
+        __return_storage_ptr__->z = fVar7;
         return __return_storage_ptr__;
       }
     }
     *jumpType = JumpState_JumpType__Enum_Regular;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pVVar2 = (Vector3 *)&stack0xffffffe4;
   }
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                     (pVVar2,(MethodInfo *)0x0);
-code_?:
-  fVar7 = pVVar2->y;
-  fVar6 = pVVar2->z;
-  __return_storage_ptr__->x = pVVar2->x;
-  __return_storage_ptr__->y = fVar7;
-  __return_storage_ptr__->z = fVar6;
+  else {
+    *jumpType = JumpState_JumpType__Enum_Water;
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
+  }
+  pVVar20 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar6 = (pVVar20->upVector).y;
+  fVar7 = (pVVar20->upVector).z;
+  __return_storage_ptr__->x = (pVVar20->upVector).x;
+  __return_storage_ptr__->y = fVar6;
+  __return_storage_ptr__->z = fVar7;
   return __return_storage_ptr__;
 }
 
@@ -830,8 +764,8 @@ void Assembly-CSharp.dll::JumpState::JumpState_SetJumpState
     fVar1 = (this->fields).jumpTimeOutWallJump;
   }
   (this->fields).jumpTimeOut = fVar1;
-  fVar1 = (this->fields).extraHeight;
-  (this->fields).accExtraHeight = fVar1 - fVar1 * sliperyFactor;
+  (this->fields).accExtraHeight =
+       (this->fields).extraHeight - sliperyFactor * (this->fields).extraHeight;
   return;
 }
 
@@ -842,7 +776,8 @@ float Assembly-CSharp.dll::JumpState::JumpState_SpreadFunction
                 (JumpState *this,float x,MethodInfo *method)
 
 {
-  return x + x + (float)((uint)(x * x) ^ _UNK_?);
+  return x + x + (float)((uint)(x * x) ^
+                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
 }
 
 
@@ -870,105 +805,108 @@ void Assembly-CSharp.dll::JumpState::JumpState_UpdateWallJumpValues
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffdec;
-  puVar5 = &stack0xfffffdec;
+  puStack_4 = &stack0xfffffe7c;
+  puVar5 = &stack0xfffffe7c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__Clear__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__get_Count__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  func_?(auStack_6,0,0xa0);
-  func_?();
+  func_?(&LStack_6,0,0xa0);
   pLVar7 = (this->fields).wallJumpHits;
-  puStack_8 = (undefined4 *)&stack0xfffffdec;
-  puStack_4 = &stack0xfffffdec;
   if (pLVar7 != (List_1_MVControllerColliderHit_ *)0x0) {
-    puStack_8 = (undefined4 *)&stack0xfffffdec;
-    puStack_4 = &stack0xfffffdec;
-    pOVar9 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar7,
-                        MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__get_Count__
-                       );
-    if (0 < (int)pOVar9) {
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?();
+    if (0 < (pLVar7->fields)._size) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Vector3);
+        cRam_? = '\x01';
       }
-      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                         (&VStack_11,(MethodInfo *)0x0);
-      pVVar12 = &(this->fields).latestSlopeDir;
-      fVar13 = pVVar10->y;
-      fVar14 = pVVar10->z;
-      pVVar12->x = pVVar10->x;
-      pVVar12->y = fVar13;
-      (this->fields).latestSlopeDir.z = fVar14;
+      pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+      fVar9 = (pVVar8->zeroVector).y;
+      fVar10 = (pVVar8->zeroVector).z;
+      (this->fields).latestSlopeDir.x = (pVVar8->zeroVector).x;
+      (this->fields).latestSlopeDir.y = fVar9;
+      (this->fields).latestSlopeDir.z = fVar10;
       pLVar7 = (this->fields).wallJumpHits;
-      pVStack_15 = pVVar12;
       if (pLVar7 == (List_1_MVControllerColliderHit_ *)0x0) goto code_?;
-      pLVar16 = mscorlib.dll::System::Collections::Generic::List`1[MVControllerColliderHit]::
-                List_1_MVControllerColliderHit__GetEnumerator
-                          (&LStack_17,pLVar7,
-                           MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__GetEnumerator__
+      method_00 = (MethodInfo *)&UNK_?;
+      pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[MVControllerColliderHit]::
+               List_1_MVControllerColliderHit__GetEnumerator
+                         (&LStack_12,pLVar7,
+                          MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__GetEnumerator__
+                         );
+      uStack_13 = 0;
+      pLVar14 = &LStack_6;
+      for (iVar15 = 0x28; iVar15 != 0; iVar15 = iVar15 + -1) {
+        pLVar14->_list = pLVar11->_list;
+        pLVar11 = (List_1_T_Enumerator_MVControllerColliderHit_ *)&pLVar11->_index;
+        pLVar14 = (List_1_T_Enumerator_MVControllerColliderHit_ *)&pLVar14->_index;
+      }
+      uStack_1 = 1;
+      pLStack_16 = &LStack_6;
+      while( true ) {
+        bVar17 = mscorlib.dll::System::Collections::Generic::
+                List`1[T]+Enumerator[MVControllerColliderHit]::
+                List_1_T_Enumerator_MVControllerColliderHit__MoveNext
+                          (&LStack_6,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__MoveNext__
                           );
-      puVar18 = auStack_6;
-      for (iVar19 = 0x28; iVar19 != 0; iVar19 = iVar19 + -1) {
-        *puVar18 = pLVar16->l;
-        pLVar16 = (List_1_T_Enumerator_MVControllerColliderHit_ *)&pLVar16->next;
-        puVar18 = puVar18 + 1;
+        if (bVar17 == 0) break;
+        uStack_18._0_4_ = (this->fields).latestSlopeDir.x;
+        uStack_18._4_4_ = (this->fields).latestSlopeDir.y;
+        fStack_19 = (this->fields).latestSlopeDir.z;
+        fStack_20 = LStack_6._current.slopeNormal.z + fStack_19;
+        (this->fields).latestSlopeDir.x =
+             LStack_6._current.slopeNormal.x + (float)(undefined4)uStack_18;
+        (this->fields).latestSlopeDir.y = LStack_6._current.slopeNormal.y + (float)uStack_18._4_4_;
+        (this->fields).latestSlopeDir.z = fStack_20;
       }
-      uStack_1 = 0;
-      while (cVar20 = func_?(), cVar20 != '\0') {
-        puVar18 = (undefined4 *)func_?();
-        VStack_11.y = pVVar12->x;
-        VStack_11.z = pVVar12->y;
-        puVar21 = auStack_22;
-        for (iVar19 = 0x24; iVar19 != 0; iVar19 = iVar19 + -1) {
-          *puVar21 = *puVar18;
-          puVar18 = puVar18 + 1;
-          puVar21 = puVar21 + 1;
-        }
-        fVar14 = (this->fields).latestSlopeDir.z;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Vector3);
-        }
-        a.z = fVar14;
-        a.x = VStack_11.y;
-        a.y = VStack_11.z;
-        b.z = fStack_23;
-        b.x = (float)(undefined4)uStack_24;
-        b.y = (float)uStack_24._4_4_;
-        pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                           (&VStack_25,a,b,(MethodInfo *)0x0);
-        fVar13 = pVVar10->y;
-        fVar14 = pVVar10->z;
-        pVVar12->x = pVVar10->x;
-        pVVar12->y = fVar13;
-        (this->fields).latestSlopeDir.z = fVar14;
-      }
-      *puStack_8 = 0x6c;
       uStack_1 = 0xffffffff;
-      func_?();
-      func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&LStack_6,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__Dispose__
+                 ,method_00);
+      uStack_1 = 0xffffffff;
+      UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+                (&(this->fields).latestSlopeDir,(MethodInfo *)0x0);
     }
     pLVar7 = (this->fields).wallJumpHits;
     if (pLVar7 != (List_1_MVControllerColliderHit_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-      List_1_UnityEngine_UIVertex__Clear
-                ((List_1_UnityEngine_UIVertex_ *)pLVar7,
-                 MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__Clear__);
+      iVar15 = (pLVar7->fields)._size;
+      piVar21 = &(pLVar7->fields)._version;
+      *piVar21 = *piVar21 + 1;
+      (pLVar7->fields)._size = 0;
+      if (0 < iVar15) {
+        mscorlib.dll::System::Array::Array_Clear
+                  ((Array *)(pLVar7->fields)._items,0,iVar15,(MethodInfo *)0x0);
+      }
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
   }
 code_?:
-  func_?(0);
-  func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  uVar22 = func_?();
+  func_?(uVar22);
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -981,14 +919,20 @@ void Assembly-CSharp.dll::JumpState::JumpState__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__JumpState__HandleJumpBoost__);
+    func_?(&StringLiteral_JumpHeight);
+    func_?(&StringLiteral_DoubleJump);
+    func_?(&StringLiteral_CanWallJumpAnySurface);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>);
     cRam_? = '\x01';
   }
-  this_00 = this;
+  value = this;
   (this->fields).extraHeight = 4.1;
   (this->fields).jumpHeight = 1.0;
   (this->fields).sliperyValMin = 0.3;
@@ -1001,108 +945,88 @@ void Assembly-CSharp.dll::JumpState::JumpState__ctor
   (this->fields).jumpTimeOutWallJump = 0.25;
   (this->fields).jumpVelocityMultiplier = 1.0;
   (this->fields).lastButtonDownTime = -100.0;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                     ((Vector3 *)&puStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this_00->fields).jumpDir.x = pVVar1->x;
-  (this_00->fields).jumpDir.y = fVar3;
-  (this_00->fields).jumpDir.z = fVar4;
-  method_00 = TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>;
-  this_02 = (List_1_MVControllerColliderHit_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            ((List_1_UnityEngine_Vector4_ *)this_02,
-             MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__List__);
-  (this_00->fields).wallJumpHits = this_02;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this_00,0.0,(MethodInfo *)method_00);
-  this_01 = skillDataManager;
-  (this_00->fields).regularButtonDownTimeLimit = regularButtonDownTimeLimit;
-  if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
-    bVar5 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                      (skillDataManager,StringLiteral_JumpHeight,(MethodInfo *)0x0);
-    fVar4 = _UNK_?;
-    if (bVar5 != 0) {
-      regularButtonDownTimeLimit = 0.0;
-      this = (JumpState *)StringLiteral_JumpHeight;
-      iVar6 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
-                        (this_01,StringLiteral_JumpHeight,(MethodInfo *)0x0);
-      fVar4 = (float)iVar6 / _UNK_?;
-    }
-    (this_00->fields).jumpVelocityMultiplier = fVar4;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      method = (MethodInfo *)&UNK_?;
-      func_?();
-    }
-    method = (MethodInfo *)&UNK_?;
-    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar7 != (MVNetworkGame *)0x0) {
-      method = (MethodInfo *)&UNK_?;
-      pPVar8 = (PrefabPool *)MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0);
-      if (pPVar8 != (PrefabPool *)0x0) {
-        pOVar9 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                           (pPVar8,(MethodInfo *)0x0);
-        this = (JumpState *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  ((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                    *)this,(Object *)this_00,MethodInfo__JumpState__HandleJumpBoost__,
-                   (MethodInfo *)0x0);
-        if (pOVar9 != (ObjectiveArrow *)0x0) {
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->upVector).y;
+  fVar3 = (pVVar1->upVector).z;
+  (value->fields).jumpDir.x = (pVVar1->upVector).x;
+  (value->fields).jumpDir.y = fVar2;
+  (value->fields).jumpDir.z = fVar3;
+  this_02 = (List_1_MVControllerColliderHit_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>);
+  if (this_02 != (List_1_MVControllerColliderHit_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_02,
+               MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__List__);
+    (value->fields).wallJumpHits = this_02;
+    func_?(&(value->fields).wallJumpHits,this_02);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)value,ExceptionArgument__Enum_obj,in_stack_4);
+    this_01 = skillDataManager;
+    (value->fields).regularButtonDownTimeLimit = regularButtonDownTimeLimit;
+    if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
+      bVar5 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                        (skillDataManager,StringLiteral_JumpHeight,(MethodInfo *)0x0);
+      fVar3 = _UNK_?;
+      if (bVar5 != 0) {
+        iVar6 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
+                          (this_01,StringLiteral_JumpHeight,(MethodInfo *)0x0);
+        fVar3 = (float)iVar6 / _UNK_?;
+      }
+      (value->fields).jumpVelocityMultiplier = fVar3;
+      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar7 != (MVNetworkGame *)0x0) &&
+         (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0),
+         pMVar8 != (MVLocalPlayer *)0x0)) {
+        this = (JumpState *)(pMVar8->fields).boostController;
+        this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+        if ((this_03 != (NavMesh_OnNavMeshPreUpdate *)0x0) &&
+           (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (this_03,(Object *)value,MethodInfo__JumpState__HandleJumpBoost__,
+                       (MethodInfo *)0x0), this != (JumpState *)0x0)) {
           BoostController::BoostController_SubscribeToBoostChanged
-                    ((BoostController *)pOVar9,BoostType__Enum_JumpPowerFloatMultiplier,
-                     (Action *)this,(MethodInfo *)0x0);
+                    ((BoostController *)this,BoostType__Enum_JumpPowerFloatMultiplier,
+                     (Action *)this_03,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
-            func_?();
+            func_?(&TypeInfo__System__Int32);
             cRam_? = '\x01';
           }
-          (this_00->fields).jumpHeight = 1.0;
           this = (JumpState *)0x0;
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
-          }
+          (value->fields).jumpHeight = 1.0;
           pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar7 != (MVNetworkGame *)0x0) {
-            pPVar8 = (PrefabPool *)
-                     MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0);
-            if ((pPVar8 != (PrefabPool *)0x0) &&
-               (pOVar9 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                                   (pPVar8,(MethodInfo *)0x0), pOVar9 != (ObjectiveArrow *)0x0)) {
-              regularButtonDownTimeLimit = 0.0;
-              this = (JumpState *)&this;
-              bVar5 = BoostController::BoostController_TryGetActiveBoost
-                                ((BoostController *)pOVar9,BoostType__Enum_JumpPowerFloatMultiplier,
-                                 (Boost **)this,(MethodInfo *)0x0);
-              if (bVar5 == 0) {
+          if (((pMVar7 != (MVNetworkGame *)0x0) &&
+              (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0),
+              pMVar8 != (MVLocalPlayer *)0x0)) &&
+             (this_00 = (pMVar8->fields).boostController, this_00 != (BoostController *)0x0)) {
+            bVar5 = BoostController::BoostController_TryGetActiveBoost
+                              (this_00,BoostType__Enum_JumpPowerFloatMultiplier,(Boost **)&this,
+                               (MethodInfo *)0x0);
+            if (bVar5 == 0) {
 code_?:
-                bVar5 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                                  (this_01,StringLiteral_DoubleJump,(MethodInfo *)0x0);
-                (this_00->fields).airJumpsAllowed = (uint)(bVar5 != 0);
-                bVar5 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                                  (this_01,StringLiteral_CanWallJumpAnySurface,(MethodInfo *)0x0);
-                (this_00->fields).canWallJumpAnySurface = bVar5;
-                return;
-              }
-              if (this != (JumpState *)0x0) {
-                method = (MethodInfo *)&UNK_?;
-                pOVar10 = Boost::Boost_get_Value((Boost *)this,(MethodInfo *)0x0);
-                if (pOVar10 != (Object *)0x0) {
-                  if ((pOVar10->klass->_0).element_class ==
-                      (TypeInfo__System__Int32->_0).element_class) {
-                    piVar11 = (int *)func_?();
-                    (this_00->fields).jumpHeight = (float)*piVar11 / _UNK_? + _UNK_?;
-                    goto code_?;
-                  }
+              bVar5 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                                (this_01,StringLiteral_DoubleJump,(MethodInfo *)0x0);
+              (value->fields).airJumpsAllowed = (uint)(bVar5 != 0);
+              bVar5 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                                (this_01,StringLiteral_CanWallJumpAnySurface,(MethodInfo *)0x0);
+              (value->fields).canWallJumpAnySurface = bVar5;
+              return;
+            }
+            if (this != (JumpState *)0x0) {
+              pOVar9 = Boost::Boost_get_Value((Boost *)this,(MethodInfo *)0x0);
+              uVar10 = CONCAT44(TypeInfo__System__Int32,pOVar9);
+              if (pOVar9 != (Object *)0x0) {
+                if ((pOVar9->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class
+                   ) {
+                  piVar11 = (int *)func_?(pOVar9);
+                  (value->fields).jumpHeight = (float)*piVar11 / _UNK_? + _UNK_?;
                   goto code_?;
                 }
+                goto code_?;
               }
             }
           }
@@ -1110,9 +1034,9 @@ code_?:
       }
     }
   }
-  func_?();
+  uVar10 = func_?();
 code_?:
-  func_?();
+  func_?(uVar10);
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
   return;
@@ -1126,7 +1050,9 @@ void Assembly-CSharp.dll::JumpState::JumpState__ctor_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>);
     cRam_? = '\x01';
   }
   (this->fields).extraHeight = 4.1;
@@ -1141,27 +1067,34 @@ void Assembly-CSharp.dll::JumpState::JumpState__ctor_1
   (this->fields).jumpTimeOutWallJump = 0.25;
   (this->fields).jumpVelocityMultiplier = 1.0;
   (this->fields).lastButtonDownTime = -100.0;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).jumpDir.x = pVVar1->x;
-  (this->fields).jumpDir.y = fVar3;
-  (this->fields).jumpDir.z = fVar4;
-  method_00 = TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>;
-  this_00 = (List_1_MVControllerColliderHit_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            ((List_1_UnityEngine_Vector4_ *)this_00,
-             MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__List__);
-  (this->fields).wallJumpHits = this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  (this->fields).regularButtonDownTimeLimit = regularButtonDownTimeLimit;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->upVector).y;
+  fVar3 = (pVVar1->upVector).z;
+  (this->fields).jumpDir.x = (pVVar1->upVector).x;
+  (this->fields).jumpDir.y = fVar2;
+  (this->fields).jumpDir.z = fVar3;
+  this_00 = (List_1_MVControllerColliderHit_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>);
+  if (this_00 != (List_1_MVControllerColliderHit_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__List__);
+    method_00 = (MethodInfo *)&(this->fields).wallJumpHits;
+    (this->fields).wallJumpHits = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    (this->fields).regularButtonDownTimeLimit = regularButtonDownTimeLimit;
+    return;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1176,14 +1109,5 @@ bool Assembly-CSharp.dll::JumpState::JumpState_get_AirJumping(JumpState *this,Me
   }
   (this->fields).airJumping = 0;
   return 1;
-}
-
-
-/* Boolean get_Jumping() */
-
-bool Assembly-CSharp.dll::JumpState::JumpState_get_Jumping(JumpState *this,MethodInfo *method)
-
-{
-  return (this->fields).jumping;
 }
 

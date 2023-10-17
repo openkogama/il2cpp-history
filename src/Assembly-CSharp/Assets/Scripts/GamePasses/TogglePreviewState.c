@@ -6,7 +6,8 @@ void Assembly-CSharp.dll::Assets::Scripts::GamePasses::TogglePreviewState::Toggl
                GamePassTier__Enum currentTier,bool freeFirstTry,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).freeTry = freeFirstTry;
   (this->fields).previewTier = (undefined1)previewTier;
   (this->fields).currentTier = (undefined1)currentTier;
@@ -24,6 +25,16 @@ bool Assembly-CSharp.dll::Assets::Scripts::GamePasses::TogglePreviewState::
     return (this->fields).currentTier != 3;
   }
   return 1;
+}
+
+
+/* Boolean get_FreeTryWithoutAdAvailable() */
+
+bool Assembly-CSharp.dll::Assets::Scripts::GamePasses::TogglePreviewState::
+     TogglePreviewState_get_FreeTryWithoutAdAvailable(TogglePreviewState *this,MethodInfo *method)
+
+{
+  return (this->fields).freeTry;
 }
 
 

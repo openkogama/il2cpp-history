@@ -9,12 +9,12 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class StreamPngToSprite : MonoBehaviour
 {
 	// Fields
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	protected RawImage rawImage;
 	private bool currentlyDownloading;

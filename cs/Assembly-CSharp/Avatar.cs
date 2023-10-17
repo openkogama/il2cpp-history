@@ -7,8 +7,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.Avatar.Shared;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class Avatar : MonoBehaviour, IBulletImpactVisualizer, IMovable
 {
@@ -36,6 +37,8 @@ public class Avatar : MonoBehaviour, IBulletImpactVisualizer, IMovable
 	protected AvatarUIHandler avatarUIHandler;
 	[SerializeField]
 	private ChatAnchor chatBubbleAnchor;
+	[SerializeField]
+	private AvatarPaused avatarPaused;
 
 	// Properties
 	public bool IsLocal { get; }

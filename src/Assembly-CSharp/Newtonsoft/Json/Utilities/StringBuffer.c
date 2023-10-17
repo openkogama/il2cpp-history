@@ -5,35 +5,35 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringBuffe
                (StringBuffer *this,uint16_t value,MethodInfo *method)
 
 {
-  destinationArray = (this->fields)._buffer;
-  if (destinationArray != (Char__Array *)0x0) {
-    uVar1 = (this->fields)._position;
-    if (uVar1 == destinationArray->max_length) {
+  pCVar1 = (this->fields)._buffer;
+  if (pCVar1 != (Char__Array *)0x0) {
+    if ((this->fields)._position == pCVar1->max_length) {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        uVar1 = (this->fields)._position;
+        func_?(&TypeInfo__System__Char);
         cRam_? = '\x01';
       }
-      destinationArray = (Char__Array *)func_?(TypeInfo__System__Char,uVar1 * 2 + 2);
-      mscorlib.dll::System::Array::Array_Copy
-                ((Array *)(this->fields)._buffer,(Array *)destinationArray,(this->fields)._position,
+      pCVar1 = (Char__Array *)
+               func_?(TypeInfo__System__Char,(this->fields)._position * 2 + 2);
+      mscorlib.dll::System::Array::Array_Copy_2
+                ((Array *)(this->fields)._buffer,(Array *)pCVar1,(this->fields)._position,
                  (MethodInfo *)0x0);
-      uVar1 = (this->fields)._position;
-      (this->fields)._buffer = destinationArray;
+      (this->fields)._buffer = pCVar1;
+      func_?(&this->fields,pCVar1);
     }
-    (this->fields)._position = uVar1 + 1;
-    if (destinationArray != (Char__Array *)0x0) {
-      if (uVar1 < destinationArray->max_length) {
-        destinationArray->vector[uVar1] = value;
+    uVar2 = (this->fields)._position;
+    pCVar1 = (this->fields)._buffer;
+    (this->fields)._position = uVar2 + 1;
+    if (pCVar1 != (Char__Array *)0x0) {
+      if (uVar2 < pCVar1->max_length) {
+        pCVar1->vector[uVar2] = value;
         return;
       }
       goto code_?;
     }
   }
-  func_?(0);
+  func_?();
 code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -47,16 +47,15 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringBuffe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__StringBuffer);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->_1).cctor_started == 0)) {
+  if ((TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__Utilities__StringBuffer);
   }
-  (this->fields)._buffer =
-       TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->static_fields->_emptyBuffer;
+  pCVar1 = TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->static_fields->_emptyBuffer;
+  (this->fields)._buffer = pCVar1;
+  func_?(&this->fields,pCVar1);
   (this->fields)._position = 0;
   return;
 }
@@ -69,16 +68,17 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringBuffe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Char);
     cRam_? = '\x01';
   }
   destinationArray =
        (Char__Array *)
-       func_?(TypeInfo__System__Char,(appendLength + (this->fields)._position) * 2);
-  mscorlib.dll::System::Array::Array_Copy
+       func_?(TypeInfo__System__Char,((this->fields)._position + appendLength) * 2);
+  mscorlib.dll::System::Array::Array_Copy_2
             ((Array *)(this->fields)._buffer,(Array *)destinationArray,(this->fields)._position,
              (MethodInfo *)0x0);
   (this->fields)._buffer = destinationArray;
+  func_?(&this->fields,destinationArray);
   return;
 }
 
@@ -89,7 +89,7 @@ String * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringB
                    (StringBuffer *this,MethodInfo *method)
 
 {
-  pSVar1 = mscorlib.dll::System::String::String_CreateString_5
+  pSVar1 = mscorlib.dll::System::String::String_CreateString_3
                      ((String *)0x0,(this->fields)._buffer,0,(this->fields)._position,
                       (MethodInfo *)0x0);
   return pSVar1;
@@ -102,7 +102,7 @@ String * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringB
                    (StringBuffer *this,int32_t start,int32_t length,MethodInfo *method)
 
 {
-  pSVar1 = mscorlib.dll::System::String::String_CreateString_5
+  pSVar1 = mscorlib.dll::System::String::String_CreateString_3
                      ((String *)0x0,(this->fields)._buffer,start,length,(MethodInfo *)0x0);
   return pSVar1;
 }
@@ -115,11 +115,13 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringBuffe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Char);
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__StringBuffer);
     cRam_? = '\x01';
   }
   pCVar1 = (Char__Array *)func_?(TypeInfo__System__Char,0);
   TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->static_fields->_emptyBuffer = pCVar1;
+  func_?(TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->static_fields,pCVar1);
   return;
 }
 
@@ -131,17 +133,17 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringBuffe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__StringBuffer);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->_1).cctor_started == 0)) {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  if ((TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__Utilities__StringBuffer);
   }
-  (this->fields)._buffer =
-       TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->static_fields->_emptyBuffer;
+  pCVar1 = TypeInfo__Newtonsoft__Json__Utilities__StringBuffer->static_fields->_emptyBuffer;
+  (this->fields)._buffer = pCVar1;
+  func_?(&this->fields,pCVar1);
   return;
 }
 
@@ -153,12 +155,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::StringBuffer::StringBuffe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Char);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   pCVar1 = (Char__Array *)func_?(TypeInfo__System__Char,initalSize);
   (this->fields)._buffer = pCVar1;
+  func_?(&this->fields,pCVar1);
   return;
 }
 

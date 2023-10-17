@@ -10,79 +10,52 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AddMaterial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__Add_MVMaterial_);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+    func_?(&TypeInfo__MVMaterial);
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).materials;
-  if (pLVar1 == (List_1_MVMaterial_ *)0x0) {
-code_?:
-    func_?(0);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-  }
-  else {
-    mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::
-    JsonProperty]::
-    Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-              ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-               MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
-    pLVar1 = (this->fields).materials;
-    if (pLVar1 == (List_1_MVMaterial_ *)0x0) goto code_?;
-    materialId = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                            MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__)
-    ;
-    if (physicalProperties == (Single__Array *)0x0) goto code_?;
-    uVar3 = physicalProperties->max_length;
-    uStack_4 = 0;
-    if (uVar3 == 0) goto code_?;
-    if (uVar3 < 2) goto code_?;
-    if (uVar3 < 3) goto code_?;
-    if (3 < uVar3) {
-      if (uVar3 < 5) goto code_?;
-      fStack_5 = 0.0;
-      uStack_4 = 0;
-      uStack_6 = 0;
-      uStack_7 = 0;
-      uStack_8 = 0;
-      func_?(&uStack_4,physicalProperties->vector[0],physicalProperties->vector[1],
-                      physicalProperties->vector[2],physicalProperties->vector[3],
-                      physicalProperties->vector[4]);
-      this_00 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
-      physicalProperties_00.bouncyness = (float)uStack_6;
-      physicalProperties_00.friction = (float)uStack_4;
-      physicalProperties_00.softness = (float)uStack_7;
-      physicalProperties_00.staticFriction = (float)uStack_8;
-      physicalProperties_00.toughness = fStack_5;
-      MVMaterial::MVMaterial__ctor_1
-                (this_00,(int32_t)materialId,name,description,physicalProperties_00,materialSound,
-                 modifierPackageType,priceGold,isUnlocked,materialButtonTextureGenerator,
-                 (MethodInfo *)0x0);
-      if (pLVar1 != (List_1_MVMaterial_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)pLVar1,(UIPushOption__Enum)this_00,
+  if ((this->fields).materials != (List_1_MVMaterial_ *)0x0) {
+    this_00 = (this->fields).materials;
+    materialId = (this_00->fields)._size;
+    if (physicalProperties != (Single__Array *)0x0) {
+      if ((((physicalProperties->max_length == 0) || (physicalProperties->max_length < 2)) ||
+          (physicalProperties->max_length < 3)) ||
+         ((physicalProperties->max_length < 4 || (physicalProperties->max_length < 5))))
+      goto code_?;
+      PStack_1.toughness = 0.0;
+      PStack_1.friction = 0.0;
+      PStack_1.bouncyness = 0.0;
+      PStack_1.softness = 0.0;
+      PStack_1.staticFriction = 0.0;
+      MVWorldObject.dll::MV::WorldObject::PhysicalProperties::PhysicalProperties__ctor
+                (&PStack_1,physicalProperties->vector[0],physicalProperties->vector[1],
+                 physicalProperties->vector[2],physicalProperties->vector[3],
+                 physicalProperties->vector[4],(MethodInfo *)0x0);
+      this_01 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
+      if (this_01 != (MVMaterial *)0x0) {
+        physicalProperties_00.bouncyness = PStack_1.bouncyness;
+        physicalProperties_00.friction = PStack_1.friction;
+        physicalProperties_00.softness = PStack_1.softness;
+        physicalProperties_00.staticFriction = PStack_1.staticFriction;
+        physicalProperties_00.toughness = PStack_1.toughness;
+        MVMaterial::MVMaterial__ctor_1
+                  (this_01,materialId,name,description,physicalProperties_00,materialSound,
+                   modifierPackageType,priceGold,isUnlocked,materialButtonTextureGenerator,
+                   (MethodInfo *)0x0);
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_00,(Object *)this_01,
                    MethodInfo__System__Collections__Generic__List<MVMaterial>__Add_MVMaterial_);
         return;
       }
-      goto code_?;
     }
   }
-  uVar2 = func_?(0);
-  func_?(uVar2);
+  func_?();
 code_?:
-  uVar2 = func_?(0);
-  func_?(uVar2);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -97,74 +70,81 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AllMaterial
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb4;
-  puVar5 = &stack0xffffffb4;
+  puStack_4 = &stack0xffffffb8;
+  puVar5 = &stack0xffffffb8;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__GetEnumerator__);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  pOVar7 = (Object *)0x0;
-  pOStack_8 = (Object *)0x0;
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).materials;
-  puStack_9 = (undefined4 *)&stack0xffffffb4;
-  puStack_4 = &stack0xffffffb4;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    puStack_9 = (undefined4 *)&stack0xffffffb4;
-    puStack_4 = &stack0xffffffb4;
-    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_11,this_00,
+  iVar6 = 0;
+  iStack_7 = 0;
+  LStack_8._list = (List_1_System_Object_ *)0x0;
+  LStack_8._index = 0;
+  LStack_8._version = 0;
+  LStack_8._current = (Object *)0x0;
+  method_00 = (MethodInfo *)(this->fields).materials;
+  if (method_00 != (MethodInfo *)0x0) {
+    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_10,
+                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        method_00,
                         MethodInfo__System__Collections__Generic__List<MVMaterial>__GetEnumerator__)
     ;
-    CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar10->l;
-    CStack_6.monitor = (MonitorData *)pLVar10->next;
-    CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar10->ver;
-    CStack_6.fields.syncRoot = (Object *)(pLVar10->current).rgba;
-    uStack_1 = 0;
-    while (cVar12 = func_?(&CStack_6,
-                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__MoveNext__
-                                  ), cVar12 != '\0') {
-      pOVar13 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_6,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__get_Current__
-                         );
-      if (pOVar13 == (Object *)0x0) goto code_?;
-      if (*(char *)&pOVar13[1].monitor != '\0') {
-        pOVar7 = (Object *)((int)&pOVar7->klass + 1);
-        pOStack_8 = pOVar7;
+    LStack_8._list = (List_1_System_Object_ *)pLVar9->_list;
+    LStack_8._index = pLVar9->_index;
+    LStack_8._version = pLVar9->_version;
+    LStack_8._current = *(Object **)&pLVar9->_current;
+    LStack_10._version = 0;
+    uStack_1 = 1;
+    LStack_10._current = (RegexCharClass_SingleRange)&LStack_8;
+    while( true ) {
+      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_8,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__MoveNext__
+                        );
+      if (bVar11 == 0) break;
+      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
+      if (*(char *)((int)LStack_8._current + 0xc) != '\0') {
+        iVar6 = iVar6 + 1;
+        iStack_7 = iVar6;
       }
     }
-    *puStack_9 = 0x49;
     uStack_1 = 0xffffffff;
-    func_?(&CStack_6,
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__Dispose__
-                   );
-    this_01 = (this->fields).materials;
-    if (this_01 != (List_1_MVMaterial_ *)0x0) {
-      pOVar13 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                          MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&LStack_8,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__Dispose__
+               ,method_00);
+    uStack_1 = 0xffffffff;
+    pLVar12 = (this->fields).materials;
+    if (pLVar12 != (List_1_MVMaterial_ *)0x0) {
+      iVar13 = (pLVar12->fields)._size;
       *unaff_FS_OFFSET = uStack_3;
-      return pOVar13 == pOVar7;
+      return iVar13 == iVar6;
     }
   }
 code_?:
-  func_?(0);
-  func_?(0,0,0);
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  uVar14 = func_?();
+  func_?(uVar14);
+  pcVar15 = (code *)swi(3);
+  bVar11 = (*pcVar15)();
+  return bVar11;
 }
 
 
@@ -176,34 +156,26 @@ Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_GetMaterial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).materials;
-  if (pLVar1 != (List_1_MVMaterial_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                        MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
-    if ((int)pOVar2 <= (int)(uint)materialId) {
-      return (this->fields).noMaterial;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).materials;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((int)(uint)materialId < (this_00->fields)._size) {
+      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,(uint)materialId,
+                         MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
+      return (MVMaterial *)RVar1;
     }
-    pLVar1 = (this->fields).materials;
-    if (pLVar1 != (List_1_MVMaterial_ *)0x0) {
-      pMVar3 = (MVMaterial *)
-               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-               IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                         ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                          (uint)materialId,
-                          MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_)
-      ;
-      return pMVar3;
-    }
+    return (this->fields).noMaterial;
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  pMVar3 = (MVMaterial *)(*pcVar4)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pMVar3 = (MVMaterial *)(*pcVar2)();
   return pMVar3;
 }
 
@@ -217,49 +189,87 @@ Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_GetMaterialPhysi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).materials;
-  if (pLVar1 != (List_1_MVMaterial_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                        MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
-    if ((int)(uint)materialId < (int)pOVar2) {
-      pLVar1 = (this->fields).materials;
-      if (pLVar1 == (List_1_MVMaterial_ *)0x0) goto code_?;
-      pMVar3 = (MVMaterial *)
-               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-               IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                         ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar1,
-                          (uint)materialId,
-                          MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_)
-      ;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).materials;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((int)(uint)materialId < (this_00->fields)._size) {
+      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,(uint)materialId,
+                         MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
     }
     else {
-      pMVar3 = (this->fields).noMaterial;
+      RVar1 = (RegexCharClass_SingleRange)(this->fields).noMaterial;
     }
-    if (pMVar3 != (MVMaterial *)0x0) {
-      fVar4 = (pMVar3->fields)._PhysicalProperties_k__BackingField.bouncyness;
-      fVar5 = (pMVar3->fields)._PhysicalProperties_k__BackingField.softness;
-      fVar6 = (pMVar3->fields)._PhysicalProperties_k__BackingField.staticFriction;
-      fVar7 = (pMVar3->fields)._PhysicalProperties_k__BackingField.toughness;
-      __return_storage_ptr__->friction =
-           (pMVar3->fields)._PhysicalProperties_k__BackingField.friction;
-      __return_storage_ptr__->bouncyness = fVar4;
-      __return_storage_ptr__->softness = fVar5;
-      __return_storage_ptr__->staticFriction = fVar6;
-      __return_storage_ptr__->toughness = fVar7;
+    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
+      fVar2 = *(float *)((int)RVar1 + 0x20);
+      fVar3 = *(float *)((int)RVar1 + 0x24);
+      fVar4 = *(float *)((int)RVar1 + 0x28);
+      fVar5 = *(float *)((int)RVar1 + 0x2c);
+      __return_storage_ptr__->friction = *(float *)((int)RVar1 + 0x1c);
+      __return_storage_ptr__->bouncyness = fVar2;
+      __return_storage_ptr__->softness = fVar3;
+      __return_storage_ptr__->staticFriction = fVar4;
+      __return_storage_ptr__->toughness = fVar5;
       return __return_storage_ptr__;
     }
   }
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pPVar7 = (PhysicalProperties *)(*pcVar6)();
+  return pPVar7;
+}
+
+
+/* Boolean IsMaterialUnlocked(Byte[]) */
+
+bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked
+               (MVMaterialRepository *this,Byte__Array *mats,MethodInfo *method)
+
+{
+  if (mats != (Byte__Array *)0x0) {
+    for (uVar1 = 0; (int)uVar1 < (int)mats->max_length; uVar1 = uVar1 + 1) {
+      if (mats->max_length <= uVar1) {
 code_?:
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  pPVar9 = (PhysicalProperties *)(*pcVar8)();
-  return pPVar9;
+        func_?();
+        pcVar2 = (code *)swi(3);
+        bVar3 = (*pcVar2)();
+        return bVar3;
+      }
+      pMVar4 = MVMaterialRepository_GetMaterial(this,mats->vector[uVar1],(MethodInfo *)0x0);
+      if (pMVar4 == (MVMaterial *)0x0) {
+        func_?();
+        goto code_?;
+      }
+      if ((pMVar4->fields).isUnlocked == 0) {
+        return 0;
+      }
+    }
+  }
+  return 1;
+}
+
+
+/* Boolean IsMaterialUnlocked(Byte) */
+
+bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked_1
+               (MVMaterialRepository *this,uint8_t mat,MethodInfo *method)
+
+{
+  pMVar1 = MVMaterialRepository_GetMaterial(this,mat,(MethodInfo *)0x0);
+  if (pMVar1 != (MVMaterial *)0x0) {
+    return (pMVar1->fields).isUnlocked;
+  }
+  uVar2 = func_?(&stack0xfffffffc);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -270,14 +280,11 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVMaterialRepository);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVMaterialRepository->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVMaterialRepository->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVMaterialRepository);
-  }
   TypeInfo__MVMaterialRepository->static_fields->instance = (MVMaterialRepository *)0x0;
+  func_?(TypeInfo__MVMaterialRepository->static_fields,0);
   return;
 }
 
@@ -290,23 +297,26 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_SetMaterial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).materials;
-  if (this_00 != (List_1_MVMaterial_ *)0x0) {
-    pIVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-             IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                       ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_00,materialID,
-                        MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
-    if (pIVar1 != (IEventSystemHandler *)0x0) {
-      pIVar1[1].klass = (IEventSystemHandler__Class *)materialUnlockPriceGold;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).materials;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      (this_00,materialID,
+                       MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
+    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
+      *(int32_t *)((int)RVar1 + 8) = materialUnlockPriceGold;
       return;
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -318,23 +328,26 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_SetMaterial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).materials;
-  if (this_00 != (List_1_MVMaterial_ *)0x0) {
-    pIVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-             IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                       ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_00,materialId,
-                        MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
-    if (pIVar1 != (IEventSystemHandler *)0x0) {
-      *(bool *)&pIVar1[1].monitor = unlocked;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).materials;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      (this_00,materialId,
+                       MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
+    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
+      *(bool *)((int)RVar1 + 0xc) = unlocked;
       return;
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -346,100 +359,121 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<MVMaterial>);
+    func_?(&TypeInfo__MVMaterialRepository);
+    func_?(&TypeInfo__MVMaterial);
+    func_?(&TypeInfo__MVPhysics);
+    func_?(&TypeInfo__MaterialDescription);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_MVMaterial_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVMaterial>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<MVMaterial>__List__);
-  method_01 = (MethodInfo *)&stack0xffffffd4;
-  pIVar1 = (Il2CppClass *)0x0;
-  pIVar2 = (Il2CppMethodPointer)0x0;
-  pIVar3 = (Il2CppMethodPointer)0x0;
-  pIVar4 = (InvokerMethod)0x0;
-  pcVar5 = (char *)0x0;
-  (this->fields).materials = (List_1_MVMaterial_ *)this_00;
-  func_?(method_01,0x3edc28f6,0,0x3f800000,0x41a00000,0,0);
-  (this->fields).physicalPropertiesDefault.friction = (float)pIVar2;
-  (this->fields).physicalPropertiesDefault.bouncyness = (float)pIVar3;
-  (this->fields).physicalPropertiesDefault.softness = (float)pIVar4;
-  (this->fields).physicalPropertiesDefault.staticFriction = (float)pcVar5;
-  (this->fields).physicalPropertiesDefault.toughness = (float)pIVar1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,method_01);
-  if ((((uint)(TypeInfo__MVMaterialRepository->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVMaterialRepository->_1).cctor_started == 0)) {
+  if (this_00 != (List_1_MVMaterial_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<MVMaterial>__List__);
+    (this->fields).materials = this_00;
+    func_?(&this->fields,this_00);
+    method_01 = (MethodInfo *)0x0;
+    method_00 = (MethodInfo *)&UNK_?;
+    MVWorldObject.dll::MV::WorldObject::PhysicalProperties::PhysicalProperties__ctor
+              ((PhysicalProperties *)&stack0xffffffe0,0.43,0.0,1.0,20.0,0.0,(MethodInfo *)0x0);
+    (this->fields).physicalPropertiesDefault.friction = (float)method_01;
+    (this->fields).physicalPropertiesDefault.bouncyness = 0.0;
+    (this->fields).physicalPropertiesDefault.softness = 0.0;
+    (this->fields).physicalPropertiesDefault.staticFriction = 0.0;
+    (this->fields).physicalPropertiesDefault.toughness = 0.0;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_01);
+    if (TypeInfo__MVMaterialRepository->static_fields->instance != (MVMaterialRepository *)0x0) {
+      return;
+    }
+    TypeInfo__MVMaterialRepository->static_fields->instance = this;
     func_?();
-  }
-  TypeInfo__MVMaterialRepository->static_fields->instance = this;
-  if ((((uint)(TypeInfo__MaterialDescription->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MaterialDescription->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pMVar6 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
-  if (pMVar6 == (MaterialDescription__Array *)0x0) {
-code_?:
-    func_?();
-  }
-  else if (0x18 < pMVar6->max_length) {
-    if (pMVar6->vector[0x18] != (MaterialDescription *)0x0) {
-      name = (String *)
-             mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items
-                       ((Collection_1_VoxelHit_ *)pMVar6->vector[0x18],(MethodInfo *)0x0);
-      pMVar6 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
-      if (pMVar6 != (MaterialDescription__Array *)0x0) {
-        if (pMVar6->max_length < 0x19) goto code_?;
-        if (pMVar6->vector[0x18] != (MaterialDescription *)0x0) {
-          description = (String *)
-                        mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::
-                        Json::Serialization::JsonProperty]::
-                        Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                  ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                                   pMVar6->vector[0x18],(MethodInfo *)0x0);
-          physicalProperties = (this->fields).physicalPropertiesDefault;
-          pMVar7 = (MVMaterial *)func_?();
-          MVMaterial::MVMaterial__ctor_1
-                    (pMVar7,0x18,name,description,physicalProperties,MaterialSound__Enum_None,
-                     AvatarModifierPackageType__Enum_None,0,0,(MaterialButtonTextureGenerator *)0x0,
-                     (MethodInfo *)0x0);
-          (this->fields).noMaterial = pMVar7;
-          if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
-            func_?();
+    if ((TypeInfo__MaterialDescription->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MaterialDescription);
+    }
+    pMVar1 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
+    if (pMVar1 != (MaterialDescription__Array *)0x0) {
+      if (pMVar1->max_length < 0x19) goto code_?;
+      if (pMVar1->vector[0x18] != (MaterialDescription *)0x0) {
+        pSVar2 = (pMVar1->vector[0x18]->fields)._Name_k__BackingField;
+        pMVar3 = TypeInfo__MaterialDescription->static_fields->materialDescriptions->vector[0x18];
+        if (pMVar3 != (MaterialDescription *)0x0) {
+          pSVar4 = (pMVar3->fields)._Description_k__BackingField;
+          fVar5 = (this->fields).physicalPropertiesDefault.friction;
+          fVar6 = (this->fields).physicalPropertiesDefault.bouncyness;
+          fVar7 = (this->fields).physicalPropertiesDefault.softness;
+          fVar8 = (this->fields).physicalPropertiesDefault.staticFriction;
+          fVar9 = (this->fields).physicalPropertiesDefault.toughness;
+          pMVar10 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
+          if (pMVar10 != (MVMaterial *)0x0) {
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__UnityEngine__Object);
+              cRam_? = '\x01';
+            }
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)pMVar10,ExceptionArgument__Enum_obj,method_00);
+            (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
+            (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = fVar5;
+            (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar6;
+            (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = fVar7;
+            (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar8;
+            (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar9;
+            MVMaterial::MVMaterial_GenerateCube(pMVar10,0x18,(MethodInfo *)0x0);
+            MVar11 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+            if (MVar11 != MVGameMode__Enum_Play) {
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__UnityEngine__Object);
+              }
+              bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                 ((Object_1 *)0x0,(Object_1 *)0x0,(MethodInfo *)0x0);
+              if (bVar12 != 0) goto code_?;
+            }
+            (pMVar10->fields).unlockPriceGold = 0;
+            (pMVar10->fields).isUnlocked = 0;
+            (pMVar10->fields)._Name_k__BackingField = pSVar2;
+            func_?(&(pMVar10->fields)._Name_k__BackingField,pSVar2);
+            (pMVar10->fields)._Description_k__BackingField = pSVar4;
+            func_?(&(pMVar10->fields)._Description_k__BackingField,pSVar4);
+            (this->fields).noMaterial = pMVar10;
+            func_?(&(this->fields).noMaterial,pMVar10);
+            if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__MVPhysics);
+            }
+            pMVar13 = TypeInfo__MVPhysics->static_fields;
+            fVar5 = (pMVar13->airPhysicalProperties).friction;
+            fVar6 = (pMVar13->airPhysicalProperties).bouncyness;
+            fVar7 = (pMVar13->airPhysicalProperties).softness;
+            fVar8 = (pMVar13->airPhysicalProperties).staticFriction;
+            fVar9 = (pMVar13->airPhysicalProperties).toughness;
+            pMVar10 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
+            if (pMVar10 != (MVMaterial *)0x0) {
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)pMVar10,ExceptionArgument__Enum_obj,unaff_EBX);
+              (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
+              (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = fVar5;
+              (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar6;
+              (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = fVar7;
+              (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar8;
+              (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar9;
+              (this->fields).inAirMaterial = pMVar10;
+              func_?(&(this->fields).inAirMaterial,pMVar10);
+              return;
+            }
           }
-          pMVar8 = TypeInfo__MVPhysics->static_fields;
-          pTVar9 = (Transform *)(pMVar8->airPhysicalProperties).friction;
-          fVar10 = (pMVar8->airPhysicalProperties).bouncyness;
-          pSVar11 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
-                   (pMVar8->airPhysicalProperties).softness;
-          fVar12 = (pMVar8->airPhysicalProperties).staticFriction;
-          fVar13 = (pMVar8->airPhysicalProperties).toughness;
-          method_00 = TypeInfo__MVMaterial;
-          pMVar7 = (MVMaterial *)func_?();
-          ScaleAnimationBase::ScaleAnimationBase_Play
-                    ((ScaleAnimationBase *)pMVar7,0.0,(MethodInfo *)method_00);
-          (pMVar7->fields)._ModifierPackageType_k__BackingField = 0;
-          (pMVar7->fields)._PhysicalProperties_k__BackingField.friction = (float)pTVar9;
-          (pMVar7->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar10;
-          (pMVar7->fields)._PhysicalProperties_k__BackingField.softness = (float)pSVar11;
-          (pMVar7->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar12;
-          (pMVar7->fields)._PhysicalProperties_k__BackingField.toughness = fVar13;
-          (this->fields).inAirMaterial = pMVar7;
-          return;
         }
       }
     }
-    goto code_?;
   }
-  uVar14 = func_?(0);
-  func_?(uVar14);
 code_?:
   func_?();
+code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -451,21 +485,18 @@ bool Assembly-CSharp.dll::MVMaterialRepository::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVMaterialRepository->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVMaterialRepository->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVMaterialRepository);
   }
   pMVar1 = TypeInfo__MVMaterialRepository->static_fields->instance;
   if (pMVar1 != (MVMaterialRepository *)0x0) {
     return (pMVar1->fields).allowDestructibleMaterialSelection;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
@@ -476,22 +507,20 @@ int32_t Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_get_Mate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__;
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).materials;
-  if (this_00 != (List_1_MVMaterial_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                        MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
-    return (int32_t)pOVar1;
+  pLVar2 = (this->fields).materials;
+  if (pLVar2 != (List_1_MVMaterial_ *)0x0) {
+    return (pLVar2->fields)._size;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  iVar3 = (*pcVar2)();
-  return iVar3;
+  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
@@ -502,21 +531,20 @@ void Assembly-CSharp.dll::MVMaterialRepository::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppMStack_1 = &TypeInfo__MVMaterialRepository;
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVMaterialRepository->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVMaterialRepository->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVMaterialRepository);
-  }
-  pMVar1 = TypeInfo__MVMaterialRepository->static_fields->instance;
-  if (pMVar1 != (MVMaterialRepository *)0x0) {
-    (pMVar1->fields).allowDestructibleMaterialSelection = value;
+  pMVar2 = TypeInfo__MVMaterialRepository->static_fields->instance;
+  if (pMVar2 != (MVMaterialRepository *)0x0) {
+    (pMVar2->fields).allowDestructibleMaterialSelection = value;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  ppMStack_1 = (MVMaterialRepository__Class **)&stack0xfffffffc;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

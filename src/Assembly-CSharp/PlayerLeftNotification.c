@@ -7,59 +7,53 @@ void Assembly-CSharp.dll::PlayerLeftNotification::PlayerLeftNotification_Initial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral__left_);
     cRam_? = '\x01';
   }
-  this_00 = data;
+  this_01 = data;
   PlayerNotification::PlayerNotification_Initialize
             ((PlayerNotification *)this,data,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = (MVAvatar *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVAvatar *)0x0) {
-    this_02 = MVAvatar::MVAvatar_get_Shield(this_01,(MethodInfo *)0x0);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    this_00 = (pMVar1->fields).playerContainer;
     data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,data._0_3_);
-    key = (Type *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-               Dictionary_2_System_Type_Pool__get_Item
-                         ((Dictionary_2_System_Type_Pool_ *)this_00,key,
+    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
+    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (this_01,pOVar2,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      if ((this_02 != (MVRuntimeDataVariableClampedFloat *)0x0) && (pPVar1 != (Pool *)0x0)) {
-        if ((pPVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+      if ((this_00 != (MVPlayerContainer *)0x0) && (pOVar2 != (Object *)0x0)) {
+        if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
         goto code_?;
-        piVar2 = (int32_t *)func_?();
-        this_03 = MVPlayerContainer::MVPlayerContainer_get_Item
-                            ((MVPlayerContainer *)this_02,*piVar2,(MethodInfo *)0x0);
-        pTVar3 = (this->fields)._.NameLabel;
-        if (this_03 != (MVPlayer *)0x0) {
-          iVar4 = GamePointGainEffect::GamePointGainEffect_get_ID
-                            ((GamePointGainEffect *)this_03,(MethodInfo *)0x0);
-          if (iVar4 != 0) {
-            pSVar5 = *(String **)(iVar4 + 0xc);
-            str1 = TM::TM__(StringLiteral__left_,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__String);
-            }
-            pSVar5 = mscorlib.dll::System::String::String_Concat_2(pSVar5,str1,(MethodInfo *)0x0);
-            if (pTVar3 != (Text *)0x0) {
-              (*(code *)(pTVar3->klass->vtable).set_text.method)(pTVar3,pSVar5);
-              return;
-            }
+        piVar3 = (int32_t *)func_?();
+        pMVar4 = MVPlayerContainer::MVPlayerContainer_get_Item(this_00,*piVar3,(MethodInfo *)0x0);
+        pTVar5 = (this->fields)._.NameLabel;
+        if ((pMVar4 != (MVPlayer *)0x0) &&
+           (pUVar6 = (pMVar4->fields)._UserProfileData_k__BackingField,
+           pUVar6 != (UserProfileData *)0x0)) {
+          pSVar7 = (pUVar6->fields).UserName;
+          str1 = TM::TM__(StringLiteral__left_,(MethodInfo *)0x0);
+          pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,str1,(MethodInfo *)0x0);
+          if (pTVar5 != (Text *)0x0) {
+            (*(pTVar5->klass->vtable).set_text.methodPtr)(pTVar5,pSVar7);
+            return;
           }
         }
       }
     }
   }
-  pPVar1 = (Pool *)func_?();
+  pOVar2 = (Object *)func_?();
 code_?:
-  func_?(pPVar1);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?(pOVar2);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

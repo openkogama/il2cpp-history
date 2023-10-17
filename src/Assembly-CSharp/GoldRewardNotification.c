@@ -7,33 +7,37 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_Initial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__NotificationLifetime);
     cRam_? = '\x01';
   }
-  this_00 = data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(2,data._0_3_);
-  key = (Type *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_00,key,
+  pGVar1 = this;
+  this = (GoldRewardNotification *)CONCAT13(2,this._0_3_);
+  (pGVar1->fields)._.timeSinceStart = 0.0;
+  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar2,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar1 != (Pool *)0x0) {
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__NotificationLifetime->_0).element_class) {
-        piVar2 = (int32_t *)func_?();
-        (this->fields).lifeTime = *piVar2;
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class == (TypeInfo__NotificationLifetime->_0).element_class) {
+        piVar3 = (int32_t *)func_?();
+        (pGVar1->fields).lifeTime = *piVar3;
         return;
       }
       goto code_?;
     }
   }
-  func_?();
+  pOVar2 = (Object *)func_?();
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(pOVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -45,38 +49,20 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_RewardC
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-    func_?(TypeInfo__TimedPlayReward__RewardTracker);
-  }
-  if (TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected != 0) {
-    return;
-  }
-  if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-    func_?(TypeInfo__TimedPlayReward__RewardTracker);
-  }
-  if (TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged != (Action *)0x0) {
-    if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-      func_?(TypeInfo__TimedPlayReward__RewardTracker);
+  pTVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
+  if (pTVar1->IsCollected == 0) {
+    if (pTVar1->CollectedChanged != (Action *)0x0) {
+      pAVar2 = pTVar1->CollectedChanged;
+      (*(pAVar2->fields)._._.invoke_impl)
+                ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
     }
-    this_00 = (JumpState_OnWallJumpDelegate *)
-              TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
-    if (this_00 == (JumpState_OnWallJumpDelegate *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    JumpState+OnWallJumpDelegate::JumpState_OnWallJumpDelegate_Invoke(this_00,(MethodInfo *)0x0);
+    iVar3 = (*(this->klass->vtable).get_Lifetime.methodPtr)
+                      (this,(this->klass->vtable).get_Lifetime.method);
+    (this->fields)._.timeSinceStart = (float)(iVar3 + 1);
   }
-  iVar2 = (*(code *)(this->klass->vtable).get_Lifetime.method)
-                    (this,(this->klass->vtable).Initialize.methodPtr);
-  (this->fields)._.timeSinceStart = (float)(iVar2 + 1);
   return;
 }
 

@@ -8,17 +8,17 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LevelBasedUseRequirement : UseRequirement
 {
 	// Fields
 	private int levelAmount;
-	private const UseRequirementType requirementType = UseRequirementType.Level;
+	private const UseRequirementType RequirementType = UseRequirementType.Level;
 	private readonly bool hasUseWhenFree;
 	private LevelDisplayCube displayObject;
 	private Vector3 displayObjectOffset;
-	private GameObject displayObjectRoot;
+	private readonly GameObject displayObjectRoot;
 	private GameObject go;
 
 	// Properties

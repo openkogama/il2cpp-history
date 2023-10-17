@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayerElementState : MonoBehaviour
 {
@@ -33,61 +33,60 @@ public class PlayerElementState : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OpenUserManagement_c__AnonStorey0
+	private sealed class __c__DisplayClass9_0
 	{
 		// Fields
-		internal AdminToolController adminTools;
+		public AdminToolController adminTools;
 
 		// Constructors
-		public _OpenUserManagement_c__AnonStorey0();
+		public __c__DisplayClass9_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OpenUserManagement_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OpenUserManagement_c__AnonStorey1
+	private sealed class __c__DisplayClass9_1
 	{
 		// Fields
-		internal OwnerToolController ownerTools;
+		public OwnerToolController ownerTools;
 
 		// Constructors
-		public _OpenUserManagement_c__AnonStorey1();
+		public __c__DisplayClass9_1();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OpenUserManagement_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _SetupButtons_c__AnonStorey2
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal MVPlayer player;
-		internal Friend friend;
-		internal PlayerElementState _this;
-
-		// Nested types
-		private sealed class _SetupButtons_c__AnonStorey3
-		{
-			// Fields
-			internal string errorText;
-			internal _SetupButtons_c__AnonStorey2 __f__ref_2;
-
-			// Constructors
-			public _SetupButtons_c__AnonStorey3();
-
-			// Methods
-			internal void __m__0(IModalPopupCreator x, BaseEventData y);
-		}
+		public PlayerElementState __4__this;
+		public MVPlayer player;
+		public Friend friend;
 
 		// Constructors
-		public _SetupButtons_c__AnonStorey2();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0();
-		internal void __m__1();
-		internal void __m__2();
-		internal void __m__3();
+		internal void _SetupButtons_b__0();
+		internal void _SetupButtons_b__1();
+		internal void _SetupButtons_b__2();
+		internal void _SetupButtons_b__3();
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass11_1
+	{
+		// Fields
+		public string errorText;
+
+		// Constructors
+		public __c__DisplayClass11_1();
+
+		// Methods
+		internal void _SetupButtons_b__4(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors

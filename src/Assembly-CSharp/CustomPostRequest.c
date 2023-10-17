@@ -9,17 +9,13 @@ void Assembly-CSharp.dll::CustomPostRequest::CustomPostRequest__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   AsyncWebRequest::AsyncWebRequest__ctor
-            ((AsyncWebRequest *)this,TypeInfo__System__String->static_fields->Empty,callback,
-             requestPriority,(MethodInfo *)0x0);
+            ((AsyncWebRequest *)this,::StringLiteral__,callback,requestPriority,(MethodInfo *)0x0);
   (this->fields)._.request = request;
+  func_?(&(this->fields)._.request,request);
   return;
 }
 

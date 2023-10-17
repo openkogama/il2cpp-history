@@ -9,11 +9,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-// Image 36: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.Detectors
 {
-	[AddComponentMenu]
+	[AddComponentMenu("Code Stage/Anti-Cheat Toolkit/Speed Hack Detector")]
 	public class SpeedHackDetector : ActDetectorBase
 	{
 		// Fields
@@ -22,11 +22,11 @@ namespace CodeStage.AntiCheat.Detectors
 		private const long TICKS_PER_SECOND = 10000000;
 		private const int THRESHOLD = 5000000;
 		private static int instancesInScene;
-		[Tooltip]
+		[Tooltip("Time (in seconds) between detector checks.")]
 		public float interval;
-		[Tooltip]
+		[Tooltip("Maximum false positives count allowed before registering speed hack.")]
 		public byte maxFalsePositives;
-		[Tooltip]
+		[Tooltip("Amount of sequential successful checks before clearing internal false positives counter.\nSet 0 to disable Cool Down feature.")]
 		public int coolDown;
 		private byte currentFalsePositives;
 		private int currentCooldownShots;
@@ -35,7 +35,6 @@ namespace CodeStage.AntiCheat.Detectors
 		private long prevTicks;
 		private long prevIntervalTicks;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private static SpeedHackDetector _Instance_k__BackingField;
 	
 		// Properties

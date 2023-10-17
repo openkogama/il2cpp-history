@@ -9,149 +9,147 @@ void Assembly-CSharp.dll::VehicleVisualizationBase::VehicleVisualizationBase_Cha
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa4;
-  puVar5 = &stack0xffffffa4;
+  puStack_4 = &stack0xffffffb4;
+  puVar5 = &stack0xffffffb4;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                   );
+    func_?(&
+                    UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_7.monitor = (MonitorData *)0x0;
-  CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_7.fields.syncRoot = (Object *)0x0;
-  func_?();
   if ((this->fields).disabledByLod == 0) {
-    puStack_8 = (undefined4 *)&stack0xffffffa4;
-    puStack_4 = &stack0xffffffa4;
-    if (distance < (this->fields).cullDistance) goto code_?;
-    pLVar9 = (List_1_UnityEngine_Color32_ *)(this->fields).lodGameObjects;
-    (this->fields).disabledByLod = 1;
-    puStack_8 = (undefined4 *)&stack0xffffffa4;
-    puStack_4 = &stack0xffffffa4;
-    if (pLVar9 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-    puStack_8 = (undefined4 *)&stack0xffffffa4;
-    puStack_4 = &stack0xffffffa4;
-    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffb0,pLVar9,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                       );
-    CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar10->l;
-    CStack_7.monitor = (MonitorData *)pLVar10->next;
-    CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar10->ver;
-    CStack_7.fields.syncRoot = (Object *)(pLVar10->current).rgba;
-    uStack_1 = 2;
-    while (cVar11 = func_?(&CStack_7,
-                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                  ), cVar11 != '\0') {
-      pGVar12 = (GameObject *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_7,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                         );
-      if (pGVar12 == (GameObject *)0x0) goto code_?;
-      unaff_EDI = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_GetComponentsInChildren_29
-                            (pGVar12,
-                             UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
-                            );
-      iVar13 = 0;
-      while( true ) {
-        if (unaff_EDI == (UseInteratorVisualization__Array *)0x0) goto code_?;
-        if ((int)unaff_EDI->max_length <= iVar13) break;
-        pRVar14 = (Renderer *)func_?(iVar13);
-        if (pRVar14 == (Renderer *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  (pRVar14,0,(MethodInfo *)0x0);
-        iVar13 = iVar13 + 1;
-      }
-    }
-    *puStack_8 = 0x118;
-    pCVar15 = &CStack_7;
-  }
-  else {
-    puStack_8 = (undefined4 *)&stack0xffffffa4;
-    puStack_4 = &stack0xffffffa4;
-    if ((this->fields).cullDistance <= distance) goto code_?;
-    pLVar9 = (List_1_UnityEngine_Color32_ *)(this->fields).lodGameObjects;
-    (this->fields).disabledByLod = 0;
-    puStack_8 = (undefined4 *)&stack0xffffffa4;
-    puStack_4 = &stack0xffffffa4;
-    if (pLVar9 == (List_1_UnityEngine_Color32_ *)0x0) {
 code_?:
-      func_?(0);
-      func_?(unaff_EDI,0,0);
-      pcVar16 = (code *)swi(3);
-      (*pcVar16)();
+    if (distance < (this->fields).cullDistance) goto code_?;
+    pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).lodGameObjects;
+    (this->fields).disabledByLod = 1;
+    if (pLVar6 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+code_?:
+      uVar7 = func_?();
+      func_?(uVar7);
+code_?:
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    puStack_8 = (undefined4 *)&stack0xffffffa4;
-    puStack_4 = &stack0xffffffa4;
-    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffb0,pLVar9,
+    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_10,pLVar6,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                        );
-    CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar10->l;
-    CStack_6.monitor = (MonitorData *)pLVar10->next;
-    CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar10->ver;
-    CStack_6.fields.syncRoot = (Object *)(pLVar10->current).rgba;
-    uStack_1 = 0;
-    while (cVar11 = func_?(&CStack_6,
-                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                  ), cVar11 != '\0') {
-      pGVar12 = (GameObject *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_6,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                         );
-      if (pGVar12 == (GameObject *)0x0) goto code_?;
-      unaff_EDI = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_GetComponentsInChildren_29
-                            (pGVar12,
-                             UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
-                            );
-      iVar13 = 0;
-      while( true ) {
-        if (unaff_EDI == (UseInteratorVisualization__Array *)0x0) goto code_?;
-        if ((int)unaff_EDI->max_length <= iVar13) break;
-        pRVar14 = (Renderer *)func_?(iVar13);
-        if (pRVar14 == (Renderer *)0x0) goto code_?;
+    LStack_10._current = (RegexCharClass_SingleRange)&stack0xffffffc0;
+    LStack_10._version = 0;
+    uStack_1 = 4;
+    RVar11 = pLVar9->_current;
+    while( true ) {
+      RVar12 = RVar11;
+      bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                        );
+      if (bVar13 == 0) break;
+      if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      RVar11 = RVar12;
+      pIStack_14 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                             ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)RVar12,
+                              UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+                             );
+      pMVar15 = (MonitorData *)0x0;
+      if (pIStack_14 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
+      for (; unaff_EDI = RVar12, (int)pMVar15 < (int)pIStack_14[1].monitor; pMVar15 = pMVar15 + 1) {
+        if (pIStack_14[1].monitor <= pMVar15) goto code_?;
+        if ((&pIStack_14[2].klass)[(int)pMVar15] == (IEnumerable_1_System_Object___Class *)0x0)
+        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  (pRVar14,1,(MethodInfo *)0x0);
-        iVar13 = iVar13 + 1;
+                  ((Renderer *)(&pIStack_14[2].klass)[(int)pMVar15],0,(MethodInfo *)0x0);
       }
     }
-    *puStack_8 = 0x86;
-    pCVar15 = &CStack_6;
+  }
+  else {
+    if ((this->fields).cullDistance <= distance) {
+      if ((this->fields).disabledByLod != 0) goto code_?;
+      goto code_?;
+    }
+    pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).lodGameObjects;
+    (this->fields).disabledByLod = 0;
+    if (pLVar6 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
+    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_10,pLVar6,
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                       );
+    LStack_10._current = (RegexCharClass_SingleRange)&stack0xffffffc0;
+    LStack_10._version = 0;
+    uStack_1 = 1;
+    RVar11 = pLVar9->_current;
+    while( true ) {
+      RVar12 = RVar11;
+      bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                        );
+      if (bVar13 == 0) break;
+      if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      RVar11 = RVar12;
+      pIStack_14 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                             ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)RVar12,
+                              UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+                             );
+      pMVar15 = (MonitorData *)0x0;
+      if (pIStack_14 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
+      for (; unaff_EDI = RVar12, (int)pMVar15 < (int)pIStack_14[1].monitor; pMVar15 = pMVar15 + 1) {
+        if (pIStack_14[1].monitor <= pMVar15) {
+          func_?();
+          goto code_?;
+        }
+        if ((&pIStack_14[2].klass)[(int)pMVar15] == (IEnumerable_1_System_Object___Class *)0x0)
+        goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
+                  ((Renderer *)(&pIStack_14[2].klass)[(int)pMVar15],1,(MethodInfo *)0x0);
+      }
+    }
   }
   uStack_1 = 0xffffffff;
-  func_?(pCVar15,
-                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                 );
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)&stack0xffffffc0,
+             (ExceptionArgument__Enum)
+             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+             ,(MethodInfo *)unaff_EDI);
+  uStack_1 = 0xffffffff;
 code_?:
   if ((this->fields).isInSpawner == 0) {
-    bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+    bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
                       ((Behaviour *)this,(MethodInfo *)0x0);
-    if ((bVar17 != 0) &&
-       (pfVar18 = &(this->fields).disableVisualizationDistance,
-       *pfVar18 <= distance && distance != *pfVar18)) {
+    if ((bVar13 != 0) &&
+       (pfVar16 = &(this->fields).disableVisualizationDistance,
+       *pfVar16 <= distance && distance != *pfVar16)) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                 ((Behaviour *)this,0,(MethodInfo *)0x0);
     }
-    bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+    bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
                       ((Behaviour *)this,(MethodInfo *)0x0);
-    if ((bVar17 == 0) && (distance <= (this->fields).disableVisualizationDistance)) {
+    if ((bVar13 == 0) && (distance <= (this->fields).disableVisualizationDistance)) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                 ((Behaviour *)this,1,(MethodInfo *)0x0);
     }
@@ -208,27 +206,29 @@ void Assembly-CSharp.dll::VehicleVisualizationBase::VehicleVisualizationBase__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_UnityEngine_GameObject_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-            );
-  (this->fields).lodGameObjects = (List_1_UnityEngine_GameObject_ *)this_00;
-  (this->fields).disableVisualizationDistance = 40.0;
-  (this->fields).cullDistance = 145.0;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_UnityEngine_GameObject_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    (this->fields).lodGameObjects = this_00;
+    func_?(&(this->fields).lodGameObjects,this_00);
+    (this->fields).disableVisualizationDistance = 40.0;
+    (this->fields).cullDistance = 145.0;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

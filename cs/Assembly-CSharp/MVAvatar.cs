@@ -9,11 +9,13 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class MVAvatar : MVGroup, IHealRayAttachementObject, IUpdatecontrollerSubscriberLateUpdate
 {
 	// Fields
+	public const int DefaultBaseMaxHelth = 100;
+	protected const float healParticleSpawnCooldownTime = 1f;
 	protected Avatar avatar;
 	public MVRuntimeDataVariable<float> Health;
 	public MVRuntimeDataVariable<int> MaxHealth;
@@ -25,28 +27,29 @@ public abstract class MVAvatar : MVGroup, IHealRayAttachementObject, IUpdatecont
 	public MVRuntimeDataVariable SpawnRoleModeTypes;
 	public MVRuntimeDataVariableClampedFloat Size;
 	public LimbRotationRuntimeData LimbRotationRuntimeData;
-	private readonly Vector3 characterControllerCenterOffset;
-	protected const float healParticleSpawnCooldownTime = 1f;
 	protected float healParticleSpawnTime;
+	protected AvatarPickupOwner avatarPickupOwner;
+	protected AvatarLimbManager limbManager;
+	protected WorldObjectSkillDataManager skillDataManager;
+	private readonly Vector3 characterControllerCenterOffset;
 	private Ray lineOfFire;
 	private bool isLocal;
 	private MVBody body;
 	private GameObject healRayAttachmentObject;
-	protected AvatarPickupOwner avatarPickupOwner;
-	protected AvatarLimbManager limbManager;
-	protected WorldObjectSkillDataManager skillDataManager;
+	private bool isHidden;
 
 	// Properties
-	public MVRuntimeDataVariableClampedFloat Shield { get; set; }
 	public Vector3 CharacterControllerCenterOffset { get; }
 	public float HealParticleSpawnTime { set; }
+	public MVRuntimeDataVariableClampedFloat Shield { get; set; }
 	public PickupItem CurrentPickup { get; }
 	public AvatarLimbManager LimbManager { get; }
-	public float SetTransparency { set; }
 	public MVBody Body { get; }
+	public Avatar Avatar { get; }
 	public bool IsSeated { get; }
 	public int SeatID { get; set; }
-	public Avatar Avatar { get; }
+	public bool IsHidden { get; set; }
+	public float SetTransparency { set; }
 	public abstract Vector3 VelocityRelative { get; }
 	public abstract Vector3 VelocityAbsolute { get; }
 	public MVWorldObjectClient WorldObjectClient { get; }
@@ -56,10 +59,10 @@ public abstract class MVAvatar : MVGroup, IHealRayAttachementObject, IUpdatecont
 
 	// Methods
 	protected virtual void OnSeatedChanged(bool isSeated);
-	public bool IsInMode(SpawnRoleModeType t);
 	public virtual void BeforeVehicleEntered();
 	public virtual void OnEnterVehicle();
 	public virtual void OnLeaveVehicle();
+	public bool IsInMode(SpawnRoleModeType t);
 	public override void Initialize();
 	public override void Destroy();
 	public void SetTeam();
@@ -78,11 +81,8 @@ public abstract class MVAvatar : MVGroup, IHealRayAttachementObject, IUpdatecont
 	protected virtual void OnShieldChange(object newShieldData);
 	protected virtual void OnCurrentPickupChange(object newPickupDataData);
 	[CompilerGenerated]
-	[DebuggerHidden]
-	private void _set_Scale___BaseCallProxy0(Vector3 value);
+	private void _Initialize_b__54_0(object val);
 	[CompilerGenerated]
-	private void _Initialize_m__0(object val);
-	[CompilerGenerated]
-	private void _InitializeModifiers_m__1(object modifiers);
+	private void _InitializeModifiers_b__60_0(object modifiers);
 }
 

@@ -13,7 +13,9 @@ Assembly-CSharp.dll::MultiThrowingStarHitPackage::MultiThrowingStarHitPackage_Cr
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,0x18,0x14,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_4
+            (__return_storage_ptr__,InteractionPackageType__Enum_MultiThrowingStarHit,
+             PlayerKilledByType__Enum_MultiThrowingStar,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -26,12 +28,10 @@ void Assembly-CSharp.dll::MultiThrowingStarHitPackage::
                MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?();
-  fStack_2 = (float)fVar1;
-  pVVar3 = (Vector3 *)func_?(auStack_4);
   InteractionPackage::InteractionPackage_HandlePackage_1
-            ((InteractionPackage *)this,worldObjectClient,shooter,fStack_2,
-             PlayerKilledByType__Enum_MultiThrowingStar,*pVVar3,(MethodInfo *)0x0);
+            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
+             PlayerKilledByType__Enum_MultiThrowingStar,interactionStruct.impulse,(MethodInfo *)0x0)
+  ;
   return;
 }
 

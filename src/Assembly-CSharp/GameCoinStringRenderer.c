@@ -7,7 +7,9 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer_AddStri
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Enqueue_GameCoinStringRenderer__PriceTagString_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields).strings;
@@ -22,14 +24,14 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer_AddStri
     item.color.g = color.g;
     item.color.b = color.b;
     item.color.a = color.a;
-    System.dll::System::Collections::Generic::Queue`1[GameCoinStringRenderer+PriceTagString]::
+    mscorlib.dll::System::Collections::Generic::Queue`1[GameCoinStringRenderer+PriceTagString]::
     Queue_1_GameCoinStringRenderer_PriceTagString__Enqueue
               (this_00,item,
                MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Enqueue_GameCoinStringRenderer__PriceTagString_
               );
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -44,11 +46,6 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer_DrawStr
 
 {
   *unaff_FS_OFFSET = (float)&stack0xfffffff0;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  func_?();
   this_00 = (this->fields).stringMaterial;
   if (this_00 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(this_00,0,(MethodInfo *)0x0)
@@ -77,34 +74,53 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer_OnPostR
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Dequeue__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__get_Count__
+                   );
     cRam_? = '\x01';
   }
   pQVar1 = (this->fields).strings;
   while (pQVar1 != (Queue_1_GameCoinStringRenderer_PriceTagString_ *)0x0) {
-    pIVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pQVar1,
-                        MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__get_Count__
-                       );
-    if ((int)pIVar2 < 1) {
+    if ((pQVar1->fields)._size < 1) {
       return;
     }
     pQVar1 = (this->fields).strings;
     if (pQVar1 == (Queue_1_GameCoinStringRenderer_PriceTagString_ *)0x0) break;
-    pGVar3 = System.dll::System::Collections::Generic::
-             Queue`1[GameCoinStringRenderer+PriceTagString]::
-             Queue_1_GameCoinStringRenderer_PriceTagString__Dequeue
-                       ((GameCoinStringRenderer_PriceTagString *)&stack0xffffffd4,pQVar1,
-                        MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Dequeue__
-                       );
-    GameCoinStringRenderer_DrawString(this,*pGVar3,(MethodInfo *)0x0);
+    pGVar2 = mscorlib.dll::System::Collections::Generic::
+              Queue`1[GameCoinStringRenderer+PriceTagString]::
+              Queue_1_GameCoinStringRenderer_PriceTagString__Dequeue
+                        ((GameCoinStringRenderer_PriceTagString *)&stack0xffffffd4,pQVar1,
+                         MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Dequeue__
+                        );
+    uVar3 = (pGVar2->color).a;
+    uVar4 = (pGVar2->start).x;
+    uVar5 = (pGVar2->start).y;
+    uVar6 = (pGVar2->start).z;
+    s.start.z = (float)uVar6;
+    s.start.y = (float)uVar5;
+    s.start.x = (float)uVar4;
+    uVar7 = (pGVar2->end).x;
+    uVar8 = (pGVar2->end).y;
+    uVar9 = (pGVar2->end).z;
+    s.end.z = (float)uVar9;
+    s.end.y = (float)uVar8;
+    s.end.x = (float)uVar7;
+    uVar10 = (pGVar2->color).r;
+    uVar11 = (pGVar2->color).g;
+    uVar12 = (pGVar2->color).b;
+    s.color.b = (float)uVar12;
+    s.color.g = (float)uVar11;
+    s.color.r = (float)uVar10;
+    s.color.a = (float)uVar3;
+    GameCoinStringRenderer_DrawString(this,s,(MethodInfo *)0x0);
     pQVar1 = (this->fields).strings;
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -128,28 +144,33 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Queue__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>
+                   );
     cRam_? = '\x01';
   }
   this_00 = (Queue_1_GameCoinStringRenderer_PriceTagString_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>
                            );
-  System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-  Queue_1_SmoothPhysicsMovement_Package___ctor
-            ((Queue_1_SmoothPhysicsMovement_Package_ *)this_00,
-             MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Queue__
-            );
-  (this->fields).strings = this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (Queue_1_GameCoinStringRenderer_PriceTagString_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+    Stack_1_System_Object___ctor
+              ((Stack_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Queue__
+              );
+    (this->fields).strings = this_00;
+    func_?(&(this->fields).strings,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

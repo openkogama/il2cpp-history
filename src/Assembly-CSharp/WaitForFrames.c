@@ -7,18 +7,20 @@ Assembly-CSharp.dll::WaitForFrames::WaitForFrames_Frames
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__WaitForFrames___Frames_d__0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__WaitForFrames___Frames_c__Iterator0;
-  this = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,(MethodInfo *)method_00);
-  if (this != (ScaleAnimationBase *)0x0) {
-    (this->fields).state = (int32_t)callback;
-    (this->fields)._._._._.m_CachedPtr = (void *)frameCount;
-    return (IEnumerator *)this;
+  value = (Object *)func_?(TypeInfo__WaitForFrames___Frames_d__0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[2].monitor = (MonitorData *)callback;
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)frameCount;
+    func_?(&value[2].monitor,callback);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;

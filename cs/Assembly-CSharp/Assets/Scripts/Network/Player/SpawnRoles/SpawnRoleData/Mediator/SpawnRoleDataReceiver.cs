@@ -9,7 +9,7 @@ using Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.SpawnRoleVariableTy
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator
 {
@@ -34,10 +34,8 @@ namespace Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator
 		public SpawnRoleReceiverVariable<LastRespawnType> lastRespawnType;
 		public SpawnRoleReceiverVariable<GamePassTier> tierRequirement;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action<int, int, PlayerKilledByType> OnKilled;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Action OnSuicide;
 		protected bool isActive;
 	

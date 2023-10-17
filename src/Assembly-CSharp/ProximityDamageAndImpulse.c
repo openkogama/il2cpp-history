@@ -14,7 +14,9 @@ Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamageAndImpulse_Create
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,0xd,damage,impulse._0_8_,impulse.z,playerKilledByType,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7
+            (__return_storage_ptr__,InteractionPackageType__Enum_ProximityDamageAndImpulse,damage,
+             impulse,playerKilledByType,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -26,14 +28,9 @@ void Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamageAndImpulse_P
                MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?();
-  bVar2 = UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::ScrollRect_get_vertical
-                    ((ScrollRect *)&interactionStruct,(MethodInfo *)0x0);
-  PStack_3 = CONCAT31(PStack_3._1_3_,bVar2);
-  pVVar4 = (Vector3 *)func_?(&stack0xffffffe8,&interactionStruct,0);
   InteractionPackage::InteractionPackage_HandlePackage_1
-            ((InteractionPackage *)this,worldObjectClient,shooter,(float)fVar1,PStack_3,*pVVar4,
-             (MethodInfo *)0x0);
+            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
+             (uint)interactionStruct._16_4_ >> 8,interactionStruct.impulse,(MethodInfo *)0x0);
   return;
 }
 

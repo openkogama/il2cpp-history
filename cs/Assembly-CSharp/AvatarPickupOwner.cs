@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarPickupOwner : MVPickupOwner
 {
@@ -16,7 +16,6 @@ public class AvatarPickupOwner : MVPickupOwner
 	private MVAvatar mvAvatar;
 	private bool hasUnlimitedAmmo;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private HashSet<int> _AdditionalIgnoreWOIDS_k__BackingField;
 
 	// Properties

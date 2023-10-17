@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Utilities;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -17,8 +17,6 @@ namespace Newtonsoft.Json.Serialization
 	{
 		// Fields
 		private static readonly ThreadSafeStore<ICustomAttributeProvider, T> TypeAttributeCache;
-		[CompilerGenerated]
-		private static Func<ICustomAttributeProvider, T> __f__mg_cache0;
 	
 		// Constructors
 		static CachedAttributeGetter();

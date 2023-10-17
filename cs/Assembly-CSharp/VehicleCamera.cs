@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class VehicleCamera : PlaymodeCamera, IVehicleCamera
 {
@@ -27,6 +27,7 @@ public class VehicleCamera : PlaymodeCamera, IVehicleCamera
 	public VehicleCamera();
 
 	// Methods
+	public override void Initialize(MVAvatarLocal avatarLocal);
 	public override void Reset();
 	public override void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform);
 	public override void Enter(MVCameraController cameraController);

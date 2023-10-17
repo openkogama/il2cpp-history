@@ -1,4 +1,82 @@
 
+/* Void ChangeMaterial(Material) */
+
+void Assembly-CSharp.dll::CellCursor::CellCursor_ChangeMaterial
+               (CellCursor *this,Material *material,MethodInfo *method)
+
+{
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffffbc;
+  puVar5 = &stack0xffffffbc;
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
+                   );
+    cRam_? = '\x01';
+    puVar5 = puStack_4;
+  }
+  puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).cursorCubes;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_8,this_00,
+                        MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
+                       );
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
+    uStack_1 = 1;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    while( true ) {
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_6,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                        );
+      if (bVar9 == 0) {
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   ,unaff_EDI);
+        *unaff_FS_OFFSET = uStack_3;
+        return;
+      }
+      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+         (*(Renderer **)((int)LStack_6._current + 0x28) == (Renderer *)0x0)) break;
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                (*(Renderer **)((int)LStack_6._current + 0x28),material,(MethodInfo *)0x0);
+    }
+  }
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
+  return;
+}
+
+
 /* CellCursorCubeLineMesh GetCellCursor(IntVector) */
 
 CellCursorCubeLineMesh *
@@ -6,137 +84,151 @@ Assembly-CSharp.dll::CellCursor::CellCursor_GetCellCursor
           (CellCursor *this,IntVector iLocalPos,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa0;
-  puVar5 = &stack0xffffffa0;
+  pCVar1 = this;
+  uStack_2 = 0xffffffff;
+  puStack_3 = &DAT_?;
+  uStack_4 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_4;
+  puStack_5 = &stack0xffffffb0;
+  puVar6 = &stack0xffffffb0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
+                   );
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    in_stack_7 =
+         &MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__;
+    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Count__
+                   );
+    in_stack_8 =
+         &MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Item_int_;
+    func_?();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    puVar6 = puStack_5;
   }
-  puStack_4 = puVar5;
-  pCStack_6 = (CellCursorCubeLineMesh *)0x0;
-  uStack_7 = 0;
-  iStack_8 = 0;
-  CStack_9.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_9.monitor = (MonitorData *)0x0;
-  CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_9.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_10 = 0xffffffff;
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).cursorCubes;
-  piStack_11 = (int *)&stack0xffffffa0;
-  puStack_4 = &stack0xffffffa0;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    piStack_11 = (int *)&stack0xffffffa0;
-    puStack_4 = &stack0xffffffa0;
-    pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffac,this_00,
+  puStack_5 = puVar6;
+  LStack_9._list = (List_1_System_Object_ *)0x0;
+  LStack_9._index = 0;
+  LStack_9._version = 0;
+  LStack_9._current = (Object *)0x0;
+  pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).cursorCubes;
+  if (pLVar10 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_12,pLVar10,
                         MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
                        );
-    CStack_9.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar12->l;
-    CStack_9.monitor = (MonitorData *)pLVar12->next;
-    CStack_9.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar12->ver;
-    CStack_9.fields.syncRoot = (Object *)(pLVar12->current).rgba;
-    uStack_1 = 0;
+    LStack_9._list = (List_1_System_Object_ *)pLVar11->_list;
+    LStack_9._index = pLVar11->_index;
+    LStack_9._version = pLVar11->_version;
+    LStack_9._current = *(Object **)&pLVar11->_current;
+    LStack_12._version = 0;
+    uStack_2 = 1;
+    LStack_12._current = (RegexCharClass_SingleRange)&LStack_9;
     do {
-      cVar13 = func_?();
-      if (cVar13 == '\0') {
-        *piStack_11 = 0x50;
+      bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_9,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                        );
+      if (bVar13 == 0) {
+        uStack_2 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_9,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   ,(MethodInfo *)in_stack_7);
+        uStack_2 = 0xffffffff;
+        pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).cursorCubes;
+        if (pLVar10 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLVar10,0,
+                           MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Item_int_
+                          );
+        pLVar15 = (this->fields).cursorCubes;
+        index = 1;
+        this = (CellCursor *)RVar14;
+        if (pLVar15 != (List_1_CellCursorCubeLineMesh_ *)0x0) goto code_?;
         goto code_?;
       }
-      pCVar14 = (CellCursorCubeLineMesh *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_9,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
-                         );
-      if (pCVar14 == (CellCursorCubeLineMesh *)0x0) goto code_?;
-      uStack_15._0_2_ = (pCVar14->fields).pos.x;
-      uStack_15._2_2_ = (pCVar14->fields).pos.y;
-      iStack_16 = (pCVar14->fields).pos.z;
-      if ((((uint)(TypeInfo__MV__WorldObject__IntVector->vtable).Equals.methodPtr & 0x2000000) != 0)
-         && ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_started == 0)) {
+      RStack_16 = (RegexCharClass_SingleRange)LStack_9._current;
+      if ((RegexCharClass_SingleRange)LStack_9._current == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
+      uStack_17 = *(undefined4 *)((int)LStack_9._current + 8);
+      iStack_18 = *(int16_t *)((int)LStack_9._current + 0xc);
+      if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+        in_stack_8 = (MethodInfo **)&UNK_?;
         func_?(TypeInfo__MV__WorldObject__IntVector);
       }
-      a.z = iStack_16;
-      a.x = (undefined2)uStack_15;
-      a.y = uStack_15._2_2_;
-      bVar17 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Equality
+      a.z = iStack_18;
+      a.x = (undefined2)uStack_17;
+      a.y = uStack_17._2_2_;
+      bVar13 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Equality
                         (a,iLocalPos,(MethodInfo *)0x0);
-    } while (bVar17 == 0);
-    pCStack_6 = pCVar14;
-    *piStack_11 = 0xaa;
+    } while (bVar13 == 0);
+    uStack_2 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&LStack_9,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+               ,(MethodInfo *)in_stack_8);
+    this = (CellCursor *)RStack_16;
 code_?:
-    uStack_1 = 0xffffffff;
-    func_?();
-    iVar18 = iStack_8;
-    if (iStack_8 != 0) goto code_?;
-    if (*piStack_11 == 0xaa) {
-      *unaff_FS_OFFSET = uStack_3;
-      return pCStack_6;
-    }
-    pLVar19 = (this->fields).cursorCubes;
-    if (pLVar19 != (List_1_CellCursorCubeLineMesh_ *)0x0) {
-      pCVar14 = (CellCursorCubeLineMesh *)
-               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-               IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                         ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar19,0,
-                          MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Item_int_
-                         );
-      iStack_8 = 1;
-      pLVar19 = (this->fields).cursorCubes;
-      iVar18 = iStack_8;
-      while (iStack_8 = iVar18, pLVar19 != (List_1_CellCursorCubeLineMesh_ *)0x0) {
-        pOVar20 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar19,
-                            MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Count__
-                           );
-        if ((int)pOVar20 <= iStack_8) {
-          *unaff_FS_OFFSET = uStack_3;
-          return pCVar14;
-        }
-        pLVar19 = (this->fields).cursorCubes;
-        if (((pLVar19 == (List_1_CellCursorCubeLineMesh_ *)0x0) ||
-            (pIVar21 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                       ::IEventSystemHandler]::
-                       List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                 ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar19,
-                                  iVar18,
-                                  MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Item_int_
-                                 ), pIVar21 == (IEventSystemHandler *)0x0)) ||
-           (pCVar14 == (CellCursorCubeLineMesh *)0x0)) break;
-        fVar22 = (pCVar14->fields).prevCursorSetTime;
-        if ((float)pIVar21[3].klass <= fVar22 && fVar22 != (float)pIVar21[3].klass) {
-          pLVar19 = (this->fields).cursorCubes;
-          if (pLVar19 == (List_1_CellCursorCubeLineMesh_ *)0x0) break;
-          pCVar14 = (CellCursorCubeLineMesh *)
-                   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                   IEventSystemHandler]::
-                   List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                             ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar19,iVar18,
-                              MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Item_int_
-                             );
-        }
-        iVar18 = iVar18 + 1;
-        pLVar19 = (this->fields).cursorCubes;
-      }
-    }
+    *unaff_FS_OFFSET = uStack_4;
+    return (CellCursorCubeLineMesh *)this;
   }
 code_?:
-  iVar18 = func_?(0);
+  uVar19 = func_?();
+  func_?(uVar19);
+  pcVar20 = (code *)swi(3);
+  pCVar21 = (CellCursorCubeLineMesh *)(*pcVar20)();
+  return pCVar21;
 code_?:
-  func_?(iVar18,0,0);
-  pcVar23 = (code *)swi(3);
-  pCVar14 = (CellCursorCubeLineMesh *)(*pcVar23)();
-  return pCVar14;
+  if ((pLVar15->fields)._size <= index) goto code_?;
+  pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (pCVar1->fields).cursorCubes;
+  if (pLVar10 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+  goto code_?;
+  RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+          RegexCharClass+SingleRange]::
+          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                    (pLVar10,index,
+                     MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Item_int_
+                    );
+  if ((RVar14 == (RegexCharClass_SingleRange)0x0) || (this == (CellCursor *)0x0))
+  goto code_?;
+  if (*(float *)((int)RVar14 + 0x18) <= (float)this[2].klass &&
+      (float)this[2].klass != *(float *)((int)RVar14 + 0x18)) {
+    pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (pCVar1->fields).cursorCubes;
+    if (pLVar10 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
+    this = (CellCursor *)
+           mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+           RegexCharClass+SingleRange]::
+           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                     (pLVar10,index,
+                      MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__get_Item_int_
+                     );
+  }
+  pLVar15 = (pCVar1->fields).cursorCubes;
+  index = index + 1;
+  if (pLVar15 == (List_1_CellCursorCubeLineMesh_ *)0x0) goto code_?;
+  goto code_?;
 }
 
 
@@ -146,64 +238,61 @@ IntVector Assembly-CSharp.dll::CellCursor::CellCursor_GetCubeCursorPos
                     (CellCursor *this,CubePickingInfo *info,MethodInfo *method)
 
 {
+  uVar1 = (ushort)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
-    func_?((short)_UNK_?);
+    func_?(&TypeInfo__Cube);
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
-  aiStack_1[0] = 0;
-  aiStack_1[1] = 0;
-  aiStack_1[2] = 0;
+  iVar3 = 0;
+  puVar4 = (undefined *)((uint)uVar1 << 0x10);
   if (method == (MethodInfo *)0x0) {
-    func_?(0);
+    func_?();
+    in(0xf4);
                     /* WARNING: Bad instruction - Truncating control flow here */
     halt_baddata();
   }
   cube = (Cube *)method->invoker_method;
   face = method->name;
-  if ((((uint)(TypeInfo__Cube->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Cube->_1).cctor_started == 0)) {
-    func_?((short)TypeInfo__Cube);
+  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Cube);
   }
-  bVar2 = Cube::Cube_IsFaceBoxSideAligened(cube,(Face__Enum)face,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    uVar3 = 0;
-    uVar4 = 0;
-    func_?((short)aiStack_1,0,0,0,0);
+  bVar5 = Cube::Cube_IsFaceBoxSideAligened(cube,(Face__Enum)face,(MethodInfo *)0x0);
+  if (bVar5 != 0) {
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&stack0xfffffff4,0,0,0,(MethodInfo *)0x0);
+    uVar6 = (undefined2)((uint)puVar4 >> 0x10);
     switch(method->name) {
     case (char *)0x0:
-      aiStack_1[1] = 1;
       break;
     case (char *)0x1:
-      aiStack_1[1] = 0xffff;
       break;
     case (char *)0x2:
-      aiStack_1[2] = 0xffff;
+      puVar4 = (undefined *)CONCAT22(uVar6,0xffff);
       break;
     case (char *)0x3:
-      aiStack_1[2] = 1;
+      puVar4 = (undefined *)CONCAT22(uVar6,1);
       break;
     case (char *)0x4:
-      aiStack_1[0] = -1;
+      iVar3 = -1;
       break;
     case (char *)0x5:
-      aiStack_1[0] = 1;
+      iVar3 = 1;
     }
-    iVar5 = aiStack_1[2];
-    iVar6 = aiStack_1[0];
-    pIVar7 = method[1].methodPointer;
-    uVar8 = *(undefined2 *)&method[1].virtualMethodPointer;
-    if ((((uint)(TypeInfo__MV__WorldObject__IntVector->vtable).Equals.methodPtr & 0x2000000) != 0)
-       && ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_started == 0)) {
-      uVar3 = 0x102f;
-      func_?(TypeInfo__MV__WorldObject__IntVector);
+    iVar7 = (int16_t)puVar4;
+    pIVar8 = method[1].methodPointer;
+    uVar6 = *(undefined2 *)&method[1].virtualMethodPointer;
+    if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+      puVar4 = &UNK_?;
+      func_?();
     }
-    i1.z = (int16_t)pIVar7;
-    i1._0_4_ = auStack_9;
-    i2.y = uVar4;
-    i2.x = uVar8;
-    i2.z = iVar6;
+    i1.z = (int16_t)pIVar8;
+    i1._0_4_ = &stack0xffffffec;
+    i2.y = in_stack_9;
+    i2.x = uVar6;
+    i2.z = iVar3;
     IVar10 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                      (i1,i2,(MethodInfo *)CONCAT22(uVar3,iVar5));
+                      (i1,i2,(MethodInfo *)CONCAT22((short)((uint)puVar4 >> 0x10),iVar7));
     this->klass = (CellCursor__Class *)*IVar10._0_4_;
     *(undefined2 *)&this->monitor = *(undefined2 *)(IVar10._0_4_ + 1);
     IVar11.z = (int16_t)this;
@@ -227,78 +316,99 @@ void Assembly-CSharp.dll::CellCursor::CellCursor_Remove(CellCursor *this,MethodI
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb8;
-  puVar5 = &stack0xffffffb8;
+  puStack_4 = &stack0xffffffbc;
+  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__Clear__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).cursorCubes;
-  puStack_7 = (undefined4 *)&stack0xffffffb8;
-  puStack_4 = &stack0xffffffb8;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    puStack_7 = (undefined4 *)&stack0xffffffb8;
-    puStack_4 = &stack0xffffffb8;
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_9,this_00,
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  method_00 = (MethodInfo *)(this->fields).cursorCubes;
+  if (method_00 != (MethodInfo *)0x0) {
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_8,
+                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        method_00,
                         MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
                        );
-    CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar8->l;
-    CStack_6.monitor = (MonitorData *)pLVar8->next;
-    CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar8->ver;
-    CStack_6.fields.syncRoot = (Object *)(pLVar8->current).rgba;
-    uStack_1 = 0;
-    while (cVar10 = func_?(), cVar10 != '\0') {
-      pOVar11 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_6,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
-                         );
-      if (pOVar11 == (Object *)0x0) goto code_?;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
+    uStack_1 = 1;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    while( true ) {
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_6,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                        );
+      pOVar10 = LStack_6._current;
+      if (bVar9 == 0) break;
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&TypeInfo__UnityEngine__Object);
         cRam_? = '\x01';
       }
-      obj = (Object_1 *)pOVar11[3].monitor;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      obj = *(Object_1 **)((int)pOVar10 + 0x1c);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(obj,(MethodInfo *)0x0);
     }
-    *puStack_7 = 0x3e;
     uStack_1 = 0xffffffff;
-    func_?(&CStack_6,
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
-                   );
-    this_01 = (List_1_UnityEngine_UIVertex_ *)(this->fields).cursorCubes;
-    if (this_01 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-      List_1_UnityEngine_UIVertex__Clear
-                (this_01,
-                 MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__Clear__);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&LStack_6,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+               ,method_00);
+    uStack_1 = 0xffffffff;
+    pLVar11 = (this->fields).cursorCubes;
+    if (pLVar11 != (List_1_CellCursorCubeLineMesh_ *)0x0) {
+      length = (pLVar11->fields)._size;
+      piVar12 = &(pLVar11->fields)._version;
+      *piVar12 = *piVar12 + 1;
+      (pLVar11->fields)._size = 0;
+      if (0 < length) {
+        mscorlib.dll::System::Array::Array_Clear
+                  ((Array *)(pLVar11->fields)._items,0,length,(MethodInfo *)0x0);
+      }
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
   }
 code_?:
-  func_?(0);
-  func_?(0,0,0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void SetCursor(CubePickingInfo, GameObject) */
 
 void Assembly-CSharp.dll::CellCursor::CellCursor_SetCursor
@@ -308,73 +418,73 @@ void Assembly-CSharp.dll::CellCursor::CellCursor_SetCursor
 {
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
-  uStack_3 = Face__Enum_Top;
-  uStack_4 = 0;
+  uStack_3._0_4_ = Face__Enum_Top;
+  uStack_3._4_4_ = (undefined *)((uint)uStack_3._6_2_ << 0x10);
+  iVar4 = 0;
   if (info == (CubePickingInfo *)0x0) goto code_?;
   cube = (info->fields).cube;
-  face = (info->fields).pickedFace;
-  if ((((uint)(TypeInfo__Cube->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Cube->_1).cctor_started == 0)) {
-    func_?(TypeInfo__Cube);
+  unaff_EBX = (info->fields).pickedFace;
+  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  bVar5 = Cube::Cube_IsFaceBoxSideAligened(cube,face,(MethodInfo *)0x0);
+  bVar5 = Cube::Cube_IsFaceBoxSideAligened(cube,unaff_EBX,(MethodInfo *)0x0);
   if (bVar5 == 0) {
     uVar6._0_2_ = (info->fields).iLocalPos.x;
     uVar6._2_2_ = (info->fields).iLocalPos.y;
-    iVar7 = (info->fields).iLocalPos.z;
+    iVar4 = (info->fields).iLocalPos.z;
     goto code_?;
   }
-  func_?(&uStack_3,0,0,0,0);
+  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+            ((IntVector *)&uStack_3,0,0,0,(MethodInfo *)0x0);
   switch((info->fields).pickedFace) {
   case 0:
-    uStack_3 = CONCAT22(1,(undefined2)uStack_3);
+    uStack_3._0_4_ = CONCAT22(1,(int16_t)uStack_3);
     break;
   case 1:
-    uStack_3 = CONCAT22(0xffff,(undefined2)uStack_3);
+    uStack_3._0_4_ = CONCAT22(0xffff,(int16_t)uStack_3);
     break;
   case 2:
-    uStack_4 = 0xffff;
+    uStack_3._4_4_ = (undefined *)CONCAT22(uStack_3._6_2_,0xffff);
     break;
   case 3:
-    uStack_4 = 1;
+    uStack_3._4_4_ = (undefined *)CONCAT22(uStack_3._6_2_,1);
     break;
   case 4:
-    uVar8 = 0xffff;
+    uVar7 = 0xffff;
     goto code_?;
   case 5:
-    uVar8 = 1;
+    uVar7 = 1;
 code_?:
-    uStack_3 = CONCAT22(uStack_3._2_2_,uVar8);
+    uStack_3._0_4_ = CONCAT22(uStack_3._2_2_,uVar7);
   }
-  uVar8 = uStack_4;
-  face = uStack_3;
+  unaff_EBX = (Face__Enum)uStack_3;
+  iVar8 = uStack_3._4_2_;
   uVar9 = (info->fields).iLocalPos.x;
-  iVar7 = (info->fields).iLocalPos.z;
-  if ((((uint)(TypeInfo__MV__WorldObject__IntVector->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_started == 0)) {
-    uVar1 = 0x102f;
-    func_?(TypeInfo__MV__WorldObject__IntVector);
+  iVar4 = (info->fields).iLocalPos.z;
+  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+    uStack_3._4_4_ = &UNK_?;
+    func_?();
   }
   IVar10.z = uVar9;
   IVar10._0_4_ = auStack_11;
   i2.y = in_stack_12;
-  i2.x = iVar7;
-  i2.z = (int16_t)face;
+  i2.x = iVar4;
+  i2.z = (int16_t)unaff_EBX;
   IVar10 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar10,i2,(MethodInfo *)CONCAT22(uVar1,uVar8));
+                    (IVar10,i2,(MethodInfo *)CONCAT22(uVar1,iVar8));
   uVar6 = *IVar10._0_4_;
-  iVar7 = *(int16_t *)(IVar10._0_4_ + 1);
+  iVar4 = *(int16_t *)(IVar10._0_4_ + 1);
 code_?:
-  unaff_BL = (byte)face;
-  iLocalPos.z = iVar7;
+  iLocalPos.z = iVar4;
   iLocalPos.x = (short)uVar6;
   iLocalPos.y = (short)((uint)uVar6 >> 0x10);
   this_00 = CellCursor_GetCellCursor(this,iLocalPos,(MethodInfo *)0x0);
   if (this_00 != (CellCursorCubeLineMesh *)0x0) {
-    position.z = iVar7;
+    position.z = iVar4;
     position.x = (short)uVar6;
     position.y = (short)((uint)uVar6 >> 0x10);
     CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
@@ -382,19 +492,12 @@ code_?:
     return;
   }
 code_?:
-  uVar13 = func_?(0);
-  pbVar14 = (byte *)((ulonglong)uVar13 >> 0x20);
-  uVar15 = (uint)uVar13;
-  bVar16 = CARRY1(*extraout_ECX,unaff_BL) || CARRY1(*extraout_ECX + unaff_BL,0xefefd025 < uVar15);
-  *extraout_ECX = *extraout_ECX + unaff_BL + (0xefefd025 < uVar15);
-  bVar17 = *pbVar14;
-  bVar18 = (byte)((uint)(&UNK_? + uVar15) >> 8);
-  bVar19 = *pbVar14 + bVar18;
-  *pbVar14 = bVar19 + bVar16;
-  cRam_? = cRam_? + (char)((uint)extraout_ECX >> 8) +
-                 (CARRY1(bVar17,bVar18) || CARRY1(bVar19,bVar16));
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  uVar13 = func_?();
+  do {
+  } while ('\x0f' < (char)uVar13);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)(iVar4,&stack0xfffffffc,(short)&stack0xffffffdc,unaff_EBX,(int)((ulonglong)uVar13 >> 0x20)
+            ,extraout_CX,(int)uVar13);
   return;
 }
 
@@ -427,123 +530,133 @@ void Assembly-CSharp.dll::CellCursor::CellCursor_UpdateCursor(CellCursor *this,M
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa0;
-  method_00 = unaff_ESI;
-  puVar5 = &stack0xffffffa0;
+  puStack_4 = &stack0xffffff98;
+  puVar5 = &stack0xffffff98;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).cursorCubes;
-  puStack_7 = (undefined4 *)&stack0xffffffa0;
-  puStack_4 = &stack0xffffffa0;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    puStack_7 = (undefined4 *)&stack0xffffffa0;
-    puStack_4 = &stack0xffffffa0;
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       (&LStack_9,this_00,
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).cursorCubes;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
                        );
-    CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar8->l;
-    CStack_6.monitor = (MonitorData *)pLVar8->next;
-    CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar8->ver;
-    CStack_6.fields.syncRoot = (Object *)(pLVar8->current).rgba;
-    uStack_1 = 0;
+    uStack_9 = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    uStack_1 = 1;
+    pLStack_10 = &LStack_6;
     while( true ) {
-      cVar10 = func_?(&CStack_6,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
-                             );
-      if (cVar10 == '\0') {
-        *puStack_7 = 0x3e;
+      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_6,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                        );
+      pOVar12 = LStack_6._current;
+      if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
-        func_?(&CStack_6,
-                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
-                       );
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   ,unaff_EBX);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      unaff_ESI = (MethodInfo *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            (&CStack_6,
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
-                            );
-      pMStack_11 = unaff_ESI;
-      if (unaff_ESI == (MethodInfo *)0x0) break;
+      RStack_13 = (RegexCharClass_SingleRange)LStack_6._current;
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?();
+        func_?();
         cRam_? = '\x01';
       }
-      pIVar12 = unaff_ESI->klass;
-      pMStack_13 = (Material__Array *)
+      fVar14 = *(float *)((int)pOVar12 + 0x10);
+      pMStack_15 = (Material *)
                    UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
       ;
-      fVar14 = (float)pIVar12 - ((float)pMStack_13 - (float)unaff_ESI->parameters);
-      this_01 = (GameObject *)(unaff_ESI->field7_0x1c).methodMetadataHandle;
-      if (fVar14 <= 0.0) {
+      this_01 = *(GameObject **)((int)pOVar12 + 0x1c);
+      fVar14 = fVar14 - ((float)pMStack_15 - *(float *)((int)pOVar12 + 0x18));
+      if (0.0 < fVar14) {
+        if (this_01 == (GameObject *)0x0) break;
+        this_02 = (Renderer *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                            (this_01,
+                             UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
+                            );
+        if (this_02 == (Renderer *)0x0) break;
+        pMStack_16 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
+                               (this_02,(MethodInfo *)0x0);
+        uVar17 = 0;
+        if (pMStack_16 == (Material__Array *)0x0) break;
+        for (; (int)uVar17 < (int)pMStack_16->max_length; uVar17 = uVar17 + 1) {
+          if (pMStack_16->max_length <= uVar17) goto code_?;
+          pMStack_15 = pMStack_16->vector[uVar17];
+          if (pMStack_15 == (Material *)0x0) goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
+                    ((Object_1 *)pMStack_15,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
+          if ((TypeInfo__CellCursorCubeLineMesh->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pCVar18 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor_1
+                             ((Color *)&stack0xffffffa4,pMStack_15,
+                              TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID,
+                              (MethodInfo *)0x0);
+          unaff_EBX = (MethodInfo *)pCVar18->r;
+          LStack_8._index = (int32_t)pCVar18->g;
+          LStack_8._version = (int32_t)pCVar18->b;
+          uVar19 = pCVar18->r;
+          uVar20 = pCVar18->g;
+          uVar21 = pCVar18->b;
+          value.b = (float)uVar21;
+          value.g = (float)uVar20;
+          value.r = (float)uVar19;
+          LStack_8._current =
+               (RegexCharClass_SingleRange)
+               ((fVar14 / *(float *)((int)RStack_13 + 0x10)) * *(float *)((int)RStack_13 + 0x14));
+          value.a = (float)LStack_8._current;
+          LStack_8._list =
+               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)unaff_EBX;
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor_1
+                    (pMStack_15,TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID,value,
+                     (MethodInfo *)0x0);
+        }
+      }
+      else {
         if (this_01 == (GameObject *)0x0) break;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_01,0,(MethodInfo *)0x0);
       }
-      else {
-        if ((this_01 == (GameObject *)0x0) ||
-           (this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                      GameObject_GetComponent_47
-                                (this_01,
-                                 UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
-                                ), this_03 == (UseInteractorHandler *)0x0)) break;
-        pMStack_13 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
-                               ((Renderer *)this_03,method_00);
-        unaff_ESI = (MethodInfo *)0x0;
-        while( true ) {
-          if (pMStack_13 == (Material__Array *)0x0) goto code_?;
-          if ((int)pMStack_13->max_length <= (int)unaff_ESI) break;
-          if ((MethodInfo *)pMStack_13->max_length <= unaff_ESI) {
-            uVar15 = func_?();
-            func_?(uVar15,0,0);
-            goto code_?;
-          }
-          this_02 = pMStack_13->vector[(int)unaff_ESI];
-          if (this_02 == (Material *)0x0) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
-                    ((Object_1 *)this_02,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
-          pCVar16 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
-                             ((Color *)&stack0xffffffac,this_02,StringLiteral__Color,
-                              (MethodInfo *)0x0);
-          LStack_9.l = (List_1_UnityEngine_Color32_ *)pCVar16->r;
-          LStack_9.next = (int32_t)pCVar16->g;
-          LStack_9.ver = (int32_t)pCVar16->b;
-          uVar17 = pCVar16->r;
-          uVar18 = pCVar16->g;
-          uVar19 = pCVar16->b;
-          value.z = (float)uVar19;
-          value.y = (float)uVar18;
-          value.x = (float)uVar17;
-          LStack_9.current.rgba =
-               (int32_t)((fVar14 / (float)pMStack_11->klass) * (float)pMStack_11->return_type);
-          value.w = (float)LStack_9.current.rgba;
-          method_00 = (MethodInfo *)StringLiteral__Color;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                    (this_02,StringLiteral__Color,value,(MethodInfo *)0x0);
-          unaff_ESI = (MethodInfo *)((int)&unaff_ESI->methodPointer + 1);
-        }
-      }
     }
   }
 code_?:
-  func_?(0);
-  func_?(unaff_ESI,0,0);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  func_?();
+code_?:
+  func_?();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -556,37 +669,117 @@ void Assembly-CSharp.dll::CellCursor::CellCursor__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CellCursorCubeLineMesh);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__Add_CellCursorCubeLineMesh_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__List__)
+    ;
+    func_?(&TypeInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>;
-  this_01 = (List_1_UnityEngine_Vector4_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_01,MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__List__)
-  ;
-  (this->fields).cursorCubes = (List_1_CellCursorCubeLineMesh_ *)this_01;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  iVar1 = 0;
+  pLVar1 = (List_1_CellCursorCubeLineMesh_ *)
+           func_?(TypeInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>);
+  if (pLVar1 == (List_1_CellCursorCubeLineMesh_ *)0x0) {
+code_?:
+    func_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+  LowLevelList_1_System_Object___ctor
+            ((LowLevelList_1_System_Object_ *)pLVar1,
+             MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__List__);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).cursorCubes = pLVar1;
+  func_?(method_00,pLVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  iStack_3 = 0;
   if (0 < cursorCubeCount) {
     do {
-      this_00 = (this->fields).cursorCubes;
-      this_02 = (CellCursorCubeLineMesh *)func_?(TypeInfo__CellCursorCubeLineMesh);
-      CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor
-                (this_02,diagonalWidth,material,fadeOutTime,cubeCorners,(MethodInfo *)0x0);
-      if (this_00 == (List_1_CellCursorCubeLineMesh_ *)0x0) {
-        func_?(0);
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+      pLVar1 = (this->fields).cursorCubes;
+      value = (Object *)func_?();
+      if (value == (Object *)0x0) goto code_?;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__CellCursorCubeLineMesh);
+        func_?(&
+                        UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
+                       );
+        func_?(&
+                        UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                       );
+        func_?(&TypeInfo__UnityEngine__GameObject);
+        func_?(&TypeInfo__SharedCubeFunctions);
+        func_?(&StringLiteral_UIItems);
+        func_?(&StringLiteral_CellCursorCubeLineMesh);
+        cRam_? = '\x01';
       }
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)this_02,
+      value[2].klass = (Object__Class *)0x3f000000;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                (value,ExceptionArgument__Enum_obj,unaff_ESI);
+      value[2].klass = (Object__Class *)fadeOutTime;
+      this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+      if (this_00 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                (this_00,StringLiteral_CellCursorCubeLineMesh,(MethodInfo *)0x0);
+      value_00 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                           (StringLiteral_UIItems,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+                (this_00,value_00,(MethodInfo *)0x0);
+      value[3].monitor = (MonitorData *)this_00;
+      func_?(&value[3].monitor,this_00);
+      if ((GameObject *)value[3].monitor == (GameObject *)0x0) goto code_?;
+      pOVar4 = (Object__Class *)
+               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                         ((GameObject *)value[3].monitor,
+                          UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                         );
+      value[5].klass = pOVar4;
+      func_?(value + 5,pOVar4);
+      if (value[5].klass == (Object__Class *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
+                ((Renderer *)value[5].klass,ShadowCastingMode__Enum_Off,(MethodInfo *)0x0);
+      if (value[5].klass == (Object__Class *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_receiveShadows
+                ((Renderer *)value[5].klass,0,(MethodInfo *)0x0);
+      if ((GameObject *)value[3].monitor == (GameObject *)0x0) goto code_?;
+      this_01 = (MeshFilter *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                          ((GameObject *)value[3].monitor,
+                           UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
+                          );
+      if (value[5].klass == (Object__Class *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                ((Renderer *)value[5].klass,material,(MethodInfo *)0x0);
+      if (value[5].klass == (Object__Class *)0x0) goto code_?;
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                          ((Renderer *)value[5].klass,(MethodInfo *)0x0);
+      if ((TypeInfo__CellCursorCubeLineMesh->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CellCursorCubeLineMesh);
+      }
+      if (this_02 == (Material *)0x0) goto code_?;
+      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor_1
+                         ((Color *)&stack0xffffffe4,this_02,
+                          TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID,(MethodInfo *)0x0
+                         );
+      value[2].monitor = (MonitorData *)pCVar5->a;
+      if (this_01 == (MeshFilter *)0x0) goto code_?;
+      mesh = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
+                       (this_01,(MethodInfo *)0x0);
+      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines
+                (mesh,cubeCorners,diagonalWidth,(MethodInfo *)0x0);
+      if (pLVar1 == (List_1_CellCursorCubeLineMesh_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)pLVar1,value,
                  MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__Add_CellCursorCubeLineMesh_
                 );
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < cursorCubeCount);
+      iStack_3 = iStack_3 + 1;
+    } while (iStack_3 < cursorCubeCount);
   }
   return;
 }
@@ -602,61 +795,70 @@ void Assembly-CSharp.dll::CellCursor::CellCursor_set_Active
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb8;
-  puVar5 = &stack0xffffffb8;
+  puStack_4 = &stack0xffffffbc;
+  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields).cursorCubes;
-  puStack_7 = (undefined4 *)&stack0xffffffb8;
-  puStack_4 = &stack0xffffffb8;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    puStack_7 = (undefined4 *)&stack0xffffffb8;
-    puStack_4 = &stack0xffffffb8;
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_9,this_00,
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).cursorCubes;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
                        );
-    CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar8->l;
-    CStack_6.monitor = (MonitorData *)pLVar8->next;
-    CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar8->ver;
-    CStack_6.fields.syncRoot = (Object *)(pLVar8->current).rgba;
-    uStack_1 = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
+    uStack_1 = 1;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      cVar10 = func_?();
-      if (cVar10 == '\0') {
-        *puStack_7 = 0x44;
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_6,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
+                        );
+      if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        func_?(&CStack_6,
-                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
-                       );
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&LStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
+                   ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pOVar11 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (&CStack_6,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__get_Current__
-                         );
-      if ((pOVar11 == (Object *)0x0) || ((GameObject *)pOVar11[3].monitor == (GameObject *)0x0))
-      break;
+      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+         (*(GameObject **)((int)LStack_6._current + 0x1c) == (GameObject *)0x0)) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                ((GameObject *)pOVar11[3].monitor,value,(MethodInfo *)0x0);
+                (*(GameObject **)((int)LStack_6._current + 0x1c),value,(MethodInfo *)0x0);
     }
   }
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

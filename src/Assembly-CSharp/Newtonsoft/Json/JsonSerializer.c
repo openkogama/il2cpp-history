@@ -7,105 +7,118 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Create
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    void_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__AddRange<Newtonsoft::Json::JsonConverter>_System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>__System__Collections__Generic__IEnumerable<Newtonsoft::Json::JsonConverter>_
+                   );
+    func_?(&
+                    bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::JsonConverter>_System__Collections__Generic__ICollection<Newtonsoft::Json::JsonConverter>_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__JsonSerializer);
     cRam_? = '\x01';
   }
-  this = (JsonSerializer *)func_?(TypeInfo__Newtonsoft__Json__JsonSerializer);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  (this->fields)._referenceLoopHandling = 0;
-  (this->fields)._missingMemberHandling = 0;
-  (this->fields)._nullValueHandling = 0;
-  (this->fields)._defaultValueHandling = 0;
-  (this->fields)._objectCreationHandling = 0;
-  ((Vector3 *)&(this->fields)._preserveReferencesHandling)->x = 0.0;
-  (this->fields)._constructorHandling = 0;
-  (((MonoBehaviour__Fields *)&(this->fields)._typeNameHandling)->_)._._.m_CachedPtr = (void *)0x0;
-  if ((((uint)(TypeInfo__Newtonsoft__Json__JsonSerializerSettings->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__JsonSerializerSettings->_1).cctor_started == 0)) {
-    func_?(TypeInfo__Newtonsoft__Json__JsonSerializerSettings);
-  }
-  pOVar1 = (TypeInfo__Newtonsoft__Json__JsonSerializerSettings->static_fields->DefaultContext).
-           additional;
-  (this->fields)._context.state =
-       (TypeInfo__Newtonsoft__Json__JsonSerializerSettings->static_fields->DefaultContext).state;
-  (this->fields)._context.additional = pOVar1;
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).Equals
-              .methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started == 0
-     )) {
-    func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
-  }
-  (this->fields)._binder =
-       (SerializationBinder *)
-       TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-       Instance;
-  if (settings != (JsonSerializerSettings *)0x0) {
-    bVar2 = Json::Utilities::CollectionUtils::CollectionUtils_IsNullOrEmpty_5
-                      ((ICollection_1_System_Reflection_ParameterInfo_ *)
-                       (settings->fields)._Converters_k__BackingField,
-                       bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::JsonConverter>_System__Collections__Generic__ICollection<Newtonsoft::Json::JsonConverter>_
-                      );
-    if (bVar2 == 0) {
-      initial = (IList_1_System_Reflection_MemberInfo_ *)
-                (*(code *)(this->klass->vtable).get_Converters.method)(this);
-      Json::Utilities::CollectionUtils::CollectionUtils_AddRange_4
-                (initial,(IEnumerable_1_System_Reflection_MemberInfo_ *)
+  pJVar1 = (JsonSerializer *)func_?(TypeInfo__Newtonsoft__Json__JsonSerializer);
+  if (pJVar1 != (JsonSerializer *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
+      func_?(&TypeInfo__Newtonsoft__Json__JsonSerializerSettings);
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)pJVar1,ExceptionArgument__Enum_obj,unaff_EDI);
+    (pJVar1->fields)._referenceLoopHandling = 0;
+    (pJVar1->fields)._missingMemberHandling = 0;
+    (pJVar1->fields)._nullValueHandling = 0;
+    (pJVar1->fields)._defaultValueHandling = 0;
+    (pJVar1->fields)._objectCreationHandling = 0;
+    (pJVar1->fields)._preserveReferencesHandling = 0;
+    (pJVar1->fields)._constructorHandling = 0;
+    (pJVar1->fields)._typeNameHandling = 0;
+    if ((TypeInfo__Newtonsoft__Json__JsonSerializerSettings->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Newtonsoft__Json__JsonSerializerSettings);
+    }
+    pOVar2 = (TypeInfo__Newtonsoft__Json__JsonSerializerSettings->static_fields->DefaultContext).
+             m_additionalContext;
+    (pJVar1->fields)._context.m_state =
+         (TypeInfo__Newtonsoft__Json__JsonSerializerSettings->static_fields->DefaultContext).m_state
+    ;
+    (pJVar1->fields)._context.m_additionalContext = pOVar2;
+    func_?(&(pJVar1->fields)._context,0);
+    if ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
+    }
+    pDVar3 = TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
+             Instance;
+    (pJVar1->fields)._binder = (SerializationBinder *)pDVar3;
+    func_?(&(pJVar1->fields)._binder,pDVar3);
+    if (settings != (JsonSerializerSettings *)0x0) {
+      bVar4 = Json::Utilities::CollectionUtils::CollectionUtils_IsNullOrEmpty_1
+                        ((ICollection_1_System_Object_ *)
                          (settings->fields)._Converters_k__BackingField,
-                 void_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__AddRange<Newtonsoft::Json::JsonConverter>_System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>__System__Collections__Generic__IEnumerable<Newtonsoft::Json::JsonConverter>_
-                );
+                         bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::JsonConverter>_System__Collections__Generic__ICollection<Newtonsoft::Json::JsonConverter>_
+                        );
+      if (bVar4 == 0) {
+        initial = (IList_1_System_Object_ *)
+                  (*(pJVar1->klass->vtable).get_Converters.methodPtr)(pJVar1);
+        Json::Utilities::CollectionUtils::CollectionUtils_AddRange_1
+                  (initial,(IEnumerable_1_System_Object_ *)
+                           (settings->fields)._Converters_k__BackingField,
+                   void_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__AddRange<Newtonsoft::Json::JsonConverter>_System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>__System__Collections__Generic__IEnumerable<Newtonsoft::Json::JsonConverter>_
+                  );
+      }
+      (*(pJVar1->klass->vtable).set_TypeNameHandling.methodPtr)
+                (pJVar1,(settings->fields)._TypeNameHandling_k__BackingField);
+      (*(pJVar1->klass->vtable).set_TypeNameAssemblyFormat.methodPtr)
+                (pJVar1,(settings->fields)._TypeNameAssemblyFormat_k__BackingField,
+                 (pJVar1->klass->vtable).set_TypeNameAssemblyFormat.method);
+      (*(pJVar1->klass->vtable).set_PreserveReferencesHandling.methodPtr)
+                (pJVar1,(settings->fields)._PreserveReferencesHandling_k__BackingField,
+                 (pJVar1->klass->vtable).set_PreserveReferencesHandling.method);
+      (*(pJVar1->klass->vtable).set_ReferenceLoopHandling.methodPtr)
+                (pJVar1,(settings->fields)._ReferenceLoopHandling_k__BackingField,
+                 (pJVar1->klass->vtable).set_ReferenceLoopHandling.method);
+      (*(pJVar1->klass->vtable).set_MissingMemberHandling.methodPtr)
+                (pJVar1,(settings->fields)._MissingMemberHandling_k__BackingField,
+                 (pJVar1->klass->vtable).set_MissingMemberHandling.method);
+      (*(pJVar1->klass->vtable).set_ObjectCreationHandling.methodPtr)
+                (pJVar1,(settings->fields)._ObjectCreationHandling_k__BackingField,
+                 (pJVar1->klass->vtable).set_ObjectCreationHandling.method);
+      (*(pJVar1->klass->vtable).set_NullValueHandling.methodPtr)
+                (pJVar1,(settings->fields)._NullValueHandling_k__BackingField);
+      (*(pJVar1->klass->vtable).set_DefaultValueHandling.methodPtr)
+                (pJVar1,(settings->fields)._DefaultValueHandling_k__BackingField,
+                 (pJVar1->klass->vtable).set_DefaultValueHandling.method);
+      (*(pJVar1->klass->vtable).set_ConstructorHandling.methodPtr)
+                (pJVar1,(settings->fields)._ConstructorHandling_k__BackingField,
+                 (pJVar1->klass->vtable).set_ConstructorHandling.method);
+      (*(pJVar1->klass->vtable).set_Context.methodPtr)
+                (pJVar1,(settings->fields)._Context_k__BackingField.m_additionalContext,
+                 (settings->fields)._Context_k__BackingField.m_state,
+                 (pJVar1->klass->vtable).set_Context.method);
+      if ((settings->fields)._Error_k__BackingField !=
+          (EventHandler_1_Newtonsoft_Json_Serialization_ErrorEventArgs_ *)0x0) {
+        (*(pJVar1->klass->vtable).add_Error.methodPtr)
+                  (pJVar1,(settings->fields)._Error_k__BackingField);
+      }
+      if ((settings->fields)._ContractResolver_k__BackingField != (IContractResolver *)0x0) {
+        (*(pJVar1->klass->vtable).set_ContractResolver.methodPtr)
+                  (pJVar1,(settings->fields)._ContractResolver_k__BackingField);
+      }
+      if ((settings->fields)._ReferenceResolver_k__BackingField != (IReferenceResolver *)0x0) {
+        (*(pJVar1->klass->vtable).set_ReferenceResolver.methodPtr)
+                  (pJVar1,(settings->fields)._ReferenceResolver_k__BackingField);
+      }
+      if ((settings->fields)._Binder_k__BackingField != (SerializationBinder *)0x0) {
+        (*(pJVar1->klass->vtable).set_Binder.methodPtr)
+                  (pJVar1,(settings->fields)._Binder_k__BackingField);
+      }
     }
-    (*(code *)(this->klass->vtable).set_TypeNameHandling.method)
-              (this,(settings->fields)._TypeNameHandling_k__BackingField);
-    (*(code *)(this->klass->vtable).set_TypeNameAssemblyFormat.method)
-              (this,(settings->fields)._TypeNameAssemblyFormat_k__BackingField,
-               (this->klass->vtable).get_PreserveReferencesHandling.methodPtr);
-    (*(code *)(this->klass->vtable).set_PreserveReferencesHandling.method)
-              (this,(settings->fields)._PreserveReferencesHandling_k__BackingField,
-               (this->klass->vtable).get_ReferenceLoopHandling.methodPtr);
-    (*(code *)(this->klass->vtable).set_ReferenceLoopHandling.method)
-              (this,(settings->fields)._ReferenceLoopHandling_k__BackingField,
-               (this->klass->vtable).get_MissingMemberHandling.methodPtr);
-    (*(code *)(this->klass->vtable).set_MissingMemberHandling.method)
-              (this,(settings->fields)._MissingMemberHandling_k__BackingField,
-               (this->klass->vtable).get_NullValueHandling.methodPtr);
-    (*(code *)(this->klass->vtable).set_ObjectCreationHandling.method)
-              (this,(settings->fields)._ObjectCreationHandling_k__BackingField,
-               (this->klass->vtable).get_ConstructorHandling.methodPtr);
-    (*(code *)(this->klass->vtable).set_NullValueHandling.method)
-              (this,(settings->fields)._NullValueHandling_k__BackingField);
-    (*(code *)(this->klass->vtable).set_DefaultValueHandling.method)
-              (this,(settings->fields)._DefaultValueHandling_k__BackingField,
-               (this->klass->vtable).get_ObjectCreationHandling.methodPtr);
-    (*(code *)(this->klass->vtable).set_ConstructorHandling.method)
-              (this,(settings->fields)._ConstructorHandling_k__BackingField,
-               (this->klass->vtable).get_Converters.methodPtr);
-    (*(code *)(this->klass->vtable).set_Context.method)
-              (this,(settings->fields)._Context_k__BackingField.state,
-               (settings->fields)._Context_k__BackingField.additional,
-               (this->klass->vtable).PopulateInternal.methodPtr);
-    pEVar3 = (settings->fields)._Error_k__BackingField;
-    if (pEVar3 != (EventHandler_1_Newtonsoft_Json_Serialization_ErrorEventArgs_ *)0x0) {
-      (*(code *)(this->klass->vtable).add_Error.method)(this,pEVar3);
-    }
-    pIVar4 = (settings->fields)._ContractResolver_k__BackingField;
-    if (pIVar4 != (IContractResolver *)0x0) {
-      (*(code *)(this->klass->vtable).set_ContractResolver.method)(this,pIVar4);
-    }
-    pIVar5 = (settings->fields)._ReferenceResolver_k__BackingField;
-    if (pIVar5 != (IReferenceResolver *)0x0) {
-      (*(code *)(this->klass->vtable).set_ReferenceResolver.method)(this,pIVar5);
-    }
-    pSVar6 = (settings->fields)._Binder_k__BackingField;
-    if (pSVar6 != (SerializationBinder *)0x0) {
-      (*(code *)(this->klass->vtable).set_Binder.method)(this,pSVar6);
-    }
+    return pJVar1;
   }
-  return this;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pJVar1 = (JsonSerializer *)(*pcVar5)();
+  return pJVar1;
 }
 
 
@@ -116,8 +129,8 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_D
 
 {
   pOVar1 = (Object *)
-           (*(code *)(this->klass->vtable).DeserializeInternal.method)
-                     (this,reader,0,(this->klass->vtable).SerializeInternal.methodPtr);
+           (*(this->klass->vtable).DeserializeInternal.methodPtr)
+                     (this,reader,0,(this->klass->vtable).DeserializeInternal.method);
   return pOVar1;
 }
 
@@ -129,7 +142,8 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_D
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader);
+    func_?(&StringLiteral_reader);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
@@ -137,12 +151,11 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_D
   this_00 = (JsonSerializerInternalReader *)
             func_?(TypeInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader)
   ;
-  Json::Serialization::JsonSerializerInternalWriter::JsonSerializerInternalWriter__ctor
-            ((JsonSerializerInternalWriter *)this_00,this,(MethodInfo *)0x0);
   if (this_00 != (JsonSerializerInternalReader *)0x0) {
+    Json::Serialization::JsonSerializerInternalWriter::JsonSerializerInternalWriter__ctor
+              ((JsonSerializerInternalWriter *)this_00,this,(MethodInfo *)0x0);
     pOVar1 = Json::Serialization::JsonSerializerInternalReader::
-             JsonSerializerInternalReader_Deserialize
-                       (this_00,(JsonReader *)0x0,(Type *)0x0,(MethodInfo *)0x0);
+             JsonSerializerInternalReader_Deserialize(this_00,reader,objectType,(MethodInfo *)0x0);
     return pOVar1;
   }
   func_?();
@@ -159,14 +172,20 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_D
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonTextReader);
     cRam_? = '\x01';
   }
   this_00 = (JsonTextReader *)func_?(TypeInfo__Newtonsoft__Json__JsonTextReader);
-  JsonTextReader::JsonTextReader__ctor(this_00,reader,(MethodInfo *)0x0);
-  pOVar1 = (Object *)
-           (*(code *)(this->klass->vtable).DeserializeInternal.method)
-                     (this,this_00,objectType,(this->klass->vtable).SerializeInternal.methodPtr);
+  if (this_00 != (JsonTextReader *)0x0) {
+    JsonTextReader::JsonTextReader__ctor(this_00,reader,(MethodInfo *)0x0);
+    pOVar1 = (Object *)
+             (*(this->klass->vtable).DeserializeInternal.methodPtr)
+                       (this,this_00,objectType,(this->klass->vtable).DeserializeInternal.method);
+    return pOVar1;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pOVar1 = (Object *)(*pcVar2)();
   return pOVar1;
 }
 
@@ -178,8 +197,8 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_D
 
 {
   pOVar1 = (Object *)
-           (*(code *)(this->klass->vtable).DeserializeInternal.method)
-                     (this,reader,objectType,(this->klass->vtable).SerializeInternal.methodPtr);
+           (*(this->klass->vtable).DeserializeInternal.methodPtr)
+                     (this,reader,objectType,(this->klass->vtable).DeserializeInternal.method);
   return pOVar1;
 }
 
@@ -191,30 +210,25 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_D
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  handle.value = *method->parameters;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  handle = *(method->field7_0x1c).rgctx_data;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  objectType = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
-  if (this == (JsonSerializer *)0x0) {
+  objectType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                         ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+  pOVar1 = JsonSerializer_Deserialize_2(this,reader,objectType,(MethodInfo *)0x0);
+  if ((*(byte *)((int)(method->field7_0x1c).rgctx_data[1].rgctxDataDummy + 0xba) & 1) == 0) {
     func_?();
   }
-  else {
-    pOVar1 = JsonSerializer_Deserialize_2(this,reader,objectType,(MethodInfo *)0x0);
-    if ((method->parameters[1][0x17].type & 1) == 0) {
-      func_?();
-    }
-    if (pOVar1 == (Object *)0x0) {
-      return (Object *)0x0;
-    }
-    pOVar1 = (Object *)func_?();
-    if (pOVar1 != (Object *)0x0) {
-      return pOVar1;
-    }
+  if (pOVar1 == (Object *)0x0) {
+    return (Object *)0x0;
+  }
+  pOVar1 = (Object *)func_?();
+  if (pOVar1 != (Object *)0x0) {
+    return pOVar1;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -232,7 +246,12 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_GetMatchin
 {
   pJVar1 = (this->fields)._converters;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::JsonConverter>
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>)
+    ;
+    func_?(&StringLiteral_objectType);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
@@ -244,33 +263,32 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_GetMatchin
                                 ,pJVar1), iVar2 < iVar3; iVar2 = iVar2 + 1) {
       pJVar4 = pJVar1->klass;
       uVar5 = 0;
-      uVar6._0_1_ = (pJVar4->_1).rank;
-      uVar6._1_1_ = (pJVar4->_1).minimumAlignment;
+      uVar6 = (pJVar4->_1).interface_offsets_count;
       if (uVar6 != 0) {
         do {
           if (pJVar4->interfaceOffsets[uVar5].interfaceType ==
               (Il2CppClass *)
               TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>) {
-            ppMVar7 = &(&(pJVar4->vtable).ToString)[pJVar4->interfaceOffsets[uVar5].offset].method;
+            pVVar7 = &(pJVar4->vtable).Equals + pJVar4->interfaceOffsets[uVar5].offset;
             goto code_?;
           }
           uVar5 = uVar5 + 1;
         } while (uVar5 < uVar6);
       }
-      ppMVar7 = (MethodInfo **)
-                func_?(pJVar1,
-                                TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>
-                                ,3,pJVar4,0);
+      pVVar7 = (VirtualInvokeData *)
+               func_?(pJVar1,
+                               TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>
+                               ,0,pJVar4,0);
 code_?:
-      pJVar8 = (JsonConverter *)(*(code *)*ppMVar7)(pJVar1,iVar2,ppMVar7[1]);
+      pJVar8 = (JsonConverter *)(*pVVar7->methodPtr)(pJVar1,iVar2,pVVar7->method);
       if (pJVar8 == (JsonConverter *)0x0) {
-        func_?(0);
+        func_?();
         pcVar9 = (code *)swi(3);
         pJVar8 = (JsonConverter *)(*pcVar9)();
         return pJVar8;
       }
-      cVar10 = (*(code *)(pJVar8->klass->vtable).__unknown_2.method)
-                        (pJVar8,type,(pJVar8->klass->vtable).GetSchema.methodPtr);
+      cVar10 = (*(pJVar8->klass->vtable).__unknown_2.methodPtr)
+                        (pJVar8,type,(pJVar8->klass->vtable).__unknown_2.method);
       if (cVar10 != '\0') {
         return pJVar8;
       }
@@ -288,7 +306,12 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_GetMatchin
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::JsonConverter>
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>)
+    ;
+    func_?(&StringLiteral_objectType);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
@@ -300,33 +323,32 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_GetMatchin
                                 ,converters), iVar1 < iVar2; iVar1 = iVar1 + 1) {
       pIVar3 = converters->klass;
       uVar4 = 0;
-      uVar5._0_1_ = (pIVar3->_1).rank;
-      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+      uVar5 = (pIVar3->_1).interface_offsets_count;
       if (uVar5 != 0) {
         do {
           if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)
               TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>) {
-            ppMVar6 = &(&(pIVar3->vtable).get_Item)[pIVar3->interfaceOffsets[uVar4].offset].method;
+            pVVar6 = &(pIVar3->vtable).get_Item + pIVar3->interfaceOffsets[uVar4].offset;
             goto code_?;
           }
           uVar4 = uVar4 + 1;
         } while (uVar4 < uVar5);
       }
-      ppMVar6 = (MethodInfo **)
-                func_?(converters,
-                                TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>
-                                ,3,pIVar3,0);
+      pVVar6 = (VirtualInvokeData *)
+               func_?(converters,
+                               TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::JsonConverter>
+                               ,0,pIVar3,0);
 code_?:
-      pJVar7 = (JsonConverter *)(*(code *)*ppMVar6)(converters,iVar1,ppMVar6[1]);
+      pJVar7 = (JsonConverter *)(*pVVar6->methodPtr)(converters,iVar1,pVVar6->method);
       if (pJVar7 == (JsonConverter *)0x0) {
-        func_?(0);
+        func_?();
         pcVar8 = (code *)swi(3);
         pJVar7 = (JsonConverter *)(*pcVar8)();
         return pJVar7;
       }
-      cVar9 = (*(code *)(pJVar7->klass->vtable).__unknown_2.method)
-                        (pJVar7,objectType,(pJVar7->klass->vtable).GetSchema.methodPtr);
+      cVar9 = (*(pJVar7->klass->vtable).__unknown_2.methodPtr)
+                        (pJVar7,objectType,(pJVar7->klass->vtable).__unknown_2.method);
       if (cVar9 != '\0') {
         return pJVar7;
       }
@@ -342,17 +364,10 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_OnErr
                (JsonSerializer *this,ErrorEventArgs *e,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)(this->fields).Error;
-  if (this_00 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-    mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-    EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-              (this_00,(Object *)this,(InitializedGameQueryDataEventArgs *)e,
-               MethodInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>__Invoke_System__Object__Newtonsoft__Json__Serialization__ErrorEventArgs_
-              );
+  pEVar1 = (this->fields).Error;
+  if (pEVar1 != (EventHandler_1_Newtonsoft_Json_Serialization_ErrorEventArgs_ *)0x0) {
+    (*(pEVar1->fields)._._.invoke_impl)
+              ((pEVar1->fields)._._.method_code,this,e,(pEVar1->fields)._._.method);
   }
   return;
 }
@@ -365,13 +380,19 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Popul
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonTextReader);
     cRam_? = '\x01';
   }
   this_00 = (JsonTextReader *)func_?(TypeInfo__Newtonsoft__Json__JsonTextReader);
-  JsonTextReader::JsonTextReader__ctor(this_00,reader,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).PopulateInternal.method)
-            (this,this_00,target,(this->klass->vtable).DeserializeInternal.methodPtr);
+  if (this_00 != (JsonTextReader *)0x0) {
+    JsonTextReader::JsonTextReader__ctor(this_00,reader,(MethodInfo *)0x0);
+    (*(this->klass->vtable).PopulateInternal.methodPtr)
+              (this,this_00,target,(this->klass->vtable).PopulateInternal.method);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -383,7 +404,9 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Popul
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader);
+    func_?(&StringLiteral_target);
+    func_?(&StringLiteral_reader);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
@@ -393,11 +416,11 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Popul
   this_00 = (JsonSerializerInternalReader *)
             func_?(TypeInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader)
   ;
-  Json::Serialization::JsonSerializerInternalWriter::JsonSerializerInternalWriter__ctor
-            ((JsonSerializerInternalWriter *)this_00,this,(MethodInfo *)0x0);
   if (this_00 != (JsonSerializerInternalReader *)0x0) {
+    Json::Serialization::JsonSerializerInternalWriter::JsonSerializerInternalWriter__ctor
+              ((JsonSerializerInternalWriter *)this_00,this,(MethodInfo *)0x0);
     Json::Serialization::JsonSerializerInternalReader::JsonSerializerInternalReader_Populate
-              (this_00,reader,target,(MethodInfo *)0x0);
+              (this_00,(JsonReader *)0x0,(Object *)0x0,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -413,8 +436,8 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Popul
                (JsonSerializer *this,JsonReader *reader,Object *target,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).PopulateInternal.method)
-            (this,reader,target,(this->klass->vtable).DeserializeInternal.methodPtr);
+  (*(this->klass->vtable).PopulateInternal.methodPtr)
+            (this,reader,target,(this->klass->vtable).PopulateInternal.method);
   return;
 }
 
@@ -426,13 +449,47 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Seria
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonTextWriter);
     cRam_? = '\x01';
   }
-  this_00 = (JsonTextWriter *)func_?(TypeInfo__Newtonsoft__Json__JsonTextWriter);
-  JsonTextWriter::JsonTextWriter__ctor(this_00,textWriter,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).SerializeInternal.method)
-            (this,this_00,value,this->klass[1]._0.image);
+  this_00 = (JsonWriter *)func_?(TypeInfo__Newtonsoft__Json__JsonTextWriter);
+  if (this_00 == (JsonWriter *)0x0) {
+    func_?();
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__Newtonsoft__Json__JsonWriter);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__Newtonsoft__Json__JsonWriter->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Newtonsoft__Json__JsonWriter);
+    }
+    JsonWriter::JsonWriter__ctor(this_00,(MethodInfo *)0x0);
+    if (textWriter != (TextWriter *)0x0) {
+      this_00[1].klass = (JsonWriter__Class *)textWriter;
+      func_?(this_00 + 1,textWriter);
+      *(undefined1 *)((int)&this_00[1].fields._currentState + 2) = 1;
+      *(undefined2 *)&this_00[1].fields._currentState = 0x22;
+      *(undefined2 *)&this_00[1].fields._top = 0x20;
+      this_00[1].fields._stack = (List_1_Newtonsoft_Json_Linq_JTokenType_ *)0x2;
+      (*(this->klass->vtable).SerializeInternal.methodPtr)
+                (this,this_00,value,(this->klass->vtable).SerializeInternal.method);
+      return;
+    }
+  }
+  uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_01 = (ArgumentNullException *)func_?(uVar1);
+  func_?(this_01);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_textWriter);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (this_01,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonTextWriter__JsonTextWriter_System__IO__TextWriter_
+                 );
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -444,7 +501,8 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Seria
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalWriter);
+    func_?(&StringLiteral_jsonWriter);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
@@ -452,11 +510,11 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Seria
   this_00 = (JsonSerializerInternalWriter *)
             func_?(TypeInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalWriter)
   ;
-  Json::Serialization::JsonSerializerInternalWriter::JsonSerializerInternalWriter__ctor
-            (this_00,this,(MethodInfo *)0x0);
   if (this_00 != (JsonSerializerInternalWriter *)0x0) {
+    Json::Serialization::JsonSerializerInternalWriter::JsonSerializerInternalWriter__ctor
+              (this_00,this,(MethodInfo *)0x0);
     Json::Serialization::JsonSerializerInternalWriter::JsonSerializerInternalWriter_Serialize
-              (this_00,(JsonWriter *)0x0,(Object *)0x0,(MethodInfo *)0x0);
+              (this_00,jsonWriter,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -472,8 +530,8 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_Seria
                (JsonSerializer *this,JsonWriter *jsonWriter,Object *value,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).SerializeInternal.method)
-            (this,jsonWriter,value,this->klass[1]._0.image);
+  (*(this->klass->vtable).SerializeInternal.methodPtr)
+            (this,jsonWriter,value,(this->klass->vtable).SerializeInternal.method);
   return;
 }
 
@@ -485,10 +543,12 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonSerializerSettings);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._referenceLoopHandling = 0;
   (this->fields)._missingMemberHandling = 0;
   (this->fields)._nullValueHandling = 0;
@@ -497,26 +557,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer__ctor
   (this->fields)._preserveReferencesHandling = 0;
   (this->fields)._constructorHandling = 0;
   (this->fields)._typeNameHandling = 0;
-  if ((((uint)(TypeInfo__Newtonsoft__Json__JsonSerializerSettings->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__JsonSerializerSettings->_1).cctor_started == 0)) {
+  if ((TypeInfo__Newtonsoft__Json__JsonSerializerSettings->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__JsonSerializerSettings);
   }
   pOVar1 = (TypeInfo__Newtonsoft__Json__JsonSerializerSettings->static_fields->DefaultContext).
-           additional;
-  (this->fields)._context.state =
-       (TypeInfo__Newtonsoft__Json__JsonSerializerSettings->static_fields->DefaultContext).state;
-  (this->fields)._context.additional = pOVar1;
-  if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->vtable).Equals
-              .methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).cctor_started == 0
-     )) {
+           m_additionalContext;
+  (this->fields)._context.m_state =
+       (TypeInfo__Newtonsoft__Json__JsonSerializerSettings->static_fields->DefaultContext).m_state;
+  (this->fields)._context.m_additionalContext = pOVar1;
+  func_?(&(this->fields)._context,0);
+  if ((TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->_1).
+      cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder);
   }
-  (this->fields)._binder =
-       (SerializationBinder *)
-       TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
-       Instance;
+  pDVar2 = TypeInfo__Newtonsoft__Json__Serialization__DefaultSerializationBinder->static_fields->
+           Instance;
+  (this->fields)._binder = (SerializationBinder *)pDVar2;
+  func_?(&(this->fields)._binder,pDVar2);
   return;
 }
 
@@ -530,37 +587,33 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_add_E
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>
+                   );
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).Error;
-  a = *ppEVar1;
+  a = (this->fields).Error;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_Newtonsoft_Json_Serialization_ErrorEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,
-                        TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>
-                       );
+    pEVar2 = TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
+                              TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>
+                             );
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
     pEVar5 = (EventHandler_1_Newtonsoft_Json_Serialization_ErrorEventArgs_ *)
-             func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+             func_?(&(this->fields).Error,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -583,19 +636,26 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_get_Contra
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver);
     cRam_? = '\x01';
   }
   if ((this->fields)._contractResolver == (IContractResolver *)0x0) {
-    if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver->_1).cctor_started == 0)
-       ) {
+    if ((TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver);
     }
-    pIVar1 = Json::Serialization::DefaultContractResolver::DefaultContractResolver_get_Instance
-                       ((MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver);
+    }
+    pIVar1 = TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver->static_fields->
+             _instance;
     (this->fields)._contractResolver = pIVar1;
+    func_?(&(this->fields)._contractResolver,pIVar1);
   }
   return (this->fields)._contractResolver;
 }
@@ -609,25 +669,33 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_get_Conver
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConverterCollection);
     cRam_? = '\x01';
   }
-  this_00 = (Collection_1_Newtonsoft_Json_JsonConverter_ *)(this->fields)._converters;
-  if (this_00 == (Collection_1_Newtonsoft_Json_JsonConverter_ *)0x0) {
-    this_00 = (Collection_1_Newtonsoft_Json_JsonConverter_ *)
+  if ((this->fields)._converters == (JsonConverterCollection *)0x0) {
+    this_00 = (DictionaryWithChangeEvent_2_System_Object_System_Object_ *)
               func_?(TypeInfo__Newtonsoft__Json__JsonConverterCollection);
+    if (this_00 == (DictionaryWithChangeEvent_2_System_Object_System_Object_ *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      pJVar2 = (JsonConverterCollection *)(*pcVar1)();
+      return pJVar2;
+    }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__Collection<Newtonsoft::Json::JsonConverter>__Collection__
+                     );
       cRam_? = '\x01';
     }
-    mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::JsonConverter]::
-    Collection_1_Newtonsoft_Json_JsonConverter___ctor
+    DictionaryWithChangeEvent`2[System::Object,System::Object]::
+    DictionaryWithChangeEvent_2_System_Object_System_Object___ctor
               (this_00,
                MethodInfo__System__Collections__ObjectModel__Collection<Newtonsoft::Json::JsonConverter>__Collection__
               );
     (this->fields)._converters = (JsonConverterCollection *)this_00;
+    func_?(&(this->fields)._converters,this_00);
   }
-  return (JsonConverterCollection *)this_00;
+  return (this->fields)._converters;
 }
 
 
@@ -639,19 +707,24 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_get_Refere
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__DefaultReferenceResolver);
     cRam_? = '\x01';
   }
-  this_00 = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)
-            (this->fields)._referenceResolver;
-  if (this_00 == (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)0x0) {
-    this_00 = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)
+  if ((this->fields)._referenceResolver == (IReferenceResolver *)0x0) {
+    this_00 = (TweenRunner_1_FloatTween_ *)
               func_?(TypeInfo__Newtonsoft__Json__Serialization__DefaultReferenceResolver);
-    WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-    WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor(this_00,(MethodInfo *)0x0);
+    if (this_00 == (TweenRunner_1_FloatTween_ *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      pIVar2 = (IReferenceResolver *)(*pcVar1)();
+      return pIVar2;
+    }
+    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
     (this->fields)._referenceResolver = (IReferenceResolver *)this_00;
+    func_?(&(this->fields)._referenceResolver,this_00);
   }
-  return (IReferenceResolver *)this_00;
+  return (this->fields)._referenceResolver;
 }
 
 
@@ -664,37 +737,33 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_remov
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>
+                   );
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).Error;
-  source = *ppEVar1;
+  source = (this->fields).Error;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_Newtonsoft_Json_Serialization_ErrorEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,
-                        TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>
-                       );
+    pEVar2 = TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
+                              TypeInfo__System__EventHandler<Newtonsoft::Json::Serialization::ErrorEventArgs>
+                             );
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
     pEVar5 = (EventHandler_1_Newtonsoft_Json_Serialization_ErrorEventArgs_ *)
-             func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+             func_?(&(this->fields).Error,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -704,21 +773,24 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_B
                (JsonSerializer *this,SerializationBinder *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value != (SerializationBinder *)0x0) {
     (this->fields)._binder = value;
+    func_?(&(this->fields)._binder,value);
     return;
   }
-  this_00 = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
-  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_2
-            (this_00,StringLiteral_value,StringLiteral_Serialization_binder_cannot_be_n,
-             (MethodInfo *)0x0);
+  uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_00 = (ArgumentNullException *)func_?(uVar1);
   func_?(this_00);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  message = (String *)func_?(&StringLiteral_Serialization_binder_cannot_be_n);
+  paramName = (String *)func_?(&StringLiteral_value);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_2
+            (this_00,paramName,message,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_Binder_System__Runtime__Serialization__SerializationBinder_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -729,21 +801,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_C
                (JsonSerializer *this,ConstructorHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < 2) {
     (this->fields)._constructorHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_ConstructorHandling_Newtonsoft__Json__ConstructorHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -754,8 +828,9 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_C
                (JsonSerializer *this,StreamingContext value,MethodInfo *method)
 
 {
-  (this->fields)._context.state = value.state;
-  (this->fields)._context.additional = value.additional;
+  (this->fields)._context.m_additionalContext = value.m_additionalContext;
+  (this->fields)._context.m_state = value.m_state;
+  func_?(&(this->fields)._context,0);
   return;
 }
 
@@ -766,21 +841,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_D
                (JsonSerializer *this,DefaultValueHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < 4) {
     (this->fields)._defaultValueHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_DefaultValueHandling_Newtonsoft__Json__DefaultValueHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -791,21 +868,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_M
                (JsonSerializer *this,MissingMemberHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < 2) {
     (this->fields)._missingMemberHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_MissingMemberHandling_Newtonsoft__Json__MissingMemberHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -816,21 +895,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_N
                (JsonSerializer *this,NullValueHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < 2) {
     (this->fields)._nullValueHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_NullValueHandling_Newtonsoft__Json__NullValueHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -842,21 +923,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::
                (JsonSerializer *this,ObjectCreationHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < (ObjectCreationHandling__Enum_Replace|ObjectCreationHandling__Enum_Reuse)) {
     (this->fields)._objectCreationHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_ObjectCreationHandling_Newtonsoft__Json__ObjectCreationHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -868,21 +951,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::
                (JsonSerializer *this,PreserveReferencesHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < 4) {
     (this->fields)._preserveReferencesHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_PreserveReferencesHandling_Newtonsoft__Json__PreserveReferencesHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -893,21 +978,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_R
                (JsonSerializer *this,ReferenceLoopHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < (ReferenceLoopHandling__Enum_Serialize|ReferenceLoopHandling__Enum_Ignore)) {
     (this->fields)._referenceLoopHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_ReferenceLoopHandling_Newtonsoft__Json__ReferenceLoopHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -918,21 +1005,24 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_R
                (JsonSerializer *this,IReferenceResolver *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value != (IReferenceResolver *)0x0) {
     (this->fields)._referenceResolver = value;
+    func_?(&(this->fields)._referenceResolver,value);
     return;
   }
-  this_00 = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
-  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_2
-            (this_00,StringLiteral_value,StringLiteral_Reference_resolver_cannot_be_nul,
-             (MethodInfo *)0x0);
+  uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_00 = (ArgumentNullException *)func_?(uVar1);
   func_?(this_00);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  message = (String *)func_?(&StringLiteral_Reference_resolver_cannot_be_nul);
+  paramName = (String *)func_?(&StringLiteral_value);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_2
+            (this_00,paramName,message,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_ReferenceResolver_Newtonsoft__Json__Serialization__IReferenceResolver_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -944,21 +1034,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::
                (JsonSerializer *this,FormatterAssemblyStyle__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < 2) {
     (this->fields)._typeNameAssemblyFormat = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_TypeNameAssemblyFormat_System__Runtime__Serialization__Formatters__FormatterAssemblyStyle_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -969,21 +1061,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonSerializer::JsonSerializer_set_T
                (JsonSerializer *this,TypeNameHandling__Enum value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (value < (TypeNameHandling__Enum_Auto|TypeNameHandling__Enum_Objects)) {
     (this->fields)._typeNameHandling = value;
     return;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  paramName = (String *)func_?(&StringLiteral_value);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,StringLiteral_value,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+            (this_00,paramName,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonSerializer__set_TypeNameHandling_Newtonsoft__Json__TypeNameHandling_
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

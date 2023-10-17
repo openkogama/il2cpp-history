@@ -15,7 +15,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SendMessageControl : MonoBehaviour
 {
@@ -51,6 +51,9 @@ public class SendMessageControl : MonoBehaviour
 	private const string startWave = "/wave";
 	private const string fyberTestSuite = "/fyber";
 	private const string showAd = "/ad";
+	private const string PrintRegion = "/region";
+	private const string pause = "/pause";
+	private const string resume = "/resume";
 	[SerializeField]
 	private UnityEngine.UI.Text currentChat;
 	[SerializeField]
@@ -69,37 +72,49 @@ public class SendMessageControl : MonoBehaviour
 	private Color sayChatColor;
 	private List<byte> oomBytes;
 	private int bytesPerFrame;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IToggleFps> __f__am_cache0;
 
 	// Properties
 	public Color SayChatColor { set; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _OOMTest_c__Iterator0 : IEnumerator<object>
+	private sealed class __c
 	{
 		// Fields
-		internal byte[] _newBytes___1;
-		internal SendMessageControl _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IToggleFps> __9__55_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _HandleChatCommands_b__55_0(IToggleFps x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class _OOMTest_d__58 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public SendMessageControl __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _OOMTest_c__Iterator0();
+		public _OOMTest_d__58(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -107,32 +122,32 @@ public class SendMessageControl : MonoBehaviour
 
 	// Methods
 	private void Awake();
-	public void InitializeToSayChat();
+	public void InitializeToSayChat(bool sayChatVisible);
 	private void OnDestroy();
 	private void Send();
 	public void OnInputFieldChange();
 	private void EnforceCharacterLimit();
 	private void SendChatMessage(string chatMsg);
 	private bool HandleChatCommands(string chatMsg);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_OOMTest_d__58))]
 	private IEnumerator OOMTest();
 	private void OnAdShownCallback(InterstitialAdResult interstitialResult);
 	private void OnAdShownCallback(RewardedAdResult result);
-	private void ShowBuildInformation();
-	private void ToggleHD();
+	private static void ShowBuildInformation();
+	private static void ToggleHD();
 	public static string CreateHelpTxt();
 	public static string CreateChatCommandsHelpTxt();
-	private void SanitizeMessage(ref string message, string tagToSanitize);
+	private static void SanitizeMessage(ref string message, string tagToSanitize);
 	private bool HandleChatSwapCommand(string message);
 	private void SwapChat(MVGameMsgType newChat);
 	private void ActivateAllChat();
 	private void ActivateTeamChat();
-	private void ActivateSayChat();
+	private void ActivateSayChat(bool sayChatVisible);
 	private void ChangeTeamChatColor();
 	public void SetToNextChat();
 	private MVGameMsgType GetNextChat();
 	public void OnInputFocusChange(bool isFocused);
-	[CompilerGenerated]
-	private static void _HandleChatCommands_m__0(IToggleFps x, BaseEventData y);
+	private void SetSayChatBubbleVisibleIfActive(bool visible);
+	private void SetSayChatBubbleVisible(bool visible);
 }
 

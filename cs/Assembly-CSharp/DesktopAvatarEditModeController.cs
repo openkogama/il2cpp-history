@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopAvatarEditModeController : ModeControllerBase, IActivateUIElement, IAvatarEditUIState, IEditStateCommands, IAvatarSetBodyGroup, IGetCurrentBody, IAccessoryPopupHandler
 {
@@ -37,8 +37,23 @@ public class DesktopAvatarEditModeController : ModeControllerBase, IActivateUIEl
 	[SerializeField]
 	private GoldPurchasedTracker goldPurchasedTracker;
 	private int firstTimeActiveAvatar;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Func<MVWorldObjectClient, bool> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<MVWorldObjectClient, bool> __9__23_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _InitializeLocalAvatar_b__23_0(MVWorldObjectClient wo);
+	}
 
 	// Constructors
 	public DesktopAvatarEditModeController();
@@ -60,7 +75,5 @@ public class DesktopAvatarEditModeController : ModeControllerBase, IActivateUIEl
 	public void GetCurrentBody(Action<MVBody> callback);
 	public void SetUIReady();
 	public void OpenInventoryAtItem(UIPushOption pushOption, AccessoryDataClient displayShopItems);
-	[CompilerGenerated]
-	private static bool _InitializeLocalAvatar_m__0(MVWorldObjectClient wo);
 }
 

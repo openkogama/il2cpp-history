@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -22,7 +22,7 @@ namespace MV.Common
 		Hand = 5,
 		RailGun = 6,
 		Mutant = 7,
-		Sword = 8,
+		MeleeWeapon = 8,
 		Shotgun = 9,
 		Flamethrower = 10,
 		CubeGun = 11,
@@ -72,7 +72,7 @@ namespace MV.Common
 		Carl12 = 56,
 		Carl13 = 57,
 		Carl14 = 58,
-		Carl15 = 59,
+		Costume = 59,
 		MouseGun = 60,
 		CollectTheItemCollectable = 61,
 		GrowthGun = 62,

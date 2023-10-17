@@ -5,68 +5,72 @@ void Assembly-CSharp.dll::AvatarPooledXPParticles::AvatarPooledXPParticles_Initi
                (AvatarPooledXPParticles *this,int32_t xpDelta,MethodInfo *method)
 
 {
-  TStack_1.fields.themeCallback = (Action_1_Single_ *)0x0;
-  TStack_1.klass = (ThemeAttribute_1_System_Single___Class *)0x0;
-  TStack_1.monitor = (MonitorData *)0x0;
-  pMVar2 = TStack_1.monitor;
-  TStack_1.monitor = (MonitorData *)0x0;
-  TStack_1.fields._._Key_k__BackingField = (String *)0x0;
-  TStack_1.fields._._Groups_k__BackingField = 0;
-  this_00 = (this->fields).xpParticleSystem;
-  TStack_1.fields._.themeSettings = (SettingsWrapper *)0x0;
-  TStack_1.fields.value = 0.0;
+  pAVar1 = this;
+  pTStack_2 = (ThemeAttribute_1_System_Single___Class *)0x0;
+  pPVar3 = (this->fields).xpParticleSystem;
   (this->fields).hasStarted = 0;
-  if (this_00 != (ParticleSystem *)0x0) {
+  if (pPVar3 != (ParticleSystem *)0x0) {
     UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-              (this_00,(MethodInfo *)0x0);
-    pDVar3 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-              *)(this->fields).xpParticleSystem;
-    pMVar2 = TStack_1.monitor;
-    if (pDVar3 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)0x0) {
-      TStack_1.fields.themeCallback =
-           (Action_1_Single_ *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-           Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-           Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                     (pDVar3,(MethodInfo *)0x0);
-      puVar4 = (undefined4 *)func_?(&stack0xffffffc8,&TStack_1.fields.themeCallback);
-      TStack_1.klass = (ThemeAttribute_1_System_Single___Class *)*puVar4;
-      TStack_1.monitor = (MonitorData *)puVar4[1];
-      TStack_1.fields._._Key_k__BackingField = (String *)puVar4[2];
-      TStack_1.fields._._Groups_k__BackingField = puVar4[3];
-      TStack_1.fields._8_8_ = *(undefined8 *)(puVar4 + 4);
-      pDVar3 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)(this->fields).xpParticleSystem;
-      pMVar2 = TStack_1.monitor;
-      if (pDVar3 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-        Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-        Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                  (pDVar3,(MethodInfo *)0x0);
+              (pPVar3,(MethodInfo *)0x0);
+    pPVar3 = (pAVar1->fields).xpParticleSystem;
+    if (pPVar3 != (ParticleSystem *)0x0) {
+      this = (AvatarPooledXPParticles *)
+             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+             ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
+      pPVar4 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+                ParticleSystem_EmissionModule_get_rateOverTime
+                          ((ParticleSystem_MinMaxCurve *)&stack0xffffffcc,
+                           (ParticleSystem_EmissionModule *)&this,(MethodInfo *)0x0);
+      pTStack_2 = (ThemeAttribute_1_System_Single___Class *)pPVar4->m_Mode;
+      uVar5 = pPVar4->m_CurveMin;
+      uVar6 = pPVar4->m_CurveMax;
+      uVar7 = pPVar4->m_ConstantMin;
+      uVar8 = pPVar4->m_ConstantMax;
+      TVar9.value = (float)uVar8;
+      TVar9._.themeSettings = (SettingsWrapper *)uVar7;
+      TVar9._._Groups_k__BackingField = uVar6;
+      TVar9._._Key_k__BackingField = (String *)uVar5;
+      pPVar3 = (pAVar1->fields).xpParticleSystem;
+      TVar9.themeCallback = unaff_EBP;
+      if (pPVar3 != (ParticleSystem *)0x0) {
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+        ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
         ThemeAttributes::ThemeAttribute`1[System::Single]::ThemeAttribute_1_System_Single__get_Value
-                  (&TStack_1,(MethodInfo *)0x0);
-        HealthBar::HealthBar_set_MaxHealth((HealthBar *)&TStack_1,(float)xpDelta,(MethodInfo *)0x0)
-        ;
+                  ((ThemeAttribute_1_System_Single_ *)&pTStack_2,(MethodInfo *)0x0);
+        auVar10._12_8_ = 0;
+        auVar10._0_12_ = TVar9._8_12_;
+        TVar11._4_16_ = SUB2016(auVar10 << 0x40,4);
+        TVar11._._Key_k__BackingField = (String *)(float)xpDelta;
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxCurve::
+        ParticleSystem_MinMaxCurve_set_constant
+                  ((ParticleSystem_MinMaxCurve *)&pTStack_2,(float)xpDelta,(MethodInfo *)0x0);
+        auVar12._12_8_ = 0;
+        auVar12._0_12_ = TVar11._8_12_;
+        TVar13._4_16_ = SUB2016(auVar12 << 0x40,4);
+        TVar13._._Key_k__BackingField = (String *)&pTStack_2;
+        pMVar14 = (MonitorData *)&UNK_?;
         ThemeAttributes::ThemeAttribute`1[System::Single]::ThemeAttribute_1_System_Single__get_Value
-                  (&TStack_1,(MethodInfo *)0x0);
-        TStack_1.klass =
-             (ThemeAttribute_1_System_Single___Class *)TStack_1.fields._._Groups_k__BackingField;
-        TStack_1.fields._._Groups_k__BackingField = 0;
-        TStack_1.monitor = (MonitorData *)TStack_1.fields._.themeSettings;
-        TStack_1.fields._._Key_k__BackingField = (String *)TStack_1.fields.value;
-        func_?();
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (this->fields).initStartTime = fVar5;
+                  ((ThemeAttribute_1_System_Single_ *)&pTStack_2,(MethodInfo *)0x0);
+        this = (AvatarPooledXPParticles *)0x0;
+        value.m_CurveMultiplier = (float)pMVar14;
+        value.m_Mode = (int32_t)pTStack_2;
+        value.m_CurveMin = (AnimationCurve *)TVar13._._Key_k__BackingField;
+        value.m_CurveMax = TVar13._._Groups_k__BackingField;
+        value.m_ConstantMin = (float)TVar13._._Key_k__BackingField;
+        value.m_ConstantMax = (float)TVar13._._Groups_k__BackingField;
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+        ParticleSystem_EmissionModule_set_rateOverTime
+                  ((ParticleSystem_EmissionModule *)&this,value,(MethodInfo *)0x0);
+        this = (AvatarPooledXPParticles *)0x0;
+        fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (pAVar1->fields).initStartTime = fVar15;
         return;
       }
     }
   }
-  TStack_1.monitor = pMVar2;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -77,47 +81,38 @@ void Assembly-CSharp.dll::AvatarPooledXPParticles::AvatarPooledXPParticles_Updat
                (AvatarPooledXPParticles *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (((this->fields).hasStarted == 0) &&
-     (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
-     (this->fields).initStartTime + _UNK_? < fVar1)) {
-    pPVar2 = (this->fields).xpParticleSystem;
-    if (pPVar2 == (ParticleSystem *)0x0) goto code_?;
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-              (pPVar2,(MethodInfo *)0x0);
-    (this->fields).hasStarted = 1;
+  if ((this->fields).hasStarted == 0) {
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if ((this->fields).initStartTime + _UNK_? < fVar1) {
+      pPVar2 = (this->fields).xpParticleSystem;
+      if (pPVar2 == (ParticleSystem *)0x0) goto code_?;
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
+                (pPVar2,(MethodInfo *)0x0);
+      (this->fields).hasStarted = 1;
+    }
   }
   pPVar2 = (this->fields).xpParticleSystem;
   if (pPVar2 != (ParticleSystem *)0x0) {
     bVar3 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
             ParticleSystem_get_isPlaying(pPVar2,(MethodInfo *)0x0);
-    if ((bVar3 != 0) || ((this->fields).hasStarted == 0)) {
-      return;
-    }
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((this_00 != (PrefabPool *)0x0) &&
-       (this_01 = (EnumPoolManager *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                             (MethodInfo *)0x0), this_01 != (EnumPoolManager *)0x0)) {
+    if ((bVar3 == 0) && ((this->fields).hasStarted != 0)) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+      if ((pPVar4 == (PrefabPool *)0x0) ||
+         (this_00 = (pPVar4->fields).enumPoolManager, this_00 == (EnumPoolManager *)0x0))
+      goto code_?;
       EnumPoolManager::EnumPoolManager_Return
-                (this_01,(MonoBehaviour *)this,PoolEnums__Enum_XP,(MethodInfo *)0x0);
-      return;
+                (this_00,(MonoBehaviour *)this,PoolEnums__Enum_XP,(MethodInfo *)0x0);
     }
+    return;
   }
 code_?:
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

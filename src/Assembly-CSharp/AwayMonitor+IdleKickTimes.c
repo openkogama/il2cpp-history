@@ -6,18 +6,20 @@ void Assembly-CSharp.dll::AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__
                MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).idleKickTimeMinutes = kickAfterMinutes;
   (this->fields).warningTimeMinutes = warnAfterMinutes;
-  uStack_1 = 0;
-  func_?(&uStack_1,0,0,warnAfterMinutes,0,0);
-  iVar2 = (this->fields).idleKickTimeMinutes;
-  *(undefined4 *)&(this->fields).warningTimeSpan._ticks = (undefined4)uStack_1;
-  *(undefined4 *)((int)&(this->fields).warningTimeSpan._ticks + 4) = uStack_1._4_4_;
-  uStack_3 = 0;
-  func_?(&uStack_3,0,0,iVar2,0,0);
-  *(undefined4 *)&(this->fields).idleKickTimeSpan._ticks = (undefined4)uStack_3;
-  *(undefined4 *)((int)&(this->fields).idleKickTimeSpan._ticks + 4) = uStack_3._4_4_;
+  TStack_1._ticks = 0;
+  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2
+            (&TStack_1,0,0,warnAfterMinutes,0,(MethodInfo *)0x0);
+  minutes = (this->fields).idleKickTimeMinutes;
+  *(undefined4 *)&(this->fields).warningTimeSpan._ticks = (undefined4)TStack_1._ticks;
+  *(undefined4 *)((int)&(this->fields).warningTimeSpan._ticks + 4) = TStack_1._ticks._4_4_;
+  TStack_2._ticks = 0;
+  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2(&TStack_2,0,0,minutes,0,(MethodInfo *)0x0);
+  *(undefined4 *)&(this->fields).idleKickTimeSpan._ticks = (undefined4)TStack_2._ticks;
+  *(undefined4 *)((int)&(this->fields).idleKickTimeSpan._ticks + 4) = TStack_2._ticks._4_4_;
   return;
 }
 

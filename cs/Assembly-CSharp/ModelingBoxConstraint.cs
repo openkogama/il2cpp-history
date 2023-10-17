@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ModelingBoxConstraint : IModelingConstraint
 {
@@ -16,17 +16,12 @@ public class ModelingBoxConstraint : IModelingConstraint
 	private ObscuredIntVector minCorner;
 	private ObscuredIntVector maxCorner;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _FMinCorner_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Vector3 _FMaxCorner_k__BackingField;
 	private Vector3 center;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<ConstraintBoxChangedEventArgs> BoxChanged;
-	[CompilerGenerated]
-	private static EventHandler<ConstraintBoxChangedEventArgs> __f__am_cache0;
 
 	// Properties
 	public ObscuredIntVector MinCorner { get; protected set; }
@@ -41,6 +36,23 @@ public class ModelingBoxConstraint : IModelingConstraint
 		remove;
 	}
 
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static EventHandler<ConstraintBoxChangedEventArgs> __9__24_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _.ctor_b__24_0(object _p0_, ConstraintBoxChangedEventArgs _p1_);
+	}
+
 	// Constructors
 	public ModelingBoxConstraint(IntVector size);
 	public ModelingBoxConstraint(IntVector minCorner, IntVector maxCorner);
@@ -51,7 +63,5 @@ public class ModelingBoxConstraint : IModelingConstraint
 	public virtual bool CanAddCubeAt(IntVector pos);
 	public virtual bool CanRemoveCubeAt(IntVector pos);
 	public virtual bool CanEditCubeAt(IntVector pos);
-	[CompilerGenerated]
-	private static void _BoxChanged_m__0(object param_00005aee, ConstraintBoxChangedEventArgs param_00005aef);
 }
 

@@ -2,13 +2,12 @@
 /* Void Activate(Avatar) */
 
 void Assembly-CSharp.dll::AvatarModifier::AvatarModifier_Activate
-               (AvatarModifier *this,Avatar_1 *target,MethodInfo *method)
+               (AvatarModifier *this,Avatar *target,MethodInfo *method)
 
 {
   pAVar1 = this->klass;
   (this->fields).isActivated = 1;
-  (*(code *)(pAVar1->vtable).OnActivated.method)
-            (this,target,(pAVar1->vtable).OnDeactivated.methodPtr);
+  (*(pAVar1->vtable).OnActivated.methodPtr)(this,target,(pAVar1->vtable).OnActivated.method);
   return;
 }
 
@@ -17,296 +16,181 @@ void Assembly-CSharp.dll::AvatarModifier::AvatarModifier_Activate
 
 AvatarModifier *
 Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
-          (AvatarModifierPackageType__Enum type,Avatar_1 *owner,MethodInfo *method)
+          (AvatarModifierPackageType__Enum type,Avatar *owner,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    BurningModifier_MethodInfo__EnumPoolManager__Instantiate<BurningModifier>_PoolEnums_
+                   );
+    func_?(&
+                    CrumbleMatModifier_MethodInfo__EnumPoolManager__Instantiate<CrumbleMatModifier>_PoolEnums_
+                   );
+    func_?(&
+                    FrozenModifier_MethodInfo__EnumPoolManager__Instantiate<FrozenModifier>_PoolEnums_
+                   );
+    func_?(&
+                    GrowthModifier_MethodInfo__EnumPoolManager__Instantiate<GrowthModifier>_PoolEnums_
+                   );
+    func_?(&
+                    HealingMatModifier_MethodInfo__EnumPoolManager__Instantiate<HealingMatModifier>_PoolEnums_
+                   );
+    func_?(&
+                    InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
+                   );
+    func_?(&
+                    LethalModifier_MethodInfo__EnumPoolManager__Instantiate<LethalModifier>_PoolEnums_
+                   );
+    func_?(&
+                    MouseModifier_MethodInfo__EnumPoolManager__Instantiate<MouseModifier>_PoolEnums_
+                   );
+    func_?(&
+                    MutantModifier_MethodInfo__EnumPoolManager__Instantiate<MutantModifier>_PoolEnums_
+                   );
+    func_?(&
+                    NinjaRunModifier_MethodInfo__EnumPoolManager__Instantiate<NinjaRunModifier>_PoolEnums_
+                   );
+    func_?(&
+                    PoisonModifier_MethodInfo__EnumPoolManager__Instantiate<PoisonModifier>_PoolEnums_
+                   );
+    func_?(&
+                    AvatarModifier_MethodInfo__UnityEngine__Object__Instantiate<AvatarModifier>_AvatarModifier_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   switch(type) {
   case AvatarModifierPackageType__Enum_Fire:
   case AvatarModifierPackageType__Enum_FlamerBurn:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    iVar1 = func_?(0);
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_BurningModifier;
     method_00 = BurningModifier_MethodInfo__EnumPoolManager__Instantiate<BurningModifier>_PoolEnums_
     ;
     break;
   case AvatarModifierPackageType__Enum_Mutant:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_MutantModifier;
-    method_00 = MutantModifier_MethodInfo__EnumPoolManager__Instantiate<MutantModifier>_PoolEnums_;
     break;
   default:
     return (AvatarModifier *)0x0;
   case AvatarModifierPackageType__Enum_Poison:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_PoisonModifier;
-    method_00 = PoisonModifier_MethodInfo__EnumPoolManager__Instantiate<PoisonModifier>_PoolEnums_;
     break;
   case AvatarModifierPackageType__Enum_Frozen:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_FrozenModifier;
-    method_00 = FrozenModifier_MethodInfo__EnumPoolManager__Instantiate<FrozenModifier>_PoolEnums_;
     break;
   case AvatarModifierPackageType__Enum_NinjaRun:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_NinjaRunModifier;
-    method_00 = 
-    NinjaRunModifier_MethodInfo__EnumPoolManager__Instantiate<NinjaRunModifier>_PoolEnums_;
     break;
   case AvatarModifierPackageType__Enum_Shrunken:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_MouseModifier;
-    method_00 = MouseModifier_MethodInfo__EnumPoolManager__Instantiate<MouseModifier>_PoolEnums_;
     break;
   case AvatarModifierPackageType__Enum_Enlarged:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_GrowthModifier;
-    method_00 = GrowthModifier_MethodInfo__EnumPoolManager__Instantiate<GrowthModifier>_PoolEnums_;
     break;
   case AvatarModifierPackageType__Enum_Shielded:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if (pPVar1 == (PrefabPool *)0x0) goto code_?;
-    original = (XpBoostParticlePreviewer *)
-               PrefabPool::PrefabPool_get_ShieldModifier(pPVar1,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    iVar1 = func_?(0);
+    if (iVar1 == 0) goto code_?;
+    original = *(Object **)(iVar1 + 0x204);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = (ImpulseRay *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (original,
-                      AvatarModifier_MethodInfo__UnityEngine__Object__Instantiate<AvatarModifier>_AvatarModifier_
-                     );
+    pAVar2 = (AvatarModifier *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       (original,
+                        AvatarModifier_MethodInfo__UnityEngine__Object__Instantiate<AvatarModifier>_AvatarModifier_
+                       );
     goto code_?;
   case AvatarModifierPackageType__Enum_SpawnProtection:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    iVar1 = func_?(0);
+    if ((iVar1 == 0) || (*(EnumPoolManager **)(iVar1 + 0xc) == (EnumPoolManager *)0x0))
     goto code_?;
-    this = EnumPoolManager::EnumPoolManager_Instantiate_18
-                     (pEVar2,PoolEnums__Enum_InvulnerabilityModifier,
-                      InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
-                     );
-    unaff_ESI = 0;
-    if (this == (ImpulseRay *)0x0) goto code_?;
-    owner = (Avatar_1 *)0x11;
-    XpBoostParticlePreviewer::XpBoostParticlePreviewer_set_PreviewGameObject
-              ((XpBoostParticlePreviewer *)this,(GameObject *)0x11,(MethodInfo *)0x0);
+    pAVar2 = (AvatarModifier *)
+             EnumPoolManager::EnumPoolManager_Instantiate
+                       (*(EnumPoolManager **)(iVar1 + 0xc),PoolEnums__Enum_InvulnerabilityModifier,
+                        InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
+                       );
+    unaff_ESI = (undefined1 *)0x0;
+    if (pAVar2 == (AvatarModifier *)0x0) goto code_?;
+    pAVar2[1].fields._._._._.m_CachedPtr = (void *)0x11;
     goto code_?;
   case AvatarModifierPackageType__Enum_Lethal:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_Lethal;
-    method_00 = LethalModifier_MethodInfo__EnumPoolManager__Instantiate<LethalModifier>_PoolEnums_;
     break;
   case AvatarModifierPackageType__Enum_HealingMat:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_HealingMat;
-    method_00 = 
-    HealingMatModifier_MethodInfo__EnumPoolManager__Instantiate<HealingMatModifier>_PoolEnums_;
     break;
   case AvatarModifierPackageType__Enum_CrumbleMat:
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-      func_?(TypeInfo__PrefabPool);
-    }
-    pPVar1 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-    if ((pPVar1 == (PrefabPool *)0x0) ||
-       (pEVar2 = (EnumPoolManager *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pPVar1,
-                            (MethodInfo *)0x0), pEVar2 == (EnumPoolManager *)0x0))
+    method_00 = (MethodInfo *)0x0;
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
     goto code_?;
     pEnum = PoolEnums__Enum_CrumbleMat;
-    method_00 = 
-    CrumbleMatModifier_MethodInfo__EnumPoolManager__Instantiate<CrumbleMatModifier>_PoolEnums_;
   }
-  this = EnumPoolManager::EnumPoolManager_Instantiate_18(pEVar2,pEnum,method_00);
+  pAVar2 = (AvatarModifier *)EnumPoolManager::EnumPoolManager_Instantiate(this,pEnum,method_00);
 code_?:
-  unaff_ESI = 0;
-  if (this != (ImpulseRay *)0x0) {
-    (this->fields).startColor.r = (float)owner;
-    return (AvatarModifier *)this;
+  unaff_ESI = (undefined1 *)0x0;
+  if (pAVar2 == (AvatarModifier *)0x0) {
+code_?:
+    uVar3 = func_?();
+    pcVar4 = (char *)((uVar3 & 0xffffff10) + 0xbad11024);
+    *pcVar4 = *pcVar4 >> (extraout_CL & 0x1f);
+    *unaff_EDI = *unaff_ESI;
+    out(unaff_ESI[1],0x1024);
+    bRam_? = bRam_? | 0x24;
+    pcVar5 = (code *)swi(3);
+    pAVar2 = (AvatarModifier *)(*pcVar5)();
+    return pAVar2;
   }
 code_?:
-  bVar3 = 0;
-  uVar4 = func_?();
-  pbVar5 = (byte *)((ulonglong)uVar4 >> 0x20);
-  pcVar6 = (char *)uVar4;
-  pbVar7 = pbVar5 + 0x5b102e47;
-  bVar8 = (byte)((ulonglong)uVar4 >> 0x28);
-  bVar9 = *pbVar7 + bVar8;
-  bVar10 = CARRY1(*pbVar7,bVar8) || CARRY1(bVar9,bVar3);
-  *pbVar7 = bVar9 + bVar3;
-  pbVar7 = pbVar5 + -0x6efd1bc;
-  bVar8 = (byte)((uint)extraout_ECX >> 8);
-  bVar9 = *pbVar7 + bVar8;
-  bVar11 = CARRY1(*pbVar7,bVar8) || CARRY1(bVar9,bVar10);
-  *pbVar7 = bVar9 + bVar10;
-  pbVar7 = (byte *)(pcVar6 + 0x45);
-  bVar12 = (byte)extraout_ECX;
-  bVar10 = CARRY1(*pbVar7,bVar12) || CARRY1(*pbVar7 + bVar12,bVar11);
-  *pbVar7 = *pbVar7 + bVar12 + bVar11;
-  pbVar7 = (byte *)(unaff_EDI + -0x19efd1bb);
-  bVar13 = (byte)((ulonglong)uVar4 >> 0x20);
-  bVar11 = CARRY1(*pbVar7,bVar13) || CARRY1(*pbVar7 + bVar13,bVar10);
-  *pbVar7 = *pbVar7 + bVar13 + bVar10;
-  pbVar7 = (byte *)(unaff_ESI + 0x2e + (int)pcVar6 * 2);
-  bVar9 = *pbVar7;
-  bVar8 = *pbVar7;
-  *pbVar7 = bVar8 + bVar13 + bVar11;
-  bVar3 = (byte)uVar4;
-  bVar10 = CARRY1(unaff_BL,bVar3) ||
-           CARRY1(unaff_BL + bVar3,CARRY1(bVar9,bVar13) || CARRY1(bVar8 + bVar13,bVar11));
-  bVar11 = CARRY1(*pbVar5,bVar13) || CARRY1(*pbVar5 + bVar13,bVar10);
-  *pbVar5 = *pbVar5 + bVar13 + bVar10;
-  pbVar7 = (byte *)(unaff_ESI + 0x48);
-  bVar9 = *pbVar7;
-  bVar8 = *pbVar7;
-  *pbVar7 = bVar8 + bVar13 + bVar11;
-  *pcVar6 = *pcVar6 + bVar3 + (CARRY1(bVar9,bVar13) || CARRY1(bVar8 + bVar13,bVar11));
-  *(char **)pbVar5 = pcVar6 + *(int *)pbVar5;
-  *pbVar5 = *pbVar5 + bVar3 + (char)*(undefined4 *)pbVar5 + *pbVar5;
-  *extraout_ECX = *extraout_ECX | bVar12;
-  pcVar14 = (code *)swi(3);
-  pAVar15 = (AvatarModifier *)(*pcVar14)();
-  return pAVar15;
+  (pAVar2->fields).owner = owner;
+  func_?(&(pAVar2->fields).owner);
+  return pAVar2;
 }
 
 
 /* Void Deactivate(Avatar) */
 
 void Assembly-CSharp.dll::AvatarModifier::AvatarModifier_Deactivate
-               (AvatarModifier *this,Avatar_1 *target,MethodInfo *method)
+               (AvatarModifier *this,Avatar *target,MethodInfo *method)
 
 {
   pAVar1 = this->klass;
   (this->fields).isActivated = 0;
-  (*(code *)(pAVar1->vtable).OnDeactivated.method)(this,target,pAVar1[1]._0.image);
+  (*(pAVar1->vtable).OnDeactivated.methodPtr)(this,target,(pAVar1->vtable).OnDeactivated.method);
   return;
 }
 
@@ -329,13 +213,15 @@ bool Assembly-CSharp.dll::AvatarModifier::AvatarModifier_get_IsLocal
                (AvatarModifier *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).owner;
-  if (pAVar1 != (Avatar_1 *)0x0) {
-    return (pAVar1->fields).isLocal;
+  puStack_1 = &stack0xfffffffc;
+  pAVar2 = (this->fields).owner;
+  if (pAVar2 != (Avatar *)0x0) {
+    return (pAVar2->fields).isLocal;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 

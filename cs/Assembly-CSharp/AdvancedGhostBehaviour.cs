@@ -10,7 +10,7 @@ using CodeStage.AntiCheat.ObscuredTypes;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AdvancedGhostBehaviour : MonoBehaviour
 {
@@ -54,7 +54,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 	{
 		// Methods
 		void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		Type Update(AdvancedGhostBehaviour ghostBehaviour);
+		System.Type Update(AdvancedGhostBehaviour ghostBehaviour);
 		void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -65,8 +65,8 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 
 		// Methods
 		public abstract void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		public Type Update(AdvancedGhostBehaviour ghostBehaviour);
-		protected abstract Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
+		public System.Type Update(AdvancedGhostBehaviour ghostBehaviour);
+		protected abstract System.Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
 		public abstract void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -80,7 +80,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 
 		// Methods
 		public override void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		protected override Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
+		protected override System.Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
 		public override void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -96,7 +96,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 
 		// Methods
 		public void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		public Type Update(AdvancedGhostBehaviour ghostBehaviour);
+		public System.Type Update(AdvancedGhostBehaviour ghostBehaviour);
 		public void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -107,7 +107,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 
 		// Methods
 		public void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		public Type Update(AdvancedGhostBehaviour ghostBehaviour);
+		public System.Type Update(AdvancedGhostBehaviour ghostBehaviour);
 		public void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -118,7 +118,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 
 		// Methods
 		public void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		public Type Update(AdvancedGhostBehaviour ghostBehaviour);
+		public System.Type Update(AdvancedGhostBehaviour ghostBehaviour);
 		public void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -133,7 +133,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 
 		// Methods
 		public override void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		protected override Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
+		protected override System.Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
 		public override void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -147,7 +147,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 
 		// Methods
 		public override void Enter(AdvancedGhostBehaviour ghostBehaviour);
-		protected override Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
+		protected override System.Type UpdateState(AdvancedGhostBehaviour ghostBehaviour);
 		public override void Exit(AdvancedGhostBehaviour ghostBehaviour);
 	}
 
@@ -233,7 +233,7 @@ public class AdvancedGhostBehaviour : MonoBehaviour
 	private void SetInitialState();
 	private void UpdatePositionAndRotation();
 	private void UpdateBehaviourState();
-	private void SetCurrentState(Type type);
+	private void SetCurrentState(System.Type type);
 	private Vector3 GetMoveVector(Vector3 targetPos);
 	private void SetDesiredPosition(Vector3 position);
 }

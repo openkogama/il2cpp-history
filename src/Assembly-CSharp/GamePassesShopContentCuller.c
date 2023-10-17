@@ -7,20 +7,21 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).gamePassShopContentList;
-  if (this_00 != (List_1_IGamePassShopContent_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)gamePassContentElement,
+  this_00 = (List_1_System_Object_ *)(this->fields).gamePassShopContentList;
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,(Object *)gamePassContentElement,
                MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__Add_IGamePassShopContent_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -33,7 +34,10 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__IGamePassShopContent);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
   iVar1 = amoutOfElements + previousStartElement;
@@ -42,38 +46,33 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
       return;
     }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
+                     );
       cRam_? = '\x01';
     }
     if (-1 < previousStartElement) {
-      this_00 = (this->fields).gamePassShopContentList;
-      if (this_00 == (List_1_IGamePassShopContent_ *)0x0) {
+      pLVar2 = (this->fields).gamePassShopContentList;
+      if (pLVar2 == (List_1_IGamePassShopContent_ *)0x0) {
 code_?:
-        func_?(0);
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
+        func_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
-      pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                          MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
-                         );
-      if ((previousStartElement < (int)pOVar3) &&
+      if ((previousStartElement < (pLVar2->fields)._size) &&
          ((previousStartElement < newStartElement ||
           ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement))))
       {
-        this_01 = (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)
-                  (this->fields).gamePassShopContentList;
-        if ((this_01 == (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) ||
-           (pIVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                     IEventSystemHandler]::
-                     List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                               (this_01,previousStartElement,
-                                MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
-                               ), pIVar4 == (IEventSystemHandler *)0x0)) goto code_?;
-        func_?(1,TypeInfo__IGamePassShopContent);
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           (this->fields).gamePassShopContentList,previousStartElement,
+                           MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
+                          );
+        if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        func_?(1,TypeInfo__IGamePassShopContent,RVar4);
       }
     }
     previousStartElement = previousStartElement + 1;
@@ -88,25 +87,20 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).gamePassShopContentList;
-  if (this_00 != (List_1_IGamePassShopContent_ *)0x0) {
-    amoutOfElements =
-         mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-         Serialization::JsonProperty]::
-         Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                   ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
+    func_?(&
                     MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
                    );
-    GamePassesShopContentCuller_HideElements(this,0,(int32_t)amoutOfElements,0,(MethodInfo *)0x0);
+    cRam_? = '\x01';
+  }
+  pLVar1 = (this->fields).gamePassShopContentList;
+  if (pLVar1 != (List_1_IGamePassShopContent_ *)0x0) {
+    GamePassesShopContentCuller_HideElements(this,0,(pLVar1->fields)._size,0,(MethodInfo *)0x0);
     GamePassesShopContentCuller_ShowElements(this,0,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -119,26 +113,23 @@ bool Assembly-CSharp.dll::GamePassesShopContentCuller::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__;
+    func_?();
     cRam_? = '\x01';
   }
   if (index < 0) {
     return 0;
   }
-  this_00 = (this->fields).gamePassShopContentList;
-  if (this_00 != (List_1_IGamePassShopContent_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                        MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
-                       );
-    return index < (int)pOVar1;
+  pLVar2 = (this->fields).gamePassShopContentList;
+  if (pLVar2 != (List_1_IGamePassShopContent_ *)0x0) {
+    return index < (pLVar2->fields)._size;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -149,7 +140,10 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__IGamePassShopContent);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
   (this->fields).currentSelectionStartIndex = startElementIndex;
@@ -157,35 +151,30 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
   if (startElementIndex < (this->fields).maxSelectionElementsOnScreen + startElementIndex) {
     do {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
+                       );
         cRam_? = '\x01';
       }
       if (-1 < index) {
-        this_00 = (this->fields).gamePassShopContentList;
-        if (this_00 == (List_1_IGamePassShopContent_ *)0x0) {
+        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields).gamePassShopContentList;
+        if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
-          func_?(0);
+          func_?();
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
           return;
         }
-        pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                            MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
-                           );
-        if (index < (int)pOVar2) {
-          this_01 = (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)
-                    (this->fields).gamePassShopContentList;
-          if ((this_01 == (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) ||
-             (pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                       ::IEventSystemHandler]::
-                       List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                 (this_01,index,
-                                  MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
-                                 ), pIVar3 == (IEventSystemHandler *)0x0)) goto code_?;
-          func_?(0,TypeInfo__IGamePassShopContent);
+        if (index < (this_00->fields)._size) {
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_00,index,
+                             MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
+                            );
+          if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          func_?(0,TypeInfo__IGamePassShopContent,RVar2);
         }
       }
       index = index + 1;
@@ -203,7 +192,9 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields).scrollbar;
@@ -212,42 +203,38 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::
                       (this_00,(MethodInfo *)0x0);
     pLVar2 = (this->fields).gamePassShopContentList;
     if (pLVar2 != (List_1_IGamePassShopContent_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                          MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
-                         );
-      if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Mathf);
+      iVar3 = (pLVar2->fields)._size;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
       }
-      iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt
-                        ((float)(int)pOVar3 * fVar1,(MethodInfo *)0x0);
-      newStartElement =
-           UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt
-                     ((float)iVar4 -
-                      (float)(this->fields).maxSelectionElementsOnScreen * _UNK_?,
-                      (MethodInfo *)0x0);
-      iVar4 = (this->fields).currentSelectionStartIndex;
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      cVar4 = cRam_?;
+      fVar5 = (float10)func_?((double)((float)iVar3 * fVar1));
+      fVar1 = (float)(this->fields).maxSelectionElementsOnScreen * _UNK_?;
+      if (cVar4 == '\0') {
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      fVar5 = (float10)func_?((double)((float)(int)fVar5 - fVar1));
       pLVar2 = (this->fields).gamePassShopContentList;
       if (pLVar2 != (List_1_IGamePassShopContent_ *)0x0) {
-        pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar2,
-                            MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
-                           );
         GamePassesShopContentCuller_HideElements
-                  (this,iVar4,(int32_t)pOVar3,newStartElement,(MethodInfo *)0x0);
-        GamePassesShopContentCuller_ShowElements(this,newStartElement,(MethodInfo *)0x0);
+                  (this,(this->fields).currentSelectionStartIndex,(pLVar2->fields)._size,(int)fVar5,
+                   (MethodInfo *)0x0);
+        GamePassesShopContentCuller_ShowElements(this,(int)fVar5,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -259,24 +246,26 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<IGamePassShopContent>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_IGamePassShopContent_ *)
             func_?(TypeInfo__System__Collections__Generic__List<IGamePassShopContent>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__List__);
-  (this->fields).gamePassShopContentList = (List_1_IGamePassShopContent_ *)this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_IGamePassShopContent_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__List__);
+    (this->fields).gamePassShopContentList = this_00;
+    func_?(&(this->fields).gamePassShopContentList,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

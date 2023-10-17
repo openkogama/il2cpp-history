@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SizeState
 {
@@ -19,13 +19,10 @@ public class SizeState
 	private float currentSize;
 	private const float scalePercent = 0.1f;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
-	private EventHandler EquipSlapGunEvent;
+	private System.EventHandler EquipSlapGunEvent;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<ScaleArgs> CameraScaleEvent;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<EventArgs> UnEquipSlapGunEvent;
 	private static List<Vector3> relativePositions;
 
@@ -35,7 +32,7 @@ public class SizeState
 	private float AvatarScale { get; }
 
 	// Events
-	public event EventHandler EquipSlapGunEvent {
+	public event System.EventHandler EquipSlapGunEvent {
 		add;
 		remove;
 	}

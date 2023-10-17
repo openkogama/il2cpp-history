@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class OneShotPooledParticleSystem : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class OneShotPooledParticleSystem : MonoBehaviour
 
 	// Methods
 	public static ParticleSystem Instantiate(PoolEnums type);
-	public static ParticleSystem Instantiate(PoolEnums type, Vector3 position, Quaternion rotation);
+	public static ParticleSystem Instantiate(PoolEnums type, Vector3 position, Quaternion rotation, Color? particleColor = default);
 	private void OnValidate();
 	private void Update();
 }

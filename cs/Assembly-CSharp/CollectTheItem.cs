@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CollectTheItem : MVBlueprintBase
 {
@@ -17,13 +17,13 @@ public class CollectTheItem : MVBlueprintBase
 	private CollectTheItemLineObject objectPrefab;
 	private bool hasInitializedReferences;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private int _WoKeyInstance_k__BackingField;
 
 	// Properties
 	public override MVWorldObjectDocumentationType DocumentationType { get; }
 	public int WoKeyInstance { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public int DropOffId { get; }
+	public bool HasDropOff { get; }
 
 	// Nested types
 	private enum LinePositionIndex

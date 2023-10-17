@@ -12,15 +12,14 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::
   fVar3 = (this->fields).stateStartTime;
   fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   if (fVar4 + _UNK_? < fVar2 * (fVar1 - fVar3)) {
-    this_00 = (AvatarMotor_OnActiveBounceDelegate *)(this->fields).onDisplayDoneCallback;
-    if (this_00 == (AvatarMotor_OnActiveBounceDelegate *)0x0) {
+    pUVar5 = (this->fields).onDisplayDoneCallback;
+    if (pUVar5 == (UnityAction *)0x0) {
       func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-              (this_00,(MethodInfo *)0x0);
+    (*(pUVar5->fields)._._.invoke_impl)((pUVar5->fields)._._.method_code);
     if ((this->fields).currentState != 2) {
       (this->fields).currentState = 2;
       fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
@@ -38,86 +37,81 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::
                (TierUnlockedPopupContentBase *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).titleOriginalYPosition;
-  fVar1 = (fVar1 - (this->fields).slideInStartTime) / _UNK_?;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Lerp
-            (fVar2 - _UNK_?,fVar2,fVar1,(MethodInfo *)0x0);
-  pTVar3 = (this->fields).titleText;
-  if (pTVar3 != (Text *)0x0) {
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pTVar3,(MethodInfo *)0x0);
-    pTVar3 = (this->fields).titleText;
-    if ((pTVar3 != (Text *)0x0) &&
-       (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pTVar3,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffdc,pTVar5,(MethodInfo *)0x0);
-      fVar2 = pVVar6->x;
-      pTVar3 = (this->fields).titleText;
-      if ((pTVar3 != (Text *)0x0) &&
-         (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                             ((Component_1 *)pTVar3,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0))
-      {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                  ((Vector3 *)&puStack_7,pTVar5,(MethodInfo *)0x0);
-        puVar8 = &stack0xffffffe8;
-        puVar9 = &UNK_?;
-        func_?();
+  pTVar1 = this;
+  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  pTVar2 = (this->fields).titleText;
+  if (pTVar2 != (Text *)0x0) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pTVar2,(MethodInfo *)0x0);
+    pTVar2 = (this->fields).titleText;
+    if ((pTVar2 != (Text *)0x0) &&
+       (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar2,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                         ((Vector3 *)&puStack_6,pTVar4,(MethodInfo *)0x0);
+      puVar7 = (undefined *)pVVar5->x;
+      pTVar2 = (this->fields).titleText;
+      if (pTVar2 != (Text *)0x0) {
+        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar2,(MethodInfo *)0x0);
         if (pTVar4 != (Transform *)0x0) {
-          value.y = (float)puVar8;
-          value.x = (float)puVar9;
-          value.z = fVar2;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar4,value,(MethodInfo *)0x0);
-          fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-          fVar2 = (fVar2 - (this->fields).slideOutStartTime) / _UNK_?;
-          if (fVar2 <= _UNK_?) {
-            return;
-          }
-          fVar1 = (this->fields).titleOriginalYPosition;
-          if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-            func_?(TypeInfo__UnityEngine__Mathf);
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Lerp
-                    (fVar1,fVar1 + _UNK_?,fVar2,(MethodInfo *)0x0);
-          pTVar3 = (this->fields).titleText;
-          if (pTVar3 != (Text *)0x0) {
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pTVar3,(MethodInfo *)0x0);
-            pTVar3 = (this->fields).titleText;
-            if ((pTVar3 != (Text *)0x0) &&
-               (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_1_get_transform((Component_1 *)pTVar3,(MethodInfo *)0x0),
-               pTVar5 != (Transform *)0x0)) {
-              pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                       Transform_get_localPosition((Vector3 *)&puStack_7,pTVar5,(MethodInfo *)0x0);
-              fVar1 = pVVar6->x;
-              pTVar3 = (this->fields).titleText;
-              if (pTVar3 != (Text *)0x0) {
-                pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_1_get_transform((Component_1 *)pTVar3,(MethodInfo *)0x0);
-                if (pTVar5 != (Transform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                            ((Vector3 *)&puStack_7,pTVar5,(MethodInfo *)0x0);
-                  puVar8 = &stack0xffffffe8;
-                  puVar9 = &UNK_?;
-                  func_?();
-                  if (pTVar4 != (Transform *)0x0) {
-                    value_00.y = (float)puVar8;
-                    value_00.x = (float)puVar9;
-                    value_00.z = fVar1;
+          puVar8 = &UNK_?;
+          puStack_6 = puVar7;
+          pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                             ((Vector3 *)&stack0xffffffd8,pTVar4,(MethodInfo *)0x0);
+          if (pTVar3 != (Transform *)0x0) {
+            value_00.y = (float)puVar8;
+            value_00.x = (float)puStack_6;
+            value_00.z = pVVar5->z;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                      (pTVar3,value_00,(MethodInfo *)0x0);
+            fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              ((MethodInfo *)0x0);
+            pTVar10 = (TierUnlockedPopupContentBase *)
+                     ((fVar9 - (this->fields).slideOutStartTime) / _UNK_?);
+            if ((float)pTVar10 <= 0.0) {
+              return;
+            }
+            fVar9 = (this->fields).titleOriginalYPosition;
+            fVar11 = fVar9 + _UNK_?;
+            if ((float)pTVar10 < 0.0) {
+              this = (TierUnlockedPopupContentBase *)0x0;
+            }
+            else {
+              this = pTVar10;
+              if ((float)_UNK_? < (float)pTVar10) {
+                this = _UNK_?;
+              }
+            }
+            pTVar2 = (pTVar1->fields).titleText;
+            if (pTVar2 != (Text *)0x0) {
+              pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pTVar2,(MethodInfo *)0x0);
+              pTVar2 = (pTVar1->fields).titleText;
+              if ((pTVar2 != (Text *)0x0) &&
+                 (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0),
+                 pTVar4 != (Transform *)0x0)) {
+                pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                         Transform_get_localPosition
+                                   ((Vector3 *)&stack0xffffffd8,pTVar4,(MethodInfo *)0x0);
+                puVar7 = (undefined *)pVVar5->x;
+                pTVar2 = (pTVar1->fields).titleText;
+                if ((pTVar2 != (Text *)0x0) &&
+                   (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                             Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0),
+                   pTVar4 != (Transform *)0x0)) {
+                  fVar9 = (fVar11 - fVar9) * (float)this + fVar9;
+                  puStack_6 = puVar7;
+                  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                           Transform_get_localPosition
+                                     ((Vector3 *)&stack0xffffffd8,pTVar4,(MethodInfo *)0x0);
+                  if (pTVar3 != (Transform *)0x0) {
+                    value.y = fVar9;
+                    value.x = (float)puStack_6;
+                    value.z = pVVar5->z;
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                              (pTVar4,value_00,(MethodInfo *)0x0);
+                              (pTVar3,value,(MethodInfo *)0x0);
                     return;
                   }
                 }
@@ -129,8 +123,8 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -143,6 +137,7 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
 
 {
   (this->fields).onDisplayDoneCallback = onDisplayDoneCallback;
+  func_?(&(this->fields).onDisplayDoneCallback,onDisplayDoneCallback);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).stateStartTime = fVar1;
   if ((this->fields).currentState != 1) {
@@ -152,55 +147,59 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
   }
   pTVar2 = (this->fields).titleText;
   if (pTVar2 != (Text *)0x0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)pTVar2,(MethodInfo *)0x0);
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pTVar2,(MethodInfo *)0x0);
     if (pTVar3 != (Transform *)0x0) {
       pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffcc,pTVar3,(MethodInfo *)0x0);
-      uVar5 = pVVar4->y;
+                         ((Vector3 *)&stack0xfffffff0,pTVar3,(MethodInfo *)0x0);
       pTVar2 = (this->fields).titleText;
-      (this->fields).titleOriginalYPosition = (float)uVar5;
+      (this->fields).titleOriginalYPosition = pVVar4->y;
       if (pTVar2 != (Text *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pTVar2,(MethodInfo *)0x0);
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar2,(MethodInfo *)0x0);
         pTVar2 = (this->fields).titleText;
         if (pTVar2 != (Text *)0x0) {
-          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                             ((Component_1 *)pTVar2,(MethodInfo *)0x0);
-          if (pTVar6 != (Transform *)0x0) {
-            pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                               ((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
-            fVar1 = pVVar4->x;
+          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pTVar2,(MethodInfo *)0x0);
+          if (pTVar5 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                      ((Vector3 *)&stack0xfffffff0,pTVar5,(MethodInfo *)0x0);
             pTVar2 = (this->fields).titleText;
             if (pTVar2 != (Text *)0x0) {
-              pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                                 ((Component_1 *)pTVar2,(MethodInfo *)0x0);
-              if (pTVar6 != (Transform *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                          ((Vector3 *)&stack0xffffffc0,pTVar6,(MethodInfo *)0x0);
-                fVar7 = 3.713477e-29 - _UNK_?;
-                uVar8 = CONCAT44(fVar1,&stack0xfffffff0);
-                func_?();
+              pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pTVar2,(MethodInfo *)0x0);
+              if (pTVar5 != (Transform *)0x0) {
+                fVar1 = 0.0 - _UNK_?;
+                pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                         Transform_get_localPosition
+                                   ((Vector3 *)&stack0xffffffe4,pTVar5,(MethodInfo *)0x0);
                 if (pTVar3 != (Transform *)0x0) {
-                  value.z = fVar7;
-                  value.x = (float)(int)uVar8;
-                  value.y = (float)(int)((ulonglong)uVar8 >> 0x20);
+                  value.y = fVar1;
+                  value.x = (float)pTVar2;
+                  value.z = pVVar4->z;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                             (pTVar3,value,(MethodInfo *)0x0);
-                  pNVar9 = (this->fields).titleTextFader;
-                  if (pNVar9 != (NotificationFade *)0x0) {
-                    NotificationFade::NotificationFade_Activate(pNVar9,(MethodInfo *)0x0);
-                    pNVar9 = (this->fields).titleTextFader;
-                    if (pNVar9 != (NotificationFade *)0x0) {
-                      NotificationFade::NotificationFade_PauseAt(pNVar9,0.29,(MethodInfo *)0x0);
-                      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                        ((MethodInfo *)0x0);
-                      (this->fields).slideInStartTime = fVar1;
-                      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                        ((MethodInfo *)0x0);
-                      (this->fields).slideOutStartTime =
-                           ((this->fields).displayTime + fVar1) - _UNK_?;
-                      return;
+                  pNVar6 = (this->fields).titleTextFader;
+                  if (pNVar6 != (NotificationFade *)0x0) {
+                    (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
+                    this_00 = (pNVar6->fields).group;
+                    (pNVar6->fields).playing = 1;
+                    if (this_00 != (CanvasGroup *)0x0) {
+                      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                                (this_00,0.0,(MethodInfo *)0x0);
+                      (pNVar6->fields).currentTime = 0.0;
+                      pNVar6 = (this->fields).titleTextFader;
+                      if (pNVar6 != (NotificationFade *)0x0) {
+                        (pNVar6->fields).pauseAt = 0.29;
+                        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                          ((MethodInfo *)0x0);
+                        (this->fields).slideInStartTime = fVar1;
+                        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                          ((MethodInfo *)0x0);
+                        (this->fields).slideOutStartTime =
+                             (fVar1 + (this->fields).displayTime) - _UNK_?;
+                        return;
+                      }
                     }
                   }
                 }
@@ -211,9 +210,9 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
       }
     }
   }
-  func_?(0);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -240,8 +239,10 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
                (TierUnlockedPopupContentBase *this,MethodInfo *method)
 
 {
-  if ((this->fields).currentState == 1) {
-    (*(code *)(this->klass->vtable).HandleDisplaying.method)(this,this->klass[1]._0.image);
+  iVar1 = (this->fields).currentState;
+  if ((iVar1 != 0) && (iVar1 == 1)) {
+    (*(this->klass->vtable).HandleDisplaying.methodPtr)
+              (this,(this->klass->vtable).HandleDisplaying.method);
   }
   return;
 }
@@ -259,9 +260,10 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
               (this_00,newAlpha,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -272,40 +274,18 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
                (TierUnlockedPopupContentBase *this,float newScale,MethodInfo *method)
 
 {
-  uStack_1 = 0;
   this_00 = (Transform *)(this->fields).mainContent;
-  fStack_2 = 0.0;
-  func_?(&uStack_1,newScale,newScale,0x3f800000,0);
   if (this_00 != (Transform *)0x0) {
-    value.z = fStack_2;
-    value.x = (float)(undefined4)uStack_1;
-    value.y = (float)uStack_1._4_4_;
+    value.y = newScale;
+    value.x = newScale;
+    value.z = 1.0;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
               (this_00,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
-}
-
-
-/* Color get_BackgroundColor() */
-
-Color * Assembly-CSharp.dll::TierUnlockedPopupContentBase::
-        TierUnlockedPopupContentBase_get_BackgroundColor
-                  (Color *__return_storage_ptr__,TierUnlockedPopupContentBase *this,
-                  MethodInfo *method)
-
-{
-  fVar1 = (this->fields).backgroundColor.g;
-  fVar2 = (this->fields).backgroundColor.b;
-  fVar3 = (this->fields).backgroundColor.a;
-  __return_storage_ptr__->r = (this->fields).backgroundColor.r;
-  __return_storage_ptr__->g = fVar1;
-  __return_storage_ptr__->b = fVar2;
-  __return_storage_ptr__->a = fVar3;
-  return __return_storage_ptr__;
 }
 

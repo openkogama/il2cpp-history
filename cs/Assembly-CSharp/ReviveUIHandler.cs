@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ReviveUIHandler : ReviveUIHandlerBase
 {
@@ -19,42 +19,55 @@ public class ReviveUIHandler : ReviveUIHandlerBase
 	private bool roundEndedWhileWatchingAd;
 	private int currentSafePointSelected;
 	private GameObject bodyClone;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
 
 	// Properties
 	protected override AdContext AdContext { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Update_c__AnonStorey0
+	private sealed class __c__DisplayClass9_0
 	{
 		// Fields
-		internal bool isBlocked;
-		internal ReviveUIHandler _this;
+		public bool isBlocked;
+		public ReviveUIHandler __4__this;
 
 		// Constructors
-		public _Update_c__AnonStorey0();
+		public __c__DisplayClass9_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__12_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__13_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnAdFinishedContinue_b__12_0(IUIStack x, BaseEventData y);
+		internal void _OnRewardedAdWatched_b__13_0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnRewardedAdWatched_c__AnonStorey1
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal NotificationPopup popup;
-		internal ReviveUIHandler _this;
+		public NotificationPopup popup;
+		public ReviveUIHandler __4__this;
 
 		// Constructors
-		public _OnRewardedAdWatched_c__AnonStorey1();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
-		internal void __m__1();
+		internal void _OnRewardedAdWatched_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -66,13 +79,12 @@ public class ReviveUIHandler : ReviveUIHandlerBase
 	private void OnGenerateTextureComplete(byte[] generatedTexture);
 	protected override void Update();
 	public override void OnWatchAdClicked();
+	public override void OnSubscriberClicked();
 	protected override void OnAdFinishedContinue();
 	protected override void OnRewardedAdWatched(RewardedAdResult result);
 	private void CreateAvatarBodyForScreenshot();
 	private void CleanupAvatarBodyAfterScreenshot();
 	[CompilerGenerated]
-	private static void _OnAdFinishedContinue_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnRewardedAdWatched_m__1(IModalPopupCreator x, BaseEventData y);
+	private void _OnRewardedAdWatched_b__13_2();
 }
 

@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -36,6 +36,7 @@ namespace ExitGames.Client.Photon
 	
 		// Methods
 		public bool ContainsUnreliableSequenceNumber(int unreliableSequenceNumber);
+		public NCommand FetchUnreliableSequenceNumber(int unreliableSequenceNumber);
 		public bool ContainsReliableSequenceNumber(int reliableSequenceNumber);
 		public NCommand FetchReliableSequenceNumber(int reliableSequenceNumber);
 		public bool TryGetFragment(int reliableSequenceNumber, bool isSequenced, out NCommand fragment);

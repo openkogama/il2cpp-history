@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_DrawPlaneToModel
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DrawPlane);
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
@@ -31,7 +31,7 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_DrawPlaneToModel
                                ((Vector3 *)&gameObject,this_00,(MethodInfo *)0x0);
             uVar5 = pVVar4->x;
             uVar6 = pVVar4->y;
-            fStack7 = pVVar4->z;
+            puStack7 = (undefined *)pVVar4->z;
             gameObject = (GameObject *)uVar5;
             method = (MethodInfo *)uVar6;
             WorldEditorDrawPlane::WorldEditorDrawPlane_SetToGridAlignedPos
@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_DrawPlaneToModel
             return;
           }
         }
-        gameObject = (GameObject *)0x0;
+        gameObject = (GameObject *)&UNK_?;
         func_?();
         pcVar8 = (code *)swi(3);
         (*pcVar8)();
@@ -47,8 +47,6 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_DrawPlaneToModel
       }
     }
   }
-  fStack7 = 0.0;
-  method = (MethodInfo *)&UNK_?;
   func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
@@ -63,7 +61,7 @@ bool Assembly-CSharp.dll::DrawPlane::DrawPlane_GetCubePosOnDrawplane
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
@@ -73,9 +71,10 @@ bool Assembly-CSharp.dll::DrawPlane::DrawPlane_GetCubePosOnDrawplane
                       (this,gameObject,intVectorHitPosition,(MethodInfo *)0x0);
     return bVar2;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  bVar2 = (*pcVar4)();
   return bVar2;
 }
 
@@ -86,21 +85,21 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_HideDrawPlane(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this = TypeInfo__DrawPlane->static_fields->drawPlaneController;
   if ((this != (DrawPlaneControllerUUI *)0x0) &&
-     (this_00 = (this->fields).worldEditorDrawPlane, this_00 != (WorldEditorDrawPlane *)0x0)) {
-    bVar1 = UIStack::UIStack_get_StackReady((UIStack *)this_00,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
+     (pWVar1 = (this->fields).worldEditorDrawPlane, pWVar1 != (WorldEditorDrawPlane *)0x0)) {
+    if ((pWVar1->fields).isActive != 0) {
       DrawPlaneControllerUUI::DrawPlaneControllerUUI_ToggleDrawPlane(this,(MethodInfo *)0x0);
     }
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -112,10 +111,11 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DrawPlane);
     cRam_? = '\x01';
   }
   TypeInfo__DrawPlane->static_fields->drawPlaneController = drawPlaneController;
+  func_?(TypeInfo__DrawPlane->static_fields,drawPlaneController);
   return;
 }
 
@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_MoveDrawPlane(int32_t dir,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
@@ -135,9 +135,10 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_MoveDrawPlane(int32_t dir,MethodI
     WorldEditorDrawPlane::WorldEditorDrawPlane_MoveDrawPlane(this,dir,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -148,12 +149,11 @@ bool Assembly-CSharp.dll::DrawPlane::DrawPlane_Pick(Vector3 *hit,MethodInfo *met
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DrawPlane);
+    func_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__EventSystem->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__EventSystem);
   }
   this_00 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current
@@ -172,9 +172,10 @@ bool Assembly-CSharp.dll::DrawPlane::DrawPlane_Pick(Vector3 *hit,MethodInfo *met
       return bVar1;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffffc);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 
@@ -185,10 +186,11 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_Reset(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DrawPlane);
     cRam_? = '\x01';
   }
   TypeInfo__DrawPlane->static_fields->drawPlaneController = (DrawPlaneControllerUUI *)0x0;
+  func_?(TypeInfo__DrawPlane->static_fields,0);
   return;
 }
 
@@ -199,7 +201,7 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_ReturnDrawPlaneToLandscape(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
@@ -208,9 +210,10 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_ReturnDrawPlaneToLandscape(Method
     WorldEditorDrawPlane::WorldEditorDrawPlane_ReturnDrawPlaneToLandscape(this,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -221,7 +224,7 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_ToggleDrawPlane(MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this = TypeInfo__DrawPlane->static_fields->drawPlaneController;
@@ -229,9 +232,10 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_ToggleDrawPlane(MethodInfo *metho
     DrawPlaneControllerUUI::DrawPlaneControllerUUI_ToggleDrawPlane(this,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&puStack_2);
+  func_?(uVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -242,21 +246,19 @@ int32_t Assembly-CSharp.dll::DrawPlane::DrawPlane_get_Altitude(MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
   if ((pDVar1 != (DrawPlaneControllerUUI *)0x0) &&
-     (this = (pDVar1->fields).worldEditorDrawPlane, this != (WorldEditorDrawPlane *)0x0)) {
-    pSVar2 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-             NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                       ((NamedThemeAttribute_1_UnityEngine_Color_ *)this,(MethodInfo *)0x0);
-    return (int32_t)pSVar2;
+     (pWVar2 = (pDVar1->fields).worldEditorDrawPlane, pWVar2 != (WorldEditorDrawPlane *)0x0)) {
+    return (pWVar2->fields)._altitude;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  iVar4 = (*pcVar3)();
-  return iVar4;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
@@ -266,17 +268,18 @@ bool Assembly-CSharp.dll::DrawPlane::DrawPlane_get_InputEnabled(MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
   if (pDVar1 != (DrawPlaneControllerUUI *)0x0) {
     return (pDVar1->fields).inputEnabled;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
@@ -286,19 +289,19 @@ bool Assembly-CSharp.dll::DrawPlane::DrawPlane_get_IsDrawPlaneActive(MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
   if ((pDVar1 != (DrawPlaneControllerUUI *)0x0) &&
-     (this = (pDVar1->fields).worldEditorDrawPlane, this != (WorldEditorDrawPlane *)0x0)) {
-    bVar2 = UIStack::UIStack_get_StackReady((UIStack *)this,(MethodInfo *)0x0);
-    return bVar2;
+     (pWVar2 = (pDVar1->fields).worldEditorDrawPlane, pWVar2 != (WorldEditorDrawPlane *)0x0)) {
+    return (pWVar2->fields).isActive;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -308,23 +311,19 @@ DrawPlaneAxis__Enum Assembly-CSharp.dll::DrawPlane::DrawPlane_get_Orientation(Me
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
   if ((pDVar1 != (DrawPlaneControllerUUI *)0x0) &&
-     (this = (pDVar1->fields).worldEditorDrawPlane, this != (WorldEditorDrawPlane *)0x0)) {
-    pOVar2 = System.Core.dll::System::Linq::Enumerable+<CreateUnionIterator>c__Iterator1C`1[System::
-             Object]::
-             Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object__System_Collections_IEnumerator_get_Current
-                       ((Enumerable_CreateUnionIterator_c_Iterator1C_1_System_Object_ *)this,
-                        (MethodInfo *)0x0);
-    return (DrawPlaneAxis__Enum)pOVar2;
+     (pWVar2 = (pDVar1->fields).worldEditorDrawPlane, pWVar2 != (WorldEditorDrawPlane *)0x0)) {
+    return (pWVar2->fields).drawPlaneAxis;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  DVar4 = (*pcVar3)();
-  return DVar4;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  DVar6 = (*pcVar5)();
+  return DVar6;
 }
 
 
@@ -335,7 +334,7 @@ Vector3 * Assembly-CSharp.dll::DrawPlane::DrawPlane_get_Pos
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DrawPlane);
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
@@ -349,7 +348,7 @@ Vector3 * Assembly-CSharp.dll::DrawPlane::DrawPlane_get_Pos
     __return_storage_ptr__->z = fVar5;
     return __return_storage_ptr__;
   }
-  func_?(0);
+  func_?();
   pcVar6 = (code *)swi(3);
   pVVar2 = (Vector3 *)(*pcVar6)();
   return pVVar2;
@@ -362,17 +361,20 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_set_InputEnabled(bool value,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppDStack_1 = &TypeInfo__DrawPlane;
+    func_?();
     cRam_? = '\x01';
   }
-  pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
-  if (pDVar1 != (DrawPlaneControllerUUI *)0x0) {
-    (pDVar1->fields).inputEnabled = value;
+  pDVar2 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
+  if (pDVar2 != (DrawPlaneControllerUUI *)0x0) {
+    (pDVar2->fields).inputEnabled = value;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  ppDStack_1 = (DrawPlane__Class **)&stack0xfffffffc;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -384,7 +386,7 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_set_Orientation
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   pDVar1 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
@@ -393,9 +395,10 @@ void Assembly-CSharp.dll::DrawPlane::DrawPlane_set_Orientation
     WorldEditorDrawPlane::WorldEditorDrawPlane_set_Orientation(this,value,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -6,32 +6,43 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__FirstTimeActivatableLogicPointer___Clear_b__19_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   );
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(
-                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,
-             MethodInfo__FirstTimeActivatableLogicPointer___Clear_m__3_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-             ,
-             MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>__EventFunction_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-    func_?();
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  callbackFunction =
+       (ExecuteEvents_EventFunction_1_System_Object_ *)
+       func_?(
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                      );
+  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+               MethodInfo__FirstTimeActivatableLogicPointer___Clear_b__19_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+              );
+    return;
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_00,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-            );
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -47,6 +58,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
     FirstTimeActivatableLogicPointer_Clear(this,(MethodInfo *)0x0);
   }
   (this->fields).editorStateMachine = (EditorStateMachine *)0x0;
+  func_?(&(this->fields).editorStateMachine,0);
   FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_OnDestroy
             ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
   return;
@@ -60,46 +72,58 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__FirstTimeActivatableLogicPointer___OnShow_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   this_00 = (this->fields).placedWo;
   if (this_00 != (WorldObjectClientRef *)0x0) {
-    pMVar1 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                       ((WorldObjectClientRef_1_MVRoundCube_ *)this_00,
+    pOVar1 = WorldObjectClientRef`1[System::Object]::
+             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                       ((WorldObjectClientRef_1_System_Object_ *)this_00,
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
-    (this->fields).showing = pMVar1 != (MVRoundCube *)0x0;
-    if (pMVar1 != (MVRoundCube *)0x0) {
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(
-                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                                  );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__FirstTimeActivatableLogicPointer___OnShow_m__0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>__EventFunction_System__Object__void__
-                );
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+    (this->fields).showing = pOVar1 != (Object *)0x0;
+    if (pOVar1 != (Object *)0x0) {
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                          );
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                 MethodInfo__FirstTimeActivatableLogicPointer___OnShow_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
         func_?();
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
                 );
     }
     return;
   }
-  func_?(0);
+code_?:
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -113,23 +137,18 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   (this->fields).showing = 0;
   FirstTimeActivatableLogicPointer_Clear(this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
             ((Object_1 *)this,(MethodInfo *)0x0);
-  firstTimeEvent = (this->fields)._._.firstTimeEvent;
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-    func_?();
-  }
-  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent(firstTimeEvent,(MethodInfo *)0x0);
+  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+            ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
   return;
 }
 
@@ -141,22 +160,20 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    DesktopEditModeController_MethodInfo__UnityEngine__Component__GetComponentInParent<DesktopEditModeController>__
+                   );
     cRam_? = '\x01';
   }
   FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_Start
             ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponentInParent_6
-                      ((Component_1 *)this,
-                       DesktopEditModeController_MethodInfo__UnityEngine__Component__GetComponentInParent<DesktopEditModeController>__
-                      );
-  if (this_00 != (ThemeSkybox *)0x0) {
-    pEVar1 = (EditorStateMachine *)
-             UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-             TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-             TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                       ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)this_00,(MethodInfo *)0x0);
-    (this->fields).editorStateMachine = pEVar1;
+  pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInParent_1
+                     ((Component *)this,
+                      DesktopEditModeController_MethodInfo__UnityEngine__Component__GetComponentInParent<DesktopEditModeController>__
+                     );
+  if (pOVar1 != (Object *)0x0) {
+    (this->fields).editorStateMachine = (EditorStateMachine *)pOVar1[5].klass;
+    func_?();
     return;
   }
   func_?();
@@ -173,7 +190,29 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__FirstTimeActivatableLogicPointer___Update_b__17_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&
+                    MethodInfo__FirstTimeActivatableLogicPointer____c___Update_b__17_1_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FirstTimeActivatableLogicPointer____c);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
   if ((this->fields).showing == 0) {
@@ -187,34 +226,45 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
           EVar2 = EditorStateMachine::EditorStateMachine_get_CurEvent(pEVar1,(MethodInfo *)0x0);
           if (EVar2 == EditorEvent__Enum_ESTerrainEdit) {
             (this->fields).hasPlacedObject = 1;
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                               ((Component_1 *)this,(MethodInfo *)0x0);
-            if (TypeInfo__FirstTimeActivatableLogicPointer->static_fields->__f__am_cache0 ==
-                (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)0x0) {
-              pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                        *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-              SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-              UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                        (pUVar4,(Object *)0x0,
-                         MethodInfo__FirstTimeActivatableLogicPointer___Update_m__2_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
-                         ,
-                         MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>__EventFunction_System__Object__void__
-                        );
-              TypeInfo__FirstTimeActivatableLogicPointer->static_fields->__f__am_cache0 =
-                   (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)pUVar4;
+            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            if ((TypeInfo__FirstTimeActivatableLogicPointer____c->_1).cctor_finished_or_no_cctor ==
+                0) {
+              func_?();
             }
             callbackFunction =
-                 (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-                 TypeInfo__FirstTimeActivatableLogicPointer->static_fields->__f__am_cache0;
-            if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.
-                        methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+                 TypeInfo__FirstTimeActivatableLogicPointer____c->static_fields->__9__17_1;
+            if (callbackFunction == (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)0x0
+               ) {
+              if ((TypeInfo__FirstTimeActivatableLogicPointer____c->_1).cctor_finished_or_no_cctor
+                  == 0) {
+                func_?();
+              }
+              object = TypeInfo__FirstTimeActivatableLogicPointer____c->static_fields->__9;
+              callbackFunction =
+                   (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)func_?();
+              if (callbackFunction ==
+                  (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)0x0)
+              goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+              Object]::UnityAction_2_System_Object_System_Object___ctor
+                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                         (Object *)object,
+                         MethodInfo__FirstTimeActivatableLogicPointer____c___Update_b__17_1_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
+                         ,(MethodInfo *)0x0);
+              TypeInfo__FirstTimeActivatableLogicPointer____c->static_fields->__9__17_1 =
+                   callbackFunction;
+              func_?(&TypeInfo__FirstTimeActivatableLogicPointer____c->static_fields->
+                               __9__17_1,callbackFunction);
+            }
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
               func_?();
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy_63
-                      (pGVar3,(BaseEventData *)0x0,callbackFunction,
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar3,(BaseEventData *)0x0,
+                       (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
                       );
           }
@@ -222,22 +272,16 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
         return;
       }
       (this->fields).finishedESInsert = 1;
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
       this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       pEVar1 = (this->fields).editorStateMachine;
       if (((pEVar1 != (EditorStateMachine *)0x0) &&
-          (this_01 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                               (pEVar1,(MethodInfo *)0x0), this_01 != (MVWorldObjectClient *)0x0))
-         && (id = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                  Collection_1_VoxelHit__get_Items
-                            ((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0),
-            this_00 != (MVWorldObjectClientManager *)0x0)) {
+          (pMVar4 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                              (pEVar1,(MethodInfo *)0x0), pMVar4 != (MVWorldObjectClient *)0x0)) &&
+         (this_00 != (MVWorldObjectClientManager *)0x0)) {
         pWVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                           (this_00,(int32_t)id,(MethodInfo *)0x0);
+                           (this_00,(pMVar4->fields)._.id,(MethodInfo *)0x0);
         (this->fields).placedWo = pWVar5;
+        func_?(&(this->fields).placedWo);
         return;
       }
     }
@@ -245,72 +289,71 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
   else {
     pWVar5 = (this->fields).placedWo;
     if (pWVar5 != (WorldObjectClientRef *)0x0) {
-      pMVar6 = WorldObjectClientRef`1[MVRoundCube]::
-               WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                         ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar5,
+      pOVar6 = WorldObjectClientRef`1[System::Object]::
+               WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                         ((WorldObjectClientRef_1_System_Object_ *)pWVar5,
                           MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                          );
-      if (pMVar6 != (MVRoundCube *)0x0) {
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-        pUVar4 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(
-                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                                   );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar4,(Object *)this,
-                   MethodInfo__FirstTimeActivatableLogicPointer___Update_m__1_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+      if (pOVar6 == (Object *)0x0) {
+code_?:
+        FirstTimeActivatableLogicPointer_OnShown(this,(MethodInfo *)0x0);
+        return;
+      }
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction_00 =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                          );
+      if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
+                   MethodInfo__FirstTimeActivatableLogicPointer___Update_b__17_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
           func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
-                  (pGVar3,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar4,
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
                   );
         if ((this->fields).hasPlacedObject == 0) {
           return;
         }
         pEVar1 = (this->fields).editorStateMachine;
-        if (pEVar1 == (EditorStateMachine *)0x0) goto code_?;
-        EVar2 = EditorStateMachine::EditorStateMachine_get_CurEvent(pEVar1,(MethodInfo *)0x0);
-        if (EVar2 != EditorEvent__Enum_ObjectSelected) {
-          return;
-        }
-        if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-          func_?();
-        }
-        bVar7 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
-                          (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
-        if (bVar7 == 0) {
-          return;
+        if (pEVar1 != (EditorStateMachine *)0x0) {
+          EVar2 = EditorStateMachine::EditorStateMachine_get_CurEvent(pEVar1,(MethodInfo *)0x0);
+          if (EVar2 != EditorEvent__Enum_ObjectSelected) {
+            return;
+          }
+          if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          bVar7 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+                            (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
+          if (bVar7 == 0) {
+            return;
+          }
+          goto code_?;
         }
       }
-      FirstTimeActivatableLogicPointer_OnShown(this,(MethodInfo *)0x0);
-      return;
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;
 }
 
 
-/* Void <Clear>m__3(TextBubbleController, BaseEventData) */
+/* Void <Clear>b__19_0(TextBubbleController, BaseEventData) */
 
 void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
-     FirstTimeActivatableLogicPointer__Clear_m__3
+     FirstTimeActivatableLogicPointer__Clear_b__19_0
                (FirstTimeActivatableLogicPointer *this,TextBubbleController *x,BaseEventData *y,
                MethodInfo *method)
 
@@ -320,200 +363,175 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
               (x,(this->fields).bubbleId,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
 
-/* Void <OnShow>m__0(TextBubbleController, BaseEventData) */
+/* Void <OnShow>b__16_0(TextBubbleController, BaseEventData) */
 
 void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
-     FirstTimeActivatableLogicPointer__OnShow_m__0
+     FirstTimeActivatableLogicPointer__OnShow_b__16_0
                (FirstTimeActivatableLogicPointer *this,TextBubbleController *x,BaseEventData *y,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__FirstTimeActivatableLogicPointer__OnShown__);
+    func_?(&
+                    UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__RectTransform);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
   this_00 = (this->fields).placedWo;
   if ((this_00 != (WorldObjectClientRef *)0x0) &&
-     (pMVar1 = WorldObjectClientRef`1[MVRoundCube]::
-               WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                         ((WorldObjectClientRef_1_MVRoundCube_ *)this_00,
+     (pOVar1 = WorldObjectClientRef`1[System::Object]::
+               WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                         ((WorldObjectClientRef_1_System_Object_ *)this_00,
                           MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                         ), pMVar1 != (MVRoundCube *)0x0)) {
-    puVar2 = (undefined8 *)
-             (*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)
-                       (&stack0xffffffe4,pMVar1,(pMVar1->klass->vtable).set_WorldPosition.methodPtr)
-    ;
-    uVar3._0_4_ = (this->fields).bubbleWorldSpaceOffset.x;
-    uStack_4 = (this->fields).bubbleWorldSpaceOffset.y;
-    fVar5 = (this->fields).bubbleWorldSpaceOffset.z;
-    auStack_6._4_8_ = *puVar2;
-    fVar7 = *(float *)(puVar2 + 1);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    a.z = fVar7;
-    a.x = (float)auStack_6._4_4_;
-    a.y = (float)auStack_6._8_4_;
-    b.z = fVar5;
-    b.x = (float)(int)uVar3;
-    b.y = (float)(int)((ulonglong)uVar3 >> 0x20);
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                       ((Vector3 *)auStack_6,a,b,(MethodInfo *)0x0);
+                         ), pOVar1 != (Object *)0x0)) {
+    pOVar2 = pOVar1->klass;
+    uVar3._0_1_ = pOVar2[1]._1.typeHierarchyDepth;
+    uVar3._1_1_ = pOVar2[1]._1.genericRecursionDepth;
+    uVar3._2_1_ = pOVar2[1]._1.rank;
+    uVar3._3_1_ = pOVar2[1]._1.minimumAlignment;
+    puVar4 = (undefined8 *)
+             (**(code **)&pOVar2[1]._1.interfaces_count)(&stack0xffffffd8,pOVar1,uVar3);
+    fVar5 = *(float *)(puVar4 + 1);
+    uVar6 = (this->fields).bubbleWorldSpaceOffset.x;
+    uVar7 = (this->fields).bubbleWorldSpaceOffset.y;
+    fStack_8 = (float)*puVar4;
+    fStack_8 = (float)uVar6 + fStack_8;
+    fVar9 = (this->fields).bubbleWorldSpaceOffset.z;
+    fStack_10 = (float)((ulonglong)*puVar4 >> 0x20);
+    fStack_10 = (float)uVar7 + fStack_10;
+    lifeTime = (this->fields).bubbleLifetimeWhileShown;
     content = (this->fields).bubbleContent;
-    uVar3._0_4_ = pVVar8->x;
-    uStack_4 = pVVar8->y;
-    fVar7 = pVVar8->z;
-    fVar5 = (this->fields).bubbleLifetimeWhileShown;
-    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    pVVar10 = &(this->fields).offset;
-    auStack_6._4_8_ = *pVVar10;
+    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
     if (x != (TextBubbleController *)0x0) {
-      worldPosition.z = fVar7;
-      uStack_4 = (undefined4)((ulonglong)uVar3 >> 0x20);
-      worldPosition.x = (float)(undefined4)uVar3;
-      worldPosition.y = (float)uStack_4;
-      iVar11 = TextBubbleController::TextBubbleController_ShowBubble3D_1
-                        (x,worldPosition,fVar5,content,pTVar9,*pVVar10,(MethodInfo *)0x0);
-      (this->fields).bubbleId = iVar11;
+      worldPosition.y = fStack_10;
+      worldPosition.x = fStack_8;
+      worldPosition.z = fVar9 + fVar5;
+      iVar12 = TextBubbleController::TextBubbleController_ShowBubble3D_1
+                         (x,worldPosition,lifeTime,content,pTVar11,(this->fields).offset,
+                          (MethodInfo *)0x0);
+      (this->fields).bubbleId = iVar12;
       if (((this->fields).skipAllowed == 0) || ((this->fields).hasButtonBeenAdded != 0)) {
         return;
       }
       original = (this->fields).skipElement;
       (this->fields).hasButtonBeenAdded = 1;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      this_01 = (HoverCraftMotor *)
-                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                          ((XpBoostParticlePreviewer *)original,
+      this_02 = (Component *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                          ((Object *)original,
                            UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
                           );
-      if (this_01 != (HoverCraftMotor *)0x0) {
-        this_02 = (UnityEvent *)
-                  HoverCraftMotor::HoverCraftMotor_get_VehicleCamera(this_01,(MethodInfo *)0x0);
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this,MethodInfo__FirstTimeActivatableLogicPointer__OnShown__,
-                   (MethodInfo *)0x0);
-        if (this_02 != (UnityEvent *)0x0) {
+      if (this_02 != (Component *)0x0) {
+        this_01 = this_02[0xe].fields._.m_CachedPtr;
+        this_03 = (NavMesh_OnNavMeshPreUpdate *)
+                  func_?(TypeInfo__UnityEngine__Events__UnityAction);
+        if ((this_03 != (NavMesh_OnNavMeshPreUpdate *)0x0) &&
+           (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (this_03,(Object *)this,
+                       MethodInfo__FirstTimeActivatableLogicPointer__OnShown__,(MethodInfo *)0x0),
+           this_01 != (UnityEvent *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                    (this_02,(UnityAction *)this_03,(MethodInfo *)0x0);
-          iVar11 = (this->fields).bubbleId;
-          pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                              ((Component_1 *)this_01,(MethodInfo *)0x0);
-          pTVar9 = (Transform *)0x0;
-          if (pTVar12 == (Transform *)0x0) {
+                    (this_01,(UnityAction *)this_03,(MethodInfo *)0x0);
+          iVar12 = (this->fields).bubbleId;
+          pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              (this_02,(MethodInfo *)0x0);
+          pTVar11 = (Transform *)0x0;
+          if (pTVar13 == (Transform *)0x0) {
 code_?:
             TextBubbleController::TextBubbleController_AddElement
-                      (x,iVar11,(RectTransform *)pTVar9,(MethodInfo *)0x0);
+                      (x,iVar12,(RectTransform *)pTVar11,(MethodInfo *)0x0);
             return;
           }
-          if (pTVar12->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-            pTVar9 = pTVar12;
+          if (pTVar13->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+            pTVar11 = pTVar13;
           }
-          if (pTVar9 != (Transform *)0x0) goto code_?;
+          if (pTVar11 != (Transform *)0x0) goto code_?;
           goto code_?;
         }
       }
     }
   }
-  func_?(0);
+  func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
 
-/* Void <Update>m__1(TextBubbleController, BaseEventData) */
+/* Void <Update>b__17_0(TextBubbleController, BaseEventData) */
 
 void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
-     FirstTimeActivatableLogicPointer__Update_m__1
+     FirstTimeActivatableLogicPointer__Update_b__17_0
                (FirstTimeActivatableLogicPointer *this,TextBubbleController *x,BaseEventData *y,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
   this_00 = (this->fields).placedWo;
   bubbleId = (this->fields).bubbleId;
   if (this_00 != (WorldObjectClientRef *)0x0) {
-    pMVar1 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                       ((WorldObjectClientRef_1_MVRoundCube_ *)this_00,
+    pOVar1 = WorldObjectClientRef`1[System::Object]::
+             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                       ((WorldObjectClientRef_1_System_Object_ *)this_00,
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
-    if (pMVar1 != (MVRoundCube *)0x0) {
-      puVar2 = (undefined8 *)
-               (*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)
-                         (&VStack_3,pMVar1,(pMVar1->klass->vtable).set_WorldPosition.methodPtr);
-      VStack_3.y = (this->fields).bubbleWorldSpaceOffset.x;
-      VStack_3.z = (this->fields).bubbleWorldSpaceOffset.y;
-      VStack_4 = (Vector2)*puVar2;
-      fVar5 = *(float *)(puVar2 + 1);
-      fVar6 = (this->fields).bubbleWorldSpaceOffset.z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Vector3);
-      }
-      a.z = fVar5;
-      a.x = VStack_4.x;
-      a.y = VStack_4.y;
-      b.z = fVar6;
-      b.x = VStack_3.y;
-      b.y = VStack_3.z;
-      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                         (&VStack_3,a,b,(MethodInfo *)0x0);
-      pVVar8 = &(this->fields).offset;
-      VStack_4 = *pVVar8;
+    if (pOVar1 != (Object *)0x0) {
+      pOVar2 = pOVar1->klass;
+      uVar3._0_1_ = pOVar2[1]._1.typeHierarchyDepth;
+      uVar3._1_1_ = pOVar2[1]._1.genericRecursionDepth;
+      uVar3._2_1_ = pOVar2[1]._1.rank;
+      uVar3._3_1_ = pOVar2[1]._1.minimumAlignment;
+      puVar4 = (undefined8 *)(**(code **)&pOVar2[1]._1.interfaces_count)(&fStack_5,pOVar1,uVar3);
+      uVar6 = *puVar4;
+      fStack_7 = *(float *)(puVar4 + 1);
+      uVar8 = (this->fields).bubbleWorldSpaceOffset.x;
+      uVar9 = (this->fields).bubbleWorldSpaceOffset.y;
+      uStack_10._0_4_ = (float)uVar6;
+      fStack_5 = (float)uVar8 + (float)uStack_10;
+      uStack_10._4_4_ = (float)((ulonglong)uVar6 >> 0x20);
+      fStack_11 = uStack_10._4_4_ + (float)uVar9;
+      fStack_12 = (this->fields).bubbleWorldSpaceOffset.z + fStack_7;
+      pVVar13 = &(this->fields).offset;
+      _fStack_10 = CONCAT44(pVVar13->x,uVar8);
+      fStack_14 = (this->fields).offset.y;
+      uStack_10 = uVar6;
       if (x != (TextBubbleController *)0x0) {
+        worldPosition.y = fStack_11;
+        worldPosition.x = fStack_5;
+        worldPosition.z = fStack_12;
         TextBubbleController::TextBubbleController_UpdatePosition3D
-                  (x,bubbleId,*pVVar7,*pVVar8,(MethodInfo *)0x0);
+                  (x,bubbleId,worldPosition,*pVVar13,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
-  return;
-}
-
-
-/* Void <Update>m__2(IFirstTimeElementActivator, BaseEventData) */
-
-void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
-     FirstTimeActivatableLogicPointer__Update_m__2
-               (IFirstTimeElementActivator *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IFirstTimeElementActivator *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -524,19 +542,15 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
                (FirstTimeActivatableLogicPointer *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
+  uVar1 = (ulonglong)_UNK_?;
+  (this->fields).bubbleWorldSpaceOffset.x = (float)(int)(uVar1 << 0x20);
+  (this->fields).bubbleWorldSpaceOffset.y = (float)(int)((uVar1 << 0x20) >> 0x20);
   (this->fields).bubbleId = -1;
   (this->fields).bubbleLifetimeWhileShown = 3.4028235e+38;
-  uStack_2 = 0;
-  func_?(&uStack_2,0,0x3fa66666,0,0);
-  (this->fields).bubbleWorldSpaceOffset.x = (float)(undefined4)uStack_2;
-  (this->fields).bubbleWorldSpaceOffset.y = (float)uStack_2._4_4_;
-  (this->fields).bubbleWorldSpaceOffset.z = fStack_1;
+  (this->fields).bubbleWorldSpaceOffset.z = 0.0;
   (this->fields).skipAllowed = 1;
-  (this->fields)._.onShowSound = 3;
-  (this->fields)._.prerequisiteEvent = -1;
-  (this->fields)._.checkForStackBlocking = 1;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
+            ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -551,8 +565,8 @@ bool Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
   bVar1 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
                     ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this,(MethodInfo *)0x0);
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
     if (this_00 == (GameObject *)0x0) {
       func_?();
       pcVar2 = (code *)swi(3);
@@ -562,7 +576,7 @@ bool Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                       (this_00,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      return (this->fields).hasPlacedObject != 0;
+      return (this->fields).hasPlacedObject;
     }
   }
   return 0;

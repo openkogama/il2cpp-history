@@ -8,14 +8,13 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButton::SpawnRoleSelectionButton_OnP
   if ((this->fields).isMouseOver != 0) {
     if (eventData == (PointerEventData *)0x0) {
 code_?:
-      func_?(0);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      uVar1 = func_?(&puStack_2);
+      func_?(uVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    pHVar2 = MVSentryGun::MVSentryGun_get_RaycastIgnoreWorldObjectIds
-                       ((MVSentryGun *)eventData,(MethodInfo *)0x0);
-    if (pHVar2 == (HashSet_1_System_Int32_ *)0x0) {
+    if ((eventData->fields)._button_k__BackingField == 0) {
       this_00 = (this->fields).spawnRoleMenu;
       if (this_00 == (SpawnRoleMenu *)0x0) goto code_?;
       SpawnRoleMenu::SpawnRoleMenu_OnSelectButtonPressed(this_00,(MethodInfo *)0x0);

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using Newtonsoft.Json.Utilities;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -16,9 +16,7 @@ namespace Newtonsoft.Json.Serialization
 	{
 		// Fields
 		internal static readonly DefaultSerializationBinder Instance;
-		private readonly ThreadSafeStore<TypeNameKey, Type> _typeCache;
-		[CompilerGenerated]
-		private static Func<TypeNameKey, Type> __f__mg_cache0;
+		private readonly ThreadSafeStore<TypeNameKey, System.Type> _typeCache;
 	
 		// Nested types
 		internal struct TypeNameKey
@@ -41,7 +39,7 @@ namespace Newtonsoft.Json.Serialization
 		static DefaultSerializationBinder();
 	
 		// Methods
-		private static Type GetTypeFromTypeNameKey(TypeNameKey typeNameKey);
-		public override Type BindToType(string assemblyName, string typeName);
+		private static System.Type GetTypeFromTypeNameKey(TypeNameKey typeNameKey);
+		public override System.Type BindToType(string assemblyName, string typeName);
 	}
 }

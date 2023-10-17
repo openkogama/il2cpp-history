@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePopup : FirstTimeActivatableElementBase
 {
@@ -35,6 +35,6 @@ public class FirstTimeActivatablePopup : FirstTimeActivatableElementBase
 	private void PushToStack();
 	private void OnPop();
 	[CompilerGenerated]
-	private void _PushToStack_m__0(IUIStack x, BaseEventData y);
+	private void _PushToStack_b__9_0(IUIStack x, BaseEventData y);
 }
 

@@ -6,69 +6,52 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
                MethodInfo *method)
 
 {
-  _enabled = (Text *)(uint)enabled;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                   );
+    func_?(&TypeInfo__MV__WorldObject__MVTeam);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._.checkmark;
-  bVar1 = 0;
   if (this_00 != (Image *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
               (this_00,checkmarkSprite,(MethodInfo *)0x0);
-    unaff_EBX = (this->fields)._.textField;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    bVar1 = 0;
-    if (this_01 != (MVNetworkGame *)0x0) {
-      this_02 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                          ((DayNightCycle *)this_01,(MethodInfo *)0x0);
-      bVar1 = 0;
-      if (this_02 != (SkyParam *)0x0) {
-        this_03 = (Dictionary_2_MV_WorldObject_MVTeam_System_Object_ *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_02,
-                             (MethodInfo *)0x0);
-        bVar1 = 0;
-        if ((this_03 != (Dictionary_2_MV_WorldObject_MVTeam_System_Object_ *)0x0) &&
-           (bVar1 = 0, unaff_EDI != (int *)0x0)) {
-          pIVar2 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
-          bVar1 = *(Il2CppClass **)(*unaff_EDI + 0x20) < pIVar2;
-          if (*(Il2CppClass **)(*unaff_EDI + 0x20) == pIVar2) {
-            pMVar3 = (MVTeam__Enum *)func_?();
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::MVTeam,System
-            ::Object]::Dictionary_2_MV_WorldObject_MVTeam_System_Object__get_Item
-                      (this_03,*pMVar3,
-                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                      );
-            bVar1 = 0;
-            if (unaff_EBX == (Text *)0x0) goto code_?;
-            (*(code *)(unaff_EBX->klass->vtable).set_text.method)();
-            pIVar2 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
-            bVar1 = *(Il2CppClass **)(*unaff_EDI + 0x20) < pIVar2;
-            if (*(Il2CppClass **)(*unaff_EDI + 0x20) == pIVar2) {
-              func_?();
-              return;
-            }
-            func_?();
-            unaff_EBX = _enabled;
-          }
-          func_?();
+    pTVar1 = (this->fields)._.textField;
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    method_00 = 
+    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+    ;
+    if ((((pMVar2 != (MVNetworkGame *)0x0) &&
+         (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) &&
+        (this_01 = (pMVar3->fields).teamNames,
+        this_01 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) &&
+       (team != (Object *)0x0)) {
+      if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class)
+      {
+        pIVar4 = (Int32Enum__Enum *)func_?(team);
+        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,*pIVar4,
+                            method_00);
+        if (pTVar1 == (Text *)0x0) goto code_?;
+        (*(pTVar1->klass->vtable).set_text.methodPtr)
+                  (pTVar1,pOVar5,(pTVar1->klass->vtable).set_text.method);
+        if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class
+           ) {
+          func_?(team);
+          return;
         }
       }
+      func_?(team,TypeInfo__MV__WorldObject__MVTeam);
     }
   }
 code_?:
-  uVar4 = func_?();
-  cRam_? = cRam_? + (char)unaff_EBX +
-                 (uVar4 < 0x1d1017f2 || uVar4 + 0xe2efe80e < (uint)bVar1);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  *(char *)(extraout_ECX + -0x56efcb4c) =
+       *(char *)(extraout_ECX + -0x56efcb4c) + (char)((uint)extraout_ECX >> 8);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

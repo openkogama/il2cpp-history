@@ -8,7 +8,7 @@ Assembly-CSharp.dll::SizeModifier+ActionDelegate::SizeModifier_ActionDelegate_Be
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

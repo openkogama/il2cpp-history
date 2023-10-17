@@ -7,23 +7,34 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AvatarEditModeCamera : JetPackCamera
 {
-	// Fields
-	[CompilerGenerated]
-	private static Func<MVWorldObjectClient, bool> __f__am_cache0;
-
 	// Properties
 	public override CameraType CameraType { get; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<MVWorldObjectClient, bool> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _ResetPosition_b__2_0(MVWorldObjectClient wo);
+	}
 
 	// Constructors
 	public AvatarEditModeCamera();
 
 	// Methods
 	public void ResetPosition(Vector3 lookAtPosition);
-	[CompilerGenerated]
-	private static bool _ResetPosition_m__0(MVWorldObjectClient wo);
 }
 

@@ -7,30 +7,41 @@ GhostEye_SneakySideToSide_GetSneakySideToSideRotation
           (Quaternion *__return_storage_ptr__,GhostEye_SneakySideToSide *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = _UNK_?;
-  fVar1 = (this->fields)._.direction * fVar1 * (this->fields)._.rotatationPrSecond * _UNK_? +
-          (this->fields)._.wrappedTime;
-  (this->fields)._.wrappedTime = fVar1;
-  fVar3 = _UNK_?;
-  while (_UNK_? = fVar3, fVar2 <= fVar1) {
-    fVar1 = (this->fields)._.wrappedTime - fVar2;
-    (this->fields)._.wrappedTime = fVar1;
-    fVar3 = _UNK_?;
+  fVar3 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond *
+          _UNK_? + (this->fields)._.wrappedTime;
+  (this->fields)._.wrappedTime = fVar3;
+  fVar4 = _UNK_?;
+  while (_UNK_? = fVar4, fVar2 <= fVar3) {
+    fVar3 = (this->fields)._.wrappedTime - fVar2;
+    (this->fields)._.wrappedTime = fVar3;
+    fVar4 = _UNK_?;
   }
-  while (fVar1 < fVar3) {
-    fVar1 = (this->fields)._.wrappedTime + fVar2;
-    (this->fields)._.wrappedTime = fVar1;
+  pfVar5 = &(this->fields)._.wrappedTime;
+  if (*pfVar5 <= fVar4 && fVar4 != *pfVar5) {
+    do {
+      fVar3 = (this->fields)._.wrappedTime + fVar2;
+      (this->fields)._.wrappedTime = fVar3;
+    } while (fVar3 < fVar4);
   }
-  pQVar4 = GhostEye+IdleBase::GhostEye_IdleBase_GetYawRotation
-                     ((Quaternion *)&stack0xffffffe8,(GhostEye_IdleBase *)this,(MethodInfo *)0x0);
-  fVar1 = pQVar4->y;
-  fVar3 = pQVar4->z;
-  fVar2 = pQVar4->w;
-  __return_storage_ptr__->x = pQVar4->x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar3;
-  __return_storage_ptr__->w = fVar2;
+  dVar6 = (double)(this->fields)._.wrappedTime;
+  func_?();
+  fVar4 = (this->fields)._.radiusYaw;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                     (&QStack_8,(float)dVar6 * fVar4,
+                      TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+  fVar4 = pQVar7->y;
+  fVar2 = pQVar7->z;
+  fVar3 = pQVar7->w;
+  __return_storage_ptr__->x = pQVar7->x;
+  __return_storage_ptr__->y = fVar4;
+  __return_storage_ptr__->z = fVar2;
+  __return_storage_ptr__->w = fVar3;
   return __return_storage_ptr__;
 }
 

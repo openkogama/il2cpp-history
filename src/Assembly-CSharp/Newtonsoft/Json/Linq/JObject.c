@@ -6,12 +6,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_Add
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JProperty);
     cRam_? = '\x01';
   }
   this_00 = (JProperty *)func_?(TypeInfo__Newtonsoft__Json__Linq__JProperty);
-  JProperty::JProperty__ctor_3(this_00,propertyName,(Object *)value,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).Add.method)(this,this_00,(this->klass->vtable).Add_1.methodPtr);
+  if (this_00 != (JProperty *)0x0) {
+    JProperty::JProperty__ctor_3(this_00,propertyName,(Object *)value,(MethodInfo *)0x0);
+    (*(this->klass->vtable).Add.methodPtr)(this,this_00,(this->klass->vtable).Add.method);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -23,34 +29,50 @@ JToken * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_CloneToke
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject);
     cRam_? = '\x01';
   }
   this_00 = (JContainer *)func_?(TypeInfo__Newtonsoft__Json__Linq__JObject);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  if (this_00 != (JContainer *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+      func_?(&TypeInfo__System__StringComparer);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__StringComparer);
+    }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__StringComparer);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__StringComparer);
+    }
+    target = TypeInfo__System__StringComparer->static_fields->s_ordinal;
+    this_01 = (JContainer__Class *)
+              func_?(TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+    if (this_01 != (JContainer__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+                       );
+        cRam_? = '\x01';
+      }
+      mscorlib.dll::System::WeakReference`1[Object]::WeakReference_1_Object___ctor
+                ((WeakReference_1_Object_ *)this_01,(Object *)target,
+                 MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+                );
+      this_00[1].klass = this_01;
+      func_?(this_00 + 1,this_01);
+      JContainer::JContainer__ctor_1(this_00,(JContainer *)this,(MethodInfo *)0x0);
+      return (JToken *)this_00;
+    }
   }
-  if ((((uint)(TypeInfo__System__StringComparer->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__StringComparer->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__StringComparer);
-  }
-  comparer = mscorlib.dll::System::StringComparer::StringComparer_get_Ordinal((MethodInfo *)0x0);
-  this_01 = (JContainer__Class *)
-            func_?(TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  mscorlib.dll::System::Collections::ObjectModel::KeyedCollection`2[System::String,Newtonsoft::Json
-  ::Linq::JToken]::KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken___ctor
-            ((KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken_ *)this_01,
-             (IEqualityComparer_1_System_String_ *)comparer,
-             MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
-            );
-  this_00[1].klass = this_01;
-  JContainer::JContainer__ctor_1(this_00,(JContainer *)this,(MethodInfo *)0x0);
-  return (JToken *)this_00;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pJVar2 = (JToken *)(*pcVar1)();
+  return pJVar2;
 }
 
 
@@ -61,68 +83,53 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_DeepEquals
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject);
     cRam_? = '\x01';
   }
-  if (node != (JToken *)0x0) {
-    bVar1 = (TypeInfo__Newtonsoft__Json__Linq__JObject->_1).naturalAligment;
-    if (((node->klass->_1).naturalAligment < bVar1) ||
-       ((JObject__Class *)(node->klass->_1).typeHierarchy[bVar1 - 1] !=
-        TypeInfo__Newtonsoft__Json__Linq__JObject)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    pJVar3 = (JToken *)0x0;
-    if (bVar2) {
-      pJVar3 = node;
-    }
-    if (pJVar3 != (JToken *)0x0) {
-      piVar4 = (int *)(*(code *)(this->klass->vtable).get_First.method)
-                                (this,(this->klass->vtable).get_Last.methodPtr);
-      if (pJVar3 == (JToken *)0x0) {
-        func_?(0);
-        pcVar5 = (code *)swi(3);
-        bVar6 = (*pcVar5)();
-        return bVar6;
+  if (((node == (JToken *)0x0) ||
+      ((node->klass->_1).typeHierarchyDepth <
+       (TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth)) ||
+     ((JObject__Class *)
+      (node->klass->_1).typeHierarchy
+      [(TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth - 1] !=
+      TypeInfo__Newtonsoft__Json__Linq__JObject)) {
+    return 0;
+  }
+  piVar1 = (int *)(*(this->klass->vtable).get_First.methodPtr)
+                            (this,(this->klass->vtable).get_First.method);
+  piVar2 = (int *)(*(node->klass->vtable).get_First.methodPtr)
+                            (node,(node->klass->vtable).get_First.method);
+  if (piVar1 != piVar2) {
+    while (piVar1 != (int *)0x0) {
+      if (piVar2 == (int *)0x0) {
+        return 0;
       }
-      piVar7 = (int *)(*(code *)(pJVar3->klass->vtable).get_First.method)
-                                (pJVar3,(pJVar3->klass->vtable).get_Last.methodPtr);
-      if (piVar4 != piVar7) {
-        while (piVar4 != (int *)0x0) {
-          if (piVar7 == (int *)0x0) {
-            return 0;
-          }
-          cVar8 = (**(code **)(*piVar4 + 0x120))(piVar4,piVar7,*(undefined4 *)(*piVar4 + 0x124));
-          if (cVar8 == '\0') {
-            return 0;
-          }
-          piVar9 = (int *)(*(code *)(this->klass->vtable).get_Last.method)
-                                    (this,(this->klass->vtable).Children.methodPtr);
-          if (piVar4 == piVar9) {
-            piVar4 = (int *)0x0;
-          }
-          else {
-            piVar4 = (int *)piVar4[4];
-          }
-          piVar9 = (int *)(*(code *)(pJVar3->klass->vtable).get_Last.method)
-                                    (pJVar3,(pJVar3->klass->vtable).Children.methodPtr);
-          if (piVar7 == piVar9) {
-            piVar7 = (int *)0x0;
-          }
-          else {
-            piVar7 = (int *)piVar7[4];
-          }
-        }
-        if (piVar7 != (int *)0x0) {
-          return 0;
-        }
+      cVar3 = (**(code **)(*piVar1 + 0x11c))(piVar1,piVar2,*(undefined4 *)(*piVar1 + 0x120));
+      if (cVar3 == '\0') {
+        return 0;
       }
-      return 1;
+      piVar4 = (int *)(*(this->klass->vtable).get_Last.methodPtr)
+                                (this,(this->klass->vtable).get_Last.method);
+      if (piVar1 == piVar4) {
+        piVar1 = (int *)0x0;
+      }
+      else {
+        piVar1 = (int *)piVar1[4];
+      }
+      piVar4 = (int *)(*(node->klass->vtable).get_Last.methodPtr)
+                                (node,(node->klass->vtable).get_Last.method);
+      if (piVar2 == piVar4) {
+        piVar2 = (int *)0x0;
+      }
+      else {
+        piVar2 = (int *)piVar2[4];
+      }
+    }
+    if (piVar2 != (int *)0x0) {
+      return 0;
     }
   }
-  return 0;
+  return 1;
 }
 
 
@@ -133,12 +140,18 @@ JObject * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_FromObje
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonSerializer);
     cRam_? = '\x01';
   }
   this = (JsonSerializer *)func_?(TypeInfo__Newtonsoft__Json__JsonSerializer);
-  JsonSerializer::JsonSerializer__ctor(this,(MethodInfo *)0x0);
-  pJVar1 = JObject_FromObject_1(o,this,(MethodInfo *)0x0);
+  if (this != (JsonSerializer *)0x0) {
+    JsonSerializer::JsonSerializer__ctor(this,(MethodInfo *)0x0);
+    pJVar1 = JObject_FromObject_1(o,this,(MethodInfo *)0x0);
+    return pJVar1;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pJVar1 = (JObject *)(*pcVar2)();
   return pJVar1;
 }
 
@@ -150,63 +163,58 @@ JObject * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_FromObje
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject);
     cRam_? = '\x01';
   }
   pJVar1 = (JObject *)JToken::JToken_FromObjectInternal(o,jsonSerializer,(MethodInfo *)0x0);
   if (pJVar1 != (JObject *)0x0) {
-    iVar2 = (*(code *)(pJVar1->klass->vtable).get_Type.method)
-                      (pJVar1,(pJVar1->klass->vtable).get_HasValues.methodPtr);
+    iVar2 = (*(pJVar1->klass->vtable).get_Type.methodPtr)
+                      (pJVar1,(pJVar1->klass->vtable).get_Type.method);
     if (iVar2 != 1) goto code_?;
   }
   if (pJVar1 == (JObject *)0x0) {
     return (JObject *)0x0;
   }
-  bVar3 = (TypeInfo__Newtonsoft__Json__Linq__JObject->_1).naturalAligment;
-  if (((pJVar1->klass->_1).naturalAligment < bVar3) ||
-     ((JObject__Class *)(pJVar1->klass->_1).typeHierarchy[bVar3 - 1] !=
+  if (((TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth <=
+       (pJVar1->klass->_1).typeHierarchyDepth) &&
+     ((JObject__Class *)
+      (pJVar1->klass->_1).typeHierarchy
+      [(TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth - 1] ==
       TypeInfo__Newtonsoft__Json__Linq__JObject)) {
-    bVar4 = false;
-  }
-  else {
-    bVar4 = true;
-  }
-  pJVar5 = (JObject *)0x0;
-  if (bVar4) {
-    pJVar5 = pJVar1;
-  }
-  if (pJVar5 != (JObject *)0x0) {
-    return pJVar5;
+    return pJVar1;
   }
   func_?(pJVar1,TypeInfo__Newtonsoft__Json__Linq__JObject);
 code_?:
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
+  uVar3 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+  func_?(uVar3);
   provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
-  args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-  func_?(pJVar1,0);
+  uVar3 = func_?(&TypeInfo__System__Object,1);
+  args = (Object__Array *)func_?(uVar3);
+  func_?(pJVar1);
   jsonSerializer = (JsonSerializer *)func_?(0xd,pJVar1);
-  uVar6 = func_?(TypeInfo__Newtonsoft__Json__Linq__JTokenType,&jsonSerializer);
-  func_?(args,0);
-  func_?(args,uVar6);
-  func_?(0,uVar6);
-  message = Json::Utilities::StringUtils::StringUtils_FormatWith
-                      (StringLiteral_Object_serialized_to__0___JObjec,(IFormatProvider *)provider,
-                       args,(MethodInfo *)0x0);
-  this = (JsonSerializer *)func_?(TypeInfo__System__ArgumentException);
-  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-            ((ArgumentException *)this,message,(MethodInfo *)0x0);
-  pMStack7 =
-       MethodInfo__Newtonsoft__Json__Linq__JObject__FromObject_System__Object__Newtonsoft__Json__JsonSerializer_
-  ;
-  method = (MethodInfo *)0x0;
-  jsonSerializer = this;
+  uVar3 = func_?(&TypeInfo__Newtonsoft__Json__Linq__JTokenType,&jsonSerializer);
+  uVar3 = func_?(uVar3);
+  func_?(args);
+  func_?(args,uVar3);
+  func_?(0,uVar3);
+  method_00 = (MethodInfo *)0x0;
+  pSVar4 = (String *)func_?(&StringLiteral_Object_serialized_to__0___JObjec);
+  pSVar4 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                     (pSVar4,(IFormatProvider *)provider,args,method_00);
+  uVar3 = func_?(&TypeInfo__System__ArgumentException);
+  this = (ArgumentException *)func_?(uVar3);
+  func_?(this);
+  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(this,pSVar4,(MethodInfo *)0x0);
+  uStack5 =
+       func_?(&
+                       MethodInfo__Newtonsoft__Json__Linq__JObject__FromObject_System__Object__Newtonsoft__Json__JsonSerializer_
+                      );
+  jsonSerializer = (JsonSerializer *)&UNK_?;
+  method = (MethodInfo *)this;
   func_?();
-  pcVar8 = (code *)swi(3);
-  pJVar1 = (JObject *)(*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  pJVar1 = (JObject *)(*pcVar6)();
   return pJVar1;
 }
 
@@ -222,38 +230,48 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_GetDeepHas
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
     cRam_? = '\x01';
   }
-  func_?();
-  uStack_4 = 0;
-  iVar5 = (*(code *)(this->klass->vtable).get_ChildrenTokens.method)
-                    (this,(this->klass->vtable).InsertItem.methodPtr);
+  uVar4 = 0;
+  iVar5 = (*(this->klass->vtable).get_ChildrenTokens.methodPtr)
+                    (this,(this->klass->vtable).get_ChildrenTokens.method);
   if (iVar5 != 0) {
     piVar6 = (int *)func_?(0,
                                     TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>
                                     ,iVar5);
-    uStack_1 = 0;
-    while (piVar6 != (int *)0x0) {
-      cVar7 = func_?(1,TypeInfo__System__Collections__IEnumerator,piVar6);
-      unaff_EDI = 
-      TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>;
+    uStack_1 = 1;
+    while( true ) {
+      if (piVar6 == (int *)0x0) break;
+      cVar7 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar6);
       if (cVar7 == '\0') {
         uStack_1 = 0xffffffff;
         if (piVar6 != (int *)0x0) {
           func_?(0,TypeInfo__System__IDisposable,piVar6);
+          *unaff_FS_OFFSET = uStack_3;
+          return uVar4;
         }
         *unaff_FS_OFFSET = uStack_3;
-        return uStack_4;
+        return uVar4;
       }
+      if (piVar6 == (int *)0x0) break;
       uVar8 = 0;
-      uVar9 = *(ushort *)(*piVar6 + 0xb6);
+      uVar9 = *(ushort *)(*piVar6 + 0xb2);
       if (uVar9 != 0) {
-        iVar5 = *(int *)(*piVar6 + 0x58);
         do {
-          if (*(IEnumerator_1_Newtonsoft_Json_Linq_JToken___Class **)(iVar5 + (uint)uVar8 * 8) ==
+          if (*(IEnumerator_1_Newtonsoft_Json_Linq_JToken___Class **)
+               (*(int *)(*piVar6 + 0x58) + (uint)uVar8 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>) {
-            puVar10 = (undefined4 *)(*piVar6 + (*(int *)(iVar5 + 4 + (uint)uVar8 * 8) + 0x18) * 8);
+            puVar10 = (undefined4 *)
+                     (*piVar6 + 0xbc + *(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar8 * 8) * 8
+                     );
             goto code_?;
           }
           uVar8 = uVar8 + 1;
@@ -266,15 +284,15 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_GetDeepHas
 code_?:
       piVar11 = (int *)(*(code *)*puVar10)(piVar6,puVar10[1]);
       if (piVar11 == (int *)0x0) break;
-      uVar12 = (**(code **)(*piVar11 + 0x178))(piVar11,*(undefined4 *)(*piVar11 + 0x17c));
-      uStack_4 = uStack_4 ^ uVar12;
+      uVar12 = (**(code **)(*piVar11 + 0x174))(piVar11,*(undefined4 *)(*piVar11 + 0x178));
+      uVar4 = uVar4 ^ uVar12;
     }
   }
-  func_?(0);
-  func_?(unaff_EDI,0,0);
-  pcVar13 = (code *)swi(3);
-  iVar14 = (*pcVar13)();
-  return iVar14;
+  uVar13 = func_?();
+  func_?(uVar13);
+  pcVar14 = (code *)swi(3);
+  iVar15 = (*pcVar14)();
+  return iVar15;
 }
 
 
@@ -286,17 +304,20 @@ Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_GetEnumerator
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject___GetEnumerator_d__49);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__Newtonsoft__Json__Linq__JObject___GetEnumerator_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).originalScale.x = (float)this;
-    return (IEnumerator_1_KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken_ *)this_00;
+  value = (Object *)func_?(TypeInfo__Newtonsoft__Json__Linq__JObject___GetEnumerator_d__49)
+  ;
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].monitor = (MonitorData *)this;
+    func_?(&value[2].monitor,this);
+    return (IEnumerator_1_KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken_ *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator_1_KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken_ *)(*pcVar1)();
   return pIVar2;
@@ -310,63 +331,49 @@ Type * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_GetTokenPro
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JValue);
+    func_?(&TypeRef__System__Object);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   handle = TypeRef__System__Object;
   if (token == (JToken *)0x0) {
-    func_?(0);
-    token = extraout_EDX;
-code_?:
-    func_?(token,unaff_ESI);
-    pcVar1 = (code *)swi(3);
-    pTVar2 = (Type *)(*pcVar1)();
-    return pTVar2;
-  }
-  pJVar3 = token->klass;
-  bVar4 = (TypeInfo__Newtonsoft__Json__Linq__JValue->_1).naturalAligment;
-  bVar5 = (pJVar3->_1).naturalAligment;
-  if ((bVar5 < bVar4) ||
-     ((pJVar3->_1).typeHierarchy[bVar4 - 1] !=
-      (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-    bVar6 = false;
+    func_?();
+    pJVar1 = extraout_EDX;
   }
   else {
-    bVar6 = true;
-  }
-  pJVar7 = (JToken *)0x0;
-  if (bVar6) {
-    pJVar7 = token;
-  }
-  if (pJVar7 != (JToken *)0x0) {
-    bVar4 = (TypeInfo__Newtonsoft__Json__Linq__JValue->_1).naturalAligment;
-    if ((bVar5 < bVar4) ||
-       ((pJVar3->_1).typeHierarchy[bVar4 - 1] !=
+    pJVar2 = token->klass;
+    if (((pJVar2->_1).typeHierarchyDepth <
+         (TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth) ||
+       ((pJVar2->_1).typeHierarchy
+        [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] !=
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar6 = false;
+      pTVar3 = mscorlib.dll::System::Object::Object_GetType((Object *)token,(MethodInfo *)0x0);
+      return pTVar3;
     }
-    else {
-      bVar6 = true;
-    }
-    pJVar7 = (JToken *)0x0;
-    if (bVar6) {
-      pJVar7 = token;
-    }
-    unaff_ESI = TypeInfo__Newtonsoft__Json__Linq__JValue;
-    if (pJVar7 == (JToken *)0x0) goto code_?;
-    token = (JToken *)pJVar7[1].monitor;
-    if (token == (JToken *)0x0) {
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+    pJVar1 = TypeInfo__Newtonsoft__Json__Linq__JValue;
+    if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
+         (pJVar2->_1).typeHierarchyDepth) &&
+       ((pJVar2->_1).typeHierarchy
+        [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
+        (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
+      if (token[1].monitor != (MonitorData *)0x0) {
+        pTVar3 = mscorlib.dll::System::Object::Object_GetType
+                           ((Object *)token[1].monitor,(MethodInfo *)0x0);
+        return pTVar3;
+      }
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Type);
       }
-      pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+      pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                          ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-      return pTVar2;
+      return pTVar3;
     }
   }
-  pTVar2 = (Type *)func_?(token,unaff_EBP);
-  return pTVar2;
+  func_?(token,pJVar1);
+  pcVar4 = (code *)swi(3);
+  pTVar3 = (Type *)(*pcVar4)();
+  return pTVar3;
 }
 
 
@@ -377,8 +384,8 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_InsertItem
 
 {
   if ((item != (JToken *)0x0) &&
-     (iVar1 = (*(code *)(item->klass->vtable).__unknown_2.method)
-                        (item,(item->klass->vtable).__unknown_3.methodPtr), iVar1 == 5)) {
+     (iVar1 = (*(item->klass->vtable).__unknown_2.methodPtr)
+                        (item,(item->klass->vtable).__unknown_2.method), iVar1 == 5)) {
     return;
   }
   JContainer::JContainer_InsertItem((JContainer *)this,index,item,(MethodInfo *)0x0);
@@ -392,14 +399,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_InternalPrope
                (JObject *this,JProperty *childProperty,MethodInfo *method)
 
 {
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
   if (childProperty != (JProperty *)0x0) {
-    (*(code *)(this->klass->vtable).OnPropertyChanged.method)
-              (this,(childProperty->fields)._name,this->klass[1]._0.image);
+    pMStack_1 = (this->klass->vtable).OnPropertyChanged.method;
+    pSStack_2 = (childProperty->fields)._name;
+    pJStack_3 = this;
+    (*(this->klass->vtable).OnPropertyChanged.methodPtr)();
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar4 = func_?(&pJStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -411,75 +422,85 @@ JObject * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_Load
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__IJsonLineInfo);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject);
+    func_?(&StringLiteral_reader);
     cRam_? = '\x01';
   }
-  pIVar1 = (IsolatedStorageException *)reader;
+  pEVar1 = (Exception *)reader;
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)reader,StringLiteral_reader,(MethodInfo *)0x0);
-  if (pIVar1 == (IsolatedStorageException *)0x0) {
+  if (pEVar1 == (Exception *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
   }
   else {
-    iVar2 = (*(code *)(((JsonReader *)pIVar1)->klass->vtable).get_TokenType.method)
-                      (pIVar1,(((JsonReader *)pIVar1)->klass->vtable).get_Value.methodPtr);
+    iVar2 = (*(((JsonReader *)pEVar1)->klass->vtable).get_TokenType.methodPtr)
+                      (pEVar1,(((JsonReader *)pEVar1)->klass->vtable).get_TokenType.method);
     if (iVar2 != 0) {
 code_?:
-      iVar2 = (*(code *)(((JsonReader *)pIVar1)->klass->vtable).get_TokenType.method)
-                        (pIVar1,(((JsonReader *)pIVar1)->klass->vtable).get_Value.methodPtr);
+      iVar2 = (*(((JsonReader *)pEVar1)->klass->vtable).get_TokenType.methodPtr)
+                        (pEVar1,(((JsonReader *)pEVar1)->klass->vtable).get_TokenType.method);
       if (iVar2 != 1) goto code_?;
       pJVar3 = (JObject *)func_?(TypeInfo__Newtonsoft__Json__Linq__JObject);
-      JObject__ctor(pJVar3,(MethodInfo *)0x0);
       if (pJVar3 != (JObject *)0x0) {
-        method_00 = (MethodInfo *)0x0;
+        JObject__ctor(pJVar3,(MethodInfo *)0x0);
+        pMVar4 = (MethodInfo *)0x0;
         lineInfo = (IJsonLineInfo *)
-                   func_?(pIVar1,TypeInfo__Newtonsoft__Json__IJsonLineInfo);
-        JToken::JToken_SetLineInfo((JToken *)pJVar3,lineInfo,method_00);
+                   func_?(pEVar1,TypeInfo__Newtonsoft__Json__IJsonLineInfo);
+        JToken::JToken_SetLineInfo((JToken *)pJVar3,lineInfo,pMVar4);
         JContainer::JContainer_ReadTokenFrom
-                  ((JContainer *)pJVar3,(JsonReader *)pIVar1,(MethodInfo *)0x0);
+                  ((JContainer *)pJVar3,(JsonReader *)pEVar1,(MethodInfo *)0x0);
         return pJVar3;
       }
       goto code_?;
     }
-    cVar4 = (*(code *)(((JsonReader *)pIVar1)->klass->vtable).__unknown.method)
-                      (pIVar1,(((JsonReader *)pIVar1)->klass->vtable).__unknown_1.methodPtr);
-    if (cVar4 != '\0') goto code_?;
+    cVar5 = (*(((JsonReader *)pEVar1)->klass->vtable).__unknown.methodPtr)
+                      (pEVar1,(((JsonReader *)pEVar1)->klass->vtable).__unknown.method);
+    if (cVar5 != '\0') goto code_?;
   }
-  pIVar1 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (pIVar1,StringLiteral_Error_reading_JObject_from_JsonR,(MethodInfo *)0x0);
+  uVar6 = func_?(&TypeInfo__System__Exception);
+  pEVar1 = (Exception *)func_?(uVar6);
+  func_?(pEVar1);
+  pMVar4 = (MethodInfo *)0x0;
+  pSVar7 = (String *)func_?(&StringLiteral_Error_reading_JObject_from_JsonR);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar1,pSVar7,pMVar4);
   reader = (JsonReader *)
-           MethodInfo__Newtonsoft__Json__Linq__JObject__Load_Newtonsoft__Json__JsonReader_;
-  func_?(pIVar1);
+           func_?(&
+                           MethodInfo__Newtonsoft__Json__Linq__JObject__Load_Newtonsoft__Json__JsonReader_
+                          );
+  func_?();
 code_?:
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
+  uVar6 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+  func_?(uVar6);
   provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
-  args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-  func_?(pIVar1,0);
-  reader = (JsonReader *)func_?(7,pIVar1);
-  uVar5 = func_?(TypeInfo__Newtonsoft__Json__JsonToken,&reader);
-  func_?(args,0);
-  func_?(args,uVar5);
-  func_?(0,uVar5);
-  message = Json::Utilities::StringUtils::StringUtils_FormatWith
-                      (StringLiteral_Error_reading_JObject_from_JsonR,(IFormatProvider *)provider,
-                       args,(MethodInfo *)0x0);
-  pIVar1 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1(pIVar1,message,(MethodInfo *)0x0);
-  pMStack6 = MethodInfo__Newtonsoft__Json__Linq__JObject__Load_Newtonsoft__Json__JsonReader_;
-  uStack7 = 0;
-  reader = (JsonReader *)&UNK_?;
-  method = (MethodInfo *)pIVar1;
+  uVar6 = func_?(&TypeInfo__System__Object,1);
+  args = (Object__Array *)func_?(uVar6);
+  func_?(pEVar1);
+  reader = (JsonReader *)func_?(7,pEVar1);
+  uVar6 = func_?(&TypeInfo__Newtonsoft__Json__JsonToken,&reader);
+  uVar6 = func_?(uVar6);
+  func_?(args);
+  func_?(args,uVar6);
+  func_?(0,uVar6);
+  pMVar4 = (MethodInfo *)0x0;
+  pSVar7 = (String *)func_?(&StringLiteral_Error_reading_JObject_from_JsonR);
+  pSVar7 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                     (pSVar7,(IFormatProvider *)provider,args,pMVar4);
+  uVar6 = func_?(&TypeInfo__System__Exception);
+  pEVar1 = (Exception *)func_?(uVar6);
+  func_?(pEVar1);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar1,pSVar7,(MethodInfo *)0x0);
+  uStack8 =
+       func_?(&
+                       MethodInfo__Newtonsoft__Json__Linq__JObject__Load_Newtonsoft__Json__JsonReader_
+                      );
+  method = (MethodInfo *)&UNK_?;
+  pEStack9 = pEVar1;
   func_?();
-  pcVar8 = (code *)swi(3);
-  pJVar3 = (JObject *)(*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  pJVar3 = (JObject *)(*pcVar10)();
   return pJVar3;
 }
 
@@ -491,18 +512,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_OnPropertyCha
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__PropertyChangedEventArgs);
     cRam_? = '\x01';
   }
-  this_00 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)(this->fields).PropertyChanged;
-  if (this_00 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-    e = (InitializedGameQueryDataEventArgs *)
-        func_?(TypeInfo__System__ComponentModel__PropertyChangedEventArgs);
+  if ((this->fields).PropertyChanged != (PropertyChangedEventHandler *)0x0) {
+    pPVar1 = (this->fields).PropertyChanged;
+    this_00 = (PropertyChangedEventArgs *)
+              func_?(TypeInfo__System__ComponentModel__PropertyChangedEventArgs);
+    if (this_00 == (PropertyChangedEventArgs *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
     System.dll::System::ComponentModel::PropertyChangedEventArgs::PropertyChangedEventArgs__ctor
-              ((PropertyChangedEventArgs *)e,propertyName,(MethodInfo *)0x0);
-    mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-    EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-              (this_00,(Object *)this,e,(MethodInfo *)0x0);
+              (this_00,propertyName,(MethodInfo *)0x0);
+    (*(pPVar1->fields)._._.invoke_impl)
+              ((pPVar1->fields)._._.method_code,this,this_00,(pPVar1->fields)._._.method);
   }
   return;
 }
@@ -515,14 +541,23 @@ JObject * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_Parse
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonTextReader);
+    func_?(&TypeInfo__System__IO__StringReader);
     cRam_? = '\x01';
   }
   this = (StringReader *)func_?(TypeInfo__System__IO__StringReader);
-  mscorlib.dll::System::IO::StringReader::StringReader__ctor(this,json,(MethodInfo *)0x0);
-  this_00 = (JsonTextReader *)func_?(TypeInfo__Newtonsoft__Json__JsonTextReader);
-  JsonTextReader::JsonTextReader__ctor(this_00,(TextReader *)this,(MethodInfo *)0x0);
-  pJVar1 = JObject_Load((JsonReader *)this_00,(MethodInfo *)0x0);
+  if (this != (StringReader *)0x0) {
+    mscorlib.dll::System::IO::StringReader::StringReader__ctor(this,json,(MethodInfo *)0x0);
+    this_00 = (JsonTextReader *)func_?(TypeInfo__Newtonsoft__Json__JsonTextReader);
+    if (this_00 != (JsonTextReader *)0x0) {
+      JsonTextReader::JsonTextReader__ctor(this_00,(TextReader *)this,(MethodInfo *)0x0);
+      pJVar1 = JObject_Load((JsonReader *)this_00,(MethodInfo *)0x0);
+      return pJVar1;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pJVar1 = (JObject *)(*pcVar2)();
   return pJVar1;
 }
 
@@ -535,13 +570,15 @@ Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_Properties
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JProperty>_MethodInfo__System__Linq__Enumerable__Cast<Newtonsoft::Json::Linq::JProperty>_System__Collections__IEnumerable_
+                   );
     cRam_? = '\x01';
   }
   source = (IEnumerable *)
-           (*(code *)(this->klass->vtable).get_ChildrenTokens.method)
-                     (this,(this->klass->vtable).InsertItem.methodPtr);
-  pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_8
+           (*(this->klass->vtable).get_ChildrenTokens.methodPtr)
+                     (this,(this->klass->vtable).get_ChildrenTokens.method);
+  pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4
                      (source,
                       System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JProperty>_MethodInfo__System__Linq__Enumerable__Cast<Newtonsoft::Json::Linq::JProperty>_System__Collections__IEnumerable_
                      );
@@ -557,54 +594,63 @@ Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_Property
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JProperty);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
+  pJStack_1 = (JProperty *)0x0;
   pJVar2 = (this->fields)._properties;
+  pJVar3 = (JProperty__Class *)0x0;
   if (pJVar2 != (JObject_JPropertKeyedCollection *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
+                     );
       cRam_? = '\x01';
     }
-    pOVar3 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)pJVar2,
-                        MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
-                       );
-    if ((pOVar3 == (Object *)0x0) || (name == (String *)0x0)) {
+    if (((pJVar2->fields)._.dict == (Dictionary_2_System_String_Newtonsoft_Json_Linq_JToken_ *)0x0)
+       || (name == (String *)0x0)) {
       return (JProperty *)0x0;
     }
-    pJVar2 = (this->fields)._properties;
-    if (pJVar2 != (JObject_JPropertKeyedCollection *)0x0) {
+    pJVar3 = (JProperty__Class *)(this->fields)._properties;
+    if (pJVar3 != (JProperty__Class *)0x0) {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&
+                        MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
+                       );
         cRam_? = '\x01';
       }
-      pOVar3 = System.dll::System::Collections::Generic::
-               SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-               Single,System::Object]::
-               SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                         ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                           *)pJVar2,
-                          MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
-                         );
-      if (pOVar3 != (Object *)0x0) {
-        func_?(3,
+      pvVar4 = (pJVar3->_0).byval_arg.data.dummy;
+      if (pvVar4 != (void *)0x0) {
+        func_?(7,
                         TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
-                        ,pOVar3,name,&uStack_1);
-        pJVar4 = (JProperty *)func_?(uStack_1,TypeInfo__Newtonsoft__Json__Linq__JProperty);
-        return pJVar4;
+                        ,pvVar4,name,&pJStack_1);
+        if (pJStack_1 == (JProperty *)0x0) {
+          return (JProperty *)0x0;
+        }
+        pJVar5 = pJStack_1;
+        pJVar3 = TypeInfo__Newtonsoft__Json__Linq__JProperty;
+        if ((((TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
+              (pJStack_1->klass->_1).typeHierarchyDepth) &&
+            ((JProperty__Class *)
+             (pJStack_1->klass->_1).typeHierarchy
+             [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] ==
+             TypeInfo__Newtonsoft__Json__Linq__JProperty)) && (pJStack_1 != (JProperty *)0x0)) {
+          return pJStack_1;
+        }
+        goto code_?;
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  pJVar4 = (JProperty *)(*pcVar5)();
-  return pJVar4;
+  func_?();
+  pJVar5 = extraout_EDX;
+code_?:
+  func_?(pJVar5,pJVar3);
+  pcVar6 = (code *)swi(3);
+  pJVar5 = (JProperty *)(*pcVar6)();
+  return pJVar5;
 }
 
 
@@ -616,47 +662,72 @@ Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_PropertyValues
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>_MethodInfo__System__Linq__Enumerable__Select<Newtonsoft::Json::Linq::JProperty,_Newtonsoft::Json::Linq::JToken>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JProperty>__System__Func<Newtonsoft::Json::Linq::JProperty,_Newtonsoft::Json::Linq::JToken>_
+                   );
+    func_?(&
+                    TypeInfo__System__Func<Newtonsoft::Json::Linq::JProperty,_Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Linq__JEnumerable<Newtonsoft::Json::Linq::JToken>__JEnumerable_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>_
+                   );
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Linq__JObject____c___PropertyValues_b__21_0_Newtonsoft__Json__Linq__JProperty_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject____c);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JProperty>_MethodInfo__System__Linq__Enumerable__Cast<Newtonsoft::Json::Linq::JProperty>_System__Collections__IEnumerable_
+                   );
     cRam_? = '\x01';
   }
   source = (IEnumerable *)
-           (*(code *)(this->klass->vtable).get_ChildrenTokens.method)
-                     (this,(this->klass->vtable).InsertItem.methodPtr);
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_8
-                        (source,
-                         System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JProperty>_MethodInfo__System__Linq__Enumerable__Cast<Newtonsoft::Json::Linq::JProperty>_System__Collections__IEnumerable_
-                        );
-  if (TypeInfo__Newtonsoft__Json__Linq__JObject->static_fields->__f__am_cache0 ==
-      (Func_2_Newtonsoft_Json_Linq_JProperty_Newtonsoft_Json_Linq_JToken_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+           (*(this->klass->vtable).get_ChildrenTokens.methodPtr)
+                     (this,(this->klass->vtable).get_ChildrenTokens.method);
+  pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4
+                     (source,
+                      System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JProperty>_MethodInfo__System__Linq__Enumerable__Cast<Newtonsoft::Json::Linq::JProperty>_System__Collections__IEnumerable_
+                     );
+  if ((TypeInfo__Newtonsoft__Json__Linq__JObject____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Newtonsoft__Json__Linq__JObject____c);
+  }
+  this_00 = TypeInfo__Newtonsoft__Json__Linq__JObject____c->static_fields->__9__21_0;
+  if (this_00 == (Func_2_Newtonsoft_Json_Linq_JProperty_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+    if ((TypeInfo__Newtonsoft__Json__Linq__JObject____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Newtonsoft__Json__Linq__JObject____c);
+    }
+    object = TypeInfo__Newtonsoft__Json__Linq__JObject____c->static_fields->__9;
+    this_00 = (Func_2_Newtonsoft_Json_Linq_JProperty_Newtonsoft_Json_Linq_JToken_ *)
               func_?(
                              TypeInfo__System__Func<Newtonsoft::Json::Linq::JProperty,_Newtonsoft::Json::Linq::JToken>
                              );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__Newtonsoft__Json__Linq__JObject___PropertyValues_m__0_Newtonsoft__Json__Linq__JProperty_
+    if (this_00 == (Func_2_Newtonsoft_Json_Linq_JProperty_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      JVar3._enumerable = (IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)(*pcVar2)();
+      return (JEnumerable_1_JToken_)JVar3._enumerable;
+    }
+    mscorlib.dll::System::Reflection::RuntimePropertyInfo+Getter`2[System::Object,System::Object]::
+    RuntimePropertyInfo_Getter_2_System_Object_System_Object___ctor
+              ((RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)this_00,(Object *)object
                ,
-               MethodInfo__System__Func<Newtonsoft::Json::Linq::JProperty,_Newtonsoft::Json::Linq::JToken>__Func_System__Object__void__
-              );
-    TypeInfo__Newtonsoft__Json__Linq__JObject->static_fields->__f__am_cache0 =
-         (Func_2_Newtonsoft_Json_Linq_JProperty_Newtonsoft_Json_Linq_JToken_ *)this_00;
+               MethodInfo__Newtonsoft__Json__Linq__JObject____c___PropertyValues_b__21_0_Newtonsoft__Json__Linq__JProperty_
+               ,(MethodInfo *)0x0);
+    TypeInfo__Newtonsoft__Json__Linq__JObject____c->static_fields->__9__21_0 = this_00;
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject____c->static_fields->__9__21_0,
+                    this_00);
   }
-  pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_14
-                     ((IEnumerable_1_System_Object_ *)source_00,
-                      (Func_2_Object_Single_ *)
-                      TypeInfo__Newtonsoft__Json__Linq__JObject->static_fields->__f__am_cache0,
+  pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_3
+                     (pIVar1,(Func_2_Object_Object_ *)this_00,
                       System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>_MethodInfo__System__Linq__Enumerable__Select<Newtonsoft::Json::Linq::JProperty,_Newtonsoft::Json::Linq::JToken>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JProperty>__System__Func<Newtonsoft::Json::Linq::JProperty,_Newtonsoft::Json::Linq::JToken>_
                      );
   this = (JObject *)0x0;
-  func_?(&this,pIVar1,
-                  MethodInfo__Newtonsoft__Json__Linq__JEnumerable<Newtonsoft::Json::Linq::JToken>__JEnumerable_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>_
-                 );
+  JEnumerable`1[System::Object]::JEnumerable_1_System_Object___ctor
+            ((JEnumerable_1_System_Object_ *)&this,pIVar1,
+             MethodInfo__Newtonsoft__Json__Linq__JEnumerable<Newtonsoft::Json::Linq::JToken>__JEnumerable_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>_
+            );
   return (JEnumerable_1_JToken_)(IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this;
 }
 
@@ -671,234 +742,296 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_Remove
   if (pJVar1 == (JProperty *)0x0) {
     return 0;
   }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pJVar2 = (pJVar1->fields)._._._parent;
-  if (pJVar2 != (JContainer *)0x0) {
-    (*(code *)(pJVar2->klass->vtable).RemoveItem.method)(pJVar2,pJVar1);
+  if ((pJVar1->fields)._._._parent != (JContainer *)0x0) {
+    pJVar2 = (pJVar1->fields)._._._parent;
+    (*(pJVar2->klass->vtable).RemoveItem.methodPtr)(pJVar2,pJVar1);
     return 1;
   }
-  this_00 = (InvalidOperationException *)func_?();
+  uVar3 = func_?();
+  this_00 = (InvalidOperationException *)func_?(uVar3);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_The_parent_is_missing_);
   mscorlib.dll::System::InvalidOperationException::InvalidOperationException__ctor_1
-            (this_00,StringLiteral_The_parent_is_missing_,(MethodInfo *)0x0);
+            (this_00,message,method_00);
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
 /* Void 
-   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Add(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken])
+   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,Newtonsoft.Json.Linq.JToken>>.Add(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken])
     */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_string_Newtonsoft_Json_Linq_JToken___Add
+     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Add
                (JObject *this,KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken_ item,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JProperty);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Value__
+                   );
     cRam_? = '\x01';
   }
-  name = (String *)
-         func_?(&item,
-                         MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Key__
-                        );
-  content = (Object *)
-            func_?(&item,
-                            MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Value__
-                           );
   this_00 = (JProperty *)func_?(TypeInfo__Newtonsoft__Json__Linq__JProperty);
-  JProperty::JProperty__ctor_3(this_00,name,content,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).Add.method)(this,this_00,(this->klass->vtable).Add_1.methodPtr);
+  if (this_00 != (JProperty *)0x0) {
+    JProperty::JProperty__ctor_3(this_00,item.key,(Object *)item.value,(MethodInfo *)0x0);
+    (*(this->klass->vtable).Add.methodPtr)(this,this_00,(this->klass->vtable).Add.method);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
 
 /* Void 
-   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Clear()
+   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,Newtonsoft.Json.Linq.JToken>>.Clear()
     */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_string_Newtonsoft_Json_Linq_JToken___Clear
+     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Clear
                (JObject *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).ClearItems.method)
-            (this,(this->klass->vtable).ReplaceItem.methodPtr);
+  (*(this->klass->vtable).ClearItems.methodPtr)(this,(this->klass->vtable).ClearItems.method);
   return;
 }
 
 
 /* Boolean
-   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Contains(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken])
+   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,Newtonsoft.Json.Linq.JToken>>.Contains(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken])
     */
 
 bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_string_Newtonsoft_Json_Linq_JToken___Contains
+     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Contains
                (JObject *this,KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken_ item,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Value__
+                   );
     cRam_? = '\x01';
   }
-  name = (String *)
-         func_?(&item,
-                         MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Key__
-                        );
-  this_00 = JObject_Property(this,name,(MethodInfo *)0x0);
+  this_00 = JObject_Property(this,item.key,(MethodInfo *)0x0);
   if (this_00 != (JProperty *)0x0) {
     pJVar1 = JProperty::JProperty_get_Value(this_00,(MethodInfo *)0x0);
-    pJVar2 = (JToken *)func_?(&item);
-    return pJVar1 == pJVar2;
+    return pJVar1 == item.value;
   }
   return 0;
 }
 
 
 /* Void 
-   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.CopyTo(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken][],
+   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,Newtonsoft.Json.Linq.JToken>>.CopyTo(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken][],
    Int32) */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_string_Newtonsoft_Json_Linq_JToken___CopyTo
+     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___CopyTo
                (JObject *this,
                KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken___Array *array,
                int32_t arrayIndex,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  pKVar1 = array;
+  uStack_2 = 0xffffffff;
+  puStack_3 = &DAT_?;
+  uStack_4 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_4;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JProperty);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__KeyValuePair_System__String__Newtonsoft__Json__Linq__JToken_
+                   );
     cRam_? = '\x01';
   }
-  func_?();
   if (array == (KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken___Array *)0x0) {
-    this_02 = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
+    uVar5 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_01 = (ArgumentNullException *)func_?(uVar5);
+    func_?(this_01);
+    pMVar6 = (MethodInfo *)0x0;
+    pSVar7 = (String *)func_?(&StringLiteral_array);
     mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-              (this_02,StringLiteral_array,(MethodInfo *)0x0);
-  }
-  else if (arrayIndex < 0) {
-    this_01 = (ArgumentOutOfRangeException *)
-              func_?(TypeInfo__System__ArgumentOutOfRangeException);
-    mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
-              (this_01,StringLiteral_arrayIndex,StringLiteral_arrayIndex_is_less_than_0_,
-               (MethodInfo *)0x0);
+              (this_01,pSVar7,pMVar6);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Linq__JObject__System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___CopyTo_System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_____int_
+                   );
+    func_?();
+code_?:
+    func_?();
+code_?:
+    func_?();
+code_?:
+    uVar5 = func_?();
+    func_?(uVar5);
+code_?:
+    func_?();
+    pAVar8 = (ArgumentException *)func_?();
+    func_?(pAVar8);
+    pMVar6 = (MethodInfo *)0x0;
+    pSVar7 = (String *)func_?();
+    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(pAVar8,pSVar7,pMVar6);
+    func_?();
+    func_?();
   }
   else {
+    if (arrayIndex < 0) goto code_?;
     if (arrayIndex < (int)array->max_length) {
-      iVar4 = JContainer::JContainer_get_Count((JContainer *)this,(MethodInfo *)0x0);
-      if (iVar4 <= (int)(array->max_length - arrayIndex)) {
-        iVar5 = 0;
-        iVar6 = (*(code *)(this->klass->vtable).get_ChildrenTokens.method)();
-        if (iVar6 != 0) {
-          iVar6 = func_?(0);
-          uStack_1 = 0;
-          while (iVar6 != 0) {
-            cVar7 = func_?(1);
-            if (cVar7 == '\0') {
-              uStack_1 = 0xffffffff;
-              if (iVar6 != 0) {
+      iVar9 = JContainer::JContainer_get_Count((JContainer *)this,(MethodInfo *)0x0);
+      if (iVar9 <= (int)(array->max_length - arrayIndex)) {
+        array = (KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken___Array *)0x0;
+        iVar10 = (*(this->klass->vtable).get_ChildrenTokens.methodPtr)();
+        if (iVar10 != 0) {
+          iVar10 = func_?(0);
+          uStack_2 = 1;
+          while (iVar10 != 0) {
+            cVar11 = func_?(0);
+            if (cVar11 == '\0') {
+              uStack_2 = 0xffffffff;
+              if (iVar10 != 0) {
                 func_?(0);
               }
-              *unaff_FS_OFFSET = uStack_3;
+              *unaff_FS_OFFSET = uStack_4;
               return;
             }
-            func_?(0);
-            this_00 = (JProperty *)func_?();
+            if (iVar10 == 0) break;
+            this_00 = (JProperty *)func_?(0);
             if (this_00 == (JProperty *)0x0) break;
-            JProperty::JProperty_get_Value(this_00,(MethodInfo *)0x0);
-            pMVar8 = 
+            if (((this_00->klass->_1).typeHierarchyDepth <
+                 (TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth) ||
+               ((JProperty__Class *)
+                (this_00->klass->_1).typeHierarchy
+                [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] !=
+                TypeInfo__Newtonsoft__Json__Linq__JProperty)) goto code_?;
+            pSVar7 = (this_00->fields)._name;
+            item2 = JProperty::JProperty_get_Value(this_00,(MethodInfo *)0x0);
+            pMVar6 = 
             MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__KeyValuePair_System__String__Newtonsoft__Json__Linq__JToken_
             ;
+            mscorlib.dll::System::ValueTuple`2[Object,Object]::ValueTuple_2_Object_Object___ctor
+                      ((ValueTuple_2_Object_Object_ *)&stack0xffffffcc,(Object *)pSVar7,
+                       (Object *)item2,
+                       MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__KeyValuePair_System__String__Newtonsoft__Json__Linq__JToken_
+                      );
+            pKVar12 = array->vector;
+            if (pKVar1->max_length <=
+                (uint)((int)&((KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken___Array *)
+                             (pKVar12 + -2))->klass + arrayIndex)) goto code_?;
+            pKVar1->vector
+            [(int)&((KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken___Array *)
+                   (pKVar12 + -2))->klass + arrayIndex].key = (String *)pMVar6;
+            pKVar1->vector
+            [(int)&((KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken___Array *)
+                   (pKVar12 + -2))->klass + arrayIndex].value = (JToken *)0x0;
             func_?();
-            uVar9 = arrayIndex + iVar5;
-            if (array->max_length <= uVar9) {
-              uVar10 = func_?();
-              func_?(uVar10);
-              break;
-            }
-            iVar5 = iVar5 + 1;
-            array->vector[uVar9].key = (String *)pMVar8;
-            array->vector[uVar9].value = (JToken *)0x0;
+            array = (KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken___Array *)
+                    ((int)&array->klass + 1);
           }
         }
-        func_?();
-        func_?(iVar5);
+        goto code_?;
       }
-      this_03 = (ArgumentException *)func_?();
-      message = StringLiteral_The_number_of_elements_in_the_so;
+      goto code_?;
     }
-    else {
-      this_03 = (ArgumentException *)func_?(TypeInfo__System__ArgumentException);
-      message = StringLiteral_arrayIndex_is_equal_to_or_greate;
-    }
-    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-              (this_03,message,(MethodInfo *)0x0);
   }
+  uVar5 = func_?(&TypeInfo__System__ArgumentException);
+  pAVar8 = (ArgumentException *)func_?(uVar5);
+  func_?(pAVar8);
+  pMVar6 = (MethodInfo *)0x0;
+  pSVar7 = (String *)func_?(&StringLiteral_arrayIndex_is_equal_to_or_greate);
+  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(pAVar8,pSVar7,pMVar6);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__Linq__JObject__System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___CopyTo_System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_____int_
+                 );
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+code_?:
+  uVar5 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_02 = (ArgumentOutOfRangeException *)func_?(uVar5);
+  func_?(this_02);
+  pSVar7 = (String *)func_?(&StringLiteral_arrayIndex_is_less_than_0_);
+  paramName = (String *)func_?(&StringLiteral_arrayIndex);
+  mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+            (this_02,paramName,pSVar7,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__Linq__JObject__System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___CopyTo_System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_____int_
+                 );
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
 
 /* Boolean
-   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Newtonsoft.Json.Linq.JToken>>.Remove(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken])
+   System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,Newtonsoft.Json.Linq.JToken>>.Remove(KeyValuePair`2[System.String,Newtonsoft.Json.Linq.JToken])
     */
 
 bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_string_Newtonsoft_Json_Linq_JToken___Remove
+     JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Remove
                (JObject *this,KeyValuePair_2_System_String_Newtonsoft_Json_Linq_JToken_ item,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Key__
+                   );
     cRam_? = '\x01';
   }
-  pJVar1 = item.value;
-  pSVar2 = item.key;
-  pJVar3 = this->klass;
-  uVar4 = 0;
-  uVar5._0_1_ = (pJVar3->_1).rank;
-  uVar5._1_1_ = (pJVar3->_1).minimumAlignment;
-  if (uVar5 != 0) {
+  uVar1 = 0;
+  uVar2 = (this->klass->_1).interface_offsets_count;
+  if (uVar2 != 0) {
     do {
-      if (pJVar3->interfaceOffsets[uVar4].interfaceType ==
+      if (this->klass->interfaceOffsets[uVar1].interfaceType ==
           (Il2CppClass *)
           TypeInfo__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
          ) {
-        ppMVar6 = &(&(this->klass->vtable).
-                     Newtonsoft_Json_Linq_IJEnumerable_Newtonsoft_Json_Linq_JToken__get_Item)
-                   [pJVar3->interfaceOffsets[uVar4].offset].method;
+        pVVar3 = &(this->klass->vtable).
+                  Newtonsoft_Json_Linq_IJEnumerable_Newtonsoft_Json_Linq_JToken__get_Item +
+                 this->klass->interfaceOffsets[uVar1].offset;
         goto code_?;
       }
-      uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
+      uVar1 = uVar1 + 1;
+    } while (uVar1 < uVar2);
   }
-  ppMVar6 = (MethodInfo **)
-            func_?(this,
-                            TypeInfo__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
-                            ,4);
+  pVVar3 = (VirtualInvokeData *)
+           func_?(this,
+                           TypeInfo__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
+                           ,4);
 code_?:
-  cVar7 = (*(code *)*ppMVar6)(this,pSVar2,pJVar1,ppMVar6[1]);
-  if (cVar7 != '\0') {
-    uVar8 = func_?(&item,
-                            MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Key__
-                           );
-    func_?(2,
+  cVar4 = (*pVVar3->methodPtr)(this,item.key,item.value,pVVar3->method);
+  if (cVar4 != '\0') {
+    func_?(6,
                     TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
-                    ,this,uVar8);
+                    ,this,item.key);
     return 1;
   }
   return 0;
@@ -906,57 +1039,49 @@ code_?:
 
 
 /* Boolean
-   System.Collections.Generic.IDictionary<string,Newtonsoft.Json.Linq.JToken>.ContainsKey(String) */
+   System.Collections.Generic.IDictionary<System.String,Newtonsoft.Json.Linq.JToken>.ContainsKey(String)
+    */
 
 bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-     JObject_System_Collections_Generic_IDictionary_string_Newtonsoft_Json_Linq_JToken__ContainsKey
+     JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__ContainsKey
                (JObject *this,String *key,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
+                   );
     cRam_? = '\x01';
   }
   pJVar1 = (this->fields)._properties;
   if (pJVar1 != (JObject_JPropertKeyedCollection *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
+                     );
       cRam_? = '\x01';
     }
-    pOVar2 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)pJVar1,
-                        MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
-                       );
-    if (pOVar2 == (Object *)0x0) {
+    if ((pJVar1->fields)._.dict == (Dictionary_2_System_String_Newtonsoft_Json_Linq_JToken_ *)0x0) {
       return 0;
     }
     pJVar1 = (this->fields)._properties;
     if (pJVar1 != (JObject_JPropertKeyedCollection *)0x0) {
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&
+                        MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
+                       );
         cRam_? = '\x01';
       }
-      pOVar2 = System.dll::System::Collections::Generic::
-               SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-               Single,System::Object]::
-               SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                         ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                           *)pJVar1,
-                          MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
-                         );
-      if (pOVar2 != (Object *)0x0) {
-        bVar3 = func_?(1,
+      pDVar2 = (pJVar1->fields)._.dict;
+      if (pDVar2 != (Dictionary_2_System_String_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+        bVar3 = func_?(4,
                                 TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
-                                ,pOVar2,key);
+                                ,pDVar2,key);
         return bVar3;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   bVar3 = (*pcVar4)();
   return bVar3;
@@ -964,86 +1089,80 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
 
 
 /* ICollection`1[System.String]
-   System.Collections.Generic.IDictionary<string,Newtonsoft.Json.Linq.JToken>.get_Keys() */
+   System.Collections.Generic.IDictionary<System.String,Newtonsoft.Json.Linq.JToken>.get_Keys() */
 
 ICollection_1_System_String_ *
 Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-JObject_System_Collections_Generic_IDictionary_string_Newtonsoft_Json_Linq_JToken__get_Keys
+JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__get_Keys
           (JObject *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._properties;
-  if (this_00 != (JObject_JPropertKeyedCollection *)0x0) {
+  pJVar1 = (this->fields)._properties;
+  if (pJVar1 != (JObject_JPropertKeyedCollection *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
+                     );
       cRam_? = '\x01';
     }
-    pOVar1 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)this_00,
-                        MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      pIVar2 = (ICollection_1_System_String_ *)
-               func_?(6,
+    pDVar2 = (pJVar1->fields)._.dict;
+    if (pDVar2 != (Dictionary_2_System_String_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+      pIVar3 = (ICollection_1_System_String_ *)
+               func_?(2,
                                TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
-                              );
-      return pIVar2;
+                               ,pDVar2);
+      return pIVar3;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  pIVar2 = (ICollection_1_System_String_ *)(*pcVar3)();
-  return pIVar2;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pIVar3 = (ICollection_1_System_String_ *)(*pcVar4)();
+  return pIVar3;
 }
 
 
 /* ICollection`1[Newtonsoft.Json.Linq.JToken]
-   System.Collections.Generic.IDictionary<string,Newtonsoft.Json.Linq.JToken>.get_Values() */
+   System.Collections.Generic.IDictionary<System.String,Newtonsoft.Json.Linq.JToken>.get_Values() */
 
 ICollection_1_Newtonsoft_Json_Linq_JToken_ *
 Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::
-JObject_System_Collections_Generic_IDictionary_string_Newtonsoft_Json_Linq_JToken__get_Values
+JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__get_Values
           (JObject *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._properties;
-  if (this_00 != (JObject_JPropertKeyedCollection *)0x0) {
+  pJVar1 = (this->fields)._properties;
+  if (pJVar1 != (JObject_JPropertKeyedCollection *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
+                     );
       cRam_? = '\x01';
     }
-    pOVar1 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)this_00,
-                        MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      pIVar2 = (ICollection_1_Newtonsoft_Json_Linq_JToken_ *)
-               func_?(7,
+    pDVar2 = (pJVar1->fields)._.dict;
+    if (pDVar2 != (Dictionary_2_System_String_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+      pIVar3 = (ICollection_1_Newtonsoft_Json_Linq_JToken_ *)
+               func_?(3,
                                TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
-                              );
-      return pIVar2;
+                               ,pDVar2);
+      return pIVar3;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  pIVar2 = (ICollection_1_Newtonsoft_Json_Linq_JToken_ *)(*pcVar3)();
-  return pIVar2;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pIVar3 = (ICollection_1_Newtonsoft_Json_Linq_JToken_ *)(*pcVar4)();
+  return pIVar3;
 }
 
 
@@ -1055,12 +1174,10 @@ JObject_System_ComponentModel_ICustomTypeDescriptor_GetAttributes(JObject *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__AttributeCollection);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__ComponentModel__AttributeCollection->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__System__ComponentModel__AttributeCollection->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__ComponentModel__AttributeCollection->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__ComponentModel__AttributeCollection);
   }
   return TypeInfo__System__ComponentModel__AttributeCollection->static_fields->Empty;
@@ -1075,14 +1192,20 @@ JObject_System_ComponentModel_ICustomTypeDescriptor_GetConverter(JObject *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__TypeConverter);
     cRam_? = '\x01';
   }
-  this_00 = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)
+  this_00 = (TweenRunner_1_FloatTween_ *)
             func_?(TypeInfo__System__ComponentModel__TypeConverter);
-  WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-  WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor(this_00,(MethodInfo *)0x0);
-  return (TypeConverter *)this_00;
+  if (this_00 != (TweenRunner_1_FloatTween_ *)0x0) {
+    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
+    return (TypeConverter *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pTVar2 = (TypeConverter *)(*pcVar1)();
+  return pTVar2;
 }
 
 
@@ -1095,12 +1218,11 @@ JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__EventDescriptorCollection);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__ComponentModel__EventDescriptorCollection->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__System__ComponentModel__EventDescriptorCollection->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__ComponentModel__EventDescriptorCollection->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__System__ComponentModel__EventDescriptorCollection);
   }
   return TypeInfo__System__ComponentModel__EventDescriptorCollection->static_fields->Empty;
@@ -1115,12 +1237,11 @@ JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents_1(JObject *this,Me
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__EventDescriptorCollection);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__ComponentModel__EventDescriptorCollection->vtable).Equals.methodPtr
-       & 0x2000000) != 0) &&
-     ((TypeInfo__System__ComponentModel__EventDescriptorCollection->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__ComponentModel__EventDescriptorCollection->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__System__ComponentModel__EventDescriptorCollection);
   }
   return TypeInfo__System__ComponentModel__EventDescriptorCollection->static_fields->Empty;
@@ -1135,21 +1256,18 @@ JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties(JObject *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__ICustomTypeDescriptor);
     cRam_? = '\x01';
   }
   uVar1 = 0;
   pJVar2 = this->klass;
-  uVar3._0_1_ = (pJVar2->_1).rank;
-  uVar3._1_1_ = (pJVar2->_1).minimumAlignment;
+  uVar3 = (pJVar2->_1).interface_offsets_count;
   if (uVar3 != 0) {
     do {
       if (pJVar2->interfaceOffsets[uVar1].interfaceType ==
           (Il2CppClass *)TypeInfo__System__ComponentModel__ICustomTypeDescriptor) {
-        iVar4 = pJVar2->interfaceOffsets[uVar1].offset;
-        pPVar5 = (PropertyDescriptorCollection *)
-                 (*(code *)(&(this->klass->vtable).System_ICloneable_Clone)[iVar4].method)
-                           (this,0,(&(this->klass->vtable).CloneToken)[iVar4].methodPtr);
+        pVVar4 = &(pJVar2->vtable).System_ICloneable_Clone + pJVar2->interfaceOffsets[uVar1].offset;
+        pPVar5 = (PropertyDescriptorCollection *)(*pVVar4->methodPtr)(this,0,pVVar4->method);
         return pPVar5;
       }
       uVar1 = uVar1 + 1;
@@ -1176,131 +1294,140 @@ JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties_1
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JPropertyDescriptor);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>__get_Value__
+                   );
+    func_?(&TypeInfo__System__ComponentModel__PropertyDescriptorCollection);
     cRam_? = '\x01';
   }
-  func_?();
-  pPVar4 = (PropertyDescriptorCollection *)
+  this_00 = (PropertyDescriptor__Class *)
             func_?(TypeInfo__System__ComponentModel__PropertyDescriptorCollection);
-  System.dll::System::ComponentModel::PropertyDescriptorCollection::
-  PropertyDescriptorCollection__ctor(pPVar4,(PropertyDescriptor__Array *)0x0,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__Newtonsoft__Json__Linq__JObject___GetEnumerator_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).originalScale.x = (float)this;
-    uStack_1 = 0;
-    while (this_00 != (ScaleAnimationBase *)0x0) {
-      cVar5 = func_?();
-      if (cVar5 == '\0') {
-        uStack_1 = 0xffffffff;
-        if (this_00 != (ScaleAnimationBase *)0x0) {
-          func_?();
-        }
-        *unaff_FS_OFFSET = uStack_3;
-        return pPVar4;
-      }
-      pSVar6 = this_00->klass;
-      uVar7 = 0;
-      uVar8._0_1_ = (pSVar6->_1).rank;
-      uVar8._1_1_ = (pSVar6->_1).minimumAlignment;
-      if (uVar8 != 0) {
-        do {
-          if (pSVar6->interfaceOffsets[uVar7].interfaceType ==
-              (Il2CppClass *)
-              TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
-             ) {
-            ppMVar9 = &(&(pSVar6->vtable).Equals)[pSVar6->interfaceOffsets[uVar7].offset].method;
-            goto code_?;
+  if (this_00 != (PropertyDescriptor__Class *)0x0) {
+    System.dll::System::ComponentModel::PropertyDescriptorCollection::
+    PropertyDescriptorCollection__ctor
+              ((PropertyDescriptorCollection *)this_00,(PropertyDescriptor__Array *)0x0,
+               (MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    value = (Object *)func_?();
+    if (value != (Object *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                (value,ExceptionArgument__Enum_obj,unaff_EDI);
+      value[2].monitor = (MonitorData *)this;
+      value[1].klass = (Object__Class *)0x0;
+      func_?(&value[2].monitor,this);
+      uStack_1 = 1;
+      while (value != (Object *)0x0) {
+        cVar4 = func_?(0,TypeInfo__System__Collections__IEnumerator,value);
+        if (cVar4 == '\0') {
+          uStack_1 = 0xffffffff;
+          if (value != (Object *)0x0) {
+            func_?(0,TypeInfo__System__IDisposable,value);
           }
-          uVar7 = uVar7 + 1;
-        } while (uVar7 < uVar8);
-      }
-      ppMVar9 = (MethodInfo **)func_?();
+          *unaff_FS_OFFSET = uStack_3;
+          return (PropertyDescriptorCollection *)this_00;
+        }
+        if (value == (Object *)0x0) break;
+        uVar5 = 0;
+        uVar6 = (value->klass->_1).interface_offsets_count;
+        if (uVar6 != 0) {
+          do {
+            if (value->klass->interfaceOffsets[uVar5].interfaceType ==
+                (Il2CppClass *)
+                TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
+               ) {
+              pVVar7 = &(value->klass->vtable).Equals + value->klass->interfaceOffsets[uVar5].offset
+              ;
+              goto code_?;
+            }
+            uVar5 = uVar5 + 1;
+          } while (uVar5 < uVar6);
+        }
+        pVVar7 = (VirtualInvokeData *)
+                 func_?(value,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
+                                 ,0);
 code_?:
-      (*(code *)*ppMVar9)();
-      player = (MVPlayer *)func_?();
-      this_01 = (Object__Class *)func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      handle = TypeRef__System__Object;
-      if (this_01 == (Object__Class *)0x0) break;
-      pOVar10 = ((Object *)this_01)->klass;
-      bVar11 = (pOVar10->_1).naturalAligment;
-      bVar12 = (TypeInfo__Newtonsoft__Json__Linq__JValue->_1).naturalAligment;
-      if ((bVar11 < bVar12) ||
-         ((pOVar10->_1).typeHierarchy[bVar12 - 1] !=
-          (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-        bVar13 = false;
-      }
-      else {
-        bVar13 = true;
-      }
-      pOVar14 = (Object *)0x0;
-      if (bVar13) {
-        pOVar14 = (Object *)this_01;
-      }
-      if (pOVar14 == (Object *)0x0) {
-code_?:
-        value = (PropertyDescriptor__Class *)
-                mscorlib.dll::System::Object::Object_GetType((Object *)this_01,(MethodInfo *)0x0);
-      }
-      else {
-        bVar12 = (TypeInfo__Newtonsoft__Json__Linq__JValue->_1).naturalAligment;
-        if ((bVar11 < bVar12) ||
-           ((pOVar10->_1).typeHierarchy[bVar12 - 1] !=
+        uVar8 = (*pVVar7->methodPtr)(value,pVVar7->method);
+        this_02 = (Object__Class *)((ulonglong)uVar8 >> 0x20);
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__Newtonsoft__Json__Linq__JValue);
+          func_?(&TypeRef__System__Object);
+          func_?(&TypeInfo__System__Type);
+          cRam_? = '\x01';
+        }
+        handle = TypeRef__System__Object;
+        if (this_02 == (Object__Class *)0x0) break;
+        if (((((Object *)this_02)->klass->_1).typeHierarchyDepth <
+             (TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth) ||
+           ((((Object *)this_02)->klass->_1).typeHierarchy
+            [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] !=
             (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-          bVar13 = false;
+          if (this_02 == (Object__Class *)0x0) break;
+code_?:
+          this_00 = (PropertyDescriptor__Class *)
+                    mscorlib.dll::System::Object::Object_GetType
+                              ((Object *)this_02,(MethodInfo *)0x0);
         }
         else {
-          bVar13 = true;
+          if (this_02 == (Object__Class *)0x0) break;
+          if ((((((Object *)this_02)->klass->_1).typeHierarchyDepth <
+                (TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth) ||
+              ((((Object *)this_02)->klass->_1).typeHierarchy
+               [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] !=
+               (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) ||
+             (this_02 == (Object__Class *)0x0)) {
+            func_?(this_02,TypeInfo__Newtonsoft__Json__Linq__JValue);
+            break;
+          }
+          if (((Object *)((int)this_02 + 0x28))->klass != (Object__Class *)0x0) {
+            this_02 = ((Object *)((int)this_02 + 0x28))->klass;
+            goto code_?;
+          }
+          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__System__Type);
+          }
+          this_00 = (PropertyDescriptor__Class *)
+                    mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                              ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
         }
-        pOVar14 = (Object *)0x0;
-        if (bVar13) {
-          pOVar14 = (Object *)this_01;
+        this_01 = (PropertyDescriptor *)func_?();
+        if (this_01 == (PropertyDescriptor *)0x0) break;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_propertyType);
+          func_?(&StringLiteral_name);
+          cRam_? = '\x01';
         }
-        if (pOVar14 == (Object *)0x0) {
-          func_?();
-          break;
-        }
-        this_01 = pOVar14[5].klass;
-        if (this_01 != (Object__Class *)0x0) goto code_?;
-        if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-          func_?();
-        }
-        value = (PropertyDescriptor__Class *)
-                mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                          ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+        System.dll::System::ComponentModel::PropertyDescriptor::PropertyDescriptor__ctor
+                  (this_01,(String *)uVar8,(Attribute__Array *)0x0,(MethodInfo *)0x0);
+        Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
+                  ((Object *)(String *)uVar8,StringLiteral_name,(MethodInfo *)0x0);
+        Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
+                  ((Object *)this_00,StringLiteral_propertyType,(MethodInfo *)0x0);
+        this_01[1].klass = this_00;
+        func_?();
+        System.dll::System::ComponentModel::PropertyDescriptorCollection::
+        PropertyDescriptorCollection_Add
+                  ((PropertyDescriptorCollection *)this_00,this_01,(MethodInfo *)0x0);
       }
-      value_00 = (PropertyDescriptor *)func_?();
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      PlayerElementData::PlayerElementData__ctor
-                ((PlayerElementData *)value_00,player,(Friend *)0x0,(MethodInfo *)0x0);
-      Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
-                ((Object *)player,StringLiteral_name,(MethodInfo *)0x0);
-      Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
-                ((Object *)value,StringLiteral_propertyType,(MethodInfo *)0x0);
-      value_00[1].klass = value;
-      if (pPVar4 == (PropertyDescriptorCollection *)0x0) break;
-      System.dll::System::ComponentModel::PropertyDescriptorCollection::
-      PropertyDescriptorCollection_Add(pPVar4,value_00,(MethodInfo *)0x0);
     }
   }
-  func_?();
-  func_?();
-  pcVar15 = (code *)swi(3);
-  pPVar4 = (PropertyDescriptorCollection *)(*pcVar15)();
-  return pPVar4;
+  uVar9 = func_?();
+  func_?(uVar9);
+  pcVar10 = (code *)swi(3);
+  pPVar11 = (PropertyDescriptorCollection *)(*pcVar10)();
+  return pPVar11;
 }
 
 
@@ -1314,9 +1441,11 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_TryGetValue
   if (this_00 != (JProperty *)0x0) {
     pJVar1 = JProperty::JProperty_get_Value(this_00,(MethodInfo *)0x0);
     *value = pJVar1;
+    func_?();
     return 1;
   }
   *value = (JToken *)0x0;
+  func_?();
   return 0;
 }
 
@@ -1328,152 +1457,136 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_ValidateToken
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JProperty);
+    func_?(&StringLiteral_o);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)o,StringLiteral_o,(MethodInfo *)0x0);
   if (o == (JToken *)0x0) goto code_?;
-  iVar1 = (*(code *)(o->klass->vtable).__unknown_2.method)
-                    (o,(o->klass->vtable).__unknown_3.methodPtr);
+  iVar1 = (*(o->klass->vtable).__unknown_2.methodPtr)(o,(o->klass->vtable).__unknown_2.method);
   if (iVar1 == 4) {
-    bVar2 = (TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).naturalAligment;
-    if (((o->klass->_1).naturalAligment < bVar2) ||
-       ((JProperty__Class *)(o->klass->_1).typeHierarchy[bVar2 - 1] !=
+    pJVar2 = TypeInfo__Newtonsoft__Json__Linq__JProperty;
+    if (((TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
+         (o->klass->_1).typeHierarchyDepth) &&
+       ((JProperty__Class *)
+        (o->klass->_1).typeHierarchy
+        [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] ==
         TypeInfo__Newtonsoft__Json__Linq__JProperty)) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    this_00 = (AddDotsToTruncatedText_Start_c_Iterator0 *)0x0;
-    if (bVar3) {
-      this_00 = (AddDotsToTruncatedText_Start_c_Iterator0 *)o;
-    }
-    pJVar4 = TypeInfo__Newtonsoft__Json__Linq__JProperty;
-    if (this_00 != (AddDotsToTruncatedText_Start_c_Iterator0 *)0x0) {
-      if (existing != (JToken *)0x0) {
-        iVar1 = func_?(existing,TypeInfo__Newtonsoft__Json__Linq__JProperty);
-        pSVar5 = (String *)(this_00->fields)._current;
-        if (iVar1 == 0) goto code_?;
-        b = *(String **)(iVar1 + 0x30);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
+      if (existing == (JToken *)0x0) {
+code_?:
+        pJVar3 = (this->fields)._properties;
+        if (pJVar3 == (JObject_JPropertKeyedCollection *)0x0) goto code_?;
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
+                         );
+          cRam_? = '\x01';
         }
-        bVar6 = mscorlib.dll::System::String::String_op_Equality(pSVar5,b,(MethodInfo *)0x0);
-        if (bVar6 != 0) {
+        if ((pJVar3->fields)._.dict ==
+            (Dictionary_2_System_String_Newtonsoft_Json_Linq_JToken_ *)0x0) {
           return;
         }
-      }
-      pJVar7 = (this->fields)._properties;
-      if (pJVar7 == (JObject_JPropertKeyedCollection *)0x0) goto code_?;
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
-      }
-      pOVar8 = System.dll::System::Collections::Generic::
-               SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-               Single,System::Object]::
-               SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                         ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                           *)pJVar7,
+        pJVar3 = (this->fields)._properties;
+        if (pJVar3 == (JObject_JPropertKeyedCollection *)0x0) goto code_?;
+        if (cRam_? == '\0') {
+          func_?(&
                           MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
                          );
-      if (pOVar8 == (Object *)0x0) {
-        return;
+          cRam_? = '\x01';
+        }
+        pDVar4 = (pJVar3->fields)._.dict;
+        if (pDVar4 == (Dictionary_2_System_String_Newtonsoft_Json_Linq_JToken_ *)0x0)
+        goto code_?;
+        cVar5 = func_?(7,
+                                TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
+                                ,pDVar4,o[1].fields._previous,&existing);
+        if (cVar5 == '\0') {
+          return;
+        }
+        uVar6 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+        func_?(uVar6);
+        provider = mscorlib.dll::System::Globalization::CultureInfo::
+                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+        uVar6 = func_?(&TypeInfo__System__Object,2);
+        args = (Object__Array *)func_?(uVar6);
+        func_?(o);
+        this_00 = UnityEngine.IMGUIModule.dll::UnityEngine::GUISkin::
+                  GUISkin_get_horizontalSliderThumb((GUISkin *)o,(MethodInfo *)0x0);
+        func_?(args);
+        func_?(args,this_00);
+        func_?();
+        pTVar7 = mscorlib.dll::System::Object::Object_GetType((Object *)this_00,(MethodInfo *)0x0);
+        func_?(args);
+        func_?(args,pTVar7);
+        func_?();
+        ppSVar8 = &StringLiteral_Can_not_add_property__0__to__1__;
+        goto code_?;
       }
-      pJVar7 = (this->fields)._properties;
-      if (pJVar7 == (JObject_JPropertKeyedCollection *)0x0) goto code_?;
-      if (cRam_? == '\0') {
-        func_?(_UNK_?);
-        cRam_? = '\x01';
+      this_01 = (ArgumentException *)existing;
+      if ((((TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
+            (existing->klass->_1).typeHierarchyDepth) &&
+          ((JProperty__Class *)
+           (existing->klass->_1).typeHierarchy
+           [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] ==
+           TypeInfo__Newtonsoft__Json__Linq__JProperty)) && (existing != (JToken *)0x0)) {
+        bVar9 = mscorlib.dll::System::String::String_op_Equality
+                          ((String *)o[1].fields._previous,(String *)existing[1].fields._previous,
+                           (MethodInfo *)0x0);
+        if (bVar9 != 0) {
+          return;
+        }
+        goto code_?;
       }
-      pOVar8 = System.dll::System::Collections::Generic::
-               SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-               Single,System::Object]::
-               SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                         ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                           *)pJVar7,
-                          MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__get_Dictionary__
-                         );
-      if (pOVar8 == (Object *)0x0) goto code_?;
-      cVar9 = func_?(3,
-                              TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Linq::JToken>
-                              ,pOVar8,(this_00->fields)._current,&existing);
-      if (cVar9 == '\0') {
-        return;
-      }
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__Globalization__CultureInfo);
-      }
-      pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                         ((MethodInfo *)0x0);
-      pOVar11 = (Object__Array *)func_?(TypeInfo__System__Object,2);
-      func_?(this_00,0);
-      pOVar8 = AddDotsToTruncatedText+<Start>c__Iterator0::
-               AddDotsToTruncatedText_Start_c_Iterator0_System_Collections_IEnumerator_get_Current
-                         (this_00,(MethodInfo *)0x0);
-      func_?(pOVar11,0);
-      func_?(pOVar11,pOVar8);
-      func_?();
-      pTVar12 = mscorlib.dll::System::Object::Object_GetType(pOVar8,(MethodInfo *)0x0);
-      func_?(pOVar11,0);
-      func_?(pOVar11,pTVar12);
-      func_?();
-      o = (JToken *)
-          Json::Utilities::StringUtils::StringUtils_FormatWith
-                    (StringLiteral_Can_not_add_property__0__to__1__,(IFormatProvider *)pCVar10,
-                     pOVar11,(MethodInfo *)0x0);
-      pAVar13 = (ArgumentException *)func_?(TypeInfo__System__ArgumentException);
-      mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-                (pAVar13,(String *)o,(MethodInfo *)0x0);
-      in_stack_14 =
-           MethodInfo__Newtonsoft__Json__Linq__JObject__ValidateToken_Newtonsoft__Json__Linq__JToken__Newtonsoft__Json__Linq__JToken_
-      ;
-      in_stack_15 = 0;
-      existing = (JToken *)&UNK_?;
-      method = (MethodInfo *)pAVar13;
-      func_?();
-      pJVar4 = extraout_EDX;
+      goto code_?;
     }
-    func_?(o,pJVar4);
   }
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
-  pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                     ((MethodInfo *)0x0);
-  pOVar11 = (Object__Array *)func_?(TypeInfo__System__Object,2);
-  func_?(o,0);
-  pTVar12 = mscorlib.dll::System::Object::Object_GetType((Object *)o,(MethodInfo *)0x0);
-  func_?(pOVar11,0);
-  func_?(pOVar11,pTVar12);
-  func_?();
-  pTVar12 = mscorlib.dll::System::Object::Object_GetType((Object *)pTVar12,(MethodInfo *)0x0);
-  func_?(pOVar11,0);
-  func_?(pOVar11,pTVar12);
-  func_?();
-  pSVar5 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                      (StringLiteral_Can_not_add__0__to__1__,(IFormatProvider *)pCVar10,pOVar11,
-                       (MethodInfo *)0x0);
-  pAVar13 = (ArgumentException *)func_?(TypeInfo__System__ArgumentException);
-  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-            (pAVar13,pSVar5,(MethodInfo *)0x0);
-  in_stack_14 =
-       MethodInfo__Newtonsoft__Json__Linq__JObject__ValidateToken_Newtonsoft__Json__Linq__JToken__Newtonsoft__Json__Linq__JToken_
-  ;
-  in_stack_15 = 0;
-  existing = (JToken *)&UNK_?;
-  method = (MethodInfo *)pAVar13;
-  func_?();
+  else {
+    uVar6 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(uVar6);
+    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+    uVar6 = func_?(&TypeInfo__System__Object,2);
+    args = (Object__Array *)func_?(uVar6);
+    func_?(o);
+    pTVar7 = mscorlib.dll::System::Object::Object_GetType((Object *)o,(MethodInfo *)0x0);
+    func_?(args);
+    func_?(args,pTVar7);
+    func_?(0,pTVar7);
+    pTVar7 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+    func_?(args);
+    func_?(args,pTVar7);
+    func_?(1,pTVar7);
+    ppSVar8 = &StringLiteral_Can_not_add__0__to__1__;
 code_?:
-  func_?(0);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+    method_00 = (MethodInfo *)0x0;
+    format = (String *)func_?(ppSVar8);
+    o = (JToken *)
+        Json::Utilities::StringUtils::StringUtils_FormatWith
+                  (format,(IFormatProvider *)provider,args,method_00);
+    uVar6 = func_?(&TypeInfo__System__ArgumentException);
+    this_01 = (ArgumentException *)func_?(uVar6);
+    func_?(this_01);
+    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
+              (this_01,(String *)o,(MethodInfo *)0x0);
+    existing = (JToken *)
+               func_?(&
+                               MethodInfo__Newtonsoft__Json__Linq__JObject__ValidateToken_Newtonsoft__Json__Linq__JToken__Newtonsoft__Json__Linq__JToken_
+                              );
+    func_?();
+    pJVar2 = extraout_EDX;
+code_?:
+    func_?(this_01,pJVar2);
+    pJVar2 = extraout_EDX_00;
+  }
+  func_?(o,pJVar2);
+code_?:
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1490,45 +1603,54 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_WriteTo
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JProperty);
     cRam_? = '\x01';
   }
-  func_?();
   if (writer != (JsonWriter *)0x0) {
-    (*(code *)(writer->klass->vtable).WriteStartObject.method)
-              (writer,(writer->klass->vtable).WriteEndObject.methodPtr);
-    iVar4 = (*(code *)(this->klass->vtable).get_ChildrenTokens.method)
-                      (this,(this->klass->vtable).InsertItem.methodPtr);
+    (*(writer->klass->vtable).WriteStartObject.methodPtr)
+              (writer,(writer->klass->vtable).WriteStartObject.method);
+    iVar4 = (*(this->klass->vtable).get_ChildrenTokens.methodPtr)
+                      (this,(this->klass->vtable).get_ChildrenTokens.method);
     if (iVar4 != 0) {
       piVar5 = (int *)func_?(0,
                                       TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>
                                       ,iVar4);
-      uStack_1 = 0;
-      while (piVar5 != (int *)0x0) {
-        cVar6 = func_?(1,TypeInfo__System__Collections__IEnumerator,piVar5);
+      uStack_1 = 1;
+      while( true ) {
+        if (piVar5 == (int *)0x0) break;
+        cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar5);
         if (cVar6 == '\0') {
-          unaff_EDI = (JProperty__Class *)0x0;
           uStack_1 = 0xffffffff;
           if (piVar5 != (int *)0x0) {
             func_?(0,TypeInfo__System__IDisposable,piVar5);
           }
-          if (writer != (JsonWriter *)0x0) {
-            (*(code *)(writer->klass->vtable).WriteEndObject.method)
-                      (writer,(writer->klass->vtable).WriteStartArray.methodPtr);
-            *unaff_FS_OFFSET = uStack_3;
-            return;
-          }
-          break;
+          uStack_1 = 0xffffffff;
+          (*(writer->klass->vtable).WriteEndObject.methodPtr)
+                    (writer,(writer->klass->vtable).WriteEndObject.method);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
         }
+        unaff_EDI = (int *)0x0;
+        if (piVar5 == (int *)0x0) break;
         uVar7 = 0;
-        uVar8 = *(ushort *)(*piVar5 + 0xb6);
+        uVar8 = *(ushort *)(*piVar5 + 0xb2);
         if (uVar8 != 0) {
-          iVar4 = *(int *)(*piVar5 + 0x58);
           do {
-            if (*(IEnumerator_1_Newtonsoft_Json_Linq_JToken___Class **)(iVar4 + (uint)uVar7 * 8) ==
+            if (*(IEnumerator_1_Newtonsoft_Json_Linq_JToken___Class **)
+                 (*(int *)(*piVar5 + 0x58) + (uint)uVar7 * 8) ==
                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>)
             {
-              puVar9 = (undefined4 *)(*piVar5 + (*(int *)(iVar4 + 4 + (uint)uVar7 * 8) + 0x18) * 8);
+              puVar9 = (undefined4 *)
+                       (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar7 * 8) * 8 + 0xbc +
+                       *piVar5);
               goto code_?;
             }
             uVar7 = uVar7 + 1;
@@ -1539,78 +1661,28 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_WriteTo
                                  TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
                                  ,0);
 code_?:
-        piVar10 = (int *)(*(code *)*puVar9)(piVar5,puVar9[1]);
-        unaff_EDI = TypeInfo__Newtonsoft__Json__Linq__JProperty;
-        if (piVar10 == (int *)0x0) break;
-        bVar11 = (TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).naturalAligment;
-        if ((*(byte *)(*piVar10 + 0xb8) < bVar11) ||
-           (*(JProperty__Class **)(*(int *)(*piVar10 + 100) + -4 + (uint)bVar11 * 4) !=
-            TypeInfo__Newtonsoft__Json__Linq__JProperty)) {
-          bVar12 = false;
-        }
-        else {
-          bVar12 = true;
-        }
-        piVar13 = (int *)0x0;
-        if (bVar12) {
-          piVar13 = piVar10;
-        }
-        if (piVar13 == (int *)0x0) {
-          func_?(piVar10,TypeInfo__Newtonsoft__Json__Linq__JProperty);
-          break;
-        }
-        (**(code **)(*piVar13 + 0x170))(piVar13,writer,converters,*(undefined4 *)(*piVar13 + 0x174))
-        ;
+        unaff_EDI = (int *)(*(code *)*puVar9)(piVar5,puVar9[1]);
+        if (unaff_EDI == (int *)0x0) break;
+        pJVar10 = TypeInfo__Newtonsoft__Json__Linq__JProperty;
+        if ((*(byte *)(*unaff_EDI + 0xb4) <
+             (TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth) ||
+           (*(JProperty__Class **)
+             (*(int *)(*unaff_EDI + 100) + -4 +
+             (uint)(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth * 4) !=
+            TypeInfo__Newtonsoft__Json__Linq__JProperty)) goto code_?;
+        (**(code **)(*unaff_EDI + 0x16c))
+                  (unaff_EDI,writer,converters,*(undefined4 *)(*unaff_EDI + 0x170));
       }
     }
   }
-  func_?(0);
-  func_?(unaff_EDI,0,0);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  func_?();
+  pJVar10 = extraout_EDX;
+code_?:
+  uVar11 = func_?(unaff_EDI,pJVar10);
+  func_?(uVar11);
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
-}
-
-
-/* JToken <PropertyValues>m__0(JProperty) */
-
-JToken * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject__PropertyValues_m__0
-                   (JProperty *p,MethodInfo *method)
-
-{
-  if (p == (JProperty *)0x0) {
-    func_?(0);
-    pcVar1 = (code *)swi(3);
-    pJVar2 = (JToken *)(*pcVar1)();
-    return pJVar2;
-  }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  iVar3 = (*(code *)(p->klass->vtable).get_ChildrenTokens.method)
-                    (p,(p->klass->vtable).InsertItem.methodPtr);
-  if (iVar3 != 0) {
-    iVar3 = func_?(0,
-                            TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Linq::JToken>
-                            ,iVar3);
-    if (iVar3 < 1) {
-      return (JToken *)0x0;
-    }
-    iVar3 = (*(code *)(p->klass->vtable).get_ChildrenTokens.method)
-                      (p,(p->klass->vtable).InsertItem.methodPtr);
-    if (iVar3 != 0) {
-      pJVar2 = (JToken *)
-               func_?(3,
-                               TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Linq::JToken>
-                               ,iVar3,0);
-      return pJVar2;
-    }
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  pJVar2 = (JToken *)(*pcVar1)();
-  return pJVar2;
 }
 
 
@@ -1621,27 +1693,44 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+    func_?(&TypeInfo__System__StringComparer);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__StringComparer->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__StringComparer->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__StringComparer);
   }
-  comparer = mscorlib.dll::System::StringComparer::StringComparer_get_Ordinal((MethodInfo *)0x0);
-  this_00 = (JObject_JPropertKeyedCollection *)
-            func_?(TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__StringComparer);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::Collections::ObjectModel::KeyedCollection`2[System::String,Newtonsoft::Json
-  ::Linq::JToken]::KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken___ctor
-            ((KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken_ *)this_00,
-             (IEqualityComparer_1_System_String_ *)comparer,
-             MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
-            );
-  (this->fields)._properties = this_00;
+  if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__StringComparer);
+  }
+  target = TypeInfo__System__StringComparer->static_fields->s_ordinal;
+  this_00 = (JObject_JPropertKeyedCollection *)
+            func_?(TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+  if (this_00 != (JObject_JPropertKeyedCollection *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+                     );
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::WeakReference`1[Object]::WeakReference_1_Object___ctor
+              ((WeakReference_1_Object_ *)this_00,(Object *)target,
+               MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+              );
+    method_00 = (MethodInfo *)&(this->fields)._properties;
+    (this->fields)._properties = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1653,71 +1742,42 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject__ctor_1
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+    func_?(&TypeInfo__System__StringComparer);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__StringComparer->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__StringComparer->_1).cctor_started == 0)) {
-    func_?();
+  if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__StringComparer);
   }
-  comparer = mscorlib.dll::System::StringComparer::StringComparer_get_Ordinal((MethodInfo *)0x0);
-  this_00 = (JObject_JPropertKeyedCollection *)func_?();
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__StringComparer);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::Collections::ObjectModel::KeyedCollection`2[System::String,Newtonsoft::Json
-  ::Linq::JToken]::KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken___ctor
-            ((KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken_ *)this_00,
-             (IEqualityComparer_1_System_String_ *)comparer,
-             MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
-            );
-  (this->fields)._properties = this_00;
-  uVar1 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = register0x00000010;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__StringComparer);
   }
-  func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(in_stack_2,0.0,(MethodInfo *)this);
-  Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
-            (in_stack_3,StringLiteral_c,(MethodInfo *)0x0);
-  if (in_stack_3 != (Object *)0x0) {
-    piVar4 = (int *)func_?();
-    while (piVar4 != (int *)0x0) {
-      cVar5 = func_?();
-      if (cVar5 == '\0') {
-        *piVar4 = 0x48;
-        if (piVar4 != (int *)0x0) {
-          func_?();
-        }
-        *unaff_FS_OFFSET = uVar1;
-        return;
-      }
-      uVar6 = 0;
-      uVar7 = *(ushort *)(*piVar4 + 0xb6);
-      if (uVar7 != 0) {
-        iVar8 = *(int *)(*piVar4 + 0x58);
-        do {
-          if (*(IEnumerator_1_Newtonsoft_Json_Linq_JToken___Class **)(iVar8 + (uint)uVar6 * 8) ==
-              TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>) {
-            puVar9 = (undefined4 *)(*piVar4 + (*(int *)(iVar8 + 4 + (uint)uVar6 * 8) + 0x18) * 8);
-            goto code_?;
-          }
-          uVar6 = uVar6 + 1;
-        } while (uVar6 < uVar7);
-      }
-      puVar9 = (undefined4 *)func_?();
-code_?:
-      (*(code *)*puVar9)();
-      (*in_stack_2->klass[3]._0.gc_desc)();
+  target = TypeInfo__System__StringComparer->static_fields->s_ordinal;
+  this_00 = (JObject_JPropertKeyedCollection *)
+            func_?(TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+  if (this_00 != (JObject_JPropertKeyedCollection *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+                     );
+      cRam_? = '\x01';
     }
+    mscorlib.dll::System::WeakReference`1[Object]::WeakReference_1_Object___ctor
+              ((WeakReference_1_Object_ *)this_00,(Object *)target,
+               MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+              );
+    (this->fields)._properties = this_00;
+    func_?(&(this->fields)._properties,this_00);
+    JContainer::JContainer__ctor_1((JContainer *)this,(JContainer *)other,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1729,29 +1789,45 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject__ctor_3
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+    func_?(&TypeInfo__System__StringComparer);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__StringComparer->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__StringComparer->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__StringComparer);
   }
-  comparer = mscorlib.dll::System::StringComparer::StringComparer_get_Ordinal((MethodInfo *)0x0);
-  this_00 = (JObject_JPropertKeyedCollection *)
-            func_?(TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__StringComparer);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::Collections::ObjectModel::KeyedCollection`2[System::String,Newtonsoft::Json
-  ::Linq::JToken]::KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken___ctor
-            ((KeyedCollection_2_System_String_Newtonsoft_Json_Linq_JToken_ *)this_00,
-             (IEqualityComparer_1_System_String_ *)comparer,
-             MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
-            );
-  (this->fields)._properties = this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  (*(code *)(this->klass->vtable).Add.method)(this,content,(this->klass->vtable).Add_1.methodPtr);
+  if ((TypeInfo__System__StringComparer->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__StringComparer);
+  }
+  target = TypeInfo__System__StringComparer->static_fields->s_ordinal;
+  this_00 = (JObject_JPropertKeyedCollection *)
+            func_?(TypeInfo__Newtonsoft__Json__Linq__JObject__JPropertKeyedCollection);
+  if (this_00 != (JObject_JPropertKeyedCollection *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+                     );
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::WeakReference`1[Object]::WeakReference_1_Object___ctor
+              ((WeakReference_1_Object_ *)this_00,(Object *)target,
+               MethodInfo__System__Collections__ObjectModel__KeyedCollection<System::String,_Newtonsoft::Json::Linq::JToken>__KeyedCollection_System__Collections__Generic__IEqualityComparer<System::String>_
+              );
+    method_00 = (MethodInfo *)&(this->fields)._properties;
+    (this->fields)._properties = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    (*(this->klass->vtable).Add.methodPtr)(this,content,(this->klass->vtable).Add.method);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1763,31 +1839,31 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_add_PropertyC
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__PropertyChangedEventHandler);
     cRam_? = '\x01';
   }
-  ppPVar1 = &(this->fields).PropertyChanged;
-  a = *ppPVar1;
+  a = (this->fields).PropertyChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((PropertyChangedEventHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((PropertyChangedEventHandler__Class *)pDVar1->klass ==
           TypeInfo__System__ComponentModel__PropertyChangedEventHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__ComponentModel__PropertyChangedEventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__ComponentModel__PropertyChangedEventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pPVar5 = (PropertyChangedEventHandler *)func_?(ppPVar1,pDVar3,a);
-    bVar6 = pPVar5 == a;
-    a = pPVar5;
-    if (bVar6) {
+    pPVar4 = (PropertyChangedEventHandler *)
+             func_?(&(this->fields).PropertyChanged,pDVar2,a);
+    bVar5 = pPVar4 == a;
+    a = pPVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -1801,7 +1877,8 @@ JToken * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_get_Item
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__String);
+    func_?(&StringLiteral_o);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
@@ -1818,34 +1895,37 @@ JToken * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_get_Item
       }
       Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
                 ((Object *)in_stack_2,StringLiteral_propertyName,(MethodInfo *)0x0);
-      this_00 = JObject_Property(in_stack_3,in_stack_2,(MethodInfo *)0x0);
-      if (this_00 == (JProperty *)0x0) {
-        return (JToken *)0x0;
+      this_01 = JObject_Property(in_stack_3,in_stack_2,(MethodInfo *)0x0);
+      if (this_01 != (JProperty *)0x0) {
+        pJVar4 = JProperty::JProperty_get_Value(this_01,(MethodInfo *)0x0);
+        return pJVar4;
       }
-      pJVar4 = JProperty::JProperty_get_Value(this_00,(MethodInfo *)0x0);
-      return pJVar4;
+      return (JToken *)0x0;
     }
   }
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
+  uVar5 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+  func_?(uVar5);
   provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
-  args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-  pSVar5 = Json::Utilities::MiscellaneousUtils::MiscellaneousUtils_ToString(key,(MethodInfo *)0x0);
-  func_?(args,0);
-  func_?(args,pSVar5);
+  uVar5 = func_?(&TypeInfo__System__Object,1);
+  args = (Object__Array *)func_?(uVar5);
+  pSVar6 = Json::Utilities::MiscellaneousUtils::MiscellaneousUtils_ToString(key,(MethodInfo *)0x0);
+  func_?(args);
+  func_?(args,pSVar6);
   func_?();
-  pSVar5 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                     (StringLiteral_Accessed_JObject_values_with_inv,(IFormatProvider *)provider,
-                      args,(MethodInfo *)0x0);
-  this_01 = (ArgumentException *)func_?(TypeInfo__System__ArgumentException);
+  method_00 = (MethodInfo *)0x0;
+  pSVar6 = (String *)func_?(&StringLiteral_Accessed_JObject_values_with_inv);
+  pSVar6 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                     (pSVar6,(IFormatProvider *)provider,args,method_00);
+  uVar5 = func_?(&TypeInfo__System__ArgumentException);
+  this_00 = (ArgumentException *)func_?(uVar5);
+  func_?(this_00);
   mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-            (this_01,pSVar5,(MethodInfo *)0x0);
+            (this_00,pSVar6,(MethodInfo *)0x0);
+  func_?(&MethodInfo__Newtonsoft__Json__Linq__JObject__get_Item_System__Object_);
   func_?();
-  pcVar6 = (code *)swi(3);
-  pJVar4 = (JToken *)(*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  pJVar4 = (JToken *)(*pcVar7)();
   return pJVar4;
 }
 
@@ -1857,17 +1937,17 @@ JToken * Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_get_Item_
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_propertyName);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)propertyName,StringLiteral_propertyName,(MethodInfo *)0x0);
   this_00 = JObject_Property(this,propertyName,(MethodInfo *)0x0);
-  if (this_00 == (JProperty *)0x0) {
-    return (JToken *)0x0;
+  if (this_00 != (JProperty *)0x0) {
+    pJVar1 = JProperty::JProperty_get_Value(this_00,(MethodInfo *)0x0);
+    return pJVar1;
   }
-  pJVar1 = JProperty::JProperty_get_Value(this_00,(MethodInfo *)0x0);
-  return pJVar1;
+  return (JToken *)0x0;
 }
 
 
@@ -1878,31 +1958,31 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_remove_Proper
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__ComponentModel__PropertyChangedEventHandler);
     cRam_? = '\x01';
   }
-  ppPVar1 = &(this->fields).PropertyChanged;
-  source = *ppPVar1;
+  source = (this->fields).PropertyChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((PropertyChangedEventHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((PropertyChangedEventHandler__Class *)pDVar1->klass ==
           TypeInfo__System__ComponentModel__PropertyChangedEventHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__ComponentModel__PropertyChangedEventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__ComponentModel__PropertyChangedEventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pPVar5 = (PropertyChangedEventHandler *)func_?(ppPVar1,pDVar3,source);
-    bVar6 = pPVar5 == source;
-    source = pPVar5;
-    if (bVar6) {
+    pPVar4 = (PropertyChangedEventHandler *)
+             func_?(&(this->fields).PropertyChanged,pDVar2,source);
+    bVar5 = pPVar4 == source;
+    source = pPVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -1916,7 +1996,8 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_set_Item
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__String);
+    func_?(&StringLiteral_o);
     cRam_? = '\x01';
   }
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
@@ -1934,37 +2015,48 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_set_Item
       pJVar2 = JObject_Property((JObject *)0x0,in_stack_3,(MethodInfo *)0x0);
       if (pJVar2 == (JProperty *)0x0) {
         pJVar2 = (JProperty *)func_?();
-        JProperty::JProperty__ctor_3
-                  (pJVar2,in_stack_3,(Object *)in_stack_4,(MethodInfo *)0x0);
-        (**(code **)(iRam_? + 0x2b0))(0,pJVar2);
-        (**(code **)(iRam_? + 0x3a8))
-                  (0,in_stack_3,*(undefined4 *)(iRam_? + 0x3ac));
+        if (pJVar2 != (JProperty *)0x0) {
+          JProperty::JProperty__ctor_3
+                    (pJVar2,in_stack_3,(Object *)in_stack_4,(MethodInfo *)0x0);
+          (**(code **)(iRam_? + 0x2ac))(0);
+          (**(code **)(iRam_? + 0x3a4))
+                    (0,in_stack_3,*(undefined4 *)(iRam_? + 0x3a8));
+          return;
+        }
+        func_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
       JProperty::JProperty_set_Value(pJVar2,in_stack_4,(MethodInfo *)0x0);
       return;
     }
   }
-  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__Globalization__CultureInfo);
-  }
+  uVar6 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+  func_?(uVar6);
   provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
-  args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-  pSVar5 = Json::Utilities::MiscellaneousUtils::MiscellaneousUtils_ToString(key,(MethodInfo *)0x0);
-  func_?(args,0);
-  func_?(args,pSVar5);
+  uVar6 = func_?(&TypeInfo__System__Object,1);
+  args = (Object__Array *)func_?(uVar6);
+  pSVar7 = Json::Utilities::MiscellaneousUtils::MiscellaneousUtils_ToString(key,(MethodInfo *)0x0);
+  func_?(args);
+  func_?(args,pSVar7);
   func_?();
-  pSVar5 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                     (StringLiteral_Set_JObject_values_with_invalid_,(IFormatProvider *)provider,
-                      args,(MethodInfo *)0x0);
-  this_00 = (ArgumentException *)func_?(TypeInfo__System__ArgumentException);
+  method_00 = (MethodInfo *)0x0;
+  pSVar7 = (String *)func_?(&StringLiteral_Set_JObject_values_with_invalid_);
+  pSVar7 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                     (pSVar7,(IFormatProvider *)provider,args,method_00);
+  uVar6 = func_?(&TypeInfo__System__ArgumentException);
+  this_00 = (ArgumentException *)func_?(uVar6);
+  func_?(this_00);
   mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-            (this_00,pSVar5,(MethodInfo *)0x0);
+            (this_00,pSVar7,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__Linq__JObject__set_Item_System__Object__Newtonsoft__Json__Linq__JToken_
+                 );
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1976,16 +2068,22 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JObject::JObject_set_Item_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JProperty);
     cRam_? = '\x01';
   }
   pJVar1 = JObject_Property(this,propertyName,(MethodInfo *)0x0);
   if (pJVar1 == (JProperty *)0x0) {
     pJVar1 = (JProperty *)func_?(TypeInfo__Newtonsoft__Json__Linq__JProperty);
-    JProperty::JProperty__ctor_3(pJVar1,propertyName,(Object *)value,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).Add.method)(this,pJVar1,(this->klass->vtable).Add_1.methodPtr);
-    (*(code *)(this->klass->vtable).OnPropertyChanged.method)
-              (this,propertyName,this->klass[1]._0.image);
+    if (pJVar1 != (JProperty *)0x0) {
+      JProperty::JProperty__ctor_3(pJVar1,propertyName,(Object *)value,(MethodInfo *)0x0);
+      (*(this->klass->vtable).Add.methodPtr)(this,pJVar1,(this->klass->vtable).Add.method);
+      (*(this->klass->vtable).OnPropertyChanged.methodPtr)
+                (this,propertyName,(this->klass->vtable).OnPropertyChanged.method);
+      return;
+    }
+    func_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
   JProperty::JProperty_set_Value(pJVar1,value,(MethodInfo *)0x0);

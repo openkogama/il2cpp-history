@@ -6,16 +6,15 @@ void Assembly-CSharp.dll::ChatBubbleManager::ChatBubbleManager_ShowChatBubble
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ChatBubbleManager);
     cRam_? = '\x01';
   }
-  this = (Action_3_Object_Int32_Object_ *)
-         TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble;
-  if (this != (Action_3_Object_Int32_Object_ *)0x0) {
-    System.Core.dll::System::Action`3[Object,Int32,Object]::Action_3_Object_Int32_Object__Invoke
-              (this,(Object *)text,anchorId,(Object *)chatBubbleAnchor,
-               MethodInfo__System__Action<System::String,_int,_ChatAnchor>__Invoke_System__String__int__ChatAnchor_
-              );
+  if (TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble !=
+      (Action_3_String_Int32_ChatAnchor_ *)0x0) {
+    pAVar1 = TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,text,anchorId,chatBubbleAnchor,
+               (pAVar1->fields)._._.method);
   }
   return;
 }

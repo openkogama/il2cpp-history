@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DeleteWoidController : MonoBehaviour
 {
@@ -16,25 +16,39 @@ public class DeleteWoidController : MonoBehaviour
 	[SerializeField]
 	private PickHelper pickHelperPrefab;
 	private int woid;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Initialize_c__AnonStorey0
+	private sealed class __c__DisplayClass2_0
 	{
 		// Fields
-		internal PickHelper pickHelper;
+		public PickHelper pickHelper;
 
 		// Constructors
-		public _Initialize_c__AnonStorey0();
+		public __c__DisplayClass2_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Initialize_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__4_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__4_2;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__4_3;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _DeleteWorldObject_b__4_0(IUIStack x, BaseEventData y);
+		internal void _DeleteWorldObject_b__4_2(IModalPopupCreator x, BaseEventData y);
+		internal void _DeleteWorldObject_b__4_3(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -45,16 +59,10 @@ public class DeleteWoidController : MonoBehaviour
 	private void OnPick(MVWorldObjectClient wo, MVWorldObjectClient woParent);
 	private void DeleteWorldObject(bool success, ConfirmationPopup popup);
 	[CompilerGenerated]
-	private void _OnPick_m__0(IModalPopupCreator x, BaseEventData y);
+	private void _OnPick_b__3_0(IModalPopupCreator x, BaseEventData y);
 	[CompilerGenerated]
-	private void _OnPick_m__1(IModalPopupCreator x, BaseEventData y);
+	private void _OnPick_b__3_1(IModalPopupCreator x, BaseEventData y);
 	[CompilerGenerated]
-	private static void _DeleteWorldObject_m__2(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private void _DeleteWorldObject_m__3(IEditModeController x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _DeleteWorldObject_m__4(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _DeleteWorldObject_m__5(IUIStack x, BaseEventData y);
+	private void _DeleteWorldObject_b__4_1(IEditModeController x, BaseEventData y);
 }
 

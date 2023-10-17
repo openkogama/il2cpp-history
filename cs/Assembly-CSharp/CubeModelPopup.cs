@@ -9,11 +9,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CubeModelPopup : MonoBehaviour
 {
 	// Fields
+	[SerializeField]
+	private CubeModelPopupAction cubeModelPopupAction;
 	[SerializeField]
 	private RawImage scale25Percent;
 	[SerializeField]
@@ -21,28 +23,46 @@ public class CubeModelPopup : MonoBehaviour
 	[SerializeField]
 	private RawImage scale100Percent;
 	private byte materialID;
+	private int woID;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnModelScalePressed_c__AnonStorey0
+	private sealed class __c__DisplayClass7_0
 	{
 		// Fields
-		internal float scale;
-		internal CubeModelPopup _this;
+		public CubeModelPopup __4__this;
+		public float scale;
 
 		// Constructors
-		public _OnModelScalePressed_c__AnonStorey0();
+		public __c__DisplayClass7_0();
 
 		// Methods
-		internal void __m__0(IMaterialClicked x, BaseEventData y);
-		internal void __m__1(ICreateNewPrototype x, BaseEventData y);
+		internal void _OnModelScalePressed_b__0(IMaterialClicked x, BaseEventData y);
+		internal void _OnModelScalePressed_b__1(ICreateNewPrototype x, BaseEventData y);
+		internal void _OnModelScalePressed_b__2(IChangePrototypeScale x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__7_3;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnModelScalePressed_b__7_3(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
 	public CubeModelPopup();
 
 	// Methods
-	public void Initialize(byte currentMaterialId);
+	public void Initialize(byte currentMaterialId, int worldId = -1);
 	public void OnModelScalePressed(float scale);
 }
 

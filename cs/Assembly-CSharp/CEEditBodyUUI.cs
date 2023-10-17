@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CEEditBodyUUI : ESStateBase
 {
@@ -15,11 +15,26 @@ public class CEEditBodyUUI : ESStateBase
 	private ConstraintVisualizer constraintVisualizer;
 	private IWorldObjectWithModelingConstraint modelBody;
 	private int targetCubeModelId;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAvatarEditUIState> __f__am_cache0;
 
 	// Properties
 	private MVCubeModelInstance TargetCubeModel { get; set; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IAvatarEditUIState> __9__6_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Enter_b__6_0(IAvatarEditUIState x, BaseEventData y);
+	}
 
 	// Constructors
 	public CEEditBodyUUI();
@@ -28,7 +43,5 @@ public class CEEditBodyUUI : ESStateBase
 	public override void Enter(EditorStateMachine esm);
 	public override void Execute(EditorStateMachine esm);
 	public override void Exit(EditorStateMachine esm);
-	[CompilerGenerated]
-	private static void _Enter_m__0(IAvatarEditUIState x, BaseEventData y);
 }
 

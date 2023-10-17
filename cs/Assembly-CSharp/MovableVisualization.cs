@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MovableVisualization : MonoBehaviour, IUpdatecontrollerSubscriberFixedUpdate
 {
@@ -47,7 +47,7 @@ public class MovableVisualization : MonoBehaviour, IUpdatecontrollerSubscriberFi
 	public void Init(MVCubeModelBase cmb);
 	private void cmb_Changed(CubeModelChangedEventArgs e);
 	private static GameObject CreateMeshClone(MVCubeModelBase cmb);
-	private static void RemoveAllComponentsInChildrenExclude(Type[] exclude, GameObject gameObject);
+	private static void RemoveAllComponentsInChildrenExclude(System.Type[] exclude, GameObject gameObject);
 	public void ChangeLOD(bool newVisible);
 	private void SetMeshRenderers(bool enable, GameObject gameObject);
 	private void Update();

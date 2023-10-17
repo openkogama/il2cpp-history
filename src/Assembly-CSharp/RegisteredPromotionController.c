@@ -5,51 +5,41 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
                (RegisteredPromotionController *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,1,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    this_01 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(this_00,(MethodInfo *)0x0);
-    if (this_01 != (ObjectPrefab *)0x0) {
-      pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                          (MethodInfo *)0x0);
-      (this->fields).joinTheElitePromoInterval = (float)(int)pOVar1;
-      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
-      if (pGVar2 != (GameSessionData *)0x0) {
-        (this->fields).embedded = (pGVar2->fields).embedded;
-        if ((((uint)(TypeInfo__MVClientSettings->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVClientSettings->_1).cctor_started == 0)) {
-          func_?();
-        }
-        bVar3 = MVClientSettings::MVClientSettings_IsSubscriber((MethodInfo *)0x0);
-        fVar4 = (this->fields).playFromKogamaPromoInterval;
-        b = (this->fields).joinTheElitePromoInterval;
-        (this->fields).subscriber = bVar3;
-        if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-          func_?();
-        }
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min(fVar4,b,(MethodInfo *)0x0)
-        ;
-        (this->fields).timeBeforeShownPromotion = fVar4;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pEVar2 = (pMVar1->fields)._EliteSettings_k__BackingField,
+     pEVar2 != (ElitePromotionSettings *)0x0)) {
+    (this->fields).joinTheElitePromoInterval =
+         (float)(pEVar2->fields)._ElitePromotionInterval_k__BackingField;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar3 != (GameSessionData *)0x0) {
+      (this->fields).embedded = (pGVar3->fields).embedded;
+      bVar4 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
+      (this->fields).subscriber = bVar4;
+      fVar5 = (this->fields).playFromKogamaPromoInterval;
+      fVar6 = (this->fields).joinTheElitePromoInterval;
+      if (fVar6 <= fVar5) {
+        fVar5 = fVar6;
+      }
+      this_00 = (this->fields).embeddedPlayerConfig;
+      (this->fields).timeBeforeShownPromotion = fVar5;
+      if (this_00 != (EmbeddedPlayerConfig *)0x0) {
+        pEVar7 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                           ((EmbeddedSiteConfigData *)&pLStack_8,this_00,(MethodInfo *)0x0);
+        (this->fields).showTouristPromotion = pEVar7->showTouristPromotion;
         return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -63,38 +53,56 @@ void Assembly-CSharp.dll::RegisteredPromotionController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__RegisteredPromotionController____c___InterstitialAdResult_b__17_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__RegisteredPromotionController____c);
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__RegisteredPromotionController->static_fields->__f__am_cache0 ==
-      (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__RegisteredPromotionController___InterstitialAdResult_m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    TypeInfo__RegisteredPromotionController->static_fields->__f__am_cache0 =
-         (ExecuteEvents_EventFunction_1_IUIStack_ *)this_00;
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__RegisteredPromotionController____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__RegisteredPromotionController____c);
   }
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__RegisteredPromotionController->static_fields->__f__am_cache0;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+  callbackFunction = TypeInfo__RegisteredPromotionController____c->static_fields->__9__17_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if ((TypeInfo__RegisteredPromotionController____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RegisteredPromotionController____c);
+    }
+    object = TypeInfo__RegisteredPromotionController____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IUIStack_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__RegisteredPromotionController____c___InterstitialAdResult_b__17_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__RegisteredPromotionController____c->static_fields->__9__17_0 = callbackFunction;
+    func_?(&TypeInfo__RegisteredPromotionController____c->static_fields->__9__17_0,
+                    callbackFunction);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,callbackFunction,
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
   return;
@@ -108,15 +116,10 @@ void Assembly-CSharp.dll::RegisteredPromotionController::
                (RegisteredPromotionController *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_2_Int32_Boolean_ *)(this->fields).onPromotionWasPopped;
-  if (this_00 != (Action_2_Int32_Boolean_ *)0x0) {
-    System.Core.dll::System::Action`2[Int32,Boolean]::Action_2_Int32_Boolean__Invoke
-              (this_00,1,1,
-               MethodInfo__UnityEngine__Events__UnityAction<bool,_bool>__Invoke_bool__bool_);
+  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+    pUVar1 = (this->fields).onPromotionWasPopped;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,1,1,(pUVar1->fields)._._.method);
   }
   return;
 }
@@ -131,67 +134,80 @@ void Assembly-CSharp.dll::RegisteredPromotionController::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
+    func_?(&
+                    RegisteredPromotionPopup_MethodInfo__UnityEngine__Object__Instantiate<RegisteredPromotionPopup>_RegisteredPromotionPopup_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__RegisteredPromotionController____c__DisplayClass20_0___PushPromotionSlide_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__RegisteredPromotionController____c__DisplayClass20_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RegisteredPromotionController___PushPromotionSlide_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).state = (int32_t)this;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  value = (Object *)func_?(TypeInfo__RegisteredPromotionController____c__DisplayClass20_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].monitor = (MonitorData *)this;
+    func_?(&value[1].monitor,this);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    this_01 = (RegisteredPromotionPopup *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                        ((XpBoostParticlePreviewer *)popupPrefab,
-                         RegisteredPromotionPopup_MethodInfo__UnityEngine__Object__Instantiate<RegisteredPromotionPopup>_RegisteredPromotionPopup_
-                        );
-    (this_00->fields)._._._._.m_CachedPtr = this_01;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-    if (pIVar1 != (IAdManager *)0x0) {
-      withAd = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
-      if (this_01 != (RegisteredPromotionPopup *)0x0) {
+    pOVar1 = (Object__Class *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)popupPrefab,
+                        RegisteredPromotionPopup_MethodInfo__UnityEngine__Object__Instantiate<RegisteredPromotionPopup>_RegisteredPromotionPopup_
+                       );
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    pOVar1 = value[1].klass;
+    pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+    if (pIVar2 != (IAdManager *)0x0) {
+      withAd = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
+      if (pOVar1 != (Object__Class *)0x0) {
         RegisteredPromotionPopup::RegisteredPromotionPopup_Initialize
-                  (this_01,isEmbeddedPromotion,withAd,(MethodInfo *)0x0);
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-        this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?(
-                                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                    );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_02,(Object *)this_00,
-                   MethodInfo__RegisteredPromotionController___PushPromotionSlide_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-          func_?();
+                  ((RegisteredPromotionPopup *)pOVar1,isEmbeddedPromotion,withAd,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                  ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_System_Object_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__RegisteredPromotionController____c__DisplayClass20_0___PushPromotionSlide_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    ((GameObject *)
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                     ,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          (this->fields).timer = 0.0;
+          return;
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
-                  (root,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_02,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        (this->fields).timer = 0.0;
-        return;
       }
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -203,129 +219,8 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
                UnityAction_2_System_Boolean_System_Boolean_ *onPop,MethodInfo *method)
 
 {
-  bVar1 = cRam_? == '\0';
   (this->fields).onPromotionWasPopped = onPop;
-  if (bVar1) {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((this->fields).embedded != 0) {
-    if ((this->fields).subscriber != 0) goto code_?;
-    fVar2 = (this->fields).timer;
-    pfVar3 = &(this->fields).playFromKogamaPromoInterval;
-    if (*pfVar3 <= fVar2 && fVar2 != *pfVar3) {
-      RegisteredPromotionController_PushPromotionSlide
-                (this,(this->fields).registeredPromotionPopupPrefab,1,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  if (((this->fields).subscriber == 0) &&
-     (fVar2 = (this->fields).timer, pfVar3 = &(this->fields).joinTheElitePromoInterval,
-     *pfVar3 <= fVar2 && fVar2 != *pfVar3)) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_01 != (PrefabPool *)0x0) {
-      this_02 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(this_01,(MethodInfo *)0x0);
-      if (this_02 != (ObjectPrefab *)0x0) {
-        bVar4 = SubscribableVariableBase`1[System::Boolean]::
-                SubscribableVariableBase_1_System_Boolean__get_Value
-                          ((SubscribableVariableBase_1_System_Boolean_ *)this_02,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          RegisteredPromotionController_PushPromotionSlide
-                    (this,(this->fields).registeredElitePromotionPopupPrefab,0,(MethodInfo *)0x0);
-          return;
-        }
-        goto code_?;
-      }
-    }
-    func_?();
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
-    return;
-  }
-code_?:
-  this_00 = (Action_2_Int32_Boolean_ *)(this->fields).onPromotionWasPopped;
-  if (this_00 != (Action_2_Int32_Boolean_ *)0x0) {
-    System.Core.dll::System::Action`2[Int32,Boolean]::Action_2_Int32_Boolean__Invoke
-              (this_00,0,0,
-               MethodInfo__UnityEngine__Events__UnityAction<bool,_bool>__Invoke_bool__bool_);
-  }
-  return;
-}
-
-
-/* Void ShowRegisteredPromotionAd() */
-
-void Assembly-CSharp.dll::RegisteredPromotionController::
-     RegisteredPromotionController_ShowRegisteredPromotionAd
-               (RegisteredPromotionController *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  cVar1 = ((this->fields).embedded == 0) + '\t';
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(
-                           TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,
-             MethodInfo__RegisteredPromotionController__InterstitialAdResult_Assets__Scripts__AdIntegration__InterstitialAdResult_
-             ,
-             MethodInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>__Action_System__Object__void__
-            );
-  if (pIVar2 == (IAdManager *)0x0) {
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  pIVar4 = pIVar2->klass;
-  uVar5 = 0;
-  uVar6._0_1_ = (pIVar4->_1).rank;
-  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
-          (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-        ppMVar7 = &(&(pIVar4->vtable).RequestInterstitial)[pIVar4->interfaceOffsets[uVar5].offset].
-                   method;
-        goto code_?;
-      }
-      uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
-  }
-  ppMVar7 = (MethodInfo **)
-            func_?(pIVar2,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,7,0);
-code_?:
-  (*(code *)*ppMVar7)(pIVar2,cVar1,cVar1,ppMVar7[1]);
-  return;
-}
-
-
-/* Void ShowRegisteredPromotionPopup() */
-
-void Assembly-CSharp.dll::RegisteredPromotionController::
-     RegisteredPromotionController_ShowRegisteredPromotionPopup
-               (RegisteredPromotionController *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
+  func_?(&(this->fields).onPromotionWasPopped,onPop);
   if ((this->fields).embedded != 0) {
     if ((this->fields).subscriber != 0) goto code_?;
     fVar1 = (this->fields).timer;
@@ -339,83 +234,111 @@ void Assembly-CSharp.dll::RegisteredPromotionController::
   if (((this->fields).subscriber == 0) &&
      (fVar1 = (this->fields).timer, pfVar2 = &(this->fields).joinTheElitePromoInterval,
      *pfVar2 <= fVar1 && fVar1 != *pfVar2)) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar3 == (MVNetworkGame *)0x0) ||
+       (pEVar4 = (pMVar3->fields)._EliteSettings_k__BackingField,
+       pEVar4 == (ElitePromotionSettings *)0x0)) {
+      func_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
     }
-    this_01 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_01 != (PrefabPool *)0x0) {
-      this_02 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(this_01,(MethodInfo *)0x0);
-      if (this_02 != (ObjectPrefab *)0x0) {
-        bVar3 = SubscribableVariableBase`1[System::Boolean]::
-                SubscribableVariableBase_1_System_Boolean__get_Value
-                          ((SubscribableVariableBase_1_System_Boolean_ *)this_02,(MethodInfo *)0x0);
-        if (bVar3 != 0) {
-          RegisteredPromotionController_PushPromotionSlide
-                    (this,(this->fields).registeredElitePromotionPopupPrefab,0,(MethodInfo *)0x0);
-          return;
-        }
-        goto code_?;
-      }
+    if ((pEVar4->fields)._ElitePromotionEnabled_k__BackingField != 0) {
+      RegisteredPromotionController_PushPromotionSlide
+                (this,(this->fields).registeredElitePromotionPopupPrefab,0,(MethodInfo *)0x0);
+      return;
     }
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
   }
 code_?:
-  this_00 = (Action_2_Int32_Boolean_ *)(this->fields).onPromotionWasPopped;
-  if (this_00 != (Action_2_Int32_Boolean_ *)0x0) {
-    System.Core.dll::System::Action`2[Int32,Boolean]::Action_2_Int32_Boolean__Invoke
-              (this_00,0,0,
-               MethodInfo__UnityEngine__Events__UnityAction<bool,_bool>__Invoke_bool__bool_);
+  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+    pUVar6 = (this->fields).onPromotionWasPopped;
+    (*(pUVar6->fields)._._.invoke_impl)
+              ((pUVar6->fields)._._.method_code,0,0,(pUVar6->fields)._._.method);
   }
   return;
 }
 
 
-/* Void Update() */
+/* Void ShowRegisteredPromotionAd() */
 
-void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionController_Update
+void Assembly-CSharp.dll::RegisteredPromotionController::
+     RegisteredPromotionController_ShowRegisteredPromotionAd
                (RegisteredPromotionController *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>)
+    ;
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
+    func_?(&
+                    MethodInfo__RegisteredPromotionController__InterstitialAdResult_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+  this_00 = (UnityAction_1_System_Int32Enum_ *)
+            func_?(
+                           TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
+                           );
+  if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)this,
+               MethodInfo__RegisteredPromotionController__InterstitialAdResult_Assets__Scripts__AdIntegration__InterstitialAdResult_
+               ,(MethodInfo *)0x0);
+    if (pIVar1 != (IAdManager *)0x0) {
+      func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1,this_00);
+      return;
+    }
   }
-  MVar1 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
-  if (MVar1 == MVJoinState__Enum_Playing) {
-    fVar2 = (this->fields).timer;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).timer = fVar3 + fVar2;
-  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
 
-/* Void <InterstitialAdResult>m__0(IUIStack, BaseEventData) */
+/* Void ShowRegisteredPromotionPopup() */
 
 void Assembly-CSharp.dll::RegisteredPromotionController::
-     RegisteredPromotionController__InterstitialAdResult_m__0
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
+     RegisteredPromotionController_ShowRegisteredPromotionPopup
+               (RegisteredPromotionController *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  if ((this->fields).embedded != 0) {
+    if ((this->fields).subscriber != 0) goto code_?;
+    fVar1 = (this->fields).timer;
+    pfVar2 = &(this->fields).playFromKogamaPromoInterval;
+    if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
+      RegisteredPromotionController_PushPromotionSlide
+                (this,(this->fields).registeredPromotionPopupPrefab,1,(MethodInfo *)0x0);
+      return;
+    }
   }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    return;
+  if (((this->fields).subscriber == 0) &&
+     (fVar1 = (this->fields).timer, pfVar2 = &(this->fields).joinTheElitePromoInterval,
+     *pfVar2 <= fVar1 && fVar1 != *pfVar2)) {
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar3 == (MVNetworkGame *)0x0) ||
+       (pEVar4 = (pMVar3->fields)._EliteSettings_k__BackingField,
+       pEVar4 == (ElitePromotionSettings *)0x0)) {
+      func_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    if ((pEVar4->fields)._ElitePromotionEnabled_k__BackingField != 0) {
+      RegisteredPromotionController_PushPromotionSlide
+                (this,(this->fields).registeredElitePromotionPopupPrefab,0,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+code_?:
+  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+    pUVar6 = (this->fields).onPromotionWasPopped;
+    (*(pUVar6->fields)._._.invoke_impl)
+              ((pUVar6->fields)._._.method_code,0,0,(pUVar6->fields)._._.method);
+  }
   return;
 }
 
@@ -430,11 +353,10 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
   (this->fields).joinTheElitePromoInterval = 180.0;
   (this->fields).timeBeforeShownPromotion = 180.0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;
@@ -448,6 +370,9 @@ bool Assembly-CSharp.dll::RegisteredPromotionController::
                (RegisteredPromotionController *this,MethodInfo *method)
 
 {
+  if (((this->fields).embedded != 0) && ((this->fields).showTouristPromotion == 0)) {
+    return 0;
+  }
   return (this->fields).timeBeforeShownPromotion <= (this->fields).timer;
 }
 

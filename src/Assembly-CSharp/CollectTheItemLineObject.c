@@ -6,14 +6,18 @@ void Assembly-CSharp.dll::CollectTheItemLineObject::CollectTheItemLineObject_OnV
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__LineRenderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::LineRenderer>__
+                   );
     cRam_? = '\x01';
   }
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponentInChildren_12
-                     ((Component_1 *)this,
+  pLVar1 = (LineRenderer *)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInChildren_1
+                     ((Component *)this,
                       UnityEngine__LineRenderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::LineRenderer>__
                      );
-  (this->fields).lineRenderer = (LineRenderer *)pTVar1;
+  (this->fields).lineRenderer = pLVar1;
+  func_?(&(this->fields).lineRenderer,pLVar1);
   return;
 }
 

@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::RailRay::RailRay_Awake(RailRay *this,MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__TintColor);
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).target.y;
@@ -19,8 +19,8 @@ void Assembly-CSharp.dll::RailRay::RailRay_Awake(RailRay *this,MethodInfo *metho
     UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_set_positionCount
               (pLVar3,2,(MethodInfo *)0x0);
     pLVar3 = (this->fields).rayRenderer;
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pTVar4 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                          ((Vector3 *)&stack0xfffffff0,pTVar4,(MethodInfo *)0x0);
@@ -39,8 +39,8 @@ void Assembly-CSharp.dll::RailRay::RailRay_Awake(RailRay *this,MethodInfo *metho
               UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                         (this_00,StringLiteral__TintColor,(Vector4)(this->fields).startColor,
                          (MethodInfo *)0x0);
-              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                                 ((Component_1 *)this,(MethodInfo *)0x0);
+              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)this,(MethodInfo *)0x0);
               if (pTVar4 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                           (pTVar4,(this->fields).target,(MethodInfo *)0x0);
@@ -52,7 +52,7 @@ void Assembly-CSharp.dll::RailRay::RailRay_Awake(RailRay *this,MethodInfo *metho
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -66,19 +66,21 @@ Assembly-CSharp.dll::RailRay::RailRay_DoShowRay(RailRay *this,Vector3 hit,Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__RailRay___DoShowRay_d__20);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RailRay___DoShowRay_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    *(undefined8 *)&(this_00->fields).OnScaleAnimationStopped = hit._0_8_;
-    this_00[1].monitor = (MonitorData *)hit.z;
-    this_00[1].fields.originalScale.x = (float)this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__RailRay___DoShowRay_d__20);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    *(undefined8 *)&value[2].monitor = hit._0_8_;
+    value[3].monitor = (MonitorData *)hit.z;
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -91,7 +93,7 @@ void Assembly-CSharp.dll::RailRay::RailRay_Reset(RailRay *this,MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__TintColor);
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).target.y;
@@ -105,8 +107,8 @@ void Assembly-CSharp.dll::RailRay::RailRay_Reset(RailRay *this,MethodInfo *metho
     UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_set_positionCount
               (pLVar3,2,(MethodInfo *)0x0);
     pLVar3 = (this->fields).rayRenderer;
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pTVar4 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                          ((Vector3 *)&stack0xfffffff0,pTVar4,(MethodInfo *)0x0);
@@ -125,8 +127,8 @@ void Assembly-CSharp.dll::RailRay::RailRay_Reset(RailRay *this,MethodInfo *metho
               UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                         (this_00,StringLiteral__TintColor,(Vector4)(this->fields).startColor,
                          (MethodInfo *)0x0);
-              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                                 ((Component_1 *)this,(MethodInfo *)0x0);
+              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)this,(MethodInfo *)0x0);
               if (pTVar4 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                           (pTVar4,(this->fields).target,(MethodInfo *)0x0);
@@ -138,7 +140,7 @@ void Assembly-CSharp.dll::RailRay::RailRay_Reset(RailRay *this,MethodInfo *metho
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -151,29 +153,38 @@ void Assembly-CSharp.dll::RailRay::RailRay_Update(RailRay *this,MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__TintColor);
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).time;
   pfVar2 = &(this->fields).elapsed;
   if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
-    this_01 = (this->fields).rayRenderer;
-    if (this_01 != (LineRenderer *)0x0) {
-      this_04 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                          ((Renderer *)this_01,(MethodInfo *)0x0);
-      pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_Lerp
-                         (&CStack_4,(this->fields).startColor,(this->fields).endColor,
-                          (this->fields).elapsed / (this->fields).time,(MethodInfo *)0x0);
-      if (this_04 != (Material *)0x0) {
-        fStack5 = pCVar3->b;
-        puStack6 = (undefined *)pCVar3->a;
-        CStack_4.a = (float)&UNK_?;
+    this_02 = (this->fields).rayRenderer;
+    if (this_02 != (LineRenderer *)0x0) {
+      this_03 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                          ((Renderer *)this_02,(MethodInfo *)0x0);
+      fVar3 = (this->fields).elapsed / (this->fields).time;
+      fVar1 = (this->fields).startColor.r;
+      fVar4 = (this->fields).startColor.g;
+      fVar5 = (this->fields).startColor.b;
+      fVar6 = (this->fields).startColor.a;
+      if (fVar3 < 0.0) {
+        fVar3 = 0.0;
+      }
+      else if (_UNK_? < fVar3) {
+        fVar3 = _UNK_?;
+      }
+      if (this_03 != (Material *)0x0) {
+        value.y = ((this->fields).endColor.g - fVar4) * fVar3 + fVar4;
+        value.x = ((this->fields).endColor.r - fVar1) * fVar3 + fVar1;
+        value.z = ((this->fields).endColor.b - fVar5) * fVar3 + fVar5;
+        value.w = ((this->fields).endColor.a - fVar6) * fVar3 + fVar6;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                  (this_04,StringLiteral__TintColor,(Vector4)*pCVar3,(MethodInfo *)0x0);
+                  (this_03,StringLiteral__TintColor,value,(MethodInfo *)0x0);
         fVar1 = (this->fields).elapsed;
-        fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                           ((MethodInfo *)0x0);
-        (this->fields).elapsed = fVar7 + fVar1;
+        (this->fields).elapsed = fVar4 + fVar1;
         return;
       }
     }
@@ -181,30 +192,25 @@ void Assembly-CSharp.dll::RailRay::RailRay_Update(RailRay *this,MethodInfo *meth
   else {
     this_00 = (this->fields).particles;
     if (this_00 != (ParticleSystem *)0x0) {
-      bVar8 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+      bVar7 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
               ParticleSystem_get_isPlaying(this_00,(MethodInfo *)0x0);
-      if (bVar8 != 0) {
-        return;
-      }
-      if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-        func_?(TypeInfo__PrefabPool);
-      }
-      this_02 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-      if ((this_02 != (PrefabPool *)0x0) &&
-         (this_03 = (EnumPoolManager *)
-                    mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                    Serialization::JsonProperty]::
-                    Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                              ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_02,
-                               (MethodInfo *)0x0), this_03 != (EnumPoolManager *)0x0)) {
+      if (bVar7 == 0) {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__PrefabPool);
+          cRam_? = '\x01';
+        }
+        pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
+        if ((pPVar8 == (PrefabPool *)0x0) ||
+           (this_01 = (pPVar8->fields).enumPoolManager, this_01 == (EnumPoolManager *)0x0))
+        goto code_?;
         EnumPoolManager::EnumPoolManager_Return
-                  (this_03,(MonoBehaviour *)this,(this->fields).railEnumType,(MethodInfo *)0x0);
-        return;
+                  (this_01,(MonoBehaviour *)this,(this->fields).railEnumType,(MethodInfo *)0x0);
       }
+      return;
     }
   }
-  func_?(0);
+code_?:
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -216,28 +222,21 @@ void Assembly-CSharp.dll::RailRay::RailRay_Update(RailRay *this,MethodInfo *meth
 void Assembly-CSharp.dll::RailRay::RailRay__ctor(RailRay *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  func_?(&fStack_1,0x3dcccccd,0x3dcccccd,0x3dcccccd,0,0);
-  (this->fields).endColor.r = fStack_1;
-  (this->fields).endColor.g = fStack_2;
-  (this->fields).endColor.b = fStack_3;
-  (this->fields).endColor.a = fStack_4;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).endColor.r = _UNK_?;
+  (this->fields).endColor.g = fVar3;
+  (this->fields).endColor.b = fVar2;
+  (this->fields).endColor.a = fVar1;
   (this->fields).time = 1.2;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Void set_Particles(ParticleSystem) */
-
-void Assembly-CSharp.dll::RailRay::RailRay_set_Particles
-               (RailRay *this,ParticleSystem *value,MethodInfo *method)
-
-{
-  (this->fields).particles = value;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
 }
 

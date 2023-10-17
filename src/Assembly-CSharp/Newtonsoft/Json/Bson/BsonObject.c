@@ -6,30 +6,41 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonObject::BsonObject_Add
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonProperty);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__Add_Newtonsoft__Json__Bson__BsonProperty_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._children;
-  method_01 = TypeInfo__Newtonsoft__Json__Bson__BsonProperty;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_01);
-  method_00 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  this_02 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_02,0.0,(MethodInfo *)method_00);
-  (this_02->fields).originalScale.x = (float)name;
-  *(undefined1 *)((int)&(this_02->fields).originalScale + 4) = 2;
-  *(undefined1 *)&(this_02->fields).target = 0;
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields)._._._._.m_CachedPtr = this_02;
-    (this_01->fields).state = (int32_t)token;
-    if (this_00 != (List_1_Newtonsoft_Json_Bson_BsonProperty_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)this_01,
-                 MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__Add_Newtonsoft__Json__Bson__BsonProperty_
-                );
-      if (token != (BsonToken *)0x0) {
-        (token->fields)._Parent_k__BackingField = (BsonToken *)this;
-        return;
+  value = (Object *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonProperty);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value_00 = (Object__Class *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+    if (value_00 != (Object__Class *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EDI);
+      (value_00->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)name;
+      func_?(&(value_00->_0).byval_arg,name);
+      *(undefined1 *)&(value_00->_0).byval_arg.attrs = 2;
+      *(undefined1 *)&(value_00->_0).this_arg.attrs = 0;
+      value[1].klass = value_00;
+      func_?(value + 1,value_00);
+      value[1].monitor = (MonitorData *)token;
+      func_?(&value[1].monitor,token);
+      if (this_00 != (List_1_Newtonsoft_Json_Bson_BsonProperty_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_00,value,
+                   MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__Add_Newtonsoft__Json__Bson__BsonProperty_
+                  );
+        if (token != (BsonToken *)0x0) {
+          (token->fields)._Parent_k__BackingField = (BsonToken *)this;
+          func_?(&token->fields,this);
+          return;
+        }
       }
     }
   }
@@ -48,29 +59,36 @@ Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonObject::BsonObject_GetEnumerato
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List_1_T___Enumerator<Newtonsoft::Json::Bson::BsonProperty>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__GetEnumerator__
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields)._children;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_2,this_00,
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields)._children;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_2,this_00,
                         MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__GetEnumerator__
                        );
-    auStack_2._16_4_ = pLVar1->l;
-    iStack_3 = pLVar1->next;
-    iStack_4 = pLVar1->ver;
-    iStack_5 = (pLVar1->current).rgba;
-    pIVar6 = (IEnumerator_1_Newtonsoft_Json_Bson_BsonProperty_ *)
+    pLStack_3 = pLVar1->_list;
+    iStack_4 = pLVar1->_index;
+    iStack_5 = pLVar1->_version;
+    RStack_6 = pLVar1->_current;
+    pIVar7 = (IEnumerator_1_Newtonsoft_Json_Bson_BsonProperty_ *)
              func_?(TypeInfo__System__Collections__Generic__List_1_T___Enumerator<Newtonsoft::Json::Bson::BsonProperty>
-                             ,auStack_2 + 0x10);
-    return pIVar6;
+                             ,&pLStack_3);
+    return pIVar7;
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  pIVar6 = (IEnumerator_1_Newtonsoft_Json_Bson_BsonProperty_ *)(*pcVar7)();
-  return pIVar6;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pIVar7 = (IEnumerator_1_Newtonsoft_Json_Bson_BsonProperty_ *)(*pcVar8)();
+  return pIVar7;
 }
 
 
@@ -82,29 +100,36 @@ BsonObject_System_Collections_IEnumerable_GetEnumerator(BsonObject *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List_1_T___Enumerator<Newtonsoft::Json::Bson::BsonProperty>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__GetEnumerator__
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Color32_ *)(this->fields)._children;
-  if (this_00 != (List_1_UnityEngine_Color32_ *)0x0) {
-    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-             List_1_UnityEngine_Color32__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_Color32_ *)auStack_2,this_00,
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields)._children;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_2,this_00,
                         MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__GetEnumerator__
                        );
-    auStack_2._16_4_ = pLVar1->l;
-    iStack_3 = pLVar1->next;
-    iStack_4 = pLVar1->ver;
-    iStack_5 = (pLVar1->current).rgba;
-    pIVar6 = (IEnumerator *)
+    pLStack_3 = pLVar1->_list;
+    iStack_4 = pLVar1->_index;
+    iStack_5 = pLVar1->_version;
+    RStack_6 = pLVar1->_current;
+    pIVar7 = (IEnumerator *)
              func_?(TypeInfo__System__Collections__Generic__List_1_T___Enumerator<Newtonsoft::Json::Bson::BsonProperty>
-                             ,auStack_2 + 0x10);
-    return pIVar6;
+                             ,&pLStack_3);
+    return pIVar7;
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  pIVar6 = (IEnumerator *)(*pcVar7)();
-  return pIVar6;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pIVar7 = (IEnumerator *)(*pcVar8)();
+  return pIVar7;
 }
 
 
@@ -115,19 +140,45 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonObject::BsonObject__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__List__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_Newtonsoft_Json_Bson_BsonProperty_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>
                            );
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__List__
-            );
-  (this->fields)._children = (List_1_Newtonsoft_Json_Bson_BsonProperty_ *)this_00;
+  if (this_00 != (List_1_Newtonsoft_Json_Bson_BsonProperty_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Bson::BsonProperty>__List__
+              );
+    method_00 = (MethodInfo *)&(this->fields)._children;
+    (this->fields)._children = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
+}
+
+
+/* BsonType get_Type() */
+
+BsonType__Enum
+Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonObject::BsonObject_get_Type
+          (BsonObject *this,MethodInfo *method)
+
+{
+  return CONCAT31((int3)((uint)in_EAX >> 8),3);
 }
 

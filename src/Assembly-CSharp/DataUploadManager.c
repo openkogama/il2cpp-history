@@ -5,32 +5,19 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_HandleDone(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DataUploadManager);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__DataUploadManager);
   }
   TypeInfo__DataUploadManager->static_fields->id =
        TypeInfo__DataUploadManager->static_fields->id + 1;
   TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
+  func_?(&TypeInfo__DataUploadManager->static_fields->bytePacker,0);
   if (TypeInfo__DataUploadManager->static_fields->doneNotification != (UnityAction *)0x0) {
-    if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__DataUploadManager);
-    }
-    this = (AvatarMotor_OnActiveBounceDelegate *)
-           TypeInfo__DataUploadManager->static_fields->doneNotification;
-    if (this == (AvatarMotor_OnActiveBounceDelegate *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-              (this,(MethodInfo *)0x0);
+    pUVar1 = TypeInfo__DataUploadManager->static_fields->doneNotification;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
     TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
+    func_?(&TypeInfo__DataUploadManager->static_fields->doneNotification,0);
   }
   return;
 }
@@ -42,71 +29,42 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__DataUploadManager);
-  }
-  this = TypeInfo__DataUploadManager->static_fields->bytePacker;
-  if (this != (BytePacker *)0x0) {
-    pOVar1 = (Object *)
-             MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
-                       (this,(MethodInfo *)0x0);
-    this_00 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-              TypeInfo__DataUploadManager->static_fields->bytePacker;
-    if (this_00 != (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (this_00,(MethodInfo *)0x0);
-      if (pOVar1 == pOVar2) {
-        if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-          func_?();
-        }
+  pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+  if (pBVar1 != (BytePacker *)0x0) {
+    iVar2 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
+                      (pBVar1,(MethodInfo *)0x0);
+    pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+    if (pBVar1 != (BytePacker *)0x0) {
+      if (iVar2 == (pBVar1->fields)._position) {
         if (cRam_? == '\0') {
-          func_?(_UNK_?);
+          func_?();
           cRam_? = '\x01';
-        }
-        if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-          func_?(TypeInfo__DataUploadManager);
         }
         TypeInfo__DataUploadManager->static_fields->id =
              TypeInfo__DataUploadManager->static_fields->id + 1;
         TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
+        func_?();
         if (TypeInfo__DataUploadManager->static_fields->doneNotification != (UnityAction *)0x0) {
-          if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-            func_?(TypeInfo__DataUploadManager);
-          }
-          this_01 = (AvatarMotor_OnActiveBounceDelegate *)
-                    TypeInfo__DataUploadManager->static_fields->doneNotification;
-          if (this_01 != (AvatarMotor_OnActiveBounceDelegate *)0x0) {
-            AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-                      (this_01,(MethodInfo *)0x0);
-            TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
-            return;
-          }
-          goto code_?;
+          (*(TypeInfo__DataUploadManager->static_fields->doneNotification->fields)._._.invoke_impl)
+                    ();
+          TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
+          func_?();
+          return;
         }
       }
       else {
-        if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-          func_?();
-        }
         DataUploadManager_SendChunk((MethodInfo *)0x0);
       }
       return;
     }
   }
-code_?:
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -117,16 +75,14 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_Reset(MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DataUploadManager);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__DataUploadManager);
   }
   TypeInfo__DataUploadManager->static_fields->id = 0;
   TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
+  func_?(&TypeInfo__DataUploadManager->static_fields->bytePacker,0);
   TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
+  func_?(&TypeInfo__DataUploadManager->static_fields->doneNotification,0);
   return;
 }
 
@@ -137,55 +93,27 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__DataUploadManager);
     cRam_? = '\x01';
   }
   iVar1 = 5000;
-  if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__DataUploadManager);
-  }
   pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
   if (pBVar2 != (BytePacker *)0x0) {
     iVar3 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
                       (pBVar2,(MethodInfo *)0x0);
-    pCVar4 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-             TypeInfo__DataUploadManager->static_fields->bytePacker;
-    if (pCVar4 != (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0) {
-      pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         (pCVar4,(MethodInfo *)0x0);
-      if (iVar3 - (int)pOVar5 < 5000) {
-        if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-          func_?();
-        }
+    pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+    if (pBVar2 != (BytePacker *)0x0) {
+      if (iVar3 - (pBVar2->fields)._position < 5000) {
+        iVar1 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
+                          (TypeInfo__DataUploadManager->static_fields->bytePacker,(MethodInfo *)0x0)
+        ;
         pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
         if (pBVar2 == (BytePacker *)0x0) goto code_?;
-        iVar1 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
-                          (pBVar2,(MethodInfo *)0x0);
-        pCVar4 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                 TypeInfo__DataUploadManager->static_fields->bytePacker;
-        if (pCVar4 == (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0)
-        goto code_?;
-        pOVar5 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           (pCVar4,(MethodInfo *)0x0);
-        iVar1 = iVar1 - (int)pOVar5;
-      }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
+        iVar1 = iVar1 - (pBVar2->fields)._position;
       }
       this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-        func_?(TypeInfo__DataUploadManager);
-      }
-      iVar3 = TypeInfo__DataUploadManager->static_fields->id;
       pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+      iVar3 = TypeInfo__DataUploadManager->static_fields->id;
       if (pBVar2 != (BytePacker *)0x0) {
         uploadData = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadBytes
                                (pBVar2,iVar1,(MethodInfo *)0x0);
@@ -198,9 +126,9 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
     }
   }
 code_?:
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -212,67 +140,56 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_UploadData
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__BytePacker);
+    func_?(&TypeInfo__DataUploadManager);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_DataUpload_already_in_progress);
+    func_?(&StringLiteral_UploadData_called_even_though_us);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  bVar1 = mscorlib.dll::System::Collections::ObjectModel::ReadOnlyCollection`1[VoxelHit]::
-          ReadOnlyCollection_1_VoxelHit__System_Collections_IList_get_IsReadOnly
-                    ((ReadOnlyCollection_1_VoxelHit_ *)0x0,unaff_EBP);
+  bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
+          Single,System::Object]::
+          SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__get_IsReadOnly
+                    ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
+                     unaff_EBP);
   if (bVar1 == 1) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
               ((Object *)StringLiteral_UploadData_called_even_though_us,(MethodInfo *)0x0);
+    return;
   }
-  else {
-    if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
+  if (TypeInfo__DataUploadManager->static_fields->bytePacker != (BytePacker *)0x0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    if (TypeInfo__DataUploadManager->static_fields->bytePacker != (BytePacker *)0x0) {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)StringLiteral_DataUpload_already_in_progress,(MethodInfo *)0x0);
-      return;
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this = MVGameControllerBase::MVGameControllerBase_get_TextureIntegrityChecker((MethodInfo *)0x0)
-    ;
-    if (this == (TextureIntegrityChecker *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+              ((Object *)StringLiteral_DataUpload_already_in_progress,(MethodInfo *)0x0);
+    return;
+  }
+  this = MVGameControllerBase::MVGameControllerBase_get_TextureIntegrityChecker((MethodInfo *)0x0);
+  if (this != (TextureIntegrityChecker *)0x0) {
     bVar1 = AntiHack::TextureIntegrityChecker::TextureIntegrityChecker_VerifyTextureIntegrity
                       (this,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((((uint)(TypeInfo__DataUploadManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__DataUploadManager->_1).cctor_started == 0)) {
-        doneNotification = (UnityAction *)&UNK_?;
-        func_?();
-      }
-      TypeInfo__DataUploadManager->static_fields->doneNotification = doneNotification;
-      this_00 = (BytePacker *)func_?();
+    if (bVar1 == 0) {
+      return;
+    }
+    TypeInfo__DataUploadManager->static_fields->doneNotification = doneNotification;
+    func_?();
+    this_00 = (BytePacker *)func_?();
+    if (this_00 != (BytePacker *)0x0) {
       MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
                 (this_00,(Byte__Array *)0x0,(MethodInfo *)0x0);
       TypeInfo__DataUploadManager->static_fields->bytePacker = this_00;
+      func_?();
       DataUploadManager_SendChunk((MethodInfo *)0x0);
       return;
     }
   }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

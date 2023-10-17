@@ -9,114 +9,88 @@ void Assembly-CSharp.dll::GameSetupOptions::GameSetupOptions_Start
     func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
+  if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar1 = GameSetupOptions_get_IsReviveEnabled((MethodInfo *)0x0);
   TypeInfo__GameSetupOptions->static_fields->isReviveEnabled = bVar1;
   pTVar2 = (this->fields).reviveToggleButton;
   if (TypeInfo__GameSetupOptions->static_fields->isReviveEnabled == 0) {
-    if (pTVar2 == (ToggleButtonAnimation *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
+    if (pTVar2 == (ToggleButtonAnimation *)0x0) goto code_?;
     if (cRam_? == '\0') {
       return;
     }
-    cRam_? = '\0';
   }
   else {
     if (pTVar2 == (ToggleButtonAnimation *)0x0) goto code_?;
     if (cRam_? != '\0') {
       return;
     }
-    cRam_? = '\x01';
   }
-  uStack4 = 0;
-  SStack_5.klass = (SubscribableVariableBase_1_System_Single___Class *)0x0;
-  SStack_5.monitor = (MonitorData *)0x0;
-  SStack_5.fields.value = 0.0;
-  SStack_5.fields.OnChange = (Action_1_Single_ *)0x0;
-  pSStack_6 = (SubscribableVariableBase_1_System_Single___Class *)0x0;
-  pMStack_7 = (MonitorData *)0x0;
-  puStack_8 = (undefined *)0x0;
-  SStack_9.klass = (SubscribableVariableBase_1_System_Single___Class *)0x0;
-  SStack_9.monitor = (MonitorData *)0x0;
-  SStack_9.fields.value = 0.0;
-  SStack_9.fields.OnChange = (Action_1_Single_ *)0x0;
+  cRam_? = cRam_? == '\0';
   fRam00000044 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar10 = fRam00000024;
+  fVar3 = fRam00000024;
   fRam00000030 = fRam00000024;
   fRam0000002c = fRam00000024;
   if (cRam_? == '\0') {
     if (pRRam0000000c == (RectTransform *)0x0) goto code_?;
-    pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffac,pRRam0000000c,(MethodInfo *)0x0);
-    pSStack_6 = (SubscribableVariableBase_1_System_Single___Class *)pRVar11->m_XMin;
-    pMStack_7 = (MonitorData *)pRVar11->m_YMin;
-    puStack_8 = (undefined *)pRVar11->m_Width;
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+              ((Rect *)&ppuStack_4,pRRam0000000c,(MethodInfo *)0x0);
     fRam0000002c = SubscribableVariableBase`1[System::Single]::
                    SubscribableVariableBase_1_System_Single__get_Value
-                             ((SubscribableVariableBase_1_System_Single_ *)&pSStack_6,
+                             ((SubscribableVariableBase_1_System_Single_ *)&stack0xfffffff0,
                               (MethodInfo *)0x0);
-    fRam0000002c = fRam0000002c + fVar10;
+    fRam0000002c = fRam0000002c + fVar3;
   }
   else {
     if (pRRam0000000c == (RectTransform *)0x0) goto code_?;
-    pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffac,pRRam0000000c,(MethodInfo *)0x0);
-    SStack_5.klass = (SubscribableVariableBase_1_System_Single___Class *)pRVar11->m_XMin;
-    SStack_5.monitor = (MonitorData *)pRVar11->m_YMin;
-    SStack_5.fields.value = pRVar11->m_Width;
-    SStack_5.fields.OnChange = (Action_1_Single_ *)pRVar11->m_Height;
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+              ((Rect *)&ppuStack_4,pRRam0000000c,(MethodInfo *)0x0);
     fRam00000030 = SubscribableVariableBase`1[System::Single]::
-                   SubscribableVariableBase_1_System_Single__get_Value(&SStack_5,(MethodInfo *)0x0)
-    ;
-    fRam00000030 = fRam00000030 + fVar10;
+                   SubscribableVariableBase_1_System_Single__get_Value
+                             ((SubscribableVariableBase_1_System_Single_ *)&stack0xfffffff0,
+                              (MethodInfo *)0x0);
+    fRam00000030 = fRam00000030 + fVar3;
   }
-  fVar10 = fRam00000024;
+  fVar3 = fRam00000024;
   fRam00000038 = fRam00000024;
   fRam00000034 = fRam00000024;
   if (cRam_? == '\0') {
-    if (pRRam0000000c == (RectTransform *)0x0) {
+    if (pRRam0000000c != (RectTransform *)0x0) {
+      pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                         ((Rect *)&ppuStack_4,pRRam0000000c,(MethodInfo *)0x0);
+      fRam00000034 = SubscribableVariableBase`1[System::Single]::
+                     SubscribableVariableBase_1_System_Single__get_Value
+                               ((SubscribableVariableBase_1_System_Single_ *)&stack0xfffffff0,
+                                (MethodInfo *)pRVar5->m_XMin);
+      fRam00000034 = fVar3 - fRam00000034;
 code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      fRam00000040 = fRam00000028;
+      fRam0000003c = fRam00000028;
+      if (cRam_? != '\0') {
+        fRam00000040 = fRam00000028 + fRam00000020;
+        return;
+      }
+      fRam0000003c = fRam00000028 + fRam00000020;
       return;
     }
-    pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffac,pRRam0000000c,(MethodInfo *)0x0);
-    SStack_9.klass = (SubscribableVariableBase_1_System_Single___Class *)pRVar11->m_XMin;
-    SStack_9.monitor = (MonitorData *)pRVar11->m_YMin;
-    SStack_9.fields.value = pRVar11->m_Width;
-    SStack_9.fields.OnChange = (Action_1_Single_ *)pRVar11->m_Height;
-    fRam00000034 = SubscribableVariableBase`1[System::Single]::
-                   SubscribableVariableBase_1_System_Single__get_Value(&SStack_9,(MethodInfo *)0x0)
-    ;
-    fRam00000034 = fVar10 - fRam00000034;
   }
-  else {
-    if (pRRam0000000c == (RectTransform *)0x0) goto code_?;
-    pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffac,pRRam0000000c,(MethodInfo *)0x0);
+  else if (pRRam0000000c != (RectTransform *)0x0) {
+    pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                       ((Rect *)&ppuStack_4,pRRam0000000c,(MethodInfo *)0x0);
     fRam00000038 = SubscribableVariableBase`1[System::Single]::
                    SubscribableVariableBase_1_System_Single__get_Value
-                             ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffbc,
-                              (MethodInfo *)pRVar11->m_XMin);
-    fRam00000038 = fVar10 - fRam00000038;
+                             ((SubscribableVariableBase_1_System_Single_ *)&stack0xfffffff0,
+                              (MethodInfo *)pRVar5->m_XMin);
+    fRam00000038 = fVar3 - fRam00000038;
+    goto code_?;
   }
-  fRam00000040 = fRam00000028;
-  fRam0000003c = fRam00000028;
-  if (cRam_? == '\0') {
-    fRam0000003c = fRam00000020 + fRam00000028;
-    return;
-  }
-  fRam00000040 = fRam00000020 + fRam00000028;
+code_?:
+  ppuStack_4 = &puStack_6;
+  ppuStack_4 = (undefined **)func_?();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -127,130 +101,148 @@ void Assembly-CSharp.dll::GameSetupOptions::GameSetupOptions_ToggleRevive
                (GameSetupOptions *this,MethodInfo *method)
 
 {
+  method_01 = (MethodInfo *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__get_Current__
+                   );
+    func_?(&TypeInfo__GameSetupOptions);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__GetEnumerator__
+                   );
+    func_?(&
+                    MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
+                   );
+    func_?(&StringLiteral_Revive_enabled__);
+    func_?(&StringLiteral_AllowRevive);
     cRam_? = '\x01';
   }
-  puVar1 = (undefined4 *)&stack0xffffffac;
-  func_?();
-  puVar2 = (undefined4 *)&stack0xffffffac;
-  if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (puVar2 = (undefined4 *)&stack0xffffffac, (TypeInfo__GameSetupOptions->_1).cctor_started == 0))
-  {
+  if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__GameSetupOptions);
-    puVar2 = puVar1;
   }
   TypeInfo__GameSetupOptions->static_fields->isReviveEnabled =
        TypeInfo__GameSetupOptions->static_fields->isReviveEnabled == 0;
   TypeInfo__GameSetupOptions->static_fields->reviveUpdated = 0;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((((this_00 != (MVWorldObjectClientManager *)0x0) &&
-       (this_01 = (String__Class *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject_4
-                            (this_00,
-                             MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
-                            ), this_01 != (String__Class *)0x0)) &&
-      (this_02 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameOptionSettingsManager
-                           ((MVGameOptionDataObject *)this_01,(MethodInfo *)0x0),
-      this_02 != (GameOptionSettingsManager *)0x0)) &&
-     (this_03 = (List_1_UnityEngine_Color32_ *)
-                MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                GameOptions::GameOptionSettingsManager::GameOptionSettingsManager_get_GetOptions
-                          (this_02,(MethodInfo *)0x0), this_03 != (List_1_UnityEngine_Color32_ *)0x0
-     )) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-    List_1_UnityEngine_Color32__GetEnumerator
-              ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffb8,this_03,
-               MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__GetEnumerator__
-              );
-    do {
-      do {
-        cVar3 = func_?();
-        if (cVar3 == '\0') {
-          *puVar2 = 0xa5;
-          goto code_?;
-        }
-        this_01 = (String__Class *)&stack0xffffffc8;
-        pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__get_Current__
-                           );
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(pOVar4,(MethodInfo *)0x0);
-        iVar5 = func_?();
-      } while (iVar5 == 0);
-      this_04 = (KogamaSettingBoolBase *)func_?();
-      puVar2 = (undefined4 *)0x0;
-      if (this_04 == (KogamaSettingBoolBase *)0x0) goto code_?;
-      pSVar6 = (String *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_04,(MethodInfo *)0x0)
-      ;
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        this_01 = TypeInfo__System__String;
-        func_?();
-      }
-      bVar7 = mscorlib.dll::System::String::String_op_Equality
-                        (pSVar6,StringLiteral_AllowRevive,(MethodInfo *)0x0);
-    } while (bVar7 == 0);
-    if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
-      func_?();
-    }
-    MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-    KogamaSettingBoolBase::KogamaSettingBoolBase_set_ValueBool
-              (this_04,TypeInfo__GameSetupOptions->static_fields->isReviveEnabled,(MethodInfo *)0x0)
-    ;
-    puVar2 = (undefined4 *)0x0;
-    if (this_01 != (String__Class *)0x0) {
-      MVGameOptionDataObject::MVGameOptionDataObject_UpdateSetting
-                ((MVGameOptionDataObject *)this_01,(KogamaSettingWrapperBase *)this_04,
-                 (MethodInfo *)0x0);
-      *puVar2 = 0xa5;
+  if (this_00 != (MVWorldObjectClientManager *)0x0) {
+    this_01 = (MVGameOptionDataObject *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
+                        (this_00,
+                         MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
+                        );
+    if (this_01 != (MVGameOptionDataObject *)0x0) {
+      this_02 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameOptionSettingsManager
+                          (this_01,(MethodInfo *)0x0);
+      if (this_02 != (GameOptionSettingsManager *)0x0) {
+        this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                  GameOptions::GameOptionSettingsManager::GameOptionSettingsManager_get_GetOptions
+                            (this_02,(MethodInfo *)0x0);
+        if (this_03 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   RegularExpressions::RegexCharClass+SingleRange]::
+                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                             ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                               *)&stack0xffffffcc,this_03,
+                              MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__GetEnumerator__
+                             );
+          RVar2 = pLVar1->_current;
+          do {
+            do {
+              message = RVar2;
+              bVar3 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__MoveNext__
+                                );
+              if (bVar3 == 0) {
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                          ((Object *)&stack0xffffffbc,
+                           (ExceptionArgument__Enum)
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Dispose__
+                           ,in_stack_4);
+                goto code_?;
+              }
+              RVar2 = message;
+              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                        ((Object *)message,(MethodInfo *)0x0);
+            } while (((message == (RegexCharClass_SingleRange)0x0) ||
+                     (*(byte *)(*(int *)message + 0xb4) <
+                      (
+                      TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                      ->_1).typeHierarchyDepth)) ||
+                    (*(KogamaSettingBoolBase__Class **)
+                      (*(int *)(*(int *)message + 100) + -4 +
+                      (uint)(
+                            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                            ->_1).typeHierarchyDepth * 4) !=
+                     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                    ));
+            in_stack_4 = (MethodInfo *)func_?();
+            if (in_stack_4 == (MethodInfo *)0x0) goto code_?;
+            RVar2.First = 0;
+            RVar2.Last = 0;
+            bVar3 = mscorlib.dll::System::String::String_op_Equality
+                              ((String *)in_stack_4->invoker_method,StringLiteral_AllowRevive
+                               ,(MethodInfo *)0x0);
+          } while (bVar3 == 0);
+          if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          method_00 = in_stack_4;
+          MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes
+          ::KogamaSettingBoolBase::KogamaSettingBoolBase_set_ValueBool
+                    ((KogamaSettingBoolBase *)in_stack_4,
+                     TypeInfo__GameSetupOptions->static_fields->isReviveEnabled,(MethodInfo *)0x0);
+          MVGameOptionDataObject::MVGameOptionDataObject_UpdateSetting
+                    (this_01,(KogamaSettingWrapperBase *)in_stack_4,(MethodInfo *)0x0);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&stack0xffffffbc,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Dispose__
+                     ,method_00);
 code_?:
-      func_?();
-      if (this_01 != (String__Class *)0x0) {
-        MVGameOptionDataObject::MVGameOptionDataObject_Submit
-                  ((MVGameOptionDataObject *)this_01,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
-          func_?();
+          MVGameOptionDataObject::MVGameOptionDataObject_Submit(this_01,(MethodInfo *)0x0);
+          if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pSVar5 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                             ((Boolean *)TypeInfo__GameSetupOptions->static_fields,
+                              (IFormatProvider *)0x0,method_01);
+          pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_Revive_enabled__,pSVar5,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                    ((Object *)pSVar5,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = method_01;
+          return;
         }
-        pOVar4 = (Object *)func_?();
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pSVar6 = mscorlib.dll::System::String::String_Concat
-                           ((Object *)StringLiteral_Revive_enabled__,pOVar4,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pIVar8 = (Il2CppClass *)0x0;
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)pSVar6,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pIVar8;
-        return;
       }
     }
   }
+  func_?();
 code_?:
   func_?();
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -261,10 +253,11 @@ void Assembly-CSharp.dll::GameSetupOptions::GameSetupOptions__cctor(MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GameSetupOptions);
     cRam_? = '\x01';
   }
   TypeInfo__GameSetupOptions->static_fields->isReviveEnabled = 1;
+  TypeInfo__GameSetupOptions->static_fields->reviveUpdated = 0;
   return;
 }
 
@@ -279,120 +272,144 @@ bool Assembly-CSharp.dll::GameSetupOptions::GameSetupOptions_get_IsReviveEnabled
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__get_Current__
+                   );
+    func_?(&TypeInfo__GameSetupOptions);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__GetEnumerator__
+                   );
+    func_?(&
+                    MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
+                   );
+    func_?(&StringLiteral_AllowRevive);
     cRam_? = '\x01';
   }
-  bStack_4 = 0;
-  pKStack_5 = (KogamaSettingBoolBase__Class *)0x0;
-  pCStack_6 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  func_?();
-  if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
+  if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__GameSetupOptions);
   }
-  if (TypeInfo__GameSetupOptions->static_fields->reviveUpdated != 0) {
-    if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
+  if (TypeInfo__GameSetupOptions->static_fields->reviveUpdated == 0) {
+    if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GameSetupOptions);
     }
-    pGVar7 = TypeInfo__GameSetupOptions->static_fields;
-code_?:
-    bVar8 = pGVar7->isReviveEnabled;
-    *unaff_FS_OFFSET = uStack_3;
-    return bVar8;
+    TypeInfo__GameSetupOptions->static_fields->reviveUpdated = 1;
+    this = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this != (MVWorldObjectClientManager *)0x0) {
+      this_00 = (MVGameOptionDataObject *)
+                MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
+                          (this,
+                           MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
+                          );
+      if (this_00 != (MVGameOptionDataObject *)0x0) {
+        this_01 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameOptionSettingsManager
+                            (this_00,(MethodInfo *)0x0);
+        if (this_01 != (GameOptionSettingsManager *)0x0) {
+          this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                    GameOptions::GameOptionSettingsManager::GameOptionSettingsManager_get_GetOptions
+                              (this_01,(MethodInfo *)0x0);
+          if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+            pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                     RegularExpressions::RegexCharClass+SingleRange]::
+                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                               ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                 *)&pLStack_5,this_02,
+                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__GetEnumerator__
+                               );
+            RVar6 = pLVar4->_current;
+            uStack_1 = 1;
+            while( true ) {
+              do {
+                pLStack_5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             &UNK_?;
+                bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                        Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                  ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
+                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__MoveNext__
+                                  );
+                if (bVar7 == 0) {
+                  uStack_1 = 0xffffffff;
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                            ((Object *)&stack0xffffffc0,
+                             (ExceptionArgument__Enum)
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Dispose__
+                             ,in_stack_8);
+                  uStack_1 = 0xffffffff;
+                  if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  bVar7 = TypeInfo__GameSetupOptions->static_fields->isReviveEnabled;
+                  *unaff_FS_OFFSET = uStack_3;
+                  return bVar7;
+                }
+              } while ((((RVar6 == (RegexCharClass_SingleRange)0x0) ||
+                        (*(byte *)(*(int *)RVar6 + 0xb4) <
+                         (
+                         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                         ->_1).typeHierarchyDepth)) ||
+                       (*(KogamaSettingBoolBase__Class **)
+                         (*(int *)(*(int *)RVar6 + 100) + -4 +
+                         (uint)(
+                               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                               ->_1).typeHierarchyDepth * 4) !=
+                        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                       )) || (RVar6 == (RegexCharClass_SingleRange)0x0));
+              in_stack_8 = (MethodInfo *)func_?();
+              if (in_stack_8 == (MethodInfo *)0x0) break;
+              RVar6.First = 0;
+              RVar6.Last = 0;
+              bVar7 = mscorlib.dll::System::String::String_op_Equality
+                                ((String *)in_stack_8->invoker_method,
+                                 StringLiteral_AllowRevive,(MethodInfo *)0x0);
+              if (bVar7 != 0) {
+                pLStack_5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             &UNK_?;
+                bVar7 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
+                        KogamaSettingTypes::KogamaSettingBoolBase::
+                        KogamaSettingBoolBase_get_ValueBool
+                                  ((KogamaSettingBoolBase *)in_stack_8,(MethodInfo *)0x0);
+                if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                uStack_1 = 0xffffffff;
+                TypeInfo__GameSetupOptions->static_fields->isReviveEnabled = bVar7;
+                bVar7 = TypeInfo__GameSetupOptions->static_fields->isReviveEnabled;
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                          ((Object *)&stack0xffffffc0,
+                           (ExceptionArgument__Enum)
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Dispose__
+                           ,in_stack_8);
+                *unaff_FS_OFFSET = uStack_3;
+                return bVar7;
+              }
+            }
+            func_?();
+            func_?();
+          }
+        }
+      }
+    }
+    func_?();
+    pcVar9 = (code *)swi(3);
+    bVar7 = (*pcVar9)();
+    return bVar7;
   }
-  if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
+  if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__GameSetupOptions);
   }
-  TypeInfo__GameSetupOptions->static_fields->reviveUpdated = 1;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((((this != (MVWorldObjectClientManager *)0x0) &&
-       (this_00 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject_4
-                            (this,
-                             MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
-                            ), this_00 != (MVRoundCube *)0x0)) &&
-      (this_01 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameOptionSettingsManager
-                           ((MVGameOptionDataObject *)this_00,(MethodInfo *)0x0),
-      this_01 != (GameOptionSettingsManager *)0x0)) &&
-     (this_02 = (List_1_UnityEngine_Color32_ *)
-                MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                GameOptions::GameOptionSettingsManager::GameOptionSettingsManager_get_GetOptions
-                          (this_01,(MethodInfo *)0x0), this_02 != (List_1_UnityEngine_Color32_ *)0x0
-     )) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-    List_1_UnityEngine_Color32__GetEnumerator
-              ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffb8,this_02,
-               MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__GetEnumerator__
-              );
-    uStack_1 = 0;
-    do {
-      do {
-        pCStack_6 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)
-                     &UNK_?;
-        cVar9 = func_?();
-        if (cVar9 == '\0') {
-          iVar10 = 0xa1;
-          goto code_?;
-        }
-        mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization
-        ::JsonProperty]::
-        Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                  ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)&pCStack_6,
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__get_Current__
-                  );
-        pKStack_5 = 
-        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
-        ;
-        iVar10 = func_?();
-      } while (iVar10 == 0);
-      this_03 = (KogamaSettingBoolBase *)func_?();
-      if (this_03 == (KogamaSettingBoolBase *)0x0) goto code_?;
-      a = (String *)
-          mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-          Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this_03,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar8 = mscorlib.dll::System::String::String_op_Equality
-                        (a,StringLiteral_AllowRevive,(MethodInfo *)0x0);
-    } while (bVar8 == 0);
-    bVar8 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-            KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase_get_ValueBool
-                      (this_03,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
-      func_?();
-    }
-    TypeInfo__GameSetupOptions->static_fields->isReviveEnabled = bVar8;
-    bStack_4 = TypeInfo__GameSetupOptions->static_fields->isReviveEnabled;
-    iVar10 = 0xa7;
-code_?:
-    uStack_1 = 0xffffffff;
-    func_?();
-    if (pKStack_5 == (KogamaSettingBoolBase__Class *)0x0) {
-      if (iVar10 == 0xa7) {
-        *unaff_FS_OFFSET = uStack_3;
-        return bStack_4;
-      }
-      if ((((uint)(TypeInfo__GameSetupOptions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__GameSetupOptions->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pGVar7 = TypeInfo__GameSetupOptions->static_fields;
-      goto code_?;
-    }
-    func_?();
-  }
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  bVar8 = (*pcVar11)();
-  return bVar8;
+  bVar7 = TypeInfo__GameSetupOptions->static_fields->isReviveEnabled;
+  *unaff_FS_OFFSET = uStack_3;
+  return bVar7;
 }
 

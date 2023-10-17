@@ -7,9 +7,9 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent+Explosion
                DamageFallOffType__Enum damageFallOffType,MethodInfo *method)
 
 {
-  this->damageFallOffType = (int32_t)radius;
-  this[1].radius = centerDamage;
-  this[1].centerDamage = (float)damageFallOffType;
+  this->radius = radius;
+  this->centerDamage = centerDamage;
+  this->damageFallOffType = damageFallOffType;
   return;
 }
 

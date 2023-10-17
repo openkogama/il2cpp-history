@@ -6,29 +6,14 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::
                (AvatarCameraDistTransparency *this,float scale,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   fVar1 = (this->fields).camMoveTowardsOffset.z;
-  (this->fields).fadeEndDistance = (this->fields).fadeEndBase * scale;
-  (this->fields).fadeStartDistance = (this->fields).fadeStartBase * scale;
-  VStack_2.y = (this->fields).camMoveTowardsOffset.x;
-  VStack_2.z = (this->fields).camMoveTowardsOffset.y;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  a.z = fVar1;
-  a.x = VStack_2.y;
-  a.y = VStack_2.z;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                     (&VStack_2,a,scale,(MethodInfo *)0x0);
-  fVar4 = pVVar3->y;
-  fVar1 = pVVar3->z;
-  (this->fields).camMoveTowardsOffset.x = pVVar3->x;
-  (this->fields).camMoveTowardsOffset.y = fVar4;
-  (this->fields).camMoveTowardsOffset.z = fVar1;
+  (this->fields).fadeEndDistance = scale * (this->fields).fadeEndBase;
+  (this->fields).fadeStartDistance = scale * (this->fields).fadeStartBase;
+  uVar2 = (this->fields).camMoveTowardsOffset.x;
+  uVar3 = (this->fields).camMoveTowardsOffset.y;
+  (this->fields).camMoveTowardsOffset.x = (float)uVar2 * scale;
+  (this->fields).camMoveTowardsOffset.y = (float)uVar3 * scale;
+  (this->fields).camMoveTowardsOffset.z = fVar1 * scale;
   return;
 }
 
@@ -39,14 +24,6 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::AvatarCameraDistTranspar
                (AvatarCameraDistTransparency *this,MVAvatarLocal *avatarLocal,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if ((pSVar1 != (SpawnRoleDataMediator *)0x0) &&
@@ -58,80 +35,59 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::AvatarCameraDistTranspar
       return;
     }
     if (((avatarLocal != (MVAvatarLocal *)0x0) &&
-        (this_01 = (PrefabPool *)
-                   MVAvatar::MVAvatar_get_Body((MVAvatar *)avatarLocal,(MethodInfo *)0x0),
-        this_01 != (PrefabPool *)0x0)) &&
-       (this_02 = PrefabPool::PrefabPool_get_MVPointLightPrefab(this_01,(MethodInfo *)0x0),
-       this_02 != (MVPointLightObject *)0x0)) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xffffffdc,(Transform *)this_02,(MethodInfo *)0x0);
-      uVar4._0_4_ = pVVar3->x;
-      uVar4._4_4_ = pVVar3->y;
-      uVar5._0_4_ = (this->fields).camMoveTowardsOffset.x;
-      uVar5._4_4_ = (this->fields).camMoveTowardsOffset.y;
-      puVar6 = (undefined *)(this->fields).camMoveTowardsOffset.z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        puVar6 = &UNK_?;
-        func_?();
-      }
-      a_00.z = (float)((ulonglong)uVar5 >> 0x20);
-      a_00.x = (float)(int)uVar4;
-      a_00.y = (float)(int)((ulonglong)uVar4 >> 0x20);
-      b.z = (float)puVar6;
-      b.x = (float)(int)uVar5;
-      b.y = (float)(int)((ulonglong)uVar5 >> 0x20);
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                         ((Vector3 *)&stack0xffffffe8,a_00,b,(MethodInfo *)0x0);
-      fVar7 = pVVar3->x;
-      fVar8 = pVVar3->y;
-      uVar4._0_4_ = pVVar3->z;
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if ((this_03 != (MainCameraManager *)0x0) &&
-         (this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                              ((Component_1 *)this_03,(MethodInfo *)0x0),
-         this_04 != (Transform *)0x0)) {
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)&stack0xffffffe8,this_04,(MethodInfo *)0x0);
-        a.y = fVar8;
-        a.x = fVar7;
-        a.z = (float)uVar4;
-        uVar5._0_4_ = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Distance
-                                (a,*pVVar3,(MethodInfo *)0x0);
-        uVar4._0_4_ = (this->fields).prevDist;
-        if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
+        (pMVar3 = (avatarLocal->fields)._.body, pMVar3 != (MVBody *)0x0)) &&
+       (pTVar4 = (pMVar3->fields)._._._.transform, pTVar4 != (Transform *)0x0)) {
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xffffffe8,pTVar4,(MethodInfo *)0x0);
+      uVar6 = pVVar5->x;
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if ((this_01 != (MainCameraManager *)0x0) &&
+         (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)this_01,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0))
+      {
+        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           ((Vector3 *)&stack0x00000000,pTVar4,(MethodInfo *)0x0);
+        fStack7 = pVVar5->x;
+        fStack8 = pVVar5->y;
+        fStack9 = pVVar5->z;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        fVar10 = (float)this - fStack7;
+        fVar11 = unaff_retaddr - fStack8;
+        fVar12 = (float)uVar6 - fStack9;
+        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        if ((float)(double)CONCAT44((uint)((ulonglong)(double)((float)uVar5 - (float)uVar4) >> 0x20)
-                                    & _UNK_?,
-                                    SUB84((double)((float)uVar5 - (float)uVar4),0) & _UNK_?)
-            <= _UNK_?) {
+        dVar13 = (double)(fVar11 * fVar11 + fVar10 * fVar10 + fVar12 * fVar12);
+        if (dVar13 < 0.0) {
+          func_?();
+        }
+        else {
+          dVar13 = SQRT(dVar13);
+        }
+        fVar11 = (float)dVar13;
+        if ((float)((uint)(fVar11 - (this->fields).prevDist) & _UNK_?) <= _UNK_?) {
           return;
         }
-        uVar4._0_4_ = (this->fields).fadeEndDistance;
-        uVar4._4_4_ = (this->fields).fadeStartDistance;
-        (this->fields).prevDist = (float)uVar5;
-        if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-          func_?();
+        (this->fields).prevDist = fVar11;
+        fVar11 = (fVar11 - (this->fields).fadeEndDistance) /
+                ((this->fields).fadeStartDistance - (this->fields).fadeEndDistance);
+        if (fVar11 < 0.0) {
+          fVar11 = 0.0;
         }
-        uVar4._0_4_ = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                                (((float)uVar5 - (float)uVar4) / (uVar4._4_4_ - (float)uVar4),
-                                 (MethodInfo *)0x0);
-        MVAvatar::MVAvatar_set_SetTransparency
-                  ((MVAvatar *)avatarLocal,(float)uVar4,(MethodInfo *)0x0);
+        else if (_UNK_? < fVar11) {
+          fVar11 = _UNK_?;
+        }
+        MVAvatar::MVAvatar_set_SetTransparency((MVAvatar *)avatarLocal,fVar11,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -144,26 +100,22 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::AvatarCameraDistTranspar
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).camMoveTowardsOffset.x = pVVar1->x;
-  (this->fields).camMoveTowardsOffset.y = fVar3;
-  (this->fields).camMoveTowardsOffset.z = fVar4;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).camMoveTowardsOffset.x = (pVVar1->zeroVector).x;
+  (this->fields).camMoveTowardsOffset.y = fVar2;
+  (this->fields).camMoveTowardsOffset.z = fVar3;
   (this->fields).fadeStartDistance = 4.0;
   (this->fields).fadeEndDistance = 2.0;
   (this->fields).fadeStartBase = 4.0;
   (this->fields).fadeEndBase = 2.0;
   (this->fields).prevDist = -1.0;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).camMoveTowardsOffset.x = camMoveTowardsOffset.x;
   (this->fields).camMoveTowardsOffset.y = camMoveTowardsOffset.y;
   (this->fields).fadeStartDistance = fadeStartDistance;

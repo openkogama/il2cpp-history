@@ -9,142 +9,203 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnEmoteDataChange_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnHeadPitchChange_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnHeadYawChange_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnPointPitchChange_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnPointYawChange_System__Object_
+                   );
+    func_?(&TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     cRam_? = '\x01';
   }
   (this->fields).limbManager = limbManager;
-  if (limbRotationRuntimeData != (LimbRotationRuntimeData *)0x0) {
-    pMVar1 = (limbRotationRuntimeData->fields).HeadRotationYaw;
-    if (pMVar1 != (MVRuntimeDataVariable *)0x0) {
-      pMVar2 = (pMVar1->fields).OnChange;
-      pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
+  func_?(&(this->fields).limbManager,limbManager);
+  if ((limbRotationRuntimeData != (LimbRotationRuntimeData *)0x0) &&
+     (pMVar1 = (limbRotationRuntimeData->fields).HeadRotationYaw,
+     pMVar1 != (MVRuntimeDataVariable *)0x0)) {
+    pMVar2 = (pMVar1->fields).OnChange;
+    pUVar3 = (UnityAction_1_System_Object_ *)
+             func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+    if (pUVar3 != (UnityAction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
                 (pUVar3,(Object *)this,
                  MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnHeadYawChange_System__Object_
                  ,(MethodInfo *)0x0);
-      pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)
+      pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
                mscorlib.dll::System::Delegate::Delegate_Combine
                          ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-      pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-      if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-        if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-          pMVar2 = pMVar4;
-        }
-        pMVar5 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
-        if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+      if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        (pMVar1->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
       }
-      (pMVar1->fields).OnChange = pMVar2;
+      else {
+        pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pMVar4 = pMVar2;
+        }
+        if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+        (pMVar1->fields).OnChange = pMVar4;
+        pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pMVar4 = pMVar2;
+        }
+        if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+      }
+      func_?();
       pMVar1 = (limbRotationRuntimeData->fields).HeadRotationPitch;
       if (pMVar1 != (MVRuntimeDataVariable *)0x0) {
         pMVar2 = (pMVar1->fields).OnChange;
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)this,
-                   MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnHeadPitchChange_System__Object_
-                   ,(MethodInfo *)0x0);
-        pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-        pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-        if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-          if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-            pMVar2 = pMVar4;
-          }
-          pMVar5 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
-          if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-        }
-        (pMVar1->fields).OnChange = pMVar2;
-        pMVar1 = (limbRotationRuntimeData->fields).PointRotationYaw;
-        if (pMVar1 != (MVRuntimeDataVariable *)0x0) {
-          pMVar2 = (pMVar1->fields).OnChange;
-          pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                    *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
+        pUVar3 = (UnityAction_1_System_Object_ *)
+                 func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+        if (pUVar3 != (UnityAction_1_System_Object_ *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+          UnityAction_1_System_Object___ctor
                     (pUVar3,(Object *)this,
-                     MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnPointYawChange_System__Object_
+                     MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnHeadPitchChange_System__Object_
                      ,(MethodInfo *)0x0);
-          pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)
+          pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
                    mscorlib.dll::System::Delegate::Delegate_Combine
                              ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-          pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-          if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-            if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-              pMVar2 = pMVar4;
-            }
-            pMVar5 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
-            if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+          if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+            (pMVar1->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
           }
-          (pMVar1->fields).OnChange = pMVar2;
-          pMVar1 = (limbRotationRuntimeData->fields).PointRotationPitch;
+          else {
+            pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+            if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+              pMVar4 = pMVar2;
+            }
+            if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+            (pMVar1->fields).OnChange = pMVar4;
+            pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+            if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+              pMVar4 = pMVar2;
+            }
+            if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+          }
+          func_?();
+          pMVar1 = (limbRotationRuntimeData->fields).PointRotationYaw;
           if (pMVar1 != (MVRuntimeDataVariable *)0x0) {
             pMVar2 = (pMVar1->fields).OnChange;
-            pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-            SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-            UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                      (pUVar3,(Object *)this,
-                       MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnPointPitchChange_System__Object_
-                       ,(MethodInfo *)0x0);
-            pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-            pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-            if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-              if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-                pMVar2 = pMVar4;
-              }
-              pMVar5 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
-              if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-            }
-            (pMVar1->fields).OnChange = pMVar2;
-            pMVar1 = (limbRotationRuntimeData->fields).Emote;
-            if (pMVar1 != (MVRuntimeDataVariable *)0x0) {
-              pMVar2 = (pMVar1->fields).OnChange;
-              pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                        *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-              SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-              UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
+            pUVar3 = (UnityAction_1_System_Object_ *)
+                     func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+            if (pUVar3 != (UnityAction_1_System_Object_ *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+              UnityAction_1_System_Object___ctor
                         (pUVar3,(Object *)this,
-                         MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnEmoteDataChange_System__Object_
+                         MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnPointYawChange_System__Object_
                          ,(MethodInfo *)0x0);
-              pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)
+              pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
                        mscorlib.dll::System::Delegate::Delegate_Combine
                                  ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-              pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-              if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-code_?:
-                (pMVar1->fields).OnChange = pMVar2;
-                return;
+              if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                (pMVar1->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
               }
-              if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-                pMVar2 = pMVar4;
+              else {
+                pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+                  pMVar4 = pMVar2;
+                }
+                if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+                (pMVar1->fields).OnChange = pMVar4;
+                pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+                  pMVar4 = pMVar2;
+                }
+                if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
               }
-              pMVar5 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
-              if (pMVar2 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-              goto code_?;
+              func_?();
+              pMVar1 = (limbRotationRuntimeData->fields).PointRotationPitch;
+              if (pMVar1 != (MVRuntimeDataVariable *)0x0) {
+                pMVar2 = (pMVar1->fields).OnChange;
+                pUVar3 = (UnityAction_1_System_Object_ *)
+                         func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+                if (pUVar3 != (UnityAction_1_System_Object_ *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+                  UnityAction_1_System_Object___ctor
+                            (pUVar3,(Object *)this,
+                             MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnPointPitchChange_System__Object_
+                             ,(MethodInfo *)0x0);
+                  pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
+                           mscorlib.dll::System::Delegate::Delegate_Combine
+                                     ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+                  if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                    (pMVar1->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                  }
+                  else {
+                    pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                    if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+                      pMVar4 = pMVar2;
+                    }
+                    if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
+                    goto code_?;
+                    (pMVar1->fields).OnChange = pMVar4;
+                    pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                    if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+                      pMVar4 = pMVar2;
+                    }
+                    if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
+                    goto code_?;
+                  }
+                  func_?();
+                  pMVar1 = (limbRotationRuntimeData->fields).Emote;
+                  if (pMVar1 != (MVRuntimeDataVariable *)0x0) {
+                    pMVar2 = (pMVar1->fields).OnChange;
+                    pUVar3 = (UnityAction_1_System_Object_ *)
+                             func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+                    if (pUVar3 != (UnityAction_1_System_Object_ *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]
+                      ::UnityAction_1_System_Object___ctor
+                                (pUVar3,(Object *)this,
+                                 MethodInfo__AvatarLimbManagerRemote__AvatarLimbDataManagerRemote__OnEmoteDataChange_System__Object_
+                                 ,(MethodInfo *)0x0);
+                      pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
+                               mscorlib.dll::System::Delegate::Delegate_Combine
+                                         ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+                      if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                        (pMVar1->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                        func_?();
+                        return;
+                      }
+                      pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                      if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+                        pMVar4 = pMVar2;
+                      }
+                      if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                        (pMVar1->fields).OnChange = pMVar4;
+                        pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                        if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+                          pMVar4 = pMVar2;
+                        }
+                        if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                          func_?();
+                          return;
+                        }
+                      }
+                      goto code_?;
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   }
-  func_?(0);
-  pMVar4 = extraout_ECX;
-  pMVar5 = extraout_EDX;
+  func_?();
 code_?:
-  func_?(pMVar4,pMVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -158,28 +219,34 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pIStack_1 = (Int32__Class *)&TypeInfo__System__Int32;
+    func_?();
     cRam_? = '\x01';
   }
   if (newEmoteData != (Object *)0x0) {
-    pIVar1 = TypeInfo__System__Int32;
-    if ((newEmoteData->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    puVar2 = (undefined1 *)func_?(newEmoteData);
-    pAVar3 = (this->fields).limbManager;
-    if (pAVar3 != (AvatarLimbManagerRemote *)0x0) {
-      (*(code *)(pAVar3->klass->vtable).StartEmote.method)(pAVar3,*puVar2,pAVar3->klass[1]._0.image)
-      ;
+    if ((newEmoteData->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) {
+      pIStack_1 = TypeInfo__System__Int32;
+      pOStack_2 = newEmoteData;
+      func_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pIStack_1 = (Int32__Class *)newEmoteData;
+    pbVar4 = (byte *)func_?();
+    pAStack_5 = (this->fields).limbManager;
+    if (pAStack_5 != (AvatarLimbManagerRemote *)0x0) {
+      pOStack_2 = (Object *)(uint)*pbVar4;
+      pIStack_1 = (Int32__Class *)(pAStack_5->klass->vtable).StartEmote.method;
+      (*(pAStack_5->klass->vtable).StartEmote.methodPtr)();
       return;
     }
   }
-  func_?(0);
-  newEmoteData = extraout_ECX;
-  pIVar1 = extraout_EDX;
-code_?:
-  func_?(newEmoteData,pIVar1);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pIStack_1 = (Int32__Class *)&stack0xfffffffc;
+  uVar6 = func_?(&pAStack_5);
+  func_?(uVar6);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -193,14 +260,17 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   if (headPitch != (Object *)0x0) {
-    pSVar1 = TypeInfo__System__Single;
-    if ((headPitch->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    pfVar2 = (float *)func_?(headPitch);
+    if ((headPitch->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pfVar2 = (float *)func_?();
     pitch = *pfVar2;
     this_00 = (this->fields).limbManager;
     (this->fields).newHeadPitchValue = pitch;
@@ -210,13 +280,10 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
       return;
     }
   }
-  func_?(0);
-  headPitch = extraout_ECX;
-  pSVar1 = extraout_EDX;
-code_?:
-  func_?(headPitch,pSVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -230,14 +297,17 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   if (headYaw != (Object *)0x0) {
-    pSVar1 = TypeInfo__System__Single;
-    if ((headYaw->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    pfVar2 = (float *)func_?(headYaw);
+    if ((headYaw->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pfVar2 = (float *)func_?();
     yaw = *pfVar2;
     this_00 = (this->fields).limbManager;
     (this->fields).newHeadYawValue = yaw;
@@ -247,13 +317,10 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
       return;
     }
   }
-  func_?(0);
-  headYaw = extraout_ECX;
-  pSVar1 = extraout_EDX;
-code_?:
-  func_?(headYaw,pSVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -267,30 +334,33 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   if (pointPitch != (Object *)0x0) {
-    pSVar1 = TypeInfo__System__Single;
-    if ((pointPitch->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    pfVar2 = (float *)func_?(pointPitch);
+    if ((pointPitch->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pfVar2 = (float *)func_?();
     pitch = *pfVar2;
-    this_00 = (this->fields).limbManager;
+    pAVar3 = (this->fields).limbManager;
     (this->fields).newPointPitchValue = pitch;
-    if (this_00 != (AvatarLimbManagerRemote *)0x0) {
-      AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdatePointingRemotely
+    if ((pAVar3 != (AvatarLimbManagerRemote *)0x0) &&
+       (this_00 = (pAVar3->fields).pointingHandler,
+       this_00 != (AvatarLimbManagerRemote_AvatarPointingHandlerRemote *)0x0)) {
+      AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
+      AvatarLimbManagerRemote_AvatarPointingHandlerRemote_SetRotationRemotely
                 (this_00,(this->fields).newPointYawValue,pitch,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pointPitch = extraout_ECX;
-  pSVar1 = extraout_EDX;
-code_?:
-  func_?(pointPitch,pSVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar4 = func_?(&stack0xfffffff0);
+  func_?(uVar4);
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -304,30 +374,33 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   if (pointYaw != (Object *)0x0) {
-    pSVar1 = TypeInfo__System__Single;
-    if ((pointYaw->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    pfVar2 = (float *)func_?(pointYaw);
+    if ((pointYaw->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pfVar2 = (float *)func_?();
     yaw = *pfVar2;
-    this_00 = (this->fields).limbManager;
+    pAVar3 = (this->fields).limbManager;
     (this->fields).newPointYawValue = yaw;
-    if (this_00 != (AvatarLimbManagerRemote *)0x0) {
-      AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdatePointingRemotely
+    if ((pAVar3 != (AvatarLimbManagerRemote *)0x0) &&
+       (this_00 = (pAVar3->fields).pointingHandler,
+       this_00 != (AvatarLimbManagerRemote_AvatarPointingHandlerRemote *)0x0)) {
+      AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
+      AvatarLimbManagerRemote_AvatarPointingHandlerRemote_SetRotationRemotely
                 (this_00,yaw,(this->fields).newPointPitchValue,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pointYaw = extraout_ECX;
-  pSVar1 = extraout_EDX;
-code_?:
-  func_?(pointYaw,pSVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar4 = func_?(&stack0xfffffff0);
+  func_?(uVar4);
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -346,9 +419,10 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
                (MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -360,16 +434,20 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
                (AvatarLimbManagerRemote_AvatarLimbDataManagerRemote *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).limbManager;
-  if (this_00 != (AvatarLimbManagerRemote *)0x0) {
-    AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdatePointingRemotely
+  pAVar1 = (this->fields).limbManager;
+  if ((pAVar1 != (AvatarLimbManagerRemote *)0x0) &&
+     (this_00 = (pAVar1->fields).pointingHandler,
+     this_00 != (AvatarLimbManagerRemote_AvatarPointingHandlerRemote *)0x0)) {
+    AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
+    AvatarLimbManagerRemote_AvatarPointingHandlerRemote_SetRotationRemotely
               (this_00,(this->fields).newPointYawValue,(this->fields).newPointPitchValue,
                (MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

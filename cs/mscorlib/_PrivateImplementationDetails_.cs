@@ -9,154 +9,305 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 0: mscorlib.dll - Assembly: mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+// Image 1: mscorlib.dll - Assembly: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 
 [CompilerGenerated]
-internal class _PrivateImplementationDetails_
+internal sealed class _PrivateImplementationDetails_
 {
 	// Fields
-	internal static _ArrayType_56 __field_0;
-	internal static _ArrayType_24 __field_1;
-	internal static _ArrayType_24 __field_2;
-	internal static _ArrayType_24 __field_3;
-	internal static _ArrayType_24 __field_4;
-	internal static _ArrayType_16 __field_5;
-	internal static _ArrayType_16 __field_6;
-	internal static _ArrayType_3132 __field_15;
-	internal static _ArrayType_20 __field_16;
-	internal static _ArrayType_32 __field_17;
-	internal static _ArrayType_48 __field_18;
-	internal static _ArrayType_64 __field_19;
-	internal static _ArrayType_64 __field_20;
-	internal static _ArrayType_64 __field_21;
-	internal static _ArrayType_64 __field_22;
-	internal static _ArrayType_12 __field_23;
-	internal static _ArrayType_12 __field_24;
-	internal static _ArrayType_12 __field_25;
-	internal static _ArrayType_16 __field_26;
-	internal static _ArrayType_136 __field_27;
-	internal static _ArrayType_72 __field_30;
-	internal static _ArrayType_8 __field_31;
-	internal static _ArrayType_20 __field_32;
-	internal static _ArrayType_64 __field_33;
-	internal static _ArrayType_124 __field_34;
-	internal static _ArrayType_32 __field_35;
-	internal static _ArrayType_96 __field_36;
-	internal static _ArrayType_2048 __field_37;
-	internal static _ArrayType_56 __field_38;
-	internal static _ArrayType_16 __field_39;
-	internal static _ArrayType_48 __field_40;
-	internal static _ArrayType_2048 __field_41;
-	internal static _ArrayType_2048 __field_42;
-	internal static _ArrayType_256 __field_43;
-	internal static _ArrayType_256 __field_44;
-	internal static _ArrayType_120 __field_45;
-	internal static _ArrayType_256 __field_46;
-	internal static _ArrayType_256 __field_47;
-	internal static _ArrayType_1024 __field_48;
-	internal static _ArrayType_1024 __field_49;
-	internal static _ArrayType_1024 __field_50;
-	internal static _ArrayType_1024 __field_51;
-	internal static _ArrayType_1024 __field_52;
-	internal static _ArrayType_1024 __field_53;
-	internal static _ArrayType_1024 __field_54;
-	internal static _ArrayType_1024 __field_55;
-	internal static _ArrayType_256 __field_56;
-	internal static _ArrayType_640 __field_57;
-	internal static _ArrayType_12 __field_60;
-	internal static _ArrayType_380 __field_61;
-	internal static _ArrayType_128 __field_62;
-	internal static _ArrayType_256 __field_63;
-	internal static _ArrayType_52 __field_64;
-	internal static _ArrayType_52 __field_65;
+	internal static readonly __StaticArrayInitTypeSize_170 _021022D5891F99B3B525763EB77BAEC69B107268F560721F5060FCDBD4D5AAE8;
+	internal static readonly __StaticArrayInitTypeSize_12 _042957A0DB5FF2D38A343AC5AE5F8635B88F10C32EB87A238B1DFB4756468476;
+	internal static readonly __StaticArrayInitTypeSize_84 _0C496C9AE05419BD25256D0EF4F31AFD291119F14B8BD683BF1774F91E08659D;
+	internal static readonly __StaticArrayInitTypeSize_72 _0E499E7743BCDFF289B85890E4DFDD635594DB16246DC094C3C19556B6C1262C;
+	internal static readonly __StaticArrayInitTypeSize_12 _0F9E3C7E66CDEF5C44FA29E65CA676C480F7A2A4A067F70107FDC292C68D38B0;
+	internal static readonly __StaticArrayInitTypeSize_76 _1199C3B39A2FA058EFF5B3829616AE81EE2B59A51D89C107A5FA4B6FEF95DD16;
+	internal static readonly __StaticArrayInitTypeSize_640 _125CF2084D7EEC18DC9795BE4BAA221655C0EABAB89E90A74FB0370378A60293;
+	internal static readonly __StaticArrayInitTypeSize_2100 _12D518BA10F3DD1A331E65FBD4C330930C0A0BD9F50F37BE0BDF596E964B9A78;
+	internal static readonly __StaticArrayInitTypeSize_128 _195ABC1ABB69B6BD65F20ACAFA79EED2D330BF513E25C830F24B8A78D8703446;
+	internal static readonly __StaticArrayInitTypeSize_1450 _1B9CC34A0CF8DBCC350E200673FAC4124DDAD581F1FC2C16FF9A1C0154691687;
+	internal static readonly __StaticArrayInitTypeSize_360 _1C4B3A80ED7AEC83916479BCE280E1258D5785D07F0EA22A5E27592ACCAE692B;
+	internal static readonly __StaticArrayInitTypeSize_42 _1F38DEB3F70291588D06D3830D0D4241CE0570C9F4EE8B00F606C4753EB016E2;
+	internal static readonly __StaticArrayInitTypeSize_12 _2403FBEA85D0741C5727760E97EF16C9BF23294F21C0F1265A4BAF7F22202A64;
+	internal static readonly __StaticArrayInitTypeSize_76 _25308BAB47481701F1E861B1EA4F2409E73ABB14E9579C26DF4ABE440A0DCF0A;
+	internal static readonly __StaticArrayInitTypeSize_72 _2CCF4119215BDAD102DA7AD5B57E0E6CA19CC8FF5524856FC58907E824213E1F;
+	internal static readonly __StaticArrayInitTypeSize_72 _3444EB31231B2CCC1B05C7A44EBD1B2A009C1D9977A99B453F52E2F81DD6C32F;
+	internal static readonly __StaticArrayInitTypeSize_16 _3D95E4501B1964D7FCE16E3F5682A038752B462357D87343880B1E819F6163FE;
+	internal static readonly __StaticArrayInitTypeSize_72 _3F62692E2AD5078353EC4471A13421A61EE493294CF59DC66626A6EF9CCCD2C4;
+	internal static readonly __StaticArrayInitTypeSize_12 _42E1421FC2A5A6A33E964D7EB9603EB101818D858DDA09B2BC9B5A888C1C351C;
+	internal static readonly __StaticArrayInitTypeSize_120 _4623CA5867960AA898AA1F65E720CD5ECD3552542E0C6F6FB65B21D14DD1CBC2;
+	internal static readonly __StaticArrayInitTypeSize_4096 _493402F3E4397B2945B16273E795816C0BDF80F76F42FCAA75F3DF2E215ABC1B;
+	internal static readonly __StaticArrayInitTypeSize_174 _494C32E1A18F6E8AD8ED5FAB0A5AF07F801BE7AF3C936942B020918CE2953046;
+	internal static readonly __StaticArrayInitTypeSize_2382 _4E0B9E024FA510B6F03C92D95BB204E78CDC6E3FD2EC8D35787B7BC76F0655A0;
+	internal static readonly __StaticArrayInitTypeSize_44 _508085E0DDEEA9CE48BFAE98CEC779F8D06301AE973555D37680D08190CAFA70;
+	internal static readonly __StaticArrayInitTypeSize_72 _510FDFA4743E58DD45DCDD7CB4F8509BF6294CC1D1D4958CA30A9E7604973006;
+	internal static readonly __StaticArrayInitTypeSize_42 _5292FD0A8E62FCCBE41F34EFE7575D097990A66FE23B3507971C5BF272A4362E;
+	internal static readonly __StaticArrayInitTypeSize_52 _543172FF9822CE5240DF89FF3AD8C7FD9824F97D0EED9B1432E60345FBBDE9A9;
+	internal static readonly __StaticArrayInitTypeSize_10800 _56073E3CC3FC817690CC306D0DB7EA63EBCB0801359567CA44CA3D3B9BF63854;
+	internal static readonly __StaticArrayInitTypeSize_52 _5857EE4CE98BFABBD62B385C1098507DD0052FF3951043AAD6A1DABD495F18AA;
+	internal static readonly __StaticArrayInitTypeSize_72 _5EC4E50DA95A113769D73E5F7F8221A876185CEE6498ABB16FBB9F0563C15BBF;
+	internal static readonly __StaticArrayInitTypeSize_94 _61D639BE11384EE21CDE2B40357F4F9D80A106C97C592D18A9F4CAA442CA5D31;
+	internal static readonly __StaticArrayInitTypeSize_256 _62E6F13B53D67FDD780E20D89A6E8EE503B197AC16AC3F1D2571C147FDD324C9;
+	internal static readonly __StaticArrayInitTypeSize_648 _67856A16DB0550FDAB4D1A9B208B0C155C4679CA116BF867B74ED2A0AA4D2955;
+	internal static readonly __StaticArrayInitTypeSize_72 _6DC92D3617F0357376502FBA4CDD465B5423818DABE8B2CA1A06E1351F2F1C85;
+	internal static readonly __StaticArrayInitTypeSize_212 _71F7F6B226CBC11C8B26D506869FAE022928427389882579DB316F36FF34A096;
+	internal static readonly __StaticArrayInitTypeSize_288 _74BCD6ED20AF2231F2BB1CDE814C5F4FF48E54BAC46029EEF90DDF4A208E2B20;
+	internal static readonly __StaticArrayInitTypeSize_256 _74EF7306E7452D6859B6463CE496B8DF30925F69E1B2969E1F3F34BBC9C6AF04;
+	internal static readonly __StaticArrayInitTypeSize_120 _78AD7906208AA1E531D0C1100062DE3D252210B1E4214061294A0BB7C94762B8;
+	internal static readonly __StaticArrayInitTypeSize_1472 _7BEC6AD454781FDCD8D475B3418629CBABB3BF9CA66FA80009D608A1A60D0696;
+	internal static readonly __StaticArrayInitTypeSize_72 _7F777906B0704EB248888E491577584D5BEBE71B375BD595A06444390B471915;
+	internal static readonly __StaticArrayInitTypeSize_256 _801494072CDD59E61F9AA9345A80D045378705DFDCE94902C22EAEAE049BE780;
+	internal static readonly long _819B40F8CF7DC49B4275955A17C10239F1BBBB3BF96E26E25ED844B96B645D7F;
+	internal static readonly __StaticArrayInitTypeSize_72 _8259E3EBA4D41CA02AE5322BBD280034A9C9860D9CD0D2038139FC9EBE6B6C77;
+	internal static readonly long _82B100804CE219CD73E155C7C6457FCF04EA539DE5B19F4736E800098714EB21;
+	internal static readonly __StaticArrayInitTypeSize_72 _861FD05B0EAD3D0AA9418B140CC37846BBC5F195214D90CEF42919D1E36EED10;
+	internal static readonly __StaticArrayInitTypeSize_998 _86BDA34D2165AC08F2DE4918B302E44205CDEA674FCA7F2C7F56D4F12D8B0C73;
+	internal static readonly __StaticArrayInitTypeSize_1665 _8CCE27079B32C13BB310169A6AD26AE419CDC98B7E2EFD3CC9997257F4BC1DEF;
+	internal static readonly __StaticArrayInitTypeSize_5952 _9086502742CE7F0595B57A4E5B32901FF4CF97959B92F7E91A435E4765AC1115;
+	internal static readonly __StaticArrayInitTypeSize_336 _93B42898102ACB2421875C45676880B8A07390D8DF0E1EE85C5D1AA26964B0C6;
+	internal static readonly __StaticArrayInitTypeSize_52 _93F28AF88A06482BE13F8D0354B6A7676DDAED573EA3938C50F6E53E6D6BB0B6;
+	internal static readonly __StaticArrayInitTypeSize_174 _95BDE712712F10D07813AE3DEEA40D1F38E3FCF1A92CC435F17A326CC22242EB;
+	internal static readonly __StaticArrayInitTypeSize_262 _964889A5283FD0A3DFC8AE256721E6F67B8212FD6841AB1C821DE3134DE79B07;
+	internal static readonly __StaticArrayInitTypeSize_15 _96E3FDE919EC36694EFBEC22FEF80F84EE640CC5E46CED07C3E65AC04607C7D6;
+	internal static readonly __StaticArrayInitTypeSize_36 _9960C7FC60CDD325C8A2A00995BE7064EAC3F6295C6A5C4E797D2281846131E4;
+	internal static readonly __StaticArrayInitTypeSize_44 _99E66DACA3EFF94776AF1258E0E5B2F4DF2900E4EA32351B0DF37A87F2426B1F;
+	internal static readonly __StaticArrayInitTypeSize_72 A252A93D042C5E2453990C2829A425C6DD749CCDCDF13DB58C11BBC78E8D3CE9;
+	internal static readonly __StaticArrayInitTypeSize_120 A2DFDF9C2CED8BB1C0B9B06064345ACC9C22DFE5FEC9976FF061F0994451519B;
+	internal static readonly __StaticArrayInitTypeSize_76 A2EC7CB9B0FE89F9A9BEA547D773225AFE6E4535DF28325A0D6CD7A5E2D20376;
+	internal static readonly __StaticArrayInitTypeSize_72 A30E1152CFB528AE968FAC58E83BBEB3611BFDE2E6CF60B4FA9535A7D0A9B8EA;
+	internal static readonly __StaticArrayInitTypeSize_40 A516EECB41051151F0183A8B0B6F6693C43F7D9E1815F85CAAAB18E00A5269A2;
+	internal static readonly __StaticArrayInitTypeSize_72 AAF4528994DD7C464F43C131F6CD44DF41ACC18462C95877252FFC7EAC0164EF;
+	internal static readonly __StaticArrayInitTypeSize_4096 B215DD70A77190680641703C6DF73729B4583E285AF8B51ACF9086655FB2D0F3;
+	internal static readonly __StaticArrayInitTypeSize_52 B21802DE889E5F4F5344C8E0D366F59B68F886F88EFE45EA5CE01534A3F5C0E5;
+	internal static readonly __StaticArrayInitTypeSize_2176 B55F94CD2F415D0279D7A1AF2265C4D9A90CE47F8C900D5D09AD088796210838;
+	internal static readonly __StaticArrayInitTypeSize_36 BABD01C34E7E65E57E4C431281E782B4101CE0644A8090AD6E501F1C6CF2C9DF;
+	internal static readonly __StaticArrayInitTypeSize_16 BB425A9B43E10C921902A25D07A4317DEFF9F606A788672E1B21633C143407F0;
+	internal static readonly __StaticArrayInitTypeSize_36 C250CAD28060A4EB63B4C4A643DDA196CCD35FD2FC67FB749ADF4BAC6D62E1A0;
+	internal static readonly __StaticArrayInitTypeSize_256 C2D8E5EED6CBEBD8625FC18F81486A7733C04F9B0129FFBE974C68B90308B4F2;
+	internal static readonly __StaticArrayInitTypeSize_72 C5733A1245383FBF067B4A9BDB41E3FB8E3A6BDEF37B3D5418F389422875783F;
+	internal static readonly __StaticArrayInitTypeSize_1024 C8EC70AC5A448C3A45CF1DFCC1375BE4E80DC6793E97D5E89BD97A0DC232B2E3;
+	internal static readonly __StaticArrayInitTypeSize_16 C95D810E738DB5F591EE691CE884EED2F110D9F82B1F7A8BE6ED257FDF4CDBEB;
+	internal static readonly __StaticArrayInitTypeSize_130 C9830DF6956357ACE51CE1F82298578B36EB45A0CFDB8AEC5B9FDA7DB17E8063;
+	internal static readonly __StaticArrayInitTypeSize_72 CAF8A46B3A07E26F84FE849B57A877051A0D06194B1C057985446B64BCC6E016;
+	internal static readonly __StaticArrayInitTypeSize_36 CAFFFC9D15E4037EE8FBDB1A45DFE456F0936BDC7310F1882EAF14B706A76658;
+	internal static readonly __StaticArrayInitTypeSize_4096 CE11D6DEAFFC6D6EF6030E30E7444C933E6261F32AA737064EF0446C219ECE22;
+	internal static readonly __StaticArrayInitTypeSize_72 D1A99909A2923269BB67E72C1AED693F74961BDA58360FCC133007740CEBF5F1;
+	internal static readonly __StaticArrayInitTypeSize_72 D503954AE2C3616EA32CEB0D66F5B2E119D03CE722773E5D7E1A8BC8F1803631;
+	internal static readonly __StaticArrayInitTypeSize_172 D6691EE5A533DE7E0859066942261B24D0C836D7EE016D2251377BFEE40FEA15;
+	internal static readonly __StaticArrayInitTypeSize_12 D896D464C3726A21162F271ACB711464AD07EA9C9CE78E0297FD0DE934471FA6;
+	internal static readonly __StaticArrayInitTypeSize_72 D8A29F3D197FBB54CF9F4B105AFBA6B1257ADF6449F0184F843380AAAA24639C;
+	internal static readonly __StaticArrayInitTypeSize_72 DCDCF594464B904F763D4CE53B1DBE08A47E551AE86FD5D61F63FD0C3313FDC3;
+	internal static readonly __StaticArrayInitTypeSize_2350 DCE88EE5233B9D0FD0D7A6222C82BC3AEE83B15E9992F939B17AB40530DB555C;
+	internal static readonly __StaticArrayInitTypeSize_152 DD471F12FFA94CC557A02A91C2CBB95F551AB28C8BBF297B2F953B8886BCCF6D;
+	internal static readonly __StaticArrayInitTypeSize_72 DF29A050CD2EBD9DFDC783DB1CC74D3D716DAEC1630A337EE31B9E2E03D34D2D;
+	internal static readonly __StaticArrayInitTypeSize_4096 E148B2057CF0C1595155635E761FB66AAE634C40D8FABC4CE79A2DB8886525D4;
+	internal static readonly __StaticArrayInitTypeSize_38 E2C673A3A737B04369A63F1FB1A30F6E742B066E2CCCD9B1838793CBB5590598;
+	internal static readonly __StaticArrayInitTypeSize_12 E32C465157D21F39B3DBF186A98FB02185C63B0260B47247A7A5FDF2B061EAA8;
+	internal static readonly __StaticArrayInitTypeSize_24 E5F4F6214036DF103321A8A0CE30C2EF935694B4199D52BC538E7EF3F045CB92;
+	internal static readonly __StaticArrayInitTypeSize_64 E768EDCAE10BAB68BB5DF102FDBB8CF4F31B9D60159B44DA3F33ABC36388308B;
+	internal static readonly __StaticArrayInitTypeSize_1018 E8588351183F6F6A7DAD54DC28357628F3C4D4B358AB92A18AE7D08B0D9B0092;
+	internal static readonly __StaticArrayInitTypeSize_12 EBE07C3718876777F609CD22058F4C3A6CCCC695F5BDE90998DC1E12E0CBE63D;
+	internal static readonly __StaticArrayInitTypeSize_32 EE415D5C3ECC6C8C19F71BCD4E03847F5A15931374A7F5BF88C24B722F04B8FE;
+	internal static readonly __StaticArrayInitTypeSize_16 EF82B163CA8252A793A6E73F57775D843C9A21F65586926EB11893FA8BB603E9;
+	internal static readonly __StaticArrayInitTypeSize_240 F0CF66F9B123DCEBB39C38C5D8E4821D4E94DB593889C506BCA0827036F1B7EB;
+	internal static readonly __StaticArrayInitTypeSize_3 F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5;
+	internal static readonly __StaticArrayInitTypeSize_256 F2830F044682E33B39018B5912634835B641562914E192CA66C654F5E4492FA8;
+	internal static readonly __StaticArrayInitTypeSize_72 F4BD8144313C3B67E191C6F3CD8B00540FF1809837C5BCA5C2FDA0D518681563;
+	internal static readonly __StaticArrayInitTypeSize_212 F7D381AF73D85950E0B064CF1AA8F14938A1F38084B46CE36AAEFE81BEF739F3;
+	internal static readonly __StaticArrayInitTypeSize_52 FADB218011E7702BB9575D0C32A685DA10B5C72EB809BD9A955DB1C76E4D8315;
+	internal static readonly __StaticArrayInitTypeSize_1208 FB2089AF82E09593374B65EC2440779FDCF5DD6DA07D26E57AF6790667B937CD;
+	internal static readonly __StaticArrayInitTypeSize_240 FD68700E95459C5E7A49C5830F8BD0A9BA4BD171252663D8066B09E7768C5C5D;
+	internal static readonly __StaticArrayInitTypeSize_24 FEC387BA57A54BB6066E4CA8A4F9C0FF9C36B9CBD6600C3683F6FB1BDB5077EB;
 
 	// Nested types
-	private struct _ArrayType_56
+	private struct __StaticArrayInitTypeSize_3
 	{
 	}
 
-	private struct _ArrayType_24
+	private struct __StaticArrayInitTypeSize_12
 	{
 	}
 
-	private struct _ArrayType_16
+	private struct __StaticArrayInitTypeSize_15
 	{
 	}
 
-	private struct _ArrayType_120
+	private struct __StaticArrayInitTypeSize_16
 	{
 	}
 
-	private struct _ArrayType_3132
+	private struct __StaticArrayInitTypeSize_24
 	{
 	}
 
-	private struct _ArrayType_20
+	private struct __StaticArrayInitTypeSize_32
 	{
 	}
 
-	private struct _ArrayType_32
+	private struct __StaticArrayInitTypeSize_36
 	{
 	}
 
-	private struct _ArrayType_48
+	private struct __StaticArrayInitTypeSize_38
 	{
 	}
 
-	private struct _ArrayType_64
+	private struct __StaticArrayInitTypeSize_40
 	{
 	}
 
-	private struct _ArrayType_12
+	private struct __StaticArrayInitTypeSize_42
 	{
 	}
 
-	private struct _ArrayType_136
+	private struct __StaticArrayInitTypeSize_44
 	{
 	}
 
-	private struct _ArrayType_8
+	private struct __StaticArrayInitTypeSize_52
 	{
 	}
 
-	private struct _ArrayType_72
+	private struct __StaticArrayInitTypeSize_64
 	{
 	}
 
-	private struct _ArrayType_124
+	private struct __StaticArrayInitTypeSize_72
 	{
 	}
 
-	private struct _ArrayType_96
+	private struct __StaticArrayInitTypeSize_76
 	{
 	}
 
-	private struct _ArrayType_2048
+	private struct __StaticArrayInitTypeSize_84
 	{
 	}
 
-	private struct _ArrayType_256
+	private struct __StaticArrayInitTypeSize_94
 	{
 	}
 
-	private struct _ArrayType_1024
+	private struct __StaticArrayInitTypeSize_120
 	{
 	}
 
-	private struct _ArrayType_640
+	private struct __StaticArrayInitTypeSize_128
 	{
 	}
 
-	private struct _ArrayType_380
+	private struct __StaticArrayInitTypeSize_130
 	{
 	}
 
-	private struct _ArrayType_128
+	private struct __StaticArrayInitTypeSize_152
 	{
 	}
 
-	private struct _ArrayType_52
+	private struct __StaticArrayInitTypeSize_170
 	{
 	}
+
+	private struct __StaticArrayInitTypeSize_172
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_174
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_212
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_240
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_256
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_262
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_288
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_336
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_360
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_640
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_648
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_998
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_1018
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_1024
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_1208
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_1450
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_1472
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_1665
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_2100
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_2176
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_2350
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_2382
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_4096
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_5952
+	{
+	}
+
+	private struct __StaticArrayInitTypeSize_10800
+	{
+	}
+
+	// Methods
+	internal static uint ComputeStringHash(string s);
 }
 

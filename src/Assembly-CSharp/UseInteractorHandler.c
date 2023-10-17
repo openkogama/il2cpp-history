@@ -6,23 +6,23 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_AddUseInter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   if ((useInteractor != (UseInteractor *)0x0) &&
-     (this_00 = (this->fields).useInteractors,
-     this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0)) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-    Dictionary_2_System_Int32_System_Object__Add
-              ((Dictionary_2_System_Int32_System_Object_ *)this_00,(useInteractor->fields).woOwnerID
-               ,(Object *)useInteractor,
+     (this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).useInteractors,
+     this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_00,(Object *)(useInteractor->fields).woOwnerID,(Object *)useInteractor,
                MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Add_int__UseInteractor_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -30,27 +30,39 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_AddUseInter
 /* Void Init(Int32, Collider) */
 
 void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Init
-               (UseInteractorHandler *this,int32_t ownerWoId,Collider *triggingCollider,
+               (UseInteractorHandler *this,int32_t ownerWoId,Collider *baseCollider,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Assets__Scripts__Tools__ColliderCollection);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
     cRam_? = '\x01';
   }
   (this->fields).ownerWoId = ownerWoId;
-  (this->fields).triggingCollider = triggingCollider;
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
-    pUVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                       (this_00,
-                        MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                       );
-    (this->fields).interactionBase = (MVInteractableBase *)pUVar1;
-    return;
+  this_00 = (ColliderCollection *)
+            func_?(TypeInfo__Assets__Scripts__Tools__ColliderCollection);
+  if (this_00 != (ColliderCollection *)0x0) {
+    Assets::Scripts::Tools::ColliderCollection::ColliderCollection__ctor
+              (this_00,baseCollider,(MethodInfo *)0x0);
+    (this->fields).triggingColliders = this_00;
+    func_?(&(this->fields).triggingColliders,this_00);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (this_01 != (GameObject *)0x0) {
+      pMVar1 = (MVInteractableBase *)
+               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                         (this_01,
+                          MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                         );
+      (this->fields).interactionBase = pMVar1;
+      func_?(&(this->fields).interactionBase,pMVar1);
+      return;
+    }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -64,26 +76,24 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_RemoveUseIn
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   if ((useInteractor != (UseInteractor *)0x0) &&
-     (this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)(this->fields).useInteractors,
-     this_00 !=
-     (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)0x0
-     )) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Experimental
-    ::TerrainAPI::TerrainUtility+TerrainMap]::
-    Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-              (this_00,(useInteractor->fields).woOwnerID,
+     (this_00 = (this->fields).useInteractors,
+     this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0)) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Remove
+              ((Dictionary_2_System_Int32_System_Object_ *)this_00,(useInteractor->fields).woOwnerID
+               ,
                MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Remove_int_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -95,24 +105,24 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-             *)(this->fields).useInteractors;
+  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+            (this->fields).useInteractors;
   if (this_00 !=
-      (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-      0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Experimental
-    ::TerrainAPI::TerrainUtility+TerrainMap]::
-    Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Clear
+      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+    Regex+CachedCodeEntryKey,System::Object]::
+    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Clear__);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&puStack_2);
+  func_?(uVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -125,59 +135,81 @@ Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_SortByDistance
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Values__
+                   );
+    func_?(&
+                    System__Linq__IOrderedEnumerable<UseInteractor>_MethodInfo__System__Linq__Enumerable__OrderBy<UseInteractor,_float>_System__Collections__Generic__IEnumerable<UseInteractor>__System__Func<UseInteractor,_float>_
+                   );
+    func_?(&
+                    System__Collections__Generic__List<UseInteractor>_MethodInfo__System__Linq__Enumerable__ToList<UseInteractor>_System__Collections__Generic__IEnumerable<UseInteractor>_
+                   );
+    func_?(&TypeInfo__System__Func<UseInteractor,_float>);
+    func_?(&
+                    MethodInfo__UseInteractorHandler____c__DisplayClass14_0___SortByDistance_b__0_UseInteractor_
+                   );
+    func_?(&TypeInfo__UseInteractorHandler____c__DisplayClass14_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__UseInteractorHandler___SortByDistance_c__AnonStorey0;
-  this_02 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_02,0.0,(MethodInfo *)method_00);
-  this_00 = (this->fields).useInteractors;
-  if (this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0) {
-    source = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__get_Values
-                       ((Dictionary_2_WinningConditionType_System_Object_ *)this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Values__
-                       );
-    pLVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                       ((IEnumerable_1_UseInteractor_ *)source,
-                        System__Collections__Generic__List<UseInteractor>_MethodInfo__System__Linq__Enumerable__ToList<UseInteractor>_System__Collections__Generic__IEnumerable<UseInteractor>_
-                       );
-    this_01 = (this->fields).triggingCollider;
-    if (this_01 != (Collider *)0x0) {
-      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                (&BStack_2,this_01,(MethodInfo *)0x0);
-      puVar3 = (undefined8 *)func_?();
-      uVar4 = *puVar3;
-      fVar5 = *(float *)(puVar3 + 1);
-      if (this_02 != (ScaleAnimationBase *)0x0) {
-        (this_02->fields)._ = (MonoBehaviour__Fields)(int)uVar4;
-        (this_02->fields).state = (int)((ulonglong)uVar4 >> 0x20);
-        (this_02->fields).originalScale.x = fVar5;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this_02,
-                   MethodInfo__UseInteractorHandler___SortByDistance_c__AnonStorey0____m__0_UseInteractor_
-                   ,MethodInfo__System__Func<UseInteractor,_float>__Func_System__Object__void__);
-        source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_ThenBy_6
-                              ((IOrderedEnumerable_1_System_Object_ *)pLVar1,
-                               (Func_2_Object_Int64_ *)this_03,
-                               System__Linq__IOrderedEnumerable<UseInteractor>_MethodInfo__System__Linq__Enumerable__OrderBy<UseInteractor,_float>_System__Collections__Generic__IEnumerable<UseInteractor>__System__Func<UseInteractor,_float>_
-                              );
-        pLVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                           ((IEnumerable_1_UseInteractor_ *)source_00,
-                            System__Collections__Generic__List<UseInteractor>_MethodInfo__System__Linq__Enumerable__ToList<UseInteractor>_System__Collections__Generic__IEnumerable<UseInteractor>_
-                           );
-        return pLVar1;
+  value = (Object *)func_?(TypeInfo__UseInteractorHandler____c__DisplayClass14_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )(this->fields).useInteractors;
+    if (this_00 !=
+        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
+    {
+      source = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+               RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+               Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                         (this_00,
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Values__
+                         );
+      source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+                            ((IEnumerable_1_System_Object_ *)source,
+                             System__Collections__Generic__List<UseInteractor>_MethodInfo__System__Linq__Enumerable__ToList<UseInteractor>_System__Collections__Generic__IEnumerable<UseInteractor>_
+                            );
+      pCVar1 = (this->fields).triggingColliders;
+      if ((pCVar1 != (ColliderCollection *)0x0) &&
+         (this_01 = (pCVar1->fields).activeCollider, this_01 != (Collider *)0x0)) {
+        pBVar2 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
+                           (&BStack_3,this_01,(MethodInfo *)0x0);
+        pRVar4 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
+                 RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                 KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
+                           ((Regex_CachedCodeEntryKey *)&BStack_3.m_Extents,
+                            (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                             *)&stack0xffffffcc,(MethodInfo *)(pBVar2->m_Center).z);
+        pSVar5 = pRVar4->_cultureKey;
+        pOVar6 = (Object__Class *)pRVar4->_pattern;
+        value[1].klass = (Object__Class *)pRVar4->_options;
+        value[1].monitor = (MonitorData *)pSVar5;
+        value[2].klass = pOVar6;
+        this_02 = (Func_2_Object_Single_ *)func_?();
+        if (this_02 != (Func_2_Object_Single_ *)0x0) {
+          mscorlib.dll::System::Func`2[Object,Single]::Func_2_Object_Single___ctor
+                    (this_02,value,
+                     MethodInfo__UseInteractorHandler____c__DisplayClass14_0___SortByDistance_b__0_UseInteractor_
+                     ,(MethodInfo *)0x0);
+          source_01 = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderBy_3
+                                ((IEnumerable_1_System_Object_ *)source_00,this_02,
+                                 System__Linq__IOrderedEnumerable<UseInteractor>_MethodInfo__System__Linq__Enumerable__OrderBy<UseInteractor,_float>_System__Collections__Generic__IEnumerable<UseInteractor>__System__Func<UseInteractor,_float>_
+                                );
+          pLVar7 = (List_1_UseInteractor_ *)
+                   System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+                             ((IEnumerable_1_System_Object_ *)source_01,
+                              System__Collections__Generic__List<UseInteractor>_MethodInfo__System__Linq__Enumerable__ToList<UseInteractor>_System__Collections__Generic__IEnumerable<UseInteractor>_
+                             );
+          return pLVar7;
+        }
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  pLVar1 = (List_1_UseInteractor_ *)(*pcVar6)();
-  return pLVar1;
+  pcVar8 = (code *)swi(3);
+  pLVar7 = (List_1_UseInteractor_ *)(*pcVar8)();
+  return pLVar7;
 }
 
 
@@ -189,12 +221,12 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Update
 {
   UseInteractorHandler_UpdateInteractorsWOID(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
+                   );
+    func_?(&TypeInfo__IPlayModeUI);
+    func_?(&MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
@@ -206,132 +238,102 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Update
     if (bVar2 == 0) {
       return;
     }
-    this_01 = (in_stack_3->fields).useInteractors;
-    if (this_01 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0) {
-      pOVar4 = System.Core.dll::System::Linq::
-               Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Collections::Generic::
-               KeyValuePair`2[System::Object,System::Object],System::Object]::
-               Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                         ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                           *)this_01,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
-                         );
-      if (0 < (int)pOVar4) {
-        this_04 = UseInteractorHandler_SortByDistance(in_stack_3,(MethodInfo *)0x0);
-        if (this_04 == (List_1_UseInteractor_ *)0x0) goto code_?;
-        this_05 = (UseInteractor *)
-                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                  IEventSystemHandler]::
-                  List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                            ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_04,0,
-                             MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_
-                            );
-        arg1 = (in_stack_3->fields).ownerWoId;
-        arg2 = (in_stack_3->fields).interactionBase;
-        if (this_05 == (UseInteractor *)0x0) goto code_?;
-        pUVar5 = this_05;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+        (IPlayModeUI *)0x0) {
+      cVar3 = func_?(5,TypeInfo__IPlayModeUI);
+      if (cVar3 != '\0') {
+        return;
+      }
+      this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)(in_stack_4->fields).useInteractors;
+      if (this_01 !=
+          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
+         ) {
+        iVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                          (this_01,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
+                          );
+        if (0 < iVar5) {
+          this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    UseInteractorHandler_SortByDistance(in_stack_4,(MethodInfo *)0x0);
+          if ((this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+             || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                         RegularExpressions::RegexCharClass+SingleRange]::
+                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                   (this_02,0,
+                                    MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_
+                                   ), RVar6 == (RegexCharClass_SingleRange)0x0))
+          goto code_?;
+          if ((*(int *)((int)RVar6 + 0xc) == 0) ||
+             (cVar3 = (**(code **)(*(int *)((int)RVar6 + 0xc) + 0xc))(), cVar3 != '\0')) {
+            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) ==
+                (UseInteractorVisualization *)0x0) goto code_?;
+            UseInteractorVisualization::UseInteractorVisualization_GetShowOptions
+                      (*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0);
+            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) ==
+                (UseInteractorVisualization *)0x0) goto code_?;
+            UVar7 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability
+                              (*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0
+                              );
+            if (1 < ((byte)UVar7 & 0xf)) {
+              if (*(char *)((int)RVar6 + 0x1c) == '\0') {
+                bVar8 = false;
+              }
+              else {
+                if (*(int *)((int)RVar6 + 0x20) == 0) goto code_?;
+                bVar8 = *(char *)(*(int *)((int)RVar6 + 0x20) + 0x30) == '\0';
+              }
+              if (bVar8) {
+                UseInteractorHandler_Use(in_stack_4,(MethodInfo *)0x0);
+                return;
+              }
+              piVar9 = (int *)func_?();
+              if (piVar9 != (int *)0x0) {
+                uVar10 = 0;
+                uVar11 = *(ushort *)(*piVar9 + 0xb2);
+                if (uVar11 != 0) {
+                  do {
+                    if (*(IPlayModeUI__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
+                        TypeInfo__IPlayModeUI) {
+                      puVar12 = (undefined4 *)
+                                (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) * 8 +
+                                 0xbc + *piVar9);
+                      goto code_?;
+                    }
+                    uVar10 = uVar10 + 1;
+                  } while (uVar10 < uVar11);
+                }
+                puVar12 = (undefined4 *)func_?(piVar9,TypeInfo__IPlayModeUI,0);
+code_?:
+                (*(code *)*puVar12)(piVar9,puVar12[1],unaff_EBX);
+                return;
+              }
+              goto code_?;
+            }
+          }
+        }
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        this_02 = (Func_3_Int32_Object_Boolean_ *)(this_05->fields).checkCanUseFunction;
-        if ((this_02 == (Func_3_Int32_Object_Boolean_ *)0x0) ||
-           (bVar2 = System.Core.dll::System::Func`3[Int32,Object,Boolean]::
-                    Func_3_Int32_Object_Boolean__Invoke
-                              (this_02,arg1,(Object *)arg2,
-                               MethodInfo__System__Func<int,_MVInteractableBase,_bool>__Invoke_int__MVInteractableBase_
-                              ), bVar2 != 0)) {
-          pUVar6 = (this_05->fields).useInteractorVisuals;
-          if (pUVar6 == (UseInteratorVisualization *)0x0) goto code_?;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pLVar7 = (pUVar6->fields).useRequirements;
-          if (pLVar7 == (List_1_UseRequirement_ *)0x0) goto code_?;
-          pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar7,
-                              MethodInfo__System__Collections__Generic__List<UseRequirement>__get_Count__
-                             );
-          if (pOVar4 != (Object *)0x0) {
-            index = 0;
-            pLVar7 = (pUVar6->fields).useRequirements;
-            this_05 = pUVar5;
-            while (pLVar7 != (List_1_UseRequirement_ *)0x0) {
-              pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json
-                       ::Serialization::JsonProperty]::
-                       Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                 ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar7
-                                  ,
-                                  MethodInfo__System__Collections__Generic__List<UseRequirement>__get_Count__
-                                 );
-              if ((int)pOVar4 <= index) goto code_?;
-              this_03 = (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)
-                        (pUVar6->fields).useRequirements;
-              if ((this_03 == (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) ||
-                 (pIVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                           EventSystems::IEventSystemHandler]::
-                           List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                     (this_03,index,
-                                      MethodInfo__System__Collections__Generic__List<UseRequirement>__get_Item_int_
-                                     ), pIVar8 == (IEventSystemHandler *)0x0)) break;
-              (*(code *)pIVar8->klass[1]._0.events)();
-              index = index + 1;
-              pLVar7 = (pUVar6->fields).useRequirements;
-            }
-            goto code_?;
-          }
-code_?:
-          UVar9 = UseInteractor::UseInteractor_EvaluateRequirementsUsability
-                             (this_05,(MethodInfo *)0x0);
-          if (1 < ((byte)UVar9 & 0xf)) {
-            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pIVar10 = MVGameControllerBase::MVGameControllerBase_get_PlayModeUI((MethodInfo *)0x0);
-            if (pIVar10 != (IPlayModeUI *)0x0) {
-              pIVar11 = pIVar10->klass;
-              uVar12 = 0;
-              uVar13._0_1_ = (pIVar11->_1).rank;
-              uVar13._1_1_ = (pIVar11->_1).minimumAlignment;
-              if (uVar13 != 0) {
-                do {
-                  if (pIVar11->interfaceOffsets[uVar12].interfaceType ==
-                      (Il2CppClass *)TypeInfo__IPlayModeUI) {
-                    ppMVar14 = &(&(pIVar10->klass->vtable).ShowEUseIcon)
-                                [pIVar11->interfaceOffsets[uVar12].offset].method;
-                    goto code_?;
-                  }
-                  uVar12 = uVar12 + 1;
-                } while (uVar12 < uVar13);
-              }
-              ppMVar14 = (MethodInfo **)func_?();
-code_?:
-              (*(code *)*ppMVar14)();
-              return;
-            }
-            goto code_?;
-          }
+        if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+            (IPlayModeUI *)0x0) {
+          func_?(1,TypeInfo__IPlayModeUI);
+          return;
         }
-      }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pIVar10 = MVGameControllerBase::MVGameControllerBase_get_PlayModeUI((MethodInfo *)0x0);
-      if (pIVar10 != (IPlayModeUI *)0x0) {
-        func_?();
-        return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -346,183 +348,204 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_UpdateInter
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff70;
-  puVar5 = &stack0xffffff70;
+  puStack_4 = &stack0xffffff5c;
+  puVar5 = &stack0xffffff5c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Remove_int_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_UseInteractor>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_UseInteractor>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
+                   );
+    in_stack_6 =
+         &MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__get_Current__;
+    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_UseInteractor>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_UseInteractor>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_UseInteractor>__get_Value__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Clear__);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  auStack_6._16_4_ = (Object *)0x0;
-  KStack_7.key = 0;
-  KStack_7.value = 0;
-  pMStack_8 = (MVWorldObjectClientManager *)0x0;
-  auStack_6._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_6._4_4_ = (MonitorData *)0x0;
-  auStack_6._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_6._12_4_ = 0;
-  puStack_9 = (undefined *)0x0;
-  CStack_10.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_10.monitor = (MonitorData *)0x0;
-  CStack_10.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_10.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_11 = 0xffffffff;
-  this_00 = (List_1_UnityEngine_UIVertex_ *)(this->fields).removeList;
-  piStack_12 = (int *)&stack0xffffff70;
-  puStack_4 = &stack0xffffff70;
-  if (this_00 == (List_1_UnityEngine_UIVertex_ *)0x0) {
+  auStack_7._16_4_ = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  iStack_8 = 0;
+  iStack_9 = 0;
+  pOStack_10 = (Object *)0x0;
+  uStack_11._0_4_ = (Object *)0x0;
+  uStack_11._4_4_ = 0;
+  pLVar12 = (this->fields).removeList;
+  BStack_13.m_Extents.y = 0.0;
+  BStack_13.m_Extents.z = 0.0;
+  BStack_13.m_Center.x = 0.0;
+  BStack_13.m_Center.y = 0.0;
+  BStack_13.m_Center.z = 0.0;
+  BStack_13.m_Extents.x = 0.0;
+  auStack_7._0_4_ = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  auStack_7._4_4_ = 0;
+  auStack_7._8_4_ = 0;
+  auStack_7._12_2_ = 0;
+  auStack_7._14_2_ = 0;
+  if (pLVar12 != (List_1_System_Int32_ *)0x0) {
+    piVar14 = &(pLVar12->fields)._version;
+    *piVar14 = *piVar14 + 1;
+    (pLVar12->fields)._size = 0;
+    this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).useInteractors;
+    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                          auStack_16,this_00,
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__GetEnumerator__
+                         );
+      auStack_7._16_4_ = pDVar15->_dictionary;
+      iStack_8 = pDVar15->_version;
+      iStack_9 = pDVar15->_index;
+      pOStack_10 = (pDVar15->_current).key;
+      uStack_11 = *(undefined8 *)&(pDVar15->_current).value;
+      pOStack_17 = (Object *)0x0;
+      uStack_1 = 1;
+      pDStack_18 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                   (auStack_7 + 0x10);
 code_?:
-    pMVar13 = (MVWorldObjectClientManager *)func_?(0);
-    pMVar14 = unaff_ESI;
-  }
-  else {
-    piStack_12 = (int *)&stack0xffffff70;
-    puStack_4 = &stack0xffffff70;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-    List_1_UnityEngine_UIVertex__Clear
-              (this_00,MethodInfo__System__Collections__Generic__List<int>__Clear__);
-    this_01 = (this->fields).useInteractors;
-    if (this_01 == (Dictionary_2_System_Int32_UseInteractor_ *)0x0) goto code_?;
-    pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *)
-                        auStack_16,(Dictionary_2_WinningConditionType_System_Object_ *)this_01,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__GetEnumerator__
-                       );
-    auStack_6._0_4_ = pDVar15->dictionary;
-    auStack_6._4_4_ = pDVar15->next;
-    auStack_6._8_4_ = pDVar15->stamp;
-    auStack_6._12_4_ = (pDVar15->current).key;
-    auStack_6._16_4_ = (pDVar15->current).value;
-    uStack_1 = 0;
-code_?:
-    cVar17 = func_?();
-    if (cVar17 != '\0') {
-      KStack_7 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                            ((LevelRewardsManager *)auStack_6,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_UseInteractor>__get_Current__
-                            );
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      unaff_ESI = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      id = func_?();
-      if (unaff_ESI != (MVWorldObjectClientManager *)0x0) {
-        pMVar18 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (unaff_ESI,id,(MethodInfo *)0x0);
-        if ((pMVar18 == (MVWorldObject *)0x0) || (iVar19 = func_?(), iVar19 == 0)) {
-          this_05 = (List_1_UIPushOption_ *)(this->fields).removeList;
-          item = func_?();
-          unaff_ESI = (MVWorldObjectClientManager *)0x0;
-          if (this_05 != (List_1_UIPushOption_ *)0x0) goto code_?;
+      bVar19 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                         (auStack_7 + 0x10),
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_UseInteractor>__MoveNext__
+                        );
+      if (bVar19 == 0) {
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)(auStack_7 + 0x10),
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_UseInteractor>__Dispose__
+                   ,(MethodInfo *)in_stack_6);
+        uStack_1 = 0xffffffff;
+        this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields).removeList;
+        if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          pLVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                *)(auStack_16 + 8),this_02,
+                               MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__)
+          ;
+          auStack_7._0_4_ = pLVar20->_list;
+          auStack_7._4_4_ = pLVar20->_index;
+          auStack_7._8_4_ = pLVar20->_version;
+          auStack_7._12_4_ = pLVar20->_current;
+          pOStack_17 = (Object *)0x0;
+          uStack_1 = 4;
+          pDStack_18 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                       auStack_7;
+          while( true ) {
+            bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
+                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                *)auStack_7,
+                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
+                              );
+            if (bVar19 == 0) {
+              uStack_1 = 0xffffffff;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)auStack_7,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
+                         ,unaff_EDI);
+              *unaff_FS_OFFSET = uStack_3;
+              return;
+            }
+            this_03 = (this->fields).useInteractors;
+            if (this_03 == (Dictionary_2_System_Int32_UseInteractor_ *)0x0) break;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+            Dictionary_2_System_Int32_System_Object__Remove
+                      ((Dictionary_2_System_Int32_System_Object_ *)this_03,auStack_7._12_4_,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Remove_int_
+                      );
+          }
         }
-        else {
-          iVar19 = func_?();
-          if (iVar19 != 0) {
-            unaff_ESI = *(MVWorldObjectClientManager **)(iVar19 + 0x10);
-            if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      }
+      else {
+        pOStack_21 = pOStack_10;
+        pOStack_22 = (Object *)uStack_11;
+        this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if (this_04 != (MVWorldObjectClientManager *)0x0) {
+          in_stack_6 = (MethodInfo **)0x0;
+          pMVar23 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             (this_04,(int32_t)pOStack_21,(MethodInfo *)0x0);
+          if ((pMVar23 == (MVWorldObject *)0x0) || (pOStack_22 == (Object *)0x0)) {
+            pLVar12 = (this->fields).removeList;
+            if (pLVar12 != (List_1_System_Int32_ *)0x0) goto code_?;
+          }
+          else {
+            pOStack_24 = pOStack_22[2].klass;
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
             }
-            method_00 = (MethodInfo *)&UNK_?;
-            bVar20 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                              ((Object_1 *)unaff_ESI,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar20 != 0) {
-              this_05 = (List_1_UIPushOption_ *)(this->fields).removeList;
+            bVar19 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                              ((Object_1 *)pOStack_24,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar19 != 0) goto code_?;
+            if (pOStack_22[2].klass != (Object__Class *)0x0) {
+              pBVar25 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
+                                 (&BStack_26,(Collider *)pOStack_22[2].klass,(MethodInfo *)0x0);
+              BStack_13.m_Center.x = (pBVar25->m_Center).x;
+              BStack_13.m_Center.y = (pBVar25->m_Center).y;
+              BStack_13.m_Center.z = (pBVar25->m_Center).z;
+              BStack_13.m_Extents.x = (pBVar25->m_Extents).x;
+              BStack_13.m_Extents.y = (pBVar25->m_Extents).y;
+              BStack_13.m_Extents.z = (pBVar25->m_Extents).z;
+              pCVar27 = (this->fields).triggingColliders;
+              if ((pCVar27 != (ColliderCollection *)0x0) &&
+                 (this_01 = (pCVar27->fields).activeCollider, this_01 != (Collider *)0x0))
               goto code_?;
-            }
-            iVar19 = func_?();
-            if ((iVar19 != 0) && (*(Collider **)(iVar19 + 0x10) != (Collider *)0x0)) {
-              pBVar21 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                                 ((Bounds *)(auStack_6 + 0x14),*(Collider **)(iVar19 + 0x10),
-                                  method_00);
-              puStack_9 = (undefined *)(pBVar21->m_Center).x;
-              this_02 = (this->fields).triggingCollider;
-              if (this_02 != (Collider *)0x0) goto code_?;
             }
           }
         }
       }
-      goto code_?;
-    }
-    unaff_ESI = (MVWorldObjectClientManager *)0x0;
-    *piStack_12 = 0xef;
-    uStack_1 = 0xffffffff;
-    func_?();
-    pMVar13 = pMStack_8;
-    pMVar14 = unaff_ESI;
-    if (pMStack_8 == (MVWorldObjectClientManager *)0x0) {
-      if (*piStack_12 == 0xef) {
-        unaff_ESI = (MVWorldObjectClientManager *)0xffffffff;
-      }
-      this_03 = (List_1_UnityEngine_Color32_ *)(this->fields).removeList;
-      if (this_03 != (List_1_UnityEngine_Color32_ *)0x0) {
-        pLVar22 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                 List_1_UnityEngine_Color32__GetEnumerator
-                           ((List_1_T_Enumerator_UnityEngine_Color32_ *)(auStack_16 + 4),this_03,
-                            MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
-        CStack_10.klass =
-             (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar22->l;
-        CStack_10.monitor = (MonitorData *)pLVar22->next;
-        CStack_10.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar22->ver;
-        CStack_10.fields.syncRoot = (Object *)(pLVar22->current).rgba;
-        uStack_1 = 2;
-        while (cVar17 = func_?(), pMVar14 = pMStack_8, cVar17 != '\0') {
-          key = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                Serialization::JsonProperty]::
-                Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                          (&CStack_10,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__get_Current__
-                          );
-          this_04 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)(this->fields).useInteractors;
-          if (this_04 ==
-              (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-          Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-          Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Remove
-                    (this_04,(int32_t)key,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Remove_int_
-                    );
-        }
-        piStack_12[(int)((int)&unaff_ESI->klass + 1)] = 0x137;
-        uStack_1 = 0xffffffff;
-        func_?(&CStack_10,
-                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
-                       );
-        if (pMVar14 == (MVWorldObjectClientManager *)0x0) {
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        goto code_?;
-      }
-      goto code_?;
     }
   }
-  func_?(pMVar13,0,0);
 code_?:
-  func_?(pMVar14,0,0);
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  uVar28 = func_?();
+  func_?(uVar28);
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 code_?:
-  pBVar21 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                     ((Bounds *)(auStack_6 + 0x14),this_02,(MethodInfo *)0x0);
-  cVar17 = func_?(&puStack_9,(pBVar21->m_Center).x,(pBVar21->m_Center).y,(pBVar21->m_Center).z
-                          ,(pBVar21->m_Extents).x);
-  if (cVar17 == '\0') {
-    this_05 = (List_1_UIPushOption_ *)(this->fields).removeList;
+  pBVar25 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
+                     (&BStack_26,this_01,(MethodInfo *)0x0);
+  bVar19 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Intersects
+                    (&BStack_13,*pBVar25,(MethodInfo *)0x0);
+  if (bVar19 == 0) {
 code_?:
-    item = func_?();
-    unaff_ESI = (MVWorldObjectClientManager *)0x0;
-    if (this_05 == (List_1_UIPushOption_ *)0x0) goto code_?;
+    pLVar12 = (this->fields).removeList;
+    if (pLVar12 == (List_1_System_Int32_ *)0x0) goto code_?;
 code_?:
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              (this_05,item,MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    func_?(pLVar12,pOStack_21,MethodInfo__System__Collections__Generic__List<int>__Add_int_)
+    ;
   }
   goto code_?;
 }
@@ -535,12 +558,12 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_UpdateUseVi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
+                   );
+    func_?(&TypeInfo__IPlayModeUI);
+    func_?(&MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
@@ -552,132 +575,102 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_UpdateUseVi
     if (bVar2 == 0) {
       return;
     }
-    this_01 = (this->fields).useInteractors;
-    if (this_01 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0) {
-      pOVar3 = System.Core.dll::System::Linq::
-               Enumerable+<CreateSelectIterator>c__Iterator10`2[System::Collections::Generic::
-               KeyValuePair`2[System::Object,System::Object],System::Object]::
-               Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                         ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                           *)this_01,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
-                         );
-      if (0 < (int)pOVar3) {
-        this_04 = UseInteractorHandler_SortByDistance(this,(MethodInfo *)0x0);
-        if (this_04 == (List_1_UseInteractor_ *)0x0) goto code_?;
-        this_05 = (UseInteractor *)
-                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                  IEventSystemHandler]::
-                  List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                            ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_04,0,
-                             MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_
-                            );
-        arg1 = (this->fields).ownerWoId;
-        arg2 = (this->fields).interactionBase;
-        if (this_05 == (UseInteractor *)0x0) goto code_?;
-        pUVar4 = this_05;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar3 != (IPlayModeUI *)0x0) {
+      cVar4 = func_?(5,TypeInfo__IPlayModeUI,pIVar3);
+      if (cVar4 != '\0') {
+        return;
+      }
+      this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)(this->fields).useInteractors;
+      if (this_01 !=
+          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
+         ) {
+        iVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                          (this_01,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
+                          );
+        if (0 < iVar5) {
+          this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    UseInteractorHandler_SortByDistance(this,(MethodInfo *)0x0);
+          if ((this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+             || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                         RegularExpressions::RegexCharClass+SingleRange]::
+                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                   (this_02,0,
+                                    MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_
+                                   ), RVar6 == (RegexCharClass_SingleRange)0x0))
+          goto code_?;
+          if ((*(int *)((int)RVar6 + 0xc) == 0) ||
+             (cVar4 = (**(code **)(*(int *)((int)RVar6 + 0xc) + 0xc))(), cVar4 != '\0')) {
+            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) ==
+                (UseInteractorVisualization *)0x0) goto code_?;
+            UseInteractorVisualization::UseInteractorVisualization_GetShowOptions
+                      (*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0);
+            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) ==
+                (UseInteractorVisualization *)0x0) goto code_?;
+            UVar7 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability
+                              (*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0
+                              );
+            if (1 < ((byte)UVar7 & 0xf)) {
+              if (*(char *)((int)RVar6 + 0x1c) == '\0') {
+                bVar8 = false;
+              }
+              else {
+                if (*(int *)((int)RVar6 + 0x20) == 0) goto code_?;
+                bVar8 = *(char *)(*(int *)((int)RVar6 + 0x20) + 0x30) == '\0';
+              }
+              if (bVar8) {
+                UseInteractorHandler_Use(this,(MethodInfo *)0x0);
+                return;
+              }
+              piVar9 = (int *)func_?();
+              if (piVar9 != (int *)0x0) {
+                uVar10 = 0;
+                uVar11 = *(ushort *)(*piVar9 + 0xb2);
+                if (uVar11 != 0) {
+                  do {
+                    if (*(IPlayModeUI__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
+                        TypeInfo__IPlayModeUI) {
+                      puVar12 = (undefined4 *)
+                                (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) * 8 +
+                                 0xbc + *piVar9);
+                      goto code_?;
+                    }
+                    uVar10 = uVar10 + 1;
+                  } while (uVar10 < uVar11);
+                }
+                puVar12 = (undefined4 *)func_?(piVar9,TypeInfo__IPlayModeUI,0);
+code_?:
+                (*(code *)*puVar12)(piVar9,puVar12[1],unaff_EBX);
+                return;
+              }
+              goto code_?;
+            }
+          }
+        }
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__MVGameControllerBase);
           cRam_? = '\x01';
         }
-        this_02 = (Func_3_Int32_Object_Boolean_ *)(this_05->fields).checkCanUseFunction;
-        if ((this_02 == (Func_3_Int32_Object_Boolean_ *)0x0) ||
-           (bVar2 = System.Core.dll::System::Func`3[Int32,Object,Boolean]::
-                    Func_3_Int32_Object_Boolean__Invoke
-                              (this_02,arg1,(Object *)arg2,
-                               MethodInfo__System__Func<int,_MVInteractableBase,_bool>__Invoke_int__MVInteractableBase_
-                              ), bVar2 != 0)) {
-          pUVar5 = (this_05->fields).useInteractorVisuals;
-          if (pUVar5 == (UseInteratorVisualization *)0x0) goto code_?;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pLVar6 = (pUVar5->fields).useRequirements;
-          if (pLVar6 == (List_1_UseRequirement_ *)0x0) goto code_?;
-          pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                   Serialization::JsonProperty]::
-                   Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                             ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar6,
-                              MethodInfo__System__Collections__Generic__List<UseRequirement>__get_Count__
-                             );
-          if (pOVar3 != (Object *)0x0) {
-            index = 0;
-            pLVar6 = (pUVar5->fields).useRequirements;
-            this_05 = pUVar4;
-            while (pLVar6 != (List_1_UseRequirement_ *)0x0) {
-              pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json
-                       ::Serialization::JsonProperty]::
-                       Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                 ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar6
-                                  ,
-                                  MethodInfo__System__Collections__Generic__List<UseRequirement>__get_Count__
-                                 );
-              if ((int)pOVar3 <= index) goto code_?;
-              this_03 = (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)
-                        (pUVar5->fields).useRequirements;
-              if ((this_03 == (List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)0x0) ||
-                 (pIVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                           EventSystems::IEventSystemHandler]::
-                           List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                     (this_03,index,
-                                      MethodInfo__System__Collections__Generic__List<UseRequirement>__get_Item_int_
-                                     ), pIVar7 == (IEventSystemHandler *)0x0)) break;
-              (*(code *)pIVar7->klass[1]._0.events)();
-              index = index + 1;
-              pLVar6 = (pUVar5->fields).useRequirements;
-            }
-            goto code_?;
-          }
-code_?:
-          UVar8 = UseInteractor::UseInteractor_EvaluateRequirementsUsability
-                             (this_05,(MethodInfo *)0x0);
-          if (1 < ((byte)UVar8 & 0xf)) {
-            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pIVar9 = MVGameControllerBase::MVGameControllerBase_get_PlayModeUI((MethodInfo *)0x0);
-            if (pIVar9 != (IPlayModeUI *)0x0) {
-              pIVar10 = pIVar9->klass;
-              uVar11 = 0;
-              uVar12._0_1_ = (pIVar10->_1).rank;
-              uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
-              if (uVar12 != 0) {
-                do {
-                  if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
-                      (Il2CppClass *)TypeInfo__IPlayModeUI) {
-                    ppMVar13 = &(&(pIVar9->klass->vtable).ShowEUseIcon)
-                                [pIVar10->interfaceOffsets[uVar11].offset].method;
-                    goto code_?;
-                  }
-                  uVar11 = uVar11 + 1;
-                } while (uVar11 < uVar12);
-              }
-              ppMVar13 = (MethodInfo **)func_?();
-code_?:
-              (*(code *)*ppMVar13)();
-              return;
-            }
-            goto code_?;
-          }
+        pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+        if (pIVar3 != (IPlayModeUI *)0x0) {
+          func_?(1,TypeInfo__IPlayModeUI,pIVar3);
+          return;
         }
-      }
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pIVar9 = MVGameControllerBase::MVGameControllerBase_get_PlayModeUI((MethodInfo *)0x0);
-      if (pIVar9 != (IPlayModeUI *)0x0) {
-        func_?();
-        return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -688,105 +681,107 @@ bool Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Use
                (UseInteractorHandler *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  method_00 = (MethodInfo *)&DAT_?;
+  uVar1 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<UseInteractor>__GetEnumerator__)
+    ;
     cRam_? = '\x01';
   }
-  func_?();
   UseInteractorHandler_UpdateInteractorsWOID(this,(MethodInfo *)0x0);
-  this_00 = (this->fields).useInteractors;
-  if (this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0) {
-    pOVar4 = System.Core.dll::System::Linq::Enumerable+<CreateSelectIterator>c__Iterator10`2[System
-             ::Collections::Generic::KeyValuePair`2[System::Object,System::Object],System::Object]::
-             Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                       ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                         *)this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
-                       );
-    if (pOVar4 != (Object *)0x0) {
-      this_04 = (List_1_UnityEngine_Color32_ *)
-                UseInteractorHandler_SortByDistance(this,(MethodInfo *)0x0);
-      if (this_04 == (List_1_UnityEngine_Color32_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-      List_1_UnityEngine_Color32__GetEnumerator
-                ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffffb4,this_04,
+  pDVar2 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+           (this->fields).useInteractors;
+  if (pDVar2 != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)0x0) {
+    iVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+            RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+            Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                      (pDVar2,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__
+                      );
+    if (iVar3 == 0) {
+code_?:
+      *unaff_FS_OFFSET = uVar1;
+      return 0;
+    }
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              UseInteractorHandler_SortByDistance(this,(MethodInfo *)0x0);
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RegexCharClass+SingleRange]::
+      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 &stack0xffffffd0,this_00,
                  MethodInfo__System__Collections__Generic__List<UseInteractor>__GetEnumerator__);
-      uStack_1 = 0;
       do {
         do {
-          cVar5 = func_?();
-          if (cVar5 == '\0') {
-            this_05 = (UseInteractor *)0x0;
+          bVar4 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                  List_1_T_Enumerator_System_Object__MoveNext
+                            ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__MoveNext__
+                            );
+          if (bVar4 == 0) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)&stack0xffffffc0,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__Dispose__
+                       ,in_stack_5);
             goto code_?;
           }
-          this_05 = (UseInteractor *)
-                    mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                    Serialization::JsonProperty]::
-                    Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                              ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                               &stack0xffffffc4,
-                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__get_Current__
-                              );
-          arg1 = (this->fields).ownerWoId;
-          arg2 = (this->fields).interactionBase;
-          if (this_05 == (UseInteractor *)0x0) goto code_?;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          this_01 = (Func_3_Int32_Object_Boolean_ *)(this_05->fields).checkCanUseFunction;
-        } while ((this_01 != (Func_3_Int32_Object_Boolean_ *)0x0) &&
-                (bVar6 = System.Core.dll::System::Func`3[Int32,Object,Boolean]::
-                         Func_3_Int32_Object_Boolean__Invoke
-                                   (this_01,arg1,(Object *)arg2,
-                                    MethodInfo__System__Func<int,_MVInteractableBase,_bool>__Invoke_int__MVInteractableBase_
-                                   ), bVar6 == 0));
-        this_02 = (this->fields)._.worldObjectParent;
-        if (this_02 == (MVWorldObjectClient *)0x0) goto code_?;
-        userWoID = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items
-                             ((Collection_1_VoxelHit_ *)this_02,(MethodInfo *)0x0);
-        bVar6 = UseInteractor::UseInteractor_Use(this_05,(int32_t)userWoID,(MethodInfo *)0x0);
-      } while (bVar6 == 0);
-      UseInteractor::UseInteractor_PayUseCost(this_05,(MethodInfo *)0x0);
-code_?:
-      uStack_1 = 0xffffffff;
-      func_?();
-      if (this_05 != (UseInteractor *)0x0) {
-        if ((this_05->fields).reset != 0) {
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          this_03 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)(this->fields).useInteractors;
-          if (this_03 ==
-              (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-          Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-          Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Clear
-                    (this_03,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Clear__
-                    );
+        } while ((_UNK_? != 0) &&
+                (cVar6 = (**(code **)(_UNK_? + 0xc))(), cVar6 == '\0'));
+        pMVar7 = (this->fields)._.worldObjectParent;
+        if (pMVar7 == (MVWorldObjectClient *)0x0) goto code_?;
+        bVar4 = UseInteractor::UseInteractor_Use
+                          ((UseInteractor *)&UNK_?,(pMVar7->fields)._.id,(MethodInfo *)0x0);
+      } while (bVar4 == 0);
+      UseInteractor::UseInteractor_PayUseCost((UseInteractor *)&UNK_?,(MethodInfo *)0x0);
+      pMVar8 = 
+      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__Dispose__;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&stack0xffffffc0,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseInteractor>__Dispose__
+                 ,method_00);
+      if (UNK_? != '\0') {
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
         }
-        *unaff_FS_OFFSET = uStack_3;
-        return 1;
+        pDVar2 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                  *)(this->fields).useInteractors;
+        if (pDVar2 == (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                       *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+        Regex+CachedCodeEntryKey,System::Object]::
+        Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+                  (pDVar2,
+                   MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Clear__
+                  );
       }
+      *unaff_FS_OFFSET = pMVar8;
+      return 1;
     }
-    *unaff_FS_OFFSET = uStack_3;
-    return 0;
   }
 code_?:
   func_?();
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar6 = (*pcVar7)();
-  return bVar6;
+  pcVar9 = (code *)swi(3);
+  bVar4 = (*pcVar9)();
+  return bVar4;
 }
 
 
@@ -797,25 +792,43 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<int>);
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_UseInteractor_ *)
             func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Dictionary__)
-  ;
-  (this->fields).useInteractors = this_00;
-  this_01 = (List_1_UnityEngine_Vector4_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<int>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_01,MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this->fields).removeList = (List_1_System_Int32_ *)this_01;
-  (this->fields).ownerWoId = -1;
-  MVComponent::MVComponent__ctor((MVComponent *)this,(MethodInfo *)0x0);
+  if (this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Dictionary__
+              );
+    (this->fields).useInteractors = this_00;
+    func_?(&(this->fields).useInteractors,this_00);
+    this_01 = (List_1_System_Int32_ *)
+              func_?(TypeInfo__System__Collections__Generic__List<int>);
+    if (this_01 != (List_1_System_Int32_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+      LowLevelList_1_System_Object___ctor
+                ((LowLevelList_1_System_Object_ *)this_01,
+                 MethodInfo__System__Collections__Generic__List<int>__List__);
+      (this->fields).removeList = this_01;
+      func_?(&(this->fields).removeList,this_01);
+      (this->fields).ownerWoId = -1;
+      (this->fields)._.findWorldObjectParent = 1;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+                ((Transform *)this,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

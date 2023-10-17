@@ -8,20 +8,31 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class EnterCubeModelTutorial : MonoBehaviour
 {
-	// Fields
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditStateCommands> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IEditStateCommands> __9__0_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnClick_b__0_0(IEditStateCommands x, BaseEventData y);
+	}
 
 	// Constructors
 	public EnterCubeModelTutorial();
 
 	// Methods
 	public void OnClick();
-	[CompilerGenerated]
-	private static void _OnClick_m__0(IEditStateCommands x, BaseEventData y);
 }
 

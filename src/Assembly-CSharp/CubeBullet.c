@@ -5,53 +5,30 @@ void Assembly-CSharp.dll::CubeBullet::CubeBullet_SetCubeMaterial
                (CubeBullet *this,uint8_t id,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   this_00 = (this->fields).meshFilter;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_02 != (MVNetworkGame *)0x0) {
-    this_03 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                        ((DayNightCycle *)this_02,(MethodInfo *)0x0);
-    if (this_03 != (CelestialParam *)0x0) {
-      this_04 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                          ((MVMaterialRepository *)this_03,id,(MethodInfo *)0x0);
-      if (this_04 != (MVMaterial *)0x0) {
-        value = (Mesh *)System.dll::System::Collections::Generic::
-                        SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                        ::Single,System::Object]::
-                        SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                                  ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                    *)this_04,(MethodInfo *)0x0);
-        if (this_00 != (MeshFilter *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
-                    (this_00,value,(MethodInfo *)0x0);
-          this_01 = (this->fields).meshRenderer;
-          this_05 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
-          if (this_05 != (MaterialLoader *)0x0) {
-            value_00 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                       NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                                 ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_05,
-                                  (MethodInfo *)0x0);
-            if (this_01 != (MeshRenderer *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                        ((Renderer *)this_01,(Material *)value_00,(MethodInfo *)0x0);
-              return;
-            }
-          }
-        }
+  (this->fields)._MaterialID_k__BackingField = id;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_01 = (pMVar1->fields)._MaterialRepository_k__BackingField,
+     this_01 != (MVMaterialRepository *)0x0)) {
+    pMVar2 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                       (this_01,(this->fields)._MaterialID_k__BackingField,(MethodInfo *)0x0);
+    if ((pMVar2 != (MVMaterial *)0x0) && (this_00 != (MeshFilter *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
+                (this_00,(pMVar2->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
+      this_02 = (this->fields).meshRenderer;
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+      if ((pMVar3 != (MaterialLoader *)0x0) && (this_02 != (MeshRenderer *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                  ((Renderer *)this_02,(pMVar3->fields)._CubeModelMaterial_k__BackingField,
+                   (MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -61,28 +38,26 @@ void Assembly-CSharp.dll::CubeBullet::CubeBullet_SetCubeMaterial
 void Assembly-CSharp.dll::CubeBullet::CubeBullet_Update(CubeBullet *this,MethodInfo *method)
 
 {
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_up
-                     ((Vector3 *)&stack0xffffffe4,(MethodInfo *)0x0);
-  axis = *pVVar1;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  uVar1 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).y;
+  fVar2 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
+  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
+    auVar4._4_4_ = fVar2;
+    auVar4._0_4_ = uVar1;
+    auVar4._8_4_ = 0;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-              (this_00,axis,fVar2 * _UNK_?,(MethodInfo *)0x0);
+              (this_00,(Vector3)(auVar4 << 0x20),fVar3 * _UNK_?,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

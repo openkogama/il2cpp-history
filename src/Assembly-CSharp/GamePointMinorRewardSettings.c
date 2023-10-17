@@ -6,7 +6,18 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::GamePointMinorRewardSett
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_Crystal_Reward);
+    func_?(&StringLiteral_gamePointAmount);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).settingsBase;
@@ -14,60 +25,48 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::GamePointMinorRewardSett
   if (this_00 != (SettingsBase *)0x0) {
     SettingsBase::SettingsBase_Initialize_1
               (this_00,woID,root,StringLiteral_Crystal_Reward,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_03 != (MVWorldObjectClientManager *)0x0) {
-      this_04 = (PrefabPool *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_03,woID,(MethodInfo *)0x0);
-      if (this_04 != (PrefabPool *)0x0) {
-        this_05 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                   *)PrefabPool::PrefabPool_get_MVBatteryPrefab(this_04,(MethodInfo *)0x0);
-        if (this_05 !=
-            (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)0x0) {
-          bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                  WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                  KogamaSettingWrapperBase]::
-                  Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                            (this_05,StringLiteral_gamePointAmount,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                            );
-          if (bVar1 == 0) {
-            value_00 = (CrossPlatformInputManager_VirtualButton *)func_?();
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            String,UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]
-            ::
-            Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                      ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                        *)this_05,StringLiteral_gamePointAmount,value_00,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                      );
-          }
-          pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-                   Dictionary_2_System_Type_Pool__get_Item
-                             ((Dictionary_2_System_Type_Pool_ *)this_05,
-                              (Type *)StringLiteral_gamePointAmount,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-          if (pPVar2 != (Pool *)0x0) {
-            if ((pPVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-            goto code_?;
-            piVar3 = (int32_t *)func_?();
-            this_01 = (this->fields).gamePointsAwardedSlider;
-            if (this_01 != (SettingsSlider *)0x0) {
-              value = *piVar3;
-              SettingsSlider::SettingsSlider_Initialize_1
-                        (this_01,StringLiteral_gamePointAmount,value,0,100,(MethodInfo *)0x0);
-              this_02 = (this->fields).gamePointsAwardedInputField;
-              if (this_02 != (SettingsInputFieldSlider *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                          (this_02,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
-                return;
-              }
+    this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_04 != (MVWorldObjectClientManager *)0x0) {
+      pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_04,woID,(MethodInfo *)0x0);
+      if ((pMVar1 != (MVWorldObject *)0x0) &&
+         (this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields).data,
+         this_01 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          (this_01,(Object *)StringLiteral_gamePointAmount,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                          );
+        if (bVar2 == 0) {
+          pOVar3 = (Object *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                     (Object *)StringLiteral_gamePointAmount,pOVar3,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+        }
+        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                            (Object *)StringLiteral_gamePointAmount,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        if (pOVar3 != (Object *)0x0) {
+          if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+          goto code_?;
+          piVar4 = (int32_t *)func_?();
+          this_02 = (this->fields).gamePointsAwardedSlider;
+          if (this_02 != (SettingsSlider *)0x0) {
+            value = *piVar4;
+            SettingsSlider::SettingsSlider_Initialize_1
+                      (this_02,StringLiteral_gamePointAmount,value,0,100,(MethodInfo *)0x0);
+            this_03 = (this->fields).gamePointsAwardedInputField;
+            if (this_03 != (SettingsInputFieldSlider *)0x0) {
+              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                        (this_03,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -77,8 +76,8 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::GamePointMinorRewardSett
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -90,7 +89,17 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::GamePointMinorRewardSett
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_gamePointAmount);
     cRam_? = '\x01';
   }
   pGVar1 = this;
@@ -98,41 +107,39 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::GamePointMinorRewardSett
   if (this_00 != (SettingsSlider *)0x0) {
     this = (GamePointMinorRewardSettings *)
            SettingsSlider::SettingsSlider_get_Value(this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Math);
+      cRam_? = '\x01';
     }
-    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt
-                      ((float)this,(MethodInfo *)0x0);
-    if (iVar2 != 0) {
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    fVar2 = (float10)func_?((double)(float)this);
+    if ((int)fVar2 != 0) {
       return;
     }
-    woDataToRemove = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)woDataToRemove,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    this = (GamePointMinorRewardSettings *)0x0;
-    value = (CrossPlatformInputManager_VirtualButton *)
-            func_?(TypeInfo__System__Int32,&this);
-    if (woDataToRemove != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-      CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-      Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                  *)woDataToRemove,StringLiteral_gamePointAmount,value,
+    this_02 = (Dictionary_2_System_Object_System_Object_ *)
+              func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
+    if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                ((ParameterOverride_1_System_Object_ *)this_02,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      this = (GamePointMinorRewardSettings *)0x0;
+      value = (Object *)func_?(TypeInfo__System__Int32,&this);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                (this_02,(Object *)StringLiteral_gamePointAmount,value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
-      this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
+      this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
         MVNetworkGame+OperationRequests::
         MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                  (this_02,(pGVar1->fields).woID,woDataToRemove,(MethodInfo *)0x0);
+                  (this_03,(pGVar1->fields).woID,this_02,(MethodInfo *)0x0);
         this_01 = (pGVar1->fields).settingsBase;
         if (this_01 != (SettingsBase *)0x0) {
           SettingsBase::SettingsBase_RemoveData
@@ -142,7 +149,7 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::GamePointMinorRewardSett
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -157,29 +164,31 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_gamePointAmount);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
   }
   bVar1 = mscorlib.dll::System::String::String_op_Equality
                     (key,StringLiteral_gamePointAmount,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?();
-  }
   if (value != (Object *)0x0) {
     if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
     goto code_?;
     pfVar2 = (float *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_FloorToInt(*pfVar2,(MethodInfo *)0x0);
+    fVar3 = *pfVar2;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    func_?((double)fVar3);
     this_00 = (this->fields).gamePointsAwardedInputField;
-    text = (String *)func_?(&stack0xfffffff8);
+    text = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
     if (this_00 != (SettingsInputFieldSlider *)0x0) {
       SettingsInputFieldSlider::SettingsInputFieldSlider_SetText(this_00,text,(MethodInfo *)0x0);
       this_01 = (this->fields).settingsBase;
@@ -194,8 +203,8 @@ void Assembly-CSharp.dll::GamePointMinorRewardSettings::
   func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -7,16 +7,16 @@ void Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup_AddPreviewBoxesToTele
 {
   pMVar1 = (this->fields).teleporter1;
   if (pMVar1 != (MVTeleporter *)0x0) {
-    (*(code *)(pMVar1->klass->vtable).AddPreviewBox.method)
-              (pMVar1,(pMVar1->klass->vtable).AddSelectionBox.methodPtr);
+    (*(pMVar1->klass->vtable).AddPreviewBox.methodPtr)
+              (pMVar1,(pMVar1->klass->vtable).AddPreviewBox.method);
     pMVar1 = (this->fields).teleporter2;
     if (pMVar1 != (MVTeleporter *)0x0) {
-      (*(code *)(pMVar1->klass->vtable).AddPreviewBox.method)
-                (pMVar1,(pMVar1->klass->vtable).AddSelectionBox.methodPtr);
+      (*(pMVar1->klass->vtable).AddPreviewBox.methodPtr)
+                (pMVar1,(pMVar1->klass->vtable).AddPreviewBox.method);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -30,182 +30,247 @@ void Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&
+                    TeleportGroup_MethodInfo__UnityEngine__GameObject__GetComponent<TeleportGroup>__
+                   );
+    func_?(&StringLiteral_TeleportGroup_does_not_have_any_);
+    func_?(&StringLiteral_ChildrenMap);
+    func_?(&StringLiteral_Missing_teleporter_2);
+    func_?(&StringLiteral_Missing_teleporter_1);
+    func_?(&StringLiteral_teleporter2);
+    func_?(&StringLiteral_BlueprintData);
+    func_?(&StringLiteral_teleporter1);
     cRam_? = '\x01';
   }
   MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
-  pDVar1 = (Dictionary_2_System_Type_Pool_ *)
-           PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if ((pDVar1 == (Dictionary_2_System_Type_Pool_ *)0x0) ||
-     (pDVar1 = (Dictionary_2_System_Type_Pool_ *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-               Dictionary_2_System_Type_Pool__get_Item
-                         (pDVar1,(Type *)StringLiteral_BlueprintData,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         ), pDVar1 == (Dictionary_2_System_Type_Pool_ *)0x0)) goto code_?;
-  bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment;
-  if (((pDVar1->klass->_1).naturalAligment < bVar2) ||
-     ((Dictionary_2_System_Object_System_Object___Class *)
-      (pDVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
-      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-    bVar3 = false;
-  }
-  else {
-    bVar3 = true;
-  }
-  this_01 = (Dictionary_2_System_Type_Pool_ *)0x0;
-  if (bVar3) {
-    this_01 = pDVar1;
-  }
-  if (this_01 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-  pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-           Dictionary_2_System_Type_Pool__get_Item
-                     (this_01,(Type *)StringLiteral_ChildrenMap,
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-  if (pDVar4 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
-              ((Object *)StringLiteral_TeleportGroup_does_not_have_any_,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_03 != (MVWorldObjectClientManager *)0x0) {
-      MVWorldObjectClientManager::MVWorldObjectClientManager_UnregisterWorldObject
-                (this_03,(this->fields)._._._._.id,(MethodInfo *)0x0);
-      return;
-    }
+  this_00 = (this->fields)._._._._.data;
+  if ((this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
+     (unaff_EDI = (MVTeleporter__Class *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__get_Item
+                            (this_00,(Object *)StringLiteral_BlueprintData,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), unaff_EDI == (MVTeleporter__Class *)0x0)) {
+code_?:
+    func_?();
 code_?:
     func_?();
   }
   else {
-    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment;
-    if (((pDVar4->klass->_1).naturalAligment < bVar2) ||
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (pDVar4->klass->_1).typeHierarchy[bVar2 - 1] !=
+    pIVar1 = (unaff_EDI->_0).image;
+    if ((*(byte *)&pIVar1[4].nameNoExt <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         typeHierarchyDepth) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         ((pIVar1[2].typeCount - 4) +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).typeHierarchyDepth * 4) !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    this_02 = (MVTeleporter__Class *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__get_Item
+                        ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
+                         (Object *)StringLiteral_ChildrenMap,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+    key = StringLiteral_teleporter1;
+    if (this_02 == (MVTeleporter__Class *)0x0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+                ((Object *)StringLiteral_TeleportGroup_does_not_have_any_,(MethodInfo *)0x0);
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
+        MVWorldObjectClientManager::MVWorldObjectClientManager_UnregisterWorldObject
+                  (pMVar2,(this->fields)._._._._.id,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
+    }
+    pIVar1 = (this_02->_0).image;
+    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         typeHierarchyDepth <= *(byte *)&pIVar1[4].nameNoExt) &&
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         ((pIVar1[2].typeCount - 4) +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).typeHierarchyDepth * 4) ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    table = (Dictionary_2_System_Object_System_Object_ *)0x0;
-    if (bVar3) {
-      table = pDVar4;
-    }
-    if (table != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pMVar5 = MVTeleportGroup_RetrieveTeleporter
-                         (this,table,StringLiteral_teleporter1,(MethodInfo *)0x0);
-      (this->fields).teleporter1 = pMVar5;
-      pMVar5 = MVTeleportGroup_RetrieveTeleporter
-                         (this,table,StringLiteral_teleporter2,(MethodInfo *)0x0);
-      (this->fields).teleporter2 = pMVar5;
-      if ((this->fields).teleporter1 == (MVTeleporter *)0x0) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)StringLiteral_Missing_teleporter_1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        cRam_? = '\x01';
       }
-      if ((this->fields).teleporter2 == (MVTeleporter *)0x0) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)StringLiteral_Missing_teleporter_2,(MethodInfo *)0x0);
-      }
-      pMVar5 = (this->fields).teleporter1;
-      if (pMVar5 == (MVTeleporter *)0x0) {
-        return;
-      }
-      pMVar6 = (this->fields).teleporter2;
-      if (pMVar6 == (MVTeleporter *)0x0) {
-        return;
-      }
-      (pMVar5->fields).target = pMVar6;
-      pMVar5 = (this->fields).teleporter2;
-      if (pMVar5 != (MVTeleporter *)0x0) {
-        (pMVar5->fields).target = (this->fields).teleporter1;
-        pMVar5 = (this->fields).teleporter1;
-        if (pMVar5 != (MVTeleporter *)0x0) {
-          uVar7 = *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4);
-          piVar8 = &(pMVar5->fields)._._.interactionFlags;
-          *(uint *)piVar8 = (uint)*piVar8 | 8;
-          *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4) = uVar7;
-          pMVar5 = (this->fields).teleporter2;
-          if (pMVar5 != (MVTeleporter *)0x0) {
-            uVar7 = *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4);
-            piVar8 = &(pMVar5->fields)._._.interactionFlags;
-            *(uint *)piVar8 = (uint)*piVar8 | 8;
-            *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4) = uVar7;
-            uVar9 = (uint)(this->fields)._._._.interactionFlags;
-            uVar7 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-            if ((uVar9 & 0x20000) == 0) {
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_02,
+                         (Object *)key,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                        );
+      if (bVar3 == 0) {
 code_?:
-              this_00 = (this->fields)._._._.gameObject;
-              *(uint *)&(this->fields)._._._.interactionFlags = uVar9 | 0x40;
-              *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar7;
-              if ((this_00 != (GameObject *)0x0) &&
-                 (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_GetComponent_47
-                                      (this_00,
-                                       TeleportGroup_MethodInfo__UnityEngine__GameObject__GetComponent<TeleportGroup>__
-                                      ), this_02 != (UseInteractorHandler *)0x0)) {
-                TeleportGroup::TeleportGroup_Initialize
-                          ((TeleportGroup *)this_02,this,(MethodInfo *)0x0);
-                return;
-              }
-            }
-            else {
-              pMVar5 = (this->fields).teleporter1;
-              if (pMVar5 != (MVTeleporter *)0x0) {
-                (*(code *)(pMVar5->klass->vtable).AddPreviewBox.method)();
-                pMVar5 = (this->fields).teleporter2;
-                if (pMVar5 != (MVTeleporter *)0x0) {
-                  (*(code *)(pMVar5->klass->vtable).AddPreviewBox.method)();
-                  pMVar5 = (this->fields).teleporter1;
-                  pSVar10 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                           NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                                     ((NamedThemeAttribute_1_UnityEngine_Color_ *)this,
-                                      (MethodInfo *)0x0);
-                  if (pMVar5 != (MVTeleporter *)0x0) {
-                    RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_set_PrototypeId
-                              ((RuntimePrototypeCubeModel *)pMVar5,(int32_t)pSVar10,(MethodInfo *)0x0
-                              );
-                    pMVar5 = (this->fields).teleporter2;
-                    pSVar10 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                             NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                                       ((NamedThemeAttribute_1_UnityEngine_Color_ *)this,
-                                        (MethodInfo *)0x0);
-                    if (pMVar5 != (MVTeleporter *)0x0) {
-                      RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_set_PrototypeId
-                                ((RuntimePrototypeCubeModel *)pMVar5,(int32_t)pSVar10,
+        pMVar4 = (MVTeleporter *)0x0;
+code_?:
+        (this->fields).teleporter1 = pMVar4;
+        func_?();
+        unaff_EDI = (MVTeleporter__Class *)StringLiteral_teleporter2;
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                         );
+          func_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+          func_?(&TypeInfo__System__Int32);
+          func_?(&TypeInfo__MVTeleporter);
+          cRam_? = '\x01';
+        }
+        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_02,
+                           (Object *)unaff_EDI,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                          );
+        if (bVar3 == 0) {
+code_?:
+          pMVar4 = (MVTeleporter *)0x0;
+          unaff_EDI = this_02;
+        }
+        else {
+          MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                              (Object *)unaff_EDI,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          if ((unaff_EDI == (MVTeleporter__Class *)0x0) || (pOVar5 == (Object *)0x0))
+          goto code_?;
+          if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+          goto code_?;
+          piVar6 = (int32_t *)func_?();
+          pMVar4 = (MVTeleporter *)
+                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             ((MVWorldObjectClientManager *)unaff_EDI,*piVar6,(MethodInfo *)0x0);
+          this_02 = unaff_EDI;
+          if (((pMVar4 == (MVTeleporter *)0x0) ||
+              (this_02 = TypeInfo__MVTeleporter,
+              (pMVar4->klass->_1).typeHierarchyDepth <
+              (TypeInfo__MVTeleporter->_1).typeHierarchyDepth)) ||
+             ((MVTeleporter__Class *)
+              (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1]
+              != TypeInfo__MVTeleporter)) goto code_?;
+          unaff_EDI = TypeInfo__MVTeleporter;
+          if ((MVTeleporter__Class *)
+              (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1]
+              != TypeInfo__MVTeleporter) {
+            pMVar4 = (MVTeleporter *)0x0;
+          }
+        }
+        (this->fields).teleporter2 = pMVar4;
+        func_?();
+        if ((this->fields).teleporter1 == (MVTeleporter *)0x0) {
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                    ((Object *)StringLiteral_Missing_teleporter_1,(MethodInfo *)0x0);
+        }
+        if ((this->fields).teleporter2 == (MVTeleporter *)0x0) {
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                    ((Object *)StringLiteral_Missing_teleporter_2,(MethodInfo *)0x0);
+        }
+        if ((this->fields).teleporter1 == (MVTeleporter *)0x0) {
+          return;
+        }
+        if ((this->fields).teleporter2 == (MVTeleporter *)0x0) {
+          return;
+        }
+        (((this->fields).teleporter1)->fields).target = (this->fields).teleporter2;
+        func_?();
+        pMVar4 = (this->fields).teleporter2;
+        if (pMVar4 != (MVTeleporter *)0x0) {
+          (pMVar4->fields).target = (this->fields).teleporter1;
+          func_?();
+          pMVar4 = (this->fields).teleporter1;
+          if (pMVar4 != (MVTeleporter *)0x0) {
+            uVar7 = *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4);
+            piVar8 = &(pMVar4->fields)._._.interactionFlags;
+            *(uint *)piVar8 = (uint)*piVar8 | 8;
+            *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4) = uVar7;
+            pMVar4 = (this->fields).teleporter2;
+            if (pMVar4 != (MVTeleporter *)0x0) {
+              uVar7 = *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4);
+              piVar8 = &(pMVar4->fields)._._.interactionFlags;
+              *(uint *)piVar8 = (uint)*piVar8 | 8;
+              *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4) = uVar7;
+              bVar3 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
+                                ((MVWorldObjectClient *)this,InteractionFlags__Enum_IsPreview,
                                  (MethodInfo *)0x0);
-                      pMVar5 = (this->fields).teleporter1;
-                      if (pMVar5 != (MVTeleporter *)0x0) {
-                        uVar7 = *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4);
-                        piVar8 = &(pMVar5->fields)._._.interactionFlags;
-                        *(uint *)piVar8 = (uint)*piVar8 | 0x20000;
-                        *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4) = uVar7;
-                        pMVar5 = (this->fields).teleporter2;
-                        if (pMVar5 != (MVTeleporter *)0x0) {
-                          uVar7 = *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4);
-                          piVar8 = &(pMVar5->fields)._._.interactionFlags;
+              if (bVar3 == 0) {
+code_?:
+                uVar7 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+                piVar8 = &(this->fields)._._._.interactionFlags;
+                *(uint *)piVar8 = (uint)*piVar8 | 0x40;
+                *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar7;
+                this_01 = (this->fields)._._._.gameObject;
+                if ((this_01 != (GameObject *)0x0) &&
+                   (this_03 = (TeleportGroup *)
+                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                              GameObject_GetComponent_1
+                                        (this_01,
+                                         TeleportGroup_MethodInfo__UnityEngine__GameObject__GetComponent<TeleportGroup>__
+                                        ), this_03 != (TeleportGroup *)0x0)) {
+                  TeleportGroup::TeleportGroup_Initialize(this_03,this,(MethodInfo *)0x0);
+                  return;
+                }
+              }
+              else {
+                pMVar4 = (this->fields).teleporter1;
+                if (pMVar4 != (MVTeleporter *)0x0) {
+                  (*(pMVar4->klass->vtable).AddPreviewBox.methodPtr)();
+                  pMVar4 = (this->fields).teleporter2;
+                  if (pMVar4 != (MVTeleporter *)0x0) {
+                    (*(pMVar4->klass->vtable).AddPreviewBox.methodPtr)();
+                    pMVar4 = (this->fields).teleporter1;
+                    if (pMVar4 != (MVTeleporter *)0x0) {
+                      (pMVar4->fields)._._._.previewOwnerProfileId =
+                           (this->fields)._._._._.previewOwnerProfileId;
+                      pMVar4 = (this->fields).teleporter2;
+                      if (pMVar4 != (MVTeleporter *)0x0) {
+                        (pMVar4->fields)._._._.previewOwnerProfileId =
+                             (this->fields)._._._._.previewOwnerProfileId;
+                        pMVar4 = (this->fields).teleporter1;
+                        if (pMVar4 != (MVTeleporter *)0x0) {
+                          uVar7 = *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4);
+                          piVar8 = &(pMVar4->fields)._._.interactionFlags;
                           *(uint *)piVar8 = (uint)*piVar8 | 0x20000;
-                          *(undefined4 *)((int)&(pMVar5->fields)._._.interactionFlags + 4) = uVar7;
-                          uVar9 = (uint)(this->fields)._._._.interactionFlags;
-                          uVar7 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-                          goto code_?;
+                          *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4) = uVar7;
+                          pMVar4 = (this->fields).teleporter2;
+                          if (pMVar4 != (MVTeleporter *)0x0) {
+                            uVar7 = *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4)
+                            ;
+                            piVar8 = &(pMVar4->fields)._._.interactionFlags;
+                            *(uint *)piVar8 = (uint)*piVar8 | 0x20000;
+                            *(undefined4 *)((int)&(pMVar4->fields)._._.interactionFlags + 4) = uVar7
+                            ;
+                            goto code_?;
+                          }
                         }
                       }
                     }
@@ -215,15 +280,43 @@ code_?:
             }
           }
         }
+        goto code_?;
+      }
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)key,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      unaff_EDI = this_02;
+      if ((pMVar2 == (MVWorldObjectClientManager *)0x0) || (pOVar5 == (Object *)0x0))
+      goto code_?;
+      if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+        piVar6 = (int32_t *)func_?();
+        pMVar4 = (MVTeleporter *)
+                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                           (pMVar2,*piVar6,(MethodInfo *)0x0);
+        if (((pMVar4 == (MVTeleporter *)0x0) ||
+            ((pMVar4->klass->_1).typeHierarchyDepth <
+             (TypeInfo__MVTeleporter->_1).typeHierarchyDepth)) ||
+           ((MVTeleporter__Class *)
+            (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1]
+            != TypeInfo__MVTeleporter)) goto code_?;
+        if ((MVTeleporter__Class *)
+            (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1]
+            != TypeInfo__MVTeleporter) {
+          pMVar4 = (MVTeleporter *)0x0;
+        }
+        goto code_?;
       }
       goto code_?;
     }
   }
   func_?();
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  func_?(unaff_EDI);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -237,49 +330,56 @@ Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup_RetrieveTeleporter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__MVTeleporter);
     cRam_? = '\x01';
   }
   if (table != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      ((Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                        *)table,id,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)table,(Object *)id,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
       return (MVTeleporter *)0x0;
     }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)table,(Type *)id,
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (table,(Object *)id,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if ((this_00 != (MVWorldObjectClientManager *)0x0) && (pPVar2 != (Pool *)0x0)) {
-      if ((pPVar2->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+    if ((this_00 != (MVWorldObjectClientManager *)0x0) && (pOVar2 != (Object *)0x0)) {
+      if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
         piVar3 = (int32_t *)func_?();
-        pMVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+        pMVar4 = (MVTeleporter *)
+                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                            (this_00,*piVar3,(MethodInfo *)0x0);
-        pMVar5 = TypeInfo__MVTeleporter;
-        if (pMVar4 == (MVWorldObject *)0x0) {
+        if (pMVar4 == (MVTeleporter *)0x0) {
           return (MVTeleporter *)0x0;
         }
-        pMStack6 = TypeInfo__MVTeleporter;
-        pMStack7 = pMVar4;
-        iVar8 = func_?();
-        if (iVar8 == 0) {
+        if ((pMVar4->klass->_1).typeHierarchyDepth < (TypeInfo__MVTeleporter->_1).typeHierarchyDepth
+           ) {
           return (MVTeleporter *)0x0;
         }
-        pMStack6 = pMVar5;
-        pMStack7 = pMVar4;
-        pMVar9 = (MVTeleporter *)func_?();
-        return pMVar9;
+        if ((MVTeleporter__Class *)
+            (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1]
+            != TypeInfo__MVTeleporter) {
+          return (MVTeleporter *)0x0;
+        }
+        if ((MVTeleporter__Class *)
+            (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1]
+            != TypeInfo__MVTeleporter) {
+          return (MVTeleporter *)0x0;
+        }
+        return pMVar4;
       }
       goto code_?;
     }
@@ -287,9 +387,9 @@ Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup_RetrieveTeleporter
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  pMVar9 = (MVTeleporter *)(*pcVar10)();
-  return pMVar9;
+  pcVar5 = (code *)swi(3);
+  pMVar4 = (MVTeleporter *)(*pcVar5)();
+  return pMVar4;
 }
 
 
@@ -299,26 +399,22 @@ void Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup_SetWorldObjectToPurch
                (MVTeleportGroup *this,MethodInfo *method)
 
 {
-  RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_set_PrototypeId
-            ((RuntimePrototypeCubeModel *)this,0,(MethodInfo *)0x0);
-  uVar1 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-  piVar2 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar2 = (uint)*piVar2 & 0xfffdffff;
-  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar1;
-  (*(code *)(this->klass->vtable).RemovePreviewBox.method)
-            (this,(this->klass->vtable).HideConnectors.methodPtr);
-  pMVar3 = (this->fields).teleporter1;
-  if (pMVar3 != (MVTeleporter *)0x0) {
-    (*(code *)(pMVar3->klass->vtable).SetWorldObjectToPurchased.method)(pMVar3);
-    pMVar3 = (this->fields).teleporter2;
-    if (pMVar3 != (MVTeleporter *)0x0) {
-      (*(code *)(pMVar3->klass->vtable).SetWorldObjectToPurchased.method)(pMVar3);
+  MVWorldObjectClient::MVWorldObjectClient_SetWorldObjectToPurchased
+            ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
+  pMVar1 = (this->fields).teleporter1;
+  if (pMVar1 != (MVTeleporter *)0x0) {
+    (*(pMVar1->klass->vtable).SetWorldObjectToPurchased.methodPtr)
+              (pMVar1,(pMVar1->klass->vtable).SetWorldObjectToPurchased.method);
+    pMVar1 = (this->fields).teleporter2;
+    if (pMVar1 != (MVTeleporter *)0x0) {
+      (*(pMVar1->klass->vtable).SetWorldObjectToPurchased.methodPtr)
+                (pMVar1,(pMVar1->klass->vtable).SetWorldObjectToPurchased.method);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -332,25 +428,20 @@ void Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = (GameObject *)
-                   TriggerCube::TriggerCube_get_InputSignalReceiver
-                             ((TriggerCube *)this_00,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVBlueprintBase::MVBlueprintBase__ctor_2
-              ((MVBlueprintBase *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+              ((MVBlueprintBase *)this,data,(pPVar1->fields).mvTeleportGroupPrefab,worldObjects,
+               (MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -363,16 +454,5 @@ Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup_get_DocumentationType
 
 {
   return MVWorldObjectDocumentationType__Enum_Teleporter;
-}
-
-
-/* MVTeleporter get_Teleporter2() */
-
-MVTeleporter *
-Assembly-CSharp.dll::MVTeleportGroup::MVTeleportGroup_get_Teleporter2
-          (MVTeleportGroup *this,MethodInfo *method)
-
-{
-  return (this->fields).teleporter2;
 }
 

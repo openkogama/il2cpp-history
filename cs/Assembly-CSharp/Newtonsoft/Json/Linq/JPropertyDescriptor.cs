@@ -7,23 +7,23 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Linq
 {
 	public class JPropertyDescriptor : PropertyDescriptor
 	{
 		// Fields
-		private readonly Type _propertyType;
+		private readonly System.Type _propertyType;
 	
 		// Properties
-		public override Type ComponentType { get; }
+		public override System.Type ComponentType { get; }
 		public override bool IsReadOnly { get; }
-		public override Type PropertyType { get; }
+		public override System.Type PropertyType { get; }
 		protected override int NameHashCode { get; }
 	
 		// Constructors
-		public JPropertyDescriptor(string name, Type propertyType);
+		public JPropertyDescriptor(string name, System.Type propertyType);
 	
 		// Methods
 		private static JObject CastInstance(object instance);

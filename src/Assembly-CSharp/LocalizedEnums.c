@@ -6,20 +6,18 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums__
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__MVConnStateLS->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__LocalizedEnums__MVConnStateLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__MVConnStateLS);
+  if ((TypeInfo__LocalizedEnums__MVConnStateLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__MVConnStateLS->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__LocalizedEnums__MVConnStateLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__MVConnStateLS);
+  if ((TypeInfo__LocalizedEnums__MVConnStateLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__LocalizedEnums__MVConnStateLS->static_fields->enumLocalizeBookkeeping;
   if (this != (EnumLocalizeBookkeeping *)0x0) {
@@ -27,9 +25,10 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums__
                        (this,enumVal,(MethodInfo *)0x0);
     return pSVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar3)();
   return pSVar1;
 }
 
@@ -41,20 +40,18 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums___1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__MVJoinStateLS->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__LocalizedEnums__MVJoinStateLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__MVJoinStateLS);
+  if ((TypeInfo__LocalizedEnums__MVJoinStateLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__MVJoinStateLS->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__LocalizedEnums__MVJoinStateLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__MVJoinStateLS);
+  if ((TypeInfo__LocalizedEnums__MVJoinStateLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__LocalizedEnums__MVJoinStateLS->static_fields->enumLocalizeBookkeeping;
   if (this != (EnumLocalizeBookkeeping *)0x0) {
@@ -62,9 +59,10 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums___1
                        (this,enumVal & MVEventCodes__Enum_Join,(MethodInfo *)0x0);
     return pSVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar3)();
   return pSVar1;
 }
 
@@ -76,20 +74,18 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums___2
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__XPRewardTypeLS->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__LocalizedEnums__XPRewardTypeLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__XPRewardTypeLS);
+  if ((TypeInfo__LocalizedEnums__XPRewardTypeLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__XPRewardTypeLS->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__LocalizedEnums__XPRewardTypeLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__XPRewardTypeLS);
+  if ((TypeInfo__LocalizedEnums__XPRewardTypeLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__LocalizedEnums__XPRewardTypeLS->static_fields->enumLocalizeBookkeeping;
   if (this != (EnumLocalizeBookkeeping *)0x0) {
@@ -97,9 +93,10 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums___2
                        (this,enumVal & 0xff,(MethodInfo *)0x0);
     return pSVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar3)();
   return pSVar1;
 }
 
@@ -111,20 +108,18 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums___3
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__AccessoryCategoryLS->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__LocalizedEnums__AccessoryCategoryLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__AccessoryCategoryLS);
+  if ((TypeInfo__LocalizedEnums__AccessoryCategoryLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__LocalizedEnums__AccessoryCategoryLS->vtable).Equals.methodPtr & 0x2000000)
-       != 0) && ((TypeInfo__LocalizedEnums__AccessoryCategoryLS->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LocalizedEnums__AccessoryCategoryLS);
+  if ((TypeInfo__LocalizedEnums__AccessoryCategoryLS->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   this = TypeInfo__LocalizedEnums__AccessoryCategoryLS->static_fields->enumLocalizeBookkeeping;
   if (this != (EnumLocalizeBookkeeping *)0x0) {
@@ -132,9 +127,10 @@ String * Assembly-CSharp.dll::LocalizedEnums::LocalizedEnums___3
                        (this,enumVal,(MethodInfo *)0x0);
     return pSVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar3)();
   return pSVar1;
 }
 

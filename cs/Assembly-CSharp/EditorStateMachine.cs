@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class EditorStateMachine : FSMEntity
 {
@@ -20,7 +20,6 @@ public class EditorStateMachine : FSMEntity
 	private GameObject gameObject;
 	public const float sqrEpsilon = 0.64f;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _GridMode_k__BackingField;
 
 	// Properties

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class RegisteredPromotionController : MonoBehaviour, IRegisterPromotionAdController, IPromotionController
 {
@@ -23,31 +23,48 @@ public class RegisteredPromotionController : MonoBehaviour, IRegisterPromotionAd
 	private float playFromKogamaPromoInterval;
 	[SerializeField]
 	private float joinTheElitePromoInterval;
+	[SerializeField]
+	private EmbeddedPlayerConfig embeddedPlayerConfig;
 	private float timer;
 	private bool embedded;
 	private bool subscriber;
+	private bool showTouristPromotion;
 	private float timeBeforeShownPromotion;
 	private UnityAction<bool, bool> onPromotionWasPopped;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	public bool ReadyForAd { get; }
 	public bool IsPromotionAvailable { get; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _PushPromotionSlide_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal RegisteredPromotionPopup registeredPromotion;
-		internal RegisteredPromotionController _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__17_0;
 
 		// Constructors
-		public _PushPromotionSlide_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _InterstitialAdResult_b__17_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass20_0
+	{
+		// Fields
+		public RegisteredPromotionPopup registeredPromotion;
+		public RegisteredPromotionController __4__this;
+
+		// Constructors
+		public __c__DisplayClass20_0();
+
+		// Methods
+		internal void _PushPromotionSlide_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -62,7 +79,5 @@ public class RegisteredPromotionController : MonoBehaviour, IRegisterPromotionAd
 	private void PushPromotionSlide(RegisteredPromotionPopup popupPrefab, bool isEmbeddedPromotion);
 	private void Update();
 	public void ShowPromotion(UnityAction<bool, bool> onPop);
-	[CompilerGenerated]
-	private static void _InterstitialAdResult_m__0(IUIStack x, BaseEventData y);
 }
 

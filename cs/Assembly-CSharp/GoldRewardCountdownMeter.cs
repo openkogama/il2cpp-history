@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GoldRewardCountdownMeter : MonoBehaviour
 {
@@ -30,16 +30,16 @@ public class GoldRewardCountdownMeter : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _TryShowClaimGoldRewardPopup_c__AnonStorey0
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal GameObject claimGoldRewardPopup;
+		public GameObject claimGoldRewardPopup;
 
 		// Constructors
-		public _TryShowClaimGoldRewardPopup_c__AnonStorey0();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _TryShowClaimGoldRewardPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -50,9 +50,9 @@ public class GoldRewardCountdownMeter : MonoBehaviour
 	private void OnEnable();
 	private void Update();
 	private void UpdateCountdownVisibility();
-	private bool IsGoldRewardCountdownActive();
+	private static bool IsGoldRewardCountdownActive();
 	private void UpdateCountDownProgress();
-	private string GetClaimText();
+	private static string GetClaimText();
 	public void TryShowClaimGoldRewardPopup();
 }
 

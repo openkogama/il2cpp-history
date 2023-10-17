@@ -7,9 +7,8 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings__ctor
                int32_t interstitialTimeoutAfterRewardedAd,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  (this->fields)._AdTimeoutAsSuccess_k__BackingField = adAutoSuccessAfterDelayEnabled;
-  (this->fields)._AdTimeoutAsSuccessDelay_k__BackingField = delayBeforeAdIsAutoSuccess;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.sites = embeddedSiteConfigData.sites;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.siteEnum = embeddedSiteConfigData.siteEnum;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.showTouristPromotion =
@@ -26,7 +25,17 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings__ctor
        embeddedSiteConfigData.allowsFallbackAds;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.showPlayButtonAd =
        embeddedSiteConfigData.showPlayButtonAd;
-  (this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0xf = embeddedSiteConfigData._15_1_;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideGoldShop =
+       embeddedSiteConfigData.hideGoldShop;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.allowInHouseAds =
+       embeddedSiteConfigData.allowInHouseAds;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton =
+       embeddedSiteConfigData.removeFullscreenButton;
+  *(undefined2 *)&(this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0x12 =
+       embeddedSiteConfigData._18_2_;
+  func_?(&(this->fields)._EmbeddedSiteConfigData_k__BackingField,0);
+  (this->fields)._AdTimeoutAsSuccess_k__BackingField = adAutoSuccessAfterDelayEnabled;
+  (this->fields)._AdTimeoutAsSuccessDelay_k__BackingField = delayBeforeAdIsAutoSuccess;
   (this->fields)._InterstitialTimeoutAfterRewardedAd_k__BackingField =
        interstitialTimeoutAfterRewardedAd;
   return;
@@ -48,7 +57,10 @@ Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_get_EmbeddedSiteConfigDa
   bVar6 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.integratedSdk;
   bVar7 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.allowsFallbackAds;
   bVar8 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.showPlayButtonAd;
-  uVar9 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0xf;
+  bVar9 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideGoldShop;
+  bVar10 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.allowInHouseAds;
+  bVar11 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton;
+  uVar12 = *(undefined2 *)&(this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0x12;
   __return_storage_ptr__->sites = (this->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
   __return_storage_ptr__->siteEnum = iVar1;
   __return_storage_ptr__->showTouristPromotion = bVar2;
@@ -58,7 +70,10 @@ Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_get_EmbeddedSiteConfigDa
   __return_storage_ptr__->integratedSdk = bVar6;
   __return_storage_ptr__->allowsFallbackAds = bVar7;
   __return_storage_ptr__->showPlayButtonAd = bVar8;
-  __return_storage_ptr__->field_0xf = uVar9;
+  __return_storage_ptr__->hideGoldShop = bVar9;
+  __return_storage_ptr__->allowInHouseAds = bVar10;
+  __return_storage_ptr__->removeFullscreenButton = bVar11;
+  *(undefined2 *)&__return_storage_ptr__->field_0x12 = uVar12;
   return __return_storage_ptr__;
 }
 
@@ -82,7 +97,12 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_set_EmbeddedSiteCon
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.allowsFallbackAds = value.allowsFallbackAds
   ;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.showPlayButtonAd = value.showPlayButtonAd;
-  (this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0xf = value._15_1_;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideGoldShop = value.hideGoldShop;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.allowInHouseAds = value.allowInHouseAds;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton =
+       value.removeFullscreenButton;
+  *(undefined2 *)&(this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0x12 = value._18_2_;
+  func_?(&(this->fields)._EmbeddedSiteConfigData_k__BackingField,0);
   return;
 }
 

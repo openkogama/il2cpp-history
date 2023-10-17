@@ -6,20 +6,18 @@ void Assembly-CSharp-firstpass.dll::ImageEffectBase::ImageEffectBase_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).m_Material;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                     ((Object_1 *)pMVar1,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     pMVar1 = (this->fields).m_Material;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_DestroyImmediate_1
@@ -36,15 +34,17 @@ void Assembly-CSharp-firstpass.dll::ImageEffectBase::ImageEffectBase_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_SupportsImageEffects
-                    ((MethodInfo *)0x0);
+  bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
+          Single,System::Object]::
+          SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__get_IsReadOnly
+                    ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
+                     unaff_ESI);
   if (bVar1 != 0) {
     pSVar2 = (this->fields).shader;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
@@ -78,12 +78,12 @@ Assembly-CSharp-firstpass.dll::ImageEffectBase::ImageEffectBase_get_material
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Material);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).m_Material;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
@@ -91,18 +91,24 @@ Assembly-CSharp-firstpass.dll::ImageEffectBase::ImageEffectBase_get_material
   if (bVar2 != 0) {
     shader = (this->fields).shader;
     pMVar1 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor
-              (pMVar1,shader,(MethodInfo *)0x0);
-    (this->fields).m_Material = pMVar1;
-    if (pMVar1 == (Material *)0x0) {
-      func_?();
-      pcVar3 = (code *)swi(3);
-      pMVar1 = (Material *)(*pcVar3)();
-      return pMVar1;
+    if (pMVar1 != (Material *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor
+                (pMVar1,shader,(MethodInfo *)0x0);
+      (this->fields).m_Material = pMVar1;
+      func_?(&(this->fields).m_Material,pMVar1);
+      pMVar1 = (this->fields).m_Material;
+      if (pMVar1 != (Material *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
+                  ((Object_1 *)pMVar1,HideFlags__Enum_HideAndDontSave,(MethodInfo *)0x0);
+        goto code_?;
+      }
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
-              ((Object_1 *)pMVar1,HideFlags__Enum_HideAndDontSave,(MethodInfo *)0x0);
+    func_?();
+    pcVar3 = (code *)swi(3);
+    pMVar1 = (Material *)(*pcVar3)();
+    return pMVar1;
   }
+code_?:
   return (this->fields).m_Material;
 }
 

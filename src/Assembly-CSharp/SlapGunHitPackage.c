@@ -13,7 +13,9 @@ Assembly-CSharp.dll::SlapGunHitPackage::SlapGunHitPackage_Create
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,0x1a,impulse._0_8_,impulse.z,0x15,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_6
+            (__return_storage_ptr__,InteractionPackageType__Enum_SlapGunHit,impulse,
+             PlayerKilledByType__Enum_SlapGun,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -25,12 +27,9 @@ void Assembly-CSharp.dll::SlapGunHitPackage::SlapGunHitPackage_ParseAndHandlePac
                InteractionData interactionStruct,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?();
-  fStack_2 = (float)fVar1;
-  pVVar3 = (Vector3 *)func_?(auStack_4);
   InteractionPackage::InteractionPackage_HandlePackage_1
-            ((InteractionPackage *)this,worldObjectClient,shooter,fStack_2,
-             PlayerKilledByType__Enum_SlapGun,*pVVar3,(MethodInfo *)0x0);
+            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
+             PlayerKilledByType__Enum_SlapGun,interactionStruct.impulse,(MethodInfo *)0x0);
   return;
 }
 

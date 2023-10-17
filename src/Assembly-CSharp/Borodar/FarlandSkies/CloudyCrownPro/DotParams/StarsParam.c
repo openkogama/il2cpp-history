@@ -5,16 +5,13 @@ void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::Star
      StarsParam__ctor(StarsParam *this,MethodInfo *method)
 
 {
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_grey
-                     ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-  fVar2 = pCVar1->g;
-  fVar3 = pCVar1->b;
-  fVar4 = pCVar1->a;
-  (this->fields).TintColor.r = pCVar1->r;
-  (this->fields).TintColor.g = fVar2;
-  (this->fields).TintColor.b = fVar3;
-  (this->fields).TintColor.a = fVar4;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,in_stack_5);
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).TintColor.r = _UNK_?;
+  (this->fields).TintColor.g = fVar3;
+  (this->fields).TintColor.b = fVar2;
+  (this->fields).TintColor.a = fVar1;
   return;
 }
 

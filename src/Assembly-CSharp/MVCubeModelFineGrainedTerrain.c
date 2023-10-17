@@ -7,34 +7,24 @@ void Assembly-CSharp.dll::MVCubeModelFineGrainedTerrain::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Cube);
     cRam_? = '\x01';
   }
   if (cube != (CubeBase *)0x0) {
-    byteCorners = (Byte__Array *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)cube,
-                             (MethodInfo *)0x0);
-    faceMaterials =
-         (Byte__Array *)
-         System.dll::System::Collections::Generic::
-         SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-         Single,System::Object]::
-         SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                   ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                     *)cube,(MethodInfo *)0x0);
+    byteCorners = (cube->fields).byteCorners;
+    faceMaterials = (cube->fields).faceMaterials;
     this_01 = (Cube *)func_?(TypeInfo__Cube);
-    Cube::Cube__ctor(this_01,byteCorners,faceMaterials,(MethodInfo *)0x0);
-    this_00 = (this->fields)._.prototypeCubeModel;
-    if (this_00 != (RuntimePrototypeCubeModel *)0x0) {
-      RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_AddCubeNetworkUpdate
-                (this_00,pos,this_01,MeshGeneratePriority__Enum_Medium,(MethodInfo *)0x0);
-      return;
+    if (this_01 != (Cube *)0x0) {
+      Cube::Cube__ctor(this_01,byteCorners,faceMaterials,(MethodInfo *)0x0);
+      this_00 = (this->fields)._.prototypeCubeModel;
+      if (this_00 != (RuntimePrototypeCubeModel *)0x0) {
+        RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_AddCubeNetworkUpdate
+                  (this_00,pos,this_01,MeshGeneratePriority__Enum_Medium,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -48,15 +38,22 @@ void Assembly-CSharp.dll::MVCubeModelFineGrainedTerrain::MVCubeModelFineGrainedT
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CullingTerrainManager);
     cRam_? = '\x01';
   }
   MVCubeModelBase::MVCubeModelBase_Initialize((MVCubeModelBase *)this,(MethodInfo *)0x0);
   chunkInstances = (this->fields)._.chunkInstances;
   this_00 = (CullingTerrainManager *)func_?(TypeInfo__CullingTerrainManager);
-  CullingTerrainManager::CullingTerrainManager__ctor
-            (this_00,chunkInstances,(MVCubeModelBase *)this,(MethodInfo *)0x0);
-  (this->fields).cullingTerrainManager = this_00;
+  if (this_00 != (CullingTerrainManager *)0x0) {
+    CullingTerrainManager::CullingTerrainManager__ctor
+              (this_00,chunkInstances,(MVCubeModelBase *)this,(MethodInfo *)0x0);
+    (this->fields).cullingTerrainManager = this_00;
+    func_?(&(this->fields).cullingTerrainManager,this_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -74,9 +71,10 @@ void Assembly-CSharp.dll::MVCubeModelFineGrainedTerrain::
               (this_00,pos,MeshGeneratePriority__Enum_Medium,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -91,35 +89,34 @@ void Assembly-CSharp.dll::MVCubeModelFineGrainedTerrain::MVCubeModelFineGrainedT
   if (this_00 != (RuntimePrototypeCubeModel *)0x0) {
     RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveAllCubesLocal
               (this_00,(MethodInfo *)0x0);
-    if ((this->fields).cullingTerrainManager != (CullingTerrainManager *)0x0) {
+    this_01 = (this->fields).cullingTerrainManager;
+    if (this_01 != (CullingTerrainManager *)0x0) {
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Clear__
+                       );
         cRam_? = '\x01';
       }
       CullingTerrainManager::CullingTerrainManager_DestroyCullingSubscribers
-                (in_stack_1,(MethodInfo *)0x0);
-      this_01 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)(in_stack_1->fields).terrainCullingSubscriberBases;
-      if (this_01 !=
-          (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-           *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-        Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-        Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Clear
-                  (this_01,
+                (this_01,(MethodInfo *)0x0);
+      this_02 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)(this_01->fields).terrainCullingSubscriberBases;
+      if (this_02 !=
+          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
+         ) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+        Regex+CachedCodeEntryKey,System::Object]::
+        Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+                  (this_02,
                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Clear__
                   );
         return;
       }
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -155,9 +152,10 @@ bool Assembly-CSharp.dll::MVCubeModelFineGrainedTerrain::
                       (this_00,(MethodInfo *)0x0);
     return 0 < iVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 

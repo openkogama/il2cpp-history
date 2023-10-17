@@ -6,7 +6,8 @@ String * Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_Level__0___PrevXP__1___NextXP__2);
     cRam_? = '\x01';
   }
   pXVar1 = this;
@@ -16,10 +17,6 @@ String * Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_ToString
   arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
   iStack_3 = (pXVar1->fields)._NextXP_k__BackingField;
   arg2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar4 = mscorlib.dll::System::String::String_Format_2
                      (StringLiteral_Level__0___PrevXP__1___NextXP__2,arg0,arg1,arg2,
                       (MethodInfo *)0x0);
@@ -33,38 +30,45 @@ bool Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_Validate
                (XPLevelLimits *this,int32_t currentXp,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  iVar1 = (this->fields)._PrevXP_k__BackingField;
-  iVar2 = (this->fields)._NextXP_k__BackingField;
-  if (iVar1 < iVar2) {
-    if (currentXp < iVar1) {
-      this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-      message = StringLiteral_currentXp___prevXp;
+  if ((this->fields)._PrevXP_k__BackingField < (this->fields)._NextXP_k__BackingField) {
+    if (currentXp < (this->fields)._PrevXP_k__BackingField) goto code_?;
+    if ((this->fields)._NextXP_k__BackingField <= currentXp) {
+      return 0;
     }
-    else {
-      if (iVar2 <= currentXp) {
-        return 0;
-      }
-      if (-1 < currentXp) {
-        return 1;
-      }
-      this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-      message = StringLiteral_currentXp__0;
+    if (-1 < currentXp) {
+      return 1;
     }
   }
   else {
-    this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-    message = StringLiteral_prevXp___nextXp;
+    uVar1 = func_?(&TypeInfo__System__Exception);
+    pEVar2 = (Exception *)func_?(uVar1);
+    func_?(pEVar2);
+    pMVar3 = (MethodInfo *)0x0;
+    pSVar4 = (String *)func_?(&StringLiteral_prevXp___nextXp);
+    mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
+    func_?(&MethodInfo__XPLevelLimits__Validate_int_);
+    func_?(pEVar2);
   }
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1(this_00,message,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  uVar1 = func_?(&TypeInfo__System__Exception);
+  pEVar2 = (Exception *)func_?(uVar1);
+  func_?(pEVar2);
+  pMVar3 = (MethodInfo *)0x0;
+  pSVar4 = (String *)func_?(&StringLiteral_currentXp__0);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
+  func_?(&MethodInfo__XPLevelLimits__Validate_int_);
+  func_?(pEVar2);
+code_?:
+  uVar1 = func_?(&TypeInfo__System__Exception);
+  pEVar2 = (Exception *)func_?(uVar1);
+  func_?(pEVar2);
+  pMVar3 = (MethodInfo *)0x0;
+  pSVar4 = (String *)func_?(&StringLiteral_currentXp___prevXp);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
+  func_?(&MethodInfo__XPLevelLimits__Validate_int_);
+  func_?(pEVar2);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 

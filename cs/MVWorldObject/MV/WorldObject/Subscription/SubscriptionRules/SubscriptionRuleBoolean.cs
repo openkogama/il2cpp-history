@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject.Subscription;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.Subscription.SubscriptionRules
 {
@@ -20,7 +20,7 @@ namespace MV.WorldObject.Subscription.SubscriptionRules
 		private bool _Enabled_k__BackingField;
 	
 		// Properties
-		private bool Enabled { [CompilerGenerated] set; }
+		public bool Enabled { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	
 		// Constructors
 		public SubscriptionRuleBoolean(bool enabled);

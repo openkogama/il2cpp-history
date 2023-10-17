@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TeamsCounter
 {
@@ -23,6 +23,7 @@ public class TeamsCounter
 	public TeamsCounter(BytePacker bp);
 
 	// Methods
+	public bool ContainsTeamWithActor(MVTeam team, int actorNr);
 	public HighScores GetHighScores(GameStatCounterType gameStatCounterType, bool presentAsTeamScore, WinningConditionPresentStyle winningConditionPresentStyle, bool byAscending);
 	public int GetTeamCount(MVTeam team);
 	public int GetActorCount(MVTeam team, int actorNumber);
@@ -33,6 +34,7 @@ public class TeamsCounter
 	public void RemoveTeam(MVTeam team);
 	private void AddIfNotPresent(MVTeam team);
 	public override string ToString();
+	public byte[] ToByteArray();
 	public void GetActorWithBestScore(out int score, MVTeam team, GameStatCounterType statType, int excludedActorNr = -1);
 }
 

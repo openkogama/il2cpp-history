@@ -5,19 +5,19 @@ void Assembly-CSharp.dll::TeamEditor::TeamEditor_Destroy(TeamEditor *this,Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
   UpdateController::UpdateController_RemoveUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
-  this_00 = (this->fields)._.cullingSubscriberBase;
-  if (this_00 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(this_00,(MethodInfo *)0x0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
     (this->fields)._.cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    func_?(&(this->fields)._.cullingSubscriberBase,0);
   }
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
   return;
@@ -33,119 +33,135 @@ void Assembly-CSharp.dll::TeamEditor::TeamEditor_Initialize(TeamEditor *this,Met
   uVar1 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff8;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MVTeam,_System::String>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MVTeam,_System::String>__get_Value__
+                   );
+    func_?(&TypeInfo__MV__WorldObject__MVTeam);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  auStack_2._16_4_ = (Object *)0x0;
-  KStack_3.key = 0;
-  KStack_3.value = 0;
-  auStack_2._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_2._4_4_ = (MonitorData *)0x0;
-  auStack_2._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_2._12_4_ = 0;
-  puStack_4 = (undefined *)0x0;
-  uStack_5 = 0;
-  func_?();
-  puStack_6 = (undefined4 *)&stack0xffffffa0;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (puStack_6 = (undefined4 *)&stack0xffffffa0,
-     (TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    puStack_6 = (undefined4 *)&stack0xffffffa0;
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar7 != (MVNetworkGame *)0x0) &&
-     (pSVar8 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                         ((DayNightCycle *)pMVar7,(MethodInfo *)0x0), pSVar8 != (SkyParam *)0x0)) {
-    capacity = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pSVar8,
-                          (MethodInfo *)0x0);
-    this_00 = (Dictionary_2_WinningConditionType_System_Object_ *)func_?();
-    System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::
-    SortedList_2_System_Single_System_Object___ctor_1
-              ((SortedList_2_System_Single_System_Object_ *)this_00,(int32_t)capacity,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
-              );
-    if (this_00 != (Dictionary_2_WinningConditionType_System_Object_ *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System
-               ::Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *
-                          )&stack0xffffffac,this_00,
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
+    dictionary = (pMVar3->fields).teamNames;
+    this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )func_?();
+    if (this_01 !=
+        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
+    {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object___ctor_1
+                (this_01,(IDictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                          *)dictionary,
+                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
+                );
+      pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                          &pDStack_5,(Dictionary_2_System_Object_System_Object_ *)this_01,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__GetEnumerator__
                          );
-      auStack_2._0_4_ = pDVar9->dictionary;
-      auStack_2._4_4_ = pDVar9->next;
-      auStack_2._8_4_ = pDVar9->stamp;
-      auStack_2._12_4_ = (pDVar9->current).key;
-      auStack_2._16_4_ = (pDVar9->current).value;
-      while( true ) {
-        cVar10 = func_?();
-        if (cVar10 == '\0') {
-          *puStack_6 = 0xb4;
-          func_?();
+      uStack_6 = 0;
+      pDVar7 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pDVar4->_current).key;
+      uVar8 = *(undefined8 *)&(pDVar4->_current).value;
+      pOStack_9 = (Object *)&stack0xffffffa0;
+      do {
+        method_00 = (MVTeam__Enum__Class *)uVar8;
+        bVar10 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                           &stack0xffffffa0,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__MoveNext__
+                          );
+        if (bVar10 == 0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&stack0xffffffa0,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__Dispose__
+                     ,(MethodInfo *)method_00);
           *unaff_FS_OFFSET = uVar1;
           return;
         }
-        KStack_3 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                              ((LevelRewardsManager *)auStack_2,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__get_Current__
-                              );
-        pSStack_11 = (String *)func_?();
-        this_01 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                   *)PrefabPool::PrefabPool_get_MVBatteryPrefab(in_stack_12,(MethodInfo *)0x0)
+        pDStack_11 = *(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)
+                      (in_stack_12 + 0x58);
+        EStack_13.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MVTeam;
+        EStack_13.monitor = (MonitorData *)0xffffffff;
+        pDStack_14 = pDVar7;
+        pDStack_15 = pDVar7;
+        pSVar16 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_13,(MethodInfo *)0x0);
+        if (pDStack_11 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) break;
+        uVar8._4_4_ = (int32_t)
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
         ;
-        puStack_4 = (undefined *)func_?();
-        piVar13 = (int *)func_?();
-        if (piVar13 == (int *)0x0) break;
-        pSStack_14 = (String *)(**(code **)(*piVar13 + 0xd8))(piVar13);
-        puVar15 = (undefined4 *)func_?();
-        puStack_4 = (undefined *)*puVar15;
-        if (this_01 ==
-            (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)0x0) break;
-        bVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                KogamaSettingWrapperBase]::
-                Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                          (this_01,pSStack_14,
+        uVar8._0_4_ = (Object *)pSVar16;
+        pDVar7 = pDStack_11;
+        bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          (pDStack_11,(Object *)pSVar16,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
-        name = pSStack_11;
-        if (bVar16 != 0) {
-          this_02 = (Dictionary_2_System_Type_Pool_ *)
-                    PrefabPool::PrefabPool_get_MVBatteryPrefab(in_stack_12,(MethodInfo *)0x0);
-          uStack_5 = func_?();
-          iVar17 = func_?();
-          if (iVar17 == 0) break;
-          pSStack_14 = (String *)func_?(3);
-          puVar15 = (undefined4 *)func_?();
-          uStack_5 = *puVar15;
-          if (this_02 == (Dictionary_2_System_Type_Pool_ *)0x0) break;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-          Dictionary_2_System_Type_Pool__get_Item
-                    (this_02,(Type *)pSStack_14,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-          name = (String *)func_?();
+        if (bVar10 != 0) {
+          this_00 = *(Dictionary_2_System_Object_System_Object_ **)(in_stack_12 + 0x58);
+          pSVar16 = mscorlib.dll::System::Enum::Enum_ToString
+                             ((Enum *)&stack0xffffffc4,(MethodInfo *)0x0);
+          if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
+          pMVar17 = (MVTeam__Enum__Class *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (this_00,(Object *)pSVar16,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          method_00 = (MVTeam__Enum__Class *)0x0;
+          if (pMVar17 != (MVTeam__Enum__Class *)0x0) {
+            if ((String__Class *)(pMVar17->_0).image == TypeInfo__System__String) {
+              method_00 = pMVar17;
+            }
+            if (method_00 == (MVTeam__Enum__Class *)0x0) {
+              EStack_13.monitor = (MonitorData *)TypeInfo__System__String;
+              EStack_13.klass = (Enum__Class *)pMVar17;
+              func_?();
+              break;
+            }
+          }
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar7 == (MVNetworkGame *)0x0) break;
-        pSVar8 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                           ((DayNightCycle *)pMVar7,(MethodInfo *)0x0);
-        team = func_?();
-        if (pSVar8 == (SkyParam *)0x0) break;
+        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar2 == (MVNetworkGame *)0x0) ||
+           (pMVar3 = (pMVar2->fields).teamManager, pMVar3 == (MVTeamManager *)0x0)) break;
         MVTeamManager::MVTeamManager_UpdateTeamName
-                  ((MVTeamManager *)pSVar8,team,name,(MethodInfo *)pMVar7);
-      }
+                  (pMVar3,(MVTeam__Enum)pDStack_15,(String *)method_00,(MethodInfo *)0x0);
+      } while( true );
     }
   }
-  func_?();
   func_?();
   pcVar18 = (code *)swi(3);
   (*pcVar18)();
@@ -159,29 +175,30 @@ void Assembly-CSharp.dll::TeamEditor::TeamEditor_InitializeInventory
                (TeamEditor *this,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  cVar1 = (*(code *)(this->klass->vtable).get_HasInputConnector.method)
-                    (this,(this->klass->vtable).get_HasObjectConnector.methodPtr);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  cVar1 = (*(this->klass->vtable).get_HasInputConnector.methodPtr)
+                    (this,(this->klass->vtable).get_HasInputConnector.method);
   if (cVar1 != '\0') {
     pGVar2 = (this->fields)._._.inputConnectorObject;
     if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar2,0,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasObjectConnector.method)();
+  cVar1 = (*(this->klass->vtable).get_HasObjectConnector.methodPtr)();
   if (cVar1 != '\0') {
     pGVar2 = (this->fields)._._.objectConnectorObject;
     if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar2,0,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasOutputConnector.method)
-                    (this,(this->klass->vtable).get_HasInputConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasOutputConnector.methodPtr)
+                    (this,(this->klass->vtable).get_HasOutputConnector.method);
   if (cVar1 != '\0') {
     pGVar2 = (this->fields)._._.outputConnectorObject;
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
@@ -198,123 +215,140 @@ code_?:
 void Assembly-CSharp.dll::TeamEditor::TeamEditor_OnDataUpdate(TeamEditor *this,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EBP);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   uVar1 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff8;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MVTeam,_System::String>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MVTeam,_System::String>__get_Value__
+                   );
+    func_?(&TypeInfo__MV__WorldObject__MVTeam);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  auStack_2._16_4_ = (Object *)0x0;
-  KStack_3.key = 0;
-  KStack_3.value = 0;
-  auStack_2._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_2._4_4_ = (MonitorData *)0x0;
-  auStack_2._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_2._12_4_ = 0;
-  puStack_4 = (undefined *)0x0;
-  uStack_5 = 0;
-  func_?();
-  puStack_6 = (undefined4 *)&stack0xffffffa0;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (puStack_6 = (undefined4 *)&stack0xffffffa0,
-     (TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    puStack_6 = (undefined4 *)&stack0xffffffa0;
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar7 != (MVNetworkGame *)0x0) &&
-     (pSVar8 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                         ((DayNightCycle *)pMVar7,(MethodInfo *)0x0), pSVar8 != (SkyParam *)0x0)) {
-    capacity = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pSVar8,
-                          (MethodInfo *)0x0);
-    this_00 = (Dictionary_2_WinningConditionType_System_Object_ *)func_?();
-    System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::
-    SortedList_2_System_Single_System_Object___ctor_1
-              ((SortedList_2_System_Single_System_Object_ *)this_00,(int32_t)capacity,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
-              );
-    if (this_00 != (Dictionary_2_WinningConditionType_System_Object_ *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System
-               ::Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *
-                          )&stack0xffffffac,this_00,
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
+    dictionary = (pMVar3->fields).teamNames;
+    this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )func_?();
+    if (this_01 !=
+        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
+    {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object___ctor_1
+                (this_01,(IDictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                          *)dictionary,
+                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
+                );
+      pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                          &pDStack_5,(Dictionary_2_System_Object_System_Object_ *)this_01,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__GetEnumerator__
                          );
-      auStack_2._0_4_ = pDVar9->dictionary;
-      auStack_2._4_4_ = pDVar9->next;
-      auStack_2._8_4_ = pDVar9->stamp;
-      auStack_2._12_4_ = (pDVar9->current).key;
-      auStack_2._16_4_ = (pDVar9->current).value;
-      while( true ) {
-        cVar10 = func_?();
-        if (cVar10 == '\0') {
-          *puStack_6 = 0xb4;
-          func_?();
+      uStack_6 = 0;
+      pDVar7 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pDVar4->_current).key;
+      uVar8 = *(undefined8 *)&(pDVar4->_current).value;
+      pOStack_9 = (Object *)&stack0xffffffa0;
+      do {
+        method_00 = (MVTeam__Enum__Class *)uVar8;
+        bVar10 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                           &stack0xffffffa0,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__MoveNext__
+                          );
+        if (bVar10 == 0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&stack0xffffffa0,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__Dispose__
+                     ,(MethodInfo *)method_00);
           *unaff_FS_OFFSET = uVar1;
           return;
         }
-        KStack_3 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                              ((LevelRewardsManager *)auStack_2,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__get_Current__
-                              );
-        pSStack_11 = (String *)func_?();
-        this_01 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                   *)PrefabPool::PrefabPool_get_MVBatteryPrefab(in_stack_12,(MethodInfo *)0x0)
+        pDStack_11 = *(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)
+                      (in_stack_12 + 0x58);
+        EStack_13.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MVTeam;
+        EStack_13.monitor = (MonitorData *)0xffffffff;
+        pDStack_14 = pDVar7;
+        pDStack_15 = pDVar7;
+        pSVar16 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_13,(MethodInfo *)0x0);
+        if (pDStack_11 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) break;
+        uVar8._4_4_ = (int32_t)
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
         ;
-        puStack_4 = (undefined *)func_?();
-        piVar13 = (int *)func_?();
-        if (piVar13 == (int *)0x0) break;
-        pSStack_14 = (String *)(**(code **)(*piVar13 + 0xd8))(piVar13);
-        puVar15 = (undefined4 *)func_?();
-        puStack_4 = (undefined *)*puVar15;
-        if (this_01 ==
-            (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)0x0) break;
-        bVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                KogamaSettingWrapperBase]::
-                Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                          (this_01,pSStack_14,
+        uVar8._0_4_ = (Object *)pSVar16;
+        pDVar7 = pDStack_11;
+        bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          (pDStack_11,(Object *)pSVar16,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
-        name = pSStack_11;
-        if (bVar16 != 0) {
-          this_02 = (Dictionary_2_System_Type_Pool_ *)
-                    PrefabPool::PrefabPool_get_MVBatteryPrefab(in_stack_12,(MethodInfo *)0x0);
-          uStack_5 = func_?();
-          iVar17 = func_?();
-          if (iVar17 == 0) break;
-          pSStack_14 = (String *)func_?(3);
-          puVar15 = (undefined4 *)func_?();
-          uStack_5 = *puVar15;
-          if (this_02 == (Dictionary_2_System_Type_Pool_ *)0x0) break;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-          Dictionary_2_System_Type_Pool__get_Item
-                    (this_02,(Type *)pSStack_14,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-          name = (String *)func_?();
+        if (bVar10 != 0) {
+          this_00 = *(Dictionary_2_System_Object_System_Object_ **)(in_stack_12 + 0x58);
+          pSVar16 = mscorlib.dll::System::Enum::Enum_ToString
+                             ((Enum *)&stack0xffffffc4,(MethodInfo *)0x0);
+          if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
+          pMVar17 = (MVTeam__Enum__Class *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (this_00,(Object *)pSVar16,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          method_00 = (MVTeam__Enum__Class *)0x0;
+          if (pMVar17 != (MVTeam__Enum__Class *)0x0) {
+            if ((String__Class *)(pMVar17->_0).image == TypeInfo__System__String) {
+              method_00 = pMVar17;
+            }
+            if (method_00 == (MVTeam__Enum__Class *)0x0) {
+              EStack_13.monitor = (MonitorData *)TypeInfo__System__String;
+              EStack_13.klass = (Enum__Class *)pMVar17;
+              func_?();
+              break;
+            }
+          }
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar7 == (MVNetworkGame *)0x0) break;
-        pSVar8 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                           ((DayNightCycle *)pMVar7,(MethodInfo *)0x0);
-        team = func_?();
-        if (pSVar8 == (SkyParam *)0x0) break;
+        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar2 == (MVNetworkGame *)0x0) ||
+           (pMVar3 = (pMVar2->fields).teamManager, pMVar3 == (MVTeamManager *)0x0)) break;
         MVTeamManager::MVTeamManager_UpdateTeamName
-                  ((MVTeamManager *)pSVar8,team,name,(MethodInfo *)pMVar7);
-      }
+                  (pMVar3,(MVTeam__Enum)pDStack_15,(String *)method_00,(MethodInfo *)0x0);
+      } while( true );
     }
   }
-  func_?();
   func_?();
   pcVar18 = (code *)swi(3);
   (*pcVar18)();
@@ -332,129 +366,142 @@ void Assembly-CSharp.dll::TeamEditor::TeamEditor_UpdateTeamNamesFromData
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
+  puStack_4 = &stack0xffffff8c;
+  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MVTeam,_System::String>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MVTeam,_System::String>__get_Value__
+                   );
+    func_?(&TypeInfo__MV__WorldObject__MVTeam);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  auStack_6._16_4_ = (Object *)0x0;
-  KStack_7.key = 0;
-  KStack_7.value = 0;
-  auStack_6._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_6._4_4_ = (MonitorData *)0x0;
-  auStack_6._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_6._12_4_ = 0;
-  uStack_8 = 0;
-  uStack_9 = 0;
-  func_?();
-  puStack_10 = (undefined4 *)&stack0xffffff98;
-  puStack_4 = &stack0xffffff98;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (puStack_10 = (undefined4 *)&stack0xffffff98, puStack_4 = &stack0xffffff98,
-     (TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    puStack_10 = (undefined4 *)&stack0xffffff98;
-    puStack_4 = &stack0xffffff98;
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar11 != (MVNetworkGame *)0x0) &&
-     (pSVar12 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                         ((DayNightCycle *)pMVar11,(MethodInfo *)0x0), pSVar12 != (SkyParam *)0x0)) {
-    capacity = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pSVar12,
-                          (MethodInfo *)0x0);
-    this_00 = (Dictionary_2_WinningConditionType_System_Object_ *)func_?();
-    System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::
-    SortedList_2_System_Single_System_Object___ctor_1
-              ((SortedList_2_System_Single_System_Object_ *)this_00,(int32_t)capacity,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
-              );
-    if (this_00 != (Dictionary_2_WinningConditionType_System_Object_ *)0x0) {
-      pDVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System
-               ::Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *
-                          )&stack0xffffffa4,this_00,
+  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar6 != (MVNetworkGame *)0x0) &&
+     (pMVar7 = (pMVar6->fields).teamManager, pMVar7 != (MVTeamManager *)0x0)) {
+    dictionary = (pMVar7->fields).teamNames;
+    this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )func_?();
+    if (this_01 !=
+        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
+    {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+      Regex+CachedCodeEntryKey,System::Object]::
+      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object___ctor_1
+                (this_01,(IDictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                          *)dictionary,
+                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__Dictionary_System__Collections__Generic__IDictionary<MV::WorldObject::MVTeam,_System::String>_
+                );
+      pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                          &pDStack_9,(Dictionary_2_System_Object_System_Object_ *)this_01,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__GetEnumerator__
                          );
-      auStack_6._0_4_ = pDVar13->dictionary;
-      auStack_6._4_4_ = pDVar13->next;
-      auStack_6._8_4_ = pDVar13->stamp;
-      auStack_6._12_4_ = (pDVar13->current).key;
-      auStack_6._16_4_ = (pDVar13->current).value;
-      uStack_1 = 0;
-      while( true ) {
-        cVar14 = func_?();
-        if (cVar14 == '\0') {
-          *puStack_10 = 0xb4;
+      uStack_10 = 0;
+      pDVar11 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pDVar8->_current).key;
+      uVar12 = *(undefined8 *)&(pDVar8->_current).value;
+      uStack_1 = 1;
+      pOStack_13 = (Object *)&stack0xffffff98;
+      do {
+        method_00 = (MVTeam__Enum__Class *)uVar12;
+        bVar14 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                           &stack0xffffff98,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__MoveNext__
+                          );
+        if (bVar14 == 0) {
           uStack_1 = 0xffffffff;
-          func_?();
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)&stack0xffffff98,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__Dispose__
+                     ,(MethodInfo *)method_00);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        KStack_7 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                              ((LevelRewardsManager *)auStack_6,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::String>__get_Current__
-                              );
-        pSStack_15 = (String *)func_?();
-        this_01 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                   *)PrefabPool::PrefabPool_get_MVBatteryPrefab
-                               ((PrefabPool *)this,(MethodInfo *)0x0);
-        uStack_8 = func_?();
-        piVar16 = (int *)func_?();
-        if (piVar16 == (int *)0x0) break;
-        pSStack_17 = (String *)(**(code **)(*piVar16 + 0xd8))(piVar16);
-        puVar18 = (undefined4 *)func_?();
-        uStack_8 = *puVar18;
-        if (this_01 ==
-            (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)0x0) break;
-        bVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                KogamaSettingWrapperBase]::
-                Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                          (this_01,pSStack_17,
+        pDStack_15 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                     (this->fields)._._._.data;
+        EStack_16.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MVTeam;
+        EStack_16.monitor = (MonitorData *)0xffffffff;
+        pDStack_17 = pDVar11;
+        pDStack_18 = pDVar11;
+        pSVar19 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_16,(MethodInfo *)0x0);
+        if (pDStack_15 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) break;
+        uVar12._4_4_ = (int32_t)
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+        ;
+        uVar12._0_4_ = (Object *)pSVar19;
+        pDVar11 = pDStack_15;
+        bVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          (pDStack_15,(Object *)pSVar19,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
-        name = pSStack_15;
-        if (bVar19 != 0) {
-          this_02 = (Dictionary_2_System_Type_Pool_ *)
-                    PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0)
-          ;
-          uStack_9 = func_?();
-          iVar20 = func_?();
-          if (iVar20 == 0) break;
-          pSStack_17 = (String *)func_?(3);
-          puVar18 = (undefined4 *)func_?();
-          uStack_9 = *puVar18;
-          if (this_02 == (Dictionary_2_System_Type_Pool_ *)0x0) break;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-          Dictionary_2_System_Type_Pool__get_Item
-                    (this_02,(Type *)pSStack_17,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-          name = (String *)func_?();
+        if (bVar14 != 0) {
+          this_00 = (this->fields)._._._.data;
+          pSVar19 = mscorlib.dll::System::Enum::Enum_ToString
+                             ((Enum *)&stack0xffffffbc,(MethodInfo *)0x0);
+          if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
+          pMVar20 = (MVTeam__Enum__Class *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (this_00,(Object *)pSVar19,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          method_00 = (MVTeam__Enum__Class *)0x0;
+          if (pMVar20 != (MVTeam__Enum__Class *)0x0) {
+            if ((String__Class *)(pMVar20->_0).image == TypeInfo__System__String) {
+              method_00 = pMVar20;
+            }
+            if (method_00 == (MVTeam__Enum__Class *)0x0) {
+              EStack_16.monitor = (MonitorData *)TypeInfo__System__String;
+              EStack_16.klass = (Enum__Class *)pMVar20;
+              func_?();
+              break;
+            }
+          }
         }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar11 == (MVNetworkGame *)0x0) break;
-        pSVar12 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                           ((DayNightCycle *)pMVar11,(MethodInfo *)0x0);
-        team = func_?();
-        if (pSVar12 == (SkyParam *)0x0) break;
+        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar6 == (MVNetworkGame *)0x0) ||
+           (pMVar7 = (pMVar6->fields).teamManager, pMVar7 == (MVTeamManager *)0x0)) break;
         MVTeamManager::MVTeamManager_UpdateTeamName
-                  ((MVTeamManager *)pSVar12,team,name,(MethodInfo *)pMVar11);
-      }
+                  (pMVar7,(MVTeam__Enum)pDStack_18,(String *)method_00,(MethodInfo *)0x0);
+      } while( true );
     }
   }
-  func_?();
   func_?();
   pcVar21 = (code *)swi(3);
   (*pcVar21)();
@@ -471,27 +518,25 @@ void Assembly-CSharp.dll::TeamEditor::TeamEditor__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = PrefabPool::PrefabPool_get_TeamEditorPrefab(this_00,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-    iVar1 = (this->fields)._._.interactionFlags;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
-         *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar1 & 0xffffdfff | 0x8000;
+              ((MVLogicObject *)this,data,(pPVar1->fields).teamEditorPrefab,worldObjects,
+               (MethodInfo *)0x0);
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
+    uVar3 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 & 0xffffdfff;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar3;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

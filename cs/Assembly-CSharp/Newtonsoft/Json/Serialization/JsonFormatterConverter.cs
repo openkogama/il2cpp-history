@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -22,7 +22,7 @@ namespace Newtonsoft.Json.Serialization
 	
 		// Methods
 		private T GetTokenValue<T>(object value);
-		public object Convert(object value, Type type);
+		public object Convert(object value, System.Type type);
 		public object Convert(object value, TypeCode typeCode);
 		public bool ToBoolean(object value);
 		public byte ToByte(object value);

@@ -143,60 +143,42 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef__ctor
                (Styles_EffectStyleDef *this,MethodInfo *method)
 
 {
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_black
-                     (&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  CStack_2.r = 0.0;
-  (this->fields).shadowEffectColor.r = pCVar1->r;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).shadowEffectColor.r = _UNK_?;
   (this->fields).shadowEffectColor.g = fVar3;
-  (this->fields).shadowEffectColor.b = fVar4;
-  (this->fields).shadowEffectColor.a = fVar5;
-  uStack_6._0_4_ = (InvokerMethod)0x0;
-  uStack_6._4_4_ = (char *)0x0;
-  func_?(&uStack_6,0x3f800000,0xbf800000);
-  (this->fields).shadowEffectDistance.x = (float)(InvokerMethod)uStack_6;
-  (this->fields).shadowEffectDistance.y = (float)uStack_6._4_4_;
+  (this->fields).shadowEffectColor.b = fVar2;
+  (this->fields).shadowEffectColor.a = fVar1;
+  (this->fields).shadowEffectDistance.x = 1.0;
+  fVar4 = _UNK_?;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).shadowEffectDistance.y = -1.0;
   (this->fields).shadowUseGraphicAlpha = 1;
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_black
-                     (&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  CStack_2.b = 0.0;
-  method_00 = (MethodInfo *)&uStack_7;
-  (this->fields).outlineEffectColor.r = pCVar1->r;
-  (this->fields).outlineEffectColor.g = fVar3;
-  (this->fields).outlineEffectColor.b = fVar4;
-  (this->fields).outlineEffectColor.a = fVar5;
-  CStack_2.g = -1.0;
-  CStack_2.r = 1.0;
-  uStack_7._0_4_ = (Il2CppMethodPointer)0x0;
-  uStack_7._4_4_ = (Il2CppMethodPointer)0x0;
-  func_?();
-  (this->fields).outlineEffectDistance.x = (float)(Il2CppMethodPointer)uStack_7;
-  (this->fields).outlineEffectDistance.y = (float)uStack_7._4_4_;
+  (this->fields).outlineEffectColor.r = fVar3;
+  (this->fields).outlineEffectColor.g = fVar2;
+  (this->fields).outlineEffectColor.b = fVar1;
+  (this->fields).outlineEffectColor.a = fVar4;
+  (this->fields).outlineEffectDistance.x = 1.0;
+  fVar4 = _UNK_?;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).outlineEffectDistance.y = -1.0;
   (this->fields).outlineUseGraphicAlpha = 1;
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_white
-                     (&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields).gradientTop.r = pCVar1->r;
-  (this->fields).gradientTop.g = fVar3;
-  (this->fields).gradientTop.b = fVar4;
-  (this->fields).gradientTop.a = fVar5;
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_grey
-                     (&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields).gradientBottom.r = pCVar1->r;
+  (this->fields).gradientTop.r = fVar3;
+  (this->fields).gradientTop.g = fVar2;
+  (this->fields).gradientTop.b = fVar1;
+  (this->fields).gradientTop.a = fVar4;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).gradientBottom.r = _UNK_?;
   (this->fields).gradientBottom.g = fVar3;
-  (this->fields).gradientBottom.b = fVar4;
-  (this->fields).gradientBottom.a = fVar5;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,method_00);
+  (this->fields).gradientBottom.b = fVar2;
+  (this->fields).gradientBottom.a = fVar1;
   return;
 }
 

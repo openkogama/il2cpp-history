@@ -6,71 +6,77 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_HandleTimeNotifications
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-  if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
+  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).timeNotifications;
+  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     fVar2 = (float)timeLeft / _UNK_?;
-    item._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-    item.rgba = (int)fVar2;
-    bVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-            List_1_UnityEngine_Color32__Contains(pLVar1,item,unaff_EDI);
+    bVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                      (pLVar1,(RegexCharClass_SingleRange)(int)fVar2,
+                       MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     if (bVar3 == 0) {
       return;
     }
-    pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-    if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-      item_00._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Remove_int_;
-      item_00.rgba = (int)fVar2;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-      List_1_UnityEngine_Color32__Remove(pLVar1,item_00,in_stack_4);
+    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).timeNotifications;
+    if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RegexCharClass+SingleRange]::
+      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove
+                (pLVar1,(RegexCharClass_SingleRange)(int)fVar2,
+                 MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
       if ((this->fields).OnTimeNotificationSend ==
           (Action_2_MV_Common_NotificationType_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
            *)0x0) {
         return;
       }
-      this_01 = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                 *)func_?();
-      System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]
-      ::HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      pSVar5 = (String *)func_?();
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?(TypeInfo__MVGameControllerBase);
-      }
-      this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (this_02 != (MVNetworkGame *)0x0) {
-        MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_02,(MethodInfo *)0x0);
-        pCVar6 = (CrossPlatformInputManager_VirtualButton *)func_?(TypeInfo__System__Int32)
-        ;
-        if (this_01 !=
-            (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-             *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          String,UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-          Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                    (this_01,pSVar5,pCVar6,
+      uStack_4 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+      this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                  ((ParameterOverride_1_System_Object_ *)this_00,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        pOVar5 = (Object *)func_?(TypeInfo__System__Byte);
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (this_01 != (MVNetworkGame *)0x0) {
+          MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_01,(MethodInfo *)0x0);
+          pOVar6 = (Object *)func_?(TypeInfo__System__Int32);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (this_00,pOVar5,pOVar6,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          pSVar5 = (String *)func_?(TypeInfo__System__Byte);
-          pCVar6 = (CrossPlatformInputManager_VirtualButton *)
-                   func_?(TypeInfo__System__Int32,&stack0xfffffff0);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          String,UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-          Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                    (this_01,pSVar5,pCVar6,
+          uStack_4 = (Dictionary_2_System_Object_System_Object___Class *)
+                     CONCAT13(4,(undefined3)uStack_4);
+          pOVar5 = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_4 + 3);
+          pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (this_00,pOVar5,pOVar6,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          this_00 = (Action_2_Int32_Object_ *)(this->fields).OnTimeNotificationSend;
-          if (this_00 != (Action_2_Int32_Object_ *)0x0) {
-            System.Core.dll::System::Action`2[Int32,Object]::Action_2_Int32_Object__Invoke
-                      (this_00,0x17,(Object *)this_01,
-                       MethodInfo__System__Action<MV::Common::NotificationType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Invoke_MV__Common__NotificationType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                      );
+          pAVar7 = (this->fields).OnTimeNotificationSend;
+          if (pAVar7 != (Action_2_MV_Common_NotificationType_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                         *)0x0) {
+            (*(pAVar7->fields)._._.invoke_impl)((pAVar7->fields)._._.method_code,0x17,this_00);
             return;
           }
         }
@@ -78,8 +84,8 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_HandleTimeNotifications
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -91,17 +97,27 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<int>);
     cRam_? = '\x01';
   }
   (this->fields).roundCube = roundCube;
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  func_?(&(this->fields).roundCube,roundCube);
+  this_00 = (List_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__List<int>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this->fields).timeNotifications = (List_1_System_Int32_ *)this_00;
-  RoundTimer_ResetTimeNotifications(this,(MethodInfo *)0x0);
+  if (this_00 != (List_1_System_Int32_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<int>__List__);
+    (this->fields).timeNotifications = this_00;
+    func_?(&(this->fields).timeNotifications,this_00);
+    RoundTimer_ResetTimeNotifications(this,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -113,76 +129,69 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_ResetOnRoundEnd
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-  if (pLVar1 == (List_1_UnityEngine_Color32_ *)0x0) {
+  if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) {
     return;
   }
-  item_02._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-  item_02.rgba = 10;
-  bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-          List_1_UnityEngine_Color32__Contains(pLVar1,item_02,unaff_ESI);
-  if (bVar2 == 0) {
-    pLVar3 = (List_1_UIPushOption_ *)(this->fields).timeNotifications;
-    if (pLVar3 == (List_1_UIPushOption_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              (pLVar3,UIPushOption__Enum_HideAllExceptStackBottom|UIPushOption__Enum_HideAll,
-               MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+          RegexCharClass+SingleRange]::
+          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                     (this->fields).timeNotifications,(RegexCharClass_SingleRange)0xa,
+                     MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+  if (bVar1 == 0) {
+    pLVar2 = (this->fields).timeNotifications;
+    if (pLVar2 == (List_1_System_Int32_ *)0x0) goto code_?;
+    func_?(pLVar2,10);
   }
-  pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-  if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-    pMStack4 = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-    item._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-    item.rgba = 0x1e;
-    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-            List_1_UnityEngine_Color32__Contains(pLVar1,item,in_stack_5);
-    if (bVar2 == 0) {
-      in_stack_5 = (MethodInfo *)(this->fields).timeNotifications;
-      if (in_stack_5 == (MethodInfo *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)in_stack_5,
-                 UIPushOption__Enum_SuppressInput|UIPushOption__Enum_HideAllExceptStackBottom|
-                 UIPushOption__Enum_InvisibleBlocker|UIPushOption__Enum_HideAll,
-                 MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).timeNotifications;
+  if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                      (pLVar3,(RegexCharClass_SingleRange)0x1e,
+                       MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+    if (bVar1 == 0) {
+      if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
+      func_?();
     }
-    pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-    if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-      pMStack4 = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-      item_00._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-      item_00.rgba = 0x3c;
-      bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-              List_1_UnityEngine_Color32__Contains(pLVar1,item_00,in_stack_5);
-      if (bVar2 == 0) {
-        in_stack_5 = (MethodInfo *)(this->fields).timeNotifications;
-        if (in_stack_5 == (MethodInfo *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)in_stack_5,0x3c,
-                   MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).timeNotifications;
+    if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                        (pLVar3,(RegexCharClass_SingleRange)0x3c,
+                         MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+      if (bVar1 == 0) {
+        if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
+        func_?();
       }
-      pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-      if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-        pMStack4 = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-        item_01._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-        item_01.rgba = 300;
-        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                List_1_UnityEngine_Color32__Contains(pLVar1,item_01,in_stack_5);
-        if (bVar2 == 0) {
-          pLVar3 = (List_1_UIPushOption_ *)(this->fields).timeNotifications;
-          if (pLVar3 == (List_1_UIPushOption_ *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                    (pLVar3,300,MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).timeNotifications;
+      if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                          (pLVar3,(RegexCharClass_SingleRange)0x12c,
+                           MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+        if (bVar1 == 0) {
+          if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0)
+          goto code_?;
+          func_?();
         }
         return;
       }
     }
   }
 code_?:
-  pMStack4 = (MethodInfo *)0x0;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -194,76 +203,69 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_ResetTimeNotifications
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-  if (pLVar1 == (List_1_UnityEngine_Color32_ *)0x0) {
+  if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) {
     return;
   }
-  item_02._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-  item_02.rgba = 10;
-  bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-          List_1_UnityEngine_Color32__Contains(pLVar1,item_02,unaff_ESI);
-  if (bVar2 == 0) {
-    pLVar3 = (List_1_UIPushOption_ *)(this->fields).timeNotifications;
-    if (pLVar3 == (List_1_UIPushOption_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              (pLVar3,UIPushOption__Enum_HideAllExceptStackBottom|UIPushOption__Enum_HideAll,
-               MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+          RegexCharClass+SingleRange]::
+          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                     (this->fields).timeNotifications,(RegexCharClass_SingleRange)0xa,
+                     MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+  if (bVar1 == 0) {
+    pLVar2 = (this->fields).timeNotifications;
+    if (pLVar2 == (List_1_System_Int32_ *)0x0) goto code_?;
+    func_?(pLVar2,10);
   }
-  pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-  if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-    pMStack4 = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-    item._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-    item.rgba = 0x1e;
-    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-            List_1_UnityEngine_Color32__Contains(pLVar1,item,in_stack_5);
-    if (bVar2 == 0) {
-      in_stack_5 = (MethodInfo *)(this->fields).timeNotifications;
-      if (in_stack_5 == (MethodInfo *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                ((List_1_UIPushOption_ *)in_stack_5,
-                 UIPushOption__Enum_SuppressInput|UIPushOption__Enum_HideAllExceptStackBottom|
-                 UIPushOption__Enum_InvisibleBlocker|UIPushOption__Enum_HideAll,
-                 MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).timeNotifications;
+  if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                      (pLVar3,(RegexCharClass_SingleRange)0x1e,
+                       MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+    if (bVar1 == 0) {
+      if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
+      func_?();
     }
-    pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-    if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-      pMStack4 = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-      item_00._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-      item_00.rgba = 0x3c;
-      bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-              List_1_UnityEngine_Color32__Contains(pLVar1,item_00,in_stack_5);
-      if (bVar2 == 0) {
-        in_stack_5 = (MethodInfo *)(this->fields).timeNotifications;
-        if (in_stack_5 == (MethodInfo *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)in_stack_5,0x3c,
-                   MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).timeNotifications;
+    if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                        (pLVar3,(RegexCharClass_SingleRange)0x3c,
+                         MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+      if (bVar1 == 0) {
+        if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
+        func_?();
       }
-      pLVar1 = (List_1_UnityEngine_Color32_ *)(this->fields).timeNotifications;
-      if (pLVar1 != (List_1_UnityEngine_Color32_ *)0x0) {
-        pMStack4 = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-        item_01._4_4_ = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-        item_01.rgba = 300;
-        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                List_1_UnityEngine_Color32__Contains(pLVar1,item_01,in_stack_5);
-        if (bVar2 == 0) {
-          pLVar3 = (List_1_UIPushOption_ *)(this->fields).timeNotifications;
-          if (pLVar3 == (List_1_UIPushOption_ *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                    (pLVar3,300,MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).timeNotifications;
+      if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
+                          (pLVar3,(RegexCharClass_SingleRange)0x12c,
+                           MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+        if (bVar1 == 0) {
+          if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0)
+          goto code_?;
+          func_?();
         }
         return;
       }
     }
   }
 code_?:
-  pMStack4 = (MethodInfo *)0x0;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -274,67 +276,54 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_Update(RoundTimer *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__);
     cRam_? = '\x01';
   }
-  pWVar1 = (this->fields).roundCube;
-  if (pWVar1 != (WorldObjectClientRef_1_MVRoundCube_ *)0x0) {
-    pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
+  pWVar1 = (WorldObjectClientRef_1_System_Object_ *)(this->fields).roundCube;
+  if (pWVar1 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
+    pOVar2 = WorldObjectClientRef`1[System::Object]::
+             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                        (pWVar1,
                         MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__);
-    if (pMVar2 == (MVRoundCube *)0x0) {
+    if (pOVar2 == (Object *)0x0) {
       return;
     }
-    pWVar1 = (this->fields).roundCube;
-    if ((pWVar1 != (WorldObjectClientRef_1_MVRoundCube_ *)0x0) &&
-       (pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-                 WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
+    pWVar1 = (WorldObjectClientRef_1_System_Object_ *)(this->fields).roundCube;
+    if ((pWVar1 != (WorldObjectClientRef_1_System_Object_ *)0x0) &&
+       (pMVar3 = (MVRoundCube *)
+                 WorldObjectClientRef`1[System::Object]::
+                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                            (pWVar1,
                             MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__),
-       pMVar2 != (MVRoundCube *)0x0)) {
-      time = MVRoundCube::MVRoundCube_GetTimeLeft(pMVar2,(MethodInfo *)0x0);
-      pTVar3 = (this->fields).timeLeftText;
-      pWVar1 = (this->fields).roundCube;
-      if ((pWVar1 != (WorldObjectClientRef_1_MVRoundCube_ *)0x0) &&
-         ((pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-                    WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
+       pMVar3 != (MVRoundCube *)0x0)) {
+      time = MVRoundCube::MVRoundCube_GetTimeLeft(pMVar3,(MethodInfo *)0x0);
+      pTVar4 = (this->fields).timeLeftText;
+      pWVar1 = (WorldObjectClientRef_1_System_Object_ *)(this->fields).roundCube;
+      if ((pWVar1 != (WorldObjectClientRef_1_System_Object_ *)0x0) &&
+         ((pMVar3 = (MVRoundCube *)
+                    WorldObjectClientRef`1[System::Object]::
+                    WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                               (pWVar1,
                                MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__
-                              ), pMVar2 != (MVRoundCube *)0x0 &&
-          (MVRoundCube::MVRoundCube_MakeTimeIntoText(pMVar2,time,(MethodInfo *)0x0),
-          pTVar3 != (Text *)0x0)))) {
-        (*(code *)(pTVar3->klass->vtable).set_text.method)();
+                              ), pMVar3 != (MVRoundCube *)0x0 &&
+          (MVRoundCube::MVRoundCube_MakeTimeIntoText(pMVar3,time,(MethodInfo *)0x0),
+          pTVar4 != (Text *)0x0)))) {
+        (*(pTVar4->klass->vtable).set_text.methodPtr)();
         RoundTimer_HandleTimeNotifications(this,time,(MethodInfo *)0x0);
-        pWVar1 = (this->fields).roundCube;
-        pPVar4 = (this->fields).progressBar;
-        if ((pWVar1 != (WorldObjectClientRef_1_MVRoundCube_ *)0x0) &&
-           ((pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-                      WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
+        pWVar1 = (WorldObjectClientRef_1_System_Object_ *)(this->fields).roundCube;
+        this_00 = (ProgressBarAndroid *)(this->fields).progressBar;
+        if ((pWVar1 != (WorldObjectClientRef_1_System_Object_ *)0x0) &&
+           ((pMVar3 = (MVRoundCube *)
+                      WorldObjectClientRef`1[System::Object]::
+                      WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                                 (pWVar1,
                                  MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__
-                                ), pMVar2 != (MVRoundCube *)0x0 &&
-            (iVar5 = MVRoundCube::MVRoundCube_get_DurationInMilliseconds(pMVar2,(MethodInfo *)0x0),
-            pPVar4 != (ProgressBar *)0x0)))) {
-          this = (RoundTimer *)((float)time / (float)iVar5);
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-            this = (RoundTimer *)&UNK_?;
-            func_?();
-          }
-          value = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                            ((float)this,(MethodInfo *)0x0);
-          this_00 = (pPVar4->fields).progressBar;
-          (pPVar4->fields).progress = value;
-          if (this_00 != (Scrollbar *)0x0) {
-            UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
-                      (this_00,value,(MethodInfo *)0x0);
-            return;
-          }
+                                ), pMVar3 != (MVRoundCube *)0x0 &&
+            (iVar5 = MVRoundCube::MVRoundCube_get_DurationInMilliseconds(pMVar3,(MethodInfo *)0x0),
+            this_00 != (ProgressBarAndroid *)0x0)))) {
+          ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                    (this_00,(float)time / (float)iVar5,(MethodInfo *)0x0);
+          return;
         }
       }
     }

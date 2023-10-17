@@ -7,17 +7,17 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
 	public class JsonPropertyCollection : KeyedCollection<string, Newtonsoft.Json.Serialization.JsonProperty>
 	{
 		// Fields
-		private readonly Type _type;
+		private readonly System.Type _type;
 	
 		// Constructors
-		public JsonPropertyCollection(Type type);
+		public JsonPropertyCollection(System.Type type);
 	
 		// Methods
 		protected override string GetKeyForItem(JsonProperty item);

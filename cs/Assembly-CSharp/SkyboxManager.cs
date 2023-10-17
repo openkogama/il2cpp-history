@@ -9,17 +9,17 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SkyboxManager : MonoBehaviour
 {
 	// Fields
-	[Header]
+	[Header("Configuration")]
 	[SerializeField]
 	private float skyContrast;
 	[SerializeField]
 	private AnimationCurve lightDuskDawnFalloff;
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	private Light sunLight;
 	[SerializeField]
@@ -40,43 +40,53 @@ public class SkyboxManager : MonoBehaviour
 	private float targetFogDensity;
 	private bool initialized;
 	private bool pendingLateInitialization;
-	[CompilerGenerated]
-	private static Func<MVSkybox, bool> __f__am_cache0;
-	[CompilerGenerated]
-	private static Func<MVSkybox, float> __f__am_cache1;
-	[CompilerGenerated]
-	private static Func<MVSkybox, float> __f__am_cache2;
 
 	// Nested types
 	public delegate void SkyboxColorChangedDelegate(Color newColor);
 
 	[CompilerGenerated]
-	private sealed class _DoAnimate_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoAnimate_d__23 : IEnumerator<object>
 	{
 		// Fields
-		internal float _t___0;
-		internal Color _c___1;
-		internal float _s___1;
-		internal float _d___1;
-		internal SkyboxManager _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public SkyboxManager __4__this;
+		private float _t_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoAnimate_c__Iterator0();
+		public _DoAnimate_d__23(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<MVSkybox, bool> __9__30_0;
+		public static Func<MVSkybox, float> __9__30_1;
+		public static Func<MVSkybox, float> __9__30_2;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _ComputeSkyboxSettings_b__30_0(MVSkybox s);
+		internal float _ComputeSkyboxSettings_b__30_1(MVSkybox s);
+		internal float _ComputeSkyboxSettings_b__30_2(MVSkybox s);
 	}
 
 	// Constructors
@@ -87,7 +97,7 @@ public class SkyboxManager : MonoBehaviour
 	public void RefreshColor();
 	public void Add(MVSkybox skybox);
 	public void Remove(MVSkybox skybox);
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoAnimate_d__23))]
 	private IEnumerator DoAnimate();
 	protected void Awake();
 	public void Enable();
@@ -99,12 +109,6 @@ public class SkyboxManager : MonoBehaviour
 	private void SetColor(Color color, float sunAngle, float fogDensity);
 	public static void ResetAmbientLight();
 	[CompilerGenerated]
-	private void _Awake_m__0();
-	[CompilerGenerated]
-	private static bool _ComputeSkyboxSettings_m__1(MVSkybox s);
-	[CompilerGenerated]
-	private static float _ComputeSkyboxSettings_m__2(MVSkybox s);
-	[CompilerGenerated]
-	private static float _ComputeSkyboxSettings_m__3(MVSkybox s);
+	private void _Awake_b__24_0();
 }
 

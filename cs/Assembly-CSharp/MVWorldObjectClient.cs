@@ -10,7 +10,7 @@ using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVWorldObjectClient : MVWorldObject
 {
@@ -36,9 +36,9 @@ public class MVWorldObjectClient : MVWorldObject
 	protected GameObject outputConnectorObject;
 	protected GameObject objectConnectorObject;
 	protected InteractionFlags interactionFlags;
+	protected InteractionFlags eliteRequiredFlags;
 	protected LayerFlags previewLayerMask;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private PlayInteractionType _PlayInteractionType_k__BackingField;
 	private MVRuntimeDataVariables runtimeDataVariables;
 	private bool initializedFromInventory;
@@ -73,6 +73,8 @@ public class MVWorldObjectClient : MVWorldObject
 	public virtual Vector3 InputConnectorOffset { get; }
 	public virtual Vector3 OutputConnectorOffset { get; }
 	public virtual Vector3 ObjectConnectorOffset { get; }
+	public virtual Quaternion InputConnectorRotation { get; }
+	public virtual Quaternion OutputConnectorRotation { get; }
 	public virtual Quaternion ObjectConnectorRotation { get; }
 	public MVRuntimeDataVariables RuntimeDataVariables { get; }
 	public override Dictionary<object, object> RunTimeData { get; set; }
@@ -90,29 +92,29 @@ public class MVWorldObjectClient : MVWorldObject
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__AnonStorey0
+	private sealed class __c__DisplayClass51_0
 	{
 		// Fields
-		internal HashSet<int> childIDs;
+		public HashSet<int> childIDs;
 
 		// Constructors
-		public __c__AnonStorey0();
+		public __c__DisplayClass51_0();
 
 		// Methods
-		internal void __m__0(MVWorldObjectClient wo);
+		internal void _get_WorldIDsRecursive_b__0(MVWorldObjectClient wo);
 	}
 
 	[CompilerGenerated]
-	private sealed class _GetBoundsCornersWorld_c__AnonStorey1
+	private sealed class __c__DisplayClass164_0
 	{
 		// Fields
-		internal Matrix4x4 localToWorld;
+		public Matrix4x4 localToWorld;
 
 		// Constructors
-		public _GetBoundsCornersWorld_c__AnonStorey1();
+		public __c__DisplayClass164_0();
 
 		// Methods
-		internal Vector3 __m__0(Vector3 localCorner);
+		internal Vector3 _GetBoundsCornersWorld_b__0(Vector3 localCorner);
 	}
 
 	// Constructors
@@ -126,6 +128,7 @@ public class MVWorldObjectClient : MVWorldObject
 	private GameObject InstantiatePrefab(GameObject prefabObject, TransformData transformData);
 	private ObjectPrefab InstantiatePrefab(ObjectPrefab prefabObject, TransformData transformData);
 	public bool HasInteractionFlag(InteractionFlags flag);
+	public bool HasEliteRequiredFlag(InteractionFlags flag);
 	private void SetupBusinessLogic();
 	private TransformData GetTransformData(Dictionary<object, object> data);
 	private void ApplyData(Dictionary<object, object> data);
@@ -187,6 +190,11 @@ public class MVWorldObjectClient : MVWorldObject
 	public float ComputeObjectRadius();
 	public float ComputeObjectSqrRadius();
 	public void RotateAround(Vector3 pivot, Vector3 axis, float angle);
+	public void RotateAroundLocal(Vector3 pivot, RotationMode rotationMode, float angle);
+	private Vector3 GetLocalAxis(RotationMode rotationMode);
+	public void ResetRotation();
 	public static void DestroyRecursive(MVWorldObjectClient wo);
+	public virtual void DrawTransformGizmo();
+	public virtual void OnContextMenu();
 }
 

@@ -8,15 +8,30 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ClientShopRepository
 {
 	// Fields
 	private readonly Dictionary<int, List<ShopItem>> repository;
 	public readonly Dictionary<InventoryCategoryType, string> categories;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Func<ShopItem, int> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<ShopItem, int> __9__11_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal int _ReorganizeBySlotPositions_b__11_0(ShopItem o);
+	}
 
 	// Constructors
 	public ClientShopRepository();
@@ -31,7 +46,5 @@ public class ClientShopRepository
 	public bool GetItemByWorldObjectTypeInCategory(InventoryCategoryType inventoryCategory, WorldObjectType wo, out ShopItem item);
 	public bool IsItemShopInventory(string itemName, InventoryCategoryType inventoryCategory);
 	public void ReorganizeBySlotPositions();
-	[CompilerGenerated]
-	private static int _ReorganizeBySlotPositions_m__0(ShopItem o);
 }
 

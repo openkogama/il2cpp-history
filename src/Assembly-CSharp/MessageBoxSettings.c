@@ -5,131 +5,255 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize
                (MessageBoxSettings *this,int32_t woID,GameObject *root,MethodInfo *method)
 
 {
+  this_02 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__MessageBoxSettings);
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__String);
+    func_?(&StringLiteral_textColor);
+    func_?(&StringLiteral_billboard);
+    func_?(&StringLiteral_colorB);
+    func_?(&StringLiteral_test);
+    func_?(&StringLiteral_colorR);
+    func_?(&StringLiteral_text);
+    func_?(&StringLiteral_colorG);
+    func_?(&StringLiteral_textSize);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).settingsBase;
+  id = woID;
+  this_00 = (this_02->fields).settingsBase;
   if (this_00 == (SettingsBase *)0x0) {
 code_?:
-    func_?();
+    uVar1 = func_?();
+code_?:
+    func_?(uVar1);
   }
   else {
     SettingsBase::SettingsBase_Initialize
               (this_00,woID,root,MVWorldObjectDocumentationType__Enum_Text,(MethodInfo *)0x0);
-    if (woID != -1) {
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
+    if (id != -1) {
       this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (this_03 != (MVWorldObjectClientManager *)0x0) {
-        this_04 = (PrefabPool *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (this_03,woID,(MethodInfo *)0x0);
-        if (this_04 != (PrefabPool *)0x0) {
-          this_05 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-                     *)PrefabPool::PrefabPool_get_MVBatteryPrefab(this_04,(MethodInfo *)0x0);
-          if (this_05 !=
-              (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-               *)0x0) {
-            bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-                    WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-                    KogamaSettingWrapperBase]::
-                    Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                              (this_05,StringLiteral_textSize,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                              );
-            if (bVar1 == 0) {
-              value = (Theme *)func_?();
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,Theme]::
-              Dictionary_2_System_String_Theme__set_Item
-                        ((Dictionary_2_System_String_Theme_ *)this_05,StringLiteral_textSize,value,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                        );
+        pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                           (this_03,id,(MethodInfo *)0x0);
+        if (pMVar2 != (MVWorldObject *)0x0) {
+          this_04 = (pMVar2->fields).data;
+          woID = 0x3e4ccccd;
+          in_stack_3 = TypeInfo__System__Single;
+          pOVar4 = (Object *)func_?(TypeInfo__System__Single);
+          if (this_04 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryAdd
+                      (this_04,(Object *)StringLiteral_textSize,pOVar4,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+                      );
+            if ((TypeInfo__MessageBoxSettings->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__MessageBoxSettings);
             }
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryAdd
+                      (this_04,(Object *)StringLiteral_textColor,
+                       (Object *)TypeInfo__MessageBoxSettings->static_fields->defaultColor,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+                      );
+            this = (MessageBoxSettings *)((uint)this & 0xffffff);
+            pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryAdd
+                      (this_04,(Object *)StringLiteral_billboard,pOVar4,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+                      );
             goto code_?;
           }
         }
       }
       goto code_?;
     }
-    this_05 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-               *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_05,
+    this_04 = (Dictionary_2_System_Object_System_Object_ *)
+              func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
+    if (this_04 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_04,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    if (this_05 ==
-        (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-         *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_05,StringLiteral_text,
-               (CrossPlatformInputManager_VirtualButton *)StringLiteral_test,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_04,(Object *)StringLiteral_text,(Object *)StringLiteral_test,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    value_00 = (CrossPlatformInputManager_VirtualButton *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_05,StringLiteral_textSize,value_00,
+    pOVar4 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff8);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_04,(Object *)StringLiteral_textSize,pOVar4,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    if ((TypeInfo__MessageBoxSettings->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_04,(Object *)StringLiteral_textColor,
+               (Object *)TypeInfo__MessageBoxSettings->static_fields->defaultColor,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    root = (GameObject *)((uint)root & 0xffffff);
+    in_stack_3 = (Single__Class *)&UNK_?;
+    pOVar4 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (this_04,(Object *)StringLiteral_billboard,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
 code_?:
-    this_01 = (this->fields).sizeSlider;
-    if (this_05 ==
-        (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-         *)0x0) goto code_?;
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_05,(Type *)StringLiteral_textSize,
+    unaff_EBX = (this_02->fields).sizeSlider;
+    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_04,(Object *)StringLiteral_textSize,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if ((this_01 == (SettingsSlider *)0x0) || (pPVar2 == (Pool *)0x0)) goto code_?;
-    if ((pPVar2->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+    uVar1 = CONCAT44(TypeInfo__System__Single,pOVar4);
+    if ((unaff_EBX == (SettingsSlider *)0x0) || (pOVar4 == (Object *)0x0)) goto code_?;
+    if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
     goto code_?;
-    pfVar3 = (float *)func_?();
+    pfVar5 = (float *)func_?(pOVar4);
     SettingsSlider::SettingsSlider_Initialize
-              (this_01,StringLiteral_textSize,*pfVar3,0.1,0.4,(MethodInfo *)0x0);
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_05,(Type *)StringLiteral_textSize,
+              (unaff_EBX,StringLiteral_textSize,*pfVar5,0.1,0.4,(MethodInfo *)0x0);
+    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_04,(Object *)StringLiteral_textSize,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar2 == (Pool *)0x0) goto code_?;
-    if ((pPVar2->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+    uVar1 = CONCAT44(TypeInfo__System__Single,pOVar4);
+    if (pOVar4 == (Object *)0x0) goto code_?;
+    if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
     goto code_?;
-    pfVar3 = (float *)func_?();
-    MessageBoxSettings_SetTextSize(this,*pfVar3,(MethodInfo *)0x0);
-    this_02 = (this->fields).inputField;
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_05,(Type *)StringLiteral_text,
+    pfVar5 = (float *)func_?(pOVar4);
+    MessageBoxSettings_SetTextSize(this_02,*pfVar5,(MethodInfo *)0x0);
+    unaff_EBX = (SettingsSlider *)(this_02->fields).inputField;
+    pSVar6 = (String *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_04,(Object *)StringLiteral_text,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (this_02 == (SettingsInputField *)0x0) goto code_?;
-    value_01 = (Pool *)0x0;
-    if (pPVar2 == (Pool *)0x0) {
-code_?:
-      SettingsInputField::SettingsInputField_Initialize
-                (this_02,StringLiteral_text,(String *)value_01,(MethodInfo *)0x0);
-      return;
+    if (unaff_EBX == (SettingsSlider *)0x0) goto code_?;
+    value = (String *)0x0;
+    if (pSVar6 != (String *)0x0) {
+      if (pSVar6->klass == TypeInfo__System__String) {
+        value = pSVar6;
+      }
+      if (value == (String *)0x0) {
+        func_?(pSVar6,TypeInfo__System__String);
+        goto code_?;
+      }
     }
-    if ((String__Class *)pPVar2->klass == TypeInfo__System__String) {
-      value_01 = pPVar2;
+    SettingsInputField::SettingsInputField_Initialize
+              ((SettingsInputField *)unaff_EBX,StringLiteral_text,value,(MethodInfo *)0x0);
+    unaff_EBX = (SettingsSlider *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (this_04,(Object *)StringLiteral_textColor,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+    in_stack_3 = (Single__Class *)TypeInfo__System__Single;
+    if (unaff_EBX == (SettingsSlider *)0x0) {
+      (this_02->fields).color = (Single__Array *)0x0;
+      iVar7 = 0;
     }
-    if (value_01 != (Pool *)0x0) goto code_?;
+    else {
+      pSVar8 = (Single__Array *)
+               func_?(unaff_EBX,TypeInfo__System__Single,TypeInfo__System__Single);
+      if (pSVar8 == (Single__Array *)0x0) goto code_?;
+      (this_02->fields).color = pSVar8;
+      in_stack_3 = (Single__Class *)TypeInfo__System__Single;
+      iVar7 = func_?(unaff_EBX,TypeInfo__System__Single,TypeInfo__System__Single);
+      if (iVar7 == 0) goto code_?;
+    }
+    func_?(&(this_02->fields).color,iVar7);
+    pSVar8 = (this_02->fields).color;
+    pSVar9 = (this_02->fields).colorR;
+    if (pSVar8 == (Single__Array *)0x0) goto code_?;
+    if (pSVar8->max_length != 0) {
+      if (pSVar9 != (SettingsSlider *)0x0) {
+        SettingsSlider::SettingsSlider_Initialize
+                  (pSVar9,StringLiteral_colorR,pSVar8->vector[0],0.0,1.0,(MethodInfo *)0x0);
+        pSVar8 = (this_02->fields).color;
+        pSVar9 = (this_02->fields).colorG;
+        if (pSVar8 != (Single__Array *)0x0) {
+          if (pSVar8->max_length < 2) goto code_?;
+          if (pSVar9 != (SettingsSlider *)0x0) {
+            SettingsSlider::SettingsSlider_Initialize
+                      (pSVar9,StringLiteral_colorG,pSVar8->vector[1],0.0,1.0,(MethodInfo *)0x0);
+            pSVar8 = (this_02->fields).color;
+            pSVar9 = (this_02->fields).colorB;
+            if (pSVar8 != (Single__Array *)0x0) {
+              if (pSVar8->max_length < 3) goto code_?;
+              if (pSVar9 != (SettingsSlider *)0x0) {
+                SettingsSlider::SettingsSlider_Initialize
+                          (pSVar9,StringLiteral_colorB,pSVar8->vector[2],0.0,1.0,(MethodInfo *)0x0);
+                pSVar8 = (this_02->fields).color;
+                pIVar10 = (this_02->fields).preview;
+                if (pSVar8 != (Single__Array *)0x0) {
+                  if (((pSVar8->max_length == 0) || (pSVar8->max_length < 2)) ||
+                     (pSVar8->max_length < 3)) goto code_?;
+                  if (pIVar10 != (Image *)0x0) {
+                    (*(pIVar10->klass->vtable).set_color.methodPtr)
+                              (pIVar10,pSVar8->vector[0],pSVar8->vector[1],pSVar8->vector[2],
+                               0x3f800000,(pIVar10->klass->vtable).set_color.method);
+                    this_01 = (this_02->fields).billboardToggle;
+                    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             Object,System::Object]::
+                             Dictionary_2_System_Object_System_Object__get_Item
+                                       (this_04,(Object *)StringLiteral_billboard,
+                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                       );
+                    uVar1 = CONCAT44(TypeInfo__System__Boolean,pOVar4);
+                    if ((this_01 != (SettingsToggle *)0x0) && (pOVar4 != (Object *)0x0)) {
+                      if ((pOVar4->klass->_0).element_class ==
+                          (TypeInfo__System__Boolean->_0).element_class) {
+                        pbVar11 = (bool *)func_?(pOVar4);
+                        SettingsToggle::SettingsToggle_Initialize
+                                  (this_01,StringLiteral_billboard,*pbVar11,(MethodInfo *)0x0);
+                        return;
+                      }
+                      goto code_?;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      goto code_?;
+    }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+code_?:
+  func_?(unaff_EBX,in_stack_3);
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -141,56 +265,261 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_OnSettingChange
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Decimal);
+    func_?(&TypeInfo__System__Math);
+    func_?(&TypeInfo__MessageBoxSettings);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_textColor);
+    func_?(&StringLiteral_colorB);
+    func_?(&StringLiteral_colorR);
+    func_?(&StringLiteral_colorG);
+    func_?(&StringLiteral_textSize);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
   }
   bVar1 = mscorlib.dll::System::String::String_op_Equality
                     (key,StringLiteral_textSize,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pSVar2 = (this->fields).settingsBase;
-    if (pSVar2 != (SettingsBase *)0x0) {
-      SettingsBase::SettingsBase_OnSettingChanged(pSVar2,key,value,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Convert);
+    }
+    pDVar2 = mscorlib.dll::System::Convert::Convert_ToDecimal
+                        ((Decimal *)&stack0xffffffe4,value,(MethodInfo *)0x0);
+    puVar3 = (undefined *)pDVar2->hi;
+    ppDVar4 = (Decimal__Class **)pDVar2->lo;
+    iVar5 = pDVar2->mid;
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      puVar3 = &UNK_?;
+      ppDVar4 = (Decimal__Class **)TypeInfo__System__Math;
+      func_?();
+    }
+    if (cRam_? == '\0') {
+      ppDVar4 = &TypeInfo__System__Decimal;
+      puVar3 = &UNK_?;
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
+      puVar3 = &UNK_?;
+      ppDVar4 = (Decimal__Class **)TypeInfo__System__Decimal;
+      func_?();
+    }
+    d.hi = (int32_t)ppDVar4;
+    d.flags = (int32_t)puVar3;
+    d.lo = iVar5;
+    d.mid = 1;
+    d.ulomidLE._0_4_ = 0;
+    d.ulomidLE._4_4_ = iVar5;
+    pDVar2 = mscorlib.dll::System::Decimal::Decimal_Round
+                        ((Decimal *)&stack0xffffffe4,d,in_stack_6,in_stack_7);
+    iVar5 = pDVar2->flags;
+    iVar8 = pDVar2->hi;
+    iVar9 = pDVar2->lo;
+    iVar10 = pDVar2->mid;
+    if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    value_00.hi = iVar8;
+    value_00.flags = iVar5;
+    value_00.lo = iVar9;
+    value_00.mid = iVar10;
+    value_00.ulomidLE._0_4_ = 0;
+    value_00.ulomidLE._4_4_ = in_stack_11;
+    value_03 = mscorlib.dll::System::Decimal::Decimal_op_Explicit_2(value_00,in_stack_12);
+    MessageBoxSettings_SetTextSize(this,value_03,(MethodInfo *)0x0);
+    pSVar13 = (this->fields).settingsBase;
+    value_02 = (Object *)func_?();
+    if (pSVar13 != (SettingsBase *)0x0) {
+      SettingsBase::SettingsBase_OnSettingChanged(pSVar13,key,value_02,(MethodInfo *)0x0);
       return;
+    }
+    goto code_?;
+  }
+  bVar1 = mscorlib.dll::System::String::String_op_Equality
+                    (key,StringLiteral_colorR,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    bVar1 = mscorlib.dll::System::String::String_op_Equality
+                      (key,StringLiteral_colorG,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      bVar1 = mscorlib.dll::System::String::String_op_Equality
+                        (key,StringLiteral_colorB,(MethodInfo *)0x0);
+      if (bVar1 == 0) {
+        if ((TypeInfo__MessageBoxSettings->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        if (cRam_? == '\0') {
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          cRam_? = '\x01';
+        }
+        bVar1 = mscorlib.dll::System::String::String_op_Equality
+                          (key,StringLiteral_text,(MethodInfo *)0x0);
+        if ((bVar1 != 0) && (value != (Object *)0x0)) {
+          pSVar14 = (String *)0x0;
+          if ((String__Class *)value->klass == TypeInfo__System__String) {
+            pSVar14 = (String *)value;
+          }
+          if (pSVar14 != (String *)0x0) {
+            pSVar15 = mscorlib.dll::System::String::String_ToLower(pSVar14,(MethodInfo *)0x0);
+            if (pSVar15 == (String *)0x0) goto code_?;
+            bVar1 = mscorlib.dll::System::String::String_Contains
+                              (pSVar15,StringLiteral__quad,(MethodInfo *)0x0);
+            if (bVar1 != 0) {
+              value_01 = (String *)
+                         mscorlib.dll::System::String::String_IndexOf_4
+                                   (pSVar15,StringLiteral__quad,StringComparison__Enum_Ordinal,
+                                    (MethodInfo *)0x0);
+              iVar5 = mscorlib.dll::System::String::String_IndexOf_5
+                                (pSVar15,value_01,(int32_t)value_01,StringComparison__Enum_Ordinal,
+                                 (MethodInfo *)0x0);
+              if (iVar5 < 0) {
+                value = (Object *)
+                        mscorlib.dll::System::String::String_Substring_1
+                                  (pSVar14,0,(int32_t)value_01,(MethodInfo *)0x0);
+              }
+              else {
+                pSVar14 = mscorlib.dll::System::String::String_Substring_1
+                                   (pSVar14,0,(int32_t)value_01,(MethodInfo *)0x0);
+                pSVar15 = mscorlib.dll::System::String::String_Substring
+                                   (pSVar15,iVar5 + 1,(MethodInfo *)0x0);
+                value = (Object *)
+                        mscorlib.dll::System::String::String_Concat_3
+                                  (pSVar14,pSVar15,(MethodInfo *)0x0);
+              }
+            }
+          }
+        }
+        pSVar13 = (this->fields).settingsBase;
+        if (pSVar13 != (SettingsBase *)0x0) {
+          SettingsBase::SettingsBase_OnSettingChanged(pSVar13,key,value,(MethodInfo *)0x0);
+          return;
+        }
+        goto code_?;
+      }
+      pSVar16 = (this->fields).color;
+      if ((pSVar16 == (Single__Array *)0x0) || (value == (Object *)0x0)) goto code_?;
+      if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      goto code_?;
+      pfVar17 = (float *)func_?();
+      if (2 < pSVar16->max_length) {
+        pSVar16->vector[2] = *pfVar17;
+        pSVar13 = (this->fields).settingsBase;
+        if (pSVar13 == (SettingsBase *)0x0) goto code_?;
+        SettingsBase::SettingsBase_OnSettingChanged
+                  (pSVar13,StringLiteral_textColor,(Object *)(this->fields).color,(MethodInfo *)0x0);
+        pSVar16 = (this->fields).color;
+        if (pSVar16 == (Single__Array *)0x0) goto code_?;
+        if (((pSVar16->max_length != 0) && (1 < pSVar16->max_length)) && (2 < pSVar16->max_length)) {
+          if ((this->fields).preview != (Image *)0x0) {
+            func_?();
+            return;
+          }
+          goto code_?;
+        }
+      }
+    }
+    else {
+      pSVar16 = (this->fields).color;
+      if ((pSVar16 == (Single__Array *)0x0) || (value == (Object *)0x0)) goto code_?;
+      if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      goto code_?;
+      pfVar17 = (float *)func_?();
+      if (1 < pSVar16->max_length) {
+        pSVar16->vector[1] = *pfVar17;
+        goto code_?;
+      }
     }
   }
   else {
-    if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-      func_?();
+    pSVar16 = (this->fields).color;
+    if ((pSVar16 == (Single__Array *)0x0) || (value == (Object *)0x0)) goto code_?;
+    if ((value->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+      pfVar17 = (float *)func_?();
+      if (pSVar16->max_length != 0) {
+        pSVar16->vector[0] = *pfVar17;
+code_?:
+        pSVar13 = (this->fields).settingsBase;
+        if (pSVar13 == (SettingsBase *)0x0) goto code_?;
+        SettingsBase::SettingsBase_OnSettingChanged
+                  (pSVar13,StringLiteral_textColor,(Object *)(this->fields).color,(MethodInfo *)0x0);
+        pSVar16 = (this->fields).color;
+        pIVar18 = (this->fields).preview;
+        if (pSVar16 == (Single__Array *)0x0) goto code_?;
+        if (((pSVar16->max_length != 0) && (1 < pSVar16->max_length)) && (2 < pSVar16->max_length)) {
+          if (pIVar18 != (Image *)0x0) {
+            (*(pIVar18->klass->vtable).set_color.methodPtr)();
+            return;
+          }
+          goto code_?;
+        }
+      }
     }
-    pDVar3 = mscorlib.dll::System::Convert::Convert_ToDecimal_12
-                       ((Decimal *)&stack0xffffffe8,value,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Math::Math_Round_1
-                       ((Decimal *)&stack0xffffffe8,*pDVar3,1,(MethodInfo *)0x0);
-    uVar4 = pDVar3->flags;
-    this_00 = (MessageBoxSettings *)pDVar3->hi;
-    uVar5 = pDVar3->lo;
-    uVar6 = pDVar3->mid;
-    if ((((uint)(TypeInfo__System__Decimal->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Decimal->_1).cctor_started == 0)) {
+    else {
+code_?:
       func_?();
-    }
-    value_00.hi = (uint32_t)this_00;
-    value_00.flags = uVar4;
-    value_00.lo = uVar5;
-    value_00.mid = uVar6;
-    value_02 = mscorlib.dll::System::Decimal::Decimal_op_Explicit_10(value_00,(MethodInfo *)0x0);
-    MessageBoxSettings_SetTextSize(this_00,value_02,(MethodInfo *)0x0);
-    pSVar2 = (this_00->fields).settingsBase;
-    value_01 = (Object *)func_?();
-    if (pSVar2 != (SettingsBase *)0x0) {
-      SettingsBase::SettingsBase_OnSettingChanged(pSVar2,key,value_01,(MethodInfo *)0x0);
-      return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+code_?:
+  func_?();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
+}
+
+
+/* Object RemoveQuadFromText(String, Object) */
+
+Object * Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_RemoveQuadFromText
+                   (String *key,Object *val,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__String);
+    func_?(&StringLiteral__quad);
+    func_?(&StringLiteral_text);
+    func_?(&::StringLiteral__);
+    cRam_? = '\x01';
+  }
+  bVar1 = mscorlib.dll::System::String::String_op_Equality(key,StringLiteral_text,(MethodInfo *)0x0)
+  ;
+  if ((bVar1 != 0) && (val != (Object *)0x0)) {
+    pSVar2 = (String *)0x0;
+    if ((String__Class *)val->klass == TypeInfo__System__String) {
+      pSVar2 = (String *)val;
+    }
+    if (pSVar2 != (String *)0x0) {
+      pSVar3 = mscorlib.dll::System::String::String_ToLower(pSVar2,(MethodInfo *)0x0);
+      if (pSVar3 == (String *)0x0) {
+        func_?();
+        pcVar4 = (code *)swi(3);
+        pOVar5 = (Object *)(*pcVar4)();
+        return pOVar5;
+      }
+      bVar1 = mscorlib.dll::System::String::String_Contains
+                        (pSVar3,StringLiteral__quad,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        startIndex = mscorlib.dll::System::String::String_IndexOf_4
+                               (pSVar3,StringLiteral__quad,StringComparison__Enum_Ordinal,
+                                (MethodInfo *)0x0);
+        iVar6 = mscorlib.dll::System::String::String_IndexOf_5
+                          (pSVar3,::StringLiteral__,startIndex,StringComparison__Enum_Ordinal,
+                           (MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::String::String_Substring_1
+                           (pSVar2,0,startIndex,(MethodInfo *)0x0);
+        if (-1 < iVar6) {
+          pSVar2 = mscorlib.dll::System::String::String_Substring
+                             (pSVar2,iVar6 + 1,(MethodInfo *)0x0);
+          pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar3,pSVar2,(MethodInfo *)0x0);
+          return (Object *)pSVar2;
+        }
+        return (Object *)pSVar3;
+      }
+    }
+  }
+  return val;
 }
 
 
@@ -201,37 +530,102 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_SetTextSize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Math);
+    func_?(&TypeInfo__UnityEngine__Mathf);
+    func_?(&StringLiteral_Large);
+    func_?(&StringLiteral_Huge);
+    func_?(&StringLiteral_Small);
+    func_?(&StringLiteral_Medium);
     cRam_? = '\x01';
   }
-  if (value == _UNK_?) {
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  if ((float)((uint)(value - _UNK_?) & _UNK_?) <
+      TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
     pTVar1 = (this->fields).sizeLabel;
     pSVar2 = StringLiteral_Small;
   }
-  else if (value == _UNK_?) {
-    pTVar1 = (this->fields).sizeLabel;
-    pSVar2 = StringLiteral_Medium;
-  }
-  else if (value == _UNK_?) {
-    pTVar1 = (this->fields).sizeLabel;
-    pSVar2 = StringLiteral_Large;
-  }
   else {
-    if (value != _UNK_?) {
-      return;
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
     }
-    pTVar1 = (this->fields).sizeLabel;
-    pSVar2 = StringLiteral_Huge;
+    if ((float)((uint)(value - _UNK_?) & _UNK_?) <
+        TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
+      pTVar1 = (this->fields).sizeLabel;
+      pSVar2 = StringLiteral_Medium;
+    }
+    else {
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      if ((float)((uint)(value - _UNK_?) & _UNK_?) <
+          TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
+        pTVar1 = (this->fields).sizeLabel;
+        pSVar2 = StringLiteral_Large;
+      }
+      else {
+        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Math);
+        }
+        if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <=
+            (float)((uint)(value - _UNK_?) & _UNK_?)) {
+          return;
+        }
+        pTVar1 = (this->fields).sizeLabel;
+        pSVar2 = StringLiteral_Huge;
+      }
+    }
   }
   pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    (*(pTVar1->klass->vtable).set_text.methodPtr)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
+  return;
+}
+
+
+/* MessageBoxSettings() */
+
+void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings__cctor(MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MessageBoxSettings);
+    func_?(&TypeInfo__System__Single);
+    func_?(&F6BB1294DA2F78CD935B01C7656280DF5EAA0439E9D97BC03775825A41A508E4_Field);
+    cRam_? = '\x01';
+  }
+  array = (Single__Array *)func_?(TypeInfo__System__Single,4);
+  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
+            ((Array *)array,_F6BB1294DA2F78CD935B01C7656280DF5EAA0439E9D97BC03775825A41A508E4_Field,
+             (MethodInfo *)0x0);
+  TypeInfo__MessageBoxSettings->static_fields->defaultColor = array;
+  func_?(TypeInfo__MessageBoxSettings->static_fields,array);
+  return;
+}
+
+
+/* MessageBoxSettings() */
+
+void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings__ctor
+               (MessageBoxSettings *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Single);
+    cRam_? = '\x01';
+  }
+  pSVar1 = (Single__Array *)func_?(TypeInfo__System__Single,4);
+  (this->fields).color = pSVar1;
+  func_?(&(this->fields).color,pSVar1);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

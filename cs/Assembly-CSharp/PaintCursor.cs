@@ -7,12 +7,14 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PaintCursor
 {
 	// Fields
-	private CellCursor paintCursor;
+	private readonly CellCursor paintCursor;
+	private bool flashing;
+	private float flashingTime;
 
 	// Constructors
 	public PaintCursor(Vector3[] cubeCorners);
@@ -20,5 +22,6 @@ public class PaintCursor
 	// Methods
 	public void UpdateCursor(CubePickingInfo selectedCube, MVCubeModelBase targetCubeModel, bool isPainting);
 	public void Remove();
+	public void UnlockMaterialToRemove();
 }
 

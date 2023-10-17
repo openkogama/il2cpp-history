@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal class ESAddObjectLink : ESStateBase
 {
@@ -17,16 +17,16 @@ internal class ESAddObjectLink : ESStateBase
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Execute_c__AnonStorey0
+	private sealed class __c__DisplayClass3_0
 	{
 		// Fields
-		internal VoxelHit hit;
+		public VoxelHit hit;
 
 		// Constructors
-		public _Execute_c__AnonStorey0();
+		public __c__DisplayClass3_0();
 
 		// Methods
-		internal bool __m__0(ObjectLink o);
+		internal bool _Execute_b__0(ObjectLink o);
 	}
 
 	// Constructors

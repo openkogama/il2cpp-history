@@ -7,17 +7,19 @@ Assembly-CSharp.dll::BoostMenuController::BoostMenuController_FixContentPivot
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BoostMenuController___FixContentPivot_d__9);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__BoostMenuController___FixContentPivot_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__BoostMenuController___FixContentPivot_d__9);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -38,135 +40,184 @@ Assembly-CSharp.dll::BoostMenuController::BoostMenuController_GetSortedBoosts
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffff9c;
+  pDStack_5 = boosts;
+  puVar6 = &stack0xffffff9c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<Boost>__Add_Boost_);
+    func_?(&MethodInfo__System__Collections__Generic__List<Boost>__List__);
+    func_?(&MethodInfo__System__Collections__Generic__List<BoostType>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<Boost>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<BoostType>__get_Item_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_);
+    func_?(&TypeInfo__System__Collections__Generic__List<Boost>);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                   );
     cRam_? = '\x01';
+    puVar6 = puStack_4;
   }
-  iVar4 = 0;
-  func_?();
-  iStack_5 = -1;
-  this_00 = (List_1_UnityEngine_Vector4_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<Boost>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<Boost>__List__);
-  while( true ) {
-    if ((boostController == (BoostController *)0x0) ||
-       (pLVar6 = (boostController->fields).boostPriorityList, pLVar6 == (List_1_BoostType_ *)0x0))
-    goto code_?;
-    pOVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar6,
-                        MethodInfo__System__Collections__Generic__List<BoostType>__get_Count__);
-    if ((int)pOVar7 <= iVar4) break;
-    if (boosts == (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0)
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[TKey,TValue]+ValueCollection[ChatCommand,System::Object]::
-    Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object__GetEnumerator
-              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_ChatCommand_System_Object_
-                *)&stack0xffffff90,
-               (Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object_ *)boosts,
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
-              );
-    uStack_1 = 0;
-    while (cVar8 = func_?(), cVar8 != '\0') {
-      pCVar9 = (Collection_1_VoxelHit_ *)func_?();
-      if (pCVar9 == (Collection_1_VoxelHit_ *)0x0) goto code_?;
-      pIVar10 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items(pCVar9,(MethodInfo *)0x0);
-      pLVar6 = (boostController->fields).boostPriorityList;
-      if (pLVar6 == (List_1_BoostType_ *)0x0) goto code_?;
-      pIVar11 = (IList_1_VoxelHit_ *)
-               mscorlib.dll::System::Collections::Generic::List`1[BoostType]::
-               List_1_BoostType__get_Item
-                         (pLVar6,iVar4,
-                          MethodInfo__System__Collections__Generic__List<BoostType>__get_Item_int_);
-      if (pIVar10 == pIVar11) {
-        if (this_00 == (List_1_UnityEngine_Vector4_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)pCVar9,
-                   MethodInfo__System__Collections__Generic__List<Boost>__Add_Boost_);
-      }
-    }
-    iVar12 = iStack_5 + 1;
-    *(undefined4 *)(&stack0xffffff84 + iVar12 * 4) = 0x5e;
-    uStack_1 = 0xffffffff;
-    func_?();
-    if (((iVar12 != -1) && (*(int *)(&stack0xffffff84 + iVar12 * 4) == 0x5e)) && (-1 < iVar12)) {
-      iVar12 = iStack_5;
-    }
-    iStack_5 = iVar12;
-    iVar4 = iVar4 + 1;
-  }
-  if (boosts != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0) {
-    pDVar13 = mscorlib.dll::System::Collections::Generic::
-             Dictionary`2[TKey,TValue]+ValueCollection[ChatCommand,System::Object]::
-             Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_ChatCommand_System_Object_
-                         *)&stack0xffffff90,
-                        (Dictionary_2_TKey_TValue_ValueCollection_ChatCommand_System_Object_ *)
-                        boosts,
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
-                       );
-    method_01 = (pDVar13->host_enumerator).dictionary;
-    uStack_1 = 2;
-    do {
-      cVar8 = func_?();
-      if (cVar8 == '\0') {
-        *(undefined4 *)(&stack0xffffff88 + iStack_5 * 4) = 0xf1;
-        uStack_1 = 0xffffffff;
-        func_?();
-        *unaff_FS_OFFSET = uStack_3;
-        return (List_1_Boost_ *)this_00;
-      }
-      method_00 = 
-      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__get_Current__
-      ;
-      pCVar9 = (Collection_1_VoxelHit_ *)func_?();
-      bVar14 = false;
-      iVar4 = 0;
-      while( true ) {
-        if (this_00 == (List_1_UnityEngine_Vector4_ *)0x0) goto code_?;
-        pOVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                            MethodInfo__System__Collections__Generic__List<Boost>__get_Count__);
-        if ((int)pOVar7 <= iVar4) break;
-        this_01 = (Collection_1_VoxelHit_ *)
-                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                  IEventSystemHandler]::
-                  List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                            ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_00,iVar4,
-                             MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_);
-        if ((this_01 == (Collection_1_VoxelHit_ *)0x0) ||
-           (pIVar10 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                     Collection_1_VoxelHit__get_Items(this_01,method_00),
-           pCVar9 == (Collection_1_VoxelHit_ *)0x0)) goto code_?;
-        method_00 = (MethodInfo *)&UNK_?;
-        pIVar11 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items(pCVar9,(MethodInfo *)method_01);
-        if (pIVar10 == pIVar11) {
-          bVar14 = true;
+  puStack_4 = puVar6;
+  DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_7._index = 0;
+  DStack_7._version = 0;
+  DStack_7._currentValue = (Object *)0x0;
+  pMVar8 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__List<Boost>);
+  pMStack_9 = pMVar8;
+  if (pMVar8 != (MethodInfo *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)pMVar8,
+               MethodInfo__System__Collections__Generic__List<Boost>__List__);
+    uStack_10 = 0;
+    pMStack_11 = pMVar8;
+    if (boostController != (BoostController *)0x0) {
+      while ((pLVar12 = (boostController->fields).boostPriorityList,
+             pLVar12 != (List_1_BoostType_ *)0x0 &&
+             (pDStack_5 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0))) {
+        if ((pLVar12->fields)._size <= (int)uStack_10) {
+          pMVar8 = 
+          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+          ;
+          pDVar13 = mscorlib.dll::System::Collections::Generic::
+                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+                   Regex+CachedCodeEntryKey,System::Object]::
+                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                             ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                               *)&stack0xffffffa8,
+                              (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                               *)boosts,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                             );
+          uStack_14 = 0;
+          DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar13->_dictionary;
+          DStack_7._index = pDVar13->_index;
+          DStack_7._version = pDVar13->_version;
+          DStack_7._currentValue = pDVar13->_currentValue;
+          uStack_1 = 4;
+          pDStack_15 = &DStack_7;
+          do {
+            bVar16 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                    Object,System::Object]::
+                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                              (&DStack_7,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                              );
+            if (bVar16 == 0) {
+              uStack_1 = 0xffffffff;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&DStack_7,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                         ,pMVar8);
+              *unaff_FS_OFFSET = uStack_3;
+              return (List_1_Boost_ *)pMStack_9;
+            }
+            RStack_17 = (RegexCharClass_SingleRange)DStack_7._currentValue;
+            uStack_10 = (uint)extraout_var << 8;
+            index = 0;
+            while( true ) {
+              if ((int)pMStack_9->name <= index) break;
+              RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)pMStack_9,index,
+                                 MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_
+                                );
+              if (RVar18 == (RegexCharClass_SingleRange)0x0) goto code_?;
+              if (RStack_17 == (RegexCharClass_SingleRange)0x0) goto code_?;
+              uStack_10 = uStack_10 & 0xff;
+              if (*(int *)((int)RVar18 + 8) == *(int *)((int)RStack_17 + 8)) {
+                uStack_10 = 1;
+              }
+              index = index + 1;
+            }
+            if ((char)uStack_10 == '\0') {
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__Add
+                        ((List_1_System_Object_ *)pMStack_9,(Object *)RStack_17,
+                         MethodInfo__System__Collections__Generic__List<Boost>__Add_Boost_);
+            }
+          } while( true );
         }
-        iVar4 = iVar4 + 1;
+        pDVar13 = mscorlib.dll::System::Collections::Generic::
+                 Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+                 Regex+CachedCodeEntryKey,System::Object]::
+                 Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                           ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                             *)&stack0xffffffa8,
+                            (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                             *)boosts,
+                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                           );
+        uStack_14 = 0;
+        DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar13->_dictionary;
+        DStack_7._index = pDVar13->_index;
+        DStack_7._version = pDVar13->_version;
+        DStack_7._currentValue = pDVar13->_currentValue;
+        uStack_1 = 1;
+        pDStack_15 = &DStack_7;
+        while( true ) {
+          bVar16 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                  Object,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                            (&DStack_7,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                            );
+          item = DStack_7._currentValue;
+          if (bVar16 == 0) break;
+          if ((RegexCharClass_SingleRange)DStack_7._currentValue == (RegexCharClass_SingleRange)0x0
+             ) goto code_?;
+          RStack_17 = *(RegexCharClass_SingleRange *)((int)DStack_7._currentValue + 8);
+          if ((boostController == (BoostController *)0x0) ||
+             (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        (boostController->fields).boostPriorityList,
+             this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
+          goto code_?;
+          RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_00,uStack_10,
+                             MethodInfo__System__Collections__Generic__List<BoostType>__get_Item_int_
+                            );
+          if (RStack_17 == RVar18) {
+            unaff_EBX = pMStack_9;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)pMStack_9,item,
+                       MethodInfo__System__Collections__Generic__List<Boost>__Add_Boost_);
+          }
+        }
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&DStack_7,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                   ,unaff_EBX);
+        uStack_10 = uStack_10 + 1;
+        uStack_1 = 0xffffffff;
       }
-      if (!bVar14) {
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_00,(UIPushOption__Enum)pCVar9,
-                   MethodInfo__System__Collections__Generic__List<Boost>__Add_Boost_);
-      }
-    } while( true );
+    }
   }
 code_?:
-  uVar15 = func_?();
-  func_?(uVar15);
   func_?();
-  pcVar16 = (code *)swi(3);
-  pLVar17 = (List_1_Boost_ *)(*pcVar16)();
-  return pLVar17;
+  func_?();
+  func_?();
+  pcVar19 = (code *)swi(3);
+  pLVar20 = (List_1_Boost_ *)(*pcVar19)();
+  return pLVar20;
 }
 
 
@@ -177,182 +228,144 @@ void Assembly-CSharp.dll::BoostMenuController::BoostMenuController_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__UI__LayoutRebuilder);
+    func_?(&MethodInfo__System__Collections__Generic__List<Boost>__get_Count__);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Count__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
+                   );
+    func_?(&
+                    MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
+                   );
+    func_?(&
+                    BoostMenuItem_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuItem>_BoostMenuItem__UnityEngine__Transform__bool_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (((this_00 != (MVNetworkGame *)0x0) &&
-      (this_01 = (PrefabPool *)
-                 MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-      this_01 != (PrefabPool *)0x0)) &&
-     (this_02 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                          (this_01,(MethodInfo *)0x0), this_02 != (ObjectiveArrow *)0x0)) {
-    boosts = BoostController::BoostController_GetAllBoosts
-                       ((BoostController *)this_02,(MethodInfo *)0x0);
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (((this_03 != (MVWorldObjectClientManager *)0x0) &&
-        (this_04 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject_4
-                             (this_03,
+      (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+      pMVar1 != (MVLocalPlayer *)0x0)) &&
+     (pBVar2 = (pMVar1->fields).boostController, pBVar2 != (BoostController *)0x0)) {
+    boosts = BoostController::BoostController_GetAllBoosts(pBVar2,(MethodInfo *)0x0);
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (((this_01 != (MVWorldObjectClientManager *)0x0) &&
+        (this_02 = (MVGameOptionDataObject *)
+                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
+                             (this_01,
                               MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
-                             ), this_04 != (MVRoundCube *)0x0)) &&
-       (this_05 = (BoostMenuController *)
-                  MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
-                            ((MVGameOptionDataObject *)this_04,(MethodInfo *)0x0),
-       this_05 != (BoostMenuController *)0x0)) {
-      this_06 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                GameBoosterSettings::GameBoosterSettingsManager::
-                GameBoosterSettingsManager_get_ActiveSettingsList
-                          ((GameBoosterSettingsManager *)this_05,(MethodInfo *)0x0);
-      this_07 = (MethodInfo *)
-                BoostMenuController_GetSortedBoosts
-                          (this_05,boosts,(BoostController *)this_02,(MethodInfo *)0x0);
-      index = (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-               *)0x0;
-      pMVar1 = this_07;
-      if (this_07 != (MethodInfo *)0x0) {
-        for (; pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::
-                        Json::Serialization::JsonProperty]::
-                        Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                  ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                                   this_07,
-                                   MethodInfo__System__Collections__Generic__List<Boost>__get_Count__
-                                  ), (int)index < (int)pOVar2;
-            index = (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-                     *)((int)&index->klass + 1)) {
-          index_00 = 0;
-          while( true ) {
-            if (this_06 ==
-                (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-                 *)0x0) goto code_?;
-            pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                     Serialization::JsonProperty]::
-                     Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                               ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_06,
-                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Count__
-                               );
-            if ((int)pOVar2 <= index_00) break;
-            this_08 = (Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_ *)
-                      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                      IEventSystemHandler]::
-                      List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_07,
-                                 (int32_t)index,
+                             ), this_02 != (MVGameOptionDataObject *)0x0)) &&
+       (this_03 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
+                            (this_02,(MethodInfo *)0x0),
+       this_03 != (GameBoosterSettingsManager *)0x0)) {
+      pMVar3 = (MethodInfo *)
+               MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+               GameBoosterSettings::GameBoosterSettingsManager::
+               GameBoosterSettingsManager_get_ActiveSettingsList(this_03,(MethodInfo *)0x0);
+      pBVar2 = (BoostController *)
+               BoostMenuController_GetSortedBoosts
+                         ((BoostMenuController *)pMVar3,boosts,pBVar2,(MethodInfo *)0x0);
+      index_00 = 0;
+      if (pBVar2 != (BoostController *)0x0) {
+        for (; index_00 < (int)(pBVar2->fields).onBoostTypeUpdate; index_00 = index_00 + 1) {
+          index = 0;
+          if (pMVar3 == (MethodInfo *)0x0) goto code_?;
+          for (; index < (int)pMVar3->name; index = index + 1) {
+            this_05 = pBVar2;
+            pMVar3 = MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_;
+            RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               pBVar2,index_00,
+                               MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_)
+            ;
+            if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            if (*(char *)((int)RVar4 + 0x18) != '\0') {
+              this = (BoostMenuController *)&UNK_?;
+              pBVar5 = pBVar2;
+              RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)pBVar2,index_00,
                                  MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_
                                 );
-            if (this_08 == (Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_ *)0x0)
-            goto code_?;
-            uVar3 = System.Core.dll::System::Linq::
-                    Enumerable+<CreateCastIterator>c__Iterator0`1[System::Byte]::
-                    Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte__System_Collections_Generic_IEnumerator_TResult__get_Current
-                              (this_08,(MethodInfo *)0x0);
-            if (uVar3 != 0) {
-              this_09 = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                        ::IEventSystemHandler]::
-                        List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                  ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_07,
-                                   (int32_t)index,
+              if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+              a = *(String **)((int)RVar4 + 0xc);
+              pMVar3 = (MethodInfo *)this;
+              RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)this,index,
+                                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
+                                );
+              if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+              bVar6 = mscorlib.dll::System::String::String_op_Equality
+                                (a,*(String **)((int)RVar4 + 8),(MethodInfo *)0x0);
+              if (bVar6 != 0) {
+                parent = (Transform *)((MethodInfo *)this)->return_type;
+                pOVar7 = (Object *)((MethodInfo *)this)->name;
+                pBVar2 = pBVar5;
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                  pBVar2 = pBVar5;
+                }
+                this_04 = (BoostMenuItem *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                                    (pOVar7,parent,0,
+                                     BoostMenuItem_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuItem>_BoostMenuItem__UnityEngine__Transform__bool_
+                                    );
+                RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                        RegularExpressions::RegexCharClass+SingleRange]::
+                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                  ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                    *)pBVar2,index_00,
                                    MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_
                                   );
-              if (this_09 == (Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0)
-              goto code_?;
-              a = (String *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            (this_09,(MethodInfo *)0x0);
-              pCVar4 = (Collection_1_VoxelHit_ *)
-                       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems
-                       ::IEventSystemHandler]::
-                       List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                 ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)this_06,
-                                  index_00,
-                                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
-                                 );
-              if (pCVar4 == (Collection_1_VoxelHit_ *)0x0) goto code_?;
-              b = (String *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                  Collection_1_VoxelHit__get_Items(pCVar4,(MethodInfo *)0x0);
-              this_07 = pMVar1;
-              if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                 ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                func_?();
-                this_07 = pMVar1;
-              }
-              bVar5 = mscorlib.dll::System::String::String_op_Equality(a,b,(MethodInfo *)0x0);
-              pMVar1 = this_07;
-              if (bVar5 != 0) {
-                original = (XpBoostParticlePreviewer *)(this_02->fields).animationSpeed;
-                if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) !=
-                     0) && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-                  func_?(TypeInfo__UnityEngine__Object);
-                }
-                this_10 = (BoostMenuItem *)
-                          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                                    (original,
-                                     BoostMenuItem_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuItem>_BoostMenuItem_
-                                    );
-                if ((this_10 == (BoostMenuItem *)0x0) ||
-                   (this_11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_1_get_transform((Component_1 *)this_10,(MethodInfo *)0x0),
-                   this_11 == (Transform *)0x0)) goto code_?;
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                          (this_11,*(Transform **)((int)&(this_02->fields).arrowOffset + 4),0,
-                           (MethodInfo *)0x0);
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                          ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)
-                           MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_,
-                           (int32_t)index,
-                           MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_);
-                this_13 = (BoostController *)&UNK_?;
-                pMVar1 = MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_;
-                this_06 = index;
-                this_07 = MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_;
-                pCVar4 = (Collection_1_VoxelHit_ *)
-                         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                         EventSystems::IEventSystemHandler]::
-                         List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                                   ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)
-                                    MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_
-                                    ,(int32_t)index,
-                                    MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_
-                                   );
-                if (pCVar4 == (Collection_1_VoxelHit_ *)0x0) goto code_?;
-                type = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items(pCVar4,(MethodInfo *)0x0);
-                bVar5 = BoostController::BoostController_IsBoostActive
-                                  (this_13,(BoostType__Enum)type,(MethodInfo *)0x0);
+                RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                        RegularExpressions::RegexCharClass+SingleRange]::
+                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                  ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                    *)pBVar2,index_00,
+                                   MethodInfo__System__Collections__Generic__List<Boost>__get_Item_int_
+                                  );
+                if ((RVar8 == (RegexCharClass_SingleRange)0x0) ||
+                   (bVar6 = BoostController::BoostController_IsBoostActive
+                                      (this_05,*(BoostType__Enum *)((int)RVar8 + 8),
+                                       (MethodInfo *)0x0), this_04 == (BoostMenuItem *)0x0))
+                goto code_?;
                 BoostMenuItem::BoostMenuItem_Initialize
-                          (this_10,(Boost *)pMVar1,bVar5,(MethodInfo *)0x0);
-                pMVar1 = this_07;
+                          (this_04,(Boost *)RVar4,bVar6,(MethodInfo *)0x0);
               }
             }
-            index_00 = index_00 + 1;
           }
         }
-        layoutRoot = *(RectTransform **)((int)&(this_02->fields).arrowOffset + 4);
-        if ((((uint)(TypeInfo__UnityEngine__UI__LayoutRebuilder->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).cctor_started == 0)) {
-          func_?();
+        layoutRoot = (this->fields).boostItemsContent;
+        if ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__UI__LayoutRebuilder);
         }
         UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
         LayoutRebuilder_ForceRebuildLayoutImmediate(layoutRoot,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__BoostMenuController___FixContentPivot_d__9);
           cRam_? = '\x01';
         }
-        this_12 = (ScaleAnimationBase *)func_?();
-        ScaleAnimationBase::ScaleAnimationBase_Play(this_12,0.0,(MethodInfo *)&UNK_?);
-        if (this_12 != (ScaleAnimationBase *)0x0) {
-          (this_12->fields)._._._._.m_CachedPtr = this_02;
+        pMVar3 = (MethodInfo *)&UNK_?;
+        pOVar7 = (Object *)func_?(TypeInfo__BoostMenuController___FixContentPivot_d__9);
+        if (pOVar7 != (Object *)0x0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    (pOVar7,ExceptionArgument__Enum_obj,pMVar3);
+          pOVar7[1].klass = (Object__Class *)0x0;
+          pOVar7[2].klass = (Object__Class *)this;
+          func_?(pOVar7 + 2,this);
           UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                    ((MonoBehaviour *)this_02,(IEnumerator *)this_12,(MethodInfo *)0x0);
+                    ((MonoBehaviour *)this,(IEnumerator *)pOVar7,(MethodInfo *)0x0);
           return;
         }
       }
@@ -360,8 +373,8 @@ void Assembly-CSharp.dll::BoostMenuController::BoostMenuController_Initialize
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -373,88 +386,89 @@ void Assembly-CSharp.dll::BoostMenuController::BoostMenuController_OnAdFinished
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BoostType);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&
+                    MethodInfo__BoostMenuController____c___OnAdFinished_b__8_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__BoostMenuController____c);
+    func_?(&StringLiteral_Ad_RewardRequest_Booster_);
     cRam_? = '\x01';
   }
   if (adWasSuccessful == 0) {
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    if (TypeInfo__BoostMenuController->static_fields->__f__am_cache0 ==
-        (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(
-                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                                  );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)0x0,
-                 MethodInfo__BoostMenuController___OnAdFinished_m__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>__EventFunction_System__Object__void__
-                );
-      TypeInfo__BoostMenuController->static_fields->__f__am_cache0 =
-           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)this_01;
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__BoostMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BoostMenuController____c);
     }
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-         TypeInfo__BoostMenuController->static_fields->__f__am_cache0;
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    callbackFunction = TypeInfo__BoostMenuController____c->static_fields->__9__8_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      if ((TypeInfo__BoostMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__BoostMenuController____c);
+      }
+      object = TypeInfo__BoostMenuController____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                          );
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__BoostMenuController____c___OnAdFinished_b__8_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__BoostMenuController____c->static_fields->__9__8_0 = callbackFunction;
+      func_?(&TypeInfo__BoostMenuController____c->static_fields->__9__8_0);
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,callbackFunction,
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
               );
 code_?:
-    this_00 = (Action_1_UIPushOption_ *)(this->fields).boostUnlockedCallback;
-    if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-      mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                (this_00,(UIPushOption__Enum)MethodInfo__System__Action<bool>__Invoke_bool_,
-                 MethodInfo__System__Action<bool>__Invoke_bool_);
+    if ((this->fields).boostUnlockedCallback != (Action_1_Boolean_ *)0x0) {
+      pAVar1 = (this->fields).boostUnlockedCallback;
+      pvStack2 = (pAVar1->fields)._._.method;
+      uStack3 = _adWasSuccessful;
+      (*(pAVar1->fields)._._.invoke_impl)();
     }
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_02 != (MVNetworkGame *)0x0) {
-    this_03 = (PrefabPool *)MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
-    if (this_03 != (PrefabPool *)0x0) {
-      this_04 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                          (this_03,(MethodInfo *)0x0);
-      if (this_04 != (ObjectiveArrow *)0x0) {
-        piVar1 = &(this->fields).adRewardType;
-        BoostController::BoostController_ActivateBoost
-                  ((BoostController *)this_04,(this->fields).adRewardType,(MethodInfo *)0x0);
-        piVar2 = (int *)func_?(TypeInfo__BoostType,piVar1);
-        if (piVar2 != (int *)0x0) {
-          pSVar3 = (String *)(**(code **)(*piVar2 + 0xd8))(piVar2,*(undefined4 *)(*piVar2 + 0xdc));
-          piVar4 = (int32_t *)func_?();
-          *piVar1 = *piVar4;
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          pSVar3 = mscorlib.dll::System::String::String_Concat_2
-                             (StringLiteral_Ad_RewardRequest_Booster_,pSVar3,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
-            func_?(TypeInfo__StatHatWrapper);
-          }
-          StatHatWrapper::StatHatWrapper_Count(pSVar3,1,(MethodInfo *)0x0);
-          goto code_?;
-        }
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_01 != (MVNetworkGame *)0x0) {
+    pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+    if ((pMVar4 != (MVLocalPlayer *)0x0) &&
+       (this_00 = (pMVar4->fields).boostController, this_00 != (BoostController *)0x0)) {
+      BoostController::BoostController_ActivateBoost
+                (this_00,(this->fields).adRewardType,(MethodInfo *)0x0);
+      pSVar5 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffe8,(MethodInfo *)0x0)
+      ;
+      pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Ad_RewardRequest_Booster_,pSVar5,(MethodInfo *)0x0);
+      if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      _adWasSuccessful = 0;
+      StatHatWrapper::StatHatWrapper_Count(pSVar5,1,(MethodInfo *)0x0);
+      goto code_?;
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -465,89 +479,92 @@ void Assembly-CSharp.dll::BoostMenuController::BoostMenuController_RewardedAdCal
                (BoostMenuController *this,RewardedAdResult__Enum obj,MethodInfo *method)
 
 {
+  bVar1 = obj == RewardedAdResult__Enum_RewardUnlocked;
+  obj = (RewardedAdResult__Enum)bVar1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__BoostType);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&
+                    MethodInfo__BoostMenuController____c___OnAdFinished_b__8_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__BoostMenuController____c);
+    func_?(&StringLiteral_Ad_RewardRequest_Booster_);
     cRam_? = '\x01';
   }
-  if (obj != RewardedAdResult__Enum_RewardUnlocked) {
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    if (TypeInfo__BoostMenuController->static_fields->__f__am_cache0 ==
-        (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(
-                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                                  );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_01,(Object *)0x0,
-                 MethodInfo__BoostMenuController___OnAdFinished_m__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>__EventFunction_System__Object__void__
-                );
-      TypeInfo__BoostMenuController->static_fields->__f__am_cache0 =
-           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)this_01;
+  if (!bVar1) {
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__BoostMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BoostMenuController____c);
     }
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-         TypeInfo__BoostMenuController->static_fields->__f__am_cache0;
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    callbackFunction = TypeInfo__BoostMenuController____c->static_fields->__9__8_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      if ((TypeInfo__BoostMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__BoostMenuController____c);
+      }
+      object = TypeInfo__BoostMenuController____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                          );
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__BoostMenuController____c___OnAdFinished_b__8_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__BoostMenuController____c->static_fields->__9__8_0 = callbackFunction;
+      func_?(&TypeInfo__BoostMenuController____c->static_fields->__9__8_0);
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,callbackFunction,
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
               );
 code_?:
-    this_00 = (Action_1_UIPushOption_ *)(this->fields).boostUnlockedCallback;
-    if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-      mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                (this_00,(UIPushOption__Enum)MethodInfo__System__Action<bool>__Invoke_bool_,
-                 MethodInfo__System__Action<bool>__Invoke_bool_);
+    if ((this->fields).boostUnlockedCallback != (Action_1_Boolean_ *)0x0) {
+      pAVar2 = (this->fields).boostUnlockedCallback;
+      pvStack3 = (pAVar2->fields)._._.method;
+      RStack4 = obj;
+      (*(pAVar2->fields)._._.invoke_impl)();
     }
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_02 != (MVNetworkGame *)0x0) {
-    this_03 = (PrefabPool *)MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
-    if (this_03 != (PrefabPool *)0x0) {
-      this_04 = PrefabPool::PrefabPool_get_CollectTheItemDropOffArrowPrefab
-                          (this_03,(MethodInfo *)0x0);
-      if (this_04 != (ObjectiveArrow *)0x0) {
-        piVar1 = &(this->fields).adRewardType;
-        BoostController::BoostController_ActivateBoost
-                  ((BoostController *)this_04,(this->fields).adRewardType,(MethodInfo *)0x0);
-        piVar2 = (int *)func_?(TypeInfo__BoostType,piVar1);
-        if (piVar2 != (int *)0x0) {
-          pSVar3 = (String *)(**(code **)(*piVar2 + 0xd8))(piVar2,*(undefined4 *)(*piVar2 + 0xdc));
-          piVar4 = (int32_t *)func_?();
-          *piVar1 = *piVar4;
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          pSVar3 = mscorlib.dll::System::String::String_Concat_2
-                             (StringLiteral_Ad_RewardRequest_Booster_,pSVar3,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__StatHatWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__StatHatWrapper->_1).cctor_started == 0)) {
-            func_?(TypeInfo__StatHatWrapper);
-          }
-          StatHatWrapper::StatHatWrapper_Count(pSVar3,1,(MethodInfo *)0x0);
-          goto code_?;
-        }
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_01 != (MVNetworkGame *)0x0) {
+    pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+    if ((pMVar5 != (MVLocalPlayer *)0x0) &&
+       (this_00 = (pMVar5->fields).boostController, this_00 != (BoostController *)0x0)) {
+      BoostController::BoostController_ActivateBoost
+                (this_00,(this->fields).adRewardType,(MethodInfo *)0x0);
+      pSVar6 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffe8,(MethodInfo *)0x0)
+      ;
+      pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Ad_RewardRequest_Booster_,pSVar6,(MethodInfo *)0x0);
+      if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      obj = RewardedAdResult__Enum_ErrorClient;
+      StatHatWrapper::StatHatWrapper_Count(pSVar6,1,(MethodInfo *)0x0);
+      goto code_?;
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+code_?:
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -560,158 +577,52 @@ void Assembly-CSharp.dll::BoostMenuController::BoostMenuController_TryShowAd
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>);
+    func_?(&
+                    MethodInfo__BoostMenuController__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
+                   );
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
     cRam_? = '\x01';
   }
   (this->fields).boostUnlockedCallback = OnUnlockedCallback;
+  func_?(&(this->fields).boostUnlockedCallback,OnUnlockedCallback);
   (this->fields).adRewardType = type;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pIVar1 = MVGameControllerBase::MVGameControllerBase_get_EditModeUI((MethodInfo *)0x0);
-  if (pIVar1 != (IEditModeUI *)0x0) {
-    BoostMenuController_OnAdFinished(this,1,(MethodInfo *)0x0);
-    return;
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-  if (pIVar2 != (IAdManager *)0x0) {
-    pIVar3 = pIVar2->klass;
-    uVar4 = 0;
-    uVar5._0_1_ = (pIVar3->_1).rank;
-    uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-    if (uVar5 != 0) {
-      do {
-        if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
-            (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          ppMVar6 = &(&(pIVar2->klass->vtable).get_ReadyForRewardedAdRequest)
-                     [pIVar2->klass->interfaceOffsets[uVar4].offset].method;
-          goto code_?;
-        }
-        uVar4 = uVar4 + 1;
-      } while (uVar4 < uVar5);
-    }
-    ppMVar6 = (MethodInfo **)
-              func_?(pIVar2,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,4);
-code_?:
-    cVar7 = (*(code *)*ppMVar6)(pIVar2,ppMVar6[1]);
-    if (cVar7 == '\0') {
-      BoostMenuController_OnAdFinished(this,0,(MethodInfo *)0x0);
-      return;
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,
-               MethodInfo__BoostMenuController__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-               ,
-               MethodInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>__Action_System__Object__void__
-              );
-    if (pIVar2 != (IAdManager *)0x0) {
-      pIVar3 = pIVar2->klass;
-      uVar5 = 0;
-      uVar4._0_1_ = (pIVar3->_1).rank;
-      uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
-      if (uVar4 != 0) {
-        do {
-          if (pIVar3->interfaceOffsets[uVar5].interfaceType ==
-              (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-            ppMVar6 = &(&(pIVar2->klass->vtable).RequestRewardedAd)
-                       [pIVar3->interfaceOffsets[uVar5].offset].method;
-            goto code_?;
-          }
-          uVar5 = uVar5 + 1;
-        } while (uVar5 < uVar4);
-      }
-      ppMVar6 = (MethodInfo **)
-                func_?(pIVar2,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,6);
-code_?:
-      (*(code *)*ppMVar6)(pIVar2,this_00,1,ppMVar6[1]);
-      return;
-    }
-  }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
-  return;
-}
-
-
-/* Void <OnAdFinished>m__0(IModalPopupCreator, BaseEventData) */
-
-void Assembly-CSharp.dll::BoostMenuController::BoostMenuController__OnAdFinished_m__0
-               (IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
-
-{
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-  if (pIVar1 != (IAdManager *)0x0) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)
-                     [pIVar2->interfaceOffsets[uVar3].offset].method;
-          goto code_?;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    ppMVar5 = (MethodInfo **)
-              func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,0);
-code_?:
-    uVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
-    pSVar7 = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-    if (x != (IModalPopupCreator *)0x0) {
-      pIVar8 = x->klass;
-      uVar4 = 0;
-      uVar3._0_1_ = (pIVar8->_1).rank;
-      uVar3._1_1_ = (pIVar8->_1).minimumAlignment;
-      if (uVar3 != 0) {
-        do {
-          if (pIVar8->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-            ppMVar5 = &(&(x->klass->vtable).Create_3)[pIVar8->interfaceOffsets[uVar4].offset].method
-            ;
-            goto code_?;
-          }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar3);
+  if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+      (IEditModeUI *)0x0) {
+    pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+    if (pIVar1 != (IAdManager *)0x0) {
+      cVar2 = func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
+      if (cVar2 == '\0') {
+        BoostMenuController_OnAdFinished(this,0,(MethodInfo *)0x0);
+        return;
       }
-      ppMVar5 = (MethodInfo **)
-                func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,4);
-code_?:
-      (*(code *)*ppMVar5)(x,uVar6,pSVar7,ppMVar5[1]);
-      return;
+      pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      this_00 = (UnityAction_1_System_Int32Enum_ *)
+                func_?(
+                               TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>
+                               );
+      if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__BoostMenuController__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
+                   ,(MethodInfo *)0x0);
+        if (pIVar1 != (IAdManager *)0x0) {
+          func_?(6,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1,this_00,1);
+          return;
+        }
+      }
     }
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
   }
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  BoostMenuController_OnAdFinished(this,1,(MethodInfo *)0x0);
   return;
 }
 

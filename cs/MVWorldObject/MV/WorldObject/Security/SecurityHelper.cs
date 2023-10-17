@@ -9,13 +9,14 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.Security
 {
 	public static class SecurityHelper
 	{
 		// Fields
+		private const string ENCRYPTION_KEY = "P63oUa9unCY";
 		private static readonly byte[] SALT;
 		private static readonly byte[] key;
 		private static readonly byte[] iv;
@@ -25,6 +26,7 @@ namespace MV.WorldObject.Security
 		static SecurityHelper();
 	
 		// Methods
+		public static string Encrypt(string inputText);
 		public static string Decrypt(string inputText);
 	}
 }

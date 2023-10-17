@@ -5,14 +5,19 @@ void Assembly-CSharp.dll::ContinueButtonLockCursor::ContinueButtonLockCursor_Ini
                (ContinueButtonLockCursor *this,Action *cursorLockCallback,MethodInfo *method)
 
 {
-  pCVar1 = (this->fields).button;
-  if (pCVar1 != (ContinueButtonHandler *)0x0) {
-    (pCVar1->fields).OnClick = cursorLockCallback;
+  pAStack_1 = (Action *)&stack0xfffffffc;
+  pCVar2 = (this->fields).button;
+  if (pCVar2 != (ContinueButtonHandler *)0x0) {
+    pAStack_1 = cursorLockCallback;
+    (pCVar2->fields).OnClick = cursorLockCallback;
+    ppAStack_3 = &(pCVar2->fields).OnClick;
+    func_?();
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

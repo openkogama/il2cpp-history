@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Borodar.FarlandSkies.CloudyCrownPro.DotParams
 {
@@ -17,7 +17,7 @@ namespace Borodar.FarlandSkies.CloudyCrownPro.DotParams
 		// Fields
 		public Color TintColor;
 		public Color LightColor;
-		[Range]
+		[Range(0f, 8f)]
 		public float LightIntencity;
 	
 		// Constructors

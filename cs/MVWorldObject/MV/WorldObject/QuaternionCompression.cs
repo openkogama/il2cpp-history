@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Image 33: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -25,6 +25,7 @@ namespace MV.WorldObject
 		static QuaternionCompression();
 	
 		// Methods
+		public static void Test();
 		public static byte[] ToBytes(Quaternion quaternion);
 		public static Quaternion ToQuaternion(byte[] eulerAnglesByteRange);
 		private static Vector3 ToEuler(Quaternion q1);

@@ -6,155 +6,137 @@ void Assembly-CSharp.dll::ESAddToMarketPlaceState::ESAddToMarketPlaceState_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__WorldObject__BytePacker);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__ESAddToMarketPlaceState__WOCM_ReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                   );
+    func_?(&TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<int,_MV::WorldObject::MVItem>
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_ESAddToMarketPlaceState);
+    func_?(&StringLiteral_ItemID);
+    func_?(&StringLiteral_Item_not_found);
+    func_?(&StringLiteral_Is_not_resellable);
+    func_?(&StringLiteral_Is_already_authorprofile__Skip_t);
     cRam_? = '\x01';
   }
   iStack_1 = 0;
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
             ((Object *)StringLiteral_ESAddToMarketPlaceState,(MethodInfo *)0x0);
-  if (e != (EditorStateMachine *)0x0) {
-    this_00 = (Dictionary_2_System_Type_Pool_ *)
-              System.Core.dll::System::Linq::Enumerable+<CreateSelectIterator>c__Iterator10`2[System
-              ::Collections::Generic::KeyValuePair`2[System::Object,System::Object],System::Object]
-              ::
-              Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object__System_Collections_IEnumerator_get_Current
-                        ((Enumerable_CreateSelectIterator_c_Iterator10_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_System_Object_
-                          *)e,(MethodInfo *)0x0);
-    if (this_00 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-      pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-               Dictionary_2_System_Type_Pool__get_Item
-                         (this_00,(Type *)StringLiteral_ItemID,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Int32,pPVar2);
-      if (pPVar2 != (Pool *)0x0) {
-        if ((pPVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
-        func_?(pPVar2);
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        this_01 = (PrefabPool *)
-                  MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_01 != (PrefabPool *)0x0) {
-          this_02 = (KogamaSettingNumericBase_1_System_Single_ *)
-                    PrefabPool::PrefabPool_get_MVNegatePrefab(this_01,(MethodInfo *)0x0);
-          if (this_02 != (KogamaSettingNumericBase_1_System_Single_ *)0x0) {
-            pIVar4 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                     KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                     KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                               (this_02,(MethodInfo *)0x0);
-            if (pIVar4 != (IKogamaSetting *)0x0) {
-              pIVar5 = pIVar4->klass;
-              uVar6 = 0;
-              uVar7._0_1_ = (pIVar5->_1).rank;
-              uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
-              if (uVar7 != 0) {
-                do {
-                  if (pIVar5->interfaceOffsets[uVar6].interfaceType ==
-                      (Il2CppClass *)
-                      TypeInfo__System__Collections__Generic__IDictionary<int,_MV::WorldObject::MVItem>
-                     ) {
-                    ppvVar8 = &pIVar4->klass[1]._0.gc_desc +
-                              pIVar4->klass->interfaceOffsets[uVar6].offset * 2;
-                    goto code_?;
-                  }
-                  uVar6 = uVar6 + 1;
-                } while (uVar6 < uVar7);
+  if ((e != (EditorStateMachine *)0x0) &&
+     (this_00 = (e->fields)._.data, this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_00,(Object *)StringLiteral_ItemID,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    uVar3 = CONCAT44(TypeInfo__System__Int32,pOVar2);
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+      goto code_?;
+      piVar4 = (int32_t *)func_?(pOVar2);
+      itemID = *piVar4;
+      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar5 != (MVNetworkGame *)0x0) &&
+         (pPVar6 = (pMVar5->fields)._PlayerRepository_k__BackingField,
+         pPVar6 != (PlayerRepository *)0x0)) {
+        pDVar7 = (pPVar6->fields).playerInventory;
+        if (pDVar7 != (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)0x0) {
+          uVar8 = 0;
+          uVar9 = (pDVar7->klass->_1).interface_offsets_count;
+          if (uVar9 != 0) {
+            do {
+              if (pDVar7->klass->interfaceOffsets[uVar8].interfaceType ==
+                  (Il2CppClass *)
+                  TypeInfo__System__Collections__Generic__IDictionary<int,_MV::WorldObject::MVItem>)
+              {
+                pVVar10 = &(pDVar7->klass->vtable).
+                           System_Collections_Generic_IDictionary_TKey_TValue__get_Values +
+                          pDVar7->klass->interfaceOffsets[uVar8].offset;
+                goto code_?;
               }
-              ppvVar8 = (void **)func_?(pIVar4,
-                                                 TypeInfo__System__Collections__Generic__IDictionary<int,_MV::WorldObject::MVItem>
-                                                 ,3);
+              uVar8 = uVar8 + 1;
+            } while (uVar8 < uVar9);
+          }
+          pVVar10 = (VirtualInvokeData *)
+                    func_?(pDVar7,
+                                    TypeInfo__System__Collections__Generic__IDictionary<int,_MV::WorldObject::MVItem>
+                                    ,7,0);
 code_?:
-              cVar9 = (**ppvVar8)(pIVar4,ppvVar8[1],&iStack_1);
-              if (cVar9 == '\0') {
-                if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) !=
-                     0) && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-                  func_?(TypeInfo__UnityEngine__Debug);
+          cVar11 = (*pVVar10->methodPtr)(pDVar7,itemID,&iStack_1,pVVar10->method);
+          if (cVar11 == '\0') {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__UnityEngine__Debug);
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                      ((Object *)StringLiteral_Item_not_found,(MethodInfo *)0x0);
+            FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
+            return;
+          }
+          if (iStack_1 != 0) {
+            iVar12 = *(int *)(iStack_1 + 0x2c);
+            pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if (pMVar5 != (MVNetworkGame *)0x0) {
+              pMVar13 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
+              if (pMVar13 != (MVLocalPlayer *)0x0) {
+                if (iVar12 == (pMVar13->fields)._._ProfileID_k__BackingField) {
+                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?(TypeInfo__UnityEngine__Debug);
+                  }
+                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                            ((Object *)StringLiteral_Is_already_authorprofile__Skip_t,
+                             (MethodInfo *)0x0);
+                  FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
+                  return;
                 }
-                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                          ((Object *)StringLiteral_Item_not_found,(MethodInfo *)0x0);
-                FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
-                return;
-              }
-              if (iStack_1 != 0) {
-                pOVar10 = *(Object **)(iStack_1 + 0x2c);
-                if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                     != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                  func_?(TypeInfo__MVGameControllerBase);
-                }
-                pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if (pMVar11 != (MVNetworkGame *)0x0) {
-                  this_03 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar11,(MethodInfo *)0x0);
-                  if (this_03 != (MVLocalPlayer *)0x0) {
-                    pOVar12 = UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-                              TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-                              TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                                        ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)this_03,
-                                         (MethodInfo *)0x0);
-                    if (pOVar10 == pOVar12) {
-                      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr &
-                           0x2000000) != 0) &&
-                         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-                        func_?(TypeInfo__UnityEngine__Debug);
-                      }
-                      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                                ((Object *)StringLiteral_Is_already_authorprofile__Skip_t,
-                                 (MethodInfo *)0x0);
-                      FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
-                      return;
+                if (iStack_1 != 0) {
+                  if (*(char *)(iStack_1 + 0x29) == '\0') {
+                    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                      func_?(TypeInfo__UnityEngine__Debug);
                     }
-                    if (iStack_1 != 0) {
-                      if (*(char *)(iStack_1 + 0x28) == '\0') {
-                        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr &
-                             0x2000000) != 0) &&
-                           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-                          func_?(TypeInfo__UnityEngine__Debug);
-                        }
-                        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                                  ((Object *)StringLiteral_Is_not_resellable,(MethodInfo *)0x0);
-                        FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
-                        return;
-                      }
-                      buffer = *(Byte__Array **)(iStack_1 + 0x24);
-                      this_04 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker)
-                      ;
-                      MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                                (this_04,buffer,(MethodInfo *)0x0);
-                      (this->fields).inventoryItemData = this_04;
-                      (this->fields).internalState = 1;
-                      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr &
-                           0x2000000) != 0) &&
-                         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                        func_?();
-                      }
-                      pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game
-                                         ((MethodInfo *)0x0);
-                      this_05 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                                 *)func_?();
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                      SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                                (this_05,(Object *)this,
+                    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                              ((Object *)StringLiteral_Is_not_resellable,(MethodInfo *)0x0);
+                    FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
+                    return;
+                  }
+                  buffer = *(Byte__Array **)(iStack_1 + 0x24);
+                  this_01 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
+                  if (this_01 != (BytePacker *)0x0) {
+                    MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
+                              (this_01,buffer,(MethodInfo *)0x0);
+                    (this->fields).inventoryItemData = this_01;
+                    func_?(&(this->fields).inventoryItemData,this_01);
+                    (this->fields).internalState = 1;
+                    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                    this_02 = (UnityAction_2_System_Object_System_Object_ *)
+                              func_?(
+                                             TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>
+                                             );
+                    if (this_02 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                      Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                                (this_02,(Object *)this,
                                  MethodInfo__ESAddToMarketPlaceState__WOCM_ReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
-                                 ,
-                                 MethodInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>__EventHandler_System__Object__void__
-                                );
-                      if (pMVar11 != (MVNetworkGame *)0x0) {
+                                 ,(MethodInfo *)0x0);
+                      if (pMVar5 != (MVNetworkGame *)0x0) {
                         MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery
-                                  (pMVar11,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_05,
+                                  (pMVar5,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_02,
                                    (MethodInfo *)0x0);
-                        this_06 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                        this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                                             ((MethodInfo *)0x0);
-                        if (this_06 != (MVNetworkGame_OperationRequests *)0x0) {
+                        if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
                           MVNetworkGame+OperationRequests::
                           MVNetworkGame_OperationRequests_RequestMarketPlaceItem
-                                    (this_06,0,(MethodInfo *)0x0);
+                                    (this_03,itemID,(MethodInfo *)0x0);
                           return;
                         }
                       }
@@ -168,11 +150,11 @@ code_?:
       }
     }
   }
-  uVar3 = func_?(0);
+  uVar3 = func_?();
 code_?:
   func_?(uVar3);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -184,130 +166,125 @@ void Assembly-CSharp.dll::ESAddToMarketPlaceState::ESAddToMarketPlaceState_Execu
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ESAddToMarketPlaceState__AddToMarketPlaceInternalState);
+    func_?(&TypeInfo__MV__Common__CommonValues);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__KoGaMaPackageClient);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_Compare_val__0____threshold__1__);
+    func_?(&StringLiteral_Compare_val__0_____threshold__1_);
     cRam_? = '\x01';
   }
   pEVar1 = this;
-  pEVar2 = (ESAddToMarketPlaceState *)(this->fields).internalState;
-  if (pEVar2 == (ESAddToMarketPlaceState *)0x1) {
+  iVar2 = (this->fields).internalState;
+  if (iVar2 == 1) {
     if ((this->fields).marketPlaceItemData != (BytePacker *)0x0) {
       (this->fields).internalState = 2;
-      return;
     }
   }
   else {
-    if (pEVar2 == (ESAddToMarketPlaceState *)0x2) {
-      pBVar3 = (this->fields).inventoryItemData;
+    if (iVar2 == 2) {
+      koGaMaData = (this->fields).inventoryItemData;
       this_00 = (KoGaMaPackageClient *)func_?(TypeInfo__KoGaMaPackageClient);
-      KoGaMaPackageClient::KoGaMaPackageClient__ctor(this_00,pBVar3,0,(MethodInfo *)0x0);
       if (this_00 != (KoGaMaPackageClient *)0x0) {
+        KoGaMaPackageClient::KoGaMaPackageClient__ctor(this_00,koGaMaData,0,(MethodInfo *)0x0);
         KoGaMaPackageClient::KoGaMaPackageClient_InventoryInitialize(this_00,(MethodInfo *)0x0);
-        pBVar3 = (pEVar1->fields).marketPlaceItemData;
-        pEVar2 = (ESAddToMarketPlaceState *)func_?(TypeInfo__KoGaMaPackageClient);
-        this = pEVar2;
-        KoGaMaPackageClient::KoGaMaPackageClient__ctor
-                  ((KoGaMaPackageClient *)pEVar2,pBVar3,0,(MethodInfo *)0x0);
-        if (pEVar2 != (ESAddToMarketPlaceState *)0x0) {
-          KoGaMaPackageClient::KoGaMaPackageClient_InventoryInitialize
-                    ((KoGaMaPackageClient *)pEVar2,(MethodInfo *)0x0);
-          pEVar4 = (EditorStateMachine__Class *)
-                   KoGaMaPackageClient::KoGaMaPackageClient_Compare
-                             ((KoGaMaPackageClient *)pEVar2,this_00,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__MV__Common__CommonValues->vtable).Equals.methodPtr & 0x2000000) !=
-               0) && ((TypeInfo__MV__Common__CommonValues->_1).cctor_started == 0)) {
-            this = (ESAddToMarketPlaceState *)TypeInfo__MV__Common__CommonValues;
+        this = (ESAddToMarketPlaceState *)(pEVar1->fields).marketPlaceItemData;
+        this_01 = (KoGaMaPackageClient *)func_?(TypeInfo__KoGaMaPackageClient);
+        if (this_01 != (KoGaMaPackageClient *)0x0) {
+          KoGaMaPackageClient::KoGaMaPackageClient__ctor
+                    (this_01,(BytePacker *)this,0,(MethodInfo *)0x0);
+          KoGaMaPackageClient::KoGaMaPackageClient_InventoryInitialize(this_01,(MethodInfo *)0x0);
+          pIStack_3 = (Il2CppMethodPointer)
+                      KoGaMaPackageClient::KoGaMaPackageClient_Compare
+                                (this_01,this_00,(MethodInfo *)0x0);
+          if ((TypeInfo__MV__Common__CommonValues->_1).cctor_finished_or_no_cctor == 0) {
+            e = (EditorStateMachine *)TypeInfo__MV__Common__CommonValues;
+            this = (ESAddToMarketPlaceState *)&UNK_?;
             func_?();
           }
-          this = (ESAddToMarketPlaceState *)0x0;
-          fVar5 = MVCommon.dll::MV::Common::CommonValues::CommonValues_get_CompareThreshold
+          e = (EditorStateMachine *)0x0;
+          this = (ESAddToMarketPlaceState *)&UNK_?;
+          fVar4 = MVCommon.dll::MV::Common::CommonValues::CommonValues_get_CompareThreshold
                             ((MethodInfo *)0x0);
-          e = (EditorStateMachine *)&this;
-          this = (ESAddToMarketPlaceState *)TypeInfo__System__Single;
-          if ((float)pEVar4 <= fVar5) {
-            pOVar6 = (Object *)func_?();
-            if ((((uint)(TypeInfo__MV__Common__CommonValues->vtable).Equals.methodPtr & 0x2000000)
-                 != 0) && ((TypeInfo__MV__Common__CommonValues->_1).cctor_started == 0)) {
-              e = (EditorStateMachine *)TypeInfo__MV__Common__CommonValues;
-              this = (ESAddToMarketPlaceState *)&UNK_?;
-              func_?();
-            }
-            e = (EditorStateMachine *)0x0;
+          method = (MethodInfo *)&this;
+          e = (EditorStateMachine *)TypeInfo__System__Single;
+          if ((float)pIStack_3 <= fVar4) {
             this = (ESAddToMarketPlaceState *)&UNK_?;
-            MVCommon.dll::MV::Common::CommonValues::CommonValues_get_CompareThreshold
-                      ((MethodInfo *)0x0);
-            e = (EditorStateMachine *)&stack0xfffffff4;
-            this = (ESAddToMarketPlaceState *)TypeInfo__System__Single;
-            pEVar4 = (EditorStateMachine__Class *)func_?();
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__String);
-            }
-            message_00 = (Debug_1__Class *)
-                         mscorlib.dll::System::String::String_Format_1
-                                   (StringLiteral_Compare_val__0_____threshold__1_,pOVar6,
-                                    (Object *)pEVar4,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-              message_00 = TypeInfo__UnityEngine__Debug;
+            pOVar5 = (Object *)func_?();
+            if ((TypeInfo__MV__Common__CommonValues->_1).cctor_finished_or_no_cctor == 0) {
+              method = (MethodInfo *)TypeInfo__MV__Common__CommonValues;
+              e = (EditorStateMachine *)&UNK_?;
               func_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                      ((Object *)message_00,(MethodInfo *)0x0);
-            (pEVar1->fields).internalState = 3;
-          }
-          else {
-            pEVar4 = (EditorStateMachine__Class *)func_?();
-            if ((((uint)(TypeInfo__MV__Common__CommonValues->vtable).Equals.methodPtr & 0x2000000)
-                 != 0) && ((TypeInfo__MV__Common__CommonValues->_1).cctor_started == 0)) {
-              e = (EditorStateMachine *)TypeInfo__MV__Common__CommonValues;
-              this = (ESAddToMarketPlaceState *)&UNK_?;
-              func_?();
-            }
-            e = (EditorStateMachine *)0x0;
+            method = (MethodInfo *)0x0;
+            e = (EditorStateMachine *)&UNK_?;
+            pIStack_3 = (Il2CppMethodPointer)
+                        MVCommon.dll::MV::Common::CommonValues::CommonValues_get_CompareThreshold
+                                  ((MethodInfo *)0x0);
+            method = (MethodInfo *)&pIStack_3;
+            e = (EditorStateMachine *)TypeInfo__System__Single;
             this = (ESAddToMarketPlaceState *)&UNK_?;
-            MVCommon.dll::MV::Common::CommonValues::CommonValues_get_CompareThreshold
-                      ((MethodInfo *)0x0);
-            e = (EditorStateMachine *)&stack0xfffffff8;
-            this = (ESAddToMarketPlaceState *)TypeInfo__System__Single;
             pOVar6 = (Object *)func_?();
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__String);
-            }
-            message = mscorlib.dll::System::String::String_Format_1
-                                (StringLiteral_Compare_val__0____threshold__1__,(Object *)pEVar4,
-                                 pOVar6,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+            pSVar7 = mscorlib.dll::System::String::String_Format_1
+                               (StringLiteral_Compare_val__0_____threshold__1_,pOVar5,pOVar6,
+                                (MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Debug);
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                      ((Object *)message,(MethodInfo *)0x0);
+                      ((Object *)pSVar7,(MethodInfo *)0x0);
+            (pEVar1->fields).internalState = 3;
+          }
+          else {
+            this = (ESAddToMarketPlaceState *)&UNK_?;
+            pOVar5 = (Object *)func_?();
+            if ((TypeInfo__MV__Common__CommonValues->_1).cctor_finished_or_no_cctor == 0) {
+              method = (MethodInfo *)TypeInfo__MV__Common__CommonValues;
+              e = (EditorStateMachine *)&UNK_?;
+              func_?();
+            }
+            method = (MethodInfo *)0x0;
+            e = (EditorStateMachine *)&UNK_?;
+            pIStack_3 = (Il2CppMethodPointer)
+                        MVCommon.dll::MV::Common::CommonValues::CommonValues_get_CompareThreshold
+                                  ((MethodInfo *)0x0);
+            method = (MethodInfo *)&pIStack_3;
+            e = (EditorStateMachine *)TypeInfo__System__Single;
+            this = (ESAddToMarketPlaceState *)&UNK_?;
+            pOVar6 = (Object *)func_?();
+            pSVar7 = mscorlib.dll::System::String::String_Format_1
+                               (StringLiteral_Compare_val__0____threshold__1__,pOVar5,pOVar6,
+                                (MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__UnityEngine__Debug);
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                      ((Object *)pSVar7,(MethodInfo *)0x0);
             if (e == (EditorStateMachine *)0x0) goto code_?;
             FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
           }
           KoGaMaPackageClient::KoGaMaPackageClient_Destroy(this_00,(MethodInfo *)0x0);
-          KoGaMaPackageClient::KoGaMaPackageClient_Destroy
-                    ((KoGaMaPackageClient *)pEVar2,(MethodInfo *)0x0);
+          KoGaMaPackageClient::KoGaMaPackageClient_Destroy(this_01,(MethodInfo *)0x0);
           return;
         }
       }
 code_?:
-      func_?(0);
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    if (pEVar2 == (ESAddToMarketPlaceState *)0x3) {
-      this = pEVar2;
-      pOVar6 = (Object *)
+    if (iVar2 == 3) {
+      this = (ESAddToMarketPlaceState *)0x3;
+      pOVar5 = (Object *)
                func_?(TypeInfo__ESAddToMarketPlaceState__AddToMarketPlaceInternalState,
                                &this);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(pOVar6,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(pOVar5,(MethodInfo *)0x0);
+      return;
     }
   }
   return;
@@ -323,30 +300,30 @@ void Assembly-CSharp.dll::ESAddToMarketPlaceState::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__ESAddToMarketPlaceState__WOCM_ReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                   );
+    func_?(&TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_01,(Object *)this,
-             MethodInfo__ESAddToMarketPlaceState__WOCM_ReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
-             ,
-             MethodInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>__EventHandler_System__Object__void__
-            );
-  if (this_00 != (MVNetworkGame *)0x0) {
-    MVNetworkGame::MVNetworkGame_remove_ReceivedItemFromQuery
-              (this_00,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0);
-    if (e != (ReceivedItemFromQueryEventArgs *)0x0) {
-      (this->fields).marketPlaceItemData = (e->fields).KoGaMaData;
-      return;
+  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__ESAddToMarketPlaceState__WOCM_ReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_remove_ReceivedItemFromQuery
+                (this_00,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0
+                );
+      if (e != (ReceivedItemFromQueryEventArgs *)0x0) {
+        (this->fields).marketPlaceItemData = (e->fields).KoGaMaData;
+        func_?();
+        return;
+      }
     }
   }
   func_?();

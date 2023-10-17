@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GamePointGainEffect : MonoBehaviour
 {
@@ -34,7 +34,7 @@ public class GamePointGainEffect : MonoBehaviour
 
 	// Methods
 	public void Initialize(UnityAction<int> onReachCallbackCallback, int id);
-	public void StartEffect(Transform targetTransform, float offsetDirectionXMin = -0.6f, float offsetDirectionXMax = 0.6f, float offsetDirectionYMin = -0.8f, float offsetDirectionYMax = 0.8f);
+	public void StartEffect(Transform tr, float offsetDirectionXMin = -0.6f, float offsetDirectionXMax = 0.6f, float offsetDirectionYMin = -0.8f, float offsetDirectionYMax = 0.8f);
 	private void Update();
 	private void UpdateOffsetSpeed();
 	private void UpdateTargetSpeed();

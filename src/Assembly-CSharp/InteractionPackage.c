@@ -9,67 +9,75 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if (target != (MVWorldObjectClient *)0x0) {
-    pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                       ((DayNightCycle *)target,(MethodInfo *)0x0);
-    if (pCVar1 != (CelestialParam *)0x0) {
-      targetInteractable =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                     ((GameObject *)pCVar1,
-                      MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                     );
-      bVar2 = InteractionPackage_IsSpawnProtected
-                        (this,(MVInteractableBase *)targetInteractable,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (targetInteractable == (UseInteractorHandler *)0x0) goto code_?;
-          (*targetInteractable->klass[1]._0.gc_desc)
-                    (targetInteractable,damage,shooter,killedByType,
-                     targetInteractable->klass[1]._0.name);
-          if (shooter == (MVPlayer *)0x0) goto code_?;
-          pSVar3 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                   NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                             ((NamedThemeAttribute_1_UnityEngine_Color_ *)shooter,(MethodInfo *)0x0)
-          ;
-          (*(code *)targetInteractable->klass[1]._0.namespaze)
-                    (targetInteractable,modType,pSVar3,0,
-                     targetInteractable->klass[1]._0.byval_arg.data.dummy);
-        }
-        pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)target,(MethodInfo *)0x0);
-        if (pCVar1 == (CelestialParam *)0x0) goto code_?;
-        this_00 = (MVRigidBody *)
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                            ((GameObject *)pCVar1,
-                             MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
-                            );
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (this_00 == (MVRigidBody *)0x0) goto code_?;
-          MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
-        }
+  if ((target != (MVWorldObjectClient *)0x0) &&
+     (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (pGVar1,
+                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                  );
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      if (cVar3 != '\0') {
+        return;
+      }
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if ((x == (Object_1 *)0x0) ||
+         ((*(code *)x->klass[1]._0.name)(x,damage,shooter,killedByType,x->klass[1]._0.namespaze),
+         shooter == (MVPlayer *)0x0)) goto code_?;
+      pOVar4 = x->klass;
+      uVar5._0_2_ = pOVar4[1]._0.this_arg.attrs;
+      uVar5._2_1_ = pOVar4[1]._0.this_arg.type;
+      uVar5._3_1_ = pOVar4[1]._0.this_arg.field_0x7;
+      (*(code *)pOVar4[1]._0.this_arg.data)
+                (x,modType,(shooter->fields)._ActorNr_k__BackingField,0,uVar5);
+    }
+    pGVar1 = (target->fields).gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
+      this_00 = (MVRigidBody *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          (pGVar1,
+                           MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
+                          );
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        if (this_00 == (MVRigidBody *)0x0) goto code_?;
+        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -82,60 +90,68 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_1
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if (target != (MVWorldObjectClient *)0x0) {
-    pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                       ((DayNightCycle *)target,(MethodInfo *)0x0);
-    if (pCVar1 != (CelestialParam *)0x0) {
-      targetInteractable =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                     ((GameObject *)pCVar1,
-                      MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                     );
-      bVar2 = InteractionPackage_IsSpawnProtected
-                        (this,(MVInteractableBase *)targetInteractable,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          shooter = (MVPlayer *)TypeInfo__UnityEngine__Object;
-          func_?();
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (targetInteractable == (UseInteractorHandler *)0x0) goto code_?;
-          (*targetInteractable->klass[1]._0.gc_desc)
-                    (targetInteractable,damage,shooter,killedByType,
-                     targetInteractable->klass[1]._0.name);
-        }
-        pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)target,(MethodInfo *)0x0);
-        if (pCVar1 == (CelestialParam *)0x0) goto code_?;
-        this_00 = (MVRigidBody *)
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                            ((GameObject *)pCVar1,
-                             MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
-                            );
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (this_00 == (MVRigidBody *)0x0) goto code_?;
-          MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
-        }
+  if ((target != (MVWorldObjectClient *)0x0) &&
+     (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (pGVar1,
+                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                  );
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      if (cVar3 != '\0') {
+        return;
+      }
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      (*(code *)x->klass[1]._0.name)(x,damage,shooter,killedByType,x->klass[1]._0.namespaze);
+    }
+    pGVar1 = (target->fields).gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
+      this_00 = (MVRigidBody *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          (pGVar1,
+                           MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
+                          );
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        if (this_00 == (MVRigidBody *)0x0) goto code_?;
+        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -148,43 +164,50 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_2
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if (target != (MVWorldObjectClient *)0x0) {
-    this_00 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                        ((DayNightCycle *)target,(MethodInfo *)0x0);
-    if (this_00 != (CelestialParam *)0x0) {
-      targetInteractable =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                     ((GameObject *)this_00,
-                      MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                     );
-      bVar1 = InteractionPackage_IsSpawnProtected
-                        (this,(MVInteractableBase *)targetInteractable,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          damage = (float)TypeInfo__UnityEngine__Object;
-          shooter = (MVPlayer *)&UNK_?;
-          func_?();
-        }
-        bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar1 != 0) {
-          if (targetInteractable == (UseInteractorHandler *)0x0) goto code_?;
-          (*targetInteractable->klass[1]._0.gc_desc)
-                    (targetInteractable,damage,shooter,killedByType,
-                     targetInteractable->klass[1]._0.name);
-        }
-      }
-      return;
+  if ((target != (MVWorldObjectClient *)0x0) &&
+     (this_00 = (target->fields).gameObject, this_00 != (GameObject *)0x0)) {
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (this_00,
+                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                  );
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
     }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      cVar2 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      if (cVar2 != '\0') {
+        return;
+      }
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      (*(code *)x->klass[1]._0.name)(x,damage,shooter,killedByType,x->klass[1]._0.namespaze);
+    }
+    return;
   }
 code_?:
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -197,64 +220,73 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_3
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if (target != (MVWorldObjectClient *)0x0) {
-    pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                       ((DayNightCycle *)target,(MethodInfo *)0x0);
-    if (pCVar1 != (CelestialParam *)0x0) {
-      targetInteractable =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                     ((GameObject *)pCVar1,
-                      MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                     );
-      bVar2 = InteractionPackage_IsSpawnProtected
-                        (this,(MVInteractableBase *)targetInteractable,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (shooter == (MVPlayer *)0x0) goto code_?;
-          pSVar3 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                   NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                             ((NamedThemeAttribute_1_UnityEngine_Color_ *)shooter,(MethodInfo *)0x0)
-          ;
-          if (targetInteractable == (UseInteractorHandler *)0x0) goto code_?;
-          (*(code *)targetInteractable->klass[1]._0.namespaze)
-                    (targetInteractable,modifierType,pSVar3,0,
-                     targetInteractable->klass[1]._0.byval_arg.data.dummy);
-        }
-        pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)target,(MethodInfo *)0x0);
-        if (pCVar1 == (CelestialParam *)0x0) goto code_?;
-        this_00 = (MVRigidBody *)
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                            ((GameObject *)pCVar1,
-                             MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
-                            );
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (this_00 == (MVRigidBody *)0x0) goto code_?;
-          MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
-        }
+  if ((target != (MVWorldObjectClient *)0x0) &&
+     (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (pGVar1,
+                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                  );
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      if (cVar3 != '\0') {
+        return;
+      }
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if ((shooter == (MVPlayer *)0x0) || (x == (Object_1 *)0x0)) goto code_?;
+      pOVar4 = x->klass;
+      uVar5._0_2_ = pOVar4[1]._0.this_arg.attrs;
+      uVar5._2_1_ = pOVar4[1]._0.this_arg.type;
+      uVar5._3_1_ = pOVar4[1]._0.this_arg.field_0x7;
+      (*(code *)pOVar4[1]._0.this_arg.data)
+                (x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,uVar5);
+    }
+    pGVar1 = (target->fields).gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
+      this_00 = (MVRigidBody *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          (pGVar1,
+                           MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
+                          );
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        if (this_00 == (MVRigidBody *)0x0) goto code_?;
+        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -267,64 +299,94 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_4
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    func_?();
     cRam_? = '\x01';
   }
-  if (target != (MVWorldObjectClient *)0x0) {
-    pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                       ((DayNightCycle *)target,(MethodInfo *)0x0);
-    if (pCVar1 != (CelestialParam *)0x0) {
-      targetInteractable =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                     ((GameObject *)pCVar1,
-                      MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                     );
-      bVar2 = InteractionPackage_IsSpawnProtected
-                        (this,(MVInteractableBase *)targetInteractable,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          impulse.x = (float)TypeInfo__UnityEngine__Object;
-          func_?();
+  if ((target != (MVWorldObjectClient *)0x0) &&
+     (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
+    pOVar2 = (Object_1 *)&UNK_?;
+    pIVar3 = (Il2CppClass *)
+             MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+    ;
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (pGVar1,
+                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                  );
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      pIVar3 = x->klass[1]._0.castClass;
+      pGVar1 = (GameObject *)0x11;
+      pOVar2 = x;
+      cVar5 = (*(code *)x->klass[1]._0.element_class)();
+      if (cVar5 != '\0') {
+        return;
+      }
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object,pOVar2,pGVar1,pIVar3);
+    }
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      pOVar6 = x->klass;
+      uVar7._0_2_ = pOVar6[1]._0.this_arg.attrs;
+      uVar7._2_1_ = pOVar6[1]._0.this_arg.type;
+      uVar7._3_1_ = pOVar6[1]._0.this_arg.field_0x7;
+      (*(code *)pOVar6[1]._0.this_arg.data)(x,modifierType,0xffffffff,0,uVar7);
+    }
+    pGVar1 = (target->fields).gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
+      this_00 = (Behaviour *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          (pGVar1,
+                           MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
+                          );
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        if (this_00 == (Behaviour *)0x0) goto code_?;
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                         );
+          cRam_? = '\x01';
         }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (targetInteractable == (UseInteractorHandler *)0x0) goto code_?;
-          (*(code *)targetInteractable->klass[1]._0.namespaze)
-                    (targetInteractable,modifierType,0xffffffff,0,
-                     targetInteractable->klass[1]._0.byval_arg.data.dummy);
-        }
-        pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)target,(MethodInfo *)0x0);
-        if (pCVar1 == (CelestialParam *)0x0) goto code_?;
-        this_00 = (MVRigidBody *)
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                            ((GameObject *)pCVar1,
-                             MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
-                            );
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (this_00 == (MVRigidBody *)0x0) goto code_?;
-          impulse_00.y = impulse.y;
-          impulse_00.x = impulse.x;
-          impulse_00.z = impulse.z;
-          MVRigidBody::MVRigidBody_AddImpulse
-                    (this_00,(MVPlayer *)0x0,impulse_00,1,(MethodInfo *)0x0);
+        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+                          (this_00,(MethodInfo *)0x0);
+        if (bVar4 != 0) {
+          if (this_00[3].klass == (Behaviour__Class *)0x0) goto code_?;
+          func_?(this_00[3].klass,impulse._0_8_,impulse.z,
+                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                         );
+          (*(code *)this_00->klass[1]._0.generic_class)
+                    (this_00,this_00->klass[1]._0.typeMetadataHandle);
         }
       }
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -337,50 +399,57 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_5
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if (target != (MVWorldObjectClient *)0x0) {
-    pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                       ((DayNightCycle *)target,(MethodInfo *)0x0);
-    if (pCVar1 != (CelestialParam *)0x0) {
-      targetInteractable =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                     ((GameObject *)pCVar1,
-                      MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                     );
-      bVar2 = InteractionPackage_IsSpawnProtected
-                        (this,(MVInteractableBase *)targetInteractable,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        pCVar1 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)target,(MethodInfo *)0x0);
-        pMVar3 = MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__;
-        if (pCVar1 == (CelestialParam *)0x0) goto code_?;
-        this_00 = (MVRigidBody *)
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                            ((GameObject *)pCVar1,
-                             MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
-                            );
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          if (this_00 == (MVRigidBody *)0x0) goto code_?;
-          impulse_00.y = (float)pCVar1;
-          impulse_00.x = (float)&UNK_?;
-          impulse_00.z = (float)pMVar3;
-          MVRigidBody::MVRigidBody_AddImpulse
-                    (this_00,(MVPlayer *)target,impulse_00,1,(MethodInfo *)0x0);
-        }
+  if ((target != (MVWorldObjectClient *)0x0) &&
+     (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (pGVar1,
+                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                  );
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      if (cVar3 != '\0') {
+        return;
+      }
+    }
+    pGVar1 = (target->fields).gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
+      this_00 = (MVRigidBody *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          (pGVar1,
+                           MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
+                          );
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        if (this_00 == (MVRigidBody *)0x0) goto code_?;
+        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -395,50 +464,55 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_6
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) &&
-     (this_00 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                          ((DayNightCycle *)target,(MethodInfo *)0x0),
-     this_00 != (CelestialParam *)0x0)) {
-    targetInteractable =
-         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                   ((GameObject *)this_00,
-                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-                   );
-    bVar1 = InteractionPackage_IsSpawnProtected
-                      (this,(MVInteractableBase *)targetInteractable,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        modifierType = (AvatarModifierPackageType__Enum)TypeInfo__UnityEngine__Object;
-        shooter = (MVPlayer *)&UNK_?;
-        func_?();
+     (this_00 = (target->fields).gameObject, this_00 != (GameObject *)0x0)) {
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (this_00,
+                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                  );
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      cVar2 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      if (cVar2 != '\0') {
+        return;
       }
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
-        if ((shooter != (MVPlayer *)0x0) &&
-           (pSVar2 = ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                     NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                               ((NamedThemeAttribute_1_UnityEngine_Color_ *)shooter,
-                                (MethodInfo *)0x0),
-           targetInteractable != (UseInteractorHandler *)0x0)) {
-          (*(code *)targetInteractable->klass[1]._0.namespaze)
-                    (targetInteractable,modifierType,pSVar2,0,
-                     targetInteractable->klass[1]._0.byval_arg.data.dummy);
-          return;
-        }
-        goto code_?;
-      }
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      if ((shooter == (MVPlayer *)0x0) || (x == (Object_1 *)0x0)) goto code_?;
+      pOVar3 = x->klass;
+      uVar4._0_2_ = pOVar3[1]._0.this_arg.attrs;
+      uVar4._2_1_ = pOVar3[1]._0.this_arg.type;
+      uVar4._3_1_ = pOVar3[1]._0.this_arg.field_0x7;
+      (*(code *)pOVar3[1]._0.this_arg.data)
+                (x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,uVar4);
     }
     return;
   }
 code_?:
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -450,11 +524,10 @@ bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsSpawnProtecte
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -463,13 +536,12 @@ bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsSpawnProtecte
     return 0;
   }
   if (targetInteractable != (MVInteractableBase *)0x0) {
-    cVar2 = (*(code *)(targetInteractable->klass->vtable).__unknown_2.method)
-                      (targetInteractable,0x11);
-    return cVar2 != '\0';
+    bVar1 = (*(targetInteractable->klass->vtable).__unknown_3.methodPtr)(targetInteractable,0x11);
+    return bVar1;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  bVar1 = (*pcVar2)();
   return bVar1;
 }
 
@@ -481,7 +553,25 @@ bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsValidTarget
                MVInteractableBase *targetInteractable,MethodInfo *method)
 
 {
-  bVar1 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return 1;
+  }
+  if (targetInteractable != (MVInteractableBase *)0x0) {
+    cVar2 = (*(targetInteractable->klass->vtable).__unknown_3.methodPtr)(targetInteractable,0x11);
+    return cVar2 == '\0';
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
+  return bVar1;
 }
 

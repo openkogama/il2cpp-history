@@ -7,30 +7,26 @@ void Assembly-CSharp.dll::FirstTimeEventPopupWithProgress::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral____);
     cRam_? = '\x01';
   }
-  pFVar1 = this;
-  this = (FirstTimeEventPopupWithProgress *)current;
-  pTVar2 = (pFVar1->fields).progressText;
-  arg0 = (Object *)func_?(TypeInfo__System__Single,&this);
-  fStack_3 = max;
-  arg2 = (Object *)func_?(TypeInfo__System__Single,&fStack_3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar4 = mscorlib.dll::System::String::String_Concat_1
-                     (arg0,(Object *)StringLiteral____,arg2,(MethodInfo *)0x0);
-  if (pTVar2 != (Text *)0x0) {
-    (*(code *)(pTVar2->klass->vtable).set_text.method)
-              (pTVar2,pSVar4,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    (pFVar1->fields).interpolateToSize = current / max;
+  pTVar1 = (this->fields).progressText;
+  pSVar2 = mscorlib.dll::System::Single::Single_ToString((Single *)&current,(MethodInfo *)0x0);
+  str2 = mscorlib.dll::System::Single::Single_ToString((Single *)&max,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                     (pSVar2,::StringLiteral____,str2,(MethodInfo *)0x0);
+  if (pTVar1 != (Text *)0x0) {
+    pTVar3 = pTVar1->klass;
+    max = (float)(pTVar3->vtable).set_text.method;
+    current = (float)pSVar2;
+    (*(pTVar3->vtable).set_text.methodPtr)();
+    (this->fields).interpolateToSize = current / max;
     return;
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  max = (float)&UNK_?;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -41,40 +37,30 @@ void Assembly-CSharp.dll::FirstTimeEventPopupWithProgress::FirstTimeEventPopupWi
                (FirstTimeEventPopupWithProgress *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  fVar1 = (this->fields).progress;
-  a = (this->fields).interpolateToSize;
-  if (fVar1 != a) {
+  if ((this->fields).progress != (this->fields).interpolateToSize) {
+    value = (this->fields).interpolateToSize;
+    fVar1 = (this->fields).progress;
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar3 = (this->fields).interpolationSpeed;
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
+    fVar1 = fVar2 * (this->fields).interpolationSpeed + fVar1;
+    if (fVar1 <= value) {
+      value = fVar1;
     }
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Min
-                      (a,fVar3 * fVar2 + fVar1,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
+    if (value < 0.0) {
+      value = 0.0;
     }
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
+    else if (_UNK_? < value) {
+      value = _UNK_?;
     }
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01(fVar1,(MethodInfo *)0x0);
     this_00 = (this->fields).ProgressBar;
-    (this->fields).progress = fVar1;
+    (this->fields).progress = value;
     if (this_00 == (Scrollbar *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
-              (this_00,fVar1,(MethodInfo *)0x0);
+              (this_00,value,(MethodInfo *)0x0);
   }
   return;
 }
@@ -88,11 +74,10 @@ void Assembly-CSharp.dll::FirstTimeEventPopupWithProgress::FirstTimeEventPopupWi
 {
   (this->fields).interpolationSpeed = 0.7;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;
@@ -106,25 +91,23 @@ void Assembly-CSharp.dll::FirstTimeEventPopupWithProgress::
                (FirstTimeEventPopupWithProgress *this,float value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  if (value < 0.0) {
+    value = 0.0;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  else if (_UNK_? < value) {
+    value = _UNK_?;
   }
-  value_00 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01(value,(MethodInfo *)0x0);
-  (this->fields).progress = value_00;
+  (this->fields).progress = value;
   this_00 = (this->fields).ProgressBar;
   if (this_00 != (Scrollbar *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
-              (this_00,value_00,(MethodInfo *)0x0);
+              (this_00,value,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

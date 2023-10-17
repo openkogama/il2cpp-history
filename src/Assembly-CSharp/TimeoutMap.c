@@ -5,20 +5,22 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Add(TimeoutMap *this,int32_t id
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields).weaponTimeOutMap;
   value = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if (this_00 != (Dictionary_2_System_Int32_System_Single_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-    Dictionary_2_System_Int32_System_Single__set_Item
-              (this_00,id,value,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::
+    Dictionary_2_System_Int32Enum_System_Single__set_Item
+              ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,id,value,
                MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_
               );
     return;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -32,21 +34,24 @@ bool Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Contains
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).weaponTimeOutMap;
-  if (this_00 != (Dictionary_2_System_Int32_System_Single_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      (this_00,id,
+  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+            (this->fields).weaponTimeOutMap;
+  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)id,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_float>__ContainsKey_int_
                       );
     return bVar1;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 
@@ -56,141 +61,154 @@ bool Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Contains
 void Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Update(TimeoutMap *this,MethodInfo *method)
 
 {
-  p_Stack_8 = (Il2CppMetadataTypeHandle)0xffffffff;
-  pIStack_1 = (Il2CppGenericClass *)&DAT_?;
-  pIStack_2 = (Il2CppClass *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_2;
-  pIStack_3 = (Il2CppClass *)&stack0xffffff80;
-  pIVar4 = (Il2CppClass *)&stack0xffffff80;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffff84;
+  puVar5 = &stack0xffffff84;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_float>__GetEnumerator__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Remove_int_);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__MoveNext__
+                   );
+    in_stack_6 =
+         &MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__;
+    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_float>__get_Key__);
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_float>__get_Value__
+                   );
     cRam_? = '\x01';
-    pIVar4 = pIStack_3;
+    puVar5 = puStack_4;
   }
-  pIStack_3 = pIVar4;
-  auStack_5._16_4_ = (Object *)0x0;
-  pIStack_6 = (Il2CppClass *)0x0;
-  KStack_7.key = 0;
-  KStack_7.value = 0;
-  auStack_5._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_5._4_4_ = (MethodInfo *)0x0;
-  auStack_5._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_5._12_4_ = 0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  func_?();
-  _Stack_2c.__klassIndex = -1;
+  puStack_4 = puVar5;
+  DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Single_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  DStack_7._current.value = 0.0;
+  DStack_7._getEnumeratorRetType = 0;
   this_00 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).removeSet;
-  pIStack_9 = (Il2CppClass *)&stack0xffffff80;
-  pIStack_3 = (Il2CppClass *)&stack0xffffff80;
-  if (this_00 == (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-code_?:
-    pIVar10 = (Il2CppClass *)func_?(0);
-    pIVar4 = unaff_ESI;
-  }
-  else {
-    pIStack_9 = (Il2CppClass *)&stack0xffffff80;
-    pIStack_3 = (Il2CppClass *)&stack0xffffff80;
+  auStack_8._0_4_ = (Dictionary_2_System_Int32Enum_System_Single_ *)0x0;
+  auStack_8._4_4_ = 0;
+  auStack_8._8_4_ = 0;
+  auStack_8._12_4_ = (Object *)0x0;
+  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
     System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
     HashSet_1_UnityEngine_Vector3__Clear
               (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-    pDVar11 = (this->fields).weaponTimeOutMap;
-    if (pDVar11 == (Dictionary_2_System_Int32_System_Single_ *)0x0) goto code_?;
-    pDVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *)
-                        (auStack_5 + 0x14),
-                        (Dictionary_2_WinningConditionType_System_Object_ *)pDVar11,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_float>__GetEnumerator__
-                       );
-    auStack_5._0_4_ = pDVar12->dictionary;
-    auStack_5._4_4_ = pDVar12->next;
-    auStack_5._8_4_ = pDVar12->stamp;
-    auStack_5._12_4_ = (pDVar12->current).key;
-    auStack_5._16_4_ = (pDVar12->current).value;
-    p_Stack_8 = (Il2CppMetadataTypeHandle)0x0;
-    while (cVar13 = func_?(), cVar13 != '\0') {
-      KStack_7 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                            ((LevelRewardsManager *)auStack_5,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__get_Current__
-                            );
-      auStack_5._0_4_ = &KStack_7;
-      auStack_5._4_4_ =
-           MethodInfo__System__Collections__Generic__KeyValuePair<int,_float>__get_Value__;
-      fVar14 = (float10)func_?();
-      _Stack_24 = (_union_86)(this->fields).timeOut;
-      fStack_15 = (float)fVar14;
-      fStack_16 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      if (fStack_15 + (float)_Stack_24 <= fStack_16) {
-        this_01 = (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)(this->fields).removeSet;
-        item = (UnityWebRequest *)func_?();
-        unaff_ESI = (Il2CppClass *)0x0;
-        if (this_01 == (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)0x0)
-        goto code_?;
-        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-        UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                  (this_01,item,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    method_00 = (MethodInfo *)(this->fields).weaponTimeOutMap;
+    if (method_00 != (MethodInfo *)0x0) {
+      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                          (auStack_8 + 0x10),(Dictionary_2_System_Object_System_Object_ *)method_00
+                          ,
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_float>__GetEnumerator__
+                         );
+      uStack_10 = 0;
+      DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Single_ *)pDVar9->_dictionary;
+      DStack_7._version = pDVar9->_version;
+      DStack_7._index = pDVar9->_index;
+      DStack_7._current.key = (int32_t)(pDVar9->_current).key;
+      DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
+      uStack_1 = 1;
+      pDStack_11 = &DStack_7;
+      while( true ) {
+        bVar12 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Single]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Single__MoveNext
+                          (&DStack_7,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__MoveNext__
+                          );
+        if (bVar12 == 0) break;
+        fStack_13 = (this->fields).timeOut;
+        pOStack_14 = (Object *)DStack_7._current.key;
+        HStack_15._current = (Object *)DStack_7._current.value;
+        fStack_16 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              ((MethodInfo *)0x0);
+        if ((float)HStack_15._current + fStack_13 <= fStack_16) {
+          pHVar17 = (HashSet_1_System_Object_ *)(this->fields).removeSet;
+          if (pHVar17 == (HashSet_1_System_Object_ *)0x0) goto code_?;
+          in_stack_6 =
+               (MethodInfo **)MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_;
+          System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+          HashSet_1_System_Object__Add
+                    (pHVar17,pOStack_14,
+                     MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+        }
       }
-    }
-    unaff_ESI = (Il2CppClass *)0x0;
-    pIStack_9->image = (Il2CppImage *)0x6e;
-    p_Stack_8 = (Il2CppMetadataTypeHandle)0xffffffff;
-    func_?();
-    pIVar10 = pIStack_6;
-    pIVar4 = unaff_ESI;
-    if (pIStack_6 == (Il2CppClass *)0x0) {
-      if (pIStack_9->image == (Il2CppImage *)0x6e) {
-        unaff_ESI = (Il2CppClass *)0xffffffff;
-      }
-      this_02 = (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)(this->fields).removeSet;
-      if (this_02 != (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
-        pHVar17 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData
-                 ::FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                           (&HStack_18,this_02,
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&DStack_7,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__Dispose__
+                 ,(MethodInfo *)in_stack_6);
+      uStack_1 = 0xffffffff;
+      pHVar17 = (HashSet_1_System_Object_ *)(this->fields).removeSet;
+      if (pHVar17 != (HashSet_1_System_Object_ *)0x0) {
+        pHVar18 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                 HashSet_1_System_Object__GetEnumerator
+                           (&HStack_15,pHVar17,
                             MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__)
         ;
-        CStack_8.klass =
-             (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar17->hashset;
-        CStack_8.monitor = (MonitorData *)pHVar17->next;
-        CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar17->stamp
-        ;
-        CStack_8.fields.syncRoot = (Object *)pHVar17->current;
-        p_Stack_8 = (Il2CppMetadataTypeHandle)0x2;
-        while (cVar13 = func_?(), pIVar4 = pIStack_6, cVar13 != '\0') {
-          key = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                Serialization::JsonProperty]::
-                Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                          (&CStack_8,
-                           MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__
-                          );
-          pDVar11 = (this->fields).weaponTimeOutMap;
-          if (pDVar11 == (Dictionary_2_System_Int32_System_Single_ *)0x0) goto code_?;
+        uStack_10 = 0;
+        auStack_8._0_4_ = pHVar18->_set;
+        auStack_8._4_4_ = pHVar18->_index;
+        auStack_8._8_4_ = pHVar18->_version;
+        auStack_8._12_4_ = pHVar18->_current;
+        uStack_1 = 4;
+        pDStack_11 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Single_ *)
+                     auStack_8;
+        while( true ) {
+          bVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                  Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
+                            ((HashSet_1_T_Enumerator_System_Int32_ *)auStack_8,
+                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                            );
+          if (bVar12 == 0) {
+            uStack_1 = 0xffffffff;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ((Object *)auStack_8,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                       ,method_00);
+            *unaff_FS_OFFSET = uStack_3;
+            return;
+          }
+          this_01 = (this->fields).weaponTimeOutMap;
+          if (this_01 == (Dictionary_2_System_Int32_System_Single_ *)0x0) break;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
           Dictionary_2_System_Int32_System_Single__Remove
-                    (pDVar11,(int32_t)key,
+                    (this_01,auStack_8._12_4_,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Remove_int_);
         }
-        (&pIStack_9->gc_desc)[(int)unaff_ESI] = (void *)0xb3;
-        p_Stack_8 = (Il2CppMetadataTypeHandle)0xffffffff;
-        func_?(&CStack_8,
-                        MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
-                       );
-        if (pIVar4 == (Il2CppClass *)0x0) {
-          *unaff_FS_OFFSET = pIStack_2;
-          return;
-        }
-        goto code_?;
       }
-      goto code_?;
     }
   }
-  func_?(pIVar10,0,0);
 code_?:
-  func_?(pIVar4,0,0);
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  uVar19 = func_?();
+  func_?(uVar19);
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -202,25 +220,40 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__)
+    ;
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_System_Single_ *)
             func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
-  (this->fields).weaponTimeOutMap = this_00;
-  method_00 = TypeInfo__System__Collections__Generic__HashSet<int>;
-  this_01 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (this->fields).removeSet = (HashSet_1_System_Int32_ *)this_01;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  (this->fields).timeOut = timeOut;
+  if (this_00 != (Dictionary_2_System_Int32_System_Single_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
+    (this->fields).weaponTimeOutMap = this_00;
+    func_?(&(this->fields).weaponTimeOutMap,this_00);
+    this_01 = (HashSet_1_UnityEngine_Vector3_ *)
+              func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+    if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+      HashSet_1_UnityEngine_Vector3___ctor
+                (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+      method_00 = (MethodInfo *)&(this->fields).removeSet;
+      (this->fields).removeSet = (HashSet_1_System_Int32_ *)this_01;
+      func_?(method_00,this_01);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+      (this->fields).timeOut = timeOut;
+      return;
+    }
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

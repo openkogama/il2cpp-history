@@ -9,15 +9,22 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 34: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
 	internal class EnetPeer : PeerBase
 	{
 		// Fields
+		private const int CRC_LENGTH = 4;
+		protected internal const int HMAC_SIZE = 32;
+		protected internal const int BLOCK_SIZE = 16;
+		protected internal const int IV_SIZE = 16;
+		private const int EncryptedDataGramHeaderSize = 7;
+		private const int EncryptedHeaderSize = 5;
 		private List<NCommand> sentReliableCommands;
 		private StreamBuffer outgoingAcknowledgementsPool;
+		internal const int UnsequencedWindowSize = 128;
 		internal readonly int[] unsequencedWindow;
 		internal int outgoingUnsequencedGroupNumber;
 		internal int incomingUnsequencedGroupNumber;
@@ -35,12 +42,20 @@ namespace ExitGames.Client.Photon
 		internal static readonly byte[] messageHeader;
 		protected bool datagramEncryptedConnection;
 		private EnetChannel[] channelArray;
+		private const byte ControlChannelNumber = 255;
+		protected internal const short PeerIdForConnect = -1;
+		protected internal const short PeerIdForConnectTrace = -2;
 		private Queue<int> commandsToRemove;
 		private int fragmentLength;
 		private int fragmentLengthDatagramEncrypt;
 		private int fragmentLengthMtuValue;
 		private Queue<NCommand> commandsToResend;
 		private Queue<NCommand> CommandQueue;
+	
+		// Properties
+		internal override int QueuedIncomingCommandsCount { get; }
+		internal override int QueuedOutgoingCommandsCount { get; }
+		internal override int SentReliableCommandsCount { get; }
 	
 		// Constructors
 		internal EnetPeer();
@@ -58,9 +73,11 @@ namespace ExitGames.Client.Photon
 		private int GetFragmentLength();
 		private int CalculateBufferLen();
 		private int CalculateInitialOffset();
+		internal override bool SendAcksOnly();
 		internal override bool SendOutgoingCommands();
 		private bool AreReliableCommandsInTransit();
 		internal override bool EnqueueOperation(Dictionary<byte, object> parameters, byte opCode, SendOptions sendParams, EgMessageType messageType = EgMessageType.Operation);
+		internal override bool EnqueueMessage(object message, SendOptions sendOptions);
 		private EnetChannel GetChannel(byte channelNumber);
 		internal bool CreateAndEnqueueCommand(byte commandType, StreamBuffer payload, byte channelNumber);
 		internal override StreamBuffer SerializeOperationToMessage(byte opCode, Dictionary<byte, object> parameters, EgMessageType messageType, bool encrypt);
@@ -77,6 +94,7 @@ namespace ExitGames.Client.Photon
 		internal bool ExecuteCommand(NCommand command);
 		internal bool QueueIncomingCommand(NCommand command);
 		internal NCommand RemoveSentReliableCommand(int ackReceivedReliableSequenceNumber, int ackReceivedChannel, bool isUnsequenced);
+		internal string CommandListToString(NCommand[] list);
 		[CompilerGenerated]
 		private void _ExecuteCommand_b__71_0();
 	}

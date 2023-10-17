@@ -7,17 +7,15 @@ using System.Collections;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MaterialDescription
 {
 	// Fields
 	public static readonly MaterialDescription[] materialDescriptions;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private string _Name_k__BackingField;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private string _Description_k__BackingField;
 	private BitArray specialProperties;
 

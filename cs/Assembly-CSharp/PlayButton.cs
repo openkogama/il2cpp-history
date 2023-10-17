@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
 {
@@ -30,36 +30,50 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 	private EmbeddedPlayerConfig embeddedPlayerConfig;
 	private bool isMouseOver;
 	public Action OnPlayButtonPressed;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnPromotionShown_c__AnonStorey0
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal ContinueButtonLockCursor continueBtn;
+		public ContinueButtonLockCursor continueBtn;
 
 		// Constructors
-		public _OnPromotionShown_c__AnonStorey0();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnPromotionShown_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__15_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnContinuePressed_b__15_0(IUIStack x, BaseEventData y);
+		internal void _OnCountDownEnd_b__21_0(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnEnable_c__AnonStorey1
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
-		internal bool readyForAd;
+		public bool readyForAd;
 
 		// Constructors
-		public _OnEnable_c__AnonStorey1();
+		public __c__DisplayClass19_0();
 
 		// Methods
-		internal void __m__0(IDeathPromotionSelector x, BaseEventData y);
+		internal void _OnEnable_b__0(IDeathPromotionSelector x, BaseEventData y);
 	}
 
 	// Constructors
@@ -80,10 +94,6 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 	protected virtual bool HandlePlayAvailable();
 	protected override void OnCountDownEnd();
 	[CompilerGenerated]
-	private void _Play_m__0(IDeathPromotionSelector x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnContinuePressed_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnCountDownEnd_m__2(IUIStack handler, BaseEventData data);
+	private void _Play_b__13_0(IDeathPromotionSelector x, BaseEventData y);
 }
 

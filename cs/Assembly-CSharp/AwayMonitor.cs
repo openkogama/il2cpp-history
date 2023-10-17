@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AwayMonitor
 {
@@ -22,6 +22,10 @@ public class AwayMonitor
 	private const string mouseX = "Mouse X";
 	private const string mouseY = "Mouse Y";
 	private const string scroll = "Mouse ScrollWheel";
+	private const string platformerLeft = "MoveLeft";
+	private const string platformerRight = "MoveRight";
+	private static bool allAxisAvailable;
+	private static bool allPlatformerButtonsAvailable;
 
 	// Properties
 	public static bool IdleKickEnabled { get; set; }
@@ -54,6 +58,10 @@ public class AwayMonitor
 	// Methods
 	public static void Initialize(MVGameMode mode);
 	public static void Destroy();
+	public static void UpdateMobile();
+	public static void BackgroundUpdate();
+	public static void InternalUpdate();
+	private void UpdateButtons();
 	public static void Update();
 	public static void UpdateIdleAction();
 	private void UpdateIdle();

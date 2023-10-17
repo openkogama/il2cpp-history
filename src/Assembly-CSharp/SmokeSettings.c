@@ -5,256 +5,251 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_Initialize
                (SmokeSettings *this,int32_t woID,GameObject *root,MethodInfo *method)
 
 {
+  pSVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__Single);
+    func_?(&::_1DC5C8E021C663CD8F7ECF1FB0C6D4112BC8D7F3C9E0095CD26BD7AF7B8D7F13_Field);
+    func_?(&E47C56787A2D4D1A0F11D726D19241867452F74BA55E5B2B9CC270DCEBB4C727_Field);
+    func_?(&StringLiteral_alpha);
+    func_?(&StringLiteral_colorB);
+    func_?(&StringLiteral_colorR);
+    func_?(&StringLiteral_colorG);
+    func_?(&StringLiteral_color);
+    func_?(&StringLiteral_wind);
+    func_?(&StringLiteral_length);
     cRam_? = '\x01';
   }
   id = woID;
-  pSVar1 = this;
-  this_00 = (this->fields).settingsBase;
-  if (this_00 == (SettingsBase *)0x0) goto code_?;
-  SettingsBase::SettingsBase_Initialize
-            (this_00,woID,root,MVWorldObjectDocumentationType__Enum_Smoke,(MethodInfo *)0x0);
-  if (id == -1) {
-    this_04 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-               *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_04,
+  this_00 = (pSVar1->fields).settingsBase;
+  if (this_00 == (SettingsBase *)0x0) {
+code_?:
+    uVar2 = func_?();
+  }
+  else {
+    SettingsBase::SettingsBase_Initialize
+              (this_00,woID,root,MVWorldObjectDocumentationType__Enum_Smoke,(MethodInfo *)0x0);
+    if (id != -1) {
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (((this_01 != (MVWorldObjectClientManager *)0x0) &&
+          (pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (this_01,id,(MethodInfo *)0x0), pMVar3 != (MVWorldObject *)0x0)) &&
+         (this_02 = (MethodInfo *)(pMVar3->fields).data, this_02 != (MethodInfo *)0x0))
+      goto code_?;
+      goto code_?;
+    }
+    this_02 = (MethodInfo *)
+              func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
+    if (this_02 == (MethodInfo *)0x0) goto code_?;
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_02,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    pCVar2 = (CrossPlatformInputManager_VirtualButton *)func_?(TypeInfo__System__Single);
+    pAVar4 = (Array *)func_?(TypeInfo__System__Single,4);
     mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
     RuntimeHelpers_InitializeArray_1
-              ((Array *)pCVar2,__field_6FB784F76A1ECD7AC5C37C2137ADEDDD4F8099DA_Field,
+              (pAVar4,__1DC5C8E021C663CD8F7ECF1FB0C6D4112BC8D7F3C9E0095CD26BD7AF7B8D7F13_Field,
                (MethodInfo *)0x0);
-    if (this_04 ==
-        (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-         *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_04,StringLiteral_color,pCVar2,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_color,
+               (Object *)pAVar4,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     this = (SmokeSettings *)0x41200000;
-    pCVar2 = (CrossPlatformInputManager_VirtualButton *)
-             func_?(TypeInfo__System__Single,&this);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_04,StringLiteral_length,pCVar2,
+    pOVar5 = (Object *)func_?(TypeInfo__System__Single,&this);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_length,
+               pOVar5,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-  }
-  else {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    this_03 = (PrefabPool *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_02,id,(MethodInfo *)0x0);
-    if (this_03 == (PrefabPool *)0x0) goto code_?;
-    this_04 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-               *)PrefabPool::PrefabPool_get_MVBatteryPrefab(this_03,(MethodInfo *)0x0);
-  }
-  if (this_04 ==
-      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-       *)0x0) goto code_?;
-  bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject::
-          KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-          Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                    (this_04,StringLiteral_color,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                    );
-  if (bVar3 == 0) {
-    pCVar2 = (CrossPlatformInputManager_VirtualButton *)func_?(TypeInfo__System__Single,4);
-    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-    RuntimeHelpers_InitializeArray_1
-              ((Array *)pCVar2,__field_74501839227B264CB4BF46A3B9FB614F0CF013FC_Field,
-               (MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_04,StringLiteral_color,pCVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-  }
-  bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject::
-          KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-          Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                    (this_04,StringLiteral_length,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                    );
-  if (bVar3 == 0) {
-    root = (GameObject *)0x40c00000;
-    pCVar2 = (CrossPlatformInputManager_VirtualButton *)
-             func_?(TypeInfo__System__Single,&root);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_04,StringLiteral_length,pCVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-  }
-  bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject::
-          KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-          Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                    (this_04,StringLiteral_wind,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                    );
-  if (bVar3 == 0) {
-    root = (GameObject *)0x0;
-    pCVar2 = (CrossPlatformInputManager_VirtualButton *)
-             func_?(TypeInfo__System__Single,&root);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)this_04,StringLiteral_wind,pCVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-  }
-  pPVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-           Dictionary_2_System_Type_Pool__get_Item
-                     ((Dictionary_2_System_Type_Pool_ *)this_04,(Type *)StringLiteral_color,
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-  root = (GameObject *)TypeInfo__System__Single;
-  if (pPVar4 == (Pool *)0x0) {
-    pSVar5 = (Single__Array *)0x0;
 code_?:
-    pSVar6 = (pSVar1->fields).colorR;
-    (pSVar1->fields).color = pSVar5;
-    if (pSVar5 == (Single__Array *)0x0) goto code_?;
-    if (pSVar5->max_length == 0) goto code_?;
-    if (pSVar6 == (SettingsSlider *)0x0) goto code_?;
-    SettingsSlider::SettingsSlider_Initialize
-              (pSVar6,StringLiteral_colorR,pSVar5->vector[0],0.0,1.0,(MethodInfo *)0x0);
-    pSVar5 = (pSVar1->fields).color;
-    pSVar6 = (pSVar1->fields).colorG;
-    if (pSVar5 == (Single__Array *)0x0) goto code_?;
-    if (pSVar5->max_length < 2) goto code_?;
-    if (pSVar6 == (SettingsSlider *)0x0) goto code_?;
-    SettingsSlider::SettingsSlider_Initialize
-              (pSVar6,StringLiteral_colorG,pSVar5->vector[1],0.0,1.0,(MethodInfo *)0x0);
-    pSVar5 = (pSVar1->fields).color;
-    pSVar6 = (pSVar1->fields).colorB;
-    if (pSVar5 == (Single__Array *)0x0) goto code_?;
-    if (pSVar5->max_length < 3) goto code_?;
-    if (pSVar6 == (SettingsSlider *)0x0) goto code_?;
-    root = (GameObject *)0x0;
-    woID = 0x3f800000;
-    this = (SmokeSettings *)0x0;
-    SettingsSlider::SettingsSlider_Initialize
-              (pSVar6,StringLiteral_colorB,pSVar5->vector[2],0.0,1.0,(MethodInfo *)0x0);
-    pSVar5 = (pSVar1->fields).color;
-    this_01 = (MethodInfo *)(pSVar1->fields).alpha;
-    if (pSVar5 == (Single__Array *)0x0) goto code_?;
-    if (pSVar5->max_length < 4) goto code_?;
-    if (this_01 == (MethodInfo *)0x0) goto code_?;
+    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_02,
+                       (Object *)StringLiteral_color,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
+    if (bVar6 == 0) {
+      root = (GameObject *)0x4;
+      woID = (int32_t)TypeInfo__System__Single;
+      this = (SmokeSettings *)&UNK_?;
+      pAVar4 = (Array *)func_?();
+      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+      RuntimeHelpers_InitializeArray_1
+                (pAVar4,_E47C56787A2D4D1A0F11D726D19241867452F74BA55E5B2B9CC270DCEBB4C727_Field,
+                 (MethodInfo *)0x0);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_color,
+                 (Object *)pAVar4,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+    }
+    root = (GameObject *)
+           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+    ;
+    woID = (int32_t)StringLiteral_length;
+    this = (SmokeSettings *)this_02;
+    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_02,
+                       (Object *)StringLiteral_length,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
+    if (bVar6 == 0) {
+      root = (GameObject *)0x40c00000;
+      method = (MethodInfo *)&UNK_?;
+      pOVar5 = (Object *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_length
+                 ,pOVar5,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+    }
     root = (GameObject *)&UNK_?;
-    method = this_01;
-    SettingsSlider::SettingsSlider_Initialize
-              ((SettingsSlider *)this_01,StringLiteral_alpha,pSVar5->vector[3],0.1,1.0,
-               (MethodInfo *)0x0);
-    pSVar6 = (pSVar1->fields).range;
-    pPVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_04,(Type *)StringLiteral_length,
+    method = this_02;
+    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_02,
+                       (Object *)StringLiteral_wind,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
+    if (bVar6 == 0) {
+      root = (GameObject *)0x0;
+      woID = func_?();
+      root = (GameObject *)
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+      ;
+      this = (SmokeSettings *)StringLiteral_wind;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_wind,
+                 (Object *)woID,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+    }
+    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                        (Object *)StringLiteral_color,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    uVar7 = CONCAT44(TypeInfo__System__Single,pPVar4);
-    if ((pSVar6 == (SettingsSlider *)0x0) || (pPVar4 == (Pool *)0x0)) goto code_?;
-    if ((pPVar4->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar8 = (float *)func_?();
+    root = (GameObject *)TypeInfo__System__Single;
+    if (pOVar5 != (Object *)0x0) {
+      pSVar7 = (Single__Array *)func_?();
+      if (pSVar7 != (Single__Array *)0x0) {
+        (pSVar1->fields).color = pSVar7;
+        root = (GameObject *)TypeInfo__System__Single;
+        iVar8 = func_?();
+        if (iVar8 != 0) goto code_?;
+      }
+      func_?();
+      goto code_?;
+    }
+    (pSVar1->fields).color = (Single__Array *)0x0;
+code_?:
+    func_?();
+    pSVar7 = (pSVar1->fields).color;
+    pSVar9 = (pSVar1->fields).colorR;
+    if (pSVar7 == (Single__Array *)0x0) goto code_?;
+    if (pSVar7->max_length == 0) goto code_?;
+    if (pSVar9 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar9,StringLiteral_colorR,pSVar7->vector[0],0.0,1.0,(MethodInfo *)0x0);
+    pSVar7 = (pSVar1->fields).color;
+    pSVar9 = (pSVar1->fields).colorG;
+    if (pSVar7 == (Single__Array *)0x0) goto code_?;
+    if (pSVar7->max_length < 2) goto code_?;
+    if (pSVar9 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar9,StringLiteral_colorG,pSVar7->vector[1],0.0,1.0,(MethodInfo *)0x0);
+    pSVar7 = (pSVar1->fields).color;
+    pSVar9 = (pSVar1->fields).colorB;
+    if (pSVar7 == (Single__Array *)0x0) goto code_?;
+    if (pSVar7->max_length < 3) goto code_?;
+    if (pSVar9 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar9,StringLiteral_colorB,pSVar7->vector[2],0.0,1.0,(MethodInfo *)0x0);
+    pSVar7 = (pSVar1->fields).color;
+    pSVar9 = (pSVar1->fields).alpha;
+    if (pSVar7 == (Single__Array *)0x0) goto code_?;
+    if (pSVar7->max_length < 4) goto code_?;
+    if (pSVar9 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar9,StringLiteral_alpha,pSVar7->vector[3],0.1,1.0,(MethodInfo *)0x0);
+    pSVar9 = (pSVar1->fields).range;
+    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                        (Object *)StringLiteral_length,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    uVar2 = CONCAT44(TypeInfo__System__Single,pOVar5);
+    if ((pSVar9 == (SettingsSlider *)0x0) || (pOVar5 == (Object *)0x0)) goto code_?;
+    if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+      pfVar10 = (float *)func_?(pOVar5);
       SettingsSlider::SettingsSlider_Initialize
-                (pSVar6,StringLiteral_length,*pfVar8,1.0,12.0,(MethodInfo *)0x0);
-      pSVar6 = (pSVar1->fields).wind;
-      pPVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-               Dictionary_2_System_Type_Pool__get_Item
-                         ((Dictionary_2_System_Type_Pool_ *)this_04,(Type *)StringLiteral_wind,
+                (pSVar9,StringLiteral_length,*pfVar10,1.0,12.0,(MethodInfo *)0x0);
+      pSVar9 = (pSVar1->fields).wind;
+      pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                          (Object *)StringLiteral_wind,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      uVar7 = CONCAT44(TypeInfo__System__Single,pPVar4);
-      if ((pSVar6 == (SettingsSlider *)0x0) || (pPVar4 == (Pool *)0x0)) goto code_?;
-      if ((pPVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar8 = (float *)func_?(pPVar4);
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar6,StringLiteral_wind,*pfVar8,0.0,0.6,(MethodInfo *)0x0);
-      pSVar5 = (pSVar1->fields).color;
-      pIVar9 = (pSVar1->fields).preview;
-      if (pSVar5 == (Single__Array *)0x0) goto code_?;
-      uVar10 = pSVar5->max_length;
-      if (uVar10 == 0) goto code_?;
-      if (pSVar5 == (Single__Array *)0x0) goto code_?;
-      if (uVar10 < 2) goto code_?;
-      if (pSVar5 == (Single__Array *)0x0) goto code_?;
-      if (uVar10 < 3) goto code_?;
-      if (pSVar5 == (Single__Array *)0x0) goto code_?;
-      uVar11 = 0;
-      if (3 < uVar10) {
-        uVar12 = 0;
-        uVar11 = 0;
-        uVar13 = 0;
-        uVar14 = 0;
-        func_?(&stack0xffffffec,pSVar5->vector[0],pSVar5->vector[1],pSVar5->vector[2],
-                        pSVar5->vector[3]);
-        if (pIVar9 != (Image *)0x0) {
-          (*(code *)(pIVar9->klass->vtable).set_color.method)
-                    (pIVar9,uVar12,uVar11,uVar13,uVar14,
-                     (pIVar9->klass->vtable).get_raycastTarget.methodPtr);
-          return;
-        }
+      uVar2 = CONCAT44(TypeInfo__System__Single,pOVar5);
+      if ((pSVar9 != (SettingsSlider *)0x0) && (pOVar5 != (Object *)0x0)) {
+        if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
         goto code_?;
+        pfVar10 = (float *)func_?(pOVar5);
+        SettingsSlider::SettingsSlider_Initialize
+                  (pSVar9,StringLiteral_wind,*pfVar10,0.0,0.6,(MethodInfo *)0x0);
+        pSVar7 = (pSVar1->fields).color;
+        pIVar11 = (pSVar1->fields).preview;
+        if (pSVar7 != (Single__Array *)0x0) {
+          if ((((pSVar7->max_length == 0) || (pSVar7->max_length < 2)) || (pSVar7->max_length < 3))
+             || (pSVar7->max_length < 4)) goto code_?;
+          if (pIVar11 != (Image *)0x0) {
+            (*(pIVar11->klass->vtable).set_color.methodPtr)
+                      (pIVar11,pSVar7->vector[0],pSVar7->vector[1],pSVar7->vector[2],
+                       pSVar7->vector[3],(pIVar11->klass->vtable).set_color.method);
+            return;
+          }
+        }
       }
       goto code_?;
     }
   }
-  else {
-    pSVar5 = (Single__Array *)func_?(pPVar4,TypeInfo__System__Single);
-    if (pSVar5 != (Single__Array *)0x0) goto code_?;
-    func_?(pPVar4,root);
 code_?:
-    uVar12 = func_?(0,0);
-    func_?(uVar12);
+  func_?(uVar2);
 code_?:
-    uVar12 = func_?(0,0);
-    func_?(uVar12);
-code_?:
-    uVar12 = func_?(0,0);
-    func_?(uVar12);
-code_?:
-    uVar12 = func_?(0,0);
-    func_?(uVar12);
-code_?:
-    uVar12 = func_?(0,0);
-    func_?(uVar12);
-code_?:
-    uVar12 = func_?(0,0);
-    func_?(uVar12);
-code_?:
-    uVar11 = 0;
-    uVar12 = func_?(0,0);
-    func_?(uVar12);
-code_?:
-    uVar12 = func_?(0,uVar11);
-    uVar7 = func_?(uVar12);
-  }
-code_?:
-  func_?(uVar7);
-code_?:
-  func_?(0);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -266,42 +261,32 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_OnSettingChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_alpha);
+    func_?(&StringLiteral_colorB);
+    func_?(&StringLiteral_colorR);
+    func_?(&StringLiteral_Setting_changed_);
+    func_?(&StringLiteral_colorG);
+    func_?(&StringLiteral_color);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
   }
   bVar1 = mscorlib.dll::System::String::String_op_Equality
                     (key,StringLiteral_colorR,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
     bVar1 = mscorlib.dll::System::String::String_op_Equality
                       (key,StringLiteral_colorG,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
       bVar1 = mscorlib.dll::System::String::String_op_Equality
                         (key,StringLiteral_colorB,(MethodInfo *)0x0);
       if (bVar1 == 0) {
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
         bVar1 = mscorlib.dll::System::String::String_op_Equality
                           (key,StringLiteral_alpha,(MethodInfo *)0x0);
         if (bVar1 == 0) {
           pSVar2 = (this->fields).settingsBase;
           if (pSVar2 != (SettingsBase *)0x0) {
             SettingsBase::SettingsBase_OnSettingChanged(pSVar2,key,value,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
@@ -312,153 +297,95 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_OnSettingChanged
         else {
           pSVar3 = (this->fields).color;
           if (pSVar3 != (Single__Array *)0x0) {
-            pfVar4 = (float *)func_?();
-            if (pSVar3->max_length < 4) {
-              uVar5 = func_?(0,0);
-              func_?(uVar5);
-            }
-            else {
+            if (value != (Object *)0x0) {
+              if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+              goto code_?;
+              pfVar4 = (float *)func_?();
+              if (pSVar3->max_length < 4) goto code_?;
               pSVar3->vector[3] = *pfVar4;
               pSVar2 = (this->fields).settingsBase;
               if (pSVar2 != (SettingsBase *)0x0) {
                 SettingsBase::SettingsBase_OnSettingChanged
                           (pSVar2,StringLiteral_color,(Object *)(this->fields).color,
                            (MethodInfo *)0x0);
-                pIVar6 = (this->fields).preview;
-                if ((this->fields).color != (Single__Array *)0x0) {
-                  fVar7 = (float10)func_?();
-                  fVar8 = (float)fVar7;
-                  if ((this->fields).color != (Single__Array *)0x0) {
-                    fVar7 = (float10)func_?();
-                    fVar9 = (float)fVar7;
-                    if ((this->fields).color != (Single__Array *)0x0) {
-                      fVar7 = (float10)func_?();
-                      fVar10 = (float)fVar7;
-                      if ((this->fields).color != (Single__Array *)0x0) {
-                        fVar7 = (float10)func_?();
-                        uVar5 = 0;
-                        uVar11 = 0;
-                        uVar12 = 0;
-                        func_?(&stack0xffffffe0,fVar8,fVar9,fVar10,(float)fVar7,0);
-                        if (pIVar6 != (Image *)0x0) {
-                          func_?(0x17,pIVar6,uVar5,uVar11,uVar12);
-                          return;
-                        }
-                      }
-                    }
+                pSVar3 = (this->fields).color;
+                if (pSVar3 != (Single__Array *)0x0) {
+                  if (((pSVar3->max_length == 0) || (pSVar3->max_length < 2)) ||
+                     ((pSVar3->max_length < 3 || (pSVar3->max_length < 4)))) goto code_?;
+                  if ((this->fields).preview != (Image *)0x0) {
+                    func_?(0x17);
+                    return;
                   }
                 }
               }
             }
           }
         }
-code_?:
-        func_?();
       }
       else {
         pSVar3 = (this->fields).color;
-        if (pSVar3 == (Single__Array *)0x0) goto code_?;
-        pfVar4 = (float *)func_?();
-        if (2 < pSVar3->max_length) {
-          pSVar3->vector[2] = *pfVar4;
-          goto code_?;
-        }
-      }
-      uVar5 = func_?(0);
-      func_?(uVar5);
-      goto code_?;
-    }
-    pSVar3 = (this->fields).color;
-    if ((pSVar3 == (Single__Array *)0x0) || (value == (Object *)0x0)) goto code_?;
-    if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    pfVar4 = (float *)func_?();
-    if (1 < pSVar3->max_length) {
-      pSVar3->vector[1] = *pfVar4;
-code_?:
-      pSVar2 = (this->fields).settingsBase;
-      if (pSVar2 == (SettingsBase *)0x0) goto code_?;
-      SettingsBase::SettingsBase_OnSettingChanged
-                (pSVar2,StringLiteral_color,(Object *)(this->fields).color,(MethodInfo *)0x0);
-      pSVar3 = (this->fields).color;
-      pIVar6 = (this->fields).preview;
-      if (pSVar3 == (Single__Array *)0x0) goto code_?;
-      uVar13 = pSVar3->max_length;
-      if (uVar13 == 0) goto code_?;
-      fVar8 = pSVar3->vector[0];
-      if (pSVar3 == (Single__Array *)0x0) goto code_?;
-      if (uVar13 < 2) goto code_?;
-      fVar9 = pSVar3->vector[1];
-      if (pSVar3 == (Single__Array *)0x0) goto code_?;
-      if (uVar13 < 3) goto code_?;
-      fVar10 = pSVar3->vector[2];
-      if (pSVar3 == (Single__Array *)0x0) goto code_?;
-      if (3 < uVar13) goto code_?;
-      goto code_?;
-    }
-  }
-  else {
-    pSVar3 = (this->fields).color;
-    if ((pSVar3 == (Single__Array *)0x0) || (value == (Object *)0x0)) goto code_?;
-    if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    pfVar4 = (float *)func_?();
-    if (pSVar3->max_length == 0) goto code_?;
-    pSVar3->vector[0] = *pfVar4;
-    pSVar2 = (this->fields).settingsBase;
-    if (pSVar2 == (SettingsBase *)0x0) goto code_?;
-    SettingsBase::SettingsBase_OnSettingChanged
-              (pSVar2,StringLiteral_color,(Object *)(this->fields).color,(MethodInfo *)0x0);
-    pSVar3 = (this->fields).color;
-    pIVar6 = (this->fields).preview;
-    if (pSVar3 == (Single__Array *)0x0) goto code_?;
-    uVar13 = pSVar3->max_length;
-    if (uVar13 != 0) {
-      fVar8 = pSVar3->vector[0];
-      if (pSVar3 != (Single__Array *)0x0) {
-        if (uVar13 < 2) goto code_?;
-        fVar9 = pSVar3->vector[1];
         if (pSVar3 != (Single__Array *)0x0) {
-          if (uVar13 < 3) goto code_?;
-          fVar10 = pSVar3->vector[2];
-          if (pSVar3 != (Single__Array *)0x0) {
-            if (uVar13 < 4) goto code_?;
-code_?:
-            uVar5 = 0;
-            uVar11 = 0;
-            uVar12 = 0;
-            uVar14 = 0;
-            func_?(&stack0xffffffe0,fVar8,fVar9,fVar10,pSVar3->vector[3]);
-            if (pIVar6 != (Image *)0x0) {
-              (*(code *)(pIVar6->klass->vtable).set_color.method)(pIVar6,uVar5,uVar11,uVar12,uVar14)
-              ;
-              return;
+          if (value != (Object *)0x0) {
+            if ((value->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+              pfVar4 = (float *)func_?();
+              if (pSVar3->max_length < 3) goto code_?;
+              pSVar3->vector[2] = *pfVar4;
+              goto code_?;
             }
+            goto code_?;
           }
         }
       }
       goto code_?;
     }
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
-code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
+    pSVar3 = (this->fields).color;
+    if (pSVar3 == (Single__Array *)0x0) goto code_?;
+    if (value == (Object *)0x0) goto code_?;
+    if ((value->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+      pfVar4 = (float *)func_?(value);
+      if (pSVar3->max_length < 2) goto code_?;
+      pSVar3->vector[1] = *pfVar4;
+      goto code_?;
+    }
   }
-  uVar5 = func_?(0);
-  func_?(uVar5);
-  value = extraout_ECX;
+  else {
+    pSVar3 = (this->fields).color;
+    if (pSVar3 != (Single__Array *)0x0) {
+      if (value != (Object *)0x0) {
+        if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+        goto code_?;
+        pfVar4 = (float *)func_?(value);
+        if (pSVar3->max_length == 0) goto code_?;
+        pSVar3->vector[0] = *pfVar4;
 code_?:
-  func_?(value);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+        pSVar2 = (this->fields).settingsBase;
+        if (pSVar2 != (SettingsBase *)0x0) {
+          SettingsBase::SettingsBase_OnSettingChanged
+                    (pSVar2,StringLiteral_color,(Object *)(this->fields).color,(MethodInfo *)0x0);
+          pSVar3 = (this->fields).color;
+          pIVar5 = (this->fields).preview;
+          if (pSVar3 != (Single__Array *)0x0) {
+            if ((((pSVar3->max_length == 0) || (pSVar3->max_length < 2)) ||
+                (fStack6 = pSVar3->vector[1], pSVar3->max_length < 3)) ||
+               (puStack7 = (undefined *)pSVar3->vector[2], pSVar3->max_length < 4))
+            goto code_?;
+            if (pIVar5 != (Image *)0x0) {
+              (*(pIVar5->klass->vtable).set_color.methodPtr)();
+              return;
+            }
+          }
+        }
+      }
+    }
+code_?:
+    func_?();
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -469,19 +396,14 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings__ctor(SmokeSettings *this
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   pSVar1 = (Single__Array *)func_?(TypeInfo__System__Single,4);
   (this->fields).color = pSVar1;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  func_?(&(this->fields).color,pSVar1);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

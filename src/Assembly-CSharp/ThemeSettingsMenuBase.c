@@ -6,20 +6,18 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_Initializ
 
 {
   (this->fields).theme = theme;
+  func_?(&(this->fields).theme,theme);
   (this->fields).content = content;
+  func_?(&(this->fields).content,content);
   if ((theme != (Theme *)0x0) &&
-     (pSVar1 = (theme->fields)._Settings_k__BackingField, pSVar1 != (SettingsWrapper *)0x0)) {
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    (pSVar1->fields).menu = (IMenu *)this;
-    func_?(0,TypeInfo__ThemeSettings__IMenu,this);
+     (this_00 = (theme->fields)._Settings_k__BackingField, this_00 != (SettingsWrapper *)0x0)) {
+    ThemeSettings::SettingsWrapper::SettingsWrapper_SubscribeToSettingsUI
+              (this_00,(IMenu *)this,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -30,15 +28,19 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_OnDestroy
                (ThemeSettingsMenuBase *this,MethodInfo *method)
 
 {
-  pTVar1 = (this->fields).theme;
-  if ((pTVar1 != (Theme *)0x0) &&
-     (pSVar2 = (pTVar1->fields)._Settings_k__BackingField, pSVar2 != (SettingsWrapper *)0x0)) {
-    (pSVar2->fields).menu = (IMenu *)0x0;
+  ppIStack_1 = (IMenu **)&stack0xfffffffc;
+  pTVar2 = (this->fields).theme;
+  if ((pTVar2 != (Theme *)0x0) &&
+     (pSVar3 = (pTVar2->fields)._Settings_k__BackingField, pSVar3 != (SettingsWrapper *)0x0)) {
+    (pSVar3->fields).menu = (IMenu *)0x0;
+    ppIStack_1 = &(pSVar3->fields).menu;
+    func_?();
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar4 = func_?(auStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -49,287 +51,268 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_Refresh
                (ThemeSettingsMenuBase *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff90;
-  puVar5 = &stack0xffffff90;
+  pRStack_1 = (RectTransform *)0xffffffff;
+  pRStack_2 = (RectTransform *)&DAT_?;
+  RStack_3.fields._._._.m_CachedPtr = *(Transform__Fields *)unaff_FS_OFFSET;
+  *(RectTransform__Fields **)unaff_FS_OFFSET = &RStack_3.fields;
+  RStack_3.monitor = (MonitorData *)&stack0xffffff98;
+  pRVar4 = (RectTransform *)&stack0xffffff98;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__get_Current__
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__GetEnumerator__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__RectTransform);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    pRVar4 = (RectTransform *)RStack_3.monitor;
   }
-  puStack_4 = puVar5;
-  pIStack_6 = (IEnumerator__Class *)0x0;
-  CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_7.monitor = (MonitorData *)0x0;
-  CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_7.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_8 = 0xffffffff;
-  pTVar9 = (Transform *)(this->fields).content;
-  piStack_10 = (int *)&stack0xffffff90;
-  puStack_4 = &stack0xffffff90;
-  if (pTVar9 != (Transform *)0x0) {
-    piStack_10 = (int *)&stack0xffffff90;
-    puStack_4 = &stack0xffffff90;
-    pIVar11 = (IEnumerator__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                       (pTVar9,(MethodInfo *)0x0);
-    uStack_1 = 0;
-    pIStack_12 = pIVar11;
-    while (unaff_ESI = pIVar11, pIVar11 != (IEnumerator__Class *)0x0) {
-      cVar13 = func_?(1);
-      if (cVar13 == '\0') {
-        uStack_8 = 0;
-        *piStack_10 = 0x4c;
-        pIStack_14 = (IEnumerator__Class *)0x0;
-        uStack_1 = 0xffffffff;
-        iVar15 = func_?();
-        if (iVar15 != 0) {
-          func_?(0);
+  RStack_3.monitor = (MonitorData *)pRVar4;
+  pRStack_5 = (RectTransform *)0x0;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  pTVar7 = (Transform *)(this->fields).content;
+  if (pTVar7 != (Transform *)0x0) {
+    RStack_3.klass =
+         (RectTransform__Class *)
+         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                   (pTVar7,(MethodInfo *)0x0);
+    LStack_8._version = (int32_t)&RStack_3;
+    LStack_8._current = (RegexCharClass_SingleRange)&pRStack_5;
+    LStack_8._index = 0;
+    pRStack_1 = (RectTransform *)0x1;
+    while (RStack_3.klass != (RectTransform__Class *)0x0) {
+      cVar9 = func_?(0,TypeInfo__System__Collections__IEnumerator,RStack_3.klass);
+      pRVar10 = RStack_3.klass;
+      if (cVar9 == '\0') {
+        pRStack_1 = (RectTransform *)0xffffffff;
+        pRStack_5 = (RectTransform *)func_?(RStack_3.klass,TypeInfo__System__IDisposable)
+        ;
+        if (pRStack_5 != (RectTransform *)0x0) {
+          func_?(0,TypeInfo__System__IDisposable,pRStack_5);
         }
-        pIVar16 = pIStack_6;
-        obj_00 = pIVar11;
-        if (pIStack_6 != (IEnumerator__Class *)0x0) goto code_?;
-        if (*piStack_10 == 0x4c) {
-          pIStack_14 = (IEnumerator__Class *)0xffffffff;
-          uStack_8 = 0xffffffff;
-        }
-        pTVar17 = (this->fields).theme;
-        unaff_ESI = (IEnumerator__Class *)0x0;
-        if ((pTVar17 != (Theme *)0x0) &&
-           (unaff_ESI = (IEnumerator__Class *)(pTVar17->fields)._Settings_k__BackingField,
-           unaff_ESI != (IEnumerator__Class *)0x0)) {
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pLVar18 = (List_1_VoxelHit_ *)(unaff_ESI->_0).namespaze;
-          pIStack_12 = (IEnumerator__Class *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    ((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                      *)pIStack_12,(Object *)unaff_ESI,
-                     MethodInfo__ThemeSettings__SettingsWrapper___get_SettingsUI_m__0_ThemeAttributes__ThemeAttribute_
-                     ,
-                     MethodInfo__System__Predicate<ThemeAttributes::ThemeAttribute>__Predicate_System__Object__void__
-                    );
-          if ((pLVar18 != (List_1_VoxelHit_ *)0x0) &&
-             (pLStack_19 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::
-                           List_1_VoxelHit__FindAll
-                                     (pLVar18,(Predicate_1_VoxelHit_ *)pIStack_12,
-                                      MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
-                                     ), pLStack_19 != (List_1_VoxelHit_ *)0x0)) {
-            mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-            Serialization::JsonProperty]::
-            Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                      ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLStack_19,
-                       MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Count__
-                      );
-            iStack_20 = func_?();
-            obj_00 = (IEnumerator__Class *)0x0;
-            pIStack_21 = (IEnumerator *)(iStack_20 + 0x10);
-            pIStack_22 = pIStack_21;
+        pRStack_1 = (RectTransform *)0xffffffff;
+        pTVar11 = (this->fields).theme;
+        if ((pTVar11 != (Theme *)0x0) &&
+           (this_00 = (pTVar11->fields)._Settings_k__BackingField, this_00 != (SettingsWrapper *)0x0)
+           ) {
+          pRStack_12 = ThemeSettings::SettingsWrapper::SettingsWrapper_get_SettingsUI
+                                 (this_00,(MethodInfo *)0x0);
+          uVar13 = 0;
+          if (pRStack_12 != (RectTransform__Array *)0x0) {
+            ppRVar14 = pRStack_12->vector;
             goto code_?;
           }
         }
         break;
       }
-      pCVar23 = (Component_1 *)func_?(0);
-      if (pCVar23 == (Component_1 *)0x0) break;
-      pCVar24 = (Component_1 *)0x0;
-      if ((RectTransform__Class *)pCVar23->klass == TypeInfo__UnityEngine__RectTransform) {
-        pCVar24 = pCVar23;
+      pRStack_15 = RStack_3.klass;
+      if (RStack_3.klass == (RectTransform__Class *)0x0) break;
+      pRStack_16 = (RectTransform__Class *)((RStack_3.klass)->_0).image;
+      uVar17 = 0;
+      pRStack_18 = (RectTransform *)0x0;
+      uVar19 = (pRStack_16->_1).interface_offsets_count;
+      pRStack_12 = (RectTransform__Array *)(uint)uVar19;
+      if (uVar19 != 0) {
+        do {
+          if (pRStack_16->interfaceOffsets[uVar17].interfaceType ==
+              (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+            pIVar20 = ((RStack_3.klass)->_0).image;
+            puVar21 = &pIVar20[4].customAttributeCount +
+                     *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
+            goto code_?;
+          }
+          uVar17 = uVar17 + 1;
+        } while (uVar17 < uVar19);
       }
-      if (pCVar24 == (Component_1 *)0x0) goto code_?;
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      (pCVar24,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      puVar21 = (uint32_t *)
+               func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
+code_?:
+      pCVar22 = (Component *)(*(code *)*puVar21)(pRVar10,(Il2CppMetadataImageHandle)puVar21[1]);
+      if (pCVar22 == (Component *)0x0) break;
+      pCVar23 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar23 = pCVar22;
+      }
+      pRVar10 = TypeInfo__UnityEngine__RectTransform;
+      if (pCVar23 == (Component *)0x0) goto code_?;
+      pCVar23 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar23 = pCVar22;
+      }
+      unaff_EDI = (MethodInfo *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (pCVar23,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)unaff_EDI,(MethodInfo *)0x0);
+    }
+  }
+  goto code_?;
+code_?:
+  if ((int)pRStack_12->max_length <= (int)uVar13) goto code_?;
+  if (pRStack_12->max_length <= uVar13) goto code_?;
+  if ((Transform *)*ppRVar14 == (Transform *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+            ((Transform *)*ppRVar14,(Transform *)(this->fields).content,0,(MethodInfo *)0x0);
+  uVar13 = uVar13 + 1;
+  ppRVar14 = ppRVar14 + 1;
+  goto code_?;
+code_?:
+  pTVar7 = (Transform *)(this->fields).controllerArea;
+  if (pTVar7 != (Transform *)0x0) {
+    RStack_3.klass =
+         (RectTransform__Class *)
+         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                   (pTVar7,(MethodInfo *)0x0);
+    LStack_8._version = (int32_t)&RStack_3;
+    LStack_8._index = 0;
+    LStack_8._current = (RegexCharClass_SingleRange)&pRStack_5;
+    pRStack_1 = (RectTransform *)0x4;
+    while (pRVar10 = RStack_3.klass, pRStack_16 = RStack_3.klass,
+          RStack_3.klass != (RectTransform__Class *)0x0) {
+      pRStack_15 = (RectTransform__Class *)((RStack_3.klass)->_0).image;
+      uVar17 = 0;
+      pRStack_12 = (RectTransform__Array *)0x0;
+      uVar19 = (pRStack_15->_1).interface_offsets_count;
+      pRStack_18 = (RectTransform *)(uint)uVar19;
+      if (uVar19 != 0) {
+        do {
+          if (pRStack_15->interfaceOffsets[uVar17].interfaceType ==
+              (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+            pIVar20 = ((RStack_3.klass)->_0).image;
+            puVar21 = &pIVar20[4].typeCount + *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
+            goto code_?;
+          }
+          uVar17 = uVar17 + 1;
+        } while (uVar17 < uVar19);
+      }
+      puVar21 = (uint32_t *)
+               func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,0);
+code_?:
+      cVar9 = (*(code *)*puVar21)(pRVar10,puVar21[1]);
+      pRVar10 = RStack_3.klass;
+      if (cVar9 == '\0') {
+        pRStack_1 = (RectTransform *)0xffffffff;
+        pRStack_5 = (RectTransform *)func_?(RStack_3.klass,TypeInfo__System__IDisposable)
+        ;
+        if (pRStack_5 != (RectTransform *)0x0) {
+          func_?(0,TypeInfo__System__IDisposable,pRStack_5);
+        }
+        pRStack_1 = (RectTransform *)0xffffffff;
+        pTVar11 = (this->fields).theme;
+        if ((pTVar11 != (Theme *)0x0) &&
+           (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                      (*(pTVar11->klass->vtable).get_Controllers.methodPtr)
+                                (pTVar11,(pTVar11->klass->vtable).get_Controllers.method),
+           this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+          pLVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                              (&LStack_8,this_01,
+                               MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__GetEnumerator__
+                              );
+          pRStack_25 = (RectTransform *)0x0;
+          LStack_6._list = (List_1_System_Object_ *)pLVar24->_list;
+          LStack_6._index = pLVar24->_index;
+          LStack_6._version = pLVar24->_version;
+          LStack_6._current = *(Object **)&pLVar24->_current;
+          pRStack_1 = (RectTransform *)0x7;
+          pRStack_12 = (RectTransform__Array *)&LStack_6;
+          while( true ) {
+            bVar26 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                    ::List_1_T_Enumerator_System_Object__MoveNext
+                              (&LStack_6,
+                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__MoveNext__
+                              );
+            if (bVar26 == 0) {
+              pRStack_1 = (RectTransform *)0xffffffff;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&LStack_6,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__Dispose__
+                         ,unaff_EDI);
+              *(Transform__Fields *)unaff_FS_OFFSET = RStack_3.fields._._._.m_CachedPtr;
+              return;
+            }
+            if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+            break;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                      ((Transform *)LStack_6._current,(Transform *)(this->fields).controllerArea,0,
+                       (MethodInfo *)0x0);
+          }
+        }
+        break;
+      }
+      pRStack_16 = RStack_3.klass;
+      if (RStack_3.klass == (RectTransform__Class *)0x0) break;
+      pRStack_15 = (RectTransform__Class *)((RStack_3.klass)->_0).image;
+      uVar17 = 0;
+      pRStack_12 = (RectTransform__Array *)0x0;
+      uVar19 = (pRStack_15->_1).interface_offsets_count;
+      pRStack_18 = (RectTransform *)(uint)uVar19;
+      if (uVar19 != 0) {
+        do {
+          if (pRStack_15->interfaceOffsets[uVar17].interfaceType ==
+              (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+            pIVar20 = ((RStack_3.klass)->_0).image;
+            puVar21 = &pIVar20[4].customAttributeCount +
+                     *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
+            goto code_?;
+          }
+          uVar17 = uVar17 + 1;
+        } while (uVar17 < uVar19);
+      }
+      puVar21 = (uint32_t *)
+               func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
+code_?:
+      pCVar22 = (Component *)(*(code *)*puVar21)(pRVar10,(Il2CppMetadataImageHandle)puVar21[1]);
+      if (pCVar22 == (Component *)0x0) goto code_?;
+      pCVar23 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar23 = pCVar22;
+      }
+      pRVar10 = TypeInfo__UnityEngine__RectTransform;
+      if (pCVar23 == (Component *)0x0) goto code_?;
+      pCVar23 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar23 = pCVar22;
+      }
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      (pCVar23,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                 ((Object_1 *)obj,(MethodInfo *)0x0);
     }
   }
-  goto code_?;
-code_?:
-  pLVar18 = pLStack_19;
-  pIStack_12 = obj_00;
-  pOVar25 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-            Serialization::JsonProperty]::
-            Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                      ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLStack_19,
-                       MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Count__
-                      );
-  iVar15 = iStack_20;
-  if ((int)pOVar25 <= (int)obj_00) goto code_?;
-  pIVar26 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-            IEventSystemHandler]::List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                      ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar18,
-                       (int32_t)obj_00,
-                       MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Item_int_
-                      );
-  unaff_ESI = obj_00;
-  if ((pIVar26 == (IEventSystemHandler *)0x0) ||
-     (pIVar11 = (IEnumerator__Class *)(*(code *)pIVar26->klass[1]._0.parent)(), iStack_20 == 0))
-  goto code_?;
-  if ((pIVar11 != (IEnumerator__Class *)0x0) && (iVar15 = func_?(), iVar15 == 0))
-  goto code_?;
-  if (*(IEnumerator__Class **)(iStack_20 + 0xc) <= obj_00) goto code_?;
-  obj_00 = (IEnumerator__Class *)((int)&(obj_00->_0).image + 1);
-  pIStack_21->klass = pIVar11;
-  pIStack_21 = (IEnumerator *)&pIStack_21->monitor;
-  goto code_?;
-code_?:
-  cVar13 = func_?();
-  obj_00 = pIStack_6;
-  if (cVar13 == '\0') goto code_?;
-  pTVar9 = (Transform *)
-            mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-            Serialization::JsonProperty]::
-            Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                      (&CStack_7,
-                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__get_Current__
-                      );
-  if (pTVar9 == (Transform *)0x0) goto code_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-            (pTVar9,(Transform *)(this->fields).controllerArea,0,(MethodInfo *)0x0);
-  goto code_?;
-code_?:
-  piStack_10[(int)((int)&(unaff_ESI->_0).image + 1)] = 299;
-  uStack_1 = 0xffffffff;
-  func_?(&CStack_7,
-                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__Dispose__
-                 );
-  if (obj_00 == (IEnumerator__Class *)0x0) {
-    *unaff_FS_OFFSET = uStack_3;
-    return;
-  }
-  goto code_?;
 code_?:
   func_?();
-  unaff_ESI = pIVar11;
-  goto code_?;
+  pCVar22 = extraout_ECX;
+  pRVar10 = extraout_EDX;
 code_?:
-  obj_00 = (IEnumerator__Class *)0x0;
-  unaff_ESI = obj_00;
-  if (iStack_20 != 0) {
-    for (; unaff_ESI = obj_00, (int)obj_00 < (int)*(IEnumerator__Class **)(iVar15 + 0xc);
-        obj_00 = (IEnumerator__Class *)((int)&(obj_00->_0).image + 1)) {
-      if (*(IEnumerator__Class **)(iVar15 + 0xc) <= obj_00) goto code_?;
-      if (pIStack_22->klass == (IEnumerator__Class *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                ((Transform *)pIStack_22->klass,(Transform *)(this->fields).content,0,
-                 (MethodInfo *)0x0);
-      pIStack_22 = (IEnumerator *)&pIStack_22->monitor;
-    }
-    pTVar9 = (Transform *)(this->fields).controllerArea;
-    if (pTVar9 != (Transform *)0x0) {
-      pIVar27 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                          (pTVar9,(MethodInfo *)0x0);
-      uStack_1 = 2;
-      pIStack_22 = pIVar27;
-      while (pIVar11 = TypeInfo__System__Collections__IEnumerator, unaff_ESI = obj_00,
-            pIVar27 != (IEnumerator *)0x0) {
-        pIStack_12 = pIVar27->klass;
-        uVar28 = 0;
-        pLStack_19 = (List_1_VoxelHit_ *)0x0;
-        uVar29._0_1_ = (pIStack_12->_1).rank;
-        uVar29._1_1_ = (pIStack_12->_1).minimumAlignment;
-        if (uVar29 != 0) {
-          do {
-            pIVar27 = pIStack_22;
-            if (pIStack_12->interfaceOffsets[uVar28].interfaceType ==
-                (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-              ppMVar30 = &(&(pIStack_12->vtable).MoveNext)
-                          [pIStack_12->interfaceOffsets[uVar28].offset].method;
-              goto code_?;
-            }
-            uVar28 = uVar28 + 1;
-          } while (uVar28 < uVar29);
-        }
-        ppMVar30 = (MethodInfo **)func_?();
+  func_?(pCVar22,pRVar10);
 code_?:
-        cVar13 = (*(code *)*ppMVar30)();
-        pIVar16 = pIStack_14;
-        if (cVar13 == '\0') {
-          obj_00 = (IEnumerator__Class *)((int)&(pIStack_14->_0).image + 1);
-          piStack_10[(int)obj_00] = 0xde;
-          uStack_1 = 0xffffffff;
-          iVar15 = func_?();
-          if (iVar15 != 0) {
-            func_?(0);
-          }
-          pIVar11 = pIStack_6;
-          if (pIStack_6 != (IEnumerator__Class *)0x0) goto code_?;
-          unaff_ESI = obj_00;
-          if (((obj_00 != (IEnumerator__Class *)0xffffffff) && (piStack_10[(int)obj_00] == 0xde)) &&
-             (-1 < (int)obj_00)) {
-            unaff_ESI = pIVar16;
-          }
-          pTVar17 = (this->fields).theme;
-          if ((pTVar17 != (Theme *)0x0) &&
-             (this_00 = (List_1_UnityEngine_Color32_ *)
-                        (*(code *)(pTVar17->klass->vtable).get_Controllers.method)(),
-             this_00 != (List_1_UnityEngine_Color32_ *)0x0)) {
-            pLVar31 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Color32]::
-                      List_1_UnityEngine_Color32__GetEnumerator
-                                ((List_1_T_Enumerator_UnityEngine_Color32_ *)&stack0xffffff9c,
-                                 this_00,
-                                 MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__GetEnumerator__
-                                );
-            CStack_7.klass =
-                 (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pLVar31->l;
-            CStack_7.monitor = (MonitorData *)pLVar31->next;
-            CStack_7.fields.list =
-                 (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar31->ver;
-            CStack_7.fields.syncRoot = (Object *)(pLVar31->current).rgba;
-            uStack_1 = 4;
-            goto code_?;
-          }
-          break;
-        }
-        pCVar23 = (Component_1 *)func_?(0);
-        unaff_ESI = pIVar11;
-        if (pCVar23 == (Component_1 *)0x0) break;
-        pCVar24 = (Component_1 *)0x0;
-        if ((RectTransform__Class *)pCVar23->klass == TypeInfo__UnityEngine__RectTransform) {
-          pCVar24 = pCVar23;
-        }
-        if (pCVar24 == (Component_1 *)0x0) goto code_?;
-        obj_00 = (IEnumerator__Class *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           (pCVar24,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)obj_00,(MethodInfo *)0x0);
-      }
-    }
-  }
+  func_?();
 code_?:
-  pIVar16 = (IEnumerator__Class *)func_?();
-  obj_00 = unaff_ESI;
-code_?:
-  func_?(pIVar16);
-code_?:
-  uVar32 = func_?();
-  func_?(uVar32);
-code_?:
-  uVar32 = func_?();
-  pIVar11 = (IEnumerator__Class *)func_?(uVar32);
-code_?:
-  func_?(pIVar11);
-code_?:
-  func_?(obj_00,0,0);
-  pcVar33 = (code *)swi(3);
-  (*pcVar33)();
+  func_?();
+  pcVar27 = (code *)swi(3);
+  (*pcVar27)();
   return;
 }
 

@@ -5,7 +5,38 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaException::JsonSch
                (JsonSchemaException *this,MethodInfo *method)
 
 {
-  (this->fields)._.hresult = -0x7feceb00;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Exception);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Exception->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Exception);
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  *(undefined4 *)(in_stack_1 + 0xc) = 0;
+  func_?(in_stack_1 + 0xc,0);
+  *(undefined4 *)(in_stack_1 + 0x1c) = 0;
+  func_?(in_stack_1 + 0x1c,0);
+  *(undefined4 *)(in_stack_1 + 0x2c) = 0;
+  func_?(in_stack_1 + 0x2c,0);
+  *(undefined4 *)(in_stack_1 + 0x30) = 0x80131500;
+  this_00 = (TweenRunner_1_FloatTween_ *)
+            func_?(TypeInfo__System__Runtime__Serialization__SafeSerializationManager);
+  if (this_00 != (TweenRunner_1_FloatTween_ *)0x0) {
+    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
+    *(TweenRunner_1_FloatTween_ **)(in_stack_1 + 0x38) = this_00;
+    func_?(in_stack_1 + 0x38,this_00);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -16,9 +47,18 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaException::JsonSch
                (JsonSchemaException *this,String *message,MethodInfo *method)
 
 {
-  (this->fields)._.hresult = -0x7feceb00;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  (this->fields)._.message = message;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Exception);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Exception->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Exception);
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::Exception::Exception_Init((Exception *)this,(MethodInfo *)0x0);
+  (this->fields)._._message = message;
+  func_?(&(this->fields)._._message,message);
   return;
 }
 
@@ -30,10 +70,20 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaException::JsonSch
                MethodInfo *method)
 
 {
-  (this->fields)._.hresult = -0x7feceb00;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  (this->fields)._.inner_exception = innerException;
-  (this->fields)._.message = message;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Exception);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Exception->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Exception);
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::Exception::Exception_Init((Exception *)this,(MethodInfo *)0x0);
+  (this->fields)._._message = message;
+  func_?(&(this->fields)._._message,message);
+  (this->fields)._._innerException = innerException;
+  func_?(&(this->fields)._._innerException,innerException);
   return;
 }
 
@@ -45,7 +95,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaException::JsonSch
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::Exception::Exception__ctor_2
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Exception);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Exception->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Exception);
+  }
+  mscorlib.dll::System::Exception::Exception__ctor_3
             ((Exception *)this,info,context,(MethodInfo *)0x0);
   return;
 }
@@ -58,7 +115,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaException::JsonSch
                int32_t lineNumber,int32_t linePosition,MethodInfo *method)
 
 {
-  mscorlib.dll::System::Exception::Exception__ctor_3
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Exception);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Exception->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Exception);
+  }
+  mscorlib.dll::System::Exception::Exception__ctor_2
             ((Exception *)this,message,innerException,(MethodInfo *)0x0);
   (this->fields)._LineNumber_k__BackingField = lineNumber;
   (this->fields)._LinePosition_k__BackingField = linePosition;

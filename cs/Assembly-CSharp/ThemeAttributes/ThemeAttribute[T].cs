@@ -8,14 +8,14 @@ using System.Runtime.CompilerServices;
 using ThemeSettings;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace ThemeAttributes
 {
 	public abstract class ThemeAttribute<T> : ThemeAttribute
 	{
 		// Fields
-		[Header]
+		[Header("Configuration")]
 		[SerializeField]
 		protected T value;
 		protected Action<T> themeCallback;

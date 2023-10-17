@@ -6,31 +6,22 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?,unaff_EBP);
+    func_?(&TypeInfo__UnityEngine__Object,unaff_EBP);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+  if (pcRam_? == (code *)0x0) {
+    pcRam_? = (code *)func_?(&UNK_?);
   }
-  pcRam_? = pcVar1;
   (*pcRam_?)(this,0);
   return;
 }
@@ -45,18 +36,19 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral__ACTk__);
+    func_?(&StringLiteral___self_destroying__other_instanc);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)instance,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -71,23 +63,17 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
       if ((instance->fields).keepAlive != 0) {
         pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                            ((Object_1 *)this,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pSVar3 = mscorlib.dll::System::String::String_Concat_3
+        pSVar3 = mscorlib.dll::System::String::String_Concat_4
                            (StringLiteral__ACTk__,pSVar3,
                             StringLiteral___self_destroying__other_instanc,(MethodInfo *)0x0);
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1
                   ((Object *)pSVar3,(Object_1 *)pGVar4,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -96,10 +82,9 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
       }
     }
   }
-  pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_DontDestroyOnLoad
@@ -114,8 +99,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
      ActDetectorBase_OnApplicationQuit(ActDetectorBase *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).DisposeInternal.method)
-            (this,(this->klass->vtable).DetectorHasAdditionalCallbacks.methodPtr);
+  (*(this->klass->vtable).DisposeInternal.methodPtr)
+            (this,(this->klass->vtable).DisposeInternal.method);
   return;
 }
 
@@ -126,29 +111,28 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
      ActDetectorBase_OnCheatingDetected(ActDetectorBase *this,MethodInfo *method)
 
 {
-  this_00 = (AvatarMotor_OnActiveBounceDelegate *)(this->fields).detectionAction;
-  if (this_00 != (AvatarMotor_OnActiveBounceDelegate *)0x0) {
-    Assembly-CSharp.dll::AvatarMotor+OnActiveBounceDelegate::
-    AvatarMotor_OnActiveBounceDelegate_Invoke(this_00,(MethodInfo *)0x0);
+  if ((this->fields).detectionAction != (UnityAction *)0x0) {
+    pUVar1 = (this->fields).detectionAction;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }
   if ((this->fields).detectionEventHasListener != 0) {
-    this_01 = (this->fields).detectionEvent;
-    if (this_01 == (UnityEvent *)0x0) {
+    this_00 = (this->fields).detectionEvent;
+    if (this_00 == (UnityEvent *)0x0) {
       func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_Invoke
-              (this_01,(MethodInfo *)0x0);
+              (this_00,(MethodInfo *)0x0);
   }
-  pAVar2 = this->klass;
+  pAVar3 = this->klass;
   if ((this->fields).autoDispose == 0) {
-    (*(code *)(pAVar2->vtable).__unknown_1.method)(this,(pAVar2->vtable).__unknown_2.methodPtr);
+    (*(pAVar3->vtable).__unknown_1.methodPtr)(this,(pAVar3->vtable).__unknown_1.method);
     return;
   }
-  (*(code *)(pAVar2->vtable).DisposeInternal.method)
-            (this,(pAVar2->vtable).DetectorHasAdditionalCallbacks.methodPtr);
+  (*(pAVar3->vtable).DisposeInternal.methodPtr)(this,(pAVar3->vtable).DisposeInternal.method);
   return;
 }
 
@@ -160,50 +144,49 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    CodeStage__AntiCheat__Detectors__ActDetectorBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<CodeStage::AntiCheat::Detectors::ActDetectorBase>______
+                   );
+    func_?(&
+                    UnityEngine__Component__MethodInfo__UnityEngine__Component__GetComponentsInChildren<MethodInfo::UnityEngine::Component>______
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Anti_Cheat_Toolkit_Detectors);
     cRam_? = '\x01';
   }
-  (*(code *)(this->klass->vtable).__unknown_1.method)
-            (this,(this->klass->vtable).__unknown_2.methodPtr);
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  (*(this->klass->vtable).__unknown_1.methodPtr)(this,(this->klass->vtable).__unknown_1.method);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
     iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                       (this_00,(MethodInfo *)0x0);
     if (iVar1 == 0) {
-      pUVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-               GameObject_GetComponentsInChildren_29
-                         ((GameObject *)this,
+      pIVar2 = Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
                           UnityEngine__Component__MethodInfo__UnityEngine__Component__GetComponentsInChildren<MethodInfo::UnityEngine::Component>______
                          );
-      if (pUVar2 == (UseInteratorVisualization__Array *)0x0) goto code_?;
-      if ((int)pUVar2->max_length < 3) goto code_?;
+      if (pIVar2 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
+      if ((int)pIVar2[1].monitor < 3) goto code_?;
     }
     a = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                   ((Object_1 *)this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
     bVar3 = mscorlib.dll::System::String::String_op_Equality
                       (a,StringLiteral_Anti_Cheat_Toolkit_Detectors,(MethodInfo *)0x0);
     if (bVar3 == 0) {
       return;
     }
-    pUVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-             GameObject_GetComponentsInChildren_29
-                       ((GameObject *)this,
+    pIVar2 = Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
                         CodeStage__AntiCheat__Detectors__ActDetectorBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<CodeStage::AntiCheat::Detectors::ActDetectorBase>______
                        );
-    if (pUVar2 != (UseInteratorVisualization__Array *)0x0) {
-      if (1 < (int)pUVar2->max_length) {
+    if (pIVar2 != (IEnumerable_1_System_Object_ *)0x0) {
+      if (1 < (int)pIVar2[1].monitor) {
         return;
       }
 code_?:
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -226,8 +209,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
 
 {
   if ((this->fields).started != 0) {
-    (*(code *)(this->klass->vtable).__unknown_2.method)
-              (this,(this->klass->vtable).__unknown_3.methodPtr);
+    (*(this->klass->vtable).__unknown_2.methodPtr)(this,(this->klass->vtable).__unknown_2.method);
   }
   return;
 }
@@ -242,12 +224,12 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
   if ((this->fields).started != 0) {
     if ((((this->fields).detectionEventHasListener == 0) &&
         ((this->fields).detectionAction == (UnityAction *)0x0)) &&
-       (cVar1 = (*(code *)(this->klass->vtable).DetectorHasAdditionalCallbacks.method)
-                          (this,(this->klass->vtable).OnCheatingDetected.methodPtr), cVar1 == '\0'))
-    {
+       (cVar1 = (*(this->klass->vtable).DetectorHasAdditionalCallbacks.methodPtr)
+                          (this,(this->klass->vtable).DetectorHasAdditionalCallbacks.method),
+       cVar1 == '\0')) {
       return;
     }
-    (*(code *)(this->klass->vtable).__unknown_3.method)(this,this->klass[1]._0.image);
+    (*(this->klass->vtable).__unknown_3.methodPtr)(this,(this->klass->vtable).__unknown_3.method);
   }
   return;
 }
@@ -260,20 +242,21 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__Detectors__ActDetectorBase);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Anti_Cheat_Toolkit_Detectors);
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__CodeStage__AntiCheat__Detectors__ActDetectorBase->static_fields->
            detectorsContainer;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pGVar1 == (GameObject *)0x0) {
       func_?();
       pcVar3 = (code *)swi(3);
@@ -282,23 +265,18 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
     }
     a = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                   ((Object_1 *)pGVar1,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
     bVar2 = mscorlib.dll::System::String::String_op_Equality
                       (a,StringLiteral_Anti_Cheat_Toolkit_Detectors,(MethodInfo *)0x0);
     if (bVar2 != 0) {
-      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
+      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
       TypeInfo__CodeStage__AntiCheat__Detectors__ActDetectorBase->static_fields->detectorsContainer
            = pGVar1;
+      func_?();
     }
   }
   if (((this->fields).autoStart != 0) && ((this->fields).started == 0)) {
-    pIStack4 = (this->klass->vtable).__unknown_1.methodPtr;
-    pAStack5 = this;
-    (*(code *)(this->klass->vtable).__unknown.method)();
+    (*(this->klass->vtable).__unknown.methodPtr)();
   }
   return;
 }

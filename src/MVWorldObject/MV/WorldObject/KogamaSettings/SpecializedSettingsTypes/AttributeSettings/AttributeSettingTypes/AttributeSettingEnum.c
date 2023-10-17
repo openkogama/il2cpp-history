@@ -6,171 +6,181 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
          AttributeSettingEnum_ToString(AttributeSettingEnum *this,MethodInfo *method)
 
 {
-  iStack_1 = -1;
-  pSStack_2 = (SerializationInfo *)&DAT_?;
-  pIStack_3 = (IEqualityComparer_1_WinningConditionType_ *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffff8c;
+  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Key__);
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Value__);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_AttributeValue__0___AttributePoi);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral___0____1__);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  auStack_6._16_4_ = (Object *)0x0;
-  KStack_7.key = 0;
-  KStack_7.value = 0;
-  auStack_6._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_6._4_4_ = (MonitorData *)0x0;
-  auStack_6._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_6._12_4_ = 0;
-  func_?();
-  pSVar8 = ::StringLiteral__;
-  this_00 = (this->fields).valueAttributeValueMap;
-  pSStack_9 = ::StringLiteral__;
-  pWStack_10 = (WinningConditionType__Enum__Array *)&stack0xffffff94;
-  puStack_4 = &stack0xffffff94;
-  if (this_00 == (Dictionary_2_System_Int32_System_Int32_ *)0x0) goto code_?;
-  pWStack_10 = (WinningConditionType__Enum__Array *)&stack0xffffff94;
-  puStack_4 = &stack0xffffff94;
-  pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-           Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                     (&DStack_12,(Dictionary_2_WinningConditionType_System_Object_ *)this_00,
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
-                     );
-  auStack_6._0_4_ = pDVar11->dictionary;
-  auStack_6._4_4_ = pDVar11->next;
-  auStack_6._8_4_ = pDVar11->stamp;
-  auStack_6._12_4_ = (pDVar11->current).key;
-  auStack_6._16_4_ = (pDVar11->current).value;
-  iStack_1 = 0;
-  while (cVar13 = func_?(), cVar13 != '\0') {
-    KStack_7 = Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_get_NextReward
-                          ((LevelRewardsManager *)auStack_6,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
-                          );
-    DStack_12.dictionary = (Dictionary_2_WinningConditionType_System_Object_ *)&KStack_7;
-    DStack_12.next =
-         (int32_t)MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Key__;
-    auStack_14._4_4_ = func_?();
-    DStack_12.next = (int32_t)(auStack_14 + 4);
-    DStack_12.dictionary =
-         (Dictionary_2_WinningConditionType_System_Object_ *)TypeInfo__System__Int32;
-    pOStack_15 = (Object__Array *)func_?();
-    DStack_12.dictionary = (Dictionary_2_WinningConditionType_System_Object_ *)&KStack_7;
-    DStack_12.next =
-         (int32_t)MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Value__;
-    auStack_14._0_4_ = func_?();
-    DStack_12.next = (int32_t)auStack_14;
-    DStack_12.dictionary =
-         (Dictionary_2_WinningConditionType_System_Object_ *)TypeInfo__System__Int32;
-    pOVar16 = (Object *)func_?();
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    str1 = mscorlib.dll::System::String::String_Format_1
-                     (StringLiteral___0____1__,(Object *)pOStack_15,pOVar16,(MethodInfo *)0x0);
-    pSVar8 = mscorlib.dll::System::String::String_Concat_2(pSVar8,str1,(MethodInfo *)0x0);
-    pSStack_9 = pSVar8;
-  }
-  pWStack_10->klass = (WinningConditionType__Enum__Array__Class *)0x5e;
-  iStack_1 = -1;
-  func_?();
-  args = (Object__Array *)func_?();
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pOStack_15 = (Object__Array *)(this->fields).valueAttributeValueMap;
-  pWStack_10 = (WinningConditionType__Enum__Array *)(this->fields)._.KogamaSettingEnum;
-  if (pWStack_10 == (WinningConditionType__Enum__Array *)0x0) goto code_?;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pOVar16 = (((KogamaSettingEnum__Fields *)&pWStack_10->bounds)->_).value;
-  if (pOVar16 == (Object *)0x0) goto code_?;
-  if ((pOVar16->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-    piVar17 = (int32_t *)func_?(pOVar16);
-    if (pOStack_15 == (Object__Array *)0x0) goto code_?;
-    pSStack_9 = (String *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                 Int32]::Dictionary_2_System_Int32_System_Int32__get_Item
-                           ((Dictionary_2_System_Int32_System_Int32_ *)pOStack_15,*piVar17,
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
-                           );
-    pWStack_10 = (WinningConditionType__Enum__Array *)
-                 func_?(TypeInfo__System__Int32,&pSStack_9);
-    if (args == (Object__Array *)0x0) goto code_?;
-    if ((pWStack_10 != (WinningConditionType__Enum__Array *)0x0) &&
-       (iVar18 = func_?(pWStack_10,(args->klass->_0).element_class), iVar18 == 0))
-    goto code_?;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)pWStack_10;
-    if ((pSVar8 != (String *)0x0) &&
-       (iVar18 = func_?(pSVar8,(args->klass->_0).element_class), iVar18 == 0))
-    goto code_?;
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)pSVar8;
-    pLStack_19 = (Link__Array *)(this->fields)._ExclusivityFlag_k__BackingField;
-    pOVar16 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
-                             ,&pLStack_19);
-    if ((pOVar16 != (Object *)0x0) &&
-       (iVar18 = func_?(pOVar16,(args->klass->_0).element_class), iVar18 == 0))
-    goto code_?;
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar16;
-    pKVar20 = (this->fields)._.KogamaSettingEnum;
-    if ((pKVar20 != (KogamaSettingEnum *)0x0) &&
-       (iVar18 = func_?(pKVar20,(args->klass->_0).element_class), iVar18 == 0))
-    goto code_?;
-    if (3 < args->max_length) {
-      args->vector[3] = (Object *)pKVar20;
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar8 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_AttributeValue__0___AttributePoi,args,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pIStack_3;
-      return pSVar8;
-    }
+  pSVar6 = ::StringLiteral__;
+  DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  pSStack_8 = ::StringLiteral__;
+  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).valueAttributeValueMap;
+  DStack_7._current.value = 0;
+  DStack_7._getEnumeratorRetType = 0;
+  if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+code_?:
+    uVar9 = func_?();
+    func_?(uVar9);
+code_?:
+    uVar9 = func_?(0);
+    func_?(uVar9);
+code_?:
+    uVar9 = func_?(0);
+    func_?(uVar9);
+code_?:
+    uVar9 = func_?(0);
+    func_?(uVar9);
+code_?:
+    uVar9 = func_?(0);
+    func_?(uVar9);
   }
   else {
-    func_?(pOVar16,TypeInfo__System__Int32);
-    func_?();
-code_?:
-    uVar21 = func_?(0,0);
-    func_?(uVar21);
-code_?:
-    uVar21 = func_?(0,0);
-    func_?(uVar21);
-code_?:
-    uVar21 = func_?(0,0);
-    func_?(uVar21);
-code_?:
-    uVar21 = func_?(0,0);
-    func_?(uVar21);
-code_?:
-    uVar21 = func_?(0,0);
-    func_?(uVar21);
-code_?:
-    uVar21 = func_?(0,0);
-    func_?(uVar21);
-code_?:
-    uVar21 = func_?(0,0);
-    func_?(uVar21);
+    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                        &stack0xffffff98,this_00,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
+                       );
+    uStack_11 = 0;
+    DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar10->_dictionary;
+    DStack_7._version = pDVar10->_version;
+    DStack_7._index = pDVar10->_index;
+    DStack_7._current.key = (int32_t)(pDVar10->_current).key;
+    DStack_7._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
+    uStack_1 = 1;
+    apDStack_12[0] = &DStack_7;
+    while (bVar13 = mscorlib.dll::System::Collections::Generic::
+                   Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Int32Enum]::
+                   Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum__MoveNext
+                             (&DStack_7,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                             ), bVar13 != 0) {
+      pOStack_14 = (Object *)DStack_7._current.key;
+      pDStack_15 = (Dictionary_2_System_Int32Enum_System_Object_ *)DStack_7._current.value;
+      pKStack_16 = (KogamaSettingEnum *)func_?();
+      pDStack_17 = pDStack_15;
+      pOVar18 = (Object *)func_?();
+      str1 = mscorlib.dll::System::String::String_Format_1
+                       (StringLiteral___0____1__,(Object *)pKStack_16,pOVar18,(MethodInfo *)0x0);
+      pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
+      pSStack_8 = pSVar6;
+    }
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&DStack_7,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
+               ,in_stack_19);
+    uStack_1 = 0xffffffff;
+    args = (Object__Array *)func_?();
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
+                     );
+      cRam_? = '\x01';
+    }
+    pDStack_15 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                 (this->fields).valueAttributeValueMap;
+    pKStack_16 = (this->fields)._.KogamaSettingEnum;
+    if (pKStack_16 == (KogamaSettingEnum *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Int32);
+      cRam_? = '\x01';
+    }
+    pOVar18 = (pKStack_16->fields)._.value;
+    if (pOVar18 == (Object *)0x0) goto code_?;
+    pIVar20 = TypeInfo__System__Int32;
+    if ((pOVar18->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+    goto code_?;
+    pIVar21 = (Int32Enum__Enum *)func_?(pOVar18);
+    if (pDStack_15 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) goto code_?;
+    pSStack_8 = (String *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           (pDStack_15,*pIVar21,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
+                           );
+    pKStack_16 = (KogamaSettingEnum *)func_?(TypeInfo__System__Int32,&pSStack_8);
+    if (args == (Object__Array *)0x0) goto code_?;
+    if ((pKStack_16 != (KogamaSettingEnum *)0x0) &&
+       (iVar22 = func_?(pKStack_16,(args->klass->_0).element_class), iVar22 == 0))
+    goto code_?;
+    if (args->max_length == 0) goto code_?;
+    args->vector[0] = (Object *)pKStack_16;
+    func_?(args->vector,pKStack_16);
+    if ((pSVar6 != (String *)0x0) &&
+       (iVar22 = func_?(pSVar6,(args->klass->_0).element_class), iVar22 == 0))
+    goto code_?;
+    if (args->max_length < 2) goto code_?;
+    args->vector[1] = (Object *)pSVar6;
+    func_?(args->vector + 1,pSVar6);
+    apDStack_12[0] =
+         (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum_ *)
+         (this->fields)._ExclusivityFlag_k__BackingField;
+    pOVar18 = (Object *)
+             func_?(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
+                             ,apDStack_12);
+    if ((pOVar18 != (Object *)0x0) &&
+       (iVar22 = func_?(pOVar18,(args->klass->_0).element_class), iVar22 == 0))
+    goto code_?;
+    if (2 < args->max_length) {
+      args->vector[2] = pOVar18;
+      func_?(args->vector + 2,pOVar18);
+      pKVar23 = (this->fields)._.KogamaSettingEnum;
+      if ((pKVar23 == (KogamaSettingEnum *)0x0) ||
+         (iVar22 = func_?(pKVar23,(args->klass->_0).element_class), iVar22 != 0)) {
+        if (3 < args->max_length) {
+          args->vector[3] = (Object *)pKVar23;
+          func_?(args->vector + 3,pKVar23);
+          pSVar6 = mscorlib.dll::System::String::String_Format_3
+                             (StringLiteral_AttributeValue__0___AttributePoi,args,(MethodInfo *)0x0)
+          ;
+          *unaff_FS_OFFSET = uStack_3;
+          return pSVar6;
+        }
+        goto code_?;
+      }
+      goto code_?;
+    }
   }
-  uVar21 = func_?(0,0);
-  func_?(uVar21);
 code_?:
-  func_?(0);
-  pcVar22 = (code *)swi(3);
-  pSVar8 = (String *)(*pcVar22)();
-  return pSVar8;
+  func_?();
+  pOVar18 = extraout_ECX;
+  pIVar20 = extraout_EDX;
+code_?:
+  func_?(pOVar18,pIVar20);
+  pcVar24 = (code *)swi(3);
+  pSVar6 = (String *)(*pcVar24)();
+  return pSVar6;
 }
 
 
@@ -187,6 +197,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingEnumBase::KogamaSettingEnumBase__ctor
             ((KogamaSettingEnumBase *)this,key,value,min,max,parent,(MethodInfo *)0x0);
   (this->fields).valueAttributeValueMap = valueAttributeValueMap;
+  func_?(&(this->fields).valueAttributeValueMap,valueAttributeValueMap);
   return;
 }
 
@@ -205,6 +216,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingEnumBase::KogamaSettingEnumBase__ctor
             ((KogamaSettingEnumBase *)this,key,value,min,max,parent,(MethodInfo *)0x0);
   (this->fields).valueAttributeValueMap = valueAttributeValueMap;
+  func_?(&(this->fields).valueAttributeValueMap,valueAttributeValueMap);
   (this->fields)._ExclusivityFlag_k__BackingField = attributeSettingsExclusivityFlag;
   return;
 }
@@ -218,14 +230,14 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_);
     cRam_? = '\x01';
   }
   pKVar1 = (this->fields)._.KogamaSettingEnum;
-  this_00 = (this->fields).valueAttributeValueMap;
+  this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields).valueAttributeValueMap;
   if (pKVar1 != (KogamaSettingEnum *)0x0) {
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__System__Int32);
       cRam_? = '\x01';
     }
     pOVar2 = (pKVar1->fields)._.value;
@@ -233,24 +245,24 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
       pIVar3 = TypeInfo__System__Int32;
       if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      piVar4 = (int32_t *)func_?(pOVar2);
-      if (this_00 != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
-        iVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Int32]::Dictionary_2_System_Int32_System_Int32__get_Item
-                          (this_00,*piVar4,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
-                          );
-        return iVar5;
+      pIVar4 = (Int32Enum__Enum *)func_?(pOVar2);
+      if (this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           (this_00,*pIVar4,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
+                           );
+        return (int32_t)pOVar2;
       }
     }
   }
-  func_?(0);
+  func_?();
   pOVar2 = extraout_ECX;
   pIVar3 = extraout_EDX;
 code_?:
   func_?(pOVar2,pIVar3);
-  pcVar6 = (code *)swi(3);
-  iVar5 = (*pcVar6)();
-  return iVar5;
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 

@@ -5,81 +5,76 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_Fire
                (PickupItemWithDelay *this,MethodInfo *method)
 
 {
-  pPVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  cVar2 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                    (this,(this->klass->vtable).get_Quantity.methodPtr);
-  if (cVar2 == '\0') {
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar4 = (this->fields).lastFireTime;
-    iVar5 = (this->fields).fireInterval.currentCryptoKey;
-    AVar6 = (this->fields).fireInterval.hiddenValue;
-    pBVar7 = (this->fields).fireInterval.hiddenValueOld;
-    fVar8 = (this->fields).fireInterval.fakeValue;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
+  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
+                    (this,(this->klass->vtable).get_IsAmmoDepleted.method);
+  if (cVar1 == '\0') {
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar3 = (this->fields).lastFireTime;
+    iVar4 = (this->fields).fireInterval.currentCryptoKey;
+    AVar5 = (this->fields).fireInterval.hiddenValue;
+    pBVar6 = (this->fields).fireInterval.hiddenValueOld;
+    fVar7 = (this->fields).fireInterval.fakeValue;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+        cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     }
-    value.hiddenValue = AVar6;
-    value.currentCryptoKey = iVar5;
-    value.hiddenValueOld = pBVar7;
-    value.fakeValue = fVar8;
+    value.hiddenValue = AVar5;
+    value.currentCryptoKey = iVar4;
+    value.hiddenValueOld = pBVar6;
+    value.fakeValue = fVar7;
     value.inited = (this->fields).fireInterval.inited;
     value._17_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x11;
-    fVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+    fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
             ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-    if (fVar8 < fVar3 - fVar4) {
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pMVar9 = (this->fields)._.owner;
-      (this->fields).lastFireTime = fVar8;
-      if (pMVar9 == (MVPickupOwner *)0x0) goto code_?;
-      bVar10 = MVPickupOwner::MVPickupOwner_get_IsLocal(pMVar9,(MethodInfo *)0x0);
-      this = (PickupItemWithDelay *)CONCAT31((int3)((uint)(fVar3 - fVar4) >> 8),bVar10);
-      (*(code *)(pPVar1->klass->vtable).OnFire.method)
-                (pPVar1,this,(pPVar1->klass->vtable).OnDestroy.methodPtr);
-      (pPVar1->fields)._.firedThisFrame = 1;
+    if (fVar7 < fVar2 - fVar3) {
+      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pMVar8 = (this->fields)._.owner;
+      (this->fields).lastFireTime = fVar3;
+      if (pMVar8 == (MVPickupOwner *)0x0) goto code_?;
+      (*(this->klass->vtable).OnFire.methodPtr)
+                (this,(uint)(pMVar8->fields)._IsLocal_k__BackingField,
+                 (this->klass->vtable).OnFire.method);
+      (this->fields)._.firedThisFrame = 1;
     }
   }
-  cVar2 = (*(code *)(pPVar1->klass->vtable).get_IsAmmoDepleted.method)
-                    (pPVar1,(pPVar1->klass->vtable).get_Quantity.methodPtr);
-  if (cVar2 == '\0') {
-    return;
-  }
-  pMVar9 = (pPVar1->fields)._.owner;
-  if (((pMVar9 != (MVPickupOwner *)0x0) &&
-      (this_00 = (DayNightCycle *)
-                 System.dll::System::Collections::Generic::
-                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                 ::Single,System::Object]::
-                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                           ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                             *)pMVar9,(MethodInfo *)0x0), this_00 != (DayNightCycle *)0x0)) &&
-     (this_01 = DayNightCycle::DayNightCycle_get_CurrentMoonParam(this_00,(MethodInfo *)0x0),
-     this_01 != (CelestialParam *)0x0)) {
-    x = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                  ((GameObject *)this_01,
+  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
+                    (this,(this->klass->vtable).get_IsAmmoDepleted.method);
+  if (cVar1 != '\0') {
+    pMVar8 = (this->fields)._.owner;
+    if (((pMVar8 == (MVPickupOwner *)0x0) ||
+        (pMVar9 = (pMVar8->fields)._.worldObjectParent, pMVar9 == (MVWorldObjectClient *)0x0)) ||
+       (this_00 = (pMVar9->fields).gameObject, this_00 == (GameObject *)0x0)) {
+code_?:
+      func_?();
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  (this_00,
                    MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar10 != 0) {
-      if (x == (UseInteractorHandler *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.namespaze)(x,x->klass[1]._0.byval_arg.data.dummy);
+    bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar11 != 0) {
+      if (x == (Object_1 *)0x0) goto code_?;
+      pOVar12 = x->klass;
+      uVar13._0_2_ = pOVar12[1]._0.byval_arg.attrs;
+      uVar13._2_1_ = pOVar12[1]._0.byval_arg.type;
+      uVar13._3_1_ = pOVar12[1]._0.byval_arg.field_0x7;
+      (*(code *)pOVar12[1]._0.byval_arg.data)(x,uVar13);
     }
-    (pPVar1->fields).isFiring = 0;
-    return;
+    (this->fields).isFiring = 0;
   }
-code_?:
-  func_?(0);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
   return;
 }
 
@@ -91,65 +86,82 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
-    in_ECX = extraout_ECX;
   }
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
-    in_ECX = extraout_ECX_00;
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?,in_ECX,unaff_EBP);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
+                   );
+    func_?(&TypeInfo__System__Predicate<PriorityDataUpdate>);
+    func_?(&
+                    MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                   );
+    func_?(&TypeInfo__UpdateController____c__DisplayClass6_0);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__UpdateController___RemoveUpdateObject_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  object = this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    iVar1 = 0;
-    (this_00->fields)._._._._.m_CachedPtr = this;
+  value = (Object *)func_?(TypeInfo__UpdateController____c__DisplayClass6_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    iVar1 = 0x10;
+    uVar2 = 0;
     while( true ) {
-      if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+      iVar3 = iVar1;
+      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UpdateController);
       }
-      pLVar2 = TypeInfo__UpdateController->static_fields->updateBuckets;
-      if (pLVar2 == (List_1_PriorityDataUpdate___Array *)0x0) break;
-      if ((int)pLVar2->max_length <= iVar1) {
+      pLVar4 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar4 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
+      if ((int)pLVar4->max_length <= (int)uVar2) {
         return;
       }
-      if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UpdateController);
       }
-      if (TypeInfo__UpdateController->static_fields->updateBuckets ==
-          (List_1_PriorityDataUpdate___Array *)0x0) break;
-      this_01 = (List_1_UnityEngine_Vector3_ *)func_?(iVar1);
-      this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_02,(Object *)object,
-                 MethodInfo__UpdateController___RemoveUpdateObject_c__AnonStorey0____m__0_PriorityDataUpdate_
-                 ,
-                 MethodInfo__System__Predicate<PriorityDataUpdate>__Predicate_System__Object__void__
-                );
-      if (this_01 == (List_1_UnityEngine_Vector3_ *)0x0) break;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector3]::
-      List_1_UnityEngine_Vector3__RemoveAll
-                (this_01,(Predicate_1_UnityEngine_Vector3_ *)this_02,
+      pLVar4 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar4 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
+      if (pLVar4->max_length <= uVar2) break;
+      this_00 = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ **)
+                 ((int)pLVar4->vector + iVar1 + -0x10);
+      this_01 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)value[1].monitor
+      ;
+      if (this_01 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        this_01 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                  func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
+        if (this_01 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0)
+        goto code_?;
+        mscorlib.dll::System::Predicate`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::
+        Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor
+                  (this_01,value,
+                   MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                   ,(MethodInfo *)0x0);
+        value[1].monitor = (MonitorData *)this_01;
+        func_?(&value[1].monitor,this_01);
+      }
+      if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+      UnitySynchronizationContext+WorkRequest]::
+      List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__RemoveAll
+                (this_00,this_01,
                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
                 );
-      iVar1 = iVar1 + 1;
+      uVar2 = uVar2 + 1;
+      iVar1 = iVar3 + 4;
     }
+    func_?();
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -161,12 +173,12 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_OnEquip
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  PickupItem::PickupItem_OnEquip((PickupItem *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  PickupItemCollectTheItem::PickupItemCollectTheItem_OnEquip
+            ((PickupItemCollectTheItem *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UpdateController::UpdateController_AddUpdateObject
@@ -183,15 +195,23 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_TriggerBegin
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Got_TriggerStart__but_were_firin);
     cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+    (this->fields).triggerBegin = 1;
+    return;
   }
   if ((this->fields).isFiring == 0) {
     (this->fields).isFiring = 1;
     return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
@@ -206,6 +226,21 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_TriggerEnd
                (PickupItemWithDelay *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+    if ((this->fields).triggerBegin != 0) {
+      pPVar1 = this->klass;
+      (this->fields).triggerBegin = 0;
+      (this->fields).isFiring = 1;
+      (*(pPVar1->vtable).UpdateControllerUpdate_1.methodPtr)
+                (this,(pPVar1->vtable).UpdateControllerUpdate_1.method);
+      (this->fields).isFiring = 0;
+    }
+    return;
+  }
   (this->fields).isFiring = 0;
   return;
 }
@@ -217,84 +252,79 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_UpdateControl
                (PickupItemWithDelay *this,MethodInfo *method)
 
 {
-  pPVar1 = this;
-  if ((this->fields).isFiring == 0) {
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  cVar2 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                    (this,(this->klass->vtable).get_Quantity.methodPtr);
-  if (cVar2 == '\0') {
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar4 = (this->fields).lastFireTime;
-    iVar5 = (this->fields).fireInterval.currentCryptoKey;
-    AVar6 = (this->fields).fireInterval.hiddenValue;
-    pBVar7 = (this->fields).fireInterval.hiddenValueOld;
-    fVar8 = (this->fields).fireInterval.fakeValue;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  if ((this->fields).isFiring != 0) {
+    if (cRam_? == '\0') {
+      func_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__)
+      ;
+      func_?(&TypeInfo__UnityEngine__Object);
+      func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      cRam_? = '\x01';
     }
-    value.hiddenValue = AVar6;
-    value.currentCryptoKey = iVar5;
-    value.hiddenValueOld = pBVar7;
-    value.fakeValue = fVar8;
-    value.inited = (this->fields).fireInterval.inited;
-    value._17_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x11;
-    fVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-            ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-    if (fVar8 < fVar3 - fVar4) {
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pMVar9 = (this->fields)._.owner;
-      (this->fields).lastFireTime = fVar8;
-      if (pMVar9 == (MVPickupOwner *)0x0) goto code_?;
-      bVar10 = MVPickupOwner::MVPickupOwner_get_IsLocal(pMVar9,(MethodInfo *)0x0);
-      this = (PickupItemWithDelay *)CONCAT31((int3)((uint)(fVar3 - fVar4) >> 8),bVar10);
-      (*(code *)(pPVar1->klass->vtable).OnFire.method)
-                (pPVar1,this,(pPVar1->klass->vtable).OnDestroy.methodPtr);
-      (pPVar1->fields)._.firedThisFrame = 1;
+    cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
+                      (this,(this->klass->vtable).get_IsAmmoDepleted.method);
+    if (cVar1 == '\0') {
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      fVar3 = (this->fields).lastFireTime;
+      iVar4 = (this->fields).fireInterval.currentCryptoKey;
+      AVar5 = (this->fields).fireInterval.hiddenValue;
+      pBVar6 = (this->fields).fireInterval.hiddenValueOld;
+      fVar7 = (this->fields).fireInterval.fakeValue;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      }
+      value.hiddenValue = AVar5;
+      value.currentCryptoKey = iVar4;
+      value.hiddenValueOld = pBVar6;
+      value.fakeValue = fVar7;
+      value.inited = (this->fields).fireInterval.inited;
+      value._17_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x11;
+      fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+              ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+      if (fVar7 < fVar2 - fVar3) {
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        pMVar8 = (this->fields)._.owner;
+        (this->fields).lastFireTime = fVar3;
+        if (pMVar8 == (MVPickupOwner *)0x0) goto code_?;
+        (*(this->klass->vtable).OnFire.methodPtr)
+                  (this,(uint)(pMVar8->fields)._IsLocal_k__BackingField,
+                   (this->klass->vtable).OnFire.method);
+        (this->fields)._.firedThisFrame = 1;
+      }
     }
-  }
-  cVar2 = (*(code *)(pPVar1->klass->vtable).get_IsAmmoDepleted.method)
-                    (pPVar1,(pPVar1->klass->vtable).get_Quantity.methodPtr);
-  if (cVar2 == '\0') {
-    return;
-  }
-  pMVar9 = (pPVar1->fields)._.owner;
-  if (((pMVar9 != (MVPickupOwner *)0x0) &&
-      (this_00 = (DayNightCycle *)
-                 System.dll::System::Collections::Generic::
-                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                 ::Single,System::Object]::
-                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                           ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                             *)pMVar9,(MethodInfo *)0x0), this_00 != (DayNightCycle *)0x0)) &&
-     (this_01 = DayNightCycle::DayNightCycle_get_CurrentMoonParam(this_00,(MethodInfo *)0x0),
-     this_01 != (CelestialParam *)0x0)) {
-    x = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                  ((GameObject *)this_01,
-                   MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar10 != 0) {
-      if (x == (UseInteractorHandler *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.namespaze)(x,x->klass[1]._0.byval_arg.data.dummy);
-    }
-    (pPVar1->fields).isFiring = 0;
-    return;
-  }
+    cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
+                      (this,(this->klass->vtable).get_IsAmmoDepleted.method);
+    if (cVar1 != '\0') {
+      pMVar8 = (this->fields)._.owner;
+      if (((pMVar8 == (MVPickupOwner *)0x0) ||
+          (pMVar9 = (pMVar8->fields)._.worldObjectParent, pMVar9 == (MVWorldObjectClient *)0x0)) ||
+         (this_00 = (pMVar9->fields).gameObject, this_00 == (GameObject *)0x0)) {
 code_?:
-  func_?(0);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+        func_?();
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      x = (Object_1 *)
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                    (this_00,
+                     MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar11 != 0) {
+        if (x == (Object_1 *)0x0) goto code_?;
+        pOVar12 = x->klass;
+        uVar13._0_2_ = pOVar12[1]._0.byval_arg.attrs;
+        uVar13._2_1_ = pOVar12[1]._0.byval_arg.type;
+        uVar13._3_1_ = pOVar12[1]._0.byval_arg.field_0x7;
+        (*(code *)pOVar12[1]._0.byval_arg.data)(x,uVar13);
+      }
+      (this->fields).isFiring = 0;
+    }
+  }
   return;
 }
 
@@ -306,62 +336,49 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_red
-                     ((Color *)&AStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields).crossHairCannotFireLow.r = pCVar1->r;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).crossHairCannotFireLow.r = _UNK_?;
   (this->fields).crossHairCannotFireLow.g = fVar3;
-  (this->fields).crossHairCannotFireLow.b = fVar4;
-  (this->fields).crossHairCannotFireLow.a = fVar5;
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_yellow
-                     ((Color *)&AStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields).crossHairCannotFireHigh.r = pCVar1->r;
+  (this->fields).crossHairCannotFireLow.b = fVar2;
+  (this->fields).crossHairCannotFireLow.a = fVar1;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).crossHairCannotFireHigh.r = _UNK_?;
   (this->fields).crossHairCannotFireHigh.g = fVar3;
-  (this->fields).crossHairCannotFireHigh.b = fVar4;
-  (this->fields).crossHairCannotFireHigh.a = fVar5;
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_get_green
-                     ((Color *)&AStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields).crossHairCanFire.r = pCVar1->r;
+  (this->fields).crossHairCannotFireHigh.b = fVar2;
+  (this->fields).crossHairCannotFireHigh.a = fVar1;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  (this->fields).crossHairCanFire.r = _UNK_?;
   (this->fields).crossHairCanFire.g = fVar3;
-  (this->fields).crossHairCanFire.b = fVar4;
-  (this->fields).crossHairCanFire.a = fVar5;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
-    func_?();
+  (this->fields).crossHairCanFire.b = fVar2;
+  (this->fields).crossHairCanFire.a = fVar1;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,1.0,(MethodInfo *)0x0);
-  bVar7 = cRam_? == '\0';
-  AVar8 = pOVar6->hiddenValue;
-  pBVar9 = pOVar6->hiddenValueOld;
-  fVar3 = pOVar6->fakeValue;
-  bVar10 = pOVar6->inited;
-  uVar11 = *(undefined3 *)&pOVar6->field_0x11;
-  (this->fields).fireInterval.currentCryptoKey = pOVar6->currentCryptoKey;
-  (this->fields).fireInterval.hiddenValue = AVar8;
-  (this->fields).fireInterval.hiddenValueOld = pBVar9;
+  pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+           ObscuredFloat_op_Implicit(&OStack_5,1.0,(MethodInfo *)0x0);
+  AVar6 = pOVar4->hiddenValue;
+  pBVar7 = pOVar4->hiddenValueOld;
+  fVar3 = pOVar4->fakeValue;
+  bVar8 = pOVar4->inited;
+  uVar9 = *(undefined3 *)&pOVar4->field_0x11;
+  (this->fields).fireInterval.currentCryptoKey = pOVar4->currentCryptoKey;
+  (this->fields).fireInterval.hiddenValue = AVar6;
+  (this->fields).fireInterval.hiddenValueOld = pBVar7;
   (this->fields).fireInterval.fakeValue = fVar3;
-  (this->fields).fireInterval.inited = bVar10;
-  *(undefined3 *)&(this->fields).fireInterval.field_0x11 = uVar11;
-  if (bVar7) {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pMVar12 = (MeshRenderer__Array *)func_?();
-  (this->fields)._.meshRenderers = pMVar12;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  (this->fields).fireInterval.inited = bVar8;
+  *(undefined3 *)&(this->fields).fireInterval.field_0x11 = uVar9;
+  func_?(&(this->fields).fireInterval.hiddenValueOld,0);
+  PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -373,56 +390,52 @@ Color * Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_get_CrossH
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   fVar2 = (this->fields).lastFireTime;
-  fVar3 = (float)(this->fields).fireInterval.currentCryptoKey;
-  AVar4 = (this->fields).fireInterval.hiddenValue;
-  pBVar5 = (this->fields).fireInterval.hiddenValueOld;
-  fVar6 = (this->fields).fireInterval.fakeValue;
-  if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_started == 0)) {
+  value = (this->fields).fireInterval;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  value.hiddenValue = AVar4;
-  value.currentCryptoKey = (int32_t)fVar3;
-  value.hiddenValueOld = pBVar5;
-  value.fakeValue = fVar6;
-  value.inited = (this->fields).fireInterval.inited;
-  value._17_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x11;
-  pMVar7 = (Mathf__Class *)
-           Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    pMVar7 = TypeInfo__UnityEngine__Mathf;
-    func_?();
+  fVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+  fVar3 = (fVar1 - fVar2) / fVar3;
+  if (fVar3 < 0.0) {
+    fVar3 = 0.0;
   }
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                    ((fVar1 - fVar2) / (float)pMVar7,(MethodInfo *)0x0);
-  if (_UNK_? <= fVar2) {
+  else if (_UNK_? < fVar3) {
+    fVar3 = _UNK_?;
+  }
+  if (_UNK_? <= fVar3) {
     fVar2 = (this->fields).crossHairCanFire.g;
-    fVar3 = (this->fields).crossHairCanFire.b;
-    fVar6 = (this->fields).crossHairCanFire.a;
+    fVar1 = (this->fields).crossHairCanFire.b;
+    fVar3 = (this->fields).crossHairCanFire.a;
     __return_storage_ptr__->r = (this->fields).crossHairCanFire.r;
     __return_storage_ptr__->g = fVar2;
-    __return_storage_ptr__->b = fVar3;
-    __return_storage_ptr__->a = fVar6;
+    __return_storage_ptr__->b = fVar1;
+    __return_storage_ptr__->a = fVar3;
     return __return_storage_ptr__;
   }
-  pCVar8 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_Lerp
-                     ((Color *)&stack0xffffffe8,(this->fields).crossHairCannotFireLow,
-                      (this->fields).crossHairCannotFireHigh,fVar2,(MethodInfo *)0x0);
-  fVar2 = pCVar8->g;
-  fVar3 = pCVar8->b;
-  fVar6 = pCVar8->a;
-  __return_storage_ptr__->r = pCVar8->r;
-  __return_storage_ptr__->g = fVar2;
-  __return_storage_ptr__->b = fVar3;
-  __return_storage_ptr__->a = fVar6;
+  fVar2 = (this->fields).crossHairCannotFireLow.r;
+  fVar1 = (this->fields).crossHairCannotFireLow.g;
+  fVar4 = (this->fields).crossHairCannotFireLow.b;
+  fVar5 = (this->fields).crossHairCannotFireLow.a;
+  fVar6 = (this->fields).crossHairCannotFireHigh.g;
+  fVar7 = (this->fields).crossHairCannotFireHigh.b;
+  fVar8 = (this->fields).crossHairCannotFireHigh.a;
+  if (fVar3 < 0.0) {
+    fVar3 = 0.0;
+  }
+  else if (_UNK_? < fVar3) {
+    fVar3 = _UNK_?;
+  }
+  __return_storage_ptr__->r = ((this->fields).crossHairCannotFireHigh.r - fVar2) * fVar3 + fVar2;
+  __return_storage_ptr__->g = (fVar6 - fVar1) * fVar3 + fVar1;
+  __return_storage_ptr__->b = (fVar7 - fVar4) * fVar3 + fVar4;
+  __return_storage_ptr__->a = (fVar8 - fVar5) * fVar3 + fVar5;
   return __return_storage_ptr__;
 }
 

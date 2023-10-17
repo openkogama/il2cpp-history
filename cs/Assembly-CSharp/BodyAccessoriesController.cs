@@ -10,7 +10,7 @@ using Assets.Scripts.WorldObjectTypes.Avatar.Accessories;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class BodyAccessoriesController
 {
@@ -31,17 +31,17 @@ public class BodyAccessoriesController
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _RefreshAccessories_c__AnonStorey0
+	private sealed class __c__DisplayClass25_0
 	{
 		// Fields
-		internal AccessorySlotType slot;
-		internal BodyAccessoriesController _this;
+		public AccessorySlotType slot;
+		public BodyAccessoriesController __4__this;
 
 		// Constructors
-		public _RefreshAccessories_c__AnonStorey0();
+		public __c__DisplayClass25_0();
 
 		// Methods
-		internal void __m__0(AvatarAccessory accessory);
+		internal void _RefreshAccessories_b__0(AvatarAccessory accessory);
 	}
 
 	// Constructors

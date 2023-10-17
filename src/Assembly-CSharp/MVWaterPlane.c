@@ -4,17 +4,63 @@
 void Assembly-CSharp.dll::MVWaterPlane::MVWaterPlane_Destroy(MVWaterPlane *this,MethodInfo *method)
 
 {
-  if ((this->fields).addedToWPManager != 0) {
-    this_00 = (this->fields).waterManager;
-    if (this_00 == (WaterPlaneManager *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    WaterPlaneManager::WaterPlaneManager_RemoveWaterPlaneLogicCube(this_00,this,(MethodInfo *)0x0);
+  if ((this->fields).addedToWPManager == 0) {
+code_?:
+    MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+    return;
   }
-  MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+  this_00 = (this->fields).waterManager;
+  if (this_00 != (WaterPlaneManager *)0x0) {
+    (this_00->fields).waterPlaneLogicCube = (MVWaterPlane *)0x0;
+    func_?(&(this_00->fields).waterPlaneLogicCube,0);
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this_00,(MethodInfo *)0x0);
+    if (pTVar1 != (Transform *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                (pTVar1,(Transform *)0x0,0,(MethodInfo *)0x0);
+      pTVar1 = (this_00->fields).underwaterCameraPlane;
+      if (pTVar1 != (Transform *)0x0) {
+        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0);
+        value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_00,(MethodInfo *)0x0);
+        if (pTVar1 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                    (pTVar1,value,(MethodInfo *)0x0);
+          pTVar1 = (this_00->fields).underwaterCameraPlane;
+          if (pTVar1 != (Transform *)0x0) {
+            pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar1,(MethodInfo *)0x0);
+            if (pGVar2 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar2,0,(MethodInfo *)0x0);
+              this_01 = (this_00->fields).water;
+              if (this_01 != (Water *)0x0) {
+                pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
+                if (pGVar2 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (pGVar2,0,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                            ((Behaviour *)this_00,1,(MethodInfo *)0x0);
+                  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+                  if (pGVar2 != (GameObject *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                              (pGVar2,1,(MethodInfo *)0x0);
+                    goto code_?;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -47,49 +93,86 @@ void Assembly-CSharp.dll::MVWaterPlane::MVWaterPlane_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                   );
+    func_?(&TypeInfo__System__Single);
+    func_?(&::_1925626019DF8597605C21A63C8ED15E1FFE58D1E27D69E1E77ADD2D4C43AAFE_Field);
+    func_?(&StringLiteral_lethal);
+    func_?(&StringLiteral_waterColor);
     cRam_? = '\x01';
   }
+  logicCube = this;
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_00 = (this->fields).waterManager;
+  this_00 = (logicCube->fields).waterManager;
   if (this_00 != (WaterPlaneManager *)0x0) {
-    WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogicCube(this_00,this,(MethodInfo *)0x0);
-    (this->fields).addedToWPManager = 1;
-    this_01 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-               *)PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-    if (this_01 !=
-        (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-         *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::
-              WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-              KogamaSettingWrapperBase]::
-              Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                        (this_01,StringLiteral_waterColor,
+    WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogicCube(this_00,logicCube,(MethodInfo *)0x0)
+    ;
+    pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+             (logicCube->fields)._._._.data;
+    (logicCube->fields).addedToWPManager = 1;
+    if (pDVar1 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+      this = (MVWaterPlane *)
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+      ;
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        (pDVar1,(Object *)StringLiteral_waterColor,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      if (bVar1 == 0) {
-        this_02 = (Dictionary_2_System_String_Theme_ *)
-                  PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-        value = (Theme *)func_?();
+      if (bVar2 == 0) {
+        pDVar3 = (logicCube->fields)._._._.data;
+        in_stack_4 = 3;
+        method = (MethodInfo *)TypeInfo__System__Single;
+        this = (MVWaterPlane *)&UNK_?;
+        array = (Array *)func_?();
         mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
         RuntimeHelpers_InitializeArray_1
-                  ((Array *)value,__field_4252C6F90ECAA2224CCAE50ECACB287C08401B6E_Field,
+                  (array,__1925626019DF8597605C21A63C8ED15E1FFE58D1E27D69E1E77ADD2D4C43AAFE_Field,
                    (MethodInfo *)0x0);
-        if (this_02 == (Dictionary_2_System_String_Theme_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,Theme]::
-        Dictionary_2_System_String_Theme__set_Item
-                  (this_02,StringLiteral_waterColor,value,
+        if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  (pDVar3,(Object *)StringLiteral_waterColor,(Object *)array,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                   );
       }
-      (*(code *)(this->klass->vtable).OnDataUpdate.method)();
-      return;
+      pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+               (logicCube->fields)._._._.data;
+      if (pDVar1 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          (pDVar1,(Object *)StringLiteral_lethal,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                          );
+        if (bVar2 == 0) {
+          pDVar3 = (logicCube->fields)._._._.data;
+          this = (MVWaterPlane *)((int)&this + 3);
+          value = (Object *)func_?();
+          if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__set_Item
+                    (pDVar3,(Object *)StringLiteral_lethal,value,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                    );
+        }
+        method = (logicCube->klass->vtable).OnDataUpdate.method;
+        this = logicCube;
+        (*(logicCube->klass->vtable).OnDataUpdate.methodPtr)();
+        return;
+      }
     }
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -100,115 +183,163 @@ void Assembly-CSharp.dll::MVWaterPlane::MVWaterPlane_OnDataUpdate
                (MVWaterPlane *this,MethodInfo *method)
 
 {
+  pMVar1 = this;
+  lVar2 = ZEXT48(this) << 0x20;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral__MaskedColor);
+    func_?(&StringLiteral_lethal);
+    func_?(&StringLiteral_waterColor);
     cRam_? = '\x01';
   }
-  this_02 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_02 ==
-      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-       *)0x0) {
+  pDVar3 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields)._._._.data;
+  lVar4 = lVar2;
+  if (pDVar3 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
 code_?:
-    func_?();
-code_?:
-    func_?();
+    lVar2 = lVar4;
     func_?();
 code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
+    this = (MVWaterPlane *)((ulonglong)lVar2 >> 0x20);
     func_?();
   }
   else {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,MV::WorldObject
-            ::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase]::
-            Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase__ContainsKey
-                      (this_02,StringLiteral_waterColor,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar1 == 0) {
-      return;
-    }
-    this_03 = (Dictionary_2_System_Type_Pool_ *)
-              PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-    if (this_03 == (Dictionary_2_System_Type_Pool_ *)0x0) goto code_?;
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       (this_03,(Type *)StringLiteral_waterColor,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+             Object,GUILoginHandler+PlanetData]::
+             Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                       (pDVar3,(Object *)StringLiteral_waterColor,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                        );
-    if (pPVar2 == (Pool *)0x0) {
-      iVar3 = 0;
+    if (bVar5 == 0) {
+code_?:
+      pDVar3 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+               (pMVar1->fields)._._._.data;
+      lVar4 = lVar2;
+      if (pDVar3 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+        bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                 Object,GUILoginHandler+PlanetData]::
+                 Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                           (pDVar3,(Object *)StringLiteral_lethal,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                           );
+        if (bVar5 == 0) {
+          return;
+        }
+        pDVar6 = (pMVar1->fields)._._._.data;
+        pWVar7 = (pMVar1->fields).waterManager;
+        if (pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__get_Item
+                              (pDVar6,(Object *)StringLiteral_lethal,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              );
+          uVar9 = CONCAT44(TypeInfo__System__Boolean,pOVar8);
+          if ((pWVar7 != (WaterPlaneManager *)0x0) && (pOVar8 != (Object *)0x0)) {
+            if ((pOVar8->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
+            goto code_?;
+            pbVar10 = (bool *)func_?(pOVar8);
+            pWVar11 = (pWVar7->fields).water;
+            if (pWVar11 != (Water *)0x0) {
+              Assembly-CSharp-firstpass.dll::Water::Water_set_IsLethal
+                        (pWVar11,*pbVar10,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
+      }
+      goto code_?;
     }
-    else {
-      iVar3 = func_?();
-      if (iVar3 == 0) goto code_?;
-    }
-    this_00 = (this->fields).waterManager;
-    if (iVar3 == 0) goto code_?;
-    uVar4 = *(uint *)(iVar3 + 0xc);
-    if (uVar4 == 0) goto code_?;
-    if (uVar4 < 2) goto code_?;
-    if (uVar4 < 3) goto code_?;
-    uVar5 = *(undefined4 *)(iVar3 + 0x18);
-    uVar6 = 0;
-    uVar7 = 0x3f4ccccd;
-    func_?();
-    if (this_00 == (WaterPlaneManager *)0x0) goto code_?;
-    value.g = (float)uVar7;
-    value.r = (float)uVar5;
-    value.b = (float)uVar6;
-    value.a = 0.0;
-    WaterPlaneManager::WaterPlaneManager_set_WaterColor(this_00,value,(MethodInfo *)0x0);
-    this_01 = (this->fields)._._.component;
-    if ((this_01 == (ObjectPrefab *)0x0) ||
-       (pOVar8 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                            (MethodInfo *)0x0), pOVar8 == (Object *)0x0)) goto code_?;
-    if (pOVar8[1].monitor == (MonitorData *)0x0) goto code_?;
-    if (pOVar8[2].klass == (Object__Class *)0x0) goto code_?;
-    this_04 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                        ((Renderer *)pOVar8[2].klass,(MethodInfo *)0x0);
-    uVar4 = *(uint *)(iVar3 + 0xc);
-    if (uVar4 == 0) goto code_?;
-    if (uVar4 < 2) goto code_?;
-    if (2 < uVar4) {
-      uVar5 = 0;
-      uVar7 = 0;
-      uVar6 = 0;
-      puVar9 = &UNK_?;
-      func_?();
-      if (this_04 != (Material *)0x0) {
-        value_00.y = (float)uVar7;
-        value_00.x = (float)uVar5;
-        value_00.z = (float)uVar6;
-        value_00.w = (float)puVar9;
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                  (this_04,StringLiteral__MaskedColor,value_00,(MethodInfo *)0x0);
-        return;
+    pDVar6 = (pMVar1->fields)._._._.data;
+    if (pDVar6 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    unaff_EBX = (WaterPlaneManager *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (pDVar6,(Object *)StringLiteral_waterColor,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+    uVar12 = ZEXT48(TypeInfo__System__Single);
+    lVar2 = uVar12 << 0x20;
+    lVar4 = lVar2;
+    this = (MVWaterPlane *)TypeInfo__System__Single;
+    if (unaff_EBX == (WaterPlaneManager *)0x0) goto code_?;
+    iVar13 = func_?(unaff_EBX,TypeInfo__System__Single);
+    if (iVar13 != 0) {
+      unaff_EBX = (pMVar1->fields).waterManager;
+      lVar2 = lVar4;
+      if (((*(int *)(iVar13 + 0xc) == 0) ||
+          (uVar14 = *(undefined4 *)(iVar13 + 0x10), *(uint *)(iVar13 + 0xc) < 2)) ||
+         (uVar15 = *(undefined4 *)(iVar13 + 0x14), *(uint *)(iVar13 + 0xc) < 3))
+      goto code_?;
+      uVar16 = *(undefined4 *)(iVar13 + 0x18);
+      if (unaff_EBX == (WaterPlaneManager *)0x0) goto code_?;
+      fVar17 = 0.8;
+      if (cRam_? == '\0') {
+        fVar17 = 0.8;
+        func_?(&StringLiteral__RefrColor);
+        func_?(&StringLiteral__Color);
+        cRam_? = '\x01';
+      }
+      pRVar18 = (unaff_EBX->fields).underwaterCameraPlaneRenderer;
+      if ((pRVar18 == (Renderer *)0x0) ||
+         (pMVar19 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                              (pRVar18,(MethodInfo *)0x0), pMVar19 == (Material *)0x0))
+      goto code_?;
+      value_00.y = (float)uVar15;
+      value_00.x = (float)uVar14;
+      value_00.z = (float)uVar16;
+      value_00.w = fVar17;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                (pMVar19,StringLiteral__Color,value_00,(MethodInfo *)0x0);
+      pWVar11 = (unaff_EBX->fields).water;
+      if ((pWVar11 == (Water *)0x0) ||
+         (pRVar18 = (pWVar11->fields).meshRenderer, pRVar18 == (Renderer *)0x0)) goto code_?;
+      lVar2 = uVar12 << 0x20;
+      puVar20 = &UNK_?;
+      pMVar19 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                          (pRVar18,(MethodInfo *)0x0);
+      lVar4 = lVar2;
+      if (pMVar19 == (Material *)0x0) goto code_?;
+      lVar2 = CONCAT44(puVar20,uVar16);
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                (pMVar19,StringLiteral__RefrColor,
+                 (Vector4)CONCAT88(lVar2,CONCAT44((float)uVar15,(float)uVar14)),(MethodInfo *)0x0);
+      pOVar21 = (pMVar1->fields)._._.component;
+      lVar4 = lVar2;
+      if ((pOVar21 == (ObjectPrefab *)0x0) ||
+         (pRVar22 = (pOVar21->fields).meshRenderers, pRVar22 == (Renderer__Array *)0x0))
+      goto code_?;
+      if (pRVar22->max_length != 0) {
+        if (pRVar22->vector[0] != (Renderer *)0x0) {
+          pMVar19 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                              (pRVar22->vector[0],(MethodInfo *)0x0);
+          if (((*(int *)(iVar13 + 0xc) == 0) || (*(uint *)(iVar13 + 0xc) < 2)) ||
+             (*(uint *)(iVar13 + 0xc) < 3)) goto code_?;
+          if (pMVar19 != (Material *)0x0) {
+            value.y = (float)*(undefined4 *)(iVar13 + 0x14);
+            value.x = (float)*(undefined4 *)(iVar13 + 0x10);
+            value.z = (float)*(undefined4 *)(iVar13 + 0x18);
+            value.w = 1.0;
+            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                      (pMVar19,StringLiteral__MaskedColor,value,(MethodInfo *)0x0);
+            goto code_?;
+          }
+        }
+        goto code_?;
       }
       goto code_?;
     }
   }
-  func_?();
-  func_?();
+  uVar9 = func_?(unaff_EBX,this);
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?(uVar9);
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -222,125 +353,93 @@ void Assembly-CSharp.dll::MVWaterPlane::MVWaterPlane__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Material);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  this_02 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_02 == (PrefabPool *)0x0) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-    func_?();
-  }
-  else {
-    prefabObject = MVVehicleBase::MVVehicleBase_get_Visualization
-                             ((MVVehicleBase *)this_02,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this,data,(ObjectPrefab *)prefabObject,worldObjects,
+              ((MVLogicObject *)this,data,(pPVar1->fields).mvWaterPlanePrefab,worldObjects,
                (MethodInfo *)0x0);
-    pOVar1 = (this->fields)._._.component;
-    if (pOVar1 == (ObjectPrefab *)0x0) goto code_?;
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pOVar1,
-                        (MethodInfo *)0x0);
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
-    this_00 = pOVar2[2].klass;
-    pOVar1 = (this->fields)._._.component;
-    if (pOVar1 == (ObjectPrefab *)0x0) goto code_?;
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pOVar1,
-                        (MethodInfo *)0x0);
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    if (pOVar2[1].monitor != (MonitorData *)0x0) {
-      if (pOVar2[2].klass != (Object__Class *)0x0) {
-        source = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                           ((Renderer *)pOVar2[2].klass,(MethodInfo *)0x0);
-        this_03 = (Material *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-                  (this_03,source,(MethodInfo *)0x0);
-        if (this_00 != (Object__Class *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                    ((Renderer *)this_00,this_03,(MethodInfo *)0x0);
-          pOVar1 = (this->fields)._._.component;
-          if (pOVar1 != (ObjectPrefab *)0x0) {
-            pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                     Serialization::JsonProperty]::
-                     Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                               ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pOVar1,
-                                (MethodInfo *)0x0);
-            if (pOVar2 != (Object *)0x0) {
-              if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
-              if (pOVar2[2].klass != (Object__Class *)0x0) {
-                pBVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
-                                    ((Bounds *)&puStack_4,(Renderer *)pOVar2[2].klass,
-                                     (MethodInfo *)0x0);
-                fVar5 = (pBVar3->m_Center).y;
-                fVar6 = (pBVar3->m_Center).z;
-                fVar7 = (pBVar3->m_Extents).x;
-                fVar8 = (pBVar3->m_Extents).y;
-                fVar9 = (pBVar3->m_Extents).z;
-                (this->fields).localBounds.m_Center.x = (pBVar3->m_Center).x;
-                (this->fields).localBounds.m_Center.y = fVar5;
-                (this->fields).localBounds.m_Center.z = fVar6;
-                (this->fields).localBounds.m_Extents.x = fVar7;
-                (this->fields).localBounds.m_Extents.y = fVar8;
-                (this->fields).localBounds.m_Extents.z = fVar9;
-                iVar10 = func_?();
-                fVar5 = *(float *)(iVar10 + 8);
-                this_01 = (this->fields)._._.gameObject;
-                if (this_01 != (GameObject *)0x0) {
-                  this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_get_transform(this_01,(MethodInfo *)0x0);
-                  if (this_04 != (Transform *)0x0) {
-                    pVVar11 = (Vector3 *)&stack0xffffffdc;
-                    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_position(pVVar11,this_04,(MethodInfo *)0x0);
-                    uVar13._0_4_ = pVVar12->x;
-                    uVar13._4_4_ = pVVar12->y;
-                    fVar6 = pVVar12->z;
-                    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr &
-                         0x2000000) != 0) &&
-                       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-                      puVar14 = &UNK_?;
-                      func_?();
-                      uVar13 = CONCAT44(puVar14,(undefined4)uVar13);
+    pOVar2 = (this->fields)._._.component;
+    if ((pOVar2 != (ObjectPrefab *)0x0) &&
+       (pRVar3 = (pOVar2->fields).meshRenderers, pRVar3 != (Renderer__Array *)0x0)) {
+      if (pRVar3->max_length == 0) goto code_?;
+      this_01 = pRVar3->vector[0];
+      pRVar3 = (((this->fields)._._.component)->fields).meshRenderers;
+      if (pRVar3 != (Renderer__Array *)0x0) {
+        if (pRVar3->max_length == 0) goto code_?;
+        if (pRVar3->vector[0] != (Renderer *)0x0) {
+          source = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                             (pRVar3->vector[0],(MethodInfo *)0x0);
+          this_03 = (Material *)func_?();
+          if (this_03 != (Material *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
+                      (this_03,source,(MethodInfo *)0x0);
+            if (this_01 != (Renderer *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                        (this_01,this_03,(MethodInfo *)0x0);
+              pOVar2 = (this->fields)._._.component;
+              if ((pOVar2 != (ObjectPrefab *)0x0) &&
+                 (pRVar3 = (pOVar2->fields).meshRenderers, pRVar3 != (Renderer__Array *)0x0)) {
+                if (pRVar3->max_length == 0) goto code_?;
+                if (pRVar3->vector[0] != (Renderer *)0x0) {
+                  pBVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
+                                      ((Bounds *)&stack0xffffffcc,pRVar3->vector[0],
+                                       (MethodInfo *)0x0);
+                  this_00 = &(this->fields).localBounds;
+                  fVar5 = (pBVar4->m_Center).y;
+                  fVar6 = (pBVar4->m_Center).z;
+                  fVar7 = (pBVar4->m_Extents).x;
+                  fVar8 = (pBVar4->m_Extents).y;
+                  fVar9 = (pBVar4->m_Extents).z;
+                  (this->fields).localBounds.m_Center.x = (pBVar4->m_Center).x;
+                  (this->fields).localBounds.m_Center.y = fVar5;
+                  (this->fields).localBounds.m_Center.z = fVar6;
+                  (this->fields).localBounds.m_Extents.x = fVar7;
+                  (this->fields).localBounds.m_Extents.y = fVar8;
+                  (this->fields).localBounds.m_Extents.z = fVar9;
+                  pRVar10 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text
+                            ::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                            KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
+                                      (&RStack_11,
+                                       (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                                        *)this_00,(MethodInfo *)0x0);
+                  uStack_12._0_4_ = (float)pRVar10->_options;
+                  uStack_12._4_4_ = (float)pRVar10->_cultureKey;
+                  pSStack_13 = pRVar10->_pattern;
+                  this_02 = (this->fields)._._.gameObject;
+                  if (this_02 != (GameObject *)0x0) {
+                    this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                              GameObject_get_transform(this_02,(MethodInfo *)0x0);
+                    if (this_04 != (Transform *)0x0) {
+                      pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_get_position(&VStack_15,this_04,(MethodInfo *)0x0);
+                      RStack_11._options = (int32_t)pVVar14->x;
+                      RStack_11._cultureKey = (String *)pVVar14->y;
+                      RStack_11._pattern = (String *)((float)pSStack_13 - pVVar14->z);
+                      value.y = uStack_12._4_4_ - (float)RStack_11._cultureKey;
+                      value.x = (float)uStack_12 - (float)RStack_11._options;
+                      value.z = (float)RStack_11._pattern;
+                      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Particle::
+                      ParticleSystem_Particle_set_position
+                                ((ParticleSystem_Particle *)this_00,value,(MethodInfo *)0x0);
+                      pWVar16 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager
+                                          ((MethodInfo *)0x0);
+                      (this->fields).waterManager = pWVar16;
+                      func_?(&(this->fields).waterManager,pWVar16);
+                      piVar17 = &(this->fields)._._.interactionFlags;
+                      *(uint *)piVar17 = (uint)*piVar17 | 0x8000;
+                      uVar18 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+                      piVar17 = &(this->fields)._._.interactionFlags;
+                      *(uint *)piVar17 = (uint)*piVar17 & 0xffffdfff;
+                      *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar18;
+                      return;
                     }
-                    a.y = (float)this_04;
-                    a.x = (float)pVVar11;
-                    a.z = fVar5;
-                    b.z = fVar6;
-                    b.x = (float)(int)uVar13;
-                    b.y = (float)(int)((ulonglong)uVar13 >> 0x20);
-                    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::
-                              Vector3_op_Subtraction
-                                        ((Vector3 *)&stack0xffffffdc,a,b,(MethodInfo *)0x0);
-                    puStack15 = (undefined *)pVVar11->z;
-                    func_?();
-                    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr &
-                         0x2000000) != 0) &&
-                       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                      func_?();
-                    }
-                    pWVar16 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager
-                                        ((MethodInfo *)0x0);
-                    iVar17 = (this->fields)._._.interactionFlags;
-                    (this->fields).waterManager = pWVar16;
-                    uVar13._0_4_ = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-                    *(uint *)&(this->fields)._._.interactionFlags =
-                         (uint)iVar17 & 0xffffdfff | 0x8000;
-                    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
-                         (undefined4)uVar13;
-                    return;
                   }
                 }
               }
@@ -348,16 +447,13 @@ code_?:
           }
         }
       }
-      goto code_?;
     }
   }
   func_?();
-  func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

@@ -9,7 +9,7 @@ SkyboxManager_SkyboxColorChangedDelegate_BeginInvoke
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Color);
     cRam_? = '\x01';
   }
   uStack_1 = 0;

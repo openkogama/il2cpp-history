@@ -11,47 +11,61 @@ MVBuildModeAvatarLocal_BuildModeAvatarLocalModes_BuildModeFactory
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVBuildModeAvatarLocal__EditMode);
     cRam_? = '\x01';
   }
   if ((undefined1)avatarBuildModeRuntimeState == MVBuildModeAvatarLocal_AvatarBuildModes__Enum_Edit)
   {
     pMVar1 = (this->fields).avatar;
-    this_00 = (ScaleAnimationBase *)func_?(TypeInfo__MVBuildModeAvatarLocal__EditMode);
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
+    pMVar2 = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)
+             func_?(TypeInfo__MVBuildModeAvatarLocal__EditMode);
+    if (pMVar2 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__DoubleTapMovementChecker);
+        cRam_? = '\x01';
+      }
+      *(undefined1 *)&pMVar2[1].klass = 1;
+      pMVar2[1].monitor = (MonitorData *)0x3fe00000;
+      pMVar2[1].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x40a00000;
+      pMVar2[3].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x41200000;
+      this_00 = (DoubleTapMovementChecker *)func_?(TypeInfo__DoubleTapMovementChecker);
+      if (this_00 != (DoubleTapMovementChecker *)0x0) {
+        DoubleTapMovementChecker::DoubleTapMovementChecker__ctor(this_00,(MethodInfo *)0x0);
+        pMVar3 = (MethodInfo *)&pMVar2[6].monitor;
+        pMVar2[6].monitor = (MonitorData *)this_00;
+        func_?(pMVar3,this_00);
+        pMVar2[7].monitor = (MonitorData *)0x41a00000;
+        pMVar2[7].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x41200000;
+        pMVar2[8].klass = (MVBuildModeAvatarLocal_AvatarBuildModeBase__Class *)0x40a00000;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)pMVar2,ExceptionArgument__Enum_obj,pMVar3);
+        (pMVar2->fields).buildModeAvatar = pMVar1;
+        func_?(&pMVar2->fields,pMVar1);
+        pMVar1 = (MVBuildModeAvatarLocal *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0)
+        ;
+        pMVar2[6].fields.buildModeAvatar = pMVar1;
+        func_?(&pMVar2[6].fields,pMVar1);
+        pMVar2[5].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x3f800000;
+        pMVar2[6].klass = (MVBuildModeAvatarLocal_AvatarBuildModeBase__Class *)0x3f800000;
+        return pMVar2;
+      }
     }
-    *(undefined1 *)&(this_00->fields).state = 1;
-    (this_00->fields).originalScale.x = 1.75;
-    (this_00->fields).originalScale.y = 5.0;
-    this_00[1].monitor = (MonitorData *)0x41200000;
-    method_00 = TypeInfo__DoubleTapMovementChecker;
-    this_01 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)func_?();
-    DoubleTapMovementChecker::DoubleTapMovementChecker__ctor
-              ((DoubleTapMovementChecker *)this_01,(MethodInfo *)0x0);
-    this_00[1].fields.OnScaleAnimationStopped = this_01;
-    this_00[2].fields._._._._.m_CachedPtr = (void *)0x41a00000;
-    this_00[2].fields.state = 0x41200000;
-    this_00[2].fields.originalScale.x = 5.0;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    (this_00->fields)._._._._.m_CachedPtr = pMVar1;
-    pSVar2 = (ScaleAnimationBase__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    this_00[2].klass = pSVar2;
-    this_00[1].fields.target = (Transform *)0x3f800000;
-    this_00[1].fields.testState = 0x3f800000;
-    return (MVBuildModeAvatarLocal_AvatarBuildModeBase *)this_00;
+    func_?();
   }
-  this_02 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1(this_02,StringLiteral_Not_implemented,(MethodInfo *)0x0);
-  func_?(this_02,0,
-                  MethodInfo__MVBuildModeAvatarLocal__BuildModeAvatarLocalModes__BuildModeFactory_MVBuildModeAvatarLocal__AvatarBuildModes_
-                 );
-  pcVar3 = (code *)swi(3);
-  pMVar4 = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)(*pcVar3)();
-  return pMVar4;
+  uVar4 = func_?(&TypeInfo__System__Exception);
+  this_01 = (Exception *)func_?(uVar4);
+  func_?(this_01);
+  pMVar3 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Not_implemented);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,pMVar3);
+  uVar4 = func_?(&
+                          MethodInfo__MVBuildModeAvatarLocal__BuildModeAvatarLocalModes__BuildModeFactory_MVBuildModeAvatarLocal__AvatarBuildModes_
+                         );
+  func_?(this_01,uVar4);
+  pcVar5 = (code *)swi(3);
+  pMVar2 = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)(*pcVar5)();
+  return pMVar2;
 }
 
 
@@ -63,15 +77,18 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
                IInputToPlayerMovement *movementMap,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields).currentMode;
-  if (pMVar1 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
-    (*(code *)(pMVar1->klass->vtable).__unknown_2.method)
-              (pMVar1,movementMap,(pMVar1->klass->vtable).__unknown_3.methodPtr);
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pMStack_2 = (this->fields).currentMode;
+  if (pMStack_2 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
+    pMStack_1 = (pMStack_2->klass->vtable).__unknown_2.method;
+    pIStack_3 = movementMap;
+    (*(pMStack_2->klass->vtable).__unknown_2.methodPtr)();
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar4 = func_?(&pMStack_2);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -84,15 +101,18 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
                InputToInGameAction *interactionMap,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields).currentMode;
-  if (pMVar1 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
-    (*(code *)(pMVar1->klass->vtable).__unknown_3.method)
-              (pMVar1,interactionMap,(pMVar1->klass->vtable).__unknown_4.methodPtr);
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pMStack_2 = (this->fields).currentMode;
+  if (pMStack_2 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
+    pMStack_1 = (pMStack_2->klass->vtable).__unknown_3.method;
+    pIStack_3 = interactionMap;
+    (*(pMStack_2->klass->vtable).__unknown_3.methodPtr)();
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar4 = func_?(&pMStack_2);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -106,119 +126,98 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVBuildModeAvatarLocal__AvatarBuildModes);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral______________prevAvatarBuildMode);
+    func_?(&StringLiteral______________nextAvatarBuildMode);
     cRam_? = '\x01';
   }
-  pMVar1 = this;
-  uVar2 = 0;
-  pMVar3 = (this->fields).currentMode;
-  if (pMVar3 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
-    (*(code *)(pMVar3->klass->vtable).__unknown_1.method)
-              (pMVar3,mode,(pMVar3->klass->vtable).__unknown_2.methodPtr);
-    pMVar3 = (pMVar1->fields).currentMode;
+  uVar1 = 0;
+  uStack_2 = uStack_2 & 0xffffff00;
+  if ((this->fields).currentMode != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
+    pMVar3 = (this->fields).currentMode;
+    pMVar4 = pMVar3->klass;
+    (*(pMVar4->vtable).__unknown_1.methodPtr)(pMVar3,mode,(pMVar4->vtable).__unknown_1.method);
+    pMVar3 = (this->fields).currentMode;
     if (pMVar3 == (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) goto code_?;
-    uVar2 = (*(code *)(pMVar3->klass->vtable).__unknown_4.method)(pMVar3,pMVar3->klass[1]._0.image);
+    uVar1 = (*(pMVar3->klass->vtable).__unknown_4.methodPtr)
+                      (pMVar3,(pMVar3->klass->vtable).__unknown_4.method);
+    uStack_2 = CONCAT31(uStack_2._1_3_,uVar1);
   }
-  this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)CONCAT13(uVar2,this._0_3_);
-  pOVar4 = (Object *)
-           func_?(TypeInfo__MVBuildModeAvatarLocal__AvatarBuildModes,(int)&this + 3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
+  EStack_5.klass = (Enum__Class *)TypeInfo__MVBuildModeAvatarLocal__AvatarBuildModes;
+  EStack_5.monitor = (MonitorData *)0xffffffff;
+  uStack_6 = uVar1;
+  pSVar7 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_5,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral______________prevAvatarBuildMode,pSVar7,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  pSVar5 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral______________prevAvatarBuildMode,pOVar4,
-                      (MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Debug);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar5,(MethodInfo *)0x0);
-  uStack_6 = (undefined1)mode;
-  pOVar4 = (Object *)func_?(TypeInfo__MVBuildModeAvatarLocal__AvatarBuildModes,&uStack_6);
-  pSVar5 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral______________nextAvatarBuildMode,pOVar4,
-                      (MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar5,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar7,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::Enum::Enum_ToString
+                     ((Enum *)&stack0xffffffe0,(MethodInfo *)0xffffffff);
+  pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral______________nextAvatarBuildMode,pSVar7,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar7,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    mode = _UNK_?;
-    this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)&UNK_?;
     func_?();
     cRam_? = '\x01';
   }
-  if ((undefined1)mode == MVBuildModeAvatarLocal_AvatarBuildModes__Enum_Edit) {
-    pMVar7 = (pMVar1->fields).avatar;
-    mode = (MVBuildModeAvatarLocal_AvatarBuildModes__Enum)TypeInfo__MVBuildModeAvatarLocal__EditMode
-    ;
-    this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)&UNK_?;
-    this_00 = (ScaleAnimationBase *)func_?();
-    if (cRam_? == '\0') {
-      mode = _UNK_?;
-      this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)&UNK_?;
-      func_?();
-      cRam_? = '\x01';
+  if ((char)mode == '\x01') {
+    pMVar3 = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)func_?();
+    if (pMVar3 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__DoubleTapMovementChecker);
+        cRam_? = '\x01';
+      }
+      *(undefined1 *)&pMVar3[1].klass = 1;
+      pMVar3[1].monitor = (MonitorData *)0x3fe00000;
+      pMVar3[1].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x40a00000;
+      pMVar3[3].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x41200000;
+      this_00 = (DoubleTapMovementChecker *)func_?(TypeInfo__DoubleTapMovementChecker);
+      if (this_00 != (DoubleTapMovementChecker *)0x0) {
+        DoubleTapMovementChecker::DoubleTapMovementChecker__ctor(this_00,(MethodInfo *)0x0);
+        method_00 = (MethodInfo *)&pMVar3[6].monitor;
+        pMVar3[6].monitor = (MonitorData *)this_00;
+        func_?(method_00,this_00);
+        pMVar3[7].monitor = (MonitorData *)0x41a00000;
+        pMVar3[7].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x41200000;
+        pMVar3[8].klass = (MVBuildModeAvatarLocal_AvatarBuildModeBase__Class *)0x40a00000;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)pMVar3,ExceptionArgument__Enum_obj,method_00);
+        (pMVar3->fields).buildModeAvatar = (MVBuildModeAvatarLocal *)&UNK_?;
+        func_?(&pMVar3->fields,&UNK_?);
+        pMVar8 = (MVBuildModeAvatarLocal *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0)
+        ;
+        pMVar3[6].fields.buildModeAvatar = pMVar8;
+        func_?(&pMVar3[6].fields,pMVar8);
+        pMVar3[5].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x3f800000;
+        pMVar3[6].klass = (MVBuildModeAvatarLocal_AvatarBuildModeBase__Class *)0x3f800000;
+        (this->fields).currentMode = pMVar3;
+        func_?(&this->fields,pMVar3);
+        pMVar3 = (this->fields).currentMode;
+        if (pMVar3 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
+          (*(pMVar3->klass->vtable).__unknown.methodPtr)
+                    (pMVar3,uStack_2,(pMVar3->klass->vtable).__unknown.method);
+          return;
+        }
+      }
     }
-    *(undefined1 *)&(this_00->fields).state = 1;
-    (this_00->fields).originalScale.x = 1.75;
-    (this_00->fields).originalScale.y = 5.0;
-    this_00[1].monitor = (MonitorData *)0x41200000;
-    mode = (MVBuildModeAvatarLocal_AvatarBuildModes__Enum)TypeInfo__DoubleTapMovementChecker;
-    this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)&UNK_?;
-    this_01 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)func_?();
-    this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)0x0;
-    DoubleTapMovementChecker::DoubleTapMovementChecker__ctor
-              ((DoubleTapMovementChecker *)this_01,(MethodInfo *)0x0);
-    this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)0x0;
-    this_00[1].fields.OnScaleAnimationStopped = this_01;
-    this_00[2].fields._._._._.m_CachedPtr = (void *)0x41a00000;
-    this_00[2].fields.state = 0x41200000;
-    this_00[2].fields.originalScale.x = 5.0;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)mode);
-    this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)0x0;
-    (this_00->fields)._._._._.m_CachedPtr = pMVar7;
-    pSVar8 = (ScaleAnimationBase__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    this_00[2].klass = pSVar8;
-    this_00[1].fields.target = (Transform *)0x3f800000;
-    this_00[1].fields.testState = 0x3f800000;
-    (pMVar1->fields).currentMode = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)this_00;
-    this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)this_00->klass[1]._0.image;
-    uStack_6 = 0x10;
-    (*(code *)(this_00->klass->vtable).Play.method)();
-    return;
   }
-  mode = (MVBuildModeAvatarLocal_AvatarBuildModes__Enum)TypeInfo__System__Exception;
-  this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)&UNK_?;
-  this_02 = (IsolatedStorageException *)func_?();
-  this = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)0x0;
-  uStack_6 = 0x10;
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1(this_02,StringLiteral_Not_implemented,(MethodInfo *)0x0);
-  in_stack_9 =
-       MethodInfo__MVBuildModeAvatarLocal__BuildModeAvatarLocalModes__BuildModeFactory_MVBuildModeAvatarLocal__AvatarBuildModes_
-  ;
-  in_stack_10 = 0;
-  mode = (MVBuildModeAvatarLocal_AvatarBuildModes__Enum)&UNK_?;
-  method = (MethodInfo *)this_02;
-  func_?();
+  else {
+    func_?();
+    this_01 = (Exception *)func_?();
+    func_?();
+    pSVar7 = (String *)func_?();
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar7,(MethodInfo *)0x0);
+    func_?();
+    func_?();
+  }
 code_?:
-  func_?(0);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
-  return;
-}
-
-
-/* MVBuildModeAvatarLocal+BuildModeAvatarLocalModes(MVBuildModeAvatarLocal) */
-
-void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
-     MVBuildModeAvatarLocal_BuildModeAvatarLocalModes__ctor
-               (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *this,
-               MVBuildModeAvatarLocal *avatar,MethodInfo *method)
-
-{
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-  (this->fields).avatar = avatar;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

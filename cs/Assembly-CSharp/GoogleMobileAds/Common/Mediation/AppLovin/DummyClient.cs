@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Common.Mediation.AppLovin
 {
@@ -19,5 +19,6 @@ namespace GoogleMobileAds.Common.Mediation.AppLovin
 		public void Initialize();
 		public void SetHasUserConsent(bool hasUserConsent);
 		public void SetIsAgeRestrictedUser(bool isAgeRestrictedUser);
+		public void SetDoNotSell(bool doNotSell);
 	}
 }

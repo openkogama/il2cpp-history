@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRoleEditorMenu : MonoBehaviour
 {
@@ -34,36 +34,50 @@ public class SpawnRoleEditorMenu : MonoBehaviour
 	private AttributeSettingsManager spawnRoleAttributeSettingsManager;
 	private SpawnRoleSkillsEditor skillsEditorMenu;
 	private float timeUntilEnterPlayMode;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IEditModeController> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnTeamEditPressed_c__AnonStorey0
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal SpawnRoleTeamEditor teamEditor;
+		public SpawnRoleTeamEditor teamEditor;
 
 		// Constructors
-		public _OnTeamEditPressed_c__AnonStorey0();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnTeamEditPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OnLooksEditPressed_c__AnonStorey1
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal SpawnRoleLooksEditorMenu looksEditorMenu;
+		public SpawnRoleLooksEditorMenu looksEditorMenu;
 
 		// Constructors
-		public _OnLooksEditPressed_c__AnonStorey1();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnLooksEditPressed_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IEditModeController> __9__16_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Update_b__16_0(IEditModeController x, BaseEventData y);
+		internal void _Update_b__16_1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -87,10 +101,6 @@ public class SpawnRoleEditorMenu : MonoBehaviour
 	private void ChangeTeamImageColor(MVTeam team);
 	private void OnChangeTier(GamePassTier newTier);
 	[CompilerGenerated]
-	private void _OnSkillsEditPressed_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Update_m__1(IEditModeController x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _Update_m__2(IUIStack x, BaseEventData y);
+	private void _OnSkillsEditPressed_b__13_0(IUIStack x, BaseEventData y);
 }
 

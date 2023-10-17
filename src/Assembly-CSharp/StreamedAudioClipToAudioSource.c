@@ -6,7 +6,10 @@ void Assembly-CSharp.dll::StreamedAudioClipToAudioSource::StreamedAudioClipToAud
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__get_Asset__
+                   );
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).audioSource;
@@ -32,50 +35,37 @@ void Assembly-CSharp.dll::StreamedAudioClipToAudioSource::StreamedAudioClipToAud
       else {
         pAVar1 = (this->fields).audioSource;
         if (pAVar1 == (AudioSource *)0x0) goto code_?;
-        pAVar4 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip
-                           (pAVar1,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        x = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip
+                      (pAVar1,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pAVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+                          ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
       }
       pAVar1 = (this->fields).audioSource;
-      pAVar4 = (AudioClip *)
-               System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-               Int32]::
-               Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                         ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)this,
-                          MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__get_Asset__
-                         );
       if (pAVar1 != (AudioSource *)0x0) {
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
-                  (pAVar1,pAVar4,(MethodInfo *)0x0);
-        if ((bVar2 == 0) && (bVar3 == 0)) {
+                  (pAVar1,(this->fields)._.asset,(MethodInfo *)0x0);
+        if (bVar3 == 0 && bVar2 == 0) {
           return;
         }
         if ((this->fields).audioSource != (AudioSource *)0x0) {
-          pcVar5 = pcRam_?;
-          if ((pcRam_? == (code *)0x0) &&
-             (pcVar5 = (code *)func_?(), pcVar5 == (code *)0x0)) {
-            uVar6 = func_?(&UNK_?);
-            func_?(uVar6);
-            pcVar5 = (code *)swi(3);
-            (*pcVar5)();
-            return;
+          if (pcRam_? == (code *)0x0) {
+            pcRam_? = (code *)func_?();
           }
-          pcRam_? = pcVar5;
-          (*pcRam_?)(in_stack_7);
+          puStack4 = (undefined *)0x0;
+          puStack5 = (undefined *)0x0;
+          (*pcRam_?)();
           return;
         }
       }
     }
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -87,22 +77,26 @@ void Assembly-CSharp.dll::StreamedAudioClipToAudioSource::StreamedAudioClipToAud
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__AudioSource_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioSource>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  x = (this->fields).audioSource;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pAVar1 = (this->fields).audioSource;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                       ((Component_1 *)this,
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pAVar1 = (AudioSource *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                       ((Component *)this,
                         UnityEngine__AudioSource_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioSource>__
                        );
-    (this->fields).audioSource = (AudioSource *)pMVar2;
+    (this->fields).audioSource = pAVar1;
+    func_?(&(this->fields).audioSource,pAVar1);
   }
   return;
 }
@@ -115,12 +109,14 @@ void Assembly-CSharp.dll::StreamedAudioClipToAudioSource::StreamedAudioClipToAud
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__StreamingAsset__
+                   );
     cRam_? = '\x01';
   }
-  StreamingAsset`2[UnityEngine::Texture2D,UnityEngine::Texture2D]::
-  StreamingAsset_2_UnityEngine_Texture2D_UnityEngine_Texture2D___ctor
-            ((StreamingAsset_2_UnityEngine_Texture2D_UnityEngine_Texture2D_ *)this,
+  StreamingAsset`2[System::Object,System::Object]::
+  StreamingAsset_2_System_Object_System_Object___ctor
+            ((StreamingAsset_2_System_Object_System_Object_ *)this,
              MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__StreamingAsset__
             );
   return;

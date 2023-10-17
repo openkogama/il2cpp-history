@@ -12,7 +12,7 @@ using MV.WorldObject.GamePassSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TierOnDeathProgress : MonoBehaviour
 {
@@ -53,7 +53,6 @@ public class TierOnDeathProgress : MonoBehaviour
 	private float tierToInterpolateTo;
 	private bool unlockingTier;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsShowingTierProgress_k__BackingField;
 
 	// Properties
@@ -61,40 +60,33 @@ public class TierOnDeathProgress : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoTierProgress_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoTierProgress_d__32 : IEnumerator<object>
 	{
 		// Fields
-		internal Dictionary<GamePassTier, PlayerTierState> _gameTierShopStatus___0;
-		internal int _previousShownGamePointAmount___0;
-		internal int _newGamePointAmountToShow___0;
-		internal int _from___0;
-		internal int _to___0;
-		internal int _current___0;
-		internal bool _stopped___0;
-		internal float _totalProgress___1;
-		internal float _crystalProgress___1;
-		internal float _tierProgress___1;
-		internal int _displayedProgress___1;
-		internal float _lockLerpTimer___2;
-		internal TierOnDeathProgress _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public TierOnDeathProgress __4__this;
+		private Dictionary<GamePassTier, PlayerTierState> _gameTierShopStatus_5__2;
+		private int _to_5__3;
+		private int _current_5__4;
+		private bool _stopped_5__5;
+		private float _totalProgress_5__6;
+		private float _lockLerpTimer_5__7;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoTierProgress_c__Iterator0();
+		public _DoTierProgress_d__32(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -104,7 +96,7 @@ public class TierOnDeathProgress : MonoBehaviour
 	public void Initialize();
 	private void OnEnable();
 	private void OnDisable();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoTierProgress_d__32))]
 	private IEnumerator DoTierProgress();
 	private void Update();
 	private float CalculateTotalProgressValue(int gamePoints);

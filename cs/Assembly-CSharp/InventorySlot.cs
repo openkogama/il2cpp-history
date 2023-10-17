@@ -8,32 +8,33 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
 	// Fields
-	private int absoluteSlotValue;
+	[CompilerGenerated]
+	private int _AbsoluteSlot_k__BackingField;
 	[SerializeField]
 	private NotificationFade fade;
 
 	// Properties
-	public int AbsoluteSlot { get; }
+	public int AbsoluteSlot { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public GameObject Item { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _OnDrop_c__AnonStorey0
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal PointerEventData eventData;
-		internal InventorySlot _this;
+		public PointerEventData eventData;
+		public InventorySlot __4__this;
 
 		// Constructors
-		public _OnDrop_c__AnonStorey0();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal void __m__0(IGameObjectDroppedInSlot x, BaseEventData y);
+		internal void _OnDrop_b__0(IGameObjectDroppedInSlot x, BaseEventData y);
 	}
 
 	// Constructors

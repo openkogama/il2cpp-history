@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TouristPromotionLooksData : MonoBehaviour
 {
@@ -36,7 +36,6 @@ public class TouristPromotionLooksData : MonoBehaviour
 	public TouristPromotionLooksData();
 
 	// Methods
-	public void RandomizePromotion();
 	public void RandomizePromotion(bool embedded);
 	public Image GetPromotionImage();
 	public string GetPromotionText();

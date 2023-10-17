@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public enum EffectStyle
 {
@@ -17,6 +17,7 @@ public enum EffectStyle
 	ReverseGradient = 4,
 	LighGradient = 5,
 	PlayModeUI = 6,
-	Outline = 7
+	Outline = 7,
+	HudButton = 8
 }
 

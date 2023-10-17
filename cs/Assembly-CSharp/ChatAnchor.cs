@@ -7,23 +7,23 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [ExecuteInEditMode]
-[RequireComponent]
+[RequireComponent(typeof(Transform))]
 public class ChatAnchor : MonoBehaviour
 {
 	// Fields
-	[Tooltip]
+	[Tooltip("Chat Bubble that should be anchored at this transform.")]
 	public ChatBubble AttachedBubble;
-	[Tooltip]
+	[Tooltip("Radius in world units from the anchor transform to the bubble\'s pivot.")]
 	public float AttachedRadius;
-	[Range]
-	[Tooltip]
+	[Range(-180f, 180f)]
+	[Tooltip("Angle in degrees around the transform to the bubble\'s pivot.")]
 	public float AttachedAngle;
-	[Tooltip]
+	[Tooltip("Smoothing speed as the bubble follows the anchor transform.")]
 	public float TrackingSpeed;
-	[Tooltip]
+	[Tooltip("True if the bubble should stay within the screen bounds until the anchor position is no longer visible.")]
 	public bool KeepInView;
 	private bool snapTracking;
 	private bool inViewport;

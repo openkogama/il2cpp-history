@@ -11,7 +11,7 @@ using CodeStage.AntiCheat.ObscuredTypes;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class PickupItemFlamethrower : PickupItem
 {
@@ -21,7 +21,7 @@ public class PickupItemFlamethrower : PickupItem
 	[SerializeField]
 	private float hitRadius;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("How many seconds a fueltank lasts.")]
 	private ObscuredFloat maxFuelTime;
 	[SerializeField]
 	private float maxRange;
@@ -39,57 +39,51 @@ public class PickupItemFlamethrower : PickupItem
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoFlaming_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoFlaming_d__16 : IEnumerator<object>
 	{
 		// Fields
-		internal Ray _lineofFire___1;
-		internal int _layers___1;
-		internal List<VoxelHit> _hits___1;
-		internal PickupItemFlamethrower _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public PickupItemFlamethrower __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoFlaming_c__Iterator0();
+		public _DoFlaming_d__16(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class _DoFuelBurn_c__Iterator1 : IEnumerator<object>
+	private sealed class _DoFuelBurn_d__17 : IEnumerator<object>
 	{
 		// Fields
-		internal MVRigidBody _mvRigidBody___1;
-		internal PickupItemFlamethrower _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public PickupItemFlamethrower __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoFuelBurn_c__Iterator1();
+		public _DoFuelBurn_d__17(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -99,9 +93,9 @@ public class PickupItemFlamethrower : PickupItem
 	private bool IsStillFlaming();
 	private void Awake();
 	public override void ResetAmmo();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoFlaming_d__16))]
 	private IEnumerator DoFlaming();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoFuelBurn_d__17))]
 	private IEnumerator DoFuelBurn();
 	public override void TriggerBegin(int instigatorActorNr);
 	public override void TriggerEnd();

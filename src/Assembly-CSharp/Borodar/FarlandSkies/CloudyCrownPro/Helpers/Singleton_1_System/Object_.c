@@ -5,20 +5,13 @@ void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::Helpers::Single
      Object]::Singleton_1_System_Object___ctor(Singleton_1_System_Object_ *this,MethodInfo *method)
 
 {
-  if (this != (Singleton_1_System_Object_ *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    return;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
   return;
 }
 
@@ -30,111 +23,131 @@ Object * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::Helpers::Si
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__System__Type);
+    func_?(&StringLiteral___There_is_more_than_1_instance_);
+    func_?(&StringLiteral___Instance_doesn_t_exist_in_the_);
     cRam_? = '\x01';
   }
-  pcVar1 = method->name;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
+  pIVar1 = method->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  iVar2 = **(int **)(pcVar1 + 0x60);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pIVar1 = pIVar1->rgctx_data->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  x = (Object_1 *)**(undefined4 **)(iVar2 + 0x5c);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  x = *(Object_1 **)pIVar1->static_fields;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if (bVar2 != 0) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pcVar1 = method->name;
-    pcVar4 = pcVar1;
-    if ((pcVar1[0xbe] & 1U) == 0) {
-      func_?(pcVar1);
-      pcVar4 = method->name;
+    pIVar1 = method->klass;
+    if (pIVar1->initialized_and_no_error == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
     }
-    if ((pcVar4[0xbe] & 1U) == 0) {
-      func_?(pcVar4);
+    pIVar3 = (pIVar1->rgctx_data[2].method)->virtualMethodPointer;
+    pIVar1 = method->klass;
+    if (pIVar1->initialized_and_no_error == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
     }
-    iVar2 = (*(code *)**(undefined4 **)(*(int *)(pcVar4 + 0x60) + 8))
-                      (*(undefined4 *)(*(int *)(pcVar1 + 0x60) + 8));
-    if (iVar2 == 0) {
-      func_?(0);
+    iVar4 = (*pIVar3)(pIVar1->rgctx_data[2].rgctxDataDummy);
+    if (iVar4 == 0) {
+      func_?();
+code_?:
+      func_?();
       pcVar5 = (code *)swi(3);
       pOVar6 = (Object *)(*pcVar5)();
       return pOVar6;
     }
-    pcVar1 = method->name;
-    if (*(int *)(iVar2 + 0xc) == 1) {
-      uVar7 = *(undefined4 *)(iVar2 + 0x10);
-      if ((pcVar1[0xbe] & 1U) == 0) {
-        func_?(pcVar1);
+    if (*(int *)(iVar4 + 0xc) == 1) {
+      if (*(int *)(iVar4 + 0xc) == 0) goto code_?;
+      pIVar1 = method->klass;
+      uVar7 = *(undefined4 *)(iVar4 + 0x10);
+      if (pIVar1->initialized_and_no_error == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      iVar2 = **(int **)(pcVar1 + 0x60);
-      if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-        func_?(iVar2);
+      pIVar1 = pIVar1->rgctx_data->klass;
+      if (pIVar1->initialized_and_no_error == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      **(undefined4 **)(iVar2 + 0x5c) = uVar7;
+      *(undefined4 *)pIVar1->static_fields = uVar7;
+      pIVar1 = method->klass;
+      if (pIVar1->initialized_and_no_error == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      }
+      pIVar1 = pIVar1->rgctx_data->klass;
+      if (pIVar1->initialized_and_no_error == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      }
+      func_?(pIVar1->static_fields,uVar7);
     }
     else {
-      if (*(int *)(iVar2 + 0xc) < 2) {
-        if ((pcVar1[0xbe] & 1U) == 0) {
-          func_?(pcVar1);
+      pIVar1 = method->klass;
+      if (*(int *)(iVar4 + 0xc) < 2) {
+        if (pIVar1->initialized_and_no_error == 0) {
+          pIVar1 = (Il2CppClass *)func_?(pIVar1);
         }
-        RVar8.value = *(void **)(*(int *)(pcVar1 + 0x60) + 0xc);
-        if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+        IVar8 = pIVar1->rgctx_data[3];
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Type);
         }
-        arg0 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
-        pSVar9 = StringLiteral___Instance_doesn_t_exist_in_the_;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-          pSVar9 = StringLiteral___Instance_doesn_t_exist_in_the_;
+        pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)IVar8,(MethodInfo *)0x0);
+        if (pTVar9 == (Type *)0x0) {
+          str0 = (String *)0x0;
+          pSVar10 = StringLiteral___Instance_doesn_t_exist_in_the_;
+        }
+        else {
+          str0 = (String *)
+                 (*(pTVar9->klass->vtable).ToString.methodPtr)
+                           (pTVar9,(pTVar9->klass->vtable).ToString.method);
+          pSVar10 = StringLiteral___Instance_doesn_t_exist_in_the_;
         }
       }
       else {
-        if ((pcVar1[0xbe] & 1U) == 0) {
-          func_?(pcVar1);
+        if (pIVar1->initialized_and_no_error == 0) {
+          pIVar1 = (Il2CppClass *)func_?(pIVar1);
         }
-        RVar8.value = *(void **)(*(int *)(pcVar1 + 0x60) + 0xc);
-        if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+        IVar8 = pIVar1->rgctx_data[3];
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Type);
         }
-        arg0 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
-        pSVar9 = StringLiteral___There_is_more_than_1_instance_;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-          pSVar9 = StringLiteral___There_is_more_than_1_instance_;
+        pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)IVar8,(MethodInfo *)0x0);
+        if (pTVar9 == (Type *)0x0) {
+          str0 = (String *)0x0;
+          pSVar10 = StringLiteral___There_is_more_than_1_instance_;
+        }
+        else {
+          str0 = (String *)
+                 (*(pTVar9->klass->vtable).ToString.methodPtr)
+                           (pTVar9,(pTVar9->klass->vtable).ToString.method);
+          pSVar10 = StringLiteral___There_is_more_than_1_instance_;
         }
       }
-      pSVar9 = mscorlib.dll::System::String::String_Concat
-                         ((Object *)arg0,(Object *)pSVar9,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
+      pSVar10 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar10,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)pSVar9,(MethodInfo *)0x0);
+                ((Object *)pSVar10,(MethodInfo *)0x0);
     }
   }
-  pcVar1 = method->name;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
+  pIVar1 = method->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?();
   }
-  iVar2 = **(int **)(pcVar1 + 0x60);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
+  pIVar1 = pIVar1->rgctx_data->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?();
   }
-  return (Object *)**(undefined4 **)(iVar2 + 0x5c);
+  return *(Object **)pIVar1->static_fields;
 }
 

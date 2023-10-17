@@ -6,38 +6,18 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Command_AssetBundleCacheTest
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Command_failed___0__expects_exac);
+    func_?(&StringLiteral__0__is_not_a_valid_version_numbe);
     cRam_? = '\x01';
   }
-  version = 0;
-  if ((command == (TextCommand_Command *)0x0) ||
-     (pSVar1 = (command->fields).commandComponents, pSVar1 == (String__Array *)0x0)) {
-code_?:
-    func_?(0);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-  }
-  else {
-    if (pSVar1->max_length != 2) {
-      if (pSVar1 == (String__Array *)0x0) goto code_?;
-      if (pSVar1->max_length != 0) {
-        pSVar3 = pSVar1->vector[0];
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
+  iVar1 = 0;
+  if ((command != (TextCommand_Command *)0x0) &&
+     (pSVar2 = (command->fields).commandComponents, pSVar2 != (String__Array *)0x0)) {
+    if (pSVar2->max_length != 2) {
+      if (pSVar2->max_length != 0) {
         pSVar3 = mscorlib.dll::System::String::String_Format
-                           (StringLiteral_Command_failed___0__expects_exac,(Object *)pSVar3,
-                            (MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
+                           (StringLiteral_Command_failed___0__expects_exac,
+                            (Object *)pSVar2->vector[0],(MethodInfo *)0x0);
         MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
                   (MVGameMsgType__Enum_AdminMsg,pSVar3,(MethodInfo *)0x0);
         return;
@@ -45,54 +25,68 @@ code_?:
       goto code_?;
     }
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
-      pSVar1 = (command->fields).commandComponents;
+      func_?(&::StringLiteral__);
       cRam_? = '\x01';
     }
-    if (pSVar1 == (String__Array *)0x0) goto code_?;
-    if ((int)pSVar1->max_length < 2) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
+    pSVar2 = (command->fields).commandComponents;
+    if (pSVar2 != (String__Array *)0x0) {
+      pSVar3 = ::StringLiteral__;
+      if (1 < (int)pSVar2->max_length) {
+        if (pSVar2->max_length < 2) goto code_?;
+        pSVar3 = pSVar2->vector[1];
       }
-      pSVar3 = TypeInfo__System__String->static_fields->Empty;
-code_?:
       bVar4 = mscorlib.dll::System::Int32::Int32_TryParse
                         (pSVar3,(int32_t *)&stack0xfffffff8,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        AssetBundleCacheTest::AssetBundleCacheTest_Run(version,(MethodInfo *)0x0);
-        return;
-      }
-      pSVar1 = (command->fields).commandComponents;
-      if (pSVar1 != (String__Array *)0x0) {
-        if (pSVar1->max_length != 0) {
-          arg1 = pSVar1->vector[0];
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
+      if (bVar4 == 0) {
+        pSVar2 = (command->fields).commandComponents;
+        if (pSVar2 != (String__Array *)0x0) {
+          if (pSVar2->max_length != 0) {
+            pSVar3 = mscorlib.dll::System::String::String_Format_1
+                               (StringLiteral__0__is_not_a_valid_version_numbe,(Object *)pSVar3,
+                                (Object *)pSVar2->vector[0],(MethodInfo *)0x0);
+            MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                      (MVGameMsgType__Enum_AdminMsg,pSVar3,(MethodInfo *)0x0);
+            return;
           }
-          pSVar3 = mscorlib.dll::System::String::String_Format_1
-                             (StringLiteral__0__is_not_a_valid_version_numbe,(Object *)pSVar3,
-                              (Object *)arg1,(MethodInfo *)0x0);
-          TextCommand_NotifyUser(pSVar3,(MethodInfo *)0x0);
-          return;
+          goto code_?;
         }
-        goto code_?;
       }
-      goto code_?;
-    }
-    if (1 < pSVar1->max_length) {
-      pSVar3 = pSVar1->vector[1];
-      goto code_?;
+      else {
+        if (cRam_? == '\0') {
+          func_?();
+          func_?(&
+                          MethodInfo__AssetBundleCacheTest__OnFirstDownloadFinished_UnityEngine__Networking__UnityWebRequest__float__int_
+                         );
+          cRam_? = '\x01';
+        }
+        pKVar5 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
+        if (pKVar5 != (KoGaMaSettingsContainer *)0x0) {
+          currentStreamingAssetVersion = (pKVar5->fields).streamingAssetVersion;
+          pKVar5 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
+          if (pKVar5 != (KoGaMaSettingsContainer *)0x0) {
+            (pKVar5->fields).streamingAssetVersion = currentStreamingAssetVersion + iVar1;
+            this = (Action_3_Object_Single_Int32_ *)func_?();
+            if (this != (Action_3_Object_Single_Int32_ *)0x0) {
+              mscorlib.dll::System::Action`3[Object,Single,Int32]::
+              Action_3_Object_Single_Int32___ctor
+                        (this,(Object *)0x0,
+                         MethodInfo__AssetBundleCacheTest__OnFirstDownloadFinished_UnityEngine__Networking__UnityWebRequest__float__int_
+                         ,(MethodInfo *)0x0);
+              AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset
+                        ((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,
+                         currentStreamingAssetVersion,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
+      }
     }
   }
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
+  func_?();
 code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -104,38 +98,29 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Command_Invalid
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((command == (TextCommand_Command *)0x0) ||
-     (pSVar1 = (command->fields).commandComponents, pSVar1 == (String__Array *)0x0)) {
-    func_?(0);
-  }
-  else if (pSVar1->max_length != 0) {
-    pSVar2 = pSVar1->vector[0];
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
+  if ((command != (TextCommand_Command *)0x0) &&
+     (pSVar1 = (command->fields).commandComponents, pSVar1 != (String__Array *)0x0)) {
+    if (pSVar1->max_length != 0) {
+      message = mscorlib.dll::System::String::String_Format
+                          (StringLiteral__0__is_not_a_valid_command_,(Object *)pSVar1->vector[0],
+                           (MethodInfo *)0x0);
+      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                (MVGameMsgType__Enum_AdminMsg,message,(MethodInfo *)0x0);
+      return;
     }
-    pSVar2 = mscorlib.dll::System::String::String_Format
-                       (StringLiteral__0__is_not_a_valid_command_,(Object *)pSVar2,(MethodInfo *)0x0
-                       );
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-              (MVGameMsgType__Enum_AdminMsg,pSVar2,(MethodInfo *)0x0);
+    func_?();
+    func_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  uVar3 = func_?(0,0);
+  uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -145,14 +130,6 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Command_Invalid
 void Assembly-CSharp.dll::TextCommand::TextCommand_NotifyUser(String *msg,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
             (MVGameMsgType__Enum_AdminMsg,msg,(MethodInfo *)0x0);
   return;
@@ -165,94 +142,64 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Resolve(String *commandLine,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__abctest);
+    func_?(&StringLiteral__assetbundlecachetest);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__TextCommand__Command);
     cRam_? = '\x01';
   }
-  separator = (Char__Array *)func_?(TypeInfo__System__Char,1);
-  if (separator == (Char__Array *)0x0) goto code_?;
-  if (separator->max_length == 0) {
+  if (commandLine != (String *)0x0) {
+    pSVar1 = mscorlib.dll::System::String::String_Split
+                       (commandLine,0x20,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+    command = (TextCommand_Command *)func_?(TypeInfo__TextCommand__Command);
+    if (command != (TextCommand_Command *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)command,ExceptionArgument__Enum_obj,unaff_EDI);
+      (command->fields).commandComponents = pSVar1;
+      func_?(&command->fields,pSVar1);
+      pSVar1 = (command->fields).commandComponents;
+      if (pSVar1 != (String__Array *)0x0) {
+        if (pSVar1->max_length == 0) goto code_?;
+        if (pSVar1->vector[0] != (String *)0x0) {
+          pSVar2 = mscorlib.dll::System::String::String_ToLower(pSVar1->vector[0],(MethodInfo *)0x0)
+          ;
+          bVar3 = mscorlib.dll::System::String::String_op_Equality
+                            (pSVar2,StringLiteral__abctest,(MethodInfo *)0x0);
+          if (bVar3 != 0) {
 code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-  }
-  else {
-    separator->vector[0] = 0x20;
-    if (commandLine == (String *)0x0) {
-code_?:
-      func_?(0);
-      goto code_?;
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Split(commandLine,separator,(MethodInfo *)0x0);
-    this = (ScaleAnimationBase *)func_?(TypeInfo__TextCommand__Command);
-    ScaleAnimationBase::ScaleAnimationBase_Play(this,0.0,in_stack_3);
-    (this->fields)._._._._.m_CachedPtr = pSVar2;
-    if (pSVar2 == (String__Array *)0x0) goto code_?;
-    if (pSVar2->max_length != 0) {
-      if (pSVar2->vector[0] != (String *)0x0) {
-        pSVar4 = mscorlib.dll::System::String::String_ToLower(pSVar2->vector[0],(MethodInfo *)0x0);
-        if (pSVar4 != (String *)0x0) {
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          bVar5 = mscorlib.dll::System::String::String_op_Equality
-                            (pSVar4,StringLiteral__abctest,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-code_?:
-            TextCommand_Command_AssetBundleCacheTest((TextCommand_Command *)this,(MethodInfo *)0x0);
+            TextCommand_Command_AssetBundleCacheTest(command,(MethodInfo *)0x0);
             return;
           }
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
+          bVar3 = mscorlib.dll::System::String::String_op_Equality
+                            (pSVar2,StringLiteral__assetbundlecachetest,(MethodInfo *)0x0);
+          if (bVar3 != 0) goto code_?;
+          if (cRam_? == '\0') {
+            func_?(&StringLiteral__0__is_not_a_valid_command_);
+            cRam_? = '\x01';
           }
-          bVar5 = mscorlib.dll::System::String::String_op_Equality
-                            (pSVar4,StringLiteral__assetbundlecachetest,(MethodInfo *)0x0);
-          if (bVar5 != 0) goto code_?;
-        }
-        if (cRam_? == '\0') {
-          func_?(_UNK_?);
-          cRam_? = '\x01';
-        }
-        pvVar6 = (this->fields)._._._._.m_CachedPtr;
-        if (pvVar6 != (void *)0x0) {
-          if (*(int *)((int)pvVar6 + 0xc) != 0) {
-            arg0 = *(Object **)((int)pvVar6 + 0x10);
-            if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__System__String->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__String);
+          pSVar1 = (command->fields).commandComponents;
+          if (pSVar1 != (String__Array *)0x0) {
+            if (pSVar1->max_length != 0) {
+              pSVar2 = mscorlib.dll::System::String::String_Format
+                                 (StringLiteral__0__is_not_a_valid_command_,
+                                  (Object *)pSVar1->vector[0],(MethodInfo *)0x0);
+              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                        (MVGameMsgType__Enum_AdminMsg,pSVar2,(MethodInfo *)0x0);
+              return;
             }
-            pSVar4 = mscorlib.dll::System::String::String_Format
-                               (StringLiteral__0__is_not_a_valid_command_,arg0,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?(_UNK_?);
-              cRam_? = '\x01';
-            }
-            if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-              func_?(TypeInfo__MVGameControllerBase);
-            }
-            MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                      (MVGameMsgType__Enum_AdminMsg,pSVar4,(MethodInfo *)0x0);
-            return;
+            goto code_?;
           }
-          goto code_?;
         }
       }
-      goto code_?;
     }
   }
-  uVar1 = func_?(0,0);
-  func_?(uVar1);
+  func_?();
 code_?:
-  uVar1 = func_?(0,0);
-  func_?(uVar1);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -7,14 +7,17 @@ String * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::EnumValues`1[System::
                    MethodInfo *method)
 
 {
+  IStack_1.rgctxDataDummy = &stack0xfffffffc;
   if (item != (EnumValue_1_System_UInt64_ *)0x0) {
-    puVar1 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0xc);
-    pSVar2 = (String *)(*(code *)*puVar1)(item,puVar1);
-    return pSVar2;
+    IStack_1 = method->klass->rgctx_data[1];
+    pEStack_2 = item;
+    pSVar3 = (String *)(*(method->klass->rgctx_data[1].method)->virtualMethodPointer)();
+    return pSVar3;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar3)();
-  return pSVar2;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar6)();
+  return pSVar3;
 }
 

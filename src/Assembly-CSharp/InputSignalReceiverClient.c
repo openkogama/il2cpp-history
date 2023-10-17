@@ -10,7 +10,9 @@ void Assembly-CSharp.dll::InputSignalReceiverClient::InputSignalReceiverClient__
 {
   pIVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Extensions);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+    func_?(&StringLiteral_iH);
     cRam_? = '\x01';
   }
   MVWorldObject.dll::InputSignalReceiverBase::InputSignalReceiverBase__ctor
@@ -18,15 +20,13 @@ void Assembly-CSharp.dll::InputSignalReceiverClient::InputSignalReceiverClient__
              defaultInput,logicObjectManager,(MethodInfo *)0x0);
   if (worldObject != (MVWorldObject *)0x0) {
     hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                (*(code *)(worldObject->klass->vtable).get_RunTimeData.method)();
-    if ((((uint)(TypeInfo__Extensions->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Extensions->_1).cctor_started == 0)) {
+                (*(worldObject->klass->vtable).get_RunTimeData.methodPtr)();
+    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
     pOVar2 = Extensions::Extensions_GetObscuredType(hashtable,StringLiteral_iH,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_started == 0)) {
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+        == 0) {
       func_?();
     }
     if (pOVar2 != (Object *)0x0) {
@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::InputSignalReceiverClient::InputSignalReceiverClient__
         value = (ObscuredBool)CONCAT84(uVar6,uVar4);
         Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
         ObscuredBool_op_Implicit_1(value,(MethodInfo *)0x0);
-        (*(code *)(pIVar1->klass->vtable).set_CurrentlyIsHot.method)();
+        (*(pIVar1->klass->vtable).set_CurrentlyIsHot.methodPtr)();
         (pIVar1->fields)._.firstFrame = 0;
         return;
       }

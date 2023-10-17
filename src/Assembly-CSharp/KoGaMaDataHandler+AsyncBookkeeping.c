@@ -6,20 +6,19 @@ void Assembly-CSharp.dll::KoGaMaDataHandler+AsyncBookkeeping::
                (KoGaMaDataHandler_AsyncBookkeeping *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_1_UIPushOption_ *)(this->fields).doneCallback;
-  if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-    mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-              (this_00,(this->fields).rootId,
-               MethodInfo__UnityEngine__Events__UnityAction<int>__Invoke_int_);
+  puStack_1 = &stack0xfffffffc;
+  pUVar2 = (this->fields).doneCallback;
+  if (pUVar2 != (UnityAction_1_System_Int32_ *)0x0) {
+    puStack_1 = (pUVar2->fields)._._.method;
+    iStack_3 = (this->fields).rootId;
+    pvStack_4 = (pUVar2->fields)._._.method_code;
+    (*(pUVar2->fields)._._.invoke_impl)();
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar5 = func_?(&pvStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -43,11 +42,15 @@ void Assembly-CSharp.dll::KoGaMaDataHandler+AsyncBookkeeping::
   (this->fields).rootId = -1;
   (this->fields).waitOneFrameBeforeDoneCallback = 1;
   (this->fields).workTime = 1.0;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).bp = bp;
+  func_?(&(this->fields).bp,bp);
   (this->fields).callBack = callBack;
+  func_?(&(this->fields).callBack,callBack);
   (this->fields).readRuntimeData = readRuntimeData;
   (this->fields).doneCallback = doneCallback;
+  func_?(&(this->fields).doneCallback,doneCallback);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                     ((MethodInfo *)0x0);
   (this->fields).workStartTime = fVar1;

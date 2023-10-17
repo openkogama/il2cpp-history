@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LevelDisplayCube : MonoBehaviour
 {
@@ -23,17 +23,17 @@ public class LevelDisplayCube : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _SetAmount_c__AnonStorey0
+	private sealed class __c__DisplayClass7_0
 	{
 		// Fields
-		internal int levelAmount;
-		internal LevelDisplayCube _this;
+		public int levelAmount;
+		public LevelDisplayCube __4__this;
 
 		// Constructors
-		public _SetAmount_c__AnonStorey0();
+		public __c__DisplayClass7_0();
 
 		// Methods
-		internal void __m__0();
+		internal void _SetAmount_b__0();
 	}
 
 	// Constructors

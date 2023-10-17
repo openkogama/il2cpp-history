@@ -6,24 +6,47 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
         APFloatCalcZeroValueLinear_Calc(APFloatCalcZeroValueLinear *this,float i,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  fVar1 = i - this[1].exchangeRateNegative;
+  fVar1 = i - this->zeroValue;
   if (fVar1 < _UNK_?) {
-    fVar2 = this[1].exchangeRatePositive;
+    fVar2 = this->exchangeRateNegative;
   }
   else {
-    fVar2 = this->zeroValue;
+    fVar2 = this->exchangeRatePositive;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
-  iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_RoundToInt
-                    (fVar2 * fVar1,(MethodInfo *)0x0);
-  return iVar3;
+  fVar2 = fVar2 * fVar1;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar3 = (double)fVar2;
+  if (dVar3 < _UNK_?) {
+    fVar4 = (float10)func_?(dVar3,&dStack_5);
+    if ((double)fVar4 == _UNK_?) {
+      uVar6 = func_?();
+      if ((uVar6 & 1) != 0) {
+        return (int)(dStack_5 - _UNK_?);
+      }
+    }
+    else {
+      fVar4 = (float10)func_?((double)fVar2 - _UNK_?);
+      dStack_5 = (double)fVar4;
+    }
+  }
+  else {
+    fVar4 = (float10)func_?(dVar3,&dStack_5);
+    if ((double)fVar4 != _UNK_?) {
+      fVar4 = (float10)func_?((double)fVar2 + _UNK_?);
+      return (int)fVar4;
+    }
+    uVar6 = func_?();
+    if ((uVar6 & 1) != 0) {
+      return (int)(dStack_5 + _UNK_?);
+    }
+  }
+  return (int)dStack_5;
 }
 
 
@@ -34,21 +57,18 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
          APFloatCalcZeroValueLinear_ToString(APFloatCalcZeroValueLinear *this,MethodInfo *method)
 
 {
-  pAVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_APFloatCalcZeroValueLinear__exch);
     cRam_? = '\x01';
   }
-  this = (APFloatCalcZeroValueLinear *)pAVar1->zeroValue;
+  pAVar1 = this;
+  this = (APFloatCalcZeroValueLinear *)this->exchangeRatePositive;
   arg0 = (Object *)func_?(TypeInfo__System__Single,&this);
-  fStack_2 = pAVar1[1].exchangeRatePositive;
+  fStack_2 = pAVar1->exchangeRateNegative;
   arg1 = (Object *)func_?(TypeInfo__System__Single,&fStack_2);
-  fStack_3 = pAVar1[1].exchangeRateNegative;
+  fStack_3 = pAVar1->zeroValue;
   arg2 = (Object *)func_?(TypeInfo__System__Single,&fStack_3);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar4 = mscorlib.dll::System::String::String_Format_2
                      (StringLiteral_APFloatCalcZeroValueLinear__exch,arg0,arg1,arg2,
                       (MethodInfo *)0x0);
@@ -56,17 +76,32 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 }
 
 
-/* APFloatCalcZeroValueLinear(Single, Single, Single) */
+/* APFloatCalcZeroValueLinear(Single, Single) */
 
 void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::AttributeSettings
      ::AttributePointCalculators::APFloatCalcZeroValueLinear::APFloatCalcZeroValueLinear__ctor
+               (APFloatCalcZeroValueLinear *this,float zeroValue,float exchangeRate,
+               MethodInfo *method)
+
+{
+  this->exchangeRatePositive = exchangeRate;
+  this->exchangeRateNegative = exchangeRate;
+  this->zeroValue = zeroValue;
+  return;
+}
+
+
+/* APFloatCalcZeroValueLinear(Single, Single, Single) */
+
+void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::AttributeSettings
+     ::AttributePointCalculators::APFloatCalcZeroValueLinear::APFloatCalcZeroValueLinear__ctor_1
                (APFloatCalcZeroValueLinear *this,float zeroValue,float exchangeRatePositive,
                float exchangeRateNegative,MethodInfo *method)
 
 {
-  this->zeroValue = exchangeRatePositive;
-  this[1].exchangeRatePositive = exchangeRateNegative;
-  this[1].exchangeRateNegative = zeroValue;
+  this->exchangeRatePositive = exchangeRatePositive;
+  this->exchangeRateNegative = exchangeRateNegative;
+  this->zeroValue = zeroValue;
   return;
 }
 

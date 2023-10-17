@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public enum PoolEnums
 {
@@ -39,6 +39,7 @@ public enum PoolEnums
 	HealingMat = 28,
 	SpeedMat = 29,
 	CrumbleMat = 30,
-	LENGTH = 31
+	WhiteSparks = 31,
+	LENGTH = 32
 }
 

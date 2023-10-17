@@ -6,126 +6,41 @@ Vector3 * Assembly-CSharp.dll::BounceState::BounceState_ApplyBounceVelocity
                     MethodInfo *method)
 
 {
+  uVar1 = (this->fields).bounceVelocity.x;
+  uVar2 = (this->fields).bounceVelocity.y;
+  fVar3 = (this->fields).bounceVelocity.z;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  uStack_1._0_4_ = (this->fields).bounceVelocity.x;
-  uStack_1._4_4_ = (this->fields).bounceVelocity.y;
-  fVar2 = (this->fields).bounceVelocity.z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_4,(MethodInfo *)0x0);
-  lhs.z = fVar2;
-  lhs.x = (float)(undefined4)uStack_1;
-  lhs.y = (float)uStack_1._4_4_;
-  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Inequality
-                    (lhs,*pVVar3,(MethodInfo *)0x0);
-  if (bVar5 == 0) {
-    uVar6 = velocity._0_8_;
+  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar5 = (pVVar4->zeroVector).x;
+  uVar6 = (pVVar4->zeroVector).y;
+  fVar3 = fVar3 - (pVVar4->zeroVector).z;
+  if (((float)uVar2 - (float)uVar6) * ((float)uVar2 - (float)uVar6) +
+      ((float)uVar1 - (float)uVar5) * ((float)uVar1 - (float)uVar5) + fVar3 * fVar3 < _UNK_?)
+  {
+    uVar7 = velocity._0_8_;
   }
   else {
-    uVar6._0_4_ = (this->fields).bounceVelocity.x;
-    uVar6._4_4_ = (this->fields).bounceVelocity.y;
+    uVar7._0_4_ = (this->fields).bounceVelocity.x;
+    uVar7._4_4_ = (this->fields).bounceVelocity.y;
     velocity.z = (this->fields).bounceVelocity.z;
   }
   (this->fields).bounced = 0;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_4,(MethodInfo *)0x0);
-  fVar7 = pVVar3->y;
-  fVar2 = pVVar3->z;
-  (this->fields).bounceVelocity.x = pVVar3->x;
-  (this->fields).bounceVelocity.y = fVar7;
-  (this->fields).bounceVelocity.z = fVar2;
-  __return_storage_ptr__->x = (float)(int)uVar6;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar6 >> 0x20);
-  __return_storage_ptr__->z = velocity.z;
-  return __return_storage_ptr__;
-}
-
-
-/* Vector3 GetOutVectorFromInVector(Vector3, Vector3) */
-
-Vector3 * Assembly-CSharp.dll::BounceState::BounceState_GetOutVectorFromInVector
-                    (Vector3 *__return_storage_ptr__,Vector3 normal,Vector3 inVector,
-                    MethodInfo *method)
-
-{
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  fVar1 = inVector.z;
-  fVar2 = inVector.x;
-  fVar3 = inVector.y;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  a_00.y = fVar3;
-  a_00.x = fVar2;
-  a_00.z = fVar1;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation
-                     ((Vector3 *)&stack0xfffffff0,a_00,(MethodInfo *)0x0);
-  uVar5 = pVVar4->x;
-  uVar6 = pVVar4->y;
-  inVector.z = pVVar4->z;
-  fVar2 = pVVar4->z;
-  inVector.x = (float)uVar5;
-  inVector.y = (float)uVar6;
-  fVar7 = (float10)func_?(&inVector,0);
-  fVar1 = (float)fVar7;
-  a_01.y = normal.y;
-  a_01.x = normal.x;
-  a_01.z = normal.z;
-  fVar3 = normal.z;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                     (&normal,a_01,fVar1,(MethodInfo *)0x0);
-  uVar8 = pVVar4->x;
-  uVar9 = pVVar4->y;
-  __return_storage_ptr__ = (Vector3 *)pVVar4->z;
-  normal.x = 0.0;
-  fVar10 = (float)uVar9;
-  vector.y = fVar1;
-  vector.x = fVar3;
-  vector.z = fVar2;
-  VVar11.x = (float)uVar8;
-  VVar11 = (Vector3)CONCAT84(uVar12,VVar11.x);
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Project
-                     ((Vector3 *)&stack0xffffffe4,vector,VVar11,(MethodInfo *)0x0);
-  fStack13 = inVector.z;
-  fVar1 = pVVar4->z;
-  inVector.z = inVector.x;
-  uVar14 = pVVar4->x;
-  uVar15 = pVVar4->y;
-  normal.y = (float)&stack0xffffffe4;
-  normal.x = (float)&UNK_?;
-  VVar11.y = inVector.y;
-  VVar11.x = inVector.x;
-  VVar11.z = fStack13;
-  normal.z = (float)uVar14;
-  inVector.x = (float)uVar15;
-  inVector.y = fVar1;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                     ((Vector3 *)normal.y,*pVVar4,VVar11,(MethodInfo *)0x0);
-  a.y = normal.z;
-  a.x = normal.y;
-  a.z = fVar1;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                     (&normal,a,*pVVar4,(MethodInfo *)0x0);
-  fVar2 = pVVar4->y;
-  fVar1 = pVVar4->z;
-  __return_storage_ptr__->x = pVVar4->x;
-  __return_storage_ptr__->y = fVar2;
-  __return_storage_ptr__->z = fVar1;
+  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar8 = (pVVar4->zeroVector).y;
+  fVar3 = (pVVar4->zeroVector).z;
+  (this->fields).bounceVelocity.x = (pVVar4->zeroVector).x;
+  (this->fields).bounceVelocity.y = fVar8;
+  (this->fields).bounceVelocity.z = fVar3;
+  __return_storage_ptr__->x = (float)(int)uVar7;
+  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar7 >> 0x20);
+  __return_storage_ptr__->z = velocity.z;
   return __return_storage_ptr__;
 }
 
@@ -205,170 +120,98 @@ void Assembly-CSharp.dll::BounceState::BounceState_UpdateBounceState
                )
 
 {
-  pBVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVPhysics);
     cRam_? = '\x01';
   }
-  fStack_2 = 0.0;
-  uStack_3 = 0;
-  func_?(&stack0xffffff04,0,0x90);
-  pMVar4 = (this->fields).interactable;
+  pMVar1 = (this->fields).interactable;
   (this->fields).bounced = 0;
-  if (mvControllerColliderHit.hit.interactionFlags._4_4_ != (MVMaterial *)0x0) {
-    pPVar5 = MVMaterial::MVMaterial_get_PhysicalProperties
-                       ((PhysicalProperties *)&stack0xffffffa0,
-                        mvControllerColliderHit.hit.interactionFlags._4_4_,(MethodInfo *)0x0);
-    if (pMVar4 != (MVInteractable *)0x0) {
-      fVar6 = (float10)(*(code *)(pMVar4->klass->vtable).HandleModifierEffect.method)
-                                  (pMVar4,0xd,pPVar5->bouncyness,
-                                   (pMVar4->klass->vtable).ClearModifiers.methodPtr);
-      fVar7 = (float)fVar6;
-      if (0.0 < fVar7) {
-        fStack_2 = mvControllerColliderHit.impactVelocity.y;
-        uStack_3._0_4_ = mvControllerColliderHit.slopeNormal.z;
-        uStack_3._4_4_ = mvControllerColliderHit.impactVelocity.x;
-        func_?(&uStack_3,0);
-        fVar8 = fStack_2;
-        uVar9 = uStack_3;
-        if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Vector3);
-        }
-        a.z = fVar8;
-        a.x = (float)uVar9;
-        a.y = SUB84(uVar9,4);
-        pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation
-                           (&VStack_11,a,(MethodInfo *)0x0);
-        uStack_3._0_4_ = pVVar10->x;
-        uStack_3._4_4_ = pVVar10->y;
-        fStack_2 = pVVar10->z;
-        rhs.z = mvControllerColliderHit.slopeNormal.y;
-        rhs.x = mvControllerColliderHit.elipsoidNormal.z;
-        rhs.y = mvControllerColliderHit.slopeNormal.x;
-        pBStack_12 = (BounceState *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Dot
-                              (*pVVar10,rhs,(MethodInfo *)0x0);
-        fVar6 = (float10)func_?();
-        pBStack_12 = (BounceState *)
-                    (float)(fVar6 * (float10)_UNK_? * (float10)(float)pBStack_12);
-        if (_UNK_? < (float)pBStack_12) {
+  if (mvControllerColliderHit.hit.interactionFlags._4_4_ != 0) {
+    uStack_2 = *(undefined4 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x1c);
+    uStack_3 = *(undefined4 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x20);
+    VStack_4._0_8_ = *(undefined8 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x24);
+    VStack_4.z = *(float *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x2c);
+    if (pMVar1 != (MVInteractable *)0x0) {
+      pIStack_5 = (pMVar1->klass->vtable).HandleModifierEffect.methodPtr;
+      fVar6 = (float10)(*pIStack_5)(pMVar1,0xd,uStack_3,
+                                     (pMVar1->klass->vtable).HandleModifierEffect.method);
+      pIStack_5 = (Il2CppMethodPointer)(float)fVar6;
+      if (_UNK_? < (float)pIStack_5) {
+        VStack_4.z = mvControllerColliderHit.impactVelocity.y;
+        VStack_4.x = mvControllerColliderHit.slopeNormal.z;
+        VStack_4.y = mvControllerColliderHit.impactVelocity.x;
+        UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+                  (&VStack_4,(MethodInfo *)0x0);
+        fStack_7 = (float)((uint)VStack_4.x ^
+                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+        ;
+        fStack_8 = (float)((uint)VStack_4.y ^
+                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+        ;
+        fStack_9 = (float)((uint)VStack_4.z ^
+                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+        fVar6 = (float10)func_?(&mvControllerColliderHit.slopeNormal.z,0);
+        fStack_9 = (float)(fVar6 * (float10)_UNK_? *
+                          (float10)(mvControllerColliderHit.elipsoidNormal.z * fStack_7 +
+                                    mvControllerColliderHit.slopeNormal.x * fStack_8 +
+                                   mvControllerColliderHit.slopeNormal.y * fStack_9));
+        if (_UNK_? < fStack_9) {
+          puVar10 = (undefined4 *)&stack0x00000008;
+          puVar11 = (undefined4 *)&stack0xffffff48;
+          for (iVar12 = 0x24; iVar12 != 0; iVar12 = iVar12 + -1) {
+            *puVar11 = *puVar10;
+            puVar10 = puVar10 + 1;
+            puVar11 = puVar11 + 1;
+          }
           (this->fields).bounced = 1;
-          puVar13 = (undefined4 *)&stack0x00000008;
-          puVar14 = (undefined4 *)&stack0xffffff04;
-          for (iVar15 = 0x24; iVar15 != 0; iVar15 = iVar15 + -1) {
-            *puVar14 = *puVar13;
-            puVar13 = puVar13 + 1;
-            puVar14 = puVar14 + 1;
+          fVar6 = (float10)func_?(auStack_13,0);
+          if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__MVPhysics);
           }
-          fVar6 = (float10)func_?();
-          pBStack_12 = (BounceState *)(float)fVar6;
-          if ((((uint)(TypeInfo__MVPhysics->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__MVPhysics->_1).cctor_started == 0)) {
-            func_?();
+          fStack_9 = (float)pIStack_5 * _UNK_?;
+          fVar14 = MVPhysics::MVPhysics_CalculateJumpForceFromVerticalVelocity
+                             ((float)fVar6,(MethodInfo *)0x0);
+          fVar14 = fVar14 * (float)pIStack_5;
+          if (fVar14 < 0.0) {
+            fVar14 = 0.0;
           }
-          pBStack_12 = (BounceState *)
-                      MVPhysics::MVPhysics_CalculateJumpForceFromVerticalVelocity
-                                ((float)pBStack_12,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-            func_?();
+          else if (fStack_9 < fVar14) {
+            fVar14 = fStack_9;
           }
-          fVar8 = fVar7 * _UNK_?;
-          fVar16 = 0.0;
-          fVar7 = (float)pBStack_12 * fVar7;
-          fVar17 = 0.0;
-          targetJumpHeight =
-               UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-                         (fVar7,0.0,fVar8,(MethodInfo *)0x0);
-          pBStack_12 = (BounceState *)
-                      MVPhysics::MVPhysics_CalculateJumpVerticalSpeed
-                                (targetJumpHeight,(MethodInfo *)0x0);
-          VStack_11.y = fVar16;
-          VStack_11.x = fVar8;
-          uVar9._4_4_ = fVar7;
-          uVar9._0_4_ = (float)&UNK_?;
-          VStack_11.z = fStack_18;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
+          fVar15 = MVPhysics::MVPhysics_CalculateJumpVerticalSpeed(fVar14,(MethodInfo *)0x0);
+          normal.y = mvControllerColliderHit.slopeNormal.x;
+          normal.x = mvControllerColliderHit.elipsoidNormal.z;
+          normal.z = mvControllerColliderHit.slopeNormal.y;
+          inVector.z = mvControllerColliderHit.impactVelocity.y;
+          inVector.x = mvControllerColliderHit.slopeNormal.z;
+          inVector.y = mvControllerColliderHit.impactVelocity.x;
+          pVVar16 = HamsterWheelBounceState::HamsterWheelBounceState_GetOutVectorFromInVector
+                             ((Vector3 *)&mvControllerColliderHit.hit.interactionFlags,normal,
+                              inVector,(MethodInfo *)0x0);
+          fVar17 = pVVar16->y;
+          fVar14 = pVVar16->z;
+          (this->fields).bounceVelocity.x = pVVar16->x;
+          (this->fields).bounceVelocity.y = fVar17;
+          (this->fields).bounceVelocity.z = fVar14;
+          UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+                    (&(this->fields).bounceVelocity,(MethodInfo *)0x0);
+          if (fVar15 < _UNK_?) {
+            fVar15 = fVar15 * (fVar15 / _UNK_?);
           }
-          uVar19 = VStack_11._0_8_;
-          if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-            func_?();
-          }
-          a_00.z = VStack_11.z;
-          a_00.x = (float)uVar19;
-          a_00.y = SUB84(uVar19,4);
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation
-                             ((Vector3 *)&stack0xffffff94,a_00,(MethodInfo *)0x0);
-          VStack_11.x = pVVar10->x;
-          VStack_11.y = pVVar10->y;
-          VStack_11.z = pVVar10->z;
-          uVar19._0_4_ = pVVar10->x;
-          uVar19._4_4_ = pVVar10->y;
-          fVar7 = pVVar10->z;
-          fVar6 = (float10)func_?();
-          a_01.z = fVar17;
-          a_01.x = (float)uVar9;
-          a_01.y = SUB84(uVar9,4);
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                             ((Vector3 *)&stack0xffffffa8,a_01,(float)fVar6,(MethodInfo *)0x0);
-          vector.z = fVar7;
-          vector.x = (float)uVar19;
-          vector.y = SUB84(uVar19,4);
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Project
-                             ((Vector3 *)&stack0xffffffd4,vector,*pVVar10,(MethodInfo *)0x0);
-          uVar20._0_4_ = pVVar10->x;
-          uVar20._4_4_ = pVVar10->y;
-          fVar7 = pVVar10->z;
-          b.z = VStack_11.z;
-          b.x = VStack_11.x;
-          b.y = VStack_11.y;
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-                             ((Vector3 *)&stack0xffffffbc,*pVVar10,b,(MethodInfo *)0x0);
-          a_02.z = fVar7;
-          a_02.x = (float)uVar20;
-          a_02.y = SUB84(uVar20,4);
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                             ((Vector3 *)&stack0xffffffc8,a_02,*pVVar10,(MethodInfo *)0x0);
-          pBVar21 = &this->fields;
-          fVar8 = pVVar10->y;
-          fVar7 = pVVar10->z;
-          (pBVar21->bounceVelocity).x = pVVar10->x;
-          (pBVar21->bounceVelocity).y = fVar8;
-          (this->fields).bounceVelocity.z = fVar7;
-          func_?();
-          this = pBStack_12;
-          if ((float)pBStack_12 < _UNK_?) {
-            this = (BounceState *)(((float)pBStack_12 / _UNK_?) * (float)pBStack_12);
-          }
-          uVar22._0_4_ = (pBVar21->bounceVelocity).x;
-          uVar22._4_4_ = (pBVar21->bounceVelocity).y;
-          fVar7 = (pBVar1->fields).bounceVelocity.z;
-          if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-            func_?();
-          }
-          a_03.z = fVar7;
-          a_03.x = (float)uVar22;
-          a_03.y = SUB84(uVar22,4);
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                             ((Vector3 *)&stack0xffffffbc,a_03,(float)this,(MethodInfo *)0x0);
-          fVar8 = pVVar10->y;
-          fVar7 = pVVar10->z;
-          (pBVar21->bounceVelocity).x = pVVar10->x;
-          (pBVar21->bounceVelocity).y = fVar8;
-          (pBVar1->fields).bounceVelocity.z = fVar7;
+          uVar18 = (this->fields).bounceVelocity.x;
+          uVar19 = (this->fields).bounceVelocity.y;
+          fVar14 = (this->fields).bounceVelocity.z;
+          (this->fields).bounceVelocity.x = (float)uVar18 * fVar15;
+          (this->fields).bounceVelocity.y = (float)uVar19 * fVar15;
+          (this->fields).bounceVelocity.z = fVar14 * fVar15;
         }
       }
       return;
     }
   }
-  func_?(0);
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  func_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -380,22 +223,19 @@ void Assembly-CSharp.dll::BounceState::BounceState__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  (this->fields).bounceVelocity.x = pVVar1->x;
-  (this->fields).bounceVelocity.y = fVar3;
-  (this->fields).bounceVelocity.z = fVar4;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).bounceVelocity.x = (pVVar1->zeroVector).x;
+  (this->fields).bounceVelocity.y = fVar2;
+  (this->fields).bounceVelocity.z = fVar3;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).interactable = interactable;
+  func_?(&(this->fields).interactable,interactable);
   return;
 }
 

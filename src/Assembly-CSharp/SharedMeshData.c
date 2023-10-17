@@ -6,12 +6,11 @@ void Assembly-CSharp.dll::SharedMeshData::SharedMeshData_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  obj = this[1].mesh;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  obj = this->mesh;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -26,8 +25,12 @@ void Assembly-CSharp.dll::SharedMeshData::SharedMeshData_SetToMesh
                (SharedMeshData *this,Mesh **mesh,Material **material,MethodInfo *method)
 
 {
-  *mesh = this[1].mesh;
-  *material = this[1].material;
+  pMVar1 = this->mesh;
+  *mesh = pMVar1;
+  func_?(mesh,pMVar1);
+  pMVar2 = this->material;
+  *material = pMVar2;
+  func_?(material,pMVar2);
   return;
 }
 
@@ -38,8 +41,10 @@ void Assembly-CSharp.dll::SharedMeshData::SharedMeshData__ctor
                (SharedMeshData *this,Mesh *mesh,MethodInfo *method)
 
 {
-  this[1].mesh = mesh;
-  this[1].material = (Material *)0x0;
+  this->mesh = mesh;
+  func_?(this,mesh);
+  this->material = (Material *)0x0;
+  func_?(&this->material,0);
   return;
 }
 

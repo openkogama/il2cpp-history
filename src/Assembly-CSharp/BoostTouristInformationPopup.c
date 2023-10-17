@@ -6,7 +6,9 @@ void Assembly-CSharp.dll::BoostTouristInformationPopup::BoostTouristInformationP
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__EmbeddedSite);
+    func_?(&StringLiteral_Signup_not_permitted_for_site_);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).embeddedPlayerConfig;
@@ -17,17 +19,17 @@ void Assembly-CSharp.dll::BoostTouristInformationPopup::BoostTouristInformationP
     return;
   }
   pEVar2 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                     ((EmbeddedSiteConfigData *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
+                     (&EStack_3,this_00,(MethodInfo *)0x0);
   if (pEVar2->allowsModals != 0) {
     BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignup(0,1,(MethodInfo *)0x0);
     return;
   }
   if (pEVar2->allowsOpenInNewTab == 0) {
     if (pEVar2->allowsRedirectToWebpage == 0) {
-      message = (Object *)func_?();
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?();
+      this = (BoostTouristInformationPopup *)pEVar2->siteEnum;
+      message = (Object *)func_?(TypeInfo__EmbeddedSite,&this);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError

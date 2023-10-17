@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -17,45 +17,33 @@ namespace Newtonsoft.Json.Serialization
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
-		private Type _UnderlyingType_k__BackingField;
+		private System.Type _UnderlyingType_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
-		private Type _CreatedType_k__BackingField;
+		private System.Type _CreatedType_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool? _IsReference_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonConverter _Converter_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonConverter _InternalConverter_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private MethodInfo _OnDeserialized_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private MethodInfo _OnDeserializing_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private MethodInfo _OnSerialized_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private MethodInfo _OnSerializing_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private Func<object> _DefaultCreator_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private bool _DefaultCreatorNonPublic_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private MethodInfo _OnError_k__BackingField;
 	
 		// Properties
-		public Type UnderlyingType { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public Type CreatedType { [CompilerGenerated] get; [CompilerGenerated] set; }
+		public System.Type UnderlyingType { [CompilerGenerated] get; [CompilerGenerated] private set; }
+		public System.Type CreatedType { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public bool? IsReference { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public JsonConverter Converter { [CompilerGenerated] get; [CompilerGenerated] set; }
 		internal JsonConverter InternalConverter { [CompilerGenerated] get; [CompilerGenerated] set; }
@@ -68,7 +56,7 @@ namespace Newtonsoft.Json.Serialization
 		public MethodInfo OnError { [CompilerGenerated] get; [CompilerGenerated] set; }
 	
 		// Constructors
-		internal JsonContract(Type underlyingType);
+		internal JsonContract(System.Type underlyingType);
 	
 		// Methods
 		internal void InvokeOnSerializing(object o, StreamingContext context);

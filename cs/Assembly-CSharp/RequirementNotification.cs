@@ -11,7 +11,7 @@ using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class RequirementNotification : Notification
 {
@@ -33,86 +33,100 @@ public class RequirementNotification : Notification
 	[SerializeField]
 	private NotificationRequirementPanel GameTierPanel;
 	private List<GameObject> PanelsToDestroy;
-	[CompilerGenerated]
-	private static Action<GameObject> __f__am_cache0;
 
 	// Properties
 	protected override NotificationLifetime Lifetime { get; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _ShowGameCoinRequirement_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal int gameCoins;
-		internal Sprite checkMark;
-		internal bool enabled;
+		public static readonly __c __9;
+		public static Action<GameObject> __9__11_0;
 
 		// Constructors
-		public _ShowGameCoinRequirement_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(INotificationRequirementPanel x, BaseEventData y);
+		internal void _Initialize_b__11_0(GameObject x);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowStarRequirement_c__AnonStorey1
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
-		internal int stars;
-		internal Sprite checkMark;
-		internal bool enabled;
+		public int gameCoins;
+		public Sprite checkMark;
+		public bool enabled;
 
 		// Constructors
-		public _ShowStarRequirement_c__AnonStorey1();
+		public __c__DisplayClass12_0();
 
 		// Methods
-		internal void __m__0(INotificationRequirementPanel x, BaseEventData y);
+		internal void _ShowGameCoinRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowTeamRequirement_c__AnonStorey2
+	private sealed class __c__DisplayClass13_0
 	{
 		// Fields
-		internal MVTeam team;
-		internal Sprite checkMark;
-		internal bool enabled;
+		public int stars;
+		public Sprite checkMark;
+		public bool enabled;
 
 		// Constructors
-		public _ShowTeamRequirement_c__AnonStorey2();
+		public __c__DisplayClass13_0();
 
 		// Methods
-		internal void __m__0(INotificationRequirementPanel x, BaseEventData y);
+		internal void _ShowStarRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowLevelRequirement_c__AnonStorey3
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
-		internal int level;
-		internal Sprite checkMark;
-		internal bool enabled;
+		public MVTeam team;
+		public Sprite checkMark;
+		public bool enabled;
 
 		// Constructors
-		public _ShowLevelRequirement_c__AnonStorey3();
+		public __c__DisplayClass14_0();
 
 		// Methods
-		internal void __m__0(INotificationRequirementPanel x, BaseEventData y);
+		internal void _ShowTeamRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowGameTierRequirement_c__AnonStorey4
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		internal GamePassTier tier;
-		internal Sprite checkMark;
-		internal bool enabled;
+		public int level;
+		public Sprite checkMark;
+		public bool enabled;
 
 		// Constructors
-		public _ShowGameTierRequirement_c__AnonStorey4();
+		public __c__DisplayClass15_0();
 
 		// Methods
-		internal void __m__0(INotificationRequirementPanel x, BaseEventData y);
+		internal void _ShowLevelRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass16_0
+	{
+		// Fields
+		public GamePassTier tier;
+		public Sprite checkMark;
+		public bool enabled;
+
+		// Constructors
+		public __c__DisplayClass16_0();
+
+		// Methods
+		internal void _ShowGameTierRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	// Constructors
@@ -126,7 +140,5 @@ public class RequirementNotification : Notification
 	private void ShowLevelRequirement(int level);
 	private void ShowGameTierRequirement(GamePassTier tier);
 	private GameObject InstantiatePanel(NotificationRequirementPanel panel);
-	[CompilerGenerated]
-	private static void _Initialize_m__0(GameObject x);
 }
 

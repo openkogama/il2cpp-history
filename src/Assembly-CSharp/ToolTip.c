@@ -5,19 +5,25 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_Awake(ToolTip *this,MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__ToolTip__LanguageLoadedCallback__);
     cRam_? = '\x01';
   }
   pSVar1 = TM::TM__((this->fields).toolTipText,(MethodInfo *)0x0);
   (this->fields).toolTipText = pSVar1;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__ToolTip__LanguageLoadedCallback__,(MethodInfo *)0x0)
-  ;
-  TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+  func_?(&(this->fields).toolTipText,pSVar1);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__ToolTip__LanguageLoadedCallback__,
+               (MethodInfo *)0x0);
+    TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -29,6 +35,7 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_LanguageLoadedCallback(ToolTip *this,
 {
   pSVar1 = TM::TM__((this->fields).toolTipText,(MethodInfo *)0x0);
   (this->fields).toolTipText = pSVar1;
+  func_?(&(this->fields).toolTipText,pSVar1);
   return;
 }
 
@@ -65,14 +72,18 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_Reset(ToolTip *this,MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__RectTransform_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::RectTransform>__
+                   );
     cRam_? = '\x01';
   }
-  pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                     ((Component_1 *)this,
+  pRVar1 = (RectTransform *)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                     ((Component *)this,
                       UnityEngine__RectTransform_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::RectTransform>__
                      );
-  (this->fields).rectTransform = (RectTransform *)pMVar1;
+  (this->fields).rectTransform = pRVar1;
+  func_?(&(this->fields).rectTransform,pRVar1);
   return;
 }
 
@@ -84,19 +95,25 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_SetText
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__ToolTip__LanguageLoadedCallback__);
     cRam_? = '\x01';
   }
   pSVar1 = TM::TM__(textToBeChanged,(MethodInfo *)0x0);
   (this->fields).toolTipText = pSVar1;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__ToolTip__LanguageLoadedCallback__,(MethodInfo *)0x0)
-  ;
-  TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+  func_?(&(this->fields).toolTipText,pSVar1);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__ToolTip__LanguageLoadedCallback__,
+               (MethodInfo *)0x0);
+    TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -107,89 +124,78 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_Update(ToolTip *this,MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleToolTip>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleToolTip>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleToolTip>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&TypeInfo__UnityEngine__RectTransformUtility);
+    func_?(&
+                    MethodInfo__ToolTip___Update_b__11_0_UnityEngine__EventSystems__IHandleToolTip__UnityEngine__EventSystems__BaseEventData_
+                   );
     cRam_? = '\x01';
   }
   if ((this->fields).hasEntered != 0) {
     rect = (this->fields).rectTransform;
-    if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
     pVVar1 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
              StandaloneInput_MousePosition
-                       ((Vector3 *)&stack0xffffffe8,(StandaloneInput *)0x0,unaff_EDI);
-    uVar2._0_4_ = pVVar1->x;
-    uVar2._4_4_ = pVVar1->y;
-    fVar3 = pVVar1->z;
-    if ((((uint)(TypeInfo__UnityEngine__Vector2->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector2->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector2);
+                       ((Vector3 *)&stack0xfffffff0,(StandaloneInput *)0x0,unaff_EDI);
+    fVar2 = pVVar1->x;
+    method_00 = (MethodInfo *)pVVar1->y;
+    if ((TypeInfo__UnityEngine__RectTransformUtility->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__RectTransformUtility);
     }
-    v.z = fVar3;
-    v.x = (float)(int)uVar2;
-    v.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-    VVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_op_Implicit
-                      (v,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__RectTransformUtility->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__UnityEngine__RectTransformUtility->_1).cctor_started == 0)) {
-      func_?();
-    }
-    bVar5 = UnityEngine.UIModule.dll::UnityEngine::RectTransformUtility::
-            RectTransformUtility_RectangleContainsScreenPoint(rect,VVar4,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      if (fVar3 - (this->fields).pointerEnterTime <= _UNK_?) {
+    screenPoint.y = (float)method_00;
+    screenPoint.x = fVar2;
+    bVar3 = UnityEngine.UIModule.dll::UnityEngine::RectTransformUtility::
+            RectTransformUtility_RectangleContainsScreenPoint(rect,screenPoint,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      if (fVar2 - (this->fields).pointerEnterTime <= _UNK_?) {
         (this->fields).mousePosOnToolTipSet = 0;
         return;
       }
       if ((this->fields).mousePosOnToolTipSet == 0) {
-        if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         pVVar1 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
                  StandaloneInput_MousePosition
-                           ((Vector3 *)&stack0xffffffe8,(StandaloneInput *)0x0,method);
-        uVar6._0_4_ = pVVar1->x;
-        uVar6._4_4_ = pVVar1->y;
-        fVar3 = pVVar1->z;
-        if ((((uint)(TypeInfo__UnityEngine__Vector2->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Vector2->_1).cctor_started == 0)) {
-          func_?();
-        }
-        fVar7 = 0.0;
-        v_00.z = fVar3;
-        v_00.x = (float)(int)uVar6;
-        v_00.y = (float)(int)((ulonglong)uVar6 >> 0x20);
-        VVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_op_Implicit
-                          (v_00,(MethodInfo *)0x0);
-        (this->fields).mousePosOnToolTip.x = fVar7;
-        (this->fields).mousePosOnToolTip.y = VVar4.y;
+                           ((Vector3 *)&stack0xfffffff0,(StandaloneInput *)0x0,method_00);
+        uVar4 = pVVar1->x;
+        uVar5 = pVVar1->y;
+        (this->fields).mousePosOnToolTip.x = (float)uVar4;
+        (this->fields).mousePosOnToolTip.y = (float)uVar5;
         (this->fields).mousePosOnToolTipSet = 1;
       }
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-      this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__ToolTip___Update_m__0_UnityEngine__EventSystems__IHandleToolTip__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleToolTip>__EventFunction_System__Object__void__
-                );
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-        func_?();
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                   MethodInfo__ToolTip___Update_b__11_0_UnityEngine__EventSystems__IHandleToolTip__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleToolTip>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleToolTip>_
+                  );
+        return;
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_00,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleToolTip>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleToolTip>_
-                );
+      func_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
     (this->fields).hasEntered = 0;
@@ -198,42 +204,41 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_Update(ToolTip *this,MethodInfo *meth
 }
 
 
-/* Void <Update>m__0(IHandleToolTip, BaseEventData) */
+/* Void <Update>b__11_0(IHandleToolTip, BaseEventData) */
 
-void Assembly-CSharp.dll::ToolTip::ToolTip__Update_m__0
+void Assembly-CSharp.dll::ToolTip::ToolTip__Update_b__11_0
                (ToolTip *this,IHandleToolTip *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__EventSystems__IHandleToolTip);
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).mousePosOnToolTip.x;
   fVar2 = (this->fields).mousePosOnToolTip.y;
   pSVar3 = (this->fields).toolTipText;
   if (x == (IHandleToolTip *)0x0) {
-    func_?(0);
+    func_?();
     pcVar4 = (code *)swi(3);
     (*pcVar4)();
     return;
   }
-  pIVar5 = x->klass;
-  uVar6 = 0;
-  uVar7._0_1_ = (pIVar5->_1).rank;
-  uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
-  if (uVar7 != 0) {
+  uVar5 = 0;
+  uVar6 = (x->klass->_1).interface_offsets_count;
+  if (uVar6 != 0) {
     do {
-      if (pIVar5->interfaceOffsets[uVar6].interfaceType ==
+      if (x->klass->interfaceOffsets[uVar5].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IHandleToolTip) {
-        ppMVar8 = &(&x->klass->vtable)[pIVar5->interfaceOffsets[uVar6].offset].SendToolTip.method;
+        pIVar7 = &x->klass->vtable + x->klass->interfaceOffsets[uVar5].offset;
         goto code_?;
       }
-      uVar6 = uVar6 + 1;
-    } while (uVar6 < uVar7);
+      uVar5 = uVar5 + 1;
+    } while (uVar5 < uVar6);
   }
-  ppMVar8 = (MethodInfo **)func_?(x,TypeInfo__UnityEngine__EventSystems__IHandleToolTip,0);
+  pIVar7 = (IHandleToolTip__VTable *)
+           func_?(x,TypeInfo__UnityEngine__EventSystems__IHandleToolTip,0);
 code_?:
-  (*(code *)*ppMVar8)(x,fVar1,fVar2,pSVar3,ppMVar8[1]);
+  (*(pIVar7->SendToolTip).methodPtr)(x,fVar1,fVar2,pSVar3,(pIVar7->SendToolTip).method);
   return;
 }
 
@@ -244,14 +249,13 @@ void Assembly-CSharp.dll::ToolTip::ToolTip__ctor(ToolTip *this,MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral____Tooltip__);
     cRam_? = '\x01';
   }
-  pSVar1 = StringLiteral____Tooltip__;
-  (this->fields).mousePosOnToolTip.x = 0.0;
-  (this->fields).mousePosOnToolTip.y = 0.0;
-  (this->fields).toolTipText = pSVar1;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  (this->fields).toolTipText = StringLiteral____Tooltip__;
+  func_?(&(this->fields).toolTipText,StringLiteral____Tooltip__);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+            ((Transform *)this,(MethodInfo *)0x0);
   return;
 }
 

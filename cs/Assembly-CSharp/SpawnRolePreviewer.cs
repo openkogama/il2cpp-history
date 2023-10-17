@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SpawnRolePreviewer : MonoBehaviour
 {
@@ -25,7 +25,6 @@ public class SpawnRolePreviewer : MonoBehaviour
 	private MVBodyObject body;
 	private GameObject rootObject;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private GameObject _PreviewGameObject_k__BackingField;
 
 	// Properties

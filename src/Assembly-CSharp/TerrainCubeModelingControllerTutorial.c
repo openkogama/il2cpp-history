@@ -9,86 +9,71 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__TerrainCubeModelingControllerTutorial__SetMaterial_unsigned_char_);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).desktopCubeModelingController;
   (this->fields).materialsController = materialsController;
-  if (this_00 != (DesktopCubeModelingToolsController *)0x0) {
-    LockCursorManager3DMode::LockCursorManager3DMode_set_OnCursorLockChanged
-              ((LockCursorManager3DMode *)this_00,(Action_1_Boolean_ *)cubeModelingStateMachine,
-               (MethodInfo *)0x0);
+  func_?(&(this->fields).materialsController,materialsController);
+  pDVar1 = (this->fields).desktopCubeModelingController;
+  if (pDVar1 != (DesktopCubeModelingToolsController *)0x0) {
+    (pDVar1->fields).cubeModelingStateMachine = cubeModelingStateMachine;
+    func_?(&(pDVar1->fields).cubeModelingStateMachine,cubeModelingStateMachine);
     if (materialsController != (MaterialsController *)0x0) {
-      pUVar1 = (materialsController->fields).materialChange;
-      this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_03,(Object *)this,
-                 MethodInfo__TerrainCubeModelingControllerTutorial__SetMaterial_unsigned_char_,
-                 MethodInfo__UnityEngine__Events__UnityAction<unsigned_char>__UnityAction_System__Object__void__
-                );
-      pUVar2 = (UnityAction_1_System_Byte_ *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar1,(Delegate *)this_03,(MethodInfo *)0x0);
-      pUVar1 = (UnityAction_1_System_Byte_ *)0x0;
-      if (pUVar2 != (UnityAction_1_System_Byte_ *)0x0) {
-        if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>) {
-          pUVar1 = pUVar2;
+      pUVar2 = (materialsController->fields).materialChange;
+      this_04 = (UnityAction_1_System_ByteEnum_ *)
+                func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
+      if (this_04 != (UnityAction_1_System_ByteEnum_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
+        UnityAction_1_System_ByteEnum___ctor
+                  (this_04,(Object *)this,
+                   MethodInfo__TerrainCubeModelingControllerTutorial__SetMaterial_unsigned_char_,
+                   (MethodInfo *)0x0);
+        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pUVar2,(Delegate *)this_04,(MethodInfo *)0x0);
+        if (pDVar3 == (Delegate *)0x0) {
+          (materialsController->fields).materialChange = (UnityAction_1_System_Byte_ *)0x0;
         }
-        pUVar3 = TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>;
-        if (pUVar1 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
-      }
-      (materialsController->fields).materialChange = pUVar1;
-      if (cubeModelingStateMachine != (CubeModelingStateMachine *)0x0) {
-        materialId = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId
-                               (cubeModelingStateMachine,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?(_UNK_?);
-          cRam_? = '\x01';
+        else {
+          pUVar2 = (UnityAction_1_System_Byte_ *)func_?();
+          if (pUVar2 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
+          (materialsController->fields).materialChange = pUVar2;
+          iVar4 = func_?();
+          if (iVar4 == 0) goto code_?;
         }
-        this_01 = (this->fields).materialsButtonImage;
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?(TypeInfo__MVGameControllerBase);
-        }
-        this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_04 != (MVNetworkGame *)0x0) {
-          this_05 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                              ((DayNightCycle *)this_04,(MethodInfo *)0x0);
-          if (this_05 != (CelestialParam *)0x0) {
-            this_06 = (GamePointGainEffect *)
-                      MVMaterialRepository::MVMaterialRepository_GetMaterial
-                                ((MVMaterialRepository *)this_05,materialId,(MethodInfo *)0x0);
-            if (this_06 != (GamePointGainEffect *)0x0) {
-              value = (Texture *)
-                      GamePointGainEffect::GamePointGainEffect_get_ID(this_06,(MethodInfo *)0x0);
-              if (this_01 != (RawImage *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                          (this_01,value,(MethodInfo *)0x0);
-                pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                                   ((MethodInfo *)0x0);
-                if (((pGVar4 != (GameEventManager *)0x0) &&
-                    (pGVar5 = (pGVar4->fields).AvatarCommandsBuildMode,
-                    pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-                   (this_02 = (pGVar5->fields).LaserCommands,
-                   this_02 !=
-                   (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-                  GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-                  GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetCurrentCubeMaterial
-                            (this_02,materialId,(MethodInfo *)0x0);
-                  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000)
-                       != 0) && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-                    func_?(TypeInfo__MVGameControllerBase);
-                  }
-                  this_07 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                      ((MethodInfo *)0x0);
-                  if (this_07 != (MainCameraManager *)0x0) {
-                    MainCameraManager::MainCameraManager_set_IsLogicRendered
-                              (this_07,0,(MethodInfo *)0x0);
-                    return;
-                  }
+        this_00 = &(materialsController->fields).materialChange;
+        func_?();
+        if (this_00 != (UnityAction_1_System_Byte_ **)0x0) {
+          materialId = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId
+                                 ((CubeModelingStateMachine *)this_00,(MethodInfo *)0x0);
+          this_01 = (this->fields).materialsButtonImage;
+          cubeModelingStateMachine =
+               (CubeModelingStateMachine *)CONCAT31((int3)((uint)this_00 >> 8),materialId);
+          pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar5 != (MVNetworkGame *)0x0) &&
+             (this_02 = (pMVar5->fields)._MaterialRepository_k__BackingField,
+             this_02 != (MVMaterialRepository *)0x0)) {
+            pMVar6 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                               (this_02,materialId,(MethodInfo *)0x0);
+            if ((pMVar6 != (MVMaterial *)0x0) && (this_01 != (RawImage *)0x0)) {
+              UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                        (this_01,(Texture *)(pMVar6->fields)._ButtonTexture_k__BackingField,
+                         (MethodInfo *)0x0);
+              pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+                                 ((MethodInfo *)0x0);
+              if (((pGVar7 != (GameEventManager *)0x0) &&
+                  (pGVar8 = (pGVar7->fields).AvatarCommandsBuildMode,
+                  pGVar8 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+                 (this_03 = (AvatarLimbManager *)(pGVar8->fields).LaserCommands,
+                 this_03 != (AvatarLimbManager *)0x0)) {
+                AvatarLimbManager::AvatarLimbManager_OnStartEmote
+                          (this_03,(String *)cubeModelingStateMachine,(MethodInfo *)0x0);
+                this_05 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                    ((MethodInfo *)0x0);
+                if (this_05 != (MainCameraManager *)0x0) {
+                  MainCameraManager::MainCameraManager_set_IsLogicRendered
+                            (this_05,0,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
@@ -97,13 +82,11 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::
       }
     }
   }
-  func_?(0);
-  pUVar2 = extraout_ECX;
-  pUVar3 = extraout_EDX;
+  func_?();
 code_?:
-  func_?(pUVar2,pUVar3);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -116,48 +99,44 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__TerrainCubeModelingControllerTutorial__SetMaterial_unsigned_char_);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).materialsController;
   if (pMVar1 != (MaterialsController *)0x0) {
     pUVar2 = (pMVar1->fields).materialChange;
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+    this_00 = (UnityAction_1_System_ByteEnum_ *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,
-               MethodInfo__TerrainCubeModelingControllerTutorial__SetMaterial_unsigned_char_,
-               MethodInfo__UnityEngine__Events__UnityAction<unsigned_char>__UnityAction_System__Object__void__
-              );
-    pUVar3 = (UnityAction_1_System_Byte_ *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    pUVar2 = (UnityAction_1_System_Byte_ *)0x0;
-    if (pUVar3 != (UnityAction_1_System_Byte_ *)0x0) {
-      if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>) {
-        pUVar2 = pUVar3;
+    if (this_00 != (UnityAction_1_System_ByteEnum_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
+      UnityAction_1_System_ByteEnum___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__TerrainCubeModelingControllerTutorial__SetMaterial_unsigned_char_,
+                 (MethodInfo *)0x0);
+      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar3 == (Delegate *)0x0) {
+        (pMVar1->fields).materialChange = (UnityAction_1_System_Byte_ *)0x0;
       }
-      pUVar4 = TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>;
-      if (pUVar2 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
-    }
-    (pMVar1->fields).materialChange = pUVar2;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if (this_01 != (MainCameraManager *)0x0) {
-      MainCameraManager::MainCameraManager_set_IsLogicRendered(this_01,1,(MethodInfo *)0x0);
-      return;
+      else {
+        pUVar2 = (UnityAction_1_System_Byte_ *)func_?();
+        if (pUVar2 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
+        (pMVar1->fields).materialChange = pUVar2;
+        iVar4 = func_?();
+        if (iVar4 == 0) goto code_?;
+      }
+      func_?();
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if (this_01 != (MainCameraManager *)0x0) {
+        MainCameraManager::MainCameraManager_set_IsLogicRendered(this_01,1,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
-  func_?(0);
-  pUVar3 = extraout_ECX;
-  pUVar4 = extraout_EDX;
+  func_?();
 code_?:
-  func_?(pUVar3,pUVar4);
+  func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -171,55 +150,36 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::
                (TerrainCubeModelingControllerTutorial *this,uint8_t materialId,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   this_00 = (this->fields).materialsButtonImage;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
-    this_02 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                        ((DayNightCycle *)this_01,(MethodInfo *)0x0);
-    if (this_02 != (CelestialParam *)0x0) {
-      this_03 = (GamePointGainEffect *)
-                MVMaterialRepository::MVMaterialRepository_GetMaterial
-                          ((MVMaterialRepository *)this_02,materialId,(MethodInfo *)0x0);
-      if (this_03 != (GamePointGainEffect *)0x0) {
-        value = (Texture *)
-                GamePointGainEffect::GamePointGainEffect_get_ID(this_03,(MethodInfo *)0x0);
-        if (this_00 != (RawImage *)0x0) {
-          UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                    (this_00,value,(MethodInfo *)0x0);
-          pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                             ((MethodInfo *)0x0);
-          if (((pGVar1 != (GameEventManager *)0x0) &&
-              (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
-              pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-             ((pGVar2->fields).LaserCommands !=
-              (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            if (*(Action_1_UIPushOption_ **)(in_stack_3 + 0xc) !=
-                (Action_1_UIPushOption_ *)0x0) {
-              mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                        (*(Action_1_UIPushOption_ **)(in_stack_3 + 0xc),in_stack_4,
-                         MethodInfo__System__Action<unsigned_char>__Invoke_unsigned_char_);
-            }
-            return;
-          }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_01 = (pMVar1->fields)._MaterialRepository_k__BackingField,
+     this_01 != (MVMaterialRepository *)0x0)) {
+    pMVar2 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                       (this_01,materialId,(MethodInfo *)0x0);
+    if ((pMVar2 != (MVMaterial *)0x0) && (this_00 != (RawImage *)0x0)) {
+      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                (this_00,(Texture *)(pMVar2->fields)._ButtonTexture_k__BackingField,
+                 (MethodInfo *)0x0);
+      pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar3 != (GameEventManager *)0x0) &&
+          (pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode,
+          pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+         ((pGVar4->fields).LaserCommands !=
+          (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+        if (*(int *)(in_stack_5 + 0xc) != 0) {
+          iVar6 = *(int *)(in_stack_5 + 0xc);
+          puStack7 = *(undefined **)(iVar6 + 0x14);
+          uStack8 = *(undefined4 *)(iVar6 + 0x20);
+          (**(code **)(iVar6 + 0xc))();
         }
+        return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

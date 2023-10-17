@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class XpBoostParticlePreviewer : MonoBehaviour
 {
@@ -20,7 +20,6 @@ public class XpBoostParticlePreviewer : MonoBehaviour
 	private bool isParticlesPlaying;
 	private RenderTexture previewTexture;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private GameObject _PreviewGameObject_k__BackingField;
 	private const int lowResRT = 256;
 

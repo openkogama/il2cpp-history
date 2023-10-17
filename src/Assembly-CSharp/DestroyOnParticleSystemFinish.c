@@ -6,55 +6,44 @@ void Assembly-CSharp.dll::DestroyOnParticleSystemFinish::DestroyOnParticleSystem
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object *)0x0;
-  pOStack_2 = (Object *)0x0;
-  TStack_3.klass = (ThemeAttribute_1_System_Single___Class *)0x0;
-  TStack_3.monitor = (MonitorData *)0x0;
-  TStack_3.fields._._Key_k__BackingField = (String *)0x0;
-  TStack_3.fields._._Groups_k__BackingField = 0;
-  TStack_3.fields._.themeSettings = (SettingsWrapper *)0x0;
-  TStack_3.fields.value = 0.0;
-  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                  ((Component_1 *)this,(MethodInfo *)0x0);
-  pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-            *)(this->fields).system;
-  if (pDVar4 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)0x0) {
-    pOStack_1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-                Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                          (pDVar4,(MethodInfo *)0x0);
-    fVar5 = (float10)func_?(&pOStack_1,0);
-    pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-              *)(this->fields).system;
-    TStack_3.fields.themeCallback = (Action_1_Single_ *)(float)fVar5;
-    if (pDVar4 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)0x0) {
-      pOStack_2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
-                  ::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                  Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                            (pDVar4,(MethodInfo *)0x0);
-      puVar6 = (undefined4 *)func_?(&puStack_7,&pOStack_2,0);
-      TStack_3.klass = (ThemeAttribute_1_System_Single___Class *)*puVar6;
-      TStack_3.monitor = (MonitorData *)puVar6[1];
-      TStack_3.fields._._Key_k__BackingField = (String *)puVar6[2];
-      TStack_3.fields._._Groups_k__BackingField = puVar6[3];
-      TStack_3.fields._8_8_ = *(undefined8 *)(puVar6 + 4);
+  pTStack_1 = (ThemeAttribute_1_System_Single___Class *)0x0;
+  pMStack_2 = (MonitorData *)0x0;
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                  ((Component *)this,(MethodInfo *)0x0);
+  pPVar3 = (this->fields).system;
+  if (pPVar3 != (ParticleSystem *)0x0) {
+    PStack_4.m_ParticleSystem =
+         (ParticleSystem *)
+         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+         ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
+    fVar5 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+            ParticleSystem_MainModule_get_duration_Injected(&PStack_4,(MethodInfo *)0x0);
+    pPVar3 = (this->fields).system;
+    if (pPVar3 != (ParticleSystem *)0x0) {
+      PStack_4.m_ParticleSystem =
+           (ParticleSystem *)
+           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+           ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
+      pPVar6 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+               ParticleSystem_MainModule_get_startLifetime
+                         ((ParticleSystem_MinMaxCurve *)&puStack_7,&PStack_4,(MethodInfo *)0x0);
+      pTStack_1 = (ThemeAttribute_1_System_Single___Class *)pPVar6->m_Mode;
+      pMStack_2 = (MonitorData *)pPVar6->m_CurveMultiplier;
       fVar8 = ThemeAttributes::ThemeAttribute`1[System::Single]::
-              ThemeAttribute_1_System_Single__get_Value(&TStack_3,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+              ThemeAttribute_1_System_Single__get_Value
+                        ((ThemeAttribute_1_System_Single_ *)&pTStack_1,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
-                ((Object_1 *)obj,fVar8 + (float)TStack_3.fields.themeCallback,(MethodInfo *)0x0);
+                ((Object_1 *)obj,fVar8 + fVar5,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;

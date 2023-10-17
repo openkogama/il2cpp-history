@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class NotificationObjectPool : MonoBehaviour
 {
@@ -25,44 +25,44 @@ public class NotificationObjectPool : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CanInstantiateNotificationType_c__AnonStorey0
+	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
-		internal NotificationType notificationType;
+		public NotificationType notificationType;
 
 		// Constructors
-		public _CanInstantiateNotificationType_c__AnonStorey0();
+		public __c__DisplayClass6_0();
 
 		// Methods
-		internal bool __m__0(Notification x);
-		internal bool __m__1(Notification x);
+		internal bool _CanInstantiateNotificationType_b__0(Notification x);
+		internal bool _CanInstantiateNotificationType_b__1(Notification x);
 	}
 
 	[CompilerGenerated]
-	private sealed class _GetPanel_c__AnonStorey1
+	private sealed class __c__DisplayClass9_0
 	{
 		// Fields
-		internal NotificationType type;
+		public NotificationType type;
 
 		// Constructors
-		public _GetPanel_c__AnonStorey1();
+		public __c__DisplayClass9_0();
 
 		// Methods
-		internal bool __m__0(Notification x);
-		internal bool __m__1(Notification x);
+		internal bool _GetPanel_b__0(Notification x);
+		internal bool _GetPanel_b__1(Notification x);
 	}
 
 	[CompilerGenerated]
-	private sealed class _CreateTempPanel_c__AnonStorey2
+	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
-		internal NotificationType type;
+		public NotificationType type;
 
 		// Constructors
-		public _CreateTempPanel_c__AnonStorey2();
+		public __c__DisplayClass11_0();
 
 		// Methods
-		internal bool __m__0(NotificationObjectPoolElement x);
+		internal bool _CreateTempPanel_b__0(NotificationObjectPoolElement x);
 	}
 
 	// Constructors

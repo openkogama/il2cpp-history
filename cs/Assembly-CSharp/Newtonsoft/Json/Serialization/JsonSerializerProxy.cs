@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -48,7 +48,7 @@ namespace Newtonsoft.Json.Serialization
 	
 		// Methods
 		internal JsonSerializerInternalBase GetInternalSerializer();
-		internal override object DeserializeInternal(JsonReader reader, Type objectType);
+		internal override object DeserializeInternal(JsonReader reader, System.Type objectType);
 		internal override void PopulateInternal(JsonReader reader, object target);
 		internal override void SerializeInternal(JsonWriter jsonWriter, object value);
 	}

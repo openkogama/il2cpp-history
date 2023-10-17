@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePointerGameMeters : FirstTimeActivatableElementBase
 {
@@ -45,8 +45,8 @@ public class FirstTimeActivatablePointerGameMeters : FirstTimeActivatableElement
 	private void OnShown();
 	private void Destroy();
 	[CompilerGenerated]
-	private void _CreateBubble_m__0(TextBubbleController x, BaseEventData y);
+	private void _CreateBubble_b__15_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Clear_m__1(TextBubbleController x, BaseEventData y);
+	private void _Clear_b__16_0(TextBubbleController x, BaseEventData y);
 }
 

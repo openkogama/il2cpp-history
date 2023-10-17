@@ -7,121 +7,141 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::Base64Encoder::Base64Enco
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&TypeInfo__System__Convert);
     cRam_? = '\x01';
   }
   if (buffer == (Byte__Array *)0x0) {
-    this_00 = (ArgumentOutOfRangeException *)
-              func_?(TypeInfo__System__ArgumentNullException);
+    uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_00 = (ArgumentNullException *)func_?(uVar1);
+    func_?(this_00);
+    pMVar2 = (MethodInfo *)0x0;
+    pSVar3 = (String *)func_?(&StringLiteral_buffer);
     mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-              ((ArgumentNullException *)this_00,StringLiteral_buffer,(MethodInfo *)0x0);
-    goto code_?;
-  }
-  if (-1 < index) {
-    if ((-1 < count) && (count <= (int)(buffer->max_length - index))) {
-      uVar1 = (this->fields)._leftOverBytesCount;
-      if ((int)uVar1 < 1) {
+              (this_00,pSVar3,pMVar2);
+    uVar1 = func_?(&
+                            MethodInfo__Newtonsoft__Json__Utilities__Base64Encoder__Encode_System__Byte_____int__int_
+                           );
+    func_?(this_00,uVar1);
 code_?:
-        iVar2 = (count / 3) * 3;
-        iVar3 = count % 3;
-        (this->fields)._leftOverBytesCount = iVar3;
-        if (0 < iVar3) {
+    func_?();
+code_?:
+    func_?();
+  }
+  else {
+    if (index < 0) goto code_?;
+    if ((-1 < count) && (count <= (int)(buffer->max_length - index))) {
+      if ((this->fields)._leftOverBytesCount < 1) {
+code_?:
+        iVar4 = (count / 3) * 3;
+        (this->fields)._leftOverBytesCount = count % 3;
+        if (0 < count % 3) {
           if ((this->fields)._leftOverBytes == (Byte__Array *)0x0) {
-            pBVar4 = (Byte__Array *)func_?(TypeInfo__System__Byte,3);
-            (this->fields)._leftOverBytes = pBVar4;
-            iVar3 = (this->fields)._leftOverBytesCount;
+            pBVar5 = (Byte__Array *)func_?(TypeInfo__System__Byte,3);
+            (this->fields)._leftOverBytes = pBVar5;
+            func_?(&(this->fields)._leftOverBytes,pBVar5);
           }
-          uVar1 = 0;
-          count = iVar2;
-          if (0 < iVar3) {
+          uVar6 = 0;
+          count = iVar4;
+          if (0 < (this->fields)._leftOverBytesCount) {
             do {
-              if (buffer->max_length <= index + iVar2 + uVar1) goto code_?;
-              pBVar4 = (this->fields)._leftOverBytes;
-              if (pBVar4 == (Byte__Array *)0x0) goto code_?;
-              if (pBVar4->max_length <= uVar1) goto code_?;
-              pBVar4->vector[uVar1] = buffer->vector[index + iVar2 + uVar1];
-              uVar1 = uVar1 + 1;
-            } while ((int)uVar1 < (this->fields)._leftOverBytesCount);
+              if (buffer->max_length <= index + iVar4 + uVar6) goto code_?;
+              pBVar5 = (this->fields)._leftOverBytes;
+              if (pBVar5 == (Byte__Array *)0x0) goto code_?;
+              if (pBVar5->max_length <= uVar6) goto code_?;
+              pBVar5->vector[uVar6] = buffer->vector[uVar6 + index + iVar4];
+              uVar6 = uVar6 + 1;
+            } while ((int)uVar6 < (this->fields)._leftOverBytesCount);
           }
         }
-        iVar3 = index + count;
-        iVar2 = 0x39;
-        if (iVar3 <= index) {
+        iVar4 = index + count;
+        iVar7 = 0x39;
+        if (iVar4 <= index) {
           return;
         }
         do {
-          pCVar5 = (this->fields)._charsLine;
-          length = iVar3 - index;
-          if (iVar2 + index <= iVar3) {
-            length = iVar2;
+          pCVar8 = (this->fields)._charsLine;
+          length = iVar4 - index;
+          if (iVar7 + index <= iVar4) {
+            length = iVar7;
           }
-          if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
+          if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__System__Convert);
           }
-          iVar6 = mscorlib.dll::System::Convert::Convert_ToBase64CharArray
-                            (buffer,index,length,pCVar5,0,(MethodInfo *)0x0);
-          Base64Encoder_WriteChars(this,(this->fields)._charsLine,0,iVar6,(MethodInfo *)0x0);
+          iVar9 = mscorlib.dll::System::Convert::Convert_ToBase64CharArray
+                            (buffer,index,length,pCVar8,0,(MethodInfo *)0x0);
+          Base64Encoder_WriteChars(this,(this->fields)._charsLine,0,iVar9,(MethodInfo *)0x0);
           index = index + length;
-          iVar2 = length;
-        } while (index < iVar3);
+          iVar7 = length;
+        } while (index < iVar4);
         return;
       }
-      for (; ((int)uVar1 < 3 && (0 < count)); count = count + -1) {
-        if (buffer->max_length <= (uint)index) goto code_?;
-        pBVar4 = (this->fields)._leftOverBytes;
-        if (pBVar4 == (Byte__Array *)0x0) goto code_?;
-        if (pBVar4->max_length <= uVar1) goto code_?;
-        pBVar4->vector[uVar1] = buffer->vector[index];
-        uVar1 = uVar1 + 1;
-        index = index + 1;
+      uVar6 = (this->fields)._leftOverBytesCount;
+      uVar10 = uVar6;
+      uVar11 = index;
+      if (uVar6 < 3) {
+        do {
+          uVar6 = uVar10;
+          index = uVar11;
+          if (count < 1) break;
+          uVar6 = uVar10 + 1;
+          index = uVar11 + 1;
+          if (buffer->max_length <= uVar11) goto code_?;
+          pBVar5 = (this->fields)._leftOverBytes;
+          if (pBVar5 == (Byte__Array *)0x0) goto code_?;
+          if (pBVar5->max_length <= uVar10) goto code_?;
+          count = count + -1;
+          pBVar5->vector[uVar10] = buffer->vector[uVar11];
+          uVar10 = uVar6;
+          uVar11 = index;
+        } while ((int)uVar6 < 3);
       }
-      if ((count == 0) && ((int)uVar1 < 3)) {
-        (this->fields)._leftOverBytesCount = uVar1;
+      if ((count == 0) && ((int)uVar6 < 3)) {
+        (this->fields)._leftOverBytesCount = uVar6;
         return;
       }
-      pBVar4 = (this->fields)._leftOverBytes;
-      pCVar5 = (this->fields)._charsLine;
-      if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
+      pBVar5 = (this->fields)._leftOverBytes;
+      pCVar8 = (this->fields)._charsLine;
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Convert);
       }
-      iVar6 = mscorlib.dll::System::Convert::Convert_ToBase64CharArray
-                        (pBVar4,0,3,pCVar5,0,(MethodInfo *)0x0);
-      pTVar7 = (this->fields)._writer;
-      if (pTVar7 != (TextWriter *)0x0) {
-        (*(code *)(pTVar7->klass->vtable).Write_5.method)
-                  (pTVar7,(this->fields)._charsLine,0,iVar6,
-                   (pTVar7->klass->vtable).Write_6.methodPtr);
+      iVar9 = mscorlib.dll::System::Convert::Convert_ToBase64CharArray
+                        (pBVar5,0,3,pCVar8,0,(MethodInfo *)0x0);
+      pTVar12 = (this->fields)._writer;
+      if (pTVar12 != (TextWriter *)0x0) {
+        (*(pTVar12->klass->vtable).Write_2.methodPtr)
+                  (pTVar12,(this->fields)._charsLine,0,iVar9,(pTVar12->klass->vtable).Write_2.method);
         goto code_?;
       }
       goto code_?;
     }
-    goto code_?;
   }
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
-  paramName = StringLiteral_index;
-code_?:
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  pAVar13 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(pAVar13);
+  pMVar2 = (MethodInfo *)0x0;
+  pSVar3 = (String *)func_?(&StringLiteral_count);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
-            (this_00,paramName,(MethodInfo *)0x0);
+            (pAVar13,pSVar3,pMVar2);
+  uVar1 = func_?(&
+                          MethodInfo__Newtonsoft__Json__Utilities__Base64Encoder__Encode_System__Byte_____int__int_
+                         );
+  func_?(pAVar13,uVar1);
 code_?:
-  func_?(this_00,0,
-                  MethodInfo__Newtonsoft__Json__Utilities__Base64Encoder__Encode_System__Byte_____int__int_
-                 );
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  pAVar13 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  func_?(pAVar13);
+  pMVar2 = (MethodInfo *)0x0;
+  pSVar3 = (String *)func_?(&StringLiteral_index);
+  mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_1
+            (pAVar13,pSVar3,pMVar2);
+  uVar1 = func_?(&
+                          MethodInfo__Newtonsoft__Json__Utilities__Base64Encoder__Encode_System__Byte_____int__int_
+                         );
+  func_?(pAVar13,uVar1);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
-code_?:
-  uVar9 = func_?(0,0);
-  func_?(uVar9);
-code_?:
-  func_?(0);
-code_?:
-  this_00 = (ArgumentOutOfRangeException *)
-            func_?(TypeInfo__System__ArgumentOutOfRangeException);
-  paramName = StringLiteral_count;
-  goto code_?;
 }
 
 
@@ -132,15 +152,14 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::Base64Encoder::Base64Enco
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
     cRam_? = '\x01';
   }
-  length = (this->fields)._leftOverBytesCount;
-  if (0 < length) {
+  if (0 < (this->fields)._leftOverBytesCount) {
     outArray = (this->fields)._charsLine;
+    length = (this->fields)._leftOverBytesCount;
     inArray = (this->fields)._leftOverBytes;
-    if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Convert);
     }
     mscorlib.dll::System::Convert::Convert_ToBase64CharArray
@@ -152,7 +171,8 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::Base64Encoder::Base64Enco
       (*pcVar2)();
       return;
     }
-    (*(code *)(pTVar1->klass->vtable).Write_5.method)(pTVar1,(this->fields)._charsLine);
+    pMStack3 = (pTVar1->klass->vtable).Write_2.method;
+    (*(pTVar1->klass->vtable).Write_2.methodPtr)(pTVar1);
     (this->fields)._leftOverBytesCount = 0;
   }
   return;
@@ -166,15 +186,19 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::Base64Encoder::Base64Enco
                MethodInfo *method)
 
 {
-  pTVar1 = (this->fields)._writer;
-  if (pTVar1 != (TextWriter *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).Write_5.method)
-              (pTVar1,chars,index,count,(pTVar1->klass->vtable).Write_6.methodPtr);
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pTVar2 = (this->fields)._writer;
+  if (pTVar2 != (TextWriter *)0x0) {
+    pMStack_1 = (pTVar2->klass->vtable).Write_2.method;
+    iStack_3 = count;
+    iStack_4 = index;
+    (*(pTVar2->klass->vtable).Write_2.methodPtr)(pTVar2,chars);
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar5 = func_?(&iStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -186,29 +210,33 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::Base64Encoder::Base64Enco
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Char);
+    func_?(&StringLiteral_writer);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__System__Char;
   pCVar1 = (Char__Array *)func_?(TypeInfo__System__Char,0x4c);
   (this->fields)._charsLine = pCVar1;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  method_00 = (MethodInfo *)&this->fields;
+  func_?(method_00,pCVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   paramName = StringLiteral_writer;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (writer != (TextWriter *)0x0) {
     (this->fields)._writer = writer;
+    func_?(&(this->fields)._writer,writer);
     return;
   }
-  this_00 = (ArgumentNullException *)func_?(TypeInfo__System__ArgumentNullException);
+  uVar2 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_00 = (ArgumentNullException *)func_?(uVar2);
+  func_?(this_00);
   mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
             (this_00,paramName,(MethodInfo *)0x0);
-  func_?(this_00);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                 );
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

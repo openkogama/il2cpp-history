@@ -6,18 +6,17 @@ void Assembly-CSharp.dll::InventoryItem+ItemDescription::InventoryItem_ItemDescr
                String *inspirational,MethodInfo *method)
 
 {
-  pIStack_1 = (InvokerMethod)0x0;
-  method_00 = (MethodInfo *)&uStack_2;
-  uStack_2._0_4_ = (Il2CppMethodPointer)0x0;
-  uStack_2._4_4_ = (Il2CppMethodPointer)0x0;
-  func_?(method_00,0,0,0,0);
-  (this->fields).cameraPreviewerOffset.x = (float)(Il2CppMethodPointer)uStack_2;
-  (this->fields).cameraPreviewerOffset.y = (float)uStack_2._4_4_;
-  (this->fields).cameraPreviewerOffset.z = (float)pIStack_1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,method_00);
+  (this->fields).cameraPreviewerOffset.x = 0.0;
+  (this->fields).cameraPreviewerOffset.y = 0.0;
+  (this->fields).cameraPreviewerOffset.z = 0.0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).name = name;
+  func_?(&this->fields,name);
   (this->fields).explanation = explanation;
+  func_?(&(this->fields).explanation,explanation);
   (this->fields).inspirational = inspirational;
+  func_?(&(this->fields).inspirational,inspirational);
   return;
 }
 
@@ -29,18 +28,17 @@ void Assembly-CSharp.dll::InventoryItem+ItemDescription::InventoryItem_ItemDescr
                String *inspirational,Vector3 cameraPreviewerOffset,MethodInfo *method)
 
 {
-  pIStack_1 = (InvokerMethod)0x0;
-  method_00 = (MethodInfo *)&uStack_2;
-  uStack_2._0_4_ = (Il2CppMethodPointer)0x0;
-  uStack_2._4_4_ = (Il2CppMethodPointer)0x0;
-  func_?(method_00,0,0,0,0);
-  (this->fields).cameraPreviewerOffset.x = (float)(Il2CppMethodPointer)uStack_2;
-  (this->fields).cameraPreviewerOffset.y = (float)uStack_2._4_4_;
-  (this->fields).cameraPreviewerOffset.z = (float)pIStack_1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,method_00);
+  (this->fields).cameraPreviewerOffset.x = 0.0;
+  (this->fields).cameraPreviewerOffset.y = 0.0;
+  (this->fields).cameraPreviewerOffset.z = 0.0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).name = name;
+  func_?(&this->fields,name);
   (this->fields).explanation = explanation;
+  func_?(&(this->fields).explanation,explanation);
   (this->fields).inspirational = inspirational;
+  func_?(&(this->fields).inspirational,inspirational);
   (this->fields).cameraPreviewerOffset.x = cameraPreviewerOffset.x;
   (this->fields).cameraPreviewerOffset.y = cameraPreviewerOffset.y;
   (this->fields).cameraPreviewerOffset.z = cameraPreviewerOffset.z;
@@ -73,17 +71,12 @@ String * Assembly-CSharp.dll::InventoryItem+ItemDescription::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_u000Au000A);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).explanation;
-  str2 = (this->fields).inspirational;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (pSVar1,StringLiteral_u000Au000A,str2,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                     ((this->fields).explanation,StringLiteral_u000Au000A,
+                      (this->fields).inspirational,(MethodInfo *)0x0);
   return pSVar1;
 }
 

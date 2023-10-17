@@ -6,37 +6,34 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
+    func_?(&
+                    MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    this_01 = (WinningConditionManager *)
-              PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(this_00,(MethodInfo *)0x0);
-    this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField;
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_02,(Object *)this,
-               MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
-               ,
-               MethodInfo__System__EventHandler<System::EventArgs>__EventHandler_System__Object__void__
-              );
-    if (this_01 != (WinningConditionManager *)0x0) {
-      MVWorldObject.dll::WinningConditionManager::
-      WinningConditionManager_add_OnWinningConditionReset
-                (this_01,(EventHandler_1_EventArgs_ *)this_02,(MethodInfo *)0x0);
-      return;
+    if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
+                 ,(MethodInfo *)0x0);
+      if (this_00 != (WinningConditionManager *)0x0) {
+        MVWorldObject.dll::WinningConditionManager::
+        WinningConditionManager_add_OnWinningConditionReset
+                  (this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -48,52 +45,37 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
+    func_?(&
+                    MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
+  if ((bVar1 != 0) &&
+     (pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0),
+     pMVar2 != (MVNetworkGame *)0x0)) {
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar2 != (MVNetworkGame *)0x0) {
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
+      this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField;
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+                func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+      if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
+         (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (this_01,unaff_ESI,
+                     MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
+                     ,(MethodInfo *)0x0), this_00 != (WinningConditionManager *)0x0)) {
+        MVWorldObject.dll::WinningConditionManager::
+        WinningConditionManager_remove_OnWinningConditionReset
+                  (this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
+        return;
       }
-      this_00 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
-      ;
-      if (this_00 != (PrefabPool *)0x0) {
-        this_01 = (WinningConditionManager *)
-                  PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(this_00,(MethodInfo *)0x0);
-        this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_02,unaff_ESI,
-                   MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
-                   ,
-                   MethodInfo__System__EventHandler<System::EventArgs>__EventHandler_System__Object__void__
-                  );
-        if (this_01 != (WinningConditionManager *)0x0) {
-          MVWorldObject.dll::WinningConditionManager::
-          WinningConditionManager_remove_OnWinningConditionReset
-                    (this_01,(EventHandler_1_EventArgs_ *)this_02,(MethodInfo *)0x0);
-          return;
-        }
-      }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
     }
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
   }
   return;
 }
@@ -105,8 +87,7 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_OnVictoryConditionMet
                (GameMeterOculus *this,Object *sender,EventArgs *args,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).UpdateValue.method)
-            (this,(this->klass->vtable).SetGameMeterVisibility.methodPtr);
+  (*(this->klass->vtable).UpdateValue.methodPtr)(this,(this->klass->vtable).UpdateValue.method);
   return;
 }
 
@@ -118,50 +99,48 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_SetGameMeterVisibilit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    this_01 = (WinningConditionManager *)
-              PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(this_00,(MethodInfo *)0x0);
-    if (this_01 != (WinningConditionManager *)0x0) {
-      pTVar1 = MVWorldObject.dll::WinningConditionManager::
-               WinningConditionManager_GetSingletonWinnerConditionByType_6
-                         (this_01,
-                          OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                         );
-      (this->fields).oculusClient = (OculusKillLimitClient *)pTVar1;
-      condition = (WinningConditionType__Enum *)&stack0xfffffff8;
-      WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
-                (condition,(MethodInfo *)0x0);
-      if (condition == (WinningConditionType__Enum *)0x3) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,1,(MethodInfo *)0x0);
-          return;
-        }
+  WStack_1 = WinningConditionType__Enum_Collectible;
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField,
+     this_00 != (WinningConditionManager *)0x0)) {
+    pOVar3 = (OculusKillLimitClient *)
+             MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType
+                       (this_00,
+                        OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                       );
+    (this->fields).oculusClient = pOVar3;
+    func_?(&(this->fields).oculusClient,pOVar3);
+    WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
+              (&WStack_1,(MethodInfo *)0x0);
+    if (WStack_1 == WinningConditionType__Enum_Oculus) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (pGVar4 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar4,1,(MethodInfo *)0x0);
+        return;
       }
-      else {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
-          return;
-        }
+    }
+    else {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (pGVar4 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar4,0,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -173,78 +152,56 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_UpdateValue
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).oculusClient;
-  if (this_00 == (OculusKillLimitClient *)0x0) {
+  if ((this->fields).oculusClient == (OculusKillLimitClient *)0x0) {
     return;
   }
-  pOVar1 = System.dll::System::Collections::Generic::
-           SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-           Single,System::Object]::
-           SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                     ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                       *)this_00,(MethodInfo *)0x0);
   GameMeterKillBase::GameMeterKillBase_SetCount
-            ((GameMeterKillBase *)this,GameStatCounterType__Enum_OculusKill,(int32_t)pOVar1,
-             (MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
+            ((GameMeterKillBase *)this,GameStatCounterType__Enum_OculusKill,
+             (((this->fields).oculusClient)->fields)._._.limit,(MethodInfo *)0x0);
   this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((this_01 != (MVNetworkGame *)0x0) &&
      (this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
      this_02 != (MVLocalPlayer *)0x0)) {
-    iVar2 = MVPlayer::MVPlayer_GetGameStat
+    iVar1 = MVPlayer::MVPlayer_GetGameStat
                       ((MVPlayer *)this_02,GameStatCounterType__Enum_OculusKill,(MethodInfo *)0x0);
-    if ((this->fields).prevValue == iVar2) {
+    if ((this->fields).prevValue == iVar1) {
       return;
     }
-    if (iVar2 == 0) {
+    if (iVar1 == 0) {
       return;
     }
-    (this->fields).prevValue = iVar2;
+    (this->fields).prevValue = iVar1;
     index = 0;
-    pLVar3 = (this->fields)._._.gameMeterVisualEffects;
-    while (pLVar3 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
-      pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar3,
-                          MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
-                         );
-      if ((int)pOVar1 <= index) {
+    pLVar2 = (this->fields)._._.gameMeterVisualEffects;
+    while (pLVar2 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
+      if ((pLVar2->fields)._size <= index) {
         return;
       }
-      pLVar3 = (this->fields)._._.gameMeterVisualEffects;
-      if ((pLVar3 == (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) ||
-         (pIVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::EventSystems::
-                   IEventSystemHandler]::
-                   List_1_UnityEngine_EventSystems_IEventSystemHandler__get_Item
-                             ((List_1_UnityEngine_EventSystems_IEventSystemHandler_ *)pLVar3,index,
-                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
-                             ), pIVar4 == (IEventSystemHandler *)0x0)) break;
-      (*(code *)pIVar4->klass[1]._0.castClass)();
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields)._._.gameMeterVisualEffects;
+      if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+         (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_00,index,
+                             MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
+                            ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+      (**(code **)(*(int *)RVar3 + 0xdc))();
       index = index + 1;
-      pLVar3 = (this->fields)._._.gameMeterVisualEffects;
+      pLVar2 = (this->fields)._._.gameMeterVisualEffects;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
-}
-
-
-/* GameMeterType get_GameMeterType() */
-
-GameMeterType__Enum
-Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_get_GameMeterType
-          (GameMeterOculus *this,MethodInfo *method)
-
-{
-  return GameMeterType__Enum_OculusKills;
 }
 

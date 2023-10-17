@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AdminToolController : MonoBehaviour
 {
@@ -29,12 +29,6 @@ public class AdminToolController : MonoBehaviour
 	private Button ownerKickButton;
 	private static readonly Dictionary<string, int> durationMultiplier;
 	private static readonly Dictionary<string, DefaultBan> defaultBanLookup;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
 
 	// Nested types
 	private struct DefaultBan
@@ -46,6 +40,26 @@ public class AdminToolController : MonoBehaviour
 
 		// Constructors
 		public DefaultBan(string reason, string duration, string format);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnBanClicked_b__9_0(IUIStack x, BaseEventData y);
+		internal void _OnBanClicked_b__9_1(IUIStack x, BaseEventData y);
+		internal void _OnKickClicked_b__10_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -60,11 +74,5 @@ public class AdminToolController : MonoBehaviour
 	private void OnDefaultBanDropdownChanged(int option);
 	private bool IsBanFieldsValid();
 	private static MVPlayer GetPlayer(string userName);
-	[CompilerGenerated]
-	private static void _OnBanClicked_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnBanClicked_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnKickClicked_m__2(IUIStack x, BaseEventData y);
 }
 

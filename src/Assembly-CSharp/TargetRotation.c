@@ -7,39 +7,30 @@ Assembly-CSharp.dll::TargetRotation::TargetRotation_GetLerpRotation
           MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  puVar1 = (undefined8 *)func_?(&stack0xffffffdc,&from,0);
-  uVar2 = *puVar1;
-  fVar3 = (this->fields).eulerAngles.x;
-  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar5 = (this->fields).lerpSpeedX;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
-            ((float)uVar2,fVar3,fVar5 * fVar4,(MethodInfo *)0x0);
-  fVar4 = (float)((ulonglong)uVar2 >> 0x20);
-  fVar3 = (this->fields).eulerAngles.y;
-  fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
-                    (fVar4,fVar3,(this->fields).lerpSpeedY * fVar5,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Euler
-                     ((Quaternion *)&puStack_7,0.0,fVar3,0.0,(MethodInfo *)0x0);
-  fVar3 = pQVar6->y;
-  fVar5 = pQVar6->z;
-  fVar4 = pQVar6->w;
-  __return_storage_ptr__->x = pQVar6->x;
-  __return_storage_ptr__->y = fVar3;
-  __return_storage_ptr__->z = fVar5;
-  __return_storage_ptr__->w = fVar4;
+  puVar1 = (undefined8 *)func_?(&stack0xffffffd4,&from,0);
+  a = (float)*puVar1;
+  a_00 = (float)((ulonglong)*puVar1 >> 0x20);
+  fVar2 = (this->fields).eulerAngles.x;
+  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar4 = (this->fields).lerpSpeedX;
+  fVar5 = (this->fields).eulerAngles.y;
+  fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
+                    (a,fVar2,fVar4 * fVar3,(MethodInfo *)0x0);
+  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
+                    (a_00,fVar5,fVar6 * (this->fields).lerpSpeedY,(MethodInfo *)0x0);
+  euler.y = fVar4 * _UNK_?;
+  euler.x = fVar2 * _UNK_?;
+  euler.z = 0.0;
+  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                     ((Quaternion *)&stack0xffffffd0,euler,(MethodInfo *)0x0);
+  fVar2 = pQVar7->y;
+  fVar4 = pQVar7->z;
+  fVar5 = pQVar7->w;
+  __return_storage_ptr__->x = pQVar7->x;
+  __return_storage_ptr__->y = fVar2;
+  __return_storage_ptr__->z = fVar4;
+  __return_storage_ptr__->w = fVar5;
   return __return_storage_ptr__;
 }
 
@@ -78,17 +69,13 @@ void Assembly-CSharp.dll::TargetRotation::TargetRotation__ctor
                (TargetRotation *this,MethodInfo *method)
 
 {
-  (this->fields).eulerAngles.x = 0.0;
-  (this->fields).eulerAngles.y = 0.0;
-  (this->fields).eulerAngles.z = 0.0;
   (this->fields).lerpSpeedX = 15.0;
   (this->fields).lerpSpeedY = 15.0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

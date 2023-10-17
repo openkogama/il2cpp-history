@@ -6,15 +6,7 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor_UpdateCursor
                bool deletedCube,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   if (deletedCube != 0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
     if (((pGVar1 == (GameEventManager *)0x0) ||
         (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
@@ -24,23 +16,16 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor_UpdateCursor
     goto code_?;
     GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
     GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
-              (pGVar3,(this->fields).deleteCubeLaserOnTime,(MethodInfo *)0x0);
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    (this->fields).deleteCubeTime = fVar4;
+              (pGVar3,0.2,(MethodInfo *)0x0);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if (selectedCube == (CubePickingInfo *)0x0) {
-    pCVar5 = (this->fields).deleteCursor;
-    if (pCVar5 != (CellCursor *)0x0) {
-      CellCursor::CellCursor_set_Active(pCVar5,0,(MethodInfo *)0x0);
+    pCVar4 = (this->fields).deleteCursor;
+    if (pCVar4 != (CellCursor *)0x0) {
+      CellCursor::CellCursor_set_Active(pCVar4,0,(MethodInfo *)0x0);
       return;
     }
   }
   else {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
     if (((pGVar1 != (GameEventManager *)0x0) &&
         (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
@@ -50,28 +35,33 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor_UpdateCursor
       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
                 (pGVar3,(selectedCube->fields).point,(MethodInfo *)0x0);
-      pCVar5 = (this->fields).deleteCursor;
-      if (pCVar5 != (CellCursor *)0x0) {
-        CellCursor::CellCursor_set_Active(pCVar5,1,(MethodInfo *)0x0);
-        pCVar5 = (this->fields).deleteCursor;
-        position = (selectedCube->fields).iLocalPos;
-        if (targetCubeModel != (MVCubeModelBase *)0x0) {
-          cubeGameObject =
-               DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                         ((DayNightCycle *)targetCubeModel,(MethodInfo *)0x0);
-          if (pCVar5 != (CellCursor *)0x0) {
-            CellCursor::CellCursor_SetCursor_1
-                      (pCVar5,position,(GameObject *)cubeGameObject,(MethodInfo *)0x0);
-            return;
-          }
+      pCVar4 = (this->fields).deleteCursor;
+      if (pCVar4 != (CellCursor *)0x0) {
+        CellCursor::CellCursor_set_Active(pCVar4,1,(MethodInfo *)0x0);
+        cubeGameObject = pGRam00000089;
+        uVar5._0_2_ = (selectedCube->fields).iLocalPos.x;
+        uVar5._2_2_ = (selectedCube->fields).iLocalPos.y;
+        pCVar4 = (this->fields).deleteCursor;
+        if ((pCVar4 != (CellCursor *)0x0) &&
+           (this_00 = CellCursor::CellCursor_GetCellCursor
+                                (pCVar4,(selectedCube->fields).iLocalPos,(MethodInfo *)0x0),
+           this_00 != (CellCursorCubeLineMesh *)0x0)) {
+          iStack6 = (int16_t)((uint)pCVar4 >> 0x10);
+          uStack7 = 0x103d;
+          position.z = iStack6;
+          position.x = (short)uVar5;
+          position.y = (short)((uint)uVar5 >> 0x10);
+          CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
+                    (this_00,position,cubeGameObject,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
 code_?:
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -83,26 +73,29 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__CellCursor);
     cRam_? = '\x01';
   }
-  (this->fields).deleteCubeLaserOnTime = 0.2;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    material = PrefabPool::PrefabPool_get_CellCursorErrorMaterial(this_00,(MethodInfo *)0x0);
-    this_01 = (CellCursor *)func_?(TypeInfo__CellCursor);
-    CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
-    (this->fields).deleteCursor = this_01;
-    return;
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    material = (pPVar1->fields).cellCursorErrorMaterial;
+    this_00 = (CellCursor *)func_?(TypeInfo__CellCursor);
+    if (this_00 != (CellCursor *)0x0) {
+      CellCursor::CellCursor__ctor(this_00,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
+      (this->fields).deleteCursor = this_00;
+      func_?(&this->fields,this_00);
+      return;
+    }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

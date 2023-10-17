@@ -7,129 +7,97 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Equip
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_AvatarItem_is_null__This_is_thou);
     cRam_? = '\x01';
   }
-  pPVar1 = MVPickupOwner::MVPickupOwner_CreateAvatarItem
-                     ((MVPickupOwner *)this,type,variantId,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
+  avatarItem = MVPickupOwner::MVPickupOwner_CreateAvatarItem
+                         ((MVPickupOwner *)this,type,variantId,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?();
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)avatarItem,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
               ((Object *)StringLiteral_AvatarItem_is_null__This_is_thou,(MethodInfo *)0x0);
-    pPVar1 = MVPickupOwner::MVPickupOwner_CreateAvatarItem
-                       ((MVPickupOwner *)this,AvatarItemType__Enum_Hand,variantId,(MethodInfo *)0x0)
-    ;
+    avatarItem = MVPickupOwner::MVPickupOwner_CreateAvatarItem
+                           ((MVPickupOwner *)this,AvatarItemType__Enum_Hand,variantId,
+                            (MethodInfo *)0x0);
   }
-  pMVar3 = (this->fields).mvAvatar;
-  if (pMVar3 != (MVAvatar *)0x0) {
-    pMVar4 = MVAvatar::MVAvatar_get_Body(pMVar3,(MethodInfo *)0x0);
-    if (pMVar4 == (MVBody *)0x0) {
-      if (pPVar1 != (PickupItem *)0x0) {
-        pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pPVar1,(MethodInfo *)0x0);
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)this,(MethodInfo *)0x0);
-        if ((this_01 != (GameObject *)0x0) &&
-           (value_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 (this_01,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (pTVar5,value_01,(MethodInfo *)0x0);
-          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                             ((Component_1 *)pPVar1,(MethodInfo *)0x0);
-          fVar6 = 0.0;
-          uVar7 = 0;
-          func_?();
-          if (pTVar5 != (Transform *)0x0) {
-            value.z = fVar6;
-            value.x = (float)(int)uVar7;
-            value.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar5,value,(MethodInfo *)0x0);
-            pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pPVar1,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) !=
-                 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                               ((Quaternion *)&stack0xffffffe0,(MethodInfo *)0x0);
-joined_?:
-            if (pTVar5 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                        (pTVar5,*pQVar8,(MethodInfo *)0x0);
-              MVPickupOwner::MVPickupOwner_SetAvatarItemAsCurrent
-                        ((MVPickupOwner *)this,pPVar1,(MethodInfo *)0x0);
-              pPVar1 = (this->fields)._.currentItem;
-              if (pPVar1 != (PickupItem *)0x0) {
-                (*(code *)(pPVar1->klass->vtable).OnEquip.method)();
-                this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                          (this->fields)._.onEquipItem;
-                if (this_00 != (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
-                  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                  SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-                  SpawnRoleVariable_1_T_SubDelegate_System_Object__Invoke
-                            (this_00,(Object *)(this->fields)._.currentItem,(MethodInfo *)0x0);
-                }
-                return;
-              }
-            }
-          }
-        }
-      }
+  pMVar2 = (this->fields).mvAvatar;
+  if ((pMVar2 == (MVAvatar *)0x0) || (avatarItem == (PickupItem *)0x0)) goto code_?;
+  if ((pMVar2->fields).body == (MVBody *)0x0) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)avatarItem,(MethodInfo *)0x0);
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (this_01 == (GameObject *)0x0) goto code_?;
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                       (this_01,(MethodInfo *)0x0);
+    if (pTVar3 == (Transform *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+              (pTVar3,pTVar4,(MethodInfo *)0x0);
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)avatarItem,(MethodInfo *)0x0);
+    uVar5 = 0x3f19999a;
+  }
+  else {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)avatarItem,(MethodInfo *)0x0);
+    pMVar2 = (this->fields).mvAvatar;
+    if ((pMVar2 == (MVAvatar *)0x0) || (this_00 = (pMVar2->fields).body, this_00 == (MVBody *)0x0))
+    goto code_?;
+    this_02 = MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0);
+    if (this_02 == (BodyData *)0x0) goto code_?;
+    pTVar4 = BodyData::BodyData_GetPartBone
+                       (this_02,BodyData_PartIndex__Enum_Torso,(MethodInfo *)0x0);
+    if (pTVar3 == (Transform *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+              (pTVar3,pTVar4,0,(MethodInfo *)0x0);
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)avatarItem,(MethodInfo *)0x0);
+    uVar5 = 0x3e800000;
+  }
+  if (pTVar3 != (Transform *)0x0) {
+    auVar6._4_8_ = 0;
+    auVar6._0_4_ = uVar5;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+              (pTVar3,(Vector3)(auVar6 << 0x20),(MethodInfo *)0x0);
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)avatarItem,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
     }
-    else if (pPVar1 != (PickupItem *)0x0) {
-      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)pPVar1,(MethodInfo *)0x0);
-      pMVar3 = (this->fields).mvAvatar;
-      if ((((pMVar3 != (MVAvatar *)0x0) &&
-           (pMVar4 = MVAvatar::MVAvatar_get_Body(pMVar3,(MethodInfo *)0x0), pMVar4 != (MVBody *)0x0)
-           ) && (pBVar9 = MVBody::MVBody_get_BodyData(pMVar4,(MethodInfo *)0x0),
-                pBVar9 != (BodyData *)0x0)) &&
-         (pTVar10 = (pBVar9->fields).PartBones, pTVar10 != (Transform__Array *)0x0)) {
-        if (pTVar10->max_length < 2) goto code_?;
-        if (pTVar5 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar5,pTVar10->vector[1],0,(MethodInfo *)0x0);
-          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                             ((Component_1 *)pPVar1,(MethodInfo *)0x0);
-          fVar6 = 0.0;
-          uVar7 = 0;
-          func_?();
-          if (pTVar5 != (Transform *)0x0) {
-            value_00.z = fVar6;
-            value_00.x = (float)(int)uVar7;
-            value_00.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar5,value_00,(MethodInfo *)0x0);
-            pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pPVar1,(MethodInfo *)0x0);
-            if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) !=
-                 0) && ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_identity
-                               ((Quaternion *)&stack0xffffffe0,(MethodInfo *)0x0);
-            goto joined_?;
-          }
+    if (pTVar3 != (Transform *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+                (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
+                 (MethodInfo *)0x0);
+      MVPickupOwner::MVPickupOwner_SetAvatarItemAsCurrent
+                ((MVPickupOwner *)this,avatarItem,(MethodInfo *)0x0);
+      pPStack7 = (this->fields)._.currentItem;
+      if (pPStack7 != (PickupItem *)0x0) {
+        pMStack8 = (pPStack7->klass->vtable).OnEquip.method;
+        (*(pPStack7->klass->vtable).OnEquip.methodPtr)();
+        if ((this->fields)._.onEquipItem != (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+          pMVar9 = (this->fields)._.onEquipItem;
+          pMStack8 = (pMVar9->fields)._._.method;
+          pPStack7 = (this->fields)._.currentItem;
+          (*(pMVar9->fields)._._.invoke_impl)();
         }
+        return;
       }
     }
   }
-  func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -141,7 +109,7 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_HandlePointing
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AvatarLimbManagerLocal);
     cRam_? = '\x01';
   }
   if (inputFire == 0) {
@@ -149,33 +117,38 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_HandlePointing
   }
   pPVar1 = (this->fields)._.currentItem;
   if (pPVar1 != (PickupItem *)0x0) {
-    iVar2 = (*(code *)(pPVar1->klass->vtable).__unknown.method)
-                      (pPVar1,(pPVar1->klass->vtable).CanFire.methodPtr);
+    iVar2 = (*(pPVar1->klass->vtable).__unknown.methodPtr)
+                      (pPVar1,(pPVar1->klass->vtable).__unknown.method);
     if (iVar2 != 5) {
-      this_00 = (MvCharacterController *)(this->fields)._.currentItem;
-      if (this_00 == (MvCharacterController *)0x0) goto code_?;
-      bVar3 = MvCharacterController::MvCharacterController_get_IsGrounded(this_00,(MethodInfo *)0x0)
-      ;
-      if (bVar3 == 0) {
+      pPVar1 = (this->fields)._.currentItem;
+      if (pPVar1 == (PickupItem *)0x0) goto code_?;
+      if ((pPVar1->fields)._IsHolstered_k__BackingField == 0) {
         return;
       }
     }
-    this_01 = (this->fields).mvAvatar;
-    if (this_01 != (MVAvatar *)0x0) {
-      iVar4 = MVMovable::MVMovable_get_ParentMoverID((MVMovable *)this_01,(MethodInfo *)0x0);
-      iVar2 = func_?(iVar4,TypeInfo__AvatarLimbManagerLocal);
-      if (iVar2 != 0) {
-        method_00 = (MethodInfo *)0x0;
-        this_02 = (AvatarLimbManagerLocal *)func_?(iVar4,TypeInfo__AvatarLimbManagerLocal);
-        AvatarLimbManagerLocal::AvatarLimbManagerLocal_StartPointing(this_02,method_00);
+    pMVar3 = (this->fields).mvAvatar;
+    if ((pMVar3 != (MVAvatar *)0x0) &&
+       (this_00 = (AvatarLimbManagerLocal *)(pMVar3->fields).limbManager,
+       this = (AvatarPickupOwner *)TypeInfo__AvatarLimbManagerLocal,
+       this_00 != (AvatarLimbManagerLocal *)0x0)) {
+      if (((TypeInfo__AvatarLimbManagerLocal->_1).typeHierarchyDepth <=
+           (this_00->klass->_1).typeHierarchyDepth) &&
+         ((this_00->klass->_1).typeHierarchy
+          [(TypeInfo__AvatarLimbManagerLocal->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) {
+        AvatarLimbManagerLocal::AvatarLimbManagerLocal_StartPointing(this_00,(MethodInfo *)0x0);
         return;
       }
+      goto code_?;
     }
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  this_00 = extraout_EDX;
+code_?:
+  func_?(this_00,this);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -189,6 +162,7 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Init
 
 {
   (this->fields).mvAvatar = mvAvatar;
+  func_?(&(this->fields).mvAvatar,mvAvatar);
   MVPickupOwner::MVPickupOwner_Init
             ((MVPickupOwner *)this,currentItemRuntimeDataVariable,isFiringRuntimeDataVariable,
              (MethodInfo *)0x0);
@@ -203,9 +177,7 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Init
       (this->fields).hasUnlimitedAmmo = 1;
     }
   }
-  MVBuildModeAvatarLocal+EditMode::MVBuildModeAvatarLocal_EditMode_set_MovementConstrained
-            ((MVBuildModeAvatarLocal_EditMode *)this,(this->fields).hasUnlimitedAmmo,
-             (MethodInfo *)0x0);
+  (this->fields)._.hasUnlimitedAmmoSetting = (this->fields).hasUnlimitedAmmo;
   return;
 }
 
@@ -218,7 +190,7 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_InitSkills
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_EndlessAmmo);
     cRam_? = '\x01';
   }
   if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
@@ -239,12 +211,11 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Unequip
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields)._.currentItem;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
@@ -254,40 +225,37 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Unequip
   }
   pPVar1 = (this->fields)._.currentItem;
   if (pPVar1 != (PickupItem *)0x0) {
-    (*(code *)(pPVar1->klass->vtable).OnUnequip.method)
-              (pPVar1,(pPVar1->klass->vtable).ResetAmmo.methodPtr);
+    (*(pPVar1->klass->vtable).OnUnequip.methodPtr)(pPVar1,(pPVar1->klass->vtable).OnUnequip.method);
     pPVar1 = (this->fields)._.currentItem;
     if (pPVar1 != (PickupItem *)0x0) {
-      iVar3 = (*(code *)(pPVar1->klass->vtable).__unknown.method)
-                        (pPVar1,(pPVar1->klass->vtable).CanFire.methodPtr);
+      iVar3 = (*(pPVar1->klass->vtable).__unknown.methodPtr)
+                        (pPVar1,(pPVar1->klass->vtable).__unknown.method);
       if (iVar3 != 0) {
         pPVar1 = (this->fields)._.currentItem;
         if (pPVar1 == (PickupItem *)0x0) goto code_?;
-        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)pPVar1,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pPVar1,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                   ((Object_1 *)obj,(MethodInfo *)0x0);
       }
-      this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)(this->fields)._.onUnequipItem;
       (this->fields)._.currentItem = (PickupItem *)0x0;
-      if (this_00 == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+      func_?(&(this->fields)._.currentItem,0);
+      if ((this->fields)._.onUnequipItem == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
         return;
       }
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object__Invoke
-                (this_00,(Object *)0x0,(MethodInfo *)0x0);
+      pMVar4 = (this->fields)._.onUnequipItem;
+      (*(pMVar4->fields)._._.invoke_impl)
+                ((pMVar4->fields)._._.method_code,0,(pMVar4->fields)._._.method);
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -300,35 +268,26 @@ Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_get_IgnoreWOIDs
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<int>__UnionWith_System__Collections__Generic__IEnumerable<int>_
+                   );
     cRam_? = '\x01';
   }
-  this_00 = MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs((MVPickupOwner *)this,(MethodInfo *)0x0);
-  pHVar1 = (this->fields)._AdditionalIgnoreWOIDS_k__BackingField;
-  if (pHVar1 != (HashSet_1_System_Int32_ *)0x0) {
-    if (this_00 == (HashSet_1_System_Int32_ *)0x0) {
-      func_?(0);
+  pHVar1 = MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs((MVPickupOwner *)this,(MethodInfo *)0x0);
+  if ((this->fields)._AdditionalIgnoreWOIDS_k__BackingField != (HashSet_1_System_Int32_ *)0x0) {
+    if (pHVar1 == (HashSet_1_System_Int32_ *)0x0) {
+      func_?();
       pcVar2 = (code *)swi(3);
       pHVar1 = (HashSet_1_System_Int32_ *)(*pcVar2)();
       return pHVar1;
     }
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
     HashSet_1_System_Int32__UnionWith
-              (this_00,(IEnumerable_1_System_Int32_ *)pHVar1,
+              (pHVar1,(IEnumerable_1_System_Int32_ *)
+                      (this->fields)._AdditionalIgnoreWOIDS_k__BackingField,
                MethodInfo__System__Collections__Generic__HashSet<int>__UnionWith_System__Collections__Generic__IEnumerable<int>_
               );
   }
-  return this_00;
-}
-
-
-/* Void set_AdditionalIgnoreWOIDS(HashSet`1[System.Int32]) */
-
-void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_set_AdditionalIgnoreWOIDS
-               (AvatarPickupOwner *this,HashSet_1_System_Int32_ *value,MethodInfo *method)
-
-{
-  (this->fields)._AdditionalIgnoreWOIDS_k__BackingField = value;
-  return;
+  return pHVar1;
 }
 

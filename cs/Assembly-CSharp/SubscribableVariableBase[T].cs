@@ -6,14 +6,13 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class SubscribableVariableBase<T>
 {
 	// Fields
 	protected T value;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private Action<T> OnChange;
 
 	// Properties

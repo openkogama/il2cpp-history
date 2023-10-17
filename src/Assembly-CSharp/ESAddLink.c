@@ -4,23 +4,16 @@
 bool Assembly-CSharp.dll::ESAddLink::ESAddLink_DoAddLink(ESAddLink *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
     bVar1 = MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AddLink
                       (this_00,(this->fields).tempLink,(MethodInfo *)0x0);
     return bVar1 != 0;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff4);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 
@@ -32,25 +25,27 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__MV__WorldObject__Link);
+    func_?(&StringLiteral_state_started_with_multi_selecti);
+    func_?(&StringLiteral_Should_not_happen___links_can_on);
+    func_?(&StringLiteral_ESAddLink_enter);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
             ((Object *)StringLiteral_ESAddLink_enter,(MethodInfo *)0x0);
   if (esm != (EditorStateMachine *)0x0) {
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
+    if (cRam_? == '\0') {
       func_?();
+      cRam_? = '\x01';
     }
-    pPVar2 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
+    pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
     if ((pPVar2 != (PrefabPool *)0x0) &&
-       (pMVar3 = PrefabPool::PrefabPool_get_LogicCubeConnectorRedMaterial(pPVar2,(MethodInfo *)0x0),
-       pMVar3 != (Material *)0x0)) {
+       (pMVar3 = (pPVar2->fields).logicCubeConnectorRedMaterial, pMVar3 != (Material *)0x0)) {
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
                          ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
       fVar5 = pCVar4->g;
@@ -60,10 +55,13 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
       (this->fields).originalRedConnectorColor.g = fVar5;
       (this->fields).originalRedConnectorColor.b = fVar6;
       (this->fields).originalRedConnectorColor.a = fVar7;
-      pPVar2 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
       if ((pPVar2 != (PrefabPool *)0x0) &&
-         (pMVar3 = PrefabPool::PrefabPool_get_LogicCubeConnectorBlueMaterial
-                             (pPVar2,(MethodInfo *)0x0), pMVar3 != (Material *)0x0)) {
+         (pMVar3 = (pPVar2->fields).logicCubeConnectorBlueMaterial, pMVar3 != (Material *)0x0)) {
         pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
                            ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
         fVar5 = pCVar4->g;
@@ -74,8 +72,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
         (this->fields).originalBlueConnectorColor.b = fVar6;
         (this->fields).originalBlueConnectorColor.a = fVar7;
         if (pMVar1 == (MVWorldObjectClient *)0x0) {
-          if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
@@ -83,115 +80,98 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
           FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
           return;
         }
-        pLVar8 = (Link_1 *)func_?();
-        MVWorldObject.dll::MV::WorldObject::Link::Link_1__ctor_1(pLVar8,(MethodInfo *)0x0);
-        (this->fields).tempLink = pLVar8;
-        pTVar9 = CloudyThemeBase::CloudyThemeBase_get_Skybox
-                           ((CloudyThemeBase *)&UNK_?,(MethodInfo *)0x0);
-        if (pTVar9 == (ThemeSkybox *)0x1) {
-          pLVar8 = (this->fields).tempLink;
-          pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                             (esm,(MethodInfo *)0x0);
-          if ((pMVar1 == (MVWorldObjectClient *)0x0) ||
-             (pIVar10 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)pMVar1,(MethodInfo *)0x0),
-             pLVar8 == (Link_1 *)0x0)) goto code_?;
-          (pLVar8->fields).inputWOID = (int32_t)pIVar10;
-          if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pPVar2 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-          pMVar3 = PrefabPool::PrefabPool_get_LogicCubeConnectorBlueMaterial
-                             (pPVar2,(MethodInfo *)0x0);
-          (this->fields).materialToPulse = pMVar3;
-          pPVar2 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-          pMVar3 = PrefabPool::PrefabPool_get_LogicCubeConnectorBlueMaterial
-                             (pPVar2,(MethodInfo *)0x0);
-        }
-        else {
-          pTVar9 = CloudyThemeBase::CloudyThemeBase_get_Skybox
-                             ((CloudyThemeBase *)&UNK_?,(MethodInfo *)0x0);
-          if (pTVar9 != (ThemeSkybox *)0x2) {
-            if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+        pLVar8 = (Link *)func_?();
+        if (pLVar8 != (Link *)0x0) {
+          MVWorldObject.dll::MV::WorldObject::Link::Link__ctor_1(pLVar8,(MethodInfo *)0x0);
+          (this->fields).tempLink = pLVar8;
+          func_?(&(this->fields).tempLink);
+          if ((pMVar1->fields).selectedConnector == 1) {
+            pLVar8 = (this->fields).tempLink;
+            pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                               (esm,(MethodInfo *)0x0);
+            if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
+            goto code_?;
+            (pLVar8->fields).inputWOID = (pMVar9->fields)._.id;
+            if (cRam_? == '\0') {
               func_?();
+              cRam_? = '\x01';
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                      ((Object *)StringLiteral_Should_not_happen___links_can_on,(MethodInfo *)0x0);
-            FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
-            return;
+            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+            (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorBlueMaterial;
+            func_?(&(this->fields).materialToPulse);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+            pMVar3 = (pPVar2->fields).logicCubeConnectorBlueMaterial;
           }
-          pLVar8 = (this->fields).tempLink;
-          pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                             (esm,(MethodInfo *)0x0);
-          if ((pMVar1 == (MVWorldObjectClient *)0x0) ||
-             (pIVar10 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                       Collection_1_VoxelHit__get_Items
-                                 ((Collection_1_VoxelHit_ *)pMVar1,(MethodInfo *)0x0),
-             pLVar8 == (Link_1 *)0x0)) goto code_?;
-          (pLVar8->fields).outputWOID = (int32_t)pIVar10;
-          if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pPVar2 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-          pMVar3 = PrefabPool::PrefabPool_get_LogicCubeConnectorRedMaterial
-                             (pPVar2,(MethodInfo *)0x0);
-          (this->fields).materialToPulse = pMVar3;
-          pPVar2 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-          pMVar3 = PrefabPool::PrefabPool_get_LogicCubeConnectorRedMaterial
-                             (pPVar2,(MethodInfo *)0x0);
-        }
-        if (pMVar3 != (Material *)0x0) {
-          pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                             ((Color *)&stack0xffffffdc,pMVar3,(MethodInfo *)0x0);
-          fVar5 = pCVar4->g;
-          fVar6 = pCVar4->b;
-          fVar7 = pCVar4->a;
-          (this->fields).endColor.r = pCVar4->r;
-          (this->fields).endColor.g = fVar5;
-          (this->fields).endColor.b = fVar6;
-          (this->fields).endColor.a = fVar7;
-          fVar5 = 0.0;
-          fVar6 = 0.0;
-          fVar7 = 0.0;
-          puVar11 = &UNK_?;
-          func_?();
-          (this->fields).startColor.r = fVar5;
-          (this->fields).startColor.g = fVar6;
-          (this->fields).startColor.b = fVar7;
-          (this->fields).startColor.a = (float)puVar11;
-          if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-            func_?();
-          }
-          this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                              ((MethodInfo *)0x0);
-          if ((this_00 != (MainCameraManager *)0x0) &&
-             (this_01 = (LineDrawManager *)
-                        ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-                        NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                                  ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_00,
-                                   (MethodInfo *)0x0), this_01 != (LineDrawManager *)0x0)) {
-            LineDrawManager::LineDrawManager_SetTempLink
-                      (this_01,(this->fields).tempLink,(MethodInfo *)0x0);
-            (**(code **)(_UNK_? + 0x2c0))();
-            this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            pIVar10 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                     Collection_1_VoxelHit__get_Items
-                               ((Collection_1_VoxelHit_ *)&UNK_?,(MethodInfo *)0x0);
-            if (this_02 != (MVWorldObjectClientManager *)0x0) {
-              pWVar12 = MVWorldObjectClientManager::
-                       MVWorldObjectClientManager_GetWorldObjectClientRef
-                                 (this_02,(int32_t)pIVar10,(MethodInfo *)0x0);
-              (this->fields).woRef = pWVar12;
+          else {
+            if ((pMVar1->fields).selectedConnector != 2) {
+              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__UnityEngine__Debug);
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                        ((Object *)StringLiteral_Should_not_happen___links_can_on,(MethodInfo *)0x0)
+              ;
+              FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
               return;
+            }
+            pLVar8 = (this->fields).tempLink;
+            pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                               (esm,(MethodInfo *)0x0);
+            if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
+            goto code_?;
+            (pLVar8->fields).outputWOID = (pMVar9->fields)._.id;
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+            (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorRedMaterial;
+            func_?(&(this->fields).materialToPulse);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+            pMVar3 = (pPVar2->fields).logicCubeConnectorRedMaterial;
+          }
+          if (pMVar3 != (Material *)0x0) {
+            pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
+                               ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
+            fVar5 = pCVar4->g;
+            fVar6 = pCVar4->b;
+            fVar7 = pCVar4->a;
+            (this->fields).endColor.r = pCVar4->r;
+            (this->fields).endColor.g = fVar5;
+            (this->fields).endColor.b = fVar6;
+            (this->fields).endColor.a = fVar7;
+            fVar5 = (this->fields).endColor.b;
+            (this->fields).startColor.r = (this->fields).endColor.r;
+            (this->fields).startColor.g = 0.6;
+            (this->fields).startColor.b = fVar5;
+            (this->fields).startColor.a = 1.0;
+            pMVar10 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                ((MethodInfo *)0x0);
+            if ((pMVar10 != (MainCameraManager *)0x0) &&
+               (this_00 = (pMVar10->fields).lineDrawManager, this_00 != (LineDrawManager *)0x0)) {
+              LineDrawManager::LineDrawManager_SetTempLink
+                        (this_00,(this->fields).tempLink,(MethodInfo *)0x0);
+              (*(pMVar1->klass->vtable).HighlightConnector.methodPtr)();
+              this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+              if (this_01 != (MVWorldObjectClientManager *)0x0) {
+                pWVar11 = MVWorldObjectClientManager::
+                          MVWorldObjectClientManager_GetWorldObjectClientRef
+                                    (this_01,(pMVar1->fields)._.id,(MethodInfo *)0x0);
+                (this->fields).woRef = pWVar11;
+                func_?(&(this->fields).woRef);
+                return;
+              }
             }
           }
         }
@@ -200,8 +180,8 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -213,145 +193,156 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Execute
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffffa4,0,0x48);
   this_00 = (this->fields).woRef;
   if (this_00 == (WorldObjectClientRef *)0x0) goto code_?;
-  pMVar1 = WorldObjectClientRef`1[MVRoundCube]::
-            WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                      ((WorldObjectClientRef_1_MVRoundCube_ *)this_00,
+  pOVar1 = WorldObjectClientRef`1[System::Object]::
+            WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                      ((WorldObjectClientRef_1_System_Object_ *)this_00,
                        MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                       );
-  if (pMVar1 == (MVRoundCube *)0x0) {
-    ESAddLink_LeaveAddLink(this,e,(MethodInfo *)0x0);
-    return;
+  if (pOVar1 == (Object *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__EditorEvent);
+      cRam_? = '\x01';
+    }
+    if (e != (EditorStateMachine *)0x0) {
+      bVar2 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        FSMEntity::FSMEntity_ClearStateStack((FSMEntity *)e,(MethodInfo *)0x0);
+        EditorStateMachine::EditorStateMachine_ExitGroupToRoot(e,(MethodInfo *)0x0);
+      }
+      pOVar1 = (Object *)func_?();
+      FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar1,(MethodInfo *)0x0);
+      return;
+    }
+    goto code_?;
   }
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar3 = (fVar3 - (this->fields).lastColorChangeTime) / (this->fields).FadeDuration;
+  if (fVar3 < 0.0) {
+    fVar4 = 0.0;
+code_?:
+    fVar3 = fVar4;
   }
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar3 = (this->fields).lastColorChangeTime;
-  fVar4 = (this->fields).FadeDuration;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  else {
+    fVar4 = _UNK_?;
+    if (_UNK_? < fVar3) goto code_?;
   }
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                     ((fVar2 - fVar3) / fVar4,(MethodInfo *)0x0);
   this_01 = (this->fields).materialToPulse;
-  pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_Lerp
-                      ((Color *)&stack0xffffffec,(this->fields).startColor,(this->fields).endColor,
-                       fVar3,(MethodInfo *)0x0);
+  fVar4 = (this->fields).startColor.r;
+  fVar5 = (this->fields).startColor.g;
+  fVar6 = (this->fields).startColor.b;
+  fVar7 = (this->fields).startColor.a;
+  VStack_8.x = (this->fields).endColor.g;
+  VStack_8.y = (this->fields).endColor.b;
+  VStack_8.z = (this->fields).endColor.a;
+  fVar9 = 0.0;
+  if ((0.0 <= fVar3) && (fVar9 = _UNK_?, fVar3 <= _UNK_?)) {
+    fVar9 = fVar3;
+  }
   if (this_01 == (Material *)0x0) goto code_?;
-  fVar4 = pCVar5->b;
+  value.g = (VStack_8.x - fVar5) * fVar9 + fVar5;
+  value.r = ((this->fields).endColor.r - fVar4) * fVar9 + fVar4;
+  value.b = (VStack_8.y - fVar6) * fVar9 + fVar6;
+  value.a = (VStack_8.z - fVar7) * fVar9 + fVar7;
   UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-            (this_01,*pCVar5,(MethodInfo *)0x0);
+            (this_01,value,(MethodInfo *)0x0);
   if (fVar3 == _UNK_?) {
-    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     fVar3 = (this->fields).startColor.r;
-    fVar2 = (this->fields).startColor.g;
-    fVar7 = (this->fields).startColor.b;
-    fVar8 = (this->fields).startColor.a;
-    fVar9 = (this->fields).endColor.r;
-    fVar10 = (this->fields).endColor.g;
+    fVar4 = (this->fields).startColor.g;
+    fVar5 = (this->fields).startColor.b;
+    fVar6 = (this->fields).startColor.a;
+    fVar7 = (this->fields).endColor.r;
+    fVar9 = (this->fields).endColor.g;
     fVar11 = (this->fields).endColor.b;
     fVar12 = (this->fields).endColor.a;
-    (this->fields).lastColorChangeTime = fVar6;
-    (this->fields).startColor.r = fVar9;
-    (this->fields).startColor.g = fVar10;
+    (this->fields).lastColorChangeTime = fVar10;
+    (this->fields).startColor.r = fVar7;
+    (this->fields).startColor.g = fVar9;
     (this->fields).startColor.b = fVar11;
     (this->fields).startColor.a = fVar12;
     (this->fields).endColor.r = fVar3;
-    (this->fields).endColor.g = fVar2;
-    (this->fields).endColor.b = fVar7;
-    (this->fields).endColor.a = fVar8;
+    (this->fields).endColor.g = fVar4;
+    (this->fields).endColor.b = fVar5;
+    (this->fields).endColor.a = fVar6;
   }
-  if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar13 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+  bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                     (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-  if (bVar13 == 0) {
+  if (bVar2 == 0) {
     return;
   }
-  method_00 = (MethodInfo *)0x0;
-  bVar13 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                    ((VoxelHit *)&stack0xffffffa4,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+  func_?();
+  bVar2 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                    ((VoxelHit *)&stack0xffffff94,(HashSet_1_System_Int32_ *)0x0,-0x40005,
                      (MethodInfo *)0x0);
-  if ((bVar13 != 0) && (fVar4 != -NAN)) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    this_03 = (MVWorldObjectClient *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_02,(int32_t)fVar4,(MethodInfo *)0x0);
-    if (this_03 != (MVWorldObjectClient *)0x0) {
-      cVar14 = func_?();
-      if (cVar14 == '\0') {
+  if ((bVar2 == 0) || (iStack_13 == -1)) {
 code_?:
-        cVar14 = func_?();
-        if (cVar14 != '\0') {
-          if ((e == (EditorStateMachine *)0x0) ||
-             (pMVar15 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                                  (e,(MethodInfo *)0x0), pMVar15 == (MVWorldObjectClient *)0x0))
-          goto code_?;
-          pTVar16 = CloudyThemeBase::CloudyThemeBase_get_Skybox
-                              ((CloudyThemeBase *)pMVar15,(MethodInfo *)0x0);
-          if (pTVar16 == (ThemeSkybox *)0x1) {
-            if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pVVar17 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                      StandaloneInput_MousePosition
-                                ((Vector3 *)&stack0xfffffff0,(StandaloneInput *)0x0,method_00);
-            bVar13 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverOutputConnector
-                              (this_03,*pVVar17,(MethodInfo *)0x0);
-            if (bVar13 != 0) {
-              pLVar18 = (this->fields).tempLink;
-              if (pLVar18 == (Link_1 *)0x0) goto code_?;
-              (pLVar18->fields).outputWOID = (int32_t)fVar4;
-              goto code_?;
-            }
-          }
+    if (e == (EditorStateMachine *)0x0) goto code_?;
+  }
+  else {
+    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    method_00 = (MethodInfo *)&UNK_?;
+    this_04 = (MVWorldObjectClient *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (this_03,iStack_13,(MethodInfo *)0x0);
+    if (this_04 == (MVWorldObjectClient *)0x0) goto code_?;
+    cVar14 = func_?(0xf,this_04);
+    if (cVar14 == '\0') {
+code_?:
+      cVar14 = func_?(0xe,this_04);
+      if (cVar14 == '\0') goto code_?;
+      if ((e == (EditorStateMachine *)0x0) ||
+         (pMVar15 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0)
+         , pMVar15 == (MVWorldObjectClient *)0x0)) goto code_?;
+      if ((pMVar15->fields).selectedConnector == 1) {
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MVInputWrapper);
+        }
+        pVVar16 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
+                  StandaloneInput_MousePosition(&VStack_8,(StandaloneInput *)0x0,method_00);
+        bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverOutputConnector
+                          (this_04,*pVVar16,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          pLVar17 = (this->fields).tempLink;
+          if (pLVar17 == (Link *)0x0) goto code_?;
+          (pLVar17->fields).outputWOID = iStack_13;
+          ESAddLink_DoAddLink(this,(MethodInfo *)0x0);
         }
       }
-      else {
-        if ((e == (EditorStateMachine *)0x0) ||
-           (pMVar15 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                                (e,(MethodInfo *)0x0), pMVar15 == (MVWorldObjectClient *)0x0))
-        goto code_?;
-        pTVar16 = CloudyThemeBase::CloudyThemeBase_get_Skybox
-                            ((CloudyThemeBase *)pMVar15,(MethodInfo *)0x0);
-        if (pTVar16 != (ThemeSkybox *)0x2) goto code_?;
-        if ((((uint)(TypeInfo__MVInputWrapper->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVInputWrapper->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pVVar17 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                  StandaloneInput_MousePosition
-                            ((Vector3 *)&stack0xfffffff0,(StandaloneInput *)0x0,(MethodInfo *)0xf);
-        bVar13 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverInputConnector
-                          (this_03,*pVVar17,(MethodInfo *)0x0);
-        if (bVar13 == 0) goto code_?;
-        pLVar18 = (this->fields).tempLink;
-        if (pLVar18 == (Link_1 *)0x0) goto code_?;
-        (pLVar18->fields).inputWOID = (int32_t)fVar4;
-code_?:
+    }
+    else {
+      if ((e == (EditorStateMachine *)0x0) ||
+         (pMVar15 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0)
+         , pMVar15 == (MVWorldObjectClient *)0x0)) goto code_?;
+      if ((pMVar15->fields).selectedConnector != 2) goto code_?;
+      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MVInputWrapper);
+      }
+      pVVar16 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
+                StandaloneInput_MousePosition(&VStack_8,(StandaloneInput *)0x0,in_stack_18);
+      bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverInputConnector
+                        (this_04,*pVVar16,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        pLVar17 = (this->fields).tempLink;
+        if (pLVar17 == (Link *)0x0) goto code_?;
+        (pLVar17->fields).inputWOID = iStack_13;
         ESAddLink_DoAddLink(this,(MethodInfo *)0x0);
       }
     }
   }
-code_?:
-  if (e != (EditorStateMachine *)0x0) {
-    EditorStateMachine::EditorStateMachine_DeSelectAll(e,(MethodInfo *)0x0);
+  this_02 = (e->fields).selectionController;
+  if (this_02 != (SelectionController *)0x0) {
+    SelectionController::SelectionController_DeSelectAll(this_02,(MethodInfo *)0x0);
     ESAddLink_LeaveAddLink(this,e,(MethodInfo *)0x0);
     return;
   }
@@ -370,67 +361,58 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Exit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
     cRam_? = '\x01';
   }
   pWVar1 = (this->fields).woRef;
   if (pWVar1 == (WorldObjectClientRef *)0x0) goto code_?;
-  pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-           WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                     ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar1,
+  pOVar2 = WorldObjectClientRef`1[System::Object]::
+           WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                     ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                       MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                      );
-  if (pMVar2 != (MVRoundCube *)0x0) {
+  if (pOVar2 != (Object *)0x0) {
     pWVar1 = (this->fields).woRef;
     if (pWVar1 == (WorldObjectClientRef *)0x0) goto code_?;
-    pMVar2 = WorldObjectClientRef`1[MVRoundCube]::
-             WorldObjectClientRef_1_MVRoundCube__get_WorldObjectClient
-                       ((WorldObjectClientRef_1_MVRoundCube_ *)pWVar1,
+    pOVar2 = WorldObjectClientRef`1[System::Object]::
+             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                       ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
-    if (pMVar2 == (MVRoundCube *)0x0) goto code_?;
-    (*(code *)(pMVar2->klass->vtable).HighlightConnector.method)(pMVar2);
+    if (pOVar2 == (Object *)0x0) goto code_?;
+    (*(code *)pOVar2->klass[3]._0.fields)(pOVar2);
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_00 != (MainCameraManager *)0x0) {
-    this_01 = (LineDrawManager *)
-              ThemeAttributes::NamedThemeAttribute`1[UnityEngine::Color]::
-              NamedThemeAttribute_1_UnityEngine_Color__get_Name
-                        ((NamedThemeAttribute_1_UnityEngine_Color_ *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (LineDrawManager *)0x0) {
-      LineDrawManager::LineDrawManager_SetTempLink(this_01,(Link_1 *)0x0,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-        func_?(TypeInfo__PrefabPool);
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if ((pMVar3 != (MainCameraManager *)0x0) &&
+     (this_00 = (pMVar3->fields).lineDrawManager, this_00 != (LineDrawManager *)0x0)) {
+    LineDrawManager::LineDrawManager_SetTempLink(this_00,(Link *)0x0,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__PrefabPool);
+      cRam_? = '\x01';
+    }
+    pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+    if ((pPVar4 != (PrefabPool *)0x0) &&
+       (pMVar5 = (pPVar4->fields).logicCubeConnectorRedMaterial, pMVar5 != (Material *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                (pMVar5,(this->fields).originalRedConnectorColor,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
       }
-      pPVar3 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-      if (pPVar3 != (PrefabPool *)0x0) {
-        pMVar4 = PrefabPool::PrefabPool_get_LogicCubeConnectorRedMaterial(pPVar3,(MethodInfo *)0x0);
-        if (pMVar4 != (Material *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                    (pMVar4,(this->fields).originalRedConnectorColor,(MethodInfo *)0x0);
-          pPVar3 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-          if (pPVar3 != (PrefabPool *)0x0) {
-            pMVar4 = PrefabPool::PrefabPool_get_LogicCubeConnectorBlueMaterial
-                               (pPVar3,(MethodInfo *)0x0);
-            if (pMVar4 != (Material *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                        (pMVar4,(this->fields).originalBlueConnectorColor,(MethodInfo *)0x0);
-              return;
-            }
-          }
-        }
+      pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+      if ((pPVar4 != (PrefabPool *)0x0) &&
+         (pMVar5 = (pPVar4->fields).logicCubeConnectorBlueMaterial, pMVar5 != (Material *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                  (pMVar5,(this->fields).originalBlueConnectorColor,(MethodInfo *)0x0);
+        return;
       }
     }
   }
 code_?:
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -442,37 +424,25 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_LeaveAddLink
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
+  this_00 = e;
   if (e != (EditorStateMachine *)0x0) {
-    pIVar1 = (IList_1_VoxelHit_ *)
-             EditorStateMachine::EditorStateMachine_get_ParentGroupID(e,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
+    bVar1 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      FSMEntity::FSMEntity_ClearStateStack((FSMEntity *)this_00,(MethodInfo *)0x0);
+      EditorStateMachine::EditorStateMachine_ExitGroupToRoot(this_00,(MethodInfo *)0x0);
     }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_00 != (MVWorldObjectClientManager *)0x0) {
-      this_01 = MVWorldObjectClientManager::MVWorldObjectClientManager_get_RootGroup
-                          (this_00,(MethodInfo *)0x0);
-      if (this_01 != (MVGroup *)0x0) {
-        pIVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items
-                           ((Collection_1_VoxelHit_ *)this_01,(MethodInfo *)0x0);
-        if (pIVar1 != pIVar2) {
-          FSMEntity::FSMEntity_PopState((FSMEntity *)e,(MethodInfo *)0x0);
-          return;
-        }
-        value = (Object *)func_?();
-        FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
-        return;
-      }
-    }
+    method = (MethodInfo *)&e;
+    e = (EditorStateMachine *)TypeInfo__EditorEvent;
+    value = (Object *)func_?();
+    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -482,54 +452,58 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_LeaveAddLink
 void Assembly-CSharp.dll::ESAddLink::ESAddLink_PulseColor(ESAddLink *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).lastColorChangeTime;
-  fVar3 = (this->fields).FadeDuration;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  fVar1 = (fVar1 - (this->fields).lastColorChangeTime) / (this->fields).FadeDuration;
+  if (fVar1 < 0.0) {
+    fVar2 = 0.0;
   }
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                     ((fVar1 - fVar2) / fVar3,(MethodInfo *)0x0);
+  else {
+    fVar2 = _UNK_?;
+    if (fVar1 <= _UNK_?) goto code_?;
+  }
+  fVar1 = fVar2;
+code_?:
   this_00 = (this->fields).materialToPulse;
-  pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_Lerp
-                     ((Color *)&stack0xffffffe8,(this->fields).startColor,(this->fields).endColor,
-                      fVar2,(MethodInfo *)0x0);
-  if (this_00 != (Material *)0x0) {
-    fVar2 = pCVar4->r;
-    fStack5 = pCVar4->b;
-    puStack6 = (undefined *)pCVar4->a;
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-              (this_00,*pCVar4,(MethodInfo *)0x0);
-    if (fVar2 == _UNK_?) {
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      fVar2 = (this->fields).startColor.r;
-      fVar3 = (this->fields).startColor.g;
-      fVar1 = (this->fields).startColor.b;
-      fVar8 = (this->fields).startColor.a;
-      fVar9 = (this->fields).endColor.r;
-      fVar10 = (this->fields).endColor.g;
-      fVar11 = (this->fields).endColor.b;
-      fVar12 = (this->fields).endColor.a;
-      (this->fields).lastColorChangeTime = fVar7;
-      (this->fields).startColor.r = fVar9;
-      (this->fields).startColor.g = fVar10;
-      (this->fields).startColor.b = fVar11;
-      (this->fields).startColor.a = fVar12;
-      (this->fields).endColor.r = fVar2;
-      (this->fields).endColor.g = fVar3;
-      (this->fields).endColor.b = fVar1;
-      (this->fields).endColor.a = fVar8;
-    }
+  fVar2 = (this->fields).startColor.r;
+  fVar3 = (this->fields).startColor.g;
+  fVar4 = (this->fields).startColor.b;
+  fVar5 = (this->fields).startColor.a;
+  fVar6 = 0.0;
+  if ((0.0 <= fVar1) && (fVar6 = _UNK_?, fVar1 <= _UNK_?)) {
+    fVar6 = fVar1;
+  }
+  if (this_00 == (Material *)0x0) {
+    func_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  value.g = ((this->fields).endColor.g - fVar3) * fVar6 + fVar3;
+  value.r = ((this->fields).endColor.r - fVar2) * fVar6 + fVar2;
+  value.b = ((this->fields).endColor.b - fVar4) * fVar6 + fVar4;
+  value.a = ((this->fields).endColor.a - fVar5) * fVar6 + fVar5;
+  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+            (this_00,value,(MethodInfo *)0x0);
+  if (fVar1 == _UNK_?) {
+    fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar1 = (this->fields).startColor.r;
+    fVar2 = (this->fields).startColor.g;
+    fVar3 = (this->fields).startColor.b;
+    fVar4 = (this->fields).startColor.a;
+    fVar5 = (this->fields).endColor.r;
+    fVar6 = (this->fields).endColor.g;
+    fVar9 = (this->fields).endColor.b;
+    fVar10 = (this->fields).endColor.a;
+    (this->fields).lastColorChangeTime = fVar8;
+    (this->fields).startColor.r = fVar5;
+    (this->fields).startColor.g = fVar6;
+    (this->fields).startColor.b = fVar9;
+    (this->fields).startColor.a = fVar10;
+    (this->fields).endColor.r = fVar1;
+    (this->fields).endColor.g = fVar2;
+    (this->fields).endColor.b = fVar3;
+    (this->fields).endColor.a = fVar4;
+  }
   return;
 }
 
@@ -540,23 +514,19 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink__ctor(ESAddLink *this,MethodInfo 
 
 {
   (this->fields).FadeDuration = 0.7;
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                      ((MethodInfo *)0x0);
   (this->fields)._.tintedWo = pWVar1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  if ((((uint)(TypeInfo__LoggerManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__LoggerManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__LoggerManager);
-  }
+  method_00 = (MethodInfo *)&(this->fields)._.tintedWo;
+  func_?(method_00,pWVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
   type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
   if (this_00 != (LoggerManager *)0x0) {
     pIVar2 = LoggerManager::LoggerManager_GetLogger(this_00,type,(MethodInfo *)0x0);
     (this->fields)._.logger = pIVar2;
+    func_?();
     return;
   }
   func_?();

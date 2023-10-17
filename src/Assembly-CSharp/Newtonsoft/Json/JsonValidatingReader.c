@@ -7,59 +7,90 @@ JsonValidatingReader_GetCurrentNodeSchemaType(JsonValidatingReader *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+                   );
     cRam_? = '\x01';
   }
   pJVar1 = (this->fields)._reader;
-  cVar2 = '\0';
   if (pJVar1 != (JsonReader *)0x0) {
-    iVar3 = (*(code *)(pJVar1->klass->vtable).get_TokenType.method)
-                      (pJVar1,(pJVar1->klass->vtable).get_Value.methodPtr);
-    switch(iVar3) {
-    case 7:
-      uVar4 = 4;
+    uVar2 = (*(pJVar1->klass->vtable).get_TokenType.methodPtr)
+                      (pJVar1,(pJVar1->klass->vtable).get_TokenType.method);
+    switch(uVar2) {
+    case 1:
+      value = 0x10;
       break;
-    case 8:
-      uVar4 = 2;
-      break;
-    case 9:
-      uVar4 = 1;
-      break;
-    case 10:
-      uVar4 = 8;
-      break;
-    case 0xb:
-      uVar4 = 0x40;
+    case 2:
+      value = 0x20;
       break;
     default:
-      if (iVar3 == 1) {
-        uVar4 = 0x10;
-      }
-      else {
-        if (iVar3 != 2) {
-          NVar5.value = 0;
-          NVar5.has_value = 0;
-          NVar5._5_3_ = 0;
-          return NVar5;
-        }
-        uVar4 = 0x20;
-      }
+      NVar3.hasValue = 0;
+      uVar4._1_3_ = 0;
+      register0x00000008 = 0;
+      return NVar3;
+    case 7:
+      value = 4;
+      break;
+    case 8:
+      value = 2;
+      break;
+    case 9:
+      value = 1;
+      break;
+    case 10:
+      value = 8;
+      break;
+    case 0xb:
+      value = 0x40;
     }
-    NStack_6.value = 0;
-    NStack_6.has_value = 0;
-    NStack_6._5_3_ = 0;
-    func_?(&NStack_6,uVar4,
-                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
-                   );
-    return NStack_6;
+    NStack_5.hasValue = 0;
+    NStack_5._1_3_ = 0;
+    NStack_5.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_5,value,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    NVar6.hasValue = NStack_5.hasValue;
+    uVar7._1_3_ = NStack_5._1_3_;
+    register0x00000008 = NStack_5.value;
+    return NVar6;
   }
-  func_?(0);
-  *(char *)(unaff_EDI + -0x36efa9d5) =
-       *(char *)(unaff_EDI + -0x36efa9d5) + (char)((uint)unaff_EBX >> 8) + cVar2;
-  *unaff_EBX = *unaff_EBX >> (extraout_CL & 0x1f);
-  pcVar7 = (code *)swi(3);
-  NVar5 = (Nullable_1_Newtonsoft_Json_Schema_JsonSchemaType_)(*pcVar7)();
-  return NVar5;
+  uVar8 = func_?();
+  bVar9 = (byte)uVar8 ^ (byte)extraout_ECX;
+  iVar10 = CONCAT31((int3)((ulonglong)uVar8 >> 8),bVar9);
+  pbVar11 = (byte *)(iVar10 + -0x40);
+  bVar12 = *pbVar11;
+  *pbVar11 = *pbVar11 + unaff_BL;
+  pbVar11 = (byte *)(extraout_ECX + -0x3e6befb8 + (iVar10 + -2) * 8);
+  bVar13 = (byte)((ulonglong)uVar8 >> 0x20);
+  bVar14 = CARRY1(*pbVar11,bVar13) || CARRY1(*pbVar11 + bVar13,CARRY1(bVar12,unaff_BL));
+  *pbVar11 = *pbVar11 + bVar13 + CARRY1(bVar12,unaff_BL);
+  pbVar11 = (byte *)(extraout_ECX + -0x3e6befb8 + (iVar10 + -3) * 8);
+  bVar15 = CARRY1(*pbVar11,bVar13) || CARRY1(*pbVar11 + bVar13,bVar14);
+  *pbVar11 = *pbVar11 + bVar13 + bVar14;
+  pbVar11 = (byte *)((int)((ulonglong)uVar8 >> 0x20) + -0x3f);
+  bVar13 = (byte)((uint)(iVar10 + -4) >> 8);
+  bVar12 = *pbVar11 + bVar13;
+  bVar14 = CARRY1(*pbVar11,bVar13) || CARRY1(bVar12,bVar15);
+  *pbVar11 = bVar12 + bVar15;
+  pbVar11 = (byte *)(extraout_ECX + 0x48 + (iVar10 + -5) * 8);
+  bVar13 = (byte)((uint)extraout_ECX >> 8);
+  bVar12 = *pbVar11 + bVar13;
+  bVar15 = CARRY1(*pbVar11,bVar13) || CARRY1(bVar12,bVar14);
+  *pbVar11 = bVar12 + bVar14;
+  pbVar11 = (byte *)(unaff_ESI + -0x3f);
+  bVar12 = *pbVar11;
+  bVar16 = (byte)((ulonglong)uVar8 >> 0x28);
+  bVar13 = *pbVar11 + bVar16;
+  *pbVar11 = bVar13 + bVar15;
+  *(char *)(iVar10 + -0x75efb745) =
+       *(char *)(iVar10 + -0x75efb745) + (bVar9 - 6) + (CARRY1(bVar12,bVar16) || CARRY1(bVar13,bVar15))
+  ;
+  puVar17 = (uint *)(iVar10 + 10);
+  *puVar17 = *puVar17 >> 0xc | *puVar17 << 0x14;
+  pcVar18 = (code *)swi(3);
+  NVar3 = (Nullable_1_Newtonsoft_Json_Schema_JsonSchemaType_)(*pcVar18)();
+  return NVar3;
 }
 
 
@@ -76,94 +107,92 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<System::String>);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<System::String>);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
     cRam_? = '\x01';
   }
-  bStack_4 = 0;
-  func_?();
   if (schema != (JsonSchemaModel *)0x0) {
-    pCVar5 = DesktopEditModeController::DesktopEditModeController_get_ClientShopRepository
-                       ((DesktopEditModeController *)schema,(MethodInfo *)0x0);
-    if (pCVar5 != (ClientShopRepository *)0x0) {
-      pCVar5 = DesktopEditModeController::DesktopEditModeController_get_ClientShopRepository
-                         ((DesktopEditModeController *)schema,(MethodInfo *)0x0);
-      if (pCVar5 == (ClientShopRepository *)0x0) goto code_?;
-      pCVar6 = pCVar5->klass;
-      uVar7 = 0;
-      uVar8._0_1_ = (pCVar6->_1).rank;
-      uVar8._1_1_ = (pCVar6->_1).minimumAlignment;
-      if (uVar8 != 0) {
+    if ((schema->fields)._Properties_k__BackingField !=
+        (IDictionary_2_System_String_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
+      pIVar4 = (schema->fields)._Properties_k__BackingField;
+      uVar5 = 0;
+      uVar6 = (pIVar4->klass->_1).interface_offsets_count;
+      if (uVar6 != 0) {
         do {
-          if (pCVar6->interfaceOffsets[uVar7].interfaceType ==
+          if (pIVar4->klass->interfaceOffsets[uVar5].interfaceType ==
               (Il2CppClass *)
               TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>
              ) {
-            ppMVar9 = &(&(pCVar5->klass->vtable).Finalize)
-                       [pCVar5->klass->interfaceOffsets[uVar7].offset].method;
+            pVVar7 = &(pIVar4->klass->vtable).ContainsKey +
+                     pIVar4->klass->interfaceOffsets[uVar5].offset;
             goto code_?;
           }
-          uVar7 = uVar7 + 1;
-        } while (uVar7 < uVar8);
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar6);
       }
-      ppMVar9 = (MethodInfo **)func_?();
+      pVVar7 = (VirtualInvokeData *)
+               func_?(pIVar4,
+                               TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>
+                               ,4);
 code_?:
-      cVar10 = (*(code *)*ppMVar9)();
-      if (cVar10 != '\0') {
+      cVar8 = (*pVVar7->methodPtr)(pIVar4,propertyName,pVVar7->method);
+      if (cVar8 != '\0') {
         *unaff_FS_OFFSET = uStack_3;
         return 1;
       }
     }
-    pOVar11 = ReviveScreenshotGenerator+<GenerateTexture>c__Iterator0::
-             ReviveScreenshotGenerator_GenerateTexture_c_Iterator0_System_Collections_IEnumerator_get_Current
-                       ((ReviveScreenshotGenerator_GenerateTexture_c_Iterator0 *)schema,
-                        (MethodInfo *)0x0);
-    if (pOVar11 != (Object *)0x0) {
-      pOVar11 = ReviveScreenshotGenerator+<GenerateTexture>c__Iterator0::
-               ReviveScreenshotGenerator_GenerateTexture_c_Iterator0_System_Collections_IEnumerator_get_Current
-                         ((ReviveScreenshotGenerator_GenerateTexture_c_Iterator0 *)schema,
-                          (MethodInfo *)0x0);
-      if ((pOVar11 == (Object *)0x0) || (iVar12 = func_?(), iVar12 == 0))
-      goto code_?;
-      iVar12 = func_?();
-      uStack_1 = 0;
-      do {
-        if (iVar12 == 0) goto code_?;
-        cVar10 = func_?();
-        if (cVar10 == '\0') {
-          puVar13 = (undefined *)0x76;
+    if ((schema->fields)._PatternProperties_k__BackingField ==
+        (IDictionary_2_System_String_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
+code_?:
+      *unaff_FS_OFFSET = uStack_3;
+      return 0;
+    }
+    iVar9 = func_?(2,
+                            TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>
+                            ,(schema->fields)._PatternProperties_k__BackingField);
+    if (iVar9 != 0) {
+      iVar9 = func_?(0,TypeInfo__System__Collections__Generic__IEnumerable<System::String>,
+                              iVar9);
+      uStack_1 = 1;
+      while (iVar9 != 0) {
+        cVar8 = func_?(0,TypeInfo__System__Collections__IEnumerator,iVar9);
+        if (cVar8 == '\0') {
+          uStack_1 = 0xffffffff;
+          if (iVar9 != 0) {
+            func_?(0,TypeInfo__System__IDisposable,iVar9);
+          }
           goto code_?;
         }
-        pattern = (String *)func_?();
-        if ((((uint)(TypeInfo__System__Text__RegularExpressions__Regex->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__System__Text__RegularExpressions__Regex->_1).cctor_started == 0)) {
-          func_?();
+        if (iVar9 == 0) break;
+        pattern = (String *)
+                  func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerator<System::String>
+                                  ,iVar9);
+        if ((TypeInfo__System__Text__RegularExpressions__Regex->_1).cctor_finished_or_no_cctor == 0)
+        {
+          func_?(TypeInfo__System__Text__RegularExpressions__Regex);
         }
-        bVar14 = System.dll::System::Text::RegularExpressions::Regex::Regex_IsMatch
+        bVar10 = System.dll::System::Text::RegularExpressions::Regex::Regex_IsMatch
                           (propertyName,pattern,(MethodInfo *)0x0);
-      } while (bVar14 == 0);
-      bStack_4 = 1;
-      puVar13 = (undefined *)0x78;
-code_?:
-      uStack_1 = 0xffffffff;
-      if (iVar12 != 0) {
-        puVar13 = &UNK_?;
-        func_?();
-      }
-      if (puVar13 == (undefined *)0x78) {
-        *unaff_FS_OFFSET = uStack_3;
-        return bStack_4;
+        if (bVar10 != 0) {
+          uStack_1 = 0xffffffff;
+          func_?();
+          *unaff_FS_OFFSET = uStack_3;
+          return 1;
+        }
       }
     }
-    *unaff_FS_OFFSET = uStack_3;
-    return 0;
   }
-code_?:
   func_?();
-  func_?();
-  pcVar15 = (code *)swi(3);
-  bVar14 = (*pcVar15)();
-  return bVar14;
+  pcVar11 = (code *)swi(3);
+  bVar10 = (*pcVar11)();
+  return bVar10;
 }
 
 
@@ -173,6 +202,13 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
                (double value,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
   return (double)CONCAT44((uint)((ulonglong)value >> 0x20) & _UNK_?,
                           SUB84(value,0) & _UNK_?) < _UNK_?;
 }
@@ -186,15 +222,15 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__IJsonLineInfo);
     cRam_? = '\x01';
   }
   iVar1 = func_?((this->fields)._reader,TypeInfo__Newtonsoft__Json__IJsonLineInfo);
-  if (iVar1 == 0) {
-    return 0;
+  if (iVar1 != 0) {
+    bVar2 = func_?(0,TypeInfo__Newtonsoft__Json__IJsonLineInfo,iVar1);
+    return bVar2;
   }
-  bVar2 = func_?(0,TypeInfo__Newtonsoft__Json__IJsonLineInfo,iVar1);
-  return bVar2;
+  return 0;
 }
 
 
@@ -206,15 +242,15 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__IJsonLineInfo);
     cRam_? = '\x01';
   }
   iVar1 = func_?((this->fields)._reader,TypeInfo__Newtonsoft__Json__IJsonLineInfo);
-  if (iVar1 == 0) {
-    return 0;
+  if (iVar1 != 0) {
+    iVar2 = func_?(1,TypeInfo__Newtonsoft__Json__IJsonLineInfo,iVar1);
+    return iVar2;
   }
-  iVar2 = func_?(1,TypeInfo__Newtonsoft__Json__IJsonLineInfo,iVar1);
-  return iVar2;
+  return 0;
 }
 
 
@@ -226,15 +262,15 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__IJsonLineInfo);
     cRam_? = '\x01';
   }
   iVar1 = func_?((this->fields)._reader,TypeInfo__Newtonsoft__Json__IJsonLineInfo);
-  if (iVar1 == 0) {
-    return 0;
+  if (iVar1 != 0) {
+    iVar2 = func_?(2,TypeInfo__Newtonsoft__Json__IJsonLineInfo,iVar1);
+    return iVar2;
   }
-  iVar2 = func_?(2,TypeInfo__Newtonsoft__Json__IJsonLineInfo,iVar1);
-  return iVar2;
+  return 0;
 }
 
 
@@ -246,26 +282,27 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__ValidationEventArgs);
     cRam_? = '\x01';
   }
-  this_00 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)
-            (this->fields).ValidationEventHandler;
-  if (this_00 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-    e = (InitializedGameQueryDataEventArgs *)
-        func_?(TypeInfo__Newtonsoft__Json__Schema__ValidationEventArgs);
-    Json::Schema::ValidationEventArgs::ValidationEventArgs__ctor
-              ((ValidationEventArgs *)e,exception,(MethodInfo *)0x0);
-    mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-    EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-              (this_00,(Object *)this,e,(MethodInfo *)0x0);
-    return;
+  pVVar1 = (this->fields).ValidationEventHandler;
+  if (pVVar1 != (ValidationEventHandler *)0x0) {
+    this_00 = (ValidationEventArgs *)
+              func_?(TypeInfo__Newtonsoft__Json__Schema__ValidationEventArgs);
+    if (this_00 != (ValidationEventArgs *)0x0) {
+      Schema::ValidationEventArgs::ValidationEventArgs__ctor(this_00,exception,(MethodInfo *)0x0);
+      (*(pVVar1->fields)._._.invoke_impl)
+                ((pVVar1->fields)._._.method_code,this,this_00,(pVVar1->fields)._._.method);
+      return;
+    }
+    func_?();
   }
-  func_?(exception,0,
-                  MethodInfo__Newtonsoft__Json__JsonValidatingReader__OnValidationEvent_Newtonsoft__Json__Schema__JsonSchemaException_
-                 );
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar2 = func_?(&
+                          MethodInfo__Newtonsoft__Json__JsonValidatingReader__OnValidationEvent_Newtonsoft__Json__Schema__JsonSchemaException_
+                         );
+  func_?(exception,uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -278,45 +315,46 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidatingReade
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Peek__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Pop__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__get_Count__
+                   );
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields)._stack;
   if (pSVar1 != (Stack_1_Newtonsoft_Json_JsonValidatingReader_SchemaScope_ *)0x0) {
     pJVar2 = (JsonValidatingReader_SchemaScope *)
-             System.dll::System::Collections::Generic::Stack`1[ShortcutManager+ShortcutKey]::
-             Stack_1_ShortcutManager_ShortcutKey__Pop
-                       ((Stack_1_ShortcutManager_ShortcutKey_ *)pSVar1,
+             mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+             Stack_1_System_Object__Pop
+                       ((Stack_1_System_Object_ *)pSVar1,
                         MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Pop__
                        );
     pSVar1 = (this->fields)._stack;
     if (pSVar1 != (Stack_1_Newtonsoft_Json_JsonValidatingReader_SchemaScope_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pSVar1,
-                          MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__get_Count__
-                         );
-      if (pOVar3 == (Object *)0x0) {
-        (this->fields)._currentScope = (JsonValidatingReader_SchemaScope *)0x0;
-        return pJVar2;
+      if ((pSVar1->fields)._size == 0) {
+        pJVar3 = (JsonValidatingReader_SchemaScope *)0x0;
       }
-      pSVar1 = (this->fields)._stack;
-      if (pSVar1 != (Stack_1_Newtonsoft_Json_JsonValidatingReader_SchemaScope_ *)0x0) {
-        pJVar4 = (JsonValidatingReader_SchemaScope *)
-                 System.dll::System::Collections::Generic::Stack`1[System::Collections::IList]::
-                 Stack_1_System_Collections_IList__Peek
-                           ((Stack_1_System_Collections_IList_ *)pSVar1,
+      else {
+        pJVar3 = (JsonValidatingReader_SchemaScope *)
+                 mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+                 Stack_1_System_Object__Peek
+                           ((Stack_1_System_Object_ *)pSVar1,
                             MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Peek__
                            );
-        (this->fields)._currentScope = pJVar4;
-        return pJVar2;
       }
+      (this->fields)._currentScope = pJVar3;
+      func_?(&(this->fields)._currentScope,pJVar3);
+      return pJVar2;
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  pJVar2 = (JsonValidatingReader_SchemaScope *)(*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pJVar2 = (JsonValidatingReader_SchemaScope *)(*pcVar4)();
   return pJVar2;
 }
 
@@ -327,113 +365,153 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
                (JsonValidatingReader *this,MethodInfo *method)
 
 {
-  pIVar1 = (Int32__Class *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffffc0;
+  puVar5 = &stack0xffffffc0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_Index__0__has_not_been_defined_a);
     cRam_? = '\x01';
+    puVar5 = puStack_4;
   }
-  func_?();
-  pJVar2 = (this->fields)._currentScope;
-  if ((pJVar2 == (JsonValidatingReader_SchemaScope *)0x0) ||
-     (pIVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pJVar2,(MethodInfo *)0x0),
-     pIVar3 != (IList_1_VoxelHit_ *)0x2)) {
+  puStack_4 = puVar5;
+  if (((this->fields)._currentScope == (JsonValidatingReader_SchemaScope *)0x0) ||
+     (pJVar6 = (this->fields)._currentScope, (pJVar6->fields)._tokenType != 2)) {
 code_?:
-    *unaff_FS_OFFSET = pIVar1;
+    *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  pEVar4 = (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)(this->fields)._currentScope
-  ;
-  if (pEVar4 != (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)0x0) {
-    iVar5 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-            Int32]::
-            Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                      (pEVar4,(MethodInfo *)0x0);
-    AccessoryPreviewPopup::AccessoryPreviewPopup_SetBody
-              ((AccessoryPreviewPopup *)pEVar4,(MVBody *)(iVar5 + 1),(MethodInfo *)0x0);
-    pJVar2 = (this->fields)._currentScope;
-    if (pJVar2 != (JsonValidatingReader_SchemaScope *)0x0) {
-      puVar6 = (undefined4 *)&UNK_?;
-      pOVar7 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pJVar2,
-                          (MethodInfo *)0x0);
-      if (pOVar7 != (Object *)0x0) {
-        iVar8 = func_?();
-        while (iVar8 != 0) {
-          cVar9 = func_?();
-          if (cVar9 == '\0') {
-            *puVar6 = 0xd0;
-            if (iVar8 != 0) {
-              func_?();
-            }
+  piVar7 = &(pJVar6->fields)._ArrayItemCount_k__BackingField;
+  *piVar7 = *piVar7 + 1;
+  pJVar6 = (this->fields)._currentScope;
+  if ((pJVar6 != (JsonValidatingReader_SchemaScope *)0x0) &&
+     (pIVar8 = (pJVar6->fields)._schemas,
+     pIVar8 != (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0)) {
+    pSStack_9 = (String *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,pIVar8);
+    uStack_1 = 1;
+code_?:
+    if (pSStack_9 != (String *)0x0) {
+      cVar10 = func_?(0,TypeInfo__System__Collections__IEnumerator,pSStack_9);
+      pSVar11 = pSStack_9;
+      if (cVar10 == '\0') {
+        uStack_1 = 0xffffffff;
+        if (pSStack_9 != (String *)0x0) {
+          func_?(0,TypeInfo__System__IDisposable,pSStack_9);
+        }
+        goto code_?;
+      }
+      pSStack_12 = pSStack_9;
+      if (pSStack_9 == (String *)0x0) goto code_?;
+      pSStack_13 = pSStack_9->klass;
+      uVar14 = 0;
+      uStack_15 = 0;
+      uVar16 = (pSStack_13->_1).interface_offsets_count;
+      if (uVar16 != 0) {
+        do {
+          if (pSStack_13->interfaceOffsets[uVar14].interfaceType ==
+              (Il2CppClass *)
+              TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+             ) {
+            pVVar17 = &(pSStack_9->klass->vtable).Equals +
+                     pSStack_9->klass->interfaceOffsets[uVar14].offset;
             goto code_?;
           }
-          this_00 = (PrefabPool *)func_?();
-          if (this_00 != (PrefabPool *)0x0) {
-            puVar6 = (undefined4 *)0x0;
-            pOVar10 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(this_00,(MethodInfo *)0x0);
-            if (pOVar10 != (ObjectPrefab *)0x0) {
-              puVar6 = (undefined4 *)&UNK_?;
-              pOVar10 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(this_00,(MethodInfo *)0x0);
-              if (pOVar10 == (ObjectPrefab *)0x0) break;
-              iVar11 = func_?();
-              if (1 < iVar11) {
-                pEVar4 = (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)
-                         (this->fields)._currentScope;
-                if (pEVar4 == (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)0x0)
-                break;
-                iVar5 = System.Core.dll::System::Linq::
-                        Enumerable+<CreateCastIterator>c__Iterator0`1[System::Int32]::
-                        Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                                  (pEVar4,(MethodInfo *)0x0);
-                pOVar10 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(this_00,(MethodInfo *)0x0);
-                if (pOVar10 == (ObjectPrefab *)0x0) break;
-                pIVar1 = (Int32__Class *)&UNK_?;
-                iVar11 = func_?();
-                if (iVar11 <= iVar5) {
-                  if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.
-                              methodPtr & 0x2000000) != 0) &&
-                     ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-                    func_?();
-                  }
-                  provider = mscorlib.dll::System::Globalization::CultureInfo::
-                             CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-                  args = (Object__Array *)func_?();
-                  pEVar4 = (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)
-                           (this->fields)._currentScope;
-                  if (pEVar4 == (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)0x0)
-                  break;
-                  System.Core.dll::System::Linq::
-                  Enumerable+<CreateCastIterator>c__Iterator0`1[System::Int32]::
-                  Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                            (pEVar4,(MethodInfo *)0x0);
-                  pIVar1 = TypeInfo__System__Int32;
-                  func_?();
-                  if (args == (Object__Array *)0x0) break;
-                  func_?();
-                  iVar8 = 0;
-                  func_?();
-                  message = Json::Utilities::StringUtils::StringUtils_FormatWith
-                                      (StringLiteral_Index__0__has_not_been_defined_a,
-                                       (IFormatProvider *)provider,args,(MethodInfo *)0x0);
-                  puVar6 = (undefined4 *)0x0;
-                  JsonValidatingReader_RaiseError
-                            (this,message,(JsonSchemaModel *)this_00,(MethodInfo *)0x0);
-                }
-              }
+          uVar14 = uVar14 + 1;
+        } while (uVar14 < uVar16);
+      }
+      pVVar17 = (VirtualInvokeData *)
+               func_?(pSStack_9,
+                               TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                               ,0);
+code_?:
+      schema = (JsonSchemaModel *)(*pVVar17->methodPtr)(pSVar11,pVVar17->method);
+      if (((schema != (JsonSchemaModel *)0x0) &&
+          ((schema->fields)._Items_k__BackingField !=
+           (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0)) &&
+         (iVar18 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,(schema->fields)._Items_k__BackingField), 1 < iVar18)) {
+        pJVar6 = (this->fields)._currentScope;
+        if (pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) goto code_?;
+        iVar18 = (pJVar6->fields)._ArrayItemCount_k__BackingField;
+        pIVar8 = (schema->fields)._Items_k__BackingField;
+        if (pIVar8 == (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) goto code_?;
+        iVar19 = func_?(0,
+                                 TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,pIVar8);
+        if (iVar19 <= iVar18) {
+          if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__System__Globalization__CultureInfo);
+          }
+          pSStack_13 = (String__Class *)
+                       mscorlib.dll::System::Globalization::CultureInfo::
+                       CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+          args = (Object__Array *)func_?(TypeInfo__System__Object);
+          pJVar6 = (this->fields)._currentScope;
+          if (pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) goto code_?;
+          iStack_20 = (pJVar6->fields)._ArrayItemCount_k__BackingField;
+          pSStack_12 = (String *)func_?(TypeInfo__System__Int32,&iStack_20);
+          if (args == (Object__Array *)0x0) goto code_?;
+          if ((pSStack_12 == (String *)0x0) ||
+             (iVar18 = func_?(pSStack_12,(args->klass->_0).element_class), iVar18 != 0)) {
+            func_?(0,pSStack_12);
+            pSStack_12 = StringLiteral_Index__0__has_not_been_defined_a;
+            pSVar11 = StringLiteral_Index__0__has_not_been_defined_a;
+            if (cRam_? == '\0') {
+              func_?(&StringLiteral_format);
+              cRam_? = '\x01';
+              pSVar11 = pSStack_12;
+            }
+            pSStack_12 = StringLiteral_format;
+            if (pSVar11 != (String *)0x0) {
+              pSVar11 = mscorlib.dll::System::String::String_Format_7
+                                  ((IFormatProvider *)pSStack_13,pSVar11,args,(MethodInfo *)0x0);
+              JsonValidatingReader_RaiseError(this,pSVar11,schema,(MethodInfo *)0x0);
+              goto code_?;
             }
           }
+          else {
+            uVar21 = func_?();
+            func_?(uVar21,0);
+          }
+          uVar21 = func_?(&TypeInfo__System__ArgumentNullException);
+          this_00 = (ArgumentNullException *)func_?(uVar21);
+          func_?(this_00);
+          mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                    (this_00,pSStack_12,(MethodInfo *)0x0);
+          uVar21 = func_?(&
+                                   MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                                  );
+          func_?(this_00,uVar21);
+          goto code_?;
         }
       }
+      goto code_?;
     }
   }
+code_?:
   func_?();
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -446,20 +524,22 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Push_Newtonsoft__Json__JsonValidatingReader__SchemaScope_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._stack;
   if (this_00 != (Stack_1_Newtonsoft_Json_JsonValidatingReader_SchemaScope_ *)0x0) {
-    System.dll::System::Collections::Generic::Stack`1[ShortcutManager+ShortcutKey]::
-    Stack_1_ShortcutManager_ShortcutKey__Push
-              ((Stack_1_ShortcutManager_ShortcutKey_ *)this_00,(ShortcutManager_ShortcutKey *)scope,
+    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::Stack_1_System_Object__Push
+              ((Stack_1_System_Object_ *)this_00,(Object *)scope,
                MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Push_Newtonsoft__Json__JsonValidatingReader__SchemaScope_
               );
     (this->fields)._currentScope = scope;
+    func_?(&(this->fields)._currentScope,scope);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -474,89 +554,120 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__Newtonsoft__Json__IJsonLineInfo);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__JsonSchemaException);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral__Line__0___position__1__);
     cRam_? = '\x01';
   }
-  if (this == (JsonValidatingReader *)0x0) {
-code_?:
-    func_?(0);
-code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0,0);
-    func_?(uVar1);
-  }
-  else {
+  pJVar1 = this;
+  if (this != (JsonValidatingReader *)0x0) {
     cVar2 = func_?(0,TypeInfo__Newtonsoft__Json__IJsonLineInfo,this);
+    pSVar3 = message;
     if (cVar2 == '\0') {
 code_?:
-      lineNumber = func_?(1,TypeInfo__Newtonsoft__Json__IJsonLineInfo,this);
-      linePosition = func_?(2,TypeInfo__Newtonsoft__Json__IJsonLineInfo,this);
-      this_01 = (JsonSchemaException *)
-                func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaException);
-      Json::Schema::JsonSchemaException::JsonSchemaException__ctor_4
-                (this_01,message,(Exception *)0x0,lineNumber,linePosition,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
+      lineNumber = func_?(1,TypeInfo__Newtonsoft__Json__IJsonLineInfo,pJVar1);
+      linePosition = func_?(2,TypeInfo__Newtonsoft__Json__IJsonLineInfo,pJVar1);
+      unaff_EBX = (JsonSchemaException *)
+                  func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaException);
+      if (unaff_EBX != (JsonSchemaException *)0x0) {
+        Schema::JsonSchemaException::JsonSchemaException__ctor_4
+                  (unaff_EBX,pSVar3,(Exception *)0x0,lineNumber,linePosition,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          pVStack_4 = (ValidationEventArgs__Class *)
+                      &TypeInfo__Newtonsoft__Json__Schema__ValidationEventArgs;
+          func_?();
+          cRam_? = '\x01';
+        }
+        pVVar5 = (pJVar1->fields).ValidationEventHandler;
+        if (pVVar5 == (ValidationEventHandler *)0x0) goto code_?;
+        pVStack_4 = TypeInfo__Newtonsoft__Json__Schema__ValidationEventArgs;
+        this = (JsonValidatingReader *)func_?();
+        if (this != (JsonValidatingReader *)0x0) {
+          Schema::ValidationEventArgs::ValidationEventArgs__ctor
+                    ((ValidationEventArgs *)this,unaff_EBX,(MethodInfo *)0x0);
+          (*(pVVar5->fields)._._.invoke_impl)
+                    ((pVVar5->fields)._._.method_code,pJVar1,this,(pVVar5->fields)._._.method);
+          return;
+        }
+      }
+    }
+    else {
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Globalization__CultureInfo);
+      }
+      provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                           ((MethodInfo *)0x0);
+      args = (Object__Array *)func_?(TypeInfo__System__Object,2);
+      this = (JsonValidatingReader *)
+             func_?(1,TypeInfo__Newtonsoft__Json__IJsonLineInfo,pJVar1);
+      unaff_EBX = (JsonSchemaException *)func_?(TypeInfo__System__Int32,&this);
+      if (args != (Object__Array *)0x0) {
+        if ((unaff_EBX == (JsonSchemaException *)0x0) ||
+           (iVar6 = func_?(unaff_EBX,(args->klass->_0).element_class), iVar6 != 0)) {
+          if (args->max_length != 0) {
+            args->vector[0] = (Object *)unaff_EBX;
+            func_?(args->vector,unaff_EBX);
+            pVStack_4 = (ValidationEventArgs__Class *)
+                        func_?(2,TypeInfo__Newtonsoft__Json__IJsonLineInfo,pJVar1);
+            unaff_EBX = (JsonSchemaException *)func_?(TypeInfo__System__Int32,&pVStack_4);
+            if ((unaff_EBX != (JsonSchemaException *)0x0) &&
+               (iVar6 = func_?(unaff_EBX,(args->klass->_0).element_class), iVar6 == 0))
+            goto code_?;
+            if (args->max_length < 2) goto code_?;
+            args->vector[1] = (Object *)unaff_EBX;
+            func_?(args->vector + 1,unaff_EBX);
+            pSVar3 = StringLiteral__Line__0___position__1__;
+            if (cRam_? == '\0') {
+              func_?(&StringLiteral_format);
+              cRam_? = '\x01';
+            }
+            pSStack_7 = StringLiteral_format;
+            unaff_EBX = (JsonSchemaException *)0x0;
+            if (pSVar3 != (String *)0x0) {
+              pSVar3 = mscorlib.dll::System::String::String_Format_7
+                                 ((IFormatProvider *)provider,pSVar3,args,(MethodInfo *)0x0);
+              pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                                 (message,pSVar3,(MethodInfo *)0x0);
+              goto code_?;
+            }
+            goto code_?;
+          }
+        }
+        else {
+          uVar8 = func_?(0);
+          func_?(uVar8);
+code_?:
+          uVar8 = func_?(0);
+          func_?(uVar8);
+code_?:
+          uVar8 = func_?(&TypeInfo__System__ArgumentNullException);
+          this_00 = (ArgumentNullException *)func_?(uVar8);
+          func_?(this_00);
+          mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                    (this_00,pSStack_7,(MethodInfo *)0x0);
+          uVar8 = func_?(&
+                                  MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                                 );
+          func_?(this_00,uVar8);
+        }
+code_?:
         func_?();
-        cRam_? = '\x01';
       }
-      ex = TypeInfo__Newtonsoft__Json__Schema__ValidationEventArgs;
-      this_00 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)
-                (this->fields).ValidationEventHandler;
-      if (this_00 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-        e = (InitializedGameQueryDataEventArgs *)func_?();
-        Json::Schema::ValidationEventArgs::ValidationEventArgs__ctor
-                  ((ValidationEventArgs *)e,(JsonSchemaException *)ex,(MethodInfo *)0x0);
-        mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-        EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-                  (this_00,(Object *)this,e,(MethodInfo *)0x0);
-        return;
-      }
-      goto code_?;
-    }
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__Globalization__CultureInfo);
-    }
-    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                         ((MethodInfo *)0x0);
-    args = (Object__Array *)func_?(TypeInfo__System__Object,2);
-    func_?(1,TypeInfo__Newtonsoft__Json__IJsonLineInfo,this);
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-    if (args == (Object__Array *)0x0) goto code_?;
-    if ((pOVar3 != (Object *)0x0) &&
-       (iVar4 = func_?(pOVar3,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar3;
-    func_?(2,TypeInfo__Newtonsoft__Json__IJsonLineInfo,this);
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
-    if ((pOVar3 != (Object *)0x0) &&
-       (iVar4 = func_?(pOVar3,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    if (1 < args->max_length) {
-      args->vector[1] = pOVar3;
-      str1 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                       (StringLiteral__Line__0___position__1__,(IFormatProvider *)provider,args,
-                        (MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      message = mscorlib.dll::System::String::String_Concat_2(message,str1,(MethodInfo *)0x0);
-      goto code_?;
     }
   }
-  uVar1 = func_?(0);
-  func_?(uVar1);
-code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+code_?:
+  pVStack_4 = (ValidationEventArgs__Class *)
+              &
+              MethodInfo__Newtonsoft__Json__JsonValidatingReader__OnValidationEvent_Newtonsoft__Json__Schema__JsonSchemaException_
+  ;
+  pVStack_4 = (ValidationEventArgs__Class *)func_?();
+  func_?(unaff_EBX);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -569,22 +680,22 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
 {
   pJVar1 = (this->fields)._reader;
   if (pJVar1 != (JsonReader *)0x0) {
-    cVar2 = (*(code *)(pJVar1->klass->vtable).__unknown.method)
-                      (pJVar1,(pJVar1->klass->vtable).__unknown_1.methodPtr);
+    cVar2 = (*(pJVar1->klass->vtable).__unknown.methodPtr)
+                      (pJVar1,(pJVar1->klass->vtable).__unknown.method);
     if (cVar2 == '\0') {
       return 0;
     }
     pJVar1 = (this->fields)._reader;
     if (pJVar1 != (JsonReader *)0x0) {
-      iVar3 = (*(code *)(pJVar1->klass->vtable).get_TokenType.method)
-                        (pJVar1,(pJVar1->klass->vtable).get_Value.methodPtr);
+      iVar3 = (*(pJVar1->klass->vtable).get_TokenType.methodPtr)
+                        (pJVar1,(pJVar1->klass->vtable).get_TokenType.method);
       if (iVar3 != 5) {
         JsonValidatingReader_ValidateCurrentToken(this,(MethodInfo *)0x0);
       }
       return 1;
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   bVar5 = (*pcVar4)();
   return bVar5;
@@ -601,12 +712,12 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidatingReade
   pJVar1 = (this->fields)._reader;
   if (pJVar1 != (JsonReader *)0x0) {
     pBVar2 = (Byte__Array *)
-             (*(code *)(pJVar1->klass->vtable).__unknown_1.method)
-                       (pJVar1,(pJVar1->klass->vtable).__unknown_2.methodPtr);
+             (*(pJVar1->klass->vtable).__unknown_1.methodPtr)
+                       (pJVar1,(pJVar1->klass->vtable).__unknown_1.method);
     JsonValidatingReader_ValidateCurrentToken(this,(MethodInfo *)0x0);
     return pBVar2;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   pBVar2 = (Byte__Array *)(*pcVar3)();
   return pBVar2;
@@ -625,31 +736,23 @@ JsonValidatingReader_ReadAsDateTimeOffset
   pJVar1 = (this->fields)._reader;
   if (pJVar1 != (JsonReader *)0x0) {
     puVar2 = (undefined4 *)
-             (*(code *)(pJVar1->klass->vtable).__unknown_3.method)
-                       (auStack_3,pJVar1,(pJVar1->klass->vtable).SetToken.methodPtr);
-    uStack_4 = *puVar2;
-    uStack_5 = puVar2[1];
-    iStack_6 = puVar2[2];
-    uStack_7 = puVar2[3];
-    uStack_8 = puVar2[4];
-    uStack_9 = puVar2[5];
-    uStack_10 = puVar2[6];
-    uStack_11 = puVar2[7];
+             (*(pJVar1->klass->vtable).__unknown_3.methodPtr)
+                       (auStack_3,pJVar1,(pJVar1->klass->vtable).__unknown_3.method);
+    uVar4 = puVar2[1];
+    uVar5 = puVar2[2];
+    uVar6 = puVar2[3];
+    *(undefined4 *)__return_storage_ptr__ = *puVar2;
+    *(undefined4 *)&__return_storage_ptr__->field_0x4 = uVar4;
+    *(undefined4 *)&(__return_storage_ptr__->value)._dateTime._dateData = uVar5;
+    *(undefined4 *)((int)&(__return_storage_ptr__->value)._dateTime._dateData + 4) = uVar6;
+    *(undefined8 *)&(__return_storage_ptr__->value)._offsetMinutes = *(undefined8 *)(puVar2 + 4);
     JsonValidatingReader_ValidateCurrentToken(this,(MethodInfo *)0x0);
-    *(undefined4 *)&(__return_storage_ptr__->value).dt.ticks._ticks = uStack_4;
-    *(undefined4 *)((int)&(__return_storage_ptr__->value).dt.ticks._ticks + 4) = uStack_5;
-    (__return_storage_ptr__->value).dt.kind = iStack_6;
-    *(undefined4 *)&(__return_storage_ptr__->value).dt.field_0xc = uStack_7;
-    *(undefined4 *)&(__return_storage_ptr__->value).utc_offset._ticks = uStack_8;
-    *(undefined4 *)((int)&(__return_storage_ptr__->value).utc_offset._ticks + 4) = uStack_9;
-    *(undefined4 *)&__return_storage_ptr__->has_value = uStack_10;
-    *(undefined4 *)&__return_storage_ptr__->field_0x1c = uStack_11;
     return __return_storage_ptr__;
   }
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  pNVar13 = (Nullable_1_DateTimeOffset_ *)(*pcVar12)();
-  return pNVar13;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  pNVar8 = (Nullable_1_DateTimeOffset_ *)(*pcVar7)();
+  return pNVar8;
 }
 
 
@@ -663,26 +766,26 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidatingReade
 {
   pJVar1 = (this->fields)._reader;
   if (pJVar1 != (JsonReader *)0x0) {
-    puVar2 = (uint32_t *)
-             (*(code *)(pJVar1->klass->vtable).__unknown_2.method)
-                       (auStack_3,pJVar1,(pJVar1->klass->vtable).__unknown_3.methodPtr);
-    uStack_4 = *puVar2;
-    uStack_5 = puVar2[1];
-    uStack_6 = puVar2[2];
-    uStack_7 = puVar2[3];
-    uVar8 = puVar2[4];
+    puVar2 = (undefined4 *)
+             (*(pJVar1->klass->vtable).__unknown_2.methodPtr)
+                       (auStack_3,pJVar1,(pJVar1->klass->vtable).__unknown_2.method);
+    uVar4 = puVar2[1];
+    iVar5 = puVar2[2];
+    iVar6 = puVar2[3];
+    *(undefined4 *)__return_storage_ptr__ = *puVar2;
+    *(undefined4 *)&__return_storage_ptr__->field_0x4 = uVar4;
+    (__return_storage_ptr__->value).flags = iVar5;
+    (__return_storage_ptr__->value).hi = iVar6;
+    uVar7 = *(undefined8 *)(puVar2 + 4);
+    (__return_storage_ptr__->value).lo = (int)uVar7;
+    (__return_storage_ptr__->value).mid = (int)((ulonglong)uVar7 >> 0x20);
     JsonValidatingReader_ValidateCurrentToken(this,(MethodInfo *)0x0);
-    (__return_storage_ptr__->value).flags = uStack_4;
-    (__return_storage_ptr__->value).hi = uStack_5;
-    (__return_storage_ptr__->value).lo = uStack_6;
-    (__return_storage_ptr__->value).mid = uStack_7;
-    *(uint32_t *)&__return_storage_ptr__->has_value = uVar8;
     return __return_storage_ptr__;
   }
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  pNVar10 = (Nullable_1_Decimal_ *)(*pcVar9)();
-  return pNVar10;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pNVar9 = (Nullable_1_Decimal_ *)(*pcVar8)();
+  return pNVar9;
 }
 
 
@@ -694,75 +797,98 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType);
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+                   );
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_Invalid_type__Expected__0__but_g);
     cRam_? = '\x01';
   }
+  schema = currentSchema;
   if (currentSchema == (JsonSchemaModel *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar1 = func_?(0,0);
+    uVar1 = func_?(0);
     func_?(uVar1);
 code_?:
-    uVar1 = func_?(0,0);
+    uVar1 = func_?(0);
     func_?(uVar1);
   }
   else {
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)currentSchema,
-                        (MethodInfo *)0x0);
-    func_?(&stack0xfffffff0,pOVar2,
-                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
-                   );
-    bVar3 = Json::Schema::JsonSchemaGenerator::JsonSchemaGenerator_HasFlag_1
-                      ((Nullable_1_Newtonsoft_Json_Schema_JsonSchemaType_)0x0,currentType,
+    NStack_2.hasValue = 0;
+    NStack_2._1_3_ = 0;
+    NStack_2.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_2,(currentSchema->fields)._Type_k__BackingField,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    bVar3 = Schema::JsonSchemaGenerator::JsonSchemaGenerator_HasFlag_1
+                      ((Nullable_1_Newtonsoft_Json_Schema_JsonSchemaType_)NStack_2,currentType,
                        (MethodInfo *)0x0);
     if (bVar3 != 0) {
       return 1;
     }
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                         ((MethodInfo *)0x0);
+    pCStack_4 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+    NStack_2.value = (uint32_t)&UNK_?;
     args = (Object__Array *)func_?();
-    mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::Serialization::
-    JsonProperty]::
-    Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-              ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)currentSchema,
-               (MethodInfo *)0x0);
-    pOVar2 = (Object *)func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType);
+    currentSchema = (JsonSchemaModel *)(schema->fields)._Type_k__BackingField;
+    NStack_2.value = (uint32_t)&currentSchema;
+    NStack_2._0_4_ = TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType;
+    pOVar5 = (Object *)func_?();
     if (args == (Object__Array *)0x0) goto code_?;
-    if ((pOVar2 != (Object *)0x0) &&
-       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar2;
-    pOVar2 = (Object *)
-             func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType,&stack0xfffffff8);
-    if ((pOVar2 == (Object *)0x0) ||
-       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 != 0)) {
-      if (1 < args->max_length) {
-        args->vector[1] = pOVar2;
-        message = Json::Utilities::StringUtils::StringUtils_FormatWith
-                            (StringLiteral_Invalid_type__Expected__0__but_g,
-                             (IFormatProvider *)provider,args,(MethodInfo *)0x0);
-        JsonValidatingReader_RaiseError(this,message,currentSchema,(MethodInfo *)0x0);
-        return 0;
-      }
+    if (pOVar5 != (Object *)0x0) {
+      iVar6 = func_?(pOVar5,(args->klass->_0).element_class);
+      if (iVar6 != 0) goto code_?;
       goto code_?;
     }
-  }
-  uVar1 = func_?(0,0);
-  func_?(uVar1);
 code_?:
-  uVar1 = func_?(0);
-  func_?(uVar1);
-  pcVar5 = (code *)swi(3);
-  bVar3 = (*pcVar5)();
+    if (args->max_length == 0) goto code_?;
+    args->vector[0] = pOVar5;
+    func_?(args->vector,pOVar5);
+    pOVar5 = (Object *)
+             func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType,&stack0xfffffff8);
+    if (pOVar5 != (Object *)0x0) {
+      iVar6 = func_?(pOVar5,(args->klass->_0).element_class);
+      if (iVar6 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
+    if (args->max_length < 2) goto code_?;
+    args->vector[1] = pOVar5;
+    func_?(args->vector + 1,pOVar5);
+    pSVar7 = StringLiteral_Invalid_type__Expected__0__but_g;
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_format);
+      cRam_? = '\x01';
+    }
+    NStack_2.value = (uint32_t)StringLiteral_format;
+    if (pSVar7 != (String *)0x0) {
+      pSVar7 = mscorlib.dll::System::String::String_Format_7
+                         ((IFormatProvider *)pCStack_4,pSVar7,args,(MethodInfo *)0x0);
+      JsonValidatingReader_RaiseError(this,pSVar7,schema,(MethodInfo *)0x0);
+      return 0;
+    }
+  }
+  uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_00 = (ArgumentNullException *)func_?(uVar1);
+  func_?(this_00);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (this_00,(String *)NStack_2.value,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                          MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                         );
+  func_?(this_00,uVar1);
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  bVar3 = (*pcVar8)();
   return bVar3;
 }
 
@@ -806,298 +932,373 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
      JsonValidatingReader_ValidateCurrentToken(JsonValidatingReader *this,MethodInfo *method)
 
 {
-  uVar1 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&
+                    System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__ToList<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_
+                   );
+    func_?(&
+                    System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__Where<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>_
+                   );
+    func_?(&TypeInfo__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__JsonSchemaModelBuilder);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__JsonValidatingReader__ValidateArray_Newtonsoft__Json__Schema__JsonSchemaModel_
+                   );
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__JsonValidatingReader__ValidateObject_Newtonsoft__Json__Schema__JsonSchemaModel_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__JsonValidatingReader__SchemaScope);
     cRam_? = '\x01';
   }
-  this_00 = (ArgumentOutOfRangeException *)0x0;
-  puVar2 = (undefined4 *)&stack0xffffffb8;
-  func_?();
-  puVar3 = (undefined4 *)&stack0xffffffb8;
   if ((this->fields)._model == (JsonSchemaModel *)0x0) {
-    unaff_EDI = (JsonSchemaModelBuilder *)func_?();
-    Json::Schema::JsonSchemaModelBuilder::JsonSchemaModelBuilder__ctor(unaff_EDI,(MethodInfo *)0x0);
-    if (unaff_EDI != (JsonSchemaModelBuilder *)0x0) {
-      pJVar4 = Json::Schema::JsonSchemaModelBuilder::JsonSchemaModelBuilder_Build
-                         (unaff_EDI,(this->fields)._schema,(MethodInfo *)0x0);
-      (this->fields)._model = pJVar4;
-      puVar3 = puVar2;
-      goto code_?;
-    }
-    goto code_?;
+    this_00 = (JsonSchemaModelBuilder *)
+              func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaModelBuilder);
+    if (this_00 == (JsonSchemaModelBuilder *)0x0) goto code_?;
+    Schema::JsonSchemaModelBuilder::JsonSchemaModelBuilder__ctor(this_00,(MethodInfo *)0x0);
+    pJVar4 = Schema::JsonSchemaModelBuilder::JsonSchemaModelBuilder_Build
+                       (this_00,(this->fields)._schema,(MethodInfo *)0x0);
+    (this->fields)._model = pJVar4;
+    func_?(&(this->fields)._model,pJVar4);
   }
-code_?:
   pJVar5 = (this->fields)._reader;
   if (pJVar5 == (JsonReader *)0x0) goto code_?;
-  uVar6 = (*(code *)(pJVar5->klass->vtable).get_TokenType.method)();
+  uVar6 = (*(pJVar5->klass->vtable).get_TokenType.methodPtr)
+                    (pJVar5,(pJVar5->klass->vtable).get_TokenType.method);
   switch(uVar6) {
   case 1:
     JsonValidatingReader_ProcessValue(this,(MethodInfo *)0x0);
-    pIVar7 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
-    pUVar8 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar8,(Object *)this,
+    unaff_EBX = (JsonSchemaModel *)
+                JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
+    pFVar7 = (Func_2_Object_Boolean_ *)
+             func_?(TypeInfo__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>
+                            );
+    if (pFVar7 == (Func_2_Object_Boolean_ *)0x0) break;
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+              (pFVar7,(Object *)this,
                MethodInfo__Newtonsoft__Json__JsonValidatingReader__ValidateObject_Newtonsoft__Json__Schema__JsonSchemaModel_
-               ,
-               MethodInfo__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>__Func_System__Object__void__
-              );
-    pIVar9 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_17
-                        ((IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)pIVar7,
-                         (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Boolean_
-                          *)pUVar8,
+               ,(MethodInfo *)0x0);
+    pIVar8 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_4
+                        ((IEnumerable_1_System_Object_ *)unaff_EBX,pFVar7,
                          System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__Where<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>_
                         );
-    schemas = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                        ((IEnumerable_1_UseInteractor_ *)pIVar9,
-                         System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__ToList<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_
-                        );
-    pJVar10 = (JsonValidatingReader_SchemaScope *)func_?();
+    unaff_EBX = (JsonSchemaModel *)
+                System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+                          (pIVar8,
+                           System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__ToList<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_
+                          );
+    pJVar9 = (JsonValidatingReader_SchemaScope *)
+              func_?(TypeInfo__Newtonsoft__Json__JsonValidatingReader__SchemaScope);
+    if (pJVar9 == (JsonValidatingReader_SchemaScope *)0x0) break;
     tokenType = JTokenType__Enum_Object;
     goto code_?;
   case 2:
     JsonValidatingReader_ProcessValue(this,(MethodInfo *)0x0);
-    pIVar7 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
-    pUVar8 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar8,(Object *)this,
+    unaff_EBX = (JsonSchemaModel *)
+                JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
+    pFVar7 = (Func_2_Object_Boolean_ *)
+             func_?(TypeInfo__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>
+                            );
+    if (pFVar7 == (Func_2_Object_Boolean_ *)0x0) break;
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+              (pFVar7,(Object *)this,
                MethodInfo__Newtonsoft__Json__JsonValidatingReader__ValidateArray_Newtonsoft__Json__Schema__JsonSchemaModel_
-               ,
-               MethodInfo__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>__Func_System__Object__void__
-              );
-    pIVar9 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_17
-                        ((IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)pIVar7,
-                         (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Boolean_
-                          *)pUVar8,
+               ,(MethodInfo *)0x0);
+    pIVar8 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_4
+                        ((IEnumerable_1_System_Object_ *)unaff_EBX,pFVar7,
                          System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__Where<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>__System__Func<Newtonsoft::Json::Schema::JsonSchemaModel,_bool>_
                         );
-    schemas = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                        ((IEnumerable_1_UseInteractor_ *)pIVar9,
-                         System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__ToList<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_
-                        );
-    pJVar10 = (JsonValidatingReader_SchemaScope *)func_?();
+    unaff_EBX = (JsonSchemaModel *)
+                System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+                          (pIVar8,
+                           System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__ToList<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_
+                          );
+    pJVar9 = (JsonValidatingReader_SchemaScope *)
+              func_?(TypeInfo__Newtonsoft__Json__JsonValidatingReader__SchemaScope);
+    if (pJVar9 == (JsonValidatingReader_SchemaScope *)0x0) break;
     tokenType = JTokenType__Enum_Array;
-code_?:
-    JsonValidatingReader+SchemaScope::JsonValidatingReader_SchemaScope__ctor
-              (pJVar10,tokenType,(IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)schemas,
-               (MethodInfo *)0x0);
-    uVar1 = 0;
-    JsonValidatingReader_Push(this,pJVar10,(MethodInfo *)0x0);
-code_?:
-    *unaff_FS_OFFSET = uVar1;
-    return;
+    goto code_?;
   case 3:
-    pJVar10 = (JsonValidatingReader_SchemaScope *)func_?();
+    pJVar9 = (JsonValidatingReader_SchemaScope *)
+              func_?(TypeInfo__Newtonsoft__Json__JsonValidatingReader__SchemaScope);
+    if (pJVar9 == (JsonValidatingReader_SchemaScope *)0x0) break;
+    unaff_EBX = (JsonSchemaModel *)0x0;
+    tokenType = JTokenType__Enum_Constructor;
+code_?:
     JsonValidatingReader+SchemaScope::JsonValidatingReader_SchemaScope__ctor
-              (pJVar10,JTokenType__Enum_Constructor,
-               (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0,(MethodInfo *)0x0);
-    JsonValidatingReader_Push(this,pJVar10,(MethodInfo *)0x0);
-    *unaff_FS_OFFSET = uVar1;
+              (pJVar9,tokenType,(IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)unaff_EBX,
+               (MethodInfo *)0x0);
+    JsonValidatingReader_Push(this,pJVar9,(MethodInfo *)0x0);
+code_?:
+    *unaff_FS_OFFSET = uStack_3;
     return;
   case 4:
-    pIVar7 = JsonValidatingReader_get_CurrentSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-      while (unaff_EDI = (JsonSchemaModelBuilder *)0x0, iVar11 != 0) {
-        cVar12 = func_?();
-        if (cVar12 == '\0') {
-          *puVar3 = 0x13b;
-          if (iVar11 != 0) {
-code_?:
-            func_?();
-          }
-          goto code_?;
-        }
-        pJVar4 = (JsonSchemaModel *)func_?();
+    pJVar9 = (this->fields)._currentScope;
+    if ((pJVar9 != (JsonValidatingReader_SchemaScope *)0x0) &&
+       (pIVar10 = (pJVar9->fields)._schemas,
+       pIVar10 != (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0)) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar10);
+      uStack_1 = 1;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
+        if (cVar12 == '\0') goto code_?;
+        if (iStack_11 == 0) break;
+        pJVar4 = (JsonSchemaModel *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,iStack_11);
         JsonValidatingReader_ValidatePropertyName(this,pJVar4,(MethodInfo *)0x0);
       }
     }
     break;
   default:
-    this_00 = (ArgumentOutOfRangeException *)func_?();
+    uVar6 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+    this_01 = (ArgumentOutOfRangeException *)func_?(uVar6);
+    func_?(this_01);
     mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor
-              (this_00,(MethodInfo *)0x0);
-    cVar12 = (undefined1 *)0xfffffff3 < &stack0xffffffa4;
-    goto code_?;
+              (this_01,(MethodInfo *)0x0);
+    uVar6 = func_?(&
+                            MethodInfo__Newtonsoft__Json__JsonValidatingReader__ValidateCurrentToken__
+                           );
+    func_?(this_01,uVar6);
+    break;
   case 6:
   case 0xc:
   case 0x10:
     goto code_?;
   case 7:
     JsonValidatingReader_ProcessValue(this,(MethodInfo *)0x0);
-    pIVar7 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-code_?:
-      unaff_EDI = (JsonSchemaModelBuilder *)0x0;
-      if (iVar11 != 0) {
-        cVar12 = func_?();
-        if (cVar12 != '\0') goto code_?;
-        *puVar3 = 0x18e;
-joined_?:
-        if (iVar11 == 0) goto code_?;
-        goto code_?;
+    pIVar13 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
+    if (pIVar13 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar13);
+      uStack_1 = 4;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
+        if (cVar12 == '\0') goto code_?;
+        if (iStack_11 == 0) break;
+        pJVar4 = (JsonSchemaModel *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,iStack_11);
+        JsonValidatingReader_ValidateInteger(this,pJVar4,(MethodInfo *)0x0);
       }
-      break;
     }
     break;
   case 8:
     JsonValidatingReader_ProcessValue(this,(MethodInfo *)0x0);
-    pIVar7 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-      while (unaff_EDI = (JsonSchemaModelBuilder *)0x0, iVar11 != 0) {
-        cVar12 = func_?();
-        if (cVar12 == '\0') {
-          *puVar3 = 0x1dc;
-          goto joined_?;
-        }
-        pJVar4 = (JsonSchemaModel *)func_?();
+    pIVar13 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
+    if (pIVar13 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar13);
+      uStack_1 = 7;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
+        if (cVar12 == '\0') goto code_?;
+        if (iStack_11 == 0) break;
+        pJVar4 = (JsonSchemaModel *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,iStack_11);
         JsonValidatingReader_ValidateFloat(this,pJVar4,(MethodInfo *)0x0);
       }
     }
     break;
   case 9:
     JsonValidatingReader_ProcessValue(this,(MethodInfo *)0x0);
-    pIVar7 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-      while (unaff_EDI = (JsonSchemaModelBuilder *)0x0, iVar11 != 0) {
-        cVar12 = func_?();
-        if (cVar12 == '\0') {
-          *puVar3 = 0x22a;
-          goto joined_?;
-        }
-        pJVar4 = (JsonSchemaModel *)func_?();
+    pIVar13 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
+    if (pIVar13 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar13);
+      uStack_1 = 10;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
+        if (cVar12 == '\0') goto code_?;
+        if (iStack_11 == 0) break;
+        pJVar4 = (JsonSchemaModel *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,iStack_11);
         JsonValidatingReader_ValidateString(this,pJVar4,(MethodInfo *)0x0);
       }
     }
     break;
   case 10:
     JsonValidatingReader_ProcessValue(this,(MethodInfo *)0x0);
-    pIVar7 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-      while (unaff_EDI = (JsonSchemaModelBuilder *)0x0, iVar11 != 0) {
-        cVar12 = func_?();
-        if (cVar12 == '\0') {
-          *puVar3 = 0x278;
-          goto joined_?;
-        }
-        pJVar4 = (JsonSchemaModel *)func_?();
-        if ((pJVar4 != (JsonSchemaModel *)0x0) &&
-           (bVar13 = JsonValidatingReader_TestType
-                              (this,pJVar4,JsonSchemaType__Enum_Boolean,(MethodInfo *)0x0),
-           bVar13 != 0)) {
-          JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,pJVar4,(MethodInfo *)0x0);
+    pIVar13 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
+    if (pIVar13 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar13);
+      uStack_1 = 0xd;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
+        if (cVar12 == '\0') goto code_?;
+        if (iStack_11 == 0) break;
+        unaff_EBX = (JsonSchemaModel *)
+                    func_?(0,
+                                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                    ,iStack_11);
+        if ((unaff_EBX != (JsonSchemaModel *)0x0) &&
+           (bVar14 = JsonValidatingReader_TestType
+                              (this,unaff_EBX,JsonSchemaType__Enum_Boolean,(MethodInfo *)0x0),
+           bVar14 != 0)) {
+          JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,unaff_EBX,(MethodInfo *)0x0);
         }
       }
     }
     break;
   case 0xb:
     JsonValidatingReader_ProcessValue(this,(MethodInfo *)0x0);
-    pIVar7 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-      while (unaff_EDI = (JsonSchemaModelBuilder *)0x0, iVar11 != 0) {
-        cVar12 = func_?();
-        if (cVar12 == '\0') {
-          *puVar3 = 0x2c6;
-          goto joined_?;
-        }
-        pJVar4 = (JsonSchemaModel *)func_?();
-        if ((pJVar4 != (JsonSchemaModel *)0x0) &&
-           (bVar13 = JsonValidatingReader_TestType
-                              (this,pJVar4,JsonSchemaType__Enum_Null,(MethodInfo *)0x0), bVar13 != 0)
-           ) {
-          JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,pJVar4,(MethodInfo *)0x0);
+    pIVar13 = JsonValidatingReader_get_CurrentMemberSchemas(this,(MethodInfo *)0x0);
+    if (pIVar13 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar13);
+      uStack_1 = 0x10;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
+        if (cVar12 == '\0') goto code_?;
+        if (iStack_11 == 0) break;
+        unaff_EBX = (JsonSchemaModel *)
+                    func_?(0,
+                                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                    ,iStack_11);
+        if ((unaff_EBX != (JsonSchemaModel *)0x0) &&
+           (bVar14 = JsonValidatingReader_TestType
+                              (this,unaff_EBX,JsonSchemaType__Enum_Null,(MethodInfo *)0x0),
+           bVar14 != 0)) {
+          JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,unaff_EBX,(MethodInfo *)0x0);
         }
       }
     }
     break;
   case 0xd:
-    pIVar7 = JsonValidatingReader_get_CurrentSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-      while (unaff_EDI = (JsonSchemaModelBuilder *)0x0, iVar11 != 0) {
-        cVar12 = func_?();
+    pJVar9 = (this->fields)._currentScope;
+    if ((pJVar9 != (JsonValidatingReader_SchemaScope *)0x0) &&
+       (pIVar10 = (pJVar9->fields)._schemas,
+       pIVar10 != (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0)) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar10);
+      uStack_1 = 0x13;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
         if (cVar12 == '\0') {
-          *puVar3 = 0x313;
-joined_?:
-          if (iVar11 != 0) {
-            func_?();
+code_?:
+          uStack_1 = 0xffffffff;
+          if (iStack_11 != 0) {
+            func_?(0,TypeInfo__System__IDisposable,iStack_11);
           }
-          goto code_?;
+          uStack_1 = 0xffffffff;
+          JsonValidatingReader_Pop(this,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
         }
-        pJVar4 = (JsonSchemaModel *)func_?();
+        if (iStack_11 == 0) break;
+        pJVar4 = (JsonSchemaModel *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,iStack_11);
         JsonValidatingReader_ValidateEndObject(this,pJVar4,(MethodInfo *)0x0);
       }
     }
     break;
   case 0xe:
-    pIVar7 = JsonValidatingReader_get_CurrentSchemas(this,(MethodInfo *)0x0);
-    if (pIVar7 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-      iVar11 = func_?();
-      while (unaff_EDI = (JsonSchemaModelBuilder *)0x0, iVar11 != 0) {
-        cVar12 = func_?();
-        if (cVar12 == '\0') {
-          *puVar3 = 0x362;
-          goto joined_?;
-        }
-        pJVar4 = (JsonSchemaModel *)func_?();
+    pJVar9 = (this->fields)._currentScope;
+    if ((pJVar9 != (JsonValidatingReader_SchemaScope *)0x0) &&
+       (pIVar10 = (pJVar9->fields)._schemas,
+       pIVar10 != (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0)) {
+      iStack_11 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pIVar10);
+      uStack_1 = 0x16;
+      while (iStack_11 != 0) {
+        cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_11);
+        if (cVar12 == '\0') goto code_?;
+        if (iStack_11 == 0) break;
+        pJVar4 = (JsonSchemaModel *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,iStack_11);
         JsonValidatingReader_ValidateEndArray(this,pJVar4,(MethodInfo *)0x0);
       }
     }
     break;
   case 0xf:
-code_?:
     JsonValidatingReader_Pop(this,(MethodInfo *)0x0);
-    *unaff_FS_OFFSET = uVar1;
+    *unaff_FS_OFFSET = uStack_3;
     return;
   }
 code_?:
-  cVar12 = '\0';
-  func_?();
+  uVar6 = func_?();
+  uVar6 = func_?(uVar6);
+  uVar6 = func_?(uVar6);
+  uVar6 = func_?(uVar6);
+  uVar6 = func_?(uVar6);
+  uVar6 = func_?(uVar6);
+  uVar6 = func_?(uVar6);
+  uVar6 = func_?(uVar6);
+  uVar15 = func_?(uVar6);
+  pbVar16 = (byte *)(uVar15 + 0x10);
+  bVar17 = (byte)extraout_ECX;
+  *pbVar16 = *pbVar16 >> (bVar17 & 7) | *pbVar16 << 8 - (bVar17 & 7);
+  bVar18 = ((uint)extraout_ECX & 0x1f) == 0;
+  bVar19 = *pbVar16;
+  puVar20 = (uint *)(uVar15 + 0x10);
+  *puVar20 = *puVar20 >> (bVar17 & 0x1f) | *puVar20 << 0x20 - (bVar17 & 0x1f);
+  bVar21 = ((uint)extraout_ECX & 0x1f) == 0;
+  bVar22 = bVar21 * (bVar18 * (uVar15 < 0xd11048d2) | !bVar18 * ((char)bVar19 < '\0')) |
+           !bVar21 * ((int)*puVar20 < 0);
+  bVar19 = (byte)(uVar15 - 1 >> 8);
+  bVar21 = CARRY1(bRam_?,bVar19);
+  bVar19 = bRam_? + bVar19;
+  bRam_? = bVar19 + bVar22;
+  pbVar16 = (byte *)(uVar15 + 0xf);
+  *pbVar16 = *pbVar16 >> (bVar17 & 7) | *pbVar16 << 8 - (bVar17 & 7);
+  bVar18 = ((uint)extraout_ECX & 0x1f) == 0;
+  bVar19 = bVar18 * (bVar21 || CARRY1(bVar19,bVar22)) | !bVar18 * ((char)*pbVar16 < '\0');
+  bVar23 = (byte)unaff_EBX;
+  bVar18 = CARRY1(*extraout_ECX,bVar23) || CARRY1(*extraout_ECX + bVar23,bVar19);
+  *extraout_ECX = *extraout_ECX + bVar23 + bVar19;
+  bVar21 = CARRY1(bVar17,bVar23) || CARRY1(bVar17 + bVar23,bVar18);
+  bVar22 = bVar17 + bVar23 + bVar18;
+  pbVar16 = (byte *)(CONCAT31((int3)((uint)extraout_ECX >> 8),bVar22) + 0x711048d6);
+  bVar19 = *pbVar16;
+  bVar17 = *pbVar16;
+  *pbVar16 = bVar17 + bVar23 + bVar21;
+  iVar24 = CONCAT31(0xffff00,*(undefined1 *)
+                              ((int)&unaff_EBX[1].fields._Maximum_k__BackingField.value + 3)) + -1;
+  pbVar16 = (byte *)(CONCAT31((int3)((uint)iVar24 >> 8),
+                             (char)iVar24 * '\x02' +
+                             (CARRY1(bVar19,bVar23) || CARRY1(bVar17 + bVar23,bVar21))) + 0x10);
+  bVar22 = bVar22 & 7;
+  *pbVar16 = *pbVar16 >> bVar22 | *pbVar16 << 8 - bVar22;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 code_?:
-  func_?();
-  bVar14 = (byte)extraout_EDX;
-  pcVar15 = (char *)CONCAT22((short)((uint)extraout_EDX >> 0x10),CONCAT11(0x3a,bVar14));
-  bVar16 = (byte)((uint)this >> 8);
-  *(byte *)&this_00->klass = *(char *)&this_00->klass + bVar16 + cVar12;
-  *pcVar15 = *pcVar15 + (char)((ushort)extraout_CX >> 8);
-  bVar17 = (byte)extraout_CX;
-  pbVar18 = (byte *)((int)&unaff_EDI[0x316da6a].fields._nodeModels + 2);
-  bVar19 = CARRY1(*pbVar18,bVar16) || CARRY1(*pbVar18 + bVar16,bVar17 < 0x56);
-  *pbVar18 = *pbVar18 + bVar16 + (bVar17 < 0x56);
-  pbVar18 = (byte *)((int)&this_00[1].klass + 2);
-  bVar16 = *pbVar18;
-  bVar20 = *pbVar18;
-  *pbVar18 = bVar20 + bVar14 + bVar19;
-  *(byte *)&unaff_EDI->klass =
-       *(char *)&unaff_EDI->klass + bVar14 +
-       (CARRY1(bVar16,bVar14) || CARRY1(bVar20 + bVar14,bVar19));
-  *pcVar15 = *pcVar15 + extraout_AH + (9 < (bVar17 & 0xf) | in_AF);
-  cVar12 = *(char *)&unaff_EDI->klass;
-  *(char *)&unaff_EDI->klass = *(char *)&unaff_EDI->klass >> 0x16;
-  bVar19 = (cVar12 >> 0x15 & 1U) != 0;
-  ppMVar21 = &this_00[1].monitor;
-  bVar16 = *(byte *)ppMVar21;
-  cVar12 = *(char *)ppMVar21;
-  *(byte *)ppMVar21 = cVar12 + 0x3aU + bVar19;
-  cRam_? = cRam_? + bVar14 + (0xc5 < bVar16 || CARRY1(cVar12 + 0x3aU,bVar19));
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)(this_00,this_00,this_00,this_00,this_00);
-  return;
-code_?:
-  pJVar4 = (JsonSchemaModel *)func_?();
-  JsonValidatingReader_ValidateInteger(this,pJVar4,(MethodInfo *)0x0);
+  uStack_1 = 0xffffffff;
+  if (iStack_11 != 0) {
+    func_?(0,TypeInfo__System__IDisposable,iStack_11);
+    *unaff_FS_OFFSET = uStack_3;
+    return;
+  }
   goto code_?;
 }
 
@@ -1110,119 +1311,160 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&MethodInfo__System__Nullable<int>__GetValueOrDefault__);
+    func_?(&MethodInfo__System__Nullable<int>__get_HasValue__);
+    func_?(&TypeInfo__System__Nullable<int>);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_Array_item_count__0__exceeds_max);
+    func_?(&StringLiteral_Array_item_count__0__is_less_tha);
     cRam_? = '\x01';
   }
-  NStack_1.value = 0;
-  NStack_1.has_value = 0;
-  NStack_1._5_3_ = 0;
+  schema_00 = schema;
   if (schema == (JsonSchemaModel *)0x0) {
     return;
   }
-  this_00 = (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)
-            (this->fields)._currentScope;
-  if (this_00 != (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)0x0) {
-    pCVar2 = (CultureInfo *)
-             System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-             Int32]::
-             Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                       (this_00,(MethodInfo *)0x0);
-    Json::Schema::JsonSchemaModel::JsonSchemaModel_get_MaximumItems(schema,(MethodInfo *)0x0);
-    cVar3 = func_?(&stack0xffffffd8,MethodInfo__System__Nullable<int>__get_HasValue__);
-    if (cVar3 == '\0') {
+  pJVar1 = (this->fields)._currentScope;
+  if (pJVar1 != (JsonValidatingReader_SchemaScope *)0x0) {
+    pJVar2 = (JsonSchemaModel *)(pJVar1->fields)._ArrayItemCount_k__BackingField;
+    bVar3 = (byte)*(undefined4 *)&(schema->fields)._MaximumItems_k__BackingField;
+    pJStack_4 = pJVar2;
+    if ((bVar3 == 0) ||
+       ((bVar3 & (schema->fields)._MaximumItems_k__BackingField.value < (int)pJVar2) == 0)) {
 code_?:
-      Json::Schema::JsonSchemaModel::JsonSchemaModel_get_MinimumItems(schema,(MethodInfo *)0x0);
-      cVar3 = func_?(&stack0xffffffd0);
-      if (cVar3 == '\0') {
+      pJVar2 = pJStack_4;
+      bVar3 = (byte)*(undefined4 *)&(schema_00->fields)._MinimumItems_k__BackingField;
+      if ((bVar3 == 0) ||
+         ((bVar3 & (int)pJStack_4 < (schema_00->fields)._MinimumItems_k__BackingField.value) == 0))
+      {
         return;
       }
-      Json::Schema::JsonSchemaModel::JsonSchemaModel_get_MinimumItems(schema,(MethodInfo *)0x0);
-      cVar3 = func_?();
-      if (cVar3 == '\0') {
-        return;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Globalization__CultureInfo);
       }
-      iVar4 = func_?();
-      if (iVar4 <= (int)pCVar2) {
-        return;
-      }
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+      pCStack_5 = mscorlib.dll::System::Globalization::CultureInfo::
+                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+      pOVar6 = (Object__Array *)func_?(TypeInfo__System__Object,2);
+      schema = pJVar2;
+      pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&schema);
+      if (pOVar6 != (Object__Array *)0x0) {
+        if ((pOVar7 == (Object *)0x0) ||
+           (iVar8 = func_?(pOVar7,(pOVar6->klass->_0).element_class), iVar8 != 0)) {
+          if (pOVar6->max_length != 0) {
+            pOVar6->vector[0] = pOVar7;
+            func_?(pOVar6->vector,pOVar7);
+            pAStack_9 = *(ArgumentNullException **)
+                          &(schema_00->fields)._MinimumItems_k__BackingField;
+            iStack_10 = (schema_00->fields)._MinimumItems_k__BackingField.value;
+            pOVar7 = (Object *)func_?(TypeInfo__System__Nullable<int>,&pAStack_9);
+            if ((pOVar7 != (Object *)0x0) &&
+               (iVar8 = func_?(pOVar7,(pOVar6->klass->_0).element_class), iVar8 == 0))
+            goto code_?;
+            if (1 < pOVar6->max_length) {
+              pOVar6->vector[1] = pOVar7;
+              func_?(pOVar6->vector + 1,pOVar7);
+              pSVar11 = StringLiteral_Array_item_count__0__is_less_tha;
+              if (cRam_? == '\0') {
+                func_?(&StringLiteral_format);
+                cRam_? = '\x01';
+              }
+              pJStack_4 = (JsonSchemaModel *)StringLiteral_format;
+              if (pSVar11 != (String *)0x0) {
+                pSVar11 = mscorlib.dll::System::String::String_Format_7
+                                   ((IFormatProvider *)pCStack_5,pSVar11,pOVar6,(MethodInfo *)0x0);
+                JsonValidatingReader_RaiseError(this,pSVar11,schema_00,(MethodInfo *)0x0);
+                return;
+              }
+              uVar12 = func_?(&TypeInfo__System__ArgumentNullException);
+              pAVar13 = (ArgumentNullException *)func_?(uVar12);
+              func_?(pAVar13);
+              mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                        (pAVar13,(String *)pJStack_4,(MethodInfo *)0x0);
+              iStack_10 = func_?(&
+                                          MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                                         );
+              pAStack_9 = pAVar13;
+              func_?();
+              goto code_?;
+            }
+          }
+          goto code_?;
+        }
+code_?:
+        uVar12 = func_?(0);
+        func_?(uVar12);
+code_?:
+        uVar12 = func_?(&TypeInfo__System__ArgumentNullException);
+        pAVar13 = (ArgumentNullException *)func_?(uVar12);
+        func_?(pAVar13);
+        mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                  (pAVar13,(String *)pCStack_5,(MethodInfo *)0x0);
+        uVar12 = func_?(&
+                                MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                               );
+        func_?(pAVar13,uVar12);
+code_?:
         func_?();
       }
-      pCStack_5 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+    }
+    else {
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Globalization__CultureInfo);
+      }
+      pCStack_14 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                             ((MethodInfo *)0x0);
-      pOVar6 = (Object__Array *)func_?();
-      pCStack_7 = pCVar2;
-      pOVar8 = (Object *)func_?();
-      if (pOVar6 == (Object__Array *)0x0) goto code_?;
-      func_?(pOVar6,pOVar8);
-      if (pOVar6->max_length != 0) {
-        pOVar6->vector[0] = pOVar8;
-        Json::Schema::JsonSchemaModel::JsonSchemaModel_get_MinimumItems(schema,(MethodInfo *)0x0);
-        pOVar8 = (Object *)func_?(TypeInfo__System__Nullable<int>,&stack0xffffffc8);
-        func_?(pOVar6,pOVar8);
-        if (1 < pOVar6->max_length) {
-          pOVar6->vector[1] = pOVar8;
-          pSVar9 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Array_item_count__0__is_less_tha,
-                              (IFormatProvider *)pCStack_5,pOVar6,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar9,schema,(MethodInfo *)0x0);
-          return;
+      pOVar6 = (Object__Array *)func_?(TypeInfo__System__Object,2);
+      schema = pJVar2;
+      pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&schema);
+      if (pOVar6 != (Object__Array *)0x0) {
+        if ((pOVar7 != (Object *)0x0) &&
+           (iVar8 = func_?(pOVar7,(pOVar6->klass->_0).element_class), iVar8 == 0)) {
+code_?:
+          uVar12 = func_?(0);
+          func_?(uVar12);
+code_?:
+          uVar12 = func_?(0);
+          func_?(uVar12);
+          goto code_?;
+        }
+        if (pOVar6->max_length != 0) {
+          pOVar6->vector[0] = pOVar7;
+          func_?(pOVar6->vector,pOVar7);
+          pAStack_9 = *(ArgumentNullException **)&(schema_00->fields)._MaximumItems_k__BackingField
+          ;
+          iStack_10 = (schema_00->fields)._MaximumItems_k__BackingField.value;
+          pOVar7 = (Object *)func_?(TypeInfo__System__Nullable<int>,&pAStack_9);
+          if ((pOVar7 != (Object *)0x0) &&
+             (iVar8 = func_?(pOVar7,(pOVar6->klass->_0).element_class), iVar8 == 0))
+          goto code_?;
+          if (pOVar6->max_length < 2) goto code_?;
+          pOVar6->vector[1] = pOVar7;
+          func_?(pOVar6->vector + 1,pOVar7);
+          pSVar11 = StringLiteral_Array_item_count__0__exceeds_max;
+          if (cRam_? == '\0') {
+            func_?(&StringLiteral_format);
+            cRam_? = '\x01';
+          }
+          pCStack_5 = (CultureInfo *)StringLiteral_format;
+          if (pSVar11 != (String *)0x0) {
+            pSVar11 = mscorlib.dll::System::String::String_Format_7
+                               ((IFormatProvider *)pCStack_14,pSVar11,pOVar6,(MethodInfo *)0x0);
+            JsonValidatingReader_RaiseError(this,pSVar11,schema_00,(MethodInfo *)0x0);
+            goto code_?;
+          }
+          goto code_?;
         }
         goto code_?;
       }
     }
-    else {
-      NStack_1 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_MaximumItems
-                            (schema,(MethodInfo *)0x0);
-      cVar3 = func_?(&NStack_1);
-      if ((cVar3 == '\0') || (iVar4 = func_?(&NStack_1), (int)pCVar2 <= iVar4))
-      goto code_?;
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pCStack_7 = mscorlib.dll::System::Globalization::CultureInfo::
-                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-      pOVar6 = (Object__Array *)func_?(TypeInfo__System__Object);
-      pCStack_10 = pCVar2;
-      pCStack_5 = (CultureInfo *)func_?(TypeInfo__System__Int32,&pCStack_10);
-      if (pOVar6 == (Object__Array *)0x0) goto code_?;
-      func_?(pOVar6,pCStack_5);
-      if (pOVar6->max_length == 0) {
-        uVar11 = func_?(0);
-        func_?(uVar11);
-      }
-      else {
-        pOVar6->vector[0] = (Object *)pCStack_5;
-        Json::Schema::JsonSchemaModel::JsonSchemaModel_get_MaximumItems(schema,(MethodInfo *)0x0);
-        pCStack_5 = (CultureInfo *)func_?(TypeInfo__System__Nullable<int>,&stack0xffffffc8)
-        ;
-        func_?(pOVar6,pCStack_5);
-        if (1 < pOVar6->max_length) {
-          pOVar6->vector[1] = (Object *)pCStack_5;
-          pSVar9 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Array_item_count__0__exceeds_max,
-                              (IFormatProvider *)pCStack_7,pOVar6,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar9,schema,(MethodInfo *)0x0);
-          goto code_?;
-        }
-      }
-      uVar11 = func_?(0);
-      func_?(uVar11);
-    }
-    uVar11 = func_?(0);
-    func_?(uVar11);
   }
+  func_?();
 code_?:
-  func_?(0);
-code_?:
-  uVar11 = func_?(0);
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  uVar12 = func_?(0);
+  func_?(uVar12);
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1235,123 +1477,182 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<System::String>_MethodInfo__System__Linq__Enumerable__Select<System::Collections::Generic::KeyValuePair<System::String,_bool>,_System::String>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_System::String>_
+                   );
+    func_?(&
+                    System__Collections__Generic__List<System::String>_MethodInfo__System__Linq__Enumerable__ToList<System::String>_System__Collections__Generic__IEnumerable<System::String>_
+                   );
+    func_?(&
+                    System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>_MethodInfo__System__Linq__Enumerable__Where<System::Collections::Generic::KeyValuePair<System::String,_bool>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_bool>_
+                   );
+    func_?(&
+                    TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_bool>
+                   );
+    func_?(&
+                    TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_System::String>
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
+    func_?(&TypeInfo__System__Object);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__JsonValidatingReader____c___ValidateEndObject_b__41_0_System__Collections__Generic__KeyValuePair<System::String,_bool>_
+                   );
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__JsonValidatingReader____c___ValidateEndObject_b__41_1_System__Collections__Generic__KeyValuePair<System::String,_bool>_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__JsonValidatingReader____c);
+    func_?(&::StringLiteral___);
+    func_?(&StringLiteral_Required_properties_are_missing_);
     cRam_? = '\x01';
   }
   if (schema == (JsonSchemaModel *)0x0) {
     return;
   }
-  this_00 = (this->fields)._currentScope;
-  if (this_00 != (JsonValidatingReader_SchemaScope *)0x0) {
-    pOVar1 = System.dll::System::Collections::Generic::
-             SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::
-             Single,System::Object]::
-             SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                       ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                         *)this_00,(MethodInfo *)0x0);
-    if (pOVar1 == (Object *)0x0) {
+  pJVar1 = (this->fields)._currentScope;
+  if (pJVar1 == (JsonValidatingReader_SchemaScope *)0x0) {
+code_?:
+    func_?();
+code_?:
+    uVar2 = func_?(0);
+    func_?(uVar2);
+  }
+  else {
+    source = (pJVar1->fields)._requiredProperties;
+    if (source == (Dictionary_2_System_String_System_Boolean_ *)0x0) {
       return;
     }
-    if (TypeInfo__Newtonsoft__Json__JsonValidatingReader->static_fields->__f__am_cache0 ==
+    if ((TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->_1).cctor_finished_or_no_cctor == 0)
+    {
+      func_?(TypeInfo__Newtonsoft__Json__JsonValidatingReader____c);
+    }
+    this_00 = TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->__9__41_0;
+    if (this_00 ==
         (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_Boolean_ *)
         0x0) {
-      pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?(
-                               TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_bool>
-                               );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar2,(Object *)0x0,
-                 MethodInfo__Newtonsoft__Json__JsonValidatingReader___ValidateEndObject_m__0_System__Collections__Generic__KeyValuePair<System::String,_bool>_
-                 ,
-                 MethodInfo__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_bool>__Func_System__Object__void__
-                );
-      TypeInfo__Newtonsoft__Json__JsonValidatingReader->static_fields->__f__am_cache0 =
-           (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_Boolean_ *
-           )pUVar2;
+      if ((TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->_1).cctor_finished_or_no_cctor ==
+          0) {
+        func_?(TypeInfo__Newtonsoft__Json__JsonValidatingReader____c);
+      }
+      unaff_EBX = (String *)
+                  TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->__9;
+      this_00 = (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_Boolean_
+                 *)func_?(
+                                  TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_bool>
+                                  );
+      if (this_00 ==
+          (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_Boolean_ *)
+          0x0) goto code_?;
+      mscorlib.dll::System::Predicate`1[TabMenuButtonAccessory+AccessoryTabDef]::
+      Predicate_1_TabMenuButtonAccessory_AccessoryTabDef___ctor
+                ((Predicate_1_TabMenuButtonAccessory_AccessoryTabDef_ *)this_00,(Object *)unaff_EBX,
+                 MethodInfo__Newtonsoft__Json__JsonValidatingReader____c___ValidateEndObject_b__41_0_System__Collections__Generic__KeyValuePair<System::String,_bool>_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->__9__41_0 = this_00;
+      func_?(&TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->
+                       __9__41_0,this_00);
     }
-    source = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_17
-                       ((IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)pOVar1,
-                        (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Boolean_
-                         *)TypeInfo__Newtonsoft__Json__JsonValidatingReader->static_fields->
-                           __f__am_cache0,
-                        System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>_MethodInfo__System__Linq__Enumerable__Where<System::Collections::Generic::KeyValuePair<System::String,_bool>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_bool>_
-                       );
-    if (TypeInfo__Newtonsoft__Json__JsonValidatingReader->static_fields->__f__am_cache1 ==
+    unaff_EBX = (String *)
+                System.Core.dll::System::Linq::Enumerable::Enumerable_Where_1
+                          ((IEnumerable_1_KeyValuePair_2_System_Object_System_Boolean_ *)source,
+                           (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Boolean_Boolean_
+                            *)this_00,
+                           System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>_MethodInfo__System__Linq__Enumerable__Where<System::Collections::Generic::KeyValuePair<System::String,_bool>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_bool>_
+                          );
+    if ((TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->_1).cctor_finished_or_no_cctor == 0)
+    {
+      func_?(TypeInfo__Newtonsoft__Json__JsonValidatingReader____c);
+    }
+    this_01 = TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->__9__41_1;
+    if (this_01 ==
         (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_String_ *)0x0
        ) {
-      pUVar2 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar2,(Object *)0x0,
-                 MethodInfo__Newtonsoft__Json__JsonValidatingReader___ValidateEndObject_m__1_System__Collections__Generic__KeyValuePair<System::String,_bool>_
-                 ,
-                 MethodInfo__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_System::String>__Func_System__Object__void__
-                );
-      TypeInfo__Newtonsoft__Json__JsonValidatingReader->static_fields->__f__am_cache1 =
-           (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_String_ *)
-           pUVar2;
+      if ((TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->_1).cctor_finished_or_no_cctor ==
+          0) {
+        func_?(TypeInfo__Newtonsoft__Json__JsonValidatingReader____c);
+      }
+      object = TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->__9;
+      this_01 = (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_String_
+                 *)func_?(
+                                  TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_System::String>
+                                  );
+      if (this_01 ==
+          (Func_2_System_Collections_Generic_KeyValuePair_2_System_String_System_Boolean_String_ *)
+          0x0) goto code_?;
+      mscorlib.dll::System::Func`2[Newtonsoft::Json::Serialization::
+      DefaultSerializationBinder+TypeNameKey,Object]::
+      Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object___ctor
+                ((Func_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_Object_
+                  *)this_01,(Object *)object,
+                 MethodInfo__Newtonsoft__Json__JsonValidatingReader____c___ValidateEndObject_b__41_1_System__Collections__Generic__KeyValuePair<System::String,_bool>_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->__9__41_1 = this_01;
+      func_?(&TypeInfo__Newtonsoft__Json__JsonValidatingReader____c->static_fields->
+                       __9__41_1,this_01);
     }
-    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_14
-                          ((IEnumerable_1_System_Object_ *)source,
-                           (Func_2_Object_Single_ *)
-                           TypeInfo__Newtonsoft__Json__JsonValidatingReader->static_fields->
-                           __f__am_cache1,
+    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select
+                          ((IEnumerable_1_KeyValuePair_2_System_Object_System_Boolean_ *)unaff_EBX,
+                           (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Boolean_Object_
+                            *)this_01,
                            System__Collections__Generic__IEnumerable<System::String>_MethodInfo__System__Linq__Enumerable__Select<System::Collections::Generic::KeyValuePair<System::String,_bool>,_System::String>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_bool>_>__System__Func<System::Collections::Generic::KeyValuePair<System::String,_bool>,_System::String>_
                           );
-    this_01 = (List_1_VoxelHit_ *)
-              System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                        ((IEnumerable_1_UseInteractor_ *)source_00,
+    this_02 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+              System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+                        (source_00,
                          System__Collections__Generic__List<System::String>_MethodInfo__System__Linq__Enumerable__ToList<System::String>_System__Collections__Generic__IEnumerable<System::String>_
                         );
-    if (this_01 != (List_1_VoxelHit_ *)0x0) {
-      pOVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_01,
-                          MethodInfo__System__Collections__Generic__List<System::String>__get_Count__
-                         );
-      if ((int)pOVar1 < 1) {
+    if (this_02 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0)
+    goto code_?;
+    if ((this_02->fields)._size < 1) {
+      return;
+    }
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Globalization__CultureInfo);
+    }
+    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+    args = (Object__Array *)func_?(TypeInfo__System__Object,1);
+    value = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+            UnitySynchronizationContext+WorkRequest]::
+            List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
+                      (this_02,
+                       MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
+    pSVar3 = mscorlib.dll::System::String::String_Join
+                       (::StringLiteral___,(String__Array *)value,(MethodInfo *)0x0);
+    if (args == (Object__Array *)0x0) goto code_?;
+    if ((pSVar3 != (String *)0x0) &&
+       (iVar4 = func_?(pSVar3,(args->klass->_0).element_class), iVar4 == 0))
+    goto code_?;
+    if (args->max_length != 0) {
+      args->vector[0] = (Object *)pSVar3;
+      func_?(args->vector,pSVar3);
+      pSVar3 = StringLiteral_Required_properties_are_missing_;
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_format);
+        cRam_? = '\x01';
+      }
+      unaff_EBX = StringLiteral_format;
+      if (pSVar3 != (String *)0x0) {
+        pSVar3 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)provider,pSVar3,args,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar3,schema,(MethodInfo *)0x0);
         return;
       }
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__Globalization__CultureInfo);
-      }
-      provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                           ((MethodInfo *)0x0);
-      args = (Object__Array *)func_?(provider,1);
-      value = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit__ToArray
-                        (this_01,
-                         MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
-      }
-      pSVar3 = mscorlib.dll::System::String::String_Join
-                         (::StringLiteral___,(String__Array *)value,(MethodInfo *)0x0);
-      if (args != (Object__Array *)0x0) {
-        func_?(args,pSVar3);
-        if (args->max_length != 0) {
-          args->vector[0] = (Object *)pSVar3;
-          pSVar3 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Required_properties_are_missing_,
-                              (IFormatProvider *)provider,args,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar3,schema,(MethodInfo *)0x0);
-          return;
-        }
-        goto code_?;
-      }
+      goto code_?;
     }
   }
-  func_?(0);
+  func_?();
 code_?:
-  uVar4 = func_?(0);
-  func_?(uVar4);
+  uVar2 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_03 = (ArgumentNullException *)func_?(uVar2);
+  func_?(this_03);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (this_03,unaff_EBX,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                 );
+  func_?(this_03);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -1364,264 +1665,278 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
                (JsonValidatingReader *this,JsonSchemaModel *schema,MethodInfo *method)
 
 {
+  schema_00 = schema;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?(&MethodInfo__System__Nullable<double>__GetValueOrDefault__);
+    func_?(&MethodInfo__System__Nullable<double>__get_HasValue__);
+    func_?(&MethodInfo__System__Nullable<double>__get_Value__);
+    func_?(&TypeInfo__System__Nullable<double>);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_Float__0__equals_minimum_value_o);
+    func_?(&StringLiteral_Float__0__is_less_than_minimum_v);
+    func_?(&StringLiteral_Float__0__exceeds_maximum_value_);
+    func_?(&StringLiteral_Float__0__equals_maximum_value_o);
+    func_?(&StringLiteral_Float__0__is_not_evenly_divisibl);
     cRam_? = '\x01';
   }
-  pSStack_1 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  if ((schema != (JsonSchemaModel *)0x0) &&
-     (bVar3 = JsonValidatingReader_TestType
-                        (this,schema,JsonSchemaType__Enum_Float,(MethodInfo *)0x0), bVar3 != 0)) {
-    JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,schema,(MethodInfo *)0x0);
-    pJVar4 = (this->fields)._reader;
-    if (pJVar4 == (JsonReader *)0x0) {
+  if (schema == (JsonSchemaModel *)0x0) {
+    return;
+  }
+  bVar1 = JsonValidatingReader_TestType(this,schema,JsonSchemaType__Enum_Float,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return;
+  }
+  JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,schema,(MethodInfo *)0x0);
+  pJVar2 = (this->fields)._reader;
+  if (pJVar2 == (JsonReader *)0x0) {
 code_?:
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+  }
+  else {
+    value = (Object *)(*(pJVar2->klass->vtable).get_Value.methodPtr)();
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+    }
+    pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                       ((MethodInfo *)0x0);
+    if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    value_00 = mscorlib.dll::System::Convert::Convert_ToDouble
+                         (value,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
+    if ((schema->fields)._Maximum_k__BackingField.hasValue != 0) {
+      if (((byte)*(undefined8 *)&(schema->fields)._Maximum_k__BackingField &
+          (schema->fields)._Maximum_k__BackingField.value < value_00) != 0) {
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                           ((MethodInfo *)0x0);
+        pOVar4 = (Object__Array *)func_?();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        schema = (JsonSchemaModel *)JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0)
+        ;
+        if (pOVar4 == (Object__Array *)0x0) goto code_?;
+        if ((schema == (JsonSchemaModel *)0x0) || (iVar5 = func_?(), iVar5 != 0)) {
+          func_?();
+          schema = (JsonSchemaModel *)func_?();
+          if ((schema == (JsonSchemaModel *)0x0) || (iVar5 = func_?(), iVar5 != 0)) {
+            func_?();
+            pSVar6 = StringLiteral_Float__0__exceeds_maximum_value_;
+            if (cRam_? == '\0') {
+              func_?(&StringLiteral_format);
+              cRam_? = '\x01';
+            }
+            schema = (JsonSchemaModel *)StringLiteral_format;
+            if (pSVar6 != (String *)0x0) {
+              pSVar6 = mscorlib.dll::System::String::String_Format_7
+                                 ((IFormatProvider *)pCVar3,pSVar6,pOVar4,(MethodInfo *)0x0);
+              JsonValidatingReader_RaiseError(this,pSVar6,schema_00,(MethodInfo *)0x0);
+              goto code_?;
+            }
+            goto code_?;
+          }
+        }
+        else {
+          func_?();
+          func_?();
+        }
+        func_?();
+        func_?();
+code_?:
+        func_?();
+        func_?();
+code_?:
+        uVar7 = func_?(&TypeInfo__System__ArgumentNullException);
+        this_00 = (ArgumentNullException *)func_?(uVar7);
+        func_?(this_00);
+        mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                  (this_00,(String *)schema,(MethodInfo *)0x0);
+        func_?(&
+                        MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                       );
+        func_?();
+        goto code_?;
+      }
+code_?:
+      if (((schema_00->fields)._ExclusiveMaximum_k__BackingField == 0) ||
+         ((value_00 == (schema_00->fields)._Maximum_k__BackingField.value &
+          (byte)*(undefined8 *)&(schema_00->fields)._Maximum_k__BackingField) == 0))
+      goto code_?;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+      pOVar4 = (Object__Array *)func_?();
+      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      schema = (JsonSchemaModel *)JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
+      if (pOVar4 == (Object__Array *)0x0) goto code_?;
+      if ((schema != (JsonSchemaModel *)0x0) && (iVar5 = func_?(), iVar5 == 0))
+      goto code_?;
+      func_?();
+      iVar5 = func_?();
+      if ((iVar5 == 0) || (iVar5 = func_?(), iVar5 != 0)) {
+        func_?();
+        pSVar6 = StringLiteral_Float__0__equals_maximum_value_o;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_format);
+          cRam_? = '\x01';
+        }
+        schema = (JsonSchemaModel *)StringLiteral_format;
+        if (pSVar6 == (String *)0x0) goto code_?;
+        pSVar6 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)pCVar3,pSVar6,pOVar4,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar6,schema_00,(MethodInfo *)0x0);
+        goto code_?;
+      }
+      goto code_?;
+    }
+code_?:
+    if ((schema_00->fields)._Minimum_k__BackingField.hasValue != 0) {
+      if (((byte)*(undefined8 *)&(schema_00->fields)._Minimum_k__BackingField &
+          value_00 < (schema_00->fields)._Minimum_k__BackingField.value) != 0) {
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                           ((MethodInfo *)0x0);
+        pOVar4 = (Object__Array *)func_?();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
+        if (pOVar4 == (Object__Array *)0x0) goto code_?;
+        if ((pSVar6 != (String *)0x0) && (iVar5 = func_?(), iVar5 == 0))
+        goto code_?;
+        func_?();
+        iVar5 = func_?();
+        if ((iVar5 == 0) || (iVar5 = func_?(), iVar5 != 0)) {
+          func_?();
+          pSVar6 = StringLiteral_Float__0__is_less_than_minimum_v;
+          if (cRam_? == '\0') {
+            func_?(&StringLiteral_format);
+            cRam_? = '\x01';
+          }
+          schema = (JsonSchemaModel *)StringLiteral_format;
+          if (pSVar6 == (String *)0x0) goto code_?;
+          pSVar6 = mscorlib.dll::System::String::String_Format_7
+                             ((IFormatProvider *)pCVar3,pSVar6,pOVar4,(MethodInfo *)0x0);
+          JsonValidatingReader_RaiseError(this,pSVar6,schema_00,(MethodInfo *)0x0);
+          goto code_?;
+        }
+        goto code_?;
+      }
+code_?:
+      if (((schema_00->fields)._ExclusiveMinimum_k__BackingField == 0) ||
+         ((value_00 == (schema_00->fields)._Minimum_k__BackingField.value &
+          (byte)*(undefined8 *)&(schema_00->fields)._Minimum_k__BackingField) == 0))
+      goto code_?;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+      pOVar4 = (Object__Array *)func_?();
+      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pSVar6 = JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
+      if (pOVar4 == (Object__Array *)0x0) goto code_?;
+      if ((pSVar6 != (String *)0x0) && (iVar5 = func_?(), iVar5 == 0))
+      goto code_?;
+      func_?();
+      iVar5 = func_?();
+      if ((iVar5 == 0) || (iVar5 = func_?(), iVar5 != 0)) {
+        func_?();
+        pSVar6 = StringLiteral_Float__0__equals_minimum_value_o;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_format);
+          cRam_? = '\x01';
+        }
+        schema = (JsonSchemaModel *)StringLiteral_format;
+        if (pSVar6 == (String *)0x0) goto code_?;
+        pSVar6 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)pCVar3,pSVar6,pOVar4,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar6,schema_00,(MethodInfo *)0x0);
+        goto code_?;
+      }
+      goto code_?;
+    }
+code_?:
+    if ((schema_00->fields)._DivisibleBy_k__BackingField.hasValue == 0) {
       return;
     }
-    value = (Object *)(*(code *)(pJVar4->klass->vtable).get_Value.method)();
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+    mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double__get_Value
+              ((Nullable_1_Double_ *)&stack0xffffffd8,
+               *(MethodInfo **)((int)&(schema_00->fields)._DivisibleBy_k__BackingField.value + 4));
+    fVar8 = (float10)func_?();
+    bVar1 = JsonValidatingReader_IsZero
+                      ((double)fVar8,(MethodInfo *)((ulonglong)(double)fVar8 >> 0x20));
+    if (bVar1 != 0) {
+      return;
+    }
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+    pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
+    uStack_9 = (double)CONCAT44(TypeInfo__System__Object,&UNK_?);
+    pOVar4 = (Object__Array *)func_?();
+    if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    value_00 = mscorlib.dll::System::Convert::Convert_ToDouble_13
-                         (value,(IFormatProvider *)pCVar6,(MethodInfo *)0x0);
-    LimbController::LimbController_get_InterpolateTowardsPitchRotation
-              ((Quaternion *)&puStack_7,(LimbController *)schema,(MethodInfo *)0x0);
-    bVar3 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff70,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar3 != 0) {
-      pQVar8 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                         ((Quaternion *)&puStack_7,(LimbController *)schema,(MethodInfo *)0x0);
-      pSStack_1 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar8->x;
-      bVar3 = SubscribableVariableBase`1[System::Boolean]::
-              SubscribableVariableBase_1_System_Boolean__get_Value
-                        ((SubscribableVariableBase_1_System_Boolean_ *)&pSStack_1,
-                         MethodInfo__System__Nullable<double>__get_HasValue__);
-      if (bVar3 != 0) {
-        fVar9 = (float10)func_?();
-        if ((double)fVar9 < value_00) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::
-                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          pOVar10 = (Object__Array *)func_?();
-          if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000
-               ) != 0) && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-            func_?();
-          }
-          JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
-          if (pOVar10 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          pQVar8 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                             ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0);
-          puStack_7 = (undefined *)pQVar8->x;
-          pOStack_12 = (Object__Array__Class *)pQVar8->y;
-          func_?();
-          func_?(pOVar10);
-          func_?();
-          pSVar13 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Float__0__exceeds_maximum_value_,
-                              (IFormatProvider *)pCVar6,pOVar10,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
-        }
-      }
-      bVar3 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_ExclusiveMaximum
-                        (schema,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                  ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0);
-        fVar9 = (float10)func_?();
-        if (value_00 == (double)fVar9) {
-          bVar3 = SubscribableVariableBase`1[System::Boolean]::
-                  SubscribableVariableBase_1_System_Boolean__get_Value
-                            ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffffa0,
-                             MethodInfo__System__Nullable<double>__get_HasValue__);
-          if (bVar3 != 0) {
-            if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::
-                     CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            pOVar10 = (Object__Array *)func_?();
-            if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-              func_?();
-            }
-            JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
-            if (pOVar10 == (Object__Array *)0x0) goto code_?;
-            func_?();
-            func_?();
-            pQVar8 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                               ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0
-                               );
-            puStack_7 = (undefined *)pQVar8->x;
-            pOStack_12 = (Object__Array__Class *)pQVar8->y;
-            func_?();
-            func_?(pOVar10);
-            func_?();
-            pSVar13 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                               (StringLiteral_Float__0__equals_maximum_value_o,
-                                (IFormatProvider *)pCVar6,pOVar10,(MethodInfo *)0x0);
-            JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
-          }
-        }
-      }
-    }
-    LimbController::LimbController_get_InterpolateTowardsYawRotation
-              ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0);
-    bVar3 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff60,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar3 != 0) {
-      LimbController::LimbController_get_InterpolateTowardsYawRotation
-                ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0);
-      bVar3 = SubscribableVariableBase`1[System::Boolean]::
-              SubscribableVariableBase_1_System_Boolean__get_Value
-                        ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff90,
-                         MethodInfo__System__Nullable<double>__get_HasValue__);
-      if (bVar3 != 0) {
-        fVar9 = (float10)func_?();
-        if (value_00 < (double)fVar9) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::
-                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          pOVar10 = (Object__Array *)func_?();
-          if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000
-               ) != 0) && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-            func_?();
-          }
-          JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
-          if (pOVar10 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          pQVar8 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                             ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0);
-          puStack_7 = (undefined *)pQVar8->x;
-          pOStack_12 = (Object__Array__Class *)pQVar8->y;
-          func_?();
-          func_?(pOVar10);
-          func_?();
-          pSVar13 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Float__0__is_less_than_minimum_v,
-                              (IFormatProvider *)pCVar6,pOVar10,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
-        }
-      }
-      bVar3 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_ExclusiveMinimum
-                        (schema,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        pQVar8 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                           ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0);
-        pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar8->x;
-        fVar9 = (float10)func_?();
-        if (value_00 == (double)fVar9) {
-          bVar3 = SubscribableVariableBase`1[System::Boolean]::
-                  SubscribableVariableBase_1_System_Boolean__get_Value
-                            ((SubscribableVariableBase_1_System_Boolean_ *)&pSStack_2,
-                             MethodInfo__System__Nullable<double>__get_HasValue__);
-          if (bVar3 != 0) {
-            if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::
-                     CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            pOVar10 = (Object__Array *)func_?();
-            if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-              func_?();
-            }
-            JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
-            if (pOVar10 == (Object__Array *)0x0) goto code_?;
-            func_?();
-            func_?();
-            pQVar8 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                               ((Quaternion *)&puStack_11,(LimbController *)schema,(MethodInfo *)0x0
-                               );
-            puStack_7 = (undefined *)pQVar8->x;
-            pOStack_12 = (Object__Array__Class *)pQVar8->y;
-            func_?();
-            func_?(pOVar10);
-            func_?();
-            pSVar13 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                               (StringLiteral_Float__0__equals_minimum_value_o,
-                                (IFormatProvider *)pCVar6,pOVar10,(MethodInfo *)0x0);
-            JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
-          }
-        }
-      }
-    }
-    Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-              ((Nullable_1_Double_ *)&puStack_11,schema,(MethodInfo *)0x0);
-    bVar3 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff50,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar3 != 0) {
-      Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-                ((Nullable_1_Double_ *)&puStack_11,schema,(MethodInfo *)0x0);
+    pSVar6 = JsonConvert::JsonConvert_ToString_12(uStack_9,(MethodInfo *)0x0);
+    if (pOVar4 == (Object__Array *)0x0) goto code_?;
+    if ((pSVar6 == (String *)0x0) || (iVar5 = func_?(), iVar5 != 0)) {
       func_?();
-      fVar9 = (float10)func_?();
-      if (_UNK_? <=
-          (double)CONCAT44((uint)((ulonglong)(double)fVar9 >> 0x20) & _UNK_?,
-                           SUB84((double)fVar9,0) & _UNK_?)) {
-        if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                           ((MethodInfo *)0x0);
-        pOStack_12 = TypeInfo__System__Object;
-        pOVar10 = (Object__Array *)func_?();
-        if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000)
-             != 0) && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-          func_?();
-        }
-        JsonConvert::JsonConvert_ToString_12(value_00,(MethodInfo *)0x0);
-        if (pOVar10 == (Object__Array *)0x0) goto code_?;
-        func_?();
-        func_?();
-        pNVar14 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-                           ((Nullable_1_Double_ *)&puStack_11,schema,(MethodInfo *)0x0);
-        puStack_7 = *(undefined **)&pNVar14->value;
-        pOStack_12 = *(Object__Array__Class **)((int)&pNVar14->value + 4);
-        func_?();
-        func_?(pOVar10);
-        func_?();
-        pSVar13 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                           (StringLiteral_Float__0__is_not_evenly_divisibl,(IFormatProvider *)pCVar6
-                            ,pOVar10,(MethodInfo *)0x0);
-        JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
+      iVar5 = func_?();
+      if ((iVar5 != 0) && (iVar5 = func_?(), iVar5 == 0)) goto code_?;
+      func_?();
+      pSVar6 = StringLiteral_Float__0__is_not_evenly_divisibl;
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_format);
+        cRam_? = '\x01';
       }
+      schema = (JsonSchemaModel *)StringLiteral_format;
+      if (pSVar6 != (String *)0x0) {
+        pSVar6 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)pCVar3,pSVar6,pOVar4,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar6,schema_00,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
     }
   }
+  func_?();
+  func_?();
+code_?:
+  func_?();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1633,561 +1948,333 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
                (JsonValidatingReader *this,JsonSchemaModel *schema,MethodInfo *method)
 
 {
-  this_00 = schema;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&
+                    Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+                   );
+    func_?(&
+                    bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__ContainsValue<Newtonsoft::Json::Linq::JToken>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>__Newtonsoft__Json__Linq__JToken__System__Collections__Generic__IEqualityComparer<Newtonsoft::Json::Linq::JToken>_
+                   );
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JTokenEqualityComparer);
+    func_?(&TypeInfo__Newtonsoft__Json__Linq__JValue);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonTextWriter);
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+                   );
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__get_HasValue__
+                   );
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__get_Value__
+                   );
+    func_?(&TypeInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__System__IO__StringWriter);
+    func_?(&StringLiteral_Value__0__is_not_defined_in_enum);
+    func_?(&StringLiteral_Type__0__is_disallowed_);
     cRam_? = '\x01';
   }
-  pSStack_1 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
   if (schema == (JsonSchemaModel *)0x0) {
     return;
   }
-  pJVar3 = (this->fields)._reader;
-  this_01 = schema;
-  if (pJVar3 == (JsonReader *)0x0) goto code_?;
-  pOVar4 = (Object *)(*(code *)(pJVar3->klass->vtable).get_Value.method)();
-  this_01 = (JsonSchemaModel *)func_?();
-  Json::Linq::JValue::JValue__ctor_11((JValue *)this_01,pOVar4,(MethodInfo *)0x0);
-  pSVar5 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                      ((DayNightCycle *)schema,(MethodInfo *)0x0);
-  if (pSVar5 == (SkyParam *)0x0) {
-code_?:
-    schema = this_01;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pJVar3 = (this->fields)._reader;
-    this_01 = schema;
-    if (pJVar3 == (JsonReader *)0x0) {
-code_?:
-      schema = this_01;
-      func_?();
-      this_01 = schema;
-      goto code_?;
-    }
-    iVar6 = (*(code *)(pJVar3->klass->vtable).get_TokenType.method)();
-    switch(iVar6) {
-    case 7:
-      uStack_7 = 0;
-      func_?();
-      pSStack_8 = (SubscribableVariableBase_1_System_Boolean___Class *)uStack_7;
-      pSVar9 = uStack_7._4_4_;
-      break;
-    case 8:
-      pSStack_10 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-      pSStack_11 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-      func_?();
-      pSStack_8 = pSStack_10;
-      pSVar9 = pSStack_11;
-      break;
-    case 9:
-      uStack_12._4_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-      pSStack_13 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-      func_?();
-      pSStack_8 = uStack_12._4_4_;
-      pSVar9 = pSStack_13;
-      break;
-    case 10:
-      pSStack_14 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-      uStack_12._0_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-      func_?();
-      pSStack_8 = pSStack_14;
-      pSVar9 = (SubscribableVariableBase_1_System_Boolean___Class *)uStack_12;
-      break;
-    case 0xb:
-      auStack_15 = (undefined1  [8])0x0;
-      func_?();
-      pSStack_8 = (SubscribableVariableBase_1_System_Boolean___Class *)auStack_15._0_4_;
-      pSVar9 = (SubscribableVariableBase_1_System_Boolean___Class *)auStack_15._4_4_;
-      break;
-    default:
-      if (iVar6 == 1) {
-        pSStack_16 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-        stack0xffffffc8 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-        func_?();
-        pSStack_8 = pSStack_16;
-        pSVar9 = stack0xffffffc8;
-      }
-      else {
-        pSStack_8 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-        pSStack_17 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-        pSVar9 = pSStack_17;
-        if (iVar6 == 2) {
-          func_?();
-          pSVar9 = pSStack_17;
-        }
-      }
-    }
-    pSStack_1 = pSStack_8;
-    pSStack_2 = pSVar9;
-    cVar18 = func_?();
-    if (cVar18 == '\0') {
-      return;
-    }
-    DayNightCycle::DayNightCycle_get_CurrentStarsParam((DayNightCycle *)this_00,(MethodInfo *)0x0);
-    pSStack_17 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-    func_?();
-    flag = func_?();
-    bVar19 = Json::Schema::JsonSchemaGenerator::JsonSchemaGenerator_HasFlag_1
-                      ((Nullable_1_Newtonsoft_Json_Schema_JsonSchemaType_)
-                       (ZEXT48(pSStack_17) << 0x20),flag,(MethodInfo *)0x0);
-    if (bVar19 == 0) {
-      return;
-    }
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-      stack0xffffffc8 =
-           (SubscribableVariableBase_1_System_Boolean___Class *)
-           TypeInfo__System__Globalization__CultureInfo;
-      func_?();
-    }
-    pSStack_16 = (SubscribableVariableBase_1_System_Boolean___Class *)0xADDR;
-    stack0xffffffc8 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-    pCVar20 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-    stack0xffffffc8 = (SubscribableVariableBase_1_System_Boolean___Class *)0x1;
-    pSStack_16 = (SubscribableVariableBase_1_System_Boolean___Class *)TypeInfo__System__Object;
-    uStack_7 = CONCAT44(pCVar20,(SubscribableVariableBase_1_System_Boolean___Class *)uStack_7);
-    pOVar21 = (Object__Array *)func_?();
-    pSStack_17 = pSStack_2;
-    schema = (JsonSchemaModel *)func_?();
-    this_01 = schema;
-    if (pOVar21 == (Object__Array *)0x0) goto code_?;
-    func_?();
-    if (pOVar21->max_length != 0) {
-      pOVar21->vector[0] = (Object *)schema;
-      pSVar22 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                          (StringLiteral_Type__0__is_disallowed_,(IFormatProvider *)uStack_7._4_4_,
-                           pOVar21,(MethodInfo *)0x0);
-      JsonValidatingReader_RaiseError(this,pSVar22,this_00,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  else {
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pCVar20 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-    this_02 = (StringWriter *)func_?();
-    uStack_7 = CONCAT44(this_02,(SubscribableVariableBase_1_System_Boolean___Class *)uStack_7);
-    mscorlib.dll::System::IO::StringWriter::StringWriter__ctor_1
-              (this_02,(IFormatProvider *)pCVar20,(MethodInfo *)0x0);
-    this_03 = (JsonTextWriter *)func_?();
-    JsonTextWriter::JsonTextWriter__ctor(this_03,(TextWriter *)this_02,(MethodInfo *)0x0);
-    func_?();
-    if (this_01 == (JsonSchemaModel *)0x0) goto code_?;
-    (*(code *)(((JValue__Class *)this_01->klass)->vtable).WriteTo.method)();
-    pSVar5 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                        ((DayNightCycle *)schema,(MethodInfo *)0x0);
-    this_04 = (WinningConditionDebriefing_WaitForFadeOut_c_Iterator1 *)func_?();
-    WinningConditionDebriefing+<WaitForFadeOut>c__Iterator1::
-    WinningConditionDebriefing_WaitForFadeOut_c_Iterator1__ctor(this_04,(MethodInfo *)0x0);
-    bVar19 = Json::Utilities::CollectionUtils::CollectionUtils_ContainsValue_1
-                      ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pSVar5,(JToken *)this_01,
-                       (IEqualityComparer_1_Newtonsoft_Json_Linq_JToken_ *)this_04,
-                       bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__ContainsValue<Newtonsoft::Json::Linq::JToken>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>__Newtonsoft__Json__Linq__JToken__System__Collections__Generic__IEqualityComparer<Newtonsoft::Json::Linq::JToken>_
-                      );
-    if (bVar19 != 0) goto code_?;
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_01 = (JsonSchemaModel *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-    pOVar21 = (Object__Array *)func_?();
-    if ((uStack_7._4_4_ == (SubscribableVariableBase_1_System_Boolean___Class *)0x0) ||
-       (pOVar4 = (Object *)(**(code **)(*(int *)uStack_7._4_4_ + 0xd8))(),
-       pOVar21 == (Object__Array *)0x0)) goto code_?;
-    func_?();
-    if (pOVar21->max_length != 0) {
-      pOVar21->vector[0] = pOVar4;
-      pSVar22 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                          (StringLiteral_Value__0__is_not_defined_in_enum,(IFormatProvider *)this_01
-                           ,pOVar21,(MethodInfo *)0x0);
-      JsonValidatingReader_RaiseError(this,pSVar22,schema,(MethodInfo *)0x0);
-      goto code_?;
-    }
-code_?:
-    schema = this_01;
-    func_?();
-    func_?();
-  }
-  func_?();
-  cVar18 = func_?();
-  uVar23 = extraout_EDX ^ *(uint *)(extraout_ECX + 0x56);
-  pbVar24 = (byte *)(uVar23 + 0x51);
-  bVar25 = *pbVar24;
-  *pbVar24 = *pbVar24 + (byte)this_00;
-  *(char *)(extraout_ECX + -0x57efa9af) =
-       *(char *)(extraout_ECX + -0x57efa9af) + cVar18 + CARRY1(bVar25,(byte)this_00);
-  in((short)uVar23);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  auStack_26._0_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  auStack_26._4_4_ = (MonitorData *)0x0;
-  fStack_27 = 0.0;
-  pAStack_28 = (Action_1_Boolean_ *)0x0;
-  auStack_29._0_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  auStack_29._4_4_ = (MonitorData *)0x0;
-  fStack_30 = 0.0;
-  pAStack_31 = (Action_1_Boolean_ *)0x0;
-  pSStack_32 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  SStack_33.klass = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  SStack_33.monitor = (MonitorData *)0x0;
-  SStack_33.fields.value = 0;
-  SStack_33.fields._1_3_ = 0;
-  SStack_33.fields.OnChange = (Action_1_Boolean_ *)0x0;
-  if ((schema != (JsonSchemaModel *)0x0) &&
-     (bVar19 = JsonValidatingReader_TestType
-                        (this,schema,JsonSchemaType__Enum_Integer,(MethodInfo *)0x0), bVar19 != 0)) {
-    JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,schema,(MethodInfo *)0x0);
-    pJVar3 = (this->fields)._reader;
-    if (pJVar3 == (JsonReader *)0x0) {
-code_?:
-      func_?(0);
-      pcVar34 = (code *)swi(3);
-      (*pcVar34)();
-      return;
-    }
-    pOVar4 = (Object *)
-              (*(code *)(pJVar3->klass->vtable).get_Value.method)
-                        (pJVar3,(pJVar3->klass->vtable).get_ValueType.methodPtr);
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+  pJVar1 = (this->fields)._reader;
+  if (pJVar1 == (JsonReader *)0x0) goto code_?;
+  unaff_EDI = (StringWriter *)
+              (*(pJVar1->klass->vtable).get_Value.methodPtr)
+                        (pJVar1,(pJVar1->klass->vtable).get_Value.method);
+  this_00 = (JValue *)func_?(TypeInfo__Newtonsoft__Json__Linq__JValue);
+  if (this_00 == (JValue *)0x0) goto code_?;
+  Linq::JValue::JValue__ctor_11(this_00,(Object *)unaff_EDI,(MethodInfo *)0x0);
+  if ((schema->fields)._Enum_k__BackingField != (IList_1_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Globalization__CultureInfo);
     }
-    pCVar20 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__Convert);
+    pCVar2 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                       ((MethodInfo *)0x0);
+    unaff_EDI = (StringWriter *)func_?(TypeInfo__System__IO__StringWriter);
+    if (unaff_EDI == (StringWriter *)0x0) goto code_?;
+    mscorlib.dll::System::IO::StringWriter::StringWriter__ctor_1
+              (unaff_EDI,(IFormatProvider *)pCVar2,(MethodInfo *)0x0);
+    NStack_3.value = func_?(TypeInfo__Newtonsoft__Json__JsonTextWriter);
+    if ((JsonTextWriter *)NStack_3.value == (JsonTextWriter *)0x0) goto code_?;
+    JsonTextWriter::JsonTextWriter__ctor
+              ((JsonTextWriter *)NStack_3.value,(TextWriter *)unaff_EDI,(MethodInfo *)0x0);
+    pMVar4 = 
+    Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+    ;
+    pIVar5 = ((
+              Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+              ->field7_0x1c).rgctx_data)->klass;
+    if (pIVar5->initialized_and_no_error == 0) {
+      pIVar5 = (Il2CppClass *)func_?();
     }
-    iVar35 = mscorlib.dll::System::Convert::Convert_ToInt64_17
-                       (pOVar4,(IFormatProvider *)pCVar20,(MethodInfo *)0x0);
-    uVar36 = (undefined4)((ulonglong)iVar35 >> 0x20);
-    pSStack_11 = (SubscribableVariableBase_1_System_Boolean___Class *)iVar35;
-    pQVar37 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                        ((Quaternion *)&pSStack_17,(LimbController *)schema,(MethodInfo *)0x0);
-    auStack_26._0_4_ = pQVar37->x;
-    auStack_26._4_4_ = pQVar37->y;
-    fStack_27 = pQVar37->z;
-    pAStack_28 = (Action_1_Boolean_ *)pQVar37->w;
-    bVar19 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)auStack_26,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar19 != 0) {
-      pQVar37 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                          ((Quaternion *)&pSStack_17,(LimbController *)schema,(MethodInfo *)0x0);
-      pSVar9 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->x;
-      pSVar38 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->y;
+    if (pIVar5->cctor_finished_or_no_cctor == 0) {
       func_?();
-      pSStack_13 = pSVar9;
-      pSStack_10 = pSVar38;
-      bVar19 = SubscribableVariableBase`1[System::Boolean]::
-              SubscribableVariableBase_1_System_Boolean__get_Value
-                        ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffffa0,
-                         MethodInfo__System__Nullable<double>__get_HasValue__);
-      if (bVar19 != 0) {
-        pSStack_1 = pSStack_13;
-        pSStack_2 = pSStack_10;
-        fVar39 = (float10)func_?(&stack0xffffffa0,
-                                          MethodInfo__System__Nullable<double>__GetValueOrDefault__)
-        ;
-        dVar40 = (double)CONCAT44(pSStack_10,pSStack_13);
-        uStack_12 = (double)fVar39;
-        pSStack_13 = pSStack_1;
-        pSStack_10 = pSStack_2;
-        if (uStack_12 < dVar40) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__Globalization__CultureInfo);
-          }
-          pSStack_13 = pSStack_1;
-          pSStack_10 = pSStack_2;
-          pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)
-                       mscorlib.dll::System::Globalization::CultureInfo::
-                       CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          iVar6 = func_?(TypeInfo__System__Object,2);
-          uStack_7._4_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)iVar6;
-          uVar41 = func_?(TypeInfo__System__Int64,&stack0xffffffb8);
-          uStack_7 = CONCAT44(uStack_7._4_4_,uVar41);
-          if (uStack_7._4_4_ == (SubscribableVariableBase_1_System_Boolean___Class *)0x0)
-          goto code_?;
-          func_?(uStack_7._4_4_,uVar41);
-          func_?(0,(SubscribableVariableBase_1_System_Boolean___Class *)uStack_7);
-          pQVar37 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                              ((Quaternion *)&pSStack_17,(LimbController *)schema,(MethodInfo *)0x0)
-          ;
-          pSStack_14 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->y;
-          uStack_12._0_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->z;
-          uStack_12._4_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->w;
-          auStack_15._4_4_ = pQVar37->x;
-          uVar41 = func_?(TypeInfo__System__Nullable<double>,auStack_15 + 4);
-          func_?(uStack_7._4_4_,uVar41);
-          pOVar21 = (Object__Array *)uStack_7._4_4_;
-          func_?(1,uVar41);
-          pSVar22 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                              (StringLiteral_Integer__0__exceeds_maximum_valu,
-                               (IFormatProvider *)pSStack_2,pOVar21,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar22,schema,(MethodInfo *)0x0);
-        }
-      }
-      bVar19 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_ExclusiveMaximum
-                        (schema,(MethodInfo *)0x0);
-      if (bVar19 != 0) {
-        LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                  ((Quaternion *)&pSStack_17,(LimbController *)schema,(MethodInfo *)0x0);
-        fVar39 = (float10)func_?(&stack0xffffff90,
-                                          MethodInfo__System__Nullable<double>__GetValueOrDefault__)
-        ;
-        uStack_12 = (double)fVar39;
-        if ((double)CONCAT44(pSStack_10,pSStack_13) == uStack_12) {
-          bVar19 = SubscribableVariableBase`1[System::Boolean]::
-                  SubscribableVariableBase_1_System_Boolean__get_Value
-                            ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff90,
-                             MethodInfo__System__Nullable<double>__get_HasValue__);
-          if (bVar19 != 0) {
-            if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__Globalization__CultureInfo);
-            }
-            pCVar20 = mscorlib.dll::System::Globalization::CultureInfo::
-                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            uStack_7 = CONCAT44(uStack_7._4_4_,pCVar20);
-            uVar41 = func_?(TypeInfo__System__Object,2);
-            uStack_7 = CONCAT44(uVar41,(SubscribableVariableBase_1_System_Boolean___Class *)uStack_7
-                               );
-            pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)
-                         func_?(TypeInfo__System__Int64,&stack0xffffffb8);
-            if (uStack_7._4_4_ == (SubscribableVariableBase_1_System_Boolean___Class *)0x0)
-            goto code_?;
-            func_?(uStack_7._4_4_,pSStack_2);
-            func_?(0,pSStack_2);
-            pQVar37 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                                ((Quaternion *)&pSStack_17,(LimbController *)schema,
-                                 (MethodInfo *)0x0);
-            pSStack_14 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->y;
-            uStack_12._0_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->z;
-            uStack_12._4_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->w;
-            auStack_15._4_4_ = pQVar37->x;
-            uVar41 = func_?(TypeInfo__System__Nullable<double>,auStack_15 + 4);
-            func_?(uStack_7._4_4_,uVar41);
-            pOVar21 = (Object__Array *)uStack_7._4_4_;
-            func_?(1,uVar41);
-            pSVar22 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                                (StringLiteral_Integer__0__equals_maximum_value,
-                                 (IFormatProvider *)
-                                 (SubscribableVariableBase_1_System_Boolean___Class *)uStack_7,
-                                 pOVar21,(MethodInfo *)0x0);
-            JsonValidatingReader_RaiseError(this,pSVar22,schema,(MethodInfo *)0x0);
-          }
-        }
-      }
     }
-    pQVar37 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                        ((Quaternion *)&pSStack_17,(LimbController *)schema,(MethodInfo *)0x0);
-    auStack_29._0_4_ = pQVar37->x;
-    auStack_29._4_4_ = pQVar37->y;
-    fStack_30 = pQVar37->z;
-    pAStack_31 = (Action_1_Boolean_ *)pQVar37->w;
-    bVar19 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)auStack_29,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar19 != 0) {
-      pQVar37 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                          ((Quaternion *)&pSStack_17,(LimbController *)schema,(MethodInfo *)0x0);
-      pSVar42 = pSStack_11;
-      pSVar9 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->x;
-      pSVar38 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->y;
-      pSStack_32 = pSVar9;
+    if ((*(byte *)((int)((pMVar4->field7_0x1c).rgctx_data)->rgctxDataDummy + 0xba) & 1) == 0) {
       func_?();
-      pSStack_13 = pSVar9;
-      pSStack_10 = pSVar38;
-      bVar19 = SubscribableVariableBase`1[System::Boolean]::
-              SubscribableVariableBase_1_System_Boolean__get_Value
-                        ((SubscribableVariableBase_1_System_Boolean_ *)&pSStack_32,
-                         MethodInfo__System__Nullable<double>__get_HasValue__);
-      pSVar9 = pSStack_10;
-      pSStack_10 = pSVar9;
-      if (bVar19 != 0) {
-        pSVar38 = pSStack_13;
-        fVar39 = (float10)func_?(&pSStack_32,
-                                          MethodInfo__System__Nullable<double>__GetValueOrDefault__)
-        ;
-        uStack_12 = (double)fVar39;
-        dVar40 = (double)CONCAT44(pSStack_10,pSStack_13);
-        dVar43 = (double)CONCAT44(pSStack_10,pSStack_13);
-        pSStack_13 = pSVar38;
-        pSStack_10 = pSVar9;
-        if (dVar43 <= uStack_12 && uStack_12 != dVar40) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__Globalization__CultureInfo);
-          }
-          pSStack_13 = pSVar38;
-          pSStack_10 = pSVar9;
-          pCVar20 = mscorlib.dll::System::Globalization::CultureInfo::
-                    CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          uStack_7 = CONCAT44(uStack_7._4_4_,pCVar20);
-          uVar41 = func_?(TypeInfo__System__Object,2);
-          uStack_7 = CONCAT44(uVar41,(SubscribableVariableBase_1_System_Boolean___Class *)uStack_7);
-          uStack_12._0_4_ = pSVar42;
-          uStack_12._4_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)uVar36;
-          pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)
-                       func_?(TypeInfo__System__Int64,&uStack_12);
-          if (uStack_7._4_4_ == (SubscribableVariableBase_1_System_Boolean___Class *)0x0)
-          goto code_?;
-          func_?(uStack_7._4_4_,pSStack_2);
-          func_?(0,pSStack_2);
-          pQVar37 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                              ((Quaternion *)&stack0xffffffb0,(LimbController *)schema,
-                               (MethodInfo *)0x0);
-          pSStack_17 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->x;
-          pSStack_16 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->y;
-          unique0x1000187b = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->z;
-          auStack_15._0_4_ = pQVar37->w;
-          uVar41 = func_?(TypeInfo__System__Nullable<double>,&pSStack_17);
-          func_?(uStack_7._4_4_,uVar41);
-          pOVar21 = (Object__Array *)uStack_7._4_4_;
-          func_?(1,uVar41);
-          pSVar22 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                              (StringLiteral_Integer__0__is_less_than_minimum,
-                               (IFormatProvider *)
-                               (SubscribableVariableBase_1_System_Boolean___Class *)uStack_7,pOVar21
-                               ,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar22,schema,(MethodInfo *)0x0);
-        }
-      }
-      bVar19 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_ExclusiveMinimum
-                        (schema,(MethodInfo *)0x0);
-      if (bVar19 != 0) {
-        LimbController::LimbController_get_InterpolateTowardsYawRotation
-                  ((Quaternion *)&pSStack_17,(LimbController *)schema,(MethodInfo *)0x0);
-        fVar39 = (float10)func_?(&stack0xffffff70,
-                                          MethodInfo__System__Nullable<double>__GetValueOrDefault__)
-        ;
-        uStack_12 = (double)fVar39;
-        if ((double)CONCAT44(pSStack_10,pSStack_13) == uStack_12) {
-          bVar19 = SubscribableVariableBase`1[System::Boolean]::
-                  SubscribableVariableBase_1_System_Boolean__get_Value
-                            ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff70,
-                             MethodInfo__System__Nullable<double>__get_HasValue__);
-          if (bVar19 != 0) {
-            if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-              func_?(TypeInfo__System__Globalization__CultureInfo);
-            }
-            pCVar20 = mscorlib.dll::System::Globalization::CultureInfo::
-                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            uStack_7 = CONCAT44(uStack_7._4_4_,pCVar20);
-            iVar6 = func_?(TypeInfo__System__Object,2);
-            uStack_12._0_4_ = pSStack_11;
-            uStack_7 = CONCAT44(iVar6,(SubscribableVariableBase_1_System_Boolean___Class *)uStack_7
-                               );
-            uStack_12._4_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)uVar36;
-            pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)
-                         func_?(TypeInfo__System__Int64,&uStack_12);
-            if (iVar6 == 0) goto code_?;
-            func_?(iVar6,pSStack_2);
-            func_?(0,pSStack_2);
-            pQVar37 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                                ((Quaternion *)&stack0xffffffb0,(LimbController *)schema,
-                                 (MethodInfo *)0x0);
-            pSStack_17 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->x;
-            pSStack_16 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->y;
-            unique0x10001893 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar37->z;
-            auStack_15._0_4_ = pQVar37->w;
-            uVar41 = func_?(TypeInfo__System__Nullable<double>,&pSStack_17);
-            func_?(uStack_7._4_4_,uVar41);
-            pOVar21 = (Object__Array *)uStack_7._4_4_;
-            func_?(1,uVar41);
-            pSVar22 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                                (StringLiteral_Integer__0__equals_minimum_value,
-                                 (IFormatProvider *)
-                                 (SubscribableVariableBase_1_System_Boolean___Class *)uStack_7,
-                                 pOVar21,(MethodInfo *)0x0);
-            JsonValidatingReader_RaiseError(this,pSVar22,schema,(MethodInfo *)0x0);
-          }
-        }
-      }
     }
-    pNVar44 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-                        ((Nullable_1_Double_ *)&pSStack_17,schema,(MethodInfo *)0x0);
-    SStack_33.klass = *(SubscribableVariableBase_1_System_Boolean___Class **)&pNVar44->value;
-    SStack_33.monitor = *(MonitorData **)((int)&pNVar44->value + 4);
-    SStack_33.fields.value = pNVar44->has_value;
-    SStack_33.fields._1_3_ = *(undefined3 *)&pNVar44->field_0x9;
-    SStack_33.fields.OnChange = *(Action_1_Boolean_ **)&pNVar44->field_0xc;
-    bVar19 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      (&SStack_33,MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar19 != 0) {
-      pNVar44 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-                          ((Nullable_1_Double_ *)&pSStack_17,schema,(MethodInfo *)0x0);
-      uVar41 = *(undefined4 *)&pNVar44->value;
-      uVar45 = *(undefined4 *)((int)&pNVar44->value + 4);
-      func_?();
-      uStack_12._0_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)uVar41;
-      uStack_12._4_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)uVar45;
-      func_?(&stack0xffffff30);
-      fVar39 = (float10)func_?();
-      dVar40 = (double)fVar39;
-      uStack_12._0_4_ = SUB84(dVar40,0);
-      uStack_12._4_4_ =
-           (SubscribableVariableBase_1_System_Boolean___Class *)((ulonglong)dVar40 >> 0x20);
-      if (_UNK_? <=
-          (double)CONCAT44((uint)uStack_12._4_4_ & _UNK_?,
-                           (uint)(SubscribableVariableBase_1_System_Boolean___Class *)uStack_12 &
-                           _UNK_?)) {
-        uStack_12 = dVar40;
-        if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pSStack_2 = (SubscribableVariableBase_1_System_Boolean___Class *)
-                     mscorlib.dll::System::Globalization::CultureInfo::
-                     CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-        iVar6 = func_?(TypeInfo__System__Object);
-        uStack_7 = CONCAT44(iVar6,(SubscribableVariableBase_1_System_Boolean___Class *)uStack_7);
-        if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000)
-             != 0) && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-          func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-        }
-        pSVar22 = JsonConvert::JsonConvert_ToString_9(CONCAT44(uVar36,pSStack_11),(MethodInfo *)0x0)
-        ;
-        if (iVar6 == 0) goto code_?;
-        func_?(iVar6,pSVar22);
-        func_?(0,pSVar22);
-        pNVar44 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-                            ((Nullable_1_Double_ *)(auStack_15 + 4),schema,(MethodInfo *)0x0);
-        pSStack_17 = *(SubscribableVariableBase_1_System_Boolean___Class **)&pNVar44->value;
-        _pSStack_3c = *(undefined8 *)((int)&pNVar44->value + 4);
-        auStack_15._0_4_ = *(undefined4 *)&pNVar44->field_0xc;
-        uVar36 = func_?(TypeInfo__System__Nullable<double>,&pSStack_17);
-        func_?(uStack_7._4_4_,uVar36);
-        pOVar21 = (Object__Array *)uStack_7._4_4_;
-        func_?(1,uVar36);
-        pSVar22 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                            (StringLiteral_Integer__0__is_not_evenly_divisi,
-                             (IFormatProvider *)pSStack_2,pOVar21,(MethodInfo *)0x0);
-        JsonValidatingReader_RaiseError(this,pSVar22,schema,(MethodInfo *)0x0);
-      }
+    (*(this_00->klass->vtable).WriteTo.methodPtr)(this_00,NStack_3.value);
+    NStack_3.value = (uint32_t)(schema->fields)._Enum_k__BackingField;
+    this_01 = (TweenRunner_1_FloatTween_ *)
+              func_?(TypeInfo__Newtonsoft__Json__Linq__JTokenEqualityComparer);
+    if (this_01 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
+    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+    TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
+    bVar6 = Json::Utilities::CollectionUtils::CollectionUtils_ContainsValue
+                      ((IEnumerable_1_System_Object_ *)NStack_3.value,(Object *)this_00,
+                       (IEqualityComparer_1_System_Object_ *)this_01,
+                       bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__ContainsValue<Newtonsoft::Json::Linq::JToken>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>__Newtonsoft__Json__Linq__JToken__System__Collections__Generic__IEqualityComparer<Newtonsoft::Json::Linq::JToken>_
+                      );
+    if (bVar6 != 0) goto code_?;
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Globalization__CultureInfo);
     }
+    pCVar2 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                       ((MethodInfo *)0x0);
+    pOVar7 = (Object__Array *)func_?(TypeInfo__System__Object,1);
+    unaff_EDI = (StringWriter *)
+                (*(unaff_EDI->klass->vtable).ToString.methodPtr)
+                          (unaff_EDI,(unaff_EDI->klass->vtable).ToString.method);
+    if (pOVar7 == (Object__Array *)0x0) goto code_?;
+    if ((unaff_EDI != (StringWriter *)0x0) &&
+       (iVar8 = func_?(unaff_EDI,(pOVar7->klass->_0).element_class), iVar8 == 0))
+    goto code_?;
+    if (pOVar7->max_length == 0) goto code_?;
+    pOVar7->vector[0] = (Object *)unaff_EDI;
+    func_?(pOVar7->vector,unaff_EDI);
+    unaff_EDI = (StringWriter *)StringLiteral_Value__0__is_not_defined_in_enum;
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_format);
+      cRam_? = '\x01';
+    }
+    NStack_3.value = (uint32_t)StringLiteral_format;
+    if (unaff_EDI != (StringWriter *)0x0) {
+      pSVar9 = mscorlib.dll::System::String::String_Format_7
+                          ((IFormatProvider *)pCVar2,(String *)unaff_EDI,pOVar7,(MethodInfo *)0x0);
+      JsonValidatingReader_RaiseError(this,pSVar9,schema,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    goto code_?;
   }
+code_?:
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+                   );
+    cRam_? = '\x01';
+  }
+  pJVar1 = (this->fields)._reader;
+  if (pJVar1 == (JsonReader *)0x0) goto code_?;
+  uVar10 = (*(pJVar1->klass->vtable).get_TokenType.methodPtr)
+                     (pJVar1,(pJVar1->klass->vtable).get_TokenType.method);
+  switch(uVar10) {
+  case 1:
+    NStack_3.hasValue = 0;
+    NStack_3._1_3_ = 0;
+    NStack_3.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_3,0x10,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    NStack_11._0_4_ = NStack_3._0_4_;
+    NStack_11.value = NStack_3.value;
+    break;
+  case 2:
+    bVar12 = 0;
+    uVar13 = 0;
+    uStack_14 = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&stack0xffffffe4,0x20,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    NStack_11._0_4_ = NStack_15._0_4_;
+    NStack_11.value = uStack_14;
+    break;
+  default:
+    NVar16.hasValue = 0;
+    NVar16._1_3_ = 0;
+    NVar16.value = 0;
+    goto code_?;
+  case 7:
+    NStack_17.hasValue = 0;
+    NStack_17._1_3_ = 0;
+    NStack_17.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_17,4,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    NStack_11._0_4_ = NStack_17._0_4_;
+    NStack_11.value = NStack_17.value;
+    break;
+  case 8:
+    NStack_18.hasValue = 0;
+    NStack_18._1_3_ = 0;
+    NStack_18.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_18,2,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    NStack_11._0_4_ = NStack_18._0_4_;
+    NStack_11.value = NStack_18.value;
+    break;
+  case 9:
+    NStack_19.hasValue = 0;
+    NStack_19._1_3_ = 0;
+    NStack_19.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_19,1,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    NStack_11._0_4_ = NStack_19._0_4_;
+    NStack_11.value = NStack_19.value;
+    break;
+  case 10:
+    NStack_20.hasValue = 0;
+    NStack_20._1_3_ = 0;
+    NStack_20.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_20,8,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+    NStack_11._0_4_ = NStack_20._0_4_;
+    NStack_11.value = NStack_20.value;
+    break;
+  case 0xb:
+    NVar16.hasValue = 0;
+    NVar16._1_3_ = 0;
+    NVar16.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              ((Nullable_1_UInt32_ *)&stack0xffffffbc,0x40,
+               MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__Nullable_Newtonsoft__Json__Schema__JsonSchemaType_
+              );
+code_?:
+    NStack_11._0_4_ = NVar16._0_4_;
+    NStack_11.value = NVar16.value;
+  }
+  if (NStack_11.hasValue == 0) {
+    return;
+  }
+  mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+            ((Nullable_1_UInt32_ *)&stack0xffffffbc,0,(MethodInfo *)0x0);
+  flag = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
+                   (&NStack_11,
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__get_Value__
+                   );
+  value.value = 0;
+  value._0_4_ = flag;
+  bVar6 = Schema::JsonSchemaGenerator::JsonSchemaGenerator_HasFlag_1(value,flag,(MethodInfo *)0x0);
+  if (bVar6 == 0) {
+    return;
+  }
+  if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+    NStack_15._0_4_ = TypeInfo__System__Globalization__CultureInfo;
+    NStack_17.value = (uint32_t)&UNK_?;
+    func_?();
+  }
+  NStack_15 = (Nullable_1_UInt32_)((ulonglong)NStack_15 & 0xffffffff00000000);
+  NStack_17.value = (uint32_t)&UNK_?;
+  pCVar2 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                     ((MethodInfo *)0x0);
+  NStack_15._0_4_ = 1;
+  NStack_17.value = (uint32_t)TypeInfo__System__Object;
+  NStack_17._0_4_ = &UNK_?;
+  pOVar7 = (Object__Array *)func_?();
+  NStack_17._0_4_ = &stack0xffffffbc;
+  NStack_18.value = (uint32_t)TypeInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>;
+  NStack_18._0_4_ = &UNK_?;
+  unaff_EDI = (StringWriter *)func_?();
+  if (pOVar7 == (Object__Array *)0x0) {
+code_?:
+    func_?();
+code_?:
+    uVar10 = func_?(0);
+    func_?(uVar10);
+code_?:
+    func_?();
+code_?:
+    uVar10 = func_?(&TypeInfo__System__ArgumentNullException);
+    pOVar7 = (Object__Array *)func_?(uVar10);
+    func_?(pOVar7);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              ((ArgumentNullException *)pOVar7,(String *)NStack_3.value,(MethodInfo *)0x0);
+    uVar10 = func_?(&
+                             MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                            );
+    func_?(pOVar7,uVar10);
+  }
+  else if ((unaff_EDI == (StringWriter *)0x0) ||
+          (iVar8 = func_?(unaff_EDI,(pOVar7->klass->_0).element_class), iVar8 != 0)) {
+    if (pOVar7->max_length == 0) goto code_?;
+    pOVar7->vector[0] = (Object *)unaff_EDI;
+    func_?(pOVar7->vector,unaff_EDI);
+    pSVar9 = StringLiteral_Type__0__is_disallowed_;
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_format);
+      cRam_? = '\x01';
+    }
+    NStack_3.value = (uint32_t)StringLiteral_format;
+    unaff_EDI = (StringWriter *)0x0;
+    if (pSVar9 != (String *)0x0) {
+      pSVar9 = mscorlib.dll::System::String::String_Format_7
+                          ((IFormatProvider *)pCVar2,pSVar9,pOVar7,(MethodInfo *)0x0);
+      JsonValidatingReader_RaiseError(this,pSVar9,schema,(MethodInfo *)0x0);
+      return;
+    }
+    goto code_?;
+  }
+  uVar10 = func_?(0);
+  func_?(uVar10);
+code_?:
+  uVar21 = func_?();
+  iVar8 = (int)uVar21;
+  pbVar22 = (byte *)(iVar8 + -1);
+  bVar23 = (byte)((ushort)extraout_CX >> 8);
+  bVar24 = *pbVar22 + bVar23;
+  bVar25 = CARRY1(*pbVar22,bVar23) || CARRY1(bVar24,CARRY4((uint)pOVar7,(uint)&stack0xfffffffc));
+  *pbVar22 = bVar24 + CARRY4((uint)pOVar7,(uint)&stack0xfffffffc);
+  uVar26 = (undefined2)((ulonglong)uVar21 >> 0x20);
+  out(uVar26,(char)pbVar22);
+  pbVar22 = (byte *)(iVar8 + -2);
+  bVar24 = *pbVar22 + (byte)pbVar22;
+  bVar27 = CARRY1(*pbVar22,(byte)pbVar22) || CARRY1(bVar24,bVar25);
+  *pbVar22 = bVar24 + bVar25;
+  out(uVar26,pbVar22);
+  pbVar22 = (byte *)(iVar8 + -3);
+  bVar24 = *pbVar22 + (byte)pbVar22;
+  bVar25 = CARRY1(*pbVar22,(byte)pbVar22) || CARRY1(bVar24,bVar27);
+  *pbVar22 = bVar24 + bVar27;
+  out(uVar26,pbVar22);
+  pbVar22 = (byte *)(iVar8 + -4);
+  bVar24 = *pbVar22 + (byte)pbVar22;
+  bVar27 = CARRY1(*pbVar22,(byte)pbVar22) || CARRY1(bVar24,bVar25);
+  *pbVar22 = bVar24 + bVar25;
+  out(uVar26,pbVar22);
+  pbVar22 = (byte *)(iVar8 + -5);
+  bVar24 = *pbVar22 + (byte)pbVar22;
+  bVar25 = CARRY1(*pbVar22,(byte)pbVar22) || CARRY1(bVar24,bVar27);
+  *pbVar22 = bVar24 + bVar27;
+  out(uVar26,pbVar22);
+  pbVar22 = (byte *)((int)&unaff_EDI[-1].fields._.CoreNewLine + 2);
+  bVar24 = *pbVar22 + (byte)extraout_CX;
+  bVar27 = CARRY1(*pbVar22,(byte)extraout_CX) || CARRY1(bVar24,bVar25);
+  *pbVar22 = bVar24 + bVar25;
+  pbVar22 = (byte *)((int)pOVar7->vector + (int)((int)&NStack_18.value + 2));
+  bVar23 = (byte)((ulonglong)uVar21 >> 0x28);
+  bVar24 = *pbVar22 + bVar23;
+  bVar25 = CARRY1(*pbVar22,bVar23) || CARRY1(bVar24,bVar27);
+  *pbVar22 = bVar24 + bVar27;
+  pbVar22 = (byte *)((int)((ulonglong)uVar21 >> 0x20) + -0x41efb712);
+  bVar24 = *pbVar22;
+  bVar23 = *pbVar22 + (byte)schema;
+  *pbVar22 = bVar23 + bVar25;
+  out(uVar26,(char)uVar21 + -8);
+  out((short)CONCAT31((int3)((ulonglong)uVar21 >> 0x28),
+                      (char)((ulonglong)uVar21 >> 0x20) + (char)((uint)(iVar8 + -9) >> 8) +
+                      (CARRY1(bVar24,(byte)schema) || CARRY1(bVar23,bVar25))),(char)(iVar8 + -9));
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -2200,313 +2287,304 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__Int64);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?(&MethodInfo__System__Nullable<double>__GetValueOrDefault__);
+    func_?(&MethodInfo__System__Nullable<double>__get_HasValue__);
+    func_?(&MethodInfo__System__Nullable<double>__get_Value__);
+    func_?(&TypeInfo__System__Nullable<double>);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_Integer__0__is_less_than_minimum);
+    func_?(&StringLiteral_Integer__0__is_not_evenly_divisi);
+    func_?(&StringLiteral_Integer__0__equals_maximum_value);
+    func_?(&StringLiteral_Integer__0__exceeds_maximum_valu);
+    func_?(&StringLiteral_Integer__0__equals_minimum_value);
     cRam_? = '\x01';
   }
-  auStack_1._0_4_ = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  auStack_1._4_4_ = (MonitorData *)0x0;
-  fStack_2 = 0.0;
-  pAStack_3 = (Action_1_Boolean_ *)0x0;
-  pSStack_4 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  pOStack_5 = (Object__Array__Class *)0x0;
-  pSStack_6 = (SubscribableVariableBase_1_System_Boolean___Class *)0x0;
-  if ((schema != (JsonSchemaModel *)0x0) &&
-     (bVar7 = JsonValidatingReader_TestType
-                        (this,schema,JsonSchemaType__Enum_Integer,(MethodInfo *)0x0), bVar7 != 0)) {
-    JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,schema,(MethodInfo *)0x0);
-    pJVar8 = (this->fields)._reader;
-    if (pJVar8 == (JsonReader *)0x0) {
+  if (schema == (JsonSchemaModel *)0x0) {
+    return;
+  }
+  bVar1 = JsonValidatingReader_TestType(this,schema,JsonSchemaType__Enum_Integer,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return;
+  }
+  JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,schema,(MethodInfo *)0x0);
+  pJVar2 = (this->fields)._reader;
+  if (pJVar2 == (JsonReader *)0x0) {
 code_?:
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    uVar3 = func_?(&TypeInfo__System__ArgumentNullException);
+    pAVar4 = (ArgumentNullException *)func_?(uVar3);
+    func_?(pAVar4);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (pAVar4,(String *)pCStack_5,(MethodInfo *)0x0);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                   );
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+  }
+  else {
+    value = (Object *)(*(pJVar2->klass->vtable).get_Value.methodPtr)();
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+    }
+    pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                       ((MethodInfo *)0x0);
+    if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    iVar7 = mscorlib.dll::System::Convert::Convert_ToInt64
+                       (value,(IFormatProvider *)pCVar6,(MethodInfo *)0x0);
+    if ((schema->fields)._Maximum_k__BackingField.hasValue == 0) goto code_?;
+    uVar3 = *(undefined4 *)&(schema->fields)._Maximum_k__BackingField;
+    uVar8 = *(undefined4 *)&(schema->fields)._Maximum_k__BackingField.field_0x4;
+    func_?();
+    dVar9 = (schema->fields)._Maximum_k__BackingField.value;
+    if (((byte)*(undefined8 *)&(schema->fields)._Maximum_k__BackingField &
+        (dVar9 <= (double)CONCAT44(uVar8,uVar3) && (double)CONCAT44(uVar8,uVar3) != dVar9)) != 0
+       ) {
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pCStack_5 = mscorlib.dll::System::Globalization::CultureInfo::
+                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+      pOVar10 = (Object__Array *)func_?();
+      pOStack_11 = (Object__Array__Class *)func_?();
+      if (pOVar10 == (Object__Array *)0x0) goto code_?;
+      if ((pOStack_11 == (Object__Array__Class *)0x0) || (iVar12 = func_?(), iVar12 != 0)) {
+        func_?();
+        pOStack_11 = (Object__Array__Class *)func_?();
+        if ((pOStack_11 != (Object__Array__Class *)0x0) && (iVar12 = func_?(), iVar12 == 0))
+        goto code_?;
+        func_?();
+        pSVar13 = StringLiteral_Integer__0__exceeds_maximum_valu;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_format);
+          cRam_? = '\x01';
+        }
+        pOStack_11 = (Object__Array__Class *)StringLiteral_format;
+        if (pSVar13 != (String *)0x0) {
+          pSVar13 = mscorlib.dll::System::String::String_Format_7
+                             ((IFormatProvider *)pCStack_5,pSVar13,pOVar10,(MethodInfo *)0x0);
+          JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
+          goto code_?;
+        }
+      }
+      else {
+code_?:
+        func_?();
+        func_?();
+code_?:
+        func_?();
+        func_?();
+code_?:
+        func_?();
+        func_?();
+      }
+      uVar3 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar4 = (ArgumentNullException *)func_?(uVar3);
+      func_?(pAVar4);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar4,(String *)pOStack_11,(MethodInfo *)0x0);
+      func_?(&
+                      MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                     );
+      func_?();
+      goto code_?;
+    }
+code_?:
+    if ((schema->fields)._ExclusiveMaximum_k__BackingField != 0) {
+      uVar3 = *(undefined4 *)&(schema->fields)._Maximum_k__BackingField;
+      uVar8 = *(undefined4 *)&(schema->fields)._Maximum_k__BackingField.field_0x4;
+      func_?();
+      if (((double)CONCAT44(uVar8,uVar3) == (schema->fields)._Maximum_k__BackingField.value &
+          (byte)*(undefined8 *)&(schema->fields)._Maximum_k__BackingField) == 0)
+      goto code_?;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pOStack_11 = (Object__Array__Class *)
+                  mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                            ((MethodInfo *)0x0);
+      pOVar10 = (Object__Array *)func_?();
+      pCStack_5 = (CultureInfo *)func_?();
+      if (pOVar10 == (Object__Array *)0x0) goto code_?;
+      if ((pCStack_5 != (CultureInfo *)0x0) && (iVar12 = func_?(), iVar12 == 0))
+      goto code_?;
+      func_?();
+      pCStack_5 = (CultureInfo *)func_?();
+      if ((pCStack_5 != (CultureInfo *)0x0) && (iVar12 = func_?(), iVar12 == 0))
+      goto code_?;
+      func_?();
+      pSVar13 = StringLiteral_Integer__0__equals_maximum_value;
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_format);
+        cRam_? = '\x01';
+      }
+      pCStack_5 = (CultureInfo *)StringLiteral_format;
+      if (pSVar13 != (String *)0x0) {
+        pSVar13 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)pOStack_11,pSVar13,pOVar10,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
+        goto code_?;
+      }
+      goto code_?;
+    }
+code_?:
+    if ((schema->fields)._Minimum_k__BackingField.hasValue == 0) goto code_?;
+    uVar3 = *(undefined4 *)&(schema->fields)._Minimum_k__BackingField;
+    uVar8 = *(undefined4 *)&(schema->fields)._Minimum_k__BackingField.field_0x4;
+    func_?();
+    dVar9 = (schema->fields)._Minimum_k__BackingField.value;
+    if (((byte)*(undefined8 *)&(schema->fields)._Minimum_k__BackingField &
+        ((double)CONCAT44(uVar8,uVar3) <= dVar9 && dVar9 != (double)CONCAT44(uVar8,uVar3))) != 0
+       ) {
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+      pOVar10 = (Object__Array *)func_?();
+      pCStack_5 = (CultureInfo *)func_?();
+      if (pOVar10 == (Object__Array *)0x0) goto code_?;
+      if ((pCStack_5 != (CultureInfo *)0x0) && (iVar12 = func_?(), iVar12 == 0))
+      goto code_?;
+      func_?();
+      iVar12 = func_?();
+      if ((iVar12 == 0) || (iVar12 = func_?(), iVar12 != 0)) {
+        func_?();
+        pSVar13 = StringLiteral_Integer__0__is_less_than_minimum;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_format);
+          cRam_? = '\x01';
+        }
+        pCStack_5 = (CultureInfo *)StringLiteral_format;
+        if (pSVar13 == (String *)0x0) goto code_?;
+        pSVar13 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)pCVar6,pSVar13,pOVar10,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
+        goto code_?;
+      }
+      goto code_?;
+    }
+code_?:
+    if ((schema->fields)._ExclusiveMinimum_k__BackingField != 0) {
+      uVar3 = *(undefined4 *)&(schema->fields)._Minimum_k__BackingField;
+      uVar8 = *(undefined4 *)&(schema->fields)._Minimum_k__BackingField.field_0x4;
+      func_?();
+      if (((double)CONCAT44(uVar8,uVar3) == (schema->fields)._Minimum_k__BackingField.value &
+          (byte)*(undefined8 *)&(schema->fields)._Minimum_k__BackingField) == 0)
+      goto code_?;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pCVar6 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+      pOVar10 = (Object__Array *)func_?();
+      pCStack_5 = (CultureInfo *)func_?();
+      if (pOVar10 == (Object__Array *)0x0) goto code_?;
+      if ((pCStack_5 != (CultureInfo *)0x0) && (iVar12 = func_?(), iVar12 == 0))
+      goto code_?;
+      func_?();
+      iVar12 = func_?();
+      if ((iVar12 == 0) || (iVar12 = func_?(), iVar12 != 0)) {
+        func_?();
+        pSVar13 = StringLiteral_Integer__0__equals_minimum_value;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_format);
+          cRam_? = '\x01';
+        }
+        pCStack_5 = (CultureInfo *)StringLiteral_format;
+        if (pSVar13 == (String *)0x0) goto code_?;
+        pSVar13 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)pCVar6,pSVar13,pOVar10,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
+        goto code_?;
+      }
+      goto code_?;
+    }
+code_?:
+    if ((schema->fields)._DivisibleBy_k__BackingField.hasValue == 0) {
       return;
     }
-    value = (Object *)(*(code *)(pJVar8->klass->vtable).get_Value.method)();
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+    mscorlib.dll::System::Nullable`1[Double]::Nullable_1_Double__get_Value
+              ((Nullable_1_Double_ *)&stack0xffffffd8,
+               *(MethodInfo **)((int)&(schema->fields)._DivisibleBy_k__BackingField.value + 4));
+    func_?();
+    fVar14 = (float10)func_?();
+    bVar1 = JsonValidatingReader_IsZero
+                      ((double)fVar14,(MethodInfo *)((ulonglong)(double)fVar14 >> 0x20));
+    if (bVar1 != 0) {
+      return;
+    }
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                       ((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
+    mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+              ((MethodInfo *)0x0);
+    uVar3 = 2;
+    pOStack_11 = TypeInfo__System__Object;
+    pOVar10 = (Object__Array *)func_?();
+    if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    dVar11 = (double)mscorlib.dll::System::Convert::Convert_ToInt64_17
-                               (value,(IFormatProvider *)pCVar10,(MethodInfo *)0x0);
-    uVar12 = (undefined4)((ulonglong)dVar11 >> 0x20);
-    uVar13 = SUB84(dVar11,0);
-    uStack_14 = uVar13;
-    LimbController::LimbController_get_InterpolateTowardsPitchRotation
-              (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-    bVar7 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff60,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar7 != 0) {
-      pQVar16 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                         (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-      pSVar17 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar16->x;
-      pMVar18 = (MonitorData *)pQVar16->y;
-      fStack_2 = pQVar16->z;
-      pAStack_3 = (Action_1_Boolean_ *)pQVar16->w;
-      auStack_1._0_4_ = pSVar17;
-      auStack_1._4_4_ = pMVar18;
+    pSVar13 = JsonConvert::JsonConvert_ToString_9
+                       (CONCAT44((int)((ulonglong)iVar7 >> 0x20),uVar3),(MethodInfo *)0x0);
+    if (pOVar10 == (Object__Array *)0x0) goto code_?;
+    if ((pSVar13 == (String *)0x0) || (iVar12 = func_?(), iVar12 != 0)) {
       func_?();
-      dStack_19 = (double)CONCAT44(pMVar18,pSVar17);
-      bVar7 = SubscribableVariableBase`1[System::Boolean]::
-              SubscribableVariableBase_1_System_Boolean__get_Value
-                        ((SubscribableVariableBase_1_System_Boolean_ *)auStack_1,
-                         MethodInfo__System__Nullable<double>__get_HasValue__);
-      if (bVar7 != 0) {
-        uStack_20 = dStack_19;
-        fVar21 = (float10)func_?();
-        dVar22 = dStack_19;
-        uStack_23 = (double)fVar21;
-        uVar24 = SUB84(uStack_20,0);
-        uVar25 = (undefined4)((ulonglong)uStack_20 >> 0x20);
-        dStack_19 = uStack_20;
-        if (uStack_23 < dVar22) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-            uVar24 = SUB84(uStack_20,0);
-            uVar25 = (undefined4)((ulonglong)uStack_20 >> 0x20);
-          }
-          dStack_19 = (double)CONCAT44(uVar25,uVar24);
-          pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::
-                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          uStack_20 = (double)CONCAT44(pCVar10,(undefined4)uStack_20);
-          pOStack_26 = (Object__Array *)func_?();
-          unique0x10001422 = dVar11;
-          pCStack_27 = (CultureInfo *)func_?();
-          if (pOStack_26 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          pQVar16 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                             (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-          fStack_28 = pQVar16->x;
-          fStack_29 = pQVar16->y;
-          uStack_23 = *(double *)&pQVar16->z;
-          func_?();
-          func_?(pOStack_26);
-          pOVar30 = pOStack_26;
-          func_?();
-          pSVar31 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Integer__0__exceeds_maximum_valu,uStack_20._4_4_,pOVar30,
-                              (MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar31,schema,(MethodInfo *)0x0);
-          uVar13 = uStack_14;
-        }
-      }
-      bVar7 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_ExclusiveMaximum
-                        (schema,(MethodInfo *)0x0);
-      if (bVar7 != 0) {
-        pQVar16 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                           (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-        pSStack_4 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar16->x;
-        pOStack_5 = (Object__Array__Class *)pQVar16->y;
-        fVar21 = (float10)func_?();
-        uStack_23 = (double)fVar21;
-        if ((dStack_19 == uStack_23) &&
-           (bVar7 = SubscribableVariableBase`1[System::Boolean]::
-                    SubscribableVariableBase_1_System_Boolean__get_Value
-                              ((SubscribableVariableBase_1_System_Boolean_ *)&pSStack_4,
-                               MethodInfo__System__Nullable<double>__get_HasValue__), bVar7 != 0)) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pCStack_27 = mscorlib.dll::System::Globalization::CultureInfo::
-                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          pOStack_26 = (Object__Array *)func_?();
-          stack0xffffffb8 = (double)CONCAT44(uVar12,uVar13);
-          uVar13 = func_?();
-          uStack_20 = (double)CONCAT44(uVar13,(undefined4)uStack_20);
-          if (pOStack_26 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          pQVar16 = LimbController::LimbController_get_InterpolateTowardsPitchRotation
-                             (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-          fStack_28 = pQVar16->x;
-          fStack_29 = pQVar16->y;
-          uStack_23 = *(double *)&pQVar16->z;
-          func_?();
-          func_?(pOStack_26);
-          pOVar30 = pOStack_26;
-          func_?();
-          pSVar31 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Integer__0__equals_maximum_value,
-                              (IFormatProvider *)pCStack_27,pOVar30,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar31,schema,(MethodInfo *)0x0);
-        }
-      }
-    }
-    LimbController::LimbController_get_InterpolateTowardsYawRotation
-              (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-    bVar7 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff50,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar7 != 0) {
-      pQVar16 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                         (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-      uVar13 = uStack_14;
-      pSVar17 = (SubscribableVariableBase_1_System_Boolean___Class *)pQVar16->x;
-      fVar32 = pQVar16->y;
-      pSStack_6 = pSVar17;
+      iVar12 = func_?();
+      if ((iVar12 != 0) && (iVar12 = func_?(), iVar12 == 0)) goto code_?;
       func_?();
-      dStack_19 = (double)CONCAT44(fVar32,pSVar17);
-      bVar7 = SubscribableVariableBase`1[System::Boolean]::
-              SubscribableVariableBase_1_System_Boolean__get_Value
-                        ((SubscribableVariableBase_1_System_Boolean_ *)&pSStack_6,
-                         MethodInfo__System__Nullable<double>__get_HasValue__);
-      if (bVar7 != 0) {
-        stack0xffffffb8 = dStack_19;
-        fVar21 = (float10)func_?();
-        dVar11 = dStack_19;
-        uStack_23 = (double)fVar21;
-        uVar24 = SUB84(stack0xffffffb8,0);
-        uVar25 = (undefined4)((ulonglong)stack0xffffffb8 >> 0x20);
-        dStack_19 = stack0xffffffb8;
-        if (dVar11 < uStack_23) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-            uVar24 = SUB84(stack0xffffffb8,0);
-            uVar25 = (undefined4)((ulonglong)stack0xffffffb8 >> 0x20);
-          }
-          dStack_19 = (double)CONCAT44(uVar25,uVar24);
-          pCStack_27 = mscorlib.dll::System::Globalization::CultureInfo::
-                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          pOStack_26 = (Object__Array *)func_?();
-          uStack_23 = (double)CONCAT44(uVar12,uVar13);
-          uVar13 = func_?();
-          uStack_20 = (double)CONCAT44(uVar13,(undefined4)uStack_20);
-          if (pOStack_26 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          pQVar16 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                             ((Quaternion *)auStack_33,(LimbController *)schema,(MethodInfo *)0x0);
-          QStack_15.x = pQVar16->x;
-          QStack_15.y = pQVar16->y;
-          QStack_15.z = pQVar16->z;
-          QStack_15.w = pQVar16->w;
-          func_?();
-          func_?(pOStack_26);
-          pOVar30 = pOStack_26;
-          func_?();
-          pSVar31 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Integer__0__is_less_than_minimum,
-                              (IFormatProvider *)pCStack_27,pOVar30,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar31,schema,(MethodInfo *)0x0);
-        }
+      pSVar13 = StringLiteral_Integer__0__is_not_evenly_divisi;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
       }
-      bVar7 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_ExclusiveMinimum
-                        (schema,(MethodInfo *)0x0);
-      if (bVar7 != 0) {
-        LimbController::LimbController_get_InterpolateTowardsYawRotation
-                  (&QStack_15,(LimbController *)schema,(MethodInfo *)0x0);
-        fVar21 = (float10)func_?();
-        uStack_23 = (double)fVar21;
-        if ((dStack_19 == uStack_23) &&
-           (bVar7 = SubscribableVariableBase`1[System::Boolean]::
-                    SubscribableVariableBase_1_System_Boolean__get_Value
-                              ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff70,
-                               MethodInfo__System__Nullable<double>__get_HasValue__), bVar7 != 0)) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pCStack_27 = mscorlib.dll::System::Globalization::CultureInfo::
-                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          pOVar30 = (Object__Array *)func_?();
-          uStack_23 = (double)CONCAT44(uVar12,uStack_14);
-          pOStack_26 = pOVar30;
-          uVar13 = func_?();
-          uStack_20 = (double)CONCAT44(uVar13,(undefined4)uStack_20);
-          if (pOVar30 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          pQVar16 = LimbController::LimbController_get_InterpolateTowardsYawRotation
-                             ((Quaternion *)auStack_33,(LimbController *)schema,(MethodInfo *)0x0);
-          QStack_15.x = pQVar16->x;
-          QStack_15.y = pQVar16->y;
-          QStack_15.z = pQVar16->z;
-          QStack_15.w = pQVar16->w;
-          func_?();
-          func_?(pOStack_26);
-          pOVar30 = pOStack_26;
-          func_?();
-          pSVar31 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                             (StringLiteral_Integer__0__equals_minimum_value,
-                              (IFormatProvider *)pCStack_27,pOVar30,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar31,schema,(MethodInfo *)0x0);
-        }
+      paramName = StringLiteral_format;
+      if (pSVar13 != (String *)0x0) {
+        pSVar13 = mscorlib.dll::System::String::String_Format_7
+                           ((IFormatProvider *)&UNK_?,pSVar13,pOVar10,(MethodInfo *)0x0);
+        JsonValidatingReader_RaiseError(this,pSVar13,schema,(MethodInfo *)0x0);
+        return;
       }
-    }
-    Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-              ((Nullable_1_Double_ *)&QStack_15,schema,(MethodInfo *)0x0);
-    bVar7 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)&stack0xffffff40,
-                       MethodInfo__System__Nullable<double>__get_HasValue__);
-    if (bVar7 != 0) {
-      pNVar34 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-                          ((Nullable_1_Double_ *)&QStack_15,schema,(MethodInfo *)0x0);
-      uVar13 = *(undefined4 *)&pNVar34->value;
-      uVar24 = *(undefined4 *)((int)&pNVar34->value + 4);
+      uVar3 = func_?();
+      pAVar4 = (ArgumentNullException *)func_?(uVar3);
+      func_?(pAVar4);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar4,paramName,(MethodInfo *)0x0);
+      func_?(&
+                      MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                     );
       func_?();
-      pOStack_5 = (Object__Array__Class *)&stack0xffffff30;
-      uStack_23._4_4_ = uVar24;
-      uStack_23._0_4_ = uVar13;
-      func_?();
-      fVar21 = (float10)func_?();
-      uStack_23 = (double)fVar21;
-      if (_UNK_? <=
-          (double)CONCAT44((uint)((ulonglong)uStack_23 >> 0x20) & _UNK_?,
-                           SUB84(uStack_23,0) & _UNK_?)) {
-        if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                           ((MethodInfo *)0x0);
-        pOStack_5 = TypeInfo__System__Object;
-        uStack_20 = (double)CONCAT44(pCVar10,(undefined4)uStack_20);
-        pOVar30 = (Object__Array *)func_?();
-        pOStack_26 = pOVar30;
-        if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000)
-             != 0) && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
-          func_?();
-        }
-        JsonConvert::JsonConvert_ToString_9(CONCAT44(uVar12,uStack_14),(MethodInfo *)0x0);
-        if (pOVar30 == (Object__Array *)0x0) goto code_?;
-        func_?();
-        func_?();
-        pNVar34 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_DivisibleBy
-                            ((Nullable_1_Double_ *)&fStack_28,schema,(MethodInfo *)0x0);
-        QStack_15.x = *(float *)&pNVar34->value;
-        QStack_15.y = *(float *)((int)&pNVar34->value + 4);
-        QStack_15.z = *(float *)&pNVar34->has_value;
-        QStack_15.w = *(float *)&pNVar34->field_0xc;
-        func_?();
-        func_?(pOStack_26);
-        pOVar30 = pOStack_26;
-        func_?();
-        pSVar31 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                           (StringLiteral_Integer__0__is_not_evenly_divisi,uStack_20._4_4_,pOVar30,
-                            (MethodInfo *)0x0);
-        JsonValidatingReader_RaiseError(this,pSVar31,schema,(MethodInfo *)0x0);
-      }
+      goto code_?;
     }
   }
+  func_?();
+  func_?();
+code_?:
+  func_?();
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -2552,99 +2630,118 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_bool>__ContainsKey_System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_bool>__set_Item_System__String__bool_
+                   );
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_Property___0___has_not_been_defi);
     cRam_? = '\x01';
   }
   if (schema == (JsonSchemaModel *)0x0) {
     return;
   }
   pJVar1 = (this->fields)._reader;
-  if (pJVar1 != (JsonReader *)0x0) {
-    value = (Object *)
-            (*(code *)(pJVar1->klass->vtable).get_Value.method)
-                      (pJVar1,(pJVar1->klass->vtable).get_ValueType.methodPtr);
-    if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr & 0x2000000)
-         != 0) && ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
+  if (pJVar1 == (JsonReader *)0x0) {
+code_?:
+    func_?();
+code_?:
+    uVar2 = func_?(0);
+    func_?(uVar2);
+  }
+  else {
+    pSStack_3 = (String *)
+                (*(pJVar1->klass->vtable).get_Value.methodPtr)
+                          (pJVar1,(pJVar1->klass->vtable).get_Value.method);
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Globalization__CultureInfo);
     }
-    pCVar2 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+    pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__Convert->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Convert->_1).cctor_started == 0)) {
+    if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Convert);
     }
-    propertyName = mscorlib.dll::System::Convert::Convert_ToString_2
-                             (value,(IFormatProvider *)pCVar2,(MethodInfo *)0x0);
-    pJVar3 = (this->fields)._currentScope;
-    if ((pJVar3 != (JsonValidatingReader_SchemaScope *)0x0) &&
-       (pDVar4 = (Dictionary_2_System_Object_System_Boolean_ *)
-                 System.dll::System::Collections::Generic::
-                 SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                 ::Single,System::Object]::
-                 SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                           ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                             *)pJVar3,(MethodInfo *)0x0),
-       pDVar4 != (Dictionary_2_System_Object_System_Boolean_ *)0x0)) {
-      bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Boolean]::Dictionary_2_System_Object_System_Boolean__ContainsKey
-                        (pDVar4,(Object *)propertyName,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_bool>__ContainsKey_System__String_
-                        );
-      if (bVar5 != 0) {
-        pJVar3 = (this->fields)._currentScope;
-        if ((pJVar3 == (JsonValidatingReader_SchemaScope *)0x0) ||
-           (pDVar4 = (Dictionary_2_System_Object_System_Boolean_ *)
-                     System.dll::System::Collections::Generic::
-                     SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System
-                     ::Single,System::Object]::
-                     SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-                               ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-                                 *)pJVar3,(MethodInfo *)0x0),
-           pDVar4 == (Dictionary_2_System_Object_System_Boolean_ *)0x0)) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Boolean]::
-        Dictionary_2_System_Object_System_Boolean__set_Item
-                  (pDVar4,(Object *)propertyName,1,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_bool>__set_Item_System__String__bool_
-                  );
-      }
-      bVar5 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_AllowAdditionalProperties
-                        (schema,(MethodInfo *)0x0);
-      if ((bVar5 == 0) &&
-         (bVar5 = JsonValidatingReader_IsPropertyDefinied
-                            (this,schema,propertyName,(MethodInfo *)0x0), bVar5 == 0)) {
-        if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__Globalization__CultureInfo);
-        }
-        pCVar2 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                           ((MethodInfo *)0x0);
-        args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-        if (args == (Object__Array *)0x0) goto code_?;
-        func_?(args,propertyName);
-        if (args->max_length == 0) goto code_?;
-        args->vector[0] = (Object *)propertyName;
-        message = Json::Utilities::StringUtils::StringUtils_FormatWith
-                            (StringLiteral_Property___0___has_not_been_defi,
-                             (IFormatProvider *)pCVar2,args,(MethodInfo *)0x0);
-        JsonValidatingReader_RaiseError(this,message,schema,(MethodInfo *)0x0);
-      }
-      pJVar3 = (this->fields)._currentScope;
-      if (pJVar3 != (JsonValidatingReader_SchemaScope *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::ObjectPool`1[System::Object]::
-        ObjectPool_1_System_Object__set_countAll
-                  ((ObjectPool_1_System_Object_ *)pJVar3,(int32_t)propertyName,(MethodInfo *)0x0);
+    propertyName = mscorlib.dll::System::Convert::Convert_ToString_1
+                             ((Object *)pSStack_3,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
+    pJVar5 = (this->fields)._currentScope;
+    if ((pJVar5 == (JsonValidatingReader_SchemaScope *)0x0) ||
+       (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                  (pJVar5->fields)._requiredProperties,
+       this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0))
+    goto code_?;
+    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (this_00,(Object *)propertyName,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::String,_bool>__ContainsKey_System__String_
+                      );
+    if (bVar6 != 0) {
+      pJVar5 = (this->fields)._currentScope;
+      if ((pJVar5 == (JsonValidatingReader_SchemaScope *)0x0) ||
+         (this_01 = (Dictionary_2_System_Object_System_Object_ *)
+                    (pJVar5->fields)._requiredProperties,
+         this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0)) goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__set_Item
+                (this_01,(Object *)propertyName,(Object *)0x1,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_bool>__set_Item_System__String__bool_
+                );
+    }
+    if (((schema->fields)._AllowAdditionalProperties_k__BackingField != 0) ||
+       (bVar6 = JsonValidatingReader_IsPropertyDefinied(this,schema,propertyName,(MethodInfo *)0x0),
+       bVar6 != 0)) {
+code_?:
+      pJVar5 = (this->fields)._currentScope;
+      if (pJVar5 != (JsonValidatingReader_SchemaScope *)0x0) {
+        (pJVar5->fields)._CurrentPropertyName_k__BackingField = propertyName;
+        func_?(&(pJVar5->fields)._CurrentPropertyName_k__BackingField,propertyName);
         return;
       }
+      goto code_?;
+    }
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Globalization__CultureInfo);
+    }
+    pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                       ((MethodInfo *)0x0);
+    args = (Object__Array *)func_?(TypeInfo__System__Object,1);
+    if (args == (Object__Array *)0x0) goto code_?;
+    if ((propertyName != (String *)0x0) &&
+       (iVar7 = func_?(propertyName,(args->klass->_0).element_class), iVar7 == 0))
+    goto code_?;
+    if (args->max_length != 0) {
+      args->vector[0] = (Object *)propertyName;
+      func_?(args->vector,propertyName);
+      pSVar8 = StringLiteral_Property___0___has_not_been_defi;
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_format);
+        cRam_? = '\x01';
+      }
+      pSStack_3 = StringLiteral_format;
+      if (pSVar8 == (String *)0x0) goto code_?;
+      pSVar8 = mscorlib.dll::System::String::String_Format_7
+                         ((IFormatProvider *)pCVar4,pSVar8,args,(MethodInfo *)0x0);
+      JsonValidatingReader_RaiseError(this,pSVar8,schema,(MethodInfo *)0x0);
+      goto code_?;
     }
   }
+  func_?();
 code_?:
-  func_?(0);
-code_?:
-  uVar6 = func_?(0);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  uVar2 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_02 = (ArgumentNullException *)func_?(uVar2);
+  func_?(this_02);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (this_02,pSStack_3,(MethodInfo *)0x0);
+  uVar2 = func_?(&
+                          MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                         );
+  func_?(this_02,uVar2);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -2661,203 +2758,206 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<System::String>);
+    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<System::String>);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&MethodInfo__System__Nullable<int>__GetValueOrDefault__);
+    func_?(&MethodInfo__System__Nullable<int>__get_HasValue__);
+    func_?(&TypeInfo__System__Nullable<int>);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
+    func_?(&StringLiteral_String___0___does_not_match_rege);
+    func_?(&StringLiteral_String___0___exceeds_maximum_len);
+    func_?(&StringLiteral_String___0___is_less_than_minimu);
     cRam_? = '\x01';
+  }
+  if ((schema == (JsonSchemaModel *)0x0) ||
+     (bVar4 = JsonValidatingReader_TestType
+                        (this,schema,JsonSchemaType__Enum_String,(MethodInfo *)0x0), bVar4 == 0))
+  goto code_?;
+  JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,schema,(MethodInfo *)0x0);
+  pJVar5 = (this->fields)._reader;
+  if ((pJVar5 == (JsonReader *)0x0) ||
+     (piVar6 = (int *)(*(pJVar5->klass->vtable).get_Value.methodPtr)(), piVar6 == (int *)0x0)) {
+code_?:
+    func_?();
+  }
+  else {
+    input = (String *)(**(code **)(*piVar6 + 0xd4))();
+    bVar7 = (byte)*(undefined4 *)&(schema->fields)._MaximumLength_k__BackingField;
+    if (bVar7 != 0) {
+      if (input == (String *)0x0) goto code_?;
+      if ((bVar7 & (schema->fields)._MaximumLength_k__BackingField.value <
+                    (input->fields)._stringLength) == 0) goto code_?;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                ((MethodInfo *)0x0);
+      pOVar8 = (Object__Array *)func_?();
+      if (pOVar8 == (Object__Array *)0x0) goto code_?;
+      iVar9 = func_?();
+      if (iVar9 == 0) {
+        func_?();
+        func_?();
+code_?:
+        func_?();
+        func_?();
+code_?:
+        func_?();
+        func_?();
+      }
+      else {
+        pSVar10 = input;
+        func_?();
+        pCStack_11 = (CultureInfo *)func_?();
+        if ((pCStack_11 != (CultureInfo *)0x0) && (iVar9 = func_?(), iVar9 == 0))
+        goto code_?;
+        func_?();
+        pSVar12 = StringLiteral_String___0___exceeds_maximum_len;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_format);
+          cRam_? = '\x01';
+        }
+        pCStack_11 = (CultureInfo *)StringLiteral_format;
+        if (pSVar12 != (String *)0x0) {
+          pSVar10 = mscorlib.dll::System::String::String_Format_7
+                             ((IFormatProvider *)pSVar10,pSVar12,pOVar8,(MethodInfo *)0x0);
+          JsonValidatingReader_RaiseError(this,pSVar10,schema,(MethodInfo *)0x0);
+          goto code_?;
+        }
+      }
+      uVar13 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar14 = (ArgumentNullException *)func_?(uVar13);
+      func_?(pAVar14);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar14,(String *)pCStack_11,(MethodInfo *)0x0);
+      func_?(&
+                      MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                     );
+      func_?();
+      goto code_?;
+    }
+code_?:
+    bVar7 = (byte)*(undefined4 *)&(schema->fields)._MinimumLength_k__BackingField;
+    if (bVar7 == 0) {
+code_?:
+      if ((schema->fields)._Patterns_k__BackingField == (IList_1_System_String_ *)0x0) {
+code_?:
+        *unaff_FS_OFFSET = uStack_3;
+        return;
+      }
+      iVar9 = func_?();
+      uStack_1 = 1;
+      while (iVar9 != 0) {
+        cVar15 = func_?();
+        if (cVar15 == '\0') {
+          uStack_1 = 0xffffffff;
+          if (iVar9 != 0) {
+            func_?();
+          }
+          goto code_?;
+        }
+        if (iVar9 == 0) break;
+        pSVar10 = (String *)func_?();
+        if ((TypeInfo__System__Text__RegularExpressions__Regex->_1).cctor_finished_or_no_cctor == 0)
+        {
+          func_?();
+        }
+        bVar4 = System.dll::System::Text::RegularExpressions::Regex::Regex_IsMatch
+                          (input,pSVar10,(MethodInfo *)0x0);
+        if (bVar4 == 0) {
+          if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                    ((MethodInfo *)0x0);
+          pCStack_11 = (CultureInfo *)0x2;
+          pOVar8 = (Object__Array *)func_?();
+          if (pOVar8 == (Object__Array *)0x0) break;
+          if ((input != (String *)0x0) && (iVar16 = func_?(), iVar16 == 0))
+          goto code_?;
+          pSVar12 = input;
+          func_?();
+          if ((pSVar10 != (String *)0x0) && (iVar16 = func_?(), iVar16 == 0))
+          goto code_?;
+          func_?();
+          pSVar10 = StringLiteral_String___0___does_not_match_rege;
+          if (cRam_? == '\0') {
+            func_?(&StringLiteral_format);
+            cRam_? = '\x01';
+          }
+          pCStack_11 = (CultureInfo *)StringLiteral_format;
+          if (pSVar10 == (String *)0x0) goto code_?;
+          pSVar10 = mscorlib.dll::System::String::String_Format_7
+                             ((IFormatProvider *)pSVar12,pSVar10,pOVar8,(MethodInfo *)0x0);
+          JsonValidatingReader_RaiseError(this,pSVar10,schema,(MethodInfo *)0x0);
+        }
+      }
+      goto code_?;
+    }
+    if (input == (String *)0x0) goto code_?;
+    if ((bVar7 & (input->fields)._stringLength <
+                  (schema->fields)._MinimumLength_k__BackingField.value) == 0)
+    goto code_?;
+    if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pCStack_11 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                           ((MethodInfo *)0x0);
+    pOVar8 = (Object__Array *)func_?();
+    if (pOVar8 == (Object__Array *)0x0) goto code_?;
+    iVar9 = func_?();
+    if (iVar9 == 0) goto code_?;
+    func_?();
+    iVar9 = func_?();
+    if ((iVar9 == 0) || (iVar9 = func_?(), iVar9 != 0)) {
+      func_?();
+      pSVar10 = StringLiteral_String___0___is_less_than_minimu;
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_format);
+        cRam_? = '\x01';
+      }
+      pSVar12 = StringLiteral_format;
+      if (pSVar10 == (String *)0x0) goto code_?;
+      pSVar10 = mscorlib.dll::System::String::String_Format_7
+                         ((IFormatProvider *)pCStack_11,pSVar10,pOVar8,(MethodInfo *)0x0);
+      JsonValidatingReader_RaiseError(this,pSVar10,schema,(MethodInfo *)0x0);
+      goto code_?;
+    }
   }
   func_?();
-  if ((schema != (JsonSchemaModel *)0x0) &&
-     (bVar4 = JsonValidatingReader_TestType
-                        (this,schema,JsonSchemaType__Enum_String,(MethodInfo *)0x0), bVar4 != 0)) {
-    JsonValidatingReader_ValidateInEnumAndNotDisallowed(this,schema,(MethodInfo *)0x0);
-    pJVar5 = (this->fields)._reader;
-    if ((pJVar5 == (JsonReader *)0x0) ||
-       (piVar6 = (int *)(*(code *)(pJVar5->klass->vtable).get_Value.method)(), piVar6 == (int *)0x0)
-       ) goto code_?;
-    this_00 = (Collection_1_VoxelHit_ *)(**(code **)(*piVar6 + 0xd8))();
-    System.dll::System::Collections::Generic::
-    SortedList`2[TKey,TValue]+GetEnumerator>c__Iterator0[System::Single,System::Object]::
-    SortedList_2_TKey_TValue_GetEnumerator_c_Iterator0_System_Single_System_Object__System_Collections_Generic_IEnumerator_System_Collections_Generic_KeyValuePair_TKey_TValue___get_Current
-              ((SortedList_2_TKey_TValue_GetEnumerator_c_Iterator0_System_Single_System_Object_ *)
-               schema,(MethodInfo *)0x0);
-    cVar7 = func_?();
-    if (cVar7 != '\0') {
-      System.dll::System::Collections::Generic::
-      SortedList`2[TKey,TValue]+GetEnumerator>c__Iterator0[System::Single,System::Object]::
-      SortedList_2_TKey_TValue_GetEnumerator_c_Iterator0_System_Single_System_Object__System_Collections_Generic_IEnumerator_System_Collections_Generic_KeyValuePair_TKey_TValue___get_Current
-                ((SortedList_2_TKey_TValue_GetEnumerator_c_Iterator0_System_Single_System_Object_ *)
-                 schema,(MethodInfo *)0x0);
-      cVar7 = func_?();
-      if (cVar7 != '\0') {
-        if (this_00 == (Collection_1_VoxelHit_ *)0x0) goto code_?;
-        pIVar8 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items(this_00,(MethodInfo *)0x0);
-        iVar9 = func_?();
-        if (iVar9 < (int)pIVar8) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::
-                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          pOVar11 = (Object__Array *)func_?();
-          if (pOVar11 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          System.dll::System::Collections::Generic::
-          SortedList`2[TKey,TValue]+GetEnumerator>c__Iterator0[System::Single,System::Object]::
-          SortedList_2_TKey_TValue_GetEnumerator_c_Iterator0_System_Single_System_Object__System_Collections_Generic_IEnumerator_System_Collections_Generic_KeyValuePair_TKey_TValue___get_Current
-                    ((SortedList_2_TKey_TValue_GetEnumerator_c_Iterator0_System_Single_System_Object_
-                      *)schema,(MethodInfo *)0x0);
-          func_?();
-          func_?();
-          func_?();
-          pSVar12 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                              (StringLiteral_String___0___exceeds_maximum_len,
-                               (IFormatProvider *)pCVar10,pOVar11,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar12,schema,(MethodInfo *)0x0);
-        }
-      }
-    }
-    mscorlib.dll::System::Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::
-    Reflection::CustomAttributeTypedArgument]::
-    Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-              ((Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument_
-                *)schema,(MethodInfo *)0x0);
-    cVar7 = func_?();
-    if (cVar7 != '\0') {
-      mscorlib.dll::System::Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::
-      Reflection::CustomAttributeTypedArgument]::
-      Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                ((Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument_
-                  *)schema,(MethodInfo *)0x0);
-      cVar7 = func_?();
-      if (cVar7 != '\0') {
-        if (this_00 == (Collection_1_VoxelHit_ *)0x0) goto code_?;
-        pIVar8 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items(this_00,(MethodInfo *)0x0);
-        iVar9 = func_?();
-        if ((int)pIVar8 < iVar9) {
-          if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-            func_?();
-          }
-          pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::
-                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          pOVar11 = (Object__Array *)func_?();
-          if (pOVar11 == (Object__Array *)0x0) goto code_?;
-          func_?();
-          func_?();
-          mscorlib.dll::System::Array+ArrayReadOnlyList`1[T]+<GetEnumerator>c__Iterator0[System::
-          Reflection::CustomAttributeTypedArgument]::
-          Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument__System_Collections_Generic_IEnumerator_T__get_Current
-                    ((Array_ArrayReadOnlyList_1_T_GetEnumerator_c_Iterator0_System_Reflection_CustomAttributeTypedArgument_
-                      *)schema,(MethodInfo *)0x0);
-          func_?();
-          func_?();
-          func_?();
-          pSVar12 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                              (StringLiteral_String___0___is_less_than_minimu,
-                               (IFormatProvider *)pCVar10,pOVar11,(MethodInfo *)0x0);
-          JsonValidatingReader_RaiseError(this,pSVar12,schema,(MethodInfo *)0x0);
-        }
-      }
-    }
-    pMVar13 = PrefabPool::PrefabPool_get_MVCollectibleFantaPrefab
-                        ((PrefabPool *)schema,(MethodInfo *)0x0);
-    if (pMVar13 != (MVCollectibleObject *)0x0) {
-      pMVar13 = PrefabPool::PrefabPool_get_MVCollectibleFantaPrefab
-                          ((PrefabPool *)schema,(MethodInfo *)0x0);
-      if (pMVar13 != (MVCollectibleObject *)0x0) {
-        iVar9 = func_?();
-        uStack_1 = 0;
-        while (iVar9 != 0) {
-          cVar7 = func_?();
-          if (cVar7 == '\0') {
-            uStack_1 = 0xffffffff;
-            if (iVar9 != 0) {
-              func_?();
-            }
-            goto code_?;
-          }
-          pSVar12 = (String *)func_?();
-          if ((((uint)(TypeInfo__System__Text__RegularExpressions__Regex->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__System__Text__RegularExpressions__Regex->_1).cctor_started == 0)) {
-            func_?();
-          }
-          bVar4 = System.dll::System::Text::RegularExpressions::Regex::Regex_IsMatch
-                            ((String *)this_00,pSVar12,(MethodInfo *)0x0);
-          if (bVar4 == 0) {
-            if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-                 0x2000000) != 0) &&
-               ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-              func_?();
-            }
-            pCVar10 = mscorlib.dll::System::Globalization::CultureInfo::
-                     CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            pOVar11 = (Object__Array *)func_?();
-            if (pOVar11 == (Object__Array *)0x0) break;
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            pSVar12 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                                (StringLiteral_String___0___does_not_match_rege,
-                                 (IFormatProvider *)pCVar10,pOVar11,(MethodInfo *)0x0);
-            JsonValidatingReader_RaiseError(this,pSVar12,schema,(MethodInfo *)0x0);
-          }
-        }
-      }
+  func_?();
 code_?:
-      func_?();
-      func_?();
-      pcVar14 = (code *)swi(3);
-      (*pcVar14)();
-      return;
-    }
-  }
+  func_?();
+  pSVar12 = (String *)0x0;
+  func_?();
 code_?:
-  *unaff_FS_OFFSET = uStack_3;
+  uVar13 = func_?(&TypeInfo__System__ArgumentNullException);
+  pAVar14 = (ArgumentNullException *)func_?(uVar13);
+  func_?(pAVar14);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (pAVar14,pSVar12,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                 );
+  func_?();
+code_?:
+  func_?();
+  func_?();
+code_?:
+  uVar13 = func_?(&TypeInfo__System__ArgumentNullException);
+  pAVar14 = (ArgumentNullException *)func_?(uVar13);
+  func_?(pAVar14);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (pAVar14,(String *)pCStack_11,(MethodInfo *)0x0);
+  func_?();
+  func_?();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
-}
-
-
-/* Boolean <ValidateEndObject>m__0(KeyValuePair`2[System.String,System.Boolean]) */
-
-bool Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
-     JsonValidatingReader__ValidateEndObject_m__0
-               (KeyValuePair_2_System_String_System_Boolean_ kv,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  cVar1 = func_?(&kv,
-                          MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_bool>__get_Value__
-                         );
-  return cVar1 == '\0';
-}
-
-
-/* String <ValidateEndObject>m__1(KeyValuePair`2[System.String,System.Boolean]) */
-
-String * Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
-         JsonValidatingReader__ValidateEndObject_m__1
-                   (KeyValuePair_2_System_String_System_Boolean_ kv,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pSVar1 = (String *)
-           func_?(&kv,
-                           MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_bool>__get_Key__
-                          );
-  return pSVar1;
 }
 
 
@@ -2868,24 +2968,49 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Stack__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>
+                   );
+    func_?(&StringLiteral_reader);
     cRam_? = '\x01';
   }
   JsonReader::JsonReader__ctor((JsonReader *)this,(MethodInfo *)0x0);
-  Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
-            ((Object *)reader,StringLiteral_reader,(MethodInfo *)0x0);
-  (this->fields)._reader = reader;
-  this_00 = (TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>
-                           );
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-  TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-  TweenRunner_1_T_Start_c_Iterator0_FloatTween___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Stack__
-            );
-  (this->fields)._stack = (Stack_1_Newtonsoft_Json_JsonValidatingReader_SchemaScope_ *)this_00;
+  paramName = StringLiteral_reader;
+  if (reader == (JsonReader *)0x0) {
+    uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_01 = (ArgumentNullException *)func_?(uVar1);
+    func_?(this_01);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_01,paramName,(MethodInfo *)0x0);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                   );
+    func_?();
+  }
+  else {
+    (this->fields)._reader = reader;
+    func_?(&(this->fields)._reader,reader);
+    this_00 = (Stack_1_Newtonsoft_Json_JsonValidatingReader_SchemaScope_ *)
+              func_?(
+                             TypeInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>
+                             );
+    if (this_00 != (Stack_1_Newtonsoft_Json_JsonValidatingReader_SchemaScope_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+      Stack_1_System_Object___ctor
+                ((Stack_1_System_Object_ *)this_00,
+                 MethodInfo__System__Collections__Generic__Stack<Newtonsoft::Json::JsonValidatingReader::SchemaScope>__Stack__
+                );
+      (this->fields)._stack = this_00;
+      func_?(&(this->fields)._stack,this_00);
+      return;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -2898,37 +3023,38 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler);
     cRam_? = '\x01';
   }
-  ppVVar1 = &(this->fields).ValidationEventHandler;
-  a = *ppVVar1;
+  a = (this->fields).ValidationEventHandler;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((ValidationEventHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((ValidationEventHandler__Class *)pDVar1->klass ==
           TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pVVar5 = (ValidationEventHandler *)func_?(ppVVar1,pDVar3,a);
-    bVar6 = pVVar5 == a;
-    a = pVVar5;
-    if (bVar6) {
+    pVVar4 = (ValidationEventHandler *)
+             func_?(&(this->fields).ValidationEventHandler,pDVar2,a);
+    bVar5 = pVVar4 == a;
+    a = pVVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
 }
 
 
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* IEnumerable`1[Newtonsoft.Json.Schema.JsonSchemaModel] get_CurrentMemberSchemas() */
 
 IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *
@@ -2936,344 +3062,359 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 JsonValidatingReader_get_CurrentMemberSchemas(JsonValidatingReader *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xff;
-  uStack_2 = 0xffffff;
+  puStack_1 = &stack0xfffffffc;
+  uStack_2._0_1_ = 0xff;
+  uStack_2._1_3_ = 0xffffff;
   puStack_3 = &DAT_?;
   uStack_4 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_4;
+  puStack_5 = &stack0xffffff80;
+  puVar6 = &stack0xfffffffc;
+  puVar7 = &stack0xffffff80;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>_
+                   );
+    func_?(&
+                    System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__Empty<Newtonsoft::Json::Schema::JsonSchemaModel>__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>_>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>_>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__JsonSchemaModel);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>__get_Value__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>__List__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>__List_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>
+                   );
+    func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
     cRam_? = '\x01';
+    puVar6 = puStack_1;
+    puVar7 = puStack_5;
   }
-  func_?();
-  input = (CultureInfo *)0xffffffff;
-  pCStack_5 = (CultureInfo *)0xffffffff;
-  pJVar6 = (this->fields)._currentScope;
-  if (pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) {
-    unaff_EDI = (ArgumentOutOfRangeException *)
-                func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaModel,1);
-    this_02 = (this->fields)._model;
-    if (unaff_EDI == (ArgumentOutOfRangeException *)0x0) goto code_?;
-    if ((this_02 == (JsonSchemaModel *)0x0) || (iVar7 = func_?(), iVar7 != 0)) {
-      bVar8 = 0;
-      if ((unaff_EDI->fields)._._._.inner_exception != (Exception *)0x0) {
-        (unaff_EDI->fields)._._._.message = (String *)this_02;
-        this_01 = (List_1_VoxelHit_ *)func_?();
-        mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::List_1_VoxelHit___ctor_1
-                  (this_01,(IEnumerable_1_VoxelHit_ *)unaff_EDI,
+  puStack_5 = puVar7;
+  puStack_1 = puVar6;
+  iStack_8 = 0;
+  uStack_9 = 0;
+  iStack_10 = 0;
+  if ((this->fields)._currentScope == (JsonValidatingReader_SchemaScope *)0x0) {
+    collection = (IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                 func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaModel,1);
+    pIVar11 = (IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest___Class *)
+             (this->fields)._model;
+    if (collection == (IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+code_?:
+      uVar12 = func_?();
+      func_?(uVar12);
+code_?:
+      uVar12 = func_?(&TypeInfo__System__Exception);
+      this_00 = (Exception *)func_?(uVar12);
+      func_?(this_00);
+      pMVar13 = (MethodInfo *)0x0;
+      pSVar14 = (String *)func_?(&StringLiteral_CurrentPropertyName_has_not_been);
+      mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar14,pMVar13);
+      func_?(&
+                      MethodInfo__Newtonsoft__Json__JsonValidatingReader__get_CurrentMemberSchemas__
+                     );
+      func_?();
+      func_?();
+      goto code_?;
+    }
+    if ((pIVar11 == (IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest___Class *)0x0)
+       || (iVar15 = func_?(pIVar11,(collection->klass->_0).element_class), iVar15 != 0)) {
+      if (collection[1].monitor == (MonitorData *)0x0) goto code_?;
+      collection[2].klass = pIVar11;
+      func_?(collection + 2,pIVar11);
+      pLVar16 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                func_?(
+                               TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>
+                               );
+      if (pLVar16 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+        UnitySynchronizationContext+WorkRequest]::
+        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1
+                  (pLVar16,collection,
                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>__List_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_
                   );
+code_?:
         *unaff_FS_OFFSET = uStack_4;
-        return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)this_01;
+        return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)pLVar16;
       }
       goto code_?;
     }
-    func_?();
   }
   else {
-    pOVar9 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-              Serialization::JsonProperty]::
-              Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                        ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pJVar6,
-                         (MethodInfo *)0x0);
-    if (pOVar9 == (Object *)0x0) {
+    pJVar17 = (this->fields)._currentScope;
+    if (((pJVar17->fields)._schemas == (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) ||
+       (iVar15 = func_?(0,
+                                 TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                 ,(pJVar17->fields)._schemas), iVar15 == 0)) {
 code_?:
-      pIVar10 = System.Core.dll::System::Linq::Enumerable::Enumerable_Empty_3
-                          (
-                          System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__Empty<Newtonsoft::Json::Schema::JsonSchemaModel>__
-                          );
+      pIVar18 = (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)
+                func_?(
+                               System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>_MethodInfo__System__Linq__Enumerable__Empty<Newtonsoft::Json::Schema::JsonSchemaModel>__
+                               );
       *unaff_FS_OFFSET = uStack_4;
-      return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)pIVar10;
+      return pIVar18;
     }
-    pJVar6 = (this->fields)._currentScope;
-    if ((pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) ||
-       (pOVar9 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pJVar6,
-                             (MethodInfo *)0x0), pOVar9 == (Object *)0x0)) goto code_?;
-    pMVar11 = (MethodInfo *)0x0;
-    iVar7 = func_?();
-    if (iVar7 == 0) goto code_?;
-    pJVar6 = (this->fields)._currentScope;
-    if (pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) goto code_?;
-    method_01 = (MethodInfo *)&UNK_?;
-    pIVar12 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-              Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)pJVar6,pMVar11);
-    switch(pIVar12) {
-    case (IList_1_VoxelHit_ *)0x0:
-      pJVar6 = (this->fields)._currentScope;
-      if (pJVar6 != (JsonValidatingReader_SchemaScope *)0x0) {
-        pOVar9 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pJVar6,
-                             (MethodInfo *)0x0);
-        *unaff_FS_OFFSET = uStack_4;
-        return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)pOVar9;
+    pJVar17 = (this->fields)._currentScope;
+    if (pJVar17 == (JsonValidatingReader_SchemaScope *)0x0) goto code_?;
+    switch((pJVar17->fields)._tokenType) {
+    case 0:
+      pIVar19 = (((this->fields)._currentScope)->fields)._schemas;
+      *unaff_FS_OFFSET = uStack_4;
+      return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)pIVar19;
+    case 1:
+      if ((((this->fields)._currentScope)->fields)._CurrentPropertyName_k__BackingField !=
+          (String *)0x0) {
+        pLStack_20 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                     func_?(
+                                    TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                    );
+        if (pLStack_20 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+          LowLevelList_1_System_Object___ctor
+                    ((LowLevelList_1_System_Object_ *)pLStack_20,
+                     MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>__List__
+                    );
+          pJVar17 = (this->fields)._currentScope;
+          if ((pJVar17 != (JsonValidatingReader_SchemaScope *)0x0) &&
+             (pIVar19 = (pJVar17->fields)._schemas,
+             pIVar19 != (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0)) {
+            iStack_8 = func_?(0,
+                                        TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                        ,pIVar19);
+            uStack_2._0_1_ = 1;
+            uStack_2._1_3_ = 0;
+            pLVar16 = pLStack_20;
+            while (iStack_8 != 0) {
+              cVar21 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_8);
+              if (cVar21 == '\0') {
+                uStack_2 = 0xffffffff;
+                if (iStack_8 != 0) {
+                  func_?(0,TypeInfo__System__IDisposable,iStack_8);
+                }
+                goto code_?;
+              }
+              if ((iStack_8 == 0) ||
+                 (iVar15 = func_?(0,
+                                           TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                           ,iStack_8), iVar15 == 0)) break;
+              if (*(int *)(iVar15 + 0x6c) != 0) {
+                pJVar17 = (this->fields)._currentScope;
+                if (pJVar17 == (JsonValidatingReader_SchemaScope *)0x0) break;
+                cVar21 = func_?(7,
+                                        TypeInfo__System__Collections__Generic__IDictionary<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>
+                                        ,*(undefined4 *)(iVar15 + 0x6c),
+                                        (pJVar17->fields)._CurrentPropertyName_k__BackingField,
+                                        &uStack_9);
+                if (cVar21 != '\0') {
+                  func_?(2,
+                                  TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                  ,pLStack_20,uStack_9);
+                }
+              }
+              if (*(int *)(iVar15 + 0x70) != 0) {
+                iStack_10 = func_?(0,
+                                            TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>_>
+                                            ,*(undefined4 *)(iVar15 + 0x70));
+                uStack_2._0_1_ = 3;
+                while( true ) {
+                  if (iStack_10 == 0) goto code_?;
+                  cVar21 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_10);
+                  if (cVar21 == '\0') break;
+                  if (iStack_10 == 0) goto code_?;
+                  pSVar14 = (String *)
+                            func_?(0,
+                                            TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchemaModel>_>
+                                            ,iStack_10);
+                  pJVar17 = (this->fields)._currentScope;
+                  if (pJVar17 == (JsonValidatingReader_SchemaScope *)0x0) goto code_?;
+                  pSVar22 = (pJVar17->fields)._CurrentPropertyName_k__BackingField;
+                  if ((TypeInfo__System__Text__RegularExpressions__Regex->_1).
+                      cctor_finished_or_no_cctor == 0) {
+                    func_?(TypeInfo__System__Text__RegularExpressions__Regex);
+                  }
+                  bVar23 = System.dll::System::Text::RegularExpressions::Regex::Regex_IsMatch
+                                    (pSVar22,pSVar14,(MethodInfo *)0x0);
+                  if (bVar23 != 0) {
+                    func_?(2);
+                  }
+                }
+                uStack_2._0_1_ = 1;
+                func_?();
+                uStack_2._0_1_ = 1;
+              }
+              iVar24 = func_?(0,
+                                       TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                       ,pLStack_20);
+              pLVar16 = pLStack_20;
+              if (((iVar24 == 0) && (*(char *)(iVar15 + 0x78) != '\0')) &&
+                 (*(int *)(iVar15 + 0x74) != 0)) {
+                func_?(2,
+                                TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                ,pLStack_20,*(undefined4 *)(iVar15 + 0x74));
+              }
+            }
+          }
+        }
+        goto code_?;
       }
-      break;
-    case (IList_1_VoxelHit_ *)0x1:
-      pJVar6 = (this->fields)._currentScope;
-      if (pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) break;
-      pIVar13 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                          ((KogamaSettingNumericBase_1_System_Single_ *)pJVar6,(MethodInfo *)0x0);
-      if (pIVar13 != (IKogamaSetting *)0x0) {
-        unaff_EDI = (ArgumentOutOfRangeException *)func_?();
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-        List_1_UnityEngine_Vector4___ctor
-                  ((List_1_UnityEngine_Vector4_ *)unaff_EDI,
+      goto code_?;
+    case 2:
+      pLVar16 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+                func_?(
+                               TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>
+                               );
+      pLStack_20 = pLVar16;
+      if (pLVar16 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+        LowLevelList_1_System_Object___ctor
+                  ((LowLevelList_1_System_Object_ *)pLVar16,
                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>__List__
                   );
-        pIVar14 = JsonValidatingReader_get_CurrentSchemas(this,(MethodInfo *)0x0);
-        if (pIVar14 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-          pCVar15 = (CultureInfo *)func_?();
-          uStack_1 = 0;
-          uStack_2 = 0;
-          while (pCVar15 != (CultureInfo *)0x0) {
-            cVar16 = func_?();
-            if (cVar16 == '\0') {
-              *(undefined4 *)(&stack0xffffffa8 + (int)input * 4) = 0x1a0;
-joined_?:
-              if (pCVar15 != (CultureInfo *)0x0) {
-                uStack_2 = 0xffffff;
-                uStack_1 = 0xff;
-                func_?();
-              }
+        pJVar17 = (this->fields)._currentScope;
+        if ((pJVar17 != (JsonValidatingReader_SchemaScope *)0x0) &&
+           (pIVar19 = (pJVar17->fields)._schemas,
+           pIVar19 != (IList_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0)) {
+          iStack_8 = func_?(0,
+                                      TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                      ,pIVar19);
+          uStack_2._1_3_ = 0;
+          uStack_2._0_1_ = 7;
+          while (iStack_8 != 0) {
+            cVar21 = func_?(0,TypeInfo__System__Collections__IEnumerator,iStack_8);
+            if (cVar21 == '\0') {
+              uStack_2 = 0xffffffff;
+              func_?();
               *unaff_FS_OFFSET = uStack_4;
-              return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)unaff_EDI;
+              return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)pLVar16;
             }
-            pPVar17 = (PrefabPool *)func_?();
-            if (pPVar17 == (PrefabPool *)0x0) break;
-            pCVar18 = DesktopEditModeController::DesktopEditModeController_get_ClientShopRepository
-                                ((DesktopEditModeController *)pPVar17,method_01);
-            if (pCVar18 != (ClientShopRepository *)0x0) {
-              pCVar18 = DesktopEditModeController::
-                        DesktopEditModeController_get_ClientShopRepository
-                                  ((DesktopEditModeController *)pPVar17,(MethodInfo *)0x0);
-              pJVar6 = (this->fields)._currentScope;
-              if ((pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) ||
-                 (MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                  KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                  KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                            ((KogamaSettingNumericBase_1_System_Single_ *)pJVar6,(MethodInfo *)0x0),
-                 pCVar18 == (ClientShopRepository *)0x0)) break;
-              cVar16 = func_?();
-              if (cVar16 != '\0') {
-                if (unaff_EDI == (ArgumentOutOfRangeException *)0x0) break;
-                func_?();
+            if ((iStack_8 == 0) ||
+               (iVar15 = func_?(0,
+                                         TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                         ,iStack_8), iVar15 == 0)) break;
+            bVar23 = Json::Utilities::CollectionUtils::CollectionUtils_IsNullOrEmpty_1
+                              (*(ICollection_1_System_Object_ **)(iVar15 + 0x68),
+                               bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>_
+                              );
+            if (bVar23 == 0) {
+              if (*(int *)(iVar15 + 0x68) == 0) break;
+              iVar24 = func_?(0,
+                                       TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                       ,*(int *)(iVar15 + 0x68));
+              if (iVar24 == 1) {
+                if (*(int *)(iVar15 + 0x68) == 0) break;
+                uVar12 = func_?(0,
+                                         TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                         ,*(int *)(iVar15 + 0x68),0);
+                func_?(2,
+                                TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                ,pLStack_20,uVar12);
               }
-            }
-            method_01 = (MethodInfo *)&UNK_?;
-            pOVar9 = ReviveScreenshotGenerator+<GenerateTexture>c__Iterator0::
-                      ReviveScreenshotGenerator_GenerateTexture_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                ((ReviveScreenshotGenerator_GenerateTexture_c_Iterator0 *)pPVar17,
-                                 (MethodInfo *)0x0);
-            pCVar19 = pCStack_5;
-            if (pOVar9 != (Object *)0x0) {
-              pOVar9 = ReviveScreenshotGenerator+<GenerateTexture>c__Iterator0::
-                        ReviveScreenshotGenerator_GenerateTexture_c_Iterator0_System_Collections_IEnumerator_get_Current
-                                  ((ReviveScreenshotGenerator_GenerateTexture_c_Iterator0 *)pPVar17,
-                                   (MethodInfo *)0x0);
-              if (pOVar9 == (Object *)0x0) break;
-              iVar7 = func_?();
-              uStack_1 = 1;
-              while( true ) {
-                if (iVar7 == 0) goto code_?;
-                cVar16 = func_?();
-                if (cVar16 == '\0') break;
-                func_?();
-                pJVar6 = (this->fields)._currentScope;
-                if (pJVar6 == (JsonValidatingReader_SchemaScope *)0x0) goto code_?;
-                input = (CultureInfo *)
-                        MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                        KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                        KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                                  ((KogamaSettingNumericBase_1_System_Single_ *)pJVar6,
-                                   (MethodInfo *)0x0);
-                method_01 = (MethodInfo *)func_?();
-                if ((((uint)(TypeInfo__System__Text__RegularExpressions__Regex->vtable).Equals.
-                            methodPtr & 0x2000000) != 0) &&
-                   ((TypeInfo__System__Text__RegularExpressions__Regex->_1).cctor_started == 0)) {
-                  func_?();
-                }
-                bVar20 = System.dll::System::Text::RegularExpressions::Regex::Regex_IsMatch
-                                   ((String *)input,(String *)method_01,(MethodInfo *)0x0);
-                if (bVar20 != 0) {
-                  func_?();
-                  if (unaff_EDI == (ArgumentOutOfRangeException *)0x0) goto code_?;
-                  method_01 = (MethodInfo *)&UNK_?;
-                  func_?();
-                }
-              }
-              input = (CultureInfo *)((int)&pCStack_5->klass + 1);
-              uStack_1 = 0;
-              *(undefined4 *)(&stack0xffffffa4 + (int)input * 4) = 0x156;
-              if (iVar7 != 0) {
-                func_?();
-              }
-              pCVar19 = input;
-              if (((input != (CultureInfo *)0xffffffff) &&
-                  (*(int *)(&stack0xffffffa4 + (int)input * 4) == 0x156)) && (-1 < (int)input)) {
-                input = pCStack_5;
-                pCVar19 = pCStack_5;
+              if (*(int *)(iVar15 + 0x68) == 0) break;
+              iVar24 = func_?(0,
+                                       TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                       ,*(int *)(iVar15 + 0x68));
+              pJVar17 = (this->fields)._currentScope;
+              if (pJVar17 == (JsonValidatingReader_SchemaScope *)0x0) break;
+              if ((pJVar17->fields)._ArrayItemCount_k__BackingField + -1 < iVar24) {
+                if (*(int *)(iVar15 + 0x68) == 0) break;
+                uVar12 = func_?(0,
+                                         TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                         ,*(int *)(iVar15 + 0x68),
+                                         (((this->fields)._currentScope)->fields).
+                                         _ArrayItemCount_k__BackingField + -1);
+                func_?(2,
+                                TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                                ,pLStack_20,uVar12);
               }
             }
-            pCStack_5 = pCVar19;
-            if (unaff_EDI == (ArgumentOutOfRangeException *)0x0) break;
-            iVar7 = func_?();
-            if (iVar7 == 0) {
-              if (pPVar17 == (PrefabPool *)0x0) break;
-              bVar20 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_AllowAdditionalProperties
-                                 ((JsonSchemaModel *)pPVar17,(MethodInfo *)0x0);
-              if ((bVar20 != 0) &&
-                 (pOVar21 = PrefabPool::PrefabPool_get_MVGameCoinChestPrefab
-                                      (pPVar17,(MethodInfo *)0x0), pOVar21 != (ObjectPrefab *)0x0))
-              {
-                PrefabPool::PrefabPool_get_MVGameCoinChestPrefab(pPVar17,(MethodInfo *)0x0);
-                func_?();
-              }
+            pLVar16 = pLStack_20;
+            if ((*(char *)(iVar15 + 0x78) != '\0') && (*(int *)(iVar15 + 0x74) != 0)) {
+              func_?(2,
+                              TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>
+                              ,pLStack_20,*(undefined4 *)(iVar15 + 0x74));
             }
           }
         }
-        break;
       }
       goto code_?;
-    case (IList_1_VoxelHit_ *)0x2:
-      unaff_EDI = (ArgumentOutOfRangeException *)func_?();
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-      List_1_UnityEngine_Vector4___ctor
-                ((List_1_UnityEngine_Vector4_ *)unaff_EDI,
-                 MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaModel>__List__
-                );
-      method_00 = this;
-      pIVar14 = JsonValidatingReader_get_CurrentSchemas(this,(MethodInfo *)0x0);
-      if (pIVar14 != (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)0x0) {
-        pCVar15 = (CultureInfo *)func_?();
-        uStack_1 = 4;
-        uStack_2 = 0;
-        while (input = pCVar15, pCVar15 != (CultureInfo *)0x0) {
-          cVar16 = func_?();
-          if (cVar16 == '\0') goto joined_?;
-          pPVar17 = (PrefabPool *)func_?();
-          if (pPVar17 == (PrefabPool *)0x0) break;
-          pOVar21 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(pPVar17,(MethodInfo *)method_00);
-          method_00 = (JsonValidatingReader *)&UNK_?;
-          bVar20 = Json::Utilities::CollectionUtils::CollectionUtils_IsNullOrEmpty_5
-                             ((ICollection_1_System_Reflection_ParameterInfo_ *)pOVar21,
-                              bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::Schema::JsonSchemaModel>_System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaModel>_
-                             );
-          if (bVar20 == 0) {
-            pOVar21 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(pPVar17,(MethodInfo *)0x0);
-            if (pOVar21 == (ObjectPrefab *)0x0) break;
-            iVar7 = func_?();
-            if (iVar7 == 1) {
-              pOVar21 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(pPVar17,(MethodInfo *)0x0);
-              if ((pOVar21 == (ObjectPrefab *)0x0) ||
-                 (func_?(), unaff_EDI == (ArgumentOutOfRangeException *)0x0)) break;
-              func_?();
-            }
-            pMVar11 = (MethodInfo *)&UNK_?;
-            pOVar21 = PrefabPool::PrefabPool_get_MVCheckpointPrefab(pPVar17,(MethodInfo *)0x0);
-            if (pOVar21 == (ObjectPrefab *)0x0) break;
-            iVar7 = func_?();
-            pEVar22 = (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)
-                     (this->fields)._currentScope;
-            if (pEVar22 == (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)0x0) break;
-            method_00 = (JsonValidatingReader *)&UNK_?;
-            iVar23 = System.Core.dll::System::Linq::
-                     Enumerable+<CreateCastIterator>c__Iterator0`1[System::Int32]::
-                     Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                               (pEVar22,pMVar11);
-            if (iVar23 + -1 < iVar7) {
-              input = (CultureInfo *)
-                      PrefabPool::PrefabPool_get_MVCheckpointPrefab(pPVar17,(MethodInfo *)0x0);
-              pEVar22 = (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)
-                       (this->fields)._currentScope;
-              if (((pEVar22 == (Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)0x0) ||
-                  (System.Core.dll::System::Linq::
-                   Enumerable+<CreateCastIterator>c__Iterator0`1[System::Int32]::
-                   Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                             (pEVar22,(MethodInfo *)0x0), input == (CultureInfo *)0x0)) ||
-                 (func_?(), unaff_EDI == (ArgumentOutOfRangeException *)0x0)) break;
-              func_?();
-            }
-          }
-          bVar20 = Json::Schema::JsonSchemaModel::JsonSchemaModel_get_AllowAdditionalProperties
-                             ((JsonSchemaModel *)pPVar17,(MethodInfo *)0x0);
-          if ((bVar20 != 0) &&
-             (pOVar21 = PrefabPool::PrefabPool_get_MVGameCoinChestPrefab(pPVar17,(MethodInfo *)0x0),
-             pOVar21 != (ObjectPrefab *)0x0)) {
-            PrefabPool::PrefabPool_get_MVGameCoinChestPrefab(pPVar17,(MethodInfo *)0x0);
-            input = pCVar15;
-            if (unaff_EDI == (ArgumentOutOfRangeException *)0x0) break;
-            func_?();
-          }
-        }
-      }
-      break;
-    case (IList_1_VoxelHit_ *)0x3:
-      goto code_?;
-    default:
-      if ((((uint)(TypeInfo__System__Globalization__CultureInfo->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_started == 0)) {
-        func_?();
-      }
-      input = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      args = (Object__Array *)func_?();
-      this_00 = (Collection_1_VoxelHit_ *)func_?();
-      func_?();
-      mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-      Collection_1_VoxelHit__get_Items(this_00,(MethodInfo *)0x0);
-      uVar24 = func_?();
-      func_?(args);
-      func_?(args,uVar24);
-      func_?();
-      message = Json::Utilities::StringUtils::StringUtils_FormatWith
-                          (StringLiteral_Unexpected_token_type___0_,(IFormatProvider *)input,args,
-                           (MethodInfo *)0x0);
-      unaff_EDI = (ArgumentOutOfRangeException *)func_?();
-      mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
-                (unaff_EDI,StringLiteral_TokenType,message,(MethodInfo *)0x0);
+    case 3:
       goto code_?;
     }
 code_?:
+    uVar12 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(uVar12);
+    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+    uVar12 = func_?(&TypeInfo__System__Object);
+    args = (Object__Array *)func_?(uVar12);
+    pJVar17 = (this->fields)._currentScope;
+    func_?(pJVar17);
+    mscorlib.dll::System::Tuple`3[Object,Object,Object]::Tuple_3_Object_Object_Object__get_Item1
+              ((Tuple_3_Object_Object_Object_ *)pJVar17,(MethodInfo *)0x0);
+    func_?();
+    uVar12 = func_?();
+    func_?();
+    func_?(args,uVar12);
+    func_?();
+    pMVar13 = (MethodInfo *)0x0;
+    pSVar14 = (String *)func_?(&StringLiteral_Unexpected_token_type___0_);
+    pSVar14 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                        (pSVar14,(IFormatProvider *)provider,args,pMVar13);
+    uVar12 = func_?();
+    this_01 = (ArgumentOutOfRangeException *)func_?(uVar12);
+    func_?(this_01);
+    pMVar13 = (MethodInfo *)0x0;
+    pSVar22 = (String *)func_?();
+    mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+              (this_01,pSVar22,pSVar14,pMVar13);
     func_?();
     func_?();
   }
+  uVar12 = func_?(0);
+  func_?(uVar12);
 code_?:
-  func_?();
-code_?:
-  this_02 = (JsonSchemaModel *)func_?();
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            ((IsolatedStorageException *)this_02,StringLiteral_CurrentPropertyName_has_not_been,
-             (MethodInfo *)0x0);
-  bVar8 = (undefined1 *)0xffffffef < &stack0xffffffb8;
-  func_?();
-code_?:
-  func_?();
-  iVar7 = func_?();
-  unaff_EDI->klass = (ArgumentOutOfRangeException__Class *)this_02->klass;
-  bVar25 = (byte)((uint)input >> 8);
-  bVar26 = bVar25 + extraout_CL;
-  bVar27 = CARRY1(bVar25,extraout_CL) || CARRY1(bVar26,bVar8);
-  pbVar28 = (byte *)(iVar7 + 0x68);
-  bVar25 = *pbVar28;
-  bVar29 = (byte)((uint)iVar7 >> 8);
-  bVar30 = *pbVar28;
-  *pbVar28 = bVar30 + bVar29 + bVar27;
-  pcVar31 = (char *)(CONCAT22((short)((uint)input >> 0x10),CONCAT11(bVar26 + bVar8,(char)input)) +
-                   0x6b);
-  *pcVar31 = *pcVar31 + bVar29 + (CARRY1(bVar25,bVar29) || CARRY1(bVar30 + bVar29,bVar27));
-  pcVar32 = (code *)swi(3);
-  pIVar14 = (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)
-            (*pcVar32)(&this_02->monitor,&this_02->monitor);
-  return pIVar14;
+  uVar25 = func_?();
+  iVar15 = extraout_ECX + -1;
+  pbVar26 = (byte *)(CONCAT22((short)((uint)iVar15 >> 0x10),
+                             CONCAT11((char)((uint)iVar15 >> 8) + (char)&stack0xfffffffc +
+                                      (0xf9e9efb6 < uVar25),(byte)iVar15)) + 0x10);
+  *pbVar26 = *pbVar26 | (byte)iVar15;
+  pcVar27 = (code *)swi(3);
+  pIVar18 = (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)(*pcVar27)();
+  return pIVar18;
 }
 
 
@@ -3284,33 +3425,16 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidatingReade
           (JsonValidatingReader *this,MethodInfo *method)
 
 {
-  pJVar1 = (this->fields)._currentScope;
-  if (pJVar1 != (JsonValidatingReader_SchemaScope *)0x0) {
-    return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)(pJVar1->fields)._schemas;
+  puStack_1 = &stack0xfffffffc;
+  pJVar2 = (this->fields)._currentScope;
+  if (pJVar2 != (JsonValidatingReader_SchemaScope *)0x0) {
+    return (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)(pJVar2->fields)._schemas;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pIVar3 = (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)(*pcVar2)();
-  return pIVar3;
-}
-
-
-/* Int32 get_Depth() */
-
-int32_t Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidatingReader_get_Depth
-                  (JsonValidatingReader *this,MethodInfo *method)
-
-{
-  pJVar1 = (this->fields)._reader;
-  if (pJVar1 != (JsonReader *)0x0) {
-    iVar2 = (*(code *)(pJVar1->klass->vtable).get_Depth.method)
-                      (pJVar1,(pJVar1->klass->vtable).__unknown.methodPtr);
-    return iVar2;
-  }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  iVar2 = (*pcVar3)();
-  return iVar2;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  pIVar6 = (IEnumerable_1_Newtonsoft_Json_Schema_JsonSchemaModel_ *)(*pcVar5)();
+  return pIVar6;
 }
 
 
@@ -3320,16 +3444,18 @@ uint16_t Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
          JsonValidatingReader_get_QuoteChar(JsonValidatingReader *this,MethodInfo *method)
 
 {
-  pJVar1 = (this->fields)._reader;
-  if (pJVar1 != (JsonReader *)0x0) {
-    uVar2 = (*(code *)(pJVar1->klass->vtable).get_QuoteChar.method)
-                      (pJVar1,(pJVar1->klass->vtable).set_QuoteChar.methodPtr);
-    return uVar2;
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pJStack_2 = (this->fields)._reader;
+  if (pJStack_2 != (JsonReader *)0x0) {
+    pMStack_1 = (pJStack_2->klass->vtable).get_QuoteChar.method;
+    uVar3 = (*(pJStack_2->klass->vtable).get_QuoteChar.methodPtr)();
+    return uVar3;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  uVar2 = (*pcVar3)();
-  return uVar2;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  uVar3 = (*pcVar6)();
+  return uVar3;
 }
 
 
@@ -3340,36 +3466,18 @@ Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidatingReade
           (JsonValidatingReader *this,MethodInfo *method)
 
 {
-  pJVar1 = (this->fields)._reader;
-  if (pJVar1 != (JsonReader *)0x0) {
-    JVar2 = (*(code *)(pJVar1->klass->vtable).get_TokenType.method)
-                      (pJVar1,(pJVar1->klass->vtable).get_Value.methodPtr);
-    return JVar2;
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pJStack_2 = (this->fields)._reader;
+  if (pJStack_2 != (JsonReader *)0x0) {
+    pMStack_1 = (pJStack_2->klass->vtable).get_TokenType.method;
+    JVar3 = (*(pJStack_2->klass->vtable).get_TokenType.methodPtr)();
+    return JVar3;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  JVar2 = (*pcVar3)();
-  return JVar2;
-}
-
-
-/* Object get_Value() */
-
-Object * Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidatingReader_get_Value
-                   (JsonValidatingReader *this,MethodInfo *method)
-
-{
-  pJVar1 = (this->fields)._reader;
-  if (pJVar1 != (JsonReader *)0x0) {
-    pOVar2 = (Object *)
-             (*(code *)(pJVar1->klass->vtable).get_Value.method)
-                       (pJVar1,(pJVar1->klass->vtable).get_ValueType.methodPtr);
-    return pOVar2;
-  }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  pOVar2 = (Object *)(*pcVar3)();
-  return pOVar2;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  JVar3 = (*pcVar6)();
+  return JVar3;
 }
 
 
@@ -3379,16 +3487,18 @@ Type * Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
        JsonValidatingReader_get_ValueType(JsonValidatingReader *this,MethodInfo *method)
 
 {
-  pJVar1 = (this->fields)._reader;
-  if (pJVar1 != (JsonReader *)0x0) {
-    pTVar2 = (Type *)(*(code *)(pJVar1->klass->vtable).get_ValueType.method)
-                               (pJVar1,(pJVar1->klass->vtable).get_Depth.methodPtr);
-    return pTVar2;
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pJStack_2 = (this->fields)._reader;
+  if (pJStack_2 != (JsonReader *)0x0) {
+    pMStack_1 = (pJStack_2->klass->vtable).get_ValueType.method;
+    pTVar3 = (Type *)(*(pJStack_2->klass->vtable).get_ValueType.methodPtr)();
+    return pTVar3;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  pTVar2 = (Type *)(*pcVar3)();
-  return pTVar2;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  pTVar3 = (Type *)(*pcVar6)();
+  return pTVar3;
 }
 
 
@@ -3400,31 +3510,31 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler);
     cRam_? = '\x01';
   }
-  ppVVar1 = &(this->fields).ValidationEventHandler;
-  source = *ppVVar1;
+  source = (this->fields).ValidationEventHandler;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((ValidationEventHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((ValidationEventHandler__Class *)pDVar1->klass ==
           TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__Newtonsoft__Json__Schema__ValidationEventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pVVar5 = (ValidationEventHandler *)func_?(ppVVar1,pDVar3,source);
-    bVar6 = pVVar5 == source;
-    source = pVVar5;
-    if (bVar6) {
+    pVVar4 = (ValidationEventHandler *)
+             func_?(&(this->fields).ValidationEventHandler,pDVar2,source);
+    bVar5 = pVVar4 == source;
+    source = pVVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -3437,24 +3547,27 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonValidatingReader::JsonValidating
                (JsonValidatingReader *this,JsonSchema *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  iVar1 = (*(code *)(this->klass->vtable).get_TokenType.method)
-                    (this,(this->klass->vtable).get_Value.methodPtr);
+  iVar1 = (*(this->klass->vtable).get_TokenType.methodPtr)
+                    (this,(this->klass->vtable).get_TokenType.method);
   if (iVar1 == 0) {
     (this->fields)._schema = value;
+    func_?(&(this->fields)._schema,value);
     (this->fields)._model = (JsonSchemaModel *)0x0;
+    func_?(&(this->fields)._model,0);
     return;
   }
-  this_00 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this_00,StringLiteral_Cannot_change_schema_while_valid,(MethodInfo *)0x0);
-  func_?(this_00,0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar2);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_Cannot_change_schema_while_valid);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+  func_?(&
+                  MethodInfo__Newtonsoft__Json__JsonValidatingReader__set_Schema_Newtonsoft__Json__Schema__JsonSchema_
+                 );
+  func_?(this_00);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

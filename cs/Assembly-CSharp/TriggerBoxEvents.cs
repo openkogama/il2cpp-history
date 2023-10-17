@@ -7,25 +7,21 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TriggerBoxEvents : MonoBehaviour
 {
 	// Fields
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<TriggerEventArgs> TriggerEnterOverride;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<TriggerEventArgs> TriggerExitOverride;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<TriggerEventArgs> TriggerEnter;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private EventHandler<TriggerEventArgs> TriggerExit;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Will be fetched with GetComponent<Collider>(), if null.")]
 	private Collider triggerCollider;
 	private bool isInTrigger;
 

@@ -9,7 +9,9 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::
 
 {
   (this->fields).cubeModelingStateMachine = cubeModelingStateMachine;
+  func_?(&(this->fields).cubeModelingStateMachine,cubeModelingStateMachine);
   (this->fields).materialsController = materialsController;
+  func_?(&(this->fields).materialsController,materialsController);
   return;
 }
 
@@ -22,93 +24,99 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_);
+    func_?(&
+                    TerrainCubeModelingControllerTutorial_MethodInfo__UnityEngine__Object__Instantiate<TerrainCubeModelingControllerTutorial>_TerrainCubeModelingControllerTutorial_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__FirstTimeSetupTerrainEditTutorial____c__DisplayClass4_0___OnShow_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FirstTimeSetupTerrainEditTutorial____c__DisplayClass4_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__FirstTimeSetupTerrainEditTutorial___OnShow_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields).state = 0;
+  value = (Object *)
+          func_?(TypeInfo__FirstTimeSetupTerrainEditTutorial____c__DisplayClass4_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].monitor = (MonitorData *)0x0;
     index = 0;
-    pLVar1 = (this->fields).pushOptions;
-    while (pLVar1 != (List_1_UIPushOption_ *)0x0) {
-      iVar2 = index;
-      pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                          MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Count__)
-      ;
-      if ((int)pOVar3 <= iVar2) {
-        pXVar4 = (XpBoostParticlePreviewer *)
-                 (this->fields).terrainCubeModelingControllerTutorialPrefab;
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).pushOptions;
+    while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((this_00->fields)._size <= index) {
+        original = (this->fields).terrainCubeModelingControllerTutorialPrefab;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pXVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                           (pXVar4,
+        pOVar1 = (Object__Class *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)original,
                             TerrainCubeModelingControllerTutorial_MethodInfo__UnityEngine__Object__Instantiate<TerrainCubeModelingControllerTutorial>_TerrainCubeModelingControllerTutorial_
                            );
-        (this_00->fields)._._._._.m_CachedPtr = pXVar4;
-        if (pXVar4 != (XpBoostParticlePreviewer *)0x0) {
+        value[1].klass = pOVar1;
+        func_?(value + 1,pOVar1);
+        if (value[1].klass != (Object__Class *)0x0) {
           TerrainCubeModelingControllerTutorial::TerrainCubeModelingControllerTutorial_Initialize
-                    ((TerrainCubeModelingControllerTutorial *)pXVar4,
+                    ((TerrainCubeModelingControllerTutorial *)value[1].klass,
                      (this->fields).cubeModelingStateMachine,(this->fields).materialsController,
                      (MethodInfo *)0x0);
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-          this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                     *)func_?(
-                                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                      );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-          SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-          UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                    (this_01,(Object *)this_00,
-                     MethodInfo__FirstTimeSetupTerrainEditTutorial___OnShow_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,
-                     MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                    );
-          if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr
-               & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-            func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((Component *)this,(MethodInfo *)0x0);
+          callbackFunction =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                              );
+          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                       MethodInfo__FirstTimeSetupTerrainEditTutorial____c__DisplayClass4_0___OnShow_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      ((GameObject *)0x0,(BaseEventData *)0x0,callbackFunction,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                      );
+            FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+                      ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
+            return;
           }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy_63
-                    (root,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          firstTimeEvent = (this->fields)._._.firstTimeEvent;
-          if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-            func_?();
-          }
-          FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                    (firstTimeEvent,(MethodInfo *)0x0);
-          return;
         }
         break;
       }
-      pLVar1 = (this->fields).pushOptions;
-      if (pLVar1 == (List_1_UIPushOption_ *)0x0) break;
-      pMVar5 = MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_;
-      UVar6 = mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::
-              List_1_UIPushOption__get_Item
-                        (pLVar1,index,
+      pMVar2 = value[1].monitor;
+      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      break;
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,index,
                          MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
                         );
       index = index + 1;
-      (this_00->fields).state = UVar6 | (uint)pMVar5;
-      pLVar1 = (this->fields).pushOptions;
+      value[1].monitor = (MonitorData *)((uint)RVar3 | (uint)pMVar2);
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).pushOptions;
     }
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -120,27 +128,26 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<UIPushOption>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_UIPushOption_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UIPushOption>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
-  (this->fields).pushOptions = (List_1_UIPushOption_ *)this_00;
-  (this->fields)._.onShowSound = 3;
-  (this->fields)._.prerequisiteEvent = -1;
-  (this->fields)._.checkForStackBlocking = 1;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_UIPushOption_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
+    (this->fields).pushOptions = this_00;
+    func_?(&(this->fields).pushOptions,this_00);
+    FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
+              ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

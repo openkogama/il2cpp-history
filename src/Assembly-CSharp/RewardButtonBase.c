@@ -10,9 +10,10 @@ void Assembly-CSharp.dll::RewardButtonBase::RewardButtonBase_EnableEffects
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(this_00,1.0,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -29,9 +30,10 @@ void Assembly-CSharp.dll::RewardButtonBase::RewardButtonBase_UpdateOutline
               (this_00,progress,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

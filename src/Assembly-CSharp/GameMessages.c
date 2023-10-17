@@ -8,60 +8,55 @@ Assembly-CSharp.dll::GameMessages::GameMessages_MakePlayerKilledMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
            func_?(
                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)pDVar1,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-            );
-  auStack_2[3] = 0;
-  pSVar3 = (String *)func_?(TypeInfo__System__Byte,auStack_2 + 3);
-  iStack_4 = avatarId;
-  pCVar5 = (CrossPlatformInputManager_VirtualButton *)
-           func_?(TypeInfo__System__Int32,&iStack_4);
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)pDVar1,pSVar3,pCVar5,
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)pDVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (pDVar1,pOVar2,pOVar3,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    auStack_2[2] = 1;
-    pSVar3 = (String *)func_?(TypeInfo__System__Byte,auStack_2 + 2);
-    iStack_6 = killerId;
-    pCVar5 = (CrossPlatformInputManager_VirtualButton *)
-             func_?(TypeInfo__System__Int32,&iStack_6);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)pDVar1,pSVar3,pCVar5,
+    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (pDVar1,pOVar2,pOVar3,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    auStack_2[1] = 2;
-    pSVar3 = (String *)func_?(TypeInfo__System__Byte,auStack_2 + 1);
-    auStack_2[0] = (undefined1)weaponType;
-    pCVar5 = (CrossPlatformInputManager_VirtualButton *)
-             func_?(TypeInfo__System__Byte,auStack_2);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::String,UnityStandardAssets::
-    CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-    Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-              ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                *)pDVar1,pSVar3,pCVar5,
+    pOVar2 = (Object *)func_?();
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (pDVar1,pOVar2,pOVar3,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     return pDVar1;
   }
-  func_?(0);
-  pcVar7 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar7)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar4)();
   return pDVar1;
 }
 
@@ -75,47 +70,52 @@ Assembly-CSharp.dll::GameMessages::GameMessages_ParseAchievementGetMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__Common__AchievementType);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
-  pTVar1 = (Type *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
+  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
   if (package != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)package,pTVar1,
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (package,pOVar1,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    uVar3 = CONCAT44(TypeInfo__System__Int32,pPVar2);
-    if (pPVar2 != (Pool *)0x0) {
-      if ((pPVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+    uVar2 = CONCAT44(TypeInfo__System__Int32,pOVar1);
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      piVar4 = (int32_t *)func_?(pPVar2);
-      iVar5 = *piVar4;
-      pTVar1 = (Type *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
-      pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-               Dictionary_2_System_Type_Pool__get_Item
-                         ((Dictionary_2_System_Type_Pool_ *)package,pTVar1,
+      piVar3 = (int32_t *)func_?(pOVar1);
+      iVar4 = *piVar3;
+      pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
+      pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (package,pOVar1,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      uVar3 = CONCAT44(TypeInfo__MV__Common__AchievementType,pPVar2);
-      if (pPVar2 != (Pool *)0x0) {
-        if ((pPVar2->klass->_0).element_class ==
+      uVar2 = CONCAT44(TypeInfo__MV__Common__AchievementType,pOVar1);
+      if (pOVar1 != (Object *)0x0) {
+        if ((pOVar1->klass->_0).element_class ==
             (TypeInfo__MV__Common__AchievementType->_0).element_class) {
-          piVar4 = (int32_t *)func_?(pPVar2);
-          GVar6.achievementType = *piVar4;
-          GVar6.playerId = iVar5;
-          return GVar6;
+          piVar3 = (int32_t *)func_?(pOVar1);
+          GVar5.achievementType = *piVar3;
+          GVar5.playerId = iVar4;
+          return GVar5;
         }
         goto code_?;
       }
     }
   }
-  uVar3 = func_?(0);
+  uVar2 = func_?();
 code_?:
-  func_?(uVar3);
-  pcVar7 = (code *)swi(3);
-  GVar6 = (GameMessages_AchievementGetMessage)(*pcVar7)();
-  return GVar6;
+  func_?(uVar2);
+  pcVar6 = (code *)swi(3);
+  GVar5 = (GameMessages_AchievementGetMessage)(*pcVar6)();
+  return GVar5;
 }
 
 
@@ -128,18 +128,22 @@ Assembly-CSharp.dll::GameMessages::GameMessages_ParseCheckpointMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
-  key = (Type *)func_?(TypeInfo__System__Byte,&stack0xfffffffb,in_ECX & 0xffffff);
+  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb,in_ECX & 0xffffff);
   if (package != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)package,key,
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (package,pOVar1,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar1 != (Pool *)0x0) {
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
         piVar2 = (int32_t *)func_?();
         return (GameMessages_CheckpointMessage)*piVar2;
       }
@@ -164,18 +168,22 @@ Assembly-CSharp.dll::GameMessages::GameMessages_ParseCollectibleMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
-  key = (Type *)func_?(TypeInfo__System__Byte,&stack0xfffffffb,in_ECX & 0xffffff);
+  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb,in_ECX & 0xffffff);
   if (package != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)package,key,
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (package,pOVar1,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar1 != (Pool *)0x0) {
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
         piVar2 = (int32_t *)func_?();
         return (GameMessages_CollectibleMessage)*piVar2;
       }
@@ -200,18 +208,22 @@ Assembly-CSharp.dll::GameMessages::GameMessages_ParsePlayerJoinMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
-  key = (Type *)func_?(TypeInfo__System__Byte,&stack0xfffffffb,in_ECX & 0xffffff);
+  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb,in_ECX & 0xffffff);
   if (package != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)package,key,
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (package,pOVar1,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar1 != (Pool *)0x0) {
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
         piVar2 = (int32_t *)func_?();
         return (GameMessages_PlayerJoinMessage)*piVar2;
       }
@@ -236,49 +248,67 @@ Assembly-CSharp.dll::GameMessages::GameMessages_ParsePlayerLeftMessage
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  pTVar1 = (Type *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-  if (package == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  uStack_1 = 0;
+  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_1);
+  if (package != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pSStack_3 = (String__Class *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (package,pOVar2,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+    if (pSStack_3 != (String__Class *)0x0) {
+      uVar4 = CONCAT44(TypeInfo__System__Int32,pSStack_3);
+      if ((((Object__Class *)(pSStack_3->_0).image)->_0).element_class ==
+          (TypeInfo__System__Int32->_0).element_class) {
+        func_?();
+        uStack_5 = 3;
+        pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_5);
+        pSVar6 = (String__Class *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (package,pOVar2,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        pSStack_3 = (String__Class *)0x0;
+        if (pSVar6 == (String__Class *)0x0) {
 code_?:
-    func_?(0);
-  }
-  else {
-    pPVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)package,pTVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar3 = CONCAT44(TypeInfo__System__Int32,pPVar2);
-    if (pPVar2 == (Pool *)0x0) goto code_?;
-    if ((pPVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    piVar4 = (int32_t *)func_?(pPVar2);
-    iVar5 = *piVar4;
-    pTVar1 = (Type *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
-    pPVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)package,pTVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    pPVar2 = (Pool *)0x0;
-    if (pPVar6 == (Pool *)0x0) {
-code_?:
-      GVar7.userName = (String *)pPVar2;
-      GVar7.playerId = iVar5;
-      return GVar7;
+          ppSVar7 = &pSStack_3;
+          func_?();
+          GVar8.userName = (String *)pSStack_3;
+          GVar8.playerId = (int32_t)ppSVar7;
+          return GVar8;
+        }
+        if ((String__Class *)(pSVar6->_0).image == TypeInfo__System__String) {
+          pSStack_3 = pSVar6;
+        }
+        uVar4 = CONCAT44(TypeInfo__System__String,pSVar6);
+        if (pSStack_3 != (String__Class *)0x0) {
+          pSStack_3 = (String__Class *)0x0;
+          if ((String__Class *)(pSVar6->_0).image == TypeInfo__System__String) {
+            pSStack_3 = pSVar6;
+          }
+          uVar4 = CONCAT44(TypeInfo__System__String,pSVar6);
+          if (pSStack_3 != (String__Class *)0x0) goto code_?;
+        }
+      }
+      goto code_?;
     }
-    if ((String__Class *)pPVar6->klass == TypeInfo__System__String) {
-      pPVar2 = pPVar6;
-    }
-    if (pPVar2 != (Pool *)0x0) goto code_?;
   }
-  uVar3 = func_?();
+  uVar4 = func_?();
 code_?:
-  func_?(uVar3);
-  pcVar8 = (code *)swi(3);
-  GVar7 = (GameMessages_PlayerLeftMessage)(*pcVar8)();
-  return GVar7;
+  pSStack_3 = (String__Class *)((ulonglong)uVar4 >> 0x20);
+  func_?((int)uVar4);
+  pcVar9 = (code *)swi(3);
+  GVar8 = (GameMessages_PlayerLeftMessage)(*pcVar9)();
+  return GVar8;
 }
 

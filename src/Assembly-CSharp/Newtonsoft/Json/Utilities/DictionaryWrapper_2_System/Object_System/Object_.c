@@ -1,99 +1,108 @@
 
-/* Void Add(Object, Object) */
-
-void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System::
-     Object]::DictionaryWrapper_2_System_Object_System_Object__Add
-               (DictionaryWrapper_2_System_Object_System_Object_ *this,Object *key,Object *value,
-               MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      func_?(6,TypeInfo__System__Collections__IDictionary,pIVar2,key,value);
-      return;
-    }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  iVar4 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
-  }
-  func_?(0,iVar4,pIVar1,key,value);
-  return;
-}
-
-
 /* Void Add(KeyValuePair`2[System.Object,System.Object]) */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System::
-     Object]::DictionaryWrapper_2_System_Object_System_Object__Add_1
+     Object]::DictionaryWrapper_2_System_Object_System_Object__Add
                (DictionaryWrapper_2_System_Object_System_Object_ *this,
                KeyValuePair_2_System_Object_System_Object_ item,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    pOStack_3 = item.key;
-    pOStack_4 = item.value;
-    iVar5 = *(int *)(*(int *)(method->name + 0x60) + 0x20);
-    if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-      func_?(iVar5);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    unaff_ESI = (this->fields)._dictionary;
+    pOStack_1 = item.key;
+    pOStack_2 = item.value;
+    pvVar3 = method->klass->rgctx_data[0x11].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
     }
-    uVar6 = func_?(iVar5,&pOStack_3);
-    pIVar7 = TypeInfo__System__Collections__IList;
-    if (pIVar2 != (IDictionary *)0x0) {
-      iVar5 = func_?(pIVar2,TypeInfo__System__Collections__IList);
-      pIVar8 = TypeInfo__System__Collections__IList;
-      if (iVar5 != 0) {
-        iVar5 = func_?(pIVar2,TypeInfo__System__Collections__IList);
-        pIVar7 = pIVar8;
-        if (iVar5 != 0) {
-          func_?(4,TypeInfo__System__Collections__IList,iVar5,uVar6);
+    uVar4 = func_?(pvVar3,&pOStack_1);
+    pIVar5 = TypeInfo__System__Collections__IList;
+    if (unaff_ESI != (IDictionary *)0x0) {
+      iVar6 = func_?(unaff_ESI,TypeInfo__System__Collections__IList);
+      pIVar7 = TypeInfo__System__Collections__IList;
+      if (iVar6 != 0) {
+        iVar6 = func_?(unaff_ESI,TypeInfo__System__Collections__IList);
+        pIVar5 = pIVar7;
+        if (iVar6 != 0) {
+          func_?(2,TypeInfo__System__Collections__IList,iVar6,uVar4);
           return;
         }
       }
-      func_?(pIVar2,pIVar7);
+      goto code_?;
     }
-    func_?(0);
-    pcVar9 = (code *)swi(3);
-    (*pcVar9)();
-    return;
   }
-  pIVar10 = *(Il2CppClass **)(*(int *)(method->name + 0x60) + 0x1c);
-  if (((uint)pIVar10->vtable[0].methodPtr & 0x10000) == 0) {
-    func_?(pIVar10);
-  }
-  pIVar11 = pIVar1->klass;
-  uVar12 = 0;
-  uVar13._0_1_ = (pIVar11->_1).rank;
-  uVar13._1_1_ = (pIVar11->_1).minimumAlignment;
-  if (uVar13 != 0) {
-    do {
-      if (pIVar11->interfaceOffsets[uVar12].interfaceType == pIVar10) {
-        ppMVar14 = &(&(pIVar1->klass->vtable).Remove)[pIVar11->interfaceOffsets[uVar12].offset].method
-        ;
-        goto code_?;
+  else {
+    pIVar8 = (this->fields)._genericDictionary;
+    pIVar5 = (IList__Class *)0x0;
+    if (pIVar8 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pIVar9 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+      if (pIVar9->initialized_and_no_error == 0) {
+        pIVar9 = (Il2CppClass *)func_?(pIVar9);
       }
-      uVar12 = uVar12 + 1;
-    } while (uVar12 < uVar13);
-  }
-  ppMVar14 = (MethodInfo **)func_?(pIVar1,pIVar10,2);
+      uVar10 = 0;
+      uVar11 = (pIVar8->klass->_1).interface_offsets_count;
+      if (uVar11 != 0) {
+        do {
+          if (pIVar8->klass->interfaceOffsets[uVar10].interfaceType == pIVar9) {
+            pVVar12 = &(pIVar8->klass->vtable).get_Keys +
+                     pIVar8->klass->interfaceOffsets[uVar10].offset;
+            goto code_?;
+          }
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < uVar11);
+      }
+      pVVar12 = (VirtualInvokeData *)func_?(pIVar8,pIVar9,2);
 code_?:
-  (*(code *)*ppMVar14)(pIVar1,item.key,item.value,ppMVar14[1]);
+      (*pVVar12->methodPtr)(pIVar8,item.key,item.value,pVVar12->method);
+      return;
+    }
+  }
+  func_?();
+code_?:
+  func_?(unaff_ESI,pIVar5);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
+  return;
+}
+
+
+/* Void Add(Object, Object) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System::
+     Object]::DictionaryWrapper_2_System_Object_System_Object__Add_1
+               (DictionaryWrapper_2_System_Object_System_Object_ *this,Object *key,Object *value,
+               MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Collections__IDictionary);
+    cRam_? = '\x01';
+  }
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      func_?(5,TypeInfo__System__Collections__IDictionary,pIVar1,key,value);
+      return;
+    }
+  }
+  else {
+    pIVar2 = (this->fields)._genericDictionary;
+    if (pIVar2 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar3 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
+      }
+      func_?(5,pvVar3,pIVar2,key,value);
+      return;
+    }
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -106,26 +115,30 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      func_?(7,TypeInfo__System__Collections__IDictionary,pIVar2);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      func_?(6,TypeInfo__System__Collections__IDictionary,pIVar1);
       return;
     }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
   }
-  iVar4 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
+  else {
+    pIVar2 = (this->fields)._genericDictionary;
+    if (pIVar2 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar3 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
+      }
+      func_?(3,pvVar3,pIVar2);
+      return;
+    }
   }
-  func_?(3,iVar4,pIVar1);
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -139,43 +152,47 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IList);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    pOStack_3 = item.key;
-    pOStack_4 = item.value;
-    iVar5 = *(int *)(*(int *)(method->name + 0x60) + 0x20);
-    if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-      func_?(iVar5);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    pOStack_2 = item.key;
+    pOStack_3 = item.value;
+    pvVar4 = method->klass->rgctx_data[0x11].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+      pvVar4 = (void *)func_?(pvVar4);
     }
-    uVar6 = func_?(iVar5,&pOStack_3);
-    pIVar7 = TypeInfo__System__Collections__IList;
-    if (pIVar2 != (IDictionary *)0x0) {
-      iVar5 = func_?(pIVar2,TypeInfo__System__Collections__IList);
+    uVar5 = func_?(pvVar4,&pOStack_2);
+    pIVar6 = TypeInfo__System__Collections__IList;
+    if (pIVar1 != (IDictionary *)0x0) {
+      iVar7 = func_?(pIVar1,TypeInfo__System__Collections__IList);
       pIVar8 = TypeInfo__System__Collections__IList;
-      if (iVar5 != 0) {
-        iVar5 = func_?(pIVar2,TypeInfo__System__Collections__IList);
-        pIVar7 = pIVar8;
-        if (iVar5 != 0) {
-          bVar9 = func_?(6,TypeInfo__System__Collections__IList,iVar5,uVar6);
+      if (iVar7 != 0) {
+        iVar7 = func_?(pIVar1,TypeInfo__System__Collections__IList);
+        pIVar6 = pIVar8;
+        if (iVar7 != 0) {
+          bVar9 = func_?(3,TypeInfo__System__Collections__IList,iVar7,uVar5);
           return bVar9;
         }
       }
-      func_?(pIVar2,pIVar7);
+      func_?(pIVar1,pIVar6);
     }
-    func_?(0);
-    pcVar10 = (code *)swi(3);
-    bVar9 = (*pcVar10)();
-    return bVar9;
   }
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar10 = (this->fields)._genericDictionary;
+    if (pIVar10 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar9 = func_?(4,pvVar4,pIVar10,item.key,item.value);
+      return bVar9;
+    }
   }
-  bVar9 = func_?(4,iVar5,pIVar1,item.key,item.value);
+  func_?();
+  pcVar11 = (code *)swi(3);
+  bVar9 = (*pcVar11)();
   return bVar9;
 }
 
@@ -189,27 +206,31 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      bVar3 = func_?(8,TypeInfo__System__Collections__IDictionary,pIVar2,key);
-      return bVar3;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      bVar2 = func_?(4,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+      return bVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    bVar3 = (*pcVar4)();
-    return bVar3;
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar2 = func_?(4,pvVar4,pIVar3,key);
+      return bVar2;
+    }
   }
-  bVar3 = func_?(1,iVar5,pIVar1,key);
-  return bVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
+  return bVar2;
 }
 
 
@@ -222,129 +243,140 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
                MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
+  _Stack_8.__klassIndex = -1;
+  pOStack_1 = (Object *)&DAT_?;
+  pcStack_2 = (char *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &pcStack_2;
+  pIStack_3 = (Il2CppArrayBounds *)&stack0xffffffb0;
+  pIVar4 = (Il2CppArrayBounds *)&stack0xffffffb0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__DictionaryEntry);
+    func_?(&TypeInfo__System__Collections__IDictionary);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    pIVar4 = pIStack_3;
   }
-  puStack_4 = puVar5;
-  uStack_6 = 0;
-  func_?();
-  pIVar7 = (this->fields)._genericDictionary;
-  if (pIVar7 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    iVar8 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-    puStack_9 = (undefined4 *)&stack0xffffffbc;
-    puStack_4 = &stack0xffffffbc;
-    if ((*(byte *)(iVar8 + 0xbe) & 1) == 0) {
-      puStack_9 = (undefined4 *)&stack0xffffffbc;
-      puStack_4 = &stack0xffffffbc;
-      func_?(iVar8);
-    }
-    func_?(5,iVar8,pIVar7,array,arrayIndex);
-code_?:
-    *unaff_FS_OFFSET = uStack_3;
-    return;
-  }
-  pIVar10 = (this->fields)._dictionary;
-  puStack_9 = (undefined4 *)&stack0xffffffbc;
-  puStack_4 = &stack0xffffffbc;
-  if (pIVar10 != (IDictionary *)0x0) {
-    puStack_9 = (undefined4 *)&stack0xffffffbc;
-    puStack_4 = &stack0xffffffbc;
-    piVar11 = (int *)func_?(9,TypeInfo__System__Collections__IDictionary,pIVar10);
-    uStack_12 = arrayIndex;
-    uStack_1 = 0;
-    while (piVar11 != (int *)0x0) {
-      cVar13 = func_?(1,TypeInfo__System__Collections__IEnumerator,piVar11);
-      if (cVar13 == '\0') {
-        *puStack_9 = 0x8c;
-        uStack_1 = 0xffffffff;
-        iVar8 = func_?(piVar11,TypeInfo__System__IDisposable);
-        if (iVar8 != 0) {
-          func_?(0,TypeInfo__System__IDisposable,iVar8);
-        }
-        goto code_?;
-      }
-      iVar8 = *piVar11;
-      uVar14 = 0;
-      if (*(ushort *)(iVar8 + 0xb6) != 0) {
-        do {
-          if (*(IEnumerator__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar14 * 8) ==
-              TypeInfo__System__Collections__IEnumerator) {
-            puVar15 = (undefined4 *)
-                     (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar14 * 8) + 0x18) * 8)
-            ;
-            goto code_?;
+  pIStack_3 = pIVar4;
+  pKStack_5 = (KeyValuePair_2_System_Object_System_Object___Array__Class *)0x0;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar6 = (this->fields)._dictionary;
+    if (pIVar6 != (IDictionary *)0x0) {
+      pIStack_7 = (Il2CppImage *)
+                   func_?(9,TypeInfo__System__Collections__IDictionary,pIVar6);
+      unaff_ESI = (IEnumerator__Class *)&pIStack_7;
+      unaff_EBX = (KeyValuePair_2_System_Object_System_Object___Array *)&pKStack_5;
+      _Stack_8.__klassIndex = 1;
+      this = (DictionaryWrapper_2_System_Object_System_Object_ *)arrayIndex;
+      while (pIStack_7 != (Il2CppImage *)0x0) {
+        cVar8 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIStack_7);
+        pIVar9 = pIStack_7;
+        pIVar10 = TypeInfo__System__Collections__IEnumerator;
+        if (cVar8 == '\0') {
+          _Stack_8.__klassIndex = -1;
+          pKStack_5 = (KeyValuePair_2_System_Object_System_Object___Array__Class *)
+                       func_?(pIStack_7,TypeInfo__System__IDisposable);
+          if (pKStack_5 != (KeyValuePair_2_System_Object_System_Object___Array__Class *)0x0) {
+            func_?(0,TypeInfo__System__IDisposable,pKStack_5);
+            *unaff_FS_OFFSET = pcStack_2;
+            return;
           }
-          uVar14 = uVar14 + 1;
-        } while (uVar14 < *(ushort *)(iVar8 + 0xb6));
-      }
-      puVar15 = (undefined4 *)func_?(piVar11,TypeInfo__System__Collections__IEnumerator,0);
+          goto code_?;
+        }
+        if (pIStack_7 == (Il2CppImage *)0x0) break;
+        unaff_EBX = (KeyValuePair_2_System_Object_System_Object___Array *)0x0;
+        uVar11 = 0;
+        uVar12 = *(ushort *)(pIStack_7->name + 0xb2);
+        if (uVar12 != 0) {
+          unaff_EBX = *(KeyValuePair_2_System_Object_System_Object___Array **)
+                       (pIStack_7->name + 0x58);
+          do {
+            if ((IEnumerator__Class *)unaff_EBX->vector[uVar11 - 2].key ==
+                TypeInfo__System__Collections__IEnumerator) {
+              pcVar13 = pIStack_7->name +
+                       *(int *)(*(int *)(pIStack_7->name + 0x58) + 4 + (uint)uVar11 * 8) * 8 + 0xc4
+              ;
+              goto code_?;
+            }
+            uVar11 = uVar11 + 1;
+          } while (uVar11 < uVar12);
+        }
+        pcVar13 = (char *)func_?(pIStack_7,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-      piVar16 = (int *)(*(code *)*puVar15)(piVar11,puVar15[1]);
-      uVar17 = CONCAT44(TypeInfo__System__Collections__DictionaryEntry,piVar16);
-      unaff_ESI = piVar11;
-      if (piVar16 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar16 + 0x20) !=
-          (TypeInfo__System__Collections__DictionaryEntry->_0).element_class) {
-code_?:
-        func_?(uVar17);
-        break;
-      }
-      puVar18 = (undefined8 *)func_?(piVar16);
-      uVar19 = uStack_12;
-      uStack_6 = *puVar18;
-      uStack_12 = uStack_12 + 1;
-      if (array == (KeyValuePair_2_System_Object_System_Object___Array *)0x0) break;
-      iStack_20 = func_?(&uStack_6,0);
-      iVar8 = func_?(&uStack_6,0);
-      uStack_21 = 0;
-      unaff_ESI = *(int **)(*(int *)(method->name + 0x60) + 8);
-      if ((*(byte *)((int)unaff_ESI + 0xbe) & 1) == 0) {
-        func_?(unaff_ESI);
-      }
-      if (iVar8 != 0) {
-        iStack_22 = func_?(iVar8,unaff_ESI);
-        if (iStack_22 != 0) goto code_?;
-code_?:
-        uVar17 = func_?(iVar8,unaff_ESI);
+        piVar14 = (int *)(**(code **)pcVar13)(pIVar9,*(undefined4 *)(pcVar13 + 4));
+        uVar15 = CONCAT44(TypeInfo__System__Collections__DictionaryEntry,piVar14);
+        unaff_ESI = pIVar10;
+        if (piVar14 == (int *)0x0) break;
+        if (*(Il2CppClass **)(*piVar14 + 0x20) !=
+            (TypeInfo__System__Collections__DictionaryEntry->_0).element_class)
         goto code_?;
+        puVar16 = (undefined4 *)func_?(piVar14);
+        pKStack_17 = (KeyValuePair_2_System_Object_System_Object___Array *)*puVar16;
+        unaff_EBX = (KeyValuePair_2_System_Object_System_Object___Array *)puVar16[1];
+        pDStack_18 = this;
+        pDStack_19 = this;
+        this = (DictionaryWrapper_2_System_Object_System_Object_ *)((int)&this->klass + 1);
+        VStack_20.Item1 = (Object *)0x0;
+        VStack_20.Item2 = (Object *)0x0;
+        pMStack_21 = method->klass->rgctx_data[0x15].method;
+        unaff_ESI = method->klass->rgctx_data[3].rgctxDataDummy;
+        if ((unaff_ESI->_1).initialized_and_no_error == 0) {
+          unaff_ESI = (IEnumerator__Class *)func_?(unaff_ESI);
+        }
+        if (unaff_EBX == (KeyValuePair_2_System_Object_System_Object___Array *)0x0) {
+          item2 = (Object *)0x0;
+        }
+        else {
+          item2 = (Object *)func_?(unaff_EBX,unaff_ESI);
+          if (item2 == (Object *)0x0) goto code_?;
+        }
+        unaff_ESI = method->klass->rgctx_data[2].rgctxDataDummy;
+        if ((unaff_ESI->_1).initialized_and_no_error == 0) {
+          unaff_ESI = (IEnumerator__Class *)func_?(unaff_ESI);
+        }
+        unaff_EBX = pKStack_17;
+        if (pKStack_17 == (KeyValuePair_2_System_Object_System_Object___Array *)0x0) {
+          item1 = (Object *)0x0;
+        }
+        else {
+          item1 = (Object *)func_?(pKStack_17,unaff_ESI);
+          if (item1 == (Object *)0x0) goto code_?;
+        }
+        mscorlib.dll::System::ValueTuple`2[Object,Object]::ValueTuple_2_Object_Object___ctor
+                  (&VStack_20,item1,item2,pMStack_21);
+        unaff_EBX = array;
+        if (array == (KeyValuePair_2_System_Object_System_Object___Array *)0x0) break;
+        if ((DictionaryWrapper_2_System_Object_System_Object_ *)array->max_length <= pDStack_18) {
+          func_?();
+          break;
+        }
+        array->vector[(int)pDStack_18].key = VStack_20.Item1;
+        array->vector[(int)pDStack_18].value = VStack_20.Item2;
+        func_?(array->vector + (int)&pDStack_19->klass,0);
       }
-      iStack_22 = 0;
-code_?:
-      unaff_ESI = *(int **)(*(int *)(method->name + 0x60) + 4);
-      if ((*(byte *)((int)unaff_ESI + 0xbe) & 1) == 0) {
-        func_?(unaff_ESI);
-      }
-      iVar8 = iStack_20;
-      if (iStack_20 == 0) {
-        iVar23 = 0;
-      }
-      else {
-        iVar23 = func_?(iStack_20,unaff_ESI);
-        if (iVar23 == 0) goto code_?;
-      }
-      func_?(&uStack_21,iVar23,iStack_22,
-                      *(undefined4 *)(*(int *)(method->name + 0x60) + 0x24));
-      if (array->max_length <= uVar19) {
-        uVar24 = func_?();
-        func_?(uVar24,0,0);
-        goto code_?;
-      }
-      array->vector[uVar19].key = (Object *)uStack_21;
-      array->vector[uVar19].value = uStack_21._4_4_;
     }
   }
-  func_?(0);
-  func_?(unaff_ESI,0,0);
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  else {
+    pIVar22 = (this->fields)._genericDictionary;
+    unaff_ESI = (IEnumerator__Class *)0x0;
+    if (pIVar22 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar23 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar23 + 0xba) & 1) == 0) {
+        pvVar23 = (void *)func_?(pvVar23);
+      }
+      func_?(5,pvVar23,pIVar22,array,arrayIndex);
+code_?:
+      *unaff_FS_OFFSET = pcStack_2;
+      return;
+    }
+  }
+  func_?();
+code_?:
+  uVar15 = func_?(unaff_EBX,unaff_ESI);
+code_?:
+  func_?(uVar15);
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -358,60 +390,90 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Ob
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<System::Collections::DictionaryEntry>_MethodInfo__System__Linq__Enumerable__Cast<System::Collections::DictionaryEntry>_System__Collections__IEnumerable_
+                   );
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_8
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_1
                        ((IEnumerable *)(this->fields)._dictionary,
                         System__Collections__Generic__IEnumerable<System::Collections::DictionaryEntry>_MethodInfo__System__Linq__Enumerable__Cast<System::Collections::DictionaryEntry>_System__Collections__IEnumerable_
                        );
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x34);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
+    pIVar2 = method->klass->rgctx_data[0x1d].klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
-    if (**(int **)(iVar3 + 0x5c) == 0) {
-      iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x3c);
-      if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-        func_?(iVar3);
+    if (pIVar2->cctor_finished_or_no_cctor == 0) {
+      func_?(pIVar2);
+    }
+    pIVar2 = method->klass->rgctx_data[0x1d].klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    iVar3 = *(int *)((int)pIVar2->static_fields + 4);
+    if (iVar3 == 0) {
+      pIVar2 = method->klass->rgctx_data[0x1d].klass;
+      if (pIVar2->initialized_and_no_error == 0) {
+        pIVar2 = (Il2CppClass *)func_?(pIVar2);
       }
-      uVar4 = func_?(iVar3);
-      puVar5 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x40);
-      (*(code *)*puVar5)(uVar4,0,*(undefined4 *)(*(int *)(method->name + 0x60) + 0x38),puVar5);
-      iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x34);
-      if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-        func_?(iVar3);
+      if (pIVar2->cctor_finished_or_no_cctor == 0) {
+        func_?(pIVar2);
       }
-      **(undefined4 **)(iVar3 + 0x5c) = uVar4;
+      pIVar2 = method->klass->rgctx_data[0x1d].klass;
+      if (pIVar2->initialized_and_no_error == 0) {
+        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      }
+      uVar4 = *(undefined4 *)pIVar2->static_fields;
+      pvVar5 = method->klass->rgctx_data[0x1f].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+        pvVar5 = (void *)func_?(pvVar5);
+      }
+      iVar3 = func_?(pvVar5);
+      if (iVar3 == 0) goto code_?;
+      (*(method->klass->rgctx_data[0x20].method)->virtualMethodPointer)
+                (iVar3,uVar4,method->klass->rgctx_data[0x1e].rgctxDataDummy,
+                 method->klass->rgctx_data[0x20].rgctxDataDummy);
+      pIVar2 = method->klass->rgctx_data[0x1d].klass;
+      if (pIVar2->initialized_and_no_error == 0) {
+        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      }
+      *(int *)((int)pIVar2->static_fields + 4) = iVar3;
+      pIVar2 = method->klass->rgctx_data[0x1d].klass;
+      if (pIVar2->initialized_and_no_error == 0) {
+        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      }
+      func_?((int)pIVar2->static_fields + 4,iVar3);
     }
-    pcVar6 = method->name;
-    iVar3 = *(int *)(*(int *)(pcVar6 + 0x60) + 0x34);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
-      pcVar6 = method->name;
+    iVar3 = (*(method->klass->rgctx_data[0x21].method)->virtualMethodPointer)
+                      (pIVar1,iVar3,method->klass->rgctx_data[0x21].rgctxDataDummy);
+    if (iVar3 != 0) {
+      pvVar5 = method->klass->rgctx_data[0x1b].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+        pvVar5 = (void *)func_?(pvVar5);
+      }
+      pIVar6 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)
+               func_?(0,pvVar5,iVar3);
+      return pIVar6;
     }
-    pIVar1 = (IDictionary_2_System_Object_System_Object_ *)
-             (*(code *)**(undefined4 **)(*(int *)(pcVar6 + 0x60) + 0x44))
-                       (pIVar2,**(undefined4 **)(iVar3 + 0x5c),
-                        *(undefined4 **)(*(int *)(pcVar6 + 0x60) + 0x44));
-    if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-      func_?(0);
-      pcVar7 = (code *)swi(3);
-      pIVar8 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)(*pcVar7)();
-      return pIVar8;
-    }
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x30);
   }
   else {
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x30);
+    pIVar7 = (this->fields)._genericDictionary;
+    if (pIVar7 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar5 = method->klass->rgctx_data[0x1b].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+        pvVar5 = (void *)func_?(pvVar5);
+      }
+      pIVar6 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)
+               func_?(0,pvVar5,pIVar7);
+      return pIVar6;
+    }
   }
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
-  }
-  pIVar8 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)
-           func_?(0,iVar3,pIVar1);
-  return pIVar8;
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pIVar6 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)(*pcVar8)();
+  return pIVar6;
 }
 
 
@@ -424,34 +486,38 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    iVar2 = **(int **)(method->name + 0x60);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
-    }
-    bVar3 = func_?(2,iVar2,pIVar1,key);
-    return bVar3;
-  }
-  pIVar4 = (this->fields)._dictionary;
-  if (pIVar4 != (IDictionary *)0x0) {
-    cVar5 = func_?(8,TypeInfo__System__Collections__IDictionary,pIVar4,key);
-    if (cVar5 == '\0') {
-      return 0;
-    }
-    pIVar4 = (this->fields)._dictionary;
-    if (pIVar4 != (IDictionary *)0x0) {
-      func_?(10,TypeInfo__System__Collections__IDictionary,pIVar4,key);
-      return 1;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      cVar2 = func_?(4,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+      if (cVar2 == '\0') {
+        return 0;
+      }
+      pIVar1 = (this->fields)._dictionary;
+      if (pIVar1 != (IDictionary *)0x0) {
+        func_?(10,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+        return 1;
+      }
     }
   }
-  func_?(0);
+  else {
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar5 = func_?(6,pvVar4,pIVar3,key);
+      return bVar5;
+    }
+  }
+  func_?();
   pcVar6 = (code *)swi(3);
-  bVar3 = (*pcVar6)();
-  return bVar3;
+  bVar5 = (*pcVar6)();
+  return bVar5;
 }
 
 
@@ -464,49 +530,48 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pOVar1 = item.value;
-  pOVar2 = item.key;
-  pIVar3 = (this->fields)._genericDictionary;
-  if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    iVar4 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-    if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-      func_?(iVar4);
-    }
-    bVar5 = func_?(6,iVar4,pIVar3,pOVar2,pOVar1);
-    return bVar5;
-  }
-  pIVar6 = (this->fields)._dictionary;
-  uVar7 = func_?(&item,*(undefined4 *)(*(int *)(method->name + 0x60) + 0x28));
-  if (pIVar6 != (IDictionary *)0x0) {
-    cVar8 = func_?(8,TypeInfo__System__Collections__IDictionary,pIVar6,uVar7);
-    if (cVar8 == '\0') {
-      return 1;
-    }
-    pIVar6 = (this->fields)._dictionary;
-    uVar7 = func_?(&item,*(undefined4 *)(*(int *)(method->name + 0x60) + 0x28));
-    if (pIVar6 != (IDictionary *)0x0) {
-      pOVar2 = (Object *)func_?(2,TypeInfo__System__Collections__IDictionary,pIVar6,uVar7);
-      pOVar1 = (Object *)
-               func_?(&item,*(undefined4 *)(*(int *)(method->name + 0x60) + 0x2c));
-      bVar5 = mscorlib.dll::System::Object::Object_Equals_1(pOVar2,pOVar1,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
-        return 0;
-      }
-      pIVar6 = (this->fields)._dictionary;
-      uVar7 = func_?(&item,*(undefined4 *)(*(int *)(method->name + 0x60) + 0x28));
-      if (pIVar6 != (IDictionary *)0x0) {
-        func_?(10,TypeInfo__System__Collections__IDictionary,pIVar6,uVar7);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      cVar2 = func_?(4,TypeInfo__System__Collections__IDictionary,pIVar1,item.key);
+      if (cVar2 == '\0') {
         return 1;
       }
+      pIVar1 = (this->fields)._dictionary;
+      if (pIVar1 != (IDictionary *)0x0) {
+        left = (PropertyInfo_1 *)
+               func_?(0,TypeInfo__System__Collections__IDictionary,pIVar1,item.key);
+        bVar3 = mscorlib.dll::System::Reflection::PropertyInfo::PropertyInfo_1_op_Equality
+                          (left,(PropertyInfo_1 *)item.value,(MethodInfo *)0x0);
+        if (bVar3 == 0) {
+          return 0;
+        }
+        pIVar1 = (this->fields)._dictionary;
+        if (pIVar1 != (IDictionary *)0x0) {
+          func_?(10,TypeInfo__System__Collections__IDictionary,pIVar1,item.key);
+          return 1;
+        }
+      }
     }
   }
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  bVar5 = (*pcVar9)();
-  return bVar5;
+  else {
+    pIVar4 = (this->fields)._genericDictionary;
+    if (pIVar4 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar5 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+        pvVar5 = (void *)func_?(pvVar5);
+      }
+      bVar3 = func_?(6,pvVar5,pIVar4,item.key,item.value);
+      return bVar3;
+    }
+  }
+  func_?();
+  pcVar6 = (code *)swi(3);
+  bVar3 = (*pcVar6)();
+  return bVar3;
 }
 
 
@@ -519,41 +584,44 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      func_?(10,TypeInfo__System__Collections__IDictionary,pIVar2,key);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      func_?(10,TypeInfo__System__Collections__IDictionary,pIVar1,key);
       return;
     }
-code_?:
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  iVar4 = *(int *)(*(int *)(method->name + 0x60) + 4);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
-  }
-  if (key == (Object *)0x0) {
-    iVar5 = 0;
   }
   else {
-    iVar5 = func_?(key,iVar4);
-    if (iVar5 == 0) {
-      func_?(key,iVar4);
+    pIVar2 = (this->fields)._genericDictionary;
+    if (pIVar2 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      unaff_ESI = method->klass->rgctx_data[2].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (key == (Object *)0x0) {
+        iVar3 = 0;
+code_?:
+        pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+        if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+          pvVar4 = (void *)func_?(pvVar4);
+        }
+        func_?(6,pvVar4,pIVar2,iVar3);
+        return;
+      }
+      iVar3 = func_?(key,unaff_ESI);
+      unaff_EDI = key;
+      if (iVar3 != 0) goto code_?;
       goto code_?;
     }
   }
-  iVar4 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
-  }
-  func_?(2,iVar4,pIVar1,iVar5);
+  func_?();
+code_?:
+  func_?(unaff_EDI,unaff_ESI);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -567,41 +635,61 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__ICollection);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      func_?(3,TypeInfo__System__Collections__ICollection,pIVar2,array,index);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    unaff_ESI = (void *)0x0;
+    if (pIVar1 != (IDictionary *)0x0) {
+      uVar2 = 0;
+      uVar3 = (pIVar1->klass->_1).interface_offsets_count;
+      if (uVar3 != 0) {
+        do {
+          if (pIVar1->klass->interfaceOffsets[uVar2].interfaceType ==
+              (Il2CppClass *)TypeInfo__System__Collections__ICollection) {
+            pVVar4 = &(pIVar1->klass->vtable).get_Item +
+                     pIVar1->klass->interfaceOffsets[uVar2].offset;
+            goto code_?;
+          }
+          uVar2 = uVar2 + 1;
+        } while (uVar2 < uVar3);
+      }
+      pVVar4 = (VirtualInvokeData *)
+               func_?(pIVar1,TypeInfo__System__Collections__ICollection,0);
+code_?:
+      (*pVVar4->methodPtr)(pIVar1,array,index,pVVar4->method);
       return;
     }
-code_?:
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  iVar4 = *(int *)(*(int *)(method->name + 0x60) + 0x54);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
-  }
-  if (array == (Array *)0x0) {
-    iVar5 = 0;
   }
   else {
-    iVar5 = func_?(array,iVar4);
-    if (iVar5 == 0) {
-      func_?(array,iVar4);
+    pIVar5 = (this->fields)._genericDictionary;
+    if (pIVar5 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      unaff_ESI = method->klass->rgctx_data[0x25].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (array == (Array *)0x0) {
+        iVar6 = 0;
+code_?:
+        pvVar7 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+        if ((*(byte *)((int)pvVar7 + 0xba) & 1) == 0) {
+          pvVar7 = (void *)func_?(pvVar7);
+        }
+        func_?(5,pvVar7,pIVar5,iVar6,index);
+        return;
+      }
+      iVar6 = func_?(array,unaff_ESI);
+      unaff_EDI = array;
+      if (iVar6 != 0) goto code_?;
       goto code_?;
     }
   }
-  iVar4 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
-  }
-  func_?(5,iVar4,pIVar1,iVar5,index);
+  func_?();
+code_?:
+  func_?(unaff_EDI,unaff_ESI);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -615,19 +703,24 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pIStack_1 = (IDictionary *)&TypeInfo__System__Collections__ICollection;
+    func_?();
     cRam_? = '\x01';
   }
   if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar1 = (this->fields)._dictionary;
-    if (pIVar1 != (IDictionary *)0x0) {
-      bVar2 = func_?(1,TypeInfo__System__Collections__ICollection,pIVar1);
-      return bVar2;
+    pIStack_1 = (this->fields)._dictionary;
+    if (pIStack_1 != (IDictionary *)0x0) {
+      pIStack_2 = TypeInfo__System__Collections__ICollection;
+      uStack_3 = 3;
+      bVar4 = func_?();
+      return bVar4;
     }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    bVar2 = (*pcVar3)();
-    return bVar2;
+    pIStack_1 = (IDictionary *)&stack0xfffffffc;
+    uVar5 = func_?(&uStack_3);
+    func_?(uVar5);
+    pcVar6 = (code *)swi(3);
+    bVar4 = (*pcVar6)();
+    return bVar4;
   }
   return 0;
 }
@@ -642,20 +735,23 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[S
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Object);
     cRam_? = '\x01';
   }
-  location1 = &(this->fields)._syncRoot;
-  pOVar1 = *location1;
-  if (pOVar1 == (Object *)0x0) {
-    method_00 = TypeInfo__System__Object;
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-    mscorlib.dll::System::Threading::Interlocked::Interlocked_CompareExchange_1
-              (location1,(Object *)this_00,(Object *)0x0,(MethodInfo *)0x0);
-    pOVar1 = *location1;
+  if ((this->fields)._syncRoot == (Object *)0x0) {
+    pOVar1 = (Object *)func_?(TypeInfo__System__Object);
+    if (pOVar1 == (Object *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      pOVar1 = (Object *)(*pcVar2)();
+      return pOVar1;
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
+    mscorlib.dll::System::Threading::Interlocked::Interlocked_CompareExchange_3
+              (&(this->fields)._syncRoot,pOVar1,(Object *)0x0,(MethodInfo *)0x0);
   }
-  return pOVar1;
+  return (this->fields)._syncRoot;
 }
 
 
@@ -668,50 +764,54 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      func_?(6,TypeInfo__System__Collections__IDictionary,pIVar2,key,value);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      func_?(5,TypeInfo__System__Collections__IDictionary,pIVar1,key,value);
       return;
     }
-    goto code_?;
-  }
-  iVar3 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
-  }
-  if (value == (Object *)0x0) {
-    this = (DictionaryWrapper_2_System_Object_System_Object_ *)value;
-code_?:
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 4);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
-    }
-    if (key == (Object *)0x0) {
-      iVar4 = 0;
-code_?:
-      iVar3 = **(int **)(method->name + 0x60);
-      if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-        func_?(iVar3);
-      }
-      func_?(0,iVar3,pIVar1,iVar4,this);
-      return;
-    }
-    iVar4 = func_?(key,iVar3);
-    value = key;
-    if (iVar4 != 0) goto code_?;
   }
   else {
-    this = (DictionaryWrapper_2_System_Object_System_Object_ *)func_?(value,iVar3);
-    if (this != (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) goto code_?;
-  }
-  func_?(value,iVar3);
+    pIVar2 = (this->fields)._genericDictionary;
+    if (pIVar2 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      unaff_ESI = method->klass->rgctx_data[3].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (value == (Object *)0x0) {
+        this = (DictionaryWrapper_2_System_Object_System_Object_ *)value;
+      }
+      else {
+        this = (DictionaryWrapper_2_System_Object_System_Object_ *)func_?(value,unaff_ESI);
+        unaff_EDI = value;
+        if (this == (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) goto code_?;
+      }
+      unaff_ESI = method->klass->rgctx_data[2].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (key == (Object *)0x0) {
+        iVar3 = 0;
 code_?:
-  func_?(0);
+        pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+        if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+          pvVar4 = (void *)func_?(pvVar4);
+        }
+        func_?(5,pvVar4,pIVar2,iVar3,this);
+        return;
+      }
+      iVar3 = func_?(key,unaff_ESI);
+      unaff_EDI = key;
+      if (iVar3 != 0) goto code_?;
+      goto code_?;
+    }
+  }
+  func_?();
+code_?:
+  func_?(unaff_EDI,unaff_ESI);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -728,42 +828,45 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      bVar3 = func_?(8,TypeInfo__System__Collections__IDictionary,pIVar2,key);
-      return bVar3;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      bVar2 = func_?(4,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+      return bVar2;
     }
-code_?:
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    bVar3 = (*pcVar4)();
-    return bVar3;
-  }
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 4);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
-  }
-  if (key == (Object *)0x0) {
-    iVar6 = 0;
   }
   else {
-    iVar6 = func_?(key,iVar5);
-    if (iVar6 == 0) {
-      func_?(key,iVar5);
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      unaff_ESI = method->klass->rgctx_data[2].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (key == (Object *)0x0) {
+        iVar4 = 0;
+code_?:
+        pvVar5 = method->klass->rgctx_data->rgctxDataDummy;
+        if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+          pvVar5 = (void *)func_?(pvVar5);
+        }
+        bVar2 = func_?(4,pvVar5,pIVar3,iVar4);
+        return bVar2;
+      }
+      iVar4 = func_?(key,unaff_ESI);
+      unaff_EDI = key;
+      if (iVar4 != 0) goto code_?;
       goto code_?;
     }
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
-  }
-  bVar3 = func_?(1,iVar5,pIVar1,iVar6);
-  return bVar3;
+  func_?();
+code_?:
+  func_?(unaff_EDI,unaff_ESI);
+  pcVar6 = (code *)swi(3);
+  bVar2 = (*pcVar6)();
+  return bVar2;
 }
 
 
@@ -776,37 +879,44 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Ob
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+  pMVar1 = method;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
     pIVar2 = (this->fields)._dictionary;
     if (pIVar2 != (IDictionary *)0x0) {
       pIVar3 = (IDictionaryEnumerator *)
                func_?(9,TypeInfo__System__Collections__IDictionary,pIVar2);
       return pIVar3;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    pIVar3 = (IDictionaryEnumerator *)(*pcVar4)();
-    return pIVar3;
   }
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 0x30);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar4 = (this->fields)._genericDictionary;
+    if (pIVar4 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar5 = method->klass->rgctx_data[0x1b].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+        pvVar5 = (void *)func_?(pvVar5);
+      }
+      value = (DictionaryWrapper_2_System_Object_System_Object_ *)func_?(0,pvVar5,pIVar4);
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_e);
+        cRam_? = '\x01';
+      }
+      ValidationUtils::ValidationUtils_ArgumentNotNull
+                ((Object *)value,StringLiteral_e,(MethodInfo *)0x0);
+      this = value;
+      func_?(&this,value);
+      if ((*(byte *)((int)pMVar1->klass->rgctx_data[0x23].rgctxDataDummy + 0xba) & 1) == 0) {
+        func_?();
+      }
+      pIVar3 = (IDictionaryEnumerator *)func_?();
+      return pIVar3;
+    }
   }
-  value = (Object *)func_?(0,iVar5,pIVar1);
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  ValidationUtils::ValidationUtils_ArgumentNotNull(value,StringLiteral_e,(MethodInfo *)0x0);
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 0x4c);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?();
-  }
-  pIVar3 = (IDictionaryEnumerator *)func_?(iVar5);
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pIVar3 = (IDictionaryEnumerator *)(*pcVar6)();
   return pIVar3;
 }
 
@@ -820,19 +930,24 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pIStack_1 = (IDictionary *)&TypeInfo__System__Collections__IDictionary;
+    func_?();
     cRam_? = '\x01';
   }
   if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar1 = (this->fields)._dictionary;
-    if (pIVar1 != (IDictionary *)0x0) {
-      bVar2 = func_?(0,TypeInfo__System__Collections__IDictionary,pIVar1);
-      return bVar2;
+    pIStack_1 = (this->fields)._dictionary;
+    if (pIStack_1 != (IDictionary *)0x0) {
+      pIStack_2 = TypeInfo__System__Collections__IDictionary;
+      uStack_3 = 8;
+      bVar4 = func_?();
+      return bVar4;
     }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    bVar2 = (*pcVar3)();
-    return bVar2;
+    pIStack_1 = (IDictionary *)&stack0xfffffffc;
+    uVar5 = func_?(&uStack_3);
+    func_?(uVar5);
+    pcVar6 = (code *)swi(3);
+    bVar4 = (*pcVar6)();
+    return bVar4;
   }
   return 0;
 }
@@ -848,42 +963,45 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[S
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      pOVar3 = (Object *)func_?(2,TypeInfo__System__Collections__IDictionary,pIVar2,key);
-      return pOVar3;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      pOVar2 = (Object *)func_?(0,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+      return pOVar2;
     }
-code_?:
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    pOVar3 = (Object *)(*pcVar4)();
-    return pOVar3;
-  }
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 4);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
-  }
-  if (key == (Object *)0x0) {
-    iVar6 = 0;
   }
   else {
-    iVar6 = func_?(key,iVar5);
-    if (iVar6 == 0) {
-      func_?(key,iVar5);
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      unaff_ESI = method->klass->rgctx_data[2].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (key == (Object *)0x0) {
+        iVar4 = 0;
+code_?:
+        pvVar5 = method->klass->rgctx_data->rgctxDataDummy;
+        if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+          pvVar5 = (void *)func_?(pvVar5);
+        }
+        pOVar2 = (Object *)func_?(0,pvVar5,pIVar3,iVar4);
+        return pOVar2;
+      }
+      iVar4 = func_?(key,unaff_ESI);
+      unaff_EDI = key;
+      if (iVar4 != 0) goto code_?;
       goto code_?;
     }
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
-  }
-  pOVar3 = (Object *)func_?(4,iVar5,pIVar1,iVar6);
-  return pOVar3;
+  func_?();
+code_?:
+  func_?(unaff_EDI,unaff_ESI);
+  pcVar6 = (code *)swi(3);
+  pOVar2 = (Object *)(*pcVar6)();
+  return pOVar2;
 }
 
 
@@ -896,30 +1014,34 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Ob
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      pIVar3 = (ICollection *)func_?(4,TypeInfo__System__Collections__IDictionary,pIVar2);
-      return pIVar3;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      pIVar2 = (ICollection *)func_?(2,TypeInfo__System__Collections__IDictionary,pIVar1);
+      return pIVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    pIVar3 = (ICollection *)(*pcVar4)();
-    return pIVar3;
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      uVar5 = func_?(2,pvVar4,pIVar3);
+      pIVar2 = (ICollection *)
+               (*(method->klass->rgctx_data[7].method)->virtualMethodPointer)
+                         (uVar5,method->klass->rgctx_data[7].rgctxDataDummy);
+      return pIVar2;
+    }
   }
-  func_?(6,iVar5,pIVar1);
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  pIVar3 = (ICollection *)(*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x10))();
-  return pIVar3;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pIVar2 = (ICollection *)(*pcVar6)();
+  return pIVar2;
 }
 
 
@@ -932,30 +1054,34 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Ob
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      pIVar3 = (ICollection *)func_?(5,TypeInfo__System__Collections__IDictionary,pIVar2);
-      return pIVar3;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      pIVar2 = (ICollection *)func_?(3,TypeInfo__System__Collections__IDictionary,pIVar1);
+      return pIVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    pIVar3 = (ICollection *)(*pcVar4)();
-    return pIVar3;
   }
-  iVar5 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      uVar5 = func_?(3,pvVar4,pIVar3);
+      pIVar2 = (ICollection *)
+               (*(method->klass->rgctx_data[0xc].method)->virtualMethodPointer)
+                         (uVar5,method->klass->rgctx_data[0xc].rgctxDataDummy);
+      return pIVar2;
+    }
   }
-  func_?(7,iVar5,pIVar1);
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  pIVar3 = (ICollection *)(*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x18))();
-  return pIVar3;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pIVar2 = (ICollection *)(*pcVar6)();
+  return pIVar2;
 }
 
 
@@ -969,50 +1095,54 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      func_?(3,TypeInfo__System__Collections__IDictionary,pIVar2,key,value);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      func_?(1,TypeInfo__System__Collections__IDictionary,pIVar1,key,value);
       return;
     }
-    goto code_?;
-  }
-  iVar3 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-    func_?(iVar3);
-  }
-  if (value == (Object *)0x0) {
-    this = (DictionaryWrapper_2_System_Object_System_Object_ *)value;
-code_?:
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 4);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
-    }
-    if (key == (Object *)0x0) {
-      iVar4 = 0;
-code_?:
-      iVar3 = **(int **)(method->name + 0x60);
-      if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-        func_?(iVar3);
-      }
-      func_?(5,iVar3,pIVar1,iVar4,this);
-      return;
-    }
-    iVar4 = func_?(key,iVar3);
-    value = key;
-    if (iVar4 != 0) goto code_?;
   }
   else {
-    this = (DictionaryWrapper_2_System_Object_System_Object_ *)func_?(value,iVar3);
-    if (this != (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) goto code_?;
-  }
-  func_?(value,iVar3);
+    pIVar2 = (this->fields)._genericDictionary;
+    if (pIVar2 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      unaff_ESI = method->klass->rgctx_data[3].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (value == (Object *)0x0) {
+        this = (DictionaryWrapper_2_System_Object_System_Object_ *)value;
+      }
+      else {
+        this = (DictionaryWrapper_2_System_Object_System_Object_ *)func_?(value,unaff_ESI);
+        unaff_EDI = value;
+        if (this == (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) goto code_?;
+      }
+      unaff_ESI = method->klass->rgctx_data[2].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (key == (Object *)0x0) {
+        iVar3 = 0;
 code_?:
-  func_?(0);
+        pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+        if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+          pvVar4 = (void *)func_?(pvVar4);
+        }
+        func_?(1,pvVar4,pIVar2,iVar3,this);
+        return;
+      }
+      iVar3 = func_?(key,unaff_ESI);
+      unaff_EDI = key;
+      if (iVar3 != 0) goto code_?;
+      goto code_?;
+    }
+  }
+  func_?();
+code_?:
+  func_?(unaff_EDI,unaff_ESI);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -1027,15 +1157,9 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Ob
           (DictionaryWrapper_2_System_Object_System_Object_ *this,MethodInfo *method)
 
 {
-  if (this != (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pIVar1 = (IEnumerator *)(*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x48))();
-    return pIVar1;
-  }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  pIVar1 = (IEnumerator *)(*pcVar2)();
+  pIVar1 = (IEnumerator *)
+           (*(method->klass->rgctx_data[0x22].method)->virtualMethodPointer)
+                     (this,method->klass->rgctx_data[0x22].rgctxDataDummy);
   return pIVar1;
 }
 
@@ -1049,168 +1173,112 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    iVar2 = **(int **)(method->name + 0x60);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
-    }
-    bVar3 = func_?(3,iVar2,pIVar1,key,value);
-    return bVar3;
-  }
-  pIVar4 = (this->fields)._dictionary;
-  if (pIVar4 == (IDictionary *)0x0) goto code_?;
-  cVar5 = func_?(8,TypeInfo__System__Collections__IDictionary,pIVar4,key);
-  if (cVar5 == '\0') {
-    *value = (Object *)0x0;
-    return 0;
-  }
-  pIVar4 = (this->fields)._dictionary;
-  if (pIVar4 == (IDictionary *)0x0) goto code_?;
-  iVar6 = func_?(2,TypeInfo__System__Collections__IDictionary,pIVar4,key);
-  iVar2 = *(int *)(*(int *)(method->name + 0x60) + 8);
-  if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-    func_?(iVar2);
-  }
-  if (iVar6 == 0) {
-    pOVar7 = (Object *)0x0;
-code_?:
-    *value = pOVar7;
-    iVar2 = *(int *)(*(int *)(method->name + 0x60) + 8);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
-    }
-    if (iVar6 == 0) {
-      return 1;
-    }
-    iVar8 = func_?(iVar6,iVar2);
-    if (iVar8 != 0) {
-      return 1;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      cVar2 = func_?(4,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+      if (cVar2 == '\0') {
+        *value = (Object *)0x0;
+        return 0;
+      }
+      pIVar1 = (this->fields)._dictionary;
+      unaff_EDI = key;
+      if (pIVar1 != (IDictionary *)0x0) {
+        this = (DictionaryWrapper_2_System_Object_System_Object_ *)
+               func_?(0,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+        unaff_EDI = method->klass->rgctx_data[3].rgctxDataDummy;
+        if (((uint)unaff_EDI[0x17].klass & 0x10000) == 0) {
+          unaff_EDI = (Object *)func_?(unaff_EDI);
+        }
+        if (this == (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) {
+          pOVar3 = (Object *)0x0;
+        }
+        else {
+          pOVar3 = (Object *)func_?(this,unaff_EDI);
+          if (pOVar3 == (Object *)0x0) goto code_?;
+        }
+        *value = pOVar3;
+        unaff_EDI = method->klass->rgctx_data[3].rgctxDataDummy;
+        if (((uint)unaff_EDI[0x17].klass & 0x10000) == 0) {
+          unaff_EDI = (Object *)func_?(unaff_EDI);
+        }
+        if (this == (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) {
+          func_?(value,0);
+          return 1;
+        }
+        iVar4 = func_?(this,unaff_EDI);
+        if (iVar4 != 0) {
+          func_?(value,iVar4);
+          return 1;
+        }
+        goto code_?;
+      }
     }
   }
   else {
-    pOVar7 = (Object *)func_?(iVar6,iVar2);
-    if (pOVar7 != (Object *)0x0) goto code_?;
-  }
-  func_?(iVar6,iVar2);
-code_?:
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  bVar3 = (*pcVar9)();
-  return bVar3;
-}
-
-
-/* KeyValuePair`2[System.Object,System.Object] <GetEnumerator>m__0(DictionaryEntry) */
-
-KeyValuePair_2_System_Object_System_Object_
-Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System::Object]
-::DictionaryWrapper_2_System_Object_System_Object___GetEnumerator_m__0
-          (DictionaryEntry de,MethodInfo *method)
-
-{
-  iStack_1 = func_?(&de,0);
-  iVar2 = func_?(&de,0);
-  KStack_3.key = (Object *)0x0;
-  KStack_3.value = (Object *)0x0;
-  pcVar4 = method->name;
-  pcStack_5 = pcVar4;
-  if ((pcVar4[0xbe] & 1U) == 0) {
-    func_?(pcVar4);
-    pcVar4 = method->name;
-  }
-  if ((pcVar4[0xbe] & 1U) == 0) {
-    func_?(pcVar4);
-  }
-  iVar6 = *(int *)(*(int *)(pcVar4 + 0x60) + 8);
-  if ((*(byte *)(iVar6 + 0xbe) & 1) == 0) {
-    func_?(iVar6);
-  }
-  if (iVar2 == 0) {
-    iVar7 = 0;
-  }
-  else {
-    iVar7 = func_?(iVar2,iVar6);
-    if (iVar7 == 0) goto code_?;
-  }
-  pcVar4 = method->name;
-  if ((pcVar4[0xbe] & 1U) == 0) {
-    func_?(pcVar4);
-  }
-  iVar6 = *(int *)(*(int *)(pcVar4 + 0x60) + 4);
-  if ((*(byte *)(iVar6 + 0xbe) & 1) == 0) {
-    func_?(iVar6);
-  }
-  iVar2 = iStack_1;
-  if (iStack_1 == 0) {
-    iVar8 = 0;
-  }
-  else {
-    iVar8 = func_?(iStack_1,iVar6);
-    if (iVar8 == 0) {
-code_?:
-      func_?(iVar2,iVar6);
-      pcVar9 = (code *)swi(3);
-      KVar10 = (KeyValuePair_2_System_Object_System_Object_)(*pcVar9)();
-      return KVar10;
+    pIVar5 = (this->fields)._genericDictionary;
+    this = (DictionaryWrapper_2_System_Object_System_Object_ *)0x0;
+    if (pIVar5 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar6 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
+        pvVar6 = (void *)func_?(pvVar6);
+      }
+      bVar7 = func_?(7,pvVar6,pIVar5,key,value);
+      return bVar7;
     }
-  }
-  func_?(&KStack_3,iVar8,iVar7,*(undefined4 *)(*(int *)(pcStack_5 + 0x60) + 0x24));
-  return KStack_3;
-}
-
-
-/* DictionaryWrapper`2[System.Object,System.Object](IDictionary) */
-
-void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System::
-     Object]::DictionaryWrapper_2_System_Object_System_Object___ctor
-               (DictionaryWrapper_2_System_Object_System_Object_ *this,IDictionary *dictionary,
-               MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (this != (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) {
-    ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-    ValidationUtils::ValidationUtils_ArgumentNotNull
-              ((Object *)dictionary,StringLiteral_dictionary,(MethodInfo *)0x0);
-    (this->fields)._dictionary = dictionary;
-    return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+code_?:
+  func_?(this,unaff_EDI);
+  pcVar8 = (code *)swi(3);
+  bVar7 = (*pcVar8)();
+  return bVar7;
 }
 
 
 /* DictionaryWrapper`2[System.Object,System.Object](IDictionary`2[System.Object,System.Object]) */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System::
-     Object]::DictionaryWrapper_2_System_Object_System_Object___ctor_1
+     Object]::DictionaryWrapper_2_System_Object_System_Object___ctor
                (DictionaryWrapper_2_System_Object_System_Object_ *this,
                IDictionary_2_System_Object_System_Object_ *dictionary,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_dictionary);
     cRam_? = '\x01';
   }
-  if (this != (DictionaryWrapper_2_System_Object_System_Object_ *)0x0) {
-    ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-    ValidationUtils::ValidationUtils_ArgumentNotNull
-              ((Object *)dictionary,StringLiteral_dictionary,(MethodInfo *)0x0);
-    (this->fields)._genericDictionary = dictionary;
-    return;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  ValidationUtils::ValidationUtils_ArgumentNotNull
+            ((Object *)dictionary,StringLiteral_dictionary,(MethodInfo *)0x0);
+  (this->fields)._genericDictionary = dictionary;
+  func_?(&(this->fields)._genericDictionary,dictionary);
+  return;
+}
+
+
+/* DictionaryWrapper`2[System.Object,System.Object](IDictionary) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System::
+     Object]::DictionaryWrapper_2_System_Object_System_Object___ctor_1
+               (DictionaryWrapper_2_System_Object_System_Object_ *this,IDictionary *dictionary,
+               MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_dictionary);
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  ValidationUtils::ValidationUtils_ArgumentNotNull
+            ((Object *)dictionary,StringLiteral_dictionary,(MethodInfo *)0x0);
+  (this->fields)._dictionary = dictionary;
+  func_?(&this->fields,dictionary);
   return;
 }
 
@@ -1223,27 +1291,31 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Sy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__ICollection);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      iVar3 = func_?(0,TypeInfo__System__Collections__ICollection,pIVar2);
-      return iVar3;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      iVar2 = func_?(1,TypeInfo__System__Collections__ICollection,pIVar1);
+      return iVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    iVar3 = (*pcVar4)();
-    return iVar3;
   }
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      iVar2 = func_?(0,pvVar4,pIVar3);
+      return iVar2;
+    }
   }
-  iVar3 = func_?(0,iVar5,pIVar1);
-  return iVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  iVar2 = (*pcVar5)();
+  return iVar2;
 }
 
 
@@ -1255,27 +1327,31 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      bVar3 = func_?(1,TypeInfo__System__Collections__IDictionary,pIVar2);
-      return bVar3;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      bVar2 = func_?(7,TypeInfo__System__Collections__IDictionary,pIVar1);
+      return bVar2;
     }
-    func_?(0);
-    pcVar4 = (code *)swi(3);
-    bVar3 = (*pcVar4)();
-    return bVar3;
   }
-  iVar5 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-  if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-    func_?(iVar5);
+  else {
+    pIVar3 = (this->fields)._genericDictionary;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data[0xf].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      bVar2 = func_?(1,pvVar4,pIVar3);
+      return bVar2;
+    }
   }
-  bVar3 = func_?(1,iVar5,pIVar1);
-  return bVar3;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
+  return bVar2;
 }
 
 
@@ -1288,38 +1364,45 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[S
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    iVar2 = **(int **)(method->name + 0x60);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      unaff_EDI = func_?(0,TypeInfo__System__Collections__IDictionary,pIVar1,key);
+      unaff_ESI = method->klass->rgctx_data[3].rgctxDataDummy;
+      if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+        unaff_ESI = (void *)func_?(unaff_ESI);
+      }
+      if (unaff_EDI == 0) {
+        return (Object *)0x0;
+      }
+      pOVar2 = (Object *)func_?(unaff_EDI,unaff_ESI);
+      if (pOVar2 != (Object *)0x0) {
+        return pOVar2;
+      }
+      goto code_?;
     }
-    pOVar3 = (Object *)func_?(4,iVar2,pIVar1,key);
-    return pOVar3;
   }
-  pIVar4 = (this->fields)._dictionary;
-  if (pIVar4 != (IDictionary *)0x0) {
-    iVar5 = func_?(2,TypeInfo__System__Collections__IDictionary,pIVar4,key);
-    iVar2 = *(int *)(*(int *)(method->name + 0x60) + 8);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
+  else {
+    pIVar3 = (this->fields)._genericDictionary;
+    unaff_ESI = (void *)0x0;
+    if (pIVar3 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar4 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
+        pvVar4 = (void *)func_?(pvVar4);
+      }
+      pOVar2 = (Object *)func_?(0,pvVar4,pIVar3,key);
+      return pOVar2;
     }
-    if (iVar5 == 0) {
-      return (Object *)0x0;
-    }
-    pOVar3 = (Object *)func_?(iVar5,iVar2);
-    if (pOVar3 != (Object *)0x0) {
-      return pOVar3;
-    }
-    func_?(iVar5,iVar2);
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  pOVar3 = (Object *)(*pcVar6)();
-  return pOVar3;
+  func_?();
+code_?:
+  func_?(unaff_EDI,unaff_ESI);
+  pcVar5 = (code *)swi(3);
+  pOVar2 = (Object *)(*pcVar5)();
+  return pOVar2;
 }
 
 
@@ -1332,33 +1415,50 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Ob
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      uVar3 = func_?(4,TypeInfo__System__Collections__IDictionary,pIVar2);
-      puVar4 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0xc);
-      (*(code *)*puVar4)(uVar3,puVar4);
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      pIVar5 = (ICollection_1_System_Object_ *)
-               (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x10))();
-      return pIVar5;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      uVar2 = func_?(2,TypeInfo__System__Collections__IDictionary,pIVar1);
+      uVar2 = (*(method->klass->rgctx_data[6].method)->virtualMethodPointer)
+                        (uVar2,method->klass->rgctx_data[6].rgctxDataDummy);
+      pIVar3 = (ICollection_1_System_Object_ *)
+               (*(method->klass->rgctx_data[7].method)->virtualMethodPointer)
+                         (uVar2,method->klass->rgctx_data[7].rgctxDataDummy);
+      return pIVar3;
     }
-    func_?(0);
-    pcVar6 = (code *)swi(3);
-    pIVar5 = (ICollection_1_System_Object_ *)(*pcVar6)();
-    return pIVar5;
   }
-  iVar7 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar7 + 0xbe) & 1) == 0) {
-    func_?(iVar7);
+  else {
+    pIVar4 = (this->fields)._genericDictionary;
+    if (pIVar4 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar5 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+        pvVar5 = (void *)func_?(pvVar5);
+      }
+      pIVar3 = (ICollection_1_System_Object_ *)func_?(2,pvVar5,pIVar4);
+      return pIVar3;
+    }
   }
-  pIVar5 = (ICollection_1_System_Object_ *)func_?(6,iVar7,pIVar1);
-  return pIVar5;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pIVar3 = (ICollection_1_System_Object_ *)(*pcVar6)();
+  return pIVar3;
+}
+
+
+/* Object get_UnderlyingDictionary() */
+
+Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Object,System
+         ::Object]::DictionaryWrapper_2_System_Object_System_Object__get_UnderlyingDictionary
+                   (DictionaryWrapper_2_System_Object_System_Object_ *this,MethodInfo *method)
+
+{
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    return (Object *)(this->fields)._dictionary;
+  }
+  return (Object *)(this->fields)._genericDictionary;
 }
 
 
@@ -1371,33 +1471,36 @@ Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[System::Ob
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      uVar3 = func_?(5,TypeInfo__System__Collections__IDictionary,pIVar2);
-      puVar4 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x14);
-      (*(code *)*puVar4)(uVar3,puVar4);
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      pIVar5 = (ICollection_1_System_Object_ *)
-               (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x18))();
-      return pIVar5;
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      uVar2 = func_?(3,TypeInfo__System__Collections__IDictionary,pIVar1);
+      uVar2 = (*(method->klass->rgctx_data[0xb].method)->virtualMethodPointer)
+                        (uVar2,method->klass->rgctx_data[0xb].rgctxDataDummy);
+      pIVar3 = (ICollection_1_System_Object_ *)
+               (*(method->klass->rgctx_data[0xc].method)->virtualMethodPointer)
+                         (uVar2,method->klass->rgctx_data[0xc].rgctxDataDummy);
+      return pIVar3;
     }
-    func_?(0);
-    pcVar6 = (code *)swi(3);
-    pIVar5 = (ICollection_1_System_Object_ *)(*pcVar6)();
-    return pIVar5;
   }
-  iVar7 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar7 + 0xbe) & 1) == 0) {
-    func_?(iVar7);
+  else {
+    pIVar4 = (this->fields)._genericDictionary;
+    if (pIVar4 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar5 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
+        pvVar5 = (void *)func_?(pvVar5);
+      }
+      pIVar3 = (ICollection_1_System_Object_ *)func_?(3,pvVar5,pIVar4);
+      return pIVar3;
+    }
   }
-  pIVar5 = (ICollection_1_System_Object_ *)func_?(7,iVar7,pIVar1);
-  return pIVar5;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pIVar3 = (ICollection_1_System_Object_ *)(*pcVar6)();
+  return pIVar3;
 }
 
 
@@ -1410,26 +1513,30 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::DictionaryWrapper`2[Syste
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__IDictionary);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._genericDictionary;
-  if (pIVar1 == (IDictionary_2_System_Object_System_Object_ *)0x0) {
-    pIVar2 = (this->fields)._dictionary;
-    if (pIVar2 != (IDictionary *)0x0) {
-      func_?(3,TypeInfo__System__Collections__IDictionary,pIVar2,key,value);
+  if ((this->fields)._genericDictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+    pIVar1 = (this->fields)._dictionary;
+    if (pIVar1 != (IDictionary *)0x0) {
+      func_?(1,TypeInfo__System__Collections__IDictionary,pIVar1,key,value);
       return;
     }
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
   }
-  iVar4 = **(int **)(method->name + 0x60);
-  if ((*(byte *)(iVar4 + 0xbe) & 1) == 0) {
-    func_?(iVar4);
+  else {
+    pIVar2 = (this->fields)._genericDictionary;
+    if (pIVar2 != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+      pvVar3 = method->klass->rgctx_data->rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
+      }
+      func_?(1,pvVar3,pIVar2,key,value);
+      return;
+    }
   }
-  func_?(5,iVar4,pIVar1,key,value);
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

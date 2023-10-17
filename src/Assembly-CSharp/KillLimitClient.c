@@ -6,22 +6,22 @@ void Assembly-CSharp.dll::KillLimitClient::KillLimitClient_GetBriefing
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppIStack_1 = &TypeInfo__IBriefing;
+    func_?();
     cRam_? = '\x01';
   }
-  System.dll::System::Collections::Generic::
-  SortedList`2[TKey,TValue]+ListValues[TKey,TValue]+GetEnumerator>c__Iterator3[System::Single,System
-  ::Object]::
-  SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object__System_Collections_IEnumerator_get_Current
-            ((SortedList_2_TKey_TValue_ListValues_TKey_TValue_GetEnumerator_c_Iterator3_System_Single_System_Object_
-              *)this,(MethodInfo *)0x0);
   if (winningConditionBriefingView != (IBriefing *)0x0) {
-    func_?(0,TypeInfo__IBriefing,winningConditionBriefingView,2);
+    ppIStack_1 = (IBriefing__Class **)(this->fields)._._.limit;
+    puStack_2 = (undefined *)0x2;
+    pIStack_3 = winningConditionBriefingView;
+    func_?(0,TypeInfo__IBriefing);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ppIStack_1 = (IBriefing__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -34,37 +34,21 @@ void Assembly-CSharp.dll::KillLimitClient::KillLimitClient_GetDebriefing
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__IDebriefing);
     cRam_? = '\x01';
   }
-  uVar1 = (*(code *)(this->klass->vtable).get_HighScores.method)
-                    (this,(this->klass->vtable).Traverse_1.methodPtr);
-  bVar2 = (*(code *)(this->klass->vtable).get_IsTeamMode.method)
-                    (this,(this->klass->vtable).get_HighScores.methodPtr);
+  uVar1 = (*(this->klass->vtable).get_HighScores_1.methodPtr)
+                    (this,(this->klass->vtable).get_HighScores_1.method);
+  bVar2 = (*(this->klass->vtable).get_IsTeamMode_1.methodPtr)
+                    (this,(this->klass->vtable).get_IsTeamMode_1.method);
   this = (KillLimitClient *)(uint)bVar2;
-  if (winningConditionDebriefingView == (IDebriefing *)0x0) {
-    func_?(0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (winningConditionDebriefingView != (IDebriefing *)0x0) {
+    func_?(0,TypeInfo__IDebriefing,winningConditionDebriefingView,2,uVar1,this);
     return;
   }
-  pIVar4 = winningConditionDebriefingView->klass;
-  uVar5 = 0;
-  uVar6._0_1_ = (pIVar4->_1).rank;
-  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__IDebriefing) {
-        ppMVar7 = &(&winningConditionDebriefingView->klass->vtable)
-                   [pIVar4->interfaceOffsets[uVar5].offset].SetupDebriefing.method;
-        goto code_?;
-      }
-      uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
-  }
-  ppMVar7 = (MethodInfo **)func_?(winningConditionDebriefingView,TypeInfo__IDebriefing,0);
-code_?:
-  (*(code *)*ppMVar7)(winningConditionDebriefingView,2,uVar1,this,ppMVar7[1]);
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

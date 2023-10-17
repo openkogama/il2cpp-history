@@ -10,83 +10,103 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_AddClaimedLev
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa8;
-  puVar5 = &stack0xffffffa8;
+  puStack_4 = &stack0xffffffa0;
+  puVar5 = &stack0xffffffa0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_int>__ContainsKey_int_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Key__);
+    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Value__);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  auStack_6._16_4_ = (Object *)0x0;
-  KStack_7.key = 0;
-  KStack_7.value = 0;
-  auStack_6._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_6._4_4_ = (MonitorData *)0x0;
-  auStack_6._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_6._12_4_ = 0;
-  func_?();
-  puStack_8 = (undefined4 *)&stack0xffffffa8;
-  puStack_4 = &stack0xffffffa8;
+  DStack_6._16_8_ = 0;
+  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
   if (levelRewards != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
-    puStack_8 = (undefined4 *)&stack0xffffffa8;
-    puStack_4 = &stack0xffffffa8;
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System::
-             Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *)
-                        &stack0xffffffb4,
-                        (Dictionary_2_WinningConditionType_System_Object_ *)levelRewards,
+    method_00 = (MethodInfo *)auStack_7;
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                        method_00,(Dictionary_2_System_Object_System_Object_ *)levelRewards,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
                        );
-    auStack_6._0_4_ = pDVar9->dictionary;
-    auStack_6._4_4_ = pDVar9->next;
-    auStack_6._8_4_ = pDVar9->stamp;
-    auStack_6._12_4_ = (pDVar9->current).key;
-    auStack_6._16_4_ = (pDVar9->current).value;
-    uStack_1 = 0;
+    uStack_9 = 0;
+    DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar8->_dictionary;
+    DStack_6._version = pDVar8->_version;
+    DStack_6._index = pDVar8->_index;
+    DStack_6._current.key = (int32_t)(pDVar8->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
+    uStack_1 = 1;
+    pOStack_10 = (Object *)(auStack_7 + 0x18);
     while( true ) {
       do {
-        cVar10 = func_?();
-        if (cVar10 == '\0') {
-          *puStack_8 = 99;
+        bVar11 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Int32Enum]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum_ *
+                           )(auStack_7 + 0x18),
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                          );
+        if (bVar11 == 0) {
           uStack_1 = 0xffffffff;
-          func_?();
-          this_00 = (JumpState_OnWallJumpDelegate *)(this->fields).OnRewardsReturned;
-          if (this_00 != (JumpState_OnWallJumpDelegate *)0x0) {
-            JumpState+OnWallJumpDelegate::JumpState_OnWallJumpDelegate_Invoke
-                      (this_00,(MethodInfo *)0x0);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ((Object *)(auStack_7 + 0x18),
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
+                     ,method_00);
+          uStack_1 = 0xffffffff;
+          if ((this->fields).OnRewardsReturned != (Action *)0x0) {
+            pAVar12 = (this->fields).OnRewardsReturned;
+            (*(pAVar12->fields)._._.invoke_impl)
+                      ((pAVar12->fields)._._.method_code,(pAVar12->fields)._._.method);
           }
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        KStack_7 = LevelRewardsManager_get_NextReward
-                              ((LevelRewardsManager *)auStack_6,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
-                              );
-        pDVar11 = (this->fields).unseenLevelRewards;
-        iVar12 = func_?();
-        if (pDVar11 == (Dictionary_2_System_Int32_System_Int32_ *)0x0) goto code_?;
-        bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Int32]::Dictionary_2_System_Int32_System_Int32__ContainsKey
-                          (pDVar11,iVar12,
+        value = DStack_6._current.value;
+        this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                  (this->fields).unseenLevelRewards;
+        pMStack_13 = (MethodInfo *)DStack_6._current.key;
+        if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+        goto code_?;
+        bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          (this_00,(Object *)DStack_6._current.key,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__ContainsKey_int_
                           );
-      } while (bVar13 != 0);
-      pDVar11 = (this->fields).unseenLevelRewards;
-      iVar12 = func_?();
-      value = func_?();
-      if (pDVar11 == (Dictionary_2_System_Int32_System_Int32_ *)0x0) break;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
-      Dictionary_2_System_Int32_System_Int32__Add
-                (pDVar11,iVar12,value,
+      } while (bVar11 != 0);
+      this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).unseenLevelRewards;
+      if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
+      method_00 = pMStack_13;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                (this_01,(Object *)pMStack_13,(Object *)value,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
     }
   }
 code_?:
-  func_?(0);
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  uVar14 = func_?();
+  func_?(uVar14);
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -98,21 +118,23 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_ClearRewards
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).unseenLevelRewards;
-  if (this_00 != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Experimental
-    ::TerrainAPI::TerrainUtility+TerrainMap]::
-    Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Clear
-              ((Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Clear__);
+  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+            (this->fields).unseenLevelRewards;
+  if (this_00 !=
+      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
+    Regex+CachedCodeEntryKey,System::Object]::
+    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+              (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Clear__);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&puStack_2);
+  func_?(uVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -124,87 +146,35 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_SetNextLevelR
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_
+                   );
+    func_?(&StringLiteral___Gold_);
+    func_?(&StringLiteral_Next_level_reward__Level_);
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,4);
-  if (args == (Object__Array *)0x0) {
-    func_?(0);
-code_?:
-    uVar1 = 0;
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,uVar1);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
+  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&level,(MethodInfo *)0x0);
+  str3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&gold,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_5
+                     (StringLiteral_Next_level_reward__Level_,pSVar1,StringLiteral___Gold_,str3,
+                      (MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    method = (MethodInfo *)TypeInfo__UnityEngine__Debug;
+    gold = (int32_t)&UNK_?;
+    func_?();
   }
-  else {
-    if ((StringLiteral_Next_level_reward__Level_ != (String *)0x0) &&
-       (iVar3 = func_?(StringLiteral_Next_level_reward__Level_,
-                                (args->klass->_0).element_class), iVar3 == 0))
-    goto code_?;
-    uVar1 = 0;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)StringLiteral_Next_level_reward__Level_;
-    pOVar4 = (Object *)func_?(&level);
-    if ((pOVar4 != (Object *)0x0) &&
-       (iVar3 = func_?(pOVar4,(args->klass->_0).element_class), iVar3 == 0))
-    goto code_?;
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar4;
-    if ((StringLiteral___Gold_ != (String *)0x0) &&
-       (iVar3 = func_?(StringLiteral___Gold_,(args->klass->_0).element_class), iVar3 == 0))
-    goto code_?;
-    iVar5 = gold;
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = (Object *)StringLiteral___Gold_;
-    iStack_6 = gold;
-    pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if ((pOVar4 == (Object *)0x0) ||
-       (iVar3 = func_?(pOVar4,(args->klass->_0).element_class), iVar3 != 0)) {
-      if (3 < args->max_length) {
-        args->vector[3] = pOVar4;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        message = mscorlib.dll::System::String::String_Concat_5(args,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)message,(MethodInfo *)0x0);
-        uStack_7 = 0;
-        func_?(&uStack_7,level,iVar5,
-                        MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_
-                       );
-        (this->fields)._NextReward_k__BackingField.key = (int32_t)uStack_7;
-        (this->fields)._NextReward_k__BackingField.value = uStack_7._4_4_;
-        return;
-      }
-      goto code_?;
-    }
-  }
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  method = (MethodInfo *)0x0;
+  level = (int32_t)&UNK_?;
+  gold = (int32_t)pSVar1;
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  method = MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_;
+  VStack_2.Item1 = 0;
+  VStack_2.Item2 = 0;
+  mscorlib.dll::System::ValueTuple`2[Int32,Int32]::ValueTuple_2_Int32_Int32___ctor
+            (&VStack_2,level,gold,
+             MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_
+            );
   return;
 }
 
@@ -216,27 +186,27 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-  (this->fields).unseenLevelRewards = this_00;
+  if (this_00 != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).unseenLevelRewards = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
-}
-
-
-/* KeyValuePair`2[System.Int32,System.Int32] get_NextReward() */
-
-KeyValuePair_2_System_Int32_System_Int32_
-Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_get_NextReward
-          (LevelRewardsManager *this,MethodInfo *method)
-
-{
-  return (this->fields)._NextReward_k__BackingField;
 }
 

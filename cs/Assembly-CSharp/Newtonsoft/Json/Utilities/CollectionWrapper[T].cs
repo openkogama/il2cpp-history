@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -20,12 +20,12 @@ namespace Newtonsoft.Json.Utilities
 		private object _syncRoot;
 	
 		// Properties
+		public virtual int Count { get; }
+		public virtual bool IsReadOnly { get; }
 		bool IList.IsFixedSize { get; }
 		object IList.this[int index] { get => default; set {} }
 		bool ICollection.IsSynchronized { get; }
 		object ICollection.SyncRoot { get; }
-		public virtual int Count { get; }
-		public virtual bool IsReadOnly { get; }
 		public object UnderlyingCollection { get; }
 	
 		// Constructors

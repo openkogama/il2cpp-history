@@ -10,79 +10,13 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnB
   pSVar2 = (this->fields).scrollRect;
   (this->fields).dragStart = fVar1;
   if (pSVar2 != (ScrollRect *)0x0) {
-    (*(code *)(pSVar2->klass->vtable).OnBeginDrag_1.method)
-              (pSVar2,eventData,(pSVar2->klass->vtable).OnEndDrag_1.methodPtr);
+    (*(pSVar2->klass->vtable).OnBeginDrag_1.methodPtr)
+              (pSVar2,eventData,(pSVar2->klass->vtable).OnBeginDrag_1.method);
     return;
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
-  return;
-}
-
-
-/* Void OnChatModeClick() */
-
-void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnChatModeClick
-               (ConsoleDragAndTapHandler *this,MethodInfo *method)
-
-{
-  pUVar1 = (this->fields).OnClick;
-  if (pUVar1 == (UnityAction *)0x0) {
-    return;
-  }
-  this_00 = (AvatarMotor_OnActiveBounceDelegate *)(pUVar1->fields)._.prev;
-  if (this_00 != (AvatarMotor_OnActiveBounceDelegate *)0x0) {
-    AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-              (this_00,(MethodInfo *)0x0);
-  }
-  pcVar2 = (pUVar1->fields)._._.method_ptr;
-  this_01 = (pUVar1->fields)._._.method;
-  pOVar3 = (pUVar1->fields)._._.m_target;
-  if (this_01->flags == 0xffff) {
-    func_?(this_01);
-  }
-  cVar4 = func_?(this_01);
-  if (cVar4 == '\0') {
-    if ((char)this_01->iflags == '\0') {
-      (*pcVar2)();
-      return;
-    }
-  }
-  else if ((this_01->flags != 0xffff) &&
-          (((pOVar3 == (Object *)0x0 || (((pOVar3->klass->_1).token & 0x100) == 0)) &&
-           ((pUVar1->fields)._._.invoke_impl != (void *)0x0)))) {
-    cVar4 = func_?(pOVar3);
-    if (cVar4 != '\0') {
-      return;
-    }
-    method_00 = this_01;
-    cVar4 = func_?();
-    pOVar5 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[WinningConditionType,System
-             ::Object]::KeyValuePair_2_WinningConditionType_System_Object__get_Value
-                       ((KeyValuePair_2_WinningConditionType_System_Object_ *)this_01,method_00);
-    cVar6 = func_?(pOVar5);
-    if (cVar4 != '\0') {
-      if (cVar6 != '\0') {
-        func_?();
-        return;
-      }
-      func_?(this_01,pOVar3);
-      return;
-    }
-    if (cVar6 != '\0') {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::
-               KeyValuePair`2[WinningConditionType,System::Object]::
-               KeyValuePair_2_WinningConditionType_System_Object__get_Value
-                         ((KeyValuePair_2_WinningConditionType_System_Object_ *)this_01,
-                          unaff_retaddr);
-      func_?(this_01->flags,pOVar3);
-      return;
-    }
-    func_?(this_01->flags,pOVar3);
-    return;
-  }
-  (*pcVar2)(pOVar3,this_01);
   return;
 }
 
@@ -93,16 +27,19 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnD
                (ConsoleDragAndTapHandler *this,PointerEventData *eventData,MethodInfo *method)
 
 {
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
   if ((this->fields).scrollingEnabled != 0) {
-    pSVar1 = (this->fields).scrollRect;
-    if (pSVar1 == (ScrollRect *)0x0) {
-      func_?(0);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+    pSStack_2 = (this->fields).scrollRect;
+    if (pSStack_2 == (ScrollRect *)0x0) {
+      uVar3 = func_?(&pSStack_2);
+      func_?(uVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    (*(code *)(pSVar1->klass->vtable).OnDrag_1.method)
-              (pSVar1,eventData,(pSVar1->klass->vtable).SetContentAnchoredPosition.methodPtr);
+    pMStack_1 = (pSStack_2->klass->vtable).OnDrag_1.method;
+    pPStack_5 = eventData;
+    (*(pSStack_2->klass->vtable).OnDrag_1.methodPtr)();
   }
   return;
 }
@@ -117,19 +54,20 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnE
   (this->fields).dragging = 0;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if ((fVar1 - (this->fields).dragStart < _UNK_?) &&
-     (this_00 = (AvatarMotor_OnActiveBounceDelegate *)(this->fields).OnClick,
-     this_00 != (AvatarMotor_OnActiveBounceDelegate *)0x0)) {
-    AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-              (this_00,(MethodInfo *)0x0);
+     ((this->fields).OnClick != (UnityAction *)0x0)) {
+    pUVar2 = (this->fields).OnClick;
+    (*(pUVar2->fields)._._.invoke_impl)
+              ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
   }
-  pSVar2 = (this->fields).scrollRect;
-  if (pSVar2 != (ScrollRect *)0x0) {
-    (*(code *)(pSVar2->klass->vtable).OnEndDrag_1.method)(pSVar2);
+  pSVar3 = (this->fields).scrollRect;
+  if (pSVar3 != (ScrollRect *)0x0) {
+    (*(pSVar3->klass->vtable).OnEndDrag_1.methodPtr)
+              (pSVar3,eventData,(pSVar3->klass->vtable).OnEndDrag_1.method);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -140,23 +78,11 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnP
                (ConsoleDragAndTapHandler *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  if (((this->fields).dragging == 0) &&
-     (this_00 = (AvatarMotor_OnActiveBounceDelegate *)(this->fields).OnClick,
-     this_00 != (AvatarMotor_OnActiveBounceDelegate *)0x0)) {
-    AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-              (this_00,(MethodInfo *)0x0);
+  if (((this->fields).dragging == 0) && ((this->fields).OnClick != (UnityAction *)0x0)) {
+    pUVar1 = (this->fields).OnClick;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }
-  return;
-}
-
-
-/* Void SetScrollingEnabled(Boolean) */
-
-void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_SetScrollingEnabled
-               (ConsoleDragAndTapHandler *this,bool scrollEnabled,MethodInfo *method)
-
-{
-  (this->fields).scrollingEnabled = scrollEnabled;
   return;
 }
 
@@ -169,11 +95,10 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler__ct
 {
   (this->fields).scrollingEnabled = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

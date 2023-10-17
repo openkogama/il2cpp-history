@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Converters
 {
@@ -21,8 +21,8 @@ namespace Newtonsoft.Json.Converters
 	
 		// Methods
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer);
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer);
-		public abstract T Create(Type objectType);
-		public override bool CanConvert(Type objectType);
+		public override object ReadJson(JsonReader reader, System.Type objectType, object existingValue, JsonSerializer serializer);
+		public abstract T Create(System.Type objectType);
+		public override bool CanConvert(System.Type objectType);
 	}
 }

@@ -7,7 +7,8 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+EditMode+CERoamUUISetupData::
                Vector3 lookAtPosition,MethodInfo *method)
 
 {
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).centerPos.x = centerPos.x;
   (this->fields).centerPos.y = centerPos.y;
   (this->fields).centerPos.z = centerPos.z;

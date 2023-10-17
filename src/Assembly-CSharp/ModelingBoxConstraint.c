@@ -7,118 +7,122 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_ChangeBox
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
     cRam_? = '\x01';
   }
-  OVar1.currentCryptoKey = 0;
-  OVar1.hiddenValue = 0;
-  OVar1.fakeValue = 0;
-  OVar1.inited = 0;
-  OVar1._7_1_ = 0;
-  uVar2 = 0;
+  uVar1 = 0;
+  uVar2._0_2_ = 0;
+  uVar2._2_1_ = 0;
+  uVar2._3_1_ = 0;
   uVar3 = 0;
-  uVar4 = 0;
-  uVar5 = 0;
-  func_?(&stack0xffffffc0,minCorner._0_4_,minCorner.z,0);
-  uVar6 = (uint)uVar3;
-  uVar7 = (uint)uVar5;
-  (this->fields).minCorner.x.currentCryptoKey = (short)uVar2;
-  (this->fields).minCorner.x.hiddenValue = (short)((uint)uVar2 >> 0x10);
-  (this->fields).minCorner.x.fakeValue = (short)uVar6;
-  (this->fields).minCorner.x.inited = (char)(uVar6 >> 0x10);
-  (this->fields).minCorner.x.field_0x7 = (char)(uVar6 >> 0x18);
-  (this->fields).minCorner.y.currentCryptoKey = (short)uVar4;
-  (this->fields).minCorner.y.hiddenValue = (short)((uint)uVar4 >> 0x10);
-  (this->fields).minCorner.y.fakeValue = (short)uVar7;
-  (this->fields).minCorner.y.inited = (char)(uVar7 >> 0x10);
-  (this->fields).minCorner.y.field_0x7 = (char)(uVar7 >> 0x18);
-  (this->fields).minCorner.z = OVar1;
-  uVar2 = 0;
-  uVar4 = 0;
-  uVar8 = 0;
-  uVar9 = 0;
-  uVar10 = 0;
-  uVar11 = 0;
-  func_?(&stack0xffffffa8,maxCorner._0_4_,maxCorner.z,0);
-  (this->fields).maxCorner.x.currentCryptoKey = (short)uVar2;
-  (this->fields).maxCorner.x.hiddenValue = (short)((uint)uVar2 >> 0x10);
-  (this->fields).maxCorner.x.fakeValue = (short)uVar4;
-  (this->fields).maxCorner.x.inited = (char)((uint)uVar4 >> 0x10);
-  (this->fields).maxCorner.x.field_0x7 = (char)((uint)uVar4 >> 0x18);
-  (this->fields).maxCorner.y.currentCryptoKey = (short)uVar8;
-  (this->fields).maxCorner.y.hiddenValue = (short)((uint)uVar8 >> 0x10);
-  (this->fields).maxCorner.y.fakeValue = (short)uVar9;
-  (this->fields).maxCorner.y.inited = (char)((uint)uVar9 >> 0x10);
-  (this->fields).maxCorner.y.field_0x7 = (char)((uint)uVar9 >> 0x18);
-  OVar12.fakeValue = (short)uVar11;
-  OVar12.inited = (char)((uint)uVar11 >> 0x10);
-  OVar12._7_1_ = (char)((uint)uVar11 >> 0x18);
-  OVar12.currentCryptoKey = (short)uVar10;
-  OVar12.hiddenValue = (short)((uint)uVar10 >> 0x10);
-  (this->fields).maxCorner.z = OVar12;
-  puVar13 = (undefined8 *)func_?(&VStack_14,&minCorner,0);
-  uVar15 = *puVar13;
-  fVar16 = *(float *)(puVar13 + 1);
-  (this->fields)._FMinCorner_k__BackingField.x = (float)(int)uVar15;
-  (this->fields)._FMinCorner_k__BackingField.y = (float)(int)((ulonglong)uVar15 >> 0x20);
-  (this->fields)._FMinCorner_k__BackingField.z = fVar16;
-  puVar13 = (undefined8 *)func_?(&VStack_14,&maxCorner,0);
-  uStack_17._0_4_ = (this->fields)._FMinCorner_k__BackingField.x;
-  uStack_17._4_4_ = (this->fields)._FMinCorner_k__BackingField.y;
-  fVar16 = (this->fields)._FMinCorner_k__BackingField.z;
-  VStack_18._4_8_ = *puVar13;
-  fVar19 = *(float *)(puVar13 + 1);
-  (this->fields)._FMaxCorner_k__BackingField.x = VStack_18.y;
-  (this->fields)._FMaxCorner_k__BackingField.y = VStack_18.z;
-  (this->fields)._FMaxCorner_k__BackingField.z = fVar19;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
+  uVar4._0_2_ = 0;
+  uVar4._2_1_ = 0;
+  uVar4._3_1_ = 0;
+  intVector.z = minCorner.z;
+  intVector.x = minCorner.x;
+  intVector.y = minCorner.y;
+  ObscuredIntVector::ObscuredIntVector__ctor_2
+            ((ObscuredIntVector *)&stack0xffffffa8,intVector,(MethodInfo *)0x0);
+  (this->fields).minCorner.x.currentCryptoKey = (short)(uint)uVar1;
+  (this->fields).minCorner.x.hiddenValue = (short)((uint)uVar1 >> 0x10);
+  (this->fields).minCorner.x.fakeValue = (int16_t)uVar2;
+  (this->fields).minCorner.x.inited = SUB41(uVar2,2);
+  (this->fields).minCorner.x.field_0x7 = SUB41(uVar2,3);
+  (this->fields).minCorner.y.currentCryptoKey = (short)(uint)uVar3;
+  (this->fields).minCorner.y.hiddenValue = (short)((uint)uVar3 >> 0x10);
+  (this->fields).minCorner.y.fakeValue = (int16_t)uVar4;
+  (this->fields).minCorner.y.inited = SUB41(uVar4,2);
+  (this->fields).minCorner.y.field_0x7 = SUB41(uVar4,3);
+  (this->fields).minCorner.z.currentCryptoKey = 0;
+  (this->fields).minCorner.z.hiddenValue = 0;
+  (this->fields).minCorner.z.fakeValue = 0;
+  (this->fields).minCorner.z.inited = 0;
+  (this->fields).minCorner.z.field_0x7 = 0;
+  puStack_5 = (undefined *)0x0;
+  uVar6._0_2_ = 0;
+  uVar6._2_1_ = 0;
+  uVar6._3_1_ = 0;
+  uVar7._0_2_ = 0;
+  uVar7._2_2_ = 0;
+  uVar8._0_2_ = 0;
+  uVar8._2_1_ = 0;
+  uVar8._3_1_ = 0;
+  uVar9._0_2_ = 0;
+  uVar9._2_2_ = 0;
+  uVar10._0_2_ = 0;
+  uVar10._2_1_ = 0;
+  uVar10._3_1_ = 0;
+  intVector_00.z = maxCorner.z;
+  intVector_00.x = maxCorner.x;
+  intVector_00.y = maxCorner.y;
+  ObscuredIntVector::ObscuredIntVector__ctor_2
+            ((ObscuredIntVector *)&puStack_5,intVector_00,(MethodInfo *)0x0);
+  *(undefined **)&(this->fields).maxCorner.x = puStack_5;
+  (this->fields).maxCorner.x.fakeValue = (int16_t)uVar6;
+  (this->fields).maxCorner.x.inited = SUB41(uVar6,2);
+  (this->fields).maxCorner.x.field_0x7 = SUB41(uVar6,3);
+  (this->fields).maxCorner.y.currentCryptoKey = (int16_t)uVar7;
+  (this->fields).maxCorner.y.hiddenValue = SUB42(uVar7,2);
+  (this->fields).maxCorner.y.fakeValue = (int16_t)uVar8;
+  (this->fields).maxCorner.y.inited = SUB41(uVar8,2);
+  (this->fields).maxCorner.y.field_0x7 = SUB41(uVar8,3);
+  OVar11.fakeValue = (int16_t)uVar10;
+  OVar11.inited = SUB41(uVar10,2);
+  OVar11._7_1_ = SUB41(uVar10,3);
+  OVar11.currentCryptoKey = (int16_t)uVar9;
+  OVar11.hiddenValue = SUB42(uVar9,2);
+  (this->fields).maxCorner.z = OVar11;
+  pVVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToVector3
+                     (&VStack_13,&minCorner,(MethodInfo *)0x0);
+  fVar14 = pVVar12->y;
+  fVar15 = pVVar12->z;
+  (this->fields)._FMinCorner_k__BackingField.x = pVVar12->x;
+  (this->fields)._FMinCorner_k__BackingField.y = fVar14;
+  (this->fields)._FMinCorner_k__BackingField.z = fVar15;
+  pVVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToVector3
+                     (&VStack_13,&maxCorner,(MethodInfo *)0x0);
+  uVar16 = pVVar12->x;
+  uVar17 = pVVar12->y;
+  fVar15 = pVVar12->z;
+  (this->fields)._FMaxCorner_k__BackingField.x = (float)uVar16;
+  (this->fields)._FMaxCorner_k__BackingField.y = (float)uVar17;
+  VStack_13.x = (this->fields)._FMinCorner_k__BackingField.x;
+  VStack_13.y = (this->fields)._FMinCorner_k__BackingField.y;
+  (this->fields)._FMaxCorner_k__BackingField.z = fVar15;
+  VStack_13.z = (fVar15 + (this->fields)._FMinCorner_k__BackingField.z) * _UNK_?;
+  fStack_18 = ((float)uVar16 + VStack_13.x) * _UNK_?;
+  fStack_19 = ((float)uVar17 + VStack_13.y) * _UNK_?;
+  (this->fields).center.x = fStack_18;
+  (this->fields).center.y = fStack_19;
+  (this->fields).center.z = VStack_13.z;
+  auStack_20._0_2_ = minCorner.x;
+  auStack_20._2_2_ = minCorner.y;
+  iStack_21 = minCorner.z;
+  auStack_20._4_2_ = maxCorner.x;
+  auStack_20._6_2_ = maxCorner.y;
+  fStack_22 = 0.0;
+  uStack_23 = 0;
+  iStack_24 = maxCorner.z;
+  this_00 = (ConstraintBoxChangedEventArgs *)
+            func_?(TypeInfo__ConstraintBoxChangedEventArgs);
+  if (this_00 != (ConstraintBoxChangedEventArgs *)0x0) {
+    center.y = fStack_19;
+    center.x = fStack_18;
+    center.z = VStack_13.z;
+    minCorner_00.z = iStack_21;
+    minCorner_00.x = auStack_20._0_2_;
+    minCorner_00.y = auStack_20._2_2_;
+    maxCorner_00.z = iStack_24;
+    maxCorner_00.x = auStack_20._4_2_;
+    maxCorner_00.y = auStack_20._6_2_;
+    ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
+              (this_00,center,minCorner_00,maxCorner_00,(MethodInfo *)0x0);
+    (*(this->klass->vtable).OnBoxChanged.methodPtr)();
+    return;
   }
-  a.z = fVar16;
-  a.x = (float)(undefined4)uStack_17;
-  a.y = uStack_17._4_4_;
-  b.z._0_2_ = SUB42(fVar19,0);
-  b.x = VStack_18.y;
-  b.y = VStack_18.z;
-  b.z._2_2_ = (short)((uint)fVar19 >> 0x10);
-  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                     (&VStack_14,a,b,(MethodInfo *)0x0);
-  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1
-                     (&VStack_18,0.5,*pVVar20,(MethodInfo *)0x0);
-  iVar21 = maxCorner.z;
-  uVar8 = maxCorner._0_4_;
-  uVar2 = minCorner._0_4_;
-  VStack_14.y = pVVar20->x;
-  VStack_14.z = pVVar20->y;
-  fVar16 = pVVar20->z;
-  (this->fields).center.x = VStack_14.y;
-  (this->fields).center.y = VStack_14.z;
-  (this->fields).center.z = fVar16;
-  iStack_22 = minCorner.z;
-  uStack_17._4_4_ = fVar16;
-  this_00 = (ConstraintBoxChangedEventArgs *)func_?();
-  uVar9 = maxCorner._0_4_;
-  uVar4 = minCorner._0_4_;
-  center.z = uStack_17._4_4_;
-  center.x = VStack_14.y;
-  center.y = VStack_14.z;
-  minCorner_00.z = iStack_22;
-  minCorner.x = (int16_t)uVar2;
-  minCorner.y = SUB42(uVar2,2);
-  minCorner_00.x = minCorner.x;
-  minCorner_00.y = minCorner.y;
-  maxCorner_00.z = iVar21;
-  maxCorner.x = (int16_t)uVar8;
-  maxCorner.y = SUB42(uVar8,2);
-  maxCorner_00.x = maxCorner.x;
-  maxCorner_00.y = maxCorner.y;
-  minCorner._0_4_ = uVar4;
-  maxCorner._0_4_ = uVar9;
-  VStack_18.z = (float)this_00;
-  ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
-            (this_00,center,minCorner_00,maxCorner_00,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).OnBoxChanged.method)();
+  func_?();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 
@@ -129,22 +133,19 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_OnBoxChan
                (ModelingBoxConstraint *this,ConstraintBoxChangedEventArgs *args,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)(this->fields).BoxChanged;
-  if (this_00 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-    mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-    EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-              (this_00,(Object *)this,(InitializedGameQueryDataEventArgs *)args,
-               MethodInfo__System__EventHandler<ConstraintBoxChangedEventArgs>__Invoke_System__Object__ConstraintBoxChangedEventArgs_
-              );
+  puStack_1 = &stack0xfffffffc;
+  pEVar2 = (this->fields).BoxChanged;
+  if (pEVar2 != (EventHandler_1_ConstraintBoxChangedEventArgs_ *)0x0) {
+    puStack_1 = (pEVar2->fields)._._.method;
+    pCStack_3 = args;
+    pMStack_4 = this;
+    (*(pEVar2->fields)._._.invoke_impl)((pEVar2->fields)._._.method_code);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar5 = func_?(&pMStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -158,64 +159,46 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    in_stack_4 = 0x1037;
-    func_?((short)_UNK_?);
+    func_?(0xc56c);
+    in_stack_4 = 0x10ee;
+    func_?(0x2574);
+    func_?(0x3e0c);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MV__WorldObject__IntVector->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_started == 0)) {
-    in_stack_4 = 0x1037;
+  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+    in_stack_4 = 0x102d;
     func_?((short)TypeInfo__MV__WorldObject__IntVector);
   }
   IVar5.z = size.x;
-  IVar5._0_4_ = &stack0xfffffff4;
+  IVar5._0_4_ = &stack0xffffffec;
   IVar5 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_UnaryNegation
                     (IVar5,(MethodInfo *)CONCAT22(in_stack_4,size.z));
   IVar6.z = (int16_t)*IVar5._0_4_;
-  IVar6._0_4_ = &stack0xfffffff4;
+  IVar6._0_4_ = &stack0xffffffec;
   IVar5 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Division
                     (IVar6,CONCAT22(uVar3,*(undefined2 *)(IVar5._0_4_ + 1)),(MethodInfo *)0x2);
   IVar5 = *IVar5._0_4_;
   iV.z = size.x;
-  iV._0_4_ = &stack0xfffffff4;
+  iV._0_4_ = &stack0xffffffec;
   IVar6 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Division
                     (iV,CONCAT22(uVar1,size.z),(MethodInfo *)0x2);
-  pIVar7 = IVar6._0_4_;
-  uVar8 = pIVar7->x;
-  uVar9 = pIVar7->y;
-  ModelingBoxConstraint__ctor_1(this,IVar5,*pIVar7,(MethodInfo *)0x0);
-  uVar10 = (int)(short)uVar8 & 0x80000001;
-  if ((int)uVar10 < 0) {
-    uVar10 = (uVar10 - 1 | 0xfffffffe) + 1;
+  ModelingBoxConstraint__ctor_1
+            ((ModelingBoxConstraint *)CONCAT22(this._2_2_,(IVar6._0_4_)->z),IVar5,*IVar6._0_4_,
+             (MethodInfo *)0x0);
+  uVar7 = (int)size.z & 0x80000001;
+  if ((int)uVar7 < 0) {
+    uVar7 = (uVar7 - 1 | 0xfffffffe) + 1;
   }
-  if (uVar10 != 1) {
-    uVar10 = (int)(short)uVar9 & 0x80000001;
-    if ((int)uVar10 < 0) {
-      uVar10 = (uVar10 - 1 | 0xfffffffe) + 1;
+  if (uVar7 == 1) {
+    pSVar8 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
+                       ((IntVector *)&stack0xfffffff4,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_Size_parameter_fields_shouldn_t_,pSVar8,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    if (uVar10 != 1) {
-      uVar10 = (int)size.z & 0x80000001;
-      if ((int)uVar10 < 0) {
-        uVar10 = (uVar10 - 1 | 0xfffffffe) + 1;
-      }
-      if (uVar10 != 1) {
-        return;
-      }
-    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar8,(MethodInfo *)0x0);
   }
-  arg1 = (Object *)func_?();
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?();
-  }
-  message = mscorlib.dll::System::String::String_Concat
-                      ((Object *)StringLiteral_Size_parameter_fields_shouldn_t_,arg1,
-                       (MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-    func_?();
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
   return;
 }
 
@@ -227,152 +210,156 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
                MethodInfo *method)
 
 {
-  uVar1 = (undefined2)unaff_EDI;
-  uVar2 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+    func_?(0xe194);
+    func_?(&TypeInfo__ModelingBoxConstraint____c);
     cRam_? = '\x01';
   }
-  if (TypeInfo__ModelingBoxConstraint->static_fields->__f__am_cache0 ==
-      (EventHandler_1_ConstraintBoxChangedEventArgs_ *)0x0) {
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  if ((TypeInfo__ModelingBoxConstraint____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ModelingBoxConstraint____c);
+  }
+  this_00 = TypeInfo__ModelingBoxConstraint____c->static_fields->__9__24_0;
+  if (this_00 == (EventHandler_1_ConstraintBoxChangedEventArgs_ *)0x0) {
+    if ((TypeInfo__ModelingBoxConstraint____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__ModelingBoxConstraint____c);
+    }
+    object = TypeInfo__ModelingBoxConstraint____c->static_fields->__9;
+    this_00 = (EventHandler_1_ConstraintBoxChangedEventArgs_ *)
               func_?(TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__ModelingBoxConstraint___BoxChanged_m__0_System__Object__ConstraintBoxChangedEventArgs_
-               ,
-               MethodInfo__System__EventHandler<ConstraintBoxChangedEventArgs>__EventHandler_System__Object__void__
-              );
-    TypeInfo__ModelingBoxConstraint->static_fields->__f__am_cache0 =
-         (EventHandler_1_ConstraintBoxChangedEventArgs_ *)this_00;
+    if (this_00 == (EventHandler_1_ConstraintBoxChangedEventArgs_ *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)this_00,(Object *)object,
+               MethodInfo__ModelingBoxConstraint____c____ctor_b__24_0_System__Object__ConstraintBoxChangedEventArgs_
+               ,(MethodInfo *)0x0);
+    TypeInfo__ModelingBoxConstraint____c->static_fields->__9__24_0 = this_00;
+    func_?((short)&TypeInfo__ModelingBoxConstraint____c->static_fields->__9__24_0,this_00);
   }
   if (this != (ModelingBoxConstraint *)0x0) {
-    (this->fields).BoxChanged = TypeInfo__ModelingBoxConstraint->static_fields->__f__am_cache0;
-    ScaleAnimationBase::ScaleAnimationBase_Play
-              ((ScaleAnimationBase *)this,0.0,(MethodInfo *)CONCAT22(uVar2,uVar1));
-    IStack_3.x = maxCorner.x;
-    IStack_3.y = maxCorner.y;
-    IStack_3.z = maxCorner.z;
-    IStack_4.x = minCorner.x;
-    IStack_4.y = minCorner.y;
-    IStack_4.z = minCorner.z;
+    method_00 = (MethodInfo *)&(this->fields).BoxChanged;
+    (this->fields).BoxChanged = this_00;
+    func_?((short)method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    IStack_1.x = maxCorner.x;
+    IStack_1.y = maxCorner.y;
+    IStack_1.z = maxCorner.z;
+    IStack_2.x = minCorner.x;
+    IStack_2.y = minCorner.y;
+    IStack_2.z = minCorner.z;
     if (cRam_? == '\0') {
-      func_?(_UNK_?);
+      func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
       cRam_? = '\x01';
     }
-    OVar5.currentCryptoKey = 0;
-    OVar5.hiddenValue = 0;
-    OVar5.fakeValue = 0;
-    OVar5.inited = 0;
-    OVar5._7_1_ = 0;
-    uVar6 = 0;
-    uVar7 = 0;
-    uVar8 = 0;
-    uVar9 = 0;
-    func_?(&stack0xffffffb0,IStack_4._0_4_,IStack_4.z,0);
-    uVar10 = (uint)uVar9;
-    (this->fields).minCorner.x.currentCryptoKey = (short)uVar6;
-    (this->fields).minCorner.x.hiddenValue = (short)((uint)uVar6 >> 0x10);
-    (this->fields).minCorner.x.fakeValue = (short)uVar7;
-    (this->fields).minCorner.x.inited = (char)((uint)uVar7 >> 0x10);
-    (this->fields).minCorner.x.field_0x7 = (char)((uint)uVar7 >> 0x18);
-    (this->fields).minCorner.y.currentCryptoKey = (short)uVar8;
-    (this->fields).minCorner.y.hiddenValue = (short)((uint)uVar8 >> 0x10);
-    (this->fields).minCorner.y.fakeValue = (short)uVar10;
-    (this->fields).minCorner.y.inited = (char)(uVar10 >> 0x10);
-    (this->fields).minCorner.y.field_0x7 = (char)(uVar10 >> 0x18);
-    (this->fields).minCorner.z = OVar5;
-    puStack_11 = (undefined *)0x0;
-    uVar6 = 0;
-    uVar7 = 0;
-    uVar8 = 0;
-    uVar12 = 0;
-    uVar13 = 0;
-    func_?(&puStack_11,IStack_3._0_4_,IStack_3.z,0);
-    *(undefined **)&(this->fields).maxCorner.x = puStack_11;
-    (this->fields).maxCorner.x.fakeValue = (short)uVar6;
-    (this->fields).maxCorner.x.inited = (char)((uint)uVar6 >> 0x10);
-    (this->fields).maxCorner.x.field_0x7 = (char)((uint)uVar6 >> 0x18);
-    (this->fields).maxCorner.y.currentCryptoKey = (short)uVar7;
-    (this->fields).maxCorner.y.hiddenValue = (short)((uint)uVar7 >> 0x10);
-    (this->fields).maxCorner.y.fakeValue = (short)uVar8;
-    (this->fields).maxCorner.y.inited = (char)((uint)uVar8 >> 0x10);
-    (this->fields).maxCorner.y.field_0x7 = (char)((uint)uVar8 >> 0x18);
-    OVar14.fakeValue = (short)uVar13;
-    OVar14.inited = (char)((uint)uVar13 >> 0x10);
-    OVar14._7_1_ = (char)((uint)uVar13 >> 0x18);
-    OVar14.currentCryptoKey = (short)uVar12;
-    OVar14.hiddenValue = (short)((uint)uVar12 >> 0x10);
-    (this->fields).maxCorner.z = OVar14;
-    puVar15 = (undefined8 *)func_?(&stack0xffffffc8,&IStack_4,0);
-    uVar16 = *puVar15;
-    fVar17 = *(float *)(puVar15 + 1);
-    (this->fields)._FMinCorner_k__BackingField.x = (float)(int)uVar16;
-    (this->fields)._FMinCorner_k__BackingField.y = (float)(int)((ulonglong)uVar16 >> 0x20);
-    (this->fields)._FMinCorner_k__BackingField.z = fVar17;
-    puVar15 = (undefined8 *)func_?(&stack0xffffffc8,&IStack_3,0);
-    uStack_18._0_4_ = (this->fields)._FMinCorner_k__BackingField.x;
-    uStack_18._4_4_ = (this->fields)._FMinCorner_k__BackingField.y;
-    fVar17 = (this->fields)._FMinCorner_k__BackingField.z;
-    VStack_19._4_8_ = *puVar15;
-    fVar20 = *(float *)(puVar15 + 1);
-    (this->fields)._FMaxCorner_k__BackingField.x = VStack_19.y;
-    (this->fields)._FMaxCorner_k__BackingField.y = VStack_19.z;
-    (this->fields)._FMaxCorner_k__BackingField.z = fVar20;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
-    }
-    a.z = fVar17;
-    a.x = (float)(undefined4)uStack_18;
-    a.y = uStack_18._4_4_;
-    b.z._0_2_ = SUB42(fVar20,0);
-    b.x = VStack_19.y;
-    b.y = VStack_19.z;
-    b.z._2_2_ = (short)((uint)fVar20 >> 0x10);
-    pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                        ((Vector3 *)&stack0xffffffc8,a,b,(MethodInfo *)0x0);
-    pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply_1
-                        (&VStack_19,0.5,*pVVar21,(MethodInfo *)0x0);
-    uVar8 = IStack_4._0_4_;
-    OVar5.fakeValue = IStack_3.z;
-    uVar6 = IStack_3._0_4_;
-    uVar22 = pVVar21->x;
-    uVar23 = pVVar21->y;
-    center.y = (float)uVar23;
-    center.x = (float)uVar22;
-    fVar17 = pVVar21->z;
-    (this->fields).center.x = (float)uVar22;
-    (this->fields).center.y = (float)uVar23;
-    (this->fields).center.z = fVar17;
-    iStack_24 = IStack_4.z;
-    uStack_18._4_4_ = fVar17;
+    OStack_3.z.currentCryptoKey = 0;
+    OStack_3.z.hiddenValue = 0;
+    OStack_3.z.fakeValue = 0;
+    OStack_3.z.inited = 0;
+    OStack_3.z._7_1_ = 0;
+    OStack_3.x.currentCryptoKey = 0;
+    OStack_3.x.hiddenValue = 0;
+    OStack_3.x.fakeValue = 0;
+    OStack_3.x.inited = 0;
+    OStack_3.x._7_1_ = 0;
+    OStack_3.y.currentCryptoKey = 0;
+    OStack_3.y.hiddenValue = 0;
+    OStack_3.y.fakeValue = 0;
+    OStack_3.y.inited = 0;
+    OStack_3.y._7_1_ = 0;
+    intVector.z = IStack_2.z;
+    intVector.x = IStack_2.x;
+    intVector.y = IStack_2.y;
+    ObscuredIntVector::ObscuredIntVector__ctor_2(&OStack_3,intVector,(MethodInfo *)0x0);
+    (this->fields).minCorner.x.currentCryptoKey = OStack_3.x.currentCryptoKey;
+    (this->fields).minCorner.x.hiddenValue = OStack_3.x.hiddenValue;
+    (this->fields).minCorner.x.fakeValue = OStack_3.x.fakeValue;
+    (this->fields).minCorner.x.inited = OStack_3.x.inited;
+    (this->fields).minCorner.x.field_0x7 = OStack_3.x._7_1_;
+    (this->fields).minCorner.y.currentCryptoKey = OStack_3.y.currentCryptoKey;
+    (this->fields).minCorner.y.hiddenValue = OStack_3.y.hiddenValue;
+    (this->fields).minCorner.y.fakeValue = OStack_3.y.fakeValue;
+    (this->fields).minCorner.y.inited = OStack_3.y.inited;
+    (this->fields).minCorner.y.field_0x7 = OStack_3.y._7_1_;
+    (this->fields).minCorner.z = OStack_3.z;
+    iVar4 = 0;
+    uVar5._0_2_ = 0;
+    uVar5._2_1_ = 0;
+    uVar5._3_1_ = 0;
+    intVector_00.z = IStack_1.z;
+    intVector_00.x = IStack_1.x;
+    intVector_00.y = IStack_1.y;
+    iVar6 = IStack_1.z;
+    ObscuredIntVector::ObscuredIntVector__ctor_2
+              ((ObscuredIntVector *)&stack0xffffff80,intVector_00,(MethodInfo *)0x0);
+    (this->fields).maxCorner.x.currentCryptoKey = iVar6;
+    (this->fields).maxCorner.x.hiddenValue = iVar4;
+    (this->fields).maxCorner.x.fakeValue = (int16_t)uVar5;
+    (this->fields).maxCorner.x.inited = SUB41(uVar5,2);
+    (this->fields).maxCorner.x.field_0x7 = SUB41(uVar5,3);
+    (this->fields).maxCorner.y.currentCryptoKey = 0;
+    (this->fields).maxCorner.y.hiddenValue = 0;
+    (this->fields).maxCorner.y.fakeValue = 0;
+    (this->fields).maxCorner.y.inited = 0;
+    (this->fields).maxCorner.y.field_0x7 = 0;
+    (this->fields).maxCorner.z.currentCryptoKey = 0;
+    (this->fields).maxCorner.z.hiddenValue = 0;
+    (this->fields).maxCorner.z.fakeValue = 0;
+    (this->fields).maxCorner.z.inited = 0;
+    (this->fields).maxCorner.z.field_0x7 = 0;
+    pVVar7 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToVector3
+                       (&VStack_8,&IStack_2,(MethodInfo *)0x0);
+    fVar9 = pVVar7->y;
+    fVar10 = pVVar7->z;
+    (this->fields)._FMinCorner_k__BackingField.x = pVVar7->x;
+    (this->fields)._FMinCorner_k__BackingField.y = fVar9;
+    (this->fields)._FMinCorner_k__BackingField.z = fVar10;
+    pVVar7 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToVector3
+                       (&VStack_8,&IStack_1,(MethodInfo *)0x0);
+    uVar11 = pVVar7->x;
+    uVar12 = pVVar7->y;
+    fVar10 = pVVar7->z;
+    (this->fields)._FMaxCorner_k__BackingField.x = (float)uVar11;
+    (this->fields)._FMaxCorner_k__BackingField.y = (float)uVar12;
+    VStack_8.x = (this->fields)._FMinCorner_k__BackingField.x;
+    VStack_8.y = (this->fields)._FMinCorner_k__BackingField.y;
+    (this->fields)._FMaxCorner_k__BackingField.z = fVar10;
+    VStack_8.z = (fVar10 + (this->fields)._FMinCorner_k__BackingField.z) * _UNK_?;
+    fStack_13 = ((float)uVar11 + VStack_8.x) * _UNK_?;
+    fStack_14 = ((float)uVar12 + VStack_8.y) * _UNK_?;
+    (this->fields).center.x = fStack_13;
+    (this->fields).center.y = fStack_14;
+    (this->fields).center.z = VStack_8.z;
+    auStack_15._0_2_ = IStack_2.x;
+    auStack_15._2_2_ = IStack_2.y;
+    iStack_16 = IStack_2.z;
+    auStack_15._4_2_ = IStack_1.x;
+    auStack_15._6_2_ = IStack_1.y;
+    fStack_17 = 0.0;
+    uStack_18 = 0;
+    iStack_19 = IStack_1.z;
     this_01 = (ConstraintBoxChangedEventArgs *)func_?();
-    uVar12 = IStack_4._0_4_;
-    uVar7 = IStack_3._0_4_;
-    IStack_3.x = (int16_t)uVar6;
-    IStack_3.y = SUB42(uVar6,2);
-    OVar5.currentCryptoKey = IStack_3.x;
-    OVar5.hiddenValue = IStack_3.y;
-    center.z = uStack_18._4_4_;
-    minCorner_00.z = iStack_24;
-    IStack_4.x = (int16_t)uVar8;
-    IStack_4.y = SUB42(uVar8,2);
-    minCorner_00.x = IStack_4.x;
-    minCorner_00.y = IStack_4.y;
-    IStack_3._0_4_ = uVar7;
-    IStack_4._0_4_ = uVar12;
-    VStack_19.z = (float)this_01;
-    ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
-              (this_01,center,minCorner_00,CONCAT24(OVar5.fakeValue,uVar25),(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).OnBoxChanged.method)();
-    return;
+    if (this_01 != (ConstraintBoxChangedEventArgs *)0x0) {
+      center.y = fStack_14;
+      center.x = fStack_13;
+      center.z = VStack_8.z;
+      minCorner_00.z = iStack_16;
+      minCorner_00.x = auStack_15._0_2_;
+      minCorner_00.y = auStack_15._2_2_;
+      maxCorner_00.z = iStack_19;
+      maxCorner_00.x = auStack_15._4_2_;
+      maxCorner_00.y = auStack_15._6_2_;
+      ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
+                (this_01,center,minCorner_00,maxCorner_00,(MethodInfo *)0x0);
+      (*(this->klass->vtable).OnBoxChanged.methodPtr)
+                (this,(short)this_01,(this->klass->vtable).OnBoxChanged.method);
+      return;
+    }
   }
+code_?:
   func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -385,34 +372,30 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_add_BoxCh
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).BoxChanged;
-  a = *ppEVar1;
+  a = (this->fields).BoxChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_ConstraintBoxChangedEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ConstraintBoxChangedEventArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_ConstraintBoxChangedEventArgs_ *)
+             func_?(&(this->fields).BoxChanged,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -427,37 +410,6 @@ Vector3 * Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_get_
   __return_storage_ptr__->x = (this->fields)._FMinCorner_k__BackingField.x;
   __return_storage_ptr__->y = fVar1;
   __return_storage_ptr__->z = fVar2;
-  return __return_storage_ptr__;
-}
-
-
-/* ObscuredIntVector get_MaxCorner() */
-
-ObscuredIntVector *
-Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_get_MaxCorner
-          (ObscuredIntVector *__return_storage_ptr__,ModelingBoxConstraint *this,MethodInfo *method)
-
-{
-  iVar1 = (this->fields).maxCorner.x.hiddenValue;
-  iVar2 = (this->fields).maxCorner.x.fakeValue;
-  bVar3 = (this->fields).maxCorner.x.inited;
-  uVar4 = (this->fields).maxCorner.x.field_0x7;
-  iVar5 = (this->fields).maxCorner.y.currentCryptoKey;
-  iVar6 = (this->fields).maxCorner.y.hiddenValue;
-  iVar7 = (this->fields).maxCorner.y.fakeValue;
-  bVar8 = (this->fields).maxCorner.y.inited;
-  uVar9 = (this->fields).maxCorner.y.field_0x7;
-  (__return_storage_ptr__->x).currentCryptoKey = (this->fields).maxCorner.x.currentCryptoKey;
-  (__return_storage_ptr__->x).hiddenValue = iVar1;
-  (__return_storage_ptr__->x).fakeValue = iVar2;
-  (__return_storage_ptr__->x).inited = bVar3;
-  (__return_storage_ptr__->x).field_0x7 = uVar4;
-  (__return_storage_ptr__->y).currentCryptoKey = iVar5;
-  (__return_storage_ptr__->y).hiddenValue = iVar6;
-  (__return_storage_ptr__->y).fakeValue = iVar7;
-  (__return_storage_ptr__->y).inited = bVar8;
-  (__return_storage_ptr__->y).field_0x7 = uVar9;
-  __return_storage_ptr__->z = (this->fields).maxCorner.z;
   return __return_storage_ptr__;
 }
 
@@ -501,35 +453,30 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_remove_Bo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).BoxChanged;
-  source = *ppEVar1;
+  source = (this->fields).BoxChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_ConstraintBoxChangedEventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ConstraintBoxChangedEventArgs_ *)func_?(ppEVar1,pDVar3,source)
-    ;
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_ConstraintBoxChangedEventArgs_ *)
+             func_?(&(this->fields).BoxChanged,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -540,69 +487,70 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_Cente
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
     cRam_? = '\x01';
   }
-  uVar1 = (this->fields).center.x;
-  uVar2 = (this->fields).center.y;
-  fVar3 = (this->fields).center.z;
-  uVar4 = (undefined2)uVar2;
-  uVar5 = (undefined2)((uint)uVar2 >> 0x10);
-  puStack_6 = (undefined *)uVar1;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  lhs.y._0_2_ = uVar4;
-  lhs.x = (float)puStack_6;
-  lhs.y._2_2_ = uVar5;
-  lhs.z = fVar3;
-  bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Inequality
-                    (lhs,value,(MethodInfo *)0x0);
-  if (bVar7 != 0) {
-    (this->fields).center.x = value.x;
-    (this->fields).center.y = value.y;
+  auStack_1._0_4_ = (this->fields).center.x;
+  auStack_1._4_4_ = (this->fields).center.y;
+  fStack_2 = (this->fields).center.z;
+  if (_UNK_? <=
+      ((float)auStack_1._4_4_ - value.y) * ((float)auStack_1._4_4_ - value.y) +
+      ((float)auStack_1._0_4_ - value.x) * ((float)auStack_1._0_4_ - value.x) +
+      (fStack_2 - value.z) * (fStack_2 - value.z)) {
+    (this->fields).center.x = (float)(int)value._0_8_;
+    (this->fields).center.y = (float)(int)((ulonglong)value._0_8_ >> 0x20);
     (this->fields).center.z = value.z;
     value_00 = (this->fields).minCorner.x;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).cctor_started == 0)) {
-      func_?();
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
     }
-    uVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+    uVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
             ObscuredShort_op_Implicit_1(value_00,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).minCorner.y,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).minCorner.z,(MethodInfo *)0x0);
-    iVar9 = 0;
-    puStack_6 = (undefined *)(uint)uVar8;
-    func_?(&puStack_6);
-    uVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+    uVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_op_Implicit_1((this->fields).minCorner.y,(MethodInfo *)0x0);
+    uVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_op_Implicit_1((this->fields).minCorner.z,(MethodInfo *)0x0);
+    auStack_1 = (undefined1  [8])((ulonglong)auStack_1 & 0xffffffff);
+    fStack_2 = (float)((uint)fStack_2 & 0xffff0000);
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)(auStack_1 + 4),(uint)uVar3,(uint)uVar4,(uint)uVar5,(MethodInfo *)0x0);
+    uVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
             ObscuredShort_op_Implicit_1((this->fields).maxCorner.x,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).maxCorner.y,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).maxCorner.z,(MethodInfo *)0x0);
-    puStack10 = &stack0xfffffff4;
-    uVar11 = 0;
-    iVar12 = 0;
-    puStack13 = (undefined *)(uint)uVar8;
-    func_?();
+    uVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_op_Implicit_1((this->fields).maxCorner.y,(MethodInfo *)0x0);
+    uVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_op_Implicit_1((this->fields).maxCorner.z,(MethodInfo *)0x0);
+    IStack_6.x = 0;
+    IStack_6.y = 0;
+    IStack_6.z = 0;
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              (&IStack_6,(uint)uVar3,(uint)uVar4,(uint)uVar5,(MethodInfo *)0x0);
     this_00 = (ConstraintBoxChangedEventArgs *)func_?();
-    center.z = (float)&UNK_?;
-    center.x = value.x;
-    center.y = value.y;
-    minCorner.z = iVar9;
-    minCorner._0_4_ = puStack_6;
-    maxCorner.z = iVar12;
-    maxCorner.x = (short)uVar11;
-    maxCorner.y = (short)((uint)uVar11 >> 0x10);
+    auVar7 = auStack_1;
+    if (this_00 == (ConstraintBoxChangedEventArgs *)0x0) {
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    center.y = (float)&IStack_6;
+    center.x = (float)&UNK_?;
+    center.z._0_2_ = uVar3;
+    center.z._2_2_ = 0;
+    minCorner.z = fStack_2._0_2_;
+    minCorner.x = auStack_1._4_2_;
+    minCorner.y = auStack_1._6_2_;
+    maxCorner.z = IStack_6.z;
+    maxCorner.x = IStack_6.x;
+    maxCorner.y = IStack_6.y;
+    auStack_1 = auVar7;
     ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
               (this_00,center,minCorner,maxCorner,(MethodInfo *)0x0);
-    uStack14 = (undefined2)((uint)this_00 >> 0x10);
-    uStack15 = 0x1037;
-    (*(code *)(this->klass->vtable).OnBoxChanged.method)();
+    uStack9 = (undefined2)((uint)this_00 >> 0x10);
+    uStack10 = 0x102d;
+    (*(this->klass->vtable).OnBoxChanged.methodPtr)();
   }
   return;
 }
@@ -641,28 +589,27 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MaxCo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
+    func_?(&TypeInfo__ObscuredIntVector);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
     cRam_? = '\x01';
   }
-  OVar1 = (this->fields).maxCorner.x;
-  uVar2._0_2_ = (this->fields).maxCorner.y.currentCryptoKey;
-  uVar2._2_2_ = (this->fields).maxCorner.y.hiddenValue;
-  uVar3._0_2_ = (this->fields).maxCorner.y.fakeValue;
-  uVar3._2_1_ = (this->fields).maxCorner.y.inited;
-  uVar3._3_1_ = (this->fields).maxCorner.y.field_0x7;
-  OVar4 = (this->fields).maxCorner.z;
-  if ((((uint)(TypeInfo__ObscuredIntVector->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__ObscuredIntVector->_1).cctor_started == 0)) {
+  uVar1 = (this->fields).maxCorner.x.currentCryptoKey;
+  uVar2 = (this->fields).maxCorner.x.hiddenValue;
+  a.x.hiddenValue = uVar2;
+  a.x.currentCryptoKey = uVar1;
+  VStack_3.x = *(float *)&(this->fields).maxCorner.x.fakeValue;
+  VStack_3.y = *(float *)&(this->fields).maxCorner.y;
+  VStack_3.z = *(float *)&(this->fields).maxCorner.y.fakeValue;
+  OStack_4 = (this->fields).maxCorner.z;
+  if ((TypeInfo__ObscuredIntVector->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ObscuredIntVector);
   }
   uVar5 = (undefined4)(CONCAT26(value.z._6_2_,CONCAT24(value.z.fakeValue,value.z._0_4_)) >> 0x20);
-  a.y.currentCryptoKey = (short)uVar2;
-  a.y.hiddenValue = (short)((uint)uVar2 >> 0x10);
-  a.x = OVar1;
-  a.y.fakeValue = (short)uVar3;
-  a.y.inited = (char)((uint)uVar3 >> 0x10);
-  a.y._7_1_ = (char)((uint)uVar3 >> 0x18);
-  a.z = OVar4;
+  a.x._4_4_ = VStack_3.x;
+  a.y._0_4_ = VStack_3.y;
+  a.y._4_4_ = VStack_3.z;
+  a.z = OStack_4;
   b.x.fakeValue = value.x.fakeValue;
   b.x.inited = value.x.inited;
   b.x._7_1_ = value.x._7_1_;
@@ -679,13 +626,13 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MaxCo
   b.z.inited = (char)((uint)uVar5 >> 0x10);
   b.z._7_1_ = (char)((uint)uVar5 >> 0x18);
   bVar6 = ObscuredIntVector::ObscuredIntVector_op_Inequality(a,b,(MethodInfo *)0x0);
-  uVar2 = value.x._0_4_;
+  uVar5 = value.x._0_4_;
   if (bVar6 != 0) {
     value.x.currentCryptoKey = 0;
     value.x.hiddenValue = 0;
-    uVar3 = value.x._0_4_;
-    value.x.currentCryptoKey = (int16_t)uVar2;
-    value.x.hiddenValue = SUB42(uVar2,2);
+    uVar7 = value.x._0_4_;
+    value.x.currentCryptoKey = (int16_t)uVar5;
+    value.x.hiddenValue = SUB42(uVar5,2);
     (this->fields).maxCorner.x.currentCryptoKey = value.x.currentCryptoKey;
     (this->fields).maxCorner.x.hiddenValue = value.x.hiddenValue;
     (this->fields).maxCorner.x.fakeValue = value.x.fakeValue;
@@ -696,67 +643,102 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MaxCo
     (this->fields).maxCorner.y.fakeValue = value.y.fakeValue;
     (this->fields).maxCorner.y.inited = value.y.inited;
     (this->fields).maxCorner.y.field_0x7 = value.y._7_1_;
-    OVar4.fakeValue = value.z.fakeValue;
-    OVar4.currentCryptoKey = value.z.currentCryptoKey;
-    OVar4.hiddenValue = value.z.hiddenValue;
-    OVar4.inited = value.z.inited;
-    OVar4._7_1_ = value.z._7_1_;
-    (this->fields).maxCorner.z = OVar4;
-    value.x._0_4_ = uVar3;
-    puVar7 = (undefined8 *)func_?();
-    uVar8 = *puVar7;
-    fVar9 = *(float *)(puVar7 + 1);
-    (this->fields)._FMinCorner_k__BackingField.x = (float)(int)uVar8;
-    (this->fields)._FMinCorner_k__BackingField.y = (float)(int)((ulonglong)uVar8 >> 0x20);
-    (this->fields)._FMinCorner_k__BackingField.z = fVar9;
-    OVar4 = (this->fields).minCorner.x;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).cctor_started == 0)) {
-      value.x._0_4_ = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort;
+    OVar8.fakeValue = value.z.fakeValue;
+    OVar8.currentCryptoKey = value.z.currentCryptoKey;
+    OVar8.hiddenValue = value.z.hiddenValue;
+    OVar8.inited = value.z.inited;
+    OVar8._7_1_ = value.z._7_1_;
+    (this->fields).maxCorner.z = OVar8;
+    value.x._0_4_ = uVar7;
+    pVVar9 = ObscuredIntVector::ObscuredIntVector_ToVector3
+                        (&VStack_3,&(this->fields).maxCorner,(MethodInfo *)0x0);
+    fVar10 = pVVar9->y;
+    fVar11 = pVVar9->z;
+    (this->fields)._FMinCorner_k__BackingField.x = pVVar9->x;
+    (this->fields)._FMinCorner_k__BackingField.y = fVar10;
+    VStack_3.y = (this->fields).center.x;
+    VStack_3.z = (this->fields).center.y;
+    (this->fields)._FMinCorner_k__BackingField.z = fVar11;
+    uVar5 = *(undefined4 *)&(this->fields).minCorner.x;
+    uVar7 = *(undefined4 *)&(this->fields).minCorner.x.fakeValue;
+    OVar8 = (this->fields).minCorner.x;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
+        cctor_finished_or_no_cctor == 0) {
+      value.y._4_4_ = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort;
+      value.y._0_4_ = &UNK_?;
       func_?();
     }
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1(OVar4,(MethodInfo *)0x0);
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).minCorner.y,(MethodInfo *)0x0);
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    iVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1((this->fields).minCorner.z,(MethodInfo *)0x0);
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    func_?();
-    OVar4 = (this->fields).maxCorner.x;
-    uVar11 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1(OVar4,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).maxCorner.y,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).maxCorner.z,(MethodInfo *)0x0);
-    pOStack12 = &value.z;
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.x._0_4_ = &UNK_?;
+    value.x._4_4_ = uVar5;
+    value.y._0_4_ = uVar7;
+    uVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1(OVar8,(MethodInfo *)0x0);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.y._0_4_ = *(undefined4 *)&(this->fields).minCorner.y.fakeValue;
+    pOVar13 = &(this->fields).minCorner.y;
+    value.x._4_4_ = *(undefined4 *)pOVar13;
+    value.x._0_4_ = &UNK_?;
+    uVar14 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1(*pOVar13,(MethodInfo *)0x0);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.y._0_4_ = *(undefined4 *)&(this->fields).minCorner.z.fakeValue;
+    pOVar13 = &(this->fields).minCorner.z;
+    value.x._4_4_ = *(undefined4 *)pOVar13;
+    value.x._0_4_ = &UNK_?;
+    uVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1(*pOVar13,(MethodInfo *)0x0);
+    value.y._0_4_ = ZEXT24(uVar15);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    OStack_4 = (ObscuredShort)((ulonglong)OStack_4 & 0xffff000000000000);
+    value.x._0_4_ = (uint)uVar12;
+    value.x._4_4_ = (uint)uVar14;
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&OStack_4,(uint)uVar12,(uint)uVar14,value.y._0_4_,(MethodInfo *)0x0);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.y._0_4_ = *(undefined4 *)&(this->fields).maxCorner.x.fakeValue;
+    pOVar16 = &(this->fields).maxCorner;
+    value.x._4_4_ = *(undefined4 *)&pOVar16->x;
+    value.x._0_4_ = &UNK_?;
+    uVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1(pOVar16->x,(MethodInfo *)0x0);
+    uVar14 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1((this->fields).maxCorner.y,(MethodInfo *)0x0);
+    uVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1((this->fields).maxCorner.z,(MethodInfo *)0x0);
     value.z.currentCryptoKey = 0;
     value.z.hiddenValue = 0;
     value.z.fakeValue = 0;
-    puStack13 = (undefined *)(uint)uVar11;
-    func_?();
-    pCStack14 = TypeInfo__ConstraintBoxChangedEventArgs;
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&value.z,(uint)uVar12,(uint)uVar14,(uint)uVar15,(MethodInfo *)0x0);
     this_00 = (ConstraintBoxChangedEventArgs *)func_?();
-    center.z._0_2_ = iVar10;
-    center._0_8_ = OVar4;
-    center.z._2_2_ = 0;
+    if (this_00 == (ConstraintBoxChangedEventArgs *)0x0) {
+      func_?();
+      pcVar17 = (code *)swi(3);
+      (*pcVar17)();
+      return;
+    }
+    center.z = (float)&OStack_4;
+    center.x = VStack_3.y;
+    center.y = VStack_3.z;
     maxCorner.z = value.z.fakeValue;
     maxCorner.x = value.z.currentCryptoKey;
     maxCorner.y = value.z.hiddenValue;
     ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
-              (this_00,center,(IntVector)0x0,maxCorner,(MethodInfo *)0x0);
-    uStack15 = (undefined2)((uint)this_00 >> 0x10);
-    uStack16 = 0x1037;
-    (*(code *)(this->klass->vtable).OnBoxChanged.method)();
+              (this_00,center,OStack_4._0_6_,maxCorner,(MethodInfo *)0x0);
+    uStack18 = (undefined2)((uint)this_00 >> 0x10);
+    uStack19 = 0x102d;
+    (*(this->klass->vtable).OnBoxChanged.methodPtr)();
   }
   return;
 }
@@ -769,29 +751,27 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MinCo
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
+    func_?(&TypeInfo__ObscuredIntVector);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
     cRam_? = '\x01';
   }
-  OVar1 = (this->fields).minCorner.x;
-  uVar2._0_2_ = (this->fields).minCorner.y.currentCryptoKey;
-  uVar2._2_2_ = (this->fields).minCorner.y.hiddenValue;
-  uVar3._0_2_ = (this->fields).minCorner.y.fakeValue;
-  uVar3._2_1_ = (this->fields).minCorner.y.inited;
-  uVar3._3_1_ = (this->fields).minCorner.y.field_0x7;
-  pMVar4 = &this->fields;
-  OVar5 = (this->fields).minCorner.z;
-  if ((((uint)(TypeInfo__ObscuredIntVector->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__ObscuredIntVector->_1).cctor_started == 0)) {
+  uVar1 = (this->fields).minCorner.x.currentCryptoKey;
+  uVar2 = (this->fields).minCorner.x.hiddenValue;
+  a.x.hiddenValue = uVar2;
+  a.x.currentCryptoKey = uVar1;
+  VStack_3.x = *(float *)&(this->fields).minCorner.x.fakeValue;
+  VStack_3.y = *(float *)&(this->fields).minCorner.y;
+  VStack_3.z = *(float *)&(this->fields).minCorner.y.fakeValue;
+  OStack_4 = (this->fields).minCorner.z;
+  if ((TypeInfo__ObscuredIntVector->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ObscuredIntVector);
   }
-  uVar6 = (undefined4)(CONCAT26(value.z._6_2_,CONCAT24(value.z.fakeValue,value.z._0_4_)) >> 0x20);
-  a.y.currentCryptoKey = (short)uVar2;
-  a.y.hiddenValue = (short)((uint)uVar2 >> 0x10);
-  a.x = OVar1;
-  a.y.fakeValue = (short)uVar3;
-  a.y.inited = (char)((uint)uVar3 >> 0x10);
-  a.y._7_1_ = (char)((uint)uVar3 >> 0x18);
-  a.z = OVar5;
+  uVar5 = (undefined4)(CONCAT26(value.z._6_2_,CONCAT24(value.z.fakeValue,value.z._0_4_)) >> 0x20);
+  a.x._4_4_ = VStack_3.x;
+  a.y._0_4_ = VStack_3.y;
+  a.y._4_4_ = VStack_3.z;
+  a.z = OStack_4;
   b.x.fakeValue = value.x.fakeValue;
   b.x.inited = value.x.inited;
   b.x._7_1_ = value.x._7_1_;
@@ -804,19 +784,19 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MinCo
   b.y._7_1_ = value.y._7_1_;
   b.z.currentCryptoKey = value.z.currentCryptoKey;
   b.z.hiddenValue = value.z.hiddenValue;
-  b.z.fakeValue = (short)uVar6;
-  b.z.inited = (char)((uint)uVar6 >> 0x10);
-  b.z._7_1_ = (char)((uint)uVar6 >> 0x18);
-  bVar7 = ObscuredIntVector::ObscuredIntVector_op_Inequality(a,b,(MethodInfo *)0x0);
-  uVar2 = value.x._0_4_;
-  if (bVar7 != 0) {
+  b.z.fakeValue = (short)uVar5;
+  b.z.inited = (char)((uint)uVar5 >> 0x10);
+  b.z._7_1_ = (char)((uint)uVar5 >> 0x18);
+  bVar6 = ObscuredIntVector::ObscuredIntVector_op_Inequality(a,b,(MethodInfo *)0x0);
+  uVar5 = value.x._0_4_;
+  if (bVar6 != 0) {
     value.x.currentCryptoKey = 0;
     value.x.hiddenValue = 0;
-    uVar3 = value.x._0_4_;
-    value.x.currentCryptoKey = (int16_t)uVar2;
-    value.x.hiddenValue = SUB42(uVar2,2);
-    (pMVar4->minCorner).x.currentCryptoKey = value.x.currentCryptoKey;
-    (pMVar4->minCorner).x.hiddenValue = value.x.hiddenValue;
+    uVar7 = value.x._0_4_;
+    value.x.currentCryptoKey = (int16_t)uVar5;
+    value.x.hiddenValue = SUB42(uVar5,2);
+    (this->fields).minCorner.x.currentCryptoKey = value.x.currentCryptoKey;
+    (this->fields).minCorner.x.hiddenValue = value.x.hiddenValue;
     (this->fields).minCorner.x.fakeValue = value.x.fakeValue;
     (this->fields).minCorner.x.inited = value.x.inited;
     (this->fields).minCorner.x.field_0x7 = value.x._7_1_;
@@ -825,67 +805,102 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MinCo
     (this->fields).minCorner.y.fakeValue = value.y.fakeValue;
     (this->fields).minCorner.y.inited = value.y.inited;
     (this->fields).minCorner.y.field_0x7 = value.y._7_1_;
-    OVar5.fakeValue = value.z.fakeValue;
-    OVar5.currentCryptoKey = value.z.currentCryptoKey;
-    OVar5.hiddenValue = value.z.hiddenValue;
-    OVar5.inited = value.z.inited;
-    OVar5._7_1_ = value.z._7_1_;
-    (this->fields).minCorner.z = OVar5;
-    value.x._0_4_ = uVar3;
-    puVar8 = (undefined8 *)func_?();
-    uVar9 = *puVar8;
-    fVar10 = *(float *)(puVar8 + 1);
-    (this->fields)._FMinCorner_k__BackingField.x = (float)(int)uVar9;
-    (this->fields)._FMinCorner_k__BackingField.y = (float)(int)((ulonglong)uVar9 >> 0x20);
-    (this->fields)._FMinCorner_k__BackingField.z = fVar10;
-    OVar5 = (pMVar4->minCorner).x;
-    if ((((uint)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).cctor_started == 0)) {
-      value.x._0_4_ = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort;
+    OVar8.fakeValue = value.z.fakeValue;
+    OVar8.currentCryptoKey = value.z.currentCryptoKey;
+    OVar8.hiddenValue = value.z.hiddenValue;
+    OVar8.inited = value.z.inited;
+    OVar8._7_1_ = value.z._7_1_;
+    (this->fields).minCorner.z = OVar8;
+    value.x._0_4_ = uVar7;
+    pVVar9 = ObscuredIntVector::ObscuredIntVector_ToVector3
+                        (&VStack_3,&(this->fields).minCorner,(MethodInfo *)0x0);
+    fVar10 = pVVar9->y;
+    fVar11 = pVVar9->z;
+    (this->fields)._FMinCorner_k__BackingField.x = pVVar9->x;
+    (this->fields)._FMinCorner_k__BackingField.y = fVar10;
+    VStack_3.y = (this->fields).center.x;
+    VStack_3.z = (this->fields).center.y;
+    (this->fields)._FMinCorner_k__BackingField.z = fVar11;
+    uVar5 = *(undefined4 *)&(this->fields).minCorner.x;
+    uVar7 = *(undefined4 *)&(this->fields).minCorner.x.fakeValue;
+    OVar8 = (this->fields).minCorner.x;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
+        cctor_finished_or_no_cctor == 0) {
+      value.y._4_4_ = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort;
+      value.y._0_4_ = &UNK_?;
       func_?();
     }
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1(OVar5,(MethodInfo *)0x0);
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).minCorner.y,(MethodInfo *)0x0);
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    iVar11 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1((this->fields).minCorner.z,(MethodInfo *)0x0);
-    value.x.currentCryptoKey = 0;
-    value.x.hiddenValue = 0;
-    func_?();
-    OVar5 = (this->fields).maxCorner.x;
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.x._0_4_ = &UNK_?;
+    value.x._4_4_ = uVar5;
+    value.y._0_4_ = uVar7;
     uVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1(OVar5,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).maxCorner.y,(MethodInfo *)0x0);
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-    ObscuredShort_op_Implicit_1((this->fields).maxCorner.z,(MethodInfo *)0x0);
-    pOStack13 = &value.z;
+             ObscuredShort_op_Implicit_1(OVar8,(MethodInfo *)0x0);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.y._0_4_ = *(undefined4 *)&(this->fields).minCorner.y.fakeValue;
+    pOVar13 = &(this->fields).minCorner.y;
+    value.x._4_4_ = *(undefined4 *)pOVar13;
+    value.x._0_4_ = &UNK_?;
+    uVar14 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1(*pOVar13,(MethodInfo *)0x0);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.y._0_4_ = *(undefined4 *)&(this->fields).minCorner.z.fakeValue;
+    pOVar13 = &(this->fields).minCorner.z;
+    value.x._4_4_ = *(undefined4 *)pOVar13;
+    value.x._0_4_ = &UNK_?;
+    uVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1(*pOVar13,(MethodInfo *)0x0);
+    value.y._0_4_ = ZEXT24(uVar15);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    OStack_4 = (ObscuredShort)((ulonglong)OStack_4 & 0xffff000000000000);
+    value.x._0_4_ = (uint)uVar12;
+    value.x._4_4_ = (uint)uVar14;
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&OStack_4,(uint)uVar12,(uint)uVar14,value.y._0_4_,(MethodInfo *)0x0);
+    value.y.fakeValue = 0;
+    value.y.inited = 0;
+    value.y._7_1_ = 0;
+    value.y._0_4_ = *(undefined4 *)&(this->fields).maxCorner.x.fakeValue;
+    pOVar16 = &(this->fields).maxCorner;
+    value.x._4_4_ = *(undefined4 *)&pOVar16->x;
+    value.x._0_4_ = &UNK_?;
+    uVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1(pOVar16->x,(MethodInfo *)0x0);
+    uVar14 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1((this->fields).maxCorner.y,(MethodInfo *)0x0);
+    uVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_op_Implicit_1((this->fields).maxCorner.z,(MethodInfo *)0x0);
     value.z.currentCryptoKey = 0;
     value.z.hiddenValue = 0;
     value.z.fakeValue = 0;
-    puStack14 = (undefined *)(uint)uVar12;
-    func_?();
-    pCStack15 = TypeInfo__ConstraintBoxChangedEventArgs;
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&value.z,(uint)uVar12,(uint)uVar14,(uint)uVar15,(MethodInfo *)0x0);
     this_00 = (ConstraintBoxChangedEventArgs *)func_?();
-    center.z._0_2_ = iVar11;
-    center._0_8_ = OVar5;
-    center.z._2_2_ = 0;
+    if (this_00 == (ConstraintBoxChangedEventArgs *)0x0) {
+      func_?();
+      pcVar17 = (code *)swi(3);
+      (*pcVar17)();
+      return;
+    }
+    center.z = (float)&OStack_4;
+    center.x = VStack_3.y;
+    center.y = VStack_3.z;
     maxCorner.z = value.z.fakeValue;
     maxCorner.x = value.z.currentCryptoKey;
     maxCorner.y = value.z.hiddenValue;
     ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
-              (this_00,center,(IntVector)0x0,maxCorner,(MethodInfo *)0x0);
-    uStack16 = (undefined2)((uint)this_00 >> 0x10);
-    uStack17 = 0x1037;
-    (*(code *)(this->klass->vtable).OnBoxChanged.method)();
+              (this_00,center,OStack_4._0_6_,maxCorner,(MethodInfo *)0x0);
+    uStack18 = (undefined2)((uint)this_00 >> 0x10);
+    uStack19 = 0x102d;
+    (*(this->klass->vtable).OnBoxChanged.methodPtr)();
   }
   return;
 }

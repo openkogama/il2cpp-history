@@ -8,16 +8,12 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgression
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__0_);
     cRam_? = '\x01';
   }
-  arg0 = (this->fields).XpTiersRewardsValidator;
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
   pSVar1 = mscorlib.dll::System::String::String_Format
-                     (StringLiteral__0_,(Object *)arg0,(MethodInfo *)0x0);
+                     (StringLiteral__0_,(Object *)(this->fields).XpTiersRewardsValidator,
+                      (MethodInfo *)0x0);
   return pSVar1;
 }
 
@@ -42,7 +38,7 @@ GamePassProgressionDataObjectSharedValidator::GamePassProgressionDataObjectShare
               (this_00,(pGVar1->fields).xpTierRewards,fixIfInValid,(MethodInfo *)0x0);
     return gamePassProgressionDataObjectShared;
   }
-  func_?(0);
+  func_?();
   pcVar2 = (code *)swi(3);
   pGVar3 = (GamePassProgressionDataObjectShared *)(*pcVar2)();
   return pGVar3;
@@ -58,31 +54,29 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (ScaleAnimationBase *)
+  this_00 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)
             func_?(
                            TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
                            );
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  if (this_00 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
+    GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::
+    GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor
+              (this_00,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).XpTiersRewardsValidator = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
   }
-  method_00 = 
-  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>
-  ;
-  this_01 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Dictionary__
-            );
-  (this_00->fields)._._._._.m_CachedPtr = this_01;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            (this_00,0.0,(MethodInfo *)method_00);
-  (this->fields).XpTiersRewardsValidator =
-       (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)this_00;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -99,34 +93,31 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (ScaleAnimationBase *)
+  this_00 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)
             func_?(
                            TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
                            );
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  if (this_00 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
+    GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::
+    GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor
+              (this_00,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).XpTiersRewardsValidator = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    (this->fields).XpTiersRewardsValidator = xpTiersRewardsValidator;
+    func_?(&this->fields,xpTiersRewardsValidator);
+    return;
   }
-  method_00 = 
-  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>
-  ;
-  this_01 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Dictionary__
-            );
-  (this_00->fields)._._._._.m_CachedPtr = this_01;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            (this_00,0.0,(MethodInfo *)method_00);
-  (this->fields).XpTiersRewardsValidator =
-       (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)this_00;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  (this->fields).XpTiersRewardsValidator = xpTiersRewardsValidator;
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -145,41 +136,40 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (ScaleAnimationBase *)
-            func_?(
-                           TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
-                           );
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
+  pGVar1 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)
+           func_?(
+                          TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
+                          );
+  if (pGVar1 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
+    GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::
+    GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor
+              (pGVar1,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields).XpTiersRewardsValidator = pGVar1;
+    func_?(method_00,pGVar1);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    pGVar1 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)
+             func_?(
+                            TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
+                            );
+    if (pGVar1 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
+      GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::
+      GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor_2
+                (pGVar1,xpRangeValidators,xpRewardRemovalAllowed,(MethodInfo *)0x0);
+      (this->fields).XpTiersRewardsValidator = pGVar1;
+      func_?(&this->fields,pGVar1);
+      return;
+    }
   }
-  method_00 = 
-  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>
-  ;
-  this_01 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Dictionary__
-            );
-  (this_00->fields)._._._._.m_CachedPtr = this_01;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            (this_00,0.0,(MethodInfo *)method_00);
-  (this->fields).XpTiersRewardsValidator =
-       (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)this_00;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  this_02 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)
-            func_?(
-                           TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator
-                           );
-  GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::
-  GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor_1
-            (this_02,xpRangeValidators,xpRewardRemovalAllowed,(MethodInfo *)0x0);
-  (this->fields).XpTiersRewardsValidator = this_02;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

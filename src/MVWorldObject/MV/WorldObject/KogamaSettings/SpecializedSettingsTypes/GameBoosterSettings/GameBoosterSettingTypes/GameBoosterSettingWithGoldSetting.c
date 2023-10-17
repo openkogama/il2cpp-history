@@ -9,64 +9,54 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_tsk);
+    func_?(&StringLiteral_sk);
+    func_?(&StringLiteral_gsk);
     cRam_? = '\x01';
   }
   if (kogamaSetting != (KogamaSettingWrapperBase *)0x0) {
-    pSVar1 = (String *)
-             mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items
-                       ((Collection_1_VoxelHit_ *)kogamaSetting,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                      (pSVar1,StringLiteral_sk,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      this = (GameBoosterSettingWithGoldSetting *)
-             mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items
-                       ((Collection_1_VoxelHit_ *)kogamaSetting,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                        ((String *)this,StringLiteral_gsk,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        pSVar1 = (String *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items
-                           ((Collection_1_VoxelHit_ *)kogamaSetting,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
-        bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                          (pSVar1,StringLiteral_tsk,(MethodInfo *)0x0);
-        if (bVar2 != 0) goto code_?;
+    bVar1 = mscorlib.dll::System::String::String_op_Inequality
+                      ((kogamaSetting->fields).key,StringLiteral_sk,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      bVar1 = mscorlib.dll::System::String::String_op_Inequality
+                        ((kogamaSetting->fields).key,StringLiteral_gsk,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        this = (GameBoosterSettingWithGoldSetting *)(kogamaSetting->fields).key;
+        bVar1 = mscorlib.dll::System::String::String_op_Inequality
+                          ((String *)this,StringLiteral_tsk,(MethodInfo *)0x0);
+        if (bVar1 != 0) goto code_?;
       }
     }
-    KogamaSettingsCore::KogamaSettingTypes::KogamaSettingsCollectionBase::
-    KogamaSettingsCollectionBase_AddChild
-              ((KogamaSettingsCollectionBase *)this,kogamaSetting,(MethodInfo *)0x0);
-    return;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_00 = (this->fields)._.children;
+    if (this_00 !=
+        (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
+         *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                 (Object *)(kogamaSetting->fields).key,(Object *)kogamaSetting,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Add_System__String__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingWrapperBase_
+                );
+      return;
+    }
   }
   func_?();
 code_?:
-  this_00 = (IsolatedStorageException *)func_?();
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this_00,StringLiteral_Only_child_with_setting_key_is_a,(MethodInfo *)0x0);
-  pMStack3 =
-       MethodInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting__AddChild_MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingWrapperBase_
-  ;
-  uStack4 = 0;
-  pIStack5 = this_00;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  this_01 = (Exception *)func_?();
+  func_?();
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
+  uStack2 = func_?();
+  pEStack3 = this_01;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -82,19 +72,25 @@ GameBoosterSettingWithGoldSetting_CopyWithOutChildren
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+                   );
     cRam_? = '\x01';
   }
-  key = (String *)
-        mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-        Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-  this_00 = (KogamaSettingsCollectionBase *)
-            func_?(
-                           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
-                           );
-  KogamaSettingsCore::KogamaSettingTypes::KogamaSettingsCollectionBase::
-  KogamaSettingsCollectionBase__ctor(this_00,key,parent,(MethodInfo *)0x0);
-  return this_00;
+  key = (this->fields)._._.key;
+  pKVar1 = (KogamaSettingsCollectionBase *)
+           func_?(
+                          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+                          );
+  if (pKVar1 != (KogamaSettingsCollectionBase *)0x0) {
+    KogamaSettingsCore::KogamaSettingTypes::KogamaSettingsCollectionBase::
+    KogamaSettingsCollectionBase__ctor(pKVar1,key,parent,(MethodInfo *)0x0);
+    return pKVar1;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pKVar1 = (KogamaSettingsCollectionBase *)(*pcVar2)();
+  return pKVar1;
 }
 
 
@@ -107,34 +103,36 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
+                   );
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_tsk);
+    func_?(&StringLiteral_sk);
+    func_?(&StringLiteral__0___Setting___1__GoldSetting___);
+    func_?(&StringLiteral_gsk);
     cRam_? = '\x01';
   }
   args = (Object__Array *)func_?(TypeInfo__System__Object,4);
-  pSVar1 = KogamaSettingsCore::KogamaSettingTypes::KogamaSettingsCollectionBase::
-           KogamaSettingsCollectionBase_ToString
-                     ((KogamaSettingsCollectionBase *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Object);
+    cRam_? = '\x01';
+  }
+  pSVar1 = (this->fields)._._.key;
+  args_00 = (Object__Array *)func_?(TypeInfo__System__Object,0);
+  pSVar1 = mscorlib.dll::System::String::String_Format_3(pSVar1,args_00,(MethodInfo *)0x0);
   if (args == (Object__Array *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
 code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
+    func_?();
+    func_?();
 code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
+    func_?();
+    func_?();
   }
   else {
     if (pSVar1 != (String *)0x0) {
@@ -145,71 +143,205 @@ code_?:
 code_?:
     if (args->max_length == 0) goto code_?;
     args->vector[0] = (Object *)pSVar1;
+    func_?(args->vector,pSVar1);
     pDVar4 = (this->fields)._.children;
     if (pDVar4 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
                    *)0x0) goto code_?;
-    pPVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)pDVar4,(Type *)StringLiteral_sk,
+    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       ((Dictionary_2_System_Object_System_Object_ *)pDVar4,
+                        (Object *)StringLiteral_sk,
                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                        );
-    if (pPVar5 != (Pool *)0x0) {
-      iVar3 = func_?(pPVar5);
+    if (pOVar5 != (Object *)0x0) {
+      iVar3 = func_?();
       if (iVar3 != 0) goto code_?;
       goto code_?;
     }
 code_?:
     if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)pPVar5;
+    args->vector[1] = pOVar5;
+    func_?();
     pDVar4 = (this->fields)._.children;
     if (pDVar4 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
                    *)0x0) goto code_?;
-    pPVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)pDVar4,(Type *)StringLiteral_gsk,
+    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       ((Dictionary_2_System_Object_System_Object_ *)pDVar4,
+                        (Object *)StringLiteral_gsk,
                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                        );
-    if (pPVar5 != (Pool *)0x0) {
-      iVar3 = func_?(pPVar5);
+    if (pOVar5 != (Object *)0x0) {
+      iVar3 = func_?();
       if (iVar3 != 0) goto code_?;
       goto code_?;
     }
 code_?:
     if (args->max_length < 3) goto code_?;
-    args->vector[2] = (Object *)pPVar5;
+    args->vector[2] = pOVar5;
+    func_?();
     pDVar4 = (this->fields)._.children;
     if (pDVar4 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
                    *)0x0) goto code_?;
-    pPVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)pDVar4,(Type *)StringLiteral_tsk,
+    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       ((Dictionary_2_System_Object_System_Object_ *)pDVar4,
+                        (Object *)StringLiteral_tsk,
                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                        );
-    if (pPVar5 == (Pool *)0x0) {
+    if (pOVar5 == (Object *)0x0) {
 code_?:
       if (3 < args->max_length) {
-        args->vector[3] = (Object *)pPVar5;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?();
-        }
+        args->vector[3] = pOVar5;
+        func_?();
         pSVar1 = mscorlib.dll::System::String::String_Format_3
                            (StringLiteral__0___Setting___1__GoldSetting___,args,(MethodInfo *)0x0);
         return pSVar1;
       }
       goto code_?;
     }
-    iVar3 = func_?(pPVar5);
+    iVar3 = func_?();
     if (iVar3 != 0) goto code_?;
   }
-  uVar2 = func_?(0);
-  func_?(uVar2);
+  func_?();
+  func_?();
 code_?:
-  uVar2 = func_?(0);
-  func_?(uVar2);
+  func_?();
   pcVar6 = (code *)swi(3);
   pSVar1 = (String *)(*pcVar6)();
   return pSVar1;
+}
+
+
+/* Void Validate() */
+
+void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+     GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
+     GameBoosterSettingWithGoldSetting_Validate
+               (GameBoosterSettingWithGoldSetting *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__ContainsKey_System__String_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Count__
+                   );
+    func_?(&StringLiteral_GameBoosterPrototypeSetting);
+    func_?(&StringLiteral_tsk);
+    func_?(&StringLiteral_sk);
+    func_?(&StringLiteral_gsk);
+    cRam_? = '\x01';
+  }
+  pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._.children;
+  if (pDVar1 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Object,GUILoginHandler+PlanetData]::
+            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      (pDVar1,(Object *)StringLiteral_sk,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__ContainsKey_System__String_
+                      );
+    if (bVar2 != 0) {
+      pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._.children;
+      if (pDVar1 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+      goto code_?;
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              Object,GUILoginHandler+PlanetData]::
+              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        (pDVar1,(Object *)StringLiteral_gsk,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__ContainsKey_System__String_
+                        );
+      if (bVar2 != 0) {
+        pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._.children
+        ;
+        if (pDVar1 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+        goto code_?;
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Object,GUILoginHandler+PlanetData]::
+                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          (pDVar1,(Object *)StringLiteral_tsk,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__ContainsKey_System__String_
+                          );
+        if (bVar2 != 0) {
+          this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                     *)(this->fields)._.children;
+          if (this_00 ==
+              (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
+              )0x0) goto code_?;
+          iVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                  Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Count__
+                            );
+          if (iVar3 == 3) {
+            pKVar4 = (this->fields)._._._Parent_k__BackingField;
+            if (pKVar4 == (KogamaSettingsCollectionBase *)0x0) goto code_?;
+            bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                              ((pKVar4->fields)._.key,StringLiteral_GameBoosterPrototypeSetting,
+                               (MethodInfo *)0x0);
+            if (bVar2 == 0) {
+              pKVar4 = (this->fields)._._._Parent_k__BackingField;
+              if (pKVar4 == (KogamaSettingsCollectionBase *)0x0) goto code_?;
+              if ((pKVar4->fields)._._Parent_k__BackingField == (KogamaSettingsCollectionBase *)0x0)
+              {
+                return;
+              }
+              func_?();
+              pEVar5 = (Exception *)func_?();
+              func_?();
+              pSVar6 = (String *)func_?();
+              mscorlib.dll::System::Exception::Exception__ctor_1(pEVar5,pSVar6,(MethodInfo *)0x0);
+              func_?();
+              func_?();
+            }
+            func_?();
+            pEVar5 = (Exception *)func_?();
+            func_?();
+            pSVar6 = (String *)func_?();
+            mscorlib.dll::System::Exception::Exception__ctor_1(pEVar5,pSVar6,(MethodInfo *)0x0);
+            func_?();
+            func_?();
+          }
+          func_?();
+          pEVar5 = (Exception *)func_?();
+          func_?();
+          pSVar6 = (String *)func_?();
+          mscorlib.dll::System::Exception::Exception__ctor_1(pEVar5,pSVar6,(MethodInfo *)0x0);
+          func_?();
+          func_?();
+        }
+        func_?();
+        pEVar5 = (Exception *)func_?();
+        func_?();
+        pSVar6 = (String *)func_?();
+        mscorlib.dll::System::Exception::Exception__ctor_1(pEVar5,pSVar6,(MethodInfo *)0x0);
+        func_?();
+        func_?();
+      }
+      func_?();
+      pEVar5 = (Exception *)func_?();
+      func_?();
+      pSVar6 = (String *)func_?();
+      mscorlib.dll::System::Exception::Exception__ctor_1(pEVar5,pSVar6,(MethodInfo *)0x0);
+      func_?();
+      func_?();
+    }
+    uVar7 = func_?();
+    pEVar5 = (Exception *)func_?(uVar7);
+    func_?(pEVar5);
+    method_00 = (MethodInfo *)0x0;
+    pSVar6 = (String *)func_?(&StringLiteral_Missing_settingKey);
+    mscorlib.dll::System::Exception::Exception__ctor_1(pEVar5,pSVar6,method_00);
+    func_?();
+    func_?();
+  }
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
+  return;
 }
 
 
@@ -223,25 +355,101 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>
+                   );
     cRam_? = '\x01';
   }
-  method_00 = 
-  TypeInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>
-  ;
   this_00 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-             *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dictionary__
-            );
-  (this->fields)._.children = this_00;
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
-  (this->fields)._._._Parent_k__BackingField = kogamaSettingsCollection;
-  (this->fields)._._.key = key;
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>
+                              );
+  if (this_00 !=
+      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
+       *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+              ((ParameterOverride_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dictionary__
+              );
+    method_00 = (MethodInfo *)&(this->fields)._.children;
+    (this->fields)._.children = this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    (this->fields)._._._Parent_k__BackingField = kogamaSettingsCollection;
+    func_?(&(this->fields)._._._Parent_k__BackingField,kogamaSettingsCollection);
+    (this->fields)._._.key = key;
+    func_?(&this->fields,key);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
+}
+
+
+/* KogamaSettingNumericBase`1[System.Int32] get_BoostTime() */
+
+KogamaSettingNumericBase_1_System_Int32_ *
+MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::
+GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
+GameBoosterSettingWithGoldSetting_get_BoostTime
+          (GameBoosterSettingWithGoldSetting *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
+                   );
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+                   );
+    func_?(&StringLiteral_tsk);
+    cRam_? = '\x01';
+  }
+  this_00 = (this->fields)._.children;
+  if (this_00 ==
+      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
+       *)0x0) {
+    func_?();
+    pKVar1 = extraout_EDX;
+  }
+  else {
+    unaff_ESI = (KogamaSettingNumericBase_1_System_Int32_ *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                           (Object *)StringLiteral_tsk,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
+                          );
+    if (unaff_ESI == (KogamaSettingNumericBase_1_System_Int32_ *)0x0) {
+      return (KogamaSettingNumericBase_1_System_Int32_ *)0x0;
+    }
+    pKVar1 = 
+    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+    ;
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).typeHierarchyDepth <= (unaff_ESI->klass->_1).typeHierarchyDepth) &&
+       ((unaff_ESI->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).typeHierarchyDepth - 1] ==
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+       )) {
+      return unaff_ESI;
+    }
+  }
+  func_?(unaff_ESI,pKVar1);
+  pcVar2 = (code *)swi(3);
+  pKVar3 = (KogamaSettingNumericBase_1_System_Int32_ *)(*pcVar2)();
+  return pKVar3;
 }
 
 
@@ -255,50 +463,53 @@ GameBoosterSettingWithGoldSetting_get_GoldPrice
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
+                   );
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+                   );
+    func_?(&StringLiteral_gsk);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._.children;
   if (this_00 ==
       (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
        *)0x0) {
-    func_?(0);
-    pPVar1 = extraout_EDX;
+    func_?();
+    pKVar1 = extraout_EDX;
   }
   else {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_00,(Type *)StringLiteral_gsk,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
-                       );
-    if (pPVar1 == (Pool *)0x0) {
+    unaff_ESI = (KogamaSettingNumericBase_1_System_Int32_ *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                           (Object *)StringLiteral_gsk,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
+                          );
+    if (unaff_ESI == (KogamaSettingNumericBase_1_System_Int32_ *)0x0) {
       return (KogamaSettingNumericBase_1_System_Int32_ *)0x0;
     }
-    bVar2 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-            ->_1).naturalAligment;
-    if (((pPVar1->klass->_1).naturalAligment < bVar2) ||
-       ((pPVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
+    pKVar1 = 
+    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+    ;
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).typeHierarchyDepth <= (unaff_ESI->klass->_1).typeHierarchyDepth) &&
+       ((unaff_ESI->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
        )) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    pPVar4 = (Pool *)0x0;
-    if (bVar3) {
-      pPVar4 = pPVar1;
-    }
-    if (pPVar4 != (Pool *)0x0) {
-      return (KogamaSettingNumericBase_1_System_Int32_ *)pPVar4;
+      return unaff_ESI;
     }
   }
-  func_?(pPVar1);
-  pcVar5 = (code *)swi(3);
-  pKVar6 = (KogamaSettingNumericBase_1_System_Int32_ *)(*pcVar5)();
-  return pKVar6;
+  func_?(unaff_ESI,pKVar1);
+  pcVar2 = (code *)swi(3);
+  pKVar3 = (KogamaSettingNumericBase_1_System_Int32_ *)(*pcVar2)();
+  return pKVar3;
 }
 
 
@@ -312,49 +523,52 @@ GameBoosterSettingWithGoldSetting_get_Setting
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
+                   );
+    func_?(&
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+                   );
+    func_?(&StringLiteral_sk);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._.children;
   if (this_00 ==
       (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
        *)0x0) {
-    func_?(0);
-    pPVar1 = extraout_EDX;
+    func_?();
+    pKVar1 = extraout_EDX;
   }
   else {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       ((Dictionary_2_System_Type_Pool_ *)this_00,(Type *)StringLiteral_sk,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
-                       );
-    if (pPVar1 == (Pool *)0x0) {
+    unaff_ESI = (KogamaSettingValueWrapperBase *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                           (Object *)StringLiteral_sk,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
+                          );
+    if (unaff_ESI == (KogamaSettingValueWrapperBase *)0x0) {
       return (KogamaSettingValueWrapperBase *)0x0;
     }
-    bVar2 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-            ->_1).naturalAligment;
-    if (((pPVar1->klass->_1).naturalAligment < bVar2) ||
-       ((pPVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
+    pKVar1 = 
+    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+    ;
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+         ->_1).typeHierarchyDepth <= (unaff_ESI->klass->_1).typeHierarchyDepth) &&
+       ((unaff_ESI->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+         ->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
        )) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    pPVar4 = (Pool *)0x0;
-    if (bVar3) {
-      pPVar4 = pPVar1;
-    }
-    if (pPVar4 != (Pool *)0x0) {
-      return (KogamaSettingValueWrapperBase *)pPVar4;
+      return unaff_ESI;
     }
   }
-  func_?(pPVar1);
-  pcVar5 = (code *)swi(3);
-  pKVar6 = (KogamaSettingValueWrapperBase *)(*pcVar5)();
-  return pKVar6;
+  func_?(unaff_ESI,pKVar1);
+  pcVar2 = (code *)swi(3);
+  pKVar3 = (KogamaSettingValueWrapperBase *)(*pcVar2)();
+  return pKVar3;
 }
 

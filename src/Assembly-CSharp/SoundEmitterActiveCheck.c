@@ -6,6 +6,7 @@ void Assembly-CSharp.dll::SoundEmitterActiveCheck::SoundEmitterActiveCheck_Initi
 
 {
   (this->fields).soundEmitter = SoundEmitter;
+  func_?(&(this->fields).soundEmitter,SoundEmitter);
   (this->fields).initialized = 1;
   return;
 }
@@ -18,6 +19,7 @@ void Assembly-CSharp.dll::SoundEmitterActiveCheck::SoundEmitterActiveCheck_Initi
 
 {
   (this->fields).globalSoundEmitter = SoundEmitter;
+  func_?(&(this->fields).globalSoundEmitter,SoundEmitter);
   (this->fields).initialized = 1;
   return;
 }
@@ -30,61 +32,60 @@ void Assembly-CSharp.dll::SoundEmitterActiveCheck::SoundEmitterActiveCheck_Updat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((this->fields).initialized != 0) {
-    if (((this->fields).soundEmitter == (MVSoundEmitter *)0x0) &&
-       ((this->fields).globalSoundEmitter == (MVGlobalSoundEmitter *)0x0)) {
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((this->fields).initialized == 0) {
+    return;
+  }
+  if ((this->fields).soundEmitter == (MVSoundEmitter *)0x0) {
+    if ((this->fields).globalSoundEmitter == (MVGlobalSoundEmitter *)0x0) {
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                 ((Object_1 *)this,(MethodInfo *)0x0);
     }
-    pMVar1 = (this->fields).soundEmitter;
-    if (pMVar1 == (MVSoundEmitter *)0x0) {
-      pMVar2 = (this->fields).globalSoundEmitter;
-      if ((pMVar2 == (MVGlobalSoundEmitter *)0x0) ||
-         (pCVar3 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                             ((DayNightCycle *)pMVar2,(MethodInfo *)0x0),
-         pCVar3 == (CelestialParam *)0x0)) {
-code_?:
-        func_?(0);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    if ((this->fields).soundEmitter == (MVSoundEmitter *)0x0) {
+      pMVar1 = (this->fields).globalSoundEmitter;
+      if ((pMVar1 == (MVGlobalSoundEmitter *)0x0) ||
+         (pGVar2 = (pMVar1->fields)._._.gameObject, pGVar2 == (GameObject *)0x0))
+      goto code_?;
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                        (pGVar2,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
         return;
       }
-      bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                        ((GameObject *)pCVar3,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
-        return;
-      }
-      pMVar2 = (this->fields).globalSoundEmitter;
-      if (pMVar2 == (MVGlobalSoundEmitter *)0x0) goto code_?;
-      MVGlobalSoundEmitter::MVGlobalSoundEmitter_UpdateSound(pMVar2,(MethodInfo *)0x0);
+      pMVar1 = (this->fields).globalSoundEmitter;
+      if (pMVar1 == (MVGlobalSoundEmitter *)0x0) goto code_?;
+      MVGlobalSoundEmitter::MVGlobalSoundEmitter_UpdateSound(pMVar1,(MethodInfo *)0x0);
+      goto code_?;
     }
-    else {
-      pCVar3 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                         ((DayNightCycle *)pMVar1,(MethodInfo *)0x0);
-      if (pCVar3 == (CelestialParam *)0x0) goto code_?;
-      bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                        ((GameObject *)pCVar3,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
-        return;
-      }
-      pMVar1 = (this->fields).soundEmitter;
-      if (pMVar1 == (MVSoundEmitter *)0x0) goto code_?;
-      MVSoundEmitter::MVSoundEmitter_UpdateSound(pMVar1,(MethodInfo *)0x0);
-    }
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)this,(MethodInfo *)0x0);
   }
+  pMVar4 = (this->fields).soundEmitter;
+  if ((pMVar4 != (MVSoundEmitter *)0x0) &&
+     (pGVar2 = (pMVar4->fields)._._.gameObject, pGVar2 != (GameObject *)0x0)) {
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                      (pGVar2,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      return;
+    }
+    pMVar4 = (this->fields).soundEmitter;
+    if (pMVar4 != (MVSoundEmitter *)0x0) {
+      MVSoundEmitter::MVSoundEmitter_UpdateSound(pMVar4,(MethodInfo *)0x0);
+code_?:
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)this,(MethodInfo *)0x0);
+      return;
+    }
+  }
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

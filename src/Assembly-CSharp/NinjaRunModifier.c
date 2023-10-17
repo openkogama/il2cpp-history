@@ -27,17 +27,19 @@ Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_DoFadeAndDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__NinjaRunModifier___DoFadeAndDestroy_d__17);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__NinjaRunModifier___DoFadeAndDestroy_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__NinjaRunModifier___DoFadeAndDestroy_d__17);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
@@ -47,78 +49,73 @@ Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_DoFadeAndDestroy
 /* Void OnActivated(Avatar) */
 
 void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_OnActivated
-               (NinjaRunModifier *this,Avatar_1 *target,MethodInfo *method)
+               (NinjaRunModifier *this,Avatar *target,MethodInfo *method)
 
 {
   (this->fields)._.owner = target;
-  if (target != (Avatar_1 *)0x0) {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)target,(MethodInfo *)0x0);
-    (this->fields).ownerTransform = pTVar1;
-    pAVar2 = (this->fields)._.owner;
-    if ((pAVar2 != (Avatar_1 *)0x0) &&
-       (this_00 = (PrefabPool *)(pAVar2->fields).mvAvatar, this_00 != (PrefabPool *)0x0)) {
-      this_01 = PrefabPool::PrefabPool_get_MVPointLightPrefab(this_00,(MethodInfo *)0x0);
-      if (this_01 != (MVPointLightObject *)0x0) {
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                            ((Vector3 *)&stack0xffffffe4,(Transform *)this_01,(MethodInfo *)0x0);
-        pTVar4 = (this->fields).trailRenderer;
-        fVar5 = pVVar3->y;
-        fVar6 = pVVar3->z;
-        (this->fields).oldScale.x = pVVar3->x;
-        (this->fields).oldScale.y = fVar5;
-        fVar5 = (this->fields).startWidth;
-        (this->fields).oldScale.z = fVar6;
-        pTVar1 = (this->fields).ownerTransform;
-        if (pTVar1 != (Transform *)0x0) {
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                              ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-          uVar7 = pVVar3->x;
-          if (pTVar4 != (TrailRenderer *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_startWidth
-                      (pTVar4,(float)uVar7 * fVar5,(MethodInfo *)0x0);
-            fVar5 = (this->fields).endWidth;
-            pTVar1 = (this->fields).ownerTransform;
-            pTVar4 = (this->fields).trailRenderer;
-            if (pTVar1 != (Transform *)0x0) {
-              pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                                  ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-              uVar8 = pVVar3->x;
-              if (pTVar4 != (TrailRenderer *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_endWidth
-                          (pTVar4,(float)uVar8 * fVar5,(MethodInfo *)0x0);
-                pTVar4 = (this->fields).trailRenderer;
-                if (pTVar4 != (TrailRenderer *)0x0) {
-                  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_1_get_transform((Component_1 *)pTVar4,(MethodInfo *)0x0);
-                  if (pTVar1 != (Transform *)0x0) {
-                    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_localPosition
-                                        ((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
-                    fVar6 = pVVar3->x;
-                    fVar9 = pVVar3->z;
-                    pTVar1 = (this->fields).ownerTransform;
-                    fVar5 = (this->fields).trailHeight;
-                    if (pTVar1 != (Transform *)0x0) {
-                      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                Transform_get_localScale
-                                          ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
-                      uVar10 = pVVar3->x;
-                      pTVar4 = (this->fields).trailRenderer;
-                      uVar11._4_4_ = (float)uVar10 * fVar5;
-                      uVar11._0_4_ = fVar6;
-                      if (pTVar4 != (TrailRenderer *)0x0) {
-                        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                  Component_1_get_transform((Component_1 *)pTVar4,(MethodInfo *)0x0)
-                        ;
-                        if (pTVar1 != (Transform *)0x0) {
-                          value.z = fVar9;
-                          value.x = (float)uVar11;
-                          value.y = SUB84(uVar11,4);
-                          UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_set_localPosition(pTVar1,value,(MethodInfo *)0x0);
-                          return;
-                        }
+  func_?(&(this->fields)._.owner,target);
+  pAVar1 = (this->fields)._.owner;
+  if (pAVar1 != (Avatar *)0x0) {
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pAVar1,(MethodInfo *)0x0);
+    (this->fields).ownerTransform = pTVar2;
+    func_?(&(this->fields).ownerTransform,pTVar2);
+    pAVar1 = (this->fields)._.owner;
+    if (((pAVar1 != (Avatar *)0x0) &&
+        (pMVar3 = (pAVar1->fields).mvAvatar, pMVar3 != (MVAvatar *)0x0)) &&
+       (pTVar2 = (pMVar3->fields)._._.transform, pTVar2 != (Transform *)0x0)) {
+      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                         (&VStack_5,pTVar2,(MethodInfo *)0x0);
+      pTVar6 = (this->fields).trailRenderer;
+      fVar7 = pVVar4->y;
+      fVar8 = pVVar4->z;
+      (this->fields).oldScale.x = pVVar4->x;
+      (this->fields).oldScale.y = fVar7;
+      fVar7 = (this->fields).startWidth;
+      (this->fields).oldScale.z = fVar8;
+      pTVar2 = (this->fields).ownerTransform;
+      if (pTVar2 != (Transform *)0x0) {
+        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                           (&VStack_5,pTVar2,(MethodInfo *)0x0);
+        if (pTVar6 != (TrailRenderer *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_startWidth
+                    (pTVar6,pVVar4->x * fVar7,(MethodInfo *)0x0);
+          fVar7 = (this->fields).endWidth;
+          pTVar2 = (this->fields).ownerTransform;
+          pTVar6 = (this->fields).trailRenderer;
+          if (pTVar2 != (Transform *)0x0) {
+            pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                               (&VStack_5,pTVar2,(MethodInfo *)0x0);
+            if (pTVar6 != (TrailRenderer *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_endWidth
+                        (pTVar6,pVVar4->x * fVar7,(MethodInfo *)0x0);
+              pTVar6 = (this->fields).trailRenderer;
+              if (pTVar6 != (TrailRenderer *)0x0) {
+                pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                   ((Component *)pTVar6,(MethodInfo *)0x0);
+                if (pTVar2 != (Transform *)0x0) {
+                  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                           Transform_get_localPosition(&VStack_9,pTVar2,(MethodInfo *)0x0);
+                  VStack_5.x = pVVar4->x;
+                  VStack_5.y = pVVar4->y;
+                  fVar8 = pVVar4->z;
+                  pTVar2 = (this->fields).ownerTransform;
+                  fVar7 = (this->fields).trailHeight;
+                  if (pTVar2 != (Transform *)0x0) {
+                    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                             Transform_get_localScale(&VStack_9,pTVar2,(MethodInfo *)0x0);
+                    pTVar6 = (this->fields).trailRenderer;
+                    VStack_5.y = fVar7 * pVVar4->x;
+                    if (pTVar6 != (TrailRenderer *)0x0) {
+                      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                               Component_get_transform((Component *)pTVar6,(MethodInfo *)0x0);
+                      if (pTVar2 != (Transform *)0x0) {
+                        value.z = fVar8;
+                        value.x = VStack_5.x;
+                        value.y = VStack_5.y;
+                        UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                        Transform_set_localPosition(pTVar2,value,(MethodInfo *)0x0);
+                        return;
                       }
                     }
                   }
@@ -131,8 +128,8 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_OnActivated
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -140,25 +137,23 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_OnActivated
 /* Void OnDeactivated(Avatar) */
 
 void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_OnDeactivated
-               (NinjaRunModifier *this,Avatar_1 *target,MethodInfo *method)
+               (NinjaRunModifier *this,Avatar *target,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   (this->fields).isDestroying = 1;
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
-    method_00 = (MethodInfo *)&UNK_?;
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                       (pGVar1,(MethodInfo *)0x0);
     if (bVar2 == 0) {
-      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -169,16 +164,20 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_OnDeactivated
       func_?();
       cRam_? = '\x01';
     }
-    this_00 = (ScaleAnimationBase *)func_?();
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,method_00);
-    if (this_00 != (ScaleAnimationBase *)0x0) {
-      (this_00->fields)._._._._.m_CachedPtr = this;
+    method_00 = (MethodInfo *)&UNK_?;
+    value = (Object *)func_?();
+    if (value != (Object *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                (value,ExceptionArgument__Enum_obj,method_00);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].klass = (Object__Class *)this;
+      func_?(value + 2,this);
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
+                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -192,14 +191,13 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   if ((this->fields).isDestroying != 0) {
-    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                    ((Component_1 *)this,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
@@ -215,77 +213,63 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_Update
                (NinjaRunModifier *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   pAVar1 = (this->fields)._.owner;
   pTVar2 = (this->fields).trailRenderer;
-  if (pAVar1 == (Avatar_1 *)0x0) goto code_?;
-  bVar3 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-           CrossPlatformInputManager_VirtualAxis_get_matchWithInputManager
-                     ((CrossPlatformInputManager_VirtualAxis *)pAVar1,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+  if (pAVar1 == (Avatar *)0x0) goto code_?;
+  if ((pAVar1->fields).isLocal == 0) {
     value = true;
   }
   else {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
     this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if ((this_00 == (MainCameraManager *)0x0) ||
-       (pMVar4 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0),
-       pMVar4 == (MVCameraBase *)0x0)) goto code_?;
-    iVar5 = (*(code *)(pMVar4->klass->vtable).__unknown.method)
-                       (pMVar4,(pMVar4->klass->vtable).Awake.methodPtr);
-    value = iVar5 != 0x10;
+       (pMVar3 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0),
+       pMVar3 == (MVCameraBase *)0x0)) goto code_?;
+    iVar4 = (*(pMVar3->klass->vtable).__unknown.methodPtr)(pMVar3);
+    value = iVar4 != 0x10;
   }
   if (pTVar2 == (TrailRenderer *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
             ((Renderer *)pTVar2,value,(MethodInfo *)0x0);
-  pTVar6 = (this->fields).ownerTransform;
-  VVar7 = (this->fields).oldPosition;
-  if (pTVar6 == (Transform *)0x0) goto code_?;
+  pTVar5 = (this->fields).ownerTransform;
+  if (pTVar5 == (Transform *)0x0) goto code_?;
+  fVar6 = (this->fields).oldPosition.z;
+  uVar7._0_4_ = (this->fields).oldPosition.x;
+  uVar7._4_4_ = (this->fields).oldPosition.y;
   pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
-  VVar9 = *pVVar8;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?();
-  }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Inequality
-                     (VVar7,VVar9,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+                      ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
+  uVar9 = pVVar8->x;
+  uVar10 = pVVar8->y;
+  fVar11 = (float)uVar7 - (float)uVar9;
+  fVar12 = (float)((ulonglong)uVar7 >> 0x20) - (float)uVar10;
+  fVar6 = fVar6 - pVVar8->z;
+  if (fVar12 * fVar12 + fVar11 * fVar11 + fVar6 * fVar6 < _UNK_?) {
     return;
   }
   if ((this->fields).isDestroying != 0) {
     return;
   }
-  pTVar6 = (this->fields).ownerTransform;
-  if (pTVar6 == (Transform *)0x0) goto code_?;
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
-  VVar7 = (this->fields).oldPosition;
-  VVar9 = *pVVar8;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Subtraction
-            ((Vector3 *)&stack0xffffffd0,VVar9,VVar7,(MethodInfo *)0x0);
-  fVar10 = (float10)func_?(&stack0xffffffdc,0);
-  pTVar6 = (this->fields).ownerTransform;
-  if (pTVar6 == (Transform *)0x0) goto code_?;
+  pTVar5 = (this->fields).ownerTransform;
+  if (pTVar5 == (Transform *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+            ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
+  fVar13 = (float10)func_?();
+  pTVar5 = (this->fields).ownerTransform;
+  fVar6 = (float)fVar13;
+  if (pTVar5 == (Transform *)0x0) goto code_?;
   pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                      ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Inequality
-                     (*pVVar8,(this->fields).oldScale,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pTVar6 = (this->fields).ownerTransform;
-    if (pTVar6 == (Transform *)0x0) goto code_?;
+                      ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
+  uVar14 = pVVar8->x;
+  uVar15 = pVVar8->y;
+  uVar16 = (this->fields).oldScale.x;
+  uVar17 = (this->fields).oldScale.y;
+  fVar11 = pVVar8->z - (this->fields).oldScale.z;
+  if (_UNK_? <=
+      ((float)uVar15 - (float)uVar17) * ((float)uVar15 - (float)uVar17) +
+      ((float)uVar14 - (float)uVar16) * ((float)uVar14 - (float)uVar16) + fVar11 * fVar11) {
+    pTVar5 = (this->fields).ownerTransform;
+    if (pTVar5 == (Transform *)0x0) goto code_?;
     pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                        ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
     pTVar2 = (this->fields).trailRenderer;
     fVar11 = pVVar8->y;
     fVar12 = pVVar8->z;
@@ -293,82 +277,69 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_Update
     (this->fields).oldScale.y = fVar11;
     fVar11 = (this->fields).startWidth;
     (this->fields).oldScale.z = fVar12;
-    pTVar6 = (this->fields).ownerTransform;
-    if (pTVar6 == (Transform *)0x0) goto code_?;
+    pTVar5 = (this->fields).ownerTransform;
+    if (pTVar5 == (Transform *)0x0) goto code_?;
     pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                        ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
-    uVar13 = pVVar8->x;
+                        ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
     if (pTVar2 == (TrailRenderer *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_startWidth
-              (pTVar2,(float)uVar13 * fVar11,(MethodInfo *)0x0);
+              (pTVar2,pVVar8->x * fVar11,(MethodInfo *)0x0);
     fVar11 = (this->fields).endWidth;
-    pTVar6 = (this->fields).ownerTransform;
+    pTVar5 = (this->fields).ownerTransform;
     pTVar2 = (this->fields).trailRenderer;
-    if (pTVar6 == (Transform *)0x0) goto code_?;
+    if (pTVar5 == (Transform *)0x0) goto code_?;
     pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                        ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
-    uVar14 = pVVar8->x;
+                        ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
     if (pTVar2 == (TrailRenderer *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_endWidth
-              (pTVar2,(float)uVar14 * fVar11,(MethodInfo *)0x0);
+              (pTVar2,pVVar8->x * fVar11,(MethodInfo *)0x0);
   }
   pAVar1 = (this->fields)._.owner;
-  if (pAVar1 == (Avatar_1 *)0x0) goto code_?;
-  bVar3 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-           CrossPlatformInputManager_VirtualAxis_get_matchWithInputManager
-                     ((CrossPlatformInputManager_VirtualAxis *)pAVar1,(MethodInfo *)0x0);
-  pAVar15 = (this->fields).soundEffect;
-  if (bVar3 == 0) {
+  if (pAVar1 == (Avatar *)0x0) goto code_?;
+  pAVar18 = (this->fields).soundEffect;
+  if ((pAVar1->fields).isLocal == 0) {
     fVar11 = _UNK_?;
-    if (_UNK_? < (float)fVar10) goto joined_?;
-    if (pAVar15 == (AudioSource *)0x0) goto code_?;
+    if (_UNK_? < fVar6) goto joined_?;
+    if (pAVar18 == (AudioSource *)0x0) goto code_?;
     fVar11 = 0.0;
   }
   else {
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Mathf);
+    if (fVar6 < 0.0) {
+      fVar11 = 0.0;
     }
-    fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp
-                       ((float)fVar10,0.0,1.0,(MethodInfo *)0x0);
+    else {
+      fVar11 = fVar6;
+      if (_UNK_? < fVar6) {
+        fVar11 = _UNK_?;
+      }
+    }
 joined_?:
-    if (pAVar15 == (AudioSource *)0x0) goto code_?;
+    if (pAVar18 == (AudioSource *)0x0) goto code_?;
   }
   UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
-            (pAVar15,fVar11,(MethodInfo *)0x0);
-  pAVar15 = (this->fields).soundEffect;
-  if (pAVar15 != (AudioSource *)0x0) {
-    fVar11 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_volume
-                       (pAVar15,(MethodInfo *)0x0);
+            (pAVar18,fVar11,(MethodInfo *)0x0);
+  pAVar18 = (this->fields).soundEffect;
+  if (pAVar18 != (AudioSource *)0x0) {
+    fVar6 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_volume
+                       (pAVar18,(MethodInfo *)0x0);
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
-              (pAVar15,(this->fields).initialVolume * fVar11,(MethodInfo *)0x0);
-    pTVar6 = (this->fields).ownerTransform;
-    if (pTVar6 != (Transform *)0x0) {
+              (pAVar18,fVar6 * (this->fields).initialVolume,(MethodInfo *)0x0);
+    pTVar5 = (this->fields).ownerTransform;
+    if (pTVar5 != (Transform *)0x0) {
       pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
-      fVar12 = pVVar8->y;
-      fVar11 = pVVar8->z;
+                          ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
+      fVar11 = pVVar8->y;
+      fVar6 = pVVar8->z;
       (this->fields).oldPosition.x = pVVar8->x;
-      (this->fields).oldPosition.y = fVar12;
-      (this->fields).oldPosition.z = fVar11;
+      (this->fields).oldPosition.y = fVar11;
+      (this->fields).oldPosition.z = fVar6;
       return;
     }
   }
 code_?:
-  func_?(0);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
-}
-
-
-/* AvatarModifierPackageType get_ModifierType() */
-
-AvatarModifierPackageType__Enum
-Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_get_ModifierType
-          (NinjaRunModifier *this,MethodInfo *method)
-
-{
-  return AvatarModifierPackageType__Enum_NinjaRun;
 }
 

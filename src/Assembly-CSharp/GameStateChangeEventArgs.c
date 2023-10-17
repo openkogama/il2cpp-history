@@ -6,11 +6,10 @@ void Assembly-CSharp.dll::GameStateChangeEventArgs::GameStateChangeEventArgs__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__EventArgs->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__EventArgs->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__EventArgs);
   }
   return;

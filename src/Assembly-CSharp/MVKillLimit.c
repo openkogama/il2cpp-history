@@ -5,7 +5,9 @@ void Assembly-CSharp.dll::MVKillLimit::MVKillLimit_Destroy(MVKillLimit *this,Met
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                   );
     cRam_? = '\x01';
   }
   MVGamePointRewardLogicObject::MVGamePointRewardLogicObject_Destroy
@@ -13,52 +15,37 @@ void Assembly-CSharp.dll::MVKillLimit::MVKillLimit_Destroy(MVKillLimit *this,Met
   if ((this->fields).initializedInWorld == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pPVar1 != (PrefabPool *)0x0) &&
-     (pWVar2 = (WinningConditionManager *)
-               PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0),
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
      pWVar2 != (WinningConditionManager *)0x0)) {
-    this_00 = MVWorldObject.dll::WinningConditionManager::
-              WinningConditionManager_GetSingletonWinnerConditionByType_6
-                        (pWVar2,
-                         KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                        );
-    if (this_00 == (TimeAttackFlagReachedClient *)0x0) goto code_?;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pPVar1 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pPVar1 != (PrefabPool *)0x0) {
-      pWVar2 = (WinningConditionManager *)
-               PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(pPVar1,(MethodInfo *)0x0);
-      id = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-           Serialization::JsonProperty]::
-           Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                     ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                      (MethodInfo *)0x0);
-      if (pWVar2 != (WinningConditionManager *)0x0) {
-        MVWorldObject.dll::WinningConditionManager::WinningConditionManager_RemoveWinnerCondition
-                  (pWVar2,(int32_t)id,(MethodInfo *)0x0);
-        return;
-      }
+    pOVar3 = MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType
+                       (pWVar2,
+                        KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                       );
+    if (pOVar3 == (Object *)0x0) goto code_?;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+       (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+       pWVar2 != (WinningConditionManager *)0x0)) {
+      MVWorldObject.dll::WinningConditionManager::WinningConditionManager_RemoveWinnerCondition
+                (pWVar2,(int32_t)pOVar3[1].monitor,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
 code_?:
-  this_01 = (IsolatedStorageException *)func_?();
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this_01,StringLiteral_Couldn_t_find_killLimitClient_wi,(MethodInfo *)0x0);
-  pMStack3 = MethodInfo__MVKillLimit__Destroy__;
-  uStack4 = 0;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  this_00 = (Exception *)func_?();
+  func_?();
+  message = (String *)func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uStack4 = func_?();
+  pEStack5 = this_00;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -69,33 +56,33 @@ void Assembly-CSharp.dll::MVKillLimit::MVKillLimit_Initialize(MVKillLimit *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&
+                    KillLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<KillLimitClient>_System__Object____
+                   );
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
-  this_00 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 == (PrefabPool *)0x0) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 == (MVNetworkGame *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
   }
   else {
-    this_01 = (WinningConditionManager *)
-              PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(this_00,(MethodInfo *)0x0);
+    this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField;
     args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-    iStack_1 = MVKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
+    iStack_2 = MVKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
     if (args == (Object__Array *)0x0) goto code_?;
-    if (pOVar2 == (Object *)0x0) {
+    if (pOVar3 == (Object *)0x0) {
 code_?:
       if (args->max_length == 0) goto code_?;
-      args->vector[0] = pOVar2;
-      if (this_01 != (WinningConditionManager *)0x0) {
-        MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition_6
-                  (this_01,args,
+      args->vector[0] = pOVar3;
+      func_?(args->vector,pOVar3);
+      if (this_00 != (WinningConditionManager *)0x0) {
+        MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
+                  (this_00,args,
                    KillLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<KillLimitClient>_System__Object____
                   );
         (this->fields).initializedInWorld = 1;
@@ -103,16 +90,15 @@ code_?:
       }
       goto code_?;
     }
-    iVar3 = func_?(pOVar2,(args->klass->_0).element_class);
-    if (iVar3 != 0) goto code_?;
+    iVar4 = func_?(pOVar3,(args->klass->_0).element_class);
+    if (iVar4 != 0) goto code_?;
   }
-  uVar4 = func_?(0,0);
-  func_?(uVar4);
+  uVar5 = func_?(0);
+  func_?(uVar5);
 code_?:
-  uVar4 = func_?(0,0);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -124,43 +110,40 @@ void Assembly-CSharp.dll::MVKillLimit::MVKillLimit_OnDataUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                   );
     cRam_? = '\x01';
   }
   MVGamePointRewardLogicObject::MVGamePointRewardLogicObject_OnDataUpdate
             ((MVGamePointRewardLogicObject *)this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 == (MVNetworkGame *)0x0) ||
+     (this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
+     this_00 == (WinningConditionManager *)0x0)) {
+    func_?();
   }
-  this_00 = (PrefabPool *)MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    this_01 = (WinningConditionManager *)
-              PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(this_00,(MethodInfo *)0x0);
-    if (this_01 != (WinningConditionManager *)0x0) {
-      this_02 = MVWorldObject.dll::WinningConditionManager::
-                WinningConditionManager_GetSingletonWinnerConditionByType_6
-                          (this_01,
-                           KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                          );
-      if (this_02 != (TimeAttackFlagReachedClient *)0x0) {
-        limit = MVKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
-        MVWorldObject.dll::WinningCondition::WinningCondition_SetLimit
-                  ((WinningCondition *)this_02,limit,(MethodInfo *)0x0);
-        return;
-      }
-      goto code_?;
+  else {
+    this_01 = (WinningCondition *)
+              MVWorldObject.dll::WinningConditionManager::
+              WinningConditionManager_GetSingletonWinnerConditionByType
+                        (this_00,
+                         KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                        );
+    if (this_01 != (WinningCondition *)0x0) {
+      limit = MVKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
+      MVWorldObject.dll::WinningCondition::WinningCondition_SetLimit
+                (this_01,limit,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
-code_?:
-  this_03 = (IsolatedStorageException *)func_?();
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this_03,StringLiteral_Couldn_t_find_killLimitClient_wi,(MethodInfo *)0x0);
-  pMStack1 = MethodInfo__MVKillLimit__OnDataUpdate__;
-  uStack2 = 0;
-  pIStack3 = this_03;
+  this_02 = (Exception *)func_?();
+  func_?(this_02);
+  message = (String *)func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_02,message,(MethodInfo *)0x0);
+  uStack2 = func_?();
+  pEStack3 = this_02;
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -177,28 +160,27 @@ void Assembly-CSharp.dll::MVKillLimit::MVKillLimit__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
-  }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = PrefabPool::PrefabPool_get_MVKillLimitPrefab(this_00,(MethodInfo *)0x0);
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVGamePointRewardLogicObject::MVGamePointRewardLogicObject__ctor
-              ((MVGamePointRewardLogicObject *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0
-              );
-    iVar1 = (this->fields)._._._.interactionFlags;
-    *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
-         *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-    *(uint *)&(this->fields)._._._.interactionFlags = (uint)iVar1 & 0xffffdfff | 0x40008000;
+              ((MVGamePointRewardLogicObject *)this,data,(pPVar1->fields).mvKillLimitPrefab,
+               worldObjects,(MethodInfo *)0x0);
+    piVar2 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
+    uVar3 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+    piVar2 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x40000000;
+    piVar2 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 & 0xffffdfff;
+    *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar3;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -220,10 +202,9 @@ int32_t Assembly-CSharp.dll::MVKillLimit::MVKillLimit_get_GamePointRewardAmount
                   (MVKillLimit *this,MethodInfo *method)
 
 {
-  data = (Dictionary_2_System_Object_System_Object_ *)
-         PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
   iVar1 = MVGamePointRewardLogicObject::MVGamePointRewardLogicObject_GetGamePointsRewardAmount
-                    ((MVGamePointRewardLogicObject *)this,data,(MethodInfo *)0x0);
+                    ((MVGamePointRewardLogicObject *)this,(this->fields)._._._._.data,
+                     (MethodInfo *)0x0);
   iVar2 = MVKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
   return iVar2 * iVar1;
 }
@@ -236,34 +217,40 @@ int32_t Assembly-CSharp.dll::MVKillLimit::MVKillLimit_get_KillLimit
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Type_Pool_ *)
-            PrefabPool::PrefabPool_get_MVBatteryPrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Type_Pool_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Type,Pool]::
-             Dictionary_2_System_Type_Pool__get_Item
-                       (this_00,(Type *)StringLiteral_killLimit,
+  this_00 = (this->fields)._._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_00,(Object *)StringLiteral_killLimit,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    if (pPVar1 != (Pool *)0x0) {
-      pIStack2 = TypeInfo__System__Int32;
-      if ((pPVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        pIStack2 = (Int32__Class *)pPVar1;
-        piVar3 = (int32_t *)func_?();
-        return *piVar3;
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) {
+        func_?();
+        pcVar2 = (code *)swi(3);
+        iVar3 = (*pcVar2)();
+        return iVar3;
       }
-      goto code_?;
+      piVar4 = (int *)func_?();
+      iVar5 = *piVar4;
+      if (0 < iVar5) {
+        if (200 < iVar5) {
+          iVar5 = 200;
+        }
+        return iVar5;
+      }
+      return 1;
     }
   }
-  pIStack2 = (Int32__Class *)0x0;
-  func_?();
-  pIStack2 = extraout_EDX;
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  uVar6 = func_?(&stack0xfffffff0);
+  func_?(uVar6);
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 

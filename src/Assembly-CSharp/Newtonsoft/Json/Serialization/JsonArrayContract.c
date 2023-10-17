@@ -7,148 +7,193 @@ JsonArrayContract_CreateWrapper(JsonArrayContract *this,Object *list,MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__CollectionWrapper_System__Collections__IList_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>);
+    func_?(&
+                    System__Collections__Generic__IEnumerable<System::Object>_MethodInfo__System__Linq__Enumerable__Cast<System::Object>_System__Collections__IEnumerable_
+                   );
+    func_?(&
+                    System__Collections__Generic__List<System::Object>_MethodInfo__System__Linq__Enumerable__ToList<System::Object>_System__Collections__Generic__IEnumerable<System::Object>_
+                   );
+    func_?(&TypeInfo__System__Collections__ICollection);
+    func_?(&TypeInfo__System__Collections__IEnumerable);
+    func_?(&TypeInfo__System__Collections__IList);
+    func_?(&TypeInfo__Newtonsoft__Json__Utilities__IWrappedCollection);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   iVar1 = func_?(list,TypeInfo__System__Collections__IList);
-  if ((iVar1 != 0) &&
-     (((this->fields)._CollectionItemType_k__BackingField == (Type *)0x0 ||
-      ((this->fields)._isCollectionItemTypeNullableType == 0)))) {
+  if (iVar1 == 0) {
 code_?:
-    pCVar2 = (CollectionWrapper_1_System_Object_ *)
-             func_?(
-                            TypeInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>
-                            );
-    if (list == (Object *)0x0) {
-      list_01 = (IList *)0x0;
-code_?:
-      Json::Utilities::CollectionWrapper`1[System::Object]::CollectionWrapper_1_System_Object___ctor
-                (pCVar2,list_01,
-                 MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__CollectionWrapper_System__Collections__IList_
-                );
-      return (IWrappedCollection *)pCVar2;
+    this_00 = (this->fields)._._UnderlyingType_k__BackingField;
+    if (this_00 == (Type *)0x0) goto code_?;
+    bVar2 = mscorlib.dll::System::Type::Type_get_IsArray(this_00,(MethodInfo *)0x0);
+    if (bVar2 != 0) goto code_?;
+    CVar3._source = (CancellationTokenSource *)(this->fields)._genericCollectionDefinitionType;
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Type);
     }
-    list_01 = (IList *)func_?();
-    if (list_01 != (IList *)0x0) goto code_?;
-    goto code_?;
-  }
-  this_00 = (MVSimpleOneSeatVehicle *)(this->fields)._._UnderlyingType_k__BackingField;
-  if (this_00 == (MVSimpleOneSeatVehicle *)0x0) goto code_?;
-  MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_DeSelect(this_00,(MethodInfo *)0x0);
-  unaff_EBX = TypeInfo__System__Collections__IEnumerable;
-  if (extraout_AL != '\0') goto code_?;
-  if ((this->fields)._genericCollectionDefinitionType == (Type *)0x0) {
-    if (list == (Object *)0x0) {
-      source = (IEnumerable *)0x0;
-code_?:
-      source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_8
-                            (source,
-                             System__Collections__Generic__IEnumerable<System::Object>_MethodInfo__System__Linq__Enumerable__Cast<System::Object>_System__Collections__IEnumerable_
-                            );
-      unaff_EBX = (IEnumerable__Class *)
-                  System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                            ((IEnumerable_1_UseInteractor_ *)source_00,
+    bVar2 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+                      (CVar3,(CancellationToken)0x0,(MethodInfo *)0x0);
+    pMVar4 = 
+    System__Collections__Generic__IEnumerable<System::Object>_MethodInfo__System__Linq__Enumerable__Cast<System::Object>_System__Collections__IEnumerable_
+    ;
+    pIVar5 = (IList__Class *)TypeInfo__System__Collections__IEnumerable;
+    if (bVar2 == 0) {
+      if (list == (Object *)0x0) {
+        source = (IEnumerable *)0x0;
+      }
+      else {
+        source = (IEnumerable *)func_?(list,TypeInfo__System__Collections__IEnumerable);
+        if (source == (IEnumerable *)0x0) goto code_?;
+      }
+      source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4(source,pMVar4);
+      unaff_EBX = (IList__Class *)
+                  System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+                            (source_00,
                              System__Collections__Generic__List<System::Object>_MethodInfo__System__Linq__Enumerable__ToList<System::Object>_System__Collections__Generic__IEnumerable<System::Object>_
                             );
-      list = (Object *)(this->fields)._CollectionItemType_k__BackingField;
-      list_00 = unaff_EBX;
-      if ((Type *)list == (Type *)0x0) {
-code_?:
-        pCVar2 = (CollectionWrapper_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>
-                                );
-        Json::Utilities::CollectionWrapper`1[System::Object]::
-        CollectionWrapper_1_System_Object___ctor
-                  (pCVar2,(IList *)list_00,
-                   MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__CollectionWrapper_System__Collections__IList_
-                  );
-        return (IWrappedCollection *)pCVar2;
+      CVar3._source = (CancellationTokenSource *)(this->fields)._CollectionItemType_k__BackingField;
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Type);
       }
-      if (unaff_EBX != (IEnumerable__Class *)0x0) {
-        length = func_?(0,TypeInfo__System__Collections__ICollection,unaff_EBX);
-        list_00 = (IEnumerable__Class *)
-                  mscorlib.dll::System::Array::Array_CreateInstance
-                            ((Type *)list,length,(MethodInfo *)0x0);
-        for (list = (Object *)0x0; iVar1 = func_?(), (int)list < iVar1;
-            list = (Object *)((int)&((Type *)list)->klass + 1)) {
-          pMVar3 = (MethodCall_2_System_Object_System_Object___Class *)(unaff_EBX->_0).image;
-          uVar4 = 0;
-          uVar5._0_1_ = (pMVar3->_1).rank;
-          uVar5._1_1_ = (pMVar3->_1).minimumAlignment;
-          if (uVar5 != 0) {
+      bVar2 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+                        (CVar3,(CancellationToken)0x0,(MethodInfo *)0x0);
+      pIVar5 = unaff_EBX;
+      pIVar6 = (IList__Class *)this;
+      if (bVar2 != 0) {
+        list = (Object *)(this->fields)._CollectionItemType_k__BackingField;
+        if (unaff_EBX == (IList__Class *)0x0) goto code_?;
+        length = func_?(1,TypeInfo__System__Collections__ICollection,unaff_EBX);
+        pIVar5 = (IList__Class *)
+                 mscorlib.dll::System::Array::Array_CreateInstance_1
+                           ((Type *)list,length,(MethodInfo *)0x0);
+        for (list = (Object *)0x0;
+            iVar1 = func_?(1,TypeInfo__System__Collections__ICollection),
+            this = (JsonArrayContract *)TypeInfo__System__Collections__IList,
+            pIVar6 = (IList__Class *)list, (int)list < iVar1;
+            list = (Object *)((int)&(((IList__Class *)list)->_0).image + 1)) {
+          pIVar7 = (unaff_EBX->_0).image;
+          uVar8 = 0;
+          uVar9 = *(ushort *)((int)&pIVar7[4].name + 2);
+          if (uVar9 != 0) {
             do {
-              if (pMVar3->interfaceOffsets[uVar4].interfaceType ==
-                  (Il2CppClass *)TypeInfo__System__Collections__IList) {
-                ppMVar6 = &(&(pMVar3->vtable).GetHashCode)[pMVar3->interfaceOffsets[uVar4].offset].
-                           method;
+              if (*(IList__Class **)(pIVar7[2].name + (uint)uVar8 * 8) ==
+                  TypeInfo__System__Collections__IList) {
+                pIVar7 = (unaff_EBX->_0).image;
+                puVar10 = &pIVar7[4].typeCount + *(int *)(pIVar7[2].name + (uint)uVar8 * 8 + 4) * 2
+                ;
                 goto code_?;
               }
-              uVar4 = uVar4 + 1;
-            } while (uVar4 < uVar5);
+              uVar8 = uVar8 + 1;
+            } while (uVar8 < uVar9);
           }
-          ppMVar6 = (MethodInfo **)func_?(unaff_EBX,TypeInfo__System__Collections__IList,2)
-          ;
+          puVar10 = (uint32_t *)func_?(unaff_EBX,TypeInfo__System__Collections__IList,0);
 code_?:
-          this_01 = (Array *)ppMVar6[1];
-          pOVar7 = (Object *)(*(code *)*ppMVar6)(unaff_EBX,list);
-          if (this_01 == (Array *)0x0) goto code_?;
-          list_00 = (IEnumerable__Class *)0x0;
-          mscorlib.dll::System::Array::Array_SetValue_4
-                    (this_01,pOVar7,(int32_t)list,(MethodInfo *)0x0);
+          value = (Object *)(*(code *)*puVar10)(unaff_EBX,list,puVar10[1]);
+          if (pIVar5 == (IList__Class *)0x0) goto code_?;
+          mscorlib.dll::System::Array::Array_SetValue_5
+                    ((Array *)pIVar5,value,(int32_t)list,(MethodInfo *)0x0);
         }
-        goto code_?;
       }
+      this = (JsonArrayContract *)pIVar6;
+      unaff_EBX = pIVar5;
+      this_01 = (CollectionWrapper_1_System_Object_ *)
+                func_?(
+                               TypeInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>
+                               );
+      list = (Object *)0x0;
+      if (this_01 != (CollectionWrapper_1_System_Object_ *)0x0) {
+        Json::Utilities::CollectionWrapper`1[System::Object]::
+        CollectionWrapper_1_System_Object___ctor_1
+                  (this_01,(IList *)unaff_EBX,
+                   MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__CollectionWrapper_System__Collections__IList_
+                  );
+        return (IWrappedCollection *)this_01;
+      }
+code_?:
+      func_?();
+      pIVar5 = unaff_EBX;
       goto code_?;
     }
-    source = (IEnumerable *)func_?(list,TypeInfo__System__Collections__IEnumerable);
-    if (source != (IEnumerable *)0x0) goto code_?;
-code_?:
-    func_?(list,unaff_EBX);
-code_?:
-    uVar8 = func_?(0,0);
-    func_?(uVar8);
-  }
-  else {
     JsonArrayContract_EnsureGenericWrapperCreator(this,(MethodInfo *)0x0);
-    unaff_EBX = (IEnumerable__Class *)(this->fields)._genericWrapperCreator;
-    args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-    if (args == (Object__Array *)0x0) {
-code_?:
-      func_?(0);
-      goto code_?;
-    }
+    unaff_EBX = (IList__Class *)(this->fields)._genericWrapperCreator;
+    this = (JsonArrayContract *)func_?(TypeInfo__System__Object,1);
+    if ((IList__Class *)this == (IList__Class *)0x0) goto code_?;
     if ((list != (Object *)0x0) &&
-       (iVar1 = func_?(list,(args->klass->_0).element_class), iVar1 == 0))
-    goto code_?;
-    if (args->max_length != 0) {
-      args->vector[0] = list;
-      if (unaff_EBX != (IEnumerable__Class *)0x0) {
-        pOVar7 = Json::Utilities::MethodCall`2[System::Object,System::Object]::
-                 MethodCall_2_System_Object_System_Object__Invoke
-                           ((MethodCall_2_System_Object_System_Object_ *)unaff_EBX,(Object *)0x0,
-                            args,
-                            MethodInfo__Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>__Invoke_System__Object__System__Object____
-                           );
-        if (pOVar7 == (Object *)0x0) {
+       (iVar1 = func_?(list,(((Type__Class *)(((IList__Class *)this)->_0).image)->_0).
+                                     element_class), iVar1 == 0)) goto code_?;
+    if ((((IList__Class *)this)->_0).namespaze != (char *)0x0) {
+      (((IList__Class *)this)->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)list;
+      func_?(&(((IList__Class *)this)->_0).byval_arg,list);
+      if (unaff_EBX != (IList__Class *)0x0) {
+        uVar11._0_2_ = (unaff_EBX->_0).byval_arg.attrs;
+        uVar11._2_1_ = (unaff_EBX->_0).byval_arg.type;
+        uVar11._3_1_ = (unaff_EBX->_0).byval_arg.field_0x7;
+        list = (Object *)
+               (*(code *)(unaff_EBX->_0).namespaze)((unaff_EBX->_0).element_class,0,this,uVar11);
+        this = (JsonArrayContract *)TypeInfo__Newtonsoft__Json__Utilities__IWrappedCollection;
+        if ((IList__Class *)list == (IList__Class *)0x0) {
           return (IWrappedCollection *)0x0;
         }
-        pIVar9 = (IWrappedCollection *)func_?();
-        if (pIVar9 != (IWrappedCollection *)0x0) {
-          return pIVar9;
+        pIVar12 = (IWrappedCollection *)
+                  func_?(list,TypeInfo__Newtonsoft__Json__Utilities__IWrappedCollection);
+        if (pIVar12 != (IWrappedCollection *)0x0) {
+          return pIVar12;
         }
         goto code_?;
       }
       goto code_?;
     }
   }
-  uVar8 = func_?(0,0);
-  func_?(uVar8);
+  else {
+    unaff_EBX = (IList__Class *)(this->fields)._CollectionItemType_k__BackingField;
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Type);
+    }
+    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)unaff_EBX,(Object **)0x0,(MethodInfo *)0x0);
+    if ((bVar2 == 0) && ((this->fields)._isCollectionItemTypeNullableType != 0))
+    goto code_?;
 code_?:
+    this = (JsonArrayContract *)
+           func_?(TypeInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>)
+    ;
+    pMVar4 = 
+    MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__CollectionWrapper_System__Collections__IList_
+    ;
+    pIVar5 = TypeInfo__System__Collections__IList;
+    if ((IList__Class *)this == (IList__Class *)0x0) goto code_?;
+    if (list == (Object *)0x0) {
+      Json::Utilities::CollectionWrapper`1[System::Object]::
+      CollectionWrapper_1_System_Object___ctor_1
+                ((CollectionWrapper_1_System_Object_ *)this,(IList *)0x0,
+                 MethodInfo__Newtonsoft__Json__Utilities__CollectionWrapper<System::Object>__CollectionWrapper_System__Collections__IList_
+                );
+      return (IWrappedCollection *)(IList__Class *)this;
+    }
+    list_00 = (IList *)func_?(list,TypeInfo__System__Collections__IList);
+    if (list_00 != (IList *)0x0) {
+      Json::Utilities::CollectionWrapper`1[System::Object]::
+      CollectionWrapper_1_System_Object___ctor_1
+                ((CollectionWrapper_1_System_Object_ *)this,list_00,pMVar4);
+      return (IWrappedCollection *)(IList__Class *)this;
+    }
+code_?:
+    func_?(list,pIVar5);
+code_?:
+    uVar11 = func_?(0);
+    func_?(uVar11);
+  }
   func_?();
-  pcVar10 = (code *)swi(3);
-  pIVar9 = (IWrappedCollection *)(*pcVar10)();
-  return pIVar9;
+code_?:
+  func_?(list,this);
+  pcVar13 = (code *)swi(3);
+  pIVar12 = (IWrappedCollection *)(*pcVar13)();
+  return pIVar12;
 }
 
 
@@ -159,102 +204,122 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonArrayContract::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__Newtonsoft__Json__Utilities__CollectionWrapper);
+    func_?(&TypeRef__System__Collections__Generic__ICollection);
+    func_?(&TypeRef__System__Collections__Generic__IEnumerable);
+    func_?(&TypeInfo__Newtonsoft__Json__Serialization__JsonTypeReflector);
+    func_?(&TypeRef__System__Collections__Generic__List);
+    func_?(&
+                    Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>_MethodInfo__Newtonsoft__Json__Utilities__ReflectionDelegateFactory__CreateMethodCall<System::Object>_System__Reflection__MethodBase_
+                   );
+    func_?(&TypeInfo__System__Type);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  pIVar1 = TypeRef__Newtonsoft__Json__Utilities__CollectionWrapper;
-  if ((this->fields)._genericWrapperType != (Type *)0x0) {
-    return;
-  }
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  pJVar1 = this;
+  pTVar2 = (this->fields)._genericWrapperType;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                     ((RuntimeTypeHandle)pIVar1,(MethodInfo *)0x0);
-  pTVar3 = (Type__Array *)func_?(TypeInfo__System__Type,1);
-  pTVar4 = (this->fields)._CollectionItemType_k__BackingField;
-  if (pTVar3 == (Type__Array *)0x0) goto code_?;
-  if ((pTVar4 == (Type *)0x0) ||
-     (iVar5 = func_?(pTVar4,(pTVar3->klass->_0).element_class), iVar5 != 0)) {
-    if (pTVar3->max_length == 0) goto code_?;
-    pTVar3->vector[0] = pTVar4;
+  bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    ((Object **)pTVar2,(Object **)0x0,(MethodInfo *)0x0);
+  pIVar4 = TypeRef__Newtonsoft__Json__Utilities__CollectionWrapper;
+  if (bVar3 == 0) {
+    return;
+  }
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Type);
+  }
+  this = (JsonArrayContract *)
+         mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                   ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+  pTVar5 = (Type__Array *)func_?(TypeInfo__System__Type,1);
+  pTVar2 = (pJVar1->fields)._CollectionItemType_k__BackingField;
+  if (pTVar5 == (Type__Array *)0x0) goto code_?;
+  if ((pTVar2 == (Type *)0x0) || (iVar6 = func_?(), iVar6 != 0)) {
+    if (pTVar5->max_length == 0) goto code_?;
+    pTVar5->vector[0] = pTVar2;
+    func_?();
     pTVar2 = Json::Utilities::ReflectionUtils::ReflectionUtils_MakeGenericType
-                       (pTVar2,pTVar3,(MethodInfo *)0x0);
-    pTVar4 = (this->fields)._genericCollectionDefinitionType;
-    (this->fields)._genericWrapperType = pTVar2;
-    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)TypeRef__System__Collections__Generic__List,
-                        (MethodInfo *)0x0);
-    bVar6 = Json::Utilities::ReflectionUtils::ReflectionUtils_InheritsGenericDefinition
-                      (pTVar4,pTVar2,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
+                       ((Type *)this,pTVar5,(MethodInfo *)0x0);
+    (pJVar1->fields)._genericWrapperType = pTVar2;
+    func_?(&(pJVar1->fields)._genericWrapperType,pTVar2);
+    pTVar2 = (pJVar1->fields)._genericCollectionDefinitionType;
+    this = (JsonArrayContract *)0x0;
+    genericClassDefinition =
+         mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                   ((RuntimeTypeHandle)TypeRef__System__Collections__Generic__List,(MethodInfo *)0x0
+                   );
+    bVar3 = Json::Utilities::ReflectionUtils::ReflectionUtils_InheritsGenericDefinition_1
+                      (pTVar2,genericClassDefinition,(Type **)&this,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
 code_?:
-      pIVar1 = TypeRef__System__Collections__Generic__ICollection;
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+      pIVar4 = TypeRef__System__Collections__Generic__ICollection;
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)pIVar1,(MethodInfo *)0x0);
-      pTVar3 = (Type__Array *)func_?(TypeInfo__System__Type);
-      pTVar4 = (this->fields)._CollectionItemType_k__BackingField;
-      if (pTVar3 == (Type__Array *)0x0) goto code_?;
-      if ((pTVar4 != (Type *)0x0) &&
-         (iVar5 = func_?(pTVar4,(pTVar3->klass->_0).element_class), iVar5 == 0))
-      goto code_?;
-      if (pTVar3->max_length != 0) {
-        pTVar3->vector[0] = pTVar4;
-        pTVar4 = Json::Utilities::ReflectionUtils::ReflectionUtils_MakeGenericType
-                           (pTVar2,pTVar3,(MethodInfo *)0x0);
+      this = (JsonArrayContract *)
+             mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+      pTVar5 = (Type__Array *)func_?();
+      pTVar2 = (pJVar1->fields)._CollectionItemType_k__BackingField;
+      if (pTVar5 == (Type__Array *)0x0) goto code_?;
+      if ((pTVar2 == (Type *)0x0) || (iVar6 = func_?(), iVar6 != 0)) {
+        if (pTVar5->max_length == 0) goto code_?;
+        pTVar5->vector[0] = pTVar2;
+        func_?();
+        pTVar2 = Json::Utilities::ReflectionUtils::ReflectionUtils_MakeGenericType
+                           ((Type *)this,pTVar5,(MethodInfo *)0x0);
         goto code_?;
       }
       goto code_?;
     }
-    pTVar4 = (this->fields)._genericCollectionDefinitionType;
-    if (pTVar4 == (Type *)0x0) goto code_?;
-    pTVar4 = (Type *)(*(code *)(pTVar4->klass->vtable).GetGenericTypeDefinition.method)();
-    pIVar1 = TypeRef__System__Collections__Generic__IEnumerable;
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+    pTVar2 = (pJVar1->fields)._genericCollectionDefinitionType;
+    if (pTVar2 == (Type *)0x0) goto code_?;
+    left = (Object **)(*(pTVar2->klass->vtable).GetGenericTypeDefinition.methodPtr)();
+    pIVar4 = TypeRef__System__Collections__Generic__IEnumerable;
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
     }
     pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar1,(MethodInfo *)0x0);
-    if (pTVar4 == pTVar2) goto code_?;
-    pTVar4 = (this->fields)._genericCollectionDefinitionType;
+                       ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+    bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      (left,(Object **)pTVar2,(MethodInfo *)0x0);
+    if (bVar3 != 0) goto code_?;
+    pTVar2 = (pJVar1->fields)._genericCollectionDefinitionType;
 code_?:
-    pTVar2 = (this->fields)._genericWrapperType;
-    pTVar3 = (Type__Array *)func_?(TypeInfo__System__Type);
-    if (pTVar3 == (Type__Array *)0x0) {
+    this = (JsonArrayContract *)(pJVar1->fields)._genericWrapperType;
+    pTVar5 = (Type__Array *)func_?();
+    if (pTVar5 == (Type__Array *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       goto code_?;
     }
-    if ((pTVar4 == (Type *)0x0) ||
-       (iVar5 = func_?(pTVar4,(pTVar3->klass->_0).element_class), iVar5 != 0)) {
-      if (pTVar3->max_length == 0) goto code_?;
-      pTVar3->vector[0] = pTVar4;
-      if (pTVar2 != (Type *)0x0) {
-        pCVar7 = mscorlib.dll::System::Type::Type_GetConstructor(pTVar2,pTVar3,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__Newtonsoft__Json__Serialization__JsonTypeReflector->vtable).Equals.
-                    methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__Newtonsoft__Json__Serialization__JsonTypeReflector->_1).cctor_started == 0))
-        {
+    if ((pTVar2 == (Type *)0x0) || (iVar6 = func_?(), iVar6 != 0)) {
+      if (pTVar5->max_length == 0) goto code_?;
+      pTVar5->vector[0] = pTVar2;
+      func_?();
+      if (this != (JsonArrayContract *)0x0) {
+        pCVar7 = mscorlib.dll::System::Type::Type_GetConstructor
+                           ((Type *)this,pTVar5,(MethodInfo *)0x0);
+        if ((TypeInfo__Newtonsoft__Json__Serialization__JsonTypeReflector->_1).
+            cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         pRVar8 = JsonTypeReflector::JsonTypeReflector_get_ReflectionDelegateFactory
                            ((MethodInfo *)0x0);
         if (pRVar8 != (ReflectionDelegateFactory *)0x0) {
-          puVar9 = (undefined4 *)
-                    func_?((&(pRVar8->klass->vtable).Finalize)
-                                    [Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>_MethodInfo__Newtonsoft__Json__Utilities__ReflectionDelegateFactory__CreateMethodCall<System::Object>_System__Reflection__MethodBase_
-                                     ->flags].methodPtr,
-                                    Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>_MethodInfo__Newtonsoft__Json__Utilities__ReflectionDelegateFactory__CreateMethodCall<System::Object>_System__Reflection__MethodBase_
-                                   );
-          pMVar10 = (MethodCall_2_System_Object_System_Object_ *)
-                    (*(code *)*puVar9)(pRVar8,pCVar7,puVar9);
-          (this->fields)._genericWrapperCreator = pMVar10;
+          puVar9 = &stack0xfffffff4;
+          pMVar10 = 
+          Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>_MethodInfo__Newtonsoft__Json__Utilities__ReflectionDelegateFactory__CreateMethodCall<System::Object>_System__Reflection__MethodBase_
+          ;
+          func_?((&(pRVar8->klass->vtable).Equals)
+                          [Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>_MethodInfo__Newtonsoft__Json__Utilities__ReflectionDelegateFactory__CreateMethodCall<System::Object>_System__Reflection__MethodBase_
+                           ->slot].method);
+          pMVar11 = (MethodCall_2_System_Object_System_Object_ *)
+                    (*(code *)pMVar10)(pRVar8,pCVar7,puVar9);
+          (pJVar1->fields)._genericWrapperCreator = pMVar11;
+          func_?(&(pJVar1->fields)._genericWrapperCreator,pMVar11);
           return;
         }
       }
@@ -263,23 +328,16 @@ code_?:
   }
   else {
 code_?:
-    uVar11 = func_?(0,0);
-    func_?(uVar11);
+    func_?();
+    func_?();
 code_?:
-    uVar11 = func_?(0);
-    func_?(uVar11);
-code_?:
-    uVar11 = func_?(0,0);
-    func_?(uVar11);
-code_?:
-    uVar11 = func_?(0);
-    func_?(uVar11);
+    func_?();
+    func_?();
   }
-  uVar11 = func_?(0,0);
-  func_?(uVar11);
+  func_?();
+  func_?();
 code_?:
-  uVar11 = func_?(0,0);
-  func_?(uVar11);
+  func_?();
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
   return;
@@ -294,46 +352,53 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonArrayContract::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__System__Collections__Generic__ICollection);
+    func_?(&TypeRef__System__Collections__Generic__IEnumerable);
+    func_?(&TypeRef__System__Collections__Generic__IList);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   if (type == (Type *)0x0) {
-    func_?(0);
+    func_?();
     pcVar1 = (code *)swi(3);
     bVar2 = (*pcVar1)();
     return bVar2;
   }
-  cVar3 = (*(code *)(type->klass->vtable).get_IsGenericType.method)
-                    (type,(type->klass->vtable).MakeGenericType.methodPtr);
+  cVar3 = (*(type->klass->vtable).get_IsGenericType.methodPtr)
+                    (type,(type->klass->vtable).get_IsGenericType.method);
   if (cVar3 == '\0') {
     return 0;
   }
-  pTVar4 = (Type *)(*(code *)(type->klass->vtable).GetGenericTypeDefinition.method)
-                             (type,(type->klass->vtable).get_IsGenericType.methodPtr);
-  pIVar5 = TypeRef__System__Collections__Generic__IList;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  left = (Object **)
+         (*(type->klass->vtable).GetGenericTypeDefinition.methodPtr)
+                   (type,(type->klass->vtable).GetGenericTypeDefinition.method);
+  pIVar4 = TypeRef__System__Collections__Generic__IList;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                     ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
-  pIVar5 = TypeRef__System__Collections__Generic__ICollection;
-  if (pTVar4 != pTVar6) {
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__Type);
+  pTVar5 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                     ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+  bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                    (left,(Object **)pTVar5,(MethodInfo *)0x0);
+  pIVar4 = TypeRef__System__Collections__Generic__ICollection;
+  if (bVar2 == 0) {
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
-    pIVar5 = TypeRef__System__Collections__Generic__IEnumerable;
-    if (pTVar4 != pTVar6) {
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+    pTVar5 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      (left,(Object **)pTVar5,(MethodInfo *)0x0);
+    pIVar4 = TypeRef__System__Collections__Generic__IEnumerable;
+    if (bVar2 == 0) {
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
-      return pTVar4 == pTVar6;
+      pTVar5 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                         ((RuntimeTypeHandle)pIVar4,(MethodInfo *)0x0);
+      bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                        (left,(Object **)pTVar5,(MethodInfo *)0x0);
+      return bVar2;
     }
   }
   return 1;
@@ -346,207 +411,219 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonArrayContract::
      JsonArrayContract__ctor(JsonArrayContract *this,Type *underlyingType,MethodInfo *method)
 
 {
-  pJVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__System__Collections__Generic__HashSet);
+    func_?(&TypeRef__System__Collections__Generic__ICollection);
+    func_?(&TypeRef__System__Collections__Generic__IEnumerable);
+    func_?(&TypeRef__System__Collections__Generic__List);
+    func_?(&TypeInfo__System__Type);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_underlyingType);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
-            ((Object *)underlyingType,StringLiteral_underlyingType,(MethodInfo *)0x0);
-  (this->fields)._._UnderlyingType_k__BackingField = underlyingType;
-  (this->fields)._._CreatedType_k__BackingField = underlyingType;
-  pIVar2 = TypeRef__System__Collections__Generic__ICollection;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  if (underlyingType == (Type *)0x0) {
+    paramName = StringLiteral_underlyingType;
+    uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_00 = (ArgumentNullException *)func_?(uVar1);
+    func_?(this_00);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_00,paramName,(MethodInfo *)0x0);
+    uVar1 = func_?(&
+                            MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
+                           );
+    func_?(this_00,uVar1);
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
     func_?();
   }
-  pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                     ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-  implementingType = &(this->fields)._genericCollectionDefinitionType;
-  bVar4 = Json::Utilities::ReflectionUtils::ReflectionUtils_ImplementsGenericDefinition_1
-                    (underlyingType,pTVar3,implementingType,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
-    if (underlyingType == (Type *)0x0) {
-code_?:
-      func_?();
-code_?:
-      func_?();
-      func_?();
-      goto code_?;
+  else {
+    (this->fields)._._UnderlyingType_k__BackingField = underlyingType;
+    func_?(&this->fields,underlyingType);
+    (this->fields)._._CreatedType_k__BackingField = underlyingType;
+    func_?(&(this->fields)._._CreatedType_k__BackingField,underlyingType);
+    pIVar2 = TypeRef__System__Collections__Generic__ICollection;
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Type);
     }
-    cVar5 = (*(code *)(underlyingType->klass->vtable).get_IsGenericType.method)();
-    if (cVar5 != '\0') {
-      (*(code *)(underlyingType->klass->vtable).GetGenericTypeDefinition.method)();
-      pIVar2 = TypeRef__System__Collections__Generic__IEnumerable;
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
+    pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+    bVar4 = Json::Utilities::ReflectionUtils::ReflectionUtils_ImplementsGenericDefinition_1
+                      (underlyingType,pTVar3,&(this->fields)._genericCollectionDefinitionType,
+                       (MethodInfo *)0x0);
+    if (bVar4 == 0) {
+      cVar5 = (*(underlyingType->klass->vtable).get_IsGenericType.methodPtr)();
+      if (cVar5 != '\0') {
+        ppOVar6 = (Object **)
+                  (*(underlyingType->klass->vtable).GetGenericTypeDefinition.methodPtr)
+                            (underlyingType);
+        pIVar2 = TypeRef__System__Collections__Generic__IEnumerable;
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Type);
+        }
+        pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+        bVar4 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                          (ppOVar6,(Object **)pTVar3,(MethodInfo *)0x0);
+        pIVar2 = TypeRef__System__Collections__Generic__IEnumerable;
+        if (bVar4 != 0) {
+          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                             ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+          (this->fields)._genericCollectionDefinitionType = pTVar3;
+          func_?(&(this->fields)._genericCollectionDefinitionType);
+          iVar7 = (*(underlyingType->klass->vtable).GetGenericArguments.methodPtr)
+                            (underlyingType,
+                             (underlyingType->klass->vtable).GetGenericArguments.method);
+          goto code_?;
+        }
       }
-      pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-      handle = TypeRef__System__Collections__Generic__IEnumerable;
-      if ((Type *)pIVar2 != pTVar3) goto code_?;
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-      (this->fields)._genericCollectionDefinitionType = pTVar3;
-      iVar6 = (*(code *)(underlyingType->klass->vtable).GetGenericArguments.method)();
-      if (iVar6 == 0) goto code_?;
-      if (*(int *)(iVar6 + 0xc) != 0) goto code_?;
-      goto code_?;
-    }
+      pTVar3 = Json::Utilities::ReflectionUtils::ReflectionUtils_GetCollectionItemType
+                         ((this->fields)._._UnderlyingType_k__BackingField,(MethodInfo *)0x0);
 code_?:
-    pTVar3 = Json::Utilities::ReflectionUtils::ReflectionUtils_GetCollectionItemType
-                       ((this->fields)._._UnderlyingType_k__BackingField,(MethodInfo *)0x0);
-code_?:
-    (this->fields)._CollectionItemType_k__BackingField = pTVar3;
-    if (pTVar3 != (Type *)0x0) {
-      bVar4 = Json::Utilities::ReflectionUtils::ReflectionUtils_IsNullableType
-                        (pTVar3,(MethodInfo *)0x0);
-      (this->fields)._isCollectionItemTypeNullableType = bVar4;
-    }
-    pTVar3 = (this->fields)._._UnderlyingType_k__BackingField;
-    if (cRam_? == '\0') {
+      (this->fields)._CollectionItemType_k__BackingField = pTVar3;
       func_?();
-      cRam_? = '\x01';
-    }
-    if (pTVar3 == (Type *)0x0) goto code_?;
-    cVar5 = (*(code *)(pTVar3->klass->vtable).get_IsGenericType.method)();
-    if (cVar5 == '\0') {
-code_?:
-      pIVar2 = TypeRef__System__Collections__Generic__HashSet;
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
+      left._source = (CancellationTokenSource *)(this->fields)._CollectionItemType_k__BackingField;
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Type);
       }
-      pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-      if (pTVar3 != (Type *)0x0) {
-        cVar5 = (*(code *)(pTVar3->klass->vtable).IsAssignableFrom.method)();
+      bVar4 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+                        (left,(CancellationToken)0x0,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        bVar4 = Json::Utilities::ReflectionUtils::ReflectionUtils_IsNullableType
+                          ((this->fields)._CollectionItemType_k__BackingField,(MethodInfo *)0x0);
+        (this->fields)._isCollectionItemTypeNullableType = bVar4;
+      }
+      pTVar3 = (this->fields)._._UnderlyingType_k__BackingField;
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?(&TypeInfo__System__Type);
+        cRam_? = '\x01';
+      }
+      if (pTVar3 == (Type *)0x0) goto code_?;
+      cVar5 = (*(pTVar3->klass->vtable).get_IsGenericType.methodPtr)();
+      if (cVar5 == '\0') {
+code_?:
+        pIVar2 = TypeRef__System__Collections__Generic__HashSet;
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+        if (pTVar3 == (Type *)0x0) goto code_?;
+        cVar5 = (*(pTVar3->klass->vtable).IsAssignableFrom.methodPtr)();
         pIVar2 = TypeRef__System__Collections__Generic__HashSet;
         if (cVar5 == '\0') {
 code_?:
-          this_00 = (MVSimpleOneSeatVehicle *)(pJVar1->fields)._._UnderlyingType_k__BackingField;
-          if (this_00 != (MVSimpleOneSeatVehicle *)0x0) {
-            MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_DeSelect(this_00,(MethodInfo *)0x0);
-            if (extraout_AL == '\0') {
-              (pJVar1->fields)._IsMultidimensionalArray_k__BackingField = 0;
+          pTVar3 = (this->fields)._._UnderlyingType_k__BackingField;
+          if (pTVar3 != (Type *)0x0) {
+            bVar4 = mscorlib.dll::System::Type::Type_get_IsArray(pTVar3,(MethodInfo *)0x0);
+            if (bVar4 == 0) {
+              (this->fields)._IsMultidimensionalArray_k__BackingField = 0;
               return;
             }
-            pTStack7 = (pJVar1->fields)._._UnderlyingType_k__BackingField;
-            if (pTStack7 != (Type *)0x0) {
-              pIStack8 = (pTStack7->klass->vtable).__unknown_12.methodPtr;
-              iVar6 = (*(code *)(pTStack7->klass->vtable).GetArrayRank.method)();
-              (pJVar1->fields)._IsMultidimensionalArray_k__BackingField = 1 < iVar6;
+            pTVar3 = (this->fields)._._UnderlyingType_k__BackingField;
+            if (pTVar3 != (Type *)0x0) {
+              pTVar8 = pTVar3->klass;
+              pMStack9 = (pTVar8->vtable).GetArrayRank.method;
+              iVar7 = (*(pTVar8->vtable).GetArrayRank.methodPtr)();
+              (this->fields)._IsMultidimensionalArray_k__BackingField = 1 < iVar7;
               return;
             }
           }
+          goto code_?;
         }
-        else {
-          if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                  ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+        innerTypes = (Type__Array *)func_?();
+        pTVar3 = (this->fields)._CollectionItemType_k__BackingField;
+        if (innerTypes == (Type__Array *)0x0) goto code_?;
+        if ((pTVar3 == (Type *)0x0) || (iVar7 = func_?(), iVar7 != 0))
+        goto code_?;
+        goto code_?;
+      }
+      ppOVar6 = (Object **)(*(pTVar3->klass->vtable).GetGenericTypeDefinition.methodPtr)(pTVar3);
+      pIVar2 = TypeRef__System__Collections__Generic__IList;
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Type);
+      }
+      pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                         ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+      bVar4 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                        (ppOVar6,(Object **)pTVar3,(MethodInfo *)0x0);
+      pIVar2 = TypeRef__System__Collections__Generic__ICollection;
+      if (bVar4 == 0) {
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+        bVar4 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                          (ppOVar6,(Object **)pTVar3,(MethodInfo *)0x0);
+        pIVar2 = TypeRef__System__Collections__Generic__IEnumerable;
+        if (bVar4 == 0) {
+          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pJVar9 = (JsonArrayContract *)
-                   mscorlib.dll::System::Type::Type_GetTypeFromHandle
+          pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                              ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-          innerTypes = (Type__Array *)func_?();
-          pTVar3 = (this->fields)._CollectionItemType_k__BackingField;
-          if (innerTypes != (Type__Array *)0x0) {
-            this = pJVar9;
-            if ((pTVar3 != (Type *)0x0) && (iVar6 = func_?(), iVar6 == 0))
-            goto code_?;
-            goto code_?;
-          }
+          bVar4 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                            (ppOVar6,(Object **)pTVar3,(MethodInfo *)0x0);
+          if (bVar4 == 0) goto code_?;
         }
       }
-      goto code_?;
-    }
-    pTVar3 = (Type *)(*(code *)(pTVar3->klass->vtable).GetGenericTypeDefinition.method)();
-    pIVar2 = TypeRef__System__Collections__Generic__IList;
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pTVar10 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-    pIVar2 = TypeRef__System__Collections__Generic__ICollection;
-    if (pTVar3 == pTVar10) {
+      pIVar2 = TypeRef__System__Collections__Generic__List;
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
+      innerTypes = (Type__Array *)func_?(TypeInfo__System__Type);
+      pTVar3 = (this->fields)._CollectionItemType_k__BackingField;
+      if (innerTypes == (Type__Array *)0x0) goto code_?;
+      if ((pTVar3 != (Type *)0x0) && (iVar7 = func_?(), iVar7 == 0)) goto code_?;
 code_?:
-      bVar11 = true;
+      if (innerTypes->max_length != 0) {
+        innerTypes->vector[0] = pTVar3;
+        func_?();
+        pTVar3 = Json::Utilities::ReflectionUtils::ReflectionUtils_MakeGenericType
+                           (pTVar3,innerTypes,(MethodInfo *)0x0);
+        (this->fields)._._CreatedType_k__BackingField = pTVar3;
+        func_?(&(this->fields)._._CreatedType_k__BackingField);
+        goto code_?;
+      }
     }
     else {
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pTVar10 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-      pIVar2 = TypeRef__System__Collections__Generic__IEnumerable;
-      if (pTVar3 == pTVar10) goto code_?;
-      if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pTVar10 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-      bVar11 = pTVar3 == pTVar10;
-    }
-    pIVar2 = TypeRef__System__Collections__Generic__List;
-    if (!bVar11) goto code_?;
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pJVar9 = (JsonArrayContract *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-    innerTypes = (Type__Array *)func_?();
-    pTVar3 = (this->fields)._CollectionItemType_k__BackingField;
-    if (innerTypes == (Type__Array *)0x0) goto code_?;
-    this = pJVar9;
-    if ((pTVar3 != (Type *)0x0) && (iVar6 = func_?(), iVar6 == 0)) goto code_?;
+      pTVar3 = (this->fields)._genericCollectionDefinitionType;
+      if (pTVar3 == (Type *)0x0) goto code_?;
+      iVar7 = (*(pTVar3->klass->vtable).GetGenericArguments.methodPtr)();
 code_?:
-    if (innerTypes->max_length != 0) {
-      innerTypes->vector[0] = pTVar3;
-      pTVar3 = Json::Utilities::ReflectionUtils::ReflectionUtils_MakeGenericType
-                         ((Type *)this,innerTypes,(MethodInfo *)0x0);
-      (pJVar1->fields)._._CreatedType_k__BackingField = pTVar3;
-      goto code_?;
+      if (iVar7 == 0) goto code_?;
+      if (*(int *)(iVar7 + 0xc) != 0) {
+        pTVar3 = *(Type **)(iVar7 + 0x10);
+        goto code_?;
+      }
     }
   }
-  else {
-    pTVar3 = *implementingType;
-    if ((pTVar3 == (Type *)0x0) ||
-       (iVar6 = (*(code *)(pTVar3->klass->vtable).GetGenericArguments.method)(), iVar6 == 0))
-    goto code_?;
-    if (*(int *)(iVar6 + 0xc) != 0) {
-code_?:
-      pTVar3 = *(Type **)(iVar6 + 0x10);
-      goto code_?;
-    }
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-  }
-  func_?();
   func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

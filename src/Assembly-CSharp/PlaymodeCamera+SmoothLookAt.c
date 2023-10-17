@@ -6,19 +6,21 @@ void Assembly-CSharp.dll::PlaymodeCamera+SmoothLookAt::PlaymodeCamera_SmoothLook
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).prevVelocities;
-  if (this_00 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
-    System.dll::System::Collections::Generic::Queue`1[System::Int32]::Queue_1_System_Int32__Clear
-              ((Queue_1_System_Int32_ *)this_00,
+  this_00 = (Queue_1_GameCoinStringRenderer_PriceTagString_ *)(this->fields).prevVelocities;
+  if (this_00 != (Queue_1_GameCoinStringRenderer_PriceTagString_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Queue`1[GameCoinStringRenderer+PriceTagString]::
+    Queue_1_GameCoinStringRenderer_PriceTagString__Clear
+              (this_00,
                MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Clear__);
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&puStack_2);
+  func_?(uVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -35,138 +37,154 @@ Vector3 * Assembly-CSharp.dll::PlaymodeCamera+SmoothLookAt::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff90;
-  puVar5 = &stack0xffffff90;
+  puStack_4 = &stack0xffffff7c;
+  puVar5 = &stack0xffffff7c;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Dequeue__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Enqueue_UnityEngine__Vector3_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__get_Count__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  func_?();
-  pQVar6 = (this->fields).prevVelocities;
-  puStack_4 = &stack0xffffff90;
-  puStack_7 = (undefined4 *)&stack0xffffff90;
+  auStack_6._0_4_ = (Queue_1_UnityEngine_Vector3___Class *)0x0;
+  auStack_6._4_4_ = (MonitorData *)0x0;
+  auStack_6._8_4_ = (Vector3__Array *)0x0;
+  auStack_6._12_4_ = 0.0;
+  __return_storage_ptr__->x = 0.0;
+  __return_storage_ptr__->y = 0.0;
+  __return_storage_ptr__->z = 0.0;
+  pQVar7 = (this->fields).prevVelocities;
+  auStack_6._16_4_ = 0.0;
+  auStack_6._20_4_ = 0.0;
   do {
-    if (pQVar6 == (Queue_1_UnityEngine_Vector3_ *)0x0) {
+    if (pQVar7 == (Queue_1_UnityEngine_Vector3_ *)0x0) {
 code_?:
-      func_?(0);
-      func_?(unaff_EBX,0,0);
-      pcVar8 = (code *)swi(3);
-      pVVar9 = (Vector3 *)(*pcVar8)();
-      return pVVar9;
+      uVar8 = func_?();
+      func_?(uVar8);
+      pcVar9 = (code *)swi(3);
+      pVVar10 = (Vector3 *)(*pcVar9)();
+      return pVVar10;
     }
-    pIVar10 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)pQVar6,
-                        MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__get_Count__
-                       );
-    if ((int)pIVar10 < (this->fields).samleLength) {
-      pQVar6 = (this->fields).prevVelocities;
-      fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                         ((MethodInfo *)0x0);
-      VStack_12.z = fVar11;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?();
-      }
-      auVar13._4_8_ = 0;
-      auVar13._0_4_ = velocity.y;
-      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                         ((Vector3 *)&QStack_14,(Vector3)(auVar13 << 0x20),VStack_12.z,
-                          (MethodInfo *)0x0);
-      if (pQVar6 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
-        System.dll::System::Collections::Generic::Queue`1[UnityEngine::Vector3]::
+    if ((pQVar7->fields)._size < (this->fields).samleLength) {
+      pQStack_11 = (this->fields).prevVelocities;
+      fStack_12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                            ((MethodInfo *)0x0);
+      fStack_13 = fStack_12 * 0.0;
+      uStack_14 = CONCAT44(velocity.y * fStack_12,fStack_12 * 0.0);
+      if (pQStack_11 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
+        item.y = velocity.y * fStack_12;
+        item.x = fStack_12 * 0.0;
+        item.z = fStack_13;
+        mscorlib.dll::System::Collections::Generic::Queue`1[UnityEngine::Vector3]::
         Queue_1_UnityEngine_Vector3__Enqueue
-                  (pQVar6,*pVVar9,
+                  (pQStack_11,item,
                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Enqueue_UnityEngine__Vector3_
                   );
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                           ((Vector3 *)&QStack_14,(MethodInfo *)0x0);
-        iStack_15 = (int32_t)pVVar9->x;
-        iStack_16 = (int32_t)pVVar9->y;
-        fStack_17 = pVVar9->z;
-        pQVar6 = (this->fields).prevVelocities;
-        if (pQVar6 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
-          System.dll::System::Collections::Generic::Queue`1[System::Int32]::
-          Queue_1_System_Int32__GetEnumerator
-                    (&QStack_14,(Queue_1_System_Int32_ *)pQVar6,
-                     MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__GetEnumerator__
-                    );
-          uStack_1 = 0;
-          while (cVar18 = func_?(), cVar18 != '\0') {
-            puVar19 = (undefined8 *)func_?();
-            VStack_12.y = (float)iStack_15;
-            VStack_12.z = (float)iStack_16;
-            QStack_14._4_8_ = *puVar19;
-            fVar11 = *(float *)(puVar19 + 1);
-            if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-              func_?(TypeInfo__UnityEngine__Vector3);
-            }
-            a.z = fStack_17;
-            a.x = VStack_12.y;
-            a.y = VStack_12.z;
-            b.z = fVar11;
-            b.x = (float)QStack_14.idx;
-            b.y = (float)QStack_14.ver;
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                               ((Vector3 *)&stack0xffffff9c,a,b,(MethodInfo *)0x0);
-            iStack_15 = (int32_t)pVVar9->x;
-            iStack_16 = (int32_t)pVVar9->y;
-            fStack_17 = pVVar9->z;
-          }
-          unaff_EBX = 0;
-          *puStack_7 = 0x99;
-          uStack_1 = 0xffffffff;
+        if (cRam_? == '\0') {
+          auStack_6._8_4_ = &TypeInfo__UnityEngine__Vector3;
+          auStack_6._4_4_ = &UNK_?;
           func_?();
-          pQVar6 = (this->fields).prevVelocities;
-          QStack_14.idx = iStack_15;
-          QStack_14.ver = iStack_16;
-          if (pQVar6 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
-            pIVar10 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                     KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                     KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                               ((KogamaSettingNumericBase_1_System_Single_ *)pQVar6,
-                                MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__get_Count__
-                               );
-            if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-              func_?();
+          cRam_? = '\x01';
+        }
+        pVVar15 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar16 = (pVVar15->zeroVector).y;
+        fVar17 = (pVVar15->zeroVector).z;
+        __return_storage_ptr__->x = (pVVar15->zeroVector).x;
+        __return_storage_ptr__->y = fVar16;
+        __return_storage_ptr__->z = fVar17;
+        this_00 = (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)
+                  (this->fields).prevVelocities;
+        if (this_00 != (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0) {
+          pQVar18 = mscorlib.dll::System::Collections::Generic::
+                   Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+                   Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__GetEnumerator
+                             ((Queue_1_T_Enumerator_NotificationAreaSingleInstanceQueue_NotificationQueueData_
+                               *)(auStack_6 + 0x18),this_00,
+                              MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__GetEnumerator__
+                             );
+          uStack_19 = 0;
+          auStack_6._0_4_ = pQVar18->_q;
+          auStack_6._4_4_ = pQVar18->_version;
+          auStack_6._8_4_ = pQVar18->_index;
+          auStack_6._12_4_ = (pQVar18->_currentElement).notificationType;
+          auStack_6._16_4_ = (pQVar18->_currentElement).data;
+          auStack_6._20_4_ = (pQVar18->_currentElement).startTime;
+          uStack_1 = 1;
+          pQStack_11 = (Queue_1_UnityEngine_Vector3_ *)auStack_6;
+          while (bVar20 = mscorlib.dll::System::Collections::Generic::
+                         Queue`1[T]+Enumerator[UnityEngine::Vector3]::
+                         Queue_1_T_Enumerator_UnityEngine_Vector3__MoveNext
+                                   ((Queue_1_T_Enumerator_UnityEngine_Vector3_ *)auStack_6,
+                                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                                   ), bVar20 != 0) {
+            pVVar10 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[UnityEngine
+                      ::Vector3]::Queue_1_T_Enumerator_UnityEngine_Vector3__get_Current
+                                (&VStack_21,(Queue_1_T_Enumerator_UnityEngine_Vector3_ *)auStack_6,
+                                 MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
+                                );
+            uStack_22._0_4_ = __return_storage_ptr__->x;
+            uStack_22._4_4_ = __return_storage_ptr__->y;
+            fStack_23 = __return_storage_ptr__->z;
+            uStack_14._0_4_ = pVVar10->x;
+            uStack_14._4_4_ = pVVar10->y;
+            fStack_13 = pVVar10->z;
+            VStack_24.z = fStack_13 + fStack_23;
+            __return_storage_ptr__->x = (float)(undefined4)uStack_14 + (float)uStack_22;
+            __return_storage_ptr__->y = (float)uStack_14._4_4_ + uStack_22._4_4_;
+            __return_storage_ptr__->z = VStack_24.z;
+          }
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::Collections::Generic::
+          Queue`1[T]+Enumerator[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+          Queue_1_T_Enumerator_NotificationAreaSingleInstanceQueue_NotificationQueueData__Dispose
+                    ((Queue_1_T_Enumerator_NotificationAreaSingleInstanceQueue_NotificationQueueData_
+                      *)auStack_6,
+                     MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                    );
+          uStack_1 = 0xffffffff;
+          fStack_23 = __return_storage_ptr__->z;
+          uStack_22._0_4_ = __return_storage_ptr__->x;
+          uStack_22._4_4_ = __return_storage_ptr__->y;
+          pQVar7 = (this->fields).prevVelocities;
+          if (pQVar7 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
+            fVar17 = (float)(pQVar7->fields)._size;
+            VStack_24.z = fStack_23 / fVar17;
+            __return_storage_ptr__->x = (float)uStack_22 / fVar17;
+            __return_storage_ptr__->y = uStack_22._4_4_ / fVar17;
+            __return_storage_ptr__->z = VStack_24.z;
+            fVar17 = (this->fields).maxMag;
+            if (fVar17 * fVar17 <
+                __return_storage_ptr__->x * __return_storage_ptr__->x +
+                __return_storage_ptr__->y * __return_storage_ptr__->y +
+                __return_storage_ptr__->z * __return_storage_ptr__->z) {
+              puVar25 = (undefined8 *)func_?(&VStack_21,__return_storage_ptr__,0);
+              fVar17 = (this->fields).maxMag;
+              fVar16 = *(float *)(puVar25 + 1);
+              uStack_22._0_4_ = (float)*puVar25;
+              uStack_22._4_4_ = (float)((ulonglong)*puVar25 >> 0x20);
+              __return_storage_ptr__->x = (float)uStack_22 * fVar17;
+              __return_storage_ptr__->y = uStack_22._4_4_ * fVar17;
+              __return_storage_ptr__->z = fVar16 * fVar17;
             }
-            a_00.z = fStack_17;
-            a_00.x = (float)QStack_14.idx;
-            a_00.y = (float)QStack_14.ver;
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Division
-                               ((Vector3 *)&stack0xffffff9c,a_00,(float)(int)pIVar10,
-                                (MethodInfo *)0x0);
-            uVar20._0_4_ = pVVar9->x;
-            uVar20._4_4_ = pVVar9->y;
-            fVar21 = pVVar9->z;
-            fVar22 = (float10)func_?();
-            fVar11 = (this->fields).maxMag;
-            if (fVar11 * fVar11 < (float)fVar22) {
-              puVar19 = (undefined8 *)func_?();
-              fVar11 = (this->fields).maxMag;
-              QStack_14._4_8_ = *puVar19;
-              fVar21 = *(float *)(puVar19 + 1);
-              if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-                func_?();
-              }
-              a_01.z = fVar21;
-              a_01.x = (float)QStack_14.idx;
-              a_01.y = (float)QStack_14.ver;
-              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Multiply
-                                 (&VStack_12,a_01,fVar11,(MethodInfo *)0x0);
-              uVar20._0_4_ = pVVar9->x;
-              uVar20._4_4_ = pVVar9->y;
-              fVar21 = pVVar9->z;
-            }
-            __return_storage_ptr__->x = (float)(int)uVar20;
-            __return_storage_ptr__->y = (float)(int)((ulonglong)uVar20 >> 0x20);
-            __return_storage_ptr__->z = fVar21;
             *unaff_FS_OFFSET = uStack_3;
             return __return_storage_ptr__;
           }
@@ -174,13 +192,12 @@ code_?:
       }
       goto code_?;
     }
-    pQVar6 = (this->fields).prevVelocities;
-    if (pQVar6 == (Queue_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-    System.dll::System::Collections::Generic::Queue`1[UnityEngine::Vector3]::
+    if (pQVar7 == (Queue_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Queue`1[UnityEngine::Vector3]::
     Queue_1_UnityEngine_Vector3__Dequeue
-              ((Vector3 *)&QStack_14,pQVar6,
+              (&VStack_24,pQVar7,
                MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Dequeue__);
-    pQVar6 = (this->fields).prevVelocities;
+    pQVar7 = (this->fields).prevVelocities;
   } while( true );
 }
 
@@ -192,20 +209,30 @@ void Assembly-CSharp.dll::PlaymodeCamera+SmoothLookAt::PlaymodeCamera_SmoothLook
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__)
+    ;
+    func_?(&TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
     cRam_? = '\x01';
   }
   (this->fields).samleLength = 5;
-  method_00 = TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>;
-  this_00 = (Queue_1_UnityEngine_Vector3_ *)func_?();
-  System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-  Queue_1_SmoothPhysicsMovement_Package___ctor
-            ((Queue_1_SmoothPhysicsMovement_Package_ *)this_00,
-             MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
-  (this->fields).prevVelocities = this_00;
-  (this->fields).maxMag = 30.0;
-  ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,(MethodInfo *)method_00);
+  this_00 = (Queue_1_UnityEngine_Vector3_ *)
+            func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
+  if (this_00 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+    Stack_1_System_Object___ctor
+              ((Stack_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
+    method_00 = (MethodInfo *)&(this->fields).prevVelocities;
+    (this->fields).prevVelocities = this_00;
+    func_?(method_00,this_00);
+    (this->fields).maxMag = 30.0;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

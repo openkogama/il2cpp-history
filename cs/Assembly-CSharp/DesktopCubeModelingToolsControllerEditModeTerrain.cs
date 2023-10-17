@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class DesktopCubeModelingToolsControllerEditModeTerrain : DesktopCubeModelingToolsController
 {
@@ -16,10 +16,10 @@ public class DesktopCubeModelingToolsControllerEditModeTerrain : DesktopCubeMode
 	// Methods
 	public override void SetupButtons();
 	[CompilerGenerated]
-	private new void _SetupButtons_m__0();
+	private void _SetupButtons_b__0_0();
 	[CompilerGenerated]
-	private new void _SetupButtons_m__1();
+	private void _SetupButtons_b__0_1();
 	[CompilerGenerated]
-	private new void _SetupButtons_m__2();
+	private void _SetupButtons_b__0_2();
 }
 

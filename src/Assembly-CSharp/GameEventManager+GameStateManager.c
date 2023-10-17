@@ -8,20 +8,21 @@ void Assembly-CSharp.dll::GameEventManager+GameStateManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32_ *)(this->fields).gameStateType;
-  if (this_00 != (SubscribableVariable_1_System_Int32_ *)0x0) {
-    SubscribableVariable`1[System::Int32]::SubscribableVariable_1_System_Int32__set_ValueSet
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)(this->fields).gameStateType;
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum__set_ValueSet
               (this_00,gameState,
                MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__set_ValueSet_MV__Common__MVGameStateType_
               );
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -33,19 +34,34 @@ void Assembly-CSharp.dll::GameEventManager+GameStateManager::GameEventManager_Ga
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
+                   );
+    func_?(&
+                    TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
+                   );
     cRam_? = '\x01';
   }
-  this_00 = (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
+  this_00 = (SubscribableVariable_1_System_Object_ *)
             func_?(
                            TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
                            );
-  mscorlib.dll::System::Collections::ObjectModel::ReadOnlyCollection`1[UnityEngine::Vector2]::
-  ReadOnlyCollection_1_UnityEngine_Vector2__System_Collections_Generic_IList_T__get_Item
-            ((ReadOnlyCollection_1_UnityEngine_Vector2_ *)this_00,0,
-             MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
-            );
-  (this->fields).gameStateType = this_00;
+  if (this_00 != (SubscribableVariable_1_System_Object_ *)0x0) {
+    SubscribableVariable`1[System::Object]::SubscribableVariable_1_System_Object___ctor
+              (this_00,(Object *)0x0,
+               MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
+              );
+    method_00 = (MethodInfo *)&(this->fields).gameStateType;
+    (this->fields).gameStateType =
+         (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)this_00;
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

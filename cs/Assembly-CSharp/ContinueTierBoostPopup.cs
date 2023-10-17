@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ContinueTierBoostPopup : MonoBehaviour
 {
@@ -23,6 +23,8 @@ public class ContinueTierBoostPopup : MonoBehaviour
 	private UnityEngine.UI.Text continueRewardDescriptionText;
 	[SerializeField]
 	private UnityEngine.UI.Text tempClassContinueRewardDescriptionText;
+	[SerializeField]
+	private GameObject countdownGameObject;
 	[SerializeField]
 	private Image countdownFillImage;
 	[SerializeField]
@@ -48,86 +50,104 @@ public class ContinueTierBoostPopup : MonoBehaviour
 	[SerializeField]
 	private float countDownDuration;
 	[SerializeField]
-	private Image buttonAdImage;
-	private float timeLeft;
+	private Image buttonIcon;
 	private const string rewardDescription = "Keep playing as Tier {0}?";
-	private GamePassTier previousPreviewTier;
+	private float timeLeft;
 	private bool isWaitingForFreeTryTier;
 	private bool shouldUpdate;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache3;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache4;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache5;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache6;
+	private bool isSubscriber;
+	private GamePassTier previousPreviewTier;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _Update_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal bool isBlocked;
-		internal ContinueTierBoostPopup _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__33_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__33_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__33_2;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__34_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__35_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__36_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__36_1;
 
 		// Constructors
-		public _Update_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _OnClickSubscriber_b__24_0(IUIStack x, BaseEventData y);
+		internal void _RewardedAdCallback_b__33_0(IUIStack x, BaseEventData y);
+		internal void _RewardedAdCallback_b__33_1(IModalPopupCreator x, BaseEventData y);
+		internal void _RewardedAdCallback_b__33_2(IModalPopupCreator x, BaseEventData y);
+		internal void _StopPreviewTier_b__34_0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPlayerPlanetDataUpdated_b__35_0(IUIStack x, BaseEventData y);
+		internal void _ExitContinuePopup_b__36_0(IUIStack x, BaseEventData y);
+		internal void _ExitContinuePopup_b__36_1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowTierUnlock_c__AnonStorey1
+	private sealed class __c__DisplayClass28_0
 	{
 		// Fields
-		internal TierUnlockedPopupController tierUnlockedPopupController;
+		public bool isBlocked;
+		public ContinueTierBoostPopup __4__this;
 
 		// Constructors
-		public _ShowTierUnlock_c__AnonStorey1();
+		public __c__DisplayClass28_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowSpawnRoleSelectionMenu_c__AnonStorey2
+	private sealed class __c__DisplayClass29_0
 	{
 		// Fields
-		internal SpawnRoleMenu spawnRoleSelectionMenu;
+		public TierUnlockedPopupController tierUnlockedPopupController;
 
 		// Constructors
-		public _ShowSpawnRoleSelectionMenu_c__AnonStorey2();
+		public __c__DisplayClass29_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowTierUnlock_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ShowTeamSelectionMenu_c__AnonStorey3
+	private sealed class __c__DisplayClass30_0
 	{
 		// Fields
-		internal TeamMenu newTeamMenu;
+		public SpawnRoleMenu spawnRoleSelectionMenu;
 
 		// Constructors
-		public _ShowTeamSelectionMenu_c__AnonStorey3();
+		public __c__DisplayClass30_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _ShowSpawnRoleSelectionMenu_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass31_0
+	{
+		// Fields
+		public TeamMenu newTeamMenu;
+
+		// Constructors
+		public __c__DisplayClass31_0();
+
+		// Methods
+		internal void _ShowTeamSelectionMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
 	public ContinueTierBoostPopup();
 
 	// Methods
-	public void OnWatchAd();
+	public void OnClickWatchAd();
+	public void OnClickSubscriber();
 	public void OnDeclinePressed();
 	public void Initialize(int tier);
 	private void Start();
@@ -143,19 +163,5 @@ public class ContinueTierBoostPopup : MonoBehaviour
 	private bool IsInTempClass();
 	private bool CanSpawnInTeam(MVTeam team);
 	private void ChangeBackground(GamePassTier tier);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__0(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__1(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _RewardedAdCallback_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _StopPreviewTier_m__3(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnPlayerPlanetDataUpdated_m__4(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ExitContinuePopup_m__5(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ExitContinuePopup_m__6(IUIStack x, BaseEventData y);
 }
 

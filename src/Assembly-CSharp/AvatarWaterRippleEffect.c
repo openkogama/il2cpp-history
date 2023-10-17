@@ -6,90 +6,86 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__GameObject);
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+    func_?(&
+                    UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_AirBubbleCollitionPlane);
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object *)0x0;
   WaterSplashComponent::WaterSplashComponent_Initialize
             ((WaterSplashComponent *)this,obj,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar2 != MVGameMode__Enum_Edit) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?();
-    }
-    this_04 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-    if (this_04 == (WaterPlaneManager *)0x0) goto code_?;
-    bVar3 = WaterPlaneManager::WaterPlaneManager_get_IsActive(this_04,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
+  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+  if (MVar1 != MVGameMode__Enum_Edit) {
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
+    if (this_01 == (WaterPlaneManager *)0x0) goto code_?;
+    bVar2 = WaterPlaneManager::WaterPlaneManager_get_IsActive(this_01,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       return;
     }
   }
-  pXVar4 = (XpBoostParticlePreviewer *)func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-            ((GameObject *)pXVar4,StringLiteral_AirBubbleCollitionPlane,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  PStack_3.m_ParticleSystem = (ParticleSystem *)&UNK_?;
+  pGVar4 = (GameObject *)func_?();
+  if (pGVar4 != (GameObject *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+              (pGVar4,StringLiteral_AirBubbleCollitionPlane,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    PStack_3.m_ParticleSystem = (ParticleSystem *)&UNK_?;
+    pGVar4 = (GameObject *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)pGVar4,
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+    (this->fields).airBubbleCollitionPlane = pGVar4;
+    PStack_3.m_ParticleSystem = (ParticleSystem *)&UNK_?;
     func_?();
-  }
-  pXVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     (pXVar4,
-                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                     );
-  (this->fields).airBubbleCollitionPlane = (GameObject *)pXVar4;
-  if (pXVar4 != (XpBoostParticlePreviewer *)0x0) {
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       ((GameObject *)pXVar4,(MethodInfo *)0x0);
-    puVar6 = &stack0xffffffec;
-    pOStack_1 = (Object *)0x0;
-    fVar7 = 0.0;
-    uVar8 = 0x43340000;
-    func_?();
-    if (pTVar5 != (Transform *)0x0) {
-      eulers.y = (float)uVar8;
-      eulers.x = (float)puVar6;
-      eulers.z = fVar7;
+    pGVar4 = (this->fields).airBubbleCollitionPlane;
+    if ((pGVar4 != (GameObject *)0x0) &&
+       (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar4,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_1
-                (pTVar5,eulers,(MethodInfo *)0x0);
-      pXVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                         ((XpBoostParticlePreviewer *)(this->fields).airBubbleParticlesPrefab,
+                (pTVar5,(Vector3)ZEXT812(0x43340000),(MethodInfo *)0x0);
+      pPVar6 = (ParticleSystem *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)(this->fields).airBubbleParticlesPrefab,
                           UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
                          );
-      (this->fields).airBubbleParticles = (ParticleSystem *)pXVar4;
-      if (pXVar4 != (XpBoostParticlePreviewer *)0x0) {
-        pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                           ((Component_1 *)pXVar4,(MethodInfo *)0x0);
+      (this->fields).airBubbleParticles = pPVar6;
+      func_?(&(this->fields).airBubbleParticles,pPVar6);
+      pPVar6 = (this->fields).airBubbleParticles;
+      if (pPVar6 != (ParticleSystem *)0x0) {
+        pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pPVar6,(MethodInfo *)0x0);
         this_00 = (this->fields).avatar;
-        if ((this_00 != (Avatar_1 *)0x0) &&
-           (p = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                          ((Component_1 *)this_00,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
+        if ((this_00 != (Avatar *)0x0) &&
+           (p = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_00,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
                     (pTVar5,p,(MethodInfo *)0x0);
-          this_01 = (this->fields).airBubbleParticles;
-          if ((this_01 != (ParticleSystem *)0x0) &&
-             (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                                 ((Component_1 *)this_01,(MethodInfo *)0x0),
-             pTVar5 != (Transform *)0x0)) {
+          pPVar6 = (this->fields).airBubbleParticles;
+          if ((pPVar6 != (ParticleSystem *)0x0) &&
+             (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pPVar6,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0
+             )) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                       (pTVar5,(this->fields).airBubbleOffset,(MethodInfo *)0x0);
-            this_02 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                       *)(this->fields).airBubbleParticles;
-            if (this_02 !=
-                (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)0x0) {
-              pOStack_1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Int32,UnityEngine::Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-                          Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                                    (this_02,(MethodInfo *)0x0);
-              this_03 = (this->fields).airBubbleCollitionPlane;
-              if (this_03 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (this_03,(MethodInfo *)0x0);
-                func_?(&pOStack_1);
+            pPVar6 = (this->fields).airBubbleParticles;
+            if (pPVar6 != (ParticleSystem *)0x0) {
+              PStack_3 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                         ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
+              pGVar4 = (this->fields).airBubbleCollitionPlane;
+              if (pGVar4 != (GameObject *)0x0) {
+                pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
+                UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+CollisionModule::
+                ParticleSystem_CollisionModule_SetPlane_Injected
+                          (&PStack_3,0,pTVar5,(MethodInfo *)0x0);
                 (this->fields).isInitialized = 1;
                 return;
               }
@@ -101,8 +97,8 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -113,108 +109,91 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Updat
                (AvatarWaterRippleEffect *this,MethodInfo *method)
 
 {
-  pAVar1 = this;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   WaterSplashComponent::WaterSplashComponent_Update((WaterSplashComponent *)this,(MethodInfo *)0x0);
   if ((this->fields).isInitialized != 0) {
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-    if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
-    bVar3 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      pPVar4 = (this->fields).airBubbleParticles;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    pWVar1 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
+    if (pWVar1 == (WaterPlaneManager *)0x0) goto code_?;
+    bVar2 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar1,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      pPVar3 = (this->fields).airBubbleParticles;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pPVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)pPVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
         return;
       }
-      pDVar5 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)(this->fields).airBubbleParticles;
+      in_stack_4 = (this->fields).airBubbleParticles;
+      if (in_stack_4 == (ParticleSystem *)0x0) goto code_?;
+      in_stack_5 = (MethodInfo *)0x0;
     }
     else {
       this_00 = (this->fields).avatar;
-      if ((this_00 == (Avatar_1 *)0x0) ||
-         (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                              ((Component_1 *)this_00,(MethodInfo *)0x0),
-         pTVar6 == (Transform *)0x0)) goto code_?;
+      if ((this_00 == (Avatar *)0x0) ||
+         (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)this_00,(MethodInfo *)0x0), pTVar6 == (Transform *)0x0))
+      goto code_?;
       pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
+                         ((Vector3 *)&stack0xffffffd4,pTVar6,(MethodInfo *)0x0);
       fVar8 = pVVar7->y;
       this_01 = (this->fields).airBubbleCollitionPlane;
       if (this_01 == (GameObject *)0x0) goto code_?;
       pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (this_01,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-      if (((pWVar2 == (WaterPlaneManager *)0x0) ||
-          (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                               ((Component_1 *)pWVar2,(MethodInfo *)0x0),
-          this_02 == (Transform *)0x0)) ||
-         (pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffe4,this_02,(MethodInfo *)0x0),
-         pTVar6 == (Transform *)0x0)) goto code_?;
-      uVar9 = pVVar7->x;
-      uVar10 = pVVar7->y;
-      this = (AvatarWaterRippleEffect *)pVVar7->z;
-      fVar11 = (float)uVar10;
-      value.x = (float)uVar9;
-      value = (Vector3)CONCAT84(uVar12,value.x);
+                         (this_01,(MethodInfo *)0x0);
+      pWVar1 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
+      if (((pWVar1 == (WaterPlaneManager *)0x0) ||
+          (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pWVar1,(MethodInfo *)0x0), this_02 == (Transform *)0x0)
+          ) || (pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                   ((Vector3 *)&stack0xffffffd4,this_02,(MethodInfo *)0x0),
+               pTVar6 == (Transform *)0x0)) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (pTVar6,value,(MethodInfo *)0x0);
-      pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-      if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
-      fVar13 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(pWVar2,(MethodInfo *)0x0);
-      puVar14 = (undefined8 *)func_?();
-      pDVar5 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)(pAVar1->fields).airBubbleParticles;
-      if ((float)((ulonglong)*puVar14 >> 0x20) + fVar8 < fVar13) {
-        if (pDVar5 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                       *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-          Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-          Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                    (pDVar5,(MethodInfo *)0x0);
-          pPVar4 = (pAVar1->fields).airBubbleParticles;
-          if ((pPVar4 != (ParticleSystem *)0x0) &&
-             (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                        Component_1_get_transform((Component_1 *)pPVar4,(MethodInfo *)0x0),
-             pTVar6 != (Transform *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&stack0xffffffcc,pTVar6,(MethodInfo *)0x0);
-            pDVar5 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                      *)(pAVar1->fields).airBubbleParticles;
-            if (pDVar5 != (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                           *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-              Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-              Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                        (pDVar5,(MethodInfo *)0x0);
-              func_?();
-              func_?();
-              pPVar4 = (pAVar1->fields).airBubbleParticles;
-              if (pPVar4 != (ParticleSystem *)0x0) {
-                bVar3 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                        ParticleSystem_get_isPlaying(pPVar4,(MethodInfo *)0x0);
-                if (bVar3 != 0) {
+                (pTVar6,*pVVar7,(MethodInfo *)0x0);
+      pWVar1 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
+      if (pWVar1 == (WaterPlaneManager *)0x0) goto code_?;
+      fVar9 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(pWVar1,(MethodInfo *)0x0);
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_size
+                         ((Vector3 *)&stack0xffffffd4,&(this->fields)._.bounds,(MethodInfo *)0x0);
+      pPVar3 = (this->fields).airBubbleParticles;
+      if (fVar8 + pVVar7->y < fVar9) {
+        if (pPVar3 != (ParticleSystem *)0x0) {
+          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+          ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
+          pPVar3 = (this->fields).airBubbleParticles;
+          if ((pPVar3 != (ParticleSystem *)0x0) &&
+             (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pPVar3,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0
+             )) {
+            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffffd4,pTVar6,(MethodInfo *)0x0);
+            fVar8 = pVVar7->y;
+            pPVar3 = (this->fields).airBubbleParticles;
+            if (pPVar3 != (ParticleSystem *)0x0) {
+              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+              ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
+              fVar10 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+                      ParticleSystem_MainModule_get_startSpeedMultiplier_Injected
+                                ((ParticleSystem_MainModule *)&stack0xfffffff8,(MethodInfo *)0x0);
+              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+              ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
+                        ((ParticleSystem_MainModule *)&stack0xffffffec,(fVar9 - fVar8) / fVar10,
+                         (MethodInfo *)0x0);
+              pPVar3 = (this->fields).airBubbleParticles;
+              if (pPVar3 != (ParticleSystem *)0x0) {
+                bVar2 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                        ParticleSystem_get_isPlaying(pPVar3,(MethodInfo *)0x0);
+                if (bVar2 != 0) {
                   return;
                 }
-                pPVar4 = (pAVar1->fields).airBubbleParticles;
-                if (pPVar4 != (ParticleSystem *)0x0) {
+                pPVar3 = (this->fields).airBubbleParticles;
+                if (pPVar3 != (ParticleSystem *)0x0) {
                   UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                  ParticleSystem_Play_1(pPVar4,(MethodInfo *)0x0);
+                  ParticleSystem_Play_1(pPVar3,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -223,22 +202,21 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Updat
         }
         goto code_?;
       }
+      if (pPVar3 == (ParticleSystem *)0x0) goto code_?;
     }
-    if (pDVar5 == (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                   *)0x0) {
+    bVar2 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+            ParticleSystem_get_isPlaying(in_stack_4,in_stack_5);
+    if (bVar2 != 0) {
+      pPVar3 = (this->fields).airBubbleParticles;
+      if (pPVar3 == (ParticleSystem *)0x0) {
 code_?:
-      func_?();
-      pcVar15 = (code *)swi(3);
-      (*pcVar15)();
-      return;
-    }
-    bVar3 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-            ParticleSystem_get_isPlaying((ParticleSystem *)pDVar5,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pPVar4 = (pAVar1->fields).airBubbleParticles;
-      if (pPVar4 == (ParticleSystem *)0x0) goto code_?;
+        func_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                (pPVar4,(MethodInfo *)0x0);
+                (pPVar3,(MethodInfo *)0x0);
     }
   }
   return;
@@ -251,14 +229,12 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect__ctor
                (AvatarWaterRippleEffect *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  uStack_2 = 0;
-  func_?(&uStack_2,0,0x3fa9999a,0x3ecccccd,0);
-  (this->fields).airBubbleOffset.x = (float)(undefined4)uStack_2;
-  (this->fields).airBubbleOffset.y = (float)uStack_2._4_4_;
-  (this->fields).airBubbleOffset.z = fStack_1;
-  LockCursorManager3DMode::LockCursorManager3DMode__ctor
-            ((LockCursorManager3DMode *)this,(MethodInfo *)0x0);
+  uVar1 = (ulonglong)_UNK_?;
+  (this->fields).airBubbleOffset.x = (float)(int)(uVar1 << 0x20);
+  (this->fields).airBubbleOffset.y = (float)(int)((uVar1 << 0x20) >> 0x20);
+  (this->fields).airBubbleOffset.z = 0.4;
+  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -269,8 +245,8 @@ float Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_get_
                 (AvatarWaterRippleEffect *this,MethodInfo *method)
 
 {
-  puVar1 = (undefined8 *)func_?(auStack_2,&(this->fields)._.bounds,0);
-  fStack_3 = (float)((ulonglong)*puVar1 >> 0x20);
-  return fStack_3;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_size
+                     (&VStack_2,&(this->fields)._.bounds,(MethodInfo *)0x0);
+  return pVVar1->y;
 }
 

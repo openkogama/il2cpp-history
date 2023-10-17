@@ -1,208 +1,215 @@
 
 /* Context() */
 
-void Assembly-CSharp.dll::Sentry::Context::Context_2__ctor(Context_2 *this,MethodInfo *method)
+void Assembly-CSharp.dll::Sentry::Context::Context__ctor(Context *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Sentry__App);
+    func_?(&TypeInfo__UnityEngine__BatteryStatus);
+    func_?(&TypeInfo__System__DateTimeOffset);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__DeviceType);
+    func_?(&TypeInfo__Sentry__Device);
+    func_?(&TypeInfo__Sentry__Gpu);
+    func_?(&TypeInfo__UnityEngine__Rendering__GraphicsDeviceType);
+    func_?(&TypeInfo__UnityEngine__NPOTSupport);
+    func_?();
+    func_?(&StringLiteral_System_Product_Name__System_manu);
+    func_?(&StringLiteral_debug);
+    func_?(&StringLiteral_landscape);
+    func_?(&StringLiteral_n_a);
+    func_?(&StringLiteral_portrait);
+    func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ssZ);
+    func_?(&StringLiteral_release);
     cRam_? = '\x01';
   }
-  BStack_1 = BatteryStatus__Enum_Unknown;
-  DStack_2 = DeviceType__Enum_Unknown;
-  NStack_3 = NPOTSupport__Enum_None;
-  GStack_4 = GraphicsDeviceType__Enum_OpenGL2;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  method_00 = TypeInfo__Sentry__OperatingSystem;
-  pSVar5 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar5,0.0,(MethodInfo *)method_00);
-  pSVar6 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  value = (OperatingSystem *)func_?(TypeInfo__Sentry__OperatingSystem);
+  if (value == (OperatingSystem *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)value,ExceptionArgument__Enum_obj,in_stack_1);
+  pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
                      ((MethodInfo *)0x0);
-  this_00 = (Il2CppClass *)0x0;
-  if (pSVar5 == (ScaleAnimationBase *)0x0) goto code_?;
-  (pSVar5->fields)._._._._.m_CachedPtr = pSVar6;
-  (this->fields).os = (OperatingSystem_1 *)pSVar5;
-  this_00 = (Il2CppClass *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this_00,0.0,unaff_ESI);
-  (this->fields).device = (Device *)this_00;
-  DVar7 = UnityEngine.CoreModule.dll::UnityEngine::Input::Input_get_deviceOrientation
+  (value->fields).name = pSVar2;
+  func_?(&value->fields,pSVar2);
+  (this->fields).os = value;
+  func_?(&(this->fields).os,value);
+  pDVar3 = (Device *)func_?(TypeInfo__Sentry__Device);
+  if (pDVar3 == (Device *)0x0) goto code_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)pDVar3,ExceptionArgument__Enum_obj,in_stack_1);
+  (this->fields).device = pDVar3;
+  func_?(&(this->fields).device,pDVar3);
+  DVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_deviceOrientation
                     ((MethodInfo *)0x0);
-  switch(DVar7) {
+  switch(DVar4) {
   case DeviceOrientation__Enum_Portrait:
   case DeviceOrientation__Enum_PortraitUpsideDown:
-    pDVar8 = (this->fields).device;
-    pSVar6 = StringLiteral_portrait;
+    pDVar3 = (this->fields).device;
+    if (pDVar3 == (Device *)0x0) goto code_?;
+    (pDVar3->fields).orientation = StringLiteral_portrait;
+    pSVar2 = StringLiteral_portrait;
     break;
   case DeviceOrientation__Enum_LandscapeLeft:
   case DeviceOrientation__Enum_LandscapeRight:
-    pDVar8 = (this->fields).device;
-    pSVar6 = StringLiteral_landscape;
+    pDVar3 = (this->fields).device;
+    if (pDVar3 == (Device *)0x0) goto code_?;
+    (pDVar3->fields).orientation = StringLiteral_landscape;
+    pSVar2 = StringLiteral_landscape;
     break;
   default:
     goto code_?;
   }
-  if (pDVar8 != (Device *)0x0) {
-    (pDVar8->fields).orientation = pSVar6;
+  func_?(&(pDVar3->fields).orientation,pSVar2);
 code_?:
-    this_00 = (Il2CppClass *)
-              UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceModel
-                        ((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
+  pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceModel
+                     ((MethodInfo *)0x0);
+  bVar5 = mscorlib.dll::System::String::String_op_Inequality
+                    (pSVar2,StringLiteral_n_a,(MethodInfo *)0x0);
+  if (bVar5 != 0) {
+    in_stack_1 = (MethodInfo *)&UNK_?;
+    bVar5 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar2,StringLiteral_System_Product_Name__System_manu,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      pDVar3 = (this->fields).device;
+      if (pDVar3 == (Device *)0x0) goto code_?;
+      (pDVar3->fields).model = pSVar2;
       func_?();
     }
-    bVar9 = mscorlib.dll::System::String::String_op_Inequality
-                      ((String *)this_00,StringLiteral_n_a,(MethodInfo *)0x0);
-    if (bVar9 != 0) {
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?();
-      }
-      bVar9 = mscorlib.dll::System::String::String_op_Inequality
-                        ((String *)this_00,StringLiteral_System_Product_Name__System_manu,
-                         (MethodInfo *)0x0);
-      if (bVar9 != 0) {
-        pDVar8 = (this->fields).device;
-        if (pDVar8 == (Device *)0x0) goto code_?;
-        (pDVar8->fields).model = (String *)this_00;
-      }
-    }
-    pDVar8 = (this->fields).device;
-    fVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetBatteryLevel
+  }
+  pDVar3 = (this->fields).device;
+  fStack_6 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetBatteryLevel
                        ((MethodInfo *)0x0);
-    this_00 = (Il2CppClass *)0x0;
-    if (pDVar8 != (Device *)0x0) {
-      (pDVar8->fields).battery_level = fVar10 * _UNK_?;
-      pDVar8 = (this->fields).device;
-      BStack_1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetBatteryStatus
+  if (pDVar3 != (Device *)0x0) {
+    (pDVar3->fields).battery_level = fStack_6 * _UNK_?;
+    pDVar3 = (this->fields).device;
+    DStack_7 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetBatteryStatus
+                         ((MethodInfo *)0x0);
+    EStack_8.klass = (Enum__Class *)TypeInfo__UnityEngine__BatteryStatus;
+    EStack_8.monitor = (MonitorData *)0xffffffff;
+    pSVar2 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_8,(MethodInfo *)0x0);
+    if (pDVar3 != (Device *)0x0) {
+      (pDVar3->fields).battery_status = pSVar2;
+      func_?();
+      iVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
+                        ((MethodInfo *)0x0);
+      if (iVar9 != 0) {
+        pDVar3 = (this->fields).device;
+        iVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
+                          ((MethodInfo *)0x0);
+        if (pDVar3 == (Device *)0x0) goto code_?;
+        (pDVar3->fields).memory_size = (longlong)iVar9 * 0x100000;
+      }
+      pDVar3 = (this->fields).device;
+      DStack_7 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceType
                            ((MethodInfo *)0x0);
-      this_00 = (Il2CppClass *)func_?();
-      if (this_00 != (Il2CppClass *)0x0) {
-        pSVar6 = (String *)(**(code **)&((Il2CppClass_0 *)&this_00->image)->image[4].dynamic)();
-        pBVar11 = (BatteryStatus__Enum *)func_?();
-        BStack_1 = *pBVar11;
-        if (pDVar8 != (Device *)0x0) {
-          (pDVar8->fields).battery_status = pSVar6;
-          iVar12 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                   SystemInfo_GetPhysicalMemoryMB((MethodInfo *)0x0);
-          if (iVar12 != 0) {
-            pDVar8 = (this->fields).device;
-            iVar12 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                     SystemInfo_GetPhysicalMemoryMB((MethodInfo *)0x0);
-            this_00 = (Il2CppClass *)0x0;
-            if (pDVar8 == (Device *)0x0) goto code_?;
-            (pDVar8->fields).memory_size = (longlong)iVar12 * 0x100000;
-          }
-          pDVar8 = (this->fields).device;
-          DStack_2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceType
-                               ((MethodInfo *)0x0);
-          this_00 = (Il2CppClass *)func_?();
-          if (this_00 != (Il2CppClass *)0x0) {
-            pSVar6 = (String *)(**(code **)&((Il2CppClass_0 *)&this_00->image)->image[4].dynamic)();
-            method_01 = (MethodInfo *)&UNK_?;
-            pDVar13 = (DeviceType__Enum *)func_?();
-            DStack_2 = *pDVar13;
-            if (pDVar8 != (Device *)0x0) {
-              (pDVar8->fields).device_type = pSVar6;
-              this_00 = (Il2CppClass *)(this->fields).device;
-              pSVar6 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                       SystemInfo_GetProcessorType((MethodInfo *)0x0);
-              if (this_00 != (Il2CppClass *)0x0) {
-                *(String **)&(this_00->this_arg).attrs = pSVar6;
-                pDVar8 = (this->fields).device;
-                if (pDVar8 != (Device *)0x0) {
-                  (pDVar8->fields).simulator = 0;
-                  pIVar14 = (Il2CppClass *)func_?();
-                  ScaleAnimationBase::ScaleAnimationBase_Play
-                            ((ScaleAnimationBase *)pIVar14,0.0,method_01);
-                  pcVar15 = (char *)UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                                    SystemInfo_GetGraphicsDeviceID((MethodInfo *)0x0);
-                  this_00 = pIVar14;
-                  if (pIVar14 != (Il2CppClass *)0x0) {
-                    pIVar14->namespaze = pcVar15;
-                    pSVar6 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                             SystemInfo_GetGraphicsDeviceName((MethodInfo *)0x0);
-                    pIVar14->name = (char *)pSVar6;
-                    iVar12 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                             SystemInfo_GetGraphicsDeviceVendorID((MethodInfo *)0x0);
-                    (pIVar14->byval_arg).data.__klassIndex = iVar12;
-                    pSVar6 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                             SystemInfo_GetGraphicsDeviceVendor((MethodInfo *)0x0);
-                    *(String **)&(pIVar14->byval_arg).attrs = pSVar6;
-                    iVar12 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                             SystemInfo_GetGraphicsMemorySize((MethodInfo *)0x0);
-                    (pIVar14->this_arg).data.__klassIndex = iVar12;
-                    bVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                            SystemInfo_GetGraphicsMultiThreaded((MethodInfo *)0x0);
-                    *(bool *)&pIVar14->element_class = bVar9;
-                    NStack_3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                                SystemInfo_GetNPOTSupport((MethodInfo *)0x0);
-                    piVar16 = (int *)func_?();
-                    if (piVar16 != (int *)0x0) {
-                      this_00 = (Il2CppClass *)(**(code **)(*piVar16 + 0xd8))();
-                      pNVar17 = (NPOTSupport__Enum *)func_?();
-                      NStack_3 = *pNVar17;
-                      pIVar14->declaringType = this_00;
-                      pIVar18 = (Il2CppClass *)
-                                UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                                SystemInfo_GetGraphicsDeviceVersion((MethodInfo *)0x0);
-                      pIVar14->castClass = pIVar18;
-                      GStack_4 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                                  SystemInfo_GetGraphicsDeviceType((MethodInfo *)0x0);
-                      piVar16 = (int *)func_?(
-                                                  TypeInfo__UnityEngine__Rendering__GraphicsDeviceType
-                                                  ,&GStack_4);
-                      if (piVar16 != (int *)0x0) {
-                        uVar19 = (**(code **)(*piVar16 + 0xd8))();
-                        pGVar20 = (GraphicsDeviceType__Enum *)func_?();
-                        GStack_4 = *pGVar20;
-                        (pIVar14->this_arg).attrs = (short)uVar19;
-                        (pIVar14->this_arg).type = (char)((uint)uVar19 >> 0x10);
-                        (pIVar14->this_arg).field_0x7 = (char)((uint)uVar19 >> 0x18);
-                        (this->fields).gpu = (Gpu *)pIVar14;
-                        method_02 = TypeInfo__Sentry__App;
-                        pSVar5 = (ScaleAnimationBase *)func_?();
-                        ScaleAnimationBase::ScaleAnimationBase_Play
-                                  (pSVar5,0.0,(MethodInfo *)method_02);
-                        (this->fields).app = (App *)pSVar5;
-                        if ((((uint)(TypeInfo__System__DateTimeOffset->vtable).Equals.methodPtr &
-                             0x2000000) != 0) &&
-                           ((TypeInfo__System__DateTimeOffset->_1).cctor_started == 0)) {
-                          func_?();
-                        }
-                        mscorlib.dll::System::DateTimeOffset::DateTimeOffset_get_UtcNow
-                                  ((DateTimeOffset *)&stack0xffffff9c,(MethodInfo *)0x0);
-                        UnityEngine.CoreModule.dll::UnityEngine::Time::
-                        Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
-                        func_?();
-                        pIVar14 = (Il2CppClass *)0x0;
-                        iVar12 = func_?();
-                        this_00 = (Il2CppClass *)0x0;
-                        if (pSVar5 != (ScaleAnimationBase *)0x0) {
-                          (pSVar5->fields).state = iVar12;
-                          this_00 = pIVar14;
-                          if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr &
-                               0x2000000) != 0) &&
-                             ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-                            this_00 = (Il2CppClass *)TypeInfo__UnityEngine__Debug;
-                            func_?();
-                          }
-                          bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Debug::
-                                  Debug_1_get_isDebugBuild((MethodInfo *)0x0);
-                          pAVar21 = (this->fields).app;
-                          if (bVar9 == 0) {
-                            if (pAVar21 != (App *)0x0) {
-                              (pAVar21->fields).build_type = StringLiteral_release;
-                              return;
-                            }
-                          }
-                          else if (pAVar21 != (App *)0x0) {
-                            (pAVar21->fields).build_type = StringLiteral_debug;
-                            return;
-                          }
-                        }
-                      }
+      EStack_8.klass = (Enum__Class *)TypeInfo__UnityEngine__DeviceType;
+      EStack_8.monitor = (MonitorData *)0xffffffff;
+      pSVar2 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_8,(MethodInfo *)0x0);
+      if (pDVar3 != (Device *)0x0) {
+        (pDVar3->fields).device_type = pSVar2;
+        func_?(&(pDVar3->fields).device_type,pSVar2);
+        pDVar3 = (this->fields).device;
+        pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorType
+                           ((MethodInfo *)0x0);
+        if (pDVar3 != (Device *)0x0) {
+          (pDVar3->fields).cpu_description = pSVar2;
+          func_?(&(pDVar3->fields).cpu_description,pSVar2);
+          pDVar3 = (this->fields).device;
+          if (pDVar3 != (Device *)0x0) {
+            (pDVar3->fields).simulator = 0;
+            value_00 = (Gpu *)func_?(TypeInfo__Sentry__Gpu);
+            if (value_00 != (Gpu *)0x0) {
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)value_00,ExceptionArgument__Enum_obj,in_stack_1);
+              iVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                      SystemInfo_GetGraphicsDeviceID((MethodInfo *)0x0);
+              (value_00->fields).id = iVar9;
+              pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                       SystemInfo_GetGraphicsDeviceName((MethodInfo *)0x0);
+              (value_00->fields).name = pSVar2;
+              func_?(&value_00->fields,pSVar2);
+              iVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                      SystemInfo_GetGraphicsDeviceVendorID((MethodInfo *)0x0);
+              (value_00->fields).vendor_id = iVar9;
+              pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                       SystemInfo_GetGraphicsDeviceVendor((MethodInfo *)0x0);
+              (value_00->fields).vendor_name = pSVar2;
+              func_?(&(value_00->fields).vendor_name,pSVar2);
+              iVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                      SystemInfo_GetGraphicsMemorySize((MethodInfo *)0x0);
+              (value_00->fields).memory_size = iVar9;
+              bVar5 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                      SystemInfo_GetGraphicsMultiThreaded((MethodInfo *)0x0);
+              (value_00->fields).multi_threaded_rendering = bVar5;
+              NStack_10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                          SystemInfo_GetNPOTSupport((MethodInfo *)0x0);
+              EStack_11.klass = (Enum__Class *)TypeInfo__UnityEngine__NPOTSupport;
+              EStack_11.monitor = (MonitorData *)0xffffffff;
+              pSVar2 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_11,(MethodInfo *)0x0);
+              (value_00->fields).npot_support = pSVar2;
+              func_?(&(value_00->fields).npot_support,pSVar2);
+              pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                       SystemInfo_GetGraphicsDeviceVersion((MethodInfo *)0x0);
+              (value_00->fields).version = pSVar2;
+              func_?();
+              UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                        ((MethodInfo *)0x0);
+              pSVar2 = mscorlib.dll::System::Enum::Enum_ToString
+                                 ((Enum *)&stack0xffffffd4,
+                                  (MethodInfo *)TypeInfo__UnityEngine__Rendering__GraphicsDeviceType
+                                 );
+              (value_00->fields).api_type = pSVar2;
+              func_?();
+              (this->fields).gpu = value_00;
+              func_?();
+              pAVar12 = (App *)func_?();
+              if (pAVar12 != (App *)0x0) {
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                          ((Object *)pAVar12,ExceptionArgument__Enum_obj,in_stack_1);
+                (this->fields).app = pAVar12;
+                func_?(&this->fields,pAVar12);
+                pAVar12 = (this->fields).app;
+                if ((TypeInfo__System__DateTimeOffset->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__System__DateTimeOffset);
+                }
+                mscorlib.dll::System::DateTimeOffset::DateTimeOffset_get_UtcNow
+                          ((DateTimeOffset *)&stack0xffffffb4,(MethodInfo *)0x0);
+                fStack_6 = UnityEngine.CoreModule.dll::UnityEngine::Time::
+                           Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
+                mscorlib.dll::System::DateTimeOffset::DateTimeOffset_AddSeconds
+                          ((DateTimeOffset *)&stack0xffffffb4,(DateTimeOffset *)&stack0xffffffc4,
+                           (double)(float)((uint)fStack_6 ^
+                                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                          ),(MethodInfo *)0x0);
+                pCVar13 = (Context *)
+                         mscorlib.dll::System::DateTimeOffset::DateTimeOffset_ToString_1
+                                   ((DateTimeOffset *)&stack0xffffffc4,
+                                    StringLiteral_yyyy_MM_ddTHH__mm__ssZ,(MethodInfo *)0x0);
+                if (pAVar12 != (App *)0x0) {
+                  (pAVar12->fields).app_start_time = (String *)pCVar13;
+                  func_?(&(pAVar12->fields).app_start_time);
+                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?(TypeInfo__UnityEngine__Debug);
+                  }
+                  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_get_isDebugBuild
+                                    ((MethodInfo *)0x0);
+                  pAVar12 = (this->fields).app;
+                  this = pCVar13;
+                  if (bVar5 == 0) {
+                    if (pAVar12 != (App *)0x0) {
+                      (pAVar12->fields).build_type = StringLiteral_release;
+                      func_?(&(pAVar12->fields).build_type,StringLiteral_release);
+                      return;
                     }
+                  }
+                  else if (pAVar12 != (App *)0x0) {
+                    (pAVar12->fields).build_type = StringLiteral_debug;
+                    func_?(&(pAVar12->fields).build_type,StringLiteral_debug);
+                    return;
                   }
                 }
               }
@@ -213,35 +220,13 @@ code_?:
     }
   }
 code_?:
-  bVar22 = 0;
-  uVar23 = func_?();
-  puVar24 = (uint *)uVar23;
-  bVar25 = CARRY1(*unaff_EBX,extraout_CH) || CARRY1(*unaff_EBX + extraout_CH,bVar22);
-  *unaff_EBX = *unaff_EBX + extraout_CH + bVar22;
-  bVar26 = (byte)((uint)unaff_EBX >> 8);
-  bVar22 = *(char *)&((Il2CppClass_0 *)&this_00->image)->image + bVar26;
-  bVar27 = CARRY1(*(byte *)&((Il2CppClass_0 *)&this_00->image)->image,bVar26) ||
-           CARRY1(bVar22,bVar25);
-  *(byte *)&((Il2CppClass_0 *)&this_00->image)->image = bVar22 + bVar25;
-  bVar22 = *unaff_EBX;
-  bVar26 = *unaff_EBX;
-  *unaff_EBX = bVar26 + extraout_CH + bVar27;
-  *(char *)(puVar24 + 4) =
-       (char)puVar24[4] + (char)((ulonglong)uVar23 >> 0x20) +
-       (CARRY1(bVar22,extraout_CH) || CARRY1(bVar26 + extraout_CH,bVar27));
-  bVar25 = (uint)((ulonglong)uVar23 >> 0x20) < *puVar24;
-  uVar28 = *puVar24;
-  bVar22 = *unaff_EBX;
-  bVar26 = *unaff_EBX;
-  *unaff_EBX = bVar26 + extraout_CH + bVar25;
-  unaff_EBX[0x10] =
-       unaff_EBX[0x10] + (char)((ulonglong)uVar23 >> 8) +
-       (CARRY1(bVar22,extraout_CH) || CARRY1(bVar26 + extraout_CH,bVar25));
-  sVar29 = (((short)((ulonglong)uVar23 >> 0x20) - (short)uVar28) - (short)*puVar24 & 3U) -
-          ((ushort)*puVar24 & 3);
-  *(ushort *)puVar24 = (ushort)*puVar24 + (ushort)(0 < sVar29) * sVar29;
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  bVar14 = 0;
+  func_?();
+  *(char *)&this->klass =
+       *(char *)&this->klass + extraout_CL +
+       (CARRY1(unaff_BL,extraout_DH) || CARRY1(unaff_BL + extraout_DH,bVar14));
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

@@ -4,18 +4,16 @@
 bool Assembly-CSharp.dll::TabState::TabState_SetPage(TabState *this,int32_t page,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   iVar1 = TabState_get_MaxPages(this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  if (page < 1) {
+    (this->fields).currentPage = 1;
+    return 1;
   }
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp_1
-                    (page,1,iVar1,(MethodInfo *)0x0);
-  (this->fields).currentPage = iVar1;
+  if (iVar1 < page) {
+    (this->fields).currentPage = iVar1;
+    return 1;
+  }
+  (this->fields).currentPage = page;
   return 1;
 }
 
@@ -27,46 +25,40 @@ bool Assembly-CSharp.dll::TabState::TabState_SlotIndexIsInRange
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppIStack_1 = &TypeInfo__System__Int32;
+    func_?();
     cRam_? = '\x01';
   }
-  iVar1 = func_?(TypeInfo__System__Int32,2);
-  if (iVar1 == 0) {
-    func_?(0);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
+  ppIStack_1 = (Int32__Array__Class **)0x2;
+  pIStack_2 = TypeInfo__System__Int32;
+  iVar3 = func_?();
+  if (iVar3 == 0) {
+    ppIStack_1 = (Int32__Array__Class **)&stack0xfffffffc;
+    uVar4 = func_?(&puStack_5);
+    func_?(uVar4);
+    pcVar6 = (code *)swi(3);
+    bVar7 = (*pcVar6)();
+    return bVar7;
   }
-  else {
-    if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-    *(int32_t *)(iVar1 + 0x10) = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
-    if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-    iVar3 = (this->fields).slotsPrPage * (this->fields).currentPage;
-    *(int *)(iVar1 + 0x14) = iVar3;
-    if (*(uint *)(iVar1 + 0xc) != 0) {
-      if (slotIndex < *(int *)(iVar1 + 0x10)) {
+  if (*(int *)(iVar3 + 0xc) != 0) {
+    *(int32_t *)(iVar3 + 0x10) = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
+    if ((1 < *(uint *)(iVar3 + 0xc)) &&
+       (*(int32_t *)(iVar3 + 0x14) = (this->fields).slotsPrPage * (this->fields).currentPage,
+       *(int *)(iVar3 + 0xc) != 0)) {
+      if (slotIndex < *(int *)(iVar3 + 0x10)) {
         return 0;
       }
-      if (1 < *(uint *)(iVar1 + 0xc)) {
-        if (iVar3 <= slotIndex) {
-          return 0;
-        }
-        return 1;
+      if (1 < *(uint *)(iVar3 + 0xc)) {
+        return slotIndex < *(int *)(iVar3 + 0x14);
       }
-      goto code_?;
     }
   }
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  ppIStack_1 = (Int32__Array__Class **)0x0;
+  pIStack_2 = (Int32__Array__Class *)func_?();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -97,16 +89,19 @@ bool Assembly-CSharp.dll::TabState::TabState_UpdatePage
 }
 
 
-/* TabState(String, Int32) */
+/* TabState(Int32, String, Int32) */
 
 void Assembly-CSharp.dll::TabState::TabState__ctor
-               (TabState *this,String *name,int32_t slotsPrPage,MethodInfo *method)
+               (TabState *this,int32_t tabId,String *name,int32_t slotsPrPage,MethodInfo *method)
 
 {
   (this->fields).currentPage = 1;
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields)._TabID_k__BackingField = tabId;
   (this->fields).slotsPrPage = slotsPrPage;
   (this->fields).name = name;
+  func_?(&(this->fields).name,name);
   return;
 }
 
@@ -116,20 +111,21 @@ void Assembly-CSharp.dll::TabState::TabState__ctor
 int32_t Assembly-CSharp.dll::TabState::TabState_get_MaxPages(TabState *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   iVar1 = (this->fields).highestSlotIndex;
   iVar2 = (this->fields).slotsPrPage;
-  if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Mathf);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
   }
-  iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_CeilToInt
-                    ((float)iVar1 / (float)iVar2,(MethodInfo *)0x0);
-  iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Max_2(iVar3,1,(MethodInfo *)0x0);
-  return iVar3;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  fVar3 = (float10)func_?((double)((float)iVar1 / (float)iVar2));
+  iVar4 = 1;
+  if (1 < (int)fVar3) {
+    iVar4 = (int)fVar3;
+  }
+  return iVar4;
 }
 
 
@@ -140,28 +136,33 @@ Assembly-CSharp.dll::TabState::TabState_get_SlotRange(TabState *this,MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    ppIStack_1 = &TypeInfo__System__Int32;
+    func_?();
     cRam_? = '\x01';
   }
-  pIVar1 = (Int32__Array *)func_?(TypeInfo__System__Int32,2);
-  if (pIVar1 == (Int32__Array *)0x0) {
-    func_?(0);
-  }
-  else if (pIVar1->max_length != 0) {
-    pIVar1->vector[0] = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
-    if (1 < pIVar1->max_length) {
-      pIVar1->vector[1] = (this->fields).slotsPrPage * (this->fields).currentPage;
-      return pIVar1;
+  ppIStack_1 = (Int32__Array__Class **)0x2;
+  pIStack_2 = TypeInfo__System__Int32;
+  pIVar3 = (Int32__Array *)func_?();
+  if (pIVar3 != (Int32__Array *)0x0) {
+    if (pIVar3->max_length != 0) {
+      pIVar3->vector[0] = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
+      if (1 < pIVar3->max_length) {
+        pIVar3->vector[1] = (this->fields).slotsPrPage * (this->fields).currentPage;
+        return pIVar3;
+      }
     }
-    goto code_?;
+    ppIStack_1 = (Int32__Array__Class **)0x0;
+    pIStack_2 = (Int32__Array__Class *)func_?();
+    func_?();
+    pcVar4 = (code *)swi(3);
+    pIVar3 = (Int32__Array *)(*pcVar4)();
+    return pIVar3;
   }
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  pIVar1 = (Int32__Array *)(*pcVar3)();
-  return pIVar1;
+  ppIStack_1 = (Int32__Array__Class **)&stack0xfffffffc;
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar4 = (code *)swi(3);
+  pIVar3 = (Int32__Array *)(*pcVar4)();
+  return pIVar3;
 }
 

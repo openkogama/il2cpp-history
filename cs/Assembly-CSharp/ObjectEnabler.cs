@@ -7,14 +7,13 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ObjectEnabler : MonoBehaviour, IUpdatecontrollerSubscriberUpdate
 {
 	// Fields
 	public MVObjectEnabler woObjectEnabler;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsDrawingEnabled_k__BackingField;
 	private Material objectMaterial;
 	private int nameToLayer;

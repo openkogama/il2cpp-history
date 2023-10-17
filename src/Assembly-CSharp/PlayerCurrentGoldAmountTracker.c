@@ -6,63 +6,66 @@ void Assembly-CSharp.dll::PlayerCurrentGoldAmountTracker::PlayerCurrentGoldAmoun
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__PlayerCurrentGoldAmountTracker__RefreshGoldAmount__);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar2 == (MVNetworkGame *)0x0) {
     return;
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
   }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar2 != (MVNetworkGame *)0x0) &&
      (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
      pMVar3 != (MVLocalPlayer *)0x0)) {
     pAVar4 = (pMVar3->fields)._.OnGoldAmountChange;
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,unaff_EDI,MethodInfo__PlayerCurrentGoldAmountTracker__RefreshGoldAmount__,
-               (MethodInfo *)0x0);
-    pAStack5 =
-         (Action *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-    pAVar4 = (Action *)0x0;
-    if (pAStack5 != (Action *)0x0) {
-      if (pAStack5->klass == TypeInfo__System__Action) {
-        pAVar4 = pAStack5;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_00,(Object *)MethodInfo__PlayerCurrentGoldAmountTracker__RefreshGoldAmount__,
+                 MethodInfo__PlayerCurrentGoldAmountTracker__RefreshGoldAmount__,(MethodInfo *)0x0);
+      pAVar4 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+      if (pAVar4 == (Action *)0x0) {
+        (pMVar3->fields)._.OnGoldAmountChange = (Action *)0x0;
+        ppAStack6 = &(pMVar3->fields)._.OnGoldAmountChange;
+        pAStack7 = (Action *)0x0;
+        func_?();
+        return;
       }
-      pAStack6 = TypeInfo__System__Action;
-      if (pAVar4 == (Action *)0x0) goto code_?;
+      pAVar8 = (Action *)0x0;
+      if (pAVar4->klass == TypeInfo__System__Action) {
+        pAVar8 = pAVar4;
+      }
+      if (pAVar8 != (Action *)0x0) {
+        (pMVar3->fields)._.OnGoldAmountChange = pAVar8;
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+        pAStack7 = (Action *)0x0;
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAStack7 = pAVar4;
+        }
+        if (pAStack7 != (Action *)0x0) {
+          ppAStack6 = &(pMVar3->fields)._.OnGoldAmountChange;
+          func_?();
+          return;
+        }
+      }
+      goto code_?;
     }
-    (pMVar3->fields)._.OnGoldAmountChange = pAVar4;
-    return;
   }
-  func_?();
-  pAStack5 = extraout_ECX;
-  pAStack6 = extraout_EDX;
+  uVar5 = func_?();
 code_?:
+  _ppAStack00000028 = uVar5;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -75,36 +78,36 @@ void Assembly-CSharp.dll::PlayerCurrentGoldAmountTracker::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral_N0);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).goldAmount;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      iVar2 = GamePointGainEffect::GamePointGainEffect_get_ID
-                        ((GamePointGainEffect *)this_01,(MethodInfo *)0x0);
-      if (iVar2 != 0) {
-        this_02 = (String *)func_?();
-        if (this_02 != (String *)0x0) {
-          mscorlib.dll::System::String::String_Replace_1
-                    (this_02,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0);
-          if (pTVar1 != (Text *)0x0) {
-            (*(code *)(pTVar1->klass->vtable).set_text.method)();
-            return;
-          }
+    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+       (pUVar3 = (pMVar2->fields)._._UserProfileData_k__BackingField,
+       pUVar3 != (UserProfileData *)0x0)) {
+      this_01 = mscorlib.dll::System::Int32::Int32_ToString_1
+                          ((Int32 *)&(pUVar3->fields).Gold,StringLiteral_N0,(MethodInfo *)0x0);
+      if (this_01 != (String *)0x0) {
+        pSStack4 =
+             mscorlib.dll::System::String::String_Replace_1
+                       (this_01,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0);
+        if (pTVar1 != (Text *)0x0) {
+          pMStack5 = (pTVar1->klass->vtable).set_text.method;
+          pTStack6 = pTVar1;
+          (*(pTVar1->klass->vtable).set_text.methodPtr)();
+          return;
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -116,55 +119,62 @@ void Assembly-CSharp.dll::PlayerCurrentGoldAmountTracker::PlayerCurrentGoldAmoun
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__PlayerCurrentGoldAmountTracker__RefreshGoldAmount__);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral_N0);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).goldAmount;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar2 != (MVNetworkGame *)0x0) {
     pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-    if (pMVar3 != (MVLocalPlayer *)0x0) {
-      iVar4 = GamePointGainEffect::GamePointGainEffect_get_ID
-                        ((GamePointGainEffect *)pMVar3,(MethodInfo *)0x0);
-      if (iVar4 != 0) {
-        this_00 = (String *)func_?(iVar4 + 0x10);
-        if (this_00 != (String *)0x0) {
-          mscorlib.dll::System::String::String_Replace_1
-                    (this_00,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0);
-          if (pTVar1 != (Text *)0x0) {
-            (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1);
-            pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (pMVar2 != (MVNetworkGame *)0x0) {
-              pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-              if (pMVar3 != (MVLocalPlayer *)0x0) {
-                pAVar5 = (pMVar3->fields)._.OnGoldAmountChange;
-                this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                           *)func_?();
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
-                SceneManagement::Scene,UnityEngine::SceneManagement::Scene]::
-                UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                          (this_01,unaff_EDI,
+    if ((pMVar3 != (MVLocalPlayer *)0x0) &&
+       (pUVar4 = (pMVar3->fields)._._UserProfileData_k__BackingField,
+       pUVar4 != (UserProfileData *)0x0)) {
+      this_00 = mscorlib.dll::System::Int32::Int32_ToString_1
+                          ((Int32 *)&(pUVar4->fields).Gold,StringLiteral_N0,(MethodInfo *)0x0);
+      if (this_00 != (String *)0x0) {
+        mscorlib.dll::System::String::String_Replace_1
+                  (this_00,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0);
+        if (pTVar1 != (Text *)0x0) {
+          (*(pTVar1->klass->vtable).set_text.methodPtr)();
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 != (MVNetworkGame *)0x0) {
+            pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
+            if (pMVar3 != (MVLocalPlayer *)0x0) {
+              pAVar5 = (pMVar3->fields)._.OnGoldAmountChange;
+              this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+              if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+                UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                NavMesh_OnNavMeshPreUpdate__ctor
+                          (this_01,(Object *)this,
                            MethodInfo__PlayerCurrentGoldAmountTracker__RefreshGoldAmount__,
                            (MethodInfo *)0x0);
-                pAStack6 =
-                     (Action *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
-                pAVar5 = (Action *)0x0;
-                if (pAStack6 == (Action *)0x0) {
-code_?:
-                  (pMVar3->fields)._.OnGoldAmountChange = pAVar5;
+                pAVar5 = (Action *)
+                         mscorlib.dll::System::Delegate::Delegate_Combine
+                                   ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
+                if (pAVar5 == (Action *)0x0) {
+                  (pMVar3->fields)._.OnGoldAmountChange = (Action *)0x0;
+                  func_?();
                   return;
                 }
-                if (pAStack6->klass == TypeInfo__System__Action) {
-                  pAVar5 = pAStack6;
+                pAVar6 = (Action *)0x0;
+                if (pAVar5->klass == TypeInfo__System__Action) {
+                  pAVar6 = pAVar5;
                 }
-                pAStack7 = TypeInfo__System__Action;
-                if (pAVar5 != (Action *)0x0) goto code_?;
+                if (pAVar6 != (Action *)0x0) {
+                  (pMVar3->fields)._.OnGoldAmountChange = pAVar6;
+                  pAVar6 = (Action *)0x0;
+                  if (pAVar5->klass == TypeInfo__System__Action) {
+                    pAVar6 = pAVar5;
+                  }
+                  if (pAVar6 != (Action *)0x0) {
+                    func_?();
+                    return;
+                  }
+                }
                 goto code_?;
               }
             }
@@ -174,12 +184,10 @@ code_?:
     }
   }
   func_?();
-  pAStack6 = extraout_ECX;
-  pAStack7 = extraout_EDX;
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

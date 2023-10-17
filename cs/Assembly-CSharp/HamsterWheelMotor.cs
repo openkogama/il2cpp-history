@@ -6,37 +6,34 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.VehicleEnergy;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class HamsterWheelMotor : SimpleVehicleMotorBase
 {
 	// Fields
-	private ImpactState impactState;
 	private HamsterWheelBounceState bounceState;
 	private JumpState jumpState;
 	private Vector3 curVelocity;
 	private float speed;
-	private float maxSpeed;
-	private float minSpeed;
-	private const float accelerationSpeed = 48f;
-	private float angularSpeed;
-	private float recalibrateCameraFactor;
-	private float waterProximityThresshold;
-	private float waterDownVelocity;
-	private float waterOffset;
-	private float maxUnderWaterYMovement;
+	private const float MaxSpeed = 38.8f;
+	private const float MinSpeed = -10f;
+	private const float AccelerationSpeed = 48f;
+	private const float AngularSpeed = 1.4f;
+	private const float RecalibrateCameraFactor = 1.05f;
+	public const bool DefaultVehicleEnergyOn = false;
+	public const int DefaultVehicleEnergyStorage = 35;
+	public const int MinVehicleEnergyStorage = 10;
+	public const int MaxVehicleEnergyStorage = 75;
+	public const int DefaultVehicleEnergyConsumption = 4;
+	public const int MinVehicleEnergyConsumption = 2;
+	public const int MaxVehicleEnergyConsumption = 11;
 	private MVInteractableBase interactable;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
-	private IVehicleCamera _VehicleCamera_k__BackingField;
-	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsMovementLocked_k__BackingField;
 
 	// Properties
-	public IVehicleCamera VehicleCamera { [CompilerGenerated] private get; [CompilerGenerated] set; }
-	public override bool Grounded { get; }
 	public override Vector3 Velocity { get; }
 	public override bool IsMovementLocked { [CompilerGenerated] get; [CompilerGenerated] set; }
 
@@ -44,15 +41,10 @@ public class HamsterWheelMotor : SimpleVehicleMotorBase
 	public HamsterWheelMotor();
 
 	// Methods
-	public override void Init(SmoothCharacterController smoothCharacterController, VehicleInteractable interactableLocal);
+	public override void Init(SmoothCharacterController smoothCharacterController, VehicleInteractable interactableLocalParam, VehicleEnergyContainerConfig vehicleEnergyContainerConfig);
 	public override void VehicleUpdateFunction();
 	public override void Reset();
-	protected override void SuspendImpactDamage();
 	private Vector3 GetVehicleVelocity(Vector3 velocity, Vector3 baseVelocity);
 	private Vector3 GetVehicleVelocityClassicCam(Vector3 velocity, Vector3 movableVelocity);
-	private void DealImpactDamage(Vector3 curVelocity, Vector3 prevVelocity);
-	private void Move(Vector3 velocity, Vector3 basevelocity);
-	private float WaterProximity();
-	protected Vector3 ApplyWaterGravity(Vector3 velocity, float waterProximity);
 }
 

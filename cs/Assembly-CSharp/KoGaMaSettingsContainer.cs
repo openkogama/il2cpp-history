@@ -7,16 +7,16 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [Serializable]
 public class KoGaMaSettingsContainer : ScriptableObject
 {
 	// Fields
-	[Header]
+	[Header("Settings set by build system")]
 	[SerializeField]
 	private bool showDebugLogin;
-	[Header]
+	[Header("Don\'t change")]
 	[SerializeField]
 	private TextAsset versionText;
 	[SerializeField]

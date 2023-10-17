@@ -7,16 +7,16 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class StreamedTextureToSharedMaterial : StreamingAsset<Texture2D, Texture2D>
 {
 	// Fields
-	[Header]
+	[Header("Configuration")]
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("For standard unity shaders \"_MainTex\" is the main textures name.")]
 	protected string shaderTextureVariableName;
-	[Header]
+	[Header("Dependencies")]
 	[SerializeField]
 	protected Material material;
 

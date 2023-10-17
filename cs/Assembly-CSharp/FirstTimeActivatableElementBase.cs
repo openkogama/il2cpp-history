@@ -12,7 +12,7 @@ using MV.WorldObject.MetaData;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class FirstTimeActivatableElementBase : FirstTimeEventHandler, IActivatableFirstTimeUiElement, IFirstTimeEventSkip
 {
@@ -31,14 +31,11 @@ public abstract class FirstTimeActivatableElementBase : FirstTimeEventHandler, I
 	[SerializeField]
 	protected float delayBeforeShown;
 	[SerializeField]
-	[Tooltip]
+	[Tooltip("Set false to avoid checking for blocking elements in the stack.")]
 	private bool checkForStackBlocking;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsShowing_k__BackingField;
 	private bool waitingForDelay;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __f__am_cache0;
 
 	// Properties
 	public FirstTimeEvent FirstTimeEvent { get; }
@@ -52,42 +49,57 @@ public abstract class FirstTimeActivatableElementBase : FirstTimeEventHandler, I
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ShowDelay_c__Iterator0 : IEnumerator<object>
+	private sealed class _ShowDelay_d__26 : IEnumerator<object>
 	{
 		// Fields
-		internal FirstTimeActivatableElementBase _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public FirstTimeActivatableElementBase __4__this;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _ShowDelay_c__Iterator0();
+		public _ShowDelay_d__26(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__AnonStorey1
+	private sealed class __c__DisplayClass35_0
 	{
 		// Fields
-		internal bool isBlocked;
-		internal FirstTimeActivatableElementBase _this;
+		public bool isBlocked;
+		public FirstTimeActivatableElementBase __4__this;
 
 		// Constructors
-		public __c__AnonStorey1();
+		public __c__DisplayClass35_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _get_IsBlocked_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __9__37_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _UnRegister_b__37_1(IFirstTimeElementActivator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -95,7 +107,7 @@ public abstract class FirstTimeActivatableElementBase : FirstTimeEventHandler, I
 
 	// Methods
 	public void Show();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_ShowDelay_d__26))]
 	private IEnumerator ShowDelay();
 	private void DoShow();
 	public virtual void OnShow();
@@ -108,12 +120,10 @@ public abstract class FirstTimeActivatableElementBase : FirstTimeEventHandler, I
 	protected void UnRegister();
 	public void SkipEvent();
 	[CompilerGenerated]
-	private void _OnFirstTimeState_m__0(IFirstTimeElementActivator x, BaseEventData y);
+	private void _OnFirstTimeState_b__33_0(IFirstTimeElementActivator x, BaseEventData y);
 	[CompilerGenerated]
-	private void _UnRegister_m__1(IFirstTimeElementActivator x, BaseEventData y);
+	private void _UnRegister_b__37_0(IFirstTimeElementActivator x, BaseEventData y);
 	[CompilerGenerated]
-	private static void _UnRegister_m__2(IFirstTimeElementActivator x, BaseEventData y);
-	[CompilerGenerated]
-	private void _SkipEvent_m__3(IFirstTimeElementActivator x, BaseEventData y);
+	private void _SkipEvent_b__38_0(IFirstTimeElementActivator x, BaseEventData y);
 }
 

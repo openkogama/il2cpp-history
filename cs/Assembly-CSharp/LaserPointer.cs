@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LaserPointer : MonoBehaviour, ILaserPointer
 {
@@ -59,29 +59,28 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 	}
 
 	[CompilerGenerated]
-	private sealed class _DoDeactivateLaserAfterDuration_c__Iterator0 : IEnumerator<object>
+	private sealed class _DoDeactivateLaserAfterDuration_d__46 : IEnumerator<object>
 	{
 		// Fields
-		internal float _t___0;
-		internal LaserPointer _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public LaserPointer __4__this;
+		private float _t_5__2;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoDeactivateLaserAfterDuration_c__Iterator0();
+		public _DoDeactivateLaserAfterDuration_d__46(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -103,7 +102,7 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 	private void OnDisable();
 	private void Start();
 	private void LateUpdate();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DoDeactivateLaserAfterDuration_d__46))]
 	private IEnumerator DoDeactivateLaserAfterDuration();
 	private void ApplyMaterialForState();
 	protected void SyncState(Dictionary<object, object> newState);

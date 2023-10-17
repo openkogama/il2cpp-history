@@ -11,13 +11,12 @@ MVGameControllerBase_OnReceivedNotificationEventDelegate_BeginInvoke
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MV__Common__NotificationType);
     cRam_? = '\x01';
   }
   uStack_1 = 0;
-  uStack_2 = 0;
-  uVar3 = func_?(TypeInfo__MV__Common__NotificationType,&type);
-  uStack_2 = CONCAT44(data,uVar3);
+  uStack_2 = func_?(TypeInfo__MV__Common__NotificationType,&type);
+  pDStack_3 = data;
   pIVar4 = (IAsyncResult *)func_?(this,&uStack_2,callback,object);
   return pIVar4;
 }

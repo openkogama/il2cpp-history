@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 31: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -121,6 +121,9 @@ namespace MV.Common
 		ReplicateSpawnRoleData = 104,
 		SetSpawnRoleBody = 105,
 		XPRewardedAdReady = 106,
+		VehicleGotEnergy = 107,
+		ActorStateChange = 108,
+		Handshake = 252,
 		PropertiesChanged = 253,
 		Leave = 254,
 		Join = 255

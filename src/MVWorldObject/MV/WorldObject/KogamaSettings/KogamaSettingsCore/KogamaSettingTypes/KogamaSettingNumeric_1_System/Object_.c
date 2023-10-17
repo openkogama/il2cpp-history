@@ -7,26 +7,56 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   if (this != (KogamaSettingNumeric_1_System_Object_ *)0x0) {
-    arg0 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-           Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-    arg1 = (this->fields).RangeValidator;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
     pSVar1 = mscorlib.dll::System::String::String_Format_1
-                       (StringLiteral_Value__0____1_,(Object *)arg0,(Object *)arg1,(MethodInfo *)0x0
-                       );
+                       (StringLiteral_Value__0____1_,(this->fields)._.value,
+                        (Object *)(this->fields).RangeValidator,(MethodInfo *)0x0);
     return pSVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar3)();
   return pSVar1;
+}
+
+
+/* KogamaSettingNumeric`1[System.Object](Object, Object, Object) */
+
+void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
+     KogamaSettingNumeric`1[System::Object]::KogamaSettingNumeric_1_System_Object___ctor
+               (KogamaSettingNumeric_1_System_Object_ *this,Object *value,Object *min,Object *max,
+               MethodInfo *method)
+
+{
+  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
+  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  pvVar1 = method->klass->rgctx_data[2].rgctxDataDummy;
+  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
+    pvVar1 = (void *)func_?(pvVar1);
+  }
+  pRVar2 = (RangeValidator_1_System_Object_ *)func_?(pvVar1);
+  if (pRVar2 != (RangeValidator_1_System_Object_ *)0x0) {
+    (*(method->klass->rgctx_data[4].method)->virtualMethodPointer)
+              (pRVar2,min,max,method->klass->rgctx_data[4].rgctxDataDummy);
+    (this->fields).RangeValidator = pRVar2;
+    func_?(&(this->fields).RangeValidator,pRVar2);
+    pRVar2 = (this->fields).RangeValidator;
+    if (pRVar2 != (RangeValidator_1_System_Object_ *)0x0) {
+      (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
+                (pRVar2,value,0,method->klass->rgctx_data[3].rgctxDataDummy);
+      (*(method->klass->rgctx_data[5].method)->virtualMethodPointer)
+                (this,value,method->klass->rgctx_data[5].rgctxDataDummy);
+      return;
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
 }
 
 
@@ -40,53 +70,48 @@ KogamaSettingNumeric_1_System_Object__get_KogamaSettingValueType
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeRef__System__Int32);
+    func_?(&TypeRef__System__Single);
+    func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  RVar1.value = (void *)**(undefined4 **)(method->name + 0x60);
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  IVar1 = *method->klass->rgctx_data;
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
+  pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                     ((RuntimeTypeHandle)IVar1,(MethodInfo *)0x0);
   pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                      ((RuntimeTypeHandle)TypeRef__System__Int32,(MethodInfo *)0x0);
   if (pTVar2 != pTVar3) {
-    RVar1.value = (void *)**(undefined4 **)(method->name + 0x60);
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+    IVar1 = *method->klass->rgctx_data;
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
+    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                       ((RuntimeTypeHandle)IVar1,(MethodInfo *)0x0);
     pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)TypeRef__System__Single,(MethodInfo *)0x0);
     if (pTVar2 == pTVar3) {
       return KogamaSettingValueType__Enum_Float;
     }
-    RVar1.value = (void *)**(undefined4 **)(method->name + 0x60);
-    if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Type->_1).cctor_started == 0)) {
-      func_?();
-    }
-    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
-    }
-    message = mscorlib.dll::System::String::String_Concat
-                        ((Object *)StringLiteral_Unknown_type_,(Object *)pTVar2,(MethodInfo *)0x0);
-    this_00 = (IsolatedStorageException *)func_?();
-    mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-    IsolatedStorageException__ctor_1(this_00,message,(MethodInfo *)0x0);
-    pMStack4 =
-         MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumeric<System::Object>__get_KogamaSettingValueType__
-    ;
-    uStack5 = 0;
-    pIStack6 = this_00;
+    handle.value = (void *)func_?();
     func_?();
-    pcVar7 = (code *)swi(3);
-    KVar8 = (*pcVar7)();
-    return KVar8;
+    func_?();
+    pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)0x0;
+    arg0 = (Object *)func_?();
+    message = mscorlib.dll::System::String::String_Concat(arg0,(Object *)pTVar2,method_00);
+    func_?();
+    this_00 = (Exception *)func_?();
+    func_?();
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+    uStack4 = func_?();
+    pEStack5 = this_00;
+    func_?();
+    pcVar6 = (code *)swi(3);
+    KVar7 = (*pcVar6)();
+    return KVar7;
   }
   return KogamaSettingValueType__Enum_Int;
 }
@@ -101,26 +126,26 @@ Object * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore:
 
 {
   if (this == (KogamaSettingNumeric_1_System_Object_ *)0x0) {
-    func_?(0);
+    func_?();
+    pOVar1 = (Object *)0x0;
   }
   else {
-    unaff_EDI = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)this,(MethodInfo *)0x0);
-    unaff_ESI = *(int *)(*(int *)(method->name + 0x60) + 4);
-    if ((*(byte *)(unaff_ESI + 0xbe) & 1) == 0) {
-      func_?(unaff_ESI);
+    pOVar1 = (this->fields)._.value;
+    unaff_ESI = method->klass->rgctx_data[1].rgctxDataDummy;
+    if ((*(byte *)((int)unaff_ESI + 0xba) & 1) == 0) {
+      unaff_ESI = (void *)func_?(unaff_ESI);
     }
-    if (unaff_EDI == (IList_1_VoxelHit_ *)0x0) {
+    if (pOVar1 == (Object *)0x0) {
       return (Object *)0x0;
     }
-    pOVar1 = (Object *)func_?(unaff_EDI,unaff_ESI);
-    if (pOVar1 != (Object *)0x0) {
-      return pOVar1;
+    pOVar2 = (Object *)func_?(pOVar1,unaff_ESI);
+    if (pOVar2 != (Object *)0x0) {
+      return pOVar2;
     }
   }
-  func_?(unaff_EDI,unaff_ESI);
-  pcVar2 = (code *)swi(3);
-  pOVar1 = (Object *)(*pcVar2)();
+  func_?(pOVar1,unaff_ESI);
+  pcVar3 = (code *)swi(3);
+  pOVar1 = (Object *)(*pcVar3)();
   return pOVar1;
 }
 
@@ -132,17 +157,18 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                (KogamaSettingNumeric_1_System_Object_ *this,Object *value,MethodInfo *method)
 
 {
-  pRVar1 = (this->fields).RangeValidator;
-  if (pRVar1 != (RangeValidator_1_System_Object_ *)0x0) {
-    puVar2 = *(undefined4 **)(*(int *)(method->name + 0x60) + 8);
-    value_00 = (Object *)(*(code *)*puVar2)(pRVar1,value,1,puVar2);
+  if ((this->fields).RangeValidator != (RangeValidator_1_System_Object_ *)0x0) {
+    value_00 = (Object *)
+               (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
+                         ((this->fields).RangeValidator,value,1,
+                          method->klass->rgctx_data[3].rgctxDataDummy);
     KogamaSettingBase::KogamaSettingBase_set_Value
               ((KogamaSettingBase *)this,value_00,(MethodInfo *)0x0);
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

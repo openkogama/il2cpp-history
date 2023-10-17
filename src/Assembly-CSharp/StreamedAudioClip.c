@@ -6,40 +6,35 @@ void Assembly-CSharp.dll::StreamedAudioClip::StreamedAudioClip_OnAssetSet
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__StreamedAudioClip__IReceiver);
+    func_?(&
+                    MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__get_Asset__
+                   );
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).receiver;
-  iVar2 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-          Int32]::
-          Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                    ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)this,
-                     MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__get_Asset__
-                    );
+  pAVar2 = (this->fields)._.asset;
   if (pSVar1 != (StreamedAudioClip_IReceiver *)0x0) {
-    pSVar3 = pSVar1->klass;
-    uVar4 = 0;
-    uVar5._0_1_ = (pSVar3->_1).rank;
-    uVar5._1_1_ = (pSVar3->_1).minimumAlignment;
-    if (uVar5 != 0) {
+    uVar3 = 0;
+    uVar4 = (pSVar1->klass->_1).interface_offsets_count;
+    if (uVar4 != 0) {
       do {
-        if (pSVar3->interfaceOffsets[uVar4].interfaceType ==
+        if (pSVar1->klass->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__StreamedAudioClip__IReceiver) {
-          iVar6 = pSVar3->interfaceOffsets[uVar4].offset;
-          (*(code *)(&pSVar1->klass->vtable)[iVar6].OnAudioReceived.method)
-                    (pSVar1,iVar2,(&pSVar1->klass[1]._0.image)[iVar6 * 2]);
+          pSVar5 = &pSVar1->klass->vtable + pSVar1->klass->interfaceOffsets[uVar3].offset;
+          (*(pSVar5->OnAudioReceived).methodPtr)(pSVar1,pAVar2,(pSVar5->OnAudioReceived).method);
           return;
         }
-        uVar4 = uVar4 + 1;
-      } while (uVar4 < uVar5);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    puVar7 = (undefined4 *)func_?(pSVar1,TypeInfo__StreamedAudioClip__IReceiver,0);
-    (*(code *)*puVar7)(pSVar1,iVar2,puVar7[1]);
+    puVar6 = (undefined4 *)func_?(pSVar1,TypeInfo__StreamedAudioClip__IReceiver,0);
+    (*(code *)*puVar6)(pSVar1,pAVar2,puVar6[1]);
     return;
   }
-  func_?(0);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -51,12 +46,14 @@ void Assembly-CSharp.dll::StreamedAudioClip::StreamedAudioClip__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__StreamingAsset__
+                   );
     cRam_? = '\x01';
   }
-  StreamingAsset`2[UnityEngine::Texture2D,UnityEngine::Texture2D]::
-  StreamingAsset_2_UnityEngine_Texture2D_UnityEngine_Texture2D___ctor
-            ((StreamingAsset_2_UnityEngine_Texture2D_UnityEngine_Texture2D_ *)this,
+  StreamingAsset`2[System::Object,System::Object]::
+  StreamingAsset_2_System_Object_System_Object___ctor
+            ((StreamingAsset_2_System_Object_System_Object_ *)this,
              MethodInfo__StreamingAsset<UnityEngine::AudioClip,_UnityEngine::AudioClip>__StreamingAsset__
             );
   return;

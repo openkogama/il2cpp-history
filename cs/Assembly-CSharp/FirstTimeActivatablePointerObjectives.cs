@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePointerObjectives : FirstTimeActivatableElementBase
 {
@@ -37,43 +37,42 @@ public class FirstTimeActivatablePointerObjectives : FirstTimeActivatableElement
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _CreateBubble_c__Iterator0 : IEnumerator<object>
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		internal FirstTimeActivatablePointerObjectives _this;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
-		private _CreateBubble_c__AnonStorey1 _locvar0;
+		public FirstTimeActivatablePointerObjectives __4__this;
+		public RectTransform target;
+
+		// Constructors
+		public __c__DisplayClass15_0();
+
+		// Methods
+		internal void _CreateBubble_b__0(TextBubbleController x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class _CreateBubble_d__15 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public FirstTimeActivatablePointerObjectives __4__this;
+		private __c__DisplayClass15_0 __8__1;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
-
-		// Nested types
-		private sealed class _CreateBubble_c__AnonStorey1
-		{
-			// Fields
-			internal RectTransform target;
-			internal _CreateBubble_c__Iterator0 __f__ref_0;
-
-			// Constructors
-			public _CreateBubble_c__AnonStorey1();
-
-			// Methods
-			internal void __m__0(TextBubbleController x, BaseEventData y);
-		}
 
 		// Constructors
 		[DebuggerHidden]
-		public _CreateBubble_c__Iterator0();
+		public _CreateBubble_d__15(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -82,12 +81,12 @@ public class FirstTimeActivatablePointerObjectives : FirstTimeActivatableElement
 	// Methods
 	private void Update();
 	public override void OnShow();
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_CreateBubble_d__15))]
 	private IEnumerator CreateBubble();
 	private void Clear();
 	private void OnShown();
 	private void Destroy();
 	[CompilerGenerated]
-	private void _Clear_m__0(TextBubbleController x, BaseEventData y);
+	private void _Clear_b__16_0(TextBubbleController x, BaseEventData y);
 }
 

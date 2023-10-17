@@ -6,55 +6,59 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_CreateBoostImag
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (this->fields).boosterList;
+  pLVar1 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterList;
   do {
-    if (pLVar1 == (List_1_BoostPurchasePopup_BoosterDef_ *)0x0) {
+    if (pLVar1 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
 code_?:
-      func_?(0);
+      func_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    pOVar3 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar1,
-                        MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Count__
-                       );
-    if ((int)pOVar3 <= index) {
+    if ((pLVar1->fields)._size <= index) {
       return;
     }
-    pLVar1 = (this->fields).boosterList;
-    if (pLVar1 == (List_1_BoostPurchasePopup_BoosterDef_ *)0x0) goto code_?;
-    BVar4 = mscorlib.dll::System::Collections::Generic::List`1[BoostPurchasePopup+BoosterDef]::
-            List_1_BoostPurchasePopup_BoosterDef__get_Item
+    pLVar1 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterList;
+    if (pLVar1 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) goto code_?;
+    TVar3 = mscorlib.dll::System::Collections::Generic::
+            List`1[TabMenuButtonAccessory+AccessoryTabDef]::
+            List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
                       (pLVar1,index,
                        MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                       );
-    pLVar1 = (this->fields).boosterList;
-    if (BVar4.type == boostType) {
-      if (pLVar1 != (List_1_BoostPurchasePopup_BoosterDef_ *)0x0) {
-        BVar4 = mscorlib.dll::System::Collections::Generic::List`1[BoostPurchasePopup+BoosterDef]::
-                List_1_BoostPurchasePopup_BoosterDef__get_Item
+    pLVar1 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterList;
+    if (TVar3.tabID == boostType) {
+      if (pLVar1 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
+        TVar3 = mscorlib.dll::System::Collections::Generic::
+                List`1[TabMenuButtonAccessory+AccessoryTabDef]::
+                List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
                           (pLVar1,index,
                            MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                           );
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-          func_?();
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
         }
-        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                            ((XpBoostParticlePreviewer *)BVar4.iconPrefab,
+        this_00 = (GameObject *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)TVar3.streamedImagePrefab,
                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                             );
-        if ((this_00 != (XpBoostParticlePreviewer *)0x0) &&
+        if ((this_00 != (GameObject *)0x0) &&
            (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                ((GameObject *)this_00,(MethodInfo *)0x0),
-           this_01 != (Transform *)0x0)) {
+                                (this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                     (this_01,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
           return;
@@ -73,65 +77,18 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_HandleSuccessfu
                (BoostPurchasePopup *this,MethodInfo *method)
 
 {
-  pUVar1 = (this->fields).OnPurchaseSuccessful;
-  if (pUVar1 == (UnityAction *)0x0) {
-    func_?(0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  puStack_1 = &stack0xfffffffc;
+  pUVar2 = (this->fields).OnPurchaseSuccessful;
+  if (pUVar2 != (UnityAction *)0x0) {
+    puStack_1 = (pUVar2->fields)._._.method;
+    pvStack_3 = (pUVar2->fields)._._.method_code;
+    (*(pUVar2->fields)._._.invoke_impl)();
     return;
   }
-  this_00 = (AvatarMotor_OnActiveBounceDelegate *)(pUVar1->fields)._.prev;
-  if (this_00 != (AvatarMotor_OnActiveBounceDelegate *)0x0) {
-    AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-              (this_00,(MethodInfo *)0x0);
-  }
-  pcVar2 = (pUVar1->fields)._._.method_ptr;
-  this_01 = (pUVar1->fields)._._.method;
-  pOVar3 = (pUVar1->fields)._._.m_target;
-  if (this_01->flags == 0xffff) {
-    func_?(this_01);
-  }
-  cVar4 = func_?(this_01);
-  if (cVar4 == '\0') {
-    if ((char)this_01->iflags == '\0') {
-      (*pcVar2)();
-      return;
-    }
-  }
-  else if ((this_01->flags != 0xffff) &&
-          (((pOVar3 == (Object *)0x0 || (((pOVar3->klass->_1).token & 0x100) == 0)) &&
-           ((pUVar1->fields)._._.invoke_impl != (void *)0x0)))) {
-    cVar4 = func_?(pOVar3);
-    if (cVar4 != '\0') {
-      return;
-    }
-    method_00 = this_01;
-    cVar4 = func_?();
-    pOVar5 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[WinningConditionType,System
-             ::Object]::KeyValuePair_2_WinningConditionType_System_Object__get_Value
-                       ((KeyValuePair_2_WinningConditionType_System_Object_ *)this_01,method_00);
-    cVar6 = func_?(pOVar5);
-    if (cVar4 != '\0') {
-      if (cVar6 != '\0') {
-        func_?();
-        return;
-      }
-      func_?(this_01,pOVar3);
-      return;
-    }
-    if (cVar6 != '\0') {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::
-               KeyValuePair`2[WinningConditionType,System::Object]::
-               KeyValuePair_2_WinningConditionType_System_Object__get_Value
-                         ((KeyValuePair_2_WinningConditionType_System_Object_ *)this_01,
-                          unaff_retaddr);
-      func_?(this_01->flags,pOVar3);
-      return;
-    }
-    func_?(this_01->flags,pOVar3);
-    return;
-  }
-  (*pcVar2)(pOVar3,this_01);
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -144,67 +101,76 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_N0);
+    func_?(&::StringLiteral__);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).headerText;
   (this->fields).boostKey = boostKey;
+  func_?(&(this->fields).boostKey,boostKey);
   (this->fields).price = price;
   (this->fields).OnPurchaseSuccessful = OnPurchaseSuccessful;
+  func_?(&(this->fields).OnPurchaseSuccessful,OnPurchaseSuccessful);
+  pTVar1 = (this->fields).headerText;
   if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,boostName,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    (*(pTVar1->klass->vtable).set_text.methodPtr)
+              (pTVar1,boostName,(pTVar1->klass->vtable).set_text.method);
     pTVar1 = (this->fields).priceText;
-    pSVar2 = (String *)func_?(&price,StringLiteral_N0,0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString_1
+                       ((Int32 *)&price,StringLiteral_N0,(MethodInfo *)0x0);
     if ((pSVar2 != (String *)0x0) &&
        (pSVar2 = mscorlib.dll::System::String::String_Replace_1
                            (pSVar2,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
        pTVar1 != (Text *)0x0)) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)
-                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      (*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
       if (cRam_? == '\0') {
-        func_?(_UNK_?);
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Count__
+                       );
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
+                       );
+        func_?(&
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+        func_?(&TypeInfo__UnityEngine__Object);
         cRam_? = '\x01';
       }
-      pLVar3 = (this->fields).boosterList;
+      pLVar3 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterList;
       index = 0;
-      while (pLVar3 != (List_1_BoostPurchasePopup_BoosterDef_ *)0x0) {
-        pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pLVar3,
-                            MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Count__
-                           );
-        if ((int)pOVar4 <= index) {
+      while (pLVar3 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
+        if ((pLVar3->fields)._size <= index) {
           return;
         }
-        pLVar3 = (this->fields).boosterList;
-        if (pLVar3 == (List_1_BoostPurchasePopup_BoosterDef_ *)0x0) break;
-        BVar5 = mscorlib.dll::System::Collections::Generic::List`1[BoostPurchasePopup+BoosterDef]::
-                List_1_BoostPurchasePopup_BoosterDef__get_Item
+        pLVar3 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterList;
+        if (pLVar3 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) break;
+        TVar4 = mscorlib.dll::System::Collections::Generic::
+                List`1[TabMenuButtonAccessory+AccessoryTabDef]::
+                List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
                           (pLVar3,index,
                            MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                           );
-        pLVar3 = (this->fields).boosterList;
-        if (BVar5.type == boostType) {
-          if (pLVar3 != (List_1_BoostPurchasePopup_BoosterDef_ *)0x0) {
-            BVar5 = mscorlib.dll::System::Collections::Generic::
-                    List`1[BoostPurchasePopup+BoosterDef]::
-                    List_1_BoostPurchasePopup_BoosterDef__get_Item
+        pLVar3 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterList;
+        if (TVar4.tabID == boostType) {
+          if (pLVar3 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
+            TVar4 = mscorlib.dll::System::Collections::Generic::
+                    List`1[TabMenuButtonAccessory+AccessoryTabDef]::
+                    List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
                               (pLVar3,index,
                                MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                               );
-            if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0)
-               && ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
             }
-            this_00 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                                ((XpBoostParticlePreviewer *)BVar5.iconPrefab,
+            this_00 = (GameObject *)
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                ((Object *)TVar4.streamedImagePrefab,
                                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                                 );
-            if ((this_00 != (XpBoostParticlePreviewer *)0x0) &&
+            if ((this_00 != (GameObject *)0x0) &&
                (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_transform((GameObject *)this_00,(MethodInfo *)0x0),
+                          GameObject_get_transform(this_00,(MethodInfo *)0x0),
                this_01 != (Transform *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                         (this_01,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
@@ -217,9 +183,9 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Initialize
       }
     }
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -232,158 +198,187 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_ProductPurchase
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                   );
+    func_?(&
+                    MethodInfo__BoostPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__BoostPurchasePopup____c___ProductPurchaseResponseHandler_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__BoostPurchasePopup____c___ProductPurchaseResponseHandler_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__BoostPurchasePopup____c__DisplayClass9_0___ProductPurchaseResponseHandler_b__2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__BoostPurchasePopup____c__DisplayClass9_0);
+    func_?(&TypeInfo__BoostPurchasePopup____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__BoostPurchasePopup___ProductPurchaseResponseHandler_c__AnonStorey0;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    (this_01->fields)._._._._.m_CachedPtr = (void *)returnCode;
-    (this_01->fields).state = (int32_t)this;
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pAVar2 = (pMVar1->fields).PurchaseProductResponseHandler;
-      pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?(
+  pEVar1 = unaff_EDI;
+  value = (Object *)func_?(TypeInfo__BoostPurchasePopup____c__DisplayClass9_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)pEVar1);
+    value[1].klass = (Object__Class *)returnCode;
+    value[1].monitor = (MonitorData *)this;
+    func_?(&value[1].monitor,this);
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar2 != (MVNetworkGame *)0x0) {
+      source = (pMVar2->fields).PurchaseProductResponseHandler;
+      this_00 = (Action_2_Int32Enum_Object_ *)
+                func_?(
                                TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                                );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar3,(Object *)this,
-                 MethodInfo__BoostPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                 ,
-                 MethodInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Action_System__Object__void__
-                );
-      pAVar4 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                *)mscorlib.dll::System::Delegate::Delegate_Remove
-                            ((Delegate *)pAVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-      pAVar2 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+      unaff_EDI = (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0;
+      if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
+        mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__BoostPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                   ,(MethodInfo *)0x0);
+        unaff_EDI = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                    mscorlib.dll::System::Delegate::Delegate_Remove
+                              ((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
+        if (unaff_EDI == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+          (pMVar2->fields).PurchaseProductResponseHandler =
+               (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                 *)0x0;
-      if (pAVar4 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                     *)0x0) {
-        if (pAVar4->klass ==
-            TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+        }
+        else {
+          iVar3 = func_?(unaff_EDI);
+          if (iVar3 == 0) goto code_?;
+          _UNK_? = iVar3;
+          iVar3 = func_?(unaff_EDI);
+          if (iVar3 == 0) goto code_?;
+          pMVar2 = (MVNetworkGame *)&UNK_?;
+        }
+        func_?(&(pMVar2->fields).PurchaseProductResponseHandler);
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        if ((TypeInfo__BoostPurchasePopup____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__BoostPurchasePopup____c);
+        }
+        pEVar1 = TypeInfo__BoostPurchasePopup____c->static_fields->__9__9_0;
+        if (pEVar1 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+          if ((TypeInfo__BoostPurchasePopup____c->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__BoostPurchasePopup____c);
+          }
+          pBVar5 = TypeInfo__BoostPurchasePopup____c->static_fields->__9;
+          pEVar1 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                   func_?(
+                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                  );
+          unaff_EDI = (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0;
+          if (pEVar1 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)pEVar1,(Object *)pBVar5,
+                     MethodInfo__BoostPurchasePopup____c___ProductPurchaseResponseHandler_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          TypeInfo__BoostPurchasePopup____c->static_fields->__9__9_0 = pEVar1;
+          func_?(&TypeInfo__BoostPurchasePopup____c->static_fields->__9__9_0,pEVar1);
+        }
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
            ) {
-          pAVar2 = pAVar4;
+          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         }
-        pAVar5 = 
-        TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-        ;
-        if (pAVar2 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                       *)0x0) goto code_?;
-      }
-      (pMVar1->fields).PurchaseProductResponseHandler = pAVar2;
-      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if (TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache1 ==
-          (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(
-                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                   );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)0x0,
-                   MethodInfo__BoostPurchasePopup___ProductPurchaseResponseHandler_m__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar4,(BaseEventData *)0x0,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar1,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
-        TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache1 =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)pUVar3;
-      }
-      pEVar7 = (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-               TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache1;
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (pGVar6,(BaseEventData *)0x0,pEVar7,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if (TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache2 ==
-          (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(
-                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                   );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)0x0,
-                   MethodInfo__BoostPurchasePopup___ProductPurchaseResponseHandler_m__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-                  );
-        TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache2 =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)pUVar3;
-      }
-      pEVar7 = (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-               TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache2;
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (pGVar6,(BaseEventData *)0x0,pEVar7,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if ((this_01->fields)._._._._.m_CachedPtr != (void *)0x0) {
-        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)this,(MethodInfo *)0x0);
-        pUVar3 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?(
-                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                                   );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar3,(Object *)this_01,
-                   MethodInfo__BoostPurchasePopup___ProductPurchaseResponseHandler_c__AnonStorey0____m__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-          func_?();
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        if ((TypeInfo__BoostPurchasePopup____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__BoostPurchasePopup____c);
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
-                  (pGVar6,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar3,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+        unaff_EDI = TypeInfo__BoostPurchasePopup____c->static_fields->__9__9_1;
+        if (unaff_EDI == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+          if ((TypeInfo__BoostPurchasePopup____c->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__BoostPurchasePopup____c);
+          }
+          pBVar5 = TypeInfo__BoostPurchasePopup____c->static_fields->__9;
+          unaff_EDI = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                      func_?(
+                                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                     );
+          if (unaff_EDI == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)unaff_EDI,(Object *)pBVar5,
+                     MethodInfo__BoostPurchasePopup____c___ProductPurchaseResponseHandler_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          TypeInfo__BoostPurchasePopup____c->static_fields->__9__9_1 = unaff_EDI;
+          func_?(&TypeInfo__BoostPurchasePopup____c->static_fields->__9__9_1,unaff_EDI);
+        }
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar4,(BaseEventData *)0x0,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
-        return;
-      }
-      this_00 = (AvatarMotor_OnActiveBounceDelegate *)(this->fields).OnPurchaseSuccessful;
-      if (this_00 != (AvatarMotor_OnActiveBounceDelegate *)0x0) {
-        AvatarMotor+OnActiveBounceDelegate::AvatarMotor_OnActiveBounceDelegate_Invoke
-                  (this_00,(MethodInfo *)0x0);
-        return;
+        if (value[1].klass == (Object__Class *)0x0) {
+          pUVar6 = (this->fields).OnPurchaseSuccessful;
+          if (pUVar6 != (UnityAction *)0x0) {
+            (*(pUVar6->fields)._._.invoke_impl)
+                      ((pUVar6->fields)._._.method_code,(pUVar6->fields)._._.method);
+            return;
+          }
+        }
+        else {
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this,(MethodInfo *)0x0);
+          callbackFunction =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                              );
+          unaff_EDI = (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0;
+          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                       MethodInfo__BoostPurchasePopup____c__DisplayClass9_0___ProductPurchaseResponseHandler_b__2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar4,(BaseEventData *)0x0,callbackFunction,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                      );
+            return;
+          }
+        }
       }
     }
   }
-  func_?(0);
-  pAVar4 = extraout_ECX;
-  pAVar5 = extraout_EDX;
 code_?:
-  func_?(pAVar4,pAVar5);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+code_?:
+  func_?(unaff_EDI);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -395,173 +390,103 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Purchase
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                   );
+    func_?(&
+                    MethodInfo__BoostPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__BoostPurchasePopup____c___Purchase_b__8_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__BoostPurchasePopup____c);
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  if (TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache0 ==
-      (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-    pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                            );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar1,(Object *)0x0,
-               MethodInfo__BoostPurchasePopup___Purchase_m__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>__EventFunction_System__Object__void__
-              );
-    TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache0 =
-         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)pUVar1;
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__BoostPurchasePopup____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__BoostPurchasePopup____c);
   }
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)
-       TypeInfo__BoostPurchasePopup->static_fields->__f__am_cache0;
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-            );
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?();
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    pAVar3 = (pMVar2->fields).PurchaseProductResponseHandler;
-    pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-             func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (pUVar1,(Object *)&UNK_?,
-               MethodInfo__BoostPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-               ,
-               MethodInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Action_System__Object__void__
-              );
-    pAVar4 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar3,(Delegate *)pUVar1,(MethodInfo *)0x0);
-    pAVar3 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             0x0;
-    if (pAVar4 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                   *)0x0) {
-      if (pAVar4->klass ==
-          TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-         ) {
-        pAVar3 = pAVar4;
-      }
-      pAVar5 = 
-      TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-      ;
-      if (pAVar3 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                     *)0x0) goto code_?;
+  callbackFunction = TypeInfo__BoostPurchasePopup____c->static_fields->__9__8_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+    if ((TypeInfo__BoostPurchasePopup____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__BoostPurchasePopup____c);
     }
-    (pMVar2->fields).PurchaseProductResponseHandler = pAVar3;
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PurchaseGameBooster
-                (this_00,_UNK_?,(MethodInfo *)0x0);
-      return;
+    object = TypeInfo__BoostPurchasePopup____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                        );
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__BoostPurchasePopup____c___Purchase_b__8_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__BoostPurchasePopup____c->static_fields->__9__8_0 = callbackFunction;
+      func_?();
+      goto code_?;
+    }
+  }
+  else {
+code_?:
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+              );
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 != (MVNetworkGame *)0x0) {
+      this_00 = (Action_2_Int32Enum_Object_ *)func_?();
+      if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
+        a = this_00;
+        mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__BoostPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                   ,(MethodInfo *)0x0);
+        pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
+        if (pDVar2 == (Delegate *)0x0) {
+          (pMVar1->fields).PurchaseProductResponseHandler =
+               (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                *)0x0;
+        }
+        else {
+          pAVar3 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                    *)func_?();
+          if (pAVar3 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                         *)0x0) goto code_?;
+          (pMVar1->fields).PurchaseProductResponseHandler = pAVar3;
+          iVar4 = func_?();
+          if (iVar4 == 0) goto code_?;
+        }
+        func_?();
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                            ((MethodInfo *)0x0);
+        if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PurchaseGameBooster
+                    (this_01,pSRam0000001c,(MethodInfo *)0x0);
+          return;
+        }
+      }
     }
   }
   func_?();
-  pAVar4 = extraout_ECX;
-  pAVar5 = extraout_EDX;
 code_?:
-  func_?(pAVar4,pAVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
-  return;
-}
-
-
-/* Void <ProductPurchaseResponseHandler>m__1(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::BoostPurchasePopup::
-     BoostPurchasePopup__ProductPurchaseResponseHandler_m__1
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void <ProductPurchaseResponseHandler>m__2(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::BoostPurchasePopup::
-     BoostPurchasePopup__ProductPurchaseResponseHandler_m__2
-               (IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
-    return;
-  }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void <Purchase>m__0(IModalPopupCreator, BaseEventData) */
-
-void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup__Purchase_m__0
-               (IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if (x != (IModalPopupCreator *)0x0) {
-    pIVar1 = x->klass;
-    uVar2 = 0;
-    uVar3._0_1_ = (pIVar1->_1).rank;
-    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
-    if (uVar3 != 0) {
-      do {
-        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(x->klass->vtable).Create_1)[iVar4].method)
-                    (x,(&(x->klass->vtable).Create_2)[iVar4].methodPtr);
-          return;
-        }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
-    }
-    puVar5 = (undefined4 *)
-             func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,2);
-    (*(code *)*puVar5)(x,puVar5[1]);
-    return;
-  }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -14,7 +14,10 @@ AdvancedGhostBodyRotateWeaponPackage_Create
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  func_?(__return_storage_ptr__,0xc,damage,impulse._0_8_,impulse.z,0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_3
+            (__return_storage_ptr__,
+             InteractionPackageType__Enum_AdvancedGhostBodyRotateWeaponPackage,damage,impulse,
+             (MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -27,23 +30,9 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeaponPackage::
                MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?();
-  fStack_2 = (float)fVar1;
-  pVVar3 = (Vector3 *)func_?(auStack_4);
   InteractionPackage::InteractionPackage_HandlePackage_1
-            ((InteractionPackage *)this,worldObjectClient,shooter,fStack_2,
-             PlayerKilledByType__Enum_AdvancedGhost,*pVVar3,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* AdvancedGhostBodyRotateWeaponPackage() */
-
-void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeaponPackage::
-     AdvancedGhostBodyRotateWeaponPackage__ctor
-               (AdvancedGhostBodyRotateWeaponPackage *this,MethodInfo *method)
-
-{
+            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
+             PlayerKilledByType__Enum_AdvancedGhost,interactionStruct.impulse,(MethodInfo *)0x0);
   return;
 }
 

@@ -9,11 +9,11 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Gamestrap
 {
-	[AddComponentMenu]
+	[AddComponentMenu("UI/Gamestrap UI/Gradient")]
 	public class GradientEffect : BaseMeshEffect
 	{
 		// Fields

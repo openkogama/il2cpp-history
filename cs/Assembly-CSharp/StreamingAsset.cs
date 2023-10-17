@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public abstract class StreamingAsset : MonoBehaviour
 {
@@ -29,29 +29,27 @@ public abstract class StreamingAsset : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DelayedUnload_c__Iterator0 : IEnumerator<object>
+	private sealed class _DelayedUnload_d__11 : IEnumerator<object>
 	{
 		// Fields
-		internal UnityWebRequest www;
-		internal AssetBundle _assetBundle___0;
-		internal object _current;
-		internal bool _disposing;
-		internal int _PC;
+		private int __1__state;
+		private object __2__current;
+		public UnityWebRequest www;
 
 		// Properties
-		object IEnumerator<object>.Current { [DebuggerHidden] get; }
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
 		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
 		[DebuggerHidden]
-		public _DelayedUnload_c__Iterator0();
+		public _DelayedUnload_d__11(int __1__state);
 
 		// Methods
-		public bool MoveNext();
 		[DebuggerHidden]
-		public void Dispose();
+		void IDisposable.Dispose();
+		private bool MoveNext();
 		[DebuggerHidden]
-		public void Reset();
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -67,7 +65,7 @@ public abstract class StreamingAsset : MonoBehaviour
 		where AssetType : UnityEngine.Object;
 	protected static AssetType UnpackBundle_NonCached<AssetType>(UnityWebRequest www, MonoBehaviour coroutineHost)
 		where AssetType : UnityEngine.Object;
-	[DebuggerHidden]
+	[IteratorStateMachine(typeof(_DelayedUnload_d__11))]
 	protected static IEnumerator DelayedUnload(UnityWebRequest www);
 	public static string DBUrlToServerUrl(string url);
 	protected void Download_Cached(string url, UnityAction onAssetSetAction);

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GameMeterGameCoin : GameMeterBase
 {
@@ -19,6 +19,10 @@ public class GameMeterGameCoin : GameMeterBase
 	private GameObject coinAmount;
 	[SerializeField]
 	private RollingNumberCounterAndroid counter;
+	[SerializeField]
+	private bool useText;
+	[SerializeField]
+	private UnityEngine.UI.Text counterText;
 
 	// Properties
 	public override GameMeterType GameMeterType { get; }

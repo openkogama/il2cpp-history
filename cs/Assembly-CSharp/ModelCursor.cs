@@ -8,14 +8,14 @@ using System.Runtime.CompilerServices;
 using MV.WorldObject;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ModelCursor
 {
 	// Fields
 	protected FaceCursor faceCursor;
-	protected CellCursor errorCursor;
-	private float addCubeLaserOnTime;
+	protected readonly CellCursor errorCursor;
+	private const float addCubeLaserOnTime = 0.2f;
 
 	// Properties
 	public virtual bool CursorVisible { get; set; }
@@ -26,7 +26,8 @@ public class ModelCursor
 	// Methods
 	private void HandleLaserMovingEdge(CubePickingInfo movingEdgeCube, GameObject targetGameObject);
 	protected void HandleLaser(CubePickingInfo movingEdgeCube, CubePickingInfo selectedCube, GameObject targetGameObject, BuildState buildState, bool addCube);
-	public void SetErrorCursor(IntVector iPos, GameObject targetGameObject);
+	public void SetErrorCursor(IntVector iPos, GameObject targetGameObject, bool showUnlockNotification);
+	public static void ShowUnlockMaterialNotification();
 	public virtual void Remove();
 }
 

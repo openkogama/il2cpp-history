@@ -9,7 +9,7 @@ using Assets.Scripts.GamePasses;
 using MV.Common;
 using MV.WorldObject.GamePassSystem;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public static class GamePassesManager
 {
@@ -18,7 +18,6 @@ public static class GamePassesManager
 	public static PlayerTierStateCalculator playerTierStateCalculator;
 	public static Action OnPlayerPlanetDataUpdated;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private static bool _GamePassesActive_k__BackingField;
 	private static PlayerPlanetData playerPlanetData;
 	private static TogglePreviewState togglePreviewState;
@@ -28,9 +27,6 @@ public static class GamePassesManager
 	public static bool GamePassesActive { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public static PlayerPlanetData PlayerPlanetData { get; set; }
 	public static TogglePreviewState TogglePreviewState { get; }
-
-	// Constructors
-	static GamePassesManager();
 
 	// Methods
 	public static void UpdatePlayerPlanetData(PlayerPlanetData playerPlanetData);

@@ -11,7 +11,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MaterialPurchasePopup : MonoBehaviour
 {
@@ -31,28 +31,42 @@ public class MaterialPurchasePopup : MonoBehaviour
 	private MaterialPreviewer materialPreviewer;
 	[SerializeField]
 	private GameObject purchaseButton;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IModalPopupCreator> __f__am_cache1;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache2;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache3;
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _ProductPurchaseResponseHandler_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal int returnCode;
-		internal MaterialPurchasePopup _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__12_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__12_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__13_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__13_1;
 
 		// Constructors
-		public _ProductPurchaseResponseHandler_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IModalPopupCreator x, BaseEventData y);
+		internal void _OnConfirmed_b__12_0(IUIStack x, BaseEventData y);
+		internal void _OnConfirmed_b__12_1(IModalPopupCreator x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__13_0(IUIStack x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__13_1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass13_0
+	{
+		// Fields
+		public int returnCode;
+		public MaterialPurchasePopup __4__this;
+
+		// Constructors
+		public __c__DisplayClass13_0();
+
+		// Methods
+		internal void _ProductPurchaseResponseHandler_b__2(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors
@@ -65,14 +79,6 @@ public class MaterialPurchasePopup : MonoBehaviour
 	private void OnConfirmed(bool confirmed, ConfirmationPopup confirmationPopup);
 	private void ProductPurchaseResponseHandler(int returnCode, Dictionary<object, object> purchaseResponseData);
 	[CompilerGenerated]
-	private void _OnPurchaseClick_m__0(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnConfirmed_m__1(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _OnConfirmed_m__2(IModalPopupCreator x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ProductPurchaseResponseHandler_m__3(IUIStack x, BaseEventData y);
-	[CompilerGenerated]
-	private static void _ProductPurchaseResponseHandler_m__4(IUIStack x, BaseEventData y);
+	private void _OnPurchaseClick_b__11_0(IModalPopupCreator x, BaseEventData y);
 }
 

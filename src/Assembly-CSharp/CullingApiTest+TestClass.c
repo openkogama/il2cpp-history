@@ -7,22 +7,26 @@ void Assembly-CSharp.dll::CullingApiTest+TestClass::CullingApiTest_TestClass_OnS
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_cullingGroupEvent_);
     cRam_? = '\x01';
   }
-  func_?(&cullingGroupEvent,0);
-  arg1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  message = mscorlib.dll::System::String::String_Concat
-                      ((Object *)StringLiteral_cullingGroupEvent_,arg1,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  IStack_1.m_value =
+       (int32_t)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_7
+                          ((uint8_t *)&cullingGroupEvent,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_cullingGroupEvent_,pSVar2,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    cullingGroupEvent._4_4_ = TypeInfo__UnityEngine__Debug;
+    cullingGroupEvent.m_Index = (int32_t)&UNK_?;
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
+  cullingGroupEvent.m_PrevState = 0;
+  cullingGroupEvent.m_ThisState = 0;
+  cullingGroupEvent._6_2_ = 0;
+  cullingGroupEvent.m_Index = (int32_t)pSVar2;
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
   return;
 }
 

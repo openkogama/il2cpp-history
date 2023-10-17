@@ -7,8 +7,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using WorldObjectTypes.JetPack;
+using WorldObjectTypes.VehicleEnergy;
+using WorldObjectTypes.VehiclesBase.Shared;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVJetPack : MVVehicleBase
 {
@@ -76,6 +79,9 @@ public class MVJetPack : MVVehicleBase
 		public override InputToInGameAction Update(InputToInGameAction interactionInput);
 		public override void Enter();
 		public override IInputToPlayerMovement FixedUpdate(IInputToPlayerMovement movementMap);
+		public override void RefillEnergy(VehicleEnergyRefill vehicleEnergyRefill);
+		public override bool UsesEnergy();
+		public override void RollbackVehicleRefillEnergyPrediction(int spawnerId);
 		private bool WalkMode(bool thrust);
 		private bool EvaluateThrust(bool thrust);
 		private void OverheatUpdate(bool thrust);
@@ -87,6 +93,7 @@ public class MVJetPack : MVVehicleBase
 	public MVJetPack(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);
 
 	// Methods
+	protected override VehicleEnergyContainerConfig SetupVehicleEnergyContainerConfig();
 	public override void Initialize();
 	public override void InitializeInventory();
 	public override bool OnEnterObject(EditorStateMachine e);

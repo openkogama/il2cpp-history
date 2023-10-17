@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -16,19 +16,14 @@ namespace Newtonsoft.Json.Serialization
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private MemberSerialization _MemberSerialization_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonPropertyCollection _Properties_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private JsonPropertyCollection _ConstructorParameters_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private ConstructorInfo _OverrideConstructor_k__BackingField;
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private ConstructorInfo _ParametrizedConstructor_k__BackingField;
 	
 		// Properties
@@ -39,6 +34,6 @@ namespace Newtonsoft.Json.Serialization
 		public ConstructorInfo ParametrizedConstructor { [CompilerGenerated] get; [CompilerGenerated] set; }
 	
 		// Constructors
-		public JsonObjectContract(Type underlyingType);
+		public JsonObjectContract(System.Type underlyingType);
 	}
 }

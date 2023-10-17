@@ -6,57 +6,64 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_AddMaterial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>)
+    ;
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IFadeParent>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__FadeableAvatarObject____c__DisplayClass4_0___AddMaterialsToAvatarFader_b__0_IFadeParent__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FadeableAvatarObject____c__DisplayClass4_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__FadeableAvatarObject___AddMaterialsToAvatarFader_c__AnonStorey0;
-  this_01 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-  if (this_01 != (ScaleAnimationBase *)0x0) {
-    pvVar1 = (void *)0x0;
-    (this_01->fields).state = (int32_t)this;
-    (this_01->fields)._._._._.m_CachedPtr = (void *)0x0;
-    while( true ) {
-      this_00 = (this->fields).materials;
-      if (this_00 == (List_1_UnityEngine_Material_ *)0x0) break;
-      pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Count__
-                         );
-      if ((int)pOVar2 <= (int)pvVar1) {
+  value = (Object *)func_?(TypeInfo__FadeableAvatarObject____c__DisplayClass4_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    value[1].monitor = (MonitorData *)0x0;
+    while (pLVar1 = (this->fields).materials, pLVar1 != (List_1_UnityEngine_Material_ *)0x0) {
+      if ((pLVar1->fields)._size <= (int)value[1].monitor) {
         return;
       }
+      callbackFunction = value[2].klass;
       root = (this->fields).avatarObject;
-      this_02 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_02,(Object *)this_01,
-                 MethodInfo__FadeableAvatarObject___AddMaterialsToAvatarFader_c__AnonStorey0____m__0_IFadeParent__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>__EventFunction_System__Object__void__
-                );
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+      if (callbackFunction == (Object__Class *)0x0) {
+        callbackFunction =
+             (Object__Class *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>
+                            );
+        if (callbackFunction == (Object__Class *)0x0) break;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                   MethodInfo__FadeableAvatarObject____c__DisplayClass4_0___AddMaterialsToAvatarFader_b__0_IFadeParent__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        value[2].klass = callbackFunction;
+        func_?(value + 2,callbackFunction);
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_02,
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IFadeParent>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>_
                 );
-      (this_01->fields)._._._._.m_CachedPtr =
-           (void *)((int)(this_01->fields)._._._._.m_CachedPtr + 1);
-      pvVar1 = (this_01->fields)._._._._.m_CachedPtr;
+      value[1].monitor = value[1].monitor + 1;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -68,6 +75,7 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_Initialize
 
 {
   (this->fields).avatarObject = avatarObject;
+  func_?(&(this->fields).avatarObject,avatarObject);
   FadeableAvatarObject_AddMaterialsToAvatarFader(this,(MethodInfo *)0x0);
   return;
 }
@@ -80,68 +88,82 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>)
+    ;
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IFadeParent>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Clear__)
+    ;
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Count__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__FadeableAvatarObject____c__DisplayClass5_0___OnDestroy_b__0_IFadeParent__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__FadeableAvatarObject____c__DisplayClass5_0);
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields).avatarObject;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-code_?:
-    this_01 = (List_1_UnityEngine_UIVertex_ *)(this->fields).materials;
-    if (this_01 != (List_1_UnityEngine_UIVertex_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-      List_1_UnityEngine_UIVertex__Clear
-                (this_01,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Clear__);
-      return;
+  value = (Object *)func_?(TypeInfo__FadeableAvatarObject____c__DisplayClass5_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    pGVar1 = (this->fields).avatarObject;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
     }
-  }
-  else {
-    this_02 = (ScaleAnimationBase *)
-              func_?(TypeInfo__FadeableAvatarObject___OnDestroy_c__AnonStorey1);
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_02,0.0,unaff_retaddr);
-    if (this_02 != (ScaleAnimationBase *)0x0) {
-      (this_02->fields).state = (int32_t)this;
-      pvVar3 = (void *)0x0;
-      (this_02->fields)._._._._.m_CachedPtr = (void *)0x0;
-      while (this_00 = (this->fields).materials, this_00 != (List_1_UnityEngine_Material_ *)0x0) {
-        pOVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)this_00,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Count__
-                           );
-        if ((int)pOVar4 <= (int)pvVar3) goto code_?;
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+code_?:
+      pLVar3 = (this->fields).materials;
+      if (pLVar3 != (List_1_UnityEngine_Material_ *)0x0) {
+        length = (pLVar3->fields)._size;
+        piVar4 = &(pLVar3->fields)._version;
+        *piVar4 = *piVar4 + 1;
+        (pLVar3->fields)._size = 0;
+        if (0 < length) {
+          mscorlib.dll::System::Array::Array_Clear
+                    ((Array *)(pLVar3->fields)._items,0,length,(MethodInfo *)0x0);
+        }
+        return;
+      }
+    }
+    else {
+      value[1].monitor = (MonitorData *)0x0;
+      while (pLVar3 = (this->fields).materials, pLVar3 != (List_1_UnityEngine_Material_ *)0x0) {
+        if ((pLVar3->fields)._size <= (int)value[1].monitor) goto code_?;
+        callbackFunction = value[2].klass;
         pGVar1 = (this->fields).avatarObject;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this_02,
-                   MethodInfo__FadeableAvatarObject___OnDestroy_c__AnonStorey1____m__0_IFadeParent__UnityEngine__EventSystems__BaseEventData_
-                   ,
-                   MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>__EventFunction_System__Object__void__
-                  );
-        if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-             0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
+        if (callbackFunction == (Object__Class *)0x0) {
+          callbackFunction =
+               (Object__Class *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>
+                              );
+          if (callbackFunction == (Object__Class *)0x0) break;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__FadeableAvatarObject____c__DisplayClass5_0___OnDestroy_b__0_IFadeParent__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          value[2].klass = callbackFunction;
+          func_?(value + 2,callbackFunction);
+        }
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
           func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-        ExecuteEvents_ExecuteHierarchy_63
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                   (pGVar1,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_03,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IFadeParent>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>_
                   );
-        (this_02->fields)._._._._.m_CachedPtr =
-             (void *)((int)(this_02->fields)._._._._.m_CachedPtr + 1);
-        pvVar3 = (this_02->fields)._._._._.m_CachedPtr;
+        value[1].monitor = value[1].monitor + 1;
       }
     }
   }
@@ -159,26 +181,30 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pUVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-           GameObject_GetComponentsInChildren_29
-                     ((GameObject *)this,
+  pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
+                     ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
                       UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                      );
-  uStack_2 = 0;
-  if (pUVar1 == (UseInteratorVisualization__Array *)0x0) {
+  pMVar2 = (MonitorData *)0x0;
+  if (pIVar1 == (IEnumerable_1_System_Object_ *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
   }
   else {
-    ppUVar3 = pUVar1->vector;
+    pIVar3 = pIVar1 + 2;
     while( true ) {
-      if ((int)pUVar1->max_length <= (int)uStack_2) {
+      if ((int)pIVar1[1].monitor <= (int)pMVar2) {
         x = (this->fields).avatarObject;
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
@@ -188,29 +214,32 @@ code_?:
         }
         return;
       }
-      if (pUVar1->max_length <= uStack_2) break;
-      if (*ppUVar3 == (UseInteratorVisualization *)0x0) goto code_?;
+      if (pIVar1[1].monitor <= pMVar2) break;
+      if (pIVar3->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
       pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
-                         ((Renderer *)*ppUVar3,(MethodInfo *)0x0);
-      iVar6 = 0;
-      while( true ) {
-        if (pMVar5 == (Material__Array *)0x0) goto code_?;
-        if ((int)pMVar5->max_length <= iVar6) break;
+                         ((Renderer *)pIVar3->klass,(MethodInfo *)0x0);
+      ppMVar6 = pMVar5->vector;
+      uVar7 = 0;
+      pIVar1 = unaff_ESI;
+      if (pMVar5 == (Material__Array *)0x0) goto code_?;
+      for (; (int)uVar7 < (int)pMVar5->max_length; uVar7 = uVar7 + 1) {
+        if (pMVar5->max_length <= uVar7) goto code_?;
         this_00 = (this->fields).materials;
-        item = func_?(iVar6);
         if (this_00 == (List_1_UnityEngine_Material_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-                  ((List_1_UIPushOption_ *)this_00,item,
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_00,(Object *)*ppMVar6,
                    MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
                   );
-        iVar6 = iVar6 + 1;
+        ppMVar6 = ppMVar6 + 1;
       }
-      uStack_2 = uStack_2 + 1;
-      ppUVar3 = ppUVar3 + 1;
+      pMVar2 = pMVar2 + 1;
+      pIVar3 = (IEnumerable_1_System_Object_ *)&pIVar3->monitor;
+      unaff_ESI = pIVar1;
     }
   }
-  uVar7 = func_?(0,0);
-  func_?(uVar7);
+code_?:
+  func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;
@@ -224,24 +253,26 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Material>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector4_ *)
+  this_00 = (List_1_UnityEngine_Material_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Material>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-  List_1_UnityEngine_Vector4___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__List__);
-  (this->fields).materials = (List_1_UnityEngine_Material_ *)this_00;
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  if (this_00 != (List_1_UnityEngine_Material_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+    LowLevelList_1_System_Object___ctor
+              ((LowLevelList_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__List__);
+    (this->fields).materials = this_00;
+    func_?(&(this->fields).materials,this_00);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
+              ((Transform *)this,(MethodInfo *)0x0);
+    return;
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?();
-  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

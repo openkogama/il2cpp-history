@@ -9,13 +9,13 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 {
   pSVar1 = (this->fields).subscribableVariableExternal;
   if (pSVar1 != (SubscribableVariable_1_System_Single_ *)0x0) {
-    puVar2 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x1c);
-    (*(code *)*puVar2)(pSVar1,newValue,puVar2);
+    (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
+              (pSVar1,newValue,method->klass->rgctx_data[3].rgctxDataDummy);
     return;
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -31,39 +31,47 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                SpawnRoleDataReceiver *spawnRoleDataReceiver,MethodInfo *method)
 
 {
-  if (this != (SpawnRoleReceiverVariable_1_System_Single_ *)0x0) {
-    ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-    (this->fields).subscribableVariableExternal = subscribableVariableExternal;
-    if (subscribableVariableExternal != (SubscribableVariable_1_System_Single_ *)0x0) {
-      fVar1 = (float10)(**(code **)**(undefined4 **)(method->name + 0x60))
-                                 (subscribableVariableExternal,
-                                  (undefined4 *)**(undefined4 **)(method->name + 0x60));
-      iVar2 = *(int *)(*(int *)(method->name + 0x60) + 4);
-      if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-        func_?(iVar2);
-      }
-      pSVar3 = (SubscribableVariable_1_System_Single_ *)func_?(iVar2);
-      puVar4 = *(undefined4 **)(*(int *)(method->name + 0x60) + 8);
-      (*(code *)*puVar4)(pSVar3,(float)fVar1,puVar4);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  (this->fields).subscribableVariableExternal = subscribableVariableExternal;
+  func_?(&(this->fields).subscribableVariableExternal,subscribableVariableExternal);
+  if (subscribableVariableExternal != (SubscribableVariable_1_System_Single_ *)0x0) {
+    fVar1 = (float10)(*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
+                               (subscribableVariableExternal,
+                                method->klass->rgctx_data[1].rgctxDataDummy);
+    pvVar2 = method->klass->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
+    }
+    pSVar3 = (SubscribableVariable_1_System_Single_ *)func_?(pvVar2);
+    if (pSVar3 != (SubscribableVariable_1_System_Single_ *)0x0) {
+      (*(method->klass->rgctx_data[4].method)->virtualMethodPointer)
+                (pSVar3,(float)fVar1,method->klass->rgctx_data[4].rgctxDataDummy);
       (this->fields).subscribableVariable = pSVar3;
-      iVar2 = *(int *)(*(int *)(method->name + 0x60) + 0x10);
-      if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-        func_?(iVar2);
+      func_?(&(this->fields).subscribableVariable,pSVar3);
+      pSVar3 = (this->fields).subscribableVariable;
+      pvVar2 = method->klass->rgctx_data[6].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+        pvVar2 = (void *)func_?(pvVar2);
       }
-      uVar5 = func_?(iVar2);
-      puVar4 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x14);
-      (*(code *)*puVar4)(uVar5,this,*(undefined4 *)(*(int *)(method->name + 0x60) + 0xc),puVar4);
-      if (pSVar3 != (SubscribableVariable_1_System_Single_ *)0x0) {
-        puVar4 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x18);
-        (*(code *)*puVar4)(pSVar3,uVar5,puVar4);
-        (this->fields).spawnRoleDataReceiver = spawnRoleDataReceiver;
-        return;
+      iVar4 = func_?(pvVar2);
+      if (iVar4 != 0) {
+        (*(method->klass->rgctx_data[7].method)->virtualMethodPointer)
+                  (iVar4,this,method->klass->rgctx_data[5].rgctxDataDummy,
+                   method->klass->rgctx_data[7].rgctxDataDummy);
+        if (pSVar3 != (SubscribableVariable_1_System_Single_ *)0x0) {
+          (*(method->klass->rgctx_data[8].method)->virtualMethodPointer)
+                    (pSVar3,iVar4,method->klass->rgctx_data[8].rgctxDataDummy);
+          (this->fields).spawnRoleDataReceiver = spawnRoleDataReceiver;
+          func_?(&this->fields,spawnRoleDataReceiver);
+          return;
+        }
       }
     }
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -76,16 +84,18 @@ float Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRo
                 (SpawnRoleReceiverVariable_1_System_Single_ *this,MethodInfo *method)
 
 {
-  if ((this->fields).subscribableVariable != (SubscribableVariable_1_System_Single_ *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    fVar1 = (float10)(**(code **)**(undefined4 **)(method->name + 0x60))();
-    return (float)fVar1;
+  IStack_1.rgctxDataDummy = &stack0xfffffffc;
+  pSStack_2 = (this->fields).subscribableVariable;
+  if (pSStack_2 != (SubscribableVariable_1_System_Single_ *)0x0) {
+    IStack_1 = method->klass->rgctx_data[1];
+    fVar3 = (float10)(*(method->klass->rgctx_data[1].method)->virtualMethodPointer)();
+    return (float)fVar3;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  fVar1 = (float10)(*pcVar2)();
-  return (float)fVar1;
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  fVar3 = (float10)(*pcVar6)();
+  return (float)fVar3;
 }
 
 
@@ -97,30 +107,30 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                (SpawnRoleReceiverVariable_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).spawnRoleDataReceiver;
-  if (this_00 != (SpawnRoleDataReceiver *)0x0) {
-    bVar1 = Mediator::SpawnRoleDataReceiver::SpawnRoleDataReceiver_get_IsActive
-                      (this_00,(MethodInfo *)0x0);
-    if (bVar1 == 0) goto code_?;
+  pSVar1 = (this->fields).spawnRoleDataReceiver;
+  if (pSVar1 != (SpawnRoleDataReceiver *)0x0) {
+    if ((pSVar1->fields).isActive == 0) goto code_?;
     pSVar2 = (this->fields).subscribableVariable;
     if (pSVar2 != (SubscribableVariable_1_System_Single_ *)0x0) {
-      (*(code *)**(undefined4 **)(*(int *)(method->name + 0x60) + 0x1c))(pSVar2,value);
+      (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
+                (pSVar2,value,method->klass->rgctx_data[3].rgctxDataDummy);
       return;
     }
   }
   func_?();
 code_?:
-  this_01 = (IsolatedStorageException *)func_?(TypeInfo__System__Exception);
-  mscorlib.dll::System::IO::IsolatedStorage::IsolatedStorageException::
-  IsolatedStorageException__ctor_1
-            (this_01,StringLiteral_SpawnRole_receiver_not_active__P,(MethodInfo *)0x0);
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar3);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_SpawnRole_receiver_not_active__P);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+  func_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<float>__set_Value_float_
+                 );
+  func_?(this_00);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

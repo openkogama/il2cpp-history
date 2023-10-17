@@ -6,46 +6,52 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_AcquireComponents
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    PlanarReflection_MethodInfo__UnityEngine__Component__GetComponent<PlanarReflection>__
+                   );
+    func_?(&WaterBase_MethodInfo__UnityEngine__Component__GetComponent<WaterBase>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).reflection;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                     ((Object_1 *)pPVar1,(MethodInfo *)0x0);
   if (bVar2 == 0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                        (pTVar3,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                       ((Object_1 *)pTVar3,(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar2 == 0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+    }
+    else {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
       if (pTVar3 == (Transform *)0x0) goto code_?;
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                          (pTVar3,(MethodInfo *)0x0);
     }
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pPVar1 = (PlanarReflection *)
-             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                       ((Component_1 *)pTVar3,
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                       ((Component *)pTVar3,
                         PlanarReflection_MethodInfo__UnityEngine__Component__GetComponent<PlanarReflection>__
                        );
     (this->fields).reflection = pPVar1;
+    func_?();
   }
   pWVar4 = (this->fields).waterBase;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
@@ -53,30 +59,34 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_AcquireComponents
   if (bVar2 != 0) {
     return;
   }
-  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)this,(MethodInfo *)0x0);
+  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
   if (pTVar3 != (Transform *)0x0) {
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                        (pTVar3,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                       ((Object_1 *)pTVar3,(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar2 == 0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+    }
+    else {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
       if (pTVar3 == (Transform *)0x0) goto code_?;
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                          (pTVar3,(MethodInfo *)0x0);
     }
     if (pTVar3 != (Transform *)0x0) {
       pWVar4 = (WaterBase *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                         ((Component_1 *)pTVar3,
+               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                         ((Component *)pTVar3,
                           WaterBase_MethodInfo__UnityEngine__Component__GetComponent<WaterBase>__);
       (this->fields).waterBase = pWVar4;
+      func_?();
       return;
     }
   }
@@ -95,35 +105,33 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_OnWillRenderObject
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).reflection;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                     ((Object_1 *)pPVar1,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     pPVar1 = (this->fields).reflection;
-    tr = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                   ((Component_1 *)this,(MethodInfo *)0x0);
+    tr = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                   ((Component *)this,(MethodInfo *)0x0);
     pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_current((MethodInfo *)0x0);
     if (pPVar1 == (PlanarReflection *)0x0) goto code_?;
     PlanarReflection::PlanarReflection_WaterTileBeingRendered(pPVar1,tr,pCVar3,(MethodInfo *)0x0);
   }
   pWVar4 = (this->fields).waterBase;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                     ((Object_1 *)pWVar4,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     pWVar4 = (this->fields).waterBase;
-    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-              ((Component_1 *)this,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+              ((Component *)this,(MethodInfo *)0x0);
     pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_current((MethodInfo *)0x0);
     if (pWVar4 == (WaterBase *)0x0) {
 code_?:
@@ -136,8 +144,7 @@ code_?:
       func_?();
       cRam_? = '\x01';
     }
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
@@ -160,46 +167,52 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_Start(WaterTile *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    PlanarReflection_MethodInfo__UnityEngine__Component__GetComponent<PlanarReflection>__
+                   );
+    func_?(&WaterBase_MethodInfo__UnityEngine__Component__GetComponent<WaterBase>__);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).reflection;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                     ((Object_1 *)pPVar1,(MethodInfo *)0x0);
   if (bVar2 == 0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                        (pTVar3,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                       ((Object_1 *)pTVar3,(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar2 == 0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+    }
+    else {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
       if (pTVar3 == (Transform *)0x0) goto code_?;
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                          (pTVar3,(MethodInfo *)0x0);
     }
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pPVar1 = (PlanarReflection *)
-             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                       ((Component_1 *)pTVar3,
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                       ((Component *)pTVar3,
                         PlanarReflection_MethodInfo__UnityEngine__Component__GetComponent<PlanarReflection>__
                        );
     (this->fields).reflection = pPVar1;
+    func_?();
   }
   pWVar4 = (this->fields).waterBase;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
@@ -207,30 +220,34 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_Start(WaterTile *this,M
   if (bVar2 != 0) {
     return;
   }
-  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                     ((Component_1 *)this,(MethodInfo *)0x0);
+  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
   if (pTVar3 != (Transform *)0x0) {
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                        (pTVar3,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                       ((Object_1 *)pTVar3,(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar2 == 0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+    }
+    else {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
       if (pTVar3 == (Transform *)0x0) goto code_?;
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                          (pTVar3,(MethodInfo *)0x0);
     }
     if (pTVar3 != (Transform *)0x0) {
       pWVar4 = (WaterBase *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                         ((Component_1 *)pTVar3,
+               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                         ((Component *)pTVar3,
                           WaterBase_MethodInfo__UnityEngine__Component__GetComponent<WaterBase>__);
       (this->fields).waterBase = pWVar4;
+      func_?();
       return;
     }
   }

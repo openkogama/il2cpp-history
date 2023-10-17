@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePointerAvatarBody : FirstTimeActivatableElementBase
 {
@@ -46,10 +46,10 @@ public class FirstTimeActivatablePointerAvatarBody : FirstTimeActivatableElement
 	private void Clear();
 	private void OnShown();
 	[CompilerGenerated]
-	private void _Update_m__0(TextBubbleController x, BaseEventData y);
+	private void _Update_b__12_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _OnShow_m__1(TextBubbleController x, BaseEventData y);
+	private void _OnShow_b__13_0(TextBubbleController x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Clear_m__2(TextBubbleController x, BaseEventData y);
+	private void _Clear_b__16_0(TextBubbleController x, BaseEventData y);
 }
 

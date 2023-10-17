@@ -6,22 +6,16 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
                (DummyAdManager *this,AdConfigSettings *config,MethodInfo *method)
 
 {
+  puStack_1 = &stack0xfffffffc;
   if (config != (AdConfigSettings *)0x0) {
-    bVar1 = SubscribableVariableBase`1[System::Boolean]::
-            SubscribableVariableBase_1_System_Boolean__get_Value
-                      ((SubscribableVariableBase_1_System_Boolean_ *)config,(MethodInfo *)0x0);
-    (this->fields).timeoutAsEnabled = bVar1;
-    pOVar2 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-             Serialization::JsonProperty]::
-             Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                       ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)config,
-                        (MethodInfo *)0x0);
-    (this->fields).timeoutSuccessDelay = (int32_t)pOVar2;
+    (this->fields).timeoutAsEnabled = (config->fields)._AdTimeoutAsSuccess_k__BackingField;
+    (this->fields).timeoutSuccessDelay = (config->fields)._AdTimeoutAsSuccessDelay_k__BackingField;
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -34,17 +28,17 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
   UpdateController::UpdateController_AddUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
              (MethodInfo *)0x0);
   (this->fields).adUIHandler = handler;
+  func_?(&this->fields,handler);
   return;
 }
 
@@ -60,41 +54,55 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager);
+    func_?(&StringLiteral_DummyAdManager___RequestIntersti);
+    func_?(&StringLiteral_DummyAdManager___RequestIntersti);
     cRam_? = '\x01';
   }
+  message = StringLiteral_DummyAdManager___RequestIntersti;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
   pIVar1 = (this->fields).adUIHandler;
   if (pIVar1 != (IAdUIManager *)0x0) {
     cVar2 = func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar1);
     if (cVar2 == '\0') {
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pIVar1 = (this->fields).adUIHandler;
-      (this->fields).startTime = fVar3;
-      if (pIVar1 != (IAdUIManager *)0x0) {
-        func_?(1,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar1,
-                        interstitialCallback);
-        (this->fields).rewarded = 0;
-        return;
+      this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
+                  (this_00,AdType__Enum_InterstitialAd,AdActionType__Enum_Start,context,
+                   (MethodInfo *)0x0);
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (this->fields).startTime = fVar3;
+        if ((this->fields).adUIHandler != (IAdUIManager *)0x0) {
+          func_?();
+          (this->fields).rewarded = 0;
+          return;
+        }
       }
     }
     else {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)StringLiteral_Ad_showing_already_,(MethodInfo *)0x0);
+                ((Object *)StringLiteral_DummyAdManager___RequestIntersti,(MethodInfo *)0x0);
       if (interstitialCallback != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0
          ) {
-        mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                  ((Action_1_UIPushOption_ *)interstitialCallback,UIPushOption__Enum_None,
-                   MethodInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>__Invoke_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                  );
+        (*(interstitialCallback->fields)._._.invoke_impl)
+                  ((interstitialCallback->fields)._._.method_code,0,
+                   (interstitialCallback->fields)._._.method);
         return;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -111,40 +119,54 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager);
+    func_?(&StringLiteral_DummyAdManager___RequestRewarded);
+    func_?(&StringLiteral_DummyAdManager___RequestRewarded);
     cRam_? = '\x01';
   }
+  message = StringLiteral_DummyAdManager___RequestRewarded;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
   pIVar1 = (this->fields).adUIHandler;
   if (pIVar1 != (IAdUIManager *)0x0) {
     cVar2 = func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar1);
     if (cVar2 == '\0') {
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pIVar1 = (this->fields).adUIHandler;
-      (this->fields).startTime = fVar3;
-      if (pIVar1 != (IAdUIManager *)0x0) {
-        func_?(2,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar1,
-                        rewardedAdCallback);
-        (this->fields).rewarded = 1;
-        return;
+      this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
+                  (this_00,AdType__Enum_RewardedAd,AdActionType__Enum_Start,context,
+                   (MethodInfo *)0x0);
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (this->fields).startTime = fVar3;
+        if ((this->fields).adUIHandler != (IAdUIManager *)0x0) {
+          func_?();
+          (this->fields).rewarded = 1;
+          return;
+        }
       }
     }
     else {
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)StringLiteral_Ad_showing_already_,(MethodInfo *)0x0);
+                ((Object *)StringLiteral_DummyAdManager___RequestRewarded,(MethodInfo *)0x0);
       if (rewardedAdCallback != (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
-        mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                  ((Action_1_UIPushOption_ *)rewardedAdCallback,UIPushOption__Enum_None,
-                   MethodInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>__Invoke_Assets__Scripts__AdIntegration__RewardedAdResult_
-                  );
+        (*(rewardedAdCallback->fields)._._.invoke_impl)
+                  ((rewardedAdCallback->fields)._._.method_code,0,
+                   (rewardedAdCallback->fields)._._.method);
         return;
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -158,31 +180,29 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_DummyAdManager___UpdateControlle);
+    func_?(&StringLiteral_DummyAdManager___UpdateControlle);
+    func_?(&StringLiteral_DummyAdManager___UpdateControlle);
     cRam_? = '\x01';
   }
   pDVar1 = this;
   pIVar2 = (this->fields).adUIHandler;
   if (pIVar2 == (IAdUIManager *)0x0) {
 code_?:
-    func_?(0);
+    func_?();
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
+    uVar3 = func_?(0);
     func_?(uVar3);
 code_?:
     uVar3 = func_?(0);
     func_?(uVar3);
 code_?:
-    uVar3 = func_?(0,0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0,0);
+    uVar3 = func_?(0);
     func_?(uVar3);
   }
   else {
@@ -204,6 +224,7 @@ code_?:
     goto code_?;
     if (args->max_length == 0) goto code_?;
     args->vector[0] = pOVar5;
+    func_?(args->vector,pOVar5);
     bStack_7 = (pDVar1->fields).timeoutAsEnabled;
     pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_7);
     if ((pOVar5 != (Object *)0x0) &&
@@ -211,6 +232,7 @@ code_?:
     goto code_?;
     if (args->max_length < 2) goto code_?;
     args->vector[1] = pOVar5;
+    func_?(args->vector + 1,pOVar5);
     fStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     fStack_8 = fStack_8 - (pDVar1->fields).startTime;
     pOVar5 = (Object *)func_?(TypeInfo__System__Single,&fStack_8);
@@ -219,62 +241,83 @@ code_?:
     goto code_?;
     if (args->max_length < 3) goto code_?;
     args->vector[2] = pOVar5;
+    func_?(args->vector + 2,pOVar5);
     iStack_9 = (pDVar1->fields).timeoutSuccessDelay;
     pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_9);
     if ((pOVar5 == (Object *)0x0) ||
        (iVar6 = func_?(pOVar5,(args->klass->_0).element_class), iVar6 != 0)) {
       if (args->max_length < 4) goto code_?;
       args->vector[3] = pOVar5;
-      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__System__String->_1).cctor_started == 0)) {
-        func_?(TypeInfo__System__String);
+      func_?(args->vector + 3,pOVar5);
+      pSVar10 = mscorlib.dll::System::String::String_Format_3
+                         (StringLiteral_DummyAdManager___UpdateControlle,args,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Debug);
+        cRam_? = '\x01';
       }
-      message = mscorlib.dll::System::String::String_Format_3
-                          (StringLiteral_rewarded__0___timeoutAsEnabled__,args,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)message,(MethodInfo *)0x0);
+                ((Object *)pSVar10,(MethodInfo *)0x0);
       if ((((pDVar1->fields).rewarded != 0) && ((pDVar1->fields).timeoutAsEnabled != 0)) &&
          (this = (DummyAdManager *)
                  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
          (float)(pDVar1->fields).timeoutSuccessDelay <= (float)this - (pDVar1->fields).startTime)) {
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)StringLiteral_timeout,(MethodInfo *)0x0);
+        Web::WebAdManager::WebAdManager_AdLog_1
+                  (StringLiteral_DummyAdManager___UpdateControlle,(MethodInfo *)0x0);
       }
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      pSVar10 = mscorlib.dll::System::Boolean::Boolean_ToString_1
+                         ((Boolean *)&(pDVar1->fields).rewarded,(IFormatProvider *)0x0,
+                          in_stack_11);
+      pSVar10 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_DummyAdManager___UpdateControlle,pSVar10,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Debug);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_ad_finished,(MethodInfo *)0x0);
-      pIVar2 = (pDVar1->fields).adUIHandler;
+                ((Object *)pSVar10,(MethodInfo *)0x0);
       if ((pDVar1->fields).rewarded == 0) {
-        if (pIVar2 != (IAdUIManager *)0x0) {
-          func_?(3,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar2,3);
-          return;
+        pMVar12 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
+        ;
+        if (pMVar12 != (MVNetworkGame_OperationRequests *)0x0) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
+                    (pMVar12,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,
+                     AdContext__Enum_None,(MethodInfo *)0x0);
+          pIVar2 = (pDVar1->fields).adUIHandler;
+          if (pIVar2 != (IAdUIManager *)0x0) {
+            func_?(3,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar2,3);
+            return;
+          }
         }
       }
-      else if (pIVar2 != (IAdUIManager *)0x0) {
-        func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar2,3);
-        return;
+      else {
+        pMVar12 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
+        ;
+        if (pMVar12 != (MVNetworkGame_OperationRequests *)0x0) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
+                    (pMVar12,AdType__Enum_RewardedAd,AdActionType__Enum_Success,AdContext__Enum_None,
+                     (MethodInfo *)0x0);
+          pIVar2 = (pDVar1->fields).adUIHandler;
+          if (pIVar2 != (IAdUIManager *)0x0) {
+            func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar2,3);
+            return;
+          }
+        }
       }
       goto code_?;
     }
   }
-  uVar3 = func_?(0,0);
+  uVar3 = func_?(0);
   func_?(uVar3);
 code_?:
-  uVar3 = func_?(0,0);
-  func_?(uVar3);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -298,7 +341,7 @@ String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdMana
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Ads_not_set_up_for_this_build_ta);
     cRam_? = '\x01';
   }
   pSVar1 = TM::TM__(StringLiteral_Ads_not_set_up_for_this_build_ta,(MethodInfo *)0x0);
@@ -313,11 +356,10 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdMana
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__TimeSpan);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__TimeSpan->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__TimeSpan->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__TimeSpan);
   }
   return (TimeSpan)(TypeInfo__System__TimeSpan->static_fields->MaxValue)._ticks;
@@ -331,11 +373,10 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdMana
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__TimeSpan);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__TimeSpan->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__TimeSpan->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__TimeSpan);
   }
   return (TimeSpan)(TypeInfo__System__TimeSpan->static_fields->MaxValue)._ticks;
@@ -349,11 +390,10 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdMana
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__TimeSpan);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__System__TimeSpan->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__TimeSpan->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__TimeSpan);
   }
   return (TimeSpan)(TypeInfo__System__TimeSpan->static_fields->MaxValue)._ticks;

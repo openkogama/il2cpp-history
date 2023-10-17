@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using CodeStage.AntiCheat.ObscuredTypes;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class CollectTheItemCollectable : MVBlueprintBase
 {
@@ -28,6 +28,7 @@ public class CollectTheItemCollectable : MVBlueprintBase
 	public int CollectableModelId { get; }
 	public int DropOffId { get; }
 	public bool HasArrowIndicator { get; }
+	public bool HasDropOff { get; }
 
 	// Constructors
 	public CollectTheItemCollectable(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);

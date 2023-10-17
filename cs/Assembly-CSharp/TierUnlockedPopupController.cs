@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TierUnlockedPopupController : MonoBehaviour
 {
@@ -52,19 +52,31 @@ public class TierUnlockedPopupController : MonoBehaviour
 	private float bounceEffectStartTime;
 	private float fadeEffectStartTime;
 	public static GamePassTier HighestTierRewardShown;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Update_b__24_0(IUIStack x, BaseEventData y);
+	}
 
 	// Constructors
 	public TierUnlockedPopupController();
-	static TierUnlockedPopupController();
 
 	// Methods
 	public void Initialize(GamePassTier unlockedTier, bool wasPurchased, bool wasTempUnlocked);
 	private void Update();
 	private void OnStartingToDissappear();
 	private void StartNewPopupContent(int index);
-	[CompilerGenerated]
-	private static void _Update_m__0(IUIStack x, BaseEventData y);
 }
 

@@ -8,15 +8,20 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 internal class ESRotating : ESStateBase
 {
 	// Fields
+	public const string RotationDegreesStepKey = "rotationDegreesStep";
+	public const string RotationModeKey = "rotationMode";
 	private float rotationSpeed;
+	private RotationMode rotationMode;
 	private float prevMouseX;
+	private float prevMouseY;
 	private float rotateThreshold;
 	private float xAcc;
+	private float yAcc;
 	private float mouseSensitivity;
 	private List<WorldObjectClientRef> targets;
 	private Vector3 pivot;
@@ -26,9 +31,7 @@ internal class ESRotating : ESStateBase
 
 	// Methods
 	public override void Enter(EditorStateMachine e);
-	private bool ValidateTargets();
 	public override void Execute(EditorStateMachine e);
 	public override void Exit(EditorStateMachine e);
-	private void DoGridSnapping();
 }
 

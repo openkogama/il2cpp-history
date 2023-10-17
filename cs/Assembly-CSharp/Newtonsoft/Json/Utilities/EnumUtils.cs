@@ -8,32 +8,61 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Utilities
 {
 	internal static class EnumUtils
 	{
-		// Fields
-		[CompilerGenerated]
-		private static Func<FieldInfo, bool> __f__am_cache0;
-		[CompilerGenerated]
-		private static Func<FieldInfo, bool> __f__am_cache1;
-	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _TryParse_c__AnonStorey0<T>
+		private sealed class __c__DisplayClass2_0<T>
 			where T : struct
 		{
 			// Fields
-			internal string enumMemberName;
-			internal bool ignoreCase;
+			public string enumMemberName;
+			public bool ignoreCase;
 	
 			// Constructors
-			public _TryParse_c__AnonStorey0();
+			public __c__DisplayClass2_0();
 	
 			// Methods
-			internal T __m__0();
+			internal T _TryParse_b__0();
+		}
+	
+		[Serializable]
+		[CompilerGenerated]
+		private sealed class __c__3<T>
+			where T : struct
+		{
+			// Fields
+			public static readonly __c__3<T> __9;
+			public static Func<EnumValue<ulong>, bool> __9__3_0;
+	
+			// Constructors
+			static __c__3();
+			public __c__3();
+	
+			// Methods
+			internal bool _GetFlagsValues_b__3_0(EnumValue<ulong> v);
+		}
+	
+		[Serializable]
+		[CompilerGenerated]
+		private sealed class __c
+		{
+			// Fields
+			public static readonly __c __9;
+			public static Func<FieldInfo, bool> __9__8_0;
+			public static Func<FieldInfo, bool> __9__10_0;
+	
+			// Constructors
+			static __c();
+			public __c();
+	
+			// Methods
+			internal bool _GetValues_b__8_0(FieldInfo field);
+			internal bool _GetNames_b__10_0(FieldInfo field);
 		}
 	
 		// Methods
@@ -50,20 +79,13 @@ namespace Newtonsoft.Json.Utilities
 		public static EnumValues<TUnderlyingType> GetNamesAndValues<TEnum, TUnderlyingType>()
 			where TEnum : struct
 			where TUnderlyingType : struct;
-		public static EnumValues<TUnderlyingType> GetNamesAndValues<TUnderlyingType>(Type enumType)
+		public static EnumValues<TUnderlyingType> GetNamesAndValues<TUnderlyingType>(System.Type enumType)
 			where TUnderlyingType : struct;
 		public static IList<T> GetValues<T>();
-		public static IList<object> GetValues(Type enumType);
+		public static IList<object> GetValues(System.Type enumType);
 		public static IList<string> GetNames<T>();
-		public static IList<string> GetNames(Type enumType);
-		public static TEnumType GetMaximumValue<TEnumType>(Type enumType)
+		public static IList<string> GetNames(System.Type enumType);
+		public static TEnumType GetMaximumValue<TEnumType>(System.Type enumType)
 			where TEnumType : IConvertible, IComparable<TEnumType>;
-		[CompilerGenerated]
-		private static bool _GetFlagsValues_1_m__0<T>(EnumValue<ulong> v)
-			where T : struct;
-		[CompilerGenerated]
-		private static bool _GetValues_m__1(FieldInfo field);
-		[CompilerGenerated]
-		private static bool _GetNames_m__2(FieldInfo field);
 	}
 }

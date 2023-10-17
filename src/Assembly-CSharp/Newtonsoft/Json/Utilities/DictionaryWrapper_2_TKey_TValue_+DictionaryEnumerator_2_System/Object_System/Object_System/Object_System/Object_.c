@@ -10,17 +10,24 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Utilities::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pIStack_1 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)
+                &TypeInfo__System__Collections__IEnumerator;
+    func_?();
     cRam_? = '\x01';
   }
-  if (this[2]._e != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = func_?(1,TypeInfo__System__Collections__IEnumerator,this[2]._e);
-    return bVar1;
+  pIStack_1 = this->_e;
+  if (pIStack_1 != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
+    pIStack_2 = TypeInfo__System__Collections__IEnumerator;
+    uStack_3 = 0;
+    bVar4 = func_?();
+    return bVar4;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  pIStack_1 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)&stack0xfffffffc;
+  uVar5 = func_?(&uStack_3);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  bVar4 = (*pcVar6)();
+  return bVar4;
 }
 
 
@@ -35,16 +42,23 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    pIStack_1 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)
+                &TypeInfo__System__Collections__IEnumerator;
+    func_?();
     cRam_? = '\x01';
   }
-  if (this[2]._e != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
-    func_?(2,TypeInfo__System__Collections__IEnumerator,this[2]._e);
+  pIStack_1 = this->_e;
+  if (pIStack_1 != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
+    pIStack_2 = TypeInfo__System__Collections__IEnumerator;
+    uStack_3 = 2;
+    func_?();
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pIStack_1 = (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)&stack0xfffffffc;
+  uVar4 = func_?(&uStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -62,11 +76,12 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_e);
     cRam_? = '\x01';
   }
   ValidationUtils::ValidationUtils_ArgumentNotNull((Object *)e,StringLiteral_e,(MethodInfo *)0x0);
-  this[2]._e = e;
+  this->_e = e;
+  func_?(this,e);
   return;
 }
 
@@ -82,55 +97,52 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Collections__DictionaryEntry);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  pIVar2 = this[2]._e;
-  uStack_3 = 0;
-  if (pIVar2 != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
-    pcVar4 = method->name;
-    if ((pcVar4[0xbe] & 1U) == 0) {
-      func_?(pcVar4);
+  pIVar1 = this->_e;
+  if (pIVar1 != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
+    pIVar2 = method->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
-    iVar5 = *(int *)(*(int *)(pcVar4 + 0x60) + 8);
-    if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-      func_?(iVar5);
+    pvVar3 = pIVar2->rgctx_data[2].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
     }
-    uStack_1 = func_?(0,iVar5,pIVar2);
-    pcVar4 = method->name;
-    if ((pcVar4[0xbe] & 1U) == 0) {
-      func_?(pcVar4);
+    pOVar4 = (Object *)func_?(0,pvVar3,pIVar1);
+    if (method->klass->initialized_and_no_error == 0) {
+      func_?(method->klass);
     }
-    uVar6 = func_?(&uStack_1,*(undefined4 *)(*(int *)(pcVar4 + 0x60) + 0xc));
-    pIVar2 = this[2]._e;
-    if (pIVar2 != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
-      pcVar4 = method->name;
-      if ((pcVar4[0xbe] & 1U) == 0) {
-        func_?(pcVar4);
+    pIVar1 = this->_e;
+    if (pIVar1 != (IEnumerator_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
+      pIVar2 = method->klass;
+      if (pIVar2->initialized_and_no_error == 0) {
+        pIVar2 = (Il2CppClass *)func_?(pIVar2);
       }
-      iVar5 = *(int *)(*(int *)(pcVar4 + 0x60) + 8);
-      if ((*(byte *)(iVar5 + 0xbe) & 1) == 0) {
-        func_?(iVar5);
+      pvVar3 = pIVar2->rgctx_data[2].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
       }
-      uStack_3 = func_?(0,iVar5,pIVar2);
-      pcVar4 = method->name;
-      if ((pcVar4[0xbe] & 1U) == 0) {
-        func_?(pcVar4);
+      func_?(0,pvVar3,pIVar1);
+      if (method->klass->initialized_and_no_error == 0) {
+        func_?(method->klass);
       }
-      uVar7 = func_?(&uStack_3,*(undefined4 *)(*(int *)(pcVar4 + 0x60) + 0x14));
-      uStack_8 = 0;
-      func_?(&uStack_8,uVar6,uVar7,0);
-      uStack_9 = (undefined4)uStack_8;
-      uStack_10 = uStack_8._4_4_;
-      pOVar11 = (Object *)func_?(TypeInfo__System__Collections__DictionaryEntry,&uStack_9);
-      return pOVar11;
+      VStack_5.Item1 = (Object *)0x0;
+      VStack_5.Item2 = (Object *)0x0;
+      mscorlib.dll::System::ValueTuple`2[Object,Object]::ValueTuple_2_Object_Object___ctor
+                (&VStack_5,pOVar4,item2,(MethodInfo *)0x0);
+      pOStack_6 = VStack_5.Item1;
+      pOStack_7 = VStack_5.Item2;
+      pOVar4 = (Object *)func_?(TypeInfo__System__Collections__DictionaryEntry,&pOStack_6)
+      ;
+      return pOVar4;
     }
   }
-  func_?(0);
-  pcVar12 = (code *)swi(3);
-  pOVar11 = (Object *)(*pcVar12)();
-  return pOVar11;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pOVar4 = (Object *)(*pcVar8)();
+  return pOVar4;
 }
 
 
@@ -146,24 +158,41 @@ DictionaryWrapper_2_TKey_TValue_DictionaryEnumerator_2_System_Object_System_Obje
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    IStack_1.rgctxDataDummy = &TypeInfo__System__Collections__DictionaryEntry;
+    pDStack_2 = (DictionaryWrapper_2_TKey_TValue_DictionaryEnumerator_2_System_Object_System_Object_System_Object_System_Object_
+                 *)&UNK_?;
+    func_?();
     cRam_? = '\x01';
   }
-  pcVar1 = method->name;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
+  IStack_1 = (Il2CppRGCTXData)method->klass;
+  if (IStack_1->initialized_and_no_error == 0) {
+    pDStack_2 = (DictionaryWrapper_2_TKey_TValue_DictionaryEnumerator_2_System_Object_System_Object_System_Object_System_Object_
+                 *)&UNK_?;
+    IStack_1.rgctxDataDummy = (void *)func_?();
   }
-  piVar2 = (int *)func_?(this + 2,**(undefined4 **)(pcVar1 + 0x60));
-  uVar3 = CONCAT44(TypeInfo__System__Collections__DictionaryEntry,piVar2);
-  if (piVar2 == (int *)0x0) {
-    uVar3 = func_?(0);
+  IStack_1 = *(IStack_1.klass)->rgctx_data;
+  pDStack_2 = this;
+  piVar3 = (int *)func_?();
+  if (piVar3 != (int *)0x0) {
+    if (*(Il2CppClass **)(*piVar3 + 0x20) ==
+        (TypeInfo__System__Collections__DictionaryEntry->_0).element_class) {
+      pDStack_2 = (DictionaryWrapper_2_TKey_TValue_DictionaryEnumerator_2_System_Object_System_Object_System_Object_System_Object_
+                   *)&UNK_?;
+      IStack_1 = (Il2CppRGCTXData)piVar3;
+      pDVar4 = (DictionaryEntry *)func_?();
+      return *pDVar4;
+    }
+    IStack_1 = (Il2CppRGCTXData)TypeInfo__System__Collections__DictionaryEntry;
+    pDStack_2 = (DictionaryWrapper_2_TKey_TValue_DictionaryEnumerator_2_System_Object_System_Object_System_Object_System_Object_
+                 *)piVar3;
+    func_?();
+    pcVar5 = (code *)swi(3);
+    DVar6 = (DictionaryEntry)(*pcVar5)();
+    return DVar6;
   }
-  else if (*(Il2CppClass **)(*piVar2 + 0x20) ==
-           (TypeInfo__System__Collections__DictionaryEntry->_0).element_class) {
-    pDVar4 = (DictionaryEntry *)func_?(piVar2);
-    return *pDVar4;
-  }
-  func_?(uVar3);
+  IStack_1 = (Il2CppRGCTXData)&stack0xfffffffc;
+  uVar7 = func_?(&puStack_8);
+  func_?(uVar7);
   pcVar5 = (code *)swi(3);
   DVar6 = (DictionaryEntry)(*pcVar5)();
   return DVar6;
@@ -180,14 +209,12 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::
                     *this,MethodInfo *method)
 
 {
-  pcVar1 = method->name;
-  uStack_2 = 0;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
+  pIVar1 = method->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  uStack_2 = func_?(this + 2,*(undefined4 *)(*(int *)(pcVar1 + 0x60) + 4));
-  pOVar3 = (Object *)func_?(&uStack_2,0);
-  return pOVar3;
+  pOVar2 = (Object *)func_?(this,pIVar1->rgctx_data[1].rgctxDataDummy);
+  return pOVar2;
 }
 
 
@@ -201,13 +228,11 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Utilities::
                     *this,MethodInfo *method)
 
 {
-  pcVar1 = method->name;
-  uStack_2 = 0;
-  if ((pcVar1[0xbe] & 1U) == 0) {
-    func_?(pcVar1);
+  pIVar1 = method->klass;
+  if (pIVar1->initialized_and_no_error == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  uStack_2 = func_?(this + 2,*(undefined4 *)(*(int *)(pcVar1 + 0x60) + 4));
-  pOVar3 = (Object *)func_?(&uStack_2,0);
-  return pOVar3;
+  func_?(this,pIVar1->rgctx_data[1].rgctxDataDummy);
+  return extraout_EDX;
 }
 

@@ -6,34 +6,14 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_ClaimReward
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-    func_?(TypeInfo__TimedPlayReward__RewardTracker);
-  }
-  if (TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected == 0) {
-    if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) !=
-         0) && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-      func_?(TypeInfo__TimedPlayReward__RewardTracker);
-    }
-    if (TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged != (Action *)0x0)
-    {
-      if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000)
-           != 0) && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-        func_?(TypeInfo__TimedPlayReward__RewardTracker);
-      }
-      this_00 = (JumpState_OnWallJumpDelegate *)
-                TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
-      if (this_00 == (JumpState_OnWallJumpDelegate *)0x0) {
-        func_?();
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
-      }
-      JumpState+OnWallJumpDelegate::JumpState_OnWallJumpDelegate_Invoke(this_00,(MethodInfo *)0x0);
-    }
+  pTVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
+  if ((pTVar1->IsCollected == 0) && (pTVar1->CollectedChanged != (Action *)0x0)) {
+    pAVar2 = pTVar1->CollectedChanged;
+    (*(pAVar2->fields)._._.invoke_impl)
+              ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
   }
   return;
 }
@@ -46,63 +26,69 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    func_?(&MethodInfo__TimedPlayReward__OnCollectedChanged__);
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-    func_?(TypeInfo__TimedPlayReward__RewardTracker);
-  }
   pAVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__TimedPlayReward__OnCollectedChanged__,
-             (MethodInfo *)0x0);
-  pAVar2 = (Action *)
-           mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  pAVar1 = (Action *)0x0;
-  if (pAVar2 != (Action *)0x0) {
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAVar2;
-    }
-    if (pAVar1 == (Action *)0x0) {
-      func_?();
-      goto code_?;
-    }
-  }
-  TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar1;
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+code_?:
     func_?();
   }
-  bVar3 = MVGameControllerBase::MVGameControllerBase_get_UsingDevSessionData((MethodInfo *)0x0);
-  if (bVar3 == 0) {
-    if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
-      func_?();
-    }
-    UpdateController::UpdateController_AddUpdateObject
-              ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,
-               1,(MethodInfo *)0x0);
-    (this->fields)._RewardAvailable_k__BackingField = 0;
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                        ((Component_1 *)this,(MethodInfo *)0x0);
-    if (this_01 == (GameObject *)0x0) {
+  else {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__TimedPlayReward__OnCollectedChanged__,
+               (MethodInfo *)0x0);
+    pAVar1 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAVar1 == (Action *)0x0) {
+      TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
 code_?:
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+      bVar2 = MVGameControllerBase::MVGameControllerBase_get_UsingDevSessionData((MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        return;
+      }
+      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UpdateController);
+      }
+      UpdateController::UpdateController_AddUpdateObject
+                ((IUpdatecontrollerSubscriberUpdate *)this,
+                 UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
+      (this->fields)._RewardAvailable_k__BackingField = 0;
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (this_01 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_01,0,(MethodInfo *)0x0);
+        (this->fields)._IsClaimable_k__BackingField = 0;
+        TimedPlayReward_RequestRewardPermission(this,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_01,0,(MethodInfo *)0x0);
-    (this->fields)._IsClaimable_k__BackingField = 0;
-    TimedPlayReward_RequestRewardPermission(this,(MethodInfo *)0x0);
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
+    }
+    if (pAVar3 == (Action *)0x0) goto code_?;
+    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
+    }
+    if (pAVar3 != (Action *)0x0) goto code_?;
   }
+  func_?();
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -114,91 +100,93 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnCollectedChanged
 
 {
   if (cRam_? == '\0') {
-    pTStack_1 = _UNK_?;
+    IStack_1.m_value = (int32_t)&TypeInfo__TimedPlayReward__RewardTracker;
     func_?();
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-    pTStack_1 = TypeInfo__TimedPlayReward__RewardTracker;
-    func_?();
   }
   TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = 1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__NotificationController);
+    func_?(&TypeInfo__PostRequest);
+    func_?(&
+                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&TypeInfo__UnityEngine__WWWForm);
+    func_?(&StringLiteral_Thank_you_for_playing_this_NEW_g);
+    func_?(&StringLiteral_token);
+    func_?(&StringLiteral__XP_);
+    func_?(&StringLiteral_profile_id);
+    func_?(&StringLiteral_planet_id);
     cRam_? = '\x01';
   }
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,0,(MethodInfo *)0x0);
-    pTStack_1 = (TimedPlayReward_RewardTracker__Class *)(this->fields)._RewardXP_k__BackingField;
-    arg1 = (Object *)func_?(TypeInfo__System__Int32,&pTStack_1);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_1
-                       ((Object *)StringLiteral_Thank_you_for_playing_this_NEW_g,arg1,
-                        (Object *)StringLiteral__XP_,(MethodInfo *)0x0);
+    IStack_1.m_value = (this->fields)._RewardXP_k__BackingField;
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_Thank_you_for_playing_this_NEW_g,pSVar2,StringLiteral__XP_,
+                        (MethodInfo *)0x0);
     pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__NotificationController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__NotificationController->_1).cctor_started == 0)) {
-      func_?(TypeInfo__NotificationController);
+    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     NotificationController::NotificationController_PushNotification
               (pSVar2,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_01 != (GameEventManager *)0x0) {
-      GameEventManager::GameEventManager_NotifyXPDeltaAmount
+    this_01 = (InventoryController *)
+              MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if (this_01 != (InventoryController *)0x0) {
+      InventoryController::InventoryController_PageTurned
                 (this_01,(this->fields)._RewardXP_k__BackingField,(MethodInfo *)0x0);
       (this->fields)._IsClaimable_k__BackingField = 0;
-      pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
-      this_02 = (WWWForm *)func_?(TypeInfo__UnityEngine__WWWForm);
-      UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor
-                (this_02,(MethodInfo *)0x0);
-      if ((pGVar3 != (GameSessionData *)0x0) && (this_02 != (WWWForm *)0x0)) {
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField
-                  (this_02,StringLiteral_token,(pGVar3->fields).token,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_profile_id,(pGVar3->fields).profileID,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_planet_id,(pGVar3->fields).planetID,(MethodInfo *)0x0);
-        pSVar2 = (pGVar3->fields).gameRewardURL;
-        form = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this,
-                   MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
-                   ,
-                   MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-                  );
-        pPStack4 = TypeInfo__PostRequest;
-        this_04 = (PostRequest *)func_?();
-        PostRequest::PostRequest__ctor
-                  (this_04,pSVar2,(WWWForm *)form,
-                   (Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
-                   WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-          func_?();
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      this_02 = (WWWForm *)func_?();
+      if (this_02 != (WWWForm *)0x0) {
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor
+                  (this_02,(MethodInfo *)0x0);
+        if (pGVar3 != (GameSessionData *)0x0) {
+          UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField
+                    (this_02,StringLiteral_token,(pGVar3->fields).token,(MethodInfo *)0x0);
+          UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
+                    (this_02,StringLiteral_profile_id,(pGVar3->fields).profileID,(MethodInfo *)0x0);
+          UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
+                    (this_02,StringLiteral_planet_id,(pGVar3->fields).planetID,(MethodInfo *)0x0);
+          pSVar2 = (pGVar3->fields).gameRewardURL;
+          this_03 = (Action_1_Object_ *)func_?();
+          if (this_03 != (Action_1_Object_ *)0x0) {
+            mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                      (this_03,(Object *)this,
+                       MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                       ,(MethodInfo *)0x0);
+            this_04 = (PostRequest *)func_?();
+            if (this_04 != (PostRequest *)0x0) {
+              PostRequest::PostRequest__ctor
+                        (this_04,pSVar2,this_02,
+                         (Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
+                         WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
+              if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              AsyncWWWManager::AsyncWWWManager_WWWRequest
+                        ((AsyncWebRequest *)this_04,(MethodInfo *)0x0);
+              return;
+            }
+          }
         }
-        AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_04,(MethodInfo *)0x0);
-        return;
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -210,119 +198,89 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    func_?(&TypeInfo__System__Action);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    func_?(&MethodInfo__TimedPlayReward__OnCollectedChanged__);
+    func_?(&
+                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&
+                    MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  pAVar1 = (Action_1_Object_ *)
            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (pUVar1,(Object *)this,
-             MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_,
-             MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__AsyncWWWManager);
-  }
-  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar1,(MethodInfo *)0x0);
-  pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-           func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (pUVar1,(Object *)this,
-             MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
-             ,
-             MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-            );
-  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar1,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
+  if (pAVar1 == (Action_1_Object_ *)0x0) {
+code_?:
     func_?();
+    pAStack2 = extraout_ECX;
+    pAStack3 = extraout_EDX;
   }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__UpdateController___RemoveUpdateObject_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  pSVar2 = this_00;
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = this;
-    iVar3 = 0;
-    while( true ) {
-      if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
-        func_?();
-      }
-      pLVar4 = TypeInfo__UpdateController->static_fields->updateBuckets;
-      if (pLVar4 == (List_1_PriorityDataUpdate___Array *)0x0) break;
-      if ((int)pLVar4->max_length <= iVar3) {
-        if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr & 0x2000000)
-             != 0) && ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-          func_?();
-        }
-        pAVar5 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
-        pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar1,(Object *)this,MethodInfo__TimedPlayReward__OnCollectedChanged__,
-                   (MethodInfo *)0x0);
-        pAVar6 = (Action *)
-                 mscorlib.dll::System::Delegate::Delegate_Remove
-                           ((Delegate *)pAVar5,(Delegate *)pUVar1,(MethodInfo *)0x0);
-        _uStack00000044 = CONCAT44(TypeInfo__System__Action,pAVar6);
-        pAVar5 = (Action *)0x0;
-        if (pAVar6 != (Action *)0x0) {
-          if (pAVar6->klass == TypeInfo__System__Action) {
-            pAVar5 = pAVar6;
-          }
-          if (pAVar5 == (Action *)0x0) goto code_?;
-        }
-        TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar5;
-        return;
-      }
-      this = (TimedPlayReward *)pSVar2;
-      if ((((uint)(TypeInfo__UpdateController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UpdateController->_1).cctor_started == 0)) {
-        func_?();
-        this = (TimedPlayReward *)pSVar2;
-      }
-      if (TypeInfo__UpdateController->static_fields->updateBuckets ==
-          (List_1_PriorityDataUpdate___Array *)0x0) break;
-      this_01 = (List_1_UnityEngine_Vector3_ *)func_?();
-      pUVar1 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?();
-      pSVar2 = (ScaleAnimationBase *)this;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar1,(Object *)this,
-                 MethodInfo__UpdateController___RemoveUpdateObject_c__AnonStorey0____m__0_PriorityDataUpdate_
-                 ,
-                 MethodInfo__System__Predicate<PriorityDataUpdate>__Predicate_System__Object__void__
-                );
-      if (this_01 == (List_1_UnityEngine_Vector3_ *)0x0) break;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector3]::
-      List_1_UnityEngine_Vector3__RemoveAll
-                (this_01,(Predicate_1_UnityEngine_Vector3_ *)pUVar1,
-                 MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
-                );
-      iVar3 = iVar3 + 1;
+  else {
+    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+              (pAVar1,(Object *)this,
+               MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_,
+               (MethodInfo *)0x0);
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__AsyncWWWManager);
     }
+    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,(MethodInfo *)0x0);
+    pAVar1 = (Action_1_Object_ *)
+             func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    if (pAVar1 == (Action_1_Object_ *)0x0) goto code_?;
+    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+              (pAVar1,(Object *)this,
+               MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+               ,(MethodInfo *)0x0);
+    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,(MethodInfo *)0x0);
+    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UpdateController::UpdateController_RemoveUpdateObject
+              ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
+    pAVar4 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__TimedPlayReward__OnCollectedChanged__,
+               (MethodInfo *)0x0);
+    pAStack2 =
+         (Action *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAStack2 == (Action *)0x0) {
+      TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
+code_?:
+      func_?();
+      return;
+    }
+    pAVar4 = (Action *)0x0;
+    if (pAStack2->klass == TypeInfo__System__Action) {
+      pAVar4 = pAStack2;
+    }
+    pAStack3 = TypeInfo__System__Action;
+    if (pAVar4 == (Action *)0x0) goto code_?;
+    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar4;
+    pAVar4 = (Action *)0x0;
+    if (pAStack2->klass == TypeInfo__System__Action) {
+      pAVar4 = pAStack2;
+    }
+    pAStack3 = TypeInfo__System__Action;
+    if (pAVar4 != (Action *)0x0) goto code_?;
   }
-  _uStack00000044 = func_?();
+  pAStack3 = (Action__Class *)func_?();
+  pAStack2 = extraout_ECX_00;
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -345,80 +303,87 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnFinishedViewingAd
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__NotificationController);
+    func_?(&TypeInfo__PostRequest);
+    func_?(&
+                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&TypeInfo__UnityEngine__WWWForm);
+    func_?(&StringLiteral_Thank_you_for_playing_this_NEW_g);
+    func_?(&StringLiteral_token);
+    func_?(&StringLiteral__XP_);
+    func_?(&StringLiteral_profile_id);
+    func_?(&StringLiteral_planet_id);
     cRam_? = '\x01';
   }
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,0,(MethodInfo *)0x0);
-    iStack_1 = (this->fields)._RewardXP_k__BackingField;
-    arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_1
-                       ((Object *)StringLiteral_Thank_you_for_playing_this_NEW_g,arg1,
-                        (Object *)StringLiteral__XP_,(MethodInfo *)0x0);
+    IStack_1.m_value = (this->fields)._RewardXP_k__BackingField;
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_Thank_you_for_playing_this_NEW_g,pSVar2,StringLiteral__XP_,
+                        (MethodInfo *)0x0);
     pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__NotificationController->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__NotificationController->_1).cctor_started == 0)) {
-      func_?(TypeInfo__NotificationController);
+    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     NotificationController::NotificationController_PushNotification
               (pSVar2,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      func_?(TypeInfo__MVGameControllerBase);
-    }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_01 != (GameEventManager *)0x0) {
-      GameEventManager::GameEventManager_NotifyXPDeltaAmount
+    this_01 = (InventoryController *)
+              MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if (this_01 != (InventoryController *)0x0) {
+      InventoryController::InventoryController_PageTurned
                 (this_01,(this->fields)._RewardXP_k__BackingField,(MethodInfo *)0x0);
       (this->fields)._IsClaimable_k__BackingField = 0;
-      pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
-      this_02 = (WWWForm *)func_?(TypeInfo__UnityEngine__WWWForm);
-      UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor
-                (this_02,(MethodInfo *)0x0);
-      if ((pGVar3 != (GameSessionData *)0x0) && (this_02 != (WWWForm *)0x0)) {
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField
-                  (this_02,StringLiteral_token,(pGVar3->fields).token,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_profile_id,(pGVar3->fields).profileID,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_planet_id,(pGVar3->fields).planetID,(MethodInfo *)0x0);
-        pSVar2 = (pGVar3->fields).gameRewardURL;
-        form = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this,
-                   MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
-                   ,
-                   MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-                  );
-        pPStack4 = TypeInfo__PostRequest;
-        this_04 = (PostRequest *)func_?();
-        PostRequest::PostRequest__ctor
-                  (this_04,pSVar2,(WWWForm *)form,
-                   (Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
-                   WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-          func_?();
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      this_02 = (WWWForm *)func_?();
+      if (this_02 != (WWWForm *)0x0) {
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor
+                  (this_02,(MethodInfo *)0x0);
+        if (pGVar3 != (GameSessionData *)0x0) {
+          UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField
+                    (this_02,StringLiteral_token,(pGVar3->fields).token,(MethodInfo *)0x0);
+          UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
+                    (this_02,StringLiteral_profile_id,(pGVar3->fields).profileID,(MethodInfo *)0x0);
+          UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
+                    (this_02,StringLiteral_planet_id,(pGVar3->fields).planetID,(MethodInfo *)0x0);
+          pSVar2 = (pGVar3->fields).gameRewardURL;
+          this_03 = (Action_1_Object_ *)func_?();
+          if (this_03 != (Action_1_Object_ *)0x0) {
+            mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                      (this_03,(Object *)this,
+                       MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                       ,(MethodInfo *)0x0);
+            this_04 = (PostRequest *)func_?();
+            if (this_04 != (PostRequest *)0x0) {
+              PostRequest::PostRequest__ctor
+                        (this_04,pSVar2,this_02,
+                         (Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
+                         WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
+              if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              AsyncWWWManager::AsyncWWWManager_WWWRequest
+                        ((AsyncWebRequest *)this_04,(MethodInfo *)0x0);
+              return;
+            }
+          }
         }
-        AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_04,(MethodInfo *)0x0);
-        return;
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -430,76 +395,69 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnRewardData
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TimedPlayReward__RewardData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<TimedPlayReward::RewardData>_System__String_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    func_?(&TypeInfo__WaitForTicks);
+    func_?(&StringLiteral_no_gold_reward_available);
     cRam_? = '\x01';
   }
   if (www != (UnityWebRequest *)0x0) {
     pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
              UnityWebRequest_get_error(www,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
     bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
     if (bVar2 == 0) {
       pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
                UnityWebRequest_get_error(www,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)pSVar1,(MethodInfo *)0x0);
       return;
     }
-    this_00 = (ActDetectorBase *)
-              mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-              Serialization::JsonProperty]::
-              Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                        ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)www,
-                         (MethodInfo *)0x0);
-    if (this_00 != (ActDetectorBase *)0x0) {
-      Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetectorBase::
-      ActDetectorBase_OnApplicationQuit(this_00,(MethodInfo *)0x0);
-      if ((((uint)(TypeInfo__Newtonsoft__Json__JsonConvert->vtable).Equals.methodPtr & 0x2000000) !=
-           0) && ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_started == 0)) {
+    this_00 = (DownloadHandler *)
+              mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::Object]::
+              ValueListBuilder_1_System_Object__1_get_Length
+                        ((ValueListBuilder_1_System_Object__1 *)www,(MethodInfo *)0x0);
+    if (this_00 != (DownloadHandler *)0x0) {
+      pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
+               DownloadHandler_get_text(this_00,(MethodInfo *)0x0);
+      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pXVar3 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_43
-                         (value,
+      pOVar3 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
+                         (pSVar1,
                           TimedPlayReward__RewardData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<TimedPlayReward::RewardData>_System__String_
                          );
-      if (pXVar3 != (XPLevelLimits *)0x0) {
-        this_00[1].klass = (ActDetectorBase__Class *)(pXVar3->fields)._Level_k__BackingField;
-        (this_00->fields).detectionEventHasListener = (bool)(pXVar3->fields)._PrevXP_k__BackingField
-        ;
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)this_00,(MethodInfo *)0x0);
+      if (pOVar3 != (Object *)0x0) {
+        _UNK_? = pOVar3[2].klass;
+        UNK_? = *(bool *)&pOVar3[1].klass;
+        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)&UNK_?,(MethodInfo *)0x0);
         if (this_01 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (this_01,(this_00->fields).detectionEventHasListener,(MethodInfo *)0x0);
-          bVar2 = (this_00->fields).detectionEventHasListener;
-          if ((((uint)(TypeInfo__TimedPlayReward__RewardTracker->vtable).Equals.methodPtr &
-               0x2000000) != 0) &&
-             ((TypeInfo__TimedPlayReward__RewardTracker->_1).cctor_started == 0)) {
-            func_?();
-          }
-          TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = bVar2 == 0;
-          if ((this_00->fields).detectionEventHasListener != 0) {
-            pUVar4 = (this_00->fields).detectionAction;
-            this_02 = (UnityEvent *)func_?();
-            WaitForTicks::WaitForTicks__ctor
-                      ((WaitForTicks *)this_02,(int)pUVar4 * 1000,(MethodInfo *)0x0);
-            (this_00->fields).detectionEvent = this_02;
+                    (this_01,UNK_?,(MethodInfo *)0x0);
+          TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = UNK_? == 0;
+          iVar4 = _UNK_?;
+          if (UNK_? == 0) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                      ((Object *)StringLiteral_no_gold_reward_available,(MethodInfo *)0x0);
             return;
           }
-          if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+          this_02 = (WaitForTicks *)func_?();
+          if (this_02 != (WaitForTicks *)0x0) {
+            WaitForTicks::WaitForTicks__ctor(this_02,iVar4 * 1000,(MethodInfo *)0x0);
+            _UNK_? = this_02;
             func_?();
+            return;
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                    ((Object *)StringLiteral_no_gold_reward_available,(MethodInfo *)0x0);
-          return;
         }
       }
     }
@@ -518,52 +476,52 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_RequestRewardPermissi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__GetRequest);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&
+                    MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&StringLiteral__profile_id__0__planet_id__1__to);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameSessionData((MethodInfo *)0x0);
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    iStack_2 = (pGVar1->fields).profileID;
-    arg0 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-    iStack_3 = (pGVar1->fields).planetID;
-    arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
-    pSVar4 = (pGVar1->fields).token;
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?(TypeInfo__System__String);
-    }
-    pSVar4 = mscorlib.dll::System::String::String_Format_2
-                       (StringLiteral__profile_id__0__planet_id__1__to,arg0,arg1,(Object *)pSVar4,
-                        (MethodInfo *)0x0);
-    pSVar4 = mscorlib.dll::System::String::String_Concat_2
-                       ((pGVar1->fields).gameRewardDataURL,pSVar4,(MethodInfo *)0x0);
-    this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+    arg0 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
+    arg1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
+    pSVar2 = mscorlib.dll::System::String::String_Format_2
+                       (StringLiteral__profile_id__0__planet_id__1__to,arg0,arg1,
+                        (Object *)(pGVar1->fields).token,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       ((pGVar1->fields).gameRewardDataURL,pSVar2,(MethodInfo *)0x0);
+    this_00 = (Action_1_Object_ *)
               func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_00,(Object *)this,
-               MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_,
-               MethodInfo__System__Action<UnityEngine::Networking::UnityWebRequest>__Action_System__Object__void__
-              );
-    this_01 = (GetRequest *)func_?(TypeInfo__GetRequest);
-    GetRequest::GetRequest__ctor
-              (this_01,pSVar4,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-               WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      func_?();
+    if (this_00 != (Action_1_Object_ *)0x0) {
+      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      this_01 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
+      if (this_01 != (AssetBundleRequest *)0x0) {
+        AssetBundleRequest::AssetBundleRequest__ctor
+                  (this_01,pSVar2,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                   WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+        return;
+      }
     }
-    AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-    return;
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -575,14 +533,25 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_UpdateControllerUpdat
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__NotificationController);
     cRam_? = '\x01';
   }
   if ((this->fields)._RewardAvailable_k__BackingField == 0) {
     return;
   }
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                      ((Component_1 *)this,(MethodInfo *)0x0);
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
   if (this_01 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_01,1,(MethodInfo *)0x0);
@@ -590,48 +559,40 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_UpdateControllerUpdat
     if (this_00 != (WaitForTicks *)0x0) {
       bVar1 = WaitForTicks::WaitForTicks_get_TimeIsUp(this_00,(MethodInfo *)0x0);
       if (bVar1 == 0) {
-        if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-          func_?();
-        }
         this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((this_02 != (MVNetworkGame *)0x0) &&
            (MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_02,(MethodInfo *)0x0),
            (this->fields).waitForTicks != (WaitForTicks *)0x0)) {
           pTVar2 = this->klass;
           (this->fields)._IsClaimable_k__BackingField = 0;
-          (*(code *)(pTVar2->vtable).DisableEffects.method)();
-          (*(code *)(this->klass->vtable).UpdateOutline.method)();
+          (*(pTVar2->vtable).DisableEffects.methodPtr)();
+          (*(this->klass->vtable).UpdateOutline.methodPtr)();
           return;
         }
       }
       else {
         (this->fields)._IsClaimable_k__BackingField = 1;
         (this->fields)._RewardAvailable_k__BackingField = 0;
-        data = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        System.Core.dll::System::Collections::Generic::
-        HashSet`1[AvatarModifierPackage+AvatarModifier]::
-        HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-                  ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)data,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
-        key = (String *)func_?();
-        value = (CrossPlatformInputManager_VirtualButton *)func_?(TypeInfo__System__Int32);
-        if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          String,UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualButton]::
-          Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton__Add
-                    ((Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-                      *)data,key,value,
+        this_03 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+        if (this_03 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                    ((ParameterOverride_1_System_Object_ *)this_03,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                    );
+          key = (Object *)func_?();
+          value = (Object *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (this_03,key,value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          if ((((uint)(TypeInfo__NotificationController->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__NotificationController->_1).cctor_started == 0)) {
+          if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           NotificationController::NotificationController_OnNotificationReceived
-                    (NotificationType__Enum_GoldRewardReady,data,(MethodInfo *)0x0);
-          (*(code *)(this->klass->vtable).EnableEffects.method)();
+                    (NotificationType__Enum_GoldRewardReady,this_03,(MethodInfo *)0x0);
+          (*(this->klass->vtable).EnableEffects.methodPtr)();
           return;
         }
       }
@@ -640,38 +601,6 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_UpdateControllerUpdat
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
-  return;
-}
-
-
-/* Boolean get_IsClaimable() */
-
-bool Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_get_IsClaimable
-               (TimedPlayReward *this,MethodInfo *method)
-
-{
-  return (this->fields)._IsClaimable_k__BackingField;
-}
-
-
-/* Void set_IsClaimable(Boolean) */
-
-void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_set_IsClaimable
-               (TimedPlayReward *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._IsClaimable_k__BackingField = value;
-  return;
-}
-
-
-/* Void set_RewardXP(Int32) */
-
-void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_set_RewardXP
-               (TimedPlayReward *this,int32_t value,MethodInfo *method)
-
-{
-  (this->fields)._RewardXP_k__BackingField = value;
   return;
 }
 

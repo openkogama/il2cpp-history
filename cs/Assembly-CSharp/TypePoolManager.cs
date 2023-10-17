@@ -8,16 +8,31 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TypePoolManager : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
 	private List<Pool> pool;
-	private Dictionary<Type, Pool> poolAsDictionary;
+	private Dictionary<System.Type, Pool> poolAsDictionary;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Func<Pool, Type> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<Pool, System.Type> __9__2_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal System.Type _Awake_b__2_0(Pool p);
+	}
 
 	// Constructors
 	public TypePoolManager();
@@ -31,7 +46,5 @@ public class TypePoolManager : MonoBehaviour
 	public void Return<T>(T obj)
 		where T : MonoBehaviour;
 	private void Update();
-	[CompilerGenerated]
-	private static Type _Awake_m__0(Pool p);
 }
 

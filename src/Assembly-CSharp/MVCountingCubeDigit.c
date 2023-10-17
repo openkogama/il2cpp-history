@@ -6,18 +6,20 @@ void Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Material);
     cRam_? = '\x01';
   }
   this_00 = MVCountingCubeDigit_get_MeshRenderer(this,(MethodInfo *)0x0);
   source = (this->fields).CountingCubeDigitMaterial;
   this_01 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-  UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-            (this_01,source,(MethodInfo *)0x0);
-  if (this_00 != (MeshRenderer *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-              ((Renderer *)this_00,this_01,(MethodInfo *)0x0);
-    return;
+  if (this_01 != (Material *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
+              (this_01,source,(MethodInfo *)0x0);
+    if (this_00 != (MeshRenderer *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                ((Renderer *)this_00,this_01,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -40,7 +42,8 @@ void Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_SetMaterialOf
       VVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTextureOffset
                         (pMVar2,(MethodInfo *)0x0);
       method_00 = (MethodInfo *)
-                  ((uint)((float)(this->fields)._number / _UNK_?) ^ _UNK_?);
+                  ((uint)((float)(this->fields)._number / _UNK_?) ^
+                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       puVar4 = &UNK_?;
       pMVar1 = MVCountingCubeDigit_get_MeshRenderer((MVCountingCubeDigit *)VVar3.y,method_00);
       if (pMVar1 != (MeshRenderer *)0x0) {
@@ -71,22 +74,26 @@ Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_get_MeshRenderer
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__MeshRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::MeshRenderer>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  x = (this->fields).meshRenderer;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pMVar1 = (this->fields).meshRenderer;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                       ((Component_1 *)this,
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pMVar1 = (MeshRenderer *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                       ((Component *)this,
                         UnityEngine__MeshRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::MeshRenderer>__
                        );
-    (this->fields).meshRenderer = (MeshRenderer *)pMVar2;
+    (this->fields).meshRenderer = pMVar1;
+    func_?(&(this->fields).meshRenderer,pMVar1);
   }
   return (this->fields).meshRenderer;
 }
@@ -106,7 +113,8 @@ void Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_set_Number
     if (pMVar2 != (Material *)0x0) {
       VVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTextureOffset
                         (pMVar2,(MethodInfo *)0x0);
-      fVar4 = (float)((uint)((float)(this->fields)._number / _UNK_?) ^ _UNK_?);
+      fVar4 = (float)((uint)((float)(this->fields)._number / _UNK_?) ^
+                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       puVar5 = &UNK_?;
       pMVar1 = MVCountingCubeDigit_get_MeshRenderer
                          ((MVCountingCubeDigit *)VVar3.y,(MethodInfo *)0x0);
@@ -123,7 +131,7 @@ void Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_set_Number
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;

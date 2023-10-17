@@ -7,80 +7,130 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_InterstitialAdResultHandler *this,MethodInfo *method)
 
 {
-  ppMStack_1 = (MobileAdManager_InterstitialAdResultHandler **)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &ppMStack_1;
+  puStack_1 = (undefined *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &puStack_1;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__AdContext);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager);
+    func_?(&StringLiteral_Ad_InterstitialShown);
+    func_?(&StringLiteral__Success);
+    func_?(&StringLiteral_Ad_InterstitialFinished_);
+    func_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    func_?(&StringLiteral__Failure);
     cRam_? = '\x01';
   }
-  func_?();
-  pMVar2 = this;
-  this = (MobileAdManager_InterstitialAdResultHandler *)(this->fields).context;
-  pOVar3 = (Object *)func_?(TypeInfo__Assets__Scripts__AdIntegration__AdContext,&this);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
   }
-  pSVar4 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral_Ad_InterstitialFinished_,pOVar3,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->vtable).Equals.
-              methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->_1).cctor_started == 0)) {
-    func_?();
-  }
-  MobileAdManager::MobileAdManager_SendStat(pSVar4,(MethodInfo *)0x0);
-  if ((pMVar2->fields).interstitialAdResult == 3) {
-    if ((((uint)(TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->_1).cctor_started == 0))
-    {
-      func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            ((Object *)StringLiteral_MobileAdManager_InterstitialAdRe,(MethodInfo *)0x0);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
+              (this_00,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,(this->fields).context
+               ,(MethodInfo *)0x0);
+    EStack_2.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
+    EStack_2.monitor = (MonitorData *)0xffffffff;
+    pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_Ad_InterstitialFinished_,pSVar3,(MethodInfo *)0x0);
+    MobileAdManager::MobileAdManager_SendStat(pSVar3,(MethodInfo *)0x0);
+    if ((this->fields).interstitialAdResult == 3) {
+      MobileAdManager::MobileAdManager_SendStat
+                (StringLiteral_Ad_InterstitialShown,(MethodInfo *)0x0);
+      EStack_2.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
+      puStack_4 = (undefined *)(this->fields).context;
+      EStack_2.monitor = (MonitorData *)0xffffffff;
+      pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
+      in_stack_5 = (MethodInfo *)0x0;
+      in_stack_6 = StringLiteral__Success;
     }
-    MobileAdManager::MobileAdManager_SendStat(StringLiteral_Ad_InterstitialShown,(MethodInfo *)0x0);
-    this = (MobileAdManager_InterstitialAdResultHandler *)(pMVar2->fields).context;
-    ppMStack_1 = &this;
-    pOVar3 = (Object *)func_?();
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
-      func_?();
+    else {
+      EStack_2.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
+      puStack_4 = (undefined *)(this->fields).context;
+      EStack_2.monitor = (MonitorData *)0xffffffff;
+      pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
     }
-    pSVar4 = mscorlib.dll::System::String::String_Concat_1
-                       ((Object *)StringLiteral_Ad_InterstitialFinished_,pOVar3,
-                        (Object *)StringLiteral__Success,(MethodInfo *)0x0);
-  }
-  else {
-    this = (MobileAdManager_InterstitialAdResultHandler *)(pMVar2->fields).context;
-    pOVar3 = (Object *)func_?();
-    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__String->_1).cctor_started == 0)) {
+    pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_Ad_InterstitialFinished_,pSVar3,in_stack_6,
+                        in_stack_5);
+    MobileAdManager::MobileAdManager_SendStat(pSVar3,(MethodInfo *)0x0);
+    if ((this->fields).adUIManager != (IAdUIManager *)0x0) {
+      puStack7 = (undefined *)(this->fields).interstitialAdResult;
       func_?();
-    }
-    pSVar4 = mscorlib.dll::System::String::String_Concat_1
-                       ((Object *)StringLiteral_Ad_InterstitialFinished_,pOVar3,
-                        (Object *)StringLiteral__Failure,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->vtable).Equals.
-                methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->_1).cctor_started == 0))
-    {
-      func_?();
-    }
-  }
-  MobileAdManager::MobileAdManager_SendStat(pSVar4,(MethodInfo *)0x0);
-  if ((pMVar2->fields).adUIManager != (IAdUIManager *)0x0) {
-    func_?();
-    this_00 = (Action_1_UIPushOption_ *)(pMVar2->fields).interstitialCallback;
-    if (this_00 != (Action_1_UIPushOption_ *)0x0) {
-      mscorlib.dll::System::Action`1[UIPushOption]::Action_1_UIPushOption__Invoke
-                (this_00,(pMVar2->fields).interstitialAdResult,
-                 MethodInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>__Invoke_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                );
-      *unaff_FS_OFFSET = ppMStack_1;
-      return;
+      pAVar8 = (this->fields).interstitialCallback;
+      if (pAVar8 != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
+        puStack7 = (pAVar8->fields)._._.method;
+        (*(pAVar8->fields)._._.invoke_impl)();
+        *unaff_FS_OFFSET = puStack_1;
+        return;
+      }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
+  return;
+}
+
+
+/* Void SetResult(InterstitialAdResult) */
+
+void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
+     MobileAdManager+InterstitialAdResultHandler::
+     MobileAdManager_InterstitialAdResultHandler_SetResult
+               (MobileAdManager_InterstitialAdResultHandler *this,
+               InterstitialAdResult__Enum interstitialAdResult,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__Assets__Scripts__AdIntegration__InterstitialAdResult);
+    func_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    cRam_? = '\x01';
+  }
+  pIStack_1 = TypeInfo__Assets__Scripts__AdIntegration__InterstitialAdResult;
+  pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pIStack_1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_MobileAdManager_InterstitialAdRe,pSVar2,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  (this->fields).interstitialAdResult = interstitialAdResult;
+  (this->fields).IsDone = 1;
+  return;
+}
+
+
+/* MobileAdManager+InterstitialAdResultHandler(Action`1[Assets.Scripts.AdIntegration.InterstitialAdResult],
+   IAdUIManager, AdContext) */
+
+void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
+     MobileAdManager+InterstitialAdResultHandler::MobileAdManager_InterstitialAdResultHandler__ctor
+               (MobileAdManager_InterstitialAdResultHandler *this,
+               Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *interstitialCallback,
+               IAdUIManager *adUIManager,AdContext__Enum context,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    cRam_? = '\x01';
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            ((Object *)StringLiteral_MobileAdManager_InterstitialAdRe,(MethodInfo *)0x0);
+  (this->fields).context = context;
+  (this->fields).adUIManager = adUIManager;
+  func_?(&(this->fields).adUIManager,adUIManager);
+  (this->fields).interstitialCallback = interstitialCallback;
+  func_?(&(this->fields).interstitialCallback,interstitialCallback);
   return;
 }
 

@@ -32,21 +32,21 @@ int32_t Assembly-CSharp.dll::AddDotsToTruncatedText::AddDotsToTruncatedText_Calc
         if (this_00 == (Font *)0x0) goto code_?;
         UnityEngine.TextRenderingModule.dll::UnityEngine::Font::Font_GetCharacterInfo_1
                   (this_00,ch,(CharacterInfo *)&stack0xffffffc0,iVar6,(MethodInfo *)0x0);
-        iVar7 = func_?();
+        iVar6 = UnityEngine.TextRenderingModule.dll::UnityEngine::CharacterInfo::
+                CharacterInfo_get_advance((CharacterInfo *)&stack0xffffffc0,(MethodInfo *)0x0);
         uVar3 = uVar3 + 1;
         puVar4 = puVar4 + 1;
-        fStack_1 = (float)iVar7 + fStack_1;
+        fStack_1 = (float)iVar6 + fStack_1;
       }
       goto code_?;
     }
   }
 code_?:
-  func_?(0);
+  func_?();
 code_?:
-  uVar8 = func_?(0,0);
-  func_?(uVar8);
-  pcVar9 = (code *)swi(3);
-  iVar6 = (*pcVar9)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  iVar6 = (*pcVar7)();
   return iVar6;
 }
 
@@ -59,17 +59,19 @@ Assembly-CSharp.dll::AddDotsToTruncatedText::AddDotsToTruncatedText_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AddDotsToTruncatedText___Start_d__1);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AddDotsToTruncatedText___Start_c__Iterator0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    this_00[1].monitor = (MonitorData *)this;
-    return (IEnumerator *)this_00;
+  value = (Object *)func_?(TypeInfo__AddDotsToTruncatedText___Start_d__1);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    return (IEnumerator *)value;
   }
-  func_?(0);
+  func_?();
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;

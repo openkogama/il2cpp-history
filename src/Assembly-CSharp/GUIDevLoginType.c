@@ -6,30 +6,25 @@ void Assembly-CSharp.dll::GUIDevLoginType::GUIDevLoginType_Start
 
 {
   if ((this->fields).usePromotionalUI == 0) {
-    this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)(this->fields).devUI;
+    pGVar1 = (this->fields).devUI;
   }
   else {
-    this_00 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-               *)(this->fields).promotionUI;
+    pGVar1 = (this->fields).promotionUI;
   }
-  if (this_00 !=
-      (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-      0x0) {
-    this_01 = (GameObject *)
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-              Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-              Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-                        (this_00,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
+  if (pGVar1 != (GameObject *)0x0) {
+    pGVar1 = (GameObject *)
+             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
+                       ((Void *)pGVar1,(MethodInfo *)0x0);
+    if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,1,(MethodInfo *)0x0);
+                (pGVar1,1,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar2 = func_?(&stack0xfffffff8);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

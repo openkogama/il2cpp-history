@@ -6,50 +6,54 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    SphereVolumeIndicator_MethodInfo__UnityEngine__Object__Instantiate<SphereVolumeIndicator>_SphereVolumeIndicator_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    pSVar1 = PrefabPool::PrefabPool_get_RangeVisualizationObject(this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?();
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    pSVar2 = (pPVar1->fields).rangeVisualizationObject;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    pSVar1 = (SphereVolumeIndicator *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                       ((XpBoostParticlePreviewer *)pSVar1,
+    pSVar2 = (SphereVolumeIndicator *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)pSVar2,
                         SphereVolumeIndicator_MethodInfo__UnityEngine__Object__Instantiate<SphereVolumeIndicator>_SphereVolumeIndicator_
                        );
-    (this->fields).rangeVisualization = pSVar1;
-    if (pSVar1 != (SphereVolumeIndicator *)0x0) {
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)pSVar1,(MethodInfo *)0x0);
-      value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)this,(MethodInfo *)0x0);
-      if (pTVar2 != (Transform *)0x0) {
+    (this->fields).rangeVisualization = pSVar2;
+    func_?(&(this->fields).rangeVisualization,pSVar2);
+    pSVar2 = (this->fields).rangeVisualization;
+    if (pSVar2 != (SphereVolumeIndicator *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pSVar2,(MethodInfo *)0x0);
+      value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar3 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (pTVar2,value,(MethodInfo *)0x0);
-        pSVar1 = (this->fields).rangeVisualization;
-        if (pSVar1 != (SphereVolumeIndicator *)0x0) {
-          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                             ((Component_1 *)pSVar1,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0)
-             && ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-            func_?();
+                  (pTVar3,value,(MethodInfo *)0x0);
+        pSVar2 = (this->fields).rangeVisualization;
+        if (pSVar2 != (SphereVolumeIndicator *)0x0) {
+          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pSVar2,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__UnityEngine__Vector3);
+            cRam_? = '\x01';
           }
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                             ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-          if (pTVar2 != (Transform *)0x0) {
+          if (pTVar3 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar2,*pVVar3,(MethodInfo *)0x0);
+                      (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                       (MethodInfo *)0x0);
             pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                                ((MethodInfo *)0x0);
             (this->fields).mainCamera = pCVar4;
+            func_?(&(this->fields).mainCamera,pCVar4);
             return;
           }
         }
@@ -81,24 +85,22 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_DisableSmoke
                (SentryGunScript *this,MethodInfo *method)
 
 {
-  pPVar1 = (this->fields).smokeEffectEmitter;
-  if (pPVar1 == (ParticleSystem *)0x0) {
-    func_?(0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  puStack_1 = &stack0xfffffffc;
+  pPVar2 = (this->fields).smokeEffectEmitter;
+  if (pPVar2 != (ParticleSystem *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    puStack_1 = (undefined1 *)0x1;
+    puStack_3 = (undefined *)0x1;
+    pPStack_4 = pPVar2;
+    (*pcRam_?)();
     return;
   }
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)func_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar3 = func_?(&UNK_?,0,0);
-    func_?(uVar3);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-  (*pcRam_?)(pPVar1,1,1);
+  uVar5 = func_?(&pPStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -109,25 +111,20 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_EnableSmoke
                (SentryGunScript *this,MethodInfo *method)
 
 {
-  if ((this->fields).smokeEffectEmitter == (ParticleSystem *)0x0) {
-    func_?(0);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcVar1 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar1 = (code *)func_?(&UNK_?), pcVar1 == (code *)0x0)) {
-    uVar2 = func_?(&UNK_?,0,0);
-    func_?(uVar2);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  pcRam_? = pcVar1;
+  if ((this->fields).smokeEffectEmitter != (ParticleSystem *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*pcRam_?)();
+    (*pcRam_?)();
+    return;
+  }
+  puStack_1 = &stack0xfffffffc;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -139,46 +136,46 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_Explode
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    original = (SentryGunBeam *)
-               PrefabPool::PrefabPool_get_ParticleExplosion(this_00,(MethodInfo *)0x0);
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-    if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
-      fVar3 = pVVar2->z;
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                         ((Component_1 *)this,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        __return_storage_ptr__ = (Quaternion *)&stack0xffffffe4;
-        puVar4 = &UNK_?;
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    original = (pPVar1->fields).particleExplosion;
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar2 != (Transform *)0x0) {
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xffffffe8,pTVar2,(MethodInfo *)0x0);
+      fVar4 = pVVar3->z;
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar2 != (Transform *)0x0) {
         pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                           (__return_storage_ptr__,pTVar1,(MethodInfo *)0x0);
+                           ((Quaternion *)&stack0xffffffe4,pTVar2,(MethodInfo *)0x0);
         fVar6 = pQVar5->x;
         fVar7 = pQVar5->y;
-        this = (SentryGunScript *)pQVar5->z;
-        method = (MethodInfo *)pQVar5->w;
-        if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+        fVar8 = pQVar5->z;
+        fVar9 = pQVar5->w;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        fVar8 = fVar7;
-        position.y = (float)__return_storage_ptr__;
-        position.x = (float)puVar4;
-        position.z = fVar3;
+        position.y = fVar8;
+        position.x = fVar7;
+        position.z = fVar4;
+        rotation.y = fVar7;
         rotation.x = fVar6;
-        rotation = (Quaternion)CONCAT124(auVar9,rotation.x);
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_161
-                  (original,position,rotation,
+        rotation.z = fVar8;
+        rotation.w = fVar9;
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+                  ((Object *)original,position,rotation,
                    UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
                   );
         return;
@@ -199,109 +196,117 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Graphics);
+    func_?(&StringLiteral_Default);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).glowPlane;
   if (pTVar1 != (Transform *)0x0) {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                        ((Component_1 *)pTVar1,(MethodInfo *)0x0);
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pTVar1,(MethodInfo *)0x0);
     this_00 = (this->fields).mainCamera;
-    if ((this_00 != (Camera *)0x0) &&
-       (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                            ((Component_1 *)this_00,(MethodInfo *)0x0), this_02 != (Transform *)0x0)
-       ) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                          (&VStack_3,this_02,(MethodInfo *)0x0);
-      uStack_4._0_4_ = pVVar2->x;
-      uStack_4._4_4_ = pVVar2->y;
-      fVar5 = pVVar2->z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?();
-      }
-      a.z = fVar5;
-      a.x = (float)(undefined4)uStack_4;
-      a.y = (float)uStack_4._4_4_;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation
-                          (&VStack_3,a,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
-                  (pTVar1,*pVVar2,(MethodInfo *)0x0);
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        if (fVar5 < (this->fields).damageBlinkTimeoutTime) {
-          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
+    if (this_00 != (Camera *)0x0) {
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_00,(MethodInfo *)0x0);
+      if (this_02 != (Transform *)0x0) {
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                            (&VStack_3,this_02,(MethodInfo *)0x0);
+        uVar4 = pVVar2->x;
+        uVar5 = pVVar2->y;
+        uStack_6._4_4_ = pVVar2->z;
+        uStack_6 = (double)CONCAT44(uStack_6._4_4_,uVar5);
+        VStack_3.x = (float)(uVar4 ^ 
+                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                             );
+        VStack_3.y = (float)(uVar5 ^ 
+                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                             );
+        VStack_3.z = (float)((uint)uStack_6._4_4_ ^
+                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                             );
+        fStack_7 = (float)uVar4;
+        if (pTVar1 != (Transform *)0x0) {
+          value.y = VStack_3.y;
+          value.x = VStack_3.x;
+          value.z = VStack_3.z;
+          uStack_6._0_4_ = (float)uVar5;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
+                    (pTVar1,value,(MethodInfo *)0x0);
+          fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
           ;
-          if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-            func_?(TypeInfo__UnityEngine__Mathf);
-          }
-          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Repeat
-                             (fVar5 * _UNK_?,1.0,(MethodInfo *)0x0);
-          if (fVar5 < _UNK_?) {
-            this_01 = (this->fields).sentryRenderer;
-            mesh = (this->fields).sentryMesh;
-            if ((this_01 != (MeshRenderer *)0x0) &&
-               (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_1_get_transform((Component_1 *)this_01,(MethodInfo *)0x0),
-               pTVar1 != (Transform *)0x0)) {
-              pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                        Transform_get_localToWorldMatrix
-                                  ((Matrix4x4 *)&stack0xffffff7c,pTVar1,(MethodInfo *)0x0);
-              material = (this->fields).blinkDamageMaterial;
-              fVar5 = pMVar6->m00;
-              VStack_3.x = pMVar6->m10;
-              VStack_3.y = pMVar6->m20;
-              VStack_3.z = pMVar6->m30;
-              fStack_7 = pMVar6->m01;
-              fStack_8 = pMVar6->m11;
-              uStack_4._0_4_ = pMVar6->m21;
-              uStack_4._4_4_ = pMVar6->m31;
-              fVar9 = pMVar6->m02;
-              fVar10 = pMVar6->m12;
-              fVar11 = pMVar6->m22;
-              fVar12 = pMVar6->m32;
-              fVar13 = pMVar6->m03;
-              fVar14 = pMVar6->m13;
-              fVar15 = pMVar6->m23;
-              fVar16 = pMVar6->m33;
-              layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                                (StringLiteral_Default,(MethodInfo *)0x0);
-              if ((((uint)(TypeInfo__UnityEngine__Graphics->vtable).Equals.methodPtr & 0x2000000) !=
-                   0) && ((TypeInfo__UnityEngine__Graphics->_1).cctor_started == 0)) {
-                func_?();
+          if (fVar8 < (this->fields).damageBlinkTimeoutTime) {
+            fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                               ((MethodInfo *)0x0);
+            fVar8 = fVar8 * _UNK_?;
+            uStack_6 = (double)fVar8;
+            fVar9 = (float10)func_?();
+            uStack_6 = (double)fVar9;
+            fVar8 = fVar8 - (float)fVar9;
+            if ((fVar8 < 0.0) || ((fVar8 <= _UNK_? && (fVar8 < _UNK_?)))) {
+              this_01 = (this->fields).sentryRenderer;
+              mesh = (this->fields).sentryMesh;
+              if (this_01 != (MeshRenderer *)0x0) {
+                pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
+                if (pTVar1 != (Transform *)0x0) {
+                  pMVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_get_localToWorldMatrix
+                                      ((Matrix4x4 *)&stack0xffffff7c,pTVar1,(MethodInfo *)0x0);
+                  material = (this->fields).blinkDamageMaterial;
+                  fVar8 = pMVar10->m00;
+                  VStack_3.x = pMVar10->m10;
+                  VStack_3.y = pMVar10->m20;
+                  VStack_3.z = pMVar10->m30;
+                  fStack_11 = pMVar10->m01;
+                  fStack_7 = pMVar10->m11;
+                  uStack_6._0_4_ = pMVar10->m21;
+                  uStack_6._4_4_ = pMVar10->m31;
+                  fVar12 = pMVar10->m02;
+                  fVar13 = pMVar10->m12;
+                  fVar14 = pMVar10->m22;
+                  fVar15 = pMVar10->m32;
+                  fVar16 = pMVar10->m03;
+                  fVar17 = pMVar10->m13;
+                  fVar18 = pMVar10->m23;
+                  fVar19 = pMVar10->m33;
+                  layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                                    (StringLiteral_Default,(MethodInfo *)0x0);
+                  if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  matrix.m10 = VStack_3.x;
+                  matrix.m00 = fVar8;
+                  matrix.m20 = VStack_3.y;
+                  matrix.m30 = VStack_3.z;
+                  matrix.m01 = fStack_11;
+                  matrix.m11 = fStack_7;
+                  matrix.m21 = (float)uStack_6;
+                  matrix.m31 = uStack_6._4_4_;
+                  matrix.m02 = fVar12;
+                  matrix.m12 = fVar13;
+                  matrix.m22 = fVar14;
+                  matrix.m32 = fVar15;
+                  matrix.m03 = fVar16;
+                  matrix.m13 = fVar17;
+                  matrix.m23 = fVar18;
+                  matrix.m33 = fVar19;
+                  UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMesh_2
+                            (mesh,matrix,material,layer,(MethodInfo *)0x0);
+                  return;
+                }
               }
-              matrix.m10 = VStack_3.x;
-              matrix.m00 = fVar5;
-              matrix.m20 = VStack_3.y;
-              matrix.m30 = VStack_3.z;
-              matrix.m01 = fStack_7;
-              matrix.m11 = fStack_8;
-              matrix.m21 = (float)(undefined4)uStack_4;
-              matrix.m31 = (float)uStack_4._4_4_;
-              matrix.m02 = fVar9;
-              matrix.m12 = fVar10;
-              matrix.m22 = fVar11;
-              matrix.m32 = fVar12;
-              matrix.m03 = fVar13;
-              matrix.m13 = fVar14;
-              matrix.m23 = fVar15;
-              matrix.m33 = fVar16;
-              UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMesh_1
-                        (mesh,matrix,material,layer,(MethodInfo *)0x0);
-              return;
+              goto code_?;
             }
-            goto code_?;
           }
+          return;
         }
-        return;
       }
     }
   }
 code_?:
-  func_?(0);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  func_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -313,7 +318,8 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_SetActiveMaterial
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__TintColor);
+    func_?(&StringLiteral__Color);
     cRam_? = '\x01';
   }
   if ((undefined1)beamType == SentryGunBeamType__Enum_FireBeam) {
@@ -335,13 +341,14 @@ code_?:
     pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial
                        ((Renderer *)pMVar1,(MethodInfo *)0x0);
     if (pMVar2 != (Material *)0x0) {
-      pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
-                         ((Color *)&stack0xffffffec,pMVar2,StringLiteral__Color,(MethodInfo *)0x0);
-      fVar4 = pCVar3->g;
-      fVar5 = pCVar3->b;
-      fVar6 = pCVar3->a;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
+                         ((Vector4 *)&stack0xffffffec,pMVar2,StringLiteral__Color,(MethodInfo *)0x0)
+      ;
+      fVar4 = pVVar3->y;
+      fVar5 = pVVar3->z;
+      fVar6 = pVVar3->w;
       this_00 = (this->fields).glowPlaneRenderer;
-      (this->fields).color.r = pCVar3->r;
+      (this->fields).color.r = pVVar3->x;
       (this->fields).color.g = fVar4;
       (this->fields).color.b = fVar5;
       (this->fields).color.a = fVar6;
@@ -358,7 +365,7 @@ code_?:
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;
@@ -372,7 +379,8 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_SetGlowFactor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__TintColor);
+    func_?(&StringLiteral__GlowFactor);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).sentryRenderer;
@@ -397,7 +405,7 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_SetGlowFactor
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -438,21 +446,14 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_SetLaserRange
                (SentryGunScript *this,float range,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-    func_?(TypeInfo__MVGameControllerBase);
-  }
   MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar1 == MVGameMode__Enum_Edit) {
     this_00 = (this->fields).rangeVisualization;
     if (this_00 == (SphereVolumeIndicator *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      uVar2 = func_?(&stack0xfffffff4);
+      func_?(uVar2);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(this_00,range,(MethodInfo *)0x0);
@@ -468,7 +469,8 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_SetSentryGunBeamType
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__TintColor);
+    func_?(&StringLiteral__Color);
     cRam_? = '\x01';
   }
   if ((undefined1)beamType == SentryGunBeamType__Enum_FireBeam) {
@@ -490,13 +492,14 @@ code_?:
     pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial
                        ((Renderer *)pMVar1,(MethodInfo *)0x0);
     if (pMVar2 != (Material *)0x0) {
-      pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
-                         ((Color *)&stack0xffffffec,pMVar2,StringLiteral__Color,(MethodInfo *)0x0);
-      fVar4 = pCVar3->g;
-      fVar5 = pCVar3->b;
-      fVar6 = pCVar3->a;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
+                         ((Vector4 *)&stack0xffffffec,pMVar2,StringLiteral__Color,(MethodInfo *)0x0)
+      ;
+      fVar4 = pVVar3->y;
+      fVar5 = pVVar3->z;
+      fVar6 = pVVar3->w;
       this_00 = (this->fields).glowPlaneRenderer;
-      (this->fields).color.r = pCVar3->r;
+      (this->fields).color.r = pVVar3->x;
       (this->fields).color.g = fVar4;
       (this->fields).color.b = fVar5;
       (this->fields).color.a = fVar6;
@@ -527,7 +530,7 @@ code_?:
     }
   }
 code_?:
-  func_?(0);
+  func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;
@@ -556,9 +559,10 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_SetSound
     return;
   }
 code_?:
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -570,31 +574,33 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_UpdateAnimation
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__MainTex);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).sentryRenderer;
   if (this_00 != (MeshRenderer *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                         ((Renderer *)this_00,(MethodInfo *)0x0);
-    t = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__UnityEngine__Mathf->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Mathf->_1).cctor_started == 0)) {
-      func_?();
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar2 = (float10)func_?((double)fVar1);
+    fVar1 = fVar1 - (float)fVar2;
+    if (fVar1 < 0.0) {
+      fVar1 = 0.0;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Repeat(t,1.0,(MethodInfo *)0x0);
-    value.y = (float)&stack0xfffffff4;
-    value.x = (float)&UNK_?;
-    func_?();
+    else if (_UNK_? < fVar1) {
+      fVar1 = _UNK_?;
+    }
     if (this_01 != (Material *)0x0) {
+      value.y = 0.0;
+      value.x = fVar1;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureOffset
                 (this_01,StringLiteral__MainTex,value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

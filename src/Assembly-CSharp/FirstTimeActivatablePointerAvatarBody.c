@@ -7,32 +7,43 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__FirstTimeActivatablePointerAvatarBody___Clear_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   );
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(
-                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,
-             MethodInfo__FirstTimeActivatablePointerAvatarBody___Clear_m__2_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-             ,
-             MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>__EventFunction_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-    func_?();
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  callbackFunction =
+       (ExecuteEvents_EventFunction_1_System_Object_ *)
+       func_?(
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                      );
+  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+               MethodInfo__FirstTimeActivatablePointerAvatarBody___Clear_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+              );
+    return;
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_00,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-            );
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -48,8 +59,23 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
     FirstTimeActivatablePointerAvatarBody_Clear(this,(MethodInfo *)0x0);
   }
   (this->fields).bodyController = (AvatarEditModeBodyController *)0x0;
+  func_?(&(this->fields).bodyController,0);
   FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_OnDestroy
             ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* Void OnDisable() */
+
+void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
+     FirstTimeActivatablePointerAvatarBody_OnDisable
+               (FirstTimeActivatablePointerAvatarBody *this,MethodInfo *method)
+
+{
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields).showing = 0;
   return;
 }
 
@@ -62,38 +88,54 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    AvatarEditModeBodyController_MethodInfo__UnityEngine__Component__GetComponentInParent<AvatarEditModeBodyController>__
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__FirstTimeActivatablePointerAvatarBody___OnShow_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   );
     cRam_? = '\x01';
   }
   (this->fields).showing = 1;
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponentInParent_6
-                     ((Component_1 *)this,
+  pAVar1 = (AvatarEditModeBodyController *)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInParent_1
+                     ((Component *)this,
                       AvatarEditModeBodyController_MethodInfo__UnityEngine__Component__GetComponentInParent<AvatarEditModeBodyController>__
                      );
-  (this->fields).bodyController = (AvatarEditModeBodyController *)pTVar1;
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(
-                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,
-             MethodInfo__FirstTimeActivatablePointerAvatarBody___OnShow_m__1_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-             ,
-             MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>__EventFunction_System__Object__void__
-            );
-  if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-       0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-    func_?();
+  (this->fields).bodyController = pAVar1;
+  func_?(&(this->fields).bodyController,pAVar1);
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  callbackFunction =
+       (ExecuteEvents_EventFunction_1_System_Object_ *)
+       func_?(
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                      );
+  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+               MethodInfo__FirstTimeActivatablePointerAvatarBody___OnShow_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+              );
+    return;
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_00,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-            );
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -106,29 +148,25 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_OnShown_done);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
             ((Object *)StringLiteral_OnShown_done,(MethodInfo *)0x0);
   (this->fields).showing = 0;
   FirstTimeActivatablePointerAvatarBody_Clear(this,(MethodInfo *)0x0);
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
             ((Object_1 *)this,(MethodInfo *)0x0);
-  firstTimeEvent = (this->fields)._._.firstTimeEvent;
-  if ((((uint)(TypeInfo__FirstTimeEventManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__FirstTimeEventManager->_1).cctor_started == 0)) {
-    func_?();
-  }
-  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent(firstTimeEvent,(MethodInfo *)0x0);
+  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+            ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
   return;
 }
 
@@ -141,92 +179,107 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    func_?(&StringLiteral_TPose);
     cRam_? = '\x01';
   }
-  if ((this->fields).showing != 0) {
-    pAVar1 = (this->fields).bodyController;
-    if ((pAVar1 == (AvatarEditModeBodyController *)0x0) ||
-       (pMVar2 = AvatarEditModeBodyController::AvatarEditModeBodyController_get_CurrentBody
-                           (pAVar1,(MethodInfo *)0x0), pMVar2 == (MVBody *)0x0)) {
-code_?:
-      func_?(0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    x = DayNightCycle::DayNightCycle_get_CurrentMoonParam((DayNightCycle *)pMVar2,(MethodInfo *)0x0)
-    ;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((this->fields).showing == 0) {
+    return;
+  }
+  pAVar1 = (this->fields).bodyController;
+  if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
+    if (cRam_? == '\0') {
       func_?();
+      cRam_? = '\x01';
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)this,(MethodInfo *)0x0);
-      pUVar5 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *
-               )func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (pUVar5,(Object *)this,
-                 MethodInfo__FirstTimeActivatablePointerAvatarBody___Update_m__0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                 ,
-                 MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>__EventFunction_System__Object__void__
-                );
-      if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-           0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (pAVar1->fields).bodies;
+    if ((this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+       (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,(pAVar1->fields).currentBodyIndex,
+                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+       RVar2 != (RegexCharClass_SingleRange)0x0)) {
+      x = *(Object_1 **)((int)RVar2 + 0x88);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-      ExecuteEvents_ExecuteHierarchy_63
-                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)pUVar5,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                );
-      pAVar1 = (this->fields).bodyController;
-      if (((pAVar1 == (AvatarEditModeBodyController *)0x0) ||
-          (pMVar2 = AvatarEditModeBodyController::AvatarEditModeBodyController_get_CurrentBody
-                              (pAVar1,(MethodInfo *)0x0), pMVar2 == (MVBody *)0x0)) ||
-         (this_01 = MVBody::MVBody_get_Animation(pMVar2,(MethodInfo *)0x0),
-         this_01 == (BoneAnimation *)0x0)) goto code_?;
-      bVar4 = BoneAnimation::BoneAnimation_IsPlaying(this_01,StringLiteral_TPose,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        pUVar5 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                  *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (pUVar5,(Object *)this,
-                   MethodInfo__FirstTimeActivatablePointerAvatarBody__OnShown__,(MethodInfo *)0x0);
-        WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)pUVar5,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        this_00 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
-        if (this_00 == (MonoBehaviour *)0x0) {
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
-          return;
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                  (this_00,in_stack_6,(MethodInfo *)0x0);
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
         return;
+      }
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                   MethodInfo__FirstTimeActivatablePointerAvatarBody___Update_b__12_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                  );
+        pAVar1 = (this->fields).bodyController;
+        if (((pAVar1 != (AvatarEditModeBodyController *)0x0) &&
+            (this_02 = AvatarEditModeBodyController::AvatarEditModeBodyController_get_CurrentBody
+                                 (pAVar1,(MethodInfo *)0x0), this_02 != (MVBody *)0x0)) &&
+           (this_03 = MVBody::MVBody_get_Animation(this_02,(MethodInfo *)0x0),
+           this_03 != (BoneAnimation *)0x0)) {
+          bVar3 = BoneAnimation::BoneAnimation_IsPlaying
+                            (this_03,StringLiteral_TPose,(MethodInfo *)0x0);
+          if (bVar3 == 0) {
+            return;
+          }
+          routine = (IEnumerator *)&UNK_?;
+          this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+          if (this_04 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (this_04,(Object *)this,
+                       MethodInfo__FirstTimeActivatablePointerAvatarBody__OnShown__,
+                       (MethodInfo *)0x0);
+            WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)this_04,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            this_01 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
+            if (this_01 != (MonoBehaviour *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+              MonoBehaviour_StartCoroutine_Auto(this_01,routine,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
       }
     }
   }
+  uVar4 = func_?(&stack0xffffffe4);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
 
-/* Void <Clear>m__2(TextBubbleController, BaseEventData) */
+/* Void <Clear>b__16_0(TextBubbleController, BaseEventData) */
 
 void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
-     FirstTimeActivatablePointerAvatarBody__Clear_m__2
+     FirstTimeActivatablePointerAvatarBody__Clear_b__16_0
                (FirstTimeActivatablePointerAvatarBody *this,TextBubbleController *x,BaseEventData *y
                ,MethodInfo *method)
 
@@ -236,155 +289,165 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
               (x,(this->fields).bubbleId,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
 
-/* Void <OnShow>m__1(TextBubbleController, BaseEventData) */
+/* Void <OnShow>b__13_0(TextBubbleController, BaseEventData) */
 
 void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
-     FirstTimeActivatablePointerAvatarBody__OnShow_m__1
+     FirstTimeActivatablePointerAvatarBody__OnShow_b__13_0
                (FirstTimeActivatablePointerAvatarBody *this,TextBubbleController *x,BaseEventData *y
                ,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).bodyController;
-  if ((this_00 != (AvatarEditModeBodyController *)0x0) &&
-     (pMVar1 = AvatarEditModeBodyController::AvatarEditModeBodyController_get_CurrentBody
-                         (this_00,(MethodInfo *)0x0), pMVar1 != (MVBody *)0x0)) {
-    puVar2 = (undefined8 *)
-             (*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)
-                       (auStack_3,pMVar1,(pMVar1->klass->vtable).set_WorldPosition.methodPtr);
-    uStack_4._0_4_ = (this->fields).bubbleWorldSpaceOffset.x;
-    uStack_4._4_4_ = (this->fields).bubbleWorldSpaceOffset.y;
-    fVar5 = (this->fields).bubbleWorldSpaceOffset.z;
-    auStack_6._4_8_ = *puVar2;
-    fVar7 = *(float *)(puVar2 + 1);
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Vector3);
+  pAVar1 = (this->fields).bodyController;
+  if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+      cRam_? = '\x01';
     }
-    a.z = fVar7;
-    a.x = (float)auStack_6._4_4_;
-    a.y = (float)auStack_6._8_4_;
-    b.z = fVar5;
-    b.x = (float)(undefined4)uStack_4;
-    b.y = (float)uStack_4._4_4_;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                       ((Vector3 *)auStack_6,a,b,(MethodInfo *)0x0);
-    content = (this->fields).bubbleContent;
-    uStack_4._0_4_ = pVVar8->x;
-    uStack_4._4_4_ = pVVar8->y;
-    fVar7 = pVVar8->z;
-    fVar5 = (this->fields).bubbleLifetimeWhileShown;
-    parentTransform =
-         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_transform
-                   ((Component_1 *)this,(MethodInfo *)0x0);
-    pVVar9 = &(this->fields).offset;
-    auStack_6._4_8_ = *pVVar9;
-    if (x != (TextBubbleController *)0x0) {
-      worldPosition.z = fVar7;
-      worldPosition.x = (float)(undefined4)uStack_4;
-      worldPosition.y = (float)uStack_4._4_4_;
-      iVar10 = TextBubbleController::TextBubbleController_ShowBubble3D_1
-                        (x,worldPosition,fVar5,content,parentTransform,*pVVar9,(MethodInfo *)0x0);
-      (this->fields).bubbleId = iVar10;
-      if (((this->fields).skipAllowed == 0) || ((this->fields).hasButtonBeenAdded != 0)) {
-        return;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (pAVar1->fields).bodies;
+    if ((this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+       (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,(pAVar1->fields).currentBodyIndex,
+                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+       RVar2 != (RegexCharClass_SingleRange)0x0)) {
+      puVar3 = (undefined8 *)
+               (**(code **)(*(int *)RVar2 + 0x18c))
+                         (&fStack_4,RVar2,*(undefined4 *)(*(int *)RVar2 + 400));
+      uVar5 = *puVar3;
+      fStack_6 = *(float *)(puVar3 + 1);
+      uStack_7._0_4_ = (this->fields).bubbleWorldSpaceOffset.x;
+      uStack_7._4_4_ = (this->fields).bubbleWorldSpaceOffset.y;
+      uStack_8._0_4_ = (float)uVar5;
+      fStack_4 = (float)uStack_8 + (float)(undefined4)uStack_7;
+      fStack_9 = (this->fields).bubbleWorldSpaceOffset.z;
+      uStack_8._4_4_ = (float)((ulonglong)uVar5 >> 0x20);
+      fStack_10 = (float)uStack_7._4_4_ + uStack_8._4_4_;
+      fStack_11 = fStack_9 + fStack_6;
+      lifeTime = (this->fields).bubbleLifetimeWhileShown;
+      content = (this->fields).bubbleContent;
+      uStack_8 = uVar5;
+      parentTransform =
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+      pVVar12 = &(this->fields).offset;
+      uStack_7 = CONCAT44(pVVar12->x,(undefined4)uStack_7);
+      fStack_9 = (this->fields).offset.y;
+      if (x != (TextBubbleController *)0x0) {
+        worldPosition.y = fStack_10;
+        worldPosition.x = fStack_4;
+        worldPosition.z = fStack_11;
+        iVar13 = TextBubbleController::TextBubbleController_ShowBubble3D_1
+                          (x,worldPosition,lifeTime,content,parentTransform,*pVVar12,
+                           (MethodInfo *)0x0);
+        (this->fields).bubbleId = iVar13;
+        if (((this->fields).skipAllowed == 0) || ((this->fields).hasButtonBeenAdded != 0)) {
+          return;
+        }
+        original = (this->fields).skipElement;
+        (this->fields).hasButtonBeenAdded = 1;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)original,
+                            UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
+                           );
+        if (pOVar14 != (Object *)0x0) {
+          this_01 = pOVar14[0x16].klass;
+          this_02 = (NavMesh_OnNavMeshPreUpdate *)
+                    func_?(TypeInfo__UnityEngine__Events__UnityAction);
+          if ((this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0) &&
+             (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+              NavMesh_OnNavMeshPreUpdate__ctor
+                        (this_02,(Object *)this,(this->klass->vtable).SkipEvent.method,
+                         (MethodInfo *)0x0), this_01 != (Object__Class *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                      ((UnityEvent *)this_01,(UnityAction *)this_02,(MethodInfo *)0x0);
+            return;
+          }
+        }
       }
-      original = (this->fields).skipElement;
-      (this->fields).hasButtonBeenAdded = 1;
-      if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      this_01 = (HoverCraftMotor *)
-                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                          ((XpBoostParticlePreviewer *)original,
-                           UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
-                          );
-      if (this_01 != (HoverCraftMotor *)0x0) {
-        this_02 = (UnityEvent *)
-                  HoverCraftMotor::HoverCraftMotor_get_VehicleCamera(this_01,(MethodInfo *)0x0);
-        this_03 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                   *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement
-        ::Scene,UnityEngine::SceneManagement::Scene]::
-        UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                  (this_03,(Object *)this,MethodInfo__FirstTimeActivatableElementBase__SkipEvent__,
-                   (MethodInfo *)0x0);
-        if (this_02 != (UnityEvent *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                    (this_02,(UnityAction *)this_03,(MethodInfo *)0x0);
+    }
+  }
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
+  return;
+}
+
+
+/* Void <Update>b__12_0(TextBubbleController, BaseEventData) */
+
+void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
+     FirstTimeActivatablePointerAvatarBody__Update_b__12_0
+               (FirstTimeActivatablePointerAvatarBody *this,TextBubbleController *x,BaseEventData *y
+               ,MethodInfo *method)
+
+{
+  pAVar1 = (this->fields).bodyController;
+  bubbleId = (this->fields).bubbleId;
+  if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+      cRam_? = '\x01';
+    }
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (pAVar1->fields).bodies;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,(pAVar1->fields).currentBodyIndex,
+                         MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+      if (RVar2 != (RegexCharClass_SingleRange)0x0) {
+        puVar3 = (undefined8 *)
+                 (**(code **)(*(int *)RVar2 + 0x18c))
+                           (&fStack_4,RVar2,*(undefined4 *)(*(int *)RVar2 + 400));
+        uVar5 = *puVar3;
+        fStack_6 = *(float *)(puVar3 + 1);
+        uVar7 = (this->fields).bubbleWorldSpaceOffset.x;
+        uVar8 = (this->fields).bubbleWorldSpaceOffset.y;
+        uStack_9._0_4_ = (float)uVar5;
+        fStack_4 = (float)uVar7 + (float)uStack_9;
+        uStack_9._4_4_ = (float)((ulonglong)uVar5 >> 0x20);
+        fStack_10 = uStack_9._4_4_ + (float)uVar8;
+        fStack_11 = (this->fields).bubbleWorldSpaceOffset.z + fStack_6;
+        pVVar12 = &(this->fields).offset;
+        _fStack_10 = CONCAT44(pVVar12->x,uVar7);
+        fStack_13 = (this->fields).offset.y;
+        uStack_9 = uVar5;
+        if (x != (TextBubbleController *)0x0) {
+          worldPosition.y = fStack_10;
+          worldPosition.x = fStack_4;
+          worldPosition.z = fStack_11;
+          TextBubbleController::TextBubbleController_UpdatePosition3D
+                    (x,bubbleId,worldPosition,*pVVar12,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?(0);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
-  return;
-}
-
-
-/* Void <Update>m__0(TextBubbleController, BaseEventData) */
-
-void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
-     FirstTimeActivatablePointerAvatarBody__Update_m__0
-               (FirstTimeActivatablePointerAvatarBody *this,TextBubbleController *x,BaseEventData *y
-               ,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).bodyController;
-  bubbleId = (this->fields).bubbleId;
-  if (this_00 != (AvatarEditModeBodyController *)0x0) {
-    pMVar1 = AvatarEditModeBodyController::AvatarEditModeBodyController_get_CurrentBody
-                       (this_00,(MethodInfo *)0x0);
-    if (pMVar1 != (MVBody *)0x0) {
-      puVar2 = (undefined8 *)
-               (*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)
-                         (&VStack_3,pMVar1,(pMVar1->klass->vtable).set_WorldPosition.methodPtr);
-      VStack_3.y = (this->fields).bubbleWorldSpaceOffset.x;
-      VStack_3.z = (this->fields).bubbleWorldSpaceOffset.y;
-      VStack_4 = (Vector2)*puVar2;
-      fVar5 = *(float *)(puVar2 + 1);
-      fVar6 = (this->fields).bubbleWorldSpaceOffset.z;
-      if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Vector3);
-      }
-      a.z = fVar5;
-      a.x = VStack_4.x;
-      a.y = VStack_4.y;
-      b.z = fVar6;
-      b.x = VStack_3.y;
-      b.y = VStack_3.z;
-      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_Addition
-                         (&VStack_3,a,b,(MethodInfo *)0x0);
-      pVVar8 = &(this->fields).offset;
-      VStack_4 = *pVVar8;
-      if (x != (TextBubbleController *)0x0) {
-        TextBubbleController::TextBubbleController_UpdatePosition3D
-                  (x,bubbleId,*pVVar7,*pVVar8,(MethodInfo *)0x0);
-        return;
-      }
-    }
-  }
-  func_?(0);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -396,19 +459,15 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
                (FirstTimeActivatablePointerAvatarBody *this,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
+  uVar1 = (ulonglong)_UNK_?;
+  (this->fields).bubbleWorldSpaceOffset.x = (float)(int)(uVar1 << 0x20);
+  (this->fields).bubbleWorldSpaceOffset.y = (float)(int)((uVar1 << 0x20) >> 0x20);
   (this->fields).bubbleLifetimeWhileShown = 3.4028235e+38;
-  uStack_2 = 0;
-  func_?(&uStack_2,0,0x3fa66666,0,0);
-  (this->fields).bubbleWorldSpaceOffset.x = (float)(undefined4)uStack_2;
-  (this->fields).bubbleWorldSpaceOffset.y = (float)uStack_2._4_4_;
-  (this->fields).bubbleWorldSpaceOffset.z = fStack_1;
+  (this->fields).bubbleWorldSpaceOffset.z = 0.0;
   (this->fields).skipAllowed = 1;
   (this->fields).bubbleId = -1;
-  (this->fields)._.onShowSound = 3;
-  (this->fields)._.prerequisiteEvent = -1;
-  (this->fields)._.checkForStackBlocking = 1;
-  UnityEngine.UIModule.dll::UnityEngine::Canvas::Canvas__ctor((Canvas *)this,(MethodInfo *)0x0);
+  FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
+            ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;
 }
 

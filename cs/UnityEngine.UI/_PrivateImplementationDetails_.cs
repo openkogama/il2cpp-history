@@ -7,32 +7,31 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using UnityEngine;
 
-// Image 35: UnityEngine.UI.dll - Assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-[assembly: AssemblyCompany]
-[assembly: AssemblyConfiguration]
-[assembly: AssemblyCopyright]
-[assembly: AssemblyDescription]
-[assembly: AssemblyFileVersion]
-[assembly: AssemblyProduct]
-[assembly: AssemblyTitle]
-[assembly: AssemblyTrademark]
-[assembly: ComVisible]
-[assembly: Debuggable]
-[assembly: Guid]
-[assembly: InternalsVisibleTo]
-[assembly: RuntimeCompatibility]
-[assembly: UnityAPICompatibilityVersion]
+// Image 4: UnityEngine.UI.dll - Assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCopyright("Copyright \u00A9 Microsoft 2013")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyProduct("guisystem")]
+[assembly: AssemblyTitle("guisystem")]
+[assembly: AssemblyTrademark("")]
+[assembly: CompilationRelaxations(8)]
+[assembly: ComVisible(false)]
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.None | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: Guid("d4f464c7-9b15-460d-b4bc-2cacd1c1df73")]
+[assembly: InternalsVisibleTo("UnityEngine.UI.Tests")]
+[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 
 [CompilerGenerated]
-internal static class _PrivateImplementationDetails_
+internal sealed class _PrivateImplementationDetails_
 {
 	// Fields
-	internal static readonly _ArrayType_12 _field_7BBE37982E6C057ED87163CAFC7FD6E5E42EEA46;
+	internal static readonly __StaticArrayInitTypeSize_12 _1C3635C112D556F4C11A4FE6BDE6ED3F126C4B2B546811BDB64DE7BDED3A05CB;
 
 	// Nested types
-	private struct _ArrayType_12
+	private struct __StaticArrayInitTypeSize_12
 	{
 	}
 }

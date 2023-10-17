@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.ObservableSupport
 {
@@ -14,7 +14,6 @@ namespace Newtonsoft.Json.ObservableSupport
 	{
 		// Fields
 		[CompilerGenerated]
-		[DebuggerBrowsable]
 		private string _PropertyName_k__BackingField;
 	
 		// Properties

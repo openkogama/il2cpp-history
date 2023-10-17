@@ -10,108 +10,103 @@ void Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_CubeModelToFile
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshFilter>__
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Collections__IEnumerable);
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>__get_Value__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>
+                   );
+    func_?(&StringLiteral_Saved_obj_file_);
+    func_?(&StringLiteral__obj);
     cRam_? = '\x01';
   }
-  puVar4 = (undefined4 *)&stack0xffffffc4;
-  func_?();
-  if (cm != (MVCubeModelBase *)0x0) {
-    method_00 = (MethodInfo *)&UNK_?;
-    pMVar5 = MVMovingPlatformNode::MVMovingPlatformNode_get_Next
-                       ((MVMovingPlatformNode *)cm,(MethodInfo *)0x0);
-    if (pMVar5 != (MVMovingPlatformNode *)0x0) {
-      iVar6 = func_?(0);
-      uStack_1 = 0;
-      while (iVar6 != 0) {
-        cVar7 = func_?(1);
-        if (cVar7 == '\0') {
-          *puVar4 = 0x9f;
-          uStack_1 = 0xffffffff;
-          iVar6 = func_?();
-          if (iVar6 != 0) {
-            func_?(0);
-          }
+  if ((cm != (MVCubeModelBase *)0x0) &&
+     (pCVar4 = (cm->fields).chunkInstances, pCVar4 != (ChunkInstances *)0x0)) {
+    piVar5 = (int *)func_?(0,TypeInfo__System__Collections__IEnumerable,pCVar4);
+    uStack_1 = 1;
+    while (piVar5 != (int *)0x0) {
+      cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar5);
+      if (cVar6 == '\0') {
+        uStack_1 = 0xffffffff;
+        iVar7 = func_?(piVar5,TypeInfo__System__IDisposable);
+        if (iVar7 != 0) {
+          func_?(0,TypeInfo__System__IDisposable,iVar7);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        piVar8 = (int *)func_?(0);
-        if (piVar8 == (int *)0x0) break;
-        if (*(Il2CppClass **)(*piVar8 + 0x20) !=
-            (
-            TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>
-            ->_0).element_class) goto code_?;
-        func_?();
-        this = (GameObject *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items
-                         ((Collection_1_VoxelHit_ *)&stack0xffffffd0,
-                          MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>__get_Value__
-                         );
-        if (this == (GameObject *)0x0) break;
-        mf = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_47
-                       (this,
-                        UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshFilter>__
-                       );
-        pCVar9 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)cm,(MethodInfo *)0x0);
-        if (pCVar9 == (CelestialParam *)0x0) break;
-        pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                           ((Object_1 *)pCVar9,in_stack_11);
-        in_stack_11 = (MethodInfo *)&UNK_?;
-        pOVar12 = (Object_1 *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items
-                           ((Collection_1_VoxelHit_ *)&stack0xffffffd0,
-                            MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>__get_Value__
-                           );
-        if (pOVar12 == (Object_1 *)0x0) break;
-        unaff_ESI = (MethodInfo *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                              (pOVar12,in_stack_13);
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        in_stack_13 = unaff_ESI;
-        pSVar10 = mscorlib.dll::System::String::String_Concat_3
-                           (pSVar10,(String *)unaff_ESI,StringLiteral__obj,(MethodInfo *)0x0);
-        ObjExporterScript_MeshToFile((MeshFilter *)mf,pSVar10,0,(MethodInfo *)0x0);
-        pCVar9 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                           ((DayNightCycle *)cm,(MethodInfo *)0x0);
-        if (pCVar9 == (CelestialParam *)0x0) break;
-        unaff_ESI = (MethodInfo *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                              ((Object_1 *)pCVar9,method_00);
-        method_00 = (MethodInfo *)&UNK_?;
-        pOVar12 = (Object_1 *)
-                 mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                 Collection_1_VoxelHit__get_Items
-                           ((Collection_1_VoxelHit_ *)&stack0xffffffd0,
-                            MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>__get_Value__
-                           );
-        if (pOVar12 == (Object_1 *)0x0) break;
-        pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                           (pOVar12,(MethodInfo *)0x0);
-        unaff_ESI = (MethodInfo *)
-                    mscorlib.dll::System::String::String_Concat_4
-                              (StringLiteral_Saved_obj_file_,(String *)unaff_ESI,pSVar10,
-                               StringLiteral__obj,(MethodInfo *)0x0);
-        if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-          func_?();
-        }
-        puVar4 = (undefined4 *)0x0;
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)unaff_ESI,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
+        return;
       }
+      if (piVar5 == (int *)0x0) break;
+      uVar8 = 0;
+      uVar9 = *(ushort *)(*piVar5 + 0xb2);
+      if (uVar9 != 0) {
+        do {
+          if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) ==
+              TypeInfo__System__Collections__IEnumerator) {
+            puVar10 = (undefined4 *)
+                     (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) * 8 + 0xc4 + *piVar5
+                     );
+            goto code_?;
+          }
+          uVar8 = uVar8 + 1;
+        } while (uVar8 < uVar9);
+      }
+      puVar10 = (undefined4 *)func_?(piVar5,TypeInfo__System__Collections__IEnumerator,1);
+code_?:
+      piVar11 = (int *)(*(code *)*puVar10)(piVar5,puVar10[1]);
+      uVar12 = CONCAT44(TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>
+                        ,piVar11);
+      if (piVar11 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar11 + 0x20) !=
+          (
+          TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_UnityEngine::GameObject>
+          ->_0).element_class) goto code_?;
+      iVar7 = func_?(piVar11);
+      this = *(GameObject **)(iVar7 + 8);
+      if (this == (GameObject *)0x0) break;
+      mf = (MeshFilter *)
+           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                     (this,
+                      UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshFilter>__
+                     );
+      pGVar13 = (cm->fields)._.gameObject;
+      if (pGVar13 == (GameObject *)0x0) break;
+      pSVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                          ((Object_1 *)pGVar13,(MethodInfo *)0x0);
+      pSVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                          ((Object_1 *)this,(MethodInfo *)0x0);
+      pSVar14 = mscorlib.dll::System::String::String_Concat_4
+                          (pSVar14,pSVar15,StringLiteral__obj,(MethodInfo *)0x0);
+      ObjExporterScript_MeshToFile(mf,pSVar14,0,(MethodInfo *)0x0);
+      pGVar13 = (cm->fields)._.gameObject;
+      if (pGVar13 == (GameObject *)0x0) break;
+      pSVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                          ((Object_1 *)pGVar13,(MethodInfo *)0x0);
+      pSVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                          ((Object_1 *)this,(MethodInfo *)0x0);
+      pSVar14 = mscorlib.dll::System::String::String_Concat_5
+                          (StringLiteral_Saved_obj_file_,pSVar14,pSVar15,StringLiteral__obj,
+                           (MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+                ((Object *)pSVar14,(MethodInfo *)0x0);
     }
   }
-  func_?();
+  uVar12 = func_?();
 code_?:
-  func_?();
-  func_?(unaff_ESI);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  func_?(uVar12);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -127,24 +122,27 @@ void Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToFile
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__IO__StreamWriter);
     cRam_? = '\x01';
   }
-  func_?();
-  iStack_1 = 0;
+  iStack_1._0_1_ = 0;
+  iStack_1._1_3_ = 0;
   this = (StreamWriter *)func_?(TypeInfo__System__IO__StreamWriter);
-  mscorlib.dll::System::IO::StreamWriter::StreamWriter__ctor_4
-            (this,filename,append,(MethodInfo *)0x0);
-  iStack_1._0_1_ = 1;
-  ObjExporterScript_MeshToString(mf,(MethodInfo *)0x0);
   if (this != (StreamWriter *)0x0) {
-    (*(code *)(this->klass->vtable).WriteLine_1.method)();
-    iStack_1 = (uint)iStack_1._1_3_ << 8;
+    mscorlib.dll::System::IO::StreamWriter::StreamWriter__ctor_5
+              (this,filename,append,(MethodInfo *)0x0);
+    iStack_1._0_1_ = 2;
+    ObjExporterScript_MeshToString(mf,(MethodInfo *)0x0);
     if (this != (StreamWriter *)0x0) {
-      func_?();
+      (*(this->klass->vtable).WriteLine_2.methodPtr)();
+      iStack_1 = (uint)iStack_1._1_3_ << 8;
+      if (this != (StreamWriter *)0x0) {
+        func_?();
+      }
+      *unaff_FS_OFFSET = uStack_3;
+      return;
     }
-    *unaff_FS_OFFSET = uStack_3;
-    return;
   }
   func_?();
   func_?();
@@ -161,283 +159,296 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__Text__StringBuilder);
+    func_?(&StringLiteral_vt2__0___1_u000A);
+    func_?(&StringLiteral_u000A);
+    func_?(&StringLiteral_vt1__0___1_u000A);
+    func_?(&StringLiteral_usemtl_);
+    func_?(&StringLiteral_g_);
+    func_?(&StringLiteral_vt__0___1_u000A);
+    func_?(&StringLiteral_f__0___0___0___1___1___1___2___2);
+    func_?(&StringLiteral_usemap_);
+    func_?(&StringLiteral_vn__0___1___2_u000A);
+    func_?(&StringLiteral_v__0___1___2_u000A);
+    func_?(&StringLiteral_vc__0___1___2___3_u000A);
     cRam_? = '\x01';
   }
   if (mf != (MeshFilter *)0x0) {
     this = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh
                      (mf,(MethodInfo *)0x0);
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_GetComponent_58
-                        ((Component_1 *)mf,
+    this_00 = (Renderer *)
+              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                        ((Component *)mf,
                          UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__
                         );
-    if (this_00 != (MVInteractableBase *)0x0) {
+    if (this_00 != (Renderer *)0x0) {
       pMStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
-                             ((Renderer *)this_00,(MethodInfo *)0x0);
+                            (this_00,(MethodInfo *)0x0);
       pSVar2 = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
       pSStack_3 = pSVar2;
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor_2(pSVar2,(MethodInfo *)0x0);
       if (pSVar2 != (StringBuilder *)0x0) {
-        pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+        mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(pSVar2,(MethodInfo *)0x0);
+        pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                            (pSVar2,StringLiteral_g_,(MethodInfo *)0x0);
         pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                            ((Object_1 *)mf,(MethodInfo *)0x0);
         if (((pSVar4 != (StringBuilder *)0x0) &&
-            (pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+            (pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                 (pSVar4,pSVar5,(MethodInfo *)0x0), pSVar4 != (StringBuilder *)0x0))
-           && (mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+           && (mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                          (pSVar4,StringLiteral_u000A,(MethodInfo *)0x0), this != (Mesh *)0x0)) {
-          pCStack_6 = (Color__Array *)
-                       UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices
+          pVStack_6 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices
                                  (this,(MethodInfo *)0x0);
-          uVar7 = 0;
-          if (pCStack_6 != (Color__Array *)0x0) {
-            pCVar8 = pCStack_6->vector;
-            for (; (int)uVar7 < (int)pCStack_6->max_length; uVar7 = uVar7 + 1) {
-              if (pCStack_6->max_length <= uVar7) goto code_?;
-              pCVar9 = (Color__Array *)pCVar8->b;
-              uVar10._0_4_ = pCVar8->r;
-              uVar10._4_4_ = pCVar8->g;
-              pCStack_11 = (Color__Array *)(undefined4)uVar10;
-              pOStack_12 = (Object *)func_?(TypeInfo__System__Single,&pCStack_11);
-              pVStack_13 = (Vector3__Array *)((ulonglong)uVar10 >> 0x20);
-              pOStack_14 = (Object *)func_?(TypeInfo__System__Single,&pVStack_13);
-              pCStack_15 = pCVar9;
-              pCStack_16 = (Color__Array *)func_?(TypeInfo__System__Single,&pCStack_15);
-              if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-                 ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                func_?(TypeInfo__System__String);
-              }
+          pCStack_7 = (Color__Array *)0x0;
+          if (pVStack_6 != (Vector3__Array *)0x0) {
+            pVStack_8 = pVStack_6->vector;
+            for (; (int)pCStack_7 < (int)pVStack_6->max_length;
+                pCStack_7 = (Color__Array *)((int)&pCStack_7->klass + 1)) {
+              if ((Color__Array *)pVStack_6->max_length <= pCStack_7) goto code_?;
+              pMVar9 = (Material *)pVStack_8->z;
+              uVar10._0_4_ = pVStack_8->x;
+              uVar10._4_4_ = pVStack_8->y;
+              pVStack_11 = (Vector3__Array *)(undefined4)uVar10;
+              pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pVStack_11);
+              pMStack_13 = (Material *)((ulonglong)uVar10 >> 0x20);
+              pOVar14 = (Object *)func_?(TypeInfo__System__Single,&pMStack_13);
+              pMStack_15 = pMVar9;
+              pOVar16 = (Object *)func_?(TypeInfo__System__Single,&pMStack_15);
               pSVar5 = mscorlib.dll::System::String::String_Format_2
-                                 (StringLiteral_v__0___1___2_u000A,pOStack_12,pOStack_14,
-                                  (Object *)pCStack_16,(MethodInfo *)0x0);
-              mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                                 (StringLiteral_v__0___1___2_u000A,pOVar12,pOVar14,pOVar16,
+                                  (MethodInfo *)0x0);
+              mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                         (pSVar2,pSVar5,(MethodInfo *)0x0);
-              pCVar8 = (Color *)&pCVar8->a;
+              pVStack_8 = pVStack_8 + 1;
             }
-            mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+            mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                       (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
-            pVStack_13 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_normals
-                                  (this,(MethodInfo *)0x0);
-            uVar7 = 0;
-            if (pVStack_13 != (Vector3__Array *)0x0) {
-              pVVar17 = pVStack_13->vector;
-              for (; (int)uVar7 < (int)pVStack_13->max_length; uVar7 = uVar7 + 1) {
-                if (pVStack_13->max_length <= uVar7) goto code_?;
-                pOVar18 = (Object *)pVVar17->z;
-                uVar19._0_4_ = pVVar17->x;
-                uVar19._4_4_ = pVVar17->y;
-                pCStack_6 = (Color__Array *)(undefined4)uVar19;
-                pCStack_11 = (Color__Array *)func_?(TypeInfo__System__Single,&pCStack_6);
-                pOStack_12 = (Object *)((ulonglong)uVar19 >> 0x20);
-                pCStack_15 = (Color__Array *)func_?(TypeInfo__System__Single,&pOStack_12);
-                pOStack_14 = pOVar18;
-                pCStack_16 = (Color__Array *)func_?(TypeInfo__System__Single,&pOStack_14);
-                if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0)
-                   && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                  func_?(TypeInfo__System__String);
-                }
-                pSVar5 = mscorlib.dll::System::String::String_Format_2
-                                   (StringLiteral_vn__0___1___2_u000A,(Object *)pCStack_11,
-                                    (Object *)pCStack_15,(Object *)pCStack_16,(MethodInfo *)0x0);
-                mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
-                          (pSVar2,pSVar5,(MethodInfo *)0x0);
-                pVVar17 = pVVar17 + 1;
-              }
-              mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
-                        (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
-              pCStack_15 = (Color__Array *)
-                           UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_uv
-                                     (this,(MethodInfo *)0x0);
-              uVar7 = 0;
-              if (pCStack_15 != (Color__Array *)0x0) {
-                pCVar8 = pCStack_15->vector;
-                for (; (int)uVar7 < (int)pCStack_15->max_length; uVar7 = uVar7 + 1) {
-                  if (pCStack_15->max_length <= uVar7) goto code_?;
-                  pCStack_6 = (Color__Array *)pCVar8->r;
-                  pOStack_12 = (Object *)pCVar8->g;
-                  pCStack_16 = (Color__Array *)func_?(TypeInfo__System__Single,&pCStack_6)
-                  ;
-                  pOStack_14 = pOStack_12;
-                  pOStack_12 = (Object *)func_?(TypeInfo__System__Single,&pOStack_14);
-                  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0)
-                     && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                    func_?(TypeInfo__System__String);
-                  }
-                  pSVar5 = mscorlib.dll::System::String::String_Format_1
-                                     (StringLiteral_vt__0___1_u000A,(Object *)pCStack_16,pOStack_12,
-                                      (MethodInfo *)0x0);
-                  mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
-                            (pSVar2,pSVar5,(MethodInfo *)0x0);
-                  pCVar8 = (Color *)&pCVar8->b;
-                }
-                mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
-                          (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
-                pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_uv2
+            pVStack_11 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_normals
                                    (this,(MethodInfo *)0x0);
-                iVar21 = 0;
-                if (pVVar20 != (Vector2__Array *)0x0) {
-                  for (; iVar21 < (int)pVVar20->max_length; iVar21 = iVar21 + 1) {
-                    puVar22 = (undefined4 *)func_?(iVar21);
-                    pOStack_12 = (Object *)puVar22[1];
-                    pCStack_6 = (Color__Array *)*puVar22;
-                    pCStack_16 = (Color__Array *)
-                                 func_?(TypeInfo__System__Single,&pCStack_6);
-                    pOStack_14 = pOStack_12;
-                    pOStack_12 = (Object *)func_?(TypeInfo__System__Single,&pOStack_14);
-                    if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) !=
-                         0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                      func_?(TypeInfo__System__String);
-                    }
+            pVStack_8 = (Vector3 *)0x0;
+            if (pVStack_11 != (Vector3__Array *)0x0) {
+              pCStack_7 = (Color__Array *)pVStack_11->vector;
+              for (; (int)pVStack_8 < (int)pVStack_11->max_length;
+                  pVStack_8 = (Vector3 *)((int)&pVStack_8->x + 1)) {
+                if ((undefined8 *)pVStack_11->max_length <= pVStack_8) goto code_?;
+                pMVar9 = (Material *)pCStack_7->bounds;
+                uVar17._0_4_ = pCStack_7->klass;
+                uVar17._4_4_ = pCStack_7->monitor;
+                pVStack_6 = (Vector3__Array *)(undefined4)uVar17;
+                pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pVStack_6);
+                pMStack_15 = (Material *)((ulonglong)uVar17 >> 0x20);
+                pOVar14 = (Object *)func_?(TypeInfo__System__Single,&pMStack_15);
+                pMStack_13 = pMVar9;
+                pOVar16 = (Object *)func_?(TypeInfo__System__Single,&pMStack_13);
+                pSVar5 = mscorlib.dll::System::String::String_Format_2
+                                   (StringLiteral_vn__0___1___2_u000A,pOVar12,pOVar14,pOVar16,
+                                    (MethodInfo *)0x0);
+                mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                          (pSVar2,pSVar5,(MethodInfo *)0x0);
+                pCStack_7 = (Color__Array *)&pCStack_7->max_length;
+              }
+              mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                        (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
+              pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_uv
+                                  (this,(MethodInfo *)0x0);
+              pVStack_8 = (Vector3 *)0x0;
+              if (pVVar18 != (Vector2__Array *)0x0) {
+                pCStack_7 = (Color__Array *)pVVar18->vector;
+                for (; (int)pVStack_8 < (int)pVVar18->max_length;
+                    pVStack_8 = (Vector3 *)((int)&pVStack_8->x + 1)) {
+                  if ((undefined8 *)pVVar18->max_length <= pVStack_8) goto code_?;
+                  pVStack_6 = (Vector3__Array *)pCStack_7->klass;
+                  pMStack_15 = (Material *)pCStack_7->monitor;
+                  pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pVStack_6);
+                  pMStack_13 = pMStack_15;
+                  pOVar14 = (Object *)func_?(TypeInfo__System__Single,&pMStack_13);
+                  pSVar5 = mscorlib.dll::System::String::String_Format_1
+                                     (StringLiteral_vt__0___1_u000A,pOVar12,pOVar14,(MethodInfo *)0x0)
+                  ;
+                  mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                            (pSVar2,pSVar5,(MethodInfo *)0x0);
+                  pCStack_7 = (Color__Array *)&pCStack_7->bounds;
+                }
+                mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                          (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
+                pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_uv2
+                                    (this,(MethodInfo *)0x0);
+                pVStack_8 = (Vector3 *)0x0;
+                if (pVVar18 != (Vector2__Array *)0x0) {
+                  pCStack_7 = (Color__Array *)pVVar18->vector;
+                  for (; (int)pVStack_8 < (int)pVVar18->max_length;
+                      pVStack_8 = (Vector3 *)((int)&pVStack_8->x + 1)) {
+                    if ((undefined8 *)pVVar18->max_length <= pVStack_8) goto code_?;
+                    pVStack_6 = (Vector3__Array *)pCStack_7->klass;
+                    pMStack_15 = (Material *)pCStack_7->monitor;
+                    pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pVStack_6);
+                    pMStack_13 = pMStack_15;
+                    pOVar14 = (Object *)func_?(TypeInfo__System__Single,&pMStack_13);
                     pSVar5 = mscorlib.dll::System::String::String_Format_1
-                                       (StringLiteral_vt1__0___1_u000A,(Object *)pCStack_16,
-                                        pOStack_12,(MethodInfo *)0x0);
-                    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                                       (StringLiteral_vt1__0___1_u000A,pOVar12,pOVar14,
+                                        (MethodInfo *)0x0);
+                    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                               (pSVar2,pSVar5,(MethodInfo *)0x0);
+                    pCStack_7 = (Color__Array *)&pCStack_7->bounds;
                   }
-                  mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                  mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                             (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
-                  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_uv2
-                                     (this,(MethodInfo *)0x0);
-                  iVar21 = 0;
-                  if (pVVar20 != (Vector2__Array *)0x0) {
-                    for (; iVar21 < (int)pVVar20->max_length; iVar21 = iVar21 + 1) {
-                      puVar22 = (undefined4 *)func_?(iVar21);
-                      pOStack_12 = (Object *)puVar22[1];
-                      pCStack_6 = (Color__Array *)*puVar22;
-                      pCStack_16 = (Color__Array *)
-                                   func_?(TypeInfo__System__Single,&pCStack_6);
-                      pOStack_14 = pOStack_12;
-                      pOStack_12 = (Object *)func_?(TypeInfo__System__Single,&pOStack_14);
-                      if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000)
-                           != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                        func_?(TypeInfo__System__String);
-                      }
+                  pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_uv2
+                                      (this,(MethodInfo *)0x0);
+                  pVStack_8 = (Vector3 *)0x0;
+                  if (pVVar18 != (Vector2__Array *)0x0) {
+                    pCStack_7 = (Color__Array *)pVVar18->vector;
+                    for (; (int)pVStack_8 < (int)pVVar18->max_length;
+                        pVStack_8 = (Vector3 *)((int)&pVStack_8->x + 1)) {
+                      if ((undefined8 *)pVVar18->max_length <= pVStack_8) goto code_?;
+                      pVStack_6 = (Vector3__Array *)pCStack_7->klass;
+                      pMStack_15 = (Material *)pCStack_7->monitor;
+                      pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pVStack_6);
+                      pMStack_13 = pMStack_15;
+                      pOVar14 = (Object *)func_?(TypeInfo__System__Single,&pMStack_13);
                       pSVar5 = mscorlib.dll::System::String::String_Format_1
-                                         (StringLiteral_vt2__0___1_u000A,(Object *)pCStack_16,
-                                          pOStack_12,(MethodInfo *)0x0);
-                      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                                         (StringLiteral_vt2__0___1_u000A,pOVar12,pOVar14,
+                                          (MethodInfo *)0x0);
+                      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                 (pSVar2,pSVar5,(MethodInfo *)0x0);
+                      pCStack_7 = (Color__Array *)&pCStack_7->bounds;
                     }
-                    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                               (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
-                    pCVar9 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_colors
+                    pCVar19 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_colors
                                         (this,(MethodInfo *)0x0);
-                    pVStack_13 = (Vector3__Array *)0x0;
-                    pCStack_15 = pCVar9;
-                    if (pCVar9 != (Color__Array *)0x0) {
-                      while( true ) {
-                        pCStack_11 = (Color__Array *)pCVar9->vector;
-                        if ((int)pCStack_15->max_length <= (int)pVStack_13) break;
-                        if ((Vector3__Array *)pCStack_15->max_length <= pVStack_13)
+                    pVStack_8 = (Vector3 *)0x0;
+                    pCStack_20 = pCVar19;
+                    if (pCVar19 != (Color__Array *)0x0) {
+                      for (; pCStack_7 = (Color__Array *)pCVar19->vector,
+                          (int)pVStack_8 < (int)pCStack_20->max_length;
+                          pVStack_8 = (Vector3 *)((int)&pVStack_8->x + 1)) {
+                        if ((undefined8 *)pCStack_20->max_length <= pVStack_8)
                         goto code_?;
-                        pCVar23 = (Color__Array *)((Color *)pCStack_11)->r;
-                        pfVar24 = &pCVar9->vector[0].g;
-                        fVar25 = *pfVar24;
-                        fVar26 = pCVar9->vector[0].b;
-                        uVar10 = *(undefined8 *)pfVar24;
-                        pCVar9 = (Color__Array *)pCVar9->vector[0].a;
+                        pVVar21 = (Vector3__Array *)((Color *)pCStack_7)->r;
+                        fVar22 = pCVar19->vector[0].g;
+                        fVar23 = pCVar19->vector[0].b;
+                        uVar24._0_4_ = pCVar19->vector[0].g;
+                        uVar24._4_4_ = pCVar19->vector[0].b;
+                        pVVar25 = (Vector3__Array *)pCVar19->vector[0].a;
                         args = (Object__Array *)
-                               func_?(TypeInfo__System__Object,pCVar23,fVar25,fVar26,pCVar9,
-                                               pCVar23,fVar25,fVar26,pCVar9);
-                        pCStack_6 = pCVar23;
-                        uVar27 = func_?(TypeInfo__System__Single,&pCStack_6);
+                               func_?(TypeInfo__System__Object,pVVar21,fVar22,fVar23,pVVar25,
+                                               pVVar21,fVar22,fVar23,pVVar25);
+                        pVStack_6 = pVVar21;
+                        pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pVStack_6);
                         if (args == (Object__Array *)0x0) goto code_?;
-                        func_?(args,uVar27);
-                        func_?(0,uVar27);
-                        pOStack_12 = (Object *)uVar10;
-                        uVar27 = func_?(TypeInfo__System__Single,&pOStack_12);
-                        pOVar18 = (Object *)((ulonglong)uVar10 >> 0x20);
-                        func_?(args,uVar27);
-                        func_?(1,uVar27);
-                        pOStack_14 = pOVar18;
-                        uVar27 = func_?(TypeInfo__System__Single,&pOStack_14);
-                        func_?(args,uVar27);
-                        func_?(2,uVar27);
-                        pCStack_16 = pCVar9;
-                        uVar27 = func_?(TypeInfo__System__Single,&pCStack_16);
-                        func_?(args,uVar27);
-                        func_?(3,uVar27);
-                        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000)
-                             != 0) && ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                          func_?(TypeInfo__System__String);
-                        }
+                        if ((pOVar12 != (Object *)0x0) &&
+                           (iVar26 = func_?(pOVar12,(args->klass->_0).element_class),
+                           iVar26 == 0)) goto code_?;
+                        if (args->max_length == 0) goto code_?;
+                        args->vector[0] = pOVar12;
+                        func_?(args->vector,pOVar12);
+                        pMStack_15 = (Material *)uVar24;
+                        pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pMStack_15);
+                        pMVar9 = (Material *)((ulonglong)uVar24 >> 0x20);
+                        if ((pOVar12 != (Object *)0x0) &&
+                           (iVar26 = func_?(pOVar12,(args->klass->_0).element_class),
+                           iVar26 == 0)) goto code_?;
+                        if (args->max_length < 2) goto code_?;
+                        args->vector[1] = pOVar12;
+                        func_?(args->vector + 1,pOVar12);
+                        pMStack_13 = pMVar9;
+                        pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pMStack_13);
+                        if ((pOVar12 != (Object *)0x0) &&
+                           (iVar26 = func_?(pOVar12,(args->klass->_0).element_class),
+                           iVar26 == 0)) goto code_?;
+                        if (args->max_length < 3) goto code_?;
+                        args->vector[2] = pOVar12;
+                        func_?(args->vector + 2,pOVar12);
+                        pVStack_11 = pVVar25;
+                        pOVar12 = (Object *)func_?(TypeInfo__System__Single,&pVStack_11);
+                        if ((pOVar12 != (Object *)0x0) &&
+                           (iVar26 = func_?(pOVar12,(args->klass->_0).element_class),
+                           iVar26 == 0)) goto code_?;
+                        if (args->max_length < 4) goto code_?;
+                        args->vector[3] = pOVar12;
+                        func_?(args->vector + 3,pOVar12);
                         pSVar5 = mscorlib.dll::System::String::String_Format_3
                                            (StringLiteral_vc__0___1___2___3_u000A,args,
                                             (MethodInfo *)0x0);
-                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                   (pSVar2,pSVar5,(MethodInfo *)0x0);
-                        pVStack_13 = (Vector3__Array *)((int)&pVStack_13->klass + 1);
-                        pCVar9 = pCStack_11;
+                        pCVar19 = pCStack_7;
                       }
-                      pCVar9 = (Color__Array *)0x0;
+                      submesh = (Vector3 *)0x0;
+                      pCStack_7 = (Color__Array *)pMStack_1->vector;
                       while( true ) {
-                        pCStack_11 = pCVar9;
-                        iVar28 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                        pVStack_8 = submesh;
+                        iVar27 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::
                                  Mesh_get_subMeshCount(this,(MethodInfo *)0x0);
-                        if (iVar28 <= (int)pCVar9) {
-                          pSVar5 = (String *)func_?(3,pSVar2);
+                        if (iVar27 <= (int)submesh) {
+                          pSVar5 = (String *)
+                                   (*(pSVar2->klass->vtable).ToString.methodPtr)
+                                             (pSVar2,(pSVar2->klass->vtable).ToString.method);
                           return pSVar5;
                         }
-                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                   (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
-                        pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                        pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                            (pSVar2,StringLiteral_usemtl_,(MethodInfo *)0x0);
-                        if ((((pMStack_1 == (Material__Array *)0x0) ||
-                             (pCStack_6 = pCVar9, pOVar29 = (Object_1 *)func_?(),
-                             pOVar29 == (Object_1 *)0x0)) ||
+                        if (pMStack_1 == (Material__Array *)0x0) break;
+                        if ((undefined8 *)pMStack_1->max_length <= submesh) goto code_?;
+                        if (((pCStack_7->klass == (Color__Array__Class *)0x0) ||
                             (pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                      Object_1_get_name(pOVar29,(MethodInfo *)0x0),
+                                      Object_1_get_name((Object_1 *)pCStack_7->klass,
+                                                        (MethodInfo *)0x0),
                             pSVar4 == (StringBuilder *)0x0)) ||
-                           (pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
-                                               (pSVar4,pSVar5,(MethodInfo *)0x0),
+                           (pSVar4 = mscorlib.dll::System::Text::StringBuilder::
+                                     StringBuilder_Append_2(pSVar4,pSVar5,(MethodInfo *)0x0),
                            pSVar4 == (StringBuilder *)0x0)) break;
-                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                   (pSVar4,StringLiteral_u000A,(MethodInfo *)0x0);
-                        pSVar2 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                        pSVar2 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                            (pSVar2,StringLiteral_usemap_,(MethodInfo *)0x0);
-                        pCStack_16 = pCVar9;
-                        pOVar29 = (Object_1 *)func_?();
-                        if (((pOVar29 == (Object_1 *)0x0) ||
+                        if ((undefined8 *)pMStack_1->max_length <= submesh) goto code_?;
+                        if (((pCStack_7->klass == (Color__Array__Class *)0x0) ||
                             (pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                      Object_1_get_name(pOVar29,(MethodInfo *)0x0),
+                                      Object_1_get_name((Object_1 *)pCStack_7->klass,
+                                                        (MethodInfo *)0x0),
                             pSVar2 == (StringBuilder *)0x0)) ||
-                           (pSVar2 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
-                                               (pSVar2,pSVar5,(MethodInfo *)0x0),
+                           (pSVar2 = mscorlib.dll::System::Text::StringBuilder::
+                                     StringBuilder_Append_2(pSVar2,pSVar5,(MethodInfo *)0x0),
                            pSVar2 == (StringBuilder *)0x0)) break;
-                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                   (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
-                        pIVar30 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_GetTriangles
-                                            (this,(int32_t)pCVar9,(MethodInfo *)0x0);
-                        iVar21 = 0;
-                        while( true ) {
-                          if (pIVar30 == (Int32__Array *)0x0) goto code_?;
-                          if ((int)pIVar30->max_length <= iVar21) break;
-                          iVar31 = func_?(iVar21);
-                          pCStack_6 = (Color__Array *)(iVar31 + 1);
-                          pCStack_15 = (Color__Array *)
-                                       func_?(TypeInfo__System__Int32,&pCStack_6);
-                          iVar31 = func_?(iVar21 + 1);
-                          pOStack_12 = (Object *)(iVar31 + 1);
-                          pCStack_16 = (Color__Array *)
-                                       func_?(TypeInfo__System__Int32,&pOStack_12);
-                          iVar31 = func_?(iVar21 + 2);
-                          pOStack_14 = (Object *)(iVar31 + 1);
-                          pOVar18 = (Object *)func_?(TypeInfo__System__Int32,&pOStack_14);
-                          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr &
-                               0x2000000) != 0) &&
-                             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-                            func_?(TypeInfo__System__String);
-                          }
+                        pIVar28 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_GetTriangles
+                                            (this,(int32_t)submesh,(MethodInfo *)0x0);
+                        piVar29 = pIVar28->vector + 2;
+                        uVar30 = 0;
+                        if (pIVar28 == (Int32__Array *)0x0) break;
+                        for (; (int)uVar30 < (int)pIVar28->max_length; uVar30 = uVar30 + 3) {
+                          if (pIVar28->max_length <= uVar30) goto code_?;
+                          pCStack_20 = (Color__Array *)(piVar29[-2] + 1);
+                          pVStack_11 = (Vector3__Array *)
+                                       func_?(TypeInfo__System__Int32,&pCStack_20);
+                          if (pIVar28->max_length <= uVar30 + 1) goto code_?;
+                          pVStack_6 = (Vector3__Array *)(piVar29[-1] + 1);
+                          pMStack_13 = (Material *)
+                                       func_?(TypeInfo__System__Int32,&pVStack_6);
+                          if (pIVar28->max_length <= uVar30 + 2) goto code_?;
+                          pMStack_15 = (Material *)(*piVar29 + 1);
+                          pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&pMStack_15);
                           pSVar5 = mscorlib.dll::System::String::String_Format_2
                                              (StringLiteral_f__0___0___0___1___1___1___2___2,
-                                              (Object *)pCStack_15,(Object *)pCStack_16,pOVar18,
+                                              (Object *)pVStack_11,(Object *)pMStack_13,pOVar12,
                                               (MethodInfo *)0x0);
-                          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append
+                          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                     (pSStack_3,pSVar5,(MethodInfo *)0x0);
-                          iVar21 = iVar21 + 3;
+                          piVar29 = piVar29 + 3;
                         }
-                        pCVar9 = (Color__Array *)((int)&pCStack_11->klass + 1);
+                        submesh = (Vector3 *)((int)&pVStack_8->x + 1);
+                        pCStack_7 = (Color__Array *)&pCStack_7->monitor;
                         pSVar2 = pSStack_3;
                       }
                     }
@@ -451,13 +462,15 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
     }
   }
 code_?:
-  func_?(0);
-  pcVar32 = (code *)swi(3);
-  pSVar5 = (String *)(*pcVar32)();
+  func_?();
+  pcVar31 = (code *)swi(3);
+  pSVar5 = (String *)(*pcVar31)();
   return pSVar5;
 code_?:
-  uVar27 = func_?(0,0);
-  func_?(uVar27);
+  func_?();
+code_?:
+  uVar32 = func_?(0);
+  func_?(uVar32);
   goto code_?;
 }
 

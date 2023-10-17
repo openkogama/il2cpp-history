@@ -6,39 +6,54 @@ void Assembly-CSharp.dll::GameSetupButton::GameSetupButton_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&TypeInfo__GamePassProgressionController);
+    func_?(&MethodInfo__GameSetupButton__OnProgressionUpdate__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__GamePassProgressionController->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__GamePassProgressionController->_1).cctor_started == 0)) {
-    func_?(TypeInfo__GamePassProgressionController);
-  }
   pAVar1 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__GameSetupButton__OnProgressionUpdate__,
-             (MethodInfo *)0x0);
-  pAStack2 =
-       (Action *)
-       mscorlib.dll::System::Delegate::Delegate_Remove
-                 ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  pAVar1 = (Action *)0x0;
-  if (pAStack2 != (Action *)0x0) {
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    func_?();
+    pAStack2 = extraout_ECX;
+    pAStack3 = extraout_EDX;
+  }
+  else {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__GameSetupButton__OnProgressionUpdate__,
+               (MethodInfo *)0x0);
+    pAStack2 =
+         (Action *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAStack2 == (Action *)0x0) {
+      TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
+           (Action *)0x0;
+code_?:
+      func_?();
+      return;
+    }
+    pAVar1 = (Action *)0x0;
     if (pAStack2->klass == TypeInfo__System__Action) {
       pAVar1 = pAStack2;
     }
-    if (pAVar1 == (Action *)0x0) {
-      pAStack3 = TypeInfo__System__Action;
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+    pAStack3 = TypeInfo__System__Action;
+    if (pAVar1 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate = pAVar1;
+    pAVar1 = (Action *)0x0;
+    if (pAStack2->klass == TypeInfo__System__Action) {
+      pAVar1 = pAStack2;
     }
+    pAStack3 = TypeInfo__System__Action;
+    if (pAVar1 != (Action *)0x0) goto code_?;
   }
-  TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate = pAVar1;
+  pAStack3 = (Action__Class *)func_?();
+  pAStack2 = extraout_ECX_00;
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -50,12 +65,8 @@ void Assembly-CSharp.dll::GameSetupButton::GameSetupButton_OnProgressionUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_Game_Tiers_Activated);
     cRam_? = '\x01';
-  }
-  if ((((uint)(TypeInfo__GamePassProgressionController->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__GamePassProgressionController->_1).cctor_started == 0)) {
-    func_?(TypeInfo__GamePassProgressionController);
   }
   bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                     ((MethodInfo *)0x0);
@@ -82,47 +93,61 @@ void Assembly-CSharp.dll::GameSetupButton::GameSetupButton_ShowGameSetupMenu
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    GameSetupMenu_MethodInfo__UnityEngine__Object__Instantiate<GameSetupMenu>_GameSetupMenu_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&
+                    MethodInfo__GameSetupButton____c__DisplayClass3_0___ShowGameSetupMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__GameSetupButton____c__DisplayClass3_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__GameSetupButton___ShowGameSetupMenu_c__AnonStorey0;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  original = (this->fields).gameSetupMenuPrefab;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  pXVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                     ((XpBoostParticlePreviewer *)original,
-                      GameSetupMenu_MethodInfo__UnityEngine__Object__Instantiate<GameSetupMenu>_GameSetupMenu_
-                     );
-  if (this_00 != (ScaleAnimationBase *)0x0) {
-    (this_00->fields)._._._._.m_CachedPtr = pXVar1;
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                     ((Component_1 *)this,(MethodInfo *)0x0);
-    this_01 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-              func_?(
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,UnityEngine::SceneManagement::Scene]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-              (this_01,(Object *)this_00,
-               MethodInfo__GameSetupButton___ShowGameSetupMenu_c__AnonStorey0____m__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,
-               MethodInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>__EventFunction_System__Object__void__
-              );
-    if ((((uint)(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->vtable).Equals.methodPtr &
-         0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_started == 0)) {
-      func_?();
+  value = (Object *)func_?(TypeInfo__GameSetupButton____c__DisplayClass3_0);
+  if (value != (Object *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    original = (this->fields).gameSetupMenuPrefab;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy_63
-              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_IHandleToolTip_ *)this_01,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    return;
+    pOVar1 = (Object__Class *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original,
+                        GameSetupMenu_MethodInfo__UnityEngine__Object__Instantiate<GameSetupMenu>_GameSetupMenu_
+                       );
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__GameSetupButton____c__DisplayClass3_0___ShowGameSetupMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
+    }
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -138,40 +163,51 @@ void Assembly-CSharp.dll::GameSetupButton::GameSetupButton_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action);
+    func_?(&TypeInfo__GamePassProgressionController);
+    func_?(&MethodInfo__GameSetupButton__OnProgressionUpdate__);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__GamePassProgressionController->vtable).Equals.methodPtr & 0x2000000) != 0)
-     && ((TypeInfo__GamePassProgressionController->_1).cctor_started == 0)) {
-    func_?(TypeInfo__GamePassProgressionController);
-  }
   pAVar1 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
-            func_?(TypeInfo__System__Action);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,MethodInfo__GameSetupButton__OnProgressionUpdate__,
-             (MethodInfo *)0x0);
-  pAVar2 = (Action *)
-           mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  pAVar1 = (Action *)0x0;
-  if (pAVar2 != (Action *)0x0) {
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAVar2;
-    }
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    func_?();
+  }
+  else {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__GameSetupButton__OnProgressionUpdate__,
+               (MethodInfo *)0x0);
+    pAVar1 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pAVar1 == (Action *)0x0) {
+      TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
+           (Action *)0x0;
+code_?:
       func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
+                        ((MethodInfo *)0x0);
+      (this->fields).isTiersActivated = bVar2;
       return;
     }
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
+    }
+    if (pAVar3 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
+    }
+    if (pAVar3 != (Action *)0x0) goto code_?;
   }
-  TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate = pAVar1;
-  bVar4 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
-                    ((MethodInfo *)0x0);
-  (this->fields).isTiersActivated = bVar4;
+  func_?();
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

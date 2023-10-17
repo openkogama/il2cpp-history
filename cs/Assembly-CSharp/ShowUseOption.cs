@@ -6,10 +6,10 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [Flags]
-public enum ShowUseOption : short
+public enum ShowUseOption
 {
 	Normal = 0,
 	UsingGameCoins = 1,
@@ -26,6 +26,7 @@ public enum ShowUseOption : short
 	TeamRestricted = 2048,
 	UsingGameRank = 4096,
 	GameRankEnough = 8192,
-	GameRankInsufficient = 16384
+	GameRankInsufficient = 16384,
+	RewardedAdPossible = 32768
 }
 

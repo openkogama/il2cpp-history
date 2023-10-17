@@ -8,56 +8,54 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
 {
   pRVar1 = (this->fields).boostEffectTransform;
   if (pRVar1 != (RectTransform *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)pRVar1,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pRVar1,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (pGVar2,(MethodInfo *)0x0);
       if (bVar3 == 0) {
         pRVar1 = (this->fields).boostEffectTransform;
         if (pRVar1 == (RectTransform *)0x0) goto code_?;
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)pRVar1,(MethodInfo *)0x0);
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pRVar1,(MethodInfo *)0x0);
         if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,1,(MethodInfo *)0x0);
       }
       pTVar4 = (this->fields).unboostedXpText;
       if (pTVar4 != (Text *)0x0) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)pTVar4,(MethodInfo *)0x0);
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pTVar4,(MethodInfo *)0x0);
         if (pGVar2 != (GameObject *)0x0) {
+          timeSinceStart = 0.0;
           bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                             (pGVar2,(MethodInfo *)0x0);
           if (bVar3 != 0) {
             pTVar4 = (this->fields).unboostedXpText;
             if (pTVar4 == (Text *)0x0) goto code_?;
-            pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                               ((Component_1 *)pTVar4,(MethodInfo *)0x0);
+            timeSinceStart = (float)&UNK_?;
+            pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar4,(MethodInfo *)0x0);
             if (pGVar2 == (GameObject *)0x0) goto code_?;
-            timeSinceStart = 0.0;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar2,0,(MethodInfo *)0x0);
           }
           this_00 = (this->fields).boostEffectCurve;
           if (this_00 != (AnimationCurve *)0x0) {
-            time = timeSinceStart - _UNK_?;
-            UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,time,(MethodInfo *)0x0);
-            pTVar5 = (Transform *)(this->fields).boostEffectTransform;
-            if (pTVar5 != (Transform *)0x0) {
-              puVar6 = &UNK_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                        ((Vector3 *)&stack0xffffffd8,pTVar5,(MethodInfo *)0x0);
-              puVar7 = &UNK_?;
-              func_?();
-              pTVar5 = (Transform *)(this->fields).boostEffectTransform;
-              if (pTVar5 != (Transform *)0x0) {
-                value.y = (float)puVar6;
-                value.x = time;
-                value.z = (float)puVar7;
+            fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                              (this_00,timeSinceStart - _UNK_?,(MethodInfo *)0x0);
+            pTVar6 = (Transform *)(this->fields).boostEffectTransform;
+            if (pTVar6 != (Transform *)0x0) {
+              fVar7 = fVar5;
+              pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                                 ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
+              pTVar6 = (Transform *)(this->fields).boostEffectTransform;
+              if (pTVar6 != (Transform *)0x0) {
+                value.y = fVar7;
+                value.x = fVar5;
+                value.z = pVVar8->z;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                          (pTVar5,value,(MethodInfo *)0x0);
+                          (pTVar6,value,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -68,8 +66,8 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -81,13 +79,13 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
                (XPNotificationBoostedBehaviour *this,float timeSinceStart,MethodInfo *method)
 
 {
-  pPVar1 = (this->fields).xpFillBar;
-  if (pPVar1 != (ProgressBar *)0x0) {
-    ProgressBar::ProgressBar_set_Progress
+  pPVar1 = (ProgressBarAndroid *)(this->fields).xpFillBar;
+  if (pPVar1 != (ProgressBarAndroid *)0x0) {
+    ProgressBarAndroid::ProgressBarAndroid_set_Progress
               (pPVar1,(timeSinceStart - _UNK_?) / _UNK_?,(MethodInfo *)0x0);
-    pPVar1 = (this->fields).xpFillBarBackground;
-    if (pPVar1 != (ProgressBar *)0x0) {
-      ProgressBar::ProgressBar_set_Progress
+    pPVar1 = (ProgressBarAndroid *)(this->fields).xpFillBarBackground;
+    if (pPVar1 != (ProgressBarAndroid *)0x0) {
+      ProgressBarAndroid::ProgressBarAndroid_set_Progress
                 (pPVar1,(timeSinceStart - _UNK_?) / _UNK_?,(MethodInfo *)0x0);
       return;
     }
@@ -126,18 +124,17 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
     if ((pGVar1 != (GameObject *)0x0) &&
        (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                            (pGVar1,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                ((Vector3 *)&stack0xffffffd8,pTVar4,(MethodInfo *)0x0);
-      fVar3 = (fVar3 - _UNK_?) / _UNK_? + _UNK_?;
-      uVar5 = CONCAT44(&stack0xfffffff0,&UNK_?);
-      func_?();
+      fVar5 = (fVar3 - _UNK_?) / _UNK_? + _UNK_?;
+      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                         ((Vector3 *)&stack0xffffffe4,pTVar4,(MethodInfo *)0x0);
+      fStack7 = pVVar6->z;
       pGVar1 = (this->fields).glowEffectGameObject;
       if ((pGVar1 != (GameObject *)0x0) &&
          (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                              (pGVar1,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
-        value.z = fVar3;
-        value.x = (float)(int)uVar5;
-        value.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+        value.y = fVar3;
+        value.x = fVar5;
+        value.z = fStack7;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                   (pTVar4,value,(MethodInfo *)0x0);
         return;
@@ -146,8 +143,8 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -193,14 +190,14 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
               pGVar2 = (this->fields).arrowGradientEffect;
               if (pGVar2 != (GradientEffect *)0x0) {
                 pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_1_get_gameObject((Component_1 *)pGVar2,(MethodInfo *)0x0);
+                         Component_get_gameObject((Component *)pGVar2,(MethodInfo *)0x0);
                 if (pGVar8 != (GameObject *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             (pGVar8,0,(MethodInfo *)0x0);
                   pGVar2 = (this->fields).arrowGradientEffect;
                   if (pGVar2 != (GradientEffect *)0x0) {
                     pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_1_get_gameObject((Component_1 *)pGVar2,(MethodInfo *)0x0);
+                             Component_get_gameObject((Component *)pGVar2,(MethodInfo *)0x0);
                     if (pGVar8 != (GameObject *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                                 (pGVar8,1,(MethodInfo *)0x0);
@@ -215,7 +212,7 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
       }
     }
   }
-  func_?(0);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -229,53 +226,35 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
                (XPNotificationBoostedBehaviour *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).xpBoostParticlesPreview;
-  if (this_00 != (XpBoostParticlePreviewer *)0x0) {
-    uVar1 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-            Byte]::
-            Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte__System_Collections_Generic_IEnumerator_TResult__get_Current
-                      ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_ *)this_00,
-                       (MethodInfo *)0x0);
-    if (uVar1 != 0) {
+  pXVar1 = (this->fields).xpBoostParticlesPreview;
+  if (pXVar1 != (XpBoostParticlePreviewer *)0x0) {
+    if ((pXVar1->fields).isParticlesPlaying != 0) {
       return;
     }
-    if ((this->fields).xpBoostParticlesPreview != (XpBoostParticlePreviewer *)0x0) {
-      *(undefined1 *)(in_stack_2 + 0x18) = 1;
-      if (((*(Component_1 **)(in_stack_2 + 0x14) != (Component_1 *)0x0) &&
-          (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                               (*(Component_1 **)(in_stack_2 + 0x14),(MethodInfo *)0x0),
-          this_01 != (GameObject *)0x0)) &&
-         (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (this_01,1,(MethodInfo *)0x0), *(int *)(in_stack_2 + 0x14) != 0)) {
-        puStack3 = (undefined *)0x0;
-        pcVar4 = pcRam_?;
-        if (pcRam_? == (code *)0x0) {
-          pcVar4 = (code *)func_?();
-          if (pcVar4 == (code *)0x0) {
-            puStack3 = (undefined *)0x0;
-            func_?();
-            func_?();
-            pcVar4 = (code *)swi(3);
-            (*pcVar4)();
-            return;
+    this_00 = (pXVar1->fields).xpBoostParticles;
+    (pXVar1->fields).isParticlesPlaying = 1;
+    if (this_00 != (ParticleSystem *)0x0) {
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this_00,(MethodInfo *)0x0);
+      if (this_01 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_01,1,(MethodInfo *)0x0);
+        if ((pXVar1->fields).xpBoostParticles != (ParticleSystem *)0x0) {
+          if (pcRam_? == (code *)0x0) {
+            pcRam_? = (code *)func_?();
           }
-        }
-        pcRam_? = pcVar4;
-        uStack5 = 1;
+          uStack2 = 1;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (*pcRam_?)();
-        return;
+          (*pcRam_?)();
+          return;
+        }
       }
-      func_?(0);
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
     }
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -289,16 +268,16 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::
 {
   pTVar1 = (this->fields).xpText;
   if (pTVar1 != (Text *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                       ((Component_1 *)pTVar1,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pTVar1,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (pGVar2,(MethodInfo *)0x0);
       if (bVar3 == 0) {
         pTVar1 = (this->fields).xpText;
         if (pTVar1 == (Text *)0x0) goto code_?;
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                           ((Component_1 *)pTVar1,(MethodInfo *)0x0);
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pTVar1,(MethodInfo *)0x0);
         if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,1,(MethodInfo *)0x0);
@@ -341,128 +320,91 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::XPNotificationBoostedB
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    XpBoostParticlePreviewer_MethodInfo__UnityEngine__Object__Instantiate<XpBoostParticlePreviewer>_XpBoostParticlePreviewer_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral__XP_);
+    func_?(&StringLiteral__XP);
     cRam_? = '\x01';
   }
-  SStack_1.klass = (SubscribableVariableBase_1_System_Single___Class *)0x0;
-  SStack_1.monitor = (MonitorData *)0x0;
-  SStack_1.fields.value = 0.0;
-  SStack_1.fields.OnChange = (Action_1_Single_ *)0x0;
-  SStack_2.klass = (SubscribableVariableBase_1_System_Single___Class *)0x0;
-  SStack_2.monitor = (MonitorData *)0x0;
-  SStack_2.fields.value = 0.0;
-  SStack_2.fields.OnChange = (Action_1_Single_ *)0x0;
-  pXVar3 = (this->fields).xpBoostParticlesPreview;
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  pXVar1 = (this->fields).xpBoostParticlesPreview;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pXVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
-    pXVar3 = (this->fields).xpBoostParticlesPreviewPrefab;
-    if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Object);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pXVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pXVar1 = (this->fields).xpBoostParticlesPreviewPrefab;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    pXVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_251
-                       (pXVar3,
+    pXVar1 = (XpBoostParticlePreviewer *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)pXVar1,
                         XpBoostParticlePreviewer_MethodInfo__UnityEngine__Object__Instantiate<XpBoostParticlePreviewer>_XpBoostParticlePreviewer_
                        );
-    fStack_5 = 0.0;
-    (this->fields).xpBoostParticlesPreview = pXVar3;
-    uStack_6 = 0;
-    func_?(&uStack_6,0,0);
-    fStack_7 = 0.0;
-    auStack_8._4_4_ = 0.0;
-    fStack_9 = 0.0;
-    func_?(auStack_8 + 4,0x461c4000,0xc61c4000);
-    if (pXVar3 == (XpBoostParticlePreviewer *)0x0) goto code_?;
-    cameraOffset.z = fStack_5;
-    cameraOffset.x = (float)uStack_6;
-    cameraOffset.y = (float)uStack_6._4_4_;
-    previewPosition.z = fStack_7;
-    previewPosition.x = (float)auStack_8._4_4_;
-    previewPosition.y = fStack_9;
+    (this->fields).xpBoostParticlesPreview = pXVar1;
+    func_?(&(this->fields).xpBoostParticlesPreview);
+    pXVar1 = (this->fields).xpBoostParticlesPreview;
+    if (pXVar1 == (XpBoostParticlePreviewer *)0x0) goto code_?;
+    previewPosition.z = -10000.0;
+    previewPosition.x = 10000.0;
+    previewPosition.y = -10000.0;
     XpBoostParticlePreviewer::XpBoostParticlePreviewer_Initialize
-              (pXVar3,600,0xa0,CameraClearFlags__Enum_Color,LayerFlags__Enum_Preview,cameraOffset,
-               previewPosition,(MethodInfo *)0x0);
-    this_00 = (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-               *)(this->fields).xpBoostParticlesPreview;
-    this_01 = (this->fields).xpBoostParticlesRawImage;
-    if (this_00 ==
-        (Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_ *)0x0)
+              (pXVar1,600,0xa0,CameraClearFlags__Enum_Color,LayerFlags__Enum_Preview,
+               (Vector3)ZEXT812(0),previewPosition,(MethodInfo *)0x0);
+    pXVar1 = (this->fields).xpBoostParticlesPreview;
+    if ((pXVar1 == (XpBoostParticlePreviewer *)0x0) ||
+       (this_00 = (this->fields).xpBoostParticlesRawImage, this_00 == (RawImage *)0x0))
     goto code_?;
-    value = (Texture *)
-            System.Core.dll::System::Linq::
-            Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-            JsonSchemaType]::
-            Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                      (this_00,(MethodInfo *)0x0);
-    if (this_01 == (RawImage *)0x0) goto code_?;
     UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-              (this_01,value,(MethodInfo *)0x0);
+              (this_00,(Texture *)(pXVar1->fields).previewTexture,(MethodInfo *)0x0);
   }
-  fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  pTVar11 = (this->fields).xpText;
-  (this->fields).startTime = fVar10;
-  pSVar12 = (String *)func_?(&boostedXPAmount,0);
-  if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__String->_1).cctor_started == 0)) {
-    func_?(TypeInfo__System__String);
-  }
-  pSVar12 = mscorlib.dll::System::String::String_Concat_2
-                     (pSVar12,StringLiteral__XP_,(MethodInfo *)0x0);
-  if (pTVar11 != (Text *)0x0) {
-    (*(code *)(pTVar11->klass->vtable).set_text.method)
-              (pTVar11,pSVar12,(pTVar11->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar11 = (this->fields).unboostedXpText;
-    pSVar12 = (String *)func_?(&unboostedXpAmount,0);
-    pSVar12 = mscorlib.dll::System::String::String_Concat_2
-                       (pSVar12,StringLiteral__XP,(MethodInfo *)0x0);
-    if (pTVar11 != (Text *)0x0) {
-      (*(code *)(pTVar11->klass->vtable).set_text.method)
-                (pTVar11,pSVar12,(pTVar11->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  pTVar4 = (this->fields).xpText;
+  (this->fields).startTime = fVar3;
+  pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&boostedXPAmount,(MethodInfo *)0x0);
+  mscorlib.dll::System::String::String_Concat_3(pSVar5,StringLiteral__XP_,(MethodInfo *)0x0);
+  if (pTVar4 != (Text *)0x0) {
+    (*(pTVar4->klass->vtable).set_text.methodPtr)();
+    pTVar4 = (this->fields).unboostedXpText;
+    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&unboostedXpAmount,(MethodInfo *)0x0);
+    mscorlib.dll::System::String::String_Concat_3(pSVar5,StringLiteral__XP,(MethodInfo *)0x0);
+    if (pTVar4 != (Text *)0x0) {
+      (*(pTVar4->klass->vtable).set_text.methodPtr)();
       if ((this->fields).boostEffectStatPositionX != 0.0) {
 code_?:
         XPNotificationBoostedBehaviour_Reset(this,(MethodInfo *)0x0);
         return;
       }
-      this_02 = (Transform *)(this->fields).boostEffectTransform;
-      if (this_02 != (Transform *)0x0) {
-        pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                           ((Vector3 *)(auStack_8 + 4),this_02,(MethodInfo *)0x0);
-        uStack_6._0_4_ = pVVar13->x;
-        uStack_6._4_4_ = pVVar13->y;
-        pRVar14 = (this->fields).boostEffectTransform;
-        if (pRVar14 != (RectTransform *)0x0) {
-          pRVar15 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                             ((Rect *)auStack_8,pRVar14,(MethodInfo *)0x0);
-          SStack_1.klass = (SubscribableVariableBase_1_System_Single___Class *)pRVar15->m_XMin;
-          SStack_1.monitor = (MonitorData *)pRVar15->m_YMin;
-          SStack_1.fields.value = pRVar15->m_Width;
-          SStack_1.fields.OnChange = (Action_1_Single_ *)pRVar15->m_Height;
-          fStack_16 = SubscribableVariableBase`1[System::Single]::
-                     SubscribableVariableBase_1_System_Single__get_Value
-                               (&SStack_1,(MethodInfo *)0x0);
-          pRVar14 = (this->fields).boostEffectTransform;
-          if (pRVar14 != (RectTransform *)0x0) {
-            VVar17 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
-                              (pRVar14,(MethodInfo *)0x0);
-            fStack_9 = VVar17.x;
-            pRVar14 = (this->fields).boostEffectTransform;
-            if (pRVar14 != (RectTransform *)0x0) {
-              pRVar15 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                       RectTransform_get_rect((Rect *)&stack0xffffffac,pRVar14,(MethodInfo *)0x0);
-              SStack_2.klass = (SubscribableVariableBase_1_System_Single___Class *)pRVar15->m_XMin;
-              SStack_2.monitor = (MonitorData *)pRVar15->m_YMin;
-              SStack_2.fields.value = pRVar15->m_Width;
-              SStack_2.fields.OnChange = (Action_1_Single_ *)pRVar15->m_Height;
+      this_01 = (Transform *)(this->fields).boostEffectTransform;
+      if (this_01 != (Transform *)0x0) {
+        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                           ((Vector3 *)&stack0xffffffdc,this_01,(MethodInfo *)0x0);
+        fVar3 = pVVar6->x;
+        pRVar7 = (this->fields).boostEffectTransform;
+        if (pRVar7 != (RectTransform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                    ((Rect *)&stack0xffffffd8,pRVar7,(MethodInfo *)0x0);
+          fVar8 = SubscribableVariableBase`1[System::Single]::
+                   SubscribableVariableBase_1_System_Single__get_Value
+                             ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffc8,
+                              (MethodInfo *)0x0);
+          pRVar7 = (this->fields).boostEffectTransform;
+          if (pRVar7 != (RectTransform *)0x0) {
+            VVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
+                              (pRVar7,(MethodInfo *)0x0);
+            pRVar7 = (this->fields).boostEffectTransform;
+            if (pRVar7 != (RectTransform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                        ((Rect *)&stack0xffffffd8,pRVar7,(MethodInfo *)0x0);
               fVar10 = SubscribableVariableBase`1[System::Single]::
                        SubscribableVariableBase_1_System_Single__get_Value
-                                 (&SStack_2,(MethodInfo *)0x0);
-              (this->fields).boostEffectStatPositionX =
-                   (fStack_16 - fVar10 * fStack_9) + (float)uStack_6;
+                                 ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffc8,
+                                  (MethodInfo *)0x0);
+              (this->fields).boostEffectStatPositionX = (fVar8 - fVar10 * VVar9.x) + fVar3;
               goto code_?;
             }
           }
@@ -471,9 +413,9 @@ code_?:
     }
   }
 code_?:
-  func_?(0);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -487,165 +429,165 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::XPNotificationBoostedB
   pTVar1 = (Transform *)(this->fields).boostEffectTransform;
   if (pTVar1 != (Transform *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                        ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
-    uVar3 = pVVar2->y;
-    fVar4 = pVVar2->z;
-    pRVar5 = (this->fields).boostEffectTransform;
-    fVar6 = (this->fields).boostEffectStatPositionX;
-    if (pRVar5 != (RectTransform *)0x0) {
+                        (&VStack_3,pTVar1,(MethodInfo *)0x0);
+    fVar4 = pVVar2->y;
+    fVar5 = pVVar2->z;
+    pRVar6 = (this->fields).boostEffectTransform;
+    fVar7 = (this->fields).boostEffectStatPositionX;
+    if (pRVar6 != (RectTransform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                ((Rect *)&stack0xffffffe4,pRVar5,(MethodInfo *)0x0);
-      fVar7 = SubscribableVariableBase`1[System::Single]::
+                ((Rect *)&stack0xffffffe4,pRVar6,(MethodInfo *)0x0);
+      fVar8 = SubscribableVariableBase`1[System::Single]::
                SubscribableVariableBase_1_System_Single__get_Value
-                         ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffb8,
+                         ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffc4,
                           (MethodInfo *)0x0);
-      pRVar5 = (this->fields).boostEffectTransform;
-      if (pRVar5 != (RectTransform *)0x0) {
-        VVar8 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
-                           (pRVar5,(MethodInfo *)0x0);
-        fVar9 = VVar8.x;
-        pRVar5 = (this->fields).boostEffectTransform;
-        if (pRVar5 != (RectTransform *)0x0) {
+      pRVar6 = (this->fields).boostEffectTransform;
+      if (pRVar6 != (RectTransform *)0x0) {
+        VVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
+                           (pRVar6,(MethodInfo *)0x0);
+        pRVar6 = (this->fields).boostEffectTransform;
+        VStack_3.y = VVar9.x;
+        VStack_3.z = VVar9.y;
+        if (pRVar6 != (RectTransform *)0x0) {
           pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                              ((Rect *)&stack0xffffff98,pRVar5,(MethodInfo *)0x0);
+                              ((Rect *)&stack0xffffffb4,pRVar6,(MethodInfo *)0x0);
           fVar11 = SubscribableVariableBase`1[System::Single]::
                    SubscribableVariableBase_1_System_Single__get_Value
                              ((SubscribableVariableBase_1_System_Single_ *)pRVar10->m_Width,
                               (MethodInfo *)pRVar10->m_Height);
           pTVar1 = (Transform *)(this->fields).boostEffectTransform;
           if (pTVar1 != (Transform *)0x0) {
-            value.y = (float)uVar3;
-            value.x = fVar6 - (fVar7 - fVar11 * fVar9);
-            value.z = fVar4;
+            value_00.y = fVar4;
+            value_00.x = fVar7 - (fVar8 - fVar11 * VStack_3.y);
+            value_00.z = fVar5;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar1,value,(MethodInfo *)0x0);
-            pRVar5 = (this->fields).boostEffectTransform;
-            if (pRVar5 != (RectTransform *)0x0) {
-              pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                        Component_1_get_gameObject((Component_1 *)pRVar5,(MethodInfo *)0x0);
+                      (pTVar1,value_00,(MethodInfo *)0x0);
+            pRVar6 = (this->fields).boostEffectTransform;
+            if (pRVar6 != (RectTransform *)0x0) {
+              VStack_3.z = (float)&UNK_?;
+              pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)pRVar6,(MethodInfo *)0x0);
               if (pGVar12 != (GameObject *)0x0) {
-                uVar13 = CONCAT44(&UNK_?,pRVar5);
-                bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
-                if (bVar14 != 0) {
-                  pRVar5 = (this->fields).boostEffectTransform;
-                  if (pRVar5 == (RectTransform *)0x0) goto code_?;
-                  pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_1_get_gameObject((Component_1 *)pRVar5,(MethodInfo *)0x0);
-                  if (pGVar15 == (GameObject *)0x0) goto code_?;
+                bVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
+                if (bVar13 != 0) {
+                  pRVar6 = (this->fields).boostEffectTransform;
+                  if ((pRVar6 == (RectTransform *)0x0) ||
+                     (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                Component_get_gameObject((Component *)pRVar6,(MethodInfo *)0x0),
+                     pGVar12 == (GameObject *)0x0)) goto code_?;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar15,0,(MethodInfo *)0x0);
+                            (pGVar12,0,(MethodInfo *)0x0);
                 }
-                pPVar16 = (this->fields).xpFillBar;
-                if (pPVar16 != (ProgressBar *)0x0) {
-                  ProgressBar::ProgressBar_set_Progress(pPVar16,0.0,(MethodInfo *)0x0);
-                  pPVar16 = (this->fields).xpFillBarBackground;
-                  if (pPVar16 != (ProgressBar *)0x0) {
-                    ProgressBar::ProgressBar_set_Progress(pPVar16,0.0,(MethodInfo *)0x0);
-                    pGVar15 = (this->fields).glowEffectGameObject;
-                    if (pGVar15 != (GameObject *)0x0) {
-                      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                GameObject_get_transform(pGVar15,(MethodInfo *)0x0);
-                      if (pTVar1 != (Transform *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                                  ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
-                        func_?();
-                        pGVar15 = (this->fields).glowEffectGameObject;
-                        if (pGVar15 != (GameObject *)0x0) {
-                          pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                    GameObject_get_transform(pGVar15,(MethodInfo *)0x0);
-                          if (pTVar1 != (Transform *)0x0) {
-                            value_00.z = (float)pGVar12;
-                            value_00.x = (float)(int)uVar13;
-                            value_00.y = (float)(int)((ulonglong)uVar13 >> 0x20);
-                            UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_set_localScale(pTVar1,value_00,(MethodInfo *)0x0);
+                pPVar14 = (ProgressBarAndroid *)(this->fields).xpFillBar;
+                if (pPVar14 != (ProgressBarAndroid *)0x0) {
+                  ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPVar14,0.0,(MethodInfo *)0x0);
+                  pPVar14 = (ProgressBarAndroid *)(this->fields).xpFillBarBackground;
+                  if (pPVar14 != (ProgressBarAndroid *)0x0) {
+                    ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                              (pPVar14,0.0,(MethodInfo *)0x0);
+                    pGVar12 = (this->fields).glowEffectGameObject;
+                    if ((pGVar12 != (GameObject *)0x0) &&
+                       (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_get_transform(pGVar12,(MethodInfo *)0x0),
+                       pTVar1 != (Transform *)0x0)) {
+                      VStack_3.x = 1.0;
+                      VStack_3.y = 1.0;
+                      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_get_localScale
+                                          ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
+                      VStack_3.z = pVVar2->z;
+                      pGVar12 = (this->fields).glowEffectGameObject;
+                      if ((pGVar12 != (GameObject *)0x0) &&
+                         (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                    GameObject_get_transform(pGVar12,(MethodInfo *)0x0),
+                         pTVar1 != (Transform *)0x0)) {
+                        value.y = VStack_3.y;
+                        value.x = VStack_3.x;
+                        value.z = VStack_3.z;
+                        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                                  (pTVar1,value,(MethodInfo *)0x0);
+                        pGVar12 = (this->fields).glowEffectGameObject;
+                        if (pGVar12 != (GameObject *)0x0) {
+                          bVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                   GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
+                          if (bVar13 != 0) {
                             pGVar12 = (this->fields).glowEffectGameObject;
-                            if (pGVar12 != (GameObject *)0x0) {
-                              bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                      GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
-                              if (bVar14 != 0) {
-                                pGVar12 = (this->fields).glowEffectGameObject;
-                                if (pGVar12 == (GameObject *)0x0) goto code_?;
-                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                GameObject_SetActive(pGVar12,0,(MethodInfo *)0x0);
-                              }
-                              pGVar17 = (this->fields).arrowGradientEffect;
-                              if (pGVar17 != (GradientEffect *)0x0) {
-                                fVar6 = (pGVar17->fields).bottom.r;
-                                fVar4 = (pGVar17->fields).bottom.g;
-                                fVar7 = (pGVar17->fields).bottom.b;
-                                (pGVar17->fields).bottom.r = fVar6;
-                                (pGVar17->fields).bottom.g = fVar4;
-                                (pGVar17->fields).bottom.b = fVar7;
-                                (pGVar17->fields).bottom.a = 0.0;
-                                pGVar17 = (this->fields).arrowGradientEffect;
-                                if (pGVar17 != (GradientEffect *)0x0) {
-                                  (pGVar17->fields).top.r = fVar6;
-                                  (pGVar17->fields).top.g = fVar4;
-                                  (pGVar17->fields).top.b = fVar7;
-                                  (pGVar17->fields).top.a = 0.0;
-                                  pTVar18 = (this->fields).xpText;
-                                  if (pTVar18 != (Text *)0x0) {
-                                    pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                              Component_1_get_gameObject
-                                                        ((Component_1 *)pTVar18,(MethodInfo *)0x0);
-                                    if (pGVar12 != (GameObject *)0x0) {
-                                      bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                              GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
-                                      if (bVar14 != 0) {
-                                        pTVar18 = (this->fields).xpText;
-                                        if (pTVar18 == (Text *)0x0) goto code_?;
-                                        pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component
-                                                  ::Component_1_get_gameObject
-                                                            ((Component_1 *)pTVar18,(MethodInfo *)0x0
-                                                            );
-                                        if (pGVar12 == (GameObject *)0x0) goto code_?;
+                            if (pGVar12 == (GameObject *)0x0) goto code_?;
+                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_SetActive(pGVar12,0,(MethodInfo *)0x0);
+                          }
+                          pGVar15 = (this->fields).arrowGradientEffect;
+                          if (pGVar15 != (GradientEffect *)0x0) {
+                            fVar7 = (pGVar15->fields).bottom.r;
+                            fVar4 = (pGVar15->fields).bottom.g;
+                            fVar5 = (pGVar15->fields).bottom.b;
+                            (pGVar15->fields).bottom.r = fVar7;
+                            (pGVar15->fields).bottom.g = fVar4;
+                            (pGVar15->fields).bottom.b = fVar5;
+                            (pGVar15->fields).bottom.a = 0.0;
+                            pGVar15 = (this->fields).arrowGradientEffect;
+                            if (pGVar15 != (GradientEffect *)0x0) {
+                              (pGVar15->fields).top.r = fVar7;
+                              (pGVar15->fields).top.g = fVar4;
+                              (pGVar15->fields).top.b = fVar5;
+                              (pGVar15->fields).top.a = 0.0;
+                              pTVar16 = (this->fields).xpText;
+                              if ((pTVar16 != (Text *)0x0) &&
+                                 (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                            Component_get_gameObject
+                                                      ((Component *)pTVar16,(MethodInfo *)0x0),
+                                 pGVar12 != (GameObject *)0x0)) {
+                                bVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                         GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
+                                if (bVar13 != 0) {
+                                  pTVar16 = (this->fields).xpText;
+                                  if ((pTVar16 == (Text *)0x0) ||
+                                     (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                                Component_get_gameObject
+                                                          ((Component *)pTVar16,(MethodInfo *)0x0),
+                                     pGVar12 == (GameObject *)0x0)) goto code_?;
+                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_SetActive(pGVar12,0,(MethodInfo *)0x0);
+                                }
+                                pTVar16 = (this->fields).unboostedXpText;
+                                if ((pTVar16 != (Text *)0x0) &&
+                                   (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                              Component_get_gameObject
+                                                        ((Component *)pTVar16,(MethodInfo *)0x0),
+                                   pGVar12 != (GameObject *)0x0)) {
+                                  bVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                           GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
+                                  if (bVar13 == 0) {
+                                    pTVar16 = (this->fields).unboostedXpText;
+                                    if ((pTVar16 == (Text *)0x0) ||
+                                       (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component
+                                                  ::Component_get_gameObject
+                                                            ((Component *)pTVar16,(MethodInfo *)0x0),
+                                       pGVar12 == (GameObject *)0x0)) goto code_?;
+                                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                    GameObject_SetActive(pGVar12,1,(MethodInfo *)0x0);
+                                  }
+                                  pXVar17 = (this->fields).xpBoostParticlesPreview;
+                                  if (pXVar17 != (XpBoostParticlePreviewer *)0x0) {
+                                    if ((pXVar17->fields).isParticlesPlaying == 0) {
+                                      return;
+                                    }
+                                    pPVar18 = (pXVar17->fields).xpBoostParticles;
+                                    (pXVar17->fields).isParticlesPlaying = 0;
+                                    if (pPVar18 != (ParticleSystem *)0x0) {
+                                      UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                                      ParticleSystem::ParticleSystem_Stop_2
+                                                (pPVar18,(MethodInfo *)0x0);
+                                      pPVar18 = (pXVar17->fields).xpBoostParticles;
+                                      if ((pPVar18 != (ParticleSystem *)0x0) &&
+                                         (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                    Component::Component_get_gameObject
+                                                              ((Component *)pPVar18,(MethodInfo *)0x0
+                                                              ), pGVar12 != (GameObject *)0x0)) {
                                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                         GameObject_SetActive(pGVar12,0,(MethodInfo *)0x0);
-                                      }
-                                      pTVar18 = (this->fields).unboostedXpText;
-                                      if (pTVar18 != (Text *)0x0) {
-                                        pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component
-                                                  ::Component_1_get_gameObject
-                                                            ((Component_1 *)pTVar18,(MethodInfo *)0x0
-                                                            );
-                                        if (pGVar12 != (GameObject *)0x0) {
-                                          bVar14 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                  GameObject::GameObject_get_activeSelf
-                                                            (pGVar12,(MethodInfo *)0x0);
-                                          if (bVar14 == 0) {
-                                            pTVar18 = (this->fields).unboostedXpText;
-                                            if (pTVar18 == (Text *)0x0) goto code_?;
-                                            pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                      Component::Component_1_get_gameObject
-                                                                ((Component_1 *)pTVar18,
-                                                                 (MethodInfo *)0x0);
-                                            if (pGVar12 == (GameObject *)0x0) goto code_?;
-                                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                            GameObject_SetActive(pGVar12,1,(MethodInfo *)0x0);
-                                          }
-                                          pXVar19 = (this->fields).xpBoostParticlesPreview;
-                                          if (pXVar19 != (XpBoostParticlePreviewer *)0x0) {
-                                            uVar20 = System.Core.dll::System::Linq::
-                                                                                                        
-                                                  Enumerable+<CreateCastIterator>c__Iterator0`1[System
-                                                  ::Byte]::
-                                                  Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte__System_Collections_Generic_IEnumerator_TResult__get_Current
-                                                            ((
-                                                  Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_
-                                                  *)pXVar19,(MethodInfo *)0x0);
-                                            if (uVar20 != 0) {
-                                              pXVar19 = (this->fields).xpBoostParticlesPreview;
-                                              if (pXVar19 == (XpBoostParticlePreviewer *)0x0)
-                                              goto code_?;
-                                              XpBoostParticlePreviewer::
-                                              XpBoostParticlePreviewer_StopParticleSystem
-                                                        (pXVar19,(MethodInfo *)0x0);
-                                            }
-                                            return;
-                                          }
-                                        }
+                                        return;
                                       }
                                     }
                                   }
@@ -667,8 +609,8 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::XPNotificationBoostedB
   }
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -683,115 +625,113 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::XPNotificationBoostedB
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   pXVar3 = (XPNotificationBoostedBehaviour *)(fVar2 - (this->fields).startTime);
   if (_UNK_? < (float)pXVar3) {
-    pPVar4 = (this->fields).xpFillBar;
-    if (pPVar4 == (ProgressBar *)0x0) goto code_?;
-    ProgressBar::ProgressBar_set_Progress
+    pPVar4 = (ProgressBarAndroid *)(this->fields).xpFillBar;
+    if (pPVar4 == (ProgressBarAndroid *)0x0) goto code_?;
+    ProgressBarAndroid::ProgressBarAndroid_set_Progress
               (pPVar4,((float)pXVar3 - _UNK_?) / _UNK_?,(MethodInfo *)0x0);
-    pPVar4 = (this->fields).xpFillBarBackground;
-    if (pPVar4 == (ProgressBar *)0x0) goto code_?;
-    ProgressBar::ProgressBar_set_Progress
+    pPVar4 = (ProgressBarAndroid *)(this->fields).xpFillBarBackground;
+    if (pPVar4 == (ProgressBarAndroid *)0x0) goto code_?;
+    ProgressBarAndroid::ProgressBarAndroid_set_Progress
               (pPVar4,((float)pXVar3 - _UNK_?) / _UNK_?,(MethodInfo *)0x0);
   }
-  if ((float)pXVar3 <= _UNK_?) {
-    fVar2 = (float)pXVar3 - _UNK_?;
-  }
-  else {
+  if (_UNK_? < (float)pXVar3) {
     pRVar5 = (this->fields).boostEffectTransform;
     if ((pRVar5 == (RectTransform *)0x0) ||
-       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)pRVar5,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
-       ) goto code_?;
+       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pRVar5,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
+    goto code_?;
     bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                        (pGVar6,(MethodInfo *)0x0);
     if (bVar7 == 0) {
       pRVar5 = (this->fields).boostEffectTransform;
       if ((pRVar5 == (RectTransform *)0x0) ||
-         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                              ((Component_1 *)pRVar5,(MethodInfo *)0x0),
-         pGVar6 == (GameObject *)0x0)) goto code_?;
+         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pRVar5,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
+         ) goto code_?;
+      this = (XPNotificationBoostedBehaviour *)0x0;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar6,1,(MethodInfo *)0x0);
+      pXVar3 = this;
     }
-    pTVar8 = (this->fields).unboostedXpText;
+    this = pXVar3;
+    pTVar8 = (pXVar1->fields).unboostedXpText;
     if ((pTVar8 == (Text *)0x0) ||
-       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)pTVar8,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
-       ) goto code_?;
+       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pTVar8,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
+    goto code_?;
     bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                        (pGVar6,(MethodInfo *)0x0);
     if (bVar7 != 0) {
-      pTVar8 = (this->fields).unboostedXpText;
+      pTVar8 = (pXVar1->fields).unboostedXpText;
       if ((pTVar8 == (Text *)0x0) ||
-         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                              ((Component_1 *)pTVar8,(MethodInfo *)0x0),
-         pGVar6 == (GameObject *)0x0)) goto code_?;
+         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pTVar8,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
+         ) goto code_?;
+      this = (XPNotificationBoostedBehaviour *)0x0;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar6,0,(MethodInfo *)0x0);
     }
-    pAVar9 = (this->fields).boostEffectCurve;
+    pAVar9 = (pXVar1->fields).boostEffectCurve;
     if (pAVar9 == (AnimationCurve *)0x0) goto code_?;
-    fVar2 = (float)pXVar3 - _UNK_?;
-    UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-              (pAVar9,fVar2,(MethodInfo *)0x0);
-    pTVar10 = (Transform *)(this->fields).boostEffectTransform;
-    if (pTVar10 == (Transform *)0x0) goto code_?;
-    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                        ((Vector3 *)&stack0xffffffd0,pTVar10,(MethodInfo *)0x0);
-    fVar12 = pVVar11->z;
-    uVar13 = 0;
-    uVar14 = 0;
-    func_?();
-    pTVar10 = (Transform *)(this->fields).boostEffectTransform;
-    if (pTVar10 == (Transform *)0x0) goto code_?;
-    value_00.y = (float)uVar13;
-    value_00.x = (float)uVar14;
-    value_00.z = fVar12;
+    pVVar10 = (Vector3 *)
+              UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                        (pAVar9,(float)this - _UNK_?,(MethodInfo *)0x0);
+    pTVar11 = (Transform *)(pXVar1->fields).boostEffectTransform;
+    if (pTVar11 == (Transform *)0x0) goto code_?;
+    puVar12 = &UNK_?;
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                        (pVVar10,pTVar11,(MethodInfo *)0x0);
+    pTVar11 = (Transform *)(pXVar1->fields).boostEffectTransform;
+    if (pTVar11 == (Transform *)0x0) goto code_?;
+    this = (XPNotificationBoostedBehaviour *)0x0;
+    value_01.y = (float)pVVar10;
+    value_01.x = (float)puVar12;
+    value_01.z = pVVar13->z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (pTVar10,value_00,(MethodInfo *)0x0);
-  }
-  if (_UNK_? < (float)pXVar3) {
-    pGVar15 = (this->fields).arrowGradientEffect;
-    if (pGVar15 == (GradientEffect *)0x0) goto code_?;
-    fVar12 = (pGVar15->fields).bottom.r;
-    pAVar9 = (this->fields).gradientEffectCurve;
+              (pTVar11,value_01,(MethodInfo *)0x0);
+    fVar2 = 0.0 - _UNK_?;
+    pGVar14 = (pXVar1->fields).arrowGradientEffect;
+    if (pGVar14 == (GradientEffect *)0x0) goto code_?;
+    fVar15 = (pGVar14->fields).bottom.r;
+    fVar16 = (pGVar14->fields).bottom.g;
+    fVar17 = (pGVar14->fields).bottom.b;
+    pAVar9 = (pXVar1->fields).gradientEffectCurve;
     if (pAVar9 == (AnimationCurve *)0x0) goto code_?;
-    puVar16 = &UNK_?;
-    fVar17 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+    fVar18 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                        (pAVar9,fVar2,(MethodInfo *)0x0);
-    pGVar15 = (this->fields).arrowGradientEffect;
-    if (pGVar15 == (GradientEffect *)0x0) goto code_?;
-    (pGVar15->fields).bottom.r = fVar12;
-    (pGVar15->fields).bottom.g = (float)puVar16;
-    (pGVar15->fields).bottom.b = (float)pAVar9;
-    (pGVar15->fields).bottom.a = fVar17;
-    pGVar15 = (this->fields).arrowGradientEffect;
-    if (pGVar15 == (GradientEffect *)0x0) goto code_?;
-    fVar12 = (pGVar15->fields).top.r;
-    fVar17 = (pGVar15->fields).top.g;
-    fVar18 = (pGVar15->fields).top.b;
-    pAVar9 = (this->fields).gradientEffectCurve;
+    pGVar14 = (pXVar1->fields).arrowGradientEffect;
+    if (pGVar14 == (GradientEffect *)0x0) goto code_?;
+    (pGVar14->fields).bottom.r = fVar15;
+    (pGVar14->fields).bottom.g = fVar16;
+    (pGVar14->fields).bottom.b = fVar17;
+    (pGVar14->fields).bottom.a = fVar18;
+    pGVar14 = (pXVar1->fields).arrowGradientEffect;
+    if (pGVar14 == (GradientEffect *)0x0) goto code_?;
+    fVar15 = (pGVar14->fields).top.r;
+    fVar16 = (pGVar14->fields).top.g;
+    fVar17 = (pGVar14->fields).top.b;
+    pAVar9 = (pXVar1->fields).gradientEffectCurve;
     if (pAVar9 == (AnimationCurve *)0x0) goto code_?;
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                        (pAVar9,fVar2 - _UNK_?,(MethodInfo *)0x0);
-    pGVar15 = (this->fields).arrowGradientEffect;
-    if (pGVar15 == (GradientEffect *)0x0) goto code_?;
-    (pGVar15->fields).top.r = fVar12;
-    (pGVar15->fields).top.g = fVar17;
-    (pGVar15->fields).top.b = fVar18;
-    (pGVar15->fields).top.a = fVar2;
-    pGVar15 = (this->fields).arrowGradientEffect;
-    if ((pGVar15 == (GradientEffect *)0x0) ||
-       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)pGVar15,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
-       ) goto code_?;
+    pGVar14 = (pXVar1->fields).arrowGradientEffect;
+    if (pGVar14 == (GradientEffect *)0x0) goto code_?;
+    (pGVar14->fields).top.r = fVar15;
+    (pGVar14->fields).top.g = fVar16;
+    (pGVar14->fields).top.b = fVar17;
+    (pGVar14->fields).top.a = fVar2;
+    pGVar14 = (pXVar1->fields).arrowGradientEffect;
+    if ((pGVar14 == (GradientEffect *)0x0) ||
+       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pGVar14,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
+    goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar6,0,(MethodInfo *)0x0);
-    pGVar15 = (this->fields).arrowGradientEffect;
-    if ((pGVar15 == (GradientEffect *)0x0) ||
-       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)pGVar15,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
-       ) goto code_?;
-    this = (XPNotificationBoostedBehaviour *)&UNK_?;
+    pGVar14 = (pXVar1->fields).arrowGradientEffect;
+    if ((pGVar14 == (GradientEffect *)0x0) ||
+       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pGVar14,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
+    goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar6,1,(MethodInfo *)0x0);
     pXVar3 = this;
@@ -812,85 +752,93 @@ void Assembly-CSharp.dll::XPNotificationBoostedBehaviour::XPNotificationBoostedB
     }
     pAVar9 = (pXVar1->fields).glowEffectCurve;
     if (pAVar9 == (AnimationCurve *)0x0) goto code_?;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                       (pAVar9,(float)this - _UNK_?,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+              (pAVar9,(float)this - _UNK_?,(MethodInfo *)0x0);
+    pGVar6 = (pXVar1->fields).glowEffectGameObject;
+    if (pGVar6 == (GameObject *)0x0) goto code_?;
+    fVar2 = 0.0;
+    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (pGVar6,(MethodInfo *)0x0);
+    if (pTVar11 == (Transform *)0x0) goto code_?;
+    fVar16 = (fVar2 - _UNK_?) / _UNK_? + _UNK_?;
+    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                        ((Vector3 *)&stack0xffffffe0,pTVar11,(MethodInfo *)0x0);
+    fVar15 = pVVar10->z;
     pGVar6 = (pXVar1->fields).glowEffectGameObject;
     if ((pGVar6 == (GameObject *)0x0) ||
-       (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar6,(MethodInfo *)0x0), pTVar10 == (Transform *)0x0))
-    goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-              ((Vector3 *)&stack0xffffffd0,pTVar10,(MethodInfo *)0x0);
-    puVar19 = &stack0xffffffe8;
-    fVar2 = (fVar2 - _UNK_?) / _UNK_? + _UNK_?;
-    puVar16 = &UNK_?;
-    func_?();
-    pGVar6 = (pXVar1->fields).glowEffectGameObject;
-    if ((pGVar6 == (GameObject *)0x0) ||
-       (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar6,(MethodInfo *)0x0), pTVar10 == (Transform *)0x0))
-    goto code_?;
-    value.y = (float)puVar19;
-    value.x = (float)puVar16;
-    value.z = fVar2;
+       (this = (XPNotificationBoostedBehaviour *)
+               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar6,(MethodInfo *)0x0), this == (XPNotificationBoostedBehaviour *)0x0)
+       ) goto code_?;
+    value.y = fVar2;
+    value.x = fVar16;
+    value.z = fVar15;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (pTVar10,value,(MethodInfo *)0x0);
+              ((Transform *)this,value,(MethodInfo *)0x0);
   }
   if (_UNK_? < (float)this) {
     pTVar8 = (pXVar1->fields).xpText;
     if ((pTVar8 == (Text *)0x0) ||
-       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                            ((Component_1 *)pTVar8,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
-       ) goto code_?;
+       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pTVar8,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
+    goto code_?;
     bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                        (pGVar6,(MethodInfo *)0x0);
     if (bVar7 == 0) {
       pTVar8 = (pXVar1->fields).xpText;
       if ((pTVar8 == (Text *)0x0) ||
-         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_1_get_gameObject
-                              ((Component_1 *)pTVar8,(MethodInfo *)0x0),
-         pGVar6 == (GameObject *)0x0)) goto code_?;
+         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pTVar8,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)
+         ) goto code_?;
+      this = (XPNotificationBoostedBehaviour *)0x0;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar6,1,(MethodInfo *)0x0);
     }
-    pTVar10 = (Transform *)(pXVar1->fields).boostEffectTransform;
-    if (pTVar10 == (Transform *)0x0) goto code_?;
-    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd0,pTVar10,(MethodInfo *)0x0);
-    fVar12 = pVVar11->x;
-    uVar14 = pVVar11->y;
-    fVar17 = pVVar11->z;
+    pTVar11 = (Transform *)(pXVar1->fields).boostEffectTransform;
+    if (pTVar11 == (Transform *)0x0) goto code_?;
+    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&stack0xffffffe0,pTVar11,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)pVVar10->x;
+    uVar19 = pVVar10->y;
+    fVar15 = pVVar10->z;
     fVar2 = (pXVar1->fields).slideOutSpeed;
-    fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    pTVar10 = (Transform *)(pXVar1->fields).boostEffectTransform;
-    if (pTVar10 == (Transform *)0x0) goto code_?;
-    value_01.y = (float)uVar14;
-    value_01.x = fVar18 * fVar2 + fVar12;
-    value_01.z = fVar17;
+    fVar16 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime(method_00);
+    pTVar11 = (Transform *)(pXVar1->fields).boostEffectTransform;
+    if (pTVar11 == (Transform *)0x0) goto code_?;
+    value_00.y = (float)uVar19;
+    value_00.x = fVar16 * fVar2 + (float)method_00;
+    value_00.z = fVar15;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (pTVar10,value_01,(MethodInfo *)0x0);
+              (pTVar11,value_00,(MethodInfo *)0x0);
   }
-  if (_UNK_? < (float)this) {
-    pXVar20 = (pXVar1->fields).xpBoostParticlesPreview;
-    if (pXVar20 == (XpBoostParticlePreviewer *)0x0) {
-code_?:
-      func_?();
-      pcVar21 = (code *)swi(3);
-      (*pcVar21)();
+  if ((float)this <= _UNK_?) {
+    return;
+  }
+  pXVar20 = (pXVar1->fields).xpBoostParticlesPreview;
+  if (pXVar20 != (XpBoostParticlePreviewer *)0x0) {
+    if ((pXVar20->fields).isParticlesPlaying != 0) {
       return;
     }
-    uVar22 = System.Core.dll::System::Linq::Enumerable+<CreateCastIterator>c__Iterator0`1[System::
-             Byte]::
-             Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte__System_Collections_Generic_IEnumerator_TResult__get_Current
-                       ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Byte_ *)pXVar20,
-                        (MethodInfo *)0x0);
-    if (uVar22 == 0) {
-      pXVar20 = (pXVar1->fields).xpBoostParticlesPreview;
-      if (pXVar20 == (XpBoostParticlePreviewer *)0x0) goto code_?;
-      XpBoostParticlePreviewer::XpBoostParticlePreviewer_StartParticleSystem
-                (pXVar20,(MethodInfo *)0x0);
+    pPVar21 = (pXVar20->fields).xpBoostParticles;
+    (pXVar20->fields).isParticlesPlaying = 1;
+    if ((pPVar21 != (ParticleSystem *)0x0) &&
+       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pPVar21,(MethodInfo *)0x0), pGVar6 != (GameObject *)0x0))
+    {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar6,1,(MethodInfo *)0x0);
+      pPVar21 = (pXVar20->fields).xpBoostParticles;
+      if (pPVar21 != (ParticleSystem *)0x0) {
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
+                  (pPVar21,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
+code_?:
+  func_?();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class ModalPopupCreator : MonoBehaviour, IModalPopupCreator
 {
@@ -23,65 +23,61 @@ public class ModalPopupCreator : MonoBehaviour, IModalPopupCreator
 	private NotificationPopup notificationPopupPrefab;
 	[SerializeField]
 	private PleaseWaitPopup waitPopupPrefab;
-	[CompilerGenerated]
-	private static UnityAction<bool, ConfirmationPopup> __f__mg_cache0;
-	[CompilerGenerated]
-	private static UnityAction<bool, ConfirmationPopup> __f__mg_cache1;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Create_c__AnonStorey0
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		internal NotificationPopup notificationPopup;
-		internal ModalPopupCreator _this;
+		public NotificationPopup notificationPopup;
+		public ModalPopupCreator __4__this;
 
 		// Constructors
-		public _Create_c__AnonStorey0();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Create_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Create_c__AnonStorey1
+	private sealed class __c__DisplayClass5_0
 	{
 		// Fields
-		internal ConfirmationPopup confirmationPopup;
-		internal ModalPopupCreator _this;
+		public ConfirmationPopup confirmationPopup;
+		public ModalPopupCreator __4__this;
 
 		// Constructors
-		public _Create_c__AnonStorey1();
+		public __c__DisplayClass5_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Create_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Create_c__AnonStorey2
+	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
-		internal PleaseWaitPopup waitPopup;
+		public PleaseWaitPopup waitPopup;
 
 		// Constructors
-		public _Create_c__AnonStorey2();
+		public __c__DisplayClass6_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Create_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _Create_c__AnonStorey3
+	private sealed class __c__DisplayClass7_0
 	{
 		// Fields
-		internal ConfirmationPopup confirmationPopup;
-		internal ModalPopupCreator _this;
+		public ModalPopupCreator __4__this;
+		public ConfirmationPopup confirmationPopup;
 
 		// Constructors
-		public _Create_c__AnonStorey3();
+		public __c__DisplayClass7_0();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Create_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

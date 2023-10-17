@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class FirstTimeActivatablePopupTimed : FirstTimeActivatableElementBase
 {
@@ -32,25 +32,39 @@ public class FirstTimeActivatablePopupTimed : FirstTimeActivatableElementBase
 	private bool isFading;
 	private bool isUpdating;
 	private bool destroyCreatedPopup;
-	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IUIStack> __f__am_cache0;
 
 	// Properties
 	public override bool CanShow { get; }
 
 	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class _PushToStack_c__AnonStorey0
+	private sealed class __c
 	{
 		// Fields
-		internal UIPushOption options;
-		internal FirstTimeActivatablePopupTimed _this;
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__15_0;
 
 		// Constructors
-		public _PushToStack_c__AnonStorey0();
+		static __c();
+		public __c();
 
 		// Methods
-		internal void __m__0(IUIStack x, BaseEventData y);
+		internal void _Update_b__15_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass20_0
+	{
+		// Fields
+		public FirstTimeActivatablePopupTimed __4__this;
+		public UIPushOption options;
+
+		// Constructors
+		public __c__DisplayClass20_0();
+
+		// Methods
+		internal void _PushToStack_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -64,7 +78,5 @@ public class FirstTimeActivatablePopupTimed : FirstTimeActivatableElementBase
 	protected void CreatePopup();
 	private void PushToStack();
 	private void OnPop();
-	[CompilerGenerated]
-	private static void _Update_m__0(IUIStack x, BaseEventData y);
 }
 

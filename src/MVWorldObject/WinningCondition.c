@@ -8,16 +8,20 @@ void MVWorldObject.dll::WinningCondition::
                )
 
 {
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
   if (e != (OnCounterTypeChangedArgs *)0x0) {
     if ((e->fields).counterType == (this->fields).gameStatCounterType) {
-      (*(code *)(this->klass->vtable).GameCountersQuery_OnCounterTypeChanged.method)
-                (this,sender,e,this->klass[1]._0.image);
+      pMStack_1 = (this->klass->vtable).GameCountersQuery_OnCounterTypeChanged.method;
+      pOStack_2 = e;
+      pOStack_3 = sender;
+      (*(this->klass->vtable).GameCountersQuery_OnCounterTypeChanged.methodPtr)(this);
     }
     return;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar4 = func_?(&pOStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -30,6 +34,7 @@ void MVWorldObject.dll::WinningCondition::WinningCondition_Reset
 {
   (this->fields).forfilled = 0;
   (this->fields).instigatorCounterTypeChangedEvent = (OnCounterTypeChangedArgs *)0x0;
+  func_?(&(this->fields).instigatorCounterTypeChangedEvent);
   return;
 }
 
@@ -41,20 +46,14 @@ void MVWorldObject.dll::WinningCondition::WinningCondition_SendWinningConditionC
                OnCounterTypeChangedArgs *instigatorCounterTypeChangedEvent,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   (this->fields).instigatorCounterTypeChangedEvent = instigatorCounterTypeChangedEvent;
-  this_00 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)
-            (this->fields).OnWinningConditionChanged;
   (this->fields).forfilled = 1;
-  if (this_00 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-    mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-    EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-              (this_00,(Object *)this,(InitializedGameQueryDataEventArgs *)eventArgs,
-               MethodInfo__System__EventHandler<System::EventArgs>__Invoke_System__Object__System__EventArgs_
-              );
+  func_?(&(this->fields).instigatorCounterTypeChangedEvent,
+                  instigatorCounterTypeChangedEvent);
+  if ((this->fields).OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+    pEVar1 = (this->fields).OnWinningConditionChanged;
+    (*(pEVar1->fields)._._.invoke_impl)
+              ((pEVar1->fields)._._.method_code,this,eventArgs,(pEVar1->fields)._._.method);
   }
   return;
 }
@@ -66,19 +65,11 @@ void MVWorldObject.dll::WinningCondition::WinningCondition_SetLimit
                (WinningCondition *this,int32_t limit,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
   (this->fields).limit = limit;
-  this_00 = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)
-            (this->fields).OnWinningConditionChanged;
-  if (this_00 != (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0) {
-    mscorlib.dll::System::EventHandler`1[InitializedGameQueryDataEventArgs]::
-    EventHandler_1_InitializedGameQueryDataEventArgs__Invoke
-              (this_00,(Object *)this,(InitializedGameQueryDataEventArgs *)0x0,
-               MethodInfo__System__EventHandler<System::EventArgs>__Invoke_System__Object__System__EventArgs_
-              );
+  if ((this->fields).OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+    pEVar1 = (this->fields).OnWinningConditionChanged;
+    (*(pEVar1->fields)._._.invoke_impl)
+              ((pEVar1->fields)._._.method_code,this,0,(pEVar1->fields)._._.method);
   }
   return;
 }
@@ -91,30 +82,27 @@ String * MVWorldObject.dll::WinningCondition::WinningCondition_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Object);
+    func_?(&StringLiteral_WinningConditionType___0___Forfi);
     cRam_? = '\x01';
   }
   args = (Object__Array *)func_?(TypeInfo__System__Object,4);
   pTVar1 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
   if (args == (Object__Array *)0x0) {
-    func_?(0);
+    func_?();
 code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
 code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
 code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
 code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0,0);
+    uVar2 = func_?(0);
     func_?(uVar2);
   }
   else {
@@ -124,49 +112,40 @@ code_?:
     }
     if (args->max_length == 0) goto code_?;
     args->vector[0] = (Object *)pTVar1;
+    func_?(args->vector,pTVar1);
     bStack_4 = (this->fields).forfilled;
     pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_4);
     if (pOVar5 != (Object *)0x0) {
       iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 != 0) goto code_?;
-      goto code_?;
+      if (iVar3 == 0) goto code_?;
     }
-code_?:
     if (args->max_length < 2) goto code_?;
     args->vector[1] = pOVar5;
+    func_?(args->vector + 1,pOVar5);
     iStack_6 = (this->fields).limit;
     pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
     if (pOVar5 != (Object *)0x0) {
       iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 != 0) goto code_?;
-      goto code_?;
+      if (iVar3 == 0) goto code_?;
     }
-code_?:
     if (args->max_length < 3) goto code_?;
     args->vector[2] = pOVar5;
+    func_?(args->vector + 2,pOVar5);
     pOVar7 = (this->fields).instigatorCounterTypeChangedEvent;
-    if (pOVar7 == (OnCounterTypeChangedArgs *)0x0) {
-code_?:
-      if (3 < args->max_length) {
-        args->vector[3] = (Object *)pOVar7;
-        if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__System__String->_1).cctor_started == 0)) {
-          func_?(TypeInfo__System__String);
-        }
-        pSVar8 = mscorlib.dll::System::String::String_Format_3
-                           (StringLiteral_WinningConditionType___0___Forfi,args,(MethodInfo *)0x0);
-        return pSVar8;
-      }
-      goto code_?;
+    if (pOVar7 != (OnCounterTypeChangedArgs *)0x0) {
+      iVar3 = func_?(pOVar7,(args->klass->_0).element_class);
+      if (iVar3 == 0) goto code_?;
     }
-    iVar3 = func_?(pOVar7,(args->klass->_0).element_class);
-    if (iVar3 != 0) goto code_?;
+    if (3 < args->max_length) {
+      args->vector[3] = (Object *)pOVar7;
+      func_?(args->vector + 3,pOVar7);
+      pSVar8 = mscorlib.dll::System::String::String_Format_3
+                         (StringLiteral_WinningConditionType___0___Forfi,args,(MethodInfo *)0x0);
+      return pSVar8;
+    }
   }
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
 code_?:
-  uVar2 = func_?(0,0);
-  func_?(uVar2);
+  func_?();
   pcVar9 = (code *)swi(3);
   pSVar8 = (String *)(*pcVar9)();
   return pSVar8;
@@ -180,21 +159,19 @@ bool MVWorldObject.dll::WinningCondition::WinningCondition_Traverse
                MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
+  puStack_1 = &stack0xfffffffc;
   if (callBack != (Func_2_IWinningCondition_Boolean_ *)0x0) {
-    bVar1 = System.Core.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean__Invoke
-                      ((Func_2_Object_Boolean_ *)callBack,(Object *)this,
-                       MethodInfo__System__Func<IWinningCondition,_bool>__Invoke_IWinningCondition_)
-    ;
-    return bVar1;
+    puStack_1 = (callBack->fields)._._.method;
+    pWStack_2 = this;
+    pvStack_3 = (callBack->fields)._._.method_code;
+    bVar4 = (*(callBack->fields)._._.invoke_impl)();
+    return bVar4;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  uVar5 = func_?(&pvStack_3);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  bVar4 = (*pcVar6)();
+  return bVar4;
 }
 
 
@@ -209,33 +186,37 @@ void MVWorldObject.dll::WinningCondition::WinningCondition__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
+    func_?(&
+                    MethodInfo__WinningCondition__GameCountersQuery_OnCounterTypeChangedGameStatCounterTypeOnly_System__Object__OnCounterTypeChangedArgs_
+                   );
     cRam_? = '\x01';
   }
-  Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Play
-            ((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  (this->fields).gameCounterManager = gameCounterManager;
+  func_?(&(this->fields).gameCounterManager,gameCounterManager);
   (this->fields).id = id;
   (this->fields)._Parent_k__BackingField = (IWinningCondition *)parent;
+  func_?(&(this->fields)._Parent_k__BackingField,parent);
+  this_00 = (this->fields).gameCounterManager;
   (this->fields).limit = limit;
   (this->fields)._IsBriefingNode_k__BackingField = isBriefingNode;
   (this->fields).gameStatCounterType = (undefined1)gameStatCounterType;
-  (this->fields).gameCounterManager = gameCounterManager;
   (this->fields).winningConditionPresentStyle = (undefined1)winningConditionPresentStyle;
-  this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_ *)
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-  Scene,UnityEngine::SceneManagement::Scene]::
-  UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-            (this_00,(Object *)this,
-             MethodInfo__WinningCondition__GameCountersQuery_OnCounterTypeChangedGameStatCounterTypeOnly_System__Object__OnCounterTypeChangedArgs_
-             ,
-             MethodInfo__System__EventHandler<OnCounterTypeChangedArgs>__EventHandler_System__Object__void__
-            );
-  if (gameCounterManager != (GameStatCounterManager *)0x0) {
-    GameStatCounterManager::GameStatCounterManager_add_OnCounterTypeChanged
-              (gameCounterManager,(EventHandler_1_OnCounterTypeChangedArgs_ *)this_00,
-               (MethodInfo *)0x0);
-    return;
+  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__WinningCondition__GameCountersQuery_OnCounterTypeChangedGameStatCounterTypeOnly_System__Object__OnCounterTypeChangedArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (GameStatCounterManager *)0x0) {
+      GameStatCounterManager::GameStatCounterManager_add_OnCounterTypeChanged
+                (this_00,(EventHandler_1_OnCounterTypeChangedArgs_ *)this_01,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -251,34 +232,30 @@ void MVWorldObject.dll::WinningCondition::WinningCondition_add_OnWinningConditio
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnWinningConditionChanged;
-  a = *ppEVar1;
+  a = (this->fields).OnWinningConditionChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_EventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<System::EventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<System::EventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_EventArgs_ *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
+    pEVar5 = (EventHandler_1_EventArgs_ *)
+             func_?(&(this->fields).OnWinningConditionChanged,iVar3,a);
+    bVar6 = pEVar5 != a;
     a = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 
 
@@ -290,34 +267,51 @@ MVWorldObject.dll::WinningCondition::WinningCondition_get_HighScores
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__get_Count__
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields).gameCounterManager;
+  this = (WinningCondition *)CONCAT31(this._1_3_,(this->fields).gameStatCounterType);
   if (this_00 != (GameStatCounterManager *)0x0) {
-    this_01 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                        (this_00,(MethodInfo *)0x0);
-    if (this_01 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0) {
-      JVar1 = System.Core.dll::System::Linq::
-              Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-              JsonSchemaType]::
-              Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                        ((Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-                          *)this_01,
-                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__get_Count__
-                        );
-      if (this_00 != (GameStatCounterManager *)0x0) {
-        pHVar2 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (this_00,GameStatCounterType__Enum_None,1 < (int)JVar1,
-                            WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
-        return pHVar2;
-      }
+    pHVar1 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                       (this_00,(MethodInfo *)0x0);
+    if (pHVar1 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0) {
+      pHVar2 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (this_00,(GameStatCounterType__Enum)this,1 < (pHVar1->fields)._count,
+                          WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
+      return pHVar2;
     }
   }
   func_?();
   pcVar3 = (code *)swi(3);
   pHVar2 = (HighScores *)(*pcVar3)();
   return pHVar2;
+}
+
+
+/* OnCounterTypeChangedArgs get_InstigatorCounterTypeChangedEvent() */
+
+OnCounterTypeChangedArgs *
+MVWorldObject.dll::WinningCondition::WinningCondition_get_InstigatorCounterTypeChangedEvent
+          (WinningCondition *this,MethodInfo *method)
+
+{
+  if ((this->fields).forfilled != 0) {
+    return (this->fields).instigatorCounterTypeChangedEvent;
+  }
+  uVar1 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar1);
+  func_?(this_00);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_WinningCondition_not_forfilled_s);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+  func_?(&MethodInfo__WinningCondition__get_InstigatorCounterTypeChangedEvent__);
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  pOVar3 = (OnCounterTypeChangedArgs *)(*pcVar2)();
+  return pOVar3;
 }
 
 
@@ -328,29 +322,33 @@ bool MVWorldObject.dll::WinningCondition::WinningCondition_get_IsTeamMode
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).gameCounterManager;
   if (this_00 != (GameStatCounterManager *)0x0) {
-    this_01 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                        (this_00,(MethodInfo *)0x0);
-    if (this_01 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0) {
-      JVar1 = System.Core.dll::System::Linq::
-              Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-              JsonSchemaType]::
-              Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                        ((Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-                          *)this_01,
-                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__get_Count__
-                        );
-      return 1 < (int)JVar1;
+    pHVar1 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                       (this_00,(MethodInfo *)0x0);
+    if (pHVar1 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0) {
+      return 1 < (pHVar1->fields)._count;
     }
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
+}
+
+
+/* WinningConditionPresentStyle get_WinningConditionPresentStyle() */
+
+WinningConditionPresentStyle__Enum
+MVWorldObject.dll::WinningCondition::WinningCondition_get_WinningConditionPresentStyle
+          (WinningCondition *this,MethodInfo *method)
+
+{
+  return CONCAT31((int3)((uint)this >> 8),(this->fields).winningConditionPresentStyle);
 }
 
 
@@ -361,33 +359,29 @@ void MVWorldObject.dll::WinningCondition::WinningCondition_remove_OnWinningCondi
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnWinningConditionChanged;
-  source = *ppEVar1;
+  source = (this->fields).OnWinningConditionChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler_1_EventArgs___Class *)pDVar2->klass ==
-          TypeInfo__System__EventHandler<System::EventArgs>) {
-        pDVar3 = pDVar2;
-      }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler<System::EventArgs>);
+    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_EventArgs_ *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
+    pEVar5 = (EventHandler_1_EventArgs_ *)
+             func_?(&(this->fields).OnWinningConditionChanged,iVar3,source);
+    bVar6 = pEVar5 != source;
     source = pEVar5;
-    if (bVar6) {
-      return;
-    }
-  } while( true );
+  } while (bVar6);
+  return;
 }
 

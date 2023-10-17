@@ -29,24 +29,25 @@ bool Assembly-CSharp.dll::GameCoinChestModelSelector::GameCoinChestModelSelector
                (GameCoinChestModelSelector *this,MethodInfo *method)
 
 {
-  pRVar1 = (this->fields).openMesh;
-  if (pRVar1 != (Renderer *)0x0) {
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                      (pRVar1,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+  this_00 = (this->fields).openMesh;
+  if (this_00 != (Renderer *)0x0) {
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
+                      (this_00,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
       return 1;
     }
-    pRVar1 = (this->fields).closedMesh;
-    if (pRVar1 != (Renderer *)0x0) {
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                        (pRVar1,(MethodInfo *)0x0);
-      return bVar2 == 1;
+    if ((this->fields).closedMesh != (Renderer *)0x0) {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      bVar1 = (*pcRam_?)();
+      return bVar1;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  bVar1 = (*pcVar2)();
+  return bVar1;
 }
 
 

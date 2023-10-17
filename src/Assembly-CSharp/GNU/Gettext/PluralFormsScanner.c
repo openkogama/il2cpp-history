@@ -6,314 +6,278 @@ bool Assembly-CSharp.dll::GNU::Gettext::PluralFormsScanner::PluralFormsScanner_N
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Char);
+    func_?(&StringLiteral_nplurals);
+    func_?(&StringLiteral_plural);
     cRam_? = '\x01';
   }
   iVar1 = 0;
   iVar2 = (this->fields).pos;
-  pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-  while (pCVar3 != (Collection_1_VoxelHit_ *)0x0) {
-    pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-    if ((int)pIVar4 <= iVar2) {
+  pSVar3 = (this->fields).str;
+  while (pSVar3 != (String *)0x0) {
+    if ((pSVar3->fields)._stringLength <= iVar2) {
 code_?:
-      pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
+      pSVar3 = (this->fields).str;
+      if (pSVar3 == (String *)0x0) break;
       iVar2 = (this->fields).pos;
-      if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-      pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-               Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-      if (iVar2 < (int)pIVar4) {
-        pSVar5 = (this->fields).str;
-        if (pSVar5 == (String *)0x0) break;
-        uVar6 = mscorlib.dll::System::String::String_get_Chars
-                          (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-        if (uVar6 != 0) {
-          pSVar5 = (this->fields).str;
-          if (pSVar5 == (String *)0x0) break;
-          uVar6 = mscorlib.dll::System::String::String_get_Chars
-                            (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__System__Char->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__Char->_1).cctor_started == 0)) {
-            func_?();
+      if (((pSVar3->fields)._stringLength <= iVar2) ||
+         (uVar4 = mscorlib.dll::System::String::String_get_Chars(pSVar3,iVar2,(MethodInfo *)0x0),
+         uVar4 == 0)) {
+        iVar1 = 1;
+        goto code_?;
+      }
+      pSVar3 = (this->fields).str;
+      if (pSVar3 == (String *)0x0) break;
+      uVar4 = mscorlib.dll::System::String::String_get_Chars
+                        (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+      if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      bVar5 = mscorlib.dll::System::Char::Char_IsDigit(uVar4,(MethodInfo *)0x0);
+      pSVar3 = (this->fields).str;
+      if (bVar5 != 0) {
+        iVar2 = (this->fields).pos;
+        (this->fields).pos = iVar2 + 1;
+        if (pSVar3 != (String *)0x0) {
+          uVar4 = mscorlib.dll::System::String::String_get_Chars(pSVar3,iVar2,(MethodInfo *)0x0);
+          iVar1 = (this->fields).pos;
+          pSVar3 = (this->fields).str;
+          iVar2 = uVar4 - 0x30;
+          if (pSVar3 != (String *)0x0) goto code_?;
+        }
+        break;
+      }
+      if (pSVar3 == (String *)0x0) break;
+      uVar4 = mscorlib.dll::System::String::String_get_Chars
+                        (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+      if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Char);
+      }
+      bVar5 = mscorlib.dll::System::Char::Char_IsLetter(uVar4,(MethodInfo *)0x0);
+      pSVar3 = (this->fields).str;
+      if (bVar5 != 0) {
+        startIndex = (this->fields).pos;
+        iVar2 = startIndex + 1;
+        (this->fields).pos = iVar2;
+        if (pSVar3 != (String *)0x0) goto code_?;
+        break;
+      }
+      if (pSVar3 == (String *)0x0) break;
+      uVar4 = mscorlib.dll::System::String::String_get_Chars
+                        (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+      pSVar3 = (this->fields).str;
+      if (uVar4 == 0x3d) {
+        iVar2 = (this->fields).pos + 1;
+        (this->fields).pos = iVar2;
+        if (pSVar3 != (String *)0x0) {
+          if ((iVar2 < (pSVar3->fields)._stringLength) &&
+             (uVar4 = mscorlib.dll::System::String::String_get_Chars
+                                ((this->fields).str,iVar2,(MethodInfo *)0x0), uVar4 == 0x3d)) {
+            piVar6 = &(this->fields).pos;
+            *piVar6 = *piVar6 + 1;
+            iVar1 = 6;
           }
-          bVar7 = mscorlib.dll::System::Char::Char_IsDigit(uVar6,(MethodInfo *)0x0);
-          pSVar5 = (this->fields).str;
-          iVar2 = (this->fields).pos;
-          if (bVar7 != 0) {
-            (this->fields).pos = iVar2 + 1;
-            if (pSVar5 != (String *)0x0) {
-              uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                (pSVar5,iVar2,(MethodInfo *)0x0);
-              iVar1 = (this->fields).pos;
-              pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-              iVar2 = uVar6 - 0x30;
-              if (pCVar3 != (Collection_1_VoxelHit_ *)0x0) goto code_?;
-            }
-            break;
-          }
-          if (pSVar5 == (String *)0x0) break;
-          uVar6 = mscorlib.dll::System::String::String_get_Chars(pSVar5,iVar2,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__System__Char->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__Char->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__Char);
-          }
-          bVar7 = mscorlib.dll::System::Char::Char_IsLetter(uVar6,(MethodInfo *)0x0);
-          iVar2 = (this->fields).pos;
-          pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-          if (bVar7 != 0) {
-            iVar8 = iVar2 + 1;
-            (this->fields).pos = iVar8;
-            if (pCVar3 != (Collection_1_VoxelHit_ *)0x0) goto code_?;
-            break;
-          }
-          if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-          uVar6 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pCVar3,iVar2,(MethodInfo *)0x0);
-          iVar2 = (this->fields).pos;
-          pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-          if (uVar6 == 0x3d) {
-            iVar2 = iVar2 + 1;
-            (this->fields).pos = iVar2;
-            if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-            pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                     Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-            if (iVar2 < (int)pIVar4) {
-              pSVar5 = (this->fields).str;
-              if (pSVar5 == (String *)0x0) break;
-              uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-              if (uVar6 == 0x3d) {
-                piVar9 = &(this->fields).pos;
-                *piVar9 = *piVar9 + 1;
-                iVar1 = 6;
-                goto code_?;
-              }
-            }
+          else {
             iVar1 = 7;
-            goto code_?;
           }
-          if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-          uVar6 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pCVar3,iVar2,(MethodInfo *)0x0);
-          iVar2 = (this->fields).pos;
-          pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-          if (uVar6 == 0x3e) {
-            iVar2 = iVar2 + 1;
-            (this->fields).pos = iVar2;
-            if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-            pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                     Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-            if (iVar2 < (int)pIVar4) {
-              pSVar5 = (this->fields).str;
-              if (pSVar5 == (String *)0x0) break;
-              uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-              if (uVar6 == 0x3d) {
-                piVar9 = &(this->fields).pos;
-                *piVar9 = *piVar9 + 1;
-                iVar1 = 9;
-                goto code_?;
-              }
-            }
+          goto code_?;
+        }
+        break;
+      }
+      if (pSVar3 == (String *)0x0) break;
+      uVar4 = mscorlib.dll::System::String::String_get_Chars
+                        (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+      pSVar3 = (this->fields).str;
+      if (uVar4 == 0x3e) {
+        iVar2 = (this->fields).pos + 1;
+        (this->fields).pos = iVar2;
+        if (pSVar3 != (String *)0x0) {
+          if ((iVar2 < (pSVar3->fields)._stringLength) &&
+             (uVar4 = mscorlib.dll::System::String::String_get_Chars
+                                ((this->fields).str,iVar2,(MethodInfo *)0x0), uVar4 == 0x3d)) {
+            piVar6 = &(this->fields).pos;
+            *piVar6 = *piVar6 + 1;
+            iVar1 = 9;
+          }
+          else {
             iVar1 = 8;
-            goto code_?;
           }
-          if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-          uVar6 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pCVar3,iVar2,(MethodInfo *)0x0);
-          iVar2 = (this->fields).pos;
-          pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-          if (uVar6 == 0x3c) {
-            iVar2 = iVar2 + 1;
-            (this->fields).pos = iVar2;
-            if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-            pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                     Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-            if (iVar2 < (int)pIVar4) {
-              pSVar5 = (this->fields).str;
-              if (pSVar5 == (String *)0x0) break;
-              uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-              if (uVar6 == 0x3d) {
-                piVar9 = &(this->fields).pos;
-                *piVar9 = *piVar9 + 1;
-                iVar1 = 0xb;
-                goto code_?;
-              }
-            }
+          goto code_?;
+        }
+        break;
+      }
+      if (pSVar3 == (String *)0x0) break;
+      uVar4 = mscorlib.dll::System::String::String_get_Chars
+                        (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+      pSVar3 = (this->fields).str;
+      if (uVar4 == 0x3c) {
+        iVar2 = (this->fields).pos + 1;
+        (this->fields).pos = iVar2;
+        if (pSVar3 != (String *)0x0) {
+          if ((iVar2 < (pSVar3->fields)._stringLength) &&
+             (uVar4 = mscorlib.dll::System::String::String_get_Chars
+                                ((this->fields).str,iVar2,(MethodInfo *)0x0), uVar4 == 0x3d)) {
+            piVar6 = &(this->fields).pos;
+            *piVar6 = *piVar6 + 1;
+            iVar1 = 0xb;
+          }
+          else {
             iVar1 = 10;
-            goto code_?;
           }
-          if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-          uVar6 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pCVar3,iVar2,(MethodInfo *)0x0);
-          iVar2 = (this->fields).pos;
-          if (uVar6 == 0x25) {
-            iVar1 = 0xc;
-            (this->fields).pos = iVar2 + 1;
-            goto code_?;
-          }
-          pSVar5 = (this->fields).str;
-          if (pSVar5 == (String *)0x0) break;
-          uVar6 = mscorlib.dll::System::String::String_get_Chars(pSVar5,iVar2,(MethodInfo *)0x0);
-          if (uVar6 == 0x21) {
-            pSVar5 = (this->fields).str;
-            if (pSVar5 == (String *)0x0) break;
-            uVar6 = mscorlib.dll::System::String::String_get_Chars
-                              (pSVar5,(this->fields).pos + 1,(MethodInfo *)0x0);
-            if (uVar6 == 0x3d) {
-              piVar9 = &(this->fields).pos;
-              *piVar9 = *piVar9 + 2;
-              iVar1 = 0xd;
-              goto code_?;
-            }
-          }
-          pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-          iVar2 = (this->fields).pos;
-          if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-          pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-          if (iVar2 + 1 < (int)pIVar4) {
-            pSVar5 = (this->fields).str;
-            if (pSVar5 == (String *)0x0) break;
-            uVar6 = mscorlib.dll::System::String::String_get_Chars
-                              (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-            if (uVar6 == 0x26) {
-              pSVar5 = (this->fields).str;
-              if (pSVar5 == (String *)0x0) break;
-              uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                (pSVar5,(this->fields).pos + 1,(MethodInfo *)0x0);
-              if (uVar6 == 0x26) {
-                piVar9 = &(this->fields).pos;
-                *piVar9 = *piVar9 + 2;
-                iVar1 = 0xe;
-                goto code_?;
-              }
-            }
-          }
-          pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-          iVar2 = (this->fields).pos;
-          if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
-          pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-          if (iVar2 + 1 < (int)pIVar4) {
-            pSVar5 = (this->fields).str;
-            if (pSVar5 == (String *)0x0) break;
-            uVar6 = mscorlib.dll::System::String::String_get_Chars
-                              (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-            if (uVar6 == 0x7c) {
-              pSVar5 = (this->fields).str;
-              if (pSVar5 == (String *)0x0) break;
-              uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                (pSVar5,(this->fields).pos + 1,(MethodInfo *)0x0);
-              if (uVar6 == 0x7c) {
-                piVar9 = &(this->fields).pos;
-                *piVar9 = *piVar9 + 2;
-                iVar1 = 0xf;
-                goto code_?;
-              }
-            }
-          }
-          pSVar5 = (this->fields).str;
-          if (pSVar5 != (String *)0x0) {
-            uVar6 = mscorlib.dll::System::String::String_get_Chars
-                              (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-            iVar2 = (this->fields).pos;
-            if (uVar6 == 0x3f) {
-              iVar1 = 0x10;
-              (this->fields).pos = iVar2 + 1;
-              goto code_?;
-            }
-            pSVar5 = (this->fields).str;
-            if (pSVar5 != (String *)0x0) {
-              uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                (pSVar5,iVar2,(MethodInfo *)0x0);
-              iVar2 = (this->fields).pos;
-              if (uVar6 == 0x3a) {
-                iVar1 = 0x11;
-                (this->fields).pos = iVar2 + 1;
-                goto code_?;
-              }
-              pSVar5 = (this->fields).str;
-              if (pSVar5 != (String *)0x0) {
-                uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                  (pSVar5,iVar2,(MethodInfo *)0x0);
-                iVar2 = (this->fields).pos;
-                if (uVar6 == 0x3b) {
-                  iVar1 = 0x12;
-                  (this->fields).pos = iVar2 + 1;
-                  goto code_?;
-                }
-                pSVar5 = (this->fields).str;
-                if (pSVar5 != (String *)0x0) {
-                  uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                    (pSVar5,iVar2,(MethodInfo *)0x0);
-                  iVar2 = (this->fields).pos;
-                  if (uVar6 == 0x28) {
-                    iVar1 = 0x13;
-                    (this->fields).pos = iVar2 + 1;
-                    goto code_?;
-                  }
-                  pSVar5 = (this->fields).str;
-                  if (pSVar5 != (String *)0x0) {
-                    uVar6 = mscorlib.dll::System::String::String_get_Chars
-                                      (pSVar5,iVar2,(MethodInfo *)0x0);
-                    if (uVar6 == 0x29) {
-                      piVar9 = &(this->fields).pos;
-                      *piVar9 = *piVar9 + 1;
-                      iVar1 = 0x14;
-                    }
-                    goto code_?;
-                  }
-                }
-              }
-            }
-          }
-          break;
+          goto code_?;
+        }
+        break;
+      }
+      if (pSVar3 == (String *)0x0) break;
+      uVar4 = mscorlib.dll::System::String::String_get_Chars
+                        (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+      if (uVar4 == 0x25) {
+        piVar6 = &(this->fields).pos;
+        *piVar6 = *piVar6 + 1;
+        iVar1 = 0xc;
+        goto code_?;
+      }
+      pSVar3 = (this->fields).str;
+      if (pSVar3 == (String *)0x0) break;
+      uVar4 = mscorlib.dll::System::String::String_get_Chars
+                        (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+      if (uVar4 == 0x21) {
+        pSVar3 = (this->fields).str;
+        if (pSVar3 == (String *)0x0) break;
+        uVar4 = mscorlib.dll::System::String::String_get_Chars
+                          (pSVar3,(this->fields).pos + 1,(MethodInfo *)0x0);
+        if (uVar4 == 0x3d) {
+          piVar6 = &(this->fields).pos;
+          *piVar6 = *piVar6 + 2;
+          iVar1 = 0xd;
+          goto code_?;
         }
       }
-      iVar1 = 1;
-      goto code_?;
+      pSVar3 = (this->fields).str;
+      if (pSVar3 == (String *)0x0) break;
+      if (((this->fields).pos + 1 < (pSVar3->fields)._stringLength) &&
+         (uVar4 = mscorlib.dll::System::String::String_get_Chars
+                            (pSVar3,(this->fields).pos,(MethodInfo *)0x0), uVar4 == 0x26)) {
+        pSVar3 = (this->fields).str;
+        if (pSVar3 == (String *)0x0) break;
+        uVar4 = mscorlib.dll::System::String::String_get_Chars
+                          (pSVar3,(this->fields).pos + 1,(MethodInfo *)0x0);
+        if (uVar4 == 0x26) {
+          piVar6 = &(this->fields).pos;
+          *piVar6 = *piVar6 + 2;
+          iVar1 = 0xe;
+          goto code_?;
+        }
+      }
+      pSVar3 = (this->fields).str;
+      if (pSVar3 == (String *)0x0) break;
+      if (((this->fields).pos + 1 < (pSVar3->fields)._stringLength) &&
+         (uVar4 = mscorlib.dll::System::String::String_get_Chars
+                            (pSVar3,(this->fields).pos,(MethodInfo *)0x0), uVar4 == 0x7c)) {
+        pSVar3 = (this->fields).str;
+        if (pSVar3 == (String *)0x0) break;
+        uVar4 = mscorlib.dll::System::String::String_get_Chars
+                          (pSVar3,(this->fields).pos + 1,(MethodInfo *)0x0);
+        if (uVar4 == 0x7c) {
+          piVar6 = &(this->fields).pos;
+          *piVar6 = *piVar6 + 2;
+          iVar1 = 0xf;
+          goto code_?;
+        }
+      }
+      pSVar3 = (this->fields).str;
+      if (pSVar3 != (String *)0x0) {
+        uVar4 = mscorlib.dll::System::String::String_get_Chars
+                          (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+        if (uVar4 == 0x3f) {
+          piVar6 = &(this->fields).pos;
+          *piVar6 = *piVar6 + 1;
+          iVar1 = 0x10;
+          goto code_?;
+        }
+        pSVar3 = (this->fields).str;
+        if (pSVar3 != (String *)0x0) {
+          uVar4 = mscorlib.dll::System::String::String_get_Chars
+                            (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+          if (uVar4 == 0x3a) {
+            piVar6 = &(this->fields).pos;
+            *piVar6 = *piVar6 + 1;
+            iVar1 = 0x11;
+            goto code_?;
+          }
+          pSVar3 = (this->fields).str;
+          if (pSVar3 != (String *)0x0) {
+            uVar4 = mscorlib.dll::System::String::String_get_Chars
+                              (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+            if (uVar4 == 0x3b) {
+              piVar6 = &(this->fields).pos;
+              *piVar6 = *piVar6 + 1;
+              iVar1 = 0x12;
+              goto code_?;
+            }
+            pSVar3 = (this->fields).str;
+            if (pSVar3 != (String *)0x0) {
+              uVar4 = mscorlib.dll::System::String::String_get_Chars
+                                (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+              if (uVar4 == 0x28) {
+                piVar6 = &(this->fields).pos;
+                *piVar6 = *piVar6 + 1;
+                iVar1 = 0x13;
+                goto code_?;
+              }
+              pSVar3 = (this->fields).str;
+              if (pSVar3 != (String *)0x0) {
+                uVar4 = mscorlib.dll::System::String::String_get_Chars
+                                  (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+                if (uVar4 == 0x29) {
+                  piVar6 = &(this->fields).pos;
+                  *piVar6 = *piVar6 + 1;
+                  iVar1 = 0x14;
+                }
+                goto code_?;
+              }
+            }
+          }
+        }
+      }
+      break;
     }
-    pSVar5 = (this->fields).str;
-    if (pSVar5 == (String *)0x0) break;
-    uVar6 = mscorlib.dll::System::String::String_get_Chars
-                      (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-    if (uVar6 != 0x20) goto code_?;
-    piVar9 = &(this->fields).pos;
-    *piVar9 = *piVar9 + 1;
+    pSVar3 = (this->fields).str;
+    if (pSVar3 == (String *)0x0) break;
+    uVar4 = mscorlib.dll::System::String::String_get_Chars
+                      (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+    if (uVar4 != 0x20) goto code_?;
+    piVar6 = &(this->fields).pos;
+    *piVar6 = *piVar6 + 1;
     iVar2 = (this->fields).pos;
-    pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
+    pSVar3 = (this->fields).str;
   }
   goto code_?;
   while( true ) {
-    pSVar5 = (this->fields).str;
-    if (pSVar5 == (String *)0x0) break;
-    uVar6 = mscorlib.dll::System::String::String_get_Chars
-                      (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__Char->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Char->_1).cctor_started == 0)) {
-      func_?();
+    pSVar3 = (this->fields).str;
+    if (pSVar3 == (String *)0x0) break;
+    uVar4 = mscorlib.dll::System::String::String_get_Chars
+                      (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+    if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Char);
     }
-    bVar7 = mscorlib.dll::System::Char::Char_IsDigit(uVar6,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    bVar5 = mscorlib.dll::System::Char::Char_IsDigit(uVar4,(MethodInfo *)0x0);
+    if (bVar5 == 0) goto code_?;
     iVar1 = (this->fields).pos;
-    pSVar5 = (this->fields).str;
+    pSVar3 = (this->fields).str;
     (this->fields).pos = iVar1 + 1;
-    if (pSVar5 == (String *)0x0) break;
-    uVar6 = mscorlib.dll::System::String::String_get_Chars(pSVar5,iVar1,(MethodInfo *)0x0);
+    if (pSVar3 == (String *)0x0) break;
+    uVar4 = mscorlib.dll::System::String::String_get_Chars(pSVar3,iVar1,(MethodInfo *)0x0);
+    iVar2 = (uint)uVar4 + iVar2 * 10 + -0x30;
+    pSVar3 = (this->fields).str;
     iVar1 = (this->fields).pos;
-    iVar2 = (uint)uVar6 + iVar2 * 10 + -0x30;
-    pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-    if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
+    if (pSVar3 == (String *)0x0) break;
 code_?:
-    pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-    if ((int)pIVar4 <= iVar1) {
+    if ((pSVar3->fields)._stringLength <= iVar1) {
 code_?:
-      pPVar10 = (this->fields).token;
-      if (pPVar10 != (PluralFormsToken *)0x0) {
-        (pPVar10->fields).number = iVar2;
+      pPVar7 = (this->fields).token;
+      if (pPVar7 != (PluralFormsToken *)0x0) {
+        (pPVar7->fields).number = iVar2;
         iVar1 = 2;
         goto code_?;
       }
@@ -322,73 +286,63 @@ code_?:
   }
   goto code_?;
   while( true ) {
-    pSVar5 = (this->fields).str;
-    if (pSVar5 == (String *)0x0) break;
-    uVar6 = mscorlib.dll::System::String::String_get_Chars
-                      (pSVar5,(this->fields).pos,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__System__Char->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__System__Char->_1).cctor_started == 0)) {
-      func_?();
+    pSVar3 = (this->fields).str;
+    if (pSVar3 == (String *)0x0) break;
+    uVar4 = mscorlib.dll::System::String::String_get_Chars
+                      (pSVar3,(this->fields).pos,(MethodInfo *)0x0);
+    if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Char);
     }
-    bVar7 = mscorlib.dll::System::Char::Char_IsLetterOrDigit(uVar6,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
-    piVar9 = &(this->fields).pos;
-    *piVar9 = *piVar9 + 1;
-    pCVar3 = (Collection_1_VoxelHit_ *)(this->fields).str;
-    iVar8 = (this->fields).pos;
-    if (pCVar3 == (Collection_1_VoxelHit_ *)0x0) break;
+    bVar5 = mscorlib.dll::System::Char::Char_IsLetterOrDigit(uVar4,(MethodInfo *)0x0);
+    if (bVar5 == 0) goto code_?;
+    piVar6 = &(this->fields).pos;
+    *piVar6 = *piVar6 + 1;
+    pSVar3 = (this->fields).str;
+    iVar2 = (this->fields).pos;
+    if (pSVar3 == (String *)0x0) break;
 code_?:
-    pIVar4 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items(pCVar3,(MethodInfo *)0x0);
-    if ((int)pIVar4 <= iVar8) {
+    if ((pSVar3->fields)._stringLength <= iVar2) {
 code_?:
-      iVar8 = (this->fields).pos - iVar2;
-      if (iVar8 == 1) {
-        pSVar5 = (this->fields).str;
-        if (pSVar5 != (String *)0x0) {
-          uVar6 = mscorlib.dll::System::String::String_get_Chars(pSVar5,iVar2,(MethodInfo *)0x0);
-          if (uVar6 == 0x6e) {
+      iVar2 = (this->fields).pos - startIndex;
+      if (iVar2 == 1) {
+        pSVar3 = (this->fields).str;
+        if (pSVar3 != (String *)0x0) {
+          uVar4 = mscorlib.dll::System::String::String_get_Chars
+                            (pSVar3,startIndex,(MethodInfo *)0x0);
+          if (uVar4 == 0x6e) {
             iVar1 = 3;
           }
           goto code_?;
         }
       }
-      else if (iVar8 == 6) {
-        pSVar5 = (this->fields).str;
-        if (pSVar5 != (String *)0x0) {
-          pSVar5 = mscorlib.dll::System::String::String_Substring_1
-                             (pSVar5,iVar2,6,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          bVar7 = mscorlib.dll::System::String::String_op_Equality
-                            (pSVar5,StringLiteral_plural,(MethodInfo *)0x0);
-          if (bVar7 != 0) {
+      else if (iVar2 == 6) {
+        pSVar3 = (this->fields).str;
+        if (pSVar3 != (String *)0x0) {
+          pSVar3 = mscorlib.dll::System::String::String_Substring_1
+                             (pSVar3,startIndex,6,(MethodInfo *)0x0);
+          bVar5 = mscorlib.dll::System::String::String_op_Equality
+                            (pSVar3,StringLiteral_plural,(MethodInfo *)0x0);
+          if (bVar5 != 0) {
             iVar1 = 4;
           }
           goto code_?;
         }
       }
       else {
-        if (iVar8 != 8) goto code_?;
-        pSVar5 = (this->fields).str;
-        if (pSVar5 != (String *)0x0) {
-          pSVar5 = mscorlib.dll::System::String::String_Substring_1
-                             (pSVar5,iVar2,8,(MethodInfo *)0x0);
-          if ((((uint)(TypeInfo__System__String->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__System__String->_1).cctor_started == 0)) {
-            func_?(TypeInfo__System__String);
-          }
-          bVar7 = mscorlib.dll::System::String::String_op_Equality
-                            (pSVar5,StringLiteral_nplurals,(MethodInfo *)0x0);
-          if (bVar7 != 0) {
+        if (iVar2 != 8) goto code_?;
+        pSVar3 = (this->fields).str;
+        if (pSVar3 != (String *)0x0) {
+          pSVar3 = mscorlib.dll::System::String::String_Substring_1
+                             (pSVar3,startIndex,8,(MethodInfo *)0x0);
+          bVar5 = mscorlib.dll::System::String::String_op_Equality
+                            (pSVar3,StringLiteral_nplurals,(MethodInfo *)0x0);
+          if (bVar5 != 0) {
             iVar1 = 5;
           }
 code_?:
-          pPVar10 = (this->fields).token;
-          if (pPVar10 != (PluralFormsToken *)0x0) {
-            (pPVar10->fields).type = iVar1;
+          pPVar7 = (this->fields).token;
+          if (pPVar7 != (PluralFormsToken *)0x0) {
+            (pPVar7->fields).type = iVar1;
             return iVar1 != 0;
           }
         }
@@ -397,10 +351,10 @@ code_?:
     }
   }
 code_?:
-  func_?(0);
-  pcVar11 = (code *)swi(3);
-  bVar7 = (*pcVar11)();
-  return bVar7;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  bVar5 = (*pcVar8)();
+  return bVar5;
 }
 
 
@@ -411,16 +365,25 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsScanner::PluralFormsScanner__
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).str = str;
-  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
-  this_00 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(this_00,0.0,(MethodInfo *)method_00);
-  (this->fields).token = (PluralFormsToken *)this_00;
-  PluralFormsScanner_NextToken(this,(MethodInfo *)0x0);
+  func_?(&this->fields,str);
+  value = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
+  if (value != (PluralFormsToken *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EBP);
+    (this->fields).token = value;
+    func_?(&(this->fields).token,value);
+    PluralFormsScanner_NextToken(this,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

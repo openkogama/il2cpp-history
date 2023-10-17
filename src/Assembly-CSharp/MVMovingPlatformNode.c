@@ -7,11 +7,12 @@ bool Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_Delete
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__MVMovingPlatformGroup);
+    func_?(&StringLiteral_Delete);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
@@ -20,31 +21,22 @@ bool Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_Delete
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (WOCM,(this->fields)._._.groupId,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObject *)0x0) {
-      pMVar2 = pMVar1->klass;
-      bVar3 = (TypeInfo__MVMovingPlatformGroup->_1).naturalAligment;
-      if (((pMVar2->_1).naturalAligment < bVar3) ||
-         ((MVMovingPlatformGroup__Class *)(pMVar2->_1).typeHierarchy[bVar3 - 1] !=
+      if (((TypeInfo__MVMovingPlatformGroup->_1).typeHierarchyDepth <=
+           (pMVar1->klass->_1).typeHierarchyDepth) &&
+         ((MVMovingPlatformGroup__Class *)
+          (pMVar1->klass->_1).typeHierarchy
+          [(TypeInfo__MVMovingPlatformGroup->_1).typeHierarchyDepth - 1] ==
           TypeInfo__MVMovingPlatformGroup)) {
-        bVar4 = false;
-      }
-      else {
-        bVar4 = true;
-      }
-      pMVar5 = (MVWorldObject *)0x0;
-      if (bVar4) {
-        pMVar5 = pMVar1;
-      }
-      if (pMVar5 != (MVWorldObject *)0x0) {
-        bVar6 = (*(code *)pMVar2[2]._0.byval_arg.data)(pMVar1,WOCM);
-        return bVar6;
+        bVar2 = (**(code **)&pMVar1->klass[2]._0.byval_arg.attrs)(pMVar1,WOCM);
+        return bVar2;
       }
     }
     return 1;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar6 = (*pcVar7)();
-  return bVar6;
+  pcVar3 = (code *)swi(3);
+  bVar2 = (*pcVar3)();
+  return bVar2;
 }
 
 
@@ -55,38 +47,40 @@ Bounds * Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_GetLoca
                    BoundsContext__Enum boundsContext,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-  }
-  this_00 = PrefabPool::PrefabPool_get_MVNegatePrefab((PrefabPool *)this,(MethodInfo *)0x0);
-  if (this_00 != (ObjectPrefab *)0x0) {
+  (__return_storage_ptr__->m_Center).x = 0.0;
+  (__return_storage_ptr__->m_Center).y = 0.0;
+  (__return_storage_ptr__->m_Center).z = 0.0;
+  (__return_storage_ptr__->m_Extents).x = 0.0;
+  (__return_storage_ptr__->m_Extents).y = 0.0;
+  (__return_storage_ptr__->m_Extents).z = 0.0;
+  this_00 = (this->fields)._.collider;
+  if (this_00 != (Collider *)0x0) {
     pBVar1 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                       (&BStack_2,(Collider *)this_00,(MethodInfo *)0x0);
-    fVar3 = (pBVar1->m_Center).x;
-    if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
+                       ((Bounds *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
+    fVar2 = (pBVar1->m_Center).y;
+    fVar3 = (pBVar1->m_Center).z;
+    fVar4 = (pBVar1->m_Extents).x;
+    fVar5 = (pBVar1->m_Extents).y;
+    fVar6 = (pBVar1->m_Extents).z;
+    (__return_storage_ptr__->m_Center).x = (pBVar1->m_Center).x;
+    (__return_storage_ptr__->m_Center).y = fVar2;
+    (__return_storage_ptr__->m_Center).z = fVar3;
+    (__return_storage_ptr__->m_Extents).x = fVar4;
+    (__return_storage_ptr__->m_Extents).y = fVar5;
+    (__return_storage_ptr__->m_Extents).z = fVar6;
+    if (cRam_? == '\0') {
       func_?();
+      cRam_? = '\x01';
     }
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_zero
-                       (&BStack_2.m_Extents,(MethodInfo *)0x0);
-    fVar5 = pVVar4->x;
-    uVar6 = pVVar4->y;
-    fVar7 = pVVar4->z;
-    BStack_2.m_Center.x = 0.0;
-    puVar8 = &UNK_?;
-    func_?();
-    (__return_storage_ptr__->m_Center).x = fVar3;
-    (__return_storage_ptr__->m_Center).y = (float)puVar8;
-    (__return_storage_ptr__->m_Center).z = (float)&stack0xffffffcc;
-    (__return_storage_ptr__->m_Extents).x = fVar5;
-    (__return_storage_ptr__->m_Extents).y = (float)uVar6;
-    (__return_storage_ptr__->m_Extents).z = fVar7;
+    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Particle::
+    ParticleSystem_Particle_set_position
+              ((ParticleSystem_Particle *)__return_storage_ptr__,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
     return __return_storage_ptr__;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  pBVar1 = (Bounds *)(*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  pBVar1 = (Bounds *)(*pcVar7)();
   return pBVar1;
 }
 
@@ -100,45 +94,33 @@ void Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__MVWorldObjectClient);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__PrefabPool->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__PrefabPool->_1).cctor_started == 0)) {
-    func_?(TypeInfo__PrefabPool);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
   }
-  this_00 = PrefabPool::PrefabPool_get_Instance((MethodInfo *)0x0);
-  if (this_00 != (PrefabPool *)0x0) {
-    prefabObject = MVCubeModelBase::MVCubeModelBase_get_ModelingConstraintBuilder
-                             ((MVCubeModelBase *)this_00,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVWorldObjectClient->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVWorldObjectClient->_1).cctor_started == 0)) {
-      func_?();
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    prefabObject = (pPVar1->fields).mvMovingPlatformNodePrefab;
+    if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVWorldObjectClient);
     }
     MVWorldObjectClient::MVWorldObjectClient__ctor
-              ((MVWorldObjectClient *)this,data,(GameObject *)prefabObject,worldObjects,
-               (MethodInfo *)0x0);
-    iVar1 = (this->fields)._.interactionFlags;
-    *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) =
-         *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
-    *(uint *)&(this->fields)._.interactionFlags = (uint)iVar1 & 0xfffffc7f | 9;
+              ((MVWorldObjectClient *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+    piVar2 = &(this->fields)._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 & 0xfffffc7f;
+    uVar3 = *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
+    piVar2 = &(this->fields)._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 9;
+    *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) = uVar3;
     return;
   }
-  func_?(0);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
-}
-
-
-/* MVMovingPlatformNode get_Next() */
-
-MVMovingPlatformNode *
-Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_get_Next
-          (MVMovingPlatformNode *this,MethodInfo *method)
-
-{
-  return (this->fields)._Next_k__BackingField;
 }
 
 
@@ -149,6 +131,7 @@ void Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_set_Next
 
 {
   (this->fields)._Next_k__BackingField = value;
+  func_?(&(this->fields)._Next_k__BackingField,value);
   return;
 }
 

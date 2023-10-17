@@ -6,24 +6,37 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonRegex::BsonRegex__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonString);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
-  pBVar1 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  pSVar2 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar2,0.0,(MethodInfo *)pBVar1);
-  (pSVar2->fields).originalScale.x = (float)pattern;
-  *(undefined1 *)&(pSVar2->fields).originalScale.y = 2;
-  *(undefined1 *)&(pSVar2->fields).target = 0;
-  (this->fields)._Pattern_k__BackingField = (BsonString *)pSVar2;
-  pBVar1 = TypeInfo__Newtonsoft__Json__Bson__BsonString;
-  pSVar2 = (ScaleAnimationBase *)func_?();
-  ScaleAnimationBase::ScaleAnimationBase_Play(pSVar2,0.0,(MethodInfo *)pBVar1);
-  (pSVar2->fields).originalScale.x = (float)options;
-  *(undefined1 *)&(pSVar2->fields).originalScale.y = 2;
-  *(undefined1 *)&(pSVar2->fields).target = 0;
-  (this->fields)._Options_k__BackingField = (BsonString *)pSVar2;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  pBVar1 = (BsonString *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+  if (pBVar1 != (BsonString *)0x0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)pBVar1,ExceptionArgument__Enum_obj,unaff_EBP);
+    (pBVar1->fields)._._value = (Object *)pattern;
+    func_?(&(pBVar1->fields)._._value,pattern);
+    (pBVar1->fields)._._type = 2;
+    (pBVar1->fields)._IncludeLength_k__BackingField = 0;
+    (this->fields)._Pattern_k__BackingField = pBVar1;
+    func_?(&(this->fields)._Pattern_k__BackingField,pBVar1);
+    pBVar1 = (BsonString *)func_?(TypeInfo__Newtonsoft__Json__Bson__BsonString);
+    if (pBVar1 != (BsonString *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)pBVar1,ExceptionArgument__Enum_obj,unaff_EBP);
+      (pBVar1->fields)._._value = (Object *)options;
+      func_?(&(pBVar1->fields)._._value,options);
+      (pBVar1->fields)._._type = 2;
+      (pBVar1->fields)._IncludeLength_k__BackingField = 0;
+      (this->fields)._Options_k__BackingField = pBVar1;
+      func_?(&(this->fields)._Options_k__BackingField,pBVar1);
+      return;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

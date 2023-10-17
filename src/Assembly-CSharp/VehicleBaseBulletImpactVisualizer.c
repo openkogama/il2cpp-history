@@ -8,137 +8,109 @@ void Assembly-CSharp.dll::VehicleBaseBulletImpactVisualizer::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__ParticleSystem__Burst);
     cRam_? = '\x01';
   }
-  pVVar1 = InputToPlayerMovementAndroid::InputToPlayerMovementAndroid_get_Direction
-                     ((Vector3 *)&stack0xffffffe4,
-                      (InputToPlayerMovementAndroid *)((int)&voxelHit.interactionFlags + 4),
-                      (MethodInfo *)0x0);
-  uVar2._0_4_ = pVVar1->x;
-  uVar2._4_4_ = pVVar1->y;
-  fVar3 = pVVar1->z;
-  if ((((uint)(TypeInfo__UnityEngine__Vector3->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Vector3->_1).cctor_started == 0)) {
-    func_?(TypeInfo__UnityEngine__Vector3);
-  }
-  a.z = fVar3;
-  a.x = (float)(int)uVar2;
-  a.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_op_UnaryNegation
-                     ((Vector3 *)&stack0xffffffe4,a,(MethodInfo *)0x0);
-  uVar4._0_4_ = pVVar1->x;
-  uVar4._4_4_ = pVVar1->y;
-  fVar3 = pVVar1->z;
-  if ((((uint)(TypeInfo__UnityEngine__Quaternion->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Quaternion->_1).cctor_started == 0)) {
-    pQVar5 = TypeInfo__UnityEngine__Quaternion;
-    func_?();
-    uVar4 = CONCAT44(uVar4._4_4_,pQVar5);
-  }
-  forward.z = fVar3;
-  forward.x = (float)(int)uVar4;
-  forward.y = (float)(int)((ulonglong)uVar4 >> 0x20);
-  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                     ((Quaternion *)&stack0xffffffe0,forward,(MethodInfo *)0x0);
+  pRVar1 = mscorlib.dll::System::Collections::Generic::
+           Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
+           RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+           Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
+                     ((Regex_CachedCodeEntryKey *)&stack0xffffffe0,
+                      (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                       *)((int)&voxelHit.interactionFlags + 4),(MethodInfo *)0x0);
+  uVar2 = pRVar1->_options;
+  uVar3 = pRVar1->_cultureKey;
+  forward.y = (float)(uVar3 ^ 
+                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+  forward.x = (float)(uVar2 ^ 
+                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+  forward.z = (float)((uint)pRVar1->_pattern ^
+                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                     ((Quaternion *)&stack0xffffffdc,forward,(MethodInfo *)0x0);
   position.y = voxelHit.point.x;
-  position.x = (float)in_stack_7;
+  position.x = (float)in_stack_5;
   position.z = voxelHit.point.y;
-  voxelHit.cubePos._0_4_ =
-       OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
-                 (PoolEnums__Enum_VehicleBulletImpact,position,*pQVar6,(MethodInfo *)0x0);
   voxelHit.interactionFlags._0_4_ =
-       (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-       voxelHit.cubePos._0_4_;
-  if ((Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-      voxelHit.cubePos._0_4_ ==
-      (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_ *)
-      0x0) {
-code_?:
-    voxelHit.cubePos.z = 0;
-    voxelHit._30_2_ = 0;
-    voxelHit.cubePos._0_4_ = &UNK_?;
-    func_?();
-code_?:
-    voxelHit.cubePos.x = 0;
-    voxelHit.cubePos.y = 0;
-    voxelHit.normal.z = (float)&UNK_?;
-    voxelHit.normal.z = (float)func_?();
-    voxelHit.normal.y = (float)&UNK_?;
-    func_?();
-  }
-  else {
+       OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
+                 (PoolEnums__Enum_VehicleBulletImpact,position,*pQVar4,
+                  (Nullable_1_UnityEngine_Color_)ZEXT820(0),(MethodInfo *)0x0);
+  if ((ParticleSystem *)voxelHit.interactionFlags != (ParticleSystem *)0x0) {
     voxelHit.cubePos.z = 0;
     voxelHit._30_2_ = 0;
     voxelHit.normal.z = (float)&UNK_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Experimental
-    ::TerrainAPI::TerrainUtility+TerrainMap]::
-    Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__System_Collections_ICollection_get_SyncRoot
-              ((Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                *)voxelHit.cubePos._0_4_,(MethodInfo *)0x0);
+    voxelHit.cubePos._0_4_ = (ParticleSystem *)voxelHit.interactionFlags;
+    pCStack_6 = (Cube__Class *)
+                UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                ParticleSystem_get_collision
+                          ((ParticleSystem *)voxelHit.interactionFlags,(MethodInfo *)0x0);
     voxelHit.cubePos.z = 1;
     voxelHit._30_2_ = 0;
     voxelHit.cubePos._0_4_ = TypeInfo__UnityEngine__ParticleSystem__Burst;
     voxelHit.normal.z = (float)&UNK_?;
-    fVar3 = (float)func_?();
-    if (fVar3 == 0.0) goto code_?;
-    voxelHit.cubePos.z = 0;
-    voxelHit._30_2_ = 0;
-    if (*(int *)((int)fVar3 + 0xc) == 0) goto code_?;
-    fVar8 = (float)((int)fVar3 + 0x10);
-    voxelHit.cubePos.x = 0;
-    voxelHit.cubePos.y = 0;
-    voxelHit.normal.y = (float)&UNK_?;
-    voxelHit.normal.z = fVar8;
-    func_?();
-    voxelHit.cubePos.z = 0;
-    voxelHit._30_2_ = 0;
-    if (*(int *)((int)fVar3 + 0xc) != 0) {
-      voxelHit.cubePos._0_4_ = (int)(fRam0000000c * (float)shooterActorNumber) & 0xffff;
-      voxelHit.normal.y = (float)&UNK_?;
-      voxelHit.normal.z = fVar8;
-      func_?();
-      voxelHit.cubePos.z = 0;
-      voxelHit._30_2_ = 0;
-      if (*(int *)((int)fVar3 + 0xc) != 0) {
-        voxelHit.cubePos._0_4_ = (int)(fRam0000000c * (float)shooterActorNumber) & 0xffff;
+    bursts = (ParticleSystem_Burst__Array *)func_?();
+    if (bursts != (ParticleSystem_Burst__Array *)0x0) {
+      if (bursts->max_length != 0) {
+        voxelHit.cubePos.z = 0;
+        voxelHit._30_2_ = 0;
+        voxelHit.normal.z = (float)bursts->vector;
+        voxelHit.cubePos.x = 0;
+        voxelHit.cubePos.y = 0;
         voxelHit.normal.y = (float)&UNK_?;
-        voxelHit.normal.z = fVar8;
-        func_?();
-        voxelHit.normal.y = 0.0;
-        voxelHit.point.z = (float)&stack0xfffffff8;
-        voxelHit.point.y = (float)&UNK_?;
-        voxelHit.normal.x = fVar3;
-        func_?();
-        voxelHit.point.y = 0.0;
-        voxelHit.point.x =
-             (float)(Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                     *)voxelHit.interactionFlags;
-        in_stack_7 = &UNK_?;
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                  ((ParticleSystem *)
-                   (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                    *)voxelHit.interactionFlags,(MethodInfo *)0x0);
-        return;
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
+        ParticleSystem_Burst_set_time
+                  ((ParticleSystem_Burst *)voxelHit.normal.z,0.0,(MethodInfo *)0x0);
+        if (bursts->max_length != 0) {
+          voxelHit.woId = 0;
+          voxelHit._36_2_ =
+               SUB42((int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage),0);
+          voxelHit._38_2_ = 0;
+          voxelHit.face = (int32_t)bursts->vector;
+          voxelHit._28_4_ = &UNK_?;
+          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
+          ParticleSystem_Burst_set_minCount
+                    ((ParticleSystem_Burst *)voxelHit.face,voxelHit._36_2_,(MethodInfo *)0x0);
+          if (bursts->max_length != 0) {
+            voxelHit.collider = (Collider *)0x0;
+            voxelHit.distance._0_2_ =
+                 (int16_t)(int)((this->fields).particlesPerPointOfDamage * (float)shooterActorNumber
+                               );
+            voxelHit.distance._2_2_ = 0;
+            voxelHit.cube = (Cube *)bursts->vector;
+            voxelHit.woId = (int32_t)&UNK_?;
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
+            ParticleSystem_Burst_set_maxCount
+                      ((ParticleSystem_Burst *)voxelHit.cube,voxelHit.distance._0_2_,
+                       (MethodInfo *)0x0);
+            voxelHit.collider = (Collider *)0x0;
+            voxelHit.cube = (Cube *)&pCStack_6;
+            voxelHit.distance._0_2_ = (int16_t)bursts;
+            voxelHit.distance._2_2_ = (undefined2)((uint)bursts >> 0x10);
+            voxelHit.woId = (int32_t)&UNK_?;
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+            ParticleSystem_EmissionModule_SetBursts
+                      ((ParticleSystem_EmissionModule *)voxelHit.cube,bursts,(MethodInfo *)0x0);
+            voxelHit.collider = (Collider *)0x0;
+            voxelHit.distance._0_2_ = (int16_t)(ParticleSystem *)voxelHit.interactionFlags;
+            voxelHit.distance._2_2_ =
+                 (undefined2)((uint)(ParticleSystem *)voxelHit.interactionFlags >> 0x10);
+            voxelHit.cube = (Cube *)&UNK_?;
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
+                      ((ParticleSystem *)voxelHit.interactionFlags,(MethodInfo *)0x0);
+            return;
+          }
+        }
       }
       goto code_?;
     }
   }
-  voxelHit.cubePos.x = 0;
-  voxelHit.cubePos.y = 0;
-  voxelHit.normal.z = (float)&UNK_?;
-  voxelHit.normal.z = (float)func_?();
-  voxelHit.normal.y = (float)&UNK_?;
+  voxelHit._28_4_ = &UNK_?;
   func_?();
 code_?:
-  voxelHit.cubePos.x = 0;
-  voxelHit.cubePos.y = 0;
-  voxelHit.normal.z = (float)&UNK_?;
-  voxelHit.normal.z = (float)func_?();
-  voxelHit.normal.y = (float)&UNK_?;
+  voxelHit._28_4_ = &UNK_?;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -151,11 +123,10 @@ void Assembly-CSharp.dll::VehicleBaseBulletImpactVisualizer::VehicleBaseBulletIm
 {
   (this->fields).particlesPerPointOfDamage = 1.0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__UnityEngine__Object->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__UnityEngine__Object->_1).cctor_started == 0)) {
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;

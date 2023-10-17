@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class SoundViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -36,16 +36,16 @@ public class SoundViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _ChangeUrl_c__AnonStorey0
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
-		internal string url;
+		public string url;
 
 		// Constructors
-		public _ChangeUrl_c__AnonStorey0();
+		public __c__DisplayClass17_0();
 
 		// Methods
-		internal void __m__0(IHandleSettingChanged handler, BaseEventData data);
+		internal void _ChangeUrl_b__0(IHandleSettingChanged handler, BaseEventData data);
 	}
 
 	// Constructors

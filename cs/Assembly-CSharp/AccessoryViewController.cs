@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class AccessoryViewController : MonoBehaviour, IAccessoryClicked, IBundleController
 {
@@ -33,8 +33,23 @@ public class AccessoryViewController : MonoBehaviour, IAccessoryClicked, IBundle
 	private GameObject playerGoldGameObject;
 	private Color prevLight;
 	private bool wasEnabled;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static ExecuteEvents.EventFunction<IAccessoryInventoryControl> __f__am_cache0;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IAccessoryInventoryControl> __9__18_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _PurchasedBundle_b__18_0(IAccessoryInventoryControl x, BaseEventData y);
+	}
 
 	// Constructors
 	public AccessoryViewController();
@@ -49,7 +64,5 @@ public class AccessoryViewController : MonoBehaviour, IAccessoryClicked, IBundle
 	private void HideScreens();
 	public void PurchasedBundle();
 	public void DisplayCategoryFeatures(AccessoryCategoryClient category);
-	[CompilerGenerated]
-	private static void _PurchasedBundle_m__0(IAccessoryInventoryControl x, BaseEventData y);
 }
 

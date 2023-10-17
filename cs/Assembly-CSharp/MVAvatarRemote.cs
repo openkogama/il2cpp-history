@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemote
 {
@@ -17,7 +17,6 @@ public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemot
 	private CapsuleCollider triggerCollider;
 	private AvatarRemoteMovementCalculator avatarRemoteMovementCalculator;
 	[CompilerGenerated]
-	[DebuggerBrowsable]
 	private bool _IsInVehicle_k__BackingField;
 	private const float initialCullingRadius = 3.5f;
 	private float impulseMagnitudeFactor;
@@ -35,18 +34,18 @@ public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemot
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _InitializeHealth_c__AnonStorey0
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
-		internal HealthBar healthBar;
-		internal MVAvatarRemote _this;
+		public MVAvatarRemote __4__this;
+		public HealthBar healthBar;
 
 		// Constructors
-		public _InitializeHealth_c__AnonStorey0();
+		public __c__DisplayClass18_0();
 
 		// Methods
-		internal void __m__0(object health);
-		internal void __m__1(object maxHealth);
+		internal void _InitializeHealth_b__0(object health);
+		internal void _InitializeHealth_b__1(object maxHealth);
 	}
 
 	// Constructors
@@ -54,6 +53,8 @@ public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemot
 
 	// Methods
 	public override void Initialize();
+	private void OnResume();
+	private void OnObserve();
 	private void InitAvatarState();
 	public override void Destroy();
 	private void InitializeHealth();
@@ -62,6 +63,8 @@ public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemot
 	protected override void OnAnimationChange(object newAnimationData);
 	private void triggerBoxEvents_TriggerEnter(object sender, TriggerEventArgs e);
 	protected override void AvatarStateChangedHandler(object a);
+	private void ShowBody();
+	private void HideBody();
 	protected override void AttachBody(MVBody newBody);
 	public override void OnEnterVehicle();
 	public override void OnLeaveVehicle();
@@ -69,6 +72,6 @@ public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemot
 	public void Activate(int idFrom, Vector3 position, Quaternion rotation);
 	public void DeActivate(int idTo);
 	[CompilerGenerated]
-	private void _InitializeShield_m__0(object shield);
+	private void _InitializeShield_b__19_0(object shield);
 }
 

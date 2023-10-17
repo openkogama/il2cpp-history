@@ -7,56 +7,47 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_AddRequestsToActiveRe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__get_Count__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Dequeue__);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__get_Count__);
     cRam_? = '\x01';
   }
   while( true ) {
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__AsyncWWWManager);
     }
     pHVar1 = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
     if (pHVar1 == (HashSet_1_AsyncWebRequest_ *)0x0) break;
-    JVar2 = System.Core.dll::System::Linq::
-            Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-            JsonSchemaType]::
-            Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                      ((Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-                        *)pHVar1,
-                       MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__get_Count__
-                      );
-    if (maxRequestForQueue <= (int)JVar2) {
+    if (maxRequestForQueue <= (pHVar1->fields)._count) {
       return;
     }
     if (requestQueue == (Queue_1_AsyncWebRequest_ *)0x0) break;
-    pIVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-             KogamaSettingNumericBase_1_System_Single__get_KogamaSetting
-                       ((KogamaSettingNumericBase_1_System_Single_ *)requestQueue,
-                        MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__get_Count__
-                       );
-    if ((int)pIVar3 < 1) {
+    if ((requestQueue->fields)._size < 1) {
       return;
     }
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__AsyncWWWManager);
     }
     pHVar1 = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-    item = System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-           Queue_1_SmoothPhysicsMovement_Package__Dequeue
-                     ((Queue_1_SmoothPhysicsMovement_Package_ *)requestQueue,
+    item = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+           Queue_1_System_Object__Dequeue
+                     ((Queue_1_System_Object_ *)requestQueue,
                       MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Dequeue__);
     if (pHVar1 == (HashSet_1_AsyncWebRequest_ *)0x0) break;
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-    UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-              ((HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)pHVar1,(UnityWebRequest *)item,
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+    HashSet_1_System_Object__Add
+              ((HashSet_1_System_Object_ *)pHVar1,item,
                MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
               );
   }
-  func_?(0);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -66,195 +57,166 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_AddRequestsToActiveRe
 void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_BackgroundUpdate(MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
+  uStack_1._0_1_ = 0xff;
+  uStack_1._1_3_ = 0xffffff;
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff90;
-  puVar5 = &stack0xffffff90;
+  puStack_4 = &stack0xffffffa4;
+  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Remove_AsyncWebRequest_
+                   );
+    func_?(&TypeInfo__System__IDisposable);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  iStack_6 = 0;
-  CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_7.monitor = (MonitorData *)0x0;
-  CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_7.fields.syncRoot = (Object *)0x0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_9 = 0xffffffff;
-  piStack_10 = (int *)&stack0xffffff90;
-  puStack_4 = &stack0xffffff90;
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (piStack_10 = (int *)&stack0xffffff90, puStack_4 = &stack0xffffff90,
-     (TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    piStack_10 = (int *)&stack0xffffff90;
-    puStack_4 = &stack0xffffff90;
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AsyncWWWManager);
   }
-  pDVar11 = TypeInfo__AsyncWWWManager->static_fields->requests;
-  if (pDVar11 == (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
-code_?:
-    iVar12 = func_?(0);
-    pAVar13 = unaff_ESI;
-  }
-  else {
-    pQVar14 = (Queue_1_AsyncWebRequest_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::
-             Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                       ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar11,
-                        WWWRequestPriority__Enum_ExecuteIgnoreAllConstraints,
+  pDVar6 = TypeInfo__AsyncWWWManager->static_fields->requests;
+  if (pDVar6 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
+    pQVar7 = (Queue_1_AsyncWebRequest_ *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,2,
                         MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
                        );
-    AsyncWWWManager_AddRequestsToActiveRequests(pQVar14,0x7fffffff,(MethodInfo *)0x0);
-    pDVar11 = TypeInfo__AsyncWWWManager->static_fields->requests;
-    if (pDVar11 == (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)
-    goto code_?;
-    pQVar14 = (Queue_1_AsyncWebRequest_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::
-             Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                       ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar11,
-                        WWWRequestPriority__Enum_ExecuteWhileSyncronizing,
-                        MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
-                       );
-    AsyncWWWManager_AddRequestsToActiveRequests(pQVar14,4,(MethodInfo *)0x0);
-    this = TypeInfo__AsyncWWWManager->static_fields->tempHashSet;
-    uStack_1 = 0;
-    pAStack_15 = this;
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      CStack_7.klass =
-           (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)
-           TypeInfo__AsyncWWWManager;
-      CStack_8.fields.syncRoot = (Object *)&UNK_?;
-      func_?();
-    }
-    this_00 = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-    if (this_00 == (HashSet_1_AsyncWebRequest_ *)0x0) goto code_?;
-    pHVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-             FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                        &stack0xffffff9c,
-                        (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)this_00,
-                        MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
-                       );
-    CStack_7.klass =
-         (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar16->hashset;
-    CStack_7.monitor = (MonitorData *)pHVar16->next;
-    CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar16->stamp;
-    CStack_7.fields.syncRoot = (Object *)pHVar16->current;
-    uStack_1 = CONCAT31(uStack_1._1_3_,1);
-    while (cVar17 = func_?(&CStack_7,
-                                   MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
-                                  ), cVar17 != '\0') {
-      unaff_ESI = (AsyncWebRequest *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            (&CStack_7,
-                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
-                            );
-      if (unaff_ESI == (AsyncWebRequest *)0x0) goto code_?;
-      if (((unaff_ESI->fields).requestPriority != 0) &&
-         (bVar18 = AsyncWebRequest::AsyncWebRequest_Update(unaff_ESI,(MethodInfo *)0x0), bVar18 != 0))
-      {
-        if (this == (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0)
-        goto code_?;
-        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-        UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                  ((HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)this,
-                   (UnityWebRequest *)unaff_ESI,
-                   MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
-                  );
+    AsyncWWWManager_AddRequestsToActiveRequests(pQVar7,0x7fffffff,(MethodInfo *)0x0);
+    pDVar6 = TypeInfo__AsyncWWWManager->static_fields->requests;
+    if (pDVar6 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
+      pQVar7 = (Queue_1_AsyncWebRequest_ *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,1,
+                          MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                         );
+      AsyncWWWManager_AddRequestsToActiveRequests(pQVar7,4,(MethodInfo *)0x0);
+      ppAStack_8 = &pAStack_9;
+      pAStack_10 = (AsyncWWWManager__Class *)0x0;
+      pAStack_9 = TypeInfo__AsyncWWWManager->static_fields->tempHashSet;
+      uStack_1._0_1_ = 1;
+      uStack_1._1_3_ = 0;
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        pAStack_10 = TypeInfo__AsyncWWWManager;
+        HStack_11._current = (Object *)&UNK_?;
+        func_?();
       }
-    }
-    unaff_ESI = (AsyncWebRequest *)0x0;
-    uStack_9 = 0;
-    uStack_1 = uStack_1 & 0xffffff00;
-    *piStack_10 = 0x81;
-    func_?(&CStack_7,
-                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
-                   );
-    iVar12 = iStack_6;
-    pAVar13 = unaff_ESI;
-    if (iStack_6 == 0) {
-      if (*piStack_10 == 0x81) {
-        unaff_ESI = (AsyncWebRequest *)0xffffffff;
-        uStack_9 = 0xffffffff;
-      }
-      if (this != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
-        pHVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData
-                 ::FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                           ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                            &stack0xffffff9c,
-                            (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)this,
+      pAVar12 = (AsyncWebRequest *)TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+      if (pAVar12 != (AsyncWebRequest *)0x0) {
+        pHVar13 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                 HashSet_1_System_Object__GetEnumerator
+                           (&HStack_11,(HashSet_1_System_Object_ *)pAVar12,
                             MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
                            );
-        CStack_8.klass =
-             (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar16->hashset;
-        CStack_8.monitor = (MonitorData *)pHVar16->next;
-        CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar16->stamp
-        ;
-        CStack_8.fields.syncRoot = (Object *)pHVar16->current;
-        uStack_1 = CONCAT31(uStack_1._1_3_,3);
-        while (cVar17 = func_?(), cVar17 != '\0') {
-          pMStack_19 = (MVRotator *)
-                       mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json
-                       ::Serialization::JsonProperty]::
-                       Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                 (&CStack_8,
-                                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
-                                 );
-          if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-            func_?(TypeInfo__AsyncWWWManager);
+        this_00 = (AsyncWebRequest *)pHVar13->_current;
+        HStack_11._version = 0;
+        uStack_1._0_1_ = 3;
+        HStack_11._current = (Object *)&stack0xffffffb0;
+        while( true ) {
+          bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                  Object]::HashSet_1_T_Enumerator_System_Object__MoveNext
+                            ((HashSet_1_T_Enumerator_System_Object_ *)&stack0xffffffb0,
+                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                            );
+          if (bVar14 == 0) break;
+          pAStack_15 = this_00;
+          if (this_00 == (AsyncWebRequest *)0x0) goto code_?;
+          if ((this_00->fields).requestPriority != 0) {
+            bVar14 = AsyncWebRequest::AsyncWebRequest_Update(this_00,(MethodInfo *)0x0);
+            if (bVar14 != 0) {
+              if (pAStack_9 == (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0)
+              goto code_?;
+              pAVar12 = pAStack_15;
+              System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+              HashSet_1_System_Object__Add
+                        ((HashSet_1_System_Object_ *)pAStack_9,(Object *)pAStack_15,
+                         MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
+                        );
+            }
           }
-          this_01 = (HashSet_1_MVRotator_ *)TypeInfo__AsyncWWWManager->static_fields->activeRequests
-          ;
-          if (this_01 == (HashSet_1_MVRotator_ *)0x0) goto code_?;
-          System.Core.dll::System::Collections::Generic::HashSet`1[MVRotator]::
-          HashSet_1_MVRotator__Remove
-                    (this_01,pMStack_19,
-                     MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Remove_AsyncWebRequest_
-                    );
         }
-        pAVar13 = (AsyncWebRequest *)((int)&unaff_ESI->klass + 1);
-        uStack_1 = uStack_1 & 0xffffff00;
-        piStack_10[(int)pAVar13] = 0xc1;
-        func_?(&CStack_8,
-                        MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
-                       );
-        iVar12 = iStack_6;
-        if (iStack_6 == 0) {
-          if (((pAVar13 != (AsyncWebRequest *)0xffffffff) && (piStack_10[(int)pAVar13] == 0xc1)) &&
-             (-1 < (int)pAVar13)) {
-            pAVar13 = unaff_ESI;
+        uStack_1._0_1_ = 1;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&stack0xffffffb0,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                   ,(MethodInfo *)pAVar12);
+        uStack_1._0_1_ = 1;
+        if (pAStack_9 != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
+          pHVar13 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                   HashSet_1_System_Object__GetEnumerator
+                             (&HStack_11,(HashSet_1_System_Object_ *)pAStack_9,
+                              MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                             );
+          method_00 = (MethodInfo *)pHVar13->_version;
+          pAVar12 = (AsyncWebRequest *)pHVar13->_current;
+          HStack_11._version = 0;
+          uStack_1._0_1_ = 6;
+          HStack_11._current = (Object *)&stack0xffffffb0;
+          while( true ) {
+            bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                    Object]::HashSet_1_T_Enumerator_System_Object__MoveNext
+                              ((HashSet_1_T_Enumerator_System_Object_ *)&stack0xffffffb0,
+                               MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                              );
+            if (bVar14 == 0) {
+              uStack_1 = CONCAT31(uStack_1._1_3_,1);
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&stack0xffffffb0,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                         ,method_00);
+              uStack_1 = 0xffffffff;
+              if (pAStack_9 != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
+                func_?();
+              }
+              *unaff_FS_OFFSET = uStack_3;
+              return;
+            }
+            pAStack_15 = pAVar12;
+            if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            this = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+            if (this == (HashSet_1_AsyncWebRequest_ *)0x0) break;
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            HashSet_1_System_Object__Remove
+                      ((HashSet_1_System_Object_ *)this,(Object *)pAStack_15,
+                       MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Remove_AsyncWebRequest_
+                      );
           }
-          piStack_10[(int)((int)&pAVar13->klass + 1)] = 0xd3;
-          uStack_1 = 0xffffffff;
-          if (this != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
-            func_?(0,TypeInfo__System__IDisposable,this);
-          }
-          *unaff_FS_OFFSET = uStack_3;
-          return;
         }
-        goto code_?;
       }
-      goto code_?;
     }
   }
-  iVar12 = func_?(iVar12,0,0);
 code_?:
-  func_?(iVar12,0,0);
-  func_?(pAVar13,0,0);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  uVar16 = func_?();
+  uVar16 = func_?(uVar16);
+  func_?(uVar16);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -265,25 +227,25 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_PostResetCleanup(Meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_AsyncWWWManager_quitCallback_is_);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AsyncWWWManager);
   }
   if (TypeInfo__AsyncWWWManager->static_fields->quitCallback != (Action *)0x0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
               ((Object *)StringLiteral_AsyncWWWManager_quitCallback_is_,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     TypeInfo__AsyncWWWManager->static_fields->quitCallback = (Action *)0x0;
+    func_?();
   }
   return;
 }
@@ -295,72 +257,65 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_Quit(MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    in_stack_1 =
+         &MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__get_Count__;
+    func_?();
+    func_?(&StringLiteral_AsyncWWWManager_successfully_han);
+    func_?(&StringLiteral_AsyncWWWManager_failed_to_handle);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__AsyncWWWManager);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   if (TypeInfo__AsyncWWWManager->static_fields->quitCallback == (Action *)0x0) {
     return;
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__AsyncWWWManager);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  this = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-  if (this != (HashSet_1_AsyncWebRequest_ *)0x0) {
-    JVar1 = System.Core.dll::System::Linq::
-            Enumerable+<CreateWhereIterator>c__Iterator1D`1[Newtonsoft::Json::Schema::
-            JsonSchemaType]::
-            Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType__System_Collections_Generic_IEnumerator_TSource__get_Current
-                      ((Enumerable_CreateWhereIterator_c_Iterator1D_1_Newtonsoft_Json_Schema_JsonSchemaType_
-                        *)this,
-                       MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__get_Count__
-                      );
-    if (JVar1 == JsonSchemaType__Enum_None) {
+  pHVar2 = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+  if (pHVar2 != (HashSet_1_AsyncWebRequest_ *)0x0) {
+    if ((pHVar2->fields)._count == 0) {
       message = StringLiteral_AsyncWWWManager_successfully_han;
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
         message = StringLiteral_AsyncWWWManager_successfully_han;
       }
     }
     else {
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      iVar2 = WaitForTicksLocal::WaitForTicksLocal_Diff
+      iVar3 = WaitForTicksLocal::WaitForTicksLocal_Diff
                         (TypeInfo__AsyncWWWManager->static_fields->quitTime,(MethodInfo *)0x0);
-      if (iVar2 < 0x1389) {
+      if (iVar3 < 0x1389) {
         return;
       }
-      message = StringLiteral_AsyncWWWManager_failed_to_handle;
-      if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-        func_?(TypeInfo__UnityEngine__Debug);
-        message = StringLiteral_AsyncWWWManager_failed_to_handle;
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      in_stack_1 = (MethodInfo **)0x0;
+      message = StringLiteral_AsyncWWWManager_failed_to_handle;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0)
-    ;
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AsyncWWWManager);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+              ((Object *)message,(MethodInfo *)in_stack_1);
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    this_00 = (JumpState_OnWallJumpDelegate *)TypeInfo__AsyncWWWManager->static_fields->quitCallback
-    ;
-    if (this_00 != (JumpState_OnWallJumpDelegate *)0x0) {
-      JumpState+OnWallJumpDelegate::JumpState_OnWallJumpDelegate_Invoke(this_00,(MethodInfo *)0x0);
+    pAVar4 = TypeInfo__AsyncWWWManager->static_fields->quitCallback;
+    if (pAVar4 != (Action *)0x0) {
+      (*(pAVar4->fields)._._.invoke_impl)();
       TypeInfo__AsyncWWWManager->static_fields->quitCallback = (Action *)0x0;
+      func_?(&TypeInfo__AsyncWWWManager->static_fields->quitCallback);
       return;
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar5 = func_?(&stack0xfffffff4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -374,144 +329,200 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_Reset(MethodInfo *met
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
+  puStack_4 = &stack0xffffffa8;
+  puVar5 = &stack0xffffffa8;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Values__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Clear__);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__TrimExcess__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Clear__);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__TrimExcess__)
+    ;
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
+                   );
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  CStack_6.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_6.monitor = (MonitorData *)0x0;
-  CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_6.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_7 = 0xffffffff;
-  piStack_8 = (int *)&stack0xffffff94;
-  puStack_4 = &stack0xffffff94;
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (piStack_8 = (int *)&stack0xffffff94, puStack_4 = &stack0xffffff94,
-     (TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    piStack_8 = (int *)&stack0xffffff94;
-    puStack_4 = &stack0xffffff94;
+  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._index = 0;
+  DStack_6._version = 0;
+  DStack_6._currentValue = (Object *)0x0;
+  DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_7._index = 0;
+  DStack_7._version = 0;
+  DStack_7._currentValue = (Object *)0x0;
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AsyncWWWManager);
   }
   TypeInfo__AsyncWWWManager->static_fields->retries = 3;
   TypeInfo__AsyncWWWManager->static_fields->isQuiting = 0;
-  this = TypeInfo__AsyncWWWManager->static_fields->requests;
-  if ((this != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) &&
-     (this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System
-                ::Object]::Dictionary_2_WinningConditionType_System_Object__get_Values
-                          ((Dictionary_2_WinningConditionType_System_Object_ *)this,
-                           MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Values__
-                          ),
-     this_04 != (Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object_ *)0x0)
-     ) {
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[TKey,TValue]+ValueCollection[WinningConditionType,System::Object]::
-    Dictionary_2_TKey_TValue_ValueCollection_WinningConditionType_System_Object__GetEnumerator
-              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_WinningConditionType_System_Object_
-                *)auStack_9,this_04,
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
-              );
-    uStack_1 = 0;
-    while( true ) {
-      cVar10 = func_?();
-      if (cVar10 == '\0') break;
-      this_05 = (Queue_1_UnityEngine_Vector3_ *)func_?();
-      if (this_05 == (Queue_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-      System.dll::System::Collections::Generic::Queue`1[System::Int32]::Queue_1_System_Int32__Clear
-                ((Queue_1_System_Int32_ *)this_05,
-                 MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Clear__);
-      System.dll::System::Collections::Generic::Queue`1[UnityEngine::Vector3]::
-      Queue_1_UnityEngine_Vector3__TrimExcess
-                (this_05,
-                 MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__TrimExcess__);
-    }
-    iVar11 = 0;
-    *piStack_8 = 0x54;
-    uStack_1 = 0xffffffff;
-    func_?();
-    if (*piStack_8 == 0x54) {
-      iVar11 = -1;
-    }
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AsyncWWWManager);
-    }
-    this_00 = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-    if (this_00 != (HashSet_1_AsyncWebRequest_ *)0x0) {
-      pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-               FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                         ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                          (auStack_9 + 4),
-                          (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)this_00,
-                          MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+  pDVar8 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+           TypeInfo__AsyncWWWManager->static_fields->requests;
+  if (pDVar8 != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                 *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+                        (pDVar8,
+                         MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Values__
+                        );
+    if (this_01 !=
+        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+         *)0x0) {
+      pMVar9 = (MethodInfo *)&UNK_?;
+      pDVar10 = mscorlib.dll::System::Collections::Generic::
+               Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
+               Regex+CachedCodeEntryKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                         (&DStack_11,this_01,
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
                          );
-      CStack_6.klass =
-           (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar12->hashset;
-      CStack_6.monitor = (MonitorData *)pHVar12->next;
-      CStack_6.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar12->stamp;
-      CStack_6.fields.syncRoot = (Object *)pHVar12->current;
-      uStack_1 = 2;
-      while (cVar10 = func_?(&CStack_6,
-                                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
-                                    ), cVar10 != '\0') {
-        pOVar13 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                 Serialization::JsonProperty]::
-                 Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                           (&CStack_6,
-                            MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
-                           );
-        if (pOVar13 == (Object *)0x0) goto code_?;
-        if ((UnityWebRequest *)pOVar13[6].monitor != (UnityWebRequest *)0x0) {
-          UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-          UnityWebRequest_Dispose((UnityWebRequest *)pOVar13[6].monitor,(MethodInfo *)0x0);
-        }
+      DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar10->_dictionary;
+      DStack_6._index = pDVar10->_index;
+      DStack_6._version = pDVar10->_version;
+      DStack_6._currentValue = pDVar10->_currentValue;
+      DStack_11._version = 0;
+      uStack_1 = 1;
+      DStack_11._currentValue = (Object *)&DStack_6;
+      while( true ) {
+        bVar12 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                Object,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                          (&DStack_6,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__MoveNext__
+                          );
+        this_02 = (MethodInfo *)DStack_6._currentValue;
+        if (bVar12 == 0) break;
+        if ((MethodInfo *)DStack_6._currentValue == (MethodInfo *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::
+        Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+        Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__Clear
+                  ((Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)
+                   DStack_6._currentValue,
+                   MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Clear__);
+        mscorlib.dll::System::Collections::Generic::
+        Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+        Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__TrimExcess
+                  ((Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)this_02,
+                   MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__TrimExcess__);
+        pMVar9 = this_02;
       }
-      piStack_8[iVar11 + 1] = 0x91;
       uStack_1 = 0xffffffff;
-      func_?(&CStack_6,
-                      MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
-                     );
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)&DStack_6,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__
+                 ,pMVar9);
+      uStack_1 = 0xffffffff;
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__AsyncWWWManager);
       }
-      this_01 = (HashSet_1_UnityEngine_Vector3_ *)
-                TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-      if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-        HashSet_1_UnityEngine_Vector3__Clear
-                  (this_01,
-                   MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Clear__);
-        this_02 = TypeInfo__AsyncWWWManager->static_fields->tempHashSet;
-        if (this_02 != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
+      pMVar9 = (MethodInfo *)TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+      if (pMVar9 != (MethodInfo *)0x0) {
+        pHVar13 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                 HashSet_1_System_Object__GetEnumerator
+                           ((HashSet_1_T_Enumerator_System_Object_ *)&DStack_11,
+                            (HashSet_1_System_Object_ *)pMVar9,
+                            MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                           );
+        DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pHVar13->_set;
+        DStack_7._index = pHVar13->_index;
+        DStack_7._version = pHVar13->_version;
+        DStack_7._currentValue = pHVar13->_current;
+        DStack_11._version = 0;
+        uStack_1 = 4;
+        DStack_11._currentValue = (Object *)&DStack_7;
+        while( true ) {
+          bVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                  Object]::HashSet_1_T_Enumerator_System_Object__MoveNext
+                            ((HashSet_1_T_Enumerator_System_Object_ *)&DStack_7,
+                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                            );
+          if (bVar12 == 0) break;
+          if (DStack_7._currentValue == (Object *)0x0) goto code_?;
+          if (DStack_7._currentValue[5].monitor != (MonitorData *)0x0) {
+            UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+            UnityWebRequest_Dispose
+                      ((UnityWebRequest *)DStack_7._currentValue[5].monitor,(MethodInfo *)0x0);
+          }
+        }
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&DStack_7,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                   ,pMVar9);
+        uStack_1 = 0xffffffff;
+        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__AsyncWWWManager);
+        }
+        this = (HashSet_1_UnityEngine_Vector3_ *)
+               TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+        if (this != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
           System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-          HashSet_1_UnityEngine_Vector3__TrimExcess
-                    ((HashSet_1_UnityEngine_Vector3_ *)this_02,
-                     MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__TrimExcess__
-                    );
-          pAVar14 = TypeInfo__AsyncWWWManager->static_fields->cache;
-          if (pAVar14 != (AsyncWWWManager_Cache *)0x0) {
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            this_03 = (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                       *)(pAVar14->fields).cachedRequests;
-            if (this_03 !=
-                (Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap_
-                 *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
-              Experimental::TerrainAPI::TerrainUtility+TerrainMap]::
-              Dictionary_2_System_Int32_UnityEngine_Experimental_TerrainAPI_TerrainUtility_TerrainMap__Clear
-                        (this_03,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__Clear__
-                        );
-              *unaff_FS_OFFSET = uStack_3;
-              return;
+          HashSet_1_UnityEngine_Vector3__Clear
+                    (this,
+                     MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Clear__);
+          this_00 = TypeInfo__AsyncWWWManager->static_fields->tempHashSet;
+          if (this_00 != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            HashSet_1_System_Object__TrimExcess
+                      ((HashSet_1_System_Object_ *)this_00,
+                       MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__TrimExcess__
+                      );
+            pAVar14 = TypeInfo__AsyncWWWManager->static_fields->cache;
+            if (pAVar14 != (AsyncWWWManager_Cache *)0x0) {
+              if (cRam_? == '\0') {
+                DStack_7._dictionary =
+                     (Dictionary_2_System_Object_System_Object_ *)
+                     &
+                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__Clear__
+                ;
+                func_?();
+                cRam_? = '\x01';
+              }
+              pDVar8 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                        *)(pAVar14->fields).cachedRequests;
+              if (pDVar8 != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                             *)0x0) {
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
+                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+                          (pDVar8,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__Clear__
+                          );
+                *unaff_FS_OFFSET = uStack_3;
+                return;
+              }
             }
           }
         }
@@ -519,11 +530,10 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_Reset(MethodInfo *met
     }
   }
 code_?:
-  func_?(0);
-  func_?(0,0,0);
-  func_?(0,0,0);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  uVar15 = func_?();
+  func_?(uVar15);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -535,48 +545,49 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_ShutDown
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?();
+    func_?();
+    func_?();
+    func_?(&MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Clear__);
+    func_?(&StringLiteral_Handle_quit_called_twice);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__AsyncWWWManager);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   if (TypeInfo__AsyncWWWManager->static_fields->isQuiting != 0) {
-    if ((((uint)(TypeInfo__UnityEngine__Debug->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__UnityEngine__Debug->_1).cctor_started == 0)) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
               ((Object *)StringLiteral_Handle_quit_called_twice,(MethodInfo *)0x0);
     return;
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    func_?(TypeInfo__AsyncWWWManager);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
   TypeInfo__AsyncWWWManager->static_fields->isQuiting = 1;
   pDVar1 = TypeInfo__AsyncWWWManager->static_fields->requests;
   if (pDVar1 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
-    this = (Queue_1_System_Int32_ *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::
-           Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                     ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar1,
-                      WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,
+    this = (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+           Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                     ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0,
                       MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
                      );
-    if (this != (Queue_1_System_Int32_ *)0x0) {
-      System.dll::System::Collections::Generic::Queue`1[System::Int32]::Queue_1_System_Int32__Clear
+    if (this != (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::
+      Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+      Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__Clear
                 (this,MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Clear__);
       TypeInfo__AsyncWWWManager->static_fields->retries = 0;
       pDVar1 = TypeInfo__AsyncWWWManager->static_fields->requests;
       if (pDVar1 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
         requestQueue = (Action *)
-                       mscorlib.dll::System::Collections::Generic::
-                       Dictionary`2[WWWRequestPriority,System::Object]::
-                       Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                                 ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar1,
-                                  WWWRequestPriority__Enum_ExecuteIgnoreAllConstraints,
+                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Int32Enum,System::Object]::
+                       Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,2,
                                   MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
                                  );
         AsyncWWWManager_AddRequestsToActiveRequests
@@ -585,24 +596,25 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_ShutDown
         if (pDVar1 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
           requestQueue_00 =
                (Queue_1_AsyncWebRequest_ *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::
-               Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                         ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar1,
-                          WWWRequestPriority__Enum_ExecuteWhileSyncronizing,
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,1,
                           MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
                          );
           AsyncWWWManager_AddRequestsToActiveRequests(requestQueue_00,0x7fffffff,(MethodInfo *)0x0);
           iVar2 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
           TypeInfo__AsyncWWWManager->static_fields->quitTime = iVar2;
           TypeInfo__AsyncWWWManager->static_fields->quitCallback = requestQueue;
+          func_?();
           return;
         }
       }
     }
   }
-  func_?(0);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -615,7 +627,7 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_Unsubscribe
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     cRam_? = '\x01';
   }
   if (request != (AsyncWebRequest *)0x0) {
@@ -623,19 +635,17 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_Unsubscribe
                       ((Delegate *)(request->fields).callback,(Delegate *)callback,(MethodInfo *)0x0
                       );
     if (bVar1 != 0) {
-      pAVar2 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
+      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                          ((Delegate *)(request->fields).callback,(Delegate *)callback,
                           (MethodInfo *)0x0);
       pAVar3 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0;
-      if (pAVar2 != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
-        if (pAVar2->klass == TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>) {
-          pAVar3 = pAVar2;
-        }
+      if (pDVar2 != (Delegate *)0x0) {
+        pAVar3 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)func_?();
         if (pAVar3 == (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0)
         goto code_?;
       }
       (request->fields).callback = pAVar3;
+      func_?();
     }
     return;
   }
@@ -654,172 +664,222 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
                (Action_1_UnityEngine_Networking_UnityWebRequest_ *callback,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppClass *)0xffffffff;
-  pIStack_2 = (Il2CppClass *)&DAT_?;
-  pIStack_3 = (Il2CppClass *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_3;
-  pIStack_4 = (Il2CppClass *)&stack0xffffff7c;
-  pIVar5 = (Il2CppClass *)&stack0xffffff7c;
+  uStack_1._0_1_ = 0xff;
+  uStack_1._1_3_ = 0xffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffff64;
+  puVar5 = &stack0xffffff64;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-    pIVar5 = pIStack_4;
-  }
-  pIStack_4 = pIVar5;
-  auStack_6._16_4_ = (Object *)0x0;
-  iStack_7 = 0;
-  auStack_6._20_4_ = (Action *)0x0;
-  iStack_8 = 0;
-  iStack_9 = 0;
-  iStack_10 = 0;
-  iStack_11 = 0;
-  KStack_12.key = 0;
-  KStack_12.value = 0;
-  auStack_6._0_4_ = (LevelRewardsManager__Class *)0x0;
-  auStack_6._4_4_ = (MethodInfo *)0x0;
-  auStack_6._8_4_ = (Dictionary_2_System_Int32_System_Int32_ *)0x0;
-  auStack_6._12_4_ = 0;
-  uStack_13 = 0;
-  func_?();
-  iStack_14 = -1;
-  _Stack_1c.dummy = &stack0xffffff7c;
-  pIStack_4 = (Il2CppClass *)&stack0xffffff7c;
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (_Stack_1c.dummy = &stack0xffffff7c, pIStack_4 = (Il2CppClass *)&stack0xffffff7c,
-     (TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    _Stack_1c.dummy = &stack0xffffff7c;
-    pIStack_4 = (Il2CppClass *)&stack0xffffff7c;
-    func_?(TypeInfo__AsyncWWWManager);
-  }
-  this = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-  iVar15 = 0;
-  if (this != (HashSet_1_AsyncWebRequest_ *)0x0) {
-    pHVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-             FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                        (auStack_17 + 4),(HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)this,
-                        MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
-                       );
-    auStack_6._20_4_ = pHVar16->hashset;
-    iStack_8 = pHVar16->next;
-    iStack_9 = pHVar16->stamp;
-    iStack_10 = pHVar16->current;
-    pIStack_1 = (Il2CppClass *)0x0;
-    while (cVar18 = func_?(), cVar18 != '\0') {
-      pAVar19 = (AsyncWebRequest *)
-               mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-               Serialization::JsonProperty]::
-               Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                         ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)
-                          (auStack_6 + 0x14),
-                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
-                         );
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-        func_?(TypeInfo__AsyncWWWManager);
-      }
-      AsyncWWWManager_Unsubscribe(pAVar19,callback,(MethodInfo *)0x0);
-    }
-    iVar20 = 0;
-    iStack_14 = 0;
-    iVar21 = 0;
-    ((_Stack_1c.type)->data).__klassIndex = 0x3e;
-    pIStack_1 = (Il2CppClass *)0xffffffff;
-    func_?(auStack_6 + 0x14,
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
+                   );
+    func_?(&
                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
                    );
-    if ((_Stack_1c.array)->etype == (Il2CppType *)0x3e) {
-      iVar20 = -1;
-      iStack_14 = -1;
-    }
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AsyncWWWManager);
-    }
-    this_00 = TypeInfo__AsyncWWWManager->static_fields->requests;
-    iVar15 = iVar21;
-    if (this_00 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
-      pDVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[WinningConditionType,System
-               ::Object]::Dictionary_2_WinningConditionType_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_WinningConditionType_System_Object_ *
-                          )auStack_17,(Dictionary_2_WinningConditionType_System_Object_ *)this_00,
-                          MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
-                         );
-      auStack_6._0_4_ = pDVar22->dictionary;
-      auStack_6._4_4_ = pDVar22->next;
-      auStack_6._8_4_ = pDVar22->stamp;
-      auStack_6._12_4_ = (pDVar22->current).key;
-      auStack_6._16_4_ = (pDVar22->current).value;
-      pIStack_1 = (Il2CppClass *)0x2;
-      while (iVar23 = iVar20, cVar18 = func_?(), iVar15 = iStack_11, cVar18 != '\0') {
-        KStack_12 = LevelRewardsManager::LevelRewardsManager_get_NextReward
-                              ((LevelRewardsManager *)auStack_6,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Current__
-                              );
-        auStack_6._0_4_ = &KStack_12;
-        auStack_6._4_4_ =
-             MethodInfo__System__Collections__Generic__KeyValuePair<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Value__
-        ;
-        this_02 = (Queue_1_System_Int32_ *)func_?();
-        iVar15 = iVar21;
-        if (this_02 == (Queue_1_System_Int32_ *)0x0) goto code_?;
-        pQVar24 = System.dll::System::Collections::Generic::Queue`1[System::Int32]::
-                 Queue_1_System_Int32__GetEnumerator
-                           (&QStack_25,this_02,
-                            MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__GetEnumerator__
-                           );
-        uStack_13._0_4_ = pQVar24->q;
-        uStack_13._4_4_ = pQVar24->idx;
-        iStack_7 = pQVar24->ver;
-        pIStack_1._0_1_ = 3;
-        while (cVar18 = func_?(), cVar18 != '\0') {
-          pAVar19 = (AsyncWebRequest *)func_?();
-          if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-            func_?(TypeInfo__AsyncWWWManager);
-          }
-          AsyncWWWManager_Unsubscribe(pAVar19,callback,(MethodInfo *)0x0);
-        }
-        iVar21 = iVar23 + 1;
-        pIStack_1 = (Il2CppClass *)CONCAT31(pIStack_1._1_3_,2);
-        *(undefined4 *)((int)_Stack_1c.dummy + iVar21 * 4) = 0x99;
-        iStack_14 = iVar21;
-        func_?();
-        if (iStack_11 != 0) {
-          func_?();
-          iVar15 = iVar21;
-          goto code_?;
-        }
-        iVar20 = iVar21;
-        if (((iVar21 != -1) && (*(int *)((int)_Stack_1c.dummy + iVar21 * 4) == 0x99)) &&
-           (iVar20 = iVar23, iStack_14 = iVar23, iVar21 < 0)) {
-          iVar20 = iVar21;
-          iStack_14 = iVar21;
-        }
-      }
-      *(undefined4 *)((int)_Stack_1c.dummy + iVar23 * 4 + 4) = 0xb8;
-      pIStack_1 = (Il2CppClass *)0xffffffff;
-      func_?();
-      if (iVar15 != 0) goto code_?;
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Value__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__GetEnumerator__
+                   );
+    cRam_? = '\x01';
+    puVar5 = puStack_4;
+  }
+  puStack_4 = puVar5;
+  QStack_6._q = (Queue_1_System_Object_ *)0x0;
+  QStack_6._version = 0;
+  QStack_6._index = 0;
+  QStack_6._currentElement = (Object *)0x0;
+  QStack_7._q = (Queue_1_System_Object_ *)0x0;
+  QStack_7._version = 0;
+  QStack_7._index = 0;
+  QStack_7._currentElement = (Object *)0x0;
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__AsyncWWWManager);
+  }
+  method_00 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)
+              TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+  if (method_00 != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
+    pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+             HashSet_1_System_Object__GetEnumerator
+                       (&HStack_9,(HashSet_1_System_Object_ *)method_00,
+                        MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                       );
+    QStack_6._q = (Queue_1_System_Object_ *)pHVar8->_set;
+    QStack_6._version = pHVar8->_index;
+    QStack_6._index = pHVar8->_version;
+    QStack_6._currentElement = pHVar8->_current;
+    HStack_9._version = 0;
+    uStack_1._0_1_ = 1;
+    uStack_1._1_3_ = 0;
+    HStack_9._current = (Object *)&QStack_6;
+    while( true ) {
+      bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::Object]
+              ::HashSet_1_T_Enumerator_System_Object__MoveNext
+                        ((HashSet_1_T_Enumerator_System_Object_ *)&QStack_6,
+                         MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                        );
+      if (bVar10 == 0) break;
+      pOStack_11 = QStack_6._currentElement;
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__AsyncWWWManager);
       }
-      this_01 = TypeInfo__AsyncWWWManager->static_fields->cache;
-      if (this_01 != (AsyncWWWManager_Cache *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+        cRam_? = '\x01';
+      }
+      if (pOStack_11 == (Object *)0x0) goto code_?;
+      method_00 = callback;
+      bVar10 = mscorlib.dll::System::Delegate::Delegate_op_Equality
+                        ((Delegate *)pOStack_11[1].klass,(Delegate *)callback,(MethodInfo *)0x0);
+      if (bVar10 != 0) {
+        pDStack_12 = mscorlib.dll::System::Delegate::Delegate_Remove
+                               ((Delegate *)pOStack_11[1].klass,(Delegate *)callback,
+                                (MethodInfo *)0x0);
+        pAStack_13 = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
+        if (pDStack_12 == (Delegate *)0x0) {
+          pOVar14 = (Object__Class *)0x0;
+        }
+        else {
+          pOVar14 = (Object__Class *)func_?();
+          if (pOVar14 == (Object__Class *)0x0) {
+            func_?();
+            goto code_?;
+          }
+        }
+        pOStack_11[1].klass = pOVar14;
+        func_?();
+      }
+    }
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              ((Object *)&QStack_6,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+               ,(MethodInfo *)method_00);
+    uStack_1._0_1_ = 0xff;
+    uStack_1._1_3_ = 0xffffff;
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__AsyncWWWManager);
+    }
+    method_01 = (MethodInfo *)TypeInfo__AsyncWWWManager->static_fields->requests;
+    if (method_01 != (MethodInfo *)0x0) {
+      pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                          auStack_16,(Dictionary_2_System_Object_System_Object_ *)method_01,
+                          MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__GetEnumerator__
+                         );
+      uStack_17 = 0;
+      uVar18 = *(undefined8 *)&(pDVar15->_current).value;
+      pDStack_12 = (Delegate *)&stack0xffffff70;
+      uStack_1 = 0;
+      while( true ) {
+        uStack_1._0_1_ = 4;
+        bVar10 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                           &stack0xffffff70,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__MoveNext__
+                          );
+        if (bVar10 == 0) break;
+        pQStack_19 = (Queue_1_System_Object_ *)uVar18;
+        if (pQStack_19 == (Queue_1_System_Object_ *)0x0) goto code_?;
+        pQVar20 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                 Queue_1_System_Object__GetEnumerator
+                           ((Queue_1_T_Enumerator_System_Object_ *)(auStack_16 + 8),pQStack_19,
+                            MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__GetEnumerator__
+                           );
+        HStack_9._version = 0;
+        QStack_7._q = pQVar20->_q;
+        QStack_7._version = pQVar20->_version;
+        QStack_7._index = pQVar20->_index;
+        QStack_7._currentElement = pQVar20->_currentElement;
+        uStack_1._0_1_ = 6;
+        HStack_9._current = (Object *)&QStack_7;
+        while( true ) {
+          method_01 = (MethodInfo *)&UNK_?;
+          bVar10 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]
+                  ::Queue_1_T_Enumerator_System_Object__MoveNext
+                            (&QStack_7,
+                             MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                            );
+          if (bVar10 == 0) break;
+          request = (AsyncWebRequest *)
+                    mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::
+                    Object]::Queue_1_T_Enumerator_System_Object__get_Current
+                              (&QStack_7,
+                               MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                              );
+          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          AsyncWWWManager_Unsubscribe(request,callback,(MethodInfo *)0x0);
+        }
+        uStack_1 = CONCAT31(uStack_1._1_3_,4);
+        mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
+        Queue_1_T_Enumerator_System_Object__Dispose
+                  (&QStack_7,
+                   MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                  );
+      }
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ((Object *)pDStack_12,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__
+                 ,method_01);
+      uStack_1._0_1_ = 0xff;
+      uStack_1._1_3_ = 0xffffff;
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AsyncWWWManager);
+      }
+      this = TypeInfo__AsyncWWWManager->static_fields->cache;
+      if (this != (AsyncWWWManager_Cache *)0x0) {
         AsyncWWWManager+Cache::AsyncWWWManager_Cache_UnsubscribeCached
-                  (this_01,callback,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pIStack_3;
+                  (this,callback,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
   }
 code_?:
-  func_?(0);
-code_?:
-  func_?(iVar15,0,0);
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  uVar21 = func_?();
+  uVar21 = func_?(uVar21);
+  func_?(uVar21);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -829,229 +889,191 @@ code_?:
 void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_Update(MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff90;
-  puVar5 = &stack0xffffff90;
+  _Stack_8.__klassIndex._0_1_ = 0xff;
+  _Stack_8.__klassIndex._1_3_ = 0xffffff;
+  pcStack_1 = &DAT_?;
+  pcStack_2 = (char *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &pcStack_2;
+  puStack_3 = &stack0xffffffa4;
+  puVar4 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
-    cRam_? = '\x01';
-    puVar5 = puStack_4;
-  }
-  puStack_4 = puVar5;
-  iStack_6 = 0;
-  CStack_7.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_7.monitor = (MonitorData *)0x0;
-  CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_7.fields.syncRoot = (Object *)0x0;
-  CStack_8.klass = (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)0x0;
-  CStack_8.monitor = (MonitorData *)0x0;
-  CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)0x0;
-  CStack_8.fields.syncRoot = (Object *)0x0;
-  func_?();
-  uStack_9 = 0xffffffff;
-  piStack_10 = (int *)&stack0xffffff90;
-  puStack_4 = &stack0xffffff90;
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     (piStack_10 = (int *)&stack0xffffff90, puStack_4 = &stack0xffffff90,
-     (TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-    piStack_10 = (int *)&stack0xffffff90;
-    puStack_4 = &stack0xffffff90;
-    func_?(TypeInfo__AsyncWWWManager);
-  }
-  pDVar11 = TypeInfo__AsyncWWWManager->static_fields->requests;
-  if (pDVar11 == (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
-code_?:
-    iVar12 = func_?(0);
-    pAVar13 = unaff_ESI;
-  }
-  else {
-    pQVar14 = (Queue_1_AsyncWebRequest_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::
-             Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                       ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar11,
-                        WWWRequestPriority__Enum_ExecuteIgnoreAllConstraints,
-                        MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
-                       );
-    AsyncWWWManager_AddRequestsToActiveRequests(pQVar14,0x7fffffff,(MethodInfo *)0x0);
-    pDVar11 = TypeInfo__AsyncWWWManager->static_fields->requests;
-    if (pDVar11 == (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)
-    goto code_?;
-    pQVar14 = (Queue_1_AsyncWebRequest_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::
-             Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                       ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar11,
-                        WWWRequestPriority__Enum_ExecuteWhileSyncronizing,
-                        MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
-                       );
-    AsyncWWWManager_AddRequestsToActiveRequests(pQVar14,4,(MethodInfo *)0x0);
-    if ((((uint)(TypeInfo__MVGameControllerBase->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__MVGameControllerBase->_1).cctor_started == 0)) {
-      CStack_7.klass =
-           (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)
-           TypeInfo__MVGameControllerBase;
-      CStack_8.fields.syncRoot = (Object *)&UNK_?;
-      func_?();
-    }
-    MVar15 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
-    if (MVar15 == MVJoinState__Enum_Playing) {
-      if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-         ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-        func_?(TypeInfo__AsyncWWWManager);
-      }
-      pDVar11 = TypeInfo__AsyncWWWManager->static_fields->requests;
-      if (pDVar11 == (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)
-      goto code_?;
-      pQVar14 = (Queue_1_AsyncWebRequest_ *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::
-               Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                         ((Dictionary_2_WWWRequestPriority_System_Object_ *)pDVar11,
-                          WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,
-                          MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
-                         );
-      AsyncWWWManager_AddRequestsToActiveRequests(pQVar14,4,(MethodInfo *)0x0);
-    }
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AsyncWWWManager);
-    }
-    this = TypeInfo__AsyncWWWManager->static_fields->tempHashSet;
-    uStack_1 = 0;
-    pAStack_16 = this;
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-      func_?(TypeInfo__AsyncWWWManager);
-    }
-    this_00 = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
-    if (this_00 == (HashSet_1_AsyncWebRequest_ *)0x0) goto code_?;
-    pHVar17 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData::
-             FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                        &stack0xffffff9c,
-                        (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)this_00,
-                        MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
-                       );
-    CStack_7.klass =
-         (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar17->hashset;
-    CStack_7.monitor = (MonitorData *)pHVar17->next;
-    CStack_7.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar17->stamp;
-    CStack_7.fields.syncRoot = (Object *)pHVar17->current;
-    uStack_1 = CONCAT31(uStack_1._1_3_,1);
-    while (cVar18 = func_?(), cVar18 != '\0') {
-      unaff_ESI = (AsyncWebRequest *)
-                  mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                  Serialization::JsonProperty]::
-                  Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                            (&CStack_7,
-                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
-                            );
-      if (unaff_ESI == (AsyncWebRequest *)0x0) goto code_?;
-      bVar19 = AsyncWebRequest::AsyncWebRequest_Update(unaff_ESI,(MethodInfo *)0x0);
-      if (bVar19 != 0) {
-        if (this == (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0)
-        goto code_?;
-        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Networking::
-        UnityWebRequest]::HashSet_1_UnityEngine_Networking_UnityWebRequest__Add
-                  ((HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)this,
-                   (UnityWebRequest *)unaff_ESI,
-                   MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
-                  );
-      }
-    }
-    unaff_ESI = (AsyncWebRequest *)0x0;
-    uStack_9 = 0;
-    uStack_1 = uStack_1 & 0xffffff00;
-    *piStack_10 = 0x92;
-    func_?(&CStack_7,
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                   );
+    func_?(&
                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
                    );
-    iVar12 = iStack_6;
-    pAVar13 = unaff_ESI;
-    if (iStack_6 == 0) {
-      if (*piStack_10 == 0x92) {
-        unaff_ESI = (AsyncWebRequest *)0xffffffff;
-        uStack_9 = 0xffffffff;
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Remove_AsyncWebRequest_
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    cRam_? = '\x01';
+    puVar4 = puStack_3;
+  }
+  puStack_3 = puVar4;
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__AsyncWWWManager);
+  }
+  pDVar5 = TypeInfo__AsyncWWWManager->static_fields->requests;
+  if (pDVar5 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
+    pQVar6 = (Queue_1_AsyncWebRequest_ *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar5,2,
+                        MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                       );
+    AsyncWWWManager_AddRequestsToActiveRequests(pQVar6,0x7fffffff,(MethodInfo *)0x0);
+    pDVar5 = TypeInfo__AsyncWWWManager->static_fields->requests;
+    if (pDVar5 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
+      pQVar6 = (Queue_1_AsyncWebRequest_ *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar5,1,
+                          MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                         );
+      AsyncWWWManager_AddRequestsToActiveRequests(pQVar6,4,(MethodInfo *)0x0);
+      MVar7 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
+      if (MVar7 == MVJoinState__Enum_Playing) {
+        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+          pAStack_8 = TypeInfo__AsyncWWWManager;
+          func_?();
+        }
+        pDVar5 = TypeInfo__AsyncWWWManager->static_fields->requests;
+        if (pDVar5 == (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)
+        goto code_?;
+        pQVar6 = (Queue_1_AsyncWebRequest_ *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar5,0,
+                            MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                           );
+        AsyncWWWManager_AddRequestsToActiveRequests(pQVar6,4,(MethodInfo *)0x0);
       }
-      if (this != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
-        pHVar17 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::MetaData
-                 ::FirstTimeEvent]::HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent__GetEnumerator
-                           ((HashSet_1_T_Enumerator_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-                            &stack0xffffff9c,
-                            (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)this,
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AsyncWWWManager);
+      }
+      pAStack_8 = (AsyncWWWManager__Class *)&pIStack_9;
+      puStack_10 = (undefined *)0x0;
+      pIStack_9 = (Il2CppImage *)TypeInfo__AsyncWWWManager->static_fields->tempHashSet;
+      _Stack_8.__klassIndex._0_1_ = 1;
+      _Stack_8.__klassIndex._1_3_ = 0;
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AsyncWWWManager);
+      }
+      pAVar11 = (AsyncWebRequest *)TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+      if (pAVar11 != (AsyncWebRequest *)0x0) {
+        pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                 HashSet_1_System_Object__GetEnumerator
+                           (&HStack_13,(HashSet_1_System_Object_ *)pAVar11,
                             MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
                            );
-        CStack_8.klass =
-             (Collection_1_Newtonsoft_Json_Serialization_JsonProperty___Class *)pHVar17->hashset;
-        CStack_8.monitor = (MonitorData *)pHVar17->next;
-        CStack_8.fields.list = (IList_1_Newtonsoft_Json_Serialization_JsonProperty_ *)pHVar17->stamp
-        ;
-        CStack_8.fields.syncRoot = (Object *)pHVar17->current;
-        uStack_1 = CONCAT31(uStack_1._1_3_,3);
-        while (cVar18 = func_?(), cVar18 != '\0') {
-          pMStack_20 = (MVRotator *)
-                       mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json
-                       ::Serialization::JsonProperty]::
-                       Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                                 (&CStack_8,
-                                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__get_Current__
-                                 );
-          if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-            func_?(TypeInfo__AsyncWWWManager);
+        this_00 = (AsyncWebRequest *)pHVar12->_current;
+        HStack_13._version = 0;
+        _Stack_8.__klassIndex._0_1_ = 3;
+        HStack_13._current = (Object *)&stack0xffffffb0;
+        while( true ) {
+          bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                  Object]::HashSet_1_T_Enumerator_System_Object__MoveNext
+                            ((HashSet_1_T_Enumerator_System_Object_ *)&stack0xffffffb0,
+                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                            );
+          if (bVar14 == 0) break;
+          pAStack_15 = this_00;
+          if (this_00 == (AsyncWebRequest *)0x0) goto code_?;
+          bVar14 = AsyncWebRequest::AsyncWebRequest_Update(this_00,(MethodInfo *)0x0);
+          if (bVar14 != 0) {
+            if (pIStack_9 == (Il2CppImage *)0x0) goto code_?;
+            pAVar11 = pAStack_15;
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            HashSet_1_System_Object__Add
+                      ((HashSet_1_System_Object_ *)pIStack_9,(Object *)pAStack_15,
+                       MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Add_AsyncWebRequest_
+                      );
           }
-          this_01 = (HashSet_1_MVRotator_ *)TypeInfo__AsyncWWWManager->static_fields->activeRequests
-          ;
-          if (this_01 == (HashSet_1_MVRotator_ *)0x0) goto code_?;
-          System.Core.dll::System::Collections::Generic::HashSet`1[MVRotator]::
-          HashSet_1_MVRotator__Remove
-                    (this_01,pMStack_20,
-                     MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Remove_AsyncWebRequest_
-                    );
         }
-        pAVar13 = (AsyncWebRequest *)((int)&unaff_ESI->klass + 1);
-        uStack_1 = uStack_1 & 0xffffff00;
-        piStack_10[(int)pAVar13] = 0xd2;
-        func_?(&CStack_8,
-                        MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
-                       );
-        iVar12 = iStack_6;
-        if (iStack_6 == 0) {
-          if (((pAVar13 != (AsyncWebRequest *)0xffffffff) && (piStack_10[(int)pAVar13] == 0xd2)) &&
-             (-1 < (int)pAVar13)) {
-            pAVar13 = unaff_ESI;
-          }
-          piStack_10[(int)((int)&pAVar13->klass + 1)] = 0xe4;
-          uStack_1 = 0xffffffff;
-          if (this != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
-            func_?(0,TypeInfo__System__IDisposable,this);
-          }
-          if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-             ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-            func_?(TypeInfo__AsyncWWWManager);
-          }
-          if (TypeInfo__AsyncWWWManager->static_fields->isQuiting != 0) {
-            if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-               ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-              func_?(TypeInfo__AsyncWWWManager);
+        _Stack_8.__klassIndex._0_1_ = 1;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ((Object *)&stack0xffffffb0,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                   ,(MethodInfo *)pAVar11);
+        _Stack_8.__klassIndex._0_1_ = 1;
+        if (pIStack_9 != (Il2CppImage *)0x0) {
+          pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                   HashSet_1_System_Object__GetEnumerator
+                             (&HStack_13,(HashSet_1_System_Object_ *)pIStack_9,
+                              MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__
+                             );
+          method_00 = (MethodInfo *)pHVar12->_version;
+          pAVar11 = (AsyncWebRequest *)pHVar12->_current;
+          HStack_13._version = 0;
+          _Stack_8.__klassIndex._0_1_ = 6;
+          HStack_13._current = (Object *)&stack0xffffffb0;
+          while( true ) {
+            bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                    Object]::HashSet_1_T_Enumerator_System_Object__MoveNext
+                              ((HashSet_1_T_Enumerator_System_Object_ *)&stack0xffffffb0,
+                               MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__
+                              );
+            if (bVar14 == 0) {
+              _Stack_8.__klassIndex._0_1_ = 1;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                        ((Object *)&stack0xffffffb0,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__
+                         ,method_00);
+              _Stack_8.__klassIndex = -1;
+              if (pIStack_9 != (Il2CppImage *)0x0) {
+                func_?();
+              }
+              _Stack_8.__klassIndex = -1;
+              if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              if (TypeInfo__AsyncWWWManager->static_fields->isQuiting != 0) {
+                if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                AsyncWWWManager_Quit((MethodInfo *)0x0);
+              }
+              *unaff_FS_OFFSET = pcStack_2;
+              return;
             }
-            AsyncWWWManager_Quit((MethodInfo *)0x0);
+            pAStack_15 = pAVar11;
+            if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            this = TypeInfo__AsyncWWWManager->static_fields->activeRequests;
+            if (this == (HashSet_1_AsyncWebRequest_ *)0x0) break;
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            HashSet_1_System_Object__Remove
+                      ((HashSet_1_System_Object_ *)this,(Object *)pAStack_15,
+                       MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__Remove_AsyncWebRequest_
+                      );
           }
-          *unaff_FS_OFFSET = uStack_3;
-          return;
         }
-        goto code_?;
       }
-      goto code_?;
     }
   }
-  iVar12 = func_?(iVar12,0,0);
 code_?:
-  func_?(iVar12,0,0);
-  func_?(pAVar13,0,0);
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  uVar16 = func_?();
+  uVar16 = func_?(uVar16);
+  func_?(uVar16);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -1063,66 +1085,65 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_WWWRequest
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__CachedGetRequest);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                   );
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AsyncWWWManager);
   }
   if (TypeInfo__AsyncWWWManager->static_fields->isQuiting == 0) {
-    if (asyncRequest != (AsyncWebRequest *)0x0) {
-      bVar1 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
-      if (((asyncRequest->klass->_1).naturalAligment < bVar1) ||
-         ((asyncRequest->klass->_1).typeHierarchy[bVar1 - 1] !=
-          (Il2CppClass *)TypeInfo__CachedGetRequest)) {
-        bVar2 = false;
+    if (((asyncRequest != (AsyncWebRequest *)0x0) &&
+        (unaff_EDI = TypeInfo__CachedGetRequest,
+        (TypeInfo__CachedGetRequest->_1).typeHierarchyDepth <=
+        (asyncRequest->klass->_1).typeHierarchyDepth)) &&
+       ((asyncRequest->klass->_1).typeHierarchy
+        [(TypeInfo__CachedGetRequest->_1).typeHierarchyDepth - 1] ==
+        (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AsyncWWWManager);
       }
-      else {
-        bVar2 = true;
-      }
-      pAVar3 = (AsyncWebRequest *)0x0;
-      if (bVar2) {
-        pAVar3 = asyncRequest;
-      }
-      if (pAVar3 != (AsyncWebRequest *)0x0) {
-        piVar4 = (int *)func_?(asyncRequest,TypeInfo__CachedGetRequest);
-        if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-           ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
-          func_?(TypeInfo__AsyncWWWManager);
-        }
-        if (piVar4 == (int *)0x0) goto code_?;
-        cVar5 = (**(code **)(*piVar4 + 0xf0))
-                          (piVar4,TypeInfo__AsyncWWWManager->static_fields->cache,
-                           *(undefined4 *)(*piVar4 + 0xf4));
-        if (cVar5 != '\0') {
-          return;
-        }
+      unaff_EDI = TypeInfo__CachedGetRequest;
+      pAVar1 = asyncRequest->klass;
+      if (((pAVar1->_1).typeHierarchyDepth < (TypeInfo__CachedGetRequest->_1).typeHierarchyDepth) ||
+         ((pAVar1->_1).typeHierarchy[(TypeInfo__CachedGetRequest->_1).typeHierarchyDepth - 1] !=
+          (Il2CppClass *)TypeInfo__CachedGetRequest)) goto code_?;
+      cVar2 = (*(code *)pAVar1[1]._0.image)
+                        (asyncRequest,TypeInfo__AsyncWWWManager->static_fields->cache,
+                         pAVar1[1]._0.gc_desc);
+      if (cVar2 != '\0') {
+        return;
       }
     }
-    if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-       ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__AsyncWWWManager);
     }
     this = TypeInfo__AsyncWWWManager->static_fields->requests;
     if (((asyncRequest == (AsyncWebRequest *)0x0) ||
         (this == (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)) ||
-       (this_00 = (Queue_1_SmoothPhysicsMovement_Package_ *)
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System
-                  ::Object]::Dictionary_2_WWWRequestPriority_System_Object__get_Item
-                            ((Dictionary_2_WWWRequestPriority_System_Object_ *)this,
+       (this_00 = (Queue_1_System_Object_ *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,
                              (asyncRequest->fields).requestPriority,
                              MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
-                            ), this_00 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0)) {
+                            ), this_00 == (Queue_1_System_Object_ *)0x0)) {
+      func_?();
 code_?:
-      func_?(0);
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      func_?(asyncRequest,unaff_EDI);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-    Queue_1_SmoothPhysicsMovement_Package__Enqueue
-              (this_00,(SmoothPhysicsMovement_Package *)asyncRequest,
+    mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+    Queue_1_System_Object__Enqueue
+              (this_00,(Object *)asyncRequest,
                MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
               );
   }
@@ -1136,94 +1157,148 @@ void Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager__cctor(MethodInfo *me
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__AsyncWWWManager__Cache);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Add_WWWRequestPriority__System__Collections__Generic__Queue<AsyncWebRequest>_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<AsyncWebRequest>);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Queue__);
+    func_?(&TypeInfo__System__Collections__Generic__Queue<AsyncWebRequest>);
+    func_?(&
+                    MethodInfo__AsyncWWWManager__TemporaryHashSet<AsyncWebRequest>__TemporaryHashSet__
+                   );
+    func_?(&TypeInfo__AsyncWWWManager__TemporaryHashSet<AsyncWebRequest>);
+    func_?(&C636521C6D02D3A8CF5ADC5B7FBACDB485933B8516F1D7F7484AB2ADB6DC44EC_Field);
     cRam_? = '\x01';
   }
-  pHVar1 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)
-           func_?(TypeInfo__System__Collections__Generic__HashSet<AsyncWebRequest>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__HashSet__);
-  TypeInfo__AsyncWWWManager->static_fields->activeRequests = (HashSet_1_AsyncWebRequest_ *)pHVar1;
-  this = (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)
-         func_?(TypeInfo__AsyncWWWManager__TemporaryHashSet<AsyncWebRequest>);
-  System.Core.dll::System::Linq::OrderedEnumerable`1[System::Collections::Generic::
-  KeyValuePair`2[System::Int32,System::Int32]]::
-  OrderedEnumerable_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32__System_Collections_IEnumerable_GetEnumerator
-            ((OrderedEnumerable_1_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_
-              *)this,
-             MethodInfo__AsyncWWWManager__TemporaryHashSet<AsyncWebRequest>__TemporaryHashSet__);
-  TypeInfo__AsyncWWWManager->static_fields->tempHashSet = this;
-  TypeInfo__AsyncWWWManager->static_fields->retries = 3;
-  array = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
-            ((Array *)array,__field_2B66D5FD203619B430FEFD12728434197CB1E6F3_Field,(MethodInfo *)0x0
-            );
-  TypeInfo__AsyncWWWManager->static_fields->RetryTimeouts = array;
-  TypeInfo__AsyncWWWManager->static_fields->isQuiting = 0;
-  this_00 = (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>
-                           );
-  System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-  HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-            ((HashSet_1_AvatarModifierPackage_AvatarModifier_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dictionary__
-            );
-  pQVar2 = (Queue_1_SmoothPhysicsMovement_Package_ *)
-           func_?(TypeInfo__System__Collections__Generic__Queue<AsyncWebRequest>);
-  System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-  Queue_1_SmoothPhysicsMovement_Package___ctor
-            (pQVar2,MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Queue__);
-  if (this_00 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::Object]::
-    Dictionary_2_WWWRequestPriority_System_Object__Add
-              ((Dictionary_2_WWWRequestPriority_System_Object_ *)this_00,
-               WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(Object *)pQVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Add_WWWRequestPriority__System__Collections__Generic__Queue<AsyncWebRequest>_
-              );
-    pQVar2 = (Queue_1_SmoothPhysicsMovement_Package_ *)func_?();
-    System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-    Queue_1_SmoothPhysicsMovement_Package___ctor
-              (pQVar2,MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Queue__);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::Object]::
-    Dictionary_2_WWWRequestPriority_System_Object__Add
-              ((Dictionary_2_WWWRequestPriority_System_Object_ *)this_00,
-               WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(Object *)pQVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Add_WWWRequestPriority__System__Collections__Generic__Queue<AsyncWebRequest>_
-              );
-    pQVar2 = (Queue_1_SmoothPhysicsMovement_Package_ *)func_?();
-    System.dll::System::Collections::Generic::Queue`1[SmoothPhysicsMovement+Package]::
-    Queue_1_SmoothPhysicsMovement_Package___ctor
-              (pQVar2,MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Queue__);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[WWWRequestPriority,System::Object]::
-    Dictionary_2_WWWRequestPriority_System_Object__Add
-              ((Dictionary_2_WWWRequestPriority_System_Object_ *)this_00,
-               WWWRequestPriority__Enum_ExecuteIgnoreAllConstraints,(Object *)pQVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Add_WWWRequestPriority__System__Collections__Generic__Queue<AsyncWebRequest>_
-              );
-    TypeInfo__AsyncWWWManager->static_fields->requests = this_00;
-    this_01 = (ScaleAnimationBase *)func_?();
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
+  this = (HashSet_1_UnityEngine_Vector3_ *)
+         func_?(TypeInfo__System__Collections__Generic__HashSet<AsyncWebRequest>);
+  if (this != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
+    HashSet_1_UnityEngine_Vector3___ctor
+              (this,MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__HashSet__);
+    TypeInfo__AsyncWWWManager->static_fields->activeRequests = (HashSet_1_AsyncWebRequest_ *)this;
+    func_?(TypeInfo__AsyncWWWManager->static_fields,this);
+    this_00 = (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)
+              func_?(TypeInfo__AsyncWWWManager__TemporaryHashSet<AsyncWebRequest>);
+    if (this_00 != (AsyncWWWManager_TemporaryHashSet_1_AsyncWebRequest_ *)0x0) {
+      AsyncWWWManager+TemporaryHashSet`1[System::Object]::
+      AsyncWWWManager_TemporaryHashSet_1_System_Object___ctor
+                ((AsyncWWWManager_TemporaryHashSet_1_System_Object_ *)this_00,
+                 MethodInfo__AsyncWWWManager__TemporaryHashSet<AsyncWebRequest>__TemporaryHashSet__)
+      ;
+      TypeInfo__AsyncWWWManager->static_fields->tempHashSet = this_00;
+      func_?(&TypeInfo__AsyncWWWManager->static_fields->tempHashSet,this_00);
+      TypeInfo__AsyncWWWManager->static_fields->retries = 3;
+      array = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+      RuntimeHelpers_InitializeArray_1
+                ((Array *)array,
+                 _C636521C6D02D3A8CF5ADC5B7FBACDB485933B8516F1D7F7484AB2ADB6DC44EC_Field,
+                 (MethodInfo *)0x0);
+      TypeInfo__AsyncWWWManager->static_fields->RetryTimeouts = array;
+      func_?(&TypeInfo__AsyncWWWManager->static_fields->RetryTimeouts,array);
+      TypeInfo__AsyncWWWManager->static_fields->isQuiting = 0;
+      this_01 = (Dictionary_2_System_Object_System_Object_ *)
+                func_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>
+                               );
+      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                  ((ParameterOverride_1_System_Object_ *)this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dictionary__
+                  );
+        pSVar1 = (Stack_1_System_Object_ *)
+                 func_?(TypeInfo__System__Collections__Generic__Queue<AsyncWebRequest>);
+        if (pSVar1 != (Stack_1_System_Object_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+          Stack_1_System_Object___ctor
+                    (pSVar1,
+                     MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Queue__);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    (this_01,(Object *)0x0,(Object *)pSVar1,
+                     MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Add_WWWRequestPriority__System__Collections__Generic__Queue<AsyncWebRequest>_
+                    );
+          pSVar1 = (Stack_1_System_Object_ *)
+                   func_?(TypeInfo__System__Collections__Generic__Queue<AsyncWebRequest>);
+          if (pSVar1 != (Stack_1_System_Object_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+            Stack_1_System_Object___ctor
+                      (pSVar1,
+                       MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Queue__);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__Add
+                      (this_01,(Object *)0x1,(Object *)pSVar1,
+                       MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Add_WWWRequestPriority__System__Collections__Generic__Queue<AsyncWebRequest>_
+                      );
+            pSVar1 = (Stack_1_System_Object_ *)
+                     func_?(TypeInfo__System__Collections__Generic__Queue<AsyncWebRequest>)
+            ;
+            if (pSVar1 != (Stack_1_System_Object_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
+              Stack_1_System_Object___ctor
+                        (pSVar1,
+                         MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Queue__);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        (this_01,(Object *)0x2,(Object *)pSVar1,
+                         MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Add_WWWRequestPriority__System__Collections__Generic__Queue<AsyncWebRequest>_
+                        );
+              TypeInfo__AsyncWWWManager->static_fields->requests =
+                   (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)this_01;
+              func_?(&TypeInfo__AsyncWWWManager->static_fields->requests,this_01);
+              value = (AsyncWWWManager_Cache *)func_?(TypeInfo__AsyncWWWManager__Cache);
+              if (value != (AsyncWWWManager_Cache *)0x0) {
+                if (cRam_? == '\0') {
+                  func_?(&
+                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__Dictionary__
+                                 );
+                  func_?(&
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>
+                                 );
+                  cRam_? = '\x01';
+                }
+                this_02 = (Dictionary_2_System_String_CachedGetRequest_ *)
+                          func_?(
+                                         TypeInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>
+                                         );
+                if (this_02 != (Dictionary_2_System_String_CachedGetRequest_ *)0x0) {
+                  Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
+                  ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
+                            ((ParameterOverride_1_System_Object_ *)this_02,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__Dictionary__
+                            );
+                  method_00 = (MethodInfo *)&value->fields;
+                  (value->fields).cachedRequests = this_02;
+                  func_?(method_00,this_02);
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+                  TypeInfo__AsyncWWWManager->static_fields->cache = value;
+                  func_?(&TypeInfo__AsyncWWWManager->static_fields->cache,value);
+                  return;
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    method_00 = TypeInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>
-    ;
-    pHVar1 = (HashSet_1_AvatarModifierPackage_AvatarModifier_ *)func_?();
-    System.Core.dll::System::Collections::Generic::HashSet`1[AvatarModifierPackage+AvatarModifier]::
-    HashSet_1_AvatarModifierPackage_AvatarModifier___ctor
-              (pHVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__Dictionary__
-              );
-    (this_01->fields)._._._._.m_CachedPtr = pHVar1;
-    ScaleAnimationBase::ScaleAnimationBase_Play(this_01,0.0,(MethodInfo *)method_00);
-    TypeInfo__AsyncWWWManager->static_fields->cache = (AsyncWWWManager_Cache *)this_01;
-    return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1234,11 +1309,10 @@ int32_t Assembly-CSharp.dll::AsyncWWWManager::AsyncWWWManager_get_Retries(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__AsyncWWWManager);
     cRam_? = '\x01';
   }
-  if ((((uint)(TypeInfo__AsyncWWWManager->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__AsyncWWWManager->_1).cctor_started == 0)) {
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AsyncWWWManager);
   }
   return TypeInfo__AsyncWWWManager->static_fields->retries;

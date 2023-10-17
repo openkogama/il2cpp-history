@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Converters
 {
@@ -23,9 +23,9 @@ namespace Newtonsoft.Json.Converters
 		private bool HasFlag(RegexOptions options, RegexOptions flag);
 		private void WriteBson(BsonWriter writer, Regex regex);
 		private void WriteJson(JsonWriter writer, Regex regex);
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer);
+		public override object ReadJson(JsonReader reader, System.Type objectType, object existingValue, JsonSerializer serializer);
 		private object ReadBson(BsonReader reader);
 		private Regex ReadJson(JsonReader reader);
-		public override bool CanConvert(Type objectType);
+		public override bool CanConvert(System.Type objectType);
 	}
 }

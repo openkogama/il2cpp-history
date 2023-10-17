@@ -7,43 +7,38 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral__ref);
     cRam_? = '\x01';
   }
   if (schema != (JsonSchema *)0x0) {
-    pIVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)schema,(MethodInfo *)0x0);
-    if (pIVar1 == (IList_1_VoxelHit_ *)0x0) {
+    if ((schema->fields)._Id_k__BackingField == (String *)0x0) {
 code_?:
       JsonSchemaWriter_WriteSchema(this,schema,(MethodInfo *)0x0);
       return;
     }
-    pJVar2 = (this->fields)._resolver;
-    pIVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-             Collection_1_VoxelHit__get_Items((Collection_1_VoxelHit_ *)schema,(MethodInfo *)0x0);
-    if (pJVar2 != (JsonSchemaResolver *)0x0) {
-      iVar3 = (*(code *)(pJVar2->klass->vtable).GetSchema.method)
-                        (pJVar2,pIVar1,pJVar2->klass[1]._0.image);
-      if (iVar3 == 0) goto code_?;
-      pJVar4 = (this->fields)._writer;
-      if (pJVar4 != (JsonWriter *)0x0) {
-        (*(code *)(pJVar4->klass->vtable).WriteStartObject.method)
-                  (pJVar4,(pJVar4->klass->vtable).WriteEndObject.methodPtr);
-        pJVar4 = (this->fields)._writer;
-        if (pJVar4 != (JsonWriter *)0x0) {
-          (*(code *)(pJVar4->klass->vtable).WritePropertyName.method)
-                    (pJVar4,StringLiteral__ref,(pJVar4->klass->vtable).WriteEnd.methodPtr);
-          pJVar4 = (this->fields)._writer;
-          pIVar1 = mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                   Collection_1_VoxelHit__get_Items
-                             ((Collection_1_VoxelHit_ *)schema,(MethodInfo *)0x0);
-          if (pJVar4 != (JsonWriter *)0x0) {
-            (*(code *)(pJVar4->klass->vtable).WriteValue.method)
-                      (pJVar4,pIVar1,(pJVar4->klass->vtable).WriteValue_1.methodPtr);
-            pJVar4 = (this->fields)._writer;
-            if (pJVar4 != (JsonWriter *)0x0) {
-              (*(code *)(pJVar4->klass->vtable).WriteEndObject.method)
-                        (pJVar4,(pJVar4->klass->vtable).WriteStartArray.methodPtr);
+    pJVar1 = (this->fields)._resolver;
+    if (pJVar1 != (JsonSchemaResolver *)0x0) {
+      iVar2 = (*(pJVar1->klass->vtable).GetSchema.methodPtr)
+                        (pJVar1,(schema->fields)._Id_k__BackingField,
+                         (pJVar1->klass->vtable).GetSchema.method);
+      if (iVar2 == 0) goto code_?;
+      pJVar3 = (this->fields)._writer;
+      if (pJVar3 != (JsonWriter *)0x0) {
+        (*(pJVar3->klass->vtable).WriteStartObject.methodPtr)
+                  (pJVar3,(pJVar3->klass->vtable).WriteStartObject.method);
+        pJVar3 = (this->fields)._writer;
+        if (pJVar3 != (JsonWriter *)0x0) {
+          (*(pJVar3->klass->vtable).WritePropertyName.methodPtr)
+                    (pJVar3,StringLiteral__ref,(pJVar3->klass->vtable).WritePropertyName.method);
+          pJVar3 = (this->fields)._writer;
+          if (pJVar3 != (JsonWriter *)0x0) {
+            (*(pJVar3->klass->vtable).WriteValue.methodPtr)
+                      (pJVar3,(schema->fields)._Id_k__BackingField,
+                       (pJVar3->klass->vtable).WriteValue.method);
+            pJVar3 = (this->fields)._writer;
+            if (pJVar3 != (JsonWriter *)0x0) {
+              (*(pJVar3->klass->vtable).WriteEndObject.methodPtr)
+                        (pJVar3,(pJVar3->klass->vtable).WriteEndObject.method);
               return;
             }
           }
@@ -51,9 +46,9 @@ code_?:
       }
     }
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -69,81 +64,107 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::JsonSchema
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::Schema::JsonSchema>_System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchema>_
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchema>
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchema>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchema>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchema>
+                   );
+    func_?(&StringLiteral_items);
     cRam_? = '\x01';
   }
-  func_?();
   if (schema != (JsonSchema *)0x0) {
-    pSVar4 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                       ((DayNightCycle *)schema,(MethodInfo *)0x0);
-    bVar5 = Json::Utilities::CollectionUtils::CollectionUtils_IsNullOrEmpty_5
-                      ((ICollection_1_System_Reflection_ParameterInfo_ *)pSVar4,
+    bVar4 = Json::Utilities::CollectionUtils::CollectionUtils_IsNullOrEmpty_1
+                      ((ICollection_1_System_Object_ *)(schema->fields)._Items_k__BackingField,
                        bool_MethodInfo__Newtonsoft__Json__Utilities__CollectionUtils__IsNullOrEmpty<Newtonsoft::Json::Schema::JsonSchema>_System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchema>_
                       );
-    if (bVar5 != 0) {
+    if (bVar4 != 0) {
 code_?:
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
-    pJVar6 = (this->fields)._writer;
-    if (pJVar6 != (JsonWriter *)0x0) {
-      (*(code *)(pJVar6->klass->vtable).WritePropertyName.method)();
-      pSVar4 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                         ((DayNightCycle *)schema,(MethodInfo *)0x0);
-      if (pSVar4 != (SkyParam *)0x0) {
-        iVar7 = func_?();
+    pJVar5 = (this->fields)._writer;
+    if (pJVar5 != (JsonWriter *)0x0) {
+      (*(pJVar5->klass->vtable).WritePropertyName.methodPtr)(pJVar5);
+      pIVar6 = (schema->fields)._Items_k__BackingField;
+      if (pIVar6 != (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0) {
+        iVar7 = func_?(0,
+                                TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchema>
+                                ,pIVar6);
         if (iVar7 == 1) {
-          pSVar4 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                             ((DayNightCycle *)schema,(MethodInfo *)0x0);
-          if (pSVar4 != (SkyParam *)0x0) {
-            pJVar8 = (JsonSchema *)func_?();
+          pIVar6 = (schema->fields)._Items_k__BackingField;
+          if (pIVar6 != (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0) {
+            pJVar8 = (JsonSchema *)
+                      func_?(0,
+                                      TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchema>
+                                      ,pIVar6,0);
             JsonSchemaWriter_ReferenceOrWriteSchema(this,pJVar8,(MethodInfo *)0x0);
             goto code_?;
           }
         }
         else {
-          pJVar6 = (this->fields)._writer;
-          if (pJVar6 != (JsonWriter *)0x0) {
-            (*(code *)(pJVar6->klass->vtable).WriteStartArray.method)();
-            pSVar4 = DayNightCycle::DayNightCycle_get_CurrentSkyParam
-                               ((DayNightCycle *)schema,(MethodInfo *)0x0);
-            if (pSVar4 != (SkyParam *)0x0) {
-              piVar9 = (int *)func_?();
-              uStack_1 = 0;
-              while (piVar9 != (int *)0x0) {
-                cVar10 = func_?();
+          pJVar5 = (this->fields)._writer;
+          if (pJVar5 != (JsonWriter *)0x0) {
+            (*(pJVar5->klass->vtable).WriteStartArray.methodPtr)
+                      (pJVar5,(pJVar5->klass->vtable).WriteStartArray.method);
+            pIVar6 = (schema->fields)._Items_k__BackingField;
+            if (pIVar6 != (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0) {
+              piVar9 = (int *)func_?(0,
+                                              TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchema>
+                                              ,pIVar6);
+              uStack_1 = 1;
+              while( true ) {
+                if (piVar9 == (int *)0x0) break;
+                cVar10 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar9);
                 if (cVar10 == '\0') {
                   uStack_1 = 0xffffffff;
                   if (piVar9 != (int *)0x0) {
-                    func_?();
+                    func_?(0,TypeInfo__System__IDisposable,piVar9);
                   }
-                  pJVar6 = (this->fields)._writer;
-                  if (pJVar6 != (JsonWriter *)0x0) {
-                    (*(code *)(pJVar6->klass->vtable).WriteEndArray.method)();
+                  uStack_1 = 0xffffffff;
+                  pJVar5 = (this->fields)._writer;
+                  if (pJVar5 != (JsonWriter *)0x0) {
+                    (*(pJVar5->klass->vtable).WriteEndArray.methodPtr)
+                              (pJVar5,(pJVar5->klass->vtable).WriteEndArray.method);
                     *unaff_FS_OFFSET = uStack_3;
                     return;
                   }
                   break;
                 }
+                if (piVar9 == (int *)0x0) break;
                 uVar11 = 0;
-                uVar12 = *(ushort *)(*piVar9 + 0xb6);
+                uVar12 = *(ushort *)(*piVar9 + 0xb2);
                 if (uVar12 != 0) {
-                  iVar7 = *(int *)(*piVar9 + 0x58);
                   do {
                     if (*(IEnumerator_1_Newtonsoft_Json_Schema_JsonSchema___Class **)
-                         (iVar7 + (uint)uVar11 * 8) ==
+                         (*(int *)(*piVar9 + 0x58) + (uint)uVar11 * 8) ==
                         TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchema>
                        ) {
                       puVar13 = (undefined4 *)
-                                (*piVar9 + (*(int *)(iVar7 + 4 + (uint)uVar11 * 8) + 0x18) * 8);
+                               (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar11 * 8) * 8 + 0xbc
+                               + *piVar9);
                       goto code_?;
                     }
                     uVar11 = uVar11 + 1;
                   } while (uVar11 < uVar12);
                 }
-                puVar13 = (undefined4 *)func_?();
+                puVar13 = (undefined4 *)
+                         func_?(piVar9,
+                                         TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchema>
+                                         ,0);
 code_?:
-                pJVar8 = (JsonSchema *)(*(code *)*puVar13)();
+                pJVar8 = (JsonSchema *)(*(code *)*puVar13)(piVar9,puVar13[1]);
                 JsonSchemaWriter_ReferenceOrWriteSchema(this,pJVar8,(MethodInfo *)0x0);
               }
             }
@@ -152,10 +173,10 @@ code_?:
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  uVar14 = func_?();
+  func_?(uVar14);
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -170,15 +191,15 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::
 {
   if (value != (Object *)0x0) {
     if (writer == (JsonWriter *)0x0) {
-      func_?(0);
+      func_?();
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    (*(code *)(writer->klass->vtable).WritePropertyName.method)
-              (writer,propertyName,(writer->klass->vtable).WriteEnd.methodPtr);
-    (*(code *)(writer->klass->vtable).WriteValue_37.method)
-              (writer,value,(writer->klass->vtable).WriteComment.methodPtr);
+    (*(writer->klass->vtable).WritePropertyName.methodPtr)
+              (writer,propertyName,(writer->klass->vtable).WritePropertyName.method);
+    (*(writer->klass->vtable).WriteValue_37.methodPtr)
+              (writer,value,(writer->klass->vtable).WriteValue_37.method);
   }
   return;
 }
@@ -190,556 +211,630 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::JsonSchema
                (JsonSchemaWriter *this,JsonSchema *schema,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff24;
-  puVar5 = &stack0xffffff24;
+  puStack_1 = &stack0xfffffffc;
+  uStack_2 = 0xffffffff;
+  puStack_3 = &DAT_?;
+  uStack_4 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_4;
+  puStack_5 = &stack0xffffff48;
+  puVar6 = &stack0xfffffffc;
+  puVar7 = &stack0xffffff48;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchema>
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<Newtonsoft::Json::Linq::JToken,_System::String>_>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<Newtonsoft::Json::Linq::JToken,_System::String>_>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<Newtonsoft::Json::Linq::JToken,_System::String>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<Newtonsoft::Json::Linq::JToken,_System::String>__get_Value__
+                   );
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__get_HasValue__
+                   );
+    func_?(&
+                    MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__get_Value__
+                   );
+    func_?(&TypeInfo__System__Nullable<double>);
+    func_?(&TypeInfo__System__Nullable<bool>);
+    func_?(&TypeInfo__System__Nullable<int>);
+    func_?(&StringLiteral_hidden);
+    func_?(&StringLiteral_minimum);
+    func_?(&StringLiteral_readonly);
+    func_?(&StringLiteral_divisibleBy);
+    func_?(&StringLiteral_enum);
+    func_?(&StringLiteral_minItems);
+    func_?(&StringLiteral_value);
+    func_?(&StringLiteral_minLength);
+    func_?(&StringLiteral_default);
+    func_?(&StringLiteral_exclusiveMinimum);
+    func_?(&StringLiteral_format);
+    func_?(&StringLiteral_label);
+    func_?(&StringLiteral_disallow);
+    func_?(&StringLiteral_properties);
+    func_?(&StringLiteral_id);
+    func_?(&StringLiteral_required);
+    func_?(&StringLiteral_additionalProperties);
+    func_?(&StringLiteral_exclusiveMaximum);
+    func_?(&StringLiteral_maximum);
+    func_?(&StringLiteral_title);
+    func_?(&StringLiteral_options);
+    func_?(&StringLiteral_maxLength);
+    func_?(&StringLiteral_extends);
+    func_?(&StringLiteral_pattern);
+    func_?(&StringLiteral_description);
+    func_?(&StringLiteral_schema);
+    func_?(&StringLiteral_transient);
+    func_?(&StringLiteral_maxItems);
+    func_?(&StringLiteral_patternProperties);
+    func_?(&StringLiteral_type);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    puVar6 = puStack_1;
+    puVar7 = puStack_5;
   }
-  puStack_4 = puVar5;
-  iStack_6 = 0;
-  KStack_7.key = 0;
-  KStack_7.value = 0;
-  KStack_8.key = 0;
-  KStack_8.value = 0;
-  uStack_9 = 0;
-  NStack_10.value = 0;
-  NStack_10.has_value = 0;
-  NStack_10._5_3_ = 0;
-  NStack_11.value = 0;
-  NStack_11.has_value = 0;
-  NStack_11._5_3_ = 0;
-  func_?();
-  pIStack_12 = (Il2CppImage *)0xffffffff;
-  pIStack_13 = (Il2CppImage *)0xffffffff;
-  puStack_14 = (undefined4 *)&stack0xffffff24;
-  puStack_4 = &stack0xffffff24;
+  puStack_5 = puVar7;
+  puStack_1 = puVar6;
+  pJStack_8 = (JsonWriter *)0x0;
+  pJStack_9 = (JsonWriter *)0x0;
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)schema,StringLiteral_schema,(MethodInfo *)0x0);
-  pJVar15 = (this->fields)._resolver;
-  if ((pJVar15 != (JsonSchemaResolver *)0x0) &&
-     (pIStack_16 = (pJVar15->fields)._LoadedSchemas_k__BackingField,
-     pIStack_16 != (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0)) {
-    pIStack_17 = pIStack_16->klass;
-    uVar18 = 0;
-    pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0;
-    uVar20._0_1_ = (pIStack_17->_1).rank;
-    uVar20._1_1_ = (pIStack_17->_1).minimumAlignment;
-    uStack_21 = (uint)uVar20;
-    if (uVar20 != 0) {
+  pJVar10 = (this->fields)._resolver;
+  uVar11 = CONCAT44(pJStack_12,pJStack_13);
+  if ((pJVar10 != (JsonSchemaResolver *)0x0) &&
+     (pJStack_14 = (JsonWriter *)(pJVar10->fields)._LoadedSchemas_k__BackingField,
+     uVar11 = CONCAT44(pJStack_12,pJStack_13), pJStack_14 != (JsonWriter *)0x0)) {
+    pJStack_13 = pJStack_14->klass;
+    uVar15 = 0;
+    pJStack_12 = (JsonWriter__Class *)0x0;
+    uVar16 = (pJStack_13->_1).interface_offsets_count;
+    ppJStack_17 = (JsonWriter **)(uint)uVar16;
+    if (uVar16 != 0) {
       do {
-        if (pIStack_17->interfaceOffsets[uVar18].interfaceType ==
+        if (pJStack_13->interfaceOffsets[uVar15].interfaceType ==
             (Il2CppClass *)
             TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchema>
            ) {
-          ppMVar22 = &(&(pIStack_17->vtable).set_Item)[pIStack_17->interfaceOffsets[uVar18].offset].
-                      method;
+          ppIVar18 = &(&(pJStack_13->vtable).System_IDisposable_Dispose)
+                     [pJStack_13->interfaceOffsets[uVar15].offset].methodPtr;
           goto code_?;
         }
-        uVar18 = uVar18 + 1;
-      } while (uVar18 < uVar20);
+        uVar15 = uVar15 + 1;
+      } while (uVar15 < uVar16);
     }
-    ppMVar22 = (MethodInfo **)func_?();
+    ppIVar18 = (Il2CppMethodPointer *)func_?();
 code_?:
-    cVar23 = (*(code *)*ppMVar22)();
-    if (cVar23 == '\0') {
-      pJVar15 = (this->fields)._resolver;
-      if ((pJVar15 == (JsonSchemaResolver *)0x0) ||
-         ((pJVar15->fields)._LoadedSchemas_k__BackingField ==
-          (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0)) goto code_?;
+    cVar19 = (**ppIVar18)();
+    if (cVar19 == '\0') {
+      pJVar10 = (this->fields)._resolver;
+      uVar11 = CONCAT44(pJStack_12,pJStack_13);
+      if ((pJVar10 == (JsonSchemaResolver *)0x0) ||
+         (uVar11 = CONCAT44(pJStack_12,pJStack_13),
+         (pJVar10->fields)._LoadedSchemas_k__BackingField ==
+         (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0)) goto code_?;
       func_?(2);
     }
-    pIVar24 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)&this->fields;
-    pIStack_17 = pIVar24;
-    if (((JsonSchemaWriter__Fields *)pIVar24)->_writer != (JsonWriter *)0x0) {
-      (*(code *)(((JsonSchemaWriter__Fields *)pIVar24)->_writer->klass->vtable).WriteStartObject.
-                method)();
-      pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                   ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
+    pJVar20 = (this->fields)._writer;
+    uVar11 = CONCAT44(pJStack_12,pJStack_13);
+    if (pJVar20 != (JsonWriter *)0x0) {
+      (*(pJVar20->klass->vtable).WriteStartObject.methodPtr)();
+      pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+      uVar11 = CONCAT44(pJStack_12,pJStack_13);
       if (schema != (JsonSchema *)0x0) {
-        pIStack_25 = (Il2CppImage *)
-                     mscorlib.dll::System::Collections::ObjectModel::Collection`1[VoxelHit]::
-                     Collection_1_VoxelHit__get_Items
-                               ((Collection_1_VoxelHit_ *)schema,(MethodInfo *)0x0);
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          (*(code *)(pIStack_19->_0).image[0xf].typeCount)(pIStack_19);
+        pMStack_21 = (MethodInfo *)(schema->fields)._Id_k__BackingField;
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*(((JsonWriter *)pJStack_12)->klass->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        pIStack_25 = (Il2CppImage *)
-                     mscorlib.dll::System::Collections::ObjectModel::Collection`1[Newtonsoft::Json::
-                     Serialization::JsonProperty]::
-                     Collection_1_Newtonsoft_Json_Serialization_JsonProperty__System_Collections_ICollection_get_SyncRoot
-                               ((Collection_1_Newtonsoft_Json_Serialization_JsonProperty_ *)schema,
-                                (MethodInfo *)0x0);
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(schema->fields)._Title_k__BackingField;
+        pMStack_21 = (MethodInfo *)(this->fields)._writer;
+        if (pJStack_12 != (JsonWriter__Class *)0x0) {
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pMStack_21 == (MethodInfo *)0x0) goto code_?;
+          (*(((JsonWriter *)pMStack_21)->klass->vtable).WritePropertyName.methodPtr)();
+          (*(((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.methodPtr)
+                    (pMStack_21,pJStack_12,
+                     (((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.method
+                    );
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        pIStack_25 = (Il2CppImage *)
-                     System.Core.dll::System::Linq::
-                     Enumerable+<CreateCastIterator>c__Iterator0`1[System::Int32]::
-                     Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32__System_Collections_Generic_IEnumerator_TResult__get_Current
-                               ((Enumerable_CreateCastIterator_c_Iterator0_1_System_Int32_ *)schema,
-                                (MethodInfo *)0x0);
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(schema->fields)._Description_k__BackingField;
+        pMStack_21 = (MethodInfo *)(this->fields)._writer;
+        if (pJStack_12 != (JsonWriter__Class *)0x0) {
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pMStack_21 == (MethodInfo *)0x0) goto code_?;
+          (*(((JsonWriter *)pMStack_21)->klass->vtable).WritePropertyName.methodPtr)();
+          (*(((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.methodPtr)
+                    (pMStack_21,pJStack_12,
+                     (((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.method
+                    );
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        NStack_27 = Json::Serialization::JsonContract::JsonContract_get_IsReference
-                              ((JsonContract *)schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        NStack_22 = (schema->fields)._Required_k__BackingField;
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pMStack_21 = (MethodInfo *)func_?();
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        NStack_28 = JsonSchema::JsonSchema_get_ReadOnly(schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        ppJStack_17 = (JsonWriter **)
+                      CONCAT22(ppJStack_17._2_2_,(schema->fields)._ReadOnly_k__BackingField);
+        pMStack_21 = (MethodInfo *)func_?();
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        NVar29 = JsonSchema::JsonSchema_get_Hidden(schema,(MethodInfo *)0x0);
-        uStack_21 = CONCAT22(uStack_21._2_2_,NVar29);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pJStack_14 = (JsonWriter *)
+                     CONCAT22(pJStack_14._2_2_,(schema->fields)._Hidden_k__BackingField);
+        pMStack_21 = (MethodInfo *)func_?();
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        NVar29 = JsonSchema::JsonSchema_get_Transient(schema,(MethodInfo *)0x0);
-        pIStack_16 = (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)CONCAT22(pIStack_16._2_2_,NVar29)
-        ;
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pJStack_13 = (JsonWriter__Class *)
+                     CONCAT22(pJStack_13._2_2_,(schema->fields)._Transient_k__BackingField);
+        pMStack_21 = (MethodInfo *)func_?();
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        KStack_7 = System.Core.dll::System::Linq::QuickSort`1[TElement]+<Sort>c__Iterator21[System
-                    ::Collections::Generic::KeyValuePair`2[System::Int32,System::Int32]]::
-                    QuickSort_1_TElement_Sort_c_Iterator21_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32__System_Collections_Generic_IEnumerator_TElement__get_Current
-                              ((QuickSort_1_TElement_Sort_c_Iterator21_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_
-                                *)schema,(MethodInfo *)0x0);
-        cVar23 = func_?();
-        if (cVar23 != '\0') {
-          pJVar30 = ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-          KStack_8 = System.Core.dll::System::Linq::
-                      QuickSort`1[TElement]+<Sort>c__Iterator21[System::Collections::Generic::
-                      KeyValuePair`2[System::Int32,System::Int32]]::
-                      QuickSort_1_TElement_Sort_c_Iterator21_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32__System_Collections_Generic_IEnumerator_TElement__get_Current
-                                ((QuickSort_1_TElement_Sort_c_Iterator21_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Int32_
-                                  *)schema,(MethodInfo *)0x0);
-          JVar31 = func_?(&KStack_8);
-          JsonSchemaWriter_WriteType(this,StringLiteral_type,pJVar30,JVar31,(MethodInfo *)0x0);
+        NStack_23.hasValue = (schema->fields)._Type_k__BackingField.hasValue;
+        NStack_23._1_3_ = *(undefined3 *)&(schema->fields)._Type_k__BackingField.field_0x1;
+        NStack_23.value = (schema->fields)._Type_k__BackingField.value;
+        if (NStack_23.hasValue != 0) {
+          pJVar20 = (this->fields)._writer;
+          JVar24 = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
+                            (&NStack_23,
+                             MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__get_Value__
+                            );
+          JsonSchemaWriter_WriteType(this,StringLiteral_type,pJVar20,JVar24,(MethodInfo *)0x0);
         }
-        bVar32 = JetPackMotor::JetPackMotor_get_Thrust((JetPackMotor *)schema,(MethodInfo *)0x0);
-        if (bVar32 == 0) {
-          if (((JsonSchemaWriter__Fields *)pIVar24)->_writer == (JsonWriter *)0x0)
-          goto code_?;
-          (*(code *)(((JsonSchemaWriter__Fields *)pIVar24)->_writer->klass->vtable).
-                    WritePropertyName.method)();
-          pIStack_25 = (Il2CppImage *)((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-          bVar32 = JetPackMotor::JetPackMotor_get_Thrust((JetPackMotor *)schema,(MethodInfo *)0x0);
-          pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                       CONCAT31(pIStack_19._1_3_,bVar32);
-          if (pIStack_25 == (Il2CppImage *)0x0) goto code_?;
-          (**(code **)&((String__Class *)pIStack_25->name)[1]._0.this_arg.attrs)();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if ((schema->fields)._AllowAdditionalProperties_k__BackingField == 0) {
+          pJVar20 = (this->fields)._writer;
+          if (pJVar20 == (JsonWriter *)0x0) goto code_?;
+          (*(pJVar20->klass->vtable).WritePropertyName.methodPtr)();
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          pJVar20 = (this->fields)._writer;
+          pMStack_21 = (MethodInfo *)
+                       CONCAT31(pMStack_21._1_3_,
+                                (schema->fields)._AllowAdditionalProperties_k__BackingField);
+          if (pJVar20 == (JsonWriter *)0x0) goto code_?;
+          (*(pJVar20->klass->vtable).WriteValue_7.methodPtr)();
         }
-        else {
-          pCVar33 = DayNightCycle::DayNightCycle_get_CurrentSunParam
-                              ((DayNightCycle *)schema,(MethodInfo *)0x0);
-          if (pCVar33 != (CelestialParam *)0x0) {
-            if (((JsonSchemaWriter__Fields *)pIVar24)->_writer == (JsonWriter *)0x0)
-            goto code_?;
-            (*(code *)(((JsonSchemaWriter__Fields *)pIVar24)->_writer->klass->vtable).
-                      WritePropertyName.method)();
-            pJVar34 = (JsonSchema *)
-                      DayNightCycle::DayNightCycle_get_CurrentSunParam
-                                ((DayNightCycle *)schema,(MethodInfo *)0x0);
-            JsonSchemaWriter_ReferenceOrWriteSchema(this,pJVar34,(MethodInfo *)0x0);
-          }
+        else if ((schema->fields)._AdditionalProperties_k__BackingField != (JsonSchema *)0x0) {
+          pJVar20 = (this->fields)._writer;
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if (pJVar20 == (JsonWriter *)0x0) goto code_?;
+          (*(pJVar20->klass->vtable).WritePropertyName.methodPtr)();
+          JsonSchemaWriter_ReferenceOrWriteSchema
+                    (this,(schema->fields)._AdditionalProperties_k__BackingField,(MethodInfo *)0x0);
         }
-        pJVar30 = ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        properties = DayNightCycle::DayNightCycle_get_CurrentStarsParam
-                               ((DayNightCycle *)schema,(MethodInfo *)0x0);
         JsonSchemaWriter_WriteSchemaDictionaryIfNotNull
-                  (this,pJVar30,StringLiteral_properties,
-                   (IDictionary_2_System_String_Newtonsoft_Json_Schema_JsonSchema_ *)properties,
-                   (MethodInfo *)0x0);
-        pJVar30 = ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        pCVar33 = DayNightCycle::DayNightCycle_get_CurrentMoonParam
-                            ((DayNightCycle *)schema,(MethodInfo *)0x0);
+                  (this,(this->fields)._writer,StringLiteral_properties,
+                   (schema->fields)._Properties_k__BackingField,(MethodInfo *)0x0);
         JsonSchemaWriter_WriteSchemaDictionaryIfNotNull
-                  (this,pJVar30,StringLiteral_patternProperties,
-                   (IDictionary_2_System_String_Newtonsoft_Json_Schema_JsonSchema_ *)pCVar33,
-                   (MethodInfo *)0x0);
+                  (this,(this->fields)._writer,StringLiteral_patternProperties,
+                   (schema->fields)._PatternProperties_k__BackingField,(MethodInfo *)0x0);
         JsonSchemaWriter_WriteItems(this,schema,(MethodInfo *)0x0);
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        JsonSchema::JsonSchema_get_Minimum
-                  ((Nullable_1_Double_ *)&stack0xffffff60,schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        JsonSchema::JsonSchema_get_Maximum
-                  ((Nullable_1_Double_ *)&stack0xffffff60,schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        NVar29 = JsonSchema::JsonSchema_get_ExclusiveMinimum(schema,(MethodInfo *)0x0);
-        pIStack_16 = (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)CONCAT22(pIStack_16._2_2_,NVar29)
-        ;
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pJStack_13 = (JsonWriter__Class *)
+                     CONCAT22(pJStack_13._2_2_,(schema->fields)._ExclusiveMinimum_k__BackingField);
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        NVar29 = JsonSchema::JsonSchema_get_ExclusiveMaximum(schema,(MethodInfo *)0x0);
-        uStack_21 = CONCAT22(uStack_21._2_2_,NVar29);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pJStack_14 = (JsonWriter *)
+                     CONCAT22(pJStack_14._2_2_,(schema->fields)._ExclusiveMaximum_k__BackingField);
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        JsonSchema::JsonSchema_get_MinimumLength(schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        uStack_25 = *(undefined4 *)&(schema->fields)._MinimumLength_k__BackingField;
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        ppJStack_17 = (JsonWriter **)(schema->fields)._MinimumLength_k__BackingField.value;
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        JsonSchema::JsonSchema_get_MaximumLength(schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        JsonSchema::JsonSchema_get_MinimumItems(schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        JsonSchema::JsonSchema_get_MaximumItems(schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        JsonSchema::JsonSchema_get_DivisibleBy
-                  ((Nullable_1_Double_ *)&stack0xffffff60,schema,(MethodInfo *)0x0);
-        pIStack_25 = (Il2CppImage *)func_?();
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(this->fields)._writer;
+        pMStack_21 = (MethodInfo *)func_?();
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if (pMStack_21 != (MethodInfo *)0x0) {
+          if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WritePropertyName.methodPtr)();
+          (*((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.methodPtr)
+                    (pJStack_12,pMStack_21,
+                     ((*(JsonWriter__Class **)&pJStack_12->_0)->vtable).WriteValue_37.method);
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        pIStack_25 = (Il2CppImage *)
-                     CloudyTheme::CloudyTheme_get_Identifier
-                               ((CloudyTheme *)schema,(MethodInfo *)0x0);
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(schema->fields)._Format_k__BackingField;
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        pMStack_21 = (MethodInfo *)(this->fields)._writer;
+        if (pJStack_12 != (JsonWriter__Class *)0x0) {
+          if (pMStack_21 == (MethodInfo *)0x0) goto code_?;
+          (*(((JsonWriter *)pMStack_21)->klass->vtable).WritePropertyName.methodPtr)();
+          (*(((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.methodPtr)
+                    (pMStack_21,pJStack_12,
+                     (((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.method
+                    );
         }
-        pIStack_19 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)
-                     ((JsonSchemaWriter__Fields *)pIVar24)->_writer;
-        pIStack_25 = (Il2CppImage *)
-                     UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::
-                     TweenRunner`1[T]+<Start>c__Iterator0[FloatTween]::
-                     TweenRunner_1_T_Start_c_Iterator0_FloatTween__System_Collections_IEnumerator_get_Current
-                               ((TweenRunner_1_T_Start_c_Iterator0_FloatTween_ *)schema,
-                                (MethodInfo *)0x0);
-        if (pIStack_25 != (Il2CppImage *)0x0) {
-          if (pIStack_19 == (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0)
-          goto code_?;
-          (*(code *)(pIStack_19->_0).image[6].codeGenModule)();
-          pIVar26 = (pIStack_19->_0).image;
-          (*(code *)pIVar26[0xf].typeCount)(pIStack_19,pIStack_25,pIVar26[0xf].exportedTypeCount);
+        pJStack_12 = (JsonWriter__Class *)(schema->fields)._Pattern_k__BackingField;
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        pMStack_21 = (MethodInfo *)(this->fields)._writer;
+        if (pJStack_12 != (JsonWriter__Class *)0x0) {
+          if (pMStack_21 == (MethodInfo *)0x0) goto code_?;
+          (*(((JsonWriter *)pMStack_21)->klass->vtable).WritePropertyName.methodPtr)();
+          (*(((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.methodPtr)
+                    (pMStack_21,pJStack_12,
+                     (((JsonWriter__Class *)pMStack_21->methodPointer)->vtable).WriteValue_37.method
+                    );
         }
-        pOVar35 = PrefabPool::PrefabPool_get_MVPulseBoxPrefab
-                            ((PrefabPool *)schema,(MethodInfo *)0x0);
-        if (pOVar35 == (ObjectPrefab *)0x0) {
+        uVar11 = CONCAT44(pJStack_12,pJStack_13);
+        if ((schema->fields)._Enum_k__BackingField == (IList_1_Newtonsoft_Json_Linq_JToken_ *)0x0) {
 code_?:
-          if (schema != (JsonSchema *)0x0) {
-            pOVar35 = PrefabPool::PrefabPool_get_MVSmokePrefab
-                                ((PrefabPool *)schema,(MethodInfo *)0x0);
-            if (pOVar35 != (ObjectPrefab *)0x0) {
-              pIVar26 = (pIVar24->_0).image;
-              if (pIVar26 == (Il2CppImage *)0x0) goto code_?;
-              (**(code **)(pIVar26->name + 0x128))();
-              pIStack_13 = (Il2CppImage *)
-                           PrefabPool::PrefabPool_get_MVSmokePrefab
-                                     ((PrefabPool *)schema,(MethodInfo *)0x0);
-              pIStack_25 = (pIVar24->_0).image;
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if ((schema->fields)._Default_k__BackingField != (JToken *)0x0) {
+            pJVar20 = (this->fields)._writer;
+            if (pJVar20 == (JsonWriter *)0x0) goto code_?;
+            (*(pJVar20->klass->vtable).WritePropertyName.methodPtr)();
+            pJStack_12 = (JsonWriter__Class *)(schema->fields)._Default_k__BackingField;
+            pJStack_13 = (JsonWriter__Class *)(this->fields)._writer;
+            pMStack_21 = 
+            Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+            ;
+            pIVar26 = ((
+                       Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+                       ->field7_0x1c).rgctx_data)->klass;
+            if (pIVar26->initialized_and_no_error == 0) {
+              pIVar26 = (Il2CppClass *)func_?();
+            }
+            if (pIVar26->cctor_finished_or_no_cctor == 0) {
               func_?();
-              if (pIStack_13 == (Il2CppImage *)0x0) goto code_?;
-              (*(code *)((ObjectPrefab__Class *)pIStack_13->name)[1]._1.native_size)(pIStack_13);
             }
-            pOVar35 = PrefabPool::PrefabPool_get_MVRandomBoxPrefab
-                                ((PrefabPool *)schema,(MethodInfo *)0x0);
-            if (pOVar35 == (ObjectPrefab *)0x0) {
+            pIVar26 = ((pMStack_21->field7_0x1c).rgctx_data)->klass;
+            if (pIVar26->initialized_and_no_error == 0) {
+              pIVar26 = (Il2CppClass *)func_?();
+            }
+            uVar11 = CONCAT44(pJStack_12,pJStack_13);
+            pMStack_21 = *(MethodInfo **)pIVar26->static_fields;
+            if (pJStack_12 == (JsonWriter__Class *)0x0) goto code_?;
+            (*(code *)(pJStack_12->_0).image[8].typeCount)(pJStack_12);
+          }
+          uVar11 = CONCAT44(pJStack_12,pJStack_13);
+          if ((schema->fields)._Options_k__BackingField ==
+              (IDictionary_2_Newtonsoft_Json_Linq_JToken_System_String_ *)0x0) {
 code_?:
-              if (schema != (JsonSchema *)0x0) {
-                NStack_10 = JsonSchema::JsonSchema_get_Disallow(schema,(MethodInfo *)0x0);
-                cVar23 = func_?();
-                if (cVar23 != '\0') {
-                  pIVar26 = (pIVar24->_0).image;
-                  NStack_11 = JsonSchema::JsonSchema_get_Disallow(schema,(MethodInfo *)0x0);
-                  JVar31 = func_?(&NStack_11);
-                  JsonSchemaWriter_WriteType
-                            (this,StringLiteral_disallow,(JsonWriter *)pIVar26,JVar31,
-                             (MethodInfo *)0x0);
-                }
-                pSVar36 = PrefabPool::PrefabPool_get_MVSoundEmitterPrefab
-                                    ((PrefabPool *)schema,(MethodInfo *)0x0);
-                if (pSVar36 != (SoundEmitterObject *)0x0) {
-                  pIVar26 = (pIVar24->_0).image;
-                  if (pIVar26 == (Il2CppImage *)0x0) goto code_?;
-                  (**(code **)(pIVar26->name + 0x128))();
-                  pJVar34 = (JsonSchema *)
-                            PrefabPool::PrefabPool_get_MVSoundEmitterPrefab
-                                      ((PrefabPool *)schema,(MethodInfo *)0x0);
-                  JsonSchemaWriter_ReferenceOrWriteSchema(this,pJVar34,(MethodInfo *)0x0);
-                }
-                pIVar26 = (pIVar24->_0).image;
-                if (pIVar26 != (Il2CppImage *)0x0) {
-                  (**(code **)(pIVar26->name + 0x100))();
-                  *unaff_FS_OFFSET = uStack_3;
-                  return;
-                }
-              }
+            NStack_23.hasValue = (schema->fields)._Disallow_k__BackingField.hasValue;
+            NStack_23._1_3_ = *(undefined3 *)&(schema->fields)._Disallow_k__BackingField.field_0x1;
+            NStack_23.value = (schema->fields)._Disallow_k__BackingField.value;
+            if (NStack_23.hasValue != 0) {
+              pJVar20 = (this->fields)._writer;
+              JVar24 = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
+                                (&NStack_23,
+                                 MethodInfo__System__Nullable<Newtonsoft::Json::Schema::JsonSchemaType>__get_Value__
+                                );
+              JsonSchemaWriter_WriteType(this,StringLiteral_disallow,pJVar20,JVar24,(MethodInfo *)0x0)
+              ;
             }
-            else {
-              pIVar26 = (pIVar24->_0).image;
-              if (pIVar26 != (Il2CppImage *)0x0) {
-                (**(code **)(pIVar26->name + 0x128))();
-                pIVar26 = (pIVar24->_0).image;
-                if (pIVar26 != (Il2CppImage *)0x0) {
-                  (**(code **)(pIVar26->name + 0x108))();
-                  pOVar35 = PrefabPool::PrefabPool_get_MVRandomBoxPrefab
-                                      ((PrefabPool *)schema,(MethodInfo *)0x0);
-                  if (pOVar35 != (ObjectPrefab *)0x0) {
-                    pIStack_16 = (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)func_?();
-                    uStack_1 = 2;
-                    pIVar37 = pIStack_16;
-                    while (pIVar37 != (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0) {
-                      cVar23 = func_?();
-                      pIVar38 = pIStack_16;
-                      if (cVar23 == '\0') {
-                        puStack_14[(int)((int)&pIStack_12->name + 1)] = 0x452;
-                        uStack_1 = 0xffffffff;
-                        if (pIVar37 != (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)0x0) {
-                          func_?();
-                        }
-                        if (iStack_6 != 0) goto code_?;
-                        pJVar30 = (this->fields)._writer;
-                        if (pJVar30 != (JsonWriter *)0x0) {
-                          (*(code *)(pJVar30->klass->vtable).WriteEndArray.method)();
+            uVar11 = CONCAT44(pJStack_12,pJStack_13);
+            if ((schema->fields)._Extends_k__BackingField != (JsonSchema *)0x0) {
+              pJVar20 = (this->fields)._writer;
+              if (pJVar20 == (JsonWriter *)0x0) goto code_?;
+              (*(pJVar20->klass->vtable).WritePropertyName.methodPtr)();
+              JsonSchemaWriter_ReferenceOrWriteSchema
+                        (this,(schema->fields)._Extends_k__BackingField,(MethodInfo *)0x0);
+            }
+            uVar11 = CONCAT44(pJStack_12,pJStack_13);
+            pJVar20 = (this->fields)._writer;
+            if (pJVar20 != (JsonWriter *)0x0) {
+              (*(pJVar20->klass->vtable).WriteEndObject.methodPtr)();
+              *unaff_FS_OFFSET = uStack_4;
+              return;
+            }
+          }
+          else {
+            pJVar20 = (this->fields)._writer;
+            if (pJVar20 != (JsonWriter *)0x0) {
+              (*(pJVar20->klass->vtable).WritePropertyName.methodPtr)();
+              uVar11 = CONCAT44(pJStack_12,pJStack_13);
+              pJVar20 = (this->fields)._writer;
+              if (pJVar20 != (JsonWriter *)0x0) {
+                (*(pJVar20->klass->vtable).WriteStartArray.methodPtr)();
+                uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                if ((schema->fields)._Options_k__BackingField !=
+                    (IDictionary_2_Newtonsoft_Json_Linq_JToken_System_String_ *)0x0) {
+                  pJStack_9 = (JsonWriter *)func_?();
+                  ppJStack_17 = &pJStack_9;
+                  uStack_25 = 0;
+                  uStack_2 = 4;
+                  while( true ) {
+                    pJStack_13 = (JsonWriter__Class *)pJStack_9;
+                    uVar11 = CONCAT44(pJStack_12,pJStack_9);
+                    if (pJStack_9 == (JsonWriter *)0x0) break;
+                    pJStack_12 = pJStack_9->klass;
+                    uVar15 = 0;
+                    pMStack_21 = (MethodInfo *)0x0;
+                    uVar16 = (pJStack_12->_1).interface_offsets_count;
+                    pJStack_14 = (JsonWriter *)(uint)uVar16;
+                    if (uVar16 != 0) {
+                      do {
+                        if (pJStack_12->interfaceOffsets[uVar15].interfaceType ==
+                            (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+                          ppIVar18 = &(&(pJStack_12->vtable).Equals)
+                                     [pJStack_12->interfaceOffsets[uVar15].offset].methodPtr;
                           goto code_?;
                         }
-                        break;
-                      }
-                      pIStack_19 = pIStack_16->klass;
-                      uVar20 = 0;
-                      pIStack_13 = (Il2CppImage *)0x0;
-                      uVar18._0_1_ = (pIStack_19->_1).rank;
-                      uVar18._1_1_ = (pIStack_19->_1).minimumAlignment;
-                      pIStack_25 = (Il2CppImage *)(uint)uVar18;
-                      if (uVar18 != 0) {
-                        do {
-                          pIVar24 = pIStack_17;
-                          if (pIStack_19->interfaceOffsets[uVar20].interfaceType ==
-                              (Il2CppClass *)
-                              TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<Newtonsoft::Json::Linq::JToken,_System::String>_>
-                             ) {
-                            ppMVar22 = &(&(pIStack_19->vtable).IndexOf)
-                                        [pIStack_19->interfaceOffsets[uVar20].offset].method;
-                            goto code_?;
-                          }
-                          uVar20 = uVar20 + 1;
-                        } while (uVar20 < uVar18);
-                      }
-                      ppMVar22 = (MethodInfo **)func_?();
-code_?:
-                      uStack_9 = (*(code *)*ppMVar22)();
-                      pIVar26 = (pIVar24->_0).image;
-                      if (pIVar26 == (Il2CppImage *)0x0) break;
-                      (**(code **)(pIVar26->name + 0xf8))();
-                      pIVar26 = (pIVar24->_0).image;
-                      if (pIVar26 == (Il2CppImage *)0x0) break;
-                      (**(code **)(pIVar26->name + 0x128))();
-                      pIStack_13 = (Il2CppImage *)func_?();
-                      pIStack_25 = (pIVar24->_0).image;
-                      func_?();
-                      if (pIStack_13 == (Il2CppImage *)0x0) break;
-                      (*(code *)((ObjectPrefab__Class *)pIStack_13->name)[1]._1.native_size)
-                                (pIStack_13);
-                      iVar39 = func_?();
-                      if (iVar39 != 0) {
-                        if ((pIVar24->_0).image == (Il2CppImage *)0x0) break;
-                        func_?();
-                        pIStack_13 = (pIVar24->_0).image;
-                        func_?();
-                        if (pIStack_13 == (Il2CppImage *)0x0) break;
-                        func_?();
-                      }
-                      if ((pIVar24->_0).image == (Il2CppImage *)0x0) break;
-                      func_?();
-                      pIVar37 = pIVar38;
+                        uVar15 = uVar15 + 1;
+                      } while (uVar15 < uVar16);
                     }
+                    ppIVar18 = (Il2CppMethodPointer *)func_?();
+code_?:
+                    cVar19 = (**ppIVar18)();
+                    if (cVar19 == '\0') {
+                      uStack_2 = 0xffffffff;
+                      if (pJStack_9 != (JsonWriter *)0x0) {
+                        func_?();
+                      }
+                      uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                      uStack_2 = 0xffffffff;
+                      pJVar20 = (this->fields)._writer;
+                      if (pJVar20 != (JsonWriter *)0x0) {
+                        (*(pJVar20->klass->vtable).WriteEndArray.methodPtr)();
+                        goto code_?;
+                      }
+                      break;
+                    }
+                    pJStack_13 = (JsonWriter__Class *)pJStack_9;
+                    uVar11 = CONCAT44(pJStack_12,pJStack_9);
+                    if (pJStack_9 == (JsonWriter *)0x0) break;
+                    pJStack_12 = pJStack_9->klass;
+                    uVar15 = 0;
+                    pMStack_21 = (MethodInfo *)0x0;
+                    uVar16 = (pJStack_12->_1).interface_offsets_count;
+                    pJStack_14 = (JsonWriter *)(uint)uVar16;
+                    if (uVar16 != 0) {
+                      do {
+                        if (pJStack_12->interfaceOffsets[uVar15].interfaceType ==
+                            (Il2CppClass *)
+                            TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<Newtonsoft::Json::Linq::JToken,_System::String>_>
+                           ) {
+                          ppIVar18 = &(&(pJStack_12->vtable).Equals)
+                                     [pJStack_12->interfaceOffsets[uVar15].offset].methodPtr;
+                          goto code_?;
+                        }
+                        uVar15 = uVar15 + 1;
+                      } while (uVar15 < uVar16);
+                    }
+                    ppIVar18 = (Il2CppMethodPointer *)func_?();
+code_?:
+                    uVar11 = (**ppIVar18)();
+                    pJStack_12 = (JsonWriter__Class *)((ulonglong)uVar11 >> 0x20);
+                    pJStack_13 = (JsonWriter__Class *)uVar11;
+                    pJVar20 = (this->fields)._writer;
+                    if (pJVar20 == (JsonWriter *)0x0) break;
+                    (*(pJVar20->klass->vtable).WriteStartObject.methodPtr)();
+                    uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                    pJVar20 = (this->fields)._writer;
+                    if (pJVar20 == (JsonWriter *)0x0) break;
+                    (*(pJVar20->klass->vtable).WritePropertyName.methodPtr)();
+                    pJStack_14 = (this->fields)._writer;
+                    pMStack_21 = 
+                    Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+                    ;
+                    pIVar26 = ((
+                               Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+                               ->field7_0x1c).rgctx_data)->klass;
+                    if (pIVar26->initialized_and_no_error == 0) {
+                      pIVar26 = (Il2CppClass *)func_?();
+                    }
+                    if (pIVar26->cctor_finished_or_no_cctor == 0) {
+                      func_?();
+                    }
+                    pIVar26 = ((pMStack_21->field7_0x1c).rgctx_data)->klass;
+                    if (pIVar26->initialized_and_no_error == 0) {
+                      pIVar26 = (Il2CppClass *)func_?();
+                    }
+                    uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                    pMStack_21 = *(MethodInfo **)pIVar26->static_fields;
+                    if (pJStack_13 == (JsonWriter__Class *)0x0) break;
+                    (**(code **)(*(int *)pJStack_13 + 0x16c))(pJStack_13);
+                    uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                    if (pJStack_12 != (JsonWriter__Class *)0x0) {
+                      if ((this->fields)._writer == (JsonWriter *)0x0) break;
+                      func_?();
+                      uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                      if ((this->fields)._writer == (JsonWriter *)0x0) break;
+                      func_?();
+                    }
+                    uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                    if ((this->fields)._writer == (JsonWriter *)0x0) break;
+                    func_?();
                   }
                 }
               }
             }
           }
         }
-        else if (((JsonSchemaWriter__Fields *)pIVar24)->_writer != (JsonWriter *)0x0) {
-          (*(code *)(((JsonSchemaWriter__Fields *)pIVar24)->_writer->klass->vtable).
-                    WritePropertyName.method)();
-          if (((JsonSchemaWriter__Fields *)pIVar24)->_writer != (JsonWriter *)0x0) {
-            (*(code *)(((JsonSchemaWriter__Fields *)pIVar24)->_writer->klass->vtable).
-                      WriteStartArray.method)();
-            pOVar35 = PrefabPool::PrefabPool_get_MVPulseBoxPrefab
-                                ((PrefabPool *)schema,(MethodInfo *)0x0);
-            if (pOVar35 != (ObjectPrefab *)0x0) {
-              pIVar40 = (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)func_?();
-              uStack_1 = 0;
-              pIStack_19 = pIVar40;
-              while (pIVar40 != (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0) {
-                cVar23 = func_?();
-                if (cVar23 == '\0') {
-                  pIStack_12 = (Il2CppImage *)0x0;
-                  *puStack_14 = 0x348;
-                  uStack_1 = 0xffffffff;
-                  if (pIVar40 != (IList_1_Newtonsoft_Json_Schema_JsonSchema___Class *)0x0) {
-                    func_?();
-                  }
-                  if (iStack_6 != 0) goto code_?;
-                  if (((pIStack_12 != (Il2CppImage *)0xffffffff) &&
-                      (puStack_14[(int)pIStack_12] == 0x348)) && (-1 < (int)pIStack_12)) {
-                    pIStack_12 = (Il2CppImage *)&pIStack_12[-1].field_0x2b;
-                  }
-                  pJVar30 = (this->fields)._writer;
-                  if (pJVar30 != (JsonWriter *)0x0) {
-                    (*(code *)(pJVar30->klass->vtable).WriteEndArray.method)();
-                    goto code_?;
-                  }
-                  break;
-                }
-                pIStack_12 = (pIVar40->_0).image;
-                uVar18 = 0;
-                pIStack_25 = (Il2CppImage *)0x0;
-                uVar20 = *(ushort *)((int)&pIStack_12[4].nameNoExt + 2);
-                pIStack_16 = (IList_1_Newtonsoft_Json_Schema_JsonSchema_ *)(uint)uVar20;
-                if (uVar20 != 0) {
-                  do {
-                    pIVar40 = pIStack_19;
-                    pIVar24 = pIStack_17;
-                    if (*(IEnumerator_1_Newtonsoft_Json_Linq_JToken___Class **)
-                         (pIStack_12[2].name + (uint)uVar18 * 8) ==
-                        TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
-                       ) {
-                      pIVar26 = (pIStack_19->_0).image;
-                      puVar41 = &pIVar26[4].exportedTypeCount +
-                                *(int *)(pIVar26[2].name + (uint)uVar18 * 8 + 4) * 2;
+        else {
+          pJVar20 = (this->fields)._writer;
+          if (pJVar20 != (JsonWriter *)0x0) {
+            (*(pJVar20->klass->vtable).WritePropertyName.methodPtr)();
+            uVar11 = CONCAT44(pJStack_12,pJStack_13);
+            pJVar20 = (this->fields)._writer;
+            if (pJVar20 != (JsonWriter *)0x0) {
+              (*(pJVar20->klass->vtable).WriteStartArray.methodPtr)();
+              uVar11 = CONCAT44(pJStack_12,pJStack_13);
+              if ((schema->fields)._Enum_k__BackingField !=
+                  (IList_1_Newtonsoft_Json_Linq_JToken_ *)0x0) {
+                pJStack_8 = (JsonWriter *)func_?();
+                ppJStack_17 = &pJStack_8;
+                uStack_25 = 0;
+                uStack_2 = 1;
+                while (uVar11 = CONCAT44(pJStack_12,pJStack_13), pJStack_8 != (JsonWriter *)0x0) {
+                  cVar19 = func_?();
+                  if (cVar19 == '\0') {
+                    uStack_2 = 0xffffffff;
+                    if (pJStack_8 != (JsonWriter *)0x0) {
+                      func_?();
+                    }
+                    uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                    uStack_2 = 0xffffffff;
+                    pJVar20 = (this->fields)._writer;
+                    if (pJVar20 != (JsonWriter *)0x0) {
+                      (*(pJVar20->klass->vtable).WriteEndArray.methodPtr)();
                       goto code_?;
                     }
-                    uVar18 = uVar18 + 1;
-                  } while (uVar18 < uVar20);
-                }
-                puVar41 = (uint32_t *)func_?();
+                    break;
+                  }
+                  pJStack_13 = (JsonWriter__Class *)pJStack_8;
+                  uVar11 = CONCAT44(pJStack_12,pJStack_8);
+                  if (pJStack_8 == (JsonWriter *)0x0) break;
+                  pJStack_12 = pJStack_8->klass;
+                  uVar15 = 0;
+                  pMStack_21 = (MethodInfo *)0x0;
+                  uVar16 = (pJStack_12->_1).interface_offsets_count;
+                  pJStack_14 = (JsonWriter *)(uint)uVar16;
+                  if (uVar16 != 0) {
+                    do {
+                      if (pJStack_12->interfaceOffsets[uVar15].interfaceType ==
+                          (Il2CppClass *)
+                          TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
+                         ) {
+                        ppIVar18 = &(&(pJStack_12->vtable).Equals)
+                                   [pJStack_12->interfaceOffsets[uVar15].offset].methodPtr;
+                        goto code_?;
+                      }
+                      uVar15 = uVar15 + 1;
+                    } while (uVar15 < uVar16);
+                  }
+                  ppIVar18 = (Il2CppMethodPointer *)func_?();
 code_?:
-                pIStack_25 = (Il2CppImage *)(*(code *)*puVar41)();
-                pIStack_12 = (pIVar24->_0).image;
-                func_?();
-                if (pIStack_25 == (Il2CppImage *)0x0) break;
-                (*(code *)(((String__Class *)pIStack_25->name)->vtable).
-                          System_Collections_IEnumerable_GetEnumerator.method)(pIStack_25);
+                  pJStack_12 = (JsonWriter__Class *)(**ppIVar18)();
+                  pJStack_13 = (JsonWriter__Class *)(this->fields)._writer;
+                  pMStack_21 = 
+                  Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+                  ;
+                  pIVar26 = ((
+                             Newtonsoft__Json__JsonConverter__MethodInfo__System__Array__Empty<Newtonsoft::Json::JsonConverter>______
+                             ->field7_0x1c).rgctx_data)->klass;
+                  if (pIVar26->initialized_and_no_error == 0) {
+                    pIVar26 = (Il2CppClass *)func_?();
+                  }
+                  if (pIVar26->cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  pIVar26 = ((pMStack_21->field7_0x1c).rgctx_data)->klass;
+                  if (pIVar26->initialized_and_no_error == 0) {
+                    pIVar26 = (Il2CppClass *)func_?();
+                  }
+                  uVar11 = CONCAT44(pJStack_12,pJStack_13);
+                  pMStack_21 = *(MethodInfo **)pIVar26->static_fields;
+                  if (pJStack_12 == (JsonWriter__Class *)0x0) break;
+                  (*(code *)(pJStack_12->_0).image[8].typeCount)(pJStack_12);
+                }
               }
             }
           }
@@ -748,13 +843,13 @@ code_?:
     }
   }
 code_?:
+  pJStack_12 = (JsonWriter__Class *)((ulonglong)uVar11 >> 0x20);
+  pJStack_13 = (JsonWriter__Class *)uVar11;
   func_?();
-code_?:
   func_?();
-code_?:
   func_?();
-  pcVar42 = (code *)swi(3);
-  (*pcVar42)();
+  pcVar27 = (code *)swi(3);
+  (*pcVar27)();
   return;
 }
 
@@ -773,90 +868,81 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffd0;
-  puVar5 = &stack0xffffffd0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>_>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>_>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>__get_Key__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>__get_Value__
+                   );
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  uStack_6 = 0;
-  func_?();
   if (properties == (IDictionary_2_System_String_Newtonsoft_Json_Schema_JsonSchema_ *)0x0) {
 code_?:
     *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  puStack_7 = (undefined4 *)&stack0xffffffd0;
-  puStack_4 = &stack0xffffffd0;
   if (writer != (JsonWriter *)0x0) {
-    puStack_7 = (undefined4 *)&stack0xffffffd0;
-    puStack_4 = &stack0xffffffd0;
-    (*(code *)(writer->klass->vtable).WritePropertyName.method)
-              (writer,propertyName,(writer->klass->vtable).WriteEnd.methodPtr);
-    (*(code *)(writer->klass->vtable).WriteStartObject.method)
-              (writer,(writer->klass->vtable).WriteEndObject.methodPtr);
-    piVar8 = (int *)func_?(0,
+    (*(writer->klass->vtable).WritePropertyName.methodPtr)
+              (writer,propertyName,(writer->klass->vtable).WritePropertyName.method);
+    (*(writer->klass->vtable).WriteStartObject.methodPtr)
+              (writer,(writer->klass->vtable).WriteStartObject.method);
+    piVar4 = (int *)func_?(0,
                                     TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>_>
                                     ,properties);
-    uStack_1 = 0;
-    while (piVar8 != (int *)0x0) {
-      cVar9 = func_?(1,TypeInfo__System__Collections__IEnumerator,piVar8);
-      properties = (IDictionary_2_System_String_Newtonsoft_Json_Schema_JsonSchema_ *)
-                   TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>_>
-      ;
-      if (cVar9 == '\0') {
-        properties = (IDictionary_2_System_String_Newtonsoft_Json_Schema_JsonSchema_ *)0x0;
-        *puStack_7 = 0x5d;
+    uStack_1 = 1;
+    while( true ) {
+      if (piVar4 == (int *)0x0) break;
+      cVar5 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar4);
+      if (cVar5 == '\0') {
         uStack_1 = 0xffffffff;
-        if (piVar8 != (int *)0x0) {
-          func_?(0,TypeInfo__System__IDisposable,piVar8);
+        if (piVar4 != (int *)0x0) {
+          func_?(0,TypeInfo__System__IDisposable,piVar4);
         }
-        if (writer != (JsonWriter *)0x0) {
-          (*(code *)(writer->klass->vtable).WriteEndObject.method)
-                    (writer,(writer->klass->vtable).WriteStartArray.methodPtr);
-          goto code_?;
-        }
-        break;
+        uStack_1 = 0xffffffff;
+        (*(writer->klass->vtable).WriteEndObject.methodPtr)
+                  (writer,(writer->klass->vtable).WriteEndObject.method);
+        goto code_?;
       }
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar8 + 0xb6);
-      if (uVar11 != 0) {
-        iVar12 = *(int *)(*piVar8 + 0x58);
+      if (piVar4 == (int *)0x0) break;
+      iVar6 = *piVar4;
+      uVar7 = 0;
+      if (*(ushort *)(iVar6 + 0xb2) != 0) {
         do {
           if (*(IEnumerator_1_KeyValuePair_2_System_String_Newtonsoft_Json_Schema_JsonSchema___Class
-                **)(iVar12 + (uint)uVar10 * 8) ==
+                **)(*(int *)(iVar6 + 0x58) + (uint)uVar7 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>_>
              ) {
-            puVar13 = (undefined4 *)(*piVar8 + (*(int *)(iVar12 + 4 + (uint)uVar10 * 8) + 0x18) * 8);
+            puVar8 = (undefined4 *)
+                     (*(int *)(*(int *)(iVar6 + 0x58) + 4 + (uint)uVar7 * 8) * 8 + 0xbc + iVar6);
             goto code_?;
           }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
+          uVar7 = uVar7 + 1;
+        } while (uVar7 < *(ushort *)(iVar6 + 0xb2));
       }
-      puVar13 = (undefined4 *)
-               func_?(piVar8,
+      puVar8 = (undefined4 *)
+               func_?(piVar4,
                                TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>_>
                                ,0);
 code_?:
-      uStack_6 = (*(code *)*puVar13)(piVar8,puVar13[1]);
-      uVar14 = func_?(&uStack_6,
-                              MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>__get_Key__
-                             );
-      (*(code *)(writer->klass->vtable).WritePropertyName.method)
-                (writer,uVar14,(writer->klass->vtable).WriteEnd.methodPtr);
-      schema = (JsonSchema *)
-               func_?(&uStack_6,
-                               MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_Newtonsoft::Json::Schema::JsonSchema>__get_Value__
-                              );
-      JsonSchemaWriter_ReferenceOrWriteSchema(this,schema,(MethodInfo *)0x0);
+      uVar9 = (*(code *)*puVar8)(piVar4,puVar8[1]);
+      (*(writer->klass->vtable).WritePropertyName.methodPtr)
+                (writer,(int)uVar9,(writer->klass->vtable).WritePropertyName.method);
+      JsonSchemaWriter_ReferenceOrWriteSchema
+                (this,(JsonSchema *)((ulonglong)uVar9 >> 0x20),(MethodInfo *)0x0);
     }
   }
-  func_?(0);
-  func_?(properties,0,0);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -868,168 +954,211 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::JsonSchema
                JsonSchemaType__Enum type,MethodInfo *method)
 
 {
-  pLVar1 = (List_1_UnityEngine_Vector4_ *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&
+                    System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaType>_MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetFlagsValues<Newtonsoft::Json::Schema::JsonSchemaType>_Newtonsoft__Json__Schema__JsonSchemaType_
+                   );
+    func_?(&TypeInfo__System__Enum);
+    func_?(&
+                    System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>_MethodInfo__System__Linq__Enumerable__ToList<Newtonsoft::Json::Schema::JsonSchemaType>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaType>_
+                   );
+    func_?(&
+                    System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaType>_MethodInfo__System__Linq__Enumerable__Where<Newtonsoft::Json::Schema::JsonSchemaType>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaType>__System__Func<Newtonsoft::Json::Schema::JsonSchemaType,_bool>_
+                   );
+    func_?(&TypeInfo__System__Func<Newtonsoft::Json::Schema::JsonSchemaType,_bool>);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaType>
+                   );
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaType>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaType>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaType>
+                   );
+    func_?(&TypeRef__Newtonsoft__Json__Schema__JsonSchemaType);
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>__Add_Newtonsoft__Json__Schema__JsonSchemaType_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>__List__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>
+                   );
+    func_?(&TypeInfo__System__Type);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c___WriteType_b__7_0_Newtonsoft__Json__Schema__JsonSchemaType_
+                   );
+    func_?(&TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c);
     cRam_? = '\x01';
   }
-  func_?();
   handle = TypeRef__Newtonsoft__Json__Schema__JsonSchemaType;
-  if ((((uint)(TypeInfo__System__Type->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Type->_1).cctor_started == 0)) {
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
   enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
   value = (Object *)
-          func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType,&stack0xffffffe8);
-  if ((((uint)(TypeInfo__System__Enum->vtable).Equals.methodPtr & 0x2000000) != 0) &&
-     ((TypeInfo__System__Enum->_1).cctor_started == 0)) {
+          func_?(TypeInfo__Newtonsoft__Json__Schema__JsonSchemaType,&stack0xffffffe4);
+  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar2 = mscorlib.dll::System::Enum::Enum_IsDefined(enumType,value,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  bVar1 = mscorlib.dll::System::Enum::Enum_IsDefined(enumType,value,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
     source = Json::Utilities::EnumUtils::EnumUtils_GetFlagsValues
                        (type,
                         System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaType>_MethodInfo__Newtonsoft__Json__Utilities__EnumUtils__GetFlagsValues<Newtonsoft::Json::Schema::JsonSchemaType>_Newtonsoft__Json__Schema__JsonSchemaType_
                        );
-    if (TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter->static_fields->__f__am_cache0 ==
-        (Func_2_Newtonsoft_Json_Schema_JsonSchemaType_Boolean_ *)0x0) {
-      this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene_
-                 *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-      Scene,UnityEngine::SceneManagement::Scene]::
-      UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_Scene___ctor
-                (this_00,(Object *)0x0,
-                 MethodInfo__Newtonsoft__Json__Schema__JsonSchemaWriter___WriteType_m__0_Newtonsoft__Json__Schema__JsonSchemaType_
-                 ,
-                 MethodInfo__System__Func<Newtonsoft::Json::Schema::JsonSchemaType,_bool>__Func_System__Object__void__
-                );
-      TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter->static_fields->__f__am_cache0 =
-           (Func_2_Newtonsoft_Json_Schema_JsonSchemaType_Boolean_ *)this_00;
+    if ((TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c->_1).cctor_finished_or_no_cctor
+        == 0) {
+      func_?();
     }
-    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_17
-                          ((IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)source,
-                           (Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Boolean_
-                            *)TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter->static_fields->
-                              __f__am_cache0,
+    this_00 = TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c->static_fields->__9__7_0;
+    if (this_00 == (Func_2_Newtonsoft_Json_Schema_JsonSchemaType_Boolean_ *)0x0) {
+      if ((TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c->_1).cctor_finished_or_no_cctor
+          == 0) {
+        func_?();
+      }
+      object = TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c->static_fields->__9;
+      this_00 = (Func_2_Newtonsoft_Json_Schema_JsonSchemaType_Boolean_ *)func_?();
+      if (this_00 == (Func_2_Newtonsoft_Json_Schema_JsonSchemaType_Boolean_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Predicate`1[Int32Enum]::Predicate_1_Int32Enum___ctor
+                ((Predicate_1_Int32Enum_ *)this_00,(Object *)object,
+                 MethodInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c___WriteType_b__7_0_Newtonsoft__Json__Schema__JsonSchemaType_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__Newtonsoft__Json__Schema__JsonSchemaWriter____c->static_fields->__9__7_0 = this_00;
+      func_?();
+    }
+    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_3
+                          ((IEnumerable_1_System_Int32Enum_ *)source,
+                           (Func_2_Int32Enum_Boolean_ *)this_00,
                            System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaType>_MethodInfo__System__Linq__Enumerable__Where<Newtonsoft::Json::Schema::JsonSchemaType>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaType>__System__Func<Newtonsoft::Json::Schema::JsonSchemaType,_bool>_
                           );
-    pLVar3 = (List_1_Newtonsoft_Json_Schema_JsonSchemaType___Class *)&UNK_?;
-    this_01 = (List_1_UnityEngine_Vector4_ *)
-              System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_21
-                        ((IEnumerable_1_UseInteractor_ *)source_00,
+    this_01 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_3
+                        (source_00,
                          System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>_MethodInfo__System__Linq__Enumerable__ToList<Newtonsoft::Json::Schema::JsonSchemaType>_System__Collections__Generic__IEnumerable<Newtonsoft::Json::Schema::JsonSchemaType>_
                         );
-  }
-  else {
-    pLVar3 = TypeInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>
-    ;
-    this_01 = (List_1_UnityEngine_Vector4_ *)func_?();
-    pLVar1 = this_01;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector4]::
-    List_1_UnityEngine_Vector4___ctor
-              (this_01,
-               MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>__List__
-              );
-    if (this_01 == (List_1_UnityEngine_Vector4_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[UIPushOption]::List_1_UIPushOption__Add
-              ((List_1_UIPushOption_ *)this_01,type,
-               MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>__Add_Newtonsoft__Json__Schema__JsonSchemaType_
-              );
-  }
-  if (this_01 != (List_1_UnityEngine_Vector4_ *)0x0) {
-    iVar4 = func_?();
-    if (iVar4 == 0) {
+    if (this_01 != (List_1_System_Int32Enum_ *)0x0) {
 code_?:
-      *unaff_FS_OFFSET = pLVar1;
-      return;
-    }
-    if (writer != (JsonWriter *)0x0) {
-      (*(code *)(writer->klass->vtable).WritePropertyName.method)();
-      iVar4 = func_?();
-      if (iVar4 == 1) {
-        uVar5 = 0;
-        uVar6._0_1_ = (this_01->klass->_1).rank;
-        uVar6._1_1_ = (this_01->klass->_1).minimumAlignment;
-        if (uVar6 != 0) {
-          do {
-            if (this_01->klass->interfaceOffsets[uVar5].interfaceType ==
-                (Il2CppClass *)
-                TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaType>
-               ) {
-              ppMVar7 = &(&((List_1_UseInteractor___VTable *)&this_01->klass->vtable)->ToString)
-                          [this_01->klass->interfaceOffsets[uVar5].offset].method;
-              goto code_?;
-            }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
-        }
-        ppMVar7 = (MethodInfo **)func_?();
+      pIVar2 = 
+      TypeInfo__System__Collections__Generic__ICollection<Newtonsoft::Json::Schema::JsonSchemaType>;
+      iVar3 = func_?();
+      if (iVar3 == 0) {
 code_?:
-        JVar8 = (*(code *)*ppMVar7)();
-        pLVar1 = (List_1_UnityEngine_Vector4_ *)
-                  JsonSchemaBuilder::JsonSchemaBuilder_MapType_1(JVar8,(MethodInfo *)0x0);
-        (*(code *)(writer->klass->vtable).WriteValue.method)();
-        goto code_?;
+        *unaff_FS_OFFSET = pIVar2;
+        return;
       }
-      (*(code *)(writer->klass->vtable).WriteStartArray.method)();
-      uVar9 = 0;
-      piVar10 = (int *)func_?();
-      while (piVar10 != (int *)0x0) {
-        cVar11 = func_?();
-        if (cVar11 == '\0') {
-          (pLVar3->_0).image = (Il2CppImage *)0xd0;
-          if (piVar10 != (int *)0x0) {
-            func_?();
+      if (writer != (JsonWriter *)0x0) {
+        (*(writer->klass->vtable).WritePropertyName.methodPtr)();
+        iVar3 = func_?();
+        if (iVar3 == 1) {
+          uVar4 = 0;
+          uVar5 = (this_01->klass->_1).interface_offsets_count;
+          if (uVar5 != 0) {
+            do {
+              if (this_01->klass->interfaceOffsets[uVar4].interfaceType ==
+                  (Il2CppClass *)
+                  TypeInfo__System__Collections__Generic__IList<Newtonsoft::Json::Schema::JsonSchemaType>
+                 ) {
+                pVVar6 = &(this_01->klass->vtable).Equals +
+                          this_01->klass->interfaceOffsets[uVar4].offset;
+                goto code_?;
+              }
+              uVar4 = uVar4 + 1;
+            } while (uVar4 < uVar5);
           }
-          if (writer != (JsonWriter *)0x0) {
-            (*(code *)(writer->klass->vtable).WriteEndArray.method)();
-            *unaff_FS_OFFSET = uVar9;
+          pVVar6 = (VirtualInvokeData *)func_?();
+code_?:
+          pIVar2 = (ICollection_1_Newtonsoft_Json_Schema_JsonSchemaType___Class *)0x0;
+          JVar7 = (*pVVar6->methodPtr)();
+          JsonSchemaBuilder::JsonSchemaBuilder_MapType_1(JVar7,(MethodInfo *)0x0);
+          (*(writer->klass->vtable).WriteValue.methodPtr)();
+          goto code_?;
+        }
+        (*(writer->klass->vtable).WriteStartArray.methodPtr)();
+        piVar8 = (int *)func_?();
+        while (piVar8 != (int *)0x0) {
+          piVar8 = (int *)&UNK_?;
+          cVar9 = func_?();
+          if (cVar9 == '\0') {
+            if (piVar8 != (int *)0x0) {
+              func_?();
+            }
+            (*(writer->klass->vtable).WriteEndArray.methodPtr)();
+            *unaff_FS_OFFSET = writer;
             return;
           }
-          break;
-        }
-        uVar5 = 0;
-        uVar6 = *(ushort *)(*piVar10 + 0xb6);
-        if (uVar6 != 0) {
-          iVar4 = *(int *)(*piVar10 + 0x58);
-          do {
-            if (*(IEnumerator_1_Newtonsoft_Json_Schema_JsonSchemaType___Class **)
-                 (iVar4 + (uint)uVar5 * 8) ==
-                TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaType>
-               ) {
-              puVar12 = (undefined4 *)(*piVar10 + (*(int *)(iVar4 + 4 + (uint)uVar5 * 8) + 0x18) * 8);
-              goto code_?;
-            }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
-        }
-        puVar12 = (undefined4 *)func_?();
+          if (piVar8 == (int *)0x0) break;
+          uVar4 = 0;
+          uVar5 = *(ushort *)(*piVar8 + 0xb2);
+          if (uVar5 != 0) {
+            do {
+              if (*(IEnumerator_1_Newtonsoft_Json_Schema_JsonSchemaType___Class **)
+                   (*(int *)(*piVar8 + 0x58) + (uint)uVar4 * 8) ==
+                  TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Schema::JsonSchemaType>
+                 ) {
+                puVar10 = (undefined4 *)
+                          (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar4 * 8) * 8 + 0xbc +
+                          *piVar8);
+                goto code_?;
+              }
+              uVar4 = uVar4 + 1;
+            } while (uVar4 < uVar5);
+          }
+          piVar8 = (int *)&UNK_?;
+          puVar10 = (undefined4 *)func_?();
 code_?:
-        JVar8 = (*(code *)*puVar12)();
-        JsonSchemaBuilder::JsonSchemaBuilder_MapType_1(JVar8,(MethodInfo *)0x0);
-        (*(code *)(writer->klass->vtable).WriteValue.method)();
+          JVar7 = (*(code *)*puVar10)();
+          JsonSchemaBuilder::JsonSchemaBuilder_MapType_1(JVar7,(MethodInfo *)0x0);
+          (*(writer->klass->vtable).WriteValue.methodPtr)();
+        }
+      }
+    }
+  }
+  else {
+    this_01 = (List_1_System_Int32Enum_ *)func_?();
+    if (this_01 != (List_1_System_Int32Enum_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
+      LowLevelList_1_System_Object___ctor
+                ((LowLevelList_1_System_Object_ *)this_01,
+                 MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>__List__
+                );
+      pMVar11 = 
+      MethodInfo__System__Collections__Generic__List<Newtonsoft::Json::Schema::JsonSchemaType>__Add_Newtonsoft__Json__Schema__JsonSchemaType_
+      ;
+      piVar12 = &(this_01->fields)._version;
+      *piVar12 = *piVar12 + 1;
+      pIVar13 = (this_01->fields)._items;
+      uVar14 = (this_01->fields)._size;
+      if (pIVar13 != (Int32Enum__Enum__Array *)0x0) {
+        if (uVar14 < pIVar13->max_length) {
+          (this_01->fields)._size = uVar14 + 1;
+          if (pIVar13->max_length <= uVar14) goto code_?;
+          pIVar13->vector[uVar14] = type;
+        }
+        else {
+          (*(pMVar11->klass->rgctx_data[0xb].method)->virtualMethodPointer)();
+        }
+        goto code_?;
       }
     }
   }
 code_?:
   func_?();
+code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
-}
-
-
-/* Boolean <WriteType>m__0(JsonSchemaType) */
-
-bool Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::
-     JsonSchemaWriter__WriteType_m__0(JsonSchemaType__Enum v,MethodInfo *method)
-
-{
-  return v != JsonSchemaType__Enum_None;
 }
 
 
@@ -1041,14 +1170,17 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaWriter::JsonSchema
 
 {
   if (cRam_? == '\0') {
-    func_?(_UNK_?);
+    func_?(&StringLiteral_writer);
     cRam_? = '\x01';
   }
-  ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)writer,StringLiteral_writer,(MethodInfo *)0x0);
   (this->fields)._writer = writer;
+  func_?(&this->fields,writer);
   (this->fields)._resolver = resolver;
+  func_?(&(this->fields)._resolver,resolver);
   return;
 }
 

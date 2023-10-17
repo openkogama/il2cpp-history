@@ -6,8 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityEngine;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class MVCubeGun : MVPickupItemBase
 {
@@ -18,6 +19,7 @@ public class MVCubeGun : MVPickupItemBase
 	public MVCubeGun(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);
 
 	// Methods
+	protected override void AddExtraUseRequirements(GameObject root, UseInteractor ui);
 	private void SetCubeMaterial();
 	public override void OnDataUpdate();
 }

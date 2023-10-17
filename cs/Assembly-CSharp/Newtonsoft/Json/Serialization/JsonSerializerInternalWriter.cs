@@ -8,11 +8,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
-using System.Security;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Utilities;
 
-// Image 37: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -38,10 +37,10 @@ namespace Newtonsoft.Json.Serialization
 		private void WriteMemberInfoProperty(JsonWriter writer, object memberValue, JsonProperty property, JsonContract contract);
 		private bool CheckForCircularReference(object value, ReferenceLoopHandling? referenceLoopHandling, JsonContract contract);
 		private void WriteReference(JsonWriter writer, object value);
-		internal static bool TryConvertToString(object value, Type type, out string s);
+		internal static bool TryConvertToString(object value, System.Type type, out string s);
 		private void SerializeString(JsonWriter writer, object value, JsonStringContract contract);
 		private void SerializeObject(JsonWriter writer, object value, JsonObjectContract contract, JsonProperty member, JsonContract collectionValueContract);
-		private void WriteTypeProperty(JsonWriter writer, Type type);
+		private void WriteTypeProperty(JsonWriter writer, System.Type type);
 		private bool HasFlag(DefaultValueHandling value, DefaultValueHandling flag);
 		private bool HasFlag(PreserveReferencesHandling value, PreserveReferencesHandling flag);
 		private bool HasFlag(TypeNameHandling value, TypeNameHandling flag);
@@ -51,7 +50,6 @@ namespace Newtonsoft.Json.Serialization
 		private void SerializeMultidimensionalArray(JsonWriter writer, Array values, JsonArrayContract contract, JsonProperty member, int initialDepth, int[] indices);
 		private string GetReference(JsonWriter writer, object value);
 		private bool WriteStartArray(JsonWriter writer, object values, JsonArrayContract contract, JsonProperty member, JsonContract containerContract);
-		[SecuritySafeCritical]
 		private void SerializeISerializable(JsonWriter writer, ISerializable value, JsonISerializableContract contract);
 		private bool ShouldWriteType(TypeNameHandling typeNameHandlingFlag, JsonContract contract, JsonProperty member, JsonContract collectionValueContract);
 		private void SerializeDictionary(JsonWriter writer, IWrappedDictionary values, JsonDictionaryContract contract, JsonProperty member, JsonContract collectionValueContract);

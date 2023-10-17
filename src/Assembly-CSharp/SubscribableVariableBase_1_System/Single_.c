@@ -2,26 +2,78 @@
 /* Boolean Equals(SubscribableVariableBase`1[System.Single]) */
 
 bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
-     SubscribableVariableBase_1_System_Single__Equals_1
+     SubscribableVariableBase_1_System_Single__Equals
                (SubscribableVariableBase_1_System_Single_ *this,
                SubscribableVariableBase_1_System_Single_ *other,MethodInfo *method)
 
 {
-  pSVar1 = &this->fields;
+  pMVar1 = method;
+  this_00 = &this->fields;
   if (other != (SubscribableVariableBase_1_System_Single_ *)0x0) {
     this = (SubscribableVariableBase_1_System_Single_ *)(other->fields).value;
-    iVar2 = *(int *)(*(int *)(method->name + 0x60) + 0x1c);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
+    pvVar2 = method->klass->rgctx_data[7].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
     }
-    uVar3 = func_?(iVar2,&this);
-    bVar4 = func_?(pSVar1,uVar3,0);
-    return bVar4;
+    obj = (Object *)func_?(pvVar2,&this);
+    bVar3 = mscorlib.dll::System::Single::Single_Equals
+                      ((Single *)this_00,obj,pMVar1->klass->rgctx_data[8].method);
+    return bVar3;
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar3 = (*pcVar4)();
+  return bVar3;
+}
+
+
+/* Boolean Equals(Object) */
+
+bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
+     SubscribableVariableBase_1_System_Single__Equals_1
+               (SubscribableVariableBase_1_System_Single_ *this,Object *obj,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Type);
+    cRam_? = '\x01';
+  }
+  if (obj == (Object *)0x0) {
+    return 0;
+  }
+  if (this == (SubscribableVariableBase_1_System_Single_ *)obj) {
+    return 1;
+  }
+  left._source = (CancellationTokenSource *)
+                 mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
+  if (this != (SubscribableVariableBase_1_System_Single_ *)0x0) {
+    right._source =
+         (CancellationTokenSource *)
+         mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Type);
+    }
+    bVar1 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+                      (left,right,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      return 0;
+    }
+    pIVar2 = (method->klass->rgctx_data[1].method)->virtualMethodPointer;
+    pIVar3 = method->klass->rgctx_data->klass;
+    if (pIVar3->initialized_and_no_error == 0) {
+      pIVar3 = (Il2CppClass *)func_?();
+    }
+    if ((pIVar3->typeHierarchyDepth <= (obj->klass->_1).typeHierarchyDepth) &&
+       ((obj->klass->_1).typeHierarchy[pIVar3->typeHierarchyDepth - 1] == pIVar3)) {
+      bVar1 = (*pIVar2)(this);
+      return bVar1;
+    }
+    func_?();
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
+  return bVar1;
 }
 
 
@@ -32,33 +84,19 @@ int32_t Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                   (SubscribableVariableBase_1_System_Single_ *this,MethodInfo *method)
 
 {
-  iVar1 = *(int *)(*(int *)(method->name + 0x60) + 0xc);
-  if ((*(byte *)(iVar1 + 0xbe) & 1) == 0) {
-    func_?(iVar1);
-  }
-  if ((*(byte *)(iVar1 + 0xbf) & 2) != 0) {
-    iVar1 = *(int *)(*(int *)(method->name + 0x60) + 0xc);
-    if ((*(byte *)(iVar1 + 0xbe) & 1) == 0) {
-      func_?(iVar1);
-    }
-    if (*(int *)(iVar1 + 0x70) == 0) {
-      iVar1 = *(int *)(*(int *)(method->name + 0x60) + 0xc);
-      if ((*(byte *)(iVar1 + 0xbe) & 1) == 0) {
-        func_?(iVar1);
-      }
-      func_?(iVar1);
-    }
-  }
-  puVar2 = *(undefined4 **)(*(int *)(method->name + 0x60) + 8);
-  piVar3 = (int *)(*(code *)*puVar2)(puVar2);
-  if (piVar3 != (int *)0x0) {
-    iVar4 = (**(code **)(*piVar3 + 0x100))
-                      (piVar3,(this->fields).value,*(undefined4 *)(*piVar3 + 0x104));
+  IStack_1 = method->klass->rgctx_data[2];
+  piStack_2 = (int *)(*(method->klass->rgctx_data[2].method)->virtualMethodPointer)();
+  if (piStack_2 != (int *)0x0) {
+    IStack_1 = *(Il2CppRGCTXData *)(*piStack_2 + 0x108);
+    puStack_3 = (undefined *)(this->fields).value;
+    iVar4 = (**(code **)(*piStack_2 + 0x104))();
     return iVar4;
   }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  iVar4 = (*pcVar5)();
+  IStack_1 = (Il2CppRGCTXData)&stack0xfffffffc;
+  uVar5 = func_?(&piStack_2);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  iVar4 = (*pcVar6)();
   return iVar4;
 }
 
@@ -70,10 +108,10 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                (SubscribableVariableBase_1_System_Single_ *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnChange;
-  if (pAVar1 != (Action_1_Single_ *)0x0) {
-    puVar2 = *(undefined4 **)(*(int *)(method->name + 0x60) + 0x28);
-    (*(code *)*puVar2)(pAVar1,(this->fields).value,puVar2);
+  if ((this->fields).OnChange != (Action_1_Single_ *)0x0) {
+    (*(method->klass->rgctx_data[0xb].method)->virtualMethodPointer)
+              ((this->fields).OnChange,(this->fields).value,
+               method->klass->rgctx_data[0xb].rgctxDataDummy);
   }
   return;
 }
@@ -86,14 +124,9 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                (SubscribableVariableBase_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  if (this != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-    ScaleAnimationBase::ScaleAnimationBase_Play((ScaleAnimationBase *)this,0.0,unaff_ESI);
-    (this->fields).value = value;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields).value = value;
   return;
 }
 
@@ -106,31 +139,30 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                MethodInfo *method)
 
 {
-  ppAVar1 = &(this->fields).OnChange;
-  a = *ppAVar1;
+  a = (this->fields).OnChange;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
+    pvVar2 = method->klass->rgctx_data[6].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
     }
-    if (pDVar2 == (Delegate *)0x0) {
-      iVar4 = 0;
+    if (pDVar1 == (Delegate *)0x0) {
+      iVar3 = 0;
     }
     else {
-      iVar4 = func_?(pDVar2,iVar3);
-      if (iVar4 == 0) {
-        func_?(pDVar2,iVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      iVar3 = func_?(pDVar1,pvVar2);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pvVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_Single_ *)func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_Single_ *)func_?(&(this->fields).OnChange,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -146,36 +178,37 @@ float Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
 }
 
 
-/* Boolean op_Equality(SubscribableVariableBase`1[System.Single],
-   SubscribableVariableBase`1[System.Single]) */
+/* Boolean op_Equality(Single, SubscribableVariableBase`1[System.Single]) */
 
 bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
      SubscribableVariableBase_1_System_Single__op_Equality
-               (SubscribableVariableBase_1_System_Single_ *a,
-               SubscribableVariableBase_1_System_Single_ *b,MethodInfo *method)
+               (float b,SubscribableVariableBase_1_System_Single_ *a,MethodInfo *method)
 
 {
+  pMVar1 = method;
   if (a != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-    pSVar1 = &a->fields;
-    if (b != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-      a = (SubscribableVariableBase_1_System_Single_ *)(b->fields).value;
-      pcVar2 = method->name;
-      if ((pcVar2[0xbe] & 1U) == 0) {
-        func_?(pcVar2);
-      }
-      iVar3 = *(int *)(*(int *)(pcVar2 + 0x60) + 0x1c);
-      if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-        func_?(iVar3);
-      }
-      uVar4 = func_?(iVar3,&a);
-      bVar5 = func_?(pSVar1,uVar4,0);
-      return bVar5;
+    a = (SubscribableVariableBase_1_System_Single_ *)(a->fields).value;
+    pIVar2 = method->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
+    pvVar3 = pIVar2->rgctx_data[7].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
+    }
+    obj = (Object *)func_?(pvVar3,&a);
+    pIVar2 = pMVar1->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    bVar4 = mscorlib.dll::System::Single::Single_Equals
+                      ((Single *)&b,obj,pIVar2->rgctx_data[8].method);
+    return bVar4;
   }
-  func_?(0);
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 
 
@@ -186,49 +219,66 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                (SubscribableVariableBase_1_System_Single_ *a,float b,MethodInfo *method)
 
 {
+  pMVar1 = method;
   if (a != (SubscribableVariableBase_1_System_Single_ *)0x0) {
     a = (SubscribableVariableBase_1_System_Single_ *)(a->fields).value;
-    pcVar1 = method->name;
-    if ((pcVar1[0xbe] & 1U) == 0) {
-      func_?(pcVar1);
+    pIVar2 = method->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
-    iVar2 = *(int *)(*(int *)(pcVar1 + 0x60) + 0x1c);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
+    pvVar3 = pIVar2->rgctx_data[7].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
     }
-    uVar3 = func_?(iVar2,&a);
-    bVar4 = func_?(&b,uVar3,0);
+    obj = (Object *)func_?(pvVar3,&a);
+    pIVar2 = pMVar1->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    bVar4 = mscorlib.dll::System::Single::Single_Equals
+                      ((Single *)&b,obj,pIVar2->rgctx_data[8].method);
     return bVar4;
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
   return bVar4;
 }
 
 
-/* Boolean op_Equality(Single, SubscribableVariableBase`1[System.Single]) */
+/* Boolean op_Equality(SubscribableVariableBase`1[System.Single],
+   SubscribableVariableBase`1[System.Single]) */
 
 bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
      SubscribableVariableBase_1_System_Single__op_Equality_2
-               (float b,SubscribableVariableBase_1_System_Single_ *a,MethodInfo *method)
+               (SubscribableVariableBase_1_System_Single_ *a,
+               SubscribableVariableBase_1_System_Single_ *b,MethodInfo *method)
 
 {
+  pMVar1 = method;
   if (a != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-    a = (SubscribableVariableBase_1_System_Single_ *)(a->fields).value;
-    pcVar1 = method->name;
-    if ((pcVar1[0xbe] & 1U) == 0) {
-      func_?(pcVar1);
+    this = &a->fields;
+    if (b != (SubscribableVariableBase_1_System_Single_ *)0x0) {
+      a = (SubscribableVariableBase_1_System_Single_ *)(b->fields).value;
+      pIVar2 = method->klass;
+      if (pIVar2->initialized_and_no_error == 0) {
+        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      }
+      pvVar3 = pIVar2->rgctx_data[7].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+        pvVar3 = (void *)func_?(pvVar3);
+      }
+      obj = (Object *)func_?(pvVar3,&a);
+      pIVar2 = pMVar1->klass;
+      if (pIVar2->initialized_and_no_error == 0) {
+        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      }
+      bVar4 = mscorlib.dll::System::Single::Single_Equals
+                        ((Single *)this,obj,pIVar2->rgctx_data[8].method);
+      return bVar4;
     }
-    iVar2 = *(int *)(*(int *)(pcVar1 + 0x60) + 0x1c);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
-    }
-    uVar3 = func_?(iVar2,&a);
-    bVar4 = func_?(&b,uVar3,0);
-    return bVar4;
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
   return bVar4;
@@ -242,13 +292,49 @@ float Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                 (SubscribableVariableBase_1_System_Single_ *s,MethodInfo *method)
 
 {
+  puStack_1 = &stack0xfffffffc;
   if (s != (SubscribableVariableBase_1_System_Single_ *)0x0) {
     return (s->fields).value;
   }
-  func_?(0);
-  pcVar1 = (code *)swi(3);
-  fVar2 = (float10)(*pcVar1)();
-  return (float)fVar2;
+  uVar2 = func_?(auStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  fVar5 = (float10)(*pcVar4)();
+  return (float)fVar5;
+}
+
+
+/* Boolean op_Inequality(Single, SubscribableVariableBase`1[System.Single]) */
+
+bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
+     SubscribableVariableBase_1_System_Single__op_Inequality
+               (float b,SubscribableVariableBase_1_System_Single_ *a,MethodInfo *method)
+
+{
+  pMVar1 = method;
+  if (a != (SubscribableVariableBase_1_System_Single_ *)0x0) {
+    a = (SubscribableVariableBase_1_System_Single_ *)(a->fields).value;
+    pIVar2 = method->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    pvVar3 = pIVar2->rgctx_data[7].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
+    }
+    obj = (Object *)func_?(pvVar3,&a);
+    pIVar2 = pMVar1->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    bVar4 = mscorlib.dll::System::Single::Single_Equals
+                      ((Single *)&b,obj,pIVar2->rgctx_data[8].method);
+    return bVar4 == 0;
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 
 
@@ -259,52 +345,30 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                (SubscribableVariableBase_1_System_Single_ *a,float b,MethodInfo *method)
 
 {
+  pMVar1 = method;
   if (a != (SubscribableVariableBase_1_System_Single_ *)0x0) {
     a = (SubscribableVariableBase_1_System_Single_ *)(a->fields).value;
-    pcVar1 = method->name;
-    if ((pcVar1[0xbe] & 1U) == 0) {
-      func_?(pcVar1);
+    pIVar2 = method->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
-    iVar2 = *(int *)(*(int *)(pcVar1 + 0x60) + 0x1c);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
+    pvVar3 = pIVar2->rgctx_data[7].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
+      pvVar3 = (void *)func_?(pvVar3);
     }
-    uVar3 = func_?(iVar2,&a);
-    cVar4 = func_?(&b,uVar3,0);
-    return cVar4 == '\0';
+    obj = (Object *)func_?(pvVar3,&a);
+    pIVar2 = pMVar1->klass;
+    if (pIVar2->initialized_and_no_error == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    bVar4 = mscorlib.dll::System::Single::Single_Equals
+                      ((Single *)&b,obj,pIVar2->rgctx_data[8].method);
+    return bVar4 == 0;
   }
-  func_?(0);
+  func_?();
   pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
-}
-
-
-/* Boolean op_Inequality(Single, SubscribableVariableBase`1[System.Single]) */
-
-bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
-     SubscribableVariableBase_1_System_Single__op_Inequality_2
-               (float b,SubscribableVariableBase_1_System_Single_ *a,MethodInfo *method)
-
-{
-  if (a != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-    a = (SubscribableVariableBase_1_System_Single_ *)(a->fields).value;
-    pcVar1 = method->name;
-    if ((pcVar1[0xbe] & 1U) == 0) {
-      func_?(pcVar1);
-    }
-    iVar2 = *(int *)(*(int *)(pcVar1 + 0x60) + 0x1c);
-    if ((*(byte *)(iVar2 + 0xbe) & 1) == 0) {
-      func_?(iVar2);
-    }
-    uVar3 = func_?(iVar2,&a);
-    cVar4 = func_?(&b,uVar3,0);
-    return cVar4 == '\0';
-  }
-  func_?(0);
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 
 
@@ -316,31 +380,30 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
                MethodInfo *method)
 
 {
-  ppAVar1 = &(this->fields).OnChange;
-  source = *ppAVar1;
+  source = (this->fields).OnChange;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    iVar3 = *(int *)(*(int *)(method->name + 0x60) + 0x14);
-    if ((*(byte *)(iVar3 + 0xbe) & 1) == 0) {
-      func_?(iVar3);
+    pvVar2 = method->klass->rgctx_data[6].rgctxDataDummy;
+    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
+      pvVar2 = (void *)func_?(pvVar2);
     }
-    if (pDVar2 == (Delegate *)0x0) {
-      iVar4 = 0;
+    if (pDVar1 == (Delegate *)0x0) {
+      iVar3 = 0;
     }
     else {
-      iVar4 = func_?(pDVar2,iVar3);
-      if (iVar4 == 0) {
-        func_?(pDVar2,iVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      iVar3 = func_?(pDVar1,pvVar2);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pvVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_Single_ *)func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_Single_ *)func_?(&(this->fields).OnChange,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 
