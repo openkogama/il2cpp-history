@@ -457,7 +457,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
           if ((pOVar8->klass->_0).element_class != (TypeInfo__MV__Common__PlayerGameState->_0).element_class) goto code_?;
           pcVar14 = (char *)func_?();
           this_03 = (Dictionary_2_System_ByteEnum_System_Object_ *)CONCAT31((int3)((uint)this_01 >> 8),*pcVar14 == '\x03');
-          bVar5 = 0xa3;
+          bVar5 = 0xe3;
           pJVar15 = (JsonConvert__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item(this_03,0xdf,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_);
           observer = (bool)this_03;
           if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
@@ -3162,7 +3162,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnPickupItemStateChangeEv
           if (iVar4 != 0) {
             iVar4 = func_?(this);
             if (iVar4 != 0) {
-              func_?(0,TypeInfo__IPickupStateHandler);
+              func_?(0,TypeInfo__IPickupStateHandler,iVar4);
               return;
             }
           }

@@ -154,7 +154,7 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                     (&pUVar6->vector[0].m_DelagateState)[uVar7 * 2] = (Object *)0x0;
                   }
                   else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)(this_03,0x3f800000,0,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
+                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)(this_03,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy,0);
                   }
                   pMVar4 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
                   piVar5 = &(this_03->fields)._version;

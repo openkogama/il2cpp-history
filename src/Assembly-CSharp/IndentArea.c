@@ -157,7 +157,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea(IndentArea *th
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xf45c);
+    func_?(0xd70c);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
@@ -273,7 +273,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea(IndentArea *th
                                     uVar26 = (info->fields).normal.y;
                                     value.y = (float)uVar24 + (float)uVar26 * 0.0015 + ((float)pTVar10 - fVar22);
                                     value.x = (float)uVar23 + (float)uVar25 * 0.0015 + (((float)uVar9 + ((float)uVar8 - (float)uVar7) * 0.5) - fVar21);
-                                    value.z = pVVar16->z + (info->fields).normal.z * 0.0015 + (3.7515235e-29 - (fVar11 + (fVar15 - fVar11) * 0.5));
+                                    value.z = pVVar16->z + (info->fields).normal.z * 0.0015 + (3.751432e-29 - (fVar11 + (fVar15 - fVar11) * 0.5));
                                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_04,value,(MethodInfo *)0x0);
                                     return;
                                   }

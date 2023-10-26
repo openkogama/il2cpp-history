@@ -533,7 +533,7 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SuspendCurrentSpawnRole(M
       if (iVar3 != 0) {
         iVar3 = func_?(unaff_ESI);
         if (iVar3 != 0) {
-          func_?();
+          func_?(2,TypeInfo__ISpawnRoleLocal);
           return;
         }
       }
@@ -567,7 +567,7 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_UnSuspendCurrentSpawnRole
       if (iVar3 != 0) {
         iVar3 = func_?(unaff_ESI);
         if (iVar3 != 0) {
-          func_?();
+          func_?(3,TypeInfo__ISpawnRoleLocal);
           return;
         }
       }

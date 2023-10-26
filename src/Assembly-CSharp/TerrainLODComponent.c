@@ -95,7 +95,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
     func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_);
-    func_?(0xc19c);
+    func_?(0xa478);
     func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }
@@ -290,8 +290,8 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor(Terrain
     func_?(&TypeInfo__System__Collections__IEnumerable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Key__);
-    func_?(0xe3ec);
-    func_?(0x935c);
+    func_?(0xc618);
+    func_?(0x760c);
     func_?(&TypeInfo__System__Collections__Generic__List<MVTerrainLOD>);
     func_?(&MethodInfo__TerrainLODComponent__chunkInstances_Changed_System__Object__ChunkInstancesChanged_);
     func_?(&TypeInfo__TerrainLODComponent__TriangleCounter);

@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_A
         if (iVar5 < iVar3) {
           this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
           if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAcceptFriendShip(this_01,-0xe92ca18,(MethodInfo *)0x0);
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAcceptFriendShip(this_01,-0xe932a18,(MethodInfo *)0x0);
         }
         else {
           message = TM::TM__(StringLiteral_Your_friendlist_is_full,(MethodInfo *)0x0);

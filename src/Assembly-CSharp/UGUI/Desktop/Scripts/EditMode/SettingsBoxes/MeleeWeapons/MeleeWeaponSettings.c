@@ -175,7 +175,7 @@ code_?:
     if (((pDVar24 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar24,(Object *)StringLiteral_RecoilStrength,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar17 == (SettingsSlider *)0x0)) || (pOVar14 == (Object *)0x0)) goto code_?;
     if ((pOVar14->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
-    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,3.8285772e-29,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,3.828346e-29,(MethodInfo *)0x0);
     pSVar23 = (this->fields).RecoilStrengthInputSlider;
     pDVar24 = (this->fields).itemData;
     if (((pDVar24 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar24,(Object *)StringLiteral_RecoilStrength,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (pOVar14 == (Object *)0x0)) goto code_?;
@@ -199,7 +199,7 @@ code_?:
     if (((pDVar24 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar24,(Object *)StringLiteral_AttackCooldown,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar17 == (SettingsSlider *)0x0)) || (pOVar14 == (Object *)0x0)) goto code_?;
     if ((pOVar14->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
-    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_AttackCooldown,*pfVar20,3.828563e-29,(float)pDVar1,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_AttackCooldown,*pfVar20,3.828332e-29,(float)pDVar1,(MethodInfo *)0x0);
     pSVar23 = (this->fields).attackCooldownInputSlider;
     pDVar1 = (this->fields).itemData;
     if (((pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar1,(Object *)StringLiteral_AttackCooldown,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (pOVar14 == (Object *)0x0)) goto code_?;

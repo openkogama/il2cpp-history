@@ -778,7 +778,7 @@ code_?:
     (this->fields).prevHealth = (float)&stack0xfffffff0;
     if (pPVar2 != (ParticleSystem *)0x0) {
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startSizeMultiplier_Injected((ParticleSystem_MainModule *)&stack0xffffffec,9.932208e-30,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startSizeMultiplier_Injected((ParticleSystem_MainModule *)&stack0xffffffec,9.9317604e-30,(MethodInfo *)0x0);
       return;
     }
   }

@@ -378,7 +378,7 @@ bool Assembly-CSharp.dll::TouristAdController::TouristAdController_get_IsPromoti
         if (bVar2 != 0) {
           MVar3 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
           if (MVar3 == MVJoinState__Enum_Playing) {
-            return 0x5a;
+            return 0x5b;
           }
         }
       }

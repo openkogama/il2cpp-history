@@ -339,7 +339,7 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+    func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_OnWinningConditionReceived,(MethodInfo *)0x0);
   MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
@@ -349,7 +349,7 @@ code_?:
     if (bVar1 != 0) {
       pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
       if (((pSVar3 == (SpawnRoleDataMediator *)0x0) || (this_00 = (SpawnRoleVariable_1_System_Object_ *)(pSVar3->fields).reviveState, this_00 == (SpawnRoleVariable_1_System_Object_ *)0x0)) || (this_01 = (ReviveState *)Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Object]::SpawnRoleVariable_1_System_Object__get_Value(this_00,MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__), this_01 == (ReviveState *)0x0)) goto code_?;
-      winningCondition = (IWinningCondition *)0x0;
+      winningCondition = (IWinningCondition *)&UNK_?;
       ReviveState::ReviveState_ResetSafePostions(this_01,(MethodInfo *)0x0);
     }
     if (cRam_? == '\0') {
@@ -370,14 +370,14 @@ code_?:
           if (uVar7 != 0) {
             do {
               if (*(IWinningConditionBriefing__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar6 * 8) == TypeInfo__IWinningConditionBriefing) {
-                (**(code **)(*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar6 * 8) * 8 + 0xc4 + *piVar5))(piVar5);
+                (**(code **)(*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar6 * 8) * 8 + 0xc4 + *piVar5))();
                 return;
               }
               uVar6 = uVar6 + 1;
             } while (uVar6 < uVar7);
           }
-          puVar8 = (undefined4 *)func_?(piVar5);
-          (*(code *)*puVar8)(piVar5);
+          puVar8 = (undefined4 *)func_?();
+          (*(code *)*puVar8)();
           return;
         }
         goto code_?;
@@ -394,8 +394,8 @@ code_?:
       func_?();
       cRam_? = '\x01';
     }
-    winningCondition = (IWinningCondition *)TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-    if (winningCondition != (IWinningCondition *)0x0) {
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) {
+      winningCondition = (IWinningCondition *)0x1;
       cVar9 = func_?();
       if (cVar9 == '\0') {
         return;

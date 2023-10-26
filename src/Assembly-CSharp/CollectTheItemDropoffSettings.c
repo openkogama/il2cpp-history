@@ -36,7 +36,7 @@ code_?:
     _UNK_? = this_01;
                     /* WARNING: Read-only address (ram,0xADDR) is written */
     func_?();
-    SettingsBase::SettingsBase_Initialize((SettingsBase *)0xffe0b434,0xADDR,(GameObject *)&UNK_?,MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
+    SettingsBase::SettingsBase_Initialize((SettingsBase *)0xffd8e574,0xADDR,(GameObject *)&UNK_?,MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
     pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_doOnce,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (pOVar3 == (Object *)0x0) goto code_?;
     if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {

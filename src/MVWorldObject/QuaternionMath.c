@@ -55,13 +55,11 @@ Quaternion * MVWorldObject.dll::QuaternionMath::QuaternionMath_Inverse(Quaternio
       mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1(this,message,method_00);
       func_?();
       cVar7 = (undefined1 *)0xffffffef < &stack0xfffffff4;
-      uVar8 = func_?();
-      uRam_? = (undefined1)uVar8;
-      uRam_? = uRam_?;
-      *extraout_ECX = *extraout_ECX + (char)((ushort)uVar8 >> 8) + cVar7;
-      pcVar9 = (code *)swi(3);
-      pQVar10 = (Quaternion *)(*pcVar9)();
-      return pQVar10;
+      uRam_? = func_?();
+      cRam_? = cRam_? + unaff_BL + cVar7;
+      pcVar8 = (code *)swi(3);
+      pQVar9 = (Quaternion *)(*pcVar8)();
+      return pQVar9;
     }
   } while( true );
 }

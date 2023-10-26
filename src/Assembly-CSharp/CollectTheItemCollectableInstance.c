@@ -1154,7 +1154,7 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::CollectTheItemColle
   pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar4,iVar6,(MethodInfo *)0x0);
   if (pMVar5 == (MVWorldObject *)0x0) goto code_?;
   if (((pMVar5->klass->_1).typeHierarchyDepth < (TypeInfo__CollectTheItemDropOff->_1).typeHierarchyDepth) || ((CollectTheItemDropOff__Class *)(pMVar5->klass->_1).typeHierarchy[(TypeInfo__CollectTheItemDropOff->_1).typeHierarchyDepth - 1] != TypeInfo__CollectTheItemDropOff)) goto code_?;
-  this_04 = (Behaviour *)0x5070e851;
+  this_04 = (Behaviour *)0x4af0e851;
   bVar2 = CollectTheItemCollectableInstance_get_IsOriginalInstance((CollectTheItemCollectableInstance *)&UNK_?,(MethodInfo *)0x0);
   if (this_04 == (Behaviour *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(this_04,bVar2 == 0,(MethodInfo *)0x0);

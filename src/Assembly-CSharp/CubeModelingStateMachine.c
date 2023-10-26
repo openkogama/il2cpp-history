@@ -9,7 +9,7 @@ EditCubeChange__Enum Assembly-CSharp.dll::CubeModelingStateMachine::CubeModeling
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0xbf08);
+    func_?(0x6064);
     cRam_? = '\x01';
   }
   pCVar4 = (this->fields)._SelectedCube_k__BackingField;
@@ -394,7 +394,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0xbf58);
+    func_?(0x60b4);
     cRam_? = '\x01';
   }
   if (action == AudioActions__Enum_CubeAdded) {
@@ -478,7 +478,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Rem
     pIVar2 = extraout_EDX;
   }
   else if (((TypeInfo__CubeModelTool->_1).typeHierarchyDepth <= (pIVar2->klass->_1).typeHierarchyDepth) && ((pIVar2->klass->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__CubeModelTool)) {
-    (*(code *)pIVar2->klass[1]._0.properties)(pIVar2);
+    (*(code *)pIVar2->klass[1]._0.properties)(pIVar2,pIVar2->klass[1]._0.methods);
     return;
   }
   func_?(pIVar2,pCVar1);

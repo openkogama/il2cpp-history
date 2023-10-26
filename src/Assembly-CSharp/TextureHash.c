@@ -59,9 +59,8 @@ code_?:
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar6)();
-  return pBVar1;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

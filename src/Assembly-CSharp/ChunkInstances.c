@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_Add(ChunkInstances *thi
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstancesChanged);
-    func_?(0x9638);
+    func_?(0x78e8);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).chunkInstances;
@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_Clear(ChunkInstances *t
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstancesChanged);
-    func_?(0x9664);
+    func_?(0x7914);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
@@ -170,7 +170,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_Remove(ChunkInstances *
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstancesChanged);
-    func_?(0x96e8);
+    func_?(0x7998);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).chunkInstances;

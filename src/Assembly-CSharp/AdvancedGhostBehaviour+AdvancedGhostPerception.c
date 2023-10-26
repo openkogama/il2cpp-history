@@ -354,7 +354,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::Advanc
                 this_03 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase(this_02,(MethodInfo *)0x0);
                 pOVar16 = TypeInfo__UnityEngine__Object;
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                  uVar13 = 0x1020a57b00000000;
+                  uVar13 = 0x1020a3db00000000;
                   func_?();
                   item = pOVar16;
                 }

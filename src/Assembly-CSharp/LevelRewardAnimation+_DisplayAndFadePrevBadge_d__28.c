@@ -164,19 +164,12 @@ code_?:
     }
   }
 code_?:
-  func_?();
   uVar13 = func_?();
-  bVar14 = (uVar13 & 0x100) != 0;
-  pbVar15 = (byte *)((int)uVar13 + -0x60);
-  bVar16 = *pbVar15;
-  bVar17 = (byte)(uVar13 >> 0x28);
-  bVar18 = *pbVar15 + bVar17;
-  *pbVar15 = bVar18 + bVar14;
-  pcVar19 = (char *)((int)uVar13 + -0x33efc95e);
-  *pcVar19 = *pcVar19 + (char)(uVar13 >> 0x20) + (CARRY1(bVar16,bVar17) || CARRY1(bVar18,bVar14));
-  pcVar20 = (code *)swi(3);
-  bVar21 = (*pcVar20)();
-  return bVar21;
+  pcVar14 = (char *)CONCAT31((int3)(uVar13 >> 8),(char)uVar13 + (char)(uVar13 >> 0x28) + '\x01');
+  *pcVar14 = *pcVar14 + (char)(uVar13 >> 0x20) + ((uVar13 & 0x100) != 0);
+  pcVar15 = (code *)swi(3);
+  bVar16 = (*pcVar15)();
+  return bVar16;
 }
 
 

@@ -601,7 +601,7 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager_OnAddSpawnPoint(MVTeamMan
           this_05 = (TeamEventArgs *)func_?();
           if (this_05 == (TeamEventArgs *)0x0) goto code_?;
           MVWorldObject.dll::MV::WorldObject::TeamEventArgs::TeamEventArgs__ctor(this_05,team,(MethodInfo *)0x0);
-          (*(code *)0x19c9e853)(0xc483d0ff,this,this_05,0x1470ff10);
+          (*(code *)0x1679e853)(0xc483d0ff,this,this_05,0x1470ff10);
         }
       }
       return;

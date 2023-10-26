@@ -545,7 +545,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost(AvatarMot
       if (pOStack3 != (Object *)0x0) {
         if ((pOStack3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
           piVar5 = (int *)func_?();
-          (this->fields).walkSpeed = ((float)*piVar5 / 100.0 + 1.0) * 3.2191606e-29;
+          (this->fields).walkSpeed = ((float)*piVar5 / 100.0 + 1.0) * 3.2190402e-29;
           return;
         }
         goto code_?;

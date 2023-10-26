@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::AccessoryTimeLimitDisplayer::AccessoryTimeLimitDisplay
       iVar6 = (pAVar1->fields).timeLimit;
       dStack_7 = (double)CONCAT44((int)((ulonglong)dVar5 >> 0x20),unaff_EBX);
       if (cRam_? == '\0') {
-        uStack_4 = 4.0056378269580713e-227;
+        uStack_4 = 3.990364252937954e-227;
         func_?();
         cRam_? = '\x01';
         dVar5 = dStack_7;
@@ -49,7 +49,7 @@ void Assembly-CSharp.dll::AccessoryTimeLimitDisplayer::AccessoryTimeLimitDisplay
       }
       fStack_11 = (float)iVar10 / 3600.0;
       if (cVar8 == '\0') {
-        uStack_4 = 4.005637826958139e-227;
+        uStack_4 = 3.9903642529380216e-227;
         func_?();
         cRam_? = '\x01';
       }

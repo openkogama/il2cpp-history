@@ -344,7 +344,7 @@ code_?:
         pSVar1 = mscorlib.dll::System::String::String_Substring_1(pSVar1,startIndex,(this->fields)._currentIndex - startIndex,(MethodInfo *)0x0);
         pLVar7 = (this->fields)._Parts_k__BackingField;
         if (pLVar7 == (List_1_System_Object_ *)0x0) goto code_?;
-        indexerOpenChar.m_value = 0x2310;
+        indexerOpenChar.m_value = 0x2040;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(pLVar7,(Object *)pSVar1,MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
       }
       JPath_ParseIndexer(this,indexerOpenChar.m_value,(MethodInfo *)0x0);

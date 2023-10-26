@@ -170,10 +170,15 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  pcVar16 = (code *)swi(3);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+  bVar16 = 0;
+  iVar17 = func_?();
+  bVar18 = *(byte *)&pLVar1->klass;
+  bVar19 = *(char *)&pLVar1->klass + (byte)iVar17;
+  *(byte *)&pLVar1->klass = bVar19 + bVar16;
+  *(char *)(iVar17 + -0x71) = *(char *)(iVar17 + -0x71) + extraout_DH + (CARRY1(bVar18,(byte)iVar17) || CARRY1(bVar19,bVar16));
+  pcVar20 = (code *)swi(3);
+  bVar21 = (*pcVar20)();
+  return bVar21;
 }
 
 

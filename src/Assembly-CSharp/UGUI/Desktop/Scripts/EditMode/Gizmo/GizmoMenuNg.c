@@ -865,7 +865,7 @@ code_?:
                                                 pMVar5 = (this->fields).worldObjectClient;
                                                 if (pMVar5 != (MVWorldObjectClient *)0x0) {
                                                   bVar14 = (byte)((uint)pMVar5 >> 0x10);
-                                                  bVar15 = 0x6e;
+                                                  bVar15 = 0x5e;
                                                   bVar3 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(pMVar5,InteractionFlags__Enum_CanChangeScale,(MethodInfo *)0x20);
                                                   pTVar10 = (this->fields).resetRotationButton;
                                                   unaff_EBX = (Action_1_MVJoinState___Class *)(uint)CONCAT11(bVar3,bVar8);

@@ -160,6 +160,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleState(X
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
       func_?();
+      out(this->klass,extraout_DX);
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
@@ -695,6 +696,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Update(XPBoos
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
       func_?();
+      out(this->klass,extraout_DX);
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;

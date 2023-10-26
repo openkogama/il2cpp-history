@@ -97,7 +97,7 @@ code_?:
                             pSVar4 = mscorlib.dll::System::String::String_ToUpper(pSVar4,(MethodInfo *)0x0);
                             if (pTVar3 != (Text *)0x0) {
                               (*(pTVar3->klass->vtable).set_text.methodPtr)(pTVar3,pSVar4,(pTVar3->klass->vtable).set_text.method);
-                              withAd = 0x65;
+                              withAd = 0x25;
                               goto code_?;
                             }
                           }

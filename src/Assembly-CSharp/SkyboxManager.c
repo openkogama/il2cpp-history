@@ -547,7 +547,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_SetColor(SkyboxManager *t
       fVar5 = fVar3 + fVar6;
       if (this_04 != (Camera *)0x0) {
         puVar14 = &UNK_?;
-        value_02.g = 3.0749804e-29 - (this->fields).skyContrast;
+        value_02.g = 3.074889e-29 - (this->fields).skyContrast;
         value_02.r = fVar3 - fVar6;
         value_02.b = fVar11 - fVar7;
         value_02.a = color.a;

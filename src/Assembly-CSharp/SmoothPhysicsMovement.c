@@ -180,7 +180,7 @@ code_?:
         (*(((this->fields).worldObjectOwner)->klass->vtable).set_WorldPosition.methodPtr)();
         pSVar4 = (this->fields).current;
         this_00 = (this->fields).worldObjectOwner;
-        if ((pSVar4 == (SmoothPhysicsMovement_Package *)0x0) || ((pSVar12 = (this->fields).next, pSVar12 == (SmoothPhysicsMovement_Package *)0x0 || (pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffd0,(pSVar4->fields).rotation,(pSVar12->fields).rotation,3.1695622e-29,(MethodInfo *)0x0), this_00 == (MVWorldObjectClient *)0x0)))) break;
+        if ((pSVar4 == (SmoothPhysicsMovement_Package *)0x0) || ((pSVar12 = (this->fields).next, pSVar12 == (SmoothPhysicsMovement_Package *)0x0 || (pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffd0,(pSVar4->fields).rotation,(pSVar12->fields).rotation,3.169437e-29,(MethodInfo *)0x0), this_00 == (MVWorldObjectClient *)0x0)))) break;
         MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(this_00,*pQVar15,(MethodInfo *)0x0);
       }
       if ((this->fields).cullingSubscriberBase == (CullingSubscriberBase *)0x0) {

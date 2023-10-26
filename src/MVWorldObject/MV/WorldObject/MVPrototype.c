@@ -22,7 +22,7 @@ MVPrototype * MVWorldObject.dll::MV::WorldObject::MVPrototype::MVPrototype_DeepC
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_System::Byte_[]>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_System::Byte_[]>__MoveNext__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_System::Byte_[]>__get_Current__);
-    func_?(0x23b0);
+    func_?(0x650);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_System::Byte_[]>__get_Value__);
     cRam_? = '\x01';
     puVar5 = puStack_4;

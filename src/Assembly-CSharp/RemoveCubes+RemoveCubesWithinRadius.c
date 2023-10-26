@@ -10,8 +10,8 @@ RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum Assembly-CSharp.dll::
   }
   if ((cubeBase != (CubeBase *)0x0) && (pBVar1 = (cubeBase->fields).faceMaterials, pBVar1 != (Byte__Array *)0x0)) {
     if (pBVar1->max_length == 0) goto code_?;
-    cubeBase = (CubeBase *)(uint)pBVar1->vector[0];
     if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
+      cubeBase = (CubeBase *)(uint)pBVar1->vector[0];
       iVar2 = (*(getPhysicalProperites->fields)._._.invoke_impl)(auStack_3,(getPhysicalProperites->fields)._._.method_code,cubeBase,(getPhysicalProperites->fields)._._.method);
       fVar4 = *(float *)(iVar2 + 0x10);
       if (fVar4 != 0.0) {
@@ -287,7 +287,7 @@ RemoveCubes_RemoveCubesWithinRadius_RemoveStyle__Enum Assembly-CSharp.dll::Remov
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pos.z = 0x7e7f;
+  pos.z = 0x7ccf;
   uStack9 = 0x102b;
   bVar10 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
   if ((bVar10 == 0) && (RVar11 = RemoveCubes_RemoveCubesWithinRadius_CalculateCubeDestruction(IVar4,(CubeBase *)a,(Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0,(MethodInfo *)0x0), RVar11 == RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_NotDestroyed)) {
@@ -311,7 +311,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::RemoveCubes_Remov
   uVar2 = (undefined2)((uint)unaff_EDI >> 0x10);
   iVar3 = fineGrainedTerrainLocalPos.z;
   if (cRam_? == '\0') {
-    func_?(0xb388);
+    func_?(0x550c);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage = centerDamage;
@@ -332,7 +332,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::RemoveCubes_Remov
       RemoveCubes_RemoveCubesWithinRadius_CalculateLocalValues(pMVar1,radius,*IVar8._0_4_,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
-        fineGrainedTerrainLocalPos.z = -0x7fe9;
+        fineGrainedTerrainLocalPos.z = 0x7e57;
         in_stack_9 = 0x102b;
         func_?();
         cRam_? = '\x01';

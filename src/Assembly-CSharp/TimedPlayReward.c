@@ -354,7 +354,7 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnRewardData(TimedPla
           TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = 0;
           this_02 = (WaitForTicks *)func_?();
           if (this_02 != (WaitForTicks *)0x0) {
-            WaitForTicks::WaitForTicks__ctor(this_02,-0x609b9038,(MethodInfo *)0x0);
+            WaitForTicks::WaitForTicks__ctor(this_02,-0x60a29130,(MethodInfo *)0x0);
             _UNK_? = this_02;
                     /* WARNING: Read-only address (ram,0xADDR) is written */
             func_?();

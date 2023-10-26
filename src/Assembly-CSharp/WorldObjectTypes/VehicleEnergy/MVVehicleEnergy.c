@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
     uVar6 = 0;
     iVar7 = 0;
     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1((IntVector *)&stack0xfffffff4,2,6,3,(MethodInfo *)0x0);
-    iVar8 = 0xfb3;
+    iVar8 = 0xca3;
     iVar9 = 0x1044;
     this_00 = (EditableCubeModelWrapper *)func_?();
     if (this_00 != (EditableCubeModelWrapper *)0x0) {

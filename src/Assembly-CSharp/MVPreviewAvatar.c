@@ -22,7 +22,7 @@ MVWorldObjectClient * Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar_Clon
     if (bVar2 != 0) {
       pMStack3 = TypeInfo__MVAvatarLocal;
       if (((pMVar1->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) || ((MVAvatarLocal__Class *)(pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal)) goto code_?;
-      pMVar1[1].fields.previewLayerMask = 0x53e810ee;
+      pMVar1[1].fields.previewLayerMask = 0x63e810ee;
     }
     return pMVar1;
   }

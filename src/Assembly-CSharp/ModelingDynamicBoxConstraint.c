@@ -318,11 +318,11 @@ code_?:
           if ((float)CONCAT22(this._2_2_,this._0_2_) <= uVar19._4_4_ && uVar19._4_4_ != (float)CONCAT22(this._2_2_,this._0_2_)) {
             UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_min((Vector3 *)&stack0xffffff54,(Bounds *)&stack0xffffffa8,(MethodInfo *)0x0);
             fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item((Vector3 *)&stack0xffffff90,index,(MethodInfo *)0x0);
-            uVar20 = 0x6147;
+            uVar20 = 0x5fb7;
             uVar21 = 0x102d;
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item((Vector3 *)&stack0xffffff78,index,fVar6,(MethodInfo *)0x0);
             pVVar4 = (Vector3 *)&stack0xffffff48;
-            uVar22 = 0x6159;
+            uVar22 = 0x5fc9;
             in_stack_23 = 0x102d;
             pVVar24 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_max(pVVar4,(Bounds *)&stack0xffffffa8,(MethodInfo *)0x0);
             fVar6 = pVVar24->y;
@@ -378,7 +378,7 @@ code_?:
         iVar2 = 0;
         iVar10 = 0;
         iVar3 = 0;
-        pos.x = 0x61d3;
+        pos.x = 0x6043;
         pos.y = 0x102d;
         pos.z = (int16_t)pVVar4;
         in_stack_29 = (int16_t)((uint)pVVar4 >> 0x10);
@@ -520,16 +520,16 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstr
   uVar1 = SUB42(in_stack_2,2);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x67dc);
+    func_?(0x49dc);
     in_stack_4 = 0x10ed;
-    func_?(0xdaf4);
+    func_?(0xbd94);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0xc56c);
+    func_?(0x66cc);
     in_stack_4 = 0x10ee;
-    func_?(0x2574);
-    func_?(0x3e0c);
+    func_?(0x7c4);
+    func_?(0x20e8);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
@@ -604,7 +604,7 @@ code_?:
         uVar20._0_2_ = 0;
         uVar20._2_1_ = 0;
         uVar20._3_1_ = 0;
-        intVector.z = 0x67b7;
+        intVector.z = 0x6627;
         intVector.x = (int16_t)uVar7;
         intVector.y = SUB42(uVar7,2);
         ObscuredIntVector::ObscuredIntVector__ctor_2((ObscuredIntVector *)&stack0xffffffd0,intVector,(MethodInfo *)0x0);
