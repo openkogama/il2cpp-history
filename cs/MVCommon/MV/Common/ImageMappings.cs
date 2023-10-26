@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -12,11 +13,12 @@ using System.Runtime.InteropServices;
 
 namespace MV.Common
 {
-	public enum ImageType : byte
+	public static class ImageMappings
 	{
-		Planet = 0,
-		Avatar = 1,
-		Item = 2,
-		Profile = 3
+		// Fields
+		public static readonly Dictionary<ImageType, string> ImageTypeToImageStringID;
+	
+		// Constructors
+		static ImageMappings();
 	}
 }
