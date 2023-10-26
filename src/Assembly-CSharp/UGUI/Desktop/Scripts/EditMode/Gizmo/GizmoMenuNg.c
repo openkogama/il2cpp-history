@@ -1353,7 +1353,7 @@ code_?:
                                                 pMVar5 = (this->fields).worldObjectClient;
                                                 if (pMVar5 != (MVWorldObjectClient *)0x0) {
                                                   bVar14 = (byte)((uint)pMVar5 >> 0x10);
-                                                  bVar15 = 0x6e;
+                                                  bVar15 = 0x5e;
                                                   bVar3 = MVWorldObjectClient::
                                                           MVWorldObjectClient_HasInteractionFlag
                                                                     (pMVar5,

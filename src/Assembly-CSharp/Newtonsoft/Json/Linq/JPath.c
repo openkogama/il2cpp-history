@@ -410,7 +410,7 @@ code_?:
                             (MethodInfo *)0x0);
         pLVar7 = (this->fields)._Parts_k__BackingField;
         if (pLVar7 == (List_1_System_Object_ *)0x0) goto code_?;
-        indexerOpenChar.m_value = 0x2310;
+        indexerOpenChar.m_value = 0x2040;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
                   (pLVar7,(Object *)pSVar1,

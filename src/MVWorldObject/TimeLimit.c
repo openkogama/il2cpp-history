@@ -127,28 +127,22 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar3;
     }
   }
-  bVar4 = 0;
-  uVar5 = func_?();
-  bVar6 = *(byte *)((int)((ulonglong)uVar5 >> 0x20) + -0x5d);
-  uRam_? = CONCAT31((int3)((ulonglong)uVar5 >> 8),bVar6);
-  bVar7 = (byte)((ulonglong)uVar5 >> 0x20);
-  bVar8 = bVar7 + extraout_CL;
-  bVar9 = CARRY1(bVar7,extraout_CL) || CARRY1(bVar8,bVar4);
-  iVar10 = CONCAT31((int3)((ulonglong)uVar5 >> 0x28),bVar8 + bVar4) + 1;
-  bVar7 = (byte)((uint)iVar10 >> 8);
-  bVar8 = bVar7 + bVar6;
-  bVar11 = CARRY1(bVar7,bVar6) || CARRY1(bVar8,bVar9);
-  iVar10 = CONCAT22((short)((uint)iVar10 >> 0x10),CONCAT11(bVar8 + bVar9,(char)iVar10));
-  pbVar12 = (byte *)(iVar10 + 0x43);
-  bVar6 = *pbVar12;
-  bVar8 = *pbVar12;
-  uRam_? = uRam_?;
-  *pbVar12 = bVar8 + extraout_CL + bVar11;
-  pcVar13 = (char *)(iVar10 + -0x33ef5cbd);
-  *pcVar13 = *pcVar13 + extraout_CL +
-            (CARRY1(bVar6,extraout_CL) || CARRY1(bVar8 + extraout_CL,bVar11));
-  pcVar14 = (code *)swi(3);
-  pHVar3 = (HighScores *)(*pcVar14)();
+  cVar4 = '\0';
+  uVar5 = 0x10a3;
+  func_?();
+  uVar6 = func_?(CONCAT22(uVar5,in_CS));
+  pcVar7 = (char *)((ulonglong)uVar6 >> 0x20);
+  uRam_? = (uint)uVar6;
+  *pcVar7 = *pcVar7 + unaff_BL + cVar4;
+  pbVar8 = (byte *)(pcVar7 + 0x3d);
+  bVar9 = *pbVar8;
+  bVar10 = *pbVar8;
+  *pbVar8 = bVar10 + unaff_BL + (uRam_? < 0x3dd610a3);
+  pcVar7[-0x33ef5cc3] =
+       pcVar7[-0x33ef5cc3] + unaff_BL +
+       (CARRY1(bVar9,unaff_BL) || CARRY1(bVar10 + unaff_BL,uRam_? < 0x3dd610a3));
+  pcVar11 = (code *)swi(3);
+  pHVar3 = (HighScores *)(*pcVar11)();
   return pHVar3;
 }
 
@@ -271,28 +265,22 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar3;
     }
   }
-  bVar4 = 0;
-  uVar5 = func_?();
-  bVar6 = *(byte *)((int)((ulonglong)uVar5 >> 0x20) + -0x5d);
-  uRam_? = CONCAT31((int3)((ulonglong)uVar5 >> 8),bVar6);
-  bVar7 = (byte)((ulonglong)uVar5 >> 0x20);
-  bVar8 = bVar7 + extraout_CL;
-  bVar9 = CARRY1(bVar7,extraout_CL) || CARRY1(bVar8,bVar4);
-  iVar10 = CONCAT31((int3)((ulonglong)uVar5 >> 0x28),bVar8 + bVar4) + 1;
-  bVar7 = (byte)((uint)iVar10 >> 8);
-  bVar8 = bVar7 + bVar6;
-  bVar11 = CARRY1(bVar7,bVar6) || CARRY1(bVar8,bVar9);
-  iVar10 = CONCAT22((short)((uint)iVar10 >> 0x10),CONCAT11(bVar8 + bVar9,(char)iVar10));
-  pbVar12 = (byte *)(iVar10 + 0x43);
-  bVar6 = *pbVar12;
-  bVar8 = *pbVar12;
-  uRam_? = uRam_?;
-  *pbVar12 = bVar8 + extraout_CL + bVar11;
-  pcVar13 = (char *)(iVar10 + -0x33ef5cbd);
-  *pcVar13 = *pcVar13 + extraout_CL +
-            (CARRY1(bVar6,extraout_CL) || CARRY1(bVar8 + extraout_CL,bVar11));
-  pcVar14 = (code *)swi(3);
-  pHVar3 = (HighScores *)(*pcVar14)();
+  cVar4 = '\0';
+  uVar5 = 0x10a3;
+  func_?();
+  uVar6 = func_?(CONCAT22(uVar5,in_CS));
+  pcVar7 = (char *)((ulonglong)uVar6 >> 0x20);
+  uRam_? = (uint)uVar6;
+  *pcVar7 = *pcVar7 + unaff_BL + cVar4;
+  pbVar8 = (byte *)(pcVar7 + 0x3d);
+  bVar9 = *pbVar8;
+  bVar10 = *pbVar8;
+  *pbVar8 = bVar10 + unaff_BL + (uRam_? < 0x3dd610a3);
+  pcVar7[-0x33ef5cc3] =
+       pcVar7[-0x33ef5cc3] + unaff_BL +
+       (CARRY1(bVar9,unaff_BL) || CARRY1(bVar10 + unaff_BL,uRam_? < 0x3dd610a3));
+  pcVar11 = (code *)swi(3);
+  pHVar3 = (HighScores *)(*pcVar11)();
   return pHVar3;
 }
 

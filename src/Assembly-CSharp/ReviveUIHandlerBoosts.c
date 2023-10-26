@@ -578,10 +578,14 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  uVar4 = func_?();
-  out((short)((uint6)uVar4 >> 0x20),(uint)uVar4 ^ 0x10);
+  bVar4 = func_?();
+  if ((POPCOUNT(bVar4 ^ 0x10) & 1U) != 0) {
                     /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+    halt_baddata();
+  }
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
 }
 
 

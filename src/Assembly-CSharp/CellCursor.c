@@ -248,30 +248,30 @@ IntVector Assembly-CSharp.dll::CellCursor::CellCursor_GetCubeCursorPos
   puVar4 = (undefined *)((uint)uVar1 << 0x10);
   if (method == (MethodInfo *)0x0) {
     func_?();
-    in(0xf4);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    pcVar5 = (code *)swi(3);
+    IVar6 = (IntVector)(*pcVar5)();
+    return IVar6;
   }
   cube = (Cube *)method->invoker_method;
   face = method->name;
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Cube);
   }
-  bVar5 = Cube::Cube_IsFaceBoxSideAligened(cube,(Face__Enum)face,(MethodInfo *)0x0);
-  if (bVar5 != 0) {
+  bVar7 = Cube::Cube_IsFaceBoxSideAligened(cube,(Face__Enum)face,(MethodInfo *)0x0);
+  if (bVar7 != 0) {
     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
               ((IntVector *)&stack0xfffffff4,0,0,0,(MethodInfo *)0x0);
-    uVar6 = (undefined2)((uint)puVar4 >> 0x10);
+    uVar8 = (undefined2)((uint)puVar4 >> 0x10);
     switch(method->name) {
     case (char *)0x0:
       break;
     case (char *)0x1:
       break;
     case (char *)0x2:
-      puVar4 = (undefined *)CONCAT22(uVar6,0xffff);
+      puVar4 = (undefined *)CONCAT22(uVar8,0xffff);
       break;
     case (char *)0x3:
-      puVar4 = (undefined *)CONCAT22(uVar6,1);
+      puVar4 = (undefined *)CONCAT22(uVar8,1);
       break;
     case (char *)0x4:
       iVar3 = -1;
@@ -279,31 +279,31 @@ IntVector Assembly-CSharp.dll::CellCursor::CellCursor_GetCubeCursorPos
     case (char *)0x5:
       iVar3 = 1;
     }
-    iVar7 = (int16_t)puVar4;
-    pIVar8 = method[1].methodPointer;
-    uVar6 = *(undefined2 *)&method[1].virtualMethodPointer;
+    iVar9 = (int16_t)puVar4;
+    pIVar10 = method[1].methodPointer;
+    uVar8 = *(undefined2 *)&method[1].virtualMethodPointer;
     if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
       puVar4 = &UNK_?;
       func_?();
     }
-    i1.z = (int16_t)pIVar8;
+    i1.z = (int16_t)pIVar10;
     i1._0_4_ = &stack0xffffffec;
-    i2.y = in_stack_9;
-    i2.x = uVar6;
+    i2.y = in_stack_11;
+    i2.x = uVar8;
     i2.z = iVar3;
-    IVar10 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                      (i1,i2,(MethodInfo *)CONCAT22((short)((uint)puVar4 >> 0x10),iVar7));
-    this->klass = (CellCursor__Class *)*IVar10._0_4_;
-    *(undefined2 *)&this->monitor = *(undefined2 *)(IVar10._0_4_ + 1);
-    IVar11.z = (int16_t)this;
-    IVar11._0_4_ = this;
-    return IVar11;
+    IVar6 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+                      (i1,i2,(MethodInfo *)CONCAT22((short)((uint)puVar4 >> 0x10),iVar9));
+    this->klass = (CellCursor__Class *)*IVar6._0_4_;
+    *(undefined2 *)&this->monitor = *(undefined2 *)(IVar6._0_4_ + 1);
+    IVar12.z = (int16_t)this;
+    IVar12._0_4_ = this;
+    return IVar12;
   }
   this->klass = (CellCursor__Class *)method[1].methodPointer;
   *(undefined2 *)&this->monitor = *(undefined2 *)&method[1].virtualMethodPointer;
-  IVar10.z = extraout_DX;
-  IVar10._0_4_ = this;
-  return IVar10;
+  IVar6.z = extraout_DX;
+  IVar6._0_4_ = this;
+  return IVar6;
 }
 
 
@@ -407,8 +407,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void SetCursor(CubePickingInfo, GameObject) */
 
 void Assembly-CSharp.dll::CellCursor::CellCursor_SetCursor
@@ -418,86 +416,81 @@ void Assembly-CSharp.dll::CellCursor::CellCursor_SetCursor
 {
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__Cube);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
-  uStack_3._0_4_ = Face__Enum_Top;
+  uStack_3._0_2_ = 0;
+  uStack_3._2_2_ = 0;
   uStack_3._4_4_ = (undefined *)((uint)uStack_3._6_2_ << 0x10);
-  iVar4 = 0;
-  if (info == (CubePickingInfo *)0x0) goto code_?;
-  cube = (info->fields).cube;
-  unaff_EBX = (info->fields).pickedFace;
-  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (info != (CubePickingInfo *)0x0) {
+    cube = (info->fields).cube;
+    face = (info->fields).pickedFace;
+    if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Cube);
+    }
+    bVar4 = Cube::Cube_IsFaceBoxSideAligened(cube,face,(MethodInfo *)0x0);
+    if (bVar4 == 0) {
+      uVar5._0_2_ = (info->fields).iLocalPos.x;
+      uVar5._2_2_ = (info->fields).iLocalPos.y;
+      iVar6 = (info->fields).iLocalPos.z;
+    }
+    else {
+      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+                ((IntVector *)&uStack_3,0,0,0,(MethodInfo *)0x0);
+      switch((info->fields).pickedFace) {
+      case 0:
+        uStack_3._2_2_ = 1;
+        break;
+      case 1:
+        uStack_3._2_2_ = -1;
+        break;
+      case 2:
+        uStack_3._4_4_ = (undefined *)CONCAT22(uStack_3._6_2_,0xffff);
+        break;
+      case 3:
+        uStack_3._4_4_ = (undefined *)CONCAT22(uStack_3._6_2_,1);
+        break;
+      case 4:
+        uStack_3._0_2_ = -1;
+        break;
+      case 5:
+        uStack_3._0_2_ = 1;
+      }
+      iVar7 = (int16_t)uStack_3;
+      iVar8 = uStack_3._4_2_;
+      uVar9 = (info->fields).iLocalPos.x;
+      iVar6 = (info->fields).iLocalPos.z;
+      if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+        uStack_3._4_4_ = &UNK_?;
+        func_?();
+      }
+      IVar10.z = uVar9;
+      IVar10._0_4_ = auStack_11;
+      i2.y = in_stack_12;
+      i2.x = iVar6;
+      i2.z = iVar7;
+      IVar10 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+                        (IVar10,i2,(MethodInfo *)CONCAT22(uVar1,iVar8));
+      uVar5 = *IVar10._0_4_;
+      iVar6 = *(int16_t *)(IVar10._0_4_ + 1);
+    }
+    iLocalPos.z = iVar6;
+    iLocalPos.x = (short)uVar5;
+    iLocalPos.y = (short)((uint)uVar5 >> 0x10);
+    this_00 = CellCursor_GetCellCursor(this,iLocalPos,(MethodInfo *)0x0);
+    if (this_00 != (CellCursorCubeLineMesh *)0x0) {
+      position.z = iVar6;
+      position.x = (short)uVar5;
+      position.y = (short)((uint)uVar5 >> 0x10);
+      CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
+                (this_00,position,cubeGameObject,(MethodInfo *)0x0);
+      return;
+    }
   }
-  bVar5 = Cube::Cube_IsFaceBoxSideAligened(cube,unaff_EBX,(MethodInfo *)0x0);
-  if (bVar5 == 0) {
-    uVar6._0_2_ = (info->fields).iLocalPos.x;
-    uVar6._2_2_ = (info->fields).iLocalPos.y;
-    iVar4 = (info->fields).iLocalPos.z;
-    goto code_?;
-  }
-  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&uStack_3,0,0,0,(MethodInfo *)0x0);
-  switch((info->fields).pickedFace) {
-  case 0:
-    uStack_3._0_4_ = CONCAT22(1,(int16_t)uStack_3);
-    break;
-  case 1:
-    uStack_3._0_4_ = CONCAT22(0xffff,(int16_t)uStack_3);
-    break;
-  case 2:
-    uStack_3._4_4_ = (undefined *)CONCAT22(uStack_3._6_2_,0xffff);
-    break;
-  case 3:
-    uStack_3._4_4_ = (undefined *)CONCAT22(uStack_3._6_2_,1);
-    break;
-  case 4:
-    uVar7 = 0xffff;
-    goto code_?;
-  case 5:
-    uVar7 = 1;
-code_?:
-    uStack_3._0_4_ = CONCAT22(uStack_3._2_2_,uVar7);
-  }
-  unaff_EBX = (Face__Enum)uStack_3;
-  iVar8 = uStack_3._4_2_;
-  uVar9 = (info->fields).iLocalPos.x;
-  iVar4 = (info->fields).iLocalPos.z;
-  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    uStack_3._4_4_ = &UNK_?;
-    func_?();
-  }
-  IVar10.z = uVar9;
-  IVar10._0_4_ = auStack_11;
-  i2.y = in_stack_12;
-  i2.x = iVar4;
-  i2.z = (int16_t)unaff_EBX;
-  IVar10 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                    (IVar10,i2,(MethodInfo *)CONCAT22(uVar1,iVar8));
-  uVar6 = *IVar10._0_4_;
-  iVar4 = *(int16_t *)(IVar10._0_4_ + 1);
-code_?:
-  iLocalPos.z = iVar4;
-  iLocalPos.x = (short)uVar6;
-  iLocalPos.y = (short)((uint)uVar6 >> 0x10);
-  this_00 = CellCursor_GetCellCursor(this,iLocalPos,(MethodInfo *)0x0);
-  if (this_00 != (CellCursorCubeLineMesh *)0x0) {
-    position.z = iVar4;
-    position.x = (short)uVar6;
-    position.y = (short)((uint)uVar6 >> 0x10);
-    CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-              (this_00,position,cubeGameObject,(MethodInfo *)0x0);
-    return;
-  }
-code_?:
-  uVar13 = func_?();
-  do {
-  } while ('\x0f' < (char)uVar13);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)(iVar4,&stack0xfffffffc,(short)&stack0xffffffdc,unaff_EBX,(int)((ulonglong)uVar13 >> 0x20)
-            ,extraout_CX,(int)uVar13);
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

@@ -45,7 +45,7 @@ ESWaitForPlayModeAvatar_CalculateEnterPlayFromEditState
              (pMVar5 = (pMVar3->fields).teamManager, pMVar5 != (MVTeamManager *)0x0)) {
             bVar8 = MVTeamManager::MVTeamManager_HasTeam
                               (pMVar5,(this->fields).selectedTeam,(MethodInfo *)0x0);
-            bStack_9 = 0xbe;
+            bStack_9 = 0xbc;
             pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if ((pMVar3 != (MVNetworkGame *)0x0) &&
                (pMVar4 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
@@ -69,7 +69,7 @@ code_?:
                  (pMVar5 = (pMVar3->fields).teamManager, pMVar5 != (MVTeamManager *)0x0)) {
                 bVar8 = MVTeamManager::MVTeamManager_TeamHasSpawnRoles
                                   (pMVar5,(this->fields).selectedTeam,(MethodInfo *)0x0);
-                bStack_9 = 0xbe;
+                bStack_9 = 0xbc;
                 if (bVar8 == 0) {
                   if (bVar11 == 0) {
                     bVar11 = -(char)((int)id >> 0x1f);

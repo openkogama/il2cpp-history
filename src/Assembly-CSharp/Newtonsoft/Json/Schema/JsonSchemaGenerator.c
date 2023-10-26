@@ -7,11 +7,10 @@ Assembly-CSharp.dll::Newtonsoft::Json::Schema::JsonSchemaGenerator::JsonSchemaGe
           MethodInfo *method)
 
 {
-  JVar1 = type | JsonSchemaType__Enum_Null;
-  if (valueRequired == Required__Enum_Always) {
-    JVar1 = type;
+  if (valueRequired != Required__Enum_Always) {
+    type = type | JsonSchemaType__Enum_Null;
   }
-  return JVar1;
+  return type;
 }
 
 
@@ -1319,7 +1318,7 @@ code_?:
           if (iVar11 == 0) break;
           if (*(char *)(iVar11 + 0x28) == '\0') {
             if (((((byte)*(undefined4 *)(iVar11 + 0x38) & *(int *)(iVar11 + 0x3c) == 1) == 0) &&
-                ((*(byte *)(iVar11 + 0x44) & 1) == 0)) && (*(int *)(iVar11 + 0x60) == 0)) {
+                ((*(uint *)(iVar11 + 0x44) & 1) == 0)) && (*(int *)(iVar11 + 0x60) == 0)) {
               required = *(int *)(iVar11 + 100) == 0;
             }
             else {
@@ -1551,14 +1550,9 @@ JsonSchemaGenerator_GetJsonSchemaType
     func_?(&
                     MethodInfo__Newtonsoft__Json__Schema__JsonSchemaGenerator__GetJsonSchemaType_System__Type__Newtonsoft__Json__Required_
                    );
-    uVar6 = func_?();
-    cRam_? = cRam_? + (char)(uVar6 + 0xd26aefb6 >> 8) + (uVar6 < 0x2d95104a);
-    pcVar7 = (char *)(uVar6 + 0xa4a5df6c);
-    *pcVar7 = *pcVar7 + (char)pcVar7 + (uVar6 + 0xd26aefb6 < 0x2dc5104a);
-    cRam_? = cRam_? + (char)pcVar7;
-    pcVar8 = (code *)swi(3);
-    JVar1 = (*pcVar8)();
-    return JVar1;
+    func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
 }
 

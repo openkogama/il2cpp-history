@@ -42,7 +42,7 @@ MVWorldObject.dll::MV::WorldObject::MVPrototype::MVPrototype_DeepCopy
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_System::Byte_[]>__get_Current__
                    );
-    func_?(0x23b0);
+    func_?(0x650);
     func_?(&
                     MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_System::Byte_[]>__get_Value__
                    );

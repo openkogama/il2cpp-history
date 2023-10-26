@@ -216,7 +216,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_C
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0x62,(MethodInfo *)0x0);
+                  (pGVar1,0x22,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -1838,7 +1838,9 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_R
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
     func_?(&
                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                    );
@@ -1853,7 +1855,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_R
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
   RVar1 = RewardedAdResult__Enum_RewardUnlocked;
@@ -1881,30 +1883,23 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_R
                             );
     if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
 code_?:
-      uVar5 = func_?();
-      iVar6 = (int)((ulonglong)uVar5 >> 0x20);
-      in_AF = 9 < ((byte)uVar5 & 0xf) | in_AF;
-      uVar7 = CONCAT31((int3)((ulonglong)uVar5 >> 8),(byte)uVar5 + in_AF * -6) & 0xffffff0f;
-      uVar8 = (ushort)(uVar7 >> 0x10);
-      bVar9 = (byte)uVar7;
-      cVar10 = (char)((ulonglong)uVar5 >> 8) - in_AF;
-      pcVar11 = (char *)((int)&pGVar2[0x7415a9d].klass + 3);
-      *pcVar11 = *pcVar11 + (char)((ulonglong)uVar5 >> 0x28) + in_AF;
-      in_AF = 9 < bVar9 | in_AF;
-      bVar12 = bVar9 + in_AF * -6 & 0xf;
-      pcVar11 = (char *)(iVar6 + 0x60);
-      *pcVar11 = *pcVar11 + (char)extraout_ECX + in_AF;
-      bVar13 = 9 < bVar12 | in_AF;
-      uVar7 = CONCAT31((int3)(((uint)uVar8 << 0x10) >> 8),bVar12 + bVar13 * -6) & 0xffffff0f;
-      pcVar11 = (char *)(CONCAT22((short)(uVar7 >> 0x10),
-                                 CONCAT11((cVar10 - in_AF) - bVar13,(char)uVar7)) + 0x3f);
-      *pcVar11 = *pcVar11 + (char)pSVar4 + bVar13;
-      in((short)((ulonglong)uVar5 >> 0x20));
+      cVar5 = '\0';
+      bVar6 = func_?();
+      iVar7 = (int)pSRam0000003f;
+      LOCK();
+      UNLOCK();
+      pcVar8 = (char *)((int)&pGVar2[0x3415a9d].klass + 2);
+      pSRam0000003f = pSVar4;
+      *pcVar8 = *pcVar8 + bVar6 + cVar5;
+      in_AF = 9 < (bVar6 & 0xf) | in_AF;
+      *extraout_EDX = *extraout_EDX + (char)iVar7 + in_AF;
+      pcVar8 = (char *)(unaff_EBP + iVar7 * 2);
+      *pcVar8 = *pcVar8 + (char)((uint)extraout_ECX >> 8) + (9 < (bVar6 + in_AF * -6 & 0xf) | in_AF)
+      ;
+      in((short)extraout_EDX);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>,
-                        extraout_ECX,pGVar2,0,&stack0xfffffffc,&stack0xfffffff8,
-                        CONCAT22((short)((uint)pSVar4 >> 0x10),CONCAT11(0x5f,(char)pSVar4)),iVar6
-                        ,extraout_ECX,CONCAT22(uVar8,CONCAT11(cVar10,bVar9)));
+                        extraout_ECX);
         func_?(&
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                        );
@@ -1922,26 +1917,23 @@ code_?:
         func_?(&TypeInfo__SpawnRoleSelectionElement____c);
         cRam_? = '\x01';
       }
-      pTVar14 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
-      if (pTVar14 != (TogglePreviewState *)0x0) {
-        bVar15 = Assets::Scripts::GamePasses::TogglePreviewState::TogglePreviewState_get_CanToggle
-                          (pTVar14,(MethodInfo *)0x0);
-        if (bVar15 == 0) {
+      pTVar9 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
+      if (pTVar9 != (TogglePreviewState *)0x0) {
+        bVar10 = Assets::Scripts::GamePasses::TogglePreviewState::TogglePreviewState_get_CanToggle
+                          (pTVar9,(MethodInfo *)0x0);
+        if (bVar10 == 0) {
           pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__SpawnRoleSelectionElement____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__SpawnRoleSelectionElement____c);
+            func_?();
           }
           pEVar3 = TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__41_0;
           if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
             if ((TypeInfo__SpawnRoleSelectionElement____c->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__SpawnRoleSelectionElement____c);
+              func_?();
             }
             pSVar4 = TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9;
-            pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-                     func_?(
-                                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                                    );
+            pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
             if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
             goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
@@ -1950,12 +1942,11 @@ code_?:
                        MethodInfo__SpawnRoleSelectionElement____c___ShowAd_b__41_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__41_0 = pEVar3;
-            func_?(&TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__41_0,
-                            pEVar3);
+            func_?();
           }
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
               0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+            func_?();
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
@@ -1965,10 +1956,10 @@ code_?:
                     );
           return;
         }
-        pTVar14 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
-        if (pTVar14 != (TogglePreviewState *)0x0) {
-          if ((pTVar14->fields).freeTry == 0) {
-            pIVar16 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+        pTVar9 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
+        if (pTVar9 != (TogglePreviewState *)0x0) {
+          if ((pTVar9->fields).freeTry == 0) {
+            pIVar11 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
             this_00 = (UnityAction_1_System_Int32Enum_ *)
                       func_?(
                                      TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>
@@ -1978,34 +1969,32 @@ code_?:
                 UnityAction_1_System_Int32Enum___ctor
                           (this_00,(Object *)this,
                            MethodInfo__SpawnRoleSelectionElement__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                           ,(MethodInfo *)0x0), pIVar16 != (IAdManager *)0x0)) {
-              uVar17 = 0;
-              uVar8 = (pIVar16->klass->_1).interface_offsets_count;
-              if (uVar8 != 0) {
+                           ,(MethodInfo *)0x0), pIVar11 != (IAdManager *)0x0)) {
+              uVar12 = 0;
+              uVar13 = (pIVar11->klass->_1).interface_offsets_count;
+              if (uVar13 != 0) {
                 do {
-                  if (pIVar16->klass->interfaceOffsets[uVar17].interfaceType ==
+                  if (pIVar11->klass->interfaceOffsets[uVar12].interfaceType ==
                       (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-                    pVVar18 = &(pIVar16->klass->vtable).RequestRewardedAd +
-                              pIVar16->klass->interfaceOffsets[uVar17].offset;
+                    pVVar14 = &(pIVar11->klass->vtable).RequestRewardedAd +
+                              pIVar11->klass->interfaceOffsets[uVar12].offset;
                     goto code_?;
                   }
-                  uVar17 = uVar17 + 1;
-                } while (uVar17 < uVar8);
+                  uVar12 = uVar12 + 1;
+                } while (uVar12 < uVar13);
               }
-              pVVar18 = (VirtualInvokeData *)
-                        func_?(pIVar16,TypeInfo__Assets__Scripts__AdIntegration__IAdManager
-                                        ,6);
+              pVVar14 = (VirtualInvokeData *)func_?();
 code_?:
-              (*pVVar18->methodPtr)(pIVar16,this_00,6,pVVar18->method);
+              (*pVVar14->methodPtr)(pIVar11);
               return;
             }
           }
           else {
             SpawnRoleSelectionElement_PreviewTier(this,(MethodInfo *)0x0);
-            pTVar14 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0)
+            pTVar9 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0)
             ;
-            if (pTVar14 != (TogglePreviewState *)0x0) {
-              (pTVar14->fields).freeTry = 0;
+            if (pTVar9 != (TogglePreviewState *)0x0) {
+              (pTVar9->fields).freeTry = 0;
               return;
             }
           }
@@ -2013,8 +2002,8 @@ code_?:
       }
 code_?:
       func_?();
-      pcVar19 = (code *)swi(3);
-      (*pcVar19)();
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
       return;
     }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
@@ -2023,7 +2012,7 @@ code_?:
                MethodInfo__SpawnRoleSelectionElement____c___RewardedAdCallback_b__42_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__42_1 = pEVar3;
-    ppEVar20 = &TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__42_1;
+    ppEVar16 = &TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__42_1;
     break;
   case RewardedAdResult__Enum_RewardUnlocked:
     SpawnRoleSelectionElement_PreviewTier(this,(MethodInfo *)0x0);
@@ -2053,12 +2042,12 @@ code_?:
                MethodInfo__SpawnRoleSelectionElement____c___RewardedAdCallback_b__42_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__42_0 = pEVar3;
-    ppEVar20 = &TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__42_0;
+    ppEVar16 = &TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9__42_0;
     break;
   default:
     goto code_?;
   }
-  func_?(ppEVar20,pEVar3);
+  func_?(ppEVar16,pEVar3);
 code_?:
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);

@@ -473,11 +473,11 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera_UpdateCamera
         value.y = (float)uVar13 + (float)uVar30;
         ProtectedTransform::ProtectedTransform_set_position(targetTransform,value,(MethodInfo *)0x0)
         ;
-        value_00.y = (fVar22 * fVar4 + fVar8 * 3.068598e-29 + fVar9 * fVar3) - fVar5 * fVar7;
-        value_00.x = (fVar22 * fVar3 + fVar7 * 3.068598e-29 + fVar5 * fVar8) - fVar9 * fVar4;
-        value_00.z = (fVar22 * fVar5 + fVar9 * 3.068598e-29 + fVar4 * fVar7) - fVar8 * fVar3;
-        value_00.w = ((fVar22 * 3.068598e-29 - fVar3 * fVar7) - fVar4 * fVar8) - fVar5 * fVar9
-        ;
+        value_00.y = (fVar22 * fVar4 + fVar8 * 3.0685162e-29 + fVar9 * fVar3) - fVar5 * fVar7;
+        value_00.x = (fVar22 * fVar3 + fVar7 * 3.0685162e-29 + fVar5 * fVar8) - fVar9 * fVar4;
+        value_00.z = (fVar22 * fVar5 + fVar9 * 3.0685162e-29 + fVar4 * fVar7) - fVar8 * fVar3;
+        value_00.w = ((fVar22 * 3.0685162e-29 - fVar3 * fVar7) - fVar4 * fVar8) -
+                     fVar5 * fVar9;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (targetTransform,value_00,(MethodInfo *)0x0);
         this_01 = (this->fields).avatarCameraDistTransparency;

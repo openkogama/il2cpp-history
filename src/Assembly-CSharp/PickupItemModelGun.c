@@ -344,7 +344,7 @@ code_?:
               if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              uVar24 = 0x1055295700000000;
+              uVar24 = 0x1055269700000000;
               pAVar21 = mscorlib.dll::System::Enum::Enum_GetValues(pTVar20,(MethodInfo *)0x0);
               if (pAVar21 == (Array *)0x0) break;
               piVar23 = (int *)&UNK_?;
@@ -595,7 +595,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0x2574);
+    func_?(0x7c4);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__

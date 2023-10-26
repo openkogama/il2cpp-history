@@ -27,7 +27,7 @@ MVWorldObject.dll::QuaternionMath::QuaternionMath_Inverse
   fVar1 = (float)((uint)q.x ^
                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
   fVar2 = (float)((uint)q.z ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
   fVar3 = (float)((uint)q.y ^
                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
   iVar4 = 0;
@@ -66,13 +66,11 @@ MVWorldObject.dll::QuaternionMath::QuaternionMath_Inverse
                 (this,message,method_00);
       func_?();
       cVar7 = (undefined1 *)0xffffffef < &stack0xfffffff4;
-      uVar8 = func_?();
-      uRam_? = (undefined1)uVar8;
-      uRam_? = uRam_?;
-      *extraout_ECX = *extraout_ECX + (char)((ushort)uVar8 >> 8) + cVar7;
-      pcVar9 = (code *)swi(3);
-      pQVar10 = (Quaternion *)(*pcVar9)();
-      return pQVar10;
+      uRam_? = func_?();
+      cRam_? = cRam_? + unaff_BL + cVar7;
+      pcVar8 = (code *)swi(3);
+      pQVar9 = (Quaternion *)(*pcVar8)();
+      return pQVar9;
     }
   } while( true );
 }

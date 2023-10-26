@@ -377,9 +377,9 @@ void Assembly-CSharp.dll::CollectTheItemCollectable::CollectTheItemCollectable_S
                     MethodInfo__CollectTheItemCollectableInstance__SetupGreyoutScript_System__Object__EditStateEventArgs_
                    );
     func_?(&TypeInfo__CollectTheItemCollectableInstance);
-    func_?(0x8d4);
+    func_?(0xeb74);
     func_?(&TypeInfo__EditableCubeModelWrapper);
-    func_?(0xb194);
+    func_?(0x93c0);
     func_?(&TypeInfo__MVCubeModelInstance);
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);

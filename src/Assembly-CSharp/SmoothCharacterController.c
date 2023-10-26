@@ -380,7 +380,7 @@ code_?:
              ((pSVar11 = (this_00->fields).next, pSVar11 == (SmoothPhysicsMovement_Package *)0x0 ||
               (pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
                                    ((Quaternion *)&stack0xffffffd0,(pSVar4->fields).rotation,
-                                    (pSVar11->fields).rotation,3.1695622e-29,(MethodInfo *)0x0),
+                                    (pSVar11->fields).rotation,3.169437e-29,(MethodInfo *)0x0),
               this_01 == (MVWorldObjectClient *)0x0)))) break;
           MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(this_01,*pQVar14,(MethodInfo *)0x0);
         }

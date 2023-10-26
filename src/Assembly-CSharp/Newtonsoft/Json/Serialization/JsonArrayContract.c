@@ -228,7 +228,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonArrayContract::
     return;
   }
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+    func_?();
   }
   this = (JsonArrayContract *)
          mscorlib.dll::System::Type::Type_GetTypeFromHandle

@@ -252,7 +252,7 @@ int32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
 {
   _puStack_c = ObscuredDouble_InternalDecrypt(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    _puStack_c = 4.1390098629477145e-227;
+    _puStack_c = 4.1236718774401114e-227;
     func_?();
     cRam_? = '\x01';
   }

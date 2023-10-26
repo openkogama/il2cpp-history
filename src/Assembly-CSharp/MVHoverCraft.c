@@ -486,7 +486,7 @@ code_?:
       maxHealthVal = (this->fields)._.maxHealth;
       vsm = (this->fields)._._.seatManager;
       health = (this->fields)._.Health;
-      uVar10 = 0x56a6;
+      uVar10 = 0x54c6;
       uVar11 = 0x1028;
       bVar12 = (*(this->klass->vtable).get_IsInSpawner.methodPtr)();
       hoverCraftVisualizationSettings.thrustersColor.alphas._2_2_ = uVar11;

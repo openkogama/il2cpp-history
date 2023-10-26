@@ -61,8 +61,6 @@ code_?:
                       );
   NStack_5._0_4_ = pAVar8;
   func_?();
-  uVar2 = in(extraout_DX);
-  cRam_? = cRam_? + (char)extraout_DX + ((byte)uVar2 < 0x4c);
   pcVar9 = (code *)swi(3);
   NVar3 = (Nullable_1_Newtonsoft_Json_JsonToken_)(*pcVar9)();
   return NVar3;
@@ -444,76 +442,70 @@ code_?:
   pOVar11 = (Object *)func_?();
   pSVar12 = (String *)func_?();
   pSVar13 = (String *)func_?();
-  pAVar15 = Json::Utilities::MiscellaneousUtils::
+  pAVar14 = Json::Utilities::MiscellaneousUtils::
             MiscellaneousUtils_CreateArgumentOutOfRangeException
                       (pSVar13,pOVar11,pSVar12,(MethodInfo *)0x0);
   uVar5 = func_?();
-  bVar16 = (undefined1 *)0xffffffdb < &stack0xffffffbc;
+  bVar15 = (undefined1 *)0xffffffdb < &stack0xffffffbc;
   NStack_4._0_4_ = uVar5;
-  pAVar14 = pAVar15;
+  pAStack16 = pAVar14;
   uVar17 = func_?();
-  iVar18 = (int)((ulonglong)uVar17 >> 0x20);
-  bVar19 = (char)uVar17 - 1;
-  pppIVar20 = &pJVar1[-0x3bea3e]._0.nestedTypes;
-  bVar21 = *(char *)pppIVar20 + bVar19;
-  bVar22 = CARRY1(*(byte *)pppIVar20,bVar19) || CARRY1(bVar21,bVar16);
-  *(byte *)pppIVar20 = bVar21 + bVar16;
-  bVar19 = (char)uVar17 - 2;
-  bVar16 = (byte)((uint)extraout_ECX >> 8);
-  bVar21 = bVar16 + bVar19;
-  bVar23 = CARRY1(bVar16,bVar19) || CARRY1(bVar21,bVar22);
-  bVar16 = (byte)extraout_ECX;
-  pbVar24 = (byte *)((int)uVar17 + -3);
-  puVar25 = (undefined1 *)((int)&pJVar1[-0x3ff506].vtable.__unknown_3.method + 1);
-  bVar26 = CARRY1(*puVar25,bVar16) || CARRY1(*puVar25 + bVar16,bVar23);
-  *puVar25 = *puVar25 + bVar16 + bVar23;
-  pbVar27 = (byte *)((int)&pAVar14[-0xa2ff0c].fields._._._._className + 1);
-  bVar28 = (byte)((ulonglong)uVar17 >> 0x28);
-  bVar19 = *pbVar27 + bVar28;
-  bVar23 = CARRY1(*pbVar27,bVar28) || CARRY1(bVar19,bVar26);
-  *pbVar27 = bVar19 + bVar26;
-  iVar29 = CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar21 + bVar22,bVar16)) + -2;
-  pbVar27 = (byte *)(iVar18 + iVar29 * 2);
-  bVar19 = (byte)((ulonglong)uVar17 >> 0x20);
-  bVar21 = *pbVar27 + bVar19;
-  bVar22 = CARRY1(*pbVar27,bVar19) || CARRY1(bVar21,bVar23);
-  *pbVar27 = bVar21 + bVar23;
-  puVar25 = (undefined1 *)((int)&(pJVar1->_0).properties + 2);
-  bVar21 = *puVar25 + (byte)pJVar1;
-  bVar23 = CARRY1(*puVar25,(byte)pJVar1) || CARRY1(bVar21,bVar22);
-  *puVar25 = bVar21 + bVar22;
-  pbVar27 = (byte *)(iVar18 + -0x16efb3b6);
-  bVar19 = (byte)((uint)pbVar24 >> 8);
-  bVar21 = *pbVar27 + bVar19;
-  bVar22 = CARRY1(*pbVar27,bVar19) || CARRY1(bVar21,bVar23);
-  *pbVar27 = bVar21 + bVar23;
-  iVar18 = iVar18 + -1;
-  bVar21 = (byte)((uint)iVar18 >> 8);
-  bVar23 = CARRY1(*pbVar24,bVar21) || CARRY1(*pbVar24 + bVar21,bVar22);
-  *pbVar24 = *pbVar24 + bVar21 + bVar22;
-  puVar30 = (undefined1 *)((int)&pJVar1[-1].vtable.__unknown_5.method + 3);
-  pbVar27 = (byte *)((int)&(pAVar14->fields)._._paramName + 3);
-  bVar22 = CARRY1(*pbVar27,bVar21) || CARRY1(*pbVar27 + bVar21,bVar23);
-  *pbVar27 = *pbVar27 + bVar21 + bVar23;
-  pbVar27 = (byte *)((int)&pAVar15[0x103427].fields._._._._helpURL + 3);
-  bVar19 = (byte)((uint)puVar30 >> 8);
-  bVar21 = *pbVar27 + bVar19;
-  bVar23 = CARRY1(*pbVar27,bVar19) || CARRY1(bVar21,bVar22);
-  *pbVar27 = bVar21 + bVar22;
-  pbVar27 = &stack0x0000001c + iVar29 * 2;
-  bVar21 = *pbVar27 + (byte)iVar29;
-  bVar22 = CARRY1(*pbVar27,(byte)iVar29) || CARRY1(bVar21,bVar23);
-  *pbVar27 = bVar21 + bVar23;
-  puVar25 = (undefined1 *)((int)&pJVar1[-0x198e9f]._0.methods + 3);
-  bVar21 = (byte)iVar18;
-  bVar23 = CARRY1(*puVar25,bVar21) || CARRY1(*puVar25 + bVar21,bVar22);
-  *puVar25 = *puVar25 + bVar21 + bVar22;
-  bVar19 = (byte)puVar30;
-  in((short)CONCAT31((int3)((uint)iVar18 >> 8),
-                     bVar21 + bVar19 + bVar23 + bVar19 +
-                     (CARRY1(bVar21,bVar19) || CARRY1(bVar21 + bVar19,bVar23))));
-  if (method != (MethodInfo *)0x0) {
-    bVar2 = (**(code **)(method->methodPointer + 0xd4))();
+  pbVar18 = (byte *)((ulonglong)uVar17 >> 0x20);
+  iVar19 = (int)uVar17;
+  puVar20 = &pJVar1[-0x1b9403]._1.packingSize;
+  bVar21 = (byte)((ulonglong)uVar17 >> 0x28);
+  bVar22 = CARRY1(*puVar20,bVar21) || CARRY1(*puVar20 + bVar21,bVar15);
+  *puVar20 = *puVar20 + bVar21 + bVar15;
+  bVar23 = (byte)((uint)extraout_ECX >> 8);
+  bVar15 = bVar23 + bVar21;
+  bVar24 = CARRY1(bVar23,bVar21) || CARRY1(bVar15,bVar22);
+  bVar25 = (byte)extraout_ECX;
+  bVar15 = bVar15 + bVar22;
+  pbVar26 = &(pJVar1 + -0x1f9ecb)[1]._0.this_arg.type;
+  bVar27 = (byte)((uint)pJVar1 >> 8);
+  bVar22 = CARRY1(*pbVar26,bVar27) || CARRY1(*pbVar26 + bVar27,bVar24);
+  *pbVar26 = *pbVar26 + bVar27 + bVar24;
+  bVar28 = (byte)((ulonglong)uVar17 >> 8);
+  bVar23 = bVar27 + bVar28;
+  bVar24 = CARRY1(bVar27,bVar28) || CARRY1(bVar23,bVar22);
+  bVar27 = (byte)pJVar1;
+  bVar23 = bVar23 + bVar22;
+  bVar28 = bVar15 + bVar23;
+  bVar22 = CARRY1(bVar15,bVar23) || CARRY1(bVar28,bVar24);
+  pbVar29 = (byte *)CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar28 + bVar24,bVar25));
+  pbVar26 = (byte *)((int)&pOVar11[9].monitor + iVar19 * 2);
+  bVar15 = *pbVar26 + (byte)uVar17;
+  bVar24 = CARRY1(*pbVar26,(byte)uVar17) || CARRY1(bVar15,bVar22);
+  *pbVar26 = bVar15 + bVar22;
+  pbVar26 = (byte *)(CONCAT22((short)((uint)pJVar1 >> 0x10),CONCAT11(bVar23,bVar27)) + -0x2defb3b9)
+  ;
+  bVar22 = CARRY1(*pbVar26,bVar25) || CARRY1(*pbVar26 + bVar25,bVar24);
+  *pbVar26 = *pbVar26 + bVar25 + bVar24;
+  bVar24 = CARRY1(*pbVar29,bVar27) || CARRY1(*pbVar29 + bVar27,bVar22);
+  *pbVar29 = *pbVar29 + bVar27 + bVar22;
+  pbVar26 = (byte *)(iVar19 + 0x47);
+  bVar15 = (byte)((uint)(iVar19 + -1) >> 8);
+  bVar22 = CARRY1(*pbVar26,bVar15) || CARRY1(*pbVar26 + bVar15,bVar24);
+  *pbVar26 = *pbVar26 + bVar15 + bVar24;
+  pbVar26 = (byte *)((int)&pOVar11[-0x23df677].klass + 1);
+  bVar24 = CARRY1(*pbVar26,bVar15) || CARRY1(*pbVar26 + bVar15,bVar22);
+  *pbVar26 = *pbVar26 + bVar15 + bVar22;
+  bVar15 = (char)(iVar19 + -1) - 1;
+  bVar22 = CARRY1(bRam_?,bVar21);
+  bVar21 = bRam_? + bVar21;
+  bRam_? = bVar21 + bVar24;
+  bVar22 = CARRY1(bVar27,bVar15) || CARRY1(bVar27 + bVar15,bVar22 || CARRY1(bVar21,bVar24));
+  bVar25 = bVar25 - 2;
+  bVar24 = CARRY1(*pbVar18,bVar25) || CARRY1(*pbVar18 + bVar25,bVar22);
+  *pbVar18 = *pbVar18 + bVar25 + bVar22;
+  pbVar26 = pbVar18 + -1;
+  bVar15 = *pbVar26;
+  bVar23 = *pbVar26;
+  *pbVar26 = bVar23 + bVar25 + bVar24;
+  pbVar18[-2] = pbVar18[-2] + bVar25 + (CARRY1(bVar15,bVar25) || CARRY1(bVar23 + bVar25,bVar24));
+  in((short)((ulonglong)uVar17 >> 0x20) + -3);
+  if ((int *)CONCAT22(in_stack_30,method._2_2_) != (int *)0x0) {
+    bVar2 = (**(code **)(*(int *)CONCAT22(in_stack_30,method._2_2_) + 0xd4))();
     return bVar2;
   }
   return 0;
@@ -954,245 +946,249 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JTokenReader::JTokenReader_Set
     func_?();
     cRam_? = '\x01';
   }
+  bVar1 = 0;
+  uVar2 = 0;
+  piStack_3 = (int *)0x0;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   if (c != (JContainer *)0x0) {
-    uVar1 = (*(c->klass->vtable).__unknown_2.methodPtr)();
-    switch(uVar1) {
+    uVar4 = (*(c->klass->vtable).__unknown_2.methodPtr)();
+    switch(uVar4) {
     case 1:
-      NStack_2.hasValue = 0;
-      NStack_2._1_3_ = 0;
-      NStack_2.value = 0;
-      mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
-                (&NStack_2,0xd,
-                 MethodInfo__System__Nullable<Newtonsoft::Json::JsonToken>__Nullable_Newtonsoft__Json__JsonToken_
-                );
-      bVar3 = NStack_2.hasValue;
-      goto code_?;
-    case 2:
-      NStack_4.hasValue = 0;
-      NStack_4._1_3_ = 0;
-      NStack_4.value = 0;
-      mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
-                (&NStack_4,0xe,
-                 MethodInfo__System__Nullable<Newtonsoft::Json::JsonToken>__Nullable_Newtonsoft__Json__JsonToken_
-                );
-      bVar3 = NStack_4.hasValue;
-      goto code_?;
-    case 3:
       NStack_5.hasValue = 0;
       NStack_5._1_3_ = 0;
       NStack_5.value = 0;
       mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
-                (&NStack_5,0xf,
+                (&NStack_5,0xd,
+                 MethodInfo__System__Nullable<Newtonsoft::Json::JsonToken>__Nullable_Newtonsoft__Json__JsonToken_
+                );
+      bVar6 = NStack_5.hasValue;
+      piStack_3 = (int *)NStack_5.value;
+      goto code_?;
+    case 2:
+      NStack_7.hasValue = 0;
+      NStack_7._1_3_ = 0;
+      NStack_7.value = 0;
+      mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+                (&NStack_7,0xe,
+                 MethodInfo__System__Nullable<Newtonsoft::Json::JsonToken>__Nullable_Newtonsoft__Json__JsonToken_
+                );
+      bVar6 = NStack_7.hasValue;
+      piStack_3 = (int *)NStack_7.value;
+      goto code_?;
+    case 3:
+      NStack_8.hasValue = 0;
+      NStack_8._1_3_ = 0;
+      NStack_8.value = 0;
+      mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+                (&NStack_8,0xf,
                  MethodInfo__System__Nullable<Newtonsoft::Json::JsonToken>__Nullable_Newtonsoft__Json__JsonToken_
                 );
       break;
     case 4:
-      NStack_5.hasValue = 0;
-      NStack_5._1_3_ = 0;
-      NStack_5.value = 0;
+      NStack_8.hasValue = 0;
+      NStack_8._1_3_ = 0;
+      NStack_8.value = 0;
       break;
     default:
       goto code_?;
     }
-    bVar3 = NStack_5.hasValue;
+    piStack_3 = (int *)NStack_8.value;
+    bVar6 = NStack_8.hasValue;
 code_?:
-    if (bVar3 != 0) {
+    if (bVar6 != 0) {
       newToken = mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__get_Value
-                           ((Nullable_1_UInt32_ *)&stack0xffffffdc,
+                           (&stack0xffffffdc,
                             MethodInfo__System__Nullable<Newtonsoft::Json::JsonToken>__get_Value__);
       JsonReader::JsonReader_SetToken((JsonReader *)this,newToken,(MethodInfo *)0x0);
       (this->fields)._current = (JToken *)c;
+      NStack_9._0_4_ = c;
       func_?();
       (this->fields)._parent = (JToken *)c;
       func_?();
       return 1;
     }
-    bVar3 = JTokenReader_ReadOver(this,(JToken *)c,(MethodInfo *)0x0);
-    return bVar3;
+    NStack_9 = (Nullable_1_UInt32_)(ZEXT48(piStack_3) << 0x20);
+    bVar6 = JTokenReader_ReadOver(this,(JToken *)c,(MethodInfo *)0x0);
+    return bVar6;
   }
   func_?();
 code_?:
   func_?();
-  piVar6 = (int *)func_?();
+  piVar10 = (int *)func_?();
   func_?();
-  pOVar7 = (Object *)func_?();
-  pSVar8 = (String *)func_?();
-  pSVar9 = (String *)func_?();
-  pAVar10 = Json::Utilities::MiscellaneousUtils::
+  pOVar11 = (Object *)func_?();
+  pSVar12 = (String *)func_?();
+  pSVar13 = (String *)func_?();
+  pAVar14 = Json::Utilities::MiscellaneousUtils::
             MiscellaneousUtils_CreateArgumentOutOfRangeException
-                      (pSVar9,pOVar7,pSVar8,(MethodInfo *)0x0);
-  func_?();
-  bVar11 = (undefined1 *)0xffffffdb < &stack0xffffffc0;
-  uVar12 = func_?();
-  *(undefined1 *)&pOVar7->klass = *(undefined1 *)&pAVar10->klass;
-  bVar13 = (byte)extraout_CX;
-  bVar14 = (byte)((ushort)uVar12 >> 8);
-  bVar15 = (byte)((ushort)extraout_CX >> 8);
-  *extraout_EDX =
-       *extraout_EDX + bVar13 +
-       (CARRY1(bVar14,bVar15) ||
-       CARRY1(bVar14 + bVar15,CARRY1((byte)uVar12,bVar13) || CARRY1((byte)uVar12 + bVar13,bVar11)));
-  in((short)extraout_EDX);
+                      (pSVar13,pOVar11,pSVar12,(MethodInfo *)0x0);
+  piStack_3 = (int *)func_?();
+  bVar15 = (undefined1 *)0xffffffdb < &stack0xffffffc0;
+  NStack_9._0_4_ = pAVar14;
+  bVar16 = func_?();
+  pcVar17 = (char *)(extraout_ECX * 2 + 0x4d3a104c);
+  *pcVar17 = *pcVar17 + unaff_BL +
+            (CARRY1(bVar16 % 0x4c,unaff_BH) || CARRY1(bVar16 % 0x4c + unaff_BH,bVar15));
+  in(extraout_DX);
   if (cRam_? == '\0') {
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  if (piVar6 == (int *)0x0) {
+  if (piVar10 == (int *)0x0) {
     func_?();
     goto code_?;
   }
-  uVar1 = (**(code **)(*piVar6 + 0x124))();
-  switch(uVar1) {
+  uVar4 = (**(code **)(*piVar10 + 0x124))();
+  switch(uVar4) {
   case 1:
     goto code_?;
   case 2:
     goto code_?;
   case 3:
 code_?:
-    bVar3 = (*(code *)pAVar10->klass[1]._0.this_arg.data)();
-    return bVar3;
+    bVar6 = (**(code **)(*piStack_3 + 0x134))();
+    return bVar6;
   case 4:
     if (((TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JProperty__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JProperty)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 5:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 6:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 7:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 8:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 9:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 10:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 0xb:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 0xc:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 0xd:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 0xe:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      bVar3 = func_?();
-      return bVar3;
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   case 0xf:
   case 0x10:
   case 0x11:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         *(byte *)(*piVar6 + 0xb4)) &&
+         *(byte *)(*piVar10 + 0xb4)) &&
        (*(JValue__Class **)
-         (*(int *)(*piVar6 + 100) + -4 +
+         (*(int *)(*piVar10 + 100) + -4 +
          (uint)(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth * 4) ==
         TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      if ((int *)piVar6[10] == (int *)0x0) {
-        bVar3 = func_?();
-        return bVar3;
+      if ((int *)piVar10[10] == (int *)0x0) {
+        bVar6 = func_?();
+        return bVar6;
       }
-      (**(code **)(*(int *)piVar6[10] + 0xd4))();
-      bVar3 = func_?();
-      return bVar3;
+      (**(code **)(*(int *)piVar10[10] + 0xd4))();
+      bVar6 = func_?();
+      return bVar6;
     }
     break;
   default:
@@ -1202,68 +1198,73 @@ code_?:
   func_?();
 code_?:
   func_?();
+  value = (JToken *)func_?();
   func_?();
-  func_?();
-  pOVar7 = (Object *)func_?();
-  pSVar8 = (String *)func_?();
-  pSVar9 = (String *)func_?();
-  pAVar10 = Json::Utilities::MiscellaneousUtils::
+  pOVar11 = (Object *)func_?();
+  pSVar12 = (String *)func_?();
+  pSVar13 = (String *)func_?();
+  pAVar14 = Json::Utilities::MiscellaneousUtils::
             MiscellaneousUtils_CreateArgumentOutOfRangeException
-                      (pSVar9,pOVar7,pSVar8,(MethodInfo *)0x0);
-  func_?();
-  bVar14 = (undefined1 *)0xffffffdb < &stack0xffffffb8;
-  uVar16 = func_?();
-  iVar17 = (int)((ulonglong)uVar16 >> 0x20);
-  pbVar18 = (byte *)(iVar17 + 0x51);
-  bVar13 = (byte)((ulonglong)uVar16 >> 8);
-  bVar19 = CARRY1(*pbVar18,bVar13) || CARRY1(*pbVar18 + bVar13,bVar14);
-  *pbVar18 = *pbVar18 + bVar13 + bVar14;
-  pbVar18 = (byte *)((int)uVar16 + 0x51);
-  bVar11 = (byte)((uint)unaff_EBX >> 8);
-  bVar20 = CARRY1(*pbVar18,bVar11) || CARRY1(*pbVar18 + bVar11,bVar19);
-  *pbVar18 = *pbVar18 + bVar11 + bVar19;
-  pbVar18 = (byte *)((int)&pAVar10[-0x92ff0c].fields._._._._data + 1);
-  bVar14 = *pbVar18 + (byte)extraout_CX_00;
-  bVar19 = CARRY1(*pbVar18,(byte)extraout_CX_00) || CARRY1(bVar14,bVar20);
-  *pbVar18 = bVar14 + bVar20;
-  bVar15 = (byte)((ulonglong)uVar16 >> 0x20);
-  bVar14 = *(char *)&pAVar10->klass + bVar15;
-  bVar20 = CARRY1(*(byte *)&pAVar10->klass,bVar15) || CARRY1(bVar14,bVar19);
-  *(byte *)&pAVar10->klass = bVar14 + bVar19;
-  pbVar18 = (byte *)(iVar17 + 0x52);
-  bVar14 = (byte)unaff_EBX;
-  bVar19 = CARRY1(*pbVar18,bVar14) || CARRY1(*pbVar18 + bVar14,bVar20);
-  *pbVar18 = *pbVar18 + bVar14 + bVar20;
-  pbVar18 = (byte *)((int)&pAVar10[-0x5fcbd9].fields._._._._stackTraceString + 2);
-  bVar20 = CARRY1(*pbVar18,bVar14) || CARRY1(*pbVar18 + bVar14,bVar19);
-  *pbVar18 = *pbVar18 + bVar14 + bVar19;
-  bVar14 = *(char *)&pAVar10->klass + bVar13;
-  bVar19 = CARRY1(*(byte *)&pAVar10->klass,bVar13) || CARRY1(bVar14,bVar20);
-  *(byte *)&pAVar10->klass = bVar14 + bVar20;
-  pbVar18 = (byte *)(iVar17 + 0x53);
-  bVar14 = (byte)((ushort)extraout_CX_00 >> 8);
-  bVar20 = CARRY1(*pbVar18,bVar14) || CARRY1(*pbVar18 + bVar14,bVar19);
-  *pbVar18 = *pbVar18 + bVar14 + bVar19;
-  pbVar18 = (byte *)((int)&pAVar10[-0x2c98a6].fields._._._._HResult + 3);
-  bVar19 = CARRY1(*pbVar18,bVar14) || CARRY1(*pbVar18 + bVar14,bVar20);
-  *pbVar18 = *pbVar18 + bVar14 + bVar20;
-  bVar13 = (byte)((ulonglong)uVar16 >> 0x28);
-  bVar14 = *(char *)&pAVar10->klass + bVar13;
-  bVar20 = CARRY1(*(byte *)&pAVar10->klass,bVar13) || CARRY1(bVar14,bVar19);
-  *(byte *)&pAVar10->klass = bVar14 + bVar19;
-  pbVar18 = (byte *)(iVar17 + 0x54);
-  bVar19 = CARRY1(*pbVar18,bVar11) || CARRY1(*pbVar18 + bVar11,bVar20);
-  *pbVar18 = *pbVar18 + bVar11 + bVar20;
-  pbVar18 = (byte *)(iVar17 + 0x54);
-  bVar13 = *pbVar18;
-  bVar14 = *pbVar18;
-  *pbVar18 = bVar14 + bVar11 + bVar19;
-  *(char *)(iVar17 + 0x54) =
-       *(char *)(iVar17 + 0x54) + bVar11 + (CARRY1(bVar13,bVar11) || CARRY1(bVar14 + bVar11,bVar19))
+                      (pSVar13,pOVar11,pSVar12,(MethodInfo *)0x0);
+  uVar4 = func_?();
+  bVar16 = (undefined1 *)0xffffffdb < &stack0xffffffbc;
+  cVar18 = SCARRY4((int)&stack0xffffffbc,0x24);
+  cVar19 = (int)&piStack_3 < 0;
+  NStack_9._0_4_ = uVar4;
+  uVar20 = func_?();
+  if (cVar18 != cVar19) {
+    func_?();
+    uRam_? = 1;
+    JsonReader::JsonReader__ctor((JsonReader *)this,(MethodInfo *)0x0);
+    Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
+              ((Object *)value,StringLiteral_token,(MethodInfo *)0x0);
+    (this->fields)._root = value;
+    func_?();
+    (this->fields)._current = value;
+    bVar6 = func_?();
+    return bVar6;
+  }
+  pbVar21 = extraout_EDX + -0x57efb3b2;
+  bVar15 = (byte)extraout_EDX;
+  bVar22 = CARRY1(*pbVar21,bVar15) || CARRY1(*pbVar21 + bVar15,bVar16);
+  *pbVar21 = *pbVar21 + bVar15 + bVar16;
+  pbVar21 = (byte *)((int)&pAVar14[0x69a8d].fields._._._.captured_traces + 1);
+  bVar23 = CARRY1(*pbVar21,unaff_BH) || CARRY1(*pbVar21 + unaff_BH,bVar22);
+  *pbVar21 = *pbVar21 + unaff_BH + bVar22;
+  pbVar21 = (byte *)((int)&(pAVar14->fields)._actualValue + 2);
+  bVar16 = *pbVar21 + (byte)uVar20;
+  bVar22 = CARRY1(*pbVar21,(byte)uVar20) || CARRY1(bVar16,bVar23);
+  *pbVar21 = bVar16 + bVar23;
+  pbVar21 = extraout_EDX + -0x31efb3b1;
+  bVar16 = *pbVar21 + (byte)extraout_CX;
+  bVar23 = CARRY1(*pbVar21,(byte)extraout_CX) || CARRY1(bVar16,bVar22);
+  *pbVar21 = bVar16 + bVar22;
+  bVar22 = CARRY1(*extraout_EDX,bVar15) || CARRY1(*extraout_EDX + bVar15,bVar23);
+  *extraout_EDX = *extraout_EDX + bVar15 + bVar23;
+  pbVar21 = (byte *)((int)&(pAVar14->fields)._actualValue + 3);
+  bVar23 = CARRY1(*pbVar21,bVar15) || CARRY1(*pbVar21 + bVar15,bVar22);
+  *pbVar21 = *pbVar21 + bVar15 + bVar22;
+  pbVar21 = extraout_EDX + -0x21efb3b0;
+  bVar22 = CARRY1(*pbVar21,unaff_BL) || CARRY1(*pbVar21 + unaff_BL,bVar23);
+  *pbVar21 = *pbVar21 + unaff_BL + bVar23;
+  bVar15 = (byte)((ushort)uVar20 >> 8);
+  bVar23 = CARRY1(*extraout_EDX,bVar15) || CARRY1(*extraout_EDX + bVar15,bVar22);
+  *extraout_EDX = *extraout_EDX + bVar15 + bVar22;
+  pAVar14 = pAVar14 + 1;
+  bVar16 = *(char *)&pAVar14->klass + bVar15;
+  bVar22 = CARRY1(*(byte *)&pAVar14->klass,bVar15) || CARRY1(bVar16,bVar23);
+  *(byte *)&pAVar14->klass = bVar16 + bVar23;
+  pbVar21 = extraout_EDX + -0x55efb3af;
+  bVar16 = *pbVar21;
+  bVar24 = (byte)((ushort)extraout_CX >> 8);
+  bVar15 = *pbVar21;
+  *pbVar21 = bVar15 + bVar24 + bVar22;
+  extraout_EDX[-0x33efb3af] =
+       extraout_EDX[-0x33efb3af] + bVar24 + (CARRY1(bVar16,bVar24) || CARRY1(bVar15 + bVar24,bVar22))
   ;
-  pcVar21 = (code *)swi(3);
-  bVar3 = (*pcVar21)();
-  return bVar3;
+  pcVar25 = (code *)swi(3);
+  bVar6 = (*pcVar25)();
+  return bVar6;
 }
 
 
@@ -1273,30 +1274,35 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JTokenReader::JTokenReader_Set
                (JTokenReader *this,JToken *token,MethodInfo *method)
 
 {
+  pJVar1 = token;
   if (cRam_? == '\0') {
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  if (token == (JToken *)0x0) {
+  if (pJVar1 == (JToken *)0x0) {
     func_?();
     goto code_?;
   }
-  uVar1 = (*(token->klass->vtable).__unknown_2.methodPtr)();
-  switch(uVar1) {
+  uVar2 = (*(pJVar1->klass->vtable).__unknown_2.methodPtr)();
+  switch(uVar2) {
   case 1:
+    token = (JToken *)0x1;
     goto Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken;
   case 2:
+    token = (JToken *)0x2;
     goto Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken;
   case 3:
+    token = (JToken *)0x3;
 Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
+    method = (MethodInfo *)0x0;
     (*(this->klass->vtable).SetToken.methodPtr)();
     return;
   case 4:
     if (((TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
        ((JProperty__Class *)
-        (token->klass->_1).typeHierarchy
+        (pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] ==
         TypeInfo__Newtonsoft__Json__Linq__JProperty)) {
       func_?();
@@ -1305,8 +1311,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 5:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1315,8 +1321,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 6:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1325,8 +1331,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 7:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1335,8 +1341,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 8:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1345,8 +1351,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 9:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1355,8 +1361,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 10:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1365,8 +1371,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 0xb:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1375,8 +1381,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 0xc:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1385,8 +1391,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 0xd:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1395,8 +1401,8 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
     break;
   case 0xe:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
       func_?();
@@ -1407,15 +1413,15 @@ Assembly_CSharp_dll_Newtonsoft_Json_JsonReader_JsonReader_SetToken:
   case 0x10:
   case 0x11:
     if (((TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth <=
-         (token->klass->_1).typeHierarchyDepth) &&
-       ((token->klass->_1).typeHierarchy
+         (pJVar1->klass->_1).typeHierarchyDepth) &&
+       ((pJVar1->klass->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JValue->_1).typeHierarchyDepth - 1] ==
         (Il2CppClass *)TypeInfo__Newtonsoft__Json__Linq__JValue)) {
-      if (token[1].monitor == (MonitorData *)0x0) {
+      if (pJVar1[1].monitor == (MonitorData *)0x0) {
         func_?();
         return;
       }
-      (**(code **)(*(int *)token[1].monitor + 0xd4))();
+      (**(code **)(*(int *)pJVar1[1].monitor + 0xd4))();
       func_?();
       return;
     }
@@ -1427,65 +1433,72 @@ code_?:
   func_?();
 code_?:
   func_?();
-  func_?();
+  token = (JToken *)func_?();
   func_?();
   actualValue = (Object *)func_?();
   message = (String *)func_?();
   paramName = (String *)func_?();
-  pAVar2 = Json::Utilities::MiscellaneousUtils::MiscellaneousUtils_CreateArgumentOutOfRangeException
+  pAVar3 = Json::Utilities::MiscellaneousUtils::MiscellaneousUtils_CreateArgumentOutOfRangeException
                      (paramName,actualValue,message,(MethodInfo *)0x0);
   func_?();
-  bVar3 = (undefined1 *)0xffffffdb < &stack0xffffffe0;
-  uVar4 = func_?();
-  iVar5 = (int)((ulonglong)uVar4 >> 0x20);
-  pbVar6 = (byte *)(iVar5 + 0x51);
-  bVar7 = (byte)((ulonglong)uVar4 >> 8);
-  bVar8 = CARRY1(*pbVar6,bVar7) || CARRY1(*pbVar6 + bVar7,bVar3);
-  *pbVar6 = *pbVar6 + bVar7 + bVar3;
-  pbVar6 = (byte *)((int)uVar4 + 0x51);
-  bVar9 = (byte)((uint)unaff_EBX >> 8);
-  bVar10 = CARRY1(*pbVar6,bVar9) || CARRY1(*pbVar6 + bVar9,bVar8);
-  *pbVar6 = *pbVar6 + bVar9 + bVar8;
-  pbVar6 = (byte *)((int)&pAVar2[-0x92ff0c].fields._._._._data + 1);
-  bVar3 = *pbVar6 + (byte)extraout_CX;
-  bVar8 = CARRY1(*pbVar6,(byte)extraout_CX) || CARRY1(bVar3,bVar10);
-  *pbVar6 = bVar3 + bVar10;
-  bVar11 = (byte)((ulonglong)uVar4 >> 0x20);
-  bVar3 = *(char *)&pAVar2->klass + bVar11;
-  bVar10 = CARRY1(*(byte *)&pAVar2->klass,bVar11) || CARRY1(bVar3,bVar8);
-  *(byte *)&pAVar2->klass = bVar3 + bVar8;
-  pbVar6 = (byte *)(iVar5 + 0x52);
-  bVar3 = (byte)unaff_EBX;
-  bVar8 = CARRY1(*pbVar6,bVar3) || CARRY1(*pbVar6 + bVar3,bVar10);
-  *pbVar6 = *pbVar6 + bVar3 + bVar10;
-  pbVar6 = (byte *)((int)&pAVar2[-0x5fcbd9].fields._._._._stackTraceString + 2);
-  bVar10 = CARRY1(*pbVar6,bVar3) || CARRY1(*pbVar6 + bVar3,bVar8);
-  *pbVar6 = *pbVar6 + bVar3 + bVar8;
-  bVar3 = *(char *)&pAVar2->klass + bVar7;
-  bVar8 = CARRY1(*(byte *)&pAVar2->klass,bVar7) || CARRY1(bVar3,bVar10);
-  *(byte *)&pAVar2->klass = bVar3 + bVar10;
-  pbVar6 = (byte *)(iVar5 + 0x53);
-  bVar3 = (byte)((ushort)extraout_CX >> 8);
-  bVar10 = CARRY1(*pbVar6,bVar3) || CARRY1(*pbVar6 + bVar3,bVar8);
-  *pbVar6 = *pbVar6 + bVar3 + bVar8;
-  pbVar6 = (byte *)((int)&pAVar2[-0x2c98a6].fields._._._._HResult + 3);
-  bVar8 = CARRY1(*pbVar6,bVar3) || CARRY1(*pbVar6 + bVar3,bVar10);
-  *pbVar6 = *pbVar6 + bVar3 + bVar10;
-  bVar7 = (byte)((ulonglong)uVar4 >> 0x28);
-  bVar3 = *(char *)&pAVar2->klass + bVar7;
-  bVar10 = CARRY1(*(byte *)&pAVar2->klass,bVar7) || CARRY1(bVar3,bVar8);
-  *(byte *)&pAVar2->klass = bVar3 + bVar8;
-  pbVar6 = (byte *)(iVar5 + 0x54);
-  bVar8 = CARRY1(*pbVar6,bVar9) || CARRY1(*pbVar6 + bVar9,bVar10);
-  *pbVar6 = *pbVar6 + bVar9 + bVar10;
-  pbVar6 = (byte *)(iVar5 + 0x54);
-  bVar3 = *pbVar6;
-  bVar7 = *pbVar6;
-  *pbVar6 = bVar7 + bVar9 + bVar8;
-  *(char *)(iVar5 + 0x54) =
-       *(char *)(iVar5 + 0x54) + bVar9 + (CARRY1(bVar3,bVar9) || CARRY1(bVar7 + bVar9,bVar8));
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  bVar4 = (undefined1 *)0xffffffdb < &stack0xffffffe0;
+  cVar5 = SCARRY4((int)&stack0xffffffe0,0x24);
+  cVar6 = (int)&this < 0;
+  uVar7 = func_?();
+  if (cVar5 != cVar6) {
+    in_stack_8 = in_stack_8 + (char)((uint)extraout_EDX >> 8);
+    func_?();
+    pJVar9 = this;
+    uRam_? = 1;
+    JsonReader::JsonReader__ctor((JsonReader *)this,(MethodInfo *)0x0);
+    pJVar1 = token;
+    Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
+              ((Object *)token,StringLiteral_token,(MethodInfo *)0x0);
+    (pJVar9->fields)._root = pJVar1;
+    func_?();
+    (pJVar9->fields)._current = pJVar1;
+    func_?();
+    return;
+  }
+  pbVar10 = extraout_EDX + -0x57efb3b2;
+  bVar11 = (byte)extraout_EDX;
+  bVar12 = CARRY1(*pbVar10,bVar11) || CARRY1(*pbVar10 + bVar11,bVar4);
+  *pbVar10 = *pbVar10 + bVar11 + bVar4;
+  pbVar10 = (byte *)((int)&pAVar3[0x69a8d].fields._._._.captured_traces + 1);
+  bVar13 = CARRY1(*pbVar10,unaff_BH) || CARRY1(*pbVar10 + unaff_BH,bVar12);
+  *pbVar10 = *pbVar10 + unaff_BH + bVar12;
+  pbVar10 = (byte *)((int)&(pAVar3->fields)._actualValue + 2);
+  bVar4 = *pbVar10 + (byte)uVar7;
+  bVar12 = CARRY1(*pbVar10,(byte)uVar7) || CARRY1(bVar4,bVar13);
+  *pbVar10 = bVar4 + bVar13;
+  pbVar10 = extraout_EDX + -0x31efb3b1;
+  bVar4 = *pbVar10 + (byte)extraout_CX;
+  bVar13 = CARRY1(*pbVar10,(byte)extraout_CX) || CARRY1(bVar4,bVar12);
+  *pbVar10 = bVar4 + bVar12;
+  bVar12 = CARRY1(*extraout_EDX,bVar11) || CARRY1(*extraout_EDX + bVar11,bVar13);
+  *extraout_EDX = *extraout_EDX + bVar11 + bVar13;
+  pbVar10 = (byte *)((int)&(pAVar3->fields)._actualValue + 3);
+  bVar13 = CARRY1(*pbVar10,bVar11) || CARRY1(*pbVar10 + bVar11,bVar12);
+  *pbVar10 = *pbVar10 + bVar11 + bVar12;
+  pbVar10 = extraout_EDX + -0x21efb3b0;
+  bVar12 = CARRY1(*pbVar10,unaff_BL) || CARRY1(*pbVar10 + unaff_BL,bVar13);
+  *pbVar10 = *pbVar10 + unaff_BL + bVar13;
+  bVar11 = (byte)((ushort)uVar7 >> 8);
+  bVar13 = CARRY1(*extraout_EDX,bVar11) || CARRY1(*extraout_EDX + bVar11,bVar12);
+  *extraout_EDX = *extraout_EDX + bVar11 + bVar12;
+  pAVar3 = pAVar3 + 1;
+  bVar4 = *(char *)&pAVar3->klass + bVar11;
+  bVar12 = CARRY1(*(byte *)&pAVar3->klass,bVar11) || CARRY1(bVar4,bVar13);
+  *(byte *)&pAVar3->klass = bVar4 + bVar13;
+  pbVar10 = extraout_EDX + -0x55efb3af;
+  bVar4 = *pbVar10;
+  bVar14 = (byte)((ushort)extraout_CX >> 8);
+  bVar11 = *pbVar10;
+  *pbVar10 = bVar11 + bVar14 + bVar12;
+  extraout_EDX[-0x33efb3af] =
+       extraout_EDX[-0x33efb3af] + bVar14 + (CARRY1(bVar4,bVar14) || CARRY1(bVar11 + bVar14,bVar12));
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

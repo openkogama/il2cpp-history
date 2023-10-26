@@ -22,53 +22,43 @@ AvatarModifierPackageFactory_AssembleInvulnerabilityPackage
                    );
     cRam_? = '\x01';
   }
-  avatarModifiers =
-       (AvatarModifierPackage_AvatarModifier__Array *)
-       func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,1);
+  avatarModifiers = func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,1);
   if ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AvatarModifierPackageFactory);
   }
   pinnable = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
-  pFVar1 = (Func_1_Single_ *)0x0;
-  uStack_2._0_4_ = (Void *)0x0;
-  uStack_2._4_4_ = (void *)0x0;
+  pIVar1 = (IPinnable *)0x0;
+  uVar2._0_4_ = (Void *)0x0;
+  uVar2._4_4_ = (void *)0x0;
   mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
-            ((MemoryHandle *)&uStack_2,(Void *)0x2,(GCHandle)0xa,(IPinnable *)pinnable,
+            ((MemoryHandle *)&stack0xfffffff0,(Void *)0x2,(GCHandle)0xa,(IPinnable *)pinnable,
              (MethodInfo *)0x0);
-  if (avatarModifiers != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
-    if (avatarModifiers->max_length == 0) goto code_?;
-    avatarModifiers->vector[0].avatarModifierType = (int32_t)(Void *)uStack_2;
-    avatarModifiers->vector[0].avatarModifierEffect = (int32_t)uStack_2._4_4_;
-    avatarModifiers->vector[0].value = pFVar1;
-    uStack_2._4_4_ = &UNK_?;
+  if (avatarModifiers != AvatarModifierPackageType__Enum_None) {
+    if (*(int *)(avatarModifiers + AvatarModifierPackageType__Enum_Shrunken) == 0)
+    goto code_?;
+    *(undefined8 *)(avatarModifiers + AvatarModifierPackageType__Enum_Shielded) = uVar2;
+    *(IPinnable **)(avatarModifiers + AvatarModifierPackageType__Enum_CrumbleMat) = pIVar1;
     func_?();
-    uStack_2._4_4_ =
-         TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>
-    ;
-    uStack_2._0_4_ = (Void *)&UNK_?;
-    this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    this = (Dictionary_2_System_Object_System_Object_ *)func_?();
+    if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
       ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
+                ((ParameterOverride_1_System_Object_ *)this,
                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Dictionary__
                 );
-      this = 
-      MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
-      ;
-      uStack_2._4_4_ = &UNK_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)0x11,(Object *)0x1,
+                (this,(Object *)0x11,(Object *)0x1,
                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_ModifierActions>__Add_AvatarModifierPackageType__ModifierActions_
                 );
       func_?();
       AvatarModifierPackage::AvatarModifierPackage__ctor
-                ((AvatarModifierPackage *)this,AvatarModifierPackageType__Enum_Fire,
-                 AvatarModifierPackageAdditionPolicy__Enum_Renew,time,avatarModifiers,
-                 (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)this_00,1,
-                 (MethodInfo *)0x0);
-      return (AvatarModifierPackage *)this;
+                (__return_storage_ptr__,avatarModifiers,
+                 AvatarModifierPackageAdditionPolicy__Enum_Renew,time,
+                 (AvatarModifierPackage_AvatarModifier__Array *)avatarModifiers,
+                 (Dictionary_2_AvatarModifierPackageType_ModifierActions_ *)this,1,(MethodInfo *)0x0
+                );
+      return __return_storage_ptr__;
     }
   }
   func_?();

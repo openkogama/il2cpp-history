@@ -52,7 +52,7 @@ MVWorldObject.dll::MatrixMath::MatrixMath_Inverse
   fVar25 = (float)((uint)((fVar19 * fVar2 - fVar17 * fVar3) + fVar16 * fVar4) ^
                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
   fVar26 = _UNK_? /
-          (fVar23 * fVar13 + fVar22 * fVar1 + fVar24 * fVar14 + fVar25 * 6.4036557e-29);
+          (fVar23 * fVar13 + fVar22 * fVar1 + fVar24 * fVar14 + fVar25 * 6.4027216e-29);
   fVar27 = fVar16 * fVar14;
   fVar28 = fVar11 * fVar2 - fVar10 * fVar3;
   fVar29 = fVar12 * fVar2 - fVar10 * fVar4;
@@ -79,7 +79,7 @@ MVWorldObject.dll::MatrixMath::MatrixMath_Inverse
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,0,m.m22,(MethodInfo *)0x0);
   m.m33 = 0.0;
-  m.m23 = (float)((uint)(fVar19 * 6.4036557e-29 + (fVar21 * fVar13 - fVar20 * fVar14)) ^
+  m.m23 = (float)((uint)(fVar19 * 6.4027216e-29 + (fVar21 * fVar13 - fVar20 * fVar14)) ^
                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) * fVar26;
   m.m13 = 5.60519e-45;
   m.m03 = (float)__return_storage_ptr__;
@@ -89,42 +89,42 @@ MVWorldObject.dll::MatrixMath::MatrixMath_Inverse
   m.m33 = (float)&UNK_?;
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,8,
-             (fVar31 * 6.4036557e-29 + (fVar32 * fVar13 - fVar10 * fVar14)) * fVar26,
+             (fVar31 * 6.4027216e-29 + (fVar32 * fVar13 - fVar10 * fVar14)) * fVar26,
              (MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,0xc,
-             (float)((uint)((fVar4 * fVar34 - fVar3 * fVar35) + fVar15 * 6.404321e-29) ^
+             (float)((uint)((fVar4 * fVar34 - fVar3 * fVar35) + fVar15 * 6.4033866e-29) ^
                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
              fVar26,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,1,fVar26 * fVar23,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,5,
-             (fVar17 * 6.4036557e-29 + (fVar21 * fVar1 - fVar18 * fVar14)) * fVar26,(MethodInfo *)0x0)
+             (fVar17 * 6.4027216e-29 + (fVar21 * fVar1 - fVar18 * fVar14)) * fVar26,(MethodInfo *)0x0)
   ;
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,9,
-             (float)((uint)(fVar29 * 6.4036557e-29 + (fVar32 * fVar1 - fVar30 * fVar14)) ^
+             (float)((uint)(fVar29 * 6.4027216e-29 + (fVar32 * fVar1 - fVar30 * fVar14)) ^
                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
              fVar26,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,0xd,
-             ((fVar4 * fVar1 - fVar2 * fVar35) + fVar12 * 6.404321e-29) * fVar26,(MethodInfo *)0x0
-            );
+             ((fVar4 * fVar1 - fVar2 * fVar35) + fVar12 * 6.4033866e-29) * fVar26,
+             (MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,2,fVar26 * fVar24,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,6,
-             (float)((uint)(fVar16 * 6.4036557e-29 + (float)pMVar7) ^
+             (float)((uint)(fVar16 * 6.4027216e-29 + (float)pMVar7) ^
                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
              fVar26,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,10,
-             (fVar28 * 6.4036557e-29 + (fVar10 * fVar1 - fVar30 * fVar13)) * fVar26,(MethodInfo *)0x0)
+             (fVar28 * 6.4027216e-29 + (fVar10 * fVar1 - fVar30 * fVar13)) * fVar26,(MethodInfo *)0x0)
   ;
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,0xe,
-             (float)((uint)((fVar3 * fVar1 - fVar2 * fVar34) + fVar11 * 6.404321e-29) ^
+             (float)((uint)((fVar3 * fVar1 - fVar2 * fVar34) + fVar11 * 6.4033866e-29) ^
                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
              fVar26,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
@@ -144,7 +144,6 @@ MVWorldObject.dll::MatrixMath::MatrixMath_Inverse
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Matrix4x4 MakeInverseTransform(Vector3, Vector3, Quaternion) */
 
 Matrix4x4 *
@@ -153,18 +152,19 @@ MVWorldObject.dll::MatrixMath::MatrixMath_MakeInverseTransform
           MethodInfo *method)
 
 {
-  func_?(&pIStack_1,0,0x40);
+  func_?(&pIStack_1,0);
   func_?(__return_storage_ptr__,0,0x40);
-  fVar2 = _UNK_? / scale.x;
-  fVar3 = (float)((uint)orientation.y ^
+  this_00 = (Matrix4x4 *)(_UNK_? / scale.x);
+  fVar2 = (float)((uint)orientation.y ^
                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-  fVar4 = (float)((uint)orientation.z ^
+  fVar3 = (float)((uint)orientation.z ^
                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-  fVar5 = _UNK_? / scale.y;
+  fVar4 = _UNK_? / scale.y;
+  fVar5 = _UNK_? / scale.z;
   fVar6 = (float)((uint)orientation.x ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
   iVar7 = 0;
-  fVar8 = fVar6 * fVar6 + orientation.w * orientation.w + fVar3 * fVar3 + fVar4 * fVar4;
+  fVar8 = fVar6 * fVar6 + orientation.w * orientation.w + fVar2 * fVar2 + fVar3 * fVar3;
   do {
     switch(iVar7) {
     case 0:
@@ -172,17 +172,17 @@ MVWorldObject.dll::MatrixMath::MatrixMath_MakeInverseTransform
       iVar7 = iVar7 + 1;
       break;
     case 1:
-      fVar3 = fVar3 / fVar8;
+      fVar2 = fVar2 / fVar8;
       iVar7 = iVar7 + 1;
       break;
     case 2:
-      fVar4 = fVar4 / fVar8;
+      fVar3 = fVar3 / fVar8;
       iVar7 = iVar7 + 1;
       break;
     case 3:
-      rotation.y = fVar3;
+      rotation.y = fVar2;
       rotation.x = fVar6;
-      rotation.z = fVar4;
+      rotation.z = fVar3;
       rotation.w = orientation.w / fVar8;
       point.y = (float)((uint)position.y ^
                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
@@ -194,56 +194,56 @@ MVWorldObject.dll::MatrixMath::MatrixMath_MakeInverseTransform
                          ((Vector3 *)&stack0xffffffe4,rotation,point,(MethodInfo *)0x0);
       uVar10 = pVVar9->x;
       uVar11 = pVVar9->y;
-      fVar5 = fVar5 * (float)uVar11;
-      q.y = fVar3;
+      fVar4 = fVar4 * (float)uVar11;
+      q.y = fVar2;
       q.x = fVar6;
-      q.z = fVar4;
+      q.z = fVar3;
       q.w = orientation.w / fVar8;
       MatrixMath_ToRotationMatrix((Matrix4x4 *)&pIStack_1,q,(MethodInfo *)0x0);
       func_?();
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                         ((Matrix4x4 *)&pIStack_1,0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,0,fVar2 * fVar8,(MethodInfo *)0x0);
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                (__return_storage_ptr__,0,(float)this_00 * fVar5,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                         ((Matrix4x4 *)&pIStack_1,4,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,4,fVar2 * fVar8,(MethodInfo *)0x0);
-      fVar6 = 0.0;
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                (__return_storage_ptr__,4,(float)this_00 * fVar5,(MethodInfo *)0x0);
+      fVar8 = 0.0;
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                         ((Matrix4x4 *)&pIStack_1,8,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,8,fVar2 * fVar8,(MethodInfo *)0x0);
+                (__return_storage_ptr__,8,(float)this_00 * fVar5,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,0xc,fVar2 * (float)uVar10,(MethodInfo *)0x0);
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                (__return_storage_ptr__,0xc,(float)this_00 * (float)uVar10,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                         ((Matrix4x4 *)&pIStack_1,1,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,1,fVar8 * 6.405081e-29,(MethodInfo *)0x0);
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                (__return_storage_ptr__,1,fVar5 * 6.404147e-29,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                         ((Matrix4x4 *)&pIStack_1,5,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,5,fVar8 * 6.405081e-29,(MethodInfo *)0x0);
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                (__return_storage_ptr__,5,fVar5 * 6.404147e-29,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                         ((Matrix4x4 *)&pIStack_1,9,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,9,fVar8 * 6.405081e-29,(MethodInfo *)0x0);
+                (__return_storage_ptr__,9,fVar5 * 6.404147e-29,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,0xd,fVar5,(MethodInfo *)0x0);
+                (__return_storage_ptr__,0xd,fVar4,(MethodInfo *)0x0);
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)&pIStack_1,2,(MethodInfo *)0x0);
+                        ((Matrix4x4 *)&pIStack_1,2,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
                 (__return_storage_ptr__,2,fVar5 * 0.0,(MethodInfo *)0x0);
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)&pIStack_1,6,(MethodInfo *)0x0);
+                        ((Matrix4x4 *)&pIStack_1,6,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
                 (__return_storage_ptr__,6,fVar5 * 0.0,(MethodInfo *)0x0);
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)&pIStack_1,10,(MethodInfo *)0x0);
+                        ((Matrix4x4 *)&pIStack_1,10,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
                 (__return_storage_ptr__,10,fVar5 * 0.0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (__return_storage_ptr__,0xe,fVar6,(MethodInfo *)0x0);
+                (__return_storage_ptr__,0xe,fVar8,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
                 (__return_storage_ptr__,3,0.0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
@@ -254,102 +254,75 @@ MVWorldObject.dll::MatrixMath::MatrixMath_MakeInverseTransform
                 (__return_storage_ptr__,0xf,1.0,(MethodInfo *)0x0);
       return __return_storage_ptr__;
     default:
-      uVar12 = func_?(&TypeInfo__System__IndexOutOfRangeException);
-      this_00 = (IndexOutOfRangeException *)func_?(uVar12);
-      func_?(this_00);
+      uVar12 = func_?();
+      this = (IndexOutOfRangeException *)func_?(uVar12);
+      func_?(this);
       method_00 = (MethodInfo *)0x0;
       message = (String *)func_?(&StringLiteral_Invalid_Quaternion_index_);
       mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-                (this_00,message,method_00);
-      puStack_13 = (undefined *)func_?(&MethodInfo__UnityEngine__Quaternion__get_Item_int_)
-      ;
-      pIStack_1 = this_00;
-      bVar14 = func_?();
-      uRam_? = in_stack_15;
-      bVar16 = (byte)((uint)extraout_ECX >> 8);
-      bVar17 = (byte)((uint)unaff_EBX >> 8);
-      *in_stack_18 =
-           *in_stack_18 + in_stack_19 +
-           (CARRY1(bVar16,bVar17) ||
-           CARRY1(bVar16 + bVar17,
-                  (char)((ushort)((ushort)bVar14 * (ushort)*(byte *)(extraout_ECX + -0x5e)) >> 8) !=
-                  '\0'));
-      func_?((int)in_stack_20 + -0x40,0,0x40,puStack_13);
-      this = *(Matrix4x4 **)((int)in_stack_20 + 8);
-      func_?(this,0,0x40);
-      MatrixMath_ToRotationMatrix
-                ((Matrix4x4 *)((int)in_stack_20 + -0x40),
-                 *(Quaternion *)((int)in_stack_20 + 0x24),(MethodInfo *)0x0);
-      func_?(this,0,0x40);
+                (this,message,method_00);
+      puStack_13 = (undefined *)func_?();
+      pIStack_1 = this;
+      uRam_? = func_?();
+      out(0x5b,uRam_?);
+      in(extraout_DX);
+      uRam_? = uRam_?;
+      func_?(&stack0xffffffbc,0,0x40,this);
+      func_?(this_00,0,0x40);
+      MatrixMath_ToRotationMatrix((Matrix4x4 *)&stack0xffffffbc,orientation,(MethodInfo *)0x0);
+      func_?(this_00,0,0x40);
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                        ((Matrix4x4 *)&stack0xffffffbc,0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,0,fVar4 * scale.x,(MethodInfo *)0x0);
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                        ((Matrix4x4 *)&stack0xffffffbc,4,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,4,fVar4 * scale.y,(MethodInfo *)0x0);
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                        ((Matrix4x4 *)&stack0xffffffbc,8,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,8,fVar4 * fVar5,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,0xc,position.x,(MethodInfo *)0x0);
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                        ((Matrix4x4 *)&stack0xffffffbc,1,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,1,fVar4 * scale.x,(MethodInfo *)0x0);
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                        ((Matrix4x4 *)&stack0xffffffbc,5,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,5,fVar4 * scale.y,(MethodInfo *)0x0);
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
+                        ((Matrix4x4 *)&stack0xffffffbc,9,(MethodInfo *)0x0);
+      fVar4 = fVar4 * fVar5;
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,9,fVar4,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
+                (this_00,0xd,fVar4,(MethodInfo *)0x0);
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),0,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
+                        ((Matrix4x4 *)&stack0xffffffbc,2,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,0,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x18),(MethodInfo *)0x0);
+                (this_00,2,fVar5 * 6.40468e-29,(MethodInfo *)0x0);
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),4,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
+                        ((Matrix4x4 *)&stack0xffffffbc,6,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,4,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x1c),(MethodInfo *)0x0);
+                (this_00,6,fVar5 * (float)&stack0xffffffbc,(MethodInfo *)0x0);
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),8,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
+                        ((Matrix4x4 *)&stack0xffffffbc,10,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,8,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x20),(MethodInfo *)0x0);
+                (this_00,10,fVar5 * 2.8026e-45,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,0xc,*(float *)((int)in_stack_20 + 0xc),(MethodInfo *)0x0);
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),1,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
+                (this_00,0xe,6.404672e-29,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,1,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x18),(MethodInfo *)0x0);
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),5,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
+                (this_00,3,0.0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,5,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x1c),(MethodInfo *)0x0);
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),9,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
+                (this_00,7,0.0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,9,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x20),(MethodInfo *)0x0);
+                (this_00,0xb,0.0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,0xd,*(float *)((int)in_stack_20 + 0x10),(MethodInfo *)0x0);
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),2,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,2,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x18),(MethodInfo *)0x0);
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),6,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,6,*(float *)((int)in_stack_20 + 8) *
-                        *(float *)((int)in_stack_20 + 0x1c),(MethodInfo *)0x0);
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
-                         ((Matrix4x4 *)((int)in_stack_20 + -0x40),10,(MethodInfo *)0x0);
-      *(float *)((int)in_stack_20 + 8) = fVar5;
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,10,*(float *)((int)in_stack_20 + 8) *
-                         *(float *)((int)in_stack_20 + 0x20),(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,0xe,*(float *)((int)in_stack_20 + 0x14),(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,3,0.0,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,7,0.0,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,0xb,0.0,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-                (this,0xf,1.0,(MethodInfo *)0x0);
-      return this;
+                (this_00,0xf,1.0,(MethodInfo *)0x0);
+      return this_00;
     }
   } while( true );
 }
@@ -384,7 +357,7 @@ MVWorldObject.dll::MatrixMath::MatrixMath_MakeTransform
   fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                     ((Matrix4x4 *)auStack_1,1,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-            (__return_storage_ptr__,1,fVar3 * 6.4055184e-29,(MethodInfo *)0x0);
+            (__return_storage_ptr__,1,fVar3 * 6.4045843e-29,(MethodInfo *)0x0);
   fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                     ((Matrix4x4 *)auStack_1,5,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
@@ -398,7 +371,7 @@ MVWorldObject.dll::MatrixMath::MatrixMath_MakeTransform
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                     ((Matrix4x4 *)auStack_1,2,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-            (__return_storage_ptr__,2,fVar2 * 6.4055184e-29,(MethodInfo *)0x0);
+            (__return_storage_ptr__,2,fVar2 * 6.4045843e-29,(MethodInfo *)0x0);
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1
                     ((Matrix4x4 *)auStack_1,6,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
@@ -408,7 +381,7 @@ MVWorldObject.dll::MatrixMath::MatrixMath_MakeTransform
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,10,fVar2 * 1.4013e-45,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-            (__return_storage_ptr__,0xe,6.4055106e-29,(MethodInfo *)0x0);
+            (__return_storage_ptr__,0xe,6.4045765e-29,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,3,0.0,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1

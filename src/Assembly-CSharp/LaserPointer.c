@@ -114,30 +114,26 @@ code_?:
     goto code_?;
   }
 code_?:
-  uVar9 = func_?();
-  uVar10 = (undefined4)((ulonglong)uVar9 >> 0x20);
-  bVar11 = (in_stack_12 & 0x80) != 0;
-  pbVar13 = (byte *)((int)&unaff_EDI[-2].monitor + 2);
-  bVar14 = (byte)((ulonglong)uVar9 >> 0x28);
-  bVar15 = CARRY1(*pbVar13,bVar14) || CARRY1(*pbVar13 + bVar14,bVar11);
-  *pbVar13 = *pbVar13 + bVar14 + bVar11;
-  pbVar13 = (byte *)((int)uVar9 + -0x6a);
-  bVar16 = *pbVar13 + (byte)uVar9;
-  bVar11 = CARRY1(*pbVar13,(byte)uVar9) || CARRY1(bVar16,bVar15);
-  *pbVar13 = bVar16 + bVar15;
-  pbVar13 = (byte *)(extraout_ECX + -0x6a);
-  bVar17 = (byte)((ulonglong)uVar9 >> 0x20);
-  bVar16 = *pbVar13 + bVar17;
-  bVar15 = CARRY1(*pbVar13,bVar17) || CARRY1(bVar16,bVar11);
-  *pbVar13 = bVar16 + bVar11;
-  pbVar13 = (byte *)((int)&unaff_EDI[-2].monitor + 2);
-  bVar16 = *pbVar13;
-  bVar17 = *pbVar13;
-  *pbVar13 = bVar17 + bVar14 + bVar15;
-  pcVar18 = (char *)((int)&unaff_EDI[-2].monitor + 2);
-  *pcVar18 = *pcVar18 + bVar14 + (CARRY1(bVar16,bVar14) || CARRY1(bVar17 + bVar14,bVar15));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)(uVar10,uVar10,uVar10,uVar10,uVar10);
+  bVar9 = 0;
+  func_?();
+  pbVar10 = (byte *)(unaff_EBX + -0x6ca9efae);
+  bVar11 = (byte)extraout_EDX;
+  bVar12 = CARRY1(*pbVar10,bVar11) || CARRY1(*pbVar10 + bVar11,bVar9);
+  *pbVar10 = *pbVar10 + bVar11 + bVar9;
+  pbVar10 = (byte *)((int)&unaff_EDI[-0x248d9f5].fields._PhysicalProperties_k__BackingField.
+                          staticFriction + 3);
+  bVar13 = (byte)((uint)extraout_EDX >> 8);
+  bVar14 = CARRY1(*pbVar10,bVar13) || CARRY1(*pbVar10 + bVar13,bVar12);
+  *pbVar10 = *pbVar10 + bVar13 + bVar12;
+  pbVar10 = (byte *)(extraout_ECX + -0x48efad6d);
+  bVar9 = *pbVar10;
+  bVar15 = *pbVar10;
+  *pbVar10 = bVar15 + bVar11 + bVar14;
+  pcVar16 = (char *)((int)&unaff_EDI[-0xed6c3e].fields._PhysicalProperties_k__BackingField.bouncyness
+                   + 3);
+  *pcVar16 = *pcVar16 + bVar13 + (CARRY1(bVar9,bVar11) || CARRY1(bVar15 + bVar11,bVar14));
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)(extraout_EDX,extraout_EDX);
   return;
 }
 

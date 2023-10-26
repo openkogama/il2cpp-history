@@ -8,8 +8,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_AddCube
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8f2c);
-    func_?(0x8fdc);
+    func_?(0x71dc);
+    func_?(0x728c);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__set_Item_MV__WorldObject__IntVector__System__Byte____
                    );
@@ -36,7 +36,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_AddCube
                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
                          );
       if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
-        iVar1 = -0x61c6;
+        iVar1 = -0x6786;
         func_?();
       }
       if ((pOVar5 != (Object *)0x0) && (cubeData != (Byte__Array *)0x0)) {
@@ -183,7 +183,7 @@ code_?:
                       if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor
                           == 0) {
                         pCStack_11 = TypeInfo__MV__WorldObject__CubeDataPacker;
-                        iVar1 = -0x5e94;
+                        iVar1 = -0x6454;
                         func_?();
                       }
                       if (pOVar5[1].monitor == (MonitorData *)0x0) goto code_?;
@@ -468,7 +468,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_CombineR
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8fdc);
+    func_?(0x728c);
     cRam_? = '\x01';
   }
   pCVar1 = (CubeDataPacker__Class *)0x0;
@@ -943,7 +943,7 @@ MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetCubeByteDa
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8f2c);
+    func_?(0x71dc);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
                    );
@@ -986,7 +986,7 @@ code_?:
     if (pOVar4[1].monitor == (MonitorData *)0x0) goto code_?;
     bVar5 = *(byte *)&pOVar4[2].klass;
     if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
-      pos.z = -0x5081;
+      pos.z = -0x5641;
       in_stack_6 = 0x10a0;
       func_?();
     }
@@ -1025,7 +1025,7 @@ bool MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetCubeO
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8f2c);
+    func_?(0x71dc);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_System::Byte_[]>__get_Item_MV__WorldObject__IntVector_
                    );
@@ -1177,9 +1177,9 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_RemoveCu
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8f2c);
-    func_?(0x8f84);
-    func_?(0x8fdc);
+    func_?(0x71dc);
+    func_?(0x7234);
+    func_?(0x728c);
     cRam_? = '\x01';
   }
   if ((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)*cubeDict !=

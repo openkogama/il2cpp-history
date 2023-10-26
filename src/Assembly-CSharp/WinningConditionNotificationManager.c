@@ -339,7 +339,7 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
   if (bVar3 == 0) {
     return 0;
   }
-  unaff_ESI = actorNumber;
+  unaff_ESI = (byte *)actorNumber;
   switch(counterType & 0xff) {
   case GameStatCounterType__Enum_Kill:
   case GameStatCounterType__Enum_Collectible:
@@ -373,19 +373,19 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      bVar6 = 0;
-      bVar7 = func_?();
-      bVar8 = CARRY1(extraout_CH,bVar7) || CARRY1(extraout_CH + bVar7,bVar6);
-      bVar6 = extraout_CH + bVar7 + bVar6;
-      pbVar9 = (byte *)(unaff_ESI + -0x41efe06c);
-      bVar10 = *pbVar9;
-      bVar11 = (byte)((uint)unaff_EBX >> 8);
-      bVar12 = *pbVar9;
-      *pbVar9 = bVar12 + bVar11 + bVar8;
-      *(char *)(unaff_ESI + -0x1befe06c) =
-           *(char *)(unaff_ESI + -0x1befe06c) + bVar11 +
-           (CARRY1(bVar6,bVar7 + 4) ||
-           CARRY1(bVar6 + bVar7 + 4,CARRY1(bVar10,bVar11) || CARRY1(bVar12 + bVar11,bVar8)));
+      uVar6 = func_?();
+      bVar7 = (byte)((ulonglong)uVar6 >> 0x28);
+      bVar8 = CARRY1(bRam_?,bVar7);
+      bRam_? = bRam_? + bVar7;
+      bVar9 = (byte)((ulonglong)uVar6 >> 0x20);
+      bVar10 = *unaff_ESI + bVar9;
+      bVar11 = CARRY1(*unaff_ESI,bVar9) || CARRY1(bVar10,bVar8);
+      *unaff_ESI = bVar10 + bVar8;
+      bVar8 = CARRY1(bRam_?,bVar7);
+      bVar7 = bRam_? + bVar7;
+      bRam_? = bVar7 + bVar11;
+      pcVar12 = (char *)((int)((ulonglong)uVar6 >> 0x20) + 0x1f + ((uint)uVar6 & 0xd3101f93) * 4);
+      *pcVar12 = *pcVar12 + (char)unaff_EBX + (bVar8 || CARRY1(bVar7,bVar11));
       pcVar13 = (code *)swi(3);
       bVar3 = (*pcVar13)();
       return bVar3;
@@ -449,9 +449,7 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                   );
+    func_?();
     func_?(&
                     KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
                    );
@@ -490,78 +488,67 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
 code_?:
-  uVar7 = func_?();
-  pbVar8 = (byte *)((ulonglong)uVar7 >> 0x20);
-  bVar9 = (byte)uVar7 < 0x96;
-  bVar10 = (byte)extraout_ECX;
-  bVar11 = CARRY1(bVar10,bVar10) || CARRY1(bVar10 * '\x02',bVar9);
-  uVar12 = (undefined3)((uint)extraout_ECX >> 8);
-  bVar13 = bVar10 * '\x02' + bVar9;
-  pbVar14 = (byte *)((int)uVar7 + 0x1f + (int)pbVar8 * 4);
-  bVar10 = (byte)((uint)unaff_ESI >> 8);
-  bVar9 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar11);
-  *pbVar14 = *pbVar14 + bVar10 + bVar11;
-  bVar15 = bVar10 + bVar13 + bVar9;
-  sVar16 = CONCAT11(bVar15,(char)unaff_ESI);
-  pbVar17 = (byte *)CONCAT22((short)((uint)unaff_ESI >> 0x10),sVar16);
-  bVar18 = (byte)((ulonglong)uVar7 >> 8);
-  bVar9 = CARRY1(bVar18,bVar13) ||
-           CARRY1(bVar18 + bVar13,CARRY1(bVar10,bVar13) || CARRY1(bVar10 + bVar13,bVar9));
-  pbVar14 = (byte *)(CONCAT31(uVar12,bVar13) + -0x33efe06a);
-  bVar11 = CARRY1(*pbVar14,bVar15) || CARRY1(*pbVar14 + bVar15,bVar9);
-  *pbVar14 = *pbVar14 + bVar15 + bVar9;
-  bVar9 = CARRY1(bVar13,bVar13) || CARRY1(bVar13 * '\x02',bVar11);
-  bVar15 = bVar13 * '\x02' + bVar11;
-  pbVar19 = (byte *)CONCAT31(uVar12,bVar15);
-  bVar13 = (byte)iVar2;
-  bVar11 = CARRY1(*pbVar8,bVar13) || CARRY1(*pbVar8 + bVar13,bVar9);
-  *pbVar8 = *pbVar8 + bVar13 + bVar9;
-  bVar10 = pbVar17[-0x69];
-  bVar9 = CARRY1(bVar10,bVar11);
-  pbVar17[-0x69] = bVar10 + bVar11;
-  bVar11 = CARRY1(*pbVar8,bVar13) || CARRY1(*pbVar8 + bVar13,bVar9);
-  *pbVar8 = *pbVar8 + bVar13 + bVar9;
-  pbVar14 = pbVar8 + -0x67;
-  bVar18 = (byte)((uint)extraout_ECX >> 8);
-  bVar9 = CARRY1(*pbVar14,bVar18) || CARRY1(*pbVar14 + bVar18,bVar11);
-  *pbVar14 = *pbVar14 + bVar18 + bVar11;
-  pbVar14 = pbVar8 + -0x67;
-  bVar11 = CARRY1(*pbVar14,bVar18) || CARRY1(*pbVar14 + bVar18,bVar9);
-  *pbVar14 = *pbVar14 + bVar18 + bVar9;
-  bVar9 = CARRY1(*pbVar8,bVar13) || CARRY1(*pbVar8 + bVar13,bVar11);
-  *pbVar8 = *pbVar8 + bVar13 + bVar11;
-  pbVar8 = pbVar8 + -0x67;
-  bVar11 = CARRY1(*pbVar8,bVar18) || CARRY1(*pbVar8 + bVar18,bVar9);
-  *pbVar8 = *pbVar8 + bVar18 + bVar9;
-  bVar20 = (byte)((uint)iVar2 >> 8);
-  bVar10 = *pbVar19 + bVar20;
-  bVar9 = CARRY1(*pbVar19,bVar20) || CARRY1(bVar10,bVar11);
-  *pbVar19 = bVar10 + bVar11;
-  bVar11 = CARRY1(*pbVar17,bVar15) || CARRY1(*pbVar17 + bVar15,bVar9);
-  *pbVar17 = *pbVar17 + bVar15 + bVar9;
-  pbVar14 = (byte *)(int)sVar16;
-  bVar9 = CARRY1(*pbVar14,bVar13) || CARRY1(*pbVar14 + bVar13,bVar11);
-  *pbVar14 = *pbVar14 + bVar13 + bVar11;
-  pbVar14 = (byte *)(int)sVar16;
-  bVar11 = CARRY1(*pbVar14,bVar15) || CARRY1(*pbVar14 + bVar15,bVar9);
-  *pbVar14 = *pbVar14 + bVar15 + bVar9;
-  pbVar14 = (byte *)(int)sVar16;
-  bVar9 = CARRY1(*pbVar14,bVar18) || CARRY1(*pbVar14 + bVar18,bVar11);
-  *pbVar14 = *pbVar14 + bVar18 + bVar11;
-  pbVar14 = (byte *)(int)sVar16;
-  bVar11 = CARRY1(*pbVar14,bVar18) || CARRY1(*pbVar14 + bVar18,bVar9);
-  *pbVar14 = *pbVar14 + bVar18 + bVar9;
-  pbVar14 = (byte *)(int)sVar16;
-  bVar9 = CARRY1(*pbVar14,bVar15) || CARRY1(*pbVar14 + bVar15,bVar11);
-  *pbVar14 = *pbVar14 + bVar15 + bVar11;
-  pbVar14 = (byte *)(int)sVar16;
-  bVar10 = *pbVar14;
-  bVar15 = *pbVar14;
-  *pbVar14 = bVar15 + bVar18 + bVar9;
-  *(char *)(int)sVar16 =
-       *(char *)(int)sVar16 + bVar13 + (CARRY1(bVar10,bVar18) || CARRY1(bVar15 + bVar18,bVar9));
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  bVar7 = 0;
+  cVar8 = func_?();
+  bVar9 = *extraout_ECX;
+  bVar10 = (byte)((uint)extraout_ECX >> 8);
+  bVar11 = *extraout_ECX;
+  *extraout_ECX = bVar11 + bVar10 + bVar7;
+  bVar12 = (byte)((uint)&stack0xfffffffc >> 8);
+  bVar13 = CARRY1(bVar12,(byte)&stack0xfffffffc) ||
+           CARRY1(bVar12 + (byte)&stack0xfffffffc,
+                  CARRY1(bVar9,bVar10) || CARRY1(bVar11 + bVar10,bVar7));
+  pbVar14 = (byte *)(extraout_EDX * 4 + -0x6ad3efe1);
+  bVar15 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar13);
+  *pbVar14 = *pbVar14 + bVar10 + bVar13;
+  bVar9 = *extraout_ECX + cVar8 + 8U;
+  bVar13 = CARRY1(*extraout_ECX,cVar8 + 8U) || CARRY1(bVar9,bVar15);
+  *extraout_ECX = bVar9 + bVar15;
+  pbVar14 = (byte *)(extraout_EDX * 4 + -0x6ad6efe1);
+  bVar15 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar13);
+  *pbVar14 = *pbVar14 + bVar10 + bVar13;
+  pbVar14 = (byte *)(extraout_EDX + -0x6b);
+  bVar9 = (byte)((uint)iVar2 >> 8);
+  bVar13 = CARRY1(*pbVar14,bVar9) || CARRY1(*pbVar14 + bVar9,bVar15);
+  *pbVar14 = *pbVar14 + bVar9 + bVar15;
+  bVar12 = bVar9 + (byte)&stack0xffffffdc;
+  bVar15 = CARRY1(bVar9,(byte)&stack0xffffffdc) || CARRY1(bVar12,bVar13);
+  bVar12 = bVar12 + bVar13;
+  pbVar14 = (byte *)(extraout_EDX + -0x6b);
+  bVar13 = CARRY1(*pbVar14,bVar12) || CARRY1(*pbVar14 + bVar12,bVar15);
+  *pbVar14 = *pbVar14 + bVar12 + bVar15;
+  bVar16 = (byte)extraout_ECX;
+  bVar9 = (byte)extraout_EDX + bVar16;
+  bVar15 = CARRY1((byte)extraout_EDX,bVar16) || CARRY1(bVar9,bVar13);
+  bVar9 = bVar9 + bVar13;
+  bVar7 = bVar9 + bVar16;
+  bVar13 = CARRY1(bVar9,bVar16) || CARRY1(bVar7,bVar15);
+  bVar7 = bVar7 + bVar15;
+  pbVar14 = (byte *)(CONCAT31((int3)((uint)extraout_EDX >> 8),bVar7) + -0x6b);
+  bVar9 = *pbVar14;
+  bVar11 = *pbVar14;
+  *pbVar14 = bVar11 + bVar12 + bVar13;
+  bVar13 = CARRY1(bVar7,bVar16) ||
+           CARRY1(bVar7 + bVar16,CARRY1(bVar9,bVar12) || CARRY1(bVar11 + bVar12,bVar13));
+  pbVar14 = extraout_ECX + 0x68101f95;
+  bVar9 = *pbVar14 + (byte)iVar2;
+  bVar15 = CARRY1(*pbVar14,(byte)iVar2) || CARRY1(bVar9,bVar13);
+  *pbVar14 = bVar9 + bVar13;
+  pbVar14 = (byte *)(unaff_ESI + -0x6a);
+  bVar13 = CARRY1(*pbVar14,bVar12) || CARRY1(*pbVar14 + bVar12,bVar15);
+  *pbVar14 = *pbVar14 + bVar12 + bVar15;
+  pbVar14 = (byte *)(unaff_ESI + -0x6a);
+  bVar15 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar13);
+  *pbVar14 = *pbVar14 + bVar10 + bVar13;
+  pbVar14 = (byte *)(unaff_ESI + -0x77efe06a);
+  bVar13 = CARRY1(*pbVar14,bVar16) || CARRY1(*pbVar14 + bVar16,bVar15);
+  *pbVar14 = *pbVar14 + bVar16 + bVar15;
+  bVar15 = CARRY1(bRam_?,bVar10);
+  bVar10 = bRam_? + bVar10;
+  bRam_? = bVar10 + bVar13;
+  cRam_? = cRam_? + bVar16 + (bVar15 || CARRY1(bVar10,bVar13));
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

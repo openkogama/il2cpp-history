@@ -114,7 +114,7 @@ code_?:
   pMStack_21 = (interactableLocal->klass->vtable).__unknown_6.method;
   auStack_20._0_4_ = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
   fStack_22 = 2.38221e-44;
-  cVar23 = '+';
+  cVar23 = '{';
   fVar5 = (float10)(*(code *)auStack_20._0_4_)();
   fVar2 = (float)fVar5;
   if ((_UNK_? < fVar2) || (cVar23 != '\0')) {

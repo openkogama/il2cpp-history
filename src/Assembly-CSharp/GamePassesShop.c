@@ -2854,10 +2854,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_RewardedAdCallback
                (GamePassesShop *this,RewardedAdResult__Enum result,MethodInfo *method)
 
 {
-  puVar1 = &stack0xfffffffc;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                   );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
                     MethodInfo__GamePassesShop____c___RewardedAdCallback_b__84_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
@@ -2869,117 +2872,56 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_RewardedAdCallback
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  RVar2 = RewardedAdResult__Enum_RewardUnlocked;
+  RVar1 = RewardedAdResult__Enum_RewardUnlocked;
   if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
       (IEditModeUI *)0x0) {
-    RVar2 = result;
+    RVar1 = result;
   }
-  switch(RVar2) {
+  switch(RVar1) {
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__GamePassesShop____c);
     }
     callbackFunction = TypeInfo__GamePassesShop____c->static_fields->__9__84_1;
     if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
     goto code_?;
     if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__GamePassesShop____c);
     }
     object = TypeInfo__GamePassesShop____c->static_fields->__9;
-    callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                        );
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__GamePassesShop____c___RewardedAdCallback_b__84_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__GamePassesShop____c->static_fields->__9__84_1 = callbackFunction;
+      ppEVar2 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_1;
 code_?:
-      bVar3 = 0;
-      uVar4 = func_?();
-      iVar5 = (int)pGRam00000039;
-      pbVar6 = (byte *)((ulonglong)uVar4 >> 0x20);
-      LOCK();
-      UNLOCK();
-      pbVar7 = (byte *)((int)pGRam00000039 + 0x2710397e);
-      bVar8 = (byte)uVar4;
-      bVar9 = *pbVar7;
-      bVar10 = *pbVar7 + bVar8;
-      bVar11 = CARRY1(*pbVar7,bVar8) || CARRY1(bVar10,bVar3);
-      pGRam00000039 = root;
-      *pbVar7 = bVar10 + bVar3;
-      if (*pbVar7 == 0 || (SCARRY1(bVar9,bVar8) != SCARRY1(bVar10,bVar3)) != (char)*pbVar7 < '\0') {
-        bVar9 = *pbVar6;
-        bVar3 = (byte)object;
-        bVar10 = *pbVar6;
-        bVar8 = *pbVar6 + bVar3;
-        *pbVar6 = bVar8 + bVar11;
-        if (*pbVar6 != 0 &&
-            (SCARRY1(bVar10,bVar3) != SCARRY1(bVar8,bVar11)) == (char)*pbVar6 < '\0') {
-          uVar12 = *(undefined6 *)((int)uVar4 * 8);
-          *(int *)((int)&TypeInfo__MVGameControllerBase + extraout_ECX) =
-               (int)(&stack0xfffffff8 +
-                    *(int *)((int)&TypeInfo__MVGameControllerBase + extraout_ECX));
-          pMVar13 = (MVGameControllerBase__Class *)((int)uVar12 + 0xADDR);
-          puVar14 = &stack0xfffffffc;
-          goto code_?;
-        }
-        *(char *)(iVar5 * 3) =
-             *(char *)(iVar5 * 3) + (char)((uint)extraout_ECX >> 8) +
-             (CARRY1(bVar9,bVar3) || CARRY1(bVar8,bVar11));
-        puVar1 = &stack0xfffffff4;
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__TierUnlockedPopupController);
-          cRam_? = '\x01';
-        }
-        pMVar13 = TypeInfo__MVGameControllerBase;
-        puVar14 = &stack0xfffffff4;
-        if (cRam_? != '\0') goto code_?;
-      }
-      func_?();
-      cRam_? = '\x01';
-      pMVar13 = TypeInfo__MVGameControllerBase;
-      puVar14 = puVar1;
+      func_?(ppEVar2,callbackFunction);
 code_?:
-      pGVar15 = pMVar13->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar15 != (GameSessionData *)0x0) {
-        if ((pGVar15->fields).gameMode == 0) {
-          return;
-        }
-        bVar9 = TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown;
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__GamePassesManager,object);
-          cRam_? = '\x01';
-        }
-        pPVar16 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-        if (pPVar16 != (PlayerPlanetData *)0x0) {
-          if (((pPVar16->fields).gamePassTier <= bVar9) ||
-             ((byte)puVar14[0xc] <=
-              TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown)) {
-            return;
-          }
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__GamePassesManager,object);
-            cRam_? = '\x01';
-          }
-          if (TypeInfo__GamePassesManager->static_fields->playerPlanetData !=
-              (PlayerPlanetData *)0x0) {
-            return;
-          }
-        }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
-      func_?();
-      pcVar17 = (code *)swi(3);
-      (*pcVar17)();
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                );
       return;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__GamePassesShop____c___RewardedAdCallback_b__84_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__GamePassesShop____c->static_fields->__9__84_1 = callbackFunction;
-    ppEVar18 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_1;
     break;
   case RewardedAdResult__Enum_RewardUnlocked:
     GamePassesShop_PreviewTier(this,(MethodInfo *)0x0);
@@ -2990,39 +2932,135 @@ code_?:
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__GamePassesShop____c);
     }
     callbackFunction = TypeInfo__GamePassesShop____c->static_fields->__9__84_0;
     if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
     goto code_?;
     if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__GamePassesShop____c);
     }
     object = TypeInfo__GamePassesShop____c->static_fields->__9;
-    callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-    goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__GamePassesShop____c___RewardedAdCallback_b__84_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__GamePassesShop____c->static_fields->__9__84_0 = callbackFunction;
-    ppEVar18 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_0;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                        );
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__GamePassesShop____c___RewardedAdCallback_b__84_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__GamePassesShop____c->static_fields->__9__84_0 = callbackFunction;
+      ppEVar2 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_0;
+      goto code_?;
+    }
     break;
   default:
     goto code_?;
   }
-  func_?(ppEVar18);
+  pGVar3 = (GamePassesManager__Class *)0x0;
+  cVar4 = '\0';
+  bVar5 = 0;
+  uVar6 = func_?();
+  bVar7 = (byte)uVar6;
+  bVar5 = 0x99 < bVar7 | bVar5;
+  bVar7 = bVar7 + (9 < (bVar7 & 0xf) | in_AF) * '\x06' + bVar5 * '`';
+  if ((bool)cVar4 == (char)bVar7 < '\0') {
+    bVar7 = bVar7 + bVar5 + 0x69;
+    bVar8 = false;
 code_?:
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    bVar9 = (byte)((uint)extraout_ECX >> 8);
+    bVar5 = bVar7 + bVar9;
+    bVar10 = CARRY1(bVar7,bVar9) || CARRY1(bVar5,bVar8);
+    bVar7 = bVar5 + bVar8;
+code_?:
+    piVar11 = (int *)(CONCAT31((int3)((uint)object >> 8),0xd1) + 0x5c604c4);
+    *piVar11 = *piVar11 + 1;
+    bVar8 = *piVar11 < 0;
+code_?:
+    pcVar12 = extraout_ECX;
+    pTVar13 = extraout_EDX;
+    if (bVar8) {
+      *extraout_ECX = *extraout_ECX + bVar7 + bVar10;
+      goto code_?;
+    }
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,
-             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-            );
+  else {
+    bVar14 = (byte)((ushort)uVar6 >> 8);
+    cVar4 = *(char *)&root->klass;
+    bVar9 = *(char *)&root->klass + bVar14;
+    bVar8 = CARRY1(*(byte *)&root->klass,bVar14) || CARRY1(bVar9,bVar5);
+    *(byte *)&root->klass = bVar9 + bVar5;
+    if ((SCARRY1(cVar4,bVar14) != SCARRY1(bVar9,bVar5)) == *(char *)&root->klass < '\0') {
+      out((short)extraout_EDX,bVar7);
+      goto code_?;
+    }
+    bVar14 = (byte)((uint)object >> 8);
+    bVar5 = bVar14 + bVar7;
+    bVar15 = CARRY1(bVar14,bVar7) || CARRY1(bVar5,bVar8);
+    bVar9 = bVar5 + bVar8;
+    object = (GamePassesShop_c *)((uint)CONCAT21((short)((uint)object >> 0x10),bVar9) << 8);
+    unaff_EBX = &stack0xfffffffc;
+    bVar10 = bVar15;
+    if ((SCARRY1(bVar14,bVar7) != SCARRY1(bVar5,bVar8)) == (char)bVar9 < '\0')
+    goto code_?;
+    pbVar16 = (byte *)((int)&extraout_EDX[-0x3c6f73]._0.nestedTypes + 1);
+    bVar5 = *pbVar16;
+    bVar14 = *pbVar16 + bVar9;
+    bVar10 = CARRY1(*pbVar16,bVar9) || CARRY1(bVar14,bVar15);
+    *pbVar16 = bVar14 + bVar15;
+    bVar8 = (char)*pbVar16 < '\0';
+    unaff_EBX = &stack0xfffffffc;
+    if ((SCARRY1(bVar5,bVar9) != SCARRY1(bVar14,bVar15)) == bVar8) goto code_?;
+    in((short)extraout_EDX);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__TierUnlockedPopupController);
+      cRam_? = '\x01';
+    }
+    unaff_EBX = &stack0xfffffffc;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+      unaff_EBX = &stack0xfffffffc;
+    }
+code_?:
+    pGVar17 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar17 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar17->fields).gameMode == 0) {
+      return;
+    }
+    pcVar12 = (char *)(uint)bRam_?;
+    bVar5 = TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown;
+    if (bRam_? == 0) {
+      func_?(&TypeInfo__GamePassesManager);
+      pcVar12 = (char *)0x1;
+      bRam_? = 1;
+    }
+    pPVar18 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if (pPVar18 == (PlayerPlanetData *)0x0) goto code_?;
+    pTVar13 = TypeInfo__TierUnlockedPopupController;
+    pGVar3 = TypeInfo__GamePassesManager;
+    if ((pPVar18->fields).gamePassTier <= bVar5) {
+      return;
+    }
+  }
+  if ((byte)unaff_EBX[0xc] <= pTVar13->static_fields->HighestTierRewardShown) {
+    return;
+  }
+  if ((char)pcVar12 == '\0') {
+    func_?(&TypeInfo__GamePassesManager);
+    bRam_? = 1;
+    pGVar3 = TypeInfo__GamePassesManager;
+  }
+  if (pGVar3->static_fields->playerPlanetData != (PlayerPlanetData *)0x0) {
+    return;
+  }
+code_?:
+  func_?();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

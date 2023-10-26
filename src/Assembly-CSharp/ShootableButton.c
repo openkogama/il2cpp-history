@@ -159,10 +159,10 @@ Bounds * Assembly-CSharp.dll::ShootableButton::ShootableButton_GetLocalBounds
   }
   center = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
   size.y = (float)
-           TypeRef__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
+           TypeRef__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::DotParamsList_1_T_::T>_>
   ;
   size.x = (float)
-           TypeRef__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<System::String,_Newtonsoft::Json::Linq::JToken>_>
+           TypeRef__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::DotParamsList_1_T_::T>_>
   ;
   (__return_storage_ptr__->m_Center).x = 0.0;
   (__return_storage_ptr__->m_Center).y = 0.0;

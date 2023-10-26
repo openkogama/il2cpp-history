@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleClosing
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       XPBoostNotification_CloseNotification_1(this,0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.722066e-29) {
+      if (_UNK_? < 3.721965e-29) {
         XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       }
       return;
@@ -168,7 +168,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleStartSt
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       XPBoostNotification_CloseNotification_1(this,_UNK_? - 0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.7221503e-29) {
+      if (_UNK_? < 3.7220492e-29) {
         XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
       }
       return;
@@ -198,6 +198,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleState
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
       func_?();
+      out(this->klass,extraout_DX);
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
@@ -863,6 +864,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Update
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
       func_?();
+      out(this->klass,extraout_DX);
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;

@@ -270,18 +270,14 @@ code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = pMVar3;
   func_?();
-  *extraout_EDX_00 = *extraout_EDX_00 + '\x01';
-  *extraout_EDX_00 = *extraout_EDX_00 + '\x01';
-  *extraout_EDX_00 = *extraout_EDX_00 + '\x01';
-  in((short)extraout_EDX_00);
-  switch(this) {
-  case (MVSpawnPoint *)0x27:
+  switch(method) {
+  case (MethodInfo *)0x27:
     return;
-  case (MVSpawnPoint *)0x28:
+  case (MethodInfo *)0x28:
     return;
-  case (MVSpawnPoint *)0x29:
+  case (MethodInfo *)0x29:
     return;
-  case (MVSpawnPoint *)0x2a:
+  case (MethodInfo *)0x2a:
     return;
   default:
     return;

@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_ExecuteRuntim
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0xb640);
+    func_?(0x5814);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {
@@ -137,7 +137,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_HandleEvent_1
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0xb640);
+    func_?(0x5814);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {

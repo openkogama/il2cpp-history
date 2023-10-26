@@ -331,16 +331,16 @@ void Assembly-CSharp.dll::GamePassesShopDetails::GamePassesShopDetails_Update
   if (fVar2 + _UNK_? < (float)pGVar3) {
     return;
   }
-  index = (GamePassesShopDetails *)0x0;
+  index = 0;
   pLVar4 = (this->fields).tierOutlineList;
   this = pGVar3;
   while (pLVar4 != (List_1_UnityEngine_CanvasGroup_ *)0x0) {
-    if ((pLVar4->fields)._size <= (int)index) {
+    if ((pLVar4->fields)._size <= index) {
       return;
     }
     pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (pGVar1->fields).tierOutlineList;
-    if (index == (GamePassesShopDetails *)((pGVar1->fields).currentFocusedTier - 1)) {
+    if (index == (pGVar1->fields).currentFocusedTier - 1) {
       if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
       method_00 = (MethodInfo *)&UNK_?;
       RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
@@ -362,47 +362,45 @@ code_?:
       RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar5,(int32_t)index,
+                        (pLVar5,index,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::CanvasGroup>__get_Item_int_
                         );
       if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
-      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_alpha
-                ((CanvasGroup *)RVar6,(MethodInfo *)0x0);
-      puVar8 = &UNK_?;
-      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
+      fVar2 = UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_alpha
+                        ((CanvasGroup *)RVar6,(MethodInfo *)0x0);
+      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
                         ((float)this + (float)this,(MethodInfo *)0x0);
-      pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (pGVar1->fields).tierOutlineList;
-      fVar2 = fVar2 * (0.0 - (float)puVar8) + (float)puVar8;
-      if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+      this = (GamePassesShopDetails *)(pGVar1->fields).tierOutlineList;
+      fVar2 = fVar8 * (0.0 - fVar2) + fVar2;
+      if ((this == (GamePassesShopDetails *)0x0) ||
          (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar5,(int32_t)index,
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             this,index,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::CanvasGroup>__get_Item_int_
                             ), RVar6 == (RegexCharClass_SingleRange)0x0)) break;
-      fVar9 = UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_alpha
+      fVar8 = UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_alpha
                         ((CanvasGroup *)RVar6,(MethodInfo *)0x0);
-      this = index;
-      if (fVar2 < fVar9) {
+      if (fVar2 < fVar8) {
         pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (pGVar1->fields).tierOutlineList;
         if ((pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
            (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar5,(int32_t)index,
+                              (pLVar5,index,
                                MethodInfo__System__Collections__Generic__List<UnityEngine::CanvasGroup>__get_Item_int_
                               ), RVar6 != (RegexCharClass_SingleRange)0x0)) goto code_?;
         break;
       }
     }
-    index = (GamePassesShopDetails *)((int)&index->klass + 1);
+    index = index + 1;
     pLVar4 = (pGVar1->fields).tierOutlineList;
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

@@ -72,16 +72,18 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
           if ((pSVar1 != (SpawnRoleDataMediator *)0x0) &&
              (this_00 = (SpawnRoleVariable_1_System_Single_ *)(pSVar1->fields).health,
              this_00 != (SpawnRoleVariable_1_System_Single_ *)0x0)) {
-            fVar4 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                    SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
-                    SpawnRoleVariable_1_System_Single__get_Value
-                              (this_00,
-                               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
-                              );
+            ppMVar4 = (MethodInfo **)
+                      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                      SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
+                      SpawnRoleVariable_1_System_Single__get_Value
+                                (this_00,
+                                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
+                                );
             if (cRam_? == '\0') {
-              func_?(&
-                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
-                             );
+              ppMVar4 = &
+                        MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
+              ;
+              func_?();
               func_?(&
                               MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                              );
@@ -90,7 +92,7 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
             this_01 = (ProgressBarAndroid *)(this->fields).progressBar;
             if (this_01 != (ProgressBarAndroid *)0x0) {
               ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                        (this_01,fVar4 / (float)(this->fields).maxValue,(MethodInfo *)0x0);
+                        (this_01,(float)ppMVar4 / (float)(this->fields).maxValue,(MethodInfo *)0x0);
               index = 0;
               pLVar5 = (this->fields)._.gameMeterVisualEffects;
               while (pLVar5 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
@@ -107,7 +109,7 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
                                       (this_02,index,
                                        MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                                       ), RVar6 == (RegexCharClass_SingleRange)0x0)) break;
-                (**(code **)(*(int *)RVar6 + 0xdc))(RVar6,*(undefined4 *)(*(int *)RVar6 + 0xe0));
+                (**(code **)(*(int *)RVar6 + 0xdc))();
                 index = index + 1;
                 pLVar5 = (this->fields)._.gameMeterVisualEffects;
               }

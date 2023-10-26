@@ -87,24 +87,24 @@ code_?:
                          (this_00,method_00);
       if (pOVar3 != (Object *)0x0) {
         (*(code *)pOVar3->klass[1]._0.fields)();
-        if (x[1].klass != (Object_1__Class *)0x0) {
-          (*(code *)((x[1].klass)->_0).namespaze)();
-          x[1].klass = (Object_1__Class *)0x0;
-          func_?();
+        if (method_00->name != (char *)0x0) {
+          (**(code **)(method_00->name + 0xc))();
+          method_00->name = (char *)0x0;
+          func_?(&method_00->name,0);
         }
         return;
       }
       goto code_?;
     }
-    pTVar4 = mscorlib.dll::System::Object::Object_GetType((Object *)x,(MethodInfo *)0x0);
+    mscorlib.dll::System::Object::Object_GetType((Object *)x,(MethodInfo *)0x0);
     pIVar5 = TypeRef__AccessoryParticlesSettings;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+    pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
     bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)pTVar4,(Object **)pTVar6,(MethodInfo *)0x0);
+                      ((Object **)pTVar4,(Object **)pTVar4,(MethodInfo *)0x0);
     method_00 = 
     AvatarAccessoryParticles_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarAccessoryParticles>__
     ;
@@ -125,7 +125,7 @@ code_?:
   }
   func_?();
   pEVar7 = (Exception *)func_?();
-  func_?();
+  func_?(pEVar7);
   pSVar1 = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar7,pSVar1,(MethodInfo *)0x0);
   func_?();

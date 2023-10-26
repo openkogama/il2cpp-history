@@ -48,43 +48,43 @@ int32_t Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_GetDataB
 code_?:
     func_?();
 code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
+    func_?();
+    func_?();
 code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
+    func_?();
+    func_?();
 code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
+    func_?();
+    func_?();
 code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
+    func_?();
+    func_?();
 code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
+    func_?();
+    func_?();
 code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
+    func_?();
+    func_?();
   }
   else {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
             Object,GUILoginHandler+PlanetData]::
             Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
                       (pDVar1,(Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar3 != 0) {
-      pDVar4 = (this->fields)._._._._.data;
-      if ((pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-         (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+    if (bVar2 != 0) {
+      pDVar3 = (this->fields)._._._._.data;
+      if ((pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+         (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                    Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (pDVar4,(Object *)key,
+                             (pDVar3,(Object *)key,
                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pOVar5 != (Object *)0x0)) {
-        if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+                             ), pOVar4 != (Object *)0x0)) {
+        if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
 code_?:
-          piVar6 = (int32_t *)func_?();
-          return *piVar6;
+          piVar5 = (int32_t *)func_?();
+          return *piVar5;
         }
         goto code_?;
       }
@@ -94,21 +94,21 @@ code_?:
              (this->fields)._.blueprintData;
     if (pDVar1 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
     goto code_?;
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
             Object,GUILoginHandler+PlanetData]::
             Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
                       (pDVar1,(Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar3 != 0) {
-      pDVar4 = (this->fields)._.blueprintData;
-      if ((pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-         (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+    if (bVar2 != 0) {
+      pDVar3 = (this->fields)._.blueprintData;
+      if ((pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+         (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                    Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (pDVar4,(Object *)key,
+                             (pDVar3,(Object *)key,
                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pOVar5 != (Object *)0x0)) {
-        if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class)
+                             ), pOVar4 != (Object *)0x0)) {
+        if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class)
         goto code_?;
         goto code_?;
       }
@@ -117,20 +117,14 @@ code_?:
     values = (String__Array *)func_?();
     if (values == (String__Array *)0x0) goto code_?;
     if ((StringLiteral_MVWorldObjectSpawner_with_type_ != (String *)0x0) &&
-       (iVar7 = func_?(StringLiteral_MVWorldObjectSpawner_with_type_,
-                                (values->klass->_0).element_class), iVar7 == 0))
-    goto code_?;
-    pSVar8 = StringLiteral_MVWorldObjectSpawner_with_type_;
+       (iVar6 = func_?(), iVar6 == 0)) goto code_?;
     if (values->max_length == 0) goto code_?;
     values->vector[0] = StringLiteral_MVWorldObjectSpawner_with_type_;
-    func_?(values->vector,pSVar8);
-    pTVar9 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
-    if (pTVar9 != (Type *)0x0) {
-      pSVar8 = (String *)
-               (*(pTVar9->klass->vtable).ToString.methodPtr)
-                         (pTVar9,(pTVar9->klass->vtable).ToString.method);
-      if ((pSVar8 == (String *)0x0) ||
-         (iVar7 = func_?(pSVar8,(values->klass->_0).element_class), iVar7 != 0))
+    func_?();
+    pTVar7 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+    if (pTVar7 != (Type *)0x0) {
+      pSVar8 = (String *)(*(pTVar7->klass->vtable).ToString.methodPtr)();
+      if ((pSVar8 == (String *)0x0) || (iVar6 = func_?(), iVar6 != 0))
       goto code_?;
       goto code_?;
     }
@@ -138,39 +132,35 @@ code_?:
 code_?:
     if (values->max_length < 2) goto code_?;
     values->vector[1] = pSVar8;
-    func_?(values->vector + 1,pSVar8);
-    if ((StringLiteral__without_ != (String *)0x0) &&
-       (iVar7 = func_?(StringLiteral__without_,(values->klass->_0).element_class),
-       iVar7 == 0)) goto code_?;
-    pSVar8 = StringLiteral__without_;
+    func_?();
+    if ((StringLiteral__without_ != (String *)0x0) && (iVar6 = func_?(), iVar6 == 0))
+    goto code_?;
     if (values->max_length < 3) goto code_?;
     values->vector[2] = StringLiteral__without_;
-    func_?(values->vector + 2,pSVar8);
-    if ((key != (String *)0x0) &&
-       (iVar7 = func_?(key,(values->klass->_0).element_class), iVar7 == 0))
-    goto code_?;
+    func_?();
+    if ((key != (String *)0x0) && (iVar6 = func_?(), iVar6 == 0)) goto code_?;
     if (values->max_length < 4) goto code_?;
     values->vector[3] = key;
-    func_?(values->vector + 3,key);
+    func_?();
     if ((StringLiteral__defined__falling_back_to_defaul != (String *)0x0) &&
-       (iVar7 = func_?(StringLiteral__defined__falling_back_to_defaul,
-                                (values->klass->_0).element_class), iVar7 == 0))
-    goto code_?;
-    pSVar8 = StringLiteral__defined__falling_back_to_defaul;
+       (iVar6 = func_?(), iVar6 == 0)) goto code_?;
     if (4 < values->max_length) {
       values->vector[4] = StringLiteral__defined__falling_back_to_defaul;
-      func_?(values->vector + 4,pSVar8);
+      func_?();
       pSVar8 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&defaultValue,(MethodInfo *)0x0)
       ;
-      if ((pSVar8 == (String *)0x0) ||
-         (iVar7 = func_?(pSVar8,(values->klass->_0).element_class), iVar7 != 0)) {
+      if ((pSVar8 == (String *)0x0) || (iVar6 = func_?(), iVar6 != 0)) {
         if (5 < values->max_length) {
           values->vector[5] = pSVar8;
-          func_?(values->vector + 5,pSVar8);
+          func_?();
           pSVar8 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            method = (MethodInfo *)TypeInfo__UnityEngine__Debug;
+            defaultValue = (int32_t)&UNK_?;
             func_?();
           }
+          method = (MethodInfo *)0x0;
+          defaultValue = (int32_t)pSVar8;
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
                     ((Object *)pSVar8,(MethodInfo *)0x0);
           return defaultValue;
@@ -184,9 +174,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  iVar11 = (*pcVar10)();
-  return iVar11;
+  pcVar9 = (code *)swi(3);
+  iVar10 = (*pcVar9)();
+  return iVar10;
 }
 
 

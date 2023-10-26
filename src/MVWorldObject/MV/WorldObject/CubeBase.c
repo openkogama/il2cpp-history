@@ -308,7 +308,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
   switch(face) {
   case Face__Enum_Top:
     pVVar1 = *faceVertices;
-    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) {
+    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0))
+    {
 code_?:
       bVar3 = 0;
       func_?();
@@ -646,43 +647,54 @@ code_?:
   default:
     goto code_?;
   }
-  iVar7 = func_?();
-  bVar8 = (byte)((uint)unaff_EBX >> 8);
-  *(char *)(unaff_EBX + -0x7bef5f70) =
-       *(char *)(unaff_EBX + -0x7bef5f70) + (char)((ushort)extraout_CX >> 8) +
-       (CARRY1((byte)extraout_CX,bVar8) || CARRY1((byte)extraout_CX + bVar8,bVar3));
-  *(int *)(iVar7 + -0x5f71dff4) = unaff_EBX;
-  *(Vector3__Array ***)(iVar7 + -0x5f71dff8) = faceVertices;
-  uVar9 = 0;
-  *(int *)(iVar7 + -0x5f71dffc) = unaff_EDI + 1;
+  uVar6 = func_?();
+  uVar6._4_4_ = (byte *)((ulonglong)uVar6 >> 0x20);
+  LOCK();
+  uVar7 = *(undefined4 *)(unaff_EDI + -0x779fef60);
+  *(undefined4 *)(unaff_EDI + -0x779fef60) = (int)uVar6;
+  cVar8 = cRam_?;
+  UNLOCK();
+  iVar9 = CONCAT31((int3)((uint)uVar7 >> 8),cRam_?);
+  bVar10 = *uVar6._4_4_;
+  bVar11 = (byte)((ulonglong)uVar6 >> 0x20);
+  bVar12 = *uVar6._4_4_ + bVar11;
+  *uVar6._4_4_ = bVar12 + bVar3;
+  iVar9 = *(int *)(CONCAT22((short)((uint)uVar7 >> 0x10),
+                             CONCAT11(*(char *)(iVar9 + -0x5f7514f0) + cVar8 +
+                                      (CARRY1(bVar10,bVar11) || CARRY1(bVar12,bVar3)),cVar8)) +
+                   -0x1374aaf0);
+  *(undefined4 *)(iVar9 + -4) = unaff_EBX;
+  *(Vector3__Array ***)(iVar9 + -8) = faceVertices;
+  uVar13 = 0;
+  *(int *)(iVar9 + -0xc) = unaff_EDI;
   if (corners[3] != (Vector3__Array *)0x0) {
-    uVar10 = corners[3]->max_length;
-    for (; (int)uVar9 < (int)uVar10; uVar9 = uVar9 + 1) {
-      puVar11 = (undefined1 *)(iVar7 + -0x5f71dffc);
-      if (uVar10 <= uVar9) goto code_?;
+    uVar14 = corners[3]->max_length;
+    for (; (int)uVar13 < (int)uVar14; uVar13 = uVar13 + 1) {
+      puVar15 = (undefined1 *)(iVar9 + -0xc);
+      if (uVar14 <= uVar13) goto code_?;
     }
-    uVar9 = 0;
+    uVar13 = 0;
     if (corners[4] != (Vector3__Array *)0x0) {
-      uVar10 = corners[4]->max_length;
+      uVar14 = corners[4]->max_length;
       while( true ) {
-        if ((int)uVar10 <= (int)uVar9) {
+        if ((int)uVar14 <= (int)uVar13) {
           return;
         }
-        puVar11 = (undefined1 *)(iVar7 + -0x5f71dffc);
-        if (uVar10 <= uVar9) break;
-        uVar9 = uVar9 + 1;
+        puVar15 = (undefined1 *)(iVar9 + -0xc);
+        if (uVar14 <= uVar13) break;
+        uVar13 = uVar13 + 1;
       }
       goto code_?;
     }
   }
-  puVar11 = (undefined1 *)(iVar7 + -0x5f71e000);
-  *(undefined **)(iVar7 + -0x5f71e000) = &UNK_?;
+  puVar15 = (undefined1 *)(iVar9 + -0x10);
+  *(undefined **)(iVar9 + -0x10) = &UNK_?;
   func_?();
 code_?:
-  *(undefined **)(puVar11 + -4) = &UNK_?;
+  *(undefined **)(puVar15 + -4) = &UNK_?;
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

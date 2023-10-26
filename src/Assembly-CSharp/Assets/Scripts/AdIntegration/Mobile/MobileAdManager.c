@@ -1036,7 +1036,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
       }
       cac._0_1_ = ((pCVar2->fields).hasConsented & bVar4) != 0 || bVar3 == 0;
       if (cRam_? == '\0') {
-        cac._0_1_ = 0x9c;
+        cac._0_1_ = 0xf4;
         func_?();
         cRam_? = '\x01';
       }
@@ -1622,7 +1622,7 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdMa
   return (TimeSpan)TVar1._ticks;
 }
 
-/* decompilation failed: Exception while decompiling 1047bc20: Decompiler process died */
+/* decompilation failed: Exception while decompiling 1047b960: Decompiler process died */
 
-/* decompilation failed: Exception while decompiling 1047bc50: Decompiler process died */
+/* decompilation failed: Exception while decompiling 1047b990: Decompiler process died */
 

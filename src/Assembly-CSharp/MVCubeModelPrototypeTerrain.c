@@ -106,7 +106,7 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0x929c);
+    func_?(0x754c);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__ContainsKey_MV__WorldObject__IntVector_
                    );

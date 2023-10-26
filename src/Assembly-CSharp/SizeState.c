@@ -562,7 +562,7 @@ code_?:
     pEVar16 = (pSVar1->fields).CameraScaleEvent;
     this_01 = (SizeState *)func_?();
     if (this_01 == (SizeState *)0x0) goto code_?;
-    ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.1400256e-29,(MethodInfo *)0x0);
+    ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.13991e-29,(MethodInfo *)0x0);
     (*(pEVar16->fields)._._.invoke_impl)();
   }
   (pSVar1->fields).currentSize = (float)this_01;

@@ -220,7 +220,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xf45c);
+    func_?(0xd70c);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
@@ -405,7 +405,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea
                                               (((float)uVar10 + fVar9) - fVar22);
                                     value.z = pVVar17->z +
                                               (info->fields).normal.z * _UNK_? +
-                                              (3.7515235e-29 - (fVar12 + fVar16));
+                                              (3.751432e-29 - (fVar12 + fVar16));
                                     UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                     Transform_set_position(this_04,value,(MethodInfo *)0x0);
                                     return;

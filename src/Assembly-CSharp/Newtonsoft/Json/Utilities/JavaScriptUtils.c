@@ -106,8 +106,7 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::JavaScriptUtils::
 
 {
   if (cRam_? == '\0') {
-    in_stack_1 = &StringLiteral__u2029;
-    func_?();
+    func_?(&StringLiteral__u2029);
     func_?(&StringLiteral__b);
     func_?(&StringLiteral__n);
     func_?(&StringLiteral__t);
@@ -121,131 +120,120 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Utilities::JavaScriptUtils::
     cRam_? = '\x01';
   }
   if (appendDelimiters != 0) {
-    pbVar2 = _delimiter;
     if (writer == (TextWriter *)0x0) goto code_?;
-    in_stack_1 = (String **)(writer->klass->vtable).Write.method;
-    (*(writer->klass->vtable).Write.methodPtr)(writer,_delimiter);
+    (*(writer->klass->vtable).Write.methodPtr)
+              (writer,_delimiter,(writer->klass->vtable).Write.method);
   }
   if (value != (String *)0x0) {
-    iVar3 = 0;
-    pMStack_4 = (MethodInfo *)0x0;
-    pbVar2 = (byte *)0x0;
-    pCStack_5 = (Char__Array *)0x0;
-    uVar6 = 0x2029;
-    unaff_ESI = (MethodInfo *)in_stack_1;
-    while (iVar3 < (value->fields)._stringLength) {
-      pMVar7 = (MethodInfo *)0x0;
-      c = mscorlib.dll::System::String::String_get_Chars(value,iVar3,(MethodInfo *)0x0);
+    index = 0;
+    iStack_1 = 0;
+    iVar2 = 0;
+    pCStack_3 = (Char__Array *)0x0;
+    uVar4 = 0x2029;
+    while (index < (value->fields)._stringLength) {
+      c = mscorlib.dll::System::String::String_get_Chars(value,index,(MethodInfo *)0x0);
       if (c < 0x28) {
         switch(c) {
         case 8:
-          unaff_ESI = (MethodInfo *)StringLiteral__b;
+          pSVar5 = StringLiteral__b;
           break;
         case 9:
-          unaff_ESI = (MethodInfo *)StringLiteral__t;
+          pSVar5 = StringLiteral__t;
           break;
         case 10:
-          unaff_ESI = (MethodInfo *)StringLiteral__n;
+          pSVar5 = StringLiteral__n;
           break;
         case 0xb:
 code_?:
           if (0x1f < c) goto code_?;
-          uVar6 = 0;
-          unaff_ESI = (MethodInfo *)StringUtils::StringUtils_ToCharAsUnicode(c,(MethodInfo *)0x0);
+          uVar4 = 0;
+          unaff_ESI = &UNK_?;
+          pSVar5 = StringUtils::StringUtils_ToCharAsUnicode(c,(MethodInfo *)0x0);
           break;
         case 0xc:
-          unaff_ESI = (MethodInfo *)StringLiteral__f;
+          pSVar5 = StringLiteral__f;
           break;
         case 0xd:
-          unaff_ESI = (MethodInfo *)StringLiteral__r;
+          pSVar5 = StringLiteral__r;
           break;
         default:
           if (c == 0x22) {
-            unaff_ESI = (MethodInfo *)0x0;
+            pSVar5 = (String *)0x0;
             if (delimiter == 0x22) {
-              unaff_ESI = (MethodInfo *)::StringLiteral___;
+              pSVar5 = ::StringLiteral___;
             }
           }
           else {
             if (c != 0x27) goto code_?;
-            unaff_ESI = (MethodInfo *)0x0;
+            pSVar5 = (String *)0x0;
             if (delimiter == 0x27) {
-              unaff_ESI = (MethodInfo *)::StringLiteral___;
+              pSVar5 = ::StringLiteral___;
             }
           }
         }
       }
       else if (c < 0x86) {
-        unaff_ESI = (MethodInfo *)::StringLiteral___;
-        if ((c != 0x5c) && (unaff_ESI = (MethodInfo *)StringLiteral__u0085, c != 0x85))
-        goto code_?;
+        pSVar5 = ::StringLiteral___;
+        if ((c != 0x5c) && (pSVar5 = StringLiteral__u0085, c != 0x85)) goto code_?;
       }
       else {
-        unaff_ESI = (MethodInfo *)StringLiteral__u2028;
-        if ((c != 0x2028) && (unaff_ESI = (MethodInfo *)StringLiteral__u2029, c != (uint16_t)uVar6)
-           ) {
+        pSVar5 = StringLiteral__u2028;
+        if ((c != 0x2028) && (pSVar5 = StringLiteral__u2029, c != (uint16_t)uVar4)) {
 code_?:
-          unaff_ESI = (MethodInfo *)0x0;
+          pSVar5 = (String *)0x0;
         }
       }
-      if (unaff_ESI == (MethodInfo *)0x0) {
-        pbVar2 = pbVar2 + 1;
-        iVar3 = iVar3 + 1;
-        unaff_ESI = pMVar7;
+      if (pSVar5 == (String *)0x0) {
+        iVar2 = iVar2 + 1;
+        index = index + 1;
       }
       else {
-        if (pCStack_5 == (Char__Array *)0x0) {
-          pCStack_5 = mscorlib.dll::System::String::String_ToCharArray(value,(MethodInfo *)0x0);
+        if (pCStack_3 == (Char__Array *)0x0) {
+          pCStack_3 = mscorlib.dll::System::String::String_ToCharArray(value,(MethodInfo *)0x0);
         }
-        if ((int)pbVar2 < 1) {
+        unaff_EDI = unaff_ESI;
+        if (iVar2 < 1) {
           if (writer == (TextWriter *)0x0) goto code_?;
         }
         else {
           if (writer == (TextWriter *)0x0) goto code_?;
-          func_?(0xe,writer,pCStack_5,pMStack_4,pbVar2);
-          pbVar2 = (byte *)0x0;
+          func_?(0xe,writer,pCStack_3,iStack_1,iVar2);
+          iVar2 = 0;
         }
-        func_?(0x11,writer);
-        pMStack_4 = (MethodInfo *)(iVar3 + 1);
-        iVar3 = iVar3 + 1;
+        func_?(0x11,writer,pSVar5);
+        iStack_1 = index + 1;
+        index = index + 1;
       }
     }
-    if (0 < (int)pbVar2) {
-      unaff_ESI = pMStack_4;
+    unaff_EDI = unaff_ESI;
+    if (0 < iVar2) {
       if (writer == (TextWriter *)0x0) goto code_?;
-      pTVar8 = writer->klass;
-      if (pMStack_4 == (MethodInfo *)0x0) {
-        unaff_ESI = (pTVar8->vtable).Write_5.method;
-        (*(pTVar8->vtable).Write_5.methodPtr)(writer,value);
+      pTVar6 = writer->klass;
+      if (iStack_1 == 0) {
+        (*(pTVar6->vtable).Write_5.methodPtr)(writer,value,(pTVar6->vtable).Write_5.method);
+        unaff_EDI = unaff_ESI;
       }
       else {
-        unaff_ESI = (pTVar8->vtable).Write_2.method;
-        (*(pTVar8->vtable).Write_2.methodPtr)(writer,pCStack_5,pMStack_4,pbVar2);
+        (*(pTVar6->vtable).Write_2.methodPtr)
+                  (writer,pCStack_3,iStack_1,iVar2,(pTVar6->vtable).Write_2.method);
+        unaff_EDI = unaff_ESI;
       }
     }
   }
   if (appendDelimiters != 0) {
-    pbVar2 = _delimiter;
     if (writer == (TextWriter *)0x0) {
 code_?:
-      iVar3 = func_?();
-      bVar9 = &stack0xffffffdc < *(undefined1 **)(iVar3 + 0x48a43310 + extraout_ECX * 2);
-      bVar10 = (byte)((uint)pbVar2 >> 8);
-      bVar11 = CARRY1(*pbVar2,bVar10) || CARRY1(*pbVar2 + bVar10,bVar9);
-      *pbVar2 = *pbVar2 + bVar10 + bVar9;
-      *(undefined1 *)&writer->klass = *(undefined1 *)&unaff_ESI->methodPointer;
-      pbVar12 = pbVar2 + -0x5c;
-      bVar9 = CARRY1(*pbVar12,bVar10) || CARRY1(*pbVar12 + bVar10,bVar11);
-      *pbVar12 = *pbVar12 + bVar10 + bVar11;
-      bVar13 = (char)iVar3 - 2;
-      pbVar12 = pbVar2 + -0x5c;
-      bVar10 = *pbVar12;
-      bVar14 = *pbVar12 + bVar13;
-      *pbVar12 = bVar14 + bVar9;
-      pbVar2[-0x5c] =
-           pbVar2[-0x5c] + (char)extraout_ECX + (CARRY1(bVar10,bVar13) || CARRY1(bVar14,bVar9));
-      pcVar15 = (code *)swi(3);
-      (*pcVar15)();
+      bVar7 = 0;
+      func_?();
+      pbVar8 = unaff_EDI + -0x5f;
+      bVar9 = *pbVar8;
+      bVar10 = *pbVar8;
+      *pbVar8 = bVar10 + extraout_CH + bVar7;
+      unaff_EDI[0x731048a1] =
+           unaff_EDI[0x731048a1] + extraout_CH +
+           (CARRY1(bVar9,extraout_CH) || CARRY1(bVar10 + extraout_CH,bVar7));
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
       return;
     }
     (*(writer->klass->vtable).Write.methodPtr)

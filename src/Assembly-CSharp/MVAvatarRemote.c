@@ -474,28 +474,28 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_HideBody
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._.body;
-  pAVar1 = unaff_EDI;
   if (this_00 != (MVBody *)0x0) {
     MVBody::MVBody_set_Visible(this_00,0,(MethodInfo *)0x0);
-    pAVar2 = (this->fields)._.avatar;
-    if ((pAVar2 != (Avatar *)0x0) &&
-       (pAVar3 = (pAVar2->fields).avatarUIHandler, pAVar3 != (AvatarUIHandler *)0x0)) {
-      (*(pAVar3->klass->vtable).SetShouldShowUI.methodPtr)(pAVar3,0);
-      pAVar2 = (this->fields)._.avatar;
-      if (pAVar2 != (Avatar *)0x0) {
-        this_02 = (AvatarUIHandlerRemote *)(pAVar2->fields).avatarUIHandler;
-        pAVar1 = TypeInfo__AvatarUIHandlerRemote;
+    pAVar1 = (this->fields)._.avatar;
+    if ((pAVar1 != (Avatar *)0x0) &&
+       (pAVar2 = (pAVar1->fields).avatarUIHandler, pAVar2 != (AvatarUIHandler *)0x0)) {
+      pAVar3 = (AvatarUIHandlerRemote__Class *)0x0;
+      (*(pAVar2->klass->vtable).SetShouldShowUI.methodPtr)
+                (pAVar2,0,(pAVar2->klass->vtable).SetShouldShowUI.method);
+      pAVar1 = (this->fields)._.avatar;
+      if (pAVar1 != (Avatar *)0x0) {
+        this_02 = (AvatarUIHandlerRemote *)(pAVar1->fields).avatarUIHandler;
+        unaff_EDI = TypeInfo__AvatarUIHandlerRemote;
         if (this_02 != (AvatarUIHandlerRemote *)0x0) {
-          pAVar1 = TypeInfo__AvatarUIHandlerRemote;
           if (((this_02->klass->_1).typeHierarchyDepth <
                (TypeInfo__AvatarUIHandlerRemote->_1).typeHierarchyDepth) ||
              ((this_02->klass->_1).typeHierarchy
               [(TypeInfo__AvatarUIHandlerRemote->_1).typeHierarchyDepth - 1] !=
               (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) goto code_?;
+          unaff_EDI = pAVar3;
           AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_NameTagLabelVisible
                     (this_02,0,(MethodInfo *)0x0);
           this_01 = (this->fields).triggerCollider;
-          pAVar1 = unaff_EDI;
           if (this_01 != (CapsuleCollider *)0x0) {
             UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
                       ((Collider *)this_01,0,(MethodInfo *)0x0);
@@ -508,7 +508,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_HideBody
   func_?();
   this_02 = extraout_EDX;
 code_?:
-  func_?(this_02,pAVar1);
+  func_?(this_02,unaff_EDI);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

@@ -44,7 +44,7 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0xbf08);
+    func_?(0x6064);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).resettingBookkeeping;
@@ -164,11 +164,11 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Enter
     func_?(&
                     TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                    );
-    func_?(0xf95c);
+    func_?(0xdbfc);
     func_?(&
                     MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
                    );
-    func_?(0xc);
+    func_?(0xac);
     func_?(&TypeInfo__CubeModelTool);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__MVBuildModeAvatarLocal_EditMode__ESEditCubeTutorialData);
@@ -709,16 +709,14 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
        (this_00 = (pMVar1->fields).mainCamera, this_00 != (Camera *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
                 (this_00,(this->fields).mainCameraDefaultMask,(MethodInfo *)0x0);
-      (((Action_2_Int32_EditCubeChange___Fields *)&(source->_0).name)->_)._.method_ptr =
-           ::StringLiteral__;
-      func_?((Action_2_Int32_EditCubeChange___Fields *)&(source->_0).name,::StringLiteral__
-                     );
+      ((Delegate__Fields *)&(source->_0).name)->method_ptr = ::StringLiteral__;
+      func_?((Delegate__Fields *)&(source->_0).name,::StringLiteral__);
       pMVar2 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
       MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar2 != (MVCubeModelBase *)0x0) {
         cVar3 = (*(pMVar2->klass->vtable).Delete.methodPtr)
                           (pMVar2,(pMVar2->klass->vtable).Delete.method,
-                           (Action_2_Int32_EditCubeChange___Fields *)&(source->_0).name);
+                           (Delegate__Fields *)&(source->_0).name);
         if (cVar3 == '\0') {
           root = (esm->fields).gameObject;
           callbackFunction =
@@ -1002,9 +1000,9 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_SetFirstTimeEve
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__GetEnumerator__
                    );
-    func_?(0x41e4);
+    func_?(0x2440);
     func_?(&TypeInfo__EditableCubeModelWrapper);
-    func_?(0x4fc0);
+    func_?(0x3274);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__MoveNext__
                    );

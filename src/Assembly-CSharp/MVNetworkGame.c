@@ -657,7 +657,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
           pcVar14 = (char *)func_?();
           this_03 = (Dictionary_2_System_ByteEnum_System_Object_ *)
                     CONCAT31((int3)((uint)this_01 >> 8),*pcVar14 == '\x03');
-          bVar5 = 0xa3;
+          bVar5 = 0xe3;
           pJVar15 = (JsonConvert__Class *)
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
                     ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
@@ -4586,7 +4586,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnPickupItemStateChangeEv
           if (iVar4 != 0) {
             iVar4 = func_?(this);
             if (iVar4 != 0) {
-              func_?(0,TypeInfo__IPickupStateHandler);
+              func_?(0,TypeInfo__IPickupStateHandler,iVar4);
               return;
             }
           }

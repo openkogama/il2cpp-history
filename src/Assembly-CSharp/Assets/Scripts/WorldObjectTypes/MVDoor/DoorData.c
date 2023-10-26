@@ -258,7 +258,7 @@ Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorDa
       (__return_storage_ptr__->Item2).y = 0;
       (__return_storage_ptr__->Item2).z = 0;
       method = (MethodInfo *)__return_storage_ptr__;
-      doorType._0_2_ = 0xe6d7;
+      doorType._0_2_ = 0xe3b7;
       doorType._2_2_ = 0x1044;
       item1.z = iVar2;
       item1.x = (int16_t)uVar3;

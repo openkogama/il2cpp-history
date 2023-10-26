@@ -28,11 +28,13 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonBinaryWriter::
         BsonBinaryWriter_CalculateSize_1(BsonBinaryWriter *this,BsonToken *t,MethodInfo *method)
 
 {
-  pCVar1 = (CultureInfo *)t;
+  pBVar1 = t;
+  _Stack_8.__klassIndex = -1;
+  _Stack_c.dummy = &DAT_?;
   _Stack_10.dummy = *(void **)unaff_FS_OFFSET;
   unaff_FS_OFFSET->dummy = &_Stack_10;
-  pBStack_2 = (BsonToken__Class *)&stack0xffffffb4;
-  pBVar3 = (BsonToken__Class *)&stack0xffffffb4;
+  pcStack_2 = &stack0xffffffb4;
+  pcVar3 = &stack0xffffffb4;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonArray);
     func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter);
@@ -51,16 +53,15 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonBinaryWriter::
     func_?(&TypeInfo__System__Collections__IEnumerator);
     func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
-    pBVar3 = pBStack_2;
+    pcVar3 = pcStack_2;
   }
-  pBStack_2 = pBVar3;
-  pBStack_4 = (BsonToken__Class *)0x0;
-  pBStack_5 = (BsonToken__Class *)0x0;
-  bVar6 = 0;
+  pcStack_2 = pcVar3;
+  pIStack_4 = (Il2CppImage *)0x0;
+  pIStack_5 = (Il2CppImage *)0x0;
   if (t != (BsonToken *)0x0) {
-    uVar7 = (*(t->klass->vtable).__unknown.methodPtr)(t,(t->klass->vtable).__unknown.method);
-    pBVar8 = TypeInfo__System__Byte;
-    switch(uVar7) {
+    uVar6 = (*(t->klass->vtable).__unknown.methodPtr)(t,(t->klass->vtable).__unknown.method);
+    pBVar7 = TypeInfo__System__Byte;
+    switch(uVar6) {
     case 1:
     case 9:
     case 0x12:
@@ -68,42 +69,38 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonBinaryWriter::
       return 8;
     case 2:
       unaff_ESI = t->klass;
-      bVar6 = 1;
-      pBVar9 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonString;
+      pBVar8 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonString;
       if (((TypeInfo__Newtonsoft__Json__Bson__BsonString->_1).typeHierarchyDepth <=
            (unaff_ESI->_1).typeHierarchyDepth) &&
-         (pIVar10 = (unaff_ESI->_1).typeHierarchy
-                   [(TypeInfo__Newtonsoft__Json__Bson__BsonString->_1).typeHierarchyDepth - 1],
-         bVar6 = pIVar10 < TypeInfo__Newtonsoft__Json__Bson__BsonString,
-         pIVar10 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonString)) {
-        pBVar3 = t[1].klass;
-        pBVar11 = (BsonToken *)0x0;
-        if (pBVar3 == (BsonToken__Class *)0x0) {
+         ((unaff_ESI->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Bson__BsonString->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonString)) {
+        pBVar9 = t[1].klass;
+        pBVar1 = (BsonToken *)0x0;
+        if (pBVar9 == (BsonToken__Class *)0x0) {
 code_?:
-          t[1].fields._Parent_k__BackingField = pBVar11;
-          iVar12 = (int)&(t[1].fields._Parent_k__BackingField)->klass +
-                   (uint)((char)t[1].fields._CalculatedSize_k__BackingField != '\0') * 4 + 1;
-          (t->fields)._CalculatedSize_k__BackingField = iVar12;
+          t[1].fields._Parent_k__BackingField = pBVar1;
+          iVar10 = (int)&(t[1].fields._Parent_k__BackingField)->klass +
+                  (uint)((char)t[1].fields._CalculatedSize_k__BackingField != '\0') * 4 + 1;
+          (t->fields)._CalculatedSize_k__BackingField = iVar10;
           *unaff_FS_OFFSET = _Stack_10;
-          return iVar12;
+          return iVar10;
         }
         unaff_ESI = (BsonToken__Class *)0x0;
-        if ((String__Class *)(pBVar3->_0).image == TypeInfo__System__String) {
-          unaff_ESI = pBVar3;
+        if ((String__Class *)(pBVar9->_0).image == TypeInfo__System__String) {
+          unaff_ESI = pBVar9;
         }
-        bVar6 = 0;
-        pSVar13 = TypeInfo__System__String;
+        pSVar11 = TypeInfo__System__String;
         if (unaff_ESI != (BsonToken__Class *)0x0) {
           if ((TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter->_1).cctor_finished_or_no_cctor ==
               0) {
             func_?(TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter);
           }
-          pEVar14 = TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter->static_fields->Encoding;
-          bVar6 = 0;
-          if (pEVar14 != (Encoding *)0x0) {
-            pBVar11 = (BsonToken *)
-                     (*(pEVar14->klass->vtable).GetByteCount.methodPtr)
-                               (pEVar14,unaff_ESI,(pEVar14->klass->vtable).GetByteCount.method);
+          pEVar12 = TypeInfo__Newtonsoft__Json__Bson__BsonBinaryWriter->static_fields->Encoding;
+          if (pEVar12 != (Encoding *)0x0) {
+            pBVar1 = (BsonToken *)
+                     (*(pEVar12->klass->vtable).GetByteCount.methodPtr)
+                               (pEVar12,unaff_ESI,(pEVar12->klass->vtable).GetByteCount.method);
             goto code_?;
           }
           goto code_?;
@@ -113,102 +110,93 @@ code_?:
       break;
     case 3:
       unaff_ESI = t->klass;
-      bVar6 = 1;
-      pBVar9 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonObject;
+      pBVar8 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonObject;
       if (((TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth <=
            (unaff_ESI->_1).typeHierarchyDepth) &&
-         (pIVar10 = (unaff_ESI->_1).typeHierarchy
-                   [(TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth - 1],
-         bVar6 = pIVar10 < TypeInfo__Newtonsoft__Json__Bson__BsonObject,
-         pIVar10 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonObject)) {
+         ((unaff_ESI->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonObject)) {
         t = (BsonToken *)0x4;
-        pBStack_4 = (BsonToken__Class *)
-                     BsonObject::BsonObject_GetEnumerator((BsonObject *)pCVar1,(MethodInfo *)0x0);
-        unaff_ESI = (BsonToken__Class *)&pBStack_4;
-        while (bVar6 = 0, unaff_EDI = (Byte__Array__Class *)t,
-              pBStack_4 != (BsonToken__Class *)0x0) {
-          cVar15 = func_?(0,TypeInfo__System__Collections__IEnumerator,pBStack_4);
-          if (cVar15 == '\0') {
+        pIStack_4 = (Il2CppImage *)
+                     BsonObject::BsonObject_GetEnumerator((BsonObject *)pBVar1,(MethodInfo *)0x0);
+        unaff_ESI = (BsonToken__Class *)&pIStack_4;
+        _Stack_8.__klassIndex = 1;
+        while (unaff_EDI = (Byte__Array__Class *)t, pIStack_4 != (Il2CppImage *)0x0) {
+          cVar13 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIStack_4);
+          if (cVar13 == '\0') {
 code_?:
+            _Stack_8.__klassIndex = -1;
             if ((String__Class *)(unaff_ESI->_0).image != (String__Class *)0x0) {
               func_?(0,TypeInfo__System__IDisposable,(String__Class *)(unaff_ESI->_0).image
                              );
             }
-            puVar16 = (undefined1 *)((int)&(unaff_EDI->_0).image + 1);
-            (((BsonToken *)pCVar1)->fields)._CalculatedSize_k__BackingField = (int32_t)puVar16;
+            puVar14 = (undefined1 *)((int)&(unaff_EDI->_0).image + 1);
+            (pBVar1->fields)._CalculatedSize_k__BackingField = (int32_t)puVar14;
             *unaff_FS_OFFSET = _Stack_10;
-            return (int32_t)puVar16;
+            return (int32_t)puVar14;
           }
-          bVar6 = 0;
-          if (pBStack_4 == (BsonToken__Class *)0x0) break;
-          iVar12 = func_?(0,
-                                   TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonProperty>
-                                   ,pBStack_4);
-          bVar6 = 0;
+          if (pIStack_4 == (Il2CppImage *)0x0) break;
+          iVar10 = func_?(0,
+                                  TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonProperty>
+                                  ,pIStack_4);
           unaff_EDI = (Byte__Array__Class *)0x0;
-          if (iVar12 == 0) break;
-          iVar17 = BsonBinaryWriter_CalculateSize_1
-                             (this,*(BsonToken **)(iVar12 + 8),(MethodInfo *)0x0);
-          iVar18 = BsonBinaryWriter_CalculateSize_1
-                            (this,*(BsonToken **)(iVar12 + 0xc),(MethodInfo *)0x0);
-          t = (BsonToken *)((int)&t->klass + iVar18 + iVar17 + 1);
+          if (iVar10 == 0) break;
+          iVar15 = BsonBinaryWriter_CalculateSize_1
+                            (this,*(BsonToken **)(iVar10 + 8),(MethodInfo *)0x0);
+          iVar16 = BsonBinaryWriter_CalculateSize_1
+                            (this,*(BsonToken **)(iVar10 + 0xc),(MethodInfo *)0x0);
+          t = (BsonToken *)((int)&t->klass + iVar16 + iVar15 + 1);
         }
         goto code_?;
       }
       break;
     case 4:
       unaff_ESI = t->klass;
-      bVar6 = (unaff_ESI->_1).typeHierarchyDepth <
-               (TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth;
-      pBVar9 = TypeInfo__Newtonsoft__Json__Bson__BsonArray;
-      if ((!(bool)bVar6) &&
-         (pIVar10 = (unaff_ESI->_1).typeHierarchy
-                   [(TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth - 1],
-         bVar6 = pIVar10 < TypeInfo__Newtonsoft__Json__Bson__BsonArray,
-         pIVar10 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonArray)) {
+      pBVar8 = TypeInfo__Newtonsoft__Json__Bson__BsonArray;
+      if (((TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth <=
+           (unaff_ESI->_1).typeHierarchyDepth) &&
+         ((unaff_ESI->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonArray)) {
         unaff_EDI = (Byte__Array__Class *)0x4;
-        iStack_19 = 0;
-        pBStack_5 = (BsonToken__Class *)
+        iStack_17 = 0;
+        pIStack_5 = (Il2CppImage *)
                      BsonArray::BsonArray_GetEnumerator((BsonArray *)t,(MethodInfo *)0x0);
-        unaff_ESI = (BsonToken__Class *)&pBStack_5;
-        while (bVar6 = 0, pBStack_5 != (BsonToken__Class *)0x0) {
-          cVar15 = func_?(0,TypeInfo__System__Collections__IEnumerator,pBStack_5);
-          if (cVar15 == '\0') goto code_?;
-          bVar6 = 0;
-          if (pBStack_5 == (BsonToken__Class *)0x0) break;
-          pBVar11 = (BsonToken *)
-                   func_?(0,
-                                   TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonToken>
-                                   ,pBStack_5);
-          iVar17 = Json::Utilities::MathUtils::MathUtils_IntLength(iStack_19,(MethodInfo *)0x0);
-          iVar18 = BsonBinaryWriter_CalculateSize_1(this,pBVar11,(MethodInfo *)0x0);
-          unaff_EDI = (Byte__Array__Class *)((int)&(unaff_EDI->_0).image + iVar18 + iVar17 + 2);
-          iStack_19 = iStack_19 + 1;
+        unaff_ESI = (BsonToken__Class *)&pIStack_5;
+        _Stack_8.__klassIndex = 4;
+        while (pIStack_5 != (Il2CppImage *)0x0) {
+          cVar13 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIStack_5);
+          if (cVar13 == '\0') goto code_?;
+          if (pIStack_5 == (Il2CppImage *)0x0) break;
+          t_00 = (BsonToken *)
+                 func_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonToken>
+                                 ,pIStack_5);
+          iVar15 = Json::Utilities::MathUtils::MathUtils_IntLength(iStack_17,(MethodInfo *)0x0);
+          iVar16 = BsonBinaryWriter_CalculateSize_1(this,t_00,(MethodInfo *)0x0);
+          unaff_EDI = (Byte__Array__Class *)((int)&(unaff_EDI->_0).image + iVar16 + iVar15 + 2);
+          iStack_17 = iStack_17 + 1;
         }
         goto code_?;
       }
       break;
     case 5:
       unaff_ESI = t->klass;
-      bVar6 = (unaff_ESI->_1).typeHierarchyDepth <
-               (TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth;
-      pBVar9 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonValue;
-      if ((!(bool)bVar6) &&
-         (pIVar10 = (unaff_ESI->_1).typeHierarchy
-                   [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
-         bVar6 = pIVar10 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
-         pIVar10 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pBVar8 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonValue;
+      if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+           (unaff_ESI->_1).typeHierarchyDepth) &&
+         ((unaff_ESI->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
         unaff_ESI = t[1].klass;
-        bVar6 = 0;
         unaff_EDI = TypeInfo__System__Byte;
         if (unaff_ESI != (BsonToken__Class *)0x0) {
-          iVar12 = func_?(unaff_ESI,TypeInfo__System__Byte);
-          bVar6 = 0;
-          if (iVar12 != 0) {
-            iVar12 = *(int *)(iVar12 + 0xc) + 5;
-            (t->fields)._CalculatedSize_k__BackingField = iVar12;
+          iVar10 = func_?(unaff_ESI,TypeInfo__System__Byte);
+          if (iVar10 != 0) {
+            iVar10 = *(int *)(iVar10 + 0xc) + 5;
+            (t->fields)._CalculatedSize_k__BackingField = iVar10;
             *unaff_FS_OFFSET = _Stack_10;
-            return iVar12;
+            return iVar10;
           }
           goto code_?;
         }
@@ -227,136 +215,70 @@ code_?:
       return 1;
     case 0xb:
       unaff_ESI = t->klass;
-      bVar6 = (unaff_ESI->_1).typeHierarchyDepth <
-               (TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth;
-      pBVar9 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonRegex;
-      if ((!(bool)bVar6) &&
-         (pIVar10 = (unaff_ESI->_1).typeHierarchy
-                   [(TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth - 1],
-         bVar6 = pIVar10 < TypeInfo__Newtonsoft__Json__Bson__BsonRegex,
-         pIVar10 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonRegex)) {
-        iVar17 = BsonBinaryWriter_CalculateSize_1(this,(BsonToken *)t[1].klass,(MethodInfo *)0x0);
-        iVar18 = BsonBinaryWriter_CalculateSize_1(this,(BsonToken *)t[1].monitor,(MethodInfo *)0x0);
-        (t->fields)._CalculatedSize_k__BackingField = iVar18 + iVar17;
+      pBVar8 = (BsonArray__Class *)TypeInfo__Newtonsoft__Json__Bson__BsonRegex;
+      if (((TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth <=
+           (unaff_ESI->_1).typeHierarchyDepth) &&
+         ((unaff_ESI->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth - 1] ==
+          (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonRegex)) {
+        iVar15 = BsonBinaryWriter_CalculateSize_1(this,(BsonToken *)t[1].klass,(MethodInfo *)0x0);
+        iVar16 = BsonBinaryWriter_CalculateSize_1(this,(BsonToken *)t[1].monitor,(MethodInfo *)0x0);
+        (t->fields)._CalculatedSize_k__BackingField = iVar16 + iVar15;
         *unaff_FS_OFFSET = _Stack_10;
-        return iVar18 + iVar17;
+        return iVar16 + iVar15;
       }
       break;
     default:
-      uVar20 = func_?(&TypeInfo__System__Globalization__CultureInfo);
-      func_?(uVar20);
-      pCVar21 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+      uVar18 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+      func_?(uVar18);
+      pCVar19 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                           ((MethodInfo *)0x0);
-      uVar20 = func_?(&TypeInfo__System__Object,1);
-      args = (Object__Array *)func_?(uVar20);
+      uVar18 = func_?(&TypeInfo__System__Object,1);
+      args = (Object__Array *)func_?(uVar18);
       func_?(t);
-      uVar7 = func_?(4,t);
-      uStack_22 = (BsonToken__Class *)CONCAT13(uVar7,(undefined3)uStack_22);
-      uVar20 = func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonType,(int)&uStack_22 + 3);
-      uVar20 = func_?(uVar20);
+      uStack_20 = func_?(4,t);
+      uVar18 = func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonType,&uStack_20);
+      uVar18 = func_?(uVar18);
       func_?(args);
-      func_?(args,uVar20);
-      func_?(0,uVar20);
-      pMVar23 = (MethodInfo *)0x0;
-      pCVar1 = pCVar21;
-      pSVar24 = (String *)func_?(&StringLiteral_Unexpected_token_when_writing_BS);
+      func_?(args,uVar18);
+      func_?(0,uVar18);
+      pMVar21 = (MethodInfo *)0x0;
+      provider = pCVar19;
+      pSVar22 = (String *)func_?(&StringLiteral_Unexpected_token_when_writing_BS);
       unaff_ESI = (BsonToken__Class *)
                   Json::Utilities::StringUtils::StringUtils_FormatWith
-                            (pSVar24,(IFormatProvider *)pCVar1,args,pMVar23);
-      uVar20 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
-      unaff_EDI = (Byte__Array__Class *)func_?(uVar20);
+                            (pSVar22,(IFormatProvider *)provider,args,pMVar21);
+      uVar18 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+      unaff_EDI = (Byte__Array__Class *)func_?(uVar18);
       func_?(unaff_EDI);
-      pMVar23 = (MethodInfo *)0x0;
-      pBVar3 = unaff_ESI;
-      pSVar24 = (String *)func_?(&StringLiteral_t);
+      pMVar21 = (MethodInfo *)0x0;
+      pBVar9 = unaff_ESI;
+      pSVar22 = (String *)func_?(&StringLiteral_t);
       mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
-                ((ArgumentOutOfRangeException *)unaff_EDI,pSVar24,(String *)pBVar3,pMVar23);
+                ((ArgumentOutOfRangeException *)unaff_EDI,pSVar22,(String *)pBVar9,pMVar21);
       func_?();
-      bVar6 = (undefined1 *)0xffffffeb < &stack0xffffffb4;
-      pBVar3 = (BsonToken__Class *)func_?();
-      pSVar13 = extraout_ECX;
-      t = (BsonToken *)pCVar21;
+      pBVar9 = (BsonToken__Class *)func_?();
+      pSVar11 = extraout_ECX;
+      t = (BsonToken *)pCVar19;
 code_?:
-      func_?(pBVar3,pSVar13);
-      pBVar9 = extraout_EDX;
+      func_?(pBVar9,pSVar11);
+      pBVar8 = extraout_EDX;
       break;
     case 0x10:
       *unaff_FS_OFFSET = _Stack_10;
       return 4;
     }
-    func_?(t,pBVar9);
-    pCVar1 = (CultureInfo *)t;
+    func_?(t,pBVar8);
   }
 code_?:
-  uVar20 = func_?();
-  uVar20 = func_?(uVar20);
-  func_?(uVar20);
-  t = (BsonToken *)pCVar1;
-  pBVar8 = unaff_EDI;
+  uVar18 = func_?();
+  uVar18 = func_?(uVar18);
+  func_?(uVar18);
+  pBVar7 = unaff_EDI;
 code_?:
-  uVar25 = func_?(unaff_ESI,pBVar8);
-  pbVar26 = (byte *)((ulonglong)uVar25 >> 0x20);
-  pbVar27 = (byte *)uVar25;
-  pbVar28 = (byte *)(extraout_ECX_00 + 0x43104b52);
-  bVar29 = (byte)((ulonglong)uVar25 >> 0x20);
-  bVar30 = CARRY1(*pbVar28,bVar29) || CARRY1(*pbVar28 + bVar29,bVar6);
-  *pbVar28 = *pbVar28 + bVar29 + bVar6;
-  bVar31 = (char)t - 2;
-  pbVar28 = pbVar26 + -0x58efb4ac;
-  bVar6 = *pbVar28 + bVar31;
-  bVar32 = CARRY1(*pbVar28,bVar31) || CARRY1(bVar6,bVar30);
-  *pbVar28 = bVar6 + bVar30;
-  bVar31 = (byte)((uint)&(((CultureInfo *)((int)t + -0x74))->fields).field_0x69 >> 8);
-  bVar6 = *(char *)&(unaff_ESI->_0).image + bVar31;
-  bVar30 = CARRY1(*(byte *)&(unaff_ESI->_0).image,bVar31) || CARRY1(bVar6,bVar32);
-  *(byte *)&(unaff_ESI->_0).image = bVar6 + bVar32;
-  _Stack_10.typeHandle = (Il2CppMetadataTypeHandle)unaff_ESI;
-  bVar32 = CARRY1(*pbVar26,bVar29) || CARRY1(*pbVar26 + bVar29,bVar30);
-  *pbVar26 = *pbVar26 + bVar29 + bVar30;
-  pBStack_2 = unaff_ESI;
-  bVar31 = (byte)((uint)extraout_ECX_00 >> 8);
-  bVar6 = *pbVar27 + bVar31;
-  bVar30 = CARRY1(*pbVar27,bVar31) || CARRY1(bVar6,bVar32);
-  *pbVar27 = bVar6 + bVar32;
-  uStack_22 = unaff_ESI;
-  bVar31 = (byte)extraout_ECX_00;
-  bVar32 = CARRY1(bVar31,bVar31) || CARRY1(bVar31 * '\x02',bVar30);
-  pBStack_4 = unaff_ESI;
-  bVar33 = (byte)((uint)((int)&(((CultureInfo *)((int)t + -0x74))->fields).m_cultureData + 1) >> 8);
-  bVar6 = *(char *)&(unaff_ESI->_0).image + bVar33;
-  bVar34 = CARRY1(*(byte *)&(unaff_ESI->_0).image,bVar33) || CARRY1(bVar6,bVar32);
-  *(byte *)&(unaff_ESI->_0).image = bVar6 + bVar32;
-  pbVar28 = (byte *)(CONCAT31((int3)((uint)extraout_ECX_00 >> 8),bVar31 * '\x02' + bVar30) + 0x56);
-  bVar30 = CARRY1(*pbVar28,bVar29) || CARRY1(*pbVar28 + bVar29,bVar34);
-  *pbVar28 = *pbVar28 + bVar29 + bVar34;
-  puVar16 = (undefined1 *)
-            ((int)&(((CultureInfo *)((int)t + -0x74))->fields).cached_serialized_form + 3);
-  bVar31 = (byte)puVar16;
-  bVar29 = (byte)((uint)puVar16 >> 8);
-  bVar6 = bVar29 + bVar31;
-  bVar32 = CARRY1(bVar29,bVar31) || CARRY1(bVar6,bVar30);
-  iVar12 = CONCAT22((short)((uint)puVar16 >> 0x10),CONCAT11(bVar6 + bVar30,bVar31)) + -1;
-  bVar31 = (byte)iVar12;
-  bVar29 = (byte)((uint)iVar12 >> 8);
-  bVar6 = bVar29 + bVar31;
-  bVar30 = CARRY1(bVar29,bVar31) || CARRY1(bVar6,bVar32);
-  iVar12 = CONCAT22((short)((uint)iVar12 >> 0x10),CONCAT11(bVar6 + bVar32,bVar31)) + -1;
-  bVar31 = (byte)iVar12;
-  bVar29 = (byte)((uint)iVar12 >> 8);
-  bVar6 = bVar29 + bVar31;
-  bVar32 = CARRY1(bVar29,bVar31) || CARRY1(bVar6,bVar30);
-  iVar12 = CONCAT22((short)((uint)iVar12 >> 0x10),CONCAT11(bVar6 + bVar30,bVar31)) + -1;
-  bVar31 = (byte)iVar12;
-  bVar29 = (byte)((uint)iVar12 >> 8);
-  bVar6 = bVar29 + bVar31;
-  pcVar35 = (char *)(CONCAT22((short)((uint)iVar12 >> 0x10),CONCAT11(bVar6 + bVar32,bVar31)) +
-                   -0x20efb4ab);
-  *pcVar35 = *pcVar35 + (char)((ulonglong)uVar25 >> 0x28) +
-            (CARRY1(bVar29,bVar31) || CARRY1(bVar6,bVar32));
-  pcVar36 = (code *)swi(3);
-  pBStack_5 = unaff_ESI;
-  iVar17 = (*pcVar36)();
-  return iVar17;
+  func_?(unaff_ESI,pBVar7);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -489,9 +411,1226 @@ code_?:
   return;
 }
 
-/* decompilation failed: Low-level Error: Trying to construct memory range beyond end of address space: ram */
 
-/* decompilation failed: Low-level Error: Trying to construct memory range beyond end of address space: ram */
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
+/* Void WriteToken(BsonToken) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonBinaryWriter::BsonBinaryWriter_WriteToken
+               (BsonBinaryWriter *this,BsonToken *t,MethodInfo *method)
+
+{
+  pCVar1 = (CultureInfo *)&stack0xfffffff0;
+  BsonBinaryWriter_CalculateSize_1(this,t,(MethodInfo *)0x0);
+  uVar2 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0xfffffffc;
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonValue);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__DateTimeOffset);
+    func_?(&TypeInfo__System__DateTime);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonToken>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonProperty>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  pCStack_3 = (CultureInfo__Class *)0x0;
+  aDStack_4[0]._dateData = 0;
+  bVar5 = 0;
+  if (in_stack_6 == (CultureInfo *)0x0) goto code_?;
+  uVar7 = (*(in_stack_6->klass->vtable).Clone.methodPtr)();
+  switch(uVar7) {
+  case 1:
+    bVar5 = (in_stack_6->klass->_1).typeHierarchyDepth <
+             (TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth;
+    if ((!(bool)bVar5) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pOVar9 = (Object *)(in_stack_6->fields).parent_lcid;
+      pBVar10 = (in_stack_11->fields)._writer;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      in_stack_6 =
+           mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                     ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Convert::Convert_ToDouble
+                (pOVar9,(IFormatProvider *)in_stack_6,(MethodInfo *)0x0);
+      bVar5 = 0;
+      if (pBVar10 != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = uVar2;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 2:
+    bVar5 = 1;
+    if (((in_stack_6->klass->_1).typeHierarchyDepth <
+         (TypeInfo__Newtonsoft__Json__Bson__BsonString->_1).typeHierarchyDepth) ||
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonString->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonString,
+       pIVar8 != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonString)) break;
+    pSStack_12 = (String *)(in_stack_6->fields).parent_lcid;
+    pBStack_13 = (Byte__Array__Class *)(in_stack_6->fields).number_index;
+    NStack_14.hasValue = 0;
+    NStack_14._1_3_ = 0;
+    NStack_14.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_14,(in_stack_6->fields).cultureID - 4,
+               MethodInfo__System__Nullable<int>__Nullable_int_);
+    pSVar15 = (String *)0x0;
+    if (pSStack_12 == (String *)0x0) {
+code_?:
+      BsonBinaryWriter_WriteString
+                (in_stack_11,pSVar15,(int32_t)pBStack_13,(Nullable_1_Int32_)NStack_14,
+                 (MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uVar2;
+      return;
+    }
+    if (pSStack_12->klass == TypeInfo__System__String) {
+      pSVar15 = pSStack_12;
+    }
+    bVar5 = 0;
+    if (pSVar15 != (String *)0x0) goto code_?;
+    goto code_?;
+  case 3:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonObject,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonObject)) {
+      bVar5 = 0;
+      if ((in_stack_11->fields)._writer != (BinaryWriter *)0x0) {
+        func_?(0x12);
+        pCVar16 = (CultureInfo__Class *)
+                  BsonObject::BsonObject_GetEnumerator
+                            ((BsonObject *)in_stack_6,(MethodInfo *)0x0);
+        NStack_14 = (Nullable_1_UInt32_)(ZEXT48(&stack0xfffffff0) << 0x20);
+        while (bVar5 = 0, in_stack_6 = (CultureInfo *)&stack0xfffffff0,
+              pCVar16 != (CultureInfo__Class *)0x0) {
+          cVar17 = func_?();
+          if (cVar17 == '\0') goto code_?;
+          bVar5 = 0;
+          in_stack_6 = (CultureInfo *)&stack0xfffffff0;
+          if (pCVar16 == (CultureInfo__Class *)0x0) break;
+          iVar18 = func_?();
+          pBStack_13 = (Byte__Array__Class *)(in_stack_11->fields)._writer;
+          bVar5 = 0;
+          in_stack_6 = (CultureInfo *)&stack0xfffffff0;
+          if (iVar18 == 0) break;
+          bVar5 = 0;
+          in_stack_6 = (CultureInfo *)&stack0xfffffff0;
+          if (*(int **)(iVar18 + 0xc) == (int *)0x0) break;
+          uVar7 = (**(code **)(**(int **)(iVar18 + 0xc) + 0xdc))();
+          pSStack_12 = (String *)CONCAT31(pSStack_12._1_3_,uVar7);
+          bVar5 = 0;
+          in_stack_6 = (CultureInfo *)&stack0xfffffff0;
+          if (pBStack_13 == (Byte__Array__Class *)0x0) break;
+          (*(code *)(pBStack_13->_0).image[6].nameNoExt)();
+          bVar5 = 0;
+          in_stack_6 = (CultureInfo *)&stack0xfffffff0;
+          if (*(int *)(iVar18 + 8) == 0) break;
+          pSVar15 = *(String **)(*(int *)(iVar18 + 8) + 0x10);
+          pBStack_13 = *(Byte__Array__Class **)(*(int *)(iVar18 + 8) + 0x18);
+          pSVar19 = (String *)0x0;
+          if (pSVar15 != (String *)0x0) {
+            if (pSVar15->klass == TypeInfo__System__String) {
+              pSVar19 = pSVar15;
+            }
+            bVar5 = 0;
+            in_stack_6 = (CultureInfo *)&stack0xfffffff0;
+            if (pSVar19 == (String *)0x0) goto code_?;
+          }
+          BsonBinaryWriter_WriteString
+                    (in_stack_11,pSVar19,(int32_t)pBStack_13,(Nullable_1_Int32_)0x0,
+                     (MethodInfo *)0x0);
+          BsonBinaryWriter_WriteTokenInternal
+                    (in_stack_11,*(BsonToken **)(iVar18 + 0xc),(MethodInfo *)0x0);
+        }
+      }
+      goto code_?;
+    }
+    break;
+  case 4:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonArray,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonArray)) {
+      bVar5 = 0;
+      if ((in_stack_11->fields)._writer != (BinaryWriter *)0x0) {
+        func_?(0x12);
+        i.m_value = 0;
+        pCStack_3 = (CultureInfo__Class *)
+                     BsonArray::BsonArray_GetEnumerator
+                               ((BsonArray *)in_stack_6,(MethodInfo *)0x0);
+        pCVar1 = (CultureInfo *)&pCStack_3;
+        NStack_14 = (Nullable_1_UInt32_)(ZEXT48(pCVar1) << 0x20);
+        while (bVar5 = 0, in_stack_6 = pCVar1, pCStack_3 != (CultureInfo__Class *)0x0) {
+          cVar17 = func_?();
+          if (cVar17 == '\0') goto code_?;
+          bVar5 = 0;
+          if (pCStack_3 == (CultureInfo__Class *)0x0) break;
+          pSStack_12 = (String *)func_?();
+          pBVar10 = (in_stack_11->fields)._writer;
+          bVar5 = 0;
+          if (pSStack_12 == (String *)0x0) break;
+          uVar7 = (*(pSStack_12->klass->vtable).CompareTo.methodPtr)();
+          pBStack_13 = (Byte__Array__Class *)CONCAT31(pBStack_13._1_3_,uVar7);
+          bVar5 = 0;
+          if (pBVar10 == (BinaryWriter *)0x0) break;
+          (*(pBVar10->klass->vtable).Write_2.methodPtr)();
+          if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__System__Globalization__CultureInfo);
+          }
+          provider = mscorlib.dll::System::Globalization::CultureInfo::
+                     CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+          pSVar15 = mscorlib.dll::System::Int32::Int32_ToString_2
+                              ((Int32 *)&stack0xfffffff4,(IFormatProvider *)provider,
+                               (MethodInfo *)0x0);
+          byteCount = Json::Utilities::MathUtils::MathUtils_IntLength(i.m_value,(MethodInfo *)0x0);
+          BsonBinaryWriter_WriteString
+                    (in_stack_11,pSVar15,byteCount,(Nullable_1_Int32_)0x0,(MethodInfo *)0x0);
+          BsonBinaryWriter_WriteTokenInternal
+                    (in_stack_11,(BsonToken *)pSStack_12,(MethodInfo *)0x0);
+          i.m_value = i.m_value + 1;
+        }
+      }
+      goto code_?;
+    }
+    break;
+  case 5:
+    bVar5 = 1;
+    if (((in_stack_6->klass->_1).typeHierarchyDepth <
+         (TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth) ||
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar8 != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) break;
+    in_stack_6 = (CultureInfo *)(in_stack_6->fields).parent_lcid;
+    pBStack_13 = TypeInfo__System__Byte;
+    bVar5 = 0;
+    if (in_stack_6 == (CultureInfo *)0x0) goto code_?;
+    iVar18 = func_?();
+    bVar5 = 0;
+    if (iVar18 != 0) {
+      bVar5 = 0;
+      if ((in_stack_11->fields)._writer != (BinaryWriter *)0x0) {
+        func_?();
+        bVar5 = 0;
+        if ((in_stack_11->fields)._writer != (BinaryWriter *)0x0) {
+          func_?();
+          pBVar10 = (in_stack_11->fields)._writer;
+          goto joined_?;
+        }
+      }
+      goto code_?;
+    }
+    goto code_?;
+  case 6:
+  case 10:
+    goto code_?;
+  case 7:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      in_stack_6 = (CultureInfo *)(in_stack_6->fields).parent_lcid;
+      if (in_stack_6 != (CultureInfo *)0x0) {
+        iVar18 = func_?();
+        bVar5 = 0;
+        if (iVar18 == 0) goto code_?;
+      }
+      pBVar10 = (in_stack_11->fields)._writer;
+joined_?:
+      bVar5 = 0;
+      if (pBVar10 != (BinaryWriter *)0x0) {
+        func_?();
+code_?:
+        *unaff_FS_OFFSET = uVar2;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 8:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pBVar10 = (in_stack_11->fields)._writer;
+      piVar20 = (int *)(in_stack_6->fields).parent_lcid;
+      bVar5 = 0;
+      if ((pBVar10 != (BinaryWriter *)0x0) && (bVar5 = 0, piVar20 != (int *)0x0)) {
+        pIVar21 = *(Il2CppClass **)(*piVar20 + 0x20);
+        pIVar8 = (TypeInfo__System__Boolean->_0).element_class;
+        bVar5 = pIVar21 < pIVar8;
+        if (pIVar21 == pIVar8) {
+          func_?();
+          func_?(8,pBVar10);
+          *unaff_FS_OFFSET = uVar2;
+          return;
+        }
+        goto code_?;
+      }
+      goto code_?;
+    }
+    break;
+  case 9:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      piVar20 = (int *)(in_stack_6->fields).parent_lcid;
+      bVar5 = 0;
+      if (piVar20 == (int *)0x0) goto code_?;
+      piVar22 = (int *)0x0;
+      if ((DateTime__Class *)*piVar20 == TypeInfo__System__DateTime) {
+        piVar22 = piVar20;
+      }
+      if (piVar22 == (int *)0x0) {
+        pIVar8 = (TypeInfo__System__DateTimeOffset->_0).element_class;
+        bVar5 = *(Il2CppClass **)(*piVar20 + 0x20) < pIVar8;
+        if (*(Il2CppClass **)(*piVar20 + 0x20) != pIVar8) goto code_?;
+        func_?();
+        DVar23 = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_get_UtcDateTime
+                           ((DateTimeOffset *)&stack0xffffffb4,(MethodInfo *)0x0);
+        pSStack_12 = (String *)(DVar23._dateData >> 0x20);
+        pCVar1 = (CultureInfo *)DVar23._dateData;
+        offset = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_get_Offset
+                           ((DateTimeOffset *)&stack0xffffffb4,(MethodInfo *)0x0);
+        pBStack_13 = (Byte__Array__Class *)((ulonglong)offset._ticks >> 0x20);
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
+          offset._ticks = CONCAT44(pBStack_13,(int)offset._ticks);
+        }
+        pBStack_13 = (Byte__Array__Class *)((ulonglong)offset._ticks >> 0x20);
+        dateTime._dateData._4_4_ = pSStack_12;
+        dateTime._dateData._0_4_ = pCVar1;
+        JsonConvert::JsonConvert_ConvertDateTimeToJavaScriptTicks(dateTime,offset,(MethodInfo *)0x0)
+        ;
+      }
+      else {
+        bVar5 = 0;
+        if (piVar20 == (int *)0x0) goto code_?;
+        pIVar8 = (TypeInfo__System__DateTime->_0).element_class;
+        bVar5 = *(Il2CppClass **)(*piVar20 + 0x20) < pIVar8;
+        if (*(Il2CppClass **)(*piVar20 + 0x20) != pIVar8) goto code_?;
+        puVar24 = (uint64_t *)func_?();
+        pCVar1 = *(CultureInfo **)puVar24;
+        in_stack_6 = *(CultureInfo **)((int)puVar24 + 4);
+        aDStack_4[0]._dateData = *puVar24;
+        if ((in_stack_11->fields)._DateTimeKindHandling_k__BackingField == 1) {
+          aDStack_4[0] =
+               mscorlib.dll::System::DateTime::DateTime_ToUniversalTime
+                         (aDStack_4,(MethodInfo *)0x0);
+          in_stack_6 = (CultureInfo *)(aDStack_4[0]._dateData >> 0x20);
+code_?:
+          pCVar1 = (CultureInfo *)aDStack_4[0]._dateData;
+        }
+        else if ((in_stack_11->fields)._DateTimeKindHandling_k__BackingField == 2) {
+          aDStack_4[0] =
+               mscorlib.dll::System::DateTime::DateTime_ToLocalTime(aDStack_4,(MethodInfo *)0x0);
+          in_stack_6 = (CultureInfo *)(aDStack_4[0]._dateData >> 0x20);
+          goto code_?;
+        }
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        DVar23._dateData._4_4_ = (uint)in_stack_6;
+        DVar23._dateData._0_4_ = pCVar1;
+        JsonConvert::JsonConvert_ConvertDateTimeToJavaScriptTicks_2(DVar23,0,(MethodInfo *)0x0);
+      }
+      bVar5 = 0;
+      in_stack_6 = pCVar1;
+      if ((in_stack_11->fields)._writer != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = uVar2;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 0xb:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonRegex,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonRegex)) {
+      iVar18 = (in_stack_6->fields).parent_lcid;
+      bVar5 = 0;
+      if (iVar18 != 0) {
+        pSVar15 = *(String **)(iVar18 + 0x10);
+        pSVar19 = (String *)0x0;
+        if (pSVar15 != (String *)0x0) {
+          if (pSVar15->klass == TypeInfo__System__String) {
+            pSVar19 = pSVar15;
+          }
+          bVar5 = 0;
+          if (pSVar19 == (String *)0x0) goto code_?;
+        }
+        BsonBinaryWriter_WriteString
+                  (in_stack_11,pSVar19,
+                   *(int32_t *)((in_stack_6->fields).parent_lcid + 0x18),
+                   (Nullable_1_Int32_)0x0,(MethodInfo *)0x0);
+        iVar18 = (in_stack_6->fields).datetime_index;
+        bVar5 = 0;
+        if (iVar18 != 0) {
+          pSVar15 = *(String **)(iVar18 + 0x10);
+          in_stack_6 = *(CultureInfo **)((in_stack_6->fields).datetime_index + 0x18);
+          pSVar19 = (String *)0x0;
+          if (pSVar15 == (String *)0x0) {
+code_?:
+            BsonBinaryWriter_WriteString
+                      (in_stack_11,pSVar19,(int32_t)in_stack_6,(Nullable_1_Int32_)0x0,
+                       (MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uVar2;
+            return;
+          }
+          if (pSVar15->klass == TypeInfo__System__String) {
+            pSVar19 = pSVar15;
+          }
+          bVar5 = 0;
+          if (pSVar19 != (String *)0x0) goto code_?;
+          goto code_?;
+        }
+      }
+      goto code_?;
+    }
+    break;
+  default:
+    func_?();
+    func_?();
+    pBStack_13 = (Byte__Array__Class *)
+                 mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                           ((MethodInfo *)0x0);
+    func_?();
+    args = (Object__Array *)func_?();
+    func_?();
+    func_?(4,in_stack_6);
+    func_?();
+    uVar2 = func_?();
+    func_?();
+    func_?(args,uVar2);
+    func_?();
+    pMVar25 = (MethodInfo *)0x0;
+    provider_00 = pBStack_13;
+    pSVar15 = (String *)func_?(&StringLiteral_Unexpected_token_when_writing_BS);
+    in_stack_6 =
+         (CultureInfo *)
+         Json::Utilities::StringUtils::StringUtils_FormatWith
+                   (pSVar15,(IFormatProvider *)provider_00,args,pMVar25);
+    uVar2 = func_?();
+    this_00 = (ArgumentOutOfRangeException *)func_?(uVar2);
+    func_?(this_00);
+    pMVar25 = (MethodInfo *)0x0;
+    pCVar1 = in_stack_6;
+    pSVar15 = (String *)func_?();
+    mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+              (this_00,pSVar15,(String *)pCVar1,pMVar25);
+    func_?();
+    bVar5 = (undefined1 *)0xffffffeb < &stack0xffffffa4;
+    func_?();
+    break;
+  case 0x10:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pOVar9 = (Object *)(in_stack_6->fields).parent_lcid;
+      pBVar10 = (in_stack_11->fields)._writer;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      in_stack_6 =
+           mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                     ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Convert::Convert_ToInt32_1
+                (pOVar9,(IFormatProvider *)in_stack_6,(MethodInfo *)0x0);
+      bVar5 = 0;
+      if (pBVar10 != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = uVar2;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 0x12:
+    bVar5 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (in_stack_6->klass->_1).typeHierarchyDepth) &&
+       (pIVar8 = (in_stack_6->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar5 = pIVar8 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar8 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pOVar9 = (Object *)(in_stack_6->fields).parent_lcid;
+      pBVar10 = (in_stack_11->fields)._writer;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      in_stack_6 =
+           mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                     ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Convert::Convert_ToInt64
+                (pOVar9,(IFormatProvider *)in_stack_6,(MethodInfo *)0x0);
+      bVar5 = 0;
+      if (pBVar10 != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = uVar2;
+        return;
+      }
+      goto code_?;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  goto code_?;
+code_?:
+  if (pCVar1->klass != (CultureInfo__Class *)0x0) {
+    func_?();
+  }
+  pBVar10 = (in_stack_11->fields)._writer;
+  bVar5 = 0;
+  in_stack_6 = pCVar1;
+  if (pBVar10 != (BinaryWriter *)0x0) {
+    (*(pBVar10->klass->vtable).Write_1.methodPtr)();
+    *unaff_FS_OFFSET = uVar2;
+    return;
+  }
+code_?:
+  func_?();
+  func_?();
+  func_?();
+code_?:
+  func_?();
+code_?:
+  pCVar1 = in_stack_6;
+  uVar26 = func_?();
+  bVar27 = (byte)uVar26;
+  bVar28 = (byte)((uint6)uVar26 >> 0x28);
+  bVar29 = (byte)((uint6)uVar26 >> 0x20);
+  bVar30 = (byte)((uint6)uVar26 >> 8);
+  bVar31 = CARRY1(in_stack_32,bVar30) ||
+           CARRY1(in_stack_32 + bVar30,CARRY1(bVar28,bVar27) || CARRY1(bVar28 + bVar27,bVar5)
+                 );
+  pbVar33 = (byte *)((int)uVar26 + 0x5c);
+  bVar5 = *pbVar33;
+  bVar28 = *pbVar33;
+  *pbVar33 = bVar28 + bVar29 + bVar31;
+  bVar34 = (byte)((uint)pCVar1 >> 8);
+  bVar31 = CARRY1(bVar30,bVar34) ||
+           CARRY1(bVar30 + bVar34,CARRY1(bVar5,bVar29) || CARRY1(bVar28 + bVar29,bVar31));
+  pbVar33 = (byte *)((int)&in_stack_6[-0xd5edb2].monitor + 2);
+  bVar5 = *pbVar33 + (byte)pCVar1;
+  bVar35 = CARRY1(*pbVar33,(byte)pCVar1) || CARRY1(bVar5,bVar31);
+  *pbVar33 = bVar5 + bVar31;
+  pbVar33 = (byte *)(unaff_EBX + -6);
+  bVar31 = CARRY1(*pbVar33,bVar27) || CARRY1(*pbVar33 + bVar27,bVar35);
+  *pbVar33 = *pbVar33 + bVar27 + bVar35;
+  pbVar33 = (byte *)(unaff_EBX + -0x71efb4a8);
+  bVar35 = CARRY1(*pbVar33,bVar27) || CARRY1(*pbVar33 + bVar27,bVar31);
+  *pbVar33 = *pbVar33 + bVar27 + bVar31;
+  bVar5 = (byte)((uint)(unaff_EBX + -8) >> 8);
+  bVar30 = bVar29 + bVar5;
+  bVar31 = CARRY1(bVar29,bVar5) || CARRY1(bVar30,bVar35);
+  bVar30 = bVar30 + bVar35;
+  pbVar33 = (byte *)(unaff_EBX + -9);
+  bVar5 = *pbVar33;
+  bVar28 = *pbVar33;
+  *pbVar33 = bVar28 + bVar30 + bVar31;
+  puVar36 = (ushort *)(unaff_EBX + 7);
+  sVar37 = ((ushort)pCVar1 & 3) - (*puVar36 & 3);
+  *puVar36 = *puVar36 + (ushort)(0 < sVar37) * sVar37;
+  uVar38 = (uint)(CARRY1(bVar5,bVar30) || CARRY1(bVar28 + bVar30,bVar31));
+  puVar39 = &stack0xffffff94 + *(uint *)(unaff_EBX + 0x42);
+  bVar31 = CARRY4((uint)&stack0xffffff94,*(uint *)(unaff_EBX + 0x42)) || CARRY4((uint)puVar39,uVar38)
+  ;
+  bVar5 = *pbVar33;
+  bVar28 = *pbVar33;
+  *pbVar33 = bVar28 + bVar30 + bVar31;
+  puVar36 = (ushort *)(unaff_EBX + 7);
+  sVar37 = ((ushort)pCVar1 & 3) - (*puVar36 & 3);
+  *puVar36 = *puVar36 + (ushort)(0 < sVar37) * sVar37;
+  uVar40 = (uint)(CARRY1(bVar5,bVar30) || CARRY1(bVar28 + bVar30,bVar31));
+  puVar41 = puVar39 + *(uint *)(unaff_EBX + 0x42) + uVar38;
+  bVar31 = CARRY1(bVar27,bVar30) ||
+           CARRY1(bVar27 + bVar30,
+                  CARRY4((uint)(puVar39 + uVar38),*(uint *)(unaff_EBX + 0x42)) ||
+                  CARRY4((uint)puVar41,uVar40));
+  iVar18 = *(int *)(puVar41 + uVar40 + 0x10);
+  uVar42 = *(undefined4 *)(puVar41 + uVar40 + 0x14);
+  uVar2 = *(undefined4 *)(puVar41 + uVar40 + 0x18);
+  pcVar43 = (char *)(iVar18 + -1);
+  cVar17 = *pcVar43;
+  cVar44 = *pcVar43 + (char)uVar42;
+  *pcVar43 = cVar44 + bVar31;
+  puVar36 = (ushort *)(iVar18 + 0xf);
+  sVar37 = ((ushort)uVar2 & 3) - (*puVar36 & 3);
+  *puVar36 = *puVar36 + (ushort)(0 < sVar37) * sVar37;
+  if (SCARRY1(cVar17,(char)uVar42) != SCARRY1(cVar44,bVar31)) {
+    pcVar45 = (code *)swi(3);
+    (*pcVar45)();
+    return;
+  }
+  *(undefined **)(puVar41 + uVar40 + 0x1c) = &UNK_?;
+  func_?();
+  return;
+}
+
+
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
+/* Void WriteTokenInternal(BsonToken) */
+
+void Assembly-CSharp.dll::Newtonsoft::Json::Bson::BsonBinaryWriter::
+     BsonBinaryWriter_WriteTokenInternal(BsonBinaryWriter *this,BsonToken *t,MethodInfo *method)
+
+{
+  _Stack_8.__klassIndex = -1;
+  _Stack_c.dummy = &DAT_?;
+  _Stack_10.dummy = *(void **)unaff_FS_OFFSET;
+  unaff_FS_OFFSET->dummy = &_Stack_10;
+  pcStack_1 = &stack0xffffff9c;
+  pcVar2 = &stack0xffffff9c;
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?(&TypeInfo__Newtonsoft__Json__Bson__BsonValue);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(&TypeInfo__System__DateTimeOffset);
+    func_?(&TypeInfo__System__DateTime);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonToken>
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Bson::BsonProperty>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+    pcVar2 = pcStack_1;
+  }
+  pcStack_1 = pcVar2;
+  pIStack_3 = (Il2CppImage *)0x0;
+  IStack_4.m_value = 0;
+  pIStack_5 = (Il2CppImage *)0x0;
+  aDStack_6[0]._dateData = 0;
+  bVar7 = 0;
+  if (t == (BsonToken *)0x0) goto code_?;
+  uVar8 = (*(t->klass->vtable).__unknown.methodPtr)();
+  switch(uVar8) {
+  case 1:
+    bVar7 = (t->klass->_1).typeHierarchyDepth <
+             (TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth;
+    if ((!(bool)bVar7) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pBVar10 = t[1].klass;
+      pBVar11 = (this->fields)._writer;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      t = (BsonToken *)
+          mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                    ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Convert::Convert_ToDouble
+                ((Object *)pBVar10,(IFormatProvider *)t,(MethodInfo *)0x0);
+      bVar7 = 0;
+      if (pBVar11 != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = _Stack_10;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 2:
+    bVar7 = 1;
+    if (((t->klass->_1).typeHierarchyDepth <
+         (TypeInfo__Newtonsoft__Json__Bson__BsonString->_1).typeHierarchyDepth) ||
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonString->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonString,
+       pIVar9 != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonString)) break;
+    pBStack_12 = t[1].klass;
+    pBStack_13 = (Byte__Array__Class *)t[1].fields._Parent_k__BackingField;
+    NStack_14.hasValue = 0;
+    NStack_14._1_3_ = 0;
+    NStack_14.value = 0;
+    mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+              (&NStack_14,(t->fields)._CalculatedSize_k__BackingField - 4,
+               MethodInfo__System__Nullable<int>__Nullable_int_);
+    pBVar10 = (BsonToken__Class *)0x0;
+    if (pBStack_12 == (BsonToken__Class *)0x0) {
+code_?:
+      BsonBinaryWriter_WriteString
+                (this,(String *)pBVar10,(int32_t)pBStack_13,(Nullable_1_Int32_)NStack_14,
+                 (MethodInfo *)0x0);
+      *unaff_FS_OFFSET = _Stack_10;
+      return;
+    }
+    if ((String__Class *)(pBStack_12->_0).image == TypeInfo__System__String) {
+      pBVar10 = pBStack_12;
+    }
+    bVar7 = 0;
+    if (pBVar10 != (BsonToken__Class *)0x0) goto code_?;
+    goto code_?;
+  case 3:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonObject->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonObject,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonObject)) {
+      bVar7 = 0;
+      if ((this->fields)._writer != (BinaryWriter *)0x0) {
+        func_?(0x12);
+        pIStack_3 = (Il2CppImage *)
+                     BsonObject::BsonObject_GetEnumerator((BsonObject *)t,(MethodInfo *)0x0);
+        t = (BsonToken *)&pIStack_3;
+        NStack_14 = (Nullable_1_UInt32_)(ZEXT48(t) << 0x20);
+        _Stack_8.__klassIndex = 1;
+        while (bVar7 = 0, pIStack_3 != (Il2CppImage *)0x0) {
+          cVar15 = func_?();
+          if (cVar15 == '\0') goto code_?;
+          bVar7 = 0;
+          if (pIStack_3 == (Il2CppImage *)0x0) break;
+          iVar16 = func_?();
+          pBStack_13 = (Byte__Array__Class *)(this->fields)._writer;
+          bVar7 = 0;
+          if (iVar16 == 0) break;
+          bVar7 = 0;
+          if (*(int **)(iVar16 + 0xc) == (int *)0x0) break;
+          uVar8 = (**(code **)(**(int **)(iVar16 + 0xc) + 0xdc))();
+          pBStack_12 = (BsonToken__Class *)CONCAT31(pBStack_12._1_3_,uVar8);
+          bVar7 = 0;
+          if (pBStack_13 == (Byte__Array__Class *)0x0) break;
+          (*(code *)(pBStack_13->_0).image[6].nameNoExt)();
+          bVar7 = 0;
+          if (*(int *)(iVar16 + 8) == 0) break;
+          pSVar17 = *(String **)(*(int *)(iVar16 + 8) + 0x10);
+          pBStack_13 = *(Byte__Array__Class **)(*(int *)(iVar16 + 8) + 0x18);
+          pSVar18 = (String *)0x0;
+          if (pSVar17 != (String *)0x0) {
+            if (pSVar17->klass == TypeInfo__System__String) {
+              pSVar18 = pSVar17;
+            }
+            bVar7 = 0;
+            if (pSVar18 == (String *)0x0) goto code_?;
+          }
+          BsonBinaryWriter_WriteString
+                    (this,pSVar18,(int32_t)pBStack_13,(Nullable_1_Int32_)0x0,(MethodInfo *)0x0);
+          BsonBinaryWriter_WriteTokenInternal(this,*(BsonToken **)(iVar16 + 0xc),(MethodInfo *)0x0);
+        }
+      }
+      goto code_?;
+    }
+    break;
+  case 4:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonArray->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonArray,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonArray)) {
+      bVar7 = 0;
+      if ((this->fields)._writer != (BinaryWriter *)0x0) {
+        func_?(0x12);
+        IStack_4.m_value = 0;
+        pIStack_5 = (Il2CppImage *)
+                     BsonArray::BsonArray_GetEnumerator((BsonArray *)t,(MethodInfo *)0x0);
+        t = (BsonToken *)&pIStack_5;
+        NStack_14 = (Nullable_1_UInt32_)(ZEXT48(t) << 0x20);
+        _Stack_8.__klassIndex = 4;
+        while (bVar7 = 0, pIStack_5 != (Il2CppImage *)0x0) {
+          cVar15 = func_?();
+          if (cVar15 == '\0') goto code_?;
+          bVar7 = 0;
+          if (pIStack_5 == (Il2CppImage *)0x0) break;
+          pBStack_12 = (BsonToken__Class *)func_?();
+          pBVar11 = (this->fields)._writer;
+          bVar7 = 0;
+          if (pBStack_12 == (BsonToken__Class *)0x0) break;
+          uVar8 = (*(((String__Class *)(pBStack_12->_0).image)->vtable).CompareTo.methodPtr)();
+          pBStack_13 = (Byte__Array__Class *)CONCAT31(pBStack_13._1_3_,uVar8);
+          bVar7 = 0;
+          if (pBVar11 == (BinaryWriter *)0x0) break;
+          (*(pBVar11->klass->vtable).Write_2.methodPtr)();
+          if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__System__Globalization__CultureInfo);
+          }
+          provider = mscorlib.dll::System::Globalization::CultureInfo::
+                     CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+          pSVar17 = mscorlib.dll::System::Int32::Int32_ToString_2
+                              (&IStack_4,(IFormatProvider *)provider,(MethodInfo *)0x0);
+          byteCount = Json::Utilities::MathUtils::MathUtils_IntLength
+                                (IStack_4.m_value,(MethodInfo *)0x0);
+          BsonBinaryWriter_WriteString
+                    (this,pSVar17,byteCount,(Nullable_1_Int32_)0x0,(MethodInfo *)0x0);
+          BsonBinaryWriter_WriteTokenInternal(this,(BsonToken *)pBStack_12,(MethodInfo *)0x0);
+          IStack_4.m_value = IStack_4.m_value + 1;
+        }
+      }
+      goto code_?;
+    }
+    break;
+  case 5:
+    bVar7 = 1;
+    if (((t->klass->_1).typeHierarchyDepth <
+         (TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth) ||
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar9 != (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) break;
+    t = (BsonToken *)t[1].klass;
+    pBStack_13 = TypeInfo__System__Byte;
+    bVar7 = 0;
+    if ((BsonToken__Class *)t == (BsonToken__Class *)0x0) goto code_?;
+    iVar16 = func_?();
+    bVar7 = 0;
+    if (iVar16 != 0) {
+      bVar7 = 0;
+      if ((this->fields)._writer != (BinaryWriter *)0x0) {
+        func_?();
+        bVar7 = 0;
+        if ((this->fields)._writer != (BinaryWriter *)0x0) {
+          func_?();
+          pBVar11 = (this->fields)._writer;
+          goto joined_?;
+        }
+      }
+      goto code_?;
+    }
+    goto code_?;
+  case 6:
+  case 10:
+    goto code_?;
+  case 7:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      t = (BsonToken *)t[1].klass;
+      if ((BsonToken__Class *)t != (BsonToken__Class *)0x0) {
+        iVar16 = func_?();
+        bVar7 = 0;
+        if (iVar16 == 0) goto code_?;
+      }
+      pBVar11 = (this->fields)._writer;
+joined_?:
+      bVar7 = 0;
+      if (pBVar11 != (BinaryWriter *)0x0) {
+        func_?();
+code_?:
+        *unaff_FS_OFFSET = _Stack_10;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 8:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pBVar11 = (this->fields)._writer;
+      bVar7 = 0;
+      if ((pBVar11 != (BinaryWriter *)0x0) && (bVar7 = 0, t[1].klass != (BsonToken__Class *)0x0)) {
+        pIVar19 = (Il2CppClass *)(((t[1].klass)->_0).image)->codeGenModule;
+        pIVar9 = (TypeInfo__System__Boolean->_0).element_class;
+        bVar7 = pIVar19 < pIVar9;
+        if (pIVar19 == pIVar9) {
+          func_?();
+          func_?(8,pBVar11);
+          *unaff_FS_OFFSET = _Stack_10;
+          return;
+        }
+        goto code_?;
+      }
+      goto code_?;
+    }
+    break;
+  case 9:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pBVar10 = t[1].klass;
+      bVar7 = 0;
+      if (pBVar10 == (BsonToken__Class *)0x0) goto code_?;
+      pBVar20 = (BsonToken__Class *)0x0;
+      if ((DateTime__Class *)(pBVar10->_0).image == TypeInfo__System__DateTime) {
+        pBVar20 = pBVar10;
+      }
+      if (pBVar20 == (BsonToken__Class *)0x0) {
+        pIVar19 = (Il2CppClass *)((pBVar10->_0).image)->codeGenModule;
+        pIVar9 = (TypeInfo__System__DateTimeOffset->_0).element_class;
+        bVar7 = pIVar19 < pIVar9;
+        if (pIVar19 != pIVar9) goto code_?;
+        func_?();
+        DVar21 = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_get_UtcDateTime
+                           ((DateTimeOffset *)&stack0xffffffa8,(MethodInfo *)0x0);
+        pBStack_12 = (BsonToken__Class *)(DVar21._dateData >> 0x20);
+        pBVar10 = (BsonToken__Class *)DVar21._dateData;
+        offset = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_get_Offset
+                           ((DateTimeOffset *)&stack0xffffffa8,(MethodInfo *)0x0);
+        pBStack_13 = (Byte__Array__Class *)((ulonglong)offset._ticks >> 0x20);
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
+          offset._ticks = CONCAT44(pBStack_13,(int)offset._ticks);
+        }
+        pBStack_13 = (Byte__Array__Class *)((ulonglong)offset._ticks >> 0x20);
+        dateTime._dateData._4_4_ = pBStack_12;
+        dateTime._dateData._0_4_ = pBVar10;
+        JsonConvert::JsonConvert_ConvertDateTimeToJavaScriptTicks(dateTime,offset,(MethodInfo *)0x0)
+        ;
+      }
+      else {
+        bVar7 = 0;
+        if (pBVar10 == (BsonToken__Class *)0x0) goto code_?;
+        pIVar19 = (Il2CppClass *)((pBVar10->_0).image)->codeGenModule;
+        pIVar9 = (TypeInfo__System__DateTime->_0).element_class;
+        bVar7 = pIVar19 < pIVar9;
+        if (pIVar19 != pIVar9) goto code_?;
+        puVar22 = (uint64_t *)func_?();
+        pBVar10 = *(BsonToken__Class **)puVar22;
+        t = *(BsonToken **)((int)puVar22 + 4);
+        aDStack_6[0]._dateData = *puVar22;
+        if ((this->fields)._DateTimeKindHandling_k__BackingField == 1) {
+          aDStack_6[0] =
+               mscorlib.dll::System::DateTime::DateTime_ToUniversalTime
+                         (aDStack_6,(MethodInfo *)0x0);
+          t = (BsonToken *)(aDStack_6[0]._dateData >> 0x20);
+code_?:
+          pBVar10 = (BsonToken__Class *)aDStack_6[0]._dateData;
+        }
+        else if ((this->fields)._DateTimeKindHandling_k__BackingField == 2) {
+          aDStack_6[0] =
+               mscorlib.dll::System::DateTime::DateTime_ToLocalTime(aDStack_6,(MethodInfo *)0x0);
+          t = (BsonToken *)(aDStack_6[0]._dateData >> 0x20);
+          goto code_?;
+        }
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        DVar21._dateData._4_4_ = t;
+        DVar21._dateData._0_4_ = pBVar10;
+        JsonConvert::JsonConvert_ConvertDateTimeToJavaScriptTicks_2(DVar21,0,(MethodInfo *)0x0);
+      }
+      bVar7 = 0;
+      t = (BsonToken *)pBVar10;
+      if ((this->fields)._writer != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = _Stack_10;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 0xb:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonRegex->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonRegex,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonRegex)) {
+      bVar7 = 0;
+      if (t[1].klass != (BsonToken__Class *)0x0) {
+        pIVar23 = ((t[1].klass)->_0).byval_arg.data.array;
+        s = (Il2CppArrayType *)0x0;
+        if (pIVar23 != (Il2CppArrayType *)0x0) {
+          if ((String__Class *)pIVar23->etype == TypeInfo__System__String) {
+            s = pIVar23;
+          }
+          bVar7 = 0;
+          if (s == (Il2CppArrayType *)0x0) goto code_?;
+        }
+        BsonBinaryWriter_WriteString
+                  (this,(String *)s,((t[1].klass)->_0).this_arg.data.__klassIndex,
+                   (Nullable_1_Int32_)0x0,(MethodInfo *)0x0);
+        bVar7 = 0;
+        if (t[1].monitor != (MonitorData *)0x0) {
+          pSVar17 = *(String **)(t[1].monitor + 0x10);
+          t = *(BsonToken **)(t[1].monitor + 0x18);
+          pSVar18 = (String *)0x0;
+          if (pSVar17 == (String *)0x0) {
+code_?:
+            BsonBinaryWriter_WriteString
+                      (this,pSVar18,(int32_t)t,(Nullable_1_Int32_)0x0,(MethodInfo *)0x0);
+            *unaff_FS_OFFSET = _Stack_10;
+            return;
+          }
+          if (pSVar17->klass == TypeInfo__System__String) {
+            pSVar18 = pSVar17;
+          }
+          bVar7 = 0;
+          if (pSVar18 != (String *)0x0) goto code_?;
+          goto code_?;
+        }
+      }
+      goto code_?;
+    }
+    break;
+  default:
+    func_?();
+    func_?();
+    pBStack_13 = (Byte__Array__Class *)
+                 mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                           ((MethodInfo *)0x0);
+    func_?();
+    args = (Object__Array *)func_?();
+    func_?();
+    func_?(4,t);
+    func_?();
+    uVar24 = func_?();
+    func_?();
+    func_?(args,uVar24);
+    func_?();
+    pMVar25 = (MethodInfo *)0x0;
+    provider_00 = pBStack_13;
+    pSVar17 = (String *)func_?(&StringLiteral_Unexpected_token_when_writing_BS);
+    t = (BsonToken *)
+        Json::Utilities::StringUtils::StringUtils_FormatWith
+                  (pSVar17,(IFormatProvider *)provider_00,args,pMVar25);
+    uVar24 = func_?();
+    this_00 = (ArgumentOutOfRangeException *)func_?(uVar24);
+    func_?(this_00);
+    pMVar25 = (MethodInfo *)0x0;
+    pBVar10 = (BsonToken__Class *)t;
+    pSVar17 = (String *)func_?();
+    mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+              (this_00,pSVar17,(String *)pBVar10,pMVar25);
+    func_?();
+    bVar7 = (undefined1 *)0xffffffeb < &stack0xffffff98;
+    func_?();
+    break;
+  case 0x10:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pBVar10 = t[1].klass;
+      pBVar11 = (this->fields)._writer;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      t = (BsonToken *)
+          mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                    ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Convert::Convert_ToInt32_1
+                ((Object *)pBVar10,(IFormatProvider *)t,(MethodInfo *)0x0);
+      bVar7 = 0;
+      if (pBVar11 != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = _Stack_10;
+        return;
+      }
+      goto code_?;
+    }
+    break;
+  case 0x12:
+    bVar7 = 1;
+    if (((TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth <=
+         (t->klass->_1).typeHierarchyDepth) &&
+       (pIVar9 = (t->klass->_1).typeHierarchy
+                 [(TypeInfo__Newtonsoft__Json__Bson__BsonValue->_1).typeHierarchyDepth - 1],
+       bVar7 = pIVar9 < TypeInfo__Newtonsoft__Json__Bson__BsonValue,
+       pIVar9 == (Il2CppClass *)TypeInfo__Newtonsoft__Json__Bson__BsonValue)) {
+      pBVar10 = t[1].klass;
+      pBVar11 = (this->fields)._writer;
+      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      t = (BsonToken *)
+          mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                    ((MethodInfo *)0x0);
+      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      mscorlib.dll::System::Convert::Convert_ToInt64
+                ((Object *)pBVar10,(IFormatProvider *)t,(MethodInfo *)0x0);
+      bVar7 = 0;
+      if (pBVar11 != (BinaryWriter *)0x0) {
+        func_?();
+        *unaff_FS_OFFSET = _Stack_10;
+        return;
+      }
+      goto code_?;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  goto code_?;
+code_?:
+  _Stack_8.__klassIndex = -1;
+  if ((CultureInfo__Class *)(((BsonToken__Class *)t)->_0).image != (CultureInfo__Class *)0x0) {
+    func_?();
+  }
+  _Stack_8.__klassIndex = -1;
+  pBVar11 = (this->fields)._writer;
+  bVar7 = 0;
+  if (pBVar11 != (BinaryWriter *)0x0) {
+    (*(pBVar11->klass->vtable).Write_1.methodPtr)();
+    *unaff_FS_OFFSET = _Stack_10;
+    return;
+  }
+code_?:
+  func_?();
+  func_?();
+  func_?();
+code_?:
+  func_?();
+code_?:
+  pBVar10 = (BsonToken__Class *)t;
+  uVar26 = func_?();
+  bVar27 = (byte)uVar26;
+  bVar28 = (byte)((uint6)uVar26 >> 0x28);
+  bVar29 = (byte)((uint6)uVar26 >> 0x20);
+  bVar30 = (byte)((uint6)uVar26 >> 8);
+  bVar31 = CARRY1(in_stack_32,bVar30) ||
+           CARRY1(in_stack_32 + bVar30,CARRY1(bVar28,bVar27) || CARRY1(bVar28 + bVar27,bVar7)
+                 );
+  pbVar33 = (byte *)((int)uVar26 + 0x5c);
+  bVar7 = *pbVar33;
+  bVar28 = *pbVar33;
+  *pbVar33 = bVar28 + bVar29 + bVar31;
+  bVar34 = (byte)((uint)pBVar10 >> 8);
+  bVar31 = CARRY1(bVar30,bVar34) ||
+           CARRY1(bVar30 + bVar34,CARRY1(bVar7,bVar29) || CARRY1(bVar28 + bVar29,bVar31));
+  puVar35 = (undefined1 *)((int)&((BsonToken__Class *)((int)t + -0x60efb500))->static_fields + 2);
+  bVar7 = *puVar35 + (byte)pBVar10;
+  bVar36 = CARRY1(*puVar35,(byte)pBVar10) || CARRY1(bVar7,bVar31);
+  *puVar35 = bVar7 + bVar31;
+  pbVar33 = (byte *)(unaff_EBX + -6);
+  bVar31 = CARRY1(*pbVar33,bVar27) || CARRY1(*pbVar33 + bVar27,bVar36);
+  *pbVar33 = *pbVar33 + bVar27 + bVar36;
+  pbVar33 = (byte *)(unaff_EBX + -0x71efb4a8);
+  bVar36 = CARRY1(*pbVar33,bVar27) || CARRY1(*pbVar33 + bVar27,bVar31);
+  *pbVar33 = *pbVar33 + bVar27 + bVar31;
+  bVar7 = (byte)((uint)(unaff_EBX + -8) >> 8);
+  bVar30 = bVar29 + bVar7;
+  bVar31 = CARRY1(bVar29,bVar7) || CARRY1(bVar30,bVar36);
+  bVar30 = bVar30 + bVar36;
+  pbVar33 = (byte *)(unaff_EBX + -9);
+  bVar7 = *pbVar33;
+  bVar28 = *pbVar33;
+  *pbVar33 = bVar28 + bVar30 + bVar31;
+  puVar37 = (ushort *)(unaff_EBX + 7);
+  sVar38 = ((ushort)pBVar10 & 3) - (*puVar37 & 3);
+  *puVar37 = *puVar37 + (ushort)(0 < sVar38) * sVar38;
+  uVar39 = (uint)(CARRY1(bVar7,bVar30) || CARRY1(bVar28 + bVar30,bVar31));
+  puVar35 = &stack0xffffff88 + *(uint *)(unaff_EBX + 0x42);
+  bVar31 = CARRY4((uint)&stack0xffffff88,*(uint *)(unaff_EBX + 0x42)) || CARRY4((uint)puVar35,uVar39);
+  bVar7 = *pbVar33;
+  bVar28 = *pbVar33;
+  *pbVar33 = bVar28 + bVar30 + bVar31;
+  puVar37 = (ushort *)(unaff_EBX + 7);
+  sVar38 = ((ushort)pBVar10 & 3) - (*puVar37 & 3);
+  *puVar37 = *puVar37 + (ushort)(0 < sVar38) * sVar38;
+  uVar40 = (uint)(CARRY1(bVar7,bVar30) || CARRY1(bVar28 + bVar30,bVar31));
+  puVar41 = puVar35 + *(uint *)(unaff_EBX + 0x42) + uVar39;
+  bVar31 = CARRY1(bVar27,bVar30) ||
+           CARRY1(bVar27 + bVar30,
+                  CARRY4((uint)(puVar35 + uVar39),*(uint *)(unaff_EBX + 0x42)) ||
+                  CARRY4((uint)puVar41,uVar40));
+  iVar16 = *(int *)(puVar41 + uVar40 + 0x10);
+  uVar42 = *(undefined4 *)(puVar41 + uVar40 + 0x14);
+  uVar24 = *(undefined4 *)(puVar41 + uVar40 + 0x18);
+  pcVar2 = (char *)(iVar16 + -1);
+  cVar15 = *pcVar2;
+  cVar43 = *pcVar2 + (char)uVar42;
+  *pcVar2 = cVar43 + bVar31;
+  puVar37 = (ushort *)(iVar16 + 0xf);
+  sVar38 = ((ushort)uVar24 & 3) - (*puVar37 & 3);
+  *puVar37 = *puVar37 + (ushort)(0 < sVar38) * sVar38;
+  if (SCARRY1(cVar15,(char)uVar42) != SCARRY1(cVar43,bVar31)) {
+    pcVar44 = (code *)swi(3);
+    (*pcVar44)();
+    return;
+  }
+  *(undefined **)(puVar41 + uVar40 + 0x1c) = &UNK_?;
+  func_?();
+  return;
+}
 
 
 /* BsonBinaryWriter() */

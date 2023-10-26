@@ -120,30 +120,29 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonReader::JsonReader_IsStartToken
   case JsonToken__Enum_PropertyName:
     return 1;
   default:
-    func_?();
-    actualValue = (Object *)func_?();
-    message = (String *)func_?();
-    paramName = (String *)func_?();
-    Json::Utilities::MiscellaneousUtils::MiscellaneousUtils_CreateArgumentOutOfRangeException
-              (paramName,actualValue,message,(MethodInfo *)0x0);
-    func_?();
-    cVar1 = (undefined1 *)0xffffffdb < &stack0xffffffe0;
-    pcVar2 = (char *)func_?();
-    piVar3 = (int *)CONCAT31((int3)((uint)extraout_ECX >> 8),0xfa);
-    *(char *)(unaff_EBX + 0x1046fa) =
-         *(char *)(unaff_EBX + 0x1046fa) + (char)((uint)extraout_ECX >> 8) + cVar1;
-    *piVar3 = (int)(pcVar2 + *piVar3);
-    *piVar3 = (int)(pcVar2 + *piVar3);
-    cVar1 = (char)pcVar2;
-    *pcVar2 = *pcVar2 + cVar1;
-    *pcVar2 = *pcVar2 + cVar1;
-    *pcVar2 = *pcVar2 + cVar1;
-    *pcVar2 = *pcVar2 + cVar1;
-    *pcVar2 = *pcVar2 + cVar1;
-    *pcVar2 = *pcVar2 + cVar1;
-    pcVar4 = (code *)swi(3);
-    bVar5 = (*pcVar4)();
-    return bVar5;
+    uVar1 = func_?(&TypeInfo__Newtonsoft__Json__JsonToken,&token);
+    actualValue = (Object *)func_?(uVar1);
+    message = (String *)func_?(&StringLiteral_Unexpected_JsonToken_value_);
+    paramName = (String *)func_?(&StringLiteral_token);
+    pAVar2 = Json::Utilities::MiscellaneousUtils::
+             MiscellaneousUtils_CreateArgumentOutOfRangeException
+                       (paramName,actualValue,message,(MethodInfo *)0x0);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__JsonReader__IsStartToken_Newtonsoft__Json__JsonToken_
+                   );
+    iVar3 = func_?(pAVar2);
+    piVar4 = (int *)((int)&actualValue->klass + iVar3);
+    *piVar4 = (int)(*piVar4 + (int)piVar4);
+    cVar5 = (char)piVar4;
+    *(char *)piVar4 = (char)*piVar4 + cVar5;
+    *(char *)piVar4 = (char)*piVar4 + cVar5;
+    *(char *)piVar4 = (char)*piVar4 + cVar5;
+    *(char *)piVar4 = (char)*piVar4 + cVar5;
+    *(char *)piVar4 = (char)*piVar4 + cVar5;
+    *(char *)piVar4 = (char)*piVar4 + cVar5;
+    pcVar6 = (code *)swi(3);
+    bVar7 = (*pcVar6)();
+    return bVar7;
   }
 }
 
@@ -255,56 +254,56 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonReader::JsonReader_SetStateBased
                (JsonReader *this,MethodInfo *method)
 
 {
-  switch((this->fields)._currentTypeContext) {
-  case 0:
+  puVar1 = (undefined4 *)&stack0xfffffffc;
+  pJVar2 = (JsonReader *)(this->fields)._currentTypeContext;
+  switch(pJVar2) {
+  case (JsonReader *)0x0:
     (this->fields)._currentState = 0xc;
     return;
-  case 1:
+  case (JsonReader *)0x1:
     (this->fields)._currentState = 4;
     return;
-  case 2:
+  case (JsonReader *)0x2:
     (this->fields)._currentState = 6;
     return;
-  case 3:
+  case (JsonReader *)0x3:
     (this->fields)._currentState = 10;
     return;
   default:
-    func_?();
-    func_?();
-    pCVar1 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                       ((MethodInfo *)0x0);
-    func_?();
-    args = (Object__Array *)func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    uVar3 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(uVar3);
+    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+    uVar3 = func_?(&TypeInfo__System__Object,1);
+    args = (Object__Array *)func_?(uVar3);
+    this = pJVar2;
+    uVar3 = func_?(&TypeInfo__Newtonsoft__Json__Linq__JTokenType,&this);
+    uVar3 = func_?(uVar3);
+    func_?(args);
+    func_?(args,uVar3);
+    func_?(0,uVar3);
     method_00 = (MethodInfo *)0x0;
-    provider = pCVar1;
-    pSVar2 = (String *)func_?();
-    pSVar2 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                       (pSVar2,(IFormatProvider *)provider,args,method_00);
+    pSVar4 = (String *)func_?(&StringLiteral_While_setting_the_reader_state_b);
+    pSVar4 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                       (pSVar4,(IFormatProvider *)provider,args,method_00);
+    uVar3 = func_?(&TypeInfo__Newtonsoft__Json__JsonReaderException);
+    this_00 = (JsonReaderException *)func_?(uVar3);
+    func_?(this_00);
+    JsonReaderException::JsonReaderException__ctor_1(this_00,pSVar4,(MethodInfo *)0x0);
+    this = (JsonReader *)
+           func_?(&MethodInfo__Newtonsoft__Json__JsonReader__SetStateBasedOnCurrent__);
     func_?();
-    this_00 = (JsonReaderException *)func_?();
-    func_?();
-    JsonReaderException::JsonReaderException__ctor_1(this_00,pSVar2,(MethodInfo *)0x0);
-    func_?();
-    bVar3 = (undefined1 *)0xffffffd3 < &stack0xffffffdc;
-    bVar4 = (int)&method < 0;
-    bVar5 = func_?();
+    puVar5 = (undefined4 *)&stack0xfffffffc;
+    cVar6 = '\x0f';
   }
   do {
-  } while (bVar4);
-  pbVar6 = &stack0xfc901046 + (int)this_00 * 8;
-  bVar7 = *pbVar6;
-  bVar8 = *pbVar6;
-  *pbVar6 = bVar8 + bVar5 + bVar3;
-  (&stack0xcccc1046)[(int)this_00 * 8] =
-       (&stack0xcccc1046)[(int)this_00 * 8] + (char)pCVar1 +
-       (CARRY1(bVar7,bVar5) || CARRY1(bVar8 + bVar5,bVar3));
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+    puVar1 = puVar1 + -1;
+    puVar5 = puVar5 + -1;
+    *puVar5 = *puVar1;
+    cVar6 = cVar6 + -1;
+  } while ('\0' < cVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -562,9 +561,9 @@ int32_t Assembly-CSharp.dll::Newtonsoft::Json::JsonReader::JsonReader_get_Depth
   token = (*(this->klass->vtable).get_TokenType.methodPtr)
                     (this,(this->klass->vtable).get_TokenType.method);
   bVar2 = JsonReader_IsStartToken(token,(MethodInfo *)0x0);
-  iVar3 = iVar1 + -2;
-  if (bVar2 == 0) {
-    iVar3 = iVar1 + -1;
+  iVar3 = iVar1 + -1;
+  if (bVar2 != 0) {
+    iVar3 = iVar1 + -2;
   }
   return iVar3;
 }

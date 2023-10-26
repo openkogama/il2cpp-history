@@ -1549,7 +1549,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleC
 
 {
   if (cRam_? == '\0') {
-    func_?(0xbf58);
+    func_?(0x60b4);
     func_?(&TypeInfo__ICubeModelCollider);
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
@@ -1878,7 +1878,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ScanEli
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__Add_MV__WorldObject__IntVector_
                    );
-    func_?(0x7c80);
+    func_?(0x5f30);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__ToArray__
                    );

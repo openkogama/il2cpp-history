@@ -182,47 +182,39 @@ code_?:
                   ((ParameterOverride_1_System_Object_ *)this.typeHandle,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        pOVar21 = ((Object *)this_00)->klass;
         _Stack_18.dummy = this.dummy;
-        if (((((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).typeHierarchyDepth <= (pOVar21->_1).typeHierarchyDepth) &&
-             ((Dictionary_2_System_Object_System_Object___Class *)
-              (pOVar21->_1).typeHierarchy
-              [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).typeHierarchyDepth - 1] ==
-              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-            && ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).typeHierarchyDepth <= (pOVar21->_1).typeHierarchyDepth)) &&
+        if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).typeHierarchyDepth <= (((Object *)this_00)->klass->_1).typeHierarchyDepth) &&
            ((Dictionary_2_System_Object_System_Object___Class *)
-            (pOVar21->_1).typeHierarchy
+            (((Object *)this_00)->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).typeHierarchyDepth - 1] ==
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          puVar22 = (undefined4 *)func_?(&pIStack_23);
-          DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)*puVar22;
-          DStack_6._version = puVar22[1];
-          DStack_6._index = puVar22[2];
-          DStack_6._current.key = (Object *)puVar22[3];
-          DStack_6._16_8_ = *(Il2CppType *)(puVar22 + 4);
+          puVar21 = (undefined4 *)func_?(&pIStack_22);
+          DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)*puVar21;
+          DStack_6._version = puVar21[1];
+          DStack_6._index = puVar21[2];
+          DStack_6._current.key = (Object *)puVar21[3];
+          DStack_6._16_8_ = *(Il2CppType *)(puVar21 + 4);
           auStack_12._8_8_ = auStack_12._8_8_ & 0xffffffff;
           ppMStack_1 = (MethodInfo **)0x1;
           pOVar7 = value;
           _Stack_20.dummy = &DStack_6;
           do {
-            bVar24 = mscorlib.dll::System::Collections::Generic::
+            bVar23 = mscorlib.dll::System::Collections::Generic::
                      Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                      Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
                                (&DStack_6,
                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                                );
             this_00 = (Exception *)DStack_6._current.key;
-            if (bVar24 == 0) {
+            if (bVar23 == 0) {
               ppMStack_1 = (MethodInfo **)0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
                         ((Object *)&DStack_6,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                         ,in_stack_25);
+                         ,in_stack_24);
               *unaff_FS_OFFSET = pEStack_3;
               return pOVar7;
             }
@@ -231,22 +223,22 @@ code_?:
                 cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pSVar26 = (String *)0x0;
+            pSVar25 = (String *)0x0;
             if (this_00 != (Exception *)0x0) {
               if ((String__Class *)((Object *)this_00)->klass == TypeInfo__System__String) {
-                pSVar26 = (String *)this_00;
+                pSVar25 = (String *)this_00;
               }
               pSVar8 = TypeInfo__System__String;
-              if (pSVar26 == (String *)0x0) goto code_?;
+              if (pSVar25 == (String *)0x0) goto code_?;
             }
-            pOVar27 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                      ObscuredString::ObscuredString_op_Implicit(pSVar26,(MethodInfo *)0x0);
+            pOVar26 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                      ObscuredString::ObscuredString_op_Implicit(pSVar25,(MethodInfo *)0x0);
             value_00 = ObscuredTypesConverter_CreateObscuredValue
                                  ((Object *)_Stack_1c.typeHandle,(MethodInfo *)0x0);
             pOVar7 = value;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__set_Item
-                      ((Dictionary_2_System_Object_System_Object_ *)value,(Object *)pOVar27,value_00
+                      ((Dictionary_2_System_Object_System_Object_ *)value,(Object *)pOVar26,value_00
                        ,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                       );
@@ -259,26 +251,26 @@ code_?:
       message = TypeInfo__System__Boolean;
       if (iVar15 != 0) {
         if (this_00 == (Exception *)0x0) goto code_?;
-        pSVar26 = (String *)func_?(this_00,TypeInfo__System__Boolean);
-        value = (Object *)pSVar26;
-        if (pSVar26 != (String *)0x0) {
+        pSVar25 = (String *)func_?(this_00,TypeInfo__System__Boolean);
+        value = (Object *)pSVar25;
+        if (pSVar25 != (String *)0x0) {
           _Stack_1c.dummy =
                (void *)func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool,
                                        ((ParameterOverride_1_System_Object___Fields *)
-                                       &pSVar26->fields)->value);
-          pIVar28 = (Il2CppClass *)0x0;
+                                       &pSVar25->fields)->value);
+          pIVar27 = (Il2CppClass *)0x0;
           _Stack_18.array = (Il2CppArrayType *)(_Stack_1c.generic_class + 1);
           while( true ) {
-            if ((int)((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields)->value <=
-                (int)pIVar28) {
+            if ((int)((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields)->value <=
+                (int)pIVar27) {
               *unaff_FS_OFFSET = pEStack_3;
               return _Stack_1c.dummy;
             }
             if ((Il2CppClass *)
-                ((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields)->value <= pIVar28)
+                ((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields)->value <= pIVar27)
             break;
             value = (Object *)
-                    CONCAT13(*(undefined1 *)((int)&pIVar28->image + (int)&pSVar26[1].klass),
+                    CONCAT13(*(undefined1 *)((int)&pIVar27->image + (int)&pSVar25[1].klass),
                              value._0_3_);
             if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
                 cctor_finished_or_no_cctor == 0) {
@@ -288,20 +280,20 @@ code_?:
                       ObscuredBool::ObscuredBool_op_Implicit
                                 ((ObscuredBool *)(auStack_12 + 8),value._3_1_ != '\0',
                                  (MethodInfo *)0x0);
-            this_00 = (Exception *)pSVar26;
+            this_00 = (Exception *)pSVar25;
             if (_Stack_1c.dummy == (String *)0x0) goto code_?;
-            bVar24 = pOVar20->fakeValue;
-            bVar29 = pOVar20->fakeValueChanged;
-            bVar30 = pOVar20->inited;
-            uVar31 = pOVar20->field_0xb;
-            if ((_Stack_1c.generic_class)->cached_class <= pIVar28) break;
-            pIVar28 = (Il2CppClass *)((int)&pIVar28->image + 1);
+            bVar23 = pOVar20->fakeValue;
+            bVar28 = pOVar20->fakeValueChanged;
+            bVar29 = pOVar20->inited;
+            uVar30 = pOVar20->field_0xb;
+            if ((_Stack_1c.generic_class)->cached_class <= pIVar27) break;
+            pIVar27 = (Il2CppClass *)((int)&pIVar27->image + 1);
             *_Stack_18.type = *(Il2CppType *)pOVar20;
             *(ParameterOverride__Fields *)&((Il2CppArrayType *)_Stack_18.generic_class)->sizes =
-                 (ParameterOverride__Fields)bVar24;
-            *(bool *)((int)&((Il2CppArrayType *)_Stack_18.generic_class)->sizes + 1) = bVar29;
-            *(bool *)((int)&((Il2CppArrayType *)_Stack_18.generic_class)->sizes + 2) = bVar30;
-            *(undefined1 *)((int)&((Il2CppArrayType *)_Stack_18.generic_class)->sizes + 3) = uVar31;
+                 (ParameterOverride__Fields)bVar23;
+            *(bool *)((int)&((Il2CppArrayType *)_Stack_18.generic_class)->sizes + 1) = bVar28;
+            *(bool *)((int)&((Il2CppArrayType *)_Stack_18.generic_class)->sizes + 2) = bVar29;
+            *(undefined1 *)((int)&((Il2CppArrayType *)_Stack_18.generic_class)->sizes + 3) = uVar30;
             _Stack_18.dummy = &(_Stack_18.generic_class)->cached_class;
           }
           goto code_?;
@@ -332,17 +324,17 @@ code_?:
             if ((((Object *)this_00)->klass->_0).element_class ==
                 (TypeInfo__System__Int64->_0).element_class) {
               iVar15 = func_?();
-              pOVar32 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+              pOVar31 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                         ObscuredLong::ObscuredLong_op_Implicit
                                   ((ObscuredLong *)auStack_18,(ulonglong)*(uint *)(iVar15 + 4),
                                    (MethodInfo *)this_00);
-              a_Stack_3c[0] = *(_union_86 *)&pOVar32->currentCryptoKey;
-              a_Stack_3c[1] = *(_union_86 *)((int)&pOVar32->currentCryptoKey + 4);
-              pIStack_23 = *(Il2CppClass **)&pOVar32->hiddenValue;
-              auStack_12._0_4_ = *(undefined4 *)((int)&pOVar32->hiddenValue + 4);
-              auStack_12._4_4_ = *(undefined4 *)&pOVar32->fakeValue;
-              auStack_12._8_8_ = *(undefined8 *)((int)&pOVar32->fakeValue + 4);
-              _Stack_20 = *(_union_86 *)&pOVar32->field_0x1c;
+              a_Stack_3c[0] = *(_union_86 *)&pOVar31->currentCryptoKey;
+              a_Stack_3c[1] = *(_union_86 *)((int)&pOVar31->currentCryptoKey + 4);
+              pIStack_22 = *(Il2CppClass **)&pOVar31->hiddenValue;
+              auStack_12._0_4_ = *(undefined4 *)((int)&pOVar31->hiddenValue + 4);
+              auStack_12._4_4_ = *(undefined4 *)&pOVar31->fakeValue;
+              auStack_12._8_8_ = *(undefined8 *)((int)&pOVar31->fakeValue + 4);
+              _Stack_20 = *(_union_86 *)&pOVar31->field_0x1c;
               pOVar7 = (Object *)
                         func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong,
                                         a_Stack_3c);
@@ -358,10 +350,10 @@ code_?:
             pSVar8 = (String__Class *)TypeInfo__System__Byte;
             if ((((Object *)this_00)->klass->_0).element_class ==
                 (TypeInfo__System__Byte->_0).element_class) {
-              puVar33 = (uint8_t *)func_?(this_00);
+              puVar32 = (uint8_t *)func_?(this_00);
               value = (Object *)
                       Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                      ObscuredByte::ObscuredByte_op_Implicit(*puVar33,(MethodInfo *)0x0);
+                      ObscuredByte::ObscuredByte_op_Implicit(*puVar32,(MethodInfo *)0x0);
               pOVar7 = (Object *)
                         func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte,
                                         &value);
@@ -375,16 +367,16 @@ code_?:
               cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
           }
-          pSVar26 = (String *)0x0;
+          pSVar25 = (String *)0x0;
           if ((String__Class *)((Object *)this_00)->klass == TypeInfo__System__String) {
-            pSVar26 = (String *)this_00;
+            pSVar25 = (String *)this_00;
           }
           pSVar8 = TypeInfo__System__String;
-          if (pSVar26 != (String *)0x0) {
-            pOVar27 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                      ObscuredString::ObscuredString_op_Implicit(pSVar26,(MethodInfo *)0x0);
+          if (pSVar25 != (String *)0x0) {
+            pOVar26 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                      ObscuredString::ObscuredString_op_Implicit(pSVar25,(MethodInfo *)0x0);
             *unaff_FS_OFFSET = pEStack_3;
-            return (Object *)pOVar27;
+            return (Object *)pOVar26;
           }
         }
         goto code_?;
@@ -399,38 +391,38 @@ code_?:
           _Stack_1c.dummy =
                (void *)func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong,
                                        (_Stack_18.generic_class)->cached_class);
-          pIVar28 = (Il2CppClass *)0x0;
+          pIVar27 = (Il2CppClass *)0x0;
           value = (Object *)(_Stack_1c.array + 1);
           this_00 = (Exception *)(_Stack_18.generic_class + 1);
           while( true ) {
-            if ((int)(_Stack_18.generic_class)->cached_class <= (int)pIVar28) {
+            if ((int)(_Stack_18.generic_class)->cached_class <= (int)pIVar27) {
               *unaff_FS_OFFSET = pEStack_3;
               return _Stack_1c.dummy;
             }
-            if ((_Stack_18.generic_class)->cached_class <= pIVar28) break;
+            if ((_Stack_18.generic_class)->cached_class <= pIVar27) break;
             _Stack_20 = (_union_86)((String *)this_00)->klass;
-            pMStack_34 = ((String *)this_00)->monitor;
+            pMStack_33 = ((String *)this_00)->monitor;
             if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->_1).
                 cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong);
             }
-            pOVar32 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+            pOVar31 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                       ObscuredLong::ObscuredLong_op_Implicit
-                                ((ObscuredLong *)&stack0xffffff68,ZEXT48(pMStack_34),unaff_EDI);
+                                ((ObscuredLong *)&stack0xffffff68,ZEXT48(pMStack_33),unaff_EDI);
             if (_Stack_1c.dummy == (String *)0x0) goto code_?;
-            pMVar35 = *(MonitorData **)((int)&pOVar32->currentCryptoKey + 4);
-            pOVar21 = *(Object__Class **)&pOVar32->hiddenValue;
-            pMVar36 = *(MonitorData **)((int)&pOVar32->hiddenValue + 4);
-            pOVar37 = *(Object__Class **)&pOVar32->fakeValue;
-            pMVar38 = *(MonitorData **)((int)&pOVar32->fakeValue + 4);
-            pOVar39 = *(Object__Class **)&pOVar32->inited;
-            pMVar40 = *(MonitorData **)&pOVar32->field_0x1c;
-            if ((_Stack_1c.generic_class)->cached_class <= pIVar28) break;
-            pIVar28 = (Il2CppClass *)((int)&pIVar28->image + 1);
+            pMVar34 = *(MonitorData **)((int)&pOVar31->currentCryptoKey + 4);
+            pOVar35 = *(Object__Class **)&pOVar31->hiddenValue;
+            pMVar36 = *(MonitorData **)((int)&pOVar31->hiddenValue + 4);
+            pOVar37 = *(Object__Class **)&pOVar31->fakeValue;
+            pMVar38 = *(MonitorData **)((int)&pOVar31->fakeValue + 4);
+            pOVar39 = *(Object__Class **)&pOVar31->inited;
+            pMVar40 = *(MonitorData **)&pOVar31->field_0x1c;
+            if ((_Stack_1c.generic_class)->cached_class <= pIVar27) break;
+            pIVar27 = (Il2CppClass *)((int)&pIVar27->image + 1);
             this_00 = (Exception *)&((String *)this_00)->fields;
-            value->klass = *(Object__Class **)&pOVar32->currentCryptoKey;
-            value->monitor = pMVar35;
-            value[1].klass = pOVar21;
+            value->klass = *(Object__Class **)&pOVar31->currentCryptoKey;
+            value->monitor = pMVar34;
+            value[1].klass = pOVar35;
             value[1].monitor = pMVar36;
             value[2].klass = pOVar37;
             value[2].monitor = pMVar38;
@@ -445,21 +437,21 @@ code_?:
       goto code_?;
     }
     if (this_00 == (Exception *)0x0) goto code_?;
-    pSVar26 = (String *)func_?(this_00,TypeInfo__System__Single);
-    value = (Object *)pSVar26;
-    if (pSVar26 != (String *)0x0) {
+    pSVar25 = (String *)func_?(this_00,TypeInfo__System__Single);
+    value = (Object *)pSVar25;
+    if (pSVar25 != (String *)0x0) {
       _Stack_18.dummy =
            (void *)func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat,
-                                   ((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields)
+                                   ((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields)
                                    ->value);
-      pIVar28 = (Il2CppClass *)0x0;
+      pIVar27 = (Il2CppClass *)0x0;
       value = (Object *)&((String *)(_Stack_18.generic_class + 1))->fields;
-      _Stack_1c.array = (Il2CppArrayType *)(pSVar26 + 1);
+      _Stack_1c.array = (Il2CppArrayType *)(pSVar25 + 1);
       while( true ) {
-        if ((int)((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields)->value <=
-            (int)pIVar28) break;
-        if ((Il2CppClass *)((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields)->value
-            <= pIVar28) goto code_?;
+        if ((int)((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields)->value <=
+            (int)pIVar27) break;
+        if ((Il2CppClass *)((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields)->value
+            <= pIVar27) goto code_?;
         _Stack_20 = (_Stack_1c.type)->data;
         if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
             cctor_finished_or_no_cctor == 0) {
@@ -468,20 +460,20 @@ code_?:
         pOVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat
                   ::ObscuredFloat_op_Implicit
                             ((ObscuredFloat *)auStack_12,(float)_Stack_20,(MethodInfo *)0x0);
-        this_00 = (Exception *)pSVar26;
+        this_00 = (Exception *)pSVar25;
         if (_Stack_18.dummy == (String *)0x0) goto code_?;
         AVar41 = pOVar17->hiddenValue;
         pOVar37 = (Object__Class *)pOVar17->hiddenValueOld;
-        pMVar35 = (MonitorData *)pOVar17->fakeValue;
-        pOVar21 = *(Object__Class **)&pOVar17->inited;
-        if ((_Stack_18.generic_class)->cached_class <= pIVar28) goto code_?;
+        pMVar34 = (MonitorData *)pOVar17->fakeValue;
+        pOVar35 = *(Object__Class **)&pOVar17->inited;
+        if ((_Stack_18.generic_class)->cached_class <= pIVar27) goto code_?;
         value[-1].klass = (Object__Class *)pOVar17->currentCryptoKey;
         value[-1].monitor = (MonitorData *)AVar41;
         value->klass = pOVar37;
-        value->monitor = pMVar35;
-        value[1].klass = pOVar21;
+        value->monitor = pMVar34;
+        value[1].klass = pOVar35;
         func_?();
-        pIVar28 = (Il2CppClass *)((int)&pIVar28->image + 1);
+        pIVar27 = (Il2CppClass *)((int)&pIVar27->image + 1);
         _Stack_1c.dummy = &(_Stack_1c.generic_class)->context;
         value = (Object *)&value[2].monitor;
       }
@@ -492,22 +484,22 @@ code_?:
   }
   else {
     if (this_00 != (Exception *)0x0) {
-      pSVar26 = (String *)func_?(this_00,TypeInfo__System__Int32);
-      value = (Object *)pSVar26;
-      if (pSVar26 != (String *)0x0) {
+      pSVar25 = (String *)func_?(this_00,TypeInfo__System__Int32);
+      value = (Object *)pSVar25;
+      if (pSVar25 != (String *)0x0) {
         _Stack_1c.dummy =
              (void *)func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt,
-                                     ((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields
+                                     ((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields
                                      )->value);
-        pIVar28 = (Il2CppClass *)0x0;
-        value = (Object *)(pSVar26 + 1);
+        pIVar27 = (Il2CppClass *)0x0;
+        value = (Object *)(pSVar25 + 1);
         _Stack_18.dummy = _Stack_1c.dummy;
         while( true ) {
           _Stack_1c.array = (Il2CppArrayType *)(_Stack_1c.generic_class + 1);
-          if ((int)((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields)->value <=
-              (int)pIVar28) break;
-          if ((Il2CppClass *)((ParameterOverride_1_System_Object___Fields *)&pSVar26->fields)->value
-              <= pIVar28) goto code_?;
+          if ((int)((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields)->value <=
+              (int)pIVar27) break;
+          if ((Il2CppClass *)((ParameterOverride_1_System_Object___Fields *)&pSVar25->fields)->value
+              <= pIVar27) goto code_?;
           _Stack_20 = (_union_86)((String *)value)->klass;
           if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
               cctor_finished_or_no_cctor == 0) {
@@ -516,13 +508,13 @@ code_?:
           pOVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt
                     ::ObscuredInt_op_Implicit
                               ((ObscuredInt *)auStack_11,_Stack_20.__klassIndex,(MethodInfo *)0x0);
-          this_00 = (Exception *)pSVar26;
+          this_00 = (Exception *)pSVar25;
           if (_Stack_18.dummy == (String *)0x0) goto code_?;
           pIVar42 = (Il2CppGenericInst *)pOVar10->hiddenValue;
           iVar43 = pOVar10->fakeValue;
           pIVar44 = *(Il2CppClass **)&pOVar10->inited;
-          if ((_Stack_18.generic_class)->cached_class <= pIVar28) goto code_?;
-          pIVar28 = (Il2CppClass *)((int)&pIVar28->image + 1);
+          if ((_Stack_18.generic_class)->cached_class <= pIVar27) goto code_?;
+          pIVar27 = (Il2CppClass *)((int)&pIVar27->image + 1);
           value = (Object *)&value->monitor;
           (_Stack_1c.type)->data = (_union_86)pOVar10->currentCryptoKey;
           ((_Stack_1c.generic_class)->context).class_inst = pIVar42;
@@ -552,10 +544,10 @@ code_?:
       pOVar7 = (Object *)func_?(7,pTVar46);
     }
     method_00 = (MethodInfo *)0x0;
-    pSVar26 = (String *)func_?(&StringLiteral_Trying_to_write___0___of_unsuppo);
+    pSVar25 = (String *)func_?(&StringLiteral_Trying_to_write___0___of_unsuppo);
     message = (Boolean__Array__Class *)
               mscorlib.dll::System::String::String_Format_1
-                        (pSVar26,(Object *)this_00,pOVar7,method_00);
+                        (pSVar25,(Object *)this_00,pOVar7,method_00);
     func_?();
     this_00 = (Exception *)func_?();
     func_?(this_00);
@@ -973,15 +965,8 @@ code_?:
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
       pMStack_15 = pMVar13;
-      if (((((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
-             ).typeHierarchyDepth <= (((Object *)message)->klass->_1).typeHierarchyDepth) &&
-           ((Dictionary_2_System_Object_System_Object___Class *)
-            (((Object *)message)->klass->_1).typeHierarchy
-            [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
-             ).typeHierarchyDepth - 1] ==
-            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
-          ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth <= (((Object *)message)->klass->_1).typeHierarchyDepth)) &&
+      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           typeHierarchyDepth <= (((Object *)message)->klass->_1).typeHierarchyDepth) &&
          ((Dictionary_2_System_Object_System_Object___Class *)
           (((Object *)message)->klass->_1).typeHierarchy
           [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).

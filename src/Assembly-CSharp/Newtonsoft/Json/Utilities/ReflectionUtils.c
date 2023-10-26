@@ -3319,12 +3319,12 @@ code_?:
     if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Globalization__CultureInfo);
     }
-    pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                       ((MethodInfo *)0x0);
-    args = (Object__Array *)func_?(TypeInfo__System__Object,1,pCVar4);
+    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                         ((MethodInfo *)0x0);
+    args = (Object__Array *)func_?(TypeInfo__System__Object,1);
     if (args == (Object__Array *)0x0) goto code_?;
-    iVar5 = func_?(genericTypeDefinition,(args->klass->_0).element_class);
-    if (iVar5 == 0) goto code_?;
+    iVar4 = func_?(genericTypeDefinition,(args->klass->_0).element_class);
+    if (iVar4 == 0) goto code_?;
     if (args->max_length == 0) goto code_?;
     args->vector[0] = (Object *)genericTypeDefinition;
     func_?(args->vector,genericTypeDefinition);
@@ -3336,11 +3336,12 @@ code_?:
     if (format != (String *)0x0) {
       args = (Object__Array *)
              mscorlib.dll::System::String::String_Format_7
-                       ((IFormatProvider *)unaff_EBX,format,args,(MethodInfo *)0x0);
+                       ((IFormatProvider *)provider,format,args,(MethodInfo *)0x0);
       unaff_EBX = StringLiteral_genericTypeDefinition;
       if (cVar3 != '\0') {
-        pTVar6 = (Type *)(*(genericTypeDefinition->klass->vtable).MakeGenericType.methodPtr)();
-        return pTVar6;
+        pTVar5 = (Type *)(*(genericTypeDefinition->klass->vtable).MakeGenericType.methodPtr)
+                                   (genericTypeDefinition);
+        return pTVar5;
       }
       goto code_?;
     }
@@ -3357,9 +3358,9 @@ code_?:
   func_?(pAVar2);
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  pTVar6 = (Type *)(*pcVar7)();
-  return pTVar6;
+  pcVar6 = (code *)swi(3);
+  pTVar5 = (Type *)(*pcVar6)();
+  return pTVar5;
 }
 
 

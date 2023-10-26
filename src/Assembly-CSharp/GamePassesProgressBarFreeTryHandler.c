@@ -457,8 +457,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void RewardedAdCallback(RewardedAdResult) */
 
 void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
@@ -468,7 +466,9 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
     func_?(&
                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                    );
@@ -483,7 +483,7 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
   RVar1 = RewardedAdResult__Enum_RewardUnlocked;
@@ -494,190 +494,83 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
   switch(RVar1) {
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GamePassesProgressBarFreeTryHandler____c);
     }
-    pEVar3 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_1;
-    if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) goto code_?;
+    callbackFunction = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_1;
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
+    goto code_?;
     if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GamePassesProgressBarFreeTryHandler____c);
     }
-    pGVar4 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
-    pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                            );
-    bVar5 = pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0;
-    if (!bVar5) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
-                 MethodInfo__GamePassesProgressBarFreeTryHandler____c___RewardedAdCallback_b__10_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_1 = pEVar3;
-      ppEVar6 = &TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_1;
+    pGVar2 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
 code_?:
-      func_?(ppEVar6,pEVar3);
-code_?:
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                );
-      return;
+      func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
     }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pGVar2,
+               MethodInfo__GamePassesProgressBarFreeTryHandler____c___RewardedAdCallback_b__10_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_1 = callbackFunction;
+    ppEVar3 = &TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_1;
     break;
+  case RewardedAdResult__Enum_ErrorTimeout:
+    return;
   case RewardedAdResult__Enum_RewardUnlocked:
     GamePassesProgressBarFreeTryHandler_PreviewTier(this,(MethodInfo *)0x0);
-  case RewardedAdResult__Enum_ErrorTimeout:
-code_?:
     return;
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GamePassesProgressBarFreeTryHandler____c);
     }
-    pEVar3 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_0;
-    if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) goto code_?;
+    callbackFunction = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_0;
+    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
+    goto code_?;
     if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GamePassesProgressBarFreeTryHandler____c);
     }
-    pGVar4 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
-    pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                            );
-    bVar5 = true;
-    if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
-                 MethodInfo__GamePassesProgressBarFreeTryHandler____c___RewardedAdCallback_b__10_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_0 = pEVar3;
-      ppEVar6 = &TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_0;
-      goto code_?;
-    }
+    pGVar2 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                        );
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
+    goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pGVar2,
+               MethodInfo__GamePassesProgressBarFreeTryHandler____c___RewardedAdCallback_b__10_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_0 = callbackFunction;
+    ppEVar3 = &TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__10_0;
     break;
   default:
-    goto code_?;
+    return;
   }
-  bVar7 = false;
-  puVar8 = &stack0xfffffff8;
-  uVar9 = func_?();
-  pcVar10 = (char *)((ulonglong)uVar9 >> 0x20);
-  puVar11 = (undefined4 *)uVar9;
-  puVar12 = &stack0xfffffffc;
-  if (bVar7 || bVar5) {
-    if (pcVar10 < (char *)*puVar11) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      (*(code *)puVar11[-3])();
-      return;
-    }
-    bVar13 = (byte)((uint)pGVar4 >> 8);
-    *pcVar10 = *pcVar10 + (char)extraout_ECX + (*extraout_ECX < bVar13);
-    *(char *)((int)puVar11 + (int)pGVar2) =
-         *(char *)((int)puVar11 + (int)pGVar2) + (char)pGVar4 + (*extraout_ECX < bVar13);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>);
-      func_?(&
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                     );
-      puVar12 = &stack0xfffffff8;
-      goto code_?;
-    }
-  }
-  else {
+  func_?(ppEVar3,callbackFunction);
 code_?:
-    puVar8 = puVar12;
-    func_?();
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__GamePassesProgressBarFreeTryHandler__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                   );
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
-    func_?(&
-                    MethodInfo__GamePassesProgressBarFreeTryHandler____c___ShowAd_b__9_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__GamePassesProgressBarFreeTryHandler____c);
-    cRam_? = '\x01';
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  pTVar14 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
-  if (pTVar14 != (TogglePreviewState *)0x0) {
-    bVar15 = Assets::Scripts::GamePasses::TogglePreviewState::TogglePreviewState_get_CanToggle
-                      (pTVar14,(MethodInfo *)0x0);
-    if (bVar15 == 0) {
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         (*(Component **)(puVar8 + 8),(MethodInfo *)0x0);
-      if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      pEVar3 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__9_0;
-      if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-        if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
-        }
-        pGVar4 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
-        pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-        if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
-                   MethodInfo__GamePassesProgressBarFreeTryHandler____c___ShowAd_b__9_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__9_0 = pEVar3;
-        func_?();
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                );
-      return;
-    }
-    pTVar14 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
-    if (pTVar14 != (TogglePreviewState *)0x0) {
-      if ((pTVar14->fields).freeTry == 0) {
-        pIVar16 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-        this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
-        if ((this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) &&
-           (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-            UnityAction_1_System_Int32Enum___ctor
-                      (this_00,*(Object **)(puVar8 + 8),
-                       MethodInfo__GamePassesProgressBarFreeTryHandler__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                       ,(MethodInfo *)0x0), pIVar16 != (IAdManager *)0x0)) {
-          func_?();
-          return;
-        }
-      }
-      else {
-        GamePassesProgressBarFreeTryHandler_PreviewTier
-                  (*(GamePassesProgressBarFreeTryHandler **)(puVar8 + 8),(MethodInfo *)0x0);
-        pTVar14 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
-        if (pTVar14 != (TogglePreviewState *)0x0) {
-          (pTVar14->fields).freeTry = 0;
-          return;
-        }
-      }
-    }
-  }
-code_?:
-  func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+            );
   return;
 }
 

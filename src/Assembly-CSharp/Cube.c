@@ -238,102 +238,103 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
   this = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?();
   if (this == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
 code_?:
+    cVar1 = '\0';
     func_?();
 code_?:
     func_?();
-    *(char *)&unaff_EBX[-1].fields._items =
-         *(char *)&unaff_EBX[-1].fields._items + extraout_DL +
-         ((longlong)(int)((longlong)(int)&stack0xfffffffc * 0x53) !=
-         (longlong)(int)&stack0xfffffffc * 0x53);
-    pcVar1 = (code *)swi(1);
-    pLVar2 = (List_1_UnityEngine_Vector3_ *)(*pcVar1)();
-    return pLVar2;
+    uVar2 = in(extraout_DX);
+    pcVar3 = (char *)((int)&this[3].fields._items + (int)&stack0xfffffffc * 8 + 3);
+    *pcVar3 = *pcVar3 + (char)uVar2 + cVar1;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
   UnitySynchronizationContext+WorkRequest]::
   List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
             (this,8,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_)
   ;
-  unaff_EBX = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?();
-  if (unaff_EBX == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0)
+  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?();
+  if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0)
   goto code_?;
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
   UnitySynchronizationContext+WorkRequest]::
   List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-            (unaff_EBX,8,
+            (this_00,8,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-  iVar3 = 0;
+  iVar4 = 0;
   if (cubeCorners == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-  while (iVar3 < (cubeCorners->fields)._size) {
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+  while (iVar4 < (cubeCorners->fields)._size) {
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
                          (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)cubeCorners,
-                         iVar3,
+                         iVar4,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    pMVar5 = 
+    pMVar6 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    pUVar6 = (this->fields)._items;
-    pSVar7 = pUVar4->m_DelagateCallback;
-    pOVar8 = pUVar4->m_DelagateState;
-    pMVar9 = pUVar4->m_WaitHandle;
-    piVar10 = &(this->fields)._version;
-    *piVar10 = *piVar10 + 1;
-    if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) goto code_?;
-    uVar11 = (this->fields)._size;
-    if (uVar11 < pUVar6->max_length) {
-      (this->fields)._size = uVar11 + 1;
-      if (pUVar6->max_length <= uVar11) goto code_?;
-      pUVar6->vector[uVar11].m_DelagateCallback = pSVar7;
-      pUVar6->vector[uVar11].m_DelagateState = pOVar8;
-      pUVar6->vector[uVar11].m_WaitHandle = pMVar9;
-      iVar3 = iVar3 + 1;
+    pUVar7 = (this->fields)._items;
+    pSVar8 = pUVar5->m_DelagateCallback;
+    pOVar9 = pUVar5->m_DelagateState;
+    pMVar10 = pUVar5->m_WaitHandle;
+    piVar11 = &(this->fields)._version;
+    *piVar11 = *piVar11 + 1;
+    if (pUVar7 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) goto code_?;
+    uVar12 = (this->fields)._size;
+    if (uVar12 < pUVar7->max_length) {
+      (this->fields)._size = uVar12 + 1;
+      cVar1 = uVar12 < pUVar7->max_length;
+      if (!(bool)cVar1) goto code_?;
+      pUVar7->vector[uVar12].m_DelagateCallback = pSVar8;
+      pUVar7->vector[uVar12].m_DelagateState = pOVar9;
+      pUVar7->vector[uVar12].m_WaitHandle = pMVar10;
+      iVar4 = iVar4 + 1;
     }
     else {
-      (*(pMVar5->klass->rgctx_data[0xb].method)->virtualMethodPointer)();
-      iVar3 = iVar3 + 1;
+      (*(pMVar6->klass->rgctx_data[0xb].method)->virtualMethodPointer)();
+      iVar4 = iVar4 + 1;
     }
   }
-  iVar3 = 0;
-  while (iVar3 < (cubeCorners->fields)._size) {
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+  iVar4 = 0;
+  while (iVar4 < (cubeCorners->fields)._size) {
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
                          (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)cubeCorners,
-                         iVar3,
+                         iVar4,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    pMVar5 = 
+    pMVar6 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    pUVar6 = (unaff_EBX->fields)._items;
-    pSVar7 = pUVar4->m_DelagateCallback;
-    pOVar8 = pUVar4->m_DelagateState;
-    pMVar9 = pUVar4->m_WaitHandle;
-    piVar10 = &(unaff_EBX->fields)._version;
-    *piVar10 = *piVar10 + 1;
-    if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) goto code_?;
-    uVar11 = (unaff_EBX->fields)._size;
-    if (uVar11 < pUVar6->max_length) {
-      (unaff_EBX->fields)._size = uVar11 + 1;
-      if (pUVar6->max_length <= uVar11) goto code_?;
-      pUVar6->vector[uVar11].m_DelagateCallback = pSVar7;
-      pUVar6->vector[uVar11].m_DelagateState = pOVar8;
-      pUVar6->vector[uVar11].m_WaitHandle = pMVar9;
-      iVar3 = iVar3 + 1;
+    pUVar7 = (this_00->fields)._items;
+    pSVar8 = pUVar5->m_DelagateCallback;
+    pOVar9 = pUVar5->m_DelagateState;
+    pMVar10 = pUVar5->m_WaitHandle;
+    piVar11 = &(this_00->fields)._version;
+    *piVar11 = *piVar11 + 1;
+    if (pUVar7 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) goto code_?;
+    uVar12 = (this_00->fields)._size;
+    if (uVar12 < pUVar7->max_length) {
+      (this_00->fields)._size = uVar12 + 1;
+      cVar1 = uVar12 < pUVar7->max_length;
+      if (!(bool)cVar1) goto code_?;
+      pUVar7->vector[uVar12].m_DelagateCallback = pSVar8;
+      pUVar7->vector[uVar12].m_DelagateState = pOVar9;
+      pUVar7->vector[uVar12].m_WaitHandle = pMVar10;
+      iVar4 = iVar4 + 1;
     }
     else {
-      (*(pMVar5->klass->rgctx_data[0xb].method)->virtualMethodPointer)();
-      iVar3 = iVar3 + 1;
+      (*(pMVar6->klass->rgctx_data[0xb].method)->virtualMethodPointer)();
+      iVar4 = iVar4 + 1;
     }
   }
   switch(direction) {
   default:
     goto code_?;
   case Face__Enum_Bottom:
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -345,10 +346,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -360,10 +361,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -375,10 +376,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -390,10 +391,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -405,10 +406,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -420,10 +421,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -435,10 +436,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -446,13 +447,13 @@ code_?:
                          5,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    in_stack_12 =
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    puVar13 = (undefined8 *)&stack0x000000b8;
+    puVar14 = (undefined8 *)&stack0x000000b8;
     goto code_?;
   case Face__Enum_Front:
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -464,10 +465,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -479,10 +480,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -494,10 +495,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -509,10 +510,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -524,10 +525,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -539,10 +540,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -554,10 +555,10 @@ code_?:
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -565,13 +566,13 @@ code_?:
                          6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    in_stack_12 =
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    puVar13 = (undefined8 *)&stack0x000000b8;
+    puVar14 = (undefined8 *)&stack0x000000b8;
     goto code_?;
   case Face__Enum_Back:
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -582,11 +583,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,0,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -597,11 +598,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,1,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,1,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -612,11 +613,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,3,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -627,11 +628,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,2,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -642,11 +643,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,7,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,7,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -657,11 +658,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,6,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -672,11 +673,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -684,121 +685,121 @@ code_?:
                          6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    uVar14 = pUVar4->m_DelagateCallback;
-    uVar15 = pUVar4->m_DelagateState;
-    in_stack_12 =
+    uVar15 = pUVar5->m_DelagateCallback;
+    uVar16 = pUVar5->m_DelagateState;
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    in_stack_16 = pUVar4->m_WaitHandle;
-    in_stack_17 = (UnitySynchronizationContext_WorkRequest *)uVar14;
-    in_stack_18 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)uVar15;
+    in_stack_17 = pUVar5->m_WaitHandle;
+    in_stack_18 = (UnitySynchronizationContext_WorkRequest *)uVar15;
+    in_stack_19 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)uVar16;
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,5,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,5,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    in_stack_12 =
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_17 = (UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4;
-    in_stack_16 = (ManualResetEvent *)0x2;
-    in_stack_18 = unaff_EBX;
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    in_stack_18 = (UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4;
+    in_stack_17 = (ManualResetEvent *)0x2;
+    in_stack_19 = this_00;
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        (in_stack_17,unaff_EBX,2,
+                        (in_stack_18,this_00,2,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,3,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,0,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,0,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,1,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,1,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,6,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,7,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,7,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,4,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,4,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     index = 5;
     break;
   case Face__Enum_Left:
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -809,11 +810,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,0,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -824,11 +825,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,1,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,1,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -839,11 +840,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,3,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -854,11 +855,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,2,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -869,11 +870,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,7,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,7,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -884,11 +885,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,6,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -899,11 +900,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -911,121 +912,121 @@ code_?:
                          6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    uVar19 = pUVar4->m_DelagateCallback;
-    uVar20 = pUVar4->m_DelagateState;
-    in_stack_12 =
+    uVar20 = pUVar5->m_DelagateCallback;
+    uVar21 = pUVar5->m_DelagateState;
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    in_stack_16 = pUVar4->m_WaitHandle;
-    in_stack_17 = (UnitySynchronizationContext_WorkRequest *)uVar19;
-    in_stack_18 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)uVar20;
+    in_stack_17 = pUVar5->m_WaitHandle;
+    in_stack_18 = (UnitySynchronizationContext_WorkRequest *)uVar20;
+    in_stack_19 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)uVar21;
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,5,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,5,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    in_stack_12 =
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_17 = (UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4;
-    in_stack_16 = (ManualResetEvent *)0x1;
-    in_stack_18 = unaff_EBX;
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    in_stack_18 = (UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4;
+    in_stack_17 = (ManualResetEvent *)0x1;
+    in_stack_19 = this_00;
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        (in_stack_17,unaff_EBX,1,
+                        (in_stack_18,this_00,1,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,2,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,2,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,3,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,0,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,0,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,7,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,7,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,4,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,4,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,5,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,5,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     index = 6;
     break;
   case Face__Enum_Right:
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1036,11 +1037,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,0,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1051,11 +1052,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,1,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,1,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1066,11 +1067,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,3,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1081,11 +1082,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,2,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1096,11 +1097,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,7,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,7,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1111,11 +1112,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,6,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1126,11 +1127,11 @@ code_?:
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
@@ -1138,175 +1139,175 @@ code_?:
                          6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    uVar21 = pUVar4->m_DelagateCallback;
-    uVar22 = pUVar4->m_DelagateState;
-    in_stack_12 =
+    uVar22 = pUVar5->m_DelagateCallback;
+    uVar23 = pUVar5->m_DelagateState;
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    in_stack_16 = pUVar4->m_WaitHandle;
-    in_stack_17 = (UnitySynchronizationContext_WorkRequest *)uVar21;
-    in_stack_18 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)uVar22;
+    in_stack_17 = pUVar5->m_WaitHandle;
+    in_stack_18 = (UnitySynchronizationContext_WorkRequest *)uVar22;
+    in_stack_19 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)uVar23;
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)unaff_EBX,5,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,5,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    in_stack_12 =
+    in_stack_13 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_17 = (UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4;
-    in_stack_16 = (ManualResetEvent *)0x3;
-    in_stack_18 = unaff_EBX;
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    in_stack_18 = (UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4;
+    in_stack_17 = (ManualResetEvent *)0x3;
+    in_stack_19 = this_00;
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        (in_stack_17,unaff_EBX,3,
+                        (in_stack_18,this_00,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,0,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,0,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,1,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,1,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,2,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,2,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,5,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,5,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,6,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,7,
+                        ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,7,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
               ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,
-               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar4,
+               (AnimatedTextureOffset_TextureOffsetAnimationData)*pUVar5,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     index = 4;
   }
-  pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+  pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
             UnitySynchronizationContext+WorkRequest]::
             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                      ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,unaff_EBX,index,
+                      ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,this_00,index,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
-  puVar13 = (undefined8 *)&stack0x000001f8;
+  puVar14 = (undefined8 *)&stack0x000001f8;
 code_?:
-  pMVar9 = pUVar4->m_WaitHandle;
-  *puVar13 = *(undefined8 *)pUVar4;
-  *(ManualResetEvent **)(puVar13 + 1) = pMVar9;
+  pMVar10 = pUVar5->m_WaitHandle;
+  *puVar14 = *(undefined8 *)pUVar5;
+  *(ManualResetEvent **)(puVar14 + 1) = pMVar10;
   mscorlib.dll::System::Collections::Generic::
   List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
   List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-            ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,in_stack_23,
-             in_stack_24,in_stack_25);
+            ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,in_stack_24,
+             in_stack_25,in_stack_26);
   cubeCorners = (List_1_UnityEngine_Vector3_ *)this;
 code_?:
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
-    pQVar26 = Cube_GetFromTopRotation((Quaternion *)&puStack_27,direction,(MethodInfo *)0x0);
+    pQVar27 = Cube_GetFromTopRotation((Quaternion *)&puStack_28,direction,(MethodInfo *)0x0);
   }
   else {
-    pQVar26 = Cube_GetFromTopRotation((Quaternion *)&puStack_27,direction,(MethodInfo *)0x0);
+    pQVar27 = Cube_GetFromTopRotation((Quaternion *)&puStack_28,direction,(MethodInfo *)0x0);
   }
-  puStack_27 = (undefined *)pQVar26->x;
-  fVar28 = pQVar26->y;
-  puVar29 = (undefined *)pQVar26->z;
-  __return_storage_ptr__ = (Vector3 *)pQVar26->w;
-  for (iVar3 = 0;
-      iVar3 < (((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)cubeCorners)->fields
-               )._size; iVar3 = iVar3 + 1) {
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+  puStack_28 = (undefined *)pQVar27->x;
+  fVar29 = pQVar27->y;
+  puVar30 = (undefined *)pQVar27->z;
+  __return_storage_ptr__ = (Vector3 *)pQVar27->w;
+  for (iVar4 = 0;
+      iVar4 < (((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)cubeCorners)->fields
+               )._size; iVar4 = iVar4 + 1) {
+    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
               UnitySynchronizationContext+WorkRequest]::
               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
                         ((UnitySynchronizationContext_WorkRequest *)&stack0xffffffe4,
                          (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)cubeCorners,
-                         iVar3,
+                         iVar4,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    rotation.y = fVar28;
-    rotation.x = (float)puStack_27;
-    rotation.z = (float)puVar29;
+    rotation.y = fVar29;
+    rotation.x = (float)puStack_28;
+    rotation.z = (float)puVar30;
     rotation.w = (float)__return_storage_ptr__;
-    pVVar30 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffffd8,rotation,(Vector3)*pUVar4,(MethodInfo *)0x0);
+    pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                        ((Vector3 *)&stack0xffffffd8,rotation,(Vector3)*pUVar5,(MethodInfo *)0x0);
     __return_storage_ptr__ = (Vector3 *)&stack0xffffffcc;
-    puVar29 = &UNK_?;
-    pAVar31 = (AnimatedTextureOffset_TextureOffsetAnimationData *)
+    puVar30 = &UNK_?;
+    pAVar32 = (AnimatedTextureOffset_TextureOffsetAnimationData *)
               MathFunctions::MathFunctions_RoundVector
-                        (__return_storage_ptr__,*pVVar30,3,(MethodInfo *)0x0);
+                        (__return_storage_ptr__,*pVVar31,3,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::
     List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
     List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
-              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)cubeCorners,iVar3,
-               *pAVar31,
+              ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)cubeCorners,iVar4,
+               *pAVar32,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
   }
@@ -1430,7 +1431,7 @@ void Assembly-CSharp.dll::Cube::Cube_GetAverageLightValue
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__TryGetValue_MV__WorldObject__IntVector__Cell__
                    );
     func_?(&TypeInfo__MV__WorldObject__IntVector);
-    func_?(0xb1a4);
+    func_?(0x93fc);
     cRam_? = '\x01';
   }
   CStack_1.cube = (Cube *)0x0;
@@ -1844,6 +1845,8 @@ IntVector Assembly-CSharp.dll::Cube::Cube_GetCubePosAboveFace
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Vector3[] GetEdge(Cube, Face, Edge) */
 
 Vector3__Array *
@@ -1852,95 +1855,137 @@ Assembly-CSharp.dll::Cube::Cube_GetEdge
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Cube);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  if (cube != (Cube *)0x0) {
-    pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
+  uVar1 = cube == (Cube *)0x0;
+  if (!(bool)uVar1) {
+    pVVar2 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
                        ((CubeBase *)cube,(MethodInfo *)0x0);
     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Cube);
+      func_?();
     }
-    pVVar1 = Cube_GetFace_1(pVVar1,face,(MethodInfo *)0x0);
-    pVVar2 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,2);
+    pVVar2 = Cube_GetFace_1(pVVar2,face,(MethodInfo *)0x0);
+    pVVar3 = (Vector3__Array *)func_?();
     switch(edge) {
     case Edge__Enum_Front:
-      if (pVVar1 != (Vector3__Array *)0x0) {
-        if (pVVar1->max_length == 0) goto code_?;
-        if (pVVar2 != (Vector3__Array *)0x0) {
-          fVar3 = pVVar1->vector[0].y;
-          fVar4 = pVVar1->vector[0].z;
-          if (pVVar2->max_length == 0) goto code_?;
-          pVVar2->vector[0].x = pVVar1->vector[0].x;
-          pVVar2->vector[0].y = fVar3;
-          pVVar2->vector[0].z = fVar4;
-          if (pVVar1->max_length < 2) goto code_?;
-          uVar5._0_4_ = pVVar1->vector[1].x;
-          uVar5._4_4_ = pVVar1->vector[1].y;
-          fVar4 = pVVar1->vector[1].z;
+      uVar1 = pVVar2 == (Vector3__Array *)0x0;
+      if (!(bool)uVar1) {
+        bVar4 = 0;
+        uVar1 = 1;
+        if (pVVar2->max_length == 0) goto code_?;
+        uVar1 = pVVar3 == (Vector3__Array *)0x0;
+        if (!(bool)uVar1) {
+          bVar4 = 0;
+          fVar5 = pVVar2->vector[0].y;
+          fVar6 = pVVar2->vector[0].z;
+          uVar1 = 1;
+          if (pVVar3->max_length == 0) goto code_?;
+          pVVar3->vector[0].x = pVVar2->vector[0].x;
+          pVVar3->vector[0].y = fVar5;
+          pVVar3->vector[0].z = fVar6;
+          uVar7 = pVVar2->max_length;
+          bVar4 = uVar7 == 0;
+          uVar1 = uVar7 == 1;
+          if (uVar7 < 2) goto code_?;
+          uVar8._0_4_ = pVVar2->vector[1].x;
+          uVar8._4_4_ = pVVar2->vector[1].y;
+          fVar6 = pVVar2->vector[1].z;
 code_?:
-          if (1 < pVVar2->max_length) {
-            pVVar2->vector[1].x = (float)(int)uVar5;
-            pVVar2->vector[1].y = (float)(int)((ulonglong)uVar5 >> 0x20);
-            pVVar2->vector[1].z = fVar4;
+          uVar7 = pVVar3->max_length;
+          bVar4 = uVar7 == 0;
+          uVar1 = uVar7 == 1;
+          if (1 < uVar7) {
+            pVVar3->vector[1].x = (float)(int)uVar8;
+            pVVar3->vector[1].y = (float)(int)((ulonglong)uVar8 >> 0x20);
+            pVVar3->vector[1].z = fVar6;
 code_?:
-            return pVVar2;
+            return pVVar3;
           }
           goto code_?;
         }
       }
       break;
     case Edge__Enum_Back:
-      if (pVVar1 != (Vector3__Array *)0x0) {
-        if (pVVar1->max_length < 3) goto code_?;
-        if (pVVar2 != (Vector3__Array *)0x0) {
-          fVar3 = pVVar1->vector[2].y;
-          fVar4 = pVVar1->vector[2].z;
-          if (pVVar2->max_length == 0) goto code_?;
-          pVVar2->vector[0].x = pVVar1->vector[2].x;
-          pVVar2->vector[0].y = fVar3;
-          pVVar2->vector[0].z = fVar4;
-          if (pVVar1->max_length < 4) goto code_?;
-          uVar5._0_4_ = pVVar1->vector[3].x;
-          uVar5._4_4_ = pVVar1->vector[3].y;
-          fVar4 = pVVar1->vector[3].z;
+      uVar1 = pVVar2 == (Vector3__Array *)0x0;
+      if (!(bool)uVar1) {
+        uVar7 = pVVar2->max_length;
+        bVar4 = uVar7 < 2;
+        uVar1 = uVar7 == 2;
+        if (uVar7 < 3) goto code_?;
+        uVar1 = pVVar3 == (Vector3__Array *)0x0;
+        if (!(bool)uVar1) {
+          bVar4 = 0;
+          fVar5 = pVVar2->vector[2].y;
+          fVar6 = pVVar2->vector[2].z;
+          uVar1 = 1;
+          if (pVVar3->max_length == 0) goto code_?;
+          pVVar3->vector[0].x = pVVar2->vector[2].x;
+          pVVar3->vector[0].y = fVar5;
+          pVVar3->vector[0].z = fVar6;
+          uVar7 = pVVar2->max_length;
+          bVar4 = uVar7 < 3;
+          uVar1 = uVar7 == 3;
+          if (uVar7 < 4) goto code_?;
+          uVar8._0_4_ = pVVar2->vector[3].x;
+          uVar8._4_4_ = pVVar2->vector[3].y;
+          fVar6 = pVVar2->vector[3].z;
           goto code_?;
         }
       }
       break;
     case Edge__Enum_Left:
-      if (pVVar1 != (Vector3__Array *)0x0) {
-        if (pVVar1->max_length < 4) goto code_?;
-        if (pVVar2 != (Vector3__Array *)0x0) {
-          fVar3 = pVVar1->vector[3].y;
-          fVar4 = pVVar1->vector[3].z;
+      uVar1 = pVVar2 == (Vector3__Array *)0x0;
+      if (!(bool)uVar1) {
+        uVar7 = pVVar2->max_length;
+        bVar4 = uVar7 < 3;
+        uVar1 = uVar7 == 3;
+        if (uVar7 < 4) goto code_?;
+        uVar1 = pVVar3 == (Vector3__Array *)0x0;
+        if (!(bool)uVar1) {
+          bVar4 = 0;
+          fVar5 = pVVar2->vector[3].y;
+          fVar6 = pVVar2->vector[3].z;
+          uVar1 = 1;
+          if (pVVar3->max_length == 0) goto code_?;
+          pVVar3->vector[0].x = pVVar2->vector[3].x;
+          pVVar3->vector[0].y = fVar5;
+          pVVar3->vector[0].z = fVar6;
+          bVar4 = 0;
+          uVar1 = 1;
           if (pVVar2->max_length == 0) goto code_?;
-          pVVar2->vector[0].x = pVVar1->vector[3].x;
-          pVVar2->vector[0].y = fVar3;
-          pVVar2->vector[0].z = fVar4;
-          if (pVVar1->max_length == 0) goto code_?;
-          uVar5._0_4_ = pVVar1->vector[0].x;
-          uVar5._4_4_ = pVVar1->vector[0].y;
-          fVar4 = pVVar1->vector[0].z;
+          uVar8._0_4_ = pVVar2->vector[0].x;
+          uVar8._4_4_ = pVVar2->vector[0].y;
+          fVar6 = pVVar2->vector[0].z;
           goto code_?;
         }
       }
       break;
     case Edge__Enum_Right:
-      if (pVVar1 != (Vector3__Array *)0x0) {
-        if (pVVar1->max_length < 2) goto code_?;
-        if (pVVar2 != (Vector3__Array *)0x0) {
-          fVar3 = pVVar1->vector[1].y;
-          fVar4 = pVVar1->vector[1].z;
-          if (pVVar2->max_length == 0) goto code_?;
-          pVVar2->vector[0].x = pVVar1->vector[1].x;
-          pVVar2->vector[0].y = fVar3;
-          pVVar2->vector[0].z = fVar4;
-          if (pVVar1->max_length < 3) goto code_?;
-          uVar5._0_4_ = pVVar1->vector[2].x;
-          uVar5._4_4_ = pVVar1->vector[2].y;
-          fVar4 = pVVar1->vector[2].z;
+      uVar1 = pVVar2 == (Vector3__Array *)0x0;
+      if (!(bool)uVar1) {
+        uVar7 = pVVar2->max_length;
+        bVar4 = uVar7 == 0;
+        uVar1 = uVar7 == 1;
+        if (uVar7 < 2) goto code_?;
+        uVar1 = pVVar3 == (Vector3__Array *)0x0;
+        if (!(bool)uVar1) {
+          bVar4 = 0;
+          fVar5 = pVVar2->vector[1].y;
+          fVar6 = pVVar2->vector[1].z;
+          uVar1 = 1;
+          if (pVVar3->max_length == 0) goto code_?;
+          pVVar3->vector[0].x = pVVar2->vector[1].x;
+          pVVar3->vector[0].y = fVar5;
+          pVVar3->vector[0].z = fVar6;
+          uVar7 = pVVar2->max_length;
+          bVar4 = uVar7 < 2;
+          uVar1 = uVar7 == 2;
+          if (uVar7 < 3) goto code_?;
+          uVar8._0_4_ = pVVar2->vector[2].x;
+          uVar8._4_4_ = pVVar2->vector[2].y;
+          fVar6 = pVVar2->vector[2].z;
           goto code_?;
         }
       }
@@ -1949,20 +1994,27 @@ code_?:
       goto code_?;
     }
   }
+  bVar4 = 0;
   func_?();
 code_?:
-  uVar5 = func_?();
-  uVar5._4_4_ = (uint)((ulonglong)uVar5 >> 0x20);
-  uVar6 = (uint)uVar5 & 0x80105409;
-  puVar7 = (uint *)((uVar6 - 0x3c) + uVar5._4_4_);
-  *puVar7 = *puVar7 | uVar5._4_4_;
-  puVar7 = (uint *)((uVar6 - 5) + uVar5._4_4_);
-  *puVar7 = *puVar7 | uVar5._4_4_;
-  puVar7 = (uint *)((uVar6 - 0x34) + uVar5._4_4_);
-  *puVar7 = *puVar7 | uVar5._4_4_;
-  pcVar8 = (code *)swi(3);
-  pVVar1 = (Vector3__Array *)(*pcVar8)();
-  return pVVar1;
+  func_?();
+  bVar9 = bVar4;
+  bVar10 = extraout_AL;
+  if (!(bool)uVar1) {
+    bVar9 = 0xf8 < extraout_AL || CARRY1(extraout_AL + 7,bVar4);
+    bVar10 = extraout_AL + 7 + bVar4;
+  }
+  bVar11 = CARRY1(bVar10,extraout_DL) || CARRY1(bVar10 + extraout_DL,bVar9);
+  pbVar12 = (byte *)(unaff_EDI + CONCAT31(extraout_var,bVar10 + extraout_DL + bVar9));
+  bVar4 = *pbVar12;
+  bVar9 = *pbVar12;
+  *pbVar12 = bVar9 + extraout_DL + bVar11;
+  *(char *)(unaff_EBX + 7) =
+       *(char *)(unaff_EBX + 7) + extraout_CL +
+       (CARRY1(bVar4,extraout_DL) || CARRY1(bVar9 + extraout_DL,bVar11));
+  pcVar13 = (code *)swi(3);
+  pVVar2 = (Vector3__Array *)(*pcVar13)();
+  return pVVar2;
 }
 
 
@@ -2051,7 +2103,7 @@ Assembly-CSharp.dll::Cube::Cube_GetEdge_1
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&TypeRef__Edge);
-    func_?(0xd46c);
+    func_?(0xb694);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
@@ -2798,7 +2850,7 @@ bool Assembly-CSharp.dll::Cube::Cube_GetPlaneVertices
                                 ((Vector3 *)&stack0xffffff98,value,(MethodInfo *)0x0);
             uVar19 = pVVar2->x;
             uVar20 = pVVar2->y;
-            fVar21 = fVar14 * (float)uVar20 + fVar13 * (float)uVar19 + pVVar2->z * 4.1831328e-29;
+            fVar21 = fVar14 * (float)uVar20 + fVar13 * (float)uVar19 + pVVar2->z * 4.1829257e-29;
             if ((fVar21 < _UNK_?) && (_UNK_? < (double)fVar21)) break;
             iStack15 = iStack15 + 1;
           }
@@ -3065,82 +3117,103 @@ void Assembly-CSharp.dll::Cube::Cube_GetTriangle
   case 0xb:
     if (corners == (Vector3__Array *)0x0) {
 code_?:
-      bVar1 = 0;
-      uVar2 = func_?();
-      iVar3 = (int)uVar2;
-      *(undefined1 **)((int)&puStack_4 + -(uint)bVar1 + (-0x18 - *extraout_ECX) + 0x18) =
-           &stack0xffffffe8 + -(uint)bVar1 + (-0x18 - *extraout_ECX) + 0x18;
-      uVar5 = (undefined3)((ulonglong)uVar2 >> 0x28);
-      bVar1 = (byte)((ulonglong)uVar2 >> 0x20) &
-              *(byte *)(iVar3 + -0x69 + (int)((ulonglong)uVar2 >> 0x20));
-      uVar6 = CONCAT31(uVar5,bVar1 & *(byte *)(iVar3 + 0x1b + CONCAT31(uVar5,bVar1)));
-      puVar7 = (uint *)(iVar3 + 0x1b + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      puVar7 = (uint *)(iVar3 + 0x1b + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      puVar7 = (uint *)(iVar3 + 0x1b + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      puVar7 = (uint *)(iVar3 + 0x1b + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      puVar7 = (uint *)(iVar3 + 0x1b + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      puVar7 = (uint *)(iVar3 + 0x1b + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      puVar7 = (uint *)(iVar3 + 0x1b + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      puVar7 = (uint *)(iVar3 + -0x34 + uVar6);
-      *puVar7 = *puVar7 & uVar6;
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      uVar1 = func_?();
+      lVar2 = (longlong)(int)corners->klass * 0x54;
+      bVar3 = (int)lVar2 != lVar2;
+      bVar4 = bRam_? + (byte)uVar1;
+      bVar5 = CARRY1(bRam_?,(byte)uVar1) || CARRY1(bVar4,bVar3);
+      bRam_? = bVar4 + bVar3;
+      bVar6 = (byte)((ushort)uVar1 >> 8);
+      bVar7 = (byte)((ulonglong)lVar2 >> 8);
+      bVar4 = bVar7 + bVar6;
+      bVar3 = CARRY1(bVar7,bVar6) || CARRY1(bVar4,bVar5);
+      iVar8 = CONCAT22((short)((ulonglong)lVar2 >> 0x10),CONCAT11(bVar4 + bVar5,(char)lVar2));
+      pbVar9 = (byte *)(iVar8 + 0x1e);
+      bVar5 = CARRY1(*pbVar9,extraout_CH) || CARRY1(*pbVar9 + extraout_CH,bVar3);
+      *pbVar9 = *pbVar9 + extraout_CH + bVar3;
+      pbVar9 = (byte *)(iVar8 + 0x1e);
+      bVar3 = CARRY1(*pbVar9,extraout_CH) || CARRY1(*pbVar9 + extraout_CH,bVar5);
+      *pbVar9 = *pbVar9 + extraout_CH + bVar5;
+      pbVar9 = (byte *)(iVar8 + 0x1e);
+      bVar5 = CARRY1(*pbVar9,extraout_CH) || CARRY1(*pbVar9 + extraout_CH,bVar3);
+      *pbVar9 = *pbVar9 + extraout_CH + bVar3;
+      uStack_10 = CONCAT44(&puStack_11,(int)&uStack_10 + 4);
+      pbVar9 = (byte *)(iVar8 + 0x1e);
+      bVar3 = CARRY1(*pbVar9,extraout_CH) || CARRY1(*pbVar9 + extraout_CH,bVar5);
+      *pbVar9 = *pbVar9 + extraout_CH + bVar5;
+      pbVar9 = (byte *)(iVar8 + 0x1e);
+      bVar5 = CARRY1(*pbVar9,extraout_CH) || CARRY1(*pbVar9 + extraout_CH,bVar3);
+      *pbVar9 = *pbVar9 + extraout_CH + bVar3;
+      pbVar9 = (byte *)(iVar8 + 0x1e);
+      bVar3 = CARRY1(*pbVar9,extraout_CH) || CARRY1(*pbVar9 + extraout_CH,bVar5);
+      *pbVar9 = *pbVar9 + extraout_CH + bVar5;
+      pbVar9 = (byte *)(iVar8 + 0x1e);
+      bVar4 = *pbVar9;
+      bVar6 = *pbVar9;
+      *pbVar9 = bVar6 + extraout_CH + bVar3;
+      *(char *)(iVar8 + 0x1e) =
+           *(char *)(iVar8 + 0x1e) + extraout_CH +
+           (CARRY1(bVar4,extraout_CH) || CARRY1(bVar6 + extraout_CH,bVar3));
+      pcVar12 = (code *)swi(3);
+      puStack_11 = &stack0xffffffe8;
+      (*pcVar12)();
       return;
     }
-    puStack_4 = (undefined *)0x0;
+    puStack_11 = (undefined *)0x0;
+    uStack_10 = CONCAT44(&uStack_13,&UNK_?);
     func_?();
     if (triangleVertices == (Vector3__Array *)0x0) goto code_?;
-    puStack_4 = puStack_9;
-    func_?(0,uStack_10);
-    func_?(&uStack_10,1);
-    func_?(1,uStack_10,puStack_9);
-    uVar11 = 2;
+    uStack_10 = uStack_13;
+    puStack_11 = puStack_14;
+    func_?();
+    func_?();
+    func_?(1,uStack_13);
+    uVar15 = 2;
     break;
   case 1:
     if (corners == (Vector3__Array *)0x0) goto code_?;
-    puStack_4 = (undefined *)0x0;
+    puStack_11 = (undefined *)0x0;
+    uStack_10 = CONCAT44(&uStack_13,&UNK_?);
     func_?();
     if (triangleVertices == (Vector3__Array *)0x0) goto code_?;
-    puStack_4 = puStack_9;
-    func_?(0,uStack_10);
-    func_?(&uStack_10,2);
-    func_?(1,uStack_10,puStack_9);
-    uVar11 = 3;
+    uStack_10 = uStack_13;
+    puStack_11 = puStack_14;
+    func_?();
+    func_?();
+    func_?(1,uStack_13);
+    uVar15 = 3;
     break;
   case 2:
     if (corners == (Vector3__Array *)0x0) goto code_?;
-    puStack_4 = (undefined *)0x4;
+    puStack_11 = (undefined *)0x4;
+    uStack_10 = CONCAT44(&uStack_13,&UNK_?);
     func_?();
     if (triangleVertices == (Vector3__Array *)0x0) goto code_?;
-    puStack_4 = puStack_9;
-    func_?(0,uStack_10);
-    func_?(&uStack_10,5);
-    func_?(1,uStack_10,puStack_9);
-    uVar11 = 6;
+    uStack_10 = uStack_13;
+    puStack_11 = puStack_14;
+    func_?();
+    func_?();
+    func_?(1,uStack_13);
+    uVar15 = 6;
     break;
   case 3:
     if (corners == (Vector3__Array *)0x0) goto code_?;
-    puStack_4 = (undefined *)0x4;
+    puStack_11 = (undefined *)0x4;
+    uStack_10 = CONCAT44(&uStack_13,&UNK_?);
     func_?();
     if (triangleVertices == (Vector3__Array *)0x0) goto code_?;
-    puStack_4 = puStack_9;
-    func_?(0,uStack_10);
-    func_?(&uStack_10,6);
-    func_?(1,uStack_10,puStack_9);
-    uVar11 = 7;
+    uStack_10 = uStack_13;
+    puStack_11 = puStack_14;
+    func_?();
+    func_?();
+    func_?(1,uStack_13);
+    uVar15 = 7;
     break;
   default:
     goto code_?;
   }
-  func_?(&uStack_10,uVar11);
-  func_?(2,uStack_10,puStack_9);
+  func_?(&uStack_13,uVar15);
+  func_?(2,uStack_13,puStack_14);
 code_?:
   return;
 }
@@ -3382,7 +3455,7 @@ void Assembly-CSharp.dll::Cube::Cube_GetVisibleFaceVertices
 
 {
   if (cRam_? == '\0') {
-    func_?(0xbf58);
+    func_?(0x60b4);
     func_?(&TypeInfo__Cube);
     cRam_? = '\x01';
   }
@@ -5943,66 +6016,36 @@ code_?:
   }
   func_?();
 code_?:
-  func_?();
-  uVar4 = (uint)&stack0x00000000 | (uint)pVVar1->vector[5].z;
-  puVar5 = (undefined1 *)(uVar4 - 2);
-  *(short *)(uVar4 - 2) = (short)uVar4;
-  cRam_? = cRam_? + unaff_BH + CARRY1(in_stack_6,extraout_CL);
+  uVar4 = func_?();
+  iVar5 = (int)((ulonglong)uVar4 >> 0x20);
+  puVar6 = (ushort *)((int)uVar4 + -0x23 + iVar5);
+  uVar7 = (ushort)((ulonglong)uVar4 >> 0x20);
+  sVar8 = (uVar7 & 3) - (*puVar6 & 3);
+  *puVar6 = *puVar6 + (ushort)(0 < sVar8) * sVar8;
+  puVar6 = (ushort *)((int)uVar4 + 0x3d + iVar5);
+  sVar8 = (uVar7 & 3) - (*puVar6 & 3);
+  *puVar6 = *puVar6 + (ushort)(0 < sVar8) * sVar8;
   if (cRam_? == '\0') {
-    *(Cube__Class ***)(uVar4 - 6) = &TypeInfo__Cube;
-    puVar7 = (undefined1 *)(uVar4 - 10);
-    *(undefined **)(uVar4 - 10) = &UNK_?;
-    func_?();
-    puVar5 = puVar7 + 4;
+    func_?(&TypeInfo__Cube);
     cRam_? = '\x01';
   }
-  *(Vector3__Array **)(puVar5 + -4) = pVVar1;
-  iVar8 = *(int *)(uVar4 + 6);
-  *(Vector3__Array ***)(puVar5 + -8) = corners;
-  if (iVar8 == 0) {
-    *(undefined **)(puVar5 + -0xc) = &UNK_?;
-    func_?();
+  if (face == Face__Enum_Top) {
+    func_?(corners,pVVar1);
     pcVar9 = (code *)swi(3);
     (*pcVar9)();
     return;
   }
-  *(undefined4 *)(puVar5 + -0xc) = 0;
-  *(int *)(puVar5 + -0x10) = iVar8;
-  *(undefined **)(puVar5 + -0x14) = &UNK_?;
   pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
-                     (*(CubeBase **)(puVar5 + -0x10),*(MethodInfo **)(puVar5 + -0xc));
+                     ((CubeBase *)face,(MethodInfo *)0x0);
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-    *(Cube__Class **)(puVar5 + -4) = TypeInfo__Cube;
-    puVar10 = puVar5 + -8;
-    *(undefined **)(puVar5 + -8) = &UNK_?;
-    func_?();
-    puVar5 = puVar10 + 4;
+    func_?(TypeInfo__Cube);
   }
-  pCVar11 = TypeInfo__Cube->static_fields;
-  *(Vector3__Array **)(puVar5 + -4) = pVVar1;
-  pCVar11->cornersBookkeeping = pVVar1;
-  *(Cube__StaticFields **)(puVar5 + -8) = TypeInfo__Cube->static_fields;
-  puVar12 = puVar5 + -0xc;
-  *(undefined **)(puVar5 + -0xc) = &UNK_?;
-  func_?();
-  pCVar13 = TypeInfo__Cube;
-  *(undefined4 *)(puVar12 + -4) = 0;
-  *(undefined4 *)(puVar12 + -8) = *(undefined4 *)(uVar4 + 0x12);
-  *(undefined4 *)(puVar12 + -0xc) = *(undefined4 *)(uVar4 + 0xe);
-  *(undefined4 *)(puVar12 + -0x10) = *(undefined4 *)(uVar4 + 10);
-  *(Cube__StaticFields **)(puVar12 + -0x14) = pCVar13->static_fields;
-  *(undefined **)(puVar12 + -0x18) = &UNK_?;
-  Cube_SetEdge_1(*(Vector3__Array ***)(puVar12 + -0x14),*(Face__Enum *)(puVar12 + -0x10),
-                 *(Edge__Enum *)(puVar12 + -0xc),*(Vector3__Array **)(puVar12 + -8),
-                 *(MethodInfo **)(puVar12 + -4));
-  pCVar13 = TypeInfo__Cube;
-  *(undefined4 *)(puVar12 + -4) = 0;
-  *(Vector3__Array **)(puVar12 + -8) = pCVar13->static_fields->cornersBookkeeping;
-  *(int *)(puVar12 + -0xc) = iVar8;
-  *(undefined **)(puVar12 + -0x10) = &UNK_?;
+  TypeInfo__Cube->static_fields->cornersBookkeeping = pVVar1;
+  func_?(TypeInfo__Cube->static_fields,pVVar1);
+  Cube_SetEdge_1(&TypeInfo__Cube->static_fields->cornersBookkeeping,edge,(Edge__Enum)edgeVertices,
+                 (Vector3__Array *)method,(MethodInfo *)0x0);
   MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_set_Corners
-            (*(CubeBase **)(puVar12 + -0xc),*(Vector3__Array **)(puVar12 + -8),
-             *(MethodInfo **)(puVar12 + -4));
+            ((CubeBase *)face,TypeInfo__Cube->static_fields->cornersBookkeeping,(MethodInfo *)0x0);
   return;
 }
 
@@ -6049,38 +6092,49 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
   switch(face) {
   case Face__Enum_Top:
     pVVar1 = *corners;
-    if ((faceVertices == (Vector3__Array *)0x0) ||
-       (func_?(), pVVar1 == (Vector3__Array *)0x0)) break;
-    func_?(0,uStack_2,uStack_3);
-    pVVar4 = *corners;
-    func_?(&uStack_2,1);
-    pVVar1 = (Vector3__Array *)0x0;
-    if (pVVar4 == (Vector3__Array *)0x0) break;
-    func_?(1,uStack_2,uStack_3);
-    pVVar1 = *corners;
-    func_?(&uStack_2,2);
+    if (faceVertices == (Vector3__Array *)0x0) break;
+    puStack_2 = (undefined *)0x0;
+    func_?();
     if (pVVar1 == (Vector3__Array *)0x0) break;
-    uVar5 = 2;
+    puStack_2 = puStack_3;
+    func_?(0,uStack_4);
+    pVVar5 = *corners;
+    func_?(&uStack_4,1);
+    pVVar1 = (Vector3__Array *)0x0;
+    if (pVVar5 == (Vector3__Array *)0x0) break;
+    puStack_2 = puStack_3;
+    func_?(1,uStack_4);
+    pVVar1 = *corners;
+    func_?(&uStack_4,2);
+    if (pVVar1 == (Vector3__Array *)0x0) break;
+    uVar6 = 2;
     goto code_?;
   case Face__Enum_Bottom:
     pVVar1 = *corners;
-    if ((faceVertices != (Vector3__Array *)0x0) &&
-       (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
-      func_?(4,uStack_2,uStack_3);
-      pVVar4 = *corners;
-      func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
-        func_?(5,uStack_2,uStack_3);
-        pVVar1 = *corners;
-        func_?(&uStack_2,2);
-        if (pVVar1 != (Vector3__Array *)0x0) {
-          func_?(6,uStack_2,uStack_3);
-          pVVar4 = *corners;
-          func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
-            func_?(7,uStack_2,uStack_3);
-            return;
+    if (faceVertices != (Vector3__Array *)0x0) {
+      puStack_2 = (undefined *)0x0;
+      func_?();
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        puStack_2 = puStack_3;
+        func_?(4,uStack_4);
+        pVVar5 = *corners;
+        func_?(&uStack_4,1);
+        pVVar1 = (Vector3__Array *)0x0;
+        if (pVVar5 != (Vector3__Array *)0x0) {
+          puStack_2 = puStack_3;
+          func_?(5,uStack_4);
+          pVVar1 = *corners;
+          func_?(&uStack_4,2);
+          if (pVVar1 != (Vector3__Array *)0x0) {
+            puStack_2 = puStack_3;
+            func_?(6,uStack_4);
+            pVVar5 = *corners;
+            func_?(&uStack_4,3);
+            if (pVVar5 != (Vector3__Array *)0x0) {
+              puStack_2 = puStack_3;
+              func_?(7,uStack_4);
+              return;
+            }
           }
         }
       }
@@ -6088,23 +6142,30 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
     break;
   case Face__Enum_Front:
     pVVar1 = *corners;
-    if ((faceVertices != (Vector3__Array *)0x0) &&
-       (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
-      func_?(7,uStack_2,uStack_3);
-      pVVar4 = *corners;
-      func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
-        func_?(6,uStack_2,uStack_3);
-        pVVar1 = *corners;
-        func_?(&uStack_2,2);
-        if (pVVar1 != (Vector3__Array *)0x0) {
-          func_?(1,uStack_2,uStack_3);
-          pVVar4 = *corners;
-          func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
-            func_?(0,uStack_2,uStack_3);
-            return;
+    if (faceVertices != (Vector3__Array *)0x0) {
+      puStack_2 = (undefined *)0x0;
+      func_?();
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        puStack_2 = puStack_3;
+        func_?(7,uStack_4);
+        pVVar5 = *corners;
+        func_?(&uStack_4,1);
+        pVVar1 = (Vector3__Array *)0x0;
+        if (pVVar5 != (Vector3__Array *)0x0) {
+          puStack_2 = puStack_3;
+          func_?(6,uStack_4);
+          pVVar1 = *corners;
+          func_?(&uStack_4,2);
+          if (pVVar1 != (Vector3__Array *)0x0) {
+            puStack_2 = puStack_3;
+            func_?(1,uStack_4);
+            pVVar5 = *corners;
+            func_?(&uStack_4,3);
+            if (pVVar5 != (Vector3__Array *)0x0) {
+              puStack_2 = puStack_3;
+              func_?(0,uStack_4);
+              return;
+            }
           }
         }
       }
@@ -6112,23 +6173,30 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
     break;
   case Face__Enum_Back:
     pVVar1 = *corners;
-    if ((faceVertices != (Vector3__Array *)0x0) &&
-       (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
-      func_?(5,uStack_2,uStack_3);
-      pVVar4 = *corners;
-      func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
-        func_?(4,uStack_2,uStack_3);
-        pVVar1 = *corners;
-        func_?(&uStack_2,2);
-        if (pVVar1 != (Vector3__Array *)0x0) {
-          func_?(3,uStack_2,uStack_3);
-          pVVar4 = *corners;
-          func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
-            func_?(2,uStack_2,uStack_3);
-            return;
+    if (faceVertices != (Vector3__Array *)0x0) {
+      puStack_2 = (undefined *)0x0;
+      func_?();
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        puStack_2 = puStack_3;
+        func_?(5,uStack_4);
+        pVVar5 = *corners;
+        func_?(&uStack_4,1);
+        pVVar1 = (Vector3__Array *)0x0;
+        if (pVVar5 != (Vector3__Array *)0x0) {
+          puStack_2 = puStack_3;
+          func_?(4,uStack_4);
+          pVVar1 = *corners;
+          func_?(&uStack_4,2);
+          if (pVVar1 != (Vector3__Array *)0x0) {
+            puStack_2 = puStack_3;
+            func_?(3,uStack_4);
+            pVVar5 = *corners;
+            func_?(&uStack_4,3);
+            if (pVVar5 != (Vector3__Array *)0x0) {
+              puStack_2 = puStack_3;
+              func_?(2,uStack_4);
+              return;
+            }
           }
         }
       }
@@ -6136,47 +6204,60 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
     break;
   case Face__Enum_Left:
     pVVar1 = *corners;
-    if ((faceVertices == (Vector3__Array *)0x0) ||
-       (func_?(), pVVar1 == (Vector3__Array *)0x0)) break;
-    func_?(4,uStack_2,uStack_3);
-    pVVar4 = *corners;
-    func_?(&uStack_2,1);
-    pVVar1 = (Vector3__Array *)0x0;
-    if (pVVar4 == (Vector3__Array *)0x0) break;
-    func_?(7,uStack_2,uStack_3);
-    pVVar1 = *corners;
-    func_?(&uStack_2,2);
+    if (faceVertices == (Vector3__Array *)0x0) break;
+    puStack_2 = (undefined *)0x0;
+    func_?();
     if (pVVar1 == (Vector3__Array *)0x0) break;
-    uVar5 = 0;
+    puStack_2 = puStack_3;
+    func_?(4,uStack_4);
+    pVVar5 = *corners;
+    func_?(&uStack_4,1);
+    pVVar1 = (Vector3__Array *)0x0;
+    if (pVVar5 == (Vector3__Array *)0x0) break;
+    puStack_2 = puStack_3;
+    func_?(7,uStack_4);
+    pVVar1 = *corners;
+    func_?(&uStack_4,2);
+    if (pVVar1 == (Vector3__Array *)0x0) break;
+    uVar6 = 0;
 code_?:
-    func_?(uVar5,uStack_2,uStack_3);
-    pVVar4 = *corners;
-    func_?(&uStack_2,3);
-    if (pVVar4 != (Vector3__Array *)0x0) {
-      func_?(3,uStack_2,uStack_3);
+    puStack_2 = puStack_3;
+    func_?(uVar6,uStack_4);
+    pVVar5 = *corners;
+    func_?(&uStack_4,3);
+    if (pVVar5 != (Vector3__Array *)0x0) {
+      puStack_2 = puStack_3;
+      func_?(3,uStack_4);
 code_?:
       return;
     }
     break;
   case Face__Enum_Right:
     pVVar1 = *corners;
-    if ((faceVertices != (Vector3__Array *)0x0) &&
-       (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
-      func_?(6,uStack_2,uStack_3);
-      pVVar4 = *corners;
-      func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
-        func_?(5,uStack_2,uStack_3);
-        pVVar1 = *corners;
-        func_?(&uStack_2,2);
-        if (pVVar1 != (Vector3__Array *)0x0) {
-          func_?(2,uStack_2,uStack_3);
-          pVVar4 = *corners;
-          func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
-            func_?(1,uStack_2,uStack_3);
-            return;
+    if (faceVertices != (Vector3__Array *)0x0) {
+      puStack_2 = (undefined *)0x0;
+      func_?();
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        puStack_2 = puStack_3;
+        func_?(6,uStack_4);
+        pVVar5 = *corners;
+        func_?(&uStack_4,1);
+        pVVar1 = (Vector3__Array *)0x0;
+        if (pVVar5 != (Vector3__Array *)0x0) {
+          puStack_2 = puStack_3;
+          func_?(5,uStack_4);
+          pVVar1 = *corners;
+          func_?(&uStack_4,2);
+          if (pVVar1 != (Vector3__Array *)0x0) {
+            puStack_2 = puStack_3;
+            func_?(2,uStack_4);
+            pVVar5 = *corners;
+            func_?(&uStack_4,3);
+            if (pVVar5 != (Vector3__Array *)0x0) {
+              puStack_2 = puStack_3;
+              func_?(1,uStack_4);
+              return;
+            }
           }
         }
       }
@@ -6185,23 +6266,27 @@ code_?:
   default:
     goto code_?;
   }
-  bVar6 = 0;
-  uVar7 = func_?();
-  *(undefined4 *)(unaff_EDI + -4) = 0x69411054;
-  *(int *)(unaff_EDI + -8) = unaff_EDI + -4;
-  bVar8 = *(byte *)&faceVertices->klass;
-  bVar9 = (byte)((ulonglong)uVar7 >> 8);
-  bVar10 = *(char *)&faceVertices->klass + bVar9;
-  *(byte *)&faceVertices->klass = bVar10 + bVar6;
-  *(undefined4 *)(unaff_EDI + -0xc) = 0x54;
-  *(char *)&pVVar1->klass =
-       *(char *)&pVVar1->klass + (char)extraout_ECX + (CARRY1(bVar8,bVar9) || CARRY1(bVar10,bVar6));
-  lVar11 = (longlong)*(int *)((int)uVar7 + -0x10 + (int)((ulonglong)uVar7 >> 0x20)) * 0x6b;
-  *(int *)(unaff_EDI + -0x10) = unaff_EDI + -0xc;
-  *(char *)(extraout_ECX + -0x33efab94) =
-       *(char *)(extraout_ECX + -0x33efab94) + (char)extraout_ECX + ((int)lVar11 != lVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  bVar7 = 0;
+  uVar8 = func_?();
+  cVar9 = *(char *)&faceVertices->klass;
+  pbVar10 = (byte *)(extraout_ECX + 0x76105466);
+  bVar11 = CARRY1(*pbVar10,extraout_DL) || CARRY1(*pbVar10 + extraout_DL,bVar7);
+  *pbVar10 = *pbVar10 + extraout_DL + bVar7;
+  sVar12 = (short)&puStack_2 + -4;
+  iVar13 = CONCAT22((short)((uint)&puStack_2 >> 0x10),sVar12);
+  uVar6 = segment(in_SS,sVar12);
+  *(undefined ***)uVar6 = &puStack_2;
+  pfVar14 = &pVVar1->vector[7].y;
+  bVar7 = *(byte *)pfVar14;
+  bVar15 = *(char *)pfVar14 + (byte)pVVar1;
+  *(byte *)pfVar14 = bVar15 + bVar11;
+  *(int *)(iVar13 + -4) = iVar13;
+  pcVar16 = (char *)(CONCAT31((int3)((uint)uVar8 >> 8),cVar9) + 0x69);
+  *pcVar16 = *pcVar16 + cVar9 + (CARRY1(bVar7,(byte)pVVar1) || CARRY1(bVar15,bVar11));
+  *(int *)(iVar13 + -8) = iVar13 + -4;
+  pcVar17 = (code *)swi(3);
+  puStack_2 = &stack0xffffffe4;
+  (*pcVar17)();
   return;
 }
 

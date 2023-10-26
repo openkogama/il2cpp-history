@@ -470,8 +470,11 @@ code_?:
         if ((TypeInfo__System__Reflection__ConstructorInfo->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
+        uVar2 = 0;
         bVar5 = mscorlib.dll::System::Reflection::ConstructorInfo::ConstructorInfo_op_Inequality
                           (left,(ConstructorInfo *)0x0,(MethodInfo *)0x0);
+        pDVar6 = 
+        TypeInfo__Newtonsoft__Json__Serialization__DefaultContractResolver____c__DisplayClass39_0;
         if (bVar5 == 0) {
           return pJVar1;
         }
@@ -483,15 +486,15 @@ code_?:
               cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__Newtonsoft__Json__Serialization__JsonTypeReflector);
           }
-          pRVar6 = JsonTypeReflector::JsonTypeReflector_get_ReflectionDelegateFactory
+          pRVar7 = JsonTypeReflector::JsonTypeReflector_get_ReflectionDelegateFactory
                              ((MethodInfo *)0x0);
-          if (pRVar6 != (ReflectionDelegateFactory *)0x0) {
-            func_?((&(pRVar6->klass->vtable).Equals)
+          if (pRVar7 != (ReflectionDelegateFactory *)0x0) {
+            func_?((&(pRVar7->klass->vtable).Equals)
                             [Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>_MethodInfo__Newtonsoft__Json__Utilities__ReflectionDelegateFactory__CreateMethodCall<System::Object>_System__Reflection__MethodBase_
                              ->slot].method,
                             Newtonsoft__Json__Utilities__MethodCall<System::Object,_System::Object>_MethodInfo__Newtonsoft__Json__Utilities__ReflectionDelegateFactory__CreateMethodCall<System::Object>_System__Reflection__MethodBase_
-                            ,&pcStack_7);
-            pOVar8 = (Object__Class *)(*pcStack_7)(pRVar6,left,puStack_9);
+                            ,&stack0xfffffff4);
+            pOVar8 = (Object__Class *)(*(code *)left)(pRVar7,pDVar6,uVar2);
             value[1].klass = pOVar8;
             func_?(value + 1,pOVar8);
             this_00 = (ObjectConstructor_1_System_Object_ *)
@@ -517,8 +520,8 @@ code_?:
   func_?(uVar2);
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  pJVar1 = (JsonISerializableContract *)(*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  pJVar1 = (JsonISerializableContract *)(*pcVar9)();
   return pJVar1;
 }
 

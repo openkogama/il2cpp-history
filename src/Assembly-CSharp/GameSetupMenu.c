@@ -573,7 +573,7 @@ void Assembly-CSharp.dll::GameSetupMenu::GameSetupMenu_Start(GameSetupMenu *this
     cRam_? = '\x01';
   }
   method_00 = (MethodInfo *)0x100;
-  value = 0xf6;
+  value = 0x96;
   bVar1 = MVClientSettings::MVClientSettings_IsFlagSet
                     (ClientSettingFlags__Enum_GamePassSilentReleaseEnabled,(MethodInfo *)0x0);
   if (bVar1 == 0) {

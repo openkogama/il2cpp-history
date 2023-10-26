@@ -959,44 +959,42 @@ bool Assembly-CSharp.dll::PlayerSocialPopup::PlayerSocialPopup_ValidateFriendReq
   }
   BadgeManager::BadgeManager_GetFriendsLimit(iVar3 + 1,(MethodInfo *)0x0);
   TM::TM__(StringLiteral_You_can_only_have__0__friends_at,(MethodInfo *)0x0);
-  args = (Object__Array *)func_?();
-  iStack_7 = iVar4;
-  pOVar8 = (Object *)func_?();
-  if (args == (Object__Array *)0x0) goto code_?;
-  if (pOVar8 == (Object *)0x0) {
+  pSVar7 = (String *)func_?();
+  pSVar8 = (String__Class *)func_?();
+  if (pSVar7 == (String *)0x0) goto code_?;
+  if (pSVar8 == (String__Class *)0x0) {
 code_?:
-    if (args->max_length != 0) {
-      args->vector[0] = pOVar8;
+    if (*(int *)&(pSVar7->fields)._firstChar != 0) {
+      pSVar7[1].klass = pSVar8;
       func_?();
-      iStack_9 = iVar3;
-      pOVar8 = (Object *)func_?(TypeInfo__System__Int32,&iStack_9);
-      if (pOVar8 != (Object *)0x0) {
+      pMVar9 = (MonitorData *)func_?(TypeInfo__System__Int32);
+      if (pMVar9 != (MonitorData *)0x0) {
         iVar3 = func_?();
         if (iVar3 == 0) goto code_?;
       }
-      if (1 < args->max_length) {
-        args->vector[1] = pOVar8;
+      if (1 < *(uint *)&(pSVar7->fields)._firstChar) {
+        pSVar7[1].monitor = pMVar9;
         func_?();
-        pOVar8 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
-        if (pOVar8 != (Object *)0x0) {
-          iVar3 = func_?();
-          if (iVar3 == 0) goto code_?;
+        iVar3 = func_?(TypeInfo__System__Int32);
+        if (iVar3 != 0) {
+          iVar10 = func_?();
+          if (iVar10 == 0) goto code_?;
         }
-        if (2 < args->max_length) {
-          args->vector[2] = pOVar8;
+        if (2 < *(uint *)&(pSVar7->fields)._firstChar) {
+          pSVar7[1].fields._stringLength = iVar3;
           func_?();
-          pOVar8 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe4);
-          if (pOVar8 != (Object *)0x0) {
-            iVar3 = func_?();
-            if (iVar3 == 0) goto code_?;
+          iVar3 = func_?(TypeInfo__System__Int32);
+          if (iVar3 != 0) {
+            iVar10 = func_?();
+            if (iVar10 == 0) goto code_?;
           }
-          if (3 < args->max_length) {
-            args->vector[3] = pOVar8;
+          if (3 < *(uint *)&(pSVar7->fields)._firstChar) {
+            *(int *)&pSVar7[1].fields._firstChar = iVar3;
             func_?();
-            pSVar10 = mscorlib.dll::System::String::String_Format_3
-                                ((String *)0x0,args,(MethodInfo *)0x0);
-            *error = pSVar10;
-            func_?(error,pSVar10);
+            pSVar7 = mscorlib.dll::System::String::String_Format_3
+                               (pSVar7,(Object__Array *)pSVar7,(MethodInfo *)0x0);
+            *error = pSVar7;
+            func_?(error);
             return 0;
           }
         }
@@ -1004,8 +1002,8 @@ code_?:
     }
   }
   else {
-    iVar11 = func_?();
-    if (iVar11 != 0) goto code_?;
+    iVar3 = func_?();
+    if (iVar3 != 0) goto code_?;
     func_?();
     func_?();
 code_?:
@@ -1021,8 +1019,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  bVar13 = (*pcVar12)();
-  return bVar13;
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 

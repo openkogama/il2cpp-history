@@ -226,6 +226,8 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_Init
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void PlaySound(AudioActions, IntVector, GameObject) */
 
 void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
@@ -235,7 +237,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0xb1a4);
+    func_?(0x93fc);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -243,90 +245,115 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
   }
   pVVar1 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld
                      ((Vector3 *)&stack0xfffffff0,gameObject,localPos,(MethodInfo *)0x0);
-  worldPos = *pVVar1;
+  uVar2._0_4_ = pVVar1->x;
+  uVar2._4_4_ = pVVar1->y;
+  fVar3 = pVVar1->z;
   switch(audioAction) {
   case AudioActions__Enum_CubeAdded:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
+      in_stack_4 = &UNK_?;
       func_?();
     }
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) {
 code_?:
-      bVar2 = 0;
-      uVar3 = func_?();
-      uVar4 = (uint)((ulonglong)uVar3 >> 0x20);
-      uVar5 = in(0x88);
-      puVar6 = (uint *)CONCAT31((int3)((ulonglong)uVar3 >> 8),uVar5);
-      *puVar6 = (*puVar6 - uVar4) - (uint)bVar2;
-      uVar7 = (uint)(extraout_ECX < *(uint *)(extraout_ECX + 0x89721019));
-      uVar8 = *puVar6;
-      uVar9 = *puVar6;
-      *puVar6 = (uVar9 - uVar4) - uVar7;
-      cRam_? = cRam_? + (char)((uint)unaff_EBX >> 8) +
-                     (uVar8 < uVar4 || uVar9 - uVar4 < uVar7);
-      pcVar10 = (code *)swi(3);
-      uRam_? = unaff_EBX;
-      (*pcVar10)();
-      return;
+      do {
+        method_00 = (MethodInfo *)&UNK_?;
+        uVar5 = func_?();
+        uVar6 = (uint)((ulonglong)uVar5 >> 0x20);
+        puVar7 = (uint *)((uint)uVar5 ^ 0x88);
+        uVar8 = *puVar7;
+        *puVar7 = *puVar7 - uVar6;
+        if ((POPCOUNT(*puVar7 & 0xff) & 1U) == 0) {
+          *puVar7 = (*puVar7 - uVar6) - (uint)(uVar8 < uVar6);
+          return;
+        }
+        pcVar9 = (char *)((uint)uVar5 & 0xffffff04);
+        *pcVar9 = *pcVar9 + (char)pcVar9;
+        cVar10 = (char)pcVar9 + '$';
+        pAVar11 = (AudioEventHandler__Class *)CONCAT31((int3)((uint)pcVar9 >> 8),cVar10);
+        *(char *)&(pAVar11->_0).image = *(char *)&(pAVar11->_0).image + cVar10;
+        this = extraout_ECX;
+        if (SBORROW1(*unaff_EDI,-1)) goto code_?;
+code_?:
+        this = pAVar11->static_fields->audioBuild;
+      } while (this == (AudioBuild *)0x0);
+      method_00 = (MethodInfo *)0x0;
+      in_stack_4 = (undefined *)0x3f800000;
+      in_stack_12 = 1.0;
+      in_stack_13 = (this->fields).cubePainted;
     }
-    randMax = 1.1;
-    randMin = 0.8;
-    audioClip = (this->fields).cubeAdded;
+    else {
+      method_00 = (MethodInfo *)0x0;
+      in_stack_4 = (undefined *)0x3f8ccccd;
+      in_stack_12 = 0.8;
+      in_stack_13 = (this->fields).cubeAdded;
+    }
     break;
   case AudioActions__Enum_CubeRemoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
+      in_stack_4 = &UNK_?;
       func_?();
     }
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) goto code_?;
-    randMax = 1.0;
-    randMin = 1.0;
-    audioClip = (this->fields).cubeRemoved;
+    method_00 = (MethodInfo *)0x0;
+    in_stack_4 = (undefined *)0x3f800000;
+    in_stack_12 = 1.0;
+    in_stack_13 = (this->fields).cubeRemoved;
     break;
   case AudioActions__Enum_FaceMoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
+      in_stack_4 = &UNK_?;
       func_?();
     }
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) goto code_?;
-    randMax = 1.4;
-    randMin = 0.5;
-    audioClip = (this->fields).faceMoved;
+    method_00 = (MethodInfo *)0x0;
+    in_stack_4 = (undefined *)0x3fb33333;
+    in_stack_12 = 0.5;
+    in_stack_13 = (this->fields).faceMoved;
     break;
   case AudioActions__Enum_EdgeMoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
+      in_stack_4 = &UNK_?;
       func_?();
     }
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) goto code_?;
-    randMax = 1.0;
-    randMin = 1.0;
-    audioClip = (this->fields).edgeMoved;
+    method_00 = (MethodInfo *)0x0;
+    in_stack_4 = (undefined *)0x3f800000;
+    in_stack_12 = 1.0;
+    in_stack_13 = (this->fields).edgeMoved;
     break;
   case AudioActions__Enum_VertexMoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
+      in_stack_4 = &UNK_?;
       func_?();
     }
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) goto code_?;
-    randMax = 1.0;
-    randMin = 1.0;
-    audioClip = (this->fields).vertexMoved;
+    method_00 = (MethodInfo *)0x0;
+    in_stack_4 = (undefined *)0x3f800000;
+    in_stack_12 = 1.0;
+    in_stack_13 = (this->fields).vertexMoved;
     break;
   case AudioActions__Enum_CubePainted:
-    if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) goto code_?;
-    randMax = 1.0;
-    randMin = 1.0;
-    audioClip = (this->fields).cubePainted;
-    break;
+    pAVar11 = TypeInfo__AudioEventHandler;
+    if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor != 0) goto code_?;
+    in_stack_4 = &UNK_?;
+    func_?();
+    pAVar11 = TypeInfo__AudioEventHandler;
+    goto code_?;
   default:
     goto code_?;
   }
-  AudioBuild::AudioBuild_PlayClip(this,worldPos,audioClip,randMin,randMax,(MethodInfo *)0x0);
+code_?:
+  worldPos.z = fVar3;
+  worldPos.x = (float)(int)uVar2;
+  worldPos.y = (float)(int)((ulonglong)uVar2 >> 0x20);
+  AudioBuild::AudioBuild_PlayClip
+            (this,worldPos,in_stack_13,in_stack_12,(float)in_stack_4,method_00);
 code_?:
   return;
 }

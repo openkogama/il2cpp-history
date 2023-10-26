@@ -1109,9 +1109,9 @@ void Assembly-CSharp-firstpass.dll::Water::Water_Update(Water *this,MethodInfo *
                            );
         fVar7 = pVVar18->x;
         fVar9 = pVVar18->z;
-        fVar10 = fVar7 * 3.0162106e-29;
+        fVar10 = fVar7 * 3.016177e-29;
         fVar19 = 1.0;
-        fVar8 = fVar9 * 3.0162106e-29;
+        fVar8 = fVar9 * 3.016177e-29;
         fVar11 = (float)(double)CONCAT44(pSVar17,pMVar16);
         fVar20 = 0.0;
         fVar21 = (float)dVar12;

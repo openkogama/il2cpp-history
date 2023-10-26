@@ -579,24 +579,23 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_DeactivateFre
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-  if (pPVar1 != (PlayerPlanetData *)0x0) {
-    this_00 = (this->fields).tierProgressDataList;
-    if (this_00 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-      pGVar2 = mscorlib.dll::System::Collections::Generic::
-               List`1[GameTierProgressBar+TierProgressData]::
-               List_1_GameTierProgressBar_TierProgressData__get_Item
-                         ((GameTierProgressBar_TierProgressData *)&stack0xffffff6c,this_00,
-                          (uint)(pPVar1->fields).gamePassTier,
-                          MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
-                         );
-      if (pGVar2->freeTryTextBubble != (GamePassesTextBubble *)0x0) {
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)pGVar2->freeTryTextBubble,(MethodInfo *)0x0);
-        if (this_01 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (this_01,0,(MethodInfo *)0x0);
-          return;
-        }
+  if ((pPVar1 != (PlayerPlanetData *)0x0) &&
+     (this_00 = (this->fields).tierProgressDataList,
+     this_00 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) {
+    pGVar2 = mscorlib.dll::System::Collections::Generic::
+             List`1[GameTierProgressBar+TierProgressData]::
+             List_1_GameTierProgressBar_TierProgressData__get_Item
+                       ((GameTierProgressBar_TierProgressData *)&stack0xffffff6c,this_00,
+                        (uint)(pPVar1->fields).gamePassTier,
+                        MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
+                       );
+    if (pGVar2->freeTryTextBubble != (GamePassesTextBubble *)0x0) {
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pGVar2->freeTryTextBubble,(MethodInfo *)0x0);
+      if (this_01 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_01,0,(MethodInfo *)0x0);
+        return;
       }
     }
   }

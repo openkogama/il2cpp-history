@@ -651,7 +651,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost
             (TypeInfo__System__Int32->_0).element_class) {
           piVar5 = (int *)func_?();
           (this->fields).walkSpeed =
-               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.2191606e-29;
+               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.2190402e-29;
           return;
         }
         goto code_?;

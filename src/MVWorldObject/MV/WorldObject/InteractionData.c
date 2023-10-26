@@ -123,7 +123,7 @@ MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
        (value * value + fVar4 * fVar4 + fVar5 * fVar5 <= _UNK_?)) {
       BytePacker::BytePacker_Write_10(this_01,(this->impulse).x,(MethodInfo *)0x0);
       BytePacker::BytePacker_Write_10(this_01,(this->impulse).y,(MethodInfo *)0x0);
-      cVar6 = ',';
+      cVar6 = '&';
       BytePacker::BytePacker_Write_10(this_01,(this->impulse).z,(MethodInfo *)0x0);
       bVar7 = bVar7 | 4;
     }
@@ -344,76 +344,22 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     uVar1._2_2_ = 0;
     fVar2 = 0.0;
     fVar3 = 0.0;
-    fVar4 = 0.0;
-    fVar5 = 0.0;
+    method = (MethodInfo *)0x0;
     InteractionData__ctor_8
               ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_CenterGun,11.5,
                TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
-    value_05.impulse.x = fVar3;
-    value_05.damage = fVar2;
-    value_05.impulse.y = fVar4;
-    value_05.impulse.z = fVar5;
-    value_05.interactionType = (uint8_t)uVar1;
-    value_05.playerKilledByType = SUB41(uVar1,1);
-    value_05._18_2_ = SUB42(uVar1,2);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
-    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,9,value_05,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
-              );
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    uVar6._0_1_ = 0;
-    uVar6._1_1_ = 0;
-    uVar6._2_2_ = 0;
-    puStack_7 = (undefined *)0x0;
-    fVar2 = 0.0;
-    fVar3 = 0.0;
     fVar4 = 0.0;
-    InteractionData__ctor_8
-              ((InteractionData *)&puStack_7,InteractionPackageType__Enum_MutantHit,110.0,
-               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
-    value_06.impulse.x = fVar2;
-    value_06.damage = (float)puStack_7;
-    value_06.impulse.y = fVar3;
-    value_06.impulse.z = fVar4;
-    value_06.interactionType = (uint8_t)uVar6;
-    value_06.playerKilledByType = SUB41(uVar6,1);
-    value_06._18_2_ = SUB42(uVar6,2);
+    fVar5 = fVar2;
+    uVar6 = CONCAT44(fVar4,fVar5);
+    fVar7 = fVar3;
+    auVar8[8] = (uint8_t)uVar1;
+    auVar8[9] = SUB41(uVar1,1);
+    auVar8._10_2_ = SUB42(uVar1,2);
+    IVar9 = (InteractionData)CONCAT128(auVar8,uVar6);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,6,value_06,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
-              );
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar9._0_1_ = 0;
-    uVar9._1_1_ = 0;
-    uVar9._2_2_ = 0;
-    fVar4 = 0.0;
-    fVar5 = 0.0;
-    fVar2 = (pVVar8->zeroVector).y;
-    fVar3 = (pVVar8->zeroVector).z;
-    InteractionData__ctor_8
-              ((InteractionData *)&stack0xffffffc0,InteractionPackageType__Enum_RailGunHit,100.0,
-               pVVar8->zeroVector,PlayerKilledByType__Enum_None,0,(MethodInfo *)0x0);
-    value_07.impulse.x = fVar3;
-    value_07.damage = fVar2;
-    value_07.impulse.y = fVar4;
-    value_07.impulse.z = fVar5;
-    value_07.interactionType = (uint8_t)uVar9;
-    value_07.playerKilledByType = SUB41(uVar9,1);
-    value_07._18_2_ = SUB42(uVar9,2);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
-    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,4,value_07,
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,9,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     if (cRam_? == '\0') {
@@ -425,23 +371,21 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     uVar10._2_2_ = 0;
     fVar2 = 0.0;
     fVar3 = 0.0;
-    fVar4 = 0.0;
-    fVar5 = 0.0;
-    fStack11 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+    fVar11 = 0.0;
     InteractionData__ctor_8
-              ((InteractionData *)&stack0xffffffac,InteractionPackageType__Enum_ShotgunHit,13.0,
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_MutantHit,110.0,
                TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
-    value.impulse.x = fVar3;
-    value.damage = fVar2;
-    value.impulse.y = fVar4;
-    value.impulse.z = fVar5;
-    value.interactionType = (uint8_t)uVar10;
-    value.playerKilledByType = SUB41(uVar10,1);
-    value._18_2_ = SUB42(uVar10,2);
+    IVar9.impulse.x = 0.0;
+    IVar9.damage = fVar2;
+    IVar9.impulse.y = fVar3;
+    IVar9.impulse.z = fVar11;
+    IVar9.interactionType = (uint8_t)uVar10;
+    IVar9.playerKilledByType = SUB41(uVar10,1);
+    IVar9._18_2_ = SUB42(uVar10,2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,7,value,
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,6,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     if (cRam_? == '\0') {
@@ -453,22 +397,21 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     uVar12._2_2_ = 0;
     fVar2 = 0.0;
     fVar3 = 0.0;
-    fVar4 = 0.0;
-    fVar5 = 0.0;
+    fVar11 = 0.0;
     InteractionData__ctor_8
-              ((InteractionData *)&stack0xffffff98,InteractionPackageType__Enum_SixShooterHit,12.5,
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_RailGunHit,100.0,
                TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
-    value_00.impulse.x = fVar3;
-    value_00.damage = fVar2;
-    value_00.impulse.y = fVar4;
-    value_00.impulse.z = fVar5;
-    value_00.interactionType = (uint8_t)uVar12;
-    value_00.playerKilledByType = SUB41(uVar12,1);
-    value_00._18_2_ = SUB42(uVar12,2);
+    value.impulse.x = 0.0;
+    value.damage = fVar2;
+    value.impulse.y = fVar3;
+    value.impulse.z = fVar11;
+    value.interactionType = (uint8_t)uVar12;
+    value.playerKilledByType = SUB41(uVar12,1);
+    value._18_2_ = SUB42(uVar12,2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0xe,value_00,
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,4,value,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     if (cRam_? == '\0') {
@@ -480,21 +423,21 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     uVar13._2_2_ = 0;
     fVar2 = 0.0;
     fVar3 = 0.0;
-    fVar4 = 0.0;
+    fVar11 = 0.0;
     InteractionData__ctor_8
-              ((InteractionData *)&stack0xffffff84,InteractionPackageType__Enum_DoubleSixShooterHit,
-               12.5,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_ShotgunHit,13.0,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
-    value_01.impulse.x = fVar3;
-    value_01.damage = fVar2;
-    value_01.impulse.y = fVar4;
-    value_01.impulse.z = 0.0;
-    value_01.interactionType = (uint8_t)uVar13;
-    value_01.playerKilledByType = SUB41(uVar13,1);
-    value_01._18_2_ = SUB42(uVar13,2);
+    value_00.impulse.x = 0.0;
+    value_00.damage = fVar2;
+    value_00.impulse.y = fVar3;
+    value_00.impulse.z = fVar11;
+    value_00.interactionType = (uint8_t)uVar13;
+    value_00.playerKilledByType = SUB41(uVar13,1);
+    value_00._18_2_ = SUB42(uVar13,2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x19,value_01,
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,7,value_00,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     if (cRam_? == '\0') {
@@ -506,22 +449,21 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     uVar14._2_2_ = 0;
     fVar2 = 0.0;
     fVar3 = 0.0;
-    fVar4 = 0.0;
-    fVar5 = 0.0;
+    fVar11 = 0.0;
     InteractionData__ctor_8
-              ((InteractionData *)&stack0xffffff70,InteractionPackageType__Enum_ThrowingStarHit,15.0
-               ,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_SixShooterHit,12.5,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
-    value_02.impulse.x = fVar3;
-    value_02.damage = fVar2;
-    value_02.impulse.y = fVar4;
-    value_02.impulse.z = fVar5;
-    value_02.interactionType = (uint8_t)uVar14;
-    value_02.playerKilledByType = SUB41(uVar14,1);
-    value_02._18_2_ = SUB42(uVar14,2);
+    value_01.impulse.x = 0.0;
+    value_01.damage = fVar2;
+    value_01.impulse.y = fVar3;
+    value_01.impulse.z = fVar11;
+    value_01.interactionType = (uint8_t)uVar14;
+    value_01.playerKilledByType = SUB41(uVar14,1);
+    value_01._18_2_ = SUB42(uVar14,2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0xf,value_02,
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0xe,value_01,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     if (cRam_? == '\0') {
@@ -533,22 +475,21 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     uVar15._2_2_ = 0;
     fVar2 = 0.0;
     fVar3 = 0.0;
-    fVar4 = 0.0;
-    fVar5 = 0.0;
+    fVar11 = 0.0;
     InteractionData__ctor_8
-              ((InteractionData *)&stack0xffffff5c,InteractionPackageType__Enum_MultiThrowingStarHit
-               ,12.0,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_DoubleSixShooterHit,
+               12.5,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
-    value_03.impulse.x = fVar3;
-    value_03.damage = fVar2;
-    value_03.impulse.y = fVar4;
-    value_03.impulse.z = fVar5;
-    value_03.interactionType = (uint8_t)uVar15;
-    value_03.playerKilledByType = SUB41(uVar15,1);
-    value_03._18_2_ = SUB42(uVar15,2);
+    value_02.impulse.x = 0.0;
+    value_02.damage = fVar2;
+    value_02.impulse.y = fVar3;
+    value_02.impulse.z = fVar11;
+    value_02.interactionType = (uint8_t)uVar15;
+    value_02.playerKilledByType = SUB41(uVar15,1);
+    value_02._18_2_ = SUB42(uVar15,2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x18,value_03,
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x19,value_02,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     if (cRam_? == '\0') {
@@ -560,21 +501,73 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     uVar16._2_2_ = 0;
     fVar2 = 0.0;
     fVar3 = 0.0;
-    fVar4 = 0.0;
+    fVar11 = 0.0;
     InteractionData__ctor_8
-              ((InteractionData *)&stack0xffffff48,InteractionPackageType__Enum_SlapGunHit,25.0,
-               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_ThrowingStarHit,15.0
+               ,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_03.impulse.x = 0.0;
+    value_03.damage = fVar2;
+    value_03.impulse.y = fVar3;
+    value_03.impulse.z = fVar11;
+    value_03.interactionType = (uint8_t)uVar16;
+    value_03.playerKilledByType = SUB41(uVar16,1);
+    value_03._18_2_ = SUB42(uVar16,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0xf,value_03,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
+              );
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar17._0_1_ = 0;
+    uVar17._1_1_ = 0;
+    uVar17._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar11 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_MultiThrowingStarHit
+               ,12.0,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
     value_04.impulse.x = 0.0;
     value_04.damage = fVar2;
     value_04.impulse.y = fVar3;
-    value_04.impulse.z = fVar4;
-    value_04.interactionType = (uint8_t)uVar16;
-    value_04.playerKilledByType = SUB41(uVar16,1);
-    value_04._18_2_ = SUB42(uVar16,2);
+    value_04.impulse.z = fVar11;
+    value_04.interactionType = (uint8_t)uVar17;
+    value_04.playerKilledByType = SUB41(uVar17,1);
+    value_04._18_2_ = SUB42(uVar17,2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
-              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x1a,value_04,
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x18,value_04,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
+              );
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar18._0_1_ = 0;
+    uVar18._1_1_ = 0;
+    uVar18._2_2_ = 0;
+    fVar2 = 0.0;
+    fVar3 = 0.0;
+    fVar11 = 0.0;
+    InteractionData__ctor_8
+              ((InteractionData *)&stack0xffffffe8,InteractionPackageType__Enum_SlapGunHit,25.0,
+               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+               PlayerKilledByType__Enum_None,1,(MethodInfo *)0x0);
+    value_05.impulse.x = 0.0;
+    value_05.damage = fVar2;
+    value_05.impulse.y = fVar3;
+    value_05.impulse.z = fVar11;
+    value_05.interactionType = (uint8_t)uVar18;
+    value_05.playerKilledByType = SUB41(uVar18,1);
+    value_05._18_2_ = SUB42(uVar18,2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    InteractionData]::Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData__Add
+              ((Dictionary_2_System_ByteEnum_MV_WorldObject_InteractionData_ *)this,0x1a,value_05,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_MV::WorldObject::InteractionData>__Add_MV__WorldObject__InteractionPackageType__MV__WorldObject__InteractionData_
               );
     TypeInfo__MV__WorldObject__InteractionData->static_fields->sharedStaticValues = this;
@@ -582,8 +575,8 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__cctor
     return;
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -841,9 +834,9 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
   if (bVar7 != 0) {
     impulse.x = 0.0;
     damage = impulse.y;
-    interactionType._1_1_ = 0x3a;
+    interactionType._1_1_ = 0x34;
     uVar9 = interactionType._1_1_;
-    interactionType._1_1_ = 0x3a;
+    interactionType._1_1_ = 0x34;
     bVar7 = MVMath::MVMath_ValidateFloat(impulse.y,(MethodInfo *)0x0);
     if (bVar7 != 0) {
       impulse.z = 0.0;

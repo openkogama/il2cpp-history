@@ -34,6 +34,7 @@ bool Assembly-CSharp.dll::ChatAnchor::ChatAnchor_BindAttachedBubble
 }
 
 
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Vector3 HandleOfScreenChatBubble(Camera, Vector3) */
 
 Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
@@ -48,7 +49,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
      (pRVar4 = ChatBubble::ChatBubble_get_rectTransform(pCVar3,(MethodInfo *)0x0),
      pRVar4 != (RectTransform *)0x0)) {
     pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0);
+                        ((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0);
     pSStack_1 = (SubscribableVariableBase_1_System_Single___Class *)pRVar5->m_XMin;
     pMStack_2 = (MonitorData *)pRVar5->m_YMin;
     SubscribableVariableBase`1[System::Single]::SubscribableVariableBase_1_System_Single__get_Value
@@ -64,7 +65,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
             (pRVar4 = ChatBubble::ChatBubble_get_rectTransform(pCVar3,(MethodInfo *)0x0),
             pRVar4 != (RectTransform *)0x0)) &&
            (UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
-                      (pRVar4,(MethodInfo *)0x0), camera != (Camera *)0x0)) {
+                      (pRVar4,(MethodInfo *)0x0), unaff_EDI = camera, camera != (Camera *)0x0)) {
           puVar7 = &UNK_?;
           pAVar8 = (Action_1_Single_ *)camera;
           iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelWidth
@@ -74,7 +75,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
              (pRVar4 = ChatBubble::ChatBubble_get_rectTransform(pCVar3,(MethodInfo *)0x0),
              pRVar4 != (RectTransform *)0x0)) {
             pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                               ((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0);
+                                ((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0);
             pSStack_1 = (SubscribableVariableBase_1_System_Single___Class *)pRVar5->m_XMin;
             pMStack_2 = (MonitorData *)pRVar5->m_YMin;
             this_00 = (SubscribableVariableBase_1_System_Single_ *)&pSStack_1;
@@ -103,8 +104,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                    (pRVar4 = ChatBubble::ChatBubble_get_rectTransform(pCVar3,(MethodInfo *)0x0),
                    pRVar4 != (RectTransform *)0x0)) {
                   pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                           RectTransform_get_rect((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0)
-                  ;
+                            RectTransform_get_rect
+                                      ((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0);
                   pSStack_1 = (SubscribableVariableBase_1_System_Single___Class *)pRVar5->m_XMin;
                   pMStack_2 = (MonitorData *)pRVar5->m_YMin;
                   fVar10 = mscorlib.dll::System::Collections::Generic::
@@ -137,8 +138,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                              (pCVar3,(MethodInfo *)0x0),
                          pRVar4 != (RectTransform *)0x0)) {
                         pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                 RectTransform_get_rect
-                                           ((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0);
+                                  RectTransform_get_rect
+                                            ((Rect *)&stack0xffffffcc,pRVar4,(MethodInfo *)0x0);
                         pSStack_1 = (SubscribableVariableBase_1_System_Single___Class *)
                                      pRVar5->m_XMin;
                         pMStack_2 = (MonitorData *)pRVar5->m_YMin;
@@ -233,42 +234,61 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
     }
   }
 code_?:
-  uVar20 = func_?();
-  iVar21 = (int)((ulonglong)uVar20 >> 0x20);
-  pcVar22 = (char *)uVar20;
-  puVar23 = (uint *)(iVar21 + 0x2c);
-  *puVar23 = *puVar23 | (uint)pcVar22;
-  *pcVar22 = *pcVar22 + (char)((ulonglong)uVar20 >> 0x20);
-  pcVar22 = (char *)(iVar21 + 0x2d);
-  *pcVar22 = *pcVar22 - (((byte)uVar20 - ((byte)uVar20 < 0x10)) + -0x62);
-  in((short)((ulonglong)uVar20 >> 0x20) + 1);
+  iVar20 = func_?();
+  iVar20 = CONCAT31((int3)((uint)(iVar20 + 1) >> 8),(char)(iVar20 + 1) + -0x10);
+  puVar21 = (undefined1 *)(iVar20 + -4);
+  *(undefined4 *)(iVar20 + -4) = 0x55102c40;
   if (cRam_? == '\0') {
+    *(Object_1__Class ***)(iVar20 + -8) = &TypeInfo__UnityEngine__Object;
+    puVar22 = (undefined1 *)(iVar20 + -0xc);
+    *(undefined **)(iVar20 + -0xc) = &UNK_?;
     func_?();
+    puVar21 = puVar22 + 4;
     cRam_? = '\x01';
   }
-  x = (Object_1 *)__return_storage_ptr__[1].x;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+  pOVar23 = TypeInfo__UnityEngine__Object;
+  *(ChatAnchor **)(puVar21 + -4) = this;
+  iVar20 = *(int *)(iVar20 + 4);
+  piVar24 = (int *)(puVar21 + -8);
+  *(Camera **)(puVar21 + -8) = unaff_EDI;
+  uVar25 = *(undefined4 *)(iVar20 + 0xc);
+  if ((pOVar23->_1).cctor_finished_or_no_cctor == 0) {
+    *(Object_1__Class **)(puVar21 + -0xc) = pOVar23;
+    puVar26 = puVar21 + -0x10;
+    *(undefined **)(puVar21 + -0x10) = &UNK_?;
     func_?();
+    piVar24 = (int *)(puVar26 + 4);
   }
-  bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar24 != 0) {
-    fVar10 = __return_storage_ptr__[1].x;
-    if (fVar10 != 0.0) {
-      *(undefined4 *)((int)fVar10 + 0x48) = 0;
-      *(undefined4 *)((int)fVar10 + 0x44) = 0;
-      if (*(CanvasGroup **)((int)fVar10 + 0x30) != (CanvasGroup *)0x0) {
+  piVar24[-1] = 0;
+  piVar24[-2] = 0;
+  piVar24[-3] = uVar25;
+  piVar24[-4] = (int)&UNK_?;
+  bVar27 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)piVar24[-3],(Object_1 *)piVar24[-2],(MethodInfo *)piVar24[-1]);
+  if (bVar27 != 0) {
+    iVar20 = *(int *)(iVar20 + 0xc);
+    if (iVar20 != 0) {
+      *(undefined4 *)(iVar20 + 0x48) = 0;
+      *(undefined4 *)(iVar20 + 0x44) = 0;
+      iVar20 = *(int *)(iVar20 + 0x30);
+      if (iVar20 != 0) {
+        piVar24[2] = 0;
+        piVar24[1] = extraout_ECX;
+        piVar24[1] = 0;
+        *piVar24 = iVar20;
+        piVar24[-1] = (int)&UNK_?;
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (*(CanvasGroup **)((int)fVar10 + 0x30),0.0,(MethodInfo *)0x0);
+                  ((CanvasGroup *)*piVar24,(float)piVar24[1],(MethodInfo *)piVar24[2]);
         return extraout_EAX;
       }
     }
+    piVar24[2] = (int)&UNK_?;
     func_?();
-    pcVar25 = (code *)swi(3);
-    pVVar11 = (Vector3 *)(*pcVar25)();
+    pcVar28 = (code *)swi(3);
+    pVVar11 = (Vector3 *)(*pcVar28)();
     return pVVar11;
   }
-  return (Vector3 *)CONCAT31(extraout_var,bVar24);
+  return (Vector3 *)CONCAT31(extraout_var,bVar27);
 }
 
 

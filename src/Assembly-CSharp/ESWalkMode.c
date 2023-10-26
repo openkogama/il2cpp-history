@@ -550,6 +550,7 @@ bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_ShouldSelectTeamOrSpawnRole
 
 {
   if (isSpawnRoleValid != 0) {
+code_?:
     return isTeamValid ^ 1;
   }
   if (cRam_? == '\0') {
@@ -570,18 +571,17 @@ bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_ShouldSelectTeamOrSpawnRole
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
       if (pMVar1 != (MVLocalPlayer *)0x0) {
         iVar3 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar1,(MethodInfo *)0x0);
-        bVar4 = isTeamValid ^ 1;
         if (iVar2 != iVar3) {
-          bVar4 = 1;
+          return 1;
         }
-        return bVar4;
+        goto code_?;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 

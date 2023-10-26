@@ -1488,13 +1488,13 @@ String * Assembly-CSharp.dll::Newtonsoft::Json::JsonConvert::JsonConvert_ToStrin
                      (&value,(String *)0x0,(IFormatProvider *)provider,(MethodInfo *)0x0);
   if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     value.hi = (int32_t)TypeInfo__Newtonsoft__Json__JsonConvert;
-    value.flags._0_2_ = 0xd30a;
+    value.flags._0_2_ = 0xd04a;
     value.flags._2_2_ = 0x1046;
     func_?();
   }
   if (cRam_? == '\0') {
     value.hi = (int32_t)&StringLiteral__0;
-    value.flags._0_2_ = 0xd320;
+    value.flags._0_2_ = 0xd060;
     value.flags._2_2_ = 0x1046;
     func_?();
     cRam_? = '\x01';
@@ -1661,612 +1661,621 @@ String * Assembly-CSharp.dll::Newtonsoft::Json::JsonConvert::JsonConvert_ToStrin
     cRam_? = '\x01';
   }
   pOVar1 = value;
-  if (value == (Object *)0x0) {
-code_?:
-    if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    return TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->Null;
-  }
-  piVar2 = (int *)func_?();
-  if (piVar2 == (int *)0x0) {
-    pOVar3 = (Object *)0x0;
-    if ((DateTimeOffset__Class *)pOVar1->klass == TypeInfo__System__DateTimeOffset) {
-      pOVar3 = pOVar1;
-    }
-    if (pOVar3 == (Object *)0x0) {
+  if (value != (Object *)0x0) {
+    piVar2 = (int *)func_?();
+    if (piVar2 == (int *)0x0) {
       pOVar3 = (Object *)0x0;
-      if ((Guid__Class *)pOVar1->klass == TypeInfo__System__Guid) {
+      if ((DateTimeOffset__Class *)pOVar1->klass == TypeInfo__System__DateTimeOffset) {
         pOVar3 = pOVar1;
       }
       if (pOVar3 == (Object *)0x0) {
-        pTVar4 = (TimeSpan__Class *)pOVar1->klass;
-        if (((pTVar4->_1).typeHierarchyDepth < (TypeInfo__System__Uri->_1).typeHierarchyDepth) ||
-           ((pTVar4->_1).typeHierarchy[(TypeInfo__System__Uri->_1).typeHierarchyDepth - 1] !=
-            (Il2CppClass *)TypeInfo__System__Uri)) {
-          pOVar3 = (Object *)0x0;
-          if (pTVar4 == TypeInfo__System__TimeSpan) {
-            pOVar3 = pOVar1;
+        pOVar3 = (Object *)0x0;
+        if ((Guid__Class *)pOVar1->klass == TypeInfo__System__Guid) {
+          pOVar3 = pOVar1;
+        }
+        if (pOVar3 == (Object *)0x0) {
+          pTVar4 = (TimeSpan__Class *)pOVar1->klass;
+          if (((pTVar4->_1).typeHierarchyDepth < (TypeInfo__System__Uri->_1).typeHierarchyDepth) ||
+             ((pTVar4->_1).typeHierarchy[(TypeInfo__System__Uri->_1).typeHierarchyDepth - 1] !=
+              (Il2CppClass *)TypeInfo__System__Uri)) {
+            pOVar3 = (Object *)0x0;
+            if (pTVar4 == TypeInfo__System__TimeSpan) {
+              pOVar3 = pOVar1;
+            }
+            if (pOVar3 == (Object *)0x0) goto code_?;
+            if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            if ((pOVar1->klass->_0).element_class == (TypeInfo__System__TimeSpan->_0).element_class
+               ) {
+              piVar5 = (int64_t *)func_?();
+              pSVar6 = JsonConvert_ToString_17((TimeSpan)*piVar5,(MethodInfo *)0x0);
+              return pSVar6;
+            }
           }
-          if (pOVar3 == (Object *)0x0) goto code_?;
-          if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          else {
+            if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            if (((TypeInfo__System__Uri->_1).typeHierarchyDepth <=
+                 (pOVar1->klass->_1).typeHierarchyDepth) &&
+               ((pOVar1->klass->_1).typeHierarchy
+                [(TypeInfo__System__Uri->_1).typeHierarchyDepth - 1] ==
+                (Il2CppClass *)TypeInfo__System__Uri)) {
+              pSVar6 = JsonConvert_ToString_18((Uri *)pOVar1,(MethodInfo *)0x0);
+              return pSVar6;
+            }
             func_?();
-          }
-          if ((pOVar1->klass->_0).element_class == (TypeInfo__System__TimeSpan->_0).element_class) {
-            piVar5 = (int64_t *)func_?();
-            pSVar6 = JsonConvert_ToString_17((TimeSpan)*piVar5,(MethodInfo *)0x0);
-            return pSVar6;
           }
         }
         else {
           if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          if (((TypeInfo__System__Uri->_1).typeHierarchyDepth <=
-               (pOVar1->klass->_1).typeHierarchyDepth) &&
-             ((pOVar1->klass->_1).typeHierarchy[(TypeInfo__System__Uri->_1).typeHierarchyDepth - 1]
-              == (Il2CppClass *)TypeInfo__System__Uri)) {
-            pSVar6 = JsonConvert_ToString_18((Uri *)pOVar1,(MethodInfo *)0x0);
+          if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Guid->_0).element_class) {
+            pGVar7 = (Guid *)func_?();
+            pSVar6 = JsonConvert_ToString_16(*pGVar7,(MethodInfo *)0x0);
             return pSVar6;
           }
-          func_?();
         }
       }
       else {
         if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Guid->_0).element_class) {
-          pGVar7 = (Guid *)func_?();
-          pSVar6 = JsonConvert_ToString_16(*pGVar7,(MethodInfo *)0x0);
+        if ((pOVar1->klass->_0).element_class ==
+            (TypeInfo__System__DateTimeOffset->_0).element_class) {
+          pDVar8 = (DateTimeOffset *)func_?();
+          pSVar6 = JsonConvert_ToString_1(*pDVar8,(MethodInfo *)0x0);
           return pSVar6;
         }
       }
+      func_?();
     }
     else {
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__DateTimeOffset->_0).element_class)
-      {
-        pDVar8 = (DateTimeOffset *)func_?();
-        pSVar6 = JsonConvert_ToString_1(*pDVar8,(MethodInfo *)0x0);
+      uVar9 = func_?();
+      switch(uVar9) {
+      case 2:
+        goto code_?;
+      case 3:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xc4 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        uVar13 = (*(code *)*puVar12)();
+        value = (Object *)CONCAT31(value._1_3_,uVar13);
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_2((bool)value,(MethodInfo *)0x0);
+        return pSVar6;
+      case 4:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xcc +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        uVar14 = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_3(uVar14,(MethodInfo *)0x0);
+        return pSVar6;
+      case 5:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xd4 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        uVar13 = (*(code *)*puVar12)();
+        value = (Object *)CONCAT31(value._1_3_,uVar13);
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_14((int8_t)value,(MethodInfo *)0x0);
+        return pSVar6;
+      case 6:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xdc +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        uVar13 = (*(code *)*puVar12)();
+        value = (Object *)CONCAT31(value._1_3_,uVar13);
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_13((uint8_t)value,(MethodInfo *)0x0);
+        return pSVar6;
+      case 7:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xe4 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        value_01 = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_6(value_01,(MethodInfo *)0x0);
+        return pSVar6;
+      case 8:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xec +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        uVar14 = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_7(uVar14,(MethodInfo *)0x0);
+        return pSVar6;
+      case 9:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xf4 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        value_02 = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_5(value_02,(MethodInfo *)0x0);
+        return pSVar6;
+      case 10:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xfc +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        value_03 = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_8(value_03,(MethodInfo *)0x0);
+        return pSVar6;
+      case 0xb:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x104 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        value_04 = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_9(value_04,(MethodInfo *)0x0);
+        return pSVar6;
+      case 0xc:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x10c +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        value_05 = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_10(value_05,(MethodInfo *)0x0);
+        return pSVar6;
+      case 0xd:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x114 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        fVar15 = (float10)(*(code *)*puVar12)();
+        value = (Object *)(float)fVar15;
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_11((float)value,(MethodInfo *)0x0);
+        return pSVar6;
+      case 0xe:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x11c +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        fVar15 = (float10)(*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_12((double)fVar15,(MethodInfo *)0x0);
+        return pSVar6;
+      case 0xf:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x124 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        puVar12 = (undefined4 *)(*(code *)*puVar12)();
+        uVar9 = *puVar12;
+        uVar16 = puVar12[1];
+        uVar17 = puVar12[2];
+        uVar18 = puVar12[3];
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value_00.hi = uVar16;
+        value_00.flags = uVar9;
+        value_00.lo = uVar17;
+        value_00.mid._0_1_ = (char)uVar18;
+        value_00.mid._1_1_ = (char)((uint)uVar18 >> 8);
+        value_00.mid._2_2_ = (short)((uint)uVar18 >> 0x10);
+        value_00.ulomidLE._0_4_ = 0;
+        value_00.ulomidLE._4_4_ = unaff_ESI;
+        pSVar6 = JsonConvert_ToString_15(value_00,unaff_EBX);
+        return pSVar6;
+      case 0x10:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 300 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        value_06._dateData = (*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString(value_06,(MethodInfo *)0x0);
+        return pSVar6;
+      case 0x12:
+        if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        value = (Object *)
+                mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+        uVar10 = 0;
+        uVar11 = *(ushort *)(*piVar2 + 0xb2);
+        if (uVar11 != 0) {
+          do {
+            if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
+                TypeInfo__System__IConvertible) {
+              puVar12 = (undefined4 *)
+                        (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x134 +
+                        *piVar2);
+              goto code_?;
+            }
+            uVar10 = uVar10 + 1;
+          } while (uVar10 < uVar11);
+        }
+        puVar12 = (undefined4 *)func_?();
+code_?:
+        pSVar6 = (String *)(*(code *)*puVar12)();
+        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar6 = JsonConvert_ToString_19(pSVar6,(MethodInfo *)0x0);
         return pSVar6;
       }
     }
+code_?:
     func_?();
-  }
-  else {
+    func_?();
+    pCVar19 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                        ((MethodInfo *)0x0);
+    func_?();
     uVar9 = func_?();
-    switch(uVar9) {
-    case 2:
-      goto code_?;
-    case 3:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    pOVar1 = value;
+    func_?();
+    pTVar20 = mscorlib.dll::System::Object::Object_GetType(pOVar1,(MethodInfo *)0x0);
+    func_?();
+    func_?(uVar9,pTVar20);
+    func_?();
+    method_00 = (MethodInfo *)0x0;
+    uVar13 = (undefined1)uVar9;
+    uVar21 = (undefined1)((uint)uVar9 >> 8);
+    uVar22 = (undefined2)((uint)uVar9 >> 0x10);
+    pCVar23 = pCVar19;
+    pSVar6 = (String *)func_?();
+    pSVar6 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                        (pSVar6,(IFormatProvider *)pCVar23,
+                         (Object__Array *)CONCAT22(uVar22,CONCAT11(uVar21,uVar13)),method_00);
+    func_?();
+    this = (ArgumentException *)func_?();
+    func_?();
+    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
+              (this,pSVar6,(MethodInfo *)0x0);
+    func_?();
+    cVar24 = (undefined1 *)0xffffffd3 < &stack0xffffffd4;
+    uVar9 = func_?();
+    pcVar25 = (char *)((int)&pSVar6->klass + 1);
+    *pcVar25 = *pcVar25 + (char)extraout_ECX + cVar24;
+    bVar26 = (byte)pCVar19;
+    bVar27 = (byte)((uint)pCVar19 >> 8) | bVar26;
+    iVar28 = CONCAT22((short)((uint)pCVar19 >> 0x10),CONCAT11(bVar27,bVar26));
+    pbVar29 = (byte *)(iVar28 * 8 + -0x629fa8d5);
+    bVar30 = *pbVar29;
+    bVar31 = (byte)((uint)extraout_ECX >> 8);
+    *pbVar29 = *pbVar29 + bVar31;
+    bVar32 = (byte)uVar9 + bVar27;
+    bVar33 = CARRY1((byte)uVar9,bVar27) || CARRY1(bVar32,CARRY1(bVar30,bVar31));
+    cVar24 = bVar32 + CARRY1(bVar30,bVar31);
+    iVar34 = CONCAT31((int3)((uint)uVar9 >> 8),cVar24);
+    if (extraout_ECX == 1 || cVar24 == '\0') {
+      bVar35 = CARRY1(bRam_?,bVar26) || CARRY1(bRam_? + bVar26,bVar33);
+      bRam_? = bRam_? + bVar26 + bVar33;
+      if (extraout_ECX != 2) {
+        if (bRam_? == 0) {
+          func_?();
+        }
+        pCVar23 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                            ((MethodInfo *)0x0);
+        pSVar6 = mscorlib.dll::System::UInt32::UInt32_ToString_3
+                            ((UInt32 *)&value,(String *)0x0,(IFormatProvider *)pCVar23,
+                             (MethodInfo *)0x0);
+        return pSVar6;
       }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xc4 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
+      bVar33 = CARRY1(bVar27,bVar35);
+      if ((uint)(byte)(bVar27 + bVar35) << 8 == 1) {
+        pbVar29 = (byte *)(iVar34 + 0x6f1046e3);
+        bVar35 = CARRY1(*pbVar29,bVar27) || CARRY1(*pbVar29 + bVar27,bVar33);
+        *pbVar29 = *pbVar29 + bVar27 + bVar33;
+        in(0x46);
+        cVar24 = bVar26 + 0x46 + bVar35;
+        pcVar25 = (char *)CONCAT31((int3)((uint)iVar28 >> 8),cVar24);
+        in(0x46);
+        *pcVar25 = *pcVar25 + cVar24 + (0xb9 < bVar26 || CARRY1(bVar26 + 0x46,bVar35));
+        in(0x46);
+        pcVar36 = (code *)swi(3);
+        pSVar6 = (String *)(*pcVar36)();
+        return pSVar6;
       }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      uVar13 = (*(code *)*puVar12)();
-      value = (Object *)CONCAT31(value._1_3_,uVar13);
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_2((bool)value,(MethodInfo *)0x0);
-      return pSVar6;
-    case 4:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xcc +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      uVar14 = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_3(uVar14,(MethodInfo *)0x0);
-      return pSVar6;
-    case 5:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xd4 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      uVar13 = (*(code *)*puVar12)();
-      value = (Object *)CONCAT31(value._1_3_,uVar13);
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_14((int8_t)value,(MethodInfo *)0x0);
-      return pSVar6;
-    case 6:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xdc +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      uVar13 = (*(code *)*puVar12)();
-      value = (Object *)CONCAT31(value._1_3_,uVar13);
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_13((uint8_t)value,(MethodInfo *)0x0);
-      return pSVar6;
-    case 7:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xe4 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      value_01 = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_6(value_01,(MethodInfo *)0x0);
-      return pSVar6;
-    case 8:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xec +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      uVar14 = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_7(uVar14,(MethodInfo *)0x0);
-      return pSVar6;
-    case 9:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xf4 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      value_02 = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_5(value_02,(MethodInfo *)0x0);
-      return pSVar6;
-    case 10:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xfc +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      value_03 = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_8(value_03,(MethodInfo *)0x0);
-      return pSVar6;
-    case 0xb:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x104 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      value_04 = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_9(value_04,(MethodInfo *)0x0);
-      return pSVar6;
-    case 0xc:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x10c +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      value_05 = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_10(value_05,(MethodInfo *)0x0);
-      return pSVar6;
-    case 0xd:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x114 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      fVar15 = (float10)(*(code *)*puVar12)();
-      value = (Object *)(float)fVar15;
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_11((float)value,(MethodInfo *)0x0);
-      return pSVar6;
-    case 0xe:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x11c +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      fVar15 = (float10)(*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_12((double)fVar15,(MethodInfo *)0x0);
-      return pSVar6;
-    case 0xf:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x124 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      puVar12 = (undefined4 *)(*(code *)*puVar12)();
-      uVar9 = *puVar12;
-      uVar16 = puVar12[1];
-      uVar17 = puVar12[2];
-      uVar18 = puVar12[3];
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value_00.hi = uVar16;
-      value_00.flags = uVar9;
-      value_00.lo = uVar17;
-      value_00.mid._0_1_ = (char)uVar18;
-      value_00.mid._1_1_ = (char)((uint)uVar18 >> 8);
-      value_00.mid._2_2_ = (short)((uint)uVar18 >> 0x10);
-      value_00.ulomidLE._0_4_ = 0;
-      value_00.ulomidLE._4_4_ = unaff_ESI;
-      pSVar6 = JsonConvert_ToString_15(value_00,unaff_EBX);
-      return pSVar6;
-    case 0x10:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 300 + *piVar2
-                      );
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      value_06._dateData = (*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString(value_06,(MethodInfo *)0x0);
-      return pSVar6;
-    case 0x12:
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value = (Object *)
-              mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                        ((MethodInfo *)0x0);
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar2 + 0xb2);
-      if (uVar11 != 0) {
-        do {
-          if (*(IConvertible__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__System__IConvertible) {
-            puVar12 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0x134 +
-                      *piVar2);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      pSVar6 = (String *)(*(code *)*puVar12)();
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pSVar6 = JsonConvert_ToString_19(pSVar6,(MethodInfo *)0x0);
-      return pSVar6;
     }
-  }
-code_?:
-  func_?();
-  func_?();
-  pCVar19 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                      ((MethodInfo *)0x0);
-  func_?();
-  uVar9 = func_?();
-  pOVar1 = value;
-  func_?();
-  pTVar20 = mscorlib.dll::System::Object::Object_GetType(pOVar1,(MethodInfo *)0x0);
-  func_?();
-  func_?(uVar9,pTVar20);
-  func_?();
-  method_00 = (MethodInfo *)0x0;
-  uVar13 = (undefined1)uVar9;
-  uVar21 = (undefined1)((uint)uVar9 >> 8);
-  uVar22 = (undefined2)((uint)uVar9 >> 0x10);
-  pCVar23 = pCVar19;
-  pSVar6 = (String *)func_?();
-  pSVar6 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                      (pSVar6,(IFormatProvider *)pCVar23,
-                       (Object__Array *)CONCAT22(uVar22,CONCAT11(uVar21,uVar13)),method_00);
-  func_?();
-  this = (ArgumentException *)func_?();
-  func_?();
-  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(this,pSVar6,(MethodInfo *)0x0)
-  ;
-  func_?();
-  bVar24 = (undefined1 *)0xffffffd3 < &stack0xffffffd4;
-  func_?();
-  out(pSVar6->klass,extraout_DX);
-  uVar25 = func_?();
-  pbVar26 = (byte *)((ulonglong)uVar25 >> 0x20);
-  pbVar27 = (byte *)uVar25;
-  bVar28 = *pbVar26 + (byte)pCVar19;
-  bVar29 = CARRY1(*pbVar26,(byte)pCVar19) || CARRY1(bVar28,bVar24);
-  *pbVar26 = bVar28 + bVar24;
-  bVar24 = (byte)((ulonglong)uVar25 >> 0x20);
-  bVar28 = (byte)uVar25;
-  if (extraout_ECX != 1 && *pbVar26 != 0) {
-    in((short)CONCAT31((int3)((ulonglong)uVar25 >> 0x28),bVar24 - bVar28));
+    else {
+      *(char *)(iVar28 + 0x75007478) = *(char *)(iVar28 + 0x75007478) + cVar24;
+      puVar37 = (uint *)(iVar34 + -0x18);
+      *puVar37 = *puVar37 | 0x601046dd;
+    }
                     /* WARNING: Bad instruction - Truncating control flow here */
     halt_baddata();
   }
-  bVar30 = CARRY1(*pbVar27,bVar24) || CARRY1(*pbVar27 + bVar24,bVar29);
-  *pbVar27 = *pbVar27 + bVar24 + bVar29;
-  if (extraout_ECX == 2 || *pbVar27 != 0) {
-    pbVar26 = pbVar27 + 0x5c1046e1;
-    bVar31 = (byte)((uint)pCVar19 >> 8);
-    bVar24 = *pbVar26 + bVar31;
-    bVar29 = CARRY1(*pbVar26,bVar31) || CARRY1(bVar24,bVar30);
-    *pbVar26 = bVar24 + bVar30;
-    if (extraout_ECX == 3) {
-      bVar24 = *pbVar27;
-      bVar31 = *pbVar27;
-      *pbVar27 = bVar31 + bVar28 + bVar29;
-      cRam_? = cRam_? + bVar28 + (CARRY1(bVar24,bVar28) || CARRY1(bVar31 + bVar28,bVar29));
-      goto code_?;
-    }
-  }
-  else {
-    func_?();
-  }
-  uRam_? = 1;
 code_?:
-  if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
+  if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pCVar23 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                      ((MethodInfo *)0x0);
-  pSVar6 = mscorlib.dll::System::UInt32::UInt32_ToString_3
-                      ((UInt32 *)&value,(String *)0x0,(IFormatProvider *)pCVar23,(MethodInfo *)0x0);
-  return pSVar6;
+  return TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->Null;
 }
 
 

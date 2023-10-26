@@ -84,7 +84,7 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Execute
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0xbf80);
+    func_?(0x60dc);
     func_?(&TypeInfo__Cube);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__MVInputWrapper);
@@ -151,7 +151,7 @@ code_?:
           if (CVar9 == CanPerformCubeActionResult__Enum_Yes) {
             pos.y = iVar3;
             pos.x = iVar2;
-            iVar2 = 0x763b;
+            iVar2 = 0x750b;
             iVar3 = 0x103e;
             pos.z = (int16_t)e;
             pCVar10 = e;

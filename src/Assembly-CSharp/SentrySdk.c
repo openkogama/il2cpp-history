@@ -21,8 +21,8 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 != (SentrySdk *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__Sentry__Breadcrumb);
-      func_?(&TypeInfo__System__DateTime);
+      func_?();
+      func_?();
       func_?(&TypeInfo__UnityEngine__Debug);
       func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
       func_?(&StringLiteral_Cannot_AddBreadcrumb_if_we_are_n);
@@ -30,48 +30,48 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
     }
     if ((pSVar1->fields)._initialized == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
                 ((Object *)StringLiteral_Cannot_AddBreadcrumb_if_we_are_n,(MethodInfo *)0x0);
       return;
     }
     if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__DateTime);
+      func_?();
     }
-    DStack_3 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-    pSStack_4 = mscorlib.dll::System::DateTime::DateTime_ToString_1
-                          (&DStack_3,StringLiteral_yyyy_MM_ddTHH__mm__ss,(MethodInfo *)0x0);
-    uStack_5 = (pSVar1->fields)._lastBreadcrumbPos;
-    pBVar6 = (pSVar1->fields)._breadcrumbs;
+    mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+    item1 = mscorlib.dll::System::DateTime::DateTime_ToString_1
+                      ((DateTime *)&stack0xffffffec,StringLiteral_yyyy_MM_ddTHH__mm__ss,
+                       (MethodInfo *)0x0);
+    uVar3 = (pSVar1->fields)._lastBreadcrumbPos;
+    pBVar4 = (pSVar1->fields)._breadcrumbs;
     this = (Tuple_2_Object_Object_ *)func_?(TypeInfo__Sentry__Breadcrumb);
-    if (this != (Tuple_2_Object_Object_ *)0x0) {
-      mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
-                (this,(Object *)pSStack_4,(Object *)message,(MethodInfo *)0x0);
-      if (pBVar6 != (Breadcrumb__Array *)0x0) {
-        iVar7 = func_?(this,(pBVar6->klass->_0).element_class);
-        if (iVar7 == 0) {
-          uVar8 = func_?(0);
-          func_?(uVar8);
-        }
-        else if (uStack_5 < pBVar6->max_length) {
-          pBVar6->vector[uStack_5] = (Breadcrumb *)this;
-          func_?(pBVar6->vector + uStack_5,this);
-          (pSVar1->fields)._lastBreadcrumbPos = ((pSVar1->fields)._lastBreadcrumbPos + 1) % 100;
-          if (99 < (pSVar1->fields)._noBreadcrumbs) {
-            return;
-          }
-          piVar9 = &(pSVar1->fields)._noBreadcrumbs;
-          *piVar9 = *piVar9 + 1;
-          return;
-        }
+    if ((this != (Tuple_2_Object_Object_ *)0x0) &&
+       (mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
+                  (this,(Object *)item1,(Object *)message,(MethodInfo *)0x0),
+       pBVar4 != (Breadcrumb__Array *)0x0)) {
+      iVar5 = func_?();
+      if (iVar5 == 0) {
+        func_?();
         func_?();
       }
+      else if (uVar3 < pBVar4->max_length) {
+        pBVar4->vector[uVar3] = (Breadcrumb *)this;
+        func_?();
+        (pSVar1->fields)._lastBreadcrumbPos = ((pSVar1->fields)._lastBreadcrumbPos + 1) % 100;
+        if (99 < (pSVar1->fields)._noBreadcrumbs) {
+          return;
+        }
+        piVar6 = &(pSVar1->fields)._noBreadcrumbs;
+        *piVar6 = *piVar6 + 1;
+        return;
+      }
+      func_?();
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -240,7 +240,7 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_DoAddBreadcrumb
       func_?();
     }
     else if (&UNK_? < (undefined *)pBVar1->max_length) {
-      pBVar1[0x728cab].vector[0x19] = (Breadcrumb *)this_00;
+      pBVar1[0x728ca3].vector[0x19] = (Breadcrumb *)this_00;
       func_?();
       (this->fields)._lastBreadcrumbPos = ((this->fields)._lastBreadcrumbPos + 1) % 100;
       if (99 < (this->fields)._noBreadcrumbs) {

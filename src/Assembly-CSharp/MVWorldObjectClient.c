@@ -1566,17 +1566,26 @@ code_?:
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (this = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     this == (MVWorldObjectClient *)0x0)) {
-    func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+     (pMVar2 = (MVWorldObjectClient *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
+     pMVar2 == (MVWorldObjectClient *)0x0)) {
+    bVar3 = 0;
+    bVar4 = func_?();
+    bVar5 = (byte)((ushort)in_ES >> 8);
+    *(char *)&this->klass =
+         *(char *)&this->klass + (char)in_ES +
+         (CARRY1(bVar5,extraout_DL) ||
+         CARRY1(bVar5 + extraout_DL,CARRY1(bVar4,extraout_DL) || CARRY1(bVar4 + extraout_DL,bVar3)))
+    ;
+    pcVar6 = (code *)swi(3);
+    pMVar2 = (MVWorldObjectClient *)(*pcVar6)();
+    return pMVar2;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_2;
+  unaff_EBP = in_stack_7;
   unaff_ESI = pMVar1;
+  this = pMVar2;
   goto code_?;
 }
 

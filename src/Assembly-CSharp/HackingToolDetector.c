@@ -359,11 +359,11 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
 {
   pHVar1 = a;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__HackingToolDetector);
+    func_?(&TypeInfo__HackingToolDetector__ReportCategory);
+    func_?(&TypeInfo__StatHatWrapper);
+    func_?(&TypeInfo__System__String);
     func_?(&StringLiteral_Application_quit_);
     func_?(&StringLiteral_Running_process__);
     func_?(&StringLiteral___detected_);
@@ -376,110 +376,109 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
     cRam_? = '\x01';
   }
   pSVar2 = StringLiteral_Report_default_label_have_been_h;
-  index = (HackingToolDetector_HackingToolReport *)0x2;
   if (a == (HackingToolDetector_HackingToolReport *)0x0) goto code_?;
   switch((a->fields).kind) {
   case 0:
     a = (HackingToolDetector_HackingToolReport *)0x0;
-    pSVar3 = (String__Array *)func_?();
+    pSVar3 = (String__Array *)func_?(TypeInfo__System__String,5);
     if (pSVar3 == (String__Array *)0x0) break;
     if ((StringLiteral_Running_process__ != (String *)0x0) &&
-       (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    func_?();
+       (iVar4 = func_?(StringLiteral_Running_process__,(pSVar3->klass->_0).element_class),
+       iVar4 == 0)) goto code_?;
+    func_?(0,StringLiteral_Running_process__);
     pAVar5 = (pHVar1->fields).app;
-    index = (HackingToolDetector_HackingToolReport *)0x0;
     if (pAVar5 == (ApplicationDesc *)0x0) break;
-    index = (HackingToolDetector_HackingToolReport *)
-            (pAVar5->fields)._ExeCertSubjectName_k__BackingField;
+    pSVar2 = (pAVar5->fields)._ExeCertSubjectName_k__BackingField;
 code_?:
-    if ((index != (HackingToolDetector_HackingToolReport *)0x0) &&
-       (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    func_?();
-    if ((StringLiteral___associated_with__ != (String *)0x0) &&
-       (iVar4 = func_?(StringLiteral___associated_with__,
-                                 (pSVar3->klass->_0).element_class), iVar4 == 0))
+    if ((pSVar2 != (String *)0x0) &&
+       (iVar4 = func_?(pSVar2,(pSVar3->klass->_0).element_class), iVar4 == 0))
     goto code_?;
+    func_?(1,pSVar2);
+    if ((StringLiteral___associated_with__ != (String *)0x0) &&
+       (iVar4 = func_?(StringLiteral___associated_with__,(pSVar3->klass->_0).element_class)
+       , iVar4 == 0)) goto code_?;
     func_?(2,StringLiteral___associated_with__);
     pAVar5 = (pHVar1->fields).app;
     if (pAVar5 == (ApplicationDesc *)0x0) break;
-    if (((pAVar5->fields).programName != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)
-       ) goto code_?;
-    func_?();
+    pSVar2 = (pAVar5->fields).programName;
+    if ((pSVar2 != (String *)0x0) &&
+       (iVar4 = func_?(pSVar2,(pSVar3->klass->_0).element_class), iVar4 == 0))
+    goto code_?;
+    func_?(3,pSVar2);
     if ((StringLiteral___detected_ == (String *)0x0) ||
        (iVar4 = func_?(StringLiteral___detected_,(pSVar3->klass->_0).element_class),
        iVar4 != 0)) {
       func_?(4,StringLiteral___detected_);
       pSVar2 = mscorlib.dll::System::String::String_Concat_6(pSVar3,(MethodInfo *)0x0);
-      index = a;
       goto code_?;
     }
     goto code_?;
   case 1:
     a = (HackingToolDetector_HackingToolReport *)0x0;
-    pSVar3 = (String__Array *)func_?();
+    pSVar3 = (String__Array *)func_?(TypeInfo__System__String,7);
     if (pSVar3 == (String__Array *)0x0) break;
     if ((StringLiteral_Running_process__ != (String *)0x0) &&
-       (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    func_?();
+       (iVar4 = func_?(StringLiteral_Running_process__,(pSVar3->klass->_0).element_class),
+       iVar4 == 0)) goto code_?;
+    func_?(0,StringLiteral_Running_process__);
     pAVar5 = (pHVar1->fields).app;
-    index = (HackingToolDetector_HackingToolReport *)0x0;
     if (pAVar5 == (ApplicationDesc *)0x0) break;
-    index = (HackingToolDetector_HackingToolReport *)
-            (pAVar5->fields)._ExeCertSubjectName_k__BackingField;
-    if ((index != (HackingToolDetector_HackingToolReport *)0x0) &&
-       (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    func_?();
-    if ((StringLiteral___associated_with__ != (String *)0x0) &&
-       (iVar4 = func_?(StringLiteral___associated_with__,
-                                 (pSVar3->klass->_0).element_class), iVar4 == 0))
+    pSVar2 = (pAVar5->fields)._ExeCertSubjectName_k__BackingField;
+    if ((pSVar2 != (String *)0x0) &&
+       (iVar4 = func_?(pSVar2,(pSVar3->klass->_0).element_class), iVar4 == 0))
     goto code_?;
+    func_?(1,pSVar2);
+    if ((StringLiteral___associated_with__ != (String *)0x0) &&
+       (iVar4 = func_?(StringLiteral___associated_with__,(pSVar3->klass->_0).element_class)
+       , iVar4 == 0)) goto code_?;
     func_?(2,StringLiteral___associated_with__);
     pAVar5 = (pHVar1->fields).app;
-    index = (HackingToolDetector_HackingToolReport *)0x0;
     if (pAVar5 == (ApplicationDesc *)0x0) break;
-    index = (HackingToolDetector_HackingToolReport *)(pAVar5->fields).programName;
-    if ((index == (HackingToolDetector_HackingToolReport *)0x0) ||
-       (iVar4 = func_?(), iVar4 != 0)) goto code_?;
+    pSVar2 = (pAVar5->fields).programName;
+    if ((pSVar2 == (String *)0x0) ||
+       (iVar4 = func_?(pSVar2,(pSVar3->klass->_0).element_class), iVar4 != 0))
+    goto code_?;
     goto code_?;
   case 2:
     a = (HackingToolDetector_HackingToolReport *)0x1;
-    pSVar3 = (String__Array *)func_?();
+    pSVar3 = (String__Array *)func_?(TypeInfo__System__String,5);
     if (pSVar3 != (String__Array *)0x0) {
       if ((StringLiteral_Registry_key__ != (String *)0x0) &&
-         (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-      func_?();
+         (iVar4 = func_?(StringLiteral_Registry_key__,(pSVar3->klass->_0).element_class),
+         iVar4 == 0)) goto code_?;
+      func_?(0,StringLiteral_Registry_key__);
       pAVar6 = (pHVar1->fields).foundKey;
-      index = (HackingToolDetector_HackingToolReport *)0x0;
       if (pAVar6 != (ApplicationDesc_RegistryKey *)0x0) {
-        index = (HackingToolDetector_HackingToolReport *)(pAVar6->fields).name;
+        pSVar2 = (pAVar6->fields).name;
         goto code_?;
       }
     }
     break;
   case 3:
     a = (HackingToolDetector_HackingToolReport *)0x1;
-    pSVar3 = (String__Array *)func_?();
+    pSVar3 = (String__Array *)func_?(TypeInfo__System__String,7);
     if (pSVar3 == (String__Array *)0x0) break;
-    if ((StringLiteral_Registry_key__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)
-       ) goto code_?;
-    func_?();
+    if ((StringLiteral_Registry_key__ != (String *)0x0) &&
+       (iVar4 = func_?(StringLiteral_Registry_key__,(pSVar3->klass->_0).element_class),
+       iVar4 == 0)) goto code_?;
+    func_?(0,StringLiteral_Registry_key__);
     pAVar6 = (pHVar1->fields).foundKey;
-    index = (HackingToolDetector_HackingToolReport *)0x0;
     if (pAVar6 == (ApplicationDesc_RegistryKey *)0x0) break;
-    index = (HackingToolDetector_HackingToolReport *)(pAVar6->fields).name;
-    if (((index != (HackingToolDetector_HackingToolReport *)0x0) &&
-        (iVar4 = func_?(), iVar4 == 0)) ||
-       ((func_?(), StringLiteral___associated_with__ != (String *)0x0 &&
-        (iVar4 = func_?(), iVar4 == 0)))) goto code_?;
-    func_?();
+    pSVar2 = (pAVar6->fields).name;
+    if (((pSVar2 != (String *)0x0) &&
+        (iVar4 = func_?(pSVar2,(pSVar3->klass->_0).element_class), iVar4 == 0)) ||
+       ((func_?(1,pSVar2), StringLiteral___associated_with__ != (String *)0x0 &&
+        (iVar4 = func_?(StringLiteral___associated_with__,(pSVar3->klass->_0).element_class
+                                ), iVar4 == 0)))) goto code_?;
+    func_?(2,StringLiteral___associated_with__);
     pAVar5 = (pHVar1->fields).app;
-    index = (HackingToolDetector_HackingToolReport *)0x0;
     if (pAVar5 == (ApplicationDesc *)0x0) break;
-    index = (HackingToolDetector_HackingToolReport *)(pAVar5->fields).programName;
-    if ((index != (HackingToolDetector_HackingToolReport *)0x0) &&
-       (iVar4 = func_?(), iVar4 == 0)) goto code_?;
+    pSVar2 = (pAVar5->fields).programName;
+    if ((pSVar2 != (String *)0x0) &&
+       (iVar4 = func_?(pSVar2,(pSVar3->klass->_0).element_class), iVar4 == 0))
+    goto code_?;
 code_?:
-    func_?();
+    func_?(3,pSVar2);
     if ((StringLiteral___detected_as__ != (String *)0x0) &&
        (iVar4 = func_?(StringLiteral___detected_as__,(pSVar3->klass->_0).element_class),
        iVar4 == 0)) goto code_?;
@@ -490,11 +489,9 @@ code_?:
     goto code_?;
     func_?(5,pSVar2);
     if ((::StringLiteral__ == (String *)0x0) ||
-       (iVar4 = func_?(::StringLiteral__,(pSVar3->klass->_0).element_class), iVar4 != 0)
-       ) {
+       (iVar4 = func_?(::StringLiteral__,(pSVar3->klass->_0).element_class), iVar4 != 0)) {
       func_?(6,::StringLiteral__);
       pSVar2 = mscorlib.dll::System::String::String_Concat_6(pSVar3,(MethodInfo *)0x0);
-      index = a;
       goto code_?;
     }
     goto code_?;
@@ -502,32 +499,33 @@ code_?:
     goto code_?;
   default:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
               ((Object *)pSVar2,(MethodInfo *)0x0);
+    a = (HackingToolDetector_HackingToolReport *)0x2;
 code_?:
     if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__HackingToolDetector);
     }
     pBVar7 = (this->fields).alreadyReported;
     if (pBVar7 != (BitArray *)0x0) {
       bVar8 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
-                        (pBVar7,(int32_t)index,(MethodInfo *)0x0);
+                        (pBVar7,(int32_t)a,(MethodInfo *)0x0);
       if (bVar8 != 0) {
         return;
       }
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
                 ((Object *)pSVar2,(MethodInfo *)0x0);
       EStack_9.klass = (Enum__Class *)TypeInfo__HackingToolDetector__ReportCategory;
       EStack_9.monitor = (MonitorData *)0xffffffff;
-      pHStack_10 = index;
+      pHStack_10 = a;
       pSVar2 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_9,(MethodInfo *)0x0);
       pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                          (StringLiteral_cheatDetected_ReportCategory_,pSVar2,(MethodInfo *)0x0);
+                         (StringLiteral_cheatDetected_ReportCategory_,pSVar2,(MethodInfo *)0x0);
       if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__StatHatWrapper);
       }
@@ -535,8 +533,8 @@ code_?:
       pBVar7 = (this->fields).alreadyReported;
       if (pBVar7 != (BitArray *)0x0) {
         mscorlib.dll::System::Collections::BitArray::BitArray_set_Item
-                  (pBVar7,(int32_t)index,1,(MethodInfo *)0x0);
-        if (index != (HackingToolDetector_HackingToolReport *)0x0) {
+                  (pBVar7,(int32_t)a,1,(MethodInfo *)0x0);
+        if (a != (HackingToolDetector_HackingToolReport *)0x0) {
 code_?:
           return;
         }
@@ -559,32 +557,14 @@ code_?:
 code_?:
   func_?();
 code_?:
-  func_?();
-  func_?();
-code_?:
-  func_?();
-  func_?();
+  uVar11 = func_?(0);
+  func_?(uVar11);
 code_?:
   uVar11 = func_?(0);
   func_?(uVar11);
 code_?:
-  func_?();
-  func_?();
-code_?:
   uVar11 = func_?(0);
   func_?(uVar11);
-code_?:
-  func_?();
-  func_?();
-code_?:
-  func_?();
-  func_?();
-code_?:
-  uVar11 = func_?(0);
-  func_?(uVar11);
-code_?:
-  func_?();
-  func_?();
 code_?:
   uVar11 = func_?(0);
   func_?(uVar11);
@@ -595,31 +575,31 @@ code_?:
   uVar11 = func_?(0);
   func_?(uVar11);
 code_?:
+  uVar11 = func_?(0);
+  func_?(uVar11);
+code_?:
+  uVar11 = func_?(0);
+  func_?(uVar11);
+code_?:
+  uVar11 = func_?(0);
+  func_?(uVar11);
+code_?:
+  uVar11 = func_?(0);
+  func_?(uVar11);
+code_?:
+  uVar11 = func_?(0);
+  func_?(uVar11);
+code_?:
+  uVar11 = func_?(0);
+  func_?(uVar11);
+code_?:
+  uVar11 = func_?(0);
   func_?();
-  uVar12 = func_?();
-  puVar13 = (uint *)((ulonglong)uVar12 >> 0x20);
-  puVar14 = puVar13 + 1;
-  uVar15 = *puVar14;
-  bVar16 = (byte)((ulonglong)uVar12 >> 0x28);
-  bVar17 = (byte)*puVar14 + bVar16;
-  *(byte *)puVar14 = bVar17 + CARRY4((uint)index,*puVar13);
-  uVar18 = (undefined3)((ulonglong)uVar12 >> 0x28);
-  cVar19 = ((char)((ulonglong)uVar12 >> 0x20) - *(char *)uVar12) -
-           (CARRY1((byte)uVar15,bVar16) || CARRY1(bVar17,CARRY4((uint)index,*puVar13)));
-  uVar20 = in((short)CONCAT31(uVar18,cVar19));
-  uVar15 = CONCAT31((int3)((ulonglong)uVar12 >> 8),uVar20);
-  pcVar21 = (char *)(uVar15 + 0x64e101a);
-  pbVar22 = (byte *)CONCAT31(uVar18,(cVar19 - *pcVar21) - (0xf9b1efe5 < uVar15));
-  *pbVar22 = *pbVar22 | (char)index + (char)*puVar13;
-  pbVar22 = (byte *)(uVar15 + 0xf9b42557);
-  bVar17 = *pbVar22;
-  bVar16 = (byte)pcVar21;
-  *pbVar22 = *pbVar22 + bVar16;
-  *pcVar21 = *pcVar21 + bVar16 + CARRY1(bVar17,bVar16);
-  if (*pcVar21 == '\0') {
-    func_?(&TypeInfo__HackingToolDetector,&stack0xffffffdc);
+  *extraout_EDX = uVar11;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__HackingToolDetector);
     func_?(&StringLiteral_Cheating_Hacking_is_not_allowed_);
-    uRam_? = 1;
+    cRam_? = '\x01';
   }
   pSVar2 = TM::TM__(StringLiteral_Cheating_Hacking_is_not_allowed_,(MethodInfo *)0x0);
   TypeInfo__HackingToolDetector->static_fields->CheatWarning = pSVar2;

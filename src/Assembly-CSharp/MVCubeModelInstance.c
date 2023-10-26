@@ -263,7 +263,6 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_CompareWithKo
     cRam_? = '\x01';
   }
   pRVar1 = (this->fields)._.prototypeCubeModel;
-  pIVar2 = unaff_ESI;
   if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) {
     *insertedByProfileId = (pRVar1->fields)._AuthorProfileID_k__BackingField;
     if (koGaMaPackageClient != (KoGaMaPackageClient *)0x0) {
@@ -271,7 +270,7 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_CompareWithKo
       if ((wo != (MVWorldObjectClient *)0x0) &&
          (this_01 = (wo->fields)._.data, this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0
          )) {
-        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                  Object]::Dictionary_2_System_Object_System_Object__get_Item
                            (this_01,(Object *)StringLiteral_protoTypeID,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
@@ -280,23 +279,22 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_CompareWithKo
         MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
         ;
         if (this_00 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
-          pIVar2 = TypeInfo__System__Int32;
-          if (pOVar3 != (Object *)0x0) {
-            pIVar2 = TypeInfo__System__Int32;
-            if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+          unaff_ESI = TypeInfo__System__Int32;
+          if (pOVar2 != (Object *)0x0) {
+            if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
             goto code_?;
-            pIVar4 = (Int32Enum__Enum *)func_?(pOVar3);
+            unaff_ESI = (Int32__Class *)&UNK_?;
+            pIVar3 = (Int32Enum__Enum *)func_?(pOVar2);
             rpcm = (RuntimePrototypeCubeModel *)
                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                    ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,*pIVar4,
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,*pIVar3,
                               method_00);
             pRVar1 = (this->fields)._.prototypeCubeModel;
-            pIVar2 = unaff_ESI;
             if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) {
-              bVar5 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CompareGeometry
+              bVar4 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CompareGeometry
                                 (pRVar1,rpcm,(MethodInfo *)0x0);
-              return bVar5;
+              return bVar4;
             }
           }
         }
@@ -304,12 +302,12 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_CompareWithKo
     }
   }
   func_?();
-  pOVar3 = extraout_EDX;
+  pOVar2 = extraout_EDX;
 code_?:
-  func_?(pOVar3,pIVar2);
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  func_?(pOVar2,unaff_ESI);
+  pcVar5 = (code *)swi(3);
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 
 

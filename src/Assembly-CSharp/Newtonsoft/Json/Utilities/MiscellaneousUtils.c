@@ -129,46 +129,47 @@ code_?:
 code_?:
     uVar1 = func_?(0);
     func_?(uVar1);
+    pSVar2 = unaff_EBX;
   }
   else {
     if (actualValue != (Object *)0x0) {
-      iVar2 = func_?(actualValue,(args->klass->_0).element_class);
-      if (iVar2 != 0) goto code_?;
+      iVar3 = func_?(actualValue,(args->klass->_0).element_class);
+      if (iVar3 != 0) goto code_?;
       goto code_?;
     }
 code_?:
+    pSVar2 = unaff_EBX;
     if (args->max_length != 0) {
       args->vector[0] = actualValue;
       func_?(args->vector,actualValue);
-      pSVar3 = StringLiteral_Actual_value_was__0__;
+      format = StringLiteral_Actual_value_was__0__;
       if (cRam_? == '\0') {
         func_?(&StringLiteral_format);
         cRam_? = '\x01';
       }
-      paramName_00 = StringLiteral_format;
-      if (pSVar3 == (String *)0x0) goto code_?;
-      pSVar3 = mscorlib.dll::System::String::String_Format_7
-                         ((IFormatProvider *)provider,pSVar3,args,(MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                         (message,unaff_ESI,pSVar3,(MethodInfo *)0x0);
+      pSVar2 = StringLiteral_format;
+      if (format == (String *)0x0) goto code_?;
+      pSVar2 = mscorlib.dll::System::String::String_Format_7
+                         ((IFormatProvider *)provider,format,args,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                         (message,unaff_ESI,pSVar2,(MethodInfo *)0x0);
       pAVar4 = (ArgumentOutOfRangeException *)
                func_?(TypeInfo__System__ArgumentOutOfRangeException);
       if (pAVar4 != (ArgumentOutOfRangeException *)0x0) {
         mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
-                  (pAVar4,paramName,pSVar3,(MethodInfo *)0x0);
+                  (pAVar4,paramName,pSVar2,(MethodInfo *)0x0);
         return pAVar4;
       }
       goto code_?;
     }
   }
   func_?();
-  paramName_00 = unaff_EBX;
 code_?:
   uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
   this = (ArgumentNullException *)func_?(uVar1);
   func_?(this);
   mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
-            (this,paramName_00,(MethodInfo *)0x0);
+            (this,pSVar2,(MethodInfo *)0x0);
   uVar1 = func_?(&
                           MethodInfo__Newtonsoft__Json__Utilities__ValidationUtils__ArgumentNotNull_System__Object__System__String_
                          );

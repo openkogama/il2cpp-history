@@ -683,7 +683,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_SetColor
                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       }
       fVar6 = (this->fields).skyContrast;
-      if (_UNK_? < 3.0749804e-29) {
+      if (_UNK_? < 3.074889e-29) {
         fVar6 = (float)((uint)fVar6 ^
                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       }
@@ -696,7 +696,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_SetColor
       fVar9 = fVar3 + fVar4;
       if (this_04 != (Camera *)0x0) {
         puVar14 = &UNK_?;
-        value_02.g = 3.0749804e-29 - fVar6;
+        value_02.g = 3.074889e-29 - fVar6;
         value_02.r = fVar3 - fVar4;
         value_02.b = fVar11 - fVar7;
         value_02.a = color.a;

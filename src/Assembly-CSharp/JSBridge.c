@@ -374,7 +374,7 @@ code_?:
         }
       }
       func_?(o,pCVar8);
-      pSVar10 = (Single__Class *)extraout_EDX;
+      pSVar10 = extraout_EDX;
     }
     else {
       if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {

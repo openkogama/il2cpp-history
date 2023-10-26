@@ -1147,146 +1147,272 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_Parse
                (JsonTextReader *this,uint16_t currentChar,MethodInfo *method)
 
 {
+  pJVar1 = _currentChar;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
+    pJVar1 = _currentChar;
   }
-  do {
-    if (currentChar < 0x2a) {
-      switch(currentChar) {
-      case 9:
-      case 10:
-      case 0xd:
-        break;
-      case 0xb:
-      case 0xc:
+  while (c = (ushort)pJVar1, c < 0x2a) {
+    switch((uint)pJVar1 & 0xffff) {
+    case 9:
+    case 10:
+    case 0xd:
+      break;
+    case 0xb:
+    case 0xc:
+      goto code_?;
+    default:
+      if (c != 0x20) {
+        if (c == 0x29) {
+          (*(this->klass->vtable).SetToken.methodPtr)();
+          return 1;
+        }
         goto code_?;
-      default:
-        if (currentChar != 0x20) {
-          if (currentChar == 0x29) {
-            (*(this->klass->vtable).SetToken.methodPtr)();
-            return 1;
-          }
-          goto code_?;
-        }
       }
     }
-    else {
-      if (currentChar < 0x30) {
-        if (currentChar == 0x2c) {
-          switch((this->fields)._._currentTypeContext) {
-          case 0:
-            (this->fields)._._currentState = 0xc;
-            return 0;
-          case 1:
-            (this->fields)._._currentState = 4;
-            return 0;
-          case 2:
-            (this->fields)._._currentState = 6;
-            return 0;
-          case 3:
-            (this->fields)._._currentState = 10;
-            return 0;
-          default:
-            func_?();
-            func_?();
-            this = (JsonTextReader *)
-                   mscorlib.dll::System::Globalization::CultureInfo::
-                   CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            func_?();
-            pOVar1 = (Object__Array *)func_?();
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            pMVar2 = (MethodInfo *)0x0;
-            provider = (CultureInfo *)this;
-            pSVar3 = (String *)func_?();
-            pSVar3 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                               (pSVar3,(IFormatProvider *)provider,pOVar1,pMVar2);
-            func_?();
-            pJVar4 = (JsonReaderException *)func_?();
-            func_?();
-            JsonReaderException::JsonReaderException__ctor_1(pJVar4,pSVar3,(MethodInfo *)0x0);
-            func_?();
-            func_?();
-          }
-          goto code_?;
-        }
-        if (currentChar == 0x2f) {
-          JsonTextReader_ParseComment(this,(MethodInfo *)0x0);
-          return 1;
-        }
-      }
-      else {
-        if (currentChar == 0x5d) {
-          (*(this->klass->vtable).SetToken.methodPtr)();
-          return 1;
-        }
-        if (currentChar == 0x7d) {
-          (*(this->klass->vtable).SetToken.methodPtr)();
-          return 1;
-        }
-      }
 code_?:
-      if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar5 = mscorlib.dll::System::Char::Char_IsWhiteSpace(currentChar,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
-code_?:
-        func_?();
-        pOVar6 = (Object__Array *)func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        uVar7 = func_?();
-        func_?();
-        func_?(pOVar6,uVar7);
-        func_?();
-        pMVar2 = (MethodInfo *)0x0;
-        pOVar1 = pOVar6;
-        pSVar3 = (String *)func_?(&StringLiteral_After_parsing_a_value_an_unexpec);
-        pJVar4 = JsonTextReader_CreateJsonReaderException(this,pSVar3,pOVar1,pMVar2);
-        func_?();
-        bVar8 = (undefined1 *)0xffffffeb < &stack0xffffffcc;
-        uVar9 = func_?();
-        uVar10 = (uint)uVar9;
-        bVar11 = (byte)((ulonglong)uVar9 >> 0x28);
-        bVar12 = bVar11 - *extraout_ECX;
-        pcVar13 = (char *)CONCAT22((short)((ulonglong)uVar9 >> 0x30),
-                                   CONCAT11(bVar12 - bVar8,(char)((ulonglong)uVar9 >> 0x20)));
-        *pcVar13 = *pcVar13 + (char)this + (bVar11 < *extraout_ECX || bVar12 < bVar8);
-        puVar14 = (uint *)((int)pOVar6->vector + 1);
-        *puVar14 = *puVar14 ^ uVar10;
-        pbVar15 = (byte *)((int)pOVar6->vector + 1);
-        *pbVar15 = *pbVar15 ^ (byte)uVar9;
-        pbVar15 = (byte *)((int)pOVar6->vector + 1);
-        *pbVar15 = *pbVar15 ^ (byte)uVar9;
-        puVar14 = (uint *)((int)pOVar6->vector + 3);
-        *puVar14 = *puVar14 ^ uVar10;
-        *(JsonReaderException__Class **)((int)&pOVar6->klass + 3) = pJVar4->klass;
-        puVar14 = (uint *)((int)pOVar6->vector + 7);
-        *puVar14 = *puVar14 ^ uVar10;
-        pcVar16 = (code *)swi(3);
-        bVar5 = (*pcVar16)();
-        return bVar5;
-      }
-    }
-    currentChar = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
-    if ((currentChar == 0) && ((this->fields)._end != 0)) {
+    uVar2 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
+    pJVar1 = (JsonReaderException__Class *)(uint)uVar2;
+    if ((uVar2 == 0) && ((this->fields)._end != 0)) {
       return 0;
     }
-  } while( true );
+  }
+  if (c < 0x30) {
+    if (c != 0x2c) {
+      if (c == 0x2f) {
+        JsonTextReader_ParseComment(this,(MethodInfo *)0x0);
+        return 1;
+      }
+      goto code_?;
+    }
+    pJVar1 = (JsonReaderException__Class *)(this->fields)._._currentTypeContext;
+    switch(pJVar1) {
+    case (JsonReaderException__Class *)0x0:
+      (this->fields)._._currentState = 0xc;
+      return 0;
+    case (JsonReaderException__Class *)0x1:
+      (this->fields)._._currentState = 4;
+      return 0;
+    case (JsonReaderException__Class *)0x2:
+      (this->fields)._._currentState = 6;
+      return 0;
+    case (JsonReaderException__Class *)0x3:
+      (this->fields)._._currentState = 10;
+      return 0;
+    default:
+      func_?();
+      func_?();
+      this_00 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+      func_?();
+      pOVar3 = (Object__Array *)func_?();
+      _currentChar = pJVar1;
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      pMVar4 = (MethodInfo *)0x0;
+      provider = this_00;
+      pSVar5 = (String *)func_?();
+      pJVar1 = (JsonReaderException__Class *)
+                Json::Utilities::StringUtils::StringUtils_FormatWith
+                          (pSVar5,(IFormatProvider *)provider,pOVar3,pMVar4);
+      func_?();
+      pJVar6 = (JsonReaderException *)func_?();
+      func_?();
+      JsonReaderException::JsonReaderException__ctor_1(pJVar6,(String *)pJVar1,(MethodInfo *)0x0);
+      func_?();
+      pJStack_7 = pJVar6;
+      func_?();
+    }
+  }
+  else {
+    if (c == 0x5d) {
+      (*(this->klass->vtable).SetToken.methodPtr)();
+      return 1;
+    }
+    if (c == 0x7d) {
+      (*(this->klass->vtable).SetToken.methodPtr)();
+      return 1;
+    }
+code_?:
+    if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    bVar8 = mscorlib.dll::System::Char::Char_IsWhiteSpace(c,(MethodInfo *)0x0);
+    this_00 = (CultureInfo *)this;
+    if (bVar8 != 0) goto code_?;
+  }
+  func_?();
+  pOVar3 = (Object__Array *)func_?();
+  _currentChar = (JsonReaderException__Class *)((uint)pJVar1 & 0xffff);
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  pJStack_7 = (JsonReaderException *)(this_00->fields).iso3lang;
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  pSStack_9 = (this_00->fields).nativename;
+  func_?();
+  uVar10 = func_?();
+  func_?();
+  func_?(pOVar3,uVar10);
+  func_?();
+  pMVar4 = (MethodInfo *)0x0;
+  pSVar5 = (String *)func_?(&StringLiteral_After_parsing_a_value_an_unexpec);
+  JsonTextReader_CreateJsonReaderException((JsonTextReader *)this_00,pSVar5,pOVar3,pMVar4);
+  func_?();
+  bVar11 = (undefined1 *)0xffffffeb < &stack0xffffffcc;
+  bVar12 = (POPCOUNT((uint)&stack0xffffffe0 & 0xff) & 1U) == 0;
+  uVar13 = func_?();
+  pJVar1 = _currentChar;
+  iVar14 = (int)((ulonglong)uVar13 >> 0x20);
+  if (!bVar12) {
+    pbVar15 = (byte *)(iVar14 + 0x2e);
+    bVar16 = (byte)((uint)this_00 >> 8);
+    bVar12 = CARRY1(*pbVar15,bVar16) || CARRY1(*pbVar15 + bVar16,bVar11);
+    *pbVar15 = *pbVar15 + bVar16 + bVar11;
+    pbVar15 = (byte *)((int)&(this_00->fields).textInfo + 2);
+    bVar11 = (byte)((ulonglong)uVar13 >> 0x20);
+    bVar17 = CARRY1(*pbVar15,bVar11) || CARRY1(*pbVar15 + bVar11,bVar12);
+    *pbVar15 = *pbVar15 + bVar11 + bVar12;
+    pbVar15 = (byte *)((int)&(this_00->fields).textInfo + 2);
+    bVar12 = CARRY1(*pbVar15,bVar11) || CARRY1(*pbVar15 + bVar11,bVar17);
+    *pbVar15 = *pbVar15 + bVar11 + bVar17;
+    pbVar15 = (byte *)(iVar14 + 0x2e);
+    bVar17 = CARRY1(*pbVar15,bVar16) || CARRY1(*pbVar15 + bVar16,bVar12);
+    *pbVar15 = *pbVar15 + bVar16 + bVar12;
+    bVar12 = CARRY1(extraout_CH,bVar11) || CARRY1(extraout_CH + bVar11,bVar17);
+    bVar18 = extraout_CH + bVar11 + bVar17;
+    bVar16 = (byte)((ulonglong)uVar13 >> 8);
+    bVar11 = bVar18 + bVar16;
+    bVar19 = bVar11 + bVar12;
+    bVar20 = (byte)((ulonglong)uVar13 >> 0x28);
+    cRam_? = cRam_? + (char)uVar13 +
+                   (CARRY1(bVar19,bVar20) ||
+                   CARRY1(bVar19 + bVar20,CARRY1(bVar18,bVar16) || CARRY1(bVar11,bVar12)));
+    pcVar21 = (code *)swi(3);
+    bVar8 = (*pcVar21)();
+    return bVar8;
+  }
+  bVar11 = in((short)((ulonglong)uVar13 >> 0x20));
+  pcVar22 = (char *)CONCAT31((int3)((ulonglong)uVar13 >> 8),bVar11);
+  pcVar22[-0xc7f20c3] = pcVar22[-0xc7f20c3] | bVar11;
+  *pcVar22 = *pcVar22 + bVar11;
+  uVar23 = (uint)_currentChar & 0xffff;
+  if (*pcVar22 == '\0') {
+    func_?(&TypeInfo__System__Char);
+    uRam_? = 1;
+  }
+  if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Char);
+  }
+  uVar2 = (uint16_t)pJVar1;
+  bVar8 = mscorlib.dll::System::Char::Char_IsLetterOrDigit(uVar2,(MethodInfo *)0x0);
+  if (((bVar8 == 0) && (uVar2 != 0x5f)) && (uVar23 != 0x24)) {
+    if ((uVar2 == 0x22) || (uVar2 == 0x27)) {
+      uVar23 = (uint)pJVar1 & 0xffff;
+      JsonTextReader_ReadStringIntoBuffer(this,uVar2,(MethodInfo *)0x0);
+      uVar2 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
+      goto code_?;
+    }
+  }
+  else {
+    uVar23 = 0;
+    uVar2 = JsonTextReader_ParseUnquotedProperty(this,uVar2,(MethodInfo *)0x0);
+code_?:
+    if (uVar2 != 0x3a) {
+      uVar2 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
+      _currentChar = (JsonReaderException__Class *)(uint)uVar2;
+      JsonTextReader_EatWhitespace(this,uVar2,0,&currentChar,(MethodInfo *)0x0);
+      pOVar3 = (Object__Array *)this;
+      pJVar1 = _currentChar;
+      if ((short)_currentChar != 0x3a) goto code_?;
+    }
+    pJVar24 = (JsonReaderException__Class *)(this->fields)._buffer;
+    if (pJVar24 != (JsonReaderException__Class *)0x0) {
+      (*(((JsonReaderException__Class *)(pJVar24->_0).image)->vtable).ToString.methodPtr)();
+      (*(this->klass->vtable).SetToken.methodPtr)(this);
+      pJVar1 = pJVar24;
+      (*(this->klass->vtable).set_QuoteChar.methodPtr)
+                (this,uVar23,(this->klass->vtable).set_QuoteChar.method);
+      pSVar25 = (this->fields)._buffer;
+      if (pSVar25 != (StringBuffer *)0x0) {
+        (pSVar25->fields)._position = 0;
+        return 1;
+      }
+    }
+    func_?();
+  }
+  func_?();
+  pOVar3 = (Object__Array *)func_?();
+  _currentChar = (JsonReaderException__Class *)((uint)pJVar1 & 0xffff);
+  func_?();
+  uVar10 = func_?();
+  func_?(pOVar3);
+  func_?(pOVar3,uVar10);
+  func_?();
+  pJStack_7 = (JsonReaderException *)(this->fields)._currentLineNumber;
+  uVar10 = func_?(&TypeInfo__System__Int32,&pJStack_7);
+  uVar10 = func_?(uVar10);
+  func_?(pOVar3);
+  func_?(pOVar3,uVar10);
+  func_?(1,uVar10);
+  pSStack_9 = (String *)(this->fields)._currentLinePosition;
+  uVar10 = func_?(&TypeInfo__System__Int32,&pSStack_9);
+  uVar10 = func_?(uVar10);
+  func_?(pOVar3);
+  func_?(pOVar3,uVar10);
+  func_?(2,uVar10);
+  pMVar4 = (MethodInfo *)0x0;
+  pOVar26 = pOVar3;
+  pSVar5 = (String *)func_?(&StringLiteral_Invalid_property_identifier_char);
+  pJVar1 = (JsonReaderException__Class *)
+            JsonTextReader_CreateJsonReaderException(this,pSVar5,pOVar26,pMVar4);
+  uVar10 = func_?(&MethodInfo__Newtonsoft__Json__JsonTextReader__ParseProperty_wchar_t_);
+  func_?(pJVar1,uVar10);
+code_?:
+  pJStack_7 = (JsonReaderException *)0x3;
+  pSStack_9 = (String *)&TypeInfo__System__Object;
+  pSStack_9 = (String *)func_?();
+  pOVar26 = (Object__Array *)func_?();
+  _currentChar = (JsonReaderException__Class *)((uint)pJVar1 & 0xffff);
+  pJStack_7 = (JsonReaderException *)&currentChar;
+  pSStack_9 = (String *)&TypeInfo__System__Char;
+  pSStack_9 = (String *)func_?();
+  pJVar6 = (JsonReaderException *)func_?();
+  func_?();
+  func_?();
+  pSStack_9 = (String *)0x0;
+  pJStack_7 = pJVar6;
+  func_?();
+  pSStack_9 = (String *)pOVar3->vector[0xb];
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  pJStack_7 = (JsonReaderException *)pOVar3->vector[10];
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  func_?();
+  pMVar4 = (MethodInfo *)0x0;
+  pSVar5 = (String *)func_?();
+  JsonTextReader_CreateJsonReaderException((JsonTextReader *)pOVar3,pSVar5,pOVar26,pMVar4);
+  func_?();
+  func_?();
+  pcVar21 = (code *)swi(3);
+  bVar8 = (*pcVar21)();
+  return bVar8;
 }
 
 
@@ -1710,312 +1836,313 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_Parse
 
 {
   this_00 = this;
-  pppuVar1 = _currentChar;
+  ppppuVar25 = _currentChar;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
-    pppuVar1 = _currentChar;
+    ppppuVar25 = _currentChar;
   }
   do {
-    quote = (ushort)pppuVar1;
+    quote = (ushort)ppppuVar25;
     if (0x5b < quote) {
       if (quote < 0x6f) {
         if (quote == 0x5d) {
-          (*(this->klass->vtable).SetToken.methodPtr)();
+          (*(this->klass->vtable).SetToken.methodPtr)
+                    (this,0xe,0,(this->klass->vtable).SetToken.method);
           return 1;
         }
         if (quote == 0x66) {
           if (cRam_? == '\0') {
-            func_?();
-            func_?();
+            func_?(&TypeInfo__System__Boolean);
+            func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
             cRam_? = '\x01';
           }
           if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+            func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
           }
-          bVar2 = JsonTextReader_MatchValue_1
+          bVar1 = JsonTextReader_MatchValue_1
                             (this,0x66,TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->False
                              ,1,(MethodInfo *)0x0);
-          if (bVar2 != 0) {
-            _currentChar = (uint16_t ***)((uint)_currentChar & 0xffffff);
+          if (bVar1 != 0) {
+            _currentChar = (uint16_t ****)((uint)_currentChar & 0xffffff);
             goto code_?;
           }
-          ppppuStack_c = (uint16_t ****)0x2;
-          uVar3 = func_?();
-          pOVar4 = (Object__Array *)func_?();
-          _currentChar = (uint16_t ***)(this->fields)._currentLineNumber;
-          ppppuStack_c = (uint16_t ****)&currentChar;
-          uVar3 = func_?();
-          uVar5 = func_?();
+          pppppuStack_c = (uint16_t *****)0x2;
+          uVar2 = func_?();
+          pOVar3 = (Object__Array *)func_?();
+          _currentChar = (uint16_t ****)(this->fields)._currentLineNumber;
+          pppppuStack_c = (uint16_t *****)&currentChar;
+          uVar2 = func_?();
+          uVar4 = func_?();
           func_?();
           func_?();
-          uStack_6 = (ulonglong)uVar5 << 0x20;
+          uStack_5 = (ulonglong)uVar4 << 0x20;
           func_?();
-          uStack_6 = CONCAT44((this->fields)._currentLinePosition,uVar3);
+          uStack_5 = CONCAT44((this->fields)._currentLinePosition,uVar2);
           func_?();
+          uVar6 = func_?();
           func_?();
-          func_?();
-          func_?();
+          func_?(pOVar3,uVar6);
           func_?();
           pMVar7 = (MethodInfo *)0x0;
-          pSVar8 = (String *)func_?();
-          pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar4,pMVar7);
+          pSVar8 = (String *)func_?(&StringLiteral_Error_parsing_boolean_value__Lin);
+          pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar3,pMVar7);
         }
         else {
           if (quote != 0x6e) goto code_?;
-          bVar2 = JsonTextReader_HasNext(this,(MethodInfo *)0x0);
-          if (bVar2 == 0) goto code_?;
+          bVar1 = JsonTextReader_HasNext(this,(MethodInfo *)0x0);
+          if (bVar1 == 0) goto code_?;
           pTVar10 = JsonValidatingReader::JsonValidatingReader_get_ValueType
                               ((JsonValidatingReader *)this,(MethodInfo *)0x0);
           if (((uint)pTVar10 & 0xffff) != 0x75) {
             if (((uint)pTVar10 & 0xffff) == 0x65) {
-              uStack_6 = ZEXT48(ppppuStack_c) << 0x20;
+              uStack_5 = ZEXT48(pppppuStack_c) << 0x20;
               JsonTextReader_ParseConstructor(this,(MethodInfo *)0x0);
               return 1;
             }
             func_?();
+            uVar11 = func_?();
+            _currentChar = (uint16_t ****)0x6e;
             func_?();
-            _currentChar = (uint16_t ***)0x6e;
+            uVar2 = func_?();
             func_?();
-            uVar3 = func_?();
+            func_?(uVar11);
             func_?();
+            pDStack_12 = (Double__Class *)(this->fields)._currentLineNumber;
             func_?();
-            func_?();
-            pDStack_11 = (Double__Class *)(this->fields)._currentLineNumber;
-            func_?();
-            func_?();
-            func_?();
-            func_?();
+            uVar6 = func_?();
+            func_?(uVar11);
+            func_?(uVar11,uVar6);
             pMVar7 = (MethodInfo *)0x1;
             func_?();
-            uStack_6 = CONCAT44((this->fields)._currentLinePosition,uVar3);
-            func_?();
-            pOVar4 = (Object__Array *)func_?();
-            func_?();
-            func_?();
-            func_?();
+            uStack_5 = CONCAT44((this->fields)._currentLinePosition,uVar2);
+            uVar6 = func_?(&TypeInfo__System__Int32,&pppppuStack_c);
+            pOVar3 = (Object__Array *)func_?(uVar6);
+            func_?(uVar11);
+            func_?(uVar11,pOVar3);
+            func_?(2);
+            ppSVar13 = &StringLiteral_Unexpected_character_encountered;
             goto code_?;
           }
           if (cRam_? == '\0') {
-            uStack_6 = CONCAT44(ppppuStack_c,&TypeInfo__Newtonsoft__Json__JsonConvert);
+            uStack_5 = CONCAT44(pppppuStack_c,&TypeInfo__Newtonsoft__Json__JsonConvert);
             func_?();
             cRam_? = '\x01';
           }
           if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-            uStack_6 = CONCAT44(ppppuStack_c,TypeInfo__Newtonsoft__Json__JsonConvert);
+            uStack_5 = CONCAT44(pppppuStack_c,TypeInfo__Newtonsoft__Json__JsonConvert);
             func_?();
           }
-          uStack_6 = uStack_6 & 0xffffffff00000000;
+          uStack_5 = uStack_5 & 0xffffffff00000000;
           pMVar7 = (MethodInfo *)0x6e;
-          pOVar4 = (Object__Array *)this;
-          bVar2 = JsonTextReader_MatchValue_1
+          pOVar3 = (Object__Array *)this;
+          bVar1 = JsonTextReader_MatchValue_1
                             (this,0x6e,TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->Null,
                              1,(MethodInfo *)0x0);
-          if (bVar2 != 0) {
-            pDStack_11 = (Double__Class *)this;
-            uStack_6 = CONCAT44(&UNK_?,uVar3);
+          if (bVar1 != 0) {
+            pDStack_12 = (Double__Class *)this;
+            uStack_5 = CONCAT44(&UNK_?,uVar2);
             (*(this->klass->vtable).SetToken.methodPtr)();
             return 1;
           }
           func_?();
-          ppppuVar12 = (uint16_t ****)func_?();
-          _currentChar = (uint16_t ***)(this->fields)._currentLineNumber;
+          pppppuVar11 = (uint16_t *****)func_?();
+          _currentChar = (uint16_t ****)(this->fields)._currentLineNumber;
           func_?();
-          pJVar12 = (JsonTextReader *)func_?();
+          pDVar14 = (Double__Class *)func_?();
           func_?();
-          uStack_6 = CONCAT44(ppppuVar12,&UNK_?);
-          pDStack_11 = (Double__Class *)pJVar12;
-          func_?();
-          func_?();
-          pDStack_11 = (Double__Class *)&TypeInfo__System__Int32;
-          uStack_6 = CONCAT44(&UNK_?,(int)uStack_6);
-          pDStack_11 = (Double__Class *)func_?();
-          uStack_6 = CONCAT44(&UNK_?,uVar3);
-          uVar3 = func_?();
-          ppppuStack_c = ppppuVar12;
+          uStack_5 = CONCAT44(pppppuVar11,&UNK_?);
+          pDStack_12 = pDVar14;
           func_?();
           func_?();
-          pDStack_11 = (Double__Class *)0x1;
-          uStack_6 = CONCAT44(&UNK_?,uVar3);
+          pDStack_12 = (Double__Class *)&TypeInfo__System__Int32;
+          uStack_5 = CONCAT44(&UNK_?,(int)uStack_5);
+          pDStack_12 = (Double__Class *)func_?();
+          uStack_5 = CONCAT44(&UNK_?,uVar2);
+          uVar2 = func_?();
+          pppppuStack_c = pppppuVar11;
           func_?();
-          uStack_6 = ZEXT48(ppppuVar12);
+          func_?();
+          pDStack_12 = (Double__Class *)0x1;
+          uStack_5 = CONCAT44(&UNK_?,uVar2);
+          func_?();
+          uStack_5 = ZEXT48(pppppuVar11);
           pSVar8 = (String *)func_?();
-          pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar4,pMVar7);
-          this = pJVar12;
+          pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar3,pMVar7);
+          this = (JsonTextReader *)pDVar14;
         }
         goto code_?;
       }
       if (0x75 < quote) {
         if (quote == 0x7b) {
-          (*(this->klass->vtable).SetToken.methodPtr)();
+          (*(this->klass->vtable).SetToken.methodPtr)
+                    (this,1,0,(this->klass->vtable).SetToken.method);
           return 1;
         }
         if (quote == 0x7d) {
-          (*(this->klass->vtable).SetToken.methodPtr)();
+          (*(this->klass->vtable).SetToken.methodPtr)
+                    (this,0xd,0,(this->klass->vtable).SetToken.method);
           return 1;
         }
         goto code_?;
       }
       if (quote == 0x74) {
         if (cRam_? == '\0') {
-          func_?();
-          func_?();
+          func_?(&TypeInfo__System__Boolean);
+          func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
           cRam_? = '\x01';
         }
         if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
         }
-        bVar2 = JsonTextReader_MatchValue_1
+        bVar1 = JsonTextReader_MatchValue_1
                           (this,0x74,TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->True,1,
                            (MethodInfo *)0x0);
-        if (bVar2 == 0) goto code_?;
-        _currentChar = (uint16_t ***)CONCAT13(1,_currentChar);
+        if (bVar1 == 0) goto code_?;
+        _currentChar = (uint16_t ****)CONCAT13(1,_currentChar);
 code_?:
-        uStack_6 = CONCAT44((undefined1 *)((int)register0x00000010 + 0xb),TypeInfo__System__Boolean
+        uStack_5 = CONCAT44((undefined1 *)((int)register0x00000010 + 0xb),TypeInfo__System__Boolean
                             );
         func_?();
-        pJVar13 = this->klass;
+        pJVar15 = this->klass;
 code_?:
-        (*(pJVar13->vtable).SetToken.methodPtr)();
+        (*(pJVar15->vtable).SetToken.methodPtr)(this);
         return 1;
       }
       if (quote != 0x75) goto code_?;
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
         cRam_? = '\x01';
       }
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
       }
-      bVar2 = JsonTextReader_MatchValue_1
+      bVar1 = JsonTextReader_MatchValue_1
                         (this,0x75,TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->Undefined
                          ,1,(MethodInfo *)0x0);
-      if (bVar2 != 0) goto code_?;
+      if (bVar1 != 0) goto code_?;
+      uVar6 = func_?(&TypeInfo__System__Object,2);
+      pOVar3 = (Object__Array *)func_?(uVar6);
+      _currentChar = (uint16_t ****)(this->fields)._currentLineNumber;
+      uVar6 = func_?(&TypeInfo__System__Int32,&currentChar);
+      uVar6 = func_?(uVar6);
+      func_?(pOVar3);
+      func_?(pOVar3,uVar6);
+      func_?(0,uVar6);
+      pDStack_12 = (Double__Class *)(this->fields)._currentLinePosition;
+      uVar6 = func_?(&TypeInfo__System__Int32,&pDStack_12);
+      uVar6 = func_?(uVar6);
+      func_?(pOVar3);
+      func_?(pOVar3,uVar6);
+      func_?(1,uVar6);
+      pMVar7 = (MethodInfo *)0x0;
+      pSVar8 = (String *)func_?(&StringLiteral_Error_parsing_undefined_value__L);
+      pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar3,pMVar7);
+      uVar6 = func_?(&MethodInfo__Newtonsoft__Json__JsonTextReader__ParseUndefined__);
+      func_?(pJVar9,uVar6);
+code_?:
       func_?();
-      pOVar4 = (Object__Array *)func_?();
-      _currentChar = (uint16_t ***)(this->fields)._currentLineNumber;
+      uVar11 = func_?();
+      _currentChar = (uint16_t ****)(this->fields)._currentLineNumber;
+      func_?();
+      uVar6 = func_?();
+      func_?(uVar11);
+      func_?(uVar11,uVar6);
+      pMVar7 = (MethodInfo *)0x0;
+      func_?();
+      pDStack_12 = (Double__Class *)(this->fields)._currentLinePosition;
+      uVar6 = func_?(&TypeInfo__System__Int32,&pDStack_12);
+      pOVar3 = (Object__Array *)func_?(uVar6);
+      func_?(uVar11);
+      func_?(uVar11,pOVar3);
+      func_?(1);
+      ppSVar13 = &StringLiteral_Unexpected_end__Line__0___positi;
+code_?:
+      pSVar8 = (String *)func_?(ppSVar13,uVar11,0);
+      pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar3,pMVar7);
+code_?:
+      uVar2 = func_?();
+      uStack_5 = CONCAT44(uVar2,pJVar9);
+      func_?();
+code_?:
+      pppppuStack_c = (uint16_t *****)0x2;
+      uVar2 = func_?();
+      pOVar16 = (Object__Array *)func_?();
+      _currentChar = (uint16_t ****)(this_00->fields)._currentLineNumber;
+      pppppuStack_c = (uint16_t *****)&currentChar;
+      uVar2 = func_?();
+      uVar4 = func_?();
       func_?();
       func_?();
+      uStack_5 = (ulonglong)uVar4 << 0x20;
       func_?();
+      pDStack_12 = (Double__Class *)(this_00->fields)._currentLinePosition;
       func_?();
+      uVar6 = func_?();
       func_?();
-      pDStack_11 = (Double__Class *)(this->fields)._currentLinePosition;
-      func_?();
-      func_?();
-      func_?();
-      func_?();
+      func_?(pOVar16,uVar6);
       func_?();
       pMVar7 = (MethodInfo *)0x0;
-      pSVar8 = (String *)func_?();
-      JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar4,pMVar7);
-      func_?();
-      func_?();
-code_?:
-      func_?();
-      func_?();
-      _currentChar = (uint16_t ***)(this->fields)._currentLineNumber;
-      func_?();
-      func_?();
-      func_?();
-      func_?();
-      pMVar7 = (MethodInfo *)0x0;
-      func_?();
-      pDStack_11 = (Double__Class *)(this->fields)._currentLinePosition;
-      func_?();
-      pOVar4 = (Object__Array *)func_?();
-      func_?();
-      func_?();
-      func_?();
-code_?:
-      pSVar8 = (String *)func_?();
-      pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar4,pMVar7);
-code_?:
-      uVar3 = func_?();
-      uStack_6 = CONCAT44(uVar3,pJVar9);
-      func_?();
-code_?:
-      ppppuStack_c = (uint16_t ****)0x2;
-      uVar3 = func_?();
-      pOVar14 = (Object__Array *)func_?();
-      _currentChar = (uint16_t ***)(this_00->fields)._currentLineNumber;
-      ppppuStack_c = (uint16_t ****)&currentChar;
-      uVar3 = func_?();
-      uVar5 = func_?();
-      func_?();
-      func_?();
-      uStack_6 = (ulonglong)uVar5 << 0x20;
-      func_?();
-      pDStack_11 = (Double__Class *)(this_00->fields)._currentLinePosition;
-      func_?();
-      func_?();
-      func_?();
-      func_?();
-      func_?();
-      pMVar7 = (MethodInfo *)0x0;
-      pOVar4 = pOVar14;
-      pSVar8 = (String *)func_?();
-      pJVar9 = JsonTextReader_CreateJsonReaderException(this_00,pSVar8,pOVar4,pMVar7);
-      uVar3 = func_?();
-      cVar15 = (undefined1 *)0xffffffeb < &stack0xffffffe4;
-      uStack_6 = CONCAT44(uVar3,pJVar9);
-      uVar16 = func_?();
-      sVar17 = (short)uVar16 + -1;
-      cVar18 = (char)((ushort)sVar17 >> 8);
-      bVar19 = (char)sVar17 + cVar18 + cVar15;
-      in_AF = 9 < (bVar19 & 0xf) | in_AF;
-      bVar19 = bVar19 + in_AF * -6 & 0xf;
-      pcVar20 = (char *)((int)&this_00[-0x6b9346].fields._._value + 1);
-      bVar21 = (byte)this_00;
-      *pcVar20 = *pcVar20 + bVar21 + in_AF;
-      bVar22 = 9 < bVar19 | in_AF;
-      cVar18 = (cVar18 - in_AF) - bVar22;
-      bVar19 = (bVar19 + bVar22 * -6 & 0xf) + cVar18 + bVar22;
-      bVar22 = 9 < (bVar19 & 0xf) | bVar22;
-      uVar5 = CONCAT31((int3)((uint6)uVar16 >> 8),bVar19 + bVar22 * -6) & 0xffff000f;
-      bVar23 = (byte)uVar5;
-      iVar24 = CONCAT22((short)(uVar5 >> 0x10),CONCAT11(cVar18 - bVar22,bVar23));
-      pbVar25 = &(this_00->fields)._end;
-      bVar26 = (byte)((uint6)uVar16 >> 0x20);
-      bVar19 = *pbVar25 + bVar26;
-      bVar27 = CARRY1(*pbVar25,bVar26) || CARRY1(bVar19,bVar22);
-      *pbVar25 = bVar19 + bVar22;
-      pbVar28 = &stack0x3fe01043 + iVar24 * 2;
-      bVar26 = (byte)((uint)this_00 >> 8);
-      bVar19 = *pbVar28 + bVar26;
-      bVar29 = CARRY1(*pbVar28,bVar26) || CARRY1(bVar19,bVar27);
-      *pbVar28 = bVar19 + bVar27;
-      bVar27 = CARRY1(*extraout_ECX,bVar21) || CARRY1(*extraout_ECX + bVar21,bVar29);
-      *extraout_ECX = *extraout_ECX + bVar21 + bVar29;
-      ppIVar30 = &pOVar14->bounds;
-      bVar29 = CARRY1(*(byte *)ppIVar30,bVar23) || CARRY1(*(char *)ppIVar30 + bVar23,bVar27);
-      *(byte *)ppIVar30 = *(char *)ppIVar30 + bVar23 + bVar27;
-      pbVar28 = (byte *)((int)&pOVar14->bounds + 1);
-      bVar19 = *pbVar28;
-      bVar26 = *pbVar28 + bVar23 + 1;
-      *pbVar28 = bVar26 + bVar29;
-      iVar24 = iVar24 + 2;
-      cVar18 = (char)((uint)iVar24 >> 8);
-      bVar19 = (char)iVar24 + cVar18 + (CARRY1(bVar19,bVar23 + 1) || CARRY1(bVar26,bVar29));
-      bVar22 = 9 < (bVar19 & 0xf) | bVar22;
-      bVar19 = (bVar19 + bVar22 * -6 & 0xf) + cVar18;
-      bVar22 = 9 < (bVar19 & 0xf) | bVar22;
-      *(byte *)&pOVar14->max_length = (char)pOVar14->max_length + (bVar19 + bVar22 * -6 & 0xf) + bVar22
-      ;
-      in((short)((uint6)uVar16 >> 0x20));
-      pTVar31 = (this->fields)._reader;
-      if (pTVar31 == (TextReader *)0x0) {
-        func_?();
-        func_?();
-        pcVar32 = (code *)swi(3);
-        bVar2 = (*pcVar32)();
-        return bVar2;
+      pOVar3 = pOVar16;
+      pSVar8 = (String *)func_?(&StringLiteral_Error_parsing_boolean_value__Lin);
+      pJVar9 = JsonTextReader_CreateJsonReaderException(this_00,pSVar8,pOVar3,pMVar7);
+      uVar2 = func_?();
+      uStack_5 = CONCAT44(uVar2,pJVar9);
+      uVar17 = func_?();
+      iVar18 = (int)uVar17;
+      uStack19 = 0x10;
+      uVar4 = iVar18 + 1;
+      pbVar20 = (byte *)(iVar18 + 0x3e);
+      bVar21 = (byte)uVar4;
+      bVar22 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,uVar4 < 0x42fb1047);
+      *pbVar20 = *pbVar20 + bVar21 + (uVar4 < 0x42fb1047);
+      pbVar20 = (byte *)(iVar18 + 0x3e);
+      bVar23 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar22);
+      *pbVar20 = *pbVar20 + bVar21 + bVar22;
+      pbVar20 = (byte *)((int)&this_00[0x5e87ac].fields._reader + 1);
+      bVar24 = (byte)((uint6)uVar17 >> 0x28);
+      bVar25 = *pbVar20 + bVar24;
+      bVar22 = CARRY1(*pbVar20,bVar24) || CARRY1(bVar25,bVar23);
+      *pbVar20 = bVar25 + bVar23;
+      pbVar20 = (byte *)(iVar18 + 0x3e);
+      bVar23 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar22);
+      *pbVar20 = *pbVar20 + bVar21 + bVar22;
+      pbVar20 = (byte *)(extraout_ECX + 0x44);
+      bVar24 = (byte)((uint)((int)&this_00->klass + 1) >> 8);
+      bVar25 = *pbVar20 + bVar24;
+      bVar22 = CARRY1(*pbVar20,bVar24) || CARRY1(bVar25,bVar23);
+      *pbVar20 = bVar25 + bVar23;
+      pbVar20 = (byte *)((int)pOVar16->vector + 0x33);
+      bVar26 = (byte)(uVar4 >> 8);
+      bVar23 = CARRY1(*pbVar20,bVar26) || CARRY1(*pbVar20 + bVar26,bVar22);
+      *pbVar20 = *pbVar20 + bVar26 + bVar22;
+      ppOVar27 = pOVar16->vector + 0xd;
+      bVar22 = CARRY1(*(byte *)ppOVar27,bVar26) || CARRY1(*(byte *)ppOVar27 + bVar26,bVar23);
+      *(byte *)ppOVar27 = *(byte *)ppOVar27 + bVar26 + bVar23;
+      pbVar20 = (byte *)(iVar18 + 0x3e);
+      bVar23 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar22);
+      *pbVar20 = *pbVar20 + bVar21 + bVar22;
+      pbVar20 = (byte *)(iVar18 + 0x3e);
+      bVar25 = *pbVar20;
+      bVar24 = *pbVar20;
+      *pbVar20 = bVar24 + bVar21 + bVar23;
+      pcVar28 = (char *)((int)pOVar16->vector + 0x37);
+      *pcVar28 = *pcVar28 + bVar26 + (CARRY1(bVar25,bVar21) || CARRY1(bVar24 + bVar21,bVar23));
+      in((short)((uint6)uVar17 >> 0x20));
+      pTVar29 = (this->fields)._reader;
+      if (pTVar29 == (TextReader *)0x0) {
+        uVar6 = func_?(&stack0xffffffe4);
+        func_?(uVar6);
+        pcVar30 = (code *)swi(3);
+        bVar1 = (*pcVar30)();
+        return bVar1;
       }
-      bVar2 = (*(pTVar31->klass->vtable).Peek.methodPtr)();
-      return bVar2;
+      bVar1 = (*(pTVar29->klass->vtable).Peek.methodPtr)();
+      return bVar1;
     }
     if (0x22 < quote) {
       if (quote < 0x4a) {
-        switch((uint)pppuVar1 & 0xffff) {
+        switch((uint)ppppuVar25 & 0xffff) {
         case 0x27:
 code_?:
           JsonTextReader_ParseString(this,quote,(MethodInfo *)0x0);
@@ -2026,11 +2153,13 @@ code_?:
         case 0x2e:
           goto code_?;
         case 0x29:
-          (*(this->klass->vtable).SetToken.methodPtr)();
+          (*(this->klass->vtable).SetToken.methodPtr)
+                    (this,0xf,0,(this->klass->vtable).SetToken.method);
           return 1;
         case 0x2c:
 code_?:
-          (*(this->klass->vtable).SetToken.methodPtr)();
+          (*(this->klass->vtable).SetToken.methodPtr)
+                    (this,0xc,0,(this->klass->vtable).SetToken.method);
           return 1;
         case 0x2d:
           pTVar10 = JsonValidatingReader::JsonValidatingReader_get_ValueType
@@ -2044,47 +2173,47 @@ code_?:
           if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar2 = JsonTextReader_MatchValue_1
+          bVar1 = JsonTextReader_MatchValue_1
                             (this,0x2d,
                              TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->
                              NegativeInfinity,1,(MethodInfo *)0x0);
-          if (bVar2 != 0) {
-            pDStack_11 = TypeInfo__System__Double;
-            uVar3 = (undefined4)_UNK_?;
-            uStack_6 = CONCAT44(&UNK_?,uVar3);
+          if (bVar1 != 0) {
+            pDStack_12 = TypeInfo__System__Double;
+            uVar2 = (undefined4)_UNK_?;
+            uStack_5 = CONCAT44(&UNK_?,uVar2);
             func_?();
-            pJVar13 = this->klass;
+            pJVar15 = this->klass;
             goto code_?;
           }
-          pDStack_11 = (Double__Class *)&TypeInfo__System__Object;
-          uStack_6 = CONCAT44(&UNK_?,uVar3);
-          pDStack_11 = (Double__Class *)func_?();
-          uStack_6 = CONCAT44(&UNK_?,uVar3);
-          ppppuVar12 = (uint16_t ****)func_?();
-          _currentChar = (uint16_t ***)(this->fields)._currentLineNumber;
-          pDStack_11 = (Double__Class *)&TypeInfo__System__Int32;
-          uStack_6 = CONCAT44(&UNK_?,uVar3);
-          pDStack_11 = (Double__Class *)func_?();
-          uStack_6 = CONCAT44(&UNK_?,uVar3);
-          uVar3 = func_?();
-          ppppuStack_c = ppppuVar12;
+          pDStack_12 = (Double__Class *)&TypeInfo__System__Object;
+          uStack_5 = CONCAT44(&UNK_?,uVar2);
+          pDStack_12 = (Double__Class *)func_?();
+          uStack_5 = CONCAT44(&UNK_?,uVar2);
+          pppppuVar11 = (uint16_t *****)func_?();
+          _currentChar = (uint16_t ****)(this->fields)._currentLineNumber;
+          pDStack_12 = (Double__Class *)&TypeInfo__System__Int32;
+          uStack_5 = CONCAT44(&UNK_?,uVar2);
+          pDStack_12 = (Double__Class *)func_?();
+          uStack_5 = CONCAT44(&UNK_?,uVar2);
+          uVar2 = func_?();
+          pppppuStack_c = pppppuVar11;
           func_?();
           func_?();
-          pDStack_11 = (Double__Class *)0x0;
-          uStack_6 = CONCAT44(&UNK_?,uVar3);
+          pDStack_12 = (Double__Class *)0x0;
+          uStack_5 = CONCAT44(&UNK_?,uVar2);
           func_?();
-          ppppuStack_c = (uint16_t ****)&ppppuStack_c;
-          uVar3 = func_?();
-          uVar33 = func_?();
+          pppppuStack_c = (uint16_t *****)&pppppuStack_c;
+          uVar2 = func_?();
+          uVar6 = func_?();
           func_?();
           func_?();
-          uStack_6 = CONCAT44(uVar33,1);
+          uStack_5 = CONCAT44(uVar6,1);
           func_?();
-          method_00 = &StringLiteral_Error_parsing_negative_infinity_;
-          pOVar4 = (Object__Array *)&UNK_?;
+          ppSVar13 = &StringLiteral_Error_parsing_negative_infinity_;
+          pOVar3 = (Object__Array *)&UNK_?;
           pSVar8 = (String *)func_?();
           pJVar9 = JsonTextReader_CreateJsonReaderException
-                              (this,pSVar8,pOVar4,(MethodInfo *)method_00);
+                              (this,pSVar8,pOVar3,(MethodInfo *)ppSVar13);
           break;
         case 0x2f:
           JsonTextReader_ParseComment(this,(MethodInfo *)0x0);
@@ -2092,94 +2221,95 @@ code_?:
         default:
           if (quote != 0x49) goto code_?;
           if (cRam_? == '\0') {
-            func_?();
-            func_?();
+            func_?(&TypeInfo__System__Double);
+            func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
             cRam_? = '\x01';
           }
           if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+            func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
           }
-          bVar2 = JsonTextReader_MatchValue_1
+          bVar1 = JsonTextReader_MatchValue_1
                             (this,0x49,
                              TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->
                              PositiveInfinity,1,(MethodInfo *)0x0);
-          if (bVar2 != 0) {
-            uStack_6 = _UNK_?;
+          if (bVar1 != 0) {
+            uStack_5 = _UNK_?;
             func_?();
-            pJVar13 = this->klass;
+            pJVar15 = this->klass;
             goto code_?;
           }
-          ppppuStack_c = (uint16_t ****)0x2;
-          uVar3 = func_?();
-          pOVar4 = (Object__Array *)func_?();
-          _currentChar = (uint16_t ***)(this->fields)._currentLineNumber;
-          ppppuStack_c = (uint16_t ****)&currentChar;
-          uVar3 = func_?();
-          uVar5 = func_?();
+          pppppuStack_c = (uint16_t *****)0x2;
+          uVar2 = func_?();
+          pOVar3 = (Object__Array *)func_?();
+          _currentChar = (uint16_t ****)(this->fields)._currentLineNumber;
+          pppppuStack_c = (uint16_t *****)&currentChar;
+          uVar2 = func_?();
+          uVar4 = func_?();
           func_?();
           func_?();
-          uStack_6 = (ulonglong)uVar5 << 0x20;
+          uStack_5 = (ulonglong)uVar4 << 0x20;
           func_?();
-          uStack_6 = CONCAT44((this->fields)._currentLinePosition,uVar3);
+          uStack_5 = CONCAT44((this->fields)._currentLinePosition,uVar2);
           func_?();
+          uVar6 = func_?();
           func_?();
-          func_?();
-          func_?();
+          func_?(pOVar3,uVar6);
           func_?();
           pMVar7 = (MethodInfo *)0x0;
-          pSVar8 = (String *)func_?();
-          pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar4,pMVar7);
+          pSVar8 = (String *)func_?(&StringLiteral_Error_parsing_positive_infinity_);
+          pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar3,pMVar7);
         }
       }
       else {
         if (quote != 0x4e) {
           if (quote == 0x5b) {
-            (*(this->klass->vtable).SetToken.methodPtr)();
+            (*(this->klass->vtable).SetToken.methodPtr)
+                      (this,2,0,(this->klass->vtable).SetToken.method);
             return 1;
           }
           goto code_?;
         }
         if (cRam_? == '\0') {
-          func_?();
-          func_?();
+          func_?(&TypeInfo__System__Double);
+          func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
           cRam_? = '\x01';
         }
         if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
         }
-        bVar2 = JsonTextReader_MatchValue_1
+        bVar1 = JsonTextReader_MatchValue_1
                           (this,0x4e,TypeInfo__Newtonsoft__Json__JsonConvert->static_fields->NaN,1,
                            (MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          uStack_6 = _UNK_?;
+        if (bVar1 != 0) {
+          uStack_5 = _UNK_?;
           func_?();
-          pJVar13 = this->klass;
+          pJVar15 = this->klass;
           goto code_?;
         }
-        ppppuStack_c = (uint16_t ****)0x2;
-        uVar3 = func_?();
-        pOVar4 = (Object__Array *)func_?();
-        _currentChar = (uint16_t ***)(this->fields)._currentLineNumber;
-        ppppuStack_c = (uint16_t ****)&currentChar;
-        uVar3 = func_?();
-        uVar5 = func_?();
+        pppppuStack_c = (uint16_t *****)0x2;
+        uVar2 = func_?();
+        pOVar3 = (Object__Array *)func_?();
+        _currentChar = (uint16_t ****)(this->fields)._currentLineNumber;
+        pppppuStack_c = (uint16_t *****)&currentChar;
+        uVar2 = func_?();
+        uVar4 = func_?();
         func_?();
         func_?();
-        uStack_6 = (ulonglong)uVar5 << 0x20;
+        uStack_5 = (ulonglong)uVar4 << 0x20;
         func_?();
-        uStack_6 = CONCAT44((this->fields)._currentLinePosition,uVar3);
+        uStack_5 = CONCAT44((this->fields)._currentLinePosition,uVar2);
         func_?();
+        uVar6 = func_?();
         func_?();
-        func_?();
-        func_?();
+        func_?(pOVar3,uVar6);
         func_?();
         pMVar7 = (MethodInfo *)0x0;
-        pSVar8 = (String *)func_?();
-        pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar4,pMVar7);
+        pSVar8 = (String *)func_?(&StringLiteral_Error_parsing_NaN_value__Line__0);
+        pJVar9 = JsonTextReader_CreateJsonReaderException(this,pSVar8,pOVar3,pMVar7);
       }
       goto code_?;
     }
-    switch((uint)pppuVar1 & 0xffff) {
+    switch((uint)ppppuVar25 & 0xffff) {
     case 9:
     case 10:
     case 0xd:
@@ -2188,40 +2318,41 @@ code_?:
     case 0xc:
 code_?:
       if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__System__Char);
       }
-      bVar2 = mscorlib.dll::System::Char::Char_IsWhiteSpace(quote,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
+      bVar1 = mscorlib.dll::System::Char::Char_IsWhiteSpace(quote,(MethodInfo *)0x0);
+      if (bVar1 == 0) {
         if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        bVar2 = mscorlib.dll::System::Char::Char_IsNumber(quote,(MethodInfo *)0x0);
-        if (((bVar2 != 0) || (quote == 0x2d)) || (quote == 0x2e)) {
+        bVar1 = mscorlib.dll::System::Char::Char_IsNumber(quote,(MethodInfo *)0x0);
+        if (((bVar1 != 0) || (quote == 0x2d)) || (quote == 0x2e)) {
 code_?:
           JsonTextReader_ParseNumber(this,quote,(MethodInfo *)0x0);
           return 1;
         }
         func_?();
+        uVar11 = func_?();
+        _currentChar = (uint16_t ****)((uint)ppppuVar25 & 0xffff);
         func_?();
-        _currentChar = (uint16_t ***)((uint)pppuVar1 & 0xffff);
-        func_?();
-        func_?();
-        func_?();
-        func_?();
+        uVar6 = func_?();
+        func_?(uVar11);
+        func_?(uVar11,uVar6);
         pMVar7 = (MethodInfo *)0x0;
         func_?();
-        uStack_6 = CONCAT44((this->fields)._currentLineNumber,uVar3);
-        func_?();
-        pOVar4 = (Object__Array *)func_?();
-        func_?();
-        func_?();
-        func_?();
-        pDStack_11 = (Double__Class *)(this->fields)._currentLinePosition;
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
+        uStack_5 = CONCAT44((this->fields)._currentLineNumber,uVar2);
+        uVar6 = func_?(&TypeInfo__System__Int32,&pppppuStack_c);
+        pOVar3 = (Object__Array *)func_?(uVar6);
+        func_?(uVar11);
+        func_?(uVar11,pOVar3);
+        func_?(1);
+        pDStack_12 = (Double__Class *)(this->fields)._currentLinePosition;
+        uVar6 = func_?(&TypeInfo__System__Int32,&pDStack_12);
+        uVar6 = func_?(uVar6);
+        func_?(uVar11);
+        func_?(uVar11,uVar6);
+        func_?(2,uVar6);
+        ppSVar13 = &StringLiteral_Unexpected_character_encountered;
         goto code_?;
       }
       break;
@@ -2231,15 +2362,17 @@ code_?:
         goto code_?;
       }
     }
-    uVar34 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
-    pppuVar1 = (uint16_t ***)(uint)uVar34;
-    if ((uVar34 == 0) && ((this->fields)._end != 0)) {
+    uVar31 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
+    ppppuVar25 = (uint16_t ****)(uint)uVar31;
+    if ((uVar31 == 0) && ((this->fields)._end != 0)) {
       return 0;
     }
   } while( true );
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Boolean Read() */
 
 bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_Read
@@ -2296,7 +2429,7 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_Read
       break;
     default:
       func_?();
-      pOVar2 = (Object__Array *)func_?();
+      args = (Object__Array *)func_?();
       StreamingAsset`2[System::Object,System::Object]::
       StreamingAsset_2_System_Object_System_Object__get_Asset
                 ((StreamingAsset_2_System_Object_System_Object_ *)this,(MethodInfo *)0x0);
@@ -2304,7 +2437,6 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_Read
       func_?();
       func_?();
       func_?();
-      cVar3 = '\0';
       func_?();
       func_?();
       func_?();
@@ -2312,55 +2444,63 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_Read
       func_?();
       func_?();
       func_?();
-      uVar4 = func_?();
+      uVar2 = func_?();
       func_?();
-      func_?(pOVar2,uVar4);
+      func_?(args,uVar2);
       func_?();
       method_00 = (MethodInfo *)0x0;
-      args = pOVar2;
       format = (String *)func_?(&StringLiteral_Unexpected_state___0___Line__1__);
-      pJVar5 = JsonTextReader_CreateJsonReaderException(this,format,args,method_00);
+      pJVar3 = JsonTextReader_CreateJsonReaderException(this,format,args,method_00);
       func_?();
-      bVar6 = (undefined1 *)0xffffffeb < &stack0xffffffdc;
-      pJVar7 = pJVar5;
-      bVar8 = func_?();
-      bVar9 = 0xa6 < bVar8 || CARRY1(bVar8 + 0x59,bVar6);
-      bVar6 = bVar8 + 0x59 + bVar6;
-      piVar10 = (int *)((int)&pOVar2->klass + 1);
-      bVar11 = (byte)((uint)extraout_EDX >> 8);
-      bVar8 = bVar11 + bVar6;
-      bVar12 = CARRY1(bVar11,bVar6) || CARRY1(bVar8,bVar9);
-      pcVar13 = (char *)CONCAT22((short)((uint)extraout_EDX >> 0x10),
-                                 CONCAT11(bVar8 + bVar9,(char)extraout_EDX));
-      bVar8 = *(byte *)&pJVar5->klass;
-      bVar6 = *(char *)&pJVar5->klass + extraout_CH;
-      *(byte *)&pJVar5->klass = bVar6 + bVar12;
-      cRam_? = cRam_? + (char)extraout_EDX +
-                     (CARRY1(bVar8,extraout_CH) || CARRY1(bVar6,bVar12));
-      *piVar10 = *piVar10 + (int)piVar10;
-      cVar14 = (char)piVar10 + *pcVar13;
-      pcVar15 = (char *)CONCAT31((int3)((uint)piVar10 >> 8),cVar14);
-      *pcVar15 = *pcVar15 + cVar14;
-      this->klass = (JsonTextReader__Class *)(pcVar15 + (int)this->klass);
-      *pcVar15 = *pcVar15 + cVar14;
-      bVar8 = (byte)(pcVar13 + (int)pcVar15);
-      bVar6 = bVar8 + (byte)pJVar7;
-      bVar9 = CARRY1(bVar8,(byte)pJVar7) || CARRY1(bVar6,CARRY4((uint)pcVar13,(uint)pcVar15));
-      pbVar16 = (byte *)((int)pOVar2[-0xac54d7].vector + 0x3d);
-      bVar8 = *pbVar16;
-      bVar11 = *pbVar16 + (byte)this;
-      *pbVar16 = bVar11 + bVar9;
-      in((short)CONCAT31((int3)((uint)(pcVar13 + (int)pcVar15) >> 8),
-                         bVar6 + CARRY4((uint)pcVar13,(uint)pcVar15) + cVar3 +
-                         (CARRY1(bVar8,(byte)this) || CARRY1(bVar11,bVar9))));
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
+      bVar4 = (undefined1 *)0xffffffeb < &stack0xffffffdc;
+      bVar5 = &stack0x00000000 == (undefined1 *)0x10;
+      uVar6 = func_?();
+      puVar7 = (uint *)((ulonglong)uVar6 >> 0x20);
+      piVar8 = (int *)uVar6;
+      if (bVar5) {
+        piVar8 = (int *)(((uint)this ^ 0x10) + 0x56);
+        *piVar8 = (int)(*piVar8 + (int)puVar7);
+      }
+      else {
+        bVar9 = (byte)((ulonglong)uVar6 >> 8);
+        bVar10 = *(char *)&pJVar3->klass + bVar9;
+        bVar5 = CARRY1(*(byte *)&pJVar3->klass,bVar9) || CARRY1(bVar10,bVar4);
+        *(byte *)&pJVar3->klass = bVar10 + bVar4;
+        pbVar11 = (byte *)((int)&pJVar3[0x1769a7d].fields._.caught_in_unmanaged + 1);
+        bVar4 = *pbVar11;
+        bVar10 = *pbVar11;
+        *pbVar11 = bVar10 + extraout_CL + bVar5;
+        *(char *)piVar8 =
+             (char)*piVar8 + (char)uVar6 +
+             (CARRY1(bVar4,extraout_CL) || CARRY1(bVar10 + extraout_CL,bVar5));
+        *piVar8 = (int)(*piVar8 + (int)piVar8);
+        cVar12 = (char)uVar6 + (byte)*puVar7;
+        pcVar13 = (char *)CONCAT31((int3)((ulonglong)uVar6 >> 8),cVar12);
+        *pcVar13 = *pcVar13 + cVar12;
+        this->klass = (JsonTextReader__Class *)(pcVar13 + (int)this->klass);
+        *pcVar13 = *pcVar13 + cVar12;
+        uVar14 = *puVar7;
+        *puVar7 = (uint)(&stack0xffffffe0 + *puVar7);
+        bVar4 = (byte)*puVar7 + bVar9;
+        bVar5 = CARRY1((byte)*puVar7,bVar9) ||
+                 CARRY1(bVar4,CARRY4(uVar14,(uint)&stack0xffffffe0));
+        *(byte *)puVar7 = bVar4 + CARRY4(uVar14,(uint)&stack0xffffffe0);
+        bVar10 = (byte)((uint)this >> 8);
+        bVar4 = bVar10 * '\x02' + bVar5;
+        *(byte *)puVar7 =
+             (byte)*puVar7 + bVar9 +
+             (CARRY1(bVar4,bVar4) ||
+             CARRY1(bVar4 * '\x02',CARRY1(bVar10,bVar10) || CARRY1(bVar10 * '\x02',bVar5)));
+        in((short)((ulonglong)uVar6 >> 0x20));
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__System__Globalization__CultureInfo);
+          func_?(&TypeInfo__System__TimeSpan);
+          cRam_? = '\x01';
+        }
       }
       func_?();
-      pcVar17 = (code *)swi(3);
-      bVar1 = (*pcVar17)();
+      pcVar15 = (code *)swi(3);
+      bVar1 = (*pcVar15)();
       return bVar1;
     }
   } while( true );
@@ -2940,6 +3080,8 @@ code_?:
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Boolean ReadInternal() */
 
 bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_ReadInternal
@@ -2996,7 +3138,7 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_ReadI
       break;
     default:
       func_?();
-      pOVar3 = (Object__Array *)func_?();
+      args = (Object__Array *)func_?();
       StreamingAsset`2[System::Object,System::Object]::
       StreamingAsset_2_System_Object_System_Object__get_Asset
                 ((StreamingAsset_2_System_Object_System_Object_ *)this,(MethodInfo *)0x0);
@@ -3004,7 +3146,6 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_ReadI
       func_?();
       func_?();
       func_?();
-      cVar4 = '\0';
       func_?();
       func_?();
       func_?();
@@ -3012,98 +3153,106 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_ReadI
       func_?();
       func_?();
       func_?();
-      uVar5 = func_?();
+      uVar3 = func_?();
       func_?();
-      func_?(pOVar3,uVar5);
+      func_?(args,uVar3);
       func_?();
       method_00 = (MethodInfo *)0x0;
-      args = pOVar3;
-      pSVar6 = (String *)func_?(&StringLiteral_Unexpected_state___0___Line__1__);
-      pJVar7 = JsonTextReader_CreateJsonReaderException(this,pSVar6,args,method_00);
+      pSVar4 = (String *)func_?(&StringLiteral_Unexpected_state___0___Line__1__);
+      pJVar5 = JsonTextReader_CreateJsonReaderException(this,pSVar4,args,method_00);
       func_?();
-      bVar8 = (undefined1 *)0xffffffeb < &stack0xffffffdc;
-      pJVar9 = pJVar7;
-      bVar10 = func_?();
-      bVar11 = 0xa6 < bVar10 || CARRY1(bVar10 + 0x59,bVar8);
-      bVar8 = bVar10 + 0x59 + bVar8;
-      piVar12 = (int *)((int)&pOVar3->klass + 1);
-      bVar13 = (byte)((uint)extraout_EDX >> 8);
-      bVar10 = bVar13 + bVar8;
-      bVar14 = CARRY1(bVar13,bVar8) || CARRY1(bVar10,bVar11);
-      pcVar15 = (char *)CONCAT22((short)((uint)extraout_EDX >> 0x10),
-                                 CONCAT11(bVar10 + bVar11,(char)extraout_EDX));
-      bVar10 = *(byte *)&pJVar7->klass;
-      bVar8 = *(char *)&pJVar7->klass + extraout_CH;
-      *(byte *)&pJVar7->klass = bVar8 + bVar14;
-      cRam_? = cRam_? + (char)extraout_EDX +
-                     (CARRY1(bVar10,extraout_CH) || CARRY1(bVar8,bVar14));
-      *piVar12 = *piVar12 + (int)piVar12;
-      cVar16 = (char)piVar12 + *pcVar15;
-      pcVar17 = (char *)CONCAT31((int3)((uint)piVar12 >> 8),cVar16);
-      *pcVar17 = *pcVar17 + cVar16;
-      this->klass = (JsonTextReader__Class *)(pcVar17 + (int)this->klass);
-      *pcVar17 = *pcVar17 + cVar16;
-      bVar10 = (byte)(pcVar15 + (int)pcVar17);
-      bVar8 = bVar10 + (byte)pJVar9;
-      bVar11 = CARRY1(bVar10,(byte)pJVar9) || CARRY1(bVar8,CARRY4((uint)pcVar15,(uint)pcVar17));
-      pbVar18 = (byte *)((int)pOVar3[-0xac54d7].vector + 0x3d);
-      bVar10 = *pbVar18;
-      bVar13 = *pbVar18 + (byte)this;
-      *pbVar18 = bVar13 + bVar11;
-      in((short)CONCAT31((int3)((uint)(pcVar15 + (int)pcVar17) >> 8),
-                         bVar8 + CARRY4((uint)pcVar15,(uint)pcVar17) + cVar4 +
-                         (CARRY1(bVar10,(byte)this) || CARRY1(bVar13,bVar11))));
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
+      bVar6 = (undefined1 *)0xffffffeb < &stack0xffffffdc;
+      bVar7 = &stack0x00000000 == (undefined1 *)0x10;
+      uVar8 = func_?();
+      puVar9 = (uint *)((ulonglong)uVar8 >> 0x20);
+      piVar10 = (int *)uVar8;
+      if (bVar7) {
+        piVar10 = (int *)(((uint)this ^ 0x10) + 0x56);
+        *piVar10 = (int)(*piVar10 + (int)puVar9);
+      }
+      else {
+        bVar11 = (byte)((ulonglong)uVar8 >> 8);
+        bVar12 = *(char *)&pJVar5->klass + bVar11;
+        bVar7 = CARRY1(*(byte *)&pJVar5->klass,bVar11) || CARRY1(bVar12,bVar6);
+        *(byte *)&pJVar5->klass = bVar12 + bVar6;
+        pbVar13 = (byte *)((int)&pJVar5[0x1769a7d].fields._.caught_in_unmanaged + 1);
+        bVar6 = *pbVar13;
+        bVar12 = *pbVar13;
+        *pbVar13 = bVar12 + extraout_CL + bVar7;
+        *(char *)piVar10 =
+             (char)*piVar10 + (char)uVar8 +
+             (CARRY1(bVar6,extraout_CL) || CARRY1(bVar12 + extraout_CL,bVar7));
+        *piVar10 = (int)(*piVar10 + (int)piVar10);
+        cVar14 = (char)uVar8 + (byte)*puVar9;
+        pcVar15 = (char *)CONCAT31((int3)((ulonglong)uVar8 >> 8),cVar14);
+        *pcVar15 = *pcVar15 + cVar14;
+        this->klass = (JsonTextReader__Class *)(pcVar15 + (int)this->klass);
+        *pcVar15 = *pcVar15 + cVar14;
+        uVar16 = *puVar9;
+        *puVar9 = (uint)(&stack0xffffffe0 + *puVar9);
+        bVar6 = (byte)*puVar9 + bVar11;
+        bVar7 = CARRY1((byte)*puVar9,bVar11) ||
+                 CARRY1(bVar6,CARRY4(uVar16,(uint)&stack0xffffffe0));
+        *(byte *)puVar9 = bVar6 + CARRY4(uVar16,(uint)&stack0xffffffe0);
+        bVar12 = (byte)((uint)this >> 8);
+        bVar6 = bVar12 * '\x02' + bVar7;
+        *(byte *)puVar9 =
+             (byte)*puVar9 + bVar11 +
+             (CARRY1(bVar6,bVar6) ||
+             CARRY1(bVar6 * '\x02',CARRY1(bVar12,bVar12) || CARRY1(bVar12 * '\x02',bVar7)));
+        in((short)((ulonglong)uVar8 >> 0x20));
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__System__Globalization__CultureInfo);
+          func_?(&TypeInfo__System__TimeSpan);
+          cRam_? = '\x01';
+        }
       }
       if (method != (MethodInfo *)0x0) {
         uVar1 = mscorlib.dll::System::String::String_get_Chars((String *)method,0,(MethodInfo *)0x0)
         ;
-        pSVar6 = mscorlib.dll::System::String::String_Substring_1
+        pSVar4 = mscorlib.dll::System::String::String_Substring_1
                            ((String *)method,1,2,(MethodInfo *)0x0);
         if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pCVar19 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+        pCVar17 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                             ((MethodInfo *)0x0);
-        iVar20 = mscorlib.dll::System::Int32::Int32_Parse_2
-                           (pSVar6,NumberStyles__Enum_Integer,(IFormatProvider *)pCVar19,
+        iVar18 = mscorlib.dll::System::Int32::Int32_Parse_2
+                           (pSVar4,NumberStyles__Enum_Integer,(IFormatProvider *)pCVar17,
                             (MethodInfo *)0x0);
         method = (MethodInfo *)0x0;
         if (4 < (int)this_01->invoker_method) {
-          pSVar6 = mscorlib.dll::System::String::String_Substring_1
+          pSVar4 = mscorlib.dll::System::String::String_Substring_1
                              ((String *)this_01,3,2,(MethodInfo *)0x0);
           if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pCVar19 = mscorlib.dll::System::Globalization::CultureInfo::
+          pCVar17 = mscorlib.dll::System::Globalization::CultureInfo::
                     CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
           method = (MethodInfo *)
                    mscorlib.dll::System::Int32::Int32_Parse_2
-                             (pSVar6,NumberStyles__Enum_Integer,(IFormatProvider *)pCVar19,
+                             (pSVar4,NumberStyles__Enum_Integer,(IFormatProvider *)pCVar17,
                               (MethodInfo *)0x0);
         }
         if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        TVar21 = mscorlib.dll::System::TimeSpan::TimeSpan_FromHours
-                           ((double)iVar20,(MethodInfo *)0x0);
+        TVar19 = mscorlib.dll::System::TimeSpan::TimeSpan_FromHours
+                           ((double)iVar18,(MethodInfo *)0x0);
         t2 = mscorlib.dll::System::TimeSpan::TimeSpan_FromMinutes
                        ((double)(int)method,(MethodInfo *)0x0);
-        TVar21 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Addition(TVar21,t2,(MethodInfo *)0x0);
-        bVar2 = (bool)TVar21._ticks;
+        TVar19 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Addition(TVar19,t2,(MethodInfo *)0x0);
+        bVar2 = (bool)TVar19._ticks;
         if (uVar1 == 0x2d) {
-          TVar21 = mscorlib.dll::System::TimeSpan::TimeSpan_Negate
+          TVar19 = mscorlib.dll::System::TimeSpan::TimeSpan_Negate
                              ((TimeSpan *)&stack0xfffffff0,(MethodInfo *)0x0);
-          bVar2 = (bool)TVar21._ticks;
+          bVar2 = (bool)TVar19._ticks;
         }
         return bVar2;
       }
       func_?();
-      pcVar22 = (code *)swi(3);
-      bVar2 = (*pcVar22)();
+      pcVar20 = (code *)swi(3);
+      bVar2 = (*pcVar20)();
       return bVar2;
     }
   } while( true );
@@ -3210,222 +3359,225 @@ void Assembly-CSharp.dll::Newtonsoft::Json::JsonTextReader::JsonTextReader_ReadS
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Char);
-    func_?(&TypeInfo__System__Convert);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
 code_?:
-  unaff_EDI = (undefined4 *)CONCAT22((short)((uint)unaff_EDI >> 0x10),quote);
+  do {
+    while( true ) {
+      uVar1 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
+      puStack_2 = (undefined *)(uint)uVar1;
+      if (0x22 < puStack_2) break;
+      if (uVar1 == 0) {
+        if ((this->fields)._end != 0) {
+          func_?();
+          args = (Object__Array *)func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
 code_?:
-  while( true ) {
-    uVar1 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
-    puStack_2 = (undefined *)(uint)uVar1;
-    if (0x22 < puStack_2) break;
-    if (uVar1 == 0) {
-      if ((this->fields)._end != 0) {
-        uVar3 = func_?(&TypeInfo__System__Object,3);
-        unaff_EBX = (Object__Array *)func_?(uVar3);
-        uVar3 = func_?(&TypeInfo__System__Char,&stack0xffffffec);
-        uVar3 = func_?(uVar3);
-        func_?(unaff_EBX);
-        func_?(unaff_EBX,uVar3);
-        func_?(0,uVar3);
-        uVar3 = func_?(&TypeInfo__System__Int32,&stack0xfffffff0);
-        uVar3 = func_?(uVar3);
-        func_?(unaff_EBX);
-        func_?(unaff_EBX,uVar3);
-        func_?(1,uVar3);
-        puVar4 = &stack0xfffffff4;
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          ppSVar3 = &StringLiteral_Unterminated_string__Expected_de;
 code_?:
-        uVar3 = func_?(&TypeInfo__System__Int32,puVar4);
-        unaff_EDI = (undefined4 *)func_?(uVar3);
-        func_?(unaff_EBX);
-        func_?(unaff_EBX,unaff_EDI);
-        func_?(2,unaff_EDI);
-        ppSVar5 = &StringLiteral_Unterminated_string__Expected_de;
-        goto code_?;
+          pMVar4 = (MethodInfo *)0x0;
+          pSVar5 = (String *)func_?(ppSVar3);
+          JsonTextReader_CreateJsonReaderException(this,pSVar5,args,pMVar4);
+          func_?();
+          cVar6 = (undefined1 *)0xffffffeb < &stack0xffffffbc;
+          func_?();
+code_?:
+          func_?();
+code_?:
+          func_?();
+          cVar7 = func_?();
+          cRam_? = cRam_? + cVar7 + cVar6;
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        pSVar9 = (this->fields)._buffer;
+        cVar6 = '\0';
+        if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+        Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,0,(MethodInfo *)0x0);
       }
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,0,(MethodInfo *)0x0);
-    }
-    else {
-      if (puStack_2 == (undefined *)0x22) goto code_?;
+      else {
+        if (puStack_2 == (undefined *)0x22) goto code_?;
 code_?:
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,uVar1,(MethodInfo *)0x0);
+        pSVar9 = (this->fields)._buffer;
+        cVar6 = '\0';
+        if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+        Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,uVar1,(MethodInfo *)0x0);
+      }
     }
-  }
-  if (puStack_2 == (undefined *)0x27) {
+    if (puStack_2 == (undefined *)0x27) {
 code_?:
-    if (uVar1 == quote) {
-      return;
-    }
-    goto code_?;
-  }
-  if (puStack_2 != (undefined *)0x5c) goto code_?;
-  uVar1 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
-  puStack_2 = (undefined *)(uint)uVar1;
-  if ((uVar1 == 0) && ((this->fields)._end != 0)) {
-    uVar3 = func_?(&TypeInfo__System__Object);
-    unaff_EBX = (Object__Array *)func_?(uVar3);
-    uVar3 = func_?(&TypeInfo__System__Char);
-    uVar3 = func_?(uVar3);
-    func_?(unaff_EBX);
-    func_?(unaff_EBX,uVar3);
-    func_?(0);
-    uVar3 = func_?(&TypeInfo__System__Int32,&stack0xfffffff0);
-    uVar3 = func_?(uVar3);
-    func_?(unaff_EBX);
-    func_?(unaff_EBX,uVar3);
-    func_?(1,uVar3);
-    puVar4 = &stack0xffffffec;
-    goto code_?;
-  }
-  if (puStack_2 < 0x5d) {
-    if (puStack_2 < 0x28) {
-      if ((puStack_2 == (undefined *)0x22) || (puStack_2 == (undefined *)0x27))
-      goto code_?;
+      if (uVar1 == quote) {
+        return;
+      }
       goto code_?;
     }
-    if (puStack_2 == (undefined *)0x2f) {
-code_?:
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,uVar1,(MethodInfo *)0x0);
-    }
-    else {
-      if (puStack_2 != (undefined *)0x5c) goto code_?;
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,uVar1,(MethodInfo *)0x0);
-    }
-    goto code_?;
-  }
-  if (puStack_2 < 0x67) {
-    if (puStack_2 == (undefined *)0x62) {
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,8,(MethodInfo *)0x0);
-      goto code_?;
-    }
-    if (puStack_2 == (undefined *)0x66) {
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,0xc,(MethodInfo *)0x0);
-      goto code_?;
-    }
-  }
-  else {
-    if (puStack_2 == (undefined *)0x6e) {
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,10,(MethodInfo *)0x0);
-      goto code_?;
-    }
-    switch(puStack_2) {
-    case (undefined *)0x72:
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,0xd,(MethodInfo *)0x0);
-      goto code_?;
-    case (undefined *)0x74:
-      pSVar6 = (this->fields)._buffer;
-      if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,9,(MethodInfo *)0x0);
-      goto code_?;
-    case (undefined *)0x75:
-      goto code_?;
-    }
-  }
-code_?:
-  uVar3 = func_?(&TypeInfo__System__Object);
-  unaff_EBX = (Object__Array *)func_?(uVar3);
-  pSVar7 = mscorlib.dll::System::Char::Char_ToString((Char *)&puStack_2,(MethodInfo *)0x0);
-  pMVar8 = (MethodInfo *)0x0;
-  str0 = (String *)func_?();
-  mscorlib.dll::System::String::String_Concat_3(str0,pSVar7,pMVar8);
-  func_?();
-  func_?();
-  func_?();
-  puStack_2 = &stack0xffffffec;
-  func_?();
-  uVar9 = func_?();
-  func_?();
-  func_?(unaff_EBX);
-  puStack_2 = (undefined *)uVar9;
-  func_?();
-  func_?();
-  unaff_EDI = (undefined4 *)func_?();
-  func_?(unaff_EBX);
-  func_?(unaff_EBX,unaff_EDI);
-  func_?();
-  ppSVar5 = &StringLiteral_Bad_JSON_escape_sequence___0___L;
-  goto code_?;
-code_?:
-  val = (Char__Array *)func_?(TypeInfo__System__Char);
-  unaff_EBX = (Object__Array *)val->vector;
-  unaff_EDI = (undefined4 *)0x0;
-  if (val == (Char__Array *)0x0) {
-code_?:
-    iVar10 = func_?();
-    *(char *)((int)unaff_EDI + iVar10 * 2 + 0x10) = (char)unaff_EBX;
-    maxps(in_XMM0,*(undefined1 (*) [16])(unaff_EDI + 4));
-    *unaff_EDI = ((JsonReaderException *)this)->klass;
-    pcVar11 = (code *)swi(3);
-    (*pcVar11)();
-    return;
-  }
-  for (; (int)unaff_EDI < (int)val->max_length; unaff_EDI = (undefined4 *)((int)unaff_EDI + 1)) {
+    if (puStack_2 != (undefined *)0x5c) goto code_?;
     uVar1 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
     puStack_2 = (undefined *)(uint)uVar1;
     if ((uVar1 == 0) && ((this->fields)._end != 0)) {
-      uVar3 = func_?(&TypeInfo__System__Object,2);
-      unaff_EBX = (Object__Array *)func_?(uVar3);
-      uVar3 = func_?(&TypeInfo__System__Int32,&stack0xffffffec);
-      uVar3 = func_?(uVar3);
-      func_?(unaff_EBX);
-      func_?(unaff_EBX,uVar3);
-      func_?(0,uVar3);
-      uVar3 = func_?(&TypeInfo__System__Int32,&stack0xfffffff0);
-      unaff_EDI = (undefined4 *)func_?(uVar3);
-      func_?(unaff_EBX);
-      func_?(unaff_EBX,unaff_EDI);
-      func_?(1,unaff_EDI);
-      ppSVar5 = &StringLiteral_Unexpected_end_while_parsing_uni;
-code_?:
-      pMVar8 = (MethodInfo *)0x0;
-      args = unaff_EBX;
-      pSVar7 = (String *)func_?(ppSVar5);
-      this = (JsonTextReader *)JsonTextReader_CreateJsonReaderException(this,pSVar7,args,pMVar8);
-      uVar3 = func_?(&
-                              MethodInfo__Newtonsoft__Json__JsonTextReader__ReadStringIntoBuffer_wchar_t_
-                             );
-      func_?(this,uVar3);
-code_?:
+      func_?();
+      args = (Object__Array *)func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
       func_?();
       goto code_?;
     }
-    if ((undefined4 *)val->max_length <= unaff_EDI) goto code_?;
-    *(uint16_t *)&unaff_EBX->klass = uVar1;
-    unaff_EBX = (Object__Array *)((int)&unaff_EBX->klass + 2);
-  }
-  pSVar7 = mscorlib.dll::System::String::String_CreateString_4((String *)0x0,val,(MethodInfo *)0x0);
-  provider = mscorlib.dll::System::Globalization::NumberFormatInfo::
-             NumberFormatInfo_get_InvariantInfo((MethodInfo *)0x0);
-  unaff_EDI = (undefined4 *)
-              mscorlib.dll::System::Int32::Int32_Parse_2
-                        (pSVar7,NumberStyles__Enum_HexNumber,(IFormatProvider *)provider,
-                         (MethodInfo *)0x0);
-  if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Convert);
-  }
-  uVar1 = mscorlib.dll::System::Convert::Convert_ToChar_5((int32_t)unaff_EDI,(MethodInfo *)0x0);
-  pSVar6 = (this->fields)._buffer;
-  if (pSVar6 == (StringBuffer *)0x0) goto code_?;
-  Json::Utilities::StringBuffer::StringBuffer_Append(pSVar6,uVar1,(MethodInfo *)0x0);
-  goto code_?;
+    if (puStack_2 < 0x5d) {
+      if (puStack_2 < 0x28) {
+        if ((puStack_2 == (undefined *)0x22) || (puStack_2 == (undefined *)0x27))
+        goto code_?;
+      }
+      else {
+        if (puStack_2 == (undefined *)0x2f) {
+code_?:
+          pSVar9 = (this->fields)._buffer;
+          cVar6 = '\0';
+          if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+          Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,uVar1,(MethodInfo *)0x0);
+          goto code_?;
+        }
+        if (puStack_2 == (undefined *)0x5c) {
+          pSVar9 = (this->fields)._buffer;
+          cVar6 = '\0';
+          if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+          Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,uVar1,(MethodInfo *)0x0);
+          goto code_?;
+        }
+      }
+code_?:
+      func_?();
+      args = (Object__Array *)func_?();
+      pSVar5 = mscorlib.dll::System::Char::Char_ToString((Char *)&puStack_2,(MethodInfo *)0x0);
+      pMVar4 = (MethodInfo *)0x0;
+      str0 = (String *)func_?();
+      mscorlib.dll::System::String::String_Concat_3(str0,pSVar5,pMVar4);
+      func_?();
+      func_?();
+      func_?();
+      puStack_2 = &stack0xffffffec;
+      func_?();
+      uVar10 = func_?();
+      func_?();
+      func_?();
+      puStack_2 = (undefined *)uVar10;
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      ppSVar3 = &StringLiteral_Bad_JSON_escape_sequence___0___L;
+      goto code_?;
+    }
+    if (puStack_2 < 0x67) {
+      if (puStack_2 == (undefined *)0x62) {
+        pSVar9 = (this->fields)._buffer;
+        cVar6 = '\0';
+        if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+        Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,8,(MethodInfo *)0x0);
+      }
+      else {
+        if (puStack_2 != (undefined *)0x66) goto code_?;
+        pSVar9 = (this->fields)._buffer;
+        cVar6 = '\0';
+        if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+        Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,0xc,(MethodInfo *)0x0);
+      }
+    }
+    else if (puStack_2 == (undefined *)0x6e) {
+      pSVar9 = (this->fields)._buffer;
+      cVar6 = '\0';
+      if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+      Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,10,(MethodInfo *)0x0);
+    }
+    else {
+      switch(puStack_2) {
+      case (undefined *)0x72:
+        pSVar9 = (this->fields)._buffer;
+        cVar6 = '\0';
+        if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+        Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,0xd,(MethodInfo *)0x0);
+        break;
+      default:
+        goto code_?;
+      case (undefined *)0x74:
+        pSVar9 = (this->fields)._buffer;
+        cVar6 = '\0';
+        if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+        Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,9,(MethodInfo *)0x0);
+        break;
+      case (undefined *)0x75:
+        val = (Char__Array *)func_?();
+        puVar11 = val->vector;
+        uVar10 = 0;
+        cVar6 = '\0';
+        if (val == (Char__Array *)0x0) goto code_?;
+        for (; (int)uVar10 < (int)val->max_length; uVar10 = uVar10 + 1) {
+          uVar1 = JsonTextReader_MoveNext(this,(MethodInfo *)0x0);
+          puStack_2 = (undefined *)(uint)uVar1;
+          if ((uVar1 == 0) && ((this->fields)._end != 0)) {
+            func_?();
+            args = (Object__Array *)func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            uVar12 = func_?();
+            func_?();
+            func_?(args,uVar12);
+            func_?();
+            ppSVar3 = &StringLiteral_Unexpected_end_while_parsing_uni;
+            goto code_?;
+          }
+          cVar6 = uVar10 < val->max_length;
+          if (!(bool)cVar6) goto code_?;
+          *puVar11 = uVar1;
+          puVar11 = puVar11 + 1;
+        }
+        pSVar5 = mscorlib.dll::System::String::String_CreateString_4
+                           ((String *)0x0,val,(MethodInfo *)0x0);
+        provider = mscorlib.dll::System::Globalization::NumberFormatInfo::
+                   NumberFormatInfo_get_InvariantInfo((MethodInfo *)0x0);
+        value = mscorlib.dll::System::Int32::Int32_Parse_2
+                          (pSVar5,NumberStyles__Enum_HexNumber,(IFormatProvider *)provider,
+                           (MethodInfo *)0x0);
+        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        uVar1 = mscorlib.dll::System::Convert::Convert_ToChar_5(value,(MethodInfo *)0x0);
+        pSVar9 = (this->fields)._buffer;
+        cVar6 = '\0';
+        if (pSVar9 == (StringBuffer *)0x0) goto code_?;
+        Json::Utilities::StringBuffer::StringBuffer_Append(pSVar9,uVar1,(MethodInfo *)0x0);
+      }
+    }
+  } while( true );
 }
 
 

@@ -310,11 +310,11 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateCamera
                   (float)((ulonglong)*(undefined8 *)&targetTransform[2].fields >> 0x20);
         ProtectedTransform::ProtectedTransform_set_position
                   (in_stack_31,value,(MethodInfo *)0x0);
-        value_00.y = (fVar24 * fVar4 + fVar22 * 3.068598e-29 + fVar23 * fVar3) - fVar5 * fVar21;
-        value_00.x = (fVar24 * fVar3 + fVar21 * 3.068598e-29 + fVar5 * fVar22) - fVar23 * fVar4;
-        value_00.z = (fVar24 * fVar5 + fVar23 * 3.068598e-29 + fVar4 * fVar21) - fVar22 * fVar3;
-        value_00.w = ((fVar24 * 3.068598e-29 - fVar3 * fVar21) - fVar4 * fVar22) - fVar5 * fVar23
-        ;
+        value_00.y = (fVar24 * fVar4 + fVar22 * 3.0685162e-29 + fVar23 * fVar3) - fVar5 * fVar21;
+        value_00.x = (fVar24 * fVar3 + fVar21 * 3.0685162e-29 + fVar5 * fVar22) - fVar23 * fVar4;
+        value_00.z = (fVar24 * fVar5 + fVar23 * 3.0685162e-29 + fVar4 * fVar21) - fVar22 * fVar3;
+        value_00.w = ((fVar24 * 3.0685162e-29 - fVar3 * fVar21) - fVar4 * fVar22) -
+                     fVar5 * fVar23;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (in_stack_31,value_00,(MethodInfo *)0x0);
         if ((AvatarCameraDistTransparency *)targetTransform[8].monitor !=

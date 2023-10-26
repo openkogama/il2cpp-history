@@ -325,14 +325,23 @@ code_?:
     }
   }
 code_?:
-  bVar15 = func_?();
-  pbVar16 = (byte *)((int)&this[-0x49fdba].monitor + 3);
-  bVar17 = *pbVar16;
-  *pbVar16 = *pbVar16 + bVar15;
-  *extraout_ECX = *extraout_ECX + (char)&stack0xfffffffc + CARRY1(bVar17,bVar15);
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  bVar15 = 0;
+  uVar16 = func_?();
+  bVar17 = *(char *)&this->klass + (byte)&stack0xfffffffc;
+  bVar18 = CARRY1(*(byte *)&this->klass,(byte)&stack0xfffffffc) || CARRY1(bVar17,bVar15);
+  cRam_? = (char)uVar16;
+  *(byte *)&this->klass = bVar17 + bVar15;
+  pbVar19 = (byte *)(extraout_ECX + -0x68);
+  bVar17 = *pbVar19;
+  bVar20 = (byte)((ushort)uVar16 >> 8);
+  bVar15 = *pbVar19 + bVar20;
+  *pbVar19 = bVar15 + bVar18;
+  *(char *)(extraout_ECX + -0x33efc966) =
+       *(char *)(extraout_ECX + -0x33efc966) + (char)uVar16 +
+       (CARRY1(bVar17,bVar20) || CARRY1(bVar15,bVar18));
+  pcVar21 = (code *)swi(3);
+  bVar22 = (*pcVar21)();
+  return bVar22;
 }
 
 

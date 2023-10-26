@@ -945,8 +945,6 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::JContainer::JContainer_IsToken
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void ReadContentFrom(JsonReader) */
 
 void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JContainer::JContainer_ReadContentFrom
@@ -966,432 +964,313 @@ void Assembly-CSharp.dll::Newtonsoft::Json::Linq::JContainer::JContainer_ReadCon
   Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
             ((Object *)r,StringLiteral_r,(MethodInfo *)0x0);
   lineInfo = (IJsonLineInfo *)func_?();
-  this_03 = (JObject *)this;
-code_?:
-  if (((this_03 != (JObject *)0x0) &&
-      (pJVar1 = this_03->klass,
-      (TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
-      (pJVar1->_1).typeHierarchyDepth)) &&
-     ((JProperty__Class *)
-      (pJVar1->_1).typeHierarchy
-      [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] ==
-      TypeInfo__Newtonsoft__Json__Linq__JProperty)) {
-    if (((TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
-         (pJVar1->_1).typeHierarchyDepth) &&
+  pCVar1 = (CultureInfo *)this;
+  do {
+    if (((pCVar1 != (CultureInfo *)0x0) &&
+        (pJVar2 = (JObject__Class *)pCVar1->klass,
+        (TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
+        (pJVar2->_1).typeHierarchyDepth)) &&
        ((JProperty__Class *)
-        (pJVar1->_1).typeHierarchy
+        (pJVar2->_1).typeHierarchy
         [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] ==
         TypeInfo__Newtonsoft__Json__Linq__JProperty)) {
-      pJVar2 = JProperty::JProperty_get_Value((JProperty *)this_03,(MethodInfo *)0x0);
-      if (pJVar2 != (JToken *)0x0) {
-        if (this_03 == (JObject *)this) {
-          return;
+      if (((TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth <=
+           (pJVar2->_1).typeHierarchyDepth) &&
+         ((JProperty__Class *)
+          (pJVar2->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Linq__JProperty->_1).typeHierarchyDepth - 1] ==
+          TypeInfo__Newtonsoft__Json__Linq__JProperty)) {
+        pJVar3 = JProperty::JProperty_get_Value((JProperty *)pCVar1,(MethodInfo *)0x0);
+        if (pJVar3 != (JToken *)0x0) {
+          if (pCVar1 == (CultureInfo *)this) {
+            return;
+          }
+          pCVar1 = *(CultureInfo **)&pCVar1->fields;
         }
-        this_03 = (JObject *)(this_03->fields)._._._parent;
+        goto code_?;
       }
+code_?:
+      func_?();
+code_?:
+      func_?();
+      this_00 = (InvalidOperationException *)func_?();
+      func_?();
+      pMVar4 = (MethodInfo *)0x0;
+      pSVar5 = (String *)func_?();
+      mscorlib.dll::System::InvalidOperationException::InvalidOperationException__ctor_1
+                (this_00,pSVar5,pMVar4);
+      func_?();
+      func_?();
+code_?:
+      func_?();
+      func_?();
+      this_01 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                          ((MethodInfo *)0x0);
+      func_?();
+      pOVar6 = (Object__Array *)func_?();
+      func_?();
+      this = (JContainer *)func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      pMVar4 = (MethodInfo *)0x0;
+      pCVar1 = this_01;
+      pSVar5 = (String *)func_?();
+      message = (DateTimeFormatInfo *)
+                Json::Utilities::StringUtils::StringUtils_FormatWith
+                          (pSVar5,(IFormatProvider *)pCVar1,pOVar6,pMVar4);
+      func_?();
+      pCVar1 = (CultureInfo *)func_?();
+      func_?();
+      mscorlib.dll::System::InvalidOperationException::InvalidOperationException__ctor_1
+                ((InvalidOperationException *)pCVar1,(String *)message,(MethodInfo *)0x0);
+      func_?();
+      cVar7 = (undefined1 *)0xffffffd3 < &stack0xffffffd8;
+      cVar8 = &stack0x00000000 == (undefined1 *)0xfffffffc;
+      func_?();
       goto code_?;
     }
 code_?:
-    func_?();
-code_?:
-    func_?();
-    this_02 = (InvalidOperationException *)func_?();
-    func_?();
-    pMVar3 = (MethodInfo *)0x0;
-    pSVar4 = (String *)func_?();
-    mscorlib.dll::System::InvalidOperationException::InvalidOperationException__ctor_1
-              (this_02,pSVar4,pMVar3);
-    in_stack_5 =
-         &
-         MethodInfo__Newtonsoft__Json__Linq__JToken__Replace_MethodInfo__Newtonsoft__Json__Linq__JToken_
-    ;
-    in_stack_6 = 0x104be4ca00000000;
-    func_?();
-    func_?();
-code_?:
-    uVar7 = (uint)((ulonglong)in_stack_6 >> 0x20);
-    func_?();
-    func_?();
-    provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                         ((MethodInfo *)0x0);
-    func_?();
-    args = (Object__Array *)func_?();
-    func_?();
-    this = (JContainer *)func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    in_stack_6 = (ulonglong)uVar7 << 0x20;
-    func_?();
-    pMVar3 = (MethodInfo *)0x0;
-    pSVar4 = (String *)func_?();
-    pSVar4 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                        (pSVar4,(IFormatProvider *)provider,args,pMVar3);
-    func_?();
-    unaff_EBP = (InvalidOperationException *)func_?();
-    func_?();
-    mscorlib.dll::System::InvalidOperationException::InvalidOperationException__ctor_1
-              (unaff_EBP,pSVar4,(MethodInfo *)0x0);
-    unaff_retaddr = func_?();
-    bVar8 = (undefined1 *)0xffffffd3 < &stack0xffffffd8;
-    func_?();
-    goto code_?;
-  }
-code_?:
-  bVar8 = 0;
-  if (r == (JsonReader *)0x0) goto code_?;
-  uVar9 = (*(r->klass->vtable).get_TokenType.methodPtr)();
-  this_00 = this_03;
-  switch(uVar9) {
-  case 0:
-    goto code_?;
-  case 1:
-    this_00 = (JObject *)func_?();
-    bVar8 = 0;
-    if (this_00 != (JObject *)0x0) {
-      JObject::JObject__ctor(this_00,(MethodInfo *)0x0);
-code_?:
-      JToken::JToken_SetLineInfo((JToken *)this_00,lineInfo,(MethodInfo *)0x0);
-code_?:
-      bVar8 = 0;
-      if (this_03 != (JObject *)0x0) {
-        (*(this_03->klass->vtable).Add.methodPtr)();
-        goto code_?;
-      }
-    }
-    break;
-  case 2:
-    this_00 = (JObject *)func_?();
-    bVar8 = 0;
-    if (this_00 != (JObject *)0x0) {
-      JArray::JArray__ctor((JArray *)this_00,(MethodInfo *)0x0);
+    cVar7 = '\0';
+    cVar8 = '\x01';
+    this_01 = (CultureInfo *)this;
+    message = (DateTimeFormatInfo *)r;
+    if (r == (JsonReader *)0x0) goto code_?;
+    uVar9 = (*(r->klass->vtable).get_TokenType.methodPtr)();
+    this_01 = pCVar1;
+    switch(uVar9) {
+    case 0:
+      break;
+    case 1:
+      this_01 = (CultureInfo *)func_?();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
+      JObject::JObject__ctor((JObject *)this_01,(MethodInfo *)0x0);
       goto code_?;
-    }
-    break;
-  case 3:
-    piVar10 = (int *)(*(r->klass->vtable).get_Value.methodPtr)();
-    bVar8 = 0;
-    if (piVar10 != (int *)0x0) {
-      in_stack_5 = (MethodInfo **)(**(code **)(*piVar10 + 0xd4))();
-      this_00 = (JObject *)func_?();
-      bVar8 = 0;
-      if (this_00 != (JObject *)0x0) {
-        JConstructor::JConstructor__ctor_4
-                  ((JConstructor *)this_00,(String *)in_stack_5,(MethodInfo *)0x0);
-        JToken::JToken_SetLineInfo((JToken *)this_00,(IJsonLineInfo *)this_00,(MethodInfo *)0x0);
-        goto code_?;
+    case 2:
+      this_01 = (CultureInfo *)func_?();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
+      JArray::JArray__ctor((JArray *)this_01,(MethodInfo *)0x0);
+code_?:
+      JToken::JToken_SetLineInfo((JToken *)this_01,lineInfo,(MethodInfo *)0x0);
+code_?:
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (pCVar1 == (CultureInfo *)0x0) goto code_?;
+      (*(code *)pCVar1->klass[1].vtable.get_EnglishName.method)();
+      break;
+    case 3:
+      piVar10 = (int *)(*(r->klass->vtable).get_Value.methodPtr)();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      this_01 = (CultureInfo *)this;
+      if (piVar10 == (int *)0x0) goto code_?;
+      pSVar5 = (String *)(**(code **)(*piVar10 + 0xd4))();
+      this_01 = (CultureInfo *)func_?();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
+      JConstructor::JConstructor__ctor_4((JConstructor *)this_01,pSVar5,(MethodInfo *)0x0);
+      JToken::JToken_SetLineInfo((JToken *)this_01,(IJsonLineInfo *)this_01,(MethodInfo *)0x0);
+      goto code_?;
+    case 4:
+      piVar10 = (int *)(*(r->klass->vtable).get_Value.methodPtr)();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      this_01 = (CultureInfo *)this;
+      if (piVar10 == (int *)0x0) goto code_?;
+      pSVar5 = (String *)(**(code **)(*piVar10 + 0xd4))();
+      this_01 = (CultureInfo *)func_?();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
+      JProperty::JProperty__ctor_1((JProperty *)this_01,pSVar5,(MethodInfo *)0x0);
+      JToken::JToken_SetLineInfo((JToken *)this_01,lineInfo,(MethodInfo *)0x0);
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (pCVar1 == (CultureInfo *)0x0) goto code_?;
+      if (((pCVar1->klass->_1).typeHierarchyDepth <
+           (TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth) ||
+         ((JObject__Class *)
+          (pCVar1->klass->_1).typeHierarchy
+          [(TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth - 1] !=
+          TypeInfo__Newtonsoft__Json__Linq__JObject)) goto code_?;
+      pJVar11 = JObject::JObject_Property((JObject *)pCVar1,pSVar5,(MethodInfo *)0x0);
+      if (pJVar11 == (JProperty *)0x0) {
+        in_stack_12 = CONCAT44(this_01,pCVar1);
+        (*(code *)pCVar1->klass[1].vtable.get_EnglishName.method)();
       }
-    }
-    break;
-  case 4:
-    piVar10 = (int *)(*(r->klass->vtable).get_Value.methodPtr)();
-    bVar8 = 0;
-    if (piVar10 != (int *)0x0) {
-      in_stack_5 = (MethodInfo **)(**(code **)(*piVar10 + 0xd4))();
-      this_00 = (JObject *)func_?();
-      bVar8 = 0;
-      if (this_00 != (JObject *)0x0) {
-        JProperty::JProperty__ctor_1
-                  ((JProperty *)this_00,(String *)in_stack_5,(MethodInfo *)0x0);
-        JToken::JToken_SetLineInfo((JToken *)this_00,lineInfo,(MethodInfo *)0x0);
-        bVar8 = 0;
-        if (this_03 != (JObject *)0x0) {
-          if (((this_03->klass->_1).typeHierarchyDepth <
-               (TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth) ||
-             ((JObject__Class *)
-              (this_03->klass->_1).typeHierarchy
-              [(TypeInfo__Newtonsoft__Json__Linq__JObject->_1).typeHierarchyDepth - 1] !=
-              TypeInfo__Newtonsoft__Json__Linq__JObject)) goto code_?;
-          pJVar11 = JObject::JObject_Property(this_03,(String *)in_stack_5,(MethodInfo *)0x0)
-          ;
-          if (pJVar11 == (JProperty *)0x0) {
-            in_stack_5 = (MethodInfo **)(this_03->klass->vtable).Add.method;
-            in_stack_6 = CONCAT44(this_00,this_03);
-            (*(this_03->klass->vtable).Add.methodPtr)();
-          }
-          else {
-            if ((pJVar11->fields)._._._parent == (JContainer *)0x0) goto code_?;
-            pJVar12 = ((pJVar11->fields)._._._parent)->klass;
-            in_stack_5 = (MethodInfo **)(pJVar12->vtable).ReplaceItem.method;
-            in_stack_6 = CONCAT44(this_00,pJVar11);
-            (*(pJVar12->vtable).ReplaceItem.methodPtr)();
-          }
-          goto code_?;
-        }
+      else {
+        if ((pJVar11->fields)._._._parent == (JContainer *)0x0) goto code_?;
+        in_stack_12 = CONCAT44(this_01,pJVar11);
+        (*(((pJVar11->fields)._._._parent)->klass->vtable).ReplaceItem.methodPtr)();
       }
-    }
-    break;
-  case 5:
-    piVar10 = (int *)(*(r->klass->vtable).get_Value.methodPtr)();
-    bVar8 = 0;
-    if (piVar10 != (int *)0x0) {
-      pSVar4 = (String *)(**(code **)(*piVar10 + 0xd4))();
-      this_01 = JValue::JValue_CreateComment(pSVar4,(MethodInfo *)0x0);
-      bVar8 = 0;
-      if (this_01 != (JValue *)0x0) {
-        JToken::JToken_SetLineInfo((JToken *)this_01,lineInfo,(MethodInfo *)0x0);
-        goto code_?;
-      }
-    }
-    break;
-  default:
-    goto code_?;
-  case 7:
-  case 8:
-  case 9:
-  case 10:
-  case 0x10:
-  case 0x11:
-    pMVar3 = (MethodInfo *)(*(r->klass->vtable).get_Value.methodPtr)();
-    in_stack_5 = (MethodInfo **)pMVar3;
-    pJVar2 = (JToken *)func_?();
-    bVar8 = 0;
-    if (pJVar2 != (JToken *)0x0) {
-      in_stack_6 = 0;
-      pJVar13 = (JToken__Class *)
+      break;
+    case 5:
+      piVar10 = (int *)(*(r->klass->vtable).get_Value.methodPtr)();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      this_01 = (CultureInfo *)this;
+      if (piVar10 == (int *)0x0) goto code_?;
+      pSVar5 = (String *)(**(code **)(*piVar10 + 0xd4))();
+      this_01 = (CultureInfo *)JValue::JValue_CreateComment(pSVar5,(MethodInfo *)0x0);
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
+      JToken::JToken_SetLineInfo((JToken *)this_01,lineInfo,(MethodInfo *)0x0);
+      goto code_?;
+    default:
+      goto code_?;
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+    case 0x10:
+    case 0x11:
+      message = (DateTimeFormatInfo *)(*(r->klass->vtable).get_Value.methodPtr)();
+      pDVar13 = message;
+      this_01 = (CultureInfo *)func_?();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
+      in_stack_12 = 0;
+      message = (DateTimeFormatInfo *)
                 JValue::JValue_GetValueType
-                          ((Nullable_1_Newtonsoft_Json_Linq_JTokenType_)0x0,(Object *)pMVar3,
+                          ((Nullable_1_Newtonsoft_Json_Linq_JTokenType_)0x0,(Object *)message,
                            (MethodInfo *)0x0);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)pJVar2,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_6);
-      pJVar2[1].monitor = (MonitorData *)in_stack_5;
+                ((Object *)this_01,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_12);
+      (this_01->fields).dateTimeInfo = pDVar13;
       func_?();
-      pJVar2[1].klass = pJVar13;
-      JToken::JToken_SetLineInfo(pJVar2,lineInfo,(MethodInfo *)0x0);
-      bVar8 = 0;
-      if (this_03 != (JObject *)0x0) {
-        (*(this_03->klass->vtable).Add.methodPtr)();
-        goto code_?;
-      }
-    }
-    break;
-  case 0xb:
-    pJVar2 = (JToken *)func_?();
-    bVar8 = 0;
-    if (pJVar2 != (JToken *)0x0) {
+      (this_01->fields).numInfo = (NumberFormatInfo *)message;
+      JToken::JToken_SetLineInfo((JToken *)this_01,lineInfo,(MethodInfo *)0x0);
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (pCVar1 == (CultureInfo *)0x0) goto code_?;
+      (*(code *)pCVar1->klass[1].vtable.get_EnglishName.method)();
+      this_01 = pCVar1;
+      break;
+    case 0xb:
+      this_01 = (CultureInfo *)func_?();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)pJVar2,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_6);
-      pJVar2[1].monitor = (MonitorData *)0x0;
+                ((Object *)this_01,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_12);
+      (this_01->fields).dateTimeInfo = (DateTimeFormatInfo *)0x0;
       func_?();
-      pJVar2[1].klass = (JToken__Class *)0xa;
-      JToken::JToken_SetLineInfo(pJVar2,lineInfo,(MethodInfo *)0x0);
-code_?:
-      bVar8 = 0;
-      if (this_03 != (JObject *)0x0) {
-        (*(this_03->klass->vtable).Add.methodPtr)();
-        goto code_?;
-      }
-    }
-    break;
-  case 0xc:
-    pJVar2 = (JToken *)func_?();
-    bVar8 = 0;
-    if (pJVar2 != (JToken *)0x0) {
+      (this_01->fields).numInfo = (NumberFormatInfo *)0xa;
+      JToken::JToken_SetLineInfo((JToken *)this_01,lineInfo,(MethodInfo *)0x0);
+      goto code_?;
+    case 0xc:
+      this_01 = (CultureInfo *)func_?();
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (this_01 == (CultureInfo *)0x0) goto code_?;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)pJVar2,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_6);
-      pJVar2[1].monitor = (MonitorData *)0x0;
+                ((Object *)this_01,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_12);
+      (this_01->fields).dateTimeInfo = (DateTimeFormatInfo *)0x0;
       func_?();
-      pJVar2[1].klass = (JToken__Class *)0xb;
-      JToken::JToken_SetLineInfo(pJVar2,lineInfo,(MethodInfo *)0x0);
-      goto code_?;
+      (this_01->fields).numInfo = (NumberFormatInfo *)0xb;
+      JToken::JToken_SetLineInfo((JToken *)this_01,lineInfo,(MethodInfo *)0x0);
+code_?:
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      if (pCVar1 == (CultureInfo *)0x0) {
+code_?:
+        uVar14 = func_?();
+        uVar15 = (undefined2)((uint6)uVar14 >> 0x20);
+        if ((int)uVar14 == 1 || cVar8 == '\0') {
+          *(char *)&message->klass = *(char *)&message->klass + (char)this_01 + cVar7;
+          pCVar16 = (CultureInfo__Class *)in(uVar15);
+          pCVar1->klass = pCVar16;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        in(uVar15);
+        if (r != (JsonReader *)0x0) {
+          iVar17 = (*(r->klass->vtable).get_Depth.methodPtr)();
+          cVar8 = (*(r->klass->vtable).__unknown.methodPtr)(r,(r->klass->vtable).__unknown.method);
+          if (cVar8 == '\0') {
+            func_?();
+            func_?();
+            pCVar1 = mscorlib.dll::System::Globalization::CultureInfo::
+                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+            func_?();
+            pOVar6 = (Object__Array *)func_?();
+            pTVar18 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0)
+            ;
+            func_?();
+            uVar9 = func_?(7,pTVar18);
+            func_?(pOVar6);
+            func_?(pOVar6,uVar9);
+            func_?();
+            ppSVar19 = &StringLiteral_Error_reading__0__from_JsonReade;
+          }
+          else {
+            JContainer_ReadContentFrom(this,r,(MethodInfo *)0x0);
+            iVar20 = (*(r->klass->vtable).get_Depth.methodPtr)();
+            if (iVar20 <= iVar17) {
+              return;
+            }
+            func_?();
+            func_?();
+            pCVar1 = mscorlib.dll::System::Globalization::CultureInfo::
+                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+            func_?();
+            pOVar6 = (Object__Array *)func_?();
+            mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+            func_?();
+            uVar9 = func_?();
+            func_?();
+            func_?(pOVar6,uVar9);
+            func_?();
+            ppSVar19 = &StringLiteral_Unexpected_end_of_content_while_;
+          }
+          pMVar4 = (MethodInfo *)0x0;
+          pSVar5 = (String *)func_?(ppSVar19);
+          pSVar5 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                             (pSVar5,(IFormatProvider *)pCVar1,pOVar6,pMVar4);
+          func_?();
+          this_02 = (Exception *)func_?();
+          func_?();
+          mscorlib.dll::System::Exception::Exception__ctor_1(this_02,pSVar5,(MethodInfo *)0x0);
+          func_?(&
+                          MethodInfo__Newtonsoft__Json__Linq__JContainer__ReadTokenFrom_Newtonsoft__Json__JsonReader_
+                         );
+          func_?();
+        }
+        func_?();
+        pcVar21 = (code *)swi(3);
+        (*pcVar21)();
+        return;
+      }
+      (*(code *)pCVar1->klass[1].vtable.get_EnglishName.method)();
+      this_01 = pCVar1;
+      break;
+    case 0xd:
+    case 0xe:
+    case 0xf:
+      if (pCVar1 == (CultureInfo *)this) {
+        return;
+      }
+      cVar7 = '\0';
+      cVar8 = '\x01';
+      this_01 = (CultureInfo *)this;
+      if (pCVar1 == (CultureInfo *)0x0) goto code_?;
+      this_01 = *(CultureInfo **)&pCVar1->fields;
     }
-    break;
-  case 0xd:
-  case 0xe:
-  case 0xf:
-    if (this_03 == (JObject *)this) {
+    cVar8 = (*(r->klass->vtable).__unknown.methodPtr)();
+    pCVar1 = this_01;
+    if (cVar8 == '\0') {
       return;
     }
-    bVar8 = 0;
-    if (this_03 == (JObject *)0x0) break;
-    this_00 = (JObject *)(this_03->fields)._._._parent;
-    goto code_?;
-  }
-code_?:
-  piVar14 = (int *)((ulonglong)in_stack_6 >> 0x20);
-  func_?();
-  uVar15 = (undefined3)((uint)r >> 8);
-  bVar16 = in(0x4b);
-  piVar10 = (int *)CONCAT31(uVar15,bVar16);
-  bVar17 = (byte)((uint)this >> 8);
-  bVar18 = (byte)((uint)unaff_retaddr >> 8);
-  bVar19 = bVar18 + bVar17;
-  bVar20 = CARRY1(bVar18,bVar17) || CARRY1(bVar19,bVar8);
-  bVar17 = (byte)unaff_retaddr;
-  bVar19 = bVar19 + bVar8;
-  uVar9 = CONCAT22((short)((uint)unaff_retaddr >> 0x10),CONCAT11(bVar19,bVar17));
-  puVar21 = &this[-1].fields.field_0x23;
-  if (puVar21 != (undefined1 *)0x0 && bVar19 != 0) {
-    if (bVar19 == 0) {
-      if (piVar14 == (int *)0x0) goto code_?;
-      piVar10 = (int *)*piVar14;
-code_?:
-      (*(code *)piVar10[0x43])();
-code_?:
-      puVar21 = (undefined1 *)*piVar14;
-      goto code_?;
-    }
-    piVar10 = (int *)CONCAT31(uVar15,0x10);
-code_?:
-    *piVar10 = (int)(*piVar10 + (int)piVar10);
-    pcVar22 = (char *)((int)&unaff_EBP[0x3b58e0].monitor + 2);
-    *pcVar22 = *pcVar22 + (char)puVar21;
-    *piVar10 = (int)(*piVar10 + (int)piVar10);
-    ppSVar23 = &unaff_EBP[0x3ba].fields._._._safeSerializationManager;
-    *(char *)ppSVar23 = *(char *)ppSVar23 + (char)puVar21;
-code_?:
-    *(char *)((int)piVar14 + -1) = *(char *)((int)piVar14 + -1) + (char)uVar9;
-    puVar24 = (uint *)((int)&unaff_EBP[-0x1a84].fields._._._dynamicMethods + 2);
-    *puVar24 = *puVar24 >> 1 | (uint)((*puVar24 & 1) != 0) << 0x1f;
-    *piVar10 = (int)(*piVar10 + (int)piVar10);
-    pcVar22 = (char *)((int)&unaff_EBP[0x3d7].fields._._._helpURL + 1);
-    *pcVar22 = *pcVar22 + '\x18';
-    pcVar22 = (char *)((int)piVar14 + -1);
-    *pcVar22 = *pcVar22 + (char)uVar9;
-    bVar20 = *pcVar22 == '\0';
-    *(undefined1 *)&unaff_EBP[-0xe1b8a8].monitor = *(undefined1 *)&unaff_EBP[-0xe1b8a8].monitor;
-code_?:
-    if (!bVar20) {
-      method = (MethodInfo *)((MethodInfo *)in_stack_5)->invoker_method;
-code_?:
-      JContainer_ReadContentFrom((JContainer *)method,in_stack_25,in_stack_26);
-      piVar10 = (int *)(**(code **)(*piVar14 + 0x10c))();
-      cVar27 = extraout_DL;
-      cVar28 = extraout_CL;
-      goto code_?;
-    }
-    func_?();
-    func_?();
-    this = (JContainer *)
-           mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                     ((MethodInfo *)0x0);
-    func_?();
-    r = (JsonReader *)func_?();
-    mscorlib.dll::System::Object::Object_GetType
-              ((Object *)((MethodInfo *)in_stack_5)->invoker_method,(MethodInfo *)0x0);
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-  }
-  else {
-    bVar8 = (byte)((uint)unaff_EBP >> 8);
-    bVar29 = CARRY1(bRam_?,bVar8) || CARRY1(bRam_? + bVar8,bVar20);
-    bRam_? = bRam_? + bVar8 + bVar20;
-    puVar21 = &this[-1].fields.field_0x22;
-    if (puVar21 != (undefined1 *)0x0 && bRam_? == 0) goto code_?;
-    bVar18 = (byte)unaff_EBP + bVar16;
-    bVar20 = CARRY1((byte)unaff_EBP,bVar16) || CARRY1(bVar18,bVar29);
-    cVar28 = bVar18 + bVar29;
-    unaff_EBP = (InvalidOperationException *)CONCAT31((int3)((uint)unaff_EBP >> 8),cVar28);
-    puVar21 = &this[-1].fields.field_0x21;
-    if (puVar21 != (undefined1 *)0x0 && cVar28 == '\0') goto code_?;
-    pbVar30 = (byte *)((int)piVar14 + -0x2befb41e);
-    bVar29 = CARRY1(*pbVar30,bVar19) || CARRY1(*pbVar30 + bVar19,bVar20);
-    *pbVar30 = *pbVar30 + bVar19 + bVar20;
-    cVar28 = in(0x4b);
-    piVar10 = (int *)CONCAT31(uVar15,cVar28);
-    bVar20 = CARRY1(bVar17,bVar17) || CARRY1(bVar17 * '\x02',bVar29);
-    uVar15 = (undefined3)((uint)uVar9 >> 8);
-    bVar19 = bVar17 * '\x02' + bVar29;
-    uVar9 = CONCAT31(uVar15,bVar19);
-    if (puVar21 == (undefined1 *)0x0) goto code_?;
-    bVar29 = CARRY1(bVar19,bVar19) || CARRY1(bVar19 * '\x02',bVar20);
-    bVar19 = bVar19 * '\x02' + bVar20;
-    if (puVar21 == (undefined1 *)0x0) goto code_?;
-    bVar20 = CARRY1(bVar19,bVar19) || CARRY1(bVar19 * '\x02',bVar29);
-    bVar19 = bVar19 * '\x02' + bVar29;
-    if (puVar21 == (undefined1 *)0x0) {
-code_?:
-      pcVar31 = *(code **)(puVar21 + 0x114);
-code_?:
-      cVar28 = (*pcVar31)();
-      bVar20 = cVar28 == '\0';
-      goto code_?;
-    }
-    bVar29 = CARRY1(bVar19,bVar19) || CARRY1(bVar19 * '\x02',bVar20);
-    cVar27 = bVar19 * '\x02' + bVar20;
-    pcVar31 = (code *)CONCAT31(uVar15,cVar27);
-    if (puVar21 == (undefined1 *)0x0) {
-      *(char *)piVar10 = (char)*piVar10 + cVar28;
-      goto code_?;
-    }
-    bVar16 = (byte)((uint)r >> 8);
-    bVar19 = bRam_? + bVar16;
-    bVar20 = CARRY1(bRam_?,bVar16) || CARRY1(bVar19,bVar29);
-    bRam_? = bVar19 + bVar29;
-    if (puVar21 == (undefined1 *)0x0) goto code_?;
-    pcVar32 = pcVar31 + -0x45efb41d;
-    bVar29 = CARRY1((byte)*pcVar32,bVar8) || CARRY1((char)*pcVar32 + bVar8,bVar20);
-    *pcVar32 = (code)((char)*pcVar32 + bVar8 + bVar20);
-    bVar20 = *pcVar32 == (code)0x0;
-    if (puVar21 == (undefined1 *)0x0) goto code_?;
-    pcVar31 = pcVar31 + -0x2defb41d;
-    cVar33 = *pcVar31;
-    cVar34 = *pcVar31;
-    *pcVar31 = (code)((char)cVar34 + bVar8 + bVar29);
-    if (puVar21 == (undefined1 *)0x0) goto code_?;
-    cVar27 = cVar27 * '\x02' + (CARRY1((byte)cVar33,bVar8) || CARRY1((char)cVar34 + bVar8,bVar29));
-    cVar28 = '\0';
-    if (puVar21 != (undefined1 *)0x0) {
-      pcVar31 = (code *)swi(3);
-      (*pcVar31)();
-      return;
-    }
-code_?:
-    piVar35 = (int *)((int)&unaff_EBP[0x3b58e0].monitor + 2);
-    *piVar35 = *piVar35 + -1;
-    *piVar10 = (int)(*piVar10 + (int)piVar10);
-    ppSVar23 = &unaff_EBP[0x3ba].fields._._._safeSerializationManager;
-    *(char *)ppSVar23 = *(char *)ppSVar23 + cVar28;
-    pcVar22 = (char *)((int)piVar14 + -1);
-    *pcVar22 = *pcVar22 + cVar27;
-    cVar28 = *pcVar22;
-    cVar27 = *pcVar22;
-    ppEVar36 = &unaff_EBP[-0xc9d89a].fields._._._innerException;
-    pEVar37 = *ppEVar36;
-    *ppEVar36 = (Exception *)((int)*ppEVar36 << 1 | (uint)((int)pEVar37 < 0));
-    if (cVar27 == '\0' || ((int)pEVar37 < 0 != (int)*ppEVar36 < 0) != cVar28 < '\0') {
-      return;
-    }
-    func_?();
-    func_?();
-    this = (JContainer *)
-           mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                     ((MethodInfo *)0x0);
-    func_?();
-    r = (JsonReader *)func_?();
-    mscorlib.dll::System::Object::Object_GetType
-              ((Object *)((MethodInfo *)in_stack_5)->invoker_method,(MethodInfo *)0x0);
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-  }
-  pSVar4 = (String *)func_?();
-  pSVar4 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                      (pSVar4,(IFormatProvider *)this,(Object__Array *)r,(MethodInfo *)0x0);
-  func_?();
-  pEVar37 = (Exception *)func_?();
-  func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar37,pSVar4,(MethodInfo *)0x0);
-  func_?();
-  func_?();
-code_?:
-  func_?();
-  pcVar31 = (code *)swi(3);
-  (*pcVar31)();
-  return;
-code_?:
-  cVar28 = (*(r->klass->vtable).__unknown.methodPtr)();
-  this_03 = this_00;
-  if (cVar28 == '\0') {
-    return;
-  }
-  goto code_?;
+  } while( true );
 }
 
 

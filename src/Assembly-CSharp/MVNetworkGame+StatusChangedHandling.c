@@ -159,7 +159,6 @@ code_?:
         }
         object = TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9;
         this_02 = (UnityAction *)func_?();
-        this = (MVNetworkGame_StatusChangedHandling *)0x0;
         if (this_02 == (UnityAction *)0x0) break;
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
@@ -190,16 +189,15 @@ code_?:
     if ((pMVar4 != (MVNetworkGame *)0x0) &&
        (pPVar5 = (pMVar4->fields)._Peer_k__BackingField, pPVar5 != (PhotonPeer *)0x0)) {
       (pPVar5->fields).DebugOut = (pMVar4->fields).photonLoggingConfig.defaultDebugLevel;
-      this = (MVNetworkGame_StatusChangedHandling *)
-             MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if ((MVNetworkGame_OperationRequests *)this != (MVNetworkGame_OperationRequests *)0x0) {
+      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (pMVar6 != (MVNetworkGame_OperationRequests *)0x0) {
         if (cRam_? == '\0') {
           func_?();
           func_?();
           func_?();
           cRam_? = '\x01';
         }
-        pMVar4 = (((MVNetworkGame_OperationRequests *)this)->fields).networkGame;
+        pMVar4 = (pMVar6->fields).networkGame;
         if (pMVar4 != (MVNetworkGame *)0x0) {
           (pMVar4->fields).connState = 3;
           this_01 = (ParameterOverride_1_System_Object_ *)func_?();
@@ -209,12 +207,11 @@ code_?:
                       (this_01,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                       );
-            pPVar5 = (((MVNetworkGame_OperationRequests *)this)->fields).peer;
+            pPVar5 = (pMVar6->fields).peer;
             if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor ==
                 0) {
               func_?();
             }
-            this = (MVNetworkGame_StatusChangedHandling *)0x0;
             if (pPVar5 != (PhotonPeer *)0x0) {
               (*(pPVar5->klass->vtable).SendOperation.methodPtr)();
               return;
@@ -253,28 +250,26 @@ code_?:
     return;
   }
 code_?:
-  pcVar6 = (char *)func_?();
-  puVar7 = (uint *)(pcVar6 + 0x52);
-  uVar8 = *puVar7;
-  *puVar7 = *puVar7 + 0x10;
-  ((MVNetworkGame_OperationRequests *)this)->klass =
-       (MVNetworkGame_OperationRequests__Class *)
-       ((int)&(((MVNetworkGame_OperationRequests *)this)->klass->_0).image + 1);
-  bVar9 = (byte)((uint)unaff_EBX >> 8);
-  bVar10 = CARRY1(bRam_?,bVar9);
-  bVar9 = bRam_? + bVar9;
-  bRam_? = bVar9 + (0xffffffef < uVar8);
-  cVar11 = (char)pcVar6;
-  *pcVar6 = *pcVar6 + cVar11 + (bVar10 || CARRY1(bVar9,0xffffffef < uVar8));
-  *(char *)(extraout_ECX + 1) = *(char *)(extraout_ECX + 1) + cVar11;
-  piVar12 = (int *)(CONCAT31((int3)((uint)pcVar6 >> 8),cVar11 + *pcVar6) + *unaff_EBX);
-  pcVar6 = (char *)((int)piVar12 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar12);
-  cVar11 = (char)pcVar6;
-  *pcVar6 = *pcVar6 + cVar11;
-  *pcVar6 = *pcVar6 + cVar11;
-  *pcVar6 = *pcVar6 + cVar11;
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  cVar7 = '\0';
+  pcVar8 = (char *)func_?();
+  iVar9 = iRam_?;
+  bVar10 = (byte)extraout_ECX;
+  iRam_? = iRam_? >> (bVar10 & 0x1f);
+  bVar11 = ((uint)extraout_ECX & 0x1f) == 0;
+  cVar12 = (char)pcVar8;
+  *pcVar8 = *pcVar8 + cVar12 +
+             (CARRY1(in_stack_13,bVar10) ||
+             CARRY1(in_stack_13 + bVar10,
+                    bVar11 * cVar7 | !bVar11 * ((iVar9 >> (bVar10 & 0x1f) - 1 & 1U) != 0)));
+  *extraout_ECX = *extraout_ECX + cVar12;
+  piVar14 = (int *)(CONCAT31((int3)((uint)pcVar8 >> 8),cVar12 + *pcVar8) + *unaff_EBX);
+  pcVar8 = (char *)((int)piVar14 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar14);
+  cVar12 = (char)pcVar8;
+  *pcVar8 = *pcVar8 + cVar12;
+  *pcVar8 = *pcVar8 + cVar12;
+  *pcVar8 = *pcVar8 + cVar12;
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

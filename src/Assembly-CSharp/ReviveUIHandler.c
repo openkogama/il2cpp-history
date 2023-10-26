@@ -1150,8 +1150,7 @@ code_?:
   }
   func_?();
 code_?:
-  uRam_? = func_?();
-  bRam_? = (byte)uRam_? ^ 0x10;
+  func_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;

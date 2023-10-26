@@ -132,7 +132,7 @@ void Assembly-CSharp.dll::ContinueTierBoostPopup::ContinueTierBoostPopup_ChangeB
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0x12,(MethodInfo *)0x0);
+                  (pGVar1,0x72,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -796,8 +796,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void RewardedAdCallback(RewardedAdResult) */
 
 void Assembly-CSharp.dll::ContinueTierBoostPopup::ContinueTierBoostPopup_RewardedAdCallback
@@ -805,19 +803,11 @@ void Assembly-CSharp.dll::ContinueTierBoostPopup::ContinueTierBoostPopup_Rewarde
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     func_?(&
                     MethodInfo__ContinueTierBoostPopup____c___RewardedAdCallback_b__33_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
@@ -831,7 +821,7 @@ void Assembly-CSharp.dll::ContinueTierBoostPopup::ContinueTierBoostPopup_Rewarde
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    func_?();
     cRam_? = '\x01';
   }
   RVar1 = RewardedAdResult__Enum_RewardUnlocked;
@@ -843,144 +833,98 @@ void Assembly-CSharp.dll::ContinueTierBoostPopup::ContinueTierBoostPopup_Rewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_ErrorTimeout:
-    root_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__ContinueTierBoostPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ContinueTierBoostPopup____c);
+      func_?();
     }
     callbackFunction_00 = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_2;
     if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
     goto code_?;
     if ((TypeInfo__ContinueTierBoostPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ContinueTierBoostPopup____c);
+      func_?();
     }
-    pCVar2 = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9;
-    callbackFunction_00 =
-         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                        );
+    pCVar3 = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9;
+    callbackFunction_00 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
     if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
 code_?:
-      bVar3 = (byte)root_00;
-      uVar4 = func_?();
-      uVar4 = uVar4 ^ 0x351023e3;
-      if (extraout_ECX == 0) {
-        bVar5 = bVar3 < bRam_?;
-        bVar3 = bVar3 - bRam_?;
-        bVar6 = uVar4 < 0xf468ffef || uVar4 + 0xb970011 < (uint)bVar5;
-        uVar4 = (uVar4 + 0xb970011) - (uint)bVar5;
-      }
-      else {
-        bVar6 = CARRY1(bRam_?,extraout_DH);
-        bRam_? = bRam_? + extraout_DH;
-        if (extraout_ECX != 0) {
-          pcVar7 = (code *)swi(3);
-          (*pcVar7)();
-          return;
-        }
-      }
-      bVar8 = (byte)((uint)extraout_ECX >> 8);
-      bVar9 = (byte)uVar4 + bVar8;
-      bVar5 = CARRY1((byte)uVar4,bVar8) || CARRY1(bVar9,bVar6);
-      bVar9 = bVar9 + bVar6;
-      bVar6 = CARRY1(bRam_?,bVar3) || CARRY1(bRam_? + bVar3,bVar5);
-      bRam_? = bRam_? + bVar3 + bVar5;
-      bVar3 = bVar9 + bVar8;
-      iVar10 = (CONCAT31((int3)(uVar4 >> 8),bVar3 + bVar6) + 0x17970011) -
-              (uint)(CARRY1(bVar9,bVar8) || CARRY1(bVar3,bVar6));
-      bVar9 = (byte)iVar10;
-      bVar3 = bVar9 + bVar8;
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      (**(code **)(CONCAT31((int3)((uint)iVar10 >> 8),
-                            (bVar3 + CARRY1(extraout_DH,bVar8) + '\x11') -
-                            (CARRY1(bVar9,bVar8) || CARRY1(bVar3,CARRY1(extraout_DH,bVar8)))) + 0x24
-                  ))();
+      uVar4 = func_?(&stack0xffffffe8);
+      func_?(uVar4);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pCVar2,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pCVar3,
                MethodInfo__ContinueTierBoostPopup____c___RewardedAdCallback_b__33_2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_2 = callbackFunction_00;
-    ppEVar11 = &TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_2;
     break;
   case RewardedAdResult__Enum_RewardUnlocked:
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__ContinueTierBoostPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ContinueTierBoostPopup____c);
+      func_?();
     }
     callbackFunction = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_0;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__ContinueTierBoostPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__ContinueTierBoostPopup____c);
+        func_?();
       }
-      root_00 = (GameObject *)TypeInfo__ContinueTierBoostPopup____c->static_fields->__9;
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_IUIStack_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
+      pCVar3 = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9;
+      callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)root_00,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pCVar3,
                  MethodInfo__ContinueTierBoostPopup____c___RewardedAdCallback_b__33_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_0 = callbackFunction;
-      func_?(&TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_0,
-                      callbackFunction);
+      func_?();
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      func_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,
+              (pGVar2,(BaseEventData *)0x0,
                (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
     return;
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    root_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this,(MethodInfo *)0x0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__ContinueTierBoostPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ContinueTierBoostPopup____c);
+      func_?();
     }
     callbackFunction_00 = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_1;
     if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
     goto code_?;
     if ((TypeInfo__ContinueTierBoostPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ContinueTierBoostPopup____c);
+      func_?();
     }
-    pCVar2 = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9;
-    callbackFunction_00 =
-         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                        );
+    pCVar3 = TypeInfo__ContinueTierBoostPopup____c->static_fields->__9;
+    callbackFunction_00 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
     if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pCVar2,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pCVar3,
                MethodInfo__ContinueTierBoostPopup____c___RewardedAdCallback_b__33_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_1 = callbackFunction_00;
-    ppEVar11 = &TypeInfo__ContinueTierBoostPopup____c->static_fields->__9__33_1;
     break;
   default:
     return;
   }
-  func_?(ppEVar11,callbackFunction_00);
+  func_?();
 code_?:
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?();
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root_00,(BaseEventData *)0x0,
+            (pGVar2,(BaseEventData *)0x0,
              (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
             );

@@ -25,6 +25,7 @@ Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs
           (FaceCursor *this,Edge__Enum edge,bool mirror,MethodInfo *method)
 
 {
+  uVar1 = uRam_?;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
@@ -37,18 +38,19 @@ Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs
   }
   this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-  cVar1 = '\0';
+  bVar2 = 0;
   if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
     func_?();
-    *(char *)(extraout_ECX + 0x28) = *(char *)(extraout_ECX + 0x28) + (char)extraout_ECX + cVar1;
-    bVar2 = (byte)((uint)unaff_EBX >> 8);
-    bVar3 = (byte)iRam_? < bVar2;
-    iRam_? = CONCAT31(iRam_?._1_3_,(byte)iRam_? - bVar2);
-    cRam_? = cRam_? + (char)((uint)extraout_ECX >> 8) + bVar3;
-    iRam_? = iRam_? - unaff_EDI;
-    pcVar4 = (code *)swi(3);
-    pVVar5 = (Vector2__Array *)(*pcVar4)();
-    return pVVar5;
+    bVar3 = *extraout_ECX;
+    bVar4 = *extraout_ECX + (byte)unaff_EBX;
+    *extraout_ECX = bVar4 + bVar2;
+    extraout_ECX[0x3e103e27] =
+         extraout_ECX[0x3e103e27] + (char)((uint)uVar1 >> 8) +
+         (0x99 < (byte)uVar1 || (CARRY1(bVar3,(byte)unaff_EBX) || CARRY1(bVar4,bVar2)));
+    cRam_? = cRam_? + (char)((uint)unaff_EBX >> 8) * -2;
+    pcVar5 = (code *)swi(3);
+    pVVar6 = (Vector2__Array *)(*pcVar5)();
+    return pVVar6;
   }
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
   LowLevelList_1_System_Object___ctor
@@ -65,7 +67,7 @@ Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs
     func_?(this_00,0x3f800000,0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    fVar6 = 0.0;
+    fVar7 = 0.0;
     goto code_?;
   case Edge__Enum_Front:
     func_?(this_00,(float)mirror,0,
@@ -101,8 +103,8 @@ Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
 code_?:
-    uStack_7 = 0;
-    fVar6 = (float)mirror;
+    uStack_8 = 0;
+    fVar7 = (float)mirror;
     goto code_?;
   case Edge__Enum_Right:
     func_?(this_00,(float)mirror,0x3f800000,
@@ -119,21 +121,21 @@ code_?:
   default:
     goto code_?;
   }
-  fVar6 = (float)mirror;
+  fVar7 = (float)mirror;
 code_?:
-  uStack_7 = 0x3f800000;
+  uStack_8 = 0x3f800000;
 code_?:
-  func_?(this_00,fVar6,uStack_7,
+  func_?(this_00,fVar7,uStack_8,
                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                  );
 code_?:
-  pUVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+  pUVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
            UnitySynchronizationContext+WorkRequest]::
            List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
                      (this_00,
                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__
                      );
-  return (Vector2__Array *)pUVar8;
+  return (Vector2__Array *)pUVar9;
 }
 
 
@@ -146,7 +148,7 @@ void Assembly-CSharp.dll::FaceCursor::FaceCursor_UpdateCursor
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xf45c);
+    func_?(0xd70c);
     func_?(&
                     UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshRenderer>__
                    );

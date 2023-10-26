@@ -158,7 +158,6 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     }
   }
   func_?();
-  *(undefined4 *)((int)&(this->fields).currentGamePointAmountDisplayed + 2) = extraout_EDX;
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
   return;

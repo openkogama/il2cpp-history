@@ -315,26 +315,29 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     }
     colorStyle = ColorStyle__Enum_OffGray;
   }
-  pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
-  if (pIVar1 == (Image *)0x0) {
-    CStack_3.g = (float)&UNK_?;
-    uVar4 = func_?();
-    out(0x58,(uint *)uVar4);
-    in_AF = 9 < ((byte)uVar4 & 0xf) | in_AF;
-    uVar5 = CONCAT31((int3)((ulonglong)uVar4 >> 8),(byte)uVar4 + in_AF * -6) & 0xffffff0f;
-    puVar6 = (uint *)CONCAT22((short)(uVar5 >> 0x10),
-                              CONCAT11((char)((ulonglong)uVar4 >> 8) - in_AF,(char)uVar5));
-    if (0 < (int)((uint)((ulonglong)uVar4 >> 0x20) ^ *(uint *)uVar4 ^ *puVar6 ^ *puVar6)) {
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
-    }
-    pcVar7 = (code *)swi(3);
-    (*pcVar7)();
+  pCVar2 = Styles::Styles_GetColor((Color *)&puStack_3,colorStyle,(MethodInfo *)0x0);
+  if (pIVar1 != (Image *)0x0) {
+    puStack_3 = (undefined *)pCVar2->a;
+    (*(pIVar1->klass->vtable).set_color.methodPtr)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
     return;
   }
-  CStack_3.r = pCVar2->a;
-  CStack_3.g = (float)(pIVar1->klass->vtable).set_color.method;
-  (*(pIVar1->klass->vtable).set_color.methodPtr)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
+  uVar4 = func_?();
+  if ((int)((uint)((ulonglong)uVar4 >> 0x20) ^ *(uint *)uVar4 ^ *(uint *)uVar4) < 1) {
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if ((this_00 != (MainCameraManager *)0x0) &&
+     (pMVar6 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0),
+     pMVar6 != (MVCameraBase *)0x0)) {
+    puStack_3 = (undefined *)0x40000000;
+    (*(pMVar6->klass->vtable).FocusOnObject.methodPtr)(pMVar6,uRam_?);
+    return;
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

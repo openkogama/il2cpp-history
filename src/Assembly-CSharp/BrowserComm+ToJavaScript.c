@@ -176,7 +176,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
   value = (Object *)func_?(TypeInfo__BrowserComm__Callback);
   if (value == (Object *)0x0) goto code_?;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (value,ExceptionArgument__Enum_obj,unaff_EDI);
+            (value,ExceptionArgument__Enum_obj,unaff_EBX);
   value[1].klass = (Object__Class *)callback;
   func_?(value + 1,callback);
   if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
@@ -195,7 +195,8 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
             ((ParameterOverride_1_System_Object_ *)pDVar3,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
+  puStack_5 = (undefined *)TypeInfo__BrowserComm__ToJavaScript->static_fields->callbackIdCounter;
+  pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&puStack_5);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
   Dictionary_2_System_Object_System_Object__Add
             (pDVar3,(Object *)StringLiteral_callbackId,pOVar4,
@@ -232,16 +233,16 @@ code_?:
     }
   }
   else {
-    iVar5 = func_?(pSVar2,(args->klass->_0).element_class);
-    if (iVar5 != 0) goto code_?;
-    uVar6 = func_?(0);
-    func_?(uVar6);
+    iVar6 = func_?(pSVar2,(args->klass->_0).element_class);
+    if (iVar6 != 0) goto code_?;
+    uVar7 = func_?(0);
+    func_?(uVar7);
   }
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

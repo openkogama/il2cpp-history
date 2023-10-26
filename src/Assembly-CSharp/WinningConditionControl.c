@@ -102,14 +102,14 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   if (0x3b < iVar4) {
     func_?((float)iVar4 / _UNK_?,0);
     pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
+                        ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
     pSVar1 = mscorlib.dll::System::String::String_Concat_4
                        (pSVar1,pSVar5,::StringLiteral__,(MethodInfo *)0x0);
   }
   pSVar5 = ::StringLiteral__;
   if (IVar2.m_value < 10) {
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
+                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
   pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0)
   ;
@@ -118,7 +118,7 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   if (IVar3.m_value < 10) {
     pSVar6 = StringLiteral__0;
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
+                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
   pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0)
   ;
@@ -131,7 +131,7 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     statType = (GameStatCounterType__Enum)StringLiteral__0;
     score = (int32_t)::StringLiteral__;
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
+                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
   pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0)
   ;
@@ -142,7 +142,6 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   if (values == (String__Array *)0x0) goto code_?;
   if (pSVar1 == (String *)0x0) {
 code_?:
-    pIStack9 = (Il2CppClass *)pSVar1;
     func_?();
     if (pSVar5 != (String *)0x0) {
       iVar4 = func_?();
@@ -191,11 +190,9 @@ code_?:
     if (iVar4 != 0) goto code_?;
   }
   else {
-    pIStack9 = (values->klass->_0).element_class;
     iVar4 = func_?();
     bVar8 = 0;
     if (iVar4 != 0) goto code_?;
-    pIStack9 = (Il2CppClass *)0x0;
     func_?();
     func_?();
 code_?:
@@ -220,32 +217,113 @@ code_?:
   func_?();
 code_?:
   func_?();
-  bVar10 = (byte)pSVar5;
-  *(byte *)&pSVar1->klass = bVar10;
-  ppSVar11 = values[-1].vector + 2;
-  bVar12 = CARRY1(*(byte *)ppSVar11,bVar10) || CARRY1(*(byte *)ppSVar11 + bVar10,bVar8);
-  *(byte *)ppSVar11 = *(byte *)ppSVar11 + bVar10 + bVar8;
-  pbVar13 = (byte *)(extraout_EDX + -0x79);
-  bVar14 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar12);
-  *pbVar13 = *pbVar13 + extraout_CL + bVar12;
-  pbVar13 = (byte *)(extraout_EDX + -0x79);
-  bVar12 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar14);
-  *pbVar13 = *pbVar13 + extraout_CL + bVar14;
-  pbVar13 = (byte *)(extraout_EDX + -0x79);
-  bVar14 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar12);
-  *pbVar13 = *pbVar13 + extraout_CL + bVar12;
-  pbVar13 = (byte *)(extraout_EDX + -0x79);
-  bVar12 = CARRY1(*pbVar13,extraout_CL) || CARRY1(*pbVar13 + extraout_CL,bVar14);
-  *pbVar13 = *pbVar13 + extraout_CL + bVar14;
-  pbVar13 = (byte *)(extraout_EDX + -0x79);
-  bVar8 = *pbVar13;
-  bVar15 = *pbVar13;
-  *pbVar13 = bVar15 + extraout_CL + bVar12;
-  *(byte *)(values[-1].vector + 2) =
-       *(char *)(values[-1].vector + 2) + bVar10 +
-       (CARRY1(bVar8,extraout_CL) || CARRY1(bVar15 + extraout_CL,bVar12));
-  pcVar16 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar16)();
+  LOCK();
+  uVar9 = *(undefined1 *)&pSVar1->klass;
+  *(char *)&pSVar1->klass = (char)pSVar5;
+  UNLOCK();
+  bVar10 = (byte)((uint)pSVar5 >> 8);
+  bVar11 = CARRY1(bRam_?,bVar10) || CARRY1(bRam_? + bVar10,bVar8);
+  bRam_? = bRam_? + bVar10 + bVar8;
+  LOCK();
+  uVar12 = *(undefined1 *)&pSVar1->klass;
+  *(undefined1 *)&pSVar1->klass = uVar9;
+  UNLOCK();
+  bVar13 = CARRY1(bRam_?,bVar10);
+  bVar8 = bRam_? + bVar10;
+  bRam_? = bVar8 + bVar11;
+  LOCK();
+  uVar9 = *(undefined1 *)&pSVar1->klass;
+  *(undefined1 *)&pSVar1->klass = uVar12;
+  UNLOCK();
+  cRam_? = cRam_? + bVar10 + (bVar13 || CARRY1(bVar8,bVar11));
+  LOCK();
+  *(undefined1 *)&pSVar1->klass = uVar9;
+  UNLOCK();
+  in(extraout_DX);
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  iVar14 = score;
+  *(undefined1 *)score = 0;
+  pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar15 != (MVNetworkGame *)0x0) &&
+     (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
+     pWVar16 != (WinningConditionManager *)0x0)) {
+    pOVar17 = MVWorldObject.dll::WinningConditionManager::
+              WinningConditionManager_GetSingletonWinnerConditionByType
+                        (pWVar16,
+                         FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
+                        );
+    if (pOVar17 != (Object *)0x0) {
+      *(undefined1 *)iVar14 = 2;
+      return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
+    }
+    pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar15 != (MVNetworkGame *)0x0) &&
+       (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
+       pWVar16 != (WinningConditionManager *)0x0)) {
+      pOVar17 = MVWorldObject.dll::WinningConditionManager::
+                WinningConditionManager_GetSingletonWinnerConditionByType
+                          (pWVar16,
+                           TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
+                          );
+      if (pOVar17 != (Object *)0x0) {
+        *(undefined1 *)iVar14 = 8;
+        return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
+      }
+      pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar15 != (MVNetworkGame *)0x0) &&
+         (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
+         pWVar16 != (WinningConditionManager *)0x0)) {
+        pOVar17 = MVWorldObject.dll::WinningConditionManager::
+                  WinningConditionManager_GetSingletonWinnerConditionByType
+                            (pWVar16,
+                             AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                            );
+        if (pOVar17 != (Object *)0x0) {
+          *(undefined1 *)iVar14 = 3;
+          return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
+        }
+        pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar15 != (MVNetworkGame *)0x0) &&
+           (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
+           pWVar16 != (WinningConditionManager *)0x0)) {
+          pOVar17 = MVWorldObject.dll::WinningConditionManager::
+                    WinningConditionManager_GetSingletonWinnerConditionByType
+                              (pWVar16,
+                               KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+                              );
+          if (pOVar17 != (Object *)0x0) {
+            *(undefined1 *)iVar14 = 1;
+            return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
+          }
+          pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar15 != (MVNetworkGame *)0x0) &&
+             (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
+             pWVar16 != (WinningConditionManager *)0x0)) {
+            pOVar17 = MVWorldObject.dll::WinningConditionManager::
+                      WinningConditionManager_GetSingletonWinnerConditionByType
+                                (pWVar16,
+                                 OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                                );
+            if (pOVar17 == (Object *)0x0) {
+              return (String *)0x0;
+            }
+            *(undefined1 *)iVar14 = 6;
+            return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar18 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar18)();
   return pSVar1;
 }
 

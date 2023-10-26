@@ -294,8 +294,8 @@ code_?:
     goto code_?;
     pfVar20 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,3.8285772e-29,
-               (MethodInfo *)0x0);
+              (pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,3.828346e-29,(MethodInfo *)0x0
+              );
     pSVar23 = (this->fields).RecoilStrengthInputSlider;
     pDVar24 = (this->fields).itemData;
     if (((pDVar24 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
@@ -352,7 +352,7 @@ code_?:
     goto code_?;
     pfVar20 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar17,StringLiteral_AttackCooldown,*pfVar20,3.828563e-29,(float)pDVar1,
+              (pSVar17,StringLiteral_AttackCooldown,*pfVar20,3.828332e-29,(float)pDVar1,
                (MethodInfo *)0x0);
     pSVar23 = (this->fields).attackCooldownInputSlider;
     pDVar1 = (this->fields).itemData;

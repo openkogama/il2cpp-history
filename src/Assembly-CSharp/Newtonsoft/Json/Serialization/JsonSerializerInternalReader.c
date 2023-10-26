@@ -315,9 +315,9 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonSerializerInt
     cRam_? = '\x01';
   }
   if (contract == (JsonISerializableContract *)0x0) goto code_?;
-  pOStack_1 = (ObjectConstructor_1_System_Object_ *)
-              (contract->fields)._._UnderlyingType_k__BackingField;
-  pOStack_2 = pOStack_1;
+  uStack_1._4_4_ =
+       (ObjectConstructor_1_System_Object_ *)(contract->fields)._._UnderlyingType_k__BackingField;
+  pOStack_2 = uStack_1._4_4_;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Newtonsoft__Json__Serialization__JsonFormatterConverter);
     cRam_? = '\x01';
@@ -332,7 +332,7 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonSerializerInt
       cRam_? = '\x01';
     }
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pJVar3,ExceptionArgument__Enum_obj,unaff_EDI);
+              ((Object *)pJVar3,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_4);
     Json::Utilities::ValidationUtils::ValidationUtils_ArgumentNotNull
               ((Object *)value,StringLiteral_serializer,(MethodInfo *)0x0);
     (pJVar3->fields)._serializer = (JsonSerializer *)value;
@@ -348,151 +348,146 @@ Object * Assembly-CSharp.dll::Newtonsoft::Json::Serialization::JsonSerializerInt
             (this_01,(Type *)pOStack_2,(IFormatterConverter *)pJVar3,(MethodInfo *)0x0);
   if (reader == (JsonReader *)0x0) goto code_?;
   do {
-    iVar4 = (*(reader->klass->vtable).get_TokenType.methodPtr)
+    iVar5 = (*(reader->klass->vtable).get_TokenType.methodPtr)
                       (reader,(reader->klass->vtable).get_TokenType.method);
-    if (iVar4 == 4) {
-      piVar5 = (int *)(*(reader->klass->vtable).get_Value.methodPtr)
+    if (iVar5 == 4) {
+      piVar6 = (int *)(*(reader->klass->vtable).get_Value.methodPtr)
                                 (reader,(reader->klass->vtable).get_Value.method);
-      if (piVar5 == (int *)0x0) goto code_?;
+      if (piVar6 == (int *)0x0) goto code_?;
       pOStack_2 = (ObjectConstructor_1_System_Object_ *)
-                  (**(code **)(*piVar5 + 0xd4))(piVar5,*(undefined4 *)(*piVar5 + 0xd8));
-      cVar6 = (*(reader->klass->vtable).__unknown.methodPtr)
+                  (**(code **)(*piVar6 + 0xd4))(piVar6,*(undefined4 *)(*piVar6 + 0xd8));
+      cVar7 = (*(reader->klass->vtable).__unknown.methodPtr)
                         (reader,(reader->klass->vtable).__unknown.method);
-      if (cVar6 == '\0') {
-        uVar7 = func_?(&TypeInfo__System__Globalization__CultureInfo);
-        func_?(uVar7);
+      if (cVar7 == '\0') {
+        uVar8 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+        func_?(uVar8);
         provider = mscorlib.dll::System::Globalization::CultureInfo::
                    CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-        uVar7 = func_?(&TypeInfo__System__Object,1);
-        args = (Object__Array *)func_?(uVar7);
+        uVar8 = func_?(&TypeInfo__System__Object,1);
+        args = (Object__Array *)func_?(uVar8);
         func_?(args);
-        pOVar8 = pOStack_2;
+        pOVar9 = pOStack_2;
         func_?(args,pOStack_2);
-        func_?(0,pOVar8);
-        ppSVar9 = &StringLiteral_Unexpected_end_when_setting__0__;
+        func_?(0,pOVar9);
+        ppSVar10 = &StringLiteral_Unexpected_end_when_setting__0__;
         goto code_?;
       }
       value_00 = Linq::JToken::JToken_ReadFrom(reader,(MethodInfo *)0x0);
       mscorlib.dll::System::Runtime::Serialization::SerializationInfo::SerializationInfo_AddValue_1
                 (this_01,(String *)pOStack_2,(Object *)value_00,(MethodInfo *)0x0);
     }
-    else if (iVar4 != 5) {
-      if (iVar4 != 0xd) {
+    else if (iVar5 != 5) {
+      if (iVar5 != 0xd) {
         func_?(reader);
         contract = (JsonISerializableContract *)func_?(7,reader);
-        uVar7 = func_?(&TypeInfo__Newtonsoft__Json__JsonToken,&contract);
-        func_?(uVar7);
-        pSVar10 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)auStack_11,(MethodInfo *)0x0);
+        uVar8 = func_?(&TypeInfo__Newtonsoft__Json__JsonToken,&contract);
+        func_?(uVar8);
+        pSVar11 = mscorlib.dll::System::Enum::Enum_ToString
+                            ((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
         pMVar12 = (MethodInfo *)0x0;
         str0 = (String *)func_?(&StringLiteral_Unexpected_token_when_deserializ);
-        pSVar10 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar10,pMVar12);
-        uVar7 = func_?(&TypeInfo__Newtonsoft__Json__JsonSerializationException);
-        this_02 = (JsonSerializationException *)func_?(uVar7);
-        func_?(this_02);
+        pSVar11 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar11,pMVar12);
+        uVar8 = func_?(&TypeInfo__Newtonsoft__Json__JsonSerializationException);
+        pJVar13 = (JsonSerializationException *)func_?(uVar8);
+        func_?(pJVar13);
         JsonSerializationException::JsonSerializationException__ctor_1
-                  (this_02,pSVar10,(MethodInfo *)0x0);
-        pOStack_1 = (ObjectConstructor_1_System_Object_ *)
-                    func_?(&
-                                    MethodInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader__CreateISerializable_Newtonsoft__Json__JsonReader__Newtonsoft__Json__Serialization__JsonISerializableContract__System__String_
-                                   );
+                  (pJVar13,pSVar11,(MethodInfo *)0x0);
+        func_?(&
+                        MethodInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader__CreateISerializable_Newtonsoft__Json__JsonReader__Newtonsoft__Json__Serialization__JsonISerializableContract__System__String_
+                       );
         goto code_?;
       }
       break;
     }
-    cVar6 = (*(reader->klass->vtable).__unknown.methodPtr)
+    cVar7 = (*(reader->klass->vtable).__unknown.methodPtr)
                       (reader,(reader->klass->vtable).__unknown.method);
-  } while (cVar6 != '\0');
+  } while (cVar7 != '\0');
   if ((contract->fields)._ISerializableCreator_k__BackingField ==
       (ObjectConstructor_1_System_Object_ *)0x0) {
-    uVar7 = func_?(&TypeInfo__System__Globalization__CultureInfo);
-    func_?(uVar7);
+    uVar8 = func_?(&TypeInfo__System__Globalization__CultureInfo);
+    func_?(uVar8);
     provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                          ((MethodInfo *)0x0);
-    uVar7 = func_?(&TypeInfo__System__Object,1);
-    args = (Object__Array *)func_?(uVar7);
+    uVar8 = func_?(&TypeInfo__System__Object);
+    args = (Object__Array *)func_?(uVar8);
     func_?(args);
-    pOVar8 = pOStack_1;
-    func_?(args,pOStack_1);
-    func_?(0,pOVar8);
-    ppSVar9 = &StringLiteral_ISerializable_type___0___does_no;
+    func_?(args,uStack_1._4_4_);
+    func_?(0);
+    ppSVar10 = &StringLiteral_ISerializable_type___0___does_no;
 code_?:
     pMVar12 = (MethodInfo *)0x0;
-    pSVar10 = (String *)func_?(ppSVar9);
-    pSVar10 = Json::Utilities::StringUtils::StringUtils_FormatWith
-                        (pSVar10,(IFormatProvider *)provider,args,pMVar12);
-    uVar7 = func_?(&TypeInfo__Newtonsoft__Json__JsonSerializationException);
-    this_02 = (JsonSerializationException *)func_?(uVar7);
-    func_?(this_02);
+    pSVar11 = (String *)func_?(ppSVar10);
+    pSVar11 = Json::Utilities::StringUtils::StringUtils_FormatWith
+                        (pSVar11,(IFormatProvider *)provider,args,pMVar12);
+    uVar8 = func_?(&TypeInfo__Newtonsoft__Json__JsonSerializationException);
+    pJVar13 = (JsonSerializationException *)func_?(uVar8);
+    func_?(pJVar13);
     JsonSerializationException::JsonSerializationException__ctor_1
-              (this_02,pSVar10,(MethodInfo *)0x0);
-    pOStack_1 = (ObjectConstructor_1_System_Object_ *)
-                func_?(&
-                                MethodInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader__CreateISerializable_Newtonsoft__Json__JsonReader__Newtonsoft__Json__Serialization__JsonISerializableContract__System__String_
-                               );
+              (pJVar13,pSVar11,(MethodInfo *)0x0);
+    func_?(&
+                    MethodInfo__Newtonsoft__Json__Serialization__JsonSerializerInternalReader__CreateISerializable_Newtonsoft__Json__JsonReader__Newtonsoft__Json__Serialization__JsonISerializableContract__System__String_
+                   );
 code_?:
-    auStack_11._0_4_ = &UNK_?;
-    auStack_11._4_4_ = this_02;
     func_?();
 code_?:
-    uVar7 = func_?(0);
-    func_?(uVar7);
+    uVar8 = func_?(0);
+    func_?(uVar8);
 code_?:
-    uVar7 = func_?(0);
-    func_?(uVar7);
+    uVar8 = func_?(0);
+    func_?(uVar8);
   }
   else {
     pOStack_2 = (contract->fields)._ISerializableCreator_k__BackingField;
-    piVar5 = (int *)func_?(TypeInfo__System__Object,2);
-    if (piVar5 == (int *)0x0) goto code_?;
-    iVar4 = func_?(this_01,*(undefined4 *)(*piVar5 + 0x20));
-    if (iVar4 == 0) goto code_?;
-    if (piVar5[3] != 0) {
-      piVar5[4] = (int)this_01;
-      func_?(piVar5 + 4,this_01);
-      pJVar13 = (this->fields)._._Serializer_k__BackingField;
-      if (pJVar13 == (JsonSerializer *)0x0) goto code_?;
-      join_0x00000008_0x00000000_ =
-           (*(pJVar13->klass->vtable).get_Context.methodPtr)
-                     (pJVar13,(pJVar13->klass->vtable).get_Context.method);
-      iVar4 = func_?(TypeInfo__System__Runtime__Serialization__StreamingContext,
-                              auStack_11 + 4);
-      if (iVar4 != 0) {
-        iVar14 = func_?(iVar4,*(undefined4 *)(*piVar5 + 0x20));
-        if (iVar14 == 0) goto code_?;
+    piVar6 = (int *)func_?(TypeInfo__System__Object,2);
+    if (piVar6 == (int *)0x0) goto code_?;
+    iVar5 = func_?(this_01,*(undefined4 *)(*piVar6 + 0x20));
+    if (iVar5 == 0) goto code_?;
+    if (piVar6[3] != 0) {
+      piVar6[4] = (int)this_01;
+      func_?(piVar6 + 4,this_01);
+      pJVar14 = (this->fields)._._Serializer_k__BackingField;
+      if (pJVar14 == (JsonSerializer *)0x0) goto code_?;
+      uStack_1 = (*(pJVar14->klass->vtable).get_Context.methodPtr)
+                            (pJVar14,(pJVar14->klass->vtable).get_Context.method);
+      iVar5 = func_?(TypeInfo__System__Runtime__Serialization__StreamingContext,&uStack_1)
+      ;
+      if (iVar5 != 0) {
+        iVar15 = func_?(iVar5,*(undefined4 *)(*piVar6 + 0x20));
+        if (iVar15 == 0) goto code_?;
       }
-      if (1 < (uint)piVar5[3]) {
-        piVar5[5] = iVar4;
-        func_?(piVar5 + 5,iVar4);
-        pOVar15 = (Object *)
+      if (1 < (uint)piVar6[3]) {
+        piVar6[5] = iVar5;
+        func_?(piVar6 + 5,iVar5);
+        pOVar16 = (Object *)
                   (*(pOStack_2->fields)._._.invoke_impl)
-                            ((pOStack_2->fields)._._.method_code,piVar5,
+                            ((pOStack_2->fields)._._.method_code,piVar6,
                              (pOStack_2->fields)._._.method);
-        pSVar10 = id;
+        pSVar11 = id;
         if (id != (String *)0x0) {
-          pJVar13 = (this->fields)._._Serializer_k__BackingField;
-          if (pJVar13 == (JsonSerializer *)0x0) goto code_?;
-          iVar4 = (*(pJVar13->klass->vtable).get_ReferenceResolver.methodPtr)
-                            (pJVar13,(pJVar13->klass->vtable).get_ReferenceResolver.method);
-          if (iVar4 == 0) goto code_?;
-          func_?(3,TypeInfo__Newtonsoft__Json__Serialization__IReferenceResolver,iVar4,this
-                          ,pSVar10,pOVar15);
+          pJVar14 = (this->fields)._._Serializer_k__BackingField;
+          if (pJVar14 == (JsonSerializer *)0x0) goto code_?;
+          iVar5 = (*(pJVar14->klass->vtable).get_ReferenceResolver.methodPtr)
+                            (pJVar14,(pJVar14->klass->vtable).get_ReferenceResolver.method);
+          if (iVar5 == 0) goto code_?;
+          func_?(3,TypeInfo__Newtonsoft__Json__Serialization__IReferenceResolver,iVar5,this
+                          ,pSVar11,pOVar16);
         }
-        pJVar13 = (this->fields)._._Serializer_k__BackingField;
-        if (pJVar13 != (JsonSerializer *)0x0) {
-          SVar16 = (StreamingContext)
-                  (*(pJVar13->klass->vtable).get_Context.methodPtr)
-                            (pJVar13,(pJVar13->klass->vtable).get_Context.method);
+        pJVar14 = (this->fields)._._Serializer_k__BackingField;
+        if (pJVar14 != (JsonSerializer *)0x0) {
+          SVar17 = (StreamingContext)
+                  (*(pJVar14->klass->vtable).get_Context.methodPtr)
+                            (pJVar14,(pJVar14->klass->vtable).get_Context.method);
           this_00 = contract;
           JsonContract::JsonContract_InvokeOnDeserializing
-                    ((JsonContract *)contract,pOVar15,SVar16,(MethodInfo *)0x0);
-          pJVar13 = (this->fields)._._Serializer_k__BackingField;
-          if (pJVar13 != (JsonSerializer *)0x0) {
-            SVar16 = (StreamingContext)
-                    (*(pJVar13->klass->vtable).get_Context.methodPtr)
-                              (pJVar13,(pJVar13->klass->vtable).get_Context.method);
+                    ((JsonContract *)contract,pOVar16,SVar17,(MethodInfo *)0x0);
+          pJVar14 = (this->fields)._._Serializer_k__BackingField;
+          if (pJVar14 != (JsonSerializer *)0x0) {
+            SVar17 = (StreamingContext)
+                    (*(pJVar14->klass->vtable).get_Context.methodPtr)
+                              (pJVar14,(pJVar14->klass->vtable).get_Context.method);
             JsonContract::JsonContract_InvokeOnDeserialized
-                      ((JsonContract *)this_00,pOVar15,SVar16,(MethodInfo *)0x0);
-            return pOVar15;
+                      ((JsonContract *)this_00,pOVar16,SVar17,(MethodInfo *)0x0);
+            return pOVar16;
           }
         }
         goto code_?;
@@ -502,9 +497,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  pOVar15 = (Object *)(*pcVar17)();
-  return pOVar15;
+  pcVar18 = (code *)swi(3);
+  pOVar16 = (Object *)(*pcVar18)();
+  return pOVar16;
 }
 
 
@@ -1791,62 +1786,64 @@ code_?:
     JsonSerializationException::JsonSerializationException__ctor_1
               (pJVar3,pSVar5,(MethodInfo *)0x0);
     func_?();
-    cVar7 = (undefined1 *)0xffffffd7 < &stack0xffffffd8;
+    bVar7 = (undefined1 *)0xffffffd7 < &stack0xffffffd8;
     uVar8 = func_?();
-    iVar9 = (int)((ulonglong)uVar8 >> 0x20);
-    bVar10 = (byte)extraout_ECX;
-    pbVar11 = (byte *)CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                               CONCAT11(in_stack_12,bVar10));
-    bVar13 = (char)((ushort)uVar1 >> 8) + (char)uVar1 + cVar7;
-    bVar14 = (JsonSerializationException__Class *)uVar8 < pJVar3->klass;
-    pbVar15 = (byte *)(iVar9 + 0x6c104aae);
-    bVar16 = *pbVar15;
-    bVar17 = *pbVar15 + bVar13;
-    *pbVar15 = bVar17 + bVar14;
-    bVar18 = (byte)pSVar5->klass;
-    bVar14 = CARRY1(bVar18,bVar10) ||
-             CARRY1(bVar18 + bVar10,CARRY1(bVar16,bVar13) || CARRY1(bVar17,bVar14));
-    pMVar19 = pSVar5->monitor;
-    bVar18 = (char)((ulonglong)uVar8 >> 0x20) - 4;
-    bVar16 = *pbVar11;
-    bVar17 = *pbVar11;
-    *pbVar11 = bVar17 + bVar18 + bVar14;
-    pcVar20 = (char *)CONCAT31((int3)((uint)pMVar19 >> 8),0x4a);
-    *(byte *)&(pSVar5->fields)._stringLength =
-         (char)(pSVar5->fields)._stringLength + bVar18 +
-         (CARRY1(bVar16,bVar18) || CARRY1(bVar17 + bVar18,bVar14));
-    bVar14 = 0x4a < *(byte *)&pJVar3->monitor;
-    piVar21 = &pJVar3[-2].fields._.caught_in_unmanaged;
-    iVar22 = *piVar21;
-    bVar16 = (char)*piVar21 + 0x4a;
-    *(byte *)piVar21 = bVar16 + bVar14;
-    piVar23 = (int *)(iVar9 + -6);
-    *pcVar20 = *pcVar20 + 'J' + (0xb5 < (byte)iVar22 || CARRY1(bVar16,bVar14));
-    *piVar23 = (int)(pcVar20 + *piVar23);
-    pcVar20[*(int *)(pcVar20 + 0x6070606)] = pcVar20[*(int *)(pcVar20 + 0x6070606)] | bVar10;
-    pcVar24 = (code *)swi(3);
-    pOVar25 = (Object *)(*pcVar24)();
-    return pOVar25;
+    bVar9 = (char)extraout_EDX - 1;
+    bVar10 = CARRY1((byte)uVar1,bVar9) || CARRY1((byte)uVar1 + bVar9,bVar7);
+    bVar11 = (byte)((ushort)uVar1 >> 8);
+    *(undefined1 *)&pJVar3->klass = uVar8;
+    pbVar12 = (byte *)(extraout_EDX + -2);
+    bVar9 = *pbVar12;
+    bVar7 = *pbVar12;
+    *pbVar12 = bVar7 + extraout_CL + bVar10;
+    bVar13 = (byte)((uint)pSVar5->klass >> 8);
+    bVar10 = 0x55 < bVar13 ||
+             CARRY1(bVar13 + 0xaa,CARRY1(bVar9,extraout_CL) || CARRY1(bVar7 + extraout_CL,bVar10))
+    ;
+    pMVar14 = pSVar5->monitor;
+    bVar7 = (char)extraout_EDX - 4;
+    pbVar12 = (byte *)((int)&pJVar3[-0x2dfef7].fields._._stackTraceString + 3);
+    bVar9 = *pbVar12 + bVar7;
+    bVar15 = CARRY1(*pbVar12,bVar7) || CARRY1(bVar9,bVar10);
+    *pbVar12 = bVar9 + bVar10;
+    *(char *)((int)&pJVar3->klass + 1) = (char)pMVar14;
+    pbVar12 = (byte *)((int)&stack0xfffffffc * 4 + -0x54beefb6);
+    bVar9 = *pbVar12 + bVar11;
+    bVar10 = CARRY1(*pbVar12,bVar11) || CARRY1(bVar9,bVar15);
+    *pbVar12 = bVar9 + bVar15;
+    pbVar12 = (byte *)(extraout_EDX + -0x5a);
+    bVar9 = *pbVar12;
+    bVar11 = (byte)((uint)(extraout_EDX + -6) >> 8);
+    bVar7 = *pbVar12 + bVar11;
+    *pbVar12 = bVar7 + bVar10;
+    *pMVar14 = (MonitorData)
+              ((char)*pMVar14 + (char)pMVar14 + (CARRY1(bVar9,bVar11) || CARRY1(bVar7,bVar10)));
+    *(int *)(extraout_EDX + -7) = (int)(pMVar14 + *(int *)(extraout_EDX + -7));
+    pMVar14[*(int *)(pMVar14 + 0x6070606)] =
+         (MonitorData)((byte)pMVar14[*(int *)(pMVar14 + 0x6070606)] | extraout_CL);
+    pcVar16 = (code *)swi(3);
+    pOVar17 = (Object *)(*pcVar16)();
+    return pOVar17;
   }
 code_?:
-  uVar26 = (*(reader->klass->vtable).get_TokenType.methodPtr)();
-  pIVar27 = TypeRef__System__DBNull;
-  switch(uVar26) {
+  uVar18 = (*(reader->klass->vtable).get_TokenType.methodPtr)();
+  pIVar19 = TypeRef__System__DBNull;
+  switch(uVar18) {
   case 1:
-    pOVar25 = JsonSerializerInternalReader_CreateObject
+    pOVar17 = JsonSerializerInternalReader_CreateObject
                         (this,reader,objectType,contract,member,existingValue,(MethodInfo *)0x0);
-    return pOVar25;
+    return pOVar17;
   case 2:
-    pOVar25 = JsonSerializerInternalReader_CreateList
+    pOVar17 = JsonSerializerInternalReader_CreateList
                         (this,reader,objectType,contract,member,existingValue,(String *)0x0,
                          (MethodInfo *)0x0);
-    return pOVar25;
+    return pOVar17;
   case 3:
   case 0xf:
-    piVar23 = (int *)(*(reader->klass->vtable).get_Value.methodPtr)();
-    if (piVar23 != (int *)0x0) {
-      pOVar25 = (Object *)(**(code **)(*piVar23 + 0xd4))();
-      return pOVar25;
+    piVar20 = (int *)(*(reader->klass->vtable).get_Value.methodPtr)();
+    if (piVar20 != (int *)0x0) {
+      pOVar17 = (Object *)(**(code **)(*piVar20 + 0xd4))();
+      return pOVar17;
     }
     goto code_?;
   default:
@@ -1854,13 +1851,13 @@ code_?:
   case 5:
     break;
   case 6:
-    pOVar25 = (Object *)func_?();
+    pOVar17 = (Object *)func_?();
     this_00 = (JRaw *)func_?();
     if (this_00 == (JRaw *)0x0) goto code_?;
     rawJson = (Object *)0x0;
-    if (pOVar25 != (Object *)0x0) {
-      if ((String__Class *)pOVar25->klass == TypeInfo__System__String) {
-        rawJson = pOVar25;
+    if (pOVar17 != (Object *)0x0) {
+      if ((String__Class *)pOVar17->klass == TypeInfo__System__String) {
+        rawJson = pOVar17;
       }
       if (rawJson == (Object *)0x0) goto code_?;
     }
@@ -1871,15 +1868,15 @@ code_?:
   case 10:
   case 0x10:
   case 0x11:
-    pOVar25 = (Object *)(*(reader->klass->vtable).get_Value.methodPtr)();
+    pOVar17 = (Object *)(*(reader->klass->vtable).get_Value.methodPtr)();
     if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar28 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+    pCVar21 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                         ((MethodInfo *)0x0);
-    pOVar25 = JsonSerializerInternalReader_EnsureType
-                        (this,pOVar25,pCVar28,objectType,(MethodInfo *)0x0);
-    return pOVar25;
+    pOVar17 = JsonSerializerInternalReader_EnsureType
+                        (this,pOVar17,pCVar21,objectType,(MethodInfo *)0x0);
+    return pOVar17;
   case 9:
     pSVar6 = (String *)func_?();
     pSVar5 = (String *)0x0;
@@ -1889,37 +1886,37 @@ code_?:
       }
       if (pSVar5 == (String *)0x0) goto code_?;
     }
-    bVar29 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar5,(MethodInfo *)0x0);
-    if (bVar29 != 0) {
+    bVar22 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar5,(MethodInfo *)0x0);
+    if (bVar22 != 0) {
       if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar29 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+      bVar22 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
                         ((CancellationToken)objectType,(CancellationToken)0x0,(MethodInfo *)0x0);
-      if ((bVar29 != 0) &&
-         (bVar29 = Json::Utilities::ReflectionUtils::ReflectionUtils_IsNullableType
-                            (objectType,(MethodInfo *)0x0), bVar29 != 0)) {
+      if ((bVar22 != 0) &&
+         (bVar22 = Json::Utilities::ReflectionUtils::ReflectionUtils_IsNullableType
+                            (objectType,(MethodInfo *)0x0), bVar22 != 0)) {
         return (Object *)0x0;
       }
     }
-    pIVar27 = TypeRef__System__Byte;
+    pIVar19 = TypeRef__System__Byte;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar30 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                        ((RuntimeTypeHandle)pIVar27,(MethodInfo *)0x0);
-    bVar29 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)objectType,(Object **)pTVar30,(MethodInfo *)0x0);
-    if (bVar29 == 0) {
-      pOVar25 = (Object *)func_?();
+    pTVar23 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)pIVar19,(MethodInfo *)0x0);
+    bVar22 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)objectType,(Object **)pTVar23,(MethodInfo *)0x0);
+    if (bVar22 == 0) {
+      pOVar17 = (Object *)func_?();
       if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pCVar28 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+      pCVar21 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                           ((MethodInfo *)0x0);
-      pOVar25 = JsonSerializerInternalReader_EnsureType
-                          (this,pOVar25,pCVar28,objectType,(MethodInfo *)0x0);
-      return pOVar25;
+      pOVar17 = JsonSerializerInternalReader_EnsureType
+                          (this,pOVar17,pCVar21,objectType,(MethodInfo *)0x0);
+      return pOVar17;
     }
     pSVar5 = (String *)func_?();
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
@@ -1933,35 +1930,35 @@ code_?:
       unaff_EBX = objectType;
       if (pSVar6 == (String *)0x0) goto code_?;
     }
-    pBVar31 = mscorlib.dll::System::Convert::Convert_FromBase64String(pSVar6,(MethodInfo *)0x0);
-    return (Object *)pBVar31;
+    pBVar24 = mscorlib.dll::System::Convert::Convert_FromBase64String(pSVar6,(MethodInfo *)0x0);
+    return (Object *)pBVar24;
   case 0xb:
   case 0xc:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar30 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                        ((RuntimeTypeHandle)pIVar27,(MethodInfo *)0x0);
-    bVar29 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)objectType,(Object **)pTVar30,(MethodInfo *)0x0);
-    if (bVar29 == 0) {
-      pOVar25 = (Object *)func_?();
+    pTVar23 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)pIVar19,(MethodInfo *)0x0);
+    bVar22 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
+                      ((Object **)objectType,(Object **)pTVar23,(MethodInfo *)0x0);
+    if (bVar22 == 0) {
+      pOVar17 = (Object *)func_?();
       if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pCVar28 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+      pCVar21 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                           ((MethodInfo *)0x0);
-      pOVar25 = JsonSerializerInternalReader_EnsureType
-                          (this,pOVar25,pCVar28,objectType,(MethodInfo *)0x0);
-      return pOVar25;
+      pOVar17 = JsonSerializerInternalReader_EnsureType
+                          (this,pOVar17,pCVar21,objectType,(MethodInfo *)0x0);
+      return pOVar17;
     }
     if ((TypeInfo__System__DBNull->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     return (Object *)TypeInfo__System__DBNull->static_fields->Value;
   }
-  cVar7 = (*(reader->klass->vtable).__unknown.methodPtr)();
-  if (cVar7 == '\0') goto code_?;
+  cVar25 = (*(reader->klass->vtable).__unknown.methodPtr)();
+  if (cVar25 == '\0') goto code_?;
   goto code_?;
 }
 

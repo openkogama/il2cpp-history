@@ -16,7 +16,6 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Clean
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  pMVar2 = unaff_ESI;
   if ((pMVar1 != (MVGameControllerBase *)0x0) &&
      (this_00 = (pMVar1->fields).game, this_00 != (MVNetworkGame *)0x0)) {
     MVNetworkGame::MVNetworkGame_Cleanup(this_00,(MethodInfo *)0x0);
@@ -29,18 +28,17 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Clean
         (IPlayModeUI *)0x0) {
 code_?:
       this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      pMVar2 = unaff_ESI;
       if (this_01 != (MainCameraManager *)0x0) {
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this_01,(MethodInfo *)0x0);
-        if (pGVar3 != (GameObject *)0x0) {
+        if (pGVar2 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,0,(MethodInfo *)0x0);
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (pGVar2,0,(MethodInfo *)0x0);
+          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
-          if (pGVar3 != (GameObject *)0x0) {
+          if (pGVar2 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar3,0,(MethodInfo *)0x0);
+                      (pGVar2,0,(MethodInfo *)0x0);
             if ((TypeInfo__GameLoader->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -57,20 +55,19 @@ code_?:
       }
       this_02 = (Component *)
                 TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-      pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
+      unaff_ESI = TypeInfo__UnityEngine__MonoBehaviour;
       if (this_02 != (Component *)0x0) {
-        pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
         if (((this_02->klass->_1).typeHierarchyDepth <
              (TypeInfo__UnityEngine__MonoBehaviour->_1).typeHierarchyDepth) ||
            ((this_02->klass->_1).typeHierarchy
             [(TypeInfo__UnityEngine__MonoBehaviour->_1).typeHierarchyDepth - 1] !=
             (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) goto code_?;
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            (this_02,(MethodInfo *)0x0);
-        pMVar2 = unaff_ESI;
-        if (pGVar3 != (GameObject *)0x0) {
+        unaff_ESI = pMStack_3;
+        if (pGVar2 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,0,(MethodInfo *)0x0);
+                    (pGVar2,0,(MethodInfo *)0x0);
           goto code_?;
         }
       }
@@ -79,7 +76,7 @@ code_?:
   func_?();
   this_02 = extraout_EDX;
 code_?:
-  func_?(this_02,pMVar2);
+  func_?(this_02,unaff_ESI);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

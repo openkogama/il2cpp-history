@@ -131,7 +131,7 @@ code_?:
         func_?(values->vector + 5,pSVar3);
         pSVar3 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
         if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__FullScreenController);
+          func_?();
         }
         FullScreenController_PrintLog(pSVar3,(MethodInfo *)0x0);
         TypeInfo__FullScreenController->static_fields->initialized = init;

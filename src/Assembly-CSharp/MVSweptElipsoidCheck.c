@@ -2315,7 +2315,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                                 (pVVar25,CONCAT22(in_stack_27,in_stack_28),
                                  in_stack_29);
           in_stack_29 = (MethodInfo *)&stack0xffffff84;
-          in_stack_28 = 0xdb3;
+          in_stack_28 = 0xc53;
           in_stack_27 = 0x101d;
           UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
                     ((Vector3 *)in_stack_29,iVar9,fStack_26,(MethodInfo *)0x0);
@@ -2328,7 +2328,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                            (pVVar25,CONCAT22(in_stack_27,in_stack_28),in_stack_29)
         ;
         in_stack_29 = (MethodInfo *)&uStack_6;
-        in_stack_28 = 0xd6e;
+        in_stack_28 = 0xc0e;
         in_stack_27 = 0x101d;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
                   ((Vector3 *)in_stack_29,iVar9,fVar15,(MethodInfo *)0x0);
@@ -2367,7 +2367,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
     uVar43 = 0;
     uVar44 = 0;
     p_Var45 = &_Stack_68;
-    uVar45 = 0xec9;
+    uVar45 = 0xd69;
     uVar46 = 0x101d;
     localPos_02.y = (float)pIStack_22;
     localPos_02.x = (float)p_Var45;
@@ -2379,7 +2379,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
     IStack_2._0_4_ = *IVar42._0_4_;
     IStack_2.z = *(int16_t *)(IVar42._0_4_ + 1);
     if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
-      uVar48 = 0xeec;
+      uVar48 = 0xd8c;
       uVar49 = 0x101d;
       func_?();
       puVar30 = (undefined1 *)CONCAT22(uVar49,uVar48);
@@ -2630,7 +2630,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                         IStack_4._0_4_ = uVar74;
                         pCVar51 = collisionState;
                         MVSweptElipsoidCheck_HandleCube
-                                  ((VoxelHit *)&UNK_?,IVar42,radius_00,3.097501e-29,
+                                  ((VoxelHit *)&UNK_?,IVar42,radius_00,3.0973952e-29,
                                    collisionState,(MethodInfo *)0x0);
                         iVar62 = IStack_4.z;
                         uVar72 = IStack_4._0_4_;
@@ -2796,7 +2796,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                             radius_02.z = radius.z;
                             IStack_4._0_4_ = uVar74;
                             MVSweptElipsoidCheck_HandleCube
-                                      ((VoxelHit *)&UNK_?,pos_00,radius_02,3.097501e-29,
+                                      ((VoxelHit *)&UNK_?,pos_00,radius_02,3.0973952e-29,
                                        collisionState,(MethodInfo *)0x0);
                             iVar62 = IStack_4.z;
                             uVar72 = IStack_4._0_4_;
@@ -2876,8 +2876,8 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                       uVar10 = 0x101d;
                       IStack_4._0_4_ = uVar74;
                       MVSweptElipsoidCheck_HandleCube
-                                ((VoxelHit *)&UNK_?,pos,radius_01,3.097501e-29,collisionState
-                                 ,(MethodInfo *)0x0);
+                                ((VoxelHit *)&UNK_?,pos,radius_01,3.0973952e-29,
+                                 collisionState,(MethodInfo *)0x0);
                       iVar62 = IStack_4.z;
                       uVar72 = IStack_4._0_4_;
                       iVar63 = IStack_2.z;

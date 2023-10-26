@@ -288,7 +288,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0x52,(MethodInfo *)0x0);
+                  (pGVar1,0xf2,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -2153,17 +2153,18 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
 code_?:
       func_?();
-      bVar3 = *extraout_EDX;
-      *(char *)&pGVar2->klass = *(char *)&pGVar2->klass + (char)extraout_EDX;
-      bVar4 = *extraout_EDX;
-      pcVar5 = (char *)((int)&pGVar2[-0x7295080].fields._.m_CachedPtr + 2);
-      *pcVar5 = *pcVar5 + (char)((uint)extraout_EDX >> 8);
-      bVar3 = (byte)((uint)object >> 8) | bVar3 | bVar4 | *extraout_EDX;
-      extraout_EDX[extraout_ECX + -0x74aaefc6] = extraout_EDX[extraout_ECX + -0x74aaefc6] + bVar3;
+      ppMVar3 = &pGVar2->monitor;
+      bVar4 = (byte)((uint)object >> 8);
+      *(byte *)extraout_EDX = (byte)*extraout_EDX | bVar4;
+      *(char *)&pGVar2[0x5ec04d6].monitor = *(char *)&pGVar2[0x5ec04d6].monitor + extraout_AH;
+      *extraout_EDX = *extraout_EDX | (uint)ppMVar3;
+      *(byte *)extraout_EDX = (byte)*extraout_EDX + bVar4;
+      *extraout_EDX = *extraout_EDX | (uint)ppMVar3;
+      pcVar5 = (char *)(extraout_ECX * 2 + 0x3a);
+      *pcVar5 = *pcVar5 + (char)extraout_ECX;
       in((short)extraout_EDX);
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__GameObject,pGVar2,0,
-                        CONCAT22((short)((uint)object >> 0x10),CONCAT11(bVar3,(char)object)));
+        func_?(&TypeInfo__UnityEngine__GameObject,ppMVar3,4,object);
         func_?(&
                         UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                        );

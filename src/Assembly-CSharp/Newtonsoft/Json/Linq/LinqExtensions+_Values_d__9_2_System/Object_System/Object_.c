@@ -13,8 +13,10 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions+<Values>d__9`2[
   puStack_4 = &stack0xffffffc4;
   puVar5 = &stack0xffffffc4;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&
+                    TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
+                   );
+    func_?(&TypeInfo__System__Collections__IEnumerator);
     func_?(&
                     MethodInfo__Newtonsoft__Json__Linq__JEnumerable<Newtonsoft::Json::Linq::JToken>__GetEnumerator__
                    );
@@ -26,7 +28,6 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions+<Values>d__9`2[
   puStack_4 = puVar5;
   uStack_6 = 0;
   JStack_7._enumerable = (IEnumerable_1_System_Object_ *)0x0;
-  pIVar8 = (Il2CppMethodPointer)0x0;
   uStack_1 = 1;
   switch((this->fields).__1__state) {
   case 0:
@@ -38,73 +39,90 @@ bool Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions+<Values>d__9`2[
     if ((*(byte *)((int)method->klass->rgctx_data[2].rgctxDataDummy + 0xba) & 1) == 0) {
       func_?();
     }
-    pIVar9 = (IEnumerator_1_System_Object_ *)func_?();
-    (this->fields).__7__wrap1 = pIVar9;
+    pIVar8 = (IEnumerator_1_System_Object_ *)func_?();
+    (this->fields).__7__wrap1 = pIVar8;
     func_?();
 code_?:
     (this->fields).__1__state = -3;
-    while ((this->fields).__7__wrap1 != (IEnumerator_1_System_Object_ *)0x0) {
-      cVar10 = func_?(0);
+    pJVar9 = unaff_EDI;
+    while (pIVar8 = (this->fields).__7__wrap1, unaff_EDI = pJVar9,
+          pIVar8 != (IEnumerator_1_System_Object_ *)0x0) {
+      cVar10 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar8);
       if (cVar10 == '\0') {
-        (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)();
+        (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
+                  (this,method->klass->rgctx_data[1].rgctxDataDummy);
         (this->fields).__7__wrap1 = (IEnumerator_1_System_Object_ *)0x0;
-        func_?();
+        func_?(&(this->fields).__7__wrap1,0);
         goto code_?;
       }
+      pIVar8 = (this->fields).__7__wrap1;
       unaff_ESI = (IEnumerable_1_System_Object_ *)0x0;
-      if ((this->fields).__7__wrap1 == (IEnumerator_1_System_Object_ *)0x0) break;
-      if ((*(byte *)((int)method->klass->rgctx_data[4].rgctxDataDummy + 0xba) & 1) == 0) {
-        func_?();
+      if (pIVar8 == (IEnumerator_1_System_Object_ *)0x0) break;
+      pvVar11 = method->klass->rgctx_data[4].rgctxDataDummy;
+      if ((*(byte *)((int)pvVar11 + 0xba) & 1) == 0) {
+        pvVar11 = (void *)func_?(pvVar11);
       }
-      unaff_ESI = (IEnumerable_1_System_Object_ *)func_?(0);
+      unaff_ESI = (IEnumerable_1_System_Object_ *)func_?(0,pvVar11,pIVar8);
+      unaff_EDI = TypeInfo__Newtonsoft__Json__Linq__JValue;
       if ((this->fields).key == (Object *)0x0) {
-        iVar11 = func_?();
-        if (iVar11 != 0) {
-          pIVar8 = (method->klass->rgctx_data[7].method)->virtualMethodPointer;
-          if ((unaff_ESI == (IEnumerable_1_System_Object_ *)0x0) ||
-             (iVar11 = func_?(), iVar11 != 0)) {
-            pOVar12 = (Object *)(*pIVar8)();
-            (this->fields).__2__current = pOVar12;
-            func_?();
-            (this->fields).__1__state = 1;
-            *unaff_FS_OFFSET = uStack_3;
-            return 1;
+        iVar12 = func_?(unaff_ESI,TypeInfo__Newtonsoft__Json__Linq__JValue);
+        if (iVar12 != 0) {
+          pIVar13 = (method->klass->rgctx_data[7].method)->virtualMethodPointer;
+          pvVar11 = method->klass->rgctx_data[7].rgctxDataDummy;
+          if (unaff_ESI == (IEnumerable_1_System_Object_ *)0x0) {
+            iVar12 = 0;
           }
-          goto code_?;
+          else {
+            iVar12 = func_?(unaff_ESI,unaff_EDI);
+            bVar14 = 0;
+            if (iVar12 == 0) goto code_?;
+          }
+          pOVar15 = (Object *)(*pIVar13)(iVar12,pvVar11);
+          (this->fields).__2__current = pOVar15;
+          func_?(&(this->fields).__2__current,pOVar15);
+          (this->fields).__1__state = 1;
+          *unaff_FS_OFFSET = uStack_3;
+          return 1;
         }
         if (unaff_ESI == (IEnumerable_1_System_Object_ *)0x0) break;
-        JStack_7._enumerable = (IEnumerable_1_System_Object_ *)func_?();
-        pIVar9 = JEnumerable`1[System::Object]::JEnumerable_1_System_Object__GetEnumerator
-                           (&JStack_7,
-                            MethodInfo__Newtonsoft__Json__Linq__JEnumerable<Newtonsoft::Json::Linq::JToken>__GetEnumerator__
-                           );
-        (this->fields).__7__wrap2 = (IEnumerator_1_Newtonsoft_Json_Linq_JToken_ *)pIVar9;
+        JStack_7._enumerable = (IEnumerable_1_System_Object_ *)func_?(0x14,unaff_ESI);
+        pIVar8 = JEnumerable`1[System::Object]::JEnumerable_1_System_Object__GetEnumerator
+                            (&JStack_7,
+                             MethodInfo__Newtonsoft__Json__Linq__JEnumerable<Newtonsoft::Json::Linq::JToken>__GetEnumerator__
+                            );
+        (this->fields).__7__wrap2 = (IEnumerator_1_Newtonsoft_Json_Linq_JToken_ *)pIVar8;
         func_?();
 code_?:
         (this->fields).__1__state = -4;
-        if ((this->fields).__7__wrap2 == (IEnumerator_1_Newtonsoft_Json_Linq_JToken_ *)0x0) break;
-        cVar10 = func_?(0);
+        pIVar16 = (this->fields).__7__wrap2;
+        if (pIVar16 == (IEnumerator_1_Newtonsoft_Json_Linq_JToken_ *)0x0) break;
+        cVar10 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar16);
         if (cVar10 != '\0') {
-          pIVar13 = (this->fields).__7__wrap2;
+          pIVar16 = (this->fields).__7__wrap2;
           unaff_ESI = (IEnumerable_1_System_Object_ *)0x0;
-          if (pIVar13 == (IEnumerator_1_Newtonsoft_Json_Linq_JToken_ *)0x0) break;
-          pIVar14 = pIVar13->klass;
-          uVar15 = 0;
-          if ((pIVar14->_1).interface_offsets_count == 0) goto code_?;
+          if (pIVar16 == (IEnumerator_1_Newtonsoft_Json_Linq_JToken_ *)0x0) break;
+          pIVar17 = pIVar16->klass;
+          uVar18 = 0;
+          if ((pIVar17->_1).interface_offsets_count == 0) goto code_?;
           goto code_?;
         }
-        (*method->klass->rgctx_data->method->virtualMethodPointer)();
+        (*method->klass->rgctx_data->method->virtualMethodPointer)
+                  (this,method->klass->rgctx_data->rgctxDataDummy);
         (this->fields).__7__wrap2 = (IEnumerator_1_Newtonsoft_Json_Linq_JToken_ *)0x0;
-        func_?();
+        func_?(&(this->fields).__7__wrap2,0);
+        pJVar9 = unaff_EDI;
       }
       else {
+        unaff_EDI = pJVar9;
         if (unaff_ESI == (IEnumerable_1_System_Object_ *)0x0) break;
-        iVar11 = func_?(0xf);
+        iVar12 = func_?(0xf,unaff_ESI,(this->fields).key);
         unaff_ESI = (IEnumerable_1_System_Object_ *)0x0;
-        if (iVar11 != 0) {
-          pOVar12 = (Object *)(*(method->klass->rgctx_data[8].method)->virtualMethodPointer)();
-          (this->fields).__2__current = pOVar12;
-          func_?();
+        if (iVar12 != 0) {
+          pOVar15 = (Object *)
+                    (*(method->klass->rgctx_data[8].method)->virtualMethodPointer)
+                              (iVar12,method->klass->rgctx_data[8].rgctxDataDummy);
+          (this->fields).__2__current = pOVar15;
+          func_?(&(this->fields).__2__current,pOVar15);
           (this->fields).__1__state = 3;
           *unaff_FS_OFFSET = uStack_3;
           return 1;
@@ -112,18 +130,27 @@ code_?:
       }
     }
 code_?:
+    bVar14 = 0;
     func_?();
 code_?:
+    func_?(unaff_ESI,unaff_EDI);
     func_?();
-    func_?();
-    uVar16 = func_?(unaff_ESI);
-    out((short)((uint6)uVar16 >> 0x20),(int)uVar16);
-    pIVar8[0x10] = (Il2CppMethodPointer)((char)pIVar8[0x10] - (char)((uint6)uVar16 >> 8));
-    *(int *)(pIVar8 + 0x10) = *(int *)(pIVar8 + 0x10) - (int)&stack0xffffffbc;
-    *(int *)(pIVar8 + 0x10) = *(int *)(pIVar8 + 0x10) - (int)&stack0xffffffc0;
-    pcVar17 = (code *)swi(3);
-    bVar18 = (*pcVar17)();
-    return bVar18;
+    uVar19 = func_?(unaff_ESI);
+    uVar18 = (ushort)((uint6)uVar19 >> 0x20);
+    puVar20 = (ushort *)uVar19;
+    sVar21 = (uVar18 & 3) - (*puVar20 & 3);
+    *puVar20 = *puVar20 + (ushort)(0 < sVar21) * sVar21;
+    out(unaff_ESI->klass,uVar18);
+    bVar22 = (byte)uVar19;
+    puVar20 = (ushort *)
+              CONCAT31((int3)((uint6)uVar19 >> 8),
+                       bVar22 + (9 < (bVar22 & 0xf) | in_AF) * '\x06' + (0x99 < bVar22 | bVar14) * '`')
+    ;
+    sVar21 = (uVar18 & 3) - (*puVar20 & 3);
+    *puVar20 = *puVar20 + (ushort)(0 < sVar21) * sVar21;
+    pcVar23 = (code *)swi(3);
+    bVar24 = (*pcVar23)();
+    return bVar24;
   case 1:
   case 3:
     goto code_?;
@@ -134,22 +161,27 @@ code_?:
     *unaff_FS_OFFSET = uStack_3;
     return 0;
   }
-  while (uVar15 = uVar15 + 1, uVar15 < (pIVar14->_1).interface_offsets_count) {
+  while (uVar18 = uVar18 + 1, uVar18 < (pIVar17->_1).interface_offsets_count) {
 code_?:
-    if (pIVar14->interfaceOffsets[uVar15].interfaceType ==
+    if (pIVar17->interfaceOffsets[uVar18].interfaceType ==
         (Il2CppClass *)
         TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>) {
-      pIVar19 = &pIVar14->vtable + pIVar14->interfaceOffsets[uVar15].offset;
+      pIVar25 = &pIVar17->vtable + pIVar17->interfaceOffsets[uVar18].offset;
       goto code_?;
     }
   }
 code_?:
-  pIVar19 = (IEnumerator_1_Newtonsoft_Json_Linq_JToken___VTable *)func_?(pIVar13);
+  pIVar25 = (IEnumerator_1_Newtonsoft_Json_Linq_JToken___VTable *)
+            func_?(pIVar16,
+                            TypeInfo__System__Collections__Generic__IEnumerator<Newtonsoft::Json::Linq::JToken>
+                            ,0);
 code_?:
-  (*(pIVar19->get_Current).methodPtr)();
-  pOVar12 = (Object *)(*(method->klass->rgctx_data[8].method)->virtualMethodPointer)();
-  (this->fields).__2__current = pOVar12;
-  func_?();
+  uVar26 = (*(pIVar25->get_Current).methodPtr)(pIVar16,(pIVar25->get_Current).method);
+  pOVar15 = (Object *)
+            (*(method->klass->rgctx_data[8].method)->virtualMethodPointer)
+                      (uVar26,method->klass->rgctx_data[8].rgctxDataDummy);
+  (this->fields).__2__current = pOVar15;
+  func_?(&(this->fields).__2__current,pOVar15);
   (this->fields).__1__state = 2;
   *unaff_FS_OFFSET = uStack_3;
   return 1;

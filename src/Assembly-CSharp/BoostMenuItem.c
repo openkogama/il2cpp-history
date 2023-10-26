@@ -737,7 +737,7 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_SetBoostUIUnlocked
                              ((Component *)pBVar5,(MethodInfo *)0x0);
           if (pGVar4 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar4,(boostUnlocked ^ 1) & ((byte)((uint)pBVar5 >> 0x18) | 0xe3) & bVar3,
+                      (pGVar4,(boostUnlocked ^ 1) & ((byte)((uint)pBVar5 >> 0x18) | 0x53) & bVar3,
                        (MethodInfo *)0x0);
             pBVar5 = (this->fields).getWithAdDisabled;
             if ((pBVar5 != (Button *)0x0) &&

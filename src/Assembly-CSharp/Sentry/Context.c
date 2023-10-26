@@ -185,20 +185,18 @@ code_?:
                            (double)(float)((uint)fStack_6 ^
                                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                                           ),(MethodInfo *)0x0);
-                pCVar13 = (Context *)
-                         mscorlib.dll::System::DateTimeOffset::DateTimeOffset_ToString_1
+                pSVar2 = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_ToString_1
                                    ((DateTimeOffset *)&stack0xffffffc4,
                                     StringLiteral_yyyy_MM_ddTHH__mm__ssZ,(MethodInfo *)0x0);
                 if (pAVar12 != (App *)0x0) {
-                  (pAVar12->fields).app_start_time = (String *)pCVar13;
-                  func_?(&(pAVar12->fields).app_start_time);
+                  (pAVar12->fields).app_start_time = pSVar2;
+                  func_?(&(pAVar12->fields).app_start_time,pSVar2);
                   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                     func_?(TypeInfo__UnityEngine__Debug);
                   }
                   bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_get_isDebugBuild
                                     ((MethodInfo *)0x0);
                   pAVar12 = (this->fields).app;
-                  this = pCVar13;
                   if (bVar5 == 0) {
                     if (pAVar12 != (App *)0x0) {
                       (pAVar12->fields).build_type = StringLiteral_release;
@@ -220,13 +218,30 @@ code_?:
     }
   }
 code_?:
-  bVar14 = 0;
+  cVar13 = '\0';
   func_?();
-  *(char *)&this->klass =
-       *(char *)&this->klass + extraout_CL +
-       (CARRY1(unaff_BL,extraout_DH) || CARRY1(unaff_BL + extraout_DH,bVar14));
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  bVar14 = (byte)extraout_ECX & 0x1f;
+  bVar15 = (extraout_ECX & 0x1f) == 0;
+  bVar16 = bVar15 * cVar13 |
+           !bVar15 * ((((ulonglong)CONCAT14(cVar13,&stack0xffffffb4) << bVar14 |
+                       (ulonglong)(CONCAT14(cVar13,&stack0xffffffb4) >> 0x21 - bVar14)) & 0x100000000
+                      ) != 0);
+  bVar17 = (byte)extraout_DX;
+  bVar14 = (byte)unaff_EBX + bVar17;
+  bVar15 = CARRY1((byte)unaff_EBX,bVar17) || CARRY1(bVar14,bVar16);
+  pbVar18 = (byte *)CONCAT31((int3)((uint)unaff_EBX >> 8),bVar14 + bVar16);
+  bVar16 = (byte)(extraout_ECX >> 8);
+  bVar19 = (byte)((ushort)extraout_DX >> 8);
+  bVar14 = bVar19 + bVar16;
+  bVar20 = bVar14 + bVar15;
+  bVar15 = CARRY1(bVar20,bVar16) ||
+           CARRY1(bVar20 + bVar16,CARRY1(bVar19,bVar16) || CARRY1(bVar14,bVar15));
+  bVar14 = *pbVar18;
+  bVar16 = *pbVar18;
+  *pbVar18 = bVar16 + bVar17 + bVar15;
+  *pbVar18 = *pbVar18 + bVar17 + (CARRY1(bVar14,bVar17) || CARRY1(bVar16 + bVar17,bVar15));
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

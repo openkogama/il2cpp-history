@@ -128,15 +128,13 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
     goto code_?;
   case AvatarModifierPackageType__Enum_SpawnProtection:
     iVar1 = func_?(0);
-    if ((iVar1 == 0) || (*(EnumPoolManager **)(iVar1 + 0xc) == (EnumPoolManager *)0x0))
-    goto code_?;
-    pAVar2 = (AvatarModifier *)
-             EnumPoolManager::EnumPoolManager_Instantiate
-                       (*(EnumPoolManager **)(iVar1 + 0xc),PoolEnums__Enum_InvulnerabilityModifier,
-                        InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
-                       );
-    unaff_ESI = (undefined1 *)0x0;
-    if (pAVar2 == (AvatarModifier *)0x0) goto code_?;
+    if (((iVar1 == 0) || (*(EnumPoolManager **)(iVar1 + 0xc) == (EnumPoolManager *)0x0)) ||
+       (pAVar2 = (AvatarModifier *)
+                 EnumPoolManager::EnumPoolManager_Instantiate
+                           (*(EnumPoolManager **)(iVar1 + 0xc),
+                            PoolEnums__Enum_InvulnerabilityModifier,
+                            InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
+                           ), pAVar2 == (AvatarModifier *)0x0)) goto code_?;
     pAVar2[1].fields._._._._.m_CachedPtr = (void *)0x11;
     goto code_?;
   case AvatarModifierPackageType__Enum_Lethal:
@@ -162,15 +160,18 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
   }
   pAVar2 = (AvatarModifier *)EnumPoolManager::EnumPoolManager_Instantiate(this,pEnum,method_00);
 code_?:
-  unaff_ESI = (undefined1 *)0x0;
   if (pAVar2 == (AvatarModifier *)0x0) {
 code_?:
-    uVar3 = func_?();
-    pcVar4 = (char *)((uVar3 & 0xffffff10) + 0xbad11024);
-    *pcVar4 = *pcVar4 >> (extraout_CL & 0x1f);
-    *unaff_EDI = *unaff_ESI;
-    out(unaff_ESI[1],0x1024);
-    bRam_? = bRam_? | 0x24;
+    func_?();
+    bVar3 = (byte)((ushort)extraout_DX >> 8);
+    *(byte *)(unaff_EDI + 0xb7321024) = *(byte *)(unaff_EDI + 0xb7321024) | bVar3;
+    *(uint *)(extraout_ECX + -0x48a3efdc) = *(uint *)(extraout_ECX + -0x48a3efdc) ^ unaff_EDI;
+    LOCK();
+    bVar4 = *(byte *)(unaff_EDI + 0xb7b01024);
+    *(byte *)(unaff_EDI + 0xb7b01024) = bVar3;
+    UNLOCK();
+    in(CONCAT11(bVar4,(char)extraout_DX));
+    *extraout_ECX = *extraout_ECX | (byte)extraout_ECX;
     pcVar5 = (code *)swi(3);
     pAVar2 = (AvatarModifier *)(*pcVar5)();
     return pAVar2;
