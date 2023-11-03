@@ -1166,8 +1166,8 @@ Vector3 * Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
           QVar15.w = direction.y;
           pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp
                              (&QStack_3,
-                              (Quaternion)CONCAT412(fVar5,CONCAT48(fVar10,CONCAT44(fVar9,fVar1))),
-                              QVar15,direction.z,(MethodInfo *)0x0);
+                              (Quaternion)CONCAT412(fVar5,CONCAT48(fVar10,CONCAT44(fVar9,fVar1)))
+                              ,QVar15,direction.z,(MethodInfo *)0x0);
           fVar11 = pQVar4->x;
           fVar12 = pQVar4->y;
           fVar13 = pQVar4->z;
